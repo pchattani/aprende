@@ -30,7 +30,7 @@ test('complete the first lesson, earn XP and unlock the next lesson', async ({ p
     await continueFeedback(page)
     if (last) break
   }
-  await expect(page.getByRole('heading', { name: '¡Lección completada!' })).toBeVisible({ timeout: 15_000 })
+  await expect(page.getByRole('heading', { name: /Olé|Qué bien|Genial|crack|Así se hace|De lujo/ })).toBeVisible({ timeout: 15_000 })
   await expect(page.getByText(/^\+\d+$/)).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/done.png' })
   await page.getByRole('button', { name: 'Continue' }).click()
@@ -74,7 +74,7 @@ test('review page, practice session and study tools work', async ({ page }) => {
     await continueFeedback(page)
     if (last) break
   }
-  await expect(page.getByRole('heading', { name: '¡Lección completada!' })).toBeVisible({ timeout: 15_000 })
+  await expect(page.getByRole('heading', { name: /Olé|Qué bien|Genial|crack|Así se hace|De lujo/ })).toBeVisible({ timeout: 15_000 })
   await page.goto('/#/review')
   await expect(page.getByRole('heading', { name: 'Review' })).toBeVisible()
   const practise = page.getByRole('button', { name: /practise anyway|Start review/ })

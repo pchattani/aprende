@@ -2,7 +2,6 @@ import { useState } from 'react'
 import type { Exercise, GradeResult } from '../engine/types'
 import { grammar } from '../engine/loader'
 import { Button, SpeakerButton } from './ui/basics'
-import { IconCheck, IconX } from './ui/icons'
 import { GrammarNoteView } from './GrammarNote'
 
 export function Feedback({ exercise, result, onContinue, last }: { exercise: Exercise; result: GradeResult; onContinue: () => void; last: boolean }) {
@@ -16,9 +15,9 @@ export function Feedback({ exercise, result, onContinue, last }: { exercise: Exe
     <div className={`animate-slide-up fixed inset-x-0 bottom-0 z-20 rounded-t-[2rem] border-t ${ok ? 'border-ok-500/40 bg-ok-100 text-ok-700 dark:bg-[#2a3620] dark:text-ok-100' : 'border-bad-500/40 bg-bad-100 text-bad-700 dark:bg-[#3a2321] dark:text-bad-100'}`} style={{ boxShadow: '0 -12px 32px -16px rgba(60,40,20,0.35)' }} role="status">
       <div className="mx-auto max-w-xl px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
         <div className="flex items-start gap-3">
-          <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm ${ok ? 'text-ok-600' : 'text-bad-600'}`}>{ok ? <IconCheck /> : <IconX />}</div>
+          <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white text-2xl shadow-sm ${ok ? 'text-ok-600' : 'text-bad-600'}`} aria-hidden="true">{result.verdict === 'correct' ? '🎉' : almost ? '👀' : '🤔'}</div>
           <div className="min-w-0 flex-1">
-            <p className="text-lg font-extrabold">{result.verdict === 'correct' ? '¡Correcto!' : almost ? 'Almost! Watch the details' : 'Not quite'}</p>
+            <p className="text-lg font-extrabold">{result.verdict === 'correct' ? '¡Correcto!' : almost ? '¡Casi! Watch the details' : 'Not quite'}</p>
             {(!ok || almost) && (
               <div className="mt-1 flex items-center gap-2">
                 <p className="font-semibold" lang={spanishAnswer ? 'es' : 'en'}>

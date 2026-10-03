@@ -10,6 +10,7 @@ import { streakFrom, todayKey } from '../engine/mastery'
 import { useSettings } from '../store/settings'
 import { IconFlame, IconLock, IconStar, IconCheck, IconTrophy, IconRepeat, IconSparkle } from '../components/ui/icons'
 import { Mark } from '../components/ui/Mark'
+import { unitSticker } from '../engine/stickers'
 import { ProgressBar, Chip } from '../components/ui/basics'
 import type { LevelMeta, LevelId } from '../engine/schema'
 import type { Lesson } from '../engine/schema'
@@ -88,15 +89,15 @@ export default function Path() {
 
   return (
     <div className="animate-rise">
-      <header className="mb-5 flex items-center gap-4">
-        <Mark size={52} />
+      <header className="mb-4 flex items-center gap-3">
+        <Mark size={48} className="animate-float" />
         <div className="min-w-0 flex-1">
-          <h1 className="text-[1.7rem]">{greeting}</h1>
-          <p className="text-sm text-muted">{goalDone ? 'Goal reached for today. ¡Olé!' : streak.current ? `Day ${streak.current} of your streak. Keep it alight.` : 'A few minutes a day is all it takes.'}</p>
+          <h1 className="text-gradient text-[1.8rem]">{greeting} 👋</h1>
+          <p className="text-sm font-semibold text-muted">{goalDone ? 'Goal reached for today. ¡Olé!' : streak.current ? `Day ${streak.current} of your streak. Keep it alight.` : 'A few minutes a day is all it takes.'}</p>
         </div>
       </header>
       <section className="card mb-4 flex items-center gap-4">
-        <div className={`flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-2xl ${streak.current ? 'bg-brand-100 text-brand-600 dark:bg-brand-500/25' : 'bg-surface-2 text-muted'}`} title="Day streak">
+        <div className={`flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-2xl ${streak.current ? 'bg-sunset-gradient text-white' : 'bg-surface-2 text-muted'}`} title="Day streak">
           <IconFlame width={22} height={22} fill={streak.current ? 'currentColor' : 'none'} />
           <span className="text-sm font-extrabold leading-none">{streak.current}</span>
         </div>
@@ -105,15 +106,15 @@ export default function Path() {
             <span>Today's goal</span>
             <span>{xpToday} / {goal} XP</span>
           </div>
-          <ProgressBar value={Math.min(xpToday, goal)} max={goal} tone={goalDone ? 'ok' : 'gold'} className="mt-1.5" />
+          <ProgressBar value={Math.min(xpToday, goal)} max={goal} tone={goalDone ? 'ok' : 'brand'} className="mt-1.5" />
         </div>
       </section>
       <p className="mb-5 text-center text-xs">
         <Link to="/welcome" className="font-bold text-muted underline decoration-dotted underline-offset-4">Change starting level or retake the placement test</Link>
       </p>
       {(due ?? 0) > 0 && (
-        <Link to="/review" className="card mb-5 flex items-center gap-3 border-sky-500/40 bg-sky-100/60 dark:bg-sky-500/15">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-sky-500 text-white"><IconRepeat /></span>
+        <Link to="/review" className="card mb-5 flex items-center gap-3 bg-sky-100/70 dark:bg-sky-500/15">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-mint-gradient text-white"><IconRepeat /></span>
           <div className="min-w-0 flex-1">
             <p className="font-extrabold">{due} to review</p>
             <p className="text-xs text-muted">Review first: this is where words and grammar stick.</p>
@@ -133,7 +134,7 @@ export default function Path() {
               <div className="relative flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs font-extrabold uppercase tracking-widest opacity-85">{level.name}</p>
-                  <h2 className="text-3xl text-white">{level.title}</h2>
+                  <h2 className="text-4xl text-white">{level.title}</h2>
                 </div>
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20">{!unlocked ? <IconLock /> : passed ? <IconTrophy /> : <IconSparkle />}</span>
               </div>
@@ -147,7 +148,7 @@ export default function Path() {
                 </div>
               )}
               {!unlocked && (
-                <button type="button" onClick={() => startHere(level.id)} className="relative mt-4 rounded-full bg-white px-4 py-2 text-sm font-extrabold text-brand-700 shadow-sm active:scale-95">
+                <button type="button" onClick={() => startHere(level.id)} className="relative mt-4 rounded-full bg-white px-4 py-2 text-sm font-extrabold text-brand-600 shadow-sm active:scale-95">
                   Start here — I already know the earlier levels
                 </button>
               )}
@@ -156,8 +157,9 @@ export default function Path() {
               const lessons = lessonMeta.get(u.id)
               return (
                 <div key={u.id} className="card mb-3">
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-surface-2 text-2xl" aria-hidden="true">{unitSticker(u.id)}</span>
+                    <div className="min-w-0 flex-1">
                       <h3 className="text-lg font-extrabold leading-tight">{u.title}</h3>
                       <p className="text-xs font-semibold text-muted">{u.subtitle}</p>
                     </div>
@@ -199,7 +201,7 @@ function LessonBubble({ id, title, ring, mastery }: { id: string; title: string;
   const r = 26
   const c = 2 * Math.PI * r
   const colors: Record<string, string> = { locked: 'text-[var(--line)]', new: 'text-brand-500', started: 'text-brand-500', learned: 'text-ok-500', mastered: 'text-gold-500' }
-  const fills: Record<string, string> = { locked: 'bg-surface-2 text-muted', new: 'bg-brand-100 text-brand-600 dark:bg-brand-500/25', started: 'bg-brand-100 text-brand-600 dark:bg-brand-500/25', learned: 'bg-ok-100 text-ok-600 dark:bg-ok-700/30', mastered: 'bg-gold-100 text-gold-600 dark:bg-gold-500/25' }
+  const fills: Record<string, string> = { locked: 'bg-surface-2 text-muted', new: 'bg-brand-gradient text-white shadow-md', started: 'bg-brand-gradient text-white shadow-md', learned: 'bg-mint-gradient text-white shadow-md', mastered: 'bg-sunset-gradient text-white shadow-md' }
   const inner = (
     <div className="flex w-20 flex-col items-center text-center">
       <div className={`relative h-16 w-16 ${colors[ring]}`}>
@@ -216,7 +218,7 @@ function LessonBubble({ id, title, ring, mastery }: { id: string; title: string;
   )
   if (locked) return <div aria-disabled="true">{inner}</div>
   return (
-    <Link to={`/lesson/${id}`} className="rounded-2xl active:scale-95" aria-label={`${title}: ${ring}`}>
+    <Link to={`/lesson/${id}`} className="rounded-2xl transition hover:-translate-y-0.5 active:scale-95" aria-label={`${title}: ${ring}`}>
       {inner}
     </Link>
   )
@@ -224,8 +226,8 @@ function LessonBubble({ id, title, ring, mastery }: { id: string; title: string;
 
 function ExamCard({ level, enabled, complete, passed, score }: { level: LevelMeta; enabled: boolean; complete: boolean; passed: boolean; score?: number }) {
   const body = (
-    <div className={`card flex items-center gap-3 ${enabled ? 'border-gold-500/60 bg-gold-100/50 dark:bg-gold-500/10' : 'opacity-60'}`}>
-      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${passed ? 'bg-gold-300 text-gold-600' : enabled ? 'bg-gold-500 text-white' : 'bg-surface-2 text-muted'}`}>{enabled ? <IconTrophy /> : <IconLock />}</div>
+    <div className={`card flex items-center gap-3 ${enabled ? 'bg-gold-100/70 dark:bg-gold-500/10' : 'opacity-60'}`}>
+      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${passed ? 'bg-sunset-gradient text-white' : enabled ? 'bg-gold-500 text-white' : 'bg-surface-2 text-muted'}`}>{enabled ? <IconTrophy /> : <IconLock />}</div>
       <div className="flex-1">
         <p className="font-extrabold">Checkpoint {level.title}</p>
         <p className="text-xs text-muted">{passed ? `Passed · ${Math.round((score ?? 0) * 100)}%` : !enabled ? 'Unlocks with this level.' : complete ? 'Reading, listening, grammar, writing and speaking. Pass to unlock the next level.' : 'Already know this level? Take the checkpoint now to test out and unlock the next level.'}</p>

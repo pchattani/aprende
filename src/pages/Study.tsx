@@ -13,8 +13,8 @@ export default function Study() {
       <PageHeader title="Study" subtitle="Reference and drills beyond the lesson path." />
       <div className="grid gap-3">
         {items.map((it) => (
-          <Link key={it.to} to={it.to} className="card flex items-center gap-4 active:translate-y-[2px]">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-100 text-brand-600 dark:bg-brand-500/25">
+          <Link key={it.to} to={it.to} className="card flex items-center gap-4 transition hover:-translate-y-0.5 active:scale-[0.99]">
+            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white ${['bg-brand-gradient', 'bg-sunset-gradient', 'bg-mint-gradient'][items.indexOf(it)]}`}>
               <it.icon />
             </div>
             <div>

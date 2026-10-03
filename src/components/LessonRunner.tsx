@@ -5,6 +5,7 @@ import { XP } from '../engine/ladder'
 import { recordAnswer } from '../db/progress'
 import { useGradeDeps } from '../hooks/useDeps'
 import { useSettings } from '../store/settings'
+import { useSession } from '../store/session'
 import { ExerciseView } from './exercises'
 import { Feedback } from './Feedback'
 import { Button, Hearts, ProgressBar } from './ui/basics'
@@ -79,6 +80,11 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   }))
   const [confirmQuit, setConfirmQuit] = useState(false)
   const finishedRef = useRef(false)
+  const setImmersive = useSession((s) => s.setImmersive)
+  useEffect(() => {
+    setImmersive(true)
+    return () => setImmersive(false)
+  }, [setImmersive])
   const stateRef = useRef(s)
   useEffect(() => {
     stateRef.current = s

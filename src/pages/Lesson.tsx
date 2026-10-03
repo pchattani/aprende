@@ -12,6 +12,8 @@ import { LessonRunner } from '../components/LessonRunner'
 import { GrammarNoteView } from '../components/GrammarNote'
 import { Button, SpeakerButton, Chip } from '../components/ui/basics'
 import { IconArrowLeft, IconTrophy } from '../components/ui/icons'
+import { Confetti } from '../components/ui/Confetti'
+import { CHEERS } from '../engine/stickers'
 import { playSound } from '../engine/sounds'
 
 type Phase = { kind: 'loading' } | { kind: 'teach'; unit: Unit; lesson: Lesson; exercises: Exercise[] } | { kind: 'run'; unit: Unit; lesson: Lesson; exercises: Exercise[] } | { kind: 'done'; lesson: Lesson; result: LessonResult } | { kind: 'error'; message: string }
@@ -90,15 +92,15 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
       </button>
       <Chip tone="brand">New in this lesson</Chip>
       <h1 className="mt-2 text-3xl">{lesson.title}</h1>
-      {lesson.tip && <p className="mt-3 rounded-2xl border-l-4 border-gold-500 bg-gold-100/60 p-3 text-sm dark:bg-gold-500/10">{lesson.tip}</p>}
+      {lesson.tip && <p className="mt-3 rounded-2xl bg-gold-100/80 p-3 text-sm font-semibold dark:bg-gold-500/15">💡 {lesson.tip}</p>}
       <div className="mt-4 flex gap-2">
         {notes.map((n, i) => (
-          <button key={n!.id} type="button" onClick={() => setTab(i)} className={`rounded-full px-3.5 py-1.5 text-sm font-extrabold transition ${tab === i ? 'bg-brand-500 text-white shadow-sm' : 'bg-surface-2 text-muted'}`}>
+          <button key={n!.id} type="button" onClick={() => setTab(i)} className={`rounded-full px-3.5 py-1.5 text-sm font-extrabold transition ${tab === i ? 'bg-brand-gradient text-white shadow-md' : 'bg-surface-2 text-muted'}`}>
             {n!.title}
           </button>
         ))}
         {words.length > 0 && (
-          <button type="button" onClick={() => setTab(notes.length)} className={`rounded-full px-3.5 py-1.5 text-sm font-extrabold transition ${tab === notes.length ? 'bg-brand-500 text-white shadow-sm' : 'bg-surface-2 text-muted'}`}>
+          <button type="button" onClick={() => setTab(notes.length)} className={`rounded-full px-3.5 py-1.5 text-sm font-extrabold transition ${tab === notes.length ? 'bg-brand-gradient text-white shadow-md' : 'bg-surface-2 text-muted'}`}>
             Words ({words.length})
           </button>
         )}
@@ -124,7 +126,7 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
           </ul>
         )}
       </div>
-      <div className="fixed inset-x-0 bottom-0 border-t border-line bg-[var(--bg)]/95 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 bg-[var(--bg)]/90 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur">
         <div className="mx-auto max-w-xl">
           <Button className="w-full" onClick={onStart}>
             Start the exercises
@@ -138,13 +140,15 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
 function DoneScreen({ result, onHome, onRetry }: { result: LessonResult; onHome: () => void; onRetry: () => void }) {
   const acc = result.total ? Math.round((result.correct / result.total) * 100) : 0
   const minutes = Math.max(1, Math.round(result.durationMs / 60000))
+  const cheer = CHEERS[result.xp % CHEERS.length]!
   return (
-    <div className="mx-auto flex min-h-full max-w-xl flex-col items-center justify-center px-6 text-center">
-      <div className={`animate-pop flex h-28 w-28 items-center justify-center rounded-full ${result.completed ? 'bg-gold-300 text-gold-600 shadow-[0_0_0_12px_var(--color-gold-100)]' : 'bg-bad-100 text-bad-600'}`}>
-        <IconTrophy width={56} height={56} />
+    <div className="animate-rise mx-auto flex min-h-full max-w-xl flex-col items-center justify-center px-6 text-center">
+      {result.completed && <Confetti />}
+      <div className={`animate-pop flex h-32 w-32 items-center justify-center rounded-[2.5rem] text-white ${result.completed ? 'bg-sunset-gradient shadow-float' : 'bg-bad-100 text-bad-600'}`}>
+        {result.completed ? <span className="text-6xl" aria-hidden="true">{result.wrong === 0 ? '🏆' : '🎉'}</span> : <IconTrophy width={56} height={56} />}
       </div>
-      <h1 className="mt-6 text-4xl">{result.completed ? '¡Lección completada!' : 'Out of hearts'}</h1>
-      <p className="mt-1 text-muted">{result.completed ? (result.wrong === 0 ? 'Perfect lesson. Bonus XP!' : 'Missed items go to your review queue.') : 'No problem — try again. Everything you practised is saved.'}</p>
+      <h1 className="text-gradient mt-6 text-4xl">{result.completed ? cheer.es : 'Out of hearts'}</h1>
+      <p className="mt-1 font-semibold text-muted">{result.completed ? `${cheer.en} ${result.wrong === 0 ? 'A perfect lesson, bonus XP!' : 'Missed items go to your review queue.'}` : 'No problem, try again. Everything you practised is saved.'}</p>
       <div className="mt-6 grid w-full grid-cols-3 gap-2">
         <Stat label="XP" value={`+${result.xp}`} tone="gold" />
         <Stat label="Accuracy" value={`${acc}%`} tone="ok" />
