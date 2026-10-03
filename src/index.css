@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-200: #fed7aa;
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+  --color-brand-800: #9a3412;
+  --color-brand-900: #7c2d12;
+
+  --color-ok-100: #dcfce7;
+  --color-ok-500: #22c55e;
+  --color-ok-600: #16a34a;
+  --color-ok-700: #15803d;
+
+  --color-bad-100: #fee2e2;
+  --color-bad-500: #ef4444;
+  --color-bad-600: #dc2626;
+  --color-bad-700: #b91c1c;
+
+  --color-gold-300: #fcd34d;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+
+  --shadow-tile: 0 3px 0 0 var(--color-stone-300);
+  --shadow-tile-pressed: 0 0 0 0 var(--color-stone-300);
+}
+
+:root {
+  --bg: var(--color-stone-50);
+  --surface: #ffffff;
+  --surface-2: var(--color-stone-100);
+  --text: var(--color-stone-900);
+  --muted: var(--color-stone-500);
+  --line: var(--color-stone-200);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --surface-2: #292524;
+    --text: var(--color-stone-100);
+    --muted: var(--color-stone-400);
+    --line: var(--color-stone-700);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c0a09;
+  --surface: #1c1917;
+  --surface-2: #292524;
+  --text: var(--color-stone-100);
+  --muted: var(--color-stone-400);
+  --line: var(--color-stone-700);
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+@utility bg-surface { background-color: var(--surface); }
+@utility bg-surface-2 { background-color: var(--surface-2); }
+@utility text-muted { color: var(--muted); }
+@utility border-line { border-color: var(--line); }
+
+.tile {
+  @apply rounded-2xl border-2 border-line bg-surface px-4 py-3 text-left font-medium transition active:translate-y-[2px] select-none;
+  box-shadow: var(--shadow-tile);
+}
+.tile:active { box-shadow: var(--shadow-tile-pressed); }
+.tile[aria-pressed="true"], .tile.selected { @apply border-sky-500 bg-sky-500/10; }
+.tile.correct { @apply border-ok-500 bg-ok-100 text-ok-700; }
+.tile.wrong { @apply border-bad-500 bg-bad-100 text-bad-700; }
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-bold uppercase tracking-wide text-sm transition active:translate-y-[2px] disabled:opacity-40 disabled:pointer-events-none select-none;
+}
+.btn-primary { @apply bg-brand-600 text-white; box-shadow: 0 4px 0 0 var(--color-brand-800); }
+.btn-primary:active { box-shadow: none; }
+.btn-ok { @apply bg-ok-500 text-white; box-shadow: 0 4px 0 0 var(--color-ok-700); }
+.btn-ok:active { box-shadow: none; }
+.btn-bad { @apply bg-bad-500 text-white; box-shadow: 0 4px 0 0 var(--color-bad-700); }
+.btn-bad:active { box-shadow: none; }
+.btn-ghost { @apply border-2 border-line bg-surface text-muted; box-shadow: var(--shadow-tile); }
+.btn-ghost:active { box-shadow: none; }
+
+.card { @apply rounded-2xl border-2 border-line bg-surface p-4; }
+
+.prose-note h3 { @apply mt-4 mb-1 text-base font-bold; }
+.prose-note p { @apply my-2 leading-relaxed; }
+.prose-note ul { @apply my-2 list-disc pl-5 space-y-1; }
+.prose-note table { @apply my-3 w-full text-sm border-collapse; }
+.prose-note th, .prose-note td { @apply border border-line px-2 py-1 text-left; }
+.prose-note code { @apply rounded bg-surface-2 px-1 py-0.5 font-mono text-[0.9em]; }
+.prose-note strong { @apply font-bold; }
+.prose-note em { @apply italic text-brand-700; }
+
+@keyframes pop { 0% { transform: scale(0.96); } 60% { transform: scale(1.03); } 100% { transform: scale(1); } }
+.animate-pop { animation: pop 180ms ease-out; }
+@keyframes slide-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.animate-slide-up { animation: slide-up 200ms ease-out; }

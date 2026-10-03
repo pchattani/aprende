@@ -1,0 +1,327 @@
+# The whole journey, A1 -> C2. Each unit lists the grammar points it teaches
+# (ids resolve to notes in grammar/<level>.yaml) and CEFR can-do statements.
+# `authored: true` means units/<level>/<unit>.yaml exists with lessons.
+levels:
+  - id: a1
+    title: A1
+    name: Breakthrough
+    description: Understand and use everyday expressions and very basic phrases. Introduce yourself, ask and answer simple personal questions, interact simply when the other person speaks slowly.
+    wordTarget: 700
+    canDo:
+      - Greet people, introduce myself and others, say where I am from.
+      - Talk about my family, my home and my daily routine in the present.
+      - Order food and drink, shop for basics, ask prices and tell the time.
+      - Ask for and give simple directions.
+      - Understand short, simple texts and slow, clear speech on familiar topics.
+    units:
+      - id: a1.u01
+        title: Saludos y presentaciones
+        subtitle: Greetings and introductions
+        authored: true
+        canDo: [Greet and say goodbye formally and informally., Introduce myself and ask someone their name.]
+        grammar: [g.greetings, g.subject-pronouns, g.ser-present, g.llamarse, g.tu-vs-usted]
+      - id: a1.u02
+        title: Gente y países
+        subtitle: People and countries
+        authored: true
+        canDo: [Say where I and others are from., Describe people with basic adjectives.]
+        grammar: [g.gender-nouns, g.articles-definite, g.adjective-agreement, g.ser-origin, g.negation]
+      - id: a1.u03
+        title: La familia
+        subtitle: Family
+        authored: true
+        canDo: [Talk about my family and ages., Count to one hundred.]
+        grammar: [g.possessives, g.plural-nouns, g.tener-present, g.numbers-1-100, g.question-words]
+      - id: a1.u04
+        title: Mi casa y mi ciudad
+        subtitle: My home and my town
+        authored: true
+        canDo: [Describe my home and say where things are., Say what there is in my neighbourhood.]
+        grammar: [g.hay, g.estar-location, g.articles-indefinite, g.prepositions-place, g.demonstratives]
+      - id: a1.u05
+        title: Comida y bebida
+        subtitle: Food and drink
+        authored: true
+        canDo: [Order in a café or restaurant., Say what I like and dislike.]
+        grammar: [g.regular-ar-present, g.querer-present, g.gustar, g.quantity-words]
+      - id: a1.u06
+        title: La rutina diaria
+        subtitle: Daily routine
+        authored: true
+        canDo: [Describe my daily routine and tell the time., Say how often I do things.]
+        grammar: [g.regular-er-ir-present, g.reflexive-verbs-present, g.time-telling, g.days-months, g.frequency-adverbs]
+      - id: a1.u07
+        title: Describir personas
+        subtitle: Describing people
+        authored: true
+        canDo: [Describe appearance and character., Say how someone feels right now.]
+        grammar: [g.ser-vs-estar-basics, g.adjectives-position, g.tener-expressions, g.colors, g.muy-bastante-poco]
+      - id: a1.u08
+        title: De compras
+        subtitle: Shopping
+        authored: true
+        canDo: [Buy clothes and food, ask for prices and sizes., Count to a thousand and talk about money.]
+        grammar: [g.numbers-100-1000, g.costar-cuanto, g.demonstratives-usage, g.direct-object-intro, g.este-ese-aquel]
+      - id: a1.u09
+        title: Ir, hacer, poder
+        subtitle: Going, doing, being able
+        authored: true
+        canDo: [Say where I am going and what I am going to do., Make simple requests and ask permission.]
+        grammar: [g.ir-present, g.ir-a-infinitive, g.hacer-present, g.al-del-contractions, g.poder-present]
+      - id: a1.u10
+        title: Tiempo libre y el tiempo
+        subtitle: Free time and the weather
+        authored: true
+        canDo: [Talk about hobbies, sports and the weather., Say what I know and whom I know.]
+        grammar: [g.weather, g.stem-changing-present, g.gustar-plural, g.saber-vs-conocer, g.jugar-tocar]
+      - id: a1.u11
+        title: En la ciudad
+        subtitle: Around town
+        authored: true
+        canDo: [Ask for and give directions., Say what I am doing right now and what I have to do.]
+        grammar: [g.estar-gerund, g.directions-imperative, g.tener-que, g.hay-que, g.prepositions-movement]
+      - id: a1.u12
+        title: Planes y repaso
+        subtitle: Plans and review
+        authored: true
+        canDo: [Talk about plans for the near future., Connect ideas in short texts.]
+        grammar: [g.ir-a-future, g.connectors-basic, g.present-review, g.tambien-tampoco]
+
+  - id: a2
+    title: A2
+    name: Waystage
+    description: Understand sentences and frequent expressions related to areas of immediate relevance. Communicate in simple, routine tasks. Describe your background, surroundings and immediate needs, and narrate past events.
+    wordTarget: 1500
+    canDo:
+      - Narrate past events and tell short stories, distinguishing completed actions from background.
+      - Talk about plans, make predictions and give instructions.
+      - Compare things, give opinions and make polite requests.
+      - Handle shopping, travel, health and daily services in simple exchanges.
+      - Read short articles and personal messages; follow slow conversations.
+    units:
+      - id: a2.u01
+        title: Ayer
+        subtitle: Yesterday - the preterite
+        authored: true
+        canDo: [Say what I did yesterday and last weekend., Use past time expressions.]
+        grammar: [g.preterite-regular, g.time-markers-past, g.preterite-spelling-changes]
+      - id: a2.u02
+        title: Biografías
+        subtitle: Biographies - irregular preterite
+        authored: true
+        canDo: [Tell the main events of someone's life., Ask what happened.]
+        grammar: [g.preterite-irregular, g.preterite-ser-ir, g.preterite-stem-changing]
+      - id: a2.u03
+        title: Cuando era niño
+        subtitle: When I was a child - the imperfect
+        authored: true
+        canDo: [Describe habits and situations in the past., Describe how things used to be.]
+        grammar: [g.imperfect, g.imperfect-uses, g.soler]
+      - id: a2.u04
+        title: Contar historias
+        subtitle: Telling stories
+        authored: true
+        canDo: [Tell an anecdote combining events and background., Use time connectors.]
+        grammar: [g.preterite-vs-imperfect, g.narration-connectors, g.mientras-cuando]
+      - id: a2.u05
+        title: ¿Qué has hecho hoy?
+        subtitle: Present perfect
+        authored: true
+        canDo: [Talk about recent events and experiences., Say what I have already done and not yet done.]
+        grammar: [g.present-perfect, g.participles-irregular, g.ya-todavia, g.perfect-vs-preterite]
+      - id: a2.u06
+        title: Pronombres
+        subtitle: Object pronouns
+        authored: true
+        canDo: [Avoid repeating nouns using lo, la, le., Say who gives what to whom.]
+        grammar: [g.direct-object-pronouns, g.indirect-object-pronouns, g.double-object-pronouns, g.pronoun-placement]
+      - id: a2.u07
+        title: El futuro
+        subtitle: Future
+        authored: true
+        canDo: [Make predictions and promises., Talk about conditions with si.]
+        grammar: [g.future-simple, g.future-irregular, g.future-probability, g.si-present-future]
+      - id: a2.u08
+        title: Comparar y opinar
+        subtitle: Comparing and opinions
+        authored: true
+        canDo: [Compare people, places and things., Express and justify opinions simply.]
+        grammar: [g.comparatives, g.superlatives, g.muy-vs-mucho, g.opinions]
+      - id: a2.u09
+        title: Instrucciones
+        subtitle: Instructions - the imperative
+        authored: true
+        canDo: [Give instructions, directions and recipes., Tell someone politely what to do.]
+        grammar: [g.imperative-tu, g.imperative-usted, g.imperative-vosotros, g.imperative-pronouns]
+      - id: a2.u10
+        title: Por, para y otras preposiciones
+        subtitle: Prepositions
+        authored: true
+        canDo: [Explain cause and purpose., Say since when and for how long.]
+        grammar: [g.por-vs-para, g.prepositions-verbs, g.desde-hace, g.a-personal]
+      - id: a2.u11
+        title: Salud y cuerpo
+        subtitle: Health and body
+        authored: true
+        canDo: [Describe symptoms and ask for help at a pharmacy or doctor., Make polite requests with the conditional.]
+        grammar: [g.doler, g.conditional-simple, g.conditional-courtesy, g.deber-tener-que]
+      - id: a2.u12
+        title: Viajes y experiencias
+        subtitle: Travel and experiences
+        authored: true
+        canDo: [Talk about trips and what was happening., Use indefinite words like someone, nothing, never.]
+        grammar: [g.estar-gerund-past, g.acabar-de, g.volver-a, g.indefinite-pronouns, g.a2-review]
+
+  - id: b1
+    title: B1
+    name: Threshold
+    description: Deal with most situations while travelling. Produce connected text on familiar topics. Describe experiences, events, dreams and ambitions, and give reasons and explanations for opinions and plans.
+    wordTarget: 3000
+    canDo:
+      - Express wishes, emotions, doubts and advice using the subjunctive.
+      - Narrate complex past sequences and report what others said.
+      - Describe things with relative clauses and impersonal constructions.
+      - Write structured messages and short essays with connectors.
+      - Follow the main points of standard speech and read straightforward texts.
+    units:
+      - id: b1.u01
+        title: El subjuntivo - deseos
+        subtitle: Subjunctive - wishes
+        authored: true
+        canDo: [Express wishes and hopes for myself and others., Form the present subjunctive of regular and irregular verbs.]
+        grammar: [g.subjunctive-present-forms, g.subjunctive-wishes, g.subjunctive-irregular]
+      - id: b1.u02
+        title: Emociones y valoraciones
+        subtitle: Emotions and judgements
+        authored: true
+        canDo: [React to news with emotion., Judge situations with impersonal expressions.]
+        grammar: [g.subjunctive-emotion, g.subjunctive-impersonal, g.subjunctive-vs-infinitive]
+      - id: b1.u03
+        title: Dudas y opiniones
+        subtitle: Doubt and opinion
+        authored: true
+        canDo: [Express certainty, doubt and probability., Disagree politely.]
+        grammar: [g.subjunctive-doubt, g.creer-no-creer, g.quizas-tal-vez]
+      - id: b1.u04
+        title: Consejos y mandatos
+        subtitle: Advice and commands
+        authored: true
+        canDo: [Give advice and recommendations., Tell someone what not to do.]
+        grammar: [g.imperative-negative, g.subjunctive-advice, g.indirect-commands]
+      - id: b1.u05
+        title: Cuando tenga tiempo
+        subtitle: Future time and purpose clauses
+        authored: true
+        canDo: [Talk about future plans with time clauses., Explain purpose and real conditions.]
+        grammar: [g.subjunctive-time-clauses, g.subjunctive-purpose, g.si-clauses-real]
+      - id: b1.u06
+        title: Antes de que llegaras
+        subtitle: Past perfect and sequence
+        authored: true
+        canDo: [Order past events relative to each other., Tell a story with background and prior events.]
+        grammar: [g.pluperfect, g.sequence-of-past, g.antes-despues-de]
+      - id: b1.u07
+        title: Oraciones de relativo
+        subtitle: Relative clauses
+        authored: true
+        canDo: [Define and describe people, places and things., Describe what I am looking for.]
+        grammar: [g.relative-que-quien, g.relative-donde-cuyo, g.relative-subjunctive]
+      - id: b1.u08
+        title: Se y la voz pasiva
+        subtitle: Se and the passive
+        authored: true
+        canDo: [Describe processes and general rules impersonally., Talk about accidents and unplanned events.]
+        grammar: [g.se-impersonal, g.se-passive, g.passive-ser, g.se-accidental]
+      - id: b1.u09
+        title: Estilo indirecto
+        subtitle: Reported speech
+        authored: true
+        canDo: [Report what someone said or asked., Pass on messages.]
+        grammar: [g.reported-speech-present, g.reported-speech-past, g.reported-questions]
+      - id: b1.u10
+        title: Probabilidad e hipótesis
+        subtitle: Probability and hypothesis
+        authored: true
+        canDo: [Speculate about the present and the past., Say what I would do.]
+        grammar: [g.future-conditional-probability, g.deber-de, g.conditional-hypothetical]
+      - id: b1.u11
+        title: Conectores y textos
+        subtitle: Connectors and texts
+        authored: true
+        canDo: [Write a structured opinion text., Write a formal email or letter.]
+        grammar: [g.connectors-cause-consequence, g.connectors-contrast, g.connectors-order, g.formal-letters]
+      - id: b1.u12
+        title: Ser, estar y perífrasis
+        subtitle: Ser/estar and verbal periphrases
+        authored: true
+        canDo: [Use ser and estar with changing meanings., Describe ongoing, continuing and interrupted actions.]
+        grammar: [g.ser-estar-advanced, g.verbal-periphrases, g.b1-review]
+
+  - id: b2
+    title: B2
+    name: Vantage
+    description: Understand the main ideas of complex text, including technical discussion in your field. Interact with fluency and spontaneity with native speakers. Produce clear, detailed text on a wide range of subjects and argue a viewpoint.
+    wordTarget: 5000
+    canDo:
+      - Express unreal and past hypotheses, regrets and concessions.
+      - Argue a position in writing with cohesion and appropriate register.
+      - Understand films and news in standard varieties; follow extended speech.
+      - Use collocations and idiomatic expressions naturally.
+      - Recognise the main varieties of Spanish and switch register.
+    units:
+      - { id: b2.u01, title: Si tuviera tiempo, subtitle: Imperfect subjunctive and unreal conditions, canDo: [Talk about unreal situations and their consequences., Compare with como si.], grammar: [g.subjunctive-imperfect, g.si-clauses-unreal, g.como-si] }
+      - { id: b2.u02, title: Pasados del subjuntivo, subtitle: Perfect and past perfect subjunctive, canDo: [Express doubts and emotions about past events., Build past unreal conditions.], grammar: [g.subjunctive-perfect, g.subjunctive-pluperfect, g.si-clauses-past] }
+      - { id: b2.u03, title: Lamentos y reproches, subtitle: Conditional perfect and regret, canDo: [Express regret and what should have happened., Reproach politely.], grammar: [g.conditional-perfect, g.ojala-pluperfect, g.deber-haber] }
+      - { id: b2.u04, title: Aunque llueva, subtitle: Concession and contrast, canDo: [Concede points in an argument., Contrast ideas with nuance.], grammar: [g.aunque-indicative-subjunctive, g.por-mucho-que, g.a-pesar-de] }
+      - { id: b2.u05, title: Hasta que termine, subtitle: Advanced time and purpose clauses, canDo: [Sequence future and habitual events precisely., Express purpose and consequence formally.], grammar: [g.temporal-clauses-advanced, g.purpose-clauses-advanced, g.hasta-que] }
+      - { id: b2.u06, title: Me dijo que viniera, subtitle: Advanced reported speech, canDo: [Report commands, requests and wishes., Report with full tense shifts.], grammar: [g.reported-speech-subjunctive, g.reported-commands] }
+      - { id: b2.u07, title: Se construyó en 1900, subtitle: Passive and impersonal language, canDo: [Describe processes and institutions formally., Write in an objective style.], grammar: [g.passive-advanced, g.impersonal-expressions, g.nominalization] }
+      - { id: b2.u08, title: Sigo aprendiendo, subtitle: Verbal periphrases, canDo: [Express aspect and modality precisely., Describe gradual change and repetition.], grammar: [g.periphrases-aspect, g.periphrases-modal, g.ir-venir-andar-gerund] }
+      - { id: b2.u09, title: Colocaciones y registro, subtitle: Collocations and register, canDo: [Choose the natural word combination., Shift between colloquial and formal register.], grammar: [g.collocations, g.register-formal-informal, g.diminutives-augmentatives] }
+      - { id: b2.u10, title: Argumentar, subtitle: Argumentation, canDo: [Structure an argumentative essay., Rebut and concede.], grammar: [g.argumentation-connectors, g.opinion-structures, g.essay-structure] }
+      - { id: b2.u11, title: Énfasis y pronombres, subtitle: Emphasis and pronoun redundancy, canDo: [Emphasise parts of a sentence., Use redundant pronouns like a native.], grammar: [g.pronoun-redundancy, g.emphatic-structures, g.neutral-lo] }
+      - { id: b2.u12, title: El español en el mundo, subtitle: Varieties of Spanish, canDo: [Recognise main regional features., Adapt pronouns and vocabulary to the region.], grammar: [g.varieties-overview, g.voseo, g.ustedes-vs-vosotros, g.b2-review] }
+
+  - id: c1
+    title: C1
+    name: Effective operational proficiency
+    description: Understand demanding, longer texts and implicit meaning. Express yourself fluently without obvious searching for expressions. Use language flexibly for social, academic and professional purposes with clear, well-structured, detailed text.
+    wordTarget: 8000
+    canDo:
+      - Use the subjunctive and complex subordination with nuance.
+      - Read literature and press with understanding of register, irony and allusion.
+      - Produce academic and professional texts with appropriate cohesion.
+      - Use idioms, proverbs and fixed expressions appropriately.
+      - Understand humour, implicit meaning and pragmatic intent.
+    units:
+      - { id: c1.u01, title: Matices del subjuntivo, subtitle: Subjunctive nuance, canDo: [Choose mood to shade meaning., Use the subjunctive in relative and noun clauses with subtlety.], grammar: [g.subjunctive-nuance, g.subjunctive-relative-advanced, g.el-hecho-de-que] }
+      - { id: c1.u02, title: Lenguaje jurídico y formal, subtitle: Legal and formal register, canDo: [Understand contracts and official texts., Recognise the future subjunctive.], grammar: [g.future-subjunctive, g.legal-register] }
+      - { id: c1.u03, title: Discurso y cohesión, subtitle: Discourse and cohesion, canDo: [Structure long texts with advanced markers., Keep reference clear across paragraphs.], grammar: [g.discourse-markers-advanced, g.anaphora-cohesion, g.text-types] }
+      - { id: c1.u04, title: Modismos y refranes, subtitle: Idioms and proverbs, canDo: [Understand and use frequent idioms., Use proverbs appropriately.], grammar: [g.idioms, g.proverbs, g.fixed-expressions] }
+      - { id: c1.u05, title: Español académico y profesional, subtitle: Academic and professional Spanish, canDo: [Write reports and abstracts., Give a structured presentation.], grammar: [g.academic-register, g.formal-reports, g.presentations] }
+      - { id: c1.u06, title: Sintaxis compleja, subtitle: Complex syntax, canDo: [Use long subordinated sentences with control., Use gerund and absolute constructions correctly.], grammar: [g.subordination-complex, g.gerund-uses-advanced, g.absolute-constructions] }
+      - { id: c1.u07, title: Humor, ironía y cortesía, subtitle: Pragmatics, canDo: [Understand irony and humour., Soften and intensify with politeness strategies.], grammar: [g.pragmatics, g.irony-humor, g.politeness-strategies] }
+      - { id: c1.u08, title: Literatura I, subtitle: Reading literature, canDo: [Read short stories and poems with understanding., Recognise literary tenses and devices.], grammar: [g.literary-language, g.narrative-tenses-literary, g.preterite-anterior] }
+      - { id: c1.u09, title: Medios y periodismo, subtitle: Media and journalism, canDo: [Read and summarise news critically., Understand headlines and quotations.], grammar: [g.journalistic-language, g.headlines, g.quotation] }
+      - { id: c1.u10, title: Léxico avanzado, subtitle: Advanced vocabulary, canDo: [Deduce meaning from word formation., Avoid advanced false friends.], grammar: [g.word-formation, g.prefixes-suffixes, g.false-friends-advanced, g.c1-review] }
+
+  - id: c2
+    title: C2
+    name: Mastery
+    description: Understand with ease virtually everything heard or read. Summarise information from different sources, reconstructing arguments coherently. Express yourself spontaneously, very fluently and precisely, differentiating finer shades of meaning even in complex situations.
+    wordTarget: 12000
+    canDo:
+      - Understand any variety and register, including dialect, slang and archaic forms.
+      - Read classic and contemporary literature with appreciation of style.
+      - Argue, persuade and translate with nuance and precision.
+      - Handle specialised registers in science, technology and administration.
+      - "Play with language: humour, wordplay, neologisms."
+    units:
+      - { id: c2.u01, title: Registro y dialecto, subtitle: Register and dialect, canDo: [Recognise social and regional varieties., Understand historical change in the language.], grammar: [g.sociolects, g.dialectal-grammar, g.historical-variation] }
+      - { id: c2.u02, title: Literatura II - Siglo de Oro, subtitle: Golden Age literature, canDo: [Read Cervantes, Quevedo and Lope with support., Recognise archaic forms and poetic syntax.], grammar: [g.golden-age-language, g.archaic-forms, g.poetic-syntax] }
+      - { id: c2.u03, title: Literatura III - siglos XIX y XX, subtitle: Modern literature, canDo: [Read Galdós, Unamuno and Machado., Analyse style and literary devices.], grammar: [g.realism-language, g.modern-literary-devices] }
+      - { id: c2.u04, title: Retórica y persuasión, subtitle: Rhetoric and persuasion, canDo: [Recognise and use rhetorical figures., Write persuasive speeches.], grammar: [g.rhetorical-figures, g.persuasion-structures] }
+      - { id: c2.u05, title: Traducción y matiz, subtitle: Translation and nuance, canDo: [Translate idiomatically in both directions., Handle untranslatable concepts.], grammar: [g.translation-nuance, g.untranslatables, g.calques] }
+      - { id: c2.u06, title: Lenguaje especializado, subtitle: Specialised registers, canDo: [Read scientific and technical texts., Handle bureaucratic language.], grammar: [g.scientific-register, g.technical-register, g.bureaucratic-language] }
+      - { id: c2.u07, title: Juegos de palabras, subtitle: Wordplay and creativity, canDo: [Understand puns, slang and neologisms., Be playful and creative in Spanish.], grammar: [g.wordplay, g.neologisms, g.slang] }
+      - { id: c2.u08, title: Dominio nativo, subtitle: Native mastery, canDo: [Sound native in rhythm, idiom and discourse., Review everything.], grammar: [g.native-fluency-markers, g.c2-review] }

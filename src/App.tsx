@@ -1,0 +1,95 @@
+import { lazy, Suspense, useEffect } from 'react'
+import { Routes, Route, NavLink, Outlet, useLocation } from 'react-router'
+import { useSettings, applyTheme } from './store/settings'
+import { IconHome, IconRepeat, IconBook, IconVerb, IconUser } from './components/ui/icons'
+
+const Path = lazy(() => import('./pages/Path'))
+const LessonPage = lazy(() => import('./pages/Lesson'))
+const Review = lazy(() => import('./pages/Review'))
+const Grammar = lazy(() => import('./pages/Grammar'))
+const Verbs = lazy(() => import('./pages/Verbs'))
+const Reader = lazy(() => import('./pages/Reader'))
+const Pronunciation = lazy(() => import('./pages/Pronunciation'))
+const Exam = lazy(() => import('./pages/Exam'))
+const Profile = lazy(() => import('./pages/Profile'))
+const Settings = lazy(() => import('./pages/Settings'))
+const Study = lazy(() => import('./pages/Study'))
+
+function Loading() {
+  return <div className="p-8 text-center text-muted">Loading…</div>
+}
+
+function Shell() {
+  const loc = useLocation()
+  const tabs = [
+    { to: '/', label: 'Learn', icon: IconHome },
+    { to: '/review', label: 'Review', icon: IconRepeat },
+    { to: '/reader', label: 'Read', icon: IconBook },
+    { to: '/study', label: 'Study', icon: IconVerb },
+    { to: '/profile', label: 'Me', icon: IconUser },
+  ]
+  return (
+    <div className="mx-auto min-h-full max-w-xl pb-[calc(4.5rem+env(safe-area-inset-bottom))]">
+      <main className="px-4 pt-[calc(0.75rem+env(safe-area-inset-top))]">
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <nav className="fixed inset-x-0 bottom-0 z-10 border-t-2 border-line bg-surface pb-[env(safe-area-inset-bottom)]" aria-label="Main">
+        <ul className="mx-auto flex max-w-xl justify-around">
+          {tabs.map((t) => {
+            const active = t.to === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/lesson') : loc.pathname.startsWith(t.to)
+            return (
+              <li key={t.to} className="flex-1">
+                <NavLink to={t.to} className={`flex flex-col items-center gap-0.5 py-2 text-[11px] font-bold ${active ? 'text-brand-600' : 'text-muted'}`} aria-current={active ? 'page' : undefined}>
+                  <t.icon width={24} height={24} className={active ? 'stroke-[2.5]' : ''} />
+                  {t.label}
+                </NavLink>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+    </div>
+  )
+}
+
+export default function App() {
+  const theme = useSettings((s) => s.theme)
+  useEffect(() => applyTheme(theme), [theme])
+  return (
+    <Routes>
+      <Route element={<Shell />}>
+        <Route index element={<Path />} />
+        <Route path="review" element={<Review />} />
+        <Route path="reader" element={<Reader />} />
+        <Route path="reader/:id" element={<Reader />} />
+        <Route path="study" element={<Study />} />
+        <Route path="grammar" element={<Grammar />} />
+        <Route path="grammar/:id" element={<Grammar />} />
+        <Route path="verbs" element={<Verbs />} />
+        <Route path="pronunciation" element={<Pronunciation />} />
+        <Route path="pronunciation/:id" element={<Pronunciation />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="settings" element={<Settings />} />
+      </Route>
+      <Route
+        path="lesson/:id"
+        element={
+          <Suspense fallback={<Loading />}>
+            <LessonPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="exam/:level"
+        element={
+          <Suspense fallback={<Loading />}>
+            <Exam />
+          </Suspense>
+        }
+      />
+      <Route path="*" element={<div className="p-8 text-center">Page not found.</div>} />
+    </Routes>
+  )
+}

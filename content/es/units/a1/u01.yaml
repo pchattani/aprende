@@ -1,0 +1,95 @@
+id: a1.u01
+title: Saludos y presentaciones
+lessons:
+  - id: a1.u01.l1
+    title: Hola y adiós
+    teach: [g.greetings]
+    tip: "Spanish greetings change with the time of day. ¡Hola! works any time."
+    vocab: [w.hola, w.adios, w.buenos-dias, w.buenas-tardes, w.buenas-noches, w.hasta-luego, w.hasta-manana, w.hasta-pronto, w.gracias, w.de-nada, w.por-favor, w.perdon, w.lo-siento, w.que-tal, w.bien, w.mal, w.muy, w.regular]
+    sentences:
+      - { es: "¡Hola! ¿Qué tal?", en: "Hi! How's it going?", altEn: ["Hello! How are you?"], grammar: [g.greetings], vocab: [w.hola, w.que-tal] }
+      - { es: "Buenos días.", en: "Good morning.", grammar: [g.greetings], vocab: [w.buenos-dias] }
+      - { es: "Buenas tardes, señora.", en: "Good afternoon, madam.", grammar: [g.greetings], vocab: [w.buenas-tardes, w.senora] }
+      - { es: "Buenas noches y hasta mañana.", en: "Good night and see you tomorrow.", grammar: [g.greetings], vocab: [w.buenas-noches, w.hasta-manana] }
+      - { es: "Muy bien, gracias.", en: "Very well, thank you.", altEn: ["Very good, thanks."], grammar: [g.greetings], vocab: [w.bien, w.gracias] }
+      - { es: "Regular. ¿Y tú?", en: "So-so. And you?", grammar: [g.greetings], vocab: [w.regular] }
+      - { es: "Adiós, hasta luego.", en: "Goodbye, see you later.", altEn: ["Bye, see you later."], grammar: [g.greetings], vocab: [w.adios, w.hasta-luego] }
+      - { es: "Gracias. — De nada.", en: "Thank you. — You're welcome.", grammar: [g.greetings], vocab: [w.gracias, w.de-nada] }
+      - { es: "Perdón, ¿qué tal?", en: "Sorry, how are you?", altEn: ["Excuse me, how's it going?"], grammar: [g.greetings], vocab: [w.perdon] }
+      - { es: "Lo siento mucho.", en: "I'm very sorry.", grammar: [g.greetings], vocab: [w.lo-siento] }
+      - { es: "Hasta pronto, por favor.", en: "See you soon, please.", grammar: [g.greetings], vocab: [w.hasta-pronto, w.por-favor] }
+      - { es: "Estoy mal hoy.", en: "I'm not well today.", altEn: ["I am bad today.", "I feel bad today."], grammar: [g.greetings], vocab: [w.mal, w.hoy] }
+  - id: a1.u01.l2
+    title: ¿Cómo te llamas?
+    teach: [g.llamarse, g.subject-pronouns]
+    vocab: [w.llamarse, w.nombre, w.apellido, w.senor, w.senora, w.senorita, w.como, w.que, w.quien, w.yo, w.tu, w.el, w.ella, w.encantado, w.mucho-gusto, w.igualmente]
+    sentences:
+      - { es: "¿Cómo te llamas?", en: "What's your name?", altEn: ["What is your name?"], grammar: [g.llamarse], vocab: [w.llamarse, w.como] }
+      - { es: "Me llamo Ana.", en: "My name is Ana.", altEn: ["I'm called Ana.", "I am Ana."], altEs: ["Yo me llamo Ana."], grammar: [g.llamarse], vocab: [w.llamarse], error: { wrong: "Me llamo es Ana.", explain: "After me llamo you say the name directly, without es.", grammar: g.llamarse } }
+      - { es: "Ella se llama Marta.", en: "Her name is Marta.", altEn: ["She is called Marta."], grammar: [g.llamarse, g.subject-pronouns], vocab: [w.ella, w.llamarse], transform: { instruction: "Change to 'he' with the name Pedro", answer: "Él se llama Pedro." } }
+      - { es: "¿Cómo se llama usted?", en: "What is your name? (formal)", altEn: ["What's your name?"], grammar: [g.llamarse, g.tu-vs-usted], vocab: [w.usted, w.llamarse] }
+      - { es: "Encantado, soy Carlos.", en: "Pleased to meet you, I'm Carlos.", altEn: ["Nice to meet you, I am Carlos."], grammar: [g.ser-present], vocab: [w.encantado] }
+      - { es: "Mucho gusto. — Igualmente.", en: "Nice to meet you. — Likewise.", grammar: [g.greetings], vocab: [w.mucho-gusto, w.igualmente] }
+      - { es: "¿Quién es ella?", en: "Who is she?", grammar: [g.question-words, g.subject-pronouns], vocab: [w.quien, w.ella] }
+      - { es: "Él es el señor García.", en: "He is Mr García.", grammar: [g.subject-pronouns], vocab: [w.el, w.senor] }
+      - { es: "Mi nombre es Lucía y mi apellido es López.", en: "My first name is Lucía and my surname is López.", grammar: [g.ser-present], vocab: [w.nombre, w.apellido] }
+      - { es: "¿Qué tal, señorita?", en: "How are you, miss?", grammar: [g.greetings], vocab: [w.senorita, w.que-tal] }
+      - { es: "Yo soy Ana y tú eres Pedro.", en: "I am Ana and you are Pedro.", grammar: [g.subject-pronouns, g.ser-present], vocab: [w.yo, w.tu] }
+      - { es: "¿Cómo se llama la señora?", en: "What is the lady's name?", altEn: ["What is the lady called?"], grammar: [g.llamarse], vocab: [w.senora] }
+  - id: a1.u01.l3
+    title: Soy, eres, es
+    teach: [g.ser-present]
+    tip: "ser = to be. Spanish usually drops the subject pronoun: soy Ana, not yo soy Ana."
+    vocab: [w.ser, w.usted, w.nosotros, w.vosotros, w.ellos, w.ustedes, w.amigo, w.estar, w.si, w.no, w.y, w.o, w.tambien, w.bienvenido]
+    sentences:
+      - { es: "Soy estudiante.", en: "I am a student.", altEs: ["Yo soy estudiante."], altEn: ["I'm a student."], grammar: [g.ser-present], vocab: [w.ser, w.estudiante] }
+      - { es: "¿Eres Pedro?", en: "Are you Pedro?", altEs: ["¿Tú eres Pedro?"], grammar: [g.ser-present], vocab: [w.ser] }
+      - { es: "Sí, soy Pedro.", en: "Yes, I am Pedro.", altEn: ["Yes, I'm Pedro."], grammar: [g.ser-present], vocab: [w.si] }
+      - { es: "No, no soy Pedro.", en: "No, I am not Pedro.", altEn: ["No, I'm not Pedro."], grammar: [g.ser-present, g.negation], vocab: [w.no] }
+      - { es: "Ana es mi amiga.", en: "Ana is my friend.", grammar: [g.ser-present], vocab: [w.amigo, w.mi] }
+      - { es: "Somos amigos.", en: "We are friends.", altEs: ["Nosotros somos amigos."], altEn: ["We're friends."], grammar: [g.ser-present, g.subject-pronouns], vocab: [w.nosotros, w.amigo], transform: { instruction: "Change to 'they'", answer: "Son amigos.", alt: ["Ellos son amigos."] } }
+      - { es: "¿Vosotros sois estudiantes?", en: "Are you (all) students?", altEs: ["¿Sois estudiantes?"], grammar: [g.ser-present, g.subject-pronouns], vocab: [w.vosotros] }
+      - { es: "Ellos son profesores.", en: "They are teachers.", altEs: ["Son profesores."], grammar: [g.ser-present], vocab: [w.ellos, w.profesor] }
+      - { es: "Usted es muy amable.", en: "You are very kind. (formal)", altEn: ["You're very kind."], grammar: [g.ser-present, g.tu-vs-usted], vocab: [w.usted, w.muy] }
+      - { es: "¿Ustedes son de aquí?", en: "Are you (all) from here? (formal)", grammar: [g.ser-present, g.ser-origin], vocab: [w.ustedes, w.aqui] }
+      - { es: "Yo también soy estudiante.", en: "I am also a student.", altEn: ["I'm a student too."], grammar: [g.tambien-tampoco], vocab: [w.tambien] }
+      - { es: "¡Bienvenidos a España!", en: "Welcome to Spain!", grammar: [g.adjective-agreement], vocab: [w.bienvenido, w.espana] }
+      - { es: "¿Cómo estás? — Estoy bien.", en: "How are you? — I'm fine.", altEn: ["How are you? — I am well."], grammar: [g.estar-location], vocab: [w.estar, w.bien] }
+  - id: a1.u01.l4
+    title: Tú y usted
+    teach: [g.tu-vs-usted]
+    tip: "Use tú with friends and people your age; use usted with strangers, older people and in formal situations."
+    vocab: [w.aqui, w.hoy, w.manana, w.este.pron, w.pues, w.vale, w.claro]
+    sentences:
+      - { es: "¿Cómo está usted, señor López?", en: "How are you, Mr López? (formal)", grammar: [g.tu-vs-usted, g.estar-location], vocab: [w.usted, w.senor] }
+      - { es: "¿Cómo estás, Ana?", en: "How are you, Ana? (informal)", grammar: [g.tu-vs-usted], vocab: [w.estar], transform: { instruction: "Make it formal (usted)", answer: "¿Cómo está, Ana?", alt: ["¿Cómo está usted, Ana?"] } }
+      - { es: "Esta es mi amiga Marta.", en: "This is my friend Marta.", grammar: [g.demonstratives], vocab: [w.este.pron, w.amigo] }
+      - { es: "Este es el señor Ruiz.", en: "This is Mr Ruiz.", grammar: [g.demonstratives], vocab: [w.este.pron] }
+      - { es: "Hoy estoy muy bien.", en: "Today I am very well.", altEn: ["I'm very well today."], grammar: [g.estar-location], vocab: [w.hoy, w.bien] }
+      - { es: "Mañana no estoy aquí.", en: "Tomorrow I am not here.", altEn: ["I'm not here tomorrow."], grammar: [g.negation], vocab: [w.manana, w.aqui] }
+      - { es: "Pues, hasta mañana.", en: "Well, see you tomorrow.", grammar: [g.greetings], vocab: [w.pues] }
+      - { es: "Vale, hasta luego.", en: "OK, see you later.", altEn: ["All right, see you later."], grammar: [g.greetings], vocab: [w.vale] }
+      - { es: "¡Claro que sí!", en: "Of course!", altEn: ["Yes, of course!"], grammar: [g.greetings], vocab: [w.claro] }
+      - { es: "¿Usted es la profesora? — Sí, soy yo.", en: "Are you the teacher? — Yes, that's me.", altEn: ["Are you the teacher? — Yes, it's me."], grammar: [g.tu-vs-usted, g.ser-present], vocab: [w.usted, w.profesor] }
+      - { es: "Tú eres mi amigo y ella es mi amiga.", en: "You are my friend and she is my friend.", grammar: [g.adjective-agreement, g.ser-present], vocab: [w.amigo] }
+      - { es: "Buenas noches, señora. Hasta mañana.", en: "Good night, madam. See you tomorrow.", grammar: [g.greetings], vocab: [w.buenas-noches] }
+dialogues:
+  - id: a1.u01.d1
+    title: En la cafetería
+    context: Ana arrives at a café where Pedro, a colleague, is sitting.
+    lines:
+      - { speaker: Ana, es: "¡Hola! Buenos días.", en: "Hi! Good morning." }
+      - { speaker: Pedro, es: "Hola, ¿qué tal?", en: "Hi, how's it going?" }
+      - { speaker: Ana, es: "Muy bien, gracias. ¿Y tú?", en: "Very well, thanks. And you?" }
+      - { speaker: Pedro, es: "Regular. Perdón, ¿cómo te llamas?", en: "So-so. Sorry, what's your name?" }
+      - { speaker: Ana, es: "Me llamo Ana. Soy estudiante.", en: "My name is Ana. I'm a student." }
+      - { speaker: Pedro, es: "Encantado, Ana. Yo soy Pedro.", en: "Pleased to meet you, Ana. I'm Pedro." }
+      - { speaker: Ana, es: "Mucho gusto, Pedro.", en: "Nice to meet you, Pedro." }
+      - { speaker: Pedro, es: "Esta es mi amiga Marta.", en: "This is my friend Marta." }
+      - { speaker: Marta, es: "Hola, Ana. Bienvenida.", en: "Hi, Ana. Welcome." }
+      - { speaker: Ana, es: "Gracias. Pues, hasta luego.", en: "Thanks. Well, see you later." }
+      - { speaker: Pedro, es: "Adiós, Ana. ¡Hasta mañana!", en: "Bye, Ana. See you tomorrow!" }
+    questions:
+      - { q: "How is Pedro feeling?", options: ["Very well", "So-so", "Bad"], answer: 1 }
+      - { q: "What is Ana?", options: ["A teacher", "A student", "A waitress"], answer: 1 }
+      - { q: "Who is Marta?", options: ["Ana's sister", "Pedro's friend", "The teacher"], answer: 1 }

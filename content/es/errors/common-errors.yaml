@@ -1,0 +1,264 @@
+# Learner-error patterns for the writing checker. Patterns are JavaScript
+# regexes applied case-insensitively to the lowercased text. Keep them tight to
+# avoid false positives; each one points to the grammar note that explains it.
+rules:
+  - id: ser-age
+    pattern: '\b(soy|eres|es|somos|sois|son) (\d+|un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|veinte|treinta|cuarenta|cincuenta) años\b'
+    message: Age is expressed with tener, not ser.
+    grammar: g.tener-expressions
+    example: { wrong: soy veinte años, right: tengo veinte años }
+  - id: cuantos-anos-eres
+    pattern: '\bcuántos años (eres|es|tienes de edad)\b'
+    message: Ask age with tener.
+    grammar: g.tener-expressions
+    example: { wrong: ¿cuántos años eres?, right: ¿cuántos años tienes? }
+  - id: gustar-subject
+    pattern: '\b(yo|tú|él|ella|nosotros|vosotros|ellos|ellas) gust(o|as|a|amos|áis|an)\b'
+    message: With gustar the person who likes is an indirect object (me, te, le...), and the thing liked is the subject.
+    grammar: g.gustar
+    example: { wrong: yo gusto el café, right: me gusta el café }
+  - id: me-gusto
+    pattern: '\bme gusto\b'
+    message: Use gusta (singular thing) or gustan (plural); gusto means "I please".
+    grammar: g.gustar
+    example: { wrong: me gusto la música, right: me gusta la música }
+  - id: gustan-infinitive
+    pattern: '\b(me|te|le|nos|os|les) gustan (\w+ar|\w+er|\w+ir)\b'
+    message: An infinitive takes singular gusta.
+    grammar: g.gustar
+    example: { wrong: me gustan bailar, right: me gusta bailar }
+  - id: soy-estado
+    pattern: '\b(soy|eres|somos|sois) (bien|mal|cansad\w+|enferm\w+|content\w+|aburrid\w+|ocupad\w+|enfadad\w+|nervios\w+|preocupad\w+|triste|tristes|list\w+ para)\b'
+    message: Temporary states and feelings take estar, not ser.
+    grammar: g.ser-vs-estar-basics
+    example: { wrong: soy cansado, right: estoy cansado }
+  - id: soy-de-acuerdo
+    pattern: '\b(soy|eres|es|somos|sois|son) de acuerdo\b'
+    message: Agreement is estar de acuerdo.
+    grammar: g.ser-vs-estar-basics
+    example: { wrong: soy de acuerdo, right: estoy de acuerdo }
+  - id: estoy-acuerdo
+    pattern: '\b(estoy|estás|está|estamos|estáis|están) (en )?acuerdo\b'
+    message: The expression is estar de acuerdo.
+    grammar: g.ser-vs-estar-basics
+    example: { wrong: estoy acuerdo, right: estoy de acuerdo }
+  - id: weather-ser
+    pattern: '\b(hoy|ahora|aquí|hace)? ?(es|está) (mucho |muy )?(frío|calor|sol|viento) (hoy|ahora|aquí)\b|\b(hoy|ahora) (es|está) (mucho |muy )?(frío|calor|sol|viento)\b'
+    message: Weather uses hacer (hace frío, hace calor, hace sol).
+    grammar: g.weather
+    example: { wrong: hoy es frío, right: hoy hace frío }
+  - id: muy-mucho
+    pattern: '\bmuy much\w+\b'
+    message: muy cannot modify mucho; say muchísimo or mucho.
+    grammar: g.muy-vs-mucho
+    example: { wrong: muy mucho, right: muchísimo }
+  - id: mas-mejor
+    pattern: '\bmás (mejor|peor|mayor|menor)\b'
+    message: mejor/peor/mayor/menor are already comparatives; drop más.
+    grammar: g.comparatives
+    example: { wrong: más mejor, right: mejor }
+  - id: la-problema
+    pattern: '\b(la|una|esta|esa) (problema|sistema|programa|mapa|día|idioma|clima|tema|planeta|poema|drama|sofá)\b'
+    message: These nouns ending in -a (or día, sofá) are masculine.
+    grammar: g.gender-nouns
+    example: { wrong: la problema, right: el problema }
+  - id: el-mano
+    pattern: '\b(el|un|este|ese) (mano|foto|moto|radio)\b'
+    message: mano, foto, moto and radio are feminine despite ending in -o.
+    grammar: g.gender-nouns
+    example: { wrong: el mano, right: la mano }
+  - id: la-agua
+    pattern: '\b(la|una) (agua|aula|alma|hambre|águila|área|arma)\b'
+    message: Feminine nouns starting with a stressed a- take el/un in the singular (el agua, un aula) but stay feminine (el agua fría).
+    grammar: g.gender-nouns
+    example: { wrong: la agua, right: el agua }
+  - id: un-otro
+    pattern: '\b(un|una) otr[oa]\b'
+    message: otro never takes un/una.
+    grammar: g.articles-indefinite
+    example: { wrong: un otro café, right: otro café }
+  - id: gente-plural
+    pattern: '\bla gente (son|tienen|están|hablan|viven|quieren|dicen|piensan|van)\b'
+    message: gente is grammatically singular.
+    grammar: g.plural-nouns
+    example: { wrong: la gente son simpáticos, right: la gente es simpática }
+  - id: ir-sin-a
+    pattern: '\b(voy|vas|va|vamos|vais|van|iba|ibas|íbamos|iban) (ir|comer|hacer|ver|salir|estudiar|trabajar|comprar|visitar|viajar|dormir|beber|leer|escribir|hablar|jugar|cocinar|tomar|volver|venir|llegar|pagar|buscar|empezar)\b'
+    message: ir + a + infinitive — the a is required.
+    grammar: g.ir-a-infinitive
+    example: { wrong: voy comer, right: voy a comer }
+  - id: en-la-manana
+    pattern: '\ben la (mañana|tarde|noche)\b'
+    message: In Spain, parts of the day take por (por la mañana). en la mañana is common in Latin America.
+    grammar: g.time-telling
+    example: { wrong: en la mañana, right: por la mañana }
+  - id: pienso-de
+    pattern: '\b(pienso|piensas|piensa|pensamos|pensáis|piensan) de\b'
+    message: pensar en (think about) or pensar que (think that); pensar de only in "¿qué piensas de...?"
+    grammar: g.prepositions-verbs
+    example: { wrong: pienso de ti, right: pienso en ti }
+  - id: depende-en
+    pattern: '\bdepende (en|a)\b'
+    message: depender de.
+    grammar: g.prepositions-verbs
+    example: { wrong: depende en el tiempo, right: depende del tiempo }
+  - id: buscar-por
+    pattern: '\b(busco|buscas|busca|buscamos|buscáis|buscan|buscar|buscando|busqué|buscó) por\b'
+    message: buscar takes a direct object, no preposition.
+    grammar: g.prepositions-verbs
+    example: { wrong: busco por mis llaves, right: busco mis llaves }
+  - id: escuchar-a-musica
+    pattern: '\b(escucho|escuchas|escucha|escuchamos|escucháis|escuchan|escuchar) a (la|el|los|las) (música|radio|canción|canciones|podcast)\b'
+    message: escuchar takes a direct object; personal a is only for people.
+    grammar: g.a-personal
+    example: { wrong: escucho a la música, right: escucho la música }
+  - id: tengo-hambriento
+    pattern: '\b(soy|estoy|tengo) (hambriento|sediento|hambrienta|sedienta)\b'
+    message: Hunger and thirst use tener + noun.
+    grammar: g.tener-expressions
+    example: { wrong: estoy hambriento, right: tengo hambre }
+  - id: estoy-caliente
+    pattern: '\b(estoy|estás|estamos|estáis) (muy )?caliente\b'
+    message: Feeling hot is tener calor; estar caliente describes objects (or has a sexual sense).
+    grammar: g.tener-expressions
+    example: { wrong: estoy caliente, right: tengo calor }
+  - id: soy-aburrido
+    pattern: '\bsoy aburrid[oa]\b'
+    message: soy aburrido = I am boring. Being bored is estoy aburrido.
+    grammar: g.ser-vs-estar-basics
+    example: { wrong: soy aburrido, right: estoy aburrido }
+  - id: realizar-que
+    pattern: '\b(realizo|realicé|realizar|realiza|realizó) que\b'
+    message: realizar means to carry out. "To realise" is darse cuenta de que.
+    grammar: g.false-friends-advanced
+    example: { wrong: realicé que era tarde, right: me di cuenta de que era tarde }
+  - id: doble-negacion
+    pattern: '(?<!\bno )\b(veo|tengo|quiero|hay|como|sé|conozco|digo|hago|compro|entiendo) (nada|a nadie|nadie|nunca|ningún|ninguna)\b'
+    message: When nada/nadie/nunca follow the verb, no is required before it.
+    grammar: g.indefinite-pronouns
+    example: { wrong: tengo nada, right: no tengo nada }
+  - id: nadie-no
+    pattern: '\b(nadie|nunca|nada|jamás|tampoco) no\b'
+    message: When the negative word comes before the verb, drop no.
+    grammar: g.indefinite-pronouns
+    example: { wrong: nadie no vino, right: nadie vino }
+  - id: a-el
+    pattern: '\ba el\b'
+    message: a + el contracts to al.
+    grammar: g.al-del-contractions
+    example: { wrong: voy a el cine, right: voy al cine }
+  - id: de-el
+    pattern: '\bde el\b'
+    message: de + el contracts to del.
+    grammar: g.al-del-contractions
+    example: { wrong: la casa de el profesor, right: la casa del profesor }
+  - id: porque-pregunta
+    pattern: '\bporque [^.?!]*\?'
+    message: In a question, "why" is written as two words with an accent, ¿por qué?
+    grammar: g.question-words
+    example: { wrong: ¿porque estudias?, right: ¿por qué estudias? }
+  - id: hay-definido
+    pattern: '\bhay (el|la|los|las|mi|tu|su|mis|tus|sus) \w+'
+    message: hay introduces new, indefinite things (hay un banco). For known things use estar (el banco está...).
+    grammar: g.hay
+    example: { wrong: hay el banco en la plaza, right: el banco está en la plaza }
+  - id: esta-indefinido
+    pattern: '\b(aquí|allí|ahí|cerca)? ?(está|están) (un|una|unos|unas) \w+ (en|cerca|aquí|allí)\b'
+    message: To say that something exists or is present, use hay (hay una farmacia cerca).
+    grammar: g.hay
+    example: { wrong: está una farmacia cerca, right: hay una farmacia cerca }
+  - id: conocer-que
+    pattern: '\b(conozco|conoces|conoce|conocemos|conocéis|conocen) (que|dónde|cómo|cuándo|si)\b'
+    message: Facts and information use saber; conocer is for people, places and things.
+    grammar: g.saber-vs-conocer
+    example: { wrong: conozco que es tarde, right: sé que es tarde }
+  - id: pedir-por
+    pattern: '\b(pido|pides|pide|pedimos|pedís|piden|pedir|pedí|pidió) por (un|una|el|la|los|las)\b'
+    message: pedir takes a direct object (pedir un café). pedir por alguien = pray for someone.
+    grammar: g.prepositions-verbs
+    example: { wrong: pido por un café, right: pido un café }
+  - id: casarse-a
+    pattern: '\b(casarse|casarme|casarte|me caso|se casó|se casa|casado|casada) a\b'
+    message: casarse con.
+    grammar: g.prepositions-verbs
+    example: { wrong: se casó a Ana, right: se casó con Ana }
+  - id: sonar-de
+    pattern: '\b(sueño|sueñas|sueña|soñamos|soñáis|sueñan|soñar|soñé|soñó) de\b'
+    message: soñar con.
+    grammar: g.prepositions-verbs
+    example: { wrong: sueño de ti, right: sueño contigo }
+  - id: consiste-de
+    pattern: '\bconsist(e|en|ir|ía) de\b'
+    message: consistir en.
+    grammar: g.prepositions-verbs
+    example: { wrong: consiste de tres partes, right: consiste en tres partes }
+  - id: responsable-para
+    pattern: '\bresponsable para\b'
+    message: responsable de.
+    grammar: g.prepositions-verbs
+    example: { wrong: responsable para el proyecto, right: responsable del proyecto }
+  - id: estoy-tarde
+    pattern: '\b(estoy|estás|estamos|estáis|están) tarde\b'
+    message: Being late is llegar tarde (llego tarde). es tarde = it is late.
+    grammar: g.ser-vs-estar-basics
+    example: { wrong: estoy tarde, right: llego tarde }
+  - id: siempre-no
+    pattern: '\bsiempre no\b'
+    message: never is nunca.
+    grammar: g.frequency-adverbs
+    example: { wrong: siempre no como carne, right: nunca como carne }
+  - id: jugar-sin-al
+    pattern: '\b(juego|juegas|juega|jugamos|jugáis|juegan|jugar|jugaba|jugué|jugó) (fútbol|tenis|baloncesto|cartas|ajedrez|golf)\b'
+    message: In Spain, jugar a + article (jugar al fútbol, jugar a las cartas). Latin America often drops the a.
+    grammar: g.jugar-tocar
+    example: { wrong: juego fútbol, right: juego al fútbol }
+  - id: tocar-deporte
+    pattern: '\b(toco|tocas|toca|tocamos|tocáis|tocan|tocar) (al )?(fútbol|tenis|baloncesto|cartas)\b'
+    message: tocar is for instruments; sports take jugar.
+    grammar: g.jugar-tocar
+    example: { wrong: toco fútbol, right: juego al fútbol }
+  - id: jugar-instrumento
+    pattern: '\b(juego|juegas|juega|jugamos|jugáis|juegan|jugar) (a )?(la|el) (guitarra|piano|violín|batería|flauta)\b'
+    message: Instruments take tocar.
+    grammar: g.jugar-tocar
+    example: { wrong: juego la guitarra, right: toco la guitarra }
+  - id: me-llamo-es
+    pattern: '\bme llamo es\b'
+    message: me llamo + name (no es).
+    grammar: g.llamarse
+    example: { wrong: me llamo es Ana, right: me llamo Ana }
+  - id: es-necesario-de
+    pattern: '\bes (necesario|importante|posible|imposible|mejor|difícil|fácil) de (que|\w+ar|\w+er|\w+ir)\b'
+    message: es necesario/importante + infinitive or + que, without de.
+    grammar: g.subjunctive-impersonal
+    example: { wrong: es importante de estudiar, right: es importante estudiar }
+  - id: tener-que-sin-que
+    pattern: '\b(tengo|tienes|tiene|tenemos|tenéis|tienen) (ir|comer|hacer|estudiar|trabajar|salir|volver|comprar|dormir|hablar) '
+    message: Obligation is tener que + infinitive.
+    grammar: g.tener-que
+    example: { wrong: tengo ir, right: tengo que ir }
+  - id: estoy-de-pie-vs
+    pattern: '\b(soy|eres|es|somos|son) (en|aquí|allí|ahí) (casa|la casa|el trabajo|madrid|barcelona|clase|la oficina)\b'
+    message: Location takes estar.
+    grammar: g.estar-location
+    example: { wrong: soy en casa, right: estoy en casa }
+  - id: anos-sin-tilde-y-ene
+    pattern: '\b(tengo|tienes|tiene|tenemos|tenéis|tienen|cumple|cumplo) \d+ anos\b'
+    message: Careful — año (year) needs the ñ; ano means anus.
+    grammar: g.alphabet-and-sounds
+    example: { wrong: tengo 20 anos, right: tengo 20 años }
+  - id: embarazada
+    pattern: '\b(estoy|está|estás) (muy )?embarazad[oa] (por|de) (esto|eso|la situación|lo que)\b'
+    message: embarazada means pregnant. Embarrassed is avergonzado/a or me da vergüenza.
+    grammar: g.false-friends-advanced
+    example: { wrong: estoy embarazada por eso, right: estoy avergonzada por eso }
+  - id: asistir-ayudar
+    pattern: '\b(asisto|asistes|asiste|asistir) a (mi|tu|su|la|el) (madre|padre|amigo|amiga|hermano|hermana|jefe|cliente)\b'
+    message: asistir a = to attend. To help someone is ayudar a.
+    grammar: g.false-friends-advanced
+    example: { wrong: asisto a mi madre, right: ayudo a mi madre }
+  - id: introducir-persona
+    pattern: '\b(te|le|os|les) (introduzco|introduce|introduzca) a\b'
+    message: Introducing people is presentar; introducir = to insert.
+    grammar: g.false-friends-advanced
+    example: { wrong: te introduzco a mi amigo, right: te presento a mi amigo }

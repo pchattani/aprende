@@ -1,0 +1,94 @@
+id: a1.u08
+title: De compras
+lessons:
+  - id: a1.u08.l1
+    title: Números grandes y precios
+    teach: [g.numbers-100-1000, g.costar-cuanto]
+    vocab: [w.doscientos, w.trescientos, w.cuatrocientos, w.quinientos, w.seiscientos, w.setecientos, w.ochocientos, w.novecientos, w.mil, w.millon, w.euro, w.centimo, w.dinero, w.precio, w.costar, w.valer]
+    sentences:
+      - { es: "¿Cuánto cuesta esta camisa? Cuesta treinta euros.", en: "How much is this shirt? It costs thirty euros.", grammar: [g.costar-cuanto], vocab: [w.costar, w.euro, w.camisa] }
+      - { es: "Los zapatos cuestan noventa y nueve euros.", en: "The shoes cost ninety-nine euros.", grammar: [g.costar-cuanto], vocab: [w.costar, w.zapato] }
+      - { es: "Doscientos, trescientos, cuatrocientos, quinientos.", en: "Two hundred, three hundred, four hundred, five hundred.", grammar: [g.numbers-100-1000], vocab: [w.doscientos, w.trescientos, w.cuatrocientos, w.quinientos], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Seiscientos, setecientos, ochocientos, novecientos, mil.", en: "Six hundred, seven hundred, eight hundred, nine hundred, one thousand.", grammar: [g.numbers-100-1000], vocab: [w.seiscientos, w.setecientos, w.ochocientos, w.novecientos, w.mil], kinds: [dictation, listen, typeEs, order] }
+      - { es: "El piso cuesta doscientos mil euros.", en: "The flat costs two hundred thousand euros.", grammar: [g.numbers-100-1000], vocab: [w.mil, w.piso] }
+      - { es: "Son quince euros con cincuenta céntimos.", en: "That's fifteen euros fifty.", grammar: [g.numbers-100-1000], vocab: [w.centimo, w.euro] }
+      - { es: "¿Cuánto es todo? Son cuarenta y dos euros.", en: "How much is everything? It's forty-two euros.", grammar: [g.costar-cuanto], vocab: [w.todo] }
+      - { es: "Hay quinientas personas en el concierto.", en: "There are five hundred people at the concert.", grammar: [g.numbers-100-1000], vocab: [w.quinientos, w.concierto] }
+      - { es: "El precio es muy alto.", en: "The price is very high.", grammar: [g.adjective-agreement], vocab: [w.precio, w.alto] }
+      - { es: "No tengo dinero.", en: "I don't have any money.", grammar: [g.negation], vocab: [w.dinero] }
+      - { es: "Esta casa vale un millón de euros.", en: "This house is worth a million euros.", grammar: [g.numbers-100-1000], vocab: [w.valer, w.millon] }
+      - { es: "Nací en mil novecientos noventa y cinco.", en: "I was born in 1995.", grammar: [g.numbers-100-1000], vocab: [w.mil, w.novecientos], kinds: [dictation, listen, typeEn, choiceEs] }
+      - { es: "Cuesta setecientos euros, es demasiado caro.", en: "It costs seven hundred euros, it's too expensive.", grammar: [g.muy-bastante-poco], vocab: [w.setecientos, w.caro], error: { wrong: "Cuesta sietecientos euros.", explain: "Seven hundred is setecientos.", grammar: g.numbers-100-1000 } }
+  - id: a1.u08.l2
+    title: La ropa
+    teach: [g.este-ese-aquel]
+    vocab: [w.ropa, w.camisa, w.camiseta, w.pantalones, w.vaqueros, w.falda, w.vestido, w.chaqueta, w.abrigo, w.jersey, w.zapato, w.bota, w.calcetines, w.sombrero, w.gorra, w.bolso, w.mochila, w.talla, w.probador, w.probarse, w.quedar]
+    sentences:
+      - { es: "¿Tiene esta camiseta en otra talla?", en: "Do you have this T-shirt in another size?", grammar: [g.este-ese-aquel], vocab: [w.camiseta, w.talla, w.otro] }
+      - { es: "Me gustan esos pantalones negros.", en: "I like those black trousers.", grammar: [g.demonstratives], vocab: [w.pantalones, w.negro] }
+      - { es: "¿Puedo probarme este vestido?", en: "Can I try on this dress?", grammar: [g.poder-present], vocab: [w.probarse, w.vestido] }
+      - { es: "Los probadores están al fondo, a la derecha.", en: "The fitting rooms are at the back, on the right.", grammar: [g.estar-location], vocab: [w.probador, w.derecha] }
+      - { es: "La falda me queda pequeña.", en: "The skirt is too small for me.", grammar: [g.este-ese-aquel], vocab: [w.falda, w.quedar] }
+      - { es: "Estos zapatos me quedan bien.", en: "These shoes fit me well.", grammar: [g.este-ese-aquel], vocab: [w.zapato, w.quedar] }
+      - { es: "En invierno llevo abrigo, jersey y botas.", en: "In winter I wear a coat, a jumper and boots.", grammar: [g.regular-ar-present], vocab: [w.abrigo, w.jersey, w.bota] }
+      - { es: "Necesito unos calcetines y unos vaqueros.", en: "I need some socks and some jeans.", grammar: [g.articles-indefinite], vocab: [w.calcetines, w.vaqueros, w.necesitar] }
+      - { es: "Mi hermano siempre lleva gorra.", en: "My brother always wears a cap.", grammar: [g.frequency-adverbs], vocab: [w.gorra, w.llevar] }
+      - { es: "¿Dónde está mi bolso? Está en la silla.", en: "Where is my handbag? It's on the chair.", grammar: [g.estar-location], vocab: [w.bolso, w.silla] }
+      - { es: "Esa chaqueta azul es muy elegante.", en: "That blue jacket is very elegant.", grammar: [g.demonstratives], vocab: [w.chaqueta, w.elegante] }
+      - { es: "Llevo una mochila al trabajo.", en: "I take a backpack to work.", grammar: [g.al-del-contractions], vocab: [w.mochila, w.llevar] }
+      - { es: "Un sombrero y una camisa blanca.", en: "A hat and a white shirt.", grammar: [g.articles-indefinite], vocab: [w.sombrero, w.camisa, w.blanco] }
+      - { es: "Aquella falda roja me queda bien.", en: "That red skirt over there fits me well.", grammar: [g.este-ese-aquel], vocab: [w.falda, w.rojo], transform: { instruction: "Change to plural: those boots (aquellas botas)", answer: "Aquellas botas rojas me quedan bien." } }
+  - id: a1.u08.l3
+    title: En la tienda
+    teach: [g.demonstratives-usage]
+    vocab: [w.tarjeta, w.efectivo, w.rebajas, w.oferta, w.regalo, w.dependiente, w.cliente, w.buscar, w.mirar, w.llevarse, w.preferir, w.barato.adv, w.solo, w.perfecto, w.elegante]
+    sentences:
+      - { es: "¿Puedo pagar con tarjeta?", en: "Can I pay by card?", grammar: [g.poder-present], vocab: [w.pagar, w.tarjeta] }
+      - { es: "Solo tengo efectivo.", en: "I only have cash.", grammar: [g.quantity-words], vocab: [w.solo, w.efectivo] }
+      - { es: "En enero hay rebajas en todas las tiendas.", en: "In January there are sales in all the shops.", grammar: [g.hay], vocab: [w.rebajas, w.tienda] }
+      - { es: "Esta camisa está en oferta.", en: "This shirt is on special offer.", grammar: [g.ser-vs-estar-basics], vocab: [w.oferta] }
+      - { es: "Busco un regalo para mi madre.", en: "I'm looking for a present for my mother.", grammar: [g.regular-ar-present], vocab: [w.buscar, w.regalo], error: { wrong: "Busco por un regalo para mi madre.", explain: "buscar takes no preposition: busco un regalo.", grammar: g.prepositions-verbs } }
+      - { es: "Solo estoy mirando, gracias.", en: "I'm just looking, thanks.", grammar: [g.estar-gerund], vocab: [w.mirar, w.solo] }
+      - { es: "¿Cuál prefieres, este o aquel?", en: "Which do you prefer, this one or that one?", grammar: [g.demonstratives-usage], vocab: [w.preferir, w.cual] }
+      - { es: "Prefiero esta, es más barata.", en: "I prefer this one, it's cheaper.", grammar: [g.demonstratives-usage], vocab: [w.preferir, w.barato] }
+      - { es: "Me lo llevo.", en: "I'll take it.", grammar: [g.direct-object-intro], vocab: [w.llevarse, w.lo] }
+      - { es: "La dependienta es muy amable.", en: "The shop assistant is very kind.", grammar: [g.adjective-agreement], vocab: [w.dependiente, w.amable] }
+      - { es: "El cliente quiere un sombrero elegante.", en: "The customer wants an elegant hat.", grammar: [g.querer-present], vocab: [w.cliente, w.elegante] }
+      - { es: "Perfecto, ¿me da un recibo, por favor?", en: "Perfect, can you give me a receipt, please?", grammar: [g.poder-present], vocab: [w.perfecto] }
+      - { es: "Esos son más caros que estos.", en: "Those are more expensive than these.", grammar: [g.demonstratives-usage], vocab: [w.caro, w.barato.adv] }
+  - id: a1.u08.l4
+    title: Lo, la, los, las
+    teach: [g.direct-object-intro]
+    vocab: [w.lo, w.algun, w.ningun]
+    sentences:
+      - { es: "¿Compras el pan? Sí, lo compro.", en: "Are you buying the bread? Yes, I'm buying it.", grammar: [g.direct-object-intro], vocab: [w.lo, w.comprar] }
+      - { es: "¿Tienes las llaves? Sí, las tengo.", en: "Do you have the keys? Yes, I have them.", grammar: [g.direct-object-intro], vocab: [w.llave] }
+      - { es: "No lo entiendo.", en: "I don't understand it.", grammar: [g.direct-object-intro], vocab: [w.lo] }
+      - { es: "¿Ves a María? Sí, la veo.", en: "Do you see María? Yes, I see her.", grammar: [g.direct-object-intro], vocab: [w.ver] }
+      - { es: "Quiero comprarlo mañana.", en: "I want to buy it tomorrow.", altEs: ["Lo quiero comprar mañana."], grammar: [g.direct-object-intro], vocab: [w.comprar] }
+      - { es: "¿Conoces a mis padres? Sí, los conozco.", en: "Do you know my parents? Yes, I know them.", grammar: [g.direct-object-intro, g.saber-vs-conocer], vocab: [w.conocer] }
+      - { es: "El vino lo compro yo.", en: "I'll buy the wine.", altEn: ["The wine, I'll buy it."], grammar: [g.direct-object-intro], vocab: [w.vino] }
+      - { es: "¿Hay alguna tienda abierta? No, no hay ninguna.", en: "Is there any shop open? No, there isn't any.", grammar: [g.quantity-words], vocab: [w.algun, w.ningun] }
+      - { es: "¿Tienes algún regalo para Ana? No, ninguno.", en: "Do you have any present for Ana? No, none.", grammar: [g.quantity-words], vocab: [w.algun, w.ningun] }
+      - { es: "Esta falda la quiero en rojo.", en: "This skirt, I want it in red.", grammar: [g.direct-object-intro], vocab: [w.falda, w.rojo] }
+      - { es: "No las necesito.", en: "I don't need them.", grammar: [g.direct-object-intro], vocab: [w.necesitar], transform: { instruction: "Change 'them' (feminine) to 'it' (masculine)", answer: "No lo necesito." } }
+      - { es: "Me gusta este jersey. ¿Lo tiene en verde?", en: "I like this jumper. Do you have it in green?", grammar: [g.direct-object-intro], vocab: [w.jersey, w.verde], error: { wrong: "¿Tiene lo en verde?", explain: "Object pronouns go before the conjugated verb: ¿Lo tiene en verde?", grammar: g.direct-object-intro } }
+dialogues:
+  - id: a1.u08.d1
+    title: En la tienda de ropa
+    context: Tom buys a jacket during the January sales.
+    lines:
+      - { speaker: Dependienta, es: "Hola, ¿puedo ayudarte?", en: "Hi, can I help you?" }
+      - { speaker: Tom, es: "Sí, busco una chaqueta. Me gusta esta azul. ¿Cuánto cuesta?", en: "Yes, I'm looking for a jacket. I like this blue one. How much is it?" }
+      - { speaker: Dependienta, es: "Está en oferta: ciento veinte euros. Antes costaba doscientos.", en: "It's on offer: a hundred and twenty euros. Before it cost two hundred." }
+      - { speaker: Tom, es: "¿La tiene en la talla M?", en: "Do you have it in size M?" }
+      - { speaker: Dependienta, es: "Sí, aquí la tiene. Los probadores están al fondo.", en: "Yes, here you are. The fitting rooms are at the back." }
+      - { speaker: Tom, es: "Gracias. … Me queda un poco grande. ¿Tiene la S?", en: "Thanks. … It's a bit big on me. Do you have the S?" }
+      - { speaker: Dependienta, es: "Sí, un momento. ¿Y qué tal esta? Es de la misma talla.", en: "Yes, one moment. And what about this one? It's the same size." }
+      - { speaker: Tom, es: "Perfecta. Me la llevo. ¿Puedo pagar con tarjeta?", en: "Perfect. I'll take it. Can I pay by card?" }
+      - { speaker: Dependienta, es: "Claro. Son ciento veinte euros.", en: "Of course. That's a hundred and twenty euros." }
+      - { speaker: Tom, es: "Aquí tiene. Hasta luego.", en: "Here you are. Goodbye." }
+    questions:
+      - { q: "How much does the jacket cost now?", options: ["200 euros", "120 euros", "20 euros"], answer: 1 }
+      - { q: "What was wrong with the first jacket?", options: ["Too small", "Too big", "Wrong colour"], answer: 1 }
+      - { q: "How does Tom pay?", options: ["In cash", "By card", "He doesn't buy it"], answer: 1 }

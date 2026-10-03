@@ -1,0 +1,173 @@
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams, Link } from 'react-router'
+import type { Lesson, Unit } from '../engine/schema'
+import type { Exercise, LessonResult, Stage } from '../engine/types'
+import { loadLesson, vocab, vocabUpTo, levelOf, grammar, units } from '../engine/loader'
+import { generateLesson, sentenceId } from '../engine/generate'
+import { ensureCards, getCards, recordLesson, type ItemSpec } from '../db/progress'
+import { IRREGULAR } from '../lang/es/verbs'
+import { sttSupported } from '../engine/speech'
+import { useSettings } from '../store/settings'
+import { LessonRunner } from '../components/LessonRunner'
+import { GrammarNoteView } from '../components/GrammarNote'
+import { Button, SpeakerButton, Chip } from '../components/ui/basics'
+import { IconArrowLeft, IconTrophy } from '../components/ui/icons'
+import { playSound } from '../engine/sounds'
+
+type Phase = { kind: 'loading' } | { kind: 'teach'; unit: Unit; lesson: Lesson; exercises: Exercise[] } | { kind: 'run'; unit: Unit; lesson: Lesson; exercises: Exercise[] } | { kind: 'done'; lesson: Lesson; result: LessonResult } | { kind: 'error'; message: string }
+
+export default function LessonPage() {
+  const { id = '' } = useParams()
+  const nav = useNavigate()
+  const speechOn = useSettings((s) => s.speech)
+  const [phase, setPhase] = useState<Phase>({ kind: 'loading' })
+
+  useEffect(() => {
+    let alive = true
+    ;(async () => {
+      try {
+        const { unit, lesson } = await loadLesson(id)
+        const level = levelOf(id)
+        const items: ItemSpec[] = [
+          ...lesson.vocab.map((v) => ({ id: v, kind: 'word' as const, level, lessonId: id, grammar: [] as string[] })),
+          ...lesson.sentences.map((s, i) => ({ id: sentenceId(id, i, s), kind: 'sentence' as const, level, lessonId: id, grammar: s.grammar })),
+          ...lesson.teach.map((g) => ({ id: g, kind: 'grammar' as const, level, lessonId: id, grammar: [g] })),
+        ]
+        await ensureCards(items)
+        const cards = await getCards(items.map((i) => i.id))
+        const stageOf = (itemId: string): Stage | undefined => cards.get(itemId)?.stage
+        const seen = [...cards.values()].some((c) => c.reps > 0)
+        const exercises = generateLesson(lesson, { vocab, pool: vocabUpTo(level), verbs: IRREGULAR, stageOf, speech: speechOn && sttSupported() }, { count: 14 })
+        if (!alive) return
+        setPhase(lesson.teach.length && !seen ? { kind: 'teach', unit, lesson, exercises } : { kind: 'run', unit, lesson, exercises })
+      } catch (e) {
+        if (alive) setPhase({ kind: 'error', message: (e as Error).message })
+      }
+    })()
+    return () => {
+      alive = false
+    }
+  }, [id, speechOn])
+
+  const unitRef = units.get(id.split('.').slice(0, 2).join('.'))
+
+  if (phase.kind === 'loading') return <div className="p-6 text-center text-muted">Preparing your lesson…</div>
+  if (phase.kind === 'error')
+    return (
+      <div className="p-6">
+        <p className="font-bold">This lesson is not available yet.</p>
+        <p className="text-sm text-muted">{phase.message}</p>
+        <Link to="/" className="btn btn-ghost mt-4">Back to the path</Link>
+      </div>
+    )
+  if (phase.kind === 'teach') return <TeachScreen lesson={phase.lesson} onStart={() => setPhase({ ...phase, kind: 'run' })} onBack={() => nav('/')} />
+  if (phase.kind === 'run')
+    return (
+      <LessonRunner
+        exercises={phase.exercises}
+        mode="lesson"
+        lessonId={id}
+        title={`${unitRef?.title ?? ''} · ${phase.lesson.title}`}
+        onQuit={() => nav('/')}
+        onFinish={async (result) => {
+          await recordLesson(result, phase.unit.id, levelOf(id))
+          if (result.completed) playSound('finish')
+          setPhase({ kind: 'done', lesson: phase.lesson, result })
+        }}
+      />
+    )
+  return <DoneScreen result={phase.result} onHome={() => nav('/')} onRetry={() => setPhase({ kind: 'loading' })} />
+}
+
+function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () => void; onBack: () => void }) {
+  const notes = lesson.teach.map((g) => grammar.get(g)).filter(Boolean)
+  const words = lesson.vocab.map((v) => vocab.get(v)).filter(Boolean)
+  const [tab, setTab] = useState(0)
+  return (
+    <div className="mx-auto max-w-xl px-4 pb-28 pt-[calc(0.75rem+env(safe-area-inset-top))]">
+      <button type="button" onClick={onBack} className="mb-2 flex items-center gap-1 text-sm font-bold text-muted">
+        <IconArrowLeft width={18} height={18} /> Path
+      </button>
+      <Chip tone="brand">New in this lesson</Chip>
+      <h1 className="mt-1 text-2xl font-extrabold">{lesson.title}</h1>
+      {lesson.tip && <p className="mt-2 rounded-2xl bg-surface-2 p-3 text-sm">{lesson.tip}</p>}
+      <div className="mt-4 flex gap-2">
+        {notes.map((n, i) => (
+          <button key={n!.id} type="button" onClick={() => setTab(i)} className={`rounded-full px-3 py-1 text-sm font-bold ${tab === i ? 'bg-brand-600 text-white' : 'bg-surface-2 text-muted'}`}>
+            {n!.title}
+          </button>
+        ))}
+        {words.length > 0 && (
+          <button type="button" onClick={() => setTab(notes.length)} className={`rounded-full px-3 py-1 text-sm font-bold ${tab === notes.length ? 'bg-brand-600 text-white' : 'bg-surface-2 text-muted'}`}>
+            Words ({words.length})
+          </button>
+        )}
+      </div>
+      <div className="card mt-3">
+        {tab < notes.length ? (
+          <GrammarNoteView note={notes[tab]!} />
+        ) : (
+          <ul className="divide-y divide-[var(--line)]">
+            {words.map((w) => (
+              <li key={w!.id} className="flex items-center gap-3 py-2">
+                <SpeakerButton text={w!.lemma} size="sm" />
+                <div className="flex-1">
+                  <p className="font-bold" lang="es">
+                    {w!.pos === 'noun' && w!.gender ? `${w!.gender === 'f' ? 'la' : 'el'} ` : ''}
+                    {w!.lemma}
+                  </p>
+                  <p className="text-sm text-muted">{w!.en.join(', ')}</p>
+                </div>
+                <Chip>{w!.pos}</Chip>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <div className="fixed inset-x-0 bottom-0 border-t-2 border-line bg-[var(--bg)] p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+        <div className="mx-auto max-w-xl">
+          <Button className="w-full" onClick={onStart}>
+            Start the exercises
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function DoneScreen({ result, onHome, onRetry }: { result: LessonResult; onHome: () => void; onRetry: () => void }) {
+  const acc = result.total ? Math.round((result.correct / result.total) * 100) : 0
+  const minutes = Math.max(1, Math.round(result.durationMs / 60000))
+  return (
+    <div className="mx-auto flex min-h-full max-w-xl flex-col items-center justify-center px-6 text-center">
+      <div className={`flex h-24 w-24 items-center justify-center rounded-full ${result.completed ? 'bg-gold-300 text-gold-600' : 'bg-bad-100 text-bad-600'}`}>
+        <IconTrophy width={48} height={48} />
+      </div>
+      <h1 className="mt-4 text-3xl font-extrabold">{result.completed ? '¡Lección completada!' : 'Out of hearts'}</h1>
+      <p className="mt-1 text-muted">{result.completed ? (result.wrong === 0 ? 'Perfect lesson. Bonus XP!' : 'Missed items go to your review queue.') : 'No problem — try again. Everything you practised is saved.'}</p>
+      <div className="mt-6 grid w-full grid-cols-3 gap-2">
+        <Stat label="XP" value={`+${result.xp}`} tone="gold" />
+        <Stat label="Accuracy" value={`${acc}%`} tone="ok" />
+        <Stat label="Time" value={`${minutes} min`} tone="sky" />
+      </div>
+      <div className="mt-8 grid w-full gap-2">
+        {!result.completed && (
+          <Button onClick={onRetry}>Try again</Button>
+        )}
+        <Button variant={result.completed ? 'primary' : 'ghost'} onClick={onHome}>
+          Continue
+        </Button>
+      </div>
+    </div>
+  )
+}
+
+function Stat({ label, value, tone }: { label: string; value: string; tone: 'gold' | 'ok' | 'sky' }) {
+  const c = tone === 'gold' ? 'border-gold-500 text-gold-600' : tone === 'ok' ? 'border-ok-500 text-ok-600' : 'border-sky-500 text-sky-600'
+  return (
+    <div className={`rounded-2xl border-2 ${c} overflow-hidden`}>
+      <p className={`py-1 text-xs font-bold uppercase tracking-wide text-white ${tone === 'gold' ? 'bg-gold-500' : tone === 'ok' ? 'bg-ok-500' : 'bg-sky-500'}`}>{label}</p>
+      <p className="bg-surface py-2 text-xl font-extrabold">{value}</p>
+    </div>
+  )
+}

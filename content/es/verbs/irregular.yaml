@@ -1,0 +1,281 @@
+# Irregular and stem-changing verbs. Anything not listed is conjugated
+# regularly with automatic spelling changes (buscar->busqué, conocer->conozco,
+# coger->cojo, seguir->sigo, construir->construyo, leer->leyó).
+verbs:
+  # ---- the big irregulars
+  - lemma: ser
+    pres: [soy, eres, es, somos, sois, son]
+    pret: [fui, fuiste, fue, fuimos, fuisteis, fueron]
+    impf: [era, eras, era, éramos, erais, eran]
+    subjPres: [sea, seas, sea, seamos, seáis, sean]
+    impTu: sé
+  - lemma: estar
+    pres: [estoy, estás, está, estamos, estáis, están]
+    pretStem: estuv
+    subjPres: [esté, estés, esté, estemos, estéis, estén]
+    impTu: está
+  - lemma: haber
+    pres: [he, has, ha, hemos, habéis, han]
+    pretStem: hub
+    futStem: habr
+    subjPres: [haya, hayas, haya, hayamos, hayáis, hayan]
+  - lemma: ir
+    pres: [voy, vas, va, vamos, vais, van]
+    pret: [fui, fuiste, fue, fuimos, fuisteis, fueron]
+    impf: [iba, ibas, iba, íbamos, ibais, iban]
+    subjPres: [vaya, vayas, vaya, vayamos, vayáis, vayan]
+    impAff: ["", ve, vaya, vamos, id, vayan]
+    gerund: yendo
+  - lemma: tener
+    stemChange: e>ie
+    yo: tengo
+    pretStem: tuv
+    futStem: tendr
+    impTu: ten
+  - lemma: hacer
+    yo: hago
+    pretStem: hic
+    futStem: har
+    participle: hecho
+    impTu: haz
+  - lemma: poder
+    stemChange: o>ue
+    pretStem: pud
+    futStem: podr
+    gerund: pudiendo
+  - lemma: poner
+    yo: pongo
+    pretStem: pus
+    futStem: pondr
+    participle: puesto
+    impTu: pon
+  - lemma: querer
+    stemChange: e>ie
+    pretStem: quis
+    futStem: querr
+  - lemma: saber
+    yo: sé
+    pretStem: sup
+    futStem: sabr
+    subjPres: [sepa, sepas, sepa, sepamos, sepáis, sepan]
+  - lemma: venir
+    stemChange: e>ie
+    irVowelRaise: e>i
+    yo: vengo
+    pretStem: vin
+    futStem: vendr
+    impTu: ven
+  - lemma: decir
+    stemChange: e>i
+    yo: digo
+    pretStem: dij
+    futStem: dir
+    participle: dicho
+    impTu: di
+  - lemma: dar
+    pres: [doy, das, da, damos, dais, dan]
+    pret: [di, diste, dio, dimos, disteis, dieron]
+    subjPres: [dé, des, dé, demos, deis, den]
+  - lemma: ver
+    yo: veo
+    pres: [veo, ves, ve, vemos, veis, ven]
+    pret: [vi, viste, vio, vimos, visteis, vieron]
+    impf: [veía, veías, veía, veíamos, veíais, veían]
+    participle: visto
+  - lemma: salir
+    yo: salgo
+    futStem: saldr
+    impTu: sal
+  - lemma: traer
+    yo: traigo
+    pretStem: traj
+  - lemma: caer
+    yo: caigo
+  - lemma: oír
+    pres: [oigo, oyes, oye, oímos, oís, oyen]
+    yo: oigo
+  - lemma: andar
+    pretStem: anduv
+  - lemma: caber
+    yo: quepo
+    pretStem: cup
+    futStem: cabr
+  - lemma: valer
+    yo: valgo
+    futStem: valdr
+  - lemma: conducir
+    pretStem: conduj
+  - lemma: traducir
+    pretStem: traduj
+  - lemma: producir
+    pretStem: produj
+  - lemma: reducir
+    pretStem: reduj
+  - lemma: introducir
+    pretStem: introduj
+  - lemma: satisfacer
+    yo: satisfago
+    pretStem: satisfic
+    futStem: satisfar
+    participle: satisfecho
+    impTu: satisfaz
+  # ---- -eír
+  - lemma: reír
+    pres: [río, ríes, ríe, reímos, reís, ríen]
+    pret: [reí, reíste, rio, reímos, reísteis, rieron]
+    subjPres: [ría, rías, ría, riamos, riais, rían]
+    gerund: riendo
+    participle: reído
+  - lemma: sonreír
+    pres: [sonrío, sonríes, sonríe, sonreímos, sonreís, sonríen]
+    pret: [sonreí, sonreíste, sonrió, sonreímos, sonreísteis, sonrieron]
+    subjPres: [sonría, sonrías, sonría, sonriamos, sonriais, sonrían]
+    gerund: sonriendo
+    participle: sonreído
+  - lemma: freír
+    pres: [frío, fríes, fríe, freímos, freís, fríen]
+    pret: [freí, freíste, frio, freímos, freísteis, frieron]
+    subjPres: [fría, frías, fría, friamos, friais, frían]
+    gerund: friendo
+    participle: frito
+  # ---- stem-changing -ar / -er (e>ie)
+  - { lemma: pensar, stemChange: e>ie }
+  - { lemma: empezar, stemChange: e>ie }
+  - { lemma: comenzar, stemChange: e>ie }
+  - { lemma: cerrar, stemChange: e>ie }
+  - { lemma: despertar, stemChange: e>ie }
+  - { lemma: sentar, stemChange: e>ie }
+  - { lemma: recomendar, stemChange: e>ie }
+  - { lemma: calentar, stemChange: e>ie }
+  - { lemma: negar, stemChange: e>ie }
+  - { lemma: nevar, stemChange: e>ie }
+  - { lemma: merendar, stemChange: e>ie }
+  - { lemma: gobernar, stemChange: e>ie }
+  - { lemma: entender, stemChange: e>ie }
+  - { lemma: perder, stemChange: e>ie }
+  - { lemma: encender, stemChange: e>ie }
+  - { lemma: defender, stemChange: e>ie }
+  - { lemma: atender, stemChange: e>ie }
+  - { lemma: tender, stemChange: e>ie }
+  - { lemma: extender, stemChange: e>ie }
+  - { lemma: tropezar, stemChange: e>ie }
+  - { lemma: confesar, stemChange: e>ie }
+  - { lemma: sembrar, stemChange: e>ie }
+  - { lemma: temblar, stemChange: e>ie }
+  - { lemma: atravesar, stemChange: e>ie }
+  - { lemma: apretar, stemChange: e>ie }
+  - { lemma: helar, stemChange: e>ie }
+  - { lemma: regar, stemChange: e>ie }
+  - { lemma: fregar, stemChange: e>ie }
+  - { lemma: plegar, stemChange: e>ie }
+  # ---- stem-changing -ar / -er (o>ue), u>ue
+  - { lemma: encontrar, stemChange: o>ue }
+  - { lemma: contar, stemChange: o>ue }
+  - { lemma: costar, stemChange: o>ue }
+  - { lemma: recordar, stemChange: o>ue }
+  - { lemma: acostar, stemChange: o>ue }
+  - { lemma: almorzar, stemChange: o>ue }
+  - { lemma: mostrar, stemChange: o>ue }
+  - { lemma: demostrar, stemChange: o>ue }
+  - { lemma: soñar, stemChange: o>ue }
+  - { lemma: volar, stemChange: o>ue }
+  - { lemma: probar, stemChange: o>ue }
+  - { lemma: aprobar, stemChange: o>ue }
+  - { lemma: comprobar, stemChange: o>ue }
+  - { lemma: colgar, stemChange: o>ue }
+  - { lemma: rogar, stemChange: o>ue }
+  - { lemma: forzar, stemChange: o>ue }
+  - { lemma: esforzar, stemChange: o>ue }
+  - { lemma: sonar, stemChange: o>ue }
+  - { lemma: tostar, stemChange: o>ue }
+  - { lemma: renovar, stemChange: o>ue }
+  - { lemma: volver, stemChange: o>ue, participle: vuelto }
+  - { lemma: devolver, stemChange: o>ue, participle: devuelto }
+  - { lemma: envolver, stemChange: o>ue, participle: envuelto }
+  - { lemma: resolver, stemChange: o>ue, participle: resuelto }
+  - { lemma: mover, stemChange: o>ue }
+  - { lemma: llover, stemChange: o>ue }
+  - { lemma: doler, stemChange: o>ue }
+  - { lemma: soler, stemChange: o>ue }
+  - { lemma: morder, stemChange: o>ue }
+  - { lemma: torcer, stemChange: o>ue }
+  - { lemma: cocer, stemChange: o>ue }
+  - { lemma: oler, pres: [huelo, hueles, huele, olemos, oléis, huelen], subjPres: [huela, huelas, huela, olamos, oláis, huelan] }
+  - { lemma: jugar, stemChange: u>ue }
+  # ---- -ir stem changers (raise in gerund, 3rd preterite, subjunctive nosotros/vosotros)
+  - { lemma: dormir, stemChange: o>ue }
+  - { lemma: morir, stemChange: o>ue, participle: muerto }
+  - { lemma: sentir, stemChange: e>ie }
+  - { lemma: mentir, stemChange: e>ie }
+  - { lemma: preferir, stemChange: e>ie }
+  - { lemma: divertir, stemChange: e>ie }
+  - { lemma: advertir, stemChange: e>ie }
+  - { lemma: convertir, stemChange: e>ie }
+  - { lemma: herir, stemChange: e>ie }
+  - { lemma: hervir, stemChange: e>ie }
+  - { lemma: sugerir, stemChange: e>ie }
+  - { lemma: referir, stemChange: e>ie }
+  - { lemma: requerir, stemChange: e>ie }
+  - { lemma: adquirir, stemChange: i>ie }
+  - { lemma: pedir, stemChange: e>i }
+  - { lemma: servir, stemChange: e>i }
+  - { lemma: seguir, stemChange: e>i }
+  - { lemma: conseguir, stemChange: e>i }
+  - { lemma: perseguir, stemChange: e>i }
+  - { lemma: repetir, stemChange: e>i }
+  - { lemma: vestir, stemChange: e>i }
+  - { lemma: medir, stemChange: e>i }
+  - { lemma: elegir, stemChange: e>i }
+  - { lemma: corregir, stemChange: e>i }
+  - { lemma: competir, stemChange: e>i }
+  - { lemma: despedir, stemChange: e>i }
+  - { lemma: impedir, stemChange: e>i }
+  - { lemma: rendir, stemChange: e>i }
+  - { lemma: teñir, stemChange: e>i }
+  - { lemma: reñir, stemChange: e>i }
+  # ---- irregular participles only
+  - { lemma: abrir, participle: abierto }
+  - { lemma: cubrir, participle: cubierto }
+  - { lemma: descubrir, participle: descubierto }
+  - { lemma: escribir, participle: escrito }
+  - { lemma: describir, participle: descrito }
+  - { lemma: romper, participle: roto }
+  - { lemma: imprimir, participle: impreso }
+  - { lemma: componer, yo: compongo, pretStem: compus, futStem: compondr, participle: compuesto, impTu: compón }
+  - { lemma: suponer, yo: supongo, pretStem: supus, futStem: supondr, participle: supuesto, impTu: supón }
+  - { lemma: proponer, yo: propongo, pretStem: propus, futStem: propondr, participle: propuesto, impTu: propón }
+  - { lemma: obtener, stemChange: e>ie, yo: obtengo, pretStem: obtuv, futStem: obtendr, impTu: obtén }
+  - { lemma: mantener, stemChange: e>ie, yo: mantengo, pretStem: mantuv, futStem: mantendr, impTu: mantén }
+  - { lemma: contener, stemChange: e>ie, yo: contengo, pretStem: contuv, futStem: contendr, impTu: contén }
+  - { lemma: detener, stemChange: e>ie, yo: detengo, pretStem: detuv, futStem: detendr, impTu: detén }
+  - { lemma: deshacer, yo: deshago, pretStem: deshic, futStem: deshar, participle: deshecho, impTu: deshaz }
+  - { lemma: rehacer, yo: rehago, pretStem: rehic, futStem: rehar, participle: rehecho, impTu: rehaz }
+  - { lemma: prever, pres: [preveo, prevés, prevé, prevemos, preveis, prevén], pret: [previ, previste, previo, previmos, previsteis, previeron], impf: [preveía, preveías, preveía, preveíamos, preveíais, preveían], participle: previsto }
+  - { lemma: convenir, stemChange: e>ie, irVowelRaise: e>i, yo: convengo, pretStem: convin, futStem: convendr, impTu: convén }
+  - { lemma: prevenir, stemChange: e>ie, irVowelRaise: e>i, yo: prevengo, pretStem: previn, futStem: prevendr, impTu: prevén }
+  - { lemma: atraer, yo: atraigo, pretStem: atraj }
+  - { lemma: distraer, yo: distraigo, pretStem: distraj }
+  - { lemma: contradecir, stemChange: e>i, yo: contradigo, pretStem: contradij, futStem: contradir, participle: contradicho, impTu: contradice }
+  - { lemma: predecir, stemChange: e>i, yo: predigo, pretStem: predij, futStem: predecir, participle: predicho, impTu: predice }
+  # ---- stressed hiatus -iar / -uar / others
+  - { lemma: enviar, stressHiatus: true }
+  - { lemma: confiar, stressHiatus: true }
+  - { lemma: guiar, stressHiatus: true }
+  - { lemma: variar, stressHiatus: true }
+  - { lemma: criar, stressHiatus: true }
+  - { lemma: fiar, stressHiatus: true }
+  - { lemma: liar, stressHiatus: true }
+  - { lemma: desviar, stressHiatus: true }
+  - { lemma: esquiar, stressHiatus: true }
+  - { lemma: fotografiar, stressHiatus: true }
+  - { lemma: ampliar, stressHiatus: true }
+  - { lemma: continuar, stressHiatus: true }
+  - { lemma: actuar, stressHiatus: true }
+  - { lemma: evaluar, stressHiatus: true }
+  - { lemma: situar, stressHiatus: true }
+  - { lemma: graduar, stressHiatus: true }
+  - { lemma: efectuar, stressHiatus: true }
+  - { lemma: prohibir, stressHiatus: true }
+  - { lemma: reunir, stressHiatus: true }
+  - { lemma: aislar, stressHiatus: true }
+  - { lemma: rehusar, stressHiatus: true }

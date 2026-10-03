@@ -1,0 +1,52 @@
+{
+  "name": "aprende",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint src tests scripts e2e",
+    "typecheck": "tsc -b",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "content:check": "tsx scripts/check-content.ts",
+    "content:stats": "tsx scripts/content-stats.ts"
+  },
+  "dependencies": {
+    "dexie": "^4.4.6",
+    "dexie-react-hooks": "^4.4.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router": "^8.4.0",
+    "ts-fsrs": "^5.4.2",
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitest/coverage-v8": "^5.0.3",
+    "fake-indexeddb": "^6.2.5",
+    "js-yaml": "^5.4.2",
+    "jsdom": "^29.1.1",
+    "oxlint": "^1.81.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "vite-plugin-pwa": "^1.3.0",
+    "vitest": "^5.0.3"
+  },
+  "description": "A complete Spanish course (A1 to C2) with a Duolingo feel: spaced repetition, explicit grammar, reading, listening, speaking. No accounts, no AI, works offline.",
+  "license": "MIT"
+}

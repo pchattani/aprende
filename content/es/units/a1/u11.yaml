@@ -1,0 +1,95 @@
+id: a1.u11
+title: En la ciudad
+lessons:
+  - id: a1.u11.l1
+    title: Perdone, ¿dónde está…?
+    teach: [g.directions-imperative]
+    vocab: [w.seguir.dir, w.girar, w.cruzar, w.coger, w.bajar, w.subir, w.caminar, w.esquina, w.semaforo, w.puente, w.avenida, w.parada, w.final, w.perdone, w.oiga, w.segundo, w.tercero]
+    sentences:
+      - { es: "Perdone, ¿dónde está la estación?", en: "Excuse me, where is the station?", grammar: [g.tu-vs-usted, g.question-words], vocab: [w.perdone, w.estacion] }
+      - { es: "Sigue todo recto y gira a la derecha.", en: "Go straight on and turn right.", grammar: [g.directions-imperative], vocab: [w.seguir.dir, w.girar, w.derecha] }
+      - { es: "Gira a la izquierda en el semáforo.", en: "Turn left at the traffic lights.", grammar: [g.directions-imperative], vocab: [w.girar, w.semaforo, w.izquierda] }
+      - { es: "Cruza la plaza y el museo está enfrente.", en: "Cross the square and the museum is opposite.", grammar: [g.directions-imperative], vocab: [w.cruzar, w.plaza, w.enfrente] }
+      - { es: "Toma la segunda calle a la derecha.", en: "Take the second street on the right.", grammar: [g.directions-imperative], vocab: [w.segundo, w.calle] }
+      - { es: "Coge el autobús número cinco en la parada.", en: "Take the number five bus at the stop.", grammar: [g.directions-imperative], vocab: [w.coger, w.autobus, w.parada] }
+      - { es: "Baja la avenida hasta el puente.", en: "Go down the avenue to the bridge.", grammar: [g.directions-imperative], vocab: [w.bajar, w.avenida, w.puente] }
+      - { es: "Está al final de la calle, en la esquina.", en: "It is at the end of the street, on the corner.", grammar: [g.prepositions-place], vocab: [w.final, w.esquina] }
+      - { es: "Sube por esta calle y es la tercera puerta.", en: "Go up this street and it is the third door.", grammar: [g.directions-imperative], vocab: [w.subir, w.tercero] }
+      - { es: "Oiga, ¿está lejos el hospital?", en: "Excuse me, is the hospital far?", grammar: [g.estar-location], vocab: [w.oiga, w.hospital] }
+      - { es: "No, puedes caminar. Está a cinco minutos.", en: "No, you can walk. It is five minutes away.", grammar: [g.poder-present], vocab: [w.caminar, w.minuto] }
+      - { es: "Camina hacia el río y cruza el puente.", en: "Walk towards the river and cross the bridge.", grammar: [g.prepositions-movement], vocab: [w.caminar, w.hacia, w.cruzar] }
+      - { es: "Gira a la derecha.", en: "Turn right.", grammar: [g.directions-imperative], vocab: [w.girar, w.derecha], transform: { instruction: "Make it formal (usted)", answer: "Gire a la derecha." } }
+  - id: a1.u11.l2
+    title: Lugares de la ciudad
+    teach: [g.prepositions-movement]
+    vocab: [w.mapa, w.ayuntamiento, w.correos, w.biblioteca, w.oficina-turismo, w.catedral, w.gasolinera, w.turista, w.minutos.phr, w.hacia, w.andar, w.parar, w.aparcar, w.conducir]
+    sentences:
+      - { es: "¿Tiene un mapa de la ciudad?", en: "Do you have a map of the city?", grammar: [g.tener-present], vocab: [w.mapa, w.ciudad] }
+      - { es: "El ayuntamiento está en la plaza mayor.", en: "The town hall is in the main square.", grammar: [g.estar-location], vocab: [w.ayuntamiento, w.plaza] }
+      - { es: "Voy a correos a enviar una carta.", en: "I'm going to the post office to send a letter.", grammar: [g.ir-a-infinitive], vocab: [w.correos, w.enviar] }
+      - { es: "La biblioteca abre a las nueve.", en: "The library opens at nine.", grammar: [g.time-telling], vocab: [w.biblioteca, w.abrir] }
+      - { es: "Hay una oficina de turismo al lado de la catedral.", en: "There is a tourist office next to the cathedral.", grammar: [g.hay, g.prepositions-place], vocab: [w.oficina-turismo, w.catedral] }
+      - { es: "Los turistas visitan la catedral por la mañana.", en: "The tourists visit the cathedral in the morning.", grammar: [g.regular-ar-present], vocab: [w.turista, w.visitar] }
+      - { es: "Necesito una gasolinera. El coche no tiene gasolina.", en: "I need a petrol station. The car has no petrol.", grammar: [g.negation], vocab: [w.gasolinera, w.coche] }
+      - { es: "El supermercado está a diez minutos a pie.", en: "The supermarket is ten minutes away on foot.", grammar: [g.prepositions-movement], vocab: [w.minutos.phr, w.pie.phrase] }
+      - { es: "Vamos hacia el centro en metro.", en: "We're going towards the centre by metro.", grammar: [g.prepositions-movement], vocab: [w.hacia, w.metro] }
+      - { es: "No se puede aparcar en esta calle.", en: "You can't park on this street.", grammar: [g.poder-present], vocab: [w.aparcar, w.calle] }
+      - { es: "Mi padre conduce muy despacio.", en: "My father drives very slowly.", grammar: [g.regular-er-ir-present], vocab: [w.conducir, w.despacio] }
+      - { es: "El autobús para delante del hotel.", en: "The bus stops in front of the hotel.", grammar: [g.prepositions-place], vocab: [w.parar, w.hotel] }
+      - { es: "Andamos por el barrio antiguo.", en: "We walk around the old quarter.", grammar: [g.prepositions-movement], vocab: [w.andar, w.barrio] }
+      - { es: "Salgo de casa y voy al trabajo en bici.", en: "I leave home and go to work by bike.", grammar: [g.prepositions-movement], vocab: [w.salir, w.bici], error: { wrong: "Salgo de casa y voy al trabajo con bici.", explain: "Means of transport take en: en bici, en coche (but a pie).", grammar: g.prepositions-movement } }
+  - id: a1.u11.l3
+    title: Estoy haciendo…
+    teach: [g.estar-gerund]
+    vocab: [w.estudiando.phr, w.mensaje, w.movil, w.ruido, w.rapidamente, w.tarde.adv]
+    sentences:
+      - { es: "¿Qué estás haciendo? Estoy estudiando.", en: "What are you doing? I'm studying.", grammar: [g.estar-gerund], vocab: [w.hacer, w.estudiar] }
+      - { es: "Los niños están jugando en el jardín.", en: "The children are playing in the garden.", grammar: [g.estar-gerund], vocab: [w.jugar, w.jardin] }
+      - { es: "No puedo hablar ahora mismo, estoy conduciendo.", en: "I can't talk right now, I'm driving.", grammar: [g.estar-gerund], vocab: [w.estudiando.phr, w.conducir] }
+      - { es: "Mi madre está cocinando la cena.", en: "My mother is cooking dinner.", grammar: [g.estar-gerund], vocab: [w.cocinar, w.cena] }
+      - { es: "Estoy leyendo un libro muy interesante.", en: "I'm reading a very interesting book.", grammar: [g.estar-gerund], vocab: [w.leer, w.libro] }
+      - { es: "¿Estáis viendo la televisión?", en: "Are you (all) watching TV?", grammar: [g.estar-gerund], vocab: [w.ver, w.television] }
+      - { es: "Está lloviendo mucho.", en: "It is raining a lot.", grammar: [g.estar-gerund, g.weather], vocab: [w.llover] }
+      - { es: "Te estoy escribiendo un mensaje.", en: "I'm writing you a message.", grammar: [g.estar-gerund], vocab: [w.escribir, w.mensaje] }
+      - { es: "Mi móvil está sonando.", en: "My phone is ringing.", grammar: [g.estar-gerund], vocab: [w.movil] }
+      - { es: "Los vecinos están haciendo mucho ruido.", en: "The neighbours are making a lot of noise.", grammar: [g.estar-gerund], vocab: [w.ruido, w.hacer] }
+      - { es: "Están comiendo rápidamente porque llegan tarde.", en: "They are eating quickly because they are late.", grammar: [g.estar-gerund], vocab: [w.rapidamente, w.tarde.adv, w.comer] }
+      - { es: "Estamos esperando el autobús.", en: "We are waiting for the bus.", grammar: [g.estar-gerund], vocab: [w.esperar, w.autobus], error: { wrong: "Estamos esperando por el autobús.", explain: "esperar takes a direct object: esperar el autobús.", grammar: g.prepositions-verbs } }
+      - { es: "Ella está durmiendo.", en: "She is sleeping.", grammar: [g.estar-gerund], vocab: [w.dormir], transform: { instruction: "Change to 'they'", answer: "Están durmiendo.", alt: ["Ellos están durmiendo.", "Ellas están durmiendo."] } }
+  - id: a1.u11.l4
+    title: Tengo que, hay que
+    teach: [g.tener-que, g.hay-que]
+    vocab: [w.deber, w.tener-que, w.hay-que]
+    sentences:
+      - { es: "Tengo que ir al médico mañana.", en: "I have to go to the doctor tomorrow.", grammar: [g.tener-que], vocab: [w.tener-que, w.medico], error: { wrong: "Tengo ir al médico mañana.", explain: "Obligation is tener que + infinitive.", grammar: g.tener-que } }
+      - { es: "¿Tienes que trabajar el sábado?", en: "Do you have to work on Saturday?", grammar: [g.tener-que], vocab: [w.trabajar, w.sabado] }
+      - { es: "No tenemos que pagar, es gratis.", en: "We don't have to pay, it's free.", grammar: [g.tener-que], vocab: [w.pagar, w.gratis] }
+      - { es: "Tenéis que ver esta película.", en: "You (all) have to see this film.", grammar: [g.tener-que], vocab: [w.pelicula] }
+      - { es: "Hay que reservar mesa en ese restaurante.", en: "You have to book a table at that restaurant.", grammar: [g.hay-que], vocab: [w.hay-que, w.restaurante] }
+      - { es: "Para ir al centro hay que coger el metro.", en: "To get to the centre you have to take the metro.", grammar: [g.hay-que], vocab: [w.coger, w.metro] }
+      - { es: "No hay que gritar.", en: "There's no need to shout.", grammar: [g.hay-que], vocab: [w.hay-que] }
+      - { es: "Debes estudiar más para el examen.", en: "You should study more for the exam.", grammar: [g.tener-que], vocab: [w.deber, w.estudiar] }
+      - { es: "Hay que llegar diez minutos antes.", en: "You have to arrive ten minutes early.", grammar: [g.hay-que], vocab: [w.llegar, w.antes] }
+      - { es: "Mi hermano tiene que levantarse muy temprano.", en: "My brother has to get up very early.", grammar: [g.tener-que, g.reflexive-verbs-present], vocab: [w.levantarse, w.temprano] }
+      - { es: "¿Hay que pagar para entrar en el museo?", en: "Do you have to pay to get into the museum?", grammar: [g.hay-que], vocab: [w.pagar, w.entrar] }
+      - { es: "Debemos cruzar en el semáforo.", en: "We should cross at the traffic lights.", grammar: [g.tener-que], vocab: [w.deber, w.cruzar] }
+      - { es: "Tiene que girar a la izquierda.", en: "You (formal) have to turn left.", grammar: [g.tener-que], vocab: [w.girar], transform: { instruction: "Change to 'we'", answer: "Tenemos que girar a la izquierda." } }
+dialogues:
+  - id: a1.u11.d1
+    title: ¿Cómo llego a la catedral?
+    context: A tourist asks a passer-by for directions in Toledo.
+    lines:
+      - { speaker: Turista, es: "Perdone, ¿cómo llego a la catedral?", en: "Excuse me, how do I get to the cathedral?" }
+      - { speaker: Señora, es: "Es fácil. Sigue todo recto por esta calle hasta la plaza.", en: "It's easy. Go straight along this street to the square." }
+      - { speaker: Turista, es: "¿Está lejos?", en: "Is it far?" }
+      - { speaker: Señora, es: "No, está a diez minutos a pie. En la plaza, gira a la izquierda.", en: "No, it's ten minutes on foot. In the square, turn left." }
+      - { speaker: Turista, es: "¿A la izquierda, en el semáforo?", en: "Left, at the traffic lights?" }
+      - { speaker: Señora, es: "Sí. Después cruza el puente pequeño y la catedral está enfrente, al lado del ayuntamiento.", en: "Yes. Then cross the small bridge and the cathedral is opposite, next to the town hall." }
+      - { speaker: Turista, es: "¿Hay que pagar para entrar?", en: "Do you have to pay to go in?" }
+      - { speaker: Señora, es: "Sí, pero los domingos por la tarde es gratis.", en: "Yes, but on Sunday afternoons it's free." }
+      - { speaker: Turista, es: "Muchas gracias, muy amable.", en: "Thank you very much, very kind of you." }
+      - { speaker: Señora, es: "De nada. ¡Buen viaje!", en: "You're welcome. Have a good trip!" }
+    questions:
+      - { q: "How far is the cathedral?", options: ["Ten minutes on foot", "Ten minutes by bus", "Very far"], answer: 0 }
+      - { q: "Where should the tourist turn left?", options: ["At the bridge", "In the square, at the traffic lights", "At the town hall"], answer: 1 }
+      - { q: "When is entry free?", options: ["Saturday mornings", "Sunday afternoons", "Every day"], answer: 1 }
