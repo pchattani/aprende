@@ -1,0 +1,72 @@
+level: a2
+title: Checkpoint A2
+passScore: 0.8
+reading:
+  text: |
+    El verano pasado, mi amiga Sofía y yo hicimos un viaje de diez días por el norte de España. Salimos de Madrid en coche un sábado por la mañana y la primera noche dormimos en un albergue de Burgos. Hacía mucho calor y no pudimos dormir bien, pero al día siguiente visitamos la catedral y comimos en un restaurante típico.
+
+    El tercer día llegamos a la costa. Mientras Sofía buscaba el hotel en el móvil, yo conducía por una carretera estrecha con vistas al mar. De repente, el coche empezó a hacer un ruido extraño y tuvimos que parar. Un hombre del pueblo nos ayudó y nos llevó a un taller. Nos dijo que el coche no estaría listo hasta el martes.
+
+    Al final, esos dos días sin coche fueron los mejores del viaje. Nos quedamos en una casa pequeña del pueblo, paseamos por la playa, comimos pescado fresco y conocimos a la gente del lugar. Cuando volvimos a Madrid, estábamos agotadas pero muy contentas. Ya hemos decidido volver el año que viene, esta vez en tren.
+  questions:
+    - { q: "Why didn't they sleep well the first night?", options: ["The hostel was noisy", "It was very hot", "They arrived very late"], answer: 1 }
+    - { q: "What was the narrator doing when the car made a strange noise?", options: ["Looking for the hotel", "Driving along a narrow road", "Sleeping"], answer: 1 }
+    - { q: "When would the car be ready?", options: ["The same day", "On Tuesday", "After ten days"], answer: 1 }
+    - { q: "How did they feel about the two days without a car?", options: ["They were the worst of the trip", "They were the best of the trip", "They were boring"], answer: 1 }
+    - { q: "How do they plan to travel next year?", options: ["By car", "By plane", "By train"], answer: 2 }
+listening:
+  dictation:
+    - "Ayer fuimos al cine y después cenamos en un restaurante italiano."
+    - "Cuando era pequeño, vivía en un pueblo cerca de la montaña."
+    - "¿Has estado alguna vez en Argentina?"
+    - "Me duele mucho la cabeza; ¿podría darme algo?"
+    - "Si tengo tiempo este fin de semana, te llamaré."
+    - "Pela las patatas y córtalas en trozos pequeños."
+  questions:
+    - { audio: "Perdone, ¿me podría decir desde cuándo está cerrada la farmacia? — Desde hace dos semanas; abre otra vez el lunes.", options: ["The pharmacy closed two weeks ago and opens again on Monday", "The pharmacy opens in two weeks", "The pharmacy is open on Mondays only"], answer: 0 }
+    - { audio: "Mi hermano estaba durmiendo cuando sonó el teléfono, así que no lo oyó.", options: ["The brother answered the phone", "The brother was sleeping and didn't hear the phone", "The brother called his sister"], answer: 1 }
+    - { audio: "Tienes que tomar una pastilla cada ocho horas y no debes beber alcohol.", options: ["Take one pill a day with wine", "Take a pill every eight hours and don't drink alcohol", "Take eight pills and rest"], answer: 1 }
+    - { audio: "Yo en tu lugar no compraría ese coche: es demasiado caro y gasta mucha gasolina.", options: ["The speaker recommends buying the car", "The speaker would not buy the car", "The speaker has already bought the car"], answer: 1 }
+grammar:
+  - { prompt: "Ayer ___ (yo, comer) con mis padres.", options: ["comí", "comía", "he comido"], answer: 0, explain: "A completed event with ayer: preterite." }
+  - { prompt: "Cuando era niño, ___ (jugar) en la calle todos los días.", options: ["jugué", "jugaba", "juego"], answer: 1, explain: "Habitual past action: imperfect." }
+  - { prompt: "Esta mañana ___ (yo, ver) a Marta en el metro.", options: ["vi", "veía", "he visto"], answer: 2, explain: "esta mañana belongs to the present day: present perfect (in Spain)." }
+  - { prompt: "El año pasado ___ (nosotros, ir) a Portugal.", options: ["fuimos", "íbamos", "hemos ido"], answer: 0, explain: "A finished past time (el año pasado): preterite; ir → fuimos." }
+  - { prompt: "¿Dónde está el libro? — ___ he dejado en la mesa.", options: ["Le", "Lo", "La"], answer: 1, explain: "el libro is masculine singular: lo." }
+  - { prompt: "A María ___ he regalado unas flores.", options: ["la", "le", "lo"], answer: 1, explain: "Recipient = indirect object: le." }
+  - { prompt: "¿Me prestas el boli? — Sí, ahora ___ doy.", options: ["te lo", "te le", "lo te"], answer: 0, explain: "Indirect before direct: te lo." }
+  - { prompt: "Mañana ___ (hacer) buen tiempo.", options: ["hacerá", "hará", "hace"], answer: 1, explain: "hacer has an irregular future stem: har-." }
+  - { prompt: "Madrid es ___ grande ___ Sevilla.", options: ["más / que", "más / de", "tan / que"], answer: 0 }
+  - { prompt: "Es el restaurante más caro ___ la ciudad.", options: ["en", "de", "que"], answer: 1, explain: "After a superlative: de." }
+  - { prompt: "___ (tú, hacer) los deberes ahora mismo.", options: ["Hace", "Haz", "Haga"], answer: 1, explain: "Irregular tú imperative: haz." }
+  - { prompt: "Señor López, ___ (sentarse), por favor.", options: ["siéntate", "siéntese", "sentaos"], answer: 1, explain: "usted imperative of a reflexive verb: siéntese." }
+  - { prompt: "Este regalo es ___ mi madre.", options: ["por", "para", "a"], answer: 1, explain: "Recipient: para." }
+  - { prompt: "No fuimos a la playa ___ la lluvia.", options: ["por", "para", "de"], answer: 0, explain: "Cause: por." }
+  - { prompt: "Vivo en Valencia ___ tres años.", options: ["desde", "desde hace", "hace"], answer: 1, explain: "A duration needs desde hace." }
+  - { prompt: "Me ___ los pies.", options: ["duele", "duelen", "dolor"], answer: 1, explain: "Plural subject: duelen." }
+  - { prompt: "Yo en tu lugar ___ (ir) al médico.", options: ["iré", "iría", "iba"], answer: 1, explain: "Hypothetical advice: conditional." }
+  - { prompt: "No hay ___ en casa.", options: ["alguien", "nadie", "alguno"], answer: 1, explain: "Negative sentence: nadie." }
+  - { prompt: "Estaba ___ cuando llamaste.", options: ["duchándome", "ducharme", "me ducho"], answer: 0, explain: "estar + gerund for an action in progress." }
+  - { prompt: "___ de llegar a casa.", options: ["Acabo", "Acabé", "Acabaré"], answer: 0, explain: "acabo de + infinitive = I have just." }
+writing:
+  prompt: "Write an email to a friend about a trip you took last year: where you went, how you travelled, what you did each day, something unexpected that happened, and whether you would go back. Use the preterite and the imperfect, and at least one sentence with the conditional."
+  minWords: 100
+  modelAnswer: |
+    ¡Hola, Marta! ¿Qué tal? Te escribo para contarte mi viaje a Lisboa del año pasado. Fui con mi hermano en autobús porque los vuelos eran muy caros. Llegamos un viernes por la noche y nos alojamos en un albergue pequeño del centro.
+
+    El sábado hacía muy buen tiempo, así que paseamos por el barrio antiguo, comimos pescado y subimos al castillo. Mientras hacíamos fotos, un chico nos robó la cartera. ¡Qué susto! Fuimos a la policía y, al final, no fue tan grave porque llevaba poco dinero.
+
+    El domingo visitamos un museo y por la tarde cogimos el autobús de vuelta. Estábamos cansados, pero contentos. Lisboa me encantó: la gente era amable y la comida, deliciosa. Volvería sin ninguna duda, pero la próxima vez tendría más cuidado con la cartera. ¿Vendrías conmigo? Un abrazo, Carlos.
+  checklist:
+    - "I used the preterite for completed events (fui, llegamos, comimos) and the imperfect for background and descriptions (hacía, era, llevaba)."
+    - "I used at least one past time marker (el año pasado, el sábado, al final) and one connector (así que, mientras, porque)."
+    - "I described something unexpected with the preterite and explained the context with the imperfect."
+    - "I used the conditional at least once (volvería, tendría, vendrías)."
+    - "I used object pronouns correctly (me encantó, nos robó, te escribo)."
+    - "I checked verb endings, accents (fuí is wrong; fui is right; hacía needs a tilde) and ¿? ¡! marks."
+speaking:
+  - "El fin de semana pasado fui al cine con mis amigos."
+  - "Cuando era pequeño, vivía en un pueblo muy tranquilo."
+  - "Me duele la garganta desde hace tres días."
+  - "¿Podría decirme dónde está la estación, por favor?"
+  - "Si tuviera tiempo, viajaría por toda Latinoamérica."

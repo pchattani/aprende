@@ -1,0 +1,29 @@
+id: r.a2.en-la-consulta
+level: a2
+title: En la consulta del médico
+kind: dialogue
+intro: Tomás has been feeling unwell for a week and sees his doctor.
+allow: [tomás, doctora, gómez, análisis]
+paragraphs:
+  - { es: "Doctora: Buenos días, Tomás. Siéntese. ¿Qué le pasa?", en: "Doctor: Good morning, Tomás. Sit down. What's the matter?" }
+  - { es: "Tomás: Buenos días, doctora Gómez. No me encuentro bien desde hace una semana. Estoy muy cansado, me duele la cabeza casi todos los días y por la noche no duermo bien.", en: "Tomás: Good morning, Dr Gómez. I haven't felt well for a week. I'm very tired, my head hurts almost every day and I don't sleep well at night." }
+  - { es: "Doctora: ¿Tiene fiebre o tos?", en: "Doctor: Do you have a fever or a cough?" }
+  - { es: "Tomás: No, fiebre no. Pero me duele el estómago después de comer y a veces me mareo.", en: "Tomás: No, no fever. But my stomach hurts after eating and sometimes I feel dizzy." }
+  - { es: "Doctora: ¿Cómo está de trabajo? ¿Está estresado?", en: "Doctor: How's work? Are you stressed?" }
+  - { es: "Tomás: Bastante. Acabo de cambiar de empresa y trabajo diez horas al día. Como rápido, delante del ordenador, y he dejado de hacer deporte.", en: "Tomás: Quite a lot. I've just changed companies and I work ten hours a day. I eat quickly, in front of the computer, and I've stopped doing sport." }
+  - { es: "Doctora: Pues ahí tiene el problema. No parece nada grave, pero vamos a hacer un análisis de sangre para estar seguros. Mientras tanto, debería comer despacio y sin pantallas, y tiene que dormir por lo menos siete horas.", en: "Doctor: Well, there's your problem. It doesn't look like anything serious, but we'll do a blood test to be sure. Meanwhile, you should eat slowly and without screens, and you have to sleep at least seven hours." }
+  - { es: "Tomás: ¿Y para el dolor de cabeza? ¿Podría darme algo?", en: "Tomás: And for the headache? Could you give me something?" }
+  - { es: "Doctora: Le voy a recetar unas pastillas, pero no las tome más de tres días. Y vuelva a hacer ejercicio: camine media hora al día. Eso es mejor que cualquier medicamento.", en: "Doctor: I'll prescribe some tablets, but don't take them for more than three days. And start exercising again: walk half an hour a day. That's better than any medication." }
+  - { es: "Tomás: De acuerdo, doctora. ¿Cuándo tengo que volver?", en: "Tomás: All right, doctor. When do I have to come back?" }
+  - { es: "Doctora: Pida cita para dentro de dos semanas, con los resultados del análisis. Y, Tomás, ¡que se mejore!", en: "Doctor: Make an appointment for two weeks' time, with the test results. And, Tomás, get well soon!" }
+questions:
+  - { q: "How long has Tomás felt unwell?", options: ["Two days", "A week", "A month"], answer: 1 }
+  - { q: "What does the doctor think is causing the problem?", options: ["A virus", "Stress and lifestyle", "An allergy"], answer: 1 }
+  - { q: "What does the doctor tell him to do about the tablets?", options: ["Take them for a month", "Not take them for more than three days", "Take them with coffee"], answer: 1 }
+glossary:
+  - { es: ahí tiene el problema, en: there's your problem }
+  - { es: sangre, en: blood }
+  - { es: pantalla, en: screen }
+  - { es: por lo menos, en: at least }
+  - { es: recetar, en: to prescribe }
+  - { es: resultado, en: result }

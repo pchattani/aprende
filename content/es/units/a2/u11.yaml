@@ -1,0 +1,103 @@
+id: a2.u11
+title: Salud y cuerpo
+lessons:
+  - id: a2.u11.l1
+    title: Me duele la cabeza
+    teach: [g.doler]
+    vocab: [w.dolor, w.doler, w.estomago, w.garganta, w.espalda, w.muela, w.rodilla, w.tobillo, w.hombro, w.cuello, w.pecho, w.corazon, w.oido, w.sentirse, w.encontrarse-mal]
+    tip: "doler works like gustar: me duele la cabeza (singular), me duelen los pies (plural)."
+    sentences:
+      - { es: "Me duele la cabeza.", en: "My head hurts.", grammar: [g.doler], vocab: [w.doler, w.cabeza] }
+      - { es: "Me duelen los pies de tanto caminar.", en: "My feet hurt from walking so much.", grammar: [g.doler], vocab: [w.doler, w.pie, w.caminar], error: { wrong: "Me duele los pies de tanto caminar.", explain: "Plural subject (los pies) takes duelen.", grammar: g.doler } }
+      - { es: "¿Qué te duele? — Me duele el estómago.", en: "What hurts? — My stomach hurts.", grammar: [g.doler], vocab: [w.estomago] }
+      - { es: "Le duele la garganta y no puede hablar.", en: "Her throat hurts and she can't talk.", grammar: [g.doler], vocab: [w.garganta, w.hablar] }
+      - { es: "A mi padre le duele la espalda por el trabajo.", en: "My father's back hurts because of work.", grammar: [g.doler, g.por-vs-para], vocab: [w.espalda] }
+      - { es: "Tengo dolor de muelas desde ayer.", en: "I've had toothache since yesterday.", grammar: [g.desde-hace], vocab: [w.dolor, w.muela, w.ayer] }
+      - { es: "Me caí y ahora me duele la rodilla.", en: "I fell and now my knee hurts.", grammar: [g.doler, g.preterite-irregular], vocab: [w.caerse, w.rodilla] }
+      - { es: "Se torció el tobillo jugando al fútbol.", en: "He twisted his ankle playing football.", grammar: [g.preterite-stem-changing], vocab: [w.tobillo, w.futbol], note: "torcerse = to twist." }
+      - { es: "Me duelen el cuello y los hombros de estar sentado.", en: "My neck and shoulders hurt from sitting.", grammar: [g.doler], vocab: [w.cuello, w.hombro] }
+      - { es: "Si te duele el pecho, llama a urgencias.", en: "If your chest hurts, call the emergency services.", grammar: [g.doler, g.si-present-future], vocab: [w.pecho, w.urgencias] }
+      - { es: "El corazón es el órgano más importante del cuerpo.", en: "The heart is the most important organ in the body.", grammar: [g.superlatives], vocab: [w.corazon, w.cuerpo] }
+      - { es: "Me duele el oído derecho.", en: "My right ear hurts.", grammar: [g.doler], vocab: [w.oido, w.derecha] }
+      - { es: "No me siento bien; me encuentro mal desde esta mañana.", en: "I don't feel well; I've felt unwell since this morning.", grammar: [g.desde-hace], vocab: [w.sentirse, w.encontrarse-mal, w.esta-manana] }
+      - { es: "¿Cómo te sientes hoy? — Mucho mejor, gracias.", en: "How do you feel today? — Much better, thanks.", grammar: [g.comparatives], vocab: [w.sentirse, w.mejor] }
+      - { es: "A ella / doler / los ojos", en: "Her eyes hurt.", grammar: [g.doler], vocab: [w.doler, w.ojo], transform: { instruction: "Build the sentence", answer: "A ella le duelen los ojos.", alt: ["Le duelen los ojos."] } }
+  - id: a2.u11.l2
+    title: En el médico
+    teach: [g.deber-tener-que]
+    vocab: [w.fiebre, w.tos, w.toser, w.gripe, w.resfriado, w.alergia, w.herida, w.medicina, w.medicamento, w.pastilla, w.jarabe, w.farmaceutico, w.cita, w.consulta, w.urgencias, w.analisis, w.radiografia, w.sintoma, w.grave, w.deberia]
+    tip: "tener que = must (necessity); deber = should (duty); hay que = one must (general); deberías = you should (advice)."
+    sentences:
+      - { es: "Tengo fiebre y tos; creo que es gripe.", en: "I have a fever and a cough; I think it's flu.", grammar: [g.stem-changing-present], vocab: [w.fiebre, w.tos, w.gripe] }
+      - { es: "Tienes que ir al médico hoy mismo.", en: "You have to go to the doctor today.", grammar: [g.deber-tener-que], vocab: [w.tener-que, w.medico] }
+      - { es: "Debes tomar una pastilla cada ocho horas.", en: "You must take a tablet every eight hours.", grammar: [g.deber-tener-que], vocab: [w.deber, w.pastilla] }
+      - { es: "Deberías descansar más y trabajar menos.", en: "You should rest more and work less.", grammar: [g.deber-tener-que, g.conditional-simple], vocab: [w.deberia, w.descansar] }
+      - { es: "Hay que lavarse las manos antes de comer.", en: "You have to wash your hands before eating.", grammar: [g.deber-tener-que], vocab: [w.hay-que, w.lavarse] }
+      - { es: "¿Cuáles son sus síntomas? — Toso mucho y me duele la garganta.", en: "What are your symptoms? — I cough a lot and my throat hurts.", grammar: [g.doler], vocab: [w.sintoma, w.toser, w.garganta] }
+      - { es: "Es solo un resfriado, no es grave.", en: "It's just a cold, it isn't serious.", grammar: [g.ser-vs-estar-basics], vocab: [w.resfriado, w.grave] }
+      - { es: "Tengo alergia al polen; en primavera no puedo respirar bien.", en: "I'm allergic to pollen; in spring I can't breathe well.", grammar: [g.deber-tener-que], vocab: [w.alergia, w.respirar, w.primavera], note: "polen = pollen." }
+      - { es: "Tengo cita en la consulta del doctor Ruiz a las once.", en: "I have an appointment at Dr Ruiz's office at eleven.", grammar: [g.time-telling], vocab: [w.cita, w.consulta] }
+      - { es: "Le hicieron un análisis de sangre y una radiografía.", en: "They did a blood test and an X-ray on him.", grammar: [g.preterite-irregular], vocab: [w.analisis, w.radiografia], note: "sangre = blood." }
+      - { es: "El farmacéutico me recomendó este jarabe para la tos.", en: "The pharmacist recommended this cough syrup to me.", grammar: [g.indirect-object-pronouns], vocab: [w.farmaceutico, w.recomendar, w.jarabe, w.tos] }
+      - { es: "No debes tomar este medicamento con alcohol.", en: "You mustn't take this medication with alcohol.", grammar: [g.deber-tener-que], vocab: [w.medicamento], error: { wrong: "No tienes que tomar este medicamento con alcohol.", explain: "no tener que = don't need to; a prohibition uses no debes.", grammar: g.deber-tener-que } }
+      - { es: "La herida no es profunda, pero hay que limpiarla.", en: "The wound isn't deep, but it has to be cleaned.", grammar: [g.deber-tener-que, g.pronoun-placement], vocab: [w.herida, w.limpiar] }
+      - { es: "Si tiene fiebre alta, vaya a urgencias.", en: "If you have a high fever, go to A&E.", grammar: [g.imperative-usted, g.si-present-future], vocab: [w.fiebre, w.urgencias] }
+      - { es: "Estudiar medicina es muy difícil.", en: "Studying medicine is very difficult.", grammar: [g.ser-vs-estar-basics], vocab: [w.medicina, w.dificil] }
+      - { es: "Tú / tomar el jarabe (obligación)", en: "You have to take the syrup.", grammar: [g.deber-tener-que], vocab: [w.jarabe], transform: { instruction: "Say it with 'tener que'", answer: "Tienes que tomar el jarabe.", alt: ["Tú tienes que tomar el jarabe."] } }
+  - id: a2.u11.l3
+    title: ¿Qué harías tú?
+    teach: [g.conditional-simple]
+    vocab: [w.engordar, w.adelgazar, w.dieta, w.ejercicio, w.fumar, w.estresado, w.estres, w.mejorarse, w.tumbarse, w.quedarse-en-cama, w.marearse, w.vomitar, w.embarazada, w.seguro-medico]
+    tip: "Conditional = infinitive + ía, ías, ía, íamos, íais, ían. Irregular stems are the same as the future: tendr-, har-, podr-."
+    sentences:
+      - { es: "Yo en tu lugar iría al médico.", en: "If I were you, I'd go to the doctor.", grammar: [g.conditional-simple], vocab: [w.lugar, w.medico] }
+      - { es: "Con menos estrés dormirías mejor.", en: "With less stress you'd sleep better.", grammar: [g.conditional-simple], vocab: [w.estres, w.dormir] }
+      - { es: "Haría más ejercicio, pero no tengo tiempo.", en: "I'd do more exercise, but I don't have time.", grammar: [g.conditional-simple], vocab: [w.ejercicio, w.tiempo], error: { wrong: "Hacería más ejercicio, pero no tengo tiempo.", explain: "hacer has an irregular stem: har- → haría.", grammar: g.conditional-simple } }
+      - { es: "Si quieres adelgazar, deberías seguir una dieta sana.", en: "If you want to lose weight, you should follow a healthy diet.", grammar: [g.conditional-simple, g.si-present-future], vocab: [w.adelgazar, w.dieta, w.sano] }
+      - { es: "Mi médico dice que debería dejar de fumar.", en: "My doctor says I should stop smoking.", grammar: [g.conditional-simple], vocab: [w.fumar, w.dejar-de] }
+      - { es: "Yo me quedaría en la cama todo el día.", en: "I would stay in bed all day.", grammar: [g.conditional-simple], vocab: [w.quedarse-en-cama] }
+      - { es: "¿Qué harías con un millón de euros? — Viajaría por todo el mundo.", en: "What would you do with a million euros? — I'd travel all over the world.", grammar: [g.conditional-simple], vocab: [w.millon, w.viajar, w.mundo] }
+      - { es: "Estoy muy estresado; necesitaría unas vacaciones.", en: "I'm very stressed; I could do with a holiday.", grammar: [g.conditional-simple], vocab: [w.estresado, w.vacaciones] }
+      - { es: "Si comes tanto chocolate, engordarás.", en: "If you eat so much chocolate, you'll put on weight.", grammar: [g.si-present-future], vocab: [w.engordar, w.chocolate] }
+      - { es: "Túmbate un rato; te mejorarás pronto.", en: "Lie down for a while; you'll get better soon.", grammar: [g.imperative-pronouns, g.future-simple], vocab: [w.tumbarse, w.mejorarse, w.rato] }
+      - { es: "En el barco me mareé y vomité dos veces.", en: "On the boat I got seasick and vomited twice.", grammar: [g.preterite-regular], vocab: [w.marearse, w.vomitar, w.barco] }
+      - { es: "Mi hermana está embarazada de cinco meses.", en: "My sister is five months pregnant.", grammar: [g.ser-vs-estar-basics], vocab: [w.embarazada, w.mes], note: "False friend: embarazada means pregnant, not embarrassed." }
+      - { es: "Sin seguro médico, la operación costaría una fortuna.", en: "Without health insurance, the operation would cost a fortune.", grammar: [g.conditional-simple], vocab: [w.seguro-medico, w.costar] }
+      - { es: "Sería mejor hablar con el farmacéutico.", en: "It would be better to talk to the pharmacist.", grammar: [g.conditional-simple], vocab: [w.farmaceutico, w.mejor] }
+      - { es: "Yo / poder / ayudarte mañana", en: "I could help you tomorrow.", grammar: [g.conditional-simple], vocab: [w.poder, w.ayudar], transform: { instruction: "Use the conditional", answer: "Yo podría ayudarte mañana.", alt: ["Podría ayudarte mañana."] } }
+  - id: a2.u11.l4
+    title: ¿Podría…? Me gustaría…
+    teach: [g.conditional-courtesy]
+    vocab: [w.gustaria, w.podria, w.sano.phr, w.tener-buen-aspecto, w.que-te-mejores, w.ser-alergico, w.respirar]
+    tip: "The conditional softens requests: ¿Podría…? Me gustaría… Querría… The imperfect works too: Quería un café."
+    sentences:
+      - { es: "¿Podría darme algo para el dolor de cabeza?", en: "Could you give me something for a headache?", grammar: [g.conditional-courtesy], vocab: [w.podria, w.dolor] }
+      - { es: "Me gustaría pedir cita con el dentista.", en: "I'd like to make an appointment with the dentist.", grammar: [g.conditional-courtesy], vocab: [w.gustaria, w.cita], note: "dentista = dentist." }
+      - { es: "¿Le importaría abrir la ventana? No puedo respirar.", en: "Would you mind opening the window? I can't breathe.", grammar: [g.conditional-courtesy], vocab: [w.ventana, w.respirar] }
+      - { es: "Querría unas pastillas para la garganta, por favor.", en: "I'd like some throat tablets, please.", grammar: [g.conditional-courtesy], vocab: [w.pastilla, w.garganta] }
+      - { es: "Quería un jarabe para la tos.", en: "I wanted (I'd like) a cough syrup.", grammar: [g.conditional-courtesy, g.imperfect], vocab: [w.jarabe, w.tos] }
+      - { es: "¿Podrías llamar al médico por mí?", en: "Could you call the doctor for me?", grammar: [g.conditional-courtesy], vocab: [w.podria, w.llamar] }
+      - { es: "Soy alérgico a la penicilina. ¿Tendría otra cosa?", en: "I'm allergic to penicillin. Would you have something else?", grammar: [g.conditional-courtesy], vocab: [w.ser-alergico], note: "penicilina = penicillin." }
+      - { es: "Tienes muy buen aspecto; ya te has puesto bien.", en: "You look very well; you've got better already.", grammar: [g.present-perfect], vocab: [w.tener-buen-aspecto, w.sano.phr] }
+      - { es: "¡Que te mejores pronto!", en: "Get well soon!", grammar: [g.conditional-courtesy], vocab: [w.que-te-mejores, w.pronto] }
+      - { es: "¿Sería posible cambiar la cita para el martes?", en: "Would it be possible to move the appointment to Tuesday?", grammar: [g.conditional-courtesy], vocab: [w.cambiar, w.cita, w.martes] }
+      - { es: "Me gustaría hablar con el doctor, si es posible.", en: "I'd like to speak to the doctor, if possible.", grammar: [g.conditional-courtesy], vocab: [w.gustaria, w.hablar], error: { wrong: "Me gustaría de hablar con el doctor.", explain: "gustaría + infinitive, no preposition.", grammar: g.conditional-courtesy } }
+      - { es: "¿Podría repetirlo más despacio, por favor?", en: "Could you repeat that more slowly, please?", grammar: [g.conditional-courtesy, g.pronoun-placement], vocab: [w.repetir, w.despacio] }
+      - { es: "¿Me podría decir dónde está la farmacia de guardia?", en: "Could you tell me where the duty pharmacy is?", grammar: [g.conditional-courtesy], vocab: [w.farmacia], note: "farmacia de guardia = pharmacy open out of hours." }
+      - { es: "Perdone, ¿tendría un vaso de agua?", en: "Excuse me, would you have a glass of water?", grammar: [g.conditional-courtesy], vocab: [w.vaso, w.agua] }
+      - { es: "Dame una aspirina.", en: "Give me an aspirin.", grammar: [g.conditional-courtesy], vocab: [w.dar], transform: { instruction: "Make it a polite request with 'podría'", answer: "¿Podría darme una aspirina?", alt: ["¿Me podría dar una aspirina?", "¿Podría darme una aspirina, por favor?"] } }
+dialogues:
+  - id: a2.u11.d1
+    title: En la farmacia
+    context: Ana feels unwell and goes to the pharmacy.
+    lines:
+      - { speaker: Farmacéutico, es: "Buenos días. ¿Qué le pasa?", en: "Good morning. What's wrong?" }
+      - { speaker: Ana, es: "No me encuentro bien. Me duele mucho la garganta y tengo tos desde hace tres días.", en: "I don't feel well. My throat hurts a lot and I've had a cough for three days." }
+      - { speaker: Farmacéutico, es: "¿Tiene fiebre?", en: "Do you have a fever?" }
+      - { speaker: Ana, es: "Un poco, treinta y siete y medio. Y me duele la cabeza.", en: "A bit, thirty-seven and a half. And my head hurts." }
+      - { speaker: Farmacéutico, es: "Parece un resfriado. Le voy a dar un jarabe para la tos y unas pastillas para la garganta. ¿Es alérgica a algún medicamento?", en: "It seems like a cold. I'll give you a cough syrup and some throat tablets. Are you allergic to any medication?" }
+      - { speaker: Ana, es: "No, a ninguno. ¿Cuántas veces al día tengo que tomar el jarabe?", en: "No, none. How many times a day do I have to take the syrup?" }
+      - { speaker: Farmacéutico, es: "Tres veces, después de las comidas. Y debería descansar y beber mucha agua.", en: "Three times, after meals. And you should rest and drink lots of water." }
+      - { speaker: Ana, es: "¿Podría darme también algo para la fiebre?", en: "Could you also give me something for the fever?" }
+      - { speaker: Farmacéutico, es: "Claro, tome esto cada ocho horas. Si en tres días no mejora, tiene que ir al médico.", en: "Of course, take this every eight hours. If you don't get better in three days, you have to go to the doctor." }
+      - { speaker: Ana, es: "Muchas gracias. ¿Cuánto es todo?", en: "Thank you very much. How much is everything?" }
