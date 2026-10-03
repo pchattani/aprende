@@ -1,14 +1,16 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { levels, loadUnit, units as unitIndex } from '../engine/loader'
 import { lessonMastery, ringFor } from '../engine/mastery'
-import { lessonIdsFor, levelUnlocked, levelComplete, lessonUnlocked } from '../engine/unlock'
-import { useLessonRows, useAllCards, useDays, useDueCount, useExams } from '../hooks/useProgress'
+import { lessonIdsFor, levelUnlocked, levelComplete, lessonUnlocked, DEFAULT_START_LEVEL } from '../engine/unlock'
+import { setKv, getKv } from '../db/progress'
+import { db } from '../db'
+import { useLessonRows, useAllCards, useDays, useDueCount, useExams, useKvValue } from '../hooks/useProgress'
 import { streakFrom, todayKey } from '../engine/mastery'
 import { useSettings } from '../store/settings'
 import { IconFlame, IconLock, IconStar, IconCheck, IconTrophy, IconRepeat } from '../components/ui/icons'
 import { ProgressBar, Chip } from '../components/ui/basics'
-import type { LevelMeta } from '../engine/schema'
+import type { LevelMeta, LevelId } from '../engine/schema'
 import type { Lesson } from '../engine/schema'
 
 export default function Path() {
@@ -18,7 +20,26 @@ export default function Path() {
   const due = useDueCount()
   const exams = useExams()
   const goal = useSettings((s) => s.dailyGoal)
+  const startLevel = useKvValue<LevelId>('startLevel', DEFAULT_START_LEVEL)
+  const nav = useNavigate()
   const [lessonMeta, setLessonMeta] = useState<Map<string, Lesson[]>>(new Map())
+  const [checked, setChecked] = useState(false)
+
+  // First launch: nothing done yet and no starting level chosen → welcome screen.
+  // A direct read (not a live query) so a just-written flag is never seen stale.
+  useEffect(() => {
+    let alive = true
+    ;(async () => {
+      const onboarded = await getKv('onboarded', false)
+      const done = onboarded ? 1 : await db.lessons.count()
+      if (!alive) return
+      if (done === 0) nav('/welcome', { replace: true })
+      else setChecked(true)
+    })()
+    return () => {
+      alive = false
+    }
+  }, [nav])
 
   // Load lesson titles for authored units (small files, cached).
   useEffect(() => {
@@ -52,7 +73,10 @@ export default function Path() {
     return m
   }, [cards])
 
-  if (!lessonRows || !cards || !days || !exams) return <div className="p-8 text-center text-muted">Loading…</div>
+  if (!checked || !lessonRows || !cards || !days || !exams || startLevel === undefined) return <div className="p-8 text-center text-muted">Loading…</div>
+  const startHere = (level: LevelId) => {
+    void setKv('startLevel', level).then(() => setKv('onboarded', true))
+  }
   const today = todayKey()
   const todayRow = days.find((d) => d.date === today)
   const streak = streakFrom(days.filter((d) => d.xp > 0 || d.lessons > 0 || d.reviews > 0).map((d) => d.date), today)
@@ -75,6 +99,9 @@ export default function Path() {
           <ProgressBar value={Math.min(xpToday, goal)} max={goal} tone="gold" className="mt-1" />
         </div>
       </header>
+      <p className="mb-4 text-right text-xs">
+        <Link to="/welcome" className="font-bold text-muted underline">Change starting level or retake the placement test</Link>
+      </p>
       {(due ?? 0) > 0 && (
         <Link to="/review" className="mb-4 flex items-center gap-3 rounded-2xl border-2 border-sky-500 bg-sky-500/10 p-3">
           <IconRepeat className="text-sky-600" />
@@ -86,7 +113,7 @@ export default function Path() {
         </Link>
       )}
       {levels.map((level) => {
-        const unlocked = levelUnlocked(level.id, lessonRows, exams, lessonCounts)
+        const unlocked = levelUnlocked(level.id, lessonRows, exams, lessonCounts, startLevel)
         const complete = levelComplete(level, lessonRows, lessonCounts)
         const ids = lessonIdsFor(level, lessonCounts)
         const doneCount = ids.filter((l) => (lessonRows.get(l.id)?.completions ?? 0) > 0).length
@@ -106,6 +133,11 @@ export default function Path() {
                 <p className="mt-2 text-xs font-bold opacity-90">
                   {doneCount} / {ids.length} lessons · {level.wordTarget.toLocaleString()} words target
                 </p>
+              )}
+              {!unlocked && (
+                <button type="button" onClick={() => startHere(level.id)} className="mt-3 rounded-xl bg-white/90 px-3 py-1.5 text-sm font-extrabold text-stone-800 active:scale-95">
+                  Start here — I already know the earlier levels
+                </button>
               )}
             </div>
             {level.units.map((u) => {
@@ -132,7 +164,7 @@ export default function Path() {
                     <div className="mt-3 flex flex-wrap gap-3">
                       {(lessons ?? Array.from({ length: lessonCounts.get(u.id) ?? 4 }, (_, i) => ({ id: `${u.id}.l${i + 1}`, title: `Lesson ${i + 1}` }))).map((l) => {
                         const row = lessonRows.get(l.id)
-                        const open = lessonUnlocked(l.id, level, lessonRows, exams, lessonCounts)
+                        const open = lessonUnlocked(l.id, level, lessonRows, exams, lessonCounts, startLevel)
                         const mastery = lessonMastery(cardsByLesson.get(l.id) ?? [])
                         const ring = open ? ringFor(row, mastery) : 'locked'
                         return <LessonBubble key={l.id} id={l.id} title={l.title} ring={ring} mastery={mastery} />
@@ -142,7 +174,7 @@ export default function Path() {
                 </div>
               )
             })}
-            {ids.length > 0 && <ExamCard level={level} enabled={complete} passed={Boolean(passed)} score={exams.get(level.id)?.score} />}
+            {ids.length > 0 && <ExamCard level={level} enabled={unlocked} complete={complete} passed={Boolean(passed)} score={exams.get(level.id)?.score} />}
           </section>
         )
       })}
@@ -177,13 +209,13 @@ function LessonBubble({ id, title, ring, mastery }: { id: string; title: string;
   )
 }
 
-function ExamCard({ level, enabled, passed, score }: { level: LevelMeta; enabled: boolean; passed: boolean; score?: number }) {
+function ExamCard({ level, enabled, complete, passed, score }: { level: LevelMeta; enabled: boolean; complete: boolean; passed: boolean; score?: number }) {
   const body = (
     <div className={`card flex items-center gap-3 ${enabled ? 'border-gold-500' : 'opacity-60'}`}>
       <div className={`flex h-12 w-12 items-center justify-center rounded-full ${passed ? 'bg-gold-300 text-gold-600' : 'bg-surface-2 text-muted'}`}>{enabled ? <IconTrophy /> : <IconLock />}</div>
       <div className="flex-1">
         <p className="font-extrabold">Checkpoint {level.title}</p>
-        <p className="text-xs text-muted">{passed ? `Passed · ${Math.round((score ?? 0) * 100)}%` : enabled ? 'Reading, listening, grammar, writing and speaking. Pass to unlock the next level.' : 'Complete every lesson in this level to unlock the checkpoint.'}</p>
+        <p className="text-xs text-muted">{passed ? `Passed · ${Math.round((score ?? 0) * 100)}%` : !enabled ? 'Unlocks with this level.' : complete ? 'Reading, listening, grammar, writing and speaking. Pass to unlock the next level.' : 'Already know this level? Take the checkpoint now to test out and unlock the next level.'}</p>
       </div>
     </div>
   )

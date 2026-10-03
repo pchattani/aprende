@@ -186,3 +186,9 @@ export async function resetAll(): Promise<void> {
     await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear()])
   })
 }
+
+/** Marks onboarding done and records the level the learner starts the path at. */
+export async function chooseStartLevel(level: LevelId): Promise<void> {
+  await setKv('startLevel', level)
+  await setKv('onboarded', true)
+}

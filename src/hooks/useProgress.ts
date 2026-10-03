@@ -18,3 +18,11 @@ export function useDueCount(): number | undefined {
 export function useExams(): Map<LevelId, ExamRow> | undefined {
   return useLiveQuery(async () => new Map((await db.exams.toArray()).map((e) => [e.level, e])), [])
 }
+
+/** Live value of a key in the kv table (undefined while loading). */
+export function useKvValue<T>(key: string, fallback: T): T | undefined {
+  return useLiveQuery(async () => {
+    const row = await db.kv.get(key)
+    return row ? (row.value as T) : fallback
+  }, [key])
+}

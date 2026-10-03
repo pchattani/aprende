@@ -15,6 +15,8 @@ const Exam = lazy(() => import('./pages/Exam'))
 const Profile = lazy(() => import('./pages/Profile'))
 const Settings = lazy(() => import('./pages/Settings'))
 const Study = lazy(() => import('./pages/Study'))
+const Welcome = lazy(() => import('./pages/Welcome'))
+const Placement = lazy(() => import('./pages/Placement'))
 
 function Loading() {
   return <div className="p-8 text-center text-muted">Loading…</div>
@@ -92,6 +94,26 @@ export default function App() {
           <ErrorBoundary>
             <Suspense fallback={<Loading />}>
               <Exam />
+            </Suspense>
+          </ErrorBoundary>
+        }
+      />
+      <Route
+        path="welcome"
+        element={
+          <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+              <Welcome />
+            </Suspense>
+          </ErrorBoundary>
+        }
+      />
+      <Route
+        path="placement"
+        element={
+          <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+              <Placement />
             </Suspense>
           </ErrorBoundary>
         }

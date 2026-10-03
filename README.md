@@ -10,7 +10,8 @@ There is **no AI and no server**: every explanation was written by hand, and eve
 
 | | |
 |---|---|
-| **Path** | CEFR levels A1 → C2, 66 units, lessons of 12–15 exercises. Mastery rings show real retention, not clicks. Checkpoint exams gate each level. |
+| **Path** | CEFR levels A1 → C2, 66 units, lessons of 12–15 exercises. Mastery rings show real retention, not clicks. Checkpoint exams gate each level, and you can take one early to test out. |
+| **Start anywhere** | First launch offers a five-minute adaptive placement test (built from the checkpoint exams and vocabulary) or a manual level choice. Every level also has a "Start here" button. Earlier levels stay open for practice. |
 | **Fourteen exercise types** | Multiple choice, word bank, typing in both directions, listening, dictation, matching, fill-the-blank, conjugation, transformation, find-the-error, ordering, speaking (speech recognition). The type is chosen by how deeply you know each item: recognition → recall → production. |
 | **Spaced repetition** | Every word, sentence and grammar point becomes a card scheduled by FSRS. The Review tab is where learning consolidates. Weak grammar points are detected and can be practised on their own. |
 | **Grammar reference** | ~230 searchable notes with tables, examples, pitfalls and Latin American variants. Every exercise can explain itself. |

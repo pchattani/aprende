@@ -1,13 +1,12 @@
 import { test, expect } from '@playwright/test'
-import { enableTestHook, answerCurrent, continueFeedback, readHook } from './helpers'
+import { enableTestHook, answerCurrent, continueFeedback, readHook, openPath } from './helpers'
 
 test.beforeEach(async ({ page }) => {
   await enableTestHook(page)
 })
 
 test('path renders levels, units and the first lesson is unlocked', async ({ page }) => {
-  await page.goto('/')
-  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  await openPath(page)
   await expect(page.getByText('Saludos y presentaciones')).toBeVisible()
   await expect(page.getByRole('link', { name: /Hola y adiós/ })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'C2' })).toBeVisible()
@@ -16,7 +15,7 @@ test('path renders levels, units and the first lesson is unlocked', async ({ pag
 
 test('complete the first lesson, earn XP and unlock the next lesson', async ({ page }) => {
   test.setTimeout(180_000)
-  await page.goto('/')
+  await openPath(page)
   await page.getByRole('link', { name: /Hola y adiós/ }).click()
   await expect(page.getByRole('heading', { name: 'Hola y adiós' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Greetings and goodbyes' })).toBeVisible()
@@ -43,7 +42,7 @@ test('complete the first lesson, earn XP and unlock the next lesson', async ({ p
 
 test('losing three hearts ends the lesson', async ({ page }) => {
   test.setTimeout(120_000)
-  await page.goto('/')
+  await openPath(page)
   await page.getByRole('link', { name: /Hola y adiós/ }).click()
   await page.getByRole('button', { name: 'Start the exercises' }).click()
   let wrong = 0
@@ -64,7 +63,7 @@ test('losing three hearts ends the lesson', async ({ page }) => {
 test('review page, practice session and study tools work', async ({ page }) => {
   test.setTimeout(180_000)
   // seed progress by completing lesson 1 quickly
-  await page.goto('/')
+  await openPath(page)
   await page.getByRole('link', { name: /Hola y adiós/ }).click()
   await page.getByRole('button', { name: 'Start the exercises' }).click()
   let guard = 0
@@ -119,8 +118,7 @@ test('pronunciation lesson and settings load', async ({ page }) => {
 
 test('works offline once the service worker has cached the app', async ({ page, context }) => {
   test.setTimeout(120_000)
-  await page.goto('/')
-  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  await openPath(page)
   // Wait for the service worker to install and finish precaching.
   await page.evaluate(async () => {
     const reg = await navigator.serviceWorker.ready
@@ -143,4 +141,39 @@ test('works offline once the service worker has cached the app', async ({ page, 
   await page.goto('./#/grammar')
   await expect(page.getByRole('heading', { name: 'Grammar' })).toBeVisible()
   await context.setOffline(false)
+})
+
+test('placement test places a strong learner beyond B1 and opens every level', async ({ page }) => {
+  test.setTimeout(120_000)
+  await page.goto('/')
+  await page.getByRole('button', { name: /Take the placement test/ }).click()
+  await expect(page.getByText(/Placement test · A1/)).toBeVisible()
+  let guard = 0
+  while (guard++ < 30) {
+    const done = await page.getByRole('heading', { name: /Your level/ }).isVisible()
+    if (done) break
+    await page.waitForFunction(() => Boolean((window as unknown as { placement?: unknown }).placement))
+    const hook = await page.evaluate(() => (window as unknown as { placement: { answer: number; index: number } }).placement)
+    await page.getByRole('radio').nth(hook.answer).click()
+    await page.waitForFunction((idx) => (window as unknown as { placement: { index: number } }).placement.index !== idx || document.querySelector('h1')?.textContent?.includes('Your level'), hook.index)
+  }
+  await expect(page.getByRole('heading', { name: 'Your level: B2' })).toBeVisible()
+  await page.screenshot({ path: 'e2e/__screenshots__/placement.png' })
+  await page.getByRole('button', { name: 'Start at B2' }).click()
+  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  // B1 lessons are open, and an A2 lesson deep in the level is open for practice.
+  await expect(page.getByRole('link', { name: /Formas regulares/ })).toBeVisible()
+  await expect(page.getByRole('link', { name: /Habla, come, escribe/ })).toBeVisible()
+})
+
+test('choosing a level manually unlocks it and keeps earlier levels open', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: /I know my level/ }).click()
+  await page.getByRole('button', { name: /^A2/ }).click()
+  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  await expect(page.getByRole('link', { name: /¿Qué hiciste ayer\?/ })).toBeVisible()
+  // B1 is still locked, with a "Start here" escape hatch.
+  await expect(page.getByRole('button', { name: /Start here/ }).first()).toBeVisible()
+  await page.getByRole('button', { name: /Start here/ }).first().click()
+  await expect(page.getByRole('link', { name: /Formas regulares/ })).toBeVisible()
 })

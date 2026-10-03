@@ -70,6 +70,10 @@ export default function Settings() {
       <Section title="Appearance">
         <Select label="Theme" value={s.theme} onChange={(v) => s.setTheme(v as 'system' | 'light' | 'dark')} options={[['system', 'System'], ['light', 'Light'], ['dark', 'Dark']]} />
       </Section>
+      <Section title="Starting level">
+        <p className="text-sm text-muted">Already know some Spanish? Retake the placement test or pick the level where lessons should start. Earlier levels stay open for practice.</p>
+        <Button variant="ghost" className="mt-3 w-full" onClick={() => nav('/welcome')}>Change starting level</Button>
+      </Section>
       <Section title="Backup">
         <p className="text-sm text-muted">Everything is stored on this device. Export a backup to move to another phone or computer.</p>
         <div className="mt-3 grid grid-cols-2 gap-2">

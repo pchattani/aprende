@@ -104,3 +104,11 @@ export async function continueFeedback(page: Page) {
 function escapeRe(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
+
+/** Open the path. A fresh browser lands on the welcome screen; choose "new to Spanish" to reach A1. */
+export async function openPath(page: Page) {
+  await page.goto('/')
+  // Every test runs in a fresh browser context, so the first launch always redirects to the welcome screen.
+  await page.getByRole('button', { name: /I'm new to Spanish/ }).click()
+  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+}
