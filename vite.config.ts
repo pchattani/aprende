@@ -28,10 +28,10 @@ export default defineConfig({
       manifest: {
         name: 'Aprende: Spanish A1 to C2',
         short_name: 'Aprende',
-        description: 'A complete Spanish course with spaced repetition, grammar, reading, listening and speaking.',
+        description: 'A complete, free Spanish course from beginner to advanced: short daily lessons, explicit grammar, spaced repetition, reading, listening and speaking.',
         lang: 'en',
-        theme_color: '#1c1917',
-        background_color: '#fafaf9',
+        theme_color: '#cf5f3d',
+        background_color: '#faf3e7',
         display: 'standalone',
         orientation: 'portrait',
         start_url: '.',

@@ -6,7 +6,7 @@ import { useAllCards, useDays, useExams, useLessonRows } from '../hooks/useProgr
 import { streakFrom, todayKey, shiftDay, wordCounts, weakSkills, estimateLevel } from '../engine/mastery'
 import { grammar, levels, vocab } from '../engine/loader'
 import { PageHeader, Chip, Button } from '../components/ui/basics'
-import { IconFlame, IconGear, IconStar, IconTrophy } from '../components/ui/icons'
+import { IconFlame, IconGear, IconStar, IconTrophy, IconBook } from '../components/ui/icons'
 
 const NO_REVIEWS: never[] = []
 
@@ -34,7 +34,7 @@ export default function Profile() {
         <Stat icon={<IconFlame className="text-brand-600" fill="currentColor" />} label="Day streak" value={String(streak.current)} sub={`Longest ${streak.longest}`} />
         <Stat icon={<IconStar className="text-gold-500" fill="currentColor" />} label="Total XP" value={xp.toLocaleString()} sub={`${totalMinutes} min studied`} />
         <Stat icon={<IconTrophy className="text-sky-600" />} label="Estimated level" value={level} sub={`${lessonsDone} lessons completed`} />
-        <Stat icon={<span className="text-xl">📚</span>} label="Words you can use" value={String(wc.productive)} sub={`${wc.recognised} recognised · ${wc.seen} met · ${vocab.size} in course`} />
+        <Stat icon={<IconBook className="text-ok-600" />} label="Words you can use" value={String(wc.productive)} sub={`${wc.recognised} recognised · ${wc.seen} met · ${vocab.size} in course`} />
       </div>
       <section className="card mt-4">
         <p className="text-xs font-bold uppercase tracking-wide text-muted">Last 12 weeks</p>

@@ -14,7 +14,7 @@ export default function Study() {
       <div className="grid gap-3">
         {items.map((it) => (
           <Link key={it.to} to={it.to} className="card flex items-center gap-4 active:translate-y-[2px]">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-100 text-brand-700">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-100 text-brand-600 dark:bg-brand-500/25">
               <it.icon />
             </div>
             <div>

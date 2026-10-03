@@ -89,16 +89,16 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
         <IconArrowLeft width={18} height={18} /> Path
       </button>
       <Chip tone="brand">New in this lesson</Chip>
-      <h1 className="mt-1 text-2xl font-extrabold">{lesson.title}</h1>
-      {lesson.tip && <p className="mt-2 rounded-2xl bg-surface-2 p-3 text-sm">{lesson.tip}</p>}
+      <h1 className="mt-2 text-3xl">{lesson.title}</h1>
+      {lesson.tip && <p className="mt-3 rounded-2xl border-l-4 border-gold-500 bg-gold-100/60 p-3 text-sm dark:bg-gold-500/10">{lesson.tip}</p>}
       <div className="mt-4 flex gap-2">
         {notes.map((n, i) => (
-          <button key={n!.id} type="button" onClick={() => setTab(i)} className={`rounded-full px-3 py-1 text-sm font-bold ${tab === i ? 'bg-brand-600 text-white' : 'bg-surface-2 text-muted'}`}>
+          <button key={n!.id} type="button" onClick={() => setTab(i)} className={`rounded-full px-3.5 py-1.5 text-sm font-extrabold transition ${tab === i ? 'bg-brand-500 text-white shadow-sm' : 'bg-surface-2 text-muted'}`}>
             {n!.title}
           </button>
         ))}
         {words.length > 0 && (
-          <button type="button" onClick={() => setTab(notes.length)} className={`rounded-full px-3 py-1 text-sm font-bold ${tab === notes.length ? 'bg-brand-600 text-white' : 'bg-surface-2 text-muted'}`}>
+          <button type="button" onClick={() => setTab(notes.length)} className={`rounded-full px-3.5 py-1.5 text-sm font-extrabold transition ${tab === notes.length ? 'bg-brand-500 text-white shadow-sm' : 'bg-surface-2 text-muted'}`}>
             Words ({words.length})
           </button>
         )}
@@ -124,7 +124,7 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
           </ul>
         )}
       </div>
-      <div className="fixed inset-x-0 bottom-0 border-t-2 border-line bg-[var(--bg)] p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+      <div className="fixed inset-x-0 bottom-0 border-t border-line bg-[var(--bg)]/95 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur">
         <div className="mx-auto max-w-xl">
           <Button className="w-full" onClick={onStart}>
             Start the exercises
@@ -140,10 +140,10 @@ function DoneScreen({ result, onHome, onRetry }: { result: LessonResult; onHome:
   const minutes = Math.max(1, Math.round(result.durationMs / 60000))
   return (
     <div className="mx-auto flex min-h-full max-w-xl flex-col items-center justify-center px-6 text-center">
-      <div className={`flex h-24 w-24 items-center justify-center rounded-full ${result.completed ? 'bg-gold-300 text-gold-600' : 'bg-bad-100 text-bad-600'}`}>
-        <IconTrophy width={48} height={48} />
+      <div className={`animate-pop flex h-28 w-28 items-center justify-center rounded-full ${result.completed ? 'bg-gold-300 text-gold-600 shadow-[0_0_0_12px_var(--color-gold-100)]' : 'bg-bad-100 text-bad-600'}`}>
+        <IconTrophy width={56} height={56} />
       </div>
-      <h1 className="mt-4 text-3xl font-extrabold">{result.completed ? '¡Lección completada!' : 'Out of hearts'}</h1>
+      <h1 className="mt-6 text-4xl">{result.completed ? '¡Lección completada!' : 'Out of hearts'}</h1>
       <p className="mt-1 text-muted">{result.completed ? (result.wrong === 0 ? 'Perfect lesson. Bonus XP!' : 'Missed items go to your review queue.') : 'No problem — try again. Everything you practised is saved.'}</p>
       <div className="mt-6 grid w-full grid-cols-3 gap-2">
         <Stat label="XP" value={`+${result.xp}`} tone="gold" />
@@ -165,8 +165,8 @@ function DoneScreen({ result, onHome, onRetry }: { result: LessonResult; onHome:
 function Stat({ label, value, tone }: { label: string; value: string; tone: 'gold' | 'ok' | 'sky' }) {
   const c = tone === 'gold' ? 'border-gold-500 text-gold-600' : tone === 'ok' ? 'border-ok-500 text-ok-600' : 'border-sky-500 text-sky-600'
   return (
-    <div className={`rounded-2xl border-2 ${c} overflow-hidden`}>
-      <p className={`py-1 text-xs font-bold uppercase tracking-wide text-white ${tone === 'gold' ? 'bg-gold-500' : tone === 'ok' ? 'bg-ok-500' : 'bg-sky-500'}`}>{label}</p>
+    <div className={`rounded-2xl border-2 ${c} overflow-hidden shadow-card`}>
+      <p className={`py-1 text-xs font-extrabold uppercase tracking-wide text-white ${tone === 'gold' ? 'bg-gold-500' : tone === 'ok' ? 'bg-ok-500' : 'bg-sky-500'}`}>{label}</p>
       <p className="bg-surface py-2 text-xl font-extrabold">{value}</p>
     </div>
   )

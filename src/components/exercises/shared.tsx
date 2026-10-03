@@ -13,12 +13,12 @@ export interface ExerciseProps<E extends Exercise = Exercise> {
 
 export function Prompt({ children, lang = 'es' }: { children: React.ReactNode; lang?: 'es' | 'en' }) {
   return (
-    <p className="text-xl font-bold leading-snug" lang={lang}>
+    <p className={`leading-snug ${lang === 'es' ? 'font-display text-[1.6rem]' : 'text-2xl font-bold'}`} lang={lang}>
       {children}
     </p>
   )
 }
 
 export function Instruction({ children }: { children: React.ReactNode }) {
-  return <h2 className="mb-3 text-lg font-extrabold">{children}</h2>
+  return <h2 className="mb-3 font-sans text-sm font-extrabold uppercase tracking-wide text-muted" style={{ fontFamily: 'var(--font-sans)', fontVariationSettings: 'normal', letterSpacing: '0.06em' }}>{children}</h2>
 }

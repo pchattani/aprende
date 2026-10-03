@@ -168,6 +168,8 @@ test('placement test places a strong learner beyond B1 and opens every level', a
 
 test('choosing a level manually unlocks it and keeps earlier levels open', async ({ page }) => {
   await page.goto('/')
+  await expect(page.getByRole('button', { name: /I know my level/ })).toBeVisible()
+  await page.screenshot({ path: 'e2e/__screenshots__/welcome.png' })
   await page.getByRole('button', { name: /I know my level/ }).click()
   await page.getByRole('button', { name: /^A2/ }).click()
   await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()

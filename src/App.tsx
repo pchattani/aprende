@@ -40,14 +40,16 @@ function Shell() {
           </Suspense>
         </ErrorBoundary>
       </main>
-      <nav className="fixed inset-x-0 bottom-0 z-10 border-t-2 border-line bg-surface pb-[env(safe-area-inset-bottom)]" aria-label="Main">
-        <ul className="mx-auto flex max-w-xl justify-around">
+      <nav className="fixed inset-x-0 bottom-0 z-10 border-t border-line bg-surface/90 pb-[env(safe-area-inset-bottom)] backdrop-blur" aria-label="Main">
+        <ul className="mx-auto flex max-w-xl justify-around px-2 pt-1.5">
           {tabs.map((t) => {
             const active = t.to === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/lesson') : loc.pathname.startsWith(t.to)
             return (
               <li key={t.to} className="flex-1">
-                <NavLink to={t.to} className={`flex flex-col items-center gap-0.5 py-2 text-[11px] font-bold ${active ? 'text-brand-600' : 'text-muted'}`} aria-current={active ? 'page' : undefined}>
-                  <t.icon width={24} height={24} className={active ? 'stroke-[2.5]' : ''} />
+                <NavLink to={t.to} className={`flex flex-col items-center gap-0.5 pb-1.5 text-[11px] font-extrabold transition ${active ? 'text-brand-600' : 'text-muted'}`} aria-current={active ? 'page' : undefined}>
+                  <span className={`flex h-8 w-14 items-center justify-center rounded-full transition ${active ? 'bg-brand-100 dark:bg-brand-500/25' : ''}`}>
+                    <t.icon width={22} height={22} className={active ? 'stroke-[2.5]' : ''} />
+                  </span>
                   {t.label}
                 </NavLink>
               </li>

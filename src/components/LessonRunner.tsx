@@ -145,7 +145,7 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
         <ExerciseView key={`${s.index}`} exercise={ex} value={s.answer} onChange={(v) => dispatch({ type: 'answer', value: v })} onSubmit={(v) => check(v)} checked={Boolean(s.result)} result={s.result} />
       </div>
       {!s.result && !autoSubmit && (
-        <div className="sticky bottom-0 -mx-4 border-t-2 border-line bg-[var(--bg)] px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3">
+        <div className="sticky bottom-0 -mx-4 border-t border-line bg-[var(--bg)]/95 px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur">
           <div className="flex gap-2">
             {mode !== 'lesson' && (
               <Button variant="ghost" onClick={() => dispatch({ type: 'skip' })}>

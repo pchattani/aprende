@@ -97,6 +97,9 @@ export default function Settings() {
         )}
       </Section>
       <p className="mt-6 text-center text-xs text-muted">Aprende · open source · no accounts, no tracking, no AI, works offline.</p>
+      <p className="mt-3 text-center text-[11px] leading-relaxed text-muted">
+        Aprende is an independent project by an individual. It is not affiliated with, endorsed by or connected to Duolingo, Inc. or any other language-learning company, and uses none of their content or trademarks.
+      </p>
     </div>
   )
 }

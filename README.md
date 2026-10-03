@@ -1,8 +1,8 @@
-# Aprende — a complete Spanish course, A1 to C2, with a Duolingo feel
+# Aprende — a complete Spanish course, from first words to fluency
 
 **Live app:** https://pchattani.github.io/aprende/ (install it to your phone's home screen; it works offline)
 
-Aprende is a free, open, no-account language course that actually teaches Spanish instead of leaving you with a bag of random words. It keeps what makes Duolingo compelling — five-minute lessons, hearts, XP, streaks, a path — and adds what Duolingo lacks: explicit grammar, a frequency-ordered vocabulary of thousands of words, spaced repetition that runs the show, a reading library with coverage metering, a full verb trainer, a pronunciation course, and checkpoint exams for every CEFR level.
+Aprende is a free, open, no-account language course that actually teaches Spanish instead of leaving you with a bag of random words. Short daily lessons, streaks and a visible path keep you coming back, and underneath them sits a real course: explicit grammar, a frequency-ordered vocabulary of thousands of words, spaced repetition that runs the show, a reading library with coverage metering, a full verb trainer, a pronunciation course, and checkpoint exams for every CEFR level.
 
 There is **no AI and no server**: every explanation was written by hand, and every piece of feedback is computed on your device by deterministic Spanish language engines (a full conjugator, accent rules, an agreement checker, a dictionary built from the course vocabulary) plus your browser's free text-to-speech and speech recognition.
 
@@ -54,6 +54,10 @@ Vite · React · TypeScript · Tailwind · Dexie (IndexedDB) · ts-fsrs · Playw
 ## Adding a language
 
 The engine is language-agnostic. A language is a `LanguagePack` (normaliser, tokenizer, inflector, conjugator, checker) under `src/lang/<code>/` plus content under `content/<code>/`. See `CONTENT_GUIDE.md`.
+
+## Independence
+
+Aprende is an independent, open-source project by an individual. It is not affiliated with, endorsed by, sponsored by or connected to Duolingo, Inc. or any other language-learning company or product, and it uses none of their content, code, characters or trademarks. Any product names mentioned belong to their respective owners.
 
 ## License
 
