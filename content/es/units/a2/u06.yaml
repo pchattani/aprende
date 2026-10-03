@@ -1,0 +1,98 @@
+id: a2.u06
+title: Pronombres
+lessons:
+  - id: a2.u06.l1
+    title: Lo, la, los, las
+    teach: [g.direct-object-pronouns]
+    vocab: [w.devolver, w.prestar, w.guardar, w.entregar, w.boligrafo, w.cuaderno, w.diccionario, w.lapiz, w.goma, w.rotulador, w.fecha, w.pedir-prestado]
+    sentences:
+      - { es: "¿Tienes mi bolígrafo? Sí, lo tengo aquí.", en: "Do you have my pen? Yes, I have it here.", grammar: [g.direct-object-pronouns], vocab: [w.boligrafo] }
+      - { es: "¿Me prestas tu diccionario? Te lo devuelvo mañana.", en: "Can you lend me your dictionary? I'll give it back to you tomorrow.", grammar: [g.double-object-pronouns], vocab: [w.prestar, w.diccionario, w.devolver] }
+      - { es: "He perdido el cuaderno. ¿Lo has visto?", en: "I've lost my notebook. Have you seen it?", grammar: [g.direct-object-pronouns], vocab: [w.cuaderno, w.ver] }
+      - { es: "Los lápices los guardo en el cajón.", en: "I keep the pencils in the drawer.", grammar: [g.pronoun-redundancy], vocab: [w.lapiz, w.guardar] }
+      - { es: "La goma la necesito ahora.", en: "I need the eraser now.", grammar: [g.direct-object-pronouns], vocab: [w.goma, w.necesitar] }
+      - { es: "¿Conoces a mi hermana? Sí, la conocí en tu fiesta.", en: "Do you know my sister? Yes, I met her at your party.", grammar: [g.direct-object-pronouns, g.a-personal], vocab: [w.conocer, w.hermana] }
+      - { es: "Te quiero mucho.", en: "I love you a lot.", grammar: [g.direct-object-pronouns], vocab: [w.querer] }
+      - { es: "¿Nos esperas en la puerta?", en: "Will you wait for us at the door?", grammar: [g.direct-object-pronouns], vocab: [w.esperar, w.puerta] }
+      - { es: "Los deberes hay que entregarlos el viernes.", en: "The homework has to be handed in on Friday.", grammar: [g.pronoun-placement], vocab: [w.entregar, w.deberes] }
+      - { es: "He pedido prestados unos rotuladores.", en: "I've borrowed some marker pens.", grammar: [g.present-perfect], vocab: [w.pedir-prestado, w.rotulador] }
+      - { es: "¿Sabes la fecha del examen? No, no la sé.", en: "Do you know the date of the exam? No, I don't know it.", grammar: [g.direct-object-pronouns], vocab: [w.fecha, w.saber] }
+      - { es: "No lo entiendo. ¿Puedes repetirlo?", en: "I don't understand it. Can you repeat it?", grammar: [g.pronoun-placement], vocab: [w.entender, w.repetir], error: { wrong: "No entiendo lo. ¿Puedes repetir lo?", explain: "Pronouns go before a conjugated verb (lo entiendo) or attached to the infinitive (repetirlo).", grammar: g.pronoun-placement } }
+      - { es: "Compré las entradas ayer.", en: "I bought the tickets yesterday.", grammar: [g.direct-object-pronouns], vocab: [w.comprar, w.entrada], transform: { instruction: "Replace 'las entradas' with a pronoun", answer: "Las compré ayer." } }
+  - id: a2.u06.l2
+    title: Le, les
+    teach: [g.indirect-object-pronouns]
+    vocab: [w.regalar, w.contar, w.explicar, w.ensenar, w.mostrar, w.traer, w.recomendar, w.ofrecer, w.carta, w.paquete, w.consejo, w.ayuda, w.respuesta, w.informacion, w.opinion]
+    sentences:
+      - { es: "Le he regalado un libro a mi padre.", en: "I've given my father a book.", grammar: [g.indirect-object-pronouns], vocab: [w.regalar, w.libro] }
+      - { es: "¿Me cuentas qué pasó?", en: "Will you tell me what happened?", grammar: [g.indirect-object-pronouns], vocab: [w.contar] }
+      - { es: "La profesora nos explica la gramática muy bien.", en: "The teacher explains the grammar to us very well.", grammar: [g.indirect-object-pronouns], vocab: [w.explicar, w.profesor] }
+      - { es: "Mi abuela me enseñó a cocinar.", en: "My grandmother taught me to cook.", grammar: [g.indirect-object-pronouns], vocab: [w.ensenar, w.cocinar] }
+      - { es: "¿Les has mostrado las fotos a tus amigos?", en: "Have you shown the photos to your friends?", grammar: [g.indirect-object-pronouns], vocab: [w.mostrar, w.foto] }
+      - { es: "El cartero le ha traído un paquete.", en: "The postman has brought her a parcel.", grammar: [g.indirect-object-pronouns], vocab: [w.traer, w.paquete, w.cartero] }
+      - { es: "Te recomiendo este restaurante.", en: "I recommend this restaurant to you.", grammar: [g.indirect-object-pronouns], vocab: [w.recomendar, w.restaurante] }
+      - { es: "Nos ofrecieron un café y un consejo.", en: "They offered us a coffee and some advice.", grammar: [g.indirect-object-pronouns], vocab: [w.ofrecer, w.consejo] }
+      - { es: "Le escribí una carta a mi abuela.", en: "I wrote a letter to my grandmother.", grammar: [g.indirect-object-pronouns], vocab: [w.carta, w.escribir] }
+      - { es: "¿Me das tu opinión?", en: "Will you give me your opinion?", grammar: [g.indirect-object-pronouns], vocab: [w.opinion, w.dar] }
+      - { es: "Les pedí ayuda a mis vecinos.", en: "I asked my neighbours for help.", grammar: [g.indirect-object-pronouns], vocab: [w.ayuda, w.pedir] }
+      - { es: "Todavía no me han dado una respuesta.", en: "They still haven't given me an answer.", grammar: [g.indirect-object-pronouns], vocab: [w.respuesta, w.dar] }
+      - { es: "¿Le has preguntado al médico? Sí, le he pedido información.", en: "Have you asked the doctor? Yes, I've asked him for information.", grammar: [g.indirect-object-pronouns], vocab: [w.informacion, w.preguntar], error: { wrong: "¿Lo has preguntado al médico?", explain: "Asking someone takes the indirect pronoun: le has preguntado.", grammar: g.indirect-object-pronouns } }
+      - { es: "Mi hermano me presta dinero.", en: "My brother lends me money.", grammar: [g.indirect-object-pronouns], vocab: [w.prestar, w.dinero], transform: { instruction: "Change 'me' to 'us'", answer: "Mi hermano nos presta dinero." } }
+  - id: a2.u06.l3
+    title: Se lo doy
+    teach: [g.double-object-pronouns]
+    tip: "le + lo = se lo. Indirect before direct: me lo, te la, se los."
+    vocab: [w.se, w.vender, w.agradecer, w.mentira, w.secreto, w.factura, w.prestamo, w.flores.phr, w.pulsera, w.anillo, w.reloj.phr, w.portero, w.sobre.noun, w.sello, w.direccion]
+    sentences:
+      - { es: "¿Me das tu número? Sí, te lo doy ahora.", en: "Will you give me your number? Yes, I'll give it to you now.", grammar: [g.double-object-pronouns], vocab: [w.numero, w.dar] }
+      - { es: "Le compré una pulsera a Marta y se la di en su cumpleaños.", en: "I bought Marta a bracelet and gave it to her on her birthday.", grammar: [g.double-object-pronouns], vocab: [w.pulsera, w.cumpleanos], error: { wrong: "Le compré una pulsera a Marta y le la di en su cumpleaños.", explain: "le becomes se before la: se la di.", grammar: g.double-object-pronouns } }
+      - { es: "¿Las llaves? Se las he dejado al portero.", en: "The keys? I've left them with the porter.", grammar: [g.double-object-pronouns], vocab: [w.llave, w.portero] }
+      - { es: "El anillo se lo regaló su abuela.", en: "Her grandmother gave her the ring.", grammar: [g.double-object-pronouns], vocab: [w.anillo, w.regalar] }
+      - { es: "Nos lo explicó muy bien.", en: "He explained it to us very well.", grammar: [g.double-object-pronouns], vocab: [w.explicar] }
+      - { es: "¿Puedes enviármelo mañana?", en: "Can you send it to me tomorrow?", grammar: [g.pronoun-placement], vocab: [w.enviar] }
+      - { es: "Te lo agradezco mucho.", en: "I'm very grateful to you for it.", grammar: [g.double-object-pronouns], vocab: [w.agradecer] }
+      - { es: "Es un secreto; no se lo digas a nadie.", en: "It's a secret; don't tell anyone.", grammar: [g.imperative-negative, g.double-object-pronouns], vocab: [w.secreto, w.decir] }
+      - { es: "Me vendió el coche y me lo trajo a casa.", en: "He sold me the car and brought it to my house.", grammar: [g.double-object-pronouns], vocab: [w.vender, w.traer] }
+      - { es: "La factura se la mandan al cliente por correo.", en: "They send the invoice to the customer by post.", grammar: [g.double-object-pronouns], vocab: [w.factura, w.enviar.phr] }
+      - { es: "El banco nos ha dado el préstamo.", en: "The bank has given us the loan.", grammar: [g.indirect-object-pronouns], vocab: [w.prestamo, w.banco] }
+      - { es: "Compré un sobre y un sello y escribí la dirección.", en: "I bought an envelope and a stamp and wrote the address.", grammar: [g.preterite-regular], vocab: [w.sobre.noun, w.sello, w.direccion] }
+      - { es: "Le llevé un ramo de flores a mi madre.", en: "I took my mother a bunch of flowers.", grammar: [g.indirect-object-pronouns], vocab: [w.flores.phr, w.llevar], transform: { instruction: "Replace 'un ramo de flores' with a pronoun", answer: "Se lo llevé a mi madre." } }
+      - { es: "Eso es mentira: nunca me lo dijo.", en: "That's a lie: he never told me.", grammar: [g.double-object-pronouns], vocab: [w.mentira, w.decir] }
+  - id: a2.u06.l4
+    title: ¿Dónde va el pronombre?
+    teach: [g.pronoun-placement]
+    vocab: [w.favor.phr, w.verdad.phr, w.gracias.phr, w.enviar.phr, w.perdonar, w.creer.phr, w.hacer-caso]
+    sentences:
+      - { es: "Quiero verlo. — Lo quiero ver.", en: "I want to see it.", altEs: ["Lo quiero ver."], grammar: [g.pronoun-placement], vocab: [w.ver, w.querer] }
+      - { es: "Estoy haciéndolo ahora mismo.", en: "I'm doing it right now.", altEs: ["Lo estoy haciendo ahora mismo."], grammar: [g.pronoun-placement], vocab: [w.hacer] }
+      - { es: "Dímelo, por favor.", en: "Tell me, please.", grammar: [g.pronoun-placement], vocab: [w.decir] }
+      - { es: "No me lo digas.", en: "Don't tell me.", grammar: [g.imperative-negative], vocab: [w.decir], error: { wrong: "No dímelo.", explain: "With a negative command the pronouns go before the verb: no me lo digas.", grammar: g.pronoun-placement } }
+      - { es: "¿Me haces un favor? Claro, dime.", en: "Can you do me a favour? Of course, tell me.", grammar: [g.pronoun-placement], vocab: [w.favor.phr] }
+      - { es: "Dile la verdad.", en: "Tell him the truth.", grammar: [g.pronoun-placement], vocab: [w.verdad.phr, w.decir] }
+      - { es: "Tenemos que darles las gracias.", en: "We have to thank them.", grammar: [g.pronoun-placement], vocab: [w.gracias.phr] }
+      - { es: "Mándame un mensaje cuando llegues.", en: "Send me a message when you arrive.", grammar: [g.pronoun-placement], vocab: [w.enviar.phr, w.mensaje] }
+      - { es: "Perdóname, no quería molestarte.", en: "Forgive me, I didn't mean to bother you.", grammar: [g.pronoun-placement], vocab: [w.perdonar, w.molestar] }
+      - { es: "¿Me crees? — Sí, te creo.", en: "Do you believe me? — Yes, I believe you.", grammar: [g.direct-object-pronouns], vocab: [w.creer.phr] }
+      - { es: "No le hagas caso.", en: "Don't pay attention to him.", grammar: [g.imperative-negative], vocab: [w.hacer-caso] }
+      - { es: "Voy a comprármelo.", en: "I'm going to buy it for myself.", grammar: [g.pronoun-placement], vocab: [w.comprar] }
+      - { es: "Levántate y vístete.", en: "Get up and get dressed.", grammar: [g.pronoun-placement], vocab: [w.levantarse, w.vestirse] }
+      - { es: "Se lo voy a explicar.", en: "I'm going to explain it to her.", altEs: ["Voy a explicárselo."], grammar: [g.pronoun-placement], vocab: [w.explicar], transform: { instruction: "Attach the pronouns to the infinitive", answer: "Voy a explicárselo." } }
+dialogues:
+  - id: a2.u06.d1
+    title: El regalo
+    context: Marta and Tom decide what to give their friend Lucía for her birthday.
+    lines:
+      - { speaker: Marta, es: "El sábado es el cumpleaños de Lucía. ¿Qué le regalamos?", en: "Saturday is Lucía's birthday. What shall we give her?" }
+      - { speaker: Tom, es: "¿Un libro? Le gusta mucho leer.", en: "A book? She loves reading." }
+      - { speaker: Marta, es: "Ya se lo regalé yo el año pasado. ¿Y una pulsera?", en: "I already gave her one last year. What about a bracelet?" }
+      - { speaker: Tom, es: "Buena idea. ¿La compramos juntos? Yo te doy la mitad del dinero.", en: "Good idea. Shall we buy it together? I'll give you half the money." }
+      - { speaker: Marta, es: "Vale. La vi en una tienda del centro. Se la enseño a Pablo primero para saber su opinión.", en: "OK. I saw one in a shop in the centre. I'll show it to Pablo first to get his opinion." }
+      - { speaker: Tom, es: "¿Y la tarjeta? ¿La escribes tú?", en: "And the card? Will you write it?" }
+      - { speaker: Marta, es: "Sí, la escribo yo y tú se la das en la fiesta.", en: "Yes, I'll write it and you give it to her at the party." }
+      - { speaker: Tom, es: "Perfecto. Oye, ¿me prestas veinte euros hasta el viernes? Te los devuelvo sin falta.", en: "Perfect. Hey, can you lend me twenty euros until Friday? I'll pay you back without fail." }
+      - { speaker: Marta, es: "¡Siempre me pides dinero! Toma, pero no se lo digas a nadie.", en: "You're always asking me for money! Here, but don't tell anyone." }
+      - { speaker: Tom, es: "Gracias, te lo agradezco mucho.", en: "Thanks, I really appreciate it." }
+    questions:
+      - { q: "Why don't they give Lucía a book?", options: ["She doesn't read", "Marta gave her one last year", "Books are too expensive"], answer: 1 }
+      - { q: "Who will write the card?", options: ["Tom", "Marta", "Pablo"], answer: 1 }
+      - { q: "What does Tom ask Marta for?", options: ["Her opinion", "Twenty euros", "A bracelet"], answer: 1 }

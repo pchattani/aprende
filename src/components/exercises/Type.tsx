@@ -62,7 +62,7 @@ export function TypeAnswer({ exercise, value, onChange, onSubmit, checked }: Exe
         onKeyDown={(e) => {
           if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault()
-            if (text.trim()) onSubmit()
+            if (text.trim()) onSubmit(text)
           }
         }}
         rows={3}

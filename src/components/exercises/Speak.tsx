@@ -15,8 +15,9 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
     setListening(true)
     const r = await listenOnce(pack.tts.lang)
     setListening(false)
-    onChange(r.transcript || ' ')
-    setTimeout(onSubmit, 200)
+    const value = r.transcript || ' '
+    onChange(value)
+    setTimeout(() => onSubmit(value), 200)
   }
   return (
     <div>
@@ -42,7 +43,7 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
       ) : (
         <div className="card text-sm text-muted">
           Speech recognition is not available in this browser. Read the sentence aloud, then tap Continue. (Chrome, Edge and Safari support it.)
-          <button type="button" className="btn btn-ghost mt-3 w-full" onClick={() => { onChange(exercise.answers[0]!); onSubmit() }}>
+          <button type="button" className="btn btn-ghost mt-3 w-full" onClick={() => { onChange(exercise.answers[0]!); onSubmit(exercise.answers[0]!) }}>
             I said it
           </button>
         </div>

@@ -17,7 +17,7 @@ export default function Grammar() {
   const notes = useMemo(() => [...grammar.values()].sort((a, b) => LEVEL_ORDER.indexOf(a.level) - LEVEL_ORDER.indexOf(b.level)), [])
   const filtered = useMemo(() => {
     const needle = stripAccents(q.toLowerCase())
-    return notes.filter((n) => (level === 'all' || n.level === level) && (!needle || stripAccents(`${n.title} ${n.summary}`.toLowerCase()).includes(needle)))
+    return notes.filter((n) => (level === 'all' || n.level === level) && (!needle || stripAccents(`${n.id} ${n.title} ${n.summary}`.toLowerCase()).includes(needle)))
   }, [notes, q, level])
 
   if (id) {

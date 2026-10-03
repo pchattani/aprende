@@ -1,4 +1,9 @@
 import { defineConfig, devices } from '@playwright/test'
+import { existsSync } from 'node:fs'
+
+// The cloud sandbox ships a Chromium build at a fixed path; CI installs its own via `playwright install`.
+const localChromium = ['/opt/pw-browsers/chromium', '/opt/pw-browsers/chromium/chrome', '/opt/pw-browsers/chromium-linux/chrome'].find((p) => existsSync(p))
+const launchOptions = process.env.CI || !localChromium ? {} : { executablePath: localChromium }
 
 export default defineConfig({
   testDir: './e2e',
@@ -17,5 +22,5 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },
-  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'], viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } }],
+  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'], viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, launchOptions } }],
 })

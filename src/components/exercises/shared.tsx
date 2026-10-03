@@ -5,8 +5,8 @@ export interface ExerciseProps<E extends Exercise = Exercise> {
   exercise: E
   value: Answer | undefined
   onChange: (value: Answer | undefined) => void
-  /** Called when the exercise wants to submit (Enter, auto-complete). */
-  onSubmit: () => void
+  /** Called when the exercise wants to submit (Enter, auto-complete). Pass the value to avoid stale state. */
+  onSubmit: (value?: Answer) => void
   checked: boolean
   result?: GradeResult
 }

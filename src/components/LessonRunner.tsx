@@ -79,6 +79,8 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   }))
   const [confirmQuit, setConfirmQuit] = useState(false)
   const finishedRef = useRef(false)
+  const stateRef = useRef(s)
+  stateRef.current = s
   const ex = s.queue[s.index]
   const total = s.queue.length
   const done = s.index
@@ -94,14 +96,18 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
     })
   }, [s.finished]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const check = () => {
-    if (!ex || s.answer === undefined) return
-    const r = grade(ex, s.answer, deps)
-    const xp = XP[ex.kind]
+  const check = (value?: Answer) => {
+    const cur = stateRef.current
+    const curEx = cur.queue[cur.index]
+    const answer = value ?? cur.answer
+    if (!curEx || cur.result || answer === undefined) return
+    if (value !== undefined) dispatch({ type: 'answer', value })
+    const r = grade(curEx, answer, deps)
+    const xp = XP[curEx.kind]
     dispatch({ type: 'check', result: r, xp })
     if (sound) playSound(r.verdict === 'wrong' ? 'wrong' : 'correct')
     const verdict = r.verdict
-    for (const item of new Set(ex.items)) void recordAnswer(item, verdict, ex.kind, { xp: 0 })
+    for (const item of new Set(curEx.items)) void recordAnswer(item, verdict, curEx.kind, { xp: 0 })
   }
   const canCheck = useMemo(() => {
     if (!ex || s.answer === undefined) return false
@@ -109,6 +115,17 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
     if (Array.isArray(s.answer)) return s.answer.length > 0
     return true
   }, [ex, s.answer])
+
+  // Test hook: expose the current exercise when the e2e flag is set (sessionStorage.e2e = '1').
+  useEffect(() => {
+    try {
+      if (typeof window !== 'undefined' && window.sessionStorage.getItem('e2e')) {
+        ;(window as unknown as { __aprende?: unknown }).__aprende = { exercise: ex, index: s.index, total, hearts: s.hearts, finished: s.finished }
+      }
+    } catch {
+      /* ignore */
+    }
+  }, [ex, s.index, total, s.hearts, s.finished])
 
   if (!ex) return null
   const autoSubmit = ex.kind === 'match' || ex.kind === 'speak'
@@ -123,7 +140,7 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
       </div>
       <p className="mt-2 truncate text-xs font-bold uppercase tracking-wide text-muted">{title}</p>
       <div className="flex-1 py-5">
-        <ExerciseView key={`${s.index}`} exercise={ex} value={s.answer} onChange={(v) => dispatch({ type: 'answer', value: v })} onSubmit={check} checked={Boolean(s.result)} result={s.result} />
+        <ExerciseView key={`${s.index}`} exercise={ex} value={s.answer} onChange={(v) => dispatch({ type: 'answer', value: v })} onSubmit={(v) => check(v)} checked={Boolean(s.result)} result={s.result} />
       </div>
       {!s.result && !autoSubmit && (
         <div className="sticky bottom-0 -mx-4 border-t-2 border-line bg-[var(--bg)] px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3">
@@ -133,7 +150,7 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
                 Skip
               </Button>
             )}
-            <Button variant={canCheck ? 'ok' : 'ghost'} className="flex-1" disabled={!canCheck} onClick={check}>
+            <Button variant={canCheck ? 'ok' : 'ghost'} className="flex-1" disabled={!canCheck} onClick={() => check()}>
               Check
             </Button>
           </div>

@@ -23,8 +23,9 @@ export function Match({ exercise, onChange, onSubmit, checked }: ExerciseProps<M
       setLeft(undefined)
       setRight(undefined)
       if (next.size === exercise.pairs.length) {
-        onChange({ mistakes })
-        setTimeout(onSubmit, 350)
+        const value = { mistakes }
+        onChange(value)
+        setTimeout(() => onSubmit(value), 350)
       }
     } else {
       setMistakes((m) => m + 1)
