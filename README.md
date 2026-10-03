@@ -28,10 +28,12 @@ CEFR can-do statements per unit · frequency-driven vocabulary · explicit gramm
 
 | Level | Units | Status |
 |---|---|---|
-| A1 | 12 | complete: 714 words, 48 lessons, 620+ sentences, 12 dialogues, 6 readers, exam |
-| A2 | 12 | in progress |
-| B1 | 12 | planned for this release |
+| A1 | 12 | complete: 714 words, 48 lessons, 618 sentences, 12 dialogues, 6 readers, exam |
+| A2 | 12 | complete: 642 new words, 48 lessons, 667 sentences, 12 dialogues, 8 readers, exam |
+| B1 | 12 | complete: 972 new words, 48 lessons, 765 sentences, 12 dialogues, 12 readers, exam |
 | B2–C2 | 30 | syllabus, can-do statements and grammar notes authored; lessons to follow |
+
+Cumulative through B1: 2,328 lemmas, 144 lessons, 2,050 sentences, 143 grammar notes with full lessons (230 notes in total), 26 graded readers, 3 checkpoint exams. `npm run content:stats` prints the live numbers.
 
 ## Run it locally
 

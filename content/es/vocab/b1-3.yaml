@@ -1,0 +1,236 @@
+# B1 vocabulary — units b1.u07 (relative clauses: housing, describing, job adverts),
+# b1.u08 (se and the passive: rules, processes, accidents, news) and b1.u09 (reported speech: communication, media).
+# Frequent words shared with other B1 units (alquiler, contrato, puesto, ley, gobierno, mentir, según…) live in b1-1/b1-2.
+# ---------------------------------------------------------------- b1.u07 Oraciones de relativo
+# l1 — que, quien, lo que: describing a home
+- { id: w.quien.rel, lemma: quien, pos: pron, en: [who, whom (relative)], forms: [quien, quienes], level: b1, unit: b1.u07 }
+- { id: w.lo-que, lemma: lo que, pos: phrase, en: [what, the thing that], level: b1, unit: b1.u07 }
+- { id: w.inquilino, lemma: inquilino, pos: noun, gender: mf, en: [tenant], level: b1, unit: b1.u07 }
+- { id: w.inmobiliaria, lemma: inmobiliaria, pos: noun, gender: f, en: [estate agency], level: b1, unit: b1.u07 }
+- { id: w.edificio, lemma: edificio, pos: noun, gender: m, en: [building], level: b1, unit: b1.u07 }
+- { id: w.ascensor, lemma: ascensor, pos: noun, gender: m, en: [lift, elevator], level: b1, unit: b1.u07, variant: { es-419: elevador } }
+- { id: w.terraza, lemma: terraza, pos: noun, gender: f, en: [terrace, roof terrace], level: b1, unit: b1.u07 }
+- { id: w.balcon, lemma: balcón, pos: noun, gender: m, en: [balcony], level: b1, unit: b1.u07 }
+- { id: w.garaje, lemma: garaje, pos: noun, gender: m, en: [garage], level: b1, unit: b1.u07 }
+- { id: w.trastero, lemma: trastero, pos: noun, gender: m, en: [storage room, box room], level: b1, unit: b1.u07 }
+- { id: w.aire-acondicionado, lemma: aire acondicionado, pos: phrase, en: [air conditioning], level: b1, unit: b1.u07 }
+- { id: w.amueblado, lemma: amueblado, pos: adj, en: [furnished], level: b1, unit: b1.u07 }
+- { id: w.luminoso, lemma: luminoso, pos: adj, en: [bright, light-filled], level: b1, unit: b1.u07 }
+- { id: w.exterior, lemma: exterior, pos: adj, en: [exterior, facing the street, outside], level: b1, unit: b1.u07 }
+- { id: w.interior, lemma: interior, pos: adj, en: [interior, inner, facing an inner courtyard], level: b1, unit: b1.u07 }
+- { id: w.reformado, lemma: reformado, pos: adj, en: [renovated, refurbished], level: b1, unit: b1.u07 }
+- { id: w.cuadrado, lemma: cuadrado, pos: adj, en: [square], level: b1, unit: b1.u07, notes: "metros cuadrados = square metres" }
+- { id: w.acogedor, lemma: acogedor, pos: adj, en: [cosy, welcoming], level: b1, unit: b1.u07 }
+- { id: w.amplio, lemma: amplio, pos: adj, en: [spacious, wide, broad], level: b1, unit: b1.u07 }
+- { id: w.estado, lemma: estado, pos: noun, gender: m, en: [state, condition], level: b1, unit: b1.u07, notes: "en buen estado = in good condition" }
+- { id: w.propietario, lemma: propietario, pos: noun, gender: mf, en: [owner, landlord, landlady], level: b1, unit: b1.u07 }
+- { id: w.calefaccion, lemma: calefacción, pos: noun, gender: f, en: [heating], level: b1, unit: b1.u07 }
+- { id: w.arriba, lemma: arriba, pos: adv, en: [up, upstairs, above], level: b1, unit: b1.u07, notes: "el piso de arriba = the flat upstairs" }
+# l2 — donde, cuyo, el cual: places and people
+- { id: w.donde.rel, lemma: donde, pos: adv, en: [where (relative)], forms: [donde, adonde], level: b1, unit: b1.u07 }
+- { id: w.cuyo, lemma: cuyo, pos: det, en: [whose], level: b1, unit: b1.u07 }
+- { id: w.cual.rel, lemma: cual, pos: pron, en: [which (el cual, la cual)], forms: [cual, cuales], level: b1, unit: b1.u07 }
+- { id: w.zona, lemma: zona, pos: noun, gender: f, en: [area, zone], level: b1, unit: b1.u07 }
+- { id: w.afueras, lemma: afueras, pos: noun, gender: f, plural: afueras, en: [outskirts], level: b1, unit: b1.u07 }
+- { id: w.centrico, lemma: céntrico, pos: adj, en: [central, centrally located], level: b1, unit: b1.u07 }
+- { id: w.comunidad, lemma: comunidad, pos: noun, gender: f, en: [community, residents' association], level: b1, unit: b1.u07 }
+- { id: w.habitante, lemma: habitante, pos: noun, gender: mf, en: [inhabitant], level: b1, unit: b1.u07 }
+- { id: w.autor, lemma: autor, pos: noun, gender: mf, en: [author], level: b1, unit: b1.u07 }
+- { id: w.empresario, lemma: empresario, pos: noun, gender: mf, en: [businessman, businesswoman, entrepreneur], level: b1, unit: b1.u07 }
+- { id: w.arquitecto, lemma: arquitecto, pos: noun, gender: mf, en: [architect], level: b1, unit: b1.u07 }
+- { id: w.disenar, lemma: diseñar, pos: verb, en: [to design], level: b1, unit: b1.u07 }
+- { id: w.dueno, lemma: dueño, pos: noun, gender: mf, en: [owner], level: b1, unit: b1.u07 }
+- { id: w.rincon, lemma: rincón, pos: noun, gender: m, en: [corner (inside), spot, nook], level: b1, unit: b1.u07 }
+- { id: w.local.adj, lemma: local, pos: adj, en: [local], level: b1, unit: b1.u07 }
+- { id: w.destacar, lemma: destacar, pos: verb, en: [to stand out, to highlight], level: b1, unit: b1.u07 }
+- { id: w.soleado, lemma: soleado, pos: adj, en: [sunny], level: b1, unit: b1.u07 }
+- { id: w.alcalde, lemma: alcalde, pos: noun, gender: mf, feminine: alcaldesa, en: [mayor], level: b1, unit: b1.u07 }
+- { id: w.unico, lemma: único, pos: adj, en: [only, unique], level: b1, unit: b1.u07 }
+# l3 — subjunctive in relative clauses: looking for a flat
+- { id: w.compartir, lemma: compartir, pos: verb, en: [to share], level: b1, unit: b1.u07 }
+- { id: w.companero-de-piso, lemma: compañero de piso, pos: phrase, en: [flatmate], level: b1, unit: b1.u07 }
+- { id: w.fianza, lemma: fianza, pos: noun, gender: f, en: [deposit (rental)], level: b1, unit: b1.u07 }
+- { id: w.incluir, lemma: incluir, pos: verb, en: [to include], level: b1, unit: b1.u07 }
+- { id: w.admitir, lemma: admitir, pos: verb, en: [to allow, to accept, to admit], level: b1, unit: b1.u07 }
+- { id: w.asequible, lemma: asequible, pos: adj, en: [affordable], level: b1, unit: b1.u07 }
+- { id: w.bien-comunicado, lemma: bien comunicado, pos: phrase, en: [well connected (by transport)], level: b1, unit: b1.u07 }
+- { id: w.ideal, lemma: ideal, pos: adj, en: [ideal], level: b1, unit: b1.u07 }
+- { id: w.caber, lemma: caber, pos: verb, en: [to fit (in a space)], level: b1, unit: b1.u07 }
+- { id: w.natural, lemma: natural, pos: adj, en: [natural], level: b1, unit: b1.u07 }
+- { id: w.silencioso, lemma: silencioso, pos: adj, en: [quiet, silent], level: b1, unit: b1.u07 }
+- { id: w.tener-en-cuenta, lemma: tener en cuenta, pos: phrase, en: [to take into account, to bear in mind], level: b1, unit: b1.u07 }
+- { id: w.cobrar, lemma: cobrar, pos: verb, en: [to charge, to be paid, to earn], level: b1, unit: b1.u07 }
+- { id: w.importar, lemma: importar, pos: verb, en: [to matter, to mind; to import], level: b1, unit: b1.u07, notes: "no me importa = I don't mind" }
+# l4 — subjunctive in relative clauses: job adverts and requirements
+- { id: w.oferta-de-trabajo, lemma: oferta de trabajo, pos: phrase, en: [job offer, job advert], level: b1, unit: b1.u07 }
+- { id: w.vacante, lemma: vacante, pos: noun, gender: f, en: [vacancy], level: b1, unit: b1.u07 }
+- { id: w.aspirante, lemma: aspirante, pos: noun, gender: mf, en: [applicant, candidate], level: b1, unit: b1.u07 }
+- { id: w.requerir, lemma: requerir, pos: verb, en: [to require], level: b1, unit: b1.u07 }
+- { id: w.jornada-completa, lemma: jornada completa, pos: phrase, en: [full time], level: b1, unit: b1.u07 }
+- { id: w.media-jornada, lemma: media jornada, pos: phrase, en: [part time, half day], level: b1, unit: b1.u07 }
+- { id: w.incorporacion, lemma: incorporación, pos: noun, gender: f, en: [start (of a job), joining], level: b1, unit: b1.u07, notes: "incorporación inmediata = immediate start" }
+- { id: w.inmediato, lemma: inmediato, pos: adj, en: [immediate], level: b1, unit: b1.u07 }
+- { id: w.formacion, lemma: formación, pos: noun, gender: f, en: [training, education], level: b1, unit: b1.u07 }
+- { id: w.nivel, lemma: nivel, pos: noun, gender: m, en: [level], level: b1, unit: b1.u07 }
+- { id: w.dominar, lemma: dominar, pos: verb, en: [to master, to have a command of (a language)], level: b1, unit: b1.u07 }
+- { id: w.conocimiento, lemma: conocimiento, pos: noun, gender: m, en: [knowledge], level: b1, unit: b1.u07 }
+- { id: w.habilidad, lemma: habilidad, pos: noun, gender: f, en: [skill, ability], level: b1, unit: b1.u07 }
+- { id: w.disponibilidad, lemma: disponibilidad, pos: noun, gender: f, en: [availability], level: b1, unit: b1.u07 }
+- { id: w.valorar, lemma: valorar, pos: verb, en: [to value, to appreciate, to assess], level: b1, unit: b1.u07, notes: "se valorará = will be an advantage" }
+- { id: w.capaz, lemma: capaz, pos: adj, en: [capable, able], level: b1, unit: b1.u07 }
+- { id: w.flexible, lemma: flexible, pos: adj, en: [flexible], level: b1, unit: b1.u07 }
+- { id: w.organizado, lemma: organizado, pos: adj, en: [organised], level: b1, unit: b1.u07 }
+- { id: w.dinamico, lemma: dinámico, pos: adj, en: [dynamic, energetic], level: b1, unit: b1.u07 }
+- { id: w.don-de-gentes, lemma: don de gentes, pos: phrase, en: [people skills, a way with people], level: b1, unit: b1.u07 }
+- { id: w.atencion-al-cliente, lemma: atención al cliente, pos: phrase, en: [customer service], level: b1, unit: b1.u07 }
+- { id: w.carne-de-conducir, lemma: carné de conducir, pos: phrase, en: [driving licence], level: b1, unit: b1.u07, variant: { es-419: licencia de conducir } }
+- { id: w.seleccion, lemma: selección, pos: noun, gender: f, en: [selection, recruitment; national team], level: b1, unit: b1.u07 }
+- { id: w.referencia, lemma: referencia, pos: noun, gender: f, en: [reference], level: b1, unit: b1.u07 }
+# ---------------------------------------------------------------- b1.u08 Se y la voz pasiva
+# l1 — impersonal se: signs, rules, habits
+- { id: w.cartel, lemma: cartel, pos: noun, gender: m, en: [sign, poster], level: b1, unit: b1.u08 }
+- { id: w.aviso, lemma: aviso, pos: noun, gender: m, en: [notice, warning], level: b1, unit: b1.u08 }
+- { id: w.aparcamiento, lemma: aparcamiento, pos: noun, gender: m, en: [car park, parking], level: b1, unit: b1.u08, variant: { es-419: estacionamiento } }
+- { id: w.acceso, lemma: acceso, pos: noun, gender: m, en: [access, entrance], level: b1, unit: b1.u08 }
+- { id: w.conductor, lemma: conductor, pos: noun, gender: mf, en: [driver], level: b1, unit: b1.u08 }
+- { id: w.pronunciar, lemma: pronunciar, pos: verb, en: [to pronounce], level: b1, unit: b1.u08 }
+- { id: w.traducir, lemma: traducir, pos: verb, en: [to translate], level: b1, unit: b1.u08 }
+- { id: w.madrugar, lemma: madrugar, pos: verb, en: [to get up early], level: b1, unit: b1.u08 }
+- { id: w.atender, lemma: atender, pos: verb, en: [to serve (a customer), to attend to, to pay attention], level: b1, unit: b1.u08 }
+- { id: w.rellenar, lemma: rellenar, pos: verb, en: [to fill in (a form), to fill], level: b1, unit: b1.u08 }
+- { id: w.formulario, lemma: formulario, pos: noun, gender: m, en: [form (document)], level: b1, unit: b1.u08 }
+- { id: w.cita-previa, lemma: cita previa, pos: phrase, en: [appointment (booked in advance)], level: b1, unit: b1.u08 }
+- { id: w.previo, lemma: previo, pos: adj, en: [prior, previous], level: b1, unit: b1.u08 }
+- { id: w.en-general, lemma: en general, pos: phrase, en: [in general, generally], level: b1, unit: b1.u08 }
+- { id: w.hoy-en-dia, lemma: hoy en día, pos: phrase, en: [nowadays], level: b1, unit: b1.u08 }
+- { id: w.regla, lemma: regla, pos: noun, gender: f, en: [rule; ruler], level: b1, unit: b1.u08 }
+- { id: w.multar, lemma: multar, pos: verb, en: [to fine], level: b1, unit: b1.u08 }
+# l2 — passive se: adverts, instructions, processes
+- { id: w.fabricar, lemma: fabricar, pos: verb, en: [to manufacture, to make], level: b1, unit: b1.u08 }
+- { id: w.producir, lemma: producir, pos: verb, en: [to produce], level: b1, unit: b1.u08 }
+- { id: w.producto, lemma: producto, pos: noun, gender: m, en: [product], level: b1, unit: b1.u08 }
+- { id: w.elaborar, lemma: elaborar, pos: verb, en: [to make, to produce (food, a plan)], level: b1, unit: b1.u08 }
+- { id: w.material, lemma: material, pos: noun, gender: m, en: [material], level: b1, unit: b1.u08 }
+- { id: w.vidrio, lemma: vidrio, pos: noun, gender: m, en: [glass (material)], level: b1, unit: b1.u08 }
+- { id: w.papel, lemma: papel, pos: noun, gender: m, en: [paper; role], level: b1, unit: b1.u08 }
+- { id: w.carton, lemma: cartón, pos: noun, gender: m, en: [cardboard], level: b1, unit: b1.u08 }
+- { id: w.contenedor, lemma: contenedor, pos: noun, gender: m, en: [container, recycling bin], level: b1, unit: b1.u08 }
+- { id: w.construir, lemma: construir, pos: verb, en: [to build, to construct], level: b1, unit: b1.u08 }
+- { id: w.inaugurar, lemma: inaugurar, pos: verb, en: [to open (officially), to inaugurate], level: b1, unit: b1.u08 }
+- { id: w.repartir, lemma: repartir, pos: verb, en: [to deliver, to hand out, to share out], level: b1, unit: b1.u08 }
+- { id: w.envio, lemma: envío, pos: noun, gender: m, en: [delivery, shipment], level: b1, unit: b1.u08 }
+- { id: w.pedido, lemma: pedido, pos: noun, gender: m, en: [order (purchase)], level: b1, unit: b1.u08 }
+- { id: w.garantia, lemma: garantía, pos: noun, gender: f, en: [guarantee, warranty], level: b1, unit: b1.u08 }
+- { id: w.arreglar, lemma: arreglar, pos: verb, en: [to fix, to repair, to sort out], level: b1, unit: b1.u08 }
+- { id: w.funcionar, lemma: funcionar, pos: verb, en: [to work (machines), to function], level: b1, unit: b1.u08 }
+- { id: w.secar, lemma: secar, pos: verb, en: [to dry], level: b1, unit: b1.u08 }
+# l3 — passive with ser: news and history
+- { id: w.prensa, lemma: prensa, pos: noun, gender: f, en: [press (newspapers)], level: b1, unit: b1.u08 }
+- { id: w.telediario, lemma: telediario, pos: noun, gender: m, en: [TV news bulletin], level: b1, unit: b1.u08, variant: { es-419: noticiero } }
+- { id: w.informativo, lemma: informativo, pos: noun, gender: m, en: [news programme, news bulletin], level: b1, unit: b1.u08 }
+- { id: w.medios-de-comunicacion, lemma: medios de comunicación, pos: phrase, en: [the media], level: b1, unit: b1.u08 }
+- { id: w.emitir, lemma: emitir, pos: verb, en: [to broadcast, to issue], level: b1, unit: b1.u08 }
+- { id: w.anunciar, lemma: anunciar, pos: verb, en: [to announce, to advertise], level: b1, unit: b1.u08 }
+- { id: w.eleccion, lemma: elección, pos: noun, gender: f, en: [election; choice], level: b1, unit: b1.u08 }
+- { id: w.ganador, lemma: ganador, pos: noun, gender: mf, en: [winner], level: b1, unit: b1.u08 }
+- { id: w.nombrar, lemma: nombrar, pos: verb, en: [to appoint, to name], level: b1, unit: b1.u08 }
+- { id: w.premiar, lemma: premiar, pos: verb, en: [to award a prize to, to reward], level: b1, unit: b1.u08 }
+- { id: w.detener, lemma: detener, pos: verb, en: [to arrest, to stop], level: b1, unit: b1.u08 }
+- { id: w.acusar, lemma: acusar, pos: verb, en: [to accuse, to charge], level: b1, unit: b1.u08 }
+- { id: w.juez, lemma: juez, pos: noun, gender: mf, feminine: jueza, en: [judge], level: b1, unit: b1.u08 }
+- { id: w.carcel, lemma: cárcel, pos: noun, gender: f, en: [prison, jail], level: b1, unit: b1.u08 }
+- { id: w.rescatar, lemma: rescatar, pos: verb, en: [to rescue], level: b1, unit: b1.u08 }
+- { id: w.destruir, lemma: destruir, pos: verb, en: [to destroy], level: b1, unit: b1.u08 }
+- { id: w.terremoto, lemma: terremoto, pos: noun, gender: m, en: [earthquake], level: b1, unit: b1.u08 }
+- { id: w.cancelar, lemma: cancelar, pos: verb, en: [to cancel], level: b1, unit: b1.u08 }
+# l4 — accidental se: mishaps
+- { id: w.quemar, lemma: quemar, pos: verb, en: [to burn], level: b1, unit: b1.u08 }
+- { id: w.estropearse, lemma: estropearse, pos: verb, en: [to break down, to go wrong, to spoil], level: b1, unit: b1.u08, variant: { es-419: descomponerse } }
+- { id: w.manchar, lemma: manchar, pos: verb, en: [to stain], level: b1, unit: b1.u08 }
+- { id: w.mancha, lemma: mancha, pos: noun, gender: f, en: [stain, spot], level: b1, unit: b1.u08 }
+- { id: w.mojarse, lemma: mojarse, pos: verb, en: [to get wet], level: b1, unit: b1.u08 }
+- { id: w.quedarse-sin, lemma: quedarse sin, pos: phrase, en: [to run out of, to be left without], level: b1, unit: b1.u08 }
+- { id: w.sin-querer, lemma: sin querer, pos: phrase, en: [accidentally, without meaning to], level: b1, unit: b1.u08 }
+- { id: w.torpe, lemma: torpe, pos: adj, en: [clumsy], level: b1, unit: b1.u08 }
+- { id: w.despistado, lemma: despistado, pos: adj, en: [absent-minded, scatterbrained], level: b1, unit: b1.u08 }
+- { id: w.descuido, lemma: descuido, pos: noun, gender: m, en: [carelessness, slip, moment of inattention], level: b1, unit: b1.u08 }
+- { id: w.pedir-perdon, lemma: pedir perdón, pos: phrase, en: [to apologise, to say sorry], level: b1, unit: b1.u08 }
+- { id: w.pinchar, lemma: pinchar, pos: verb, en: [to puncture, to get a flat tyre, to prick], level: b1, unit: b1.u08 }
+- { id: w.rueda, lemma: rueda, pos: noun, gender: f, en: [wheel, tyre], level: b1, unit: b1.u08 }
+- { id: w.averia, lemma: avería, pos: noun, gender: f, en: [breakdown, fault (mechanical)], level: b1, unit: b1.u08 }
+- { id: w.desastre, lemma: desastre, pos: noun, gender: m, en: [disaster], level: b1, unit: b1.u08 }
+- { id: w.lio, lemma: lío, pos: noun, gender: m, en: [mess, muddle, trouble], level: b1, unit: b1.u08 }
+- { id: w.pila, lemma: pila, pos: noun, gender: f, en: [battery (AA), pile], level: b1, unit: b1.u08 }
+- { id: w.gasolina, lemma: gasolina, pos: noun, gender: f, en: [petrol, gasoline], level: b1, unit: b1.u08 }
+# ---------------------------------------------------------------- b1.u09 Estilo indirecto
+# l1 — reporting in the present: messages
+- { id: w.recado, lemma: recado, pos: noun, gender: m, en: [message (spoken), errand], level: b1, unit: b1.u09 }
+- { id: w.dejar-un-recado, lemma: dejar un recado, pos: phrase, en: [to leave a message], level: b1, unit: b1.u09 }
+- { id: w.buzon, lemma: buzón, pos: noun, gender: m, en: [mailbox, letterbox, voicemail], level: b1, unit: b1.u09, notes: "buzón de voz = voicemail" }
+- { id: w.devolver-la-llamada, lemma: devolver la llamada, pos: phrase, en: [to call back], level: b1, unit: b1.u09 }
+- { id: w.informar, lemma: informar, pos: verb, en: [to inform, to report], level: b1, unit: b1.u09 }
+- { id: w.comentar, lemma: comentar, pos: verb, en: [to comment, to mention, to remark], level: b1, unit: b1.u09 }
+- { id: w.afirmar, lemma: afirmar, pos: verb, en: [to state, to claim, to affirm], level: b1, unit: b1.u09 }
+- { id: w.asegurar, lemma: asegurar, pos: verb, en: [to assure, to insure, to secure], level: b1, unit: b1.u09 }
+- { id: w.responder, lemma: responder, pos: verb, en: [to reply, to answer, to respond], level: b1, unit: b1.u09 }
+- { id: w.confirmar, lemma: confirmar, pos: verb, en: [to confirm], level: b1, unit: b1.u09 }
+- { id: w.aplazar, lemma: aplazar, pos: verb, en: [to postpone], level: b1, unit: b1.u09 }
+- { id: w.quedar-en, lemma: quedar en, pos: phrase, en: [to agree (to do something), to arrange], level: b1, unit: b1.u09 }
+- { id: w.despedirse, lemma: despedirse, pos: verb, en: [to say goodbye], level: b1, unit: b1.u09 }
+- { id: w.charlar, lemma: charlar, pos: verb, en: [to chat], level: b1, unit: b1.u09, variant: { es-419: platicar } }
+- { id: w.conversacion, lemma: conversación, pos: noun, gender: f, en: [conversation], level: b1, unit: b1.u09 }
+- { id: w.cotilleo, lemma: cotilleo, pos: noun, gender: m, en: [gossip], level: b1, unit: b1.u09, variant: { es-419: chisme } }
+- { id: w.parte, lemma: parte, pos: noun, gender: f, en: [part], level: b1, unit: b1.u09 }
+- { id: w.de-parte-de, lemma: de parte de, pos: phrase, en: [on behalf of, from], level: b1, unit: b1.u09 }
+# l2 — reporting in the past: tense shifts
+- { id: w.declarar, lemma: declarar, pos: verb, en: [to declare, to state (publicly)], level: b1, unit: b1.u09 }
+- { id: w.declaracion, lemma: declaración, pos: noun, gender: f, en: [statement, declaration], level: b1, unit: b1.u09 }
+- { id: w.portavoz, lemma: portavoz, pos: noun, gender: mf, plural: portavoces, en: [spokesperson], level: b1, unit: b1.u09 }
+- { id: w.entrevistar, lemma: entrevistar, pos: verb, en: [to interview], level: b1, unit: b1.u09 }
+- { id: w.jurar, lemma: jurar, pos: verb, en: [to swear, to vow], level: b1, unit: b1.u09 }
+- { id: w.amenazar, lemma: amenazar, pos: verb, en: [to threaten], level: b1, unit: b1.u09 }
+- { id: w.ocultar, lemma: ocultar, pos: verb, en: [to hide, to conceal], level: b1, unit: b1.u09 }
+- { id: w.sincero, lemma: sincero, pos: adj, en: [sincere, honest], level: b1, unit: b1.u09 }
+- { id: w.supuestamente, lemma: supuestamente, pos: adv, en: [supposedly, allegedly], level: b1, unit: b1.u09 }
+- { id: w.broma, lemma: broma, pos: noun, gender: f, en: [joke, prank], level: b1, unit: b1.u09, notes: "en broma = jokingly" }
+- { id: w.malentendido, lemma: malentendido, pos: noun, gender: m, en: [misunderstanding], level: b1, unit: b1.u09 }
+- { id: w.tono, lemma: tono, pos: noun, gender: m, en: [tone], level: b1, unit: b1.u09 }
+- { id: w.dejar-claro, lemma: dejar claro, pos: phrase, en: [to make clear], level: b1, unit: b1.u09 }
+- { id: w.reconocer, lemma: reconocer, pos: verb, en: [to admit, to recognise], level: b1, unit: b1.u09 }
+# l3 — reporting in the past: time, place and person shifts
+- { id: w.anterior, lemma: anterior, pos: adj, en: [previous, before], level: b1, unit: b1.u09 }
+- { id: w.siguiente, lemma: siguiente, pos: adj, en: [next, following], level: b1, unit: b1.u09 }
+- { id: w.al-dia-siguiente, lemma: al día siguiente, pos: phrase, en: [the next day], level: b1, unit: b1.u09 }
+- { id: w.el-dia-anterior, lemma: el día anterior, pos: phrase, en: [the day before], level: b1, unit: b1.u09 }
+- { id: w.en-aquel-momento, lemma: en aquel momento, pos: phrase, en: [at that moment, at the time], level: b1, unit: b1.u09 }
+- { id: w.posterior, lemma: posterior, pos: adj, en: [later, subsequent, rear], level: b1, unit: b1.u09 }
+- { id: w.actual, lemma: actual, pos: adj, en: [current, present-day], level: b1, unit: b1.u09, notes: "false friend: not 'actual'" }
+- { id: w.actualmente, lemma: actualmente, pos: adv, en: [currently, at present], level: b1, unit: b1.u09 }
+- { id: w.ocasion, lemma: ocasión, pos: noun, gender: f, en: [occasion, opportunity], level: b1, unit: b1.u09 }
+- { id: w.invitacion, lemma: invitación, pos: noun, gender: f, en: [invitation], level: b1, unit: b1.u09 }
+- { id: w.invitado, lemma: invitado, pos: noun, gender: mf, en: [guest], level: b1, unit: b1.u09 }
+- { id: w.reunirse, lemma: reunirse, pos: verb, en: [to meet (up), to get together], level: b1, unit: b1.u09 }
+- { id: w.tardar, lemma: tardar, pos: verb, en: [to take (time), to be long], level: b1, unit: b1.u09 }
+- { id: w.relacion, lemma: relación, pos: noun, gender: f, en: [relationship, relation], level: b1, unit: b1.u09 }
+- { id: w.contacto, lemma: contacto, pos: noun, gender: m, en: [contact], level: b1, unit: b1.u09 }
+- { id: w.ponerse-en-contacto, lemma: ponerse en contacto, pos: phrase, en: [to get in touch], level: b1, unit: b1.u09 }
+# l4 — reported questions and reporting verbs; media
+- { id: w.mencionar, lemma: mencionar, pos: verb, en: [to mention], level: b1, unit: b1.u09 }
+- { id: w.interesarse, lemma: interesarse, pos: verb, en: [to take an interest (in), to ask after], level: b1, unit: b1.u09 }
+- { id: w.curiosidad, lemma: curiosidad, pos: noun, gender: f, en: [curiosity], level: b1, unit: b1.u09 }
+- { id: w.detalle, lemma: detalle, pos: noun, gender: m, en: [detail], level: b1, unit: b1.u09 }
+- { id: w.estado-civil, lemma: estado civil, pos: phrase, en: [marital status], level: b1, unit: b1.u09 }
+- { id: w.educado, lemma: educado, pos: adj, en: [polite, well-mannered], level: b1, unit: b1.u09, notes: "false friend: not 'educated'" }
+- { id: w.maleducado, lemma: maleducado, pos: adj, en: [rude, bad-mannered], level: b1, unit: b1.u09 }
+- { id: w.directo, lemma: directo, pos: adj, en: [direct, live (broadcast)], level: b1, unit: b1.u09, notes: "en directo = live" }
+- { id: w.programa, lemma: programa, pos: noun, gender: m, en: [programme, show], level: b1, unit: b1.u09 }
+- { id: w.presentador, lemma: presentador, pos: noun, gender: mf, en: [presenter, host], level: b1, unit: b1.u09 }
+- { id: w.oyente, lemma: oyente, pos: noun, gender: mf, en: [listener], level: b1, unit: b1.u09 }
+- { id: w.espectador, lemma: espectador, pos: noun, gender: mf, en: [viewer, spectator], level: b1, unit: b1.u09 }
+- { id: w.audiencia, lemma: audiencia, pos: noun, gender: f, en: [audience, viewing figures], level: b1, unit: b1.u09 }
+- { id: w.usuario, lemma: usuario, pos: noun, gender: mf, en: [user], level: b1, unit: b1.u09 }
+- { id: w.seguidor, lemma: seguidor, pos: noun, gender: mf, en: [follower, fan], level: b1, unit: b1.u09 }
+- { id: w.comentario, lemma: comentario, pos: noun, gender: m, en: [comment, remark], level: b1, unit: b1.u09 }
+- { id: w.revista, lemma: revista, pos: noun, gender: f, en: [magazine], level: b1, unit: b1.u09 }
+- { id: w.publicidad, lemma: publicidad, pos: noun, gender: f, en: [advertising, publicity], level: b1, unit: b1.u09 }
+- { id: w.cifra, lemma: cifra, pos: noun, gender: f, en: [figure, number], level: b1, unit: b1.u09 }
