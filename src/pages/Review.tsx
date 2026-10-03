@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router'
 import type { Exercise, CardRow, LessonResult } from '../engine/types'
 import type { Lesson, LevelId } from '../engine/schema'
@@ -20,6 +20,11 @@ const SESSION = 20
 export default function Review() {
   const [params] = useSearchParams()
   const grammarFilter = params.get('grammar') ?? undefined
+  // Keyed so that changing the filter resets the session state.
+  return <ReviewSession key={grammarFilter ?? ''} grammarFilter={grammarFilter} />
+}
+
+function ReviewSession({ grammarFilter }: { grammarFilter: string | undefined }) {
   const due = useDueCount()
   const all = useAllCards()
   const speechOn = useSettings((s) => s.speech)
@@ -27,11 +32,6 @@ export default function Review() {
   const [exercises, setExercises] = useState<Exercise[] | undefined>()
   const [summary, setSummary] = useState<LessonResult | undefined>()
   const [building, setBuilding] = useState(false)
-
-  useEffect(() => {
-    setExercises(undefined)
-    setSummary(undefined)
-  }, [grammarFilter])
 
   const start = async (mode: 'due' | 'practice') => {
     setBuilding(true)
@@ -136,7 +136,7 @@ export default function Review() {
 }
 
 function Forecast({ cards }: { cards: CardRow[] }) {
-  const now = Date.now()
+  const [now] = useState(() => Date.now())
   const buckets = [
     { label: 'Now', n: cards.filter((c) => c.due <= now).length },
     { label: 'Tomorrow', n: cards.filter((c) => c.due > now && c.due <= now + 86_400_000).length },

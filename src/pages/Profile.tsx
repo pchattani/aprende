@@ -8,12 +8,14 @@ import { grammar, levels, vocab } from '../engine/loader'
 import { PageHeader, Chip, Button } from '../components/ui/basics'
 import { IconFlame, IconGear, IconStar, IconTrophy } from '../components/ui/icons'
 
+const NO_REVIEWS: never[] = []
+
 export default function Profile() {
   const cards = useAllCards() ?? []
   const days = useDays() ?? []
   const exams = useExams()
   const lessons = useLessonRows()
-  const reviews = useLiveQuery(() => db.reviews.orderBy('ts').reverse().limit(600).toArray(), []) ?? []
+  const reviews = useLiveQuery(() => db.reviews.orderBy('ts').reverse().limit(600).toArray(), [], NO_REVIEWS)
   const today = todayKey()
   const streak = streakFrom(days.filter((d) => d.xp > 0 || d.lessons > 0 || d.reviews > 0).map((d) => d.date), today)
   const xp = days.reduce((s, d) => s + d.xp, 0)

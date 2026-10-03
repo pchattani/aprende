@@ -80,7 +80,9 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   const [confirmQuit, setConfirmQuit] = useState(false)
   const finishedRef = useRef(false)
   const stateRef = useRef(s)
-  stateRef.current = s
+  useEffect(() => {
+    stateRef.current = s
+  })
   const ex = s.queue[s.index]
   const total = s.queue.length
   const done = s.index

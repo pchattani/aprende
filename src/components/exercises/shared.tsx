@@ -11,8 +11,6 @@ export interface ExerciseProps<E extends Exercise = Exercise> {
   result?: GradeResult
 }
 
-export const SPECIAL_CHARS = ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡']
-
 export function Prompt({ children, lang = 'es' }: { children: React.ReactNode; lang?: 'es' | 'en' }) {
   return (
     <p className="text-xl font-bold leading-snug" lang={lang}>

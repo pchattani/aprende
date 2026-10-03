@@ -1,5 +1,6 @@
 import type { GrammarNote } from '../engine/schema'
-import { Markdown, inline } from './ui/Markdown'
+import { Markdown } from './ui/Markdown'
+import { inline } from './ui/inline'
 import { SpeakerButton, Chip } from './ui/basics'
 
 export function GrammarNoteView({ note, compact = false }: { note: GrammarNote; compact?: boolean }) {

@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
 import type { TypeExercise, FindErrorExercise } from '../../engine/types'
 import { SpeakerButton, Chip } from '../ui/basics'
-import { Instruction, Prompt, SPECIAL_CHARS, type ExerciseProps } from './shared'
+import { Instruction, Prompt, type ExerciseProps } from './shared'
+import { SPECIAL_CHARS } from './chars'
 
 const TITLES: Record<string, string> = {
   typeEs: 'Write this in Spanish',

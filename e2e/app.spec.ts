@@ -116,3 +116,31 @@ test('pronunciation lesson and settings load', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Settings' })).toBeVisible()
   await page.getByRole('button', { name: 'Export' }).click()
 })
+
+test('works offline once the service worker has cached the app', async ({ page, context }) => {
+  test.setTimeout(120_000)
+  await page.goto('/')
+  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  // Wait for the service worker to install and finish precaching.
+  await page.evaluate(async () => {
+    const reg = await navigator.serviceWorker.ready
+    if (reg.active?.state !== 'activated') {
+      await new Promise<void>((resolve) => {
+        reg.active?.addEventListener('statechange', () => reg.active?.state === 'activated' && resolve())
+      })
+    }
+  })
+  await page.waitForFunction(async () => {
+    const keys = await caches.keys()
+    if (keys.length === 0) return false
+    const cache = await caches.open(keys[0]!)
+    return (await cache.keys()).length > 10
+  }, undefined, { timeout: 60_000 })
+  await context.setOffline(true)
+  await page.reload()
+  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  // Base-relative so the URL stays inside the service worker's /aprende/ scope.
+  await page.goto('./#/grammar')
+  await expect(page.getByRole('heading', { name: 'Grammar' })).toBeVisible()
+  await context.setOffline(false)
+})

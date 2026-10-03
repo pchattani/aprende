@@ -9,7 +9,7 @@ import { listenOnce, sttSupported } from '../engine/speech'
 import { pack } from '../engine/loader'
 import { Button, ProgressBar, SpeakerButton, Chip } from '../components/ui/basics'
 import { IconX, IconMic, IconTrophy } from '../components/ui/icons'
-import { SPECIAL_CHARS } from '../components/exercises/shared'
+import { SPECIAL_CHARS } from '../components/exercises/chars'
 import { playSound } from '../engine/sounds'
 import type { CheckerFinding } from '../lang/types'
 

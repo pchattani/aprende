@@ -5,7 +5,7 @@ import { match, stripAccents } from '../lang/es/normalize'
 import { Rng } from '../engine/random'
 import { PageHeader, Button, Chip, SpeakerButton } from '../components/ui/basics'
 import { IconSearch } from '../components/ui/icons'
-import { SPECIAL_CHARS } from '../components/exercises/shared'
+import { SPECIAL_CHARS } from '../components/exercises/chars'
 import { LEVEL_ORDER, type LevelId } from '../engine/schema'
 
 
@@ -192,7 +192,9 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
             disabled={state !== 'ask'}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') state === 'ask' ? check() : next()
+              if (e.key !== 'Enter') return
+              if (state === 'ask') check()
+              else next()
             }}
             className="mt-3 w-full rounded-2xl border-2 border-line bg-surface-2 p-3 text-lg outline-none focus:border-sky-500"
             lang="es"
