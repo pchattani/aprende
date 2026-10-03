@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react'
 import { Routes, Route, NavLink, Outlet, useLocation } from 'react-router'
 import { useSettings, applyTheme } from './store/settings'
 import { IconHome, IconRepeat, IconBook, IconVerb, IconUser } from './components/ui/icons'
+import { ErrorBoundary } from './components/ErrorBoundary'
 
 const Path = lazy(() => import('./pages/Path'))
 const LessonPage = lazy(() => import('./pages/Lesson'))
@@ -31,9 +32,11 @@ function Shell() {
   return (
     <div className="mx-auto min-h-full max-w-xl pb-[calc(4.5rem+env(safe-area-inset-bottom))]">
       <main className="px-4 pt-[calc(0.75rem+env(safe-area-inset-top))]">
-        <Suspense fallback={<Loading />}>
-          <Outlet />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
+            <Outlet />
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <nav className="fixed inset-x-0 bottom-0 z-10 border-t-2 border-line bg-surface pb-[env(safe-area-inset-bottom)]" aria-label="Main">
         <ul className="mx-auto flex max-w-xl justify-around">
@@ -76,17 +79,21 @@ export default function App() {
       <Route
         path="lesson/:id"
         element={
-          <Suspense fallback={<Loading />}>
-            <LessonPage />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+              <LessonPage />
+            </Suspense>
+          </ErrorBoundary>
         }
       />
       <Route
         path="exam/:level"
         element={
-          <Suspense fallback={<Loading />}>
-            <Exam />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+              <Exam />
+            </Suspense>
+          </ErrorBoundary>
         }
       />
       <Route path="*" element={<div className="p-8 text-center">Page not found.</div>} />
