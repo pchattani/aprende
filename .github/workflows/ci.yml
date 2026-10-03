@@ -33,11 +33,9 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
-      - name: Configure GitHub Pages (enables the site on first run)
+      - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
