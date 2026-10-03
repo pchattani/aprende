@@ -59,7 +59,7 @@ export default function LessonPage() {
       <div className="p-6">
         <p className="font-bold">This lesson is not available yet.</p>
         <p className="text-sm text-muted">{phase.message}</p>
-        <Link to="/" className="btn btn-ghost mt-4">Back to the path</Link>
+        <Link to="/" className="btn btn-ghost mt-4">Back to the course</Link>
       </div>
     )
   if (phase.kind === 'teach') return <TeachScreen lesson={phase.lesson} onStart={() => setPhase({ ...phase, kind: 'run' })} onBack={() => nav('/')} />
@@ -88,7 +88,7 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
   return (
     <div className="mx-auto max-w-xl px-4 pb-28 pt-[calc(0.75rem+env(safe-area-inset-top))]">
       <button type="button" onClick={onBack} className="mb-2 flex items-center gap-1 text-sm font-bold text-muted">
-        <IconArrowLeft width={18} height={18} /> Path
+        <IconArrowLeft width={18} height={18} /> Course
       </button>
       <Chip tone="brand">New in this lesson</Chip>
       <h1 className="mt-2 text-3xl">{lesson.title}</h1>
@@ -140,17 +140,17 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
 function DoneScreen({ result, onHome, onRetry }: { result: LessonResult; onHome: () => void; onRetry: () => void }) {
   const acc = result.total ? Math.round((result.correct / result.total) * 100) : 0
   const minutes = Math.max(1, Math.round(result.durationMs / 60000))
-  const cheer = CHEERS[result.xp % CHEERS.length]!
+  const cheer = CHEERS[result.correct % CHEERS.length]!
   return (
     <div className="animate-rise mx-auto flex min-h-full max-w-xl flex-col items-center justify-center px-6 text-center">
       {result.completed && <Confetti />}
       <div className={`animate-pop flex h-32 w-32 items-center justify-center rounded-[2.5rem] text-white ${result.completed ? 'bg-sunset-gradient shadow-float' : 'bg-bad-100 text-bad-600'}`}>
         {result.completed ? <span className="text-6xl" aria-hidden="true">{result.wrong === 0 ? '🏆' : '🎉'}</span> : <IconTrophy width={56} height={56} />}
       </div>
-      <h1 className="text-gradient mt-6 text-4xl">{result.completed ? cheer.es : 'Out of hearts'}</h1>
-      <p className="mt-1 font-semibold text-muted">{result.completed ? `${cheer.en} ${result.wrong === 0 ? 'A perfect lesson, bonus XP!' : 'Missed items go to your review queue.'}` : 'No problem, try again. Everything you practised is saved.'}</p>
+      <h1 className="text-gradient mt-6 text-4xl">{result.completed ? cheer.es : 'Session ended'}</h1>
+      <p className="mt-1 font-semibold text-muted">{result.completed ? `${cheer.en} ${result.wrong === 0 ? 'A clean sweep: nothing to revisit.' : `${result.wrong} ${result.wrong === 1 ? 'item' : 'items'} will come back in your reviews.`}` : 'Everything you practised is saved.'}</p>
       <div className="mt-6 grid w-full grid-cols-3 gap-2">
-        <Stat label="XP" value={`+${result.xp}`} tone="gold" />
+        <Stat label="Answers" value={`${result.correct + result.almost} / ${result.total}`} tone="gold" />
         <Stat label="Accuracy" value={`${acc}%`} tone="ok" />
         <Stat label="Time" value={`${minutes} min`} tone="sky" />
       </div>

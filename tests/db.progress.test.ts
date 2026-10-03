@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { db } from '@/db'
-import { ensureCards, recordAnswer, recordLesson, dueCards, streak, exportAll, importAll, resetAll, totalXp } from '@/db/progress'
+import { ensureCards, recordAnswer, recordLesson, dueCards, streak, exportAll, importAll, resetAll, totalMinutes } from '@/db/progress'
 
 beforeEach(async () => {
   await resetAll()
@@ -13,13 +13,13 @@ describe('progress', () => {
     expect(await ensureCards(items)).toBe(0)
     const due = await dueCards(10)
     expect(due.map((c) => c.id)).toEqual(['w.hola'])
-    const updated = await recordAnswer('w.hola', 'correct', 'choiceEs', { xp: 1 })
+    const updated = await recordAnswer('w.hola', 'correct', 'choiceEs')
     expect(updated?.reps).toBe(1)
     expect(await db.reviews.count()).toBe(1)
-    expect(await totalXp()).toBe(1)
+    expect(await totalMinutes()).toBe(0)
   })
   it('records lessons and streaks', async () => {
-    await recordLesson({ lessonId: 'a1.u01.l1', total: 10, correct: 9, almost: 1, wrong: 0, heartsLeft: 3, xp: 15, completed: true, durationMs: 60000 }, 'a1.u01', 'a1')
+    await recordLesson({ lessonId: 'a1.u01.l1', total: 10, correct: 9, almost: 1, wrong: 0, completed: true, durationMs: 60000 }, 'a1.u01', 'a1')
     const s = await streak()
     expect(s.current).toBe(1)
     const row = await db.lessons.get('a1.u01.l1')

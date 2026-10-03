@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
-import { IconHeart, IconSpeaker, IconTurtle } from './icons'
+import { IconSpeaker, IconTurtle } from './icons'
 import { useSpeak } from '../../hooks/useSpeak'
 
 export function Button({ variant = 'primary', className = '', ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'ok' | 'bad' | 'ghost' }) {
@@ -12,16 +12,6 @@ export function ProgressBar({ value, max = 1, tone = 'ok', className = '' }: { v
   return (
     <div className={`h-3 w-full overflow-hidden rounded-full bg-surface-2 ${className}`} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100}>
       <div className={`h-full rounded-full transition-all duration-300 ${color}`} style={{ width: `${pct}%` }} />
-    </div>
-  )
-}
-
-export function Hearts({ count, max = 3 }: { count: number; max?: number }) {
-  return (
-    <div className="flex items-center gap-0.5" aria-label={`${count} of ${max} hearts`}>
-      {Array.from({ length: max }, (_, i) => (
-        <IconHeart key={i} width={20} height={20} className={i < count ? 'text-bad-500' : 'text-stone-300 dark:text-stone-600'} fill={i < count ? 'currentColor' : 'none'} />
-      ))}
     </div>
   )
 }

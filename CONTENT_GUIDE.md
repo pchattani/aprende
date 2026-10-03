@@ -13,7 +13,7 @@ content/es/
   units/<level>/uNN.yaml    lessons, sentences, dialogues
   readers/<level>/*.yaml    graded texts with questions and glossary
   phonology/lessons.yaml    pronunciation course
-  exams/<level>.yaml        checkpoint exams
+  exams/<level>.yaml        level-check exams (one per level)
   errors/common-errors.yaml learner-error regexes for the checker
   verbs/irregular.yaml      irregular / stem-changing verbs for the conjugator
 ```

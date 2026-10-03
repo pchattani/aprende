@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
   await enableTestHook(page)
 })
 
-test('path renders levels, units and the first lesson is unlocked', async ({ page }) => {
+test('course renders levels, units and the first lesson is unlocked', async ({ page }) => {
   await openPath(page)
   await expect(page.getByText('Saludos y presentaciones')).toBeVisible()
   await expect(page.getByRole('link', { name: /Hola y adiós/ })).toBeVisible()
@@ -13,7 +13,7 @@ test('path renders levels, units and the first lesson is unlocked', async ({ pag
   await page.screenshot({ path: 'e2e/__screenshots__/path.png', fullPage: false })
 })
 
-test('complete the first lesson, earn XP and unlock the next lesson', async ({ page }) => {
+test('complete the first lesson and unlock the next lesson', async ({ page }) => {
   test.setTimeout(180_000)
   await openPath(page)
   await page.getByRole('link', { name: /Hola y adiós/ }).click()
@@ -31,33 +31,29 @@ test('complete the first lesson, earn XP and unlock the next lesson', async ({ p
     if (last) break
   }
   await expect(page.getByRole('heading', { name: /Olé|Qué bien|Genial|crack|Así se hace|De lujo/ })).toBeVisible({ timeout: 15_000 })
-  await expect(page.getByText(/^\+\d+$/)).toBeVisible()
+  await expect(page.getByText(/^\d+%$/)).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/done.png' })
   await page.getByRole('button', { name: 'Continue' }).click()
   await expect(page.getByRole('link', { name: /¿Cómo te llamas\?/ })).toBeVisible()
   await expect(page.getByRole('link', { name: /Hola y adiós: learned/ })).toBeVisible()
-  // streak and XP visible on the header
-  await expect(page.getByText(/\d+ \/ \d+ XP/)).toBeVisible()
+  // rhythm and minutes visible on the header
+  await expect(page.getByText(/of 7 days this week/)).toBeVisible()
 })
 
-test('losing three hearts ends the lesson', async ({ page }) => {
+test('mistakes come back later in the lesson instead of ending it', async ({ page }) => {
   test.setTimeout(120_000)
   await openPath(page)
   await page.getByRole('link', { name: /Hola y adiós/ }).click()
   await page.getByRole('button', { name: 'Start the exercises' }).click()
-  let wrong = 0
-  let guard = 0
-  while (wrong < 3 && guard++ < 20) {
-    const hook = await readHook(page)
-    const canFail = hook.exercise.kind !== 'speak'
-    await answerCurrent(page, !canFail)
-    if (canFail) wrong++
-    const last = hook.index + 1 >= hook.total
+  const first = await readHook(page)
+  // Three wrong answers in a row: the lesson continues and the queue grows.
+  for (let i = 0; i < 3; i++) {
+    await answerCurrent(page, false)
     await continueFeedback(page)
-    if (last) break
   }
-  await expect(page.getByRole('heading', { name: 'Out of hearts' })).toBeVisible({ timeout: 15_000 })
-  await expect(page.getByRole('button', { name: 'Try again' })).toBeVisible()
+  const later = await readHook(page)
+  expect(later.total).toBeGreaterThan(first.total)
+  await expect(page.getByRole('heading', { name: /Session ended|Out of/ })).toHaveCount(0)
 })
 
 test('review page, practice session and study tools work', async ({ page }) => {
@@ -104,7 +100,7 @@ test('review page, practice session and study tools work', async ({ page }) => {
 
   await page.goto('/#/profile')
   await expect(page.getByRole('heading', { name: 'Your progress' })).toBeVisible()
-  await expect(page.getByText('Day streak')).toBeVisible()
+  await expect(page.getByText('Rhythm')).toBeVisible()
 })
 
 test('pronunciation lesson and settings load', async ({ page }) => {

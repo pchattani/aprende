@@ -1,21 +1,19 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import type { Exercise, GradeResult, LessonResult } from '../engine/types'
 import { grade, type Answer } from '../engine/grade'
-import { XP } from '../engine/ladder'
 import { recordAnswer } from '../db/progress'
 import { useGradeDeps } from '../hooks/useDeps'
 import { useSettings } from '../store/settings'
 import { useSession } from '../store/session'
 import { ExerciseView } from './exercises'
 import { Feedback } from './Feedback'
-import { Button, Hearts, ProgressBar } from './ui/basics'
+import { Button, ProgressBar } from './ui/basics'
 import { IconX } from './ui/icons'
 import { playSound } from '../engine/sounds'
 
 interface State {
   queue: Exercise[]
   index: number
-  hearts: number
   answer: Answer | undefined
   result?: GradeResult
   correct: number
@@ -24,9 +22,8 @@ interface State {
   requeued: Set<number>
   startedAt: number
   finished: boolean
-  xp: number
 }
-type Action = { type: 'answer'; value: Answer | undefined } | { type: 'check'; result: GradeResult; xp: number } | { type: 'next' } | { type: 'skip' }
+type Action = { type: 'answer'; value: Answer | undefined } | { type: 'check'; result: GradeResult } | { type: 'next' } | { type: 'skip' }
 
 function reducer(s: State, a: Action): State {
   switch (a.type) {
@@ -42,17 +39,14 @@ function reducer(s: State, a: Action): State {
       }
       return {
         ...s, queue, requeued, result: a.result,
-        hearts: ok ? s.hearts : Math.max(0, s.hearts - 1),
         correct: s.correct + (a.result.verdict === 'correct' ? 1 : 0),
         almost: s.almost + (a.result.verdict === 'almost' ? 1 : 0),
         wrong: s.wrong + (ok ? 0 : 1),
-        xp: s.xp + (ok ? a.xp : 0),
       }
     }
     case 'next': {
-      const dead = s.hearts === 0
       const last = s.index + 1 >= s.queue.length
-      return { ...s, index: s.index + 1, answer: undefined, result: undefined, finished: dead || last }
+      return { ...s, index: s.index + 1, answer: undefined, result: undefined, finished: last }
     }
     case 'skip':
       return { ...s, index: s.index + 1, answer: undefined, result: undefined, finished: s.index + 1 >= s.queue.length }
@@ -63,7 +57,7 @@ function reducer(s: State, a: Action): State {
 
 export interface RunnerProps {
   exercises: Exercise[]
-  /** 'lesson' uses hearts; 'review' and 'practice' do not. */
+  /** 'lesson' records a lesson completion; 'review' and 'practice' only schedule cards. */
   mode: 'lesson' | 'review' | 'practice'
   lessonId: string
   title: string
@@ -73,10 +67,9 @@ export interface RunnerProps {
 
 export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQuit }: RunnerProps) {
   const deps = useGradeDeps()
-  const heartsOn = useSettings((s) => s.hearts) && mode === 'lesson'
   const sound = useSettings((s) => s.sound)
   const [s, dispatch] = useReducer(reducer, undefined, () => ({
-    queue: exercises, index: 0, hearts: heartsOn ? 3 : Infinity, answer: undefined, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), startedAt: Date.now(), finished: false, xp: 0,
+    queue: exercises, index: 0, answer: undefined, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), startedAt: Date.now(), finished: false,
   }))
   const [confirmQuit, setConfirmQuit] = useState(false)
   const finishedRef = useRef(false)
@@ -96,11 +89,9 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   useEffect(() => {
     if (!s.finished || finishedRef.current) return
     finishedRef.current = true
-    const completed = s.hearts > 0
-    const bonus = completed && s.wrong === 0 ? 5 : 0
     onFinish({
       lessonId, total: s.correct + s.almost + s.wrong, correct: s.correct, almost: s.almost, wrong: s.wrong,
-      heartsLeft: Number.isFinite(s.hearts) ? s.hearts : 3, xp: completed ? s.xp + 10 + bonus : Math.floor(s.xp / 2), completed, durationMs: Date.now() - s.startedAt,
+      completed: true, durationMs: Date.now() - s.startedAt,
     })
   }, [s.finished]) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -111,11 +102,10 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
     if (!curEx || cur.result || answer === undefined) return
     if (value !== undefined) dispatch({ type: 'answer', value })
     const r = grade(curEx, answer, deps)
-    const xp = XP[curEx.kind]
-    dispatch({ type: 'check', result: r, xp })
+    dispatch({ type: 'check', result: r })
     if (sound) playSound(r.verdict === 'wrong' ? 'wrong' : 'correct')
     const verdict = r.verdict
-    for (const item of new Set(curEx.items)) void recordAnswer(item, verdict, curEx.kind, { xp: 0 })
+    for (const item of new Set(curEx.items)) void recordAnswer(item, verdict, curEx.kind)
   }
   const canCheck = useMemo(() => {
     if (!ex || s.answer === undefined) return false
@@ -128,12 +118,12 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   useEffect(() => {
     try {
       if (typeof window !== 'undefined' && window.sessionStorage.getItem('e2e')) {
-        ;(window as unknown as { __aprende?: unknown }).__aprende = { exercise: ex, index: s.index, total, hearts: s.hearts, finished: s.finished }
+        ;(window as unknown as { __aprende?: unknown }).__aprende = { exercise: ex, index: s.index, total, finished: s.finished }
       }
     } catch {
       /* ignore */
     }
-  }, [ex, s.index, total, s.hearts, s.finished])
+  }, [ex, s.index, total, s.finished])
 
   if (!ex) return null
   const autoSubmit = ex.kind === 'match' || ex.kind === 'speak'
@@ -144,7 +134,6 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
           <IconX />
         </button>
         <ProgressBar value={done} max={total} tone="ok" className="flex-1" />
-        {heartsOn && <Hearts count={s.hearts} />}
       </div>
       <p className="mt-2 truncate text-xs font-bold uppercase tracking-wide text-muted">{title}</p>
       <div className="flex-1 py-5">
@@ -164,7 +153,7 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
           </div>
         </div>
       )}
-      {s.result && <Feedback exercise={ex} result={s.result} last={s.index + 1 >= total || s.hearts === 0} onContinue={() => dispatch({ type: 'next' })} />}
+      {s.result && <Feedback exercise={ex} result={s.result} last={s.index + 1 >= total} onContinue={() => dispatch({ type: 'next' })} />}
       {confirmQuit && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true">
           <div className="card w-full max-w-sm">

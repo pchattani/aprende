@@ -5,7 +5,7 @@ import { useSession } from './store/session'
 import { IconHome, IconRepeat, IconBook, IconVerb, IconUser } from './components/ui/icons'
 import { ErrorBoundary } from './components/ErrorBoundary'
 
-const Path = lazy(() => import('./pages/Path'))
+const Course = lazy(() => import('./pages/Course'))
 const LessonPage = lazy(() => import('./pages/Lesson'))
 const Review = lazy(() => import('./pages/Review'))
 const Grammar = lazy(() => import('./pages/Grammar'))
@@ -27,11 +27,11 @@ function Shell() {
   const loc = useLocation()
   const immersive = useSession((s) => s.immersive)
   const tabs = [
-    { to: '/', label: 'Learn', icon: IconHome },
+    { to: '/', label: 'Course', icon: IconHome },
     { to: '/review', label: 'Review', icon: IconRepeat },
     { to: '/reader', label: 'Read', icon: IconBook },
-    { to: '/study', label: 'Study', icon: IconVerb },
-    { to: '/profile', label: 'Me', icon: IconUser },
+    { to: '/study', label: 'Tools', icon: IconVerb },
+    { to: '/profile', label: 'Progress', icon: IconUser },
   ]
   return (
     <div className="mx-auto min-h-full max-w-xl pb-[calc(5.5rem+env(safe-area-inset-bottom))]">
@@ -67,7 +67,7 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Shell />}>
-        <Route index element={<Path />} />
+        <Route index element={<Course />} />
         <Route path="review" element={<Review />} />
         <Route path="reader" element={<Reader />} />
         <Route path="reader/:id" element={<Reader />} />

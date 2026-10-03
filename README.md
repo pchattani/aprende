@@ -2,7 +2,7 @@
 
 **Live app:** https://pchattani.github.io/aprende/ (install it to your phone's home screen; it works offline)
 
-Aprende is a free, open, no-account language course that actually teaches Spanish instead of leaving you with a bag of random words. Short daily lessons, streaks and a visible path keep you coming back, and underneath them sits a real course: explicit grammar, a frequency-ordered vocabulary of thousands of words, spaced repetition that runs the show, a reading library with coverage metering, a full verb trainer, a pronunciation course, and checkpoint exams for every CEFR level.
+Aprende is a free, open, no-account language course that actually teaches Spanish instead of leaving you with a bag of random words. Short daily lessons and a visible rhythm keep you coming back, and underneath them sits a real course: explicit grammar, a frequency-ordered vocabulary of thousands of words, spaced repetition that runs the show, a reading library with coverage metering, a full verb trainer, a pronunciation course, and checkpoint exams for every CEFR level.
 
 There is **no AI and no server**: every explanation was written by hand, and every piece of feedback is computed on your device by deterministic Spanish language engines (a full conjugator, accent rules, an agreement checker, a dictionary built from the course vocabulary) plus your browser's free text-to-speech and speech recognition.
 
@@ -10,8 +10,9 @@ There is **no AI and no server**: every explanation was written by hand, and eve
 
 | | |
 |---|---|
-| **Path** | CEFR levels A1 → C2, 66 units, lessons of 12–15 exercises. Mastery rings show real retention, not clicks. Checkpoint exams gate each level, and you can take one early to test out. |
-| **Start anywhere** | First launch offers a five-minute adaptive placement test (built from the checkpoint exams and vocabulary) or a manual level choice. Every level also has a "Start here" button. Earlier levels stay open for practice. |
+| **Course** | CEFR levels A1 → C2, 66 units, lessons of 12–15 exercises laid out as a chapter checklist. Each lesson shows a mastery state (new, in progress, learned, solid) computed from real retention, not clicks. A level check closes each level, and you can take it early to skip ahead. |
+| **Your rhythm** | Progress is measured in minutes practised and words you can use. A daily minutes goal, a seven-day rhythm strip and an activity calendar replace points and lives: mistakes simply come back later in the lesson and in your reviews. |
+| **Start anywhere** | First launch offers a five-minute adaptive placement test (built from the level-check exams and vocabulary) or a manual level choice. Every level also has a "Start here" button. Earlier levels stay open for practice. |
 | **Fourteen exercise types** | Multiple choice, word bank, typing in both directions, listening, dictation, matching, fill-the-blank, conjugation, transformation, find-the-error, ordering, speaking (speech recognition). The type is chosen by how deeply you know each item: recognition → recall → production. |
 | **Spaced repetition** | Every word, sentence and grammar point becomes a card scheduled by FSRS. The Review tab is where learning consolidates. Weak grammar points are detected and can be practised on their own. |
 | **Grammar reference** | ~230 searchable notes with tables, examples, pitfalls and Latin American variants. Every exercise can explain itself. |

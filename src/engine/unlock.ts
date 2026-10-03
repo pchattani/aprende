@@ -1,5 +1,5 @@
 /**
- * Unlock rules for the path.
+ * Unlock rules for the course.
  *
  * - The learner has a *starting level* (chosen on first launch, by the placement
  *   test, or by pressing "Start here" on any level). Every level up to and

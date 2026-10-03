@@ -154,8 +154,6 @@ export interface LessonResult {
   correct: number
   almost: number
   wrong: number
-  heartsLeft: number
-  xp: number
   completed: boolean
   durationMs: number
 }

@@ -1,4 +1,4 @@
-/** Emoji stickers that give each unit a face on the path. Unlisted units fall back by position. */
+/** Emoji stickers that give each unit a face on the course page. Unlisted units fall back by position. */
 const UNIT_STICKERS: Record<string, string> = {
   'a1.u01': '👋', 'a1.u02': '🌍', 'a1.u03': '👨‍👩‍👧', 'a1.u04': '🏡', 'a1.u05': '🥘', 'a1.u06': '⏰', 'a1.u07': '🧑‍🎤', 'a1.u08': '🛍️', 'a1.u09': '🚀', 'a1.u10': '⛱️', 'a1.u11': '🗺️', 'a1.u12': '🎉',
   'a2.u01': '📅', 'a2.u02': '📜', 'a2.u03': '🧸', 'a2.u04': '📖', 'a2.u05': '✅', 'a2.u06': '🔁', 'a2.u07': '🔮', 'a2.u08': '⚖️', 'a2.u09': '👩‍🍳', 'a2.u10': '✈️', 'a2.u11': '🩺', 'a2.u12': '🎒',

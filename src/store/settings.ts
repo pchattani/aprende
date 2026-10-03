@@ -7,16 +7,15 @@ export interface Settings {
   voiceURI?: string
   speech: boolean
   theme: 'system' | 'light' | 'dark'
-  dailyGoal: number
-  hearts: boolean
+  /** Daily practice goal in minutes. */
+  dailyMinutes: number
   variety: 'es-ES' | 'es-419'
   setSound: (v: boolean) => void
   setTtsRate: (v: number) => void
   setVoice: (v?: string) => void
   setSpeech: (v: boolean) => void
   setTheme: (v: Settings['theme']) => void
-  setDailyGoal: (v: number) => void
-  setHearts: (v: boolean) => void
+  setDailyMinutes: (v: number) => void
   setVariety: (v: Settings['variety']) => void
 }
 
@@ -28,16 +27,14 @@ export const useSettings = create<Settings>()(
       voiceURI: undefined,
       speech: true,
       theme: 'system',
-      dailyGoal: 30,
-      hearts: true,
+      dailyMinutes: 10,
       variety: 'es-ES',
       setSound: (sound) => set({ sound }),
       setTtsRate: (ttsRate) => set({ ttsRate }),
       setVoice: (voiceURI) => set({ voiceURI }),
       setSpeech: (speech) => set({ speech }),
       setTheme: (theme) => set({ theme }),
-      setDailyGoal: (dailyGoal) => set({ dailyGoal }),
-      setHearts: (hearts) => set({ hearts }),
+      setDailyMinutes: (dailyMinutes) => set({ dailyMinutes }),
       setVariety: (variety) => set({ variety }),
     }),
     { name: 'aprende-settings' },

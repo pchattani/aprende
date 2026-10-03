@@ -1,6 +1,6 @@
 /**
  * Progress service: the only module that writes learner state. Wraps Dexie
- * tables with the engine's rules (FSRS scheduling, ladder, XP, streak days).
+ * tables with the engine's rules (FSRS scheduling, ladder, minutes and active days).
  */
 import { db, SCHEMA_VERSION } from './index'
 import type { CardRow, ReviewRow, LessonRow, DayRow, ItemKind, LessonResult, ReadingRow, ExamRow } from '../engine/types'
@@ -35,7 +35,7 @@ export async function getCards(ids: string[]): Promise<Map<string, CardRow>> {
 }
 
 /** Record one answer: updates the card (FSRS + ladder), logs the review, bumps today's counters. */
-export async function recordAnswer(cardId: string, verdict: 'correct' | 'almost' | 'wrong', exercise: ExerciseKind, opts: { fast?: boolean; now?: Date; xp?: number } = {}): Promise<CardRow | undefined> {
+export async function recordAnswer(cardId: string, verdict: 'correct' | 'almost' | 'wrong', exercise: ExerciseKind, opts: { fast?: boolean; now?: Date } = {}): Promise<CardRow | undefined> {
   const now = opts.now ?? new Date()
   const card = await db.cards.get(cardId)
   if (!card) return undefined
@@ -44,7 +44,7 @@ export async function recordAnswer(cardId: string, verdict: 'correct' | 'almost'
   await db.transaction('rw', db.cards, db.reviews, db.days, async () => {
     await db.cards.put(updated)
     await db.reviews.add(log)
-    await bumpDay(todayKey(now), { reviews: 1, xp: opts.xp ?? 0 })
+    await bumpDay(todayKey(now), { reviews: 1 })
   })
   return updated
 }
@@ -72,10 +72,9 @@ export async function recordLesson(result: LessonResult, unitId: string, level: 
     row.firstCompleted ??= now.getTime()
     row.lastCompleted = now.getTime()
   }
-  row.xp += result.xp
   await db.transaction('rw', db.lessons, db.days, async () => {
     await db.lessons.put(row)
-    await bumpDay(todayKey(now), { lessons: result.completed ? 1 : 0, xp: result.xp, minutes: Math.round(result.durationMs / 60000) })
+    await bumpDay(todayKey(now), { lessons: result.completed ? 1 : 0, minutes: Math.round(result.durationMs / 60000) })
   })
   return row
 }
@@ -107,12 +106,13 @@ export async function recentReviews(limit = 500): Promise<ReviewRow[]> {
 }
 
 export async function streak(now = new Date()): Promise<{ current: number; longest: number }> {
-  const days = (await db.days.filter((d) => d.xp > 0 || d.reviews > 0 || d.lessons > 0).toArray()).map((d) => d.date)
+  const days = (await db.days.filter((d) => d.minutes > 0 || d.reviews > 0 || d.lessons > 0).toArray()).map((d) => d.date)
   return streakFrom(days, todayKey(now))
 }
 
-export async function totalXp(): Promise<number> {
-  return (await db.days.toArray()).reduce((s, d) => s + d.xp, 0)
+/** Total minutes practised across all days. */
+export async function totalMinutes(): Promise<number> {
+  return (await db.days.toArray()).reduce((s, d) => s + d.minutes, 0)
 }
 
 export async function dayRows(): Promise<DayRow[]> {
@@ -187,7 +187,7 @@ export async function resetAll(): Promise<void> {
   })
 }
 
-/** Marks onboarding done and records the level the learner starts the path at. */
+/** Marks onboarding done and records the level the learner starts the course at. */
 export async function chooseStartLevel(level: LevelId): Promise<void> {
   await setKv('startLevel', level)
   await setKv('onboarded', true)

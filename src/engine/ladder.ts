@@ -28,8 +28,3 @@ export function kindsFor(item: ItemKind, stage: Stage): ExerciseKind[] {
   return item === 'word' ? WORD[stage] : item === 'sentence' ? SENTENCE[stage] : GRAMMAR[stage]
 }
 
-/** XP per exercise kind (harder = more). */
-export const XP: Record<ExerciseKind, number> = {
-  choiceEs: 1, choiceEn: 1, listen: 1, match: 1, fillBlank: 1, wordBank: 2, order: 2, typeEn: 2,
-  typeEs: 3, dictation: 3, conjugate: 3, transform: 4, findError: 3, speak: 3,
-}

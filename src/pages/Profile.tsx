@@ -17,8 +17,8 @@ export default function Profile() {
   const lessons = useLessonRows()
   const reviews = useLiveQuery(() => db.reviews.orderBy('ts').reverse().limit(600).toArray(), [], NO_REVIEWS)
   const today = todayKey()
-  const streak = streakFrom(days.filter((d) => d.xp > 0 || d.lessons > 0 || d.reviews > 0).map((d) => d.date), today)
-  const xp = days.reduce((s, d) => s + d.xp, 0)
+  const streak = streakFrom(days.filter((d) => d.minutes > 0 || d.lessons > 0 || d.reviews > 0).map((d) => d.date), today)
+  const activeDays = days.filter((d) => d.minutes > 0 || d.lessons > 0 || d.reviews > 0).length
   const wc = wordCounts(cards)
   const grammarMastered = cards.filter((c) => c.kind === 'grammar' && c.stage >= 2).length
   const grammarMet = new Set(cards.flatMap((c) => c.grammar)).size
@@ -31,8 +31,8 @@ export default function Profile() {
     <div className="pb-6">
       <PageHeader title="Your progress" right={<Link to="/settings" className="rounded-full p-2 text-muted" aria-label="Settings"><IconGear /></Link>} />
       <div className="grid grid-cols-2 gap-2">
-        <Stat icon={<IconFlame className="text-brand-600" fill="currentColor" />} label="Day streak" value={String(streak.current)} sub={`Longest ${streak.longest}`} />
-        <Stat icon={<IconStar className="text-gold-500" fill="currentColor" />} label="Total XP" value={xp.toLocaleString()} sub={`${totalMinutes} min studied`} />
+        <Stat icon={<IconFlame className="text-brand-600" fill="currentColor" />} label="Rhythm" value={`${streak.current} ${streak.current === 1 ? 'day' : 'days'}`} sub={`in a row · ${activeDays} active days in all`} />
+        <Stat icon={<IconStar className="text-gold-500" fill="currentColor" />} label="Time practised" value={totalMinutes >= 90 ? `${(totalMinutes / 60).toFixed(1)} h` : `${totalMinutes} min`} sub={`${reviews.length} recent answers`} />
         <Stat icon={<IconTrophy className="text-sky-600" />} label="Estimated level" value={level} sub={`${lessonsDone} lessons completed`} />
         <Stat icon={<IconBook className="text-ok-600" />} label="Words you can use" value={String(wc.productive)} sub={`${wc.recognised} recognised · ${wc.seen} met · ${vocab.size} in course`} />
       </div>
@@ -61,7 +61,7 @@ export default function Profile() {
         )}
       </section>
       <section className="card mt-4">
-        <p className="text-xs font-bold uppercase tracking-wide text-muted">Checkpoints</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-muted">Level checks</p>
         <ul className="mt-1 divide-y divide-[var(--line)] text-sm">
           {levels.map((l) => {
             const e = exams?.get(l.id)
@@ -89,8 +89,8 @@ function Stat({ icon, label, value, sub }: { icon: React.ReactNode; label: strin
   )
 }
 
-function Heatmap({ days, today }: { days: { date: string; xp: number }[]; today: string }) {
-  const map = new Map(days.map((d) => [d.date, d.xp]))
+function Heatmap({ days, today }: { days: { date: string; minutes: number; reviews: number; lessons: number }[]; today: string }) {
+  const map = new Map(days.map((d) => [d.date, d.minutes + d.reviews / 5 + d.lessons * 3]))
   const cells: { date: string; xp: number }[] = []
   for (let i = 83; i >= 0; i--) {
     const d = shiftDay(today, -i)
@@ -102,7 +102,7 @@ function Heatmap({ days, today }: { days: { date: string; xp: number }[]; today:
       {cells.map((c) => {
         const t = c.xp / max
         const bg = c.xp === 0 ? 'bg-surface-2' : t < 0.34 ? 'bg-ok-100' : t < 0.67 ? 'bg-ok-500/60' : 'bg-ok-600'
-        return <div key={c.date} title={`${c.date}: ${c.xp} XP`} className={`h-3.5 w-3.5 rounded-sm ${bg}`} />
+        return <div key={c.date} title={`${c.date}: ${c.xp === 0 ? 'rest day' : 'practised'}`} className={`h-3.5 w-3.5 rounded-sm ${bg}`} />
       })}
     </div>
   )

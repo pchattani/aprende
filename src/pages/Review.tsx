@@ -82,7 +82,7 @@ function ReviewSession({ grammarFilter }: { grammarFilter: string | undefined })
           title={grammarFilter ? `Practice: ${grammar.get(grammarFilter)?.title ?? grammarFilter}` : 'Review'}
           onQuit={() => setExercises(undefined)}
           onFinish={async (r) => {
-            await bumpDay(todayKey(), { xp: r.xp })
+            await bumpDay(todayKey(), { minutes: Math.max(1, Math.round(r.durationMs / 60000)) })
             playSound('finish')
             setSummary(r)
           }}
@@ -97,7 +97,7 @@ function ReviewSession({ grammarFilter }: { grammarFilter: string | undefined })
       <PageHeader title={note ? 'Targeted practice' : 'Review'} subtitle={note ? note.title : 'Spaced repetition keeps what you learned.'} />
       {summary && (
         <div className="card mb-4 border-ok-500">
-          <p className="font-extrabold">Session complete · +{summary.xp} XP</p>
+          <p className="font-extrabold">Session complete · {summary.total} reviewed</p>
           <p className="text-sm text-muted">
             {summary.correct} correct, {summary.almost} almost, {summary.wrong} to repeat. Items you missed come back sooner.
           </p>
@@ -124,7 +124,7 @@ function ReviewSession({ grammarFilter }: { grammarFilter: string | undefined })
             <Empty title="No items yet">
               Complete your first lesson and the words, sentences and grammar you meet will start appearing here on a schedule.
               <div className="mt-3">
-                <Button variant="ghost" onClick={() => nav('/')}>Go to the path</Button>
+                <Button variant="ghost" onClick={() => nav('/')}>Go to the course</Button>
               </div>
             </Empty>
           )}

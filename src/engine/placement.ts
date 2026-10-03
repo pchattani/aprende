@@ -1,6 +1,6 @@
 /**
  * Placement test: a short adaptive multiple-choice test that places a learner
- * on the path. It is built from content that already exists (the checkpoint
+ * in the course. It is built from content that already exists (the checkpoint
  * exams' grammar items and the vocabulary lists), so it needs no extra authoring.
  *
  * Flow: one stage per authored level with an exam, in order (A1, A2, B1…).

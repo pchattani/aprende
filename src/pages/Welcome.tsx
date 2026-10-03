@@ -48,7 +48,7 @@ export default function Welcome() {
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-mint-gradient text-white"><IconBook /></span>
           <span>
             <span className="block font-extrabold">I know my level</span>
-            <span className="block text-sm text-muted">Pick where to start. You can change this any time from the path.</span>
+            <span className="block text-sm text-muted">Pick where to start. You can change this any time from the course page.</span>
           </span>
         </button>
       </div>

@@ -26,8 +26,8 @@ export default function Exam() {
     loadExam(level as LevelId).then((e) => setExam(e ?? null))
   }, [level])
   const lvl = levels.find((l) => l.id === level)
-  if (exam === undefined) return <p className="p-6 text-center text-muted">Loading checkpoint…</p>
-  if (exam === null) return <div className="p-6"><p className="font-bold">No checkpoint exam for this level yet.</p><Button className="mt-4" onClick={() => nav('/')}>Back</Button></div>
+  if (exam === undefined) return <p className="p-6 text-center text-muted">Loading level check…</p>
+  if (exam === null) return <div className="p-6"><p className="font-bold">No level check for this level yet.</p><Button className="mt-4" onClick={() => nav('/')}>Back</Button></div>
   const idx = ORDER.indexOf(section)
   const done = (s: Section, score: number) => {
     const next = { ...scores, [s]: score }
@@ -275,7 +275,7 @@ function Result({ scores, pass, levelTitle, next, onHome }: { scores: Partial<Re
         ))}
       </ul>
       <p className="mt-4 text-sm text-muted">{passed ? (next ? `Level ${next.toUpperCase()} is now unlocked.` : 'You have completed the course syllabus.') : 'Review the weakest sections, keep doing your daily reviews, and try again whenever you like.'}</p>
-      <Button className="mt-6 w-full" onClick={onHome}>Back to the path</Button>
+      <Button className="mt-6 w-full" onClick={onHome}>Back to the course</Button>
     </div>
   )
 }

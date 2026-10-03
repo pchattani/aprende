@@ -49,9 +49,8 @@ export default function Settings() {
     <div className="pb-8">
       <PageHeader title="Settings" />
       <Section title="Learning">
-        <Toggle label="Hearts in lessons" hint="Three mistakes end a lesson. Turn off for a gentler mode." checked={s.hearts} onChange={s.setHearts} />
         <Toggle label="Speaking exercises" hint={sttSupported() ? 'Uses your browser’s speech recognition. Nothing is sent to us.' : 'Not supported in this browser.'} checked={s.speech && sttSupported()} onChange={s.setSpeech} disabled={!sttSupported()} />
-        <Range label={`Daily goal: ${s.dailyGoal} XP`} min={10} max={100} step={10} value={s.dailyGoal} onChange={s.setDailyGoal} />
+        <Range label={`Daily practice goal: ${s.dailyMinutes} minutes`} min={5} max={40} step={5} value={s.dailyMinutes} onChange={s.setDailyMinutes} />
         <Select label="Spanish variety" value={s.variety} onChange={(v) => s.setVariety(v as 'es-ES' | 'es-419')} options={[['es-ES', 'Castilian (Spain) — default'], ['es-419', 'Latin American (notes shown)']]} />
       </Section>
       <Section title="Sound and voice">
