@@ -4,7 +4,6 @@ import { buildStage, vocabItem, stagePassed, placementLevel, STAGE_SIZE, GRAMMAR
 import { levelUnlocked, lessonUnlocked, levelIndex } from '@/engine/unlock'
 import { levels, vocab } from '@/engine/loader'
 import type { Exam, VocabEntry } from '@/engine/schema'
-import type { LessonRow } from '@/engine/types'
 
 const exam: Exam = {
   level: 'a1',
@@ -65,30 +64,14 @@ describe('placement stages', () => {
   })
 })
 
-describe('starting level unlocks', () => {
+describe('open course', () => {
   const none = new Map()
   const counts = new Map<string, number>()
   const b1 = levels.find((l) => l.id === 'b1')!
-  const a2 = levels.find((l) => l.id === 'a2')!
-
-  it('by default only A1 is open', () => {
+  it('every level and lesson is open regardless of the starting level', () => {
     expect(levelUnlocked('a1', none, none, counts)).toBe(true)
-    expect(levelUnlocked('a2', none, none, counts)).toBe(false)
-    expect(levelUnlocked('b1', none, none, counts)).toBe(false)
-  })
-
-  it('a starting level opens everything up to it', () => {
-    expect(levelUnlocked('a2', none, none, counts, 'b1')).toBe(true)
-    expect(levelUnlocked('b1', none, none, counts, 'b1')).toBe(true)
-    expect(levelUnlocked('b2', none, none, counts, 'b1')).toBe(false)
+    expect(levelUnlocked('c2', none, none, counts, 'a1')).toBe(true)
+    expect(lessonUnlocked('b1.u07.l3', b1, none, none, counts, 'a1')).toBe(true)
     expect(levelIndex('b1')).toBeGreaterThan(levelIndex('a2'))
-  })
-
-  it('levels below the start are fully open; the start level is sequential', () => {
-    expect(lessonUnlocked('a2.u07.l3', a2, none, none, counts, 'b1')).toBe(true)
-    expect(lessonUnlocked('b1.u01.l1', b1, none, none, counts, 'b1')).toBe(true)
-    expect(lessonUnlocked('b1.u01.l2', b1, none, none, counts, 'b1')).toBe(false)
-    const done = new Map([['b1.u01.l1', { id: 'b1.u01.l1', unitId: 'b1.u01', level: 'b1', attempts: 1, completions: 1, bestAccuracy: 1, lastAccuracy: 1 } as unknown as LessonRow]])
-    expect(lessonUnlocked('b1.u01.l2', b1, done, none, counts, 'b1')).toBe(true)
   })
 })

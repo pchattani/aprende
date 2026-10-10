@@ -5,6 +5,7 @@ import { chooseStartLevel } from '../db/progress'
 import { Button } from '../components/ui/basics'
 import { IconStar, IconTrophy, IconBook } from '../components/ui/icons'
 import { Mark } from '../components/ui/Mark'
+import { DogsScene } from '../components/ui/Dogs'
 import type { LevelId } from '../engine/schema'
 
 export default function Welcome() {
@@ -24,9 +25,10 @@ export default function Welcome() {
           <p className="text-sm font-semibold text-muted">Spanish, from your first words to fluency</p>
         </div>
       </div>
-      <h1 className="text-gradient mt-7 text-[2.6rem]">¿Por dónde empezamos?</h1>
+      <DogsScene size={320} className="mt-4" />
+      <h1 className="text-gradient mt-2 text-[2.4rem]">Leo, Bonchita and Luna are off to Argentina</h1>
       <p className="mt-3 text-lg text-muted">
-        Where should we start? The course runs from complete beginner (A1) to advanced (C2). If you already know some Spanish, skip ahead: earlier levels stay open for practice.
+        Three small dogs, one big country, and only you can talk to the locals. Luna has the map, Leo has the ball, Bonchita has the appetite. Every unit is a stop on the road from Buenos Aires to the end of the world. Where should the journey start? Everything is open; this just marks the first stop.
       </p>
 
       <div className="mt-6 grid gap-3">
@@ -34,21 +36,21 @@ export default function Welcome() {
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient text-white"><IconStar /></span>
           <span>
             <span className="block font-extrabold">I'm new to Spanish</span>
-            <span className="block text-sm text-muted">Start at A1, lesson 1.</span>
+            <span className="block text-sm text-muted">Land in Buenos Aires: A1, lesson 1.</span>
           </span>
         </button>
         <button type="button" onClick={() => nav('/placement')} className="card flex items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sunset-gradient text-white"><IconTrophy /></span>
           <span>
             <span className="block font-extrabold">Take the placement test</span>
-            <span className="block text-sm text-muted">About five minutes. Finds the level where you should begin.</span>
+            <span className="block text-sm text-muted">About five minutes. Finds the stop where the dogs should pick you up.</span>
           </span>
         </button>
         <button type="button" onClick={() => setPicking((p) => !p)} className="card flex items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]" aria-expanded={picking}>
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-mint-gradient text-white"><IconBook /></span>
           <span>
             <span className="block font-extrabold">I know my level</span>
-            <span className="block text-sm text-muted">Pick where to start. You can change this any time from the course page.</span>
+            <span className="block text-sm text-muted">Pick a region. You can change this any time from the journey page.</span>
           </span>
         </button>
       </div>

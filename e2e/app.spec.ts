@@ -9,7 +9,7 @@ test('course renders levels, units and the first lesson is unlocked', async ({ p
   await openPath(page)
   await expect(page.getByText('Saludos y presentaciones')).toBeVisible()
   await expect(page.getByRole('link', { name: /Hola y adiós/ })).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'C2' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Fin del mundo' })).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/path.png', fullPage: false })
 })
 
@@ -132,7 +132,7 @@ test('works offline once the service worker has cached the app', async ({ page, 
   }, undefined, { timeout: 60_000 })
   await context.setOffline(true)
   await page.reload()
-  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
   // Base-relative so the URL stays inside the service worker's /aprende/ scope.
   await page.goto('./#/grammar')
   await expect(page.getByRole('heading', { name: 'Grammar' })).toBeVisible()
@@ -156,22 +156,26 @@ test('placement test places a strong learner beyond B1 and opens every level', a
   await expect(page.getByRole('heading', { name: 'Your level: B2' })).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/placement.png' })
   await page.getByRole('button', { name: 'Start at B2' }).click()
-  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
   // B1 lessons are open, and an A2 lesson deep in the level is open for practice.
   await expect(page.getByRole('link', { name: /Formas regulares/ })).toBeVisible()
   await expect(page.getByRole('link', { name: /Habla, come, escribe/ })).toBeVisible()
 })
 
-test('choosing a level manually unlocks it and keeps earlier levels open', async ({ page }) => {
+test('choosing a level manually marks the recommended start; every lesson is open', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('button', { name: /I know my level/ })).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/welcome.png' })
   await page.getByRole('button', { name: /I know my level/ }).click()
   await page.getByRole('button', { name: /^A2/ }).click()
-  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'A1' })).toHaveCount(0)
+  await expect(page.getByText('Recommended start')).toBeVisible()
   await expect(page.getByRole('link', { name: /¿Qué hiciste ayer\?/ })).toBeVisible()
-  // B1 is still locked, with a "Start here" escape hatch.
-  await expect(page.getByRole('button', { name: /Start here/ }).first()).toBeVisible()
-  await page.getByRole('button', { name: /Start here/ }).first().click()
+  // B1 lessons are open too: the course is never locked.
   await expect(page.getByRole('link', { name: /Formas regulares/ })).toBeVisible()
+  // Passport page lists stops and souvenirs.
+  await page.getByRole('link', { name: 'Passport' }).click()
+  await expect(page.getByRole('heading', { name: 'Passport' })).toBeVisible()
+  await expect(page.getByText(/souvenirs of/)).toBeVisible()
+  await page.screenshot({ path: 'e2e/__screenshots__/passport.png' })
 })

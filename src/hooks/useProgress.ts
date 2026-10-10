@@ -26,3 +26,14 @@ export function useKvValue<T>(key: string, fallback: T): T | undefined {
     return row ? (row.value as T) : fallback
   }, [key])
 }
+
+/** Today's three quests with progress and claim state. */
+export function useQuests(date: string) {
+  return useLiveQuery(async () => {
+    const [day, rows, souvenirs] = await Promise.all([db.days.get(date), db.quests.where('date').equals(date).toArray(), db.souvenirs.toArray()])
+    return { day, rows: new Map(rows.map((r) => [r.questId, r])), owned: new Set(souvenirs.map((s) => s.id)) }
+  }, [date])
+}
+export function useSouvenirs() {
+  return useLiveQuery(() => db.souvenirs.orderBy('ts').reverse().toArray(), [])
+}

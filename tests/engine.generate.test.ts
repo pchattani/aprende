@@ -17,6 +17,7 @@ const vocabList = [
 const vocab = new Map(vocabList.map((v) => [v.id, v]))
 const lesson: Lesson = {
   id: 'a1.u01.l1', title: 'Test', teach: ['g.tener-present'], vocab: ['w.casa', 'w.perro', 'w.gato', 'w.grande', 'w.tener', 'w.comer'],
+  exchanges: [], texts: [],
   sentences: [
     { es: 'Tengo un perro grande.', en: 'I have a big dog.', altEs: ['Yo tengo un perro grande.'], altEn: [], grammar: ['g.tener-present'], vocab: ['w.tener', 'w.perro'] },
     { es: 'La casa es pequeña.', en: 'The house is small.', altEs: [], altEn: [], grammar: [], vocab: ['w.casa'] },

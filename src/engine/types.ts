@@ -64,6 +64,25 @@ export interface DayRow {
   lessons: number
   newItems: number
   minutes: number
+  /** Lessons finished with no mistakes. */
+  perfect?: number
+}
+
+export interface QuestRow {
+  /** `${date}:${questId}` */
+  id: string
+  date: string
+  questId: string
+  claimedAt?: number
+  rewardId?: string
+}
+
+export interface SouvenirRow {
+  id: string
+  ts: number
+  /** Where it came from: 'quest' | 'find' | 'stamp'. */
+  source: string
+  lessonId?: string
 }
 
 export interface ReadingRow {
@@ -102,7 +121,7 @@ export interface ExerciseBase {
   teach?: string
 }
 export interface ChoiceExercise extends ExerciseBase {
-  kind: 'choiceEs' | 'choiceEn' | 'listen' | 'fillBlank'
+  kind: 'choiceEs' | 'choiceEn' | 'listen' | 'fillBlank' | 'reply'
   prompt: string
   /** For fillBlank the sentence with ___ ; for listen the text to speak. */
   audio?: string
@@ -112,7 +131,7 @@ export interface ChoiceExercise extends ExerciseBase {
   translation?: string
 }
 export interface WordBankExercise extends ExerciseBase {
-  kind: 'wordBank' | 'order'
+  kind: 'wordBank' | 'order' | 'orderText'
   prompt: string
   tiles: string[]
   answers: string[]

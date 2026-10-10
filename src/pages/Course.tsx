@@ -2,19 +2,20 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { levels, loadUnit, units as unitIndex } from '../engine/loader'
 import { lessonMastery, ringFor, shiftDay, todayKey } from '../engine/mastery'
-import { lessonIdsFor, levelUnlocked, levelComplete, lessonUnlocked, DEFAULT_START_LEVEL } from '../engine/unlock'
-import { setKv, getKv } from '../db/progress'
+import { lessonIdsFor, levelComplete, DEFAULT_START_LEVEL, levelIndex } from '../engine/unlock'
+import { getKv, claimQuest } from '../db/progress'
 import { db } from '../db'
-import { useLessonRows, useAllCards, useDays, useDueCount, useExams, useKvValue } from '../hooks/useProgress'
+import { useLessonRows, useAllCards, useDays, useDueCount, useExams, useKvValue, useQuests } from '../hooks/useProgress'
 import { useSettings } from '../store/settings'
-import { IconLock, IconCheck, IconTrophy, IconRepeat, IconSparkle } from '../components/ui/icons'
+import { IconCheck, IconTrophy, IconRepeat } from '../components/ui/icons'
 import { Chip } from '../components/ui/basics'
-import { Mark } from '../components/ui/Mark'
-import { unitSticker } from '../engine/stickers'
+import { Leo, Bonchita, Luna } from '../components/ui/Dogs'
+import { REGIONS, stopFor, souvenirById } from '../engine/journey'
+import { questsForDate, progressFor, pickReward } from '../engine/quests'
 import type { LevelMeta, LevelId, Lesson } from '../engine/schema'
-import type { DayRow } from '../engine/types'
+import type { DayRow, LessonRow } from '../engine/types'
 
-const STATUS_LABEL: Record<string, string> = { locked: 'locked', new: 'new', started: 'in progress', learned: 'learned', mastered: 'solid' }
+const STATUS_LABEL: Record<string, string> = { new: 'new', started: 'in progress', learned: 'learned', mastered: 'solid' }
 
 export default function Course() {
   const lessonRows = useLessonRows()
@@ -28,9 +29,10 @@ export default function Course() {
   const [lessonMeta, setLessonMeta] = useState<Map<string, Lesson[]>>(new Map())
   const [checked, setChecked] = useState(false)
   const [hour] = useState(() => new Date().getHours())
+  const today = todayKey()
+  const quests = useQuests(today)
 
   // First launch: nothing done yet and no starting level chosen → welcome screen.
-  // A direct read (not a live query) so a just-written flag is never seen stale.
   useEffect(() => {
     let alive = true
     ;(async () => {
@@ -78,10 +80,7 @@ export default function Course() {
   }, [cards])
 
   if (!checked || !lessonRows || !cards || !days || !exams || startLevel === undefined) return <div className="p-8 text-center text-muted">Loading…</div>
-  const startHere = (level: LevelId) => {
-    void setKv('startLevel', level).then(() => setKv('onboarded', true))
-  }
-  const today = todayKey()
+
   const byDate = new Map(days.map((d) => [d.date, d]))
   const active = (d?: DayRow) => Boolean(d && (d.minutes > 0 || d.lessons > 0 || d.reviews > 0))
   const week = Array.from({ length: 7 }, (_, i) => shiftDay(today, i - 6)).map((date) => ({ date, on: active(byDate.get(date)) }))
@@ -90,21 +89,32 @@ export default function Course() {
   for (let i = 0; ; i++) {
     const d = shiftDay(today, -i)
     if (active(byDate.get(d))) inARow++
-    else if (i === 0) continue // today may not have started yet
+    else if (i === 0) continue
     else break
   }
   const minutesToday = byDate.get(today)?.minutes ?? 0
   const greeting = hour < 12 ? 'Buenos días' : hour < 20 ? 'Buenas tardes' : 'Buenas noches'
   const goalDone = minutesToday >= goal
 
+  // Current stop: the last lesson worked on, else the first lesson of the recommended level.
+  const current = currentStop(lessonRows, startLevel)
+  const currentInfo = current ? stopFor(current.unitId) : undefined
+
   return (
     <div className="animate-rise">
-      <header className="mb-4 flex items-center gap-3">
-        <Mark size={48} className="animate-float" />
-        <div className="min-w-0 flex-1">
-          <h1 className="text-gradient text-[1.8rem]">{greeting} 👋</h1>
-          <p className="text-sm font-semibold text-muted">{goalDone ? 'Practice done for today. ¡Olé!' : inARow > 1 ? `${inARow} days in a row. Keep the rhythm.` : 'A few minutes a day is all it takes.'}</p>
+      <header className="mb-4">
+        <div className="flex items-center justify-between">
+          <div className="flex -space-x-3">
+            <Leo size={52} className="animate-float" />
+            <Bonchita size={52} className="animate-float" style={{ animationDelay: '0.3s' }} />
+            <Luna size={52} className="animate-float" style={{ animationDelay: '0.6s' }} />
+          </div>
+          <Link to="/passport" className="btn btn-ghost px-3 py-2 text-xs" aria-label="Passport">🛂 Passport</Link>
         </div>
+        <h1 className="text-gradient mt-2 text-[1.7rem]">{greeting} 👋</h1>
+        <p className="text-sm font-semibold text-muted">
+          {currentInfo ? `Leo, Bonchita and Luna are in ${currentInfo.stop.name} ${currentInfo.stop.emoji}` : 'Leo, Bonchita and Luna are packing their bags.'}
+        </p>
       </header>
 
       <section className="card mb-4 flex items-center gap-4" aria-label="Today and this week">
@@ -116,19 +126,17 @@ export default function Course() {
               const label = new Date(w.date + 'T12:00:00').toLocaleDateString(undefined, { weekday: 'narrow' })
               const isToday = i === 6
               return (
-                <div key={w.date} className="flex flex-col items-center gap-1">
-                  <span className={`flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-extrabold ${w.on ? 'bg-mint-gradient text-white' : isToday ? 'border-2 border-dashed border-brand-400 text-brand-500' : 'bg-surface-2 text-muted'}`}>{w.on ? '✓' : label}</span>
-                </div>
+                <span key={w.date} className={`flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-extrabold ${w.on ? 'bg-mint-gradient text-white' : isToday ? 'border-2 border-dashed border-brand-400 text-brand-500' : 'bg-surface-2 text-muted'}`}>{w.on ? '✓' : label}</span>
               )
             })}
           </div>
-          <p className="mt-1.5 text-xs font-semibold text-muted">{weekCount} of 7 days this week{inARow > 1 ? ` · ${inARow} in a row` : ''}</p>
+          <p className="mt-1.5 text-xs font-semibold text-muted">
+            {goalDone ? 'Practice done for today. ¡Olé! · ' : ''}{weekCount} of 7 days this week{inARow > 1 ? ` · ${inARow} in a row` : ''}
+          </p>
         </div>
       </section>
 
-      <p className="mb-5 text-center text-xs">
-        <Link to="/welcome" className="font-bold text-muted underline decoration-dotted underline-offset-4">Change starting level or retake the placement test</Link>
-      </p>
+      {quests && <QuestsCard date={today} day={quests.day} rows={quests.rows} owned={quests.owned} level={currentInfo?.region.level ?? startLevel} />}
 
       {(due ?? 0) > 0 && (
         <Link to="/review" className="card mb-5 flex items-center gap-3 bg-sky-100/70 dark:bg-sky-500/15">
@@ -141,75 +149,95 @@ export default function Course() {
         </Link>
       )}
 
+      <p className="mb-5 text-center text-xs">
+        <Link to="/welcome" className="font-bold text-muted underline decoration-dotted underline-offset-4">Change where the journey starts or retake the placement test</Link>
+      </p>
+
       {levels.map((level) => {
-        const unlocked = levelUnlocked(level.id, lessonRows, exams, lessonCounts, startLevel)
+        const region = REGIONS.find((r) => r.level === level.id)
         const complete = levelComplete(level, lessonRows, lessonCounts)
         const ids = lessonIdsFor(level, lessonCounts)
         const doneCount = ids.filter((l) => (lessonRows.get(l.id)?.completions ?? 0) > 0).length
         const passed = exams.get(level.id)?.passed
+        const recommended = level.id === startLevel
         return (
           <section key={level.id} className="mb-8">
-            <div className={`level-banner mb-4 ${unlocked ? `level-${level.id}` : 'level-locked'}`}>
+            <div className={`level-banner mb-4 level-${level.id}`}>
               <div className="relative flex items-start justify-between gap-3">
                 <div>
-                  <p className="text-xs font-extrabold uppercase tracking-widest opacity-85">{level.name}</p>
-                  <h2 className="text-4xl text-white">{level.title}</h2>
+                  <p className="text-xs font-extrabold uppercase tracking-widest opacity-85">{level.title} · {level.name}</p>
+                  <h2 className="text-3xl text-white">{region?.name ?? level.title}</h2>
+                  {region && <p className="text-sm font-bold opacity-90">{region.es}</p>}
                 </div>
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20">{!unlocked ? <IconLock /> : passed ? <IconTrophy /> : <IconSparkle />}</span>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-xl">{passed ? <IconTrophy /> : region?.stops[0]?.emoji}</span>
               </div>
               <p className="relative mt-2 text-sm leading-snug opacity-95">{level.description}</p>
-              {ids.length > 0 && (
-                <div className="relative mt-3 flex items-center gap-3 text-xs font-extrabold">
-                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/25">
-                    <div className="h-full rounded-full bg-white/90" style={{ width: `${ids.length ? (doneCount / ids.length) * 100 : 0}%` }} />
-                  </div>
-                  <span className="opacity-95">{doneCount} / {ids.length} lessons</span>
-                </div>
-              )}
-              {!unlocked && (
-                <button type="button" onClick={() => startHere(level.id)} className="relative mt-4 rounded-full bg-white px-4 py-2 text-sm font-extrabold text-brand-600 shadow-sm active:scale-95">
-                  Start here — I already know the earlier levels
-                </button>
-              )}
-            </div>
-            {level.units.map((u, unitIdx) => {
-              const lessons = lessonMeta.get(u.id)
-              const list = lessons ?? Array.from({ length: lessonCounts.get(u.id) ?? 4 }, (_, i) => ({ id: `${u.id}.l${i + 1}`, title: `Lesson ${i + 1}` }))
-              return (
-                <div key={u.id} className="card mb-3">
-                  <div className="flex items-start gap-3">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-surface-2 text-2xl" aria-hidden="true">{unitSticker(u.id)}</span>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[11px] font-extrabold uppercase tracking-wider text-muted">Unit {unitIdx + 1}</p>
-                      <h3 className="text-lg font-extrabold leading-tight">{u.title}</h3>
-                      <p className="text-xs font-semibold text-muted">{u.subtitle}</p>
+              <div className="relative mt-3 flex items-center gap-3 text-xs font-extrabold">
+                {ids.length > 0 && (
+                  <>
+                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/25">
+                      <div className="h-full rounded-full bg-white/90" style={{ width: `${ids.length ? (doneCount / ids.length) * 100 : 0}%` }} />
                     </div>
-                    {!u.authored && <Chip>Coming soon</Chip>}
-                  </div>
-                  {u.canDo.length > 0 && (
-                    <ul className="mt-2 space-y-0.5 text-xs text-muted">
-                      {u.canDo.map((c, i) => (
-                        <li key={i} className="flex gap-1">
-                          <IconCheck width={14} height={14} className="mt-0.5 shrink-0" /> {c}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {u.authored && (
-                    <ul className="mt-3 divide-y divide-[var(--line)]">
-                      {list.map((l, i) => {
-                        const row = lessonRows.get(l.id)
-                        const open = lessonUnlocked(l.id, level, lessonRows, exams, lessonCounts, startLevel)
-                        const mastery = lessonMastery(cardsByLesson.get(l.id) ?? [])
-                        const ring = open ? ringFor(row, mastery) : 'locked'
-                        return <LessonRow key={l.id} id={l.id} n={i + 1} title={l.title} status={ring} mastery={mastery} />
-                      })}
-                    </ul>
-                  )}
-                </div>
-              )
-            })}
-            {ids.length > 0 && <ExamCard level={level} enabled={unlocked} complete={complete} passed={Boolean(passed)} score={exams.get(level.id)?.score} />}
+                    <span className="opacity-95">{doneCount} / {ids.length} lessons</span>
+                  </>
+                )}
+                {recommended && <span className="rounded-full bg-white/90 px-2 py-0.5 text-[10px] uppercase tracking-wide text-brand-600">Recommended start</span>}
+              </div>
+            </div>
+            <ol className="relative ml-4 border-l-2 border-dashed border-line pl-5">
+              {level.units.map((u, unitIdx) => {
+                const stop = region?.stops[unitIdx]
+                const lessons = lessonMeta.get(u.id)
+                const list = lessons ?? Array.from({ length: lessonCounts.get(u.id) ?? 4 }, (_, i) => ({ id: `${u.id}.l${i + 1}`, title: `Lesson ${i + 1}` }))
+                const unitDone = u.authored && list.every((l) => (lessonRows.get(l.id)?.completions ?? 0) > 0)
+                const isCurrent = current?.unitId === u.id
+                return (
+                  <li key={u.id} className="relative mb-4">
+                    <span className={`absolute -left-[2.1rem] top-4 flex h-8 w-8 items-center justify-center rounded-full text-base shadow-md ${unitDone ? 'bg-mint-gradient' : isCurrent ? 'bg-brand-gradient' : 'bg-surface'}`} aria-hidden="true">
+                      {unitDone ? '✓' : stop?.emoji ?? '📍'}
+                    </span>
+                    <div className={`card ${isCurrent ? 'ring-2 ring-brand-400' : ''}`}>
+                      <div className="flex items-start gap-3">
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[11px] font-extrabold uppercase tracking-wider text-muted">Stop {unitIdx + 1} · {stop?.name ?? `Unit ${unitIdx + 1}`}</p>
+                          <h3 className="text-lg font-extrabold leading-tight">{u.title}</h3>
+                          <p className="text-xs font-semibold text-muted">{u.subtitle}{stop ? ` · ${stop.es}` : ''}</p>
+                        </div>
+                        {isCurrent && (
+                          <div className="flex shrink-0 -space-x-2" aria-label="Leo, Bonchita and Luna are here">
+                            <Leo size={32} mood="curious" />
+                            <Bonchita size={32} />
+                            <Luna size={32} />
+                          </div>
+                        )}
+                        {!u.authored && <Chip>Coming soon</Chip>}
+                        {unitDone && <Chip tone="ok">Stamped</Chip>}
+                      </div>
+                      {u.canDo.length > 0 && (
+                        <ul className="mt-2 space-y-0.5 text-xs text-muted">
+                          {u.canDo.map((c, i) => (
+                            <li key={i} className="flex gap-1">
+                              <IconCheck width={14} height={14} className="mt-0.5 shrink-0" /> {c}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {u.authored && (
+                        <ul className="mt-3 divide-y divide-[var(--line)]">
+                          {list.map((l, i) => {
+                            const row = lessonRows.get(l.id)
+                            const mastery = lessonMastery(cardsByLesson.get(l.id) ?? [])
+                            const ring = ringFor(row, mastery)
+                            return <LessonRow key={l.id} id={l.id} n={i + 1} title={l.title} status={ring} mastery={mastery} />
+                          })}
+                        </ul>
+                      )}
+                    </div>
+                  </li>
+                )
+              })}
+            </ol>
+            {ids.length > 0 && <ExamCard level={level} complete={complete} passed={Boolean(passed)} score={exams.get(level.id)?.score} />}
           </section>
         )
       })}
@@ -217,7 +245,64 @@ export default function Course() {
   )
 }
 
-/** Minutes practised today as a ring around the number. */
+/** Where the dogs are: the most recently worked lesson's unit, else the first lesson of the recommended level. */
+function currentStop(rows: Map<string, LessonRow>, startLevel: LevelId): { unitId: string } | undefined {
+  let best: LessonRow | undefined
+  for (const r of rows.values()) {
+    const t = r.lastCompleted ?? r.firstCompleted ?? 0
+    if (!best || t > (best.lastCompleted ?? best.firstCompleted ?? 0)) best = r
+  }
+  if (best) return { unitId: best.unitId }
+  const level = levels.find((l) => l.id === startLevel) ?? levels[Math.min(levelIndex(startLevel), levels.length - 1)]
+  const first = level?.units.find((u) => u.authored) ?? level?.units[0]
+  return first ? { unitId: first.id } : undefined
+}
+
+function QuestsCard({ date, day, rows, owned, level }: { date: string; day: DayRow | undefined; rows: Map<string, { claimedAt?: number; rewardId?: string }>; owned: Set<string>; level: LevelId }) {
+  const quests = questsForDate(date)
+  const [justClaimed, setJustClaimed] = useState<string | undefined>()
+  const claim = async (questId: string, seed: number) => {
+    const reward = pickReward(level, owned, seed)
+    await claimQuest(date, questId, reward?.id)
+    setJustClaimed(reward ? `${reward.emoji} ${reward.es}` : 'a stamp')
+  }
+  return (
+    <section className="card mb-4" aria-label="Today's quests">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-extrabold uppercase tracking-wider text-muted">Today's quests</p>
+        <span className="text-xs font-semibold text-muted">{[...rows.values()].filter((r) => r.claimedAt).length} / {quests.length} done</span>
+      </div>
+      <ul className="mt-2 divide-y divide-[var(--line)]">
+        {quests.map((q, i) => {
+          const p = Math.min(q.target, progressFor(q, day))
+          const row = rows.get(q.id)
+          const done = p >= q.target
+          const seed = date.split('-').reduce((a, b) => a * 31 + Number(b), 7) + i
+          return (
+            <li key={q.id} className="flex items-center gap-3 py-2.5">
+              <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-lg ${row?.claimedAt ? 'bg-mint-gradient' : 'bg-surface-2'}`} aria-hidden="true">{row?.claimedAt ? '✓' : q.emoji}</span>
+              <span className="min-w-0 flex-1">
+                <span className="block truncate font-bold">{q.es}</span>
+                <span className="block text-[11px] font-semibold text-muted">{q.en}</span>
+                <span className="mt-1 flex items-center gap-2">
+                  <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-2"><span className="block h-full rounded-full bg-brand-500" style={{ width: `${(p / q.target) * 100}%` }} /></span>
+                  <span className="shrink-0 text-[11px] font-extrabold text-muted">{p}/{q.target}</span>
+                </span>
+              </span>
+              {row?.claimedAt ? (
+                <span className="text-xs font-bold text-ok-600">{row.rewardId ? souvenirById(row.rewardId)?.emoji ?? '🎁' : '🛂'}</span>
+              ) : done ? (
+                <button type="button" className="btn btn-primary px-3 py-1.5 text-xs" onClick={() => void claim(q.id, seed)}>Claim</button>
+              ) : null}
+            </li>
+          )
+        })}
+      </ul>
+      {justClaimed && <p className="mt-2 rounded-xl bg-gold-100 px-3 py-2 text-sm font-bold dark:bg-gold-500/15">🎁 Luna sniffed out {justClaimed}! It's in your passport.</p>}
+    </section>
+  )
+}
+
 function MinutesRing({ minutes, goal }: { minutes: number; goal: number }) {
   const r = 26
   const c = 2 * Math.PI * r
@@ -243,46 +328,38 @@ function MinutesRing({ minutes, goal }: { minutes: number; goal: number }) {
 }
 
 function LessonRow({ id, n, title, status, mastery }: { id: string; n: number; title: string; status: string; mastery: number }) {
-  const locked = status === 'locked'
   const label = STATUS_LABEL[status] ?? status
   const badge =
-    status === 'mastered' ? 'bg-sunset-gradient text-white' : status === 'learned' ? 'bg-mint-gradient text-white' : status === 'started' ? 'bg-brand-gradient text-white' : locked ? 'bg-surface-2 text-muted' : 'bg-brand-100 text-brand-600 dark:bg-brand-500/25 dark:text-brand-100'
-  const inner = (
-    <>
-      <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold ${badge}`}>
-        {locked ? <IconLock width={16} height={16} /> : status === 'learned' || status === 'mastered' ? <IconCheck width={18} height={18} /> : n}
-      </span>
-      <span className="min-w-0 flex-1">
-        <span className={`block truncate font-bold ${locked ? 'text-muted' : ''}`}>{title}</span>
-        <span className="mt-1 flex items-center gap-2">
-          <span className="h-1.5 w-20 overflow-hidden rounded-full bg-surface-2">
-            <span className={`block h-full rounded-full ${status === 'mastered' ? 'bg-gold-500' : 'bg-ok-500'}`} style={{ width: `${locked ? 0 : Math.round(mastery * 100)}%` }} />
-          </span>
-          <span className={`text-[11px] font-semibold text-muted ${locked ? '' : 'capitalize'}`}>{locked ? 'Finish the previous lesson' : label}</span>
-        </span>
-      </span>
-      {!locked && <span className="text-muted" aria-hidden="true">›</span>}
-    </>
-  )
-  if (locked) return <li className="flex items-center gap-3 py-2.5" aria-label={`${title}: locked`}>{inner}</li>
+    status === 'mastered' ? 'bg-sunset-gradient text-white' : status === 'learned' ? 'bg-mint-gradient text-white' : status === 'started' ? 'bg-brand-gradient text-white' : 'bg-brand-100 text-brand-600 dark:bg-brand-500/25 dark:text-brand-100'
   return (
     <li>
       <Link to={`/lesson/${id}`} className="flex items-center gap-3 rounded-xl py-2.5 transition hover:bg-surface-2/60 active:scale-[0.99]" aria-label={`${title}: ${label}`}>
-        {inner}
+        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold ${badge}`}>
+          {status === 'learned' || status === 'mastered' ? <IconCheck width={18} height={18} /> : n}
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block truncate font-bold">{title}</span>
+          <span className="mt-1 flex items-center gap-2">
+            <span className="h-1.5 w-20 overflow-hidden rounded-full bg-surface-2">
+              <span className={`block h-full rounded-full ${status === 'mastered' ? 'bg-gold-500' : 'bg-ok-500'}`} style={{ width: `${Math.round(mastery * 100)}%` }} />
+            </span>
+            <span className="text-[11px] font-semibold capitalize text-muted">{label}</span>
+          </span>
+        </span>
+        <span className="text-muted" aria-hidden="true">›</span>
       </Link>
     </li>
   )
 }
 
-function ExamCard({ level, enabled, complete, passed, score }: { level: LevelMeta; enabled: boolean; complete: boolean; passed: boolean; score?: number }) {
-  const body = (
-    <div className={`card flex items-center gap-3 ${enabled ? 'bg-gold-100/70 dark:bg-gold-500/10' : 'opacity-60'}`}>
-      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${passed ? 'bg-sunset-gradient text-white' : enabled ? 'bg-gold-500 text-white' : 'bg-surface-2 text-muted'}`}>{enabled ? <IconTrophy /> : <IconLock />}</div>
+function ExamCard({ level, complete, passed, score }: { level: LevelMeta; complete: boolean; passed: boolean; score?: number }) {
+  return (
+    <Link to={`/exam/${level.id}`} className="card flex items-center gap-3 bg-gold-100/70 dark:bg-gold-500/10">
+      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${passed ? 'bg-sunset-gradient text-white' : 'bg-gold-500 text-white'}`}><IconTrophy /></div>
       <div className="flex-1">
         <p className="font-extrabold">Level check · {level.title}</p>
-        <p className="text-xs text-muted">{passed ? `Passed · ${Math.round((score ?? 0) * 100)}%` : !enabled ? 'Unlocks with this level.' : complete ? 'Reading, listening, grammar, writing and speaking. Pass to open the next level.' : 'Already know this level? Take the level check now to skip ahead.'}</p>
+        <p className="text-xs text-muted">{passed ? `Passed · ${Math.round((score ?? 0) * 100)}%` : complete ? 'Reading, listening, grammar, writing and speaking. Show what you learnt in this region.' : 'Take it whenever you feel ready; it is open now.'}</p>
       </div>
-    </div>
+    </Link>
   )
-  return enabled ? <Link to={`/exam/${level.id}`}>{body}</Link> : body
 }

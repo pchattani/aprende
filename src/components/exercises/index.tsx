@@ -13,9 +13,11 @@ export function ExerciseView(props: ExerciseProps<Exercise>) {
     case 'choiceEn':
     case 'listen':
     case 'fillBlank':
+    case 'reply':
       return <Choice {...(props as ExerciseProps<typeof ex>)} />
     case 'wordBank':
     case 'order':
+    case 'orderText':
       return <WordBank {...(props as ExerciseProps<typeof ex>)} />
     case 'match':
       return <Match {...(props as ExerciseProps<typeof ex>)} />

@@ -3,7 +3,7 @@ import { useNavigate, useParams, Link } from 'react-router'
 import type { Lesson, Unit } from '../engine/schema'
 import type { Exercise, LessonResult, Stage } from '../engine/types'
 import { loadLesson, vocab, vocabUpTo, levelOf, grammar, units } from '../engine/loader'
-import { generateLesson, sentenceId } from '../engine/generate'
+import { generateLesson, sentenceId, exchangeId, textId } from '../engine/generate'
 import { ensureCards, getCards, recordLesson, type ItemSpec } from '../db/progress'
 import { IRREGULAR } from '../lang/es/verbs'
 import { sttSupported } from '../engine/speech'
@@ -14,9 +14,15 @@ import { Button, SpeakerButton, Chip } from '../components/ui/basics'
 import { IconArrowLeft, IconTrophy } from '../components/ui/icons'
 import { Confetti } from '../components/ui/Confetti'
 import { CHEERS } from '../engine/stickers'
+import { surpriseFind, pickReward } from '../engine/quests'
+import { ownedSouvenirs, awardSouvenir } from '../db/progress'
+import { todayKey } from '../engine/mastery'
+import { hashString } from '../engine/random'
+import { Leo, Bonchita, Luna } from '../components/ui/Dogs'
+import type { Souvenir } from '../engine/journey'
 import { playSound } from '../engine/sounds'
 
-type Phase = { kind: 'loading' } | { kind: 'teach'; unit: Unit; lesson: Lesson; exercises: Exercise[] } | { kind: 'run'; unit: Unit; lesson: Lesson; exercises: Exercise[] } | { kind: 'done'; lesson: Lesson; result: LessonResult } | { kind: 'error'; message: string }
+type Phase = { kind: 'loading' } | { kind: 'teach'; unit: Unit; lesson: Lesson; exercises: Exercise[] } | { kind: 'run'; unit: Unit; lesson: Lesson; exercises: Exercise[] } | { kind: 'done'; lesson: Lesson; result: LessonResult; found?: Souvenir } | { kind: 'error'; message: string }
 
 export default function LessonPage() {
   const { id = '' } = useParams()
@@ -33,6 +39,8 @@ export default function LessonPage() {
         const items: ItemSpec[] = [
           ...lesson.vocab.map((v) => ({ id: v, kind: 'word' as const, level, lessonId: id, grammar: [] as string[] })),
           ...lesson.sentences.map((s, i) => ({ id: sentenceId(id, i, s), kind: 'sentence' as const, level, lessonId: id, grammar: s.grammar })),
+          ...lesson.exchanges.map((x, i) => ({ id: exchangeId(id, i), kind: 'sentence' as const, level, lessonId: id, grammar: x.grammar })),
+          ...lesson.texts.map((t, i) => ({ id: textId(id, i), kind: 'sentence' as const, level, lessonId: id, grammar: t.grammar })),
           ...lesson.teach.map((g) => ({ id: g, kind: 'grammar' as const, level, lessonId: id, grammar: [g] })),
         ]
         await ensureCards(items)
@@ -74,11 +82,18 @@ export default function LessonPage() {
         onFinish={async (result) => {
           await recordLesson(result, phase.unit.id, levelOf(id))
           if (result.completed) playSound('finish')
-          setPhase({ kind: 'done', lesson: phase.lesson, result })
+          let found: Souvenir | undefined
+          const accuracy = result.total ? result.correct / result.total : 0
+          if (result.completed && surpriseFind(id, todayKey(), accuracy)) {
+            const owned = await ownedSouvenirs()
+            const reward = pickReward(levelOf(id), owned, hashString(id + todayKey()))
+            if (reward && (await awardSouvenir(reward.id, 'find', id))) found = reward
+          }
+          setPhase({ kind: 'done', lesson: phase.lesson, result, found })
         }}
       />
     )
-  return <DoneScreen result={phase.result} onHome={() => nav('/')} onRetry={() => setPhase({ kind: 'loading' })} />
+  return <DoneScreen result={phase.result} found={phase.found} onHome={() => nav('/')} onRetry={() => setPhase({ kind: 'loading' })} />
 }
 
 function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () => void; onBack: () => void }) {
@@ -137,7 +152,7 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
   )
 }
 
-function DoneScreen({ result, onHome, onRetry }: { result: LessonResult; onHome: () => void; onRetry: () => void }) {
+function DoneScreen({ result, found, onHome, onRetry }: { result: LessonResult; found?: Souvenir; onHome: () => void; onRetry: () => void }) {
   const acc = result.total ? Math.round((result.correct / result.total) * 100) : 0
   const minutes = Math.max(1, Math.round(result.durationMs / 60000))
   const cheer = CHEERS[result.correct % CHEERS.length]!
@@ -149,6 +164,15 @@ function DoneScreen({ result, onHome, onRetry }: { result: LessonResult; onHome:
       </div>
       <h1 className="text-gradient mt-6 text-4xl">{result.completed ? cheer.es : 'Session ended'}</h1>
       <p className="mt-1 font-semibold text-muted">{result.completed ? `${cheer.en} ${result.wrong === 0 ? 'A clean sweep: nothing to revisit.' : `${result.wrong} ${result.wrong === 1 ? 'item' : 'items'} will come back in your reviews.`}` : 'Everything you practised is saved.'}</p>
+      {found && (
+        <div className="animate-pop mt-5 flex w-full items-center gap-3 rounded-2xl bg-gold-100 p-3 text-left dark:bg-gold-500/15">
+          <div className="flex -space-x-2"><Leo size={36} mood="curious" /><Bonchita size={36} /><Luna size={36} /></div>
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-extrabold">Lucky find! {found.emoji} {found.es}</p>
+            <p className="text-xs text-muted">{found.blurb} Added to your passport.</p>
+          </div>
+        </div>
+      )}
       <div className="mt-6 grid w-full grid-cols-3 gap-2">
         <Stat label="Answers" value={`${result.correct + result.almost} / ${result.total}`} tone="gold" />
         <Stat label="Accuracy" value={`${acc}%`} tone="ok" />

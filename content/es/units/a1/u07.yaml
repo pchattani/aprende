@@ -7,18 +7,55 @@ lessons:
     vocab: [w.ojo, w.cara, w.boca, w.nariz, w.cabeza, w.cuerpo, w.pie, w.pierna, w.brazo, w.gafas, w.barba, w.rubio, w.moreno, w.castano, w.largo, w.corto, w.delgado, w.gordo, w.fuerte, w.llevar]
     sentences:
       - { es: "Mi hermana tiene el pelo largo y rubio.", en: "My sister has long blond hair.", grammar: [g.adjectives-position, g.articles-definite], vocab: [w.pelo, w.largo, w.rubio] }
-      - { es: "Tiene los ojos verdes.", en: "She has green eyes.", altEn: ["He has green eyes."], grammar: [g.adjective-agreement], vocab: [w.ojo, w.verde] }
-      - { es: "Mi padre es moreno y lleva barba.", en: "My father is dark-haired and has a beard.", grammar: [g.adjectives-position], vocab: [w.moreno, w.llevar, w.barba] }
+      - { es: "Tiene los ojos verdes.", en: "She has green eyes.", altEs: ["Ella tiene los ojos verdes.", "Sus ojos son verdes."], altEn: ["He has green eyes."], grammar: [g.adjective-agreement], vocab: [w.ojo, w.verde] }
+      - { es: "Mi padre es moreno y lleva barba.", en: "My father is dark-haired and has a beard.", altEs: ["Mi padre es moreno y tiene barba."], grammar: [g.adjectives-position], vocab: [w.moreno, w.llevar, w.barba] }
       - { es: "Llevo gafas.", en: "I wear glasses.", altEs: ["Yo llevo gafas."], grammar: [g.regular-ar-present], vocab: [w.llevar, w.gafas] }
-      - { es: "Es un hombre alto y delgado.", en: "He is a tall, slim man.", grammar: [g.adjectives-position], vocab: [w.alto, w.delgado] }
+      - { es: "Es un hombre alto y delgado.", en: "He is a tall, slim man.", altEs: ["Es un hombre delgado y alto."], grammar: [g.adjectives-position], vocab: [w.alto, w.delgado] }
       - { es: "El bebé tiene la cara redonda y la nariz pequeña.", en: "The baby has a round face and a small nose.", grammar: [g.articles-definite], vocab: [w.cara, w.nariz, w.pequeno] }
-      - { es: "Tengo el pelo corto y castaño.", en: "I have short brown hair.", grammar: [g.adjectives-position], vocab: [w.corto, w.castano, w.pelo] }
-      - { es: "Mi abuelo es un poco gordo pero muy fuerte.", en: "My grandfather is a bit fat but very strong.", grammar: [g.muy-bastante-poco], vocab: [w.gordo, w.fuerte, w.un-poco.adv] }
+      - { es: "Tengo el pelo corto y castaño.", en: "I have short brown hair.", altEs: ["Tengo el pelo castaño y corto."], grammar: [g.adjectives-position], vocab: [w.corto, w.castano, w.pelo] }
+      - { es: "Mi abuelo es un poco gordo pero muy fuerte.", en: "My grandfather is a bit fat but very strong.", altEs: ["Mi abuelo es un poco gordo, pero muy fuerte."], grammar: [g.muy-bastante-poco], vocab: [w.gordo, w.fuerte, w.un-poco.adv] }
       - { es: "Las piernas y los brazos son partes del cuerpo.", en: "Legs and arms are parts of the body.", grammar: [g.plural-nouns], vocab: [w.pierna, w.brazo, w.cuerpo] }
       - { es: "Me duelen los pies.", en: "My feet hurt.", grammar: [g.gustar-plural], vocab: [w.pie] }
-      - { es: "¿Cómo es tu novio? Es rubio, con los ojos azules.", en: "What is your boyfriend like? He's blond, with blue eyes.", grammar: [g.question-words], vocab: [w.rubio, w.azul, w.novio] }
+      - { es: "¿Cómo es tu novio? Es rubio, con los ojos azules.", en: "What is your boyfriend like? He's blond, with blue eyes.", altEs: ["¿Cómo es tu novio? Es rubio y tiene los ojos azules."], grammar: [g.question-words], vocab: [w.rubio, w.azul, w.novio] }
       - { es: "La boca y la cabeza.", en: "The mouth and the head.", grammar: [g.articles-definite], vocab: [w.boca, w.cabeza], kinds: [choiceEs, listen, typeEs, wordBank] }
-      - { es: "Ella es baja y lleva el pelo muy corto.", en: "She is short and wears her hair very short.", grammar: [g.adjective-agreement], vocab: [w.bajo, w.corto], transform: { instruction: "Change to 'they' (women)", answer: "Ellas son bajas y llevan el pelo muy corto." } }
+      - { es: "Ella es baja y lleva el pelo muy corto.", en: "She is short and wears her hair very short.", altEs: ["Es baja y lleva el pelo muy corto."], grammar: [g.adjective-agreement], vocab: [w.bajo, w.corto], transform: { instruction: "Change to 'they' (women)", answer: "Ellas son bajas y llevan el pelo muy corto." } }
+    exchanges:
+      - q: { es: "¿Cómo es tu hermana?", en: "What does your sister look like?" }
+        a: { es: "Es alta y tiene el pelo largo y rubio.", en: "She's tall and has long blond hair." }
+        alt: ["Es alta y rubia.", "Es baja y morena."]
+        grammar: [g.adjectives-position, g.question-words]
+        vocab: [w.alto, w.pelo, w.largo, w.rubio]
+      - q: { es: "¿Llevas gafas?", en: "Do you wear glasses?" }
+        a: { es: "Sí, llevo gafas.", en: "Yes, I wear glasses." }
+        alt: ["Sí.", "No, no llevo gafas."]
+        grammar: [g.regular-ar-present]
+        vocab: [w.llevar, w.gafas]
+      - q: { es: "¿De qué color tiene los ojos?", en: "What colour are his eyes?" }
+        a: { es: "Tiene los ojos verdes.", en: "He has green eyes." }
+        alt: ["Verdes.", "Tiene los ojos azules."]
+        grammar: [g.adjective-agreement, g.articles-definite]
+        vocab: [w.ojo, w.verde, w.azul]
+      - q: { es: "¿Tu padre es moreno?", en: "Is your father dark-haired?" }
+        a: { es: "Sí, es moreno y lleva barba.", en: "Yes, he's dark-haired and has a beard." }
+        alt: ["Sí, es moreno.", "No, es rubio."]
+        grammar: [g.adjectives-position]
+        vocab: [w.moreno, w.barba, w.llevar]
+      - q: { es: "¿Tienes el pelo corto o largo?", en: "Do you have short or long hair?" }
+        a: { es: "Tengo el pelo corto y castaño.", en: "I have short brown hair." }
+        alt: ["Corto.", "Lo tengo largo."]
+        grammar: [g.adjectives-position]
+        vocab: [w.corto, w.castano, w.pelo]
+    texts:
+      - title: "Pie de foto"
+        es: ["Este es mi hermano Luis.", "Es alto y delgado, con el pelo corto y negro.", "Lleva gafas y barba."]
+        en: ["This is my brother Luis.", "He's tall and slim, with short black hair.", "He wears glasses and has a beard."]
+        grammar: [g.adjectives-position]
+        vocab: [w.delgado, w.corto, w.gafas, w.barba]
+      - title: "Mensaje de Ana"
+        es: ["Mi amiga Sara llega hoy.", "Es baja, rubia y tiene los ojos azules.", "Tiene el pelo muy largo."]
+        en: ["My friend Sara arrives today.", "She's short, blond and has blue eyes.", "She has very long hair."]
+        grammar: [g.adjectives-position, g.adjective-agreement]
+        vocab: [w.bajo, w.rubio, w.ojo, w.largo]
   - id: a1.u07.l2
     title: Carácter
     teach: [g.muy-bastante-poco]
@@ -27,15 +64,52 @@ lessons:
       - { es: "Mi profesora es muy amable.", en: "My teacher is very kind.", grammar: [g.muy-bastante-poco], vocab: [w.amable] }
       - { es: "Mi jefe es bastante serio.", en: "My boss is quite serious.", grammar: [g.muy-bastante-poco], vocab: [w.serio, w.bastante] }
       - { es: "Mis amigos son muy divertidos.", en: "My friends are great fun.", altEn: ["My friends are very funny."], grammar: [g.adjective-agreement], vocab: [w.divertido] }
-      - { es: "La película es un poco aburrida.", en: "The film is a bit boring.", grammar: [g.muy-bastante-poco], vocab: [w.aburrido, w.un-poco.adv] }
-      - { es: "Soy tímido con la gente nueva.", en: "I am shy with new people.", altEs: ["Soy tímida con la gente nueva."], grammar: [g.ser-present], vocab: [w.timido] }
-      - { es: "Mi hermana es trabajadora y mi hermano es perezoso.", en: "My sister is hard-working and my brother is lazy.", grammar: [g.adjective-agreement], vocab: [w.trabajador, w.perezoso] }
+      - { es: "La película es un poco aburrida.", en: "The film is a bit boring.", altEs: ["La película es algo aburrida."], grammar: [g.muy-bastante-poco], vocab: [w.aburrido, w.un-poco.adv] }
+      - { es: "Soy tímido con la gente nueva.", en: "I am shy with new people.", altEs: ["Soy tímida con la gente nueva.", "Yo soy tímido con la gente nueva."], grammar: [g.ser-present], vocab: [w.timido] }
+      - { es: "Mi hermana es trabajadora y mi hermano es perezoso.", en: "My sister is hard-working and my brother is lazy.", altEs: ["Mi hermana es trabajadora y mi hermano, perezoso."], grammar: [g.adjective-agreement], vocab: [w.trabajador, w.perezoso] }
       - { es: "Los niños son alegres e inteligentes.", en: "The children are cheerful and intelligent.", grammar: [g.connectors-basic], vocab: [w.alegre, w.inteligente] }
-      - { es: "Pareces cansado hoy.", en: "You look tired today.", grammar: [g.stem-changing-present], vocab: [w.parecer, w.cansado] }
-      - { es: "Es demasiado serio para la fiesta.", en: "He is too serious for the party.", grammar: [g.muy-bastante-poco], vocab: [w.demasiado, w.serio] }
-      - { es: "¿Cómo es tu madre? Es muy simpática y un poco tímida.", en: "What is your mother like? She is very nice and a bit shy.", grammar: [g.question-words], vocab: [w.simpatico, w.timido] }
+      - { es: "Pareces cansado hoy.", en: "You look tired today.", altEs: ["Hoy pareces cansado.", "Pareces cansada hoy."], grammar: [g.stem-changing-present], vocab: [w.parecer, w.cansado] }
+      - { es: "Es demasiado serio para la fiesta.", en: "He is too serious for the party.", altEs: ["Él es demasiado serio para la fiesta."], grammar: [g.muy-bastante-poco], vocab: [w.demasiado, w.serio] }
+      - { es: "¿Cómo es tu madre? Es muy simpática y un poco tímida.", en: "What is your mother like? She is very nice and a bit shy.", altEs: ["¿Cómo es tu madre? Es muy simpática, pero un poco tímida."], grammar: [g.question-words], vocab: [w.simpatico, w.timido] }
       - { es: "El examen es dificilísimo.", en: "The exam is extremely hard.", grammar: [g.muy-bastante-poco], vocab: [w.inteligente], kinds: [typeEn, listen, choiceEs, dictation] }
-      - { es: "Mi perro es muy inteligente pero bastante perezoso.", en: "My dog is very intelligent but quite lazy.", grammar: [g.muy-bastante-poco], vocab: [w.perezoso, w.bastante], error: { wrong: "Mi perro es mucho inteligente.", explain: "Before an adjective use muy, not mucho.", grammar: g.muy-bastante-poco } }
+      - { es: "Mi perro es muy inteligente pero bastante perezoso.", en: "My dog is very intelligent but quite lazy.", altEs: ["Mi perro es muy inteligente, pero bastante perezoso."], grammar: [g.muy-bastante-poco], vocab: [w.perezoso, w.bastante], error: { wrong: "Mi perro es mucho inteligente.", explain: "Before an adjective use muy, not mucho.", grammar: g.muy-bastante-poco } }
+    exchanges:
+      - q: { es: "¿Cómo es tu profesora?", en: "What is your teacher like?" }
+        a: { es: "Es muy amable y un poco seria.", en: "She's very kind and a bit serious." }
+        alt: ["Es muy amable.", "Es bastante seria."]
+        grammar: [g.muy-bastante-poco]
+        vocab: [w.amable, w.serio, w.un-poco.adv]
+      - q: { es: "¿Tus amigos son divertidos?", en: "Are your friends fun?" }
+        a: { es: "Sí, son muy divertidos.", en: "Yes, they're great fun." }
+        alt: ["Sí, mucho.", "Bastante."]
+        grammar: [g.muy-bastante-poco]
+        vocab: [w.divertido, w.muy]
+      - q: { es: "¿Eres tímido?", en: "Are you shy?" }
+        a: { es: "Un poco, con la gente nueva.", en: "A bit, with new people." }
+        alt: ["Sí, bastante.", "No, no soy tímido."]
+        grammar: [g.muy-bastante-poco]
+        vocab: [w.timido, w.un-poco.adv, w.gente]
+      - q: { es: "¿La película es buena?", en: "Is the film good?" }
+        a: { es: "No, es bastante aburrida.", en: "No, it's quite boring." }
+        alt: ["Sí, es muy buena.", "Es un poco aburrida."]
+        grammar: [g.muy-bastante-poco]
+        vocab: [w.aburrido, w.bastante, w.pelicula]
+      - q: { es: "¿Tu hermano es trabajador?", en: "Is your brother hard-working?" }
+        a: { es: "No, es muy perezoso, pero es alegre.", en: "No, he's very lazy, but he's cheerful." }
+        alt: ["Sí, es muy trabajador.", "No, es perezoso."]
+        grammar: [g.muy-bastante-poco, g.connectors-basic]
+        vocab: [w.trabajador, w.perezoso, w.alegre]
+    texts:
+      - title: "Mensaje"
+        es: ["Mi nuevo profesor es bastante joven.", "Es serio en clase, pero muy amable.", "Parece un poco tímido."]
+        en: ["My new teacher is quite young.", "He's serious in class, but very kind.", "He seems a bit shy."]
+        grammar: [g.muy-bastante-poco]
+        vocab: [w.bastante, w.serio, w.amable, w.parecer, w.timido]
+      - title: "Nota"
+        es: ["Mi hermana es muy trabajadora y bastante seria.", "Mi hermano es perezoso, pero muy divertido.", "Los dos son inteligentes."]
+        en: ["My sister is very hard-working and quite serious.", "My brother is lazy, but great fun.", "Both of them are intelligent."]
+        grammar: [g.muy-bastante-poco, g.adjective-agreement]
+        vocab: [w.trabajador, w.perezoso, w.divertido, w.inteligente]
   - id: a1.u07.l3
     title: ¿Cómo estás?
     teach: [g.ser-vs-estar-basics, g.tener-expressions]
@@ -43,37 +117,116 @@ lessons:
     vocab: [w.contento, w.triste, w.cansado, w.enfermo, w.nervioso, w.enfadado, w.ocupado, w.listo, w.hambre, w.sed, w.frio.noun, w.calor, w.sueno, w.miedo, w.prisa, w.razon, w.suerte]
     sentences:
       - { es: "Estoy muy contenta hoy.", en: "I am very happy today.", altEs: ["Estoy muy contento hoy."], grammar: [g.ser-vs-estar-basics], vocab: [w.contento], error: { wrong: "Soy muy contenta hoy.", explain: "A mood right now takes estar: estoy contenta.", grammar: g.ser-vs-estar-basics } }
-      - { es: "¿Por qué estás triste?", en: "Why are you sad?", grammar: [g.ser-vs-estar-basics, g.question-words], vocab: [w.triste] }
-      - { es: "Estamos cansados después del trabajo.", en: "We are tired after work.", grammar: [g.ser-vs-estar-basics], vocab: [w.cansado, w.despues] }
+      - { es: "¿Por qué estás triste?", en: "Why are you sad?", altEs: ["¿Tú por qué estás triste?"], grammar: [g.ser-vs-estar-basics, g.question-words], vocab: [w.triste] }
+      - { es: "Estamos cansados después del trabajo.", en: "We are tired after work.", altEs: ["Después del trabajo estamos cansados.", "Estamos cansadas después del trabajo."], grammar: [g.ser-vs-estar-basics], vocab: [w.cansado, w.despues] }
       - { es: "Mi hijo está enfermo y no va a la escuela.", en: "My son is ill and isn't going to school.", grammar: [g.ser-vs-estar-basics], vocab: [w.enfermo, w.escuela] }
-      - { es: "Estoy nervioso por el examen.", en: "I am nervous about the exam.", grammar: [g.ser-vs-estar-basics], vocab: [w.nervioso] }
+      - { es: "Estoy nervioso por el examen.", en: "I am nervous about the exam.", altEs: ["Estoy nerviosa por el examen."], grammar: [g.ser-vs-estar-basics], vocab: [w.nervioso] }
       - { es: "Mi madre está enfadada conmigo.", en: "My mother is angry with me.", grammar: [g.ser-vs-estar-basics], vocab: [w.enfadado] }
-      - { es: "Lo siento, estoy muy ocupado ahora.", en: "Sorry, I am very busy now.", grammar: [g.ser-vs-estar-basics], vocab: [w.ocupado, w.ahora] }
-      - { es: "¿Estáis listos? Sí, estamos listos.", en: "Are you (all) ready? Yes, we are ready.", grammar: [g.ser-vs-estar-basics], vocab: [w.listo] }
-      - { es: "Tengo hambre y sed.", en: "I am hungry and thirsty.", grammar: [g.tener-expressions], vocab: [w.hambre, w.sed], error: { wrong: "Soy hambre y sed.", explain: "Hunger and thirst use tener: tengo hambre.", grammar: g.tener-expressions } }
+      - { es: "Lo siento, estoy muy ocupado ahora.", en: "Sorry, I am very busy now.", altEs: ["Lo siento, ahora estoy muy ocupado.", "Lo siento, estoy muy ocupada ahora."], grammar: [g.ser-vs-estar-basics], vocab: [w.ocupado, w.ahora] }
+      - { es: "¿Estáis listos? Sí, estamos listos.", en: "Are you (all) ready? Yes, we are ready.", altEs: ["¿Estáis listos? Sí, listos."], grammar: [g.ser-vs-estar-basics], vocab: [w.listo] }
+      - { es: "Tengo hambre y sed.", en: "I am hungry and thirsty.", altEs: ["Tengo sed y hambre."], grammar: [g.tener-expressions], vocab: [w.hambre, w.sed], error: { wrong: "Soy hambre y sed.", explain: "Hunger and thirst use tener: tengo hambre.", grammar: g.tener-expressions } }
       - { es: "¿Tienes frío? No, tengo calor.", en: "Are you cold? No, I'm hot.", grammar: [g.tener-expressions], vocab: [w.frio.noun, w.calor] }
       - { es: "Los niños tienen sueño.", en: "The children are sleepy.", grammar: [g.tener-expressions], vocab: [w.sueno] }
       - { es: "Tengo miedo de los perros grandes.", en: "I am afraid of big dogs.", grammar: [g.tener-expressions], vocab: [w.miedo] }
-      - { es: "Tenemos prisa, el tren sale a las nueve.", en: "We're in a hurry, the train leaves at nine.", grammar: [g.tener-expressions], vocab: [w.prisa] }
-      - { es: "Tienes razón, es muy tarde.", en: "You are right, it is very late.", grammar: [g.tener-expressions], vocab: [w.razon, w.tarde] }
-      - { es: "¡Qué suerte tienes!", en: "How lucky you are!", grammar: [g.tener-expressions], vocab: [w.suerte] }
+      - { es: "Tenemos prisa, el tren sale a las nueve.", en: "We're in a hurry, the train leaves at nine.", altEs: ["Tenemos prisa porque el tren sale a las nueve."], grammar: [g.tener-expressions], vocab: [w.prisa] }
+      - { es: "Tienes razón, es muy tarde.", en: "You are right, it is very late.", altEs: ["Tienes razón: es muy tarde."], grammar: [g.tener-expressions], vocab: [w.razon, w.tarde] }
+      - { es: "¡Qué suerte tienes!", en: "How lucky you are!", altEs: ["¡Qué suerte!"], grammar: [g.tener-expressions], vocab: [w.suerte] }
+    exchanges:
+      - q: { es: "¿Cómo estás hoy?", en: "How are you today?" }
+        a: { es: "Estoy muy contento.", en: "I'm very happy." }
+        alt: ["Estoy bien.", "Estoy un poco cansado."]
+        grammar: [g.ser-vs-estar-basics]
+        vocab: [w.contento, w.cansado]
+      - q: { es: "¿Por qué estás triste?", en: "Why are you sad?" }
+        a: { es: "Porque mi amiga está enferma.", en: "Because my friend is ill." }
+        alt: ["No estoy triste, estoy cansado.", "Porque estoy enfermo."]
+        grammar: [g.ser-vs-estar-basics]
+        vocab: [w.triste, w.enfermo]
+      - q: { es: "¿Tienes hambre?", en: "Are you hungry?" }
+        a: { es: "Sí, tengo mucha hambre. ¿Comemos?", en: "Yes, I'm very hungry. Shall we eat?" }
+        alt: ["Sí, mucha.", "No, pero tengo sed."]
+        grammar: [g.tener-expressions]
+        vocab: [w.hambre, w.sed, w.comer]
+      - q: { es: "¿Tienes frío?", en: "Are you cold?" }
+        a: { es: "No, tengo calor.", en: "No, I'm hot." }
+        alt: ["Sí, un poco.", "No."]
+        grammar: [g.tener-expressions]
+        vocab: [w.frio.noun, w.calor]
+      - q: { es: "¿Estáis listos?", en: "Are you (all) ready?" }
+        a: { es: "Sí, estamos listos. ¡Tenemos prisa!", en: "Yes, we're ready. We're in a hurry!" }
+        alt: ["Sí, listos.", "No, todavía no."]
+        grammar: [g.ser-vs-estar-basics, g.tener-expressions]
+        vocab: [w.listo, w.prisa]
+      - q: { es: "¿Estás nervioso por el examen?", en: "Are you nervous about the exam?" }
+        a: { es: "Sí, estoy muy nervioso.", en: "Yes, I'm very nervous." }
+        alt: ["Un poco.", "No, estoy tranquilo."]
+        grammar: [g.ser-vs-estar-basics]
+        vocab: [w.nervioso, w.examen, w.tranquilo]
+    texts:
+      - title: "Mensaje de Pablo"
+        es: ["Hola, Ana. Hoy no estoy en clase.", "Estoy enfermo y tengo mucho sueño.", "Lo siento."]
+        en: ["Hi, Ana. I'm not in class today.", "I'm ill and very sleepy.", "Sorry."]
+        grammar: [g.ser-vs-estar-basics, g.tener-expressions]
+        vocab: [w.enfermo, w.sueno, w.lo-siento]
+      - title: "Nota"
+        es: ["Los niños tienen hambre y están cansados.", "Tienen sueño también.", "Yo tengo prisa: el tren sale a las ocho."]
+        en: ["The children are hungry and tired.", "They're sleepy too.", "I'm in a hurry: the train leaves at eight."]
+        grammar: [g.tener-expressions, g.ser-vs-estar-basics]
+        vocab: [w.hambre, w.cansado, w.sueno, w.prisa]
   - id: a1.u07.l4
     title: Los colores
     teach: [g.colors]
     vocab: [w.color, w.rojo, w.azul, w.verde, w.amarillo, w.blanco, w.negro, w.gris, w.marron, w.naranja.adj, w.rosa, w.claro.adj, w.oscuro]
     sentences:
-      - { es: "¿De qué color es tu coche? Es rojo.", en: "What colour is your car? It's red.", grammar: [g.colors, g.question-words], vocab: [w.color, w.rojo] }
+      - { es: "¿De qué color es tu coche? Es rojo.", en: "What colour is your car? It's red.", altEs: ["¿De qué color es tu coche? Rojo."], grammar: [g.colors, g.question-words], vocab: [w.color, w.rojo] }
       - { es: "Las paredes son blancas y la puerta es azul.", en: "The walls are white and the door is blue.", grammar: [g.colors, g.adjective-agreement], vocab: [w.blanco, w.azul] }
-      - { es: "Me gustan los zapatos marrones.", en: "I like the brown shoes.", grammar: [g.colors], vocab: [w.marron] }
-      - { es: "Tiene el pelo negro y los ojos verdes.", en: "He has black hair and green eyes.", grammar: [g.colors], vocab: [w.negro, w.verde] }
-      - { es: "El cielo está gris hoy.", en: "The sky is grey today.", grammar: [g.ser-vs-estar-basics], vocab: [w.gris] }
-      - { es: "Quiero la camisa amarilla, no la rosa.", en: "I want the yellow shirt, not the pink one.", grammar: [g.colors], vocab: [w.amarillo, w.rosa, w.camisa] }
+      - { es: "Me gustan los zapatos marrones.", en: "I like the brown shoes.", altEs: ["Me gustan los zapatos de color marrón."], grammar: [g.colors], vocab: [w.marron] }
+      - { es: "Tiene el pelo negro y los ojos verdes.", en: "He has black hair and green eyes.", altEs: ["Él tiene el pelo negro y los ojos verdes."], grammar: [g.colors], vocab: [w.negro, w.verde] }
+      - { es: "El cielo está gris hoy.", en: "The sky is grey today.", altEs: ["Hoy el cielo está gris."], grammar: [g.ser-vs-estar-basics], vocab: [w.gris] }
+      - { es: "Quiero la camisa amarilla, no la rosa.", en: "I want the yellow shirt, not the pink one.", altEs: ["Quiero la camisa amarilla y no la rosa."], grammar: [g.colors], vocab: [w.amarillo, w.rosa, w.camisa] }
       - { es: "Las naranjas son naranjas.", en: "Oranges are orange.", grammar: [g.colors], vocab: [w.naranja, w.naranja.adj] }
-      - { es: "Mi chaqueta es azul claro.", en: "My jacket is light blue.", grammar: [g.colors], vocab: [w.claro.adj, w.chaqueta] }
-      - { es: "Lleva unos pantalones verde oscuro.", en: "He is wearing dark green trousers.", grammar: [g.colors], vocab: [w.oscuro, w.pantalones] }
+      - { es: "Mi chaqueta es azul claro.", en: "My jacket is light blue.", altEs: ["Mi chaqueta es de color azul claro."], grammar: [g.colors], vocab: [w.claro.adj, w.chaqueta] }
+      - { es: "Lleva unos pantalones verde oscuro.", en: "He is wearing dark green trousers.", altEs: ["Lleva pantalones verde oscuro."], grammar: [g.colors], vocab: [w.oscuro, w.pantalones] }
       - { es: "La bandera de España es roja y amarilla.", en: "The flag of Spain is red and yellow.", grammar: [g.colors, g.adjective-agreement], vocab: [w.rojo, w.amarillo] }
-      - { es: "El gato es negro y blanco.", en: "The cat is black and white.", grammar: [g.colors], vocab: [w.negro, w.blanco, w.gato] }
+      - { es: "El gato es negro y blanco.", en: "The cat is black and white.", altEs: ["El gato es blanco y negro."], grammar: [g.colors], vocab: [w.negro, w.blanco, w.gato] }
       - { es: "Los árboles son verdes en primavera.", en: "The trees are green in spring.", grammar: [g.colors], vocab: [w.verde], transform: { instruction: "Change to the singular (el árbol)", answer: "El árbol es verde en primavera." } }
+    exchanges:
+      - q: { es: "¿De qué color es tu coche?", en: "What colour is your car?" }
+        a: { es: "Es rojo.", en: "It's red." }
+        alt: ["Rojo.", "Es azul oscuro."]
+        grammar: [g.colors, g.question-words]
+        vocab: [w.color, w.rojo, w.coche]
+      - q: { es: "¿Te gustan los zapatos marrones?", en: "Do you like the brown shoes?" }
+        a: { es: "No, me gustan los negros.", en: "No, I like the black ones." }
+        alt: ["Sí, me gustan.", "No, no me gustan."]
+        grammar: [g.colors, g.gustar-plural]
+        vocab: [w.marron, w.negro, w.zapato]
+      - q: { es: "¿Qué camisa quieres, la blanca o la azul?", en: "Which shirt do you want, the white one or the blue one?" }
+        a: { es: "La azul, por favor.", en: "The blue one, please." }
+        alt: ["La blanca.", "Quiero la azul."]
+        grammar: [g.colors, g.articles-definite]
+        vocab: [w.camisa, w.blanco, w.azul]
+      - q: { es: "¿Cómo está el cielo hoy?", en: "What's the sky like today?" }
+        a: { es: "Está gris hoy.", en: "It's grey today." }
+        alt: ["Gris.", "Está azul."]
+        grammar: [g.ser-vs-estar-basics, g.colors]
+        vocab: [w.gris, w.cielo]
+      - q: { es: "¿De qué color son las naranjas?", en: "What colour are oranges?" }
+        a: { es: "Son naranjas, claro.", en: "They're orange, of course." }
+        alt: ["Naranjas.", "Son de color naranja."]
+        grammar: [g.colors]
+        vocab: [w.naranja, w.naranja.adj, w.claro]
+    texts:
+      - title: "Pie de foto"
+        es: ["Mi gato es negro y blanco.", "Tiene los ojos verdes.", "Le gusta el sofá rojo."]
+        en: ["My cat is black and white.", "It has green eyes.", "It likes the red sofa."]
+        grammar: [g.colors]
+        vocab: [w.negro, w.blanco, w.verde, w.rojo]
+      - title: "Mensaje"
+        es: ["Hoy llevo una camisa amarilla y unos pantalones azules.", "Mi chaqueta es gris oscuro.", "¿Y tú? ¿Qué llevas?"]
+        en: ["Today I'm wearing a yellow shirt and blue trousers.", "My jacket is dark grey.", "And you? What are you wearing?"]
+        grammar: [g.colors, g.adjective-agreement]
+        vocab: [w.amarillo, w.azul, w.gris, w.oscuro, w.llevar]
 dialogues:
   - id: a1.u07.d1
     title: ¿Quién es?

@@ -65,3 +65,26 @@ Reading (text + 5 MCQ), listening (5 dictations + optional audio MCQ), grammar (
 ## Adding a language pack
 
 Implement `LanguagePack` from `src/lang/types.ts` under `src/lang/<code>/` (normalize, tokenize, match, words). Optional engines (conjugator, inflector, checker) plug into the generator and grader. Create `content/<code>/` with the same file layout and update the loader paths.
+
+## Lesson variety: exchanges and mini-texts
+
+Besides `sentences`, every lesson should carry conversational and text material so exercises are not all single sentences:
+
+```yaml
+    exchanges:            # 3–6 per lesson: a question or line, and the natural reply
+      - q: { es: "¿A qué hora cierra el museo?", en: "What time does the museum close?" }
+        a: { es: "A las siete, pero la taquilla cierra a las seis.", en: "At seven, but the ticket office closes at six." }
+        alt: ["Cierra a las siete."]          # other correct replies (Spanish)
+        grammar: [g.time-telling]
+        vocab: [w.taquilla]
+    texts:                # 1–2 per lesson: a 2–4 sentence message, note, caption or announcement
+      - title: "Mensaje de Ana"
+        es: ["Hola, llego tarde.", "El metro no funciona y voy andando.", "Pedid sin mí, por favor."]
+        en: ["Hi, I'm running late.", "The metro isn't working and I'm walking.", "Order without me, please."]
+        grammar: [g.imperative-vosotros]
+```
+
+The generator turns exchanges into *reply* exercises (pick or type the natural answer) and mini-texts into
+*orderText* (put the sentences in order), dictation and translation in context. Vary the sentence types in
+`sentences` too: questions, negatives, exclamations, commands, two-clause sentences, and give `altEs` /
+`altEn` alternatives wherever more than one wording is natural (including Latin American variants).

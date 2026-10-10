@@ -6,37 +6,111 @@ lessons:
     teach: [g.ser-origin]
     vocab: [w.de, w.donde, w.pais, w.ciudad, w.espana, w.espanol, w.ingles, w.frances, w.aleman, w.italiano, w.estadounidense, w.mexicano, w.argentino, w.idioma, w.hablar, w.vivir, w.en]
     sentences:
-      - { es: "¿De dónde eres?", en: "Where are you from?", grammar: [g.ser-origin, g.question-words], vocab: [w.de, w.donde] }
+      - { es: "¿De dónde eres?", en: "Where are you from?", altEs: ["¿Tú de dónde eres?", "¿De dónde eres tú?"], grammar: [g.ser-origin, g.question-words], vocab: [w.de, w.donde] }
       - { es: "Soy de Madrid.", en: "I am from Madrid.", altEs: ["Yo soy de Madrid."], altEn: ["I'm from Madrid."], grammar: [g.ser-origin], vocab: [w.de] }
-      - { es: "Soy español y vivo en Barcelona.", en: "I am Spanish and I live in Barcelona.", grammar: [g.ser-origin, g.regular-er-ir-present], vocab: [w.espanol, w.vivir, w.en] }
-      - { es: "Ella es inglesa, de Londres.", en: "She is English, from London.", grammar: [g.adjective-agreement, g.ser-origin], vocab: [w.ingles], transform: { instruction: "Change to 'he'", answer: "Él es inglés, de Londres." } }
-      - { es: "¿Eres francés o italiano?", en: "Are you French or Italian?", grammar: [g.ser-origin], vocab: [w.frances, w.italiano, w.o] }
+      - { es: "Soy español y vivo en Barcelona.", en: "I am Spanish and I live in Barcelona.", altEs: ["Soy española y vivo en Barcelona.", "Yo soy español y vivo en Barcelona."], grammar: [g.ser-origin, g.regular-er-ir-present], vocab: [w.espanol, w.vivir, w.en] }
+      - { es: "Ella es inglesa, de Londres.", en: "She is English, from London.", altEs: ["Es inglesa, de Londres."], grammar: [g.adjective-agreement, g.ser-origin], vocab: [w.ingles], transform: { instruction: "Change to 'he'", answer: "Él es inglés, de Londres." } }
+      - { es: "¿Eres francés o italiano?", en: "Are you French or Italian?", altEs: ["¿Tú eres francés o italiano?", "¿Eres francesa o italiana?"], grammar: [g.ser-origin], vocab: [w.frances, w.italiano, w.o] }
       - { es: "Somos alemanes.", en: "We are German.", altEs: ["Nosotros somos alemanes."], grammar: [g.adjective-agreement], vocab: [w.aleman] }
       - { es: "Mis padres son mexicanos.", en: "My parents are Mexican.", grammar: [g.plural-nouns, g.adjective-agreement], vocab: [w.mexicano, w.padres] }
       - { es: "¿Hablas español?", en: "Do you speak Spanish?", altEs: ["¿Tú hablas español?"], grammar: [g.regular-ar-present], vocab: [w.hablar] }
-      - { es: "Hablo inglés y un poco de español.", en: "I speak English and a little Spanish.", grammar: [g.regular-ar-present], vocab: [w.hablar, w.ingles] }
-      - { es: "¿En qué ciudad vives?", en: "What city do you live in?", altEn: ["In which city do you live?"], grammar: [g.question-words], vocab: [w.ciudad, w.vivir] }
+      - { es: "Hablo inglés y un poco de español.", en: "I speak English and a little Spanish.", altEs: ["Yo hablo inglés y un poco de español."], grammar: [g.regular-ar-present], vocab: [w.hablar, w.ingles] }
+      - { es: "¿En qué ciudad vives?", en: "What city do you live in?", altEs: ["¿En qué ciudad vives tú?"], altEn: ["In which city do you live?"], grammar: [g.question-words], vocab: [w.ciudad, w.vivir] }
       - { es: "España es un país muy bonito.", en: "Spain is a very beautiful country.", grammar: [g.ser-present], vocab: [w.espana, w.pais] }
       - { es: "El español es mi idioma.", en: "Spanish is my language.", grammar: [g.articles-definite], vocab: [w.idioma, w.espanol] }
-      - { es: "Ana es argentina y vive en Estados Unidos.", en: "Ana is Argentinian and lives in the United States.", grammar: [g.ser-origin], vocab: [w.argentino, w.vivir] }
+      - { es: "Ana es argentina y vive en Estados Unidos.", en: "Ana is Argentinian and lives in the United States.", altEs: ["Ana es argentina y vive en los Estados Unidos."], grammar: [g.ser-origin], vocab: [w.argentino, w.vivir] }
+    exchanges:
+      - q: { es: "¿De dónde eres?", en: "Where are you from?" }
+        a: { es: "Soy de Madrid, soy español.", en: "I'm from Madrid, I'm Spanish." }
+        alt: ["Soy de Madrid.", "Soy español."]
+        grammar: [g.ser-origin]
+        vocab: [w.de, w.donde, w.espanol]
+      - q: { es: "¿Eres italiana?", en: "Are you Italian?" }
+        a: { es: "No, soy francesa, de París.", en: "No, I'm French, from Paris." }
+        alt: ["No, soy francesa.", "Sí, soy italiana."]
+        grammar: [g.ser-origin, g.adjective-agreement]
+        vocab: [w.italiano, w.frances]
+      - q: { es: "¿Dónde vives?", en: "Where do you live?" }
+        a: { es: "Vivo en Barcelona.", en: "I live in Barcelona." }
+        alt: ["En Barcelona.", "Yo vivo en Barcelona."]
+        grammar: [g.regular-er-ir-present, g.question-words]
+        vocab: [w.vivir, w.en]
+      - q: { es: "¿Hablas inglés?", en: "Do you speak English?" }
+        a: { es: "Sí, hablo inglés y un poco de español.", en: "Yes, I speak English and a little Spanish." }
+        alt: ["Sí, hablo inglés.", "No, no hablo inglés."]
+        grammar: [g.regular-ar-present]
+        vocab: [w.hablar, w.ingles]
+      - q: { es: "¿De dónde son tus padres?", en: "Where are your parents from?" }
+        a: { es: "Son de México, son mexicanos.", en: "They're from Mexico, they're Mexican." }
+        alt: ["Son mexicanos.", "Son de México."]
+        grammar: [g.ser-origin]
+        vocab: [w.mexicano, w.padres]
+    texts:
+      - title: "Perfil de Tom"
+        es: ["Me llamo Tom y soy inglés.", "Soy de Manchester, pero vivo en Madrid.", "Hablo inglés y un poco de español."]
+        en: ["My name is Tom and I'm English.", "I'm from Manchester, but I live in Madrid.", "I speak English and a little Spanish."]
+        grammar: [g.ser-origin]
+        vocab: [w.ingles, w.vivir, w.hablar]
+      - title: "Mensaje de Yuki"
+        es: ["¡Hola! Soy Yuki, de Japón.", "Soy japonesa y vivo en España.", "Mi ciudad es Osaka. ¿Y tú, de dónde eres?"]
+        en: ["Hi! I'm Yuki, from Japan.", "I'm Japanese and I live in Spain.", "My city is Osaka. And you, where are you from?"]
+        grammar: [g.ser-origin]
+        vocab: [w.japones, w.ciudad, w.espana]
   - id: a1.u02.l2
     title: El, la, un, una
     teach: [g.gender-nouns, g.articles-definite]
     tip: "Learn every noun with its article: el libro, la mesa."
     vocab: [w.el.det, w.un, w.hombre, w.mujer, w.chico, w.chica, w.nino, w.persona, w.gente, w.mundo, w.capital, w.pero]
     sentences:
-      - { es: "El hombre y la mujer son de Sevilla.", en: "The man and the woman are from Seville.", grammar: [g.articles-definite, g.gender-nouns], vocab: [w.hombre, w.mujer] }
+      - { es: "El hombre y la mujer son de Sevilla.", en: "The man and the woman are from Seville.", altEs: ["El señor y la señora son de Sevilla."], grammar: [g.articles-definite, g.gender-nouns], vocab: [w.hombre, w.mujer] }
       - { es: "Un chico y una chica.", en: "A boy and a girl.", grammar: [g.articles-indefinite, g.gender-nouns], vocab: [w.chico, w.chica, w.un] }
-      - { es: "Los niños son españoles.", en: "The children are Spanish.", grammar: [g.plural-nouns, g.adjective-agreement], vocab: [w.nino] }
+      - { es: "Los niños son españoles.", en: "The children are Spanish.", altEs: ["Las niñas son españolas."], grammar: [g.plural-nouns, g.adjective-agreement], vocab: [w.nino] }
       - { es: "La gente es muy simpática.", en: "The people are very nice.", grammar: [g.plural-nouns], vocab: [w.gente], error: { wrong: "La gente son muy simpáticos.", explain: "gente is singular in Spanish: la gente es simpática.", grammar: g.plural-nouns } }
       - { es: "Madrid es la capital de España.", en: "Madrid is the capital of Spain.", grammar: [g.articles-definite], vocab: [w.capital, w.espana] }
-      - { es: "Es una persona muy inteligente.", en: "He is a very intelligent person.", altEn: ["She is a very intelligent person."], grammar: [g.adjective-agreement], vocab: [w.persona, w.inteligente] }
+      - { es: "Es una persona muy inteligente.", en: "He is a very intelligent person.", altEs: ["Él es una persona muy inteligente.", "Ella es una persona muy inteligente."], altEn: ["She is a very intelligent person."], grammar: [g.adjective-agreement], vocab: [w.persona, w.inteligente] }
       - { es: "El mundo es grande.", en: "The world is big.", grammar: [g.articles-definite], vocab: [w.mundo, w.grande] }
-      - { es: "La ciudad es pequeña pero bonita.", en: "The city is small but pretty.", grammar: [g.adjective-agreement], vocab: [w.ciudad, w.pequeno, w.pero] }
+      - { es: "La ciudad es pequeña pero bonita.", en: "The city is small but pretty.", altEs: ["La ciudad es pequeña, pero es bonita."], grammar: [g.adjective-agreement], vocab: [w.ciudad, w.pequeno, w.pero] }
       - { es: "Las chicas son francesas.", en: "The girls are French.", grammar: [g.plural-nouns, g.adjective-agreement], vocab: [w.chica, w.frances], transform: { instruction: "Change to 'the boys'", answer: "Los chicos son franceses." } }
-      - { es: "El niño se llama Pablo.", en: "The boy's name is Pablo.", altEn: ["The child is called Pablo."], grammar: [g.llamarse, g.gender-nouns], vocab: [w.nino] }
-      - { es: "Una mujer de Italia.", en: "A woman from Italy.", grammar: [g.articles-indefinite], vocab: [w.mujer, w.un] }
-      - { es: "El idioma de Brasil es el portugués.", en: "The language of Brazil is Portuguese.", grammar: [g.articles-definite], vocab: [w.idioma, w.portugues] }
+      - { es: "El niño se llama Pablo.", en: "The boy's name is Pablo.", altEs: ["El chico se llama Pablo."], altEn: ["The child is called Pablo."], grammar: [g.llamarse, g.gender-nouns], vocab: [w.nino] }
+      - { es: "Una mujer de Italia.", en: "A woman from Italy.", altEs: ["Una mujer italiana."], grammar: [g.articles-indefinite], vocab: [w.mujer, w.un] }
+      - { es: "El idioma de Brasil es el portugués.", en: "The language of Brazil is Portuguese.", altEs: ["En Brasil el idioma es el portugués."], grammar: [g.articles-definite], vocab: [w.idioma, w.portugues] }
+    exchanges:
+      - q: { es: "¿Quién es el hombre?", en: "Who is the man?" }
+        a: { es: "Es el señor López.", en: "He's Mr López." }
+        alt: ["El señor López.", "Es un amigo."]
+        grammar: [g.articles-definite, g.gender-nouns]
+        vocab: [w.hombre, w.senor]
+      - q: { es: "¿Madrid es la capital de España?", en: "Is Madrid the capital of Spain?" }
+        a: { es: "Sí, Madrid es la capital.", en: "Yes, Madrid is the capital." }
+        alt: ["Sí.", "Sí, es la capital."]
+        grammar: [g.articles-definite]
+        vocab: [w.capital, w.espana]
+      - q: { es: "¿La gente es simpática?", en: "Are the people nice?" }
+        a: { es: "Sí, la gente es muy simpática.", en: "Yes, the people are very nice." }
+        alt: ["Sí, muy simpática.", "No, no es muy simpática."]
+        grammar: [g.gender-nouns, g.adjective-agreement]
+        vocab: [w.gente, w.simpatico]
+      - q: { es: "¿Es un chico o una chica?", en: "Is it a boy or a girl?" }
+        a: { es: "Es una chica, se llama Elena.", en: "It's a girl, her name is Elena." }
+        alt: ["Es una chica.", "Una chica."]
+        grammar: [g.gender-nouns, g.articles-indefinite]
+        vocab: [w.chico, w.chica, w.un]
+      - q: { es: "¿Los niños son españoles?", en: "Are the children Spanish?" }
+        a: { es: "No, son ingleses, pero viven en España.", en: "No, they're English, but they live in Spain." }
+        alt: ["No, son ingleses.", "Sí, son españoles."]
+        grammar: [g.plural-nouns, g.adjective-agreement]
+        vocab: [w.nino, w.pero]
+    texts:
+      - title: "Pie de foto"
+        es: ["El hombre es mi amigo Juan.", "La mujer es su amiga Rosa.", "Son de Sevilla, pero viven en Madrid."]
+        en: ["The man is my friend Juan.", "The woman is his friend Rosa.", "They are from Seville, but they live in Madrid."]
+        grammar: [g.articles-definite, g.gender-nouns]
+        vocab: [w.hombre, w.mujer, w.pero]
+      - title: "Nota"
+        es: ["Madrid es la capital de España.", "Es una ciudad grande.", "La gente es muy simpática."]
+        en: ["Madrid is the capital of Spain.", "It is a big city.", "The people are very nice."]
+        grammar: [g.articles-definite, g.articles-indefinite]
+        vocab: [w.capital, w.ciudad, w.gente]
   - id: a1.u02.l3
     title: Profesiones
     teach: [g.negation]
@@ -44,35 +118,109 @@ lessons:
     vocab: [w.estudiante, w.profesor, w.medico, w.camarero, w.cocinero, w.ingeniero, w.abogado, w.enfermero, w.trabajo, w.trabajar, w.estudiar]
     sentences:
       - { es: "Soy médico.", en: "I am a doctor.", altEs: ["Yo soy médico.", "Soy médica."], altEn: ["I'm a doctor."], grammar: [g.ser-present, g.articles-indefinite], vocab: [w.medico], error: { wrong: "Soy un médico.", explain: "No article with professions after ser.", grammar: g.articles-indefinite } }
-      - { es: "Ella es profesora de español.", en: "She is a Spanish teacher.", grammar: [g.adjective-agreement, g.ser-present], vocab: [w.profesor] }
-      - { es: "¿Eres estudiante o trabajas?", en: "Are you a student or do you work?", grammar: [g.regular-ar-present], vocab: [w.estudiante, w.trabajar, w.o] }
+      - { es: "Ella es profesora de español.", en: "She is a Spanish teacher.", altEs: ["Es profesora de español."], grammar: [g.adjective-agreement, g.ser-present], vocab: [w.profesor] }
+      - { es: "¿Eres estudiante o trabajas?", en: "Are you a student or do you work?", altEs: ["¿Tú eres estudiante o trabajas?"], grammar: [g.regular-ar-present], vocab: [w.estudiante, w.trabajar, w.o] }
       - { es: "Trabajo en un hospital.", en: "I work in a hospital.", altEs: ["Yo trabajo en un hospital."], grammar: [g.regular-ar-present], vocab: [w.trabajar, w.en] }
       - { es: "Mi hermano es camarero y mi hermana es cocinera.", en: "My brother is a waiter and my sister is a cook.", grammar: [g.ser-present, g.adjective-agreement], vocab: [w.camarero, w.cocinero] }
-      - { es: "No soy abogado, soy ingeniero.", en: "I am not a lawyer, I am an engineer.", altEn: ["I'm not a lawyer, I'm an engineer."], grammar: [g.negation], vocab: [w.abogado, w.ingeniero] }
-      - { es: "Las enfermeras trabajan mucho.", en: "The nurses work a lot.", grammar: [g.regular-ar-present, g.plural-nouns], vocab: [w.enfermero, w.trabajar] }
+      - { es: "No soy abogado, soy ingeniero.", en: "I am not a lawyer, I am an engineer.", altEs: ["Yo no soy abogado, soy ingeniero.", "No soy abogada, soy ingeniera."], altEn: ["I'm not a lawyer, I'm an engineer."], grammar: [g.negation], vocab: [w.abogado, w.ingeniero] }
+      - { es: "Las enfermeras trabajan mucho.", en: "The nurses work a lot.", altEs: ["Los enfermeros trabajan mucho."], grammar: [g.regular-ar-present, g.plural-nouns], vocab: [w.enfermero, w.trabajar] }
       - { es: "Estudio español en Salamanca.", en: "I study Spanish in Salamanca.", altEs: ["Yo estudio español en Salamanca."], grammar: [g.regular-ar-present], vocab: [w.estudiar] }
-      - { es: "¿Dónde trabaja usted?", en: "Where do you work? (formal)", grammar: [g.tu-vs-usted, g.question-words], vocab: [w.trabajar, w.donde] }
+      - { es: "¿Dónde trabaja usted?", en: "Where do you work? (formal)", altEs: ["¿Usted dónde trabaja?"], grammar: [g.tu-vs-usted, g.question-words], vocab: [w.trabajar, w.donde] }
       - { es: "Mi trabajo es muy interesante.", en: "My job is very interesting.", grammar: [g.possessives], vocab: [w.trabajo] }
-      - { es: "Los estudiantes no trabajan hoy.", en: "The students are not working today.", altEn: ["The students don't work today."], grammar: [g.negation, g.regular-ar-present], vocab: [w.estudiante, w.trabajar], transform: { instruction: "Make it affirmative", answer: "Los estudiantes trabajan hoy." } }
-      - { es: "El médico habla con el enfermero.", en: "The doctor talks with the nurse.", grammar: [g.regular-ar-present], vocab: [w.medico, w.enfermero, w.con] }
+      - { es: "Los estudiantes no trabajan hoy.", en: "The students are not working today.", altEs: ["Hoy los estudiantes no trabajan."], altEn: ["The students don't work today."], grammar: [g.negation, g.regular-ar-present], vocab: [w.estudiante, w.trabajar], transform: { instruction: "Make it affirmative", answer: "Los estudiantes trabajan hoy." } }
+      - { es: "El médico habla con el enfermero.", en: "The doctor talks with the nurse.", altEs: ["La médica habla con la enfermera."], grammar: [g.regular-ar-present], vocab: [w.medico, w.enfermero, w.con] }
+    exchanges:
+      - q: { es: "¿Eres médico?", en: "Are you a doctor?" }
+        a: { es: "No, no soy médico. Soy enfermero.", en: "No, I'm not a doctor. I'm a nurse." }
+        alt: ["No, soy enfermero.", "Sí, soy médico."]
+        grammar: [g.negation, g.ser-present]
+        vocab: [w.medico, w.enfermero]
+      - q: { es: "¿Dónde trabajas?", en: "Where do you work?" }
+        a: { es: "Trabajo en un restaurante.", en: "I work in a restaurant." }
+        alt: ["En un restaurante.", "Trabajo en un hospital."]
+        grammar: [g.regular-ar-present, g.question-words]
+        vocab: [w.trabajar, w.donde]
+      - q: { es: "¿Trabajas o estudias?", en: "Do you work or study?" }
+        a: { es: "Estudio. Soy estudiante.", en: "I study. I'm a student." }
+        alt: ["Soy estudiante.", "Trabajo, soy camarero."]
+        grammar: [g.regular-ar-present]
+        vocab: [w.estudiar, w.estudiante, w.camarero]
+      - q: { es: "¿Tu hermana es abogada?", en: "Is your sister a lawyer?" }
+        a: { es: "No, no es abogada, es ingeniera.", en: "No, she isn't a lawyer, she's an engineer." }
+        alt: ["No, es ingeniera.", "Sí, es abogada."]
+        grammar: [g.negation, g.adjective-agreement]
+        vocab: [w.abogado, w.ingeniero]
+      - q: { es: "¿Trabaja usted hoy?", en: "Are you working today? (formal)" }
+        a: { es: "No, hoy no trabajo.", en: "No, I'm not working today." }
+        alt: ["No, hoy no.", "Sí, trabajo hoy."]
+        grammar: [g.negation, g.tu-vs-usted]
+        vocab: [w.trabajar, w.hoy]
+    texts:
+      - title: "Perfil"
+        es: ["Me llamo Laura y soy cocinera.", "Trabajo en un restaurante italiano.", "Mi amigo Pablo no trabaja, es estudiante."]
+        en: ["My name is Laura and I'm a cook.", "I work in an Italian restaurant.", "My friend Pablo doesn't work, he's a student."]
+        grammar: [g.negation, g.ser-present]
+        vocab: [w.cocinero, w.trabajar, w.estudiante]
+      - title: "Mensaje"
+        es: ["Hola, Marta. Hoy no trabajo.", "No estoy en el hospital.", "¿Y tú? ¿Trabajas hoy?"]
+        en: ["Hi, Marta. I'm not working today.", "I'm not at the hospital.", "And you? Are you working today?"]
+        grammar: [g.negation, g.regular-ar-present]
+        vocab: [w.trabajar, w.hoy]
   - id: a1.u02.l4
     title: ¿Cómo es?
     teach: [g.adjective-agreement]
     vocab: [w.alto, w.bajo, w.grande, w.pequeno, w.simpatico, w.inteligente, w.joven, w.viejo, w.nuevo, w.bueno, w.malo, w.guapo, w.feo, w.brasileno, w.chino, w.japones, w.portugues, w.irlandes, w.colombiano]
     sentences:
-      - { es: "Mi padre es alto y mi madre es baja.", en: "My father is tall and my mother is short.", grammar: [g.adjective-agreement], vocab: [w.alto, w.bajo] }
+      - { es: "Mi padre es alto y mi madre es baja.", en: "My father is tall and my mother is short.", altEs: ["Mi padre es alto y mi madre, baja."], grammar: [g.adjective-agreement], vocab: [w.alto, w.bajo] }
       - { es: "Las casas son grandes y nuevas.", en: "The houses are big and new.", grammar: [g.adjective-agreement, g.plural-nouns], vocab: [w.grande, w.nuevo] }
-      - { es: "Es un chico muy simpático.", en: "He is a very nice boy.", grammar: [g.adjectives-position], vocab: [w.simpatico, w.chico] }
-      - { es: "Mis amigas son jóvenes e inteligentes.", en: "My friends (female) are young and intelligent.", grammar: [g.adjective-agreement, g.connectors-basic], vocab: [w.joven, w.inteligente] }
+      - { es: "Es un chico muy simpático.", en: "He is a very nice boy.", altEs: ["Él es un chico muy simpático."], grammar: [g.adjectives-position], vocab: [w.simpatico, w.chico] }
+      - { es: "Mis amigas son jóvenes e inteligentes.", en: "My friends (female) are young and intelligent.", altEs: ["Mis amigas son inteligentes y jóvenes."], grammar: [g.adjective-agreement, g.connectors-basic], vocab: [w.joven, w.inteligente] }
       - { es: "El profesor es viejo pero muy bueno.", en: "The teacher is old but very good.", grammar: [g.adjective-agreement], vocab: [w.viejo, w.bueno, w.pero] }
-      - { es: "La película es mala.", en: "The film is bad.", grammar: [g.adjective-agreement], vocab: [w.malo] }
-      - { es: "Ella es brasileña y él es portugués.", en: "She is Brazilian and he is Portuguese.", grammar: [g.adjective-agreement, g.ser-origin], vocab: [w.brasileno, w.portugues] }
+      - { es: "La película es mala.", en: "The film is bad.", altEs: ["Es una película mala."], grammar: [g.adjective-agreement], vocab: [w.malo] }
+      - { es: "Ella es brasileña y él es portugués.", en: "She is Brazilian and he is Portuguese.", altEs: ["Ella es brasileña y él, portugués."], grammar: [g.adjective-agreement, g.ser-origin], vocab: [w.brasileno, w.portugues] }
       - { es: "Los chicos chinos son estudiantes.", en: "The Chinese boys are students.", grammar: [g.adjectives-position], vocab: [w.chino] }
-      - { es: "Mi amiga japonesa es muy guapa.", en: "My Japanese friend is very pretty.", grammar: [g.adjective-agreement], vocab: [w.japones, w.guapo] }
-      - { es: "Somos irlandeses, de Dublín.", en: "We are Irish, from Dublin.", grammar: [g.adjective-agreement], vocab: [w.irlandes] }
-      - { es: "El coche no es feo, es nuevo.", en: "The car is not ugly, it is new.", grammar: [g.negation, g.adjective-agreement], vocab: [w.feo, w.nuevo] }
+      - { es: "Mi amiga japonesa es muy guapa.", en: "My Japanese friend is very pretty.", altEs: ["Mi amiga de Japón es muy guapa."], grammar: [g.adjective-agreement], vocab: [w.japones, w.guapo] }
+      - { es: "Somos irlandeses, de Dublín.", en: "We are Irish, from Dublin.", altEs: ["Nosotros somos irlandeses, de Dublín.", "Somos irlandesas, de Dublín."], grammar: [g.adjective-agreement], vocab: [w.irlandes] }
+      - { es: "El coche no es feo, es nuevo.", en: "The car is not ugly, it is new.", altEs: ["El coche no es feo; es nuevo."], grammar: [g.negation, g.adjective-agreement], vocab: [w.feo, w.nuevo] }
       - { es: "Las profesoras colombianas son simpáticas.", en: "The Colombian teachers (female) are nice.", grammar: [g.adjective-agreement], vocab: [w.colombiano, w.simpatico], error: { wrong: "Las profesoras colombianas son simpáticos.", explain: "profesoras is feminine plural, so simpáticas.", grammar: g.adjective-agreement } }
       - { es: "¿Cómo es tu ciudad? Es pequeña y vieja.", en: "What is your city like? It is small and old.", grammar: [g.question-words, g.adjective-agreement], vocab: [w.ciudad, w.pequeno, w.viejo] }
+    exchanges:
+      - q: { es: "¿Cómo es tu padre?", en: "What is your father like?" }
+        a: { es: "Es alto y muy simpático.", en: "He's tall and very nice." }
+        alt: ["Es alto.", "Es bajo y simpático."]
+        grammar: [g.adjective-agreement, g.question-words]
+        vocab: [w.alto, w.simpatico]
+      - q: { es: "¿Cómo es tu ciudad?", en: "What is your city like?" }
+        a: { es: "Es pequeña pero muy bonita.", en: "It's small but very pretty." }
+        alt: ["Es pequeña.", "Es grande y bonita."]
+        grammar: [g.adjective-agreement]
+        vocab: [w.ciudad, w.pequeno, w.grande]
+      - q: { es: "¿Tus amigas son jóvenes?", en: "Are your friends (female) young?" }
+        a: { es: "Sí, son jóvenes e inteligentes.", en: "Yes, they're young and intelligent." }
+        alt: ["Sí, son muy jóvenes.", "Sí."]
+        grammar: [g.adjective-agreement, g.connectors-basic]
+        vocab: [w.joven, w.inteligente]
+      - q: { es: "¿El profesor es bueno?", en: "Is the teacher good?" }
+        a: { es: "Sí, es viejo pero muy bueno.", en: "Yes, he's old but very good." }
+        alt: ["Sí, es muy bueno.", "No, no es muy bueno."]
+        grammar: [g.adjective-agreement]
+        vocab: [w.bueno, w.viejo]
+      - q: { es: "¿Son chinos o japoneses?", en: "Are they Chinese or Japanese?" }
+        a: { es: "Son japoneses, de Osaka.", en: "They're Japanese, from Osaka." }
+        alt: ["Son japoneses.", "Son chinos."]
+        grammar: [g.adjective-agreement, g.ser-origin]
+        vocab: [w.chino, w.japones]
+    texts:
+      - title: "Pie de foto"
+        es: ["Esta es mi amiga Sofía.", "Es brasileña, de Río.", "Es alta, guapa y muy simpática."]
+        en: ["This is my friend Sofía.", "She's Brazilian, from Rio.", "She's tall, pretty and very nice."]
+        grammar: [g.adjective-agreement]
+        vocab: [w.brasileno, w.guapo, w.alto]
+      - title: "Nota"
+        es: ["Los profesores son irlandeses, de Dublín.", "Son jóvenes y muy buenos.", "Los estudiantes son colombianos y chinos."]
+        en: ["The teachers are Irish, from Dublin.", "They are young and very good.", "The students are Colombian and Chinese."]
+        grammar: [g.adjective-agreement, g.plural-nouns]
+        vocab: [w.irlandes, w.colombiano, w.chino]
 dialogues:
   - id: a1.u02.d1
     title: En la clase de español

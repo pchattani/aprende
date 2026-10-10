@@ -2,7 +2,7 @@
  * Builds the exercise sequence for a lesson or a review session from content
  * plus learner state. Deterministic for a given seed.
  */
-import type { Lesson, Sentence, VocabEntry, ExerciseKind, IrregularVerb } from './schema'
+import type { Lesson, Sentence, VocabEntry, ExerciseKind, IrregularVerb, Exchange, MiniText } from './schema'
 import type { Exercise, Stage, ChoiceExercise, WordBankExercise, TypeExercise, MatchExercise, FindErrorExercise, ItemKind } from './types'
 import { kindsFor } from './ladder'
 import { Rng, hashString } from './random'
@@ -29,6 +29,42 @@ export interface GenOptions {
 
 export function sentenceId(lessonId: string, index: number, s: Sentence): string {
   return s.id ?? `s.${lessonId}.${index + 1}`
+}
+export function exchangeId(lessonId: string, index: number): string {
+  return `x.${lessonId}.${index + 1}`
+}
+export function textId(lessonId: string, index: number): string {
+  return `t.${lessonId}.${index + 1}`
+}
+
+/** An exchange reviewed as a sentence: the reply is the item, the question is context. */
+export function exchangeAsSentence(x: Exchange): Sentence {
+  return { es: x.a.es, en: x.a.en, altEs: x.alt, altEn: [], grammar: x.grammar, vocab: x.vocab, note: `In reply to: ${x.q.es}` }
+}
+/** A mini-text reviewed as a sentence: listening, meaning and ordering only (no retyping of whole texts). */
+export function textAsSentence(t: MiniText): Sentence {
+  return { es: t.es.join(' '), en: t.en.join(' '), altEs: [], altEn: [], grammar: t.grammar, vocab: t.vocab, kinds: ['listen', 'choiceEs', 'typeEn'] }
+}
+
+/** Reply exercise: read (or hear) a line, pick the natural reply among replies from other exchanges. */
+export function replyExercise(x: Exchange, id: string, lesson: Lesson, rng: Rng): ChoiceExercise {
+  const others = rng.sample(lesson.exchanges.filter((o) => o.a.es !== x.a.es), 3).map((o) => o.a.es)
+  for (const s of rng.shuffle(lesson.sentences)) {
+    if (others.length >= 3) break
+    if (s.es !== x.a.es && !others.includes(s.es)) others.push(s.es)
+  }
+  const options = rng.shuffle([x.a.es, ...others.slice(0, 3)])
+  return { kind: 'reply', items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.es, audio: x.q.es, options, answer: options.indexOf(x.a.es), translation: `${x.q.en} — ${x.a.en}` }
+}
+/** Typed reply: the question in Spanish, the expected reply given in English. */
+export function replyTyped(x: Exchange, id: string): TypeExercise {
+  return { kind: 'typeEs', items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.es, audio: x.q.es, hint: `Reply in Spanish: “${x.a.en}”`, answers: [x.a.es, ...x.alt], translation: x.a.en }
+}
+/** Order the sentences of a mini-text. */
+export function orderTextExercise(t: MiniText, id: string, rng: Rng): WordBankExercise {
+  let tiles = rng.shuffle(t.es)
+  if (tiles.join('|') === t.es.join('|') && t.es.length > 1) tiles = [...t.es].reverse()
+  return { kind: 'orderText', items: [id, ...t.vocab], grammar: t.grammar, prompt: t.title ? `Put the sentences in order: ${t.title}` : 'Put the sentences in order', tiles, answers: [t.es.join(' ')], translation: t.en.join(' ') }
 }
 
 const GRAMMAR_TIP_KINDS = new Set<ExerciseKind>(['fillBlank', 'conjugate', 'typeEs', 'wordBank', 'order'])
@@ -73,6 +109,17 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
     const ex = sentenceExercise(s, id, Math.min(3, stage + 1) as Stage, lesson, ctx, rng, lessonWordSet, out.filter((e) => e.items.includes(id)).map((e) => e.kind))
     if (ex) out.push(ex)
     i++
+  }
+  // 4. Variety: a couple of conversational replies and one mini-text when the lesson has them.
+  const exchanges = rng.shuffle(lesson.exchanges.map((x, i) => ({ x, i }))).slice(0, 2)
+  for (const { x, i } of exchanges) {
+    const id = exchangeId(lesson.id, i)
+    const stage = ctx.stageOf(id) ?? 0
+    out.push(stage >= 2 ? replyTyped(x, id) : replyExercise(x, id, lesson, rng))
+  }
+  if (lesson.texts.length) {
+    const i = rng.int(lesson.texts.length)
+    out.push(orderTextExercise(lesson.texts[i]!, textId(lesson.id, i), rng))
   }
   // interleave: keep the first match early, then shuffle lightly so words and sentences mix
   const head = out.slice(0, 1)

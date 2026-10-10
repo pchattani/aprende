@@ -1,3 +1,5 @@
+import { z } from 'zod'
+import { conjugate, type Conjugation } from '../lang/es/verbs'
 /**
  * Content loader. Small, always-needed files (syllabus, grammar notes, vocab,
  * error rules, phonology, reader index) are bundled eagerly; unit lesson files
@@ -11,6 +13,7 @@ import {
 } from './schema'
 import packRaw from '../../content/es/pack.yaml'
 import syllabusRaw from '../../content/es/syllabus.yaml'
+import synonymsRaw from '../../content/es/synonyms.yaml'
 import errorsRaw from '../../content/es/errors/common-errors.yaml'
 import phonologyRaw from '../../content/es/phonology/lessons.yaml'
 
@@ -19,6 +22,50 @@ export const syllabus: Syllabus = SyllabusSchema.parse(syllabusRaw)
 export const levels: LevelMeta[] = syllabus.levels
 export const errorRules: ErrorRule[] = ErrorsFileSchema.parse(errorsRaw).rules
 export const phonology: PhonologyLesson[] = PhonologyFileSchema.parse(phonologyRaw).lessons
+const SynonymsSchema = z.object({ groups: z.array(z.array(z.string()).min(2)), english: z.array(z.array(z.string()).min(2)).default([]) })
+const synonymsFile = SynonymsSchema.parse(synonymsRaw)
+/** Spanish synonym/variant groups: the curated file plus every vocabulary entry's es-419 variants. */
+export function spanishSynonymGroups(): string[][] {
+  const base = [...synonymsFile.groups]
+  for (const v of vocab.values()) {
+    const alt = v.variant?.['es-419']
+    if (!alt) continue
+    const forms = alt.split('/').map((x) => x.replace(/\(.*?\)/g, '').trim()).filter(Boolean)
+    if (forms.length) base.push([v.lemma, ...forms])
+  }
+  // Verb groups (echar de menos / extrañar) are expanded to every conjugated form so that
+  // "echo de menos" and "extraño" compare equal too.
+  const groups: string[][] = []
+  for (const g of base) {
+    groups.push(g)
+    if (!g.every((m) => isVerbPhrase(m))) continue
+    const conj = g.map((m) => {
+      const [head, ...rest] = m.trim().split(/\s+/)
+      return { c: conjugate(head!), rest: rest.join(' ') }
+    })
+    const tenses = Object.keys(conj[0]!.c.forms) as (keyof Conjugation['forms'])[]
+    for (const t of tenses) {
+      for (let p = 0; p < 6; p++) {
+        const row = conj.map(({ c, rest }) => {
+          const f = c.forms[t]?.[p]
+          return f ? (rest ? `${f} ${rest}` : f) : undefined
+        })
+        if (row.every(Boolean)) groups.push(row as string[])
+      }
+    }
+    for (const part of ['participle', 'gerund'] as const) {
+      groups.push(conj.map(({ c, rest }) => (rest ? `${c[part]} ${rest}` : c[part])))
+    }
+  }
+  return groups
+}
+function isVerbPhrase(m: string): boolean {
+  const head = m.trim().split(/\s+/)[0] ?? ''
+  if (!/(ar|er|ir|arse|erse|irse)$/.test(head) || head.length < 4) return false
+  const entry = [...vocab.values()].find((v) => v.lemma === m.trim() || v.lemma === head)
+  return entry ? entry.pos === 'verb' || entry.pos === 'phrase' : /(ar|er|ir)$/.test(head)
+}
+export const englishSynonymGroups: string[][] = synonymsFile.english
 
 export interface UnitRef extends UnitMeta {
   level: LevelId

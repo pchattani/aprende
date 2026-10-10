@@ -6,35 +6,109 @@ lessons:
     teach: [g.possessives, g.tener-present]
     vocab: [w.familia, w.padre, w.madre, w.padres, w.hijo, w.hija, w.hermano, w.hermana, w.abuelo, w.abuela, w.mi, w.tu.det, w.su, w.tener]
     sentences:
-      - { es: "Mi familia es grande.", en: "My family is big.", grammar: [g.possessives], vocab: [w.familia, w.mi] }
+      - { es: "Mi familia es grande.", en: "My family is big.", altEs: ["Tengo una familia grande."], grammar: [g.possessives], vocab: [w.familia, w.mi] }
       - { es: "Tengo dos hermanos y una hermana.", en: "I have two brothers and one sister.", altEs: ["Yo tengo dos hermanos y una hermana."], grammar: [g.tener-present, g.plural-nouns], vocab: [w.tener, w.hermano, w.hermana] }
-      - { es: "¿Tienes hermanos?", en: "Do you have brothers or sisters?", altEn: ["Do you have siblings?"], grammar: [g.tener-present], vocab: [w.tener, w.hermano] }
-      - { es: "Mi padre se llama Juan y mi madre se llama Rosa.", en: "My father is called Juan and my mother is called Rosa.", grammar: [g.possessives, g.llamarse], vocab: [w.padre, w.madre] }
-      - { es: "Mis padres son médicos.", en: "My parents are doctors.", grammar: [g.possessives, g.plural-nouns], vocab: [w.padres, w.medico] }
-      - { es: "Su hijo es muy alto.", en: "His son is very tall.", altEn: ["Her son is very tall.", "Their son is very tall."], grammar: [g.possessives], vocab: [w.su, w.hijo] }
+      - { es: "¿Tienes hermanos?", en: "Do you have brothers or sisters?", altEs: ["¿Tú tienes hermanos?"], altEn: ["Do you have siblings?"], grammar: [g.tener-present], vocab: [w.tener, w.hermano] }
+      - { es: "Mi padre se llama Juan y mi madre se llama Rosa.", en: "My father is called Juan and my mother is called Rosa.", altEs: ["Mi padre se llama Juan y mi madre, Rosa."], grammar: [g.possessives, g.llamarse], vocab: [w.padre, w.madre] }
+      - { es: "Mis padres son médicos.", en: "My parents are doctors.", altEs: ["Mi padre y mi madre son médicos."], grammar: [g.possessives, g.plural-nouns], vocab: [w.padres, w.medico] }
+      - { es: "Su hijo es muy alto.", en: "His son is very tall.", altEs: ["El hijo de ella es muy alto."], altEn: ["Her son is very tall.", "Their son is very tall."], grammar: [g.possessives], vocab: [w.su, w.hijo] }
       - { es: "Tu hija es muy simpática.", en: "Your daughter is very nice.", grammar: [g.possessives], vocab: [w.tu.det, w.hija], error: { wrong: "Tú hija es muy simpática.", explain: "tu (your) has no accent; tú (you) does.", grammar: g.possessives } }
-      - { es: "Mi abuela tiene ochenta años.", en: "My grandmother is eighty years old.", grammar: [g.tener-present, g.numbers-1-100], vocab: [w.abuela, w.tener, w.ano] }
+      - { es: "Mi abuela tiene ochenta años.", en: "My grandmother is eighty years old.", altEs: ["Mi abuela tiene ochenta."], grammar: [g.tener-present, g.numbers-1-100], vocab: [w.abuela, w.tener, w.ano] }
       - { es: "Mis abuelos viven en Granada.", en: "My grandparents live in Granada.", grammar: [g.possessives, g.regular-er-ir-present], vocab: [w.abuelo, w.vivir] }
       - { es: "No tenemos hijos.", en: "We don't have children.", altEs: ["Nosotros no tenemos hijos."], grammar: [g.tener-present, g.negation], vocab: [w.tener, w.hijo], transform: { instruction: "Change to 'they'", answer: "No tienen hijos.", alt: ["Ellos no tienen hijos."] } }
-      - { es: "¿Tenéis una familia grande?", en: "Do you (all) have a big family?", grammar: [g.tener-present], vocab: [w.tener, w.familia] }
-      - { es: "Su hermana es profesora.", en: "His sister is a teacher.", altEn: ["Her sister is a teacher."], grammar: [g.possessives], vocab: [w.hermana] }
+      - { es: "¿Tenéis una familia grande?", en: "Do you (all) have a big family?", altEs: ["¿Vosotros tenéis una familia grande?"], grammar: [g.tener-present], vocab: [w.tener, w.familia] }
+      - { es: "Su hermana es profesora.", en: "His sister is a teacher.", altEs: ["La hermana de él es profesora.", "La hermana de ella es profesora."], altEn: ["Her sister is a teacher."], grammar: [g.possessives], vocab: [w.hermana] }
+    exchanges:
+      - q: { es: "¿Tienes hermanos?", en: "Do you have brothers or sisters?" }
+        a: { es: "Sí, tengo un hermano y una hermana.", en: "Yes, I have a brother and a sister." }
+        alt: ["Sí, tengo dos hermanos.", "No, no tengo hermanos."]
+        grammar: [g.tener-present]
+        vocab: [w.tener, w.hermano, w.hermana]
+      - q: { es: "¿Cómo se llama tu madre?", en: "What's your mother's name?" }
+        a: { es: "Mi madre se llama Rosa.", en: "My mother's name is Rosa." }
+        alt: ["Se llama Rosa.", "Rosa."]
+        grammar: [g.possessives, g.llamarse]
+        vocab: [w.madre, w.mi]
+      - q: { es: "¿Tu familia es grande?", en: "Is your family big?" }
+        a: { es: "No, mi familia es pequeña.", en: "No, my family is small." }
+        alt: ["Sí, es muy grande.", "No, es pequeña."]
+        grammar: [g.possessives]
+        vocab: [w.familia, w.tu.det]
+      - q: { es: "¿Tenéis hijos?", en: "Do you (all) have children?" }
+        a: { es: "Sí, tenemos una hija.", en: "Yes, we have a daughter." }
+        alt: ["No, no tenemos hijos.", "Sí, tenemos dos hijos."]
+        grammar: [g.tener-present]
+        vocab: [w.hijo, w.hija]
+      - q: { es: "¿Cuántos años tiene tu abuela?", en: "How old is your grandmother?" }
+        a: { es: "Tiene ochenta años.", en: "She's eighty." }
+        alt: ["Mi abuela tiene ochenta años.", "Ochenta."]
+        grammar: [g.tener-present, g.numbers-1-100]
+        vocab: [w.abuela, w.ano]
+    texts:
+      - title: "Mi familia"
+        es: ["Mi familia es pequeña.", "Tengo un hermano y no tengo hermanas.", "Mis padres son médicos y mi abuela vive con nosotros."]
+        en: ["My family is small.", "I have one brother and I don't have any sisters.", "My parents are doctors and my grandmother lives with us."]
+        grammar: [g.possessives, g.tener-present]
+        vocab: [w.familia, w.hermano, w.padres, w.abuela]
+      - title: "Mensaje de Ana"
+        es: ["Hola, Tom. Mi hermana está aquí hoy.", "Se llama Lucía y tiene veinte años.", "Es estudiante también."]
+        en: ["Hi, Tom. My sister is here today.", "Her name is Lucía and she is twenty.", "She's a student too."]
+        grammar: [g.possessives, g.tener-present]
+        vocab: [w.hermana, w.tener]
   - id: a1.u03.l2
     title: Más familia y mascotas
     teach: [g.plural-nouns]
     vocab: [w.tio, w.tia, w.primo, w.marido, w.esposa, w.pareja, w.novio, w.bebe, w.perro, w.gato, w.nuestro, w.vuestro, w.casado, w.soltero, w.foto]
     sentences:
       - { es: "Mi tío y mi tía tienen tres hijos.", en: "My uncle and my aunt have three children.", grammar: [g.tener-present], vocab: [w.tio, w.tia, w.hijo] }
-      - { es: "Mis primos viven en México.", en: "My cousins live in Mexico.", grammar: [g.plural-nouns], vocab: [w.primo, w.vivir] }
+      - { es: "Mis primos viven en México.", en: "My cousins live in Mexico.", altEs: ["Mis primas viven en México."], grammar: [g.plural-nouns], vocab: [w.primo, w.vivir] }
       - { es: "Mi marido es ingeniero.", en: "My husband is an engineer.", grammar: [g.ser-present], vocab: [w.marido] }
-      - { es: "Su esposa se llama Elena.", en: "His wife is called Elena.", grammar: [g.llamarse], vocab: [w.esposa] }
-      - { es: "Tenemos un perro y dos gatos.", en: "We have a dog and two cats.", grammar: [g.tener-present, g.plural-nouns], vocab: [w.perro, w.gato] }
+      - { es: "Su esposa se llama Elena.", en: "His wife is called Elena.", altEs: ["Su mujer se llama Elena."], grammar: [g.llamarse], vocab: [w.esposa] }
+      - { es: "Tenemos un perro y dos gatos.", en: "We have a dog and two cats.", altEs: ["Nosotros tenemos un perro y dos gatos."], grammar: [g.tener-present, g.plural-nouns], vocab: [w.perro, w.gato] }
       - { es: "El bebé es muy pequeño.", en: "The baby is very small.", grammar: [g.ser-present], vocab: [w.bebe, w.pequeno] }
-      - { es: "¿Estás casado o soltero?", en: "Are you married or single?", grammar: [g.ser-vs-estar-basics], vocab: [w.casado, w.soltero] }
-      - { es: "Mi novia es italiana.", en: "My girlfriend is Italian.", grammar: [g.adjective-agreement], vocab: [w.novio, w.italiano] }
+      - { es: "¿Estás casado o soltero?", en: "Are you married or single?", altEs: ["¿Estás casada o soltera?", "¿Eres casado o soltero?"], grammar: [g.ser-vs-estar-basics], vocab: [w.casado, w.soltero] }
+      - { es: "Mi novia es italiana.", en: "My girlfriend is Italian.", altEs: ["Mi pareja es italiana."], grammar: [g.adjective-agreement], vocab: [w.novio, w.italiano] }
       - { es: "Nuestra familia es de Valencia.", en: "Our family is from Valencia.", grammar: [g.possessives], vocab: [w.nuestro, w.familia], transform: { instruction: "Change to 'our parents' (plural)", answer: "Nuestros padres son de Valencia." } }
-      - { es: "¿Vuestros padres están casados?", en: "Are your (pl.) parents married?", grammar: [g.possessives], vocab: [w.vuestro, w.casado] }
-      - { es: "Esta es una foto de mi pareja.", en: "This is a photo of my partner.", grammar: [g.demonstratives], vocab: [w.foto, w.pareja] }
+      - { es: "¿Vuestros padres están casados?", en: "Are your (pl.) parents married?", altEs: ["¿Están casados vuestros padres?"], grammar: [g.possessives], vocab: [w.vuestro, w.casado] }
+      - { es: "Esta es una foto de mi pareja.", en: "This is a photo of my partner.", altEs: ["Esta foto es de mi pareja."], grammar: [g.demonstratives], vocab: [w.foto, w.pareja] }
       - { es: "Los perros de mi hermano son grandes.", en: "My brother's dogs are big.", grammar: [g.plural-nouns, g.possessives], vocab: [w.perro, w.hermano] }
+    exchanges:
+      - q: { es: "¿Tienes perros?", en: "Do you have dogs?" }
+        a: { es: "Sí, tengo dos perros y un gato.", en: "Yes, I have two dogs and a cat." }
+        alt: ["Sí, tengo un perro.", "No, no tengo perros."]
+        grammar: [g.plural-nouns, g.tener-present]
+        vocab: [w.perro, w.gato]
+      - q: { es: "¿Estás casada?", en: "Are you married?" }
+        a: { es: "No, estoy soltera.", en: "No, I'm single." }
+        alt: ["No, soltera.", "Sí, estoy casada."]
+        grammar: [g.ser-vs-estar-basics]
+        vocab: [w.casado, w.soltero]
+      - q: { es: "¿Cuántos primos tienes?", en: "How many cousins do you have?" }
+        a: { es: "Tengo cinco primos.", en: "I have five cousins." }
+        alt: ["Cinco.", "Tengo muchos primos."]
+        grammar: [g.plural-nouns, g.tener-present]
+        vocab: [w.primo, w.cuanto]
+      - q: { es: "¿Y esta foto?", en: "And this photo?" }
+        a: { es: "Son mis tíos y mis primos.", en: "They're my uncle and aunt and my cousins." }
+        alt: ["Es mi familia.", "Son mis tíos."]
+        grammar: [g.plural-nouns, g.possessives]
+        vocab: [w.foto, w.tio, w.primo]
+      - q: { es: "¿Vuestros padres viven aquí?", en: "Do your (pl.) parents live here?" }
+        a: { es: "No, nuestros padres viven en Valencia.", en: "No, our parents live in Valencia." }
+        alt: ["Sí, viven aquí.", "No, viven en Valencia."]
+        grammar: [g.possessives, g.plural-nouns]
+        vocab: [w.vuestro, w.nuestro, w.padres]
+    texts:
+      - title: "Pie de foto"
+        es: ["Esta es una foto de mi familia.", "Mis tíos tienen tres hijos: mis primos.", "El bebé es mi hermano pequeño."]
+        en: ["This is a photo of my family.", "My uncle and aunt have three children: my cousins.", "The baby is my little brother."]
+        grammar: [g.plural-nouns, g.possessives]
+        vocab: [w.foto, w.tio, w.bebe]
+      - title: "Mensaje"
+        es: ["Mi novia y yo tenemos dos gatos.", "Se llaman Luna y Sol.", "Son pequeños y muy bonitos."]
+        en: ["My girlfriend and I have two cats.", "They're called Luna and Sol.", "They are small and very pretty."]
+        grammar: [g.plural-nouns, g.llamarse]
+        vocab: [w.novio, w.gato]
   - id: a1.u03.l3
     title: Números del cero al veinte
     teach: [g.numbers-1-100]
@@ -43,33 +117,112 @@ lessons:
       - { es: "Uno, dos, tres, cuatro, cinco.", en: "One, two, three, four, five.", grammar: [g.numbers-1-100], vocab: [w.uno, w.dos, w.tres, w.cuatro, w.cinco], kinds: [dictation, listen, typeEs, order] }
       - { es: "Seis, siete, ocho, nueve, diez.", en: "Six, seven, eight, nine, ten.", grammar: [g.numbers-1-100], vocab: [w.seis, w.siete, w.ocho, w.nueve, w.diez], kinds: [dictation, listen, typeEs, order] }
       - { es: "Tengo diez años.", en: "I am ten years old.", altEs: ["Yo tengo diez años."], grammar: [g.tener-expressions, g.numbers-1-100], vocab: [w.diez, w.ano], error: { wrong: "Soy diez años.", explain: "Age uses tener: tengo diez años.", grammar: g.tener-expressions } }
-      - { es: "¿Cuántos años tienes?", en: "How old are you?", grammar: [g.question-words, g.tener-expressions], vocab: [w.cuanto, w.ano] }
-      - { es: "Mi hermano tiene quince años.", en: "My brother is fifteen years old.", grammar: [g.tener-present], vocab: [w.quince, w.hermano] }
-      - { es: "¿Cuál es tu número de teléfono?", en: "What is your phone number?", grammar: [g.question-words], vocab: [w.numero, w.telefono, w.cual] }
+      - { es: "¿Cuántos años tienes?", en: "How old are you?", altEs: ["¿Cuántos años tienes tú?", "¿Qué edad tienes?"], grammar: [g.question-words, g.tener-expressions], vocab: [w.cuanto, w.ano] }
+      - { es: "Mi hermano tiene quince años.", en: "My brother is fifteen years old.", altEs: ["Mi hermano tiene quince."], grammar: [g.tener-present], vocab: [w.quince, w.hermano] }
+      - { es: "¿Cuál es tu número de teléfono?", en: "What is your phone number?", altEs: ["¿Cuál es tu teléfono?", "¿Qué número de teléfono tienes?"], grammar: [g.question-words], vocab: [w.numero, w.telefono, w.cual] }
       - { es: "Mi número es seis, uno, dos, cuatro, ocho, siete, cero, tres, nueve.", en: "My number is six, one, two, four, eight, seven, zero, three, nine.", grammar: [g.numbers-1-100], vocab: [w.cero], kinds: [dictation, listen, typeEn] }
       - { es: "Once, doce, trece, catorce.", en: "Eleven, twelve, thirteen, fourteen.", grammar: [g.numbers-1-100], vocab: [w.once, w.doce, w.trece, w.catorce], kinds: [dictation, listen, typeEs, order] }
       - { es: "Dieciséis, diecisiete, dieciocho, diecinueve, veinte.", en: "Sixteen, seventeen, eighteen, nineteen, twenty.", grammar: [g.numbers-1-100], vocab: [w.dieciseis, w.diecisiete, w.dieciocho, w.diecinueve, w.veinte], kinds: [dictation, listen, typeEs, order] }
-      - { es: "Mi hija tiene dieciocho años y mi hijo tiene veinte.", en: "My daughter is eighteen and my son is twenty.", grammar: [g.tener-present], vocab: [w.dieciocho, w.veinte] }
-      - { es: "Tenemos tres gatos y un perro.", en: "We have three cats and one dog.", grammar: [g.tener-present], vocab: [w.tres, w.gato] }
-      - { es: "¿Qué edad tiene tu abuelo?", en: "How old is your grandfather?", altEn: ["What age is your grandfather?"], grammar: [g.question-words], vocab: [w.edad, w.abuelo] }
+      - { es: "Mi hija tiene dieciocho años y mi hijo tiene veinte.", en: "My daughter is eighteen and my son is twenty.", altEs: ["Mi hija tiene dieciocho años y mi hijo, veinte."], grammar: [g.tener-present], vocab: [w.dieciocho, w.veinte] }
+      - { es: "Tenemos tres gatos y un perro.", en: "We have three cats and one dog.", altEs: ["Nosotros tenemos tres gatos y un perro."], grammar: [g.tener-present], vocab: [w.tres, w.gato] }
+      - { es: "¿Qué edad tiene tu abuelo?", en: "How old is your grandfather?", altEs: ["¿Cuántos años tiene tu abuelo?"], altEn: ["What age is your grandfather?"], grammar: [g.question-words], vocab: [w.edad, w.abuelo] }
+    exchanges:
+      - q: { es: "¿Cuántos años tienes?", en: "How old are you?" }
+        a: { es: "Tengo dieciocho años.", en: "I'm eighteen." }
+        alt: ["Dieciocho.", "Tengo veinte años."]
+        grammar: [g.tener-expressions, g.numbers-1-100]
+        vocab: [w.ano, w.dieciocho]
+      - q: { es: "¿Cuál es tu número de teléfono?", en: "What's your phone number?" }
+        a: { es: "Es el seis, dos, cero, cuatro, cinco, nueve.", en: "It's six, two, zero, four, five, nine." }
+        alt: ["Seis, dos, cero, cuatro, cinco, nueve."]
+        grammar: [g.numbers-1-100, g.question-words]
+        vocab: [w.numero, w.telefono, w.cero]
+      - q: { es: "¿Cuántos hermanos tienes?", en: "How many brothers and sisters do you have?" }
+        a: { es: "Tengo tres hermanos.", en: "I have three siblings." }
+        alt: ["Tres.", "No tengo hermanos."]
+        grammar: [g.tener-present, g.numbers-1-100]
+        vocab: [w.hermano, w.tres]
+      - q: { es: "¿Qué edad tiene tu hijo?", en: "How old is your son?" }
+        a: { es: "Tiene doce años.", en: "He's twelve." }
+        alt: ["Doce.", "Mi hijo tiene doce años."]
+        grammar: [g.question-words, g.tener-present]
+        vocab: [w.edad, w.doce]
+      - q: { es: "¿Cuántos gatos tenéis?", en: "How many cats do you (all) have?" }
+        a: { es: "Tenemos cuatro gatos.", en: "We have four cats." }
+        alt: ["Cuatro.", "Tenemos dos."]
+        grammar: [g.numbers-1-100, g.tener-present]
+        vocab: [w.gato, w.cuatro]
+    texts:
+      - title: "Nota"
+        es: ["Mi número de teléfono es el seis, uno, cinco, tres, ocho, dos, siete, cero, cuatro.", "Mi hermana tiene quince años.", "Yo tengo diecinueve."]
+        en: ["My phone number is six, one, five, three, eight, two, seven, zero, four.", "My sister is fifteen.", "I am nineteen."]
+        grammar: [g.numbers-1-100]
+        vocab: [w.telefono, w.quince, w.diecinueve]
+      - title: "Mensaje"
+        es: ["Hola, Marta. Hoy es el cumpleaños de mi hermano.", "Tiene veinte años.", "Mis primos tienen once y trece años."]
+        en: ["Hi, Marta. Today is my brother's birthday.", "He is twenty.", "My cousins are eleven and thirteen."]
+        grammar: [g.tener-present, g.numbers-1-100]
+        vocab: [w.veinte, w.once, w.trece]
   - id: a1.u03.l4
     title: Hasta cien y preguntas
     teach: [g.question-words]
     vocab: [w.veintiuno, w.treinta, w.cuarenta, w.cincuenta, w.sesenta, w.setenta, w.ochenta, w.noventa, w.cien, w.cumpleanos, w.mayor, w.menor, w.cuando, w.por-que, w.porque, w.cual, w.con, w.todo]
     sentences:
-      - { es: "Mi madre tiene cuarenta y cinco años.", en: "My mother is forty-five years old.", grammar: [g.numbers-1-100], vocab: [w.cuarenta, w.cinco] }
-      - { es: "Mi abuelo tiene setenta y ocho años.", en: "My grandfather is seventy-eight.", grammar: [g.numbers-1-100], vocab: [w.setenta, w.ocho] }
+      - { es: "Mi madre tiene cuarenta y cinco años.", en: "My mother is forty-five years old.", altEs: ["Mi madre tiene cuarenta y cinco."], grammar: [g.numbers-1-100], vocab: [w.cuarenta, w.cinco] }
+      - { es: "Mi abuelo tiene setenta y ocho años.", en: "My grandfather is seventy-eight.", altEs: ["Mi abuelo tiene setenta y ocho."], grammar: [g.numbers-1-100], vocab: [w.setenta, w.ocho] }
       - { es: "Treinta, cuarenta, cincuenta, sesenta.", en: "Thirty, forty, fifty, sixty.", grammar: [g.numbers-1-100], vocab: [w.treinta, w.cuarenta, w.cincuenta, w.sesenta], kinds: [dictation, listen, typeEs, order] }
       - { es: "Setenta, ochenta, noventa, cien.", en: "Seventy, eighty, ninety, one hundred.", grammar: [g.numbers-1-100], vocab: [w.setenta, w.ochenta, w.noventa, w.cien], kinds: [dictation, listen, typeEs, order] }
-      - { es: "Tengo veintiún años.", en: "I am twenty-one years old.", grammar: [g.numbers-1-100], vocab: [w.veintiuno] }
-      - { es: "¿Cuándo es tu cumpleaños?", en: "When is your birthday?", grammar: [g.question-words], vocab: [w.cuando, w.cumpleanos] }
+      - { es: "Tengo veintiún años.", en: "I am twenty-one years old.", altEs: ["Yo tengo veintiún años.", "Tengo veintiuno."], grammar: [g.numbers-1-100], vocab: [w.veintiuno] }
+      - { es: "¿Cuándo es tu cumpleaños?", en: "When is your birthday?", altEs: ["¿Tu cumpleaños cuándo es?"], grammar: [g.question-words], vocab: [w.cuando, w.cumpleanos] }
       - { es: "¿Por qué estudias español? — Porque mi novio es español.", en: "Why do you study Spanish? — Because my boyfriend is Spanish.", grammar: [g.question-words, g.connectors-basic], vocab: [w.por-que, w.porque] }
-      - { es: "Mi hermana mayor tiene treinta años.", en: "My older sister is thirty.", grammar: [g.adjectives-position], vocab: [w.mayor, w.treinta] }
+      - { es: "Mi hermana mayor tiene treinta años.", en: "My older sister is thirty.", altEs: ["Mi hermana mayor tiene treinta."], grammar: [g.adjectives-position], vocab: [w.mayor, w.treinta] }
       - { es: "Mi hermano menor se llama Luis.", en: "My younger brother is called Luis.", grammar: [g.llamarse], vocab: [w.menor] }
-      - { es: "¿Con quién vives?", en: "Who do you live with?", grammar: [g.question-words], vocab: [w.con, w.quien, w.vivir] }
+      - { es: "¿Con quién vives?", en: "Who do you live with?", altEs: ["¿Tú con quién vives?"], grammar: [g.question-words], vocab: [w.con, w.quien, w.vivir] }
       - { es: "Vivo con toda mi familia.", en: "I live with my whole family.", altEs: ["Yo vivo con toda mi familia."], grammar: [g.quantity-words], vocab: [w.todo, w.con] }
       - { es: "¿Cuál es tu apellido?", en: "What is your surname?", grammar: [g.question-words], vocab: [w.cual, w.apellido], error: { wrong: "¿Qué es tu apellido?", explain: "Before ser, use cuál to ask for a name or choice: ¿Cuál es tu apellido?", grammar: g.question-words } }
-      - { es: "¿Cuántos primos tienes? — Tengo doce.", en: "How many cousins do you have? — I have twelve.", grammar: [g.question-words], vocab: [w.cuanto, w.primo, w.doce] }
+      - { es: "¿Cuántos primos tienes? — Tengo doce.", en: "How many cousins do you have? — I have twelve.", altEs: ["¿Cuántos primos tienes? — Doce."], grammar: [g.question-words], vocab: [w.cuanto, w.primo, w.doce] }
+    exchanges:
+      - q: { es: "¿Cuándo es tu cumpleaños?", en: "When is your birthday?" }
+        a: { es: "Es mañana.", en: "It's tomorrow." }
+        alt: ["Mañana.", "Es hoy."]
+        grammar: [g.question-words]
+        vocab: [w.cuando, w.cumpleanos]
+      - q: { es: "¿Por qué estudias español?", en: "Why do you study Spanish?" }
+        a: { es: "Porque mi pareja es española.", en: "Because my partner is Spanish." }
+        alt: ["Porque vivo en España.", "Porque mi novio es español."]
+        grammar: [g.question-words, g.connectors-basic]
+        vocab: [w.por-que, w.porque]
+      - q: { es: "¿Con quién vives?", en: "Who do you live with?" }
+        a: { es: "Vivo con mis padres y mi hermana.", en: "I live with my parents and my sister." }
+        alt: ["Con mis padres.", "Vivo con mi novia."]
+        grammar: [g.question-words]
+        vocab: [w.con, w.vivir]
+      - q: { es: "¿Cuál es tu apellido?", en: "What is your surname?" }
+        a: { es: "Mi apellido es García.", en: "My surname is García." }
+        alt: ["García.", "Es García."]
+        grammar: [g.question-words]
+        vocab: [w.cual, w.apellido]
+      - q: { es: "¿Cuántos años tiene tu madre?", en: "How old is your mother?" }
+        a: { es: "Tiene cincuenta y dos años.", en: "She's fifty-two." }
+        alt: ["Cincuenta y dos.", "Mi madre tiene cincuenta y dos años."]
+        grammar: [g.numbers-1-100, g.question-words]
+        vocab: [w.cincuenta, w.cuanto]
+      - q: { es: "¿Quién es tu hermano mayor?", en: "Who is your older brother?" }
+        a: { es: "Es Luis, tiene treinta años.", en: "It's Luis, he's thirty." }
+        alt: ["Luis.", "Mi hermano mayor es Luis."]
+        grammar: [g.question-words]
+        vocab: [w.mayor, w.treinta]
+    texts:
+      - title: "Mensaje de Luis"
+        es: ["¿Cuándo es tu cumpleaños, Marta?", "¿Y cuántos años tienes?", "Yo tengo treinta y uno."]
+        en: ["When is your birthday, Marta?", "And how old are you?", "I'm thirty-one."]
+        grammar: [g.question-words, g.numbers-1-100]
+        vocab: [w.cuando, w.cumpleanos, w.treinta]
+      - title: "Nota"
+        es: ["Mi abuelo tiene noventa años y mi abuela, ochenta y cinco.", "Viven con toda la familia.", "¿Por qué? Porque son mayores."]
+        en: ["My grandfather is ninety and my grandmother eighty-five.", "They live with the whole family.", "Why? Because they are elderly."]
+        grammar: [g.numbers-1-100, g.question-words]
+        vocab: [w.noventa, w.ochenta, w.todo, w.mayor]
 dialogues:
   - id: a1.u03.d1
     title: La foto de familia

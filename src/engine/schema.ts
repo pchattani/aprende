@@ -134,6 +134,8 @@ export const ExerciseKind = z.enum([
   'findError', // tap the wrong word, type the fix
   'speak', // read aloud, STT
   'order', // reorder scrambled words (grammar focus)
+  'reply', // read a question/line, pick the natural reply
+  'orderText', // put the sentences of a mini-text in order
 ])
 export type ExerciseKind = z.infer<typeof ExerciseKind>
 
@@ -155,6 +157,28 @@ export const Sentence = Pair.extend({
   note: z.string().optional(),
 })
 export type Sentence = z.infer<typeof Sentence>
+
+/** A short question → answer pair (or statement → reaction) for conversational practice. */
+export const Exchange = z.object({
+  q: Pair,
+  a: Pair,
+  /** Other natural replies accepted (Spanish). */
+  alt: z.array(z.string()).default([]),
+  grammar: z.array(z.string()).default([]),
+  vocab: z.array(z.string()).default([]),
+})
+export type Exchange = z.infer<typeof Exchange>
+
+/** A 2–4 sentence mini-text (message, note, caption, announcement) in Spanish with translation. */
+export const MiniText = z.object({
+  title: z.string().optional(),
+  /** Sentences in order (each its own string) so they can be scrambled, dictated or translated. */
+  es: z.array(z.string()).min(2).max(5),
+  en: z.array(z.string()).min(2).max(5),
+  grammar: z.array(z.string()).default([]),
+  vocab: z.array(z.string()).default([]),
+})
+export type MiniText = z.infer<typeof MiniText>
 
 export const DialogueLine = z.object({ speaker: z.string(), es: z.string(), en: z.string() })
 export const Question = z.object({
@@ -182,6 +206,10 @@ export const Lesson = z.object({
   /** New vocabulary introduced in this lesson. */
   vocab: z.array(z.string()).default([]),
   sentences: z.array(Sentence).min(4),
+  /** Question → answer pairs: the learner answers the question or reacts to the line. */
+  exchanges: z.array(Exchange).default([]),
+  /** Mini-texts of 2–4 sentences, used for ordering, dictation and reading in context. */
+  texts: z.array(MiniText).default([]),
   /** Optional tip shown at the start (plain text). */
   tip: z.string().optional(),
 })

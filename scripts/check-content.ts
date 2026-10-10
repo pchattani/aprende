@@ -19,6 +19,7 @@ import { CONTENT, ROOT, readYaml, listYaml, unitIdFromPath } from './content-lib
 const MIN_LESSONS_PER_UNIT = 3
 const MIN_SENTENCES_PER_LESSON = 8
 const MAX_UNKNOWN_RATIO_READER = 0.06
+const MAX_UNKNOWN_RATIO_LITERATURE = 0.12
 const MAX_UNKNOWN_RATIO_UNIT = 0.1
 
 const errors: string[] = []
@@ -160,6 +161,24 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       tokens += words.length
       unknown.push(...unknownWords(s.es, level, allow))
     }
+    for (const x of l.exchanges) {
+      for (const g of x.grammar) if (!grammar.has(g)) err(`${rel(p)}: exchange "${x.q.es}" tags unknown grammar ${g}`)
+      for (const v of x.vocab) if (!vocab.has(v)) err(`${rel(p)}: exchange "${x.q.es}" tags unknown vocab ${v}`)
+      for (const t of [x.q.es, x.a.es]) {
+        tokens += tokenize(t).filter((tk) => tk.kind === 'word').length
+        unknown.push(...unknownWords(t, level, allow))
+      }
+    }
+    for (const t of l.texts) {
+      if (t.es.length !== t.en.length) err(`${rel(p)}: ${l.id} mini-text "${t.es[0]}" has ${t.es.length} Spanish and ${t.en.length} English sentences`)
+      for (const g of t.grammar) if (!grammar.has(g)) err(`${rel(p)}: mini-text "${t.es[0]}" tags unknown grammar ${g}`)
+      for (const v of t.vocab) if (!vocab.has(v)) err(`${rel(p)}: mini-text "${t.es[0]}" tags unknown vocab ${v}`)
+      for (const sent of t.es) {
+        tokens += tokenize(sent).filter((tk) => tk.kind === 'word').length
+        unknown.push(...unknownWords(sent, level, allow))
+      }
+    }
+    if (l.exchanges.length < 3 || l.texts.length < 1) warn(`${rel(p)}: ${l.id} has ${l.exchanges.length} exchanges and ${l.texts.length} mini-texts (aim for ≥3 and ≥1 for variety)`)
   })
   for (const d of unit.dialogues) {
     for (const q of d.questions) if (q.answer >= q.options.length) err(`${rel(p)}: dialogue ${d.id} question answer index out of range`)
@@ -198,8 +217,9 @@ for (const p of listYaml(join(CONTENT, 'readers'))) {
   }
   for (const q of r.questions) if (q.answer >= q.options.length) err(`${rel(p)}: question answer index out of range`)
   const ratio = tokens ? unknown.length / tokens : 0
-  if (ratio > MAX_UNKNOWN_RATIO_READER) {
-    err(`${rel(p)}: ${(ratio * 100).toFixed(1)}% unknown words for ${r.level} (max ${MAX_UNKNOWN_RATIO_READER * 100}%): ${[...new Set(unknown)].slice(0, 30).join(', ')}`)
+  const maxRatio = r.kind === 'literature' ? MAX_UNKNOWN_RATIO_LITERATURE : MAX_UNKNOWN_RATIO_READER
+  if (ratio > maxRatio) {
+    err(`${rel(p)}: ${(ratio * 100).toFixed(1)}% unknown words for ${r.level} (max ${maxRatio * 100}%): ${[...new Set(unknown)].slice(0, 30).join(', ')}`)
   }
 }
 

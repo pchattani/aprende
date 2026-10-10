@@ -7,73 +7,226 @@ lessons:
     vocab: [w.ir, w.venir, w.playa, w.montana, w.campo, w.mar, w.rio, w.pueblo, w.aeropuerto, w.avion, w.bici, w.taxi, w.pie.phrase, w.adonde]
     sentences:
       - { es: "¿Adónde vas? Voy al cine.", en: "Where are you going? I'm going to the cinema.", grammar: [g.ir-present, g.al-del-contractions], vocab: [w.ir, w.adonde, w.cine], error: { wrong: "Voy a el cine.", explain: "a + el contracts to al.", grammar: g.al-del-contractions } }
-      - { es: "Vamos a la playa en verano.", en: "We go to the beach in summer.", grammar: [g.ir-present], vocab: [w.playa] }
-      - { es: "Mis padres van a la montaña en invierno.", en: "My parents go to the mountains in winter.", grammar: [g.ir-present], vocab: [w.montana] }
-      - { es: "Voy al trabajo en metro.", en: "I go to work by metro.", grammar: [g.ir-present, g.prepositions-movement], vocab: [w.metro, w.trabajo] }
-      - { es: "¿Vais a la universidad a pie?", en: "Do you (all) walk to university?", grammar: [g.ir-present], vocab: [w.pie.phrase, w.universidad] }
+      - { es: "Vamos a la playa en verano.", en: "We go to the beach in summer.", altEs: ["En verano vamos a la playa."], grammar: [g.ir-present], vocab: [w.playa] }
+      - { es: "Mis padres van a la montaña en invierno.", en: "My parents go to the mountains in winter.", altEs: ["En invierno mis padres van a la montaña."], grammar: [g.ir-present], vocab: [w.montana] }
+      - { es: "Voy al trabajo en metro.", en: "I go to work by metro.", altEs: ["Voy en metro al trabajo."], grammar: [g.ir-present, g.prepositions-movement], vocab: [w.metro, w.trabajo] }
+      - { es: "¿Vais a la universidad a pie?", en: "Do you (all) walk to university?", altEs: ["¿Vais andando a la universidad?", "¿Vosotros vais a la universidad a pie?"], grammar: [g.ir-present], vocab: [w.pie.phrase, w.universidad] }
       - { es: "Ella va al pueblo de sus abuelos en coche.", en: "She goes to her grandparents' village by car.", grammar: [g.ir-present], vocab: [w.pueblo, w.coche] }
-      - { es: "Vengo del aeropuerto en taxi.", en: "I'm coming from the airport by taxi.", grammar: [g.al-del-contractions], vocab: [w.venir, w.aeropuerto, w.taxi] }
-      - { es: "¿Vienes a mi casa esta noche?", en: "Are you coming to my house tonight?", grammar: [g.stem-changing-present], vocab: [w.venir, w.esta-noche] }
-      - { es: "El avión a Londres sale a las diez.", en: "The plane to London leaves at ten.", grammar: [g.time-telling], vocab: [w.avion, w.salir] }
-      - { es: "Voy en bici al campo.", en: "I cycle to the countryside.", grammar: [g.prepositions-movement], vocab: [w.bici, w.campo] }
+      - { es: "Vengo del aeropuerto en taxi.", en: "I'm coming from the airport by taxi.", altEs: ["Yo vengo del aeropuerto en taxi."], grammar: [g.al-del-contractions], vocab: [w.venir, w.aeropuerto, w.taxi] }
+      - { es: "¿Vienes a mi casa esta noche?", en: "Are you coming to my house tonight?", altEs: ["¿Esta noche vienes a mi casa?"], grammar: [g.stem-changing-present], vocab: [w.venir, w.esta-noche] }
+      - { es: "El avión a Londres sale a las diez.", en: "The plane to London leaves at ten.", altEs: ["El avión para Londres sale a las diez."], grammar: [g.time-telling], vocab: [w.avion, w.salir] }
+      - { es: "Voy en bici al campo.", en: "I cycle to the countryside.", altEs: ["Voy al campo en bici."], grammar: [g.prepositions-movement], vocab: [w.bici, w.campo] }
       - { es: "El río llega al mar.", en: "The river reaches the sea.", grammar: [g.al-del-contractions], vocab: [w.rio, w.mar, w.llegar] }
       - { es: "Los domingos vamos al parque con el perro.", en: "On Sundays we go to the park with the dog.", grammar: [g.ir-present], vocab: [w.parque, w.domingo], transform: { instruction: "Change to 'I'", answer: "Los domingos voy al parque con el perro." } }
+    exchanges:
+      - q: { es: "¿Adónde vas?", en: "Where are you going?" }
+        a: { es: "Voy al cine con Ana.", en: "I'm going to the cinema with Ana." }
+        alt: ["Al cine.", "Voy a casa."]
+        grammar: [g.ir-present, g.al-del-contractions]
+        vocab: [w.ir, w.adonde, w.cine]
+      - q: { es: "¿Cómo vas al trabajo?", en: "How do you get to work?" }
+        a: { es: "Voy en metro.", en: "I go by metro." }
+        alt: ["En metro.", "Voy a pie."]
+        grammar: [g.ir-present, g.prepositions-movement]
+        vocab: [w.metro, w.trabajo, w.pie.phrase]
+      - q: { es: "¿Vais a la playa en verano?", en: "Do you (all) go to the beach in summer?" }
+        a: { es: "Sí, vamos a la playa en agosto.", en: "Yes, we go to the beach in August." }
+        alt: ["Sí, siempre.", "No, vamos a la montaña."]
+        grammar: [g.ir-present]
+        vocab: [w.playa, w.montana, w.agosto]
+      - q: { es: "¿De dónde vienes?", en: "Where are you coming from?" }
+        a: { es: "Vengo del aeropuerto.", en: "I'm coming from the airport." }
+        alt: ["Del aeropuerto.", "Vengo del trabajo."]
+        grammar: [g.al-del-contractions]
+        vocab: [w.venir, w.aeropuerto]
+      - q: { es: "¿Vienes a mi casa esta noche?", en: "Are you coming to my house tonight?" }
+        a: { es: "Sí, voy en bici.", en: "Yes, I'll go by bike." }
+        alt: ["Sí, claro.", "No, esta noche no puedo."]
+        grammar: [g.ir-present, g.prepositions-movement]
+        vocab: [w.bici, w.esta-noche, w.venir]
+    texts:
+      - title: "Mensaje de Pablo"
+        es: ["Hola, Lucía. Voy al pueblo de mis abuelos este fin de semana.", "Vamos en coche, el pueblo está cerca del mar.", "¿Vienes con nosotros?"]
+        en: ["Hi, Lucía. I'm going to my grandparents' village this weekend.", "We're going by car, the village is near the sea.", "Are you coming with us?"]
+        grammar: [g.ir-present, g.al-del-contractions]
+        vocab: [w.pueblo, w.coche, w.mar, w.venir]
+      - title: "Nota"
+        es: ["Los lunes voy al gimnasio a pie.", "Los martes voy a la universidad en autobús.", "Los domingos vamos al campo en bici."]
+        en: ["On Mondays I walk to the gym.", "On Tuesdays I go to university by bus.", "On Sundays we go to the countryside by bike."]
+        grammar: [g.ir-present, g.prepositions-movement]
+        vocab: [w.pie.phrase, w.gimnasio, w.autobus, w.campo]
   - id: a1.u09.l2
     title: Voy a…
     teach: [g.ir-a-infinitive]
     vocab: [w.viajar, w.visitar, w.pasear, w.esperar, w.viaje, w.vacaciones, w.fiesta, w.concierto, w.pelicula, w.teatro, w.billete, w.entrada, w.esta-noche, w.que-viene, w.proximo]
     sentences:
-      - { es: "Mañana voy a visitar a mi abuela.", en: "Tomorrow I'm going to visit my grandmother.", grammar: [g.ir-a-infinitive, g.a-personal], vocab: [w.visitar] }
-      - { es: "¿Qué vais a hacer este fin de semana?", en: "What are you (all) going to do this weekend?", grammar: [g.ir-a-infinitive], vocab: [w.hacer, w.fin-de-semana] }
-      - { es: "Vamos a viajar a Portugal en las vacaciones.", en: "We're going to travel to Portugal in the holidays.", grammar: [g.ir-a-infinitive], vocab: [w.viajar, w.vacaciones] }
-      - { es: "Esta noche voy a ver una película.", en: "Tonight I'm going to watch a film.", grammar: [g.ir-a-infinitive], vocab: [w.pelicula, w.esta-noche] }
+      - { es: "Mañana voy a visitar a mi abuela.", en: "Tomorrow I'm going to visit my grandmother.", altEs: ["Voy a visitar a mi abuela mañana."], grammar: [g.ir-a-infinitive, g.a-personal], vocab: [w.visitar] }
+      - { es: "¿Qué vais a hacer este fin de semana?", en: "What are you (all) going to do this weekend?", altEs: ["¿Qué vais a hacer el fin de semana?"], grammar: [g.ir-a-infinitive], vocab: [w.hacer, w.fin-de-semana] }
+      - { es: "Vamos a viajar a Portugal en las vacaciones.", en: "We're going to travel to Portugal in the holidays.", altEs: ["En las vacaciones vamos a viajar a Portugal."], grammar: [g.ir-a-infinitive], vocab: [w.viajar, w.vacaciones] }
+      - { es: "Esta noche voy a ver una película.", en: "Tonight I'm going to watch a film.", altEs: ["Voy a ver una película esta noche."], grammar: [g.ir-a-infinitive], vocab: [w.pelicula, w.esta-noche] }
       - { es: "El sábado que viene hay una fiesta en casa de Ana.", en: "Next Saturday there is a party at Ana's house.", grammar: [g.hay], vocab: [w.fiesta, w.que-viene] }
       - { es: "Van a comprar las entradas para el concierto.", en: "They are going to buy the tickets for the concert.", grammar: [g.ir-a-infinitive], vocab: [w.entrada, w.concierto], error: { wrong: "Van comprar las entradas para el concierto.", explain: "ir a + infinitive: the a is required.", grammar: g.ir-a-infinitive } }
-      - { es: "No voy a trabajar la semana próxima.", en: "I'm not going to work next week.", grammar: [g.ir-a-infinitive], vocab: [w.proximo, w.semana] }
-      - { es: "¿Vas a venir al teatro con nosotros?", en: "Are you going to come to the theatre with us?", grammar: [g.ir-a-infinitive], vocab: [w.teatro, w.venir] }
-      - { es: "Necesito un billete de tren para Sevilla.", en: "I need a train ticket to Seville.", grammar: [g.prepositions-movement], vocab: [w.billete, w.tren] }
+      - { es: "No voy a trabajar la semana próxima.", en: "I'm not going to work next week.", altEs: ["No voy a trabajar la semana que viene."], grammar: [g.ir-a-infinitive], vocab: [w.proximo, w.semana] }
+      - { es: "¿Vas a venir al teatro con nosotros?", en: "Are you going to come to the theatre with us?", altEs: ["¿Vienes al teatro con nosotros?"], grammar: [g.ir-a-infinitive], vocab: [w.teatro, w.venir] }
+      - { es: "Necesito un billete de tren para Sevilla.", en: "I need a train ticket to Seville.", altEs: ["Necesito un billete de tren a Sevilla."], grammar: [g.prepositions-movement], vocab: [w.billete, w.tren] }
       - { es: "Vamos a pasear por el centro.", en: "We're going to walk around the centre.", grammar: [g.ir-a-infinitive, g.prepositions-movement], vocab: [w.pasear, w.centro] }
       - { es: "Te espero en la estación a las seis.", en: "I'll wait for you at the station at six.", grammar: [g.direct-object-intro], vocab: [w.esperar, w.estacion] }
       - { es: "El viaje a Madrid es largo.", en: "The trip to Madrid is long.", grammar: [g.ser-present], vocab: [w.viaje, w.largo] }
-      - { es: "Va a llover esta tarde.", en: "It's going to rain this afternoon.", grammar: [g.ir-a-infinitive, g.weather], vocab: [w.tarde] }
+      - { es: "Va a llover esta tarde.", en: "It's going to rain this afternoon.", altEs: ["Esta tarde va a llover."], grammar: [g.ir-a-infinitive, g.weather], vocab: [w.tarde] }
+    exchanges:
+      - q: { es: "¿Qué vas a hacer este fin de semana?", en: "What are you going to do this weekend?" }
+        a: { es: "Voy a visitar a mi abuela.", en: "I'm going to visit my grandmother." }
+        alt: ["Voy a descansar.", "No sé todavía."]
+        grammar: [g.ir-a-infinitive, g.a-personal]
+        vocab: [w.hacer, w.visitar, w.fin-de-semana]
+      - q: { es: "¿Vas a venir al concierto?", en: "Are you going to come to the concert?" }
+        a: { es: "Sí, voy a comprar las entradas hoy.", en: "Yes, I'm going to buy the tickets today." }
+        alt: ["Sí, claro.", "No, no puedo."]
+        grammar: [g.ir-a-infinitive]
+        vocab: [w.concierto, w.entrada, w.venir]
+      - q: { es: "¿Qué vais a ver esta noche?", en: "What are you (all) going to watch tonight?" }
+        a: { es: "Vamos a ver una película española.", en: "We're going to watch a Spanish film." }
+        alt: ["Una película.", "Vamos a ver una serie."]
+        grammar: [g.ir-a-infinitive]
+        vocab: [w.pelicula, w.esta-noche, w.ver]
+      - q: { es: "¿Vais a viajar en las vacaciones?", en: "Are you (all) going to travel in the holidays?" }
+        a: { es: "Sí, vamos a viajar a Portugal.", en: "Yes, we're going to travel to Portugal." }
+        alt: ["Sí, a Portugal.", "No, vamos a estar en casa."]
+        grammar: [g.ir-a-infinitive]
+        vocab: [w.viajar, w.vacaciones]
+      - q: { es: "¿Va a llover mañana?", en: "Is it going to rain tomorrow?" }
+        a: { es: "Sí, va a llover por la tarde.", en: "Yes, it's going to rain in the afternoon." }
+        alt: ["No, va a hacer sol.", "Sí."]
+        grammar: [g.ir-a-infinitive, g.weather]
+        vocab: [w.llover, w.tarde]
+    texts:
+      - title: "Mensaje de Ana"
+        es: ["El sábado que viene hay una fiesta en mi casa.", "Vamos a cenar y a bailar.", "¿Vas a venir?"]
+        en: ["Next Saturday there's a party at my house.", "We're going to have dinner and dance.", "Are you going to come?"]
+        grammar: [g.ir-a-infinitive, g.hay]
+        vocab: [w.fiesta, w.que-viene, w.cenar, w.venir]
+      - title: "Nota"
+        es: ["La semana próxima no voy a trabajar.", "Voy a viajar a Sevilla en tren.", "Voy a visitar el centro y a pasear por el río."]
+        en: ["Next week I'm not going to work.", "I'm going to travel to Seville by train.", "I'm going to visit the centre and walk along the river."]
+        grammar: [g.ir-a-infinitive, g.prepositions-movement]
+        vocab: [w.proximo, w.viajar, w.visitar, w.pasear]
   - id: a1.u09.l3
     title: ¿Qué haces?
     teach: [g.hacer-present]
     vocab: [w.hacer, w.poner, w.dar, w.decir, w.saber, w.conocer, w.deporte, w.pregunta, w.preguntar, w.llamar, w.ayudar, w.entrar, w.ahora, w.pronto, w.ya, w.todavia]
     sentences:
-      - { es: "¿Qué haces? Hago los deberes.", en: "What are you doing? I'm doing my homework.", grammar: [g.hacer-present], vocab: [w.hacer, w.deberes] }
-      - { es: "Hago deporte tres veces a la semana.", en: "I do sport three times a week.", grammar: [g.hacer-present, g.frequency-adverbs], vocab: [w.deporte, w.vez] }
+      - { es: "¿Qué haces? Hago los deberes.", en: "What are you doing? I'm doing my homework.", altEs: ["¿Qué haces? Estoy haciendo los deberes."], grammar: [g.hacer-present], vocab: [w.hacer, w.deberes] }
+      - { es: "Hago deporte tres veces a la semana.", en: "I do sport three times a week.", altEs: ["Hago deporte tres veces por semana."], grammar: [g.hacer-present, g.frequency-adverbs], vocab: [w.deporte, w.vez] }
       - { es: "Mi madre hace una paella fantástica.", en: "My mother makes a fantastic paella.", grammar: [g.hacer-present], vocab: [w.hacer] }
-      - { es: "¿Qué hacéis los domingos? No hacemos nada.", en: "What do you do on Sundays? We don't do anything.", grammar: [g.hacer-present, g.negation], vocab: [w.nada, w.domingo] }
-      - { es: "Pongo la mesa para la cena.", en: "I set the table for dinner.", grammar: [g.regular-er-ir-present], vocab: [w.poner, w.mesa] }
-      - { es: "Te doy mi número de teléfono.", en: "I'll give you my phone number.", grammar: [g.regular-ar-present], vocab: [w.dar, w.numero] }
+      - { es: "¿Qué hacéis los domingos? No hacemos nada.", en: "What do you do on Sundays? We don't do anything.", altEs: ["¿Qué hacéis los domingos? Nada."], grammar: [g.hacer-present, g.negation], vocab: [w.nada, w.domingo] }
+      - { es: "Pongo la mesa para la cena.", en: "I set the table for dinner.", altEs: ["Yo pongo la mesa para la cena."], grammar: [g.regular-er-ir-present], vocab: [w.poner, w.mesa] }
+      - { es: "Te doy mi número de teléfono.", en: "I'll give you my phone number.", altEs: ["Te doy mi teléfono."], grammar: [g.regular-ar-present], vocab: [w.dar, w.numero] }
       - { es: "¿Qué dices? No te oigo.", en: "What are you saying? I can't hear you.", grammar: [g.stem-changing-present], vocab: [w.decir] }
       - { es: "No sé la respuesta.", en: "I don't know the answer.", grammar: [g.saber-vs-conocer], vocab: [w.saber] }
       - { es: "¿Conoces a mi hermano? Sí, lo conozco.", en: "Do you know my brother? Yes, I know him.", grammar: [g.saber-vs-conocer], vocab: [w.conocer] }
       - { es: "El profesor hace una pregunta y los estudiantes contestan.", en: "The teacher asks a question and the students answer.", grammar: [g.hacer-present], vocab: [w.pregunta, w.profesor] }
       - { es: "¿Puedo preguntar algo? Claro.", en: "Can I ask something? Of course.", grammar: [g.poder-present], vocab: [w.preguntar, w.algo] }
-      - { es: "Te llamo esta tarde, ¿vale?", en: "I'll call you this afternoon, OK?", grammar: [g.direct-object-intro], vocab: [w.llamar, w.tarde] }
+      - { es: "Te llamo esta tarde, ¿vale?", en: "I'll call you this afternoon, OK?", altEs: ["Esta tarde te llamo, ¿vale?"], grammar: [g.direct-object-intro], vocab: [w.llamar, w.tarde] }
       - { es: "¿Me ayudas con los deberes? Ahora no, pronto.", en: "Can you help me with the homework? Not now, soon.", grammar: [g.regular-ar-present], vocab: [w.ayudar, w.ahora, w.pronto] }
-      - { es: "¿Ya estás en casa? No, todavía estoy en el trabajo.", en: "Are you home already? No, I'm still at work.", grammar: [g.estar-location], vocab: [w.ya, w.todavia] }
-      - { es: "Entramos en el museo a las diez.", en: "We go into the museum at ten.", grammar: [g.prepositions-movement], vocab: [w.entrar, w.museo] }
+      - { es: "¿Ya estás en casa? No, todavía estoy en el trabajo.", en: "Are you home already? No, I'm still at work.", altEs: ["¿Ya estás en casa? No, todavía estoy trabajando."], grammar: [g.estar-location], vocab: [w.ya, w.todavia] }
+      - { es: "Entramos en el museo a las diez.", en: "We go into the museum at ten.", altEs: ["Entramos al museo a las diez."], grammar: [g.prepositions-movement], vocab: [w.entrar, w.museo] }
+    exchanges:
+      - q: { es: "¿Qué haces?", en: "What are you doing?" }
+        a: { es: "Hago los deberes.", en: "I'm doing my homework." }
+        alt: ["Los deberes.", "Nada, descanso."]
+        grammar: [g.hacer-present]
+        vocab: [w.hacer, w.deberes]
+      - q: { es: "¿Haces deporte?", en: "Do you do sport?" }
+        a: { es: "Sí, hago deporte tres veces a la semana.", en: "Yes, I do sport three times a week." }
+        alt: ["Sí, a veces.", "No, nunca."]
+        grammar: [g.hacer-present, g.frequency-adverbs]
+        vocab: [w.deporte, w.vez]
+      - q: { es: "¿Qué hacéis los domingos?", en: "What do you (all) do on Sundays?" }
+        a: { es: "No hacemos nada, descansamos.", en: "We don't do anything, we rest." }
+        alt: ["Nada.", "Vamos al parque."]
+        grammar: [g.hacer-present, g.negation]
+        vocab: [w.nada, w.domingo, w.descansar]
+      - q: { es: "¿Conoces a mi hermano?", en: "Do you know my brother?" }
+        a: { es: "No, no lo conozco.", en: "No, I don't know him." }
+        alt: ["Sí, lo conozco.", "No."]
+        grammar: [g.saber-vs-conocer, g.direct-object-intro]
+        vocab: [w.conocer, w.hermano]
+      - q: { es: "¿Me ayudas con los deberes?", en: "Can you help me with the homework?" }
+        a: { es: "Ahora no, pronto.", en: "Not now, soon." }
+        alt: ["Sí, claro.", "Ahora no puedo."]
+        grammar: [g.regular-ar-present]
+        vocab: [w.ayudar, w.ahora, w.pronto]
+      - q: { es: "¿Ya estás en casa?", en: "Are you home already?" }
+        a: { es: "No, todavía estoy en el trabajo.", en: "No, I'm still at work." }
+        alt: ["Sí, ya estoy en casa.", "Todavía no."]
+        grammar: [g.estar-location]
+        vocab: [w.ya, w.todavia]
+    texts:
+      - title: "Mensaje"
+        es: ["¿Qué haces esta tarde?", "Yo hago los deberes y luego pongo la mesa.", "Te llamo a las ocho, ¿vale?"]
+        en: ["What are you doing this afternoon?", "I'm doing my homework and then setting the table.", "I'll call you at eight, OK?"]
+        grammar: [g.hacer-present]
+        vocab: [w.hacer, w.deberes, w.poner, w.llamar]
+      - title: "Nota de la profesora"
+        es: ["Hoy en clase hacemos muchas preguntas.", "Los estudiantes preguntan y yo contesto.", "Después hacemos los deberes juntos."]
+        en: ["Today in class we ask lots of questions.", "The students ask and I answer.", "Afterwards we do the homework together."]
+        grammar: [g.hacer-present]
+        vocab: [w.pregunta, w.preguntar, w.juntos]
   - id: a1.u09.l4
     title: ¿Puedo?
     teach: [g.poder-present]
     vocab: [w.poder, w.despacio, w.rapido, w.juntos, w.momento, w.favor, w.problema]
     sentences:
-      - { es: "¿Puedes hablar más despacio, por favor?", en: "Can you speak more slowly, please?", grammar: [g.poder-present], vocab: [w.poder, w.despacio] }
-      - { es: "¿Puedo pagar con tarjeta?", en: "Can I pay by card?", grammar: [g.poder-present], vocab: [w.pagar, w.tarjeta] }
-      - { es: "No podemos ir mañana, tenemos que trabajar.", en: "We can't go tomorrow, we have to work.", grammar: [g.poder-present, g.tener-que], vocab: [w.poder, w.trabajar] }
-      - { es: "¿Puede repetir, por favor?", en: "Can you repeat, please? (formal)", grammar: [g.poder-present, g.tu-vs-usted], vocab: [w.poder] }
-      - { es: "¿Pueden ustedes esperar un momento?", en: "Can you (formal pl.) wait a moment?", grammar: [g.poder-present], vocab: [w.esperar, w.momento] }
+      - { es: "¿Puedes hablar más despacio, por favor?", en: "Can you speak more slowly, please?", altEs: ["¿Puede hablar más despacio, por favor?", "¿Hablas más despacio, por favor?"], grammar: [g.poder-present], vocab: [w.poder, w.despacio] }
+      - { es: "¿Puedo pagar con tarjeta?", en: "Can I pay by card?", altEs: ["¿Se puede pagar con tarjeta?"], grammar: [g.poder-present], vocab: [w.pagar, w.tarjeta] }
+      - { es: "No podemos ir mañana, tenemos que trabajar.", en: "We can't go tomorrow, we have to work.", altEs: ["Mañana no podemos ir, tenemos que trabajar."], grammar: [g.poder-present, g.tener-que], vocab: [w.poder, w.trabajar] }
+      - { es: "¿Puede repetir, por favor?", en: "Can you repeat, please? (formal)", altEs: ["¿Puede repetirlo, por favor?"], grammar: [g.poder-present, g.tu-vs-usted], vocab: [w.poder] }
+      - { es: "¿Pueden ustedes esperar un momento?", en: "Can you (formal pl.) wait a moment?", altEs: ["¿Pueden esperar un momento?"], grammar: [g.poder-present], vocab: [w.esperar, w.momento] }
       - { es: "Ella puede venir a las cinco.", en: "She can come at five.", grammar: [g.poder-present], vocab: [w.venir], transform: { instruction: "Change to 'you all' (vosotros)", answer: "Podéis venir a las cinco.", alt: ["Vosotros podéis venir a las cinco."] } }
-      - { es: "¿Me haces un favor?", en: "Can you do me a favour?", grammar: [g.hacer-present], vocab: [w.favor, w.hacer] }
-      - { es: "No hay problema.", en: "No problem.", grammar: [g.hay], vocab: [w.problema] }
+      - { es: "¿Me haces un favor?", en: "Can you do me a favour?", altEs: ["¿Me puedes hacer un favor?"], grammar: [g.hacer-present], vocab: [w.favor, w.hacer] }
+      - { es: "No hay problema.", en: "No problem.", altEs: ["Ningún problema."], grammar: [g.hay], vocab: [w.problema] }
       - { es: "Mi coche es muy rápido.", en: "My car is very fast.", grammar: [g.adjective-agreement], vocab: [w.rapido, w.coche] }
-      - { es: "¿Podemos ir juntos al concierto?", en: "Can we go to the concert together?", grammar: [g.poder-present], vocab: [w.juntos, w.concierto] }
+      - { es: "¿Podemos ir juntos al concierto?", en: "Can we go to the concert together?", altEs: ["¿Vamos juntos al concierto?"], grammar: [g.poder-present], vocab: [w.juntos, w.concierto] }
       - { es: "¿Se puede aparcar aquí? No, no se puede.", en: "Can you park here? No, you can't.", grammar: [g.poder-present], vocab: [w.aqui] }
-      - { es: "No puedo más, estoy muy cansado.", en: "I can't go on, I'm very tired.", grammar: [g.poder-present], vocab: [w.cansado] }
+      - { es: "No puedo más, estoy muy cansado.", en: "I can't go on, I'm very tired.", altEs: ["No puedo más, estoy muy cansada."], grammar: [g.poder-present], vocab: [w.cansado] }
       - { es: "¿Puedes ayudarme con este problema?", en: "Can you help me with this problem?", grammar: [g.poder-present], vocab: [w.ayudar, w.problema], error: { wrong: "¿Puedes a ayudarme con este problema?", explain: "poder + infinitive, no preposition.", grammar: g.poder-present } }
+    exchanges:
+      - q: { es: "¿Puedes hablar más despacio?", en: "Can you speak more slowly?" }
+        a: { es: "Sí, claro, perdón.", en: "Yes, of course, sorry." }
+        alt: ["Claro.", "Sí, lo siento."]
+        grammar: [g.poder-present]
+        vocab: [w.poder, w.despacio, w.perdon]
+      - q: { es: "¿Puedo pagar con tarjeta?", en: "Can I pay by card?" }
+        a: { es: "No, lo siento, solo en efectivo.", en: "No, sorry, cash only." }
+        alt: ["Sí, claro.", "Sí, puede."]
+        grammar: [g.poder-present]
+        vocab: [w.pagar, w.tarjeta, w.efectivo]
+      - q: { es: "¿Podemos ir juntos al concierto?", en: "Can we go to the concert together?" }
+        a: { es: "Sí, podemos ir en mi coche.", en: "Yes, we can go in my car." }
+        alt: ["Sí, claro.", "No, no puedo ir."]
+        grammar: [g.poder-present]
+        vocab: [w.juntos, w.concierto, w.coche]
+      - q: { es: "¿Puede repetir, por favor?", en: "Can you repeat, please? (formal)" }
+        a: { es: "Sí: la estación está a la derecha.", en: "Yes: the station is on the right." }
+        alt: ["Claro.", "Sí, a la derecha."]
+        grammar: [g.poder-present, g.tu-vs-usted]
+        vocab: [w.poder, w.estacion, w.derecha]
+      - q: { es: "¿Me haces un favor?", en: "Can you do me a favour?" }
+        a: { es: "Claro, no hay problema.", en: "Of course, no problem." }
+        alt: ["Sí, claro.", "Ahora no puedo, lo siento."]
+        grammar: [g.hacer-present, g.hay]
+        vocab: [w.favor, w.problema]
+    texts:
+      - title: "Mensaje"
+        es: ["Hola, Marta. Hoy no puedo ir a clase.", "¿Puedes esperar un momento después y hablar con la profesora?", "Gracias, no hay problema si no puedes."]
+        en: ["Hi, Marta. I can't go to class today.", "Can you wait a moment afterwards and talk to the teacher?", "Thanks, no problem if you can't."]
+        grammar: [g.poder-present]
+        vocab: [w.poder, w.esperar, w.momento, w.problema]
+      - title: "Nota"
+        es: ["No se puede aparcar aquí.", "Puede aparcar en la plaza, a cinco minutos.", "Gracias."]
+        en: ["You can't park here.", "You can park in the square, five minutes away.", "Thank you."]
+        grammar: [g.poder-present]
+        vocab: [w.aparcar, w.plaza, w.minutos.phr]
 dialogues:
   - id: a1.u09.d1
     title: Planes para el fin de semana

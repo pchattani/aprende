@@ -10,15 +10,16 @@ There is **no AI and no server**: every explanation was written by hand, and eve
 
 | | |
 |---|---|
-| **Course** | CEFR levels A1 → C2, 66 units, lessons of 12–15 exercises laid out as a chapter checklist. Each lesson shows a mastery state (new, in progress, learned, solid) computed from real retention, not clicks. A level check closes each level, and you can take it early to skip ahead. |
-| **Your rhythm** | Progress is measured in minutes practised and words you can use. A daily minutes goal, a seven-day rhythm strip and an activity calendar replace points and lives: mistakes simply come back later in the lesson and in your reviews. |
-| **Start anywhere** | First launch offers a five-minute adaptive placement test (built from the level-check exams and vocabulary) or a manual level choice. Every level also has a "Start here" button. Earlier levels stay open for practice. |
-| **Fourteen exercise types** | Multiple choice, word bank, typing in both directions, listening, dictation, matching, fill-the-blank, conjugation, transformation, find-the-error, ordering, speaking (speech recognition). The type is chosen by how deeply you know each item: recognition → recall → production. |
+| **The journey** | Three dogs, Leo, Bonchita and Luna, tour Argentina from Ezeiza to Ushuaia. Each CEFR level is a region and each of the 66 units is a stop. Every stop is open from day one: the placement test or your own choice only marks where the journey begins. Lessons show a mastery state (new, in progress, learned, solid) computed from real retention, and a level check closes each region. |
+| **Quests, souvenirs and passport** | Three daily quests (reviews, lessons, minutes, a clean lesson, new words) reward souvenirs from the region you are travelling through; finishing a lesson sometimes turns up a lucky find. The passport shows a stamp for every finished stop and the souvenir collection. No points, no lives: mistakes simply come back later in the lesson and in your reviews. |
+| **Your rhythm** | Progress is measured in minutes practised and words you can use: a daily minutes goal ring, a seven-day rhythm strip and an activity calendar. |
+| **Sixteen exercise types** | Multiple choice, word bank, typing in both directions, listening, dictation, matching, fill-the-blank, conjugation, transformation, find-the-error, ordering words, ordering the sentences of a mini-text, replying to a question, speaking (speech recognition). The type is chosen by how deeply you know each item: recognition → recall → production. |
 | **Spaced repetition** | Every word, sentence and grammar point becomes a card scheduled by FSRS. The Review tab is where learning consolidates. Weak grammar points are detected and can be practised on their own. |
 | **Grammar reference** | ~230 searchable notes with tables, examples, pitfalls and Latin American variants. Every exercise can explain itself. |
 | **Verb trainer** | Conjugation tables for any verb in sixteen tenses (including vosotros), plus timed drills. |
 | **Reader** | Graded texts and dialogues per level, plus import any Spanish text. Tap a word for its meaning and add it to your reviews. A coverage meter tells you if a text is at your level. |
 | **Pronunciation** | Eight lessons on Castilian sounds, stress and the written accent, with minimal pairs and shadowing. |
+| **Equivalent answers** | Typed answers are accepted when they mean the same thing: synonyms and regional variants (coche / carro / auto, ordenador / computadora, echar de menos / extrañar in every tense), dropped or kept subject pronouns, a mí me vs me, British and American spelling in English. The feedback shows the other wording too. |
 | **Writing checker** | Spelling, accents (with the rule that applies), gender/number agreement, verb-form validity, punctuation and ~50 classic learner errors — all rule-based. |
 | **Castilian default** | vosotros, distinción, Spain vocabulary. Latin American forms appear as variant notes from A2. |
 

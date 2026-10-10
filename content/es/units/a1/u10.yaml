@@ -6,75 +6,233 @@ lessons:
     teach: [g.weather]
     vocab: [w.tiempo, w.sol, w.viento, w.lluvia, w.nieve, w.nube, w.cielo, w.grado, w.llover, w.nevar, w.nublado, w.primavera, w.verano, w.otono, w.invierno]
     sentences:
-      - { es: "¿Qué tiempo hace hoy?", en: "What's the weather like today?", grammar: [g.weather, g.question-words], vocab: [w.tiempo] }
-      - { es: "Hace mucho calor y hace sol.", en: "It is very hot and sunny.", grammar: [g.weather], vocab: [w.calor, w.sol], error: { wrong: "Es mucho calor y es sol.", explain: "Weather uses hacer: hace calor, hace sol.", grammar: g.weather } }
-      - { es: "Hace frío en invierno.", en: "It is cold in winter.", grammar: [g.weather], vocab: [w.frio.noun, w.invierno] }
-      - { es: "Hoy hace viento en la playa.", en: "Today it is windy at the beach.", grammar: [g.weather], vocab: [w.viento, w.playa] }
-      - { es: "Está nublado y va a llover.", en: "It is cloudy and it is going to rain.", grammar: [g.weather, g.ir-a-infinitive], vocab: [w.nublado, w.llover] }
-      - { es: "Llueve mucho en otoño.", en: "It rains a lot in autumn.", grammar: [g.weather], vocab: [w.llover, w.otono] }
-      - { es: "En la montaña nieva en diciembre.", en: "In the mountains it snows in December.", grammar: [g.weather], vocab: [w.nevar, w.montana] }
-      - { es: "El cielo está azul y no hay nubes.", en: "The sky is blue and there are no clouds.", grammar: [g.hay], vocab: [w.cielo, w.nube] }
-      - { es: "Estamos a treinta grados.", en: "It is thirty degrees.", grammar: [g.weather], vocab: [w.grado, w.treinta] }
+      - { es: "¿Qué tiempo hace hoy?", en: "What's the weather like today?", altEs: ["Hoy, ¿qué tiempo hace?"], grammar: [g.weather, g.question-words], vocab: [w.tiempo] }
+      - { es: "Hace mucho calor y hace sol.", en: "It is very hot and sunny.", altEs: ["Hace mucho calor y sol."], grammar: [g.weather], vocab: [w.calor, w.sol], error: { wrong: "Es mucho calor y es sol.", explain: "Weather uses hacer: hace calor, hace sol.", grammar: g.weather } }
+      - { es: "Hace frío en invierno.", en: "It is cold in winter.", altEs: ["En invierno hace frío."], grammar: [g.weather], vocab: [w.frio.noun, w.invierno] }
+      - { es: "Hoy hace viento en la playa.", en: "Today it is windy at the beach.", altEs: ["Hoy en la playa hace viento."], grammar: [g.weather], vocab: [w.viento, w.playa] }
+      - { es: "Está nublado y va a llover.", en: "It is cloudy and it is going to rain.", altEs: ["Hay nubes y va a llover."], grammar: [g.weather, g.ir-a-infinitive], vocab: [w.nublado, w.llover] }
+      - { es: "Llueve mucho en otoño.", en: "It rains a lot in autumn.", altEs: ["En otoño llueve mucho."], grammar: [g.weather], vocab: [w.llover, w.otono] }
+      - { es: "En la montaña nieva en diciembre.", en: "In the mountains it snows in December.", altEs: ["En diciembre nieva en la montaña."], grammar: [g.weather], vocab: [w.nevar, w.montana] }
+      - { es: "El cielo está azul y no hay nubes.", en: "The sky is blue and there are no clouds.", altEs: ["El cielo está azul y no hay ninguna nube."], grammar: [g.hay], vocab: [w.cielo, w.nube] }
+      - { es: "Estamos a treinta grados.", en: "It is thirty degrees.", altEs: ["Hace treinta grados."], grammar: [g.weather], vocab: [w.grado, w.treinta] }
       - { es: "En primavera hace buen tiempo.", en: "In spring the weather is good.", grammar: [g.weather], vocab: [w.primavera, w.bueno] }
       - { es: "Me gusta la lluvia pero no me gusta el frío.", en: "I like rain but I don't like the cold.", grammar: [g.gustar], vocab: [w.lluvia, w.frio.noun] }
       - { es: "En verano no llueve casi nunca.", en: "In summer it hardly ever rains.", grammar: [g.frequency-adverbs], vocab: [w.verano, w.llover] }
       - { es: "La nieve es blanca y fría.", en: "Snow is white and cold.", grammar: [g.adjective-agreement], vocab: [w.nieve, w.blanco], transform: { instruction: "Change to the plural: las nubes (clouds) are white", answer: "Las nubes son blancas." } }
+    exchanges:
+      - q: { es: "¿Qué tiempo hace hoy?", en: "What's the weather like today?" }
+        a: { es: "Hace sol y mucho calor.", en: "It's sunny and very hot." }
+        alt: ["Hace calor.", "Hace frío y llueve."]
+        grammar: [g.weather]
+        vocab: [w.tiempo, w.sol, w.calor]
+      - q: { es: "¿Hace frío en invierno?", en: "Is it cold in winter?" }
+        a: { es: "Sí, hace mucho frío y nieva en la montaña.", en: "Yes, it's very cold and it snows in the mountains." }
+        alt: ["Sí, mucho.", "No, no mucho."]
+        grammar: [g.weather]
+        vocab: [w.frio.noun, w.invierno, w.nevar]
+      - q: { es: "¿Va a llover mañana?", en: "Is it going to rain tomorrow?" }
+        a: { es: "Sí, está nublado y va a llover.", en: "Yes, it's cloudy and it's going to rain." }
+        alt: ["Sí, va a llover.", "No, va a hacer sol."]
+        grammar: [g.weather, g.ir-a-infinitive]
+        vocab: [w.llover, w.nublado]
+      - q: { es: "¿A cuántos grados estamos?", en: "What's the temperature?" }
+        a: { es: "Estamos a treinta grados.", en: "It's thirty degrees." }
+        alt: ["A treinta grados.", "Treinta."]
+        grammar: [g.weather]
+        vocab: [w.grado, w.treinta]
+      - q: { es: "¿Te gusta el otoño?", en: "Do you like autumn?" }
+        a: { es: "Sí, pero llueve mucho.", en: "Yes, but it rains a lot." }
+        alt: ["Sí, me encanta.", "No, prefiero el verano."]
+        grammar: [g.gustar, g.weather]
+        vocab: [w.otono, w.llover, w.verano]
+    texts:
+      - title: "El tiempo hoy"
+        es: ["Hoy hace sol en Madrid y estamos a veinte grados.", "En Barcelona está nublado y llueve.", "En la montaña nieva y hace mucho frío."]
+        en: ["Today it's sunny in Madrid and it's twenty degrees.", "In Barcelona it's cloudy and raining.", "In the mountains it's snowing and very cold."]
+        grammar: [g.weather]
+        vocab: [w.sol, w.grado, w.nublado, w.nevar]
+      - title: "Mensaje de Yuki"
+        es: ["¡Qué tiempo tan malo!", "Hace viento y hay muchas nubes.", "No vamos a la playa hoy."]
+        en: ["What awful weather!", "It's windy and there are lots of clouds.", "We're not going to the beach today."]
+        grammar: [g.weather, g.hay]
+        vocab: [w.tiempo, w.viento, w.nube]
   - id: a1.u10.l2
     title: Deportes y aficiones
     teach: [g.jugar-tocar]
     vocab: [w.jugar, w.tocar, w.futbol, w.tenis, w.baloncesto, w.natacion, w.nadar, w.correr, w.bailar, w.cantar, w.pintar, w.guitarra, w.piano, w.cancion, w.cartas, w.videojuego, w.serie, w.equipo, w.partido, w.paseo]
     sentences:
-      - { es: "Juego al fútbol los sábados.", en: "I play football on Saturdays.", grammar: [g.jugar-tocar, g.stem-changing-present], vocab: [w.jugar, w.futbol], error: { wrong: "Juego fútbol los sábados.", explain: "In Spain: jugar al fútbol (a + el).", grammar: g.jugar-tocar } }
-      - { es: "¿Juegas al tenis o al baloncesto?", en: "Do you play tennis or basketball?", grammar: [g.jugar-tocar], vocab: [w.tenis, w.baloncesto] }
+      - { es: "Juego al fútbol los sábados.", en: "I play football on Saturdays.", altEs: ["Los sábados juego al fútbol."], grammar: [g.jugar-tocar, g.stem-changing-present], vocab: [w.jugar, w.futbol], error: { wrong: "Juego fútbol los sábados.", explain: "In Spain: jugar al fútbol (a + el).", grammar: g.jugar-tocar } }
+      - { es: "¿Juegas al tenis o al baloncesto?", en: "Do you play tennis or basketball?", altEs: ["¿Tú juegas al tenis o al baloncesto?"], grammar: [g.jugar-tocar], vocab: [w.tenis, w.baloncesto] }
       - { es: "Mi hermana toca el piano muy bien.", en: "My sister plays the piano very well.", grammar: [g.jugar-tocar], vocab: [w.tocar, w.piano], error: { wrong: "Mi hermana juega el piano muy bien.", explain: "Instruments take tocar, not jugar.", grammar: g.jugar-tocar } }
-      - { es: "Toco la guitarra y canto canciones.", en: "I play the guitar and sing songs.", grammar: [g.jugar-tocar], vocab: [w.guitarra, w.cantar, w.cancion] }
-      - { es: "Hago natación dos veces a la semana.", en: "I do swimming twice a week.", grammar: [g.hacer-present], vocab: [w.natacion, w.vez] }
-      - { es: "Nadamos en el mar en verano.", en: "We swim in the sea in summer.", grammar: [g.regular-ar-present], vocab: [w.nadar, w.mar] }
-      - { es: "Corro por el parque por la mañana.", en: "I run through the park in the morning.", grammar: [g.prepositions-movement], vocab: [w.correr, w.parque] }
+      - { es: "Toco la guitarra y canto canciones.", en: "I play the guitar and sing songs.", altEs: ["Yo toco la guitarra y canto canciones."], grammar: [g.jugar-tocar], vocab: [w.guitarra, w.cantar, w.cancion] }
+      - { es: "Hago natación dos veces a la semana.", en: "I do swimming twice a week.", altEs: ["Nado dos veces a la semana."], grammar: [g.hacer-present], vocab: [w.natacion, w.vez] }
+      - { es: "Nadamos en el mar en verano.", en: "We swim in the sea in summer.", altEs: ["En verano nadamos en el mar."], grammar: [g.regular-ar-present], vocab: [w.nadar, w.mar] }
+      - { es: "Corro por el parque por la mañana.", en: "I run through the park in the morning.", altEs: ["Por la mañana corro por el parque."], grammar: [g.prepositions-movement], vocab: [w.correr, w.parque] }
       - { es: "Los domingos jugamos a las cartas con los abuelos.", en: "On Sundays we play cards with our grandparents.", grammar: [g.jugar-tocar], vocab: [w.cartas, w.abuelo] }
       - { es: "A mi hermano le encantan los videojuegos.", en: "My brother loves video games.", grammar: [g.gustar-plural], vocab: [w.videojuego] }
-      - { es: "Veo una serie todas las noches.", en: "I watch a series every night.", grammar: [g.frequency-adverbs], vocab: [w.serie, w.ver] }
+      - { es: "Veo una serie todas las noches.", en: "I watch a series every night.", altEs: ["Todas las noches veo una serie."], grammar: [g.frequency-adverbs], vocab: [w.serie, w.ver] }
       - { es: "Mi equipo juega un partido importante hoy.", en: "My team plays an important match today.", grammar: [g.jugar-tocar], vocab: [w.equipo, w.partido] }
-      - { es: "Me gusta bailar y pintar.", en: "I like dancing and painting.", grammar: [g.gustar-plural], vocab: [w.bailar, w.pintar] }
-      - { es: "Damos un paseo después de cenar.", en: "We go for a walk after dinner.", grammar: [g.regular-ar-present], vocab: [w.paseo, w.cenar] }
+      - { es: "Me gusta bailar y pintar.", en: "I like dancing and painting.", altEs: ["A mí me gusta bailar y pintar."], grammar: [g.gustar-plural], vocab: [w.bailar, w.pintar] }
+      - { es: "Damos un paseo después de cenar.", en: "We go for a walk after dinner.", altEs: ["Paseamos después de cenar."], grammar: [g.regular-ar-present], vocab: [w.paseo, w.cenar] }
       - { es: "Ella juega al tenis.", en: "She plays tennis.", grammar: [g.jugar-tocar], vocab: [w.jugar, w.tenis], transform: { instruction: "Change to 'they'", answer: "Juegan al tenis.", alt: ["Ellos juegan al tenis.", "Ellas juegan al tenis."] } }
+    exchanges:
+      - q: { es: "¿Juegas al fútbol?", en: "Do you play football?" }
+        a: { es: "Sí, juego al fútbol los sábados.", en: "Yes, I play football on Saturdays." }
+        alt: ["Sí, los sábados.", "No, juego al baloncesto."]
+        grammar: [g.jugar-tocar]
+        vocab: [w.jugar, w.futbol, w.baloncesto]
+      - q: { es: "¿Tocas la guitarra?", en: "Do you play the guitar?" }
+        a: { es: "No, toco el piano.", en: "No, I play the piano." }
+        alt: ["Sí, un poco.", "No, no toco nada."]
+        grammar: [g.jugar-tocar]
+        vocab: [w.tocar, w.guitarra, w.piano]
+      - q: { es: "¿Qué deporte haces?", en: "What sport do you do?" }
+        a: { es: "Hago natación y corro por el parque.", en: "I do swimming and run in the park." }
+        alt: ["Natación.", "No hago deporte."]
+        grammar: [g.hacer-present]
+        vocab: [w.natacion, w.correr, w.deporte]
+      - q: { es: "¿Te gusta bailar?", en: "Do you like dancing?" }
+        a: { es: "Sí, me encanta bailar y cantar.", en: "Yes, I love dancing and singing." }
+        alt: ["Sí, mucho.", "No, no me gusta."]
+        grammar: [g.gustar-plural]
+        vocab: [w.bailar, w.cantar]
+      - q: { es: "¿Qué hacéis los domingos?", en: "What do you (all) do on Sundays?" }
+        a: { es: "Jugamos a las cartas con los abuelos.", en: "We play cards with our grandparents." }
+        alt: ["Vemos una serie.", "Damos un paseo."]
+        grammar: [g.jugar-tocar]
+        vocab: [w.cartas, w.abuelo, w.serie, w.paseo]
+    texts:
+      - title: "Mensaje de Pablo"
+        es: ["Hoy mi equipo juega un partido importante.", "¿Vienes a verlo?", "Después damos un paseo."]
+        en: ["Today my team is playing an important match.", "Are you coming to watch it?", "Afterwards we'll go for a walk."]
+        grammar: [g.jugar-tocar, g.direct-object-intro]
+        vocab: [w.equipo, w.partido, w.paseo]
+      - title: "Perfil"
+        es: ["Me gusta mucho la música.", "Toco la guitarra y canto canciones españolas.", "También juego al tenis y nado en verano."]
+        en: ["I like music a lot.", "I play the guitar and sing Spanish songs.", "I also play tennis and swim in summer."]
+        grammar: [g.jugar-tocar]
+        vocab: [w.musica, w.guitarra, w.cancion, w.tenis, w.nadar]
   - id: a1.u10.l3
     title: Quiero, puedo, prefiero
     teach: [g.stem-changing-present]
     vocab: [w.entender, w.pensar, w.recordar, w.encontrar, w.pedir, w.seguir, w.repetir, w.perder, w.ganar, w.favorito, w.interesante, w.facil, w.dificil, w.importante, w.mejor]
     sentences:
-      - { es: "No entiendo la pregunta. ¿Puedes repetir?", en: "I don't understand the question. Can you repeat?", grammar: [g.stem-changing-present], vocab: [w.entender, w.repetir] }
+      - { es: "No entiendo la pregunta. ¿Puedes repetir?", en: "I don't understand the question. Can you repeat?", altEs: ["No entiendo la pregunta. ¿La puedes repetir?"], grammar: [g.stem-changing-present], vocab: [w.entender, w.repetir] }
       - { es: "¿Qué piensas de la película? Pienso que es interesante.", en: "What do you think of the film? I think it's interesting.", grammar: [g.stem-changing-present], vocab: [w.pensar, w.interesante] }
-      - { es: "No recuerdo su nombre.", en: "I don't remember his name.", grammar: [g.stem-changing-present], vocab: [w.recordar, w.nombre] }
-      - { es: "Nunca encuentro mis llaves.", en: "I never find my keys.", grammar: [g.stem-changing-present, g.frequency-adverbs], vocab: [w.encontrar, w.llave] }
-      - { es: "Pido un café y mi amigo pide un té.", en: "I order a coffee and my friend orders a tea.", grammar: [g.stem-changing-present], vocab: [w.pedir] }
+      - { es: "No recuerdo su nombre.", en: "I don't remember his name.", altEs: ["Yo no recuerdo su nombre."], grammar: [g.stem-changing-present], vocab: [w.recordar, w.nombre] }
+      - { es: "Nunca encuentro mis llaves.", en: "I never find my keys.", altEs: ["No encuentro nunca mis llaves."], grammar: [g.stem-changing-present, g.frequency-adverbs], vocab: [w.encontrar, w.llave] }
+      - { es: "Pido un café y mi amigo pide un té.", en: "I order a coffee and my friend orders a tea.", altEs: ["Yo pido un café y mi amigo, un té."], grammar: [g.stem-changing-present], vocab: [w.pedir] }
       - { es: "Sigue todo recto hasta la plaza.", en: "Go straight on to the square.", grammar: [g.directions-imperative], vocab: [w.seguir, w.plaza] }
-      - { es: "Siempre pierdo el autobús por la mañana.", en: "I always miss the bus in the morning.", grammar: [g.stem-changing-present], vocab: [w.perder, w.autobus] }
-      - { es: "Mi equipo favorito gana el partido.", en: "My favourite team wins the match.", grammar: [g.adjectives-position], vocab: [w.ganar, w.favorito] }
-      - { es: "El español es fácil pero el chino es difícil.", en: "Spanish is easy but Chinese is difficult.", grammar: [g.connectors-basic], vocab: [w.facil, w.dificil] }
-      - { es: "Es importante hacer deporte.", en: "It is important to do sport.", grammar: [g.hay-que], vocab: [w.importante, w.deporte] }
-      - { es: "¿Cuál es tu mejor amigo?", en: "Who is your best friend?", grammar: [g.question-words], vocab: [w.mejor, w.amigo] }
-      - { es: "Preferimos el tenis al fútbol.", en: "We prefer tennis to football.", grammar: [g.stem-changing-present], vocab: [w.preferir, w.tenis] }
+      - { es: "Siempre pierdo el autobús por la mañana.", en: "I always miss the bus in the morning.", altEs: ["Por la mañana siempre pierdo el autobús."], grammar: [g.stem-changing-present], vocab: [w.perder, w.autobus] }
+      - { es: "Mi equipo favorito gana el partido.", en: "My favourite team wins the match.", altEs: ["El partido lo gana mi equipo favorito."], grammar: [g.adjectives-position], vocab: [w.ganar, w.favorito] }
+      - { es: "El español es fácil pero el chino es difícil.", en: "Spanish is easy but Chinese is difficult.", altEs: ["El español es fácil, pero el chino es difícil."], grammar: [g.connectors-basic], vocab: [w.facil, w.dificil] }
+      - { es: "Es importante hacer deporte.", en: "It is important to do sport.", altEs: ["Hacer deporte es importante."], grammar: [g.hay-que], vocab: [w.importante, w.deporte] }
+      - { es: "¿Cuál es tu mejor amigo?", en: "Who is your best friend?", altEs: ["¿Quién es tu mejor amigo?"], grammar: [g.question-words], vocab: [w.mejor, w.amigo] }
+      - { es: "Preferimos el tenis al fútbol.", en: "We prefer tennis to football.", altEs: ["Nosotros preferimos el tenis al fútbol."], grammar: [g.stem-changing-present], vocab: [w.preferir, w.tenis] }
       - { es: "Entendemos un poco de italiano.", en: "We understand a little Italian.", grammar: [g.stem-changing-present], vocab: [w.entender, w.italiano], error: { wrong: "Entiendemos un poco de italiano.", explain: "nosotros keeps the original vowel: entendemos.", grammar: g.stem-changing-present } }
       - { es: "Ella piensa en su familia.", en: "She thinks about her family.", grammar: [g.stem-changing-present], vocab: [w.pensar], transform: { instruction: "Change to 'we'", answer: "Pensamos en nuestra familia.", alt: ["Nosotros pensamos en nuestra familia."] } }
+    exchanges:
+      - q: { es: "¿Entiendes la pregunta?", en: "Do you understand the question?" }
+        a: { es: "No, no la entiendo. ¿Puedes repetir?", en: "No, I don't understand it. Can you repeat?" }
+        alt: ["Sí, la entiendo.", "No, no entiendo."]
+        grammar: [g.stem-changing-present, g.direct-object-intro]
+        vocab: [w.entender, w.repetir, w.pregunta]
+      - q: { es: "¿Qué piensas de la película?", en: "What do you think of the film?" }
+        a: { es: "Pienso que es muy interesante.", en: "I think it's very interesting." }
+        alt: ["Es interesante.", "Pienso que es aburrida."]
+        grammar: [g.stem-changing-present]
+        vocab: [w.pensar, w.interesante]
+      - q: { es: "¿Recuerdas su nombre?", en: "Do you remember his name?" }
+        a: { es: "No, no lo recuerdo.", en: "No, I don't remember it." }
+        alt: ["Sí, se llama Luis.", "No."]
+        grammar: [g.stem-changing-present]
+        vocab: [w.recordar, w.nombre]
+      - q: { es: "¿Qué pides?", en: "What are you ordering?" }
+        a: { es: "Pido una sopa y un café.", en: "I'm ordering a soup and a coffee." }
+        alt: ["Una sopa.", "Yo pido pescado."]
+        grammar: [g.stem-changing-present]
+        vocab: [w.pedir, w.sopa]
+      - q: { es: "¿Quién gana el partido?", en: "Who's winning the match?" }
+        a: { es: "Gana mi equipo favorito.", en: "My favourite team is winning." }
+        alt: ["Mi equipo.", "No sé, pierde mi equipo."]
+        grammar: [g.stem-changing-present]
+        vocab: [w.ganar, w.perder, w.favorito, w.partido]
+      - q: { es: "¿El español es difícil?", en: "Is Spanish difficult?" }
+        a: { es: "No, es fácil, pero el chino es difícil.", en: "No, it's easy, but Chinese is difficult." }
+        alt: ["No, es fácil.", "Un poco."]
+        grammar: [g.connectors-basic]
+        vocab: [w.facil, w.dificil]
+    texts:
+      - title: "Mensaje"
+        es: ["No encuentro mis llaves.", "¿Recuerdas dónde están?", "Pienso que están en tu casa."]
+        en: ["I can't find my keys.", "Do you remember where they are?", "I think they're at your house."]
+        grammar: [g.stem-changing-present]
+        vocab: [w.encontrar, w.recordar, w.pensar, w.llave]
+      - title: "Nota"
+        es: ["Siempre pierdo el autobús de las ocho.", "Por eso prefiero ir en bici.", "Es más fácil y es gratis."]
+        en: ["I always miss the eight o'clock bus.", "That's why I prefer to go by bike.", "It's easier and it's free."]
+        grammar: [g.stem-changing-present]
+        vocab: [w.perder, w.preferir, w.facil, w.gratis]
   - id: a1.u10.l4
     title: ¿Te gusta? A mí también
     teach: [g.gustar-plural, g.saber-vs-conocer]
     vocab: [w.tambien.phr, w.tampoco, w.gratis, w.fuera]
     sentences:
       - { es: "Me gusta el cine. ¿Y a ti? A mí también.", en: "I like the cinema. And you? Me too.", grammar: [g.gustar-plural, g.tambien-tampoco], vocab: [w.tambien.phr, w.cine] }
-      - { es: "No me gusta el fútbol. — A mí tampoco.", en: "I don't like football. — Me neither.", grammar: [g.tambien-tampoco], vocab: [w.tampoco, w.futbol] }
+      - { es: "No me gusta el fútbol. — A mí tampoco.", en: "I don't like football. — Me neither.", altEs: ["No me gusta el fútbol. — Yo tampoco."], grammar: [g.tambien-tampoco], vocab: [w.tampoco, w.futbol] }
       - { es: "A mis padres les gusta viajar.", en: "My parents like travelling.", grammar: [g.gustar-plural], vocab: [w.viajar] }
-      - { es: "Nos encanta nadar en el río.", en: "We love swimming in the river.", grammar: [g.gustar-plural], vocab: [w.nadar, w.rio] }
-      - { es: "¿Os gustan las series españolas?", en: "Do you (all) like Spanish series?", grammar: [g.gustar-plural], vocab: [w.serie] }
-      - { es: "¿Sabes nadar? Sí, sé nadar muy bien.", en: "Can you swim? Yes, I can swim very well.", grammar: [g.saber-vs-conocer], vocab: [w.saber, w.nadar] }
-      - { es: "No sé tocar el piano.", en: "I can't play the piano.", grammar: [g.saber-vs-conocer], vocab: [w.saber, w.piano] }
-      - { es: "¿Conoces Barcelona? Sí, la conozco bien.", en: "Do you know Barcelona? Yes, I know it well.", grammar: [g.saber-vs-conocer, g.direct-object-intro], vocab: [w.conocer] }
+      - { es: "Nos encanta nadar en el río.", en: "We love swimming in the river.", altEs: ["Nos gusta mucho nadar en el río."], grammar: [g.gustar-plural], vocab: [w.nadar, w.rio] }
+      - { es: "¿Os gustan las series españolas?", en: "Do you (all) like Spanish series?", altEs: ["¿A vosotros os gustan las series españolas?"], grammar: [g.gustar-plural], vocab: [w.serie] }
+      - { es: "¿Sabes nadar? Sí, sé nadar muy bien.", en: "Can you swim? Yes, I can swim very well.", altEs: ["¿Sabes nadar? Sí, nado muy bien."], grammar: [g.saber-vs-conocer], vocab: [w.saber, w.nadar] }
+      - { es: "No sé tocar el piano.", en: "I can't play the piano.", altEs: ["Yo no sé tocar el piano."], grammar: [g.saber-vs-conocer], vocab: [w.saber, w.piano] }
+      - { es: "¿Conoces Barcelona? Sí, la conozco bien.", en: "Do you know Barcelona? Yes, I know it well.", altEs: ["¿Conoces Barcelona? Sí, conozco bien la ciudad."], grammar: [g.saber-vs-conocer, g.direct-object-intro], vocab: [w.conocer] }
       - { es: "Sé que vives en Madrid.", en: "I know that you live in Madrid.", grammar: [g.saber-vs-conocer], vocab: [w.saber], error: { wrong: "Conozco que vives en Madrid.", explain: "Facts take saber: sé que…", grammar: g.saber-vs-conocer } }
       - { es: "El concierto es gratis.", en: "The concert is free.", grammar: [g.ser-present], vocab: [w.gratis, w.concierto] }
-      - { es: "Los niños juegan fuera.", en: "The children play outside.", grammar: [g.jugar-tocar], vocab: [w.fuera, w.jugar] }
-      - { es: "A Juan le gusta el baloncesto y a mí me gusta el tenis.", en: "Juan likes basketball and I like tennis.", grammar: [g.gustar-plural], vocab: [w.baloncesto, w.tenis] }
+      - { es: "Los niños juegan fuera.", en: "The children play outside.", altEs: ["Los niños están jugando fuera."], grammar: [g.jugar-tocar], vocab: [w.fuera, w.jugar] }
+      - { es: "A Juan le gusta el baloncesto y a mí me gusta el tenis.", en: "Juan likes basketball and I like tennis.", altEs: ["A Juan le gusta el baloncesto y a mí, el tenis."], grammar: [g.gustar-plural], vocab: [w.baloncesto, w.tenis] }
       - { es: "Me gustan las canciones de este grupo.", en: "I like this band's songs.", grammar: [g.gustar-plural], vocab: [w.cancion] }
+    exchanges:
+      - q: { es: "Me gusta el cine. ¿Y a ti?", en: "I like the cinema. And you?" }
+        a: { es: "A mí también.", en: "Me too." }
+        alt: ["A mí también me gusta.", "A mí no."]
+        grammar: [g.tambien-tampoco, g.gustar-plural]
+        vocab: [w.tambien.phr, w.cine]
+      - q: { es: "No me gusta el fútbol.", en: "I don't like football." }
+        a: { es: "A mí tampoco.", en: "Me neither." }
+        alt: ["A mí tampoco me gusta.", "A mí sí."]
+        grammar: [g.tambien-tampoco]
+        vocab: [w.tampoco, w.futbol]
+      - q: { es: "¿Sabes nadar?", en: "Can you swim?" }
+        a: { es: "Sí, sé nadar muy bien.", en: "Yes, I can swim very well." }
+        alt: ["Sí.", "No, no sé nadar."]
+        grammar: [g.saber-vs-conocer]
+        vocab: [w.saber, w.nadar]
+      - q: { es: "¿Conoces Barcelona?", en: "Do you know Barcelona?" }
+        a: { es: "Sí, la conozco bien.", en: "Yes, I know it well." }
+        alt: ["Sí, la conozco.", "No, no la conozco."]
+        grammar: [g.saber-vs-conocer, g.direct-object-intro]
+        vocab: [w.conocer]
+      - q: { es: "¿Os gustan las series españolas?", en: "Do you (all) like Spanish series?" }
+        a: { es: "Sí, nos encantan.", en: "Yes, we love them." }
+        alt: ["Sí, mucho.", "No, no nos gustan."]
+        grammar: [g.gustar-plural]
+        vocab: [w.serie, w.encantar]
+      - q: { es: "¿El concierto es gratis?", en: "Is the concert free?" }
+        a: { es: "Sí, es gratis y es fuera, en el parque.", en: "Yes, it's free and it's outside, in the park." }
+        alt: ["Sí, es gratis.", "No, cuesta diez euros."]
+        grammar: [g.ser-present]
+        vocab: [w.gratis, w.fuera, w.concierto]
+    texts:
+      - title: "Mensaje de Lucía"
+        es: ["A mis padres les gusta viajar y a mí también.", "Este verano vamos a Portugal.", "No conozco Lisboa, pero sé que es muy bonita."]
+        en: ["My parents like travelling and so do I.", "This summer we're going to Portugal.", "I don't know Lisbon, but I know it's very beautiful."]
+        grammar: [g.gustar-plural, g.saber-vs-conocer, g.tambien-tampoco]
+        vocab: [w.viajar, w.tambien.phr, w.conocer, w.saber]
+      - title: "Nota"
+        es: ["No sé tocar el piano, pero sé cantar.", "A mi hermana le gusta el baloncesto y a mí el tenis.", "Los domingos jugamos fuera."]
+        en: ["I can't play the piano, but I can sing.", "My sister likes basketball and I like tennis.", "On Sundays we play outside."]
+        grammar: [g.saber-vs-conocer, g.gustar-plural]
+        vocab: [w.saber, w.piano, w.cantar, w.fuera]
 dialogues:
   - id: a1.u10.d1
     title: Un domingo de lluvia

@@ -4,7 +4,7 @@ import type { Exercise, CardRow, LessonResult } from '../engine/types'
 import type { Lesson, LevelId } from '../engine/schema'
 import { db } from '../db'
 import { dueCards, bumpDay } from '../db/progress'
-import { generateReview } from '../engine/generate'
+import { generateReview, exchangeAsSentence, textAsSentence } from '../engine/generate'
 import { vocab, vocabUpTo, loadLesson, grammar, LEVEL_ORDER_LIST } from '../engine/loader'
 import { IRREGULAR } from '../lang/es/verbs'
 import { sttSupported } from '../engine/speech'
@@ -62,8 +62,18 @@ function ReviewSession({ grammarFilter }: { grammarFilter: string | undefined })
           const lessonId = parts.slice(1, 4).join('.')
           const n = Number(parts[4])
           const lesson = lessons.get(lessonId)
-          const s = lesson?.sentences[n - 1]
-          return lesson && s ? { s, lesson } : undefined
+          if (!lesson) return undefined
+          const kind = parts[0]
+          if (kind === 'x') {
+            const x = lesson.exchanges[n - 1]
+            return x ? { s: exchangeAsSentence(x), lesson } : undefined
+          }
+          if (kind === 't') {
+            const t = lesson.texts[n - 1]
+            return t ? { s: textAsSentence(t), lesson } : undefined
+          }
+          const s = lesson.sentences[n - 1]
+          return s ? { s, lesson } : undefined
         },
       },
       { vocab, pool: vocabUpTo(maxLevel), verbs: IRREGULAR, stageOf: (id) => cards.find((c) => c.id === id)?.stage, speech: speechOn && sttSupported() },

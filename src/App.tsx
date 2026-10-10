@@ -18,6 +18,7 @@ const Settings = lazy(() => import('./pages/Settings'))
 const Study = lazy(() => import('./pages/Study'))
 const Welcome = lazy(() => import('./pages/Welcome'))
 const Placement = lazy(() => import('./pages/Placement'))
+const Passport = lazy(() => import('./pages/Passport'))
 
 function Loading() {
   return <div className="p-8 text-center text-muted">Loading…</div>
@@ -79,6 +80,7 @@ export default function App() {
         <Route path="pronunciation/:id" element={<Pronunciation />} />
         <Route path="profile" element={<Profile />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="passport" element={<Passport />} />
       </Route>
       <Route
         path="lesson/:id"

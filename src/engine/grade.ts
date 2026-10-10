@@ -21,10 +21,11 @@ export function normalizeEnglish(s: string): string {
   return t.replace(/\b(the|a|an)\b /g, (m) => m) // articles kept; alternatives list handles optional ones
 }
 
-function matchEnglish(given: string, expected: string[]): GradeResult['verdict'] {
-  const g = normalizeEnglish(given)
-  if (!g) return 'wrong'
-  const exps = expected.map(normalizeEnglish)
+function matchEnglish(given: string, expected: string[], canon?: (s: string) => string): GradeResult['verdict'] {
+  const g0 = normalizeEnglish(given)
+  if (!g0) return 'wrong'
+  const g = canon ? canon(g0) : g0
+  const exps = expected.map((e) => (canon ? canon(normalizeEnglish(e)) : normalizeEnglish(e)))
   if (exps.includes(g)) return 'correct'
   // optional leading subject "I" / articles tolerance
   const strip = (x: string) => x.replace(/\b(the|a|an)\b/g, '').replace(/\s+/g, ' ').trim()
@@ -52,6 +53,21 @@ export interface GradeDeps {
   pack: LanguagePack
   /** Optional checker for explanations on wrong typed answers. */
   check?: (text: string) => CheckerFinding[]
+  /** Canonicalisers that fold synonyms, regional variants and optional pronouns (see lang/equivalence). */
+  canonEs?: (text: string) => string
+  canonEn?: (text: string) => string
+}
+
+/** Match a Spanish answer, first literally, then after canonicalising both sides. */
+function matchSpanish(text: string, expected: string[], deps: GradeDeps): { verdict: GradeResult['verdict']; notes: string[]; viaEquivalence: boolean } {
+  const r = deps.pack.match(text, expected)
+  if (r.verdict !== 'wrong' || !deps.canonEs) return { verdict: r.verdict, notes: r.notes, viaEquivalence: false }
+  const canonGiven = deps.canonEs(text)
+  const canonExpected = expected.map((e) => deps.canonEs!(e))
+  if (!canonGiven) return { verdict: 'wrong', notes: r.notes, viaEquivalence: false }
+  const r2 = deps.pack.match(canonGiven, canonExpected)
+  if (r2.verdict === 'wrong') return { verdict: 'wrong', notes: r.notes, viaEquivalence: false }
+  return { verdict: r2.verdict, notes: r2.notes, viaEquivalence: true }
 }
 
 export type Answer = number | string | string[] | { mistakes: number }
@@ -61,7 +77,8 @@ export function grade(ex: Exercise, answer: Answer, deps: GradeDeps): GradeResul
     case 'choiceEs':
     case 'choiceEn':
     case 'listen':
-    case 'fillBlank': {
+    case 'fillBlank':
+    case 'reply': {
       const correct = ex.options[ex.answer]!
       return { verdict: answer === ex.answer ? 'correct' : 'wrong', correct, notes: [] }
     }
@@ -70,19 +87,20 @@ export function grade(ex: Exercise, answer: Answer, deps: GradeDeps): GradeResul
       return { verdict: m === 0 ? 'correct' : m <= 2 ? 'almost' : 'wrong', correct: ex.pairs.map((p) => `${p.left} = ${p.right}`).join(', '), notes: m ? [`${m} mismatched pair${m === 1 ? '' : 's'}.`] : [] }
     }
     case 'wordBank':
-    case 'order': {
+    case 'order':
+    case 'orderText': {
       const text = Array.isArray(answer) ? answer.join(' ') : String(answer ?? '')
       const r = deps.pack.match(text, ex.answers)
       return { verdict: r.verdict === 'almost' ? 'correct' : r.verdict, correct: ex.answers[0]!, notes: [] }
     }
     case 'typeEn': {
-      const v = matchEnglish(String(answer ?? ''), ex.answers)
+      const v = matchEnglish(String(answer ?? ''), ex.answers, deps.canonEn)
       return { verdict: v, correct: ex.answers[0]!, notes: v === 'almost' ? ['Close enough — check the exact wording.'] : [] }
     }
     case 'speak': {
       const text = String(answer ?? '')
       if (!text.trim()) return { verdict: 'wrong', correct: ex.answers[0]!, notes: ['I could not hear anything. Try again closer to the microphone.'] }
-      const r = deps.pack.match(text, ex.answers)
+      const r = matchSpanish(text, ex.answers, deps)
       if (r.verdict !== 'wrong') return { verdict: 'correct', correct: ex.answers[0]!, notes: [] }
       const target = deps.pack.words(ex.answers[0]!)
       const said = new Set(deps.pack.words(text).map((w) => deps.pack.normalize(w, { accentInsensitive: true })))
@@ -97,8 +115,11 @@ export function grade(ex: Exercise, answer: Answer, deps: GradeDeps): GradeResul
     case 'conjugate':
     case 'transform': {
       const text = String(answer ?? '')
-      const r = deps.pack.match(text, ex.answers)
+      // Dictation, conjugation and error fixes want the exact form; translation and transformation accept equivalents.
+      const exact = ex.kind === 'dictation' || ex.kind === 'conjugate' || ex.kind === 'findError'
+      const r = exact ? { ...deps.pack.match(text, ex.answers), viaEquivalence: false } : matchSpanish(text, ex.answers, deps)
       const notes = [...r.notes]
+      if (r.viaEquivalence) notes.push(`Also correct. Another way to say it: ${ex.answers[0]}`)
       if (r.verdict === 'wrong' && deps.check && text.trim()) {
         for (const f of deps.check(text).slice(0, 2)) notes.push(f.message)
       }

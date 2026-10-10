@@ -7,18 +7,55 @@ lessons:
     vocab: [w.levantarse, w.despertarse, w.ducharse, w.lavarse, w.vestirse, w.acostarse, w.dormir, w.salir, w.llegar, w.volver, w.pelo, w.mano, w.dientes, w.a]
     sentences:
       - { es: "Me levanto a las siete.", en: "I get up at seven.", altEs: ["Yo me levanto a las siete."], grammar: [g.reflexive-verbs-present, g.time-telling], vocab: [w.levantarse, w.siete] }
-      - { es: "Me despierto temprano todos los días.", en: "I wake up early every day.", grammar: [g.reflexive-verbs-present], vocab: [w.despertarse, w.temprano, w.todos-los-dias] }
-      - { es: "¿Te duchas por la mañana o por la noche?", en: "Do you shower in the morning or at night?", grammar: [g.reflexive-verbs-present], vocab: [w.ducharse, w.manana.noun, w.noche] }
+      - { es: "Me despierto temprano todos los días.", en: "I wake up early every day.", altEs: ["Todos los días me despierto temprano."], grammar: [g.reflexive-verbs-present], vocab: [w.despertarse, w.temprano, w.todos-los-dias] }
+      - { es: "¿Te duchas por la mañana o por la noche?", en: "Do you shower in the morning or at night?", altEs: ["¿Tú te duchas por la mañana o por la noche?"], grammar: [g.reflexive-verbs-present], vocab: [w.ducharse, w.manana.noun, w.noche] }
       - { es: "Mi hermana se lava el pelo.", en: "My sister washes her hair.", grammar: [g.reflexive-verbs-present, g.articles-definite], vocab: [w.lavarse, w.pelo] }
-      - { es: "Nos lavamos las manos antes de comer.", en: "We wash our hands before eating.", grammar: [g.reflexive-verbs-present], vocab: [w.lavarse, w.mano, w.antes] }
-      - { es: "Los niños se lavan los dientes.", en: "The children brush their teeth.", grammar: [g.reflexive-verbs-present], vocab: [w.dientes] }
+      - { es: "Nos lavamos las manos antes de comer.", en: "We wash our hands before eating.", altEs: ["Antes de comer nos lavamos las manos."], grammar: [g.reflexive-verbs-present], vocab: [w.lavarse, w.mano, w.antes] }
+      - { es: "Los niños se lavan los dientes.", en: "The children brush their teeth.", altEs: ["Los niños se limpian los dientes."], grammar: [g.reflexive-verbs-present], vocab: [w.dientes] }
       - { es: "Me visto y salgo de casa a las ocho.", en: "I get dressed and leave the house at eight.", grammar: [g.reflexive-verbs-present, g.stem-changing-present], vocab: [w.vestirse, w.salir] }
-      - { es: "Llego al trabajo a las nueve.", en: "I arrive at work at nine.", grammar: [g.al-del-contractions], vocab: [w.llegar, w.trabajo] }
-      - { es: "Vuelvo a casa a las seis de la tarde.", en: "I come back home at six in the evening.", grammar: [g.stem-changing-present], vocab: [w.volver, w.tarde] }
-      - { es: "Me acuesto a las once y duermo ocho horas.", en: "I go to bed at eleven and sleep eight hours.", grammar: [g.reflexive-verbs-present, g.stem-changing-present], vocab: [w.acostarse, w.dormir, w.hora] }
-      - { es: "¿A qué hora te acuestas?", en: "What time do you go to bed?", grammar: [g.reflexive-verbs-present, g.time-telling], vocab: [w.acostarse, w.hora] }
+      - { es: "Llego al trabajo a las nueve.", en: "I arrive at work at nine.", altEs: ["Yo llego al trabajo a las nueve."], grammar: [g.al-del-contractions], vocab: [w.llegar, w.trabajo] }
+      - { es: "Vuelvo a casa a las seis de la tarde.", en: "I come back home at six in the evening.", altEs: ["Yo vuelvo a casa a las seis de la tarde."], grammar: [g.stem-changing-present], vocab: [w.volver, w.tarde] }
+      - { es: "Me acuesto a las once y duermo ocho horas.", en: "I go to bed at eleven and sleep eight hours.", altEs: ["Yo me acuesto a las once y duermo ocho horas."], grammar: [g.reflexive-verbs-present, g.stem-changing-present], vocab: [w.acostarse, w.dormir, w.hora] }
+      - { es: "¿A qué hora te acuestas?", en: "What time do you go to bed?", altEs: ["¿A qué hora te acuestas tú?"], grammar: [g.reflexive-verbs-present, g.time-telling], vocab: [w.acostarse, w.hora] }
       - { es: "Ella se levanta tarde los domingos.", en: "She gets up late on Sundays.", grammar: [g.reflexive-verbs-present], vocab: [w.levantarse, w.domingo, w.tarde], transform: { instruction: "Change to 'we'", answer: "Nos levantamos tarde los domingos.", alt: ["Nosotros nos levantamos tarde los domingos."] } }
       - { es: "Mis padres se acuestan temprano.", en: "My parents go to bed early.", grammar: [g.reflexive-verbs-present], vocab: [w.acostarse, w.temprano], error: { wrong: "Mis padres acuestan temprano.", explain: "acostarse is reflexive: se acuestan.", grammar: g.reflexive-verbs-present } }
+    exchanges:
+      - q: { es: "¿A qué hora te levantas?", en: "What time do you get up?" }
+        a: { es: "Me levanto a las siete.", en: "I get up at seven." }
+        alt: ["A las siete.", "Me levanto temprano, a las seis."]
+        grammar: [g.reflexive-verbs-present, g.time-telling]
+        vocab: [w.levantarse, w.hora]
+      - q: { es: "¿Te duchas por la mañana?", en: "Do you shower in the morning?" }
+        a: { es: "Sí, me ducho por la mañana y me visto.", en: "Yes, I shower in the morning and get dressed." }
+        alt: ["Sí, por la mañana.", "No, me ducho por la noche."]
+        grammar: [g.reflexive-verbs-present]
+        vocab: [w.ducharse, w.vestirse, w.manana.noun]
+      - q: { es: "¿A qué hora sales de casa?", en: "What time do you leave the house?" }
+        a: { es: "Salgo a las ocho y llego al trabajo a las nueve.", en: "I leave at eight and get to work at nine." }
+        alt: ["A las ocho.", "Salgo a las ocho."]
+        grammar: [g.regular-er-ir-present, g.al-del-contractions]
+        vocab: [w.salir, w.llegar]
+      - q: { es: "¿Cuántas horas duermes?", en: "How many hours do you sleep?" }
+        a: { es: "Duermo ocho horas.", en: "I sleep eight hours." }
+        alt: ["Ocho horas.", "Duermo poco, seis horas."]
+        grammar: [g.stem-changing-present]
+        vocab: [w.dormir, w.hora]
+      - q: { es: "¿Te acuestas tarde?", en: "Do you go to bed late?" }
+        a: { es: "No, me acuesto a las once.", en: "No, I go to bed at eleven." }
+        alt: ["Sí, me acuesto muy tarde.", "No, temprano."]
+        grammar: [g.reflexive-verbs-present]
+        vocab: [w.acostarse, w.tarde, w.temprano]
+    texts:
+      - title: "Mi mañana"
+        es: ["Me despierto a las siete y me levanto a las siete y cuarto.", "Me ducho, me visto y desayuno.", "Salgo de casa a las ocho."]
+        en: ["I wake up at seven and get up at a quarter past seven.", "I shower, get dressed and have breakfast.", "I leave the house at eight."]
+        grammar: [g.reflexive-verbs-present]
+        vocab: [w.despertarse, w.levantarse, w.ducharse, w.vestirse]
+      - title: "Mensaje de Carmen"
+        es: ["Hola, Ana. Hoy vuelvo a casa a las seis.", "Los niños se acuestan a las nueve.", "Yo me acuesto a las once."]
+        en: ["Hi, Ana. Today I'm getting home at six.", "The children go to bed at nine.", "I go to bed at eleven."]
+        grammar: [g.reflexive-verbs-present, g.stem-changing-present]
+        vocab: [w.volver, w.acostarse]
   - id: a1.u06.l2
     title: ¿Qué hora es?
     teach: [g.time-telling]
@@ -26,54 +63,165 @@ lessons:
     sentences:
       - { es: "¿Qué hora es?", en: "What time is it?", grammar: [g.time-telling], vocab: [w.hora] }
       - { es: "Es la una.", en: "It is one o'clock.", grammar: [g.time-telling], vocab: [w.uno] }
-      - { es: "Son las dos y media.", en: "It is half past two.", grammar: [g.time-telling], vocab: [w.dos, w.media] }
-      - { es: "Son las ocho y cuarto de la mañana.", en: "It is a quarter past eight in the morning.", grammar: [g.time-telling], vocab: [w.ocho, w.cuarto, w.manana.noun] }
-      - { es: "Son las cinco menos cuarto.", en: "It is a quarter to five.", grammar: [g.time-telling], vocab: [w.cinco, w.menos, w.cuarto] }
+      - { es: "Son las dos y media.", en: "It is half past two.", altEs: ["Son las dos y treinta."], grammar: [g.time-telling], vocab: [w.dos, w.media] }
+      - { es: "Son las ocho y cuarto de la mañana.", en: "It is a quarter past eight in the morning.", altEs: ["Son las ocho y quince de la mañana."], grammar: [g.time-telling], vocab: [w.ocho, w.cuarto, w.manana.noun] }
+      - { es: "Son las cinco menos cuarto.", en: "It is a quarter to five.", altEs: ["Son las cuatro y cuarenta y cinco."], grammar: [g.time-telling], vocab: [w.cinco, w.menos, w.cuarto] }
       - { es: "Son las diez en punto.", en: "It is ten o'clock exactly.", grammar: [g.time-telling], vocab: [w.diez, w.en-punto] }
-      - { es: "Son las siete y veinte de la tarde.", en: "It is twenty past seven in the evening.", grammar: [g.time-telling], vocab: [w.siete, w.veinte, w.tarde] }
-      - { es: "La clase es a las nueve y diez.", en: "The class is at ten past nine.", grammar: [g.time-telling], vocab: [w.clase, w.nueve, w.diez] }
-      - { es: "Como a mediodía.", en: "I have lunch at noon.", grammar: [g.time-telling], vocab: [w.mediodia, w.comer] }
-      - { es: "Trabajo desde las nueve hasta las cinco.", en: "I work from nine until five.", grammar: [g.prepositions-movement], vocab: [w.desde, w.hasta, w.trabajar] }
+      - { es: "Son las siete y veinte de la tarde.", en: "It is twenty past seven in the evening.", altEs: ["Son las siete y veinte de la noche."], grammar: [g.time-telling], vocab: [w.siete, w.veinte, w.tarde] }
+      - { es: "La clase es a las nueve y diez.", en: "The class is at ten past nine.", altEs: ["La clase empieza a las nueve y diez."], grammar: [g.time-telling], vocab: [w.clase, w.nueve, w.diez] }
+      - { es: "Como a mediodía.", en: "I have lunch at noon.", altEs: ["Yo como a mediodía.", "Como a las doce."], grammar: [g.time-telling], vocab: [w.mediodia, w.comer] }
+      - { es: "Trabajo desde las nueve hasta las cinco.", en: "I work from nine until five.", altEs: ["Trabajo de nueve a cinco."], grammar: [g.prepositions-movement], vocab: [w.desde, w.hasta, w.trabajar] }
       - { es: "Mi reloj es nuevo.", en: "My watch is new.", grammar: [g.possessives], vocab: [w.reloj, w.nuevo] }
-      - { es: "El tren sale en diez minutos.", en: "The train leaves in ten minutes.", grammar: [g.stem-changing-present], vocab: [w.minuto, w.salir, w.tren] }
-      - { es: "Por la noche veo la televisión.", en: "At night I watch television.", grammar: [g.time-telling], vocab: [w.por, w.noche, w.ver], error: { wrong: "En la noche veo la televisión.", explain: "In Spain parts of the day take por: por la noche.", grammar: g.time-telling } }
+      - { es: "El tren sale en diez minutos.", en: "The train leaves in ten minutes.", altEs: ["El tren sale dentro de diez minutos."], grammar: [g.stem-changing-present], vocab: [w.minuto, w.salir, w.tren] }
+      - { es: "Por la noche veo la televisión.", en: "At night I watch television.", altEs: ["Veo la televisión por la noche."], grammar: [g.time-telling], vocab: [w.por, w.noche, w.ver], error: { wrong: "En la noche veo la televisión.", explain: "In Spain parts of the day take por: por la noche.", grammar: g.time-telling } }
+    exchanges:
+      - q: { es: "¿Qué hora es?", en: "What time is it?" }
+        a: { es: "Son las tres y media.", en: "It's half past three." }
+        alt: ["Las tres y media.", "Son las tres."]
+        grammar: [g.time-telling]
+        vocab: [w.hora, w.media, w.tres]
+      - q: { es: "¿A qué hora es la clase?", en: "What time is the class?" }
+        a: { es: "Es a las nueve y cuarto.", en: "It's at a quarter past nine." }
+        alt: ["A las nueve y cuarto.", "A las nueve."]
+        grammar: [g.time-telling]
+        vocab: [w.clase, w.cuarto]
+      - q: { es: "¿A qué hora sale el tren?", en: "What time does the train leave?" }
+        a: { es: "Sale a las cinco menos cuarto.", en: "It leaves at a quarter to five." }
+        alt: ["A las cinco menos cuarto.", "A las cinco."]
+        grammar: [g.time-telling]
+        vocab: [w.salir, w.menos, w.tren]
+      - q: { es: "¿Comes a mediodía?", en: "Do you have lunch at noon?" }
+        a: { es: "No, como a las dos.", en: "No, I have lunch at two." }
+        alt: ["Sí, a las doce.", "No, a las dos."]
+        grammar: [g.time-telling]
+        vocab: [w.mediodia, w.comer]
+      - q: { es: "¿Hasta qué hora trabajas?", en: "Until what time do you work?" }
+        a: { es: "Trabajo desde las nueve hasta las cinco.", en: "I work from nine until five." }
+        alt: ["Hasta las cinco.", "Hasta las seis."]
+        grammar: [g.prepositions-movement, g.time-telling]
+        vocab: [w.hasta, w.desde, w.trabajar]
+    texts:
+      - title: "Nota"
+        es: ["La clase de español es a las diez en punto.", "La comida es a las dos y media.", "Por la tarde, el museo abre desde las cuatro hasta las ocho."]
+        en: ["The Spanish class is at ten o'clock sharp.", "Lunch is at half past two.", "In the afternoon, the museum is open from four until eight."]
+        grammar: [g.time-telling]
+        vocab: [w.en-punto, w.media, w.desde, w.hasta]
+      - title: "Mensaje"
+        es: ["Son las ocho y veinte y el tren sale a las ocho y media.", "Llego a las nueve menos cuarto.", "Estoy en la estación a las nueve."]
+        en: ["It's twenty past eight and the train leaves at half past eight.", "I arrive at a quarter to nine.", "I'm at the station at nine."]
+        grammar: [g.time-telling]
+        vocab: [w.tren, w.llegar, w.estacion]
   - id: a1.u06.l3
     title: Días y meses
     teach: [g.days-months]
     vocab: [w.dia, w.semana, w.mes, w.fin-de-semana, w.lunes, w.martes, w.miercoles, w.jueves, w.viernes, w.sabado, w.domingo, w.enero, w.febrero, w.marzo, w.abril, w.mayo, w.junio, w.julio, w.agosto, w.septiembre, w.octubre, w.noviembre, w.diciembre]
     sentences:
       - { es: "Lunes, martes, miércoles, jueves, viernes.", en: "Monday, Tuesday, Wednesday, Thursday, Friday.", grammar: [g.days-months], vocab: [w.lunes, w.martes, w.miercoles, w.jueves, w.viernes], kinds: [dictation, listen, typeEs, order] }
-      - { es: "El sábado y el domingo son el fin de semana.", en: "Saturday and Sunday are the weekend.", grammar: [g.days-months], vocab: [w.sabado, w.domingo, w.fin-de-semana] }
-      - { es: "Hoy es martes.", en: "Today is Tuesday.", grammar: [g.days-months], vocab: [w.hoy, w.martes] }
-      - { es: "El lunes tengo clase de español.", en: "On Monday I have Spanish class.", grammar: [g.days-months, g.articles-definite], vocab: [w.lunes, w.clase] }
-      - { es: "Los viernes salgo con mis amigos.", en: "On Fridays I go out with my friends.", grammar: [g.days-months], vocab: [w.viernes, w.salir, w.amigo] }
+      - { es: "El sábado y el domingo son el fin de semana.", en: "Saturday and Sunday are the weekend.", altEs: ["Sábado y domingo son el fin de semana."], grammar: [g.days-months], vocab: [w.sabado, w.domingo, w.fin-de-semana] }
+      - { es: "Hoy es martes.", en: "Today is Tuesday.", altEs: ["Hoy estamos a martes."], grammar: [g.days-months], vocab: [w.hoy, w.martes] }
+      - { es: "El lunes tengo clase de español.", en: "On Monday I have Spanish class.", altEs: ["Tengo clase de español el lunes."], grammar: [g.days-months, g.articles-definite], vocab: [w.lunes, w.clase] }
+      - { es: "Los viernes salgo con mis amigos.", en: "On Fridays I go out with my friends.", altEs: ["Salgo con mis amigos los viernes."], grammar: [g.days-months], vocab: [w.viernes, w.salir, w.amigo] }
       - { es: "Enero, febrero, marzo, abril.", en: "January, February, March, April.", grammar: [g.days-months], vocab: [w.enero, w.febrero, w.marzo, w.abril], kinds: [dictation, listen, typeEs, order] }
       - { es: "Mayo, junio, julio, agosto.", en: "May, June, July, August.", grammar: [g.days-months], vocab: [w.mayo, w.junio, w.julio, w.agosto], kinds: [dictation, listen, typeEs, order] }
       - { es: "Septiembre, octubre, noviembre, diciembre.", en: "September, October, November, December.", grammar: [g.days-months], vocab: [w.septiembre, w.octubre, w.noviembre, w.diciembre], kinds: [dictation, listen, typeEs, order] }
-      - { es: "Mi cumpleaños es el doce de octubre.", en: "My birthday is on the twelfth of October.", grammar: [g.days-months], vocab: [w.cumpleanos, w.octubre, w.doce] }
-      - { es: "En agosto no trabajo.", en: "In August I don't work.", grammar: [g.days-months, g.negation], vocab: [w.agosto, w.trabajar] }
-      - { es: "Una semana tiene siete días.", en: "A week has seven days.", grammar: [g.tener-present], vocab: [w.semana, w.dia, w.siete] }
-      - { es: "Un año tiene doce meses.", en: "A year has twelve months.", grammar: [g.tener-present], vocab: [w.ano, w.mes, w.doce] }
+      - { es: "Mi cumpleaños es el doce de octubre.", en: "My birthday is on the twelfth of October.", altEs: ["Mi cumpleaños es el día doce de octubre."], grammar: [g.days-months], vocab: [w.cumpleanos, w.octubre, w.doce] }
+      - { es: "En agosto no trabajo.", en: "In August I don't work.", altEs: ["No trabajo en agosto."], grammar: [g.days-months, g.negation], vocab: [w.agosto, w.trabajar] }
+      - { es: "Una semana tiene siete días.", en: "A week has seven days.", altEs: ["La semana tiene siete días."], grammar: [g.tener-present], vocab: [w.semana, w.dia, w.siete] }
+      - { es: "Un año tiene doce meses.", en: "A year has twelve months.", altEs: ["El año tiene doce meses."], grammar: [g.tener-present], vocab: [w.ano, w.mes, w.doce] }
       - { es: "¿Qué día es hoy? Hoy es jueves, tres de mayo.", en: "What day is it today? Today is Thursday the third of May.", grammar: [g.days-months, g.question-words], vocab: [w.dia, w.jueves, w.mayo] }
+    exchanges:
+      - q: { es: "¿Qué día es hoy?", en: "What day is it today?" }
+        a: { es: "Hoy es martes.", en: "Today is Tuesday." }
+        alt: ["Martes.", "Es martes."]
+        grammar: [g.days-months]
+        vocab: [w.dia, w.martes, w.hoy]
+      - q: { es: "¿Cuándo es tu cumpleaños?", en: "When is your birthday?" }
+        a: { es: "Es el doce de octubre.", en: "It's the twelfth of October." }
+        alt: ["El doce de octubre.", "En octubre."]
+        grammar: [g.days-months]
+        vocab: [w.cumpleanos, w.octubre, w.doce]
+      - q: { es: "¿Trabajas el fin de semana?", en: "Do you work at the weekend?" }
+        a: { es: "No, el sábado y el domingo no trabajo.", en: "No, I don't work on Saturday and Sunday." }
+        alt: ["No, nunca.", "Sí, trabajo el sábado."]
+        grammar: [g.days-months, g.negation]
+        vocab: [w.fin-de-semana, w.sabado, w.domingo]
+      - q: { es: "¿Cuándo tienes clase de español?", en: "When do you have Spanish class?" }
+        a: { es: "Los lunes y los miércoles.", en: "On Mondays and Wednesdays." }
+        alt: ["El lunes.", "Tengo clase los lunes."]
+        grammar: [g.days-months, g.articles-definite]
+        vocab: [w.lunes, w.miercoles, w.clase]
+      - q: { es: "¿Trabajas en agosto?", en: "Do you work in August?" }
+        a: { es: "No, en agosto no trabajo.", en: "No, I don't work in August." }
+        alt: ["No, nunca trabajo en agosto.", "Sí, trabajo en agosto."]
+        grammar: [g.days-months, g.negation]
+        vocab: [w.agosto, w.trabajar]
+    texts:
+      - title: "Nota"
+        es: ["Hoy es lunes, tres de marzo.", "El viernes es el cumpleaños de Ana.", "El sábado hay una cena en casa de Pedro."]
+        en: ["Today is Monday the third of March.", "Friday is Ana's birthday.", "On Saturday there's a dinner at Pedro's house."]
+        grammar: [g.days-months, g.hay]
+        vocab: [w.lunes, w.marzo, w.viernes, w.sabado]
+      - title: "Mensaje de Yuki"
+        es: ["En julio y agosto no tengo clase.", "En septiembre empiezo a trabajar.", "Vuelvo a Japón en diciembre."]
+        en: ["In July and August I don't have class.", "In September I start work.", "I go back to Japan in December."]
+        grammar: [g.days-months]
+        vocab: [w.julio, w.agosto, w.septiembre, w.diciembre]
   - id: a1.u06.l4
     title: Siempre, a veces, nunca
     teach: [g.frequency-adverbs]
     vocab: [w.empezar, w.terminar, w.leer, w.escribir, w.escuchar, w.ver, w.aprender, w.abrir, w.cerrar, w.limpiar, w.descansar, w.temprano, w.siempre, w.nunca, w.a-veces, w.normalmente, w.a-menudo, w.casi, w.todos-los-dias, w.vez, w.despues, w.antes, w.luego, w.primero, w.clase, w.oficina, w.gimnasio, w.deberes, w.musica, w.periodico]
     sentences:
-      - { es: "Siempre desayuno en casa.", en: "I always have breakfast at home.", grammar: [g.frequency-adverbs], vocab: [w.siempre, w.desayunar] }
+      - { es: "Siempre desayuno en casa.", en: "I always have breakfast at home.", altEs: ["Desayuno siempre en casa.", "Yo siempre desayuno en casa."], grammar: [g.frequency-adverbs], vocab: [w.siempre, w.desayunar] }
       - { es: "Nunca como carne.", en: "I never eat meat.", altEs: ["No como carne nunca."], grammar: [g.frequency-adverbs, g.negation], vocab: [w.nunca, w.carne], error: { wrong: "Siempre no como carne.", explain: "'Never' is nunca, not siempre no.", grammar: g.frequency-adverbs } }
-      - { es: "A veces leo el periódico por la mañana.", en: "Sometimes I read the newspaper in the morning.", grammar: [g.frequency-adverbs, g.regular-er-ir-present], vocab: [w.a-veces, w.leer, w.periodico] }
-      - { es: "Normalmente escucho música en el tren.", en: "I normally listen to music on the train.", grammar: [g.frequency-adverbs], vocab: [w.normalmente, w.escuchar, w.musica] }
-      - { es: "Voy al gimnasio dos veces a la semana.", en: "I go to the gym twice a week.", grammar: [g.frequency-adverbs, g.ir-present], vocab: [w.gimnasio, w.vez, w.semana] }
-      - { es: "Casi nunca veo la televisión.", en: "I hardly ever watch television.", grammar: [g.frequency-adverbs], vocab: [w.casi, w.nunca, w.ver, w.television] }
-      - { es: "La clase empieza a las nueve y termina a las once.", en: "The class starts at nine and finishes at eleven.", grammar: [g.stem-changing-present], vocab: [w.empezar, w.terminar, w.clase] }
+      - { es: "A veces leo el periódico por la mañana.", en: "Sometimes I read the newspaper in the morning.", altEs: ["Por la mañana a veces leo el periódico."], grammar: [g.frequency-adverbs, g.regular-er-ir-present], vocab: [w.a-veces, w.leer, w.periodico] }
+      - { es: "Normalmente escucho música en el tren.", en: "I normally listen to music on the train.", altEs: ["En el tren normalmente escucho música."], grammar: [g.frequency-adverbs], vocab: [w.normalmente, w.escuchar, w.musica] }
+      - { es: "Voy al gimnasio dos veces a la semana.", en: "I go to the gym twice a week.", altEs: ["Voy al gimnasio dos veces por semana."], grammar: [g.frequency-adverbs, g.ir-present], vocab: [w.gimnasio, w.vez, w.semana] }
+      - { es: "Casi nunca veo la televisión.", en: "I hardly ever watch television.", altEs: ["No veo la televisión casi nunca."], grammar: [g.frequency-adverbs], vocab: [w.casi, w.nunca, w.ver, w.television] }
+      - { es: "La clase empieza a las nueve y termina a las once.", en: "The class starts at nine and finishes at eleven.", altEs: ["La clase es de nueve a once."], grammar: [g.stem-changing-present], vocab: [w.empezar, w.terminar, w.clase] }
       - { es: "Primero hago los deberes y luego descanso.", en: "First I do my homework and then I rest.", grammar: [g.connectors-basic], vocab: [w.primero, w.deberes, w.luego, w.descansar] }
       - { es: "Después de cenar escribo mensajes a mis amigos.", en: "After dinner I write messages to my friends.", grammar: [g.regular-er-ir-present], vocab: [w.despues, w.escribir, w.cenar] }
-      - { es: "Aprendo español todos los días.", en: "I learn Spanish every day.", grammar: [g.frequency-adverbs], vocab: [w.aprender, w.todos-los-dias] }
+      - { es: "Aprendo español todos los días.", en: "I learn Spanish every day.", altEs: ["Todos los días aprendo español.", "Estudio español todos los días."], grammar: [g.frequency-adverbs], vocab: [w.aprender, w.todos-los-dias] }
       - { es: "La tienda abre a las diez y cierra a las ocho.", en: "The shop opens at ten and closes at eight.", grammar: [g.stem-changing-present], vocab: [w.abrir, w.cerrar, w.tienda] }
-      - { es: "Limpio la casa los sábados.", en: "I clean the house on Saturdays.", grammar: [g.days-months], vocab: [w.limpiar, w.sabado] }
-      - { es: "A menudo trabajo en la oficina hasta tarde.", en: "I often work at the office until late.", grammar: [g.frequency-adverbs], vocab: [w.a-menudo, w.oficina, w.hasta, w.tarde] }
+      - { es: "Limpio la casa los sábados.", en: "I clean the house on Saturdays.", altEs: ["Los sábados limpio la casa."], grammar: [g.days-months], vocab: [w.limpiar, w.sabado] }
+      - { es: "A menudo trabajo en la oficina hasta tarde.", en: "I often work at the office until late.", altEs: ["A menudo trabajo hasta tarde en la oficina."], grammar: [g.frequency-adverbs], vocab: [w.a-menudo, w.oficina, w.hasta, w.tarde] }
       - { es: "Antes de dormir leo un poco.", en: "Before sleeping I read a little.", grammar: [g.frequency-adverbs], vocab: [w.antes, w.dormir, w.leer], transform: { instruction: "Change to 'she'", answer: "Antes de dormir lee un poco.", alt: ["Antes de dormir ella lee un poco."] } }
+    exchanges:
+      - q: { es: "¿Desayunas en casa?", en: "Do you have breakfast at home?" }
+        a: { es: "Sí, siempre desayuno en casa.", en: "Yes, I always have breakfast at home." }
+        alt: ["Sí, siempre.", "No, nunca."]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.siempre, w.desayunar, w.nunca]
+      - q: { es: "¿Lees el periódico?", en: "Do you read the newspaper?" }
+        a: { es: "A veces, por la mañana.", en: "Sometimes, in the morning." }
+        alt: ["Sí, todos los días.", "No, nunca leo el periódico."]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.leer, w.periodico, w.a-veces]
+      - q: { es: "¿Vas al gimnasio?", en: "Do you go to the gym?" }
+        a: { es: "Sí, dos veces a la semana.", en: "Yes, twice a week." }
+        alt: ["Sí, a menudo.", "No, casi nunca."]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.gimnasio, w.vez, w.a-menudo, w.casi]
+      - q: { es: "¿A qué hora empieza la clase?", en: "What time does the class start?" }
+        a: { es: "Empieza a las nueve y termina a las once.", en: "It starts at nine and finishes at eleven." }
+        alt: ["A las nueve.", "Empieza a las nueve."]
+        grammar: [g.stem-changing-present, g.time-telling]
+        vocab: [w.empezar, w.terminar, w.clase]
+      - q: { es: "¿Ves la televisión por la noche?", en: "Do you watch television at night?" }
+        a: { es: "Casi nunca. Normalmente leo un poco.", en: "Hardly ever. I normally read a little." }
+        alt: ["Sí, a veces.", "No, nunca."]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.casi, w.nunca, w.normalmente, w.ver]
+    texts:
+      - title: "Mi semana"
+        es: ["Siempre me levanto temprano.", "Normalmente trabajo en la oficina, pero los viernes trabajo en casa.", "Limpio la casa los sábados y descanso los domingos."]
+        en: ["I always get up early.", "I normally work at the office, but on Fridays I work at home.", "I clean the house on Saturdays and rest on Sundays."]
+        grammar: [g.frequency-adverbs, g.days-months]
+        vocab: [w.siempre, w.normalmente, w.oficina, w.limpiar, w.descansar]
+      - title: "Mensaje"
+        es: ["Después de clase hago los deberes.", "Luego escucho música o leo.", "Nunca veo la televisión antes de dormir."]
+        en: ["After class I do my homework.", "Then I listen to music or read.", "I never watch television before sleeping."]
+        grammar: [g.frequency-adverbs, g.connectors-basic]
+        vocab: [w.despues, w.deberes, w.luego, w.escuchar, w.musica]
 dialogues:
   - id: a1.u06.d1
     title: Un día normal

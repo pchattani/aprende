@@ -3,7 +3,7 @@
  * tables with the engine's rules (FSRS scheduling, ladder, minutes and active days).
  */
 import { db, SCHEMA_VERSION } from './index'
-import type { CardRow, ReviewRow, LessonRow, DayRow, ItemKind, LessonResult, ReadingRow, ExamRow } from '../engine/types'
+import type { CardRow, ReviewRow, LessonRow, DayRow, ItemKind, LessonResult, ReadingRow, ExamRow, QuestRow, SouvenirRow } from '../engine/types'
 import { newCard, review as applyReview, gradeFor } from '../engine/srs'
 import { todayKey, streakFrom } from '../engine/mastery'
 import type { ExerciseKind, LevelId } from '../engine/schema'
@@ -52,6 +52,7 @@ export async function recordAnswer(cardId: string, verdict: 'correct' | 'almost'
 export async function bumpDay(date: string, delta: Partial<Omit<DayRow, 'date'>>): Promise<void> {
   const row = (await db.days.get(date)) ?? { date, xp: 0, reviews: 0, lessons: 0, newItems: 0, minutes: 0 }
   row.xp += delta.xp ?? 0
+  row.perfect = (row.perfect ?? 0) + (delta.perfect ?? 0)
   row.reviews += delta.reviews ?? 0
   row.lessons += delta.lessons ?? 0
   row.newItems += delta.newItems ?? 0
@@ -74,7 +75,7 @@ export async function recordLesson(result: LessonResult, unitId: string, level: 
   }
   await db.transaction('rw', db.lessons, db.days, async () => {
     await db.lessons.put(row)
-    await bumpDay(todayKey(now), { lessons: result.completed ? 1 : 0, minutes: Math.round(result.durationMs / 60000) })
+    await bumpDay(todayKey(now), { lessons: result.completed ? 1 : 0, perfect: result.completed && result.wrong === 0 ? 1 : 0, minutes: Math.round(result.durationMs / 60000) })
   })
   return row
 }
@@ -157,6 +158,8 @@ export interface Backup {
   reading: ReadingRow[]
   exams: ExamRow[]
   kv: { key: string; value: unknown }[]
+  quests?: QuestRow[]
+  souvenirs?: SouvenirRow[]
 }
 
 export async function exportAll(): Promise<Backup> {
@@ -164,13 +167,14 @@ export async function exportAll(): Promise<Backup> {
     app: 'aprende', schema: SCHEMA_VERSION, exportedAt: new Date().toISOString(),
     cards: await db.cards.toArray(), reviews: await db.reviews.toArray(), lessons: await db.lessons.toArray(),
     days: await db.days.toArray(), reading: await db.reading.toArray(), exams: await db.exams.toArray(), kv: await db.kv.toArray(),
+    quests: await db.quests.toArray(), souvenirs: await db.souvenirs.toArray(),
   }
 }
 
 export async function importAll(b: Backup): Promise<void> {
   if (b.app !== 'aprende' || !Array.isArray(b.cards)) throw new Error('Not an Aprende backup file')
-  await db.transaction('rw', [db.cards, db.reviews, db.lessons, db.days, db.reading, db.exams, db.kv], async () => {
-    await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear()])
+  await db.transaction('rw', [db.cards, db.reviews, db.lessons, db.days, db.reading, db.exams, db.kv, db.quests, db.souvenirs], async () => {
+    await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear(), db.quests.clear(), db.souvenirs.clear()])
     await db.cards.bulkAdd(b.cards)
     await db.reviews.bulkAdd(b.reviews.map(({ id: _id, ...r }) => r) as ReviewRow[])
     await db.lessons.bulkAdd(b.lessons)
@@ -178,12 +182,14 @@ export async function importAll(b: Backup): Promise<void> {
     await db.reading.bulkAdd(b.reading ?? [])
     await db.exams.bulkAdd(b.exams ?? [])
     await db.kv.bulkAdd(b.kv ?? [])
+    await db.quests.bulkAdd(b.quests ?? [])
+    await db.souvenirs.bulkAdd(b.souvenirs ?? [])
   })
 }
 
 export async function resetAll(): Promise<void> {
-  await db.transaction('rw', [db.cards, db.reviews, db.lessons, db.days, db.reading, db.exams, db.kv], async () => {
-    await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear()])
+  await db.transaction('rw', [db.cards, db.reviews, db.lessons, db.days, db.reading, db.exams, db.kv, db.quests, db.souvenirs], async () => {
+    await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear(), db.quests.clear(), db.souvenirs.clear()])
   })
 }
 
@@ -191,4 +197,22 @@ export async function resetAll(): Promise<void> {
 export async function chooseStartLevel(level: LevelId): Promise<void> {
   await setKv('startLevel', level)
   await setKv('onboarded', true)
+}
+
+// ---- quests and souvenirs
+export async function ownedSouvenirs(): Promise<Set<string>> {
+  return new Set((await db.souvenirs.toArray()).map((s) => s.id))
+}
+export async function awardSouvenir(id: string, source: string, lessonId?: string, now = Date.now()): Promise<boolean> {
+  if (await db.souvenirs.get(id)) return false
+  await db.souvenirs.add({ id, ts: now, source, lessonId })
+  return true
+}
+export async function questRows(date: string): Promise<Map<string, QuestRow>> {
+  return new Map((await db.quests.where('date').equals(date).toArray()).map((q) => [q.questId, q]))
+}
+export async function claimQuest(date: string, questId: string, rewardId: string | undefined, now = Date.now()): Promise<void> {
+  const id = `${date}:${questId}`
+  await db.quests.put({ id, date, questId, claimedAt: now, rewardId })
+  if (rewardId) await awardSouvenir(rewardId, 'quest', undefined, now)
 }

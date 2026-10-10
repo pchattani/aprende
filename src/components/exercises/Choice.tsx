@@ -7,11 +7,12 @@ const TITLES: Record<ChoiceExercise['kind'], string> = {
   choiceEn: 'Which is the Spanish?',
   listen: 'What did you hear?',
   fillBlank: 'Fill in the blank',
+  reply: 'How would you reply?',
 }
 
 export function Choice({ exercise, value, onChange, checked, result }: ExerciseProps<ChoiceExercise>) {
   const selected = typeof value === 'number' ? value : undefined
-  const isEs = exercise.kind === 'choiceEs' || exercise.kind === 'fillBlank'
+  const isEs = exercise.kind === 'choiceEs' || exercise.kind === 'fillBlank' || exercise.kind === 'reply'
   return (
     <div>
       <Instruction>{TITLES[exercise.kind]}</Instruction>
@@ -42,7 +43,7 @@ export function Choice({ exercise, value, onChange, checked, result }: ExerciseP
               disabled={checked}
               onClick={() => onChange(i)}
               className={`tile flex items-center gap-3 ${cls}`}
-              lang={isEs && exercise.kind === 'fillBlank' ? 'es' : isEs ? 'en' : 'es'}
+              lang={exercise.kind === 'fillBlank' || exercise.kind === 'reply' ? 'es' : isEs ? 'en' : 'es'}
             >
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 border-line text-xs text-muted">{i + 1}</span>
               <span>{opt}</span>
@@ -50,7 +51,7 @@ export function Choice({ exercise, value, onChange, checked, result }: ExerciseP
           )
         })}
       </div>
-      {checked && result && exercise.translation && exercise.kind === 'fillBlank' && <p className="mt-3 text-sm text-muted">{exercise.translation}</p>}
+      {checked && result && exercise.translation && (exercise.kind === 'fillBlank' || exercise.kind === 'reply') && <p className="mt-3 text-sm text-muted">{exercise.translation}</p>}
     </div>
   )
 }

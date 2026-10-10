@@ -109,5 +109,5 @@ export async function openPath(page: Page) {
   await page.goto('/')
   // Every test runs in a fresh browser context, so the first launch always redirects to the welcome screen.
   await page.getByRole('button', { name: /I'm new to Spanish/ }).click()
-  await expect(page.getByRole('heading', { name: 'A1' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
 }
