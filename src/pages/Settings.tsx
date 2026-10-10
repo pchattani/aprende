@@ -55,7 +55,7 @@ export default function Settings() {
       </Section>
       <Section title="Sound and voice">
         <Toggle label="Sounds" hint="Feedback sounds and audio." checked={s.sound} onChange={s.setSound} />
-        <Range label={`Speech rate: ${s.ttsRate.toFixed(2)}×`} min={0.5} max={1.3} step={0.05} value={s.ttsRate} onChange={s.setTtsRate} />
+        <Range label={`Speech rate: ${s.ttsRate.toFixed(2)}× · slow button ${Math.max(0.3, s.ttsRate * 0.5).toFixed(2)}×`} min={0.4} max={1.3} step={0.05} value={s.ttsRate} onChange={s.setTtsRate} />
         {ttsSupported() ? (
           <>
             <Select label="Voice" value={s.voiceURI ?? ''} onChange={(v) => s.setVoice(v || undefined)} options={[['', 'Automatic (best es-ES voice)'], ...voices.map((v) => [v.voiceURI, `${v.name} (${v.lang})${v.localService ? '' : ' · online'}`] as [string, string])]} />

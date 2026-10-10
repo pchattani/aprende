@@ -153,7 +153,7 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
           </div>
         </div>
       )}
-      {s.result && <Feedback exercise={ex} result={s.result} last={s.index + 1 >= total} onContinue={() => dispatch({ type: 'next' })} />}
+      {s.result && <Feedback exercise={ex} result={s.result} answer={s.answer} last={s.index + 1 >= total} onContinue={() => dispatch({ type: 'next' })} />}
       {confirmQuit && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true">
           <div className="card w-full max-w-sm">

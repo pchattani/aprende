@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 import { vocab, errorRules, spanishSynonymGroups, englishSynonymGroups } from '../engine/loader'
-import { buildEquivalence, canonicalize } from '../lang/equivalence'
+import { buildEquivalence, compareEquivalent } from '../lang/equivalence'
 import { IRREGULAR } from '../lang/es/verbs'
-import { buildDictionary, type Dictionary } from '../lang/es/inflect'
+import { buildDictionary, lookup, type Dictionary } from '../lang/es/inflect'
 import { check } from '../lang/es/checker'
 import { spanish } from '../lang/es'
 import type { GradeDeps } from '../engine/grade'
@@ -20,15 +20,18 @@ export function checkText(text: string) {
 
 let eqEs: ReturnType<typeof buildEquivalence> | undefined
 let eqEn: ReturnType<typeof buildEquivalence> | undefined
-export function canonEs(text: string): string {
+export function equivEs(given: string, expected: string) {
   if (!eqEs) eqEs = buildEquivalence(spanishSynonymGroups())
-  return canonicalize(text, eqEs, 'es')
+  return compareEquivalent(given, expected, eqEs, 'es')
 }
-export function canonEn(text: string): string {
+export function equivEn(given: string, expected: string) {
   if (!eqEn) eqEn = buildEquivalence(englishSynonymGroups)
-  return canonicalize(text, eqEn, 'en')
+  return compareEquivalent(given, expected, eqEn, 'en')
+}
+export function isWord(w: string): boolean {
+  return Boolean(lookup(getDictionary(), w.toLowerCase()))
 }
 
 export function useGradeDeps(): GradeDeps {
-  return useMemo(() => ({ pack: spanish, check: checkText, canonEs, canonEn }), [])
+  return useMemo(() => ({ pack: spanish, check: checkText, equivEs, equivEn, isWord }), [])
 }

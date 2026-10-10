@@ -47,7 +47,14 @@ export default function LessonPage() {
         const cards = await getCards(items.map((i) => i.id))
         const stageOf = (itemId: string): Stage | undefined => cards.get(itemId)?.stage
         const seen = [...cards.values()].some((c) => c.reps > 0)
-        const exercises = generateLesson(lesson, { vocab, pool: vocabUpTo(level), verbs: IRREGULAR, stageOf, speech: speechOn && sttSupported() }, { count: 14 })
+        // Extra material: the unit's dialogue lines and sentences from the lessons before this one.
+        const lessonIdx = unit.lessons.findIndex((l) => l.id === lesson.id)
+        const extra = [
+          ...unit.dialogues.flatMap((d) => d.lines.map((ln, i) => ({ s: { es: ln.es, en: ln.en, altEs: [], altEn: [], grammar: [], vocab: [] }, id: `d.${d.id}.${i + 1}` }))),
+          ...unit.lessons.slice(0, Math.max(0, lessonIdx)).flatMap((l) => l.sentences.map((st, i) => ({ s: st, id: sentenceId(l.id, i, st) }))),
+        ].filter((x) => x.s.es.split(' ').length <= 16)
+        const seenOf = (itemId: string) => cards.get(itemId)?.reps ?? 0
+        const exercises = generateLesson(lesson, { vocab, pool: vocabUpTo(level), verbs: IRREGULAR, stageOf, seenOf, speech: speechOn && sttSupported() }, { count: 15, extra })
         if (!alive) return
         setPhase(lesson.teach.length && !seen ? { kind: 'teach', unit, lesson, exercises } : { kind: 'run', unit, lesson, exercises })
       } catch (e) {

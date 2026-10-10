@@ -19,12 +19,16 @@ export interface GenContext {
   stageOf: (id: string) => Stage | undefined
   /** Speech recognition available -> allow 'speak' exercises. */
   speech: boolean
+  /** How many times an item has been reviewed (0 = never); used to vary repeat sessions. */
+  seenOf?: (id: string) => number
 }
 
 export interface GenOptions {
   seed?: number
   /** Target number of exercises. */
   count?: number
+  /** Extra sentences to draw on when the lesson's own run out (unit dialogue lines, earlier lessons). Never typed, only heard or read. */
+  extra?: { s: Sentence; id: string }[]
 }
 
 export function sentenceId(lessonId: string, index: number, s: Sentence): string {
@@ -86,12 +90,16 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
   }
   for (const v of wordQueue.slice(0, 3)) out.push(wordChoice(v, ctx, rng, rng.next() < 0.5 ? 'choiceEs' : 'choiceEn'))
 
-  // 2. Sentences: weight toward lower stage; include every sentence once if it fits.
+  // 2. Sentences: least practised first (stage, then times seen), each used at most once per session.
+  const seen = ctx.seenOf ?? (() => 0)
   const sentences = lesson.sentences.map((s, i) => ({ s, id: sentenceId(lesson.id, i, s), stage: ctx.stageOf(sentenceId(lesson.id, i, s)) ?? 0 }))
-  const ordered = rng.shuffle(sentences).sort((a, b) => a.stage - b.stage)
-  const slots = Math.max(6, target - out.length)
+  const ordered = rng.shuffle(sentences).sort((a, b) => a.stage - b.stage || seen(a.id) - seen(b.id))
+  const replyCount = Math.min(3, lesson.exchanges.length)
+  const textCount = lesson.texts.length ? 1 : 0
+  const slots = Math.max(5, target - out.length - replyCount - textCount)
   const chosen = ordered.slice(0, slots)
   const taught = new Set<string>()
+  const used = new Set<string>()
   for (const { s, id, stage } of chosen) {
     const ex = sentenceExercise(s, id, stage, lesson, ctx, rng, lessonWordSet)
     if (!ex) continue
@@ -100,26 +108,38 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
       ex.teach = tip
       taught.add(tip)
     }
+    used.add(id)
     out.push(ex)
   }
-  // 3. If short, add second exercises for sentences with a different kind.
-  let i = 0
-  while (out.length < target && i < chosen.length) {
-    const { s, id, stage } = chosen[i]!
-    const ex = sentenceExercise(s, id, Math.min(3, stage + 1) as Stage, lesson, ctx, rng, lessonWordSet, out.filter((e) => e.items.includes(id)).map((e) => e.kind))
-    if (ex) out.push(ex)
-    i++
-  }
-  // 4. Variety: a couple of conversational replies and one mini-text when the lesson has them.
-  const exchanges = rng.shuffle(lesson.exchanges.map((x, i) => ({ x, i }))).slice(0, 2)
-  for (const { x, i } of exchanges) {
-    const id = exchangeId(lesson.id, i)
+  // 3. Conversation and text: replies to questions and one mini-text, least practised first.
+  const exchanges = rng.shuffle(lesson.exchanges.map((x, i) => ({ x, i, id: exchangeId(lesson.id, i) }))).sort((a, b) => seen(a.id) - seen(b.id)).slice(0, replyCount)
+  for (const { x, id } of exchanges) {
     const stage = ctx.stageOf(id) ?? 0
     out.push(stage >= 2 ? replyTyped(x, id) : replyExercise(x, id, lesson, rng))
   }
-  if (lesson.texts.length) {
-    const i = rng.int(lesson.texts.length)
-    out.push(orderTextExercise(lesson.texts[i]!, textId(lesson.id, i), rng))
+  if (textCount) {
+    const t = rng.shuffle(lesson.texts.map((t, i) => ({ t, id: textId(lesson.id, i) }))).sort((a, b) => seen(a.id) - seen(b.id))[0]!
+    out.push(orderTextExercise(t.t, t.id, rng))
+  }
+  // 4. Still short: fresh lesson sentences first, then extra sentences (heard or read, never retyped).
+  for (const { s, id, stage } of ordered) {
+    if (out.length >= target) break
+    if (used.has(id)) continue
+    const ex = sentenceExercise(s, id, stage, lesson, ctx, rng, lessonWordSet)
+    if (ex) {
+      used.add(id)
+      out.push(ex)
+    }
+  }
+  for (const { s, id } of rng.shuffle(opts.extra ?? [])) {
+    if (out.length >= target) break
+    if (used.has(id)) continue
+    used.add(id)
+    const others = rng.sample([...lesson.sentences, ...(opts.extra ?? []).map((x) => x.s)].filter((o) => o.en !== s.en), 3).map((o) => o.en)
+    if (others.length < 3) continue
+    const options = rng.shuffle([s.en, ...others])
+    const kind = rng.next() < 0.5 ? 'listen' : 'choiceEs'
+    out.push({ kind, items: [], grammar: s.grammar, prompt: kind === 'listen' ? 'What did you hear?' : s.es, audio: s.es, options, answer: options.indexOf(s.en), translation: s.en } satisfies ChoiceExercise)
   }
   // interleave: keep the first match early, then shuffle lightly so words and sentences mix
   const head = out.slice(0, 1)

@@ -33,8 +33,18 @@ describe('generateLesson', () => {
     const a = generateLesson(lesson, ctx(0), { seed: 42, count: 12 })
     const b = generateLesson(lesson, ctx(0), { seed: 42, count: 12 })
     expect(a).toEqual(b)
-    expect(a.length).toBeGreaterThanOrEqual(10)
+    expect(a.length).toBeGreaterThanOrEqual(6)
     expect(a.length).toBeLessThanOrEqual(13)
+  })
+  it('never uses the same sentence twice in one session', () => {
+    const ex = generateLesson(lesson, ctx(0), { seed: 3, count: 20 })
+    const ids = ex.flatMap((e) => e.items.filter((i) => i.startsWith('s.')).slice(0, 1))
+    expect(new Set(ids).size).toBe(ids.length)
+  })
+  it('fills spare slots from extra sentences instead of repeating', () => {
+    const extra = [1, 2, 3, 4, 5, 6].map((n) => ({ s: { es: `Frase extra número ${n}.`, en: `Extra sentence number ${n}.`, altEs: [], altEn: [], grammar: [], vocab: [] }, id: `d.x.${n}` }))
+    const ex = generateLesson(lesson, ctx(0), { seed: 3, count: 20, extra })
+    expect(ex.some((e) => 'prompt' in e && (e.prompt.startsWith('Frase extra') || e.prompt === 'What did you hear?'))).toBe(true)
   })
   it('starts with matching for new words and uses recognition kinds at stage 0', () => {
     const ex = generateLesson(lesson, ctx(0), { seed: 7 })
