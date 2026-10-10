@@ -7,74 +7,192 @@ lessons:
     vocab: [w.algun-dia, w.en-el-futuro, w.probablemente, w.seguramente, w.tal-vez, w.a-lo-mejor, w.prometer, w.imaginar, w.predecir.phr, w.sueno, w.meta, w.proyecto, w.propio, w.titulo, w.terminar-la-carrera]
     sentences:
       - { es: "Mañana lloverá en el norte.", en: "Tomorrow it will rain in the north.", grammar: [g.future-simple], vocab: [w.llover] }
-      - { es: "El año que viene viajaremos a Chile.", en: "Next year we will travel to Chile.", grammar: [g.future-simple], vocab: [w.viajar, w.que-viene] }
+      - { es: "El año que viene viajaremos a Chile.", en: "Next year we will travel to Chile.", altEs: ["El próximo año viajaremos a Chile."], grammar: [g.future-simple], vocab: [w.viajar, w.que-viene] }
       - { es: "¿Vendrás a mi boda? — Claro que iré.", en: "Will you come to my wedding? — Of course I'll go.", grammar: [g.future-irregular], vocab: [w.venir, w.boda] }
-      - { es: "Algún día viviré en el extranjero.", en: "Some day I'll live abroad.", grammar: [g.future-simple], vocab: [w.algun-dia, w.vivir] }
-      - { es: "Te prometo que te llamaré.", en: "I promise you I'll call you.", grammar: [g.future-simple], vocab: [w.prometer, w.llamar] }
-      - { es: "Probablemente estudiaré medicina.", en: "I'll probably study medicine.", grammar: [g.future-simple], vocab: [w.probablemente, w.estudiar] }
-      - { es: "Seguramente llegarán tarde, como siempre.", en: "They'll most likely arrive late, as always.", grammar: [g.future-simple], vocab: [w.seguramente, w.llegar] }
+      - { es: "Algún día viviré en el extranjero.", en: "Some day I'll live abroad.", altEs: ["Algún día yo viviré en el extranjero."], grammar: [g.future-simple], vocab: [w.algun-dia, w.vivir] }
+      - { es: "Te prometo que te llamaré.", en: "I promise you I'll call you.", altEs: ["Te prometo que te voy a llamar."], grammar: [g.future-simple], vocab: [w.prometer, w.llamar] }
+      - { es: "Probablemente estudiaré medicina.", en: "I'll probably study medicine.", altEs: ["Probablemente estudie medicina."], grammar: [g.future-simple], vocab: [w.probablemente, w.estudiar] }
+      - { es: "Seguramente llegarán tarde, como siempre.", en: "They'll most likely arrive late, as always.", altEs: ["Seguramente llegarán tarde, como de costumbre."], grammar: [g.future-simple], vocab: [w.seguramente, w.llegar] }
       - { es: "Tal vez cambie de trabajo; a lo mejor me voy a Berlín.", en: "Perhaps I'll change jobs; maybe I'll go to Berlin.", grammar: [g.quizas-tal-vez], vocab: [w.tal-vez, w.a-lo-mejor] }
       - { es: "Mi sueño es tener mi propia empresa.", en: "My dream is to have my own company.", grammar: [g.ser-present], vocab: [w.sueno, w.propio, w.empresa] }
       - { es: "Mi meta es terminar la carrera en junio.", en: "My goal is to finish my degree in June.", grammar: [g.ser-present], vocab: [w.meta, w.terminar-la-carrera] }
-      - { es: "Imagino que en el futuro trabajaremos menos horas.", en: "I imagine that in the future we'll work fewer hours.", grammar: [g.future-simple], vocab: [w.imaginar, w.en-el-futuro] }
-      - { es: "El proyecto terminará en diciembre.", en: "The project will finish in December.", grammar: [g.future-simple], vocab: [w.proyecto, w.terminar] }
-      - { es: "Ella estudiará en Londres.", en: "She will study in London.", grammar: [g.future-simple], vocab: [w.estudiar], transform: { instruction: "Change to 'we'", answer: "Estudiaremos en Londres.", alt: ["Nosotros estudiaremos en Londres."] } }
+      - { es: "Imagino que en el futuro trabajaremos menos horas.", en: "I imagine that in the future we'll work fewer hours.", altEs: ["Me imagino que en el futuro trabajaremos menos horas."], grammar: [g.future-simple], vocab: [w.imaginar, w.en-el-futuro] }
+      - { es: "El proyecto terminará en diciembre.", en: "The project will finish in December.", altEs: ["El proyecto se terminará en diciembre."], grammar: [g.future-simple], vocab: [w.proyecto, w.terminar] }
+      - { es: "Ella estudiará en Londres.", en: "She will study in London.", altEs: ["Estudiará en Londres."], grammar: [g.future-simple], vocab: [w.estudiar], transform: { instruction: "Change to 'we'", answer: "Estudiaremos en Londres.", alt: ["Nosotros estudiaremos en Londres."] } }
       - { es: "Conseguiré el título el año que viene.", en: "I'll get my degree next year.", grammar: [g.future-simple], vocab: [w.titulo, w.conseguir], error: { wrong: "Conseguiré el título el año que viene con los exámenes aprobaré.", explain: "Keep one verb per clause; the future of aprobar is aprobaré: … y aprobaré los exámenes.", grammar: g.future-simple } }
+    exchanges:
+      - q: { es: "¿Qué tiempo hará mañana?", en: "What will the weather be like tomorrow?" }
+        a: { es: "Mañana lloverá todo el día.", en: "Tomorrow it will rain all day." }
+        alt: ["Lloverá.", "Hará sol."]
+        grammar: [g.future-simple, g.future-irregular]
+        vocab: [w.llover]
+      - q: { es: "¿Vendrás a mi boda?", en: "Will you come to my wedding?" }
+        a: { es: "Claro que iré.", en: "Of course I'll go." }
+        alt: ["Claro, iré.", "Sí, iré seguro."]
+        grammar: [g.future-irregular]
+        vocab: [w.venir, w.boda]
+      - q: { es: "¿Qué estudiarás el año que viene?", en: "What will you study next year?" }
+        a: { es: "Probablemente estudiaré medicina.", en: "I'll probably study medicine." }
+        alt: ["Medicina, probablemente.", "Todavía no lo sé."]
+        grammar: [g.future-simple]
+        vocab: [w.probablemente, w.estudiar]
+      - q: { es: "¿Cuándo terminará el proyecto?", en: "When will the project finish?" }
+        a: { es: "Terminará en diciembre.", en: "It will finish in December." }
+        alt: ["En diciembre.", "Seguramente en diciembre."]
+        grammar: [g.future-simple]
+        vocab: [w.proyecto, w.terminar]
+      - q: { es: "¿Cuál es tu sueño?", en: "What is your dream?" }
+        a: { es: "Algún día tendré mi propia empresa.", en: "Some day I'll have my own company." }
+        alt: ["Tener mi propia empresa.", "Vivir en el extranjero."]
+        grammar: [g.future-irregular]
+        vocab: [w.sueno, w.algun-dia, w.propio]
+    texts:
+      - title: "Mis planes"
+        es: ["El año que viene terminaré la carrera.", "Después viajaré a Chile y trabajaré allí unos meses.", "Algún día viviré en el extranjero y tendré mi propia empresa."]
+        en: ["Next year I'll finish my degree.", "Then I'll travel to Chile and work there for a few months.", "Some day I'll live abroad and have my own company."]
+        grammar: [g.future-simple, g.future-irregular]
+        vocab: [w.terminar-la-carrera, w.algun-dia, w.propio]
   - id: a2.u07.l2
     title: Tendré, haré, podré
     teach: [g.future-irregular]
     vocab: [w.tecnologia, w.robot, w.electrico, w.internet, w.red-social, w.pantalla, w.aplicacion, w.maquina, w.inteligente.phr, w.conducir.phr, w.espacio, w.luna, w.marte, w.ser.phr, w.futuro.phr]
     sentences:
-      - { es: "Tendré que trabajar el sábado.", en: "I'll have to work on Saturday.", grammar: [g.future-irregular], vocab: [w.tener-que, w.sabado] }
-      - { es: "¿Qué harás este verano? — Saldré con amigos.", en: "What will you do this summer? — I'll go out with friends.", grammar: [g.future-irregular], vocab: [w.hacer, w.salir] }
-      - { es: "Dentro de diez años los robots harán muchos trabajos.", en: "In ten years' time robots will do many jobs.", grammar: [g.future-irregular], vocab: [w.futuro.phr, w.robot] }
+      - { es: "Tendré que trabajar el sábado.", en: "I'll have to work on Saturday.", altEs: ["Voy a tener que trabajar el sábado."], grammar: [g.future-irregular], vocab: [w.tener-que, w.sabado] }
+      - { es: "¿Qué harás este verano? — Saldré con amigos.", en: "What will you do this summer? — I'll go out with friends.", altEs: ["¿Qué vas a hacer este verano? — Saldré con amigos."], grammar: [g.future-irregular], vocab: [w.hacer, w.salir] }
+      - { es: "Dentro de diez años los robots harán muchos trabajos.", en: "In ten years' time robots will do many jobs.", altEs: ["En diez años los robots harán muchos trabajos."], grammar: [g.future-irregular], vocab: [w.futuro.phr, w.robot] }
       - { es: "Habrá coches sin conductor en todas las ciudades.", en: "There will be driverless cars in every city.", grammar: [g.future-irregular], vocab: [w.conducir.phr, w.haber], error: { wrong: "Habrán coches sin conductor en todas las ciudades.", explain: "hay never changes for number: habrá (singular).", grammar: g.hay } }
       - { es: "Los coches eléctricos no contaminarán.", en: "Electric cars won't pollute.", grammar: [g.future-simple], vocab: [w.electrico, w.coche] }
       - { es: "La tecnología podrá curar muchas enfermedades.", en: "Technology will be able to cure many diseases.", grammar: [g.future-irregular], vocab: [w.tecnologia, w.poder] }
-      - { es: "No sabremos vivir sin internet.", en: "We won't know how to live without the internet.", grammar: [g.future-irregular], vocab: [w.internet, w.saber] }
+      - { es: "No sabremos vivir sin internet.", en: "We won't know how to live without the internet.", altEs: ["No podremos vivir sin internet."], grammar: [g.future-irregular], vocab: [w.internet, w.saber] }
       - { es: "Las redes sociales tendrán más usuarios.", en: "Social networks will have more users.", grammar: [g.future-irregular], vocab: [w.red-social, w.tener] }
-      - { es: "Pondremos pantallas en todas las paredes.", en: "We'll put screens on every wall.", grammar: [g.future-irregular], vocab: [w.pantalla, w.poner] }
-      - { es: "Una aplicación nos dirá qué comer.", en: "An app will tell us what to eat.", grammar: [g.future-irregular], vocab: [w.aplicacion, w.decir] }
+      - { es: "Pondremos pantallas en todas las paredes.", en: "We'll put screens on every wall.", altEs: ["Habrá pantallas en todas las paredes."], grammar: [g.future-irregular], vocab: [w.pantalla, w.poner] }
+      - { es: "Una aplicación nos dirá qué comer.", en: "An app will tell us what to eat.", altEs: ["Una aplicación nos va a decir qué comer."], grammar: [g.future-irregular], vocab: [w.aplicacion, w.decir] }
       - { es: "La inteligencia artificial querrá aprender como los seres humanos.", en: "Artificial intelligence will want to learn like human beings.", grammar: [g.future-irregular], vocab: [w.inteligente.phr, w.ser.phr] }
       - { es: "Los seres humanos vendrán y volverán de Marte.", en: "Human beings will travel to and from Mars.", grammar: [g.future-irregular], vocab: [w.marte, w.venir] }
       - { es: "Viviremos en la Luna y las máquinas cocinarán por nosotros.", en: "We'll live on the Moon and machines will cook for us.", grammar: [g.future-simple], vocab: [w.luna, w.maquina] }
-      - { es: "Yo podré viajar al espacio.", en: "I'll be able to travel to space.", grammar: [g.future-irregular], vocab: [w.espacio, w.poder], transform: { instruction: "Change to 'they'", answer: "Ellos podrán viajar al espacio.", alt: ["Podrán viajar al espacio."] } }
+      - { es: "Yo podré viajar al espacio.", en: "I'll be able to travel to space.", altEs: ["Podré viajar al espacio."], grammar: [g.future-irregular], vocab: [w.espacio, w.poder], transform: { instruction: "Change to 'they'", answer: "Ellos podrán viajar al espacio.", alt: ["Podrán viajar al espacio."] } }
+    exchanges:
+      - q: { es: "¿Qué harás este verano?", en: "What will you do this summer?" }
+        a: { es: "Saldré con amigos y viajaré un poco.", en: "I'll go out with friends and travel a bit." }
+        alt: ["Saldré con amigos.", "Tendré que trabajar."]
+        grammar: [g.future-irregular]
+        vocab: [w.hacer, w.salir]
+      - q: { es: "¿Habrá coches sin conductor en el futuro?", en: "Will there be driverless cars in the future?" }
+        a: { es: "Sí, habrá coches sin conductor en todas las ciudades.", en: "Yes, there will be driverless cars in every city." }
+        alt: ["Sí, seguramente.", "No lo sé."]
+        grammar: [g.future-irregular]
+        vocab: [w.haber, w.conducir.phr]
+      - q: { es: "¿Podremos vivir en la Luna?", en: "Will we be able to live on the Moon?" }
+        a: { es: "Tal vez; la tecnología podrá hacer muchas cosas.", en: "Perhaps; technology will be able to do many things." }
+        alt: ["Tal vez.", "No, nunca."]
+        grammar: [g.future-irregular]
+        vocab: [w.luna, w.poder, w.tecnologia]
+      - q: { es: "¿Qué nos dirá la aplicación?", en: "What will the app tell us?" }
+        a: { es: "Nos dirá qué comer y cuándo dormir.", en: "It will tell us what to eat and when to sleep." }
+        alt: ["Nos dirá qué comer.", "Todo."]
+        grammar: [g.future-irregular]
+        vocab: [w.aplicacion, w.decir]
+    texts:
+      - title: "El mundo en 2050"
+        es: ["Dentro de treinta años las máquinas harán muchos trabajos.", "Pondremos pantallas en todas las paredes y una aplicación nos dirá qué comer.", "¿Y qué haremos nosotros?"]
+        en: ["In thirty years' time machines will do many jobs.", "We'll put screens on every wall and an app will tell us what to eat.", "And what will we do?"]
+        grammar: [g.future-irregular]
+        vocab: [w.maquina, w.pantalla, w.aplicacion]
   - id: a2.u07.l3
     title: El medio ambiente
     teach: [g.si-present-future]
     vocab: [w.medio-ambiente, w.clima, w.planeta, w.energia, w.contaminacion, w.basura, w.reciclar, w.ahorrar, w.mejorar, w.empeorar, w.aumentar, w.existir, w.sol.phr, w.ciudad.phr, w.coche.phr, w.si.phr]
     sentences:
       - { es: "Si no cuidamos el planeta, el clima empeorará.", en: "If we don't look after the planet, the climate will get worse.", grammar: [g.si-present-future], vocab: [w.planeta, w.clima, w.empeorar] }
-      - { es: "Si reciclamos, habrá menos basura.", en: "If we recycle, there will be less rubbish.", grammar: [g.si-present-future], vocab: [w.reciclar, w.basura] }
+      - { es: "Si reciclamos, habrá menos basura.", en: "If we recycle, there will be less rubbish.", altEs: ["Habrá menos basura si reciclamos."], grammar: [g.si-present-future], vocab: [w.reciclar, w.basura] }
       - { es: "Si usamos energía solar, ahorraremos dinero.", en: "If we use solar energy, we'll save money.", grammar: [g.si-present-future], vocab: [w.sol.phr, w.ahorrar] }
-      - { es: "La contaminación aumentará si no cambiamos.", en: "Pollution will increase if we don't change.", grammar: [g.si-present-future], vocab: [w.contaminacion, w.aumentar] }
-      - { es: "Si compro un coche eléctrico, gastaré menos.", en: "If I buy an electric car, I'll spend less.", grammar: [g.si-present-future], vocab: [w.coche.phr, w.gastar] }
-      - { es: "Las ciudades serán más limpias si hay menos coches.", en: "Cities will be cleaner if there are fewer cars.", grammar: [g.si-present-future], vocab: [w.ciudad.phr, w.limpio] }
+      - { es: "La contaminación aumentará si no cambiamos.", en: "Pollution will increase if we don't change.", altEs: ["Si no cambiamos, la contaminación aumentará."], grammar: [g.si-present-future], vocab: [w.contaminacion, w.aumentar] }
+      - { es: "Si compro un coche eléctrico, gastaré menos.", en: "If I buy an electric car, I'll spend less.", altEs: ["Si me compro un coche eléctrico, gastaré menos."], grammar: [g.si-present-future], vocab: [w.coche.phr, w.gastar] }
+      - { es: "Las ciudades serán más limpias si hay menos coches.", en: "Cities will be cleaner if there are fewer cars.", altEs: ["Si hay menos coches, las ciudades serán más limpias."], grammar: [g.si-present-future], vocab: [w.ciudad.phr, w.limpio] }
       - { es: "Si tengo tiempo, iré a la manifestación por el medio ambiente.", en: "If I have time, I'll go to the environmental demonstration.", grammar: [g.si-present-future], vocab: [w.si.phr, w.medio-ambiente], error: { wrong: "Si tendré tiempo, iré a la manifestación.", explain: "After si use the present, never the future: si tengo tiempo.", grammar: g.si-present-future } }
       - { es: "¿Existirán los osos polares en 2100?", en: "Will polar bears exist in 2100?", grammar: [g.future-simple], vocab: [w.existir] }
       - { es: "Si todos ahorramos energía, el futuro mejorará.", en: "If we all save energy, the future will improve.", grammar: [g.si-present-future], vocab: [w.energia, w.mejorar] }
-      - { es: "Si hace sol mañana, vamos a la playa.", en: "If it's sunny tomorrow, we'll go to the beach.", grammar: [g.si-present-future], vocab: [w.sol, w.playa] }
-      - { es: "Si no te das prisa, perderás el tren.", en: "If you don't hurry, you'll miss the train.", grammar: [g.si-present-future], vocab: [w.prisa, w.perder] }
-      - { es: "Si quieres, te ayudo con el proyecto.", en: "If you like, I'll help you with the project.", grammar: [g.si-present-future], vocab: [w.ayudar, w.proyecto] }
-      - { es: "Si llueve, no saldremos.", en: "If it rains, we won't go out.", grammar: [g.si-present-future], vocab: [w.llover, w.salir], transform: { instruction: "Change to 'they'", answer: "Si llueve, no saldrán.", alt: ["Si llueve, ellos no saldrán."] } }
+      - { es: "Si hace sol mañana, vamos a la playa.", en: "If it's sunny tomorrow, we'll go to the beach.", altEs: ["Si hace sol mañana, iremos a la playa."], grammar: [g.si-present-future], vocab: [w.sol, w.playa] }
+      - { es: "Si no te das prisa, perderás el tren.", en: "If you don't hurry, you'll miss the train.", altEs: ["Si no te das prisa, vas a perder el tren."], grammar: [g.si-present-future], vocab: [w.prisa, w.perder] }
+      - { es: "Si quieres, te ayudo con el proyecto.", en: "If you like, I'll help you with the project.", altEs: ["Si quieres, te ayudaré con el proyecto."], grammar: [g.si-present-future], vocab: [w.ayudar, w.proyecto] }
+      - { es: "Si llueve, no saldremos.", en: "If it rains, we won't go out.", altEs: ["Si llueve, no vamos a salir."], grammar: [g.si-present-future], vocab: [w.llover, w.salir], transform: { instruction: "Change to 'they'", answer: "Si llueve, no saldrán.", alt: ["Si llueve, ellos no saldrán."] } }
+    exchanges:
+      - q: { es: "¿Qué pasará si no reciclamos?", en: "What will happen if we don't recycle?" }
+        a: { es: "Habrá más basura y el clima empeorará.", en: "There will be more rubbish and the climate will get worse." }
+        alt: ["Habrá más basura.", "La contaminación aumentará."]
+        grammar: [g.si-present-future]
+        vocab: [w.reciclar, w.basura, w.empeorar]
+      - q: { es: "¿Qué harás si hace sol mañana?", en: "What will you do if it's sunny tomorrow?" }
+        a: { es: "Si hace sol, iré a la playa.", en: "If it's sunny, I'll go to the beach." }
+        alt: ["Iré a la playa.", "Si hace sol, voy a la playa."]
+        grammar: [g.si-present-future]
+        vocab: [w.sol, w.playa]
+      - q: { es: "¿Vas a comprar un coche eléctrico?", en: "Are you going to buy an electric car?" }
+        a: { es: "Si compro uno, gastaré menos.", en: "If I buy one, I'll spend less." }
+        alt: ["Sí, si tengo dinero.", "No, es muy caro."]
+        grammar: [g.si-present-future]
+        vocab: [w.coche.phr, w.gastar]
+      - q: { es: "¿Me ayudas con el proyecto?", en: "Will you help me with the project?" }
+        a: { es: "Si quieres, te ayudo esta tarde.", en: "If you like, I'll help you this afternoon." }
+        alt: ["Claro, si quieres.", "Sí, si tengo tiempo."]
+        grammar: [g.si-present-future]
+        vocab: [w.ayudar, w.proyecto]
+    texts:
+      - title: "Mensaje del ayuntamiento"
+        es: ["Si reciclamos, habrá menos basura en las calles.", "Si vamos a pie o en bici, el aire será más limpio.", "Si todos ahorramos energía, nuestra ciudad mejorará."]
+        en: ["If we recycle, there will be less rubbish in the streets.", "If we walk or cycle, the air will be cleaner.", "If we all save energy, our city will improve."]
+        grammar: [g.si-present-future]
+        vocab: [w.reciclar, w.basura, w.ahorrar]
   - id: a2.u07.l4
     title: Serán las diez
     teach: [g.future-probability]
     vocab: [w.jubilacion, w.suenos.phr, w.ojala, w.seguro.phr, w.vivir.phr, w.rico.phr]
     sentences:
       - { es: "¿Qué hora es? — Serán las diez.", en: "What time is it? — It must be about ten.", grammar: [g.future-probability], vocab: [w.hora] }
-      - { es: "¿Dónde está Ana? — Estará en el trabajo.", en: "Where is Ana? — She's probably at work.", grammar: [g.future-probability], vocab: [w.estar, w.trabajo] }
-      - { es: "No contesta al teléfono; estará durmiendo.", en: "She isn't answering the phone; she's probably sleeping.", grammar: [g.future-probability], vocab: [w.contestar, w.dormir] }
+      - { es: "¿Dónde está Ana? — Estará en el trabajo.", en: "Where is Ana? — She's probably at work.", altEs: ["¿Dónde está Ana? — Estará trabajando."], grammar: [g.future-probability], vocab: [w.estar, w.trabajo] }
+      - { es: "No contesta al teléfono; estará durmiendo.", en: "She isn't answering the phone; she's probably sleeping.", altEs: ["No contesta el teléfono; estará durmiendo."], grammar: [g.future-probability], vocab: [w.contestar, w.dormir] }
       - { es: "¿Cuántos años tiene? — Tendrá unos cuarenta.", en: "How old is he? — He must be about forty.", grammar: [g.future-probability], vocab: [w.tener, w.cuarenta] }
-      - { es: "Tendrán hambre; no han comido nada.", en: "They must be hungry; they haven't eaten anything.", grammar: [g.future-probability], vocab: [w.hambre, w.comer] }
-      - { es: "¿Quién llama a estas horas? — Será Luis.", en: "Who's calling at this hour? — It'll be Luis.", grammar: [g.future-probability], vocab: [w.llamar] }
-      - { es: "Ese coche costará unos veinte mil euros.", en: "That car must cost about twenty thousand euros.", grammar: [g.future-probability], vocab: [w.costar, w.mil] }
+      - { es: "Tendrán hambre; no han comido nada.", en: "They must be hungry; they haven't eaten anything.", altEs: ["Tendrán hambre, porque no han comido nada."], grammar: [g.future-probability], vocab: [w.hambre, w.comer] }
+      - { es: "¿Quién llama a estas horas? — Será Luis.", en: "Who's calling at this hour? — It'll be Luis.", altEs: ["¿Quién llama a estas horas? — Seguramente es Luis."], grammar: [g.future-probability], vocab: [w.llamar] }
+      - { es: "Ese coche costará unos veinte mil euros.", en: "That car must cost about twenty thousand euros.", altEs: ["Ese coche valdrá unos veinte mil euros."], grammar: [g.future-probability], vocab: [w.costar, w.mil] }
       - { es: "Después de la jubilación viviré en la casa de mis sueños.", en: "After retirement I'll live in the house of my dreams.", grammar: [g.future-simple], vocab: [w.jubilacion, w.suenos.phr] }
       - { es: "Ojalá seamos ricos algún día.", en: "I hope we'll be rich some day.", grammar: [g.subjunctive-wishes], vocab: [w.ojala, w.rico.phr] }
-      - { es: "Estoy seguro de que viviremos en el extranjero.", en: "I'm sure we'll live abroad.", grammar: [g.future-simple], vocab: [w.seguro.phr, w.vivir.phr] }
+      - { es: "Estoy seguro de que viviremos en el extranjero.", en: "I'm sure we'll live abroad.", altEs: ["Estoy segura de que viviremos en el extranjero."], grammar: [g.future-simple], vocab: [w.seguro.phr, w.vivir.phr] }
       - { es: "¿Habrá mucha gente en el concierto? — Seguramente.", en: "Will there be many people at the concert? — Most likely.", grammar: [g.future-irregular], vocab: [w.haber, w.seguramente] }
-      - { es: "Mis padres estarán ya en casa.", en: "My parents are probably home already.", grammar: [g.future-probability], vocab: [w.ya, w.casa], transform: { instruction: "Change to 'my mother'", answer: "Mi madre estará ya en casa." } }
-      - { es: "El tren saldrá a las ocho.", en: "The train will leave at eight.", grammar: [g.future-irregular], vocab: [w.salir, w.tren], error: { wrong: "El tren salirá a las ocho.", explain: "salir has the irregular future stem saldr-: saldrá.", grammar: g.future-irregular } }
+      - { es: "Mis padres estarán ya en casa.", en: "My parents are probably home already.", altEs: ["Mis padres ya estarán en casa."], grammar: [g.future-probability], vocab: [w.ya, w.casa], transform: { instruction: "Change to 'my mother'", answer: "Mi madre estará ya en casa." } }
+      - { es: "El tren saldrá a las ocho.", en: "The train will leave at eight.", altEs: ["El tren sale a las ocho."], grammar: [g.future-irregular], vocab: [w.salir, w.tren], error: { wrong: "El tren salirá a las ocho.", explain: "salir has the irregular future stem saldr-: saldrá.", grammar: g.future-irregular } }
+    exchanges:
+      - q: { es: "¿Qué hora es?", en: "What time is it?" }
+        a: { es: "No sé, serán las diez.", en: "I don't know, it must be about ten." }
+        alt: ["Serán las diez.", "Las diez, más o menos."]
+        grammar: [g.future-probability]
+        vocab: [w.hora]
+      - q: { es: "¿Dónde está Ana?", en: "Where is Ana?" }
+        a: { es: "Estará en el trabajo.", en: "She's probably at work." }
+        alt: ["No sé, estará trabajando.", "En el trabajo, seguramente."]
+        grammar: [g.future-probability]
+        vocab: [w.estar, w.trabajo]
+      - q: { es: "¿Cuántos años tiene el profesor?", en: "How old is the teacher?" }
+        a: { es: "Tendrá unos cuarenta.", en: "He must be about forty." }
+        alt: ["Unos cuarenta.", "No sé, tendrá cuarenta años."]
+        grammar: [g.future-probability]
+        vocab: [w.tener, w.cuarenta]
+      - q: { es: "¿Quién llama a estas horas?", en: "Who's calling at this hour?" }
+        a: { es: "Será Luis; siempre llama tarde.", en: "It'll be Luis; he always calls late." }
+        alt: ["Será Luis.", "No sé quién será."]
+        grammar: [g.future-probability]
+        vocab: [w.llamar]
+      - q: { es: "¿Por qué no contesta Marta?", en: "Why isn't Marta answering?" }
+        a: { es: "Estará durmiendo.", en: "She's probably sleeping." }
+        alt: ["Estará en la ducha.", "Tendrá el móvil apagado."]
+        grammar: [g.future-probability]
+        vocab: [w.contestar, w.dormir]
+    texts:
+      - title: "Mensaje de Yuki"
+        es: ["Son las nueve y Pablo no ha llegado.", "Estará en un atasco; siempre llega tarde.", "Tendrá el móvil sin batería, porque no contesta."]
+        en: ["It's nine and Pablo hasn't arrived.", "He's probably in a traffic jam; he always arrives late.", "His phone must be out of battery, because he isn't answering."]
+        grammar: [g.future-probability]
+        vocab: [w.atasco, w.bateria, w.contestar]
 dialogues:
   - id: a2.u07.d1
     title: El mundo en 2050

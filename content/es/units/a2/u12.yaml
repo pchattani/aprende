@@ -7,63 +7,154 @@ lessons:
     vocab: [w.guia, w.monumento, w.castillo, w.ruinas, w.paisaje, w.vistas, w.recorrer, w.alojarse, w.postal, w.senal, w.cobertura, w.bateria, w.cargar, w.cargador]
     tip: "estaba + gerund = what was going on (background); the preterite = what happened and interrupted it."
     sentences:
-      - { es: "Estaba durmiendo cuando sonó el teléfono.", en: "I was sleeping when the phone rang.", grammar: [g.estar-gerund-past], vocab: [w.dormir, w.telefono] }
-      - { es: "Estábamos visitando el castillo cuando empezó a llover.", en: "We were visiting the castle when it started to rain.", grammar: [g.estar-gerund-past], vocab: [w.castillo, w.visitar, w.llover] }
-      - { es: "El guía estaba explicando la historia de las ruinas.", en: "The guide was explaining the history of the ruins.", grammar: [g.estar-gerund-past], vocab: [w.guia, w.explicar, w.ruinas] }
+      - { es: "Estaba durmiendo cuando sonó el teléfono.", en: "I was sleeping when the phone rang.", altEs: ["Dormía cuando sonó el teléfono."], grammar: [g.estar-gerund-past], vocab: [w.dormir, w.telefono] }
+      - { es: "Estábamos visitando el castillo cuando empezó a llover.", en: "We were visiting the castle when it started to rain.", altEs: ["Visitábamos el castillo cuando empezó a llover."], grammar: [g.estar-gerund-past], vocab: [w.castillo, w.visitar, w.llover] }
+      - { es: "El guía estaba explicando la historia de las ruinas.", en: "The guide was explaining the history of the ruins.", altEs: ["El guía explicaba la historia de las ruinas."], grammar: [g.estar-gerund-past], vocab: [w.guia, w.explicar, w.ruinas] }
       - { es: "Mientras recorríamos la ciudad, mi madre estaba sacando fotos de todos los monumentos.", en: "While we were going round the city, my mother was taking photos of all the monuments.", grammar: [g.estar-gerund-past, g.mientras-cuando], vocab: [w.recorrer, w.monumento, w.sacar] }
-      - { es: "Estuve escribiendo postales toda la tarde.", en: "I spent the whole afternoon writing postcards.", grammar: [g.estar-gerund-past], vocab: [w.postal, w.escribir], note: "estuve + gerund for a closed period of time." }
+      - { es: "Estuve escribiendo postales toda la tarde.", en: "I spent the whole afternoon writing postcards.", altEs: ["Escribí postales toda la tarde."], grammar: [g.estar-gerund-past], vocab: [w.postal, w.escribir], note: "estuve + gerund for a closed period of time." }
       - { es: "¿Qué estabas haciendo a las diez? — Estaba cargando el móvil en el albergue.", en: "What were you doing at ten? — I was charging my phone at the hostel.", grammar: [g.estar-gerund-past], vocab: [w.cargar, w.movil, w.albergue] }
       - { es: "No había cobertura y la batería estaba a punto de acabarse.", en: "There was no signal and the battery was about to die.", grammar: [g.imperfect], vocab: [w.cobertura, w.bateria] }
-      - { es: "Me alojé en un hotel con vistas al mar.", en: "I stayed in a hotel with views of the sea.", grammar: [g.preterite-regular], vocab: [w.alojarse, w.vistas, w.mar] }
+      - { es: "Me alojé en un hotel con vistas al mar.", en: "I stayed in a hotel with views of the sea.", altEs: ["Me quedé en un hotel con vistas al mar."], grammar: [g.preterite-regular], vocab: [w.alojarse, w.vistas, w.mar] }
       - { es: "El paisaje era impresionante: montañas, lagos y bosques.", en: "The landscape was impressive: mountains, lakes and forests.", grammar: [g.imperfect-uses], vocab: [w.paisaje, w.impresionante, w.lago, w.bosque] }
       - { es: "Estaba leyendo una señal cuando me di cuenta de que estábamos perdidos.", en: "I was reading a sign when I realised we were lost.", grammar: [g.estar-gerund-past], vocab: [w.senal, w.darse-cuenta, w.perderse], error: { wrong: "Estaba leendo una señal cuando me di cuenta.", explain: "The gerund of leer is leyendo: i between vowels becomes y.", grammar: g.estar-gerund-past } }
-      - { es: "Olvidé el cargador en casa, así que no pude hacer fotos.", en: "I left the charger at home, so I couldn't take photos.", grammar: [g.preterite-irregular, g.narration-connectors], vocab: [w.cargador, w.olvidar, w.asi-que] }
-      - { es: "Los niños estaban jugando en la playa mientras nosotros descansábamos.", en: "The children were playing on the beach while we rested.", grammar: [g.estar-gerund-past, g.mientras-cuando], vocab: [w.jugar, w.descansar] }
-      - { es: "¿Estabais esperando el autobús cuando pasó el accidente?", en: "Were you waiting for the bus when the accident happened?", grammar: [g.estar-gerund-past], vocab: [w.esperar, w.accidente] }
+      - { es: "Olvidé el cargador en casa, así que no pude hacer fotos.", en: "I left the charger at home, so I couldn't take photos.", altEs: ["Me olvidé del cargador en casa, así que no pude sacar fotos."], grammar: [g.preterite-irregular, g.narration-connectors], vocab: [w.cargador, w.olvidar, w.asi-que] }
+      - { es: "Los niños estaban jugando en la playa mientras nosotros descansábamos.", en: "The children were playing on the beach while we rested.", altEs: ["Los niños jugaban en la playa mientras nosotros descansábamos."], grammar: [g.estar-gerund-past, g.mientras-cuando], vocab: [w.jugar, w.descansar] }
+      - { es: "¿Estabais esperando el autobús cuando pasó el accidente?", en: "Were you waiting for the bus when the accident happened?", altEs: ["¿Esperabais el autobús cuando pasó el accidente?"], grammar: [g.estar-gerund-past], vocab: [w.esperar, w.accidente] }
       - { es: "Yo / ducharse / cuando llamaste", en: "I was having a shower when you called.", grammar: [g.estar-gerund-past], vocab: [w.ducharse, w.llamar], transform: { instruction: "Use estaba + gerund", answer: "Me estaba duchando cuando llamaste.", alt: ["Estaba duchándome cuando llamaste."] } }
+    exchanges:
+      - q: { es: "¿Qué estabas haciendo a las diez?", en: "What were you doing at ten?" }
+        a: { es: "Estaba cargando el móvil en el albergue.", en: "I was charging my phone at the hostel." }
+        alt: ["Estaba durmiendo.", "Estaba escribiendo postales."]
+        grammar: [g.estar-gerund-past]
+        vocab: [w.cargar, w.movil]
+      - q: { es: "¿Qué estaba explicando el guía?", en: "What was the guide explaining?" }
+        a: { es: "La historia de las ruinas.", en: "The history of the ruins." }
+        alt: ["Estaba explicando la historia de las ruinas.", "La historia del castillo."]
+        grammar: [g.estar-gerund-past]
+        vocab: [w.guia, w.ruinas]
+      - q: { es: "¿Estabais esperando el autobús cuando pasó el accidente?", en: "Were you waiting for the bus when the accident happened?" }
+        a: { es: "Sí, estábamos esperando en la parada.", en: "Yes, we were waiting at the stop." }
+        alt: ["Sí.", "No, estábamos en el hotel."]
+        grammar: [g.estar-gerund-past]
+        vocab: [w.esperar, w.accidente, w.parada]
+      - q: { es: "¿Por qué no hiciste fotos?", en: "Why didn't you take photos?" }
+        a: { es: "Olvidé el cargador y la batería estaba a punto de acabarse.", en: "I forgot the charger and the battery was about to die." }
+        alt: ["Porque olvidé el cargador.", "No tenía batería."]
+        grammar: [g.imperfect, g.preterite-regular]
+        vocab: [w.cargador, w.bateria]
+    texts:
+      - title: "Postal desde Granada"
+        es: ["Ayer estábamos visitando el castillo cuando empezó a llover.", "Mientras esperábamos, el guía nos estaba contando la historia de la ciudad.", "Las vistas eran impresionantes."]
+        en: ["Yesterday we were visiting the castle when it started to rain.", "While we were waiting, the guide was telling us the history of the city.", "The views were impressive."]
+        grammar: [g.estar-gerund-past, g.mientras-cuando]
+        vocab: [w.castillo, w.guia, w.vistas]
   - id: a2.u12.l2
     title: Acabo de llegar
     teach: [g.acabar-de, g.volver-a]
     vocab: [w.acabar-de, w.volver-a, w.dejar-de, w.seguir-gerundio, w.equivocarse, w.aprovechar, w.valer-la-pena, w.de-camino, w.camino, w.a-mitad-de, w.mitad, w.en-total, w.alrededor]
     tip: "acabar de + infinitive = have just; volver a + infinitive = again; dejar de = stop; seguir + gerund = keep on."
     sentences:
-      - { es: "Acabo de llegar a Granada; el viaje ha sido largo.", en: "I've just arrived in Granada; the journey has been long.", grammar: [g.acabar-de, g.present-perfect], vocab: [w.acabar-de, w.llegar, w.viaje] }
-      - { es: "Acababa de salir del hotel cuando empezó la tormenta.", en: "I had just left the hotel when the storm started.", grammar: [g.acabar-de], vocab: [w.acabar-de, w.tormenta] }
-      - { es: "He vuelto a perder las llaves.", en: "I've lost my keys again.", grammar: [g.volver-a, g.present-perfect], vocab: [w.volver-a, w.perder, w.llave], error: { wrong: "He vuelto perder las llaves.", explain: "volver a + infinitive: the a is required.", grammar: g.volver-a } }
-      - { es: "Volveremos a visitar Lisboa el año que viene.", en: "We'll visit Lisbon again next year.", grammar: [g.volver-a, g.future-simple], vocab: [w.volver-a, w.visitar] }
+      - { es: "Acabo de llegar a Granada; el viaje ha sido largo.", en: "I've just arrived in Granada; the journey has been long.", altEs: ["Acabo de llegar a Granada; ha sido un viaje largo."], grammar: [g.acabar-de, g.present-perfect], vocab: [w.acabar-de, w.llegar, w.viaje] }
+      - { es: "Acababa de salir del hotel cuando empezó la tormenta.", en: "I had just left the hotel when the storm started.", altEs: ["Yo acababa de salir del hotel cuando empezó la tormenta."], grammar: [g.acabar-de], vocab: [w.acabar-de, w.tormenta] }
+      - { es: "He vuelto a perder las llaves.", en: "I've lost my keys again.", altEs: ["He perdido las llaves otra vez."], grammar: [g.volver-a, g.present-perfect], vocab: [w.volver-a, w.perder, w.llave], error: { wrong: "He vuelto perder las llaves.", explain: "volver a + infinitive: the a is required.", grammar: g.volver-a } }
+      - { es: "Volveremos a visitar Lisboa el año que viene.", en: "We'll visit Lisbon again next year.", altEs: ["Visitaremos Lisboa otra vez el año que viene."], grammar: [g.volver-a, g.future-simple], vocab: [w.volver-a, w.visitar] }
       - { es: "Dejé de fumar hace dos años.", en: "I stopped smoking two years ago.", grammar: [g.volver-a, g.desde-hace], vocab: [w.dejar-de, w.fumar] }
-      - { es: "Sigue lloviendo; no podemos salir.", en: "It's still raining; we can't go out.", grammar: [g.volver-a], vocab: [w.seguir-gerundio, w.llover] }
-      - { es: "Nos equivocamos de camino y llegamos dos horas tarde.", en: "We took the wrong road and arrived two hours late.", grammar: [g.preterite-regular], vocab: [w.equivocarse, w.camino] }
+      - { es: "Sigue lloviendo; no podemos salir.", en: "It's still raining; we can't go out.", altEs: ["Todavía llueve; no podemos salir."], grammar: [g.volver-a], vocab: [w.seguir-gerundio, w.llover] }
+      - { es: "Nos equivocamos de camino y llegamos dos horas tarde.", en: "We took the wrong road and arrived two hours late.", altEs: ["Nos equivocamos de camino y llegamos con dos horas de retraso."], grammar: [g.preterite-regular], vocab: [w.equivocarse, w.camino] }
       - { es: "De camino al aeropuerto, el taxi se quedó sin gasolina.", en: "On the way to the airport, the taxi ran out of petrol.", grammar: [g.preterite-regular], vocab: [w.de-camino, w.aeropuerto], note: "quedarse sin = to run out of." }
       - { es: "A mitad de la excursión empezamos a cansarnos.", en: "Halfway through the hike we started to get tired.", grammar: [g.prepositions-verbs], vocab: [w.a-mitad-de, w.excursion, w.cansarse] }
       - { es: "En total recorrimos alrededor de mil kilómetros.", en: "In total we covered around a thousand kilometres.", grammar: [g.preterite-regular], vocab: [w.en-total, w.recorrer, w.alrededor] }
-      - { es: "Aprovecha el viaje para practicar español.", en: "Make the most of the trip to practise Spanish.", grammar: [g.imperative-tu], vocab: [w.aprovechar, w.viaje] }
+      - { es: "Aprovecha el viaje para practicar español.", en: "Make the most of the trip to practise Spanish.", altEs: ["Aprovecha el viaje para hablar español."], grammar: [g.imperative-tu], vocab: [w.aprovechar, w.viaje] }
       - { es: "El museo es caro, pero vale la pena.", en: "The museum is expensive, but it's worth it.", grammar: [g.ser-vs-estar-basics], vocab: [w.valer-la-pena, w.museo, w.caro] }
-      - { es: "Acabamos de terminar de cenar; ¿damos una vuelta?", en: "We've just finished dinner; shall we go for a walk?", grammar: [g.acabar-de], vocab: [w.acabar-de, w.buscar.phr] }
+      - { es: "Acabamos de terminar de cenar; ¿damos una vuelta?", en: "We've just finished dinner; shall we go for a walk?", altEs: ["Acabamos de cenar; ¿damos una vuelta?"], grammar: [g.acabar-de], vocab: [w.acabar-de, w.buscar.phr] }
       - { es: "Pasamos la mitad de las vacaciones en la playa y la otra mitad en la montaña.", en: "We spent half the holiday at the beach and the other half in the mountains.", grammar: [g.preterite-regular], vocab: [w.mitad, w.vacaciones] }
       - { es: "Ella / llegar (ahora mismo)", en: "She has just arrived.", grammar: [g.acabar-de], vocab: [w.acabar-de, w.llegar], transform: { instruction: "Use acabar de", answer: "Ella acaba de llegar.", alt: ["Acaba de llegar."] } }
+    exchanges:
+      - q: { es: "¿Ya has llegado?", en: "Have you arrived yet?" }
+        a: { es: "Sí, acabo de llegar a Granada.", en: "Yes, I've just arrived in Granada." }
+        alt: ["Sí, acabo de llegar.", "Todavía no."]
+        grammar: [g.acabar-de]
+        vocab: [w.acabar-de, w.llegar]
+      - q: { es: "¿Has encontrado las llaves?", en: "Have you found the keys?" }
+        a: { es: "No, he vuelto a perderlas.", en: "No, I've lost them again." }
+        alt: ["No, las he vuelto a perder.", "Sí, estaban en la mochila."]
+        grammar: [g.volver-a]
+        vocab: [w.volver-a, w.perder]
+      - q: { es: "¿Sigue lloviendo?", en: "Is it still raining?" }
+        a: { es: "Sí, sigue lloviendo; no podemos salir.", en: "Yes, it's still raining; we can't go out." }
+        alt: ["Sí, todavía llueve.", "No, ya ha dejado de llover."]
+        grammar: [g.volver-a]
+        vocab: [w.seguir-gerundio, w.llover]
+      - q: { es: "¿Vale la pena el museo?", en: "Is the museum worth it?" }
+        a: { es: "Sí, es caro, pero vale la pena.", en: "Yes, it's expensive, but it's worth it." }
+        alt: ["Sí, mucho.", "No, es demasiado caro."]
+        grammar: [g.ser-vs-estar-basics]
+        vocab: [w.valer-la-pena, w.museo]
+      - q: { es: "¿Todavía fumas?", en: "Do you still smoke?" }
+        a: { es: "No, dejé de fumar hace dos años.", en: "No, I stopped smoking two years ago." }
+        alt: ["No, ya no fumo.", "Sí, pero quiero dejar de fumar."]
+        grammar: [g.volver-a, g.desde-hace]
+        vocab: [w.dejar-de, w.fumar]
+    texts:
+      - title: "Mensaje de Lucía"
+        es: ["Acabo de llegar al albergue; el viaje ha sido largo.", "Nos equivocamos de camino y llegamos dos horas tarde.", "Mañana volveremos a visitar la catedral, porque hoy estaba cerrada."]
+        en: ["I've just arrived at the hostel; the journey has been long.", "We took the wrong road and arrived two hours late.", "Tomorrow we'll visit the cathedral again, because today it was closed."]
+        grammar: [g.acabar-de, g.volver-a]
+        vocab: [w.acabar-de, w.equivocarse, w.volver-a]
   - id: a2.u12.l3
     title: Alguien, nadie, algo, nada
     teach: [g.indefinite-pronouns]
     vocab: [w.alguno, w.ninguno, w.ni, w.ni-siquiera, w.en-ninguna-parte, w.en-algun-lugar, w.cualquier, w.cola, w.hacer-cola, w.lleno, w.vacio, w.agotado, w.agotador, w.propina, w.costumbre]
     tip: "Spanish doubles the negative: No veo a nadie. No hay nada. Nunca voy a ningún sitio."
     sentences:
-      - { es: "¿Hay alguien en casa? — No, no hay nadie.", en: "Is anybody home? — No, there's nobody.", grammar: [g.indefinite-pronouns], vocab: [w.alguien, w.nadie] }
-      - { es: "¿Quieres algo de beber? — No, gracias, no quiero nada.", en: "Do you want something to drink? — No, thanks, I don't want anything.", grammar: [g.indefinite-pronouns], vocab: [w.algo, w.nada, w.beber] }
-      - { es: "No conozco a nadie en esta ciudad.", en: "I don't know anyone in this city.", grammar: [g.indefinite-pronouns, g.a-personal], vocab: [w.nadie, w.conocer], error: { wrong: "Conozco a nadie en esta ciudad.", explain: "When nadie follows the verb, the verb needs no: No conozco a nadie.", grammar: g.indefinite-pronouns } }
+      - { es: "¿Hay alguien en casa? — No, no hay nadie.", en: "Is anybody home? — No, there's nobody.", altEs: ["¿Hay alguien en casa? — No, nadie."], grammar: [g.indefinite-pronouns], vocab: [w.alguien, w.nadie] }
+      - { es: "¿Quieres algo de beber? — No, gracias, no quiero nada.", en: "Do you want something to drink? — No, thanks, I don't want anything.", altEs: ["¿Quieres beber algo? — No, gracias, no quiero nada."], grammar: [g.indefinite-pronouns], vocab: [w.algo, w.nada, w.beber] }
+      - { es: "No conozco a nadie en esta ciudad.", en: "I don't know anyone in this city.", altEs: ["En esta ciudad no conozco a nadie."], grammar: [g.indefinite-pronouns, g.a-personal], vocab: [w.nadie, w.conocer], error: { wrong: "Conozco a nadie en esta ciudad.", explain: "When nadie follows the verb, the verb needs no: No conozco a nadie.", grammar: g.indefinite-pronouns } }
       - { es: "¿Tienes algún libro sobre Perú? — No, no tengo ninguno.", en: "Do you have any book about Peru? — No, I don't have any.", grammar: [g.indefinite-pronouns], vocab: [w.algun, w.ninguno, w.libro] }
       - { es: "Algunos turistas no respetan las costumbres locales.", en: "Some tourists don't respect local customs.", grammar: [g.indefinite-pronouns], vocab: [w.alguno, w.turista, w.costumbre], note: "respetar = to respect." }
-      - { es: "No encuentro mi pasaporte en ninguna parte.", en: "I can't find my passport anywhere.", grammar: [g.indefinite-pronouns], vocab: [w.en-ninguna-parte, w.pasaporte, w.encontrar] }
-      - { es: "Lo dejé en algún lugar del hotel.", en: "I left it somewhere in the hotel.", grammar: [g.indefinite-pronouns], vocab: [w.en-algun-lugar, w.dejar] }
+      - { es: "No encuentro mi pasaporte en ninguna parte.", en: "I can't find my passport anywhere.", altEs: ["No encuentro mi pasaporte en ningún sitio."], grammar: [g.indefinite-pronouns], vocab: [w.en-ninguna-parte, w.pasaporte, w.encontrar] }
+      - { es: "Lo dejé en algún lugar del hotel.", en: "I left it somewhere in the hotel.", altEs: ["Lo dejé en algún sitio del hotel."], grammar: [g.indefinite-pronouns], vocab: [w.en-algun-lugar, w.dejar] }
       - { es: "Puedes coger cualquier autobús; todos van al centro.", en: "You can take any bus; they all go to the centre.", grammar: [g.indefinite-pronouns], vocab: [w.cualquier, w.autobus, w.coger] }
-      - { es: "No tengo ni dinero ni tiempo para viajar.", en: "I have neither money nor time to travel.", grammar: [g.indefinite-pronouns], vocab: [w.ni, w.dinero, w.tiempo] }
+      - { es: "No tengo ni dinero ni tiempo para viajar.", en: "I have neither money nor time to travel.", altEs: ["No tengo dinero ni tiempo para viajar."], grammar: [g.indefinite-pronouns], vocab: [w.ni, w.dinero, w.tiempo] }
       - { es: "Ni siquiera tuvimos tiempo de ver la catedral.", en: "We didn't even have time to see the cathedral.", grammar: [g.indefinite-pronouns], vocab: [w.ni-siquiera, w.catedral] }
       - { es: "Hicimos cola dos horas y al final el museo estaba lleno.", en: "We queued for two hours and in the end the museum was full.", grammar: [g.preterite-irregular], vocab: [w.hacer-cola, w.lleno, w.museo] }
-      - { es: "Las entradas están agotadas; no queda ninguna.", en: "The tickets are sold out; there isn't a single one left.", grammar: [g.indefinite-pronouns], vocab: [w.agotado, w.ninguno, w.entrada] }
+      - { es: "Las entradas están agotadas; no queda ninguna.", en: "The tickets are sold out; there isn't a single one left.", altEs: ["Las entradas están agotadas; no hay ninguna."], grammar: [g.indefinite-pronouns], vocab: [w.agotado, w.ninguno, w.entrada] }
       - { es: "El viaje fue agotador, pero nadie se quejó.", en: "The trip was exhausting, but nobody complained.", grammar: [g.indefinite-pronouns, g.preterite-ser-ir], vocab: [w.agotador, w.nadie, w.quejarse] }
       - { es: "En España no es obligatorio dejar propina, pero algunos dejan algo.", en: "In Spain tipping isn't compulsory, but some people leave something.", grammar: [g.indefinite-pronouns], vocab: [w.propina, w.alguno, w.algo], note: "obligatorio = compulsory.", variant: "In Mexico and the US a 10–15% tip is expected." }
-      - { es: "El restaurante estaba vacío; no había nadie.", en: "The restaurant was empty; there was nobody.", grammar: [g.indefinite-pronouns, g.imperfect], vocab: [w.vacio, w.nadie] }
+      - { es: "El restaurante estaba vacío; no había nadie.", en: "The restaurant was empty; there was nobody.", altEs: ["El restaurante estaba vacío; no había ni una persona."], grammar: [g.indefinite-pronouns, g.imperfect], vocab: [w.vacio, w.nadie] }
       - { es: "Siempre voy a algún sitio en verano.", en: "I always go somewhere in summer.", grammar: [g.indefinite-pronouns], vocab: [w.siempre, w.verano], transform: { instruction: "Make it negative", answer: "Nunca voy a ningún sitio en verano.", alt: ["No voy nunca a ningún sitio en verano.", "No voy a ningún sitio en verano."] } }
+    exchanges:
+      - q: { es: "¿Hay alguien en casa?", en: "Is anybody home?" }
+        a: { es: "No, no hay nadie.", en: "No, there's nobody." }
+        alt: ["No, nadie.", "Sí, está mi hermano."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.alguien, w.nadie]
+      - q: { es: "¿Quieres algo de beber?", en: "Do you want something to drink?" }
+        a: { es: "No, gracias, no quiero nada.", en: "No, thanks, I don't want anything." }
+        alt: ["No, nada, gracias.", "Sí, un vaso de agua."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.algo, w.nada]
+      - q: { es: "¿Tienes algún libro sobre Perú?", en: "Do you have any book about Peru?" }
+        a: { es: "No, no tengo ninguno.", en: "No, I don't have any." }
+        alt: ["No, ninguno.", "Sí, tengo uno."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.algun, w.ninguno]
+      - q: { es: "¿Has encontrado tu pasaporte?", en: "Have you found your passport?" }
+        a: { es: "No, no lo encuentro en ninguna parte.", en: "No, I can't find it anywhere." }
+        alt: ["No, en ninguna parte.", "Sí, estaba en algún lugar de la mochila."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.en-ninguna-parte, w.pasaporte]
+      - q: { es: "¿Qué autobús cojo para el centro?", en: "Which bus do I take to the centre?" }
+        a: { es: "Puedes coger cualquier autobús; todos van al centro.", en: "You can take any bus; they all go to the centre." }
+        alt: ["Cualquier autobús.", "El doce o el quince."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.cualquier, w.autobus]
+    texts:
+      - title: "Mensaje de Dani"
+        es: ["Hicimos cola dos horas y al final el museo estaba lleno.", "No había entradas para nadie; están agotadas.", "Ni siquiera pudimos ver la catedral."]
+        en: ["We queued for two hours and in the end the museum was full.", "There were no tickets for anyone; they're sold out.", "We couldn't even see the cathedral."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.hacer-cola, w.agotado, w.ni-siquiera]
   - id: a2.u12.l4
     title: Repaso A2 — un viaje inolvidable
     teach: [g.a2-review]
@@ -71,20 +162,52 @@ lessons:
     tip: "Preterite for events, imperfect for background, perfect for the recent past, estaba + gerund for actions in progress."
     sentences:
       - { es: "El verano pasado hice un viaje inolvidable por Andalucía.", en: "Last summer I went on an unforgettable trip around Andalusia.", grammar: [g.a2-review, g.preterite-irregular], vocab: [w.inolvidable, w.viaje] }
-      - { es: "Viajé como mochilero y me alojé en albergues baratos.", en: "I travelled as a backpacker and stayed in cheap hostels.", grammar: [g.a2-review], vocab: [w.mochilero, w.alojarse, w.albergue] }
+      - { es: "Viajé como mochilero y me alojé en albergues baratos.", en: "I travelled as a backpacker and stayed in cheap hostels.", altEs: ["Viajé como mochilera y me alojé en albergues baratos."], grammar: [g.a2-review], vocab: [w.mochilero, w.alojarse, w.albergue] }
       - { es: "Cuando llegué a Sevilla, hacía mucho calor y la gente estaba celebrando la feria.", en: "When I arrived in Seville, it was very hot and people were celebrating the fair.", grammar: [g.a2-review, g.preterite-vs-imperfect], vocab: [w.feria, w.celebrar, w.calor] }
       - { es: "Por la noche hubo fuegos artificiales; nunca había visto nada tan impresionante.", en: "At night there were fireworks; I had never seen anything so impressive.", grammar: [g.a2-review], vocab: [w.fuegos-artificiales, w.impresionante, w.nada], note: "había visto is the pluperfect; you will study it at B1." }
-      - { es: "Me sorprendió mucho la amabilidad de la gente local.", en: "The kindness of the local people really surprised me.", grammar: [g.a2-review], vocab: [w.sorprender, w.gente.phr], note: "amabilidad = kindness." }
-      - { es: "Probé platos típicos y aprendí algunas tradiciones.", en: "I tried typical dishes and learnt some traditions.", grammar: [g.a2-review], vocab: [w.tipico, w.tradicion, w.probar] }
-      - { es: "Las zonas turísticas eran más caras que los barrios normales.", en: "The tourist areas were more expensive than the ordinary neighbourhoods.", grammar: [g.a2-review, g.comparatives], vocab: [w.turistico, w.caro, w.barrio], note: "zona = area." }
-      - { es: "He vuelto a casa hace dos días y ya quiero volver a viajar.", en: "I came home two days ago and I already want to travel again.", grammar: [g.a2-review, g.volver-a], vocab: [w.volver-a, w.volver] }
+      - { es: "Me sorprendió mucho la amabilidad de la gente local.", en: "The kindness of the local people really surprised me.", altEs: ["Me sorprendió mucho lo amable que era la gente local."], grammar: [g.a2-review], vocab: [w.sorprender, w.gente.phr], note: "amabilidad = kindness." }
+      - { es: "Probé platos típicos y aprendí algunas tradiciones.", en: "I tried typical dishes and learnt some traditions.", altEs: ["Probé comida típica y aprendí algunas tradiciones."], grammar: [g.a2-review], vocab: [w.tipico, w.tradicion, w.probar] }
+      - { es: "Las zonas turísticas eran más caras que los barrios normales.", en: "The tourist areas were more expensive than the ordinary neighbourhoods.", altEs: ["Las zonas turísticas eran más caras que los otros barrios."], grammar: [g.a2-review, g.comparatives], vocab: [w.turistico, w.caro, w.barrio], note: "zona = area." }
+      - { es: "He vuelto a casa hace dos días y ya quiero volver a viajar.", en: "I came home two days ago and I already want to travel again.", altEs: ["Volví a casa hace dos días y ya quiero volver a viajar."], grammar: [g.a2-review, g.volver-a], vocab: [w.volver-a, w.volver] }
       - { es: "Si tuviera más dinero, viajaría todos los meses.", en: "If I had more money, I'd travel every month.", grammar: [g.a2-review, g.conditional-simple], vocab: [w.viajar, w.dinero], note: "tuviera is the imperfect subjunctive, coming at B1; recognise it for now." }
-      - { es: "¿Has estado alguna vez en Granada? — No, todavía no, pero me gustaría ir.", en: "Have you ever been to Granada? — No, not yet, but I'd like to go.", grammar: [g.a2-review, g.present-perfect], vocab: [w.alguna-vez, w.todavia-no, w.gustaria] }
+      - { es: "¿Has estado alguna vez en Granada? — No, todavía no, pero me gustaría ir.", en: "Have you ever been to Granada? — No, not yet, but I'd like to go.", altEs: ["¿Alguna vez has estado en Granada? — No, todavía no, pero me gustaría ir."], grammar: [g.a2-review, g.present-perfect], vocab: [w.alguna-vez, w.todavia-no, w.gustaria] }
       - { es: "Mis amigos me pidieron fotos y se las envié por correo.", en: "My friends asked me for photos and I sent them to them by email.", grammar: [g.a2-review, g.double-object-pronouns], vocab: [w.pedir, w.enviar, w.correo], error: { wrong: "Mis amigos me pidieron fotos y les las envié por correo.", explain: "le/les becomes se before lo/la/los/las: se las envié.", grammar: g.double-object-pronouns } }
-      - { es: "Lleva cuidado con la cartera en los sitios llenos de gente.", en: "Be careful with your wallet in crowded places.", grammar: [g.a2-review, g.imperative-tu], vocab: [w.cartera, w.lleno, w.cuidado] }
+      - { es: "Lleva cuidado con la cartera en los sitios llenos de gente.", en: "Be careful with your wallet in crowded places.", altEs: ["Ten cuidado con la cartera en los sitios llenos de gente."], grammar: [g.a2-review, g.imperative-tu], vocab: [w.cartera, w.lleno, w.cuidado] }
       - { es: "Mientras esperaba el tren, conocí a una chica argentina que también viajaba sola.", en: "While I was waiting for the train, I met an Argentinian girl who was also travelling alone.", grammar: [g.a2-review, g.mientras-cuando], vocab: [w.esperar, w.conocer, w.solo.adj] }
-      - { es: "El próximo año iremos juntos a Argentina; ya hemos empezado a ahorrar.", en: "Next year we'll go to Argentina together; we've already started saving.", grammar: [g.a2-review, g.future-simple], vocab: [w.juntos, w.ahorrar, w.argentino] }
+      - { es: "El próximo año iremos juntos a Argentina; ya hemos empezado a ahorrar.", en: "Next year we'll go to Argentina together; we've already started saving.", altEs: ["El año que viene iremos juntos a Argentina; ya hemos empezado a ahorrar."], grammar: [g.a2-review, g.future-simple], vocab: [w.juntos, w.ahorrar, w.argentino] }
       - { es: "Ayer / nosotros / ver / un castillo (muy antiguo)", en: "Yesterday we saw a very old castle.", grammar: [g.a2-review], vocab: [w.castillo, w.antiguo], transform: { instruction: "Build the sentence in the preterite", answer: "Ayer vimos un castillo muy antiguo.", alt: ["Ayer nosotros vimos un castillo muy antiguo."] } }
+    exchanges:
+      - q: { es: "¿Qué tal el viaje por Andalucía?", en: "How was the trip around Andalusia?" }
+        a: { es: "Inolvidable; lo pasé genial.", en: "Unforgettable; I had a great time." }
+        alt: ["Fue inolvidable.", "Genial, pero agotador."]
+        grammar: [g.a2-review, g.preterite-ser-ir]
+        vocab: [w.inolvidable, w.pasarlo-bien]
+      - q: { es: "¿Dónde te alojaste?", en: "Where did you stay?" }
+        a: { es: "Viajé como mochilero y me alojé en albergues baratos.", en: "I travelled as a backpacker and stayed in cheap hostels." }
+        alt: ["En albergues baratos.", "En un albergue."]
+        grammar: [g.a2-review, g.preterite-regular]
+        vocab: [w.alojarse, w.albergue, w.mochilero]
+      - q: { es: "¿Has estado alguna vez en Granada?", en: "Have you ever been to Granada?" }
+        a: { es: "No, todavía no, pero me gustaría ir.", en: "No, not yet, but I'd like to go." }
+        alt: ["Todavía no.", "Sí, dos veces."]
+        grammar: [g.a2-review, g.present-perfect]
+        vocab: [w.alguna-vez, w.gustaria]
+      - q: { es: "¿Qué hacía la gente cuando llegaste a Sevilla?", en: "What were people doing when you arrived in Seville?" }
+        a: { es: "Estaba celebrando la feria.", en: "They were celebrating the fair." }
+        alt: ["Celebraba la feria.", "Estaban en la feria."]
+        grammar: [g.a2-review, g.preterite-vs-imperfect]
+        vocab: [w.feria, w.celebrar]
+      - q: { es: "¿Volverás a viajar pronto?", en: "Will you travel again soon?" }
+        a: { es: "Sí, el próximo año iremos juntos a Argentina.", en: "Yes, next year we'll go to Argentina together." }
+        alt: ["Sí, el año que viene.", "Sí, ya hemos empezado a ahorrar."]
+        grammar: [g.a2-review, g.future-simple]
+        vocab: [w.volver-a, w.ahorrar]
+    texts:
+      - title: "Pie de foto"
+        es: ["Sevilla, agosto.", "Cuando llegamos hacía mucho calor y la gente estaba celebrando la feria.", "Probamos platos típicos y por la noche hubo fuegos artificiales.", "¡Un viaje inolvidable!"]
+        en: ["Seville, August.", "When we arrived it was very hot and people were celebrating the fair.", "We tried typical dishes and at night there were fireworks.", "An unforgettable trip!"]
+        grammar: [g.a2-review, g.preterite-vs-imperfect]
+        vocab: [w.feria, w.tipico, w.fuegos-artificiales]
 dialogues:
   - id: a2.u12.d1
     title: Vuelta del viaje

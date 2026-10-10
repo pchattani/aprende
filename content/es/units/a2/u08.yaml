@@ -7,74 +7,182 @@ lessons:
     vocab: [w.lento, w.peor, w.practico, w.util, w.inutil, w.igual, w.diferente, w.parecido, w.mas-que, w.menos-que, w.tan-como, w.tanto, w.comparar, w.transporte, w.publico, w.privado]
     sentences:
       - { es: "El tren es más rápido que el autobús.", en: "The train is faster than the bus.", grammar: [g.comparatives], vocab: [w.mas-que, w.rapido, w.tren] }
-      - { es: "Mi coche es más lento que el tuyo.", en: "My car is slower than yours.", grammar: [g.comparatives], vocab: [w.lento, w.coche] }
-      - { es: "Esta película es peor que la otra.", en: "This film is worse than the other one.", grammar: [g.comparatives], vocab: [w.peor, w.pelicula], error: { wrong: "Esta película es más peor que la otra.", explain: "peor is already a comparative; never más peor.", grammar: g.comparatives } }
-      - { es: "Mi hermano es mayor que yo, pero yo soy más alto.", en: "My brother is older than me, but I am taller.", grammar: [g.comparatives], vocab: [w.mayor, w.alto] }
+      - { es: "Mi coche es más lento que el tuyo.", en: "My car is slower than yours.", altEs: ["Mi coche es menos rápido que el tuyo."], grammar: [g.comparatives], vocab: [w.lento, w.coche] }
+      - { es: "Esta película es peor que la otra.", en: "This film is worse than the other one.", altEs: ["Esta película es peor que aquella."], grammar: [g.comparatives], vocab: [w.peor, w.pelicula], error: { wrong: "Esta película es más peor que la otra.", explain: "peor is already a comparative; never más peor.", grammar: g.comparatives } }
+      - { es: "Mi hermano es mayor que yo, pero yo soy más alto.", en: "My brother is older than me, but I am taller.", altEs: ["Mi hermano es mayor que yo, pero soy más alto."], grammar: [g.comparatives], vocab: [w.mayor, w.alto] }
       - { es: "El metro es tan rápido como el taxi y mucho más barato.", en: "The metro is as fast as a taxi and much cheaper.", grammar: [g.comparatives], vocab: [w.tan-como, w.barato] }
-      - { es: "No tengo tanto tiempo como tú.", en: "I don't have as much time as you.", grammar: [g.comparatives], vocab: [w.tanto] }
+      - { es: "No tengo tanto tiempo como tú.", en: "I don't have as much time as you.", altEs: ["Yo no tengo tanto tiempo como tú."], grammar: [g.comparatives], vocab: [w.tanto] }
       - { es: "Esta mochila es más práctica y menos cara que el bolso.", en: "This backpack is more practical and less expensive than the handbag.", grammar: [g.comparatives], vocab: [w.practico, w.menos-que] }
-      - { es: "Un diccionario es más útil que un juego.", en: "A dictionary is more useful than a game.", grammar: [g.comparatives], vocab: [w.util, w.diccionario] }
+      - { es: "Un diccionario es más útil que un juego.", en: "A dictionary is more useful than a game.", altEs: ["Un diccionario es más útil que un videojuego."], grammar: [g.comparatives], vocab: [w.util, w.diccionario] }
       - { es: "Este aparato es completamente inútil.", en: "This device is completely useless.", grammar: [g.adjective-agreement], vocab: [w.inutil] }
-      - { es: "Los dos hermanos son muy parecidos, pero no son iguales.", en: "The two brothers are very similar, but they aren't identical.", grammar: [g.comparatives], vocab: [w.parecido, w.igual] }
+      - { es: "Los dos hermanos son muy parecidos, pero no son iguales.", en: "The two brothers are very similar, but they aren't identical.", altEs: ["Los dos hermanos se parecen mucho, pero no son iguales."], grammar: [g.comparatives], vocab: [w.parecido, w.igual] }
       - { es: "El transporte público es más barato que el privado.", en: "Public transport is cheaper than private transport.", grammar: [g.comparatives], vocab: [w.transporte, w.publico, w.privado] }
-      - { es: "Comparamos los precios de tres tiendas diferentes.", en: "We compared the prices of three different shops.", grammar: [g.preterite-regular], vocab: [w.comparar, w.diferente] }
+      - { es: "Comparamos los precios de tres tiendas diferentes.", en: "We compared the prices of three different shops.", altEs: ["Comparamos los precios en tres tiendas diferentes."], grammar: [g.preterite-regular], vocab: [w.comparar, w.diferente] }
       - { es: "Hay más de cien personas en la sala.", en: "There are more than a hundred people in the room.", grammar: [g.comparatives], vocab: [w.cien, w.gente] }
-      - { es: "Madrid es más grande que Sevilla.", en: "Madrid is bigger than Seville.", grammar: [g.comparatives], vocab: [w.grande], transform: { instruction: "Say the opposite with 'menos'", answer: "Sevilla es menos grande que Madrid.", alt: ["Sevilla es más pequeña que Madrid."] } }
+      - { es: "Madrid es más grande que Sevilla.", en: "Madrid is bigger than Seville.", altEs: ["Madrid es mayor que Sevilla."], grammar: [g.comparatives], vocab: [w.grande], transform: { instruction: "Say the opposite with 'menos'", answer: "Sevilla es menos grande que Madrid.", alt: ["Sevilla es más pequeña que Madrid."] } }
+    exchanges:
+      - q: { es: "¿Qué es más rápido, el tren o el autobús?", en: "Which is faster, the train or the bus?" }
+        a: { es: "El tren es más rápido que el autobús.", en: "The train is faster than the bus." }
+        alt: ["El tren.", "El tren, y también más cómodo."]
+        grammar: [g.comparatives]
+        vocab: [w.mas-que, w.rapido]
+      - q: { es: "¿Tu hermano es mayor que tú?", en: "Is your brother older than you?" }
+        a: { es: "Sí, pero yo soy más alto.", en: "Yes, but I'm taller." }
+        alt: ["Sí, dos años mayor.", "No, es menor que yo."]
+        grammar: [g.comparatives]
+        vocab: [w.mayor, w.alto]
+      - q: { es: "¿El metro es tan rápido como el taxi?", en: "Is the metro as fast as a taxi?" }
+        a: { es: "Sí, y es mucho más barato.", en: "Yes, and it's much cheaper." }
+        alt: ["Sí, casi igual.", "No, el taxi es más rápido."]
+        grammar: [g.comparatives]
+        vocab: [w.tan-como, w.barato]
+      - q: { es: "¿Tienes tanto tiempo como yo?", en: "Do you have as much time as me?" }
+        a: { es: "No, no tengo tanto tiempo como tú.", en: "No, I don't have as much time as you." }
+        alt: ["No, tengo menos.", "Sí, más o menos."]
+        grammar: [g.comparatives]
+        vocab: [w.tanto]
+    texts:
+      - title: "Tren o autobús"
+        es: ["El tren es más rápido que el autobús, pero es más caro.", "El autobús es más lento; sin embargo, es tan cómodo como el tren.", "Para mí, el transporte público es más práctico que el coche."]
+        en: ["The train is faster than the bus, but it's more expensive.", "The bus is slower; however, it's as comfortable as the train.", "For me, public transport is more practical than the car."]
+        grammar: [g.comparatives]
+        vocab: [w.lento, w.transporte, w.practico]
   - id: a2.u08.l2
     title: El mejor de todos
     teach: [g.superlatives]
     vocab: [w.el-mas, w.popular, w.normal, w.calidad, w.tamano, w.cantidad, w.marca, w.modelo, w.barato.phr, w.sencillo, w.complicado, w.pesado, w.ligero, w.ancho, w.estrecho, w.duro, w.blando]
     sentences:
       - { es: "Es la ciudad más bonita de España.", en: "It's the most beautiful city in Spain.", grammar: [g.superlatives], vocab: [w.el-mas, w.bonito], error: { wrong: "Es la ciudad más bonita en España.", explain: "After a superlative use de: la más bonita de España.", grammar: g.superlatives } }
-      - { es: "Es el mejor restaurante del barrio.", en: "It's the best restaurant in the neighbourhood.", grammar: [g.superlatives], vocab: [w.mejor, w.barrio] }
-      - { es: "Este es el peor día de mi vida.", en: "This is the worst day of my life.", grammar: [g.superlatives], vocab: [w.peor, w.vida] }
-      - { es: "La paella estaba riquísima.", en: "The paella was absolutely delicious.", grammar: [g.superlatives], vocab: [w.rico] }
-      - { es: "Es el cantante más popular del momento.", en: "He's the most popular singer of the moment.", grammar: [g.superlatives], vocab: [w.popular, w.cantante] }
+      - { es: "Es el mejor restaurante del barrio.", en: "It's the best restaurant in the neighbourhood.", altEs: ["Es el mejor restaurante de todo el barrio."], grammar: [g.superlatives], vocab: [w.mejor, w.barrio] }
+      - { es: "Este es el peor día de mi vida.", en: "This is the worst day of my life.", altEs: ["Hoy es el peor día de mi vida."], grammar: [g.superlatives], vocab: [w.peor, w.vida] }
+      - { es: "La paella estaba riquísima.", en: "The paella was absolutely delicious.", altEs: ["La paella estaba muy rica."], grammar: [g.superlatives], vocab: [w.rico] }
+      - { es: "Es el cantante más popular del momento.", en: "He's the most popular singer of the moment.", altEs: ["Es el cantante más famoso del momento."], grammar: [g.superlatives], vocab: [w.popular, w.cantante] }
       - { es: "Esta marca tiene la mejor relación calidad-precio.", en: "This brand has the best value for money.", grammar: [g.superlatives], vocab: [w.marca, w.barato.phr, w.calidad] }
       - { es: "¿Cuál es el modelo más sencillo? Este, y el más complicado es aquel.", en: "Which is the simplest model? This one, and the most complicated is that one.", grammar: [g.superlatives], vocab: [w.modelo, w.sencillo, w.complicado] }
-      - { es: "La maleta grande es pesadísima; la pequeña es más ligera.", en: "The big suitcase is really heavy; the small one is lighter.", grammar: [g.superlatives], vocab: [w.pesado, w.ligero] }
+      - { es: "La maleta grande es pesadísima; la pequeña es más ligera.", en: "The big suitcase is really heavy; the small one is lighter.", altEs: ["La maleta grande es muy pesada; la pequeña es más ligera."], grammar: [g.superlatives], vocab: [w.pesado, w.ligero] }
       - { es: "Es la calle más estrecha de la ciudad y la avenida más ancha.", en: "It's the narrowest street in the city and the widest avenue.", grammar: [g.superlatives], vocab: [w.estrecho, w.ancho] }
-      - { es: "El pan está durísimo; prefiero el blando.", en: "The bread is rock hard; I prefer the soft kind.", grammar: [g.superlatives], vocab: [w.duro, w.blando] }
-      - { es: "¿Qué tamaño quiere? El más grande, por favor.", en: "What size do you want? The biggest, please.", grammar: [g.superlatives], vocab: [w.tamano, w.grande] }
+      - { es: "El pan está durísimo; prefiero el blando.", en: "The bread is rock hard; I prefer the soft kind.", altEs: ["El pan está muy duro; prefiero el blando."], grammar: [g.superlatives], vocab: [w.duro, w.blando] }
+      - { es: "¿Qué tamaño quiere? El más grande, por favor.", en: "What size do you want? The biggest, please.", altEs: ["¿Qué tamaño quiere? El mayor, por favor."], grammar: [g.superlatives], vocab: [w.tamano, w.grande] }
       - { es: "Necesito una cantidad enorme de azúcar para esta tarta.", en: "I need a huge amount of sugar for this cake.", grammar: [g.quantity-words], vocab: [w.cantidad, w.azucar] }
       - { es: "Es una persona muy normal, nada especial.", en: "She's a very normal person, nothing special.", grammar: [g.muy-bastante-poco], vocab: [w.normal, w.especial] }
-      - { es: "Es la mejor película del año.", en: "It's the best film of the year.", grammar: [g.superlatives], vocab: [w.mejor, w.pelicula], transform: { instruction: "Change to the plural: 'the best films'", answer: "Son las mejores películas del año." } }
+      - { es: "Es la mejor película del año.", en: "It's the best film of the year.", altEs: ["Es la mejor película de este año."], grammar: [g.superlatives], vocab: [w.mejor, w.pelicula], transform: { instruction: "Change to the plural: 'the best films'", answer: "Son las mejores películas del año." } }
+    exchanges:
+      - q: { es: "¿Cuál es la ciudad más bonita de España?", en: "Which is the most beautiful city in Spain?" }
+        a: { es: "Para mí, Granada.", en: "For me, Granada." }
+        alt: ["Granada, para mí.", "Sevilla es la más bonita."]
+        grammar: [g.superlatives]
+        vocab: [w.el-mas, w.bonito]
+      - q: { es: "¿Qué tamaño quiere?", en: "What size do you want?" }
+        a: { es: "El más grande, por favor.", en: "The biggest, please." }
+        alt: ["El más pequeño, por favor.", "El grande."]
+        grammar: [g.superlatives]
+        vocab: [w.tamano, w.grande]
+      - q: { es: "¿Cuál es el modelo más sencillo?", en: "Which is the simplest model?" }
+        a: { es: "Este; el más complicado es aquel.", en: "This one; the most complicated is that one." }
+        alt: ["Este.", "Este es el más sencillo."]
+        grammar: [g.superlatives]
+        vocab: [w.modelo, w.sencillo]
+      - q: { es: "¿Qué tal la paella?", en: "How was the paella?" }
+        a: { es: "Muy rica, la mejor que he comido.", en: "Very tasty, the best I've ever eaten." }
+        alt: ["Muy buena.", "La mejor de mi vida."]
+        grammar: [g.superlatives]
+        vocab: [w.rico, w.mejor]
+    texts:
+      - title: "Opinión de un cliente"
+        es: ["Es el mejor restaurante del barrio.", "La comida es muy buena y el camarero es el más amable de la ciudad.", "Lo peor: es el más caro de la calle."]
+        en: ["It's the best restaurant in the neighbourhood.", "The food is very good and the waiter is the friendliest in the city.", "The worst thing: it's the most expensive one on the street."]
+        grammar: [g.superlatives]
+        vocab: [w.mejor, w.peor, w.camarero]
   - id: a2.u08.l3
     title: Muy o mucho
     teach: [g.muy-vs-mucho]
     vocab: [w.sano, w.saludable, w.verdura.phr, w.casero, w.ventaja, w.desventaja, w.diferencia, w.ejemplo, w.ventajas.phr, w.trafico, w.naturaleza, w.aire, w.vida-en-el-pueblo]
     sentences:
       - { es: "Hay mucha gente y hace mucho calor, pero estoy muy contento.", en: "There are many people and it is very hot, but I am very happy.", grammar: [g.muy-vs-mucho], vocab: [w.gente, w.calor] }
-      - { es: "Me gusta mucho; es muy interesante.", en: "I like it a lot; it is very interesting.", grammar: [g.muy-vs-mucho], vocab: [w.gustar, w.interesante], error: { wrong: "Me gusta muy; es mucho interesante.", explain: "mucho after a verb, muy before an adjective.", grammar: g.muy-vs-mucho } }
+      - { es: "Me gusta mucho; es muy interesante.", en: "I like it a lot; it is very interesting.", altEs: ["Me encanta; es muy interesante."], grammar: [g.muy-vs-mucho], vocab: [w.gustar, w.interesante], error: { wrong: "Me gusta muy; es mucho interesante.", explain: "mucho after a verb, muy before an adjective.", grammar: g.muy-vs-mucho } }
       - { es: "La comida casera es más sana que la comida rápida.", en: "Home-made food is healthier than fast food.", grammar: [g.comparatives], vocab: [w.casero, w.sano, w.verdura.phr] }
-      - { es: "Las verduras son muy saludables.", en: "Vegetables are very healthy.", grammar: [g.muy-vs-mucho], vocab: [w.saludable, w.verdura] }
+      - { es: "Las verduras son muy saludables.", en: "Vegetables are very healthy.", altEs: ["Las verduras son muy sanas."], grammar: [g.muy-vs-mucho], vocab: [w.saludable, w.verdura] }
       - { es: "La vida en el pueblo tiene muchas ventajas.", en: "Village life has many advantages.", grammar: [g.muy-vs-mucho], vocab: [w.vida-en-el-pueblo, w.ventajas.phr, w.ventaja] }
-      - { es: "La desventaja es que hay muy pocas tiendas.", en: "The disadvantage is that there are very few shops.", grammar: [g.muy-vs-mucho], vocab: [w.desventaja, w.tienda] }
-      - { es: "En la ciudad hay demasiado tráfico y mucho ruido.", en: "In the city there is too much traffic and a lot of noise.", grammar: [g.quantity-words], vocab: [w.trafico, w.ruido] }
+      - { es: "La desventaja es que hay muy pocas tiendas.", en: "The disadvantage is that there are very few shops.", altEs: ["Lo malo es que hay muy pocas tiendas."], grammar: [g.muy-vs-mucho], vocab: [w.desventaja, w.tienda] }
+      - { es: "En la ciudad hay demasiado tráfico y mucho ruido.", en: "In the city there is too much traffic and a lot of noise.", altEs: ["En la ciudad hay mucho tráfico y demasiado ruido."], grammar: [g.quantity-words], vocab: [w.trafico, w.ruido] }
       - { es: "En el campo el aire es muy limpio y la naturaleza es preciosa.", en: "In the country the air is very clean and nature is beautiful.", grammar: [g.muy-vs-mucho], vocab: [w.aire, w.naturaleza] }
-      - { es: "La diferencia de precio es muy grande.", en: "The difference in price is very big.", grammar: [g.muy-vs-mucho], vocab: [w.diferencia, w.precio] }
+      - { es: "La diferencia de precio es muy grande.", en: "The difference in price is very big.", altEs: ["Hay una diferencia de precio muy grande."], grammar: [g.muy-vs-mucho], vocab: [w.diferencia, w.precio] }
       - { es: "Por ejemplo, el metro es muchísimo más barato.", en: "For example, the metro is much, much cheaper.", grammar: [g.superlatives], vocab: [w.ejemplo, w.metro] }
-      - { es: "Trabaja mucho y habla muy rápido.", en: "He works a lot and speaks very fast.", grammar: [g.muy-vs-mucho], vocab: [w.trabajar, w.rapido] }
-      - { es: "¿Es caro? — Sí, mucho.", en: "Is it expensive? — Yes, very.", grammar: [g.muy-vs-mucho], vocab: [w.caro] }
-      - { es: "Tengo mucha sed y muy poco tiempo.", en: "I'm very thirsty and I have very little time.", grammar: [g.muy-vs-mucho], vocab: [w.sed, w.poco] }
+      - { es: "Trabaja mucho y habla muy rápido.", en: "He works a lot and speaks very fast.", altEs: ["Él trabaja mucho y habla muy rápido."], grammar: [g.muy-vs-mucho], vocab: [w.trabajar, w.rapido] }
+      - { es: "¿Es caro? — Sí, mucho.", en: "Is it expensive? — Yes, very.", altEs: ["¿Es caro? — Sí, muy caro."], grammar: [g.muy-vs-mucho], vocab: [w.caro] }
+      - { es: "Tengo mucha sed y muy poco tiempo.", en: "I'm very thirsty and I have very little time.", altEs: ["Tengo mucha sed y no tengo mucho tiempo."], grammar: [g.muy-vs-mucho], vocab: [w.sed, w.poco] }
+    exchanges:
+      - q: { es: "¿Te gusta la comida casera?", en: "Do you like home-made food?" }
+        a: { es: "Sí, me gusta mucho; es muy sana.", en: "Yes, I like it a lot; it's very healthy." }
+        alt: ["Sí, mucho.", "Sí, es muy saludable."]
+        grammar: [g.muy-vs-mucho]
+        vocab: [w.casero, w.sano]
+      - q: { es: "¿Hay mucho tráfico en tu ciudad?", en: "Is there a lot of traffic in your city?" }
+        a: { es: "Sí, hay demasiado tráfico y mucho ruido.", en: "Yes, there's too much traffic and a lot of noise." }
+        alt: ["Sí, mucho.", "No, muy poco."]
+        grammar: [g.muy-vs-mucho, g.quantity-words]
+        vocab: [w.trafico, w.ruido]
+      - q: { es: "¿Es caro vivir en el centro?", en: "Is it expensive to live in the centre?" }
+        a: { es: "Sí, mucho; es muy caro.", en: "Yes, very; it's very expensive." }
+        alt: ["Sí, muy caro.", "Sí, mucho."]
+        grammar: [g.muy-vs-mucho]
+        vocab: [w.caro]
+      - q: { es: "¿Cuál es la ventaja de vivir en el pueblo?", en: "What's the advantage of living in the village?" }
+        a: { es: "El aire es muy limpio y hay mucha naturaleza.", en: "The air is very clean and there's a lot of nature." }
+        alt: ["La naturaleza.", "Hay muy poco ruido."]
+        grammar: [g.muy-vs-mucho]
+        vocab: [w.ventaja, w.naturaleza, w.aire]
+    texts:
+      - title: "La vida en el pueblo"
+        es: ["La vida en el pueblo tiene muchas ventajas: el aire es muy limpio y la gente es muy amable.", "La desventaja es que hay muy pocas tiendas.", "Por ejemplo, para ir al cine tienes que viajar mucho."]
+        en: ["Village life has many advantages: the air is very clean and people are very kind.", "The disadvantage is that there are very few shops.", "For example, to go to the cinema you have to travel a lot."]
+        grammar: [g.muy-vs-mucho]
+        vocab: [w.vida-en-el-pueblo, w.desventaja, w.ejemplo]
   - id: a2.u08.l4
     title: En mi opinión
     teach: [g.opinions]
     vocab: [w.en-mi-opinion, w.para-mi, w.me-parece, w.tener-razon, w.depende, w.opinar, w.estar-de-acuerdo, w.elegir, w.decidir, w.votar]
     sentences:
       - { es: "En mi opinión, el mejor plato español es la tortilla.", en: "In my opinion, the best Spanish dish is the omelette.", grammar: [g.opinions], vocab: [w.en-mi-opinion, w.tortilla] }
-      - { es: "Para mí, el invierno es la peor estación.", en: "For me, winter is the worst season.", grammar: [g.opinions], vocab: [w.para-mi, w.invierno] }
+      - { es: "Para mí, el invierno es la peor estación.", en: "For me, winter is the worst season.", altEs: ["En mi opinión, el invierno es la peor estación."], grammar: [g.opinions], vocab: [w.para-mi, w.invierno] }
       - { es: "Me parece que el examen ha sido fácil. ¿Tú qué opinas?", en: "I think the exam was easy. What do you think?", grammar: [g.opinions], vocab: [w.me-parece, w.opinar] }
-      - { es: "Creo que tienes razón.", en: "I think you're right.", grammar: [g.opinions], vocab: [w.tener-razon, w.creer] }
-      - { es: "Estoy totalmente de acuerdo contigo.", en: "I totally agree with you.", grammar: [g.opinions], vocab: [w.estar-de-acuerdo], error: { wrong: "Soy totalmente de acuerdo contigo.", explain: "Agreeing is estar de acuerdo.", grammar: g.opinions } }
-      - { es: "No estoy de acuerdo; para mí la ciudad es mejor.", en: "I don't agree; for me the city is better.", grammar: [g.opinions], vocab: [w.estar-de-acuerdo, w.mejor] }
-      - { es: "¿Playa o montaña? — Depende del tiempo.", en: "Beach or mountains? — It depends on the weather.", grammar: [g.opinions], vocab: [w.depende, w.tiempo] }
+      - { es: "Creo que tienes razón.", en: "I think you're right.", altEs: ["Pienso que tienes razón.", "Me parece que tienes razón."], grammar: [g.opinions], vocab: [w.tener-razon, w.creer] }
+      - { es: "Estoy totalmente de acuerdo contigo.", en: "I totally agree with you.", altEs: ["Estoy de acuerdo contigo."], grammar: [g.opinions], vocab: [w.estar-de-acuerdo], error: { wrong: "Soy totalmente de acuerdo contigo.", explain: "Agreeing is estar de acuerdo.", grammar: g.opinions } }
+      - { es: "No estoy de acuerdo; para mí la ciudad es mejor.", en: "I don't agree; for me the city is better.", altEs: ["No estoy de acuerdo; en mi opinión la ciudad es mejor."], grammar: [g.opinions], vocab: [w.estar-de-acuerdo, w.mejor] }
+      - { es: "¿Playa o montaña? — Depende del tiempo.", en: "Beach or mountains? — It depends on the weather.", altEs: ["¿Playa o montaña? — Depende del tiempo que haga."], grammar: [g.opinions], vocab: [w.depende, w.tiempo] }
       - { es: "No sé qué elegir: los dos son muy bonitos.", en: "I don't know which to choose: both are very nice.", grammar: [g.opinions], vocab: [w.elegir, w.bonito] }
       - { es: "Al final decidimos comprar el más barato.", en: "In the end we decided to buy the cheapest one.", grammar: [g.superlatives], vocab: [w.decidir, w.barato] }
       - { es: "¿Por quién vas a votar? — Todavía no lo he decidido.", en: "Who are you going to vote for? — I haven't decided yet.", grammar: [g.opinions], vocab: [w.votar, w.decidir] }
-      - { es: "Pienso que es una buena idea, pero es demasiado cara.", en: "I think it's a good idea, but it's too expensive.", grammar: [g.opinions], vocab: [w.pensar, w.caro] }
+      - { es: "Pienso que es una buena idea, pero es demasiado cara.", en: "I think it's a good idea, but it's too expensive.", altEs: ["Creo que es una buena idea, pero es demasiado cara."], grammar: [g.opinions], vocab: [w.pensar, w.caro] }
       - { es: "¿Qué te parece el nuevo profesor? — Me parece muy simpático.", en: "What do you think of the new teacher? — I think he's very nice.", grammar: [g.opinions], vocab: [w.me-parece, w.simpatico] }
-      - { es: "Yo creo que el tren es mejor que el avión.", en: "I think the train is better than the plane.", grammar: [g.opinions], vocab: [w.creer, w.mejor], transform: { instruction: "Change 'yo creo' to 'nosotros pensamos'", answer: "Nosotros pensamos que el tren es mejor que el avión.", alt: ["Pensamos que el tren es mejor que el avión."] } }
+      - { es: "Yo creo que el tren es mejor que el avión.", en: "I think the train is better than the plane.", altEs: ["Creo que el tren es mejor que el avión."], grammar: [g.opinions], vocab: [w.creer, w.mejor], transform: { instruction: "Change 'yo creo' to 'nosotros pensamos'", answer: "Nosotros pensamos que el tren es mejor que el avión.", alt: ["Pensamos que el tren es mejor que el avión."] } }
+    exchanges:
+      - q: { es: "¿Qué te parece el nuevo profesor?", en: "What do you think of the new teacher?" }
+        a: { es: "Me parece muy simpático.", en: "I think he's very nice." }
+        alt: ["Muy simpático.", "No sé, es un poco serio."]
+        grammar: [g.opinions]
+        vocab: [w.me-parece, w.simpatico]
+      - q: { es: "¿Playa o montaña?", en: "Beach or mountains?" }
+        a: { es: "Depende del tiempo.", en: "It depends on the weather." }
+        alt: ["Para mí, playa.", "Montaña."]
+        grammar: [g.opinions]
+        vocab: [w.depende]
+      - q: { es: "¿Estás de acuerdo conmigo?", en: "Do you agree with me?" }
+        a: { es: "Sí, creo que tienes razón.", en: "Yes, I think you're right." }
+        alt: ["Sí, estoy de acuerdo.", "No, no estoy de acuerdo."]
+        grammar: [g.opinions]
+        vocab: [w.estar-de-acuerdo, w.tener-razon]
+      - q: { es: "¿Cuál es el mejor plato español, en tu opinión?", en: "What's the best Spanish dish, in your opinion?" }
+        a: { es: "En mi opinión, la tortilla.", en: "In my opinion, the omelette." }
+        alt: ["Para mí, la paella.", "La tortilla."]
+        grammar: [g.opinions]
+        vocab: [w.en-mi-opinion, w.tortilla]
+    texts:
+      - title: "Comentario"
+        es: ["En mi opinión, esta película es la mejor del año.", "Me parece que los actores son fantásticos.", "Para mí, el final es un poco largo, pero vale la pena.", "¿Vosotros qué opináis?"]
+        en: ["In my opinion, this film is the best of the year.", "I think the actors are fantastic.", "For me, the ending is a bit long, but it's worth it.", "What do you think?"]
+        grammar: [g.opinions, g.superlatives]
+        vocab: [w.en-mi-opinion, w.me-parece, w.opinar]
 dialogues:
   - id: a2.u08.d1
     title: ¿Ciudad o pueblo?

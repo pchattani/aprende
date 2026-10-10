@@ -6,74 +6,187 @@ lessons:
     teach: [g.preterite-irregular]
     vocab: [w.nacer, w.crecer, w.morir, w.casarse, w.divorciarse, w.graduarse, w.mudarse, w.jubilarse, w.biografia, w.muerte, w.nacimiento, w.infancia, w.juventud, w.a-los]
     sentences:
-      - { es: "Mi abuelo nació en 1940 en un pueblo de Galicia.", en: "My grandfather was born in 1940 in a village in Galicia.", grammar: [g.preterite-regular], vocab: [w.nacer] }
+      - { es: "Mi abuelo nació en 1940 en un pueblo de Galicia.", en: "My grandfather was born in 1940 in a village in Galicia.", altEs: ["Mi abuelo nació en un pueblo de Galicia en 1940."], grammar: [g.preterite-regular], vocab: [w.nacer] }
       - { es: "Creció en el campo y a los dieciocho años se mudó a Madrid.", en: "He grew up in the country and at eighteen moved to Madrid.", grammar: [g.preterite-regular], vocab: [w.crecer, w.mudarse, w.a-los] }
       - { es: "Se casó con mi abuela en 1965.", en: "He married my grandmother in 1965.", grammar: [g.prepositions-verbs], vocab: [w.casarse], error: { wrong: "Se casó a mi abuela en 1965.", explain: "casarse con.", grammar: g.prepositions-verbs } }
-      - { es: "Tuvieron tres hijos.", en: "They had three children.", grammar: [g.preterite-irregular], vocab: [w.tener, w.hijo.phr] }
+      - { es: "Tuvieron tres hijos.", en: "They had three children.", altEs: ["Ellos tuvieron tres hijos."], grammar: [g.preterite-irregular], vocab: [w.tener, w.hijo.phr] }
       - { es: "Mis padres se divorciaron cuando yo tenía diez años.", en: "My parents got divorced when I was ten.", grammar: [g.preterite-vs-imperfect], vocab: [w.divorciarse] }
-      - { es: "Mi hermana se graduó en Medicina el año pasado.", en: "My sister graduated in Medicine last year.", grammar: [g.preterite-regular], vocab: [w.graduarse] }
+      - { es: "Mi hermana se graduó en Medicina el año pasado.", en: "My sister graduated in Medicine last year.", altEs: ["Mi hermana terminó la carrera de Medicina el año pasado."], grammar: [g.preterite-regular], vocab: [w.graduarse] }
       - { es: "Mi padre se jubiló a los sesenta y cinco años.", en: "My father retired at sixty-five.", grammar: [g.preterite-regular], vocab: [w.jubilarse, w.a-los] }
-      - { es: "Mi abuelo murió en 2015.", en: "My grandfather died in 2015.", grammar: [g.preterite-stem-changing], vocab: [w.morir, w.muerte] }
+      - { es: "Mi abuelo murió en 2015.", en: "My grandfather died in 2015.", altEs: ["Mi abuelo se murió en 2015."], grammar: [g.preterite-stem-changing], vocab: [w.morir, w.muerte] }
       - { es: "Tuvo una infancia feliz pero una juventud difícil.", en: "He had a happy childhood but a difficult youth.", grammar: [g.preterite-irregular], vocab: [w.infancia, w.juventud] }
-      - { es: "Leí una biografía muy interesante de Frida Kahlo.", en: "I read a very interesting biography of Frida Kahlo.", grammar: [g.preterite-spelling-changes], vocab: [w.biografia, w.leer] }
+      - { es: "Leí una biografía muy interesante de Frida Kahlo.", en: "I read a very interesting biography of Frida Kahlo.", altEs: ["Leí una biografía de Frida Kahlo muy interesante."], grammar: [g.preterite-spelling-changes], vocab: [w.biografia, w.leer] }
       - { es: "¿Dónde naciste? — Nací en Bilbao.", en: "Where were you born? — I was born in Bilbao.", grammar: [g.preterite-regular], vocab: [w.nacer] }
       - { es: "El nacimiento de su hija cambió su vida.", en: "The birth of his daughter changed his life.", grammar: [g.preterite-regular], vocab: [w.nacimiento, w.cambiar] }
-      - { es: "Ella se mudó a Londres.", en: "She moved to London.", grammar: [g.preterite-regular], vocab: [w.mudarse], transform: { instruction: "Change to 'they'", answer: "Se mudaron a Londres.", alt: ["Ellos se mudaron a Londres."] } }
+      - { es: "Ella se mudó a Londres.", en: "She moved to London.", altEs: ["Se mudó a Londres."], grammar: [g.preterite-regular], vocab: [w.mudarse], transform: { instruction: "Change to 'they'", answer: "Se mudaron a Londres.", alt: ["Ellos se mudaron a Londres."] } }
+    exchanges:
+      - q: { es: "¿Dónde nació tu abuelo?", en: "Where was your grandfather born?" }
+        a: { es: "Nació en un pueblo de Galicia en 1940.", en: "He was born in a village in Galicia in 1940." }
+        alt: ["En un pueblo de Galicia.", "En Galicia."]
+        grammar: [g.preterite-regular]
+        vocab: [w.nacer]
+      - q: { es: "¿Cuándo se casaron tus abuelos?", en: "When did your grandparents get married?" }
+        a: { es: "Se casaron en 1965.", en: "They got married in 1965." }
+        alt: ["En 1965.", "Hace muchos años."]
+        grammar: [g.preterite-regular]
+        vocab: [w.casarse]
+      - q: { es: "¿Cuántos hijos tuvieron?", en: "How many children did they have?" }
+        a: { es: "Tuvieron tres hijos.", en: "They had three children." }
+        alt: ["Tres.", "Tres hijos."]
+        grammar: [g.preterite-irregular]
+        vocab: [w.tener, w.hijo.phr]
+      - q: { es: "¿A qué edad se jubiló tu padre?", en: "At what age did your father retire?" }
+        a: { es: "Se jubiló a los sesenta y cinco años.", en: "He retired at sixty-five." }
+        alt: ["A los sesenta y cinco.", "A los sesenta y cinco años."]
+        grammar: [g.preterite-regular]
+        vocab: [w.jubilarse, w.a-los]
+    texts:
+      - title: "Biografía corta"
+        es: ["Mi abuela nació en 1948 en Asturias.", "A los diecinueve años se mudó a Madrid y se casó en 1972.", "Tuvo tres hijos y se jubiló en 2010."]
+        en: ["My grandmother was born in 1948 in Asturias.", "At nineteen she moved to Madrid and got married in 1972.", "She had three children and retired in 2010."]
+        grammar: [g.preterite-irregular, g.preterite-regular]
+        vocab: [w.nacer, w.mudarse, w.jubilarse]
   - id: a2.u02.l2
     title: Fue, hizo, tuvo
     teach: [g.preterite-ser-ir]
     tip: "ser and ir share one preterite: fui, fuiste, fue, fuimos, fuisteis, fueron."
     vocab: [w.publicar, w.inventar, w.fundar, w.dirigir, w.luchar, w.conseguir, w.convertirse, w.siglo, w.epoca, w.guerra, w.paz, w.premio, w.novela, w.cuadro, w.exito]
     sentences:
-      - { es: "Cervantes fue un escritor español del siglo XVI.", en: "Cervantes was a Spanish writer of the 16th century.", grammar: [g.preterite-ser-ir], vocab: [w.siglo, w.escritor] }
-      - { es: "Publicó el Quijote en 1605.", en: "He published Don Quixote in 1605.", grammar: [g.preterite-spelling-changes], vocab: [w.publicar] }
+      - { es: "Cervantes fue un escritor español del siglo XVI.", en: "Cervantes was a Spanish writer of the 16th century.", altEs: ["Cervantes fue un escritor español del siglo dieciséis."], grammar: [g.preterite-ser-ir], vocab: [w.siglo, w.escritor] }
+      - { es: "Publicó el Quijote en 1605.", en: "He published Don Quixote in 1605.", altEs: ["Él publicó el Quijote en 1605."], grammar: [g.preterite-spelling-changes], vocab: [w.publicar] }
       - { es: "Picasso pintó cuadros famosos en todo el mundo.", en: "Picasso painted paintings famous all over the world.", grammar: [g.preterite-regular], vocab: [w.cuadro, w.pintar] }
       - { es: "¿Quién inventó el teléfono?", en: "Who invented the telephone?", grammar: [g.preterite-regular], vocab: [w.inventar, w.telefono] }
       - { es: "Fundaron la empresa en una época muy difícil.", en: "They founded the company in a very difficult time.", grammar: [g.preterite-regular], vocab: [w.fundar, w.epoca, w.empresa] }
-      - { es: "Dirigió el hospital durante veinte años.", en: "She ran the hospital for twenty years.", grammar: [g.preterite-regular], vocab: [w.dirigir, w.durante] }
-      - { es: "Lucharon por la paz después de la guerra.", en: "They fought for peace after the war.", grammar: [g.preterite-regular], vocab: [w.luchar, w.paz, w.guerra] }
+      - { es: "Dirigió el hospital durante veinte años.", en: "She ran the hospital for twenty years.", altEs: ["Ella dirigió el hospital durante veinte años.", "Dirigió el hospital veinte años."], grammar: [g.preterite-regular], vocab: [w.dirigir, w.durante] }
+      - { es: "Lucharon por la paz después de la guerra.", en: "They fought for peace after the war.", altEs: ["Ellos lucharon por la paz después de la guerra."], grammar: [g.preterite-regular], vocab: [w.luchar, w.paz, w.guerra] }
       - { es: "Consiguió el premio Nobel en 1982.", en: "He won the Nobel Prize in 1982.", grammar: [g.preterite-stem-changing], vocab: [w.conseguir, w.premio] }
-      - { es: "Su primera novela fue un gran éxito.", en: "Her first novel was a great success.", grammar: [g.preterite-ser-ir], vocab: [w.novela, w.exito] }
+      - { es: "Su primera novela fue un gran éxito.", en: "Her first novel was a great success.", altEs: ["Su primera novela fue un éxito muy grande."], grammar: [g.preterite-ser-ir], vocab: [w.novela, w.exito] }
       - { es: "Se convirtió en la primera mujer presidenta.", en: "She became the first woman president.", grammar: [g.preterite-stem-changing], vocab: [w.convertirse, w.presidente] }
-      - { es: "Fuimos a Italia y fue un viaje maravilloso.", en: "We went to Italy and it was a wonderful trip.", grammar: [g.preterite-ser-ir], vocab: [w.ir, w.ser] }
+      - { es: "Fuimos a Italia y fue un viaje maravilloso.", en: "We went to Italy and it was a wonderful trip.", altEs: ["Fuimos a Italia y fue un viaje estupendo."], grammar: [g.preterite-ser-ir], vocab: [w.ir, w.ser] }
       - { es: "Hizo muchas cosas importantes en su vida.", en: "He did many important things in his life.", grammar: [g.preterite-irregular], vocab: [w.hacer, w.vida], error: { wrong: "Hació muchas cosas importantes en su vida.", explain: "hacer is irregular: hizo.", grammar: g.preterite-irregular } }
-      - { es: "Tuvo que trabajar desde muy joven.", en: "He had to work from a very young age.", grammar: [g.preterite-irregular], vocab: [w.tener-que, w.joven] }
+      - { es: "Tuvo que trabajar desde muy joven.", en: "He had to work from a very young age.", altEs: ["Él tuvo que trabajar desde muy joven."], grammar: [g.preterite-irregular], vocab: [w.tener-que, w.joven] }
+    exchanges:
+      - q: { es: "¿Quién fue Cervantes?", en: "Who was Cervantes?" }
+        a: { es: "Fue un escritor español del siglo XVI.", en: "He was a Spanish writer of the 16th century." }
+        alt: ["Un escritor español.", "Fue un escritor español muy famoso."]
+        grammar: [g.preterite-ser-ir]
+        vocab: [w.escritor, w.siglo]
+      - q: { es: "¿Adónde fuisteis el verano pasado?", en: "Where did you go last summer?" }
+        a: { es: "Fuimos a Italia; fue un viaje maravilloso.", en: "We went to Italy; it was a wonderful trip." }
+        alt: ["Fuimos a Italia.", "A Italia."]
+        grammar: [g.preterite-ser-ir]
+        vocab: [w.ir, w.viaje]
+      - q: { es: "¿Quién inventó el teléfono?", en: "Who invented the telephone?" }
+        a: { es: "No lo sé, pero no fue un español.", en: "I don't know, but it wasn't a Spaniard." }
+        alt: ["No lo sé.", "No me acuerdo."]
+        grammar: [g.preterite-ser-ir, g.preterite-regular]
+        vocab: [w.inventar, w.telefono]
+      - q: { es: "¿Fue un éxito su primera novela?", en: "Was her first novel a success?" }
+        a: { es: "Sí, fue un éxito muy grande.", en: "Yes, it was a very big success." }
+        alt: ["Sí, fue un éxito.", "Sí, mucho."]
+        grammar: [g.preterite-ser-ir]
+        vocab: [w.exito, w.novela]
+    texts:
+      - title: "Titular de periódico"
+        es: ["Una científica española consigue un premio importante.", "Fundó su empresa en 2010 y hoy es famosa en todo el mundo.", "«Fue una época difícil, pero luchamos mucho», dijo ayer."]
+        en: ["Spanish scientist wins an important prize.", "She founded her company in 2010 and today she is famous all over the world.", "'It was a difficult time, but we fought hard,' she said yesterday."]
+        grammar: [g.preterite-ser-ir, g.preterite-regular]
+        vocab: [w.premio, w.fundar, w.epoca]
   - id: a2.u02.l3
     title: Profesiones y fama
     teach: [g.preterite-stem-changing]
     vocab: [w.pintor, w.escritor, w.cientifico, w.politico, w.rey, w.reina, w.presidente, w.cantante, w.actor, w.actriz, w.director, w.periodista, w.empresa, w.carrera, w.famoso, w.pelicula.phr]
     sentences:
-      - { es: "Mi tía fue periodista en un periódico importante.", en: "My aunt was a journalist at an important newspaper.", grammar: [g.preterite-ser-ir], vocab: [w.periodista, w.periodico] }
+      - { es: "Mi tía fue periodista en un periódico importante.", en: "My aunt was a journalist at an important newspaper.", altEs: ["Mi tía trabajó como periodista en un periódico importante."], grammar: [g.preterite-ser-ir], vocab: [w.periodista, w.periodico] }
       - { es: "El pintor murió pobre y se hizo famoso después de su muerte.", en: "The painter died poor and became famous after his death.", grammar: [g.preterite-stem-changing], vocab: [w.pintor, w.famoso, w.pobre] }
       - { es: "La cantante pidió silencio y empezó a cantar.", en: "The singer asked for silence and began to sing.", grammar: [g.preterite-stem-changing], vocab: [w.cantante, w.pedir] }
-      - { es: "Los reyes visitaron la ciudad en 1992.", en: "The king and queen visited the city in 1992.", grammar: [g.plural-nouns], vocab: [w.rey, w.reina] }
-      - { es: "La científica descubrió una medicina nueva.", en: "The scientist discovered a new medicine.", grammar: [g.preterite-regular], vocab: [w.cientifico, w.descubrir] }
-      - { es: "El actor prefirió el teatro al cine.", en: "The actor preferred the theatre to the cinema.", grammar: [g.preterite-stem-changing], vocab: [w.actor, w.preferir] }
+      - { es: "Los reyes visitaron la ciudad en 1992.", en: "The king and queen visited the city in 1992.", altEs: ["El rey y la reina visitaron la ciudad en 1992."], grammar: [g.plural-nouns], vocab: [w.rey, w.reina] }
+      - { es: "La científica descubrió una medicina nueva.", en: "The scientist discovered a new medicine.", altEs: ["La científica descubrió una nueva medicina."], grammar: [g.preterite-regular], vocab: [w.cientifico, w.descubrir] }
+      - { es: "El actor prefirió el teatro al cine.", en: "The actor preferred the theatre to the cinema.", altEs: ["El actor prefirió el teatro y no el cine."], grammar: [g.preterite-stem-changing], vocab: [w.actor, w.preferir] }
       - { es: "La actriz durmió solo tres horas antes del estreno.", en: "The actress slept only three hours before the premiere.", grammar: [g.preterite-stem-changing], vocab: [w.actriz, w.dormir] }
       - { es: "El director rodó la película en Sevilla.", en: "The director shot the film in Seville.", grammar: [g.preterite-regular], vocab: [w.director, w.pelicula.phr] }
-      - { es: "Estudió una carrera y después fundó su propia empresa.", en: "He did a degree and then founded his own company.", grammar: [g.preterite-regular], vocab: [w.carrera, w.empresa] }
+      - { es: "Estudió una carrera y después fundó su propia empresa.", en: "He did a degree and then founded his own company.", altEs: ["Estudió una carrera y luego fundó su propia empresa."], grammar: [g.preterite-regular], vocab: [w.carrera, w.empresa] }
       - { es: "El político sirvió a su país durante treinta años.", en: "The politician served his country for thirty years.", grammar: [g.preterite-stem-changing], vocab: [w.politico] }
-      - { es: "Mis padres se conocieron en la universidad.", en: "My parents met at university.", grammar: [g.preterite-regular], vocab: [w.conocer, w.universidad] }
-      - { es: "Ella siguió estudiando hasta los cuarenta años.", en: "She kept studying until she was forty.", grammar: [g.preterite-stem-changing], vocab: [w.seguir], error: { wrong: "Ella seguió estudiando hasta los cuarenta años.", explain: "seguir changes e → i in the third person: siguió.", grammar: g.preterite-stem-changing } }
+      - { es: "Mis padres se conocieron en la universidad.", en: "My parents met at university.", altEs: ["Mis padres se conocieron cuando estudiaban en la universidad."], grammar: [g.preterite-regular], vocab: [w.conocer, w.universidad] }
+      - { es: "Ella siguió estudiando hasta los cuarenta años.", en: "She kept studying until she was forty.", altEs: ["Siguió estudiando hasta los cuarenta años."], grammar: [g.preterite-stem-changing], vocab: [w.seguir], error: { wrong: "Ella seguió estudiando hasta los cuarenta años.", explain: "seguir changes e → i in the third person: siguió.", grammar: g.preterite-stem-changing } }
       - { es: "El escritor pidió un café y escribió toda la tarde.", en: "The writer ordered a coffee and wrote all afternoon.", grammar: [g.preterite-stem-changing], vocab: [w.escritor, w.pedir], transform: { instruction: "Change to 'the writers' (plural)", answer: "Los escritores pidieron un café y escribieron toda la tarde." } }
+    exchanges:
+      - q: { es: "¿Qué pidió la cantante antes de cantar?", en: "What did the singer ask for before singing?" }
+        a: { es: "Pidió un vaso de agua.", en: "She asked for a glass of water." }
+        alt: ["Un vaso de agua.", "Agua."]
+        grammar: [g.preterite-stem-changing]
+        vocab: [w.cantante, w.pedir]
+      - q: { es: "¿Cuántas horas durmió la actriz?", en: "How many hours did the actress sleep?" }
+        a: { es: "Durmió solo tres horas.", en: "She slept only three hours." }
+        alt: ["Solo tres horas.", "Tres horas."]
+        grammar: [g.preterite-stem-changing]
+        vocab: [w.actriz, w.dormir]
+      - q: { es: "¿Dónde se conocieron tus padres?", en: "Where did your parents meet?" }
+        a: { es: "Se conocieron en la universidad.", en: "They met at university." }
+        alt: ["En la universidad.", "En una fiesta."]
+        grammar: [g.preterite-regular]
+        vocab: [w.conocer, w.universidad]
+      - q: { es: "¿Qué prefirió el actor, el teatro o el cine?", en: "What did the actor prefer, theatre or cinema?" }
+        a: { es: "Prefirió el teatro.", en: "He preferred the theatre." }
+        alt: ["El teatro.", "Prefirió el teatro al cine."]
+        grammar: [g.preterite-stem-changing]
+        vocab: [w.actor, w.preferir]
+    texts:
+      - title: "Pie de foto"
+        es: ["El pintor con su familia en 1950.", "Murió pobre en Madrid, pero se hizo famoso después de su muerte.", "Hoy sus cuadros están en los mejores museos del mundo."]
+        en: ["The painter with his family in 1950.", "He died poor in Madrid, but became famous after his death.", "Today his paintings are in the best museums in the world."]
+        grammar: [g.preterite-stem-changing, g.preterite-irregular]
+        vocab: [w.pintor, w.famoso, w.cuadro]
   - id: a2.u02.l4
     title: Una vida
     teach: [g.preterite-irregular]
     vocab: [w.historia, w.pais.phr, w.hijo.phr, w.durante, w.entonces, w.pintura, w.musico, w.poema, w.descubrimiento, w.enfermedad, w.pobre, w.millonario]
     sentences:
-      - { es: "Vivió en el extranjero durante diez años.", en: "She lived abroad for ten years.", grammar: [g.time-markers-past], vocab: [w.pais.phr, w.durante] }
-      - { es: "Entonces conoció a su marido y tuvieron dos hijos.", en: "Then she met her husband and they had two children.", grammar: [g.preterite-irregular], vocab: [w.entonces, w.hijo.phr] }
+      - { es: "Vivió en el extranjero durante diez años.", en: "She lived abroad for ten years.", altEs: ["Vivió diez años en el extranjero."], grammar: [g.time-markers-past], vocab: [w.pais.phr, w.durante] }
+      - { es: "Entonces conoció a su marido y tuvieron dos hijos.", en: "Then she met her husband and they had two children.", altEs: ["Entonces ella conoció a su marido y tuvieron dos hijos."], grammar: [g.preterite-irregular], vocab: [w.entonces, w.hijo.phr] }
       - { es: "El músico escribió poemas y canciones.", en: "The musician wrote poems and songs.", grammar: [g.preterite-regular], vocab: [w.musico, w.poema] }
       - { es: "Su descubrimiento cambió la historia de la medicina.", en: "His discovery changed the history of medicine.", grammar: [g.preterite-regular], vocab: [w.descubrimiento, w.historia] }
       - { es: "Estuvo enfermo mucho tiempo, pero no dejó de trabajar.", en: "He was ill for a long time, but he didn't stop working.", grammar: [g.preterite-irregular], vocab: [w.enfermedad, w.dejar] }
-      - { es: "Nació pobre y murió millonario.", en: "He was born poor and died a millionaire.", grammar: [g.preterite-stem-changing], vocab: [w.pobre, w.millonario] }
+      - { es: "Nació pobre y murió millonario.", en: "He was born poor and died a millionaire.", altEs: ["Nació pobre y se murió millonario."], grammar: [g.preterite-stem-changing], vocab: [w.pobre, w.millonario] }
       - { es: "¿Qué dijo el presidente? No dijo nada.", en: "What did the president say? He didn't say anything.", grammar: [g.preterite-irregular], vocab: [w.decir, w.presidente] }
-      - { es: "Supe la noticia por la radio.", en: "I learnt the news on the radio.", grammar: [g.preterite-irregular], vocab: [w.saber, w.radio] }
+      - { es: "Supe la noticia por la radio.", en: "I learnt the news on the radio.", altEs: ["Yo supe la noticia por la radio."], grammar: [g.preterite-irregular], vocab: [w.saber, w.radio] }
       - { es: "Puso toda su energía en la pintura.", en: "He put all his energy into painting.", grammar: [g.preterite-irregular], vocab: [w.poner, w.pintura] }
-      - { es: "No pudieron volver a su país hasta 1975.", en: "They couldn't return to their country until 1975.", grammar: [g.preterite-irregular], vocab: [w.poder, w.volver] }
-      - { es: "Quiso ser médico pero fue profesor.", en: "He wanted to be a doctor but was a teacher.", grammar: [g.preterite-irregular], vocab: [w.querer, w.ser] }
-      - { es: "Vinieron a España después de la guerra.", en: "They came to Spain after the war.", grammar: [g.preterite-irregular], vocab: [w.venir, w.guerra], error: { wrong: "Venieron a España después de la guerra.", explain: "venir → vinieron (stem vin-).", grammar: g.preterite-irregular } }
-      - { es: "Mi madre me dio este libro cuando cumplí dieciocho años.", en: "My mother gave me this book when I turned eighteen.", grammar: [g.preterite-irregular], vocab: [w.dar, w.cumpleanos] }
+      - { es: "No pudieron volver a su país hasta 1975.", en: "They couldn't return to their country until 1975.", altEs: ["Ellos no pudieron volver a su país hasta 1975."], grammar: [g.preterite-irregular], vocab: [w.poder, w.volver] }
+      - { es: "Quiso ser médico pero fue profesor.", en: "He wanted to be a doctor but was a teacher.", altEs: ["Quería ser médico pero fue profesor."], grammar: [g.preterite-irregular], vocab: [w.querer, w.ser] }
+      - { es: "Vinieron a España después de la guerra.", en: "They came to Spain after the war.", altEs: ["Ellos vinieron a España después de la guerra."], grammar: [g.preterite-irregular], vocab: [w.venir, w.guerra], error: { wrong: "Venieron a España después de la guerra.", explain: "venir → vinieron (stem vin-).", grammar: g.preterite-irregular } }
+      - { es: "Mi madre me dio este libro cuando cumplí dieciocho años.", en: "My mother gave me this book when I turned eighteen.", altEs: ["Mi madre me dio este libro cuando cumplí los dieciocho."], grammar: [g.preterite-irregular], vocab: [w.dar, w.cumpleanos] }
+    exchanges:
+      - q: { es: "¿Qué dijo el presidente?", en: "What did the president say?" }
+        a: { es: "No dijo nada.", en: "He didn't say anything." }
+        alt: ["Nada.", "No dijo nada importante."]
+        grammar: [g.preterite-irregular]
+        vocab: [w.decir, w.presidente]
+      - q: { es: "¿Cómo supiste la noticia?", en: "How did you find out the news?" }
+        a: { es: "La supe por la radio.", en: "I heard it on the radio." }
+        alt: ["Por la radio.", "Me lo dijo mi madre."]
+        grammar: [g.preterite-irregular]
+        vocab: [w.saber, w.noticia]
+      - q: { es: "¿Cuándo vinieron a España?", en: "When did they come to Spain?" }
+        a: { es: "Vinieron después de la guerra.", en: "They came after the war." }
+        alt: ["Después de la guerra.", "En 1945."]
+        grammar: [g.preterite-irregular]
+        vocab: [w.venir, w.guerra]
+      - q: { es: "¿Quién te dio ese libro?", en: "Who gave you that book?" }
+        a: { es: "Me lo dio mi madre cuando tenía dieciocho años.", en: "My mother gave it to me when I was eighteen." }
+        alt: ["Mi madre.", "Me lo dio mi madre."]
+        grammar: [g.preterite-irregular, g.double-object-pronouns]
+        vocab: [w.dar]
+      - q: { es: "¿Pudieron volver a su país?", en: "Were they able to go back to their country?" }
+        a: { es: "No, no pudieron volver hasta 1975.", en: "No, they couldn't go back until 1975." }
+        alt: ["No, no pudieron.", "Sí, pero muchos años después."]
+        grammar: [g.preterite-irregular]
+        vocab: [w.poder, w.volver]
+    texts:
+      - title: "Una vida"
+        es: ["El músico nació pobre en un pueblo pequeño.", "Vino a la ciudad a los veinte años y puso toda su energía en la música.", "Escribió poemas y canciones, y murió millonario a los noventa años."]
+        en: ["The musician was born poor in a small village.", "He came to the city at twenty and put all his energy into music.", "He wrote poems and songs, and died a millionaire at ninety."]
+        grammar: [g.preterite-irregular, g.preterite-stem-changing]
+        vocab: [w.musico, w.poema, w.millonario]
 dialogues:
   - id: a2.u02.d1
     title: La abuela cuenta su vida

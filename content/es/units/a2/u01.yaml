@@ -8,55 +8,136 @@ lessons:
     vocab: [w.ayer, w.anoche, w.anteayer, w.pasado, w.hace, w.el-otro-dia, w.rato, w.excursion, w.quedar-con, w.pasar, w.pasarlo-bien, w.disfrutar, w.gastar, w.genial]
     sentences:
       - { es: "Ayer trabajé hasta las ocho.", en: "Yesterday I worked until eight.", altEs: ["Ayer yo trabajé hasta las ocho."], grammar: [g.preterite-regular, g.time-markers-past], vocab: [w.ayer, w.trabajar] }
-      - { es: "Anoche cené con mis padres.", en: "Last night I had dinner with my parents.", grammar: [g.preterite-regular], vocab: [w.anoche, w.cenar] }
-      - { es: "¿Qué comiste anteayer?", en: "What did you eat the day before yesterday?", grammar: [g.preterite-regular], vocab: [w.anteayer, w.comer] }
+      - { es: "Anoche cené con mis padres.", en: "Last night I had dinner with my parents.", altEs: ["Ayer por la noche cené con mis padres."], grammar: [g.preterite-regular], vocab: [w.anoche, w.cenar] }
+      - { es: "¿Qué comiste anteayer?", en: "What did you eat the day before yesterday?", altEs: ["¿Qué comiste tú anteayer?"], grammar: [g.preterite-regular], vocab: [w.anteayer, w.comer] }
       - { es: "La semana pasada visitamos a mis abuelos.", en: "Last week we visited my grandparents.", grammar: [g.time-markers-past], vocab: [w.pasado, w.visitar] }
-      - { es: "Hace dos años viajé a Perú.", en: "Two years ago I travelled to Peru.", grammar: [g.time-markers-past], vocab: [w.hace, w.viajar], error: { wrong: "Hace dos años viajo a Perú.", explain: "A finished past event takes the preterite: viajé.", grammar: g.preterite-regular } }
+      - { es: "Hace dos años viajé a Perú.", en: "Two years ago I travelled to Peru.", altEs: ["Viajé a Perú hace dos años."], grammar: [g.time-markers-past], vocab: [w.hace, w.viajar], error: { wrong: "Hace dos años viajo a Perú.", explain: "A finished past event takes the preterite: viajé.", grammar: g.preterite-regular } }
       - { es: "El otro día quedé con Ana en el centro.", en: "The other day I met up with Ana in the centre.", grammar: [g.preterite-regular], vocab: [w.el-otro-dia, w.quedar-con] }
       - { es: "Pasamos un rato muy agradable.", en: "We spent a very pleasant while.", grammar: [g.preterite-regular], vocab: [w.pasar, w.rato] }
       - { es: "Lo pasamos genial en la excursión.", en: "We had a great time on the trip.", grammar: [g.preterite-regular], vocab: [w.pasarlo-bien, w.genial, w.excursion] }
-      - { es: "Disfruté mucho de las vacaciones.", en: "I really enjoyed the holidays.", grammar: [g.preterite-regular], vocab: [w.disfrutar, w.vacaciones] }
-      - { es: "Gastaste demasiado dinero en ropa.", en: "You spent too much money on clothes.", grammar: [g.preterite-regular], vocab: [w.gastar, w.ropa] }
-      - { es: "Mis hermanos llegaron tarde a la fiesta.", en: "My brothers arrived late to the party.", grammar: [g.preterite-regular], vocab: [w.llegar, w.fiesta] }
-      - { es: "El año pasado aprendí a nadar.", en: "Last year I learnt to swim.", grammar: [g.preterite-regular], vocab: [w.aprender, w.nadar] }
+      - { es: "Disfruté mucho de las vacaciones.", en: "I really enjoyed the holidays.", altEs: ["Disfruté mucho las vacaciones."], grammar: [g.preterite-regular], vocab: [w.disfrutar, w.vacaciones] }
+      - { es: "Gastaste demasiado dinero en ropa.", en: "You spent too much money on clothes.", altEs: ["Tú gastaste demasiado dinero en ropa.", "Te gastaste demasiado dinero en ropa."], grammar: [g.preterite-regular], vocab: [w.gastar, w.ropa] }
+      - { es: "Mis hermanos llegaron tarde a la fiesta.", en: "My brothers arrived late to the party.", altEs: ["Mis hermanos llegaron a la fiesta tarde."], grammar: [g.preterite-regular], vocab: [w.llegar, w.fiesta] }
+      - { es: "El año pasado aprendí a nadar.", en: "Last year I learnt to swim.", altEs: ["Aprendí a nadar el año pasado."], grammar: [g.preterite-regular], vocab: [w.aprender, w.nadar] }
       - { es: "Ella estudió toda la noche.", en: "She studied all night.", grammar: [g.preterite-regular], vocab: [w.estudiar, w.entradas.phr], transform: { instruction: "Change to 'we'", answer: "Estudiamos toda la noche.", alt: ["Nosotros estudiamos toda la noche."] } }
+    exchanges:
+      - q: { es: "¿Qué hiciste ayer?", en: "What did you do yesterday?" }
+        a: { es: "Trabajé hasta las ocho y luego cené con mis padres.", en: "I worked until eight and then had dinner with my parents." }
+        alt: ["Ayer trabajé hasta las ocho.", "Cené con mis padres."]
+        grammar: [g.preterite-regular, g.time-markers-past]
+        vocab: [w.ayer, w.trabajar]
+      - q: { es: "¿Cuándo viajaste a Perú?", en: "When did you travel to Peru?" }
+        a: { es: "Hace dos años.", en: "Two years ago." }
+        alt: ["Viajé a Perú hace dos años.", "Hace dos años viajé a Perú."]
+        grammar: [g.time-markers-past]
+        vocab: [w.hace, w.viajar]
+      - q: { es: "¿Qué tal la excursión?", en: "How was the trip?" }
+        a: { es: "Genial, lo pasamos muy bien.", en: "Great, we had a very good time." }
+        alt: ["Lo pasamos genial.", "Muy bien, disfrutamos mucho."]
+        grammar: [g.preterite-regular]
+        vocab: [w.pasarlo-bien, w.excursion]
+      - q: { es: "¿Cuánto gastaste en ropa?", en: "How much did you spend on clothes?" }
+        a: { es: "Gasté demasiado, casi cien euros.", en: "I spent too much, almost a hundred euros." }
+        alt: ["Demasiado, casi cien euros.", "Casi cien euros."]
+        grammar: [g.preterite-regular]
+        vocab: [w.gastar, w.ropa]
+    texts:
+      - title: "Mensaje de Ana"
+        es: ["Hola, ¿qué tal?", "Ayer quedé con Luis en el centro y cenamos en un restaurante nuevo.", "Lo pasamos genial.", "¿Quedamos el sábado?"]
+        en: ["Hi, how are you?", "Yesterday I met up with Luis in the centre and we had dinner at a new restaurant.", "We had a great time.", "Shall we meet on Saturday?"]
+        grammar: [g.preterite-regular, g.time-markers-past]
+        vocab: [w.quedar-con, w.pasarlo-bien]
   - id: a2.u01.l2
     title: Un fin de semana estupendo
     teach: [g.preterite-spelling-changes]
     vocab: [w.de-repente, w.al-final, w.por-fin, w.exposicion, w.obra, w.discoteca, w.barbacoa, w.picnic, w.encontrarse, w.descubrir, w.bañarse, w.tomar-el-sol, w.sacar, w.estupendo, w.maravilloso]
     sentences:
       - { es: "El sábado fuimos a una exposición de fotografía.", en: "On Saturday we went to a photography exhibition.", grammar: [g.preterite-ser-ir], vocab: [w.exposicion] }
-      - { es: "Vimos una obra de teatro estupenda.", en: "We saw a wonderful play.", grammar: [g.preterite-irregular], vocab: [w.obra, w.estupendo, w.teatro] }
+      - { es: "Vimos una obra de teatro estupenda.", en: "We saw a wonderful play.", altEs: ["Vimos una obra de teatro maravillosa."], grammar: [g.preterite-irregular], vocab: [w.obra, w.estupendo, w.teatro] }
       - { es: "Por la noche bailamos en una discoteca hasta las cuatro.", en: "At night we danced in a club until four.", grammar: [g.preterite-regular], vocab: [w.discoteca, w.bailar] }
       - { es: "El domingo hicimos una barbacoa en el jardín.", en: "On Sunday we had a barbecue in the garden.", grammar: [g.preterite-irregular], vocab: [w.barbacoa, w.hacer] }
       - { es: "Busqué un sitio para el picnic y pagué la comida.", en: "I looked for a spot for the picnic and paid for the food.", grammar: [g.preterite-spelling-changes], vocab: [w.buscar, w.pagar, w.picnic], error: { wrong: "Buscé un sitio para el picnic.", explain: "buscar → busqué (c → qu before e).", grammar: g.preterite-spelling-changes } }
-      - { es: "Empecé a leer una novela maravillosa.", en: "I started reading a marvellous novel.", grammar: [g.preterite-spelling-changes], vocab: [w.empezar, w.maravilloso, w.novela] }
+      - { es: "Empecé a leer una novela maravillosa.", en: "I started reading a marvellous novel.", altEs: ["Empecé a leer una novela estupenda."], grammar: [g.preterite-spelling-changes], vocab: [w.empezar, w.maravilloso, w.novela] }
       - { es: "Nos bañamos en el mar y tomamos el sol.", en: "We swam in the sea and sunbathed.", grammar: [g.preterite-regular], vocab: [w.bañarse, w.tomar-el-sol] }
-      - { es: "Saqué muchas fotos del paisaje.", en: "I took lots of photos of the landscape.", grammar: [g.preterite-spelling-changes], vocab: [w.sacar, w.foto] }
-      - { es: "De repente empezó a llover.", en: "Suddenly it started to rain.", grammar: [g.time-markers-past], vocab: [w.de-repente, w.llover] }
-      - { es: "Al final volvimos a casa en taxi.", en: "In the end we went back home by taxi.", grammar: [g.time-markers-past], vocab: [w.al-final, w.taxi.phr] }
+      - { es: "Saqué muchas fotos del paisaje.", en: "I took lots of photos of the landscape.", altEs: ["Hice muchas fotos del paisaje.", "Tomé muchas fotos del paisaje."], grammar: [g.preterite-spelling-changes], vocab: [w.sacar, w.foto] }
+      - { es: "De repente empezó a llover.", en: "Suddenly it started to rain.", altEs: ["De pronto empezó a llover."], grammar: [g.time-markers-past], vocab: [w.de-repente, w.llover] }
+      - { es: "Al final volvimos a casa en taxi.", en: "In the end we went back home by taxi.", altEs: ["Al final volvimos en taxi a casa."], grammar: [g.time-markers-past], vocab: [w.al-final, w.taxi.phr] }
       - { es: "Por fin descubrí un restaurante barato cerca de casa.", en: "At last I discovered a cheap restaurant near home.", grammar: [g.preterite-regular], vocab: [w.por-fin, w.descubrir] }
-      - { es: "Me encontré con un viejo amigo en el mercado.", en: "I ran into an old friend at the market.", grammar: [g.preterite-regular], vocab: [w.encontrarse, w.amigo] }
+      - { es: "Me encontré con un viejo amigo en el mercado.", en: "I ran into an old friend at the market.", altEs: ["Me encontré con un antiguo amigo en el mercado."], grammar: [g.preterite-regular], vocab: [w.encontrarse, w.amigo] }
       - { es: "Mi abuela leyó el periódico y oyó la radio.", en: "My grandmother read the paper and listened to the radio.", grammar: [g.preterite-spelling-changes], vocab: [w.leer, w.oir, w.radio] }
-      - { es: "Llegué a casa a las diez.", en: "I got home at ten.", grammar: [g.preterite-spelling-changes], vocab: [w.llegar], transform: { instruction: "Change to 'you' (tú)", answer: "Llegaste a casa a las diez." } }
+      - { es: "Llegué a casa a las diez.", en: "I got home at ten.", altEs: ["Yo llegué a casa a las diez."], grammar: [g.preterite-spelling-changes], vocab: [w.llegar], transform: { instruction: "Change to 'you' (tú)", answer: "Llegaste a casa a las diez." } }
+    exchanges:
+      - q: { es: "¿Qué hicisteis el sábado?", en: "What did you do on Saturday?" }
+        a: { es: "Fuimos a una exposición y después bailamos en una discoteca.", en: "We went to an exhibition and then danced in a club." }
+        alt: ["Fuimos a una exposición.", "Bailamos en una discoteca hasta las cuatro."]
+        grammar: [g.preterite-ser-ir, g.preterite-regular]
+        vocab: [w.exposicion, w.discoteca]
+      - q: { es: "¿Sacaste muchas fotos?", en: "Did you take many photos?" }
+        a: { es: "Sí, saqué más de cien.", en: "Yes, I took more than a hundred." }
+        alt: ["Sí, muchas.", "No, no saqué ninguna."]
+        grammar: [g.preterite-spelling-changes]
+        vocab: [w.sacar, w.foto]
+      - q: { es: "¿A qué hora llegaste a casa?", en: "What time did you get home?" }
+        a: { es: "Llegué a las dos de la mañana.", en: "I got home at two in the morning." }
+        alt: ["A las dos.", "Llegué muy tarde."]
+        grammar: [g.preterite-spelling-changes]
+        vocab: [w.llegar]
+      - q: { es: "¿Pagaste tú la comida?", en: "Did you pay for the food?" }
+        a: { es: "Sí, la pagué yo.", en: "Yes, I paid for it." }
+        alt: ["Sí, pagué yo.", "No, pagó Marta."]
+        grammar: [g.preterite-spelling-changes, g.direct-object-pronouns]
+        vocab: [w.pagar]
+    texts:
+      - title: "Nota en la nevera"
+        es: ["Busqué las llaves por toda la casa y al final las encontré en el jardín.", "Saqué al perro y pagué la factura de la luz.", "¡Por fin un fin de semana tranquilo!"]
+        en: ["I looked for the keys all over the house and in the end I found them in the garden.", "I took the dog out and paid the electricity bill.", "At last a quiet weekend!"]
+        grammar: [g.preterite-spelling-changes]
+        vocab: [w.buscar, w.pagar, w.por-fin]
   - id: a2.u01.l3
     title: ¿Y qué tal?
     teach: [g.time-markers-past]
     vocab: [w.reir, w.llorar, w.cansarse, w.divertirse, w.aburrirse, w.quedarse, w.horrible, w.increible, w.fantastico, w.terrible, w.jefe, w.companero, w.vecino, w.nadie, w.alguien]
     sentences:
       - { es: "La película fue horrible; nos aburrimos mucho.", en: "The film was horrible; we got very bored.", grammar: [g.preterite-ser-ir], vocab: [w.horrible, w.aburrirse] }
-      - { es: "El concierto fue increíble.", en: "The concert was incredible.", grammar: [g.preterite-ser-ir], vocab: [w.increible, w.concierto] }
+      - { es: "El concierto fue increíble.", en: "The concert was incredible.", altEs: ["El concierto fue fantástico."], grammar: [g.preterite-ser-ir], vocab: [w.increible, w.concierto] }
       - { es: "Nos divertimos muchísimo en la boda.", en: "We had a great time at the wedding.", grammar: [g.preterite-stem-changing], vocab: [w.divertirse, w.boda] }
-      - { es: "Me reí mucho con mis compañeros.", en: "I laughed a lot with my colleagues.", grammar: [g.preterite-regular], vocab: [w.reir, w.companero] }
-      - { es: "El niño lloró toda la noche.", en: "The child cried all night.", grammar: [g.preterite-regular], vocab: [w.llorar, w.nino] }
+      - { es: "Me reí mucho con mis compañeros.", en: "I laughed a lot with my colleagues.", altEs: ["Yo me reí mucho con mis compañeros."], grammar: [g.preterite-regular], vocab: [w.reir, w.companero] }
+      - { es: "El niño lloró toda la noche.", en: "The child cried all night.", altEs: ["El niño estuvo llorando toda la noche."], grammar: [g.preterite-regular], vocab: [w.llorar, w.nino] }
       - { es: "Me cansé y me quedé en casa.", en: "I got tired and stayed at home.", grammar: [g.preterite-regular], vocab: [w.cansarse, w.quedarse] }
-      - { es: "Mi jefe no vino a la reunión.", en: "My boss didn't come to the meeting.", grammar: [g.preterite-irregular], vocab: [w.jefe, w.venir] }
+      - { es: "Mi jefe no vino a la reunión.", en: "My boss didn't come to the meeting.", altEs: ["Mi jefe no fue a la reunión."], grammar: [g.preterite-irregular], vocab: [w.jefe, w.venir] }
       - { es: "Los vecinos hicieron mucho ruido anoche.", en: "The neighbours made a lot of noise last night.", grammar: [g.preterite-irregular], vocab: [w.vecino, w.ruido] }
       - { es: "No vi a nadie en la calle.", en: "I didn't see anyone in the street.", grammar: [g.indefinite-pronouns, g.a-personal], vocab: [w.nadie, w.ver] }
-      - { es: "¿Alguien llamó por teléfono?", en: "Did anyone phone?", grammar: [g.indefinite-pronouns], vocab: [w.alguien, w.llamar] }
+      - { es: "¿Alguien llamó por teléfono?", en: "Did anyone phone?", altEs: ["¿Llamó alguien por teléfono?"], grammar: [g.indefinite-pronouns], vocab: [w.alguien, w.llamar] }
       - { es: "Fue un día terrible: perdí las llaves y el autobús.", en: "It was a terrible day: I lost my keys and missed the bus.", grammar: [g.preterite-regular], vocab: [w.terrible, w.perder] }
-      - { es: "Las vacaciones fueron fantásticas.", en: "The holidays were fantastic.", grammar: [g.preterite-ser-ir], vocab: [w.fantastico, w.vacaciones] }
+      - { es: "Las vacaciones fueron fantásticas.", en: "The holidays were fantastic.", altEs: ["Las vacaciones fueron estupendas."], grammar: [g.preterite-ser-ir], vocab: [w.fantastico, w.vacaciones] }
       - { es: "Mi vecina se quedó en casa todo el fin de semana.", en: "My neighbour stayed at home all weekend.", grammar: [g.preterite-regular], vocab: [w.vecino, w.quedarse], error: { wrong: "Mi vecina quedó en casa todo el fin de semana.", explain: "quedarse (to stay) is reflexive: se quedó.", grammar: g.reflexive-verbs-present } }
+    exchanges:
+      - q: { es: "¿Qué tal la película?", en: "How was the film?" }
+        a: { es: "Horrible, nos aburrimos mucho.", en: "Horrible, we got very bored." }
+        alt: ["Fue horrible.", "Muy aburrida."]
+        grammar: [g.preterite-ser-ir, g.preterite-regular]
+        vocab: [w.horrible, w.aburrirse]
+      - q: { es: "¿Vino tu jefe a la reunión?", en: "Did your boss come to the meeting?" }
+        a: { es: "No, no vino nadie.", en: "No, nobody came." }
+        alt: ["No, no vino.", "Sí, pero llegó tarde."]
+        grammar: [g.preterite-irregular, g.indefinite-pronouns]
+        vocab: [w.jefe, w.venir]
+      - q: { es: "¿Te divertiste en la boda?", en: "Did you have fun at the wedding?" }
+        a: { es: "Sí, me reí mucho con mis compañeros.", en: "Yes, I laughed a lot with my colleagues." }
+        alt: ["Sí, mucho.", "Sí, lo pasé genial."]
+        grammar: [g.preterite-stem-changing, g.preterite-regular]
+        vocab: [w.divertirse, w.reir]
+      - q: { es: "¿Alguien llamó esta mañana?", en: "Did anyone call this morning?" }
+        a: { es: "No, nadie llamó.", en: "No, nobody called." }
+        alt: ["No, no llamó nadie.", "Sí, llamó tu vecina."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.alguien, w.nadie]
+    texts:
+      - title: "Mensaje de Marta"
+        es: ["¡Qué día tan terrible!", "Perdí las llaves, llegué tarde al trabajo y mi jefe no vino a la reunión.", "Al final me quedé en casa y lloré un rato.", "Mañana será otro día."]
+        en: ["What a terrible day!", "I lost my keys, got to work late and my boss didn't come to the meeting.", "In the end I stayed at home and cried for a while.", "Tomorrow is another day."]
+        grammar: [g.preterite-regular, g.preterite-irregular]
+        vocab: [w.terrible, w.quedarse, w.llorar]
   - id: a2.u01.l4
     title: Contar el fin de semana
     teach: [g.preterite-regular]
@@ -64,16 +145,43 @@ lessons:
     sentences:
       - { es: "El fin de semana pasado fui a la playa con mi familia.", en: "Last weekend I went to the beach with my family.", grammar: [g.preterite-ser-ir], vocab: [w.playa.phr, w.playa] }
       - { es: "Salimos de casa a las siete y había un atasco enorme.", en: "We left home at seven and there was a huge traffic jam.", grammar: [g.preterite-vs-imperfect], vocab: [w.salir, w.atasco] }
-      - { es: "Nos perdimos dos veces por el camino.", en: "We got lost twice on the way.", grammar: [g.preterite-regular], vocab: [w.perderse, w.vez] }
-      - { es: "El viaje llevó más de tres horas.", en: "The journey took more than three hours.", grammar: [g.preterite-regular], vocab: [w.llevar.phr, w.viaje] }
+      - { es: "Nos perdimos dos veces por el camino.", en: "We got lost twice on the way.", altEs: ["Nos perdimos dos veces en el camino."], grammar: [g.preterite-regular], vocab: [w.perderse, w.vez] }
+      - { es: "El viaje llevó más de tres horas.", en: "The journey took more than three hours.", altEs: ["El viaje nos llevó más de tres horas."], grammar: [g.preterite-regular], vocab: [w.llevar.phr, w.viaje] }
       - { es: "Mi padre pescó un pez enorme.", en: "My father caught a huge fish.", grammar: [g.preterite-spelling-changes], vocab: [w.pescar] }
       - { es: "Comimos una paella riquísima en un restaurante de la playa.", en: "We ate a delicious paella in a beach restaurant.", grammar: [g.superlatives], vocab: [w.paella, w.comer] }
-      - { es: "Por la tarde dimos una vuelta por el pueblo.", en: "In the afternoon we went for a stroll around the village.", grammar: [g.preterite-irregular], vocab: [w.buscar.phr, w.pueblo] }
-      - { es: "Sacamos entradas para el concierto de la noche.", en: "We got tickets for the evening concert.", grammar: [g.preterite-regular], vocab: [w.entrada.phr, w.concierto] }
+      - { es: "Por la tarde dimos una vuelta por el pueblo.", en: "In the afternoon we went for a stroll around the village.", altEs: ["Por la tarde paseamos por el pueblo."], grammar: [g.preterite-irregular], vocab: [w.buscar.phr, w.pueblo] }
+      - { es: "Sacamos entradas para el concierto de la noche.", en: "We got tickets for the evening concert.", altEs: ["Compramos entradas para el concierto de la noche."], grammar: [g.preterite-regular], vocab: [w.entrada.phr, w.concierto] }
       - { es: "Bailamos hasta tarde y volvimos al hotel en taxi.", en: "We danced till late and went back to the hotel by taxi.", grammar: [g.preterite-regular], vocab: [w.tarde.phr, w.taxi.phr] }
-      - { es: "El domingo dormimos toda la mañana.", en: "On Sunday we slept all morning.", grammar: [g.preterite-stem-changing], vocab: [w.dormir, w.manana.noun] }
+      - { es: "El domingo dormimos toda la mañana.", en: "On Sunday we slept all morning.", altEs: ["El domingo nosotros dormimos toda la mañana."], grammar: [g.preterite-stem-changing], vocab: [w.dormir, w.manana.noun] }
       - { es: "¿Qué tal el fin de semana? — Genial, lo pasé muy bien.", en: "How was the weekend? — Great, I had a very good time.", grammar: [g.preterite-regular], vocab: [w.pasarlo-bien, w.genial] }
-      - { es: "Mis primos pasaron toda la noche en la discoteca.", en: "My cousins spent all night at the club.", grammar: [g.preterite-regular], vocab: [w.pasar, w.entradas.phr, w.discoteca], transform: { instruction: "Change to 'I'", answer: "Pasé toda la noche en la discoteca.", alt: ["Yo pasé toda la noche en la discoteca."] } }
+      - { es: "Mis primos pasaron toda la noche en la discoteca.", en: "My cousins spent all night at the club.", altEs: ["Mis primos se pasaron toda la noche en la discoteca."], grammar: [g.preterite-regular], vocab: [w.pasar, w.entradas.phr, w.discoteca], transform: { instruction: "Change to 'I'", answer: "Pasé toda la noche en la discoteca.", alt: ["Yo pasé toda la noche en la discoteca."] } }
+    exchanges:
+      - q: { es: "¿Adónde fuiste el fin de semana pasado?", en: "Where did you go last weekend?" }
+        a: { es: "Fui a la playa con mi familia.", en: "I went to the beach with my family." }
+        alt: ["A la playa, con mi familia.", "A la playa."]
+        grammar: [g.preterite-ser-ir]
+        vocab: [w.playa.phr, w.playa]
+      - q: { es: "¿Cuánto tiempo llevó el viaje?", en: "How long did the journey take?" }
+        a: { es: "Más de tres horas; había un atasco.", en: "More than three hours; there was a traffic jam." }
+        alt: ["Más de tres horas.", "Tres horas, por el atasco."]
+        grammar: [g.preterite-regular, g.preterite-vs-imperfect]
+        vocab: [w.llevar.phr, w.atasco]
+      - q: { es: "¿Qué comisteis?", en: "What did you eat?" }
+        a: { es: "Comimos una paella en un restaurante de la playa.", en: "We ate a paella in a beach restaurant." }
+        alt: ["Una paella.", "Comimos paella."]
+        grammar: [g.preterite-regular]
+        vocab: [w.paella, w.comer]
+      - q: { es: "¿Os perdisteis?", en: "Did you get lost?" }
+        a: { es: "Sí, nos perdimos dos veces.", en: "Yes, we got lost twice." }
+        alt: ["Sí, dos veces.", "No, no nos perdimos."]
+        grammar: [g.preterite-regular]
+        vocab: [w.perderse, w.vez]
+    texts:
+      - title: "Postal desde la playa"
+        es: ["¡Hola a todos!", "El sábado llegamos a la playa después de tres horas de atasco.", "Comimos paella, dimos una vuelta por el pueblo y bailamos hasta tarde.", "El domingo dormimos toda la mañana."]
+        en: ["Hi everyone!", "On Saturday we got to the beach after three hours of traffic jam.", "We ate paella, went for a stroll around the village and danced till late.", "On Sunday we slept all morning."]
+        grammar: [g.preterite-regular, g.preterite-irregular]
+        vocab: [w.atasco, w.paella, w.tarde.phr]
 dialogues:
   - id: a2.u01.d1
     title: El lunes en la oficina

@@ -7,85 +7,208 @@ lessons:
     vocab: [w.motivo, w.objetivo, w.destino, w.plazo, w.gracias-a, w.por-culpa-de, w.a-causa-de, w.en-lugar-de, w.lugar, w.sitio, w.a-traves-de, w.cambiar-dinero, w.en-efectivo, w.por-ciento]
     tip: "para looks forward (purpose, destination, deadline, recipient); por looks back or around (cause, means, exchange, through, duration)."
     sentences:
-      - { es: "Estudio español para trabajar en Madrid.", en: "I'm studying Spanish in order to work in Madrid.", grammar: [g.por-vs-para], vocab: [w.estudiar, w.trabajar] }
+      - { es: "Estudio español para trabajar en Madrid.", en: "I'm studying Spanish in order to work in Madrid.", altEs: ["Yo estudio español para trabajar en Madrid."], grammar: [g.por-vs-para], vocab: [w.estudiar, w.trabajar] }
       - { es: "Este regalo es para ti.", en: "This present is for you.", grammar: [g.por-vs-para], vocab: [w.regalo] }
-      - { es: "Gracias por la cena, estaba deliciosa.", en: "Thanks for the dinner, it was delicious.", grammar: [g.por-vs-para], vocab: [w.gracias, w.cena] }
+      - { es: "Gracias por la cena, estaba deliciosa.", en: "Thanks for the dinner, it was delicious.", altEs: ["Gracias por la cena, estaba muy rica."], grammar: [g.por-vs-para], vocab: [w.gracias, w.cena] }
       - { es: "El informe es para el viernes; ese es el plazo.", en: "The report is due Friday; that's the deadline.", grammar: [g.por-vs-para], vocab: [w.informe, w.plazo, w.viernes] }
-      - { es: "No fuimos a la playa por la lluvia.", en: "We didn't go to the beach because of the rain.", grammar: [g.por-vs-para], vocab: [w.lluvia, w.playa], error: { wrong: "No fuimos a la playa para la lluvia.", explain: "Cause takes por, not para.", grammar: g.por-vs-para } }
-      - { es: "Salimos para Sevilla a las ocho.", en: "We're leaving for Seville at eight.", grammar: [g.por-vs-para], vocab: [w.salir, w.destino] }
-      - { es: "Paseamos por el centro toda la tarde.", en: "We walked around the centre all afternoon.", grammar: [g.por-vs-para], vocab: [w.pasear, w.centro] }
+      - { es: "No fuimos a la playa por la lluvia.", en: "We didn't go to the beach because of the rain.", altEs: ["No fuimos a la playa a causa de la lluvia."], grammar: [g.por-vs-para], vocab: [w.lluvia, w.playa], error: { wrong: "No fuimos a la playa para la lluvia.", explain: "Cause takes por, not para.", grammar: g.por-vs-para } }
+      - { es: "Salimos para Sevilla a las ocho.", en: "We're leaving for Seville at eight.", altEs: ["Salimos hacia Sevilla a las ocho."], grammar: [g.por-vs-para], vocab: [w.salir, w.destino] }
+      - { es: "Paseamos por el centro toda la tarde.", en: "We walked around the centre all afternoon.", altEs: ["Dimos un paseo por el centro toda la tarde."], grammar: [g.por-vs-para], vocab: [w.pasear, w.centro] }
       - { es: "Te cambio mi bocadillo por tu ensalada.", en: "I'll swap my sandwich for your salad.", grammar: [g.por-vs-para], vocab: [w.cambiar, w.bocadillo, w.ensalada] }
-      - { es: "Hablamos por teléfono dos veces por semana.", en: "We talk on the phone twice a week.", grammar: [g.por-vs-para], vocab: [w.telefono, w.semana] }
+      - { es: "Hablamos por teléfono dos veces por semana.", en: "We talk on the phone twice a week.", altEs: ["Hablamos por teléfono dos veces a la semana."], grammar: [g.por-vs-para], vocab: [w.telefono, w.semana] }
       - { es: "Cambié doscientos euros en efectivo y pagué un cinco por ciento.", en: "I changed two hundred euros in cash and paid five percent.", grammar: [g.por-vs-para], vocab: [w.cambiar-dinero, w.en-efectivo, w.por-ciento] }
       - { es: "Para mí, este es el mejor sitio de la ciudad.", en: "For me, this is the best place in the city.", grammar: [g.por-vs-para, g.superlatives], vocab: [w.para-mi, w.sitio] }
       - { es: "Gracias a mi profesora, aprobé el examen.", en: "Thanks to my teacher, I passed the exam.", grammar: [g.por-vs-para], vocab: [w.gracias-a, w.examen], note: "aprobar = to pass (an exam)." }
-      - { es: "Llegamos tarde por culpa del atasco.", en: "We arrived late because of the traffic jam.", grammar: [g.por-vs-para], vocab: [w.por-culpa-de, w.atasco] }
+      - { es: "Llegamos tarde por culpa del atasco.", en: "We arrived late because of the traffic jam.", altEs: ["Llegamos tarde a causa del atasco."], grammar: [g.por-vs-para], vocab: [w.por-culpa-de, w.atasco] }
       - { es: "En lugar de ir en coche, fuimos a pie a través del parque.", en: "Instead of going by car, we walked through the park.", grammar: [g.por-vs-para], vocab: [w.en-lugar-de, w.a-traves-de, w.parque] }
       - { es: "El motivo del viaje es el trabajo; el objetivo, firmar un contrato.", en: "The reason for the trip is work; the objective, signing a contract.", grammar: [g.por-vs-para], vocab: [w.motivo, w.objetivo, w.viaje] }
       - { es: "Trabajo ___ ganar dinero.", en: "I work to earn money.", grammar: [g.por-vs-para], vocab: [w.ganar, w.dinero], transform: { instruction: "Fill in por or para", answer: "Trabajo para ganar dinero.", alt: [] } }
+    exchanges:
+      - q: { es: "¿Para qué estudias español?", en: "What are you studying Spanish for?" }
+        a: { es: "Para trabajar en Madrid.", en: "To work in Madrid." }
+        alt: ["Estudio español para trabajar en Madrid.", "Por mi trabajo."]
+        grammar: [g.por-vs-para]
+        vocab: [w.estudiar, w.trabajar]
+      - q: { es: "¿Para quién es este regalo?", en: "Who is this present for?" }
+        a: { es: "Es para ti.", en: "It's for you." }
+        alt: ["Para ti.", "Para mi madre."]
+        grammar: [g.por-vs-para]
+        vocab: [w.regalo]
+      - q: { es: "¿Por qué no fuisteis a la playa?", en: "Why didn't you go to the beach?" }
+        a: { es: "Por la lluvia.", en: "Because of the rain." }
+        alt: ["No fuimos por la lluvia.", "Por culpa de la lluvia."]
+        grammar: [g.por-vs-para]
+        vocab: [w.lluvia, w.por-culpa-de]
+      - q: { es: "¿Para cuándo es el informe?", en: "When is the report due?" }
+        a: { es: "Para el viernes; ese es el plazo.", en: "For Friday; that's the deadline." }
+        alt: ["Para el viernes.", "El viernes."]
+        grammar: [g.por-vs-para]
+        vocab: [w.informe, w.plazo]
+      - q: { es: "¿Cuántas veces habláis por teléfono?", en: "How often do you talk on the phone?" }
+        a: { es: "Dos veces por semana.", en: "Twice a week." }
+        alt: ["Dos veces a la semana.", "Casi todos los días."]
+        grammar: [g.por-vs-para]
+        vocab: [w.telefono, w.semana]
+    texts:
+      - title: "Mensaje para Sara"
+        es: ["Gracias por la cena de ayer, estaba muy rica.", "Este libro es para ti; lo compré por dos euros en el mercado.", "Salgo para Sevilla el viernes; te llamo por teléfono desde allí."]
+        en: ["Thanks for dinner yesterday, it was very tasty.", "This book is for you; I bought it for two euros at the market.", "I'm leaving for Seville on Friday; I'll phone you from there."]
+        grammar: [g.por-vs-para]
+        vocab: [w.gracias, w.regalo, w.destino]
   - id: a2.u10.l2
     title: Pienso en ti, sueño contigo
     teach: [g.prepositions-verbs]
     vocab: [w.pensar-en, w.sonar-con, w.depender, w.preocuparse, w.acordarse, w.enamorarse, w.confiar, w.quejarse, w.alegrarse, w.tratar-de, w.a-la-vez, w.a-tiempo]
     tip: "Learn the preposition with the verb: pensar en, soñar con, depender de, casarse con, empezar a."
     sentences:
-      - { es: "Pienso en ti todos los días.", en: "I think about you every day.", grammar: [g.prepositions-verbs], vocab: [w.pensar-en] }
-      - { es: "Anoche soñé con mi abuelo.", en: "Last night I dreamt about my grandfather.", grammar: [g.prepositions-verbs], vocab: [w.sonar-con, w.abuelo] }
+      - { es: "Pienso en ti todos los días.", en: "I think about you every day.", altEs: ["Pienso en ti cada día."], grammar: [g.prepositions-verbs], vocab: [w.pensar-en] }
+      - { es: "Anoche soñé con mi abuelo.", en: "Last night I dreamt about my grandfather.", altEs: ["Ayer por la noche soñé con mi abuelo."], grammar: [g.prepositions-verbs], vocab: [w.sonar-con, w.abuelo] }
       - { es: "Todo depende del tiempo que haga mañana.", en: "Everything depends on the weather tomorrow.", grammar: [g.prepositions-verbs], vocab: [w.depender, w.tiempo], error: { wrong: "Todo depende en el tiempo que haga mañana.", explain: "depender takes de, not en: depende del tiempo.", grammar: g.prepositions-verbs } }
       - { es: "Mis padres se preocupan mucho por mí.", en: "My parents worry a lot about me.", grammar: [g.prepositions-verbs], vocab: [w.preocuparse] }
       - { es: "¿Te acuerdas de nuestro primer viaje?", en: "Do you remember our first trip?", grammar: [g.prepositions-verbs], vocab: [w.acordarse, w.viaje] }
       - { es: "Se enamoró de ella en una fiesta.", en: "He fell in love with her at a party.", grammar: [g.prepositions-verbs, g.preterite-regular], vocab: [w.enamorarse, w.fiesta] }
-      - { es: "Confío en mis amigos.", en: "I trust my friends.", grammar: [g.prepositions-verbs], vocab: [w.confiar, w.amigo] }
-      - { es: "Siempre se queja del trabajo.", en: "He's always complaining about work.", grammar: [g.prepositions-verbs], vocab: [w.quejarse, w.trabajo] }
-      - { es: "Me alegro de verte.", en: "I'm glad to see you.", grammar: [g.prepositions-verbs], vocab: [w.alegrarse, w.ver] }
-      - { es: "Trata de llegar a tiempo, por favor.", en: "Try to arrive on time, please.", grammar: [g.prepositions-verbs, g.imperative-tu], vocab: [w.tratar-de, w.a-tiempo] }
-      - { es: "Empezó a llover y dejamos de jugar.", en: "It started to rain and we stopped playing.", grammar: [g.prepositions-verbs, g.preterite-regular], vocab: [w.llover, w.jugar] }
-      - { es: "Mi hermana se casó con un italiano.", en: "My sister married an Italian.", grammar: [g.prepositions-verbs], vocab: [w.casarse, w.italiano] }
+      - { es: "Confío en mis amigos.", en: "I trust my friends.", altEs: ["Yo confío en mis amigos."], grammar: [g.prepositions-verbs], vocab: [w.confiar, w.amigo] }
+      - { es: "Siempre se queja del trabajo.", en: "He's always complaining about work.", altEs: ["Se queja siempre del trabajo."], grammar: [g.prepositions-verbs], vocab: [w.quejarse, w.trabajo] }
+      - { es: "Me alegro de verte.", en: "I'm glad to see you.", altEs: ["Me alegro mucho de verte."], grammar: [g.prepositions-verbs], vocab: [w.alegrarse, w.ver] }
+      - { es: "Trata de llegar a tiempo, por favor.", en: "Try to arrive on time, please.", altEs: ["Por favor, trata de llegar a tiempo."], grammar: [g.prepositions-verbs, g.imperative-tu], vocab: [w.tratar-de, w.a-tiempo] }
+      - { es: "Empezó a llover y dejamos de jugar.", en: "It started to rain and we stopped playing.", altEs: ["Empezó a llover, así que dejamos de jugar."], grammar: [g.prepositions-verbs, g.preterite-regular], vocab: [w.llover, w.jugar] }
+      - { es: "Mi hermana se casó con un italiano.", en: "My sister married an Italian.", altEs: ["Mi hermana se ha casado con un italiano."], grammar: [g.prepositions-verbs], vocab: [w.casarse, w.italiano] }
       - { es: "No puedo estudiar y escuchar música a la vez.", en: "I can't study and listen to music at the same time.", grammar: [g.prepositions-verbs], vocab: [w.a-la-vez, w.musica] }
-      - { es: "Hablamos de política durante toda la cena.", en: "We talked about politics during the whole dinner.", grammar: [g.prepositions-verbs], vocab: [w.hablar, w.politico, w.durante] }
+      - { es: "Hablamos de política durante toda la cena.", en: "We talked about politics during the whole dinner.", altEs: ["Hablamos de política toda la cena."], grammar: [g.prepositions-verbs], vocab: [w.hablar, w.politico, w.durante] }
       - { es: "Yo pienso ___ mi familia.", en: "I think about my family.", grammar: [g.prepositions-verbs], vocab: [w.pensar-en], transform: { instruction: "Fill in the preposition", answer: "Yo pienso en mi familia.", alt: ["Pienso en mi familia."] } }
+    exchanges:
+      - q: { es: "¿En qué piensas?", en: "What are you thinking about?" }
+        a: { es: "Pienso en ti.", en: "I'm thinking about you." }
+        alt: ["En ti.", "En las vacaciones."]
+        grammar: [g.prepositions-verbs]
+        vocab: [w.pensar-en]
+      - q: { es: "¿Con qué soñaste anoche?", en: "What did you dream about last night?" }
+        a: { es: "Soñé con mi abuelo.", en: "I dreamt about my grandfather." }
+        alt: ["Con mi abuelo.", "No lo recuerdo."]
+        grammar: [g.prepositions-verbs]
+        vocab: [w.sonar-con]
+      - q: { es: "¿Vamos a la playa mañana?", en: "Shall we go to the beach tomorrow?" }
+        a: { es: "Depende del tiempo.", en: "It depends on the weather." }
+        alt: ["Depende.", "Si hace sol, sí."]
+        grammar: [g.prepositions-verbs]
+        vocab: [w.depender, w.tiempo]
+      - q: { es: "¿De qué se queja Luis?", en: "What is Luis complaining about?" }
+        a: { es: "Siempre se queja del trabajo.", en: "He's always complaining about work." }
+        alt: ["Del trabajo.", "De todo."]
+        grammar: [g.prepositions-verbs]
+        vocab: [w.quejarse, w.trabajo]
+      - q: { es: "¿Confías en tus amigos?", en: "Do you trust your friends?" }
+        a: { es: "Sí, confío en ellos.", en: "Yes, I trust them." }
+        alt: ["Sí, mucho.", "Sí, en todos."]
+        grammar: [g.prepositions-verbs]
+        vocab: [w.confiar, w.amigo]
+    texts:
+      - title: "Mensaje de Ana"
+        es: ["Me alegro mucho de verte mañana.", "Trata de llegar a tiempo, por favor.", "Pienso en ti todos los días."]
+        en: ["I'm really glad to be seeing you tomorrow.", "Try to arrive on time, please.", "I think about you every day."]
+        grammar: [g.prepositions-verbs]
+        vocab: [w.alegrarse, w.tratar-de, w.pensar-en]
   - id: a2.u10.l3
     title: ¿Desde cuándo?
     teach: [g.desde-hace]
     vocab: [w.agencia, w.reserva, w.reservar, w.vuelo, w.maleta, w.pasaporte, w.frontera, w.equipaje, w.asiento, w.ventanilla, w.pasillo, w.retraso, w.escala, w.llegada, w.salida, w.ida-y-vuelta, w.alojamiento, w.albergue]
     tip: "desde + a point in time; desde hace + a duration; llevar + duration + gerund."
     sentences:
-      - { es: "Vivo en Valencia desde 2020.", en: "I've lived in Valencia since 2020.", grammar: [g.desde-hace], vocab: [w.vivir] }
-      - { es: "Trabajo en esta agencia de viajes desde hace tres años.", en: "I've been working at this travel agency for three years.", grammar: [g.desde-hace], vocab: [w.agencia, w.trabajar], error: { wrong: "Trabajo en esta agencia desde tres años.", explain: "A duration needs desde hace, not desde alone: desde hace tres años.", grammar: g.desde-hace } }
-      - { es: "Hace dos horas que esperamos el vuelo.", en: "We've been waiting for the flight for two hours.", grammar: [g.desde-hace], vocab: [w.vuelo, w.esperar] }
-      - { es: "Llevo veinte minutos haciendo cola en la ventanilla.", en: "I've been queuing at the counter for twenty minutes.", grammar: [g.desde-hace], vocab: [w.ventanilla, w.hacer-cola] }
+      - { es: "Vivo en Valencia desde 2020.", en: "I've lived in Valencia since 2020.", altEs: ["Vivo en Valencia desde el año 2020."], grammar: [g.desde-hace], vocab: [w.vivir] }
+      - { es: "Trabajo en esta agencia de viajes desde hace tres años.", en: "I've been working at this travel agency for three years.", altEs: ["Llevo tres años trabajando en esta agencia de viajes.", "Hace tres años que trabajo en esta agencia de viajes."], grammar: [g.desde-hace], vocab: [w.agencia, w.trabajar], error: { wrong: "Trabajo en esta agencia desde tres años.", explain: "A duration needs desde hace, not desde alone: desde hace tres años.", grammar: g.desde-hace } }
+      - { es: "Hace dos horas que esperamos el vuelo.", en: "We've been waiting for the flight for two hours.", altEs: ["Llevamos dos horas esperando el vuelo.", "Esperamos el vuelo desde hace dos horas."], grammar: [g.desde-hace], vocab: [w.vuelo, w.esperar] }
+      - { es: "Llevo veinte minutos haciendo cola en la ventanilla.", en: "I've been queuing at the counter for twenty minutes.", altEs: ["Hace veinte minutos que hago cola en la ventanilla."], grammar: [g.desde-hace], vocab: [w.ventanilla, w.hacer-cola] }
       - { es: "El vuelo a Lisboa lleva una hora de retraso.", en: "The flight to Lisbon is an hour late.", grammar: [g.desde-hace], vocab: [w.retraso, w.vuelo] }
-      - { es: "Reservé un billete de ida y vuelta con escala en París.", en: "I booked a return ticket with a stopover in Paris.", grammar: [g.preterite-regular], vocab: [w.reservar, w.ida-y-vuelta, w.escala, w.billete] }
+      - { es: "Reservé un billete de ida y vuelta con escala en París.", en: "I booked a return ticket with a stopover in Paris.", altEs: ["Reservé un billete de ida y vuelta haciendo escala en París."], grammar: [g.preterite-regular], vocab: [w.reservar, w.ida-y-vuelta, w.escala, w.billete] }
       - { es: "¿Prefiere asiento de ventanilla o de pasillo?", en: "Do you prefer a window or an aisle seat?", grammar: [g.stem-changing-present], vocab: [w.asiento, w.ventanilla, w.pasillo] }
       - { es: "Mi maleta pesa veinte kilos; es demasiado equipaje.", en: "My suitcase weighs twenty kilos; that's too much luggage.", grammar: [g.muy-vs-mucho], vocab: [w.maleta, w.equipaje, w.demasiado], note: "pesar = to weigh." }
       - { es: "Enseñamos el pasaporte en la frontera.", en: "We showed our passports at the border.", grammar: [g.preterite-regular], vocab: [w.pasaporte, w.frontera, w.ensenar] }
       - { es: "La salida es a las siete y la llegada a las nueve y media.", en: "Departure is at seven and arrival at half past nine.", grammar: [g.time-telling], vocab: [w.salida, w.llegada] }
       - { es: "¿Desde cuándo tienes la reserva del alojamiento?", en: "Since when have you had the accommodation booking?", grammar: [g.desde-hace], vocab: [w.reserva, w.alojamiento] }
-      - { es: "Nos alojamos en un albergue desde el lunes.", en: "We've been staying in a hostel since Monday.", grammar: [g.desde-hace], vocab: [w.albergue, w.alojarse, w.lunes] }
-      - { es: "Hace mucho tiempo que no viajo en avión.", en: "I haven't flown for a long time.", grammar: [g.desde-hace], vocab: [w.viajar, w.avion] }
+      - { es: "Nos alojamos en un albergue desde el lunes.", en: "We've been staying in a hostel since Monday.", altEs: ["Estamos en un albergue desde el lunes."], grammar: [g.desde-hace], vocab: [w.albergue, w.alojarse, w.lunes] }
+      - { es: "Hace mucho tiempo que no viajo en avión.", en: "I haven't flown for a long time.", altEs: ["No viajo en avión desde hace mucho tiempo."], grammar: [g.desde-hace], vocab: [w.viajar, w.avion] }
       - { es: "¿Cuánto tiempo llevas estudiando español? — Llevo un año.", en: "How long have you been studying Spanish? — A year.", grammar: [g.desde-hace], vocab: [w.estudiar, w.llevar.phr] }
       - { es: "Estudio español. (dos años)", en: "I've been studying Spanish for two years.", grammar: [g.desde-hace], vocab: [w.estudiar], transform: { instruction: "Say it with 'desde hace'", answer: "Estudio español desde hace dos años.", alt: ["Hace dos años que estudio español.", "Llevo dos años estudiando español."] } }
+    exchanges:
+      - q: { es: "¿Desde cuándo vives en Valencia?", en: "Since when have you lived in Valencia?" }
+        a: { es: "Desde 2020.", en: "Since 2020." }
+        alt: ["Vivo en Valencia desde 2020.", "Desde hace cuatro años."]
+        grammar: [g.desde-hace]
+        vocab: [w.vivir]
+      - q: { es: "¿Cuánto tiempo llevas estudiando español?", en: "How long have you been studying Spanish?" }
+        a: { es: "Llevo un año.", en: "A year." }
+        alt: ["Un año.", "Estudio español desde hace un año."]
+        grammar: [g.desde-hace]
+        vocab: [w.estudiar, w.llevar.phr]
+      - q: { es: "¿Cuánto tiempo lleváis esperando el vuelo?", en: "How long have you been waiting for the flight?" }
+        a: { es: "Hace dos horas que esperamos.", en: "We've been waiting for two hours." }
+        alt: ["Dos horas.", "Llevamos dos horas esperando."]
+        grammar: [g.desde-hace]
+        vocab: [w.vuelo, w.esperar]
+      - q: { es: "¿Prefiere asiento de ventanilla o de pasillo?", en: "Do you prefer a window or an aisle seat?" }
+        a: { es: "De ventanilla, por favor.", en: "Window, please." }
+        alt: ["Ventanilla, por favor.", "De pasillo."]
+        grammar: [g.stem-changing-present]
+        vocab: [w.asiento, w.ventanilla, w.pasillo]
+    texts:
+      - title: "Mensaje desde el aeropuerto"
+        es: ["Llevo tres horas en el aeropuerto.", "El vuelo lleva una hora de retraso y hace mucho tiempo que no como nada.", "Viajo desde hace años y nunca he visto tanta cola."]
+        en: ["I've been at the airport for three hours.", "The flight is an hour late and I haven't eaten anything for a long time.", "I've been travelling for years and I've never seen such a queue."]
+        grammar: [g.desde-hace]
+        vocab: [w.retraso, w.vuelo, w.cola]
   - id: a2.u10.l4
     title: Veo a María
     teach: [g.a-personal]
     vocab: [w.llamada, w.correo-electronico, w.comunicarse, w.contactar, w.mientras-tanto, w.velocidad, w.carretera, w.autopista, w.puerto]
     tip: "Put a before a person who is the direct object: Veo a María. Not after tener: Tengo dos hermanos."
     sentences:
-      - { es: "Esta tarde visito a mi abuela.", en: "This afternoon I'm visiting my grandmother.", grammar: [g.a-personal], vocab: [w.visitar, w.abuela] }
+      - { es: "Esta tarde visito a mi abuela.", en: "This afternoon I'm visiting my grandmother.", altEs: ["Esta tarde voy a visitar a mi abuela."], grammar: [g.a-personal], vocab: [w.visitar, w.abuela] }
       - { es: "¿Conoces a Pedro? — Sí, lo conocí en el puerto.", en: "Do you know Pedro? — Yes, I met him at the harbour.", grammar: [g.a-personal, g.direct-object-pronouns], vocab: [w.conocer, w.puerto] }
-      - { es: "Busco a mi perro; se ha escapado.", en: "I'm looking for my dog; it has run away.", grammar: [g.a-personal, g.present-perfect], vocab: [w.buscar, w.perro, w.escapar] }
+      - { es: "Busco a mi perro; se ha escapado.", en: "I'm looking for my dog; it has run away.", altEs: ["Estoy buscando a mi perro; se ha escapado."], grammar: [g.a-personal, g.present-perfect], vocab: [w.buscar, w.perro, w.escapar] }
       - { es: "Tengo dos hermanas y un hermano.", en: "I have two sisters and a brother.", grammar: [g.a-personal], vocab: [w.tener, w.hermana], error: { wrong: "Tengo a dos hermanas y un hermano.", explain: "No personal a after tener.", grammar: g.a-personal } }
-      - { es: "Llamé a mi madre y le mandé un correo electrónico a mi jefe.", en: "I called my mother and sent an email to my boss.", grammar: [g.a-personal, g.indirect-object-pronouns], vocab: [w.llamar, w.correo-electronico, w.jefe] }
-      - { es: "Esperamos a los niños en la salida del colegio.", en: "We wait for the children at the school exit.", grammar: [g.a-personal], vocab: [w.esperar, w.salida, w.colegio] }
-      - { es: "Veo la televisión; no veo a nadie.", en: "I watch TV; I don't see anyone.", grammar: [g.a-personal, g.indefinite-pronouns], vocab: [w.ver, w.nadie] }
-      - { es: "Recibí una llamada de un número extraño.", en: "I got a call from a strange number.", grammar: [g.preterite-regular], vocab: [w.llamada, w.recibir, w.extrano] }
+      - { es: "Llamé a mi madre y le mandé un correo electrónico a mi jefe.", en: "I called my mother and sent an email to my boss.", altEs: ["Llamé a mi madre y le envié un correo electrónico a mi jefe."], grammar: [g.a-personal, g.indirect-object-pronouns], vocab: [w.llamar, w.correo-electronico, w.jefe] }
+      - { es: "Esperamos a los niños en la salida del colegio.", en: "We wait for the children at the school exit.", altEs: ["Esperamos a los niños a la salida del colegio."], grammar: [g.a-personal], vocab: [w.esperar, w.salida, w.colegio] }
+      - { es: "Veo la televisión; no veo a nadie.", en: "I watch TV; I don't see anyone.", altEs: ["Estoy viendo la televisión; no veo a nadie."], grammar: [g.a-personal, g.indefinite-pronouns], vocab: [w.ver, w.nadie] }
+      - { es: "Recibí una llamada de un número extraño.", en: "I got a call from a strange number.", altEs: ["Recibí una llamada de un número raro."], grammar: [g.preterite-regular], vocab: [w.llamada, w.recibir, w.extrano] }
       - { es: "Nos comunicamos por correo electrónico y a veces por teléfono.", en: "We communicate by email and sometimes by phone.", grammar: [g.por-vs-para], vocab: [w.comunicarse, w.correo-electronico] }
       - { es: "Puede contactar con la agencia a través de la página web.", en: "You can contact the agency through the website.", grammar: [g.prepositions-verbs], vocab: [w.contactar, w.a-traves-de, w.agencia] }
       - { es: "Tú prepara la cena; mientras tanto, yo llamo a los invitados.", en: "You make dinner; meanwhile, I'll call the guests.", grammar: [g.a-personal, g.imperative-tu], vocab: [w.mientras-tanto, w.invitar] }
       - { es: "En la autopista la velocidad máxima es de 120 kilómetros por hora.", en: "On the motorway the maximum speed is 120 kilometres per hour.", grammar: [g.por-vs-para], vocab: [w.autopista, w.velocidad], note: "máximo = maximum." }
-      - { es: "La carretera pasa por tres pueblos pequeños.", en: "The road goes through three small villages.", grammar: [g.por-vs-para], vocab: [w.carretera, w.pueblo] }
-      - { es: "Quiero mucho a mis amigos.", en: "I love my friends a lot.", grammar: [g.a-personal], vocab: [w.querer, w.amigo] }
+      - { es: "La carretera pasa por tres pueblos pequeños.", en: "The road goes through three small villages.", altEs: ["La carretera pasa por tres pequeños pueblos."], grammar: [g.por-vs-para], vocab: [w.carretera, w.pueblo] }
+      - { es: "Quiero mucho a mis amigos.", en: "I love my friends a lot.", altEs: ["A mis amigos los quiero mucho."], grammar: [g.a-personal], vocab: [w.querer, w.amigo] }
       - { es: "Veo ___ mi profesor en la calle.", en: "I see my teacher in the street.", grammar: [g.a-personal], vocab: [w.ver, w.profesor], transform: { instruction: "Add the personal a if needed", answer: "Veo a mi profesor en la calle.", alt: [] } }
+    exchanges:
+      - q: { es: "¿A quién visitas esta tarde?", en: "Who are you visiting this afternoon?" }
+        a: { es: "Visito a mi abuela.", en: "I'm visiting my grandmother." }
+        alt: ["A mi abuela.", "A mis abuelos."]
+        grammar: [g.a-personal]
+        vocab: [w.visitar, w.abuela]
+      - q: { es: "¿Conoces a Pedro?", en: "Do you know Pedro?" }
+        a: { es: "Sí, lo conocí en el puerto.", en: "Yes, I met him at the harbour." }
+        alt: ["Sí, lo conozco.", "No, no lo conozco."]
+        grammar: [g.a-personal, g.direct-object-pronouns]
+        vocab: [w.conocer, w.puerto]
+      - q: { es: "¿Qué buscas?", en: "What are you looking for?" }
+        a: { es: "Busco a mi perro; se ha escapado.", en: "I'm looking for my dog; it has run away." }
+        alt: ["A mi perro.", "Busco mis llaves."]
+        grammar: [g.a-personal]
+        vocab: [w.buscar, w.perro]
+      - q: { es: "¿Tienes hermanos?", en: "Do you have any brothers or sisters?" }
+        a: { es: "Sí, tengo dos hermanas y un hermano.", en: "Yes, I have two sisters and a brother." }
+        alt: ["Sí, dos hermanas.", "No, no tengo hermanos."]
+        grammar: [g.a-personal]
+        vocab: [w.tener, w.hermana]
+      - q: { es: "¿A quién esperáis?", en: "Who are you waiting for?" }
+        a: { es: "Esperamos a los niños.", en: "We're waiting for the children." }
+        alt: ["A los niños.", "A nadie, estamos paseando."]
+        grammar: [g.a-personal]
+        vocab: [w.esperar]
+    texts:
+      - title: "Mensaje de Marta"
+        es: ["Esta tarde visito a mi abuela en el hospital.", "Después llamo a mi jefe y le mando el informe por correo electrónico.", "Si ves a Pedro, dile que lo espero a las nueve."]
+        en: ["This afternoon I'm visiting my grandmother in hospital.", "Then I'll call my boss and send him the report by email.", "If you see Pedro, tell him I'll be waiting for him at nine."]
+        grammar: [g.a-personal]
+        vocab: [w.visitar, w.llamar, w.correo-electronico]
 dialogues:
   - id: a2.u10.d1
     title: En la agencia de viajes

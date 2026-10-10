@@ -8,72 +8,180 @@ lessons:
     vocab: [w.mientras, w.cuando.conj, w.en-ese-momento, w.de-pronto, w.oscuro.phr, w.ruido.phr, w.luz, w.oir, w.asustarse, w.gritar, w.susto, w.extrano, w.raro]
     sentences:
       - { es: "Estaba en la ducha cuando sonó el teléfono.", en: "I was in the shower when the phone rang.", grammar: [g.preterite-vs-imperfect, g.mientras-cuando], vocab: [w.cuando.conj, w.telefono] }
-      - { es: "Mientras cenábamos, llamó mi madre.", en: "While we were having dinner, my mother called.", grammar: [g.mientras-cuando], vocab: [w.mientras, w.llamar] }
-      - { es: "Llovía mucho cuando salí de casa.", en: "It was raining hard when I left the house.", grammar: [g.preterite-vs-imperfect], vocab: [w.llover, w.salir], error: { wrong: "Llovió mucho cuando salí de casa.", explain: "The rain is the background to the event: llovía (imperfect).", grammar: g.preterite-vs-imperfect } }
-      - { es: "Estaba oscuro y de pronto oí un ruido.", en: "It was dark and all of a sudden I heard a noise.", grammar: [g.preterite-vs-imperfect], vocab: [w.oscuro.phr, w.de-pronto, w.ruido.phr] }
-      - { es: "Me asusté y grité.", en: "I got scared and screamed.", grammar: [g.preterite-regular], vocab: [w.asustarse, w.gritar] }
+      - { es: "Mientras cenábamos, llamó mi madre.", en: "While we were having dinner, my mother called.", altEs: ["Mientras estábamos cenando, llamó mi madre."], grammar: [g.mientras-cuando], vocab: [w.mientras, w.llamar] }
+      - { es: "Llovía mucho cuando salí de casa.", en: "It was raining hard when I left the house.", altEs: ["Estaba lloviendo mucho cuando salí de casa."], grammar: [g.preterite-vs-imperfect], vocab: [w.llover, w.salir], error: { wrong: "Llovió mucho cuando salí de casa.", explain: "The rain is the background to the event: llovía (imperfect).", grammar: g.preterite-vs-imperfect } }
+      - { es: "Estaba oscuro y de pronto oí un ruido.", en: "It was dark and all of a sudden I heard a noise.", altEs: ["Estaba oscuro y de repente oí un ruido."], grammar: [g.preterite-vs-imperfect], vocab: [w.oscuro.phr, w.de-pronto, w.ruido.phr] }
+      - { es: "Me asusté y grité.", en: "I got scared and screamed.", altEs: ["Yo me asusté y grité."], grammar: [g.preterite-regular], vocab: [w.asustarse, w.gritar] }
       - { es: "En ese momento se encendió la luz.", en: "At that moment the light came on.", grammar: [g.preterite-regular], vocab: [w.en-ese-momento, w.luz] }
       - { es: "Era mi gato, que jugaba con una pelota.", en: "It was my cat, playing with a ball.", grammar: [g.imperfect-uses], vocab: [w.gato, w.jugar] }
       - { es: "¡Qué susto me dio!", en: "What a fright it gave me!", grammar: [g.preterite-irregular], vocab: [w.susto, w.dar] }
-      - { es: "Fue una noche muy extraña.", en: "It was a very strange night.", grammar: [g.preterite-ser-ir], vocab: [w.extrano, w.noche] }
-      - { es: "Oímos algo raro en el jardín mientras dormíamos.", en: "We heard something odd in the garden while we were sleeping.", grammar: [g.mientras-cuando], vocab: [w.oir, w.raro] }
-      - { es: "Cuando era pequeño, me asustaba la oscuridad.", en: "When I was little, the dark scared me.", grammar: [g.mientras-cuando], vocab: [w.oscuridad, w.asustarse] }
+      - { es: "Fue una noche muy extraña.", en: "It was a very strange night.", altEs: ["Fue una noche muy rara."], grammar: [g.preterite-ser-ir], vocab: [w.extrano, w.noche] }
+      - { es: "Oímos algo raro en el jardín mientras dormíamos.", en: "We heard something odd in the garden while we were sleeping.", altEs: ["Oímos algo extraño en el jardín mientras dormíamos."], grammar: [g.mientras-cuando], vocab: [w.oir, w.raro] }
+      - { es: "Cuando era pequeño, me asustaba la oscuridad.", en: "When I was little, the dark scared me.", altEs: ["Cuando era pequeño, tenía miedo de la oscuridad."], grammar: [g.mientras-cuando], vocab: [w.oscuridad, w.asustarse] }
       - { es: "Los niños estaban jugando cuando empezó a nevar.", en: "The children were playing when it started to snow.", grammar: [g.estar-gerund-past], vocab: [w.jugar, w.nevar] }
-      - { es: "Yo estaba leyendo cuando llegaste.", en: "I was reading when you arrived.", grammar: [g.estar-gerund-past], vocab: [w.leer, w.llegar], transform: { instruction: "Change 'I' to 'they'", answer: "Ellos estaban leyendo cuando llegaste.", alt: ["Estaban leyendo cuando llegaste."] } }
+      - { es: "Yo estaba leyendo cuando llegaste.", en: "I was reading when you arrived.", altEs: ["Estaba leyendo cuando llegaste."], grammar: [g.estar-gerund-past], vocab: [w.leer, w.llegar], transform: { instruction: "Change 'I' to 'they'", answer: "Ellos estaban leyendo cuando llegaste.", alt: ["Estaban leyendo cuando llegaste."] } }
+    exchanges:
+      - q: { es: "¿Dónde estabas cuando llamó tu madre?", en: "Where were you when your mother called?" }
+        a: { es: "Estaba en la ducha.", en: "I was in the shower." }
+        alt: ["En la ducha.", "Estaba cenando."]
+        grammar: [g.preterite-vs-imperfect, g.mientras-cuando]
+        vocab: [w.cuando.conj, w.llamar]
+      - q: { es: "¿Qué tiempo hacía cuando saliste de casa?", en: "What was the weather like when you left the house?" }
+        a: { es: "Llovía mucho.", en: "It was raining hard." }
+        alt: ["Llovía.", "Hacía sol."]
+        grammar: [g.preterite-vs-imperfect]
+        vocab: [w.llover, w.salir]
+      - q: { es: "¿Qué era ese ruido?", en: "What was that noise?" }
+        a: { es: "Era mi gato, que jugaba con una pelota.", en: "It was my cat, playing with a ball." }
+        alt: ["Era el gato.", "Nada, era el gato."]
+        grammar: [g.imperfect-uses]
+        vocab: [w.ruido.phr, w.gato]
+      - q: { es: "¿Te asustaste?", en: "Did you get scared?" }
+        a: { es: "Sí, me asusté y grité.", en: "Yes, I got scared and screamed." }
+        alt: ["Sí, mucho.", "No, no me asusté."]
+        grammar: [g.preterite-regular]
+        vocab: [w.asustarse, w.gritar]
+    texts:
+      - title: "Mensaje de Lucía"
+        es: ["Anoche pasó algo muy raro.", "Estaba durmiendo cuando oí un ruido en la cocina.", "Me levanté, encendí la luz y... ¡era el gato!", "¡Qué susto me dio!"]
+        en: ["Last night something very odd happened.", "I was sleeping when I heard a noise in the kitchen.", "I got up, turned on the light and... it was the cat!", "What a fright it gave me!"]
+        grammar: [g.preterite-vs-imperfect, g.estar-gerund-past]
+        vocab: [w.raro, w.oir, w.susto]
   - id: a2.u04.l2
     title: Una anécdota
     teach: [g.narration-connectors]
     vocab: [w.asi-que, w.como.conj, w.sin-embargo, w.afortunadamente, w.desgraciadamente, w.anecdota, w.accidente, w.sorpresa, w.caerse, w.romperse, w.hacerse-dano, w.resolver, w.ocurrir, w.suceder, w.darse-cuenta]
     sentences:
-      - { es: "Te voy a contar una anécdota muy divertida.", en: "I'm going to tell you a very funny anecdote.", grammar: [g.ir-a-infinitive], vocab: [w.anecdota, w.divertido] }
-      - { es: "Como llovía, cogimos un taxi.", en: "As it was raining, we took a taxi.", grammar: [g.narration-connectors], vocab: [w.como.conj, w.coger] }
-      - { es: "El taxi no llegó, así que fuimos andando.", en: "The taxi didn't come, so we walked.", grammar: [g.narration-connectors], vocab: [w.asi-que, w.andar] }
+      - { es: "Te voy a contar una anécdota muy divertida.", en: "I'm going to tell you a very funny anecdote.", altEs: ["Voy a contarte una anécdota muy divertida."], grammar: [g.ir-a-infinitive], vocab: [w.anecdota, w.divertido] }
+      - { es: "Como llovía, cogimos un taxi.", en: "As it was raining, we took a taxi.", altEs: ["Como llovía, tomamos un taxi."], grammar: [g.narration-connectors], vocab: [w.como.conj, w.coger] }
+      - { es: "El taxi no llegó, así que fuimos andando.", en: "The taxi didn't come, so we walked.", altEs: ["El taxi no llegó, así que fuimos a pie."], grammar: [g.narration-connectors], vocab: [w.asi-que, w.andar] }
       - { es: "Me caí en la calle y me rompí el brazo.", en: "I fell in the street and broke my arm.", grammar: [g.preterite-regular], vocab: [w.caerse, w.romperse, w.brazo] }
-      - { es: "Afortunadamente no me hice mucho daño.", en: "Fortunately I didn't hurt myself much.", grammar: [g.narration-connectors], vocab: [w.afortunadamente, w.hacerse-dano] }
-      - { es: "Desgraciadamente llegamos tarde a la fiesta.", en: "Unfortunately we arrived late to the party.", grammar: [g.narration-connectors], vocab: [w.desgraciadamente, w.llegar] }
-      - { es: "Sin embargo, lo pasamos muy bien.", en: "However, we had a great time.", grammar: [g.connectors-contrast], vocab: [w.sin-embargo, w.pasarlo-bien] }
-      - { es: "¿Qué ocurrió después? — Nada especial.", en: "What happened next? — Nothing special.", grammar: [g.preterite-regular], vocab: [w.ocurrir, w.especial] }
+      - { es: "Afortunadamente no me hice mucho daño.", en: "Fortunately I didn't hurt myself much.", altEs: ["Por suerte no me hice mucho daño."], grammar: [g.narration-connectors], vocab: [w.afortunadamente, w.hacerse-dano] }
+      - { es: "Desgraciadamente llegamos tarde a la fiesta.", en: "Unfortunately we arrived late to the party.", altEs: ["Desgraciadamente llegamos a la fiesta tarde."], grammar: [g.narration-connectors], vocab: [w.desgraciadamente, w.llegar] }
+      - { es: "Sin embargo, lo pasamos muy bien.", en: "However, we had a great time.", altEs: ["Sin embargo, lo pasamos genial."], grammar: [g.connectors-contrast], vocab: [w.sin-embargo, w.pasarlo-bien] }
+      - { es: "¿Qué ocurrió después? — Nada especial.", en: "What happened next? — Nothing special.", altEs: ["¿Qué pasó después? — Nada especial."], grammar: [g.preterite-regular], vocab: [w.ocurrir, w.especial] }
       - { es: "Al final todo se resolvió.", en: "In the end everything was sorted out.", grammar: [g.se-passive], vocab: [w.resolver, w.al-final] }
       - { es: "Cuando llegué a casa, me di cuenta de que no tenía las llaves.", en: "When I got home, I realised I didn't have my keys.", grammar: [g.preterite-vs-imperfect], vocab: [w.darse-cuenta, w.llave], error: { wrong: "Me di cuenta que no tenía las llaves.", explain: "darse cuenta de que (keep the de).", grammar: g.prepositions-verbs } }
       - { es: "Fue una sorpresa muy agradable.", en: "It was a very pleasant surprise.", grammar: [g.preterite-ser-ir], vocab: [w.sorpresa] }
       - { es: "Ayer hubo un accidente en la autopista.", en: "Yesterday there was an accident on the motorway.", grammar: [g.preterite-irregular], vocab: [w.accidente, w.haber] }
       - { es: "Sucedió algo extraño el otro día.", en: "Something strange happened the other day.", grammar: [g.preterite-regular], vocab: [w.suceder, w.extrano] }
+    exchanges:
+      - q: { es: "¿Por qué cogisteis un taxi?", en: "Why did you take a taxi?" }
+        a: { es: "Como llovía, cogimos un taxi.", en: "As it was raining, we took a taxi." }
+        alt: ["Porque llovía.", "Porque estaba lloviendo."]
+        grammar: [g.narration-connectors]
+        vocab: [w.como.conj, w.coger]
+      - q: { es: "¿Y qué pasó después?", en: "And what happened next?" }
+        a: { es: "Nada especial; al final todo se resolvió.", en: "Nothing special; in the end everything was sorted out." }
+        alt: ["Nada especial.", "Nada."]
+        grammar: [g.narration-connectors]
+        vocab: [w.ocurrir, w.al-final]
+      - q: { es: "¿Te hiciste daño?", en: "Did you hurt yourself?" }
+        a: { es: "Afortunadamente no, solo me caí.", en: "Fortunately not, I just fell." }
+        alt: ["No, afortunadamente.", "Sí, me rompí el brazo."]
+        grammar: [g.narration-connectors]
+        vocab: [w.hacerse-dano, w.afortunadamente]
+      - q: { es: "¿Llegasteis a tiempo a la fiesta?", en: "Did you get to the party on time?" }
+        a: { es: "Desgraciadamente no, llegamos muy tarde.", en: "Unfortunately not, we arrived very late." }
+        alt: ["No, llegamos tarde.", "Sí, llegamos a tiempo."]
+        grammar: [g.narration-connectors]
+        vocab: [w.desgraciadamente, w.llegar]
+    texts:
+      - title: "Una anécdota"
+        es: ["El sábado fuimos a una boda en el campo.", "El taxi no llegó, así que fuimos andando bajo la lluvia.", "Desgraciadamente llegamos tarde; sin embargo, lo pasamos muy bien."]
+        en: ["On Saturday we went to a wedding in the country.", "The taxi didn't come, so we walked in the rain.", "Unfortunately we arrived late; however, we had a great time."]
+        grammar: [g.narration-connectors, g.connectors-contrast]
+        vocab: [w.asi-que, w.desgraciadamente, w.sin-embargo]
   - id: a2.u04.l3
     title: ¡Qué susto!
     teach: [g.preterite-vs-imperfect]
     vocab: [w.policia, w.ladron, w.cartera, w.robar, w.peligroso, w.escalera, w.suelo, w.pared, w.techo, w.bombero, w.ambulancia, w.fuego, w.humo, w.tormenta, w.golpe, w.herido, w.salvar, w.escapar]
     sentences:
-      - { es: "Un ladrón me robó la cartera en el metro.", en: "A thief stole my wallet on the metro.", grammar: [g.preterite-regular], vocab: [w.ladron, w.robar, w.cartera] }
+      - { es: "Un ladrón me robó la cartera en el metro.", en: "A thief stole my wallet on the metro.", altEs: ["Me robaron la cartera en el metro."], grammar: [g.preterite-regular], vocab: [w.ladron, w.robar, w.cartera] }
       - { es: "Llamé a la policía, pero el ladrón ya había escapado.", en: "I called the police, but the thief had already escaped.", grammar: [g.pluperfect], vocab: [w.policia, w.escapar] }
-      - { es: "Mientras bajaba la escalera, oí un golpe.", en: "While I was going down the stairs, I heard a bang.", grammar: [g.mientras-cuando], vocab: [w.escalera, w.golpe] }
+      - { es: "Mientras bajaba la escalera, oí un golpe.", en: "While I was going down the stairs, I heard a bang.", altEs: ["Mientras bajaba las escaleras, oí un golpe."], grammar: [g.mientras-cuando], vocab: [w.escalera, w.golpe] }
       - { es: "Había humo en la cocina: ¡fuego!", en: "There was smoke in the kitchen: fire!", grammar: [g.imperfect], vocab: [w.humo, w.fuego] }
-      - { es: "Los bomberos llegaron enseguida y apagaron el fuego.", en: "The firefighters arrived right away and put out the fire.", grammar: [g.preterite-regular], vocab: [w.bombero, w.enseguida] }
+      - { es: "Los bomberos llegaron enseguida y apagaron el fuego.", en: "The firefighters arrived right away and put out the fire.", altEs: ["Los bomberos llegaron rápidamente y apagaron el fuego."], grammar: [g.preterite-regular], vocab: [w.bombero, w.enseguida] }
       - { es: "Nadie resultó herido, afortunadamente.", en: "Nobody was injured, fortunately.", grammar: [g.preterite-regular], vocab: [w.herido, w.nadie] }
-      - { es: "La ambulancia llevó al hombre al hospital.", en: "The ambulance took the man to the hospital.", grammar: [g.preterite-regular], vocab: [w.ambulancia, w.hospital] }
+      - { es: "La ambulancia llevó al hombre al hospital.", en: "The ambulance took the man to the hospital.", altEs: ["La ambulancia se llevó al hombre al hospital."], grammar: [g.preterite-regular], vocab: [w.ambulancia, w.hospital] }
       - { es: "Durante la tormenta se cayó un árbol sobre el techo.", en: "During the storm a tree fell on the roof.", grammar: [g.preterite-regular], vocab: [w.tormenta, w.techo, w.caerse] }
-      - { es: "El suelo estaba mojado y era muy peligroso.", en: "The floor was wet and very dangerous.", grammar: [g.imperfect-uses], vocab: [w.suelo, w.mojado, w.peligroso] }
+      - { es: "El suelo estaba mojado y era muy peligroso.", en: "The floor was wet and very dangerous.", altEs: ["El suelo estaba mojado; era muy peligroso."], grammar: [g.imperfect-uses], vocab: [w.suelo, w.mojado, w.peligroso] }
       - { es: "Un vecino salvó al perro.", en: "A neighbour saved the dog.", grammar: [g.a-personal], vocab: [w.salvar, w.vecino] }
-      - { es: "Había una mancha grande en la pared.", en: "There was a big stain on the wall.", grammar: [g.imperfect], vocab: [w.pared] }
-      - { es: "El policía me preguntó qué había pasado.", en: "The police officer asked me what had happened.", grammar: [g.reported-speech-past], vocab: [w.policia, w.preguntar] }
+      - { es: "Había una mancha grande en la pared.", en: "There was a big stain on the wall.", altEs: ["Había una mancha muy grande en la pared."], grammar: [g.imperfect], vocab: [w.pared] }
+      - { es: "El policía me preguntó qué había pasado.", en: "The police officer asked me what had happened.", altEs: ["El policía me preguntó qué pasó."], grammar: [g.reported-speech-past], vocab: [w.policia, w.preguntar] }
       - { es: "Cuando llegó la policía, el ladrón corría por la calle.", en: "When the police arrived, the thief was running down the street.", grammar: [g.preterite-vs-imperfect], vocab: [w.policia, w.correr], error: { wrong: "Cuando llegó la policía, el ladrón corrió por la calle.", explain: "An action in progress at that moment takes the imperfect: corría.", grammar: g.preterite-vs-imperfect } }
+    exchanges:
+      - q: { es: "¿Qué te robaron?", en: "What did they steal from you?" }
+        a: { es: "Un ladrón me robó la cartera en el metro.", en: "A thief stole my wallet on the metro." }
+        alt: ["La cartera.", "Me robaron la cartera."]
+        grammar: [g.preterite-regular]
+        vocab: [w.robar, w.cartera]
+      - q: { es: "¿Llamaste a la policía?", en: "Did you call the police?" }
+        a: { es: "Sí, pero el ladrón ya había escapado.", en: "Yes, but the thief had already escaped." }
+        alt: ["Sí, enseguida.", "No, no llamé."]
+        grammar: [g.pluperfect, g.preterite-regular]
+        vocab: [w.policia, w.escapar]
+      - q: { es: "¿Hubo heridos?", en: "Was anyone injured?" }
+        a: { es: "No, afortunadamente no hubo heridos.", en: "No, fortunately nobody was injured." }
+        alt: ["No, nadie.", "No, afortunadamente."]
+        grammar: [g.preterite-irregular]
+        vocab: [w.herido, w.nadie]
+      - q: { es: "¿Qué hacía el ladrón cuando llegó la policía?", en: "What was the thief doing when the police arrived?" }
+        a: { es: "Corría por la calle.", en: "He was running down the street." }
+        alt: ["Estaba corriendo por la calle.", "Corría."]
+        grammar: [g.preterite-vs-imperfect]
+        vocab: [w.ladron, w.correr]
+    texts:
+      - title: "Noticia del barrio"
+        es: ["Fuego en una cocina del barrio.", "Había mucho humo, pero los bomberos llegaron enseguida y apagaron el fuego.", "Un vecino salvó al perro de la familia."]
+        en: ["Fire in a kitchen in the neighbourhood.", "There was a lot of smoke, but the firefighters arrived right away and put out the fire.", "A neighbour saved the family's dog."]
+        grammar: [g.preterite-vs-imperfect]
+        vocab: [w.fuego, w.humo, w.bombero]
   - id: a2.u04.l4
     title: Total, que…
     teach: [g.narration-connectors]
     vocab: [w.desaparecer, w.aparecer, w.seguir.phr, w.menos-mal, w.que-pasa, w.resulta-que, w.total-que, w.enseguida, w.mojado, w.solo.adj]
     sentences:
       - { es: "¿Qué pasó al final? — Resulta que era una broma.", en: "What happened in the end? — It turns out it was a joke.", grammar: [g.narration-connectors], vocab: [w.que-pasa, w.resulta-que] }
-      - { es: "Total, que no fuimos al concierto.", en: "So, in the end we didn't go to the concert.", grammar: [g.narration-connectors], vocab: [w.total-que, w.concierto] }
-      - { es: "Menos mal que llevaba el paraguas.", en: "Thank goodness I had my umbrella.", grammar: [g.imperfect-uses], vocab: [w.menos-mal, w.llevar] }
+      - { es: "Total, que no fuimos al concierto.", en: "So, in the end we didn't go to the concert.", altEs: ["Así que al final no fuimos al concierto."], grammar: [g.narration-connectors], vocab: [w.total-que, w.concierto] }
+      - { es: "Menos mal que llevaba el paraguas.", en: "Thank goodness I had my umbrella.", altEs: ["Menos mal que tenía el paraguas."], grammar: [g.imperfect-uses], vocab: [w.menos-mal, w.llevar] }
       - { es: "Mi gato desapareció tres días y luego apareció en el jardín del vecino.", en: "My cat disappeared for three days and then appeared in the neighbour's garden.", grammar: [g.preterite-regular], vocab: [w.desaparecer, w.aparecer] }
-      - { es: "Estaba solo en casa y tenía miedo.", en: "I was alone at home and I was afraid.", grammar: [g.imperfect-uses], vocab: [w.solo.adj, w.miedo] }
-      - { es: "Llegué a casa completamente mojado.", en: "I got home completely soaked.", grammar: [g.preterite-spelling-changes], vocab: [w.mojado, w.llegar] }
+      - { es: "Estaba solo en casa y tenía miedo.", en: "I was alone at home and I was afraid.", altEs: ["Estaba sola en casa y tenía miedo."], grammar: [g.imperfect-uses], vocab: [w.solo.adj, w.miedo] }
+      - { es: "Llegué a casa completamente mojado.", en: "I got home completely soaked.", altEs: ["Llegué a casa completamente mojada."], grammar: [g.preterite-spelling-changes], vocab: [w.mojado, w.llegar] }
       - { es: "A pesar de todo, seguimos adelante.", en: "Despite everything, we carried on.", grammar: [g.connectors-contrast], vocab: [w.seguir.phr] }
-      - { es: "Enseguida me di cuenta del error.", en: "I immediately realised the mistake.", grammar: [g.preterite-irregular], vocab: [w.enseguida, w.darse-cuenta] }
+      - { es: "Enseguida me di cuenta del error.", en: "I immediately realised the mistake.", altEs: ["Me di cuenta del error enseguida."], grammar: [g.preterite-irregular], vocab: [w.enseguida, w.darse-cuenta] }
       - { es: "Primero perdí el tren, después empezó a llover y al final llegué dos horas tarde.", en: "First I missed the train, then it started to rain and in the end I arrived two hours late.", grammar: [g.narration-connectors], vocab: [w.perder, w.llover] }
-      - { es: "De repente alguien gritó mi nombre.", en: "Suddenly someone shouted my name.", grammar: [g.narration-connectors], vocab: [w.de-repente, w.gritar] }
+      - { es: "De repente alguien gritó mi nombre.", en: "Suddenly someone shouted my name.", altEs: ["De pronto alguien gritó mi nombre."], grammar: [g.narration-connectors], vocab: [w.de-repente, w.gritar] }
       - { es: "Era tarde, no había nadie y las calles estaban vacías.", en: "It was late, there was nobody about and the streets were empty.", grammar: [g.imperfect-uses], vocab: [w.nadie, w.calle] }
-      - { es: "Entonces vi una luz y corrí hacia ella.", en: "Then I saw a light and ran towards it.", grammar: [g.narration-connectors], vocab: [w.luz, w.correr] }
+      - { es: "Entonces vi una luz y corrí hacia ella.", en: "Then I saw a light and ran towards it.", altEs: ["Entonces vi una luz y fui corriendo hacia ella."], grammar: [g.narration-connectors], vocab: [w.luz, w.correr] }
       - { es: "Cuando abrí la puerta, mis amigos estaban allí: ¡era una fiesta sorpresa!", en: "When I opened the door, my friends were there: it was a surprise party!", grammar: [g.preterite-vs-imperfect], vocab: [w.sorpresa, w.abrir], transform: { instruction: "Change 'I' to 'she'", answer: "Cuando abrió la puerta, sus amigos estaban allí: ¡era una fiesta sorpresa!" } }
+    exchanges:
+      - q: { es: "¿Qué pasó al final?", en: "What happened in the end?" }
+        a: { es: "Resulta que era una fiesta sorpresa.", en: "It turns out it was a surprise party." }
+        alt: ["Era una fiesta sorpresa.", "Total, que era una fiesta sorpresa."]
+        grammar: [g.narration-connectors]
+        vocab: [w.resulta-que, w.sorpresa]
+      - q: { es: "¿Fuisteis al concierto?", en: "Did you go to the concert?" }
+        a: { es: "Total, que no fuimos; perdimos el tren.", en: "So, in the end we didn't go; we missed the train." }
+        alt: ["No, al final no fuimos.", "No, perdimos el tren."]
+        grammar: [g.narration-connectors]
+        vocab: [w.total-que, w.perder]
+      - q: { es: "¿Encontraste a tu gato?", en: "Did you find your cat?" }
+        a: { es: "Sí, menos mal; apareció en el jardín del vecino.", en: "Yes, thank goodness; it turned up in the neighbour's garden." }
+        alt: ["Sí, apareció en el jardín del vecino.", "Sí, menos mal."]
+        grammar: [g.preterite-regular, g.narration-connectors]
+        vocab: [w.aparecer, w.menos-mal]
+      - q: { es: "¿Llegaste muy mojado?", en: "Did you arrive very wet?" }
+        a: { es: "Sí, muy mojado; menos mal que llevaba otra camisa.", en: "Yes, very wet; thank goodness I had another shirt with me." }
+        alt: ["Sí, muy mojado.", "No, llevaba un abrigo."]
+        grammar: [g.imperfect-uses, g.narration-connectors]
+        vocab: [w.mojado, w.menos-mal]
+    texts:
+      - title: "Mensaje de Tom"
+        es: ["¿Qué pasa, Yuki?", "Resulta que perdí el autobús, después empezó a llover y total, que llegué dos horas tarde.", "Menos mal que el profesor no dijo nada."]
+        en: ["What's up, Yuki?", "It turns out I missed the bus, then it started raining and so, in the end I arrived two hours late.", "Thank goodness the teacher didn't say anything."]
+        grammar: [g.narration-connectors]
+        vocab: [w.que-pasa, w.resulta-que, w.total-que]
 dialogues:
   - id: a2.u04.d1
     title: ¿Qué te pasó?
