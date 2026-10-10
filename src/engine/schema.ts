@@ -155,6 +155,8 @@ export const Sentence = Pair.extend({
   error: z.object({ wrong: z.string(), explain: z.string(), grammar: z.string().optional() }).optional(),
   /** Literal / cultural note. */
   note: z.string().optional(),
+  /** Latin American (or other regional) way of saying it, shown as a note. */
+  variant: z.string().optional(),
 })
 export type Sentence = z.infer<typeof Sentence>
 

@@ -29,14 +29,16 @@ CEFR can-do statements per unit · frequency-driven vocabulary · explicit gramm
 
 ## Content status
 
-| Level | Units | Status |
-|---|---|---|
-| A1 | 12 | complete: 714 words, 48 lessons, 618 sentences, 12 dialogues, 6 readers, exam |
-| A2 | 12 | complete: 642 new words, 48 lessons, 667 sentences, 12 dialogues, 8 readers, exam |
-| B1 | 12 | complete: 972 new words, 48 lessons, 765 sentences, 12 dialogues, 12 readers, exam |
-| B2–C2 | 30 | syllabus, can-do statements and grammar notes authored; lessons to follow |
+| Level | Region of the journey | Units | Content |
+|---|---|---|---|
+| A1 | Buenos Aires | 12 | 715 words, 48 lessons, 618 sentences, 12 dialogues, 6 readers, level check |
+| A2 | Pampa y Litoral | 12 | 642 new words, 48 lessons, 667 sentences, 12 dialogues, 8 readers, level check |
+| B1 | El Norte | 12 | 972 new words, 48 lessons, 765 sentences, 12 dialogues, 12 readers, level check |
+| B2 | Cuyo | 12 | 1,060 new words, 48 lessons, 768 sentences, 12 dialogues, 12 readers, level check |
+| C1 | Patagonia | 10 | 857 new words, 40 lessons, 638 sentences, 10 dialogues, 10 readers, level check |
+| C2 | Fin del mundo | 8 | 681 new words, 32 lessons, 512 sentences, 8 dialogues, 8 readers, level check |
 
-Cumulative through B1: 2,328 lemmas, 144 lessons, 2,050 sentences, 143 grammar notes with full lessons (230 notes in total), 26 graded readers, 3 checkpoint exams. `npm run content:stats` prints the live numbers.
+The whole course is authored: 66 units, 264 lessons, 3,968 sentences, 1,217 question-and-reply exchanges, 454 mini-texts, 4,927 lemmas, 230 grammar notes, 56 graded readers (C1–C2 include public-domain literature: Cervantes, Quevedo, Bécquer, Darío, Machado, Quiroga) and 6 level checks. `npm run content:stats` prints the live numbers.
 
 ## Run it locally
 

@@ -139,13 +139,13 @@ test('works offline once the service worker has cached the app', async ({ page, 
   await context.setOffline(false)
 })
 
-test('placement test places a strong learner beyond B1 and opens every level', async ({ page }) => {
-  test.setTimeout(120_000)
+test('placement test places a strong learner at C2 and every level stays open', async ({ page }) => {
+  test.setTimeout(180_000)
   await page.goto('/')
   await page.getByRole('button', { name: /Take the placement test/ }).click()
   await expect(page.getByText(/Placement test · A1/)).toBeVisible()
   let guard = 0
-  while (guard++ < 30) {
+  while (guard++ < 80) {
     const done = await page.getByRole('heading', { name: /Your level/ }).isVisible()
     if (done) break
     await page.waitForFunction(() => Boolean((window as unknown as { placement?: unknown }).placement))
@@ -153,9 +153,9 @@ test('placement test places a strong learner beyond B1 and opens every level', a
     await page.getByRole('radio').nth(hook.answer).click()
     await page.waitForFunction((idx) => (window as unknown as { placement: { index: number } }).placement.index !== idx || document.querySelector('h1')?.textContent?.includes('Your level'), hook.index)
   }
-  await expect(page.getByRole('heading', { name: 'Your level: B2' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Your level: C2' })).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/placement.png' })
-  await page.getByRole('button', { name: 'Start at B2' }).click()
+  await page.getByRole('button', { name: 'Start at C2' }).click()
   await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
   // B1 lessons are open, and an A2 lesson deep in the level is open for practice.
   await expect(page.getByRole('link', { name: /Formas regulares/ })).toBeVisible()

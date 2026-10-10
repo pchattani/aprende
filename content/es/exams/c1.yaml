@@ -1,0 +1,78 @@
+level: c1
+title: Level check C1
+passScore: 0.8
+reading:
+  text: |
+    Si bien nadie discute que la prensa atraviesa una crisis sin precedentes, cabe cuestionar que la culpa sea únicamente de las redes sociales, lo cual, dicho sea de paso, reconocen hasta los propios periodistas cuando se les pregunta con franqueza. El problema, a mi juicio, es más antiguo: hace décadas que los diarios confunden la rapidez con la relevancia.
+
+    Terminada la lectura de cualquier portada de hoy, el lector atento encontrará tres o cuatro titulares construidos con el condicional de rumor —«el ministro habría aceptado un soborno»—, media docena de fuentes «cercanas a» alguien y, a pie de página, una rectificación en letra pequeña de la exclusiva de ayer. No es que los periodistas mientan, sino que trabajan a una velocidad que no permite contrastar nada. De ahí que el bulo, que antaño tardaba semanas en extenderse, hoy se publique antes de que nadie haya tenido tiempo de desmentirlo.
+
+    Con todo, sería injusto quedarse ahí. Tanto los grandes diarios como los pequeños medios locales han demostrado que, de haber recursos, el periodismo riguroso sigue siendo posible: basta recordar las investigaciones que destaparon casos de corrupción que ningún juez habría descubierto solo. Ya sea por convicción, ya sea por supervivencia, cada vez más redacciones vuelven a verificar antes de publicar.
+
+    ¿Qué puede hacer el lector? Más de lo que cree. Desconfiar de los titulares que gritan; preguntarse quién habla cuando se cita a «fuentes»; distinguir el editorial, que es opinión, de la noticia, que debería ser información; y, por descontado, pagar por lo que lee, porque lo que no se paga lo paga otro, y ese otro rara vez es neutral. Huelga decir que ninguna de estas medidas salvará a la prensa por sí sola. Sea como fuere, un lector que exige fuentes es, a la larga, el mejor editor que un periódico puede tener.
+  questions:
+    - { q: "According to the author, what is the real, older problem of the press?", options: ["Social networks", "Confusing speed with relevance", "Lack of readers"], answer: 1 }
+    - { q: "What does the author say about journalists' honesty?", options: ["They lie deliberately", "They do not lie, but work too fast to verify anything", "They never make mistakes"], answer: 1 }
+    - { q: "Why does the author mention the corruption investigations?", options: ["To show that rigorous journalism is still possible when there are resources", "To criticise the judges", "To prove that hoaxes are harmless"], answer: 0 }
+    - { q: "Which piece of advice is NOT given to readers?", options: ["Distrust shouting headlines", "Ask who is speaking behind 'sources'", "Stop reading newspapers"], answer: 2 }
+    - { q: "Why does the author say readers should pay for what they read?", options: ["Because journalists are poor", "Because what is not paid for by the reader is paid for by someone else who is rarely neutral", "Because free news is illegal"], answer: 1 }
+listening:
+  dictation:
+    - "No es que no me guste la propuesta, es que nadie la ha estructurado de forma coherente."
+    - "Una vez ratificado el tratado, entrará en vigor el primero de enero."
+    - "Según fuentes cercanas al ministro, la dimisión se habría decidido el viernes por la noche."
+    - "Me encantaría ir, pero es que ya he quedado; otro día sin falta."
+    - "Apenas hubo terminado de hablar, las campanas empezaron a sonar."
+    - "Actualmente trabajo en una librería, pero en realidad soy bibliotecario."
+  questions:
+    - { audio: "¿Otro informe para hoy? Genial, lo que me faltaba. Y supongo que lo quieren para las cinco, ¿no? Qué sorpresa.", options: ["The speaker is delighted to receive another report", "The speaker is being ironic: she is annoyed by yet another report", "The speaker has finished all her reports"], answer: 1 }
+    - { audio: "Oye, una cosa: ¿no tendrás cinco minutos para echarle un vistazo a mi presentación? Si no puedes, no pasa nada, de verdad.", options: ["A direct order to review a presentation", "A softened, indirect request for a quick look at a presentation", "A refusal to help with a presentation"], answer: 1 }
+    - { audio: "La portavoz negó cualquier irregularidad y matizó que la investigación sigue abierta; la oposición, por su parte, habló de un escándalo sin precedentes.", options: ["The spokeswoman admitted the irregularities", "The spokeswoman denied irregularities while the opposition spoke of a scandal", "The investigation has been closed"], answer: 1 }
+    - { audio: "Terminada la junta, el director anunció que, de no llegarse a un acuerdo antes del viernes, la empresa iría a juicio.", options: ["An agreement was reached at the meeting", "If there is no agreement by Friday, the company will go to court", "The director resigned after the meeting"], answer: 1 }
+grammar:
+  - { prompt: "La jefa dice que ___ (nosotros, revisar) el informe antes del viernes; es una orden.", options: ["revisamos", "revisemos", "revisar"], answer: 1, explain: "Decir que transmitting an order takes the subjunctive: dice que revisemos. Dice que revisamos would merely report a fact." }
+  - { prompt: "Busco un traductor que ___ (saber) japonés; todavía no he encontrado a nadie.", options: ["sabe", "sepa", "sabrá"], answer: 1, explain: "The antecedent is sought, not identified, so the relative clause takes the subjunctive: que sepa." }
+  - { prompt: "El hecho de que ___ (él, llegar) tarde no justifica el tono del correo.", options: ["llegó", "haya llegado", "ha llegado"], answer: 1, explain: "El hecho de que + subjunctive when the fact is presented as a theme rather than asserted: haya llegado." }
+  - { prompt: "«Adonde ___, haz lo que vieres»: el refrán conserva el futuro de subjuntivo.", options: ["fueras", "fueres", "vayas"], answer: 1, explain: "The future subjunctive (fueres, vieres) survives only in proverbs and legal texts." }
+  - { prompt: "El abajo firmante declara, ___ la presente, que los datos son ciertos.", options: ["por", "con", "a"], answer: 0, explain: "Legal formula: por la presente = by this document." }
+  - { prompt: "No me gustó la película; ___, me pareció larguísima.", options: ["es decir", "ni mucho menos", "o sea"], answer: 2, explain: "O sea reformulates and clarifies the previous statement in a colloquial register; ni mucho menos would need a negative to intensify." }
+  - { prompt: "El informe analiza la fusión; ___ documento se publicará el lunes.", options: ["dicho", "ello", "lo anterior"], answer: 0, explain: "Dicho + noun (dicho documento) refers back to something just mentioned, keeping the text cohesive." }
+  - { prompt: "Ha dicho en la reunión lo que nadie quería oír: no tiene pelos en la ___.", options: ["boca", "lengua", "cabeza"], answer: 1, explain: "Idiom: no tener pelos en la lengua = to speak one's mind bluntly." }
+  - { prompt: "Llegó tarde, pero llegó: más vale tarde que ___.", options: ["temprano", "nunca", "pronto"], answer: 1, explain: "Proverb: Más vale tarde que nunca." }
+  - { prompt: "___ raíz de la crisis, la empresa cerró tres oficinas.", options: ["A", "De", "En"], answer: 0, explain: "Fixed expression: a raíz de = as a result of." }
+  - { prompt: "En un texto académico se prefiere «se observa un ___ de la temperatura» a «la temperatura sube».", options: ["subida", "aumento", "subiendo"], answer: 1, explain: "Academic register favours nominalisation with the impersonal se: se observa un aumento." }
+  - { prompt: "No solo no vino a la reunión, ___ tampoco avisó.", options: ["sino", "sino que", "pero"], answer: 1, explain: "Before a full clause with its own verb, sino becomes sino que." }
+  - { prompt: "Salió de casa ___ la puerta con cuidado.", options: ["cerrando", "y cerró", "cerrada"], answer: 1, explain: "The gerund cannot express a later action; two successive events are joined with y + preterite." }
+  - { prompt: "___ la reunión, los ministros se fueron sin firmar nada.", options: ["Terminando", "Terminada", "Terminado"], answer: 1, explain: "Absolute construction: the participle agrees with the noun (la reunión → terminada)." }
+  - { prompt: "¡Ni que ___ (tú, ser) millonario, con tanto gasto!", options: ["eres", "fueras", "seas"], answer: 1, explain: "The ironic formula ni que takes the imperfect subjunctive: ni que fueras." }
+  - { prompt: "Muchas gracias por acompañarme. — ___, para eso están los amigos.", options: ["Faltaría más", "Qué va", "Ni hablar"], answer: 0, explain: "Faltaría más is the courteous reply to thanks (not at all, of course)." }
+  - { prompt: "Apenas ___ terminado de hablar, nadie se atrevió a responder.", options: ["hubo", "había", "hubiera"], answer: 0, explain: "The pretérito anterior (hubo terminado) marks an action immediately before another in literary narrative." }
+  - { prompt: "«Volverán las oscuras golondrinas en tu balcón sus nidos a colgar»: el orden de las palabras es un ___.", options: ["símil", "hipérbaton", "hipérbole"], answer: 1, explain: "Hipérbaton is the poetic inversion of normal word order (Bécquer)." }
+  - { prompt: "El ministro ___ aceptado el soborno, según fuentes judiciales; nada está confirmado.", options: ["ha", "habría", "hubo"], answer: 1, explain: "The conditional of rumour (habría aceptado) reports unconfirmed information attributed to sources." }
+  - { prompt: "No pretendo ser perfecto, pero tampoco ___ lo contrario.", options: ["pretendo", "finjo", "realizo"], answer: 1, explain: "False friends: pretender = to aim to; to pretend = fingir; realizar = to carry out." }
+writing:
+  prompt: "The cultural supplement of a Spanish newspaper has asked readers for opinion columns on the question «¿Sigue teniendo sentido leer a los clásicos en la era de las redes sociales?». Write a column of at least 220 words in a formal but personal register: open with a nuanced thesis (si bien…, cabe cuestionar que…), build at least two long sentences with correlatives or absolute constructions (no solo… sino que…, terminada la lectura…), quote or allude to one public-domain author (Cervantes, Bécquer, Machado, Darío, Quiroga…) with correct Spanish quotation conventions, use at least three advanced discourse markers (dicho esto, de ahí que, con todo, en última instancia…), include one idiom or proverb, and close with a clear recommendation to readers. Avoid false friends (actualmente, realizar, sensible) used in their English sense."
+  minWords: 220
+  modelAnswer: |
+    ¿Clásicos o pantallas? Falsa elección
+
+    Si bien es cierto que los jóvenes leen hoy más que nunca —mensajes, titulares, comentarios—, cabe cuestionar que lean mejor, lo cual, dicho sea de paso, no es culpa suya sino de quienes les hemos enseñado a confundir la rapidez con la lectura. De ahí que la pregunta del suplemento me parezca mal planteada: no se trata de elegir entre Cervantes y las redes, sino de saber qué nos da cada uno.
+
+    Terminada la lectura de un hilo de cuarenta mensajes, uno sabe lo que opina medio país; terminada la lectura del Quijote, uno sabe algo de sí mismo. No solo porque los clásicos hayan sobrevivido a cuatro siglos de modas, sino porque nos obligan a leer despacio, a volver atrás, a preguntar qué quiere decir «mas» sin tilde o por qué Bécquer coloca el verbo al final: «Volverán las oscuras golondrinas en tu balcón sus nidos a colgar». Esa lentitud, que en una red social sería un defecto, es precisamente el valor de la literatura.
+
+    Con todo, sería ingenuo pedir a nadie que apague el móvil y se encierre con Galdós. Las redes, bien usadas, pueden ser el camino hacia los clásicos: un verso de Machado compartido por una amiga ha llevado a más gente a Campos de Castilla que muchas clases de instituto. Ya sea por curiosidad, ya sea por casualidad, lo que importa es que el camino se haga al andar.
+
+    En última instancia, mi recomendación es sencilla: lean las redes como se lee un periódico, con desconfianza y con prisa; y lean a los clásicos como se escucha a un amigo, con tiempo y sin interrumpir. Quien tenga paciencia para lo segundo entenderá mejor lo primero. Y, como dice el refrán, más vale tarde que nunca: nunca es tarde para abrir un libro que lleva cien años esperándonos.
+  checklist:
+    - "I opened with a nuanced thesis using concessive and hedging structures (si bien…, cabe cuestionar que…) and the mood that each requires."
+    - "I built at least two long, controlled sentences with correlatives (no solo… sino que…, ya sea… ya sea…) or absolute constructions (terminada la lectura…), keeping agreement and reference clear."
+    - "I quoted or alluded to a public-domain author with correct Spanish quotation conventions (« », punctuation outside the quotes, title with an initial capital only)."
+    - "I used at least three advanced discourse markers (dicho sea de paso, de ahí que, con todo, en última instancia) and one idiom or proverb appropriate to the register."
+    - "I kept a formal but personal register throughout, with nominalisation and impersonal structures where appropriate, and closed with a clear recommendation."
+    - "I avoided false friends (actualmente, realizar, sensible, pretender) in their English senses and checked spelling, accents on capitals and the decimal comma."
+speaking:
+  - "No es que la propuesta sea mala, sino que nadie la ha estructurado de forma coherente."
+  - "Una vez ratificado el tratado, entrará en vigor el primero de enero, pese a las críticas de la oposición."
+  - "¿No tendrías cinco minutos para echarle un vistazo? Si te viene mal, no pasa nada."
+  - "Apenas hubo terminado de hablar el cura, las campanas empezaron a sonar."
+  - "Según fuentes cercanas al ministro, la dimisión se habría decidido el viernes por la noche."

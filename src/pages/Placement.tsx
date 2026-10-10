@@ -109,7 +109,9 @@ export default function Placement() {
         <h1 className="mt-4 text-3xl font-extrabold">Your level: {meta?.title ?? result.toUpperCase()}</h1>
         <p className="mt-1 text-muted">{meta?.name}</p>
         <p className="mt-4 text-left">
-          {beyond
+          {passed.length === STAGE_LEVELS.length && passed.every(Boolean)
+            ? `You passed every stage, all the way to ${STAGE_LEVELS[STAGE_LEVELS.length - 1]!.toUpperCase()}. Leo, Bonchita and Luna will meet you at the end of the world: Ushuaia awaits. Earlier regions stay open whenever you want to revisit them.`
+            : beyond
             ? `You passed every placement stage we have (${STAGE_LEVELS.map((l) => l.toUpperCase()).join(', ')}). Lessons for ${result.toUpperCase()} are still being written, so everything up to B1 is open: use the Reader, the verb trainer and the B1 review lessons while new levels arrive.`
             : highestPassed === 0
               ? 'Starting from the beginning is the right call: A1 builds the foundations everything else rests on.'

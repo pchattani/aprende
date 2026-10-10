@@ -1,0 +1,78 @@
+level: c2
+title: Level check C2
+passScore: 0.8
+reading:
+  text: |
+    Hay quien cree que dominar una lengua es hablarla sin acento. Los que la enseñamos sabemos que es otra cosa: es poder cambiar de registro sin que se note el esfuerzo. El mismo hablante que por la mañana redacta un informe en el que «no se observaron diferencias significativas» tiene que poder, por la tarde, decirle a un amigo que la reunión «fue un rollo» y, por la noche, leer a Quevedo sin que un «díjole» lo detenga. Ninguna de esas tres destrezas vale sin las otras dos.
+
+    El español, además, no es una lengua, sino muchas. Un madrileño que «coge» el autobús provoca risas en Buenos Aires; un mexicano que promete algo «ahorita» desconcierta a un sevillano; un chileno que termina cada frase con «po» parece, a oídos ajenos, estar siempre de acuerdo. Nada de esto es incorrecto. Es, simplemente, variación, y el hablante maduro la reconoce, la calibra y, cuando hace falta, la evita.
+
+    También cambia la lengua en el tiempo. «Vuestra merced» se convirtió en «usted»; el futuro de subjuntivo, que Cervantes usaba a diario, sobrevive solo en las leyes y en algún refrán. Leer el Siglo de Oro no exige un diccionario distinto, sino paciencia con los pronombres pegados al verbo y con la sintaxis invertida de los poetas. Quien supera esa barrera descubre que el castellano de 1605 se lee con sorprendente facilidad.
+
+    Queda, por último, el humor: el calambur, la dilogía, el chiste malo que solo funciona porque «nada» es a la vez verbo y pronombre. Entender un juego de palabras en una lengua extranjera es la prueba más fiable de que esa lengua ha dejado de ser extranjera. Por eso, cuando un alumno se ríe en el remate y no antes, sé que el curso ha terminado y que ya no me necesita.
+  questions:
+    - { q: "According to the author, what does mastering a language really mean?", options: ["Speaking without an accent", "Being able to switch register without visible effort", "Knowing a lot of vocabulary"], answer: 1 }
+    - { q: "Why does the author mention the Madrid speaker who 'coge' the bus?", options: ["To show a grammatical mistake", "To illustrate regional variation that is not incorrect", "To criticise Argentine Spanish"], answer: 1 }
+    - { q: "What does the text say about the future subjunctive?", options: ["It is used daily in modern Spanish", "It survives only in laws and some proverbs", "Cervantes never used it"], answer: 1 }
+    - { q: "What is needed to read Golden Age literature, according to the author?", options: ["A different dictionary", "Patience with enclitic pronouns and inverted syntax", "A translation into modern Spanish"], answer: 1 }
+    - { q: "What is the most reliable sign that a language has stopped being foreign?", options: ["Understanding wordplay and laughing at the punchline", "Passing an official exam", "Writing a scientific report"], answer: 0 }
+listening:
+  dictation:
+    - "No se observaron diferencias estadísticamente significativas entre ambos grupos."
+    - "Se le requiere para que, en el plazo de diez días hábiles, subsane la documentación aportada."
+    - "Pues nada, o sea, al final no fuimos, ¿sabes? Es que llovía a mares."
+    - "Oro parece, plata no es: el calambur esconde la palabra plátano."
+    - "Solicitó el puesto en línea, no «aplicó» al puesto; aplicar es un calco."
+    - "Díjole que no temiese, mas el caballero no quiso escucharle."
+  questions:
+    - { audio: "Che, boludo, qué quilombo este laburo: nadie sabe quién manda y la guita no llega nunca.", options: ["A Spaniard complaining about the weather", "An Argentine complaining that his job is chaotic and the money never arrives", "A Mexican praising his boss"], answer: 1 }
+    - { audio: "Introduzca su contraseña, pulse «Iniciar sesión» y, antes de actualizar, realice una copia de seguridad de sus archivos.", options: ["Instructions to log in and back up files before updating", "A warning that the server is down", "An advert for a new keyboard"], answer: 0 }
+    - { audio: "Mi abuela es muy friolera: en octubre ya duerme con dos mantas, y cuando vuelve del pueblo tiene morriña durante semanas.", options: ["The grandmother is ill", "The grandmother feels the cold a lot and gets homesick after visiting her village", "The grandmother lives in Galicia"], answer: 1 }
+    - { audio: "¡No me digas! ¿En serio te han dado el curro? Qué fuerte, tío. Venga, esto hay que celebrarlo, que yo invito.", options: ["The speaker is sad about a job loss", "The speaker reacts with surprise and joy to a friend getting a job and offers to celebrate", "The speaker is asking for a loan"], answer: 1 }
+grammar:
+  - { prompt: "Un hablante culto evita el dequeísmo: «Pienso ___ tienes razón».", options: ["de que", "que", "en que"], answer: 1, explain: "pensar que + clause; pienso de que is stigmatised dequeísmo (g.sociolects)." }
+  - { prompt: "En México, «La tienda abre hasta las diez» significa que ___.", options: ["cierra a las diez", "no abre antes de las diez", "está abierta todo el día"], answer: 1, explain: "Mexican hasta with a negative sense: not until ten (g.dialectal-grammar)." }
+  - { prompt: "En Buenos Aires: «___ llegué, che; dame cinco minutos».", options: ["Recién", "Recientemente", "Ya hace"], answer: 0, explain: "Rioplatense recién + preterite = just now; in Spain recién only precedes participles (g.dialectal-grammar)." }
+  - { prompt: "La forma «usted» procede de ___.", options: ["vosotros", "vuestra merced", "vos otros"], answer: 1, explain: "Vuestra merced was contracted to usted during the Golden Age (g.historical-variation)." }
+  - { prompt: "Almohada, aceite y ojalá son palabras de origen ___.", options: ["germánico", "árabe", "amerindio"], answer: 1, explain: "Arabic left hundreds of words, many beginning with al- (g.historical-variation)." }
+  - { prompt: "«___ que no temiese» es la forma clásica de «le dijo que no temiese».", options: ["Díjole", "Ledijo", "Dijo le"], answer: 0, explain: "Golden Age Spanish attaches the pronoun to a finite verb: díjole, parecióle (g.golden-age-language)." }
+  - { prompt: "Quiso huir, ___ no pudo.", options: ["mas", "más", "más no"], answer: 0, explain: "Archaic mas (no accent) = pero; más with accent is 'more' (g.archaic-forms)." }
+  - { prompt: "«Del salón en el ángulo oscuro» (Bécquer) es un ejemplo de ___.", options: ["hipérbaton", "aliteración", "sinalefa"], answer: 0, explain: "Inverted word order (en el ángulo oscuro del salón) is hyperbaton (g.poetic-syntax)." }
+  - { prompt: "En la novela realista de Galdós, el narrador suele ___.", options: ["usar frases muy cortas y pesimistas", "reproducir el habla popular de Madrid con ironía", "evitar los diálogos"], answer: 1, explain: "Galdós mixes panoramic Madrid, popular speech and ironic narration (g.realism-language)." }
+  - { prompt: "«Un silencio ensordecedor» es un ___.", options: ["oxímoron", "quiasmo", "eufemismo"], answer: 0, explain: "Two contradictory terms joined: oxymoron (g.rhetorical-figures)." }
+  - { prompt: "«No es un recorte, es una optimización» es un ejemplo de ___ en el lenguaje político.", options: ["eufemismo", "tricolon", "anáfora"], answer: 0, explain: "A harsh reality renamed with a softer word: euphemism (g.persuasion-structures)." }
+  - { prompt: "«Eventually they agreed» se traduce por «___ se pusieron de acuerdo».", options: ["Eventualmente", "Finalmente", "Actualmente"], answer: 1, explain: "eventualmente means 'possibly'; 'eventually' is finalmente (g.translation-nuance)." }
+  - { prompt: "Mañana ___ los zapatos nuevos.", options: ["estreno", "uso por primera vez", "inauguro"], answer: 0, explain: "estrenar = to use or wear for the first time, a one-word untranslatable (g.untranslatables)." }
+  - { prompt: "Se ___ las manos antes de operar.", options: ["lavó", "lavó sus", "lavaron sus"], answer: 0, explain: "Body parts take the article with a reflexive verb; 'sus manos' is a calque (g.calques)." }
+  - { prompt: "Los ___ muestran una leve anemia.", options: ["análisis", "analisis", "analises"], answer: 0, explain: "Nouns ending in -is are invariable: el análisis, los análisis (g.scientific-register)." }
+  - { prompt: "___ su contraseña y pulse «Iniciar sesión».", options: ["Introduzca", "Introduce", "Introducir usted"], answer: 0, explain: "Manuals use the formal imperative (usted): introduzca, pulse, seleccione (g.technical-register)." }
+  - { prompt: "Se le requiere para que ___ la documentación en diez días hábiles.", options: ["subsana", "subsane", "subsanará"], answer: 1, explain: "para que takes the subjunctive: subsane (g.bureaucratic-language)." }
+  - { prompt: "«Oro parece, plata no es» esconde la palabra plátano: es un ___.", options: ["palíndromo", "calambur", "trabalenguas"], answer: 1, explain: "Regrouping sounds to produce another word is a calambur (g.wordplay)." }
+  - { prompt: "La forma correcta adaptada al español es ___.", options: ["podcast", "pódcast", "pod-cast"], answer: 1, explain: "Adapted loans follow Spanish stress rules and take the accent: pódcast, máster, espóiler (g.neologisms)." }
+  - { prompt: "Como marcador para empezar a hablar, un nativo dice: «___, pues nada, me voy».", options: ["Bien", "Bueno", "Buen"], answer: 1, explain: "Bueno opens or closes a turn; bien evaluates (g.native-fluency-markers)." }
+writing:
+  prompt: "A Spanish cultural magazine has asked you for an opinion piece of at least 250 words with the title «¿Existe un español correcto?». Argue your position with precision and nuance: contrast at least two regional varieties (Spain and Latin America) and two registers (for example a scientific or bureaucratic text and a conversation between friends), include one reference to the history of the language or to a classic author, use at least two rhetorical figures (rhetorical question, antithesis, tricolon, hyperbole…) and at least three idioms or colloquial expressions used deliberately. Close with a persuasive conclusion addressed to the reader."
+  minWords: 250
+  modelAnswer: |
+    ¿Existe un español correcto? La pregunta parece inocente, pero esconde una trampa: da por supuesto que hay una sola forma de hablar bien y que todas las demás son errores con acento. Quien haya pasado una sobremesa en Madrid, una tarde de mate en Buenos Aires y una consulta en el ambulatorio de Bogotá sabe que la realidad es más interesante y bastante más amable.
+
+    Un madrileño coge el autobús; un porteño lo toma, y se ríe si oye lo primero; un mexicano llega «ahorita», que puede ser dentro de cinco minutos o nunca. Ninguno se equivoca. Lo que cambia no es la corrección, sino la geografía. El español es una lengua con veinte capitales y ninguna dueña, y eso, lejos de ser un problema, es su mayor riqueza: ni Cervantes, que escribía «díjole» y «agora», hablaba como nosotros, ni nosotros hablaremos como nuestros nietos.
+
+    Lo mismo ocurre con los registros. El cardiólogo que escribe «no se observaron diferencias significativas» no habla mejor que la enfermera que dice «tranquilo, no es nada»: habla para otro lector. La carta de Hacienda que exige «subsanar la documentación aportada en el plazo de diez días hábiles» no es más correcta que la frase «tráiganos la copia antes del viernes»; es, simplemente, más farragosa. Y el amigo que resume la reunión con un «fue un rollo, tío» no está maltratando la lengua: está usando el registro exacto que la situación pide.
+
+    ¿Significa eso que todo vale? Ni de coña. Hay errores, claro: el dequeísmo, el «lavó sus manos» calcado del inglés, el «eventualmente» que no significa finalmente. Pero el error no es hablar distinto; el error es hablar igual en todas partes, con todos y para todo. Quien solo domina un registro no domina la lengua, sino una habitación de la casa.
+
+    Por eso mi respuesta es que no existe un español correcto, sino hablantes competentes: los que saben cuándo callar el «pues», cuándo tutear y cuándo tratar de usted, cuándo citar a Quevedo y cuándo contar un chiste malo. Lector, la próxima vez que alguien le corrija el acento, pregúntele en cuántos registros sabe meter la pata. La lengua no es de quien la vigila; es de quien la usa con cabeza, con oído y, sobre todo, con los demás.
+  checklist:
+    - "I contrasted at least two regional varieties with concrete examples (coger / tomar, ahorita, po, che) and treated them as variation, not error."
+    - "I contrasted at least two registers (scientific or bureaucratic vs colloquial) and showed that each is correct for its reader."
+    - "I included a reference to the history of the language or a classic author (vuestra merced → usted, Cervantes, Quevedo, díjole, agora)."
+    - "I used at least two rhetorical figures deliberately (rhetorical question, antithesis, tricolon, hyperbole, anaphora)."
+    - "I used at least three idioms or colloquial expressions on purpose and in the right register (ni de coña, meter la pata, ser un rollo, con cabeza)."
+    - "I avoided calques and false friends (aplicar, soportar, eventualmente, sus manos), used ¿ ¡ and lower-case months, and closed with a persuasive conclusion addressed directly to the reader."
+speaking:
+  - "No se observaron diferencias estadísticamente significativas entre ambos grupos, a la luz de los datos disponibles."
+  - "Pues nada, tío, al final no fuimos al concierto; es que llovía a mares y la peña estaba cansada."
+  - "Díjole que no temiese, mas el caballero, harto cansado, no quiso escucharle."
+  - "Se le requiere para que, en el plazo de diez días hábiles, subsane la documentación aportada."
+  - "Tres tristes tigres tragaban trigo en un trigal; ¿qué le dice un jaguar a otro? Jaguar you."

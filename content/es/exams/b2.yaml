@@ -1,0 +1,78 @@
+level: b2
+title: Level check B2
+passScore: 0.8
+reading:
+  text: |
+    Cuando Elena aceptó el puesto de directora en la fábrica de su pueblo, muchos pensaron que se había equivocado. Llevaba quince años trabajando en Madrid, en una gran empresa, y acababa de ser ascendida. «Si me hubieran ofrecido ese puesto a los treinta, lo habría rechazado sin pensarlo», reconoce hoy. «Pero a los cuarenta y cinco una se cansa de que la vida se le vaya en el metro».
+
+    La fábrica, fundada en 1952, fue durante décadas el corazón del pueblo: en ella trabajaban más de trescientas personas y de ella vivían las tiendas, el bar y hasta la escuela. Sin embargo, en los últimos años había ido perdiendo clientes y, por mucho que los sindicatos negociaran, cada invierno se anunciaban nuevos despidos. Cuando Elena llegó, quedaban ochenta trabajadores y se daba por hecho que cerraría en dos años.
+
+    Lo primero que hizo fue escuchar. Durante un mes no tomó ninguna decisión; se limitó a hablar con todos los empleados, uno por uno. «Resulta que la gente sabía perfectamente qué fallaba; lo que pasa es que nadie les había preguntado», explica. Después puso en marcha tres cambios: se redujo la jornada a cuatro días, se invirtió en maquinaria nueva y se empezó a vender directamente por internet a clientes de toda Europa.
+
+    Es cierto que el primer año fue durísimo y que ella misma estuvo a punto de rendirse. No obstante, hoy la fábrica tiene cien trabajadores y, a juicio de los expertos, es una de las más modernas de la región. Elena, sin embargo, no quiere que la traten como a una heroína. «No fui yo quien salvó la fábrica, sino la gente que llevaba treinta años en ella. Yo me limité a hacerles caso», insiste. Y añade, con una sonrisa: «Lo que sí es verdad es que ahora llego a casa andando».
+  questions:
+    - { q: "Why did many people think Elena had made a mistake?", options: ["She had no experience", "She left a good job in Madrid for a factory in a village", "She had just been fired"], answer: 1 }
+    - { q: "What was the situation of the factory when she arrived?", options: ["It had just opened", "It had eighty workers and was expected to close within two years", "It was the most modern in the region"], answer: 1 }
+    - { q: "What did Elena do during her first month?", options: ["She dismissed half the staff", "She bought new machinery", "She talked to every employee without making decisions"], answer: 2 }
+    - { q: "Which of these was NOT one of her changes?", options: ["A four-day working week", "Selling online across Europe", "Moving the factory to Madrid"], answer: 2 }
+    - { q: "Who, according to Elena, saved the factory?", options: ["She herself", "The experts", "The workers who had been there for thirty years"], answer: 2 }
+listening:
+  dictation:
+    - "Si hubiera sabido que venías, habría preparado algo de cenar."
+    - "Por mucho que insistas, no pienso cambiar de opinión."
+    - "La ley fue aprobada por el parlamento y se publicó al día siguiente."
+    - "Me dijo que no creía que lo hubieran hecho a propósito."
+    - "Lleva tres años trabajando en la misma empresa y sigue sin ascender."
+    - "Lo que más me molesta no es que llegue tarde, sino que no avise."
+  questions:
+    - { audio: "Oye, ¿al final qué pasó con lo de tu hermano? — Pues resulta que no era nada grave; se habrá quedado sin batería, porque al día siguiente llamó como si nada.", options: ["The brother had a serious accident", "It turned out to be nothing serious; his phone probably ran out of battery", "The brother never called back"], answer: 1 }
+    - { audio: "Estimados pasajeros: debido a una avería, el tren con destino a Sevilla saldrá con un retraso aproximado de cuarenta minutos. Les rogamos que disculpen las molestias ocasionadas.", options: ["The train to Seville has been cancelled", "The train will leave about forty minutes late because of a breakdown", "Passengers must change platform"], answer: 1 }
+    - { audio: "Yo en tu lugar no habría aceptado ese trabajo; deberías haber preguntado por el horario antes de firmar.", options: ["The speaker thinks the listener should have asked about the hours before signing", "The speaker is happy the listener accepted the job", "The speaker wants the job for himself"], answer: 0 }
+    - { audio: "Che, ¿vos tenés tiempo mañana? Vení a casa a las ocho, que hacemos un asado y vienen todos los del laburo.", options: ["A speaker from Spain invites a friend to a formal dinner", "An Argentinian speaker invites a friend to a barbecue with work colleagues", "The speaker cancels a dinner"], answer: 1 }
+grammar:
+  - { prompt: "Si ___ (yo, tener) más tiempo, aprendería a tocar el piano.", options: ["tendría", "tuviera", "tengo"], answer: 1, explain: "Unreal present condition: si + imperfect subjunctive (tuviera), conditional (aprendería)." }
+  - { prompt: "Habla de la empresa como si ___ (ser) el dueño.", options: ["es", "fuera", "sería"], answer: 1, explain: "como si always takes the imperfect (or pluperfect) subjunctive: como si fuera." }
+  - { prompt: "Me alegro de que ___ (vosotros, llegar) bien ayer.", options: ["hayáis llegado", "habéis llegado", "llegaríais"], answer: 0, explain: "Emotion about a completed recent action: perfect subjunctive hayáis llegado." }
+  - { prompt: "Si me ___ (tú, avisar), habría ido a buscarte al aeropuerto.", options: ["hubieras avisado", "habrías avisado", "avisaras"], answer: 0, explain: "Past unreal condition: si + pluperfect subjunctive (hubieras avisado), conditional perfect (habría ido)." }
+  - { prompt: "Ojalá ___ (yo, estudiar) más cuando era joven.", options: ["estudie", "hubiera estudiado", "estudiaré"], answer: 1, explain: "A regret about the past: ojalá + pluperfect subjunctive." }
+  - { prompt: "Tenías fiebre; ___ haber ido al médico.", options: ["deberías", "debes", "deberás"], answer: 0, explain: "A reproach about the past: deberías haber + participle." }
+  - { prompt: "Aunque ___ (llover) mañana, iremos a la montaña.", options: ["llueve", "llueva", "lloverá"], answer: 1, explain: "aunque + subjunctive for a hypothetical future (even if it rains): llueva." }
+  - { prompt: "Por mucho que ___ (tú, trabajar), no terminarás hoy.", options: ["trabajas", "trabajes", "trabajarás"], answer: 1, explain: "Concessive intensifier por mucho que takes the subjunctive: trabajes." }
+  - { prompt: "No me iré hasta que ___ (ellos, devolver) el dinero.", options: ["devuelven", "devuelvan", "devolverán"], answer: 1, explain: "hasta que referring to the future takes the subjunctive: devuelvan." }
+  - { prompt: "Te lo repito ___ lo entiendas de una vez.", options: ["para que", "porque", "así que"], answer: 0, explain: "Purpose: para que + subjunctive (entiendas)." }
+  - { prompt: "Me pidió que ___ (yo, venir) al día siguiente.", options: ["venga", "viniera", "vendría"], answer: 1, explain: "A reported request in the past: present subjunctive venga becomes imperfect subjunctive viniera." }
+  - { prompt: "La catedral ___ en el siglo XIII.", options: ["fue construida", "fue construido", "estaba construyendo"], answer: 0, explain: "ser + participle agreeing with the subject (la catedral): fue construida." }
+  - { prompt: "___ a dos sospechosos en el aeropuerto.", options: ["Se detuvo", "Se detuvieron", "Detuvo se"], answer: 0, explain: "Impersonal se with a personal a takes a singular verb: se detuvo a dos sospechosos." }
+  - { prompt: "El hecho de que no ___ (él, llamar) me preocupa.", options: ["haya llamado", "ha llamado", "llamará"], answer: 0, explain: "el hecho de que normally takes the subjunctive: no haya llamado." }
+  - { prompt: "Los precios ___ subiendo poco a poco desde enero.", options: ["van", "andan", "vienen a"], answer: 0, explain: "Gradual process looking forward: ir + gerund (van subiendo)." }
+  - { prompt: "Llevo ___ veinte páginas del informe.", options: ["escritas", "escribiendo", "escrito"], answer: 0, explain: "llevar + participle agreeing with the object (veinte páginas): llevo escritas." }
+  - { prompt: "Tenemos que ___ una decisión antes del viernes.", options: ["hacer", "tomar", "dar"], answer: 1, explain: "Collocation: tomar una decisión (not hacer)." }
+  - { prompt: "Le ___ que disculpe las molestias ocasionadas.", options: ["ruego", "pido tío", "digo que"], answer: 0, explain: "Formal register: le ruego que + subjunctive." }
+  - { prompt: "___ me encanta el cine, pero a mi hermano no.", options: ["Yo", "A mí", "Mí"], answer: 1, explain: "Emphatic / contrastive indirect object: a mí me encanta." }
+  - { prompt: "¿Vos ___ tiempo mañana? (Argentina)", options: ["tienes", "tenés", "tenéis"], answer: 1, explain: "Voseo: vos tenés, without the stem change of tú tienes." }
+writing:
+  prompt: "A Spanish newspaper has invited readers to send opinion articles on the question: ¿Deberían las ciudades limitar el turismo? Write an article of at least 180 words. Give it a title; introduce the topic and state your thesis (en este artículo defenderé que…); develop two or three arguments with connectors (en primer lugar, cabe destacar, es más, prueba de ello); concede a point and rebut it (es cierto que…, sin embargo…; no es que…, sino que…); use at least one passive or impersonal structure (se ha convertido, fue aprobada, hay que) and one unreal condition (si las ciudades…, …); finish with a conclusion and a recommendation (en definitiva, por todo ello, sería conveniente que…)."
+  minWords: 180
+  modelAnswer: |
+    Turismo sí, pero con límites
+
+    En la actualidad, España recibe más de ochenta millones de turistas al año y el debate sobre sus efectos se ha convertido en una cuestión política de primer orden. En este artículo defenderé que las ciudades deberían limitar el turismo, no para cerrar sus puertas, sino para seguir siendo ciudades.
+
+    En primer lugar, cabe destacar el problema de la vivienda. Cuando un piso se alquila a turistas por semanas, deja de alquilarse a familias por años; prueba de ello es que en los barrios más visitados los alquileres han subido más de un cuarenta por ciento en una década. Es más, los jóvenes se ven obligados a marcharse del centro, que acaba convertido en un decorado.
+
+    Es cierto que el turismo crea empleo y que muchos pueblos habrían desaparecido sin él. Sin embargo, se trata a menudo de trabajo temporal y mal pagado. No es que el turista sea el problema, sino que nadie ha puesto límites. Si las ciudades hubieran regulado los pisos turísticos hace diez años, hoy no tendrían que elegir entre vecinos y visitantes.
+
+    En definitiva, hay que decidir cuántas puertas abrimos y a qué precio. Por todo ello, sería conveniente que los ayuntamientos limitaran los alquileres turísticos, cobraran una tasa por noche y repartieran el turismo por todo el territorio. Solo así ganaremos todos: los visitantes, los vecinos y, a largo plazo, las propias ciudades.
+  checklist:
+    - "I gave the article a title and stated my thesis in the introduction (en este artículo defenderé que…)."
+    - "I organised the arguments with connectors (en primer lugar, cabe destacar, es más, prueba de ello) and one idea per paragraph."
+    - "I conceded a point and rebutted it (es cierto que… sin embargo…; no es que… sino que…) with correct mood: subjunctive after no es que, indicative after sino que."
+    - "I used at least one passive or impersonal structure (se ha convertido, se alquila, hay que, fue aprobada)."
+    - "I used an unreal condition correctly (si las ciudades hubieran regulado…, hoy no tendrían…)."
+    - "I closed with a conclusion and a recommendation using the imperfect subjunctive (en definitiva, por todo ello, sería conveniente que los ayuntamientos limitaran…)."
+speaking:
+  - "Si hubiera sabido que el examen era hoy, habría estudiado mucho más."
+  - "Por mucho que lo intentes, no conseguirás convencerla sin buenos argumentos."
+  - "La ley fue aprobada por el parlamento y se publicó al día siguiente."
+  - "Lleva tres años trabajando en la misma empresa y sigue sin que la asciendan."
+  - "A mí me da la impresión de que lo que pasa es que nadie quiere tomar una decisión."
