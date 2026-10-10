@@ -7,88 +7,235 @@ lessons:
     vocab: [w.aun, w.hasta-entonces, w.acontecimiento, w.hecho, w.tener-lugar, w.relato, w.narrar, w.narrador, w.protagonista, w.personaje, w.capitulo, w.escena, w.comienzo, w.desenlace, w.trama, w.sospecha, w.leyenda, w.fantasma, w.policiaco]
     tip: "había + participle places one past action before another: Cuando llegué, la película ya había empezado."
     sentences:
-      - { es: "Cuando llegamos al cine, la película ya había empezado.", en: "When we got to the cinema, the film had already started.", grammar: [g.pluperfect], vocab: [w.cine, w.pelicula, w.empezar] }
-      - { es: "Hasta entonces nunca había leído una novela policíaca.", en: "Until then I had never read a detective novel.", grammar: [g.pluperfect], vocab: [w.hasta-entonces, w.leer, w.novela, w.policiaco] }
+      - { es: "Cuando llegamos al cine, la película ya había empezado.", en: "When we got to the cinema, the film had already started.", altEs: ["Cuando llegamos al cine, ya había empezado la película.", "Cuando llegamos al cine, la película ya había comenzado."], grammar: [g.pluperfect], vocab: [w.cine, w.pelicula, w.empezar] }
+      - { es: "Hasta entonces nunca había leído una novela policíaca.", en: "Until then I had never read a detective novel.", altEs: ["Hasta entonces no había leído nunca una novela policíaca.", "Hasta ese momento nunca había leído una novela policíaca."], grammar: [g.pluperfect], vocab: [w.hasta-entonces, w.leer, w.novela, w.policiaco] }
       - { es: "El protagonista del relato había perdido a su familia en la guerra.", en: "The main character of the story had lost his family in the war.", grammar: [g.pluperfect], vocab: [w.protagonista, w.relato, w.perder, w.guerra] }
       - { es: "En el primer capítulo, el narrador cuenta lo que había pasado la noche antes.", en: "In the first chapter, the narrator tells what had happened the night before.", grammar: [g.pluperfect], vocab: [w.capitulo, w.narrador, w.contar, w.pasar] }
-      - { es: "Nadie sabía que ese personaje había mentido desde el comienzo.", en: "Nobody knew that that character had been lying from the beginning.", grammar: [g.pluperfect], vocab: [w.personaje, w.comienzo, w.saber] }
+      - { es: "Nadie sabía que ese personaje había mentido desde el comienzo.", en: "Nobody knew that that character had been lying from the beginning.", altEs: ["Nadie sabía que ese personaje había mentido desde el principio."], grammar: [g.pluperfect], vocab: [w.personaje, w.comienzo, w.saber] }
       - { es: "La trama es sencilla: una mujer vuelve al pueblo donde había nacido.", en: "The plot is simple: a woman goes back to the village where she had been born.", grammar: [g.pluperfect], vocab: [w.trama, w.sencillo, w.nacer, w.pueblo] }
       - { es: "Según la leyenda, un fantasma había vivido en el castillo durante siglos.", en: "According to the legend, a ghost had lived in the castle for centuries.", grammar: [g.pluperfect], vocab: [w.leyenda, w.fantasma, w.castillo, w.siglo] }
       - { es: "La boda tuvo lugar en la iglesia donde se habían conocido sus padres.", en: "The wedding took place in the church where her parents had met.", grammar: [g.pluperfect, g.preterite-irregular], vocab: [w.tener-lugar, w.boda, w.iglesia, w.conocer] }
-      - { es: "Cuando la policía llegó, el ladrón ya había desaparecido con el dinero.", en: "When the police arrived, the thief had already disappeared with the money.", grammar: [g.pluperfect], vocab: [w.policia, w.ladron, w.desaparecer], error: { wrong: "Cuando la policía llegó, el ladrón ya ha desaparecido.", explain: "An action before another past action takes the pluperfect: ya había desaparecido.", grammar: g.pluperfect } }
-      - { es: "Me dijo que aún no había terminado el libro.", en: "He told me he still hadn't finished the book.", grammar: [g.pluperfect], vocab: [w.aun, w.terminar, w.libro] }
-      - { es: "El desenlace me sorprendió: el médico lo había planeado todo.", en: "The ending surprised me: the doctor had planned everything.", grammar: [g.pluperfect], vocab: [w.desenlace, w.sorprender, w.planear] }
+      - { es: "Cuando la policía llegó, el ladrón ya había desaparecido con el dinero.", en: "When the police arrived, the thief had already disappeared with the money.", altEs: ["Cuando llegó la policía, el ladrón ya había desaparecido con el dinero.", "Cuando la policía llegó, el ladrón ya se había marchado con el dinero."], grammar: [g.pluperfect], vocab: [w.policia, w.ladron, w.desaparecer], error: { wrong: "Cuando la policía llegó, el ladrón ya ha desaparecido.", explain: "An action before another past action takes the pluperfect: ya había desaparecido.", grammar: g.pluperfect } }
+      - { es: "Me dijo que aún no había terminado el libro.", en: "He told me he still hadn't finished the book.", altEs: ["Me dijo que todavía no había terminado el libro.", "Me dijo que aún no había acabado el libro."], grammar: [g.pluperfect], vocab: [w.aun, w.terminar, w.libro] }
+      - { es: "El desenlace me sorprendió: el médico lo había planeado todo.", en: "The ending surprised me: the doctor had planned everything.", altEs: ["El final me sorprendió: el médico lo había planeado todo."], grammar: [g.pluperfect], vocab: [w.desenlace, w.sorprender, w.planear] }
       - { es: "Fue un acontecimiento importante: nunca antes una mujer había ganado esas elecciones.", en: "It was an important event: never before had a woman won that election.", grammar: [g.pluperfect, g.preterite-ser-ir], vocab: [w.acontecimiento, w.ganar] }
       - { es: "El hecho es que ya habíamos pagado la cena cuando trajeron la cuenta equivocada.", en: "The fact is we had already paid for dinner when they brought the wrong bill.", grammar: [g.pluperfect], vocab: [w.hecho, w.pagar, w.cuenta, w.equivocarse] }
       - { es: "La escena final narra cómo los dos hermanos se habían encontrado veinte años después.", en: "The final scene narrates how the two brothers had found each other twenty years later.", grammar: [g.pluperfect], vocab: [w.escena, w.narrar, w.encontrarse, w.hermano] }
-      - { es: "Tenía una sospecha: alguien había entrado en casa mientras estábamos fuera.", en: "I had a suspicion: someone had come into the house while we were out.", grammar: [g.pluperfect, g.imperfect], vocab: [w.sospecha, w.entrar, w.fuera] }
+      - { es: "Tenía una sospecha: alguien había entrado en casa mientras estábamos fuera.", en: "I had a suspicion: someone had come into the house while we were out.", altEs: ["Tenía una sospecha: alguien había entrado en la casa mientras estábamos fuera."], grammar: [g.pluperfect, g.imperfect], vocab: [w.sospecha, w.entrar, w.fuera] }
       - { es: "Primero cené. Después llamaste.", en: "First I had dinner. Then you called.", grammar: [g.pluperfect], vocab: [w.cenar, w.llamar], transform: { instruction: "Join with 'cuando' using the pluperfect", answer: "Cuando llamaste, ya había cenado.", alt: ["Ya había cenado cuando llamaste."] } }
+    exchanges:
+      - q: { es: "¿Llegasteis a tiempo al cine?", en: "Did you get to the cinema on time?" }
+        a: { es: "No, cuando llegamos la película ya había empezado.", en: "No, when we arrived the film had already started." }
+        alt: ["Sí, pero el protagonista ya había muerto en la primera escena.", "No; había empezado diez minutos antes."]
+        grammar: [g.pluperfect]
+        vocab: [w.protagonista, w.escena]
+      - q: { es: "¿Te gustó el desenlace de la novela?", en: "Did you like the ending of the novel?" }
+        a: { es: "Me sorprendió: el médico lo había planeado todo.", en: "It surprised me: the doctor had planned everything." }
+        alt: ["Sí; nadie sabía que el narrador había mentido.", "No; al final todo había sido un sueño."]
+        grammar: [g.pluperfect]
+        vocab: [w.desenlace, w.narrador]
+      - q: { es: "¿Habías leído alguna novela policíaca antes?", en: "Had you read any detective novels before?" }
+        a: { es: "No, hasta entonces nunca había leído ninguna.", en: "No, until then I had never read one." }
+        alt: ["Sí, había leído dos o tres.", "Aún no; esta fue la primera."]
+        grammar: [g.pluperfect]
+        vocab: [w.policiaco, w.hasta-entonces, w.aun]
+      - q: { es: "¿Por qué no sabías lo de la boda?", en: "Why didn't you know about the wedding?" }
+        a: { es: "Porque cuando me lo contaron, ya había tenido lugar.", en: "Because when they told me, it had already taken place." }
+        alt: ["Nadie me había dicho nada.", "Porque aún no había hablado con mi hermana."]
+        grammar: [g.pluperfect]
+        vocab: [w.tener-lugar]
+      - q: { es: "¿De qué va el relato?", en: "What's the story about?" }
+        a: { es: "Una mujer vuelve al pueblo donde había nacido y descubre un secreto.", en: "A woman goes back to the village where she had been born and discovers a secret." }
+        alt: ["De un fantasma que había vivido en el castillo durante siglos.", "Es una leyenda sobre dos hermanos que se habían separado en la guerra."]
+        grammar: [g.pluperfect]
+        vocab: [w.relato, w.fantasma, w.leyenda]
+    texts:
+      - title: "Comienzo de un relato"
+        es: ["Cuando Marta volvió al pueblo, su casa ya no existía.", "Alguien la había vendido años antes.", "Hasta entonces, nadie le había contado la verdad."]
+        en: ["When Marta returned to the village, her house no longer existed.", "Someone had sold it years before.", "Until then, nobody had told her the truth."]
+        grammar: [g.pluperfect]
+        vocab: [w.comienzo, w.hasta-entonces]
+      - title: "Mensaje a una amiga"
+        es: ["Al final no vi la película contigo.", "Cuando llegué, ya había empezado y no había entradas.", "Me dijeron que se habían vendido todas por la mañana."]
+        en: ["In the end I didn't see the film with you.", "When I arrived, it had already started and there were no tickets.", "They told me they had all been sold in the morning."]
+        grammar: [g.pluperfect]
   - id: b1.u06.l2
     title: Antes de salir, después de llegar
     teach: [g.antes-despues-de]
     vocab: [w.nada-mas, w.al-cabo-de, w.al-principio, w.principio, w.poco-despues, w.al-rato, w.inmediatamente, w.despedida, w.abrazar, w.abrazo, w.besar, w.beso, w.sonreir, w.sonrisa, w.lagrima, w.afeitarse, w.peinarse, w.maquillarse, w.despertador, w.colgar, w.marcharse, w.regresar, w.asegurarse]
     tip: "Same subject → antes de / después de / al + infinitive. Different subject → antes de que + subjunctive; después de que + indicative (past) or subjunctive (future)."
     sentences:
-      - { es: "Antes de salir de casa, asegúrate de que has cerrado las ventanas.", en: "Before leaving the house, make sure you've closed the windows.", grammar: [g.antes-despues-de, g.imperative-tu], vocab: [w.asegurarse, w.cerrar, w.ventana] }
-      - { es: "Después de ducharme, me afeito y me peino.", en: "After showering, I shave and comb my hair.", grammar: [g.antes-despues-de], vocab: [w.ducharse, w.afeitarse, w.peinarse] }
-      - { es: "Al oír el despertador, se levantó inmediatamente.", en: "On hearing the alarm clock, he got up immediately.", grammar: [g.antes-despues-de], vocab: [w.despertador, w.oir, w.levantarse, w.inmediatamente] }
-      - { es: "Nada más llegar a la estación, la abrazó y le dio un beso.", en: "As soon as he arrived at the station, he hugged her and gave her a kiss.", grammar: [g.antes-despues-de, g.preterite-regular], vocab: [w.nada-mas, w.abrazar, w.beso, w.estacion] }
+      - { es: "Antes de salir de casa, asegúrate de que has cerrado las ventanas.", en: "Before leaving the house, make sure you've closed the windows.", altEs: ["Antes de salir de casa, asegúrate de haber cerrado las ventanas.", "Antes de salir de casa, comprueba que has cerrado las ventanas."], grammar: [g.antes-despues-de, g.imperative-tu], vocab: [w.asegurarse, w.cerrar, w.ventana] }
+      - { es: "Después de ducharme, me afeito y me peino.", en: "After showering, I shave and comb my hair.", altEs: ["Después de la ducha, me afeito y me peino.", "Después de ducharme me afeito y me peino."], grammar: [g.antes-despues-de], vocab: [w.ducharse, w.afeitarse, w.peinarse] }
+      - { es: "Al oír el despertador, se levantó inmediatamente.", en: "On hearing the alarm clock, he got up immediately.", altEs: ["Al oír el despertador, se levantó enseguida.", "Nada más oír el despertador, se levantó."], grammar: [g.antes-despues-de], vocab: [w.despertador, w.oir, w.levantarse, w.inmediatamente] }
+      - { es: "Nada más llegar a la estación, la abrazó y le dio un beso.", en: "As soon as he arrived at the station, he hugged her and gave her a kiss.", altEs: ["Al llegar a la estación, la abrazó y le dio un beso.", "Nada más llegar a la estación, la abrazó y la besó."], grammar: [g.antes-despues-de, g.preterite-regular], vocab: [w.nada-mas, w.abrazar, w.beso, w.estacion] }
       - { es: "Al principio nadie habló; al cabo de un minuto, todos sonreímos.", en: "At first nobody spoke; after a minute, we all smiled.", grammar: [g.antes-despues-de, g.preterite-regular], vocab: [w.al-principio, w.al-cabo-de, w.sonreir, w.minuto] }
       - { es: "Se maquilla siempre antes de que lleguen los invitados.", en: "She always puts on make-up before the guests arrive.", grammar: [g.antes-despues-de], vocab: [w.maquillarse, w.antes-de-que, w.invitar] }
-      - { es: "Después de que terminó la despedida, todos regresaron a casa muy tristes.", en: "After the farewell ended, everyone went back home very sad.", grammar: [g.antes-despues-de], vocab: [w.despues-de-que, w.despedida, w.regresar, w.triste], note: "Past fact after después de que → indicative." }
+      - { es: "Después de que terminó la despedida, todos regresaron a casa muy tristes.", en: "After the farewell ended, everyone went back home very sad.", altEs: ["Después de que terminó la despedida, todos volvieron a casa muy tristes.", "Cuando terminó la despedida, todos regresaron a casa muy tristes."], grammar: [g.antes-despues-de], vocab: [w.despues-de-que, w.despedida, w.regresar, w.triste], note: "Past fact after después de que → indicative." }
       - { es: "Poco después de marcharse ella, empezó a llover.", en: "Shortly after she left, it started to rain.", grammar: [g.antes-despues-de], vocab: [w.poco-despues, w.marcharse, w.llover], note: "The infinitive can take its own subject after the verb: después de marcharse ella." }
       - { es: "Colgó el teléfono sin despedirse y al rato volvió a llamar para pedir perdón.", en: "He hung up without saying goodbye and a while later called again to apologise.", grammar: [g.antes-despues-de, g.volver-a], vocab: [w.colgar, w.al-rato, w.volver-a, w.perdon] }
       - { es: "No llores: después de las lágrimas siempre llega una sonrisa.", en: "Don't cry: after the tears a smile always comes.", grammar: [g.antes-despues-de, g.imperative-negative], vocab: [w.llorar, w.lagrima, w.sonrisa] }
       - { es: "Antes de besarla, le preguntó si podía.", en: "Before kissing her, he asked her if he could.", grammar: [g.antes-despues-de], vocab: [w.besar, w.preguntar, w.poder] }
-      - { es: "Al terminar la clase, los niños salieron corriendo al patio.", en: "When the class ended, the children ran out into the playground.", grammar: [g.antes-despues-de], vocab: [w.terminar, w.correr, w.patio] }
+      - { es: "Al terminar la clase, los niños salieron corriendo al patio.", en: "When the class ended, the children ran out into the playground.", altEs: ["Al acabar la clase, los niños salieron corriendo al patio.", "Después de la clase, los niños salieron corriendo al patio."], grammar: [g.antes-despues-de], vocab: [w.terminar, w.correr, w.patio] }
       - { es: "Después de que te vayas, la casa se quedará muy vacía.", en: "After you leave, the house will feel very empty.", grammar: [g.antes-despues-de, g.subjunctive-time-clauses], vocab: [w.despues-de-que, w.ir, w.vacio], note: "Future after después de que → subjunctive." }
-      - { es: "Dame un abrazo antes de irte.", en: "Give me a hug before you go.", grammar: [g.antes-despues-de, g.imperative-tu], vocab: [w.abrazo, w.dar, w.ir], error: { wrong: "Dame un abrazo antes de que te vas.", explain: "With the same subject use antes de + infinitive (antes de irte); antes de que needs the subjunctive (antes de que te vayas).", grammar: g.antes-despues-de } }
+      - { es: "Dame un abrazo antes de irte.", en: "Give me a hug before you go.", altEs: ["Dame un abrazo antes de marcharte.", "Antes de irte, dame un abrazo."], grammar: [g.antes-despues-de, g.imperative-tu], vocab: [w.abrazo, w.dar, w.ir], error: { wrong: "Dame un abrazo antes de que te vas.", explain: "With the same subject use antes de + infinitive (antes de irte); antes de que needs the subjunctive (antes de que te vayas).", grammar: g.antes-despues-de } }
       - { es: "El principio de la historia es lento, pero después de la segunda parte no puedes dejar de leer.", en: "The beginning of the story is slow, but after the second part you can't stop reading.", grammar: [g.antes-despues-de], vocab: [w.principio, w.historia, w.lento, w.dejar-de] }
       - { es: "Cené. Luego vi la televisión.", en: "I had dinner. Then I watched TV.", grammar: [g.antes-despues-de], vocab: [w.cenar, w.television], transform: { instruction: "Join with 'después de' + infinitive", answer: "Después de cenar, vi la televisión.", alt: ["Vi la televisión después de cenar."] } }
+    exchanges:
+      - q: { es: "¿Qué haces después de ducharte?", en: "What do you do after showering?" }
+        a: { es: "Después de ducharme, me afeito y me peino.", en: "After showering, I shave and comb my hair." }
+        alt: ["Me visto y desayuno.", "Nada más salir de la ducha, me peino."]
+        grammar: [g.antes-despues-de]
+        vocab: [w.afeitarse, w.peinarse]
+      - q: { es: "¿Cuándo os marcháis?", en: "When are you leaving?" }
+        a: { es: "Después de la despedida; antes de irnos, queremos abrazar a todos.", en: "After the farewell; before we go, we want to hug everyone." }
+        alt: ["Nada más terminar la cena.", "Al cabo de una hora, más o menos."]
+        grammar: [g.antes-despues-de]
+        vocab: [w.marcharse, w.despedida, w.abrazar]
+      - q: { es: "¿Qué pasó al oír el despertador?", en: "What happened when you heard the alarm clock?" }
+        a: { es: "Me levanté inmediatamente, pero al rato me volví a dormir.", en: "I got up immediately, but a while later I fell asleep again." }
+        alt: ["Nada; lo apagué y seguí durmiendo.", "Me levanté y, antes de desayunar, salí a correr."]
+        grammar: [g.antes-despues-de]
+        vocab: [w.despertador, w.inmediatamente, w.al-rato]
+      - q: { es: "¿Lloraste en la despedida?", en: "Did you cry at the farewell?" }
+        a: { es: "Al principio no, pero cuando salió el tren, sí.", en: "At first no, but when the train left, yes." }
+        alt: ["Un poco; después de las lágrimas llegó la sonrisa.", "No; sonreí hasta el final."]
+        grammar: [g.antes-despues-de]
+        vocab: [w.al-principio, w.lagrima, w.sonrisa]
+      - q: { es: "¿Puedo irme ya?", en: "Can I go now?" }
+        a: { es: "Antes de irte, dame un abrazo.", en: "Before you go, give me a hug." }
+        alt: ["Sí, pero antes de salir asegúrate de que llevas las llaves.", "Espera un rato; nos despedimos todos juntos."]
+        grammar: [g.antes-despues-de]
+        vocab: [w.abrazo, w.asegurarse]
+    texts:
+      - title: "Nota en la puerta"
+        es: ["Antes de salir, asegúrate de que has cerrado las ventanas.", "Después de regar las plantas, apaga la luz del salón.", "Nada más llegar, llámame."]
+        en: ["Before leaving, make sure you've closed the windows.", "After watering the plants, switch off the living-room light.", "As soon as you arrive, call me."]
+        grammar: [g.antes-despues-de]
+        vocab: [w.asegurarse, w.nada-mas]
+      - title: "Escena de una novela"
+        es: ["Al principio nadie habló.", "Al cabo de un minuto, ella sonrió y él la abrazó.", "Poco después, él se marchó sin despedirse y ella se quedó con una lágrima en la cara."]
+        en: ["At first nobody spoke.", "After a minute, she smiled and he hugged her.", "Shortly after, he left without saying goodbye and she was left with a tear on her face."]
+        grammar: [g.antes-despues-de]
+        vocab: [w.al-principio, w.al-cabo-de, w.sonreir, w.poco-despues]
   - id: b1.u06.l3
     title: Había llovido toda la noche
     teach: [g.sequence-of-past]
     vocab: [w.chocar, w.susurrar, w.golpear, w.desmayarse, w.sangre, w.sonar, w.temblar, w.palido, w.aliviado, w.fijarse, w.notar, w.engañar, w.herencia, w.heredar, w.fallecer, w.pesadilla, w.rayo, w.trueno, w.apagon, w.linterna, w.vela, w.resbalar, w.tropezar, w.enterarse]
     tip: "Pluperfect = before the story; imperfect = the scene; preterite = the events; perfect = what connects to now."
     sentences:
-      - { es: "Había llovido toda la noche y las calles estaban mojadas.", en: "It had rained all night and the streets were wet.", grammar: [g.sequence-of-past, g.pluperfect], vocab: [w.llover, w.calle, w.mojado] }
+      - { es: "Había llovido toda la noche y las calles estaban mojadas.", en: "It had rained all night and the streets were wet.", altEs: ["Había estado lloviendo toda la noche y las calles estaban mojadas."], grammar: [g.sequence-of-past, g.pluperfect], vocab: [w.llover, w.calle, w.mojado] }
       - { es: "Estaba durmiendo cuando sonó un trueno muy fuerte y me despertó.", en: "I was sleeping when a very loud thunderclap sounded and woke me up.", grammar: [g.sequence-of-past, g.estar-gerund-past], vocab: [w.sonar, w.trueno, w.despertarse, w.fuerte] }
       - { es: "Un rayo cayó cerca de la casa y hubo un apagón en todo el barrio.", en: "A lightning bolt struck near the house and there was a power cut in the whole neighbourhood.", grammar: [g.sequence-of-past, g.preterite-irregular], vocab: [w.rayo, w.caerse, w.apagon, w.barrio] }
-      - { es: "Busqué la linterna, pero no la encontré, así que encendí unas velas.", en: "I looked for the torch, but I couldn't find it, so I lit some candles.", grammar: [g.sequence-of-past, g.narration-connectors], vocab: [w.linterna, w.encontrar, w.vela, w.encender, w.asi-que] }
+      - { es: "Busqué la linterna, pero no la encontré, así que encendí unas velas.", en: "I looked for the torch, but I couldn't find it, so I lit some candles.", altEs: ["Busqué la linterna, pero no la encontré, por eso encendí unas velas."], grammar: [g.sequence-of-past, g.narration-connectors], vocab: [w.linterna, w.encontrar, w.vela, w.encender, w.asi-que] }
       - { es: "Esta mañana me he fijado en que el coche tenía un golpe: alguien había chocado contra él por la noche.", en: "This morning I noticed the car had a dent: someone had crashed into it during the night.", grammar: [g.sequence-of-past], vocab: [w.fijarse, w.golpe, w.chocar] }
-      - { es: "Cuando vi la sangre, me puse pálido y casi me desmayé.", en: "When I saw the blood, I went pale and almost fainted.", grammar: [g.sequence-of-past, g.preterite-irregular], vocab: [w.sangre, w.palido, w.desmayarse] }
-      - { es: "Le temblaban las manos porque había bebido demasiado café.", en: "His hands were shaking because he had drunk too much coffee.", grammar: [g.sequence-of-past], vocab: [w.temblar, w.mano, w.beber, w.cafe] }
+      - { es: "Cuando vi la sangre, me puse pálido y casi me desmayé.", en: "When I saw the blood, I went pale and almost fainted.", altEs: ["Cuando vi la sangre, me puse pálida y casi me desmayé.", "Al ver la sangre, me puse pálido y casi me desmayé."], grammar: [g.sequence-of-past, g.preterite-irregular], vocab: [w.sangre, w.palido, w.desmayarse] }
+      - { es: "Le temblaban las manos porque había bebido demasiado café.", en: "His hands were shaking because he had drunk too much coffee.", altEs: ["Le temblaban las manos porque había tomado demasiado café."], grammar: [g.sequence-of-past], vocab: [w.temblar, w.mano, w.beber, w.cafe] }
       - { es: "Alguien golpeó la puerta tres veces; después, nada.", en: "Someone banged on the door three times; then, nothing.", grammar: [g.sequence-of-past, g.preterite-regular], vocab: [w.golpear, w.puerta, w.vez] }
       - { es: "Me susurró: «No hagas ruido, ya se han dormido los niños».", en: "She whispered to me: 'Don't make noise, the children have already fallen asleep.'", grammar: [g.sequence-of-past, g.imperative-negative], vocab: [w.susurrar, w.ruido, w.dormir] }
-      - { es: "Cuando mi abuelo falleció, descubrimos que había dejado una herencia a un hospital.", en: "When my grandfather passed away, we discovered he had left an inheritance to a hospital.", grammar: [g.sequence-of-past], vocab: [w.fallecer, w.descubrir, w.herencia, w.hospital] }
+      - { es: "Cuando mi abuelo falleció, descubrimos que había dejado una herencia a un hospital.", en: "When my grandfather passed away, we discovered he had left an inheritance to a hospital.", altEs: ["Cuando mi abuelo murió, descubrimos que había dejado una herencia a un hospital."], grammar: [g.sequence-of-past], vocab: [w.fallecer, w.descubrir, w.herencia, w.hospital] }
       - { es: "Heredó la casa del pueblo, pero nunca ha vuelto a vivir allí.", en: "She inherited the house in the village, but she has never gone back to live there.", grammar: [g.sequence-of-past, g.present-perfect], vocab: [w.heredar, w.casa, w.volver-a] }
-      - { es: "Nos había engañado a todos: el dinero nunca existió.", en: "He had deceived us all: the money never existed.", grammar: [g.sequence-of-past], vocab: [w.engañar, w.dinero, w.existir] }
+      - { es: "Nos había engañado a todos: el dinero nunca existió.", en: "He had deceived us all: the money never existed.", altEs: ["Nos había engañado a todos: el dinero no existió nunca.", "Nos engañó a todos: el dinero nunca existió."], grammar: [g.sequence-of-past], vocab: [w.engañar, w.dinero, w.existir] }
       - { es: "He tenido una pesadilla horrible; por eso hoy estoy tan cansado.", en: "I had a horrible nightmare; that's why I'm so tired today.", grammar: [g.sequence-of-past, g.present-perfect], vocab: [w.pesadilla, w.horrible, w.cansado] }
-      - { es: "Noté que algo iba mal: la puerta estaba abierta y no había nadie.", en: "I noticed something was wrong: the door was open and there was nobody.", grammar: [g.sequence-of-past, g.imperfect], vocab: [w.notar, w.puerta, w.nadie] }
+      - { es: "Noté que algo iba mal: la puerta estaba abierta y no había nadie.", en: "I noticed something was wrong: the door was open and there was nobody.", altEs: ["Me di cuenta de que algo iba mal: la puerta estaba abierta y no había nadie."], grammar: [g.sequence-of-past, g.imperfect], vocab: [w.notar, w.puerta, w.nadie] }
       - { es: "Me sentí aliviada cuando supe que todos habían salido antes del incendio.", en: "I felt relieved when I found out that everyone had got out before the fire.", grammar: [g.sequence-of-past], vocab: [w.aliviado, w.sentirse, w.saber, w.salir], error: { wrong: "Me sentí aliviada cuando supe que todos salían antes del incendio.", explain: "The getting out happened before supe: use the pluperfect, habían salido.", grammar: g.sequence-of-past } }
       - { es: "El tren sale a las ocho. Llego a las ocho y cinco.", en: "The train leaves at eight. I arrive at five past eight.", grammar: [g.sequence-of-past], vocab: [w.tren, w.salir, w.llegar], transform: { instruction: "Tell it in the past, joining the two facts (the train left first)", answer: "Cuando llegué a las ocho y cinco, el tren ya había salido.", alt: ["El tren ya había salido cuando llegué a las ocho y cinco."] } }
+    exchanges:
+      - q: { es: "¿Qué pasó anoche con la luz?", en: "What happened with the electricity last night?" }
+        a: { es: "Un rayo cayó cerca y hubo un apagón en todo el barrio.", en: "A lightning bolt struck nearby and there was a power cut in the whole neighbourhood." }
+        alt: ["Hubo una tormenta y se fue la luz dos horas.", "No lo sé; yo estaba durmiendo cuando sonó el trueno."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.rayo, w.apagon, w.trueno]
+      - q: { es: "¿Por qué estabas tan pálido?", en: "Why were you so pale?" }
+        a: { es: "Porque había visto sangre y casi me desmayé.", en: "Because I had seen blood and I almost fainted." }
+        alt: ["Porque había tenido una pesadilla horrible.", "Me había golpeado la cabeza al tropezar."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.palido, w.sangre, w.desmayarse]
+      - q: { es: "¿Cómo te enteraste de la herencia?", en: "How did you find out about the inheritance?" }
+        a: { es: "Cuando mi abuelo falleció, descubrimos que había dejado una carta.", en: "When my grandfather passed away, we discovered that he had left a letter." }
+        alt: ["Me lo dijo mi madre; nadie lo había sospechado.", "Me enteré por casualidad, al cabo de un año."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.enterarse, w.herencia, w.fallecer]
+      - q: { es: "¿Qué le había pasado al coche?", en: "What had happened to the car?" }
+        a: { es: "Alguien había chocado contra él por la noche y tenía un golpe.", en: "Someone had crashed into it during the night and it had a dent." }
+        alt: ["Se había quedado sin gasolina.", "Nada; me había fijado mal."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.chocar, w.fijarse]
+      - q: { es: "¿Por qué te temblaban las manos?", en: "Why were your hands shaking?" }
+        a: { es: "Porque había bebido demasiado café y estaba nervioso.", en: "Because I had drunk too much coffee and was nervous." }
+        alt: ["Porque acababa de resbalar en la escalera.", "Tenía miedo: alguien había golpeado la puerta tres veces."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.temblar, w.resbalar, w.golpear]
+    texts:
+      - title: "Relato breve"
+        es: ["Había llovido toda la noche y las calles estaban mojadas.", "Resbalé al salir de casa y me golpeé la rodilla.", "Cuando llegué al trabajo, noté que me había dejado las llaves en el suelo."]
+        en: ["It had rained all night and the streets were wet.", "I slipped when leaving the house and hit my knee.", "When I got to work, I noticed I had left my keys on the floor."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.resbalar, w.golpear, w.notar]
+      - title: "Mensaje a un amigo"
+        es: ["Anoche tuve una pesadilla horrible.", "Soñé que alguien había entrado en casa y me susurraba algo.", "Me despertó un trueno y me sentí aliviado: solo era la tormenta."]
+        en: ["Last night I had a horrible nightmare.", "I dreamt that someone had come into the house and was whispering something to me.", "A thunderclap woke me up and I felt relieved: it was only the storm."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.pesadilla, w.susurrar, w.trueno, w.aliviado]
   - id: b1.u06.l4
     title: Repaso — la historia de mi familia
     teach: [g.sequence-of-past]
     vocab: [w.emigrar, w.emigrante, w.emigracion, w.por-aquel-entonces, w.antepasado, w.riqueza, w.fortuna, w.casualidad, w.por-casualidad, w.adaptarse, w.acostumbrarse, w.soledad, w.memoria, w.apenas, w.incluso, w.reencuentro, w.criar, w.sobrevivir, w.sacrificio, w.orgullo, w.nieto, w.bisabuelo, w.posguerra, w.separarse]
     tip: "Review: choose the tense by its job — background (imperfect), event (preterite), earlier event (pluperfect), link to now (perfect)."
     sentences:
-      - { es: "Mi bisabuelo emigró a Argentina en 1950 porque en su pueblo no había trabajo.", en: "My great-grandfather emigrated to Argentina in 1950 because there was no work in his village.", grammar: [g.sequence-of-past, g.preterite-vs-imperfect], vocab: [w.bisabuelo, w.emigrar, w.trabajo] }
-      - { es: "Por aquel entonces, muchos españoles ya se habían marchado a América.", en: "Back then, many Spaniards had already left for America.", grammar: [g.sequence-of-past, g.pluperfect], vocab: [w.por-aquel-entonces, w.marcharse, w.espanol] }
+      - { es: "Mi bisabuelo emigró a Argentina en 1950 porque en su pueblo no había trabajo.", en: "My great-grandfather emigrated to Argentina in 1950 because there was no work in his village.", altEs: ["Mi bisabuelo se fue a Argentina en 1950 porque en su pueblo no había trabajo.", "Mi bisabuelo emigró a Argentina en 1950 porque no había trabajo en su pueblo."], grammar: [g.sequence-of-past, g.preterite-vs-imperfect], vocab: [w.bisabuelo, w.emigrar, w.trabajo] }
+      - { es: "Por aquel entonces, muchos españoles ya se habían marchado a América.", en: "Back then, many Spaniards had already left for America.", altEs: ["En aquella época, muchos españoles ya se habían marchado a América.", "Por aquel entonces, muchos españoles ya se habían ido a América."], grammar: [g.sequence-of-past, g.pluperfect], vocab: [w.por-aquel-entonces, w.marcharse, w.espanol] }
       - { es: "La posguerra fue dura: la gente apenas tenía para comer.", en: "The post-war years were hard: people barely had enough to eat.", grammar: [g.sequence-of-past, g.preterite-vs-imperfect], vocab: [w.posguerra, w.duro, w.apenas] }
-      - { es: "Al principio no se adaptó: no conocía a nadie y la soledad era terrible.", en: "At first he didn't adapt: he didn't know anyone and the loneliness was terrible.", grammar: [g.sequence-of-past], vocab: [w.adaptarse, w.soledad, w.terrible] }
+      - { es: "Al principio no se adaptó: no conocía a nadie y la soledad era terrible.", en: "At first he didn't adapt: he didn't know anyone and the loneliness was terrible.", altEs: ["Al principio no se acostumbró: no conocía a nadie y la soledad era terrible."], grammar: [g.sequence-of-past], vocab: [w.adaptarse, w.soledad, w.terrible] }
       - { es: "Con el tiempo se acostumbró al nuevo país e incluso aprendió a cocinar platos argentinos.", en: "In time he got used to the new country and even learnt to cook Argentinian dishes.", grammar: [g.sequence-of-past, g.preterite-regular], vocab: [w.acostumbrarse, w.incluso, w.aprender, w.argentino] }
-      - { es: "Conoció a mi bisabuela por casualidad, en una fiesta a la que no quería ir.", en: "He met my great-grandmother by chance, at a party he didn't want to go to.", grammar: [g.sequence-of-past], vocab: [w.por-casualidad, w.casualidad, w.conocer, w.fiesta] }
-      - { es: "Criaron a cinco hijos con mucho sacrificio y poco dinero.", en: "They raised five children with a lot of sacrifice and little money.", grammar: [g.sequence-of-past, g.preterite-regular], vocab: [w.criar, w.sacrificio, w.hijo] }
+      - { es: "Conoció a mi bisabuela por casualidad, en una fiesta a la que no quería ir.", en: "He met my great-grandmother by chance, at a party he didn't want to go to.", altEs: ["Conoció a mi bisabuela de casualidad, en una fiesta a la que no quería ir."], grammar: [g.sequence-of-past], vocab: [w.por-casualidad, w.casualidad, w.conocer, w.fiesta] }
+      - { es: "Criaron a cinco hijos con mucho sacrificio y poco dinero.", en: "They raised five children with a lot of sacrifice and little money.", altEs: ["Criaron a cinco hijos con mucho esfuerzo y poco dinero."], grammar: [g.sequence-of-past, g.preterite-regular], vocab: [w.criar, w.sacrificio, w.hijo] }
       - { es: "Nunca hicieron fortuna, pero sobrevivieron a una guerra y a muchos años difíciles.", en: "They never made a fortune, but they survived a war and many difficult years.", grammar: [g.sequence-of-past, g.preterite-irregular], vocab: [w.fortuna, w.sobrevivir, w.guerra] }
-      - { es: "Cuando volvió a España en 1985, su pueblo había cambiado mucho.", en: "When he returned to Spain in 1985, his village had changed a lot.", grammar: [g.sequence-of-past, g.pluperfect], vocab: [w.volver, w.cambiar, w.pueblo], error: { wrong: "Cuando volvió a España en 1985, su pueblo cambió mucho.", explain: "The change happened before he returned: había cambiado (pluperfect), not cambió.", grammar: g.sequence-of-past } }
+      - { es: "Cuando volvió a España en 1985, su pueblo había cambiado mucho.", en: "When he returned to Spain in 1985, his village had changed a lot.", altEs: ["Cuando regresó a España en 1985, su pueblo había cambiado mucho."], grammar: [g.sequence-of-past, g.pluperfect], vocab: [w.volver, w.cambiar, w.pueblo], error: { wrong: "Cuando volvió a España en 1985, su pueblo cambió mucho.", explain: "The change happened before he returned: había cambiado (pluperfect), not cambió.", grammar: g.sequence-of-past } }
       - { es: "El reencuentro con sus hermanos, a los que no había visto en treinta años, fue el día más feliz de su vida.", en: "The reunion with his brothers, whom he hadn't seen in thirty years, was the happiest day of his life.", grammar: [g.sequence-of-past], vocab: [w.reencuentro, w.hermano, w.feliz] }
       - { es: "Mi abuela siempre ha hablado con orgullo de sus antepasados emigrantes.", en: "My grandmother has always spoken with pride about her emigrant ancestors.", grammar: [g.sequence-of-past, g.present-perfect], vocab: [w.orgullo, w.antepasado, w.emigrante] }
       - { es: "La emigración no trajo riqueza a la familia, pero sí una vida mejor para los nietos.", en: "Emigration didn't bring wealth to the family, but it did bring a better life for the grandchildren.", grammar: [g.sequence-of-past, g.preterite-irregular], vocab: [w.emigracion, w.riqueza, w.nieto] }
       - { es: "Hoy he encontrado sus cartas en el armario; las había guardado mi madre durante años.", en: "Today I found his letters in the wardrobe; my mother had kept them for years.", grammar: [g.sequence-of-past], vocab: [w.encontrar, w.carta, w.guardar] }
-      - { es: "Tiene noventa años y aún tiene una memoria increíble.", en: "He's ninety and still has an incredible memory.", grammar: [g.sequence-of-past], vocab: [w.memoria, w.aun, w.increible] }
+      - { es: "Tiene noventa años y aún tiene una memoria increíble.", en: "He's ninety and still has an incredible memory.", altEs: ["Tiene noventa años y todavía tiene una memoria increíble."], grammar: [g.sequence-of-past], vocab: [w.memoria, w.aun, w.increible] }
       - { es: "Mientras escribía esta historia, me he dado cuenta de que apenas conozco a mi familia.", en: "While I was writing this story, I realised I hardly know my family.", grammar: [g.sequence-of-past, g.present-perfect], vocab: [w.escribir, w.darse-cuenta, w.apenas] }
       - { es: "Mi abuelo / nacer en un pueblo / que hoy ya no existe", en: "My grandfather was born in a village that no longer exists today.", grammar: [g.sequence-of-past], vocab: [w.nacer, w.existir], transform: { instruction: "Build the sentence with the preterite and the present", answer: "Mi abuelo nació en un pueblo que hoy ya no existe." } }
+    exchanges:
+      - q: { es: "¿Por qué emigró tu bisabuelo?", en: "Why did your great-grandfather emigrate?" }
+        a: { es: "Porque en su pueblo no había trabajo; por aquel entonces mucha gente se marchaba.", en: "Because there was no work in his village; back then a lot of people were leaving." }
+        alt: ["Por la posguerra: la gente apenas tenía para comer.", "No lo sé; nadie en la familia habla de eso."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.emigrar, w.bisabuelo, w.por-aquel-entonces]
+      - q: { es: "¿Se adaptó rápido al nuevo país?", en: "Did he adapt quickly to the new country?" }
+        a: { es: "Al principio no: no conocía a nadie y la soledad era terrible.", en: "At first no: he didn't know anyone and the loneliness was terrible." }
+        alt: ["Sí, incluso aprendió a cocinar platos argentinos.", "Con el tiempo se acostumbró."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.adaptarse, w.soledad, w.acostumbrarse]
+      - q: { es: "¿Cómo conoció a tu bisabuela?", en: "How did he meet your great-grandmother?" }
+        a: { es: "Por casualidad, en una fiesta a la que no quería ir.", en: "By chance, at a party he didn't want to go to." }
+        alt: ["Trabajaban en la misma fábrica.", "Eran vecinos; se habían conocido de niños."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.por-casualidad]
+      - q: { es: "¿Hicieron fortuna en América?", en: "Did they make a fortune in America?" }
+        a: { es: "No, nunca hicieron fortuna, pero criaron a cinco hijos con mucho sacrificio.", en: "No, they never made a fortune, but they raised five children with a lot of sacrifice." }
+        alt: ["Riqueza no, pero sí una vida mejor para los nietos.", "Sobrevivieron, que ya era mucho."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.fortuna, w.criar, w.sacrificio, w.riqueza]
+      - q: { es: "¿Cómo fue el reencuentro con sus hermanos?", en: "What was the reunion with his brothers like?" }
+        a: { es: "Fue el día más feliz de su vida; no los había visto en treinta años.", en: "It was the happiest day of his life; he hadn't seen them in thirty years." }
+        alt: ["Todos lloraron; el pueblo había cambiado mucho.", "Muy emocionante: apenas se reconocieron."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.reencuentro, w.apenas]
+    texts:
+      - title: "La historia de mi familia"
+        es: ["Mi bisabuelo emigró a Argentina en 1950.", "Por aquel entonces, muchos de sus amigos ya se habían marchado.", "Cuando volvió a España, treinta años después, apenas reconoció su pueblo."]
+        en: ["My great-grandfather emigrated to Argentina in 1950.", "Back then, many of his friends had already left.", "When he returned to Spain, thirty years later, he barely recognised his village."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.emigrar, w.por-aquel-entonces, w.apenas]
+      - title: "Pie de foto"
+        es: ["Mis abuelos el día de su boda, en 1962.", "Se habían conocido por casualidad dos años antes.", "Mi abuela siempre cuenta esta historia con orgullo."]
+        en: ["My grandparents on their wedding day, in 1962.", "They had met by chance two years earlier.", "My grandmother always tells this story with pride."]
+        grammar: [g.sequence-of-past]
+        vocab: [w.por-casualidad, w.orgullo]
 dialogues:
   - id: b1.u06.d1
     title: ¿Qué había pasado?

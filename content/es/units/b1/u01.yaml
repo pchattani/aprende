@@ -7,44 +7,118 @@ lessons:
     vocab: [w.deseo, w.desear, w.lograr, w.cumplir, w.proposito, w.ilusion, w.esfuerzo, w.esforzarse, w.alcanzar, w.aprobar, w.suspender, w.beca, w.master, w.independizarse, w.tranquilidad, w.felicidad, w.salud, w.ano-nuevo]
     tip: "Take the yo form, drop the -o and swap the vowel: -ar → -e (hable), -er/-ir → -a (coma, viva). Vosotros: habléis, comáis, viváis."
     sentences:
-      - { es: "Mis padres desean que estudie un máster en el extranjero.", en: "My parents want me to study for a master's degree abroad.", grammar: [g.subjunctive-present-forms], vocab: [w.desear, w.master, w.extranjero] }
-      - { es: "Espero que este año cumplas todos tus propósitos.", en: "I hope you fulfil all your resolutions this year.", grammar: [g.subjunctive-present-forms], vocab: [w.cumplir, w.proposito, w.esperar] }
+      - { es: "Mis padres desean que estudie un máster en el extranjero.", en: "My parents want me to study for a master's degree abroad.", altEs: ["Mis padres quieren que estudie un máster en el extranjero.", "Mis padres desean que yo estudie un máster en el extranjero."], grammar: [g.subjunctive-present-forms], vocab: [w.desear, w.master, w.extranjero] }
+      - { es: "Espero que este año cumplas todos tus propósitos.", en: "I hope you fulfil all your resolutions this year.", altEs: ["Espero que cumplas todos tus propósitos este año.", "Ojalá cumplas todos tus propósitos este año."], grammar: [g.subjunctive-present-forms], vocab: [w.cumplir, w.proposito, w.esperar] }
       - { es: "Mi deseo para el año nuevo es que vivamos con más tranquilidad.", en: "My wish for the new year is that we live more calmly.", grammar: [g.subjunctive-present-forms], vocab: [w.deseo, w.ano-nuevo, w.tranquilidad] }
-      - { es: "Quiero que mi hermana logre independizarse este verano.", en: "I want my sister to manage to move out this summer.", grammar: [g.subjunctive-present-forms], vocab: [w.lograr, w.independizarse, w.hermano] }
-      - { es: "Ojalá no suspendas otra vez; te has esforzado mucho.", en: "I hope you don't fail again; you've tried really hard.", grammar: [g.subjunctive-present-forms, g.present-perfect], vocab: [w.suspender, w.esforzarse, w.ojala] }
+      - { es: "Quiero que mi hermana logre independizarse este verano.", en: "I want my sister to manage to move out this summer.", altEs: ["Quiero que mi hermana consiga independizarse este verano."], grammar: [g.subjunctive-present-forms], vocab: [w.lograr, w.independizarse, w.hermano] }
+      - { es: "Ojalá no suspendas otra vez; te has esforzado mucho.", en: "I hope you don't fail again; you've tried really hard.", altEs: ["Ojalá que no suspendas otra vez; te has esforzado mucho.", "Espero que no suspendas otra vez; te has esforzado mucho."], grammar: [g.subjunctive-present-forms, g.present-perfect], vocab: [w.suspender, w.esforzarse, w.ojala] }
       - { es: "Es importante que habléis con el profesor antes del examen.", en: "It's important that you talk to the teacher before the exam.", grammar: [g.subjunctive-present-forms], vocab: [w.hablar, w.profesor, w.examen], note: "vosotros: habléis, comáis, viváis." }
       - { es: "Deseamos que alcancéis todas vuestras metas.", en: "We hope you reach all your goals.", grammar: [g.subjunctive-present-forms], vocab: [w.desear, w.alcanzar, w.meta], note: "alcanzar → alcance: z becomes c before e." }
       - { es: "Espero que la beca llegue a tiempo para pagar el curso.", en: "I hope the grant arrives in time to pay for the course.", grammar: [g.subjunctive-present-forms], vocab: [w.beca, w.llegar, w.a-tiempo], note: "llegar → llegue: g becomes gu before e." }
-      - { es: "Mi madre quiere que coma más verdura y que descanse más.", en: "My mother wants me to eat more vegetables and rest more.", grammar: [g.subjunctive-present-forms], vocab: [w.comer, w.verdura, w.descansar] }
+      - { es: "Mi madre quiere que coma más verdura y que descanse más.", en: "My mother wants me to eat more vegetables and rest more.", altEs: ["Mi madre quiere que coma más verdura y descanse más."], grammar: [g.subjunctive-present-forms], vocab: [w.comer, w.verdura, w.descansar] }
       - { es: "Os deseo mucha salud y felicidad en el año nuevo.", en: "I wish you lots of health and happiness in the new year.", grammar: [g.indirect-object-pronouns], vocab: [w.desear, w.salud, w.felicidad] }
       - { es: "Me hace ilusión que mis amigos celebren la fiesta en mi casa.", en: "I'm excited that my friends are celebrating the party at my house.", grammar: [g.subjunctive-present-forms], vocab: [w.ilusion, w.celebrar, w.fiesta], note: "me hace ilusión = I'm excited about it, I'm looking forward to it." }
       - { es: "Con esfuerzo, todo se logra.", en: "With effort, everything can be achieved.", grammar: [g.present-review], vocab: [w.esfuerzo, w.lograr] }
-      - { es: "Espero que trabajes menos este año.", en: "I hope you work less this year.", grammar: [g.subjunctive-present-forms], vocab: [w.esperar, w.trabajar], error: { wrong: "Espero que trabajas menos este año.", explain: "After esperar que the verb goes in the subjunctive: trabajes, not trabajas.", grammar: g.subjunctive-present-forms } }
-      - { es: "Ojalá que mi abuelo viva muchos años más.", en: "I hope my grandfather lives many more years.", grammar: [g.subjunctive-present-forms], vocab: [w.ojala, w.vivir, w.abuelo] }
+      - { es: "Espero que trabajes menos este año.", en: "I hope you work less this year.", altEs: ["Ojalá trabajes menos este año.", "Espero que este año trabajes menos."], grammar: [g.subjunctive-present-forms], vocab: [w.esperar, w.trabajar], error: { wrong: "Espero que trabajas menos este año.", explain: "After esperar que the verb goes in the subjunctive: trabajes, not trabajas.", grammar: g.subjunctive-present-forms } }
+      - { es: "Ojalá que mi abuelo viva muchos años más.", en: "I hope my grandfather lives many more years.", altEs: ["Ojalá mi abuelo viva muchos años más."], grammar: [g.subjunctive-present-forms], vocab: [w.ojala, w.vivir, w.abuelo] }
       - { es: "Esperamos que la empresa pague mejor a los jóvenes.", en: "We hope the company pays young people better.", grammar: [g.subjunctive-present-forms], vocab: [w.empresa, w.pagar, w.joven], note: "pagar → pague." }
       - { es: "Quiero que (vosotros) / escuchar / al médico", en: "I want you to listen to the doctor.", grammar: [g.subjunctive-present-forms], vocab: [w.escuchar, w.medico], transform: { instruction: "Put the verb in the present subjunctive", answer: "Quiero que escuchéis al médico.", alt: ["Quiero que vosotros escuchéis al médico."] } }
+    exchanges:
+      - q: { es: "¿Qué esperas del año nuevo?", en: "What do you hope for from the new year?" }
+        a: { es: "Espero que mi hermana apruebe el examen y que vivamos con más tranquilidad.", en: "I hope my sister passes the exam and that we live more calmly." }
+        alt: ["Que mi hermana apruebe el examen.", "Espero que vivamos con más tranquilidad."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.ano-nuevo, w.aprobar, w.tranquilidad]
+      - q: { es: "¿Cuál es tu propósito para este año?", en: "What's your resolution for this year?" }
+        a: { es: "Mis padres quieren que termine el máster, pero yo quiero independizarme.", en: "My parents want me to finish my master's, but I want to move out." }
+        alt: ["Quiero independizarme este año.", "Terminar el máster y lograr una beca."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.proposito, w.master, w.independizarse]
+      - q: { es: "¿Qué le deseas a tu amigo por su cumpleaños?", en: "What do you wish your friend for his birthday?" }
+        a: { es: "Le deseo mucha felicidad y que cumpla todos sus deseos.", en: "I wish him lots of happiness and that all his wishes come true." }
+        alt: ["Que cumpla todos sus deseos.", "Le deseo mucha salud y felicidad."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.desear, w.felicidad, w.deseo]
+      - q: { es: "Mañana tengo el examen de la beca.", en: "Tomorrow I have the exam for the grant." }
+        a: { es: "¡Ojalá apruebes! Te has esforzado mucho.", en: "I hope you pass! You've worked really hard." }
+        alt: ["Espero que apruebes.", "Ojalá que apruebes; te lo mereces."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.beca, w.aprobar, w.esforzarse]
+      - q: { es: "¿Quieres que te ayude con los deberes?", en: "Do you want me to help you with your homework?" }
+        a: { es: "Sí, gracias; necesito que me expliques este ejercicio.", en: "Yes, thanks; I need you to explain this exercise to me." }
+        alt: ["No, gracias, ya casi termino.", "Sí, por favor."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.esfuerzo]
+    texts:
+      - title: "Mensaje de año nuevo"
+        es: ["¡Feliz año nuevo a todos!", "Deseo que este año alcancéis vuestras metas y que no perdáis la ilusión.", "Y, sobre todo, mucha salud y felicidad para toda la familia."]
+        en: ["Happy New Year, everyone!", "I hope this year you reach your goals and don't lose your enthusiasm.", "And, above all, lots of health and happiness for the whole family."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.ano-nuevo, w.alcanzar, w.ilusion]
+      - title: "Nota en la nevera"
+        es: ["Hijo, espero que estudies un poco esta tarde.", "Tu padre quiere que llames a la abuela.", "Y recuerda: con esfuerzo, todo se logra."]
+        en: ["Son, I hope you study a bit this afternoon.", "Your father wants you to call Grandma.", "And remember: with effort, everything can be achieved."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.esfuerzo, w.lograr]
   - id: b1.u01.l2
     title: Tenga, haga, pida — cambios en la raíz
     teach: [g.subjunctive-present-forms]
     vocab: [w.puesto, w.sueldo, w.ascenso, w.contrato, w.fijo, w.hipoteca, w.alquiler, w.alquilar, w.compromiso, w.comprometerse, w.bienestar, w.equilibrio, w.libertad, w.seguridad, w.estabilidad, w.a-largo-plazo, w.a-corto-plazo, w.jornada, w.teletrabajo, w.profesional]
     tip: "Build the subjunctive from the yo form: tengo → tenga, hago → haga, conozco → conozca. Stem changers keep the boot (piense, vuelva); -ir verbs also change in nosotros/vosotros (pidamos, durmáis)."
     sentences:
-      - { es: "Espero que me ofrezcan un puesto fijo antes del verano.", en: "I hope they offer me a permanent position before the summer.", grammar: [g.subjunctive-present-forms], vocab: [w.puesto, w.fijo, w.ofrecer], note: "ofrezco → ofrezca." }
-      - { es: "Quiero que mi jefe me suba el sueldo este año.", en: "I want my boss to raise my salary this year.", grammar: [g.subjunctive-present-forms], vocab: [w.sueldo, w.jefe, w.subir] }
-      - { es: "Ojalá consiga el ascenso; llevo cinco años en la empresa.", en: "I hope I get the promotion; I've been at the company for five years.", grammar: [g.subjunctive-present-forms, g.desde-hace], vocab: [w.ascenso, w.conseguir, w.empresa], note: "consigo → consiga." }
+      - { es: "Espero que me ofrezcan un puesto fijo antes del verano.", en: "I hope they offer me a permanent position before the summer.", altEs: ["Ojalá me ofrezcan un puesto fijo antes del verano."], grammar: [g.subjunctive-present-forms], vocab: [w.puesto, w.fijo, w.ofrecer], note: "ofrezco → ofrezca." }
+      - { es: "Quiero que mi jefe me suba el sueldo este año.", en: "I want my boss to raise my salary this year.", altEs: ["Quiero que este año mi jefe me suba el sueldo.", "Quiero que mi jefa me suba el sueldo este año."], grammar: [g.subjunctive-present-forms], vocab: [w.sueldo, w.jefe, w.subir] }
+      - { es: "Ojalá consiga el ascenso; llevo cinco años en la empresa.", en: "I hope I get the promotion; I've been at the company for five years.", altEs: ["Ojalá que consiga el ascenso; llevo cinco años en la empresa.", "Ojalá consiga el ascenso; hace cinco años que trabajo en la empresa."], grammar: [g.subjunctive-present-forms, g.desde-hace], vocab: [w.ascenso, w.conseguir, w.empresa], note: "consigo → consiga." }
       - { es: "Mis padres prefieren que no pidamos una hipoteca tan grande.", en: "My parents would rather we didn't take out such a big mortgage.", grammar: [g.subjunctive-present-forms], vocab: [w.hipoteca, w.pedir, w.preferir], note: "pedir: pida, pidas, pida, pidamos, pidáis, pidan — nosotros and vosotros change too." }
-      - { es: "Espero que no nos vuelvan a subir el alquiler.", en: "I hope they don't raise our rent again.", grammar: [g.subjunctive-present-forms, g.volver-a], vocab: [w.alquiler, w.volver-a, w.subir] }
+      - { es: "Espero que no nos vuelvan a subir el alquiler.", en: "I hope they don't raise our rent again.", altEs: ["Espero que no vuelvan a subirnos el alquiler.", "Ojalá no nos vuelvan a subir el alquiler."], grammar: [g.subjunctive-present-forms, g.volver-a], vocab: [w.alquiler, w.volver-a, w.subir] }
       - { es: "Mi pareja quiere que alquilemos un piso con más luz antes de comprar.", en: "My partner wants us to rent a flat with more light before buying.", grammar: [g.subjunctive-present-forms], vocab: [w.alquilar, w.piso, w.pareja, w.luz] }
       - { es: "Es normal que tengáis miedo del compromiso a vuestra edad.", en: "It's normal for you to be afraid of commitment at your age.", grammar: [g.subjunctive-present-forms], vocab: [w.compromiso, w.tener-miedo.phr, w.edad], note: "tengo → tenga, tengáis." }
       - { es: "Espero que la empresa se comprometa a cumplir la jornada de ocho horas.", en: "I hope the company commits to keeping the eight-hour working day.", grammar: [g.subjunctive-present-forms], vocab: [w.comprometerse, w.cumplir, w.jornada] }
-      - { es: "Quiero que hagamos teletrabajo dos días a la semana.", en: "I want us to work from home two days a week.", grammar: [g.subjunctive-present-forms], vocab: [w.teletrabajo, w.hacer, w.semana], note: "hago → haga." }
-      - { es: "Ojalá encuentres un equilibrio entre el trabajo y la familia.", en: "I hope you find a balance between work and family.", grammar: [g.subjunctive-present-forms], vocab: [w.equilibrio, w.encontrar, w.trabajo], note: "encuentro → encuentre." }
+      - { es: "Quiero que hagamos teletrabajo dos días a la semana.", en: "I want us to work from home two days a week.", altEs: ["Quiero que trabajemos desde casa dos días a la semana."], grammar: [g.subjunctive-present-forms], vocab: [w.teletrabajo, w.hacer, w.semana], note: "hago → haga." }
+      - { es: "Ojalá encuentres un equilibrio entre el trabajo y la familia.", en: "I hope you find a balance between work and family.", altEs: ["Ojalá que encuentres un equilibrio entre el trabajo y la familia.", "Espero que encuentres un equilibrio entre el trabajo y la familia."], grammar: [g.subjunctive-present-forms], vocab: [w.equilibrio, w.encontrar, w.trabajo], note: "encuentro → encuentre." }
       - { es: "Deseo que mis hijos crezcan con libertad y seguridad.", en: "I want my children to grow up with freedom and security.", grammar: [g.subjunctive-present-forms], vocab: [w.libertad, w.seguridad, w.crecer], note: "crezco → crezca." }
       - { es: "A largo plazo, prefiero la estabilidad a un sueldo alto.", en: "In the long term, I prefer stability to a high salary.", grammar: [g.stem-changing-present], vocab: [w.a-largo-plazo, w.estabilidad, w.sueldo] }
       - { es: "A corto plazo, necesito que me digan cuándo empieza el contrato.", en: "In the short term, I need them to tell me when the contract starts.", grammar: [g.subjunctive-present-forms], vocab: [w.a-corto-plazo, w.contrato, w.decir], note: "digo → diga." }
       - { es: "Para nuestro bienestar, quiero que durmamos más y que salgamos del trabajo a nuestra hora.", en: "For our well-being, I want us to sleep more and to leave work on time.", grammar: [g.subjunctive-present-forms], vocab: [w.bienestar, w.dormir, w.salir], note: "dormir: duerma … durmamos, durmáis; salgo → salga." }
-      - { es: "Espero que mi hermano encuentre pronto un puesto fijo.", en: "I hope my brother soon finds a permanent job.", grammar: [g.subjunctive-present-forms], vocab: [w.encontrar, w.puesto, w.fijo], error: { wrong: "Espero que mi hermano encuentra pronto un puesto fijo.", explain: "Stem-changing verbs keep the change in the subjunctive and take the -e ending: encuentre.", grammar: g.subjunctive-present-forms } }
+      - { es: "Espero que mi hermano encuentre pronto un puesto fijo.", en: "I hope my brother soon finds a permanent job.", altEs: ["Espero que mi hermano encuentre un puesto fijo pronto.", "Ojalá mi hermano encuentre pronto un puesto fijo."], grammar: [g.subjunctive-present-forms], vocab: [w.encontrar, w.puesto, w.fijo], error: { wrong: "Espero que mi hermano encuentra pronto un puesto fijo.", explain: "Stem-changing verbs keep the change in the subjunctive and take the -e ending: encuentre.", grammar: g.subjunctive-present-forms } }
       - { es: "Vosotros / tener / más vacaciones (ojalá)", en: "I hope you have more holidays.", grammar: [g.subjunctive-present-forms], vocab: [w.tener, w.vacaciones], transform: { instruction: "Make a wish with ojalá", answer: "Ojalá tengáis más vacaciones.", alt: ["Ojalá que tengáis más vacaciones."] } }
+    exchanges:
+      - q: { es: "¿Qué esperas de tu nuevo trabajo?", en: "What do you hope for from your new job?" }
+        a: { es: "Espero que me hagan un contrato fijo y que tenga una jornada de ocho horas.", en: "I hope they give me a permanent contract and that I have an eight-hour working day." }
+        alt: ["Espero que me ofrezcan un contrato fijo.", "Que tenga un buen sueldo y estabilidad."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.contrato, w.fijo, w.jornada]
+      - q: { es: "¿Vais a pedir una hipoteca?", en: "Are you going to take out a mortgage?" }
+        a: { es: "No lo sé; mi pareja prefiere que sigamos de alquiler un año más.", en: "I don't know; my partner prefers that we carry on renting for another year." }
+        alt: ["Todavía no; preferimos esperar un año más.", "Sí, pero queremos que el banco nos explique las condiciones primero."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.hipoteca, w.alquiler, w.pareja]
+      - q: { es: "¿Puedo hacer teletrabajo los viernes?", en: "Can I work from home on Fridays?" }
+        a: { es: "Sí, pero quiero que vengas a la oficina los lunes.", en: "Yes, but I want you to come to the office on Mondays." }
+        alt: ["Claro, siempre que vengas los lunes a la reunión.", "De momento no; prefiero que trabajemos todos aquí."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.teletrabajo]
+      - q: { es: "¿Qué le pides a la empresa?", en: "What are you asking the company for?" }
+        a: { es: "Le pido que me suba el sueldo y que respete mi jornada.", en: "I'm asking them to raise my salary and to respect my working hours." }
+        alt: ["Que me suba el sueldo.", "Un ascenso y más estabilidad."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.sueldo, w.jornada, w.ascenso]
+      - q: { es: "Tengo una entrevista para un puesto mejor.", en: "I have an interview for a better job." }
+        a: { es: "¡Ojalá te lo ofrezcan! Te lo mereces.", en: "I hope they offer it to you! You deserve it." }
+        alt: ["Espero que lo consigas.", "Ojalá consigas el puesto."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.puesto, w.ofrecer]
+    texts:
+      - title: "Correo del jefe"
+        es: ["Buenos días a todos.", "Quiero que el equipo tenga más equilibrio entre el trabajo y la familia.", "Por eso, a partir de mayo podréis hacer teletrabajo dos días a la semana.", "Espero que la medida os ayude."]
+        en: ["Good morning, everyone.", "I want the team to have more balance between work and family.", "That's why, from May, you'll be able to work from home two days a week.", "I hope the measure helps you."]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.equilibrio, w.teletrabajo]
+      - title: "Mensaje a mi pareja"
+        es: ["Oye, el banco quiere que pidamos la hipoteca antes del verano.", "Yo prefiero que no tengamos prisa.", "¿Hablamos esta noche?"]
+        en: ["Hey, the bank wants us to apply for the mortgage before the summer.", "I'd rather we didn't rush.", "Shall we talk tonight?"]
+        grammar: [g.subjunctive-present-forms]
+        vocab: [w.hipoteca, w.pedir]
   - id: b1.u01.l3
     title: Querer que, pedir que, ojalá
     teach: [g.subjunctive-wishes]
@@ -52,43 +126,117 @@ lessons:
     tip: "Same subject → infinitive (Quiero viajar). New subject → que + subjunctive (Quiero que viajes). Ojalá and a bare que + subjunctive express wishes."
     sentences:
       - { es: "Quiero montar un negocio, pero mi familia quiere que busque un trabajo fijo.", en: "I want to set up a business, but my family wants me to look for a permanent job.", grammar: [g.subjunctive-wishes], vocab: [w.negocio, w.buscar, w.fijo], note: "montar un negocio = to set up a business." }
-      - { es: "Mis padres no quieren que invierta todo mi dinero en el proyecto.", en: "My parents don't want me to invest all my money in the project.", grammar: [g.subjunctive-wishes], vocab: [w.invertir, w.dinero, w.proyecto] }
-      - { es: "Te pido que me apoyes si decido emprender.", en: "I'm asking you to support me if I decide to start a business.", grammar: [g.subjunctive-wishes, g.si-present-future], vocab: [w.apoyar, w.emprender, w.pedir] }
-      - { es: "El banco exige que tengamos un plan de negocio claro.", en: "The bank demands that we have a clear business plan.", grammar: [g.subjunctive-wishes], vocab: [w.exigir, w.plan, w.negocio] }
+      - { es: "Mis padres no quieren que invierta todo mi dinero en el proyecto.", en: "My parents don't want me to invest all my money in the project.", altEs: ["Mis padres no quieren que yo invierta todo mi dinero en el proyecto."], grammar: [g.subjunctive-wishes], vocab: [w.invertir, w.dinero, w.proyecto] }
+      - { es: "Te pido que me apoyes si decido emprender.", en: "I'm asking you to support me if I decide to start a business.", altEs: ["Te pido que me apoyes si decido montar un negocio."], grammar: [g.subjunctive-wishes, g.si-present-future], vocab: [w.apoyar, w.emprender, w.pedir] }
+      - { es: "El banco exige que tengamos un plan de negocio claro.", en: "The bank demands that we have a clear business plan.", altEs: ["El banco nos exige que tengamos un plan de negocio claro."], grammar: [g.subjunctive-wishes], vocab: [w.exigir, w.plan, w.negocio] }
       - { es: "Mi hermana insiste en que trabajemos como autónomos el primer año.", en: "My sister insists that we work as self-employed people the first year.", grammar: [g.subjunctive-wishes], vocab: [w.insistir, w.autonomo, w.trabajar] }
-      - { es: "Le rogamos que llame antes de venir.", en: "We kindly ask you to call before coming.", grammar: [g.subjunctive-wishes], vocab: [w.rogar, w.llamar, w.venir], note: "Formal register (usted)." }
+      - { es: "Le rogamos que llame antes de venir.", en: "We kindly ask you to call before coming.", altEs: ["Le rogamos que nos llame antes de venir.", "Le pedimos que llame antes de venir."], grammar: [g.subjunctive-wishes], vocab: [w.rogar, w.llamar, w.venir], note: "Formal register (usted)." }
       - { es: "El ayuntamiento no permite que los bares pongan música después de las doce.", en: "The council doesn't allow bars to play music after midnight.", grammar: [g.subjunctive-wishes], vocab: [w.permitir, w.ayuntamiento, w.musica] }
-      - { es: "El médico me prohíbe que fume, y espero dejarlo este año.", en: "The doctor forbids me to smoke, and I hope to quit this year.", grammar: [g.subjunctive-wishes], vocab: [w.prohibir, w.fumar, w.dejar-de], note: "espero + infinitive: same subject." }
+      - { es: "El médico me prohíbe que fume, y espero dejarlo este año.", en: "The doctor forbids me to smoke, and I hope to quit this year.", altEs: ["El médico me prohíbe fumar, y espero dejarlo este año."], grammar: [g.subjunctive-wishes], vocab: [w.prohibir, w.fumar, w.dejar-de], note: "espero + infinitive: same subject." }
       - { es: "¡Enhorabuena por el nuevo trabajo! Que te vaya muy bien.", en: "Congratulations on the new job! All the best.", grammar: [g.subjunctive-wishes, g.subjunctive-irregular], vocab: [w.enhorabuena, w.que-te-vaya-bien, w.trabajo], variant: "Latin America: ¡Felicitaciones!" }
       - { es: "Brindemos por Marta: ¡que tenga mucha suerte en Alemania!", en: "Let's drink to Marta: may she have lots of luck in Germany!", grammar: [g.subjunctive-wishes], vocab: [w.brindar, w.suerte], note: "brindemos = let's toast; the nosotros command is the subjunctive form." }
       - { es: "Después del brindis, todos felicitaron a los novios.", en: "After the toast, everyone congratulated the bride and groom.", grammar: [g.preterite-regular, g.a-personal], vocab: [w.brindis, w.felicitar, w.novio] }
       - { es: "¡Que aproveche! — Gracias, ¿quieres probar?", en: "Enjoy your meal! — Thanks, do you want to try some?", grammar: [g.subjunctive-wishes], vocab: [w.que-aproveche, w.probar], variant: "Latin America: ¡Buen provecho!" }
-      - { es: "Ojalá tengamos la oportunidad de volver a trabajar juntos.", en: "I hope we have the chance to work together again.", grammar: [g.subjunctive-wishes, g.volver-a], vocab: [w.oportunidad, w.ojala, w.volver-a] }
+      - { es: "Ojalá tengamos la oportunidad de volver a trabajar juntos.", en: "I hope we have the chance to work together again.", altEs: ["Ojalá que tengamos la oportunidad de volver a trabajar juntos.", "Espero que tengamos la oportunidad de trabajar juntos otra vez."], grammar: [g.subjunctive-wishes, g.volver-a], vocab: [w.oportunidad, w.ojala, w.volver-a] }
       - { es: "Necesito el apoyo de mi familia para dar este paso.", en: "I need my family's support to take this step.", grammar: [g.por-vs-para], vocab: [w.apoyo, w.familia, w.paso] }
-      - { es: "Espero que vengas a mi fiesta el sábado.", en: "I hope you come to my party on Saturday.", grammar: [g.subjunctive-wishes], vocab: [w.esperar, w.venir, w.fiesta], error: { wrong: "Espero que venir a mi fiesta el sábado.", explain: "With a new subject you need que + subjunctive, not the infinitive: espero que vengas.", grammar: g.subjunctive-wishes } }
+      - { es: "Espero que vengas a mi fiesta el sábado.", en: "I hope you come to my party on Saturday.", altEs: ["Espero que el sábado vengas a mi fiesta.", "Ojalá vengas a mi fiesta el sábado."], grammar: [g.subjunctive-wishes], vocab: [w.esperar, w.venir, w.fiesta], error: { wrong: "Espero que venir a mi fiesta el sábado.", explain: "With a new subject you need que + subjunctive, not the infinitive: espero que vengas.", grammar: g.subjunctive-wishes } }
       - { es: "Prefiero quedarme en casa.", en: "I prefer to stay at home.", grammar: [g.subjunctive-wishes], vocab: [w.preferir, w.quedarse], transform: { instruction: "Make the second verb refer to tú", answer: "Prefiero que te quedes en casa.", alt: ["Prefiero que tú te quedes en casa."] } }
+    exchanges:
+      - q: { es: "¿Quieres venir con nosotros al cine?", en: "Do you want to come to the cinema with us?" }
+        a: { es: "Quiero ir, pero mis padres no me permiten que salga entre semana.", en: "I want to go, but my parents don't allow me to go out during the week." }
+        alt: ["Me encantaría, pero mis padres quieren que estudie esta tarde.", "Sí, quiero ir."]
+        grammar: [g.subjunctive-wishes]
+        vocab: [w.permitir]
+      - q: { es: "Voy a montar mi propio negocio.", en: "I'm going to set up my own business." }
+        a: { es: "¡Enhorabuena! Espero que te vaya muy bien.", en: "Congratulations! I hope it goes really well for you." }
+        alt: ["¡Que te vaya bien!", "Pues te pido que no inviertas todos tus ahorros."]
+        grammar: [g.subjunctive-wishes]
+        vocab: [w.negocio, w.enhorabuena, w.que-te-vaya-bien]
+      - q: { es: "¿Qué te pide tu jefe?", en: "What is your boss asking of you?" }
+        a: { es: "Insiste en que trabaje este sábado, pero yo quiero descansar.", en: "He insists that I work this Saturday, but I want to rest." }
+        alt: ["Me pide que termine el informe hoy.", "Exige que lleguemos a las ocho en punto."]
+        grammar: [g.subjunctive-wishes]
+        vocab: [w.insistir, w.exigir]
+      - q: { es: "¡Que aproveche!", en: "Enjoy your meal!" }
+        a: { es: "Gracias. ¿Quieres probar un poco?", en: "Thanks. Do you want to try a bit?" }
+        alt: ["Gracias, igualmente.", "Muchas gracias."]
+        grammar: [g.subjunctive-wishes]
+        vocab: [w.que-aproveche, w.probar]
+      - q: { es: "¿Brindamos?", en: "Shall we toast?" }
+        a: { es: "Sí: ¡que seáis muy felices y que tengáis mucha suerte!", en: "Yes: may you be very happy and have lots of luck!" }
+        alt: ["¡Por los novios! Que sean muy felices.", "Claro, brindemos por el nuevo negocio."]
+        grammar: [g.subjunctive-wishes, g.subjunctive-irregular]
+        vocab: [w.brindar, w.suerte]
+    texts:
+      - title: "Tarjeta de boda"
+        es: ["Queridos Marta y Hugo:", "Os deseamos que seáis muy felices y que la vida os traiga muchas oportunidades.", "¡Enhorabuena y que os vaya muy bien!"]
+        en: ["Dear Marta and Hugo,", "We hope you'll be very happy and that life brings you many opportunities.", "Congratulations, and all the best!"]
+        grammar: [g.subjunctive-wishes, g.subjunctive-irregular]
+        vocab: [w.oportunidad, w.enhorabuena]
+      - title: "Mensaje del banco"
+        es: ["Estimado cliente:", "Le rogamos que llame a su oficina antes del viernes.", "Necesitamos que firme el nuevo contrato.", "Gracias por su confianza."]
+        en: ["Dear customer,", "We kindly ask you to call your branch before Friday.", "We need you to sign the new contract.", "Thank you for your trust."]
+        grammar: [g.subjunctive-wishes]
+        vocab: [w.rogar, w.contrato]
   - id: b1.u01.l4
     title: Sea, esté, vaya, haya — los irregulares
     teach: [g.subjunctive-irregular]
     vocab: [w.empleo, w.paro, w.entrevista, w.curriculum, w.candidato, w.solicitar, w.solicitud, w.rechazar, w.aceptar, w.posibilidad, w.merecer, w.dedicarse, w.rendirse, w.renunciar, w.intentar, w.realidad, w.oposicion, w.funcionario, w.experiencia-laboral, w.preparar]
     tip: "Six verbs break the yo-form rule: ser → sea, estar → esté, ir → vaya, haber → haya, saber → sepa, dar → dé."
     sentences:
-      - { es: "Espero que la entrevista sea por la mañana y no por la tarde.", en: "I hope the interview is in the morning and not in the afternoon.", grammar: [g.subjunctive-irregular], vocab: [w.entrevista, w.ser, w.esperar] }
-      - { es: "Quiero que mi currículum esté listo antes del lunes.", en: "I want my CV to be ready before Monday.", grammar: [g.subjunctive-irregular], vocab: [w.curriculum, w.estar, w.listo] }
-      - { es: "Ojalá haya muchas ofertas de empleo este otoño.", en: "I hope there are lots of job offers this autumn.", grammar: [g.subjunctive-irregular], vocab: [w.haber, w.empleo, w.oferta], note: "hay → haya." }
-      - { es: "Es importante que los candidatos sepan hablar inglés.", en: "It's important that the candidates can speak English.", grammar: [g.subjunctive-irregular], vocab: [w.candidato, w.saber, w.ingles] }
+      - { es: "Espero que la entrevista sea por la mañana y no por la tarde.", en: "I hope the interview is in the morning and not in the afternoon.", altEs: ["Ojalá la entrevista sea por la mañana y no por la tarde."], grammar: [g.subjunctive-irregular], vocab: [w.entrevista, w.ser, w.esperar] }
+      - { es: "Quiero que mi currículum esté listo antes del lunes.", en: "I want my CV to be ready before Monday.", altEs: ["Quiero que mi currículum esté listo para el lunes.", "Quiero tener el currículum listo antes del lunes."], grammar: [g.subjunctive-irregular], vocab: [w.curriculum, w.estar, w.listo] }
+      - { es: "Ojalá haya muchas ofertas de empleo este otoño.", en: "I hope there are lots of job offers this autumn.", altEs: ["Ojalá que haya muchas ofertas de empleo este otoño.", "Espero que haya muchas ofertas de trabajo este otoño."], grammar: [g.subjunctive-irregular], vocab: [w.haber, w.empleo, w.oferta], note: "hay → haya." }
+      - { es: "Es importante que los candidatos sepan hablar inglés.", en: "It's important that the candidates can speak English.", altEs: ["Es importante que los candidatos sepan inglés."], grammar: [g.subjunctive-irregular], vocab: [w.candidato, w.saber, w.ingles] }
       - { es: "Espero que me den una respuesta esta semana; he solicitado tres puestos.", en: "I hope they give me an answer this week; I've applied for three positions.", grammar: [g.subjunctive-irregular, g.present-perfect], vocab: [w.dar, w.respuesta, w.solicitar] }
-      - { es: "Han rechazado mi solicitud, pero no quiero que esto sea el final.", en: "They've rejected my application, but I don't want this to be the end.", grammar: [g.subjunctive-irregular, g.present-perfect], vocab: [w.rechazar, w.solicitud, w.final] }
+      - { es: "Han rechazado mi solicitud, pero no quiero que esto sea el final.", en: "They've rejected my application, but I don't want this to be the end.", altEs: ["Me han rechazado la solicitud, pero no quiero que esto sea el final."], grammar: [g.subjunctive-irregular, g.present-perfect], vocab: [w.rechazar, w.solicitud, w.final] }
       - { es: "Después de dos años en el paro, por fin ha aceptado un empleo a media jornada.", en: "After two years unemployed, she has finally accepted a part-time job.", grammar: [g.present-perfect], vocab: [w.paro, w.aceptar, w.empleo, w.jornada], variant: "Latin America: desempleo rather than paro." }
       - { es: "Mi hermano quiere ser funcionario y está preparando oposiciones.", en: "My brother wants to be a civil servant and is preparing for the civil-service exams.", grammar: [g.estar-gerund], vocab: [w.funcionario, w.oposicion, w.preparar], note: "oposiciones: the competitive public exams for a permanent state job in Spain." }
       - { es: "¿A qué te dedicas? — Ahora estoy en el paro, pero espero que eso cambie pronto.", en: "What do you do for a living? — I'm unemployed at the moment, but I hope that changes soon.", grammar: [g.subjunctive-present-forms], vocab: [w.dedicarse, w.paro, w.cambiar] }
-      - { es: "No te rindas: mereces ese puesto.", en: "Don't give up: you deserve that job.", grammar: [g.imperative-tu], vocab: [w.rendirse, w.merecer, w.puesto], note: "Negative commands use the subjunctive form (unit 4)." }
+      - { es: "No te rindas: mereces ese puesto.", en: "Don't give up: you deserve that job.", altEs: ["No te rindas: te mereces ese puesto."], grammar: [g.imperative-tu], vocab: [w.rendirse, w.merecer, w.puesto], note: "Negative commands use the subjunctive form (unit 4)." }
       - { es: "Existe la posibilidad de que no haya plazas este año.", en: "There's a chance there won't be any places this year.", grammar: [g.subjunctive-irregular], vocab: [w.posibilidad, w.haber, w.plaza] }
       - { es: "Quiero que sepáis que he renunciado a la oferta de Madrid.", en: "I want you to know that I've turned down the offer from Madrid.", grammar: [g.subjunctive-irregular, g.present-perfect], vocab: [w.saber, w.renunciar, w.oferta] }
       - { es: "Intentaré hacer realidad mi sueño, aunque sea difícil.", en: "I'll try to make my dream come true, even if it's hard.", grammar: [g.subjunctive-irregular, g.future-simple], vocab: [w.intentar, w.realidad, w.sueno, w.aunque] }
       - { es: "Piden dos años de experiencia laboral y que el candidato sepa alemán.", en: "They ask for two years of work experience and that the candidate knows German.", grammar: [g.subjunctive-irregular], vocab: [w.experiencia-laboral, w.candidato, w.aleman] }
-      - { es: "Espero que la entrevista vaya bien y que no haya problemas.", en: "I hope the interview goes well and that there are no problems.", grammar: [g.subjunctive-irregular], vocab: [w.entrevista, w.ir, w.haber], error: { wrong: "Espero que la entrevista vaya bien y que no haiga problemas.", explain: "The subjunctive of haber is haya; haiga is a common non-standard form.", grammar: g.subjunctive-irregular } }
+      - { es: "Espero que la entrevista vaya bien y que no haya problemas.", en: "I hope the interview goes well and that there are no problems.", altEs: ["Espero que la entrevista vaya bien y no haya problemas.", "Ojalá la entrevista vaya bien y no haya problemas."], grammar: [g.subjunctive-irregular], vocab: [w.entrevista, w.ir, w.haber], error: { wrong: "Espero que la entrevista vaya bien y que no haiga problemas.", explain: "The subjunctive of haber is haya; haiga is a common non-standard form.", grammar: g.subjunctive-irregular } }
       - { es: "La reunión / ser / corta (ojalá)", en: "I hope the meeting is short.", grammar: [g.subjunctive-irregular], vocab: [w.reunion, w.ser, w.corto], transform: { instruction: "Make a wish with ojalá", answer: "Ojalá la reunión sea corta.", alt: ["Ojalá que la reunión sea corta."] } }
+    exchanges:
+      - q: { es: "¿Cómo quieres que sea tu próximo trabajo?", en: "What do you want your next job to be like?" }
+        a: { es: "Quiero que esté cerca de casa y que haya un buen ambiente.", en: "I want it to be close to home and for there to be a good atmosphere." }
+        alt: ["Que sea fijo y que el sueldo sea bueno.", "Quiero que me dé libertad y que esté bien pagado."]
+        grammar: [g.subjunctive-irregular]
+        vocab: [w.trabajo, w.estar, w.haber]
+      - q: { es: "¿Has enviado ya el currículum?", en: "Have you sent your CV yet?" }
+        a: { es: "Sí, y espero que me den una entrevista pronto.", en: "Yes, and I hope they give me an interview soon." }
+        alt: ["Todavía no; quiero que esté perfecto antes de enviarlo.", "Sí, ojalá me llamen."]
+        grammar: [g.subjunctive-irregular, g.ya-todavia]
+        vocab: [w.curriculum, w.entrevista, w.dar]
+      - q: { es: "Han rechazado mi solicitud otra vez.", en: "They've rejected my application again." }
+        a: { es: "No te rindas; es importante que lo sigas intentando.", en: "Don't give up; it's important that you keep trying." }
+        alt: ["Lo siento. Ojalá haya más ofertas pronto.", "Qué pena. Espero que la próxima vez te vaya mejor."]
+        grammar: [g.subjunctive-irregular]
+        vocab: [w.rechazar, w.solicitud, w.rendirse, w.intentar]
+      - q: { es: "¿A qué te dedicas?", en: "What do you do for a living?" }
+        a: { es: "Soy funcionaria; aprobé las oposiciones hace dos años.", en: "I'm a civil servant; I passed the civil-service exams two years ago." }
+        alt: ["Estoy en el paro, pero espero que eso cambie pronto.", "Me dedico a la educación: soy profesor."]
+        grammar: [g.preterite-regular]
+        vocab: [w.dedicarse, w.funcionario, w.oposicion, w.paro]
+      - q: { es: "¿Quieres que vaya contigo a la entrevista?", en: "Do you want me to go with you to the interview?" }
+        a: { es: "No hace falta, pero quiero que estés cerca por si acaso.", en: "There's no need, but I want you to be nearby just in case." }
+        alt: ["Sí, prefiero que vengas conmigo.", "No, gracias; es mejor que vaya sola."]
+        grammar: [g.subjunctive-irregular]
+        vocab: [w.entrevista, w.ir, w.estar]
+    texts:
+      - title: "Aviso de la empresa"
+        es: ["Gracias por su solicitud.", "Es necesario que los candidatos sepan inglés y que tengan dos años de experiencia laboral.", "Esperamos que pueda venir a la entrevista el lunes a las diez."]
+        en: ["Thank you for your application.", "Candidates need to know English and have two years of work experience.", "We hope you can come to the interview on Monday at ten."]
+        grammar: [g.subjunctive-irregular]
+        vocab: [w.solicitud, w.candidato, w.experiencia-laboral]
+      - title: "Mensaje a un amigo"
+        es: ["¡Mucha suerte mañana!", "Espero que la entrevista vaya bien y que no estés nervioso.", "Ojalá te den el puesto: te lo mereces."]
+        en: ["Good luck tomorrow!", "I hope the interview goes well and that you're not nervous.", "I hope they give you the job: you deserve it."]
+        grammar: [g.subjunctive-irregular]
+        vocab: [w.entrevista, w.merecer, w.puesto]
 dialogues:
   - id: b1.u01.d1
     title: Propósitos de año nuevo

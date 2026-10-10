@@ -7,86 +7,234 @@ lessons:
     vocab: [w.quien.rel, w.lo-que, w.inquilino, w.inmobiliaria, w.edificio, w.ascensor, w.terraza, w.balcon, w.garaje, w.trastero, w.aire-acondicionado, w.amueblado, w.luminoso, w.exterior, w.interior, w.reformado, w.cuadrado, w.acogedor, w.amplio, w.estado, w.propietario, w.calefaccion, w.arriba]
     tip: "que works for people and things; after a preposition use el/la que or quien (people): la casa en la que vivo, el amigo con quien viajé. lo que = what."
     sentences:
-      - { es: "El piso que hemos alquilado tiene dos dormitorios y una terraza muy grande.", en: "The flat we've rented has two bedrooms and a very big terrace.", grammar: [g.relative-que-quien, g.present-perfect], vocab: [w.terraza, w.piso, w.dormitorio] }
+      - { es: "El piso que hemos alquilado tiene dos dormitorios y una terraza muy grande.", en: "The flat we've rented has two bedrooms and a very big terrace.", altEs: ["El piso que alquilamos tiene dos dormitorios y una terraza muy grande.", "El piso que hemos alquilado tiene dos habitaciones y una terraza muy grande."], grammar: [g.relative-que-quien, g.present-perfect], vocab: [w.terraza, w.piso, w.dormitorio] }
       - { es: "La inmobiliaria que nos enseñó el piso no nos dijo que el edificio no tenía ascensor.", en: "The estate agency that showed us the flat didn't tell us the building had no lift.", grammar: [g.relative-que-quien, g.preterite-vs-imperfect], vocab: [w.inmobiliaria, w.edificio, w.ascensor] }
-      - { es: "Los inquilinos que vivían aquí antes dejaron el salón muy sucio.", en: "The tenants who lived here before left the living room very dirty.", grammar: [g.relative-que-quien, g.imperfect], vocab: [w.inquilino, w.salon, w.sucio] }
+      - { es: "Los inquilinos que vivían aquí antes dejaron el salón muy sucio.", en: "The tenants who lived here before left the living room very dirty.", altEs: ["Los inquilinos que vivían antes aquí dejaron el salón muy sucio."], grammar: [g.relative-que-quien, g.imperfect], vocab: [w.inquilino, w.salon, w.sucio] }
       - { es: "Vivo en un edificio antiguo que tiene un patio interior muy luminoso.", en: "I live in an old building that has a very bright inner courtyard.", grammar: [g.relative-que-quien], vocab: [w.edificio, w.interior, w.luminoso, w.patio] }
-      - { es: "La chica con la que vivo trabaja de noche, así que casi nunca la veo.", en: "The girl I live with works nights, so I hardly ever see her.", grammar: [g.relative-que-quien], vocab: [w.vivir, w.trabajar, w.asi-que], note: "The preposition goes before the relative: con la que, never at the end." }
-      - { es: "El propietario, que es muy amable, nos dejó el piso amueblado.", en: "The owner, who is very kind, left us the flat furnished.", grammar: [g.relative-que-quien], vocab: [w.propietario, w.amueblado, w.amable, w.dejar], note: "Commas = extra information about someone already identified." }
-      - { es: "La casa en la que crecí tenía un garaje y un trastero lleno de cosas viejas.", en: "The house I grew up in had a garage and a storage room full of old things.", grammar: [g.relative-que-quien, g.imperfect-uses], vocab: [w.garaje, w.trastero, w.crecer] }
+      - { es: "La chica con la que vivo trabaja de noche, así que casi nunca la veo.", en: "The girl I live with works nights, so I hardly ever see her.", altEs: ["La chica con quien vivo trabaja de noche, así que casi nunca la veo."], grammar: [g.relative-que-quien], vocab: [w.vivir, w.trabajar, w.asi-que], note: "The preposition goes before the relative: con la que, never at the end." }
+      - { es: "El propietario, que es muy amable, nos dejó el piso amueblado.", en: "The owner, who is very kind, left us the flat furnished.", altEs: ["El dueño, que es muy amable, nos dejó el piso amueblado.", "El propietario, que es muy simpático, nos dejó el piso amueblado."], grammar: [g.relative-que-quien], vocab: [w.propietario, w.amueblado, w.amable, w.dejar], note: "Commas = extra information about someone already identified." }
+      - { es: "La casa en la que crecí tenía un garaje y un trastero lleno de cosas viejas.", en: "The house I grew up in had a garage and a storage room full of old things.", altEs: ["La casa donde crecí tenía un garaje y un trastero lleno de cosas viejas.", "La casa en que crecí tenía un garaje y un trastero lleno de cosas viejas."], grammar: [g.relative-que-quien, g.imperfect-uses], vocab: [w.garaje, w.trastero, w.crecer] }
       - { es: "Lo que más me gusta del piso es el balcón exterior, que da a la plaza.", en: "What I like most about the flat is the balcony facing the street, which looks onto the square.", grammar: [g.relative-que-quien], vocab: [w.lo-que, w.balcon, w.exterior, w.plaza], note: "dar a = to look onto, to face." }
       - { es: "Lo que no entiendo es por qué un piso de sesenta metros cuadrados cuesta tanto.", en: "What I don't understand is why a sixty-square-metre flat costs so much.", grammar: [g.relative-que-quien], vocab: [w.lo-que, w.cuadrado, w.metro, w.costar] }
       - { es: "Mis vecinos de arriba, a quienes conozco desde hace años, se mudan a otro barrio.", en: "My upstairs neighbours, whom I've known for years, are moving to another neighbourhood.", grammar: [g.relative-que-quien, g.a-personal, g.desde-hace], vocab: [w.quien.rel, w.arriba, w.vecino, w.mudarse, w.barrio] }
-      - { es: "El hombre con quien hablamos nos recomendó poner aire acondicionado en el salón.", en: "The man we spoke to recommended that we put air conditioning in the living room.", grammar: [g.relative-que-quien], vocab: [w.quien.rel, w.aire-acondicionado, w.recomendar, w.salon] }
+      - { es: "El hombre con quien hablamos nos recomendó poner aire acondicionado en el salón.", en: "The man we spoke to recommended that we put air conditioning in the living room.", altEs: ["El hombre con el que hablamos nos recomendó poner aire acondicionado en el salón."], grammar: [g.relative-que-quien], vocab: [w.quien.rel, w.aire-acondicionado, w.recomendar, w.salon] }
       - { es: "Es un piso acogedor y amplio, pero está en muy mal estado.", en: "It's a cosy, spacious flat, but it's in very bad condition.", grammar: [g.ser-vs-estar-basics], vocab: [w.acogedor, w.amplio, w.estado] }
-      - { es: "Quien vive en el centro no necesita coche.", en: "Anyone who lives in the centre doesn't need a car.", grammar: [g.relative-que-quien], vocab: [w.quien.rel, w.centro, w.coche, w.necesitar], note: "quien without a noun before it = whoever, anyone who." }
+      - { es: "Quien vive en el centro no necesita coche.", en: "Anyone who lives in the centre doesn't need a car.", altEs: ["El que vive en el centro no necesita coche.", "La gente que vive en el centro no necesita coche."], grammar: [g.relative-que-quien], vocab: [w.quien.rel, w.centro, w.coche, w.necesitar], note: "quien without a noun before it = whoever, anyone who." }
       - { es: "La casa en la que vivo está cerca del metro.", en: "The house I live in is near the metro.", grammar: [g.relative-que-quien], vocab: [w.casa, w.metro, w.cerca], error: { wrong: "La casa que vivo está cerca del metro.", explain: "vivir en: after a preposition the relative needs the article: la casa en la que vivo.", grammar: g.relative-que-quien } }
       - { es: "El piso tiene calefacción. / Alquilamos el piso ayer.", en: "The flat we rented yesterday has heating.", grammar: [g.relative-que-quien], vocab: [w.piso, w.calefaccion, w.ayer], transform: { instruction: "Join the two sentences with que", answer: "El piso que alquilamos ayer tiene calefacción.", alt: ["El piso que ayer alquilamos tiene calefacción."] } }
+    exchanges:
+      - q: { es: "¿Cómo es el piso que habéis alquilado?", en: "What's the flat you've rented like?" }
+        a: { es: "Es un piso luminoso que tiene dos dormitorios y una terraza grande.", en: "It's a bright flat that has two bedrooms and a big terrace." }
+        alt: ["Es pequeño, pero lo que más me gusta es el balcón.", "Está en un edificio antiguo que no tiene ascensor."]
+        grammar: [g.relative-que-quien]
+        vocab: [w.luminoso, w.terraza, w.balcon]
+      - q: { es: "¿Quién es la chica con la que vives?", en: "Who's the girl you live with?" }
+        a: { es: "Es una compañera de trabajo que trabaja de noche.", en: "She's a colleague who works nights." }
+        alt: ["Es la hija del propietario.", "Una amiga a quien conozco desde el colegio."]
+        grammar: [g.relative-que-quien]
+        vocab: [w.quien.rel, w.propietario]
+      - q: { es: "¿Qué es lo que no te gusta del piso?", en: "What is it you don't like about the flat?" }
+        a: { es: "Lo que no me gusta es que está en muy mal estado.", en: "What I don't like is that it's in very bad condition." }
+        alt: ["El trastero, que está lleno de cosas viejas.", "Lo que menos me gusta es el precio."]
+        grammar: [g.relative-que-quien]
+        vocab: [w.lo-que, w.estado, w.trastero]
+      - q: { es: "¿Conoces a los vecinos de arriba?", en: "Do you know the upstairs neighbours?" }
+        a: { es: "Sí, son una pareja a la que conozco desde hace años.", en: "Yes, they're a couple I've known for years." }
+        alt: ["No, son inquilinos que llegaron el mes pasado.", "Solo al hombre con quien hablo en el ascensor."]
+        grammar: [g.relative-que-quien, g.desde-hace]
+        vocab: [w.arriba, w.inquilino, w.ascensor]
+      - q: { es: "¿Qué te dijo la inmobiliaria?", en: "What did the estate agency tell you?" }
+        a: { es: "Que el piso que vimos ayer ya está alquilado.", en: "That the flat we saw yesterday is already rented." }
+        alt: ["Lo que me dijo no me gustó: el edificio no tiene calefacción.", "Nada nuevo."]
+        grammar: [g.relative-que-quien]
+        vocab: [w.inmobiliaria, w.calefaccion]
+    texts:
+      - title: "Anuncio de un piso"
+        es: ["Piso amueblado y reformado en un edificio con ascensor.", "Tiene un salón amplio que da a una plaza tranquila.", "Lo que más destaca es la terraza, que tiene vistas al río."]
+        en: ["Furnished, renovated flat in a building with a lift.", "It has a spacious living room that looks onto a quiet square.", "What stands out most is the terrace, which has views of the river."]
+        grammar: [g.relative-que-quien]
+        vocab: [w.amueblado, w.reformado, w.amplio, w.lo-que]
+      - title: "Mensaje al propietario"
+        es: ["Buenos días, soy la inquilina del tercero.", "El ascensor que arreglaron la semana pasada no funciona otra vez.", "Lo que necesitamos es que venga alguien hoy, por favor."]
+        en: ["Good morning, I'm the tenant on the third floor.", "The lift they fixed last week isn't working again.", "What we need is for someone to come today, please."]
+        grammar: [g.relative-que-quien]
+        vocab: [w.inquilino, w.ascensor, w.lo-que]
   - id: b1.u07.l2
     title: El pueblo donde nací — donde, cuyo, el cual
     teach: [g.relative-donde-cuyo]
     vocab: [w.donde.rel, w.cuyo, w.cual.rel, w.zona, w.afueras, w.centrico, w.comunidad, w.habitante, w.autor, w.empresario, w.arquitecto, w.disenar, w.dueno, w.rincon, w.local.adj, w.destacar, w.soleado, w.alcalde, w.unico]
     tip: "donde = en el que (place); cuyo/a/os/as = whose and agrees with the thing owned, not the owner; el cual / la cual is the formal option after prepositions."
     sentences:
-      - { es: "El pueblo donde nací tiene menos de mil habitantes y un alcalde que conoce a todos.", en: "The village where I was born has fewer than a thousand inhabitants and a mayor who knows everyone.", grammar: [g.relative-donde-cuyo, g.relative-que-quien], vocab: [w.donde.rel, w.habitante, w.alcalde, w.pueblo, w.nacer] }
-      - { es: "Vivimos en una zona muy céntrica donde hay tiendas, bares y mucho ruido.", en: "We live in a very central area where there are shops, bars and a lot of noise.", grammar: [g.relative-donde-cuyo], vocab: [w.zona, w.centrico, w.donde.rel, w.ruido] }
+      - { es: "El pueblo donde nací tiene menos de mil habitantes y un alcalde que conoce a todos.", en: "The village where I was born has fewer than a thousand inhabitants and a mayor who knows everyone.", altEs: ["El pueblo en el que nací tiene menos de mil habitantes y un alcalde que conoce a todos.", "El pueblo en que nací tiene menos de mil habitantes y un alcalde que conoce a todos."], grammar: [g.relative-donde-cuyo, g.relative-que-quien], vocab: [w.donde.rel, w.habitante, w.alcalde, w.pueblo, w.nacer] }
+      - { es: "Vivimos en una zona muy céntrica donde hay tiendas, bares y mucho ruido.", en: "We live in a very central area where there are shops, bars and a lot of noise.", altEs: ["Vivimos en una zona muy céntrica en la que hay tiendas, bares y mucho ruido."], grammar: [g.relative-donde-cuyo], vocab: [w.zona, w.centrico, w.donde.rel, w.ruido] }
       - { es: "Mis padres se han mudado a las afueras, donde las casas son más baratas y tienen jardín.", en: "My parents have moved to the outskirts, where the houses are cheaper and have gardens.", grammar: [g.relative-donde-cuyo, g.present-perfect], vocab: [w.afueras, w.donde.rel, w.jardin, w.mudarse] }
       - { es: "Este es el rincón de la casa donde más tiempo paso: la terraza soleada.", en: "This is the corner of the house where I spend the most time: the sunny terrace.", grammar: [g.relative-donde-cuyo], vocab: [w.rincon, w.soleado, w.terraza, w.pasar] }
-      - { es: "Es una arquitecta cuyos edificios destacan por su luz natural.", en: "She's an architect whose buildings stand out for their natural light.", grammar: [g.relative-donde-cuyo], vocab: [w.arquitecto, w.cuyo, w.edificio, w.destacar, w.natural] }
+      - { es: "Es una arquitecta cuyos edificios destacan por su luz natural.", en: "She's an architect whose buildings stand out for their natural light.", altEs: ["Es una arquitecta cuyos edificios destacan por la luz natural."], grammar: [g.relative-donde-cuyo], vocab: [w.arquitecto, w.cuyo, w.edificio, w.destacar, w.natural] }
       - { es: "Conocí a un empresario cuya empresa diseña cocinas para pisos pequeños.", en: "I met a businessman whose company designs kitchens for small flats.", grammar: [g.relative-donde-cuyo, g.a-personal], vocab: [w.empresario, w.cuyo, w.disenar, w.empresa, w.cocina] }
       - { es: "La autora cuyo libro estoy leyendo vivió muchos años en este barrio.", en: "The author whose book I'm reading lived in this neighbourhood for many years.", grammar: [g.relative-donde-cuyo, g.estar-gerund], vocab: [w.autor, w.cuyo, w.libro, w.barrio] }
-      - { es: "Recuerdo el verano en que nos mudamos: hacía un calor horrible.", en: "I remember the summer we moved: it was horribly hot.", grammar: [g.relative-donde-cuyo, g.imperfect-uses], vocab: [w.recordar, w.mudarse, w.verano, w.calor], note: "el verano en que… is more common than el verano cuando…" }
+      - { es: "Recuerdo el verano en que nos mudamos: hacía un calor horrible.", en: "I remember the summer we moved: it was horribly hot.", altEs: ["Recuerdo el verano en el que nos mudamos: hacía un calor horrible.", "Recuerdo el verano en que nos mudamos: hacía un calor terrible."], grammar: [g.relative-donde-cuyo, g.imperfect-uses], vocab: [w.recordar, w.mudarse, w.verano, w.calor], note: "el verano en que… is more common than el verano cuando…" }
       - { es: "La comunidad de vecinos, con la cual tuvimos problemas, por fin ha arreglado el ascensor.", en: "The residents' association, with which we had problems, has finally fixed the lift.", grammar: [g.relative-donde-cuyo, g.present-perfect], vocab: [w.comunidad, w.cual.rel, w.vecino, w.ascensor, w.arreglar], note: "el cual / la cual is formal; in speech you would say con la que." }
-      - { es: "El dueño del bar, al cual todos llaman Paco, lleva treinta años en la misma esquina.", en: "The owner of the bar, whom everyone calls Paco, has been on the same corner for thirty years.", grammar: [g.relative-donde-cuyo, g.desde-hace], vocab: [w.dueno, w.cual.rel, w.bar, w.esquina] }
-      - { es: "Prefiero comprar en las tiendas locales, donde conozco a los dueños.", en: "I prefer to shop in the local shops, where I know the owners.", grammar: [g.relative-donde-cuyo, g.a-personal], vocab: [w.local.adj, w.donde.rel, w.dueno, w.tienda] }
+      - { es: "El dueño del bar, al cual todos llaman Paco, lleva treinta años en la misma esquina.", en: "The owner of the bar, whom everyone calls Paco, has been on the same corner for thirty years.", altEs: ["El dueño del bar, a quien todos llaman Paco, lleva treinta años en la misma esquina.", "El dueño del bar, al que todos llaman Paco, lleva treinta años en la misma esquina."], grammar: [g.relative-donde-cuyo, g.desde-hace], vocab: [w.dueno, w.cual.rel, w.bar, w.esquina] }
+      - { es: "Prefiero comprar en las tiendas locales, donde conozco a los dueños.", en: "I prefer to shop in the local shops, where I know the owners.", altEs: ["Prefiero comprar en las tiendas del barrio, donde conozco a los dueños."], grammar: [g.relative-donde-cuyo, g.a-personal], vocab: [w.local.adj, w.donde.rel, w.dueno, w.tienda] }
       - { es: "Las afueras, adonde se ha mudado mucha gente joven, tienen cada vez más tiendas y colegios.", en: "The outskirts, where a lot of young people have moved to, have more and more shops and schools.", grammar: [g.relative-donde-cuyo, g.present-perfect], vocab: [w.afueras, w.donde.rel, w.mudarse, w.joven], note: "adonde with verbs of movement." }
       - { es: "Es el único barrio de la ciudad cuyos habitantes se conocen todos.", en: "It's the only neighbourhood in the city whose inhabitants all know each other.", grammar: [g.relative-donde-cuyo], vocab: [w.unico, w.cuyo, w.habitante, w.conocer] }
-      - { es: "Es un escritor cuyas novelas se venden mucho.", en: "He's a writer whose novels sell a lot.", grammar: [g.relative-donde-cuyo], vocab: [w.escritor, w.cuyo, w.novela, w.vender], error: { wrong: "Es un escritor cuyo novelas se venden mucho.", explain: "cuyo agrees with the noun that follows it (novelas → cuyas), not with the owner.", grammar: g.relative-donde-cuyo } }
+      - { es: "Es un escritor cuyas novelas se venden mucho.", en: "He's a writer whose novels sell a lot.", altEs: ["Es un autor cuyas novelas se venden mucho."], grammar: [g.relative-donde-cuyo], vocab: [w.escritor, w.cuyo, w.novela, w.vender], error: { wrong: "Es un escritor cuyo novelas se venden mucho.", explain: "cuyo agrees with the noun that follows it (novelas → cuyas), not with the owner.", grammar: g.relative-donde-cuyo } }
       - { es: "Esa es la plaza. / Allí jugábamos de niños.", en: "That's the square where we used to play as children.", grammar: [g.relative-donde-cuyo, g.imperfect-uses], vocab: [w.donde.rel, w.plaza, w.jugar], transform: { instruction: "Join the sentences with donde", answer: "Esa es la plaza donde jugábamos de niños.", alt: ["Esa es la plaza en la que jugábamos de niños."] } }
+    exchanges:
+      - q: { es: "¿Dónde naciste?", en: "Where were you born?" }
+        a: { es: "En un pueblo donde todos se conocen y cuyo alcalde es mi tío.", en: "In a village where everyone knows each other and whose mayor is my uncle." }
+        alt: ["En una zona céntrica donde hay mucho ruido.", "En las afueras de Madrid, donde las casas tienen jardín."]
+        grammar: [g.relative-donde-cuyo]
+        vocab: [w.donde.rel, w.cuyo, w.alcalde, w.afueras]
+      - q: { es: "¿Cuál es tu rincón favorito de la casa?", en: "What's your favourite corner of the house?" }
+        a: { es: "La terraza soleada, donde paso casi todo el tiempo.", en: "The sunny terrace, where I spend almost all my time." }
+        alt: ["La cocina, donde cocino con mis hijos.", "El salón, cuyas ventanas dan al parque."]
+        grammar: [g.relative-donde-cuyo]
+        vocab: [w.rincon, w.soleado]
+      - q: { es: "¿Quién es esa arquitecta?", en: "Who's that architect?" }
+        a: { es: "Es una arquitecta cuyos edificios destacan por su luz natural.", en: "She's an architect whose buildings stand out for their natural light." }
+        alt: ["La mujer cuya empresa diseñó este edificio.", "Es la autora del libro que estoy leyendo."]
+        grammar: [g.relative-donde-cuyo]
+        vocab: [w.arquitecto, w.destacar, w.disenar]
+      - q: { es: "¿Por qué compras en las tiendas locales?", en: "Why do you shop in the local shops?" }
+        a: { es: "Porque conozco a los dueños y es el único barrio donde todavía existen.", en: "Because I know the owners and it's the only neighbourhood where they still exist." }
+        alt: ["Porque son tiendas cuyos productos son de la zona.", "Porque están cerca, en la plaza donde vivo."]
+        grammar: [g.relative-donde-cuyo]
+        vocab: [w.local.adj, w.dueno, w.unico]
+      - q: { es: "¿Tenéis problemas con la comunidad de vecinos?", en: "Do you have problems with the residents' association?" }
+        a: { es: "Los teníamos, pero la comunidad, con la cual discutimos mucho, por fin ha arreglado el ascensor.", en: "We did, but the association, with which we argued a lot, has finally fixed the lift." }
+        alt: ["No; es una comunidad cuyos vecinos se ayudan.", "Sí, sobre todo con el dueño del bar, al cual todos conocen."]
+        grammar: [g.relative-donde-cuyo]
+        vocab: [w.comunidad, w.cual.rel]
+    texts:
+      - title: "Guía del barrio"
+        es: ["Este es el barrio donde vivieron muchos escritores.", "La plaza, cuyos bares abren hasta tarde, es el centro de la vida local.", "Destaca la casa del arquitecto que diseñó el mercado."]
+        en: ["This is the neighbourhood where many writers lived.", "The square, whose bars stay open late, is the centre of local life.", "The house of the architect who designed the market stands out."]
+        grammar: [g.relative-donde-cuyo]
+        vocab: [w.donde.rel, w.cuyo, w.local.adj, w.destacar]
+      - title: "Pie de foto"
+        es: ["El pueblo donde nació mi madre, en las afueras de Granada.", "Tiene mil habitantes y un alcalde cuyo nombre conoce todo el mundo.", "Es el único lugar donde de verdad descanso."]
+        en: ["The village where my mother was born, on the outskirts of Granada.", "It has a thousand inhabitants and a mayor whose name everyone knows.", "It's the only place where I truly rest."]
+        grammar: [g.relative-donde-cuyo]
+        vocab: [w.afueras, w.habitante, w.alcalde, w.unico]
   - id: b1.u07.l3
     title: Busco un piso que tenga… — el subjuntivo en las oraciones de relativo
     teach: [g.relative-subjunctive]
     vocab: [w.compartir, w.companero-de-piso, w.fianza, w.incluir, w.admitir, w.asequible, w.bien-comunicado, w.ideal, w.caber, w.natural, w.silencioso, w.tener-en-cuenta, w.cobrar, w.importar]
     tip: "A specific thing you know exists → indicative (tengo un piso que tiene terraza). Something you are looking for, imagine or deny → subjunctive (busco un piso que tenga terraza; no hay nadie que…)."
     sentences:
-      - { es: "Busco un piso que tenga dos habitaciones y que esté bien comunicado.", en: "I'm looking for a flat that has two bedrooms and is well connected.", grammar: [g.relative-subjunctive], vocab: [w.buscar, w.bien-comunicado, w.habitacion] }
+      - { es: "Busco un piso que tenga dos habitaciones y que esté bien comunicado.", en: "I'm looking for a flat that has two bedrooms and is well connected.", altEs: ["Busco un piso que tenga dos dormitorios y que esté bien comunicado.", "Busco un piso que tenga dos habitaciones y esté bien comunicado."], grammar: [g.relative-subjunctive], vocab: [w.buscar, w.bien-comunicado, w.habitacion] }
       - { es: "Tenemos un piso que tiene terraza, pero queremos uno que tenga también garaje.", en: "We have a flat that has a terrace, but we want one that also has a garage.", grammar: [g.relative-subjunctive], vocab: [w.terraza, w.garaje, w.querer], note: "Known flat → tiene; the flat we want → tenga." }
-      - { es: "Necesito un compañero de piso que sea limpio, silencioso y que no fume.", en: "I need a flatmate who is clean, quiet and doesn't smoke.", grammar: [g.relative-subjunctive, g.subjunctive-irregular], vocab: [w.companero-de-piso, w.silencioso, w.limpio, w.fumar] }
-      - { es: "¿Conoces a alguien que quiera compartir piso en septiembre?", en: "Do you know anyone who wants to share a flat in September?", grammar: [g.relative-subjunctive, g.a-personal], vocab: [w.compartir, w.alguien, w.querer] }
-      - { es: "No hay ningún piso asequible que esté cerca de la universidad.", en: "There isn't a single affordable flat near the university.", grammar: [g.relative-subjunctive, g.indefinite-pronouns], vocab: [w.asequible, w.ningun, w.universidad, w.cerca] }
+      - { es: "Necesito un compañero de piso que sea limpio, silencioso y que no fume.", en: "I need a flatmate who is clean, quiet and doesn't smoke.", altEs: ["Necesito un compañero de piso que sea limpio y silencioso y que no fume.", "Necesito una compañera de piso que sea limpia, silenciosa y que no fume."], grammar: [g.relative-subjunctive, g.subjunctive-irregular], vocab: [w.companero-de-piso, w.silencioso, w.limpio, w.fumar] }
+      - { es: "¿Conoces a alguien que quiera compartir piso en septiembre?", en: "Do you know anyone who wants to share a flat in September?", altEs: ["¿Sabes de alguien que quiera compartir piso en septiembre?"], grammar: [g.relative-subjunctive, g.a-personal], vocab: [w.compartir, w.alguien, w.querer] }
+      - { es: "No hay ningún piso asequible que esté cerca de la universidad.", en: "There isn't a single affordable flat near the university.", altEs: ["No hay ningún piso barato que esté cerca de la universidad."], grammar: [g.relative-subjunctive, g.indefinite-pronouns], vocab: [w.asequible, w.ningun, w.universidad, w.cerca] }
       - { es: "Quiero un salón donde quepa un sofá grande y una mesa para seis personas.", en: "I want a living room where a big sofa and a table for six fit.", grammar: [g.relative-subjunctive], vocab: [w.caber, w.salon, w.sofa, w.mesa], note: "caber → quepa (irregular)." }
       - { es: "Prefiero una habitación que tenga luz natural; no me importa que sea pequeña.", en: "I prefer a room with natural light; I don't mind if it's small.", grammar: [g.relative-subjunctive, g.subjunctive-emotion], vocab: [w.natural, w.luz, w.habitacion, w.preferir, w.importar] }
-      - { es: "No encuentro ningún propietario que admita mascotas.", en: "I can't find any landlord who allows pets.", grammar: [g.relative-subjunctive, g.indefinite-pronouns], vocab: [w.admitir, w.mascota, w.encontrar] }
-      - { es: "Buscamos un alquiler que incluya los gastos de agua y luz.", en: "We're looking for a rental that includes the water and electricity bills.", grammar: [g.relative-subjunctive], vocab: [w.incluir, w.agua, w.luz] }
+      - { es: "No encuentro ningún propietario que admita mascotas.", en: "I can't find any landlord who allows pets.", altEs: ["No encuentro ningún dueño que admita mascotas.", "No encuentro a ningún propietario que admita mascotas."], grammar: [g.relative-subjunctive, g.indefinite-pronouns], vocab: [w.admitir, w.mascota, w.encontrar] }
+      - { es: "Buscamos un alquiler que incluya los gastos de agua y luz.", en: "We're looking for a rental that includes the water and electricity bills.", altEs: ["Buscamos un piso que incluya los gastos de agua y luz."], grammar: [g.relative-subjunctive], vocab: [w.incluir, w.agua, w.luz] }
       - { es: "Es el piso ideal: tiene todo lo que necesitamos y cuesta lo que podemos pagar.", en: "It's the ideal flat: it has everything we need and costs what we can pay.", grammar: [g.relative-que-quien], vocab: [w.ideal, w.lo-que, w.costar, w.pagar] }
       - { es: "Hay que tener en cuenta que casi todos los propietarios cobran dos meses de fianza.", en: "You have to bear in mind that almost all landlords charge two months' deposit.", grammar: [g.hay-que], vocab: [w.tener-en-cuenta, w.cobrar, w.fianza] }
       - { es: "Lo que busques, búscalo con tiempo: en septiembre no queda nada.", en: "Whatever you're looking for, look for it in good time: in September there's nothing left.", grammar: [g.relative-subjunctive, g.imperative-tu], vocab: [w.lo-que, w.buscar, w.quedar], note: "lo que + subjunctive = whatever." }
       - { es: "Vive donde quieras, pero ten en cuenta el precio del transporte.", en: "Live wherever you like, but take the cost of transport into account.", grammar: [g.relative-subjunctive, g.imperative-tu], vocab: [w.donde.rel, w.tener-en-cuenta, w.precio, w.transporte] }
-      - { es: "¿Hay algún banco que dé hipotecas a jóvenes sin contrato fijo?", en: "Is there any bank that gives mortgages to young people without a permanent contract?", grammar: [g.relative-subjunctive, g.subjunctive-irregular], vocab: [w.banco, w.joven] }
+      - { es: "¿Hay algún banco que dé hipotecas a jóvenes sin contrato fijo?", en: "Is there any bank that gives mortgages to young people without a permanent contract?", altEs: ["¿Hay algún banco que ofrezca hipotecas a jóvenes sin contrato fijo?"], grammar: [g.relative-subjunctive, g.subjunctive-irregular], vocab: [w.banco, w.joven] }
       - { es: "Busco un piso que tenga tres dormitorios y que no cueste más de 800 euros.", en: "I'm looking for a flat that has three bedrooms and doesn't cost more than 800 euros.", grammar: [g.relative-subjunctive], vocab: [w.dormitorio, w.euro, w.costar], error: { wrong: "Busco un piso que tiene tres dormitorios y que no cuesta más de 800 euros.", explain: "You are describing a flat you haven't found yet, so the relative clause takes the subjunctive: que tenga… que no cueste.", grammar: g.relative-subjunctive } }
       - { es: "Tengo un piso que tiene ascensor.", en: "I'm looking for a flat that has a lift.", grammar: [g.relative-subjunctive], vocab: [w.ascensor, w.piso], transform: { instruction: "Change tengo to busco and adjust the relative clause", answer: "Busco un piso que tenga ascensor." } }
+    exchanges:
+      - q: { es: "¿Cómo quieres que sea el piso?", en: "What do you want the flat to be like?" }
+        a: { es: "Busco un piso que tenga dos habitaciones y que esté bien comunicado.", en: "I'm looking for a flat that has two bedrooms and is well connected." }
+        alt: ["Uno que sea asequible y que incluya los gastos.", "Quiero un salón donde quepa un sofá grande."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.bien-comunicado, w.asequible, w.incluir, w.caber]
+      - q: { es: "¿Conoces a alguien que quiera compartir piso?", en: "Do you know anyone who wants to share a flat?" }
+        a: { es: "No conozco a nadie que busque piso ahora, pero preguntaré.", en: "I don't know anyone looking for a flat right now, but I'll ask." }
+        alt: ["Sí, mi primo busca un compañero de piso que no fume.", "Nadie que yo conozca."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.compartir, w.companero-de-piso]
+      - q: { es: "¿Hay algún propietario que admita mascotas?", en: "Is there any landlord who allows pets?" }
+        a: { es: "No encuentro ninguno que las admita; es muy difícil.", en: "I can't find any who allows them; it's very difficult." }
+        alt: ["Sí, el del piso de la plaza admite gatos.", "Hay pocos que las admitan."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.admitir]
+      - q: { es: "¿Te importa que la habitación sea pequeña?", en: "Do you mind if the room is small?" }
+        a: { es: "No, con tal de que tenga luz natural.", en: "No, as long as it has natural light." }
+        alt: ["No me importa que sea pequeña si es silenciosa.", "Prefiero una que sea más grande."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.importar, w.natural, w.silencioso]
+      - q: { es: "¿Cuánto cobran de fianza?", en: "How much do they charge as a deposit?" }
+        a: { es: "Casi todos piden dos meses; hay que tener en cuenta ese gasto.", en: "Almost all of them ask for two months; you have to bear that expense in mind." }
+        alt: ["Depende; busca uno que solo cobre un mes.", "El dueño quiere tres meses, que es demasiado."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.cobrar, w.fianza, w.tener-en-cuenta]
+    texts:
+      - title: "Se busca compañero de piso"
+        es: ["Busco compañero de piso que sea limpio y silencioso.", "La habitación tiene luz natural y cabe una cama grande.", "El alquiler incluye los gastos de agua y luz."]
+        en: ["Looking for a flatmate who is clean and quiet.", "The room has natural light and a big bed fits.", "The rent includes the water and electricity bills."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.companero-de-piso, w.silencioso, w.caber, w.incluir]
+      - title: "Mensaje a la inmobiliaria"
+        es: ["Buenos días. Buscamos un piso que esté cerca de la universidad y que no cueste más de 700 euros.", "Necesitamos un propietario que admita mascotas.", "¿Tienen algo que cumpla estas condiciones?"]
+        en: ["Good morning. We're looking for a flat near the university that doesn't cost more than 700 euros.", "We need a landlord who allows pets.", "Do you have anything that meets these conditions?"]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.admitir]
   - id: b1.u07.l4
     title: Se busca persona que… — ofertas de trabajo
     teach: [g.relative-subjunctive]
     vocab: [w.oferta-de-trabajo, w.vacante, w.aspirante, w.requerir, w.jornada-completa, w.media-jornada, w.incorporacion, w.inmediato, w.formacion, w.nivel, w.dominar, w.conocimiento, w.habilidad, w.disponibilidad, w.valorar, w.capaz, w.flexible, w.organizado, w.dinamico, w.don-de-gentes, w.atencion-al-cliente, w.carne-de-conducir, w.seleccion, w.referencia]
     tip: "Job adverts describe the person they hope to find, so the relative clause goes in the subjunctive: se busca camarero que tenga experiencia; necesitamos a alguien que sepa inglés."
     sentences:
-      - { es: "Se busca camarero que tenga experiencia y que hable inglés.", en: "Waiter wanted with experience who speaks English.", grammar: [g.relative-subjunctive, g.se-passive], vocab: [w.camarero, w.experiencia, w.hablar, w.ingles] }
-      - { es: "Necesitamos una persona que domine el francés y que tenga disponibilidad los fines de semana.", en: "We need someone who has a good command of French and is available at weekends.", grammar: [g.relative-subjunctive], vocab: [w.dominar, w.disponibilidad, w.frances, w.fin-de-semana] }
+      - { es: "Se busca camarero que tenga experiencia y que hable inglés.", en: "Waiter wanted with experience who speaks English.", altEs: ["Se busca camarero que tenga experiencia y hable inglés.", "Se busca camarera que tenga experiencia y que hable inglés."], grammar: [g.relative-subjunctive, g.se-passive], vocab: [w.camarero, w.experiencia, w.hablar, w.ingles] }
+      - { es: "Necesitamos una persona que domine el francés y que tenga disponibilidad los fines de semana.", en: "We need someone who has a good command of French and is available at weekends.", altEs: ["Necesitamos a alguien que domine el francés y que tenga disponibilidad los fines de semana."], grammar: [g.relative-subjunctive], vocab: [w.dominar, w.disponibilidad, w.frances, w.fin-de-semana] }
       - { es: "La oferta de trabajo pide un aspirante que sea organizado, dinámico y capaz de trabajar en equipo.", en: "The job advert asks for an applicant who is organised, dynamic and able to work in a team.", grammar: [g.relative-subjunctive, g.subjunctive-irregular], vocab: [w.oferta-de-trabajo, w.aspirante, w.organizado, w.dinamico, w.capaz, w.equipo] }
-      - { es: "Buscamos a alguien que tenga don de gentes para el puesto de atención al cliente.", en: "We're looking for someone with people skills for the customer service position.", grammar: [g.relative-subjunctive, g.a-personal], vocab: [w.don-de-gentes, w.atencion-al-cliente, w.alguien] }
+      - { es: "Buscamos a alguien que tenga don de gentes para el puesto de atención al cliente.", en: "We're looking for someone with people skills for the customer service position.", altEs: ["Buscamos a una persona que tenga don de gentes para el puesto de atención al cliente."], grammar: [g.relative-subjunctive, g.a-personal], vocab: [w.don-de-gentes, w.atencion-al-cliente, w.alguien] }
       - { es: "Se valorará a los candidatos que tengan carné de conducir y conocimientos de alemán.", en: "Candidates who have a driving licence and some German will be looked on favourably.", grammar: [g.relative-subjunctive, g.future-simple], vocab: [w.valorar, w.carne-de-conducir, w.conocimiento, w.aleman] }
-      - { es: "No hay nadie en la empresa que tenga el nivel de inglés que requiere el puesto.", en: "There is nobody in the company who has the level of English the position requires.", grammar: [g.relative-subjunctive, g.indefinite-pronouns], vocab: [w.nivel, w.requerir, w.ingles, w.empresa] }
+      - { es: "No hay nadie en la empresa que tenga el nivel de inglés que requiere el puesto.", en: "There is nobody in the company who has the level of English the position requires.", altEs: ["No hay nadie en la empresa que tenga el nivel de inglés que pide el puesto."], grammar: [g.relative-subjunctive, g.indefinite-pronouns], vocab: [w.nivel, w.requerir, w.ingles, w.empresa] }
       - { es: "Es una vacante de jornada completa con incorporación inmediata.", en: "It's a full-time vacancy with an immediate start.", grammar: [g.ser-vs-estar-basics], vocab: [w.vacante, w.jornada-completa, w.incorporacion, w.inmediato] }
-      - { es: "Quiero un trabajo que me permita tener un horario flexible y trabajar media jornada.", en: "I want a job that lets me have flexible hours and work part time.", grammar: [g.relative-subjunctive], vocab: [w.flexible, w.media-jornada, w.trabajo] }
-      - { es: "¿Hay alguna empresa que ofrezca formación a los empleados nuevos?", en: "Is there any company that offers training to new employees?", grammar: [g.relative-subjunctive], vocab: [w.formacion, w.ofrecer, w.empresa], note: "ofrecer → ofrezca (yo form ofrezco)." }
+      - { es: "Quiero un trabajo que me permita tener un horario flexible y trabajar media jornada.", en: "I want a job that lets me have flexible hours and work part time.", altEs: ["Quiero un trabajo que me permita un horario flexible y trabajar media jornada."], grammar: [g.relative-subjunctive], vocab: [w.flexible, w.media-jornada, w.trabajo] }
+      - { es: "¿Hay alguna empresa que ofrezca formación a los empleados nuevos?", en: "Is there any company that offers training to new employees?", altEs: ["¿Hay alguna empresa que dé formación a los empleados nuevos?"], grammar: [g.relative-subjunctive], vocab: [w.formacion, w.ofrecer, w.empresa], note: "ofrecer → ofrezca (yo form ofrezco)." }
       - { es: "La selección es larga: lo que más valoran es la experiencia.", en: "The recruitment process is long: what they value most is experience.", grammar: [g.relative-que-quien], vocab: [w.seleccion, w.valorar, w.lo-que, w.experiencia] }
       - { es: "Piden dos referencias de tus trabajos anteriores.", en: "They ask for two references from your previous jobs.", grammar: [g.present-review], vocab: [w.referencia, w.pedir, w.trabajo, w.anterior] }
       - { es: "Quien quiera solicitar el puesto debe enviar el currículum antes del viernes.", en: "Anyone who wants to apply for the position must send their CV before Friday.", grammar: [g.relative-subjunctive, g.deber-tener-que], vocab: [w.quien.rel, w.enviar, w.viernes] }
-      - { es: "Necesitan a alguien que sepa conducir y que pueda empezar mañana mismo.", en: "They need someone who can drive and can start tomorrow.", grammar: [g.relative-subjunctive, g.subjunctive-irregular], vocab: [w.conducir, w.empezar, w.manana, w.alguien] }
+      - { es: "Necesitan a alguien que sepa conducir y que pueda empezar mañana mismo.", en: "They need someone who can drive and can start tomorrow.", altEs: ["Necesitan a alguien que sepa conducir y pueda empezar mañana mismo."], grammar: [g.relative-subjunctive, g.subjunctive-irregular], vocab: [w.conducir, w.empezar, w.manana, w.alguien] }
       - { es: "Las habilidades que se piden hoy en día son muy diferentes de las de hace veinte años.", en: "The skills that are asked for nowadays are very different from those of twenty years ago.", grammar: [g.relative-que-quien, g.se-passive], vocab: [w.habilidad, w.hoy-en-dia, w.diferente, w.pedir] }
-      - { es: "Buscamos un guía que hable tres idiomas.", en: "We're looking for a guide who speaks three languages.", grammar: [g.relative-subjunctive], vocab: [w.guia, w.hablar, w.idioma], error: { wrong: "Buscamos un guía que habla tres idiomas.", explain: "The guide is not a specific person yet, so the relative clause takes the subjunctive: que hable.", grammar: g.relative-subjunctive } }
+      - { es: "Buscamos un guía que hable tres idiomas.", en: "We're looking for a guide who speaks three languages.", altEs: ["Buscamos a un guía que hable tres idiomas."], grammar: [g.relative-subjunctive], vocab: [w.guia, w.hablar, w.idioma], error: { wrong: "Buscamos un guía que habla tres idiomas.", explain: "The guide is not a specific person yet, so the relative clause takes the subjunctive: que hable.", grammar: g.relative-subjunctive } }
       - { es: "Tenemos un jefe que escucha a los empleados.", en: "We want a boss who listens to the employees.", grammar: [g.relative-subjunctive], vocab: [w.jefe, w.escuchar], transform: { instruction: "Change tenemos to queremos and adjust the relative clause", answer: "Queremos un jefe que escuche a los empleados." } }
+    exchanges:
+      - q: { es: "¿Qué buscáis para el puesto de atención al cliente?", en: "What are you looking for for the customer service position?" }
+        a: { es: "Buscamos a alguien que tenga don de gentes y que hable inglés.", en: "We're looking for someone who has people skills and speaks English." }
+        alt: ["Una persona que sea organizada y dinámica.", "Alguien que pueda empezar mañana mismo."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.atencion-al-cliente, w.don-de-gentes, w.organizado, w.dinamico]
+      - q: { es: "¿Es una vacante de jornada completa?", en: "Is it a full-time vacancy?" }
+        a: { es: "Sí, con incorporación inmediata.", en: "Yes, with an immediate start." }
+        alt: ["No, es de media jornada.", "Sí, pero quieren a alguien que tenga disponibilidad el fin de semana."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.vacante, w.jornada-completa, w.incorporacion, w.inmediato, w.media-jornada]
+      - q: { es: "¿Hay alguien en la empresa que domine el francés?", en: "Is there anyone in the company who has a good command of French?" }
+        a: { es: "No hay nadie que lo domine; por eso buscamos a alguien nuevo.", en: "There's nobody who does; that's why we're looking for someone new." }
+        alt: ["Sí, Marta tiene un nivel muy alto.", "Nadie que yo conozca."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.dominar, w.nivel]
+      - q: { es: "¿Qué valoran más en la selección?", en: "What do they value most in the recruitment process?" }
+        a: { es: "Lo que más valoran es la experiencia y las referencias.", en: "What they value most is experience and references." }
+        alt: ["Buscan candidatos que tengan carné de conducir.", "La formación y las habilidades, sobre todo."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.valorar, w.seleccion, w.referencia, w.formacion, w.habilidad]
+      - q: { es: "¿Qué trabajo te gustaría tener?", en: "What job would you like to have?" }
+        a: { es: "Quiero un trabajo que me permita tener un horario flexible.", en: "I want a job that lets me have flexible hours." }
+        alt: ["Uno que ofrezca formación a los empleados nuevos.", "Cualquiera que esté bien pagado."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.flexible]
+    texts:
+      - title: "Oferta de trabajo"
+        es: ["Se busca camarero que tenga experiencia y que hable inglés.", "Se valorará a los aspirantes que tengan disponibilidad el fin de semana.", "Incorporación inmediata; jornada completa."]
+        en: ["Waiter wanted with experience who speaks English.", "Applicants who are available at weekends will be looked on favourably.", "Immediate start; full time."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.aspirante, w.disponibilidad, w.incorporacion, w.jornada-completa]
+      - title: "Mensaje a un amigo"
+        es: ["He visto una oferta que te puede interesar.", "Buscan a alguien que sepa conducir y que tenga don de gentes.", "Quien quiera solicitar el puesto debe enviar el currículum antes del viernes."]
+        en: ["I've seen a job offer that might interest you.", "They're looking for someone who can drive and has people skills.", "Anyone who wants to apply for the position must send their CV before Friday."]
+        grammar: [g.relative-subjunctive]
+        vocab: [w.oferta-de-trabajo, w.don-de-gentes]
 dialogues:
   - id: b1.u07.d1
     title: Visita a un piso
