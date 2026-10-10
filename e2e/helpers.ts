@@ -44,7 +44,8 @@ export async function answerCurrent(page: Page, correct = true) {
     case 'choiceEs':
     case 'choiceEn':
     case 'listen':
-    case 'fillBlank': {
+    case 'fillBlank':
+    case 'reply': {
       const idx = correct ? ex.answer! : (ex.answer! + 1) % ex.options!.length
       await page.getByRole('radio').nth(idx).click()
       await page.getByRole('button', { name: 'Check' }).click()
@@ -57,6 +58,16 @@ export async function answerCurrent(page: Page, correct = true) {
         // tiles are buttons inside the pool; pick the first visible, enabled tile with this text
         const tile = main.locator('button.tile:not([disabled]):visible', { hasText: new RegExp(`^${escapeRe(w)}$`, 'i') }).first()
         await tile.click()
+      }
+      await page.getByRole('button', { name: 'Check' }).click()
+      break
+    }
+    case 'orderText': {
+      const target = ex.answers![0]!
+      const tiles = [...ex.tiles!].sort((a, b) => target.indexOf(a) - target.indexOf(b))
+      const order = correct ? tiles : [...tiles].reverse()
+      for (const t of order) {
+        await main.locator('button.tile:not([disabled]):visible', { hasText: new RegExp(`^${escapeRe(t)}$`) }).first().click()
       }
       await page.getByRole('button', { name: 'Check' }).click()
       break
