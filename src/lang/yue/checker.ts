@@ -19,11 +19,18 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   const out: CheckerFinding[] = []
   const segs: { text: string; start: number; end: number }[] = []
   let i = 0
+  const entry = (w: string, pos?: VocabEntry['pos']) => lookup(deps.dict, w)?.find((e) => !pos || e.pos === pos)
   for (const s of segment(text)) {
-    if (s.kind === 'han' || s.kind === 'num') segs.push({ text: s.text, start: i, end: i + s.text.length })
+    if (s.kind === 'han' || s.kind === 'num') {
+      // The segmenter may keep "number + measure word" together (一個, 兩隻): split it for the agreement check.
+      const m = s.text.match(/^([一二兩三四五六七八九十幾呢嗰每]+)(.+)$/u)
+      if (m && entry(m[2]!, 'classifier')) {
+        segs.push({ text: m[1]!, start: i, end: i + m[1]!.length })
+        segs.push({ text: m[2]!, start: i + m[1]!.length, end: i + s.text.length })
+      } else segs.push({ text: s.text, start: i, end: i + s.text.length })
+    }
     i += s.text.length
   }
-  const entry = (w: string, pos?: VocabEntry['pos']) => lookup(deps.dict, w)?.find((e) => !pos || e.pos === pos)
   for (let k = 0; k + 2 < segs.length; k++) {
     const [a, b, c] = [segs[k]!, segs[k + 1]!, segs[k + 2]!]
     if (!COUNTERS.test(a.text)) continue
