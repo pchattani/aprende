@@ -7,8 +7,8 @@
 | Course | Link | Journey |
 |---|---|---|
 | 🇮🇹 Italian (*Impara*) | https://pchattani.github.io/aprende/italian/ | Rome, Tuscany, the North, the South, Sicily and Sardinia, then back to Rome |
+| 🇧🇷 Portuguese (*Aprenda*) | https://pchattani.github.io/aprende/portuguese/ | Rio round Brazil, then Portugal; Brazilian with European notes |
 | 🇭🇰 Cantonese (*Gong 講*) | coming soon at /aprende/cantonese/ | Hong Kong Island to Guangzhou; traditional characters with Jyutping |
-| 🇧🇷 Portuguese (*Aprenda*) | coming soon at /aprende/portuguese/ | Rio round Brazil, then Portugal; Brazilian with European notes |
 
 Each course has its own progress, settings and offline install. See [docs/SISTER_COURSES.md](docs/SISTER_COURSES.md) for how a course is put together.
 
