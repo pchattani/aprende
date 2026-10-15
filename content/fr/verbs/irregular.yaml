@@ -1,0 +1,445 @@
+# French irregular verbs and auxiliary choice. Owned by the language engine
+# (src/lang/fr/conjugator.ts, schema in src/lang/fr/schema.ts).
+#
+# Anything not listed is conjugated regularly:
+#   -er: parler (je parle, nous parlons, parlé), with automatic spelling changes:
+#        commencer → commençons · manger → mangeons · acheter/lever → achète, lève
+#        appeler/jeter → appelle, jette · préférer → préfère · employer → emploie
+#        essuyer → essuie · payer → paie (paye)
+#   -ir: finir (je finis, nous finissons, fini)
+#   -re: vendre (je vends, il vend, vendu); rompre → il rompt
+# Compounds are derived automatically from a listed verb (revenir from venir,
+# comprendre from prendre, décrire from écrire's family "crire", construire from
+# conduire's family "uire"…) unless the row says `compounds: false`; a row with
+# `regular: true` stops a derivation (répartir is regular, not like partir).
+#
+# Fields: pres/pret/subjPres = six persons (je, tu, il/elle/on, nous, vous, ils/elles),
+# "-" where a person has no form (impersonal verbs);
+# pretStem = passé simple stem (pri → pris, pris, prit, prîmes, prîtes, prirent);
+# futStem = future/conditional stem; impfStem = imperfect stem when it is not the
+# nous form minus -ons; impTu/impNous/impVous = imperative overrides;
+# aux = auxiliary (default avoir); bothAux = both are correct.
+verbs:
+  # ---- être, avoir, aller, faire
+  - lemma: être
+    compounds: false
+    pres: [suis, es, est, sommes, êtes, sont]
+    impfStem: ét
+    pretStem: fu
+    futStem: ser
+    subjPres: [sois, sois, soit, soyons, soyez, soient]
+    impTu: sois
+    impNous: soyons
+    impVous: soyez
+    participle: été
+    invariable: true
+    gerund: étant
+  - lemma: avoir
+    compounds: false
+    pres: [ai, as, a, avons, avez, ont]
+    pretStem: eu
+    futStem: aur
+    subjPres: [aie, aies, ait, ayons, ayez, aient]
+    impTu: aie
+    impNous: ayons
+    impVous: ayez
+    participle: eu
+    gerund: ayant
+  - lemma: aller
+    aux: être
+    compounds: false
+    pres: [vais, vas, va, allons, allez, vont]
+    futStem: ir
+    subjPres: [aille, ailles, aille, allions, alliez, aillent]
+    impTu: va
+  - lemma: faire
+    pres: [fais, fais, fait, faisons, faites, font]
+    pretStem: fi
+    futStem: fer
+    subjPres: [fasse, fasses, fasse, fassions, fassiez, fassent]
+    participle: fait
+
+  # ---- dire and its compounds (vous dites, but vous interdisez)
+  - lemma: dire
+    pres: [dis, dis, dit, disons, dites, disent]
+    pretStem: di
+    participle: dit
+  - lemma: contredire
+    like: dire
+    pres: [contredis, contredis, contredit, contredisons, contredisez, contredisent]
+  - lemma: interdire
+    like: dire
+    pres: [interdis, interdis, interdit, interdisons, interdisez, interdisent]
+  - lemma: prédire
+    like: dire
+    pres: [prédis, prédis, prédit, prédisons, prédisez, prédisent]
+  - lemma: médire
+    like: dire
+    pres: [médis, médis, médit, médisons, médisez, médisent]
+  - lemma: dédire
+    like: dire
+    pres: [dédis, dédis, dédit, dédisons, dédisez, dédisent]
+  - lemma: maudire
+    compounds: false
+    pres: [maudis, maudis, maudit, maudissons, maudissez, maudissent]
+    pretStem: maudi
+    participle: maudit
+
+  # ---- the modals
+  - lemma: pouvoir
+    compounds: false
+    pres: [peux, peux, peut, pouvons, pouvez, peuvent]
+    pretStem: pu
+    futStem: pourr
+    subjPres: [puisse, puisses, puisse, puissions, puissiez, puissent]
+    noImperative: true
+    participle: pu
+    invariable: true
+    alt: [puis]
+  - lemma: vouloir
+    compounds: false
+    pres: [veux, veux, veut, voulons, voulez, veulent]
+    pretStem: voulu
+    futStem: voudr
+    subjPres: [veuille, veuilles, veuille, voulions, vouliez, veuillent]
+    impTu: veuille
+    impNous: veuillons
+    impVous: veuillez
+    participle: voulu
+  - lemma: devoir
+    pres: [dois, dois, doit, devons, devez, doivent]
+    pretStem: du
+    noImperative: true
+    participle: dû
+    participles: [dû, due, dus, dues]
+  - lemma: savoir
+    compounds: false
+    pres: [sais, sais, sait, savons, savez, savent]
+    pretStem: su
+    futStem: saur
+    subjPres: [sache, saches, sache, sachions, sachiez, sachent]
+    impTu: sache
+    impNous: sachons
+    impVous: sachez
+    participle: su
+    gerund: sachant
+  - lemma: falloir
+    compounds: false
+    impersonal: true
+    pres: ['-', '-', faut, '-', '-', '-']
+    impfStem: fall
+    pretStem: fallu
+    futStem: faudr
+    subjPres: ['-', '-', faille, '-', '-', '-']
+    participle: fallu
+    invariable: true
+    gerund: ''
+  - lemma: pleuvoir
+    compounds: false
+    impersonal: true
+    pres: ['-', '-', pleut, '-', '-', '-']
+    impfStem: pleuv
+    pretStem: plu
+    futStem: pleuvr
+    subjPres: ['-', '-', pleuve, '-', '-', '-']
+    participle: plu
+    invariable: true
+    gerund: pleuvant
+  - lemma: valoir
+    pres: [vaux, vaux, vaut, valons, valez, valent]
+    pretStem: valu
+    futStem: vaudr
+    subjPres: [vaille, vailles, vaille, valions, valiez, vaillent]
+    participle: valu
+
+  # ---- venir, tenir and their compounds (devenir, revenir, se souvenir, obtenir, appartenir…)
+  - lemma: venir
+    aux: être
+    pres: [viens, viens, vient, venons, venez, viennent]
+    pretStem: vin
+    futStem: viendr
+    participle: venu
+  - lemma: tenir
+    pres: [tiens, tiens, tient, tenons, tenez, tiennent]
+    pretStem: tin
+    futStem: tiendr
+    participle: tenu
+
+  # ---- prendre, mettre, battre and their compounds
+  - lemma: prendre
+    pres: [prends, prends, prend, prenons, prenez, prennent]
+    pretStem: pri
+    participle: pris
+  - lemma: mettre
+    pres: [mets, mets, met, mettons, mettez, mettent]
+    pretStem: mi
+    participle: mis
+  - lemma: battre
+    pres: [bats, bats, bat, battons, battez, battent]
+    pretStem: batti
+    participle: battu
+
+  # ---- voir, croire, boire, recevoir
+  - lemma: voir
+    pres: [vois, vois, voit, voyons, voyez, voient]
+    pretStem: vi
+    futStem: verr
+    participle: vu
+  - lemma: prévoir
+    like: voir
+    futStem: prévoir
+  - lemma: pourvoir
+    like: voir
+    pretStem: pourvu
+    futStem: pourvoir
+  - lemma: croire
+    pres: [crois, crois, croit, croyons, croyez, croient]
+    pretStem: cru
+    participle: cru
+  - lemma: boire
+    compounds: false
+    pres: [bois, bois, boit, buvons, buvez, boivent]
+    pretStem: bu
+    participle: bu
+  - lemma: recevoir
+    family: cevoir
+    pres: [reçois, reçois, reçoit, recevons, recevez, reçoivent]
+    pretStem: reçu
+    participle: reçu
+  - lemma: émouvoir
+    family: mouvoir
+    pres: [émeus, émeus, émeut, émouvons, émouvez, émeuvent]
+    pretStem: ému
+    participle: ému
+  - lemma: asseoir
+    pres: [assieds, assieds, assied, asseyons, asseyez, asseyent]
+    pretStem: assi
+    futStem: assiér
+    participle: assis
+    alt: [assois, assoit, assoyons, assoyez, assoient, assoyais, assoyait, assoirai, assoiras, assoira, assoirons, assoirez, assoiront, assoirais, assoirait, assoie, assoies]
+
+  # ---- lire, écrire, rire, plaire, taire, suffire
+  - lemma: lire
+    pres: [lis, lis, lit, lisons, lisez, lisent]
+    pretStem: lu
+    participle: lu
+  - lemma: écrire
+    family: crire
+    pres: [écris, écris, écrit, écrivons, écrivez, écrivent]
+    pretStem: écrivi
+    participle: écrit
+  - lemma: rire
+    pres: [ris, ris, rit, rions, riez, rient]
+    pretStem: ri
+    participle: ri
+  - lemma: plaire
+    pres: [plais, plais, plaît, plaisons, plaisez, plaisent]
+    pretStem: plu
+    participle: plu
+  - lemma: taire
+    pres: [tais, tais, tait, taisons, taisez, taisent]
+    pretStem: tu
+    participle: tu
+  - lemma: suffire
+    pres: [suffis, suffis, suffit, suffisons, suffisez, suffisent]
+    pretStem: suffi
+    participle: suffi
+
+  # ---- connaître, paraître, naître (-aître)
+  - lemma: connaître
+    pres: [connais, connais, connaît, connaissons, connaissez, connaissent]
+    pretStem: connu
+    participle: connu
+  - lemma: paraître
+    pres: [parais, parais, paraît, paraissons, paraissez, paraissent]
+    pretStem: paru
+    participle: paru
+  - lemma: naître
+    aux: être
+    pres: [nais, nais, naît, naissons, naissez, naissent]
+    pretStem: naqui
+    participle: né
+
+  # ---- -ir verbs without -iss-
+  - lemma: partir
+    aux: être
+    pres: [pars, pars, part, partons, partez, partent]
+    pretStem: parti
+  - lemma: sortir
+    aux: être
+    bothAux: true
+    pres: [sors, sors, sort, sortons, sortez, sortent]
+    pretStem: sorti
+  - lemma: dormir
+    pres: [dors, dors, dort, dormons, dormez, dorment]
+    pretStem: dormi
+  - lemma: servir
+    pres: [sers, sers, sert, servons, servez, servent]
+    pretStem: servi
+  - lemma: sentir
+    pres: [sens, sens, sent, sentons, sentez, sentent]
+    pretStem: senti
+  - lemma: mentir
+    pres: [mens, mens, ment, mentons, mentez, mentent]
+    pretStem: menti
+  - lemma: repentir
+    like: sentir
+  - lemma: courir
+    pres: [cours, cours, court, courons, courez, courent]
+    pretStem: couru
+    futStem: courr
+    participle: couru
+  - lemma: mourir
+    aux: être
+    pres: [meurs, meurs, meurt, mourons, mourez, meurent]
+    pretStem: mouru
+    futStem: mourr
+    participle: mort
+  - lemma: ouvrir
+    pres: [ouvre, ouvres, ouvre, ouvrons, ouvrez, ouvrent]
+    pretStem: ouvri
+    participle: ouvert
+  - lemma: offrir
+    pres: [offre, offres, offre, offrons, offrez, offrent]
+    pretStem: offri
+    participle: offert
+  - lemma: souffrir
+    pres: [souffre, souffres, souffre, souffrons, souffrez, souffrent]
+    pretStem: souffri
+    participle: souffert
+  - lemma: cueillir
+    pres: [cueille, cueilles, cueille, cueillons, cueillez, cueillent]
+    pretStem: cueilli
+    futStem: cueiller
+    participle: cueilli
+  - lemma: assaillir
+    family: aillir
+    pres: [assaille, assailles, assaille, assaillons, assaillez, assaillent]
+    pretStem: assailli
+    participle: assailli
+  - lemma: acquérir
+    family: quérir
+    pres: [acquiers, acquiers, acquiert, acquérons, acquérez, acquièrent]
+    pretStem: acqui
+    futStem: acquerr
+    participle: acquis
+  - lemma: fuir
+    pres: [fuis, fuis, fuit, fuyons, fuyez, fuient]
+    pretStem: fui
+    participle: fui
+  - lemma: haïr
+    compounds: false
+    pres: [hais, hais, hait, haïssons, haïssez, haïssent]
+    pret: [haïs, haïs, haït, haïmes, haïtes, haïrent]
+    impTu: hais
+    participle: haï
+  - lemma: vêtir
+    pres: [vêts, vêts, vêt, vêtons, vêtez, vêtent]
+    pretStem: vêti
+    participle: vêtu
+  - lemma: bouillir
+    pres: [bous, bous, bout, bouillons, bouillez, bouillent]
+    pretStem: bouilli
+    participle: bouilli
+
+  # ---- vivre, suivre, conduire (-uire), luire, nuire
+  - lemma: vivre
+    pres: [vis, vis, vit, vivons, vivez, vivent]
+    pretStem: vécu
+    participle: vécu
+  - lemma: suivre
+    pres: [suis, suis, suit, suivons, suivez, suivent]
+    pretStem: suivi
+    participle: suivi
+  - lemma: conduire
+    family: uire
+    pres: [conduis, conduis, conduit, conduisons, conduisez, conduisent]
+    pretStem: conduisi
+    participle: conduit
+  - lemma: luire
+    pres: [luis, luis, luit, luisons, luisez, luisent]
+    pretStem: luisi
+    participle: lui
+    invariable: true
+  - lemma: nuire
+    pres: [nuis, nuis, nuit, nuisons, nuisez, nuisent]
+    pretStem: nuisi
+    participle: nui
+    invariable: true
+
+  # ---- craindre, peindre, joindre (-aindre, -eindre, -oindre)
+  - lemma: craindre
+    family: aindre
+    pres: [crains, crains, craint, craignons, craignez, craignent]
+    pretStem: craigni
+    participle: craint
+  - lemma: peindre
+    family: eindre
+    pres: [peins, peins, peint, peignons, peignez, peignent]
+    pretStem: peigni
+    participle: peint
+  - lemma: joindre
+    family: oindre
+    pres: [joins, joins, joint, joignons, joignez, joignent]
+    pretStem: joigni
+    participle: joint
+
+  # ---- other -re verbs
+  - lemma: résoudre
+    compounds: false
+    pres: [résous, résous, résout, résolvons, résolvez, résolvent]
+    pretStem: résolu
+    participle: résolu
+  - lemma: dissoudre
+    compounds: false
+    pres: [dissous, dissous, dissout, dissolvons, dissolvez, dissolvent]
+    pret: ['-', '-', '-', '-', '-', '-']
+    participle: dissous
+    participles: [dissous, dissoute, dissous, dissoutes]
+  - lemma: vaincre
+    pres: [vaincs, vaincs, vainc, vainquons, vainquez, vainquent]
+    pretStem: vainqui
+    participle: vaincu
+  - lemma: coudre
+    pres: [couds, couds, coud, cousons, cousez, cousent]
+    pretStem: cousi
+    participle: cousu
+  - lemma: moudre
+    pres: [mouds, mouds, moud, moulons, moulez, moulent]
+    pretStem: moulu
+    participle: moulu
+  - lemma: conclure
+    family: clure
+    pres: [conclus, conclus, conclut, concluons, concluez, concluent]
+    pretStem: conclu
+    participle: conclu
+  - lemma: inclure
+    like: conclure
+    participle: inclus
+  - lemma: traire
+    pres: [trais, trais, trait, trayons, trayez, traient]
+    pret: ['-', '-', '-', '-', '-', '-']
+    participle: trait
+
+  # ---- -er verbs with an irregular future
+  - lemma: envoyer
+    futStem: enverr
+
+  # ---- regular verbs that only look like a listed one
+  - lemma: répartir
+    regular: true
+  - lemma: assortir
+    regular: true
+  - lemma: asservir
+    regular: true
+  - lemma: impartir
+    regular: true
+
+# DR MRS VANDERTRAMP: regular verbs whose compound tenses take être
+# (aller, venir, partir, sortir, naître, mourir and their compounds are rows above)
+etre: [arriver, entrer, rester, tomber, retomber, décéder, apparaître, intervenir, parvenir, survenir, devenir, revenir, redevenir, repartir]
+# built on an être verb but conjugated with avoir
+avoir: [prévenir, convenir, subvenir, contrevenir, circonvenir, disparaître]
+# both auxiliaries (être when intransitive, avoir with a direct object); être shown first
+etreOrAvoir: [monter, remonter, descendre, redescendre, rentrer, retourner, passer, repasser, ressortir]
+avoirOrEtre: [accourir, demeurer]
