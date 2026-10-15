@@ -8,6 +8,7 @@ import { listenOnce, sttSupported } from '../engine/speech'
 import { match } from '@lang/normalize'
 import { TL } from '../engine/course'
 import { ui } from '../engine/loader'
+import { TargetText } from '../components/ui/TargetText'
 
 export default function Pronunciation() {
   const { id } = useParams()
@@ -112,7 +113,7 @@ function Shadow({ text }: { text: string }) {
     <li className="card">
       <div className="flex items-center gap-3">
         <SpeakerButton text={text} size="sm" />
-        <p className="flex-1 font-bold" lang={TL}>{text}</p>
+        <p className="flex-1 font-bold" lang={TL}><TargetText text={text} /></p>
         {supported && (
           <button type="button" onClick={() => void go()} className={`flex h-10 w-10 items-center justify-center rounded-full text-white ${state === 'listening' ? 'animate-pulse bg-bad-500' : 'bg-sky-500'}`} aria-label="Record">
             <IconMic width={20} height={20} />

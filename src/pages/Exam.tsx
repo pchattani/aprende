@@ -14,6 +14,7 @@ import { SPECIAL_CHARS } from '../components/exercises/chars'
 import { playSound } from '../engine/sounds'
 import type { CheckerFinding } from '../lang/types'
 import { TL } from '../engine/course'
+import { TargetText } from '../components/ui/TargetText'
 
 type Section = 'reading' | 'listening' | 'grammar' | 'writing' | 'speaking' | 'result'
 const ORDER: Section[] = ['reading', 'listening', 'grammar', 'writing', 'speaking', 'result']
@@ -65,7 +66,7 @@ function ReadingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => 
   return (
     <div>
       <h2 className="mt-3 text-xl font-extrabold">Reading</h2>
-      <div className="card mt-3 whitespace-pre-line text-lg leading-relaxed" lang={TL}>{exam.reading.text}</div>
+      <div className="card mt-3 whitespace-pre-line text-lg leading-relaxed" lang={TL}><TargetText text={exam.reading.text} /></div>
       <MCQ items={exam.reading.questions.map((q) => ({ prompt: q.q, options: q.options, answer: q.answer }))} onDone={onDone} />
     </div>
   )
@@ -215,7 +216,7 @@ function SpeakingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) =>
           <li key={i} className="card">
             <div className="flex items-center gap-3">
               <SpeakerButton text={s} size="sm" />
-              <p className="flex-1 font-bold" lang={TL}>{s}</p>
+              <p className="flex-1 font-bold" lang={TL}><TargetText text={s} /></p>
               {supported ? (
                 <button type="button" onClick={() => void record(i)} className={`flex h-10 w-10 items-center justify-center rounded-full text-white ${busy === i ? 'animate-pulse bg-bad-500' : 'bg-sky-500'}`} aria-label="Record"><IconMic width={20} height={20} /></button>
               ) : (

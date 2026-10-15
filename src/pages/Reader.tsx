@@ -16,6 +16,7 @@ import { IconArrowLeft, IconPlus, IconCheck, IconX } from '../components/ui/icon
 import { stripAccents } from '@lang/normalize'
 import { TL } from '../engine/course'
 import { LANGUAGE } from '../engine/loader'
+import { TargetText } from '../components/ui/TargetText'
 
 export default function Reader() {
   const { id } = useParams()
@@ -162,7 +163,7 @@ function ReaderView({ id }: { id: string }) {
                 {tokenize(p.es).map((t, j) =>
                   t.kind === 'word' ? (
                     <button key={j} type="button" onClick={() => tapWord(t.text)} className={`rounded px-0.5 ${wordClass(t.text, dict, knownIds)}`}>
-                      {t.text}
+                      <TargetText text={t.text} />
                     </button>
                   ) : (
                     <span key={j}>{t.text}</span>
