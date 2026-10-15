@@ -1,0 +1,68 @@
+level: b1
+title: Level check B1
+passScore: 0.8
+reading:
+  text: |
+    Quando Luca ha detto ai suoi genitori che voleva lasciare il lavoro in banca a Milano per aprire un'osteria a Bologna, sua madre ha pensato che stesse scherzando. «Avevi un buon lavoro, uno stipendio sicuro… e vuoi fare il cuoco?», gli ha chiesto. Luca aveva trentadue anni e da tempo si sentiva stanco: passava dieci ore al giorno davanti a un computer e la sera non aveva più energie per niente.
+
+    L'amore per la cucina, in realtà, l'aveva sempre avuto. Da ragazzo passava le domeniche a guardare la nonna che preparava i tortellini a mano, e ancora oggi dice che nessun corso gli ha insegnato quanto quei pomeriggi. Prima di decidere, comunque, ha voluto essere sicuro: per un anno ha lavorato il fine settimana nella cucina di un ristorante, per capire se quel lavoro gli piaceva davvero o se era solo un sogno.
+
+    L'osteria ha aperto tre anni fa, in una via del centro vicino all'università. All'inizio è stato molto difficile: Luca lavorava quattordici ore al giorno e ha speso quasi tutti i suoi risparmi. Oggi, però, il locale è sempre pieno, soprattutto di studenti e di famiglie del quartiere, e in cucina lavorano quattro persone. «Ho meno soldi di quando lavoravo in banca», ammette Luca, «ma la sera torno a casa stanco e contento. Prima tornavo solo stanco». E sua madre? Viene a pranzo ogni domenica e, dice lui ridendo, ordina sempre i tortellini per controllare che siano buoni come quelli della nonna.
+  questions:
+    - { q: "How did Luca's mother react to his decision at first?", options: ["She was enthusiastic", "She thought he was joking", "She offered to lend him money"], answer: 1 }
+    - { q: "Why was Luca unhappy with his job at the bank?", options: ["The salary was too low", "He was tired: ten hours a day at a computer and no energy in the evening", "His colleagues were unpleasant"], answer: 1 }
+    - { q: "What did Luca do before opening the osteria?", options: ["He took an expensive cookery course", "He worked weekends in a restaurant kitchen for a year", "He travelled around Italy"], answer: 1 }
+    - { q: "What does Luca say about his income now?", options: ["He earns more than at the bank", "He earns less, but he is happier", "He earns exactly the same"], answer: 1 }
+    - { q: "Why does his mother always order tortellini?", options: ["They are the cheapest dish", "To check they are as good as his grandmother's", "She doesn't like the other dishes"], answer: 1 }
+listening:
+  dictation:
+    - "Se vuoi, te lo presto io il libro."
+    - "Penso che abbia ragione Marta."
+    - "Quando siamo arrivati, il treno era già partito."
+    - "Mi ha detto che sarebbe venuto alle otto."
+    - "Spero che tu possa venire a trovarci a Venezia."
+  questions:
+    - { audio: "Gentili passeggeri, il treno regionale per Verona partirà con un ritardo di venti minuti dal binario sette e non dal binario tre.", options: ["The train to Verona has been cancelled", "The train to Verona will leave twenty minutes late from platform seven instead of three", "Passengers must change trains in Verona"], answer: 1 }
+    - { audio: "Ti dispiace se apro la finestra? — No, figurati, anzi: fa molto caldo qui dentro.", options: ["The second person doesn't want the window opened", "The second person agrees, because it is very hot inside", "The second person is cold"], answer: 1 }
+    - { audio: "Secondo le prime notizie, l'incendio sarebbe partito da una cucina al piano terra. Non ci sarebbero feriti.", options: ["The news reports confirmed facts about many injured people", "According to early, unconfirmed reports the fire started in a ground-floor kitchen and nobody was hurt", "The fire started on the top floor"], answer: 1 }
+    - { audio: "Avrei dovuto prenotare prima: adesso tutti gli alberghi di Venezia sono pieni.", options: ["The speaker booked a hotel in advance", "The speaker regrets not booking earlier, because the hotels are full", "The speaker doesn't want to go to Venice"], answer: 1 }
+grammar:
+  - { prompt: "Ti piace questa borsa? ___ regalo per il compleanno.", options: ["Te la", "Ti la", "Tela"], answer: 0, explain: "ti + la = te la (g.combined-pronouns)." }
+  - { prompt: "Hai dato le chiavi a Paolo? — Sì, ___ ho date ieri.", options: ["gliele", "glieli", "le gli"], answer: 0, explain: "gli + le = gliele; the participle agrees with le chiavi: date (g.combined-pronouns-past)." }
+  - { prompt: "Non ho capito: ___ di nuovo, per favore!", options: ["dimmelo", "dammelo", "mi lo di'"], answer: 0, explain: "di' + mi + lo: the consonant doubles: dimmelo (g.imperativo-short-forms)." }
+  - { prompt: "Signora, non ___ preoccupi, ci penso io.", options: ["ti", "si", "Le"], answer: 1, explain: "With Lei the pronoun goes before the verb: non si preoccupi (g.imperativo-lei-pronouns)." }
+  - { prompt: "Al tuo posto, io ___ con lui.", options: ["parlerei", "parlavo", "parlassi"], answer: 0, explain: "Advice: conditional (g.condizionale-uses)." }
+  - { prompt: "Avremmo ___ partire prima, adesso c'è traffico.", options: ["dovuto", "dovere", "dovuti"], answer: 0, explain: "Regret: past conditional of dovere + infinitive (g.modals-condizionale-passato)." }
+  - { prompt: "Quando sono arrivato alla festa, Marco ___ già andato via.", options: ["è", "era", "sarà"], answer: 1, explain: "An action before another past action: trapassato prossimo (g.trapassato-prossimo)." }
+  - { prompt: "Credo che Giulia ___ ragione.", options: ["ha", "abbia", "avrà"], answer: 1, explain: "credere che + congiuntivo (g.congiuntivo-opinion)." }
+  - { prompt: "È importante che voi ___ in orario.", options: ["arrivate", "arriviate", "arriverete"], answer: 1, explain: "Impersonal expressions of judgement take the congiuntivo (g.congiuntivo-impersonal)." }
+  - { prompt: "Spero ___ presto.", options: ["di tornare", "che torno", "che tornare"], answer: 0, explain: "Same subject (I hope / I return): di + infinitive (g.congiuntivo-vs-infinitive)." }
+  - { prompt: "Ti presto la macchina purché tu ___ attento.", options: ["sei", "sia", "saresti"], answer: 1, explain: "purché always takes the congiuntivo (g.congiuntivo-conjunctions)." }
+  - { prompt: "La ragazza ___ ti ho parlato abita a Verona.", options: ["che", "di cui", "a cui"], answer: 1, explain: "parlare di qualcuno: after a preposition, cui (g.relative-cui)." }
+  - { prompt: "In questo ristorante ___ gli spaghetti migliori di Bologna.", options: ["si mangia", "si mangiano", "si mangiamo"], answer: 1, explain: "si passivante: the verb agrees with gli spaghetti (g.si-passivante)." }
+  - { prompt: "Mi ha chiesto ___ volevo venire al cinema.", options: ["se", "che", "di"], answer: 0, explain: "A reported yes/no question is introduced by se (g.reported-questions)." }
+  - { prompt: "___ la televisione, mi sono addormentato.", options: ["Guardato", "Guardando", "A guardare"], answer: 1, explain: "The gerund expresses time / simultaneous action with the same subject (g.gerundio-uses)." }
+writing:
+  prompt: "Write a formal e-mail (Lei) to the manager of a hotel in Venice where you stayed last month. Thank them for something, complain politely about a problem, explain what happened and say what you would like them to do. Use at least one congiuntivo, one conditional and one relative clause."
+  minWords: 130
+  modelAnswer: |
+    Gentile Direttrice,
+    Le scrivo in merito al mio soggiorno nel Vostro albergo dal 12 al 15 maggio. Prima di tutto vorrei ringraziare il personale, che è stato sempre gentile e disponibile.
+    Purtroppo, però, devo parlarLe di un problema. La camera che avevo prenotato doveva avere la vista sul canale, ma quando siamo arrivati ci hanno dato una stanza al piano terra che dava su un cortile buio. Abbiamo chiesto di cambiarla, ma ci hanno detto che l'albergo era pieno. Credo che sia giusto che un cliente riceva ciò che ha pagato, soprattutto considerando che avevamo prenotato tre mesi prima.
+    Per questo motivo Le sarei grata se potesse restituirmi una parte del prezzo. Rimango in attesa di un Suo riscontro.
+    Cordiali saluti,
+    Sarah Collins
+  checklist:
+    - "I opened and closed the e-mail formally (Gentile…, Le scrivo in merito a…, In attesa di un Suo riscontro, Cordiali saluti)."
+    - "I used Lei forms consistently, with a capital letter (Le scrivo, Suo riscontro)."
+    - "I used the congiuntivo after an opinion or judgement (credo che sia giusto che…)."
+    - "I used a polite conditional for my request (vorrei, Le sarei grata se…)."
+    - "I used at least one relative clause (la camera che avevo prenotato, il personale… che è stato)."
+    - "I narrated the problem with passato prossimo, imperfetto and trapassato prossimo correctly."
+speaking:
+  - "Se me lo chiedi con gentilezza, te lo spiego volentieri."
+  - "Penso che questo ristorante sia il migliore di Bologna."
+  - "Avrei voluto venire, ma ho dovuto lavorare fino a tardi."
+  - "La città in cui sono nata è piccola ma molto vivace."
+  - "Mi ha detto che sarebbe arrivato verso le nove."
+  - "Anche se sono stanca, stasera esco con i miei colleghi."

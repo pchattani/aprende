@@ -1,0 +1,66 @@
+level: a2
+title: Level check A2
+passScore: 0.8
+reading:
+  text: |
+    L'estate scorsa io e mio marito abbiamo passato due settimane in Toscana. Siamo arrivati a Firenze in treno e il primo giorno abbiamo visitato il Duomo e gli Uffizi. C'erano molti turisti, faceva un caldo terribile e alla fine eravamo stanchissimi, ma la città era bellissima.
+
+    Dopo tre giorni abbiamo noleggiato una macchina e siamo andati a Siena. Lì abbiamo dormito in un piccolo albergo vicino a Piazza del Campo. Una sera, mentre cenavamo in una trattoria, il cameriere ci ha raccontato la storia del Palio: due volte all'anno, a luglio e ad agosto, i cavalli delle contrade corrono intorno alla piazza. Purtroppo noi eravamo lì a giugno e non l'abbiamo visto.
+
+    Poi siamo andati in campagna, nel Chianti, dove abbiamo dormito in un agriturismo. La signora Rosa cucinava ogni sera piatti tradizionali: la pasta fatta a mano, la bistecca e i cantucci con il vino dolce. Ci siamo trovati così bene che abbiamo deciso di tornare l'anno prossimo. Questa volta, però, andremo a luglio: vogliamo vedere il Palio!
+  questions:
+    - { q: "How did they travel to Florence?", options: ["By car", "By train", "By plane"], answer: 1 }
+    - { q: "What was the weather like in Florence?", options: ["Very hot", "Rainy", "Cold"], answer: 0 }
+    - { q: "What did the waiter in Siena tell them about?", options: ["The history of the cathedral", "The Palio horse race", "The best restaurants in Florence"], answer: 1 }
+    - { q: "Why didn't they see the Palio?", options: ["It was cancelled", "They were in Siena in June", "The tickets were too expensive"], answer: 1 }
+    - { q: "What have they decided to do?", options: ["Go back next year in July", "Buy a house in the Chianti", "Open an agriturismo"], answer: 0 }
+listening:
+  dictation:
+    - "Ieri sono andata al mercato e ho comprato le pesche."
+    - "Quando ero piccolo, andavo al mare con i nonni."
+    - "Non ho ancora finito i compiti."
+    - "Domani partiremo presto per Pisa."
+    - "Abito a Lucca da cinque anni."
+  questions:
+    - { audio: "Pronto, Giulia? Scusa, arrivo tardi: ho perso il treno delle otto e prendo quello delle nove.", options: ["Giulia's friend will arrive early", "Giulia's friend missed the eight o'clock train and is taking the nine o'clock one", "Giulia's friend is not coming"], answer: 1 }
+    - { audio: "Per questo piatto, metti il pane vecchio nella pentola, aggiungi le verdure e l'acqua, e lascia cuocere per un'ora.", options: ["It is a recipe: put the old bread in the pot, add vegetables and water, and cook for an hour", "It is a weather forecast", "Someone is ordering at a restaurant"], answer: 0 }
+    - { audio: "Mi fa male la testa da due giorni e ho un po' di febbre. Potrei avere un appuntamento con il medico oggi pomeriggio?", options: ["The person wants to book a table", "The person has had a headache for two days and wants to see the doctor this afternoon", "The person is a doctor"], answer: 1 }
+    - { audio: "Secondo me Pisa è meno bella di Lucca, ma la torre è più famosa di tutte le mura di Lucca.", options: ["The speaker thinks Pisa is more beautiful than Lucca", "The speaker thinks Pisa is less beautiful than Lucca, but its tower is more famous", "The speaker has never been to Pisa"], answer: 1 }
+grammar:
+  - { prompt: "Ieri Marco ___ al cinema con Laura.", options: ["ha andato", "è andato", "è andata"], answer: 1, explain: "andare takes essere and the participle agrees with the subject: Marco è andato (g.passato-prossimo-essere)." }
+  - { prompt: "Stamattina ___ un cappuccino al bar.", options: ["ho preso", "ho prenduto", "sono preso"], answer: 0, explain: "prendere has an irregular participle: preso (g.participles-irregular)." }
+  - { prompt: "Le ragazze si ___ molto alla festa.", options: ["sono divertite", "hanno divertito", "sono divertiti"], answer: 0, explain: "Reflexive verbs take essere; the participle agrees with le ragazze (g.reflexive-passato-prossimo)." }
+  - { prompt: "Da bambino ___ sempre a calcio con mio fratello.", options: ["ho giocato", "giocavo", "giocherò"], answer: 1, explain: "A habit in the past: imperfetto (g.imperfetto-uses)." }
+  - { prompt: "Mentre ___ la doccia, è suonato il telefono.", options: ["ho fatto", "facevo", "farò"], answer: 1, explain: "mentre + imperfetto for the background action, passato prossimo for the event (g.mentre-quando)." }
+  - { prompt: "Hai visto Paola? — Sì, ___ ho vista ieri.", options: ["la", "l'", "le"], answer: 1, explain: "la becomes l' before ho, and the participle agrees: l'ho vista (g.pronoun-participle-agreement)." }
+  - { prompt: "Hai telefonato a Luca? — Sì, ___ ho telefonato stamattina.", options: ["lo", "gli", "le"], answer: 1, explain: "telefonare a qualcuno: indirect object, a lui = gli (g.indirect-object-pronouns)." }
+  - { prompt: "L'anno prossimo ___ in Toscana.", options: ["andremo", "anderemo", "andiamo stati"], answer: 0, explain: "andare has a contracted future stem: andr- (g.futuro-irregular)." }
+  - { prompt: "Dov'è Marta? — Non so, ___ a casa.", options: ["sarà", "è stata", "era"], answer: 0, explain: "The future expresses a guess about the present: sarà a casa = she's probably at home (g.futuro-probability)." }
+  - { prompt: "Firenze è più grande ___ Siena.", options: ["che", "di", "come"], answer: 1, explain: "più + adjective + di before a noun (g.comparatives)." }
+  - { prompt: "Questa pizza è ___ di quella di ieri.", options: ["più buona", "migliore", "meglio"], answer: 1, explain: "migliore is the comparative adjective of buono (g.comparatives-irregular)." }
+  - { prompt: "Quante mele vuoi? — ___ voglio tre.", options: ["Ne", "Ci", "Le"], answer: 0, explain: "ne replaces a quantity (g.ne-partitive)." }
+  - { prompt: "Per arrivare a Pisa ___ un'ora.", options: ["ci vuole", "ci vogliono", "ci metto"], answer: 0, explain: "volerci is impersonal and agrees with the time: ci vuole un'ora (g.metterci-volerci)." }
+  - { prompt: "Signora, ___ pure!", options: ["entra", "entri", "entrate"], answer: 1, explain: "Imperative with Lei for -are verbs ends in -i: entri (g.imperativo-lei)." }
+  - { prompt: "Studio italiano ___ due anni.", options: ["per", "da", "fra"], answer: 1, explain: "An action that started in the past and continues: present + da (g.da-since)." }
+writing:
+  prompt: "Write an e-mail to an Italian friend about a trip you took last year: where you went, how you travelled, what the place was like, what you did and what happened, and what you will do next time."
+  minWords: 90
+  modelAnswer: |
+    Cara Francesca,
+    come stai? Ti scrivo per raccontarti il mio viaggio in Toscana dell'anno scorso. Sono partita a maggio con mia sorella e siamo arrivate a Pisa in aereo. Il primo giorno abbiamo visto la torre: era più piccola di come pensavo, ma bellissima! Poi abbiamo preso il treno per Lucca, dove abbiamo noleggiato due biciclette e abbiamo fatto il giro delle mura. Faceva bel tempo e c'erano pochi turisti. Una sera, mentre tornavamo all'albergo, abbiamo trovato una piccola trattoria e abbiamo mangiato la migliore pasta della mia vita. Il prossimo anno tornerò in Toscana e visiterò Siena. Vuoi venire con me?
+    Un abbraccio,
+    Emma
+  checklist:
+    - "I used the passato prossimo for completed events, with the right auxiliary (sono partita, abbiamo visto)."
+    - "I used the imperfetto for descriptions and background (era, faceva, c'erano, mentre tornavamo)."
+    - "My participles with essere agree with the subject (siamo arrivate)."
+    - "I used at least one comparative (più piccola di, la migliore)."
+    - "I used the future to talk about next time (tornerò, visiterò)."
+    - "I began and ended the e-mail appropriately (Cara…, Un abbraccio)."
+speaking:
+  - "Ieri sera sono uscito con i miei amici e siamo andati in pizzeria."
+  - "Quando ero piccola, abitavo in campagna con i nonni."
+  - "L'anno prossimo andrò in vacanza in Toscana."
+  - "Secondo me, Firenze è più bella di Milano."
+  - "Hai già comprato i biglietti? — No, li compro domani."
+  - "Potrebbe chiamare un taxi, per favore?"

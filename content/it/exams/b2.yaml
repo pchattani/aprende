@@ -1,0 +1,73 @@
+level: b2
+title: Level check B2
+passScore: 0.8
+reading:
+  text: |
+    Fino agli anni Cinquanta, i Sassi di Matera erano considerati una «vergogna nazionale». Moltissime persone vivevano in case scavate nella roccia, spesso senza acqua né luce, insieme agli animali. Quando Carlo Levi, nel suo libro più famoso, ne descrisse le condizioni, tutta l'Italia ne parlò, e nel 1952 una legge dello Stato decise che gli abitanti venissero trasferiti in nuovi quartieri costruiti fuori dalla città vecchia. In pochi anni i Sassi si svuotarono del tutto.
+
+    Per decenni il centro storico rimase abbandonato. Molti abitanti di Matera, pur essendo nati nei Sassi, non volevano nemmeno sentirne parlare: per loro quelle grotte rappresentavano la povertà da cui erano finalmente scappati. Sembrava che la città antica dovesse crollare da un momento all'altro.
+
+    Le cose cominciarono a cambiare negli anni Ottanta, quando un gruppo di giovani architetti e di associazioni locali propose di salvare le vecchie case invece di distruggerle. Nel 1993 i Sassi furono dichiarati patrimonio UNESCO, e da quel momento la città ha vissuto un cambiamento che nessuno avrebbe potuto immaginare. Le grotte sono diventate alberghi, ristoranti e musei; il cinema internazionale ha scelto Matera per girare numerosi film, e nel 2019 la città è stata Capitale europea della cultura.
+
+    Non tutti, però, sono entusiasti. C'è chi teme che il turismo stia trasformando i Sassi in un museo a cielo aperto, dove i prezzi delle case sono saliti al punto che le famiglie del posto non possono più permettersele. «Se mi avessero detto da bambina che un giorno la gente avrebbe pagato per dormire in una grotta, non ci avrei creduto», racconta un'anziana signora. «Ma che i miei nipoti non possano vivere dove sono nata io, questo mi dispiace davvero.»
+  questions:
+    - { q: "What were the Sassi called in the 1950s?", options: ["A national treasure", "A national disgrace", "The capital of culture"], answer: 1 }
+    - { q: "What did the 1952 law decide?", options: ["That the Sassi should be demolished", "That the inhabitants should be moved to new districts outside the old town", "That tourists should pay to enter the Sassi"], answer: 1 }
+    - { q: "Why didn't many people from Matera want to hear about the Sassi for decades?", options: ["They associated them with the poverty they had escaped", "They had never lived there", "They were afraid of earthquakes"], answer: 0 }
+    - { q: "Which of these is NOT mentioned as part of Matera's transformation?", options: ["Caves turned into hotels and museums", "Films shot in the city", "A new international airport"], answer: 2 }
+    - { q: "What worries the elderly woman at the end?", options: ["That tourists sleep in caves", "That her grandchildren cannot afford to live where she was born", "That the films have damaged the Sassi"], answer: 1 }
+listening:
+  dictation:
+    - "Se avessi più tempo, imparerei a suonare il pianoforte."
+    - "Se me l'avessi detto prima, sarei venuto a prenderti."
+    - "Il castello fu costruito dai Normanni molti secoli fa."
+    - "Benché piovesse, siamo andati lo stesso al mare."
+    - "Mi ha chiesto di fargli sapere se avessimo bisogno di qualcosa."
+  questions:
+    - { audio: "Uè, ma che fai stasera? Vieni a mangiare una pizza da noi ai Quartieri? Ci sta pure mio cugino, quello che sta a Milano.", options: ["A Milanese speaker cancels a dinner", "A Neapolitan speaker invites a friend for pizza; his cousin who lives in Milan will be there too", "Someone is ordering a pizza by phone"], answer: 1 }
+    - { audio: "Si comunica ai signori viaggiatori che, a causa di uno sciopero, il traghetto per Capri delle ore dieci è stato cancellato. Il prossimo partirà alle dodici e trenta.", options: ["The ten o'clock ferry to Capri has been cancelled because of a strike; the next one leaves at 12.30", "The ferry will arrive early", "All ferries are cancelled for the day"], answer: 0 }
+    - { audio: "Magari avessi accettato quel lavoro a Bari! Adesso vivrei al mare e non starei qui al freddo.", options: ["The speaker is happy to have refused the job", "The speaker regrets not accepting a job in Bari", "The speaker is moving to Bari tomorrow"], answer: 1 }
+    - { audio: "Il medico mi ha fatto fare le analisi del sangue e poi mi ha detto di tornare tra una settimana.", options: ["The speaker did the blood tests himself", "The doctor had the speaker do blood tests and told him to come back in a week", "The doctor refused to see the speaker"], answer: 1 }
+grammar:
+  - { prompt: "Se ___ (io, essere) in te, accetterei subito.", options: ["sarei", "fossi", "sono"], answer: 1, explain: "Unreal present condition: se + congiuntivo imperfetto, condizionale presente (g.periodo-ipotetico-2)." }
+  - { prompt: "Se fossimo partiti prima, non ___ il treno.", options: ["perdevamo", "avremmo perso", "avessimo perso"], answer: 1, explain: "Past unreal condition: se + congiuntivo trapassato, condizionale passato (g.periodo-ipotetico-3)." }
+  - { prompt: "Se avessi studiato medicina, adesso ___ medico.", options: ["sarei", "sarei stato", "fossi"], answer: 0, explain: "Past condition, present result: condizionale presente (g.periodo-ipotetico-misto)." }
+  - { prompt: "Parla come se ___ tutto lui.", options: ["sa", "sapesse", "saprebbe"], answer: 1, explain: "come se always takes the congiuntivo imperfetto or trapassato (g.come-se)." }
+  - { prompt: "Vorrei che tu ___ con me a Napoli.", options: ["venga", "venissi", "verresti"], answer: 1, explain: "After a conditional trigger (vorrei che): congiuntivo imperfetto (g.vorrei-che)." }
+  - { prompt: "Pensavo che Marco ___ già partito.", options: ["sia", "fosse", "è"], answer: 1, explain: "Past trigger, earlier action: congiuntivo trapassato (g.concordanza-congiuntivo)." }
+  - { prompt: "La pizza ___ mangiata calda.", options: ["va", "viene da", "è stato"], answer: 0, explain: "andare + participle = must be done (g.passive-andare)." }
+  - { prompt: "Ogni anno la processione ___ seguita da molte persone.", options: ["viene", "sta", "fa"], answer: 0, explain: "venire + participle: passive in simple tenses, stressing the action (g.passive-venire)." }
+  - { prompt: "___ fosse stanco, ha guidato fino a Bari.", options: ["Anche se", "Sebbene", "Perché"], answer: 1, explain: "sebbene / benché + congiuntivo; anche se takes the indicative (g.concessive-clauses)." }
+  - { prompt: "___ chiami, digli che non ci sono.", options: ["Chiunque", "Qualcuno", "Chi"], answer: 0, explain: "chiunque + congiuntivo: whoever calls (g.chiunque-qualunque)." }
+  - { prompt: "Basta, sono stanca: me ne ___!", options: ["vado", "va", "andiamo"], answer: 0, explain: "andarsene: me ne vado (g.pronominal-verbs)." }
+  - { prompt: "Ho ___ riparare la macchina da un meccanico di Lecce.", options: ["lasciato", "fatto", "dato"], answer: 1, explain: "fare + infinitive: to have something done (g.fare-causative)." }
+  - { prompt: "___ finito il lavoro, siamo andati a cena.", options: ["Avendo", "Essendo", "Avuto"], answer: 0, explain: "Compound gerund with avere: an action completed before the main one (g.gerundio-composto)." }
+  - { prompt: "Mi disse che ___ il giorno dopo.", options: ["tornerà", "sarebbe tornato", "tornerebbe"], answer: 1, explain: "Future in the past: condizionale passato (g.reported-speech-advanced)." }
+  - { prompt: "Il caffè ___ prendo sempre amaro.", options: ["lo", "la", "ne"], answer: 0, explain: "Left dislocation: the fronted object is repeated with a pronoun (g.dislocation)." }
+writing:
+  prompt: "An Italian magazine has asked readers for opinion articles on the question: Il turismo di massa sta rovinando le città del Sud? Write an article of at least 180 words with a title. State your thesis, develop two arguments with connectors (innanzitutto, inoltre, d'altra parte), concede a point and rebut it (è vero che…, tuttavia…), use at least one passive (venire / essere + participle), one hypothetical sentence and one concessive clause (benché / sebbene + congiuntivo), and finish with a conclusion."
+  minWords: 180
+  modelAnswer: |
+    Turismo sì, ma non a ogni costo
+
+    Negli ultimi dieci anni città come Napoli, Matera e Lecce sono state scoperte da milioni di visitatori. A mio avviso, il turismo non sta rovinando il Sud, ma rischia di farlo se non viene gestito con intelligenza.
+
+    Innanzitutto, bisogna riconoscere che il turismo ha portato lavoro in zone dove la disoccupazione giovanile era molto alta. Molti ragazzi che sarebbero partiti per il Nord sono rimasti e hanno aperto piccoli alberghi e ristoranti. Inoltre, interi quartieri che erano abbandonati sono stati salvati.
+
+    È vero che i prezzi delle case sono saliti e che in certi centri storici gli abitanti sono sempre meno. Tuttavia, la colpa non è dei turisti, ma della mancanza di regole. Se i Comuni limitassero gli affitti ai turisti, le famiglie potrebbero continuare a vivere in centro.
+
+    Benché il problema sia reale, chiudere le porte sarebbe un errore. In conclusione, il turismo va gestito, non combattuto: solo così potrà diventare una risorsa per tutti.
+  checklist:
+    - "I gave the article a title and stated my thesis clearly (a mio avviso, secondo me)."
+    - "I organised my arguments with connectors (innanzitutto, inoltre, d'altra parte, in conclusione)."
+    - "I conceded a point and rebutted it (è vero che… tuttavia…)."
+    - "I used at least one passive (sono state scoperte, viene gestito, va gestito)."
+    - "I used a hypothetical sentence with congiuntivo imperfetto + condizionale (se i Comuni limitassero…, potrebbero…)."
+    - "I used a concessive clause with the congiuntivo (benché il problema sia reale)."
+speaking:
+  - "Se avessi saputo che venivi, ti avrei preparato qualcosa di buono."
+  - "Magari potessi vivere a Napoli tutto l'anno!"
+  - "Benché fosse tardi, abbiamo deciso di fare un giro sul lungomare."
+  - "Il Duomo fu costruito nel Duecento e restaurato dopo il terremoto."
+  - "Me ne sono andata prima della fine, perché il film era molto noioso."
+  - "Gli ho fatto capire che non era il caso di insistere."
