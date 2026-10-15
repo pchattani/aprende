@@ -17,6 +17,8 @@ export interface Hook {
   index: number
   total: number
   finished: boolean
+  /** Tiles of the first accepted answer in order (word bank / order exercises). */
+  solution?: string[]
 }
 
 export async function enableTestHook(page: Page) {
@@ -55,10 +57,13 @@ export async function answerCurrent(page: Page, correct = true) {
     }
     case 'wordBank':
     case 'order': {
-      const words = correct ? normalize(ex.answers![0]!).split(' ') : [...normalize(ex.answers![0]!).split(' ')].reverse()
+      // `solution` is the app's own tile split (works for languages without spaces too)
+      const sol = hook.solution ?? normalize(ex.answers![0]!).split(' ')
+      const words = correct ? sol : [...sol].reverse()
       for (const w of words) {
-        // tiles are buttons inside the pool; pick the first visible, enabled tile with this text
-        const tile = main.locator('button.tile:not([disabled]):visible', { hasText: new RegExp(`^${escapeRe(w)}$`, 'i') }).first()
+        // tiles are buttons inside the pool; pick the first visible, enabled tile with this word
+        const byData = main.locator(`button.tile[data-tile="${cssEscape(w)}"]:not([disabled]):visible`).first()
+        const tile = (await byData.count()) ? byData : main.locator('button.tile:not([disabled]):visible', { hasText: new RegExp(`^${escapeRe(w)}$`, 'i') }).first()
         await tile.click()
       }
       await page.getByRole('button', { name: 'Check' }).click()
@@ -69,28 +74,29 @@ export async function answerCurrent(page: Page, correct = true) {
       const tiles = [...ex.tiles!].sort((a, b) => target.indexOf(a) - target.indexOf(b))
       const order = correct ? tiles : [...tiles].reverse()
       for (const t of order) {
-        await main.locator('button.tile:not([disabled]):visible', { hasText: new RegExp(`^${escapeRe(t)}$`) }).first().click()
+        await main.locator(`button.tile[data-tile="${cssEscape(t)}"]:not([disabled]):visible`).first().click()
       }
       await page.getByRole('button', { name: 'Check' }).click()
       break
     }
     case 'match': {
+      const tileFor = (text: string) => main.locator(`button.tile[data-tile="${cssEscape(text)}"]:not([disabled])`).first()
       for (const p of ex.pairs!) {
         if (!correct) break
-        await main.locator('button.tile:not([disabled])', { hasText: new RegExp(`^${escapeRe(p.left)}$`) }).first().click()
-        await main.locator('button.tile:not([disabled])', { hasText: new RegExp(`^${escapeRe(p.right)}$`) }).first().click()
+        await tileFor(p.left).click()
+        await tileFor(p.right).click()
       }
       if (!correct) {
         // deliberately mismatch three times then finish properly
         const ps = ex.pairs!
         for (let i = 0; i < 3 && ps.length > 1; i++) {
-          await main.locator('button.tile:not([disabled])', { hasText: new RegExp(`^${escapeRe(ps[0]!.left)}$`) }).first().click()
-          await main.locator('button.tile:not([disabled])', { hasText: new RegExp(`^${escapeRe(ps[1]!.right)}$`) }).first().click()
+          await tileFor(ps[0]!.left).click()
+          await tileFor(ps[1]!.right).click()
           await page.waitForTimeout(600)
         }
         for (const p of ps) {
-          await main.locator('button.tile:not([disabled])', { hasText: new RegExp(`^${escapeRe(p.left)}$`) }).first().click()
-          await main.locator('button.tile:not([disabled])', { hasText: new RegExp(`^${escapeRe(p.right)}$`) }).first().click()
+          await tileFor(p.left).click()
+          await tileFor(p.right).click()
         }
       }
       break
@@ -111,6 +117,10 @@ export async function answerCurrent(page: Page, correct = true) {
 export async function continueFeedback(page: Page) {
   const btn = page.getByRole('status').getByRole('button', { name: /Continue|Finish/ })
   await btn.click()
+}
+
+function cssEscape(s: string) {
+  return s.replace(/["\\]/g, '\\$&')
 }
 
 function escapeRe(s: string) {
