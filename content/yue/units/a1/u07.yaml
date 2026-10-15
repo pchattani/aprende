@@ -1,0 +1,282 @@
+id: a1.u07
+title: 而家幾點？
+lessons:
+  - id: a1.u07.l1
+    title: 而家幾點呀？
+    teach: [g.clock-time]
+    vocab: [w.ji4-gaa1, w.dim2-zung1, w.dim2.b, w.fan1-zung1, w.go3-zi6, w.zi6, w.gwat1, w.bun3.b, w.zung1-tau4, w.zung1, w.si4-gaan3, w.gei2-dim2, w.ziu1-zou2, w.soeng6-zau3, w.zung1-ng5, w.aan3-zau3, w.haa6-zau3, w.je6-maan5, w.maan5-hak1, w.zou2, w.ci4]
+    tip: "Minutes go in fives: each number on the clock face is one 字, so 三點三 is 3:15 and 三點九 is 3:45."
+    sentences:
+      - { es: "而家幾點呀？", en: "What time is it now?", altEs: ["而家幾點？", "而家幾點鐘呀？", "宜家幾點呀？"], grammar: [g.clock-time], vocab: [w.ji4-gaa1, w.gei2-dim2] }
+      - { es: "而家三點半。", en: "It's half past three.", altEs: ["而家三點三十分。", "三點半。", "而家係三點半。"], altEn: ["It's three thirty now."], grammar: [g.clock-time], vocab: [w.bun3.b, w.dim2.b], transform: { instruction: "Say it's half past four instead", answer: "而家四點半。", alt: ["四點半。", "而家四點三十分。"], en: "It's half past four." } }
+      - { es: "而家十點三。", en: "It's a quarter past ten.", altEs: ["而家十點三個字。", "而家十點十五分。", "十點三。", "而家十點一個骨。"], altEn: ["It's ten fifteen."], grammar: [g.clock-time], vocab: [w.go3-zi6, w.gwat1], note: "三 here is three 字 on the clock face: 15 minutes, not 3." }
+      - { es: "而家兩點鐘。", en: "It's two o'clock.", altEs: ["而家兩點。", "兩點鐘。"], grammar: [g.clock-time, g.loeng-vs-ji], vocab: [w.dim2-zung1], error: { wrong: "而家二點鐘。", explain: "Two o'clock is 兩點, never 二點: 兩 is used before a measure word like 點.", grammar: g.clock-time } }
+      - { es: "唔好意思，請問而家幾點呀？", en: "Excuse me, could you tell me what time it is?", altEs: ["唔好意思，而家幾點呀？", "請問而家幾點呀？"], grammar: [g.clock-time], vocab: [w.gei2-dim2] }
+      - { es: "朝早八點好多人返工。", en: "Lots of people go to work at eight in the morning.", altEs: ["朝早八點有好多人返工。"], grammar: [g.clock-time, g.time-before-verb], vocab: [w.ziu1-zou2] }
+      - { es: "我哋下晝三點食下晝茶。", en: "We have afternoon tea at three p.m.", altEs: ["下晝三點我哋食下晝茶。"], grammar: [g.clock-time, g.time-before-verb], vocab: [w.haa6-zau3], note: "下晝茶 is the Hong Kong afternoon tea set: milk tea and a snack." }
+      - { es: "我中午十二點半食飯。", en: "I have lunch at half past twelve.", altEs: ["我中午十二點半食晏。", "中午十二點半我食飯。"], grammar: [g.clock-time, g.time-before-verb], vocab: [w.zung1-ng5], transform: { instruction: "Change the time to 1:15 in the early afternoon (晏晝)", answer: "我晏晝一點三食飯。", alt: ["我晏晝一點十五分食飯。", "我晏晝一點三個字食飯。", "晏晝一點三我食飯。"], en: "I have lunch at a quarter past one." } }
+      - { es: "我哋夜晚八點喺銅鑼灣見。", en: "Let's meet in Causeway Bay at eight in the evening.", altEs: ["夜晚八點我哋喺銅鑼灣見。", "我哋晚黑八點喺銅鑼灣見。"], altEn: ["See you in Causeway Bay at 8 p.m."], grammar: [g.clock-time, g.time-before-verb], vocab: [w.je6-maan5], error: { wrong: "我哋八點夜晚喺銅鑼灣見。", explain: "The part of the day comes before the hour: 夜晚八點, not 八點夜晚.", grammar: g.clock-time } }
+      - { es: "晚黑十一點，商場仲有好多人。", en: "At eleven at night the mall is still full of people.", altEs: ["夜晚十一點，商場仲有好多人。"], grammar: [g.clock-time], vocab: [w.maan5-hak1] }
+      - { es: "好遲喇！而家已經八點，我冇時間食早餐。", jp: "hou2 ci4 laa3 ji4 gaa1 ji5 ging1 baat3 dim2 ngo5 mou5 si4 gaan3 sik6 zou2 caan1", en: "It's late! It's already eight and I don't have time for breakfast.", altEs: ["好遲呀！而家已經八點，我冇時間食早餐。", "遲喇！而家已經八點鐘，我冇時間食早餐。"], grammar: [g.clock-time, g.mou-negation], vocab: [w.ci4, w.si4-gaan3] }
+      - { es: "一個鐘頭有六十分鐘。", en: "An hour has sixty minutes.", altEs: ["一個鐘頭係六十分鐘。"], grammar: [g.clock-time], vocab: [w.zung1-tau4, w.fan1-zung1] }
+      - { es: "一個骨係十五分鐘。", en: "A quarter is fifteen minutes.", altEs: ["一個骨即係十五分鐘。"], grammar: [g.clock-time], vocab: [w.gwat1, w.fan1-zung1], note: "骨 comes from the English word \"quarter\"." }
+      - { es: "你好早呀！而家六點咋。", en: "You're early! It's only six.", altEs: ["你好早呀！而家先六點。"], grammar: [g.clock-time, g.adjective-predicates], vocab: [w.zou2] }
+      - { es: "而家係朝早定係夜晚呀？", en: "Is it morning or night right now?", altEs: ["而家朝早定夜晚呀？"], grammar: [g.clock-time], vocab: [w.ziu1-zou2, w.je6-maan5] }
+      - { es: "呢個鐘慢咗，而家唔係五點，係六點。", en: "This clock is slow: it isn't five now, it's six.", altEs: ["呢個鐘慢，而家唔係五點，係六點。"], grammar: [g.clock-time, g.m-negation], vocab: [w.zung1] }
+    exchanges:
+      - q: { es: "而家幾點呀？", en: "What time is it now?" }
+        a: { es: "而家五點半。", en: "It's half past five." }
+        alt: ["五點半。", "差唔多五點半。", "而家五點三十分。"]
+        grammar: [g.clock-time]
+        vocab: [w.ji4-gaa1, w.bun3.b]
+      - q: { es: "你朝早幾點起身呀？", en: "What time do you get up in the morning?" }
+        a: { es: "我朝早七點起身。", en: "I get up at seven in the morning." }
+        alt: ["七點。", "七點半。", "我通常七點起身。"]
+        grammar: [g.clock-time, g.time-before-verb]
+        vocab: [w.ziu1-zou2, w.gei2-dim2]
+      - q: { es: "你幾點放工呀？", en: "What time do you finish work?" }
+        a: { es: "我下晝六點放工。", en: "I finish work at six p.m." }
+        alt: ["六點。", "六點半。", "我夜晚七點先放工。"]
+        grammar: [g.clock-time, g.time-before-verb]
+        vocab: [w.haa6-zau3, w.gei2-dim2]
+      - q: { es: "我哋幾點見呀？", en: "What time shall we meet?" }
+        a: { es: "七點三，喺銅鑼灣站。", en: "A quarter past seven, at Causeway Bay station." }
+        alt: ["七點半啦。", "七點三見啦。"]
+        grammar: [g.clock-time]
+        vocab: [w.go3-zi6]
+      - q: { es: "你夜晚幾點瞓覺呀？", en: "What time do you go to bed at night?" }
+        a: { es: "我通常十二點瞓覺。", en: "I usually go to bed at twelve." }
+        alt: ["十二點。", "十一點半。", "好夜，一點鐘。"]
+        grammar: [g.clock-time]
+        vocab: [w.je6-maan5, w.dim2-zung1]
+    texts:
+      - title: "Kelvin 嘅短訊"
+        es: ["Mandy，對唔住，我遲到呀！", "而家六點九，我七點半先到。", "你喺銅鑼灣站等我啦。"]
+        en: ["Mandy, sorry, I'm running late!", "It's a quarter to seven now; I'll only get there at half past seven.", "Wait for me at Causeway Bay station."]
+        grammar: [g.clock-time]
+        vocab: [w.ji4-gaa1, w.bun3.b]
+      - title: "Leo 嘅一日"
+        es: ["Leo朝早七點食早餐。", "中午十二點佢瞓覺。", "下晝三點佢又瞓覺。", "夜晚八點佢……都係瞓覺！"]
+        en: ["Leo has breakfast at seven in the morning.", "At twelve noon he sleeps.", "At three in the afternoon he sleeps again.", "At eight in the evening he... sleeps as well!"]
+        grammar: [g.clock-time, g.time-before-verb]
+        vocab: [w.ziu1-zou2, w.zung1-ng5, w.haa6-zau3, w.je6-maan5]
+    spicy:
+      - { es: "而家幾點？係時候同我食飯喇。", en: "What time is it? Time to have dinner with me.", altEs: ["而家幾點呀？係時候同我食飯喇。"], grammar: [g.clock-time], vocab: [w.gei2-dim2] }
+      - { es: "你遲到十五分鐘，所以今晚你請食飯。", en: "You're fifteen minutes late, so tonight you're buying dinner.", altEs: ["你遲咗十五分鐘，所以今晚你請食飯。"], grammar: [g.clock-time], vocab: [w.fan1-zung1] }
+      - { es: "我由三點等到而家，不過你咁靚仔，唔緊要。", en: "I've been waiting since three, but you're so handsome it doesn't matter.", altEs: ["我由三點等到而家，不過你咁靚女，唔緊要。"], altEn: ["I've been waiting since three, but you're so pretty it doesn't matter."], grammar: [g.clock-time], vocab: [w.ji4-gaa1] }
+      - { es: "夜晚十一點仲想飲嘢？好呀，一杯咋。", en: "Eleven at night and you still want a drink? Fine, just one.", altEs: ["晚黑十一點仲想飲嘢？好呀，一杯咋。"], grammar: [g.clock-time], vocab: [w.je6-maan5] }
+      - { es: "我好忙，但係同你飲杯咖啡，我有時間。", jp: "ngo5 hou2 mong4 daan6 hai6 tung4 nei5 jam2 bui1 gaa3 fe1 ngo5 jau5 si4 gaan3", en: "I'm very busy, but for a coffee with you, I have time.", altEs: ["我好忙，不過同你飲杯咖啡，我有時間。"], grammar: [g.clock-time, g.jau-have], vocab: [w.si4-gaan3] }
+  - id: a1.u07.l2
+    title: 今日星期幾？
+    teach: [g.days-weeks]
+    vocab: [w.gam1-jat6, w.ting1-jat6, w.cam4-jat6, w.cin4-jat6, w.hau6-jat6, w.sing1-kei4, w.lai5-baai3, w.sing1-kei4-jat1, w.sing1-kei4-ji6, w.sing1-kei4-saam1, w.sing1-kei4-sei3, w.sing1-kei4-ng5, w.sing1-kei4-luk6, w.sing1-kei4-jat6, w.lai5-baai3-jat6, w.zau1-mut6, w.sing1-kei4-gei2, w.gam1-ziu1, w.gam1-maan5, w.maan5, w.ting1-ziu1, w.ting1-maan5, w.haa6-go3-lai5-baai3, w.lai4-gan2, w.fong3-gaa3]
+    tip: "Weekdays are 星期 (or 禮拜) + a number from one to six; Sunday is 星期日, never 星期七."
+    sentences:
+      - { es: "今日星期幾呀？", en: "What day is it today?", altEs: ["今日禮拜幾呀？", "今日星期幾？", "今日係星期幾呀？"], grammar: [g.days-weeks], vocab: [w.gam1-jat6, w.sing1-kei4-gei2] }
+      - { es: "今日星期六，銅鑼灣好多人。", en: "It's Saturday today, so Causeway Bay is packed.", altEs: ["今日禮拜六，銅鑼灣好多人。"], altEn: ["Today is Saturday; there are lots of people in Causeway Bay."], grammar: [g.days-weeks], vocab: [w.sing1-kei4-luk6] }
+      - { es: "尋日星期一，所以今日星期二。", en: "Yesterday was Monday, so today is Tuesday.", altEs: ["琴日星期一，所以今日星期二。", "尋日禮拜一，所以今日禮拜二。"], grammar: [g.days-weeks], vocab: [w.cam4-jat6, w.sing1-kei4-jat1, w.sing1-kei4-ji6] }
+      - { es: "我星期一到星期五返工。", en: "I work Monday to Friday.", altEs: ["我由星期一到星期五返工。", "我禮拜一到禮拜五返工。"], altEn: ["I work from Monday to Friday."], grammar: [g.days-weeks, g.time-before-verb], vocab: [w.sing1-kei4-jat1, w.sing1-kei4-ng5] }
+      - { es: "我聽日唔使返工。", en: "I don't have to work tomorrow.", altEs: ["聽日我唔使返工。"], grammar: [g.days-weeks], vocab: [w.ting1-jat6], transform: { instruction: "Change 'tomorrow' to 'the day after tomorrow'", answer: "我後日唔使返工。", alt: ["後日我唔使返工。"], en: "I don't have to work the day after tomorrow." } }
+      - { es: "你週末得唔得閒呀？", en: "Are you free at the weekend?", altEs: ["你週末得閒嗎？", "週末你得唔得閒呀？"], grammar: [g.days-weeks, g.a-not-a-questions], vocab: [w.zau1-mut6] }
+      - { es: "我哋星期日去飲茶啦。", en: "Let's go for yum cha on Sunday.", altEs: ["我哋禮拜日去飲茶啦。", "星期日我哋去飲茶啦。"], grammar: [g.days-weeks], vocab: [w.sing1-kei4-jat6, w.lai5-baai3-jat6], error: { wrong: "我哋喺星期日去飲茶啦。", explain: "No preposition before a day: 星期日去, not 喺星期日去.", grammar: g.days-weeks } }
+      - { es: "後日係星期五。", en: "The day after tomorrow is Friday.", altEs: ["後日星期五。", "後日係禮拜五。"], grammar: [g.days-weeks], vocab: [w.hau6-jat6, w.sing1-kei4-ng5], transform: { instruction: "Say that tomorrow is Thursday", answer: "聽日係星期四。", alt: ["聽日星期四。", "聽日係禮拜四。"], en: "Tomorrow is Thursday." } }
+      - { es: "前日星期日，商場好多人。", en: "The day before yesterday was Sunday, and the mall was packed.", altEs: ["前日禮拜日，商場好多人。"], grammar: [g.days-weeks], vocab: [w.cin4-jat6, w.sing1-kei4-jat6] }
+      - { es: "我今晚去銅鑼灣買衫。", en: "I'm going to Causeway Bay tonight to buy clothes.", altEs: ["今晚我去銅鑼灣買衫。"], grammar: [g.days-weeks, g.time-before-verb], vocab: [w.gam1-maan5] }
+      - { es: "聽朝九點見！", en: "See you at nine tomorrow morning!", altEs: ["聽日朝早九點見！"], grammar: [g.days-weeks, g.clock-time], vocab: [w.ting1-ziu1] }
+      - { es: "下個禮拜我放假。", en: "I'm on holiday next week.", altEs: ["下個星期我放假。", "我下個禮拜放假。"], grammar: [g.days-weeks], vocab: [w.haa6-go3-lai5-baai3, w.fong3-gaa3], transform: { instruction: "Make it negative", answer: "下個禮拜我唔放假。", alt: ["我下個禮拜唔放假。", "下個星期我唔放假。"], en: "I'm not on holiday next week." } }
+      - { es: "星期日我唔使返工。", en: "I don't have to work on Sundays.", altEs: ["禮拜日我唔使返工。", "我星期日唔使返工。"], grammar: [g.days-weeks], vocab: [w.sing1-kei4-jat6], error: { wrong: "星期七我唔使返工。", explain: "Sunday is 星期日 (or 禮拜日), never 星期七.", grammar: g.days-weeks } }
+      - { es: "嚟緊個週末你做乜嘢呀？", en: "What are you doing this coming weekend?", altEs: ["呢個週末你做乜嘢呀？", "你嚟緊個週末做咩呀？"], grammar: [g.days-weeks, g.question-words], vocab: [w.lai4-gan2, w.zau1-mut6] }
+      - { es: "聽晚我哋喺銅鑼灣食飯。", en: "We're having dinner in Causeway Bay tomorrow evening.", altEs: ["我哋聽晚喺銅鑼灣食飯。"], grammar: [g.days-weeks, g.time-before-verb], vocab: [w.ting1-maan5] }
+      - { es: "今朝好凍，我唔想起身。", en: "It was cold this morning and I didn't want to get up.", altEs: ["今朝好凍，我唔想起身呀。"], grammar: [g.days-weeks], vocab: [w.gam1-ziu1] }
+    exchanges:
+      - q: { es: "今日星期幾呀？", en: "What day is it today?" }
+        a: { es: "今日星期五。", en: "It's Friday today." }
+        alt: ["星期五。", "禮拜五。", "今日禮拜五。"]
+        grammar: [g.days-weeks]
+        vocab: [w.sing1-kei4-gei2, w.sing1-kei4-ng5]
+      - q: { es: "你聽日返唔返工呀？", en: "Are you working tomorrow?" }
+        a: { es: "唔使，聽日星期六。", en: "No need, tomorrow's Saturday." }
+        alt: ["返呀。", "唔返，我放假。"]
+        grammar: [g.days-weeks, g.a-not-a-questions]
+        vocab: [w.ting1-jat6, w.sing1-kei4-luk6]
+      - q: { es: "你週末得唔得閒呀？", en: "Are you free at the weekend?" }
+        a: { es: "星期六唔得閒，星期日得閒。", en: "Not on Saturday, but I'm free on Sunday." }
+        alt: ["得閒呀。", "唔得閒，好忙呀。"]
+        grammar: [g.days-weeks]
+        vocab: [w.zau1-mut6, w.sing1-kei4-jat6]
+      - q: { es: "尋日星期幾呀？", en: "What day was it yesterday?" }
+        a: { es: "尋日星期二。", en: "Yesterday was Tuesday." }
+        alt: ["星期二。", "琴日星期二。"]
+        grammar: [g.days-weeks]
+        vocab: [w.cam4-jat6, w.sing1-kei4-ji6]
+      - q: { es: "我哋幾時去銅鑼灣呀？", en: "When are we going to Causeway Bay?" }
+        a: { es: "聽晚去啦。", en: "Let's go tomorrow evening." }
+        alt: ["星期六去啦。", "後日啦。", "今晚啦。"]
+        grammar: [g.days-weeks, g.time-before-verb]
+        vocab: [w.ting1-maan5]
+    texts:
+      - title: "Kelvin 嘅一個星期"
+        es: ["我星期一到星期五返工。", "星期六我去銅鑼灣行街。", "星期日我喺屋企休息。"]
+        en: ["I work Monday to Friday.", "On Saturday I go shopping in Causeway Bay.", "On Sunday I rest at home."]
+        grammar: [g.days-weeks, g.time-before-verb]
+        vocab: [w.sing1-kei4-jat1, w.sing1-kei4-luk6, w.sing1-kei4-jat6]
+      - title: "Mandy 嘅短訊"
+        es: ["Karen，你今晚得唔得閒呀？", "我哋去銅鑼灣食飯啦。", "如果你今晚唔得閒，聽晚都得。"]
+        en: ["Karen, are you free tonight?", "Let's go and eat in Causeway Bay.", "If you're not free tonight, tomorrow evening works too."]
+        grammar: [g.days-weeks]
+        vocab: [w.gam1-maan5, w.ting1-maan5]
+    spicy:
+      - { es: "你星期六得閒？咁啱，我星期六都好得閒。", en: "You're free on Saturday? What a coincidence, I'm very free on Saturday too.", altEs: ["你禮拜六得閒？咁啱，我禮拜六都好得閒。"], grammar: [g.days-weeks, g.dou-also], vocab: [w.sing1-kei4-luk6] }
+      - { es: "星期一到星期五我返工，週末我嘅時間係你嘅。", en: "Monday to Friday I work; at the weekend my time is yours.", altEs: ["禮拜一到禮拜五我返工，週末我嘅時間係你嘅。"], grammar: [g.days-weeks, g.ge-possessive], vocab: [w.zau1-mut6] }
+      - { es: "今晚唔得？聽晚呢？後日呢？", en: "Not tonight? What about tomorrow night? The day after?", altEs: ["今晚唔得閒？聽晚呢？後日呢？"], grammar: [g.days-weeks, g.ne-follow-up], vocab: [w.gam1-maan5, w.ting1-maan5, w.hau6-jat6] }
+      - { es: "尋日我諗住你，今日都係。", en: "Yesterday I was thinking about you, and today too.", altEs: ["琴日我諗住你，今日都係。"], grammar: [g.days-weeks], vocab: [w.cam4-jat6, w.gam1-jat6] }
+      - { es: "下個禮拜我放假，你帶我去行街好唔好？", en: "I'm off next week; how about you take me shopping?", altEs: ["下個星期我放假，你帶我去行街好唔好？"], grammar: [g.days-weeks, g.a-not-a-questions], vocab: [w.haa6-go3-lai5-baai3, w.fong3-gaa3] }
+  - id: a1.u07.l3
+    title: 今日幾號？
+    teach: [g.dates]
+    vocab: [w.jyut6, w.jat1-jyut6, w.ji6-jyut6, w.saam1-jyut6, w.sei3-jyut6, w.ng5-jyut6, w.luk6-jyut6, w.cat1-jyut6, w.baat3-jyut6, w.gau2-jyut6, w.sap6-jyut6, w.sap6-jat1-jyut6, w.sap6-ji6-jyut6, w.nin4, w.gau6-nin2, w.ceot1-nin2, w.gei2-hou6, w.jat6, w.san1-nin4, w.gaa3-kei4, w.soeng6-go3-jyut6, w.haa6-go3-jyut6, w.go2-zan6]
+    tip: "Dates go from big to small: year, month, day. The day of the month is 號 in speech: 十月十五號."
+    sentences:
+      - { es: "今日幾號呀？", en: "What's the date today?", altEs: ["今日幾號？", "今日係幾號呀？"], grammar: [g.dates], vocab: [w.gei2-hou6] }
+      - { es: "今日十月十五號。", en: "Today is the fifteenth of October.", altEs: ["今日係十月十五號。", "今日十月十五。"], altEn: ["It's October 15th today."], grammar: [g.dates], vocab: [w.sap6-jyut6], error: { wrong: "今日十五號十月。", explain: "The month comes before the day: 十月十五號.", grammar: g.dates } }
+      - { es: "你幾時生日呀？", en: "When is your birthday?", altEs: ["你生日係幾時呀？", "你幾時生日？"], grammar: [g.dates, g.question-words], vocab: [w.gei2-si4] }
+      - { es: "我生日係三月八號。", en: "My birthday is the eighth of March.", altEs: ["我三月八號生日。", "我嘅生日係三月八號。"], grammar: [g.dates], vocab: [w.saam1-jyut6], transform: { instruction: "Say your birthday is 20 June", answer: "我生日係六月二十號。", alt: ["我生日係六月廿號。", "我六月二十號生日。", "我六月廿號生日。"], en: "My birthday is the twentieth of June." } }
+      - { es: "一月一號係新年。", en: "The first of January is New Year.", altEs: ["一月一號新年。"], altEn: ["New Year is on January 1st."], grammar: [g.dates], vocab: [w.jat1-jyut6, w.san1-nin4] }
+      - { es: "我二零二三年嚟香港讀書。", en: "I came to Hong Kong to study in 2023.", altEs: ["二零二三年我嚟香港讀書。"], grammar: [g.dates, g.time-before-verb], vocab: [w.nin4], note: "Years are read digit by digit: 二零二三." }
+      - { es: "我出年去日本。", en: "I'm going to Japan next year.", altEs: ["出年我去日本。"], grammar: [g.dates, g.time-before-verb], vocab: [w.ceot1-nin2] }
+      - { es: "下個月係十一月。", en: "Next month is November.", altEs: ["下個月十一月。"], grammar: [g.dates], vocab: [w.haa6-go3-jyut6, w.sap6-jat1-jyut6], transform: { instruction: "Say that last month was September", answer: "上個月係九月。", alt: ["上個月九月。"], en: "Last month was September." } }
+      - { es: "上個月我好忙。", en: "I was very busy last month.", altEs: ["我上個月好忙。"], grammar: [g.dates, g.adjective-predicates], vocab: [w.soeng6-go3-jyut6] }
+      - { es: "一年有十二個月。", en: "A year has twelve months.", altEs: ["一年係十二個月。"], grammar: [g.dates], vocab: [w.nin4, w.jyut6], error: { wrong: "一年有十二月。", explain: "十二月 is December; 'twelve months' as a length of time needs 個: 十二個月.", grammar: g.dates } }
+      - { es: "七月一號香港放假。", en: "Hong Kong has a public holiday on the first of July.", altEs: ["香港七月一號放假。"], grammar: [g.dates, g.time-before-verb], vocab: [w.cat1-jyut6] }
+      - { es: "十二月二十五號我哋放假。", en: "We're off on the twenty-fifth of December.", altEs: ["十二月廿五號我哋放假。", "我哋十二月二十五號放假。"], grammar: [g.dates], vocab: [w.sap6-ji6-jyut6] }
+      - { es: "我嘅假期由八月一號到八月十號。", en: "My holiday is from the first to the tenth of August.", altEs: ["我個假期由八月一號到八月十號。", "我嘅假期由八月一號到十號。"], grammar: [g.dates], vocab: [w.gaa3-kei4, w.baat3-jyut6] }
+      - { es: "二零二零年嗰陣，我住喺英國。", en: "Back in 2020, I lived in Britain.", altEs: ["二零二零年我住喺英國。"], grammar: [g.dates, g.time-before-verb], vocab: [w.go2-zan6] }
+      - { es: "舊年二月我喺台灣過新年。", en: "Last year in February I spent New Year in Taiwan.", altEs: ["我舊年二月喺台灣過新年。"], grammar: [g.dates, g.time-before-verb], vocab: [w.gau6-nin2, w.ji6-jyut6] }
+      - { es: "五月有三十一日，四月有三十日。", en: "May has thirty-one days and April has thirty.", altEs: ["五月有三十一日，四月有三十。"], grammar: [g.dates], vocab: [w.ng5-jyut6, w.sei3-jyut6, w.jat6] }
+    exchanges:
+      - q: { es: "今日幾號呀？", en: "What's the date today?" }
+        a: { es: "今日十月十五號。", en: "It's the fifteenth of October." }
+        alt: ["十五號。", "十月十五號。"]
+        grammar: [g.dates]
+        vocab: [w.gei2-hou6, w.sap6-jyut6]
+      - q: { es: "你幾時生日呀？", en: "When is your birthday?" }
+        a: { es: "我生日係五月三號。", en: "My birthday is the third of May." }
+        alt: ["五月三號。", "下個月。", "我五月三號生日。"]
+        grammar: [g.dates]
+        vocab: [w.ng5-jyut6]
+      - q: { es: "你幾時去日本呀？", en: "When are you going to Japan?" }
+        a: { es: "出年四月。", en: "Next April." }
+        alt: ["出年。", "四月。", "我出年四月去。"]
+        grammar: [g.dates]
+        vocab: [w.ceot1-nin2, w.sei3-jyut6]
+      - q: { es: "新年你放唔放假呀？", en: "Do you get time off at New Year?" }
+        a: { es: "放呀，放三日。", en: "Yes, three days." }
+        alt: ["放呀。", "唔放，我要返工。"]
+        grammar: [g.dates, g.a-not-a-questions]
+        vocab: [w.san1-nin4, w.jat6]
+      - q: { es: "你嘅假期由幾號到幾號呀？", en: "Your holiday is from which date to which?" }
+        a: { es: "由八月一號到八月十號。", en: "From the first to the tenth of August." }
+        alt: ["八月一號到十號。", "成個八月。"]
+        grammar: [g.dates]
+        vocab: [w.gaa3-kei4, w.baat3-jyut6]
+    texts:
+      - title: "生日"
+        es: ["今日十月十五號，係Mandy生日。", "我哋今晚七點喺銅鑼灣食飯。", "Mandy，生日快樂！"]
+        en: ["Today is the fifteenth of October, Mandy's birthday.", "We're having dinner in Causeway Bay at seven tonight.", "Happy birthday, Mandy!"]
+        grammar: [g.dates, g.time-before-verb]
+        vocab: [w.sap6-jyut6]
+      - title: "我嘅假期"
+        es: ["我嘅假期由十二月二十號到一月三號。", "我返英國見屋企人。", "新年我喺倫敦。"]
+        en: ["My holiday is from the twentieth of December to the third of January.", "I'm going back to Britain to see my family.", "At New Year I'll be in London."]
+        grammar: [g.dates]
+        vocab: [w.gaa3-kei4, w.sap6-ji6-jyut6, w.jat1-jyut6, w.san1-nin4]
+    spicy:
+      - { es: "你幾時生日呀？我想買禮物畀你。", en: "When's your birthday? I want to buy you a present.", altEs: ["你生日係幾時呀？我想買禮物畀你。"], grammar: [g.dates], vocab: [w.gei2-si4] }
+      - { es: "二月十四號你得唔得閒呀？", en: "Are you free on the fourteenth of February?", altEs: ["二月十四號你得閒嗎？"], grammar: [g.dates, g.a-not-a-questions], vocab: [w.ji6-jyut6] }
+      - { es: "我哋三月八號第一次見，你記唔記得呀？", en: "We first met on the eighth of March, do you remember?", altEs: ["我哋三月八號第一次見面，你記唔記得呀？"], grammar: [g.dates], vocab: [w.saam1-jyut6] }
+      - { es: "出年今日，你仲會唔會同我食飯呀？", jp: "ceot1 nin2 gam1 jat6 nei5 zung6 wui5 m4 wui5 tung4 ngo5 sik6 faan6 aa3", en: "A year from today, will you still be having dinner with me?", altEs: ["出年今日，你仲會同我食飯嗎？"], grammar: [g.dates], vocab: [w.ceot1-nin2] }
+      - { es: "上個月我冇女朋友，呢個月……我哋再講啦。", jp: "soeng6 go3 jyut6 ngo5 mou5 neoi5 pang4 jau5 ni1 go3 jyut6 ngo5 dei6 zoi3 gong2 laa1", en: "Last month I didn't have a girlfriend; this month... let's talk about it.", altEs: ["上個月我冇男朋友，呢個月……我哋再講啦。"], altEn: ["Last month I didn't have a boyfriend; this month... let's talk about it."], grammar: [g.dates, g.mou-negation], vocab: [w.soeng6-go3-jyut6] }
+  - id: a1.u07.l4
+    title: 幾點開門？
+    teach: [g.time-before-verb]
+    vocab: [w.gei2-si4, w.hoi1, w.saan1, w.hoi1-mun4, w.saan1-mun4, w.jau4, w.dou3, w.mui5, w.joek3, w.dang2, w.dang2-zan6, w.jat1-zan6, w.zan6, w.ci4-dou3, w.zeon2-si4]
+    tip: "Say who, then when, then where, then what: 我聽日喺銅鑼灣買嘢. The time never goes at the end."
+    sentences:
+      - { es: "我聽日喺銅鑼灣買嘢。", en: "I'm going shopping in Causeway Bay tomorrow.", altEs: ["聽日我喺銅鑼灣買嘢。"], grammar: [g.time-before-verb], vocab: [w.ting1-jat6], transform: { instruction: "Move the time word to the front", answer: "聽日我喺銅鑼灣買嘢。", en: "Tomorrow I'm going shopping in Causeway Bay." }, error: { wrong: "我喺銅鑼灣買嘢聽日。", explain: "The time goes before the verb (and before the place), never at the end.", grammar: g.time-before-verb } }
+      - { es: "呢個商場朝早十點開門。", en: "This mall opens at ten in the morning.", altEs: ["呢個商場十點開門。", "呢個商場朝早十點開。"], grammar: [g.time-before-verb, g.clock-time], vocab: [w.hoi1-mun4], transform: { instruction: "Say it closes at ten at night", answer: "呢個商場夜晚十點閂門。", alt: ["呢個商場晚黑十點閂門。", "呢個商場夜晚十點閂。"], en: "This mall closes at ten at night." } }
+      - { es: "啲舖頭夜晚十點閂門。", en: "The shops close at ten at night.", altEs: ["啲舖頭晚黑十點閂門。", "舖頭夜晚十點閂門。"], grammar: [g.time-before-verb], vocab: [w.saan1-mun4] }
+      - { es: "超市由朝早八點開到夜晚十一點。", en: "The supermarket is open from eight in the morning until eleven at night.", altEs: ["間超市由朝早八點開到夜晚十一點。"], grammar: [g.time-before-verb, g.clock-time], vocab: [w.jau4, w.dou3, w.hoi1] }
+      - { es: "你幾時得閒呀？", en: "When are you free?", altEs: ["你幾時得閒？", "你幾時有時間呀？"], grammar: [g.time-before-verb, g.question-words], vocab: [w.gei2-si4] }
+      - { es: "我想約你星期五食飯。", en: "I'd like to ask you out for dinner on Friday.", altEs: ["我想約你禮拜五食飯。", "星期五我想約你食飯。"], grammar: [g.time-before-verb], vocab: [w.joek3], transform: { instruction: "Make it Saturday at eight in the evening", answer: "我想約你星期六夜晚八點食飯。", alt: ["我想約你禮拜六夜晚八點食飯。", "我想約你星期六晚黑八點食飯。"], en: "I'd like to ask you out for dinner on Saturday at eight." } }
+      - { es: "等陣見！", en: "See you in a bit!", altEs: ["一陣見！", "陣間見！"], grammar: [g.time-before-verb], vocab: [w.dang2-zan6] }
+      - { es: "唔好遲到呀！", en: "Don't be late!", altEs: ["唔好遲到！"], grammar: [g.time-before-verb], vocab: [w.ci4-dou3] }
+      - { es: "佢每日都準時返工。", en: "She gets to work on time every day.", altEs: ["佢日日都準時返工。"], altEn: ["He gets to work on time every day."], grammar: [g.time-before-verb], vocab: [w.mui5, w.zeon2-si4] }
+      - { es: "你等一陣，我就嚟。", en: "Wait a moment, I'm coming.", altEs: ["你等陣，我就嚟。", "等一陣，我就嚟。"], grammar: [g.time-before-verb], vocab: [w.dang2, w.jat1-zan6, w.zan6] }
+      - { es: "間舖頭幾點開門呀？", en: "What time does the shop open?", altEs: ["間舖頭幾點開呀？", "呢間舖頭幾點開門呀？"], grammar: [g.time-before-verb, g.clock-time], vocab: [w.hoi1-mun4] }
+      - { es: "我哋星期日下晝三點喺維多利亞公園見。", en: "Let's meet at Victoria Park on Sunday at three in the afternoon.", altEs: ["星期日下晝三點我哋喺維多利亞公園見。", "我哋禮拜日下晝三點喺維園見。"], grammar: [g.time-before-verb, g.days-weeks], vocab: [w.sing1-kei4-jat6], error: { wrong: "我哋下晝三點星期日喺維多利亞公園見。", explain: "Bigger time units come first: the day (星期日), then the part of the day and the hour (下晝三點).", grammar: g.time-before-verb } }
+      - { es: "每個星期六，我都同朋友喺銅鑼灣食飯。", en: "Every Saturday I eat out with friends in Causeway Bay.", altEs: ["我每個星期六都同朋友喺銅鑼灣食飯。"], grammar: [g.time-before-verb, g.dou-also], vocab: [w.mui5] }
+      - { es: "我聽朝九點半喺中環開會。", en: "I have a meeting in Central at half past nine tomorrow morning.", altEs: ["聽朝九點半我喺中環開會。"], grammar: [g.time-before-verb], vocab: [w.ting1-ziu1] }
+      - { es: "啲舖頭幾時閂呀？", en: "When do the shops close?", altEs: ["啲舖頭幾點閂門呀？"], grammar: [g.time-before-verb, g.question-words], vocab: [w.saan1] }
+    exchanges:
+      - q: { es: "間舖頭幾點開門呀？", en: "What time does the shop open?" }
+        a: { es: "朝早十點開門。", en: "It opens at ten in the morning." }
+        alt: ["十點。", "十點開門。", "朝早十點開。"]
+        grammar: [g.time-before-verb, g.clock-time]
+        vocab: [w.hoi1-mun4]
+      - q: { es: "你幾時得閒呀？", en: "When are you free?" }
+        a: { es: "我星期六下晝得閒。", en: "I'm free on Saturday afternoon." }
+        alt: ["星期六。", "聽日得閒。", "星期六下晝。"]
+        grammar: [g.time-before-verb]
+        vocab: [w.gei2-si4]
+      - q: { es: "你幾點到呀？", en: "What time will you get here?" }
+        a: { es: "我七點準時到。", en: "I'll be there at seven on the dot." }
+        alt: ["七點。", "我等陣就到。", "七點左右。"]
+        grammar: [g.time-before-verb, g.clock-time]
+        vocab: [w.zeon2-si4, w.dou3]
+      - q: { es: "超市幾點閂門呀？", en: "What time does the supermarket close?" }
+        a: { es: "夜晚十一點閂門。", en: "It closes at eleven at night." }
+        alt: ["十一點。", "晚黑十一點。"]
+        grammar: [g.time-before-verb]
+        vocab: [w.saan1-mun4]
+      - q: { es: "我哋喺邊度等呀？", en: "Where shall we wait?" }
+        a: { es: "喺銅鑼灣站A出口等啦。", en: "Let's wait at exit A of Causeway Bay station." }
+        alt: ["喺銅鑼灣站等啦。", "喺維多利亞公園等啦。"]
+        grammar: [g.time-before-verb]
+        vocab: [w.dang2]
+    texts:
+      - title: "商場時間"
+        es: ["呢個商場由朝早十點開到夜晚十點。", "星期六同星期日開到十一點。", "新年閂門三日。"]
+        en: ["This mall is open from ten in the morning until ten at night.", "On Saturdays and Sundays it is open until eleven.", "It closes for three days at New Year."]
+        grammar: [g.time-before-verb, g.days-weeks]
+        vocab: [w.jau4, w.dou3, w.saan1-mun4]
+      - title: "Kelvin 嘅短訊"
+        es: ["Mandy，我哋聽日七點喺銅鑼灣見。", "唔好遲到呀！", "我喺港鐵站門口等你。"]
+        en: ["Mandy, let's meet in Causeway Bay at seven tomorrow.", "Don't be late!", "I'll wait for you at the entrance of the MTR station."]
+        grammar: [g.time-before-verb]
+        vocab: [w.ci4-dou3, w.dang2]
+    spicy:
+      - { es: "你遲到十分鐘，不過你咁靚，我等。", en: "You're ten minutes late, but you look so good, I'll wait.", altEs: ["你遲到咗十分鐘，不過你咁靚，我等。"], grammar: [g.time-before-verb], vocab: [w.ci4-dou3, w.dang2] }
+      - { es: "我聽晚八點得閒，你呢？", en: "I'm free tomorrow at eight p.m. What about you?", altEs: ["聽晚八點我得閒，你呢？"], grammar: [g.time-before-verb, g.ne-follow-up], vocab: [w.ting1-maan5] }
+      - { es: "唔好遲到呀，我已經好想見你。", en: "Don't be late, I already really want to see you.", altEs: ["唔好遲到，我已經好想見你。"], grammar: [g.time-before-verb], vocab: [w.ci4-dou3] }
+      - { es: "商場十點閂門？唔緊要，我哋去飲嘢。", en: "The mall closes at ten? Never mind, let's go for a drink.", altEs: ["商場十點閂門？唔緊要，我哋去飲杯嘢。"], grammar: [g.time-before-verb], vocab: [w.saan1-mun4] }
+      - { es: "我每日返工都遲到，不過見你，我好準時。", en: "I'm late for work every day, but when it's you, I'm very punctual.", altEs: ["我日日返工都遲到，不過見你，我好準時。"], grammar: [g.time-before-verb], vocab: [w.mui5, w.ci4-dou3, w.zeon2-si4] }
+dialogues:
+  - id: a1.u07.d1
+    title: 銅鑼灣見
+    context: Mandy phones Kelvin to arrange a Saturday in Causeway Bay.
+    lines:
+      - { speaker: Mandy, es: "Kelvin，你聽日得唔得閒呀？", en: "Kelvin, are you free tomorrow?" }
+      - { speaker: Kelvin, es: "聽日星期六？朝早我要返工，下晝得閒。", en: "Tomorrow, Saturday? I have to work in the morning, but I'm free in the afternoon." }
+      - { speaker: Mandy, es: "我哋去銅鑼灣行街，好唔好？", en: "Shall we go shopping in Causeway Bay?" }
+      - { speaker: Kelvin, es: "好呀！幾點呀？", en: "Sure! What time?" }
+      - { speaker: Mandy, es: "下晝兩點半，喺銅鑼灣站等。", en: "Half past two in the afternoon, at Causeway Bay station." }
+      - { speaker: Kelvin, es: "兩點半有啲早。三點得唔得呀？", en: "Half past two is a bit early. Is three OK?" }
+      - { speaker: Mandy, es: "得，三點啦。啲商場夜晚十點先閂門。", en: "OK, three then. The malls don't close until ten at night." }
+      - { speaker: Kelvin, es: "咁我哋夜晚七點去食飯啦。", en: "Then let's go and eat at seven in the evening." }
+      - { speaker: Mandy, es: "好呀！唔好遲到呀！", en: "Great! Don't be late!" }
+      - { speaker: Kelvin, es: "唔會啦，我好準時㗎！", en: "I won't, I'm very punctual!" }
+    questions:
+      - { q: "Kelvin星期六朝早做乜嘢？", options: ["返工", "行街", "食飯"], answer: 0, explain: "He says 朝早我要返工: he works on Saturday morning." }
+      - { q: "佢哋幾點喺銅鑼灣站等？", options: ["兩點半", "三點", "七點"], answer: 1, explain: "Mandy suggests 兩點半, but Kelvin asks for three and she agrees: 三點啦." }
+      - { q: "啲商場幾點閂門？", options: ["七點", "十點", "十一點"], answer: 1, explain: "Mandy says 夜晚十點先閂門: the malls stay open until ten." }
+      - { q: "佢哋幾點去食飯？", options: ["下晝三點", "夜晚七點", "夜晚十點"], answer: 1, explain: "Kelvin says 我哋夜晚七點去食飯啦." }

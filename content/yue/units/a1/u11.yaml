@@ -1,0 +1,283 @@
+id: a1.u11
+title: 我嘅一日
+lessons:
+  - id: a1.u11.l1
+    title: 先沖涼，再食早餐
+    teach: [g.sin-zoi-sequence]
+    vocab: [w.hei2-san1, w.fan3-gaau3, w.fan3, w.caat3-ngaa4, w.sai2-min6, w.cung1-loeng4, w.sai2, w.zoek3-saam1, w.zoek3, w.sin1.b, w.zoi3, w.gan1-zyu6.b, w.jin4-hau6, w.zeoi3-hau6, w.sik6-zou2-caan1, w.zik1-hak1, w.maan6-maan2, w.faai3.b, w.maan6.b, w.cyu4-fong2, w.ngaan5-fan3, w.gui6]
+    tip: "先 and 再 go right before their verbs: 我先沖涼，再食早餐. 跟住 and 然後 (\"then\") start the next step."
+    sentences:
+      - { es: "我朝早七點起身。", en: "I get up at seven in the morning.", altEs: ["我七點起身。", "朝早七點我起身。"], grammar: [g.time-before-verb, g.clock-time], vocab: [w.hei2-san1], transform: { instruction: "Say you get up at half past six", answer: "我朝早六點半起身。", alt: ["我六點半起身。"], en: "I get up at half past six in the morning." } }
+      - { es: "我先沖涼，再食早餐。", en: "I shower first, then have breakfast.", altEs: ["我先沖涼，然後食早餐。", "我先沖涼，跟住食早餐。"], grammar: [g.sin-zoi-sequence], vocab: [w.sin1.b, w.zoi3, w.cung1-loeng4, w.sik6-zou2-caan1], transform: { instruction: "Swap the order: breakfast first, then a shower", answer: "我先食早餐，再沖涼。", alt: ["我先食早餐，然後沖涼。"], en: "I have breakfast first, then shower." }, error: { wrong: "先我沖涼，再食早餐。", explain: "先 goes after the subject, right before the verb: 我先沖涼.", grammar: g.sin-zoi-sequence } }
+      - { es: "我起身，跟住刷牙。", en: "I get up, then brush my teeth.", altEs: ["我起身，然後刷牙。"], grammar: [g.sin-zoi-sequence], vocab: [w.gan1-zyu6.b, w.caat3-ngaa4], error: { wrong: "我起身，刷牙跟住。", explain: "跟住 (\"then\") starts the next step; it never goes at the end.", grammar: g.sin-zoi-sequence } }
+      - { es: "我刷牙，然後洗面。", en: "I brush my teeth and then wash my face.", altEs: ["我刷牙，跟住洗面。", "我先刷牙，再洗面。"], grammar: [g.sin-zoi-sequence], vocab: [w.jin4-hau6, w.sai2-min6] }
+      - { es: "我食早餐，跟住着衫。", en: "I have breakfast, then get dressed.", altEs: ["我食早餐，然後着衫。"], grammar: [g.sin-zoi-sequence], vocab: [w.zoek3-saam1] }
+      - { es: "最後我十二點瞓覺。", en: "Finally I go to bed at twelve.", altEs: ["最後我十二點鐘瞓覺。"], grammar: [g.sin-zoi-sequence], vocab: [w.zeoi3-hau6, w.fan3-gaau3], transform: { instruction: "Make it half past eleven", answer: "最後我十一點半瞓覺。", en: "Finally I go to bed at half past eleven." } }
+      - { es: "你先洗手，再食飯。", en: "Wash your hands first, then eat.", altEs: ["先洗手，再食飯。", "你洗手先，再食飯。"], grammar: [g.sin-zoi-sequence], vocab: [w.sai2] }
+      - { es: "我眼瞓喇，我想瞓覺。", en: "I'm sleepy, I want to go to bed.", altEs: ["我好眼瞓，我想瞓覺。", "眼瞓呀，我想瞓覺。"], grammar: [g.adjective-predicates], vocab: [w.ngaan5-fan3, w.fan3-gaau3] }
+      - { es: "我好攰呀，返到屋企即刻瞓。", en: "I'm so tired; as soon as I get home I'll go to sleep.", altEs: ["我好攰，返到屋企即刻瞓覺。"], grammar: [g.sin-zoi-sequence], vocab: [w.gui6, w.zik1-hak1, w.fan3] }
+      - { es: "慢慢食啦，唔好食咁快。", en: "Eat slowly, don't eat so fast.", altEs: ["慢慢食啦，唔使咁快。"], grammar: [g.particles-aa-laa], vocab: [w.maan6-maan2, w.faai3.b] }
+      - { es: "佢喺廚房煮早餐。", en: "She's making breakfast in the kitchen.", altEs: ["佢喺廚房整早餐。"], altEn: ["He's making breakfast in the kitchen."], grammar: [g.hai2-location], vocab: [w.cyu4-fong2] }
+      - { es: "你幾點起身呀？", en: "What time do you get up?", altEs: ["你幾點起身？", "你朝早幾點起身呀？"], grammar: [g.clock-time, g.question-words], vocab: [w.hei2-san1] }
+      - { es: "我先着衫，再出去。", en: "I'll get dressed first, then go out.", altEs: ["我先着好衫，再出去。"], grammar: [g.sin-zoi-sequence], vocab: [w.zoek3-saam1, w.zoek3] }
+      - { es: "叮叮好慢，港鐵好快。", en: "The tram is slow, the MTR is fast.", altEs: ["電車好慢，港鐵好快。"], grammar: [g.adjective-predicates], vocab: [w.maan6.b, w.faai3.b] }
+      - { es: "我起身，沖涼，跟住食早餐，然後坐叮叮返工。", en: "I get up, shower, then have breakfast, and then take the tram to work.", altEs: ["我起身，沖涼，然後食早餐，跟住坐叮叮返工。"], grammar: [g.sin-zoi-sequence, g.serial-verbs], vocab: [w.hei2-san1, w.cung1-loeng4, w.gan1-zyu6.b, w.jin4-hau6] }
+    exchanges:
+      - q: { es: "你朝早做咩呀？", en: "What do you do in the morning?" }
+        a: { es: "我起身，沖涼，跟住食早餐。", en: "I get up, shower, then have breakfast." }
+        alt: ["起身，食早餐。", "我先沖涼，再食早餐。"]
+        grammar: [g.sin-zoi-sequence]
+        vocab: [w.hei2-san1, w.cung1-loeng4]
+      - q: { es: "你幾點瞓覺呀？", en: "What time do you go to bed?" }
+        a: { es: "通常十二點。", en: "Usually at twelve." }
+        alt: ["十二點。", "十一點半。"]
+        grammar: [g.clock-time]
+        vocab: [w.fan3-gaau3]
+      - q: { es: "你先沖涼定先食早餐呀？", en: "Do you shower first or have breakfast first?" }
+        a: { es: "先沖涼，再食早餐。", en: "Shower first, then breakfast." }
+        alt: ["先食早餐。", "先沖涼。"]
+        grammar: [g.sin-zoi-sequence]
+        vocab: [w.sin1.b, w.zoi3]
+      - q: { es: "你好攰呀？", en: "Are you tired?" }
+        a: { es: "係呀，我想即刻瞓覺。", en: "Yes, I want to go to bed right away." }
+        alt: ["唔係好攰。", "有啲攰。"]
+        grammar: [g.adjective-predicates]
+        vocab: [w.gui6, w.zik1-hak1]
+      - q: { es: "快啲啦，你着好衫未呀？", en: "Hurry up, are you dressed yet?" }
+        a: { es: "着好衫喇，就嚟！", en: "Yes, coming!" }
+        alt: ["未呀，等我一陣。", "就快喇。"]
+        grammar: [g.particles-aa-laa]
+        vocab: [w.zoek3-saam1]
+    texts:
+      - title: "我嘅朝早"
+        es: ["我七點起身。", "我先沖涼，再刷牙。", "跟住我食早餐，然後坐叮叮返工。"]
+        en: ["I get up at seven.", "First I shower, then I brush my teeth.", "Then I have breakfast, and after that I take the tram to work."]
+        grammar: [g.sin-zoi-sequence]
+        vocab: [w.hei2-san1, w.cung1-loeng4, w.caat3-ngaa4, w.gan1-zyu6.b, w.jin4-hau6]
+      - title: "Luna 嘅朝早"
+        es: ["Luna十點先起身。", "佢食早餐，跟住又瞓覺。", "佢好攰？唔係，佢好鍾意瞓覺！"]
+        en: ["Luna only gets up at ten.", "She has breakfast, then goes back to sleep.", "Is she tired? No, she just loves sleeping!"]
+        grammar: [g.sin-zoi-sequence]
+        vocab: [w.hei2-san1, w.fan3-gaau3, w.gui6]
+    spicy:
+      - { es: "我先沖涼，再打電話畀你。", en: "I'll have a shower first, then call you.", altEs: ["我沖完涼就打電話畀你。"], grammar: [g.sin-zoi-sequence, g.bei-give], vocab: [w.cung1-loeng4] }
+      - { es: "你眼瞓就瞓啦，我喺度。", en: "If you're sleepy, go to sleep; I'm here.", altEs: ["你眼瞓就瞓啦，我喺度呀。"], grammar: [g.particles-aa-laa], vocab: [w.ngaan5-fan3, w.fan3] }
+      - { es: "朝早起身，第一件事就係諗你。", en: "When I get up in the morning, the first thing I do is think of you.", altEs: ["朝早起身，我第一件事就係諗你。"], grammar: [g.sin-zoi-sequence], vocab: [w.hei2-san1] }
+      - { es: "我好攰，不過見到你，即刻唔攰。", en: "I'm exhausted, but when I see you, I'm not tired any more.", altEs: ["我好攰，但係見到你，即刻唔攰。"], grammar: [g.adjective-predicates], vocab: [w.gui6, w.zik1-hak1] }
+      - { es: "慢慢嚟，我等你。", en: "Take your time, I'll wait for you.", altEs: ["慢慢嚟啦，我等你。"], grammar: [g.particles-aa-laa], vocab: [w.maan6-maan2] }
+  - id: a1.u11.l2
+    title: 坐叮叮返工
+    teach: [g.serial-verbs]
+    vocab: [w.faan1-gung1, w.fong3-gung1, w.faan1-hok6, w.fong3-hok6, w.faan1-uk1-kei2, w.ceot1-gaai1, w.haang4-gaai1, w.sik6-aan3, w.sik6-maan5-faan6, w.zyu2-faan6, w.zyu2, w.gung1, w.hoi1-wui2, w.soeng5-tong4, w.tong4, w.zou6-gung1-fo3, w.gung1-fo3, w.daa2-hoi1, w.maan6-di1, w.faai3-di1]
+    tip: "Cantonese puts verbs one after another in the order things happen, with no \"and\" or \"to\": 我去街市買餸."
+    sentences:
+      - { es: "我坐叮叮返工。", en: "I take the tram to work.", altEs: ["我坐電車返工。", "我搭叮叮返工。"], grammar: [g.serial-verbs, g.transport-verbs], vocab: [w.faan1-gung1], transform: { instruction: "Say you take the MTR to school", answer: "我坐港鐵返學。", alt: ["我搭港鐵返學。"], en: "I take the MTR to school." }, error: { wrong: "我返工坐叮叮。", explain: "Keep the order of events: first ride (坐叮叮), then arrive (返工).", grammar: g.serial-verbs } }
+      - { es: "我放工去健身室做運動。", en: "After work I go to the gym to exercise.", altEs: ["放工我去健身室做運動。"], grammar: [g.serial-verbs], vocab: [w.fong3-gung1], transform: { instruction: "Say you go to the supermarket to buy things after work", answer: "我放工去超市買嘢。", alt: ["放工我去超市買嘢。"], en: "After work I go to the supermarket to buy things." } }
+      - { es: "佢用筷子食飯。", en: "She eats with chopsticks.", altEs: ["佢用筷子食嘢。"], altEn: ["He eats with chopsticks."], grammar: [g.serial-verbs], vocab: [] }
+      - { es: "我哋去海邊影相。", en: "We're going to the seaside to take photos.", altEs: ["我哋去海邊影相啦。"], grammar: [g.serial-verbs, g.heoi-lai], vocab: [] }
+      - { es: "嚟我屋企食晚飯啦。", en: "Come and have dinner at my place.", altEs: ["嚟我度食晚飯啦。"], grammar: [g.serial-verbs, g.particles-aa-laa], vocab: [w.sik6-maan5-faan6], transform: { instruction: "Make it lunch", answer: "嚟我屋企食晏啦。", alt: ["嚟我度食晏啦。"], en: "Come and have lunch at my place." } }
+      - { es: "我中午同朋友去食晏。", en: "At noon I go for lunch with friends.", altEs: ["中午我同朋友去食晏。"], grammar: [g.serial-verbs], vocab: [w.sik6-aan3] }
+      - { es: "我細佬八點返學，四點放學。", en: "My younger brother starts school at eight and finishes at four.", altEs: ["我細佬朝早八點返學，下晝四點放學。"], grammar: [g.time-before-verb], vocab: [w.faan1-hok6, w.fong3-hok6] }
+      - { es: "我夜晚七點返屋企煮飯。", en: "I go home at seven in the evening to cook.", altEs: ["夜晚七點我返屋企煮飯。"], grammar: [g.serial-verbs, g.time-before-verb], vocab: [w.faan1-uk1-kei2, w.zyu2-faan6] }
+      - { es: "星期六我哋去銅鑼灣行街。", en: "On Saturday we go shopping in Causeway Bay.", altEs: ["我哋星期六去銅鑼灣行街。"], grammar: [g.serial-verbs], vocab: [w.haang4-gaai1], error: { wrong: "星期六我哋去銅鑼灣同行街。", explain: "Don't link verbs with 同, which only joins nouns: 去銅鑼灣行街.", grammar: g.serial-verbs } }
+      - { es: "我九點喺公司開會。", en: "I have a meeting at the office at nine.", altEs: ["九點我喺公司開會。"], grammar: [g.time-before-verb], vocab: [w.hoi1-wui2] }
+      - { es: "佢上堂，我做功課。", en: "She's in class and I'm doing homework.", altEs: ["佢去上堂，我做功課。"], altEn: ["He's in class and I'm doing homework."], grammar: [g.serial-verbs], vocab: [w.soeng5-tong4, w.zou6-gung1-fo3, w.gung1-fo3] }
+      - { es: "你今晚出唔出街呀？", en: "Are you going out tonight?", altEs: ["你今晚出街嗎？"], grammar: [g.a-not-a-questions], vocab: [w.ceot1-gaai1] }
+      - { es: "我用手機畀錢。", en: "I pay with my phone.", altEs: ["我用手機嚟畀錢。"], grammar: [g.serial-verbs], vocab: [] }
+      - { es: "打開窗啦，好熱呀。", en: "Open the window, it's really hot.", altEs: ["打開個窗啦，好熱呀。"], grammar: [g.particles-aa-laa], vocab: [w.daa2-hoi1] }
+      - { es: "我今日有好多工做。", en: "I've got lots of work to do today.", altEs: ["今日我有好多工做。"], grammar: [g.jau-have], vocab: [w.gung1] }
+      - { es: "行快啲啦！講慢啲啦！", en: "Walk faster! Speak more slowly!", altEs: ["行快啲！講慢啲！"], grammar: [g.particles-aa-laa], vocab: [w.faai3-di1, w.maan6-di1] }
+    exchanges:
+      - q: { es: "你點樣返工呀？", en: "How do you get to work?" }
+        a: { es: "我坐叮叮返工。", en: "I take the tram to work." }
+        alt: ["坐叮叮。", "行路返工。", "我坐港鐵返工。"]
+        grammar: [g.serial-verbs, g.transport-verbs]
+        vocab: [w.faan1-gung1]
+      - q: { es: "你放工做咩呀？", en: "What do you do after work?" }
+        a: { es: "我去健身室做運動。", en: "I go to the gym to exercise." }
+        alt: ["返屋企煮飯。", "去行街。"]
+        grammar: [g.serial-verbs]
+        vocab: [w.fong3-gung1]
+      - q: { es: "你中午去邊度食晏呀？", en: "Where do you go for lunch?" }
+        a: { es: "我去茶餐廳食晏。", en: "I go to a cha chaan teng for lunch." }
+        alt: ["茶餐廳。", "我喺公司食飯盒。"]
+        grammar: [g.serial-verbs]
+        vocab: [w.sik6-aan3]
+      - q: { es: "你今晚出唔出街呀？", en: "Are you going out tonight?" }
+        a: { es: "唔出喇，我喺屋企煮飯。", en: "No, I'm cooking at home." }
+        alt: ["出呀，我去睇戲。", "唔出喇。"]
+        grammar: [g.a-not-a-questions]
+        vocab: [w.ceot1-gaai1, w.zyu2-faan6]
+      - q: { es: "你細佬幾點放學呀？", en: "What time does your younger brother finish school?" }
+        a: { es: "四點放學。", en: "At four." }
+        alt: ["四點。", "三點半。"]
+        grammar: [g.time-before-verb]
+        vocab: [w.fong3-hok6]
+    texts:
+      - title: "Kelvin 嘅一日"
+        es: ["我住喺堅尼地城。", "我每日坐叮叮去中環返工。", "放工我去健身室做運動，然後返屋企煮飯。"]
+        en: ["I live in Kennedy Town.", "Every day I take the tram to Central to work.", "After work I go to the gym, and then I go home and cook."]
+        grammar: [g.serial-verbs, g.sin-zoi-sequence]
+        vocab: [w.faan1-gung1, w.fong3-gung1, w.zyu2-faan6]
+      - title: "我細佬"
+        es: ["我細佬八點返學。", "佢四點放學，跟住去公園踩單車。", "夜晚佢做功課。"]
+        en: ["My younger brother starts school at eight.", "He finishes at four, then goes to the park to ride his bike.", "In the evening he does his homework."]
+        grammar: [g.serial-verbs]
+        vocab: [w.faan1-hok6, w.fong3-hok6, w.zou6-gung1-fo3]
+    spicy:
+      - { es: "放工去飲杯嘢，好唔好？", en: "Shall we go for a drink after work?", altEs: ["放工一齊去飲杯嘢，好唔好？"], grammar: [g.serial-verbs, g.a-not-a-questions], vocab: [w.fong3-gung1] }
+      - { es: "你煮飯，我食飯，好唔好？", en: "You cook and I eat, deal?", altEs: ["你煮飯，我負責食，好唔好？"], grammar: [g.serial-verbs], vocab: [w.zyu2-faan6] }
+      - { es: "我坐叮叮去你公司樓下等你放工。", en: "I'll take the tram to your office and wait downstairs for you to finish work.", altEs: ["我搭叮叮去你公司樓下等你放工。"], grammar: [g.serial-verbs], vocab: [w.fong3-gung1] }
+      - { es: "唔好返屋企住，出街食晚飯啦。", en: "Don't go home yet, let's go out for dinner.", altEs: ["唔好咁早返屋企，出街食晚飯啦。"], grammar: [g.serial-verbs], vocab: [w.ceot1-gaai1, w.sik6-maan5-faan6] }
+      - { es: "聽日一齊食晏，我請。", jp: "ting1 jat6 jat1 cai4 sik6 aan3 ngo5 ceng2", en: "Let's have lunch together tomorrow, my treat.", altEs: ["聽日一齊食晏啦，我請。"], grammar: [g.serial-verbs], vocab: [w.sik6-aan3] }
+  - id: a1.u11.l3
+    title: 我日日都飲奶茶
+    teach: [g.frequency-adverbs]
+    vocab: [w.tung1-soeng4, w.seng4-jat6, w.jau5-si4, w.gaan3-zung1, w.hou2-siu2, w.jat6-jat6, w.mui5-jat6, w.maan5-maan5, w.cung4-loi4, w.ci3, w.haa5.b, w.wan6-dung6, w.zou6-wan6-dung6, w.paau2-bou6, w.jau4-seoi2, w.saan3-bou6, w.haang4-saan1, w.caai2-daan1-ce1, w.gin6-san1, w.gin6-san1-sat1, w.ni1-paai2, w.jau6.b, w.zung6, w.ji5-ging1]
+    tip: "How-often words go before the verb: 我成日遲到. 每日 and 日日 usually take 都: 我日日都飲奶茶."
+    sentences:
+      - { es: "我日日都飲奶茶。", en: "I drink milk tea every day.", altEs: ["我每日都飲奶茶。"], grammar: [g.frequency-adverbs], vocab: [w.jat6-jat6, w.mui5-jat6] }
+      - { es: "佢通常坐港鐵返工。", en: "She usually takes the MTR to work.", altEs: ["佢通常搭港鐵返工。"], altEn: ["He usually takes the MTR to work."], grammar: [g.frequency-adverbs], vocab: [w.tung1-soeng4], transform: { instruction: "Make it negative with 從來 (never)", answer: "佢從來唔坐港鐵返工。", alt: ["佢從來都唔坐港鐵返工。"], en: "She never takes the MTR to work." } }
+      - { es: "我間中去游水。", en: "I go swimming now and then.", altEs: ["我間中都會去游水。"], grammar: [g.frequency-adverbs], vocab: [w.gaan3-zung1, w.jau4-seoi2], transform: { instruction: "Say you go swimming every day", answer: "我日日都去游水。", alt: ["我每日都去游水。"], en: "I go swimming every day." } }
+      - { es: "我從來唔食早餐。", en: "I never eat breakfast.", altEs: ["我從來都唔食早餐。"], grammar: [g.frequency-adverbs], vocab: [w.cung4-loi4] }
+      - { es: "我成日遲到。", en: "I'm always late.", altEs: ["我成日都遲到。"], grammar: [g.frequency-adverbs], vocab: [w.seng4-jat6], error: { wrong: "我遲到成日。", explain: "Frequency words go before the verb, never at the end: 我成日遲到.", grammar: g.frequency-adverbs } }
+      - { es: "我哋有時去澳門。", en: "We sometimes go to Macau.", altEs: ["有時我哋去澳門。"], grammar: [g.frequency-adverbs], vocab: [w.jau5-si4], transform: { instruction: "Say you rarely go", answer: "我哋好少去澳門。", en: "We rarely go to Macau." } }
+      - { es: "佢好少食快餐。", en: "He rarely eats fast food.", altEs: ["佢好少食快餐㗎。"], altEn: ["She rarely eats fast food."], grammar: [g.frequency-adverbs], vocab: [w.hou2-siu2], error: { wrong: "佢食快餐好少。", explain: "好少 (rarely) goes before the verb: 佢好少食快餐.", grammar: g.frequency-adverbs } }
+      - { es: "你幾耐去一次健身室呀？", en: "How often do you go to the gym?", altEs: ["你幾耐去一次健身室？"], grammar: [g.frequency-adverbs, g.question-words], vocab: [w.ci3, w.gin6-san1-sat1] }
+      - { es: "我一個星期去兩次健身室。", en: "I go to the gym twice a week.", altEs: ["我一個星期去健身室兩次。"], grammar: [g.frequency-adverbs], vocab: [w.ci3, w.gin6-san1-sat1] }
+      - { es: "我每日朝早都喺海邊散步。", en: "Every morning I take a walk by the sea.", altEs: ["我日日朝早都喺海邊散步。"], grammar: [g.frequency-adverbs, g.time-before-verb], vocab: [w.saan3-bou6] }
+      - { es: "我每個星期日都去行山。", en: "I go hiking every Sunday.", altEs: ["我逢星期日都去行山。", "每個星期日我都去行山。"], grammar: [g.frequency-adverbs], vocab: [w.haang4-saan1] }
+      - { es: "我呢排好忙，冇做運動。", en: "I've been busy lately and haven't been exercising.", altEs: ["我呢排好忙，冇乜做運動。"], grammar: [g.frequency-adverbs, g.mou-negation], vocab: [w.ni1-paai2, w.zou6-wan6-dung6, w.wan6-dung6] }
+      - { es: "佢又遲到！", en: "He's late again!", altEs: ["佢又遲到喇！"], altEn: ["She's late again!"], grammar: [g.frequency-adverbs], vocab: [w.jau6.b] }
+      - { es: "我已經好耐冇踩單車。", en: "I haven't ridden a bike for ages.", altEs: ["我好耐冇踩單車喇。"], grammar: [g.frequency-adverbs, g.mou-negation], vocab: [w.ji5-ging1, w.caai2-daan1-ce1] }
+      - { es: "你仲有冇去健身呀？", en: "Do you still go to the gym?", altEs: ["你仲有冇健身呀？"], grammar: [g.frequency-adverbs], vocab: [w.zung6, w.gin6-san1] }
+      - { es: "我晚晚都去跑步，你等我一下。", en: "I go running every evening; wait for me a sec.", altEs: ["我晚晚都跑步，你等我一下。"], grammar: [g.frequency-adverbs], vocab: [w.maan5-maan5, w.paau2-bou6, w.haa5.b] }
+    exchanges:
+      - q: { es: "你幾耐去一次健身室呀？", en: "How often do you go to the gym?" }
+        a: { es: "一個星期兩次。", en: "Twice a week." }
+        alt: ["日日都去。", "好少去。", "間中啦。"]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.ci3, w.gin6-san1-sat1]
+      - q: { es: "你成日食快餐㗎？", en: "Do you eat fast food all the time?" }
+        a: { es: "唔係，好少食。", en: "No, hardly ever." }
+        alt: ["係呀，日日都食。", "間中啦。"]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.seng4-jat6, w.hou2-siu2]
+      - q: { es: "你通常幾點起身呀？", en: "What time do you usually get up?" }
+        a: { es: "通常七點。", en: "Usually at seven." }
+        alt: ["七點。", "六點半。"]
+        grammar: [g.frequency-adverbs, g.clock-time]
+        vocab: [w.tung1-soeng4]
+      - q: { es: "你鍾唔鍾意做運動呀？", en: "Do you like exercising?" }
+        a: { es: "鍾意，我晚晚都跑步。", en: "Yes, I go running every evening." }
+        alt: ["唔鍾意。", "間中跑步。"]
+        grammar: [g.frequency-adverbs, g.zung-ji-like]
+        vocab: [w.zou6-wan6-dung6, w.maan5-maan5, w.paau2-bou6]
+      - q: { es: "呢排你忙唔忙呀？", en: "Have you been busy lately?" }
+        a: { es: "好忙呀，日日都開會。", en: "Very busy, I have meetings every day." }
+        alt: ["唔係好忙。", "幾忙。"]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.ni1-paai2, w.jat6-jat6]
+    texts:
+      - title: "我嘅一個星期"
+        es: ["我日日都坐叮叮返工。", "星期三我去游水。", "星期日我通常去行山。", "我從來唔喺週末返工！"]
+        en: ["Every day I take the tram to work.", "On Wednesdays I go swimming.", "On Sundays I usually go hiking.", "I never work at weekends!"]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.jat6-jat6, w.jau4-seoi2, w.tung1-soeng4, w.haang4-saan1, w.cung4-loi4]
+      - title: "堅尼地城"
+        es: ["我住喺堅尼地城。", "我晚晚都喺海邊散步。", "有時我踩單車。"]
+        en: ["I live in Kennedy Town.", "Every evening I take a walk by the sea.", "Sometimes I ride my bike."]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.maan5-maan5, w.saan3-bou6, w.jau5-si4, w.caai2-daan1-ce1]
+    spicy:
+      - { es: "我成日諗住你。", en: "I'm always thinking about you.", altEs: ["我成日都諗住你。"], grammar: [g.frequency-adverbs], vocab: [w.seng4-jat6] }
+      - { es: "你成日遲到，不過我成日都等你。", en: "You're always late, but I always wait for you.", altEs: ["你成日遲到，但係我成日都等你。"], grammar: [g.frequency-adverbs], vocab: [w.seng4-jat6] }
+      - { es: "我好少約人，但係我想約你。", en: "I rarely ask anyone out, but I want to ask you.", altEs: ["我好少約人，不過我想約你。"], grammar: [g.frequency-adverbs], vocab: [w.hou2-siu2] }
+      - { es: "我晚晚都喺海邊散步，你今晚一齊嚟吖。", en: "I walk by the sea every evening. Come along tonight.", altEs: ["我晚晚都喺海邊散步，今晚一齊嚟吖。"], grammar: [g.frequency-adverbs], vocab: [w.maan5-maan5, w.saan3-bou6] }
+      - { es: "你又遲到？咁你請我食飯啦。", jp: "nei5 jau6 ci4 dou3 gam2 nei5 ceng2 ngo5 sik6 faan6 laa1", en: "Late again? Then you're buying me dinner.", altEs: ["你又遲到呀？咁你請我食飯啦。"], grammar: [g.frequency-adverbs], vocab: [w.jau6.b] }
+  - id: a1.u11.l4
+    title: 坐車嘅時候
+    teach: [g.ge-si-hau]
+    vocab: [w.si4-hau6, w.teng1, w.teng1-go1, w.go1, w.sau2, w.tai2-syu1, w.tai2-din6-si6, w.soeng5-mong5, w.daa2-gei1, w.jau1-sik1, w.jam1-ngok6, w.tai2-hei3, w.din6-jing2, w.tou3, w.san1-man4, w.jau4-hei3, w.jeng4, w.gaa1-jau2, w.nam2]
+    tip: "Put …嘅時候 (\"when …\") at the start, before the main clause: 我坐車嘅時候睇書."
+    sentences:
+      - { es: "我坐車嘅時候睇書。", en: "I read when I'm on the bus.", altEs: ["坐車嘅時候，我睇書。", "我坐車時睇書。"], grammar: [g.ge-si-hau], vocab: [w.si4-hau6, w.tai2-syu1], transform: { instruction: "Say you listen to music on the bus instead", answer: "我坐車嘅時候聽音樂。", alt: ["我坐車嘅時候聽歌。"], en: "I listen to music when I'm on the bus." } }
+      - { es: "我跑步嘅時候聽歌。", en: "I listen to music when I run.", altEs: ["跑步嘅時候，我聽歌。"], grammar: [g.ge-si-hau], vocab: [w.teng1-go1], error: { wrong: "我聽歌我跑步嘅時候。", explain: "The 嘅時候 clause comes first, then the main clause: 我跑步嘅時候聽歌.", grammar: g.ge-si-hau } }
+      - { es: "食飯嘅時候唔好上網。", en: "Don't go online while you're eating.", altEs: ["食飯嘅時候，唔好上網。"], grammar: [g.ge-si-hau], vocab: [w.soeng5-mong5] }
+      - { es: "我細個嘅時候住喺堅尼地城。", en: "When I was little I lived in Kennedy Town.", altEs: ["我細個嗰陣住喺堅尼地城。"], grammar: [g.ge-si-hau], vocab: [w.si4-hau6], error: { wrong: "我細個幾時住喺堅尼地城。", explain: "幾時 is the question word \"when?\"; \"when I was …\" is …嘅時候.", grammar: g.ge-si-hau } }
+      - { es: "落雨嘅時候，我喺屋企睇電視。", en: "When it rains, I watch TV at home.", altEs: ["落雨嘅時候我喺屋企睇電視。"], grammar: [g.ge-si-hau], vocab: [w.tai2-din6-si6], transform: { instruction: "Say you read at home instead", answer: "落雨嘅時候，我喺屋企睇書。", alt: ["落雨嘅時候我喺屋企睇書。"], en: "When it rains, I read at home." } }
+      - { es: "我得閒嘅時候打機。", en: "I play video games when I'm free.", altEs: ["得閒嘅時候，我打機。"], grammar: [g.ge-si-hau], vocab: [w.daa2-gei1], transform: { instruction: "Say you watch TV instead", answer: "我得閒嘅時候睇電視。", en: "I watch TV when I'm free." } }
+      - { es: "過馬路嘅時候要小心。", en: "Be careful when you cross the road.", altEs: ["過馬路嘅時候小心啲。"], grammar: [g.ge-si-hau], vocab: [w.si4-hau6] }
+      - { es: "我食早餐嘅時候睇新聞。", en: "I read the news while I have breakfast.", altEs: ["食早餐嘅時候，我睇新聞。"], grammar: [g.ge-si-hau], vocab: [w.san1-man4] }
+      - { es: "放假嘅時候，我成日去睇戲。", en: "When I'm on holiday, I often go to the cinema.", altEs: ["我放假嘅時候成日去睇戲。"], grammar: [g.ge-si-hau, g.frequency-adverbs], vocab: [w.tai2-hei3] }
+      - { es: "你攰嘅時候做咩呀？", en: "What do you do when you're tired?", altEs: ["你攰嘅時候做乜嘢呀？"], grammar: [g.ge-si-hau, g.question-words], vocab: [w.jau1-sik1] }
+      - { es: "我好鍾意聽廣東歌。", en: "I love listening to Cantopop.", altEs: ["我好鍾意聽粵語歌。"], grammar: [g.zung-ji-like], vocab: [w.teng1, w.go1] }
+      - { es: "呢首歌好好聽。", en: "This song is lovely.", altEs: ["呢首歌好好聽呀。"], grammar: [g.adjective-predicates, g.demonstratives], vocab: [w.sau2, w.go1] }
+      - { es: "我哋今晚睇邊套電影呀？", en: "Which film shall we watch tonight?", altEs: ["今晚睇邊套戲呀？", "我哋今晚睇邊套戲呀？"], grammar: [g.question-words], vocab: [w.tou3, w.din6-jing2] }
+      - { es: "我諗佢唔嚟喇。", en: "I think she's not coming.", altEs: ["我諗佢今日唔嚟喇。"], altEn: ["I think he's not coming."], grammar: [g.m-negation], vocab: [w.nam2] }
+      - { es: "打機嘅時候，我細佬成日贏。", en: "When we play video games, my younger brother always wins.", altEs: ["我哋打機嘅時候，我細佬成日贏。"], grammar: [g.ge-si-hau, g.frequency-adverbs], vocab: [w.jau4-hei3, w.jeng4] }
+      - { es: "我做功課嘅時候聽音樂。加油！", en: "I listen to music while I do my homework. Keep going!", altEs: ["做功課嘅時候，我聽音樂。加油！"], grammar: [g.ge-si-hau], vocab: [w.jam1-ngok6, w.gaa1-jau2] }
+    exchanges:
+      - q: { es: "你得閒嘅時候做咩呀？", en: "What do you do when you're free?" }
+        a: { es: "我鍾意睇戲同聽歌。", en: "I like going to the cinema and listening to music." }
+        alt: ["打機。", "去行山。", "睇書。"]
+        grammar: [g.ge-si-hau, g.zung-ji-like]
+        vocab: [w.tai2-hei3, w.teng1-go1]
+      - q: { es: "你坐車嘅時候做咩呀？", en: "What do you do on the bus?" }
+        a: { es: "我通常睇手機。", en: "I usually look at my phone." }
+        alt: ["聽歌。", "瞓覺。", "睇書。"]
+        grammar: [g.ge-si-hau]
+        vocab: [w.si4-hau6]
+      - q: { es: "你鍾意聽乜嘢音樂呀？", en: "What music do you like?" }
+        a: { es: "我鍾意廣東歌。", en: "I like Cantopop." }
+        alt: ["英文歌。", "乜都聽。"]
+        grammar: [g.zung-ji-like, g.question-words]
+        vocab: [w.jam1-ngok6, w.go1]
+      - q: { es: "今晚睇邊套電影呀？", en: "Which film are we watching tonight?" }
+        a: { es: "睇新嗰套啦。", en: "Let's see the new one." }
+        alt: ["你揀啦。", "睇嗰套啦。"]
+        grammar: [g.question-words, g.particles-aa-laa]
+        vocab: [w.tou3, w.din6-jing2]
+      - q: { es: "你攰嘅時候做咩呀？", en: "What do you do when you're tired?" }
+        a: { es: "我休息，聽吓音樂。", en: "I rest and listen to some music." }
+        alt: ["瞓覺。", "我沖涼。"]
+        grammar: [g.ge-si-hau]
+        vocab: [w.jau1-sik1, w.jam1-ngok6]
+    texts:
+      - title: "我嘅夜晚"
+        es: ["我放工嘅時候，已經八點。", "我食晚飯嘅時候睇新聞。", "最後我上網，聽吓歌，就瞓覺。"]
+        en: ["When I finish work, it's already eight.", "I watch the news while I eat dinner.", "Finally I go online, listen to some music and go to bed."]
+        grammar: [g.ge-si-hau, g.sin-zoi-sequence]
+        vocab: [w.si4-hau6, w.san1-man4, w.soeng5-mong5, w.teng1-go1]
+      - title: "Bonchita"
+        es: ["Bonchita瞓覺嘅時候好可愛。", "佢食嘢嘅時候好快。", "佢見到Leo嘅時候好開心！"]
+        en: ["Bonchita is lovely when she's asleep.", "When she eats, she's very fast.", "When she sees Leo, she's very happy!"]
+        grammar: [g.ge-si-hau]
+        vocab: [w.si4-hau6]
+    spicy:
+      - { es: "睇戲嘅時候，我唔睇電影，我睇你。", en: "At the cinema, I don't watch the film, I watch you.", altEs: ["睇戲嘅時候，我冇睇電影，我睇你。"], grammar: [g.ge-si-hau], vocab: [w.tai2-hei3, w.din6-jing2] }
+      - { es: "我聽歌嘅時候諗住你。", en: "When I listen to music, I think of you.", altEs: ["我聽歌嘅時候成日諗住你。"], grammar: [g.ge-si-hau], vocab: [w.teng1-go1, w.nam2] }
+      - { es: "你開心嘅時候好靚。", en: "You look gorgeous when you're happy.", altEs: ["你開心嘅時候好靚呀。"], grammar: [g.ge-si-hau, g.adjective-predicates], vocab: [w.si4-hau6] }
+      - { es: "打機你贏，食飯你請。", jp: "daa2 gei1 nei5 jeng4 sik6 faan6 nei5 ceng2", en: "You win at video games, so you pay for dinner.", altEs: ["打機你贏，咁食飯你請。"], grammar: [g.ge-si-hau], vocab: [w.daa2-gei1, w.jeng4] }
+      - { es: "加油！約我啦，我好得閒。", en: "Go on! Ask me out, I'm very free.", altEs: ["加油呀！約我啦，我好得閒。"], grammar: [g.particles-aa-laa], vocab: [w.gaa1-jau2] }
+dialogues:
+  - id: a1.u11.d1
+    title: Kelvin 嘅一日
+    context: Mandy asks Kelvin about his daily routine in Kennedy Town.
+    lines:
+      - { speaker: Mandy, es: "Kelvin，你住喺邊度呀？", en: "Kelvin, where do you live?" }
+      - { speaker: Kelvin, es: "我住喺堅尼地城。", en: "I live in Kennedy Town." }
+      - { speaker: Mandy, es: "你每日點樣返工呀？", en: "How do you get to work every day?" }
+      - { speaker: Kelvin, es: "我通常坐叮叮去中環，大概四十分鐘。", en: "I usually take the tram to Central; it's about forty minutes." }
+      - { speaker: Mandy, es: "咁慢？點解唔坐港鐵呀？", en: "That slow? Why don't you take the MTR?" }
+      - { speaker: Kelvin, es: "因為坐叮叮嘅時候，我睇書，聽歌，好舒服。", en: "Because on the tram I read and listen to music. It's really comfortable." }
+      - { speaker: Mandy, es: "你幾點起身呀？", en: "What time do you get up?" }
+      - { speaker: Kelvin, es: "七點。我先沖涼，再食早餐，跟住去坐叮叮。", en: "Seven. First I shower, then I have breakfast, and then I go and catch the tram." }
+      - { speaker: Mandy, es: "放工呢？", en: "And after work?" }
+      - { speaker: Kelvin, es: "我間中去健身室，不過通常返屋企煮飯。", en: "Now and then I go to the gym, but usually I go home and cook." }
+      - { speaker: Mandy, es: "你好叻呀！", en: "You're amazing!" }
+    questions:
+      - { q: "Kelvin住喺邊度？", options: ["中環", "堅尼地城", "北角"], answer: 1, explain: "我住喺堅尼地城: he lives in Kennedy Town." }
+      - { q: "Kelvin通常點樣返工？", options: ["坐港鐵", "坐叮叮", "行路"], answer: 1, explain: "我通常坐叮叮去中環: he usually takes the tram." }
+      - { q: "Kelvin朝早先做咩？", options: ["食早餐", "沖涼", "睇書"], answer: 1, explain: "我先沖涼，再食早餐: he showers first." }
+      - { q: "Kelvin放工通常做咩？", options: ["去健身室", "返屋企煮飯", "去行街"], answer: 1, explain: "He goes to the gym only 間中 (now and then); 通常 he goes home and cooks." }
