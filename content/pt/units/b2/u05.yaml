@@ -1,0 +1,283 @@
+id: b2.u05
+title: "Contanto que você venha"
+lessons:
+  - id: b2.u05.l1
+    title: Contanto que você venha
+    teach: [g.conditional-conjunctions]
+    vocab: [w.contanto-que, w.desde-que, w.a-não-ser-que, w.a-menos-que, w.caso.conj, w.no-caso-de, w.exigência, w.acordo, w.negociar, w.negociação, w.pechinchar, w.oferta, w.contraproposta, w.barganhar, w.comerciante, w.freguês, w.condicional, w.exceto, w.salvo, w.tanque, w.frete]
+    tip: "caso, desde que, contanto que, a não ser que and a menos que take the present or imperfect subjunctive — never the future subjunctive. Compare: Se você precisar… / Caso você precise…"
+    sentences:
+      - { es: "Eu vou à praia com você, contanto que você venha me buscar.", en: "I'll go to the beach with you, as long as you come and pick me up.", altEs: ["Eu vou à praia com você, desde que você venha me buscar.", "Vou à praia com você, contanto que você venha me pegar."], grammar: [g.conditional-conjunctions], vocab: [w.contanto-que] }
+      - { es: "Pode levar o carro, desde que devolva com o tanque cheio.", en: "You can take the car, provided you bring it back with a full tank.", altEs: ["Pode levar o carro, contanto que devolva com o tanque cheio.", "Pode levar o carro, desde que você devolva com o tanque cheio."], grammar: [g.conditional-conjunctions], vocab: [w.desde-que] }
+      - { es: "A gente vai para Picãozinho amanhã, a não ser que chova.", en: "We're going to Picãozinho tomorrow, unless it rains.", altEs: ["Nós vamos para Picãozinho amanhã, a não ser que chova.", "A gente vai pra Picãozinho amanhã, a menos que chova."], grammar: [g.conditional-conjunctions, g.a-gente], vocab: [w.a-não-ser-que], note: "Picãozinho is a reef off João Pessoa whose natural pools appear at low tide." }
+      - { es: "Não fecho o acordo a menos que vocês baixem o preço.", en: "I won't close the deal unless you lower the price.", altEs: ["Não fecho o acordo a não ser que vocês baixem o preço."], grammar: [g.conditional-conjunctions], vocab: [w.a-menos-que, w.acordo] }
+      - { es: "Caso você precise de alguma coisa, me ligue.", en: "If you need anything, call me.", altEs: ["Caso você precise de alguma coisa, me liga.", "Caso precise de alguma coisa, me ligue."], grammar: [g.conditional-conjunctions], vocab: [w.caso.conj], error: { wrong: "Caso você precisar de alguma coisa, me ligue.", explain: "caso takes the present subjunctive (precise), never the future subjunctive (precisar), which goes with se.", grammar: g.conditional-conjunctions } }
+      - { es: "No caso de chuva, o passeio será remarcado.", en: "In the event of rain, the trip will be rescheduled.", altEs: ["Em caso de chuva, o passeio será remarcado.", "No caso de chuva, o passeio vai ser remarcado."], grammar: [g.conditional-conjunctions, g.passive-ser], vocab: [w.no-caso-de] }
+      - { es: "O comerciante aceita negociar, desde que a gente pague à vista.", en: "The trader is willing to negotiate, provided we pay in cash.", altEs: ["O comerciante aceita negociar, contanto que a gente pague à vista."], grammar: [g.conditional-conjunctions], vocab: [w.comerciante, w.negociar, w.à-vista] }
+      - { es: "Na feira, pechinchar é normal, contanto que seja com bom humor.", en: "At the market, haggling is normal, as long as it's done with good humour.", grammar: [g.conditional-conjunctions], vocab: [w.pechinchar] }
+      - { es: "A oferta vale para todos os produtos, exceto os importados.", en: "The offer applies to all products, except imported ones.", grammar: [g.conditional-conjunctions], vocab: [w.oferta, w.exceto] }
+      - { es: "Todo mundo foi à praia, salvo o meu irmão, que tinha prova.", en: "Everyone went to the beach, except my brother, who had an exam.", altEs: ["Todo mundo foi à praia, exceto o meu irmão, que tinha prova."], grammar: [g.relative-que-quem], vocab: [w.salvo] }
+      - { es: "Ele fez uma contraproposta: aceitaria, caso o preço incluísse o café da manhã.", en: "He made a counter-offer: he'd accept, if the price included breakfast.", grammar: [g.conditional-conjunctions, g.subjunctive-imperfect], vocab: [w.contraproposta], variant: "Portugal: pequeno-almoço instead of café da manhã." }
+      - { es: "A negociação avançou bem, de forma que o acordo deve sair amanhã.", en: "The negotiation went well, so the deal should come through tomorrow.", grammar: [g.consequence-clauses], vocab: [w.negociação, w.acordo] }
+      - { es: "A minha única exigência é que a casa fique perto do mar.", en: "My only requirement is that the house be near the sea.", altEs: ["Minha única exigência é que a casa fique perto do mar."], grammar: [g.subjunctive-impersonal], vocab: [w.exigência] }
+      - { es: "Freguês antigo tem desconto, desde que pague em dinheiro.", en: "Regular customers get a discount, as long as they pay cash.", grammar: [g.conditional-conjunctions], vocab: [w.freguês], note: "freguês = a regular customer; the stallholder calls you freguês or freguesa." }
+      - { es: "Se chover, o passeio vai ser cancelado.", en: "If it rains, the trip will be cancelled.", grammar: [g.future-subjunctive-se], vocab: [], transform: { instruction: "Replace se with caso (watch the mood)", answer: "Caso chova, o passeio vai ser cancelado.", alt: ["Caso chova, o passeio será cancelado."], en: "In case it rains, the trip will be cancelled." } }
+      - { es: "Eu vou, mas só se você for também.", en: "I'll go, but only if you go too.", grammar: [g.future-subjunctive-se], vocab: [w.condicional], note: "A conditional promise: it only holds if the other person comes.", transform: { instruction: "Rewrite with contanto que", answer: "Eu vou, contanto que você vá também.", alt: ["Vou, contanto que você vá também.", "Eu vou, desde que você vá também."], en: "I'll go, as long as you go too." } }
+    exchanges:
+      - q: { es: "Posso pagar amanhã?", en: "Can I pay tomorrow?" }
+        a: { es: "Pode, desde que traga o dinheiro até o meio-dia.", en: "You can, as long as you bring the money by midday." }
+        alt: ["Pode, contanto que seja até o meio-dia.", "Não, só à vista."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.desde-que]
+      - q: { es: "Vocês vão à praia de Tambaú?", en: "Are you going to Tambaú beach?" }
+        a: { es: "Vamos, a não ser que caia uma tempestade.", en: "We are, unless a storm breaks." }
+        alt: ["Vamos, a menos que chova.", "Hoje não."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.a-não-ser-que]
+      - q: { es: "Dá para barganhar um pouco?", en: "Can we bargain a bit?" }
+        a: { es: "Dá, contanto que a freguesa leve as três.", en: "We can, as long as you take all three." }
+        alt: ["Dá, se pagar à vista.", "Esse preço já é com desconto."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.barganhar, w.contanto-que, w.freguês]
+      - q: { es: "E se eu não gostar?", en: "And what if I don't like it?" }
+        a: { es: "Caso não goste, é só trocar.", en: "If you don't like it, just exchange it." }
+        alt: ["É só trazer de volta.", "Caso não goste, a gente devolve o dinheiro."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.caso.conj]
+      - q: { es: "Fechamos negócio?", en: "Shall we close the deal?" }
+        a: { es: "Fechamos, mas com uma exigência: o frete é por sua conta.", en: "Deal, but with one condition: the delivery is on you." }
+        alt: ["Fechado!", "Só depois de negociar o preço."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.exigência, w.negócio]
+    texts:
+      - title: "Placa numa barraca de praia"
+        es: ["Aceitamos cartão, desde que a compra passe de 20 reais.", "Caso queira reservar uma mesa, fale com o garçom.", "Não emprestamos cadeiras, a não ser que o cliente consuma."]
+        en: ["We take cards, as long as the purchase is over 20 reais.", "If you'd like to book a table, talk to the waiter.", "We don't lend chairs unless the customer buys something."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.desde-que, w.caso.conj, w.a-não-ser-que]
+      - title: "Mensagem de uma amiga"
+        es: ["Vou ver o pôr do sol no Jacaré com você, contanto que você dirija.", "Caso o trânsito esteja ruim, a gente vai de ônibus.", "Dizem que um saxofonista toca o Bolero de Ravel todo fim de tarde!"]
+        en: ["I'll go and watch the sunset at Jacaré with you, as long as you drive.", "If the traffic is bad, we'll go by bus.", "They say a saxophonist plays Ravel's Boléro every evening!"]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.contanto-que, w.caso.conj]
+    spicy:
+      - { es: "Eu danço com você, contanto que você não pise no meu pé.", en: "I'll dance with you, as long as you don't step on my foot.", altEs: ["Danço com você, contanto que você não pise no meu pé."], grammar: [g.conditional-conjunctions], vocab: [w.contanto-que] }
+      - { es: "Pode me ligar a qualquer hora, desde que não seja para falar do seu ex.", en: "You can call me any time, as long as it's not to talk about your ex.", altEs: ["Pode me ligar a qualquer hora, desde que não seja pra falar do seu ex."], grammar: [g.conditional-conjunctions], vocab: [w.desde-que] }
+      - { es: "Caso você queira um guia particular em João Pessoa, eu estou disponível.", en: "In case you'd like a private guide in João Pessoa, I'm available.", altEs: ["Caso você queira um guia particular em João Pessoa, estou disponível."], grammar: [g.conditional-conjunctions], vocab: [w.caso.conj] }
+      - { es: "Não saio daqui a menos que você venha comigo.", en: "I'm not leaving here unless you come with me.", altEs: ["Não saio daqui a não ser que você venha comigo."], grammar: [g.conditional-conjunctions], vocab: [w.a-menos-que] }
+      - { es: "Nossa negociação vai bem: você paga o jantar e eu pago a sobremesa, salvo se você preferir um beijo.", en: "Our negotiation is going well: you pay for dinner and I pay for dessert, unless you'd prefer a kiss.", altEs: ["A nossa negociação vai bem: você paga o jantar e eu pago a sobremesa, salvo se você preferir um beijo."], grammar: [g.conditional-conjunctions], vocab: [w.negociação, w.salvo] }
+  - id: b2.u05.l2
+    title: Caso você queira parcelar
+    teach: [g.conditional-conjunctions]
+    vocab: [w.garantia, w.depósito, w.caução, w.fiador, w.parcela, w.parcelar, w.à-vista, w.prestação, w.financiamento, w.crédito, w.débito, w.reembolso, w.devolução, w.nota-fiscal, w.cobertura, w.encarecer, w.atacado, w.varejo, w.consumidor, w.consumo, w.consumir, w.demanda, w.aparelho]
+    tip: "desde que has two lives: + subjunctive = provided that (desde que você pague); + indicative = since (desde que me mudei). Money talk in Brazil: à vista (in one go), parcelado (in instalments), sem juros (interest-free)."
+    sentences:
+      - { es: "O dono aluga o apartamento, desde que você deixe um depósito de dois meses.", en: "The owner will rent out the flat, provided you leave a two-month deposit.", altEs: ["O dono aluga o apartamento, contanto que você deixe um depósito de dois meses."], grammar: [g.conditional-conjunctions], vocab: [w.depósito], error: { wrong: "O dono aluga o apartamento, desde que você deixa um depósito de dois meses.", explain: "desde que meaning 'provided that' takes the subjunctive (deixe); with the indicative it means 'since'.", grammar: g.conditional-conjunctions } }
+      - { es: "Caso você não tenha fiador, pode pagar uma caução.", en: "If you don't have a guarantor, you can pay a security deposit.", altEs: ["Caso não tenha fiador, você pode pagar uma caução."], grammar: [g.conditional-conjunctions], vocab: [w.fiador, w.caução] }
+      - { es: "A loja parcela em dez vezes, contanto que seja no cartão de crédito.", en: "The shop lets you pay in ten instalments, as long as it's by credit card.", altEs: ["A loja parcela em dez vezes, desde que seja no cartão de crédito."], grammar: [g.conditional-conjunctions], vocab: [w.parcelar, w.crédito] }
+      - { es: "À vista tem dez por cento de desconto; no débito, não.", en: "Paying upfront gets ten per cent off; by debit card, it doesn't.", altEs: ["Pagando à vista, tem dez por cento de desconto; no débito, não."], grammar: [g.tem-there-is], vocab: [w.à-vista, w.débito] }
+      - { es: "Pagamos a prestação do carro todo mês, de forma que sobra pouco para viajar.", en: "We pay the car instalment every month, so there's little left for travelling.", altEs: ["A gente paga a prestação do carro todo mês, de forma que sobra pouco para viajar."], grammar: [g.consequence-clauses], vocab: [w.prestação] }
+      - { es: "O banco só aprova o financiamento caso a gente tenha renda fixa.", en: "The bank will only approve the mortgage if we have a fixed income.", altEs: ["O banco só aprova o financiamento caso nós tenhamos renda fixa."], grammar: [g.conditional-conjunctions], vocab: [w.financiamento] }
+      - { es: "A garantia cobre defeitos, a não ser que o aparelho tenha caído na água.", en: "The warranty covers faults, unless the device has fallen in the water.", grammar: [g.conditional-conjunctions, g.subjunctive-perfect], vocab: [w.garantia] }
+      - { es: "Caso não fique satisfeito, a loja faz a devolução do dinheiro em até sete dias.", en: "If you're not satisfied, the shop refunds the money within seven days.", grammar: [g.conditional-conjunctions], vocab: [w.devolução] }
+      - { es: "Você só recebe o reembolso desde que apresente a nota fiscal.", en: "You only get the refund provided you show the receipt.", altEs: ["Você só recebe o reembolso contanto que apresente a nota fiscal."], grammar: [g.conditional-conjunctions], vocab: [w.reembolso, w.nota-fiscal] }
+      - { es: "O seguro tem cobertura para roubo, exceto se o carro estiver aberto.", en: "The insurance covers theft, except if the car is left unlocked.", grammar: [g.conditional-conjunctions, g.future-subjunctive-se], vocab: [w.cobertura] }
+      - { es: "No verão, o aluguel encarece tanto que muita gente desiste da praia.", en: "In summer, rent goes up so much that many people give up on the beach.", grammar: [g.consequence-clauses], vocab: [w.encarecer] }
+      - { es: "Comprar no atacado sai mais barato, desde que o consumo da casa seja grande.", en: "Buying wholesale works out cheaper, provided the household gets through a lot.", grammar: [g.conditional-conjunctions], vocab: [w.atacado, w.consumo] }
+      - { es: "O varejo só vai crescer caso as pessoas consumam mais.", en: "Retail will only grow if people consume more.", grammar: [g.conditional-conjunctions], vocab: [w.varejo, w.consumir], variant: "Portugal: retalho instead of varejo." }
+      - { es: "O consumidor tem direito à troca, a menos que o produto esteja em promoção.", en: "Consumers are entitled to an exchange, unless the product is on sale.", grammar: [g.conditional-conjunctions], vocab: [w.consumidor] }
+      - { es: "Se você pagar à vista, ganha desconto.", en: "If you pay upfront, you get a discount.", grammar: [g.future-subjunctive-se], vocab: [w.à-vista], transform: { instruction: "Rewrite with desde que", answer: "Desde que você pague à vista, ganha desconto.", alt: ["Desde que pague à vista, você ganha desconto.", "Você ganha desconto, desde que pague à vista."], en: "Provided you pay upfront, you get a discount." } }
+      - { es: "A demanda cresceu e os preços subiram.", en: "Demand grew and prices went up.", grammar: [g.preterite-regular], vocab: [w.demanda], variant: "Portugal: procura instead of demanda.", transform: { instruction: "Rewrite as a consequence with tanto que: A demanda cresceu…", answer: "A demanda cresceu tanto que os preços subiram.", alt: ["A demanda cresceu tanto que os preços dispararam."], en: "Demand grew so much that prices went up." } }
+    exchanges:
+      - q: { es: "Posso parcelar?", en: "Can I pay in instalments?" }
+        a: { es: "Pode, em até seis parcelas sem juros, desde que seja no crédito.", en: "You can, in up to six interest-free instalments, provided it's by credit card." }
+        alt: ["Pode, em até seis vezes.", "Não, só à vista."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.parcelar, w.parcela, w.crédito]
+      - q: { es: "Precisa de fiador?", en: "Do I need a guarantor?" }
+        a: { es: "Não, caso você pague três meses de caução.", en: "No, if you pay three months' security deposit." }
+        alt: ["Precisa, sim.", "Só se você não tiver caução."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.fiador, w.caução]
+      - q: { es: "Tem nota fiscal?", en: "Is there a receipt?" }
+        a: { es: "Tem, sim; guarde, caso precise trocar.", en: "Yes; keep it, in case you need to exchange it." }
+        alt: ["Tem, aqui está.", "Quer com CPF na nota?"]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.nota-fiscal]
+      - q: { es: "Por que o aluguel encareceu tanto?", en: "Why has rent gone up so much?" }
+        a: { es: "Porque a demanda cresceu muito, de forma que os donos aumentaram os preços.", en: "Because demand grew a lot, so owners put their prices up." }
+        alt: ["Por causa dos turistas.", "Porque todo mundo quer morar perto da praia."]
+        grammar: [g.consequence-clauses]
+        vocab: [w.encarecer, w.demanda]
+      - q: { es: "Vocês fazem reembolso?", en: "Do you give refunds?" }
+        a: { es: "Fazemos, a menos que o produto tenha sido usado.", en: "We do, unless the product has been used." }
+        alt: ["Só com nota fiscal.", "Fazemos troca, não reembolso."]
+        grammar: [g.conditional-conjunctions, g.subjunctive-perfect]
+        vocab: [w.reembolso]
+    texts:
+      - title: "Anúncio de aluguel"
+        es: ["Aluga-se apartamento em Tambaú, a 100 metros da praia.", "Aceitamos fiador ou caução de três meses.", "Animais, só desde que sejam pequenos."]
+        en: ["Flat to rent in Tambaú, 100 metres from the beach.", "We accept a guarantor or a three-month security deposit.", "Pets only if they're small."]
+        grammar: [g.conditional-conjunctions, g.se-passive]
+        vocab: [w.fiador, w.caução]
+      - title: "Política de trocas"
+        es: ["Trocas e devoluções em até 30 dias, com nota fiscal.", "O reembolso será feito no cartão, caso a compra tenha sido no crédito.", "Produtos em promoção não têm troca, salvo defeito."]
+        en: ["Exchanges and returns within 30 days, with a receipt.", "The refund will be made to your card, if the purchase was by credit card.", "Sale items cannot be exchanged, except if faulty."]
+        grammar: [g.conditional-conjunctions]
+        vocab: [w.devolução, w.reembolso, w.nota-fiscal, w.salvo]
+    spicy:
+      - { es: "Eu parcelo o meu coração em dez vezes, desde que você pague a primeira à vista.", en: "I'll split my heart into ten instalments, provided you pay the first one upfront.", altEs: ["Parcelo o meu coração em dez vezes, desde que você pague a primeira à vista."], grammar: [g.conditional-conjunctions], vocab: [w.parcelar, w.à-vista] }
+      - { es: "O seu sorriso devia vir com garantia: caso pare de sorrir para mim, eu quero reembolso.", en: "Your smile should come with a warranty: if it stops smiling at me, I want a refund.", altEs: ["Seu sorriso devia vir com garantia: caso pare de sorrir pra mim, eu quero reembolso."], grammar: [g.conditional-conjunctions], vocab: [w.garantia, w.reembolso] }
+      - { es: "Não quero devolução: fico com você mesmo sem nota fiscal.", en: "I don't want a return: I'll keep you even without a receipt.", grammar: [g.embora-concession], vocab: [w.devolução, w.nota-fiscal] }
+      - { es: "A demanda por você está alta; caso você abra uma vaga, eu entro na fila.", en: "Demand for you is high; if a spot opens up, I'm joining the queue.", grammar: [g.conditional-conjunctions], vocab: [w.demanda] }
+      - { es: "Eu pago o jantar à vista, contanto que a sobremesa seja a dois.", en: "I'll pay for dinner upfront, as long as dessert is for two.", grammar: [g.conditional-conjunctions], vocab: [w.à-vista] }
+  - id: b2.u05.l3
+    title: Tão bonito que nem parece real
+    teach: [g.consequence-clauses]
+    vocab: [w.tanto-que, w.de-forma-que, w.jangada, w.jangadeiro, w.rede, w.falésia, w.duna, w.lagoa, w.coqueiro, w.bugue, w.pescador, w.pesca, w.jumento, w.jegue, w.bode, w.urubu, w.golfinho, w.tartaruga, w.baleia, w.peixe-boi, w.concha, w.ninho]
+    tip: "tão + adjective/adverb + que; tanto/tanta/tantos/tantas + noun + que; verb + tanto que. de forma que + indicative = so (result); + subjunctive = so that (purpose)."
+    sentences:
+      - { es: "O mar estava tão calmo que dava para ver os peixes.", en: "The sea was so calm you could see the fish.", altEs: ["O mar estava tão calmo que deu para ver os peixes.", "O mar estava tão calmo que dava pra ver os peixes."], grammar: [g.consequence-clauses], vocab: [], error: { wrong: "O mar estava tanto calmo que dava para ver os peixes.", explain: "tão goes with adjectives and adverbs (tão calmo); tanto goes with nouns and verbs.", grammar: g.consequence-clauses } }
+      - { es: "Tinha tantas jangadas na praia que parecia um quadro.", en: "There were so many jangadas on the beach it looked like a painting.", altEs: ["Havia tantas jangadas na praia que parecia um quadro."], grammar: [g.consequence-clauses], vocab: [w.jangada] }
+      - { es: "Dormi tanto na rede que perdi o pôr do sol.", en: "I slept so long in the hammock that I missed the sunset.", grammar: [g.consequence-clauses], vocab: [w.rede] }
+      - { es: "As falésias do Cabo Branco são tão altas que dá medo olhar para baixo.", en: "The Cabo Branco cliffs are so high it's scary to look down.", altEs: ["As falésias do Cabo Branco são tão altas que dá medo olhar pra baixo."], grammar: [g.consequence-clauses], vocab: [w.falésia] }
+      - { es: "Subimos a duna tão rápido que ficamos sem ar.", en: "We climbed the dune so fast we were out of breath.", altEs: ["A gente subiu a duna tão rápido que ficou sem ar."], grammar: [g.consequence-clauses], vocab: [w.duna] }
+      - { es: "A água da lagoa estava tão quente que ficamos horas lá.", en: "The water in the lagoon was so warm we stayed there for hours.", altEs: ["A água da lagoa estava tão quentinha que ficamos horas lá."], grammar: [g.consequence-clauses], vocab: [w.lagoa] }
+      - { es: "O motorista do bugue correu tanto que eu gritei o passeio inteiro.", en: "The buggy driver went so fast I screamed the whole trip.", grammar: [g.consequence-clauses], vocab: [w.bugue] }
+      - { es: "Os pescadores chegaram cedo, de forma que o peixe estava fresquinho.", en: "The fishermen arrived early, so the fish was really fresh.", grammar: [g.consequence-clauses], vocab: [w.pescador, w.de-forma-que] }
+      - { es: "A pesca está tão difícil que muitos jovens vão embora para a cidade.", en: "Fishing is so hard now that many young people leave for the city.", grammar: [g.consequence-clauses], vocab: [w.pesca] }
+      - { es: "Um bode e dois urubus estavam tão perto da estrada que tive que frear.", en: "A billy goat and two vultures were so close to the road that I had to brake.", grammar: [g.consequence-clauses], vocab: [w.bode, w.urubu, w.frear] }
+      - { es: "Vimos tantos golfinhos que perdemos a conta.", en: "We saw so many dolphins we lost count.", altEs: ["A gente viu tantos golfinhos que perdeu a conta."], grammar: [g.consequence-clauses], vocab: [w.golfinho] }
+      - { es: "Ela adora tartarugas, tanto que virou voluntária do projeto na praia.", en: "She loves turtles, so much so that she became a volunteer on the beach project.", grammar: [g.consequence-clauses], vocab: [w.tanto-que, w.tartaruga], note: "João Pessoa's urban beaches are nesting sites for sea turtles, watched over by volunteers." }
+      - { es: "O peixe-boi é tão raro que poucas pessoas já viram um.", en: "The manatee is so rare that few people have ever seen one.", grammar: [g.consequence-clauses], vocab: [w.peixe-boi] }
+      - { es: "A baleia era tão grande que o barco parecia de brinquedo.", en: "The whale was so big the boat looked like a toy.", grammar: [g.consequence-clauses], vocab: [w.baleia] }
+      - { es: "Choveu muito. A rua ficou cheia de água.", en: "It rained a lot. The street filled with water.", grammar: [g.preterite-regular], vocab: [], transform: { instruction: "Join with tanto que", answer: "Choveu tanto que a rua ficou cheia de água.", alt: ["Choveu tanto que a rua ficou cheia d'água."], en: "It rained so much that the street filled with water." } }
+      - { es: "O jegue estava muito cansado e deitou na areia.", en: "The donkey was very tired and lay down on the sand.", altEs: ["O jumento estava muito cansado e deitou na areia."], grammar: [g.preterite-vs-imperfect], vocab: [w.jegue, w.jumento], note: "jegue and jumento are the same animal; jegue is the everyday word in the Northeast.", transform: { instruction: "Join with tão… que", answer: "O jegue estava tão cansado que deitou na areia.", alt: ["O jumento estava tão cansado que deitou na areia."], en: "The donkey was so tired that it lay down on the sand." } }
+    exchanges:
+      - q: { es: "Como foi o passeio de bugue?", en: "How was the buggy ride?" }
+        a: { es: "Tão emocionante que quero repetir amanhã.", en: "So exciting I want to do it again tomorrow." }
+        alt: ["Foi tão rápido que eu gritei o tempo todo.", "Incrível!"]
+        grammar: [g.consequence-clauses]
+        vocab: [w.bugue]
+      - q: { es: "Vocês viram o peixe-boi?", en: "Did you see the manatee?" }
+        a: { es: "Vimos! Era tão grande que parecia uma pedra no rio.", en: "We did! It was so big it looked like a rock in the river." }
+        alt: ["Vimos, de longe.", "Não, só vimos tartarugas."]
+        grammar: [g.consequence-clauses]
+        vocab: [w.peixe-boi]
+      - q: { es: "Por que você está tão vermelha?", en: "Why are you so red?" }
+        a: { es: "Fiquei tanto tempo na lagoa que esqueci o protetor.", en: "I stayed in the lagoon so long I forgot my sunscreen." }
+        alt: ["Esqueci o protetor.", "Passei o dia na duna."]
+        grammar: [g.consequence-clauses]
+        vocab: [w.lagoa]
+      - q: { es: "O jangadeiro saiu hoje?", en: "Did the jangada fisherman go out today?" }
+        a: { es: "Não; o vento estava tão forte que ninguém foi para o mar.", en: "No; the wind was so strong nobody went out to sea." }
+        alt: ["Saiu às quatro da manhã.", "Hoje não teve pesca."]
+        grammar: [g.consequence-clauses]
+        vocab: [w.jangadeiro]
+      - q: { es: "Você gosta de tartarugas?", en: "Do you like turtles?" }
+        a: { es: "Adoro, tanto que faço trabalho voluntário no projeto da praia.", en: "I love them, so much so that I volunteer on the beach project." }
+        alt: ["Adoro!", "Gosto mais dos golfinhos."]
+        grammar: [g.consequence-clauses]
+        vocab: [w.tanto-que, w.tartaruga]
+    texts:
+      - title: "Cartão-postal da Paraíba"
+        es: ["Oi, vó! Aqui em João Pessoa o mar é tão calmo que parece piscina.", "Ontem vimos golfinhos, e um pescador me deu uma concha linda.", "Estou tão feliz que nem quero voltar!"]
+        en: ["Hi, Grandma! Here in João Pessoa the sea is so calm it looks like a swimming pool.", "Yesterday we saw dolphins, and a fisherman gave me a beautiful shell.", "I'm so happy I don't even want to come back!"]
+        grammar: [g.consequence-clauses]
+        vocab: [w.golfinho, w.pescador, w.concha]
+      - title: "Aviso na praia"
+        es: ["Atenção: ninhos de tartaruga nesta área.", "Não use luz forte na areia à noite, de forma que as tartaruguinhas encontrem o mar.", "Em caso de dúvida, procure os voluntários do projeto."]
+        en: ["Warning: turtle nests in this area.", "Don't use bright lights on the sand at night, so that the baby turtles can find the sea.", "If in doubt, look for the project volunteers."]
+        grammar: [g.consequence-clauses, g.subjunctive-purpose]
+        vocab: [w.tartaruga, w.de-forma-que]
+    spicy:
+      - { es: "Você é tão bonito que o pôr do sol ficou com ciúme.", en: "You're so good-looking the sunset got jealous.", altEs: ["Você é tão bonita que o pôr do sol ficou com ciúme."], grammar: [g.consequence-clauses], vocab: [] }
+      - { es: "Ficamos tanto tempo na rede que o coqueiro já sabe todos os nossos segredos.", en: "We spent so long in the hammock that the coconut palm knows all our secrets.", altEs: ["A gente ficou tanto tempo na rede que o coqueiro já sabe todos os nossos segredos."], grammar: [g.consequence-clauses], vocab: [w.rede, w.coqueiro] }
+      - { es: "Você me olha tanto que eu já nem vejo o mar.", en: "You look at me so much that I can't even see the sea any more.", grammar: [g.consequence-clauses], vocab: [] }
+      - { es: "O bugue corria tanto que eu me segurei em você o passeio todo, sem querer… ou querendo.", en: "The buggy went so fast I held on to you the whole ride, by accident… or on purpose.", grammar: [g.consequence-clauses], vocab: [w.bugue] }
+      - { es: "Gosto tanto de você que até divido a minha tapioca.", en: "I like you so much I'll even share my tapioca.", altEs: ["Gosto tanto de você que divido até a minha tapioca."], grammar: [g.consequence-clauses], vocab: [] }
+  - id: b2.u05.l4
+    title: À medida que o sol nasce
+    teach: [g.temporal-clauses-advanced]
+    vocab: [w.à-medida-que, w.toda-vez-que, w.cada-vez-mais, w.cada-vez-menos, w.desde-então, w.de-lá-pra-cá, w.a-partir-daí, w.por-enquanto, w.por-ora, w.de-antemão, w.de-imediato, w.ciclovia]
+    tip: "mal and assim que = as soon as; até que and antes que take the subjunctive for what hasn't happened yet; à medida que (gradually) and desde que meaning 'since' take the indicative."
+    sentences:
+      - { es: "Mal o sol nasceu na Ponta do Seixas, as pessoas começaram a aplaudir.", en: "No sooner had the sun risen at Ponta do Seixas than people started clapping.", altEs: ["Assim que o sol nasceu na Ponta do Seixas, as pessoas começaram a aplaudir."], grammar: [g.temporal-clauses-advanced], vocab: [], note: "Ponta do Seixas, in João Pessoa, is the easternmost point of the American mainland." }
+      - { es: "À medida que a cidade cresce, a orla fica mais movimentada.", en: "As the city grows, the seafront gets busier.", grammar: [g.temporal-clauses-advanced], vocab: [w.à-medida-que] }
+      - { es: "Toda vez que venho a João Pessoa, vejo o pôr do sol no Jacaré.", en: "Every time I come to João Pessoa, I watch the sunset at Jacaré.", altEs: ["Toda vez que eu venho a João Pessoa, vejo o pôr do sol no Jacaré.", "Cada vez que venho a João Pessoa, vejo o pôr do sol no Jacaré."], grammar: [g.temporal-clauses-advanced], vocab: [w.toda-vez-que] }
+      - { es: "A cidade recebe cada vez mais turistas.", en: "The city gets more and more tourists.", grammar: [g.temporal-clauses-advanced], vocab: [w.cada-vez-mais] }
+      - { es: "Há cada vez menos jangadas na praia, mas elas ainda saem de madrugada.", en: "There are fewer and fewer jangadas on the beach, but they still go out before dawn.", altEs: ["Tem cada vez menos jangadas na praia, mas elas ainda saem de madrugada."], grammar: [g.temporal-clauses-advanced], vocab: [w.cada-vez-menos, w.jangada] }
+      - { es: "Vim pela primeira vez em 2010; desde então, volto todo ano.", en: "I came for the first time in 2010; since then, I've come back every year.", grammar: [g.temporal-clauses-advanced], vocab: [w.desde-então] }
+      - { es: "Abriram uma ciclovia na orla, e de lá pra cá o bairro ficou mais animado.", en: "They opened a cycle lane along the seafront, and since then the neighbourhood has livened up.", grammar: [g.temporal-clauses-advanced], vocab: [w.de-lá-pra-cá], note: "de lá pra cá is spoken; in writing: desde então." }
+      - { es: "Conheci o forró aqui; a partir daí, nunca mais parei de dançar.", en: "I discovered forró here; from then on, I never stopped dancing.", grammar: [g.temporal-clauses-advanced], vocab: [w.a-partir-daí] }
+      - { es: "Por enquanto, estamos hospedados em Tambaú, até que a gente encontre um apartamento.", en: "For now, we're staying in Tambaú, until we find a flat.", altEs: ["Por enquanto, estamos em Tambaú, até a gente encontrar um apartamento."], grammar: [g.temporal-clauses-advanced], vocab: [w.por-enquanto] }
+      - { es: "Por ora, não temos mais nada a acrescentar.", en: "For now, we have nothing more to add.", grammar: [g.temporal-clauses-advanced], vocab: [w.por-ora, w.acrescentar], note: "por ora is more formal than por enquanto." }
+      - { es: "Agradeço de antemão pela ajuda.", en: "Thank you in advance for your help.", altEs: ["Desde já, agradeço pela ajuda.", "Obrigado de antemão pela ajuda."], grammar: [g.formal-email], vocab: [w.de-antemão] }
+      - { es: "Assim que reclamamos, o hotel resolveu o problema de imediato.", en: "As soon as we complained, the hotel sorted the problem out immediately.", grammar: [g.temporal-clauses-advanced], vocab: [w.de-imediato] }
+      - { es: "Saia da praia antes que o sol fique forte demais.", en: "Leave the beach before the sun gets too strong.", altEs: ["Sai da praia antes que o sol fique forte demais."], grammar: [g.temporal-clauses-advanced, g.imperative-formal], vocab: [] }
+      - { es: "Desde que me mudei para João Pessoa, acordo mais cedo.", en: "Since I moved to João Pessoa, I wake up earlier.", altEs: ["Desde que eu me mudei para João Pessoa, acordo mais cedo."], grammar: [g.temporal-clauses-advanced], vocab: [w.desde-que], error: { wrong: "Desde que me mude para João Pessoa, acordo mais cedo.", explain: "desde que meaning 'since' (time) takes the indicative: me mudei. With the subjunctive it means 'provided that'.", grammar: g.temporal-clauses-advanced } }
+      - { es: "O sol subia e a areia esquentava aos poucos.", en: "The sun was rising and the sand was gradually getting hotter.", grammar: [g.imperfect], vocab: [], transform: { instruction: "Link the two ideas with À medida que…", answer: "À medida que o sol subia, a areia esquentava.", alt: ["À medida que o sol subia, a areia ia esquentando."], en: "As the sun rose, the sand got hotter." } }
+      - { es: "Fique aqui até eu voltar.", en: "Stay here until I get back.", altEs: ["Fica aqui até eu voltar."], grammar: [g.personal-infinitive-uses], vocab: [], transform: { instruction: "Rewrite with até que + subjunctive", answer: "Fique aqui até que eu volte.", alt: ["Fica aqui até que eu volte."], en: "Stay here until I get back." } }
+    exchanges:
+      - q: { es: "Você ainda mora em Tambaú?", en: "Do you still live in Tambaú?" }
+        a: { es: "Por enquanto, sim, até que eu encontre algo mais barato.", en: "For now, yes, until I find something cheaper." }
+        alt: ["Por enquanto, sim.", "Não, me mudei para o Bessa."]
+        grammar: [g.temporal-clauses-advanced]
+        vocab: [w.por-enquanto]
+      - q: { es: "Quando você começou a dançar forró?", en: "When did you start dancing forró?" }
+        a: { es: "Na faculdade; a partir daí, nunca mais parei.", en: "At university; from then on, I never stopped." }
+        alt: ["Desde criança.", "Faz pouco tempo."]
+        grammar: [g.temporal-clauses-advanced]
+        vocab: [w.a-partir-daí]
+      - q: { es: "João Pessoa mudou muito?", en: "Has João Pessoa changed a lot?" }
+        a: { es: "Mudou; de lá pra cá, tem cada vez mais turistas, mas os prédios da orla continuam baixos.", en: "It has; since then, there are more and more tourists, but the seafront buildings are still low." }
+        alt: ["Mudou bastante.", "Quase nada."]
+        grammar: [g.temporal-clauses-advanced]
+        vocab: [w.de-lá-pra-cá, w.cada-vez-mais]
+      - q: { es: "Quando vamos para as piscinas naturais?", en: "When are we going to the natural pools?" }
+        a: { es: "Assim que a maré baixar; por ora, vamos tomar café.", en: "As soon as the tide goes down; for now, let's have breakfast." }
+        alt: ["Mal a maré baixar.", "Depois do café."]
+        grammar: [g.temporal-clauses-advanced, g.future-subjunctive-time]
+        vocab: [w.por-ora, w.maré]
+      - q: { es: "Você vem sempre aqui?", en: "Do you come here often?" }
+        a: { es: "Toda vez que posso; desde que descobri esta praia, não troco por nenhuma.", en: "Whenever I can; since I discovered this beach, I wouldn't swap it for any other." }
+        alt: ["Toda vez que posso.", "É a primeira vez."]
+        grammar: [g.temporal-clauses-advanced]
+        vocab: [w.toda-vez-que]
+    texts:
+      - title: "Ponta do Seixas, 5h10"
+        es: ["Mal o céu clareou, todo mundo pegou o celular.", "À medida que o sol saía do mar, as pessoas ficavam em silêncio.", "Dizem que, no continente americano, o sol nasce aqui primeiro."]
+        en: ["The moment the sky got light, everyone took out their phones.", "As the sun came out of the sea, people fell silent.", "They say that, on the American mainland, the sun rises here first."]
+        grammar: [g.temporal-clauses-advanced]
+        vocab: [w.à-medida-que, w.clarear]
+      - title: "E-mail para um hotel"
+        es: ["Prezados, chegaremos no dia 12 à noite.", "Caso haja algum problema com a reserva, avisem de imediato.", "Agradeço de antemão pela atenção."]
+        en: ["Dear Sir or Madam, we will arrive on the 12th in the evening.", "Should there be any problem with the booking, please let us know immediately.", "Thank you in advance for your attention."]
+        grammar: [g.formal-email, g.conditional-conjunctions]
+        vocab: [w.de-imediato, w.de-antemão]
+    spicy:
+      - { es: "À medida que a noite avançava, a gente dançava cada vez mais perto.", en: "As the night went on, we danced closer and closer.", altEs: ["À medida que a noite avançava, nós dançávamos cada vez mais perto."], grammar: [g.temporal-clauses-advanced], vocab: [w.à-medida-que, w.cada-vez-mais] }
+      - { es: "Toda vez que você sorri, esqueço o que ia dizer.", en: "Every time you smile, I forget what I was going to say.", altEs: ["Toda vez que você sorri, eu esqueço o que ia dizer."], grammar: [g.temporal-clauses-advanced], vocab: [w.toda-vez-que] }
+      - { es: "Conheci você no Jacaré; a partir daí, todo pôr do sol tem o seu nome.", en: "I met you at Jacaré; from then on, every sunset has your name.", altEs: ["Te conheci no Jacaré; a partir daí, todo pôr do sol tem o seu nome."], grammar: [g.temporal-clauses-advanced], vocab: [w.a-partir-daí] }
+      - { es: "Por enquanto somos só amigos… por ora.", en: "For now we're just friends… for now.", grammar: [g.temporal-clauses-advanced], vocab: [w.por-enquanto, w.por-ora] }
+      - { es: "Desde que você chegou, o forró ficou cada vez mais interessante.", en: "Since you arrived, the forró has got more and more interesting.", grammar: [g.temporal-clauses-advanced], vocab: [w.desde-que, w.cada-vez-mais] }
+dialogues:
+  - id: b2.u05.d1
+    title: Um apartamento em Tambaú
+    context: Camila is moving to João Pessoa and visits a flat near the beach. The owner, Seu Edvaldo, sets his conditions.
+    lines:
+      - { speaker: Camila, es: "Bom dia, Seu Edvaldo. O apartamento ainda está disponível?", en: "Good morning, Seu Edvaldo. Is the flat still available?" }
+      - { speaker: Edvaldo, es: "Está, sim. Eu alugo por um ano, desde que você tenha fiador.", en: "It is. I rent it for a year, provided you have a guarantor." }
+      - { speaker: Camila, es: "Não tenho fiador. Caso eu pague uma caução, serve?", en: "I don't have a guarantor. If I pay a security deposit, will that do?" }
+      - { speaker: Edvaldo, es: "Serve, contanto que sejam três meses adiantados.", en: "It will, as long as it's three months in advance." }
+      - { speaker: Camila, es: "Três meses é muito. Posso fazer uma contraproposta? Dois meses, à vista.", en: "Three months is a lot. Can I make a counter-offer? Two months, paid upfront." }
+      - { speaker: Edvaldo, es: "Hum… Dois meses, então. Mas o condomínio fica por sua conta.", en: "Hmm… Two months, then. But the service charge is on you." }
+      - { speaker: Camila, es: "Combinado. E a internet?", en: "Agreed. And the internet?" }
+      - { speaker: Edvaldo, es: "Já está incluída. O prédio é tão perto da praia que dá para ouvir o mar à noite.", en: "It's already included. The building is so close to the beach you can hear the sea at night." }
+      - { speaker: Camila, es: "Que maravilha! Quando posso me mudar?", en: "Wonderful! When can I move in?" }
+      - { speaker: Edvaldo, es: "Assim que assinarmos o contrato. Por enquanto, leve a chave e veja tudo com calma.", en: "As soon as we've signed the contract. For now, take the key and have a good look round." }
+    questions:
+      - { q: "O que o Seu Edvaldo pede primeiro?", options: ["Um fiador", "Seis meses adiantados", "Um contrato de dois anos"], answer: 0, explain: "Eu alugo por um ano, desde que você tenha fiador." }
+      - { q: "Qual é a contraproposta da Camila?", options: ["Pagar um ano à vista", "Dois meses de caução à vista", "Não pagar o condomínio"], answer: 1, explain: "Dois meses, à vista." }
+      - { q: "O que fica por conta da Camila?", options: ["A internet", "O condomínio", "A limpeza"], answer: 1, explain: "Mas o condomínio fica por sua conta." }
+      - { q: "Por que dá para ouvir o mar à noite?", options: ["Porque o prédio é muito perto da praia", "Porque as janelas estão quebradas", "Porque ela vai morar num barco"], answer: 0, explain: "O prédio é tão perto da praia que dá para ouvir o mar: a consequence clause." }
