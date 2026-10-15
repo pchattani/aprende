@@ -16,7 +16,7 @@ export const languagePack: LanguagePackFull & {
   match,
   words,
   stripMarks: stripAccents,
-  comparable: (text) => toSyllables(text).join(' '),
+  comparable: (text) => toSyllables(text).map((x) => x.replace(/^ni(?=[1-6]?$)/, 'nei')).join(' '),
   useVocabulary: (entries: Iterable<VocabEntry>) => useVocabulary(entries),
   useSentenceReadings,
   romanize,

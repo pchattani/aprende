@@ -75,6 +75,7 @@ describe('Cantonese answer matching', () => {
   it('accepts Jyutping or characters for the same answer', () => {
     expect(match('nei5 hou2', ['你好。']).verdict).toBe('correct')
     expect(match('nei5hou2', ['你好']).verdict).toBe('correct')
+    expect(match('ni1 go3', ['nei1 go3']).verdict).toBe('correct')
     expect(match('你好', ['你好！']).verdict).toBe('correct')
   })
   it('treats missing or wrong tones like missing accents', () => {

@@ -24,11 +24,14 @@ export function normalize(text: string, opts: { accentInsensitive?: boolean } = 
 const HAN = /\p{Script=Han}/u
 const charsOnly = (s: string) => [...s].filter((c) => HAN.test(c)).join('')
 
+/** Jyutping spellings of the same sound (呢 ni1 / nei1) compare equal. */
+const canon = (syl: string[]) => syl.map((x) => x.replace(/^ni(?=[1-6]?$)/, 'nei'))
+
 export function match(given: string, expected: string[]): AnswerMatch {
-  const g = toSyllables(given)
+  const g = canon(toSyllables(given))
   if (!g.length) return { verdict: 'wrong', notes: [] }
   for (const e of expected) {
-    const es = toSyllables(e)
+    const es = canon(toSyllables(e))
     if (es.join(' ') === g.join(' ')) {
       // Same sounds; if typed in characters, mention a different character choice.
       const gc = charsOnly(given)
@@ -38,7 +41,7 @@ export function match(given: string, expected: string[]): AnswerMatch {
     }
   }
   for (const e of expected) {
-    const es = toSyllables(e)
+    const es = canon(toSyllables(e))
     if (es.length === g.length && es.every((x, i) => stripTone(x) === stripTone(g[i]!))) {
       const diffs = es.filter((x, i) => x !== g[i]).slice(0, 4)
       return { verdict: 'almost', matched: e, reason: 'accents', notes: [`Watch the tones: ${diffs.map((d) => `“${d}”`).join(', ')}.`] }
@@ -46,7 +49,7 @@ export function match(given: string, expected: string[]): AnswerMatch {
   }
   // One small typo in a syllable of 4+ letters, in answers of three or more syllables.
   for (const e of expected) {
-    const es = toSyllables(e)
+    const es = canon(toSyllables(e))
     if (es.length !== g.length || es.length < 3) continue
     let typos = 0
     let note = ''
