@@ -11,7 +11,7 @@
  *   npm run yue:data            (downloads the dictionaries to node_modules/.cache/rime)
  *   RIME_DIR=path npm run yue:data
  */
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync, mkdirSync, renameSync } from 'node:fs'
 import { join } from 'node:path'
 import { execFileSync } from 'node:child_process'
 import { listYaml, ROOT } from './content-lib'
@@ -73,7 +73,13 @@ for (const [w, jp] of words) {
 for (const [variant, hk] of Object.entries(VARIANTS)) if (!chars[hk] && readings.get(variant)) chars[hk] = readings.get(variant)!.sort((a, b) => b.w - a.w).map((r) => r.jp)
 
 const out = join(ROOT, 'src', 'lang', 'yue', 'data')
-writeFileSync(join(out, 'chars.json'), JSON.stringify(chars))
-writeFileSync(join(out, 'words.json'), JSON.stringify(usedWords))
+// write-then-rename so concurrent runs never leave a half-written file
+const save = (name: string, data: unknown) => {
+  const tmp = join(out, `.${name}.${process.pid}.tmp`)
+  writeFileSync(tmp, JSON.stringify(data))
+  renameSync(tmp, join(out, name))
+}
+save('chars.json', chars)
+save('words.json', usedWords)
 const missing = [...contentChars].filter((c) => !chars[c])
 console.log(`chars: ${Object.keys(chars).length} · words used by the course: ${Object.keys(usedWords).length} · content characters without a reading: ${missing.length}${missing.length ? ` (${missing.slice(0, 30).join('')})` : ''}`)

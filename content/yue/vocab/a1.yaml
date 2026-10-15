@@ -1,0 +1,928 @@
+# A1 vocabulary (Hong Kong Cantonese, ~914 lemmas), grouped by the unit that introduces each word.
+# lemma: traditional characters; jp: toned Jyutping, one syllable per character; cl: usual measure word.
+# ---------------------------------------------------------------- a1.u01 Greetings and introductions
+- { id: w.nei5-hou2, lemma: 你好, jp: nei5 hou2, pos: phrase, en: [hello, how do you do], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.zou2-san4, lemma: 早晨, jp: zou2 san4, pos: phrase, en: [good morning], level: a1, unit: a1.u01, topic: greetings, notes: "Used until about 11 am." }
+- { id: w.zou2-tau2, lemma: 早唞, jp: zou2 tau2, pos: phrase, en: [good night (going to bed)], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.maan5-on1, lemma: 晚安, jp: maan5 on1, pos: phrase, en: [good night], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.maan5-soeng6-hou2, lemma: 晚上好, jp: maan5 soeng6 hou2, pos: phrase, en: [good evening], level: a1, unit: a1.u01, topic: greetings, tags: [passive], notes: "Bookish; people usually just say 你好." }
+- { id: w.baai1-baai3, lemma: 拜拜, jp: baai1 baai3, pos: interj, en: [bye-bye, bye], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.zoi3-gin3, lemma: 再見, jp: zoi3 gin3, pos: phrase, en: [goodbye], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.ci4-di1-gin3, lemma: 遲啲見, jp: ci4 di1 gin3, pos: phrase, en: [see you later], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.ting1-jat6-gin3, lemma: 聽日見, jp: ting1 jat6 gin3, pos: phrase, en: [see you tomorrow], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.haa1-lo3, lemma: 哈囉, jp: haa1 lo3, pos: interj, en: [hello, hi], level: a1, unit: a1.u01, topic: greetings, notes: "From English \"hello\"; casual." }
+- { id: w.hou2-noi6-mou5-gin3, lemma: 好耐冇見, jp: hou2 noi6 mou5 gin3, pos: phrase, en: [long time no see], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.nei5-hou2-maa3, lemma: 你好嗎, jp: nei5 hou2 maa3, pos: phrase, en: [how are you], level: a1, unit: a1.u01, topic: greetings, notes: "Understood but textbook-like; 最近點呀？ is more natural." }
+- { id: w.gei2-hou2, lemma: 幾好, jp: gei2 hou2, pos: adj, en: [pretty good, quite well], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.maa4-maa4-dei2, lemma: 麻麻哋, jp: maa4 maa4 dei2, pos: adj, en: [so-so, not great], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.m4-co3, lemma: 唔錯, jp: m4 co3, pos: adj, en: [not bad, pretty good], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.do1-ze6, lemma: 多謝, jp: do1 ze6, pos: interj, en: [thank you (for a gift or favour)], level: a1, unit: a1.u01, topic: greetings, notes: "多謝 thanks for a gift or compliment; 唔該 thanks for a service." }
+- { id: w.m4-goi1, lemma: 唔該, jp: m4 goi1, pos: interj, en: [please, thank you (for a service), excuse me], level: a1, unit: a1.u01, topic: greetings, notes: "The all-purpose polite word: asking, thanking a waiter, squeezing past." }
+- { id: w.deoi3-m4-zyu6, lemma: 對唔住, jp: deoi3 m4 zyu6, pos: phrase, en: [sorry, "I'm sorry"], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.m4-hou2-ji3-si1, lemma: 唔好意思, jp: m4 hou2 ji3 si1, pos: phrase, en: [excuse me, sorry (mild)], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.m4-gan2-jiu3, lemma: 唔緊要, jp: m4 gan2 jiu3, pos: phrase, en: [never mind, "it doesn't matter"], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.m4-sai2-haak3-hei3, lemma: 唔使客氣, jp: m4 sai2 haak3 hei3, pos: phrase, en: ["you're welcome", "don't mention it"], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.cing2-man6, lemma: 請問, jp: cing2 man6, pos: phrase, en: ["excuse me, may I ask"], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.gaai3-siu6, lemma: 介紹, jp: gaai3 siu6, pos: verb, en: [to introduce], level: a1, unit: a1.u01, topic: verbs-speech }
+- { id: w.zi6-ngo5-gaai3-siu6, lemma: 自我介紹, jp: zi6 ngo5 gaai3 siu6, pos: noun, en: [self-introduction], level: a1, unit: a1.u01, cl: 個, topic: verbs-speech }
+- { id: w.fun1-jing4, lemma: 歡迎, jp: fun1 jing4, pos: verb, en: [to welcome, welcome], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.gou1-hing3, lemma: 高興, jp: gou1 hing3, pos: adj, en: [glad, happy], level: a1, unit: a1.u01, topic: feelings }
+- { id: w.jing6-sik1, lemma: 認識, jp: jing6 sik1, pos: verb, en: [to know (a person), to get to know], level: a1, unit: a1.u01, topic: relationships }
+- { id: w.ngo5, lemma: 我, jp: ngo5, pos: pron, en: [I, me], level: a1, unit: a1.u01 }
+- { id: w.nei5, lemma: 你, jp: nei5, pos: pron, en: [you], level: a1, unit: a1.u01 }
+- { id: w.keoi5, lemma: 佢, jp: keoi5, pos: pron, en: [he, she, it], level: a1, unit: a1.u01, notes: "Also him, her. Spoken Cantonese has one third-person pronoun." }
+- { id: w.hai6, lemma: 係, jp: hai6, pos: verb, en: ["to be (is, am, are)"], level: a1, unit: a1.u01, notes: "Links two nouns: 我係學生. Not used before adjectives." }
+- { id: w.hai6-aa3, lemma: 係呀, jp: hai6 aa3, pos: interj, en: ["yes", "that's right"], level: a1, unit: a1.u01 }
+- { id: w.giu3, lemma: 叫, jp: giu3, pos: verb, en: [to be called, to call, to order (food)], level: a1, unit: a1.u01 }
+- { id: w.giu3-zou6, lemma: 叫做, jp: giu3 zou6, pos: verb, en: [to be called, to be named], level: a1, unit: a1.u01 }
+- { id: w.sing3, lemma: 姓, jp: sing3, pos: verb, en: [to be surnamed], level: a1, unit: a1.u01, notes: "我姓陳 \"my surname is Chan\"." }
+- { id: w.gwai3-sing3, lemma: 貴姓, jp: gwai3 sing3, pos: phrase, en: [your surname (polite)], level: a1, unit: a1.u01, notes: "先生貴姓？ \"What is your surname, sir?\"" }
+- { id: w.meng2, lemma: 名, jp: meng2, pos: noun, en: [name, given name], level: a1, unit: a1.u01, cl: 個 }
+- { id: w.jing1-man2-meng2, lemma: 英文名, jp: jing1 man2 meng2, pos: noun, en: [English name], level: a1, unit: a1.u01, cl: 個, notes: "Most Hongkongers have one (Peter Chan, Mandy Wong)." }
+- { id: w.zung1-man2-meng2, lemma: 中文名, jp: zung1 man2 meng2, pos: noun, en: [Chinese name], level: a1, unit: a1.u01, cl: 個 }
+- { id: w.mat1-je5, lemma: 乜嘢, jp: mat1 je5, pos: pron, en: [what], level: a1, unit: a1.u01, notes: "Colloquial; 咩 is the short form." }
+- { id: w.me1, lemma: 咩, jp: me1, pos: pron, en: [what], level: a1, unit: a1.u01, notes: "Short for 乜嘢: 你叫咩名？ Different from the particle 咩 (surprise)." }
+- { id: w.bin1-go3, lemma: 邊個, jp: bin1 go3, pos: pron, en: [who, which one], level: a1, unit: a1.u01 }
+- { id: w.bin1-wai2, lemma: 邊位, jp: bin1 wai2, pos: pron, en: [who (polite)], level: a1, unit: a1.u01, notes: "你係邊位？ \"Who is this, please?\"" }
+- { id: w.ne1, lemma: 呢, jp: ne1, pos: particle, en: [and ...? (follow-up question), what about], level: a1, unit: a1.u01, notes: "你呢？ \"And you?\"" }
+- { id: w.dim2, lemma: 點, jp: dim2, pos: adv, en: [how], level: a1, unit: a1.u01, notes: "最近點呀？ \"How have you been?\"" }
+- { id: w.zeoi3-gan6, lemma: 最近, jp: zeoi3 gan6, pos: adv, en: [recently, lately], level: a1, unit: a1.u01, topic: time }
+- { id: w.sin1-saang1, lemma: 先生, jp: sin1 saang1, pos: noun, en: [Mr, sir, gentleman, husband], level: a1, unit: a1.u01, cl: 位 }
+- { id: w.saang1, lemma: 生, jp: saang1, pos: noun, en: [Mr (after a surname)], level: a1, unit: a1.u01, cl: 位, notes: "陳生 \"Mr Chan\" (colloquial short for 先生)." }
+- { id: w.taai3-taai2, lemma: 太太, jp: taai3 taai2, pos: noun, en: [Mrs, wife, madam], level: a1, unit: a1.u01, cl: 位 }
+- { id: w.taai2, lemma: 太, jp: taai2, pos: noun, en: [Mrs (after a surname)], level: a1, unit: a1.u01, cl: 位, notes: "陳太 can4 taai2 \"Mrs Chan\". Not the adverb 太 taai3 \"too\"." }
+- { id: w.siu2-ze2, lemma: 小姐, jp: siu2 ze2, pos: noun, en: [Miss, young lady], level: a1, unit: a1.u01, cl: 位 }
+- { id: w.aa3, lemma: 阿, jp: aa3, pos: particle, en: [prefix before names and kin terms], level: a1, unit: a1.u01, notes: "阿明, 阿媽: friendly, familiar." }
+- { id: w.hok6-saang1, lemma: 學生, jp: hok6 saang1, pos: noun, en: [student], level: a1, unit: a1.u01, cl: 個, topic: school }
+- { id: w.lou5-si1, lemma: 老師, jp: lou5 si1, pos: noun, en: [teacher], level: a1, unit: a1.u01, cl: 個, topic: jobs }
+- { id: w.pang4-jau5, lemma: 朋友, jp: pang4 jau5, pos: noun, en: [friend], level: a1, unit: a1.u01, cl: 個, topic: relationships }
+- { id: w.tung4-hok6, lemma: 同學, jp: tung4 hok6, pos: noun, en: [classmate, schoolmate], level: a1, unit: a1.u01, cl: 個, topic: relationships }
+- { id: w.hou2, lemma: 好, jp: hou2, pos: adj, en: [good, well, fine], level: a1, unit: a1.u01 }
+- { id: w.hou2.b, lemma: 好, jp: hou2, pos: adv, en: [very, quite], level: a1, unit: a1.u01, notes: "Also links subject and adjective: 我好忙 \"I'm (very) busy\"." }
+- { id: w.can4, lemma: 陳, jp: can4, pos: noun, en: [Chan (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.lei5, lemma: 李, jp: lei5, pos: noun, en: [Lee (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.wong4, lemma: 黃, jp: wong4, pos: noun, en: [Wong (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.zoeng1, lemma: 張, jp: zoeng1, pos: noun, en: [Cheung (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.ho4, lemma: 何, jp: ho4, pos: noun, en: [Ho (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.lam4, lemma: 林, jp: lam4, pos: noun, en: [Lam (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.loeng4, lemma: 梁, jp: loeng4, pos: noun, en: [Leung (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.ng4, lemma: 吳, jp: ng4, pos: noun, en: [Ng (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.lau4, lemma: 劉, jp: lau4, pos: noun, en: [Lau (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.zau1, lemma: 周, jp: zau1, pos: noun, en: [Chow (surname)], level: a1, unit: a1.u01, tags: [name] }
+- { id: w.sik6, lemma: 食, jp: sik6, pos: verb, en: [to eat], level: a1, unit: a1.u01, topic: verbs-daily, notes: "食咗飯未呀？ \"Have you eaten?\" is an everyday greeting." }
+- { id: w.faan6, lemma: 飯, jp: faan6, pos: noun, en: [cooked rice, a meal], level: a1, unit: a1.u01, topic: food, tags: [mass] }
+- { id: w.aa3.b, lemma: 呀, jp: aa3, pos: particle, en: ["softening particle (questions, answers)"], level: a1, unit: a1.u01, notes: "Makes a sentence sound friendly: 係呀, 點呀？ Also aa1, aa4 in some uses." }
+- { id: w.aa3.c, lemma: 啊, jp: aa3, pos: particle, en: [exclamation particle], level: a1, unit: a1.u01, notes: "Variant spelling of 呀 after some words." }
+- { id: w.sik6-faan6, lemma: 食飯, jp: sik6 faan6, pos: verb, en: [to eat, to have a meal], level: a1, unit: a1.u01, topic: food }
+- { id: w.mou5-je5, lemma: 冇嘢, jp: mou5 je5, pos: phrase, en: [nothing, "it's nothing", "I'm fine"], level: a1, unit: a1.u01 }
+- { id: w.m4-goi1-saai3, lemma: 唔該晒, jp: m4 goi1 saai3, pos: phrase, en: [thanks a lot], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.gin3, lemma: 見, jp: gin3, pos: verb, en: [to see, to meet], level: a1, unit: a1.u01, topic: verbs-daily }
+- { id: w.m4-sai2, lemma: 唔使, jp: m4 sai2, pos: adv, en: [no need to, "don't have to"], level: a1, unit: a1.u01, notes: "唔使客氣, 唔使畀錢." }
+- { id: w.hou2-je5, lemma: 好嘢, jp: hou2 je5, pos: interj, en: ["yay!", "great!"], level: a1, unit: a1.u01, topic: feelings }
+# ---------------------------------------------------------------- a1.u02 Being, being somewhere, having
+- { id: w.hai2, lemma: 喺, jp: hai2, pos: verb, en: [to be at, to be in], level: a1, unit: a1.u02, notes: "我喺香港 \"I'm in Hong Kong\". Also \"at, in\" before a place." }
+- { id: w.jau5, lemma: 有, jp: jau5, pos: verb, en: [to have, there is, there are], level: a1, unit: a1.u02 }
+- { id: w.mou5, lemma: 冇, jp: mou5, pos: verb, en: [not have, "there isn't"], level: a1, unit: a1.u02, notes: "The negative of 有. Never 唔有." }
+- { id: w.m4, lemma: 唔, jp: m4, pos: adv, en: [not], level: a1, unit: a1.u02, notes: "Negates verbs and adjectives: 唔係, 唔好, 唔食." }
+- { id: w.m4-hai6, lemma: 唔係, jp: m4 hai6, pos: phrase, en: [is not, "no"], level: a1, unit: a1.u02 }
+- { id: w.maa3, lemma: 嗎, jp: maa3, pos: particle, en: [yes/no question particle], level: a1, unit: a1.u02, notes: "你係學生嗎？ Neutral; A-not-A questions are more common in speech." }
+- { id: w.jau5-mou5, lemma: 有冇, jp: jau5 mou5, pos: phrase, en: [is there? do you have?], level: a1, unit: a1.u02, notes: "你有冇手機？" }
+- { id: w.mou5-man6-tai4, lemma: 冇問題, jp: mou5 man6 tai4, pos: phrase, en: [no problem], level: a1, unit: a1.u02 }
+- { id: w.zyu6, lemma: 住, jp: zyu6, pos: verb, en: [to live (somewhere)], level: a1, unit: a1.u02, topic: house, notes: "我住喺灣仔." }
+- { id: w.uk1-kei2, lemma: 屋企, jp: uk1 kei2, pos: noun, en: [home, family], level: a1, unit: a1.u02, cl: 個, topic: house }
+- { id: w.uk1, lemma: 屋, jp: uk1, pos: noun, en: [house, flat], level: a1, unit: a1.u02, cl: 間, topic: house }
+- { id: w.fong2, lemma: 房, jp: fong2, pos: noun, en: [room, bedroom], level: a1, unit: a1.u02, cl: 間, topic: house }
+- { id: w.lau2, lemma: 樓, jp: lau2, pos: noun, en: [flat, apartment, floor], level: a1, unit: a1.u02, cl: 層, topic: house, notes: "層樓 \"a flat\"; 十樓 \"tenth floor\"." }
+- { id: w.dei6-fong1, lemma: 地方, jp: dei6 fong1, pos: noun, en: [place], level: a1, unit: a1.u02, cl: 個, topic: city }
+- { id: w.gung1-si1, lemma: 公司, jp: gung1 si1, pos: noun, en: [company, office], level: a1, unit: a1.u02, cl: 間, topic: work }
+- { id: w.ngan4-hong4, lemma: 銀行, jp: ngan4 hong4, pos: noun, en: [bank], level: a1, unit: a1.u02, cl: 間, topic: city }
+- { id: w.hok6-haau6, lemma: 學校, jp: hok6 haau6, pos: noun, en: [school], level: a1, unit: a1.u02, cl: 間, topic: school }
+- { id: w.gei1-coeng4, lemma: 機場, jp: gei1 coeng4, pos: noun, en: [airport], level: a1, unit: a1.u02, cl: 個, topic: transport }
+- { id: w.fei1-gei1, lemma: 飛機, jp: fei1 gei1, pos: noun, en: [plane, aeroplane], level: a1, unit: a1.u02, cl: 架, topic: transport }
+- { id: w.lok6-gei1, lemma: 落機, jp: lok6 gei1, pos: verb, en: [to get off a plane, to land], level: a1, unit: a1.u02, topic: transport }
+- { id: w.sau2-gei1, lemma: 手機, jp: sau2 gei1, pos: noun, en: [mobile phone], level: a1, unit: a1.u02, cl: 部, topic: tech }
+- { id: w.din6-waa2, lemma: 電話, jp: din6 waa2, pos: noun, en: [telephone], level: a1, unit: a1.u02, cl: 部, topic: tech }
+- { id: w.din6-nou5, lemma: 電腦, jp: din6 nou5, pos: noun, en: [computer], level: a1, unit: a1.u02, cl: 部, topic: tech }
+- { id: w.ce1, lemma: 車, jp: ce1, pos: noun, en: [car, vehicle], level: a1, unit: a1.u02, cl: 架, topic: transport }
+- { id: w.je5, lemma: 嘢, jp: je5, pos: noun, en: [thing, stuff], level: a1, unit: a1.u02, cl: 樣, notes: "Very common colloquial word: 買嘢 shop, 食嘢 eat something." }
+- { id: w.man6-tai4, lemma: 問題, jp: man6 tai4, pos: noun, en: [question, problem], level: a1, unit: a1.u02, cl: 個 }
+- { id: w.ni1-dou6, lemma: 呢度, jp: ni1 dou6, pos: pron, en: [here], level: a1, unit: a1.u02, topic: directions }
+- { id: w.go2-dou6, lemma: 嗰度, jp: go2 dou6, pos: pron, en: [there], level: a1, unit: a1.u02, topic: directions }
+- { id: w.bin1-dou6, lemma: 邊度, jp: bin1 dou6, pos: pron, en: [where], level: a1, unit: a1.u02, topic: directions }
+- { id: w.dou6, lemma: 度, jp: dou6, pos: noun, en: ["place (in 呢度, 嗰度)"], level: a1, unit: a1.u02, tags: [passive, mass] }
+- { id: w.hoeng1-gong2, lemma: 香港, jp: hoeng1 gong2, pos: noun, en: [Hong Kong], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.hoeng1-gong2-dou2, lemma: 香港島, jp: hoeng1 gong2 dou2, pos: noun, en: [Hong Kong Island], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.gong2-dou2, lemma: 港島, jp: gong2 dou2, pos: noun, en: [Hong Kong Island (short)], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.gau2-lung4, lemma: 九龍, jp: gau2 lung4, pos: noun, en: [Kowloon], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.san1-gaai3, lemma: 新界, jp: san1 gaai3, pos: noun, en: [the New Territories], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.zung1-waan4, lemma: 中環, jp: zung1 waan4, pos: noun, en: [Central], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.waan1-zai2, lemma: 灣仔, jp: waan1 zai2, pos: noun, en: [Wan Chai], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.tung4-lo4-waan1, lemma: 銅鑼灣, jp: tung4 lo4 waan1, pos: noun, en: [Causeway Bay], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.soeng6-waan4, lemma: 上環, jp: soeng6 waan4, pos: noun, en: [Sheung Wan], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.cek3-laap6-gok3, lemma: 赤鱲角, jp: cek3 laap6 gok3, pos: noun, en: [Chek Lap Kok (airport)], level: a1, unit: a1.u02, tags: [name, passive] }
+- { id: w.ou3-mun2, lemma: 澳門, jp: ou3 mun2, pos: noun, en: [Macau], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.gwong2-zau1, lemma: 廣州, jp: gwong2 zau1, pos: noun, en: [Guangzhou], level: a1, unit: a1.u02, tags: [name] }
+- { id: w.sam1-zan3, lemma: 深圳, jp: sam1 zan3, pos: noun, en: [Shenzhen], level: a1, unit: a1.u02, tags: [name, passive] }
+- { id: w.zi6-gei2, lemma: 自己, jp: zi6 gei2, pos: pron, en: [oneself, "myself, yourself..."], level: a1, unit: a1.u02 }
+- { id: w.dou1-hai6, lemma: 都係, jp: dou1 hai6, pos: phrase, en: [also is, still is, "it's (just) that"], level: a1, unit: a1.u02 }
+- { id: w.hai2-dou6, lemma: 喺度, jp: hai2 dou6, pos: phrase, en: [here, present, be in (the middle of)], level: a1, unit: a1.u02, notes: "佢唔喺度 \"he's not in\". Also marks ongoing action (A2)." }
+- { id: w.daai6-haa6, lemma: 大廈, jp: daai6 haa6, pos: noun, en: [building, mansion block], level: a1, unit: a1.u02, cl: 座, topic: city }
+- { id: w.zo6, lemma: 座, jp: zo6, pos: classifier, en: [for buildings and mountains], level: a1, unit: a1.u02, notes: "一座大廈." }
+- { id: w.cang4, lemma: 層, jp: cang4, pos: classifier, en: [for floors and flats], level: a1, unit: a1.u02, notes: "一層樓 \"a flat\"." }
+- { id: w.gaan1, lemma: 間, jp: gaan1, pos: classifier, en: ["for buildings, rooms, shops, companies"], level: a1, unit: a1.u02, notes: "一間屋, 一間餐廳." }
+- { id: w.bou6, lemma: 部, jp: bou6, pos: classifier, en: ["for machines and vehicles (phones, computers)"], level: a1, unit: a1.u02, notes: "一部手機." }
+- { id: w.gaa3, lemma: 架, jp: gaa3, pos: classifier, en: [for vehicles and machines], level: a1, unit: a1.u02, notes: "一架車, 一架飛機." }
+- { id: w.zi1, lemma: 知, jp: zi1, pos: verb, en: [to know (a fact)], level: a1, unit: a1.u02, topic: verbs-daily, notes: "我唔知 \"I don't know\"." }
+- { id: w.m4-zi1, lemma: 唔知, jp: m4 zi1, pos: phrase, en: ["don't know"], level: a1, unit: a1.u02, tags: [passive] }
+- { id: w.jung6, lemma: 用, jp: jung6, pos: verb, en: [to use], level: a1, unit: a1.u02, topic: verbs-daily }
+- { id: w.mou5-so2-wai6, lemma: 冇所謂, jp: mou5 so2 wai6, pos: phrase, en: ["I don't mind", whatever], level: a1, unit: a1.u02, topic: feelings }
+- { id: w.mou5-din6, lemma: 冇電, jp: mou5 din6, pos: phrase, en: [the battery is dead], level: a1, unit: a1.u02, topic: tech }
+- { id: w.mou5-jan4, lemma: 冇人, jp: mou5 jan4, pos: pron, en: [nobody, no one], level: a1, unit: a1.u02 }
+# ---------------------------------------------------------------- a1.u03 We, you and they
+- { id: w.ngo5-dei6, lemma: 我哋, jp: ngo5 dei6, pos: pron, en: [we, us], level: a1, unit: a1.u03 }
+- { id: w.nei5-dei6, lemma: 你哋, jp: nei5 dei6, pos: pron, en: [you (plural)], level: a1, unit: a1.u03 }
+- { id: w.keoi5-dei6, lemma: 佢哋, jp: keoi5 dei6, pos: pron, en: [they, them], level: a1, unit: a1.u03 }
+- { id: w.dei6, lemma: 哋, jp: dei6, pos: particle, en: [plural suffix for pronouns], level: a1, unit: a1.u03, notes: "我哋, 你哋, 佢哋. Never added to nouns." }
+- { id: w.dou1, lemma: 都, jp: dou1, pos: adv, en: [also, too, both, all], level: a1, unit: a1.u03, notes: "Goes before the verb: 我都係學生." }
+- { id: w.hai6-mai6, lemma: 係咪, jp: hai6 mai6, pos: phrase, en: [is it or not, right?], level: a1, unit: a1.u03, notes: "Contraction of 係唔係: 你係咪老師？" }
+- { id: w.hai6-m4-hai6, lemma: 係唔係, jp: hai6 m4 hai6, pos: phrase, en: [is it or not], level: a1, unit: a1.u03 }
+- { id: w.jan4, lemma: 人, jp: jan4, pos: noun, en: [person, people], level: a1, unit: a1.u03, cl: 個 }
+- { id: w.hoeng1-gong2-jan4, lemma: 香港人, jp: hoeng1 gong2 jan4, pos: noun, en: [Hongkonger], level: a1, unit: a1.u03, cl: 個, topic: countries }
+- { id: w.zung1-gwok3-jan4, lemma: 中國人, jp: zung1 gwok3 jan4, pos: noun, en: [Chinese person], level: a1, unit: a1.u03, cl: 個, topic: countries }
+- { id: w.ngoi6-gwok3-jan4, lemma: 外國人, jp: ngoi6 gwok3 jan4, pos: noun, en: [foreigner], level: a1, unit: a1.u03, cl: 個, topic: countries }
+- { id: w.jing1-gwok3-jan4, lemma: 英國人, jp: jing1 gwok3 jan4, pos: noun, en: [British person], level: a1, unit: a1.u03, cl: 個, topic: countries }
+- { id: w.mei5-gwok3-jan4, lemma: 美國人, jp: mei5 gwok3 jan4, pos: noun, en: [American], level: a1, unit: a1.u03, cl: 個, topic: countries }
+- { id: w.jat6-bun2-jan4, lemma: 日本人, jp: jat6 bun2 jan4, pos: noun, en: [Japanese person], level: a1, unit: a1.u03, cl: 個, topic: countries }
+- { id: w.gwok3-gaa1, lemma: 國家, jp: gwok3 gaa1, pos: noun, en: [country], level: a1, unit: a1.u03, cl: 個, topic: countries }
+- { id: w.zung1-gwok3, lemma: 中國, jp: zung1 gwok3, pos: noun, en: [China], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.jing1-gwok3, lemma: 英國, jp: jing1 gwok3, pos: noun, en: [Britain, the UK], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.mei5-gwok3, lemma: 美國, jp: mei5 gwok3, pos: noun, en: [the United States], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.jat6-bun2, lemma: 日本, jp: jat6 bun2, pos: noun, en: [Japan], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.hon4-gwok3, lemma: 韓國, jp: hon4 gwok3, pos: noun, en: [Korea], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.toi4-waan1, lemma: 台灣, jp: toi4 waan1, pos: noun, en: [Taiwan], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.faat3-gwok3, lemma: 法國, jp: faat3 gwok3, pos: noun, en: [France], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.ou3-zau1, lemma: 澳洲, jp: ou3 zau1, pos: noun, en: [Australia], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.gaa1-naa4-daai6, lemma: 加拿大, jp: gaa1 naa4 daai6, pos: noun, en: [Canada], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.san1-gaa3-bo1, lemma: 新加坡, jp: san1 gaa3 bo1, pos: noun, en: [Singapore], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.sai1-baan1-ngaa4, lemma: 西班牙, jp: sai1 baan1 ngaa4, pos: noun, en: [Spain], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.dak1-gwok3, lemma: 德國, jp: dak1 gwok3, pos: noun, en: [Germany], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.waa2, lemma: 話, jp: waa2, pos: noun, en: [language, speech (in 廣東話)], level: a1, unit: a1.u03, tags: [mass] }
+- { id: w.gwong2-dung1-waa2, lemma: 廣東話, jp: gwong2 dung1 waa2, pos: noun, en: [Cantonese], level: a1, unit: a1.u03, tags: [mass] }
+- { id: w.jing1-man2, lemma: 英文, jp: jing1 man2, pos: noun, en: [English (language)], level: a1, unit: a1.u03, tags: [mass] }
+- { id: w.zung1-man2, lemma: 中文, jp: zung1 man2, pos: noun, en: ["Chinese (language, written)"], level: a1, unit: a1.u03, tags: [mass] }
+- { id: w.pou2-tung1-waa2, lemma: 普通話, jp: pou2 tung1 waa2, pos: noun, en: [Mandarin], level: a1, unit: a1.u03, tags: [mass] }
+- { id: w.jat6-man2, lemma: 日文, jp: jat6 man2, pos: noun, en: [Japanese (language)], level: a1, unit: a1.u03, tags: [mass] }
+- { id: w.faat3-man2, lemma: 法文, jp: faat3 man2, pos: noun, en: [French (language)], level: a1, unit: a1.u03, tags: [mass] }
+- { id: w.gong2, lemma: 講, jp: gong2, pos: verb, en: [to speak, to say, to tell], level: a1, unit: a1.u03, topic: verbs-speech }
+- { id: w.sik1, lemma: 識, jp: sik1, pos: verb, en: ["to know (a person, a skill)", can], level: a1, unit: a1.u03, notes: "我識講英文 \"I can speak English\"; 我識佢 \"I know him\"." }
+- { id: w.hok6, lemma: 學, jp: hok6, pos: verb, en: [to learn, to study], level: a1, unit: a1.u03, topic: school }
+- { id: w.jat1-cai4, lemma: 一齊, jp: jat1 cai4, pos: adv, en: [together], level: a1, unit: a1.u03 }
+- { id: w.tung4, lemma: 同, jp: tung4, pos: conj, en: [and, with], level: a1, unit: a1.u03, topic: connectors, notes: "Joins nouns: 我同佢. Also \"with\": 同佢講." }
+- { id: w.tung4-maai4, lemma: 同埋, jp: tung4 maai4, pos: conj, en: [and, as well as], level: a1, unit: a1.u03, topic: connectors }
+- { id: w.waak6-ze2, lemma: 或者, jp: waak6 ze2, pos: conj, en: [or, perhaps], level: a1, unit: a1.u03, topic: connectors }
+- { id: w.ding6-hai6, lemma: 定係, jp: ding6 hai6, pos: conj, en: [or (in questions)], level: a1, unit: a1.u03, topic: connectors, notes: "你係學生定係老師？" }
+- { id: w.ding6, lemma: 定, jp: ding6, pos: conj, en: ["or (in questions, short)"], level: a1, unit: a1.u03, topic: connectors }
+- { id: w.daan6-hai6, lemma: 但係, jp: daan6 hai6, pos: conj, en: [but], level: a1, unit: a1.u03, topic: connectors }
+- { id: w.bat1-gwo3, lemma: 不過, jp: bat1 gwo3, pos: conj, en: [but, however], level: a1, unit: a1.u03, topic: connectors }
+- { id: w.zou6, lemma: 做, jp: zou6, pos: verb, en: [to do, to make, to work as], level: a1, unit: a1.u03, topic: verbs-daily }
+- { id: w.zou6-je5, lemma: 做嘢, jp: zou6 je5, pos: verb, en: [to work, to do things], level: a1, unit: a1.u03, topic: work }
+- { id: w.gung1-zok3, lemma: 工作, jp: gung1 zok3, pos: noun, en: [job, work], level: a1, unit: a1.u03, cl: 份, topic: work }
+- { id: w.ji1-sang1, lemma: 醫生, jp: ji1 sang1, pos: noun, en: [doctor], level: a1, unit: a1.u03, cl: 個, topic: jobs }
+- { id: w.si1-gei1, lemma: 司機, jp: si1 gei1, pos: noun, en: [driver], level: a1, unit: a1.u03, cl: 個, topic: jobs }
+- { id: w.ging2-caat3, lemma: 警察, jp: ging2 caat3, pos: noun, en: [police officer, the police], level: a1, unit: a1.u03, cl: 個, topic: jobs }
+- { id: w.fan6, lemma: 份, jp: fan6, pos: classifier, en: ["for jobs, newspapers, portions, copies"], level: a1, unit: a1.u03, notes: "一份工 \"a job\"." }
+- { id: w.hou2-pang4-jau5, lemma: 好朋友, jp: hou2 pang4 jau5, pos: noun, en: [good friend, best friend], level: a1, unit: a1.u03, cl: 個, topic: relationships }
+- { id: w.naam4-zai2, lemma: 男仔, jp: naam4 zai2, pos: noun, en: [boy, young man], level: a1, unit: a1.u03, cl: 個, topic: family }
+- { id: w.neoi5-zai2, lemma: 女仔, jp: neoi5 zai2, pos: noun, en: [girl, young woman], level: a1, unit: a1.u03, cl: 個, topic: family }
+- { id: w.naam4-jan2, lemma: 男人, jp: naam4 jan2, pos: noun, en: [man], level: a1, unit: a1.u03, cl: 個, topic: family }
+- { id: w.neoi5-jan2, lemma: 女人, jp: neoi5 jan2, pos: noun, en: [woman], level: a1, unit: a1.u03, cl: 個, topic: family }
+- { id: w.jyut6-jyu5, lemma: 粵語, jp: jyut6 jyu5, pos: noun, en: [Cantonese (formal name)], level: a1, unit: a1.u03, tags: [mass] }
+- { id: w.waa6, lemma: 話, jp: waa6, pos: verb, en: [to say, to tell], level: a1, unit: a1.u03, topic: verbs-speech, notes: "佢話佢唔嚟 \"He says he isn't coming\"." }
+- { id: w.king1-gai2, lemma: 傾偈, jp: king1 gai2, pos: verb, en: [to chat], level: a1, unit: a1.u03, topic: verbs-speech }
+- { id: w.daap3, lemma: 答, jp: daap3, pos: verb, en: [to answer], level: a1, unit: a1.u03, topic: verbs-speech }
+- { id: w.ji3-si1, lemma: 意思, jp: ji3 si1, pos: noun, en: [meaning], level: a1, unit: a1.u03, cl: 個, notes: "係咩意思？ \"What does it mean?\"" }
+- { id: w.daai6-hok6, lemma: 大學, jp: daai6 hok6, pos: noun, en: [university], level: a1, unit: a1.u03, cl: 間, topic: school }
+- { id: w.duk6-syu1, lemma: 讀書, jp: duk6 syu1, pos: verb, en: [to study, to go to school], level: a1, unit: a1.u03, topic: school }
+- { id: w.duk6, lemma: 讀, jp: duk6, pos: verb, en: [to read aloud, to study (a subject)], level: a1, unit: a1.u03, topic: school }
+- { id: w.sik1-gong2, lemma: 識講, jp: sik1 gong2, pos: phrase, en: [can speak], level: a1, unit: a1.u03, tags: [passive] }
+- { id: w.wu6-si6, lemma: 護士, jp: wu6 si6, pos: noun, en: [nurse], level: a1, unit: a1.u03, cl: 個, topic: jobs }
+- { id: w.jan4-gung1, lemma: 人工, jp: jan4 gung1, pos: noun, en: [salary, wages], level: a1, unit: a1.u03, topic: work, tags: [mass] }
+- { id: w.leon4-deon1, lemma: 倫敦, jp: leon4 deon1, pos: noun, en: [London], level: a1, unit: a1.u03, tags: [name] }
+- { id: w.cyu4-si1, lemma: 廚師, jp: cyu4 si1, pos: noun, en: [cook, chef], level: a1, unit: a1.u03, cl: 個, topic: jobs }
+# ---------------------------------------------------------------- a1.u04 Numbers, ages and phone numbers
+- { id: w.ling4, lemma: 零, jp: ling4, pos: num, en: [zero], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.jat1, lemma: 一, jp: jat1, pos: num, en: [one], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.ji6, lemma: 二, jp: ji6, pos: num, en: ["two (in counting, numbers)"], level: a1, unit: a1.u04, topic: numbers, notes: "Use 兩 before a measure word: 兩個." }
+- { id: w.loeng5, lemma: 兩, jp: loeng5, pos: num, en: [two (before a measure word)], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.saam1, lemma: 三, jp: saam1, pos: num, en: [three], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.sei3, lemma: 四, jp: sei3, pos: num, en: [four], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.ng5, lemma: 五, jp: ng5, pos: num, en: [five], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.luk6, lemma: 六, jp: luk6, pos: num, en: [six], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.cat1, lemma: 七, jp: cat1, pos: num, en: [seven], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.baat3, lemma: 八, jp: baat3, pos: num, en: [eight], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.gau2, lemma: 九, jp: gau2, pos: num, en: [nine], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.sap6, lemma: 十, jp: sap6, pos: num, en: [ten], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.jaa6, lemma: 廿, jp: jaa6, pos: num, en: [twenty (in 廿一 to 廿九)], level: a1, unit: a1.u04, topic: numbers, notes: "Spoken form: 廿三 jaa6 saam1 = 23." }
+- { id: w.saa1, lemma: 卅, jp: saa1, pos: num, en: [thirty (in 卅一 to 卅九)], level: a1, unit: a1.u04, topic: numbers, notes: "Spoken 卅二 saa1 aa6 ji6 = 32." }
+- { id: w.bun3, lemma: 半, jp: bun3, pos: num, en: [half], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.gei2, lemma: 幾, jp: gei2, pos: adv, en: [how many, a few, quite], level: a1, unit: a1.u04, topic: quantity, notes: "幾多 how many; 幾個 a few; 幾好 quite good." }
+- { id: w.gei2-do1, lemma: 幾多, jp: gei2 do1, pos: pron, en: [how many, how much], level: a1, unit: a1.u04, topic: quantity }
+- { id: w.hou6-maa5, lemma: 號碼, jp: hou6 maa5, pos: noun, en: ["number (phone, ID)"], level: a1, unit: a1.u04, cl: 個, topic: numbers }
+- { id: w.din6-waa2-hou6-maa5, lemma: 電話號碼, jp: din6 waa2 hou6 maa5, pos: noun, en: [phone number], level: a1, unit: a1.u04, cl: 個, topic: tech }
+- { id: w.hou6, lemma: 號, jp: hou6, pos: noun, en: [number, day of the month], level: a1, unit: a1.u04, cl: 個, notes: "三號 \"the third\"; 幾號？ \"what date?\"." }
+- { id: w.seoi3, lemma: 歲, jp: seoi3, pos: classifier, en: [years (of age)], level: a1, unit: a1.u04, notes: "我廿五歲 \"I'm 25\"." }
+- { id: w.jau5-gei2, lemma: 有幾, jp: jau5 gei2, pos: phrase, en: [there are a few, have a few], level: a1, unit: a1.u04, topic: quantity, notes: "有幾個人 \"there are a few people\". (B2: 有幾好 \"how good!\")" }
+- { id: w.jat1-go3-jan4, lemma: 一個人, jp: jat1 go3 jan4, pos: phrase, en: [alone, "on one's own", one person], level: a1, unit: a1.u04, topic: quantity }
+- { id: w.nin4-gei2, lemma: 年紀, jp: nin4 gei2, pos: noun, en: [age], level: a1, unit: a1.u04, tags: [mass] }
+- { id: w.gei2-daai6, lemma: 幾大, jp: gei2 daai6, pos: phrase, en: [how old], level: a1, unit: a1.u04, notes: "你今年幾大呀？" }
+- { id: w.gam1-nin2, lemma: 今年, jp: gam1 nin2, pos: noun, en: [this year], level: a1, unit: a1.u04, topic: time, tags: [mass] }
+- { id: w.sou3-zi6, lemma: 數字, jp: sou3 zi6, pos: noun, en: [number, numeral, digit], level: a1, unit: a1.u04, cl: 個, topic: numbers }
+- { id: w.sou2, lemma: 數, jp: sou2, pos: verb, en: [to count], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.daa2-din6-waa2, lemma: 打電話, jp: daa2 din6 waa2, pos: verb, en: [to make a phone call], level: a1, unit: a1.u04, topic: tech }
+- { id: w.daa2, lemma: 打, jp: daa2, pos: verb, en: [to hit, to play (ball), to call], level: a1, unit: a1.u04, topic: verbs-daily }
+- { id: w.dai6, lemma: 第, jp: dai6, pos: particle, en: ["ordinal prefix (first, second...)"], level: a1, unit: a1.u04, topic: numbers, notes: "第一 \"first\", 第二 \"second\"." }
+- { id: w.dai6-jat1, lemma: 第一, jp: dai6 jat1, pos: num, en: [first], level: a1, unit: a1.u04, topic: numbers }
+- { id: w.go3, lemma: 個, jp: go3, pos: classifier, en: ["the general measure word (people, things)", dollar (in prices)], level: a1, unit: a1.u04, notes: "一個人, 兩個蘋果. In prices 三個六 = $3.60." }
+- { id: w.sai3-lou6, lemma: 細路, jp: sai3 lou6, pos: noun, en: [child, kid], level: a1, unit: a1.u04, cl: 個, topic: family }
+- { id: w.daai6-jan4, lemma: 大人, jp: daai6 jan4, pos: noun, en: [adult, grown-up], level: a1, unit: a1.u04, cl: 個, topic: family }
+- { id: w.saang1-jat6, lemma: 生日, jp: saang1 jat6, pos: noun, en: [birthday], level: a1, unit: a1.u04, cl: 個, topic: time }
+- { id: w.saang1-jat6-faai3-lok6, lemma: 生日快樂, jp: saang1 jat6 faai3 lok6, pos: phrase, en: [happy birthday], level: a1, unit: a1.u04, topic: greetings }
+- { id: w.gwai3-gang1, lemma: 貴庚, jp: gwai3 gang1, pos: phrase, en: [your age (polite)], level: a1, unit: a1.u04, tags: [passive] }
+# ---------------------------------------------------------------- a1.u05 Measure words, this and that
+- { id: w.ni1, lemma: 呢, jp: ni1, pos: det, en: [this], level: a1, unit: a1.u05, notes: "呢個 \"this one\"; also ne1, the question particle." }
+- { id: w.go2, lemma: 嗰, jp: go2, pos: det, en: [that], level: a1, unit: a1.u05, notes: "嗰個 \"that one\"." }
+- { id: w.ni1-go3, lemma: 呢個, jp: ni1 go3, pos: pron, en: [this one, this], level: a1, unit: a1.u05 }
+- { id: w.go2-go3, lemma: 嗰個, jp: go2 go3, pos: pron, en: [that one, that], level: a1, unit: a1.u05 }
+- { id: w.ni1-di1, lemma: 呢啲, jp: ni1 di1, pos: pron, en: [these], level: a1, unit: a1.u05 }
+- { id: w.go2-di1, lemma: 嗰啲, jp: go2 di1, pos: pron, en: [those], level: a1, unit: a1.u05 }
+- { id: w.bin1, lemma: 邊, jp: bin1, pos: det, en: [which], level: a1, unit: a1.u05, notes: "邊個 who / which one; 邊本書 which book." }
+- { id: w.di1, lemma: 啲, jp: di1, pos: classifier, en: [some, the (plural), a bit], level: a1, unit: a1.u05, notes: "Plural measure word: 啲書 \"the books\"; 好啲 \"a bit better\"." }
+- { id: w.jat1-di1, lemma: 一啲, jp: jat1 di1, pos: det, en: [some, a little], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.zek3, lemma: 隻, jp: zek3, pos: classifier, en: ["for animals, one of a pair, some objects"], level: a1, unit: a1.u05, notes: "一隻狗, 一隻手, 一隻碗." }
+- { id: w.bun2, lemma: 本, jp: bun2, pos: classifier, en: [for books and magazines], level: a1, unit: a1.u05, notes: "一本書." }
+- { id: w.zoeng1.b, lemma: 張, jp: zoeng1, pos: classifier, en: ["for flat things (paper, tables, beds, tickets)"], level: a1, unit: a1.u05, notes: "一張紙, 一張枱." }
+- { id: w.tiu4, lemma: 條, jp: tiu4, pos: classifier, en: ["for long thin things (roads, fish, trousers)"], level: a1, unit: a1.u05, notes: "一條街, 一條魚, 一條褲." }
+- { id: w.gin6, lemma: 件, jp: gin6, pos: classifier, en: ["for tops, items, matters"], level: a1, unit: a1.u05, notes: "一件衫, 一件事." }
+- { id: w.bui1, lemma: 杯, jp: bui1, pos: classifier, en: [a cup of, a glass of], level: a1, unit: a1.u05, notes: "一杯茶." }
+- { id: w.wun2, lemma: 碗, jp: wun2, pos: classifier, en: [a bowl of], level: a1, unit: a1.u05, notes: "一碗飯." }
+- { id: w.deoi3, lemma: 對, jp: deoi3, pos: classifier, en: [a pair of], level: a1, unit: a1.u05, notes: "一對鞋." }
+- { id: w.zi1.b, lemma: 枝, jp: zi1, pos: classifier, en: ["for pens, bottles, sticks, flowers"], level: a1, unit: a1.u05, notes: "一枝筆, 一枝水." }
+- { id: w.nap1, lemma: 粒, jp: nap1, pos: classifier, en: ["for small round things (sweets, pills, grains)"], level: a1, unit: a1.u05, notes: "一粒糖." }
+- { id: w.faai3, lemma: 塊, jp: faai3, pos: classifier, en: [for slices and flat pieces], level: a1, unit: a1.u05, notes: "一塊麵包." }
+- { id: w.wai2, lemma: 位, jp: wai2, pos: classifier, en: [polite measure word for people], level: a1, unit: a1.u05, notes: "兩位 \"two people (please)\"." }
+- { id: w.joeng6, lemma: 樣, jp: joeng6, pos: classifier, en: [kind of, item (of things)], level: a1, unit: a1.u05, notes: "三樣嘢 \"three things\"." }
+- { id: w.baa2, lemma: 把, jp: baa2, pos: classifier, en: ["for things with a handle (umbrellas, knives, chairs)"], level: a1, unit: a1.u05, notes: "一把遮." }
+- { id: w.hap2, lemma: 盒, jp: hap2, pos: classifier, en: [a box of], level: a1, unit: a1.u05, notes: "一盒朱古力." }
+- { id: w.baau1, lemma: 包, jp: baau1, pos: classifier, en: [a packet of, a bag of], level: a1, unit: a1.u05, notes: "一包紙巾." }
+- { id: w.syu1, lemma: 書, jp: syu1, pos: noun, en: [book], level: a1, unit: a1.u05, cl: 本, topic: school }
+- { id: w.zi2, lemma: 紙, jp: zi2, pos: noun, en: [paper, sheet of paper], level: a1, unit: a1.u05, cl: 張, topic: school }
+- { id: w.bat1, lemma: 筆, jp: bat1, pos: noun, en: [pen], level: a1, unit: a1.u05, cl: 枝, topic: school }
+- { id: w.doi2, lemma: 袋, jp: doi2, pos: noun, en: [bag], level: a1, unit: a1.u05, cl: 個, topic: shopping }
+- { id: w.gaau1-doi2, lemma: 膠袋, jp: gaau1 doi2, pos: noun, en: [plastic bag], level: a1, unit: a1.u05, cl: 個, topic: shopping }
+- { id: w.ngan4-baau1, lemma: 銀包, jp: ngan4 baau1, pos: noun, en: [wallet, purse], level: a1, unit: a1.u05, cl: 個, topic: shopping }
+- { id: w.so2-si4, lemma: 鎖匙, jp: so2 si4, pos: noun, en: [key], level: a1, unit: a1.u05, cl: 條, topic: house }
+- { id: w.ze1, lemma: 遮, jp: ze1, pos: noun, en: [umbrella], level: a1, unit: a1.u05, cl: 把, topic: weather }
+- { id: w.toi2, lemma: 枱, jp: toi2, pos: noun, en: [table, desk], level: a1, unit: a1.u05, cl: 張, topic: furniture }
+- { id: w.syu1-toi2, lemma: 書枱, jp: syu1 toi2, pos: noun, en: [desk], level: a1, unit: a1.u05, cl: 張, topic: furniture }
+- { id: w.ji2, lemma: 椅, jp: ji2, pos: noun, en: [chair], level: a1, unit: a1.u05, cl: 張, topic: furniture }
+- { id: w.cong4, lemma: 床, jp: cong4, pos: noun, en: [bed], level: a1, unit: a1.u05, cl: 張, topic: furniture }
+- { id: w.mun4, lemma: 門, jp: mun4, pos: noun, en: [door], level: a1, unit: a1.u05, cl: 度, topic: house }
+- { id: w.coeng1, lemma: 窗, jp: coeng1, pos: noun, en: [window], level: a1, unit: a1.u05, cl: 隻, topic: house }
+- { id: w.gau2.b, lemma: 狗, jp: gau2, pos: noun, en: [dog], level: a1, unit: a1.u05, cl: 隻, topic: animals }
+- { id: w.maau1, lemma: 貓, jp: maau1, pos: noun, en: [cat], level: a1, unit: a1.u05, cl: 隻, topic: animals }
+- { id: w.zoek2, lemma: 雀, jp: zoek2, pos: noun, en: [bird], level: a1, unit: a1.u05, cl: 隻, topic: animals }
+- { id: w.jyu2, lemma: 魚, jp: jyu2, pos: noun, en: [fish], level: a1, unit: a1.u05, cl: 條, topic: animals }
+- { id: w.maa5, lemma: 馬, jp: maa5, pos: noun, en: [horse], level: a1, unit: a1.u05, cl: 隻, topic: animals }
+- { id: w.gau2-zai2, lemma: 狗仔, jp: gau2 zai2, pos: noun, en: [puppy, little dog], level: a1, unit: a1.u05, cl: 隻, topic: animals }
+- { id: w.maau1-zai2, lemma: 貓仔, jp: maau1 zai2, pos: noun, en: [kitten, little cat], level: a1, unit: a1.u05, cl: 隻, topic: animals }
+- { id: w.soeng2, lemma: 相, jp: soeng2, pos: noun, en: [photo], level: a1, unit: a1.u05, cl: 張, topic: arts }
+- { id: w.jing2-soeng2, lemma: 影相, jp: jing2 soeng2, pos: verb, en: [to take photos], level: a1, unit: a1.u05, topic: arts }
+- { id: w.din6-si6, lemma: 電視, jp: din6 si6, pos: noun, en: [television], level: a1, unit: a1.u05, cl: 部, topic: tech }
+- { id: w.bou3-zi2, lemma: 報紙, jp: bou3 zi2, pos: noun, en: [newspaper], level: a1, unit: a1.u05, cl: 份, topic: media }
+- { id: w.daai6, lemma: 大, jp: daai6, pos: adj, en: [big, large, old (age)], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.sai3, lemma: 細, jp: sai3, pos: adj, en: [small, little, young], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.san1, lemma: 新, jp: san1, pos: adj, en: [new], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.gau6, lemma: 舊, jp: gau6, pos: adj, en: [old (things), used], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.coeng4, lemma: 長, jp: coeng4, pos: adj, en: [long], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.dyun2, lemma: 短, jp: dyun2, pos: adj, en: [short (length)], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.cung5, lemma: 重, jp: cung5, pos: adj, en: [heavy], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.heng1, lemma: 輕, jp: heng1, pos: adj, en: [light (weight)], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.bou2, lemma: 簿, jp: bou2, pos: noun, en: [exercise book, notebook], level: a1, unit: a1.u05, cl: 本, topic: school }
+- { id: w.zeon1, lemma: 樽, jp: zeon1, pos: noun, en: [bottle], level: a1, unit: a1.u05, cl: 個, topic: drink }
+- { id: w.si6, lemma: 事, jp: si6, pos: noun, en: [matter, thing, business], level: a1, unit: a1.u05, cl: 件, notes: "一件事 \"one thing (to do)\"." }
+- { id: w.lau1, lemma: 褸, jp: lau1, pos: noun, en: [coat, jacket], level: a1, unit: a1.u05, cl: 件, topic: clothing }
+- { id: w.zaap6-zi3, lemma: 雜誌, jp: zaap6 zi3, pos: noun, en: [magazine], level: a1, unit: a1.u05, cl: 本, topic: media }
+# ---------------------------------------------------------------- a1.u06 Money and shopping at the market
+- { id: w.baak3, lemma: 百, jp: baak3, pos: num, en: [hundred], level: a1, unit: a1.u06, topic: numbers }
+- { id: w.cin1, lemma: 千, jp: cin1, pos: num, en: [thousand], level: a1, unit: a1.u06, topic: numbers }
+- { id: w.maan6, lemma: 萬, jp: maan6, pos: num, en: [ten thousand], level: a1, unit: a1.u06, topic: numbers, notes: "一萬 = 10,000; 十萬 = 100,000." }
+- { id: w.jik1, lemma: 億, jp: jik1, pos: num, en: [hundred million], level: a1, unit: a1.u06, topic: numbers }
+- { id: w.cin2, lemma: 錢, jp: cin2, pos: noun, en: [money], level: a1, unit: a1.u06, topic: money, tags: [mass] }
+- { id: w.man1, lemma: 蚊, jp: man1, pos: classifier, en: [dollar (colloquial)], level: a1, unit: a1.u06, topic: money, notes: "十蚊 \"ten dollars\". Spoken word for 元." }
+- { id: w.hou4, lemma: 毫, jp: hou4, pos: classifier, en: [ten cents], level: a1, unit: a1.u06, topic: money, notes: "五毫 \"50 cents\"; 三個六 \"$3.60\"." }
+- { id: w.sin1, lemma: 仙, jp: sin1, pos: classifier, en: [cent], level: a1, unit: a1.u06, topic: money, notes: "From English \"cent\"." }
+- { id: w.jyun4, lemma: 元, jp: jyun4, pos: classifier, en: ["dollar (written, on price tags)"], level: a1, unit: a1.u06, topic: money }
+- { id: w.gong2-bai6, lemma: 港幣, jp: gong2 bai6, pos: noun, en: [Hong Kong dollars], level: a1, unit: a1.u06, topic: money, tags: [mass] }
+- { id: w.baat3-daat6-tung1, lemma: 八達通, jp: baat3 daat6 tung1, pos: noun, en: [Octopus card], level: a1, unit: a1.u06, cl: 張, topic: money, notes: "The smart card used for transport and shopping." }
+- { id: w.zaau2-cin2, lemma: 找錢, jp: zaau2 cin2, pos: verb, en: [to give change], level: a1, unit: a1.u06, topic: money }
+- { id: w.saan2-zi2, lemma: 散紙, jp: saan2 zi2, pos: noun, en: [small change, coins and small notes], level: a1, unit: a1.u06, topic: money, tags: [mass] }
+- { id: w.gei2-cin2, lemma: 幾錢, jp: gei2 cin2, pos: phrase, en: [how much (money)], level: a1, unit: a1.u06, topic: money, notes: "呢個幾錢呀？" }
+- { id: w.peng4, lemma: 平, jp: peng4, pos: adj, en: [cheap], level: a1, unit: a1.u06, topic: shopping }
+- { id: w.gwai3, lemma: 貴, jp: gwai3, pos: adj, en: [expensive], level: a1, unit: a1.u06, topic: shopping }
+- { id: w.maai5, lemma: 買, jp: maai5, pos: verb, en: [to buy], level: a1, unit: a1.u06, topic: shopping }
+- { id: w.maai6, lemma: 賣, jp: maai6, pos: verb, en: [to sell], level: a1, unit: a1.u06, topic: shopping }
+- { id: w.maai5-je5, lemma: 買嘢, jp: maai5 je5, pos: verb, en: [to go shopping, to buy things], level: a1, unit: a1.u06, topic: shopping }
+- { id: w.jiu3, lemma: 要, jp: jiu3, pos: verb, en: [to want, to need, "to take (I'll have)"], level: a1, unit: a1.u06, notes: "我要兩個 \"I'll take two\"." }
+- { id: w.soeng2.b, lemma: 想, jp: soeng2, pos: verb, en: [to want to, would like to, to think], level: a1, unit: a1.u06, topic: feelings }
+- { id: w.gaai1-si5, lemma: 街市, jp: gaai1 si5, pos: noun, en: [wet market], level: a1, unit: a1.u06, cl: 個, topic: shopping }
+- { id: w.ciu1-si5, lemma: 超市, jp: ciu1 si5, pos: noun, en: [supermarket], level: a1, unit: a1.u06, cl: 間, topic: shopping }
+- { id: w.pou3-tau2, lemma: 舖頭, jp: pou3 tau2, pos: noun, en: [shop], level: a1, unit: a1.u06, cl: 間, topic: shopping }
+- { id: w.soeng1-coeng4, lemma: 商場, jp: soeng1 coeng4, pos: noun, en: [shopping mall], level: a1, unit: a1.u06, cl: 個, topic: shopping }
+- { id: w.si5-zaap6, lemma: 市集, jp: si5 zaap6, pos: noun, en: [market, open-air market], level: a1, unit: a1.u06, cl: 個, topic: shopping }
+- { id: w.lou5-baan2, lemma: 老闆, jp: lou5 baan2, pos: noun, en: [boss, shop owner], level: a1, unit: a1.u06, cl: 個, topic: jobs }
+- { id: w.gan1, lemma: 斤, jp: gan1, pos: classifier, en: [catty (about 600 g)], level: a1, unit: a1.u06, topic: quantity, notes: "Market weight: 一斤菜." }
+- { id: w.saang1-gwo2, lemma: 生果, jp: saang1 gwo2, pos: noun, en: [fruit], level: a1, unit: a1.u06, topic: food, tags: [mass] }
+- { id: w.ping4-gwo2, lemma: 蘋果, jp: ping4 gwo2, pos: noun, en: [apple], level: a1, unit: a1.u06, cl: 個, topic: food }
+- { id: w.caang2, lemma: 橙, jp: caang2, pos: noun, en: [orange], level: a1, unit: a1.u06, cl: 個, topic: food }
+- { id: w.hoeng1-ziu1, lemma: 香蕉, jp: hoeng1 ziu1, pos: noun, en: [banana], level: a1, unit: a1.u06, cl: 條, topic: food }
+- { id: w.coi3, lemma: 菜, jp: coi3, pos: noun, en: [vegetables, dish (of food)], level: a1, unit: a1.u06, topic: food, tags: [mass] }
+- { id: w.baak6-coi3, lemma: 白菜, jp: baak6 coi3, pos: noun, en: [bok choy], level: a1, unit: a1.u06, cl: 棵, topic: food }
+- { id: w.po1, lemma: 棵, jp: po1, pos: classifier, en: [for plants and trees], level: a1, unit: a1.u06, notes: "一棵樹." }
+- { id: w.juk6, lemma: 肉, jp: juk6, pos: noun, en: [meat], level: a1, unit: a1.u06, topic: food, tags: [mass] }
+- { id: w.zyu1-juk6, lemma: 豬肉, jp: zyu1 juk6, pos: noun, en: [pork], level: a1, unit: a1.u06, topic: food, tags: [mass] }
+- { id: w.ngau4-juk6, lemma: 牛肉, jp: ngau4 juk6, pos: noun, en: [beef], level: a1, unit: a1.u06, topic: food, tags: [mass] }
+- { id: w.gai1, lemma: 雞, jp: gai1, pos: noun, en: [chicken], level: a1, unit: a1.u06, cl: 隻, topic: food }
+- { id: w.gai1-daan2, lemma: 雞蛋, jp: gai1 daan2, pos: noun, en: [egg], level: a1, unit: a1.u06, cl: 隻, topic: food }
+- { id: w.daan2, lemma: 蛋, jp: daan2, pos: noun, en: [egg], level: a1, unit: a1.u06, cl: 隻, topic: food }
+- { id: w.haa1, lemma: 蝦, jp: haa1, pos: noun, en: [prawn, shrimp], level: a1, unit: a1.u06, cl: 隻, topic: food }
+- { id: w.mai5, lemma: 米, jp: mai5, pos: noun, en: [uncooked rice], level: a1, unit: a1.u06, topic: food, tags: [mass] }
+- { id: w.saam1.b, lemma: 衫, jp: saam1, pos: noun, en: [clothes, top, shirt], level: a1, unit: a1.u06, cl: 件, topic: clothing }
+- { id: w.fu3, lemma: 褲, jp: fu3, pos: noun, en: [trousers, pants], level: a1, unit: a1.u06, cl: 條, topic: clothing }
+- { id: w.haai4, lemma: 鞋, jp: haai4, pos: noun, en: [shoe, shoes], level: a1, unit: a1.u06, cl: 對, topic: clothing }
+- { id: w.kwan4, lemma: 裙, jp: kwan4, pos: noun, en: [skirt, dress], level: a1, unit: a1.u06, cl: 條, topic: clothing }
+- { id: w.mou2, lemma: 帽, jp: mou2, pos: noun, en: [hat, cap], level: a1, unit: a1.u06, cl: 頂, topic: clothing }
+- { id: w.deng2, lemma: 頂, jp: deng2, pos: classifier, en: [for hats], level: a1, unit: a1.u06, notes: "一頂帽." }
+- { id: w.si3, lemma: 試, jp: si3, pos: verb, en: [to try, to try on], level: a1, unit: a1.u06, topic: shopping }
+- { id: w.tai2, lemma: 睇, jp: tai2, pos: verb, en: [to look, to see, to watch, to read], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.haa5, lemma: 下, jp: haa5, pos: particle, en: [briefly, a bit (after a verb)], level: a1, unit: a1.u06, notes: "睇下 \"have a look\", 試下 \"have a try\". Very often written 吓." }
+- { id: w.dak1, lemma: 得, jp: dak1, pos: adj, en: [OK, can do, fine], level: a1, unit: a1.u06, notes: "得唔得？ \"Is that OK?\" 得！ \"Sure!\"" }
+- { id: w.m4-dak1, lemma: 唔得, jp: m4 dak1, pos: phrase, en: [not OK, "can't", no way], level: a1, unit: a1.u06 }
+- { id: w.ngaam1, lemma: 啱, jp: ngaam1, pos: adj, en: [right, correct, just right, fitting], level: a1, unit: a1.u06, topic: adjectives-things }
+- { id: w.gau3, lemma: 夠, jp: gau3, pos: adj, en: [enough], level: a1, unit: a1.u06, topic: quantity }
+- { id: w.do1, lemma: 多, jp: do1, pos: adj, en: [many, much, a lot], level: a1, unit: a1.u06, topic: quantity }
+- { id: w.siu2, lemma: 少, jp: siu2, pos: adj, en: [few, little], level: a1, unit: a1.u06, topic: quantity }
+- { id: w.hou2-do1, lemma: 好多, jp: hou2 do1, pos: det, en: [a lot of, many], level: a1, unit: a1.u06, topic: quantity }
+- { id: w.siu2-siu2, lemma: 少少, jp: siu2 siu2, pos: det, en: [a little, a bit], level: a1, unit: a1.u06, topic: quantity }
+- { id: w.cyun4-bou6, lemma: 全部, jp: cyun4 bou6, pos: det, en: [all, the whole lot], level: a1, unit: a1.u06, topic: quantity }
+- { id: w.zung6-jau5, lemma: 仲有, jp: zung6 jau5, pos: phrase, en: [and also, "there's still", "what's more"], level: a1, unit: a1.u06, topic: connectors }
+- { id: w.zau6, lemma: 就, jp: zau6, pos: adv, en: [then, just, right away], level: a1, unit: a1.u06 }
+- { id: w.peng4-di1, lemma: 平啲, jp: peng4 di1, pos: phrase, en: [cheaper, a bit cheaper], level: a1, unit: a1.u06, topic: shopping, notes: "平啲得唔得呀？ \"Could you make it cheaper?\"" }
+- { id: w.sau1, lemma: 收, jp: sau1, pos: verb, en: [to accept, to receive, to close], level: a1, unit: a1.u06, topic: money }
+- { id: w.bei2-cin2, lemma: 畀錢, jp: bei2 cin2, pos: verb, en: [to pay], level: a1, unit: a1.u06, topic: money }
+- { id: w.gaa3-cin4, lemma: 價錢, jp: gaa3 cin4, pos: noun, en: [price], level: a1, unit: a1.u06, cl: 個, topic: money }
+- { id: w.sung3, lemma: 餸, jp: sung3, pos: noun, en: [dishes (to go with rice), groceries], level: a1, unit: a1.u06, topic: food, tags: [mass] }
+- { id: w.maai5-sung3, lemma: 買餸, jp: maai5 sung3, pos: verb, en: [to buy food for meals, to do the grocery shopping], level: a1, unit: a1.u06, topic: shopping }
+- { id: w.jat1-gung6, lemma: 一共, jp: jat1 gung6, pos: adv, en: [altogether, in total], level: a1, unit: a1.u06, topic: money }
+- { id: w.gaan2, lemma: 揀, jp: gaan2, pos: verb, en: [to choose, to pick], level: a1, unit: a1.u06, topic: shopping }
+- { id: w.san1-sin1, lemma: 新鮮, jp: san1 sin1, pos: adj, en: [fresh], level: a1, unit: a1.u06, topic: food }
+- { id: w.bin6-lei6-dim3, lemma: 便利店, jp: bin6 lei6 dim3, pos: noun, en: [convenience store], level: a1, unit: a1.u06, cl: 間, topic: shopping }
+- { id: w.hou4-zi2, lemma: 毫子, jp: hou4 zi2, pos: noun, en: [ten-cent coin, small coin], level: a1, unit: a1.u06, cl: 個, topic: money }
+- { id: w.jau5-cin4, lemma: 有錢, jp: jau5 cin4, pos: adj, en: [rich], level: a1, unit: a1.u06, topic: money }
+- { id: w.do1-di1, lemma: 多啲, jp: do1 di1, pos: adv, en: [more, a bit more], level: a1, unit: a1.u06, topic: quantity }
+- { id: w.dak1-laa3, lemma: 得喇, jp: dak1 laa3, pos: phrase, en: ["that'll do", "OK, done"], level: a1, unit: a1.u06, topic: verbs-speech }
+- { id: w.dak1-m4-dak1, lemma: 得唔得, jp: dak1 m4 dak1, pos: phrase, en: [is it OK? can (you)?], level: a1, unit: a1.u06, tags: [passive] }
+# ---------------------------------------------------------------- a1.u07 Time, days and dates
+- { id: w.ji4-gaa1, lemma: 而家, jp: ji4 gaa1, pos: noun, en: [now], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.dim2-zung1, lemma: 點鐘, jp: dim2 zung1, pos: noun, en: ["o'clock"], level: a1, unit: a1.u07, topic: time, tags: [mass], notes: "三點鐘 \"three o'clock\"." }
+- { id: w.dim2.b, lemma: 點, jp: dim2, pos: classifier, en: ["o'clock", hour (time)], level: a1, unit: a1.u07, topic: time, notes: "而家幾點？ \"What time is it?\" Different from 點 \"how\"." }
+- { id: w.fan1-zung1, lemma: 分鐘, jp: fan1 zung1, pos: classifier, en: [minute], level: a1, unit: a1.u07, topic: time }
+- { id: w.go3-zi6, lemma: 個字, jp: go3 zi6, pos: noun, en: [five minutes (on the clock)], level: a1, unit: a1.u07, topic: time, tags: [mass], notes: "三點三個字 = 3:15. Each 字 is a number on the clock face." }
+- { id: w.zi6, lemma: 字, jp: zi6, pos: noun, en: [written character, word], level: a1, unit: a1.u07, cl: 個, topic: school }
+- { id: w.gwat1, lemma: 骨, jp: gwat1, pos: noun, en: [quarter of an hour], level: a1, unit: a1.u07, topic: time, tags: [mass], notes: "一個骨 = 15 minutes (from English \"quarter\")." }
+- { id: w.bun3.b, lemma: 半, jp: bun3, pos: adj, en: [half past], level: a1, unit: a1.u07, tags: [passive], notes: "三點半 \"half past three\"." }
+- { id: w.zung1-tau4, lemma: 鐘頭, jp: zung1 tau4, pos: noun, en: [hour (duration)], level: a1, unit: a1.u07, cl: 個, topic: time, notes: "兩個鐘頭 \"two hours\"." }
+- { id: w.zung1, lemma: 鐘, jp: zung1, pos: noun, en: [clock], level: a1, unit: a1.u07, cl: 個, topic: time }
+- { id: w.si4-gaan3, lemma: 時間, jp: si4 gaan3, pos: noun, en: [time], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.gam1-jat6, lemma: 今日, jp: gam1 jat6, pos: noun, en: [today], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.ting1-jat6, lemma: 聽日, jp: ting1 jat6, pos: noun, en: [tomorrow], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.cam4-jat6, lemma: 尋日, jp: cam4 jat6, pos: noun, en: [yesterday], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.cin4-jat6, lemma: 前日, jp: cin4 jat6, pos: noun, en: [the day before yesterday], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.hau6-jat6, lemma: 後日, jp: hau6 jat6, pos: noun, en: [the day after tomorrow], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.ziu1-zou2, lemma: 朝早, jp: ziu1 zou2, pos: noun, en: [morning], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.soeng6-zau3, lemma: 上晝, jp: soeng6 zau3, pos: noun, en: [morning (before noon)], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.zung1-ng5, lemma: 中午, jp: zung1 ng5, pos: noun, en: [noon, midday], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.aan3-zau3, lemma: 晏晝, jp: aan3 zau3, pos: noun, en: [early afternoon, lunchtime], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.haa6-zau3, lemma: 下晝, jp: haa6 zau3, pos: noun, en: [afternoon, p.m.], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.je6-maan5, lemma: 夜晚, jp: je6 maan5, pos: noun, en: [night, evening], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.maan5-hak1, lemma: 晚黑, jp: maan5 hak1, pos: noun, en: [evening, night], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.gam1-ziu1, lemma: 今朝, jp: gam1 ziu1, pos: noun, en: [this morning], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.gam1-maan5, lemma: 今晚, jp: gam1 maan5, pos: noun, en: [tonight, this evening], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.maan5, lemma: 晚, jp: maan5, pos: noun, en: [night, evening], level: a1, unit: a1.u07, cl: 個, topic: time, notes: "星期三晚 \"Wednesday night\"." }
+- { id: w.jat6, lemma: 日, jp: jat6, pos: noun, en: [day, date], level: a1, unit: a1.u07, cl: 日, topic: time }
+- { id: w.sing1-kei4, lemma: 星期, jp: sing1 kei4, pos: noun, en: [week], level: a1, unit: a1.u07, cl: 個, topic: days }
+- { id: w.lai5-baai3, lemma: 禮拜, jp: lai5 baai3, pos: noun, en: [week (colloquial)], level: a1, unit: a1.u07, cl: 個, topic: days }
+- { id: w.sing1-kei4-jat1, lemma: 星期一, jp: sing1 kei4 jat1, pos: noun, en: [Monday], level: a1, unit: a1.u07, topic: days, tags: [mass] }
+- { id: w.sing1-kei4-ji6, lemma: 星期二, jp: sing1 kei4 ji6, pos: noun, en: [Tuesday], level: a1, unit: a1.u07, topic: days, tags: [mass] }
+- { id: w.sing1-kei4-saam1, lemma: 星期三, jp: sing1 kei4 saam1, pos: noun, en: [Wednesday], level: a1, unit: a1.u07, topic: days, tags: [mass] }
+- { id: w.sing1-kei4-sei3, lemma: 星期四, jp: sing1 kei4 sei3, pos: noun, en: [Thursday], level: a1, unit: a1.u07, topic: days, tags: [mass] }
+- { id: w.sing1-kei4-ng5, lemma: 星期五, jp: sing1 kei4 ng5, pos: noun, en: [Friday], level: a1, unit: a1.u07, topic: days, tags: [mass] }
+- { id: w.sing1-kei4-luk6, lemma: 星期六, jp: sing1 kei4 luk6, pos: noun, en: [Saturday], level: a1, unit: a1.u07, topic: days, tags: [mass] }
+- { id: w.sing1-kei4-jat6, lemma: 星期日, jp: sing1 kei4 jat6, pos: noun, en: [Sunday], level: a1, unit: a1.u07, topic: days, tags: [mass] }
+- { id: w.lai5-baai3-jat6, lemma: 禮拜日, jp: lai5 baai3 jat6, pos: noun, en: [Sunday (colloquial)], level: a1, unit: a1.u07, topic: days, tags: [mass] }
+- { id: w.zau1-mut6, lemma: 週末, jp: zau1 mut6, pos: noun, en: [weekend], level: a1, unit: a1.u07, cl: 個, topic: days }
+- { id: w.gaa3-kei4, lemma: 假期, jp: gaa3 kei4, pos: noun, en: [holiday, vacation], level: a1, unit: a1.u07, cl: 個, topic: days }
+- { id: w.fong3-gaa3, lemma: 放假, jp: fong3 gaa3, pos: verb, en: [to be on holiday, to have a day off], level: a1, unit: a1.u07, topic: days }
+- { id: w.jyut6, lemma: 月, jp: jyut6, pos: noun, en: [month], level: a1, unit: a1.u07, cl: 個, topic: months, notes: "一月 January; 一個月 one month." }
+- { id: w.jat1-jyut6, lemma: 一月, jp: jat1 jyut6, pos: noun, en: [January], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.ji6-jyut6, lemma: 二月, jp: ji6 jyut6, pos: noun, en: [February], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.saam1-jyut6, lemma: 三月, jp: saam1 jyut6, pos: noun, en: [March], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.sei3-jyut6, lemma: 四月, jp: sei3 jyut6, pos: noun, en: [April], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.ng5-jyut6, lemma: 五月, jp: ng5 jyut6, pos: noun, en: [May], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.luk6-jyut6, lemma: 六月, jp: luk6 jyut6, pos: noun, en: [June], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.cat1-jyut6, lemma: 七月, jp: cat1 jyut6, pos: noun, en: [July], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.baat3-jyut6, lemma: 八月, jp: baat3 jyut6, pos: noun, en: [August], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.gau2-jyut6, lemma: 九月, jp: gau2 jyut6, pos: noun, en: [September], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.sap6-jyut6, lemma: 十月, jp: sap6 jyut6, pos: noun, en: [October], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.sap6-jat1-jyut6, lemma: 十一月, jp: sap6 jat1 jyut6, pos: noun, en: [November], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.sap6-ji6-jyut6, lemma: 十二月, jp: sap6 ji6 jyut6, pos: noun, en: [December], level: a1, unit: a1.u07, topic: months, tags: [mass] }
+- { id: w.nin4, lemma: 年, jp: nin4, pos: noun, en: [year], level: a1, unit: a1.u07, cl: 年, topic: time, notes: "一年 \"one year\" (年 is its own measure word)." }
+- { id: w.gau6-nin2, lemma: 舊年, jp: gau6 nin2, pos: noun, en: [last year], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.ceot1-nin2, lemma: 出年, jp: ceot1 nin2, pos: noun, en: [next year], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.gei2-si4, lemma: 幾時, jp: gei2 si4, pos: pron, en: [when], level: a1, unit: a1.u07, topic: time }
+- { id: w.gei2-dim2, lemma: 幾點, jp: gei2 dim2, pos: phrase, en: [what time], level: a1, unit: a1.u07, topic: time }
+- { id: w.zou2, lemma: 早, jp: zou2, pos: adj, en: [early], level: a1, unit: a1.u07, topic: time }
+- { id: w.ci4, lemma: 遲, jp: ci4, pos: adj, en: [late], level: a1, unit: a1.u07, topic: time }
+- { id: w.ci4-dou3, lemma: 遲到, jp: ci4 dou3, pos: verb, en: [to be late, to arrive late], level: a1, unit: a1.u07, topic: time }
+- { id: w.zeon2-si4, lemma: 準時, jp: zeon2 si4, pos: adj, en: [on time, punctual], level: a1, unit: a1.u07, topic: time }
+- { id: w.hoi1, lemma: 開, jp: hoi1, pos: verb, en: [to open, to start], level: a1, unit: a1.u07, topic: verbs-daily }
+- { id: w.saan1, lemma: 閂, jp: saan1, pos: verb, en: [to close, to shut], level: a1, unit: a1.u07, topic: verbs-daily }
+- { id: w.hoi1-mun4, lemma: 開門, jp: hoi1 mun4, pos: verb, en: [to open (for business)], level: a1, unit: a1.u07, topic: shopping }
+- { id: w.saan1-mun4, lemma: 閂門, jp: saan1 mun4, pos: verb, en: [to close (for business)], level: a1, unit: a1.u07, topic: shopping }
+- { id: w.jau4, lemma: 由, jp: jau4, pos: prep, en: [from], level: a1, unit: a1.u07, topic: directions, notes: "由九點到六點 \"from nine to six\"." }
+- { id: w.dou3, lemma: 到, jp: dou3, pos: prep, en: [to, until, arrive], level: a1, unit: a1.u07, topic: directions }
+- { id: w.mui5, lemma: 每, jp: mui5, pos: det, en: [every, each], level: a1, unit: a1.u07, topic: quantity }
+- { id: w.san1-nin4, lemma: 新年, jp: san1 nin4, pos: noun, en: [New Year, Chinese New Year], level: a1, unit: a1.u07, cl: 個, topic: time }
+- { id: w.dang2, lemma: 等, jp: dang2, pos: verb, en: [to wait], level: a1, unit: a1.u07, topic: verbs-daily }
+- { id: w.dang2-zan6, lemma: 等陣, jp: dang2 zan6, pos: phrase, en: [wait a moment, in a while], level: a1, unit: a1.u07, topic: time }
+- { id: w.jat1-zan6, lemma: 一陣, jp: jat1 zan6, pos: adv, en: [a moment, in a while], level: a1, unit: a1.u07, topic: time }
+- { id: w.zan6, lemma: 陣, jp: zan6, pos: classifier, en: [a while, a spell], level: a1, unit: a1.u07, notes: "一陣 \"a while\"; 一陣間 \"in a moment\"." }
+- { id: w.joek3, lemma: 約, jp: joek3, pos: verb, en: [to arrange to meet, to make an appointment], level: a1, unit: a1.u07, topic: relationships }
+- { id: w.sing1-kei4-gei2, lemma: 星期幾, jp: sing1 kei4 gei2, pos: phrase, en: [what day of the week], level: a1, unit: a1.u07, topic: days }
+- { id: w.gei2-hou6, lemma: 幾號, jp: gei2 hou6, pos: phrase, en: [what date], level: a1, unit: a1.u07, topic: time }
+- { id: w.ting1-ziu1, lemma: 聽朝, jp: ting1 ziu1, pos: noun, en: [tomorrow morning], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.ting1-maan5, lemma: 聽晚, jp: ting1 maan5, pos: noun, en: [tomorrow evening], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.soeng6-go3-jyut6, lemma: 上個月, jp: soeng6 go3 jyut6, pos: noun, en: [last month], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.haa6-go3-jyut6, lemma: 下個月, jp: haa6 go3 jyut6, pos: noun, en: [next month], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.go2-zan6, lemma: 嗰陣, jp: go2 zan6, pos: noun, en: [then, at that time], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+- { id: w.lai4-gan2, lemma: 嚟緊, jp: lai4 gan2, pos: adj, en: [coming, next], level: a1, unit: a1.u07, topic: time, notes: "嚟緊個禮拜 \"next week\"." }
+- { id: w.haa6-go3-lai5-baai3, lemma: 下個禮拜, jp: haa6 go3 lai5 baai3, pos: noun, en: [next week], level: a1, unit: a1.u07, topic: time, tags: [mass] }
+# ---------------------------------------------------------------- a1.u08 My family
+- { id: w.ge3, lemma: 嘅, jp: ge3, pos: particle, en: [possessive / adjectival particle, "(sentence-final) assertion"], level: a1, unit: a1.u08, notes: "我嘅書 \"my book\"; 好大嘅屋 \"a big house\". With family it is often dropped: 我媽媽. Sentence-final: 佢會嚟嘅 \"he will come (I'm sure)\"; rising ge2 in questions: 係咪真嘅？" }
+- { id: w.uk1-kei2-jan4, lemma: 屋企人, jp: uk1 kei2 jan4, pos: noun, en: [family members], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.gaa1-ting4, lemma: 家庭, jp: gaa1 ting4, pos: noun, en: [family, household], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.baa1-baa1, lemma: 爸爸, jp: baa4 baa1, pos: noun, en: [dad, father], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.maa4-maa1, lemma: 媽媽, jp: maa4 maa1, pos: noun, en: [mum, mother], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.aa3-baa1, lemma: 阿爸, jp: aa3 baa1, pos: noun, en: [dad (colloquial)], level: a1, unit: a1.u08, cl: 個, topic: family, notes: "Usually said aa3 baa4." }
+- { id: w.aa3-maa1, lemma: 阿媽, jp: aa3 maa1, pos: noun, en: [mum (colloquial)], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.go1-go1, lemma: 哥哥, jp: go4 go1, pos: noun, en: [older brother], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.gaa1-ze1, lemma: 家姐, jp: gaa1 ze1, pos: noun, en: [older sister], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.sai3-lou2, lemma: 細佬, jp: sai3 lou2, pos: noun, en: [younger brother], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.mui6-mui6, lemma: 妹妹, jp: mui4 mui2, pos: noun, en: [younger sister], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.sai3-mui2, lemma: 細妹, jp: sai3 mui2, pos: noun, en: [younger sister (colloquial)], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.hing1-dai6-zi2-mui6, lemma: 兄弟姊妹, jp: hing1 dai6 zi2 mui6, pos: noun, en: [brothers and sisters, siblings], level: a1, unit: a1.u08, topic: family, tags: [mass] }
+- { id: w.je4-je2, lemma: 爺爺, jp: je4 je2, pos: noun, en: ["grandfather (father's father)"], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.maa4-maa4, lemma: 嫲嫲, jp: maa4 maa4, pos: noun, en: ["grandmother (father's mother)"], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.gung1-gung1, lemma: 公公, jp: gung4 gung1, pos: noun, en: ["grandfather (mother's father)"], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.po4-po2, lemma: 婆婆, jp: po4 po2, pos: noun, en: ["grandmother (mother's mother)", old lady], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.lou5-gung1, lemma: 老公, jp: lou5 gung1, pos: noun, en: [husband], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.lou5-po4, lemma: 老婆, jp: lou5 po4, pos: noun, en: [wife], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.zai2, lemma: 仔, jp: zai2, pos: noun, en: [son], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.neoi2, lemma: 女, jp: neoi2, pos: noun, en: [daughter], level: a1, unit: a1.u08, cl: 個, topic: family, notes: "Read neoi2 for \"daughter\", neoi5 in 女人." }
+- { id: w.zai2-neoi2, lemma: 仔女, jp: zai2 neoi2, pos: noun, en: [children, sons and daughters], level: a1, unit: a1.u08, topic: family, tags: [mass] }
+- { id: w.syun1, lemma: 孫, jp: syun1, pos: noun, en: [grandson, grandchild], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.suk1-suk1, lemma: 叔叔, jp: suk1 suk1, pos: noun, en: ["uncle (father's younger brother)", mister], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.aa3-ji1, lemma: 阿姨, jp: aa3 ji1, pos: noun, en: ["auntie (mother's sister)", lady], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.gu1-maa1, lemma: 姑媽, jp: gu1 maa1, pos: noun, en: ["aunt (father's older sister)"], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.kau5-fu2, lemma: 舅父, jp: kau5 fu2, pos: noun, en: ["uncle (mother's brother)"], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.biu2-go1, lemma: 表哥, jp: biu2 go1, pos: noun, en: [older male cousin], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.biu2-ze2, lemma: 表姐, jp: biu2 ze2, pos: noun, en: [older female cousin], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.naam4-pang4-jau5, lemma: 男朋友, jp: naam4 pang4 jau5, pos: noun, en: [boyfriend], level: a1, unit: a1.u08, cl: 個, topic: relationships }
+- { id: w.neoi5-pang4-jau5, lemma: 女朋友, jp: neoi5 pang4 jau5, pos: noun, en: [girlfriend], level: a1, unit: a1.u08, cl: 個, topic: relationships }
+- { id: w.git3-fan1, lemma: 結婚, jp: git3 fan1, pos: verb, en: [to marry, to get married], level: a1, unit: a1.u08, topic: relationships }
+- { id: w.uk1-kei2.b, lemma: 屋企, jp: uk1 kei2, pos: adv, en: [at home], level: a1, unit: a1.u08, tags: [passive] }
+- { id: w.gou1, lemma: 高, jp: gou1, pos: adj, en: [tall, high], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.ai2, lemma: 矮, jp: ai2, pos: adj, en: [short (height)], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.fei4, lemma: 肥, jp: fei4, pos: adj, en: [fat], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.sau3, lemma: 瘦, jp: sau3, pos: adj, en: [thin, slim], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.leng3, lemma: 靚, jp: leng3, pos: adj, en: [pretty, good-looking, nice], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.leng3-zai2, lemma: 靚仔, jp: leng3 zai2, pos: adj, en: [handsome], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.leng3-neoi2, lemma: 靚女, jp: leng3 neoi2, pos: adj, en: [pretty (of a woman)], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.hau6-saang1, lemma: 後生, jp: hau6 saang1, pos: adj, en: [young], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.lou5, lemma: 老, jp: lou5, pos: adj, en: [old (people)], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.lek1, lemma: 叻, jp: lek1, pos: adj, en: [clever, smart, capable], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.hou2-jan4, lemma: 好人, jp: hou2 jan4, pos: noun, en: [nice person, good person], level: a1, unit: a1.u08, cl: 個, topic: adjectives-people }
+- { id: w.mong4, lemma: 忙, jp: mong4, pos: adj, en: [busy], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.dak1-haan4, lemma: 得閒, jp: dak1 haan4, pos: adj, en: [free, not busy], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.hoi1-sam1, lemma: 開心, jp: hoi1 sam1, pos: adj, en: [happy], level: a1, unit: a1.u08, topic: feelings }
+- { id: w.ok3, lemma: 惡, jp: ok3, pos: adj, en: [fierce, strict, difficult], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.hou2-siu3, lemma: 好笑, jp: hou2 siu3, pos: adj, en: [funny], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.ho2-oi3, lemma: 可愛, jp: ho2 oi3, pos: adj, en: [cute, lovely], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.dim2-gaai2, lemma: 點解, jp: dim2 gaai2, pos: adv, en: [why], level: a1, unit: a1.u08, notes: "點解唔去呀？" }
+- { id: w.dim2-joeng2, lemma: 點樣, jp: dim2 joeng2, pos: adv, en: [how, in what way], level: a1, unit: a1.u08 }
+- { id: w.me1-je5, lemma: 咩嘢, jp: me1 je5, pos: pron, en: [what (variant of 乜嘢)], level: a1, unit: a1.u08 }
+- { id: w.joeng5, lemma: 養, jp: joeng5, pos: verb, en: [to keep (pets), to raise], level: a1, unit: a1.u08, topic: animals }
+- { id: w.daai6-go3, lemma: 大個, jp: daai6 go3, pos: adj, en: [big, grown-up, older], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.sai3-go3, lemma: 細個, jp: sai3 go3, pos: adj, en: [small, little, young (childhood)], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.jat1-gaa1-jan4, lemma: 一家人, jp: jat1 gaa1 jan4, pos: noun, en: [the whole family], level: a1, unit: a1.u08, topic: family, tags: [mass] }
+- { id: w.can1-cik1, lemma: 親戚, jp: can1 cik1, pos: noun, en: [relative, relatives], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.aa3-go1, lemma: 阿哥, jp: aa3 go1, pos: noun, en: [older brother (colloquial)], level: a1, unit: a1.u08, cl: 個, topic: family }
+- { id: w.lai5-mat6, lemma: 禮物, jp: lai5 mat6, pos: noun, en: [present, gift], level: a1, unit: a1.u08, cl: 份, topic: shopping }
+- { id: w.dak1-ji3, lemma: 得意, jp: dak1 ji3, pos: adj, en: [cute, amusing], level: a1, unit: a1.u08, topic: adjectives-people }
+- { id: w.noi6-sing3, lemma: 耐性, jp: noi6 sing3, pos: noun, en: [patience], level: a1, unit: a1.u08, topic: adjectives-people, tags: [mass] }
+# ---------------------------------------------------------------- a1.u09 Yum cha and food
+- { id: w.jam2-caa4, lemma: 飲茶, jp: jam2 caa4, pos: verb, en: [to have dim sum, to go for yum cha], level: a1, unit: a1.u09, topic: food }
+- { id: w.dim2-sam1, lemma: 點心, jp: dim2 sam1, pos: noun, en: [dim sum], level: a1, unit: a1.u09, topic: food, tags: [mass] }
+- { id: w.zau2-lau4, lemma: 酒樓, jp: zau2 lau4, pos: noun, en: [Chinese restaurant (dim sum and banquets)], level: a1, unit: a1.u09, cl: 間, topic: food }
+- { id: w.caan1-teng1, lemma: 餐廳, jp: caan1 teng1, pos: noun, en: [restaurant], level: a1, unit: a1.u09, cl: 間, topic: food }
+- { id: w.caa4-caan1-teng1, lemma: 茶餐廳, jp: caa4 caan1 teng1, pos: noun, en: [Hong Kong-style café], level: a1, unit: a1.u09, cl: 間, topic: food }
+- { id: w.caa4, lemma: 茶, jp: caa4, pos: noun, en: [tea], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.jam2, lemma: 飲, jp: jam2, pos: verb, en: [to drink], level: a1, unit: a1.u09, topic: verbs-daily }
+- { id: w.jam2-je5, lemma: 飲嘢, jp: jam2 je5, pos: verb, en: [to have a drink], level: a1, unit: a1.u09, topic: drink }
+- { id: w.sik6-je5, lemma: 食嘢, jp: sik6 je5, pos: verb, en: [to eat something, to have a bite], level: a1, unit: a1.u09, topic: food }
+- { id: w.seoi2, lemma: 水, jp: seoi2, pos: noun, en: [water], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.gwan2-seoi2, lemma: 滾水, jp: gwan2 seoi2, pos: noun, en: [boiled water, hot water], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.dung3-seoi2, lemma: 凍水, jp: dung3 seoi2, pos: noun, en: [cold water], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.pou2-nei2, lemma: 普洱, jp: pou2 nei2, pos: noun, en: ["pu'er tea"], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.hoeng1-pin2, lemma: 香片, jp: hoeng1 pin2, pos: noun, en: [jasmine tea], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.gaa3-fe1, lemma: 咖啡, jp: gaa3 fe1, pos: noun, en: [coffee], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.naai5-caa4, lemma: 奶茶, jp: naai5 caa4, pos: noun, en: [milk tea], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.ning4-mung1-caa4, lemma: 檸檬茶, jp: ning4 mung1 caa4, pos: noun, en: [lemon tea], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.hei3-seoi2, lemma: 汽水, jp: hei3 seoi2, pos: noun, en: [soft drink, soda], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.gwo2-zap1, lemma: 果汁, jp: gwo2 zap1, pos: noun, en: [fruit juice], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.be1-zau2, lemma: 啤酒, jp: be1 zau2, pos: noun, en: [beer], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.zau2, lemma: 酒, jp: zau2, pos: noun, en: [alcohol, wine], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.naai5, lemma: 奶, jp: naai5, pos: noun, en: [milk], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.tong2, lemma: 糖, jp: tong2, pos: noun, en: [sugar, sweet], level: a1, unit: a1.u09, cl: 粒, topic: food, notes: "走糖 \"no sugar\"." }
+- { id: w.dung3, lemma: 凍, jp: dung3, pos: adj, en: [cold, iced], level: a1, unit: a1.u09, topic: weather }
+- { id: w.jit6, lemma: 熱, jp: jit6, pos: adj, en: [hot], level: a1, unit: a1.u09, topic: weather }
+- { id: w.haa1-gaau2, lemma: 蝦餃, jp: haa1 gaau2, pos: noun, en: [har gow (shrimp dumpling)], level: a1, unit: a1.u09, cl: 粒, topic: food }
+- { id: w.siu1-maai2, lemma: 燒賣, jp: siu1 maai2, pos: noun, en: [siu mai (pork dumpling)], level: a1, unit: a1.u09, cl: 粒, topic: food }
+- { id: w.caa1-siu1-baau1, lemma: 叉燒包, jp: caa1 siu1 baau1, pos: noun, en: [char siu bao (barbecue pork bun)], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.caa1-siu1, lemma: 叉燒, jp: caa1 siu1, pos: noun, en: [char siu (barbecue pork)], level: a1, unit: a1.u09, topic: food, tags: [mass] }
+- { id: w.coeng2-fan2, lemma: 腸粉, jp: coeng2 fan2, pos: noun, en: [cheung fun (rice noodle roll)], level: a1, unit: a1.u09, cl: 條, topic: food }
+- { id: w.fung6-zaau2, lemma: 鳳爪, jp: fung6 zaau2, pos: noun, en: [chicken feet], level: a1, unit: a1.u09, cl: 隻, topic: food }
+- { id: w.lo4-baak6-gou1, lemma: 蘿蔔糕, jp: lo4 baak6 gou1, pos: noun, en: [turnip cake], level: a1, unit: a1.u09, cl: 件, topic: food }
+- { id: w.ceon1-gyun2, lemma: 春卷, jp: ceon1 gyun2, pos: noun, en: [spring roll], level: a1, unit: a1.u09, cl: 條, topic: food }
+- { id: w.daan6-taat1, lemma: 蛋撻, jp: daan6 taat1, pos: noun, en: [egg tart], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.paai4-gwat1, lemma: 排骨, jp: paai4 gwat1, pos: noun, en: [spare ribs], level: a1, unit: a1.u09, topic: food, tags: [mass] }
+- { id: w.no6-mai5-gai1, lemma: 糯米雞, jp: no6 mai5 gai1, pos: noun, en: [lo mai gai (sticky rice in lotus leaf)], level: a1, unit: a1.u09, cl: 隻, topic: food }
+- { id: w.maa5-laai1-gou1, lemma: 馬拉糕, jp: maa5 laai1 gou1, pos: noun, en: [Malay sponge cake], level: a1, unit: a1.u09, cl: 件, topic: food }
+- { id: w.lau4-saa1-baau1, lemma: 流沙包, jp: lau4 saa1 baau1, pos: noun, en: [custard lava bun], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.zuk1, lemma: 粥, jp: zuk1, pos: noun, en: [congee, rice porridge], level: a1, unit: a1.u09, cl: 碗, topic: food }
+- { id: w.min6, lemma: 麵, jp: min6, pos: noun, en: [noodles], level: a1, unit: a1.u09, cl: 碗, topic: food }
+- { id: w.wan4-tan1-min6, lemma: 雲吞麵, jp: wan4 tan1 min6, pos: noun, en: [wonton noodles], level: a1, unit: a1.u09, cl: 碗, topic: food }
+- { id: w.wan4-tan1, lemma: 雲吞, jp: wan4 tan1, pos: noun, en: [wonton], level: a1, unit: a1.u09, cl: 粒, topic: food }
+- { id: w.jyu4-daan2, lemma: 魚蛋, jp: jyu4 daan2, pos: noun, en: [fish ball], level: a1, unit: a1.u09, cl: 粒, topic: food }
+- { id: w.baau1.b, lemma: 包, jp: baau1, pos: noun, en: [bun, steamed bun], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.min6-baau1, lemma: 麵包, jp: min6 baau1, pos: noun, en: [bread], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.bo1-lo4-baau1, lemma: 菠蘿包, jp: bo1 lo4 baau1, pos: noun, en: [pineapple bun], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.caau2-faan6, lemma: 炒飯, jp: caau2 faan6, pos: noun, en: [fried rice], level: a1, unit: a1.u09, cl: 碟, topic: food }
+- { id: w.caau2-min6, lemma: 炒麵, jp: caau2 min6, pos: noun, en: [fried noodles], level: a1, unit: a1.u09, cl: 碟, topic: food }
+- { id: w.faan6-hap2, lemma: 飯盒, jp: faan6 hap2, pos: noun, en: [boxed meal, lunch box], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.tong1, lemma: 湯, jp: tong1, pos: noun, en: [soup], level: a1, unit: a1.u09, cl: 碗, topic: food }
+- { id: w.zou2-caan1, lemma: 早餐, jp: zou2 caan1, pos: noun, en: [breakfast], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.ng5-caan1, lemma: 午餐, jp: ng5 caan1, pos: noun, en: [lunch], level: a1, unit: a1.u09, cl: 個, topic: food }
+- { id: w.maan5-faan6, lemma: 晚飯, jp: maan5 faan6, pos: noun, en: [dinner, supper], level: a1, unit: a1.u09, cl: 餐, topic: food }
+- { id: w.caan1, lemma: 餐, jp: caan1, pos: classifier, en: [for meals], level: a1, unit: a1.u09, notes: "一餐飯 \"a meal\"." }
+- { id: w.dip2, lemma: 碟, jp: dip2, pos: classifier, en: [a plate of], level: a1, unit: a1.u09, notes: "一碟炒麵." }
+- { id: w.lung4, lemma: 籠, jp: lung4, pos: classifier, en: [a steamer basket of], level: a1, unit: a1.u09, notes: "一籠蝦餃." }
+- { id: w.wu4, lemma: 壺, jp: wu4, pos: classifier, en: [a pot of], level: a1, unit: a1.u09, notes: "一壺茶." }
+- { id: w.faai3-zi2, lemma: 筷子, jp: faai3 zi2, pos: noun, en: [chopsticks], level: a1, unit: a1.u09, cl: 對, topic: food }
+- { id: w.ci4-gang1, lemma: 匙羹, jp: ci4 gang1, pos: noun, en: [spoon], level: a1, unit: a1.u09, cl: 隻, topic: food }
+- { id: w.dou1.b, lemma: 刀, jp: dou1, pos: noun, en: [knife], level: a1, unit: a1.u09, cl: 把, topic: food }
+- { id: w.caa1, lemma: 叉, jp: caa1, pos: noun, en: [fork], level: a1, unit: a1.u09, cl: 隻, topic: food }
+- { id: w.coi3-daan1, lemma: 菜單, jp: coi3 daan1, pos: noun, en: [menu], level: a1, unit: a1.u09, cl: 張, topic: food }
+- { id: w.caan1-paai2, lemma: 餐牌, jp: caan1 paai2, pos: noun, en: [menu (in cafés)], level: a1, unit: a1.u09, cl: 張, topic: food }
+- { id: w.daan1, lemma: 單, jp: daan1, pos: noun, en: [bill, receipt, order slip], level: a1, unit: a1.u09, cl: 張, topic: money }
+- { id: w.maai4-daan1, lemma: 埋單, jp: maai4 daan1, pos: verb, en: [to pay the bill], level: a1, unit: a1.u09, topic: money, notes: "唔該埋單！ \"The bill, please!\"" }
+- { id: w.fo2-gei3, lemma: 伙記, jp: fo2 gei3, pos: noun, en: [waiter, staff], level: a1, unit: a1.u09, cl: 個, topic: jobs }
+- { id: w.bei2, lemma: 畀, jp: bei2, pos: verb, en: [to give, to let], level: a1, unit: a1.u09, notes: "畀杯茶我 \"Give me a cup of tea\". Written 畀 (not 俾)." }
+- { id: w.zung1-ji3, lemma: 鍾意, jp: zung1 ji3, pos: verb, en: [to like, to love], level: a1, unit: a1.u09, topic: feelings }
+- { id: w.hou2-sik6, lemma: 好食, jp: hou2 sik6, pos: adj, en: [tasty, delicious (food)], level: a1, unit: a1.u09, topic: food }
+- { id: w.hou2-jam2, lemma: 好飲, jp: hou2 jam2, pos: adj, en: [tasty (drink)], level: a1, unit: a1.u09, topic: drink }
+- { id: w.naan4-sik6, lemma: 難食, jp: naan4 sik6, pos: adj, en: [tastes bad], level: a1, unit: a1.u09, topic: food }
+- { id: w.tou5-ngo6, lemma: 肚餓, jp: tou5 ngo6, pos: adj, en: [hungry], level: a1, unit: a1.u09, topic: feelings }
+- { id: w.geng2-hot3, lemma: 頸渴, jp: geng2 hot3, pos: adj, en: [thirsty], level: a1, unit: a1.u09, topic: feelings }
+- { id: w.baau2, lemma: 飽, jp: baau2, pos: adj, en: [full (after eating)], level: a1, unit: a1.u09, topic: feelings }
+- { id: w.tim4, lemma: 甜, jp: tim4, pos: adj, en: [sweet], level: a1, unit: a1.u09, topic: food }
+- { id: w.haam4, lemma: 鹹, jp: haam4, pos: adj, en: [salty], level: a1, unit: a1.u09, topic: food }
+- { id: w.laat6, lemma: 辣, jp: laat6, pos: adj, en: [spicy, hot], level: a1, unit: a1.u09, topic: food }
+- { id: w.syun1.b, lemma: 酸, jp: syun1, pos: adj, en: [sour], level: a1, unit: a1.u09, topic: food }
+- { id: w.fu2, lemma: 苦, jp: fu2, pos: adj, en: [bitter], level: a1, unit: a1.u09, topic: food }
+- { id: w.zau2.b, lemma: 走, jp: zau2, pos: verb, en: [to leave, to run, to go without (走冰 no ice)], level: a1, unit: a1.u09, topic: verbs-motion }
+- { id: w.bing1, lemma: 冰, jp: bing1, pos: noun, en: [ice], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.zau2-bing1, lemma: 走冰, jp: zau2 bing1, pos: phrase, en: [no ice], level: a1, unit: a1.u09, topic: drink }
+- { id: w.gaa1, lemma: 加, jp: gaa1, pos: verb, en: [to add], level: a1, unit: a1.u09, topic: verbs-daily }
+- { id: w.laa1, lemma: 啦, jp: laa1, pos: particle, en: [suggestion / request particle], level: a1, unit: a1.u09, notes: "食啦！ \"Eat!\"; 好啦 \"OK then\". Softens commands." }
+- { id: w.tim1, lemma: 添, jp: tim1, pos: particle, en: [as well, in addition, even (sentence-final)], level: a1, unit: a1.u09, notes: "要多杯茶添 \"one more tea, too\"." }
+- { id: w.zing1, lemma: 蒸, jp: zing1, pos: verb, en: [to steam], level: a1, unit: a1.u09, topic: food }
+- { id: w.caau2, lemma: 炒, jp: caau2, pos: verb, en: [to stir-fry], level: a1, unit: a1.u09, topic: food }
+- { id: w.siu1, lemma: 燒, jp: siu1, pos: verb, en: [to roast, to burn], level: a1, unit: a1.u09, topic: food }
+- { id: w.wai2.b, lemma: 位, jp: wai2, pos: noun, en: [seat, place], level: a1, unit: a1.u09, cl: 個, notes: "幾位？ \"How many people?\" 有冇位？ \"Any seats?\"" }
+- { id: w.dang2-wai2, lemma: 等位, jp: dang2 wai2, pos: verb, en: [to wait for a table], level: a1, unit: a1.u09, topic: food }
+- { id: w.ling1, lemma: 拎, jp: ling1, pos: verb, en: [to take, to bring, to carry], level: a1, unit: a1.u09, topic: verbs-daily }
+- { id: w.ceng2, lemma: 請, jp: ceng2, pos: verb, en: [to treat (pay for someone), to invite], level: a1, unit: a1.u09, topic: relationships, notes: "我請！ \"My treat!\"" }
+- { id: w.caa4-lau4, lemma: 茶樓, jp: caa4 lau4, pos: noun, en: [teahouse, dim sum restaurant], level: a1, unit: a1.u09, cl: 間, topic: food }
+- { id: w.haak3-jan4, lemma: 客人, jp: haak3 jan4, pos: noun, en: [customer, guest], level: a1, unit: a1.u09, cl: 個, topic: jobs }
+- { id: w.faai3-caan1, lemma: 快餐, jp: faai3 caan1, pos: noun, en: [fast food], level: a1, unit: a1.u09, topic: food, tags: [mass] }
+- { id: w.ning4-caa2, lemma: 檸茶, jp: ning4 caa2, pos: noun, en: [lemon tea (short)], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.dung3-jam2, lemma: 凍飲, jp: dung3 jam2, pos: noun, en: [cold drink], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.sai2-sau2, lemma: 洗手, jp: sai2 sau2, pos: verb, en: ["to wash one's hands"], level: a1, unit: a1.u09, topic: verbs-daily }
+- { id: w.dung3-ning4-caa2, lemma: 凍檸茶, jp: dung3 ning4 caa2, pos: noun, en: [iced lemon tea], level: a1, unit: a1.u09, topic: drink, tags: [mass] }
+- { id: w.dou1-hou2, lemma: 都好, jp: dou1 hou2, pos: phrase, en: [either is fine, also good], level: a1, unit: a1.u09, tags: [passive] }
+# ---------------------------------------------------------------- a1.u10 Directions and the MTR
+- { id: w.gong2-tit3, lemma: 港鐵, jp: gong2 tit3, pos: noun, en: [MTR (Hong Kong metro)], level: a1, unit: a1.u10, topic: transport, tags: [mass] }
+- { id: w.dei6-tit3, lemma: 地鐵, jp: dei6 tit3, pos: noun, en: [underground, subway], level: a1, unit: a1.u10, topic: transport, tags: [mass] }
+- { id: w.zaam6, lemma: 站, jp: zaam6, pos: noun, en: [station, stop], level: a1, unit: a1.u10, cl: 個, topic: transport }
+- { id: w.ce1-zaam6, lemma: 車站, jp: ce1 zaam6, pos: noun, en: [station, bus stop], level: a1, unit: a1.u10, cl: 個, topic: transport }
+- { id: w.baa1-si2, lemma: 巴士, jp: baa1 si2, pos: noun, en: [bus], level: a1, unit: a1.u10, cl: 架, topic: transport }
+- { id: w.baa1-si2-zaam6, lemma: 巴士站, jp: baa1 si2 zaam6, pos: noun, en: [bus stop], level: a1, unit: a1.u10, cl: 個, topic: transport }
+- { id: w.siu2-baa1, lemma: 小巴, jp: siu2 baa1, pos: noun, en: [minibus], level: a1, unit: a1.u10, cl: 架, topic: transport }
+- { id: w.dik1-si2, lemma: 的士, jp: dik1 si2, pos: noun, en: [taxi], level: a1, unit: a1.u10, cl: 架, topic: transport }
+- { id: w.din6-ce1, lemma: 電車, jp: din6 ce1, pos: noun, en: [tram], level: a1, unit: a1.u10, cl: 架, topic: transport }
+- { id: w.ding1-ding1, lemma: 叮叮, jp: ding1 ding1, pos: noun, en: [tram (nickname)], level: a1, unit: a1.u10, cl: 架, topic: transport }
+- { id: w.syun4, lemma: 船, jp: syun4, pos: noun, en: [boat, ship], level: a1, unit: a1.u10, cl: 隻, topic: transport }
+- { id: w.siu2-leon4, lemma: 小輪, jp: siu2 leon4, pos: noun, en: [ferry], level: a1, unit: a1.u10, cl: 隻, topic: transport }
+- { id: w.laam6-ce1, lemma: 纜車, jp: laam6 ce1, pos: noun, en: [cable car, Peak Tram], level: a1, unit: a1.u10, cl: 架, topic: transport }
+- { id: w.fo2-ce1, lemma: 火車, jp: fo2 ce1, pos: noun, en: [train], level: a1, unit: a1.u10, cl: 架, topic: transport }
+- { id: w.daan1-ce1, lemma: 單車, jp: daan1 ce1, pos: noun, en: [bicycle], level: a1, unit: a1.u10, cl: 架, topic: transport }
+- { id: w.sin3, lemma: 線, jp: sin3, pos: noun, en: [line (MTR line)], level: a1, unit: a1.u10, cl: 條, topic: transport }
+- { id: w.ceot1-hau2, lemma: 出口, jp: ceot1 hau2, pos: noun, en: [exit], level: a1, unit: a1.u10, cl: 個, topic: directions }
+- { id: w.jap6-hau2, lemma: 入口, jp: jap6 hau2, pos: noun, en: [entrance], level: a1, unit: a1.u10, cl: 個, topic: directions }
+- { id: w.zyun3-ce1, lemma: 轉車, jp: zyun3 ce1, pos: verb, en: [to change trains or buses], level: a1, unit: a1.u10, topic: transport }
+- { id: w.co5, lemma: 坐, jp: co5, pos: verb, en: [to sit, to take (transport)], level: a1, unit: a1.u10, topic: transport }
+- { id: w.daap3.b, lemma: 搭, jp: daap3, pos: verb, en: [to take (transport), to catch], level: a1, unit: a1.u10, topic: transport }
+- { id: w.soeng5-ce1, lemma: 上車, jp: soeng5 ce1, pos: verb, en: [to get on (a vehicle)], level: a1, unit: a1.u10, topic: transport }
+- { id: w.lok6-ce1, lemma: 落車, jp: lok6 ce1, pos: verb, en: [to get off (a vehicle)], level: a1, unit: a1.u10, topic: transport }
+- { id: w.zaa1-ce1, lemma: 揸車, jp: zaa1 ce1, pos: verb, en: [to drive (a car)], level: a1, unit: a1.u10, topic: transport }
+- { id: w.haang4-lou6, lemma: 行路, jp: haang4 lou6, pos: verb, en: [to walk, to go on foot], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.haang4, lemma: 行, jp: haang4, pos: verb, en: [to walk, to go], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.heoi3, lemma: 去, jp: heoi3, pos: verb, en: [to go], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.lai4, lemma: 嚟, jp: lai4, pos: verb, en: [to come], level: a1, unit: a1.u10, topic: verbs-motion, notes: "Often lei4 in speech." }
+- { id: w.faan1, lemma: 返, jp: faan1, pos: verb, en: [to return, to go back to], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.dou3.b, lemma: 到, jp: dou3, pos: verb, en: [to arrive, to reach], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.gwo3, lemma: 過, jp: gwo3, pos: verb, en: [to cross, to pass], level: a1, unit: a1.u10, topic: verbs-motion, notes: "過海 \"cross the harbour\". Also the aspect particle 過 (A2)." }
+- { id: w.gwo3-maa5-lou6, lemma: 過馬路, jp: gwo3 maa5 lou6, pos: verb, en: [to cross the road], level: a1, unit: a1.u10, topic: directions }
+- { id: w.lok6, lemma: 落, jp: lok6, pos: verb, en: [to go down, to get off, "to put in (salt, sugar)"], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.soeng5, lemma: 上, jp: soeng5, pos: verb, en: [to go up, to get on], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.zo2, lemma: 左, jp: zo2, pos: noun, en: [left], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.jau6, lemma: 右, jp: jau6, pos: noun, en: [right], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.zo2-bin1, lemma: 左邊, jp: zo2 bin1, pos: noun, en: [left side, on the left], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.jau6-bin1, lemma: 右邊, jp: jau6 bin1, pos: noun, en: [right side, on the right], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.cin4-min6, lemma: 前面, jp: cin4 min6, pos: noun, en: [in front, ahead], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.hau6-min6, lemma: 後面, jp: hau6 min6, pos: noun, en: [behind, at the back], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.soeng6-min6, lemma: 上面, jp: soeng6 min6, pos: noun, en: [above, on top], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.haa6-min6, lemma: 下面, jp: haa6 min6, pos: noun, en: [below, underneath], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.jap6-min6, lemma: 入面, jp: jap6 min6, pos: noun, en: [inside], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.ceot1-min6, lemma: 出面, jp: ceot1 min6, pos: noun, en: [outside], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.gaak3-lei4, lemma: 隔籬, jp: gaak3 lei4, pos: noun, en: [next door, next to], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.deoi3-min6, lemma: 對面, jp: deoi3 min6, pos: noun, en: [opposite, across from], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.zung1-gaan1, lemma: 中間, jp: zung1 gaan1, pos: noun, en: [in the middle, between], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.pong4-bin1, lemma: 旁邊, jp: pong4 bin1, pos: noun, en: [beside], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.fu6-gan6, lemma: 附近, jp: fu6 gan6, pos: noun, en: [nearby, vicinity], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.bin1.b, lemma: 邊, jp: bin1, pos: noun, en: [side], level: a1, unit: a1.u10, tags: [passive, mass], notes: "呢邊 \"this side\", 嗰邊 \"that side\"." }
+- { id: w.ni1-bin1, lemma: 呢邊, jp: ni1 bin1, pos: pron, en: [this way, this side], level: a1, unit: a1.u10, topic: directions }
+- { id: w.go2-bin1, lemma: 嗰邊, jp: go2 bin1, pos: pron, en: [that way, over there], level: a1, unit: a1.u10, topic: directions }
+- { id: w.zik6-haang4, lemma: 直行, jp: zik6 haang4, pos: verb, en: [to go straight on], level: a1, unit: a1.u10, topic: directions }
+- { id: w.zyun3-zo2, lemma: 轉左, jp: zyun3 zo2, pos: verb, en: [to turn left], level: a1, unit: a1.u10, topic: directions }
+- { id: w.zyun3-jau6, lemma: 轉右, jp: zyun3 jau6, pos: verb, en: [to turn right], level: a1, unit: a1.u10, topic: directions }
+- { id: w.zyun3, lemma: 轉, jp: zyun3, pos: verb, en: [to turn], level: a1, unit: a1.u10, topic: directions }
+- { id: w.jyun5, lemma: 遠, jp: jyun5, pos: adj, en: [far], level: a1, unit: a1.u10, topic: directions }
+- { id: w.kan5, lemma: 近, jp: kan5, pos: adj, en: [near, close], level: a1, unit: a1.u10, topic: directions }
+- { id: w.gaai1, lemma: 街, jp: gaai1, pos: noun, en: [street], level: a1, unit: a1.u10, cl: 條, topic: city }
+- { id: w.lou6, lemma: 路, jp: lou6, pos: noun, en: [road, way], level: a1, unit: a1.u10, cl: 條, topic: city }
+- { id: w.maa5-lou6, lemma: 馬路, jp: maa5 lou6, pos: noun, en: [road, street], level: a1, unit: a1.u10, cl: 條, topic: city }
+- { id: w.dei6-tou4, lemma: 地圖, jp: dei6 tou4, pos: noun, en: [map], level: a1, unit: a1.u10, cl: 張, topic: travel }
+- { id: w.mai4-lou6, lemma: 迷路, jp: mai4 lou6, pos: verb, en: [to get lost], level: a1, unit: a1.u10, topic: travel }
+- { id: w.man6-lou6, lemma: 問路, jp: man6 lou6, pos: verb, en: [to ask the way], level: a1, unit: a1.u10, topic: travel }
+- { id: w.man6, lemma: 問, jp: man6, pos: verb, en: [to ask], level: a1, unit: a1.u10, topic: verbs-speech }
+- { id: w.sai2-sau2-gaan1, lemma: 洗手間, jp: sai2 sau2 gaan1, pos: noun, en: [toilet, restroom], level: a1, unit: a1.u10, cl: 間, topic: city }
+- { id: w.ci3-so2, lemma: 廁所, jp: ci3 so2, pos: noun, en: [toilet], level: a1, unit: a1.u10, cl: 間, topic: city }
+- { id: w.gung1-jyun2, lemma: 公園, jp: gung1 jyun2, pos: noun, en: [park], level: a1, unit: a1.u10, cl: 個, topic: city }
+- { id: w.ji1-jyun2, lemma: 醫院, jp: ji1 jyun2, pos: noun, en: [hospital], level: a1, unit: a1.u10, cl: 間, topic: city }
+- { id: w.hoi2, lemma: 海, jp: hoi2, pos: noun, en: [sea], level: a1, unit: a1.u10, topic: nature, tags: [mass] }
+- { id: w.hoi2-bin1, lemma: 海邊, jp: hoi2 bin1, pos: noun, en: [seaside, by the sea], level: a1, unit: a1.u10, topic: nature, tags: [mass] }
+- { id: w.saan1.b, lemma: 山, jp: saan1, pos: noun, en: [hill, mountain], level: a1, unit: a1.u10, cl: 座, topic: nature }
+- { id: w.saan1-deng2, lemma: 山頂, jp: saan1 deng2, pos: noun, en: [mountaintop, the Peak], level: a1, unit: a1.u10, cl: 個, topic: nature }
+- { id: w.dung1, lemma: 東, jp: dung1, pos: noun, en: [east], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.naam4, lemma: 南, jp: naam4, pos: noun, en: [south], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.sai1, lemma: 西, jp: sai1, pos: noun, en: [west], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.bak1, lemma: 北, jp: bak1, pos: noun, en: [north], level: a1, unit: a1.u10, topic: directions, tags: [mass] }
+- { id: w.gwo3-hoi2, lemma: 過海, jp: gwo3 hoi2, pos: verb, en: [to cross the harbour], level: a1, unit: a1.u10, topic: transport }
+- { id: w.zim1-saa1-zeoi2, lemma: 尖沙咀, jp: zim1 saa1 zeoi2, pos: noun, en: [Tsim Sha Tsui], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.wong6-gok3, lemma: 旺角, jp: wong6 gok3, pos: noun, en: [Mong Kok], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.gam1-zung1, lemma: 金鐘, jp: gam1 zung1, pos: noun, en: [Admiralty], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.bak1-gok3, lemma: 北角, jp: bak1 gok3, pos: noun, en: [North Point], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.gin1-nei4-dei6-sing4, lemma: 堅尼地城, jp: gin1 nei4 dei6 sing4, pos: noun, en: [Kennedy Town], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.zak1-jyu4-cung1, lemma: 鰂魚涌, jp: zak1 jyu4 cung1, pos: noun, en: [Quarry Bay], level: a1, unit: a1.u10, tags: [name, passive] }
+- { id: w.paau2-maa5-dei2, lemma: 跑馬地, jp: paau2 maa5 dei2, pos: noun, en: [Happy Valley], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.cek3-cyu5, lemma: 赤柱, jp: cek3 cyu5, pos: noun, en: [Stanley], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.hoeng1-gong2-zai2, lemma: 香港仔, jp: hoeng1 gong2 zai2, pos: noun, en: [Aberdeen], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.tin1-sing1-siu2-leon4, lemma: 天星小輪, jp: tin1 sing1 siu2 leon4, pos: noun, en: [Star Ferry], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.wai4-do1-lei6-aa3-gong2, lemma: 維多利亞港, jp: wai4 do1 lei6 aa3 gong2, pos: noun, en: [Victoria Harbour], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.wai4-gong2, lemma: 維港, jp: wai4 gong2, pos: noun, en: [Victoria Harbour (short)], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.taai3-ping4-saan1, lemma: 太平山, jp: taai3 ping4 saan1, pos: noun, en: [Victoria Peak], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.hoi2-joeng4-gung1-jyun2, lemma: 海洋公園, jp: hoi2 joeng4 gung1 jyun2, pos: noun, en: [Ocean Park], level: a1, unit: a1.u10, tags: [name] }
+- { id: w.jiu3.b, lemma: 要, jp: jiu3, pos: adv, en: [need to, have to, will take (time)], level: a1, unit: a1.u10, tags: [passive], notes: "要幾耐？ \"How long does it take?\"" }
+- { id: w.gei2-noi6, lemma: 幾耐, jp: gei2 noi6, pos: pron, en: [how long], level: a1, unit: a1.u10, topic: time }
+- { id: w.noi6, lemma: 耐, jp: noi6, pos: adj, en: [long (time)], level: a1, unit: a1.u10, topic: time }
+- { id: w.daai6-koi3, lemma: 大概, jp: daai6 koi3, pos: adv, en: [about, roughly, probably], level: a1, unit: a1.u10, topic: quantity }
+- { id: w.caa1-m4-do1, lemma: 差唔多, jp: caa1 m4 do1, pos: adv, en: [almost, about, more or less], level: a1, unit: a1.u10, topic: quantity }
+- { id: w.jat1-zik6, lemma: 一直, jp: jat1 zik6, pos: adv, en: [straight, all along, all the time], level: a1, unit: a1.u10, topic: directions }
+- { id: w.zau6-faai3, lemma: 就快, jp: zau6 faai3, pos: adv, en: [soon, about to], level: a1, unit: a1.u10, topic: time, notes: "就快到喇！ \"We're nearly there!\"" }
+- { id: w.gan1-zyu6, lemma: 跟住, jp: gan1 zyu6, pos: verb, en: [to follow], level: a1, unit: a1.u10, topic: verbs-motion, notes: "跟住我！ \"Follow me!\" Also \"then, next\" (A1 u11)." }
+- { id: w.wan2, lemma: 搵, jp: wan2, pos: verb, en: [to look for, to find, to use (搵…嚟…)], level: a1, unit: a1.u10, topic: verbs-daily }
+- { id: w.mun4-hau2, lemma: 門口, jp: mun4 hau2, pos: noun, en: [doorway, entrance], level: a1, unit: a1.u10, cl: 個, topic: directions }
+- { id: w.lou6-hau2, lemma: 路口, jp: lou6 hau2, pos: noun, en: [junction, street corner], level: a1, unit: a1.u10, cl: 個, topic: directions }
+- { id: w.faan1-lai4, lemma: 返嚟, jp: faan1 lai4, pos: verb, en: [to come back], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.jap6-heoi3, lemma: 入去, jp: jap6 heoi3, pos: verb, en: [to go in], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.ceot1-heoi3, lemma: 出去, jp: ceot1 heoi3, pos: verb, en: [to go out], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.jap6-lai4, lemma: 入嚟, jp: jap6 lai4, pos: verb, en: [to come in], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.zau6-lai4, lemma: 就嚟, jp: zau6 lai4, pos: adv, en: [soon, about to, nearly], level: a1, unit: a1.u10, topic: time }
+- { id: w.ze3-ze3, lemma: 借借, jp: ze3 ze3, pos: phrase, en: [excuse me (let me through)], level: a1, unit: a1.u10, topic: greetings }
+- { id: w.siu2-sam1, lemma: 小心, jp: siu2 sam1, pos: verb, en: [to be careful, watch out], level: a1, unit: a1.u10, topic: verbs-daily }
+- { id: w.ce1-fai3, lemma: 車費, jp: ce1 fai3, pos: noun, en: [fare], level: a1, unit: a1.u10, topic: transport, tags: [mass] }
+- { id: w.fei1, lemma: 飛, jp: fei1, pos: noun, en: [ticket], level: a1, unit: a1.u10, cl: 張, topic: transport }
+- { id: w.jau4-haak3, lemma: 遊客, jp: jau4 haak3, pos: noun, en: [tourist], level: a1, unit: a1.u10, cl: 個, topic: travel }
+- { id: w.gin3-dou2, lemma: 見到, jp: gin3 dou2, pos: verb, en: [to see, to catch sight of], level: a1, unit: a1.u10, topic: verbs-daily }
+- { id: w.lau4-haa6, lemma: 樓下, jp: lau4 haa6, pos: noun, en: [downstairs, below the building], level: a1, unit: a1.u10, topic: house, tags: [mass] }
+# ---------------------------------------------------------------- a1.u11 My daily routine
+- { id: w.hei2-san1, lemma: 起身, jp: hei2 san1, pos: verb, en: [to get up], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.fan3-gaau3, lemma: 瞓覺, jp: fan3 gaau3, pos: verb, en: [to sleep, to go to bed], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.fan3, lemma: 瞓, jp: fan3, pos: verb, en: [to sleep, to lie down], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.caat3-ngaa4, lemma: 刷牙, jp: caat3 ngaa4, pos: verb, en: ["to brush one's teeth"], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.sai2-min6, lemma: 洗面, jp: sai2 min6, pos: verb, en: ["to wash one's face"], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.cung1-loeng4, lemma: 沖涼, jp: cung1 loeng4, pos: verb, en: [to shower, to bathe], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.sai2, lemma: 洗, jp: sai2, pos: verb, en: [to wash], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.zoek3-saam1, lemma: 着衫, jp: zoek3 saam1, pos: verb, en: [to get dressed], level: a1, unit: a1.u11, topic: clothing }
+- { id: w.zoek3, lemma: 着, jp: zoek3, pos: verb, en: [to wear, to put on], level: a1, unit: a1.u11, topic: clothing }
+- { id: w.faan1-gung1, lemma: 返工, jp: faan1 gung1, pos: verb, en: [to go to work, to be at work], level: a1, unit: a1.u11, topic: work }
+- { id: w.fong3-gung1, lemma: 放工, jp: fong3 gung1, pos: verb, en: [to finish work], level: a1, unit: a1.u11, topic: work }
+- { id: w.faan1-hok6, lemma: 返學, jp: faan1 hok6, pos: verb, en: [to go to school], level: a1, unit: a1.u11, topic: school }
+- { id: w.fong3-hok6, lemma: 放學, jp: fong3 hok6, pos: verb, en: [to finish school], level: a1, unit: a1.u11, topic: school }
+- { id: w.faan1-uk1-kei2, lemma: 返屋企, jp: faan1 uk1 kei2, pos: verb, en: [to go home], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.ceot1-gaai1, lemma: 出街, jp: ceot1 gaai1, pos: verb, en: [to go out], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.haang4-gaai1, lemma: 行街, jp: haang4 gaai1, pos: verb, en: [to go shopping, to stroll around], level: a1, unit: a1.u11, topic: shopping }
+- { id: w.zyu2-faan6, lemma: 煮飯, jp: zyu2 faan6, pos: verb, en: [to cook, to make a meal], level: a1, unit: a1.u11, topic: food }
+- { id: w.zyu2, lemma: 煮, jp: zyu2, pos: verb, en: [to cook, to boil], level: a1, unit: a1.u11, topic: food }
+- { id: w.zou6-gung1-fo3, lemma: 做功課, jp: zou6 gung1 fo3, pos: verb, en: [to do homework], level: a1, unit: a1.u11, topic: school }
+- { id: w.gung1-fo3, lemma: 功課, jp: gung1 fo3, pos: noun, en: [homework], level: a1, unit: a1.u11, topic: school, tags: [mass] }
+- { id: w.soeng5-tong4, lemma: 上堂, jp: soeng5 tong4, pos: verb, en: [to go to class, to have a lesson], level: a1, unit: a1.u11, topic: school }
+- { id: w.tong4, lemma: 堂, jp: tong4, pos: classifier, en: [for lessons and classes], level: a1, unit: a1.u11, notes: "一堂廣東話 \"a Cantonese lesson\"." }
+- { id: w.soeng5-mong5, lemma: 上網, jp: soeng5 mong5, pos: verb, en: [to go online], level: a1, unit: a1.u11, topic: tech }
+- { id: w.daa2-gei1, lemma: 打機, jp: daa2 gei1, pos: verb, en: [to play video games], level: a1, unit: a1.u11, topic: tech }
+- { id: w.teng1, lemma: 聽, jp: teng1, pos: verb, en: [to listen, to hear], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.teng1-go1, lemma: 聽歌, jp: teng1 go1, pos: verb, en: [to listen to music], level: a1, unit: a1.u11, topic: arts }
+- { id: w.go1, lemma: 歌, jp: go1, pos: noun, en: [song], level: a1, unit: a1.u11, cl: 首, topic: arts }
+- { id: w.sau2, lemma: 首, jp: sau2, pos: classifier, en: [for songs and poems], level: a1, unit: a1.u11, notes: "一首歌." }
+- { id: w.tai2-syu1, lemma: 睇書, jp: tai2 syu1, pos: verb, en: [to read (books), to study], level: a1, unit: a1.u11, topic: school }
+- { id: w.tai2-din6-si6, lemma: 睇電視, jp: tai2 din6 si6, pos: verb, en: [to watch TV], level: a1, unit: a1.u11, topic: media }
+- { id: w.wan6-dung6, lemma: 運動, jp: wan6 dung6, pos: noun, en: [sport, exercise], level: a1, unit: a1.u11, topic: sport, tags: [mass] }
+- { id: w.zou6-wan6-dung6, lemma: 做運動, jp: zou6 wan6 dung6, pos: verb, en: [to exercise, to do sport], level: a1, unit: a1.u11, topic: sport }
+- { id: w.paau2-bou6, lemma: 跑步, jp: paau2 bou6, pos: verb, en: [to run, to jog], level: a1, unit: a1.u11, topic: sport }
+- { id: w.jau4-seoi2, lemma: 游水, jp: jau4 seoi2, pos: verb, en: [to swim], level: a1, unit: a1.u11, topic: sport }
+- { id: w.saan3-bou6, lemma: 散步, jp: saan3 bou6, pos: verb, en: [to take a walk], level: a1, unit: a1.u11, topic: sport }
+- { id: w.jau1-sik1, lemma: 休息, jp: jau1 sik1, pos: verb, en: [to rest], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.gui6, lemma: 攰, jp: gui6, pos: adj, en: [tired], level: a1, unit: a1.u11, topic: feelings }
+- { id: w.ngaan5-fan3, lemma: 眼瞓, jp: ngaan5 fan3, pos: adj, en: [sleepy], level: a1, unit: a1.u11, topic: feelings }
+- { id: w.sin1.b, lemma: 先, jp: sin1, pos: adv, en: [first], level: a1, unit: a1.u11, topic: connectors, notes: "我先沖涼，再食早餐." }
+- { id: w.zoi3, lemma: 再, jp: zoi3, pos: adv, en: [then, again], level: a1, unit: a1.u11, topic: connectors }
+- { id: w.gan1-zyu6.b, lemma: 跟住, jp: gan1 zyu6, pos: conj, en: [then, next, after that], level: a1, unit: a1.u11, topic: connectors }
+- { id: w.jin4-hau6, lemma: 然後, jp: jin4 hau6, pos: conj, en: [then, afterwards], level: a1, unit: a1.u11, topic: connectors }
+- { id: w.si4-hau6, lemma: 時候, jp: si4 hau6, pos: noun, en: [time, moment], level: a1, unit: a1.u11, topic: time, tags: [mass], notes: "……嘅時候 \"when ...\"." }
+- { id: w.tung1-soeng4, lemma: 通常, jp: tung1 soeng4, pos: adv, en: [usually], level: a1, unit: a1.u11, topic: time }
+- { id: w.seng4-jat6, lemma: 成日, jp: seng4 jat6, pos: adv, en: [often, always, all day], level: a1, unit: a1.u11, topic: time }
+- { id: w.jau5-si4, lemma: 有時, jp: jau5 si4, pos: adv, en: [sometimes], level: a1, unit: a1.u11, topic: time }
+- { id: w.gaan3-zung1, lemma: 間中, jp: gaan3 zung1, pos: adv, en: [occasionally, now and then], level: a1, unit: a1.u11, topic: time }
+- { id: w.hou2-siu2, lemma: 好少, jp: hou2 siu2, pos: adv, en: [rarely, seldom], level: a1, unit: a1.u11, topic: time }
+- { id: w.jat6-jat6, lemma: 日日, jp: jat6 jat6, pos: adv, en: [every day], level: a1, unit: a1.u11, topic: time }
+- { id: w.mui5-jat6, lemma: 每日, jp: mui5 jat6, pos: adv, en: [every day, daily], level: a1, unit: a1.u11, topic: time }
+- { id: w.maan5-maan5, lemma: 晚晚, jp: maan5 maan5, pos: adv, en: [every night], level: a1, unit: a1.u11, topic: time }
+- { id: w.ci3, lemma: 次, jp: ci3, pos: classifier, en: [time, occurrence], level: a1, unit: a1.u11, notes: "一個禮拜兩次 \"twice a week\"." }
+- { id: w.haa5.b, lemma: 下, jp: haa5, pos: classifier, en: ["(a single) time", a go], level: a1, unit: a1.u11, notes: "敲一下門 \"knock once\"; 一下 \"once, a moment\"." }
+- { id: w.cyu4-fong2, lemma: 廚房, jp: cyu4 fong2, pos: noun, en: [kitchen], level: a1, unit: a1.u11, cl: 個, topic: house }
+- { id: w.faai3.b, lemma: 快, jp: faai3, pos: adj, en: [fast, quick], level: a1, unit: a1.u11, topic: adjectives-things }
+- { id: w.maan6.b, lemma: 慢, jp: maan6, pos: adj, en: [slow], level: a1, unit: a1.u11, topic: adjectives-things }
+- { id: w.maan6-maan2, lemma: 慢慢, jp: maan6 maan2, pos: adv, en: [slowly], level: a1, unit: a1.u11, topic: adjectives-things }
+- { id: w.zik1-hak1, lemma: 即刻, jp: zik1 hak1, pos: adv, en: [at once, immediately], level: a1, unit: a1.u11, topic: time }
+- { id: w.jau6.b, lemma: 又, jp: jau6, pos: adv, en: [again, also, both...and], level: a1, unit: a1.u11, topic: connectors, notes: "又平又靚 \"cheap and nice\"." }
+- { id: w.zung6, lemma: 仲, jp: zung6, pos: adv, en: [still, even more, also], level: a1, unit: a1.u11, topic: connectors }
+- { id: w.ji5-ging1, lemma: 已經, jp: ji5 ging1, pos: adv, en: [already], level: a1, unit: a1.u11, topic: time }
+- { id: w.gung1, lemma: 工, jp: gung1, pos: noun, en: [work, job], level: a1, unit: a1.u11, cl: 份, topic: work }
+- { id: w.sik6-aan3, lemma: 食晏, jp: sik6 aan3, pos: verb, en: [to have lunch], level: a1, unit: a1.u11, topic: food }
+- { id: w.sik6-zou2-caan1, lemma: 食早餐, jp: sik6 zou2 caan1, pos: verb, en: [to have breakfast], level: a1, unit: a1.u11, topic: food }
+- { id: w.sik6-maan5-faan6, lemma: 食晚飯, jp: sik6 maan5 faan6, pos: verb, en: [to have dinner], level: a1, unit: a1.u11, topic: food }
+- { id: w.haang4-saan1, lemma: 行山, jp: haang4 saan1, pos: verb, en: [to go hiking], level: a1, unit: a1.u11, topic: sport }
+- { id: w.caai2-daan1-ce1, lemma: 踩單車, jp: caai2 daan1 ce1, pos: verb, en: [to ride a bike], level: a1, unit: a1.u11, topic: sport }
+- { id: w.gin6-san1, lemma: 健身, jp: gin6 san1, pos: verb, en: [to work out, to go to the gym], level: a1, unit: a1.u11, topic: sport }
+- { id: w.gin6-san1-sat1, lemma: 健身室, jp: gin6 san1 sat1, pos: noun, en: [gym], level: a1, unit: a1.u11, cl: 間, topic: sport }
+- { id: w.jam1-ngok6, lemma: 音樂, jp: jam1 ngok6, pos: noun, en: [music], level: a1, unit: a1.u11, topic: arts, tags: [mass] }
+- { id: w.tai2-hei3, lemma: 睇戲, jp: tai2 hei3, pos: verb, en: [to see a film, to go to the cinema], level: a1, unit: a1.u11, topic: media }
+- { id: w.din6-jing2, lemma: 電影, jp: din6 jing2, pos: noun, en: [film, movie], level: a1, unit: a1.u11, cl: 套, topic: media }
+- { id: w.tou3, lemma: 套, jp: tou3, pos: classifier, en: ["for films, sets and suits"], level: a1, unit: a1.u11, notes: "一套戲." }
+- { id: w.san1-man4, lemma: 新聞, jp: san1 man4, pos: noun, en: [news], level: a1, unit: a1.u11, topic: media, tags: [mass] }
+- { id: w.jau4-hei3, lemma: 遊戲, jp: jau4 hei3, pos: noun, en: [game], level: a1, unit: a1.u11, cl: 個, topic: sport }
+- { id: w.jeng4, lemma: 贏, jp: jeng4, pos: verb, en: [to win], level: a1, unit: a1.u11, topic: sport }
+- { id: w.gaa1-jau2, lemma: 加油, jp: gaa1 jau2, pos: interj, en: ["come on!", "keep it up!"], level: a1, unit: a1.u11, topic: feelings }
+- { id: w.hoi1-wui2, lemma: 開會, jp: hoi1 wui2, pos: verb, en: [to have a meeting], level: a1, unit: a1.u11, topic: work }
+- { id: w.cung4-loi4, lemma: 從來, jp: cung4 loi4, pos: adv, en: [always, ever (從來唔 = never)], level: a1, unit: a1.u11, topic: time, notes: "我從來唔食辣 \"I never eat spicy food\"." }
+- { id: w.zeoi3-hau6, lemma: 最後, jp: zeoi3 hau6, pos: adv, en: [finally, in the end], level: a1, unit: a1.u11, topic: connectors }
+- { id: w.ni1-paai2, lemma: 呢排, jp: ni1 paai2, pos: noun, en: [these days, lately], level: a1, unit: a1.u11, topic: time, tags: [mass] }
+- { id: w.nam2, lemma: 諗, jp: nam2, pos: verb, en: [to think], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.daa2-hoi1, lemma: 打開, jp: daa2 hoi1, pos: verb, en: [to open], level: a1, unit: a1.u11, topic: verbs-daily }
+- { id: w.maan6-di1, lemma: 慢啲, jp: maan6 di1, pos: adv, en: [more slowly], level: a1, unit: a1.u11, topic: time }
+- { id: w.faai3-di1, lemma: 快啲, jp: faai3 di1, pos: adv, en: [quickly, hurry up], level: a1, unit: a1.u11, topic: time }
+# ---------------------------------------------------------------- a1.u12 The weather and describing things
+- { id: w.tin1-hei3, lemma: 天氣, jp: tin1 hei3, pos: noun, en: [weather], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.tin1, lemma: 天, jp: tin1, pos: noun, en: [sky, day], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.nyun5, lemma: 暖, jp: nyun5, pos: adj, en: [warm], level: a1, unit: a1.u12, topic: weather }
+- { id: w.loeng4.b, lemma: 涼, jp: loeng4, pos: adj, en: [cool], level: a1, unit: a1.u12, topic: weather }
+- { id: w.sap1, lemma: 濕, jp: sap1, pos: adj, en: [wet, humid], level: a1, unit: a1.u12, topic: weather }
+- { id: w.gon1, lemma: 乾, jp: gon1, pos: adj, en: [dry], level: a1, unit: a1.u12, topic: weather }
+- { id: w.ai3, lemma: 翳, jp: ai3, pos: adj, en: [muggy, stuffy], level: a1, unit: a1.u12, topic: weather }
+- { id: w.guk6, lemma: 焗, jp: guk6, pos: adj, en: [stuffy, hot and airless], level: a1, unit: a1.u12, topic: weather }
+- { id: w.lok6-jyu5, lemma: 落雨, jp: lok6 jyu5, pos: verb, en: [to rain], level: a1, unit: a1.u12, topic: weather }
+- { id: w.jyu5, lemma: 雨, jp: jyu5, pos: noun, en: [rain], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.ceot1-taai3-joeng4, lemma: 出太陽, jp: ceot1 taai3 joeng4, pos: verb, en: [to be sunny], level: a1, unit: a1.u12, topic: weather }
+- { id: w.taai3-joeng4, lemma: 太陽, jp: taai3 joeng4, pos: noun, en: [sun], level: a1, unit: a1.u12, cl: 個, topic: weather }
+- { id: w.fung1, lemma: 風, jp: fung1, pos: noun, en: [wind], level: a1, unit: a1.u12, cl: 陣, topic: weather }
+- { id: w.daai6-fung1, lemma: 大風, jp: daai6 fung1, pos: adj, en: [windy], level: a1, unit: a1.u12, topic: weather }
+- { id: w.daa2-fung1, lemma: 打風, jp: daa2 fung1, pos: verb, en: [to have a typhoon], level: a1, unit: a1.u12, topic: weather }
+- { id: w.toi4-fung1, lemma: 颱風, jp: toi4 fung1, pos: noun, en: [typhoon], level: a1, unit: a1.u12, cl: 個, topic: weather }
+- { id: w.wan4, lemma: 雲, jp: wan4, pos: noun, en: [cloud], level: a1, unit: a1.u12, cl: 嚿, topic: weather }
+- { id: w.gau6.b, lemma: 嚿, jp: gau6, pos: classifier, en: [a lump of, a chunk of], level: a1, unit: a1.u12, notes: "一嚿雲, 一嚿肉." }
+- { id: w.haang4-leoi4, lemma: 行雷, jp: haang4 leoi4, pos: verb, en: [to thunder], level: a1, unit: a1.u12, topic: weather }
+- { id: w.tin1-man4-toi4, lemma: 天文台, jp: tin1 man4 toi4, pos: noun, en: [the Observatory (weather service)], level: a1, unit: a1.u12, topic: weather, tags: [name] }
+- { id: w.dou6.b, lemma: 度, jp: dou6, pos: classifier, en: [degree (temperature)], level: a1, unit: a1.u12, topic: weather, notes: "三十度 \"30 degrees\"." }
+- { id: w.ceon1-tin1, lemma: 春天, jp: ceon1 tin1, pos: noun, en: [spring], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.haa6-tin1, lemma: 夏天, jp: haa6 tin1, pos: noun, en: [summer], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.cau1-tin1, lemma: 秋天, jp: cau1 tin1, pos: noun, en: [autumn], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.dung1-tin1, lemma: 冬天, jp: dung1 tin1, pos: noun, en: [winter], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.gwai3-zit3, lemma: 季節, jp: gwai3 zit3, pos: noun, en: [season], level: a1, unit: a1.u12, cl: 個, topic: weather }
+- { id: w.ngaan4-sik1, lemma: 顏色, jp: ngaan4 sik1, pos: noun, en: [colour], level: a1, unit: a1.u12, cl: 隻, topic: colours }
+- { id: w.hung4-sik1, lemma: 紅色, jp: hung4 sik1, pos: noun, en: [red], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.wong4-sik1, lemma: 黃色, jp: wong4 sik1, pos: noun, en: [yellow], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.laam4-sik1, lemma: 藍色, jp: laam4 sik1, pos: noun, en: [blue], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.luk6-sik1, lemma: 綠色, jp: luk6 sik1, pos: noun, en: [green], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.baak6-sik1, lemma: 白色, jp: baak6 sik1, pos: noun, en: [white], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.hak1-sik1, lemma: 黑色, jp: hak1 sik1, pos: noun, en: [black], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.fui1-sik1, lemma: 灰色, jp: fui1 sik1, pos: noun, en: [grey], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.fe1-sik1, lemma: 啡色, jp: fe1 sik1, pos: noun, en: [brown], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.fan2-hung4-sik1, lemma: 粉紅色, jp: fan2 hung4 sik1, pos: noun, en: [pink], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.caang2-sik1, lemma: 橙色, jp: caang2 sik1, pos: noun, en: [orange (colour)], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.zi2-sik1, lemma: 紫色, jp: zi2 sik1, pos: noun, en: [purple], level: a1, unit: a1.u12, topic: colours, tags: [mass] }
+- { id: w.taai3, lemma: 太, jp: taai3, pos: adv, en: [too, excessively], level: a1, unit: a1.u12, topic: quantity }
+- { id: w.fei1-soeng4, lemma: 非常, jp: fei1 soeng4, pos: adv, en: [extremely, very], level: a1, unit: a1.u12, topic: quantity }
+- { id: w.jau5-di1, lemma: 有啲, jp: jau5 di1, pos: adv, en: [a bit, somewhat], level: a1, unit: a1.u12, topic: quantity, notes: "有啲凍 \"a bit cold\"." }
+- { id: w.gam3, lemma: 咁, jp: gam3, pos: adv, en: [so, such], level: a1, unit: a1.u12, topic: quantity, notes: "咁熱！ \"So hot!\"" }
+- { id: w.zan1-hai6, lemma: 真係, jp: zan1 hai6, pos: adv, en: [really, truly], level: a1, unit: a1.u12 }
+- { id: w.hou2-ci5, lemma: 好似, jp: hou2 ci5, pos: verb, en: [to seem, to be like], level: a1, unit: a1.u12, notes: "好似會落雨 \"it looks like rain\"." }
+- { id: w.wui5, lemma: 會, jp: wui5, pos: verb, en: [will, would, be likely to], level: a1, unit: a1.u12, notes: "聽日會落雨 \"It will rain tomorrow.\"" }
+- { id: w.syu1-fuk6, lemma: 舒服, jp: syu1 fuk6, pos: adj, en: [comfortable], level: a1, unit: a1.u12, topic: feelings }
+- { id: w.san1-fu2, lemma: 辛苦, jp: san1 fu2, pos: adj, en: [hard, tough, unwell], level: a1, unit: a1.u12, topic: feelings }
+- { id: w.wu1-zou1, lemma: 污糟, jp: wu1 zou1, pos: adj, en: [dirty], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.gon1-zeng6, lemma: 乾淨, jp: gon1 zeng6, pos: adj, en: [clean], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.cou4, lemma: 嘈, jp: cou4, pos: adj, en: [noisy], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.zing6, lemma: 靜, jp: zing6, pos: adj, en: [quiet], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.hou2-tai2, lemma: 好睇, jp: hou2 tai2, pos: adj, en: [good-looking, nice to watch], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.naan4-tai2, lemma: 難睇, jp: naan4 tai2, pos: adj, en: [ugly], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.dak6-bit6, lemma: 特別, jp: dak6 bit6, pos: adj, en: [special, especially], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.ji6.b, lemma: 易, jp: ji6, pos: adj, en: [easy], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.naan4, lemma: 難, jp: naan4, pos: adj, en: [difficult, hard], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.gou1-lau4, lemma: 高樓, jp: gou1 lau4, pos: noun, en: [high-rise, tall building], level: a1, unit: a1.u12, cl: 座, topic: city }
+- { id: w.hoi2-taan1, lemma: 海灘, jp: hoi2 taan1, pos: noun, en: [beach], level: a1, unit: a1.u12, cl: 個, topic: nature }
+- { id: w.syu6, lemma: 樹, jp: syu6, pos: noun, en: [tree], level: a1, unit: a1.u12, cl: 棵, topic: nature }
+- { id: w.faa1, lemma: 花, jp: faa1, pos: noun, en: [flower], level: a1, unit: a1.u12, cl: 枝, topic: nature }
+- { id: w.cou2, lemma: 草, jp: cou2, pos: noun, en: [grass], level: a1, unit: a1.u12, topic: nature, tags: [mass] }
+- { id: w.hung1-hei3, lemma: 空氣, jp: hung1 hei3, pos: noun, en: [air], level: a1, unit: a1.u12, topic: nature, tags: [mass] }
+- { id: w.laang5-hei3, lemma: 冷氣, jp: laang5 hei3, pos: noun, en: [air conditioning], level: a1, unit: a1.u12, topic: house, tags: [mass] }
+- { id: w.daai3, lemma: 帶, jp: daai3, pos: verb, en: [to bring, to take (with you)], level: a1, unit: a1.u12, topic: verbs-daily }
+- { id: w.gei3-dak1, lemma: 記得, jp: gei3 dak1, pos: verb, en: [to remember], level: a1, unit: a1.u12, topic: verbs-daily }
+- { id: w.m4-gei3-dak1, lemma: 唔記得, jp: m4 gei3 dak1, pos: verb, en: [to forget], level: a1, unit: a1.u12, topic: verbs-daily }
+- { id: w.laa3, lemma: 喇, jp: laa3, pos: particle, en: [change of state, now (sentence-final)], level: a1, unit: a1.u12, notes: "落雨喇！ \"It's started raining!\"" }
+- { id: w.gaa3.b, lemma: 㗎, jp: gaa3, pos: particle, en: [assertion / explanation particle], level: a1, unit: a1.u12, notes: "好平㗎 \"It's cheap, you know\"." }
+- { id: w.aa1, lemma: 吖, jp: aa1, pos: particle, en: ["friendly particle (offers, agreement)"], level: a1, unit: a1.u12, notes: "好吖！ \"Sure!\"" }
+- { id: w.ai3-guk6, lemma: 翳焗, jp: ai3 guk6, pos: adj, en: [hot and stuffy, muggy], level: a1, unit: a1.u12, topic: weather }
+- { id: w.mou6, lemma: 霧, jp: mou6, pos: noun, en: [fog, mist], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.baat3-hou6-fung1-kau4, lemma: 八號風球, jp: baat3 hou6 fung1 kau4, pos: noun, en: [typhoon signal No. 8], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.hak1-jyu5, lemma: 黑雨, jp: hak1 jyu5, pos: noun, en: [black rainstorm (warning)], level: a1, unit: a1.u12, topic: weather, tags: [mass] }
+- { id: w.waai6, lemma: 壞, jp: waai6, pos: adj, en: [broken, bad], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.daai6-seng1, lemma: 大聲, jp: daai6 seng1, pos: adj, en: [loud], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.sai3-seng1, lemma: 細聲, jp: sai3 seng1, pos: adj, en: [quiet, softly], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.ceot1-meng2, lemma: 出名, jp: ceot1 meng2, pos: adj, en: [famous], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.sai1-lei6, lemma: 犀利, jp: sai1 lei6, pos: adj, en: [awesome, formidable], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.ging6, lemma: 勁, jp: ging6, pos: adj, en: [amazing, great, strong], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.zeng3, lemma: 正, jp: zeng3, pos: adj, en: [great, excellent], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.caa1.b, lemma: 差, jp: caa1, pos: adj, en: [poor, bad, lacking], level: a1, unit: a1.u12, topic: adjectives-things, notes: "差少少 \"just a bit off\"." }
+- { id: w.wong1-wong1, lemma: 汪汪, jp: wong1 wong1, pos: interj, en: [woof woof], level: a1, unit: a1.u12, topic: animals }
+- { id: w.ciu4-sap1, lemma: 潮濕, jp: ciu4 sap1, pos: adj, en: [humid], level: a1, unit: a1.u12, topic: weather }

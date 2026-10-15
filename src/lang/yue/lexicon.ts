@@ -128,6 +128,8 @@ export function validateReading(lemma: string, jp: string): string[] {
     const sameBase = r.some((x) => x.replace(/[1-6]$/, '') === base)
     // Changed tones (變調): a syllable may rise to tone 2 or 1 in compounds (陳太 taai2, 膠袋 doi2).
     if (sameBase && /[12]$/.test(sy)) return
+    // Reduplicated kin terms lower the first syllable to tone 4 (爸爸 baa4 baa1, 哥哥 go4 go1).
+    if (sameBase && /4$/.test(sy) && chars[i + 1] === c) return
     // Sentence-final particles carry many tones (呀 aa1/aa3/aa4, 啦 laa1/laa3).
     if (sameBase && PARTICLES.has(c)) return
     issues.push(`${c} is read ${r.join('/')}, not ${sy}`)
