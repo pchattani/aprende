@@ -1,0 +1,39 @@
+# Words treated as known at every level (function words), and proper nouns / place names
+# that may appear in any text. Used by the content checker and the journey test.
+always: [
+  # articles and contractions of a/de/em/por + article or demonstrative
+  a, o, as, os, um, uma, uns, umas,
+  ao, aos, à, às, do, da, dos, das, no, na, nos, nas, num, numa, nuns, numas, dum, duma,
+  pelo, pela, pelos, pelas, deste, desta, desse, dessa, disso, disto, neste, nesta, nesse, nessa, nisso, nisto, naquele, naquela, daquele, daquela, àquele, àquela,
+  # prepositions and conjunctions
+  de, em, por, para, pra, com, sem, até, desde, sobre, entre, contra, após,
+  e, ou, mas, nem, que, se, como, porque, quando, onde,
+  # pronouns and possessives
+  eu, você, vocês, ele, ela, eles, elas, nós, me, te, lhe, lhes, mim, comigo, contigo, conosco, dele, dela, deles, delas,
+  meu, minha, meus, minhas, seu, sua, seus, suas, nosso, nossa, nossos, nossas,
+  este, esta, estes, estas, esse, essa, esses, essas, aquele, aquela, aqueles, aquelas, isto, isso, aquilo,
+  # very common verb forms
+  é, são, tem, têm, há, está, estão, fica, ficam, vai, vão,
+  # question words, adverbs, quantifiers
+  quê, qual, quais, quem, quanto, quanta, quantos, quantas,
+  não, sim, já, mais, menos, muito, muita, muitos, muitas, pouco, pouca, bem, mal, tão, também, só, ainda,
+  aqui, ali, lá, aí, cá, todo, toda, todos, todas, cada, outro, outra, outros, outras,
+  # very common nouns, as in the Spanish course
+  casa, mar, rio, ilha, dia, ano, anos,
+  ]
+# Common nouns and forms allowed in A1 stop facts beyond the A1 word list.
+facts: [
+  aeroporto, avião, aviões, barca, barco, ponte, bonde, bondinho, metrô, trem, ônibus,
+  cidade, bairro, rua, ruas, praça, praia, praias, morro, floresta, cachoeiras, árvores, plantas, palmeiras, macacos, pássaros, ondas,
+  museu, igreja, teatro, estádio, estátua, prédio, calçadão, azulejos, centro, parque, jardim,
+  pessoas, artistas, músico, música, samba, futebol, ópera, balé, concertos, bares,
+  metros, km, mil, milhares, milhões, século, nome, mundo, vista, pôr, sol, palmas, disco, voador,
+  famoso, famosa, antigo, antiga, antigos, antigas, alto, altas, coloridos, dentro, lado, cima, fim,
+  abre, chegam, jogam, plantam, batem, leva, parece, vêm, vê,
+  ]
+# Proper nouns and place names (they may appear in lowercase inside compounds or titles).
+names: [
+  Brasil, Portugal, Rio, Rio de Janeiro, São Paulo, Minas Gerais, Bahia, Amazonas, Amazônia, Pará, Lisboa, Porto,
+  Copacabana, Ipanema, Corcovado, Galeão, Guanabara, Niterói, Tijuca, Lapa, Maracanã, Cinelândia, Santa Teresa,
+  Leo, Bonchita, Luna, Tom Jobim, Oscar Niemeyer, Selarón, Flamengo, Fluminense, Pelé,
+  ]

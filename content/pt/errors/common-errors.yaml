@@ -1,0 +1,222 @@
+# Learner-error patterns for the writing checker. Patterns are JavaScript
+# regexes applied case-insensitively (flags "giu") to the lowercased text. Keep
+# them tight to avoid false positives. JavaScript's \b only knows ASCII letters,
+# so next to accented letters use (?<!\p{L}) and (?!\p{L}) as word boundaries.
+# Grammar ids are linked separately once the grammar notes exist.
+rules:
+  # ---- ser, estar, ter
+  - id: ser-age
+    pattern: '(?<!\p{L})(eu sou|sou|você é|ele é|ela é|somos|eles são|elas são) (\d+|dois|duas|três|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|quinze|vinte|trinta|quarenta|cinquenta|sessenta|setenta|oitenta|noventa) anos(?! (mais|menos|atrás|depois))(?!\p{L})'
+    message: Age is expressed with ter, not ser.
+    example: { wrong: eu sou 20 anos, right: eu tenho 20 anos }
+  - id: quantos-anos-ser
+    pattern: '(?<!\p{L})quantos anos (você é|é você|és tu|tu és|ele é|ela é)(?!\p{L})'
+    message: Ask someone's age with ter.
+    example: { wrong: quantos anos você é?, right: quantos anos você tem? }
+  - id: ser-estado
+    pattern: '(?<!\p{L})(eu sou|sou|somos) (cansad[oa]s?|chatead[oa]s?|com (fome|sede|frio|calor|sono|medo|pressa))(?!\p{L})'
+    message: Temporary states and feelings take estar (or estar com), not ser.
+    example: { wrong: sou cansado, right: estou cansado }
+  - id: estar-fome
+    pattern: '(?<!\p{L})(estou|está|estás|estamos|estão) (fome|sede|sono|medo|pressa|saudade|saudades)(?!\p{L})'
+    message: Hunger, thirst, sleepiness, fear and hurry use estar com (or ter) + noun.
+    example: { wrong: estou fome, right: estou com fome }
+  - id: ser-de-acordo
+    pattern: '(?<!\p{L})(sou|é|és|somos|são) de acordo(?!\p{L})(?! com)'
+    message: Agreement is estar de acordo, or simply concordar.
+    example: { wrong: sou de acordo, right: estou de acordo }
+  - id: estar-evento
+    pattern: '(?<!\p{L})(a festa|o show|o jogo|a reunião|o casamento|a aula|o concerto|a prova|o exame) (está|estava) (às|amanhã|hoje à noite|no (sábado|domingo)|na (segunda|terça|quarta|quinta|sexta))(?!\p{L})'
+    message: The time or place of an event takes ser, not estar.
+    example: { wrong: a festa está no sábado, right: a festa é no sábado }
+  # ---- contractions
+  - id: em-o
+    pattern: '(?<!\p{L})em (o|a|os|as)(?!\p{L})(?! gente)'
+    message: em + article contracts to no, na, nos, nas.
+    example: { wrong: moro em o Rio, right: moro no Rio }
+  - id: de-o
+    pattern: '(?<!(antes|depois|apesar|além|fato|caso|vez|hora|tempo) )(?<!\p{L})de (o|a|os|as)(?!\p{L})(?! gente)'
+    message: de + article contracts to do, da, dos, das.
+    example: { wrong: a casa de a Ana, right: a casa da Ana }
+  - id: a-o
+    pattern: '(?<!\p{L})a (o|os)(?!\p{L})'
+    message: a + o contracts to ao (a + os → aos).
+    example: { wrong: vou a o cinema, right: vou ao cinema }
+  - id: a-a-crase
+    pattern: '(?<!\p{L})a (a|as)(?!\p{L})(?! gente)'
+    message: a + a contracts to à (crase); a + as → às.
+    example: { wrong: vou a a praia, right: vou à praia }
+  - id: por-o
+    pattern: '(?<!\p{L})por (o|a|os|as)(?!\p{L})(?! gente)'
+    message: por + article contracts to pelo, pela, pelos, pelas.
+    example: { wrong: obrigado por o presente, right: obrigado pelo presente }
+  - id: em-demonstrativo
+    pattern: '(?<!\p{L})em (este|esta|estes|estas|esse|essa|esses|essas|aquele|aquela|aqueles|aquelas|isto|isso|aquilo)(?!\p{L})'
+    message: em + demonstrative contracts (neste, nessa, naquele, nisso).
+    example: { wrong: em este hotel, right: neste hotel }
+  - id: de-demonstrativo
+    pattern: '(?<!(antes|depois|apesar|além|fato|caso|vez|hora|tempo) )(?<!\p{L})de (este|esta|estes|estas|esse|essa|esses|essas|aquele|aquela|aqueles|aquelas|isto|isso|aquilo|ele|ela|eles|elas)(?!\p{L})'
+    message: de + demonstrative or pronoun contracts (deste, disso, dele, delas).
+    example: { wrong: o carro de ele, right: o carro dele }
+  # ---- Spanish interference
+  - id: es-muy
+    pattern: '(?<!\p{L})muy(?!\p{L})'
+    message: “Very” is muito in Portuguese (muy is Spanish).
+    example: { wrong: muy bom, right: muito bom }
+  - id: es-mucho
+    pattern: '(?<!\p{L})much(o|a|os|as)(?!\p{L})'
+    message: “A lot / many” is muito, muita, muitos, muitas (mucho is Spanish).
+    example: { wrong: mucho obrigado, right: muito obrigado }
+  - id: es-pero
+    pattern: '(?<!\p{L})pero(?!\p{L})'
+    message: “But” is mas (or porém); pero is Spanish.
+    example: { wrong: "é caro, pero bom", right: "é caro, mas bom" }
+  - id: es-tambien
+    pattern: '(?<!\p{L})tambi[eé]n(?!\p{L})'
+    message: “Also” is também, with a final m.
+    example: { wrong: eu también, right: eu também }
+  - id: es-y
+    pattern: '(?<=\p{L} )y(?= \p{L})'
+    message: “And” is e in Portuguese; y is Spanish.
+    example: { wrong: arroz y feijão, right: arroz e feijão }
+  - id: es-articles
+    pattern: '(?<![\p{L}-])(el|los|las)(?![\p{L}-])'
+    message: Portuguese articles are o, a, os, as (el, los, las are Spanish).
+    example: { wrong: el carro, right: o carro }
+  - id: es-hay
+    pattern: '(?<!\p{L})hay(?!\p{L})'
+    message: “There is / there are” is tem (Brazil, informal) or há; hay is Spanish.
+    example: { wrong: hay um banco aqui?, right: tem um banco aqui? }
+  - id: es-cion
+    pattern: '(?<!\p{L})\p{L}+ci[oó]n(es)?(?!\p{L})'
+    message: Spanish -ción is -ção in Portuguese (plural -ções).
+    example: { wrong: la estación, right: a estação }
+  - id: es-dad
+    pattern: '(?<!\p{L})\p{L}+dad(es)?(?!\p{L})'
+    message: Spanish -dad is -dade in Portuguese (cidade, universidade).
+    example: { wrong: a ciudad, right: a cidade }
+  - id: es-enye
+    pattern: '\p{L}*ñ\p{L}*'
+    message: Portuguese writes the ñ sound as nh (espanhol, amanhã).
+    example: { wrong: mañana, right: amanhã }
+  - id: es-pronouns
+    pattern: '(?<!\p{L})(yo|nosotros|nosotras|ustedes|usted)(?!\p{L})'
+    message: Portuguese pronouns are eu, nós, vocês, você (or o senhor / a senhora).
+    example: { wrong: yo moro aqui, right: eu moro aqui }
+  - id: es-verbs
+    pattern: '(?<!\p{L})(soy|estoy|tengo|tienes|tiene|quiero|puedo|hablo|hablar|llamo)(?!\p{L})'
+    message: This is a Spanish verb form; Portuguese uses sou, estou, tenho, tem, quero, posso, falo, falar, chamo.
+    example: { wrong: tengo fome, right: tenho fome }
+  - id: es-adverbs
+    pattern: '(?<!\p{L})(hasta|entonces|ahora|bueno|buena|buenos|gracias|hace)(?!\p{L})'
+    message: Spanish word; Portuguese uses até, então, agora, bom/boa, obrigado/obrigada, faz.
+    example: { wrong: hasta logo, right: até logo }
+  - id: es-ir-a
+    pattern: '(?<!\p{L})(vou|vais|vai|vamos|vão) a (comer|fazer|ver|sair|estudar|trabalhar|comprar|visitar|viajar|dormir|beber|ler|escrever|falar|jogar|cozinhar|tomar|chegar|pagar|ligar|ter|ser|estar)(?!\p{L})'
+    message: The near future is ir + infinitive with no a (Spanish uses ir a).
+    example: { wrong: vou a comer, right: vou comer }
+  # ---- comparatives and quantity
+  - id: mais-bom
+    pattern: '(?<!\p{L})mais (bom|boa|bons|boas)(?!\p{L})'
+    message: The comparative of bom is melhor.
+    example: { wrong: mais bom, right: melhor }
+  - id: mais-mau
+    pattern: '(?<!\p{L})mais (mau|má|maus|más|ruim|ruins)(?!\p{L})'
+    message: The comparative of mau / ruim is pior.
+    example: { wrong: mais ruim, right: pior }
+  - id: mais-grande
+    pattern: '(?<!\p{L})mais grandes?(?!\p{L})'
+    message: The comparative of grande is maior.
+    example: { wrong: mais grande, right: maior }
+  - id: mais-pequeno
+    pattern: '(?<!\p{L})mais pequen[oa]s?(?!\p{L})'
+    message: In Brazil the comparative of pequeno is menor (mais pequeno is used in Portugal).
+    example: { wrong: mais pequeno, right: menor }
+  - id: menas
+    pattern: '(?<!\p{L})menas(?!\p{L})'
+    message: menos never changes for gender.
+    example: { wrong: menas pessoas, right: menos pessoas }
+  - id: meia-adverbio
+    pattern: '(?<!\p{L})meia (cansada|triste|chateada|nervosa|preocupada|confusa|perdida|atrasada|cheia|doente)s?(?!\p{L})'
+    message: Meaning “a bit”, meio is an adverb and does not change for gender.
+    example: { wrong: ela está meia cansada, right: ela está meio cansada }
+  # ---- verbs and prepositions
+  - id: gostar-sem-de
+    pattern: '(?<!(o|um|bom|mau|meu|seu|teu|pelo|do|no|de|com|por|que|mesmo) )(?<!\p{L})(gosto|gostas|gosta|gostamos|gostam|gostei|gostou|gostava|gostavam|gostar|gostaria) (muito )?(o|a|os|as|um|uma|isso|isto|ele|ela|eles|elas|você|vocês)(?!\p{L})(?! gente)'
+    message: gostar always takes de (gosto do, gosto da, gosto disso, gosto dele).
+    example: { wrong: eu gosto o Rio, right: eu gosto do Rio }
+  - id: gostar-infinitivo
+    pattern: '(?<!(o|um|bom|mau|meu|seu|teu|pelo|do|no|de|com|por|que|mesmo) )(?<!\p{L})(gosto|gostas|gosta|gostamos|gostam|gostava|gostaria) (comer|beber|dançar|ler|viajar|nadar|cozinhar|correr|cantar|jogar|estudar|trabalhar|ver|ouvir|andar|sair|dormir|falar|assistir)(?!\p{L})'
+    message: gostar + infinitive needs de.
+    example: { wrong: gosto dançar, right: gosto de dançar }
+  - id: se-eu-ter
+    level: b1
+    pattern: '(?<!\p{L})(se|quando|assim que|logo que) (eu|você|ele|ela|a gente) (ter|ser|estar|fazer|poder|ir|saber|querer|dizer|trazer|ver)(?!\p{L})'
+    message: After se / quando about the future, use the future subjunctive (tiver, for, estiver, fizer, puder, souber, quiser, disser, trouxer, vir).
+    example: { wrong: se eu ter tempo, right: se eu tiver tempo }
+  - id: voce-tu-forms
+    pattern: '(?<!\p{L})você (tens|és|estás|vais|queres|podes|sabes|fazes|falas|gostas|moras|vens)(?!\p{L})'
+    message: você takes the third-person verb form (você tem, você é, você vai).
+    example: { wrong: você tens, right: você tem }
+  - id: a-gente-nos
+    pattern: '(?<!\p{L})a gente (somos|vamos|estamos|temos|fomos|fazemos|podemos|queremos|gostamos|moramos|falamos|sabemos)(?!\p{L})'
+    message: a gente means “we” but takes the third-person singular verb (a gente vai, a gente tem).
+    example: { wrong: a gente vamos, right: a gente vai }
+  - id: fazer-tempo
+    pattern: '(?<!\p{L})fazem (\d+|dois|duas|três|quatro|cinco|dez|muitos|muitas|vários|várias|alguns|algumas) (anos|meses|dias|semanas|horas|minutos)(?!\p{L})'
+    message: Elapsed time uses impersonal faz, always singular.
+    example: { wrong: fazem dois anos, right: faz dois anos }
+  - id: haver-plural
+    level: b1
+    pattern: '(?<!\p{L})(haviam|houveram|haverão) (muitas|muitos|várias|vários|poucas|poucos|algumas|alguns|pessoas|problemas|\d+)(?!\p{L})'
+    message: haver meaning “there is / there are” is impersonal and stays singular (havia, houve, haverá).
+    example: { wrong: haviam muitas pessoas, right: havia muitas pessoas }
+  - id: para-mim-infinitivo
+    pattern: '(?<!(difícil|fácil|importante|bom|ruim|impossível|possível|melhor|pior|normal|chato|legal|estranho) )(?<!\p{L})para mim (fazer|comer|ir|ser|ter|estar|ver|sair|falar|dizer|comprar|ler|estudar|trabalhar|entender|saber|chegar|pagar|levar|ficar)(?!\p{L})'
+    message: When “I” is the subject of the infinitive, say para eu (para eu fazer).
+    example: { wrong: ele trouxe o livro para mim ler, right: ele trouxe o livro para eu ler }
+  - id: com-mim
+    pattern: '(?<!\p{L})com (mim|ti|eu)(?!\p{L})'
+    message: com + mim / ti becomes comigo / contigo.
+    example: { wrong: você vem com mim?, right: você vem comigo? }
+  - id: jogar-instrumento
+    pattern: '(?<!\p{L})(jogo|jogas|joga|jogamos|jogam|jogar|jogava) (o |a )?(violão|guitarra|piano|bateria|flauta|violino|pandeiro|cavaquinho)(?!\p{L})'
+    message: Instruments are played with tocar; jogar is for games and sports.
+    example: { wrong: jogo violão, right: toco violão }
+  - id: tocar-esporte
+    pattern: '(?<!\p{L})(toco|tocas|toca|tocamos|tocam|tocar) (futebol|tênis|vôlei|basquete|xadrez)(?!\p{L})'
+    message: Sports and games are played with jogar; tocar is for instruments and music.
+    example: { wrong: toco futebol, right: jogo futebol }
+  - id: depender-de
+    pattern: '(?<!\p{L})(depende|dependo|dependem|depender) (em|a)(?!\p{L})'
+    message: depender takes de.
+    example: { wrong: depende em você, right: depende de você }
+  - id: realizar-perceber
+    pattern: '(?<!\p{L})(realizo|realizei|realizou|realizar|realiza|realizamos) que(?!\p{L})'
+    message: realizar means “to carry out”; for “to realise that” use perceber que or dar-se conta de que.
+    example: { wrong: realizei que estava tarde, right: percebi que estava tarde }
+  - id: perguntar-pergunta
+    pattern: '(?<!\p{L})pergunt\p{L}* uma pergunta(?!\p{L})'
+    message: You make a question with fazer (fazer uma pergunta).
+    example: { wrong: posso perguntar uma pergunta?, right: posso fazer uma pergunta? }
+  - id: nunca-nao
+    pattern: '(?<!\p{L})(nunca|ninguém|nenhum|nenhuma) não(?!\p{L})'
+    message: When the negative word comes before the verb, drop não (nunca vou; não vou nunca).
+    example: { wrong: ninguém não sabe, right: ninguém sabe }
+  - id: por-que-final
+    pattern: '(?<!\p{L})por que\s*\?'
+    message: At the end of a question, write por quê (with a circumflex).
+    example: { wrong: você não veio por que?, right: você não veio por quê? }
+  # ---- gender
+  - id: o-problema
+    pattern: '(?<!dia )(?<!\p{L})(a|uma|esta|essa|minha|sua) (problema|sistema|programa|mapa|dia|idioma|clima|tema|planeta|poema|telefonema)(?!\p{L})'
+    message: These nouns ending in -a (and dia) are masculine.
+    example: { wrong: a problema, right: o problema }
+  - id: a-viagem
+    pattern: '(?<!\p{L})(o|um|este|esse|aquele|meu|teu|seu|nosso) (viagem|mensagem|garagem|passagem|bagagem|paisagem|linguagem|coragem|imagem|origem|ponte|árvore|cor|dor|flor|análise)(?!\p{L})'
+    message: These nouns are feminine in Portuguese (many are masculine in Spanish).
+    example: { wrong: o viagem, right: a viagem }
+  - id: o-leite
+    pattern: '(?<!\p{L})(a|uma|esta|essa|minha|sua) (leite|nariz|mel|legume)(?!\p{L})'
+    message: These nouns are masculine in Portuguese (feminine in Spanish).
+    example: { wrong: a leite, right: o leite }

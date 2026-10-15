@@ -1,0 +1,732 @@
+# The journey: regions (one per level), stops (one per unit, in unit order), souvenirs.
+# Text in `es` is the target language (Brazilian Portuguese; European Portuguese in Portugal); `en` is English.
+regions:
+  - level: a1
+    name: Rio de Janeiro
+    es: A Cidade Maravilhosa
+    stops:
+      - name: Aeroporto do Galeão
+        emoji: 🛬
+        es: Olá, Brasil!
+        en: Hello, Brazil!
+        fact:
+          es: "O Aeroporto do Galeão fica no Rio. O nome dele é também Tom Jobim, um músico famoso. Aviões de todo o mundo chegam aqui. Leo, Bonchita e Luna também!"
+          en: "Galeão Airport is in Rio. Its name is also Tom Jobim, after a famous musician. Planes from all over the world arrive here. Leo, Bonchita and Luna too!"
+      - name: Copacabana
+        emoji: 🏖️
+        es: Areia e mar
+        en: Sand and sea
+        fact:
+          es: "Copacabana é um bairro do Rio. A praia tem 4 km. O calçadão tem ondas pretas e brancas. No Ano-Novo, milhões de pessoas vêm aqui."
+          en: "Copacabana is a neighbourhood of Rio. The beach is 4 km long. The promenade has black and white waves. On New Year's Eve, millions of people come here."
+      - name: Ipanema
+        emoji: 🌅
+        es: Palmas para o pôr do sol
+        en: Applause for the sunset
+        fact:
+          es: "Ipanema é um bairro ao lado de Copacabana. A música “Garota de Ipanema” é muito famosa. No fim da tarde, as pessoas batem palmas para o pôr do sol."
+          en: "Ipanema is a neighbourhood next to Copacabana. The song “The Girl from Ipanema” is very famous. At the end of the afternoon, people clap for the sunset."
+      - name: Cristo Redentor
+        emoji: 🙌
+        es: De braços abertos
+        en: With open arms
+        fact:
+          es: "O Cristo Redentor fica no alto do Corcovado. A estátua tem 30 metros e é de 1931. Lá de cima, a vista da cidade é linda."
+          en: "Christ the Redeemer is at the top of Corcovado. The statue is 30 metres tall and dates from 1931. From up there, the view of the city is beautiful."
+      - name: Pão de Açúcar
+        emoji: 🚡
+        es: Subindo de bondinho
+        en: Up by cable car
+        fact:
+          es: "O Pão de Açúcar é um morro de 396 metros. Um bondinho leva as pessoas até lá em cima. De lá, você vê a Baía de Guanabara."
+          en: "Sugarloaf Mountain is a 396-metre peak. A cable car takes people up to the top. From there, you see Guanabara Bay."
+      - name: Santa Teresa
+        emoji: 🚋
+        es: O bonde amarelo
+        en: The yellow tram
+        fact:
+          es: "Santa Teresa é um bairro no alto de um morro. Tem ruas pequenas, casas antigas e muitos artistas. Um bonde amarelo vai do Centro até o bairro."
+          en: "Santa Teresa is a neighbourhood on top of a hill. It has small streets, old houses and lots of artists. A yellow tram goes from the Centre to the neighbourhood."
+      - name: Lapa
+        emoji: 🎶
+        es: Samba na Lapa
+        en: Samba in Lapa
+        fact:
+          es: "A Lapa tem os Arcos da Lapa, brancos e muito antigos. Perto fica a Escadaria Selarón, com mais de 2 mil azulejos coloridos. À noite, tem samba nos bares."
+          en: "Lapa has the Lapa Arches, white and very old. Nearby is the Selarón Steps, with more than 2,000 colourful tiles. At night, there is samba in the bars."
+      - name: Maracanã
+        emoji: ⚽
+        es: Gol!
+        en: Goal!
+        fact:
+          es: "O Maracanã é um estádio de futebol muito famoso. Ele abre em 1950, para a Copa do Mundo. Hoje, o Flamengo e o Fluminense jogam aqui."
+          en: "The Maracanã is a very famous football stadium. It opens in 1950, for the World Cup. Today, Flamengo and Fluminense play here."
+      - name: Jardim Botânico
+        emoji: 🌴
+        es: Palmeiras e macacos
+        en: Palm trees and monkeys
+        fact:
+          es: "O Jardim Botânico do Rio é de 1808. Tem milhares de plantas e uma rua com palmeiras muito altas. Tem também macacos pequenos e muitos pássaros."
+          en: "Rio's Botanical Garden dates from 1808. It has thousands of plants and an avenue of very tall palm trees. It also has small monkeys and lots of birds."
+      - name: Theatro Municipal
+        emoji: 🎭
+        es: Uma noite no teatro
+        en: A night at the theatre
+        fact:
+          es: "O Theatro Municipal fica no Centro do Rio, na Cinelândia. Ele abre em 1909. O prédio é muito bonito. Tem ópera, balé e concertos."
+          en: "The Theatro Municipal is in the Centre of Rio, in Cinelândia. It opens in 1909. The building is very beautiful. It has opera, ballet and concerts."
+      - name: Niterói
+        emoji: 🛸
+        es: Um disco voador
+        en: A flying saucer
+        fact:
+          es: "Niterói fica do outro lado da Baía de Guanabara. Você vai de barca ou pela ponte. O MAC, um museu de Oscar Niemeyer, parece um disco voador."
+          en: "Niterói is on the other side of Guanabara Bay. You go by ferry or over the bridge. The MAC, a museum by Oscar Niemeyer, looks like a flying saucer."
+      - name: Floresta da Tijuca
+        emoji: 🌳
+        es: Tchau, Rio!
+        en: Bye, Rio!
+        fact:
+          es: "A Floresta da Tijuca é uma floresta dentro da cidade. Tem cachoeiras, macacos e muitas árvores. No século XIX, as pessoas plantam milhares de árvores aqui."
+          en: "The Tijuca Forest is a forest inside the city. It has waterfalls, monkeys and lots of trees. In the 19th century, people plant thousands of trees here."
+  - level: a2
+    name: São Paulo e o Sul
+    es: Arranha-céus, praias e cataratas
+    stops:
+      - name: Avenida Paulista
+        emoji: 🏙️
+        es: O coração de São Paulo
+        en: The heart of São Paulo
+        fact:
+          es: "A Avenida Paulista foi inaugurada em 1891 e tem cerca de 2,8 km. Lá fica o MASP, um museu de arte. Aos domingos, a avenida fecha para os carros."
+          en: "Avenida Paulista was opened in 1891 and is about 2.8 km long. The MASP, an art museum, is there. On Sundays, the avenue closes to cars."
+      - name: Mercado Municipal
+        emoji: 🥪
+        es: O sanduíche de mortadela
+        en: The mortadella sandwich
+        fact:
+          es: "O Mercado Municipal de São Paulo abriu em 1933. O prédio tem vitrais muito coloridos. Os visitantes adoram o sanduíche de mortadela e o pastel de bacalhau."
+          en: "São Paulo's Municipal Market opened in 1933. The building has very colourful stained-glass windows. Visitors love the mortadella sandwich and the salt-cod pastel."
+      - name: Liberdade
+        emoji: 🏮
+        es: Lanternas no bairro japonês
+        en: Lanterns in the Japanese quarter
+        fact:
+          es: "A Liberdade é o bairro japonês de São Paulo. Os primeiros imigrantes japoneses chegaram ao Brasil em 1908, no navio Kasato Maru. Hoje o bairro tem lanternas vermelhas nas ruas."
+          en: "Liberdade is São Paulo's Japanese neighbourhood. The first Japanese immigrants arrived in Brazil in 1908, on the ship Kasato Maru. Today the neighbourhood has red lanterns in the streets."
+      - name: Parque Ibirapuera
+        emoji: 🪁
+        es: Um domingo no parque
+        en: A Sunday in the park
+        fact:
+          es: "O Parque Ibirapuera abriu em 1954, nos 400 anos de São Paulo. Oscar Niemeyer desenhou vários prédios do parque, como a Oca. Nos fins de semana, muita gente corre e pedala lá."
+          en: "Ibirapuera Park opened in 1954, for São Paulo's 400th anniversary. Oscar Niemeyer designed several of the park's buildings, such as the Oca. At weekends, lots of people run and cycle there."
+      - name: Santos
+        emoji: ⚓
+        es: O porto e o Rei
+        en: The port and the King
+        fact:
+          es: "Santos tem um dos portos mais importantes do Brasil. Pelé jogou no Santos Futebol Clube de 1956 a 1974. A praia da cidade tem um jardim de mais de 5 km."
+          en: "Santos has one of the most important ports in Brazil. Pelé played for Santos Football Club from 1956 to 1974. The city's beachfront has a garden more than 5 km long."
+      - name: Paraty
+        emoji: 🏘️
+        es: Ruas de pedra
+        en: Stone streets
+        fact:
+          es: "Paraty é uma cidade colonial entre o mar e a montanha. No século XVIII, o ouro de Minas Gerais passava por aqui. Em 2019, Paraty virou Patrimônio Mundial da UNESCO."
+          en: "Paraty is a colonial town between the sea and the mountains. In the 18th century, gold from Minas Gerais passed through here. In 2019, Paraty became a UNESCO World Heritage Site."
+      - name: Curitiba
+        emoji: 🚌
+        es: Ônibus no tubo
+        en: Buses in tubes
+        fact:
+          es: "Curitiba é a capital do Paraná. A cidade ficou famosa pelo transporte: os ônibus param em estações em forma de tubo. O Jardim Botânico tem uma estufa de vidro e metal."
+          en: "Curitiba is the capital of Paraná. The city became famous for its transport: buses stop at tube-shaped stations. The Botanical Garden has a glass and metal greenhouse."
+      - name: Florianópolis
+        emoji: 🏝️
+        es: A Ilha da Magia
+        en: The Island of Magic
+        fact:
+          es: "Florianópolis fica quase toda numa ilha, a Ilha de Santa Catarina. Tem mais de 40 praias. A Ponte Hercílio Luz, inaugurada em 1926, liga a ilha ao continente."
+          en: "Florianópolis lies almost entirely on an island, Santa Catarina Island. It has more than 40 beaches. The Hercílio Luz Bridge, opened in 1926, links the island to the mainland."
+      - name: Foz do Iguaçu
+        emoji: 💦
+        es: As cataratas
+        en: The falls
+        fact:
+          es: "As Cataratas do Iguaçu ficam na fronteira entre o Brasil e a Argentina. São cerca de 275 quedas d’água. A Garganta do Diabo tem mais de 80 metros de altura."
+          en: "The Iguaçu Falls are on the border between Brazil and Argentina. There are about 275 waterfalls. The Devil's Throat is more than 80 metres high."
+      - name: Gramado
+        emoji: 🍫
+        es: Chocolate na serra
+        en: Chocolate in the hills
+        fact:
+          es: "Gramado fica na Serra Gaúcha. Muitos imigrantes alemães e italianos chegaram à região, e as casas lembram a Europa. O Natal Luz e o Festival de Cinema são famosos."
+          en: "Gramado is in the Serra Gaúcha. Many German and Italian immigrants came to the region, and the houses look European. The Natal Luz Christmas festival and the Film Festival are famous."
+      - name: Porto Alegre
+        emoji: 🧉
+        es: Chimarrão no Guaíba
+        en: Chimarrão by the Guaíba
+        fact:
+          es: "Porto Alegre é a capital do Rio Grande do Sul. Os gaúchos tomam chimarrão, uma bebida quente de erva-mate. O pôr do sol no Guaíba é um cartão-postal da cidade."
+          en: "Porto Alegre is the capital of Rio Grande do Sul. The gaúchos drink chimarrão, a hot drink made with yerba mate. The sunset over the Guaíba is one of the city's postcards."
+      - name: Blumenau
+        emoji: 🥨
+        es: Festa alemã no Brasil
+        en: A German party in Brazil
+        fact:
+          es: "Blumenau foi fundada em 1850 por imigrantes alemães. Desde 1984, a cidade faz a Oktoberfest em outubro, com música, dança, comida típica e desfiles pelas ruas."
+          en: "Blumenau was founded in 1850 by German immigrants. Since 1984, the city has held Oktoberfest in October, with music, dancing, traditional food and parades through the streets."
+  - level: b1
+    name: Minas Gerais e Centro-Oeste
+    es: Ouro, cerrado e pantanal
+    stops:
+      - name: Belo Horizonte
+        emoji: 🍻
+        es: A capital dos botecos
+        en: The capital of bars
+        fact:
+          es: "Belo Horizonte, capital de Minas Gerais, foi planejada e inaugurada em 1897. É conhecida pelos botecos e pela comida mineira. Na Pampulha, Oscar Niemeyer projetou a Igreja de São Francisco de Assis, com azulejos de Portinari."
+          en: "Belo Horizonte, the capital of Minas Gerais, was planned and inaugurated in 1897. It is known for its bars and Minas cooking. In Pampulha, Oscar Niemeyer designed the Church of Saint Francis of Assisi, with tiles by Portinari."
+      - name: Ouro Preto
+        emoji: ⛪
+        es: A cidade do ouro
+        en: The city of gold
+        fact:
+          es: "Ouro Preto foi capital de Minas Gerais e um centro da corrida do ouro no século XVIII. Em 1980, tornou-se o primeiro Patrimônio Mundial da UNESCO no Brasil. Aleijadinho trabalhou em várias de suas igrejas barrocas."
+          en: "Ouro Preto was the capital of Minas Gerais and a centre of the gold rush in the 18th century. In 1980 it became Brazil's first UNESCO World Heritage Site. Aleijadinho worked on several of its Baroque churches."
+      - name: Tiradentes
+        emoji: 🚂
+        es: A Maria Fumaça
+        en: The steam train
+        fact:
+          es: "Tiradentes recebeu o nome do herói da Inconfidência Mineira, executado em 1792. Hoje a cidade é conhecida pela gastronomia, por um festival de cinema e pela Maria Fumaça, um trem a vapor que vai até São João del-Rei."
+          en: "Tiradentes was named after the hero of the Minas Conspiracy, executed in 1792. Today the town is known for its food, a film festival and the Maria Fumaça, a steam train that runs to São João del-Rei."
+      - name: Inhotim
+        emoji: 🎨
+        es: Arte no meio do jardim
+        en: Art in the middle of a garden
+        fact:
+          es: "Inhotim, em Brumadinho, é um museu de arte contemporânea a céu aberto, aberto ao público em 2006. As obras ficam espalhadas por um enorme jardim botânico, com milhares de espécies de plantas."
+          en: "Inhotim, in Brumadinho, is an open-air contemporary art museum that opened to the public in 2006. The works are spread across an enormous botanical garden with thousands of plant species."
+      - name: Congonhas
+        emoji: 🗿
+        es: Os doze profetas
+        en: The twelve prophets
+        fact:
+          es: "No Santuário do Bom Jesus de Matosinhos, em Congonhas, estão os doze profetas de pedra-sabão que Aleijadinho esculpiu no início do século XIX. O santuário é Patrimônio Mundial desde 1985."
+          en: "At the Sanctuary of Bom Jesus de Matosinhos, in Congonhas, stand the twelve soapstone prophets that Aleijadinho carved at the start of the 19th century. The sanctuary has been a World Heritage Site since 1985."
+      - name: Diamantina
+        emoji: 💎
+        es: Serenatas nas sacadas
+        en: Serenades from the balconies
+        fact:
+          es: "Diamantina cresceu com a exploração de diamantes no século XVIII. É a cidade natal de Juscelino Kubitschek, o presidente que construiu Brasília. Em alguns sábados, músicos tocam nas sacadas dos casarões: é a Vesperata."
+          en: "Diamantina grew with diamond mining in the 18th century. It is the birthplace of Juscelino Kubitschek, the president who built Brasília. On some Saturdays, musicians play from the balconies of the old mansions: this is the Vesperata."
+      - name: Serra da Canastra
+        emoji: 🧀
+        es: Onde nasce o Velho Chico
+        en: Where the Old Chico is born
+        fact:
+          es: "No Parque Nacional da Serra da Canastra nasce o rio São Francisco, o Velho Chico, que atravessa vários estados até o oceano Atlântico. A região também é famosa pelo queijo canastra, feito com leite cru."
+          en: "The São Francisco river, the 'Old Chico', rises in Serra da Canastra National Park and crosses several states to the Atlantic Ocean. The region is also famous for canastra cheese, made with raw milk."
+      - name: Brasília
+        emoji: 🛩️
+        es: Uma capital desenhada
+        en: A capital on the drawing board
+        fact:
+          es: "Brasília foi inaugurada em 1960 para ser a nova capital do Brasil. Lúcio Costa fez o plano da cidade, que lembra um avião, e Oscar Niemeyer projetou prédios como o Congresso Nacional e a Catedral."
+          en: "Brasília was inaugurated in 1960 to be Brazil's new capital. Lúcio Costa drew up the city plan, which resembles an aeroplane, and Oscar Niemeyer designed buildings such as the National Congress and the Cathedral."
+      - name: Pirenópolis
+        emoji: 🐴
+        es: Cavaleiros mascarados
+        en: Masked horsemen
+        fact:
+          es: "Pirenópolis, em Goiás, foi fundada por mineradores de ouro em 1727. Na Festa do Divino acontecem as Cavalhadas, que representam batalhas entre cristãos e mouros, e desfilam os mascarados a cavalo."
+          en: "Pirenópolis, in Goiás, was founded by gold miners in 1727. During the Festa do Divino the Cavalhadas take place, re-enacting battles between Christians and Moors, and masked riders parade on horseback."
+      - name: Chapada dos Veadeiros
+        emoji: ✨
+        es: Cânions e cachoeiras
+        en: Canyons and waterfalls
+        fact:
+          es: "O Parque Nacional da Chapada dos Veadeiros, em Goiás, protege uma grande área de cerrado, a savana brasileira, com cânions, cachoeiras e rochas muito antigas. É Patrimônio Mundial desde 2001."
+          en: "Chapada dos Veadeiros National Park, in Goiás, protects a large area of cerrado, the Brazilian savanna, with canyons, waterfalls and very old rocks. It has been a World Heritage Site since 2001."
+      - name: Pantanal
+        emoji: 🐊
+        es: Jacarés e onças
+        en: Caimans and jaguars
+        fact:
+          es: "O Pantanal é a maior área úmida tropical do mundo. Na época das cheias, grande parte da região fica debaixo d’água. É um ótimo lugar para ver jacarés, capivaras, araras e onças-pintadas."
+          en: "The Pantanal is the largest tropical wetland in the world. In the flood season, much of the region is under water. It is a great place to see caimans, capybaras, macaws and jaguars."
+      - name: Bonito
+        emoji: 🐠
+        es: Flutuando entre os peixes
+        en: Floating among the fish
+        fact:
+          es: "Bonito, em Mato Grosso do Sul, tem rios de água tão transparente que dá para flutuar entre os peixes. A Gruta do Lago Azul esconde um lago de um azul intenso no fundo da caverna."
+          en: "Bonito, in Mato Grosso do Sul, has rivers so clear that you can float among the fish. The Blue Lake Grotto hides a lake of intense blue at the bottom of the cave."
+  - level: b2
+    name: Nordeste
+    es: Sol, ritmo e dunas
+    stops:
+      - name: Salvador
+        emoji: 🥁
+        es: Tambores no Pelourinho
+        en: Drums in the Pelourinho
+        fact:
+          es: "Salvador foi a primeira capital do Brasil, de 1549 a 1763. O Pelourinho, com seus casarões coloridos, é Patrimônio Mundial. A cidade é um centro da cultura afro-brasileira: capoeira, candomblé, acarajé e os tambores do Olodum."
+          en: "Salvador was Brazil's first capital, from 1549 to 1763. The Pelourinho, with its colourful mansions, is a World Heritage Site. The city is a centre of Afro-Brazilian culture: capoeira, candomblé, acarajé and the drums of Olodum."
+      - name: Chapada Diamantina
+        emoji: ⛰️
+        es: Trilhas e cachoeiras
+        en: Trails and waterfalls
+        fact:
+          es: "A Chapada Diamantina, no interior da Bahia, foi uma região de garimpo de diamantes no século XIX. Hoje atrai quem gosta de trilhas, como a do Vale do Pati, e de cachoeiras como a da Fumaça, cuja água vira névoa antes de chegar ao chão."
+          en: "The Chapada Diamantina, in inland Bahia, was a diamond-mining region in the 19th century. Today it draws hikers to trails like the Vale do Pati and to waterfalls like the Fumaça, whose water turns to mist before reaching the ground."
+      - name: Recife
+        emoji: 🌉
+        es: A Veneza brasileira
+        en: The Brazilian Venice
+        fact:
+          es: "Recife é cortada pelos rios Capibaribe e Beberibe e tem dezenas de pontes, daí o apelido de “Veneza brasileira”. No Recife Antigo fica a Kahal Zur Israel, considerada a primeira sinagoga das Américas."
+          en: "Recife is crossed by the Capibaribe and Beberibe rivers and has dozens of bridges, hence its nickname, “the Brazilian Venice”. Old Recife is home to Kahal Zur Israel, considered the first synagogue in the Americas."
+      - name: Olinda
+        emoji: 🎎
+        es: Bonecos gigantes
+        en: Giant puppets
+        fact:
+          es: "Olinda, vizinha do Recife, tem um centro histórico colonial que é Patrimônio Mundial desde 1982. No Carnaval, bonecos gigantes, alguns com mais de três metros, desfilam pelas ladeiras ao som do frevo."
+          en: "Olinda, Recife's neighbour, has a colonial historic centre that has been a World Heritage Site since 1982. At Carnival, giant puppets, some more than three metres tall, parade up and down its steep streets to the sound of frevo."
+      - name: João Pessoa
+        emoji: 🌄
+        es: Onde o sol nasce primeiro
+        en: Where the sun rises first
+        fact:
+          es: "Perto de João Pessoa fica a Ponta do Seixas, o ponto mais oriental do continente americano. Por isso, a capital da Paraíba é conhecida como a cidade onde o sol nasce primeiro."
+          en: "Near João Pessoa lies Ponta do Seixas, the easternmost point of the American mainland. That is why the capital of Paraíba is known as the city where the sun rises first."
+      - name: Natal
+        emoji: 🏜️
+        es: Dunas de buggy
+        en: Dunes by buggy
+        fact:
+          es: "Natal recebeu esse nome porque foi fundada num dia 25 de dezembro, em 1599. Perto da cidade ficam as dunas de Genipabu, onde se passeia de buggy, e o Cajueiro de Pirangi, considerado o maior cajueiro do mundo."
+          en: "Natal (Christmas) got its name because it was founded on 25 December 1599. Near the city are the Genipabu dunes, explored by buggy, and the Pirangi Cashew Tree, considered the largest cashew tree in the world."
+      - name: Fortaleza
+        emoji: ⛵
+        es: Jangadas e forró
+        en: Jangadas and forró
+        fact:
+          es: "Fortaleza, capital do Ceará, tem praias urbanas onde ainda se veem jangadas, os barcos tradicionais dos pescadores. A cidade é famosa pelo forró, pelo humor dos cearenses e pelas barracas da Praia do Futuro."
+          en: "Fortaleza, the capital of Ceará, has city beaches where you can still see jangadas, the fishermen's traditional rafts. The city is famous for forró, for the humour of the people of Ceará and for the beach shacks of Praia do Futuro."
+      - name: Jericoacoara
+        emoji: 🏄
+        es: Pôr do sol na duna
+        en: Sunset on the dune
+        fact:
+          es: "Jericoacoara era uma vila de pescadores isolada. Hoje faz parte de um parque nacional e tem ruas de areia. No fim da tarde, todo mundo sobe a Duna do Pôr do Sol, e a Pedra Furada é o seu cartão-postal."
+          en: "Jericoacoara was an isolated fishing village. Today it is part of a national park and has sand streets. In the late afternoon everyone climbs Sunset Dune, and the Pedra Furada rock arch is its postcard image."
+      - name: Lençóis Maranhenses
+        emoji: 💧
+        es: Lagoas entre as dunas
+        en: Lagoons between the dunes
+        fact:
+          es: "Nos Lençóis Maranhenses, as chuvas do início do ano formam milhares de lagoas de água doce entre dunas brancas. Elas ficam mais cheias entre junho e setembro. Em 2024, o parque se tornou Patrimônio Mundial da UNESCO."
+          en: "In the Lençóis Maranhenses, the rains at the start of the year form thousands of freshwater lagoons between white dunes. They are fullest between June and September. In 2024 the park became a UNESCO World Heritage Site."
+      - name: São Luís
+        emoji: 🐂
+        es: Bumba meu boi
+        en: Bumba meu boi
+        fact:
+          es: "São Luís, capital do Maranhão, foi fundada por franceses em 1612. O centro histórico, Patrimônio Mundial, tem centenas de casarões cobertos de azulejos portugueses. Em junho, a cidade dança o bumba meu boi."
+          en: "São Luís, the capital of Maranhão, was founded by the French in 1612. Its historic centre, a World Heritage Site, has hundreds of mansions covered in Portuguese tiles. In June, the city dances the bumba meu boi."
+      - name: Maceió
+        emoji: 🐚
+        es: Piscinas naturais
+        en: Natural pools
+        fact:
+          es: "Maceió, capital de Alagoas, é famosa pelo mar verde-azulado e pelas piscinas naturais que aparecem na maré baixa, como as da Pajuçara. Os visitantes chegam até elas de jangada."
+          en: "Maceió, the capital of Alagoas, is famous for its turquoise sea and the natural pools that appear at low tide, like those at Pajuçara. Visitors reach them by jangada raft."
+      - name: Fernando de Noronha
+        emoji: 🐬
+        es: Golfinhos ao amanhecer
+        en: Dolphins at dawn
+        fact:
+          es: "Fernando de Noronha é um arquipélago a mais de 300 km da costa. Para proteger a natureza, o número de visitantes é controlado e todos pagam uma taxa. Na Baía dos Golfinhos, golfinhos-rotadores aparecem quase todas as manhãs."
+          en: "Fernando de Noronha is an archipelago more than 300 km off the coast. To protect nature, visitor numbers are controlled and everyone pays a fee. In Dolphin Bay, spinner dolphins appear almost every morning."
+  - level: c1
+    name: Amazônia e Norte
+    es: Rio abaixo até o mar
+    stops:
+      - name: Manaus
+        emoji: 🌆
+        es: Uma cidade no meio da floresta
+        en: A city in the middle of the forest
+        fact:
+          es: "Manaus, capital do Amazonas, fica às margens do rio Negro, cercada pela floresta. Enriquecida pelo ciclo da borracha no fim do século XIX, hoje abriga mais de dois milhões de habitantes e a Zona Franca de Manaus."
+          en: "Manaus, the capital of Amazonas, sits on the banks of the Rio Negro, surrounded by forest. Made rich by the rubber boom of the late 19th century, it is now home to more than two million people and the Manaus Free Trade Zone."
+      - name: Teatro Amazonas
+        emoji: 🎼
+        es: Ópera na selva
+        en: Opera in the jungle
+        fact:
+          es: "Inaugurado em 1896, o Teatro Amazonas é um símbolo da riqueza da borracha. Muitos materiais vieram da Europa, como o mármore de Carrara. A cúpula é coberta por milhares de telhas com as cores da bandeira brasileira."
+          en: "Opened in 1896, the Teatro Amazonas is a symbol of rubber wealth. Many materials came from Europe, such as Carrara marble. The dome is covered with thousands of tiles in the colours of the Brazilian flag."
+      - name: Encontro das Águas
+        emoji: 🌊
+        es: Dois rios lado a lado
+        en: Two rivers side by side
+        fact:
+          es: "Perto de Manaus, o rio Negro, de águas escuras, encontra o Solimões, de águas barrentas. Por diferenças de temperatura, velocidade e densidade, as águas correm lado a lado sem se misturar por vários quilômetros."
+          en: "Near Manaus, the dark-watered Rio Negro meets the muddy Solimões. Because of differences in temperature, speed and density, the waters flow side by side without mixing for several kilometres."
+      - name: Anavilhanas
+        emoji: 🛶
+        es: Um labirinto de ilhas
+        en: A maze of islands
+        fact:
+          es: "O Parque Nacional de Anavilhanas, no rio Negro, é um dos maiores arquipélagos fluviais do mundo, com cerca de 400 ilhas. Na cheia, a floresta fica alagada e as canoas navegam entre os troncos das árvores."
+          en: "Anavilhanas National Park, on the Rio Negro, is one of the largest river archipelagos in the world, with about 400 islands. In the flood season the forest is submerged and canoes glide between the tree trunks."
+      - name: Parintins
+        emoji: 🎆
+        es: Garantido contra Caprichoso
+        en: Garantido versus Caprichoso
+        fact:
+          es: "Todo mês de junho, na ilha de Parintins, os bois-bumbás Garantido, vermelho, e Caprichoso, azul, disputam o festival no Bumbódromo. A rivalidade é tamanha que muitos torcedores evitam dizer o nome do rival: chamam-no de “o contrário”."
+          en: "Every June, on the island of Parintins, the boi-bumbá groups Garantido (red) and Caprichoso (blue) compete in the festival at the Bumbódromo. The rivalry is so fierce that many fans avoid saying the rival's name: they call it “the other one”."
+      - name: Santarém
+        emoji: 🏞️
+        es: Onde o Tapajós encontra o Amazonas
+        en: Where the Tapajós meets the Amazon
+        fact:
+          es: "Santarém, no oeste do Pará, nasceu em 1661 como missão jesuíta no encontro do Tapajós, de águas azul-esverdeadas, com o Amazonas, de águas barrentas. É a porta de entrada para as praias de rio da região."
+          en: "Santarém, in western Pará, began in 1661 as a Jesuit mission where the blue-green Tapajós meets the muddy Amazon. It is the gateway to the region's river beaches."
+      - name: Alter do Chão
+        emoji: ☀️
+        es: O Caribe amazônico
+        en: The Amazonian Caribbean
+        fact:
+          es: "Alter do Chão, vila às margens do Tapajós, é chamada de “Caribe amazônico” por suas praias de areia branca. Na seca, aparece a Ilha do Amor, em frente à vila; na cheia, ela quase desaparece debaixo d’água."
+          en: "Alter do Chão, a village on the Tapajós, is called the “Amazonian Caribbean” for its white-sand beaches. In the dry season the Ilha do Amor appears opposite the village; in the flood season it almost disappears under water."
+      - name: Belém
+        emoji: 🐟
+        es: Açaí no Ver-o-Peso
+        en: Açaí at Ver-o-Peso
+        fact:
+          es: "O Ver-o-Peso, em Belém, surgiu em 1625 como posto de fiscalização às margens da baía do Guajará. Hoje vende peixes, ervas, frutas amazônicas e muito açaí, que os paraenses tomam com peixe frito e farinha."
+          en: "Ver-o-Peso, in Belém, began in 1625 as a tax checkpoint on the shore of Guajará Bay. Today it sells fish, herbs, Amazonian fruit and plenty of açaí, which people in Pará eat with fried fish and manioc flour."
+      - name: Ilha de Marajó
+        emoji: 🐃
+        es: A ilha dos búfalos
+        en: The island of buffaloes
+        fact:
+          es: "A Ilha de Marajó, na foz do Amazonas, é a maior ilha fluviomarítima do mundo. Há tantos búfalos que, em Soure, a polícia faz patrulha montada neles. A cerâmica marajoara é famosa pelos desenhos geométricos."
+          en: "Marajó Island, at the mouth of the Amazon, is the largest river-and-sea island in the world. There are so many buffaloes that in Soure the police patrol on buffalo-back. Marajoara pottery is famous for its geometric designs."
+      - name: Macapá
+        emoji: 🌐
+        es: Um pé em cada hemisfério
+        en: One foot in each hemisphere
+        fact:
+          es: "Macapá, capital do Amapá, é cortada pela linha do Equador. No monumento Marco Zero dá para ficar com um pé em cada hemisfério, e no estádio ao lado, o Zerão, a linha do meio-campo coincide com o Equador."
+          en: "Macapá, the capital of Amapá, is crossed by the Equator. At the Marco Zero monument you can stand with one foot in each hemisphere, and in the stadium next door, the Zerão, the halfway line lies on the Equator."
+  - level: c2
+    name: Portugal
+    es: Do outro lado do Atlântico
+    stops:
+      - name: Lisboa (Alfama)
+        emoji: 🎸
+        es: Fado nas vielas
+        en: Fado in the alleys
+        fact:
+          es: "Alfama é o bairro mais antigo de Lisboa e resistiu em grande parte ao terramoto de 1755, que destruiu a Baixa. Nas suas vielas ouve-se fado, canção que a UNESCO classificou como Património Cultural Imaterial da Humanidade em 2011."
+          en: "Alfama is Lisbon's oldest district and largely survived the 1755 earthquake, which destroyed the Baixa. In its alleys you hear fado, the song form that UNESCO listed as Intangible Cultural Heritage of Humanity in 2011."
+      - name: Belém
+        emoji: 🥧
+        es: Caravelas e pastéis
+        en: Caravels and custard tarts
+        fact:
+          es: "Foi do Restelo, em Belém, que partiu em 1500 a armada de Pedro Álvares Cabral que chegou ao Brasil. Ali estão a Torre de Belém e o Mosteiro dos Jerónimos e, desde 1837, vendem-se os famosos pastéis de Belém."
+          en: "It was from Restelo, in Belém, that Pedro Álvares Cabral's fleet set sail in 1500 and reached Brazil. The Belém Tower and the Jerónimos Monastery stand there, and the famous pastéis de Belém have been sold since 1837."
+      - name: Sintra
+        emoji: 🏰
+        es: Palácios no nevoeiro
+        en: Palaces in the mist
+        fact:
+          es: "Sintra é Património Mundial desde 1995 pela sua paisagem cultural. Na serra húmida, muitas vezes coberta de nevoeiro, escondem-se o Palácio da Pena, de cores vivas, o Castelo dos Mouros e a Quinta da Regaleira. Byron chamou-lhe “glorioso Éden”."
+          en: "Sintra has been a World Heritage Site since 1995 for its cultural landscape. In the damp hills, often wrapped in mist, hide the brightly coloured Pena Palace, the Moorish Castle and the Quinta da Regaleira. Byron called it a “glorious Eden”."
+      - name: Coimbra
+        emoji: 🎓
+        es: Capas negras e fado de estudantes
+        en: Black capes and student fado
+        fact:
+          es: "A Universidade de Coimbra, cujas origens remontam a 1290, é uma das mais antigas da Europa. Na Biblioteca Joanina, barroca, vivem morcegos que comem os insetos que estragariam os livros. O fado de Coimbra é cantado por homens de capa e batina."
+          en: "The University of Coimbra, whose origins go back to 1290, is one of the oldest in Europe. In the Baroque Joanina Library live bats that eat the insects that would damage the books. Coimbra fado is sung by men in student capes and gowns."
+      - name: Porto
+        emoji: 🍷
+        es: Pontes sobre o Douro
+        en: Bridges over the Douro
+        fact:
+          es: "O nome de Portugal vem de Portus Cale, o antigo povoado na foz do Douro onde hoje fica o Porto. A Ponte Luís I, de 1886, liga a cidade a Vila Nova de Gaia, onde o vinho do Porto envelhece nas caves."
+          en: "Portugal's name comes from Portus Cale, the ancient settlement at the mouth of the Douro where Porto stands today. The Luís I Bridge, from 1886, links the city to Vila Nova de Gaia, where port wine ages in the cellars."
+      - name: Vale do Douro
+        emoji: 🍇
+        es: Socalcos e vinhas
+        en: Terraces and vineyards
+        fact:
+          es: "O Alto Douro Vinhateiro, Património Mundial desde 2001, é uma das regiões vinícolas demarcadas mais antigas do mundo: o Marquês de Pombal criou a demarcação em 1756. As vinhas crescem em socalcos de xisto talhados nas encostas do rio."
+          en: "The Alto Douro Wine Region, a World Heritage Site since 2001, is one of the oldest demarcated wine regions in the world: the Marquis of Pombal created the demarcation in 1756. The vines grow on schist terraces cut into the river's slopes."
+      - name: Évora
+        emoji: 🏛️
+        es: O templo romano
+        en: The Roman temple
+        fact:
+          es: "Évora, no Alentejo, guarda um templo romano do século I e a Capela dos Ossos, cujas paredes estão cobertas de ossos humanos. À entrada lê-se: «Nós ossos que aqui estamos pelos vossos esperamos». O centro histórico é Património Mundial desde 1986."
+          en: "Évora, in the Alentejo, has a 1st-century Roman temple and the Chapel of Bones, whose walls are covered in human bones. Over the entrance it reads: “We bones that are here are waiting for yours.” The historic centre has been a World Heritage Site since 1986."
+      - name: Sagres
+        emoji: 🧭
+        es: Até à próxima, Brasil!
+        en: See you next time, Brazil!
+        fact:
+          es: "No extremo sudoeste da Europa, o Cabo de São Vicente foi durante séculos visto como o fim do mundo conhecido. Em Sagres viveu o Infante D. Henrique, impulsionador das navegações que, décadas mais tarde, levariam os portugueses até ao Brasil."
+          en: "At the south-western tip of Europe, Cape St Vincent was seen for centuries as the end of the known world. Prince Henry the Navigator lived in Sagres and drove the voyages of discovery that, decades later, would take the Portuguese to Brazil."
+souvenirs:
+  - id: havaianas
+    level: a1
+    emoji: 🩴
+    es: um par de havaianas
+    en: a pair of flip-flops
+    blurb: Four paws, two flip-flops. Leo is still working out the maths.
+    slot: paw
+  - id: biscoito-de-polvilho
+    level: a1
+    emoji: 🥨
+    es: um saco de biscoito de polvilho
+    en: a bag of polvilho crackers
+    blurb: The crunchy beach snack of Rio. Bonchita finishes the bag before the sun goes down.
+    slot: mouth
+  - id: brigadeiro
+    level: a1
+    emoji: 🍫
+    es: um brigadeiro
+    en: a brigadeiro
+    blurb: A chocolate truffle rolled in sprinkles, the star of every Brazilian birthday party. Chocolate is not for dogs, so Luna just guards it.
+    slot: mouth
+  - id: camisa-da-selecao
+    level: a1
+    emoji: 👕
+    es: uma camisa da seleção
+    en: a Brazil football shirt
+    blurb: Yellow and green, number 10. Leo wears it to every match on the beach.
+    slot: neck
+  - id: bone-rubro-negro
+    level: a1
+    emoji: 🧢
+    es: um boné rubro-negro
+    en: a red-and-black cap
+    blurb: Bought outside the Maracanã. Half of Rio cheers when Leo walks past.
+    slot: hat
+  - id: pandeiro
+    level: a1
+    emoji: 🪘
+    es: um pandeiro
+    en: a pandeiro
+    blurb: The little frame drum of samba. Bonchita keeps time with her tail.
+    slot: paw
+  - id: agua-de-coco
+    level: a1
+    emoji: 🥥
+    es: uma água de coco
+    en: a coconut water
+    blurb: Served in the coconut, with a straw, on the sand at Copacabana.
+  - id: chapeu-de-palha
+    level: a2
+    emoji: 👒
+    es: um chapéu de palha
+    en: a straw hat
+    blurb: For the cobbled streets of Paraty under the midday sun. Luna wears it at a jaunty angle.
+    slot: hat
+  - id: sanduiche-de-mortadela
+    level: a2
+    emoji: 🥪
+    es: um sanduíche de mortadela
+    en: a mortadella sandwich
+    blurb: From the Mercadão, stacked absurdly high. It is taller than Bonchita.
+    slot: mouth
+  - id: cuia-de-chimarrao
+    level: a2
+    emoji: 🧉
+    es: uma cuia de chimarrão
+    en: a chimarrão gourd
+    blurb: Passed round in a circle in Porto Alegre. Leo sniffs it and passes it on.
+    slot: paw
+  - id: chapeu-tiroles
+    level: a2
+    emoji: 🎩
+    es: um chapéu tirolês
+    en: a Tyrolean hat
+    blurb: Green felt with a feather, straight from the Oktoberfest in Blumenau.
+    slot: hat
+  - id: lanterna-japonesa
+    level: a2
+    emoji: 🏮
+    es: uma lanterna japonesa
+    en: a Japanese lantern
+    blurb: A red paper lantern from Liberdade. Luna carries it on night walks.
+    slot: paw
+  - id: prancha-de-surfe
+    level: a2
+    emoji: 🏄
+    es: uma prancha de surfe
+    en: a surfboard
+    blurb: A tiny board from Florianópolis. Three dogs, one board, lots of splashing.
+  - id: pao-de-queijo
+    level: b1
+    emoji: 🧀
+    es: um pão de queijo
+    en: a cheese bread
+    blurb: Crispy outside, chewy inside, straight from a kitchen in Minas. Bonchita has opinions about which café does it best.
+    slot: mouth
+  - id: panela-de-pedra-sabao
+    level: b1
+    emoji: 🍲
+    es: uma panela de pedra-sabão
+    en: a soapstone pot
+    blurb: Carved in Ouro Preto, the same stone as Aleijadinho's prophets. Heavy, but the beans taste better.
+  - id: cristal-de-quartzo
+    level: b1
+    emoji: 💎
+    es: um cristal de quartzo
+    en: a quartz crystal
+    blurb: From the Chapada dos Veadeiros, hung on a string. Luna says it helps her read the map.
+    slot: neck
+  - id: berrante
+    level: b1
+    emoji: 📯
+    es: um berrante
+    en: a cattle horn
+    blurb: The horn the Pantanal cowboys blow to move the herd. Leo blows it to call everyone to dinner.
+    slot: paw
+  - id: chapeu-de-peao
+    level: b1
+    emoji: 🤠
+    es: um chapéu de peão
+    en: a cowboy hat
+    blurb: Wide-brimmed leather for the long rides across the Pantanal. Slightly too big for Leo.
+    slot: hat
+  - id: capivara-de-pelucia
+    level: b1
+    emoji: 🦫
+    es: uma capivara de pelúcia
+    en: a plush capybara
+    blurb: The calmest animal in Brazil, now in plush. Bonchita sleeps on it.
+  - id: fitinha-do-bonfim
+    level: b2
+    emoji: 🎀
+    es: uma fitinha do Bonfim
+    en: a Bonfim ribbon
+    blurb: Tied with three knots, one wish each. When it falls off on its own, the wishes come true.
+    slot: neck
+  - id: sombrinha-de-frevo
+    level: b2
+    emoji: ☂️
+    es: uma sombrinha de frevo
+    en: a frevo umbrella
+    blurb: Tiny and rainbow-coloured, for dancing frevo up the hills of Olinda.
+    slot: paw
+  - id: chapeu-de-couro
+    level: b2
+    emoji: 🌵
+    es: um chapéu de couro
+    en: a sertão leather hat
+    blurb: The half-moon leather hat of the sertão, studded with stars. Luna looks very serious in it.
+    slot: hat
+  - id: acaraje
+    level: b2
+    emoji: 🍤
+    es: um acarajé
+    en: an acarajé
+    blurb: A black-eyed-pea fritter from a baiana's stall in Salvador. Ask for it hot, or not hot. Leo said hot. Leo regrets it.
+    slot: mouth
+  - id: berimbau
+    level: b2
+    emoji: 🏹
+    es: um berimbau
+    en: a berimbau
+    blurb: The one-string bow that sets the rhythm of capoeira. Bonchita does a cartwheel. Almost.
+  - id: rede
+    level: b2
+    emoji: 🌴
+    es: uma rede de dormir
+    en: a hammock
+    blurb: Woven in Ceará. All three dogs fit in it, until someone wriggles.
+  - id: tigela-de-acai
+    level: c1
+    emoji: 🫐
+    es: uma tigela de açaí
+    en: a bowl of açaí
+    blurb: Thick, purple and straight from Belém, eaten the local way with fish and farinha. Bonchita approves.
+    slot: mouth
+  - id: lenco-do-boi
+    level: c1
+    emoji: 🐂
+    es: um lenço de boi-bumbá
+    en: a boi-bumbá scarf
+    blurb: Red on one side, blue on the other, so nobody in Parintins gets upset.
+    slot: neck
+  - id: boto-de-pelucia
+    level: c1
+    emoji: 🐬
+    es: um boto-cor-de-rosa de pelúcia
+    en: a plush pink river dolphin
+    blurb: Legend says the boto turns into a charming man at parties. This one just squeaks.
+    slot: paw
+  - id: guarana
+    level: c1
+    emoji: 🍒
+    es: um bastão de guaraná
+    en: a stick of guaraná
+    blurb: The Amazon seed, dried and grated into water. Far too much energy for three small dogs.
+  - id: ceramica-marajoara
+    level: c1
+    emoji: 🏺
+    es: uma cerâmica marajoara
+    en: a piece of Marajoara pottery
+    blurb: A copy of the ancient geometric pottery of Marajó. Kept safely out of reach of tails.
+  - id: pastel-de-nata
+    level: c2
+    emoji: 🥧
+    es: um pastel de nata
+    en: a custard tart
+    blurb: Warm, with cinnamon on top, from Belém. In Brazil they called it pastel de Belém. Bonchita calls it hers.
+    slot: mouth
+  - id: cachecol-do-porto
+    level: c2
+    emoji: 🧣
+    es: um cachecol do Porto
+    en: a Porto scarf
+    blurb: Blue and white, for the damp evenings by the Douro.
+    slot: neck
+  - id: sardinha-de-lisboa
+    level: c2
+    emoji: 🐟
+    es: uma sardinha de cerâmica
+    en: a ceramic sardine
+    blurb: The symbol of the Santo António festivities in Lisbon. Leo tried to eat it.
+    slot: paw
+  - id: capa-de-estudante
+    level: c2
+    emoji: 🦇
+    es: uma capa de estudante
+    en: a student's cape
+    blurb: The black cape of Coimbra. Luna wears it to the library and says hello to the bats.
+    slot: neck
+  - id: galo-de-barcelos
+    level: c2
+    emoji: 🐓
+    es: um galo de Barcelos
+    en: a Barcelos rooster
+    blurb: The painted rooster of the legend, symbol of Portugal. It rides home in the suitcase, wrapped in a beach towel from Rio.
+  - id: azulejo
+    level: c2
+    emoji: 🔷
+    es: um azulejo
+    en: a painted tile
+    blurb: Blue and white, like the ones on the mansions of São Luís. The journey has come full circle.
