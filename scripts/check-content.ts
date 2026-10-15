@@ -249,7 +249,8 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       for (const g of s.grammar) if (!grammar.has(g)) err(`${rel(p)}: spicy "${s.es}" tags unknown grammar ${g}`)
       for (const v of s.vocab) if (!vocab.has(v)) err(`${rel(p)}: spicy "${s.es}" tags unknown vocab ${v}`)
       const text = stripAcc(`${s.es} ${s.altEs.join(' ')} ${s.en}`)
-      const hit = BANNED.find((b) => new RegExp(`(^|[^\\p{L}])${b.endsWith('*') ? b.slice(0, -1) : `${b}(?=$|[^\\p{L}])`}`, 'u').test(text))
+      // Chinese has no spaces between words: Han entries match anywhere; others match whole words (trailing * = prefix).
+      const hit = BANNED.find((b) => (/\p{Script=Han}/u.test(b) ? text.includes(b.replace(/\*$/, '')) : new RegExp(`(^|[^\\p{L}])${b.endsWith('*') ? b.slice(0, -1) : `${b}(?=$|[^\\p{L}])`}`, 'u').test(text)))
       if (hit) err(`${rel(p)}: spicy "${s.es}" contains a banned word (${hit}); keep modo picante cheeky, PG-13 and kind`)
       if (seenSent.has(s.es)) warn(`${rel(p)}: spicy "${s.es}" duplicates a lesson sentence`)
       unknown.push(...unknownWords(s.es, level, allow))

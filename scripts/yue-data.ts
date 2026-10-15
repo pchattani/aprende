@@ -59,9 +59,18 @@ for (const [c, list] of [...readings.entries()].sort((a, b) => (a[0] < b[0] ? -1
   chars[c] = list.sort((a, b) => b.w - a.w).map((r) => r.jp)
 }
 
-// ---- words that occur in the course text
+// ---- words that occur in the course text. rime spells some characters in variant forms;
+// map them to the Hong Kong standard forms the course uses (爲→為, 啓→啟, 麪→麵…).
+const VARIANTS: Record<string, string> = { 爲: '為', 啓: '啟', 麪: '麵', 衞: '衛', 綫: '線', 裏: '裡', 峯: '峰', 羣: '群', 鷄: '雞', 匯: '滙', 着: '著' }
+const toHK = (w: string) => [...w].map((c) => VARIANTS[c] ?? c).join('')
 const usedWords: Record<string, string> = {}
-for (const [w, jp] of words) if (contentText.includes(w)) usedWords[w] = jp
+for (const [w, jp] of words) {
+  if (contentText.includes(w)) usedWords[w] = jp
+  const hk = toHK(w)
+  if (hk !== w && !usedWords[hk] && contentText.includes(hk)) usedWords[hk] = jp
+}
+// readings for the HK forms of variant characters (if rime lists only the variant)
+for (const [variant, hk] of Object.entries(VARIANTS)) if (!chars[hk] && readings.get(variant)) chars[hk] = readings.get(variant)!.sort((a, b) => b.w - a.w).map((r) => r.jp)
 
 const out = join(ROOT, 'src', 'lang', 'yue', 'data')
 writeFileSync(join(out, 'chars.json'), JSON.stringify(chars))

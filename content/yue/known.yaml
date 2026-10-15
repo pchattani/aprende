@@ -1,0 +1,57 @@
+# Words treated as known at every level (function words, particles, numbers, the commonest
+# measure words), and proper nouns / place names that may appear in any text. Used by the
+# content checker and the journey test. Cantonese has no capital letters, so every proper
+# noun that appears in course text must be listed under `names`.
+always: [
+  # copula, existence, location, negation
+  係, 喺, 有, 冇, 唔, 唔係, 唔好, 未, 都係, 就係,
+  # pronouns
+  我, 你, 佢, 我哋, 你哋, 佢哋, 哋, 自己,
+  # structural particles and aspect markers
+  嘅, 咗, 緊, 過, 住, 吓, 啲, 得,
+  # sentence-final particles
+  呀, 啊, 啦, 喇, 嘞, 嗎, 呢, 咩, 吖, 喎, 囉, 㗎, 咋, 啫, 嘛, 噃, 㖭, 啩,
+  # adverbs and connectors
+  都, 就, 仲, 又, 再, 先, 好, 太, 最, 同, 同埋, 定, 定係, 或者, 但係, 不過, 因為, 所以, 如果, 而家, 已經,
+  # demonstratives and question words
+  嗰, 呢個, 嗰個, 呢度, 嗰度, 喺度, 呢啲, 嗰啲, 邊, 邊個, 邊度, 乜嘢, 咩嘢, 點, 點樣, 點解, 幾, 幾多, 幾時,
+  # quantities and numbers
+  好多, 少少, 一啲, 每, 第, 零, 一, 二, 兩, 三, 四, 五, 六, 七, 八, 九, 十, 百, 千, 萬, 億,
+  # the commonest measure words
+  個, 一個, 隻, 間, 條, 張, 本, 架, 位, 件,
+  # politeness
+  唔該, 多謝, 對唔住, 仲有
+  ]
+# Common words allowed in A1 stop facts beyond the A1 word list.
+facts: [
+  國際, 機場, 飛機, 落機, 每日, 日日, 好多人, 香港人, 高樓, 大廈, 銀行, 公司, 返工, 中午, 出街, 食飯,
+  山, 最高, 米, 高, 大, 細, 舊, 新, 平, 快, 靚, 山頂, 纜車, 上去, 睇, 坐, 行, 去, 嚟, 叫, 做, 由, 可以, 買, 賣,
+  天, 星, 小輪, 船, 漁船, 舢舨, 電車, 叮叮, 總站, 海邊, 海灘, 附近, 西面, 東面,
+  舖頭, 海味, 中藥, 廟, 文, 武, 展覽, 中心, 街市, 市集, 茶餐廳, 餐廳, 商場, 衫, 鞋, 食嘢, 飲嘢,
+  馬場, 跑馬, 星期三, 星期日, 晚, 座, 怪獸, 影相
+  ]
+names: [
+  # Leo, Bonchita and Luna keep their Latin names.
+  # regions and cities
+  香港, 香港島, 港島, 九龍, 新界, 離島, 澳門, 廣州, 佛山, 順德, 深圳, 珠江, 珠江三角洲, 廣東, 中國, 大灣區,
+  # Hong Kong Island
+  赤鱲角, 大嶼山, 中環, 太平山, 維多利亞港, 維港, 天星小輪, 上環, 文武廟, 灣仔, 銅鑼灣, 維多利亞公園, 跑馬地,
+  南區, 赤柱, 美利樓, 香港仔, 海洋公園, 堅尼地城, 筲箕灣, 鰂魚涌, 金鐘, 半山, 西環, 北角,
+  # Kowloon
+  尖沙咀, 星光大道, 旺角, 油麻地, 廟街, 深水埗, 鴨寮街, 黃大仙, 九龍城, 啟德, 鑽石山, 南蓮園池, 志蓮淨苑,
+  紅磡, 紅館, 鯉魚門, 佐敦, 九龍寨城, 九廣鐵路, 西九龍, 西九,
+  # New Territories
+  沙田, 城門河, 車公廟, 大埔, 西貢, 萬宜水庫, 荃灣, 三棟屋, 元朗, 林村, 米埔, 大美督, 船灣淡水湖, 屯門, 青山禪院,
+  天水圍, 粉嶺, 龍躍頭, 獅子山, 屏山, 聚星樓, 大帽山, 上水, 錦田,
+  # Outlying Islands
+  東涌, 昂坪, 天壇大佛, 寶蓮寺, 大澳, 梅窩, 鳳凰山, 長洲, 南丫島, 索罟灣, 榕樹灣, 坪洲, 蒲台島, 愉景灣, 塔門, 橋咀洲, 橋頭,
+  # Macau
+  議事亭前地, 大三巴, 大三巴牌坊, 聖保祿, 大炮台, 媽閣, 媽閣廟, 氹仔, 官也街, 龍環葡韻, 路環, 黑沙, 路氹,
+  東望洋, 東望洋燈塔, 盧廉若公園, 澳門旅遊塔,
+  # Guangzhou and Foshan
+  沙面, 陳家祠, 廣州塔, 小蠻腰, 北京路, 越秀公園, 五羊, 羊城, 鎮海樓, 祖廟, 大良, 廣州南站,
+  # people, gods and festivals
+  李小龍, 黃飛鴻, 葉問, 媽祖, 天后, 北帝, 車公, 黃大仙祠, 安德魯, 盧九,
+  # countries and other places
+  英國, 美國, 日本, 韓國, 台灣, 北京, 上海, 葡萄牙, 荷蘭, 法國, 泰國, 澳洲, 新加坡, 馬來西亞, 加拿大, 蘇州
+  ]

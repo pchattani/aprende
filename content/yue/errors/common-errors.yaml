@@ -1,0 +1,205 @@
+# Learner-error patterns for the Cantonese writing checker. Patterns are JavaScript
+# regexes applied with flags 'gu' to the raw text (characters, no lowercasing).
+# Han script has no word boundaries, so every rule is anchored on a specific
+# character sequence; lookarounds keep out valid Cantonese words that contain the
+# same characters (的士, 其他, 吉他, 酒吧, 不過, 了解, 雞蛋, 書包…).
+rules:
+  # ---- 係 vs 喺, 有 vs 冇
+  - id: hai-for-location
+    pattern: '(?:我|你|佢)(?:哋)?(?:而家|宜家|都|仲)?係(?:屋企|呢度|嗰度|邊度|度|香港|澳門|廣州)(?![人話嘅仔嚟])'
+    message: Location takes 喺 (hai2), not 係 (hai6). 係 means "to be"; 喺 means "to be at".
+    grammar: g.hai2-location
+    example: { wrong: 我係屋企。, right: 我喺屋企。 }
+  - id: m-jau
+    pattern: '唔有'
+    message: The negative of 有 is 冇 (mou5), never 唔有.
+    grammar: g.mou-negation
+    example: { wrong: 我唔有錢。, right: 我冇錢。 }
+  - id: mou-jau
+    pattern: '冇有'
+    message: 冇 already means "not have"; drop 有.
+    grammar: g.mou-negation
+    example: { wrong: 佢冇有車。, right: 佢冇車。 }
+  - id: m-zo-past
+    pattern: '(?:琴日|尋日|噚日|昨日|啱啱|頭先|上個禮拜|上個星期)[^。！？，]{0,6}唔(?:去|食|飲|買|做|睇|嚟|返|講|見|瞓|寫|讀|聽|搵|打|洗|行|坐|識|到)咗'
+    message: To say something did not happen, use 冇 + verb, without 咗.
+    level: a2
+    example: { wrong: 我琴日唔去咗。, right: 我琴日冇去。 }
+  - id: m-zo-quantity
+    pattern: '唔(?:去|食|飲|買|做|睇|讀|聽|寫|搵|打|洗)咗(?:[一兩三四五六七八九十幾]|好多)'
+    message: A completed action is negated with 冇 + verb (no 咗).
+    level: a2
+    example: { wrong: 佢唔飲咗好多酒。, right: 佢冇飲好多酒。 }
+  - id: mou-v-zo
+    pattern: '冇(?:去|食|飲|買|做|睇|嚟|返|講|見|瞓|寫|讀|聽|搵|打|洗|行|坐|到|收|俾|畀)咗'
+    message: After 冇 the verb takes no 咗. 冇 already says it did not happen.
+    level: a2
+    example: { wrong: 我冇食咗早餐。, right: 我冇食早餐。 }
+  # ---- Mandarin / written Chinese forms in colloquial Cantonese
+  - id: mandarin-de
+    pattern: '(?:我|你|佢|他|她)(?:哋|們)?的(?![士確骰式])'
+    message: Cantonese marks possession with 嘅 (ge3), not Mandarin 的.
+    grammar: g.ge-possessive
+    example: { wrong: 我的朋友, right: 我嘅朋友 }
+  - id: mandarin-shi
+    pattern: '(?:我|你|佢|他|她|這|那|呢個|嗰個)(?:哋|們)?是(?![但非])'
+    message: Spoken Cantonese uses 係 (hai6) for "to be", not Mandarin 是.
+    grammar: g.hai6-identity
+    example: { wrong: 我是學生。, right: 我係學生。 }
+  - id: mandarin-bu
+    pattern: '不(?:是|要|會|能|想|去|來|吃|喝|用|知道|喜歡|好(?!意思))'
+    message: Spoken Cantonese negates with 唔 (m4), not Mandarin 不.
+    grammar: g.m-negation
+    example: { wrong: 我不知道。, right: 我唔知。 }
+  - id: mandarin-zai
+    pattern: '(?:我|你|佢|他|她)(?:哋|們)?在(?!乎)|正在'
+    message: Use 喺 (hai2) for "at", and verb + 緊 for an action in progress — not Mandarin 在 / 正在.
+    grammar: g.hai2-location
+    example: { wrong: 我在香港。, right: 我喺香港。 }
+  - id: mandarin-ta
+    pattern: '(?<![其吉利排])他(?![人日])|她'
+    message: The Cantonese third person is 佢 (keoi5) for he, she and it.
+    grammar: g.personal-pronouns
+    example: { wrong: 他是我哥哥。, right: 佢係我哥哥。 }
+  - id: mandarin-men
+    pattern: '(?:我|你|佢|他|她)們'
+    message: Cantonese pronouns form the plural with 哋 (dei6), not 們.
+    grammar: g.dei-plural
+    example: { wrong: 我們去飲茶。, right: 我哋去飲茶。 }
+  - id: mandarin-zhe
+    pattern: '這'
+    message: '"This" in Cantonese is 呢 (ni1): 呢個, 呢度, 呢啲.'
+    grammar: g.demonstratives
+    example: { wrong: 這個幾多錢？, right: 呢個幾多錢？ }
+  - id: mandarin-na
+    pattern: '那(?:個|裡|裏|些|麼|樣|兒)'
+    message: '"That" in Cantonese is 嗰 (go2): 嗰個, 嗰度, 嗰啲.'
+    grammar: g.demonstratives
+    example: { wrong: 那個人係邊個？, right: 嗰個人係邊個？ }
+  - id: mandarin-shenme
+    pattern: '[什甚]麼|什么'
+    message: '"What" in Cantonese is 乜嘢 (mat1 je5) or 咩 (me1).'
+    grammar: g.question-words
+    example: { wrong: 你食什麼？, right: 你食乜嘢？ }
+  - id: mandarin-meiyou
+    pattern: '沒有'
+    message: Spoken Cantonese uses 冇 (mou5) for "not have" / "did not".
+    grammar: g.mou-negation
+    example: { wrong: 我沒有時間。, right: 我冇時間。 }
+  - id: mandarin-hen
+    pattern: '很'
+    message: Cantonese says 好 (hou2) for "very" (or 好鬼, 非常), not Mandarin 很.
+    grammar: g.degree-adverbs
+    example: { wrong: 今日很熱。, right: 今日好熱。 }
+  - id: mandarin-chi
+    pattern: '吃'
+    message: '"To eat" in Cantonese is 食 (sik6).'
+    example: { wrong: 我想吃飯。, right: 我想食飯。 }
+  - id: mandarin-he
+    pattern: '喝(?![彩采])'
+    message: '"To drink" in Cantonese is 飲 (jam2).'
+    example: { wrong: 我喝咖啡。, right: 我飲咖啡。 }
+  - id: mandarin-shuo
+    pattern: '(?:我|你|佢|他|她)(?:哋|們)?(?:會|識|想|要)?說|說(?=廣東話|英文|中文|普通話|日文)'
+    message: '"To speak / say" in Cantonese is 講 (gong2).'
+    example: { wrong: 我會說廣東話。, right: 我識講廣東話。 }
+  - id: mandarin-shui
+    pattern: '誰'
+    message: '"Who" in Cantonese is 邊個 (bin1 go3).'
+    grammar: g.question-words
+    example: { wrong: 佢係誰？, right: 佢係邊個？ }
+  - id: mandarin-na3
+    pattern: '哪(?:裡|裏|兒|個|些)'
+    message: '"Where / which" in Cantonese is 邊度 (bin1 dou6) / 邊個.'
+    grammar: g.question-words
+    example: { wrong: 你去哪裡？, right: 你去邊度？ }
+  - id: mandarin-le
+    pattern: '(?:去|食|飲|買|做|睇|嚟|來|講|見|瞓|寫|聽|打|到|走|完)了(?!解)'
+    message: Cantonese marks a completed action with 咗 (zo2), or a change with 喇 (laa3) — not Mandarin 了.
+    level: a2
+    example: { wrong: 我食了飯。, right: 我食咗飯。 }
+  - id: mandarin-gei
+    pattern: '(?<![供配自補])給(?!予)'
+    message: '"To give" in Cantonese is 畀 (bei2).'
+    grammar: g.bei-give
+    level: a2
+    example: { wrong: 你給我一杯水。, right: 你畀我一杯水。 }
+  - id: mandarin-he2
+    pattern: '(?:我|你|佢|他|她)(?:哋|們)?和(?=[我你佢他她])'
+    message: '"And / with" between people is 同 (tung4) in Cantonese.'
+    example: { wrong: 我和你去。, right: 我同你去。 }
+  - id: mandarin-ye
+    pattern: '(?:我|你|佢|他|她)(?:哋|們)?也(?!許)'
+    message: '"Also" in Cantonese is 都 (dou1), placed before the verb.'
+    grammar: g.dou-also
+    example: { wrong: 我也想去。, right: 我都想去。 }
+  - id: mandarin-kan
+    pattern: '看(?:書|電視|戲|電影|醫生|見|吓|下)'
+    message: '"To look / watch / read" in Cantonese is 睇 (tai2).'
+    example: { wrong: 我看電視。, right: 我睇電視。 }
+  - id: mandarin-zoulu
+    pattern: '走路'
+    message: In Cantonese 走 means "to leave / run away"; "to walk" is 行 (haang4), "on foot" is 行路.
+    example: { wrong: 我走路返學。, right: 我行路返學。 }
+  - id: mandarin-ba
+    pattern: '(?<![酒網水貼])吧(?=[。！？，]|$)'
+    message: Cantonese softens suggestions with 啦 (laa1) or 吖 (aa1), not Mandarin 吧.
+    grammar: g.particles-aa-laa
+    example: { wrong: 我哋走吧！, right: 我哋走啦！ }
+  # ---- numbers and measure words
+  - id: ji-before-classifier
+    pattern: '(?<![一二三四五六七八九十百千萬零第初期拜])二(?:個|隻|本|張|條|件|杯|碗|位|架|間|部|對|次|日|點|蚊|粒|樽|斤)'
+    message: Before a measure word or unit, "two" is 兩 (loeng5), not 二.
+    grammar: g.loeng-vs-ji
+    example: { wrong: 我要二個。, right: 我要兩個。 }
+  - id: loeng-sap
+    pattern: '兩十'
+    message: Twenty is 二十 (or 廿); 兩 is only used before measure words and big units (兩百, 兩千, 兩萬).
+    grammar: g.loeng-vs-ji
+    example: { wrong: 兩十蚊, right: 二十蚊 }
+  - id: go-for-animals
+    pattern: '(?:[一兩三四五六七八九十幾呢嗰每]|\d)個(?:狗|貓|雀|鳥|牛|豬|馬|魚|雞|兔|老鼠)(?![蛋翼髀扒肉腩奶片仔丸尾拉皮柳球糕排油批巢籠缸場會角生])'
+    message: Animals are counted with 隻 (zek3) — and fish, snakes with 條 (tiu4) — not 個.
+    grammar: g.common-classifiers
+    example: { wrong: 我有一個狗。, right: 我有一隻狗。 }
+  - id: go-for-books
+    pattern: '(?:[一兩三四五六七八九十幾呢嗰每]|\d)個(?:書|雜誌|字典)(?![包架櫃局店房法簽])'
+    message: Books and magazines are counted with 本 (bun2).
+    grammar: g.common-classifiers
+    example: { wrong: 兩個書, right: 兩本書 }
+  - id: go-for-long-things
+    pattern: '(?:[一兩三四五六七八九十幾呢嗰每]|\d)個(?:褲|裙|河|路|街|蛇|領呔|頸巾|毛巾|隧道)(?![口燈市坊牌人粉邊架])'
+    message: Long, thin things (trousers, skirts, rivers, roads, streets, towels) are counted with 條 (tiu4).
+    grammar: g.common-classifiers
+    example: { wrong: 一個裙, right: 一條裙 }
+  - id: go-for-flat-things
+    pattern: '(?:[一兩三四五六七八九十幾呢嗰每]|\d)個(?:紙|檯|枱|櫈|凳|床|相|飛|卡|票|地圖|椅)(?![巾盒袋箱機片位燈])'
+    message: Flat things (paper, tables, beds, photos, tickets, cards, maps) are counted with 張 (zoeng1).
+    grammar: g.common-classifiers
+    example: { wrong: 兩個飛, right: 兩張飛 }
+  - id: go-for-vehicles
+    pattern: '(?:[一兩三四五六七八九十幾呢嗰每]|\d)個(?:車|的士|巴士|單車|飛機)(?![站房仔牌廂位場厘徑票飛])'
+    message: Vehicles are counted with 架 (gaa3).
+    grammar: g.common-classifiers
+    example: { wrong: 一個的士, right: 一架的士 }
+  # ---- grammar
+  - id: a-not-a-with-maa
+    pattern: '(?:係唔係|有冇|去唔去|食唔食|好唔好|要唔要|得唔得|啱唔啱|識唔識|想唔想|鍾唔鍾意|可唔可以)[^。？！，]{0,12}嗎'
+    message: A question already formed with A-not-A (係唔係, 有冇, 去唔去…) does not take 嗎.
+    grammar: g.a-not-a-questions
+    example: { wrong: 你係唔係學生嗎？, right: 你係唔係學生？ }
+  - id: bei-gwo-double
+    pattern: '比[^。，！？]{1,6}(?:高|大|細|矮|靚|平|貴|快|慢|好|多|少|遠|近|熱|凍)過'
+    message: Use one comparative pattern, either A 比 B + adjective or A + adjective + 過 B, not both.
+    level: a2
+    example: { wrong: 我比佢高過。, right: 我比佢高。 }
+  - id: wui-gong-ability
+    pattern: '會(?:講|說)(?:廣東話|英文|中文|普通話|日文|法文|韓文)|會游水|會揸車'
+    message: Learned skills (languages, swimming, driving) take 識 (sik1); 會 means "will".
+    level: a2
+    example: { wrong: 我會講廣東話。, right: 我識講廣東話。 }
+  - id: double-final-particle
+    pattern: '嗎呀|呀嗎|嗎啊|嗎呢|咩嗎|嗎咩'
+    message: A question takes one final particle; 嗎 or 咩, not two together.
+    grammar: g.maa-questions
+    example: { wrong: 你係學生嗎呀？, right: 你係學生嗎？ }

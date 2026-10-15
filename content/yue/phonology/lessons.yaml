@@ -1,0 +1,280 @@
+# Pronunciation course for Hong Kong Cantonese. `es` items are characters or Jyutping;
+# the app shows Jyutping above characters. IPA uses Chao tone letters (˥ high … ˩ low).
+lessons:
+  - id: ph.jyutping
+    title: Jyutping — reading Cantonese in Latin letters
+    explanation: |
+      Every Cantonese character is one syllable, and every syllable has three parts: an **initial** consonant (optional), a **final** (vowel plus optional ending) and a **tone**. Jyutping, the romanisation devised by the Linguistic Society of Hong Kong, writes them in that order: *nei5* = **n** + **ei** + tone **5**.
+
+      | | initial | final | tone |
+      |---|---|---|---|
+      | 你 *nei5* | n | ei | 5 |
+      | 好 *hou2* | h | ou | 2 |
+      | 港 *gong2* | g | ong | 2 |
+      | 食 *sik6* | s | ik | 6 |
+
+      ### Tips
+      - Jyutping letters are not English letters: **j** is the English "y" (*jau5* 有 sounds like "yau"), **z** is like "dz/j" (*zou2* 早), **c** is like "ts/ch" (*caa4* 茶), **eo/oe** are rounded vowels, **yu** is a French *u*.
+      - **b, d, g** are unaspirated (no puff of air, close to English "spy, sty, sky"); **p, t, k** have a strong puff.
+      - The tone number is part of the word. *maai5* 買 (buy) and *maai6* 賣 (sell) are opposites.
+      - In this app you may type Jyutping with or without spaces; leave the tones out and you will get a gentle reminder.
+    items:
+      - { es: 你好, ipa: "nei̯˩˧ hou̯˧˥", tip: "nei5 hou2 — hello" }
+      - { es: 多謝, ipa: "tɔː˥ tsɛː˨", tip: "do1 ze6 — thank you (for a gift); d is unaspirated" }
+      - { es: 唔該, ipa: "m̩˨˩ kɔːi̯˥", tip: "m4 goi1 — please / thank you (for a service); m is a whole syllable" }
+      - { es: 廣東話, ipa: "kʷɔːŋ˧˥ tʊŋ˥ waː˧˥", tip: "gwong2 dung1 waa2 — Cantonese" }
+      - { es: 香港, ipa: "hœːŋ˥ kɔːŋ˧˥", tip: "hoeng1 gong2 — oe is a rounded e, like French peur" }
+      - { es: 食飯, ipa: "sɪk̚˨ faːn˨", tip: "sik6 faan6 — the k is held, not released" }
+    minimalPairs: [[買, 賣], [詩, 時], [包, 拋], [三, 心]]
+    practice: ["你好，我叫 Leo。", "多謝你！", "唔該，一杯奶茶。", "我哋講廣東話。", "香港好靚。"]
+
+  - id: ph.six-tones
+    title: The six tones
+    explanation: |
+      Cantonese is tonal: the pitch of a syllable is part of the word. Hong Kong Cantonese has **six tones**, numbered 1–6 in Jyutping. The classic drill is one syllable, *si*, said six ways:
+
+      | Tone | Pitch | Example | Meaning |
+      |---|---|---|---|
+      | 1 | high level (˥ 55) | 詩 *si1* | poem |
+      | 2 | high rising (˧˥ 35) | 史 *si2* | history |
+      | 3 | mid level (˧ 33) | 試 *si3* | try |
+      | 4 | low falling (˨˩ 21) | 時 *si4* | time |
+      | 5 | low rising (˩˧ 13/23) | 市 *si5* | market |
+      | 6 | low level (˨ 22) | 事 *si6* | matter |
+
+      Three tones are level (1, 3, 6: high, mid, low), two rise (2 high, 5 low) and one falls (4). The levels are relative to your own voice, not absolute notes.
+
+      ### Tips
+      - Hongkongers learn the tones with the number sequence **三九四零五二** *saam1 gau2 sei3 ling4 ng5 ji6* — tones 1 to 6 in order. Say it until it feels like a tune.
+      - Tone 1 is high and steady, like singing a held note; some older speakers let it fall slightly (high falling, ˥˧).
+      - Tone 4 sinks to the bottom of your voice, almost creaky.
+      - Tone 5 starts low and rises only a little; tone 2 starts mid and rises a lot.
+    items:
+      - { es: 詩, ipa: "siː˥", tip: "si1 — high level" }
+      - { es: 史, ipa: "siː˧˥", tip: "si2 — high rising, like an English question \"see?\"" }
+      - { es: 試, ipa: "siː˧", tip: "si3 — mid level, your normal speaking pitch" }
+      - { es: 時, ipa: "siː˨˩", tip: "si4 — low falling" }
+      - { es: 市, ipa: "siː˩˧", tip: "si5 — low rising, a small rise" }
+      - { es: 事, ipa: "siː˨", tip: "si6 — low level" }
+      - { es: 三九四零五二, ipa: "saːm˥ kɐu̯˧˥ sei̯˧ lɪŋ˨˩ ŋ̍˩˧ jiː˨", tip: "saam1 gau2 sei3 ling4 ng5 ji6 — the six tones in order" }
+      - { es: 分粉訓焚憤份, tip: "fan1 fan2 fan3 fan4 fan5 fan6 — the six tones on fan" }
+    minimalPairs: [[詩, 史], [試, 事], [時, 市], [詩, 時], [史, 市], [分, 份]]
+    practice: ["三九四零五二。", "詩史試時市事。", "我試吓。", "幾時去街市？", "冇事，唔使驚。"]
+
+  - id: ph.tone-pairs
+    title: Tone pairs — the contrasts that trip learners
+    explanation: |
+      Most mistakes come from three pairs of tones that sit close together:
+
+      - **2 vs 5** — both rise. Tone 2 rises from mid to high; tone 5 rises from low to mid. 史 *si2* (history) vs 市 *si5* (market); 粉 *fan2* (powder) vs 憤 *fan5* (anger).
+      - **3 vs 6** — both level. Tone 3 sits in the middle of your voice, tone 6 a step lower. 試 *si3* (try) vs 事 *si6* (matter); 凍 *dung3* (cold) vs 動 *dung6* (move).
+      - **4 vs 6** — both low. Tone 4 falls; tone 6 stays flat. 時 *si4* (time) vs 事 *si6*; 魚 *jyu4* (fish) vs 預 *jyu6* (prepare).
+
+      ### Tips
+      - Many Hong Kong speakers today merge some of these pairs in fast speech (2/5 and 3/6 especially). Aim for the clear contrast: you will be understood either way, and you will understand everyone.
+      - Practise in pairs of opposites: 買 *maai5* (buy) / 賣 *maai6* (sell) is a market-stall classic.
+      - Record yourself saying 三九四零五二 and compare.
+    items:
+      - { es: 買, ipa: "maːi̯˩˧", tip: "maai5 — buy (low rising)" }
+      - { es: 賣, ipa: "maːi̯˨", tip: "maai6 — sell (low level)" }
+      - { es: 凍, ipa: "tʊŋ˧", tip: "dung3 — cold (mid level)" }
+      - { es: 動, ipa: "tʊŋ˨", tip: "dung6 — move (low level)" }
+      - { es: 媽, ipa: "maː˥", tip: "maa1 — mum (high level)" }
+      - { es: 馬, ipa: "maː˩˧", tip: "maa5 — horse (low rising)" }
+      - { es: 魚, ipa: "jyː˨˩", tip: "jyu4 — fish (low falling)" }
+      - { es: 雨, ipa: "jyː˩˧", tip: "jyu5 — rain (low rising)" }
+    minimalPairs: [[買, 賣], [史, 市], [試, 事], [凍, 動], [時, 事], [魚, 預], [媽, 馬], [粉, 憤]]
+    practice: ["我想買嘢，你賣唔賣？", "今日好凍，唔好郁。", "媽媽騎馬。", "落雨，我哋食魚。", "呢件事我試吓。"]
+
+  - id: ph.initials
+    title: Initials — aspiration, z/c/s and gw/kw
+    explanation: |
+      Cantonese has 19 initial consonants. The key contrast is **aspiration**, not voicing:
+
+      | unaspirated | aspirated |
+      |---|---|
+      | b 包 *baau1* | p 拋 *paau1* |
+      | d 多 *do1* | t 拖 *to1* |
+      | g 雞 *gai1* | k 溪 *kai1* |
+      | gw 瓜 *gwaa1* | kw 誇 *kwaa1* |
+      | z 租 *zou1* | c 粗 *cou1* |
+
+      **gw** and **kw** are g and k with rounded lips (廣 *gwong2*, 裙 *kwan4*). **z, c, s** are pronounced near "ts, ts-h, s"; many speakers say them closer to English "j, ch, sh" before *i* and *yu*. **j** is the English "y" (有 *jau5*), **w** as in English (話 *waa2*), **h** as in English (好 *hou2*).
+
+      ### Tips
+      - Hold a sheet of paper in front of your mouth: it should flutter for *p, t, k, c, kw* and stay still for *b, d, g, z, gw*.
+      - *b, d, g* are not voiced like English "bee, dee, go": they are the sounds in "spa, star, ski".
+      - Jyutping **j** never sounds like English "j". 日 *jat6* sounds like "yut".
+    items:
+      - { es: 包, ipa: "paːu̯˥", tip: "baau1 — no puff of air" }
+      - { es: 拋, ipa: "pʰaːu̯˥", tip: "paau1 — strong puff" }
+      - { es: 租, ipa: "tsou̯˥", tip: "zou1 — like \"ts\" without a puff" }
+      - { es: 粗, ipa: "tsʰou̯˥", tip: "cou1 — \"ts\" with a puff" }
+      - { es: 瓜, ipa: "kʷaː˥", tip: "gwaa1 — g with rounded lips" }
+      - { es: 誇, ipa: "kʷʰaː˥", tip: "kwaa1 — k with rounded lips and a puff" }
+      - { es: 有, ipa: "jɐu̯˩˧", tip: "jau5 — Jyutping j is English y" }
+    minimalPairs: [[包, 拋], [多, 拖], [雞, 溪], [租, 粗], [瓜, 誇], [低, 梯]]
+    practice: ["爸爸去買麵包。", "多謝你幫我拖住佢。", "雞蛋仔好好食。", "呢條裙好靚。", "佢講廣東話講得好好。"]
+
+  - id: ph.nasals-syllabic
+    title: ng-, and the syllables m and ng
+    explanation: |
+      **ng** can begin a syllable, which English never does: 我 *ngo5* (I), 牛 *ngau4* (cow), 銀 *ngan4* (silver). Say "singer" and keep only the end: *-nger*.
+
+      Two syllables are just a nasal with a tone and no vowel: **m** 唔 *m4* (not) and **ng** 五 *ng5* (five), 吳 *ng4* (the surname Ng), 午 *ng5* (noon). Hum them with your mouth closed (m) or with the back of the tongue raised (ng).
+
+      ### Tips
+      - 唔該 *m4 goi1* starts with a hummed, low-falling *m* — no vowel before it.
+      - 五 *ng5* is a low rising hum: practise "ng" at the bottom of your voice, then let it rise slightly.
+      - 我 *ngo5* is the textbook form; you will often hear *o5* (see the "lazy sounds" lesson).
+    items:
+      - { es: 我, ipa: "ŋɔː˩˧", tip: "ngo5 — I, me" }
+      - { es: 牛, ipa: "ŋɐu̯˨˩", tip: "ngau4 — cow" }
+      - { es: 唔, ipa: "m̩˨˩", tip: "m4 — not; a hummed syllable" }
+      - { es: 五, ipa: "ŋ̍˩˧", tip: "ng5 — five; a hummed syllable" }
+      - { es: 吳, ipa: "ŋ̍˨˩", tip: "ng4 — the surname Ng" }
+      - { es: 銀行, ipa: "ŋɐn˨˩ hɔːŋ˨˩", tip: "ngan4 hong4 — bank" }
+    minimalPairs: [[唔, 五], [吳, 五], [我, 餓], [牛, 偶]]
+    practice: ["我唔食牛肉。", "五點鐘去銀行。", "唔該晒！", "吳生，你好。", "我好肚餓。"]
+
+  - id: ph.finals-vowels
+    title: Finals — long aa and short a, and the rounded vowels
+    explanation: |
+      Cantonese distinguishes a **long aa** /aː/ and a **short a** /ɐ/ before most endings, and the difference changes meaning:
+
+      | long aa | short a |
+      |---|---|
+      | 三 *saam1* three | 心 *sam1* heart |
+      | 街 *gaai1* street | 雞 *gai1* chicken |
+      | 山 *saan1* mountain | 新 *san1* new |
+      | 買 *maai5* buy | 米 *mai5* rice |
+      | 八 *baat3* eight | 筆 *bat1* pen |
+
+      Other vowels to watch: **eo** /ɵ/ and **oe** /œː/ are rounded front vowels (去 *heoi3*, 香 *hoeng1*); **yu** /yː/ is French *u* or German *ü* (魚 *jyu4*, 書 *syu1*); **i** before *ng/k* is lax, as in English "sing" (星 *sing1*, 食 *sik6*); **u** before *ng/k* is lax, as in "book" (東 *dung1*, 六 *luk6*).
+
+      ### Tips
+      - **aa** is long and open, like "father"; **a** is short and central, like the "u" in "but".
+      - Don't let **ei** slide into English "ay": 四 *sei3* is shorter and tighter.
+    items:
+      - { es: 三, ipa: "saːm˥", tip: "saam1 — long aa" }
+      - { es: 心, ipa: "sɐm˥", tip: "sam1 — short a" }
+      - { es: 街, ipa: "kaːi̯˥", tip: "gaai1 — long aa" }
+      - { es: 雞, ipa: "kɐi̯˥", tip: "gai1 — short a" }
+      - { es: 去, ipa: "hɵy̯˧", tip: "heoi3 — rounded eo" }
+      - { es: 書, ipa: "syː˥", tip: "syu1 — French u" }
+      - { es: 香, ipa: "hœːŋ˥", tip: "hoeng1 — rounded oe" }
+    minimalPairs: [[三, 心], [街, 雞], [山, 新], [買, 米], [八, 筆], [間, 根]]
+    practice: ["三個人去街。", "我好開心。", "新年快樂！", "佢去山頂睇書。", "買兩斤米。"]
+
+  - id: ph.entering-tones
+    title: Endings -m -n -ng and the entering tones -p -t -k
+    explanation: |
+      A Cantonese syllable can end in a vowel, a nasal **-m, -n, -ng** or a stop **-p, -t, -k**. All six survive from Middle Chinese, which is why Cantonese is loved for reading Tang poetry.
+
+      The stops are **unreleased**: close your lips (-p), touch your tongue to the ridge behind your teeth (-t) or the back of your mouth (-k), and stop the air — no puff, no extra vowel. Syllables ending in -p/-t/-k are short and are called **entering tones** (入聲). They only take tones 1, 3 and 6, so traditional charts count nine tones; Jyutping writes them with the same numbers.
+
+      | ending | example |
+      |---|---|
+      | -m | 心 *sam1* |
+      | -n | 新 *san1* |
+      | -ng | 生 *sang1* |
+      | -p | 十 *sap6* |
+      | -t | 七 *cat1* |
+      | -k | 六 *luk6* |
+
+      ### Tips
+      - Count to ten: 一 *jat1*, 六 *luk6*, 七 *cat1*, 八 *baat3*, 十 *sap6* all end in a stop.
+      - Don't add "uh": 食 *sik6* is not "sikka".
+      - Keep -m distinct from -n: 三 *saam1* (three) is not 山 *saan1* (mountain).
+    items:
+      - { es: 十, ipa: "sɐp̚˨", tip: "sap6 — lips close at the end" }
+      - { es: 七, ipa: "tsʰɐt̚˥", tip: "cat1 — tongue tip stops the air" }
+      - { es: 六, ipa: "lʊk̚˨", tip: "luk6 — back of the tongue stops the air" }
+      - { es: 濕, ipa: "sɐp̚˥", tip: "sap1 — wet" }
+      - { es: 識, ipa: "sɪk̚˥", tip: "sik1 — to know how" }
+      - { es: 三, ipa: "saːm˥", tip: "saam1 — ends with closed lips" }
+      - { es: 山, ipa: "saːn˥", tip: "saan1 — ends with the tongue up" }
+    minimalPairs: [[十, 實], [失, 識], [急, 吉], [三, 山], [心, 新], [甘, 根]]
+    practice: ["一二三四五六七八九十。", "我識講少少廣東話。", "今日好濕。", "佢食咗六個蛋撻。", "八點三個字見。"]
+
+  - id: ph.lazy-sounds
+    title: Lazy sounds — what you will really hear
+    explanation: |
+      Many Hong Kong speakers, especially younger ones, simplify some sounds in casual speech. These "lazy sounds" (懶音) are not taught as correct, but you must recognise them:
+
+      - **n- becomes l-**: 你 *nei5* → *lei5*, 男 *naam4* → *laam4* (so 南 and 藍 sound the same).
+      - **ng- is dropped**: 我 *ngo5* → *o5*, 牛 *ngau4* → *au4*. Some speakers do the reverse and add ng- to words that start with a vowel: 愛 *oi3* → *ngoi3*.
+      - **gw-/kw- lose the rounding before o**: 廣 *gwong2* → *gong2*, 國 *gwok3* → *gok3* (so 國 sounds like 角).
+      - **-ng becomes -n, -k becomes -t** after some vowels: 香港 *hoeng1 gong2* → *hoeng1 gon2*.
+
+      ### Tips
+      - Learn and speak the standard forms; Jyutping and dictionaries use them.
+      - When you hear *lei5 hou2*, it is still 你好.
+      - Radio and TV news readers keep the standard forms — good listening practice.
+    items:
+      - { es: 你, ipa: "nei̯˩˧", tip: "nei5, often heard as lei5" }
+      - { es: 我, ipa: "ŋɔː˩˧", tip: "ngo5, often heard as o5" }
+      - { es: 廣東, ipa: "kʷɔːŋ˧˥ tʊŋ˥", tip: "gwong2 dung1, often heard as gong2 dung1" }
+      - { es: 國家, ipa: "kʷɔːk̚˧ kaː˥", tip: "gwok3 gaa1, often heard as gok3 gaa1" }
+      - { es: 愛, ipa: "ɔːi̯˧", tip: "oi3, sometimes heard as ngoi3" }
+    minimalPairs: [[你, 李], [南, 藍], [國, 角], [光, 江], [年, 連]]
+    practice: ["你好，我係香港人。", "我鍾意食牛腩麵。", "廣東話好有趣。", "南邊有一間藍色嘅屋。", "我愛香港。"]
+
+  - id: ph.changed-tones
+    title: Changed tones (變調)
+    explanation: |
+      Some words change to a rising tone (usually tone 2, sometimes tone 1) in everyday speech. This **changed tone** often marks a familiar, concrete or diminutive meaning:
+
+      | dictionary tone | changed tone | |
+      |---|---|---|
+      | 糖 *tong4* sugar | 糖 *tong2* sweets | 食糖 *sik6 tong2* eat sweets |
+      | 蛋 *daan6* egg | 雞蛋 *gai1 daan2* hen's egg | |
+      | 女 *neoi5* woman | 個女 *go3 neoi2* (my) daughter | |
+      | 錢 *cin4* money | 幾多錢 *gei2 do1 cin2* how much? | |
+      | 陳 *can4* (surname) | 阿陳 *aa3 can2* | familiar address |
+      | 媽 *maa1* | 媽媽 *maa4 maa1* | first syllable low, second high |
+
+      ### Tips
+      - Learn changed-tone words as words: the app's Jyutping shows the spoken tone (雞蛋 *gai1 daan2*).
+      - A changed tone can make two words sound alike: 錢 *cin2* in 幾多錢 sounds like 淺 *cin2* (shallow).
+      - Kinship terms follow the pattern 4 + 1: 爸爸 *baa4 baa1*, 哥哥 *go4 go1*, 姐姐 *ze4 ze1*.
+      - Prices: 幾多錢 always has *cin2*.
+    items:
+      - { es: 雞蛋, tip: "gai1 daan2 — the 蛋 rises" }
+      - { es: 幾多錢, tip: "gei2 do1 cin2 — how much is it?" }
+      - { es: 媽媽, tip: "maa4 maa1" }
+      - { es: 爸爸, tip: "baa4 baa1" }
+      - { es: 姐姐, tip: "ze4 ze1" }
+      - { es: 個女, tip: "go3 neoi2 — daughter" }
+    minimalPairs: [[糖, 湯], [錢, 淺]]
+    practice: ["呢個幾多錢？", "我想要兩隻雞蛋。", "媽媽同爸爸去飲茶。", "佢個女好叻。", "阿陳，早晨！"]
+
+  - id: ph.numbers-money
+    title: Reading numbers, prices and phone numbers
+    explanation: |
+      The digits cover every tone, so numbers are great tone practice:
+
+      | 0 零 *ling4* | 1 一 *jat1* | 2 二 *ji6* | 3 三 *saam1* | 4 四 *sei3* |
+      |---|---|---|---|---|
+      | **5 五 *ng5*** | **6 六 *luk6*** | **7 七 *cat1*** | **8 八 *baat3*** | **9 九 *gau2*** |
+
+      Tens and bigger: 十 *sap6*, 百 *baak3*, 千 *cin1*, 萬 *maan6*. In fast speech 二十 contracts to 廿 *jaa6* (廿五 = 25) and 三十 to 卅 *saa1 aa6* (卅二 = 32).
+
+      **兩 *loeng5*** is "two" before a measure word or a unit: 兩個 (two of them), 兩蚊 (two dollars), 兩百 (two hundred). **二** is for counting, ordinals and inside numbers: 二, 十二, 第二.
+
+      **Money**: 蚊 *man1* (dollar), 毫 *hou4* (ten cents). Prices drop the units after the first: 三個九 *saam1 go3 gau2* = $3.90, 個半 *go3 bun3* = $1.50, 十蚊 = $10.
+
+      **Phone numbers** are read digit by digit, in groups of four: 9123 4567 = 九一二三 四五六七.
+
+      ### Tips
+      - 四 *sei3* (four) and 死 *sei2* (die) sound close, so 4 is unlucky and 8 八 *baat3* (rhymes with 發 *faat3*, prosper) is lucky.
+      - 一 *jat1* and 七 *cat1* both end in -t: keep the initials crisp.
+    items:
+      - { es: 廿五, tip: "jaa6 ng5 — twenty-five" }
+      - { es: 兩百蚊, tip: "loeng5 baak3 man1 — two hundred dollars" }
+      - { es: 三個九, tip: "saam1 go3 gau2 — $3.90" }
+      - { es: 個半, tip: "go3 bun3 — $1.50" }
+      - { es: 一千二, tip: "jat1 cin1 ji6 — 1,200" }
+      - { es: 三萬, tip: "saam1 maan6 — 30,000" }
+    minimalPairs: [[四, 死], [十, 四], [九, 舊], [二, 耳]]
+    practice: ["呢個賣十五蚊。", "兩杯奶茶，三十蚊。", "我嘅電話係九一二三 四五六七。", "八號巴士去中環。", "今日係十月廿五號。"]
