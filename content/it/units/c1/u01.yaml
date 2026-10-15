@@ -1,0 +1,286 @@
+id: c1.u01
+title: "Sfumature del congiuntivo"
+lessons:
+  - id: c1.u01.l1
+    title: Capisco che tu sia stanco
+    teach: [g.congiuntivo-nuance]
+    vocab: [w.dote, w.ammesso-che, w.posto-che, w.sempre-che, w.che-io-sappia, w.per-quanto-ne-so, w.arancina, w.arancino, w.panelle, w.sfincione, w.cannolo, w.cassata, w.caponata, w.pistacchio, w.mandorla, w.femminile, w.maschile, w.rigorosamente, w.sfumatura, w.presumere, w.presunto, w.supposizione, w.venditore, w.riempire, w.originale, w.ignorare]
+    tip: "Same verb, different mood, different meaning: Ho capito che era tardi (I realised a fact) / Capisco che tu sia stanco (I sympathise). Dice che viene (report) / Dice che venga (order)."
+    sentences:
+      - { es: "Capisco che tu sia stanco, ma a Ballarò bisogna arrivare presto.", en: "I understand that you're tired, but you have to get to Ballarò early.", altEs: ["Capisco che tu sia stanco, ma a Ballarò si deve arrivare presto."], altEn: ["I understand you're tired, but you need to get to Ballarò early."], grammar: [g.congiuntivo-nuance], vocab: [], note: "capire che + congiuntivo = to sympathise, to accept." }
+      - { es: "Ho capito che era tardi solo quando hanno chiuso le bancarelle.", en: "I realised it was late only when they closed the stalls.", altEs: ["Ho capito che era tardi solo quando hanno smontato le bancarelle."], altEn: ["I only realised it was late when they closed the stalls."], grammar: [g.congiuntivo-nuance, g.passato-prossimo-vs-imperfetto], vocab: [w.bancarella], note: "capire che + indicative = to realise a fact." }
+      - { es: "Ammetto che ho sbagliato: a Palermo si dice arancina, rigorosamente al femminile.", en: "I admit I was wrong: in Palermo you say arancina, strictly in the feminine.", altEs: ["Ammetto di aver sbagliato: a Palermo si dice arancina, rigorosamente al femminile."], grammar: [g.congiuntivo-nuance], vocab: [w.arancina, w.rigorosamente, w.femminile] }
+      - { es: "Ammettiamo che abbia ragione lui: a Catania, però, lo chiamano arancino.", en: "Let's suppose he's right: in Catania, though, they call it arancino.", altEs: ["Ammettiamo pure che abbia ragione lui: a Catania, però, lo chiamano arancino.", "Ammettiamo che lui abbia ragione: a Catania, però, lo chiamano arancino."], altEn: ["Let's grant that he's right: in Catania, though, they call it arancino."], grammar: [g.congiuntivo-nuance], vocab: [w.arancino, w.ammesso-che], error: { wrong: "Ammettiamo che ha ragione lui: a Catania, però, lo chiamano arancino.", explain: "Ammettiamo che means 'let's suppose': a hypothesis takes the congiuntivo (abbia), not the indicative.", grammar: g.congiuntivo-nuance } }
+      - { es: "Mia nonna dice che sei passato da lei ieri.", en: "My grandmother says you dropped by her place yesterday.", altEs: ["La nonna dice che sei passato da lei ieri."], grammar: [g.congiuntivo-nuance, g.passato-prossimo-essere], vocab: [], transform: { instruction: "Turn the report into a request: she wants you to drop by (dire che + congiuntivo)", answer: "Mia nonna dice che passi da lei.", alt: ["Mia nonna dice di passare da lei.", "La nonna dice che passi da lei."], en: "My grandmother says you should drop by her place." } }
+      - { es: "Cerco una bancarella che venda panelle anche la sera.", en: "I'm looking for a stall that sells panelle in the evening too.", altEs: ["Sto cercando una bancarella che venda panelle anche la sera."], grammar: [g.congiuntivo-nuance, g.relative-advanced], vocab: [w.bancarella, w.panelle], note: "Any stall, not a known one: congiuntivo." }
+      - { es: "Conosco un bar che fa i cannoli al momento.", en: "I know a bar that fills the cannoli on the spot.", altEs: ["Conosco un bar che riempie i cannoli al momento."], altEn: ["I know a café that makes the cannoli to order."], grammar: [g.congiuntivo-nuance], vocab: [w.cannolo], transform: { instruction: "You don't know such a bar yet: say you're looking for one", answer: "Cerco un bar che faccia i cannoli al momento.", alt: ["Sto cercando un bar che faccia i cannoli al momento.", "Cerco un bar che riempia i cannoli al momento."], en: "I'm looking for a bar that fills the cannoli on the spot." } }
+      - { es: "È l'unica pasticceria che sappia fare la cassata come una volta.", en: "It's the only pastry shop that knows how to make cassata the old way.", altEs: ["È l'unica pasticceria che sa fare la cassata come una volta."], altEn: ["It's the only pastry shop that can make cassata like they used to."], grammar: [g.congiuntivo-nuance], vocab: [w.cassata], note: "After l'unico / il solo / il primo, the congiuntivo makes it a personal judgement." }
+      - { es: "Che io sappia, la caponata si mangia fredda.", en: "As far as I know, caponata is eaten cold.", altEs: ["Per quanto ne so, la caponata si mangia fredda.", "Per quel che ne so, la caponata si mangia fredda."], grammar: [g.congiuntivo-nuance, g.si-passivante], vocab: [w.che-io-sappia, w.caponata] }
+      - { es: "Non so se le mandorle siano siciliane o californiane.", en: "I don't know whether the almonds are Sicilian or Californian.", altEs: ["Non so se le mandorle sono siciliane o californiane."], grammar: [g.congiuntivo-nuance], vocab: [w.mandorla], note: "In indirect questions the congiuntivo adds doubt and formality; the indicative is also correct." }
+      - { es: "Posto che il prezzo sia giusto, prendo un chilo di pistacchi.", en: "Assuming the price is right, I'll take a kilo of pistachios.", altEs: ["Ammesso che il prezzo sia giusto, prendo un chilo di pistacchi.", "Sempre che il prezzo sia giusto, prendo un chilo di pistacchi."], altEn: ["Provided the price is right, I'll take a kilo of pistachios."], grammar: [g.congiuntivo-nuance, g.congiuntivo-conjunctions], vocab: [w.posto-che, w.pistacchio] }
+      - { es: "Sempre che non piova, domani andiamo alla Vucciria.", en: "As long as it doesn't rain, tomorrow we're going to the Vucciria.", altEs: ["Sempre che non piova, domani si va alla Vucciria."], altEn: ["Provided it doesn't rain, we're going to the Vucciria tomorrow."], grammar: [g.congiuntivo-conjunctions, g.present-for-future], vocab: [w.sempre-che], error: { wrong: "Sempre che non piove, domani andiamo alla Vucciria.", explain: "Sempre che (provided that) is always followed by the congiuntivo: piova.", grammar: g.congiuntivo-conjunctions } }
+      - { es: "Presumo che il presunto sfincione originale sia un'invenzione per turisti.", en: "I presume the so-called original sfincione is an invention for tourists.", altEs: ["Presumo che il cosiddetto sfincione originale sia un'invenzione per turisti."], grammar: [g.congiuntivo-opinion], vocab: [w.presumere, w.presunto, w.sfincione] }
+      - { es: "Tra arancina e arancino c'è solo una sfumatura, ma a Palermo nessuno la ignora.", en: "Between arancina and arancino there's only a nuance, but in Palermo nobody ignores it.", grammar: [g.congiuntivo-nuance], vocab: [w.sfumatura, w.arancina, w.arancino] }
+      - { es: "Saper scegliere il pesce al mercato è una dote che pochi hanno.", en: "Knowing how to choose fish at the market is a gift that few people have.", altEs: ["Saper scegliere il pesce al mercato è una dote che hanno in pochi."], altEn: ["Being able to pick fish at the market is a talent few have."], grammar: [g.infinito-sostantivato], vocab: [w.dote] }
+      - { es: "È solo una supposizione, ma credo che il venditore ci abbia riconosciuti.", en: "It's only a supposition, but I think the vendor recognised us.", altEs: ["È solo una supposizione, ma credo che il venditore ci abbia riconosciuto."], grammar: [g.congiuntivo-passato], vocab: [w.supposizione, w.venditore] }
+    exchanges:
+      - q: { es: "Allora, a Palermo si dice arancina o arancino?", en: "So, in Palermo do you say arancina or arancino?" }
+        a: { es: "Arancina, al femminile; a Catania invece è maschile.", en: "Arancina, in the feminine; in Catania, on the other hand, it's masculine." }
+        alt: ["Arancina, rigorosamente al femminile.", "Arancina, ma a Catania dicono arancino."]
+        grammar: [g.congiuntivo-nuance]
+        vocab: [w.arancina, w.femminile, w.maschile]
+      - q: { es: "Sai se la caponata è piccante?", en: "Do you know if caponata is spicy?" }
+        a: { es: "Che io sappia, no, ma chiedi al cuoco per sicurezza.", en: "As far as I know, no, but ask the cook to be sure." }
+        alt: ["Per quanto ne so, no.", "Non credo che sia piccante, ma chiedi."]
+        grammar: [g.congiuntivo-nuance]
+        vocab: [w.che-io-sappia, w.per-quanto-ne-so, w.caponata]
+      - q: { es: "Cerchi un ristorante in particolare?", en: "Are you looking for a particular restaurant?" }
+        a: { es: "Uno qualsiasi che faccia una caponata come quella di mia nonna.", en: "Any one that makes caponata like my grandmother's." }
+        alt: ["Sì, uno che faccia la caponata come la faceva mia nonna.", "No, basta che sia economico."]
+        grammar: [g.congiuntivo-nuance, g.relative-advanced]
+        vocab: [w.caponata]
+      - q: { es: "Hai capito perché il venditore urlava così?", en: "Did you understand why the vendor was shouting like that?" }
+        a: { es: "Ho capito che voleva vendere tutto il pesce prima di pranzo.", en: "I realised he wanted to sell all the fish before lunch." }
+        alt: ["Sì: voleva vendere tutto prima di pranzo.", "Credo che volesse finire il pesce prima di pranzo."]
+        grammar: [g.congiuntivo-nuance]
+        vocab: [w.venditore]
+      - q: { es: "Compriamo i pistacchi qui?", en: "Shall we buy the pistachios here?" }
+        a: { es: "Ammesso che non costino troppo, sì.", en: "Assuming they don't cost too much, yes." }
+        alt: ["Sempre che non costino troppo.", "Posto che siano di Bronte, sì."]
+        grammar: [g.congiuntivo-conjunctions]
+        vocab: [w.ammesso-che, w.pistacchio]
+      - q: { es: "Ti è piaciuta la cassata di mia zia?", en: "Did you like my aunt's cassata?" }
+        a: { es: "Capisco che tu ne vada orgoglioso, ma per me è troppo dolce.", en: "I understand that you're proud of it, but for me it's too sweet." }
+        alt: ["Buonissima, ma un po' troppo dolce per me.", "Capisco che sia famosa, ma è troppo dolce."]
+        grammar: [g.congiuntivo-nuance]
+        vocab: [w.cassata, w.orgoglioso]
+    texts:
+      - title: "Messaggio di Rosalia"
+        es: ["Sono al mercato di Ballarò.", "Cerco una bancarella che venda panelle senza fila, ma che io sappia non esiste.", "Se vuoi lo sfincione, dimmelo subito."]
+        en: ["I'm at Ballarò market.", "I'm looking for a stall that sells panelle without a queue, but as far as I know there isn't one.", "If you want sfincione, tell me right away."]
+        grammar: [g.congiuntivo-nuance]
+        vocab: [w.bancarella, w.panelle, w.sfincione]
+      - title: "Cartello in pasticceria"
+        es: ["I nostri cannoli si riempiono rigorosamente al momento.", "La cassata va ordinata il giorno prima.", "Ammesso che ne resti una, la teniamo per voi."]
+        en: ["Our cannoli are strictly filled on the spot.", "Cassata must be ordered the day before.", "Assuming there's one left, we'll keep it for you."]
+        grammar: [g.congiuntivo-conjunctions, g.passive-andare]
+        vocab: [w.cannolo, w.cassata, w.ammesso-che]
+    spicy:
+      - { es: "Capisco che tu voglia offrirmi un cannolo, ma non sono così facile da conquistare: prova con due.", en: "I understand you want to buy me a cannolo, but I'm not that easy to win over: try two.", altEs: ["Capisco che tu mi voglia offrire un cannolo, ma non sono così facile da conquistare: prova con due."], grammar: [g.congiuntivo-nuance], vocab: [w.cannolo] }
+      - { es: "Cerco qualcuno che mi guardi come tu guardi quell'arancina.", en: "I'm looking for someone who looks at me the way you look at that arancina.", altEs: ["Cerco qualcuno che mi guardi come tu stai guardando quell'arancina."], grammar: [g.congiuntivo-nuance, g.relative-advanced], vocab: [w.arancina] }
+      - { es: "Ammettiamo che io ti abbia seguito fino al mercato per caso: ci crederesti?", en: "Let's suppose I followed you all the way to the market by chance: would you believe it?", altEs: ["Ammettiamo che ti abbia seguito fino al mercato per caso: ci crederesti?"], grammar: [g.congiuntivo-nuance, g.congiuntivo-passato], vocab: [] }
+      - { es: "Sei l'unica persona che mi faccia ridere anche quando ho fame.", en: "You're the only person who makes me laugh even when I'm hungry.", altEs: ["Sei l'unica persona che riesca a farmi ridere anche quando ho fame."], grammar: [g.congiuntivo-nuance], vocab: [] }
+      - { es: "Mia madre dice che ti porti a cena domenica; io dico che porti tu i cannoli.", en: "My mother says I should bring you to dinner on Sunday; I say you should bring the cannoli.", grammar: [g.congiuntivo-nuance], vocab: [w.cannolo] }
+  - id: c1.u01.l2
+    title: Che sia già partito?
+    teach: [g.congiuntivo-independent]
+    vocab: [w.dubitativo, w.congetturare, w.auspicare, w.augurio, w.volontà, w.desiderabile, w.caso-mai, w.quantunque, w.ancorché, w.alcunché, w.leggenda, w.mito, w.mitologia, w.pupo, w.carretto, w.coppola, w.asinello, w.scampare, w.gelsomino, w.zagara, w.benedetto, w.palermitano, w.miracolo, w.mosso, w.festino, w.santo]
+    tip: "On its own, the congiuntivo guesses (Che sia malato?), wishes (Che Dio ce la mandi buona!), concedes (Sia come sia) and lets things happen (Che entrino pure!)."
+    sentences:
+      - { es: "Non risponde al telefono: che sia ancora al teatro dei pupi?", en: "He's not answering the phone: could he still be at the puppet theatre?", altEs: ["Non risponde al telefono. Che sia ancora al teatro dei pupi?"], altEn: ["He isn't picking up: might he still be at the puppet theatre?"], grammar: [g.congiuntivo-independent], vocab: [w.pupo], error: { wrong: "Non risponde al telefono: che è ancora al teatro dei pupi?", explain: "A cautious guess with Che…? needs the congiuntivo: che sia.", grammar: g.congiuntivo-independent } }
+      - { es: "Forse si è dimenticato dell'appuntamento.", en: "Maybe he's forgotten about the appointment.", altEs: ["Forse ha dimenticato l'appuntamento."], grammar: [g.congiuntivo-independent, g.reflexive-passato-prossimo], vocab: [], transform: { instruction: "Turn the guess into a question with Che + congiuntivo", answer: "Che si sia dimenticato dell'appuntamento?", alt: ["Che abbia dimenticato l'appuntamento?"], en: "Could he have forgotten about the appointment?" } }
+      - { es: "Sia chiaro: domani all'opera dei pupi ci vengo anch'io.", en: "Let's be clear: tomorrow I'm coming to the puppet show too.", altEs: ["Sia chiaro, domani all'opera dei pupi vengo anch'io."], grammar: [g.congiuntivo-independent], vocab: [w.pupo] }
+      - { es: "Lasciali entrare, lo spettacolo comincia tra cinque minuti.", en: "Let them in, the show starts in five minutes.", altEs: ["Falli entrare, lo spettacolo comincia tra cinque minuti."], grammar: [g.congiuntivo-independent, g.imperativo-pronouns], vocab: [], transform: { instruction: "Use Che + congiuntivo for 'let them come in'", answer: "Che entrino pure, lo spettacolo comincia tra cinque minuti.", alt: ["Entrino pure, lo spettacolo comincia tra cinque minuti.", "Che entrino, lo spettacolo comincia tra cinque minuti."], en: "Let them come in, the show starts in five minutes." } }
+      - { es: "Sia come sia, la leggenda di Colapesce la conoscono tutti.", en: "Be that as it may, everybody knows the legend of Colapesce.", altEs: ["Sia come sia, tutti conoscono la leggenda di Colapesce."], grammar: [g.congiuntivo-independent, g.dislocation], vocab: [w.leggenda] }
+      - { es: "Costi quel che costi, voglio portare a casa un carretto siciliano.", en: "Whatever it costs, I want to take a Sicilian cart home.", altEs: ["Costi quello che costi, voglio portare a casa un carretto siciliano."], altEn: ["Whatever the cost, I want to take home a Sicilian cart."], grammar: [g.congiuntivo-independent], vocab: [w.carretto] }
+      - { es: "Che Dio ce la mandi buona: il traghetto per Ustica parte con il mare mosso.", en: "God help us: the ferry to Ustica is leaving in a rough sea.", grammar: [g.congiuntivo-independent], vocab: [] }
+      - { es: "Che tu sia benedetto, mi hai salvato la serata!", en: "Bless you, you've saved my evening!", altEs: ["Sia benedetto, mi hai salvato la serata!"], grammar: [g.congiuntivo-independent], vocab: [w.benedetto] }
+      - { es: "Non sia mai che un vecchio palermitano esca senza coppola!", en: "Heaven forbid an old Palermitan should go out without his flat cap!", grammar: [g.congiuntivo-independent], vocab: [w.coppola, w.palermitano] }
+      - { es: "Quantunque sia solo una leggenda, molti la raccontano come se fosse vera.", en: "Although it's only a legend, many people tell it as if it were true.", altEs: ["Ancorché sia solo una leggenda, molti la raccontano come se fosse vera.", "Sebbene sia solo una leggenda, molti la raccontano come se fosse vera."], grammar: [g.concessive-clauses, g.come-se], vocab: [w.quantunque, w.ancorché, w.leggenda] }
+      - { es: "Che fosse davvero un mito? Gli archeologi non hanno trovato alcunché.", en: "Was it really just a myth? The archaeologists didn't find anything.", altEs: ["Che fosse solo un mito? Gli archeologi non hanno trovato nulla."], grammar: [g.congiuntivo-independent], vocab: [w.mito, w.alcunché] }
+      - { es: "Ancorché si trattasse di mitologia, i Greci credevano che i Ciclopi vivessero sotto l'Etna.", en: "Even though it was mythology, the Greeks believed that the Cyclopes lived under Etna.", altEs: ["Sebbene si trattasse di mitologia, i Greci credevano che i Ciclopi vivessero sotto l'Etna."], grammar: [g.concessive-clauses, g.concordanza-congiuntivo], vocab: [w.ancorché, w.mitologia] }
+      - { es: "Caso mai piovesse, l'opera dei pupi si fa al chiuso.", en: "Should it rain, the puppet show is held indoors.", altEs: ["Casomai piovesse, l'opera dei pupi si fa al chiuso.", "Se mai piovesse, l'opera dei pupi si fa al chiuso."], grammar: [g.congiuntivo-imperfetto, g.si-impersonale], vocab: [w.caso-mai] }
+      - { es: "Il sindaco auspica che il festino di Santa Rosalia sia più tranquillo quest'anno.", en: "The mayor hopes that the Santa Rosalia festival will be calmer this year.", grammar: [g.congiuntivo-wishes-emotion], vocab: [w.auspicare] }
+      - { es: "Un profumo di zagara e gelsomino: che sia già primavera?", en: "A scent of orange blossom and jasmine: could it be spring already?", altEs: ["Profumo di zagara e gelsomino: che sia già primavera?"], grammar: [g.congiuntivo-independent], vocab: [w.zagara, w.gelsomino] }
+      - { es: "Sono scampati alla tempesta per miracolo: che sia stata la volontà della santa?", en: "They escaped the storm by a miracle: could it have been the saint's will?", grammar: [g.congiuntivo-independent, g.congiuntivo-passato], vocab: [w.scampare, w.volontà, w.miracolo] }
+    exchanges:
+      - q: { es: "Marco non è ancora arrivato.", en: "Marco hasn't arrived yet." }
+        a: { es: "Che si sia perso nei vicoli della Kalsa?", en: "Could he have got lost in the alleys of the Kalsa?" }
+        alt: ["Che si sia perso?", "Che abbia sbagliato strada?"]
+        grammar: [g.congiuntivo-independent]
+        vocab: []
+      - q: { es: "Dicono che domani il mare sarà mosso.", en: "They say the sea will be rough tomorrow." }
+        a: { es: "Sia come sia, io a Ustica ci vado lo stesso.", en: "Be that as it may, I'm going to Ustica anyway." }
+        alt: ["Sia come sia, io parto.", "Che sia mosso, io ci vado."]
+        grammar: [g.congiuntivo-independent]
+        vocab: []
+      - q: { es: "Chi è quel signore con la coppola e l'asinello?", en: "Who's that man with the flat cap and the little donkey?" }
+        a: { es: "Che sia il padrone del teatro dei pupi? Lo vedo sempre qui davanti.", en: "Could he be the owner of the puppet theatre? I always see him out front here." }
+        alt: ["Non lo so: che sia il padrone del teatro?", "Che sia un attore della festa?"]
+        grammar: [g.congiuntivo-independent]
+        vocab: [w.coppola, w.asinello, w.pupo]
+      - q: { es: "Hai un augurio per gli sposi?", en: "Do you have a wish for the bride and groom?" }
+        a: { es: "Che vivano felici e contenti, e che la suocera abiti lontano!", en: "May they live happily ever after, and may the mother-in-law live far away!" }
+        alt: ["Che siano felici per sempre!", "Che abbiano tanti anni felici insieme!"]
+        grammar: [g.congiuntivo-independent]
+        vocab: [w.augurio]
+      - q: { es: "Secondo te, si può solo congetturare sull'origine di Colapesce?", en: "In your opinion, can we only conjecture about Colapesce's origin?" }
+        a: { es: "Sì: è un mito, e nei miti la domanda dubitativa vale più della risposta.", en: "Yes: it's a myth, and in myths the doubtful question is worth more than the answer." }
+        alt: ["Sì, è un mito.", "Possiamo solo fare supposizioni."]
+        grammar: [g.congiuntivo-independent]
+        vocab: [w.congetturare, w.mito, w.dubitativo]
+      - q: { es: "Vorresti restare a Palermo un altro mese?", en: "Would you like to stay in Palermo another month?" }
+        a: { es: "Sarebbe desiderabile, ma il lavoro mi aspetta. Che aspetti ancora un po'!", en: "It would be desirable, but work is waiting for me. Let it wait a bit longer!" }
+        alt: ["Magari! Ma il lavoro mi aspetta.", "Sarebbe bello, ma non posso."]
+        grammar: [g.congiuntivo-independent]
+        vocab: [w.desiderabile]
+    texts:
+      - title: "Biglietto di auguri"
+        es: ["Cari Rosalia e Totò,", "che questa casa sia sempre piena di amici e di cannoli.", "Viva gli sposi!"]
+        en: ["Dear Rosalia and Totò,", "may this house always be full of friends and cannoli.", "Long live the bride and groom!"]
+        grammar: [g.congiuntivo-independent]
+        vocab: [w.cannolo]
+      - title: "Locandina dell'opera dei pupi"
+        es: ["Stasera: Orlando contro i Saraceni.", "Che vengano grandi e piccoli: lo spettacolo è per tutti.", "Sia chiaro: si entra solo con il biglietto."]
+        en: ["Tonight: Orlando against the Saracens.", "Let young and old come: the show is for everyone.", "Let's be clear: entry is by ticket only."]
+        grammar: [g.congiuntivo-independent]
+        vocab: [w.pupo]
+    spicy:
+      - { es: "Mi guarda da mezz'ora: che sia timido o che stia solo guardando il mio cannolo?", en: "He's been looking at me for half an hour: could he be shy, or is he just looking at my cannolo?", altEs: ["Mi fissa da mezz'ora: che sia timido o che stia solo guardando il mio cannolo?"], grammar: [g.congiuntivo-independent], vocab: [w.cannolo] }
+      - { es: "Sia chiaro: è solo un caffè… per ora.", en: "Let's be clear: it's just a coffee… for now.", altEs: ["Sia chiaro, è solo un caffè… per adesso."], grammar: [g.congiuntivo-independent], vocab: [] }
+      - { es: "Che sia benedetto il cameriere che mi ha messo accanto a te.", en: "Bless the waiter who sat me next to you.", altEs: ["Sia benedetto il cameriere che mi ha messo accanto a te."], grammar: [g.congiuntivo-independent], vocab: [w.benedetto] }
+      - { es: "Costi quel che costi, stasera ballo con te.", en: "Whatever it takes, tonight I'm dancing with you.", altEs: ["Costi quello che costi, stasera ballo con te."], grammar: [g.congiuntivo-independent], vocab: [] }
+      - { es: "Non sia mai che io rifiuti un invito sotto il gelsomino.", en: "Heaven forbid I should turn down an invitation under the jasmine.", grammar: [g.congiuntivo-independent], vocab: [w.gelsomino] }
+  - id: c1.u01.l3
+    title: Il fatto che Palermo sia stata araba
+    teach: [g.il-fatto-che]
+    vocab: [w.il-fatto-che, w.dominazione, w.normanno, w.arabo, w.bizantino, w.aragonese, w.catalano, w.mescolanza, w.contaminazione, w.sincretismo, w.stratificazione, w.convivenza, w.tolleranza, w.cosmopolita, w.crocevia, w.traccia, w.abside, w.capoluogo, w.patria, w.indispensabile, w.imprescindibile, w.soffitto, w.reciproco, w.distinguere, w.colpire, w.popolo]
+    tip: "Il fatto che + congiuntivo presents a fact as a topic (Il fatto che non abbia chiamato mi preoccupa); il fatto è che + indicative means 'the thing is'. A che-clause before the verb takes the congiuntivo: Che sia vero, lo sanno tutti."
+    sentences:
+      - { es: "Il fatto che Palermo sia stata araba e normanna si vede in ogni chiesa.", en: "The fact that Palermo was Arab and Norman shows in every church.", altEs: ["Che Palermo sia stata araba e normanna si vede in ogni chiesa."], grammar: [g.il-fatto-che, g.congiuntivo-passato], vocab: [w.il-fatto-che, w.arabo, w.normanno], error: { wrong: "Il fatto che Palermo è stata araba e normanna si vede in ogni chiesa.", explain: "Il fatto che, used as the subject of the sentence, takes the congiuntivo: sia stata.", grammar: g.il-fatto-che } }
+      - { es: "Che la città sia un crocevia di culture è evidente.", en: "That the city is a crossroads of cultures is obvious.", altEs: ["È evidente che la città è un crocevia di culture."], grammar: [g.il-fatto-che], vocab: [w.crocevia], transform: { instruction: "Start with È evidente che… (the clause now follows the verb)", answer: "È evidente che la città è un crocevia di culture.", alt: ["È evidente che la città sia un crocevia di culture."], en: "It's obvious that the city is a crossroads of cultures." } }
+      - { es: "Il fatto è che nessuno sa più distinguere le tracce arabe da quelle normanne.", en: "The thing is, nobody can tell the Arab traces from the Norman ones any more.", altEs: ["Il fatto è che nessuno riesce più a distinguere le tracce arabe da quelle normanne."], grammar: [g.il-fatto-che], vocab: [w.traccia, w.distinguere], note: "il fatto è che + indicative = the thing is." }
+      - { es: "I Normanni hanno rispettato gli artisti arabi, e questo mi sorprende.", en: "The Normans respected the Arab artists, and that surprises me.", grammar: [g.il-fatto-che], vocab: [w.normanno, w.arabo], transform: { instruction: "Start with Il fatto che…", answer: "Il fatto che i Normanni abbiano rispettato gli artisti arabi mi sorprende.", alt: ["Che i Normanni abbiano rispettato gli artisti arabi mi sorprende."], en: "The fact that the Normans respected the Arab artists surprises me." } }
+      - { es: "Che sotto la dominazione normanna ci fosse una certa tolleranza, lo dicono molti storici.", en: "Many historians say that there was a certain tolerance under Norman rule.", altEs: ["Molti storici dicono che sotto la dominazione normanna ci fosse una certa tolleranza."], grammar: [g.il-fatto-che, g.dislocation], vocab: [w.dominazione, w.tolleranza] }
+      - { es: "Nell'abside della Cappella Palatina si vede l'incontro tra arte bizantina e araba.", en: "In the apse of the Palatine Chapel you can see the meeting of Byzantine and Arab art.", grammar: [g.si-impersonale], vocab: [w.abside, w.bizantino] }
+      - { es: "Il soffitto di legno dipinto è un capolavoro di sincretismo.", en: "The painted wooden ceiling is a masterpiece of syncretism.", grammar: [g.articles], vocab: [w.soffitto, w.sincretismo] }
+      - { es: "Il fatto che Palermo sia il capoluogo non significa che sia la città più tranquilla.", en: "The fact that Palermo is the regional capital doesn't mean it's the quietest city.", altEs: ["Che Palermo sia il capoluogo non significa che sia la città più tranquilla."], grammar: [g.il-fatto-che, g.congiuntivo-nuance], vocab: [w.il-fatto-che, w.capoluogo] }
+      - { es: "Dato che la dominazione aragonese durò secoli, molte parole siciliane vengono dal catalano.", en: "Since Aragonese rule lasted for centuries, many Sicilian words come from Catalan.", altEs: ["Visto che la dominazione aragonese durò secoli, molte parole siciliane vengono dal catalano."], grammar: [g.il-fatto-che, g.passato-remoto-forms], vocab: [w.aragonese, w.catalano], note: "dato che / visto che (cause) take the indicative." }
+      - { es: "La cucina palermitana è una mescolanza di sapori arabi e spagnoli.", en: "Palermo cooking is a blend of Arab and Spanish flavours.", altEs: ["La cucina di Palermo è una mescolanza di sapori arabi e spagnoli."], grammar: [g.adjective-agreement], vocab: [w.mescolanza, w.palermitano] }
+      - { es: "Il fatto che qui si siano incontrati tanti popoli rende la città cosmopolita.", en: "The fact that so many peoples met here makes the city cosmopolitan.", grammar: [g.il-fatto-che, g.congiuntivo-passato], vocab: [w.cosmopolita] }
+      - { es: "La cattedrale è una stratificazione di epoche: lo capisci appena entri.", en: "The cathedral is a layering of eras: you understand it as soon as you go in.", grammar: [g.il-fatto-che], vocab: [w.stratificazione] }
+      - { es: "Per una convivenza serena, il rispetto reciproco è indispensabile.", en: "For peaceful coexistence, mutual respect is indispensable.", altEs: ["Per una convivenza serena, il rispetto reciproco è imprescindibile."], grammar: [g.adjective-agreement], vocab: [w.convivenza, w.reciproco, w.indispensabile] }
+      - { es: "Che la contaminazione tra culture sia una ricchezza, nessuno qui lo mette in dubbio.", en: "Nobody here doubts that cross-fertilisation between cultures is a source of richness.", altEs: ["Nessuno qui mette in dubbio che la contaminazione tra culture sia una ricchezza."], grammar: [g.il-fatto-che, g.dislocation], vocab: [w.contaminazione] }
+      - { es: "Il fatto che tu non sia mai stato a Monreale è imperdonabile!", en: "The fact that you've never been to Monreale is unforgivable!", grammar: [g.il-fatto-che], vocab: [w.il-fatto-che], error: { wrong: "Il fatto di che tu non sia mai stato a Monreale è imperdonabile!", explain: "Il fatto che has no di (Spanish speakers: el hecho de que → il fatto che).", grammar: g.il-fatto-che } }
+      - { es: "Per mio nonno la patria è il quartiere dove è nato; conoscere la sua storia è imprescindibile.", en: "For my grandfather, his homeland is the neighbourhood where he was born; knowing its history is essential.", grammar: [g.infinito-sostantivato], vocab: [w.patria, w.imprescindibile] }
+    exchanges:
+      - q: { es: "Perché ci sono cupole rosse sulle chiese?", en: "Why are there red domes on the churches?" }
+        a: { es: "Il fatto è che le hanno costruite artigiani arabi al servizio dei Normanni.", en: "The thing is, they were built by Arab craftsmen working for the Normans." }
+        alt: ["Perché le hanno costruite artigiani arabi.", "Il fatto è che sono di stile arabo."]
+        grammar: [g.il-fatto-che]
+        vocab: [w.arabo, w.normanno]
+      - q: { es: "Ti preoccupa che Lucia non abbia risposto?", en: "Does it worry you that Lucia hasn't answered?" }
+        a: { es: "Sì, il fatto che non risponda da due giorni non è normale.", en: "Yes, the fact that she hasn't answered for two days isn't normal." }
+        alt: ["Un po': non è da lei.", "Sì, il fatto che non risponda mi preoccupa."]
+        grammar: [g.il-fatto-che]
+        vocab: [w.il-fatto-che]
+      - q: { es: "Il siciliano ha parole arabe?", en: "Does Sicilian have Arabic words?" }
+        a: { es: "Tantissime: che la dominazione araba abbia lasciato tracce nella lingua è evidente.", en: "Loads: it's obvious that Arab rule left traces in the language." }
+        alt: ["Sì, moltissime.", "Sì, la dominazione araba ha lasciato tante tracce."]
+        grammar: [g.il-fatto-che]
+        vocab: [w.dominazione, w.traccia]
+      - q: { es: "Che cosa ti ha colpito di più di Palermo?", en: "What struck you most about Palermo?" }
+        a: { es: "Il fatto che sia così cosmopolita, nonostante tutto.", en: "The fact that it's so cosmopolitan, despite everything." }
+        alt: ["Che sia così cosmopolita.", "La mescolanza di culture."]
+        grammar: [g.il-fatto-che]
+        vocab: [w.cosmopolita, w.colpire]
+      - q: { es: "Perché ad Alghero si parla ancora catalano?", en: "Why do people in Alghero still speak Catalan?" }
+        a: { es: "Il fatto è che gli Aragonesi la conquistarono nel 1354.", en: "The thing is, the Aragonese conquered it in 1354." }
+        alt: ["Perché fu conquistata dagli Aragonesi.", "Per la dominazione aragonese."]
+        grammar: [g.il-fatto-che, g.passato-remoto-forms]
+        vocab: [w.catalano, w.aragonese]
+    texts:
+      - title: "Guida: la Cappella Palatina"
+        es: ["La Cappella Palatina è un esempio perfetto di sincretismo.", "Mosaici bizantini, soffitto arabo e architettura normanna convivono nello stesso spazio.", "Il fatto che tre culture abbiano lavorato insieme la rende unica."]
+        en: ["The Palatine Chapel is a perfect example of syncretism.", "Byzantine mosaics, an Arab ceiling and Norman architecture coexist in the same space.", "The fact that three cultures worked together makes it unique."]
+        grammar: [g.il-fatto-che]
+        vocab: [w.sincretismo, w.bizantino, w.soffitto]
+    spicy:
+      - { es: "Il fatto che tu abbia scelto il tavolo accanto al mio non è una coincidenza, vero?", en: "The fact that you chose the table next to mine isn't a coincidence, is it?", altEs: ["Che tu abbia scelto il tavolo accanto al mio non è una coincidenza, vero?"], grammar: [g.il-fatto-che], vocab: [w.il-fatto-che] }
+      - { es: "Che tu sia arrivato in ritardo te lo perdono; che tu sia arrivato senza cannoli, no.", en: "I forgive you for arriving late; for arriving without cannoli, no.", grammar: [g.il-fatto-che, g.dislocation], vocab: [w.cannolo] }
+      - { es: "Il fatto che tu parli tre lingue mi piace; il fatto che tu non ne usi nessuna per chiamarmi, meno.", en: "I like the fact that you speak three languages; the fact that you use none of them to call me, less so.", grammar: [g.il-fatto-che], vocab: [w.il-fatto-che] }
+      - { es: "Il fatto che ci siamo conosciuti a un crocevia del mercato mi sembra un segno del destino.", en: "The fact that we met at a crossroads in the market seems like a sign of fate to me.", altEs: ["Il fatto che ci siamo incontrati a un crocevia del mercato mi sembra un segno del destino."], grammar: [g.il-fatto-che], vocab: [w.crocevia] }
+  - id: c1.u01.l4
+    title: Cerco un posto che abbia vista sul mare
+    teach: [g.congiuntivo-nuance, g.il-fatto-che]
+    vocab: [w.corallo, w.lavico, w.fertile, w.stagno, w.fenicottero, w.nidificare, w.elefante, w.smeraldo, w.granito, w.trasparente, w.attirare, w.sguardo, w.spaziare, w.dominare, w.stendersi, w.percorso, w.rivestito, w.consorzio, w.località, w.laddove, w.affascinante, w.distrarre, w.liquido, w.migliaio, w.friggitoria, w.sfumato]
+    tip: "A relative clause about something you know exists takes the indicative (Conosco una spiaggia che ha…); about something you are looking for, or that may not exist, the congiuntivo (Cerco una spiaggia che abbia…; Non c'è nessuno che sappia…)."
+    sentences:
+      - { es: "Cerco una spiaggia che abbia l'acqua trasparente e poca gente.", en: "I'm looking for a beach with clear water and not many people.", altEs: ["Sto cercando una spiaggia che abbia l'acqua trasparente e poca gente."], altEn: ["I'm looking for a beach that has clear water and few people."], grammar: [g.congiuntivo-nuance, g.relative-advanced], vocab: [w.trasparente] }
+      - { es: "Conosco una spiaggia vicino a Palermo che ha l'acqua trasparente: Mondello.", en: "I know a beach near Palermo that has clear water: Mondello.", grammar: [g.congiuntivo-nuance], vocab: [w.trasparente] }
+      - { es: "È l'unico percorso che permetta di vedere tutta la costa a piedi.", en: "It's the only route that lets you see the whole coast on foot.", altEs: ["È l'unico percorso che permette di vedere tutta la costa a piedi."], grammar: [g.congiuntivo-nuance], vocab: [w.percorso] }
+      - { es: "È l'unico percorso che abbiamo fatto senza perderci.", en: "It's the only route we've done without getting lost.", grammar: [g.congiuntivo-nuance], vocab: [w.percorso], note: "A plain fact after l'unico: indicative." }
+      - { es: "Il Monte Pellegrino domina la città e lo sguardo spazia fino al mare.", en: "Monte Pellegrino overlooks the city and the view sweeps all the way to the sea.", grammar: [g.present-are], vocab: [w.dominare, w.sguardo, w.spaziare] }
+      - { es: "Cerchiamo una località che attiri meno turisti.", en: "We're looking for a place that attracts fewer tourists.", altEs: ["Cerchiamo una località che attiri meno gente."], grammar: [g.congiuntivo-nuance], vocab: [w.località, w.attirare] }
+      - { es: "Non c'è nessuno che sappia dove nidificano i fenicotteri?", en: "Isn't there anyone who knows where the flamingos nest?", altEs: ["Non c'è qualcuno che sappia dove nidificano i fenicotteri?"], grammar: [g.congiuntivo-nuance], vocab: [w.nidificare, w.fenicottero], error: { wrong: "Non c'è nessuno che sa dove nidificano i fenicotteri?", explain: "After a negative antecedent (non c'è nessuno che…) the relative clause takes the congiuntivo: sappia.", grammar: g.congiuntivo-nuance } }
+      - { es: "Nello stagno di Molentargius nidificano migliaia di fenicotteri rosa.", en: "Thousands of pink flamingos nest in the Molentargius lagoon.", grammar: [g.present-isc], vocab: [w.stagno, w.fenicottero, w.nidificare] }
+      - { es: "Non c'è niente che mi attiri più di un mare color smeraldo.", en: "There's nothing that attracts me more than an emerald-coloured sea.", altEs: ["Niente mi attira più di un mare color smeraldo."], grammar: [g.congiuntivo-nuance], vocab: [w.attirare, w.smeraldo] }
+      - { es: "La terra lavica intorno all'Etna è tra le più fertili d'Italia.", en: "The lava soil around Etna is among the most fertile in Italy.", grammar: [g.superlatives], vocab: [w.lavico, w.fertile] }
+      - { es: "Il simbolo di Catania è un elefante di pietra lavica.", en: "The symbol of Catania is a lava-stone elephant.", grammar: [g.articles], vocab: [w.elefante, w.lavico] }
+      - { es: "Le rocce di granito si stendono fino all'acqua.", en: "The granite rocks stretch down to the water.", grammar: [g.reflexive-present], vocab: [w.granito, w.stendersi] }
+      - { es: "La cupola è rivestita di mosaici d'oro.", en: "The dome is covered in gold mosaics.", grammar: [g.passive-essere], vocab: [w.rivestito] }
+      - { es: "Questo consorzio di pescatori vende solo corallo raccolto nel rispetto del mare.", en: "This fishermen's consortium only sells coral harvested with respect for the sea.", grammar: [g.relative-che], vocab: [w.consorzio, w.corallo] }
+      - { es: "Ho trovato una guida che parla tedesco.", en: "I've found a guide who speaks German.", grammar: [g.congiuntivo-nuance], vocab: [], transform: { instruction: "You haven't found one yet: say you're looking for one", answer: "Cerco una guida che parli tedesco.", alt: ["Sto cercando una guida che parli tedesco."], en: "I'm looking for a guide who speaks German." } }
+      - { es: "Questo percorso attira molti turisti.", en: "This route attracts lots of tourists.", grammar: [g.congiuntivo-nuance], vocab: [w.percorso, w.attirare], transform: { instruction: "Express doubt: start with Non so se…", answer: "Non so se questo percorso attiri molti turisti.", alt: ["Non so se questo percorso attira molti turisti."], en: "I don't know whether this route attracts lots of tourists." } }
+    exchanges:
+      - q: { es: "Dove andiamo domani?", en: "Where shall we go tomorrow?" }
+        a: { es: "In un posto che non sia pieno di turisti, se possibile.", en: "Somewhere that isn't full of tourists, if possible." }
+        alt: ["Dove non ci siano turisti.", "In una località tranquilla."]
+        grammar: [g.congiuntivo-nuance]
+        vocab: []
+      - q: { es: "Conosci qualcuno che parli catalano?", en: "Do you know anyone who speaks Catalan?" }
+        a: { es: "Sì, mia cugina di Alghero lo parla benissimo.", en: "Yes, my cousin from Alghero speaks it really well." }
+        alt: ["No, non conosco nessuno che lo parli.", "Sì, mia cugina."]
+        grammar: [g.congiuntivo-nuance]
+        vocab: [w.catalano]
+      - q: { es: "Qual è il mare più bello che tu abbia mai visto?", en: "What's the most beautiful sea you've ever seen?" }
+        a: { es: "Quello della Costa Smeralda: sembra uno smeraldo liquido.", en: "The one on the Costa Smeralda: it looks like liquid emerald." }
+        alt: ["Quello di Lampedusa.", "Il mare della Costa Smeralda."]
+        grammar: [g.congiuntivo-nuance, g.superlatives]
+        vocab: [w.smeraldo]
+      - q: { es: "Si vedono ancora i fenicotteri allo stagno?", en: "Can you still see the flamingos at the lagoon?" }
+        a: { es: "Sì, e in primavera ci nidificano a migliaia.", en: "Yes, and in spring thousands of them nest there." }
+        alt: ["Sì, ce ne sono migliaia.", "Sì, soprattutto in primavera."]
+        grammar: [g.ci-place]
+        vocab: [w.fenicottero, w.stagno, w.nidificare]
+      - q: { es: "Perché tanti palazzi di Catania sono così scuri?", en: "Why are so many buildings in Catania so dark?" }
+        a: { es: "Perché sono fatti di pietra lavica dell'Etna.", en: "Because they're made of lava stone from Etna." }
+        alt: ["Per la pietra lavica.", "Sono costruiti con la pietra dell'Etna."]
+        grammar: [g.passive-essere]
+        vocab: [w.lavico]
+    texts:
+      - title: "Annuncio"
+        es: ["Cercasi casa che abbia vista sul mare e terrazza.", "Si preferiscono località tranquille, laddove possibile vicino a una stazione.", "Non rispondiamo ad annunci che non abbiano foto."]
+        en: ["Wanted: a house with a sea view and a terrace.", "Quiet places preferred, where possible near a station.", "We don't reply to adverts that have no photos."]
+        grammar: [g.congiuntivo-nuance, g.si-passivante]
+        vocab: [w.località, w.laddove]
+      - title: "Cartolina da Mondello"
+        es: ["Da qui lo sguardo spazia dal Monte Pellegrino fino al mare.", "L'acqua è così trasparente che si vedono i pesci, e al tramonto il cielo è sfumato di rosa.", "Non c'è niente che mi manchi, tranne te."]
+        en: ["From here the view sweeps from Monte Pellegrino to the sea.", "The water is so clear that you can see the fish, and at sunset the sky is shaded with pink.", "There's nothing I miss, except you."]
+        grammar: [g.congiuntivo-nuance]
+        vocab: [w.sguardo, w.spaziare, w.trasparente]
+    spicy:
+      - { es: "Cerco qualcuno che abbia gli occhi color smeraldo… ah, eccoti.", en: "I'm looking for someone with emerald-coloured eyes… ah, there you are.", grammar: [g.congiuntivo-nuance], vocab: [w.smeraldo] }
+      - { es: "Sei l'unica persona che riesca a distrarmi da un tramonto sul mare.", en: "You're the only person who can distract me from a sunset over the sea.", grammar: [g.congiuntivo-nuance], vocab: [w.distrarre] }
+      - { es: "Non c'è niente che mi attiri più del tuo sguardo, tranne forse un cannolo al pistacchio.", en: "There's nothing that attracts me more than your gaze, except maybe a pistachio cannolo.", grammar: [g.congiuntivo-nuance], vocab: [w.attirare, w.sguardo, w.pistacchio] }
+      - { es: "Mi chiedo se tu sia sempre così affascinante o se sia solo la luce del porto.", en: "I wonder whether you're always this charming or whether it's just the light from the harbour.", altEs: ["Mi chiedo se tu sia sempre così affascinante o se sia solo merito della luce del porto."], grammar: [g.congiuntivo-nuance], vocab: [w.affascinante] }
+dialogues:
+  - id: c1.u01.d1
+    title: Al mercato di Ballarò
+    context: Rosalia, from Palermo, takes her friend Ettore round Ballarò market at lunchtime.
+    lines:
+      - { speaker: Rosalia, es: "Capisco che tu sia stanco, ma qui bisogna arrivare prima che chiudano le bancarelle.", en: "I understand you're tired, but here you have to arrive before the stalls close." }
+      - { speaker: Ettore, es: "Va bene, ma che sia sempre così affollato?", en: "All right, but is it always this crowded, I wonder?" }
+      - { speaker: Rosalia, es: "A quest'ora sì. Il fatto che sia sabato non aiuta.", en: "At this time, yes. The fact that it's Saturday doesn't help." }
+      - { speaker: Ettore, es: "Senti, cerco un posto che faccia le arancine al burro.", en: "Listen, I'm looking for a place that makes arancine with butter filling." }
+      - { speaker: Rosalia, es: "Conosco una friggitoria che le fa ancora come una volta. Ma sia chiaro: si dice arancina!", en: "I know a fry shop that still makes them the old way. But let's be clear: you say arancina!" }
+      - { speaker: Ettore, es: "Ammettiamo che a Catania abbiano ragione loro: che cosa cambia?", en: "Let's suppose they're right in Catania: what difference does it make?" }
+      - { speaker: Rosalia, es: "Cambia tutto! Ammetto che è solo una sfumatura, ma per noi è una questione di patria.", en: "It makes all the difference! I admit it's only a nuance, but for us it's a matter of homeland." }
+      - { speaker: Ettore, es: "Che io sappia, a Catania hanno anche l'elefante. Voi che cosa avete?", en: "As far as I know, in Catania they've even got the elephant. What have you got?" }
+      - { speaker: Rosalia, es: "Abbiamo arabi, normanni e spagnoli in ogni pietra. E le panelle. Costi quel che costi, oggi le assaggi.", en: "We've got Arabs, Normans and Spaniards in every stone. And panelle. Whatever it takes, today you're tasting them." }
+      - { speaker: Ettore, es: "Che Dio ce la mandi buona: è il mio terzo pranzo di oggi.", en: "God help me: it's my third lunch today." }
+    questions:
+      - { q: "Perché il mercato è così affollato?", options: ["Perché è sabato", "Perché c'è una festa", "Perché è mattina presto"], answer: 0, explain: "Rosalia says: Il fatto che sia sabato non aiuta." }
+      - { q: "Che cosa cerca Ettore?", options: ["Un posto che faccia le arancine al burro", "Una bancarella di pesce", "Un bar che venda cannoli"], answer: 0, explain: "Cerco un posto che faccia le arancine al burro: any place, so the congiuntivo." }
+      - { q: "Per Rosalia la differenza tra arancina e arancino…", options: ["non conta niente", "è una sfumatura importante", "è un'invenzione dei turisti"], answer: 1, explain: "She admits it's only a nuance, but calls it a matter of homeland." }
+      - { q: "Perché Ettore dice «Che Dio ce la mandi buona»?", options: ["Ha paura del mercato", "Ha già pranzato due volte", "Non gli piacciono le panelle"], answer: 1, explain: "It's his third lunch of the day." }
