@@ -1,0 +1,277 @@
+id: a2.u09
+title: "Mescola e assaggia!"
+lessons:
+  - id: a2.u09.l1
+    title: Mescola bene!
+    teach: [g.imperativo-tu]
+    tip: "With tu, -are verbs end in -a (mescola!), -ere and -ire verbs in -i (prendi! senti!). Short irregulars: fa', va', sta', da', di', sii, abbi."
+    vocab: [w.mescolare, w.assaggiare, w.tagliare, w.aggiungere, w.versare, w.cuocere, w.bollire, w.friggere, w.scaldare, w.sbucciare, w.grattugiare, w.condire, w.impastare, w.infornare, w.scolare, w.pentola, w.padella, w.fornello, w.ciotola, w.tagliere, w.cucchiaino, w.pizzico, w.ricetta, w.ingrediente, w.seguire, w.fuoco, w.senti, w.guarda, w.pici, w.aglione]
+    sentences:
+      - { es: "Mescola bene e aggiungi un pizzico di sale.", en: "Stir well and add a pinch of salt.", altEs: ["Mescola bene e poi aggiungi un pizzico di sale.", "Aggiungi un pizzico di sale e mescola bene."], altEn: ["Mix well and add a pinch of salt."], grammar: [g.imperativo-tu], vocab: [w.mescolare, w.aggiungere, w.pizzico, w.sale] }
+      - { es: "Taglia la cipolla sul tagliere.", en: "Chop the onion on the chopping board.", altEs: ["Taglia la cipolla sul tagliere, per favore."], altEn: ["Cut the onion on the chopping board."], grammar: [g.imperativo-tu], vocab: [w.tagliare, w.cipolla, w.tagliere], transform: { instruction: "Say it politely to the chef (Lei)", answer: "Tagli la cipolla sul tagliere.", alt: ["Tagli la cipolla sul tagliere, per favore."], en: "Chop the onion on the chopping board (formal)." } }
+      - { es: "Scalda l'olio in una padella grande.", en: "Heat the oil in a big frying pan.", altEs: ["Scalda l'olio in una padella grande, poi aggiungi l'aglio."], grammar: [g.imperativo-tu], vocab: [w.scaldare, w.olio, w.padella] }
+      - { es: "Versa l'acqua nella pentola e accendi il fuoco.", en: "Pour the water into the pot and turn on the heat.", altEs: ["Metti l'acqua nella pentola e accendi il fuoco."], altEn: ["Pour the water into the saucepan and light the hob."], grammar: [g.imperativo-tu], vocab: [w.versare, w.pentola, w.fuoco, w.accendere] }
+      - { es: "Quando l'acqua bolle, butta la pasta.", en: "When the water boils, put the pasta in.", altEs: ["Butta la pasta quando l'acqua bolle."], altEn: ["When the water's boiling, throw in the pasta."], grammar: [g.imperativo-tu], vocab: [w.bollire, w.buttare, w.pasta], note: "Buttare la pasta is the everyday way to say 'put the pasta in'." }
+      - { es: "Assaggia il sugo: ti piace?", en: "Taste the sauce: do you like it?", altEs: ["Assaggia il sugo! Ti piace?"], grammar: [g.imperativo-tu, g.piacere-intro], vocab: [w.assaggiare, w.sugo] }
+      - { es: "Sbuccia le patate e tagliale a pezzi.", en: "Peel the potatoes and cut them into pieces.", altEs: ["Sbuccia le patate e poi tagliale a pezzi."], grammar: [g.imperativo-tu, g.direct-object-pronouns], vocab: [w.sbucciare, w.patata, w.pezzo], note: "Pronouns attach to the end of a tu command: tagliale." }
+      - { es: "Grattugia un po' di pecorino sopra la pasta.", en: "Grate a bit of pecorino over the pasta.", altEs: ["Grattugia un po' di pecorino sulla pasta."], grammar: [g.imperativo-tu], vocab: [w.grattugiare, w.pecorino] }
+      - { es: "Segui la ricetta della nonna: è la migliore.", en: "Follow Grandma's recipe: it's the best.", altEs: ["Segui la ricetta della nonna, è la migliore."], grammar: [g.imperativo-tu, g.comparatives-irregular], vocab: [w.seguire, w.ricetta] }
+      - { es: "Impasta la farina con l'acqua per dieci minuti.", en: "Knead the flour with the water for ten minutes.", altEs: ["Impasta per dieci minuti la farina con l'acqua."], grammar: [g.imperativo-tu, g.fra-tra-per], vocab: [w.impastare, w.farina] }
+      - { es: "Fa' attenzione: l'olio è molto caldo!", en: "Be careful: the oil is very hot!", altEs: ["Fai attenzione: l'olio è molto caldo!", "Attenzione, l'olio è molto caldo!"], grammar: [g.imperativo-tu], vocab: [w.attenzione, w.caldo.adj], note: "fare → fa' or fai." }
+      - { es: "Aggiungi gli ingredienti e mescola piano.", en: "Add the ingredients and stir gently.", altEs: ["Aggiungi gli ingredienti e mescola lentamente."], altEn: ["Add the ingredients and mix slowly."], grammar: [g.imperativo-tu], vocab: [w.ingrediente, w.mescolare], error: { wrong: "Aggiungi gli ingredienti e mescoli piano.", explain: "With tu, -are verbs end in -a: mescola. Mescoli is the Lei form.", grammar: g.imperativo-tu } }
+      - { es: "Senti, passami il cucchiaino!", en: "Listen, pass me the teaspoon!", altEs: ["Senti, mi passi il cucchiaino?"], altEn: ["Hey, pass me the teaspoon!"], grammar: [g.imperativo-tu], vocab: [w.senti, w.cucchiaino, w.passare] }
+      - { es: "Devi friggere le zucchine nell'olio caldo.", en: "You have to fry the courgettes in hot oil.", grammar: [g.potere-dovere], vocab: [w.friggere, w.zucchina], transform: { instruction: "Make it a command (tu)", answer: "Friggi le zucchine nell'olio caldo.", alt: ["Friggi le zucchine nell'olio caldo!"], en: "Fry the courgettes in hot oil." } }
+      - { es: "Sii paziente: il pane deve cuocere ancora un po'.", en: "Be patient: the bread needs to cook a bit longer.", altEs: ["Abbi pazienza: il pane deve cuocere ancora un po'."], grammar: [g.imperativo-tu], vocab: [w.cuocere, w.paziente], error: { wrong: "Sei paziente: il pane deve cuocere ancora un po'.", explain: "The tu command of essere is sii, not sei.", grammar: g.imperativo-tu } }
+      - { es: "Inforna la torta e guarda l'orologio: quaranta minuti.", en: "Put the cake in the oven and look at the clock: forty minutes.", altEs: ["Metti la torta in forno e guarda l'orologio: quaranta minuti."], grammar: [g.imperativo-tu], vocab: [w.infornare, w.guarda, w.orologio] }
+    exchanges:
+      - q: { es: "Come si fa la panzanella?", en: "How do you make panzanella?" }
+        a: { es: "Taglia il pane e i pomodori, aggiungi la cipolla e condisci con olio e aceto.", en: "Cut up the bread and tomatoes, add the onion and dress it with oil and vinegar." }
+        alt: ["È facile: pane, pomodori, cipolla, olio e aceto.", "Segui la ricetta della nonna!"]
+        grammar: [g.imperativo-tu]
+        vocab: [w.panzanella, w.condire, w.aceto]
+      - q: { es: "E adesso che cosa faccio?", en: "And now what do I do?" }
+        a: { es: "Scola la pasta e mettila nella ciotola.", en: "Drain the pasta and put it in the bowl." }
+        alt: ["Scola la pasta.", "Assaggia il sugo."]
+        grammar: [g.imperativo-tu, g.direct-object-pronouns]
+        vocab: [w.scolare, w.ciotola]
+      - q: { es: "Quanto sale metto?", en: "How much salt shall I put in?" }
+        a: { es: "Solo un pizzico, e poi assaggia.", en: "Just a pinch, and then taste it." }
+        alt: ["Un pizzico.", "Poco, poi assaggia."]
+        grammar: [g.imperativo-tu]
+        vocab: [w.pizzico, w.assaggiare]
+      - q: { es: "Posso aiutarti?", en: "Can I help you?" }
+        a: { es: "Sì, grattugia il formaggio, per favore.", en: "Yes, grate the cheese, please." }
+        alt: ["Sì, taglia le cipolle.", "Sì, apri il vino!"]
+        grammar: [g.imperativo-tu]
+        vocab: [w.grattugiare, w.formaggio]
+      - q: { es: "Dov'è la padella?", en: "Where's the frying pan?" }
+        a: { es: "Guarda sul fornello!", en: "Look on the hob!" }
+        alt: ["È sul fornello.", "Guarda nell'armadio!"]
+        grammar: [g.imperativo-tu]
+        vocab: [w.padella, w.fornello]
+    texts:
+      - title: "Ricetta: pici all'aglione"
+        es: ["Impasta farina e acqua per dieci minuti.", "Fa' dei pici lunghi con le mani.", "Cuoci l'aglione con il pomodoro in padella.", "Scola i pici e condiscili con il sugo."]
+        en: ["Knead flour and water for ten minutes.", "Make long pici with your hands.", "Cook the aglione garlic with tomato in a frying pan.", "Drain the pici and toss them in the sauce."]
+        grammar: [g.imperativo-tu]
+        vocab: [w.pici, w.aglione, w.impastare, w.condire]
+      - title: "Messaggio della mamma"
+        es: ["La cena è in frigo.", "Scaldala sul fornello per cinque minuti.", "E sbuccia una mela, non mangiare solo pasta!"]
+        en: ["Dinner is in the fridge.", "Heat it on the hob for five minutes.", "And peel an apple, don't just eat pasta!"]
+        grammar: [g.imperativo-tu, g.imperativo-negative]
+        vocab: [w.scaldare, w.sbucciare]
+    spicy:
+      - { es: "Assaggia questo, e poi dimmi che non sono un genio.", en: "Taste this, and then tell me I'm not a genius.", grammar: [g.imperativo-tu], vocab: [w.assaggiare] }
+      - { es: "Vieni qui e mescola il sugo con me.", en: "Come here and stir the sauce with me.", grammar: [g.imperativo-tu, g.stressed-pronouns], vocab: [w.mescolare, w.sugo] }
+      - { es: "Sii onesto: cucino meglio io o tua madre?", en: "Be honest: who cooks better, me or your mother?", altEs: ["Sii onesta: cucino meglio io o tua madre?"], grammar: [g.imperativo-tu, g.comparatives-irregular], vocab: [w.onesto, w.cucinare] }
+      - { es: "Prendi due bicchieri, apri il vino e siediti vicino a me.", en: "Get two glasses, open the wine and sit down next to me.", grammar: [g.imperativo-tu], vocab: [w.bicchiere, w.sedersi] }
+      - { es: "Guarda come taglio la cipolla: non piango, sono un fenomeno.", en: "Watch how I chop the onion: I'm not crying, I'm a star.", grammar: [g.imperativo-tu], vocab: [w.guarda, w.cipolla, w.fenomeno] }
+
+  - id: a2.u09.l2
+    title: Prenda pure!
+    teach: [g.imperativo-lei]
+    tip: "With Lei the vowels swap: -are → -i (assaggi!), -ere / -ire → -a (prenda! senta!). Irregulars use the io form: venga, faccia, vada, dica."
+    vocab: [w.forchetta, w.coltello, w.cucchiaio, w.tramezzino, w.biscotto, w.sale, w.olio, w.burro, w.marmellata, w.sedersi, w.mensa, w.istruzione, w.attenzione, w.antipasto, w.primo-piatto, w.secondo-piatto, w.contorno, w.crudo, w.cotto, w.fritto, w.al-forno, w.alla-griglia, w.cantucci, w.sedere]
+    sentences:
+      - { es: "Si sieda pure, signora: arrivo subito.", en: "Do sit down, madam: I'll be right with you.", altEs: ["Si sieda pure, signora, arrivo subito.", "Prego, si sieda: arrivo subito."], grammar: [g.imperativo-lei], vocab: [w.sedersi, w.signora] }
+      - { es: "Prenda l'antipasto toscano: è ottimo.", en: "Have the Tuscan starter: it's excellent.", altEs: ["Prenda l'antipasto toscano, è ottimo."], grammar: [g.imperativo-lei], vocab: [w.antipasto, w.toscano], transform: { instruction: "Say it to a friend (tu)", answer: "Prendi l'antipasto toscano: è ottimo.", alt: ["Prendi l'antipasto toscano, è ottimo."], en: "Have the Tuscan starter: it's excellent." } }
+      - { es: "Assaggi il nostro Vino Nobile!", en: "Taste our Vino Nobile!", altEs: ["Assaggi il nostro Nobile!"], altEn: ["Try our Vino Nobile!"], grammar: [g.imperativo-lei], vocab: [w.assaggiare, w.vino], transform: { instruction: "Say it to a friend (tu)", answer: "Assaggia il nostro Vino Nobile!", alt: ["Assaggia il nostro Nobile!"], en: "Taste our Vino Nobile!" } }
+      - { es: "Come primo piatto, provi i pici all'aglione.", en: "As a first course, try the pici all'aglione.", altEs: ["Come primo, provi i pici all'aglione."], grammar: [g.imperativo-lei], vocab: [w.primo-piatto, w.provare, w.pici] }
+      - { es: "Per secondo piatto prenda la bistecca alla griglia.", en: "For your main course have the grilled steak.", altEs: ["Come secondo prenda la bistecca alla griglia."], grammar: [g.imperativo-lei], vocab: [w.secondo-piatto, w.bistecca, w.alla-griglia] }
+      - { es: "Scelga un contorno: patate al forno o verdure alla griglia?", en: "Choose a side dish: roast potatoes or grilled vegetables?", altEs: ["Scelga il contorno: patate al forno o verdure alla griglia?"], grammar: [g.imperativo-lei], vocab: [w.contorno, w.al-forno, w.scegliere] }
+      - { es: "Faccia attenzione: il piatto è molto caldo.", en: "Be careful: the plate is very hot.", altEs: ["Attenzione: il piatto è molto caldo."], grammar: [g.imperativo-lei], vocab: [w.attenzione, w.piatto], error: { wrong: "Fa' attenzione, signore: il piatto è molto caldo.", explain: "To someone you call Lei, use faccia (from faccio), not fa'.", grammar: g.imperativo-lei } }
+      - { es: "Mi dica, signora: che cosa desidera?", en: "How can I help you, madam? What would you like?", altEs: ["Mi dica, signora, che cosa desidera?", "Prego, mi dica: che cosa desidera?"], grammar: [g.imperativo-lei], vocab: [w.dire, w.desiderare] }
+      - { es: "Venga a vedere la nostra cantina.", en: "Come and see our wine cellar.", altEs: ["Venga pure a vedere la nostra cantina."], grammar: [g.imperativo-lei], vocab: [w.venire, w.cantina], error: { wrong: "Vieni a vedere la nostra cantina, signore.", explain: "With Lei use venga (from vengo), not vieni.", grammar: g.imperativo-lei } }
+      - { es: "Mi dia un cucchiaio, per favore: ho solo forchetta e coltello.", en: "Could you give me a spoon, please: I've only got a fork and a knife.", altEs: ["Mi porti un cucchiaio, per favore: ho solo forchetta e coltello."], grammar: [g.imperativo-lei], vocab: [w.cucchiaio, w.forchetta, w.coltello] }
+      - { es: "Legga bene le istruzioni prima di cominciare.", en: "Read the instructions carefully before you start.", altEs: ["Prima di cominciare, legga bene le istruzioni."], grammar: [g.imperativo-lei], vocab: [w.istruzione, w.leggere] }
+      - { es: "Alla mensa, vada alla cassa e paghi prima di mangiare.", en: "In the canteen, go to the till and pay before eating.", altEs: ["In mensa vada alla cassa e paghi prima di mangiare."], grammar: [g.imperativo-lei], vocab: [w.mensa, w.cassa, w.pagare] }
+      - { es: "Se non Le piace il pesce crudo, prenda quello fritto.", en: "If you don't like raw fish, have the fried one.", altEs: ["Se il pesce crudo non Le piace, prenda quello fritto."], grammar: [g.imperativo-lei, g.periodo-ipotetico-1], vocab: [w.crudo, w.fritto, w.pesce] }
+      - { es: "Assaggi i biscotti: li ho fatti io!", en: "Try the biscuits: I made them myself!", altEs: ["Assaggi i cantucci: li ho fatti io!"], grammar: [g.imperativo-lei, g.pronoun-participle-agreement], vocab: [w.biscotto, w.cantucci] }
+      - { es: "Metta il burro e la marmellata sul tavolo, per favore.", en: "Put the butter and the jam on the table, please.", grammar: [g.imperativo-lei], vocab: [w.burro, w.marmellata, w.mettere] }
+      - { es: "Mi prepari un tramezzino al tonno, per favore.", en: "Make me a tuna sandwich, please.", altEs: ["Mi fa un tramezzino al tonno, per favore?"], grammar: [g.imperativo-lei], vocab: [w.tramezzino, w.tonno] }
+    exchanges:
+      - q: { es: "Scusi, posso sedermi qui?", en: "Excuse me, may I sit here?" }
+        a: { es: "Certo, si sieda pure!", en: "Of course, do sit down!" }
+        alt: ["Prego, si accomodi!", "Mi dispiace, è occupato."]
+        grammar: [g.imperativo-lei]
+        vocab: [w.sedersi]
+      - q: { es: "Che cosa mi consiglia come primo?", en: "What do you recommend as a first course?" }
+        a: { es: "Prenda i pici: li facciamo noi.", en: "Have the pici: we make them ourselves." }
+        alt: ["Provi i pici all'aglione.", "Prenda la minestra di fagioli."]
+        grammar: [g.imperativo-lei, g.direct-object-pronouns]
+        vocab: [w.primo-piatto, w.consigliare]
+      - q: { es: "Mi scusi, dov'è il bagno?", en: "Excuse me, where is the toilet?" }
+        a: { es: "Vada dritto e giri a destra.", en: "Go straight on and turn right." }
+        alt: ["In fondo a destra.", "Vada sempre dritto."]
+        grammar: [g.imperativo-lei, g.imperative-directions]
+        vocab: [w.bagno, w.girare]
+      - q: { es: "Posso pagare con la carta?", en: "Can I pay by card?" }
+        a: { es: "Sì, certo. Venga alla cassa.", en: "Yes, of course. Come to the till." }
+        alt: ["Certo, venga pure.", "No, mi dispiace, solo contanti."]
+        grammar: [g.imperativo-lei]
+        vocab: [w.cassa, w.carta-di-credito]
+      - q: { es: "Il pesce è fresco?", en: "Is the fish fresh?" }
+        a: { es: "Sì, di stamattina. Lo provi crudo, con olio e limone.", en: "Yes, from this morning. Try it raw, with oil and lemon." }
+        alt: ["Freschissimo!", "Sì, lo assaggi!"]
+        grammar: [g.imperativo-lei, g.direct-object-pronouns]
+        vocab: [w.crudo, w.limone]
+    texts:
+      - title: "Cartello in mensa"
+        es: ["Prenda un piatto e un bicchiere.", "Scelga il primo, il secondo e il contorno.", "Paghi alla cassa.", "Attenzione: la mensa chiude alle due e mezza."]
+        en: ["Take a plate and a glass.", "Choose your first course, main course and side dish.", "Pay at the till.", "Please note: the canteen closes at half past two."]
+        grammar: [g.imperativo-lei]
+        vocab: [w.mensa, w.contorno, w.attenzione]
+    spicy:
+      - { es: "Mi dica la verità: Lei è sempre così elegante?", en: "Tell me the truth: are you always this elegant?", grammar: [g.imperativo-lei], vocab: [w.verità, w.elegante] }
+      - { es: "Assaggi pure il tiramisù, ma lasci un cucchiaino per me.", en: "Go ahead and try the tiramisu, but leave a teaspoon for me.", grammar: [g.imperativo-lei], vocab: [w.cucchiaino, w.lasciare] }
+      - { es: "Scusi, cameriere: mi porti il conto, e anche il Suo numero.", en: "Excuse me, waiter: bring me the bill, and your number too.", grammar: [g.imperativo-lei], vocab: [w.cameriere, w.conto, w.numero] }
+      - { es: "Venga a ballare, dottore: la musica è perfetta.", en: "Come and dance, doctor: the music is perfect.", altEs: ["Venga a ballare, dottoressa: la musica è perfetta."], grammar: [g.imperativo-lei], vocab: [w.ballare, w.dottore] }
+      - { es: "Si sieda vicino a me: la vista da qui è migliore.", en: "Sit next to me: the view from here is better.", grammar: [g.imperativo-lei, g.comparatives-irregular], vocab: [w.sedersi, w.vista] }
+
+  - id: a2.u09.l3
+    title: Cuciniamo insieme!
+    teach: [g.imperativo-noi-voi]
+    tip: "noi and voi commands are the same as the present: cuciniamo! (let's cook!), aggiungete! (add!). Only siate and abbiate are irregular."
+    vocab: [w.farina, w.lievito, w.pepe, w.aceto, w.basilico, w.prezzemolo, w.rosmarino, w.peperoncino, w.limone, w.cipolla, w.aglio, w.carota, w.zucchina, w.oliva, w.melanzana, w.peperone, w.fungo, w.fagiolo, w.lenticchia, w.panzanella, w.tavola]
+    sentences:
+      - { es: "Cuciniamo qualcosa insieme stasera!", en: "Let's cook something together tonight!", altEs: ["Stasera cuciniamo qualcosa insieme!"], grammar: [g.imperativo-noi-voi], vocab: [w.cucinare, w.insieme] }
+      - { es: "Ragazzi, lavatevi le mani prima di cucinare.", en: "Guys, wash your hands before cooking.", altEs: ["Ragazzi, prima di cucinare lavatevi le mani."], grammar: [g.imperativo-noi-voi, g.reflexive-present], vocab: [w.lavarsi, w.mano] }
+      - { es: "Facciamo una minestra di fagioli e lenticchie!", en: "Let's make a bean and lentil soup!", altEs: ["Facciamo una minestra di lenticchie e fagioli!"], grammar: [g.imperativo-noi-voi], vocab: [w.fagiolo, w.lenticchia, w.minestra] }
+      - { es: "Aggiungete l'aglio, la cipolla e un po' di peperoncino.", en: "Add the garlic, the onion and a little chilli.", altEs: ["Mettete l'aglio, la cipolla e un po' di peperoncino."], grammar: [g.imperativo-noi-voi], vocab: [w.aglio, w.cipolla, w.peperoncino] }
+      - { es: "Mettete la farina e il lievito in una ciotola.", en: "Put the flour and the yeast in a bowl.", grammar: [g.imperativo-noi-voi], vocab: [w.farina, w.lievito, w.ciotola], transform: { instruction: "Say it to one friend (tu)", answer: "Metti la farina e il lievito in una ciotola.", alt: ["Metti in una ciotola la farina e il lievito."], en: "Put the flour and the yeast in a bowl." } }
+      - { es: "Tagliate le zucchine, le melanzane e i peperoni a pezzi.", en: "Cut the courgettes, aubergines and peppers into pieces.", altEs: ["Tagliate a pezzi le zucchine, le melanzane e i peperoni."], grammar: [g.imperativo-noi-voi], vocab: [w.zucchina, w.melanzana, w.peperone] }
+      - { es: "Andiamo al mercato a comprare i funghi!", en: "Let's go to the market to buy the mushrooms!", altEs: ["Andiamo a comprare i funghi al mercato!"], grammar: [g.imperativo-noi-voi], vocab: [w.fungo, w.mercato], transform: { instruction: "Tell your friends to go (voi)", answer: "Andate al mercato a comprare i funghi!", alt: ["Andate a comprare i funghi al mercato!"], en: "Go to the market to buy the mushrooms!" } }
+      - { es: "Siate puntuali: la lezione di cucina comincia alle dieci.", en: "Be on time: the cooking class starts at ten.", altEs: ["Siate puntuali, la lezione di cucina comincia alle dieci."], grammar: [g.imperativo-noi-voi], vocab: [w.puntuale, w.lezione], error: { wrong: "Siete puntuali: la lezione di cucina comincia alle dieci.", explain: "The voi command of essere is siate; siete is the present.", grammar: g.imperativo-noi-voi } }
+      - { es: "Mangiamo fuori stasera: andiamo in una trattoria in Piazza Grande!", en: "Let's eat out tonight: let's go to a trattoria in Piazza Grande!", altEs: ["Stasera mangiamo fuori: andiamo in una trattoria in Piazza Grande!"], grammar: [g.imperativo-noi-voi], vocab: [w.fuori, w.trattoria] }
+      - { es: "Abbiate pazienza: il pane ha bisogno di tempo.", en: "Be patient: the bread needs time.", altEs: ["Abbiate pazienza, il pane ha bisogno di tempo."], grammar: [g.imperativo-noi-voi, g.bisogna-avere-bisogno], vocab: [w.pazienza, w.pane] }
+      - { es: "Mettete il basilico alla fine, non prima.", en: "Add the basil at the end, not before.", altEs: ["Il basilico mettetelo alla fine, non prima."], grammar: [g.imperativo-noi-voi], vocab: [w.basilico, w.alla-fine] }
+      - { es: "Prima sbucciamo le carote, poi le tagliamo.", en: "First let's peel the carrots, then we'll cut them.", altEs: ["Sbucciamo prima le carote, poi le tagliamo."], grammar: [g.imperativo-noi-voi, g.direct-object-pronouns], vocab: [w.carota, w.sbucciare] }
+      - { es: "Aggiungiamo un po' di prezzemolo e di rosmarino.", en: "Let's add a bit of parsley and rosemary.", altEs: ["Aggiungiamo un po' di prezzemolo e rosmarino."], grammar: [g.imperativo-noi-voi], vocab: [w.prezzemolo, w.rosmarino] }
+      - { es: "Condite l'insalata con olio, aceto, sale e pepe.", en: "Dress the salad with oil, vinegar, salt and pepper.", grammar: [g.imperativo-noi-voi], vocab: [w.condire, w.aceto, w.pepe] }
+      - { es: "Portate le olive in tavola, per favore.", en: "Bring the olives to the table, please.", altEs: ["Per favore, portate le olive in tavola."], grammar: [g.imperativo-noi-voi], vocab: [w.oliva, w.tavola] }
+      - { es: "Mettete un po' di limone sul pesce: è più buono.", en: "Put a little lemon on the fish: it's nicer.", grammar: [g.imperativo-noi-voi], vocab: [w.limone, w.pesce] }
+    exchanges:
+      - q: { es: "Che cosa facciamo stasera?", en: "What shall we do tonight?" }
+        a: { es: "Cuciniamo insieme! Facciamo una pasta ai funghi.", en: "Let's cook together! Let's make pasta with mushrooms." }
+        alt: ["Andiamo a mangiare fuori!", "Facciamo una pizza."]
+        grammar: [g.imperativo-noi-voi]
+        vocab: [w.fungo, w.cucinare]
+      - q: { es: "Possiamo entrare?", en: "May we come in?" }
+        a: { es: "Certo, entrate pure!", en: "Of course, do come in!" }
+        alt: ["Entrate!", "Sì, venite pure!"]
+        grammar: [g.imperativo-noi-voi]
+        vocab: [w.entrare]
+      - q: { es: "Mamma, abbiamo fame!", en: "Mum, we're hungry!" }
+        a: { es: "Allora lavatevi le mani e venite a tavola.", en: "Then wash your hands and come to the table." }
+        alt: ["Venite a tavola!", "Aspettate cinque minuti!"]
+        grammar: [g.imperativo-noi-voi, g.reflexive-present]
+        vocab: [w.tavola, w.lavarsi]
+      - q: { es: "Prendiamo la macchina o andiamo a piedi?", en: "Shall we take the car or walk?" }
+        a: { es: "Andiamo a piedi: Montepulciano è piccola.", en: "Let's walk: Montepulciano is small." }
+        alt: ["Andiamo a piedi!", "Prendiamo la macchina, la salita è dura."]
+        grammar: [g.imperativo-noi-voi, g.prepositions-transport]
+        vocab: [w.a-piedi]
+      - q: { es: "Che cosa mettiamo nella panzanella?", en: "What shall we put in the panzanella?" }
+        a: { es: "Mettiamo pane, pomodori, cipolla e basilico.", en: "Let's put in bread, tomatoes, onion and basil." }
+        alt: ["Pane, pomodori e cipolla.", "Mettiamo anche il basilico!"]
+        grammar: [g.imperativo-noi-voi]
+        vocab: [w.panzanella, w.basilico]
+    texts:
+      - title: "Lezione di cucina"
+        es: ["Benvenuti! Oggi facciamo i pici.", "Mettete la farina sul tavolo e aggiungete l'acqua.", "Impastate per dieci minuti.", "Poi assaggiamo tutto con un bicchiere di Nobile!"]
+        en: ["Welcome! Today we're making pici.", "Put the flour on the table and add the water.", "Knead for ten minutes.", "Then let's taste everything with a glass of Nobile!"]
+        grammar: [g.imperativo-noi-voi]
+        vocab: [w.farina, w.impastare, w.pici]
+    spicy:
+      - { es: "Balliamo? Il vino lo finiamo dopo.", en: "Shall we dance? We'll finish the wine later.", grammar: [g.imperativo-noi-voi], vocab: [w.ballare, w.finire] }
+      - { es: "Ragazzi, andate pure a casa: io e lui laviamo i piatti.", en: "Guys, you go on home: he and I will wash the dishes.", altEs: ["Ragazzi, andate pure a casa: io e lei laviamo i piatti."], grammar: [g.imperativo-noi-voi], vocab: [w.lavare, w.piatto] }
+      - { es: "Cuciniamo insieme stasera: tu porti il vino, io porto il dolce.", en: "Let's cook together tonight: you bring the wine, I'll bring dessert.", grammar: [g.imperativo-noi-voi], vocab: [w.cucinare, w.dolce] }
+      - { es: "Facciamo così: tu tagli le cipolle e io ti guardo.", en: "Let's do this: you chop the onions and I'll watch you.", grammar: [g.imperativo-noi-voi], vocab: [w.cipolla, w.guardare] }
+      - { es: "Siate onesti: siamo la coppia più bella della festa?", en: "Be honest: are we the best-looking couple at the party?", grammar: [g.imperativo-noi-voi, g.superlatives], vocab: [w.onesto, w.coppia] }
+
+  - id: a2.u09.l4
+    title: Non toccare!
+    teach: [g.imperativo-negative]
+    tip: "Only tu is special: non + infinitive (non toccare!). Lei, noi and voi just add non: non tocchi, non tocchiamo, non toccate."
+    vocab: [w.parmigiano, w.pecorino, w.ricotta, w.panna, w.pancetta, w.guanciale, w.salsiccia, w.bistecca, w.manzo, w.maiale, w.tonno, w.gamberetto, w.sugo, w.brodo, w.minestra, w.al-dente, w.ripieno, w.fettina, w.supplì]
+    sentences:
+      - { es: "Non toccare la pentola, è molto calda!", en: "Don't touch the pot, it's very hot!", altEs: ["Non toccare la pentola: è molto calda!"], grammar: [g.imperativo-negative], vocab: [w.toccare, w.pentola], error: { wrong: "Non tocca la pentola, è molto calda!", explain: "A negative command with tu is non + infinitive: non toccare.", grammar: g.imperativo-negative } }
+      - { es: "Non dimenticare il parmigiano!", en: "Don't forget the Parmesan!", altEs: ["Non ti dimenticare il parmigiano!"], grammar: [g.imperativo-negative], vocab: [w.dimenticare, w.parmigiano] }
+      - { es: "Non mettere la panna nella carbonara: a Roma non si fa!", en: "Don't put cream in carbonara: in Rome it isn't done!", altEs: ["Non mettere la panna nella carbonara, a Roma non si fa!"], grammar: [g.imperativo-negative], vocab: [w.panna, w.mettere] }
+      - { es: "Non si preoccupi, signora: il sugo è senza aglio.", en: "Don't worry, madam: the sauce has no garlic.", altEs: ["Non si preoccupi, signora, il sugo è senza aglio."], grammar: [g.imperativo-negative, g.imperativo-lei], vocab: [w.preoccuparsi, w.sugo] }
+      - { es: "Non cuocete troppo la pasta: deve essere al dente.", en: "Don't overcook the pasta: it must be al dente.", altEs: ["Non cuocete troppo la pasta, deve restare al dente."], grammar: [g.imperativo-negative], vocab: [w.cuocere, w.al-dente] }
+      - { es: "Non comprare il tonno in scatola, prendi quello fresco.", en: "Don't buy tinned tuna, get fresh.", altEs: ["Non comprare il tonno in scatola: prendi quello fresco."], grammar: [g.imperativo-negative, g.imperativo-tu], vocab: [w.tonno, w.scatola] }
+      - { es: "Non andate via, c'è ancora la bistecca!", en: "Don't go, there's still the steak!", altEs: ["Non andate via: c'è ancora la bistecca!"], grammar: [g.imperativo-negative], vocab: [w.bistecca] }
+      - { es: "Non bere troppo vino, domani lavori.", en: "Don't drink too much wine, you're working tomorrow.", altEs: ["Non bere troppo vino: domani lavori."], grammar: [g.imperativo-negative], vocab: [w.bere, w.troppo], transform: { instruction: "Say it to someone you call Lei", answer: "Non beva troppo vino, domani lavora.", alt: ["Non beva troppo vino: domani lavora."], en: "Don't drink too much wine, you're working tomorrow (formal)." } }
+      - { es: "Non mangiamo carne oggi: facciamo un brodo di verdure.", en: "Let's not eat meat today: let's make a vegetable broth.", altEs: ["Oggi non mangiamo carne: facciamo un brodo di verdure."], grammar: [g.imperativo-negative, g.imperativo-noi-voi], vocab: [w.brodo, w.carne] }
+      - { es: "Non mettete il burro: qui si cucina con l'olio.", en: "Don't use butter: here we cook with oil.", altEs: ["Non mettete il burro, qui si cucina con l'olio."], grammar: [g.imperativo-negative], vocab: [w.burro, w.olio] }
+      - { es: "Non dimentichi la ricotta, signora.", en: "Don't forget the ricotta, madam.", altEs: ["Signora, non dimentichi la ricotta."], grammar: [g.imperativo-negative, g.imperativo-lei], vocab: [w.ricotta, w.dimenticare] }
+      - { es: "Non comprare la pancetta: per la carbonara ci vuole il guanciale.", en: "Don't buy pancetta: for carbonara you need guanciale.", altEs: ["Non prendere la pancetta: per la carbonara ci vuole il guanciale."], grammar: [g.imperativo-negative, g.metterci-volerci], vocab: [w.pancetta, w.guanciale] }
+      - { es: "Il manzo o il maiale? Non lo so, scegli tu.", en: "Beef or pork? I don't know, you choose.", altEs: ["Manzo o maiale? Non lo so, scegli tu."], grammar: [g.imperativo-tu], vocab: [w.manzo, w.maiale, w.scegliere] }
+      - { es: "Non friggere i gamberetti: falli alla griglia.", en: "Don't fry the prawns: grill them.", altEs: ["Non friggere i gamberetti, falli alla griglia."], grammar: [g.imperativo-negative, g.imperativo-tu], vocab: [w.gamberetto, w.friggere] }
+      - { es: "Non cuocere troppo le fettine: diventano dure.", en: "Don't overcook the escalopes: they go tough.", grammar: [g.imperativo-negative], vocab: [w.fettina, w.duro] }
+      - { es: "Assaggia la salsiccia, è pronta.", en: "Taste the sausage, it's ready.", grammar: [g.imperativo-tu], vocab: [w.salsiccia, w.pronto], transform: { instruction: "Make it negative: it's still raw", answer: "Non assaggiare la salsiccia, è ancora cruda.", alt: ["Non assaggiare la salsiccia: è ancora cruda."], en: "Don't taste the sausage, it's still raw." } }
+    exchanges:
+      - q: { es: "Posso aggiungere la panna?", en: "Can I add cream?" }
+        a: { es: "No, non aggiungere la panna! Bastano uova e pecorino.", en: "No, don't add cream! Eggs and pecorino are enough." }
+        alt: ["No, per carità!", "No, non metterla!"]
+        grammar: [g.imperativo-negative]
+        vocab: [w.panna, w.pecorino]
+      - q: { es: "Quanto cuocio la pasta?", en: "How long shall I cook the pasta?" }
+        a: { es: "Non troppo: la pasta deve essere al dente.", en: "Not too long: the pasta must be al dente." }
+        alt: ["Otto minuti, non di più.", "Non troppo!"]
+        grammar: [g.imperativo-negative]
+        vocab: [w.al-dente, w.cuocere]
+      - q: { es: "Signora, posso assaggiare?", en: "Madam, may I taste?" }
+        a: { es: "Sì, ma non prenda troppo sugo: è piccante!", en: "Yes, but don't take too much sauce: it's spicy!" }
+        alt: ["Certo, assaggi pure!", "Sì, ma non si bruci!"]
+        grammar: [g.imperativo-negative, g.imperativo-lei]
+        vocab: [w.sugo, w.piccante]
+      - q: { es: "Compriamo il tonno in scatola?", en: "Shall we buy tinned tuna?" }
+        a: { es: "No, non compriamo quello: prendiamo il pesce fresco.", en: "No, let's not buy that: let's get fresh fish." }
+        alt: ["No, prendiamo i gamberetti.", "Sì, è più pratico."]
+        grammar: [g.imperativo-negative, g.imperativo-noi-voi]
+        vocab: [w.tonno, w.gamberetto]
+      - q: { es: "Che cosa porto alla cena?", en: "What shall I bring to the dinner?" }
+        a: { es: "Non portare niente, c'è già tutto!", en: "Don't bring anything, there's already everything!" }
+        alt: ["Porta il vino!", "Niente, grazie."]
+        grammar: [g.imperativo-negative, g.double-negation]
+        vocab: [w.portare]
+    texts:
+      - title: "I consigli della nonna"
+        es: ["Non mettere mai la panna nella carbonara.", "Non buttare il brodo: è buonissimo.", "E non dimenticare: la pasta deve essere al dente."]
+        en: ["Never put cream in carbonara.", "Don't throw away the broth: it's delicious.", "And don't forget: the pasta must be al dente."]
+        grammar: [g.imperativo-negative]
+        vocab: [w.panna, w.brodo, w.al-dente]
+      - title: "Peperoni ripieni"
+        es: ["Riempi i peperoni con carne e pane.", "Non mettere troppo sale.", "Infornali per un'ora e non aprire il forno!"]
+        en: ["Fill the peppers with meat and bread.", "Don't add too much salt.", "Bake them for an hour and don't open the oven!"]
+        grammar: [g.imperativo-negative, g.imperativo-tu]
+        vocab: [w.ripieno, w.peperone, w.infornare]
+    spicy:
+      - { es: "Non guardarmi così mentre cucino, brucio tutto!", en: "Don't look at me like that while I'm cooking, I'll burn everything!", altEs: ["Non mi guardare così mentre cucino, brucio tutto!"], grammar: [g.imperativo-negative], vocab: [w.guardare, w.cucinare] }
+      - { es: "Non andare via: il dolce lo mangiamo insieme.", en: "Don't leave: we'll eat dessert together.", grammar: [g.imperativo-negative], vocab: [w.dolce, w.insieme] }
+      - { es: "Non dire niente e assaggia.", en: "Don't say anything and taste.", altEs: ["Non dire nulla e assaggia."], grammar: [g.imperativo-negative, g.double-negation], vocab: [w.dire, w.assaggiare] }
+      - { es: "Non si preoccupi, dottore: ballo male anch'io.", en: "Don't worry, doctor: I dance badly too.", altEs: ["Non si preoccupi, dottoressa: ballo male anch'io."], grammar: [g.imperativo-negative, g.imperativo-lei], vocab: [w.preoccuparsi, w.ballare] }
+      - { es: "Non mettere il peperoncino: sei già abbastanza piccante tu.", en: "Don't add chilli: you're spicy enough already.", grammar: [g.imperativo-negative], vocab: [w.peperoncino, w.piccante] }
+
+dialogues:
+  - id: a2.u09.d1
+    title: I pici di Montepulciano
+    context: Nicola takes a cooking class in Montepulciano. Ilaria, the cook, teaches the group to make pici all'aglione.
+    lines:
+      - { speaker: Ilaria, es: "Buongiorno a tutti! Oggi facciamo i pici all'aglione. Lavatevi le mani e venite al tavolo.", en: "Good morning, everyone! Today we're making pici all'aglione. Wash your hands and come to the table." }
+      - { speaker: Nicola, es: "Che cosa ci serve?", en: "What do we need?" }
+      - { speaker: Ilaria, es: "Solo farina, acqua e un pizzico di sale. Nicola, versa l'acqua piano piano.", en: "Just flour, water and a pinch of salt. Nicola, pour the water in slowly." }
+      - { speaker: Nicola, es: "Così va bene?", en: "Is this OK?" }
+      - { speaker: Ilaria, es: "Sì, ora impasta per dieci minuti. E non aggiungere altra farina!", en: "Yes, now knead for ten minutes. And don't add any more flour!" }
+      - { speaker: Nicola, es: "Mamma mia, è un lavoro duro!", en: "Goodness, it's hard work!" }
+      - { speaker: Ilaria, es: "Abbi pazienza! Io intanto taglio l'aglione per il sugo.", en: "Be patient! Meanwhile I'll chop the aglione garlic for the sauce." }
+      - { speaker: Nicola, es: "Quanto aglio mettiamo?", en: "How much garlic shall we put in?" }
+      - { speaker: Ilaria, es: "Tanto: è un piatto di Montepulciano, non di Milano! Assaggia il sugo.", en: "Lots: it's a Montepulciano dish, not a Milan one! Taste the sauce." }
+      - { speaker: Nicola, es: "Buonissimo! Ma stasera non mi bacia nessuno.", en: "Delicious! But nobody's going to kiss me tonight." }
+    questions:
+      - { q: "Che piatto preparano?", options: ["Pici all'aglione", "Panzanella", "Bistecca alla griglia"], answer: 0, explain: "Ilaria says: Oggi facciamo i pici all'aglione." }
+      - { q: "Che cosa non deve fare Nicola?", options: ["Versare l'acqua", "Aggiungere altra farina", "Assaggiare il sugo"], answer: 1, explain: "Non aggiungere altra farina! is a negative tu command." }
+      - { q: "Per quanto tempo deve impastare Nicola?", options: ["Due minuti", "Dieci minuti", "Un'ora"], answer: 1, explain: "Ora impasta per dieci minuti." }
+      - { q: "Perché stasera nessuno bacia Nicola?", options: ["Perché il sugo ha tanto aglio", "Perché è stanco", "Perché ha cucinato male"], answer: 0, explain: "He jokes that the garlic sauce will keep everyone away." }
