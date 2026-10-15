@@ -303,6 +303,17 @@ export type Unit = z.infer<typeof UnitSchema>
 
 // ---------------------------------------------------------------------------
 // readers/<level>/<id>.yaml
+/**
+ * A glossary entry. In YAML flow style an unquoted gloss with commas ({ es: x, en: trip, excursion })
+ * parses as en: "trip" plus an empty key "excursion"; those keys are folded back into the gloss.
+ */
+const GlossEntry = z.preprocess((v) => {
+  if (!v || typeof v !== 'object' || Array.isArray(v)) return v
+  const o = v as Record<string, unknown>
+  const extra = Object.keys(o).filter((k) => k !== 'es' && k !== 'en' && (o[k] === null || o[k] === undefined))
+  return extra.length ? { es: o.es, en: [String(o.en), ...extra].join(', ') } : v
+}, z.object({ es: z.string(), en: z.string() }))
+
 export const Reader = z.object({
   id: z.string(),
   level: LevelId,
@@ -313,7 +324,7 @@ export const Reader = z.object({
   intro: z.string().optional(),
   paragraphs: z.array(Pair).min(1),
   questions: z.array(Question).default([]),
-  glossary: z.array(z.object({ es: z.string(), en: z.string() })).default([]),
+  glossary: z.array(GlossEntry).default([]),
   /** Words allowed beyond the level's vocabulary (names, cognates) for the i+1 check. */
   allow: z.array(z.string()).default([]),
 })
