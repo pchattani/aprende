@@ -1,0 +1,28 @@
+id: r.a2.at-the-clinic
+level: a2
+title: 睇醫生
+kind: dialogue
+intro: After too many hours in freezing air-conditioning, Ana wakes up ill. She goes to a clinic in Kowloon City and explains her symptoms to the doctor in Cantonese.
+paragraphs:
+  - { es: "星期一朝早，Ana起身嘅時候好唔舒服：頭痛、喉嚨痛，仲有啲發燒。佢打電話畀學校請病假，然後去九龍城一間診所睇醫生。", en: "On Monday morning, when Ana gets up she feels awful: a headache, a sore throat and a bit of a fever. She calls her school to say she's off sick, then goes to see a doctor at a clinic in Kowloon City." }
+  - { es: "姑娘：「早晨，第一次嚟呀？唔該你嘅身份證。請你坐吓，等一陣。」Ana等咗半個鐘，終於到佢。", en: "Nurse: \"Good morning, is this your first visit? Your ID card, please. Please take a seat and wait a moment.\" Ana waits half an hour, and finally it's her turn." }
+  - { es: "醫生：「你好，邊度唔舒服呀？」Ana：「我頭好痛，喉嚨都好痛，仲有少少咳。」醫生：「幾時開始㗎？」Ana：「尋日夜晚開始。我喺學校成日都好凍，冷氣好大。」", en: "Doctor: \"Hello, what seems to be the problem?\" Ana: \"I have a bad headache, my throat is very sore too, and I have a slight cough.\" Doctor: \"When did it start?\" Ana: \"Last night. It's freezing at my school all day; the air conditioning is really strong.\"" }
+  - { es: "醫生：「我幫你探吓熱……三十八度，有啲發燒。張開口，講『啊』。嗯，喉嚨好紅。你有冇流鼻水呀？」Ana：「有少少。」醫生：「你係感冒，唔係好嚴重，唔使擔心。」", en: "Doctor: \"Let me take your temperature... thirty-eight degrees, a bit of a fever. Open your mouth and say 'ah'. Hmm, your throat is very red. Do you have a runny nose?\" Ana: \"A little.\" Doctor: \"You've got a cold. It's not serious, don't worry.\"" }
+  - { es: "醫生：「我開啲藥畀你：呢啲係退燒藥，發燒先食；呢枝係咳藥水，一日食三次，飯後食。你對唔對藥物敏感㗎？」Ana：「唔敏感。」醫生：「好。你要多啲飲水，多啲休息，唔好飲凍嘢，唔好食煎炸嘢。」", en: "Doctor: \"I'll give you some medicine: these are fever tablets, take them only if you have a fever; this bottle is cough syrup, three times a day, after meals. Are you allergic to any medicines?\" Ana: \"No.\" Doctor: \"Good. Drink plenty of water, get plenty of rest, avoid cold drinks and don't eat fried food.\"" }
+  - { es: "Ana：「醫生，我要唔要請多日假呀？」醫生：「我寫兩日醫生紙畀你，你今日同聽日都留喺屋企休息。如果三日之後仲未好返，再嚟睇吓。」Ana：「唔該晒醫生！」", en: "Ana: \"Doctor, do I need to take another day off?\" Doctor: \"I'll write you a sick note for two days; stay at home and rest today and tomorrow. If you're not better after three days, come back and see me.\" Ana: \"Thank you so much, doctor!\"" }
+  - { es: "喺門口，姑娘話：「睇醫生同藥一共三百五十蚊。祝你早日康復！」Ana返到屋企，Mandy已經幫佢煲咗一煲粥。Ana話：「香港嘅冷氣真係太犀利喇！下次返學我一定帶件褸。」", en: "At the door the nurse says: \"The consultation and medicine come to three hundred and fifty dollars altogether. Get well soon!\" When Ana gets home, Mandy has already cooked a pot of congee for her. Ana says: \"Hong Kong air conditioning really is too much! Next time I go to class I'll definitely take a jacket.\"" }
+questions:
+  - { q: "Ana有乜嘢唔舒服？", options: ["肚痛同嘔", "頭痛、喉嚨痛同發燒", "牙痛"], answer: 1, explain: "頭痛、喉嚨痛，仲有啲發燒, plus a slight cough and runny nose." }
+  - { q: "醫生話Ana係乜嘢病？", options: ["感冒", "敏感", "好嚴重嘅病"], answer: 0, explain: "你係感冒，唔係好嚴重." }
+  - { q: "咳藥水要點樣食？", options: ["發燒先食", "一日三次，飯後食", "瞓覺之前食"], answer: 1, explain: "一日食三次，飯後食. The fever tablets are only for when she has a fever." }
+  - { q: "醫生寫咗幾多日醫生紙？", options: ["一日", "兩日", "三日"], answer: 1, explain: "我寫兩日醫生紙畀你. Three days is how long to wait before coming back." }
+  - { q: "點解Ana會病？", options: ["因為佢食咗煎炸嘢", "因為學校冷氣太凍", "因為佢冇瞓覺"], answer: 1, explain: "我喺學校成日都好凍，冷氣好大; and at the end: 香港嘅冷氣真係太犀利喇！" }
+glossary:
+  - { es: 姑娘, en: nurse (in a clinic) }
+  - { es: 身份證, en: identity card }
+  - { es: 探熱, en: "to take (someone's) temperature" }
+  - { es: 退燒藥, en: fever medicine }
+  - { es: 藥物, en: medicine (formal) }
+  - { es: 煎炸, en: fried }
+  - { es: 紅, en: red }
+  - { es: 早日康復, en: get well soon }

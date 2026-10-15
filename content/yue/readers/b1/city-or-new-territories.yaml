@@ -1,0 +1,36 @@
+id: r.b1.city-or-new-territories
+level: b1
+title: 住市區定住新界好？
+kind: dialogue
+intro: Ka-chun and Mei-kei are getting married and must decide where to live - a small flat in Mong Kok near work, or a bigger one in Yuen Long. Over dinner they give their opinions, disagree and finally find a compromise.
+allow: [家俊, 美琪]
+paragraphs:
+  - { es: "家俊同美琪下年結婚，佢哋而家搵緊屋。今晚佢哋喺一間茶餐廳食飯，枱上面放住兩份樓盤資料：一個喺旺角，一個喺元朗。", en: "Ka-chun and Mei-kei are getting married next year and are looking for a flat. Tonight they're having dinner at a cha chaan teng, with two property leaflets on the table: one in Mong Kok and one in Yuen Long." }
+  - { es: "家俊：「我覺得元朗嗰間好啲。你睇，同一個價錢，元朗有五百呎，旺角得三百呎。仲有兩間睡房，第日生仔都夠住。」", en: "Ka-chun: \"I think the one in Yuen Long is better. Look, for the same price, Yuen Long has five hundred square feet and Mong Kok only three hundred. And it has two bedrooms, so it'd be big enough when we have kids one day.\"" }
+  - { es: "美琪：「大係大啲，但係我哋兩個都喺尖沙咀返工。由元朗出去尖沙咀，坐車要成個鐘，一日來回就兩個鐘。如果住旺角，坐地鐵十分鐘就到。我寧願住細啲，都唔想日日喺車上面嘥時間。」", en: "Mei-kei: \"It's bigger, sure, but we both work in Tsim Sha Tsui. From Yuen Long to Tsim Sha Tsui is a whole hour by train, so two hours a day there and back. If we live in Mong Kok, it's ten minutes on the MTR. I'd rather live somewhere smaller than waste time on trains every day.\"" }
+  - { es: "家俊：「不過喺車上面都可以睇書、聽歌㗎。而且元朗環境好啲，空氣清新，附近有魚塘同農田，週末可以踩單車。旺角又嘈又迫，你上次都話旺角啲人多到行唔到路。」", en: "Ka-chun: \"But you can read or listen to music on the train. And the environment in Yuen Long is better: fresh air, fish ponds and farmland nearby, and we could go cycling at weekends. Mong Kok is noisy and crowded; last time you said there were so many people in Mong Kok you couldn't even walk.\"" }
+  - { es: "美琪：「我承認旺角好迫。但係旺角方便呀，夜晚十二點都有嘢食，買嘢又容易。元朗嗰個屋苑離地鐵站好遠，要轉小巴。你夜晚加班，十一點先放工，仲要等小巴，你頂唔頂得順呀？」", en: "Mei-kei: \"I admit Mong Kok is crowded. But it's convenient: there's food even at midnight, and shopping is easy. The Yuen Long estate is a long way from the station; you'd have to change to a minibus. When you work overtime and don't finish until eleven at night, and then have to wait for a minibus too, could you put up with that?\"" }
+  - { es: "家俊諗咗一陣：「你講得都有道理。不過我哋要諗長遠啲。如果將來有細路，三百呎點住呀？細路需要空間玩。我細個喺屯門大，成日喺屋邨樓下踢波，我好想我哋啲仔女都有噉嘅童年。」", en: "Ka-chun thought for a moment: \"You have a point. But we need to think long-term. If we have kids in future, how can we live in three hundred square feet? Kids need space to play. I grew up in Tuen Mun and was always playing football downstairs on the estate; I'd really like our children to have a childhood like that.\"" }
+  - { es: "美琪：「我明白，但係我唔同意細路一定要喺新界大。市區都有公園㗎。而且最緊要係我哋有時間陪佢哋。如果我哋日日喺車上面用兩個鐘，返到屋企已經好攰，仲邊有精神同佢哋玩？」", en: "Mei-kei: \"I understand, but I don't agree that kids have to grow up in the New Territories. The city has parks too. And the most important thing is that we have time to spend with them. If we spend two hours a day on trains, we'll be exhausted when we get home - where would we find the energy to play with them?\"" }
+  - { es: "兩個人都唔出聲。伙記拎咗兩杯凍檸茶過嚟，笑住話：「你哋講咗成個鐘喇，不如揀個中間啲嘅地方啦？荃灣、沙田都唔錯㗎，屋又唔太細，出市區又唔太遠。」", en: "Neither of them said anything. The waiter brought over two iced lemon teas and said with a smile: \"You've been at it for a whole hour. Why not pick somewhere in between? Tsuen Wan or Sha Tin aren't bad: the flats aren't too small, and it's not too far to the city.\"" }
+  - { es: "家俊同美琪對望一眼，一齊笑咗出嚟。美琪話：「沙田有城門河，可以踩單車，你應該鍾意。」家俊話：「沙田去尖沙咀坐車都係二十幾分鐘，你應該都接受到。」佢哋決定星期六一齊去沙田睇樓。", en: "Ka-chun and Mei-kei looked at each other and burst out laughing. Mei-kei said: \"Sha Tin has the Shing Mun River, where you can cycle; you should like that.\" Ka-chun said: \"Sha Tin to Tsim Sha Tsui is only twenty-something minutes by train, so you should be able to accept that.\" They decided to go flat-hunting in Sha Tin together on Saturday." }
+questions:
+  - { q: "家俊點解鍾意元朗嗰間屋？", options: ["因為近佢公司", "因為大啲，有兩間睡房", "因為樓下有好多嘢食"], answer: 1, explain: "同一個價錢，元朗有五百呎… 仲有兩間睡房." }
+  - { q: "美琪最唔鍾意住元朗嘅原因係乜嘢？", options: ["返工坐車太耐", "空氣唔好", "冇公園"], answer: 0, explain: "一日來回就兩個鐘 - she doesn't want to waste time commuting." }
+  - { q: "家俊細個喺邊度大？", options: ["旺角", "元朗", "屯門"], answer: 2, explain: "我細個喺屯門大." }
+  - { q: "美琪覺得對細路最緊要係乜嘢？", options: ["屋要大", "父母有時間陪佢哋", "住喺新界"], answer: 1, explain: "最緊要係我哋有時間陪佢哋." }
+  - { q: "最後邊個畀咗個好建議？", options: ["家俊", "美琪", "伙記"], answer: 2, explain: "The waiter suggests somewhere in between, such as Tsuen Wan or Sha Tin, and they decide to look in Sha Tin." }
+glossary:
+  - { es: 樓盤, en: "property development, flats for sale" }
+  - { es: 資料, en: "information, leaflet" }
+  - { es: 第日, en: "some day, in future" }
+  - { es: 來回, en: there and back }
+  - { es: 迫, en: crowded }
+  - { es: 承認, en: to admit }
+  - { es: 長遠, en: long-term }
+  - { es: 需要, en: to need }
+  - { es: 精神, en: energy }
+  - { es: 出聲, en: "to speak, make a sound" }
+  - { es: 對望, en: to look at each other }
+  - { es: 接受, en: to accept }
+  - { es: 睇樓, en: to view flats }
