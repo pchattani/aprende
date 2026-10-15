@@ -1,0 +1,73 @@
+level: c2
+title: Level check C2
+passScore: 0.8
+reading:
+  text: |
+    Há quem chegue ao Douro à espera de uma paisagem natural e encontre outra coisa: uma obra humana à escala de uma montanha. Os socalcos que descem até ao rio, sustentados por muros de pedra seca, foram construídos à mão ao longo de séculos, muitas vezes por homens e mulheres que nunca beberam um copo do vinho que ali se produzia. Não admira que a região seja Património Mundial; admira, sim, que alguém a tenha conseguido construir.
+
+    O vinho do Porto, por estranho que pareça, deve o nome a uma cidade onde não se planta uma única vinha. Durante séculos, as pipas desciam o rio em barcos rabelos até às caves de Vila Nova de Gaia, do outro lado do rio, em frente ao Porto, onde o vinho envelhecia antes de seguir para Inglaterra. Em 1756, o Marquês de Pombal mandou marcar os limites da região, fazendo dela uma das primeiras zonas de vinho com regras próprias do mundo. As pedras que assinalavam esses limites ainda hoje se encontram, aqui e ali, entre as vinhas.
+
+    Quem lá vai em setembro, na altura das vindimas, assiste a um espetáculo que mudou menos do que se julga. É certo que as máquinas chegaram e que os lagares de pedra, onde as uvas eram pisadas a pé ao som de música, deram lugar, em muitas quintas, a máquinas modernas. Mas ainda há quem faça questão de manter a tradição, nem que seja por uma noite, e os turistas pagam com gosto para tirar os sapatos e entrar no lagar.
+
+    Seria, porém, um erro ver no Douro apenas um postal. A população envelhece, os jovens partem para o litoral ou para o estrangeiro e as alterações climáticas fazem as vindimas começar cada vez mais cedo. Os donos das quintas mais atentos já andam a plantar uvas que aguentam melhor o calor e a voltar a plantar variedades esquecidas. Dir-se-ia que o futuro da região dependerá, uma vez mais, da coragem de quem lá vive: a mesma que, há trezentos anos, transformou a pedra em vinha.
+  questions:
+    - { q: "What does the author find most remarkable about the Douro landscape?", options: ["That it is completely natural", "That it is flat and easy to farm", "That it was built by hand over centuries, on the scale of a mountain"], answer: 2 }
+    - { q: "Why is port wine named after a city where no vines are grown?", options: ["Because the wine was aged in lodges at Gaia, opposite Porto, and shipped from there", "Because the city's name sounded better", "Because Pombal was born in Porto"], answer: 0 }
+    - { q: "What did Pombal do in 1756?", options: ["He banned port wine", "He had the region demarcated, making it one of the first regulated wine areas", "He built the first lodges in Gaia"], answer: 1 }
+    - { q: "What does the text say about treading grapes by foot?", options: ["It has disappeared completely", "It is required by law", "Modern machines have replaced it in many estates, but some keep the tradition and tourists pay to take part"], answer: 2 }
+    - { q: "What threats to the region does the last paragraph mention?", options: ["Too many young people", "An ageing population, emigration and climate change bringing the harvest forward", "A lack of tourists"], answer: 1 }
+listening:
+  dictation:
+    - "Se me tivesses dito mais cedo, ter-te-ia ido buscar ao aeroporto."
+    - "Ainda não lho disse, mas vou dizer-lho amanhã sem falta."
+    - "Os miúdos andam a estudar muito desde que começaram as aulas."
+    - "Gostava que me fizesses um favor: apanha o autocarro e traz-me o telemóvel."
+    - "Não se observaram diferenças significativas entre os dois grupos."
+  questions:
+    - { audio: "Ó pá, aquilo ontem foi bué fixe! Tu devias ter vindo, estava lá a malta toda.", options: ["A young Lisboeta saying last night was great and the listener should have come", "A Brazilian complaining about a boring party", "A formal invitation to a dinner"], answer: 0 }
+    - { audio: "Senhores passageiros, informa-se que o comboio com destino a Faro vai partir com um atraso de cerca de vinte minutos. Pedimos desculpa.", options: ["The train to Faro has been cancelled", "The train to Faro will leave about twenty minutes late", "The train to Faro has changed platform"], answer: 1 }
+    - { audio: "Cara, essa festa foi massa demais! Você tinha que ter ido, a galera toda estava lá.", options: ["A Portuguese speaker complaining about noise", "A teacher giving homework", "A Brazilian saying the party was great and the listener should have gone"], answer: 2 }
+    - { audio: "A minha avó tem muitas saudades da aldeia; quando lá vai, fica toda contente, mas mal volta a Lisboa começa logo a contar os dias para voltar.", options: ["The grandmother misses her village and counts the days to go back as soon as she returns to Lisbon", "The grandmother hates the village", "The grandmother moved to the village for good"], answer: 0 }
+grammar:
+  - { prompt: "Ontem tu ___ (ir) ao cinema sozinho? (PT)", options: ["foi", "fostes", "foste"], answer: 2, explain: "European tu has its own verb forms: tu foste (Brazilian speech often has tu foi)." }
+  - { prompt: "Não ___ (tu, falar) tão alto, por favor! (PT)", options: ["fala", "fales", "falas"], answer: 1, explain: "Negative tu imperative uses the present subjunctive: não fales." }
+  - { prompt: "Neste momento, a Joana está ___ o relatório. (PT)", options: ["a escrever", "escrevendo", "escrever"], answer: 0, explain: "European progressive: estar a + infinitive (Brazil: está escrevendo)." }
+  - { prompt: "Depois de muito discutir, eles acabaram ___ aceitar a proposta.", options: ["por", "de", "a"], answer: 0, explain: "acabar por + infinitive = to end up doing (acabar de = to have just done)." }
+  - { prompt: "___ chegou ontem de Lisboa. (PT, informal)", options: ["Maria", "A Maria", "Da Maria"], answer: 1, explain: "In European Portuguese, first names normally take the article: a Maria." }
+  - { prompt: "Ele ___ todos os dias às sete. (PT)", options: ["se levanta", "levanta-o", "levanta-se"], answer: 2, explain: "Enclisis is the default in affirmative main clauses in Portugal: levanta-se." }
+  - { prompt: "Ele não ___ todos os dias às sete. (PT)", options: ["levanta-se", "levanta-lhe", "se levanta"], answer: 2, explain: "Negation attracts the clitic before the verb: não se levanta." }
+  - { prompt: "O livro? Já ___ dei ontem. (= dei-lhe o livro)", options: ["lho", "lhe o", "o lhe"], answer: 0, explain: "lhe + o contract to lho; já attracts it before the verb: já lho dei." }
+  - { prompt: "Amanhã ___ a resposta por escrito. (formal)", options: ["daremos-lhe", "dar-lhe-emos", "lhe-daremos"], answer: 1, explain: "Mesoclisis: the clitic goes between stem and ending of the future: dar-lhe-emos." }
+  - { prompt: "___ um café, se faz favor. (PT, educado)", options: ["Quero", "Quis", "Queria"], answer: 2, explain: "The imperfect used as a polite conditional: queria / gostava (Brazil: queria / gostaria)." }
+  - { prompt: "Em Portugal, o ônibus chama-se ___.", options: ["comboio", "autocarro", "elétrico"], answer: 1, explain: "autocarro = ônibus; comboio = trem; elétrico = bonde." }
+  - { prompt: "Em Portugal, “propina” significa:", options: ["taxa paga à universidade", "suborno", "gorjeta"], answer: 0, explain: "False friend between varieties: PT propina = tuition fee; BR propina = bribe." }
+  - { prompt: "Ortografia europeia: “o ___ é que ninguém apareceu.”", options: ["fato", "facto", "fáto"], answer: 1, explain: "In Portugal, facto (fact) keeps the c, distinguishing it from fato (suit)." }
+  - { prompt: "“Desenrascar” traduz-se melhor para inglês como:", options: ["to untangle", "to scratch", "to manage somehow, to improvise a solution"], answer: 2, explain: "An 'untranslatable': the idea of getting out of a fix with whatever is at hand." }
+  - { prompt: "Prefira a forma portuguesa: “Ele ___ para a vaga de professor.”", options: ["candidatou-se", "aplicou", "aplicou-se"], answer: 0, explain: "aplicar para is a calque of English 'apply for'; the idiomatic form is candidatar-se a (PT) / se candidatar a (BR)." }
+writing:
+  prompt: "A Portuguese cultural magazine has asked you for an opinion piece of at least 250 words with the title «Uma língua, duas normas?». Argue your position with precision and nuance: compare at least three concrete differences between European and Brazilian Portuguese (vocabulary, clitic placement, forms of address, spelling, pronunciation), refer to at least one classic author (Camões, Eça, Machado, Pessoa), use at least two rhetorical devices (rhetorical question, antithesis, tricolon), and write in the variety of your choice consistently, signalling the other where relevant."
+  minWords: 250
+  modelAnswer: |
+    Uma língua, duas normas?
+
+    Quando um lisboeta pede uma bica e um carioca pede um cafezinho, falam a mesma língua? A pergunta parece fácil, mas a resposta não é tão simples como se julga. Diz-se muitas vezes que o português de Portugal e o do Brasil são a mesma língua com sotaques diferentes. Quem já tentou ver uma novela brasileira num café do Porto, ou ler um contrato português em São Paulo, sabe que as diferenças vão bem além do sotaque.
+
+    Há, desde logo, o vocabulário: o comboio é trem, o autocarro é ônibus, o telemóvel é celular, e a rapariga, inocente em Lisboa, convém evitá-la no Rio. Há depois a gramática. Em Portugal, diz-se “dá-me isso”; no Brasil, “me dá isso”. Em Lisboa, trata-se o amigo por tu, com o verbo certo; no Brasil, o você é rei, e o tu, quando aparece, raramente leva a forma verbal da segunda pessoa. E há, por fim, a pronúncia: os portugueses comem as vogais, os brasileiros abrem-nas e cantam-nas.
+
+    Significa isto que temos duas línguas? Não me parece. Um brasileiro lê Eça sem dicionário; um português comove-se com Machado como se fosse seu. Camões é de todos, e Pessoa, que escreveu que a sua pátria era a língua portuguesa, nunca disse qual delas. A língua é uma só; as normas é que são duas, e talvez seja essa a sua maior riqueza.
+
+    Em vez de perguntar qual das variedades é a certa, devíamos perguntar o que cada uma ensina à outra. O português europeu guarda a tradição e a memória; o brasileiro traz a liberdade e o ritmo. Juntos, falam para mais de duzentos milhões de pessoas, em quatro continentes. Não é pouco para uma língua que começou num pequeno país à beira do Atlântico.
+  checklist:
+    - "I compared at least three concrete differences (vocabulary, clitic placement, forms of address, spelling or pronunciation) with accurate examples."
+    - "I referred to at least one classic author appropriately (Camões, Eça, Machado, Pessoa)."
+    - "I used at least two rhetorical devices (rhetorical question, antithesis, tricolon)."
+    - "I wrote consistently in one variety (e.g. European enclisis diz-se, comove-se, or Brazilian proclisis) and marked forms from the other variety as such."
+    - "My argument is nuanced: I acknowledged the opposing view before taking a position."
+    - "My conclusion adds a final idea rather than repeating the introduction."
+speaking:
+  - "Se me tivesses avisado, ter-te-ia esperado à porta da estação."
+  - "Não te preocupes, eu digo-lhe que chegas um bocadinho mais tarde."
+  - "Os miúdos andam a estudar imenso para os exames de junho."
+  - "Gostava de saber se ainda há lugares para o concerto de sábado."
+  - "Far-se-á tudo o que for possível para resolver a situação até ao fim do mês."
+  - "Lá em casa, a gente diz “me dá isso”; aqui em Lisboa, dizem “dá-me isso”."

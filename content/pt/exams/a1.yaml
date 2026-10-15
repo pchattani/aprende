@@ -1,0 +1,62 @@
+level: a1
+title: Level check A1
+passScore: 0.8
+reading:
+  text: |
+    Oi! Meu nome é Beatriz, mas todo mundo me chama de Bia. Tenho vinte e seis anos e sou de Niterói, uma cidade perto do Rio de Janeiro. Sou enfermeira e trabalho num hospital no centro do Rio. Moro com meu namorado, o Rafael, num apartamento pequeno perto da praia. O Rafael é cozinheiro e trabalha à noite num restaurante.
+
+    De segunda a sexta, eu me levanto às seis horas, porque começo a trabalhar às sete e meia. Tomo café com pão e fruta e vou para o trabalho de barco. A viagem é rápida e muito bonita. Volto para casa às quatro da tarde. À tarde, eu e o Rafael andamos na praia com o nosso cachorro, o Biscoito.
+
+    Nos fins de semana, visitamos os meus pais. Eles moram em Petrópolis, a uma hora de carro. Minha mãe cozinha muito bem e meu pai tem um jardim com muitas flores. No verão faz muito calor no Rio, mas em Petrópolis é mais fresco. No inverno chove muito lá.
+  questions:
+    - { q: "What is Bia's job?", options: ["Cook", "Teacher", "Nurse"], answer: 2 }
+    - { q: "Why does Bia get up at six?", options: ["She starts work at half past seven", "She walks the dog", "Rafael works at night"], answer: 0 }
+    - { q: "How does Bia go to work?", options: ["By car", "By boat", "On foot"], answer: 1 }
+    - { q: "Where do Bia's parents live?", options: ["In the centre of Rio", "Near the beach in Niterói", "In Petrópolis, an hour away by car"], answer: 2 }
+    - { q: "What is the weather like in Petrópolis compared with Rio in summer?", options: ["Hotter", "Cooler", "Snowy"], answer: 1 }
+listening:
+  dictation:
+    - "Eu me levanto às sete e meia."
+    - "Quanto custa esta camiseta?"
+    - "Minha irmã tem vinte anos."
+    - "Tem uma farmácia do lado do banco."
+    - "A gente gosta muito de comida brasileira."
+  questions:
+    - { audio: "Com licença, onde fica a estação de metrô? — Siga em frente e vire à esquerda.", options: ["Go straight on and turn left", "The station is on the right", "The station is closed"], answer: 0 }
+    - { audio: "Eu quero um suco de laranja e um pão de queijo, por favor.", options: ["The person orders coffee and cake", "The person orders orange juice and a cheese bread", "The person asks for the bill"], answer: 1 }
+    - { audio: "Hoje está frio e nublado. Vai chover à tarde.", options: ["It is sunny and hot", "It is snowing", "It is cold and cloudy, and it will rain"], answer: 2 }
+grammar:
+  - { prompt: "Minha mãe ___ professora.", options: ["é", "está", "tem"], answer: 0, explain: "Professions take ser." }
+  - { prompt: "Onde ___ o banheiro?", options: ["é", "tem", "fica"], answer: 2, explain: "Fixed location: ficar (está is also possible); tem means 'there is'." }
+  - { prompt: "Na minha rua ___ um supermercado.", options: ["é", "tem", "está"], answer: 1, explain: "In Brazil, tem = there is / there are (written: há)." }
+  - { prompt: "Eu ___ vinte anos.", options: ["tenho", "sou", "estou"], answer: 0, explain: "Age uses ter." }
+  - { prompt: "As casas são ___.", options: ["brancas", "branco", "branca"], answer: 0, explain: "Adjectives agree: feminine plural brancas." }
+  - { prompt: "Eu gosto ___ café.", options: ["de", "do", "o"], answer: 1, explain: "gostar de + o = do café." }
+  - { prompt: "Nós ___ em São Paulo.", options: ["moro", "moram", "moramos"], answer: 2, explain: "-ar verb, nós form: moramos." }
+  - { prompt: "Ela ___ levanta às sete.", options: ["me", "te", "se"], answer: 2, explain: "Reflexive pronoun for ela: se." }
+  - { prompt: "Eu vou ___ cinema hoje.", options: ["ao", "a o", "no"], answer: 0, explain: "a + o = ao (ir a, movement)." }
+  - { prompt: "Eu moro ___ Rio.", options: ["em o", "no", "ao"], answer: 1, explain: "em + o = no." }
+  - { prompt: "Amanhã eu ___ visitar meus avós.", options: ["vai", "vamos", "vou"], answer: 2, explain: "ir + infinitive for the future: eu vou visitar." }
+  - { prompt: "Agora ela está ___ o almoço.", options: ["fazer", "fazendo", "faz"], answer: 1, explain: "estar + gerund for actions in progress (Brazil): está fazendo." }
+  - { prompt: "Você ___ onde fica a praia?", options: ["sabe", "conhece", "sabem"], answer: 0, explain: "saber for facts and information; conhecer for people and places." }
+  - { prompt: "Eu ___ que trabalhar amanhã.", options: ["sou", "tenho", "estou"], answer: 1, explain: "ter que + infinitive = to have to." }
+  - { prompt: "___ horas são? — São três e meia.", options: ["Quantas", "Qual", "Que"], answer: 2, explain: "Telling the time: Que horas são?" }
+writing:
+  prompt: "Write a short text about yourself: your name, age, where you are from and where you live, your family, your job or studies, what you like and your daily routine."
+  minWords: 60
+  modelAnswer: |
+    Oi! Meu nome é Daniel e eu tenho trinta anos. Sou da Irlanda, de Dublin, mas agora moro em Salvador com a minha mulher. Trabalho numa empresa e estudo português à noite. Minha família é pequena: meus pais e minha irmã, que mora em Londres. Gosto muito de esporte: jogo tênis duas vezes por semana e corro na praia. Também adoro a comida brasileira, como o pão de queijo e o feijão. Normalmente eu me levanto às sete, tomo café e vou para o trabalho de ônibus. Volto para casa às seis e janto às oito com a minha mulher.
+  checklist:
+    - "I said my name, age and nationality or origin with ser / ter / meu nome é correctly."
+    - "I said where I live using morar em (moro em, moro no / na)."
+    - "I described at least two family members with adjectives that agree in gender and number."
+    - "I used gostar de correctly (gosto de / gosto do / gosto da) at least once."
+    - "I described my routine with at least three present-tense verbs, including a reflexive verb (eu me levanto…)."
+    - "I used articles and contractions (no, na, do, da) and wrote the accents (é, você, também)."
+speaking:
+  - "Oi, meu nome é Ana e eu sou de Belo Horizonte."
+  - "Tenho vinte e cinco anos e sou estudante."
+  - "Eu gosto muito de música brasileira."
+  - "Com licença, onde fica a estação de metrô?"
+  - "Eu quero um café com leite e um pão de queijo."
+  - "Meu irmão tem o cabelo preto e os olhos verdes."
