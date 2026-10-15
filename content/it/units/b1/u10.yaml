@@ -1,0 +1,284 @@
+id: b1.u10
+title: "Ha detto che arrivava"
+lessons:
+  - id: b1.u10.l1
+    title: Dice che fa freddo a Torino
+    teach: [g.discorso-indiretto-present]
+    vocab: [w.affermare, w.dichiarare, w.riferire, w.pettegolezzo, w.chiacchierare, w.chiacchiere, w.sussurrare, w.telefonata, w.chiamata, w.segreteria-telefonica, w.messaggio-vocale, w.conversazione, w.dialogo, w.discorso, w.frase, w.risposta]
+    tip: "With a present reporting verb (dice, scrive) the tense doesn't change, but the person does: 'Sono stanco.' → Dice che è stanco."
+    sentences:
+      - { es: "Marco dice che arriva a Torino alle otto.", en: "Marco says he's arriving in Turin at eight.", altEs: ["Marco dice che arriva alle otto a Torino."], grammar: [g.discorso-indiretto-present], vocab: [] }
+      - { es: "Mia sorella scrive che a Torino fa freddo, ma che la città è bellissima.", en: "My sister writes that it's cold in Turin, but that the city is beautiful.", altEs: ["Mia sorella scrive che a Torino fa freddo ma la città è bellissima."], grammar: [g.discorso-indiretto-present], vocab: [] }
+      - { es: "Giulia dice che le è piaciuto molto il Museo Egizio.", en: "Giulia says she really liked the Egyptian Museum.", altEs: ["Giulia dice che il Museo Egizio le è piaciuto molto."], grammar: [g.discorso-indiretto-present, g.piacere-intro], vocab: [] }
+      - { es: "Paolo dice che è stanco e che va a letto.", en: "Paolo says he's tired and he's going to bed.", altEs: ["Paolo dice che è stanco e va a letto."], grammar: [g.discorso-indiretto-present], vocab: [], error: { wrong: "Paolo dice che sono stanco e che vado a letto.", explain: "Change the person: 'Sono stanco, vado a letto' becomes dice che è stanco e che va a letto.", grammar: g.discorso-indiretto-present } }
+      - { es: "La guida afferma che la Mole Antonelliana è nata come sinagoga.", en: "The guide states that the Mole Antonelliana started life as a synagogue.", altEs: ["La guida dice che la Mole Antonelliana è nata come sinagoga."], grammar: [g.discorso-indiretto-present], vocab: [w.affermare] }
+      - { es: "Il sindaco dichiara che il museo resterà aperto anche ad agosto.", en: "The mayor announces that the museum will stay open in August too.", altEs: ["Il sindaco dichiara che il museo rimarrà aperto anche ad agosto."], grammar: [g.discorso-indiretto-present, g.futuro-semplice], vocab: [w.dichiarare] }
+      - { es: "Ti riferisco solo quello che dice Anna: domani non c'è lezione.", en: "I'm only passing on what Anna says: there's no class tomorrow.", grammar: [g.discorso-indiretto-present, g.relative-chi-quello-che], vocab: [w.riferire] }
+      - { es: "Sai l'ultimo pettegolezzo? Dicono che Luca e Sara stanno insieme.", en: "Have you heard the latest gossip? They say Luca and Sara are together.", altEs: ["Sai l'ultimo pettegolezzo? Dicono che Luca e Sara stiano insieme."], grammar: [g.discorso-indiretto-present], vocab: [w.pettegolezzo] }
+      - { es: "Sono solo chiacchiere: nessuno dice che il bar chiude.", en: "It's just idle talk: no one is saying the café is closing.", grammar: [g.discorso-indiretto-present], vocab: [w.chiacchiere] }
+      - { es: "Mi sussurra che il film è noioso e che vuole uscire.", en: "She whispers to me that the film is boring and she wants to leave.", altEs: ["Mi sussurra che il film è noioso e vuole uscire."], altEn: ["He whispers to me that the film is boring and he wants to leave."], grammar: [g.discorso-indiretto-present], vocab: [w.sussurrare] }
+      - { es: "Nella telefonata, mia madre dice che sta bene e che mi saluta.", en: "On the phone call, my mother says she's fine and sends her love.", grammar: [g.discorso-indiretto-present], vocab: [w.telefonata] }
+      - { es: "C'è un messaggio in segreteria telefonica: il medico dice che i risultati sono pronti.", en: "There's a message on the answering machine: the doctor says the results are ready.", grammar: [g.discorso-indiretto-present], vocab: [w.segreteria-telefonica] }
+      - { es: "Nel messaggio vocale Sara dice che ha perso il treno.", en: "In the voice message Sara says she's missed the train.", grammar: [g.discorso-indiretto-present, g.passato-prossimo-avere], vocab: [w.messaggio-vocale] }
+      - { es: "Luca: «Sono a Torino e mi piace molto.»", en: "Luca: 'I'm in Turin and I really like it.'", grammar: [g.discorso-indiretto-present], vocab: [], transform: { instruction: "Report it: Luca dice che…", answer: "Luca dice che è a Torino e che gli piace molto.", alt: ["Luca dice che è a Torino e gli piace molto."], en: "Luca says he's in Turin and he really likes it." } }
+      - { es: "Anna: «Domani vengo con voi.»", en: "Anna: 'I'm coming with you tomorrow.'", grammar: [g.discorso-indiretto-present], vocab: [], transform: { instruction: "Report it to your friends: Anna dice che…", answer: "Anna dice che domani viene con noi.", alt: ["Anna dice che viene con noi domani."], en: "Anna says she's coming with us tomorrow." } }
+      - { es: "Puoi ripetere l'ultima frase? Non ho sentito la risposta.", en: "Can you repeat the last sentence? I didn't hear the answer.", altEs: ["Puoi ripetere l'ultima frase? Non ho capito la risposta."], grammar: [g.potere-dovere], vocab: [w.frase, w.risposta] }
+    exchanges:
+      - q: { es: "Che cosa dice Marco nel messaggio?", en: "What does Marco say in the message?" }
+        a: { es: "Dice che è in ritardo e che arriva tra dieci minuti.", en: "He says he's late and he'll be here in ten minutes." }
+        alt: ["Dice che è in ritardo.", "Dice che arriva tra dieci minuti."]
+        grammar: [g.discorso-indiretto-present]
+        vocab: []
+      - q: { es: "Di chi era la chiamata?", en: "Who was the call from?" }
+        a: { es: "Della nonna: dice che ci aspetta a pranzo domenica.", en: "Grandma: she says she's expecting us for lunch on Sunday." }
+        alt: ["Era la nonna.", "Era mia madre: dice che ci saluta."]
+        grammar: [g.discorso-indiretto-present]
+        vocab: [w.chiamata]
+      - q: { es: "Che cosa dicono le previsioni?", en: "What does the forecast say?" }
+        a: { es: "Dicono che domani nevica in montagna.", en: "It says it'll snow in the mountains tomorrow." }
+        alt: ["Dicono che farà bel tempo.", "Dicono che pioverà tutto il giorno."]
+        grammar: [g.discorso-indiretto-present]
+        vocab: []
+      - q: { es: "Di cosa chiacchieravate?", en: "What were you chatting about?" }
+        a: { es: "Niente di serio. Sara dice che il nuovo collega è simpatico.", en: "Nothing serious. Sara says the new colleague is nice." }
+        alt: ["Di niente, solo chiacchiere.", "Di lavoro, purtroppo."]
+        grammar: [g.discorso-indiretto-present]
+        vocab: [w.chiacchierare]
+      - q: { es: "Che cosa dice il sindaco nel suo discorso?", en: "What does the mayor say in his speech?" }
+        a: { es: "Dice che la città avrà nuove piste ciclabili.", en: "He says the city will have new cycle lanes." }
+        alt: ["Dice che il centro diventerà zona pedonale.", "Niente di nuovo, come sempre."]
+        grammar: [g.discorso-indiretto-present]
+        vocab: [w.discorso]
+    texts:
+      - title: "Messaggio vocale di Sara"
+        es: ["Ciao, sono io.", "Ho perso il treno per Torino e arrivo con quello delle nove.", "Non aspettatemi per cena!"]
+        en: ["Hi, it's me.", "I've missed the train to Turin and I'm arriving on the nine o'clock.", "Don't wait for me for dinner!"]
+        grammar: [g.imperativo-noi-voi]
+        vocab: [w.messaggio-vocale]
+      - title: "Che cosa dice Sara"
+        es: ["Sara dice che ha perso il treno per Torino.", "Dice che arriva con quello delle nove.", "E dice di non aspettarla per cena: la conversazione finisce qui."]
+        en: ["Sara says she's missed the train to Turin.", "She says she's arriving on the nine o'clock.", "And she says not to wait for her for dinner: the conversation ends there."]
+        grammar: [g.discorso-indiretto-present, g.reported-commands-di]
+        vocab: [w.conversazione]
+    spicy:
+      - { es: "Mia madre dice che sei troppo bello per essere vero.", en: "My mother says you're too good-looking to be true.", altEs: ["Mia madre dice che sei troppo bella per essere vera."], grammar: [g.discorso-indiretto-present], vocab: [] }
+      - { es: "Il barista dice che vieni qui ogni giorno alla stessa ora. Coincidenza?", en: "The barman says you come here every day at the same time. Coincidence?", grammar: [g.discorso-indiretto-present], vocab: [] }
+      - { es: "Mi sussurri che ti annoi? Allora andiamo via insieme.", en: "You're whispering to me that you're bored? Then let's leave together.", grammar: [g.discorso-indiretto-present], vocab: [w.sussurrare] }
+      - { es: "Le chiacchiere del quartiere dicono che stiamo insieme. Diamo loro ragione?", en: "The neighbourhood gossip says we're together. Shall we prove them right?", grammar: [g.discorso-indiretto-present], vocab: [w.chiacchiere] }
+      - { es: "Nel messaggio vocale dici che forse vieni. Io sento solo «vieni».", en: "In the voice message you say you might come. All I hear is 'come'.", grammar: [g.discorso-indiretto-present], vocab: [w.messaggio-vocale] }
+  - id: b1.u10.l2
+    title: Ha detto che era innocente
+    teach: [g.discorso-indiretto-past]
+    vocab: [w.mistero, w.giallo.n, w.indagine, w.indizio, w.colpevole, w.innocente, w.sospetto, w.detective, w.commissario, w.interrogare, w.prova, w.alibi, w.delitto, w.assassino, w.arrestare, w.il-giorno-dopo, w.il-giorno-prima, w.quel-giorno, w.lindomani, w.ammettere, w.negare, w.confessare, w.ambientato]
+    tip: "After ha detto / disse, tenses shift back: presente → imperfetto, passato prossimo → trapassato, futuro → condizionale passato. Domani → il giorno dopo, ieri → il giorno prima."
+    sentences:
+      - { es: "Paola ha detto che aveva già visto la mostra.", en: "Paola said she had already seen the exhibition.", grammar: [g.discorso-indiretto-past, g.trapassato-prossimo], vocab: [] }
+      - { es: "Mi ha detto che sarebbe arrivato in ritardo.", en: "He told me he would be late.", altEs: ["Mi ha detto che sarebbe arrivata in ritardo."], altEn: ["She told me she would be late."], grammar: [g.discorso-indiretto-past, g.condizionale-passato], vocab: [] }
+      - { es: "Ha detto che sarebbe venuto alla festa.", en: "He said he would come to the party.", altEs: ["Ha detto che sarebbe venuta alla festa."], grammar: [g.discorso-indiretto-past, g.condizionale-passato], vocab: [], error: { wrong: "Ha detto che verrebbe alla festa.", explain: "The future in the past is the condizionale passato: sarebbe venuto.", grammar: g.discorso-indiretto-past } }
+      - { es: "Il commissario ha dichiarato che l'indagine era quasi chiusa.", en: "The inspector stated that the investigation was almost closed.", grammar: [g.discorso-indiretto-past], vocab: [w.commissario, w.indagine] }
+      - { es: "Il sospetto ha negato tutto: ha detto che era innocente.", en: "The suspect denied everything: he said he was innocent.", grammar: [g.discorso-indiretto-past], vocab: [w.sospetto, w.negare, w.innocente] }
+      - { es: "Alla fine ha confessato che aveva mentito sul suo alibi.", en: "In the end he confessed that he had lied about his alibi.", grammar: [g.discorso-indiretto-past, g.trapassato-prossimo], vocab: [w.confessare, w.alibi] }
+      - { es: "Il detective ha ammesso che non aveva trovato nessun indizio.", en: "The detective admitted he hadn't found a single clue.", grammar: [g.discorso-indiretto-past, g.trapassato-prossimo], vocab: [w.detective, w.ammettere, w.indizio] }
+      - { es: "La polizia ha detto che il colpevole era stato arrestato il giorno dopo.", en: "The police said the culprit had been arrested the next day.", grammar: [g.discorso-indiretto-past], vocab: [w.colpevole, w.arrestare, w.il-giorno-dopo] }
+      - { es: "Il giornale scriveva che quel giorno nessuno aveva visto niente.", en: "The newspaper wrote that nobody had seen anything that day.", grammar: [g.discorso-indiretto-past, g.double-negation], vocab: [w.quel-giorno] }
+      - { es: "Mi ha raccontato che il giorno prima era stata a Torino.", en: "She told me she had been in Turin the day before.", grammar: [g.discorso-indiretto-past, g.trapassato-prossimo], vocab: [w.il-giorno-prima] }
+      - { es: "L'indomani il commissario ha annunciato che aveva una prova.", en: "The following day the inspector announced that he had a piece of evidence.", altEs: ["Il giorno dopo il commissario ha annunciato che aveva una prova."], grammar: [g.discorso-indiretto-past], vocab: [w.lindomani, w.prova] }
+      - { es: "Ho letto un giallo ambientato a Torino: alla fine si scopre che l'assassino era il vicino di casa.", en: "I read a crime novel set in Turin: at the end you find out the murderer was the next-door neighbour.", grammar: [g.si-impersonale], vocab: [w.giallo.n, w.assassino] }
+      - { es: "Il commissario: «Questo delitto è un mistero.»", en: "The inspector: 'This crime is a mystery.'", grammar: [g.discorso-indiretto-past], vocab: [w.delitto, w.mistero], transform: { instruction: "Report it in the past: Il commissario ha detto che…", answer: "Il commissario ha detto che quel delitto era un mistero.", alt: ["Il commissario ha detto che questo delitto era un mistero."], en: "The inspector said that the crime was a mystery." } }
+      - { es: "Anna: «Ho perso le chiavi.»", en: "Anna: 'I've lost my keys.'", grammar: [g.discorso-indiretto-past], vocab: [], transform: { instruction: "Report it in the past: Anna ha detto che…", answer: "Anna ha detto che aveva perso le chiavi.", en: "Anna said she had lost her keys." } }
+      - { es: "Mi hanno detto che abitano a Torino da anni.", en: "They told me they've lived in Turin for years.", altEs: ["Mi hanno detto che abitavano a Torino da anni."], grammar: [g.discorso-indiretto-past, g.da-since], vocab: [], note: "If the fact is still true, spoken Italian often keeps the present after ha detto." }
+      - { es: "Hanno interrogato tutti i vicini, ma tutti hanno detto che quella notte dormivano.", en: "They questioned all the neighbours, but everyone said they were asleep that night.", grammar: [g.discorso-indiretto-past], vocab: [w.interrogare] }
+    exchanges:
+      - q: { es: "Che cosa ti ha detto Luca?", en: "What did Luca tell you?" }
+        a: { es: "Mi ha detto che sarebbe venuto più tardi.", en: "He told me he'd come later." }
+        alt: ["Che veniva più tardi.", "Ha detto che sarebbe arrivato verso le nove."]
+        grammar: [g.discorso-indiretto-past]
+        vocab: []
+      - q: { es: "Che cosa ha detto il sospetto al commissario?", en: "What did the suspect tell the inspector?" }
+        a: { es: "Ha detto che quella sera era al cinema con un amico.", en: "He said that he was at the cinema with a friend that evening." }
+        alt: ["Che era al cinema.", "Ha detto che era innocente."]
+        grammar: [g.discorso-indiretto-past]
+        vocab: [w.sospetto, w.commissario]
+      - q: { es: "L'hanno arrestato?", en: "Did they arrest him?" }
+        a: { es: "Sì, il giorno dopo: il commissario ha detto che aveva le prove.", en: "Yes, the next day: the inspector said he had the evidence." }
+        alt: ["Sì, l'indomani.", "No, non c'erano prove."]
+        grammar: [g.discorso-indiretto-past]
+        vocab: [w.arrestare, w.il-giorno-dopo, w.prova]
+      - q: { es: "Perché non sei venuta alla cena?", en: "Why didn't you come to the dinner?" }
+        a: { es: "Ti avevo detto che avevo un esame!", en: "I'd told you I had an exam!" }
+        alt: ["Te l'avevo detto: ero stanca.", "Ti avevo detto che lavoravo fino a tardi."]
+        grammar: [g.discorso-indiretto-past, g.trapassato-prossimo]
+        vocab: []
+      - q: { es: "Che cosa ha confessato?", en: "What did he confess?" }
+        a: { es: "Ha confessato che aveva preso lui i soldi.", en: "He confessed that he was the one who had taken the money." }
+        alt: ["Che era colpevole.", "Ha ammesso tutto."]
+        grammar: [g.discorso-indiretto-past]
+        vocab: [w.confessare]
+    texts:
+      - title: "Dal giornale di Torino"
+        es: ["Ieri il commissario ha dichiarato che l'indagine sul furto al museo era chiusa.", "Ha detto che il colpevole era un ex dipendente.", "L'uomo ha negato tutto, ma ha ammesso che quel giorno era in città."]
+        en: ["Yesterday the inspector stated that the investigation into the museum theft was closed.", "He said the culprit was a former employee.", "The man denied everything, but admitted he was in town that day."]
+        grammar: [g.discorso-indiretto-past]
+        vocab: [w.commissario, w.indagine, w.colpevole, w.negare, w.ammettere]
+      - title: "Un piccolo giallo"
+        es: ["Il detective ha detto che c'era un solo indizio: una tazzina di caffè.", "La signora ha detto che non aveva mai bevuto caffè in vita sua.", "Così il detective ha capito che mentiva."]
+        en: ["The detective said there was only one clue: an espresso cup.", "The lady said she had never drunk coffee in her life.", "That's how the detective realised she was lying."]
+        grammar: [g.discorso-indiretto-past]
+        vocab: [w.detective, w.indizio]
+    spicy:
+      - { es: "Mi avevi detto che sapevi cucinare: il fumo in cucina dice il contrario.", en: "You'd told me you could cook: the smoke in the kitchen says otherwise.", grammar: [g.discorso-indiretto-past], vocab: [] }
+      - { es: "Ha detto che sarebbe passato «solo per un caffè». Sono le due di notte.", en: "He said he'd drop by 'just for a coffee'. It's two in the morning.", altEs: ["Ha detto che sarebbe passata «solo per un caffè». Sono le due di notte."], grammar: [g.discorso-indiretto-past, g.condizionale-passato], vocab: [] }
+      - { es: "Il mio alibi? Ero con te, tutta la sera. Confermi?", en: "My alibi? I was with you, all evening. Can you confirm?", grammar: [g.imperfetto-uses], vocab: [w.alibi] }
+      - { es: "Ammetto che ti ho seguito fino al Museo Egizio, ma solo per vedere le mummie.", en: "I admit I followed you to the Egyptian Museum, but only to see the mummies.", altEs: ["Ammetto che ti ho seguita fino al Museo Egizio, ma solo per vedere le mummie."], grammar: [g.discorso-indiretto-present], vocab: [w.ammettere] }
+      - { es: "Hai detto che eri innocente, ma quegli occhi ti rendono colpevole.", en: "You said you were innocent, but those eyes make you guilty.", grammar: [g.discorso-indiretto-past], vocab: [w.innocente, w.colpevole] }
+  - id: b1.u10.l3
+    title: Mi ha chiesto se ero italiana
+    teach: [g.reported-questions]
+    vocab: [w.domandare, w.chiedersi, w.sapere-se, w.voler-dire, w.spiegazione, w.malinteso, w.equivoco, w.fraintendere, w.capirsi, w.precisare, w.rivelazione, w.confuso]
+    tip: "Yes/no questions are reported with se: «Vieni?» → Mi ha chiesto se venivo. Question words stay: «Dove abiti?» → Mi ha chiesto dove abitavo."
+    sentences:
+      - { es: "Il cameriere ci ha chiesto se volevamo il dolce.", en: "The waiter asked us if we wanted dessert.", altEs: ["Il cameriere ci ha domandato se volevamo il dolce."], grammar: [g.reported-questions], vocab: [] }
+      - { es: "Mi ha chiesto dove abitavo e che lavoro facevo.", en: "He asked me where I lived and what I did for a living.", altEs: ["Mi ha domandato dove abitavo e che lavoro facevo.", "Mi ha chiesto dove abitavo e che cosa facevo di lavoro."], altEn: ["She asked me where I lived and what job I did."], grammar: [g.reported-questions], vocab: [] }
+      - { es: "Mi chiedo se il Museo del Cinema sia aperto oggi.", en: "I wonder if the Cinema Museum is open today.", altEs: ["Mi chiedo se il Museo del Cinema è aperto oggi.", "Mi domando se il Museo del Cinema sia aperto oggi."], grammar: [g.reported-questions], vocab: [w.chiedersi] }
+      - { es: "Mi ha chiesto se ero italiana.", en: "He asked me if I was Italian.", altEs: ["Mi ha chiesto se ero italiano."], grammar: [g.reported-questions], vocab: [], error: { wrong: "Mi ha chiesto che se ero italiana.", explain: "Reported yes/no questions use se on its own, never che se.", grammar: g.reported-questions } }
+      - { es: "Vorrei sapere a che ora parte l'ultimo treno per Milano.", en: "I'd like to know what time the last train to Milan leaves.", grammar: [g.reported-questions, g.condizionale-courtesy], vocab: [] }
+      - { es: "Non so se ci siamo capiti.", en: "I don't know if we've understood each other.", altEs: ["Non so se ci siamo capiti bene."], grammar: [g.reported-questions], vocab: [w.capirsi, w.sapere-se] }
+      - { es: "Ti ho domandato che cosa volevi dire, non perché eri arrabbiato.", en: "I asked you what you meant, not why you were angry.", altEs: ["Ti ho chiesto che cosa volevi dire, non perché eri arrabbiato."], grammar: [g.reported-questions], vocab: [w.domandare, w.voler-dire] }
+      - { es: "Un turista mi ha chiesto come si arrivava alla Mole Antonelliana.", en: "A tourist asked me how to get to the Mole Antonelliana.", grammar: [g.reported-questions, g.si-impersonale], vocab: [] }
+      - { es: "Mi domando perché nessuno mi abbia dato una spiegazione.", en: "I wonder why no one has given me an explanation.", altEs: ["Mi chiedo perché nessuno mi abbia dato una spiegazione."], grammar: [g.reported-questions, g.congiuntivo-passato], vocab: [w.spiegazione] }
+      - { es: "C'è stato un malinteso: io ho capito martedì, lui mercoledì.", en: "There was a misunderstanding: I understood Tuesday, he understood Wednesday.", grammar: [g.passato-prossimo-avere], vocab: [w.malinteso] }
+      - { es: "Per evitare equivoci, il direttore ha precisato che la riunione era alle nove.", en: "To avoid misunderstandings, the director specified that the meeting was at nine.", grammar: [g.discorso-indiretto-past], vocab: [w.equivoco, w.precisare] }
+      - { es: "Mi hai frainteso: ti ho chiesto se avevi fame, non se volevi cucinare!", en: "You misunderstood me: I asked you if you were hungry, not if you wanted to cook!", grammar: [g.reported-questions], vocab: [w.fraintendere] }
+      - { es: "Che rivelazione! Mi ha chiesto se volevo andare a vivere con lui.", en: "What a revelation! He asked me if I wanted to move in with him.", grammar: [g.reported-questions], vocab: [w.rivelazione] }
+      - { es: "«Dove vai?» mi ha chiesto.", en: "'Where are you going?' he asked me.", grammar: [g.reported-questions], vocab: [], transform: { instruction: "Report the question: Mi ha chiesto…", answer: "Mi ha chiesto dove andavo.", en: "He asked me where I was going." } }
+      - { es: "«Hai fame?» mi chiede.", en: "'Are you hungry?' she asks me.", grammar: [g.reported-questions], vocab: [], transform: { instruction: "Report the question: Mi chiede…", answer: "Mi chiede se ho fame.", en: "She asks me if I'm hungry." } }
+      - { es: "Ci hanno chiesto quanto costava la camera e se la colazione era compresa.", en: "They asked us how much the room cost and whether breakfast was included.", grammar: [g.reported-questions], vocab: [] }
+    exchanges:
+      - q: { es: "Che cosa ti ha chiesto il controllore?", en: "What did the ticket inspector ask you?" }
+        a: { es: "Mi ha chiesto se avevo il biglietto.", en: "He asked me if I had a ticket." }
+        alt: ["Se avevo il biglietto.", "Mi ha chiesto dove scendevo."]
+        grammar: [g.reported-questions]
+        vocab: []
+      - q: { es: "Che cosa vuol dire «bicerin»?", en: "What does 'bicerin' mean?" }
+        a: { es: "È una bevanda tipica di Torino: caffè, cioccolato e crema di latte.", en: "It's a typical Turin drink: coffee, chocolate and cream." }
+        alt: ["È un caffè con cioccolato e crema.", "Vuol dire «bicchierino» in piemontese."]
+        grammar: [g.question-words]
+        vocab: [w.voler-dire]
+      - q: { es: "Ti ha detto quando torna?", en: "Did he tell you when he's coming back?" }
+        a: { es: "No, e non so se tornerà.", en: "No, and I don't know if he'll come back." }
+        alt: ["No, non me l'ha detto.", "Sì, ha detto che torna lunedì."]
+        grammar: [g.reported-questions]
+        vocab: [w.sapere-se]
+      - q: { es: "Che cosa voleva sapere la signora?", en: "What did the lady want to know?" }
+        a: { es: "Voleva sapere se il museo era aperto il lunedì.", en: "She wanted to know if the museum was open on Mondays." }
+        alt: ["Se il museo era aperto.", "Mi ha domandato quanto costava il biglietto."]
+        grammar: [g.reported-questions]
+        vocab: []
+      - q: { es: "Allora, ci siamo capiti?", en: "So, are we clear?" }
+        a: { es: "Sì, ma potresti precisare l'orario?", en: "Yes, but could you specify the time?" }
+        alt: ["Sì, perfettamente.", "Non del tutto: mi serve una spiegazione."]
+        grammar: [g.condizionale-courtesy]
+        vocab: [w.capirsi, w.precisare]
+    texts:
+      - title: "Al Museo Egizio"
+        es: ["Un turista mi ha chiesto dove si trovava il Museo Egizio.", "Poi mi ha domandato se era vero che era il più importante dopo quello del Cairo.", "Gli ho risposto che molti lo dicono."]
+        en: ["A tourist asked me where the Egyptian Museum was.", "Then he asked me if it was true that it was the most important after the one in Cairo.", "I told him that a lot of people say so."]
+        grammar: [g.reported-questions]
+        vocab: [w.domandare]
+      - title: "Un equivoco al bar"
+        es: ["Ho chiesto al cameriere se il bicerin era caldo.", "Lui ha capito che volevo un bicchiere di vino.", "Che equivoco!"]
+        en: ["I asked the waiter if the bicerin was hot.", "He understood that I wanted a glass of wine.", "What a misunderstanding!"]
+        grammar: [g.reported-questions]
+        vocab: [w.equivoco]
+    spicy:
+      - { es: "Mi hai chiesto se sono libero stasera. Per te, sempre.", en: "You asked me if I'm free tonight. For you, always.", altEs: ["Mi hai chiesto se sono libera stasera. Per te, sempre."], grammar: [g.reported-questions], vocab: [] }
+      - { es: "Mia madre mi ha chiesto chi era il ragazzo nella foto. Le ho detto che eri un vicino... per ora.", en: "My mother asked me who the guy in the photo was. I told her you were a neighbour... for now.", altEs: ["Mia madre mi ha chiesto chi era la ragazza nella foto. Le ho detto che eri una vicina... per ora."], grammar: [g.reported-questions, g.discorso-indiretto-past], vocab: [] }
+      - { es: "Mi chiedo se tu sappia quanto sei carino quando sei confuso.", en: "I wonder if you know how cute you are when you're confused.", altEs: ["Mi chiedo se tu sappia quanto sei carina quando sei confusa."], grammar: [g.reported-questions], vocab: [w.chiedersi] }
+      - { es: "Mi hai domandato che cosa volevo per il compleanno: una cena, tu e niente telefoni.", en: "You asked me what I wanted for my birthday: a dinner, you, and no phones.", grammar: [g.reported-questions], vocab: [w.domandare] }
+      - { es: "Mi hai frainteso: ti ho invitato a cena, non al cinema con tua sorella.", en: "You misunderstood me: I invited you to dinner, not to the cinema with your sister.", altEs: ["Mi hai frainteso: ti ho invitata a cena, non al cinema con tua sorella."], grammar: [g.passato-prossimo-avere], vocab: [w.fraintendere] }
+  - id: b1.u10.l4
+    title: Mi ha detto di aspettare
+    teach: [g.reported-commands-di]
+    vocab: [w.pregare, w.suggerire, w.proporre, w.raccomandare, w.ordine, w.comando, w.sottolineare, w.ribadire, w.bugiardo.n, w.mentire, w.fingere, w.fare-finta, w.credere-a]
+    tip: "Commands and requests become di + infinitive: «Aspetta!» → Mi ha detto di aspettare. The person told is an indirect object: gli ho detto, le ho chiesto."
+    sentences:
+      - { es: "Il medico mi ha detto di non bere alcol.", en: "The doctor told me not to drink alcohol.", grammar: [g.reported-commands-di], vocab: [] }
+      - { es: "Le ho chiesto di chiamarmi quando arriva a Torino.", en: "I asked her to call me when she gets to Turin.", altEs: ["Le ho chiesto di telefonarmi quando arriva a Torino."], grammar: [g.reported-commands-di, g.indirect-object-pronouns], vocab: [] }
+      - { es: "La guida ci ha detto di non fare foto nel museo.", en: "The guide told us not to take photos in the museum.", grammar: [g.reported-commands-di], vocab: [] }
+      - { es: "Gli ho detto di venire alle otto.", en: "I told him to come at eight.", altEs: ["Gli ho detto di venire per le otto."], grammar: [g.reported-commands-di, g.indirect-object-pronouns], vocab: [], error: { wrong: "L'ho detto di venire alle otto.", explain: "The person you tell is an indirect object: gli ho detto (to him), le ho detto (to her).", grammar: g.reported-commands-di } }
+      - { es: "Mi ha pregato di non dire niente a nessuno.", en: "He begged me not to say anything to anyone.", altEs: ["Mi ha pregata di non dire niente a nessuno."], grammar: [g.reported-commands-di, g.double-negation], vocab: [w.pregare] }
+      - { es: "Il cameriere ci ha suggerito di provare il bicerin.", en: "The waiter suggested we try the bicerin.", altEs: ["Il cameriere ci ha consigliato di provare il bicerin."], grammar: [g.reported-commands-di], vocab: [w.suggerire] }
+      - { es: "Mio fratello ha proposto di andare al Museo del Cinema.", en: "My brother suggested going to the Cinema Museum.", grammar: [g.reported-commands-di], vocab: [w.proporre] }
+      - { es: "Ci hanno raccomandato di arrivare presto, perché c'è sempre la fila.", en: "They urged us to arrive early, because there's always a queue.", grammar: [g.reported-commands-di], vocab: [w.raccomandare] }
+      - { es: "Il capo ci ha dato l'ordine di non uscire prima delle sei.", en: "The boss gave us the order not to leave before six.", grammar: [g.reported-commands-di], vocab: [w.ordine] }
+      - { es: "Il professore ha sottolineato che l'esame era difficile e ci ha detto di studiare.", en: "The teacher stressed that the exam was hard and told us to study.", grammar: [g.reported-commands-di, g.discorso-indiretto-past], vocab: [w.sottolineare] }
+      - { es: "La mamma mi ha ribadito di tornare prima di mezzanotte.", en: "Mum reminded me again to be back before midnight.", grammar: [g.reported-commands-di], vocab: [w.ribadire] }
+      - { es: "Il mio cane conosce un solo comando: «Seduto!»", en: "My dog knows only one command: 'Sit!'", grammar: [g.articles-indefinite], vocab: [w.comando] }
+      - { es: "Non credere a quel bugiardo: mente sempre.", en: "Don't believe that liar: he always lies.", grammar: [g.imperativo-negative], vocab: [w.bugiardo.n, w.mentire, w.credere-a] }
+      - { es: "Mi ha detto di fare finta di niente, così ha finto di non vedermi.", en: "He told me to act as if nothing was going on, so he pretended not to see me.", grammar: [g.reported-commands-di], vocab: [w.fare-finta, w.fingere] }
+      - { es: "«Aspettami!» mi ha detto Luca.", en: "'Wait for me!' Luca told me.", grammar: [g.reported-commands-di], vocab: [], transform: { instruction: "Report it: Luca mi ha detto di…", answer: "Luca mi ha detto di aspettarlo.", en: "Luca told me to wait for him." } }
+      - { es: "«Non fumate qui!» ci ha detto il proprietario.", en: "'Don't smoke here!' the owner told us.", grammar: [g.reported-commands-di, g.imperativo-negative], vocab: [], transform: { instruction: "Report it: Il proprietario ci ha detto di…", answer: "Il proprietario ci ha detto di non fumare lì.", alt: ["Il proprietario ci ha detto di non fumare."], en: "The owner told us not to smoke there." } }
+    exchanges:
+      - q: { es: "Che cosa ti ha detto il medico?", en: "What did the doctor tell you?" }
+        a: { es: "Mi ha detto di riposare e di bere molta acqua.", en: "He told me to rest and drink lots of water." }
+        alt: ["Di riposare.", "Mi ha raccomandato di non uscire per tre giorni."]
+        grammar: [g.reported-commands-di]
+        vocab: []
+      - q: { es: "Che cosa vi ha suggerito la guida?", en: "What did the guide suggest to you?" }
+        a: { es: "Di visitare la Mole e di salire con l'ascensore fino alla terrazza.", en: "To visit the Mole and take the lift up to the viewing terrace." }
+        alt: ["Di salire sulla Mole.", "Ci ha suggerito di vedere il Museo Egizio."]
+        grammar: [g.reported-commands-di]
+        vocab: [w.suggerire]
+      - q: { es: "Perché non sei venuto?", en: "Why didn't you come?" }
+        a: { es: "Mia madre mi ha chiesto di aiutarla a casa.", en: "My mother asked me to help her at home." }
+        alt: ["Il capo mi ha detto di restare in ufficio.", "Mi hanno pregato di restare."]
+        grammar: [g.reported-commands-di]
+        vocab: []
+      - q: { es: "Gli hai detto di chiamarmi?", en: "Did you tell him to call me?" }
+        a: { es: "Sì, gliel'ho detto due volte!", en: "Yes, I told him twice!" }
+        alt: ["Sì, gliel'ho ribadito.", "No, mi sono dimenticato."]
+        grammar: [g.reported-commands-di, g.combined-pronouns-past]
+        vocab: [w.ribadire]
+      - q: { es: "Che cosa ti ha proposto Anna?", en: "What did Anna suggest to you?" }
+        a: { es: "Di andare a vedere la partita della Juventus.", en: "Going to watch the Juventus match." }
+        alt: ["Di andare al cinema.", "Mi ha proposto di cenare insieme."]
+        grammar: [g.reported-commands-di]
+        vocab: [w.proporre]
+    texts:
+      - title: "Messaggio del capo"
+        es: ["Ha chiamato il capo.", "Ha detto di preparare la presentazione per lunedì.", "E ti prega di non arrivare in ritardo, questa volta!"]
+        en: ["The boss called.", "He said to prepare the presentation for Monday.", "And he asks you not to arrive late, this time!"]
+        grammar: [g.reported-commands-di]
+        vocab: [w.pregare]
+      - title: "I consigli della nonna"
+        es: ["La nonna mi diceva sempre di non credere ai bugiardi.", "Mi raccomandava di mangiare bene e di dormire tanto.", "E mi diceva di non dimenticare mai da dove vengo."]
+        en: ["Grandma always told me not to believe liars.", "She urged me to eat well and to sleep a lot.", "And she told me never to forget where I come from."]
+        grammar: [g.reported-commands-di, g.imperfetto-uses]
+        vocab: [w.raccomandare, w.bugiardo.n, w.credere-a]
+    spicy:
+      - { es: "Mi hai detto di non chiamarti dopo mezzanotte. Sono le undici e cinquantanove.", en: "You told me not to call you after midnight. It's eleven fifty-nine.", grammar: [g.reported-commands-di], vocab: [] }
+      - { es: "Un amico mi ha suggerito di invitarti a cena. Il mio cuore mi ha detto di sbrigarmi.", en: "A friend suggested I invite you to dinner. My heart told me to hurry up.", grammar: [g.reported-commands-di], vocab: [w.suggerire] }
+      - { es: "Mi hai chiesto di fingere di essere il tuo fidanzato alla cena di famiglia. Fingo benissimo.", en: "You asked me to pretend to be your boyfriend at the family dinner. I'm great at pretending.", altEs: ["Mi hai chiesto di fingere di essere la tua fidanzata alla cena di famiglia. Fingo benissimo."], grammar: [g.reported-commands-di], vocab: [w.fingere] }
+      - { es: "Mia nonna mi ha raccomandato di sposare qualcuno che cucina bene. Tu come vai con il risotto?", en: "My grandmother urged me to marry someone who cooks well. How are you with risotto?", grammar: [g.reported-commands-di], vocab: [w.raccomandare] }
+      - { es: "Ti prego di smettere di sorridere così: non riesco a lavorare.", en: "Please stop smiling like that: I can't work.", grammar: [g.reported-commands-di], vocab: [w.pregare] }
+dialogues:
+  - id: b1.u10.d1
+    title: Ha detto che arrivava
+    context: Teresa and Nicola are waiting for their friend Chiara at a café in Turin. Teresa reports what Chiara told her.
+    lines:
+      - { speaker: Nicola, es: "Allora, viene Chiara o no?", en: "So, is Chiara coming or not?" }
+      - { speaker: Teresa, es: "Stamattina mi ha detto che arrivava alle sei con il treno da Milano.", en: "This morning she told me she was arriving at six on the train from Milan." }
+      - { speaker: Nicola, es: "Sono già le sette! Le hai chiesto se il treno era in ritardo?", en: "It's already seven! Did you ask her if the train was late?" }
+      - { speaker: Teresa, es: "Sì, l'ho chiamata. Mi ha risposto che aveva perso il treno e che avrebbe preso quello dopo.", en: "Yes, I called her. She told me she'd missed the train and would take the next one." }
+      - { speaker: Nicola, es: "E poi?", en: "And then?" }
+      - { speaker: Teresa, es: "Poi mi ha scritto di non aspettarla per cena e di andare al cinema senza di lei.", en: "Then she texted me not to wait for her for dinner and to go to the cinema without her." }
+      - { speaker: Nicola, es: "Che strano. Ieri mi ha detto che voleva vedere il Museo del Cinema con noi.", en: "How strange. Yesterday she told me she wanted to see the Cinema Museum with us." }
+      - { speaker: Teresa, es: "Lo so. Mi chiedo se ci sia un altro motivo...", en: "I know. I wonder if there's another reason..." }
+      - { speaker: Nicola, es: "Secondo me c'è stato un malinteso. Le avevi detto che venivo anch'io?", en: "I think there's been a misunderstanding. Had you told her I was coming too?" }
+      - { speaker: Teresa, es: "Ah... no. Forse ha capito che era una serata solo per noi due!", en: "Oh... no. Maybe she thought it was an evening just for the two of us!" }
+      - { speaker: Nicola, es: "Allora richiamala e dille di venire subito!", en: "Then call her back and tell her to come right away!" }
+    questions:
+      - { q: "A che ora doveva arrivare Chiara?", options: ["Alle sei", "Alle sette", "Alle nove"], answer: 0, explain: "Teresa: 'mi ha detto che arrivava alle sei'." }
+      - { q: "Perché Chiara non è arrivata in tempo?", options: ["Era malata", "Aveva perso il treno", "Si era dimenticata"], answer: 1, explain: "'Mi ha risposto che aveva perso il treno.'" }
+      - { q: "Che cosa ha scritto Chiara a Teresa?", options: ["Di aspettarla al bar", "Di comprare i biglietti", "Di chiamarla più tardi", "Di andare al cinema senza di lei"], answer: 3, explain: "'Mi ha scritto di non aspettarla per cena e di andare al cinema senza di lei.'" }
+      - { q: "Che cosa dice Nicola alla fine?", options: ["Di tornare a casa", "Di richiamare Chiara", "Di andare al Museo del Cinema"], answer: 1, explain: "'Richiamala e dille di venire subito!'" }
