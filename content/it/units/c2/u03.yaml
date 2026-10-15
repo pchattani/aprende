@@ -1,0 +1,283 @@
+id: c2.u03
+title: "Manzoni e Leopardi"
+lessons:
+  - id: c2.u03.l1
+    title: Questo matrimonio non s'ha da fare
+    teach: [g.ottocento-prose]
+    vocab: [w.bravo.n, w.monatto, w.peste, w.untore, w.lazzaretto, w.monaca, w.curato, w.parroco, w.prete, w.frate, w.carestia, w.sommossa, w.romanzo-storico, w.risciacquare, w.provvidenziale, w.fede, w.religioso, w.devoto, w.penitenza, w.conversione, w.tonaca]
+    tip: "Manzoni's prose is long and balanced, with an ironic narrator; forms like io aveva, egli, s'ha da fare and the passato remoto are normal there, not mistakes."
+    sentences:
+      - { es: "Quel ramo del lago di Como, che volge a mezzogiorno, tra due catene non interrotte di monti.", en: "That branch of Lake Como which turns towards the south, between two unbroken chains of mountains.", grammar: [g.ottocento-prose], vocab: [w.volgere], note: "The opening of I promessi sposi." }
+      - { es: "I promessi sposi è il romanzo storico italiano più letto a scuola.", en: "The Betrothed is the Italian historical novel most read in schools.", altEs: ["I promessi sposi è il romanzo storico più letto nelle scuole italiane."], grammar: [g.ottocento-prose], vocab: [w.romanzo-storico] }
+      - { es: "Questo matrimonio non s'ha da fare, né domani, né mai.", en: "This marriage is not to be performed, not tomorrow, not ever.", grammar: [g.ottocento-prose], vocab: [w.bravo.n], note: "The threat of Don Rodrigo's bravi to Don Abbondio, now quoted jokingly.", transform: { instruction: "Rewrite in plain modern Italian", answer: "Questo matrimonio non si deve fare, né domani né mai.", alt: ["Questo matrimonio non si deve fare, né domani, né mai.", "Questo matrimonio non si farà, né domani né mai."], en: "This marriage must not take place, not tomorrow, not ever." } }
+      - { es: "I bravi di don Rodrigo minacciano il curato.", en: "Don Rodrigo's henchmen threaten the parish priest.", altEs: ["I bravi di don Rodrigo minacciano don Abbondio."], grammar: [g.ottocento-prose], vocab: [w.bravo.n, w.curato], error: { wrong: "I bravi di don Rodrigo minacciano al curato.", explain: "minacciare takes a direct object: minacciare qualcuno. Italian has no 'personal a' as Spanish does.", grammar: g.ottocento-prose } }
+      - { es: "Don Abbondio è un curato pauroso, non un eroe.", en: "Don Abbondio is a fearful parish priest, not a hero.", grammar: [g.ottocento-prose], vocab: [w.curato] }
+      - { es: "Oggi diciamo parroco più spesso di curato, e prete per chiunque porti la tonaca.", en: "Today we say 'parroco' more often than 'curato', and 'prete' for anyone in a cassock.", grammar: [g.ottocento-prose], vocab: [w.parroco, w.prete, w.tonaca] }
+      - { es: "Fra Cristoforo è un frate coraggioso che da giovane aveva ucciso un uomo.", en: "Fra Cristoforo is a courageous friar who had killed a man when he was young.", grammar: [g.ottocento-prose], vocab: [w.frate] }
+      - { es: "Dopo la conversione, il frate dedica la vita alla penitenza e ai poveri.", en: "After his conversion, the friar devotes his life to penance and to the poor.", grammar: [g.ottocento-prose], vocab: [w.conversione, w.penitenza, w.frate] }
+      - { es: "La monaca di Monza è uno dei personaggi più tragici del romanzo.", en: "The Nun of Monza is one of the most tragic characters in the novel.", grammar: [g.ottocento-prose], vocab: [w.monaca] }
+      - { es: "Nel 1628 la carestia provoca a Milano una sommossa, e la folla assalta i forni.", en: "In 1628 the famine causes a riot in Milan, and the crowd storms the bakeries.", grammar: [g.ottocento-prose], vocab: [w.carestia, w.sommossa] }
+      - { es: "Durante la peste del 1630 si dava la caccia agli untori, accusati di diffondere il contagio.", en: "During the plague of 1630 people hunted down the 'anointers', accused of spreading the disease.", grammar: [g.ottocento-prose], vocab: [w.peste, w.untore] }
+      - { es: "I monatti portavano i malati al lazzaretto.", en: "The monatti carried the sick to the lazaretto.", grammar: [g.ottocento-prose], vocab: [w.monatto, w.lazzaretto], transform: { instruction: "Make it passive with venire", answer: "I malati venivano portati al lazzaretto dai monatti.", alt: ["I malati erano portati al lazzaretto dai monatti."], en: "The sick were carried to the lazaretto by the monatti." } }
+      - { es: "Lucia è una ragazza devota che affida tutto alla fede.", en: "Lucia is a devout girl who entrusts everything to her faith.", grammar: [g.ottocento-prose], vocab: [w.devoto, w.fede] }
+      - { es: "Per Manzoni, uomo profondamente religioso, anche la peste ha un ruolo provvidenziale.", en: "For Manzoni, a deeply religious man, even the plague has a providential role.", grammar: [g.ottocento-prose], vocab: [w.religioso, w.provvidenziale, w.peste] }
+      - { es: "Manzoni andò a Firenze per risciacquare i panni in Arno.", en: "Manzoni went to Florence to 'rinse his clothes in the Arno'.", grammar: [g.ottocento-prose, g.questione-della-lingua], vocab: [w.risciacquare], note: "He revised the novel's language on the model of living Florentine." }
+      - { es: "Egli si volse e vide il lago.", en: "He turned and saw the lake.", grammar: [g.ottocento-prose, g.passato-remoto-irregular], vocab: [w.volgere], error: { wrong: "Egli si volgé e vide il lago.", explain: "volgere has an irregular passato remoto: volsi, volse, volsero.", grammar: g.passato-remoto-irregular } }
+    exchanges:
+      - q: { es: "Chi sono i bravi?", en: "Who are the bravi?" }
+        a: { es: "Gli uomini armati al servizio di don Rodrigo: oggi diremmo guardie del corpo, ma molto meno simpatiche.", en: "The armed men in Don Rodrigo's service: today we'd say bodyguards, but much less pleasant." }
+        alt: ["Gli uomini di don Rodrigo.", "Dei delinquenti al servizio di un signore."]
+        grammar: [g.ottocento-prose]
+        vocab: [w.bravo.n]
+      - q: { es: "Perché don Abbondio non vuole sposare Renzo e Lucia?", en: "Why won't Don Abbondio marry Renzo and Lucia?" }
+        a: { es: "Perché due bravi l'hanno minacciato: questo matrimonio non s'ha da fare.", en: "Because two henchmen threatened him: this marriage is not to be performed." }
+        alt: ["Perché ha paura di don Rodrigo.", "Perché l'hanno minacciato."]
+        grammar: [g.ottocento-prose]
+        vocab: [w.bravo.n, w.curato]
+      - q: { es: "Dove si ritrovano Renzo e Lucia verso la fine?", en: "Where do Renzo and Lucia find each other again near the end?" }
+        a: { es: "Nel lazzaretto di Milano, durante la peste.", en: "In the lazaretto in Milan, during the plague." }
+        alt: ["Nel lazzaretto.", "A Milano, nel lazzaretto."]
+        grammar: [g.ottocento-prose]
+        vocab: [w.lazzaretto, w.peste]
+      - q: { es: "Che cos'era un untore?", en: "What was an 'untore'?" }
+        a: { es: "Una persona accusata, quasi sempre ingiustamente, di diffondere la peste di proposito.", en: "Someone accused, almost always unjustly, of spreading the plague on purpose." }
+        alt: ["Uno accusato di diffondere la peste.", "Un capro espiatorio della peste."]
+        grammar: [g.ottocento-prose]
+        vocab: [w.untore]
+      - q: { es: "Hai letto I promessi sposi a scuola?", en: "Did you read The Betrothed at school?" }
+        a: { es: "Come tutti: in seconda superiore, un capitolo alla settimana.", en: "Like everyone: in the second year of secondary school, one chapter a week." }
+        alt: ["Sì, come tutti.", "Sì, al liceo."]
+        grammar: [g.ottocento-prose]
+        vocab: [w.romanzo-storico]
+    texts:
+      - title: "La trama in breve"
+        es: ["Renzo e Lucia vogliono sposarsi.", "Don Rodrigo, un signore prepotente, lo impedisce con i suoi bravi.", "Dopo fughe, carestia e peste, i due promessi finalmente si sposano."]
+        en: ["Renzo and Lucia want to get married.", "Don Rodrigo, an overbearing nobleman, prevents it with his henchmen.", "After escapes, famine and plague, the betrothed couple finally marry."]
+        grammar: [g.ottocento-prose]
+        vocab: [w.bravo.n, w.carestia, w.peste]
+      - title: "Dalla prefazione di un'edizione scolastica"
+        es: ["Manzoni pubblicò la prima versione del romanzo nel 1827.", "Poi andò a Firenze a risciacquare i panni in Arno.", "L'edizione definitiva uscì a dispense tra il 1840 e il 1842."]
+        en: ["Manzoni published the first version of the novel in 1827.", "Then he went to Florence to rinse his clothes in the Arno.", "The final edition came out in instalments between 1840 and 1842."]
+        grammar: [g.ottocento-prose, g.passato-remoto-forms]
+        vocab: [w.risciacquare]
+    spicy:
+      - { es: "Questo appuntamento non s'ha da fare? Vedremo.", en: "This date is not to happen? We'll see about that.", grammar: [g.ottocento-prose], vocab: [w.bravo.n] }
+      - { es: "Non mi servono i bravi di don Rodrigo: per convincerti mi basta un caffè.", en: "I don't need Don Rodrigo's henchmen: a coffee is enough to convince you.", grammar: [g.ottocento-prose], vocab: [w.bravo.n] }
+      - { es: "Noi due siamo come Renzo e Lucia: tanti ostacoli, ma alla fine ci sposiamo, forse.", en: "We're like Renzo and Lucia: lots of obstacles, but in the end we get married, maybe.", grammar: [g.ottocento-prose], vocab: [w.romanzo-storico] }
+      - { es: "Prima di conoscerti odiavo il lunedì: incontrarti è stata una conversione provvidenziale.", en: "Before I met you I hated Mondays: meeting you was a providential conversion.", grammar: [g.ottocento-prose], vocab: [w.conversione, w.provvidenziale] }
+      - { es: "Per penitenza dovrai cenare con me tutti i venerdì.", en: "As penance you'll have to have dinner with me every Friday.", grammar: [g.ottocento-prose], vocab: [w.penitenza] }
+  - id: c2.u03.l2
+    title: C'era una volta un pezzo di legno
+    teach: [g.ottocento-prose, g.literary-devices]
+    vocab: [w.incipit, w.prosa, w.prosatore, w.romanticismo, w.illuminismo, w.classicismo, w.patriottico, w.celebrità, w.animare, w.ritratto-letterario, w.altrui, w.ripensare, w.villaggio, w.ode, w.inno, w.elegia, w.uscio, w.onnisciente]
+    tip: "When you write about a text, use the present tense (Manzoni descrive, Collodi racconta) and the vocabulary of analysis: incipit, narratore, punto di vista, lessico."
+    sentences:
+      - { es: "C'era una volta un pezzo di legno.", en: "Once upon a time there was a piece of wood.", grammar: [g.ottocento-prose], vocab: [w.incipit], note: "Collodi, Pinocchio (1881–83): the reader expects a king." }
+      - { es: "L'incipit di Pinocchio gioca con le attese del lettore: tutti aspettano un re.", en: "The opening of Pinocchio plays with the reader's expectations: everyone expects a king.", grammar: [g.literary-devices], vocab: [w.incipit] }
+      - { es: "Il babbo aprì l'uscio e vide il burattino.", en: "Dad opened the door and saw the puppet.", grammar: [g.ottocento-prose], vocab: [w.babbo, w.uscio], transform: { instruction: "Rewrite in modern standard Italian", answer: "Il papà aprì la porta e vide il burattino.", alt: ["Il papà ha aperto la porta e ha visto il burattino."], en: "Dad opened the door and saw the puppet." } }
+      - { es: "Codesto libro è tuo?", en: "Is that book (the one near you) yours?", grammar: [g.ottocento-prose], vocab: [w.codesto], note: "Tuscan and literary: codesto points to something near the listener.", transform: { instruction: "Rewrite in modern standard Italian", answer: "Quel libro è tuo?", alt: ["È tuo quel libro?"], en: "Is that book yours?" } }
+      - { es: "Appena Geppetto comincia a lavorarlo, il pezzo di legno si anima e protesta.", en: "As soon as Geppetto starts working it, the piece of wood comes to life and protests.", grammar: [g.literary-devices], vocab: [w.animare] }
+      - { es: "Pinocchio impara a sue spese a non fidarsi delle promesse altrui.", en: "Pinocchio learns the hard way not to trust other people's promises.", grammar: [g.literary-devices], vocab: [w.altrui] }
+      - { es: "La celebrità di Pinocchio è mondiale: è stato tradotto in centinaia di lingue.", en: "Pinocchio's fame is worldwide: it has been translated into hundreds of languages.", grammar: [g.literary-devices], vocab: [w.celebrità] }
+      - { es: "In questo capitolo Manzoni descrive la peste di Milano.", en: "In this chapter Manzoni describes the plague in Milan.", grammar: [g.literary-devices], vocab: [w.peste], error: { wrong: "In questo capitolo Manzoni descrisse la peste di Milano.", explain: "When discussing a text, Italian uses the present tense: Manzoni descrive, not descrisse.", grammar: g.literary-devices } }
+      - { es: "Manzoni fu un grande prosatore, ma scrisse anche poesie e tragedie.", en: "Manzoni was a great prose writer, but he also wrote poems and tragedies.", altEs: ["Manzoni è stato un grande prosatore, ma ha scritto anche poesie e tragedie."], grammar: [g.literary-devices, g.passato-remoto-forms], vocab: [w.prosatore] }
+      - { es: "Con Verga il narratore adotta il punto di vista del villaggio.", en: "With Verga the narrator adopts the village's point of view.", grammar: [g.literary-devices], vocab: [w.villaggio] }
+      - { es: "Ne emerge un ritratto amaro della società.", en: "A bitter portrait of society emerges.", grammar: [g.literary-devices], vocab: [w.ritratto-letterario] }
+      - { es: "Dall'illuminismo al romanticismo: Manzoni attraversa due epoche.", en: "From the Enlightenment to Romanticism: Manzoni spans two eras.", grammar: [g.literary-devices], vocab: [w.illuminismo, w.romanticismo] }
+      - { es: "Il romanticismo italiano è legato al Risorgimento e ai sentimenti patriottici.", en: "Italian Romanticism is bound up with the Risorgimento and patriotic feeling.", grammar: [g.literary-devices], vocab: [w.romanticismo, w.patriottico] }
+      - { es: "In Foscolo il classicismo convive con passioni già romantiche.", en: "In Foscolo classicism coexists with passions that are already Romantic.", grammar: [g.literary-devices], vocab: [w.classicismo] }
+      - { es: "Ei fu: così comincia l'ode di Manzoni sulla morte di Napoleone.", en: "'He was': so begins Manzoni's ode on the death of Napoleon.", grammar: [g.literary-devices, g.ottocento-prose], vocab: [w.ode], note: "Il cinque maggio (1821): ei = egli." }
+      - { es: "Prima del romanzo Manzoni aveva scritto gli Inni sacri, e prima ancora qualche elegia.", en: "Before the novel Manzoni had written the Sacred Hymns, and before that a few elegies.", grammar: [g.literary-devices], vocab: [w.inno, w.elegia, w.prosa] }
+    exchanges:
+      - q: { es: "Che cosa vuol dire uscio?", en: "What does 'uscio' mean?" }
+        a: { es: "È la porta di casa, in toscano e nella lingua letteraria.", en: "It's the front door, in Tuscan and in literary language." }
+        alt: ["La porta.", "Vuol dire porta."]
+        grammar: [g.ottocento-prose]
+        vocab: [w.uscio]
+      - q: { es: "Da dove è tratto il brano?", en: "Where is the passage taken from?" }
+        a: { es: "Dal primo capitolo delle Avventure di Pinocchio.", en: "From the first chapter of The Adventures of Pinocchio." }
+        alt: ["Dal primo capitolo di Pinocchio.", "Da Pinocchio, capitolo primo."]
+        grammar: [g.literary-devices]
+        vocab: [w.incipit]
+      - q: { es: "Che tipo di narratore usa Manzoni?", en: "What kind of narrator does Manzoni use?" }
+        a: { es: "Un narratore onnisciente, che sa tutto e commenta con ironia.", en: "An omniscient narrator, who knows everything and comments ironically." }
+        alt: ["Un narratore esterno e ironico.", "Onnisciente."]
+        grammar: [g.literary-devices]
+        vocab: [w.onnisciente]
+      - q: { es: "Che cosa ne emerge, secondo te?", en: "What emerges from it, in your view?" }
+        a: { es: "Ne emerge il ritratto di una società ingiusta, vista con occhi ironici ma pietosi.", en: "What emerges is a portrait of an unjust society, seen with ironic but compassionate eyes." }
+        alt: ["Un ritratto amaro della società.", "Una società ingiusta."]
+        grammar: [g.literary-devices]
+        vocab: [w.ritratto-letterario]
+      - q: { es: "Ripensi mai ai libri letti a scuola?", en: "Do you ever think back to the books you read at school?" }
+        a: { es: "Sempre: da grande ho riletto Pinocchio e ho capito che non era un libro per bambini.", en: "All the time: as an adult I reread Pinocchio and realised it wasn't a children's book." }
+        alt: ["A volte.", "Sì, soprattutto a Pinocchio."]
+        grammar: [g.literary-devices]
+        vocab: [w.ripensare]
+    texts:
+      - title: "Come si scrive un commento"
+        es: ["Il brano è tratto da…", "Il narratore adotta il punto di vista di…", "L'autore ricorre a un lessico…", "Ne emerge un'immagine di…"]
+        en: ["The passage is taken from…", "The narrator adopts the point of view of…", "The author uses vocabulary that is…", "What emerges is an image of…"]
+        grammar: [g.literary-devices]
+        vocab: [w.ritratto-letterario]
+      - title: "Recensione di una studentessa"
+        es: ["Pensavo che Pinocchio fosse una favola per bambini.", "Invece è un libro pieno di fame, paura e ironia.", "La prosa di Collodi è viva come una conversazione al mercato."]
+        en: ["I thought Pinocchio was a fairy tale for children.", "Instead it's a book full of hunger, fear and irony.", "Collodi's prose is as lively as a conversation at the market."]
+        grammar: [g.literary-devices]
+        vocab: [w.prosa]
+    spicy:
+      - { es: "Il tuo incipit era promettente: vediamo come va a finire il romanzo.", en: "Your opening line was promising: let's see how the novel ends.", grammar: [g.literary-devices], vocab: [w.incipit] }
+      - { es: "Scrivimi un'ode, o almeno un messaggio con più di tre parole.", en: "Write me an ode, or at least a message with more than three words.", grammar: [g.literary-devices], vocab: [w.ode] }
+      - { es: "Non ripensare al tuo ex: ripensa piuttosto alla cena di ieri con me.", en: "Don't think back to your ex: think back to last night's dinner with me instead.", grammar: [g.literary-devices], vocab: [w.ripensare] }
+      - { es: "Le opinioni altrui non mi interessano: mi interessa la tua.", en: "Other people's opinions don't interest me: yours does.", grammar: [g.literary-devices], vocab: [w.altrui] }
+      - { es: "Se mi dici una bugia, ti cresce il naso; se mi dici un complimento, mi cresce il sorriso.", en: "If you tell me a lie, your nose grows; if you pay me a compliment, my smile grows.", grammar: [g.ottocento-prose], vocab: [] }
+  - id: c2.u03.l3
+    title: Sempre caro mi fu
+    teach: [g.literary-devices]
+    vocab: [w.e-il-naufragar-mè-dolce-in-questo-mare, w.lucciola, w.civetta, w.allodola, w.usignolo, w.tremolare, w.fioco, w.flebile, w.tenue, w.infinito.n, w.siepe, w.natura-matrigna, w.idillio, w.operetta, w.zibaldone, w.ricordanza, w.rimembranza, w.pessimismo-cosmico, w.malinconicamente, w.contemplare, w.contemplazione, w.vagheggiare, w.anelito, w.struggimento, w.angoscia, w.inquietudine, w.tedio, w.assorto, w.pallore]
+    tip: "Leopardi was born in Recanati, in the Marche like Urbino: read his idylls slowly, looking for the images of the infinite and of memory."
+    sentences:
+      - { es: "E questa siepe, che da tanta parte dell'ultimo orizzonte il guardo esclude.", en: "And this hedge, which shuts out the gaze from so much of the farthest horizon.", grammar: [g.literary-devices, g.poetic-syntax], vocab: [w.siepe] }
+      - { es: "Leopardi scrisse L'infinito a Recanati nel 1819, a poco più di vent'anni.", en: "Leopardi wrote L'infinito in Recanati in 1819, when he was just over twenty.", grammar: [g.literary-devices], vocab: [w.infinito.n, w.idillio] }
+      - { es: "Leopardi nacque a Recanati nel 1798.", en: "Leopardi was born in Recanati in 1798.", grammar: [g.literary-devices, g.passato-remoto-irregular], vocab: [w.infinito.n], error: { wrong: "Leopardi nascé a Recanati nel 1798.", explain: "nascere has an irregular passato remoto: nacqui, nacque, nacquero.", grammar: g.passato-remoto-irregular } }
+      - { es: "E il naufragar m'è dolce in questo mare.", en: "And sweet to me is foundering in this sea.", grammar: [g.literary-devices, g.poetic-syntax], vocab: [w.e-il-naufragar-mè-dolce-in-questo-mare], transform: { instruction: "Rebuild it in modern prose order", answer: "E naufragare in questo mare mi è dolce.", alt: ["E il naufragare in questo mare mi è dolce.", "Naufragare in questo mare mi è dolce."], en: "And drowning in this sea is sweet to me." } }
+      - { es: "Per Leopardi la natura è matrigna: dà la vita, ma non si cura della felicità degli uomini.", en: "For Leopardi nature is a stepmother: she gives life, but doesn't care about human happiness.", grammar: [g.literary-devices], vocab: [w.natura-matrigna] }
+      - { es: "Il pessimismo cosmico non è tristezza personale, ma una riflessione sulla condizione umana.", en: "Cosmic pessimism isn't personal sadness, but a reflection on the human condition.", grammar: [g.literary-devices], vocab: [w.pessimismo-cosmico] }
+      - { es: "Nello Zibaldone Leopardi annotò pensieri per quindici anni: sono più di quattromila pagine.", en: "In the Zibaldone Leopardi jotted down his thoughts for fifteen years: it runs to over four thousand pages.", grammar: [g.literary-devices], vocab: [w.zibaldone] }
+      - { es: "Le Operette morali sono dialoghi ironici in prosa.", en: "The Operette morali are ironic dialogues in prose.", grammar: [g.literary-devices], vocab: [w.operetta] }
+      - { es: "Nelle Ricordanze la rimembranza rende dolce perfino il dolore passato.", en: "In Le ricordanze remembrance makes even past sorrow sweet.", grammar: [g.literary-devices], vocab: [w.ricordanza, w.rimembranza] }
+      - { es: "Le lucciole tremolavano nei campi, e da lontano cantava un usignolo.", en: "The fireflies flickered in the fields, and far away a nightingale was singing.", grammar: [g.literary-devices], vocab: [w.lucciola, w.tremolare, w.usignolo] }
+      - { es: "L'allodola canta all'alba, la civetta di notte.", en: "The skylark sings at dawn, the little owl at night.", grammar: [g.literary-devices], vocab: [w.allodola, w.civetta] }
+      - { es: "Una voce fioca e flebile arrivava dalla finestra, sotto una luce tenue.", en: "A faint, feeble voice came from the window, under a soft light.", grammar: [g.literary-devices], vocab: [w.fioco, w.flebile, w.tenue] }
+      - { es: "Assorto nella contemplazione del cielo, il poeta dimentica il tempo.", en: "Lost in contemplation of the sky, the poet forgets time.", grammar: [g.literary-devices], vocab: [w.assorto, w.contemplazione] }
+      - { es: "Dal colle Leopardi contemplava malinconicamente la luna e il suo pallore.", en: "From the hill Leopardi gazed melancholically at the moon and its pallor.", grammar: [g.literary-devices], vocab: [w.contemplare, w.malinconicamente, w.pallore], transform: { instruction: "Rewrite with the passato remoto", answer: "Dal colle Leopardi contemplò malinconicamente la luna e il suo pallore.", alt: [], en: "From the hill Leopardi gazed melancholically at the moon and its pallor." } }
+      - { es: "Il tedio, l'angoscia, l'inquietudine: sono le parole chiave della sua poesia.", en: "Ennui, anguish, restlessness: these are the key words of his poetry.", grammar: [g.literary-devices], vocab: [w.tedio, w.angoscia, w.inquietudine] }
+      - { es: "Nei suoi versi c'è un anelito all'infinito e uno struggimento per la giovinezza perduta, che il poeta vagheggia da lontano.", en: "In his lines there is a yearning for the infinite and a heartache for lost youth, which the poet longs for from afar.", grammar: [g.literary-devices], vocab: [w.anelito, w.struggimento, w.vagheggiare] }
+    exchanges:
+      - q: { es: "Dove si trova il colle dell'Infinito?", en: "Where is the hill of L'infinito?" }
+        a: { es: "A Recanati, nelle Marche, non lontano da Urbino.", en: "In Recanati, in the Marche, not far from Urbino." }
+        alt: ["A Recanati.", "Nelle Marche, a Recanati."]
+        grammar: [g.literary-devices]
+        vocab: [w.infinito.n]
+      - q: { es: "Leopardi era solo un pessimista?", en: "Was Leopardi just a pessimist?" }
+        a: { es: "Era pessimista, ma il suo pessimismo cosmico è anche una forma di solidarietà tra gli uomini.", en: "He was a pessimist, but his cosmic pessimism is also a form of solidarity between people." }
+        alt: ["No, era molto di più.", "Pessimista sì, ma mai banale."]
+        grammar: [g.literary-devices]
+        vocab: [w.pessimismo-cosmico]
+      - q: { es: "Che cos'è lo Zibaldone?", en: "What is the Zibaldone?" }
+        a: { es: "Un enorme diario di pensieri, appunti e riflessioni.", en: "A huge diary of thoughts, notes and reflections." }
+        alt: ["Il diario di Leopardi.", "Una raccolta di appunti di Leopardi."]
+        grammar: [g.literary-devices]
+        vocab: [w.zibaldone]
+      - q: { es: "Che cosa esclude la siepe?", en: "What does the hedge shut out?" }
+        a: { es: "Lo sguardo verso l'orizzonte, e proprio per questo il poeta immagina l'infinito.", en: "The view of the horizon, and precisely because of that the poet imagines the infinite." }
+        alt: ["L'orizzonte.", "La vista dell'orizzonte."]
+        grammar: [g.literary-devices]
+        vocab: [w.siepe, w.infinito.n]
+      - q: { es: "Perché la natura è matrigna?", en: "Why is nature a stepmother?" }
+        a: { es: "Perché crea gli uomini e poi resta indifferente alla loro sofferenza.", en: "Because she creates human beings and then stays indifferent to their suffering." }
+        alt: ["Perché è indifferente agli uomini.", "Perché non si cura della nostra felicità."]
+        grammar: [g.literary-devices]
+        vocab: [w.natura-matrigna]
+    texts:
+      - title: "Cartolina da Recanati"
+        es: ["Oggi siamo saliti sul colle dell'Infinito.", "La siepe c'è ancora, o almeno una siepe.", "Siamo rimasti in silenzio, assorti, per dieci minuti."]
+        en: ["Today we climbed the hill of L'infinito.", "The hedge is still there, or at least a hedge.", "We stayed silent, lost in thought, for ten minutes."]
+        grammar: [g.literary-devices]
+        vocab: [w.siepe, w.assorto]
+      - title: "Sera d'estate a Urbino"
+        es: ["Al tramonto le mura di Urbino diventano rosa.", "Tra i campi tremolano le prime lucciole.", "Da qualche parte, una civetta comincia il suo canto."]
+        en: ["At sunset the walls of Urbino turn pink.", "The first fireflies flicker among the fields.", "Somewhere, a little owl begins its song."]
+        grammar: [g.literary-devices]
+        vocab: [w.tremolare, w.lucciola, w.civetta]
+    spicy:
+      - { es: "Sempre caro mi fu quest'ermo divano, soprattutto quando ci sei anche tu.", en: "This lonely sofa was always dear to me, especially when you're on it too.", grammar: [g.literary-devices, g.poetic-syntax], vocab: [w.siepe] }
+      - { es: "E il naufragar m'è dolce in questi occhi.", en: "And sweet to me is drowning in these eyes.", grammar: [g.literary-devices], vocab: [w.e-il-naufragar-mè-dolce-in-questo-mare] }
+      - { es: "Ti contemplo assorto come Leopardi davanti alla luna, ma con molto meno pessimismo.", en: "I gaze at you, lost in thought, like Leopardi before the moon, but with far less pessimism.", altEs: ["Ti contemplo assorta come Leopardi davanti alla luna, ma con molto meno pessimismo."], grammar: [g.literary-devices], vocab: [w.contemplare, w.assorto] }
+      - { es: "Il mio pessimismo cosmico finisce ogni volta che mi sorridi.", en: "My cosmic pessimism ends every time you smile at me.", grammar: [g.literary-devices], vocab: [w.pessimismo-cosmico] }
+      - { es: "Sei la siepe che mi nasconde il resto del mondo, e va benissimo così.", en: "You're the hedge that hides the rest of the world from me, and that's just fine.", grammar: [g.literary-devices], vocab: [w.siepe] }
+  - id: c2.u03.l4
+    title: Contare le sillabe
+    teach: [g.verse-metre]
+    vocab: [w.verso.n, w.rima, w.rimare, w.strofa, w.metrica, w.sillaba, w.settenario, w.sonetto, w.quartina, w.terzina, w.ottava, w.enjambement, w.cesura, w.assonanza, w.lirica, w.lirico, w.poetico, w.rovente, w.assordante, w.sinalefe, w.accentato, w.poema, w.cavalleresco]
+    tip: "Italian metre counts syllables, not stresses: merge vowels across words (sinalefe) and count up to the last stressed syllable, plus one."
+    sentences:
+      - { es: "Nel mezzo del cammin di nostra vita è un endecasillabo: undici sillabe.", en: "'Nel mezzo del cammin di nostra vita' is a hendecasyllable: eleven syllables.", grammar: [g.verse-metre], vocab: [w.sillaba, w.endecasillabo] }
+      - { es: "Per contare le sillabe di un verso bisogna applicare la sinalefe.", en: "To count the syllables of a line you have to apply synaloepha.", grammar: [g.verse-metre], vocab: [w.sillaba, w.verso.n, w.sinalefe] }
+      - { es: "La sinalefe unisce la vocale finale di una parola con quella iniziale della parola successiva.", en: "Synaloepha merges the final vowel of one word with the first vowel of the next.", grammar: [g.verse-metre], vocab: [w.sinalefe] }
+      - { es: "Si conta fino all'ultima sillaba accentata, più una.", en: "You count up to the last stressed syllable, plus one.", altEs: ["Si contano le sillabe fino all'ultima accentata, più una."], grammar: [g.verse-metre], vocab: [w.sillaba, w.accentato] }
+      - { es: "Il settenario ha sette sillabe, con l'accento principale sulla sesta.", en: "The settenario has seven syllables, with the main stress on the sixth.", grammar: [g.verse-metre], vocab: [w.settenario] }
+      - { es: "Il sonetto ha quattordici versi: due quartine e due terzine.", en: "The sonnet has fourteen lines: two quatrains and two tercets.", altEs: ["Il sonetto è composto da quattordici versi: due quartine e due terzine."], grammar: [g.verse-metre], vocab: [w.sonetto, w.quartina, w.terzina, w.verso.n] }
+      - { es: "Dante usa la terzina a rima incatenata.", en: "Dante uses the tercet with interlocking rhyme.", grammar: [g.verse-metre, g.passive-essere], vocab: [w.terzina, w.rima], transform: { instruction: "Make it passive", answer: "La terzina a rima incatenata è usata da Dante.", alt: ["La terzina a rima incatenata viene usata da Dante."], en: "The tercet with interlocking rhyme is used by Dante." } }
+      - { es: "L'ottava è la strofa dei poemi cavallereschi, come l'Orlando furioso.", en: "The ottava is the stanza of chivalric poems, like the Orlando furioso.", grammar: [g.verse-metre], vocab: [w.ottava, w.strofa, w.poema, w.cavalleresco] }
+      - { es: "Cuore e amore rimano da secoli nelle canzoni italiane.", en: "'Cuore' and 'amore' have rhymed in Italian songs for centuries.", grammar: [g.verse-metre], vocab: [w.rimare], transform: { instruction: "Rewrite with fare rima", answer: "Cuore fa rima con amore da secoli nelle canzoni italiane.", alt: ["Cuore e amore fanno rima da secoli nelle canzoni italiane.", "Da secoli cuore fa rima con amore nelle canzoni italiane."], en: "Cuore has rhymed with amore in Italian songs for centuries." } }
+      - { es: "Con l'enjambement la frase non finisce con il verso, ma continua in quello successivo.", en: "With enjambment the sentence doesn't end with the line but carries on into the next one.", grammar: [g.verse-metre], vocab: [w.enjambement] }
+      - { es: "La cesura divide l'endecasillabo in due parti.", en: "The caesura divides the hendecasyllable into two parts.", grammar: [g.verse-metre], vocab: [w.cesura] }
+      - { es: "L'assonanza è una rima imperfetta: le vocali sono uguali, le consonanti no.", en: "Assonance is an imperfect rhyme: the vowels match, the consonants don't.", grammar: [g.verse-metre], vocab: [w.assonanza, w.rima] }
+      - { es: "La metrica italiana conta le sillabe, quella inglese conta gli accenti.", en: "Italian metre counts syllables, English metre counts stresses.", grammar: [g.verse-metre], vocab: [w.metrica] }
+      - { es: "Meriggiare pallido e assorto presso un rovente muro d'orto.", en: "To spend the noon pale and absorbed by a scorching garden wall.", grammar: [g.verse-metre], vocab: [w.rovente, w.assorto], note: "Montale, Ossi di seppia." }
+      - { es: "La lirica del Novecento abbandona spesso la rima: M'illumino d'immenso è una poesia di due versi.", en: "Twentieth-century lyric poetry often abandons rhyme: 'M'illumino d'immenso' is a two-line poem.", grammar: [g.verse-metre], vocab: [w.lirica, w.lirico] }
+      - { es: "Ho scritto una poesia per il tuo compleanno.", en: "I wrote a poem for your birthday.", grammar: [g.verse-metre, g.false-friends-advanced], vocab: [w.poetico], error: { wrong: "Ho scritto un poema per il tuo compleanno.", explain: "A poema is a long narrative poem (the Commedia, the Orlando furioso); a short poem is una poesia.", grammar: g.false-friends-advanced } }
+    exchanges:
+      - q: { es: "Quante sillabe ha un endecasillabo?", en: "How many syllables does a hendecasyllable have?" }
+        a: { es: "Undici, contando fino all'ultima sillaba accentata più una.", en: "Eleven, counting up to the last stressed syllable plus one." }
+        alt: ["Undici.", "Ne ha undici."]
+        grammar: [g.verse-metre]
+        vocab: [w.sillaba, w.endecasillabo]
+      - q: { es: "Com'è fatto un sonetto?", en: "How is a sonnet made?" }
+        a: { es: "Quattordici endecasillabi: due quartine e due terzine.", en: "Fourteen hendecasyllables: two quatrains and two tercets." }
+        alt: ["Due quartine e due terzine.", "Ha quattordici versi."]
+        grammar: [g.verse-metre]
+        vocab: [w.sonetto, w.quartina, w.terzina]
+      - q: { es: "Perché non mi tornano le sillabe?", en: "Why won't my syllable count come out right?" }
+        a: { es: "Perché hai dimenticato la sinalefe: in «selva oscura» la a e la o formano una sola sillaba.", en: "Because you forgot synaloepha: in 'selva oscura' the a and the o make a single syllable." }
+        alt: ["Hai dimenticato la sinalefe.", "Ricordati la sinalefe."]
+        grammar: [g.verse-metre]
+        vocab: [w.sinalefe, w.sillaba]
+      - q: { es: "L'infinito ha delle rime?", en: "Does L'infinito rhyme?" }
+        a: { es: "No, sono quindici endecasillabi sciolti, cioè senza rima.", en: "No, it's fifteen blank hendecasyllables, that is, without rhyme." }
+        alt: ["No, nessuna.", "No, sono versi sciolti."]
+        grammar: [g.verse-metre]
+        vocab: [w.rima, w.endecasillabo]
+      - q: { es: "Ti piace la poesia lirica?", en: "Do you like lyric poetry?" }
+        a: { es: "Sì, ma preferisco leggerla ad alta voce: la metrica si sente, non si conta.", en: "Yes, but I prefer reading it aloud: metre is something you hear, not something you count." }
+        alt: ["Moltissimo.", "Sì, soprattutto Montale."]
+        grammar: [g.verse-metre]
+        vocab: [w.lirico, w.metrica]
+    texts:
+      - title: "Esercizio di metrica"
+        es: ["Leggete il secondo verso della Commedia: mi ritrovai per una selva oscura.", "Segnate la sinalefe tra selva e oscura e contate le sillabe.", "Poi trovate l'accento sulla decima sillaba."]
+        en: ["Read the second line of the Comedy: 'mi ritrovai per una selva oscura'.", "Mark the synaloepha between selva and oscura and count the syllables.", "Then find the stress on the tenth syllable."]
+        grammar: [g.verse-metre]
+        vocab: [w.sinalefe, w.sillaba, w.verso.n]
+      - title: "Nel Palazzo Ducale di Urbino"
+        es: ["Nello studiolo del duca i ritratti dei poeti guardano dall'alto.", "La guida legge una terzina di Dante.", "Nella sala segue un silenzio quasi assordante."]
+        en: ["In the duke's study the portraits of the poets look down from above.", "The guide reads a tercet by Dante.", "In the room an almost deafening silence follows."]
+        grammar: [g.verse-metre]
+        vocab: [w.terzina, w.assordante]
+    spicy:
+      - { es: "Cuore e amore rimano da secoli: tu e io potremmo provarci da stasera.", en: "Cuore and amore have rhymed for centuries: you and I could give it a try from tonight.", grammar: [g.verse-metre], vocab: [w.rimare] }
+      - { es: "Ti ho scritto un sonetto: quattordici versi e nessuna rima, come il nostro primo appuntamento.", en: "I wrote you a sonnet: fourteen lines and no rhyme, like our first date.", grammar: [g.verse-metre], vocab: [w.sonetto, w.rima] }
+      - { es: "Tra noi c'è un enjambement: la frase comincia stasera e finisce domani a colazione.", en: "There's an enjambment between us: the sentence starts tonight and ends tomorrow at breakfast.", grammar: [g.verse-metre], vocab: [w.enjambement] }
+      - { es: "Non contare le sillabe: conta i baci.", en: "Don't count syllables: count kisses.", grammar: [g.verse-metre], vocab: [w.sillaba] }
+      - { es: "Il silenzio dopo il mio complimento è stato assordante.", en: "The silence after my compliment was deafening.", grammar: [g.verse-metre], vocab: [w.assordante] }
+dialogues:
+  - id: c2.u03.d1
+    title: Da Urbino a Recanati
+    context: Two students at the University of Urbino, Tommaso and Yuki, drive to Recanati the day before Yuki's literature exam.
+    lines:
+      - { speaker: Yuki, es: "Tommaso, è vero che da Urbino a Recanati ci vogliono quasi due ore?", en: "Tommaso, is it true it takes almost two hours from Urbino to Recanati?" }
+      - { speaker: Tommaso, es: "Più o meno. Ma ne vale la pena: vedrai il colle dell'Infinito.", en: "More or less. But it's worth it: you'll see the hill of L'infinito." }
+      - { speaker: Yuki, es: "Quello di sempre caro mi fu quest'ermo colle? Esiste davvero?", en: "The one in 'This lonely hill was always dear to me'? It really exists?" }
+      - { speaker: Tommaso, es: "Certo. E la siepe c'è ancora, o almeno una siepe.", en: "Of course. And the hedge is still there, or at least a hedge." }
+      - { speaker: Yuki, es: "Domani all'esame devo fare l'analisi metrica dell'Infinito. Quindici endecasillabi sciolti, giusto?", en: "Tomorrow in the exam I have to do the metrical analysis of L'infinito. Fifteen blank hendecasyllables, right?" }
+      - { speaker: Tommaso, es: "Giusto, senza rime. E pieni di enjambement: la frase scavalca sempre il verso.", en: "Right, no rhymes. And full of enjambments: the sentence always spills over the line." }
+      - { speaker: Yuki, es: "E il naufragar m'è dolce in questo mare. Ma perché il naufragio è dolce?", en: "And sweet to me is foundering in this sea. But why is the shipwreck sweet?" }
+      - { speaker: Tommaso, es: "Perché il pensiero si perde nell'infinito, e perdersi, per una volta, non fa paura.", en: "Because thought gets lost in the infinite, and getting lost, for once, isn't frightening." }
+      - { speaker: Yuki, es: "E io che pensavo che Leopardi fosse solo un pessimista!", en: "And there was I thinking Leopardi was just a pessimist!" }
+      - { speaker: Tommaso, es: "Pessimista sì, ma mai banale. E dopo ti offro un gelato: pare che Leopardi ne andasse matto.", en: "A pessimist, yes, but never banal. And afterwards I'll buy you an ice cream: apparently Leopardi was mad about it." }
+    questions:
+      - { q: "Che cosa vedranno a Recanati?", options: ["Il colle dell'Infinito", "Il lago di Como", "Il lazzaretto di Milano"], answer: 0, explain: "Tommaso says Yuki will see the hill of L'infinito." }
+      - { q: "Com'è composto L'infinito, secondo i due ragazzi?", options: ["Quattordici versi in rima", "Quindici endecasillabi senza rima", "Otto ottave"], answer: 1, explain: "Fifteen blank (unrhymed) hendecasyllables, full of enjambments." }
+      - { q: "Perché, secondo Tommaso, il naufragio è dolce?", options: ["Perché il mare è caldo", "Perché perdersi nell'infinito non fa paura", "Perché Leopardi amava nuotare"], answer: 1, explain: "He says thought gets lost in the infinite, and for once getting lost isn't frightening." }
+      - { q: "Che cosa offrirà Tommaso a Yuki?", options: ["Un caffè", "Un gelato", "Un libro di Manzoni"], answer: 1, explain: "He offers her an ice cream, saying Leopardi was apparently mad about it." }
