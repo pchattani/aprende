@@ -1,0 +1,829 @@
+# A2 vocabulary (815 lemmas), grouped by the unit that introduces each word.
+# Nouns carry gender; plural/feminine/forms only where src/lang/it/inflect.ts cannot derive them.
+# ---------------------------------------------------------------- a2.u01 Ieri a Firenze
+- { id: w.tempo-fa, lemma: tempo fa, pos: phrase, en: [some time ago], level: a2, unit: a2.u01, tags: [passive] }
+- { id: w.toscano, lemma: toscano, pos: adj, en: [Tuscan], level: a2, unit: a2.u01, tags: [nationality] }
+- { id: w.sbagliare, lemma: sbagliare, pos: verb, en: [to make a mistake, to get wrong], level: a2, unit: a2.u01 }
+- { id: w.controllare, lemma: controllare, pos: verb, en: [to check, to control], level: a2, unit: a2.u01 }
+- { id: w.simbolo, lemma: simbolo, pos: noun, gender: m, en: [symbol], level: a2, unit: a2.u01 }
+- { id: w.classico, lemma: classico, pos: adj, en: [classic, classical], level: a2, unit: a2.u01, topic: arts }
+- { id: w.soprattutto, lemma: soprattutto, pos: adv, en: [above all, especially], level: a2, unit: a2.u01 }
+- { id: w.ospitare, lemma: ospitare, pos: verb, en: [to host, to put up], level: a2, unit: a2.u01 }
+- { id: w.forma, lemma: forma, pos: noun, gender: f, en: [shape, form], level: a2, unit: a2.u01 }
+- { id: w.campo, lemma: campo, pos: noun, gender: m, en: [field, pitch], level: a2, unit: a2.u01, topic: nature }
+- { id: w.grano, lemma: grano, pos: noun, gender: m, en: [wheat, grain], level: a2, unit: a2.u01, topic: nature }
+- { id: w.arco, lemma: arco, pos: noun, gender: m, en: [arch, bow], level: a2, unit: a2.u01, topic: city }
+- { id: w.artigiano, lemma: artigiano, pos: noun, gender: mf, en: [craftsman, artisan], level: a2, unit: a2.u01, topic: jobs }
+- { id: w.legno, lemma: legno, pos: noun, gender: m, en: [wood (material)], level: a2, unit: a2.u01 }
+- { id: w.paglia, lemma: paglia, pos: noun, gender: f, en: [straw], level: a2, unit: a2.u01 }
+- { id: w.fiasco, lemma: fiasco, pos: noun, gender: m, en: [flask, fiasco], level: a2, unit: a2.u01 }
+- { id: w.nobile, lemma: nobile, pos: adj, en: [noble], level: a2, unit: a2.u01 }
+- { id: w.etrusco, lemma: etrusco, pos: adj, en: [Etruscan], level: a2, unit: a2.u01, tags: [nationality] }
+- { id: w.fiorentino, lemma: fiorentino, pos: adj, en: [Florentine], level: a2, unit: a2.u01, tags: [nationality] }
+- { id: w.accompagnare, lemma: accompagnare, pos: verb, en: [to go with, to accompany], level: a2, unit: a2.u01, topic: verbs-motion }
+- { id: w.salutare, lemma: salutare, pos: verb, en: [to greet, to say goodbye to], level: a2, unit: a2.u01, topic: verbs-speech }
+- { id: w.villa, lemma: villa, pos: noun, gender: f, en: [villa, country house], level: a2, unit: a2.u01, topic: house }
+- { id: w.tipico, lemma: tipico, pos: adj, en: [typical], level: a2, unit: a2.u01 }
+- { id: w.ieri, lemma: ieri, pos: adv, en: [yesterday], level: a2, unit: a2.u01, topic: time }
+- { id: w.laltro-ieri, lemma: "l'altro ieri", pos: phrase, en: [the day before yesterday], level: a2, unit: a2.u01, topic: time }
+- { id: w.ieri-sera, lemma: ieri sera, pos: phrase, en: [last night, yesterday evening], level: a2, unit: a2.u01, topic: time }
+- { id: w.scorso, lemma: scorso, pos: adj, en: ["last (week, month, year)"], level: a2, unit: a2.u01, topic: time, example: { es: "La settimana scorsa sono stato a Firenze.", en: "Last week I was in Florence." } }
+- { id: w.fa, lemma: fa, pos: adv, en: [ago], level: a2, unit: a2.u01, topic: time, example: { es: "Due giorni fa.", en: "Two days ago." } }
+- { id: w.appena, lemma: appena, pos: adv, en: [just, as soon as], level: a2, unit: a2.u01, topic: time }
+- { id: w.finalmente, lemma: finalmente, pos: adv, en: [at last, finally], level: a2, unit: a2.u01, topic: time }
+- { id: w.durante, lemma: durante, pos: prep, en: [during], level: a2, unit: a2.u01, topic: time }
+- { id: w.recentemente, lemma: recentemente, pos: adv, en: [recently], level: a2, unit: a2.u01, topic: time }
+- { id: w.ultimamente, lemma: ultimamente, pos: adv, en: [lately], level: a2, unit: a2.u01, topic: time }
+- { id: w.una-volta, lemma: una volta, pos: phrase, en: [once, one time], level: a2, unit: a2.u01, topic: time }
+- { id: w.per-la-prima-volta, lemma: per la prima volta, pos: phrase, en: [for the first time], level: a2, unit: a2.u01, topic: time }
+- { id: w.tutto-il-giorno, lemma: tutto il giorno, pos: phrase, en: [all day], level: a2, unit: a2.u01, topic: time }
+- { id: w.decidere, lemma: decidere, pos: verb, en: [to decide], level: a2, unit: a2.u01 }
+- { id: w.vincere, lemma: vincere, pos: verb, en: [to win], level: a2, unit: a2.u01, topic: sport }
+- { id: w.perdere, lemma: perdere, pos: verb, en: [to lose, to miss (a train)], level: a2, unit: a2.u01 }
+- { id: w.rompere, lemma: rompere, pos: verb, en: [to break], level: a2, unit: a2.u01 }
+- { id: w.scoprire, lemma: scoprire, pos: verb, en: [to discover, to find out], level: a2, unit: a2.u01 }
+- { id: w.ridere, lemma: ridere, pos: verb, en: [to laugh], level: a2, unit: a2.u01, topic: feelings }
+- { id: w.accendere, lemma: accendere, pos: verb, en: [to switch on, to light], level: a2, unit: a2.u01 }
+- { id: w.spegnere, lemma: spegnere, pos: verb, en: [to switch off, to put out], level: a2, unit: a2.u01 }
+- { id: w.dimenticare, lemma: dimenticare, pos: verb, en: [to forget], level: a2, unit: a2.u01 }
+- { id: w.ricordare, lemma: ricordare, pos: verb, en: [to remember, to remind], level: a2, unit: a2.u01 }
+- { id: w.incontrare, lemma: incontrare, pos: verb, en: [to meet], level: a2, unit: a2.u01 }
+- { id: w.regalare, lemma: regalare, pos: verb, en: [to give (as a present)], level: a2, unit: a2.u01 }
+- { id: w.telefonare, lemma: telefonare, pos: verb, en: [to phone, to call], level: a2, unit: a2.u01, topic: verbs-speech }
+- { id: w.mandare, lemma: mandare, pos: verb, en: [to send], level: a2, unit: a2.u01 }
+- { id: w.fotografare, lemma: fotografare, pos: verb, en: [to photograph], level: a2, unit: a2.u01, topic: travel }
+- { id: w.noleggiare, lemma: noleggiare, pos: verb, en: [to rent, to hire], level: a2, unit: a2.u01, topic: travel }
+- { id: w.duomo, lemma: duomo, pos: noun, gender: m, en: [cathedral], level: a2, unit: a2.u01, topic: city }
+- { id: w.cupola, lemma: cupola, pos: noun, gender: f, en: [dome], level: a2, unit: a2.u01, topic: city }
+- { id: w.campanile, lemma: campanile, pos: noun, gender: m, en: [bell tower], level: a2, unit: a2.u01, topic: city }
+- { id: w.galleria, lemma: galleria, pos: noun, gender: f, en: [gallery, tunnel], level: a2, unit: a2.u01, topic: arts }
+- { id: w.opera, lemma: opera, pos: noun, gender: f, en: [work (of art), opera], level: a2, unit: a2.u01, topic: arts }
+- { id: w.arte, lemma: arte, pos: noun, gender: f, en: [art], level: a2, unit: a2.u01, topic: arts }
+- { id: w.pittore, lemma: pittore, pos: noun, gender: mf, en: [painter], level: a2, unit: a2.u01, topic: arts }
+- { id: w.scultore, lemma: scultore, pos: noun, gender: mf, en: [sculptor], level: a2, unit: a2.u01, topic: arts }
+- { id: w.statua, lemma: statua, pos: noun, gender: f, en: [statue], level: a2, unit: a2.u01, topic: arts }
+- { id: w.affresco, lemma: affresco, pos: noun, gender: m, en: [fresco], level: a2, unit: a2.u01, topic: arts }
+- { id: w.capolavoro, lemma: capolavoro, pos: noun, gender: m, en: [masterpiece], level: a2, unit: a2.u01, topic: arts }
+- { id: w.rinascimento, lemma: rinascimento, pos: noun, gender: m, en: [Renaissance], level: a2, unit: a2.u01, topic: arts, forms: [Rinascimento] }
+- { id: w.artistico, lemma: artistico, pos: adj, en: [artistic], level: a2, unit: a2.u01, topic: arts }
+- { id: w.gioiello, lemma: gioiello, pos: noun, gender: m, en: [jewel, piece of jewellery], level: a2, unit: a2.u01, topic: shopping }
+- { id: w.gioielleria, lemma: gioielleria, pos: noun, gender: f, en: ["jeweller's"], level: a2, unit: a2.u01, topic: shopping }
+- { id: w.orefice, lemma: orefice, pos: noun, gender: mf, en: [goldsmith], level: a2, unit: a2.u01, topic: jobs }
+- { id: w.macellaio, lemma: macellaio, pos: noun, gender: mf, en: [butcher], level: a2, unit: a2.u01, topic: jobs }
+- { id: w.governo, lemma: governo, pos: noun, gender: m, en: [government], level: a2, unit: a2.u01, topic: politics }
+- { id: w.cima, lemma: cima, pos: noun, gender: f, en: [top, summit], level: a2, unit: a2.u01, topic: nature }
+- { id: w.gradino, lemma: gradino, pos: noun, gender: m, en: [step], level: a2, unit: a2.u01, topic: house }
+- { id: w.vista, lemma: vista, pos: noun, gender: f, en: [view, sight], level: a2, unit: a2.u01, topic: travel }
+- { id: w.fare-un-giro, lemma: fare un giro, pos: verb, en: [to go for a ride, to take a stroll], level: a2, unit: a2.u01, topic: travel }
+- { id: w.passato, lemma: passato, pos: noun, gender: m, en: [past], level: a2, unit: a2.u01, topic: time }
+- { id: w.nascita, lemma: nascita, pos: noun, gender: f, en: [birth], level: a2, unit: a2.u01 }
+- { id: w.mondo, lemma: mondo, pos: noun, gender: m, en: [world], level: a2, unit: a2.u01 }
+- { id: w.storia, lemma: storia, pos: noun, gender: f, en: [history, story], level: a2, unit: a2.u01 }
+# ---------------------------------------------------------------- a2.u02 Siamo andati a Siena
+- { id: w.pettinarsi, lemma: pettinarsi, pos: verb, en: ["to comb one's hair"], level: a2, unit: a2.u02, topic: verbs-daily }
+- { id: w.truccarsi, lemma: truccarsi, pos: verb, en: [to put on make-up], level: a2, unit: a2.u02, topic: verbs-daily }
+- { id: w.arcipelago, lemma: arcipelago, pos: noun, gender: m, en: [archipelago], level: a2, unit: a2.u02, topic: nature }
+- { id: w.apparire, lemma: apparire, pos: verb, en: [to appear], level: a2, unit: a2.u02 }
+- { id: w.pazienza, lemma: pazienza, pos: noun, gender: f, en: [patience], level: a2, unit: a2.u02 }
+- { id: w.toccare, lemma: toccare, pos: verb, en: [to touch], level: a2, unit: a2.u02 }
+- { id: w.nascere, lemma: nascere, pos: verb, en: [to be born], level: a2, unit: a2.u02 }
+- { id: w.morire, lemma: morire, pos: verb, en: [to die], level: a2, unit: a2.u02 }
+- { id: w.crescere, lemma: crescere, pos: verb, en: [to grow, to grow up], level: a2, unit: a2.u02 }
+- { id: w.diventare, lemma: diventare, pos: verb, en: [to become], level: a2, unit: a2.u02 }
+- { id: w.succedere, lemma: succedere, pos: verb, en: [to happen], level: a2, unit: a2.u02 }
+- { id: w.restare, lemma: restare, pos: verb, en: [to stay, to remain], level: a2, unit: a2.u02 }
+- { id: w.bastare, lemma: bastare, pos: verb, en: [to be enough], level: a2, unit: a2.u02 }
+- { id: w.mancare, lemma: mancare, pos: verb, en: [to be missing, to miss], level: a2, unit: a2.u02, notes: Mi manchi = I miss you. }
+- { id: w.cadere, lemma: cadere, pos: verb, en: [to fall], level: a2, unit: a2.u02 }
+- { id: w.scappare, lemma: scappare, pos: verb, en: [to run away, to escape], level: a2, unit: a2.u02, topic: verbs-motion }
+- { id: w.cambiare, lemma: cambiare, pos: verb, en: [to change], level: a2, unit: a2.u02 }
+- { id: w.iniziare, lemma: iniziare, pos: verb, en: [to start, to begin], level: a2, unit: a2.u02 }
+- { id: w.innamorarsi, lemma: innamorarsi, pos: verb, en: [to fall in love], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.sposarsi, lemma: sposarsi, pos: verb, en: [to get married], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.fidanzarsi, lemma: fidanzarsi, pos: verb, en: [to get engaged], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.lasciarsi, lemma: lasciarsi, pos: verb, en: [to split up], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.conoscersi, lemma: conoscersi, pos: verb, en: [to meet, to get to know each other], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.trasferirsi, lemma: trasferirsi, pos: verb, en: ["to move (house, city)"], level: a2, unit: a2.u02, topic: verbs-motion }
+- { id: w.laurearsi, lemma: laurearsi, pos: verb, en: [to graduate], level: a2, unit: a2.u02, topic: school }
+- { id: w.fermarsi, lemma: fermarsi, pos: verb, en: [to stop], level: a2, unit: a2.u02, topic: verbs-motion }
+- { id: w.sbrigarsi, lemma: sbrigarsi, pos: verb, en: [to hurry up], level: a2, unit: a2.u02, topic: verbs-motion }
+- { id: w.annoiarsi, lemma: annoiarsi, pos: verb, en: [to get bored], level: a2, unit: a2.u02, topic: feelings }
+- { id: w.arrabbiarsi, lemma: arrabbiarsi, pos: verb, en: [to get angry], level: a2, unit: a2.u02, topic: feelings }
+- { id: w.preoccuparsi, lemma: preoccuparsi, pos: verb, en: [to worry], level: a2, unit: a2.u02, topic: feelings }
+- { id: w.rilassarsi, lemma: rilassarsi, pos: verb, en: [to relax], level: a2, unit: a2.u02, topic: feelings }
+- { id: w.palio, lemma: palio, pos: noun, gender: m, en: [palio (horse race)], level: a2, unit: a2.u02, tags: [passive] }
+- { id: w.contrada, lemma: contrada, pos: noun, gender: f, en: [district (of Siena)], level: a2, unit: a2.u02, topic: city }
+- { id: w.corsa, lemma: corsa, pos: noun, gender: f, en: [race, run], level: a2, unit: a2.u02, topic: sport }
+- { id: w.fantino, lemma: fantino, pos: noun, gender: m, en: [jockey], level: a2, unit: a2.u02, topic: sport }
+- { id: w.bandiera, lemma: bandiera, pos: noun, gender: f, en: [flag], level: a2, unit: a2.u02 }
+- { id: w.torre, lemma: torre, pos: noun, gender: f, en: [tower], level: a2, unit: a2.u02, topic: city }
+- { id: w.conchiglia, lemma: conchiglia, pos: noun, gender: f, en: [shell], level: a2, unit: a2.u02, topic: nature }
+- { id: w.medievale, lemma: medievale, pos: adj, en: [medieval], level: a2, unit: a2.u02, topic: arts }
+- { id: w.medioevo, lemma: medioevo, pos: noun, gender: m, en: [Middle Ages], level: a2, unit: a2.u02, forms: [Medioevo] }
+- { id: w.non-ancora, lemma: non ancora, pos: phrase, en: [not yet], level: a2, unit: a2.u02, topic: time }
+- { id: w.non-più, lemma: non più, pos: phrase, en: [no longer, not any more], level: a2, unit: a2.u02, topic: time }
+- { id: w.matrimonio, lemma: matrimonio, pos: noun, gender: m, en: [wedding, marriage], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.sposo, lemma: sposo, pos: noun, gender: mf, en: [groom, bride], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.coppia, lemma: coppia, pos: noun, gender: f, en: [couple], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.parente, lemma: parente, pos: noun, gender: mf, en: [relative], level: a2, unit: a2.u02, topic: family }
+- { id: w.suocero, lemma: suocero, pos: noun, gender: mf, en: [father-in-law, mother-in-law], level: a2, unit: a2.u02, topic: family }
+- { id: w.cognato, lemma: cognato, pos: noun, gender: mf, en: [brother-in-law, sister-in-law], level: a2, unit: a2.u02, topic: family }
+- { id: w.luna-di-miele, lemma: luna di miele, pos: phrase, en: [honeymoon], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.anniversario, lemma: anniversario, pos: noun, gender: m, en: [anniversary], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.fidanzamento, lemma: fidanzamento, pos: noun, gender: m, en: [engagement], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.amore, lemma: amore, pos: noun, gender: m, en: [love], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.bacio, lemma: bacio, pos: noun, gender: m, en: [kiss], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.baciare, lemma: baciare, pos: verb, en: [to kiss], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.abbracciare, lemma: abbracciare, pos: verb, en: [to hug], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.abbraccio, lemma: abbraccio, pos: noun, gender: m, en: [hug], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.appuntamento, lemma: appuntamento, pos: noun, gender: m, en: [appointment, date], level: a2, unit: a2.u02, topic: relationships }
+- { id: w.evento, lemma: evento, pos: noun, gender: m, en: [event], level: a2, unit: a2.u02 }
+- { id: w.momento, lemma: momento, pos: noun, gender: m, en: [moment], level: a2, unit: a2.u02, topic: time }
+- { id: w.fortuna, lemma: fortuna, pos: noun, gender: f, en: [luck], level: a2, unit: a2.u02, notes: "Che fortuna! = How lucky!" }
+- { id: w.per-fortuna, lemma: per fortuna, pos: phrase, en: [luckily], level: a2, unit: a2.u02 }
+- { id: w.purtroppo, lemma: purtroppo, pos: adv, en: [unfortunately], level: a2, unit: a2.u02, topic: connectors }
+# ---------------------------------------------------------------- a2.u03 Quando ero piccolo
+- { id: w.architetto, lemma: architetto, pos: noun, gender: mf, en: [architect], level: a2, unit: a2.u03, topic: jobs }
+- { id: w.ingegnere, lemma: ingegnere, pos: noun, gender: mf, en: [engineer], level: a2, unit: a2.u03, topic: jobs }
+- { id: w.autista, lemma: autista, pos: noun, gender: mf, en: [driver], level: a2, unit: a2.u03, topic: jobs }
+- { id: w.operaio, lemma: operaio, pos: noun, gender: mf, en: [worker, factory worker], level: a2, unit: a2.u03, topic: jobs }
+- { id: w.gemello, lemma: gemello, pos: noun, gender: mf, en: [twin], level: a2, unit: a2.u03, topic: family }
+- { id: w.divorziato, lemma: divorziato, pos: adj, en: [divorced], level: a2, unit: a2.u03, topic: relationships }
+- { id: w.pallacanestro, lemma: pallacanestro, pos: noun, gender: f, en: [basketball], level: a2, unit: a2.u03, topic: sport }
+- { id: w.violino, lemma: violino, pos: noun, gender: m, en: [violin], level: a2, unit: a2.u03, topic: arts }
+- { id: w.disegnare, lemma: disegnare, pos: verb, en: [to draw], level: a2, unit: a2.u03, topic: arts }
+- { id: w.gioco, lemma: gioco, pos: noun, gender: m, en: [game], level: a2, unit: a2.u03, topic: sport }
+- { id: w.insegnare, lemma: insegnare, pos: verb, en: [to teach], level: a2, unit: a2.u03, topic: school }
+- { id: w.da-piccolo, lemma: da piccolo, pos: phrase, en: [as a child], level: a2, unit: a2.u03, topic: time }
+- { id: w.da-bambino, lemma: da bambino, pos: phrase, en: [as a child], level: a2, unit: a2.u03, topic: time }
+- { id: w.infanzia, lemma: infanzia, pos: noun, gender: f, en: [childhood], level: a2, unit: a2.u03, topic: time }
+- { id: w.giocattolo, lemma: giocattolo, pos: noun, gender: m, en: [toy], level: a2, unit: a2.u03 }
+- { id: w.bambola, lemma: bambola, pos: noun, gender: f, en: [doll], level: a2, unit: a2.u03 }
+- { id: w.pallone, lemma: pallone, pos: noun, gender: m, en: [ball (football)], level: a2, unit: a2.u03, topic: sport }
+- { id: w.palla, lemma: palla, pos: noun, gender: f, en: [ball], level: a2, unit: a2.u03, topic: sport }
+- { id: w.nascondino, lemma: nascondino, pos: noun, gender: m, en: [hide-and-seek], level: a2, unit: a2.u03, tags: [passive] }
+- { id: w.cartoni-animati, lemma: cartoni animati, pos: phrase, en: [cartoons], level: a2, unit: a2.u03, topic: media }
+- { id: w.favola, lemma: favola, pos: noun, gender: f, en: [fable, fairy tale], level: a2, unit: a2.u03, topic: arts }
+- { id: w.fiaba, lemma: fiaba, pos: noun, gender: f, en: [fairy tale], level: a2, unit: a2.u03, topic: arts }
+- { id: w.maestro, lemma: maestro, pos: noun, gender: mf, en: [primary school teacher, master], level: a2, unit: a2.u03, topic: jobs }
+- { id: w.scuola-elementare, lemma: scuola elementare, pos: phrase, en: [primary school], level: a2, unit: a2.u03, topic: school }
+- { id: w.asilo, lemma: asilo, pos: noun, gender: m, en: [nursery school], level: a2, unit: a2.u03, topic: school }
+- { id: w.compagno-di-classe, lemma: compagno di classe, pos: phrase, en: [classmate], level: a2, unit: a2.u03, topic: school }
+- { id: w.quaderno, lemma: quaderno, pos: noun, gender: m, en: [exercise book], level: a2, unit: a2.u03, topic: school }
+- { id: w.matita, lemma: matita, pos: noun, gender: f, en: [pencil], level: a2, unit: a2.u03, topic: school }
+- { id: w.penna, lemma: penna, pos: noun, gender: f, en: [pen], level: a2, unit: a2.u03, topic: school }
+- { id: w.banco, lemma: banco, pos: noun, gender: m, en: [school desk, counter], level: a2, unit: a2.u03, topic: school }
+- { id: w.lavagna, lemma: lavagna, pos: noun, gender: f, en: [blackboard], level: a2, unit: a2.u03, topic: school }
+- { id: w.classe, lemma: classe, pos: noun, gender: f, en: [class, classroom], level: a2, unit: a2.u03, topic: school }
+- { id: w.voto, lemma: voto, pos: noun, gender: m, en: [mark, grade, vote], level: a2, unit: a2.u03, topic: school }
+- { id: w.pagella, lemma: pagella, pos: noun, gender: f, en: [school report], level: a2, unit: a2.u03, topic: school }
+- { id: w.materia, lemma: materia, pos: noun, gender: f, en: [(school) subject], level: a2, unit: a2.u03, topic: school }
+- { id: w.matematica, lemma: matematica, pos: noun, gender: f, en: [maths], level: a2, unit: a2.u03, topic: school }
+- { id: w.abitudine, lemma: abitudine, pos: noun, gender: f, en: [habit], level: a2, unit: a2.u03 }
+- { id: w.nuotata, lemma: nuotata, pos: noun, gender: f, en: [swim], level: a2, unit: a2.u03 }
+- { id: w.ricordo, lemma: ricordo, pos: noun, gender: m, en: [memory, souvenir], level: a2, unit: a2.u03 }
+- { id: w.sognare, lemma: sognare, pos: verb, en: [to dream], level: a2, unit: a2.u03 }
+- { id: w.raccontare, lemma: raccontare, pos: verb, en: [to tell (a story)], level: a2, unit: a2.u03, topic: verbs-speech }
+- { id: w.litigare, lemma: litigare, pos: verb, en: [to argue, to quarrel], level: a2, unit: a2.u03, topic: relationships }
+- { id: w.obbedire, lemma: obbedire, pos: verb, en: [to obey], level: a2, unit: a2.u03 }
+- { id: w.vicino.n, lemma: vicino, pos: noun, gender: mf, en: [neighbour], level: a2, unit: a2.u03, tags: [passive] }
+- { id: w.da-grande, lemma: da grande, pos: phrase, en: [when (I) grow up], level: a2, unit: a2.u03, example: { es: "Da grande voglio fare il medico.", en: "When I grow up I want to be a doctor." } }
+- { id: w.fumetto, lemma: fumetto, pos: noun, gender: m, en: [comic], level: a2, unit: a2.u03, topic: media }
+- { id: w.pubblicità, lemma: pubblicità, pos: noun, gender: f, en: [advert, advertising], level: a2, unit: a2.u03, topic: media }
+- { id: w.canale, lemma: canale, pos: noun, gender: m, en: [channel], level: a2, unit: a2.u03, topic: media }
+- { id: w.cortile, lemma: cortile, pos: noun, gender: m, en: [courtyard, playground], level: a2, unit: a2.u03, topic: house }
+- { id: w.albero, lemma: albero, pos: noun, gender: m, en: [tree], level: a2, unit: a2.u03, topic: nature }
+- { id: w.fiore, lemma: fiore, pos: noun, gender: m, en: [flower], level: a2, unit: a2.u03, topic: nature }
+- { id: w.erba, lemma: erba, pos: noun, gender: f, en: [grass, herb], level: a2, unit: a2.u03, topic: nature }
+- { id: w.foglia, lemma: foglia, pos: noun, gender: f, en: [leaf], level: a2, unit: a2.u03, topic: nature }
+- { id: w.prato, lemma: prato, pos: noun, gender: m, en: [lawn, meadow], level: a2, unit: a2.u03, topic: nature }
+- { id: w.bosco, lemma: bosco, pos: noun, gender: m, en: [wood, forest], level: a2, unit: a2.u03, topic: nature }
+- { id: w.buio, lemma: buio, pos: noun, gender: m, en: [dark, darkness], level: a2, unit: a2.u03 }
+- { id: w.pauroso, lemma: pauroso, pos: adj, en: [fearful, frightening], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.vivace, lemma: vivace, pos: adj, en: [lively], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.ubbidiente, lemma: ubbidiente, pos: adj, en: [obedient], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.educato, lemma: educato, pos: adj, en: [polite, well-mannered], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.maleducato, lemma: maleducato, pos: adj, en: [rude], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.curioso, lemma: curioso, pos: adj, en: [curious], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.bugiardo, lemma: bugiardo, pos: adj, en: [lying, liar], level: a2, unit: a2.u03, topic: adjectives-people }
+# ---------------------------------------------------------------- a2.u04 C'era una volta
+- { id: w.coniglio, lemma: coniglio, pos: noun, gender: m, en: [rabbit], level: a2, unit: a2.u04, topic: animals }
+- { id: w.insomma, lemma: insomma, pos: adv, en: [in short, well], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.nel-frattempo, lemma: nel frattempo, pos: phrase, en: [in the meantime], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.tempesta, lemma: tempesta, pos: noun, gender: f, en: [storm], level: a2, unit: a2.u04, topic: weather }
+- { id: w.cera-una-volta, lemma: "c'era una volta", pos: phrase, en: [once upon a time], level: a2, unit: a2.u04, tags: [passive] }
+- { id: w.racconto, lemma: racconto, pos: noun, gender: m, en: [short story, tale], level: a2, unit: a2.u04, topic: arts }
+- { id: w.principe, lemma: principe, pos: noun, gender: m, feminine: principessa, en: [prince], level: a2, unit: a2.u04 }
+- { id: w.principessa, lemma: principessa, pos: noun, gender: f, en: [princess], level: a2, unit: a2.u04 }
+- { id: w.re, lemma: re, pos: noun, gender: m, en: [king], level: a2, unit: a2.u04, notes: "Invariable: i re." }
+- { id: w.regina, lemma: regina, pos: noun, gender: f, en: [queen], level: a2, unit: a2.u04 }
+- { id: w.castello, lemma: castello, pos: noun, gender: m, en: [castle], level: a2, unit: a2.u04, topic: city }
+- { id: w.foresta, lemma: foresta, pos: noun, gender: f, en: [forest], level: a2, unit: a2.u04, topic: nature }
+- { id: w.strega, lemma: strega, pos: noun, gender: f, en: [witch], level: a2, unit: a2.u04 }
+- { id: w.mago, lemma: mago, pos: noun, gender: m, en: [wizard, magician], level: a2, unit: a2.u04 }
+- { id: w.drago, lemma: drago, pos: noun, gender: m, en: [dragon], level: a2, unit: a2.u04, topic: animals }
+- { id: w.fata, lemma: fata, pos: noun, gender: f, en: [fairy], level: a2, unit: a2.u04 }
+- { id: w.cavaliere, lemma: cavaliere, pos: noun, gender: m, en: [knight, rider], level: a2, unit: a2.u04 }
+- { id: w.burattino, lemma: burattino, pos: noun, gender: m, en: [puppet], level: a2, unit: a2.u04 }
+- { id: w.falegname, lemma: falegname, pos: noun, gender: m, en: [carpenter], level: a2, unit: a2.u04, topic: jobs }
+- { id: w.bugia, lemma: bugia, pos: noun, gender: f, en: [lie], level: a2, unit: a2.u04 }
+- { id: w.improvvisamente, lemma: improvvisamente, pos: adv, en: [suddenly], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.allimprovviso, lemma: "all'improvviso", pos: phrase, en: [suddenly], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.a-un-certo-punto, lemma: a un certo punto, pos: phrase, en: [at a certain point], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.alla-fine, lemma: alla fine, pos: phrase, en: [in the end], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.infine, lemma: infine, pos: adv, en: [finally, lastly], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.dunque, lemma: dunque, pos: conj, en: [so, therefore], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.così, lemma: così, pos: adv, en: [so, like this, thus], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.un-giorno, lemma: un giorno, pos: phrase, en: [one day], level: a2, unit: a2.u04, topic: time }
+- { id: w.accadere, lemma: accadere, pos: verb, en: [to happen], level: a2, unit: a2.u04 }
+- { id: w.gridare, lemma: gridare, pos: verb, en: [to shout], level: a2, unit: a2.u04, topic: verbs-speech }
+- { id: w.urlare, lemma: urlare, pos: verb, en: [to scream, to yell], level: a2, unit: a2.u04, topic: verbs-speech }
+- { id: w.piangere, lemma: piangere, pos: verb, en: [to cry], level: a2, unit: a2.u04, topic: feelings }
+- { id: w.nascondersi, lemma: nascondersi, pos: verb, en: [to hide], level: a2, unit: a2.u04 }
+- { id: w.trasformarsi, lemma: trasformarsi, pos: verb, en: [to turn into], level: a2, unit: a2.u04 }
+- { id: w.salvare, lemma: salvare, pos: verb, en: [to save, to rescue], level: a2, unit: a2.u04 }
+- { id: w.uccidere, lemma: uccidere, pos: verb, en: [to kill], level: a2, unit: a2.u04 }
+- { id: w.combattere, lemma: combattere, pos: verb, en: [to fight], level: a2, unit: a2.u04 }
+- { id: w.sparire, lemma: sparire, pos: verb, en: [to disappear], level: a2, unit: a2.u04 }
+- { id: w.personaggio, lemma: personaggio, pos: noun, gender: m, en: [character (in a story)], level: a2, unit: a2.u04, topic: arts }
+- { id: w.eroe, lemma: eroe, pos: noun, gender: m, feminine: eroina, en: [hero], level: a2, unit: a2.u04 }
+- { id: w.mostro, lemma: mostro, pos: noun, gender: m, en: [monster], level: a2, unit: a2.u04 }
+- { id: w.nemico, lemma: nemico, pos: noun, gender: mf, en: [enemy], level: a2, unit: a2.u04 }
+- { id: w.magico, lemma: magico, pos: adj, en: [magic, magical], level: a2, unit: a2.u04 }
+- { id: w.povero, lemma: povero, pos: adj, en: [poor], level: a2, unit: a2.u04, topic: adjectives-people }
+- { id: w.ricco, lemma: ricco, pos: adj, en: [rich], level: a2, unit: a2.u04, topic: adjectives-people }
+- { id: w.coraggioso, lemma: coraggioso, pos: adj, en: [brave], level: a2, unit: a2.u04, topic: adjectives-people }
+- { id: w.furbo, lemma: furbo, pos: adj, en: [cunning, sly], level: a2, unit: a2.u04, topic: adjectives-people }
+- { id: w.spaventato, lemma: spaventato, pos: adj, en: [frightened], level: a2, unit: a2.u04, topic: feelings }
+- { id: w.sorpreso, lemma: sorpreso, pos: adj, en: [surprised], level: a2, unit: a2.u04, topic: feelings }
+- { id: w.silenzio, lemma: silenzio, pos: noun, gender: m, en: [silence], level: a2, unit: a2.u04 }
+- { id: w.rumore, lemma: rumore, pos: noun, gender: m, en: [noise], level: a2, unit: a2.u04 }
+- { id: w.luce, lemma: luce, pos: noun, gender: f, en: [light], level: a2, unit: a2.u04 }
+- { id: w.ombra, lemma: ombra, pos: noun, gender: f, en: [shadow, shade], level: a2, unit: a2.u04, notes: "In Venice, un'ombra is also a small glass of wine." }
+- { id: w.stella, lemma: stella, pos: noun, gender: f, en: [star], level: a2, unit: a2.u04, topic: nature }
+- { id: w.luna, lemma: luna, pos: noun, gender: f, en: [moon], level: a2, unit: a2.u04, topic: nature }
+# ---------------------------------------------------------------- a2.u05 Lo prendo io!
+- { id: w.ingresso, lemma: ingresso, pos: noun, gender: m, en: [entrance, hall], level: a2, unit: a2.u05, topic: house }
+- { id: w.terrazza, lemma: terrazza, pos: noun, gender: f, en: [terrace], level: a2, unit: a2.u05, topic: house }
+- { id: w.muro, lemma: muro, pos: noun, gender: m, en: [wall], level: a2, unit: a2.u05, topic: house }
+- { id: w.poltrona, lemma: poltrona, pos: noun, gender: f, en: [armchair], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.scrivania, lemma: scrivania, pos: noun, gender: f, en: [desk], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.forno, lemma: forno, pos: noun, gender: m, en: [oven], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.lavatrice, lemma: lavatrice, pos: noun, gender: f, en: [washing machine], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.tappeto, lemma: tappeto, pos: noun, gender: m, en: [carpet, rug], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.ricevere, lemma: ricevere, pos: verb, en: [to receive], level: a2, unit: a2.u05 }
+- { id: w.offrire, lemma: offrire, pos: verb, en: [to offer, to treat (someone)], level: a2, unit: a2.u05 }
+- { id: w.spedire, lemma: spedire, pos: verb, en: [to send, to post], level: a2, unit: a2.u05 }
+- { id: w.consegnare, lemma: consegnare, pos: verb, en: [to deliver, to hand in], level: a2, unit: a2.u05 }
+- { id: w.affittare, lemma: affittare, pos: verb, en: [to rent, to let], level: a2, unit: a2.u05, topic: house }
+- { id: w.pavimento, lemma: pavimento, pos: noun, gender: m, en: [floor], level: a2, unit: a2.u05, topic: house }
+- { id: w.bagnato, lemma: bagnato, pos: adj, en: [wet], level: a2, unit: a2.u05 }
+- { id: w.domanda, lemma: domanda, pos: noun, gender: f, en: [question, application], level: a2, unit: a2.u05 }
+- { id: w.informazione, lemma: informazione, pos: noun, gender: f, en: [piece of information], level: a2, unit: a2.u05 }
+- { id: w.gli, lemma: gli, pos: pron, en: [to him, to them], level: a2, unit: a2.u05, notes: Gli dico = I tell him / them. }
+- { id: w.le, lemma: le, pos: pron, en: [to her, to you (formal)], level: a2, unit: a2.u05, forms: [Le] }
+- { id: w.me, lemma: me, pos: pron, en: [me (stressed)], level: a2, unit: a2.u05, notes: "Used after prepositions and for emphasis: per me, a me." }
+- { id: w.te, lemma: te, pos: pron, en: [you (stressed)], level: a2, unit: a2.u05 }
+- { id: w.sé, lemma: sé, pos: pron, en: [oneself, himself, herself], level: a2, unit: a2.u05, tags: [passive] }
+- { id: w.regalo, lemma: regalo, pos: noun, gender: m, en: [present, gift], level: a2, unit: a2.u05, topic: shopping }
+- { id: w.prestare, lemma: prestare, pos: verb, en: [to lend], level: a2, unit: a2.u05 }
+- { id: w.restituire, lemma: restituire, pos: verb, en: [to give back, to return], level: a2, unit: a2.u05 }
+- { id: w.mostrare, lemma: mostrare, pos: verb, en: [to show], level: a2, unit: a2.u05 }
+- { id: w.spiegare, lemma: spiegare, pos: verb, en: [to explain], level: a2, unit: a2.u05, topic: verbs-speech }
+- { id: w.consigliare, lemma: consigliare, pos: verb, en: [to advise, to recommend], level: a2, unit: a2.u05, topic: verbs-speech }
+- { id: w.lasciare, lemma: lasciare, pos: verb, en: [to leave, to let], level: a2, unit: a2.u05 }
+- { id: w.portafoglio, lemma: portafoglio, pos: noun, gender: m, en: [wallet], level: a2, unit: a2.u05 }
+- { id: w.orologio, lemma: orologio, pos: noun, gender: m, en: [watch, clock], level: a2, unit: a2.u05 }
+- { id: w.anello, lemma: anello, pos: noun, gender: m, en: [ring], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.collana, lemma: collana, pos: noun, gender: f, en: [necklace], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.orecchino, lemma: orecchino, pos: noun, gender: m, en: [earring], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.braccialetto, lemma: braccialetto, pos: noun, gender: m, en: [bracelet], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.guanto, lemma: guanto, pos: noun, gender: m, en: [glove], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.cintura, lemma: cintura, pos: noun, gender: f, en: [belt], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.cravatta, lemma: cravatta, pos: noun, gender: f, en: [tie], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.costume-da-bagno, lemma: costume da bagno, pos: phrase, en: [swimsuit], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.pigiama, lemma: pigiama, pos: noun, gender: m, en: [pyjamas], level: a2, unit: a2.u05, topic: clothing }
+- { id: w.documento, lemma: documento, pos: noun, gender: m, en: [document, ID], level: a2, unit: a2.u05 }
+- { id: w.passaporto, lemma: passaporto, pos: noun, gender: m, en: [passport], level: a2, unit: a2.u05, topic: travel }
+- { id: w.carta-didentità, lemma: "carta d'identità", pos: phrase, en: [identity card], level: a2, unit: a2.u05, topic: travel }
+- { id: w.fazzoletto, lemma: fazzoletto, pos: noun, gender: m, en: [handkerchief, tissue], level: a2, unit: a2.u05 }
+- { id: w.pacchetto, lemma: pacchetto, pos: noun, gender: m, en: [packet, package], level: a2, unit: a2.u05 }
+- { id: w.busta, lemma: busta, pos: noun, gender: f, en: [envelope, bag], level: a2, unit: a2.u05 }
+- { id: w.cartolina, lemma: cartolina, pos: noun, gender: f, en: [postcard], level: a2, unit: a2.u05, topic: travel }
+- { id: w.mettere-in-ordine, lemma: mettere in ordine, pos: verb, en: [to tidy up], level: a2, unit: a2.u05, topic: verbs-daily }
+- { id: w.riordinare, lemma: riordinare, pos: verb, en: [to tidy], level: a2, unit: a2.u05, topic: verbs-daily }
+- { id: w.lavare, lemma: lavare, pos: verb, en: [to wash], level: a2, unit: a2.u05, topic: verbs-daily }
+- { id: w.stirare, lemma: stirare, pos: verb, en: [to iron], level: a2, unit: a2.u05, topic: verbs-daily }
+- { id: w.cucire, lemma: cucire, pos: verb, en: [to sew], level: a2, unit: a2.u05 }
+- { id: w.apparecchiare, lemma: apparecchiare, pos: verb, en: [to lay the table], level: a2, unit: a2.u05, topic: verbs-daily }
+- { id: w.sparecchiare, lemma: sparecchiare, pos: verb, en: [to clear the table], level: a2, unit: a2.u05, topic: verbs-daily }
+- { id: w.buttare, lemma: buttare, pos: verb, en: [to throw (away)], level: a2, unit: a2.u05 }
+- { id: w.spazzatura, lemma: spazzatura, pos: noun, gender: f, en: [rubbish, trash], level: a2, unit: a2.u05, topic: house }
+- { id: w.lavastoviglie, lemma: lavastoviglie, pos: noun, gender: f, en: [dishwasher], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.cassetto, lemma: cassetto, pos: noun, gender: m, en: [drawer], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.mobile, lemma: mobile, pos: noun, gender: m, en: [piece of furniture], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.comodino, lemma: comodino, pos: noun, gender: m, en: [bedside table], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.cuscino, lemma: cuscino, pos: noun, gender: m, en: [pillow, cushion], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.coperta, lemma: coperta, pos: noun, gender: f, en: [blanket], level: a2, unit: a2.u05, topic: furniture }
+- { id: w.lenzuolo, lemma: lenzuolo, pos: noun, gender: m, en: [sheet], level: a2, unit: a2.u05, topic: furniture, notes: "Irregular plural: le lenzuola." }
+- { id: w.asciugamano, lemma: asciugamano, pos: noun, gender: m, en: [towel], level: a2, unit: a2.u05, topic: house }
+- { id: w.sapone, lemma: sapone, pos: noun, gender: m, en: [soap], level: a2, unit: a2.u05, topic: house }
+- { id: w.cantina, lemma: cantina, pos: noun, gender: f, en: [cellar, wine cellar, winery], level: a2, unit: a2.u05, topic: house }
+- { id: w.garage, lemma: garage, pos: noun, gender: m, en: [garage], level: a2, unit: a2.u05, topic: house }
+- { id: w.condominio, lemma: condominio, pos: noun, gender: m, en: [block of flats], level: a2, unit: a2.u05, topic: house }
+- { id: w.affitto, lemma: affitto, pos: noun, gender: m, en: [rent], level: a2, unit: a2.u05, topic: house }
+- { id: w.padrone-di-casa, lemma: padrone di casa, pos: phrase, en: [landlord], level: a2, unit: a2.u05, topic: house }
+- { id: w.trasloco, lemma: trasloco, pos: noun, gender: m, en: [house move], level: a2, unit: a2.u05, topic: house }
+# ---------------------------------------------------------------- a2.u06 Che cosa farai a Pisa?
+- { id: w.futuro, lemma: futuro, pos: noun, gender: m, en: [future], level: a2, unit: a2.u06, topic: time }
+- { id: w.in-futuro, lemma: in futuro, pos: phrase, en: [in the future], level: a2, unit: a2.u06, topic: time }
+- { id: w.probabilmente, lemma: probabilmente, pos: adv, en: [probably], level: a2, unit: a2.u06 }
+- { id: w.sicuramente, lemma: sicuramente, pos: adv, en: [surely, definitely], level: a2, unit: a2.u06 }
+- { id: w.prima-o-poi, lemma: prima o poi, pos: phrase, en: [sooner or later], level: a2, unit: a2.u06, topic: time }
+- { id: w.sperare, lemma: sperare, pos: verb, en: [to hope], level: a2, unit: a2.u06 }
+- { id: w.pensare, lemma: pensare, pos: verb, en: [to think], level: a2, unit: a2.u06, notes: Pensare a = to think about; pensare di + infinitive = to plan to. }
+- { id: w.promettere, lemma: promettere, pos: verb, en: [to promise], level: a2, unit: a2.u06, topic: verbs-speech }
+- { id: w.trovare-lavoro, lemma: trovare lavoro, pos: verb, en: [to find a job], level: a2, unit: a2.u06, topic: work }
+- { id: w.carriera, lemma: carriera, pos: noun, gender: f, en: [career], level: a2, unit: a2.u06, topic: work }
+- { id: w.stipendio, lemma: stipendio, pos: noun, gender: m, en: [salary], level: a2, unit: a2.u06, topic: work }
+- { id: w.colloquio, lemma: colloquio, pos: noun, gender: m, en: [interview], level: a2, unit: a2.u06, topic: work }
+- { id: w.azienda, lemma: azienda, pos: noun, gender: f, en: [company, firm], level: a2, unit: a2.u06, topic: work }
+- { id: w.ditta, lemma: ditta, pos: noun, gender: f, en: [firm], level: a2, unit: a2.u06, topic: work }
+- { id: w.capo, lemma: capo, pos: noun, gender: m, en: [boss, head], level: a2, unit: a2.u06, topic: work }
+- { id: w.dipendente, lemma: dipendente, pos: noun, gender: mf, en: [employee], level: a2, unit: a2.u06, topic: work }
+- { id: w.disoccupato, lemma: disoccupato, pos: adj, en: [unemployed], level: a2, unit: a2.u06, topic: work }
+- { id: w.pensione, lemma: pensione, pos: noun, gender: f, en: [retirement, pension, guesthouse], level: a2, unit: a2.u06, topic: work }
+- { id: w.andare-in-pensione, lemma: andare in pensione, pos: verb, en: [to retire], level: a2, unit: a2.u06, topic: work }
+- { id: w.esame, lemma: esame, pos: noun, gender: m, en: [exam], level: a2, unit: a2.u06, topic: school }
+- { id: w.corso, lemma: corso, pos: noun, gender: m, en: [course], level: a2, unit: a2.u06, topic: school }
+- { id: w.laurea, lemma: laurea, pos: noun, gender: f, en: [degree], level: a2, unit: a2.u06, topic: school }
+- { id: w.pendere, lemma: pendere, pos: verb, en: [to lean], level: a2, unit: a2.u06 }
+- { id: w.inclinato, lemma: inclinato, pos: adj, en: [leaning, sloping], level: a2, unit: a2.u06, tags: [passive] }
+- { id: w.costruzione, lemma: costruzione, pos: noun, gender: f, en: [construction, building], level: a2, unit: a2.u06 }
+- { id: w.costruire, lemma: costruire, pos: verb, en: [to build], level: a2, unit: a2.u06 }
+- { id: w.stabile, lemma: stabile, pos: adj, en: [stable], level: a2, unit: a2.u06 }
+- { id: w.battistero, lemma: battistero, pos: noun, gender: m, en: [baptistery], level: a2, unit: a2.u06, topic: city }
+- { id: w.previsioni-del-tempo, lemma: previsioni del tempo, pos: phrase, en: [weather forecast], level: a2, unit: a2.u06, topic: weather }
+- { id: w.temporale, lemma: temporale, pos: noun, gender: m, en: [storm, thunderstorm], level: a2, unit: a2.u06, topic: weather }
+- { id: w.nebbia, lemma: nebbia, pos: noun, gender: f, en: [fog], level: a2, unit: a2.u06, topic: weather }
+- { id: w.grandine, lemma: grandine, pos: noun, gender: f, en: [hail], level: a2, unit: a2.u06, topic: weather }
+- { id: w.umido, lemma: umido, pos: adj, en: [humid, damp], level: a2, unit: a2.u06, topic: weather }
+- { id: w.afa, lemma: afa, pos: noun, gender: f, en: [sultry heat], level: a2, unit: a2.u06, topic: weather }
+- { id: w.coperto, lemma: coperto, pos: adj, en: [overcast, covered], level: a2, unit: a2.u06, topic: weather }
+- { id: w.migliorare, lemma: migliorare, pos: verb, en: [to improve], level: a2, unit: a2.u06 }
+- { id: w.peggiorare, lemma: peggiorare, pos: verb, en: [to get worse], level: a2, unit: a2.u06 }
+- { id: w.caso, lemma: caso, pos: noun, gender: m, en: [case, chance], level: a2, unit: a2.u06, notes: Per caso = by chance. }
+- { id: w.intenzione, lemma: intenzione, pos: noun, gender: f, en: [intention], level: a2, unit: a2.u06 }
+- { id: w.sogno, lemma: sogno, pos: noun, gender: m, en: [dream], level: a2, unit: a2.u06 }
+- { id: w.desiderio, lemma: desiderio, pos: noun, gender: m, en: [wish, desire], level: a2, unit: a2.u06 }
+- { id: w.obiettivo, lemma: obiettivo, pos: noun, gender: m, en: [goal, aim], level: a2, unit: a2.u06 }
+- { id: w.risparmiare, lemma: risparmiare, pos: verb, en: [to save (money)], level: a2, unit: a2.u06, topic: money }
+- { id: w.mettere-da-parte, lemma: mettere da parte, pos: verb, en: [to put aside], level: a2, unit: a2.u06, topic: money }
+- { id: w.prestito, lemma: prestito, pos: noun, gender: m, en: [loan], level: a2, unit: a2.u06, topic: money }
+- { id: w.bolletta, lemma: bolletta, pos: noun, gender: f, en: ["bill (gas, electricity)"], level: a2, unit: a2.u06, topic: money }
+- { id: w.indovinare, lemma: indovinare, pos: verb, en: [to guess], level: a2, unit: a2.u06 }
+- { id: w.chissà, lemma: chissà, pos: adv, en: [who knows], level: a2, unit: a2.u06 }
+- { id: w.magari, lemma: magari, pos: adv, en: [maybe, if only], level: a2, unit: a2.u06, notes: "Colloquially 'maybe': magari vengo anch'io." }
+# ---------------------------------------------------------------- a2.u07 Più bello di così?
+- { id: w.credere, lemma: credere, pos: verb, en: [to believe, to think], level: a2, unit: a2.u07 }
+- { id: w.robusto, lemma: robusto, pos: adj, en: [sturdy, well-built], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.grasso, lemma: grasso, pos: adj, en: [fat], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.generoso, lemma: generoso, pos: adj, en: [generous], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.serio, lemma: serio, pos: adj, en: [serious], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.carattere, lemma: carattere, pos: noun, gender: m, en: [character, personality], level: a2, unit: a2.u07 }
+- { id: w.sembrare, lemma: sembrare, pos: verb, en: [to seem, to look], level: a2, unit: a2.u07 }
+- { id: w.piuttosto, lemma: piuttosto, pos: adv, en: [rather, quite], level: a2, unit: a2.u07 }
+- { id: w.grammo, lemma: grammo, pos: noun, gender: m, en: [gram], level: a2, unit: a2.u07, topic: quantity }
+- { id: w.calzino, lemma: calzino, pos: noun, gender: m, en: [sock], level: a2, unit: a2.u07, topic: clothing }
+- { id: w.felpa, lemma: felpa, pos: noun, gender: f, en: [sweatshirt, hoodie], level: a2, unit: a2.u07, topic: clothing }
+- { id: w.beige, lemma: beige, pos: adj, en: [beige], level: a2, unit: a2.u07, topic: colours }
+- { id: w.turchese, lemma: turchese, pos: adj, en: [turquoise], level: a2, unit: a2.u07, topic: colours }
+- { id: w.celeste, lemma: celeste, pos: adj, en: [pale blue], level: a2, unit: a2.u07, topic: colours }
+- { id: w.fenomeno, lemma: fenomeno, pos: noun, gender: m, en: [phenomenon, star], level: a2, unit: a2.u07, notes: "Sei un fenomeno! = You're a star!" }
+- { id: w.distintivo, lemma: distintivo, pos: noun, gender: m, en: [badge], level: a2, unit: a2.u07 }
+- { id: w.modalità, lemma: modalità, pos: noun, gender: f, en: [mode, method], level: a2, unit: a2.u07 }
+- { id: w.colorato, lemma: colorato, pos: adj, en: [colourful], level: a2, unit: a2.u07, topic: colours }
+- { id: w.enorme, lemma: enorme, pos: adj, en: [huge, enormous], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.trafficato, lemma: trafficato, pos: adj, en: [busy (with traffic)], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.puntuale, lemma: puntuale, pos: adj, en: [punctual], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.centinaio, lemma: centinaio, pos: noun, gender: m, en: [about a hundred], level: a2, unit: a2.u07, topic: quantity, notes: "Irregular plural: centinaia." }
+- { id: w.migliore, lemma: migliore, pos: adj, en: [better, best], level: a2, unit: a2.u07, forms: [miglior], notes: Il migliore = the best. }
+- { id: w.peggiore, lemma: peggiore, pos: adj, en: [worse, worst], level: a2, unit: a2.u07, forms: [peggior] }
+- { id: w.peggio, lemma: peggio, pos: adv, en: [worse], level: a2, unit: a2.u07 }
+- { id: w.ottimo, lemma: ottimo, pos: adj, en: [excellent, very good], level: a2, unit: a2.u07 }
+- { id: w.pessimo, lemma: pessimo, pos: adj, en: [terrible, very bad], level: a2, unit: a2.u07 }
+- { id: w.massimo, lemma: massimo, pos: adj, en: [maximum, greatest], level: a2, unit: a2.u07 }
+- { id: w.minimo, lemma: minimo, pos: adj, en: [minimum, least], level: a2, unit: a2.u07 }
+- { id: w.superiore, lemma: superiore, pos: adj, en: [higher, upper, superior], level: a2, unit: a2.u07 }
+- { id: w.inferiore, lemma: inferiore, pos: adj, en: [lower, inferior], level: a2, unit: a2.u07 }
+- { id: w.uguale, lemma: uguale, pos: adj, en: [equal, the same], level: a2, unit: a2.u07 }
+- { id: w.diverso, lemma: diverso, pos: adj, en: [different], level: a2, unit: a2.u07 }
+- { id: w.simile, lemma: simile, pos: adj, en: [similar], level: a2, unit: a2.u07 }
+- { id: w.stesso, lemma: stesso, pos: adj, en: [same], level: a2, unit: a2.u07 }
+- { id: w.lento, lemma: lento, pos: adj, en: [slow], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.pesante, lemma: pesante, pos: adj, en: [heavy], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.leggero, lemma: leggero, pos: adj, en: [light (weight)], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.scomodo, lemma: scomodo, pos: adj, en: [uncomfortable], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.utile, lemma: utile, pos: adj, en: [useful], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.inutile, lemma: inutile, pos: adj, en: [useless], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.pratico, lemma: pratico, pos: adj, en: [practical, handy], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.elegante, lemma: elegante, pos: adj, en: [elegant, smart], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.antico, lemma: antico, pos: adj, en: [ancient, antique], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.tradizionale, lemma: tradizionale, pos: adj, en: [traditional], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.pulito, lemma: pulito, pos: adj, en: [clean], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.sporco, lemma: sporco, pos: adj, en: [dirty], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.pericoloso, lemma: pericoloso, pos: adj, en: [dangerous], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.sano, lemma: sano, pos: adj, en: [healthy], level: a2, unit: a2.u07, topic: health }
+- { id: w.saporito, lemma: saporito, pos: adj, en: [tasty, savoury], level: a2, unit: a2.u07, topic: food }
+- { id: w.delizioso, lemma: delizioso, pos: adj, en: [delicious], level: a2, unit: a2.u07, topic: food }
+- { id: w.largo, lemma: largo, pos: adj, en: [wide, loose], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.stretto, lemma: stretto, pos: adj, en: [narrow, tight], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.pieno, lemma: pieno, pos: adj, en: [full], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.vuoto, lemma: vuoto, pos: adj, en: [empty], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.morbido, lemma: morbido, pos: adj, en: [soft], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.duro, lemma: duro, pos: adj, en: [hard, tough], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.opinione, lemma: opinione, pos: noun, gender: f, en: [opinion], level: a2, unit: a2.u07 }
+- { id: w.secondo-me, lemma: secondo me, pos: phrase, en: [in my opinion], level: a2, unit: a2.u07, topic: connectors }
+- { id: w.punto-di-vista, lemma: punto di vista, pos: phrase, en: [point of view], level: a2, unit: a2.u07 }
+- { id: w.preferito, lemma: preferito, pos: adj, en: [favourite], level: a2, unit: a2.u07 }
+- { id: w.paragonare, lemma: paragonare, pos: verb, en: [to compare], level: a2, unit: a2.u07 }
+- { id: w.paragone, lemma: paragone, pos: noun, gender: m, en: [comparison], level: a2, unit: a2.u07 }
+- { id: w.confronto, lemma: confronto, pos: noun, gender: m, en: [comparison], level: a2, unit: a2.u07 }
+- { id: w.qualità, lemma: qualità, pos: noun, gender: f, en: [quality], level: a2, unit: a2.u07 }
+- { id: w.vantaggio, lemma: vantaggio, pos: noun, gender: m, en: [advantage], level: a2, unit: a2.u07 }
+- { id: w.svantaggio, lemma: svantaggio, pos: noun, gender: m, en: [disadvantage], level: a2, unit: a2.u07 }
+- { id: w.sistema, lemma: sistema, pos: noun, gender: m, en: [system], level: a2, unit: a2.u07, notes: Masculine despite -a. }
+- { id: w.moda, lemma: moda, pos: noun, gender: f, en: [fashion], level: a2, unit: a2.u07, topic: clothing }
+- { id: w.alla-moda, lemma: alla moda, pos: phrase, en: [fashionable], level: a2, unit: a2.u07, topic: clothing }
+- { id: w.stile, lemma: stile, pos: noun, gender: m, en: [style], level: a2, unit: a2.u07, topic: clothing }
+- { id: w.marca, lemma: marca, pos: noun, gender: f, en: [brand], level: a2, unit: a2.u07, topic: shopping }
+- { id: w.vetrina, lemma: vetrina, pos: noun, gender: f, en: [shop window], level: a2, unit: a2.u07, topic: shopping }
+- { id: w.fare-shopping, lemma: fare shopping, pos: verb, en: [to go shopping], level: a2, unit: a2.u07, topic: shopping }
+- { id: w.centro-commerciale, lemma: centro commerciale, pos: phrase, en: [shopping centre], level: a2, unit: a2.u07, topic: shopping }
+- { id: w.ottimista, lemma: ottimista, pos: adj, en: [optimistic], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.pessimista, lemma: pessimista, pos: adj, en: [pessimistic], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.egoista, lemma: egoista, pos: adj, en: [selfish], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.socievole, lemma: socievole, pos: adj, en: [sociable], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.onesto, lemma: onesto, pos: adj, en: [honest], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.paziente, lemma: paziente, pos: adj, en: [patient], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.impaziente, lemma: impaziente, pos: adj, en: [impatient], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.testardo, lemma: testardo, pos: adj, en: [stubborn], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.ordinato, lemma: ordinato, pos: adj, en: [tidy], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.disordinato, lemma: disordinato, pos: adj, en: [messy, untidy], level: a2, unit: a2.u07, topic: adjectives-people }
+- { id: w.sensibile, lemma: sensibile, pos: adj, en: [sensitive], level: a2, unit: a2.u07, topic: adjectives-people }
+# ---------------------------------------------------------------- a2.u08 Ci vado volentieri
+- { id: w.ne, lemma: ne, pos: pron, en: [of it, of them, some], level: a2, unit: a2.u08, notes: "Quanti ne vuoi? = How many (of them) do you want?" }
+- { id: w.metterci, lemma: metterci, pos: verb, en: [to take (time)], level: a2, unit: a2.u08, notes: Ci metto dieci minuti = It takes me ten minutes. }
+- { id: w.volerci, lemma: volerci, pos: verb, en: [to take, to be needed], level: a2, unit: a2.u08, notes: "Ci vuole un'ora / ci vogliono due ore." }
+- { id: w.paio, lemma: paio, pos: noun, gender: m, en: [pair, couple], level: a2, unit: a2.u08, topic: quantity, notes: "Irregular plural: le paia." }
+- { id: w.alcuni, lemma: alcuni, pos: det, en: [some, a few], level: a2, unit: a2.u08, topic: quantity, forms: [alcuni, alcune] }
+- { id: w.qualche, lemma: qualche, pos: det, en: [some, a few], level: a2, unit: a2.u08, topic: quantity, notes: "Always with a singular noun: qualche giorno." }
+- { id: w.parecchio, lemma: parecchio, pos: det, en: [quite a lot of], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.un-sacco-di, lemma: un sacco di, pos: phrase, en: [loads of, a lot of], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.metà, lemma: metà, pos: noun, gender: f, en: [half], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.doppio, lemma: doppio, pos: adj, en: [double], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.intero, lemma: intero, pos: adj, en: [whole, entire], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.pezzo, lemma: pezzo, pos: noun, gender: m, en: [piece], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.fetta, lemma: fetta, pos: noun, gender: f, en: [slice], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.lattina, lemma: lattina, pos: noun, gender: f, en: [can], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.vasetto, lemma: vasetto, pos: noun, gender: m, en: [jar, pot], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.dozzina, lemma: dozzina, pos: noun, gender: f, en: [dozen], level: a2, unit: a2.u08, topic: quantity }
+- { id: w.posta, lemma: posta, pos: noun, gender: f, en: [post office, mail], level: a2, unit: a2.u08, topic: city }
+- { id: w.ospedale, lemma: ospedale, pos: noun, gender: m, en: [hospital], level: a2, unit: a2.u08, topic: health }
+- { id: w.biblioteca, lemma: biblioteca, pos: noun, gender: f, en: [library], level: a2, unit: a2.u08, topic: city }
+- { id: w.pasticceria, lemma: pasticceria, pos: noun, gender: f, en: [cake shop, pastries], level: a2, unit: a2.u08, topic: shopping }
+- { id: w.panetteria, lemma: panetteria, pos: noun, gender: f, en: [bakery], level: a2, unit: a2.u08, topic: shopping }
+- { id: w.macelleria, lemma: macelleria, pos: noun, gender: f, en: ["butcher's"], level: a2, unit: a2.u08, topic: shopping }
+- { id: w.edicola, lemma: edicola, pos: noun, gender: f, en: [newsstand], level: a2, unit: a2.u08, topic: shopping }
+- { id: w.tabaccheria, lemma: tabaccheria, pos: noun, gender: f, en: ["tobacconist's"], level: a2, unit: a2.u08, topic: shopping }
+- { id: w.fruttivendolo, lemma: fruttivendolo, pos: noun, gender: mf, en: [greengrocer], level: a2, unit: a2.u08, topic: shopping }
+- { id: w.gelateria, lemma: gelateria, pos: noun, gender: f, en: [ice-cream shop], level: a2, unit: a2.u08, topic: shopping }
+- { id: w.alimentari, lemma: alimentari, pos: noun, gender: m, en: ["grocer's"], level: a2, unit: a2.u08, topic: shopping, notes: Un negozio di alimentari. }
+- { id: w.lavanderia, lemma: lavanderia, pos: noun, gender: f, en: [laundry, launderette], level: a2, unit: a2.u08, topic: shopping }
+- { id: w.parrucchiere, lemma: parrucchiere, pos: noun, gender: mf, feminine: parrucchiera, en: [hairdresser], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.barbiere, lemma: barbiere, pos: noun, gender: m, en: [barber], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.fornaio, lemma: fornaio, pos: noun, gender: mf, en: [baker], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.farmacista, lemma: farmacista, pos: noun, gender: mf, en: [pharmacist], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.postino, lemma: postino, pos: noun, gender: mf, en: [postman, postwoman], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.idraulico, lemma: idraulico, pos: noun, gender: mf, en: [plumber], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.elettricista, lemma: elettricista, pos: noun, gender: mf, en: [electrician], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.meccanico, lemma: meccanico, pos: noun, gender: mf, en: [mechanic], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.vigile, lemma: vigile, pos: noun, gender: mf, en: [traffic warden, local police officer], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.pompiere, lemma: pompiere, pos: noun, gender: m, en: [firefighter], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.contadino, lemma: contadino, pos: noun, gender: mf, en: [farmer, peasant], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.pescatore, lemma: pescatore, pos: noun, gender: mf, en: [fisherman], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.nuoto, lemma: nuoto, pos: noun, gender: m, en: [swimming], level: a2, unit: a2.u08, topic: sport }
+- { id: w.ciclismo, lemma: ciclismo, pos: noun, gender: m, en: [cycling], level: a2, unit: a2.u08, topic: sport }
+- { id: w.escursionismo, lemma: escursionismo, pos: noun, gender: m, en: [hiking], level: a2, unit: a2.u08, topic: sport }
+- { id: w.allenarsi, lemma: allenarsi, pos: verb, en: [to train, to work out], level: a2, unit: a2.u08, topic: sport }
+- { id: w.allenamento, lemma: allenamento, pos: noun, gender: m, en: [training], level: a2, unit: a2.u08, topic: sport }
+- { id: w.gara, lemma: gara, pos: noun, gender: f, en: [competition, race], level: a2, unit: a2.u08, topic: sport }
+- { id: w.campionato, lemma: campionato, pos: noun, gender: m, en: [championship], level: a2, unit: a2.u08, topic: sport }
+- { id: w.tifoso, lemma: tifoso, pos: noun, gender: mf, en: [fan, supporter], level: a2, unit: a2.u08, topic: sport }
+- { id: w.giocatore, lemma: giocatore, pos: noun, gender: mf, en: [player], level: a2, unit: a2.u08, topic: sport }
+- { id: w.allenatore, lemma: allenatore, pos: noun, gender: mf, en: [coach], level: a2, unit: a2.u08, topic: sport }
+- { id: w.segnare, lemma: segnare, pos: verb, en: [to score], level: a2, unit: a2.u08, topic: sport }
+- { id: w.gol, lemma: gol, pos: noun, gender: m, en: [goal], level: a2, unit: a2.u08, topic: sport }
+- { id: w.pareggiare, lemma: pareggiare, pos: verb, en: [to draw], level: a2, unit: a2.u08, topic: sport }
+# ---------------------------------------------------------------- a2.u09 Mescola e assaggia!
+- { id: w.forchetta, lemma: forchetta, pos: noun, gender: f, en: [fork], level: a2, unit: a2.u09, topic: food }
+- { id: w.coltello, lemma: coltello, pos: noun, gender: m, en: [knife], level: a2, unit: a2.u09, topic: food }
+- { id: w.cucchiaio, lemma: cucchiaio, pos: noun, gender: m, en: [spoon], level: a2, unit: a2.u09, topic: food }
+- { id: w.tramezzino, lemma: tramezzino, pos: noun, gender: m, en: [sandwich (triangle)], level: a2, unit: a2.u09, topic: food }
+- { id: w.supplì, lemma: supplì, pos: noun, gender: m, en: [supplì (fried rice ball)], level: a2, unit: a2.u09, topic: food, tags: [passive] }
+- { id: w.biscotto, lemma: biscotto, pos: noun, gender: m, en: [biscuit, cookie], level: a2, unit: a2.u09, topic: food }
+- { id: w.sale, lemma: sale, pos: noun, gender: m, en: [salt], level: a2, unit: a2.u09, topic: food }
+- { id: w.olio, lemma: olio, pos: noun, gender: m, en: [oil], level: a2, unit: a2.u09, topic: food }
+- { id: w.burro, lemma: burro, pos: noun, gender: m, en: [butter], level: a2, unit: a2.u09, topic: food }
+- { id: w.marmellata, lemma: marmellata, pos: noun, gender: f, en: [jam], level: a2, unit: a2.u09, topic: food }
+- { id: w.seguire, lemma: seguire, pos: verb, en: [to follow], level: a2, unit: a2.u09 }
+- { id: w.limone, lemma: limone, pos: noun, gender: m, en: [lemon], level: a2, unit: a2.u09, topic: food }
+- { id: w.cipolla, lemma: cipolla, pos: noun, gender: f, en: [onion], level: a2, unit: a2.u09, topic: food }
+- { id: w.aglio, lemma: aglio, pos: noun, gender: m, en: [garlic], level: a2, unit: a2.u09, topic: food }
+- { id: w.carota, lemma: carota, pos: noun, gender: f, en: [carrot], level: a2, unit: a2.u09, topic: food }
+- { id: w.zucchina, lemma: zucchina, pos: noun, gender: f, en: [courgette, zucchini], level: a2, unit: a2.u09, topic: food }
+- { id: w.oliva, lemma: oliva, pos: noun, gender: f, en: [olive], level: a2, unit: a2.u09, topic: food }
+- { id: w.sedersi, lemma: sedersi, pos: verb, en: [to sit down], level: a2, unit: a2.u09, topic: verbs-motion, notes: "Si sieda! = Sit down! (formal)" }
+- { id: w.sedere, lemma: sedere, pos: verb, en: [to sit], level: a2, unit: a2.u09, tags: [passive] }
+- { id: w.fettina, lemma: fettina, pos: noun, gender: f, en: [thin slice, escalope], level: a2, unit: a2.u09, topic: food }
+- { id: w.cantucci, lemma: cantucci, pos: noun, gender: m, en: [cantucci (almond biscuits)], level: a2, unit: a2.u09, topic: food, tags: [passive] }
+- { id: w.panzanella, lemma: panzanella, pos: noun, gender: f, en: [bread and tomato salad], level: a2, unit: a2.u09, topic: food, tags: [passive] }
+- { id: w.mensa, lemma: mensa, pos: noun, gender: f, en: [canteen], level: a2, unit: a2.u09, topic: food }
+- { id: w.ricetta, lemma: ricetta, pos: noun, gender: f, en: [recipe, prescription], level: a2, unit: a2.u09, topic: food }
+- { id: w.ingrediente, lemma: ingrediente, pos: noun, gender: m, en: [ingredient], level: a2, unit: a2.u09, topic: food }
+- { id: w.mescolare, lemma: mescolare, pos: verb, en: [to mix, to stir], level: a2, unit: a2.u09, topic: food }
+- { id: w.assaggiare, lemma: assaggiare, pos: verb, en: [to taste], level: a2, unit: a2.u09, topic: food }
+- { id: w.tagliare, lemma: tagliare, pos: verb, en: [to cut], level: a2, unit: a2.u09, topic: food }
+- { id: w.aggiungere, lemma: aggiungere, pos: verb, en: [to add], level: a2, unit: a2.u09, topic: food }
+- { id: w.versare, lemma: versare, pos: verb, en: [to pour], level: a2, unit: a2.u09, topic: food }
+- { id: w.cuocere, lemma: cuocere, pos: verb, en: [to cook], level: a2, unit: a2.u09, topic: food }
+- { id: w.bollire, lemma: bollire, pos: verb, en: [to boil], level: a2, unit: a2.u09, topic: food }
+- { id: w.friggere, lemma: friggere, pos: verb, en: [to fry], level: a2, unit: a2.u09, topic: food }
+- { id: w.scaldare, lemma: scaldare, pos: verb, en: [to heat up], level: a2, unit: a2.u09, topic: food }
+- { id: w.sbucciare, lemma: sbucciare, pos: verb, en: [to peel], level: a2, unit: a2.u09, topic: food }
+- { id: w.grattugiare, lemma: grattugiare, pos: verb, en: [to grate], level: a2, unit: a2.u09, topic: food }
+- { id: w.condire, lemma: condire, pos: verb, en: [to dress, to season], level: a2, unit: a2.u09, topic: food }
+- { id: w.impastare, lemma: impastare, pos: verb, en: [to knead], level: a2, unit: a2.u09, topic: food }
+- { id: w.infornare, lemma: infornare, pos: verb, en: [to put in the oven], level: a2, unit: a2.u09, topic: food }
+- { id: w.scolare, lemma: scolare, pos: verb, en: [to drain], level: a2, unit: a2.u09, topic: food }
+- { id: w.pentola, lemma: pentola, pos: noun, gender: f, en: [pot, saucepan], level: a2, unit: a2.u09, topic: food }
+- { id: w.padella, lemma: padella, pos: noun, gender: f, en: [frying pan], level: a2, unit: a2.u09, topic: food }
+- { id: w.fornello, lemma: fornello, pos: noun, gender: m, en: [hob, ring (of a cooker)], level: a2, unit: a2.u09, topic: food }
+- { id: w.ciotola, lemma: ciotola, pos: noun, gender: f, en: [bowl], level: a2, unit: a2.u09, topic: food }
+- { id: w.tagliere, lemma: tagliere, pos: noun, gender: m, en: [chopping board], level: a2, unit: a2.u09, topic: food }
+- { id: w.cucchiaino, lemma: cucchiaino, pos: noun, gender: m, en: [teaspoon], level: a2, unit: a2.u09, topic: food }
+- { id: w.pizzico, lemma: pizzico, pos: noun, gender: m, en: [pinch], level: a2, unit: a2.u09, topic: food }
+- { id: w.farina, lemma: farina, pos: noun, gender: f, en: [flour], level: a2, unit: a2.u09, topic: food }
+- { id: w.lievito, lemma: lievito, pos: noun, gender: m, en: [yeast], level: a2, unit: a2.u09, topic: food }
+- { id: w.pepe, lemma: pepe, pos: noun, gender: m, en: [pepper], level: a2, unit: a2.u09, topic: food }
+- { id: w.aceto, lemma: aceto, pos: noun, gender: m, en: [vinegar], level: a2, unit: a2.u09, topic: food }
+- { id: w.basilico, lemma: basilico, pos: noun, gender: m, en: [basil], level: a2, unit: a2.u09, topic: food }
+- { id: w.prezzemolo, lemma: prezzemolo, pos: noun, gender: m, en: [parsley], level: a2, unit: a2.u09, topic: food }
+- { id: w.rosmarino, lemma: rosmarino, pos: noun, gender: m, en: [rosemary], level: a2, unit: a2.u09, topic: food }
+- { id: w.peperoncino, lemma: peperoncino, pos: noun, gender: m, en: [chilli pepper], level: a2, unit: a2.u09, topic: food }
+- { id: w.melanzana, lemma: melanzana, pos: noun, gender: f, en: [aubergine, eggplant], level: a2, unit: a2.u09, topic: food }
+- { id: w.peperone, lemma: peperone, pos: noun, gender: m, en: [pepper (vegetable)], level: a2, unit: a2.u09, topic: food }
+- { id: w.fungo, lemma: fungo, pos: noun, gender: m, en: [mushroom], level: a2, unit: a2.u09, topic: food }
+- { id: w.fagiolo, lemma: fagiolo, pos: noun, gender: m, en: [bean], level: a2, unit: a2.u09, topic: food }
+- { id: w.lenticchia, lemma: lenticchia, pos: noun, gender: f, en: [lentil], level: a2, unit: a2.u09, topic: food }
+- { id: w.parmigiano, lemma: parmigiano, pos: noun, gender: m, en: [Parmesan], level: a2, unit: a2.u09, topic: food }
+- { id: w.pecorino, lemma: pecorino, pos: noun, gender: m, en: ["pecorino (sheep's cheese)"], level: a2, unit: a2.u09, topic: food }
+- { id: w.ricotta, lemma: ricotta, pos: noun, gender: f, en: [ricotta], level: a2, unit: a2.u09, topic: food }
+- { id: w.panna, lemma: panna, pos: noun, gender: f, en: [cream], level: a2, unit: a2.u09, topic: food }
+- { id: w.pancetta, lemma: pancetta, pos: noun, gender: f, en: [bacon, pancetta], level: a2, unit: a2.u09, topic: food }
+- { id: w.guanciale, lemma: guanciale, pos: noun, gender: m, en: [cured pork cheek], level: a2, unit: a2.u09, topic: food }
+- { id: w.salsiccia, lemma: salsiccia, pos: noun, gender: f, en: [sausage], level: a2, unit: a2.u09, topic: food }
+- { id: w.bistecca, lemma: bistecca, pos: noun, gender: f, en: [steak], level: a2, unit: a2.u09, topic: food }
+- { id: w.manzo, lemma: manzo, pos: noun, gender: m, en: [beef], level: a2, unit: a2.u09, topic: food }
+- { id: w.maiale, lemma: maiale, pos: noun, gender: m, en: [pork, pig], level: a2, unit: a2.u09, topic: food }
+- { id: w.tonno, lemma: tonno, pos: noun, gender: m, en: [tuna], level: a2, unit: a2.u09, topic: food }
+- { id: w.gamberetto, lemma: gamberetto, pos: noun, gender: m, en: [shrimp, prawn], level: a2, unit: a2.u09, topic: food }
+- { id: w.sugo, lemma: sugo, pos: noun, gender: m, en: [sauce (for pasta)], level: a2, unit: a2.u09, topic: food }
+- { id: w.brodo, lemma: brodo, pos: noun, gender: m, en: [broth, stock], level: a2, unit: a2.u09, topic: food }
+- { id: w.minestra, lemma: minestra, pos: noun, gender: f, en: [soup], level: a2, unit: a2.u09, topic: food }
+- { id: w.antipasto, lemma: antipasto, pos: noun, gender: m, en: [starter], level: a2, unit: a2.u09, topic: food }
+- { id: w.primo-piatto, lemma: primo piatto, pos: phrase, en: [first course], level: a2, unit: a2.u09, topic: food }
+- { id: w.secondo-piatto, lemma: secondo piatto, pos: phrase, en: [main course], level: a2, unit: a2.u09, topic: food }
+- { id: w.contorno, lemma: contorno, pos: noun, gender: m, en: [side dish], level: a2, unit: a2.u09, topic: food }
+- { id: w.crudo, lemma: crudo, pos: adj, en: [raw], level: a2, unit: a2.u09, topic: food }
+- { id: w.cotto, lemma: cotto, pos: adj, en: [cooked], level: a2, unit: a2.u09, topic: food }
+- { id: w.fritto, lemma: fritto, pos: adj, en: [fried], level: a2, unit: a2.u09, topic: food }
+- { id: w.al-forno, lemma: al forno, pos: phrase, en: [baked, roast], level: a2, unit: a2.u09, topic: food }
+- { id: w.alla-griglia, lemma: alla griglia, pos: phrase, en: [grilled], level: a2, unit: a2.u09, topic: food }
+- { id: w.al-dente, lemma: al dente, pos: phrase, en: [al dente (firm to the bite)], level: a2, unit: a2.u09, topic: food }
+- { id: w.ripieno, lemma: ripieno, pos: adj, en: [stuffed, filled], level: a2, unit: a2.u09, topic: food }
+- { id: w.senti, lemma: senti, pos: interj, en: [listen, hey], level: a2, unit: a2.u09, tags: [passive] }
+- { id: w.guarda, lemma: guarda, pos: interj, en: [look], level: a2, unit: a2.u09, tags: [passive] }
+- { id: w.istruzione, lemma: istruzione, pos: noun, gender: f, en: [instruction, education], level: a2, unit: a2.u09 }
+- { id: w.attenzione, lemma: attenzione, pos: noun, gender: f, en: [attention, careful], level: a2, unit: a2.u09 }
+- { id: w.fuoco, lemma: fuoco, pos: noun, gender: m, en: [fire, heat], level: a2, unit: a2.u09, notes: A fuoco basso = on a low heat. }
+# ---------------------------------------------------------------- a2.u10 Da quanto tempo?
+- { id: w.tram, lemma: tram, pos: noun, gender: m, en: [tram], level: a2, unit: a2.u10, topic: transport }
+- { id: w.motorino, lemma: motorino, pos: noun, gender: m, en: [scooter], level: a2, unit: a2.u10, topic: transport }
+- { id: w.nave, lemma: nave, pos: noun, gender: f, en: [ship], level: a2, unit: a2.u10, topic: transport }
+- { id: w.lato, lemma: lato, pos: noun, gender: m, en: [side], level: a2, unit: a2.u10 }
+- { id: w.durare, lemma: durare, pos: verb, en: [to last], level: a2, unit: a2.u10, topic: time }
+- { id: w.lentamente, lemma: lentamente, pos: adv, en: [slowly], level: a2, unit: a2.u10 }
+- { id: w.benzinaio, lemma: benzinaio, pos: noun, gender: mf, en: [petrol station attendant, petrol station], level: a2, unit: a2.u10, topic: jobs }
+- { id: w.da-quanto-tempo, lemma: da quanto tempo, pos: phrase, en: [how long, for how long], level: a2, unit: a2.u10, topic: time }
+- { id: w.entro, lemma: entro, pos: prep, en: [within, by], level: a2, unit: a2.u10, topic: time }
+- { id: w.smettere, lemma: smettere, pos: verb, en: [to stop, to quit], level: a2, unit: a2.u10 }
+- { id: w.riuscire, lemma: riuscire, pos: verb, en: [to manage, to succeed], level: a2, unit: a2.u10, notes: Riuscire a + infinitive. }
+- { id: w.aiutare, lemma: aiutare, pos: verb, en: [to help], level: a2, unit: a2.u10 }
+- { id: w.abituarsi, lemma: abituarsi, pos: verb, en: [to get used to], level: a2, unit: a2.u10 }
+- { id: w.ricordarsi, lemma: ricordarsi, pos: verb, en: [to remember], level: a2, unit: a2.u10 }
+- { id: w.dimenticarsi, lemma: dimenticarsi, pos: verb, en: [to forget], level: a2, unit: a2.u10 }
+- { id: w.binario, lemma: binario, pos: noun, gender: m, en: [platform, track], level: a2, unit: a2.u10, topic: transport }
+- { id: w.coincidenza, lemma: coincidenza, pos: noun, gender: f, en: [connection, coincidence], level: a2, unit: a2.u10, topic: transport }
+- { id: w.ritardo, lemma: ritardo, pos: noun, gender: m, en: [delay], level: a2, unit: a2.u10, topic: transport }
+- { id: w.partenza, lemma: partenza, pos: noun, gender: f, en: [departure], level: a2, unit: a2.u10, topic: transport }
+- { id: w.arrivo, lemma: arrivo, pos: noun, gender: m, en: [arrival], level: a2, unit: a2.u10, topic: transport }
+- { id: w.sciopero, lemma: sciopero, pos: noun, gender: m, en: [strike], level: a2, unit: a2.u10, topic: transport }
+- { id: w.abbonamento, lemma: abbonamento, pos: noun, gender: m, en: [season ticket, subscription], level: a2, unit: a2.u10, topic: transport }
+- { id: w.timbrare, lemma: timbrare, pos: verb, en: [to validate, to stamp], level: a2, unit: a2.u10, topic: transport }
+- { id: w.convalidare, lemma: convalidare, pos: verb, en: [to validate], level: a2, unit: a2.u10, topic: transport }
+- { id: w.biglietteria, lemma: biglietteria, pos: noun, gender: f, en: [ticket office], level: a2, unit: a2.u10, topic: transport }
+- { id: w.prenotazione, lemma: prenotazione, pos: noun, gender: f, en: [booking, reservation], level: a2, unit: a2.u10, topic: travel }
+- { id: w.finestrino, lemma: finestrino, pos: noun, gender: m, en: [window (of a vehicle)], level: a2, unit: a2.u10, topic: transport }
+- { id: w.andata, lemma: andata, pos: noun, gender: f, en: [outward journey], level: a2, unit: a2.u10, topic: transport }
+- { id: w.ritorno, lemma: ritorno, pos: noun, gender: m, en: [return], level: a2, unit: a2.u10, topic: transport }
+- { id: w.andata-e-ritorno, lemma: andata e ritorno, pos: phrase, en: [return (ticket)], level: a2, unit: a2.u10, topic: transport }
+- { id: w.volo, lemma: volo, pos: noun, gender: m, en: [flight], level: a2, unit: a2.u10, topic: transport }
+- { id: w.imbarco, lemma: imbarco, pos: noun, gender: m, en: [boarding], level: a2, unit: a2.u10, topic: transport }
+- { id: w.carta-dimbarco, lemma: "carta d'imbarco", pos: phrase, en: [boarding pass], level: a2, unit: a2.u10, topic: transport }
+- { id: w.bagaglio, lemma: bagaglio, pos: noun, gender: m, en: [luggage, baggage], level: a2, unit: a2.u10, topic: travel }
+- { id: w.autostrada, lemma: autostrada, pos: noun, gender: f, en: [motorway, highway], level: a2, unit: a2.u10, topic: transport }
+- { id: w.casello, lemma: casello, pos: noun, gender: m, en: [tollbooth], level: a2, unit: a2.u10, topic: transport }
+- { id: w.benzina, lemma: benzina, pos: noun, gender: f, en: [petrol, gas], level: a2, unit: a2.u10, topic: transport }
+- { id: w.parcheggio, lemma: parcheggio, pos: noun, gender: m, en: [car park, parking space], level: a2, unit: a2.u10, topic: transport }
+- { id: w.parcheggiare, lemma: parcheggiare, pos: verb, en: [to park], level: a2, unit: a2.u10, topic: transport }
+- { id: w.multa, lemma: multa, pos: noun, gender: f, en: [fine, ticket], level: a2, unit: a2.u10, topic: transport }
+- { id: w.traghetto, lemma: traghetto, pos: noun, gender: m, en: [ferry], level: a2, unit: a2.u10, topic: transport }
+- { id: w.porto, lemma: porto, pos: noun, gender: m, en: [port, harbour], level: a2, unit: a2.u10, topic: transport }
+- { id: w.mezzo.n, lemma: mezzo, pos: noun, gender: m, en: [means (of transport)], level: a2, unit: a2.u10, topic: transport }
+- { id: w.pendolare, lemma: pendolare, pos: noun, gender: mf, en: [commuter], level: a2, unit: a2.u10, topic: transport }
+- { id: w.viaggiatore, lemma: viaggiatore, pos: noun, gender: mf, en: [traveller], level: a2, unit: a2.u10, topic: travel }
+- { id: w.passeggero, lemma: passeggero, pos: noun, gender: mf, en: [passenger], level: a2, unit: a2.u10, topic: transport }
+- { id: w.controllore, lemma: controllore, pos: noun, gender: mf, en: [ticket inspector], level: a2, unit: a2.u10, topic: transport }
+- { id: w.fare-il-pieno, lemma: fare il pieno, pos: verb, en: [to fill up (the tank)], level: a2, unit: a2.u10, topic: transport }
+- { id: w.guasto, lemma: guasto, pos: noun, gender: m, en: [breakdown, fault], level: a2, unit: a2.u10, topic: transport }
+- { id: w.incidente, lemma: incidente, pos: noun, gender: m, en: [accident], level: a2, unit: a2.u10, topic: transport }
+- { id: w.patente, lemma: patente, pos: noun, gender: f, en: [driving licence], level: a2, unit: a2.u10, topic: transport }
+- { id: w.da-quando, lemma: da quando, pos: phrase, en: [since (when)], level: a2, unit: a2.u10, tags: [passive] }
+- { id: w.secolo, lemma: secolo, pos: noun, gender: m, en: [century], level: a2, unit: a2.u10, topic: time }
+- { id: w.decennio, lemma: decennio, pos: noun, gender: m, en: [decade], level: a2, unit: a2.u10, topic: time }
+- { id: w.epoca, lemma: epoca, pos: noun, gender: f, en: [era, time, period], level: a2, unit: a2.u10, topic: time }
+- { id: w.periodo, lemma: periodo, pos: noun, gender: m, en: [period], level: a2, unit: a2.u10, topic: time }
+- { id: w.mattinata, lemma: mattinata, pos: noun, gender: f, en: [morning (duration)], level: a2, unit: a2.u10, topic: time }
+- { id: w.serata, lemma: serata, pos: noun, gender: f, en: [evening (duration), party], level: a2, unit: a2.u10, topic: time }
+- { id: w.nottata, lemma: nottata, pos: noun, gender: f, en: [night (duration)], level: a2, unit: a2.u10, topic: time }
+- { id: w.scadere, lemma: scadere, pos: verb, en: [to expire, to be due], level: a2, unit: a2.u10 }
+# ---------------------------------------------------------------- a2.u11 Dal medico
+- { id: w.barba, lemma: barba, pos: noun, gender: f, en: [beard], level: a2, unit: a2.u11, topic: body }
+- { id: w.baffi, lemma: baffi, pos: noun, gender: m, en: [moustache], level: a2, unit: a2.u11, topic: body }
+- { id: w.guancia, lemma: guancia, pos: noun, gender: f, en: [cheek], level: a2, unit: a2.u11, topic: body }
+- { id: w.fronte, lemma: fronte, pos: noun, gender: f, en: [forehead], level: a2, unit: a2.u11, topic: body }
+- { id: w.lacrima, lemma: lacrima, pos: noun, gender: f, en: [tear], level: a2, unit: a2.u11, topic: body }
+- { id: w.caviglia, lemma: caviglia, pos: noun, gender: f, en: [ankle], level: a2, unit: a2.u11, topic: body }
+- { id: w.ciglio, lemma: ciglio, pos: noun, gender: m, en: [eyelash], level: a2, unit: a2.u11, topic: body, notes: "Plural: le ciglia." }
+- { id: w.accomodarsi, lemma: accomodarsi, pos: verb, en: [to make oneself comfortable, to take a seat], level: a2, unit: a2.u11, notes: "Si accomodi! = Please take a seat / come in." }
+- { id: w.dispiacere, lemma: dispiacere, pos: verb, en: [to be sorry, to mind], level: a2, unit: a2.u11, notes: "Ti dispiace se...? = Do you mind if...?" }
+- { id: w.corpo, lemma: corpo, pos: noun, gender: m, en: [body], level: a2, unit: a2.u11, topic: body }
+- { id: w.collo, lemma: collo, pos: noun, gender: m, en: [neck], level: a2, unit: a2.u11, topic: body }
+- { id: w.spalla, lemma: spalla, pos: noun, gender: f, en: [shoulder], level: a2, unit: a2.u11, topic: body }
+- { id: w.schiena, lemma: schiena, pos: noun, gender: f, en: [back], level: a2, unit: a2.u11, topic: body }
+- { id: w.pancia, lemma: pancia, pos: noun, gender: f, en: [tummy, belly], level: a2, unit: a2.u11, topic: body }
+- { id: w.stomaco, lemma: stomaco, pos: noun, gender: m, en: [stomach], level: a2, unit: a2.u11, topic: body }
+- { id: w.petto, lemma: petto, pos: noun, gender: m, en: [chest], level: a2, unit: a2.u11, topic: body }
+- { id: w.ginocchio, lemma: ginocchio, pos: noun, gender: m, en: [knee], level: a2, unit: a2.u11, topic: body, notes: "Irregular plural: le ginocchia." }
+- { id: w.dito, lemma: dito, pos: noun, gender: m, en: [finger, toe], level: a2, unit: a2.u11, topic: body, notes: "Irregular plural: le dita." }
+- { id: w.labbro, lemma: labbro, pos: noun, gender: m, en: [lip], level: a2, unit: a2.u11, topic: body, notes: "Irregular plural: le labbra." }
+- { id: w.orecchio, lemma: orecchio, pos: noun, gender: m, en: [ear], level: a2, unit: a2.u11, topic: body, notes: "Plural: le orecchie (also gli orecchi)." }
+- { id: w.gola, lemma: gola, pos: noun, gender: f, en: [throat], level: a2, unit: a2.u11, topic: body }
+- { id: w.pelle, lemma: pelle, pos: noun, gender: f, en: [skin], level: a2, unit: a2.u11, topic: body }
+- { id: w.osso, lemma: osso, pos: noun, gender: m, en: [bone], level: a2, unit: a2.u11, topic: body, notes: "Irregular plural: le ossa." }
+- { id: w.sangue, lemma: sangue, pos: noun, gender: m, en: [blood], level: a2, unit: a2.u11, topic: body }
+- { id: w.dottore, lemma: dottore, pos: noun, gender: mf, feminine: dottoressa, en: [doctor], level: a2, unit: a2.u11, topic: health, forms: [dottor] }
+- { id: w.pronto-soccorso, lemma: pronto soccorso, pos: phrase, en: ["A&E", emergency room], level: a2, unit: a2.u11, topic: health }
+- { id: w.medicina, lemma: medicina, pos: noun, gender: f, en: [medicine], level: a2, unit: a2.u11, topic: health }
+- { id: w.pillola, lemma: pillola, pos: noun, gender: f, en: [pill], level: a2, unit: a2.u11, topic: health }
+- { id: w.compressa, lemma: compressa, pos: noun, gender: f, en: [tablet], level: a2, unit: a2.u11, topic: health }
+- { id: w.sciroppo, lemma: sciroppo, pos: noun, gender: m, en: [syrup], level: a2, unit: a2.u11, topic: health }
+- { id: w.termometro, lemma: termometro, pos: noun, gender: m, en: [thermometer], level: a2, unit: a2.u11, topic: health }
+- { id: w.febbre, lemma: febbre, pos: noun, gender: f, en: [fever, temperature], level: a2, unit: a2.u11, topic: health }
+- { id: w.tosse, lemma: tosse, pos: noun, gender: f, en: [cough], level: a2, unit: a2.u11, topic: health }
+- { id: w.raffreddore, lemma: raffreddore, pos: noun, gender: m, en: [cold], level: a2, unit: a2.u11, topic: health }
+- { id: w.influenza, lemma: influenza, pos: noun, gender: f, en: [flu], level: a2, unit: a2.u11, topic: health }
+- { id: w.mal-di-testa, lemma: mal di testa, pos: phrase, en: [headache], level: a2, unit: a2.u11, topic: health }
+- { id: w.mal-di-gola, lemma: mal di gola, pos: phrase, en: [sore throat], level: a2, unit: a2.u11, topic: health }
+- { id: w.mal-di-pancia, lemma: mal di pancia, pos: phrase, en: [stomach ache], level: a2, unit: a2.u11, topic: health }
+- { id: w.dolore, lemma: dolore, pos: noun, gender: m, en: [pain], level: a2, unit: a2.u11, topic: health }
+- { id: w.fare-male, lemma: fare male, pos: verb, en: [to hurt], level: a2, unit: a2.u11, topic: health, example: { es: "Mi fa male la testa.", en: "My head hurts." } }
+- { id: w.ferita, lemma: ferita, pos: noun, gender: f, en: [wound, injury], level: a2, unit: a2.u11, topic: health }
+- { id: w.allergia, lemma: allergia, pos: noun, gender: f, en: [allergy], level: a2, unit: a2.u11, topic: health }
+- { id: w.allergico, lemma: allergico, pos: adj, en: [allergic], level: a2, unit: a2.u11, topic: health }
+- { id: w.malato, lemma: malato, pos: adj, en: [ill, sick], level: a2, unit: a2.u11, topic: health }
+- { id: w.ammalarsi, lemma: ammalarsi, pos: verb, en: [to fall ill], level: a2, unit: a2.u11, topic: health }
+- { id: w.guarire, lemma: guarire, pos: verb, en: [to recover, to heal], level: a2, unit: a2.u11, topic: health }
+- { id: w.curare, lemma: curare, pos: verb, en: [to treat, to look after], level: a2, unit: a2.u11, topic: health }
+- { id: w.visita, lemma: visita, pos: noun, gender: f, en: [visit, check-up], level: a2, unit: a2.u11, topic: health }
+- { id: w.sintomo, lemma: sintomo, pos: noun, gender: m, en: [symptom], level: a2, unit: a2.u11, topic: health }
+- { id: w.riposo, lemma: riposo, pos: noun, gender: m, en: [rest], level: a2, unit: a2.u11, topic: health }
+- { id: w.dieta, lemma: dieta, pos: noun, gender: f, en: [diet], level: a2, unit: a2.u11, topic: health }
+- { id: w.salute.n, lemma: salute, pos: noun, gender: f, en: [health], level: a2, unit: a2.u11, topic: health }
+- { id: w.stare-male, lemma: stare male, pos: verb, en: [to feel ill], level: a2, unit: a2.u11, topic: health }
+- { id: w.rompersi, lemma: rompersi, pos: verb, en: [to break (a bone)], level: a2, unit: a2.u11, topic: health }
+- { id: w.tossire, lemma: tossire, pos: verb, en: [to cough], level: a2, unit: a2.u11, topic: health }
+- { id: w.starnutire, lemma: starnutire, pos: verb, en: [to sneeze], level: a2, unit: a2.u11, topic: health }
+- { id: w.respirare, lemma: respirare, pos: verb, en: [to breathe], level: a2, unit: a2.u11, topic: health }
+- { id: w.gonfio, lemma: gonfio, pos: adj, en: [swollen], level: a2, unit: a2.u11, topic: health }
+- { id: w.grave, lemma: grave, pos: adj, en: [serious, severe], level: a2, unit: a2.u11, topic: health }
+- { id: w.ambulanza, lemma: ambulanza, pos: noun, gender: f, en: [ambulance], level: a2, unit: a2.u11, topic: health }
+- { id: w.paziente.n, lemma: paziente, pos: noun, gender: mf, en: [patient], level: a2, unit: a2.u11, topic: health }
+- { id: w.cerotto, lemma: cerotto, pos: noun, gender: m, en: [plaster, band-aid], level: a2, unit: a2.u11, topic: health }
+- { id: w.crema, lemma: crema, pos: noun, gender: f, en: [cream, custard], level: a2, unit: a2.u11, topic: health }
+- { id: w.consiglio, lemma: consiglio, pos: noun, gender: m, en: [piece of advice], level: a2, unit: a2.u11, notes: "Also 'council': il consiglio comunale." }
+- { id: w.riposare, lemma: riposare, pos: verb, en: [to rest], level: a2, unit: a2.u11, topic: health }
+- { id: w.prendere-freddo, lemma: prendere freddo, pos: verb, en: [to catch a chill], level: a2, unit: a2.u11, tags: [passive] }
+- { id: w.mal-di-schiena, lemma: mal di schiena, pos: phrase, en: [backache], level: a2, unit: a2.u11, topic: health }
+- { id: w.dimagrire, lemma: dimagrire, pos: verb, en: [to lose weight], level: a2, unit: a2.u11, topic: health }
+- { id: w.ingrassare, lemma: ingrassare, pos: verb, en: [to put on weight], level: a2, unit: a2.u11, topic: health }
+- { id: w.fumare, lemma: fumare, pos: verb, en: [to smoke], level: a2, unit: a2.u11, topic: health }
+- { id: w.sigaretta, lemma: sigaretta, pos: noun, gender: f, en: [cigarette], level: a2, unit: a2.u11, topic: health }
+# ---------------------------------------------------------------- a2.u12 In giro per la Toscana
+- { id: w.argentino, lemma: argentino, pos: adj, en: [Argentinian], level: a2, unit: a2.u12, topic: countries, tags: [nationality] }
+- { id: w.messicano, lemma: messicano, pos: adj, en: [Mexican], level: a2, unit: a2.u12, topic: countries, tags: [nationality] }
+- { id: w.australiano, lemma: australiano, pos: adj, en: [Australian], level: a2, unit: a2.u12, topic: countries, tags: [nationality] }
+- { id: w.irlandese, lemma: irlandese, pos: adj, en: [Irish], level: a2, unit: a2.u12, topic: countries, tags: [nationality] }
+- { id: w.scozzese, lemma: scozzese, pos: adj, en: [Scottish], level: a2, unit: a2.u12, topic: countries, tags: [nationality] }
+- { id: w.olandese, lemma: olandese, pos: adj, en: [Dutch], level: a2, unit: a2.u12, topic: countries, tags: [nationality] }
+- { id: w.indiano, lemma: indiano, pos: adj, en: [Indian], level: a2, unit: a2.u12, topic: countries, tags: [nationality] }
+- { id: w.belga, lemma: belga, pos: adj, en: [Belgian], level: a2, unit: a2.u12, topic: countries, tags: [nationality] }
+- { id: w.abitante, lemma: abitante, pos: noun, gender: m, en: [inhabitant], level: a2, unit: a2.u12 }
+- { id: w.turistico, lemma: turistico, pos: adj, en: [touristy, tourist], level: a2, unit: a2.u12 }
+- { id: w.hotel, lemma: hotel, pos: noun, gender: m, en: [hotel], level: a2, unit: a2.u12, topic: travel }
+- { id: w.valigia, lemma: valigia, pos: noun, gender: f, en: [suitcase], level: a2, unit: a2.u12, topic: travel }
+- { id: w.terra, lemma: terra, pos: noun, gender: f, en: [earth, ground, land], level: a2, unit: a2.u12, topic: nature }
+- { id: w.estivo, lemma: estivo, pos: adj, en: [summer], level: a2, unit: a2.u12, topic: time }
+- { id: w.invernale, lemma: invernale, pos: adj, en: [winter], level: a2, unit: a2.u12, topic: time }
+- { id: w.presente, lemma: presente, pos: adj, en: [present], level: a2, unit: a2.u12, notes: "Also a noun: il presente = the present." }
+- { id: w.eh, lemma: eh, pos: interj, en: [eh, well], level: a2, unit: a2.u12 }
+- { id: w.panni, lemma: panni, pos: noun, gender: m, en: [clothes, washing], level: a2, unit: a2.u12, topic: clothing }
+- { id: w.riaprire, lemma: riaprire, pos: verb, en: [to reopen], level: a2, unit: a2.u12 }
+- { id: w.rileggere, lemma: rileggere, pos: verb, en: [to reread], level: a2, unit: a2.u12 }
+- { id: w.tesi, lemma: tesi, pos: noun, gender: f, en: [thesis], level: a2, unit: a2.u12, topic: school }
+- { id: w.stare-per, lemma: stare per, pos: verb, en: [to be about to], level: a2, unit: a2.u12, tags: [passive] }
+- { id: w.di-nuovo, lemma: di nuovo, pos: phrase, en: [again], level: a2, unit: a2.u12 }
+- { id: w.rivedere, lemma: rivedere, pos: verb, en: [to see again, to revise], level: a2, unit: a2.u12 }
+- { id: w.ritornare, lemma: ritornare, pos: verb, en: [to return, to go back], level: a2, unit: a2.u12, topic: verbs-motion }
+- { id: w.rifare, lemma: rifare, pos: verb, en: [to redo, to do again], level: a2, unit: a2.u12 }
+- { id: w.esperienza, lemma: esperienza, pos: noun, gender: f, en: [experience], level: a2, unit: a2.u12, topic: travel }
+- { id: w.avventura, lemma: avventura, pos: noun, gender: f, en: [adventure], level: a2, unit: a2.u12, topic: travel }
+- { id: w.paesaggio, lemma: paesaggio, pos: noun, gender: m, en: [landscape], level: a2, unit: a2.u12, topic: nature }
+- { id: w.collina, lemma: collina, pos: noun, gender: f, en: [hill], level: a2, unit: a2.u12, topic: nature }
+- { id: w.cipresso, lemma: cipresso, pos: noun, gender: m, en: [cypress], level: a2, unit: a2.u12, topic: nature }
+- { id: w.vigna, lemma: vigna, pos: noun, gender: f, en: [vineyard], level: a2, unit: a2.u12, topic: nature }
+- { id: w.vigneto, lemma: vigneto, pos: noun, gender: m, en: [vineyard], level: a2, unit: a2.u12, topic: nature }
+- { id: w.uliveto, lemma: uliveto, pos: noun, gender: m, en: [olive grove], level: a2, unit: a2.u12, topic: nature }
+- { id: w.borgo, lemma: borgo, pos: noun, gender: m, en: [village, hamlet], level: a2, unit: a2.u12, topic: city }
+- { id: w.mura, lemma: mura, pos: noun, gender: f, en: [(city) walls], level: a2, unit: a2.u12, topic: city, notes: "Plural of muro for city walls: le mura." }
+- { id: w.panorama, lemma: panorama, pos: noun, gender: m, en: [panorama, view], level: a2, unit: a2.u12, topic: travel }
+- { id: w.tramonto, lemma: tramonto, pos: noun, gender: m, en: [sunset], level: a2, unit: a2.u12, topic: nature }
+- { id: w.alba, lemma: alba, pos: noun, gender: f, en: [dawn, sunrise], level: a2, unit: a2.u12, topic: nature }
+- { id: w.isola, lemma: isola, pos: noun, gender: f, en: [island], level: a2, unit: a2.u12, topic: nature }
+- { id: w.costa, lemma: costa, pos: noun, gender: f, en: [coast], level: a2, unit: a2.u12, topic: nature }
+- { id: w.sentiero, lemma: sentiero, pos: noun, gender: m, en: [path, trail], level: a2, unit: a2.u12, topic: nature }
+- { id: w.escursione, lemma: escursione, pos: noun, gender: f, en: [excursion, hike], level: a2, unit: a2.u12, topic: travel }
+- { id: w.agriturismo, lemma: agriturismo, pos: noun, gender: m, en: [farm stay], level: a2, unit: a2.u12, topic: travel }
+- { id: w.campeggio, lemma: campeggio, pos: noun, gender: m, en: [campsite], level: a2, unit: a2.u12, topic: travel }
+- { id: w.ostello, lemma: ostello, pos: noun, gender: m, en: [hostel], level: a2, unit: a2.u12, topic: travel }
+- { id: w.camera-singola, lemma: camera singola, pos: phrase, en: [single room], level: a2, unit: a2.u12, topic: travel }
+- { id: w.camera-doppia, lemma: camera doppia, pos: phrase, en: [double room], level: a2, unit: a2.u12, topic: travel }
+- { id: w.compreso, lemma: compreso, pos: adj, en: [included], level: a2, unit: a2.u12, topic: travel }
+- { id: w.guida, lemma: guida, pos: noun, gender: f, en: [guide, guidebook], level: a2, unit: a2.u12, topic: travel }
+- { id: w.souvenir, lemma: souvenir, pos: noun, gender: m, en: [souvenir], level: a2, unit: a2.u12, topic: travel }
+- { id: w.zona, lemma: zona, pos: noun, gender: f, en: [area, zone], level: a2, unit: a2.u12, topic: city }
+- { id: w.regione, lemma: regione, pos: noun, gender: f, en: [region], level: a2, unit: a2.u12, topic: politics }
+- { id: w.provincia, lemma: provincia, pos: noun, gender: f, en: [province], level: a2, unit: a2.u12, topic: politics }
+- { id: w.comune, lemma: comune, pos: noun, gender: m, en: [town council, municipality], level: a2, unit: a2.u12, topic: politics }
+- { id: w.sindaco, lemma: sindaco, pos: noun, gender: mf, en: [mayor], level: a2, unit: a2.u12, topic: politics }
+- { id: w.vendemmia, lemma: vendemmia, pos: noun, gender: f, en: [grape harvest], level: a2, unit: a2.u12, topic: nature }
+- { id: w.gallo, lemma: gallo, pos: noun, gender: m, en: [rooster], level: a2, unit: a2.u12, topic: animals }
+- { id: w.mucca, lemma: mucca, pos: noun, gender: f, en: [cow], level: a2, unit: a2.u12, topic: animals }
+- { id: w.pecora, lemma: pecora, pos: noun, gender: f, en: [sheep], level: a2, unit: a2.u12, topic: animals }
+- { id: w.cinghiale, lemma: cinghiale, pos: noun, gender: m, en: [wild boar], level: a2, unit: a2.u12, topic: animals }
+- { id: w.asino, lemma: asino, pos: noun, gender: m, en: [donkey], level: a2, unit: a2.u12, topic: animals }
+- { id: w.ognuno, lemma: ognuno, pos: pron, en: [everyone, each one], level: a2, unit: a2.u12 }
+- { id: w.ciascuno, lemma: ciascuno, pos: pron, en: [each, each one], level: a2, unit: a2.u12 }
+- { id: w.nulla, lemma: nulla, pos: pron, en: [nothing], level: a2, unit: a2.u12 }
+- { id: w.qualsiasi, lemma: qualsiasi, pos: det, en: [any, whatever], level: a2, unit: a2.u12 }
+- { id: w.certo.det, lemma: certo, pos: det, en: [certain, some], level: a2, unit: a2.u12 }
+- { id: w.vario, lemma: vario, pos: adj, en: [various, varied], level: a2, unit: a2.u12 }
+- { id: w.mica, lemma: mica, pos: adv, en: [not at all, hardly], level: a2, unit: a2.u12, notes: "Colloquial: non è mica facile." }
+- { id: w.tutti-e-due, lemma: tutti e due, pos: phrase, en: [both], level: a2, unit: a2.u12 }
+- { id: w.entrambi, lemma: entrambi, pos: pron, en: [both], level: a2, unit: a2.u12, forms: [entrambi, entrambe] }
+- { id: w.intorno, lemma: intorno, pos: adv, en: [around], level: a2, unit: a2.u12 }
+- { id: w.oltre, lemma: oltre, pos: prep, en: [beyond, over, more than], level: a2, unit: a2.u12 }
+- { id: w.patrimonio, lemma: patrimonio, pos: noun, gender: m, en: [heritage], level: a2, unit: a2.u12, topic: arts }
+- { id: w.intatto, lemma: intatto, pos: adj, en: [intact], level: a2, unit: a2.u12 }
+- { id: w.passeggiare, lemma: passeggiare, pos: verb, en: [to stroll, to walk], level: a2, unit: a2.u12, topic: verbs-motion }
