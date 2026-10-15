@@ -1,0 +1,561 @@
+# Italian irregular verbs and auxiliary choice. Owned by the language engine
+# (src/lang/it/conjugator.ts, schema in src/lang/it/schema.ts).
+#
+# Anything not listed is conjugated regularly, with automatic spelling changes:
+#   cercare → cerchi, cercherò · pagare → paghi · mangiare → mangi, mangerò
+#   studiare → studi · inviare → invii (stressedI) · finire → finisco (built-in -isc- list)
+# Compounds are derived automatically from a listed verb (proporre from porre,
+# produrre from tradurre's family "durre", ottenere from tenere, permettere from
+# mettere…) unless the row says `compounds: false`.
+#
+# Fields: pres/impf/pret/subjPres/subjImpf = six persons (io, tu, lui/lei, noi, voi, loro);
+# pretStem = strong passato remoto stem for io/lui/loro (prendere → pres: presi, prese, presero);
+# futStem = future/conditional stem; base = full infinitive giving the regular stem
+# (fare < facere: facevo, facendo, facessi); impTu/impVoi = imperative overrides;
+# aux = auxiliary (default avere); bothAux = both are correct.
+verbs:
+  # ---- essere, avere and the four short -are verbs
+  - lemma: essere
+    aux: essere
+    compounds: false
+    pres: [sono, sei, è, siamo, siete, sono]
+    impf: [ero, eri, era, eravamo, eravate, erano]
+    pret: [fui, fosti, fu, fummo, foste, furono]
+    futStem: sar
+    subjPres: [sia, sia, sia, siamo, siate, siano]
+    impTu: sii
+    impVoi: siate
+    participle: stato
+  - lemma: avere
+    compounds: false
+    pres: [ho, hai, ha, abbiamo, avete, hanno]
+    pretStem: ebb
+    futStem: avr
+    subjPres: [abbia, abbia, abbia, abbiamo, abbiate, abbiano]
+    impTu: abbi
+    impVoi: abbiate
+  - lemma: andare
+    aux: essere
+    compounds: false
+    pres: [vado, vai, va, andiamo, andate, vanno]
+    futStem: andr
+    subjPres: [vada, vada, vada, andiamo, andiate, vadano]
+    impTu: "va'"
+    alt: [vo]
+  - lemma: fare
+    base: facere
+    compounds: false
+    pres: [faccio, fai, fa, facciamo, fate, fanno]
+    pretStem: fec
+    impTu: "fa'"
+    participle: fatto
+  - lemma: rifare
+    base: rifacere
+    compounds: false
+    pres: [rifaccio, rifai, rifà, rifacciamo, rifate, rifanno]
+    pretStem: rifec
+    impTu: rifai
+    participle: rifatto
+  - lemma: dare
+    compounds: false
+    pres: [do, dai, dà, diamo, date, danno]
+    pret: [diedi, desti, diede, demmo, deste, diedero]
+    futStem: dar
+    subjPres: [dia, dia, dia, diamo, diate, diano]
+    impTu: "da'"
+    alt: [detti, dette, dettero]
+  - lemma: stare
+    aux: essere
+    compounds: false
+    pres: [sto, stai, sta, stiamo, state, stanno]
+    pret: [stetti, stesti, stette, stemmo, steste, stettero]
+    futStem: star
+    subjPres: [stia, stia, stia, stiamo, stiate, stiano]
+    impTu: "sta'"
+
+  # ---- dire and its compounds (tu imperative -dici)
+  - lemma: dire
+    base: dicere
+    compounds: false
+    pres: [dico, dici, dice, diciamo, dite, dicono]
+    pretStem: diss
+    impTu: "di'"
+    participle: detto
+  - lemma: benedire
+    like: dire
+    impTu: benedici
+  - lemma: maledire
+    like: dire
+    impTu: maledici
+  - lemma: contraddire
+    like: dire
+    impTu: contraddici
+  - lemma: predire
+    like: dire
+    impTu: predici
+
+  # ---- modals and sapere
+  - lemma: volere
+    pres: [voglio, vuoi, vuole, vogliamo, volete, vogliono]
+    pretStem: voll
+    futStem: vorr
+    impTu: vogli
+    impVoi: vogliate
+  - lemma: potere
+    pres: [posso, puoi, può, possiamo, potete, possono]
+    futStem: potr
+    noImperative: true
+  - lemma: dovere
+    pres: [devo, devi, deve, dobbiamo, dovete, devono]
+    futStem: dovr
+    subjPres: [debba, debba, debba, dobbiamo, dobbiate, debbano]
+    noImperative: true
+    alt: [debbo, debbono, deva, devano, dovetti, dovette, dovettero]
+  - lemma: sapere
+    pres: [so, sai, sa, sappiamo, sapete, sanno]
+    pretStem: sepp
+    futStem: sapr
+    subjPres: [sappia, sappia, sappia, sappiamo, sappiate, sappiano]
+    impTu: sappi
+    impVoi: sappiate
+
+  # ---- -go / -gl- presents
+  - lemma: venire
+    aux: essere
+    pres: [vengo, vieni, viene, veniamo, venite, vengono]
+    pretStem: venn
+    futStem: verr
+    participle: venuto
+  - lemma: tenere
+    pres: [tengo, tieni, tiene, teniamo, tenete, tengono]
+    pretStem: tenn
+    futStem: terr
+  - lemma: rimanere
+    aux: essere
+    pres: [rimango, rimani, rimane, rimaniamo, rimanete, rimangono]
+    pretStem: rimas
+    futStem: rimarr
+    participle: rimasto
+  - lemma: salire
+    aux: essere
+    bothAux: true
+    pres: [salgo, sali, sale, saliamo, salite, salgono]
+  - lemma: valere
+    aux: essere
+    pres: [valgo, vali, vale, valiamo, valete, valgono]
+    pretStem: vals
+    futStem: varr
+    participle: valso
+  - lemma: porre
+    base: ponere
+    pres: [pongo, poni, pone, poniamo, ponete, pongono]
+    pretStem: pos
+    participle: posto
+  - lemma: tradurre
+    base: traducere
+    family: durre
+    pretStem: traduss
+    participle: tradotto
+  - lemma: trarre
+    base: traere
+    pres: [traggo, trai, trae, traiamo, traete, traggono]
+    pretStem: trass
+    participle: tratto
+  - lemma: scegliere
+    pres: [scelgo, scegli, sceglie, scegliamo, scegliete, scelgono]
+    pretStem: scels
+    participle: scelto
+  - lemma: cogliere
+    pres: [colgo, cogli, coglie, cogliamo, cogliete, colgono]
+    pretStem: cols
+    participle: colto
+  - lemma: togliere
+    pres: [tolgo, togli, toglie, togliamo, togliete, tolgono]
+    pretStem: tols
+    participle: tolto
+  - lemma: sciogliere
+    pres: [sciolgo, sciogli, scioglie, sciogliamo, sciogliete, sciolgono]
+    pretStem: sciols
+    participle: sciolto
+  - lemma: spegnere
+    pres: [spengo, spegni, spegne, spegniamo, spegnete, spengono]
+    pretStem: spens
+    participle: spento
+
+  # ---- other irregular presents
+  - lemma: uscire
+    aux: essere
+    pres: [esco, esci, esce, usciamo, uscite, escono]
+  - lemma: udire
+    pres: [odo, odi, ode, udiamo, udite, odono]
+  - lemma: bere
+    base: bevere
+    compounds: false
+    pretStem: bevv
+    futStem: berr
+  - lemma: sedere
+    aux: essere
+    pres: [siedo, siedi, siede, sediamo, sedete, siedono]
+    alt: [seggo, seggono, segga, seggano, sedetti, sedette, sedettero]
+  - lemma: possedere
+    like: sedere
+    aux: avere
+  - lemma: morire
+    aux: essere
+    pres: [muoio, muori, muore, moriamo, morite, muoiono]
+    participle: morto
+    alt: [morrò, morrai, morrà, morremo, morrete, morranno]
+  - lemma: piacere
+    aux: essere
+    pres: [piaccio, piaci, piace, piacciamo, piacete, piacciono]
+    pretStem: piacqu
+    participle: piaciuto
+  - lemma: tacere
+    pres: [taccio, taci, tace, tacciamo, tacete, tacciono]
+    pretStem: tacqu
+    participle: taciuto
+  - lemma: giacere
+    aux: essere
+    pres: [giaccio, giaci, giace, giacciamo, giacete, giacciono]
+    pretStem: giacqu
+    participle: giaciuto
+  - lemma: parere
+    aux: essere
+    pres: [paio, pari, pare, paiamo, parete, paiono]
+    pretStem: parv
+    futStem: parr
+    participle: parso
+  - lemma: apparire
+    aux: essere
+    pres: [appaio, appari, appare, appariamo, apparite, appaiono]
+    pretStem: apparv
+    participle: apparso
+    alt: [apparisco, apparisci, apparisce, appariscono, apparii, apparì, apparirono]
+  - lemma: comparire
+    like: apparire
+  - lemma: scomparire
+    like: apparire
+  - lemma: cuocere
+    pres: [cuocio, cuoci, cuoce, cuociamo, cuocete, cuociono]
+    pretStem: coss
+    participle: cotto
+    alt: [cociamo, cocete, cocevo, cotto]
+  - lemma: riempire
+    pres: [riempio, riempi, riempie, riempiamo, riempite, riempiono]
+    gerund: riempiendo
+  - lemma: cucire
+    pres: [cucio, cuci, cuce, cuciamo, cucite, cuciono]
+
+  # ---- irregular future only
+  - lemma: cadere
+    aux: essere
+    pretStem: cadd
+    futStem: cadr
+  - lemma: vedere
+    pretStem: vid
+    futStem: vedr
+    participle: visto
+    alt: [veduto]
+  - lemma: vivere
+    bothAux: true
+    pretStem: viss
+    futStem: vivr
+    participle: vissuto
+  - lemma: godere
+    futStem: godr
+  - lemma: piovere
+    aux: essere
+    bothAux: true
+    pretStem: piovv
+
+  # ---- strong passato remoto (-si / -ssi) and irregular participles
+  - lemma: prendere
+    pretStem: pres
+    participle: preso
+  - lemma: mettere
+    pretStem: mis
+    participle: messo
+  - lemma: leggere
+    pretStem: less
+    participle: letto
+  - lemma: scrivere
+    pretStem: scriss
+    participle: scritto
+  - lemma: chiudere
+    pretStem: chius
+    participle: chiuso
+  - lemma: rispondere
+    pretStem: rispos
+    participle: risposto
+  - lemma: chiedere
+    pretStem: chies
+    participle: chiesto
+  - lemma: decidere
+    pretStem: decis
+    participle: deciso
+  - lemma: correre
+    bothAux: true
+    pretStem: cors
+    participle: corso
+  - lemma: perdere
+    pretStem: pers
+    participle: perso
+    alt: [perduto, perdei, perdé, perderono, perdetti, perdette, perdettero]
+  - lemma: vincere
+    pretStem: vins
+    participle: vinto
+  - lemma: accendere
+    pretStem: acces
+    participle: acceso
+  - lemma: rompere
+    pretStem: rupp
+    participle: rotto
+  - lemma: ridere
+    pretStem: ris
+    participle: riso
+  - lemma: scendere
+    aux: essere
+    bothAux: true
+    pretStem: sces
+    participle: sceso
+  - lemma: piangere
+    pretStem: pians
+    participle: pianto
+  - lemma: giungere
+    aux: essere
+    pretStem: giuns
+    participle: giunto
+  - lemma: muovere
+    pretStem: moss
+    participle: mosso
+  - lemma: conoscere
+    pretStem: conobb
+    participle: conosciuto
+  - lemma: crescere
+    aux: essere
+    bothAux: true
+    pretStem: crebb
+    participle: cresciuto
+  - lemma: nascere
+    aux: essere
+    pretStem: nacqu
+    participle: nato
+  - lemma: rendere
+    pretStem: res
+    participle: reso
+  - lemma: spendere
+    pretStem: spes
+    participle: speso
+  - lemma: difendere
+    pretStem: difes
+    participle: difeso
+  - lemma: offendere
+    pretStem: offes
+    participle: offeso
+  - lemma: tendere
+    pretStem: tes
+    participle: teso
+  - lemma: attendere
+    pretStem: attes
+    participle: atteso
+  - lemma: appendere
+    pretStem: appes
+    participle: appeso
+  - lemma: sospendere
+    pretStem: sospes
+    participle: sospeso
+  - lemma: dipendere
+    aux: essere
+    pretStem: dipes
+    participle: dipeso
+  - lemma: nascondere
+    pretStem: nascos
+    participle: nascosto
+  - lemma: dividere
+    pretStem: divis
+    participle: diviso
+  - lemma: uccidere
+    pretStem: uccis
+    participle: ucciso
+  - lemma: persuadere
+    pretStem: persuas
+    participle: persuaso
+  - lemma: succedere
+    aux: essere
+    pretStem: success
+    participle: successo
+  - lemma: concedere
+    pretStem: conces
+    participle: concesso
+  - lemma: discutere
+    pretStem: discuss
+    participle: discusso
+  - lemma: esprimere
+    family: primere
+    pretStem: espress
+    participle: espresso
+  - lemma: stringere
+    pretStem: strins
+    participle: stretto
+  - lemma: spingere
+    pretStem: spins
+    participle: spinto
+  - lemma: dipingere
+    pretStem: dipins
+    participle: dipinto
+  - lemma: fingere
+    pretStem: fins
+    participle: finto
+  - lemma: volgere
+    pretStem: vols
+    participle: volto
+  - lemma: reggere
+    pretStem: ress
+    participle: retto
+  - lemma: proteggere
+    pretStem: protess
+    participle: protetto
+  - lemma: distruggere
+    pretStem: distruss
+    participle: distrutto
+  - lemma: friggere
+    pretStem: friss
+    participle: fritto
+  - lemma: dirigere
+    pretStem: diress
+    participle: diretto
+  - lemma: assumere
+    family: sumere
+    pretStem: assuns
+    participle: assunto
+  - lemma: mordere
+    pretStem: mors
+    participle: morso
+  - lemma: includere
+    family: cludere
+    pretStem: inclus
+    participle: incluso
+  - lemma: emergere
+    aux: essere
+    pretStem: emers
+    participle: emerso
+  - lemma: sorgere
+    aux: essere
+    pretStem: sors
+    participle: sorto
+  - lemma: porgere
+    pretStem: pors
+    participle: porto
+  - lemma: accorgere
+    note: used as accorgersi
+    pretStem: accors
+    participle: accorto
+  - lemma: torcere
+    pretStem: tors
+    participle: torto
+  - lemma: risolvere
+    family: solvere
+    pretStem: risols
+    participle: risolto
+  - lemma: scuotere
+    pretStem: scoss
+    participle: scosso
+  - lemma: esplodere
+    aux: essere
+    pretStem: esplos
+    participle: esploso
+  - lemma: occorrere
+    like: correre
+    aux: essere
+    bothAux: false
+  - lemma: insistere
+    family: sistere
+    participle: insistito
+  - lemma: esistere
+    aux: essere
+    participle: esistito
+  - lemma: consistere
+    aux: essere
+    participle: consistito
+
+  # ---- -ire verbs with irregular participles
+  - lemma: aprire
+    participle: aperto
+    alt: [apersi, aperse, apersero]
+  - lemma: coprire
+    participle: coperto
+  - lemma: offrire
+    participle: offerto
+    alt: [offersi, offerse, offersero]
+
+  # ---- -iare verbs with a stressed i (invìo → tu invii)
+  - lemma: inviare
+    stressedI: true
+  - lemma: sciare
+    stressedI: true
+  - lemma: spiare
+    stressedI: true
+  - lemma: avviare
+    stressedI: true
+  - lemma: deviare
+    stressedI: true
+
+# Regular verbs whose compound tenses take essere (motion, change of state, "happen",
+# "seem", "cost", "be enough"…). Reflexive verbs always take essere.
+essere:
+  - arrivare
+  - entrare
+  - tornare
+  - ritornare
+  - restare
+  - diventare
+  - partire
+  - costare
+  - durare
+  - sembrare
+  - bastare
+  - capitare
+  - dimagrire
+  - ingrassare
+  - invecchiare
+  - impazzire
+  - arrossire
+  - scappare
+  - fuggire
+  - sparire
+  - risultare
+  - bisognare
+  - svanire
+  - rientrare
+  - ripartire
+
+# Compounds that take avere although their base verb takes essere.
+avere:
+  - aggiungere
+  - raggiungere
+  - prevenire
+  - assalire
+  - compiacere
+
+# Both auxiliaries; essere shown in the table (sono passato / ho passato l'esame).
+essereOrAvere:
+  - passare
+  - mancare
+  - servire
+  - guarire
+  - nevicare
+
+# Both auxiliaries; avere shown in the table (ho cominciato / il film è cominciato).
+avereOrEssere:
+  - cominciare
+  - iniziare
+  - finire
+  - cambiare
+  - volare
+  - continuare
+  - terminare
+  - migliorare
+  - peggiorare
+  - aumentare
+  - diminuire
+  - saltare

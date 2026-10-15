@@ -1,6 +1,16 @@
 import { useMemo, useState } from 'react'
 import { vocab } from '../engine/loader'
-import { conjugate, PERSONS, TENSES, TENSE_LABELS, withReflexive, VERB_TRAINER, type Tense } from '@lang/verbs'
+import * as verbsModule from '@lang/verbs'
+import { conjugate, PERSONS, TENSES, TENSE_LABELS, VERB_TRAINER, type Tense } from '@lang/verbs'
+
+// Optional pack extras: pronominal verbs with a clitic other than the reflexive (andarsene → me ne vado),
+// and agreement variants of compound forms (sono andato/andata). Packs without them use the defaults.
+const packVerbs = verbsModule as unknown as {
+  withReflexive: (form: string | null | undefined, person: number, tense: string, clitic?: string) => string | null
+  agreementVariants?: (form: string) => string[]
+}
+const withReflexive = (form: string | null | undefined, person: number, tense: string, conj?: { clitic?: string }) =>
+  conj?.clitic ? packVerbs.withReflexive(form, person, tense, conj.clitic) : packVerbs.withReflexive(form, person, tense)
 import { match, stripAccents } from '@lang/normalize'
 import { Rng } from '../engine/random'
 import { PageHeader, Button, Chip, SpeakerButton } from '../components/ui/basics'
@@ -15,7 +25,7 @@ export default function Verbs() {
   const verbs = useMemo(() => [...vocab.values()].filter((v) => v.pos === 'verb' && !v.lemma.includes(' ')).sort((a, b) => a.lemma.localeCompare(b.lemma)), [])
   const [q, setQ] = useState('')
   const [lemma, setLemma] = useState(VERB_TRAINER.defaultVerb)
-  const [tense, setTense] = useState<Tense>('pres')
+  const [tense, setTense] = useState<Tense>('pres' as Tense)
   const [mode, setMode] = useState<'table' | 'drill'>('table')
   const suggestions = useMemo(() => {
     const n = stripAccents(q.toLowerCase())
@@ -82,17 +92,17 @@ export default function Verbs() {
               <div className="mb-3 flex gap-1 overflow-x-auto pb-1">
                 {TENSES.map((t) => (
                   <button key={t} type="button" onClick={() => setTense(t)} className={`shrink-0 rounded-full px-3 py-1 text-xs font-bold ${tense === t ? 'bg-sky-500 text-white' : 'bg-surface-2 text-muted'}`}>
-                    {TENSE_LABELS[t].en}
+                    {TENSE_LABELS[t]?.en}
                   </button>
                 ))}
               </div>
               <p className="mb-2 text-sm text-muted">
-                <span lang={TL} className="font-bold">{TENSE_LABELS[tense].es}</span> · introduced at {TENSE_LABELS[tense].level.toUpperCase()}
+                <span lang={TL} className="font-bold">{TENSE_LABELS[tense]?.es}</span> · introduced at {TENSE_LABELS[tense]?.level.toUpperCase()}
               </p>
               <table className="w-full text-sm">
                 <tbody>
                   {PERSONS.map((p, i) => {
-                    const f = conj.reflexive ? withReflexive(conj.forms[tense][i], i, tense) : conj.forms[tense][i]
+                    const f = conj.reflexive ? withReflexive(conj.forms[tense]?.[i], i, tense, conj as { clitic?: string }) : conj.forms[tense]?.[i]
                     return (
                       <tr key={p} className="border-t border-line">
                         <td className="py-2 pr-2 text-muted">{p}</td>
@@ -116,7 +126,7 @@ export default function Verbs() {
 }
 
 function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
-  const [tenses, setTenses] = useState<Set<Tense>>(new Set(['pres']))
+  const [tenses, setTenses] = useState<Set<Tense>>(new Set(['pres' as Tense]))
   const [maxLevel, setMaxLevel] = useState<LevelId>('a1')
   const [rng] = useState(() => new Rng(Date.now()))
   const [q, setQ] = useState<{ lemma: string; tense: Tense; person: number; answer: string } | undefined>()
@@ -132,8 +142,8 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
       const t = rng.pick([...tenses])
       const person = t === 'impAff' || t === 'impNeg' ? 1 + rng.int(5) : rng.int(6)
       const c = conjugate(v.lemma)
-      const raw = c.forms[t][person]
-      const answer = c.reflexive ? withReflexive(raw, person, t) : raw
+      const raw = c.forms[t]?.[person]
+      const answer = c.reflexive ? withReflexive(raw, person, t, c as { clitic?: string }) : raw
       if (answer) {
         setQ({ lemma: v.lemma, tense: t, person, answer })
         setText('')
@@ -144,7 +154,7 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
   }
   const check = () => {
     if (!q) return
-    const r = match(text, [q.answer])
+    const r = match(text, packVerbs.agreementVariants?.(q.answer) ?? [q.answer])
     setState(r.verdict === 'correct' ? 'ok' : r.verdict === 'almost' ? 'almost' : 'bad')
     setScore((s) => ({ right: s.right + (r.verdict !== 'wrong' ? 1 : 0), total: s.total + 1 }))
   }
@@ -164,7 +174,7 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
             }}
             className={`rounded-full px-3 py-1 text-xs font-bold ${tenses.has(t) ? 'bg-sky-500 text-white' : 'bg-surface-2 text-muted'}`}
           >
-            {TENSE_LABELS[t].en}
+            {TENSE_LABELS[t]?.en}
           </button>
         ))}
       </div>
@@ -187,7 +197,7 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
           </p>
           <p className="mt-2 text-2xl font-extrabold" lang={TL}>{q.lemma}</p>
           <p className="text-sm">
-            <Chip tone="sky">{TENSE_LABELS[q.tense].en}</Chip> <Chip>{PERSONS[q.person]}</Chip>
+            <Chip tone="sky">{TENSE_LABELS[q.tense]?.en}</Chip> <Chip>{PERSONS[q.person]}</Chip>
           </p>
           <input
             value={text}

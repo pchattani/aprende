@@ -36,7 +36,7 @@ export function withReflexive(form: string | null | undefined): string | null {
 export const VERB_TRAINER = {
   defaultVerb: '',
   placeholder: '',
-  isInfinitive: () => false,
+  isInfinitive: (_w: string) => false,
   notAVerb: 'Cantonese verbs do not change form.',
   baseLemma: (lemma: string) => lemma,
   skipInExercises: [] as readonly string[],

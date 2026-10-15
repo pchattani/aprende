@@ -82,7 +82,7 @@ function verbSlots(form: string, lemma: string, deps: ExplainDeps): { tense: Ten
 }
 
 function describeSlot(s: { tense: Tense; person: number }): string {
-  return `${PERSON[s.person]}, ${TENSE_LABELS[s.tense].en.toLowerCase()}`
+  return `${PERSON[s.person]}, ${(TENSE_LABELS[s.tense]?.en ?? s.tense).toLowerCase()}`
 }
 
 function gloss(form: string, deps: ExplainDeps): string | undefined {

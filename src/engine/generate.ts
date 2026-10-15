@@ -485,7 +485,7 @@ function sentenceExercise(s: Sentence, id: string, stage: Stage, lesson: Lesson,
       const info = verbInfo ?? findVerbForm(s.es, lesson, ctx, true)
       if (!info) return { ...base, kind: 'typeEs', prompt: s.en, answers: [s.es, ...s.altEs], translation: s.en } satisfies TypeExercise
       const blanked = replaceWord(s.es, info.form, '____')
-      return { ...base, kind, prompt: blanked, hint: `${info.lemma} · ${TENSE_LABELS[info.tense].en.toLowerCase()} · ${PERSONS[info.person]}`, answers: [info.form], translation: s.en } satisfies TypeExercise
+      return { ...base, kind, prompt: blanked, hint: `${info.lemma} · ${(TENSE_LABELS[info.tense]?.en ?? info.tense).toLowerCase()} · ${PERSONS[info.person]}`, answers: [info.form], translation: s.en } satisfies TypeExercise
     }
     case 'transform':
       return { ...base, kind, prompt: s.es, hint: s.transform!.instruction, answers: [s.transform!.answer, ...s.transform!.alt], translation: s.en, review: { es: s.transform!.answer, en: s.transform!.en ?? `${s.en} → ${s.transform!.instruction}` } } satisfies TypeExercise
