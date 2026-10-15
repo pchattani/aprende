@@ -66,7 +66,8 @@ function dropOptionalSpanish(t: string[]): string[] {
   const out = [...t]
   if (out.length >= 3 && ES_EMPHATIC.get(`${out[0]} ${out[1]}`) === out[2]) out.splice(0, 2)
   // Leading subject pronoun before a verb. "él" with accent only (never the article "el"); "tú" never "tu".
-  if (out.length >= 2 && ES_SUBJECTS.has(out[0]!) && !ES_NOT_AFTER_SUBJECT.has(out[1]!)) out.shift()
+  if (out.length >= 3 && ES_SUBJECTS.has(`${out[0]} ${out[1]}`) && !ES_NOT_AFTER_SUBJECT.has(out[2]!)) out.splice(0, 2) // a gente
+  else if (out.length >= 2 && ES_SUBJECTS.has(out[0]!) && !ES_NOT_AFTER_SUBJECT.has(out[1]!)) out.shift()
   return out
 }
 

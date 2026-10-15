@@ -1,0 +1,285 @@
+# Portuguese irregular verbs (Brazilian orthography). Schema: src/lang/pt/schema.ts.
+#
+# Anything not listed is conjugated regularly with automatic changes:
+#   spelling      ficar → fiquei/fique, chegar → cheguei, começar → comecei,
+#                 conhecer → conheço, proteger → protejo, seguir → sigo, erguer → ergo
+#   e > i         -ir verbs with e in the last stem syllable: sentir → sinto, sinta;
+#                 preferir → prefiro, servir → sirvo, vestir → visto, repetir → repito
+#   -ear          passear → passeio, passeie (passeamos)
+#   vowel stems   sair/cair/trair → saio, saímos, saí, saísse; incluir → incluis, incluímos;
+#                 roer/doer/moer → róis, rói, roí
+#   -uzir         traduzir, produzir, conduzir → traduz
+#
+# Fields: pres/pret/impf/subjPres/persInf/impAff (six persons, impAff[0] unused),
+# eu (irregular 1sg present that drives the subjunctive), futStem, participle,
+# altParticiples (abundant verbs), gerund, strongVowel (u>o in tu/ele/eles),
+# diphthong (i>ei in the stressed persons), derived (prefixed verbs conjugated
+# alike), prefixable (every verb ending in the lemma), alt (extra accepted forms).
+verbs:
+  # ---- the big irregulars
+  - lemma: ser
+    pres: [sou, és, é, somos, sois, são]
+    pret: [fui, foste, foi, fomos, fostes, foram]
+    impf: [era, eras, era, éramos, éreis, eram]
+    subjPres: [seja, sejas, seja, sejamos, sejais, sejam]
+    impAff: ["", sê, seja, sejamos, sede, sejam]
+  - lemma: estar
+    pres: [estou, estás, está, estamos, estais, estão]
+    pret: [estive, estiveste, esteve, estivemos, estivestes, estiveram]
+    subjPres: [esteja, estejas, esteja, estejamos, estejais, estejam]
+  - lemma: ter
+    pres: [tenho, tens, tem, temos, tendes, têm]
+    pret: [tive, tiveste, teve, tivemos, tivestes, tiveram]
+    impf: [tinha, tinhas, tinha, tínhamos, tínheis, tinham]
+    derived: [manter, conter, obter, deter, reter, entreter, abster, ater, suster]
+  - lemma: haver
+    pres: [hei, hás, há, havemos, haveis, hão]
+    pret: [houve, houveste, houve, houvemos, houvestes, houveram]
+    subjPres: [haja, hajas, haja, hajamos, hajais, hajam]
+  - lemma: ir
+    pres: [vou, vais, vai, vamos, ides, vão]
+    pret: [fui, foste, foi, fomos, fostes, foram]
+    impf: [ia, ias, ia, íamos, íeis, iam]
+    subjPres: [vá, vás, vá, vamos, vades, vão]
+  - lemma: vir
+    pres: [venho, vens, vem, vimos, vindes, vêm]
+    pret: [vim, vieste, veio, viemos, viestes, vieram]
+    impf: [vinha, vinhas, vinha, vínhamos, vínheis, vinham]
+    participle: vindo
+    derived: [convir, intervir, provir, advir, sobrevir]
+  - lemma: fazer
+    pres: [faço, fazes, faz, fazemos, fazeis, fazem]
+    pret: [fiz, fizeste, fez, fizemos, fizestes, fizeram]
+    futStem: far
+    participle: feito
+    prefixable: true
+    note: desfazer, refazer, satisfazer
+  - lemma: dizer
+    pres: [digo, dizes, diz, dizemos, dizeis, dizem]
+    pret: [disse, disseste, disse, dissemos, dissestes, disseram]
+    futStem: dir
+    participle: dito
+    prefixable: true
+    note: contradizer, desdizer, predizer
+  - lemma: trazer
+    pres: [trago, trazes, traz, trazemos, trazeis, trazem]
+    pret: [trouxe, trouxeste, trouxe, trouxemos, trouxestes, trouxeram]
+    futStem: trar
+  - lemma: poder
+    pres: [posso, podes, pode, podemos, podeis, podem]
+    pret: [pude, pudeste, pôde, pudemos, pudestes, puderam]
+    noImperative: true
+  - lemma: querer
+    pres: [quero, queres, quer, queremos, quereis, querem]
+    pret: [quis, quiseste, quis, quisemos, quisestes, quiseram]
+    subjPres: [queira, queiras, queira, queiramos, queirais, queiram]
+  - lemma: saber
+    pres: [sei, sabes, sabe, sabemos, sabeis, sabem]
+    pret: [soube, soubeste, soube, soubemos, soubestes, souberam]
+    subjPres: [saiba, saibas, saiba, saibamos, saibais, saibam]
+  - lemma: caber
+    eu: caibo
+    pret: [coube, coubeste, coube, coubemos, coubestes, couberam]
+  - lemma: dar
+    pres: [dou, dás, dá, damos, dais, dão]
+    pret: [dei, deste, deu, demos, destes, deram]
+    subjPres: [dê, dês, dê, demos, deis, deem]
+  - lemma: ver
+    pres: [vejo, vês, vê, vemos, vedes, veem]
+    pret: [vi, viste, viu, vimos, vistes, viram]
+    participle: visto
+    derived: [prever, rever, antever, entrever]
+  - lemma: pôr
+    pres: [ponho, pões, põe, pomos, pondes, põem]
+    pret: [pus, puseste, pôs, pusemos, pusestes, puseram]
+    impf: [punha, punhas, punha, púnhamos, púnheis, punham]
+    persInf: [pôr, pores, pôr, pormos, pordes, porem]
+    futStem: por
+    participle: posto
+    gerund: pondo
+    prefixable: true
+    note: compor, propor, supor, dispor, expor, impor, opor, repor, depor, pressupor
+  # ---- irregular present (eu) and small irregularities
+  - lemma: ler
+    pres: [leio, lês, lê, lemos, ledes, leem]
+    derived: [reler]
+  - lemma: crer
+    pres: [creio, crês, crê, cremos, credes, creem]
+    derived: [descrer]
+  - lemma: rir
+    pres: [rio, ris, ri, rimos, rides, riem]
+    derived: [sorrir]
+  - lemma: sair
+    note: vowel stem -air (automatic) — saio, sais, sai, saímos, saís, saem
+    derived: [sobressair]
+  - lemma: cair
+    note: vowel stem -air (automatic) — caio, caímos, caí, caísse
+    derived: [decair, recair]
+  - lemma: trair
+    note: vowel stem -air (automatic); also atrair, distrair, contrair, extrair, subtrair
+  - lemma: valer
+    eu: valho
+    derived: [equivaler]
+  - lemma: ouvir
+    eu: ouço
+    alt: [oiço, oiça, oiças, oiçamos, oiçais, oiçam]
+    note: European Portuguese also oiço / oiça
+  - lemma: pedir
+    eu: peço
+    derived: [despedir, impedir, expedir]
+  - lemma: medir
+    eu: meço
+  - lemma: perder
+    eu: perco
+  - lemma: requerer
+    pres: [requeiro, requeres, requer, requeremos, requereis, requerem]
+    note: regular preterite (requeri, requereu), unlike querer
+  - lemma: prover
+    pres: [provejo, provês, provê, provemos, provedes, proveem]
+    note: present like ver, regular elsewhere (provi, proveu, provido)
+  - lemma: frigir
+    pres: [frijo, freges, frege, frigimos, frigis, fregem]
+    altParticiples: [frito]
+  # ---- o > u in the eu form
+  - lemma: dormir
+    eu: durmo
+  - lemma: cobrir
+    eu: cubro
+    participle: coberto
+    derived: [descobrir, encobrir, recobrir]
+  - lemma: tossir
+    eu: tusso
+  - lemma: engolir
+    eu: engulo
+  - lemma: polir
+    pres: [pulo, pules, pule, polimos, polis, pulem]
+  # ---- u > o in tu / ele / eles
+  - lemma: subir
+    strongVowel: u>o
+  - lemma: fugir
+    strongVowel: u>o
+  - lemma: sacudir
+    strongVowel: u>o
+  - lemma: acudir
+    strongVowel: u>o
+  - lemma: consumir
+    strongVowel: u>o
+  - lemma: cuspir
+    strongVowel: u>o
+  - lemma: sumir
+    strongVowel: u>o
+  - lemma: bulir
+    strongVowel: u>o
+  # ---- e > i in every stressed form
+  - lemma: agredir
+    pres: [agrido, agrides, agride, agredimos, agredis, agridem]
+    derived: [progredir, regredir, transgredir]
+  - lemma: prevenir
+    pres: [previno, prevines, previne, prevenimos, prevenis, previnem]
+  # ---- accented hiatus and -uir verbs
+  - lemma: construir
+    pres: [construo, constróis, constrói, construímos, construís, constroem]
+    derived: [reconstruir]
+  - lemma: destruir
+    pres: [destruo, destróis, destrói, destruímos, destruís, destroem]
+  - lemma: reunir
+    pres: [reúno, reúnes, reúne, reunimos, reunis, reúnem]
+    subjPres: [reúna, reúnas, reúna, reunamos, reunais, reúnam]
+  - lemma: proibir
+    pres: [proíbo, proíbes, proíbe, proibimos, proibis, proíbem]
+    subjPres: [proíba, proíbas, proíba, proibamos, proibais, proíbam]
+  - lemma: saudar
+    pres: [saúdo, saúdas, saúda, saudamos, saudais, saúdam]
+    subjPres: [saúde, saúdes, saúde, saudemos, saudeis, saúdem]
+  # ---- -iar verbs with ei (MARIO: mediar, ansiar, remediar, incendiar, odiar)
+  - lemma: odiar
+    diphthong: i>ei
+  - lemma: mediar
+    diphthong: i>ei
+    derived: [intermediar]
+  - lemma: ansiar
+    diphthong: i>ei
+  - lemma: remediar
+    diphthong: i>ei
+  - lemma: incendiar
+    diphthong: i>ei
+  # ---- irregular participles
+  - lemma: escrever
+    participle: escrito
+    derived: [descrever, inscrever, reescrever, subscrever, prescrever, transcrever]
+  - lemma: abrir
+    participle: aberto
+    derived: [reabrir, entreabrir]
+  # ---- abundant participles: the first is used with ter, the others with ser/estar
+  - lemma: ganhar
+    participle: ganho
+    altParticiples: [ganhado]
+  - lemma: gastar
+    participle: gasto
+    altParticiples: [gastado]
+  - lemma: pagar
+    participle: pago
+    altParticiples: [pagado]
+  - lemma: aceitar
+    participle: aceitado
+    altParticiples: [aceito, aceite]
+  - lemma: entregar
+    participle: entregado
+    altParticiples: [entregue]
+  - lemma: pegar
+    participle: pegado
+    altParticiples: [pego]
+  - lemma: empregar
+    participle: empregado
+    altParticiples: [empregue]
+  - lemma: eleger
+    participle: elegido
+    altParticiples: [eleito]
+  - lemma: imprimir
+    participle: imprimido
+    altParticiples: [impresso]
+  - lemma: matar
+    participle: matado
+    altParticiples: [morto]
+  - lemma: morrer
+    participle: morrido
+    altParticiples: [morto]
+  - lemma: prender
+    participle: prendido
+    altParticiples: [preso]
+  - lemma: acender
+    participle: acendido
+    altParticiples: [aceso]
+  - lemma: limpar
+    participle: limpado
+    altParticiples: [limpo]
+  - lemma: salvar
+    participle: salvado
+    altParticiples: [salvo]
+  - lemma: soltar
+    participle: soltado
+    altParticiples: [solto]
+  - lemma: secar
+    participle: secado
+    altParticiples: [seco]
+  - lemma: fritar
+    participle: fritado
+    altParticiples: [frito]
+  - lemma: expressar
+    participle: expressado
+    altParticiples: [expresso]
+  - lemma: expulsar
+    participle: expulsado
+    altParticiples: [expulso]
+  - lemma: extinguir
+    participle: extinguido
+    altParticiples: [extinto]
+  - lemma: suspender
+    participle: suspendido
+    altParticiples: [suspenso]
+  - lemma: encher
+    participle: enchido
+    altParticiples: [cheio]
+  - lemma: envolver
+    participle: envolvido
+    altParticiples: [envolto]

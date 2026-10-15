@@ -117,7 +117,9 @@ export default defineConfig({
     setupFiles: ['./tests/setup.ts'],
     include: ['tests/**/*.test.{ts,tsx}', 'src/**/*.test.{ts,tsx}'],
     // Language-specific suites only run for their own course.
-    exclude: ['**/node_modules/**', ...['es', 'yue', 'pt', 'it'].filter((l) => l !== LANG).map((l) => `tests/course-${l}/**`)],
+    // tests/course-<code>/ hold tests written in one course's language (they run only for that course);
+    // tests/<code>.*.test.ts import their pack directly and run everywhere.
+    exclude: ['**/node_modules/**', 'tests/zz*', ...['es', 'yue', 'pt', 'it'].filter((l) => l !== LANG).map((l) => `tests/course-${l}/**`)],
     coverage: { provider: 'v8', include: ['src/**'] },
   },
 })
