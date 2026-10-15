@@ -22,7 +22,7 @@ test(`${pack.name}: first launch, first lesson, passport, quiz`, async ({ page }
   test.setTimeout(240_000)
   await page.goto('./')
   await page.getByRole('button', { name: new RegExp(`I'm new to ${pack.name}`) }).click()
-  await expect(page.getByRole('heading', { name: journey.regions[0]!.name })).toBeVisible()
+  await expect(page.getByRole('heading', { name: journey.regions[0]!.name, exact: true })).toBeVisible()
   await page.screenshot({ path: `e2e/__screenshots__/${LANG}-course.png` })
 
   await page.locator(`a[href$="/lesson/${firstUnit}.l1"]`).first().click()

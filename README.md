@@ -2,6 +2,16 @@
 
 **Live app:** https://pchattani.github.io/aprende/ (install it to your phone's home screen; it works offline)
 
+**Sister courses** (same app, same features, their own course from A1 to C2):
+
+| Course | Link | Journey |
+|---|---|---|
+| 🇮🇹 Italian (*Impara*) | https://pchattani.github.io/aprende/italian/ | Rome, Tuscany, the North, the South, Sicily and Sardinia, then back to Rome |
+| 🇭🇰 Cantonese (*Gong 講*) | coming soon at /aprende/cantonese/ | Hong Kong Island to Guangzhou; traditional characters with Jyutping |
+| 🇧🇷 Portuguese (*Aprenda*) | coming soon at /aprende/portuguese/ | Rio round Brazil, then Portugal; Brazilian with European notes |
+
+Each course has its own progress, settings and offline install. See [docs/SISTER_COURSES.md](docs/SISTER_COURSES.md) for how a course is put together.
+
 Aprende is a free, open, no-account language course that actually teaches Spanish instead of leaving you with a bag of random words. Short daily lessons and a visible rhythm keep you coming back, and underneath them sits a real course: explicit grammar, a frequency-ordered vocabulary of thousands of words, spaced repetition that runs the show, a reading library with coverage metering, a full verb trainer, a pronunciation course, and checkpoint exams for every CEFR level.
 
 There is **no AI and no server**: every explanation was written by hand, and every piece of feedback is computed on your device by deterministic Spanish language engines (a full conjugator, accent rules, an agreement checker, a dictionary built from the course vocabulary) plus your browser's free text-to-speech and speech recognition.
