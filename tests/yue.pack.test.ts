@@ -45,6 +45,8 @@ describe('Jyutping', () => {
     expect(toSyllables('呢位')).toEqual(['nei1', 'wai2'])
     expect(toSyllables('你呢')).toEqual(['nei5', 'ne1'])
     expect(toSyllables('二十分鐘')).toEqual(['ji6', 'sap6', 'fan1', 'zung1'])
+    expect(toSyllables('灣仔海邊有')).toEqual(['waan1', 'zai2', 'hoi2', 'bin1', 'jau5'])
+    expect(toSyllables('你試吓')).toEqual(['nei5', 'si3', 'haa5'])
   })
   it('uses an authored sentence reading over the automatic one', () => {
     useSentenceReadings([{ es: '陳太請我飲茶。', jp: 'can4 taai2 ceng2 ngo5 jam2 caa4' }])

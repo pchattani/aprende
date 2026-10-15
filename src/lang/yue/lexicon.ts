@@ -62,6 +62,9 @@ export interface Segment {
   kind: 'han' | 'jp' | 'latin' | 'num' | 'space' | 'punct'
 }
 
+/** One-character words that usually stand alone, so ties split next to them (海邊 + 有, 有 + 時間). */
+const STANDALONE = new Set([...'有冇係喺我你佢唔都就好嘅咗緊過去嚟同定又再仲會要想識畀等可'])
+
 /**
  * Segment a run of Han characters into the fewest words; ties go to course vocabulary,
  * then to the longer final word (有時間 → 有 + 時間, not 有時 + 間).
@@ -69,7 +72,7 @@ export interface Segment {
 function segmentHan(run: string): Segment[] {
   const chars = [...run]
   const n = chars.length
-  // best[j]: cost of chars[0..j): 10 per segment, minus 1 per course word
+  // best[j]: cost of chars[0..j): 20 per segment, minus 2 per course word, minus 1 for a common one-character word
   const best: number[] = new Array(n + 1).fill(Infinity)
   const back: number[] = new Array(n + 1).fill(0)
   best[0] = 0
@@ -77,7 +80,7 @@ function segmentHan(run: string): Segment[] {
     for (let len = Math.min(maxLen, j); len >= 1; len--) {
       const w = chars.slice(j - len, j).join('')
       if (len > 1 && !WORDS.has(w)) continue
-      const cost = best[j - len]! + 10 - (COURSE.has(w) ? 1 : 0)
+      const cost = best[j - len]! + 20 - (COURSE.has(w) ? 2 : 0) - (len === 1 && STANDALONE.has(w) ? 1 : 0)
       if (cost < best[j]!) {
         best[j] = cost
         back[j] = len
@@ -115,6 +118,10 @@ export function segment(text: string): Segment[] {
     if (s.kind !== 'han' || s.text !== '呢') return
     const next = out.slice(i + 1).find((x) => x.kind !== 'space')
     if (next?.kind === 'han' && !PARTICLES.has(next.text)) s.syl = ['nei1']
+  })
+  // 吓 after a verb is the suffix haa5 "a bit" (試吓, 行吓); on its own it is the interjection haa2
+  out.forEach((s, i) => {
+    if (s.kind === 'han' && s.text === '吓' && out[i - 1]?.kind === 'han') s.syl = ['haa5']
   })
   // an authored sentence reading replaces the automatic one, character by character
   const own = SENTENCES.get(hanKey(text))
