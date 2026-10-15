@@ -1,0 +1,286 @@
+id: b2.u08
+title: "Mi disse che sarebbe tornato"
+lessons:
+  - id: b2.u08.l1
+    title: Ha detto che sarebbe venuto
+    teach: [g.reported-speech-advanced]
+    vocab: [w.dichiarazione, w.comunicato, w.conferenza-stampa, w.portavoce, w.ministro, w.ministero, w.presidente, w.parlamento, w.senato, w.deputato, w.senatore, w.opposizione, w.maggioranza, w.minoranza, w.coalizione, w.crisi-di-governo, w.dimettersi-dal-governo, w.conte, w.malta, w.mucchio, w.ispettore]
+    tip: "Reporting with a past verb shifts every tense one step back: è → era, ho finito → aveva finito, verrò / verrei → sarebbe venuto, sia → fosse."
+    sentences:
+      - { es: "Il ministro ha detto che avrebbe visitato Alberobello in primavera.", en: "The minister said he would visit Alberobello in the spring.", altEs: ["Il ministro disse che avrebbe visitato Alberobello in primavera."], grammar: [g.reported-speech-advanced], vocab: [w.ministro], error: { wrong: "Il ministro ha detto che visiterebbe Alberobello in primavera.", explain: "The future seen from the past is the condizionale passato in Italian: avrebbe visitato, not visiterebbe.", grammar: g.reported-speech-advanced } }
+      - { es: "La portavoce ha spiegato che il presidente era stanco e che non avrebbe parlato.", en: "The spokeswoman explained that the president was tired and wouldn't speak.", altEs: ["La portavoce ha spiegato che il presidente era stanco e non avrebbe parlato."], grammar: [g.reported-speech-advanced], vocab: [w.portavoce, w.presidente] }
+      - { es: "«Non ho mai ricevuto quella lettera», ha dichiarato il deputato.", en: "'I have never received that letter,' the MP declared.", grammar: [g.reported-speech-advanced], vocab: [w.deputato, w.dichiarazione], transform: { instruction: "Report it: Il deputato ha dichiarato che…", answer: "Il deputato ha dichiarato che non aveva mai ricevuto quella lettera.", alt: ["Il deputato dichiarò che non aveva mai ricevuto quella lettera."] } }
+      - { es: "Il presidente ha detto che pensava che la crisi di governo fosse ormai finita.", en: "The president said he thought the government crisis was over by now.", grammar: [g.reported-speech-advanced, g.concordanza-congiuntivo], vocab: [w.presidente, w.crisi-di-governo] }
+      - { es: "Nel comunicato si leggeva che il ministero avrebbe risposto entro venerdì.", en: "The press release said the ministry would reply by Friday.", altEs: ["Nel comunicato c'era scritto che il ministero avrebbe risposto entro venerdì."], grammar: [g.reported-speech-advanced], vocab: [w.comunicato, w.ministero] }
+      - { es: "L'opposizione ha detto che, se avesse avuto la maggioranza, avrebbe cambiato la legge.", en: "The opposition said that if it had had the majority, it would have changed the law.", altEs: ["L'opposizione ha detto che se avesse avuto la maggioranza avrebbe cambiato la legge."], altEn: ["The opposition said that if it had the majority, it would change the law."], grammar: [g.reported-speech-advanced, g.periodo-ipotetico-3], vocab: [w.opposizione, w.maggioranza], note: "A reported hypothesis becomes type 3: se avesse avuto…, avrebbe cambiato." }
+      - { es: "Il presidente del Senato ha ordinato ai senatori di fare silenzio.", en: "The President of the Senate ordered the senators to be quiet.", grammar: [g.reported-speech-advanced, g.reported-commands-di], vocab: [w.senato, w.senatore] }
+      - { es: "«Votate subito!», ha detto il ministro ai deputati.", en: "'Vote at once!' the minister told the MPs.", grammar: [g.reported-speech-advanced], vocab: [w.ministro, w.deputato], transform: { instruction: "Report the order: Il ministro ha detto ai deputati…", answer: "Il ministro ha detto ai deputati di votare subito.", alt: ["Il ministro ha detto ai deputati che votassero subito."] } }
+      - { es: "In conferenza stampa la ministra ha annunciato che si sarebbe dimessa dal governo.", en: "At the press conference the minister announced that she would resign from the government.", altEs: ["Alla conferenza stampa la ministra ha annunciato che si sarebbe dimessa dal governo."], grammar: [g.reported-speech-advanced], vocab: [w.conferenza-stampa, w.dimettersi-dal-governo] }
+      - { es: "La coalizione ha fatto sapere che non voleva una crisi di governo.", en: "The coalition let it be known that it didn't want a government crisis.", grammar: [g.reported-speech-advanced], vocab: [w.coalizione, w.crisi-di-governo] }
+      - { es: "Un giornalista mi ha chiesto se il Parlamento avesse già votato la legge.", en: "A journalist asked me whether Parliament had already voted on the law.", altEs: ["Un giornalista mi ha chiesto se il Parlamento aveva già votato la legge."], grammar: [g.reported-speech-advanced, g.reported-questions], vocab: [w.parlamento] }
+      - { es: "La minoranza sosteneva che la dichiarazione del ministro fosse falsa.", en: "The minority maintained that the minister's statement was false.", grammar: [g.reported-speech-advanced], vocab: [w.minoranza, w.dichiarazione] }
+      - { es: "Mi aveva promesso che mi avrebbe scritto dopo la conferenza stampa.", en: "He had promised me he would write to me after the press conference.", altEs: ["Mi aveva promesso di scrivermi dopo la conferenza stampa."], altEn: ["She had promised she'd write to me after the press conference."], grammar: [g.reported-speech-advanced], vocab: [w.conferenza-stampa] }
+      - { es: "Che cosa ha detto il presidente nella sua dichiarazione?", en: "What did the president say in his statement?", altEs: ["Cosa ha detto il presidente nella sua dichiarazione?"], altEn: ["What did the president say in her statement?"], grammar: [g.question-words], vocab: [w.presidente, w.dichiarazione] }
+      - { es: "Ci ha spiegato che, se non si fosse dimesso, ci sarebbe stata una crisi di governo.", en: "He explained to us that if he hadn't resigned, there would have been a government crisis.", grammar: [g.reported-speech-advanced, g.periodo-ipotetico-3], vocab: [w.crisi-di-governo] }
+    exchanges:
+      - q: { es: "Che cosa ha detto il ministro?", en: "What did the minister say?" }
+        a: { es: "Ha detto che sarebbe venuto ad Alberobello a maggio.", en: "He said he would come to Alberobello in May." }
+        alt: ["Che sarebbe venuto a maggio.", "Ha detto che sarebbe arrivato ad Alberobello a maggio."]
+        grammar: [g.reported-speech-advanced]
+        vocab: [w.ministro]
+      - q: { es: "Il presidente parlerà oggi?", en: "Will the president speak today?" }
+        a: { es: "No, il portavoce ha detto che non avrebbe fatto dichiarazioni.", en: "No, the spokesman said he wouldn't make any statements." }
+        alt: ["No, secondo il portavoce non parlerà.", "No, il portavoce ha detto di no."]
+        grammar: [g.reported-speech-advanced]
+        vocab: [w.portavoce, w.dichiarazione]
+      - q: { es: "Perché si è dimessa la ministra?", en: "Why did the minister resign?" }
+        a: { es: "Ha spiegato che non era più d'accordo con la maggioranza.", en: "She explained that she no longer agreed with the majority." }
+        alt: ["Ha detto che non era più d'accordo con la maggioranza.", "Non era più d'accordo con la maggioranza."]
+        grammar: [g.reported-speech-advanced]
+        vocab: [w.maggioranza]
+      - q: { es: "L'opposizione voterà la legge?", en: "Will the opposition vote for the law?" }
+        a: { es: "Hanno detto che l'avrebbero votata solo se fosse stata cambiata.", en: "They said they'd vote for it only if it were changed." }
+        alt: ["Hanno detto di no.", "Solo se la cambiano, hanno detto."]
+        grammar: [g.reported-speech-advanced]
+        vocab: [w.opposizione]
+      - q: { es: "Che cosa ti ha chiesto il giornalista?", en: "What did the journalist ask you?" }
+        a: { es: "Mi ha chiesto se pensavo che il governo sarebbe caduto.", en: "He asked me whether I thought the government would fall." }
+        alt: ["Se secondo me il governo sarebbe caduto.", "Mi ha chiesto se il governo sarebbe caduto."]
+        grammar: [g.reported-speech-advanced, g.reported-questions]
+        vocab: []
+    texts:
+      - title: "Dal telegiornale"
+        es: ["Il portavoce del ministero ha dichiarato che il ministro non si sarebbe dimesso.", "Ha aggiunto che la coalizione era unita e che non c'era nessuna crisi di governo.", "L'opposizione, però, ha detto che non ci credeva."]
+        en: ["The ministry's spokesman declared that the minister would not resign.", "He added that the coalition was united and that there was no government crisis.", "The opposition, however, said it didn't believe it."]
+        grammar: [g.reported-speech-advanced]
+        vocab: [w.portavoce, w.ministero, w.coalizione, w.crisi-di-governo, w.opposizione]
+      - title: "Messaggio a un'amica"
+        es: ["In conferenza stampa il senatore ha detto che sarebbe venuto alla festa dei trulli.", "Gli ho chiesto se potevo intervistarlo e mi ha risposto di sì!", "Ha detto che mi avrebbe aspettato davanti al municipio."]
+        en: ["At the press conference the senator said he would come to the trulli festival.", "I asked him whether I could interview him and he said yes!", "He said he would wait for me in front of the town hall."]
+        grammar: [g.reported-speech-advanced, g.reported-questions]
+        vocab: [w.senatore, w.conferenza-stampa]
+    spicy:
+      - { es: "Mi avevi detto che saresti venuto solo per un caffè, e sono le due di notte.", en: "You told me you'd come just for a coffee, and it's two in the morning.", altEs: ["Mi avevi detto che saresti venuta solo per un caffè, e sono le due di notte."], grammar: [g.reported-speech-advanced], vocab: [] }
+      - { es: "Ha detto che avrebbe cucinato per me; poi ha ordinato la pizza.", en: "He said he'd cook for me; then he ordered pizza.", altEs: ["Ha detto che avrebbe cucinato per me, poi ha ordinato la pizza."], altEn: ["She said she'd cook for me; then she ordered pizza."], grammar: [g.reported-speech-advanced], vocab: [] }
+      - { es: "Le ho chiesto se fosse libera sabato e mi ha risposto che dipendeva da me.", en: "I asked her if she was free on Saturday and she said it depended on me.", altEs: ["Le ho chiesto se era libera sabato e mi ha risposto che dipendeva da me.", "Gli ho chiesto se fosse libero sabato e mi ha risposto che dipendeva da me."], grammar: [g.reported-speech-advanced, g.reported-questions], vocab: [] }
+      - { es: "In una dichiarazione ufficiale mi ha comunicato che mi avrebbe aspettato sotto casa alle otto.", en: "In an official statement he informed me that he would wait for me outside my house at eight.", grammar: [g.reported-speech-advanced], vocab: [w.dichiarazione] }
+      - { es: "Il mio portavoce ha detto che non avrei fatto commenti, ma sei bellissima.", en: "My spokesperson said I wouldn't be commenting, but you're beautiful.", altEs: ["Il mio portavoce ha detto che non avrei fatto commenti, ma sei bellissimo."], grammar: [g.reported-speech-advanced], vocab: [w.portavoce] }
+
+  - id: b2.u08.l2
+    title: Il giorno dopo, quella sera
+    teach: [g.deictic-shift]
+    vocab: [w.il-giorno-seguente, w.la-settimana-dopo, w.quella-sera, w.il-mese-precedente, w.seguente, w.indomani, w.quel-momento, w.sindaca, w.consiglio-comunale, w.regionale, w.elettore, w.campagna-elettorale, w.candidato, w.eleggere, w.votazione, w.referendum, w.consigliere]
+    tip: "When time and place have changed, shift them too: domani → il giorno dopo, ieri → il giorno prima, fa → prima, qui → lì, questo → quello."
+    sentences:
+      - { es: "«Parto domani», disse la sindaca.", en: "'I'm leaving tomorrow,' said the mayor.", grammar: [g.deictic-shift], vocab: [w.sindaca], transform: { instruction: "Report it: La sindaca disse che…", answer: "La sindaca disse che sarebbe partita il giorno dopo.", alt: ["La sindaca disse che sarebbe partita il giorno seguente.", "La sindaca disse che sarebbe partita l'indomani."] } }
+      - { es: "Il candidato ha detto che quella sera avrebbe parlato in piazza.", en: "The candidate said that he would speak in the square that evening.", altEs: ["Il candidato disse che quella sera avrebbe parlato in piazza."], grammar: [g.deictic-shift, g.reported-speech-advanced], vocab: [w.candidato, w.quella-sera] }
+      - { es: "Mi raccontò che il mese precedente aveva vinto le elezioni regionali.", en: "She told me that the month before she had won the regional elections.", altEs: ["Mi raccontò che il mese prima aveva vinto le elezioni regionali."], altEn: ["He told me that the previous month he had won the regional elections."], grammar: [g.deictic-shift], vocab: [w.il-mese-precedente, w.regionale] }
+      - { es: "Ha spiegato che in quel momento non poteva rispondere.", en: "He explained that he couldn't answer at that moment.", altEs: ["Ha spiegato che allora non poteva rispondere."], grammar: [g.deictic-shift], vocab: [w.quel-momento] }
+      - { es: "Il consiglio comunale ha deciso che la votazione si sarebbe tenuta la settimana dopo.", en: "The town council decided that the vote would be held the following week.", altEs: ["Il consiglio comunale ha deciso che la votazione si sarebbe tenuta la settimana seguente."], grammar: [g.deictic-shift], vocab: [w.consiglio-comunale, w.votazione, w.la-settimana-dopo] }
+      - { es: "Mi scrisse che lì la campagna elettorale era molto tranquilla.", en: "She wrote to me that the election campaign there was very quiet.", altEs: ["Mi scrisse che la campagna elettorale lì era molto tranquilla."], grammar: [g.deictic-shift], vocab: [w.campagna-elettorale] }
+      - { es: "Disse che due anni prima si era candidato a sindaco.", en: "He said that two years before he had run for mayor.", altEs: ["Disse che due anni prima era stato candidato sindaco."], grammar: [g.deictic-shift], vocab: [w.candidato], error: { wrong: "Disse che due anni fa si era candidato a sindaco.", explain: "In reported speech about the past, fa becomes prima: due anni prima.", grammar: g.deictic-shift } }
+      - { es: "L'indomani tutti i giornali parlavano del referendum.", en: "The next day all the newspapers were talking about the referendum.", altEs: ["Il giorno dopo tutti i giornali parlavano del referendum."], grammar: [g.deictic-shift], vocab: [w.indomani, w.referendum] }
+      - { es: "Mi disse che quel giorno avrebbe votato per la prima volta.", en: "He told me he would vote for the first time that day.", altEs: ["Mi ha detto che quel giorno avrebbe votato per la prima volta."], grammar: [g.deictic-shift], vocab: [w.votazione] }
+      - { es: "Stamattina Giulia mi ha detto che stasera viene anche lei in piazza.", en: "This morning Giulia told me she's coming to the square tonight too.", grammar: [g.deictic-shift], vocab: [], note: "Said this morning about tonight: nothing has changed, so no shift." }
+      - { es: "La sindaca ha promesso che quei trulli sarebbero stati restaurati entro l'anno.", en: "The mayor promised that those trulli would be restored within the year.", grammar: [g.deictic-shift, g.reported-speech-advanced], vocab: [w.sindaca], note: "Direct speech: «Questi trulli saranno restaurati»." }
+      - { es: "Disse che sarebbe andato a trovarli il mese seguente.", en: "He said he would go and see them the following month.", altEs: ["Disse che sarebbe andato a trovarli il mese dopo."], grammar: [g.deictic-shift], vocab: [w.seguente], note: "Direct speech: «Verrò a trovarvi il mese prossimo.» Venire often becomes andare." }
+      - { es: "«Ieri ho votato al referendum», mi ha detto Paolo.", en: "'I voted in the referendum yesterday,' Paolo told me.", grammar: [g.deictic-shift], vocab: [w.referendum], transform: { instruction: "Report it, a week later: Paolo mi ha detto che…", answer: "Paolo mi ha detto che il giorno prima aveva votato al referendum.", alt: ["Paolo mi ha detto che il giorno precedente aveva votato al referendum."] } }
+      - { es: "Chi hanno eletto gli elettori di Alberobello?", en: "Who did the voters of Alberobello elect?", grammar: [g.question-words], vocab: [w.eleggere, w.elettore] }
+      - { es: "La campagna elettorale durò un mese e la votazione si tenne la settimana seguente.", en: "The election campaign lasted a month and the vote was held the following week.", grammar: [g.deictic-shift, g.passato-remoto-recognition], vocab: [w.campagna-elettorale, w.votazione, w.seguente] }
+    exchanges:
+      - q: { es: "Che cosa ti ha detto Marta al telefono?", en: "What did Marta tell you on the phone?" }
+        a: { es: "Che quella sera non sarebbe uscita perché doveva studiare.", en: "That she wouldn't go out that evening because she had to study." }
+        alt: ["Mi ha detto che quella sera non sarebbe uscita.", "Che non sarebbe uscita."]
+        grammar: [g.deictic-shift]
+        vocab: [w.quella-sera]
+      - q: { es: "Quando hanno detto che si vota?", en: "When did they say the vote is?" }
+        a: { es: "Hanno detto che la votazione ci sarebbe stata la settimana dopo.", en: "They said the vote would be the following week." }
+        alt: ["La settimana dopo.", "Hanno detto la settimana seguente."]
+        grammar: [g.deictic-shift]
+        vocab: [w.votazione, w.la-settimana-dopo]
+      - q: { es: "Ti ricordi che cosa disse il candidato quella sera in piazza?", en: "Do you remember what the candidate said that evening in the square?" }
+        a: { es: "Disse che il giorno seguente avrebbe presentato il suo programma.", en: "He said that the next day he would present his programme." }
+        alt: ["Che l'indomani avrebbe presentato il programma.", "Disse che il giorno dopo avrebbe presentato il suo programma."]
+        grammar: [g.deictic-shift]
+        vocab: [w.candidato, w.il-giorno-seguente]
+      - q: { es: "La sindaca è ancora in ufficio?", en: "Is the mayor still in her office?" }
+        a: { es: "No, ha detto che in quel momento stava andando al consiglio comunale.", en: "No, she said she was on her way to the town council at that moment." }
+        alt: ["No, è al consiglio comunale.", "No, è andata al consiglio comunale."]
+        grammar: [g.deictic-shift, g.stare-gerundio-past]
+        vocab: [w.sindaca, w.consiglio-comunale]
+      - q: { es: "Quando è stato eletto il presidente della Regione?", en: "When was the president of the Region elected?" }
+        a: { es: "Due anni fa, con il sessanta per cento dei voti.", en: "Two years ago, with sixty per cent of the votes." }
+        alt: ["Due anni fa.", "È stato eletto due anni fa."]
+        grammar: [g.passive-essere]
+        vocab: [w.eleggere]
+    texts:
+      - title: "Il racconto del nonno"
+        es: ["Mio nonno mi raccontò che il giorno del referendum del 1946 aveva fatto la fila per due ore.", "Mi disse che quella sera tutto il paese era in piazza.", "Qualche giorno dopo, aggiunse, l'Italia era diventata una repubblica."]
+        en: ["My grandfather told me that on the day of the 1946 referendum he had queued for two hours.", "He told me that the whole village was in the square that evening.", "A few days later, he added, Italy had become a republic."]
+        grammar: [g.deictic-shift, g.reported-speech-advanced]
+        vocab: [w.referendum, w.quella-sera]
+      - title: "Dal verbale del consiglio comunale"
+        es: ["La sindaca ha comunicato che il giorno seguente sarebbero cominciati i lavori sui trulli.", "Ha precisato che il mese precedente la Regione aveva approvato i fondi.", "Nessun consigliere ha votato contro."]
+        en: ["The mayor announced that work on the trulli would begin the following day.", "She specified that the Region had approved the funds the previous month.", "No councillor voted against."]
+        grammar: [g.deictic-shift]
+        vocab: [w.sindaca, w.il-giorno-seguente, w.il-mese-precedente, w.consigliere]
+    spicy:
+      - { es: "Mi disse che quella sera sarebbe rimasto a casa, e invece l'ho trovato in pista a ballare.", en: "He told me he'd stay home that evening, and instead I found him dancing on the dance floor.", altEs: ["Mi disse che quella sera sarebbe rimasta a casa, e invece l'ho trovata in pista a ballare."], grammar: [g.deictic-shift], vocab: [w.quella-sera] }
+      - { es: "Mi ha promesso che l'indomani mi avrebbe richiamato: sono passati tre giorni.", en: "He promised he'd call me back the next day: three days have gone by.", altEs: ["Mi ha promesso che il giorno dopo mi avrebbe richiamata: sono passati tre giorni."], grammar: [g.deictic-shift], vocab: [w.indomani] }
+      - { es: "Le ho detto che quel vestito le stava benissimo, e lei mi ha risposto che lo sapeva già.", en: "I told her that dress looked great on her, and she replied that she already knew.", grammar: [g.deictic-shift], vocab: [] }
+      - { es: "Il candidato ideale? Uno che il giorno seguente si ricordi ancora il mio nome.", en: "The ideal candidate? Someone who still remembers my name the next day.", altEs: ["Il candidato ideale? Uno che il giorno dopo si ricordi ancora il mio nome."], grammar: [g.deictic-shift], vocab: [w.candidato, w.il-giorno-seguente] }
+      - { es: "Mi ha scritto che lì, a Bari, non c'era nessuno simpatico come me.", en: "She wrote to me that there, in Bari, there was nobody as nice as me.", grammar: [g.deictic-shift], vocab: [] }
+
+  - id: b2.u08.l3
+    title: Ha negato di saperlo
+    teach: [g.reporting-verbs]
+    vocab: [w.smentire, w.smentita, w.confermare, w.conferma, w.rassicurare, w.minacciare, w.minaccia, w.accusare, w.accusa, w.difendere, w.difesa, w.replicare, w.ribattere, w.obiettare, w.lamentare, w.garantire, w.assicurare, w.esclamare, w.mormorare, w.balbettare, w.borbottare, w.spiegare-che, w.passione]
+    tip: "Pick the verb that tells the story: ha ammesso di, ha negato che + congiuntivo, ha promesso di, ha minacciato di, ha ribattuto che."
+    sentences:
+      - { es: "Il ministro ha smentito di aver incontrato l'imprenditore.", en: "The minister denied having met the businessman.", altEs: ["Il ministro ha smentito di avere incontrato l'imprenditore."], grammar: [g.reporting-verbs, g.past-infinitive], vocab: [w.smentire] }
+      - { es: "Ha negato che i soldi fossero spariti.", en: "She denied that the money had disappeared.", grammar: [g.reporting-verbs], vocab: [], error: { wrong: "Ha negato che i soldi erano spariti.", explain: "Negare che is followed by the congiuntivo: fossero spariti.", grammar: g.reporting-verbs } }
+      - { es: "La portavoce ha confermato che il presidente sarebbe arrivato alle dieci.", en: "The spokeswoman confirmed that the president would arrive at ten.", grammar: [g.reporting-verbs, g.reported-speech-advanced], vocab: [w.confermare] }
+      - { es: "Il medico mi ha assicurato che non era niente di grave.", en: "The doctor assured me it was nothing serious.", altEs: ["Il medico mi ha garantito che non era niente di grave."], grammar: [g.reporting-verbs], vocab: [w.assicurare] }
+      - { es: "Il pilota ha rassicurato i passeggeri: l'aereo sarebbe atterrato in orario.", en: "The pilot reassured the passengers: the plane would land on time.", grammar: [g.reporting-verbs], vocab: [w.rassicurare] }
+      - { es: "Il proprietario ha minacciato di chiamare la polizia.", en: "The owner threatened to call the police.", grammar: [g.reporting-verbs], vocab: [w.minacciare] }
+      - { es: "Lo hanno accusato di aver copiato la tesi.", en: "They accused him of having copied his thesis.", altEs: ["L'hanno accusato di aver copiato la tesi."], grammar: [g.reporting-verbs, g.past-infinitive], vocab: [w.accusare] }
+      - { es: "L'avvocato ha difeso il suo cliente con grande passione.", en: "The lawyer defended his client with great passion.", grammar: [g.reporting-verbs], vocab: [w.difendere, w.passione] }
+      - { es: "Quando gli ho chiesto i soldi, ha ribattuto che me li aveva già dati.", en: "When I asked him for the money, he retorted that he'd already given it to me.", grammar: [g.reporting-verbs, g.combined-pronouns-past], vocab: [w.ribattere] }
+      - { es: "Qualcuno potrebbe obiettare che i trulli sono ormai solo un'attrazione turistica.", en: "Someone might object that the trulli are now just a tourist attraction.", grammar: [g.reporting-verbs], vocab: [w.obiettare] }
+      - { es: "I residenti lamentano il rumore dei turisti di notte.", en: "The residents complain about the noise of tourists at night.", altEs: ["I residenti si lamentano del rumore dei turisti di notte."], grammar: [g.reporting-verbs], vocab: [w.lamentare] }
+      - { es: "«Che meraviglia!», esclamò quando vide i tetti dei trulli.", en: "'How wonderful!' she exclaimed when she saw the trulli roofs.", grammar: [g.reporting-verbs, g.passato-remoto-recognition], vocab: [w.esclamare] }
+      - { es: "Ha mormorato qualcosa che non ho capito e se n'è andato.", en: "He murmured something I didn't understand and left.", grammar: [g.reporting-verbs, g.pronominal-verbs], vocab: [w.mormorare] }
+      - { es: "«Non ho preso io i soldi», ha detto Paolo.", en: "'I didn't take the money,' Paolo said.", grammar: [g.reporting-verbs], vocab: [], transform: { instruction: "Report it with negare: Paolo ha negato…", answer: "Paolo ha negato di aver preso i soldi.", alt: ["Paolo ha negato di avere preso i soldi.", "Paolo ha negato di aver preso lui i soldi."] } }
+      - { es: "«Ti chiamo stasera», mi ha detto Anna.", en: "'I'll call you tonight,' Anna told me.", grammar: [g.reporting-verbs], vocab: [], transform: { instruction: "Report it with promettere, a week later", answer: "Anna mi ha promesso di chiamarmi quella sera.", alt: ["Anna mi ha promesso che mi avrebbe chiamato quella sera.", "Anna mi ha promesso che mi avrebbe chiamata quella sera."] } }
+      - { es: "Si è rifiutato di rispondere alle domande dei giornalisti.", en: "He refused to answer the journalists' questions.", altEs: ["Si è rifiutata di rispondere alle domande dei giornalisti."], grammar: [g.reporting-verbs], vocab: [], error: { wrong: "Si è rifiutato a rispondere alle domande dei giornalisti.", explain: "Rifiutarsi takes di + infinitive: si è rifiutato di rispondere.", grammar: g.reporting-verbs } }
+    exchanges:
+      - q: { es: "Il ministro ha confermato la notizia?", en: "Did the minister confirm the news?" }
+        a: { es: "No, anzi: l'ha smentita in un comunicato.", en: "No, quite the opposite: he denied it in a press release." }
+        alt: ["No, l'ha smentita.", "No, ha pubblicato una smentita."]
+        grammar: [g.reporting-verbs]
+        vocab: [w.confermare, w.smentire]
+      - q: { es: "Che cosa ti ha detto il meccanico?", en: "What did the mechanic tell you?" }
+        a: { es: "Mi ha garantito che la macchina sarebbe stata pronta il giorno dopo.", en: "He guaranteed me the car would be ready the next day." }
+        alt: ["Mi ha assicurato che sarà pronta domani.", "Che la macchina sarebbe stata pronta il giorno dopo."]
+        grammar: [g.reporting-verbs]
+        vocab: [w.garantire]
+      - q: { es: "Perché il vicino era arrabbiato?", en: "Why was the neighbour angry?" }
+        a: { es: "Si lamentava che la nostra musica era troppo alta.", en: "He was complaining that our music was too loud." }
+        alt: ["Per la musica: era troppo alta.", "Si lamentava della nostra musica."]
+        grammar: [g.reporting-verbs]
+        vocab: [w.lamentare]
+      - q: { es: "Che cosa ha risposto l'avvocato all'accusa?", en: "How did the lawyer respond to the charge?" }
+        a: { es: "Ha replicato che il suo cliente quella sera era a Bari.", en: "He replied that his client was in Bari that evening." }
+        alt: ["Ha detto che il suo cliente era a Bari.", "Ha ribattuto che il cliente quella sera era a Bari."]
+        grammar: [g.reporting-verbs, g.deictic-shift]
+        vocab: [w.accusa, w.replicare]
+      - q: { es: "Ha detto qualcosa quando ha visto il conto?", en: "Did he say anything when he saw the bill?" }
+        a: { es: "Ha borbottato qualcosa sui prezzi, ma ha pagato.", en: "He muttered something about the prices, but he paid." }
+        alt: ["Ha borbottato un po', ma ha pagato.", "No, ha pagato senza dire niente."]
+        grammar: [g.reporting-verbs]
+        vocab: [w.borbottare]
+    texts:
+      - title: "Cronaca locale"
+        es: ["Il proprietario di un trullo ha accusato un'agenzia di aver affittato la sua casa senza permesso.", "L'agenzia ha smentito e ha replicato che aveva un contratto regolare.", "Il caso sarà discusso in tribunale a giugno."]
+        en: ["The owner of a trullo has accused an agency of renting out his house without permission.", "The agency denied it and replied that it had a proper contract.", "The case will be heard in court in June."]
+        grammar: [g.reporting-verbs]
+        vocab: [w.accusare, w.smentire, w.replicare]
+      - title: "Recensione"
+        es: ["Il gestore ci aveva garantito una camera tranquilla.", "Quando ci siamo lamentati del rumore, ha ribattuto che era agosto.", "Non torneremo."]
+        en: ["The manager had guaranteed us a quiet room.", "When we complained about the noise, he retorted that it was August.", "We won't be back."]
+        grammar: [g.reporting-verbs]
+        vocab: [w.garantire, w.ribattere]
+    spicy:
+      - { es: "Ha negato di essersi innamorato, ma diventa rosso ogni volta che entro.", en: "He denied having fallen in love, but he goes red every time I walk in.", altEs: ["Ha negato di essersi innamorata, ma diventa rossa ogni volta che entro."], grammar: [g.reporting-verbs, g.past-infinitive], vocab: [] }
+      - { es: "Mi ha accusato di avergli rubato il cuore; mi sono difesa dicendo che me l'aveva dato lui.", en: "He accused me of stealing his heart; I defended myself by saying he'd given it to me.", grammar: [g.reporting-verbs], vocab: [w.accusare, w.difendere] }
+      - { es: "Ha mormorato «buonanotte» in un modo che mi ha tenuto sveglio fino all'alba.", en: "She murmured 'goodnight' in a way that kept me awake until dawn.", altEs: ["Ha mormorato «buonanotte» in un modo che mi ha tenuta sveglia fino all'alba."], grammar: [g.reporting-verbs], vocab: [w.mormorare] }
+      - { es: "Mi ha garantito che sa ballare la pizzica; il suo piede sinistro l'ha smentito.", en: "He guaranteed me he can dance the pizzica; his left foot proved him wrong.", grammar: [g.reporting-verbs], vocab: [w.garantire, w.smentire, w.pizzica] }
+      - { es: "Ha balbettato tre volte il mio nome prima di chiedermi di uscire. Adorabile.", en: "He stammered my name three times before asking me out. Adorable.", altEs: ["Ha balbettato il mio nome tre volte prima di chiedermi di uscire. Adorabile."], grammar: [g.reporting-verbs], vocab: [w.balbettare] }
+
+  - id: b2.u08.l4
+    title: Le notizie dal Palazzo
+    teach: [g.reported-speech-advanced, g.reporting-verbs]
+    vocab: [w.riforma, w.legislatura, w.legge-di-bilancio, w.democrazia, w.democratico, w.costituzione, w.istituzione, w.cittadinanza, w.diplomazia, w.ambasciata, w.ambasciatore, w.accordo, w.trattato, w.negoziare, w.trattativa, w.vigore, w.disposto, w.giurare]
+    tip: "General truths don't need to shift: Diceva che la democrazia è fragile. Everything tied to the moment of speaking does."
+    sentences:
+      - { es: "Il governo aveva promesso che la riforma sarebbe stata approvata entro la fine della legislatura.", en: "The government had promised that the reform would be passed before the end of the parliament.", grammar: [g.reported-speech-advanced, g.reporting-verbs], vocab: [w.riforma, w.legislatura] }
+      - { es: "«Le trattative vanno avanti», ha dichiarato l'ambasciatore.", en: "'The negotiations are continuing,' the ambassador declared.", grammar: [g.reported-speech-advanced], vocab: [w.trattativa, w.ambasciatore], transform: { instruction: "Report it: L'ambasciatore ha dichiarato che…", answer: "L'ambasciatore ha dichiarato che le trattative andavano avanti.", alt: ["L'ambasciatore dichiarò che le trattative andavano avanti."] } }
+      - { es: "La ministra ha ammesso che la legge di bilancio non era perfetta.", en: "The minister admitted that the budget law wasn't perfect.", grammar: [g.reporting-verbs], vocab: [w.legge-di-bilancio] }
+      - { es: "Il presidente ha ricordato che la Costituzione era entrata in vigore il primo gennaio 1948.", en: "The president recalled that the Constitution had come into force on 1 January 1948.", grammar: [g.reported-speech-advanced], vocab: [w.costituzione, w.vigore] }
+      - { es: "All'ambasciata mi hanno spiegato che per la cittadinanza avrei dovuto aspettare due anni.", en: "At the embassy they explained that I would have to wait two years for citizenship.", altEs: ["In ambasciata mi hanno spiegato che per la cittadinanza avrei dovuto aspettare due anni."], grammar: [g.reported-speech-advanced, g.modals-condizionale-passato], vocab: [w.ambasciata, w.cittadinanza] }
+      - { es: "I due paesi hanno firmato un trattato, ma l'opposizione sostiene che non sia valido.", en: "The two countries have signed a treaty, but the opposition maintains it isn't valid.", grammar: [g.reporting-verbs], vocab: [w.trattato, w.valido] }
+      - { es: "Il mio professore diceva sempre che la democrazia è fragile.", en: "My teacher always used to say that democracy is fragile.", altEs: ["Il mio professore diceva sempre che la democrazia era fragile."], grammar: [g.reported-speech-advanced], vocab: [w.democrazia], note: "A general truth can stay in the present after a past reporting verb." }
+      - { es: "«È disposto a negoziare?», gli chiesero.", en: "'Are you willing to negotiate?' they asked him.", grammar: [g.reported-speech-advanced, g.reported-questions], vocab: [w.negoziare, w.disposto], transform: { instruction: "Report the question: Gli chiesero se…", answer: "Gli chiesero se fosse disposto a negoziare.", alt: ["Gli chiesero se era disposto a negoziare."] } }
+      - { es: "L'accordo, ha precisato il portavoce, sarebbe stato firmato il giorno seguente.", en: "The agreement, the spokesman specified, would be signed the following day.", grammar: [g.reported-speech-advanced, g.deictic-shift], vocab: [w.accordo, w.il-giorno-seguente] }
+      - { es: "Hanno accusato il governo di non aver ascoltato le istituzioni regionali.", en: "They accused the government of not having listened to the regional institutions.", grammar: [g.reporting-verbs, g.past-infinitive], vocab: [w.istituzione, w.regionale] }
+      - { es: "Mi ha suggerito di leggere la Costituzione prima del referendum.", en: "She suggested I read the Constitution before the referendum.", grammar: [g.reporting-verbs], vocab: [w.costituzione, w.referendum] }
+      - { es: "Il giornalista pensava che la trattativa fosse ormai finita.", en: "The journalist thought the negotiation was over by then.", grammar: [g.reported-speech-advanced, g.concordanza-congiuntivo], vocab: [w.trattativa], error: { wrong: "Il giornalista pensava che la trattativa sia ormai finita.", explain: "After a past verb (pensava) the congiuntivo shifts to the imperfetto: fosse.", grammar: g.reported-speech-advanced } }
+      - { es: "L'ambasciatore disse che la diplomazia era l'arte di saper aspettare.", en: "The ambassador said that diplomacy was the art of knowing how to wait.", altEs: ["L'ambasciatore disse che la diplomazia è l'arte di saper aspettare."], grammar: [g.reported-speech-advanced], vocab: [w.ambasciatore, w.diplomazia] }
+      - { es: "È davvero democratico un paese in cui vota solo la metà dei cittadini?", en: "Is a country where only half the citizens vote really democratic?", grammar: [g.relative-cui], vocab: [w.democratico] }
+      - { es: "Chi ha negoziato l'accordo per l'Italia?", en: "Who negotiated the agreement for Italy?", grammar: [g.question-words], vocab: [w.negoziare, w.accordo] }
+    exchanges:
+      - q: { es: "Che cosa ha detto il governo sulla riforma?", en: "What did the government say about the reform?" }
+        a: { es: "Ha promesso che l'avrebbe presentata entro l'estate.", en: "It promised it would present it by the summer." }
+        alt: ["Ha promesso di presentarla entro l'estate.", "Che la presenterà entro l'estate."]
+        grammar: [g.reported-speech-advanced, g.reporting-verbs]
+        vocab: [w.riforma]
+      - q: { es: "Come vanno le trattative?", en: "How are the negotiations going?" }
+        a: { es: "L'ambasciatore ha detto che l'accordo era vicino.", en: "The ambassador said the agreement was close." }
+        alt: ["Bene: secondo l'ambasciatore l'accordo è vicino.", "Pare che l'accordo sia vicino."]
+        grammar: [g.reported-speech-advanced]
+        vocab: [w.trattativa, w.ambasciatore, w.accordo]
+      - q: { es: "Hai già la cittadinanza italiana?", en: "Have you got Italian citizenship yet?" }
+        a: { es: "Non ancora: in ambasciata mi hanno detto che ci sarebbero voluti due anni.", en: "Not yet: at the embassy they told me it would take two years." }
+        alt: ["Non ancora, ci vogliono due anni.", "No, mi hanno detto che ci vorranno due anni."]
+        grammar: [g.reported-speech-advanced, g.metterci-volerci]
+        vocab: [w.cittadinanza, w.ambasciata]
+      - q: { es: "Che cosa ha detto l'opposizione della legge di bilancio?", en: "What did the opposition say about the budget law?" }
+        a: { es: "Ha detto che era ingiusta e che non l'avrebbe votata.", en: "It said it was unfair and that it wouldn't vote for it." }
+        alt: ["Che era ingiusta.", "Ha detto che non l'avrebbe votata."]
+        grammar: [g.reported-speech-advanced]
+        vocab: [w.legge-di-bilancio, w.opposizione]
+      - q: { es: "Ti è piaciuta la conferenza sulla Costituzione?", en: "Did you enjoy the lecture on the Constitution?" }
+        a: { es: "Sì, la professoressa ha spiegato che era nata da un accordo tra partiti molto diversi.", en: "Yes, the professor explained that it was born of an agreement between very different parties." }
+        alt: ["Sì, molto interessante.", "Sì, ha spiegato come era nata."]
+        grammar: [g.reported-speech-advanced]
+        vocab: [w.costituzione, w.accordo]
+    texts:
+      - title: "Notizia flash"
+        es: ["Roma, ore 18.", "Il ministro degli Esteri ha annunciato che l'accordo era stato firmato.", "Ha aggiunto che il trattato sarebbe entrato in vigore il mese seguente."]
+        en: ["Rome, 6 p.m.", "The Foreign Minister announced that the agreement had been signed.", "He added that the treaty would come into force the following month."]
+        grammar: [g.reported-speech-advanced, g.deictic-shift]
+        vocab: [w.accordo, w.trattato, w.seguente]
+      - title: "Lettera di un ascoltatore"
+        es: ["Durante la campagna elettorale, il candidato aveva giurato che avrebbe difeso la sanità pubblica.", "Ora sostiene di non averlo mai detto.", "Chi ha ragione?"]
+        en: ["During the election campaign, the candidate had sworn he would defend public health care.", "Now he claims he never said it.", "Who's right?"]
+        grammar: [g.reported-speech-advanced, g.reporting-verbs]
+        vocab: [w.campagna-elettorale, w.giurare, w.difendere]
+    spicy:
+      - { es: "Abbiamo negoziato a lungo: lui lava i piatti e io scelgo il film. Un trattato storico.", en: "We negotiated for ages: he washes up and I choose the film. A historic treaty.", altEs: ["Abbiamo negoziato a lungo: lei lava i piatti e io scelgo il film. Un trattato storico."], grammar: [g.reporting-verbs], vocab: [w.negoziare, w.trattato] }
+      - { es: "Mi ha detto che la nostra era una relazione democratica: decide lui, ma io posso votare.", en: "He told me ours was a democratic relationship: he decides, but I get to vote.", grammar: [g.reported-speech-advanced], vocab: [w.democratico] }
+      - { es: "Ci serve un accordo: tu mi chiami prima di mezzanotte e io prometto di non arrabbiarmi.", en: "We need a deal: you call me before midnight and I promise not to get cross.", grammar: [g.reporting-verbs], vocab: [w.accordo] }
+      - { es: "Mi aveva giurato che sarebbe arrivato puntuale; la diplomazia mi impedisce di dire a che ora è arrivato.", en: "He had sworn he'd be on time; diplomacy prevents me from saying what time he arrived.", altEs: ["Mi aveva giurato che sarebbe arrivata puntuale; la diplomazia mi impedisce di dire a che ora è arrivata."], grammar: [g.reported-speech-advanced, g.reporting-verbs], vocab: [w.giurare, w.diplomazia] }
+      - { es: "La trattativa per il primo bacio è durata tutta la sera; alla fine ho ceduto io.", en: "The negotiations over the first kiss went on all evening; in the end I was the one who gave in.", grammar: [g.passato-prossimo-essere], vocab: [w.trattativa] }
+
+dialogues:
+  - id: b2.u08.d1
+    title: La leggenda dei trulli
+    context: In Alberobello, Sara asks Nicola, who rents out a trullo to tourists, about the story behind the dry-stone houses.
+    lines:
+      - { speaker: Sara, es: "Scusi, è vero che una volta i trulli si potevano smontare in poche ore?", en: "Excuse me, is it true that the trulli could once be taken apart in a few hours?" }
+      - { speaker: Nicola, es: "Così si racconta. Il conte aveva ordinato ai contadini di costruire senza malta.", en: "So the story goes. The count had ordered the peasants to build without mortar." }
+      - { speaker: Sara, es: "E perché mai?", en: "And why on earth?" }
+      - { speaker: Nicola, es: "Perché il re faceva pagare una tassa sulle nuove case. Il conte disse ai contadini che, se fossero arrivati gli ispettori, avrebbero dovuto smontare i tetti.", en: "Because the king charged a tax on new houses. The count told the peasants that if the inspectors came, they would have to take the roofs apart." }
+      - { speaker: Sara, es: "E gli ispettori non si accorgevano di niente?", en: "And the inspectors didn't notice anything?" }
+      - { speaker: Nicola, es: "Secondo la leggenda trovavano solo mucchi di pietre, e il conte giurava che lì non abitava nessuno.", en: "According to the legend they only found heaps of stones, and the count swore that nobody lived there." }
+      - { speaker: Sara, es: "Che furbo! E poi che cosa è successo?", en: "How crafty! And then what happened?" }
+      - { speaker: Nicola, es: "Alla fine del Settecento gli abitanti scrissero al re e gli chiesero di liberarli dal conte. E il re accettò.", en: "At the end of the eighteenth century the inhabitants wrote to the king and asked him to free them from the count. And the king agreed." }
+      - { speaker: Sara, es: "Quindi da quel momento potevano costruire come volevano?", en: "So from that moment they could build as they wanted?" }
+      - { speaker: Nicola, es: "Esatto. Mia nonna mi raccontava che in paese avevano festeggiato per una settimana.", en: "Exactly. My grandmother used to tell me the town had celebrated for a week." }
+      - { speaker: Sara, es: "Mi ha convinto: domani torno a vedere il Trullo Sovrano.", en: "You've convinced me: tomorrow I'll come back to see the Trullo Sovrano." }
+      - { speaker: Nicola, es: "Brava. È l'unico trullo a due piani: mi dirà poi se Le è piaciuto.", en: "Good for you. It's the only two-storey trullo: you'll have to tell me whether you liked it." }
+    questions:
+      - { q: "Secondo la leggenda, perché i contadini costruivano senza malta?", options: ["Perché la malta costava troppo", "Per poter smontare le case e non pagare la tassa", "Perché il re lo vietava"], answer: 1, explain: "The count wanted the houses to be dismantled when the tax inspectors came." }
+      - { q: "Che cosa trovavano gli ispettori?", options: ["Case piene di gente", "Solo mucchi di pietre", "Il conte che dormiva"], answer: 1, explain: "'…trovavano solo mucchi di pietre.'" }
+      - { q: "A chi scrissero gli abitanti alla fine del Settecento?", options: ["Al re", "Al papa", "Al conte"], answer: 0, explain: "They wrote to the king and asked to be freed from the count." }
+      - { q: "Che cosa farà Sara il giorno dopo?", options: ["Partirà per Bari", "Tornerà a vedere il Trullo Sovrano", "Scriverà alla sindaca"], answer: 1, explain: "'Domani torno a vedere il Trullo Sovrano.'" }
