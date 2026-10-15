@@ -1,0 +1,302 @@
+id: a1.u08
+title: "Quanto costa?"
+lessons:
+  - id: a1.u08.l1
+    title: Al mercato di Campo de' Fiori
+    teach: [g.quanto-costa]
+    vocab: [w.quanto-costa, w.quantè, w.costare, w.comprare, w.vendere, w.mercato, w.bancarella, w.chilo, w.etto, w.litro, w.pacco, w.scatola, w.sacchetto, w.fragola, w.pesca, w.ciliegia, w.uva, w.banana, w.basta, w.nientaltro, w.desiderare, w.fare-la-spesa]
+    tip: "Quanto costa? for one thing, quanto costano? for several. At the deli counter, un etto = 100 grams."
+    sentences:
+      - { es: "Quanto costano le fragole?", en: "How much are the strawberries?", altEs: ["Quanto vengono le fragole?", "Le fragole quanto costano?"], grammar: [g.quanto-costa], vocab: [w.costare, w.fragola],
+          error: { wrong: "Quanto costa le fragole?", explain: "Le fragole is plural, so the verb is plural too: quanto costano?", grammar: g.quanto-costa } }
+      - { es: "Costano tre euro al chilo.", en: "They cost three euros a kilo.", altEs: ["Tre euro al chilo.", "Vengono tre euro al chilo."], altEn: ["They're three euros a kilo."], grammar: [g.quanto-costa], vocab: [w.costare, w.chilo, w.euro] }
+      - { es: "Mi dà mezzo chilo di ciliegie, per favore?", en: "Can I have half a kilo of cherries, please?", altEs: ["Vorrei mezzo chilo di ciliegie, per favore.", "Mi dà mezzo chilo di ciliegie?"], altEn: ["Could I have half a kilo of cherries, please?"], grammar: [g.quanto-costa, g.tu-vs-lei], vocab: [w.chilo, w.ciliegia, w.mezzo] }
+      - { es: "Quanto costa un chilo di pesche?", en: "How much is a kilo of peaches?", altEs: ["Quanto viene un chilo di pesche?"], grammar: [g.quanto-costa], vocab: [w.quanto-costa, w.pesca],
+          transform: { instruction: "Ask about 'le pesche' (no kilo)", answer: "Quanto costano le pesche?", alt: ["Le pesche quanto costano?"], en: "How much are the peaches?" } }
+      - { es: "Vorrei due etti di prosciutto e un etto di formaggio.", en: "I'd like 200 grams of ham and 100 grams of cheese.", altEs: ["Mi dà due etti di prosciutto e un etto di formaggio?"], grammar: [g.quanto-costa, g.volere-vorrei], vocab: [w.etto, w.prosciutto, w.formaggio] }
+      - { es: "Altro? — No, basta così, grazie.", en: "Anything else? — No, that's all, thanks.", altEs: ["Altro? — Nient'altro, grazie.", "Altro? — No, grazie, basta così."], grammar: [g.quanto-costa], vocab: [w.basta, w.altro] }
+      - { es: "Quant'è in tutto?", en: "How much is it altogether?", altEs: ["Quanto fa in tutto?", "Quanto Le devo?"], altEn: ["How much is that altogether?"], grammar: [g.quanto-costa], vocab: [w.quantè] }
+      - { es: "Sono dodici euro e cinquanta.", en: "That's twelve euros fifty.", altEs: ["Dodici euro e cinquanta.", "Fanno dodici euro e cinquanta."], grammar: [g.quanto-costa, g.numbers-0-100], vocab: [w.euro, w.dodici] }
+      - { es: "Quante banane vuole? — Ne prendo sei.", en: "How many bananas would you like? — I'll take six.", altEs: ["Quante banane desidera? — Ne prendo sei."], grammar: [g.quanto-costa, g.question-words], vocab: [w.banana, w.quanto] }
+      - { es: "Quanta uva vuole, signora?", en: "How many grapes would you like, madam?", altEs: ["Quanta uva desidera, signora?", "Signora, quanta uva vuole?"], altEn: ["How much grapes would you like, madam?"], grammar: [g.quanto-costa, g.tu-vs-lei], vocab: [w.uva, w.quanto],
+          error: { wrong: "Quanto uva vuole, signora?", explain: "As an adjective quanto agrees with the noun: uva is feminine singular, so quanta uva.", grammar: g.quanto-costa } }
+      - { es: "Il sabato mattina faccio la spesa a Campo de' Fiori.", en: "On Saturday mornings I do the food shopping at Campo de' Fiori.", altEs: ["Faccio la spesa a Campo de' Fiori il sabato mattina."], grammar: [g.fare-present, g.days-months], vocab: [w.fare-la-spesa, w.mercato] }
+      - { es: "Al mercato vendono frutta, verdura e fiori.", en: "At the market they sell fruit, vegetables and flowers.", altEs: ["Al mercato si vendono frutta, verdura e fiori."], grammar: [g.present-ere-ire], vocab: [w.vendere, w.mercato, w.frutta, w.verdura] }
+      - { es: "Mi dà un sacchetto, per favore?", en: "Can I have a bag, please?", altEs: ["Posso avere un sacchetto, per favore?", "Un sacchetto, per favore."], grammar: [g.tu-vs-lei], vocab: [w.sacchetto] }
+      - { es: "Desidera altro, signora?", en: "Would you like anything else, madam?", altEs: ["Altro, signora?", "Le serve altro, signora?"], grammar: [g.tu-vs-lei], vocab: [w.desiderare, w.altro] }
+      - { es: "Compro un litro di latte e un pacco di pasta.", en: "I'm buying a litre of milk and a packet of pasta.", altEs: ["Prendo un litro di latte e un pacco di pasta."], grammar: [g.present-are, g.partitive-di], vocab: [w.comprare, w.litro, w.pacco] }
+      - { es: "Oggi le ciliegie costano troppo!", en: "Cherries cost too much today!", altEs: ["Le ciliegie oggi costano troppo!"], altEn: ["The cherries are too expensive today!"], grammar: [g.quanto-costa, g.molto-poco-troppo], vocab: [w.ciliegia, w.costare],
+          transform: { instruction: "Change to 'l'uva'", answer: "Oggi l'uva costa troppo!", alt: ["L'uva oggi costa troppo!"], en: "Grapes cost too much today!" } }
+    exchanges:
+      - q: { es: "Buongiorno, desidera?", en: "Good morning, what would you like?" }
+        a: { es: "Vorrei un chilo di pesche, per favore.", en: "I'd like a kilo of peaches, please." }
+        alt: ["Mezzo chilo di fragole, per favore.", "Quanto costano le ciliegie?"]
+        grammar: [g.volere-vorrei, g.quanto-costa]
+        vocab: [w.desiderare, w.chilo, w.pesca]
+      - q: { es: "Quanto costano le fragole?", en: "How much are the strawberries?" }
+        a: { es: "Quattro euro al chilo.", en: "Four euros a kilo." }
+        alt: ["Costano quattro euro al chilo.", "Tre euro e cinquanta."]
+        grammar: [g.quanto-costa]
+        vocab: [w.fragola, w.costare]
+      - q: { es: "Altro?", en: "Anything else?" }
+        a: { es: "No, basta così, grazie.", en: "No, that's all, thanks." }
+        alt: ["Nient'altro, grazie.", "Sì, un po' d'uva."]
+        grammar: [g.quanto-costa]
+        vocab: [w.basta, w.nientaltro]
+      - q: { es: "Quant'è in tutto?", en: "How much is it altogether?" }
+        a: { es: "Sono otto euro e venti.", en: "That's eight euros twenty." }
+        alt: ["Otto euro e venti.", "Fanno otto euro e venti."]
+        grammar: [g.quanto-costa]
+        vocab: [w.quantè, w.euro]
+      - q: { es: "Quante pesche vuole?", en: "How many peaches would you like?" }
+        a: { es: "Ne prendo quattro, grazie.", en: "I'll take four, thanks." }
+        alt: ["Quattro, grazie.", "Mezzo chilo."]
+        grammar: [g.quanto-costa]
+        vocab: [w.pesca, w.quanto]
+    texts:
+      - title: "La lista della spesa"
+        es: ["Un chilo di pesche e mezzo chilo di ciliegie.", "Due etti di prosciutto.", "Un litro di latte e un pacco di pasta."]
+        en: ["A kilo of peaches and half a kilo of cherries.", "200 grams of ham.", "A litre of milk and a packet of pasta."]
+        grammar: [g.quanto-costa]
+        vocab: [w.chilo, w.etto, w.litro, w.pacco]
+      - title: "Campo de' Fiori"
+        es: ["Ogni mattina a Campo de' Fiori c'è il mercato.", "Le bancarelle vendono frutta, verdura e fiori.", "Le fragole costano poco, ma le ciliegie sono care."]
+        en: ["Every morning there's a market in Campo de' Fiori.", "The stalls sell fruit, vegetables and flowers.", "The strawberries don't cost much, but the cherries are expensive."]
+        grammar: [g.quanto-costa, g.c-e-ci-sono]
+        vocab: [w.mercato, w.bancarella, w.fragola, w.ciliegia]
+    spicy:
+      - { es: "Quanto costa un caffè con te? — Per te è gratis.", en: "How much is a coffee with you? — For you it's free.", grammar: [g.quanto-costa], vocab: [w.quanto-costa, w.gratis] }
+      - { es: "Le fragole sono dolci, ma tu sei più dolce.", en: "The strawberries are sweet, but you're sweeter.", grammar: [g.adjective-agreement], vocab: [w.fragola, w.dolce] }
+      - { es: "Mi dà mezzo chilo di ciliegie e il Suo numero di telefono?", en: "Can I have half a kilo of cherries and your phone number?", grammar: [g.quanto-costa, g.tu-vs-lei], vocab: [w.ciliegia, w.numero, w.telefono] }
+      - { es: "Non compro niente: vengo al mercato solo per vedere te.", en: "I'm not buying anything: I come to the market just to see you.", grammar: [g.negation], vocab: [w.comprare, w.mercato] }
+      - { es: "Quant'è? — Per te, un invito a cena.", en: "How much is it? — For you, a dinner invitation.", grammar: [g.quanto-costa], vocab: [w.quantè, w.invito] }
+  - id: a1.u08.l2
+    title: Cento, mille, un milione
+    teach: [g.numbers-100-plus]
+    vocab: [w.cento, w.mille, w.milione, w.euro, w.centesimo, w.soldi, w.prezzo, w.caro, w.economico, w.saldi, w.sconto, w.cassa, w.scontrino, w.carta-di-credito, w.contanti, w.bancomat, w.resto, w.spendere, w.moneta, w.francobollo, w.timbro, w.veloce]
+    tip: "Numbers are one word (centocinquanta); mille becomes -mila (duemila); cento and mille take no un."
+    sentences:
+      - { es: "Questa borsa costa centocinquanta euro.", en: "This bag costs a hundred and fifty euros.", altEs: ["La borsa costa centocinquanta euro."], grammar: [g.numbers-100-plus, g.quanto-costa], vocab: [w.cento, w.borsa],
+          transform: { instruction: "Change to 'these shoes'", answer: "Queste scarpe costano centocinquanta euro.", en: "These shoes cost a hundred and fifty euros." } }
+      - { es: "Duecento euro? È troppo caro!", en: "Two hundred euros? It's too expensive!", altEs: ["Duecento euro? Costa troppo!"], grammar: [g.numbers-100-plus], vocab: [w.cento, w.caro] }
+      - { es: "Mille grazie, signora!", en: "Thanks a million, madam!", altEs: ["Grazie mille, signora!"], altEn: ["Thank you so much, madam!"], grammar: [g.numbers-100-plus], vocab: [w.mille] }
+      - { es: "A Roma ci sono quasi tre milioni di persone.", en: "There are almost three million people in Rome.", altEs: ["Ci sono quasi tre milioni di persone a Roma."], grammar: [g.numbers-100-plus, g.c-e-ci-sono], vocab: [w.milione, w.persona, w.quasi],
+          error: { wrong: "A Roma ci sono quasi tre milioni persone.", explain: "Milione is a noun, so it needs di: tre milioni di persone.", grammar: g.numbers-100-plus } }
+      - { es: "Posso pagare con la carta di credito?", en: "Can I pay by credit card?", altEs: ["Posso pagare con la carta?", "Si può pagare con la carta di credito?"], grammar: [g.potere-dovere], vocab: [w.carta-di-credito, w.pagare] }
+      - { es: "C'è un bancomat qui vicino?", en: "Is there a cash machine near here?", altEs: ["Scusi, c'è un bancomat qui vicino?"], altEn: ["Is there an ATM near here?"], grammar: [g.c-e-ci-sono], vocab: [w.bancomat] }
+      - { es: "Ecco il resto e lo scontrino.", en: "Here's your change and the receipt.", altEs: ["Ecco lo scontrino e il resto."], grammar: [g.articles], vocab: [w.resto, w.scontrino] }
+      - { es: "Questo maglione costa poco: è molto economico.", en: "This jumper doesn't cost much: it's very cheap.", altEs: ["Questo maglione costa poco, è molto economico."], grammar: [g.molto-poco-troppo], vocab: [w.economico, w.maglione],
+          transform: { instruction: "Make it plural", answer: "Questi maglioni costano poco: sono molto economici.", alt: ["Questi maglioni costano poco, sono molto economici."], en: "These jumpers don't cost much: they're very cheap." } }
+      - { es: "Ci sono i saldi: tutto con il trenta per cento di sconto.", en: "It's the sales: everything thirty per cent off.", altEs: ["Ci sono i saldi: c'è il trenta per cento di sconto su tutto."], grammar: [g.numbers-100-plus, g.c-e-ci-sono], vocab: [w.saldi, w.sconto, w.trenta] }
+      - { es: "Quanti soldi spendi al mese per mangiare?", en: "How much money do you spend a month on food?", altEs: ["Quanto spendi al mese per mangiare?"], grammar: [g.quanto-costa, g.question-words], vocab: [w.soldi, w.spendere, w.mese] }
+      - { es: "Il prezzo è di trecento euro, ma c'è uno sconto.", en: "The price is three hundred euros, but there's a discount.", altEs: ["Il prezzo è trecento euro, ma c'è uno sconto."], grammar: [g.numbers-100-plus], vocab: [w.prezzo, w.sconto, w.cento] }
+      - { es: "Mi dà due francobolli per l'Inghilterra?", en: "Can I have two stamps for England?", altEs: ["Vorrei due francobolli per l'Inghilterra."], grammar: [g.tu-vs-lei], vocab: [w.francobollo] }
+      - { es: "Non ho monete, scusi: ho solo cinquanta euro.", en: "I haven't got any coins, sorry: I've only got fifty euros.", altEs: ["Scusi, non ho monete: ho solo cinquanta euro."], grammar: [g.negation], vocab: [w.moneta, w.cinquanta] }
+      - { es: "Mille euro al mese è poco a Roma.", en: "A thousand euros a month isn't much in Rome.", altEs: ["A Roma mille euro al mese sono pochi."], grammar: [g.numbers-100-plus], vocab: [w.mille, w.mese],
+          error: { wrong: "Un mille euro al mese è poco a Roma.", explain: "Cento and mille never take un: mille euro, cento persone.", grammar: g.numbers-100-plus } }
+      - { es: "Qui la cassa è veloce e i prezzi sono buoni.", en: "Here the checkout is quick and the prices are good.", altEs: ["La cassa qui è veloce e i prezzi sono buoni."], grammar: [g.adjective-agreement], vocab: [w.veloce, w.cassa, w.prezzo] }
+      - { es: "Ogni tappa del viaggio ha un timbro sul passaporto.", en: "Every stop on the journey has a stamp in the passport.", altEs: ["Ogni tappa del viaggio ha il suo timbro sul passaporto."], grammar: [g.articulated-prepositions], vocab: [w.timbro, w.tappa] }
+    exchanges:
+      - q: { es: "Posso pagare con la carta?", en: "Can I pay by card?" }
+        a: { es: "Sì, certo, o in contanti.", en: "Yes, of course, or in cash." }
+        alt: ["No, mi dispiace, solo contanti.", "Sì, certo."]
+        grammar: [g.potere-dovere]
+        vocab: [w.carta, w.contanti]
+      - q: { es: "Quanto costa questa giacca?", en: "How much is this jacket?" }
+        a: { es: "Costa centoventi euro, ma oggi c'è il venti per cento di sconto.", en: "It costs a hundred and twenty euros, but today there's twenty per cent off." }
+        alt: ["Centoventi euro.", "Costa centoventi euro."]
+        grammar: [g.numbers-100-plus, g.quanto-costa]
+        vocab: [w.cento, w.sconto]
+      - q: { es: "Ha il resto da cinquanta?", en: "Do you have change for fifty?" }
+        a: { es: "Sì, nessun problema.", en: "Yes, no problem." }
+        alt: ["Mi dispiace, non ho monete.", "Sì, certo."]
+        grammar: [g.tu-vs-lei]
+        vocab: [w.resto, w.moneta]
+      - q: { es: "Vuole lo scontrino?", en: "Would you like the receipt?" }
+        a: { es: "Sì, grazie.", en: "Yes, thanks." }
+        alt: ["No, grazie.", "Sì, per favore."]
+        grammar: [g.volere-vorrei]
+        vocab: [w.scontrino]
+      - q: { es: "Quanto costa il tuo appartamento al mese?", en: "How much does your flat cost a month?" }
+        a: { es: "Novecento euro: è caro!", en: "Nine hundred euros: it's expensive!" }
+        alt: ["Mille euro al mese.", "Troppo!"]
+        grammar: [g.numbers-100-plus]
+        vocab: [w.cento, w.caro, w.appartamento]
+    texts:
+      - title: "Cartello in negozio"
+        es: ["Saldi! Tutto al cinquanta per cento.", "Si può pagare con la carta di credito o con il bancomat.", "La cassa è al primo piano."]
+        en: ["Sale! Everything half price.", "You can pay by credit card or debit card.", "The till is on the first floor."]
+        grammar: [g.numbers-100-plus]
+        vocab: [w.saldi, w.carta-di-credito, w.bancomat, w.cassa]
+      - title: "Il conto"
+        es: ["Il maglione costa sessanta euro e la sciarpa venti.", "In tutto sono ottanta euro.", "Pago con cento euro e il resto è venti euro."]
+        en: ["The jumper costs sixty euros and the scarf twenty.", "Altogether it's eighty euros.", "I pay with a hundred euros and the change is twenty euros."]
+        grammar: [g.numbers-100-plus, g.quanto-costa]
+        vocab: [w.cento, w.resto]
+    spicy:
+      - { es: "Mille grazie per la cena. La prossima volta pago io.", en: "Thanks a million for dinner. Next time I'm paying.", altEs: ["Grazie mille per la cena. La prossima volta pago io."], grammar: [g.numbers-100-plus], vocab: [w.mille, w.pagare] }
+      - { es: "Non ho soldi, ma ho tanto tempo per te.", en: "I don't have money, but I have lots of time for you.", grammar: [g.molto-poco-troppo], vocab: [w.soldi, w.tempo] }
+      - { es: "Per il tuo numero di telefono pago anche mille euro.", en: "I'd even pay a thousand euros for your phone number.", grammar: [g.numbers-100-plus], vocab: [w.mille, w.numero] }
+      - { es: "C'è uno sconto per i ragazzi carini?", en: "Is there a discount for cute guys?", altEs: ["C'è uno sconto per le ragazze carine?"], grammar: [g.c-e-ci-sono], vocab: [w.sconto, w.carino] }
+      - { es: "Lo scontrino? No, grazie. Il tuo numero? Sì, grazie.", en: "The receipt? No, thanks. Your number? Yes, please.", grammar: [g.lo-prendo], vocab: [w.scontrino, w.numero] }
+  - id: a1.u08.l3
+    title: Di che colore è?
+    teach: [g.colours]
+    vocab: [w.colore, w.rosso, w.giallo, w.verde, w.blu, w.azzurro, w.bianco, w.nero, w.grigio, w.marrone, w.rosa, w.viola, w.arancione, w.chiaro, w.scuro, w.maglietta, w.maglione, w.camicia, w.sciarpa, w.cappello, w.borsa]
+    tip: "Colours follow the noun and agree (una maglietta rossa), but blu, rosa and viola never change."
+    sentences:
+      - { es: "Di che colore è la tua borsa?", en: "What colour is your bag?", altEs: ["Che colore è la tua borsa?", "La tua borsa di che colore è?"], grammar: [g.colours, g.question-words], vocab: [w.colore, w.borsa] }
+      - { es: "È nera e bianca.", en: "It's black and white.", altEs: ["È bianca e nera."], grammar: [g.colours], vocab: [w.nero, w.bianco] }
+      - { es: "Cerco una maglietta verde.", en: "I'm looking for a green T-shirt.", altEs: ["Sto cercando una maglietta verde."], grammar: [g.colours], vocab: [w.maglietta, w.verde],
+          transform: { instruction: "Make it plural", answer: "Cerco delle magliette verdi.", alt: ["Cerco magliette verdi."], en: "I'm looking for some green T-shirts." } }
+      - { es: "Mi piacciono le scarpe rosa.", en: "I like pink shoes.", altEs: ["Le scarpe rosa mi piacciono."], altEn: ["I like the pink shoes."], grammar: [g.colours, g.piacere-plural], vocab: [w.rosa, w.scarpa],
+          error: { wrong: "Mi piacciono le scarpe rose.", explain: "Rosa (pink) is invariable: le scarpe rosa.", grammar: g.colours } }
+      - { es: "Ha una camicia bianca?", en: "Do you have a white shirt?", altEs: ["Avete una camicia bianca?"], grammar: [g.colours, g.tu-vs-lei], vocab: [w.camicia, w.bianco],
+          transform: { instruction: "Ask about trousers (i pantaloni)", answer: "Ha dei pantaloni bianchi?", alt: ["Ha i pantaloni bianchi?"], en: "Do you have white trousers?" } }
+      - { es: "Il cielo di Roma è azzurro.", en: "The sky in Rome is blue.", altEs: ["A Roma il cielo è azzurro."], grammar: [g.colours], vocab: [w.azzurro, w.cielo] }
+      - { es: "Preferisco i pantaloni grigio scuro.", en: "I prefer the dark grey trousers.", altEs: ["Preferisco quei pantaloni grigio scuro."], grammar: [g.colours, g.present-isc], vocab: [w.grigio, w.scuro, w.pantaloni] }
+      - { es: "Il maglione blu costa meno di quello marrone.", en: "The blue jumper costs less than the brown one.", altEs: ["Il maglione blu costa meno del maglione marrone."], grammar: [g.colours], vocab: [w.blu, w.marrone, w.meno] }
+      - { es: "Porta sempre un cappello giallo.", en: "He always wears a yellow hat.", altEs: ["Lui porta sempre un cappello giallo."], altEn: ["She always wears a yellow hat."], grammar: [g.colours, g.frequency-adverbs], vocab: [w.cappello, w.giallo] }
+      - { es: "Le arance sono arancioni e le fragole sono rosse.", en: "Oranges are orange and strawberries are red.", altEs: ["Le arance sono arancioni, le fragole sono rosse."], grammar: [g.colours, g.adjective-agreement], vocab: [w.arancione, w.rosso, w.arancia] }
+      - { es: "Ho una sciarpa viola e un cappotto nero.", en: "I have a purple scarf and a black coat.", altEs: ["Io ho una sciarpa viola e un cappotto nero."], grammar: [g.colours], vocab: [w.sciarpa, w.viola, w.cappotto] }
+      - { es: "Vorrei una camicia azzurro chiaro.", en: "I'd like a light blue shirt.", altEs: ["Vorrei una camicia celeste."], grammar: [g.colours, g.volere-vorrei], vocab: [w.azzurro, w.chiaro],
+          error: { wrong: "Vorrei una camicia azzurra chiara.", explain: "A colour with chiaro or scuro doesn't change: una camicia azzurro chiaro.", grammar: g.colours } }
+      - { es: "Qual è il tuo colore preferito?", en: "What's your favourite colour?", altEs: ["Che colore preferisci?"], grammar: [g.question-words], vocab: [w.colore, w.quale] }
+      - { es: "Il rosso mi piace molto, il verde no.", en: "I like red a lot, but not green.", altEs: ["Mi piace molto il rosso, il verde no."], grammar: [g.colours, g.piacere-intro], vocab: [w.rosso, w.verde] }
+      - { es: "Le magliette bianche costano poco.", en: "The white T-shirts don't cost much.", altEs: ["Le magliette bianche sono economiche."], grammar: [g.colours, g.adjective-agreement], vocab: [w.maglietta, w.bianco] }
+      - { es: "Mia figlia ha gli occhi azzurri come il cielo.", en: "My daughter has eyes as blue as the sky.", altEs: ["Mia figlia ha gli occhi azzurri, come il cielo."], grammar: [g.colours], vocab: [w.azzurro, w.figlio] }
+    exchanges:
+      - q: { es: "Di che colore è la tua macchina?", en: "What colour is your car?" }
+        a: { es: "È bianca.", en: "It's white." }
+        alt: ["Bianca.", "È grigio scuro."]
+        grammar: [g.colours]
+        vocab: [w.colore, w.bianco]
+      - q: { es: "Ha questa maglietta in blu?", en: "Do you have this T-shirt in blue?" }
+        a: { es: "Sì, in blu e in nero.", en: "Yes, in blue and in black." }
+        alt: ["No, solo in rosso.", "Sì, ecco."]
+        grammar: [g.colours]
+        vocab: [w.maglietta, w.blu]
+      - q: { es: "Ti piace il giallo?", en: "Do you like yellow?" }
+        a: { es: "No, preferisco il verde.", en: "No, I prefer green." }
+        alt: ["Sì, molto!", "Non tanto."]
+        grammar: [g.colours, g.piacere-intro]
+        vocab: [w.giallo, w.verde]
+      - q: { es: "Qual è il tuo colore preferito?", en: "What's your favourite colour?" }
+        a: { es: "Il viola. E il tuo?", en: "Purple. And yours?" }
+        alt: ["Il blu.", "Mi piace il rosso."]
+        grammar: [g.colours]
+        vocab: [w.colore, w.viola]
+      - q: { es: "Che cosa porti stasera?", en: "What are you wearing tonight?" }
+        a: { es: "Il vestito nero e le scarpe rosse.", en: "The black dress and the red shoes." }
+        alt: ["Una camicia bianca e i jeans.", "Non lo so ancora."]
+        grammar: [g.colours]
+        vocab: [w.nero, w.rosso, w.portare]
+    texts:
+      - title: "I colori del mercato"
+        es: ["Al mercato ci sono tanti colori.", "Le fragole sono rosse, le banane gialle e l'uva è verde.", "Che bello!"]
+        en: ["At the market there are lots of colours.", "The strawberries are red, the bananas yellow and the grapes green.", "How lovely!"]
+        grammar: [g.colours]
+        vocab: [w.colore, w.rosso, w.giallo, w.verde]
+      - title: "Messaggio di Sara"
+        es: ["Stasera porto il vestito blu.", "E tu? Porti la camicia bianca?", "Ci vediamo alle otto a Campo de' Fiori."]
+        en: ["Tonight I'm wearing the blue dress.", "What about you? Are you wearing the white shirt?", "See you at eight in Campo de' Fiori."]
+        grammar: [g.colours]
+        vocab: [w.blu, w.camicia, w.bianco]
+    spicy:
+      - { es: "Il rosso ti sta benissimo.", en: "Red really suits you.", altEs: ["Il rosso ti sta molto bene."], grammar: [g.colours, g.stare-present], vocab: [w.rosso] }
+      - { es: "Nero o rosso? Con te tutti i colori sono belli.", en: "Black or red? With you all colours are beautiful.", grammar: [g.colours], vocab: [w.nero, w.rosso, w.colore] }
+      - { es: "Perché sei rosso? Fa caldo... o sono io?", en: "Why are you red? Is it hot... or is it me?", altEs: ["Perché sei rossa? Fa caldo... o sono io?"], grammar: [g.colours, g.question-words], vocab: [w.rosso] }
+      - { es: "Mi piace la tua sciarpa viola. Posso tenerla io?", en: "I like your purple scarf. Can I keep it?", grammar: [g.colours, g.lo-prendo], vocab: [w.sciarpa, w.viola, w.tenere] }
+      - { es: "Stasera porto il vestito rosso: sei pronto?", en: "Tonight I'm wearing the red dress: are you ready?", altEs: ["Stasera porto la camicia rossa: sei pronta?"], grammar: [g.colours], vocab: [w.vestito, w.rosso, w.pronto] }
+  - id: a1.u08.l4
+    title: Quella gonna? La prendo!
+    teach: [g.quello-forms, g.lo-prendo]
+    vocab: [w.quello, w.lo, w.taglia, w.camerino, w.vestito, w.vestiti, w.pantaloni, w.jeans, w.gonna, w.giacca, w.cappotto, w.scarpa, w.stivale, w.scegliere, w.tutto]
+    tip: "Quello before a noun changes like the article (quel, quello, quell', quei, quegli). Lo, la, li, le go before the verb: la prendo."
+    sentences:
+      - { es: "Quanto costa quel cappello nero?", en: "How much is that black hat?", altEs: ["Quel cappello nero quanto costa?"], grammar: [g.quello-forms, g.quanto-costa], vocab: [w.quello, w.cappello],
+          transform: { instruction: "Make it plural", answer: "Quanto costano quei cappelli neri?", alt: ["Quei cappelli neri quanto costano?"], en: "How much are those black hats?" } }
+      - { es: "Mi piacciono quegli stivali marroni.", en: "I like those brown boots.", altEs: ["Quegli stivali marroni mi piacciono."], grammar: [g.quello-forms, g.piacere-plural], vocab: [w.quello, w.stivale, w.marrone],
+          error: { wrong: "Mi piacciono quelli stivali marroni.", explain: "Before a noun, quello changes like the article: gli stivali → quegli stivali.", grammar: g.quello-forms } }
+      - { es: "Vorrei provare quella gonna.", en: "I'd like to try on that skirt.", altEs: ["Posso provare quella gonna?"], grammar: [g.quello-forms, g.volere-vorrei], vocab: [w.gonna, w.provare] }
+      - { es: "Che taglia porta? — La quarantadue.", en: "What size are you? — A forty-two.", altEs: ["Che taglia ha? — La quarantadue.", "Che taglia porta? — Porto la quarantadue."], grammar: [g.question-words, g.tu-vs-lei], vocab: [w.taglia, w.portare] }
+      - { es: "Il camerino è in fondo, a sinistra.", en: "The fitting room is at the back, on the left.", altEs: ["Il camerino è in fondo a sinistra."], grammar: [g.essere-present], vocab: [w.camerino, w.in-fondo, w.sinistra] }
+      - { es: "Questi jeans sono troppo corti: ha una taglia più grande?", en: "These jeans are too short: do you have a bigger size?", altEs: ["Questi jeans sono troppo corti, ha una taglia più grande?"], grammar: [g.questo, g.molto-poco-troppo], vocab: [w.jeans, w.taglia, w.corto] }
+      - { es: "Questo vestito mi piace molto. Lo prendo!", en: "I really like this dress. I'll take it!", altEs: ["Mi piace molto questo vestito. Lo prendo!"], grammar: [g.lo-prendo], vocab: [w.vestito, w.lo],
+          error: { wrong: "Questo vestito mi piace molto. Prendo lo!", explain: "The object pronoun goes before the verb: lo prendo.", grammar: g.lo-prendo } }
+      - { es: "La giacca? La prendo, grazie.", en: "The jacket? I'll take it, thanks.", altEs: ["La giacca la prendo, grazie."], grammar: [g.lo-prendo], vocab: [w.giacca, w.lo],
+          transform: { instruction: "Answer about 'i pantaloni'", answer: "I pantaloni? Li prendo, grazie.", alt: ["I pantaloni li prendo, grazie."], en: "The trousers? I'll take them, thanks." } }
+      - { es: "Le scarpe sono belle, ma non le prendo: costano troppo.", en: "The shoes are lovely, but I'm not taking them: they cost too much.", altEs: ["Le scarpe sono belle, ma non le prendo, costano troppo."], grammar: [g.lo-prendo, g.negation], vocab: [w.scarpa, w.lo] }
+      - { es: "Chi è quell'uomo con la giacca grigia?", en: "Who's that man in the grey jacket?", altEs: ["Chi è quell'uomo con la giacca grigia lì?"], grammar: [g.quello-forms, g.colours], vocab: [w.quello, w.giacca, w.uomo] }
+      - { es: "Quei vestiti sono di mia sorella.", en: "Those clothes are my sister's.", grammar: [g.quello-forms, g.essere-di], vocab: [w.vestiti, w.quello],
+          transform: { instruction: "Make it singular (quel vestito)", answer: "Quel vestito è di mia sorella.", en: "That dress is my sister's." } }
+      - { es: "Preferisci questo o quello? — Quello rosso.", en: "Do you prefer this one or that one? — The red one.", altEs: ["Preferisci questo o quello? — Quello rosso, grazie."], grammar: [g.quello-forms, g.questo], vocab: [w.quello, w.preferire] }
+      - { es: "Scelgo quelle scarpe nere.", en: "I'm choosing those black shoes.", altEs: ["Prendo quelle scarpe nere."], altEn: ["I'll go for those black shoes."], grammar: [g.quello-forms, g.irregular-present], vocab: [w.scegliere, w.scarpa] }
+      - { es: "Posso provarlo? — Certo, il camerino è lì.", en: "Can I try it on? — Of course, the fitting room is there.", altEs: ["Lo posso provare? — Certo, il camerino è lì."], grammar: [g.lo-prendo, g.potere-dovere], vocab: [w.provare, w.camerino] }
+      - { es: "Le pesche? Le compro sempre al mercato.", en: "Peaches? I always buy them at the market.", altEs: ["Le pesche le compro sempre al mercato."], grammar: [g.lo-prendo], vocab: [w.pesca, w.comprare] }
+      - { es: "Quello zaino è troppo caro, e anche quel cappotto.", en: "That backpack is too expensive, and so is that coat.", altEs: ["Quello zaino costa troppo, e anche quel cappotto."], grammar: [g.quello-forms], vocab: [w.zaino, w.cappotto, w.caro] }
+    exchanges:
+      - q: { es: "Le piace questa giacca?", en: "Do you like this jacket?" }
+        a: { es: "Sì, molto. La prendo!", en: "Yes, very much. I'll take it!" }
+        alt: ["Sì, la provo.", "No, preferisco quella blu."]
+        grammar: [g.lo-prendo]
+        vocab: [w.giacca, w.lo]
+      - q: { es: "Che taglia porta?", en: "What size are you?" }
+        a: { es: "Porto la quaranta.", en: "I'm a forty." }
+        alt: ["La quarantadue.", "Non lo so."]
+        grammar: [g.question-words]
+        vocab: [w.taglia]
+      - q: { es: "Quale borsa preferisci?", en: "Which bag do you prefer?" }
+        a: { es: "Quella nera, è più bella.", en: "The black one, it's nicer." }
+        alt: ["Quella rossa.", "Questa qui."]
+        grammar: [g.quello-forms]
+        vocab: [w.quello, w.borsa]
+      - q: { es: "Posso provare quei pantaloni?", en: "Can I try on those trousers?" }
+        a: { es: "Certo, il camerino è in fondo.", en: "Of course, the fitting room is at the back." }
+        alt: ["Sì, certo.", "Prego, il camerino è lì."]
+        grammar: [g.quello-forms, g.potere-dovere]
+        vocab: [w.pantaloni, w.camerino]
+      - q: { es: "Allora, prende le scarpe?", en: "So, are you taking the shoes?" }
+        a: { es: "No, grazie, non le prendo.", en: "No, thanks, I'm not taking them." }
+        alt: ["Sì, le prendo!", "Sì, le prendo tutte e due."]
+        grammar: [g.lo-prendo]
+        vocab: [w.scarpa, w.lo]
+    texts:
+      - title: "Al negozio"
+        es: ["Mi piace molto quel cappotto grigio.", "Lo provo: è perfetto!", "Costa trecento euro, ma ci sono i saldi."]
+        en: ["I really like that grey coat.", "I try it on: it's perfect!", "It costs three hundred euros, but the sales are on."]
+        grammar: [g.quello-forms, g.lo-prendo]
+        vocab: [w.cappotto, w.lo]
+      - title: "Messaggio di Giulia"
+        es: ["Sono in un negozio vicino a Campo de' Fiori.", "Ci sono degli stivali bellissimi.", "Li compro o no? Aiuto!"]
+        en: ["I'm in a shop near Campo de' Fiori.", "There are some gorgeous boots.", "Shall I buy them or not? Help!"]
+        grammar: [g.lo-prendo]
+        vocab: [w.stivale, w.lo]
+    spicy:
+      - { es: "Quel ragazzo con la giacca blu? Lo voglio conoscere.", en: "That guy in the blue jacket? I want to meet him.", altEs: ["Quella ragazza con la giacca blu? La voglio conoscere.", "Quel ragazzo con la giacca blu? Voglio conoscerlo."], grammar: [g.quello-forms, g.lo-prendo], vocab: [w.quello, w.giacca, w.conoscere] }
+      - { es: "Questo vestito? Lo porto solo per te.", en: "This dress? I'm wearing it just for you.", altEs: ["Questa camicia? La porto solo per te."], grammar: [g.lo-prendo], vocab: [w.vestito, w.portare] }
+      - { es: "Il tuo numero? Lo prendo, grazie!", en: "Your number? I'll take it, thanks!", grammar: [g.lo-prendo], vocab: [w.numero, w.lo] }
+      - { es: "Quegli occhi... dove li compri?", en: "Those eyes... where do you buy them?", grammar: [g.quello-forms, g.lo-prendo], vocab: [w.quello, w.occhio] }
+      - { es: "Quella camicia è bella, ma tu sei più bello.", en: "That shirt is nice, but you're even nicer-looking.", altEs: ["Quel vestito è bello, ma tu sei più bella."], grammar: [g.quello-forms], vocab: [w.camicia, w.bello] }
+dialogues:
+  - id: a1.u08.d1
+    title: Al mercato di Campo de' Fiori
+    context: Tom is buying fruit at a stall in Campo de' Fiori. The stallholder, Signora Anna, uses Lei with him.
+    lines:
+      - { speaker: Signora Anna, es: "Buongiorno! Desidera?", en: "Good morning! What would you like?" }
+      - { speaker: Tom, es: "Buongiorno. Quanto costano quelle fragole?", en: "Good morning. How much are those strawberries?" }
+      - { speaker: Signora Anna, es: "Quattro euro al chilo. Sono buonissime, vengono da Nemi.", en: "Four euros a kilo. They're delicious, they come from Nemi." }
+      - { speaker: Tom, es: "Allora mi dà mezzo chilo di fragole e un chilo di pesche.", en: "Then can I have half a kilo of strawberries and a kilo of peaches." }
+      - { speaker: Signora Anna, es: "Ecco a Lei. Altro?", en: "Here you are. Anything else?" }
+      - { speaker: Tom, es: "Quanto costa quell'uva?", en: "How much are those grapes?" }
+      - { speaker: Signora Anna, es: "Tre euro al chilo. La prende?", en: "Three euros a kilo. Will you take some?" }
+      - { speaker: Tom, es: "No, grazie, basta così. Quant'è in tutto?", en: "No, thanks, that's all. How much is it altogether?" }
+      - { speaker: Signora Anna, es: "Due euro le fragole e tre euro e cinquanta le pesche: cinque euro e cinquanta.", en: "Two euros for the strawberries and three euros fifty for the peaches: five euros fifty." }
+      - { speaker: Tom, es: "Ecco dieci euro.", en: "Here's ten euros." }
+      - { speaker: Signora Anna, es: "Ed ecco il resto: quattro euro e cinquanta. Vuole un sacchetto?", en: "And here's your change: four euros fifty. Would you like a bag?" }
+      - { speaker: Tom, es: "No, grazie, ho la borsa. Buona giornata!", en: "No, thanks, I've got my bag. Have a nice day!" }
+    questions:
+      - { q: "Quanto costano le fragole?", options: ["Tre euro al chilo", "Quattro euro al chilo", "Cinque euro e cinquanta al chilo"], answer: 1, explain: "Signora Anna says the strawberries are four euros a kilo." }
+      - { q: "Che cosa compra Tom?", options: ["Fragole e pesche", "Fragole e uva", "Pesche e uva"], answer: 0, explain: "Tom buys half a kilo of strawberries and a kilo of peaches; he doesn't take the grapes." }
+      - { q: "Quanto è il resto?", options: ["Cinque euro e cinquanta", "Quattro euro e cinquanta", "Dieci euro"], answer: 1, explain: "Tom pays with ten euros for a total of five euros fifty, so the change is four euros fifty." }
+      - { q: "Perché Tom non vuole il sacchetto?", options: ["Perché costa troppo", "Perché ha la borsa", "Perché non compra niente"], answer: 1, explain: "Tom says he has his own bag." }

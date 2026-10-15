@@ -1,0 +1,305 @@
+id: a1.u07
+title: "Com'è la tua amica?"
+lessons:
+  - id: a1.u07.l1
+    title: Come stai oggi?
+    teach: [g.stare-present]
+    vocab: [w.felice, w.contento, w.triste, w.stanco, w.arrabbiato, w.nervoso, w.preoccupato, w.annoiato, w.attento, w.zitto, w.davvero, w.veramente]
+    tip: "Stare is for how you are (sto bene) and for staying (sto a casa); describing someone uses essere: sono stanco."
+    sentences:
+      - { es: "Ciao Giulia, come stai?", en: "Hi Giulia, how are you?", altEs: ["Ciao Giulia, come va?", "Giulia, ciao, come stai?"], altEn: ["Hi Giulia, how's it going?"], grammar: [g.stare-present], vocab: [w.stare] }
+      - { es: "Sto bene, grazie. E tu?", en: "I'm fine, thanks. And you?", altEs: ["Bene, grazie. E tu?", "Sto bene, grazie, e tu?", "Io sto bene, grazie. E tu?"], altEn: ["I'm well, thanks. And you?", "I'm good, thanks. And you?"], grammar: [g.stare-present], vocab: [w.stare, w.bene],
+          transform: { instruction: "Answer for 'we' and ask 'you all'", answer: "Stiamo bene, grazie. E voi?", alt: ["Noi stiamo bene, grazie. E voi?"], en: "We're fine, thanks. And you?" },
+          error: { wrong: "Sono bene, grazie. E tu?", explain: "How you are (health, wellbeing) uses stare: sto bene, not sono bene.", grammar: g.stare-present } }
+      - { es: "Oggi non sto molto bene, sono stanco.", en: "I'm not very well today, I'm tired.", altEs: ["Oggi non sto molto bene, sono stanca.", "Non sto molto bene oggi, sono stanco."], grammar: [g.stare-present, g.negation], vocab: [w.stanco],
+          error: { wrong: "Oggi non sto molto bene, sto stanco.", explain: "Describing a state like tiredness uses essere in standard Italian: sono stanco. Stare is for 'how you are': sto bene.", grammar: g.stare-present } }
+      - { es: "Come sta Sua madre, signora?", en: "How is your mother, madam?", altEs: ["Signora, come sta Sua madre?", "Come sta sua madre, signora?"], grammar: [g.stare-present, g.tu-vs-lei], vocab: [w.madre, w.signora],
+          transform: { instruction: "Ask a friend instead (tu)", answer: "Come sta tua madre?", alt: ["Come sta tua mamma?"], en: "How is your mother?" } }
+      - { es: "Mia madre sta meglio, grazie.", en: "My mother is better, thanks.", altEs: ["Mia mamma sta meglio, grazie."], altEn: ["My mum is better, thanks."], grammar: [g.stare-present, g.possessives-family], vocab: [w.meglio] }
+      - { es: "Stasera sto a casa perché sono triste.", en: "Tonight I'm staying at home because I'm sad.", altEs: ["Stasera rimango a casa perché sono triste.", "Sto a casa stasera perché sono triste."], altEn: ["I'm staying in tonight because I'm sad."], grammar: [g.stare-present], vocab: [w.triste, w.stasera],
+          transform: { instruction: "Change to 'we'", answer: "Stasera stiamo a casa perché siamo tristi.", alt: ["Stasera noi stiamo a casa perché siamo tristi."], en: "Tonight we're staying at home because we're sad." } }
+      - { es: "Siete contenti di essere a Roma?", en: "Are you (all) happy to be in Rome?", altEs: ["Siete felici di essere a Roma?"], altEn: ["Are you glad to be in Rome?"], grammar: [g.essere-present], vocab: [w.contento] }
+      - { es: "Perché sei arrabbiata? — Non sono arrabbiata, sono nervosa.", en: "Why are you angry? — I'm not angry, I'm nervous.", altEs: ["Perché sei arrabbiato? — Non sono arrabbiato, sono nervoso."], grammar: [g.adjective-agreement, g.negation], vocab: [w.arrabbiato, w.nervoso] }
+      - { es: "State attenti alle borse, qui c'è molta gente.", en: "Watch your bags, there are lots of people here.", altEs: ["State attenti alle borse: qui c'è tanta gente."], altEn: ["Be careful with your bags, there are a lot of people here."], grammar: [g.stare-present], vocab: [w.attento, w.borsa] }
+      - { es: "Sta' zitto, per favore! Il film comincia.", en: "Be quiet, please! The film is starting.", altEs: ["Stai zitto, per favore! Il film comincia.", "Sta' zitta, per favore! Il film comincia."], altEn: ["Keep quiet, please! The film is starting."], grammar: [g.stare-present], vocab: [w.zitto, w.film] }
+      - { es: "Quanto tempo stai a Roma?", en: "How long are you staying in Rome?", altEs: ["Quanto tempo rimani a Roma?", "Per quanto tempo stai a Roma?"], grammar: [g.stare-present, g.question-words], vocab: [w.quanto, w.tempo] }
+      - { es: "Marco è preoccupato perché sua figlia non risponde.", en: "Marco is worried because his daughter isn't answering.", altEs: ["Marco è preoccupato perché sua figlia non risponde al telefono."], grammar: [g.essere-present, g.possessives-family], vocab: [w.preoccupato, w.rispondere] }
+      - { es: "Sono davvero felice di vederti!", en: "I'm really happy to see you!", altEs: ["Sono veramente felice di vederti!", "Sono proprio felice di vederti!"], altEn: ["I'm so happy to see you!"], grammar: [g.essere-present], vocab: [w.davvero, w.felice] }
+      - { es: "Al museo i ragazzi sono annoiati, ma al Pantheon stanno attenti.", en: "At the museum the kids are bored, but at the Pantheon they pay attention.", altEs: ["I ragazzi sono annoiati al museo, ma al Pantheon stanno attenti."], grammar: [g.stare-present, g.adjective-agreement], vocab: [w.annoiato, w.attento, w.museo] }
+      - { es: "Come state? — Stiamo benissimo, grazie!", en: "How are you (all)? — We're very well, thanks!", altEs: ["Come state? — Benissimo, grazie!", "Come state? — Molto bene, grazie!"], altEn: ["How are you guys? — We're great, thanks!"], grammar: [g.stare-present], vocab: [w.benissimo] }
+      - { es: "Il nonno sta veramente male oggi.", en: "Grandpa is really unwell today.", altEs: ["Il nonno sta davvero male oggi.", "Oggi il nonno sta veramente male."], altEn: ["Grandad is really ill today."], grammar: [g.stare-present], vocab: [w.veramente, w.nonno, w.male] }
+    exchanges:
+      - q: { es: "Come stai?", en: "How are you?" }
+        a: { es: "Sto bene, grazie. E tu?", en: "I'm fine, thanks. And you?" }
+        alt: ["Bene, grazie!", "Così così.", "Non molto bene, sono stanca."]
+        grammar: [g.stare-present]
+        vocab: [w.stare, w.bene]
+      - q: { es: "Come sta, signor Rossi?", en: "How are you, Mr Rossi?" }
+        a: { es: "Sto bene, grazie. E Lei?", en: "I'm well, thank you. And you?" }
+        alt: ["Bene, grazie, e Lei?", "Benissimo, grazie."]
+        grammar: [g.stare-present, g.tu-vs-lei]
+        vocab: [w.stare, w.signore]
+      - q: { es: "Perché sei triste?", en: "Why are you sad?" }
+        a: { es: "Perché domani parto da Roma.", en: "Because I'm leaving Rome tomorrow." }
+        alt: ["Non sono triste, sono stanco.", "Perché sono sola qui."]
+        grammar: [g.question-words]
+        vocab: [w.triste, w.partire]
+      - q: { es: "Quanto tempo state a Roma?", en: "How long are you (all) staying in Rome?" }
+        a: { es: "Stiamo dieci giorni.", en: "We're staying ten days." }
+        alt: ["Dieci giorni.", "Stiamo una settimana."]
+        grammar: [g.stare-present]
+        vocab: [w.stare, w.giorno]
+      - q: { es: "Come stanno i tuoi genitori?", en: "How are your parents?" }
+        a: { es: "Stanno bene, grazie. Mio padre è un po' stanco.", en: "They're well, thanks. My father is a bit tired." }
+        alt: ["Bene, grazie.", "Stanno benissimo."]
+        grammar: [g.stare-present, g.possessives-family]
+        vocab: [w.genitore, w.stanco]
+    texts:
+      - title: "Messaggio di Tom"
+        es: ["Ciao Giulia, come stai?", "Io sto bene, ma sono un po' stanco.", "Stasera sto a casa: ci vediamo domani al Pantheon?"]
+        en: ["Hi Giulia, how are you?", "I'm fine, but I'm a bit tired.", "Tonight I'm staying at home: shall we meet tomorrow at the Pantheon?"]
+        grammar: [g.stare-present]
+        vocab: [w.stanco, w.stasera]
+      - title: "Cartolina da Roma"
+        es: ["Cara mamma, qui a Roma sto benissimo.", "Oggi piove e l'acqua entra nel Pantheon dal tetto!", "Sono davvero contento."]
+        en: ["Dear Mum, I'm really well here in Rome.", "Today it's raining and the water comes into the Pantheon through the roof!", "I'm really happy."]
+        grammar: [g.stare-present]
+        vocab: [w.contento, w.davvero]
+    spicy:
+      - { es: "Come stai? Io sto benissimo... adesso che sei qui.", en: "How are you? I'm great... now that you're here.", altEs: ["Come stai? Io sto benissimo, adesso che sei qui."], grammar: [g.stare-present], vocab: [w.stare, w.adesso] }
+      - { es: "Sta' tranquillo, non sono arrabbiata... per ora.", en: "Don't worry, I'm not angry... for now.", altEs: ["Sta' tranquilla, non sono arrabbiato... per ora.", "Stai tranquillo, non sono arrabbiata... per ora."], grammar: [g.stare-present], vocab: [w.arrabbiato, w.tranquillo] }
+      - { es: "Sono un po' nervoso quando sei qui.", en: "I'm a bit nervous when you're here.", altEs: ["Sono un po' nervosa quando sei qui."], grammar: [g.essere-present], vocab: [w.nervoso] }
+      - { es: "Sta' zitto e balla con me.", en: "Be quiet and dance with me.", altEs: ["Stai zitto e balla con me.", "Sta' zitta e balla con me."], grammar: [g.stare-present], vocab: [w.zitto, w.ballare] }
+      - { es: "Stasera sto a casa con una pizza. Ti piace la pizza?", en: "Tonight I'm staying in with a pizza. Do you like pizza?", grammar: [g.stare-present, g.piacere-intro], vocab: [w.stasera, w.pizza] }
+  - id: a1.u07.l2
+    title: Alta, bionda e con gli occhiali
+    teach: [g.adjective-position]
+    vocab: [w.alto, w.basso, w.magro, w.giovane, w.anziano, w.capelli, w.occhio, w.naso, w.bocca, w.testa, w.biondo, w.castano, w.moro, w.bruno, w.riccio, w.liscio, w.lungo, w.corto, w.occhiali]
+    tip: "Colours, nationalities and most describing words follow the noun: una ragazza alta, gli occhi verdi."
+    sentences:
+      - { es: "Com'è la tua amica?", en: "What's your friend like?", altEs: ["Com'è la tua amica, fisicamente?"], altEn: ["What does your friend look like?"], grammar: [g.question-words, g.possessives], vocab: [w.amico] }
+      - { es: "È alta, magra e ha i capelli lunghi.", en: "She's tall, slim and has long hair.", altEs: ["Lei è alta, magra e ha i capelli lunghi."], grammar: [g.adjective-agreement, g.adjective-position], vocab: [w.alto, w.magro, w.capelli, w.lungo],
+          error: { wrong: "È alta, magra e ha il capelli lunghi.", explain: "Capelli (hair) is plural in Italian: i capelli.", grammar: g.plural-nouns } }
+      - { es: "Mio fratello è basso e ha gli occhi castani.", en: "My brother is short and has brown eyes.", altEs: ["Mio fratello è basso, con gli occhi castani."], grammar: [g.adjective-agreement, g.possessives-family], vocab: [w.basso, w.occhio, w.castano],
+          transform: { instruction: "Change to 'my sister'", answer: "Mia sorella è bassa e ha gli occhi castani.", en: "My sister is short and has brown eyes." } }
+      - { es: "Ha i capelli biondi e ricci.", en: "She has curly blond hair.", altEs: ["Ha i capelli ricci e biondi."], altEn: ["He has curly blond hair.", "She's got curly blond hair."], grammar: [g.adjective-position], vocab: [w.biondo, w.riccio] }
+      - { es: "Mia nonna è anziana, ma ha gli occhi giovani.", en: "My grandmother is elderly, but she has young eyes.", altEs: ["Mia nonna è anziana ma ha gli occhi giovani."], altEn: ["My grandma is old, but she has young eyes."], grammar: [g.adjective-agreement], vocab: [w.anziano, w.giovane, w.nonno] }
+      - { es: "Paolo è un vecchio amico di mio padre.", en: "Paolo is an old friend of my father's.", altEs: ["Paolo è un vecchio amico di papà."], altEn: ["Paolo is a long-standing friend of my father's."], grammar: [g.adjective-position], vocab: [w.vecchio, w.amico], note: "Un vecchio amico = a friend for many years; un amico vecchio = an elderly friend." }
+      - { es: "Il Pantheon è un grande edificio romano.", en: "The Pantheon is a great Roman building.", altEs: ["Il Pantheon è un edificio romano molto grande."], grammar: [g.adjective-position], vocab: [w.edificio, w.romano, w.grande] }
+      - { es: "Porta gli occhiali e ha il naso piccolo.", en: "He wears glasses and has a small nose.", altEs: ["Lui porta gli occhiali e ha il naso piccolo."], altEn: ["She wears glasses and has a small nose."], grammar: [g.adjective-position], vocab: [w.occhiali, w.naso, w.portare] }
+      - { es: "Lui è moro, lei è bionda.", en: "He's dark-haired, she's blonde.", altEs: ["Lui è bruno, lei è bionda."], grammar: [g.adjective-agreement], vocab: [w.moro, w.bruno, w.biondo] }
+      - { es: "Hai i capelli corti o lunghi?", en: "Do you have short or long hair?", altEs: ["Hai i capelli lunghi o corti?"], grammar: [g.adjective-position, g.avere-present], vocab: [w.corto, w.lungo] }
+      - { es: "Giulia è una ragazza alta con i capelli lisci.", en: "Giulia is a tall girl with straight hair.", altEs: ["Giulia è una ragazza alta, con i capelli lisci."], grammar: [g.adjective-position], vocab: [w.alto, w.liscio, w.ragazzo],
+          error: { wrong: "Giulia è una alta ragazza con i capelli lisci.", explain: "Describing adjectives like alto normally follow the noun: una ragazza alta.", grammar: g.adjective-position } }
+      - { es: "Il mio cane ha la testa grande e le gambe corte.", en: "My dog has a big head and short legs.", altEs: ["Il mio cane ha una testa grande e le gambe corte."], grammar: [g.adjective-position, g.adjective-agreement], vocab: [w.testa, w.gamba, w.corto] }
+      - { es: "È un uomo giovane con i capelli castani.", en: "He's a young man with brown hair.", altEs: ["È un giovane uomo con i capelli castani.", "È un ragazzo giovane con i capelli castani."], grammar: [g.adjective-position], vocab: [w.giovane, w.uomo, w.castano] }
+      - { es: "Il signore anziano davanti al Pantheon è mio nonno.", en: "The elderly gentleman in front of the Pantheon is my grandfather.", altEs: ["Il signore anziano davanti al Pantheon è il mio nonno."], altEn: ["The old man in front of the Pantheon is my grandad."], grammar: [g.adjective-position, g.possessives-family], vocab: [w.anziano, w.signore] }
+      - { es: "Mio fratello è alto e biondo.", en: "My brother is tall and blond.", altEs: ["Mio fratello è biondo e alto."], grammar: [g.adjective-agreement], vocab: [w.alto, w.biondo, w.fratello],
+          transform: { instruction: "Change to 'my sisters'", answer: "Le mie sorelle sono alte e bionde.", alt: ["Le mie sorelle sono bionde e alte."], en: "My sisters are tall and blonde." } }
+      - { es: "Ha una bocca piccola e un naso lungo.", en: "He has a small mouth and a long nose.", altEs: ["Ha la bocca piccola e il naso lungo."], altEn: ["She has a small mouth and a long nose."], grammar: [g.adjective-position], vocab: [w.bocca, w.naso, w.lungo] }
+    exchanges:
+      - q: { es: "Com'è il tuo ragazzo?", en: "What's your boyfriend like?" }
+        a: { es: "È alto, moro e porta gli occhiali.", en: "He's tall, dark-haired and wears glasses." }
+        alt: ["È alto e moro.", "È basso, biondo e simpatico."]
+        grammar: [g.adjective-agreement, g.question-words]
+        vocab: [w.alto, w.moro, w.occhiali]
+      - q: { es: "Di che colore ha gli occhi?", en: "What colour are her eyes?" }
+        a: { es: "Ha gli occhi castani.", en: "She has brown eyes." }
+        alt: ["Castani.", "Ha gli occhi verdi.", "Li ha azzurri."]
+        grammar: [g.adjective-position]
+        vocab: [w.occhio, w.castano]
+      - q: { es: "Hai i capelli lunghi?", en: "Do you have long hair?" }
+        a: { es: "No, ho i capelli corti.", en: "No, I have short hair." }
+        alt: ["Sì, lunghi e ricci.", "No, corti.", "Sì, molto lunghi."]
+        grammar: [g.adjective-position, g.avere-present]
+        vocab: [w.capelli, w.corto, w.lungo]
+      - q: { es: "Chi è quel signore anziano?", en: "Who is that elderly gentleman?" }
+        a: { es: "È mio nonno Franco.", en: "That's my grandfather Franco." }
+        alt: ["È mio nonno.", "Non lo so."]
+        grammar: [g.possessives-family]
+        vocab: [w.anziano, w.nonno]
+      - q: { es: "Tua sorella è alta come te?", en: "Is your sister as tall as you?" }
+        a: { es: "No, è più bassa di me.", en: "No, she's shorter than me." }
+        alt: ["Sì, è alta come me.", "No, è bassa."]
+        grammar: [g.adjective-agreement]
+        vocab: [w.basso, w.più]
+    texts:
+      - title: "Chi cerco?"
+        es: ["Cerco una ragazza davanti al Pantheon.", "È giovane, alta e ha i capelli ricci.", "Porta gli occhiali e una borsa rossa."]
+        en: ["I'm looking for a girl in front of the Pantheon.", "She's young, tall and has curly hair.", "She's wearing glasses and carrying a red bag."]
+        grammar: [g.adjective-position, g.adjective-agreement]
+        vocab: [w.giovane, w.riccio, w.occhiali]
+      - title: "Mio fratello Luca"
+        es: ["Mio fratello Luca ha venticinque anni.", "È basso e magro, con i capelli corti e biondi.", "È un vecchio amico di Giulia."]
+        en: ["My brother Luca is twenty-five.", "He's short and slim, with short blond hair.", "He's an old friend of Giulia's."]
+        grammar: [g.adjective-position]
+        vocab: [w.basso, w.magro, w.corto, w.biondo]
+    spicy:
+      - { es: "Hai gli occhi verdi più belli di Roma.", en: "You have the most beautiful green eyes in Rome.", altEs: ["Hai gli occhi azzurri più belli di Roma."], grammar: [g.adjective-position], vocab: [w.occhio, w.verde] }
+      - { es: "Cerco un ragazzo alto, moro e simpatico. Sei libero stasera?", en: "I'm looking for a tall, dark, nice guy. Are you free tonight?", altEs: ["Cerco una ragazza alta, mora e simpatica. Sei libera stasera?"], grammar: [g.adjective-position, g.adjective-agreement], vocab: [w.alto, w.moro, w.libero] }
+      - { es: "Non porto gli occhiali, ma ti vedo benissimo.", en: "I don't wear glasses, but I can see you perfectly.", grammar: [g.negation], vocab: [w.occhiali, w.portare] }
+      - { es: "Mi piacciono i ragazzi con i capelli ricci... come i tuoi.", en: "I like guys with curly hair... like yours.", altEs: ["Mi piacciono le ragazze con i capelli ricci... come i tuoi."], grammar: [g.piacere-plural, g.adjective-position], vocab: [w.capelli, w.riccio] }
+      - { es: "Sei un vecchio amico, ma stasera ti vedo con occhi nuovi.", en: "You're an old friend, but tonight I'm seeing you with new eyes.", grammar: [g.adjective-position], vocab: [w.vecchio, w.occhio, w.nuovo] }
+  - id: a1.u07.l3
+    title: Un bel ragazzo, una buona amica
+    teach: [g.bello-buono]
+    vocab: [w.bello, w.brutto, w.cattivo, w.carino, w.timido, w.allegro, w.divertente, w.noioso, w.intelligente, w.pigro, w.sportivo, w.sorpresa, w.proprio]
+    tip: "Before a noun, bello changes like the article (bel, bell', bei, begli) and buono like un (buon, buona)."
+    sentences:
+      - { es: "Che bel ragazzo!", en: "What a handsome guy!", altEn: ["What a good-looking boy!"], grammar: [g.bello-buono], vocab: [w.bello, w.ragazzo],
+          transform: { instruction: "Make it plural", answer: "Che bei ragazzi!", en: "What handsome guys!" },
+          error: { wrong: "Che bello ragazzo!", explain: "Before a noun that takes il (il ragazzo), bello becomes bel: un bel ragazzo.", grammar: g.bello-buono } }
+      - { es: "Il Pantheon è un bell'edificio.", en: "The Pantheon is a beautiful building.", altEs: ["Il Pantheon è un edificio bellissimo.", "Il Pantheon è un edificio molto bello."], grammar: [g.bello-buono], vocab: [w.bello, w.edificio] }
+      - { es: "In centro ci sono dei begli edifici e delle belle piazze.", en: "In the centre there are some beautiful buildings and some lovely squares.", altEs: ["Ci sono dei begli edifici e delle belle piazze in centro."], grammar: [g.bello-buono, g.partitive-di], vocab: [w.bello, w.edificio, w.piazza] }
+      - { es: "Marco è un buon amico e un bravo cuoco.", en: "Marco is a good friend and a good cook.", altEs: ["Marco è un buon amico e anche un bravo cuoco."], grammar: [g.bello-buono], vocab: [w.buono, w.bravo, w.cuoco],
+          transform: { instruction: "Change to 'Marta'", answer: "Marta è una buona amica e una brava cuoca.", en: "Marta is a good friend and a good cook." } }
+      - { es: "Che bella sorpresa! Sei a Roma!", en: "What a lovely surprise! You're in Rome!", altEs: ["Che bella sorpresa, sei a Roma!"], grammar: [g.bello-buono], vocab: [w.sorpresa] }
+      - { es: "Questo gelato è proprio buono!", en: "This ice cream is really good!", altEs: ["Questo gelato è davvero buono!", "Questo gelato è buonissimo!"], grammar: [g.bello-buono, g.questo], vocab: [w.proprio, w.gelato] }
+      - { es: "Non è un cattivo ragazzo, è solo timido.", en: "He isn't a bad guy, he's just shy.", altEs: ["Non è un ragazzo cattivo, è solo timido."], grammar: [g.adjective-position, g.negation], vocab: [w.cattivo, w.timido] }
+      - { es: "La mia amica Sara è allegra e molto divertente.", en: "My friend Sara is cheerful and very funny.", altEs: ["Sara, la mia amica, è allegra e molto divertente."], altEn: ["My friend Sara is cheerful and a lot of fun."], grammar: [g.adjective-agreement], vocab: [w.allegro, w.divertente] }
+      - { es: "Questo film è noioso: andiamo via?", en: "This film is boring: shall we leave?", altEs: ["Questo film è noioso, andiamo via?"], grammar: [g.questo], vocab: [w.noioso, w.film] }
+      - { es: "Mio fratello è intelligente ma un po' pigro.", en: "My brother is clever but a bit lazy.", altEs: ["Mio fratello è intelligente, ma è un po' pigro."], grammar: [g.adjective-agreement, g.connectors-basic], vocab: [w.intelligente, w.pigro] }
+      - { es: "Sei sportiva? — No, sono pigra!", en: "Are you sporty? — No, I'm lazy!", altEs: ["Sei sportivo? — No, sono pigro!"], grammar: [g.adjective-agreement], vocab: [w.sportivo, w.pigro] }
+      - { es: "Abbiamo un buon albergo vicino al Pantheon.", en: "We have a good hotel near the Pantheon.", altEs: ["Abbiamo un buon hotel vicino al Pantheon."], grammar: [g.bello-buono], vocab: [w.buono, w.albergo] }
+      - { es: "Buon viaggio e buona giornata!", en: "Have a good trip and have a nice day!", altEs: ["Buon viaggio e buona giornata a tutti!"], grammar: [g.bello-buono], vocab: [w.viaggio, w.buona-giornata],
+          error: { wrong: "Buono viaggio e buona giornata!", explain: "Buono shortens to buon before most masculine nouns, just like un: buon viaggio.", grammar: g.bello-buono } }
+      - { es: "Che brutto tempo oggi!", en: "What awful weather today!", altEs: ["Oggi che brutto tempo!"], altEn: ["What horrible weather today!"], grammar: [g.adjective-position], vocab: [w.brutto, w.tempo] }
+      - { es: "Hai una bell'idea per stasera?", en: "Have you got a good idea for tonight?", altEs: ["Hai una bella idea per stasera?", "Hai una buona idea per stasera?"], grammar: [g.bello-buono], vocab: [w.idea, w.stasera] }
+      - { es: "È un ragazzo carino e proprio simpatico.", en: "He's a cute boy and really nice.", altEs: ["È un ragazzo carino e davvero simpatico."], altEn: ["He's a sweet guy and really nice."], grammar: [g.adjective-position], vocab: [w.carino, w.proprio] }
+    exchanges:
+      - q: { es: "Com'è il nuovo professore?", en: "What's the new teacher like?" }
+        a: { es: "È simpatico ma un po' noioso.", en: "He's nice but a bit boring." }
+        alt: ["È bravo e divertente.", "È molto intelligente."]
+        grammar: [g.adjective-position]
+        vocab: [w.noioso, w.professore]
+      - q: { es: "Ti piace il mio vestito?", en: "Do you like my dress?" }
+        a: { es: "Sì, è proprio bello!", en: "Yes, it's really lovely!" }
+        alt: ["Che bel vestito!", "Sì, è molto carino."]
+        grammar: [g.bello-buono]
+        vocab: [w.bello, w.vestito]
+      - q: { es: "Com'è la pizza qui?", en: "What's the pizza like here?" }
+        a: { es: "È buonissima!", en: "It's delicious!" }
+        alt: ["È molto buona.", "Non è male."]
+        grammar: [g.bello-buono]
+        vocab: [w.buonissimo, w.pizza]
+      - q: { es: "Tuo fratello è timido?", en: "Is your brother shy?" }
+        a: { es: "No, è allegro e parla tanto.", en: "No, he's cheerful and talks a lot." }
+        alt: ["Sì, un po'.", "No, per niente."]
+        grammar: [g.adjective-agreement]
+        vocab: [w.timido, w.allegro]
+      - q: { es: "Andiamo al Pantheon domani?", en: "Shall we go to the Pantheon tomorrow?" }
+        a: { es: "Che bella idea!", en: "What a good idea!" }
+        alt: ["Buona idea!", "Sì, volentieri!"]
+        grammar: [g.bello-buono]
+        vocab: [w.idea]
+    texts:
+      - title: "Il mio amico Paolo"
+        es: ["Il mio amico Paolo è un bel ragazzo.", "È intelligente e divertente, ma è proprio pigro.", "La mattina non si alza mai prima delle dieci!"]
+        en: ["My friend Paolo is a good-looking guy.", "He's clever and funny, but he's really lazy.", "In the morning he never gets up before ten!"]
+        grammar: [g.bello-buono]
+        vocab: [w.bello, w.pigro, w.divertente]
+      - title: "Un buon ristorante"
+        es: ["Un buon ristorante vicino al Pantheon.", "Il cameriere è allegro e la pasta è buonissima.", "Che bella sorpresa!"]
+        en: ["A good restaurant near the Pantheon.", "The waiter is cheerful and the pasta is delicious.", "What a lovely surprise!"]
+        grammar: [g.bello-buono]
+        vocab: [w.buono, w.allegro, w.sorpresa]
+    spicy:
+      - { es: "Che begli occhi hai!", en: "What beautiful eyes you have!", altEs: ["Che begli occhi che hai!"], grammar: [g.bello-buono], vocab: [w.bello, w.occhio] }
+      - { es: "Sei un bel ragazzo. Sai anche cucinare?", en: "You're a good-looking guy. Can you cook too?", altEs: ["Sei una bella ragazza. Sai anche cucinare?"], grammar: [g.bello-buono], vocab: [w.bello, w.cucinare] }
+      - { es: "Non sono timida: sono solo una brava attrice.", en: "I'm not shy: I'm just a good actress.", altEs: ["Non sono timido: sono solo un bravo attore."], grammar: [g.adjective-position, g.negation], vocab: [w.timido, w.attore] }
+      - { es: "Tu sei carino e il tuo amico è divertente... ma io scelgo te.", en: "You're cute and your friend is funny... but I choose you.", altEs: ["Tu sei carina e la tua amica è divertente... ma io scelgo te."], grammar: [g.adjective-agreement], vocab: [w.carino, w.divertente, w.scegliere] }
+      - { es: "Un bel ragazzo, un buon vino e una bella serata: perfetto!", en: "A handsome guy, a good wine and a lovely evening: perfect!", altEs: ["Una bella ragazza, un buon vino e una bella serata: perfetto!"], grammar: [g.bello-buono], vocab: [w.bello, w.buono, w.vino] }
+  - id: a1.u07.l4
+    title: Ho una fame da lupi!
+    teach: [g.avere-expressions, g.molto-poco-troppo]
+    vocab: [w.fame, w.sete, w.sonno, w.caldo, w.freddo, w.fretta, w.paura, w.ragione, w.torto, w.bisogno, w.voglia, w.molto.det, w.poco, w.troppo, w.tanto, w.un-po, w.abbastanza, w.più, w.meno, w.fontanella]
+    tip: "Italian 'has' hunger and cold: ho fame, ho freddo. Molto agrees with a noun (molta fame) but not with an adjective (molto bella)."
+    sentences:
+      - { es: "Ho fame! Andiamo a mangiare?", en: "I'm hungry! Shall we go and eat?", altEs: ["Ho fame, andiamo a mangiare?"], grammar: [g.avere-expressions], vocab: [w.fame, w.mangiare] }
+      - { es: "Hai sete? C'è una fontanella qui vicino.", en: "Are you thirsty? There's a drinking fountain near here.", altEs: ["Hai sete? Qui vicino c'è una fontanella."], grammar: [g.avere-expressions, g.c-e-ci-sono], vocab: [w.sete, w.fontanella] }
+      - { es: "Ho molta fame e poco tempo.", en: "I'm very hungry and I have little time.", altEs: ["Ho tanta fame e poco tempo."], altEn: ["I'm really hungry and I don't have much time."], grammar: [g.avere-expressions, g.molto-poco-troppo], vocab: [w.molto.det, w.fame, w.poco],
+          error: { wrong: "Ho molto fame e poco tempo.", explain: "Fame is a feminine noun, so molto agrees with it: molta fame.", grammar: g.molto-poco-troppo } }
+      - { es: "Abbiamo freddo, chiudi la porta per favore.", en: "We're cold, close the door please.", altEs: ["Abbiamo freddo: chiudi la porta, per favore."], grammar: [g.avere-expressions], vocab: [w.freddo, w.chiudere, w.porta] }
+      - { es: "Ho sonno, vado a letto.", en: "I'm sleepy, I'm going to bed.", altEs: ["Ho sonno: vado a letto.", "Ho molto sonno, vado a letto."], altEn: ["I'm tired, I'm off to bed."], grammar: [g.avere-expressions], vocab: [w.sonno, w.letto] }
+      - { es: "Scusi, ho fretta: il treno parte tra dieci minuti.", en: "Sorry, I'm in a hurry: the train leaves in ten minutes.", altEs: ["Scusi, ho fretta, il treno parte fra dieci minuti."], grammar: [g.avere-expressions], vocab: [w.fretta, w.treno] }
+      - { es: "Mia sorella ha paura dei cani.", en: "My sister is afraid of dogs.", altEs: ["Mia sorella ha paura dei cani grandi."], grammar: [g.avere-expressions, g.articulated-prepositions], vocab: [w.paura, w.cane] }
+      - { es: "Marco ha torto: il Pantheon non è chiuso oggi.", en: "Marco is wrong: the Pantheon isn't closed today.", altEs: ["Marco ha torto, oggi il Pantheon non è chiuso."], grammar: [g.avere-expressions], vocab: [w.torto] }
+      - { es: "Non ho voglia di uscire stasera.", en: "I don't feel like going out tonight.", altEs: ["Stasera non ho voglia di uscire."], grammar: [g.avere-expressions, g.negation], vocab: [w.voglia, w.uscire] }
+      - { es: "Ci sono troppi turisti davanti al Pantheon.", en: "There are too many tourists in front of the Pantheon.", altEs: ["Davanti al Pantheon ci sono troppi turisti."], grammar: [g.molto-poco-troppo, g.c-e-ci-sono], vocab: [w.troppo, w.turista],
+          transform: { instruction: "Say there are few tourists", answer: "Ci sono pochi turisti davanti al Pantheon.", alt: ["Davanti al Pantheon ci sono pochi turisti."], en: "There are few tourists in front of the Pantheon." } }
+      - { es: "Le ragazze sono molto simpatiche.", en: "The girls are very nice.", altEs: ["Le ragazze sono tanto simpatiche."], grammar: [g.molto-poco-troppo], vocab: [w.simpatico],
+          error: { wrong: "Le ragazze sono molte simpatiche.", explain: "Before an adjective, molto is an adverb and never changes: molto simpatiche.", grammar: g.molto-poco-troppo } }
+      - { es: "Lavori troppo e dormi poco.", en: "You work too much and sleep too little.", altEs: ["Tu lavori troppo e dormi poco."], grammar: [g.molto-poco-troppo], vocab: [w.troppo, w.poco, w.dormire],
+          transform: { instruction: "Change to 'voi'", answer: "Lavorate troppo e dormite poco.", alt: ["Voi lavorate troppo e dormite poco."], en: "You (all) work too much and sleep too little." } }
+      - { es: "Ho un po' di sete e tanta voglia di un gelato.", en: "I'm a bit thirsty and I really fancy an ice cream.", altEs: ["Ho un po' di sete e molta voglia di un gelato."], grammar: [g.avere-expressions, g.molto-poco-troppo], vocab: [w.un-po, w.tanto, w.voglia] }
+      - { es: "Non ho abbastanza soldi per il taxi.", en: "I don't have enough money for the taxi.", altEs: ["Per il taxi non ho abbastanza soldi."], grammar: [g.negation], vocab: [w.abbastanza, w.soldi, w.taxi] }
+      - { es: "Abbiamo bisogno di una mappa di Roma.", en: "We need a map of Rome.", altEs: ["Ci serve una mappa di Roma.", "Abbiamo bisogno di una cartina di Roma."], grammar: [g.avere-expressions], vocab: [w.bisogno, w.mappa] }
+      - { es: "Mangio meno pane e più frutta.", en: "I eat less bread and more fruit.", altEs: ["Io mangio meno pane e più frutta."], grammar: [g.molto-poco-troppo], vocab: [w.meno, w.più, w.pane, w.frutta] }
+    exchanges:
+      - q: { es: "Hai fame?", en: "Are you hungry?" }
+        a: { es: "Sì, ho una fame da lupi!", en: "Yes, I'm starving!" }
+        alt: ["Sì, tanta!", "No, non molta.", "Un po'."]
+        grammar: [g.avere-expressions]
+        vocab: [w.fame, w.lupo]
+      - q: { es: "Perché non esci con noi?", en: "Why aren't you coming out with us?" }
+        a: { es: "Perché ho sonno e domani lavoro.", en: "Because I'm sleepy and I'm working tomorrow." }
+        alt: ["Non ho voglia.", "Perché ho troppo freddo!"]
+        grammar: [g.avere-expressions, g.question-words]
+        vocab: [w.sonno, w.uscire]
+      - q: { es: "Hai paura dei cani?", en: "Are you afraid of dogs?" }
+        a: { es: "No, per niente. Ho tre cani!", en: "No, not at all. I have three dogs!" }
+        alt: ["Sì, un po'.", "No, mi piacciono i cani."]
+        grammar: [g.avere-expressions]
+        vocab: [w.paura, w.cane]
+      - q: { es: "Andiamo a piedi o prendiamo un taxi?", en: "Shall we walk or take a taxi?" }
+        a: { es: "Prendiamo un taxi, ho fretta.", en: "Let's take a taxi, I'm in a hurry." }
+        alt: ["A piedi, non ho fretta.", "Un taxi: ho freddo!"]
+        grammar: [g.avere-expressions]
+        vocab: [w.fretta, w.taxi, w.a-piedi]
+      - q: { es: "Quanti turisti ci sono al Pantheon?", en: "How many tourists are there at the Pantheon?" }
+        a: { es: "Troppi! C'è una fila lunga.", en: "Too many! There's a long queue." }
+        alt: ["Tanti.", "Pochi, è presto."]
+        grammar: [g.molto-poco-troppo]
+        vocab: [w.troppo, w.fila]
+      - q: { es: "Il Pantheon è chiuso oggi, vero?", en: "The Pantheon is closed today, isn't it?" }
+        a: { es: "No, hai torto: è aperto.", en: "No, you're wrong: it's open." }
+        alt: ["Sì, hai ragione.", "Non lo so."]
+        grammar: [g.avere-expressions]
+        vocab: [w.torto, w.ragione]
+    texts:
+      - title: "Messaggio a Giulia"
+        es: ["Giulia, ho una fame da lupi!", "Ci vediamo al bar davanti al Pantheon?", "Ho poco tempo: alle due torno al lavoro."]
+        en: ["Giulia, I'm starving!", "Shall we meet at the bar in front of the Pantheon?", "I don't have much time: at two I'm going back to work."]
+        grammar: [g.avere-expressions, g.molto-poco-troppo]
+        vocab: [w.fame, w.poco]
+      - title: "Il diario di Tom"
+        es: ["Oggi fa molto caldo e ho sempre sete.", "A Roma ci sono tante fontanelle.", "L'acqua è fresca e gratis!"]
+        en: ["Today it's very hot and I'm always thirsty.", "In Rome there are lots of drinking fountains.", "The water is cool and free!"]
+        grammar: [g.avere-expressions, g.molto-poco-troppo]
+        vocab: [w.sete, w.tanto, w.fontanella]
+    spicy:
+      - { es: "Ho fame... di te? No, scusa: di pizza.", en: "I'm hungry... for you? No, sorry: for pizza.", grammar: [g.avere-expressions], vocab: [w.fame] }
+      - { es: "Hai freddo? Ho una giacca... e due braccia.", en: "Are you cold? I have a jacket... and two arms.", grammar: [g.avere-expressions], vocab: [w.freddo, w.giacca, w.braccio] }
+      - { es: "Non ho paura di niente, solo di tua madre.", en: "I'm not afraid of anything, only of your mother.", grammar: [g.avere-expressions, g.negation], vocab: [w.paura, w.niente] }
+      - { es: "Hai ragione: ho troppa voglia di ballare con te.", en: "You're right: I really want to dance with you.", altEs: ["Hai ragione: ho tanta voglia di ballare con te."], grammar: [g.avere-expressions, g.molto-poco-troppo], vocab: [w.ragione, w.voglia, w.ballare] }
+      - { es: "Ho poco tempo, ma per te ho tutta la sera.", en: "I don't have much time, but for you I have the whole evening.", grammar: [g.molto-poco-troppo], vocab: [w.poco, w.tutto, w.sera] }
+dialogues:
+  - id: a1.u07.d1
+    title: Davanti al Pantheon
+    context: Tom is meeting Giulia's friend Sara for the first time in front of the Pantheon. He calls Giulia to ask what Sara looks like.
+    lines:
+      - { speaker: Tom, es: "Pronto, Giulia? Sono davanti al Pantheon. Com'è la tua amica Sara?", en: "Hello, Giulia? I'm in front of the Pantheon. What does your friend Sara look like?" }
+      - { speaker: Giulia, es: "È alta e magra, e ha i capelli ricci e castani.", en: "She's tall and slim, and she has curly brown hair." }
+      - { speaker: Tom, es: "Porta gli occhiali?", en: "Does she wear glasses?" }
+      - { speaker: Giulia, es: "Sì, porta gli occhiali neri. È molto simpatica, ma un po' timida.", en: "Yes, she wears black glasses. She's very nice, but a bit shy." }
+      - { speaker: Tom, es: "Forse la vedo! C'è una ragazza con una borsa rossa vicino alla fontana.", en: "Maybe I can see her! There's a girl with a red bag near the fountain." }
+      - { speaker: Giulia, es: "Sì, è lei! E tu come stai?", en: "Yes, that's her! And how are you?" }
+      - { speaker: Tom, es: "Sto bene, ma ho una fame da lupi e fa troppo caldo.", en: "I'm fine, but I'm starving and it's too hot." }
+      - { speaker: Giulia, es: "Allora andate al bar in piazza: hanno dei buoni panini.", en: "Then go to the bar in the square: they have good sandwiches." }
+      - { speaker: Tom, es: "Ciao, sei Sara? Io sono Tom, l'amico di Giulia.", en: "Hi, are you Sara? I'm Tom, Giulia's friend." }
+      - { speaker: Sara, es: "Ciao Tom! Che bella sorpresa: sei proprio come dice Giulia, alto e biondo!", en: "Hi Tom! What a nice surprise: you're just like Giulia says, tall and blond!" }
+    questions:
+      - { q: "Com'è Sara?", options: ["Bassa e bionda", "Alta e magra, con i capelli ricci", "Anziana, con i capelli corti"], answer: 1, explain: "Giulia says Sara is tall and slim, with curly brown hair." }
+      - { q: "Come sta Tom?", options: ["Sta male ed è triste", "Sta bene, ma ha fame e caldo", "È stanco e ha freddo"], answer: 1, explain: "Tom says he is fine, but he is starving and it is too hot." }
+      - { q: "Che cosa porta Sara?", options: ["Un cappello e una giacca", "Gli occhiali neri e una borsa rossa", "Una borsa nera"], answer: 1, explain: "Sara wears black glasses and Tom sees her with a red bag." }
+      - { q: "Dove vanno Tom e Sara?", options: ["Al bar in piazza", "Al museo", "A casa di Giulia"], answer: 0, explain: "Giulia suggests the bar in the square, which has good sandwiches." }

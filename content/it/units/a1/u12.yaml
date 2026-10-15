@@ -1,0 +1,301 @@
+id: a1.u12
+title: "Che fai questo weekend?"
+lessons:
+  - id: a1.u12.l1
+    title: Che fai stasera?
+    teach: [g.present-for-future]
+    vocab: [w.prossimo, w.stasera, w.stamattina, w.dopodomani, w.fra-poco, w.programma, w.progetto, w.idea, w.invitare, w.invito, w.organizzare, w.concerto, w.mostra, w.spettacolo, w.volentieri, w.libero, w.occupato]
+    tip: "For plans Italian simply uses the present with a time word: domani parto, stasera esco. Ti va di…? = Do you fancy…?"
+    sentences:
+      - { es: "Che fai questo weekend?", en: "What are you doing this weekend?", altEs: ["Che cosa fai questo fine settimana?", "Cosa fai questo weekend?"], grammar: [g.present-for-future], vocab: [w.weekend],
+          error: { wrong: "Che stai facendo questo weekend?", explain: "Stare + gerund is only for right now. For plans use the simple present: che fai questo weekend?", grammar: g.present-for-future } }
+      - { es: "Sabato vado a Ostia con gli amici.", en: "On Saturday I'm going to Ostia with friends.", altEs: ["Sabato vado a Ostia con i miei amici."], grammar: [g.present-for-future, g.andare-venire], vocab: [w.sabato, w.amico],
+          transform: { instruction: "Change to 'we'", answer: "Sabato andiamo a Ostia con gli amici.", alt: ["Sabato andiamo a Ostia con i nostri amici."], en: "On Saturday we're going to Ostia with friends." } }
+      - { es: "Stasera ceniamo fuori, vicino a Piazza di Spagna.", en: "Tonight we're eating out, near Piazza di Spagna.", altEs: ["Stasera mangiamo fuori, vicino a Piazza di Spagna."], grammar: [g.present-for-future], vocab: [w.stasera, w.cenare, w.fuori] }
+      - { es: "La settimana prossima parto per Firenze.", en: "Next week I'm leaving for Florence.", altEs: ["La prossima settimana parto per Firenze."], grammar: [g.present-for-future], vocab: [w.prossimo, w.partire],
+          error: { wrong: "La settimana prossima vado a partire per Firenze.", explain: "Italian doesn't use andare a + infinitive for the future: the present is enough, parto.", grammar: g.present-for-future } }
+      - { es: "Ti va di venire al concerto sabato sera?", en: "Do you fancy coming to the concert on Saturday night?", altEs: ["Vuoi venire al concerto sabato sera?"], grammar: [g.present-for-future], vocab: [w.concerto] }
+      - { es: "Volentieri! A che ora?", en: "I'd love to! What time?", altEs: ["Volentieri, a che ora?", "Con piacere! A che ora?"], grammar: [g.present-for-future], vocab: [w.volentieri, w.a-che-ora] }
+      - { es: "Mi dispiace, venerdì sono occupato.", en: "Sorry, I'm busy on Friday.", altEs: ["Mi dispiace, venerdì sono occupata.", "Mi dispiace, venerdì non posso."], grammar: [g.present-for-future], vocab: [w.occupato, w.venerdì] }
+      - { es: "Hai programmi per stasera?", en: "Have you got any plans for tonight?", altEs: ["Hai qualche programma per stasera?", "Che programmi hai per stasera?"], grammar: [g.present-for-future], vocab: [w.programma, w.stasera] }
+      - { es: "Dopodomani c'è una mostra di Caravaggio.", en: "The day after tomorrow there's a Caravaggio exhibition.", altEs: ["C'è una mostra di Caravaggio dopodomani."], grammar: [g.present-for-future, g.c-e-ci-sono], vocab: [w.dopodomani, w.mostra] }
+      - { es: "Fra poco arriva Giulia: l'aspettiamo?", en: "Giulia's arriving soon: shall we wait for her?", altEs: ["Tra poco arriva Giulia: l'aspettiamo?", "Fra poco arriva Giulia, la aspettiamo?"], grammar: [g.present-for-future, g.lo-prendo], vocab: [w.fra-poco, w.aspettare] }
+      - { es: "Organizziamo una festa per il compleanno di Sara?", en: "Shall we organise a party for Sara's birthday?", altEs: ["Facciamo una festa per il compleanno di Sara?"], grammar: [g.present-for-future], vocab: [w.organizzare, w.festa] }
+      - { es: "Ti invito a cena sabato.", en: "I'm inviting you to dinner on Saturday.", altEs: ["Sabato ti invito a cena."], altEn: ["I'm taking you out to dinner on Saturday."], grammar: [g.present-for-future], vocab: [w.invitare, w.cena],
+          transform: { instruction: "Say 'we invite you (all)'", answer: "Vi invitiamo a cena sabato.", alt: ["Sabato vi invitiamo a cena."], en: "We're inviting you (all) to dinner on Saturday." } }
+      - { es: "Grazie per l'invito, vengo volentieri!", en: "Thanks for the invitation, I'd love to come!", altEs: ["Grazie dell'invito, vengo volentieri!"], grammar: [g.andare-venire], vocab: [w.invito, w.volentieri] }
+      - { es: "Il mese prossimo comincio un nuovo lavoro.", en: "Next month I'm starting a new job.", altEs: ["Il prossimo mese comincio un nuovo lavoro."], grammar: [g.present-for-future, g.adjective-position], vocab: [w.prossimo, w.cominciare, w.lavoro] }
+      - { es: "Stamattina sono libero, ma stasera lavoro.", en: "This morning I'm free, but tonight I'm working.", altEs: ["Stamattina sono libera, ma stasera lavoro."], grammar: [g.present-for-future, g.connectors-basic], vocab: [w.stamattina, w.libero] }
+      - { es: "Ho un'idea: domenica andiamo a vedere uno spettacolo in piazza!", en: "I've got an idea: on Sunday let's go and see a show in the square!", altEs: ["Ho un'idea: domenica andiamo a uno spettacolo in piazza!"], grammar: [g.present-for-future], vocab: [w.idea, w.spettacolo, w.progetto] }
+    exchanges:
+      - q: { es: "Che fai stasera?", en: "What are you doing tonight?" }
+        a: { es: "Esco con Luca, andiamo a un concerto.", en: "I'm going out with Luca, we're going to a concert." }
+        alt: ["Niente, sto a casa.", "Lavoro fino a tardi."]
+        grammar: [g.present-for-future]
+        vocab: [w.stasera, w.concerto]
+      - q: { es: "Ti va di venire al cinema domani?", en: "Do you fancy coming to the cinema tomorrow?" }
+        a: { es: "Volentieri! A che ora?", en: "I'd love to! What time?" }
+        alt: ["Mi dispiace, domani non posso.", "Perché no?"]
+        grammar: [g.present-for-future]
+        vocab: [w.volentieri]
+      - q: { es: "Hai programmi per il weekend?", en: "Have you got plans for the weekend?" }
+        a: { es: "Sì, sabato vado al mare con i miei amici.", en: "Yes, on Saturday I'm going to the seaside with my friends." }
+        alt: ["No, sono libero.", "Non ancora."]
+        grammar: [g.present-for-future]
+        vocab: [w.programma, w.weekend]
+      - q: { es: "Sei libera venerdì sera?", en: "Are you free on Friday evening?" }
+        a: { es: "No, mi dispiace, sono occupata.", en: "No, I'm sorry, I'm busy." }
+        alt: ["Sì, perché?", "Venerdì sì, sabato no."]
+        grammar: [g.present-for-future]
+        vocab: [w.libero, w.occupato]
+      - q: { es: "Quando parti per Firenze?", en: "When are you leaving for Florence?" }
+        a: { es: "Parto lunedì mattina.", en: "I'm leaving on Monday morning." }
+        alt: ["Dopodomani.", "La settimana prossima."]
+        grammar: [g.present-for-future]
+        vocab: [w.partire, w.lunedì]
+    texts:
+      - title: "Invito"
+        es: ["Sabato sera organizzo una piccola festa a casa mia.", "Ci sono musica, pizza e tanti amici.", "Vieni? Porta anche tua sorella!"]
+        en: ["On Saturday evening I'm throwing a little party at my place.", "There'll be music, pizza and lots of friends.", "Are you coming? Bring your sister too!"]
+        grammar: [g.present-for-future]
+        vocab: [w.organizzare, w.festa]
+      - title: "Il programma del weekend"
+        es: ["Venerdì sera andiamo a un concerto.", "Sabato mattina visitiamo una mostra.", "Domenica rimaniamo a casa!"]
+        en: ["On Friday evening we're going to a concert.", "On Saturday morning we're visiting an exhibition.", "On Sunday we're staying at home!"]
+        grammar: [g.present-for-future, g.days-months]
+        vocab: [w.programma, w.concerto, w.mostra]
+    spicy:
+      - { es: "Che fai stasera? Io niente... ma con te, forse qualcosa.", en: "What are you doing tonight? Nothing... but with you, maybe something.", grammar: [g.present-for-future], vocab: [w.stasera, w.niente, w.forse] }
+      - { es: "Ti invito a cena. Cucino io... sei pronto?", en: "I'm inviting you to dinner. I'm cooking... are you ready?", altEs: ["Ti invito a cena. Cucino io... sei pronta?"], grammar: [g.present-for-future], vocab: [w.invitare, w.cucinare] }
+      - { es: "Sabato sono libera... e anche domenica.", en: "I'm free on Saturday... and on Sunday too.", altEs: ["Sabato sono libero... e anche domenica."], grammar: [g.present-for-future, g.anche-neanche], vocab: [w.libero, w.sabato] }
+      - { es: "Ho un'idea: stasera niente telefono, solo noi due.", en: "I've got an idea: tonight no phone, just the two of us.", grammar: [g.present-for-future], vocab: [w.idea, w.telefono] }
+      - { es: "Domani parto per Firenze. Vieni con me?", en: "Tomorrow I'm leaving for Florence. Are you coming with me?", grammar: [g.present-for-future, g.andare-venire], vocab: [w.partire, w.venire] }
+  - id: a1.u12.l2
+    title: Prima, poi, quindi
+    teach: [g.connectors-basic]
+    vocab: [w.quindi, w.però, w.che.conj, w.se, w.mentre, w.forse, w.perfetto, w.fantastico, w.che-bello, w.possibile, w.importante, w.sicuro]
+    tip: "e (ed before e-), ma, o, perché (because), quindi (so), poi (then), mentre (while), se (if)."
+    sentences:
+      - { es: "Roma è bellissima, ma è molto cara.", en: "Rome is gorgeous, but it's very expensive.", altEs: ["Roma è bellissima, però è molto cara."], grammar: [g.connectors-basic], vocab: [w.ma, w.caro] }
+      - { es: "Stasera rimango a casa perché piove.", en: "Tonight I'm staying at home because it's raining.", altEs: ["Stasera sto a casa perché piove."], grammar: [g.connectors-basic], vocab: [w.perché, w.rimanere],
+          error: { wrong: "Stasera rimango a casa quindi piove.", explain: "Perché gives the reason (because); quindi gives the result (so): rimango a casa perché piove, or piove, quindi rimango a casa.", grammar: g.connectors-basic } }
+      - { es: "Il museo è chiuso, quindi andiamo al parco.", en: "The museum is closed, so we're going to the park.", altEs: ["Il museo è chiuso, allora andiamo al parco."], grammar: [g.connectors-basic], vocab: [w.quindi, w.parco],
+          transform: { instruction: "Use perché instead of quindi", answer: "Andiamo al parco perché il museo è chiuso.", en: "We're going to the park because the museum is closed." } }
+      - { es: "Prima andiamo a Piazza di Spagna, poi mangiamo un gelato.", en: "First we go to Piazza di Spagna, then we have an ice cream.", altEs: ["Prima andiamo a Piazza di Spagna e poi mangiamo un gelato."], grammar: [g.connectors-basic], vocab: [w.prima, w.poi, w.gelato] }
+      - { es: "Vuoi un caffè o un tè?", en: "Do you want a coffee or a tea?", altEs: ["Vuoi un caffè oppure un tè?", "Preferisci un caffè o un tè?"], grammar: [g.connectors-basic], vocab: [w.o, w.caffè, w.tè] }
+      - { es: "Io ed Elena andiamo al concerto.", en: "Elena and I are going to the concert.", altEs: ["Elena e io andiamo al concerto."], grammar: [g.connectors-basic], vocab: [w.e, w.concerto],
+          error: { wrong: "Io e Elena andiamo al concerto.", explain: "Before a word starting with e-, e usually becomes ed: io ed Elena.", grammar: g.connectors-basic } }
+      - { es: "Mentre Giulia fa la spesa, io prendo un caffè.", en: "While Giulia does the shopping, I'll have a coffee.", altEs: ["Io prendo un caffè mentre Giulia fa la spesa."], grammar: [g.connectors-basic], vocab: [w.mentre, w.fare-la-spesa] }
+      - { es: "Se fa bel tempo, andiamo al mare.", en: "If the weather's nice, we'll go to the seaside.", altEs: ["Andiamo al mare se fa bel tempo."], grammar: [g.connectors-basic, g.weather], vocab: [w.se, w.mare],
+          transform: { instruction: "Say 'if it rains, we stay at home'", answer: "Se piove, rimaniamo a casa.", alt: ["Se piove, stiamo a casa."], en: "If it rains, we stay at home." } }
+      - { es: "So che sei stanco, però stasera usciamo!", en: "I know you're tired, but we're going out tonight!", altEs: ["So che sei stanca, però stasera usciamo!", "So che sei stanco, ma stasera usciamo!"], grammar: [g.connectors-basic, g.sapere-conoscere], vocab: [w.che.conj, w.però] }
+      - { es: "Forse vengo, ma non sono sicuro.", en: "Maybe I'll come, but I'm not sure.", altEs: ["Forse vengo, ma non sono sicura."], grammar: [g.connectors-basic], vocab: [w.forse, w.sicuro] }
+      - { es: "Perfetto, allora ci vediamo alle otto.", en: "Perfect, see you at eight then.", altEs: ["Perfetto: ci vediamo alle otto, allora."], grammar: [g.connectors-basic], vocab: [w.perfetto, w.allora] }
+      - { es: "Che bello! Domani è sabato e non lavoro.", en: "How lovely! Tomorrow is Saturday and I'm not working.", altEs: ["Che bello, domani è sabato e non lavoro!"], grammar: [g.connectors-basic], vocab: [w.che-bello] }
+      - { es: "È possibile prenotare un tavolo per stasera?", en: "Is it possible to book a table for tonight?", altEs: ["Posso prenotare un tavolo per stasera?"], grammar: [g.potere-dovere], vocab: [w.possibile, w.prenotare, w.tavolo] }
+      - { es: "È importante arrivare presto, perché c'è sempre la fila.", en: "It's important to arrive early, because there's always a queue.", altEs: ["Bisogna arrivare presto, perché c'è sempre la fila."], grammar: [g.connectors-basic], vocab: [w.importante, w.presto, w.fila] }
+      - { es: "Piazza di Spagna è fantastica, ma la sera c'è troppa gente.", en: "Piazza di Spagna is fantastic, but in the evening there are too many people.", altEs: ["Piazza di Spagna è fantastica, però la sera c'è troppa gente."], grammar: [g.connectors-basic, g.molto-poco-troppo], vocab: [w.fantastico, w.gente] }
+      - { es: "Dice che viene alle nove.", en: "He says he's coming at nine.", altEs: ["Lui dice che viene alle nove."], altEn: ["She says she's coming at nine."], grammar: [g.connectors-basic, g.irregular-present], vocab: [w.che.conj, w.dire] }
+    exchanges:
+      - q: { es: "Vieni alla festa?", en: "Are you coming to the party?" }
+        a: { es: "Forse, se non lavoro fino a tardi.", en: "Maybe, if I'm not working late." }
+        alt: ["Sì, sicuro!", "No, perché sono stanco."]
+        grammar: [g.connectors-basic]
+        vocab: [w.forse, w.se]
+      - q: { es: "Perché studi l'italiano?", en: "Why are you studying Italian?" }
+        a: { es: "Perché amo l'Italia e voglio abitare a Roma.", en: "Because I love Italy and I want to live in Rome." }
+        alt: ["Per lavoro.", "Perché mia moglie è italiana."]
+        grammar: [g.connectors-basic, g.question-words]
+        vocab: [w.perché, w.amare]
+      - q: { es: "Pizza o pasta?", en: "Pizza or pasta?" }
+        a: { es: "Pizza, però prima un aperitivo!", en: "Pizza, but an aperitivo first!" }
+        alt: ["Pasta, grazie.", "Tutte e due!"]
+        grammar: [g.connectors-basic]
+        vocab: [w.però, w.aperitivo]
+      - q: { es: "Che cosa fai dopo il lavoro?", en: "What are you doing after work?" }
+        a: { es: "Prima vado in palestra, poi ceno con Giulia.", en: "First I'm going to the gym, then I'm having dinner with Giulia." }
+        alt: ["Torno a casa.", "Vado a fare la spesa."]
+        grammar: [g.connectors-basic, g.present-for-future]
+        vocab: [w.prima, w.poi]
+      - q: { es: "È possibile pagare con la carta?", en: "Is it possible to pay by card?" }
+        a: { es: "Sì, certo, nessun problema.", en: "Yes, of course, no problem." }
+        alt: ["No, mi dispiace, solo contanti.", "Sì."]
+        grammar: [g.potere-dovere]
+        vocab: [w.possibile, w.pagare]
+    texts:
+      - title: "Il mio sabato"
+        es: ["Prima faccio colazione al bar.", "Poi vado a Piazza di Spagna e faccio una passeggiata.", "Alla fine mangio un gelato, quindi sono felice!"]
+        en: ["First I have breakfast at the bar.", "Then I go to Piazza di Spagna and take a walk.", "In the end I have an ice cream, so I'm happy!"]
+        grammar: [g.connectors-basic]
+        vocab: [w.prima, w.poi, w.quindi]
+      - title: "Messaggio di Luca"
+        es: ["Mi dispiace, stasera non vengo.", "Sono stanco e domani lavoro presto, quindi vado a letto.", "Però sabato ci sono!"]
+        en: ["Sorry, I'm not coming tonight.", "I'm tired and I'm working early tomorrow, so I'm going to bed.", "But I'll be there on Saturday!"]
+        grammar: [g.connectors-basic]
+        vocab: [w.quindi, w.però]
+    spicy:
+      - { es: "Sei bella, simpatica e intelligente... quindi perché sei qui da sola?", en: "You're beautiful, nice and clever... so why are you here on your own?", altEs: ["Sei bello, simpatico e intelligente... quindi perché sei qui da solo?"], grammar: [g.connectors-basic], vocab: [w.quindi, w.intelligente] }
+      - { es: "Se hai freddo, c'è la mia giacca.", en: "If you're cold, there's my jacket.", grammar: [g.connectors-basic, g.avere-expressions], vocab: [w.se, w.giacca] }
+      - { es: "Prima un aperitivo, poi la cena, e poi... vediamo.", en: "First an aperitivo, then dinner, and then... we'll see.", grammar: [g.connectors-basic], vocab: [w.prima, w.poi, w.aperitivo] }
+      - { es: "Mentre tu parli, io guardo i tuoi occhi.", en: "While you talk, I look at your eyes.", grammar: [g.connectors-basic], vocab: [w.mentre, w.occhio] }
+      - { es: "Forse è il vino, ma sei fantastica.", en: "Maybe it's the wine, but you're fantastic.", altEs: ["Forse è il vino, ma sei fantastico."], grammar: [g.connectors-basic], vocab: [w.forse, w.fantastico] }
+  - id: a1.u12.l3
+    title: Anch'io! Neanch'io!
+    teach: [g.anche-neanche]
+    vocab: [w.neanche, w.nemmeno, w.niente, w.nessuno, w.qualcuno, w.mi, w.ti, w.ci, w.si, w.vi]
+    tip: "Agree with anch'io (me too) or neanch'io (me neither); disagree with io no / io sì. With piacere: anche a me, neanche a me."
+    sentences:
+      - { es: "Io vado a casa. — Anch'io.", en: "I'm going home. — Me too.", altEs: ["Io vado a casa. — Anche io."], altEn: ["I'm going home. — So am I."], grammar: [g.anche-neanche], vocab: [w.anche, w.casa],
+          error: { wrong: "Io vado a casa. — Io anche.", explain: "Anche goes before the word it refers to: anch'io (or anche io).", grammar: g.anche-neanche } }
+      - { es: "Non parlo tedesco. — Neanch'io.", en: "I don't speak German. — Me neither.", altEs: ["Non parlo tedesco. — Nemmeno io.", "Non parlo tedesco. — Neanche io."], altEn: ["I don't speak German. — Neither do I."], grammar: [g.anche-neanche], vocab: [w.neanche, w.tedesco],
+          transform: { instruction: "Disagree: you do speak it", answer: "Non parlo tedesco. — Io sì.", en: "I don't speak German. — I do." } }
+      - { es: "Ho fame. — Io no.", en: "I'm hungry. — I'm not.", altEs: ["Ho fame. — Io no, grazie."], grammar: [g.anche-neanche, g.avere-expressions], vocab: [w.fame] }
+      - { es: "Non sono stanco. — Io sì!", en: "I'm not tired. — I am!", altEs: ["Non sono stanca. — Io sì!"], grammar: [g.anche-neanche], vocab: [w.stanco] }
+      - { es: "Anche Marco viene alla festa.", en: "Marco's coming to the party too.", altEs: ["Viene anche Marco alla festa."], grammar: [g.anche-neanche], vocab: [w.anche, w.festa] }
+      - { es: "Non ho neanche un euro.", en: "I haven't got a single euro.", altEs: ["Non ho nemmeno un euro."], altEn: ["I don't even have one euro."], grammar: [g.anche-neanche, g.negation], vocab: [w.neanche, w.euro] }
+      - { es: "Non lo sa nemmeno lui.", en: "Even he doesn't know.", altEs: ["Non lo sa neanche lui.", "Nemmeno lui lo sa."], altEn: ["He doesn't know either."], grammar: [g.anche-neanche], vocab: [w.nemmeno, w.sapere] }
+      - { es: "Neanche Luca lo sa.", en: "Luca doesn't know either.", altEs: ["Nemmeno Luca lo sa.", "Luca non lo sa neanche lui."], altEn: ["Not even Luca knows."], grammar: [g.anche-neanche], vocab: [w.neanche] }
+      - { es: "Non c'è nessuno in piazza.", en: "There's nobody in the square.", altEs: ["In piazza non c'è nessuno."], grammar: [g.negation, g.c-e-ci-sono], vocab: [w.nessuno, w.piazza] }
+      - { es: "Non voglio niente, grazie.", en: "I don't want anything, thanks.", altEs: ["Non voglio nulla, grazie."], grammar: [g.negation], vocab: [w.niente],
+          transform: { instruction: "Change to 'we'", answer: "Non vogliamo niente, grazie.", alt: ["Non vogliamo nulla, grazie."], en: "We don't want anything, thanks." } }
+      - { es: "C'è qualcuno? — No, non c'è nessuno.", en: "Is anybody there? — No, there's nobody.", altEs: ["C'è qualcuno? — No, nessuno."], grammar: [g.negation], vocab: [w.qualcuno, w.nessuno] }
+      - { es: "Ci vediamo domani alle dieci?", en: "Shall we meet tomorrow at ten?", altEs: ["Domani alle dieci ci vediamo?"], grammar: [g.present-for-future], vocab: [w.ci, w.ci-vediamo] }
+      - { es: "Vi piace Roma? — Sì, ci piace tanto!", en: "Do you (all) like Rome? — Yes, we love it!", altEs: ["Vi piace Roma? — Sì, ci piace molto!"], grammar: [g.piacere-plural], vocab: [w.vi, w.ci] }
+      - { es: "Ti chiamo stasera.", en: "I'll call you tonight.", altEs: ["Stasera ti chiamo."], grammar: [g.present-for-future], vocab: [w.ti, w.chiamare] }
+      - { es: "Mi piace il caffè. — Anche a me!", en: "I like coffee. — So do I!", altEs: ["Mi piace il caffè. — Pure a me!"], altEn: ["I like coffee. — Me too!"], grammar: [g.anche-neanche, g.piacere-plural], vocab: [w.mi, w.anche],
+          error: { wrong: "Mi piace il caffè. — Anch'io!", explain: "With piacere, agree with anche a me (to me too), not anch'io.", grammar: g.anche-neanche } }
+      - { es: "Si chiama Elena e parla anche inglese.", en: "Her name is Elena and she speaks English too.", altEs: ["Lei si chiama Elena e parla anche inglese."], grammar: [g.anche-neanche, g.chiamarsi], vocab: [w.si, w.inglese] }
+    exchanges:
+      - q: { es: "Sono stanco.", en: "I'm tired." }
+        a: { es: "Anch'io! Andiamo a casa?", en: "Me too! Shall we go home?" }
+        alt: ["Io no.", "Anche io."]
+        grammar: [g.anche-neanche]
+        vocab: [w.anche, w.stanco]
+      - q: { es: "Non mi piace il traffico di Roma.", en: "I don't like the traffic in Rome." }
+        a: { es: "Neanche a me!", en: "Neither do I!" }
+        alt: ["A me sì, è divertente!", "Nemmeno a me."]
+        grammar: [g.anche-neanche, g.piacere-plural]
+        vocab: [w.neanche, w.traffico]
+      - q: { es: "C'è qualcuno a casa?", en: "Is anyone at home?" }
+        a: { es: "No, non c'è nessuno.", en: "No, there's nobody." }
+        alt: ["Sì, c'è mia madre.", "Non lo so."]
+        grammar: [g.negation]
+        vocab: [w.qualcuno, w.nessuno]
+      - q: { es: "Non ho fame.", en: "I'm not hungry." }
+        a: { es: "Neanch'io, prendo solo un caffè.", en: "Me neither, I'll just have a coffee." }
+        alt: ["Io sì!", "Nemmeno io."]
+        grammar: [g.anche-neanche]
+        vocab: [w.neanche, w.fame]
+      - q: { es: "Vuoi qualcosa da bere?", en: "Would you like something to drink?" }
+        a: { es: "No, grazie, non voglio niente.", en: "No, thanks, I don't want anything." }
+        alt: ["Sì, un'acqua, grazie.", "Un caffè, se c'è."]
+        grammar: [g.negation]
+        vocab: [w.niente, w.qualcosa]
+    texts:
+      - title: "Chat del sabato"
+        es: ["Giulia: sabato non lavoro!", "Sara: neanch'io! Andiamo al mare?", "Tom: vengo anch'io!"]
+        en: ["Giulia: I'm not working on Saturday!", "Sara: me neither! Shall we go to the seaside?", "Tom: I'm coming too!"]
+        grammar: [g.anche-neanche]
+        vocab: [w.neanche, w.anche]
+      - title: "Nota sulla porta"
+        es: ["Oggi non c'è nessuno in ufficio.", "Non risponde neanche il telefono.", "Ci vediamo domani!"]
+        en: ["There's nobody in the office today.", "Not even the phone is answering.", "See you tomorrow!"]
+        grammar: [g.anche-neanche, g.negation]
+        vocab: [w.nessuno, w.neanche]
+    spicy:
+      - { es: "Ti piace ballare? Anche a me. Balliamo?", en: "Do you like dancing? So do I. Shall we dance?", grammar: [g.anche-neanche, g.piacere-plural], vocab: [w.ballare, w.anche] }
+      - { es: "Non ho un fidanzato. — Neanch'io. — Allora usciamo insieme?", en: "I don't have a boyfriend. — Neither do I. — Shall we go out together, then?", altEs: ["Non ho una fidanzata. — Neanch'io. — Allora usciamo insieme?"], grammar: [g.anche-neanche], vocab: [w.fidanzato, w.neanche] }
+      - { es: "Anche il mio cane dice che sei carino.", en: "Even my dog says you're cute.", altEs: ["Anche il mio cane dice che sei carina."], grammar: [g.anche-neanche], vocab: [w.anche, w.cane, w.carino] }
+      - { es: "Non conosco nessuno qui. Ti va di essere il primo?", en: "I don't know anyone here. Fancy being the first?", altEs: ["Non conosco nessuno qui. Ti va di essere la prima?"], grammar: [g.negation, g.sapere-conoscere], vocab: [w.nessuno, w.conoscere] }
+      - { es: "Ci vediamo domani? E dopodomani? E anche il giorno dopo?", en: "See you tomorrow? And the day after? And the day after that too?", grammar: [g.anche-neanche, g.present-for-future], vocab: [w.ci, w.dopodomani] }
+  - id: a1.u12.l4
+    title: Arrivederci, Roma!
+    teach: [g.a1-review]
+    vocab: [w.tappa, w.ripassare, w.esatto, w.vacanza, w.viaggio, w.albergo, w.prenotare, w.scalinata]
+    tip: "Review time: the present of regular and irregular verbs, articles, c'è / ci sono, piacere, and Lei with the third person."
+    sentences:
+      - { es: "Mi chiamo Tom, sono inglese e abito a Roma da tre mesi.", en: "My name is Tom, I'm English and I've been living in Rome for three months.", altEs: ["Mi chiamo Tom, sono inglese e vivo a Roma da tre mesi."], grammar: [g.a1-review, g.chiamarsi], vocab: [w.chiamarsi, w.abitare, w.mese],
+          error: { wrong: "Mi chiamo Tom, sono inglese e abito in Roma da tre mesi.", explain: "Cities take a: abito a Roma.", grammar: g.prepositions-motion } }
+      - { es: "Ogni mattina mi sveglio presto e prendo un cappuccino al bar.", en: "Every morning I wake up early and have a cappuccino at the bar.", altEs: ["Mi sveglio presto ogni mattina e prendo un cappuccino al bar."], grammar: [g.a1-review, g.reflexive-present], vocab: [w.svegliarsi, w.cappuccino],
+          transform: { instruction: "Change to 'we'", answer: "Ogni mattina ci svegliamo presto e prendiamo un cappuccino al bar.", en: "Every morning we wake up early and have a cappuccino at the bar." } }
+      - { es: "In primavera la scalinata di Piazza di Spagna ha tanti fiori.", en: "In spring the Spanish Steps are covered in flowers.", altEs: ["In primavera ci sono tanti fiori sulla scalinata di Piazza di Spagna."], grammar: [g.a1-review], vocab: [w.scalinata, w.primavera] }
+      - { es: "Nel mio quartiere c'è un mercato e ci sono tre bar.", en: "In my neighbourhood there's a market and there are three bars.", altEs: ["Nel mio quartiere ci sono tre bar e un mercato."], grammar: [g.a1-review, g.c-e-ci-sono], vocab: [w.quartiere, w.mercato] }
+      - { es: "Adesso capisco quasi tutto, ma parlo ancora piano.", en: "Now I understand almost everything, but I still speak slowly.", altEs: ["Ora capisco quasi tutto, però parlo ancora piano."], grammar: [g.a1-review, g.present-isc], vocab: [w.capire, w.quasi] }
+      - { es: "Mi piacciono le piazze di Roma, ma non mi piace il traffico.", en: "I like the squares in Rome, but I don't like the traffic.", altEs: ["Le piazze di Roma mi piacciono, ma il traffico no."], grammar: [g.a1-review, g.piacere-plural], vocab: [w.piazza, w.traffico] }
+      - { es: "Ripassiamo i verbi prima di partire?", en: "Shall we revise the verbs before we leave?", altEs: ["Prima di partire ripassiamo i verbi?"], grammar: [g.a1-review], vocab: [w.ripassare, w.partire] }
+      - { es: "Esatto! Hai ragione.", en: "Exactly! You're right.", altEs: ["Esatto, hai ragione!"], grammar: [g.avere-expressions], vocab: [w.esatto, w.ragione] }
+      - { es: "La prossima tappa del viaggio è Firenze.", en: "The next stop on the journey is Florence.", altEs: ["Firenze è la prossima tappa del viaggio."], grammar: [g.a1-review], vocab: [w.tappa, w.viaggio, w.prossimo],
+          transform: { instruction: "Make it plural: Firenze and Siena", answer: "Le prossime tappe del viaggio sono Firenze e Siena.", en: "The next stops on the journey are Florence and Siena." } }
+      - { es: "Prenoto un albergo vicino al Duomo.", en: "I'm booking a hotel near the cathedral.", altEs: ["Prenoto un hotel vicino al Duomo."], grammar: [g.present-for-future], vocab: [w.prenotare, w.albergo] }
+      - { es: "Che cosa ti piace di più di Roma? — La pizza e la gente.", en: "What do you like most about Rome? — The pizza and the people.", altEs: ["Cosa ti piace di più di Roma? — La pizza e la gente."], grammar: [g.a1-review, g.piacere-intro], vocab: [w.più, w.gente] }
+      - { es: "Lei è di Roma? — No, sono di Milano, ma abito qui.", en: "Are you from Rome? — No, I'm from Milan, but I live here.", altEs: ["Lei è romana? — No, sono di Milano, ma abito qui."], grammar: [g.a1-review, g.tu-vs-lei, g.essere-di], vocab: [w.abitare],
+          error: { wrong: "Lei sei di Roma? — No, sono di Milano, ma abito qui.", explain: "Formal Lei takes the third-person verb: Lei è.", grammar: g.tu-vs-lei } }
+      - { es: "C'è un treno per Firenze ogni ora.", en: "There's a train to Florence every hour.", altEs: ["Ogni ora c'è un treno per Firenze."], grammar: [g.c-e-ci-sono], vocab: [w.treno, w.ogni] }
+      - { es: "Le vacanze finiscono domani e sono un po' triste.", en: "The holidays end tomorrow and I'm a bit sad.", altEs: ["Domani finiscono le vacanze e sono un po' triste."], grammar: [g.present-isc, g.a1-review], vocab: [w.vacanza, w.finire, w.triste] }
+      - { es: "Lancio una moneta nella Fontana di Trevi: così torno a Roma!", en: "I'm throwing a coin into the Trevi Fountain: that way I'll come back to Rome!", altEs: ["Lancio una moneta nella Fontana di Trevi, così torno a Roma!"], grammar: [g.a1-review, g.present-for-future], vocab: [w.lanciare, w.moneta, w.tornare] }
+      - { es: "Arrivederci, Roma! Torno presto.", en: "Goodbye, Rome! I'll be back soon.", altEs: ["Ciao, Roma! Torno presto."], grammar: [g.present-for-future, g.greetings], vocab: [w.arrivederci, w.tornare] }
+    exchanges:
+      - q: { es: "Quando parti?", en: "When are you leaving?" }
+        a: { es: "Parto domani mattina con il treno delle nove.", en: "I'm leaving tomorrow morning on the nine o'clock train." }
+        alt: ["Domani.", "Dopodomani."]
+        grammar: [g.present-for-future]
+        vocab: [w.partire, w.treno]
+      - q: { es: "Ti piace Roma?", en: "Do you like Rome?" }
+        a: { es: "Tantissimo! Ma ho voglia di vedere anche Firenze.", en: "So much! But I'm keen to see Florence too." }
+        alt: ["Sì, molto.", "Sì, ma c'è troppo traffico."]
+        grammar: [g.a1-review, g.avere-expressions]
+        vocab: [w.voglia]
+      - q: { es: "Dove dormi a Firenze?", en: "Where are you sleeping in Florence?" }
+        a: { es: "In un piccolo albergo vicino al Duomo.", en: "In a small hotel near the cathedral." }
+        alt: ["Da un'amica.", "Non lo so ancora."]
+        grammar: [g.present-for-future]
+        vocab: [w.albergo]
+      - q: { es: "Torni a Roma?", en: "Will you come back to Rome?" }
+        a: { es: "Sì, sicuro! Roma è sempre Roma.", en: "Yes, definitely! Rome is always Rome." }
+        alt: ["Forse l'anno prossimo.", "Sì, certo!"]
+        grammar: [g.present-for-future]
+        vocab: [w.tornare, w.sicuro]
+      - q: { es: "Che cosa fai l'ultimo giorno?", en: "What are you doing on your last day?" }
+        a: { es: "Vado a Piazza di Spagna e mangio un gelato sulla scalinata.", en: "I'm going to Piazza di Spagna to eat an ice cream on the Spanish Steps." }
+        alt: ["Faccio una passeggiata in centro.", "Niente: ripasso i verbi!"]
+        grammar: [g.present-for-future]
+        vocab: [w.scalinata, w.ultimo]
+    texts:
+      - title: "Il diario di Tom"
+        es: ["Domani parto per Firenze.", "Roma mi piace tanto: le piazze, le fontane, la gente.", "Ma il viaggio continua!"]
+        en: ["Tomorrow I'm leaving for Florence.", "I love Rome so much: the squares, the fountains, the people.", "But the journey goes on!"]
+        grammar: [g.a1-review, g.present-for-future]
+        vocab: [w.viaggio, w.continuare]
+      - title: "Cartolina da Piazza di Spagna"
+        es: ["Cara Giulia, sono sulla scalinata di Piazza di Spagna.", "Ci sono tanti fiori e tanti turisti.", "Grazie di tutto: a presto!"]
+        en: ["Dear Giulia, I'm on the Spanish Steps.", "There are lots of flowers and lots of tourists.", "Thanks for everything: see you soon!"]
+        grammar: [g.a1-review]
+        vocab: [w.scalinata, w.a-presto]
+    spicy:
+      - { es: "Parto per Firenze, ma il mio cuore rimane a Roma... con te.", en: "I'm leaving for Florence, but my heart stays in Rome... with you.", grammar: [g.a1-review], vocab: [w.partire, w.cuore, w.rimanere] }
+      - { es: "Ripassiamo i verbi? Comincio io: tu mi piaci, io ti piaccio...", en: "Shall we revise our verbs? I'll start: I like you, you like me...", grammar: [g.a1-review, g.piacere-plural], vocab: [w.ripassare, w.piacere] }
+      - { es: "La prossima tappa? Casa tua, per un caffè.", en: "The next stop? Your place, for a coffee.", grammar: [g.a1-review], vocab: [w.tappa, w.caffè] }
+      - { es: "Esatto: sei bellissima e lo sai.", en: "Exactly: you're gorgeous and you know it.", altEs: ["Esatto: sei bellissimo e lo sai."], grammar: [g.a1-review], vocab: [w.esatto, w.sapere] }
+      - { es: "Arrivederci, Roma. Ciao, bello: ci vediamo a Firenze?", en: "Goodbye, Rome. Bye, handsome: see you in Florence?", altEs: ["Arrivederci, Roma. Ciao, bella: ci vediamo a Firenze?"], grammar: [g.a1-review, g.greetings], vocab: [w.arrivederci, w.ci-vediamo] }
+dialogues:
+  - id: a1.u12.d1
+    title: L'ultimo weekend a Roma
+    context: Tom and Giulia are sitting on the Spanish Steps. It's Tom's last weekend in Rome before he leaves for Florence.
+    lines:
+      - { speaker: Giulia, es: "Allora, Tom, che fai questo weekend?", en: "So, Tom, what are you doing this weekend?" }
+      - { speaker: Tom, es: "Sabato mattina preparo lo zaino, perché domenica parto per Firenze.", en: "On Saturday morning I'm packing my backpack, because on Sunday I'm leaving for Florence." }
+      - { speaker: Giulia, es: "Già domenica? Mi dispiace!", en: "Sunday already? I'm sorry!" }
+      - { speaker: Tom, es: "Anche a me. Però sabato sera sono libero.", en: "Me too. But on Saturday evening I'm free." }
+      - { speaker: Giulia, es: "Perfetto! Allora organizziamo una cena con Sara e Marco.", en: "Perfect! Then let's organise a dinner with Sara and Marco." }
+      - { speaker: Tom, es: "Volentieri! Dove andiamo?", en: "I'd love to! Where shall we go?" }
+      - { speaker: Giulia, es: "Prima facciamo un aperitivo qui a Piazza di Spagna, poi andiamo in trattoria a Testaccio.", en: "First we'll have an aperitivo here in Piazza di Spagna, then we'll go to a trattoria in Testaccio." }
+      - { speaker: Tom, es: "A Firenze non conosco nessuno...", en: "I don't know anyone in Florence..." }
+      - { speaker: Giulia, es: "Neanch'io, ma mia cugina abita lì. Ti do il suo numero.", en: "Neither do I, but my cousin lives there. I'll give you her number." }
+      - { speaker: Tom, es: "Grazie! Sei una vera amica.", en: "Thanks! You're a true friend." }
+      - { speaker: Giulia, es: "E tu torni a Roma, vero?", en: "And you'll come back to Rome, won't you?" }
+      - { speaker: Tom, es: "Certo! La prossima tappa è Firenze, ma Roma è sempre Roma.", en: "Of course! The next stop is Florence, but Rome is always Rome." }
+    questions:
+      - { q: "Quando parte Tom?", options: ["Sabato mattina", "Domenica", "Lunedì"], answer: 1, explain: "Tom says: 'domenica parto per Firenze'." }
+      - { q: "Che cosa fanno sabato sera?", options: ["Un aperitivo e una cena", "Un concerto", "Una passeggiata a Villa Borghese"], answer: 0, explain: "Giulia plans an aperitivo in Piazza di Spagna and then dinner in a trattoria in Testaccio." }
+      - { q: "Chi abita a Firenze?", options: ["La sorella di Tom", "La cugina di Giulia", "Sara e Marco"], answer: 1, explain: "Giulia's cousin lives in Florence." }
+      - { q: "Dove fanno l'aperitivo?", options: ["A Testaccio", "A Piazza di Spagna", "A Trastevere"], answer: 1, explain: "The aperitivo is 'qui a Piazza di Spagna', where they are sitting." }
