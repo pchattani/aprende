@@ -1,0 +1,38 @@
+id: r.a2.dal-medico
+level: a2
+title: Dal medico a Volterra
+kind: dialogue
+intro: Tom, an English student on a summer course in Volterra, goes to the doctor after a few days of feeling unwell. Note the formal Lei and the polite conditional.
+allow: [tom, conti, volterra, ok]
+paragraphs:
+  - { es: "Dottoressa Conti: Buongiorno. Si accomodi. Che cosa Le succede?", en: "Dr Conti: Good morning. Have a seat. What's wrong?" }
+  - { es: "Tom: Buongiorno, dottoressa. Non sto bene da tre giorni. Ho mal di gola, ho la tosse e stanotte avevo anche un po' di febbre.", en: "Tom: Good morning, doctor. I haven't been well for three days. I've got a sore throat, a cough, and last night I had a bit of a temperature too." }
+  - { es: "Dottoressa Conti: Quanta febbre aveva? L'ha misurata?", en: "Dr Conti: How high was your temperature? Did you take it?" }
+  - { es: "Tom: Sì, trentotto e mezzo. Questa mattina, invece, trentasette e due. Ma mi fa male tutto il corpo e sono molto stanco.", en: "Tom: Yes, thirty-eight and a half. This morning, though, thirty-seven point two. But my whole body aches and I'm very tired." }
+  - { es: "Dottoressa Conti: Vediamo. Apra la bocca, per favore... Sì, la gola è molto rossa. Adesso respiri forte... Bene, i polmoni sono a posto. È un'influenza, niente di grave.", en: "Dr Conti: Let's see. Open your mouth, please... Yes, your throat is very red. Now breathe deeply... Good, your lungs are fine. It's flu, nothing serious." }
+  - { es: "Tom: Meno male! Ma lunedì ho un esame di italiano. Potrei andare a lezione domani?", en: "Tom: Thank goodness! But on Monday I've got an Italian exam. Could I go to class tomorrow?" }
+  - { es: "Dottoressa Conti: Io non ci andrei. Dovrebbe restare a casa almeno due o tre giorni, riposare e bere molto: acqua, tè, spremute. Le scrivo un certificato per la scuola.", en: "Dr Conti: I wouldn't go if I were you. You should stay at home for at least two or three days, rest and drink a lot: water, tea, fresh juice. I'll write you a certificate for the school." }
+  - { es: "Tom: Grazie. E per la gola? Mi potrebbe dare qualcosa?", en: "Tom: Thank you. And for my throat? Could you give me something?" }
+  - { es: "Dottoressa Conti: Prenda queste compresse per la febbre, una ogni otto ore, ma solo se supera i trentotto. Per la tosse, uno sciroppo: due cucchiai la sera. Li trova in farmacia, in piazza.", en: "Dr Conti: Take these tablets for the fever, one every eight hours, but only if it goes above thirty-eight. For the cough, a syrup: two spoonfuls in the evening. You'll find them at the pharmacy in the square." }
+  - { es: "Tom: Devo prendere anche gli antibiotici?", en: "Tom: Do I need to take antibiotics as well?" }
+  - { es: "Dottoressa Conti: No, per l'influenza non servono. E un consiglio: non faccia la doccia fredda e non esca la sera, con questo vento. Vedrà che tra quattro o cinque giorni starà meglio.", en: "Dr Conti: No, they don't help with flu. And a piece of advice: don't have a cold shower and don't go out in the evening, with this wind. You'll see, in four or five days you'll feel better." }
+  - { es: "Tom: Ok, grazie mille. E l'esame di lunedì?", en: "Tom: OK, thanks very much. And Monday's exam?" }
+  - { es: "Dottoressa Conti: Lei parla già benissimo l'italiano. Studi un po' dal letto... e in bocca al lupo!", en: "Dr Conti: You already speak Italian very well. Study a little in bed... and good luck!" }
+questions:
+  - { q: "Da quanto tempo Tom non sta bene?", options: ["Da tre giorni", "Da una settimana", "Da stamattina"], answer: 0, explain: "«Non sto bene da tre giorni» – da + present for something that started in the past and is still going on." }
+  - { q: "Che cosa ha Tom, secondo la dottoressa?", options: ["Un raffreddore", "Un'influenza", "Un'allergia"], answer: 1, explain: "«È un'influenza, niente di grave.»" }
+  - { q: "Che cosa consiglia la dottoressa per i prossimi giorni?", options: ["Andare a lezione e studiare molto", "Restare a casa, riposare e bere molto", "Fare sport"], answer: 1, explain: "«Dovrebbe restare a casa... riposare e bere molto» – advice with the conditional dovrebbe." }
+  - { q: "Quando deve prendere le compresse Tom?", options: ["Sempre, tre volte al giorno", "Solo se la febbre supera i trentotto", "Solo la sera"], answer: 1, explain: "One every eight hours, «ma solo se supera i trentotto»." }
+  - { q: "Perché la dottoressa non dà gli antibiotici?", options: ["Perché sono troppo cari", "Perché per l'influenza non servono", "Perché la farmacia è chiusa"], answer: 1, explain: "Antibiotics don't work against flu, which is caused by a virus." }
+glossary:
+  - { es: misurata, en: measured, taken (temperature) }
+  - { es: invece, en: on the other hand, though }
+  - { es: stanotte, en: last night, tonight }
+  - { es: almeno, en: at least }
+  - { es: polmoni, en: lungs }
+  - { es: a posto, en: fine, in order }
+  - { es: meno male, en: thank goodness }
+  - { es: certificato, en: (medical) certificate }
+  - { es: supera, en: goes above }
+  - { es: antibiotici, en: antibiotics }
+  - { es: in bocca al lupo, en: good luck (lit. into the wolf's mouth) }

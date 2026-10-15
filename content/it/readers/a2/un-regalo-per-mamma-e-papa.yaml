@@ -1,0 +1,35 @@
+id: r.a2.un-regalo-per-mamma-e-papa
+level: a2
+title: Un regalo per mamma e papà
+kind: dialogue
+intro: Siblings Elena and Matteo are in San Gimignano looking for a present for their parents' wedding anniversary. Listen for the object pronouns lo, la, li, le, gli and le.
+allow: [elena, matteo, vernaccia]
+paragraphs:
+  - { es: "Elena: Matteo, sabato è l'anniversario di mamma e papà: trentacinque anni di matrimonio! Dobbiamo trovare un regalo oggi.", en: "Elena: Matteo, on Saturday it's Mum and Dad's anniversary: thirty-five years of marriage! We have to find a present today." }
+  - { es: "Matteo: Lo so, lo so. Ma che cosa gli regaliamo? L'anno scorso gli abbiamo dato un libro di cucina e non l'hanno mai aperto.", en: "Matteo: I know, I know. But what shall we give them? Last year we gave them a cookbook and they've never opened it." }
+  - { es: "Elena: Guarda quella vetrina! Ci sono dei piatti di ceramica dipinti a mano. A mamma piacciono tanto le cose fatte a mano.", en: "Elena: Look at that shop window! There are some hand-painted ceramic plates. Mum loves handmade things." }
+  - { es: "Matteo: Sono belli, ma papà li romperà subito. Lo conosci: in cucina rompe tutto.", en: "Matteo: They're nice, but Dad will break them straight away. You know him: he breaks everything in the kitchen." }
+  - { es: "Elena: Hai ragione. E una bottiglia di Vernaccia? È il vino bianco di San Gimignano. Papà lo adora.", en: "Elena: You're right. What about a bottle of Vernaccia? It's San Gimignano's white wine. Dad loves it." }
+  - { es: "Matteo: Sì, ma mamma non beve vino. Le dobbiamo regalare qualcosa anche a lei.", en: "Matteo: Yes, but Mum doesn't drink wine. We have to give her something too." }
+  - { es: "Commessa: Buongiorno, ragazzi. Posso aiutarvi?", en: "Shop assistant: Good morning. Can I help you?" }
+  - { es: "Elena: Sì, grazie. Cerchiamo un regalo per i nostri genitori. Festeggiano trentacinque anni insieme.", en: "Elena: Yes, thanks. We're looking for a present for our parents. They're celebrating thirty-five years together." }
+  - { es: "Commessa: Che bello! Allora guardate questa foto della città, fatta dall'alto, con tutte le torri. La possiamo mettere in una cornice di legno e scrivere sotto una frase per loro.", en: "Shop assistant: How lovely! Then look at this photo of the town, taken from above, with all the towers. We can put it in a wooden frame and write a sentence underneath for them." }
+  - { es: "Matteo: È un'ottima idea! Si sono conosciuti proprio qui, in piazza, durante una festa d'estate. Mamma ci racconta sempre questa storia.", en: "Matteo: That's an excellent idea! They actually met right here, in the square, during a summer festival. Mum always tells us about it." }
+  - { es: "Elena: La prendiamo! E scriviamo: «San Gimignano, dove tutto è cominciato». Quanto costa?", en: "Elena: We'll take it! And we'll write: 'San Gimignano, where it all began'. How much is it?" }
+  - { es: "Commessa: Con la cornice, quaranta euro. La preparo per domani mattina. La volete in una scatola regalo?", en: "Shop assistant: With the frame, forty euros. I.ll have it ready tomorrow morning. Do you want it in a gift box?" }
+  - { es: "Matteo: Sì, grazie. E la Vernaccia per papà la prendiamo lo stesso. Non è un regalo per lui... è per la festa!", en: "Matteo: Yes, thanks. And we'll get the Vernaccia for Dad anyway. It's not a present for him... it's for the party!" }
+questions:
+  - { q: "Perché Elena e Matteo cercano un regalo?", options: ["Per il compleanno della mamma", "Per l'anniversario di matrimonio dei genitori", "Per la festa della città"], answer: 1, explain: "It's their parents' 35th wedding anniversary on Saturday." }
+  - { q: "Perché non comprano i piatti di ceramica?", options: ["Perché sono troppo cari", "Perché papà li romperà", "Perché alla mamma non piacciono"], answer: 1, explain: "«Papà li romperà subito» – li replaces i piatti." }
+  - { q: "Che cosa propone la commessa?", options: ["Una foto della città in una cornice", "Una bottiglia di vino", "Un libro di cucina"], answer: 0, explain: "A photo of San Gimignano's towers in a wooden frame, with a dedication underneath." }
+  - { q: "Perché la foto di San Gimignano è un regalo perfetto?", options: ["Perché i genitori ci abitano", "Perché i genitori si sono conosciuti lì", "Perché la mamma è fotografa"], answer: 1, explain: "«Si sono conosciuti proprio qui, in piazza, durante una festa d'estate.»" }
+  - { q: "Nella frase «Papà lo adora», che cosa significa «lo»?", options: ["Il vino Vernaccia", "Il regalo", "San Gimignano"], answer: 0, explain: "Lo is the direct object pronoun standing for la Vernaccia/il vino bianco just mentioned." }
+glossary:
+  - { es: ceramica, en: ceramic }
+  - { es: dipinti a mano, en: hand-painted }
+  - { es: dipinti, en: painted }
+  - { es: adora, en: loves, adores }
+  - { es: festeggiano, en: they're celebrating }
+  - { es: cornice, en: frame }
+  - { es: frase, en: sentence, phrase }
+  - { es: lo stesso, en: anyway, all the same }

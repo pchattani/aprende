@@ -1,0 +1,36 @@
+id: r.a2.mare-o-collina
+level: a2
+title: Mare o collina?
+kind: dialogue
+intro: Alessio and Giada are planning a week's holiday in Tuscany. He wants the sea on the island of Elba; she wants the hills of the Val d'Orcia. Listen for comparisons and opinions.
+allow: [alessio, giada, orcia, napoleone, pienza, montalcino, portoferraio, brunello]
+paragraphs:
+  - { es: "Alessio: Allora, per agosto io ho un'idea fantastica: una settimana all'Isola d'Elba! Mare, spiaggia, pesce fresco... Che ne pensi?", en: "Alessio: So, for August I've got a fantastic idea: a week on the island of Elba! Sea, beach, fresh fish... What do you think?" }
+  - { es: "Giada: Mah, secondo me ad agosto l'Elba è troppo affollata. Io preferirei la Val d'Orcia. Le colline sono più tranquille del mare e il paesaggio è il più bello di tutta la Toscana.", en: "Giada: Hmm, I think Elba is too crowded in August. I'd prefer the Val d'Orcia. The hills are quieter than the seaside and the landscape is the most beautiful in all of Tuscany." }
+  - { es: "Alessio: Più bello dell'Elba? Non sono d'accordo. All'Elba ci sono spiagge bianchissime e l'acqua è più pulita che in qualsiasi altro posto. E c'è anche la storia: Napoleone ci ha vissuto per dieci mesi!", en: "Alessio: More beautiful than Elba? I don't agree. On Elba there are dazzling white beaches and the water is cleaner than anywhere else. And there's history too: Napoleon lived there for ten months!" }
+  - { es: "Giada: Sì, ma in Val d'Orcia c'è più arte. Pienza è un gioiello del Rinascimento, e a Montalcino fanno il Brunello, uno dei vini migliori d'Italia. E poi in collina fa meno caldo che al mare.", en: "Giada: Yes, but in the Val d'Orcia there's more art. Pienza is a Renaissance jewel, and in Montalcino they make Brunello, one of the best wines in Italy. And besides, it's less hot in the hills than at the seaside." }
+  - { es: "Alessio: Meno caldo? Ad agosto in Val d'Orcia ci sono trentacinque gradi e non c'è un albero! Al mare almeno puoi fare il bagno.", en: "Alessio: Less hot? In August there are thirty-five degrees in the Val d'Orcia and not a single tree! At the seaside at least you can go for a swim." }
+  - { es: "Giada: Ma ci sono i cipressi! E gli agriturismi hanno quasi tutti la piscina. Ne ho visto uno su internet: costa meno di un albergo all'Elba ed è molto più grande.", en: "Giada: But there are the cypresses! And almost all the agriturismi have a swimming pool. I saw one online: it costs less than a hotel on Elba and it's much bigger." }
+  - { es: "Alessio: Quanto costa?", en: "Alessio: How much is it?" }
+  - { es: "Giada: Novanta euro a notte, con colazione. All'Elba, ad agosto, un albergo normale costa almeno centocinquanta euro. E per andare sull'isola bisogna prendere anche il traghetto.", en: "Giada: Ninety euros a night, with breakfast. On Elba, in August, an ordinary hotel costs at least a hundred and fifty euros. And to get to the island you have to take the ferry as well." }
+  - { es: "Alessio: Va bene, la Val d'Orcia è più economica. Ma io senza il mare non sono felice...", en: "Alessio: All right, the Val d'Orcia is cheaper. But I'm not happy without the sea..." }
+  - { es: "Giada: E allora facciamo così: cinque giorni in collina e due giorni al mare. Dalla Val d'Orcia alla costa ci vogliono meno di due ore in macchina.", en: "Giada: Then let's do this: five days in the hills and two days at the sea. From the Val d'Orcia to the coast it takes less than two hours by car." }
+  - { es: "Alessio: Cinque e due? Facciamo quattro e tre!", en: "Alessio: Five and two? Let's make it four and three!" }
+  - { es: "Giada: Affare fatto. Sei peggio di un commerciante!", en: "Giada: Deal. You're worse than a salesman!" }
+questions:
+  - { q: "Secondo Giada, perché non andare all'Elba ad agosto?", options: ["Perché è troppo affollata", "Perché fa freddo", "Perché non ci sono spiagge"], answer: 0, explain: "«Secondo me ad agosto l'Elba è troppo affollata.»" }
+  - { q: "Che cosa dice Alessio dell'acqua all'Elba?", options: ["È più fredda che altrove", "È più pulita che in qualsiasi altro posto", "È sporca"], answer: 1, explain: "«L'acqua è più pulita che in qualsiasi altro posto» – a comparison with che before a phrase with a preposition." }
+  - { q: "Che cosa si produce a Montalcino?", options: ["Il formaggio pecorino", "Il vino Brunello", "La ceramica"], answer: 1, explain: "«A Montalcino fanno il Brunello, uno dei vini migliori d'Italia.»" }
+  - { q: "Perché l'agriturismo è più conveniente?", options: ["Costa novanta euro a notte con colazione", "È gratis per due notti", "Ha una spiaggia privata"], answer: 0, explain: "€90 a night with breakfast, against at least €150 for a hotel on Elba." }
+  - { q: "Che cosa decidono alla fine?", options: ["Sette giorni all'Elba", "Sette giorni in Val d'Orcia", "Quattro giorni in collina e tre al mare"], answer: 2, explain: "Giada proposes five and two; Alessio bargains it to «quattro e tre» and she agrees: «Affare fatto»." }
+glossary:
+  - { es: affollata, en: crowded }
+  - { es: bianchissime, en: very white }
+  - { es: fare il bagno, en: to go for a swim }
+  - { es: internet, en: internet }
+  - { es: almeno, en: at least }
+  - { es: normale, en: ordinary, normal }
+  - { es: affare fatto, en: it's a deal }
+  - { es: affare, en: deal }
+  - { es: commerciante, en: trader, salesman }
+  - { es: mah, en: hmm, well }

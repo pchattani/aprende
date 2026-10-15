@@ -1,0 +1,42 @@
+id: r.b2.me-ne-vado-o-resto
+level: b2
+title: Me ne vado o resto?
+kind: dialogue
+intro: On a summer evening in Tropea, Calabria, Francesco tells his older sister Rosaria that he's been offered a job in Turin. Their conversation is full of pronominal verbs (andarsene, farcela, prendersela, cavarsela) and causatives with fare and lasciare.
+allow: [francesco, rosaria, tropea, torino, calabria, calabrese, calabresi, isola, michele]
+paragraphs:
+  - { es: "Rosaria: Allora? Mi hai fatto venire fin qui sulla terrazza per dirmi qualcosa. Hai una faccia… Che è successo?", en: "Rosaria: Well? You made me come all the way up here to the terrace to tell me something. You've got such a face on you… What's happened?" }
+  - { es: "Francesco: Mi hanno offerto un lavoro a Torino. Un contratto a tempo indeterminato, in un'azienda di software. Lo stipendio è il doppio di quello che prendo qui al ristorante.", en: "Francesco: I've been offered a job in Turin. A permanent contract, at a software company. The salary is twice what I earn here at the restaurant." }
+  - { es: "Rosaria: Ma è fantastico! Perché me lo dici come se fosse morto qualcuno?", en: "Rosaria: But that's fantastic! Why are you telling me as if someone had died?" }
+  - { es: "Francesco: Perché non so se me la sento. Guardati intorno: il mare, la Rocca, la chiesa dell'Isola là sotto. Qui ho tutto. Gli amici, mamma e papà, te. A Torino non conosco nessuno, e d'inverno, dicono, il sole non si vede per settimane.", en: "Francesco: Because I don't know if I'm up to it. Look around you: the sea, the cliff, the church of the Isola down there. I've got everything here. My friends, Mum and Dad, you. In Turin I don't know anyone, and in winter, they say, you don't see the sun for weeks." }
+  - { es: "Rosaria: Senti, Francè, te lo dico perché ti voglio bene. Tu qui non ce la fai più. Lavori dodici ore al giorno d'estate e d'inverno sei disoccupato. Ti sei laureato in informatica con il massimo dei voti per fare il cameriere a vita?", en: "Rosaria: Listen, Francè, I'm telling you because I love you. You can't go on like this here. You work twelve hours a day in summer and in winter you're unemployed. Did you get a top-marks degree in computer science to be a waiter for life?" }
+  - { es: "Francesco: Non è solo questo. Se me ne vado anch'io, a mamma e papà chi ci pensa? Michele è già in Germania da cinque anni. Rimarresti solo tu.", en: "Francesco: It's not just that. If I leave too, who'll look after Mum and Dad? Michele has already been in Germany for five years. There'd only be you left." }
+  - { es: "Rosaria: E allora? Me la caverò. Papà sta benissimo, e mamma ci seppellirà tutti. Non usarli come scusa. Lo sai cosa mi ha detto papà l'altro giorno? Che si è pentito di non essersene andato quando era giovane. Non voleva che te lo dicessi, ma te lo dico lo stesso.", en: "Rosaria: So what? I'll manage. Dad is perfectly well, and Mum will outlive us all. Don't use them as an excuse. Do you know what Dad told me the other day? That he regrets not having left when he was young. He didn't want me to tell you, but I'm telling you anyway." }
+  - { es: "Francesco: Davvero? Non me l'ha mai detto.", en: "Francesco: Really? He's never told me." }
+  - { es: "Rosaria: Certo che non te l'ha detto. Non vuole farti sentire in colpa né in un senso né nell'altro. Ma se rifiuti per loro, ci rimarrà male. E se rifiuti per paura, te la prenderai con te stesso per il resto della vita.", en: "Rosaria: Of course he hasn't. He doesn't want to make you feel guilty either way. But if you turn it down for their sake, he'll be hurt. And if you turn it down out of fear, you'll be angry with yourself for the rest of your life." }
+  - { es: "Francesco: E se non mi trovo bene? Se Torino non fa per me?", en: "Francesco: And what if I don't settle in? What if Turin isn't for me?" }
+  - { es: "Rosaria: Allora torni. Tropea non scappa. Il mare sarà sempre qui, e la cipolla rossa pure. Ma un'occasione così non te la ricapita. Lasciati almeno provare. Un anno. Poi decidi.", en: "Rosaria: Then you come back. Tropea isn't going anywhere. The sea will always be here, and so will the red onions. But you won't get another chance like this. At least let yourself try. One year. Then decide." }
+  - { es: "Francesco: Un anno… Devo dargli una risposta entro venerdì. Mi sono fatto mandare il contratto per leggerlo con calma, ma non l'ho ancora aperto.", en: "Francesco: One year… I have to give them an answer by Friday. I had them send me the contract so I could read it calmly, but I haven't opened it yet." }
+  - { es: "Rosaria: Allora aprilo stasera. Anzi, fammelo vedere adesso. Se c'è qualcosa che non va, te lo dico io. E se va tutto bene, domani lo diciamo a mamma. Insieme.", en: "Rosaria: Then open it tonight. Actually, let me see it now. If there's anything wrong, I'll tell you. And if it's all fine, tomorrow we'll tell Mum. Together." }
+  - { es: "Francesco: Va bene. Ma promettimi una cosa: ogni estate mi farai trovare un tavolo libero al ristorante. Anche ad agosto.", en: "Francesco: OK. But promise me one thing: every summer you'll keep a free table for me at the restaurant. Even in August." }
+  - { es: "Rosaria: Ad agosto? Non esagerare. Ti farò sedere in cucina, come quando eri piccolo.", en: "Rosaria: In August? Don't push it. I'll let you sit in the kitchen, like when you were little." }
+questions:
+  - { q: "Che cosa è stato offerto a Francesco?", options: ["Un lavoro in un ristorante a Torino", "Un contratto a tempo indeterminato in un'azienda di software", "Un posto all'università"], answer: 1, explain: "A permanent contract at a software company, with double his current pay." }
+  - { q: "Qual è la situazione di lavoro di Francesco a Tropea?", options: ["Lavora molto d'estate ed è disoccupato d'inverno", "Lavora come informatico", "Non ha mai lavorato"], answer: 0, explain: "Twelve hours a day in summer, unemployed in winter – despite a top degree in computer science." }
+  - { q: "Che cosa ha confessato il padre a Rosaria?", options: ["Che vuole trasferirsi a Torino", "Che si è pentito di non essersene andato da giovane", "Che è malato"], answer: 1, explain: "«Si è pentito di non essersene andato quando era giovane» – pentirsi and andarsene in the same sentence." }
+  - { q: "Che cosa propone Rosaria?", options: ["Di rifiutare l'offerta", "Di provare per un anno e poi decidere", "Di andare a Torino con lui"], answer: 1, explain: "«Lasciati almeno provare. Un anno. Poi decidi.»" }
+  - { q: "Che cosa significa «Mi sono fatto mandare il contratto»?", options: ["I sent the contract", "I had them send me the contract", "I wrote the contract myself"], answer: 1, explain: "Farsi + infinitive: to have something done for oneself – a causative construction." }
+glossary:
+  - { es: rocca, en: cliff, rock }
+  - { es: fin, en: (fin qui) all the way here }
+  - { es: me la sento, en: I feel up to it }
+  - { es: "francè", en: Francesco (clipped form used when calling someone) }
+  - { es: a vita, en: for life }
+  - { es: caverò, en: (me la caverò) I'll manage }
+  - { es: seppellirà, en: will bury (= outlive) }
+  - { es: rimarrà male, en: will be hurt }
+  - { es: "te la prenderai", en: you'll be angry }
+  - { es: fa per me, en: is for me }
+  - { es: cipolla rossa, en: red onion (Tropea's famous product) }
+  - { es: ricapita, en: comes round again }
+  - { es: esagerare, en: to push it, to overdo it }

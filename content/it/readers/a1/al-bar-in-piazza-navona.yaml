@@ -1,0 +1,34 @@
+id: r.a1.al-bar-in-piazza-navona
+level: a1
+title: Al bar in Piazza Navona
+kind: dialogue
+intro: Two friends, Chiara and Tom, sit down at a café in Piazza Navona and order from the waiter.
+allow: [chiara, tom, bernini]
+paragraphs:
+  - { es: "Cameriere: Buongiorno, signori! Prego, desiderate?", en: "Waiter: Good morning! What would you like?" }
+  - { es: "Chiara: Buongiorno. Io vorrei un cappuccino e un cornetto, per favore.", en: "Chiara: Good morning. I'd like a cappuccino and a croissant, please." }
+  - { es: "Cameriere: Il cornetto vuoto o con la crema?", en: "Waiter: A plain croissant or one with custard?" }
+  - { es: "Chiara: Con la crema, grazie. E tu, Tom, che cosa prendi?", en: "Chiara: With custard, thanks. And you, Tom, what are you having?" }
+  - { es: "Tom: Mmm, non lo so. Un cappuccino anche per me? Ma sono le undici e mezza...", en: "Tom: Hmm, I don't know. A cappuccino for me too? But it's half past eleven..." }
+  - { es: "Chiara: Allora prendi un caffè! Gli italiani bevono il cappuccino a colazione, la mattina presto. Dopo pranzo prendono un caffè.", en: "Chiara: Then have a coffee! Italians drink cappuccino at breakfast, early in the morning. After lunch they have an espresso." }
+  - { es: "Tom: Va bene. Un caffè, per favore, e una spremuta d'arancia. Ho sete!", en: "Tom: OK. A coffee, please, and a freshly squeezed orange juice. I'm thirsty!" }
+  - { es: "Cameriere: Benissimo. Desiderate anche qualcosa da mangiare? Abbiamo panini, tramezzini e una torta al cioccolato buonissima.", en: "Waiter: Very good. Would you like something to eat as well? We have rolls, sandwiches and a delicious chocolate cake." }
+  - { es: "Tom: Mi piace molto il cioccolato! Una fetta di torta, grazie. E una bottiglia di acqua naturale.", en: "Tom: I really like chocolate! A slice of cake, thanks. And a bottle of still water." }
+  - { es: "Cameriere: Ecco a voi: un cappuccino, un cornetto alla crema, un caffè, una spremuta, la torta e l'acqua. Buon appetito!", en: "Waiter: Here you are: a cappuccino, a custard croissant, a coffee, an orange juice, the cake and the water. Enjoy!" }
+  - { es: "Chiara: Che bello qui! Ecco la fontana di Bernini, al centro della piazza. Tom, ti piace la torta?", en: "Chiara: How lovely it is here! There's Bernini's fountain, in the middle of the square. Tom, do you like the cake?" }
+  - { es: "Tom: È fantastica! Scusi, il conto, per favore. Quanto costa tutto?", en: "Tom: It's fantastic! Excuse me, the bill, please. How much is everything?" }
+  - { es: "Cameriere: Sono ventiquattro euro.", en: "Waiter: That's twenty-four euros." }
+  - { es: "Tom: Ventiquattro euro? Mamma mia! Al bar sotto casa un caffè costa un euro e venti!", en: "Tom: Twenty-four euros? Good grief! At the bar near home a coffee costs one euro twenty!" }
+  - { es: "Chiara: Sì, ma qui c'è Piazza Navona! Dai, oggi pago io.", en: "Chiara: Yes, but here you have Piazza Navona! Come on, today I'm paying." }
+questions:
+  - { q: "Che cosa prende Chiara?", options: ["Un caffè e una torta", "Un cappuccino e un cornetto alla crema", "Una spremuta e un panino"], answer: 1, explain: "Chiara orders «un cappuccino e un cornetto», with custard (con la crema)." }
+  - { q: "Perché Tom non prende il cappuccino?", options: ["Perché non gli piace il latte", "Perché sono le undici e mezza", "Perché costa troppo"], answer: 1, explain: "It's 11.30, and Chiara explains that Italians drink cappuccino at breakfast, not later in the day." }
+  - { q: "Perché Tom ordina una spremuta?", options: ["Perché ha sete", "Perché ha fame", "Perché è economica"], answer: 0, explain: "«Ho sete!» – I'm thirsty." }
+  - { q: "Quanto costa tutto?", options: ["Un euro e venti", "Dodici euro", "Ventiquattro euro"], answer: 2, explain: "«Sono ventiquattro euro.» One euro twenty is the price of a coffee at Tom's local bar." }
+  - { q: "Chi paga alla fine?", options: ["Tom", "Chiara", "Il cameriere"], answer: 1, explain: "Chiara says «oggi pago io» – today I'm paying." }
+glossary:
+  - { es: vuoto, en: plain (lit. empty) }
+  - { es: crema, en: custard, cream }
+  - { es: tramezzini, en: triangular sandwiches }
+  - { es: fetta, en: slice }
+  - { es: ecco a voi, en: here you are }

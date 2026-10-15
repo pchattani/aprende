@@ -1,0 +1,64 @@
+id: r.b2.parla-come-mangi
+level: b2
+title: Parla come mangi!
+kind: dialogue
+intro: In a pizzeria in Naples, Gennaro chats with his friend Luca in very informal Italian, full of diminutives and augmentatives. Then his phone rings and he suddenly switches to the formal register. Notice how the same person changes words, pronouns and tone.
+allow: [gennaro, luca, napoli, esposito, ok, prof, boh]
+paragraphs:
+  - { es: "Luca: Gennà, finalmente! Ti aspetto da mezz'ora. Ho già mangiato tre crocchè e mezzo panierino di frittatine. Che fine avevi fatto? Qua fuori c'era una fila lunghissima, per fortuna il cameriere è un amico mio.", en: "Luca: Gennà, at last! I've been waiting for you for half an hour. I've already eaten three croquettes and half a little basket of pasta fritters. Where did you get to? There was a really long queue outside, luckily the waiter's a mate of mine." }
+  - { es: "Gennaro: Lascia stare, è stata una giornataccia. Stamattina mi si è rotto il motorino in mezzo a via Toledo, poi il capo mi ha fatto una ramanzina di un'ora per una cavolata, e alla fine pure la pioggia. Mi serve una pizza, e pure bella grossa.", en: "Gennaro: Don't ask, it's been a terrible day. This morning my scooter broke down in the middle of Via Toledo, then my boss gave me an hour-long telling-off over some nonsense, and to top it all the rain. I need a pizza, and a nice big one too." }
+  - { es: "Luca: Tranquillo, ho già ordinato. Due margherite e una marinara da dividere. E una birretta fresca per te, guarda.", en: "Luca: Relax, I've already ordered. Two margheritas and a marinara to share. And a nice cold beer for you, look." }
+  - { es: "Gennaro: Sei un fratello. Ah, a proposito, hai visto il ragazzino nuovo che lavora al forno? Avrà sedici anni e gira le pizze come un campione. Un fenomeno, ti giuro.", en: "Gennaro: You're a brother. Oh, by the way, have you seen the young lad who's working at the oven? He must be sixteen and he turns the pizzas like a champion. A real phenomenon, I swear." }
+  - { es: "Luca: Eh, qua l'arte del pizzaiolo è una cosa seria. Pure l'UNESCO l'ha riconosciuta, mica è uno scherzo. Senti, e con quella ragazza della palestra? Com'è finita?", en: "Luca: Well, here the pizzaiolo's craft is a serious business. Even UNESCO has recognised it, it's no joke. Listen, what about that girl from the gym? How did it end?" }
+  - { es: "Gennaro: Boh, lasciamo perdere. Le ho scritto un messaggino carino, lei mi ha risposto con una faccina e basta. Secondo me ha già un fidanzatone grande e grosso. … Aspetta, mi squilla il telefono. Oddio, è la professoressa Esposito, la relatrice della tesi! Zitto un attimo.", en: "Gennaro: Dunno, let's forget it. I sent her a cute little message, she answered with an emoji and that's it. I reckon she's already got some big hunk of a boyfriend. … Hang on, my phone's ringing. Oh God, it's Professor Esposito, my thesis supervisor! Be quiet a sec." }
+  - { es: "Gennaro: Pronto, buonasera professoressa. Sì, mi dica pure. No, no, non disturba affatto, si figuri.", en: "Gennaro: Hello, good evening, Professor. Yes, please go ahead. No, no, you're not disturbing me at all, not in the least." }
+  - { es: "Gennaro: Certamente. Ho ricevuto la Sua email con le correzioni al secondo capitolo e La ringrazio molto per l'attenzione. Provvederò a modificare il testo secondo le Sue indicazioni entro la fine della settimana. Mi permetto anche di chiederLe se abbia avuto modo di leggere il terzo capitolo, che Le ho inviato la settimana scorsa.", en: "Gennaro: Certainly. I received your email with the corrections to the second chapter and thank you very much for your attention. I shall amend the text according to your instructions by the end of the week. May I also ask whether you have had the chance to read the third chapter, which I sent you last week." }
+  - { es: "Gennaro: Per quanto riguarda la bibliografia, ha perfettamente ragione: mancano alcuni testi fondamentali. Se Lei fosse d'accordo, potrei passare dal Suo studio giovedì mattina, durante l'orario di ricevimento, per discuterne di persona.", en: "Gennaro: As for the bibliography, you're quite right: some fundamental texts are missing. If you agreed, I could come by your office on Thursday morning, during office hours, to discuss it in person." }
+  - { es: "Gennaro: Benissimo, alle dieci allora. Grazie ancora, professoressa, e mi scusi se La faccio aspettare sempre un po' con i capitoli. Buona serata anche a Lei. Arrivederci.", en: "Gennaro: Very good, at ten then. Thank you again, Professor, and I'm sorry I always keep you waiting a little for the chapters. Good evening to you too. Goodbye." }
+  - { es: "Luca: (ridendo) Ma chi eri, scusa? «Provvederò a modificare il testo»… «Se Lei fosse d'accordo»… Sembravi un notaio! Fino a un minuto fa parlavi di fidanzatoni e cavolate.", en: "Luca: (laughing) Who on earth were you just now? 'I shall amend the text'… 'If you agreed'… You sounded like a notary! A minute ago you were talking about hunky boyfriends and nonsense." }
+  - { es: "Gennaro: Eh, caro mio, bisogna saper parlare con tutti. Con te parlo come mangio, con la professoressa parlo come scrivo. Se le avessi detto «Prof, che giornataccia, ci vediamo giovedì, ok?», mi avrebbe bocciato la tesi seduta stante.", en: "Gennaro: Well, my friend, you have to know how to talk to everyone. With you I talk the way I eat, with the professor I talk the way I write. If I'd said to her 'Prof, what a lousy day, see you Thursday, OK?', she'd have failed my thesis on the spot." }
+  - { es: "Luca: Giusto. E adesso, dottore, gradirebbe una fetta di margherita?", en: "Luca: Fair enough. And now, Doctor, would you care for a slice of margherita?" }
+  - { es: "Gennaro: Gradirei moltissimo, grazie. Anzi… passamela, che sto morendo di fame!", en: "Gennaro: I'd like that very much, thank you. Actually… pass it here, I'm starving!" }
+questions:
+  - { q: "Perché Gennaro ha avuto una «giornataccia»?", options: ["Ha perso il lavoro", "Gli si è rotto il motorino, il capo l'ha sgridato ed è piovuto", "Ha litigato con Luca"], answer: 1, explain: "Scooter breakdown, a telling-off from the boss and rain. The suffix -accia makes giornata pejorative: a bad day." }
+  - { q: "Che cosa ha riconosciuto l'UNESCO, secondo Luca?", options: ["La pizzeria in cui si trovano", "L'arte del pizzaiolo napoletano", "Il centro storico di Napoli"], answer: 1, explain: "The art of the Neapolitan pizzaiolo was added to UNESCO's intangible heritage list in 2017." }
+  - { q: "Chi telefona a Gennaro?", options: ["La ragazza della palestra", "Il suo capo", "La professoressa che segue la sua tesi"], answer: 2, explain: "Professoressa Esposito, his relatrice (thesis supervisor)." }
+  - { q: "Che cosa propone Gennaro alla professoressa?", options: ["Di mandarle i capitoli per email", "Di passare dal suo studio giovedì mattina", "Di cambiare argomento della tesi"], answer: 1, explain: "He suggests coming to her office hours on Thursday at ten to discuss the bibliography." }
+  - { q: "Che cosa significa «parlare come si mangia»?", options: ["Parlare con la bocca piena", "Parlare in modo semplice e naturale", "Parlare solo di cibo"], answer: 1, explain: "The idiom «parla come mangi!» means 'speak plainly, without affectation'." }
+glossary:
+  - { es: "gennà", en: Gennaro (clipped form used when calling someone) }
+  - { es: crocchè, en: potato croquettes }
+  - { es: proposito, en: (a proposito) by the way }
+  - { es: perfettamente, en: perfectly, quite }
+  - { es: lunghissima, en: very long }
+  - { es: panierino, en: little basket }
+  - { es: frittatine, en: fried pasta fritters }
+  - { es: "che fine avevi fatto?", en: "where did you get to?" }
+  - { es: fine, en: "(che fine avevi fatto?) where had you got to" }
+  - { es: giornataccia, en: terrible day }
+  - { es: ramanzina, en: telling-off }
+  - { es: cavolata, en: nonsense, silly thing }
+  - { es: cavolate, en: nonsense }
+  - { es: grossa, en: big }
+  - { es: birretta, en: (nice little) beer }
+  - { es: marinara, en: marinara pizza (tomato, garlic, oregano) }
+  - { es: ragazzino, en: young lad }
+  - { es: campione, en: champion }
+  - { es: messaggino, en: little message }
+  - { es: faccina, en: emoji (lit. little face) }
+  - { es: fidanzatoni, en: hunky boyfriends }
+  - { es: grosso, en: big }
+  - { es: relatrice, en: (thesis) supervisor }
+  - { es: correzioni, en: corrections }
+  - { es: provvederò, en: I shall see to it }
+  - { es: modificare, en: to amend, to change }
+  - { es: bibliografia, en: bibliography }
+  - { es: fondamentali, en: fundamental }
+  - { es: ricevimento, en: (orario di ricevimento) office hours }
+  - { es: notaio, en: notary }
+  - { es: bocciato, en: failed }
+  - { es: seduta stante, en: on the spot }
+  - { es: stante, en: (seduta stante) on the spot }
+  - { es: gradirebbe, en: would you care for }
+  - { es: gradirei, en: I would like }
+  - { es: moltissimo, en: very much }

@@ -1,0 +1,32 @@
+id: r.a1.al-mercato-di-campo-de-fiori
+level: a1
+title: Al mercato di Campo de' Fiori
+kind: dialogue
+intro: Signora Bianchi does her shopping at a fruit and vegetable stall in Campo de' Fiori, Rome's famous morning market.
+allow: [bianchi, franco, campo, fiori]
+paragraphs:
+  - { es: "Franco: Buongiorno, signora Bianchi! Come sta oggi?", en: "Franco: Good morning, Mrs Bianchi! How are you today?" }
+  - { es: "Signora Bianchi: Bene, grazie, Franco. E Lei? Oggi c'è tanta gente al mercato!", en: "Mrs Bianchi: Fine, thanks, Franco. And you? There are so many people at the market today!" }
+  - { es: "Franco: Eh, sì, è sabato e ci sono molti turisti. Allora, che cosa desidera?", en: "Franco: Oh yes, it's Saturday and there are lots of tourists. So, what would you like?" }
+  - { es: "Signora Bianchi: Vorrei un chilo di pomodori. Ma quelli rossi, per l'insalata, non questi verdi.", en: "Mrs Bianchi: I'd like a kilo of tomatoes. But those red ones, for the salad, not these green ones." }
+  - { es: "Franco: Certo. Ecco un chilo di pomodori. Sono buonissimi oggi. Altro?", en: "Franco: Of course. Here's a kilo of tomatoes. They're lovely today. Anything else?" }
+  - { es: "Signora Bianchi: Quanto costano i carciofi?", en: "Mrs Bianchi: How much are the artichokes?" }
+  - { es: "Franco: Sono romani, signora, i carciofi più buoni d'Italia! Costano un euro e cinquanta l'uno, ma per Lei quattro carciofi cinque euro.", en: "Franco: They're Roman, madam, the best artichokes in Italy! They cost one euro fifty each, but for you, four artichokes for five euros." }
+  - { es: "Signora Bianchi: Va bene, li prendo. Domenica vengono a pranzo i miei figli e preparo i carciofi alla romana.", en: "Mrs Bianchi: All right, I'll take them. On Sunday my children are coming for lunch and I'm making Roman-style artichokes." }
+  - { es: "Franco: Che bello! Le servono anche patate o frutta?", en: "Franco: How lovely! Do you need potatoes or fruit too?" }
+  - { es: "Signora Bianchi: Mezzo chilo di fragole e un po' di ciliegie. Sono care?", en: "Mrs Bianchi: Half a kilo of strawberries and a few cherries. Are they expensive?" }
+  - { es: "Franco: Le fragole sono tre euro, le ciliegie sei euro al chilo. Due etti di ciliegie?", en: "Franco: The strawberries are three euros, the cherries six euros a kilo. Two hundred grams of cherries?" }
+  - { es: "Signora Bianchi: Sì, perfetto. Basta così, grazie. Quant'è?", en: "Mrs Bianchi: Yes, perfect. That's all, thanks. How much is it?" }
+  - { es: "Franco: Allora: pomodori due euro, carciofi cinque, fragole uno e cinquanta, ciliegie uno e venti. Sono nove euro e settanta. Facciamo nove euro e cinquanta.", en: "Franco: So: tomatoes two euros, artichokes five, strawberries one fifty, cherries one twenty. That's nine euros seventy. Let's say nine euros fifty." }
+  - { es: "Signora Bianchi: Grazie, Franco, Lei è sempre gentile. Ecco dieci euro.", en: "Mrs Bianchi: Thank you, Franco, you're always kind. Here's ten euros." }
+  - { es: "Franco: Ecco il resto, cinquanta centesimi, e il sacchetto. Buona domenica con i figli, signora! Arrivederci!", en: "Franco: Here's your change, fifty cents, and the bag. Have a nice Sunday with your children, madam! Goodbye!" }
+questions:
+  - { q: "Perché c'è tanta gente al mercato?", options: ["Perché è sabato e ci sono molti turisti", "Perché la frutta è gratis", "Perché è domenica"], answer: 0, explain: "Franco says «è sabato e ci sono molti turisti»." }
+  - { q: "Quali pomodori vuole la signora Bianchi?", options: ["Quelli verdi", "Quelli rossi", "Quelli piccoli"], answer: 1, explain: "She wants «quelli rossi, per l'insalata, non questi verdi»." }
+  - { q: "Perché la signora compra i carciofi?", options: ["Per la cena di oggi", "Per il pranzo della domenica con i figli", "Per i turisti"], answer: 1, explain: "Her children are coming for Sunday lunch and she will cook «carciofi alla romana»." }
+  - { q: "Quanto paga la signora alla fine?", options: ["Nove euro e cinquanta", "Nove euro e settanta", "Dieci euro e cinquanta"], answer: 0, explain: "The total is €9.70, but Franco rounds it down: «Facciamo nove euro e cinquanta.» She gets 50 cents change from €10." }
+  - { q: "Come parla Franco alla signora?", options: ["Le dà del tu", "Le dà del Lei", "Non le parla"], answer: 1, explain: "He uses the formal Lei: «Come sta?», «che cosa desidera?», «per Lei»." }
+glossary:
+  - { es: alla romana, en: Roman-style }
+  - { es: "le servono", en: do you need (lit. are they of use to you) }
+  - { es: "l'uno", en: each }
