@@ -1,0 +1,46 @@
+# Words treated as known at every level (function words), and proper nouns / place names
+# that may appear in any text. Used by the content checker and the journey test.
+# Elided forms are listed both with and without the apostrophe, so either tokenisation works.
+always: [
+  # articles
+  il, lo, la, l, "l'", i, gli, le, un, uno, una, "un'",
+  # simple prepositions
+  a, ad, di, d, "d'", da, in, con, su, per, tra, fra,
+  # articulated prepositions
+  del, dello, della, dell, "dell'", dei, degli, delle,
+  al, allo, alla, all, "all'", ai, agli, alle,
+  dal, dallo, dalla, dall, "dall'", dai, dagli, dalle,
+  nel, nello, nella, nell, "nell'", nei, negli, nelle,
+  sul, sullo, sulla, sull, "sull'", sui, sugli, sulle,
+  col, coi,
+  # pronouns
+  io, tu, lui, lei, noi, voi, loro, me, te, mi, ti, ci, vi, si, ne, "c'", c, "m'", "t'", "s'", "v'",
+  # essere / avere / c'è
+  è, "c'è", "c'era", ha, hanno, ho, hai, sono, sei, siamo, siete,
+  # conjunctions, negation, adverbs
+  e, ed, o, od, ma, che, chi, se, non, né, sì, no, anche, pure, poi, così, molto, più, meno, bene, male,
+  qui, qua, lì, là, già, ancora, ora, mai, solo, ecco, come, "com'", dove, "dov'", quando, perché, cosa, "cos'", quale, "qual", quanto,
+  # determiners and possessives
+  mio, mia, miei, mie, tuo, tua, tuoi, tue, suo, sua, suoi, sue, nostro, nostra, nostri, nostre, vostro, vostra, vostri, vostre,
+  questo, questa, questi, queste, quello, quella, quelli, quelle, quel, quei, "quell'", ogni, tutto, tutta, tutti, tutte,
+  ]
+# Common nouns (and a few other words) allowed in A1 stop facts beyond the A1 word list.
+facts: [
+  aeroporto, città, piazza, piazze, chiesa, museo, musei, strada, strade, persone, metri, km, mila, milioni,
+  anno, anni, mare, fiume, lago, parco, centro, quartiere, mercato, fontana, fontane, statua, stato, mondo,
+  antico, antica, antiche, famosa, famoso, vicino, circa, oltre, dentro, alto,
+  templi, archi, pietra, trattorie, monete, povere, forma, stadio, cupola, buco, oculo, collina, speciale,
+  pezzi, anfore, scalinata, gradini, primavera, zoo, alberi, verdura, fiori, posto, nome,
+  apre, entra, piove, lanciano, visitano, significa, amano, correre, fatta, chiama,
+  grande, piccolo, piccola, piccole, molti, molte, giorno, acqua, mattina, frutta, cani, tre, vive, vanno,
+  ]
+# Proper nouns and name particles that may appear anywhere.
+names: [
+  Italia, Roma, Leo, Bonchita, Luna, "de'", de,
+  Fiumicino, Colosseo, Trastevere, Tevere, Vaticano, Pantheon, Testaccio,
+  Toscana, Firenze, Siena, Pisa, Lucca, Chianti, Elba,
+  Milano, Venezia, Verona, Bologna, Parma, Torino, Genova, Como,
+  Napoli, Pompei, Vesuvio, Capri, Procida, Matera, Bari, Lecce, Amalfi,
+  Sicilia, Palermo, Catania, Siracusa, Etna, Sardegna, Cagliari, Alghero,
+  Assisi, Perugia, Urbino, Ravenna, Gubbio, Orvieto, Umbria,
+  ]

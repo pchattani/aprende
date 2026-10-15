@@ -1,0 +1,214 @@
+# Learner-error patterns for the writing checker. Patterns are JavaScript
+# regexes applied case-insensitively to the lowercased text. Keep them tight to
+# avoid false positives. \b is ASCII-only in JavaScript, so next to accented
+# letters the patterns use explicit lookarounds such as (?<![a-zàèéìíòóù]).
+rules:
+  # ---- essere vs avere in compound tenses
+  - id: avere-motion-verbs
+    pattern: '\b(ho|hai|ha|abbiamo|avete|hanno) (andat|venut|arrivat|partit|uscit|entrat|tornat|ritornat|rimast|cadut|diventat|nat|mort|stat|sembrat)[oaie]\b'
+    message: "Verbs of movement and change of state, essere itself and sembrare form the passato prossimo with essere, and the participle agrees with the subject."
+    example: { wrong: "ho andato a roma", right: "sono andato a roma" }
+  - id: avere-piacere
+    pattern: '\b(ho|hai|ha|abbiamo|avete|hanno) piaciut[oaie]\b'
+    message: "Piacere takes essere, and the thing liked is the subject: mi è piaciuto, mi sono piaciuti."
+    example: { wrong: "ho piaciuto il film", right: "mi è piaciuto il film" }
+  - id: participle-agreement
+    pattern: '(?<!\b(di|a|da|con|per|su|tra|fra|e|che) )\b(maria|anna|giulia|sara|lei|mia madre|mia sorella|la ragazza|la signora) è (andat|venut|arrivat|partit|uscit|tornat|nat|stat)o\b|\b(siamo|siete) (andat|venut|arrivat|partit|uscit|tornat|stat)[oa]\b'
+    message: "With essere the participle agrees with the subject: lei è andata, noi siamo andati."
+    example: { wrong: "maria è andato al mare", right: "maria è andata al mare" }
+  # ---- articles
+  - id: il-s-impura
+    pattern: '\b(il|un) (s[bcdfgklmnpqrtvz]\w*|z\w*|gn\w*|ps\w*)'
+    message: "Before s + consonant, z, gn and ps the masculine article is lo (plural gli), and the indefinite is uno."
+    example: { wrong: "il studente", right: "lo studente" }
+  - id: i-before-vowel-or-s-impura
+    pattern: '(?<![a-zàèéìíòóù''’])i ([aeiou]\w+|s[bcdfgklmnpqrtvz]\w*|z\w*|gn\w*|ps\w*)\b'
+    message: "The masculine plural article is gli before a vowel, s + consonant, z, gn and ps."
+    example: { wrong: "i amici", right: "gli amici" }
+  - id: il-before-vowel
+    pattern: '\bil [aeiou]\w*'
+    message: "Before a vowel the article il becomes l'."
+    example: { wrong: "il amico", right: "l'amico" }
+  - id: un-apostrophe-masculine
+    pattern: '\bun[''’](amico|altro|uomo|albero|anno|aereo|ospedale|esempio|uovo|orologio|ufficio|italiano|aperitivo|euro|animale|autobus|appartamento)\b'
+    message: "Un never takes an apostrophe; only the feminine un' (from una) does."
+    example: { wrong: "un'amico", right: "un amico" }
+  - id: un-feminine-vowel
+    pattern: '\bun (amica|altra|ora|isola|idea|acqua|arancia|aranciata|estate|opera|aula|entrata|uscita|automobile|immagine|occasione|insalata|ombra|onda)\b'
+    message: "Before a feminine noun starting with a vowel, una becomes un' with an apostrophe."
+    example: { wrong: "un amica", right: "un'amica" }
+  - id: masculine-a-nouns
+    pattern: '\b(la|una) (problema|tema|sistema|programma|clima|panorama|dramma|cinema|pigiama|poeta)\b'
+    message: "Many nouns in -ma (from Greek) are masculine: il problema, il programma, il clima."
+    example: { wrong: "la problema", right: "il problema" }
+  - id: irregular-plurals
+    pattern: '\b(uovi|uove|braccie|ginocchie|labbre|mane)\b'
+    message: "Some nouns have irregular plurals: le uova, le braccia, le ginocchia, le labbra, le mani."
+    example: { wrong: "due uovi", right: "due uova" }
+  - id: article-family-singular
+    pattern: '\b(il|la) (mio|mia|tuo|tua|suo|sua|nostro|nostra|vostro|vostra) (padre|madre|fratello|sorella|marito|moglie|figlio|figlia|zio|zia|cugino|cugina|nonno|nonna)\b'
+    message: "Singular family nouns with a possessive take no article (except with loro and affectionate forms like mamma, papà)."
+    example: { wrong: "la mia madre", right: "mia madre" }
+  # ---- articulated prepositions
+  - id: in-plus-article
+    pattern: '\bin (il|lo|la|i|gli|le)\b|\bin l[''’]'
+    message: "In + article contracts: nel, nello, nella, nell', nei, negli, nelle."
+    example: { wrong: "in il bar", right: "nel bar" }
+  - id: di-plus-article
+    pattern: '\bdi (il|lo|la|i|gli|le)\b|\bdi l[''’]'
+    message: "Di + article contracts: del, dello, della, dell', dei, degli, delle."
+    example: { wrong: "la casa di il nonno", right: "la casa del nonno" }
+  - id: a-plus-article
+    pattern: '(?<![a-zàèéìíòóù''’])a (il|lo|la|i|gli|le) |(?<![a-zàèéìíòóù''’])a l[''’]'
+    message: "A + article contracts: al, allo, alla, all', ai, agli, alle."
+    example: { wrong: "vado a il mare", right: "vado al mare" }
+  - id: da-plus-article
+    pattern: '\bda (il|lo|la|i|gli|le)\b|\bda l[''’]'
+    message: "Da + article contracts: dal, dallo, dalla, dall', dai, dagli, dalle."
+    example: { wrong: "vengo da il centro", right: "vengo dal centro" }
+  - id: su-plus-article
+    pattern: '\bsu (il|lo|i|gli)\b|\bsu l[''’]'
+    message: "Su + article contracts: sul, sullo, sulla, sull', sui, sugli, sulle."
+    example: { wrong: "il libro è su il tavolo", right: "il libro è sul tavolo" }
+  - id: a-with-country
+    pattern: '(?<![a-zàèéìíòóù''’])a (italia|francia|spagna|germania|inghilterra|america|cina|giappone|grecia|svizzera|toscana|sicilia|sardegna|lombardia|puglia)\b'
+    message: "Countries and regions take in (vado in Italia); cities take a (vado a Roma)."
+    example: { wrong: "vado a italia", right: "vado in italia" }
+  # ---- piacere
+  - id: piace-plural
+    pattern: '\b(mi|ti|gli|le|ci|vi) piace (i|gli|le) '
+    message: "When the thing liked is plural, use piacciono."
+    example: { wrong: "mi piace i gatti", right: "mi piacciono i gatti" }
+  - id: piacciono-infinitive
+    pattern: '\b(mi|ti|gli|le|ci|vi) piacciono (\w+are|\w+ere|\w+ire)\b'
+    message: "An infinitive takes singular piace."
+    example: { wrong: "mi piacciono ballare", right: "mi piace ballare" }
+  - id: io-piace
+    pattern: '\b(io|tu|noi|voi) piace\b'
+    message: "With piacere the person who likes is an indirect object (mi, ti, ci, vi), and the thing liked is the subject."
+    example: { wrong: "io piace la pizza", right: "mi piace la pizza" }
+  - id: a-me-mi
+    pattern: '\ba me mi\b|\ba te ti\b'
+    message: "Say either a me piace or mi piace, not both."
+    example: { wrong: "a me mi piace il mare", right: "a me piace il mare" }
+  # ---- avere expressions, stare
+  - id: essere-age
+    pattern: '(?<![a-zàèéìíòóù])(sono|sei|è|siamo|siete) (\d+|uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|vent\w*|trent\w*|quarant\w*|cinquant\w*|sessant\w*|settant\w*|ottant\w*|novant\w*) anni\b(?! (che|fa|da|di|dal|dalla|dopo|prima))|\bquanti anni (sei|è|siete)(?![a-zàèéìíòóù])'
+    message: "Age is expressed with avere, not essere: ho 20 anni, quanti anni hai?"
+    example: { wrong: "sono 20 anni", right: "ho 20 anni" }
+  - id: essere-fame
+    pattern: '\b(sono|sei|siamo|siete) (fame|sete|sonno|paura|ragione|torto|freddo|caldo|fretta|bisogno)\b'
+    message: "Hunger, thirst, sleepiness, fear, being right, cold, heat, hurry and need use avere: ho fame, ho freddo, hai ragione."
+    example: { wrong: "sono fame", right: "ho fame" }
+  - id: essere-bene
+    pattern: '\b(sono|sei|siamo|siete) (bene|benissimo)\b'
+    message: "How you are takes stare: sto bene, come stai?"
+    example: { wrong: "sono bene", right: "sto bene" }
+  # ---- comparatives, quantity
+  - id: double-comparative
+    pattern: '(?<![a-zàèéìíòóù])più (migliore|migliori|meglio|peggiore|peggiori|peggio|maggiore|minore)\b'
+    message: "Migliore, meglio, peggiore, peggio, maggiore and minore are already comparatives; drop più."
+    example: { wrong: "è più migliore", right: "è migliore" }
+  - id: piu-che-pronoun
+    pattern: '(?<![a-zàèéìíòóù])(più|meno) (?!male )\w+ che (me|te|lui|lei|noi|voi|loro)(?=\s*([.!?,;]|$))'
+    message: "Before a pronoun or a noun the comparison uses di: più alto di me."
+    example: { wrong: "è più alto che me.", right: "è più alto di me." }
+  - id: molto-agreement
+    pattern: '\bmolto (persone|cose|volte|amici|amiche|anni|giorni|ore|libri|turisti|soldi|gente|acqua|pasta)\b'
+    message: "Before a noun molto is an adjective and agrees: molta gente, molte persone, molti amici."
+    example: { wrong: "molto persone", right: "molte persone" }
+  - id: ogni-qualche-plural
+    pattern: '\b(ogni|qualche) (giorni|anni|settimane|mesi|persone|volte|cose|amici|libri|minuti|ore)\b'
+    message: "Ogni and qualche are always followed by a singular noun."
+    example: { wrong: "ogni giorni", right: "ogni giorno" }
+  - id: gente-plural
+    pattern: '\bgente (sono|hanno|vanno|dicono|pensano|parlano|vengono|fanno)\b'
+    message: "Gente is a singular noun: la gente è, la gente dice."
+    example: { wrong: "la gente sono simpatica", right: "la gente è simpatica" }
+  - id: ci-sono-singular
+    pattern: '\bci sono (un|uno|una)\b(?! (sacco|mucchio|po|paio|centinaio|migliaio|decina|dozzina|ventina|trentina|quindicina|cinquantina|o|e|ed)\b)'
+    message: "With one thing use c'è; ci sono is for plurals."
+    example: { wrong: "ci sono un bar qui vicino", right: "c'è un bar qui vicino" }
+  - id: c-e-plural
+    pattern: '\bc[''’]è (due|tre|quattro|cinque|molti|molte|tanti|tante|alcuni|alcune|dei|degli|delle)\b'
+    message: "With plurals use ci sono."
+    example: { wrong: "c'è molte persone", right: "ci sono molte persone" }
+  - id: double-negative-preverbal
+    pattern: '(^|[.!?]\s*)(nessuno|niente|nulla|mai) non\b'
+    message: "When nessuno, niente or mai come before the verb, drop non."
+    example: { wrong: "nessuno non è venuto", right: "nessuno è venuto" }
+  # ---- verbs and mood
+  - id: se-condizionale
+    pattern: '(^|[.!?;,]\s*|\b(ma|e|solo) )se (non )?((mi|ti|ci|vi|si|lo|la|li|le|ne|gli) )?(avr|sar|potr|vorr|dovr|sapr|vedr|andr|verr|terr|\w+[ei]r)(ei|esti|ebbe|emmo|este|ebbero)\b'
+    message: "In a hypothetical se-clause use the congiuntivo imperfetto, not the conditional: se avessi, se fossi, se potessi."
+    example: { wrong: "se avrei tempo, verrei", right: "se avessi tempo, verrei" }
+  - id: penso-che-indicativo
+    pattern: '\b(penso|pensi|credo|credi|spero|speri|dubito|immagino|suppongo|voglio|vuoi|vuole) che (è|ha|hanno|va|vanno|fa|fanno|può|possono)(?![a-zàèéìíòóù])'
+    message: "Verbs of opinion, hope, doubt and wanting take the congiuntivo: penso che sia, spero che abbia."
+    example: { wrong: "penso che è vero", right: "penso che sia vero" }
+  - id: vivo-qui-per
+    pattern: '\b(vivo|vivi|vive|viviamo|abito|abiti|abita|abitiamo) (qui |qua |a \w+ |in \w+ )?per (\d+|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|molti|molte|tanti|tante) (anni|mesi|giorni|settimane)\b'
+    message: "For something still going on, use the present with da: vivo qui da due anni."
+    example: { wrong: "vivo qui per due anni", right: "vivo qui da due anni" }
+  # ---- accents and apostrophes
+  - id: c-e-accent
+    pattern: '\bc[''’]e\b'
+    message: "C'è (there is) needs the accent on è."
+    example: { wrong: "c'e un problema", right: "c'è un problema" }
+  - id: missing-accent
+    pattern: '\b(perche|poiche|benche|finche|affinche|piu|gia|puo|cioe|citta|universita|caffe|lunedi|martedi|mercoledi|giovedi|venerdi|liberta|verita|societa)\b'
+    message: "This word needs a written accent on its final vowel: perché, più, già, può, città, caffè, lunedì."
+    example: { wrong: "perche non vieni?", right: "perché non vieni?" }
+  - id: perche-grave
+    pattern: '\b(perch|poich|bench|finch|affinch|sicch|nonch|giacch|purch)è'
+    message: "Words ending in -ché take an acute accent (é), not a grave one."
+    example: { wrong: "perchè", right: "perché" }
+  - id: e-for-è
+    pattern: '\b(non|dov|com|cos)( |[''’])e\b|(?<![a-zàèéìíòóù])e[''’](?![a-zàèéìíòóù])'
+    message: "Here you need è (is), written with its accent; e without an accent means “and”."
+    example: { wrong: "non e vero", right: "non è vero" }
+  - id: qual-e-apostrophe
+    pattern: '\bqual[''’](è|e)(?![a-zàèéìíòóù])'
+    message: "Qual è is written without an apostrophe (qual is a truncated form, not an elision)."
+    example: { wrong: "qual'è il tuo nome?", right: "qual è il tuo nome?" }
+  - id: un-po
+    pattern: '\bun pò(?![a-zàèéìíòóù])|\bun po(?![a-zàèéìíòóù''’])'
+    message: "Un po' is written with an apostrophe, not an accent."
+    example: { wrong: "un pò di pane", right: "un po' di pane" }
+  - id: false-accents
+    pattern: '(?<![a-zàèéìíòóù''’])(quì|quà|sù|fà|stà|và|sò|trè|blù)(?![a-zàèéìíòóù])'
+    message: "Qui, qua, su, fa, sta, va, so, tre and blu are never written with an accent."
+    example: { wrong: "vieni quì", right: "vieni qui" }
+  # ---- Spanish interference
+  - id: es-muy
+    pattern: '\b(muy|mucho|mucha|muchos|muchas)\b'
+    message: "Spanish muy/mucho; in Italian say molto (molto bello, molta gente)."
+    example: { wrong: "è muy bello", right: "è molto bello" }
+  - id: es-y
+    pattern: '(?<![a-zàèéìíòóù''’])y(?![a-zàèéìíòóù''’])'
+    message: "Spanish y; the Italian for “and” is e (often ed before a vowel)."
+    example: { wrong: "pane y vino", right: "pane e vino" }
+  - id: es-tambien
+    pattern: '\btambi[eé]n(?![a-zàèéìíòóù])'
+    message: "Spanish también; the Italian is anche."
+    example: { wrong: "io también", right: "anch'io" }
+  - id: es-hay
+    pattern: '\bhay\b'
+    message: "Spanish hay; in Italian say c'è (singular) or ci sono (plural)."
+    example: { wrong: "hay un problema", right: "c'è un problema" }
+  - id: es-articles
+    pattern: '\b(el|los|las)\b(?! (salvador|greco|alamein|paso|angeles|vegas)\b)'
+    message: "Spanish article; Italian uses il, lo, l', la, i, gli, le."
+    example: { wrong: "el ragazzo", right: "il ragazzo" }
+  - id: es-pero
+    pattern: '\bpero\b'
+    message: "Spanish pero; in Italian “but” is ma (or però, with an accent)."
+    example: { wrong: "è bello pero caro", right: "è bello ma caro" }
+  - id: es-personal-a
+    pattern: '\b(vedo|vedi|vede|conosco|conosci|conosce|chiamo|chiami|chiama|amo|ami|ama|visito|visiti|aiuto|aiuti|aiuta) a (mia|mio|tua|tuo|sua|suo|nostra|nostro|maria|marco|luca|giulia|anna|paolo|sara)\b'
+    message: "Italian has no “personal a” before a direct object: vedo Maria, chiamo mia madre."
+    example: { wrong: "vedo a maria", right: "vedo maria" }
+  - id: es-words
+    pattern: '\b(gracias|hola|adiós|adios|conmigo|contigo)(?![a-zàèéìíòóù])'
+    message: "Spanish word; in Italian say grazie, ciao, arrivederci, con me, con te."
+    example: { wrong: "vieni conmigo", right: "vieni con me" }
