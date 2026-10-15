@@ -1,0 +1,289 @@
+id: c2.u06
+title: Linguaggi specialistici
+lessons:
+  - id: c2.u06.l1
+    title: Il contratto d'affitto
+    teach: [g.legal-register]
+    vocab: [w.contraente, w.clausola, w.recedere, w.recesso, w.preavviso, w.canone, w.decorrere, w.decorrenza, w.inadempimento, w.risoluzione, w.rescissione, w.foro-competente, w.controparte, w.notaio, w.rogito, w.atto-notarile, w.testamento, w.erede, w.tecnicismo, w.locatore, w.controversia, w.giuridico, w.inadempiente, w.acquirente, w.penale, w.mensilità]
+    tip: "In contracts the future expresses obligation, like English 'shall': il conduttore pagherà = the tenant shall pay. And a comma is a paragraph of an article, not a punctuation mark (virgola)."
+    sentences:
+      - { es: "Il conduttore pagherà il canone entro il giorno cinque di ogni mese.", en: "The tenant shall pay the rent by the fifth day of each month.", altEs: ["Il conduttore verserà il canone entro il giorno cinque di ogni mese."], grammar: [g.legal-register, g.futuro-semplice], vocab: [w.conduttore, w.canone], transform: { instruction: "Say it in everyday Italian, as you would to a friend", answer: "Devi pagare l'affitto entro il cinque di ogni mese.", alt: ["L'affitto si paga entro il cinque di ogni mese.", "Devi pagare l'affitto entro il cinque del mese."], en: "You have to pay the rent by the fifth of every month." } }
+      - { es: "Le parti contraenti si impegnano a rispettare il presente contratto.", en: "The contracting parties undertake to abide by this contract.", grammar: [g.legal-register], vocab: [w.contraente] }
+      - { es: "Il conduttore potrà recedere dal contratto con sei mesi di preavviso.", en: "The tenant may withdraw from the contract with six months' notice.", altEs: ["Il conduttore può recedere dal contratto con un preavviso di sei mesi."], grammar: [g.legal-register], vocab: [w.recedere, w.preavviso, w.conduttore], error: { wrong: "Il conduttore potrà recedere il contratto con sei mesi di preavviso.", explain: "Recedere is intransitive and takes da: recedere dal contratto.", grammar: g.legal-register } }
+      - { es: "Il recesso dovrà essere comunicato con lettera raccomandata.", en: "Notice of withdrawal must be given by registered letter.", altEs: ["Il recesso va comunicato con lettera raccomandata."], grammar: [g.legal-register, g.passive-andare], vocab: [w.recesso] }
+      - { es: "Il contratto ha decorrenza dal primo settembre e durata di quattro anni.", en: "The contract takes effect from the first of September and runs for four years.", grammar: [g.legal-register, g.nominalization], vocab: [w.decorrenza] }
+      - { es: "Il termine decorre dalla data della firma.", en: "The time limit runs from the date of signature.", altEs: ["Il termine decorre dal giorno della firma."], grammar: [g.legal-register], vocab: [w.decorrere] }
+      - { es: "In caso di inadempimento, il locatore potrà chiedere la risoluzione del contratto.", en: "In the event of breach, the landlord may seek termination of the contract.", grammar: [g.legal-register], vocab: [w.inadempimento, w.locatore, w.risoluzione], transform: { instruction: "Replace 'In caso di inadempimento' with a qualora clause (should the tenant be in breach)", answer: "Qualora il conduttore sia inadempiente, il locatore potrà chiedere la risoluzione del contratto.", alt: ["Qualora il conduttore fosse inadempiente, il locatore potrà chiedere la risoluzione del contratto."], en: "Should the tenant be in breach, the landlord may seek termination of the contract." } }
+      - { es: "La clausola sette prevede una penale per ogni giorno di ritardo.", en: "Clause seven provides for a penalty for each day of delay.", altEs: ["La clausola numero sette prevede una penale per ogni giorno di ritardo."], grammar: [g.legal-register], vocab: [w.clausola, w.penale] }
+      - { es: "Fatto salvo quanto previsto dall'articolo tre, il contratto si intende rinnovato.", en: "Without prejudice to the provisions of article three, the contract is deemed renewed.", grammar: [g.legal-register, g.participio-assoluto], vocab: [] }
+      - { es: "Per qualsiasi controversia è competente in via esclusiva il foro di Terni.", en: "Any dispute shall fall under the exclusive jurisdiction of the court of Terni.", altEs: ["Per ogni controversia il foro competente è esclusivamente quello di Terni."], grammar: [g.legal-register], vocab: [w.controversia, w.foro-competente] }
+      - { es: "Il notaio legge l'atto notarile ad alta voce prima che le parti firmino.", en: "The notary reads the notarial deed aloud before the parties sign.", altEs: ["Prima che le parti firmino, il notaio legge l'atto notarile ad alta voce."], grammar: [g.legal-register, g.congiuntivo-conjunctions], vocab: [w.notaio, w.atto-notarile] }
+      - { es: "Abbiamo fatto il rogito per la casa di Orvieto: adesso è ufficialmente nostra!", en: "We've signed the deed for the house in Orvieto: now it's officially ours!", altEs: ["Abbiamo firmato il rogito per la casa di Orvieto: adesso è ufficialmente nostra!"], grammar: [g.legal-register], vocab: [w.rogito] }
+      - { es: "Nel testamento la nonna ha nominato erede la nipote che vive a Orvieto.", en: "In her will, grandma named as her heir the granddaughter who lives in Orvieto.", grammar: [g.legal-register, g.relative-che], vocab: [w.testamento, w.erede] }
+      - { es: "Prima di firmare, mandiamo la bozza alla controparte.", en: "Before signing, let's send the draft to the other party.", altEs: ["Prima di firmare mandiamo la bozza alla controparte."], grammar: [g.legal-register, g.prima-che-prima-di], vocab: [w.controparte, w.bozza] }
+      - { es: "La rescissione è un rimedio raro: riguarda i contratti firmati in stato di pericolo o di bisogno.", en: "Rescission is a rare remedy: it concerns contracts signed in a state of danger or need.", grammar: [g.legal-register], vocab: [w.rescissione] }
+      - { es: "«Comma» è un tecnicismo giuridico: non indica una virgola, ma un paragrafo di un articolo.", en: "'Comma' is a legal technical term: it doesn't mean a comma, but a paragraph of an article.", grammar: [g.legal-register], vocab: [w.tecnicismo, w.giuridico] }
+    exchanges:
+      - q: { es: "Posso lasciare l'appartamento prima della scadenza?", en: "Can I leave the flat before the end of the contract?" }
+        a: { es: "Sì, con sei mesi di preavviso, come prevede la clausola otto.", en: "Yes, with six months' notice, as clause eight provides." }
+        alt: ["Sì, ma devi dare sei mesi di preavviso.", "Sì, il contratto prevede il recesso con preavviso."]
+        grammar: [g.legal-register]
+        vocab: [w.preavviso, w.clausola]
+      - q: { es: "Da quando decorre il contratto?", en: "From when does the contract run?" }
+        a: { es: "Dal primo marzo, giorno della consegna delle chiavi.", en: "From the first of March, the day the keys are handed over." }
+        alt: ["Dal primo marzo.", "Ha decorrenza dal primo marzo."]
+        grammar: [g.legal-register]
+        vocab: [w.decorrere, w.decorrenza]
+      - q: { es: "Chi paga il notaio?", en: "Who pays the notary?" }
+        a: { es: "Di solito l'acquirente, ma le parti possono accordarsi diversamente.", en: "Usually the buyer, but the parties can agree otherwise." }
+        alt: ["Di solito chi compra.", "L'acquirente, salvo diverso accordo."]
+        grammar: [g.legal-register]
+        vocab: [w.notaio, w.acquirente]
+      - q: { es: "Quando facciamo il rogito?", en: "When are we signing the deed?" }
+        a: { es: "Il quindici, nello studio del notaio in piazza del Duomo.", en: "On the fifteenth, at the notary's office in Piazza del Duomo." }
+        alt: ["Il quindici, dal notaio.", "Il quindici del mese prossimo."]
+        grammar: [g.legal-register]
+        vocab: [w.rogito, w.notaio]
+      - q: { es: "Che cosa succede se l'inquilino non paga?", en: "What happens if the tenant doesn't pay?" }
+        a: { es: "Dopo due mensilità non pagate, il proprietario può chiedere la risoluzione per inadempimento.", en: "After two unpaid monthly payments, the owner can seek termination for breach." }
+        alt: ["Il proprietario può chiedere la risoluzione del contratto.", "Si va dall'avvocato e si chiede la risoluzione."]
+        grammar: [g.legal-register]
+        vocab: [w.risoluzione, w.inadempimento, w.mensilità]
+      - q: { es: "Come posso disdire il contratto della palestra?", en: "How can I cancel my gym contract?" }
+        a: { es: "Mandi la disdetta per raccomandata almeno trenta giorni prima.", en: "You send notice of cancellation by registered post at least thirty days in advance." }
+        alt: ["Con una raccomandata, trenta giorni prima.", "Devi mandare la disdetta un mese prima."]
+        grammar: [g.legal-register, g.lei-forms]
+        vocab: [w.disdetta]
+    texts:
+      - title: "Art. 4 – Durata e recesso"
+        es: ["Il presente contratto ha durata di quattro anni, con decorrenza dal primo settembre.", "Il conduttore ha facoltà di recedere in qualsiasi momento, con preavviso di sei mesi.", "Il recesso deve essere comunicato a mezzo lettera raccomandata."]
+        en: ["This contract shall last four years, taking effect from the first of September.", "The tenant may withdraw at any time, giving six months' notice.", "Withdrawal must be notified by registered letter."]
+        grammar: [g.legal-register]
+        vocab: [w.decorrenza, w.recedere, w.preavviso, w.recesso]
+      - title: "Messaggio di Benedetta"
+        es: ["Ho appena firmato il rogito: la casetta sulla rupe è nostra!", "Il notaio ha letto l'atto per un'ora e io ho capito una parola su tre.", "Stasera si festeggia con un bianco di Orvieto."]
+        en: ["I've just signed the deed: the little house on the cliff is ours!", "The notary read the deed for an hour and I understood one word in three.", "Tonight we're celebrating with a white wine from Orvieto."]
+        grammar: [g.legal-register, g.si-impersonale]
+        vocab: [w.rogito, w.notaio, w.rupe]
+    spicy:
+      - { es: "Le parti contraenti si impegnano a cenare insieme ogni venerdì, salvo preavviso di ventiquattro ore.", en: "The contracting parties undertake to have dinner together every Friday, unless twenty-four hours' notice is given.", grammar: [g.legal-register], vocab: [w.contraente, w.preavviso] }
+      - { es: "Clausola numero uno: chi arriva in ritardo all'appuntamento offre il dolce.", en: "Clause number one: whoever is late for the date pays for dessert.", grammar: [g.legal-register, g.relative-chi-quello-che], vocab: [w.clausola] }
+      - { es: "Qualora tu volessi recedere da questo flirt, ti ricordo che il preavviso è di sei mesi.", en: "Should you wish to withdraw from this flirtation, I remind you that the notice period is six months.", grammar: [g.legal-register, g.conditional-conjunctions], vocab: [w.recedere, w.preavviso] }
+      - { es: "Ho letto tutte le clausole del tuo sorriso e le accetto senza riserve.", en: "I've read all the clauses of your smile and I accept them without reservation.", grammar: [g.legal-register], vocab: [w.clausola] }
+      - { es: "Il presente bacio si intende rinnovato salvo disdetta.", en: "This kiss is deemed renewed unless cancelled.", altEs: ["Il presente bacio s'intende rinnovato salvo disdetta."], grammar: [g.legal-register], vocab: [w.disdetta] }
+  - id: c2.u06.l2
+    title: In tribunale
+    teach: [g.legal-register]
+    vocab: [w.convenuto, w.querela, w.querelare, w.citazione-in-giudizio, w.dolo, w.colpa-grave, w.prescrizione, w.giurisprudenza, w.codice-civile, w.codice-penale, w.respingere, w.ricorrente, w.giurista, w.avvocatura, w.estorcere, w.terminologia, w.lessico-specialistico, w.gergale, w.reato, w.udienza, w.diffamazione, w.annullamento, w.locazione, w.negligenza]
+    tip: "L'attore in court is the claimant, not an actor; il convenuto is the defendant in a civil case and l'imputato the accused in a criminal trial."
+    sentences:
+      - { es: "In un processo civile l'attore non recita: è la parte che fa causa.", en: "In a civil case the 'attore' doesn't act: he's the party who brings the action.", altEn: ["In a civil trial the claimant isn't an actor: he's the party who sues."], grammar: [g.legal-register, g.false-friends-advanced], vocab: [] }
+      - { es: "L'attore ha notificato la citazione in giudizio al convenuto il tre marzo.", en: "The claimant served the summons on the defendant on the third of March.", grammar: [g.legal-register], vocab: [w.citazione-in-giudizio, w.convenuto] }
+      - { es: "Il ricorso è stato respinto perché presentato fuori termine.", en: "The appeal was dismissed because it was filed out of time.", altEs: ["Il ricorso è stato respinto perché era stato presentato fuori termine."], grammar: [g.legal-register, g.passive-essere], vocab: [w.respingere], transform: { instruction: "Make it active: the court dismissed the appeal", answer: "Il tribunale ha respinto il ricorso perché presentato fuori termine.", alt: ["Il giudice ha respinto il ricorso perché presentato fuori termine.", "Il tribunale ha respinto il ricorso perché era stato presentato fuori termine."], en: "The court dismissed the appeal because it was filed out of time." } }
+      - { es: "Il ricorrente chiede al TAR l'annullamento del provvedimento del Comune.", en: "The appellant is asking the Regional Administrative Court to annul the council's decision.", grammar: [g.legal-register, g.nominalization], vocab: [w.ricorrente, w.annullamento] }
+      - { es: "Il giornalista ha minacciato di querelare il sindaco per diffamazione.", en: "The journalist threatened to sue the mayor for defamation.", altEs: ["Il giornalista ha minacciato di querelare il sindaco per diffamazione a mezzo stampa."], grammar: [g.legal-register], vocab: [w.querelare, w.diffamazione] }
+      - { es: "La querela va presentata entro tre mesi dal fatto.", en: "A criminal complaint must be filed within three months of the event.", altEs: ["La querela deve essere presentata entro tre mesi dal fatto."], grammar: [g.legal-register, g.passive-andare], vocab: [w.querela] }
+      - { es: "Il processo è durato così tanto che il reato si è prescritto.", en: "The trial lasted so long that the offence became time-barred.", altEs: ["Il processo è durato talmente tanto che è intervenuta la prescrizione."], grammar: [g.legal-register], vocab: [w.reato, w.prescrizione], note: "La prescrizione: the statute of limitations, a hot topic in Italian politics." }
+      - { es: "Secondo il giudice non c'è stato dolo, ma colpa grave.", en: "According to the judge there was no wilful misconduct, but gross negligence.", altEs: ["Per il giudice non c'è stato dolo, ma colpa grave."], grammar: [g.legal-register], vocab: [w.dolo, w.colpa-grave] }
+      - { es: "Secondo la giurisprudenza prevalente, una clausola del genere è nulla.", en: "According to prevailing case law, a clause of that kind is void.", grammar: [g.legal-register], vocab: [w.giurisprudenza, w.clausola] }
+      - { es: "Il furto è disciplinato dall'articolo 624 del codice penale.", en: "Theft is governed by article 624 of the Criminal Code.", grammar: [g.legal-register, g.passive-essere], vocab: [w.codice-penale] }
+      - { es: "Il codice civile definisce la locazione all'articolo 1571.", en: "The Civil Code defines a lease in article 1571.", grammar: [g.legal-register], vocab: [w.codice-civile, w.locazione] }
+      - { es: "L'imputato è accusato di aver estorto denaro a tre commercianti.", en: "The accused is charged with extorting money from three shopkeepers.", altEs: ["L'imputato è accusato di avere estorto denaro a tre commercianti."], grammar: [g.legal-register, g.past-infinitive], vocab: [w.imputato, w.estorcere], error: { wrong: "L'imputato è accusato di aver estorcito denaro a tre commercianti.", explain: "Estorcere has an irregular participle: estorto (like torcere → torto).", grammar: g.legal-register } }
+      - { es: "Mia cugina, giurista a Perugia, dice che l'avvocatura è una professione sempre più affollata.", en: "My cousin, a jurist in Perugia, says the legal profession is getting more and more crowded.", grammar: [g.legal-register], vocab: [w.giurista, w.avvocatura] }
+      - { es: "La terminologia giuridica è precisa: «imputato» e «indagato» non sono sinonimi.", en: "Legal terminology is precise: 'imputato' (the accused) and 'indagato' (under investigation) are not synonyms.", grammar: [g.legal-register], vocab: [w.terminologia, w.giuridico, w.imputato] }
+      - { es: "Il lessico specialistico non è gergale: ogni termine ha un significato preciso.", en: "Specialised vocabulary isn't jargon: every term has a precise meaning.", grammar: [g.legal-register], vocab: [w.lessico-specialistico, w.gergale] }
+      - { es: "Qualora il convenuto non si presenti all'udienza, il processo proseguirà in sua assenza.", en: "Should the defendant fail to appear at the hearing, the trial will proceed in his absence.", altEs: ["Se il convenuto non si presenta all'udienza, il processo andrà avanti senza di lui."], grammar: [g.legal-register, g.conditional-conjunctions], vocab: [w.convenuto, w.udienza], transform: { instruction: "Say it in everyday Italian, with se", answer: "Se il convenuto non si presenta all'udienza, il processo va avanti senza di lui.", alt: ["Se il convenuto non viene all'udienza, il processo va avanti senza di lui.", "Se il convenuto non si presenta all'udienza, il processo andrà avanti senza di lui."] } }
+    exchanges:
+      - q: { es: "Com'è finita la causa con il vicino?", en: "How did the case with your neighbour end?" }
+        a: { es: "Il giudice ha respinto la sua domanda: abbiamo vinto noi.", en: "The judge dismissed his claim: we won." }
+        alt: ["Abbiamo vinto: la sua domanda è stata respinta.", "Male: hanno respinto il nostro ricorso."]
+        grammar: [g.legal-register]
+        vocab: [w.respingere]
+      - q: { es: "Perché non l'hai querelato?", en: "Why didn't you sue him?" }
+        a: { es: "Perché la querela va presentata entro tre mesi, e ormai era troppo tardi.", en: "Because a complaint must be filed within three months, and by then it was too late." }
+        alt: ["Ormai era troppo tardi per la querela.", "Non ne valeva la pena."]
+        grammar: [g.legal-register, g.passive-andare]
+        vocab: [w.querelare, w.querela]
+      - q: { es: "Che differenza c'è tra dolo e colpa?", en: "What's the difference between intent and negligence?" }
+        a: { es: "Il dolo è intenzionale; la colpa nasce da negligenza o imprudenza.", en: "Malice is intentional; negligence comes from carelessness or recklessness." }
+        alt: ["Nel dolo c'è l'intenzione, nella colpa no.", "Il dolo è voluto, la colpa no."]
+        grammar: [g.legal-register]
+        vocab: [w.dolo, w.negligenza]
+      - q: { es: "Come si chiama chi presenta un ricorso?", en: "What do you call someone who lodges an appeal?" }
+        a: { es: "Il ricorrente; l'altra parte si chiama resistente.", en: "The appellant; the other party is called the respondent." }
+        alt: ["Il ricorrente.", "Si chiama ricorrente."]
+        grammar: [g.legal-register]
+        vocab: [w.ricorrente]
+      - q: { es: "Capisci il linguaggio delle sentenze?", en: "Do you understand the language of court judgments?" }
+        a: { es: "Più o meno: la terminologia la conosco, ma quelle frasi lunghissime mi fanno impazzire.", en: "More or less: I know the terminology, but those endless sentences drive me mad." }
+        alt: ["Poco: è pieno di tecnicismi.", "Sì, ma devo leggere ogni frase due volte."]
+        grammar: [g.legal-register, g.dislocation]
+        vocab: [w.terminologia]
+    texts:
+      - title: "Dal notiziario regionale"
+        es: ["Il TAR dell'Umbria ha respinto il ricorso di un ristoratore di Orvieto contro il Comune.", "Secondo i giudici, la chiusura del locale era legittima.", "Il ristoratore annuncia un appello al Consiglio di Stato."]
+        en: ["The Umbria Regional Administrative Court has dismissed an appeal by an Orvieto restaurateur against the town council.", "According to the judges, the closure of the restaurant was lawful.", "The restaurateur is announcing an appeal to the Council of State."]
+        grammar: [g.legal-register, g.journalistic-language]
+        vocab: [w.respingere]
+      - title: "Glossario per non giuristi"
+        es: ["Attore: chi fa causa in un processo civile.", "Convenuto: chi viene chiamato in giudizio.", "Imputato: chi è accusato di un reato in un processo penale."]
+        en: ["Claimant: the person who sues in a civil case.", "Defendant: the person who is summoned to court.", "Accused: the person charged with an offence in a criminal trial."]
+        grammar: [g.legal-register, g.relative-chi-quello-che]
+        vocab: [w.convenuto, w.imputato, w.reato, w.giurista]
+    spicy:
+      - { es: "Vostro onore, l'imputato mi ha rubato il cuore con dolo: chiedo il massimo della pena, cioè una cena.", en: "Your honour, the accused stole my heart with malice aforethought: I demand the maximum sentence, namely a dinner.", grammar: [g.legal-register], vocab: [w.imputato, w.dolo] }
+      - { es: "Il tuo ricorso contro il secondo appuntamento è stato respinto: ci vediamo sabato.", en: "Your appeal against a second date has been dismissed: see you on Saturday.", grammar: [g.legal-register, g.passive-essere], vocab: [w.respingere] }
+      - { es: "Per un bacio promesso non c'è prescrizione: lo pretendo anche fra dieci anni.", en: "There's no statute of limitations on a promised kiss: I'll claim it even in ten years' time.", altEs: ["Per un bacio promesso non esiste prescrizione: lo pretendo anche fra dieci anni."], grammar: [g.legal-register], vocab: [w.prescrizione] }
+      - { es: "Qualora tu dovessi sparire dopo questa cena, sappi che mia cugina è giurista.", en: "Should you disappear after this dinner, be aware that my cousin is a jurist.", grammar: [g.legal-register, g.conditional-conjunctions], vocab: [w.giurista] }
+      - { es: "Secondo la giurisprudenza del mio cuore, un sorriso così è un indizio, non ancora una prova.", en: "According to the case law of my heart, a smile like that is a clue, not yet proof.", grammar: [g.legal-register], vocab: [w.giurisprudenza] }
+  - id: c2.u06.l3
+    title: Il linguaggio della scienza
+    teach: [g.scientific-register]
+    vocab: [w.parametro, w.coefficiente, w.molecola, w.atomo, w.gene, w.proteina, w.cromosoma, w.organismo, w.batterio, w.metabolismo, w.sistema-immunitario, w.sperimentazione, w.placebo, w.efficacia, w.epidemia, w.pandemia, w.contagio, w.ossigeno, w.idrogeno, w.elicoidale]
+    tip: "Scientific Italian prefers the present tense, the si passivante and the passive (si osserva, è stato rilevato), and writes decimals with a comma: 3,5 %."
+    sentences:
+      - { es: "L'acqua bolle a cento gradi al livello del mare.", en: "Water boils at a hundred degrees at sea level.", altEs: ["Al livello del mare l'acqua bolle a cento gradi."], grammar: [g.scientific-register], vocab: [] }
+      - { es: "Il campione è stato analizzato a temperatura ambiente.", en: "The sample was analysed at room temperature.", altEs: ["Il campione è stato analizzato a temperatura ambientale."], grammar: [g.scientific-register, g.passive-essere], vocab: [], transform: { instruction: "Use the si passivante in the present", answer: "Il campione si analizza a temperatura ambiente.", alt: ["Si analizza il campione a temperatura ambiente."], en: "The sample is analysed at room temperature." } }
+      - { es: "I risultati suggeriscono una correlazione tra i due parametri.", en: "The results suggest a correlation between the two parameters.", grammar: [g.scientific-register], vocab: [w.correlazione, w.parametro] }
+      - { es: "Il coefficiente di correlazione è pari a 0,8.", en: "The correlation coefficient is 0.8.", grammar: [g.scientific-register], vocab: [w.coefficiente, w.correlazione], error: { wrong: "Il coefficiente di correlazione è pari a 0.8.", explain: "Italian uses a decimal comma: 0,8.", grammar: g.scientific-register } }
+      - { es: "Una molecola d'acqua è formata da due atomi di idrogeno e uno di ossigeno.", en: "A water molecule is made up of two hydrogen atoms and one oxygen atom.", altEs: ["Una molecola d'acqua è composta da due atomi di idrogeno e uno di ossigeno."], grammar: [g.scientific-register, g.passive-essere], vocab: [w.molecola, w.atomo, w.idrogeno, w.ossigeno] }
+      - { es: "Ogni cellula umana contiene ventitré coppie di cromosomi.", en: "Every human cell contains twenty-three pairs of chromosomes.", grammar: [g.scientific-register], vocab: [w.cellula, w.cromosoma] }
+      - { es: "Questo gene codifica una proteina che regola il metabolismo degli zuccheri.", en: "This gene codes for a protein that regulates sugar metabolism.", grammar: [g.scientific-register, g.relative-che], vocab: [w.gene, w.proteina, w.metabolismo] }
+      - { es: "Il sistema immunitario riconosce i batteri e li attacca.", en: "The immune system recognises bacteria and attacks them.", grammar: [g.scientific-register], vocab: [w.sistema-immunitario, w.batterio] }
+      - { es: "La sperimentazione è stata condotta su duecento volontari, metà dei quali ha ricevuto un placebo.", en: "The trial was conducted on two hundred volunteers, half of whom received a placebo.", altEs: ["La sperimentazione è stata condotta su duecento volontari, la metà dei quali ha ricevuto un placebo."], grammar: [g.scientific-register, g.relative-il-quale], vocab: [w.sperimentazione, w.placebo] }
+      - { es: "L'efficacia del vaccino si è dimostrata superiore al novanta per cento.", en: "The vaccine's effectiveness proved to be over ninety per cent.", altEs: ["L'efficacia del vaccino è risultata superiore al novanta per cento."], grammar: [g.scientific-register], vocab: [w.efficacia] }
+      - { es: "Nel Trecento un'epidemia di peste uccise circa un terzo della popolazione europea.", en: "In the fourteenth century a plague epidemic killed about a third of Europe's population.", grammar: [g.scientific-register, g.passato-remoto-forms], vocab: [w.epidemia] }
+      - { es: "Durante la pandemia il contagio avveniva soprattutto nei luoghi chiusi.", en: "During the pandemic, infection mostly happened indoors.", altEs: ["Durante la pandemia il contagio avveniva soprattutto negli ambienti chiusi."], grammar: [g.scientific-register, g.imperfetto-uses], vocab: [w.pandemia, w.contagio] }
+      - { es: "Un organismo unicellulare è formato da una sola cellula.", en: "A single-celled organism consists of just one cell.", grammar: [g.scientific-register], vocab: [w.organismo, w.cellula] }
+      - { es: "Sembrerebbe che il farmaco agisca sul metabolismo, ma servono altri studi.", en: "It would appear that the drug acts on the metabolism, but further studies are needed.", grammar: [g.scientific-register, g.condizionale-hearsay], vocab: [w.farmaco, w.metabolismo], transform: { instruction: "Make it assertive, without hedging", answer: "Il farmaco agisce sul metabolismo, ma servono altri studi.", en: "The drug acts on the metabolism, but further studies are needed." } }
+      - { es: "La rupe di Orvieto viene monitorata costantemente per prevenire le frane.", en: "The cliff of Orvieto is constantly monitored to prevent landslides.", grammar: [g.scientific-register, g.passive-venire], vocab: [w.rupe, w.frana] }
+      - { es: "Nel pozzo le due scale elicoidali non si incrociano mai.", en: "In the well the two spiral staircases never cross.", grammar: [g.scientific-register], vocab: [w.pozzo, w.elicoidale] }
+    exchanges:
+      - q: { es: "Che cosa dimostrano i dati?", en: "What do the data show?" }
+        a: { es: "Per ora non dimostrano niente: suggeriscono una correlazione.", en: "For now they don't prove anything: they suggest a correlation." }
+        alt: ["Suggeriscono una correlazione, ma non la dimostrano.", "Niente di definitivo, per ora."]
+        grammar: [g.scientific-register]
+        vocab: [w.correlazione]
+      - q: { es: "Quanti volontari hanno partecipato alla sperimentazione?", en: "How many volunteers took part in the trial?" }
+        a: { es: "Circa duecento, divisi in due gruppi: farmaco e placebo.", en: "About two hundred, split into two groups: drug and placebo." }
+        alt: ["Circa duecento.", "Duecento, metà con il placebo."]
+        grammar: [g.scientific-register]
+        vocab: [w.sperimentazione, w.placebo, w.farmaco]
+      - q: { es: "Perché nell'articolo si usa sempre il «si»?", en: "Why does the article always use 'si'?" }
+        a: { es: "Perché nel registro scientifico si evita la prima persona.", en: "Because in the scientific register the first person is avoided." }
+        alt: ["Perché nei testi scientifici non si scrive «io».", "Per essere impersonale."]
+        grammar: [g.scientific-register, g.si-passivante]
+        vocab: []
+      - q: { es: "Di quanto è aumentata la temperatura media?", en: "By how much has the average temperature risen?" }
+        a: { es: "Di circa 1,2 gradi rispetto all'epoca preindustriale.", en: "By about 1.2 degrees compared with the pre-industrial era." }
+        alt: ["Di circa 1,2 gradi.", "Di poco più di un grado."]
+        grammar: [g.scientific-register]
+        vocab: []
+      - q: { es: "Come avviene il contagio?", en: "How does the infection spread?" }
+        a: { es: "Soprattutto per via aerea, nei luoghi chiusi e affollati.", en: "Mainly through the air, in enclosed and crowded places." }
+        alt: ["Per via aerea.", "Soprattutto al chiuso."]
+        grammar: [g.scientific-register]
+        vocab: [w.contagio]
+    texts:
+      - title: "Abstract"
+        es: ["Nel presente studio si analizza l'efficacia di una nuova molecola antinfiammatoria.", "La sperimentazione è stata condotta su 240 pazienti.", "I risultati suggeriscono una riduzione significativa del dolore rispetto al placebo."]
+        en: ["This study analyses the effectiveness of a new anti-inflammatory molecule.", "The trial was conducted on 240 patients.", "The results suggest a significant reduction in pain compared with placebo."]
+        grammar: [g.scientific-register, g.si-passivante]
+        vocab: [w.efficacia, w.molecola, w.sperimentazione, w.placebo]
+      - title: "Pannello al Pozzo di San Patrizio"
+        es: ["Il pozzo è profondo circa 54 metri.", "Due scale elicoidali indipendenti permettono di scendere e risalire senza incrociarsi.", "Ognuna delle due scale conta 248 gradini."]
+        en: ["The well is about 54 metres deep.", "Two independent spiral staircases make it possible to go down and come back up without crossing.", "Each of the two staircases has 248 steps."]
+        grammar: [g.scientific-register]
+        vocab: [w.pozzo, w.elicoidale]
+    spicy:
+      - { es: "Tra noi c'è una correlazione significativa: ogni volta che sorridi, io inciampo.", en: "There's a significant correlation between us: every time you smile, I trip over.", grammar: [g.scientific-register], vocab: [w.correlazione] }
+      - { es: "Il mio sistema immunitario resiste a tutto, tranne che al tuo sorriso.", en: "My immune system can resist anything except your smile.", grammar: [g.scientific-register], vocab: [w.sistema-immunitario] }
+      - { es: "Sperimentazione in corso: si osserva che un caffè al giorno con te migliora l'umore.", en: "Trial in progress: it is observed that one coffee a day with you improves the mood.", grammar: [g.scientific-register, g.si-impersonale], vocab: [w.sperimentazione] }
+      - { es: "Non sei un placebo: con te sto meglio davvero.", en: "You're not a placebo: I really do feel better with you.", grammar: [g.scientific-register], vocab: [w.placebo] }
+      - { es: "Tra noi c'è una chimica che nessun parametro può misurare.", en: "There's a chemistry between us that no parameter can measure.", grammar: [g.scientific-register, g.relative-che], vocab: [w.parametro] }
+  - id: c2.u06.l4
+    title: Lo spread e la Borsa
+    teach: [g.economic-register]
+    vocab: [w.congiuntura, w.congiunturale, w.dimezzare, w.titoli-di-stato, w.obbligazione, w.dividendo, w.liquidità, w.solvibilità, w.insolvenza, w.bancarotta, w.deflazione, w.stagnazione, w.potere-dacquisto, w.svalutazione, w.tasso, w.tasso-dinteresse, w.banca-centrale, w.cambio, w.dilapidare, w.sperperare, w.elargire, w.lesinare, w.esorbitante, w.irrisorio, w.saldo, w.lira, w.esportazione]
+    tip: "Bilancio is a balance sheet or budget; the balance of your account is il saldo. Changes take del: il PIL è cresciuto dello 0,3 %."
+    sentences:
+      - { es: "Piazza Affari ha chiuso in rialzo dell'1,2 %.", en: "The Milan Stock Exchange closed up 1.2%.", altEs: ["Piazza Affari ha chiuso in rialzo dell'1,2 per cento."], grammar: [g.economic-register], vocab: [w.rialzo] }
+      - { es: "Il PIL è cresciuto dello 0,3 % su base congiunturale.", en: "GDP grew by 0.3% quarter on quarter.", altEs: ["Il PIL è cresciuto dello 0,3 per cento su base congiunturale."], grammar: [g.economic-register], vocab: [w.congiunturale], transform: { instruction: "Make it a fall: GDP fell by 0.3%", answer: "Il PIL è calato dello 0,3 % su base congiunturale.", alt: ["Il PIL è diminuito dello 0,3 % su base congiunturale.", "Il PIL è sceso dello 0,3 % su base congiunturale."], en: "GDP fell by 0.3% quarter on quarter." } }
+      - { es: "La congiuntura internazionale pesa sulle esportazioni di vino umbro.", en: "The international economic situation is weighing on Umbrian wine exports.", grammar: [g.economic-register], vocab: [w.congiuntura, w.esportazione, w.umbro] }
+      - { es: "La banca centrale ha alzato i tassi d'interesse per frenare l'inflazione.", en: "The central bank has raised interest rates to curb inflation.", grammar: [g.economic-register], vocab: [w.banca-centrale, w.tasso-dinteresse, w.tasso], transform: { instruction: "Make it the opposite: the central bank cut rates to support growth", answer: "La banca centrale ha abbassato i tassi d'interesse per sostenere la crescita.", alt: ["La banca centrale ha tagliato i tassi d'interesse per sostenere la crescita.", "La banca centrale ha ridotto i tassi d'interesse per sostenere la crescita."], en: "The central bank has cut interest rates to support growth." } }
+      - { es: "Con l'inflazione al cinque per cento, il potere d'acquisto delle famiglie si è ridotto.", en: "With inflation at five per cent, households' purchasing power has shrunk.", grammar: [g.economic-register], vocab: [w.potere-dacquisto] }
+      - { es: "La deflazione sembra una buona notizia, ma può portare alla stagnazione.", en: "Deflation looks like good news, but it can lead to stagnation.", altEs: ["La deflazione sembra una bella notizia, ma può portare alla stagnazione."], grammar: [g.economic-register], vocab: [w.deflazione, w.stagnazione] }
+      - { es: "Molti risparmiatori comprano titoli di Stato perché li considerano sicuri.", en: "Many savers buy government bonds because they consider them safe.", grammar: [g.economic-register], vocab: [w.titoli-di-stato] }
+      - { es: "L'azienda ha emesso obbligazioni a cinque anni con un tasso del 4 %.", en: "The company has issued five-year bonds at a rate of 4%.", grammar: [g.economic-register], vocab: [w.obbligazione, w.tasso] }
+      - { es: "Quest'anno gli azionisti riceveranno un dividendo più alto.", en: "This year shareholders will receive a higher dividend.", grammar: [g.economic-register, g.futuro-semplice], vocab: [w.azionista, w.dividendo] }
+      - { es: "La società ha problemi di liquidità, ma per ora la sua solvibilità non è in discussione.", en: "The company has liquidity problems, but for now its solvency isn't in question.", grammar: [g.economic-register], vocab: [w.liquidità, w.solvibilità] }
+      - { es: "Accertato lo stato di insolvenza, il tribunale ha dichiarato il fallimento della ditta.", en: "Once insolvency had been established, the court declared the firm bankrupt.", grammar: [g.economic-register, g.participio-assoluto], vocab: [w.insolvenza], note: "Since 2022 the legal term is liquidazione giudiziale, but everyday Italian still says fallimento." }
+      - { es: "Dopo il fallimento, l'imprenditore è stato accusato di bancarotta fraudolenta.", en: "After the bankruptcy, the businessman was charged with fraudulent bankruptcy.", grammar: [g.economic-register, g.passive-essere], vocab: [w.bancarotta], note: "Il fallimento is the insolvency procedure; la bancarotta is the related crime." }
+      - { es: "Negli anni Settanta la svalutazione della lira rendeva più competitive le esportazioni.", en: "In the 1970s the devaluation of the lira made exports more competitive.", grammar: [g.economic-register, g.imperfetto-uses], vocab: [w.svalutazione, w.lira, w.esportazione] }
+      - { es: "Con il cambio favorevole, i turisti americani spendono di più in Umbria.", en: "With a favourable exchange rate, American tourists spend more in Umbria.", grammar: [g.economic-register], vocab: [w.cambio] }
+      - { es: "Il saldo del mio conto corrente è di nuovo in rosso.", en: "The balance of my current account is in the red again.", altEs: ["Il saldo del conto corrente è di nuovo in rosso.", "Il mio conto corrente è di nuovo in rosso."], grammar: [g.economic-register], vocab: [w.saldo], error: { wrong: "Il bilancio del mio conto corrente è di nuovo in rosso.", explain: "The balance of an account is il saldo; il bilancio is a balance sheet or a budget.", grammar: g.economic-register } }
+      - { es: "Ha dilapidato l'eredità del nonno in due anni di viaggi e cene di lusso.", en: "He squandered his grandfather's inheritance in two years of travel and luxury dinners.", altEs: ["Ha sperperato l'eredità del nonno in due anni di viaggi e cene di lusso."], grammar: [g.economic-register], vocab: [w.dilapidare] }
+    exchanges:
+      - q: { es: "Com'è andata la Borsa oggi?", en: "How did the stock market do today?" }
+        a: { es: "Piazza Affari ha chiuso in ribasso dello 0,8 %, trascinata giù dalle banche.", en: "The Milan Stock Exchange closed down 0.8%, dragged down by the banks." }
+        alt: ["Male: in ribasso dello 0,8 %.", "Bene, in rialzo dell'1 %."]
+        grammar: [g.economic-register]
+        vocab: [w.ribasso, w.rialzo]
+      - q: { es: "Conviene comprare titoli di Stato adesso?", en: "Is it worth buying government bonds now?" }
+        a: { es: "Dipende dai tassi: se la banca centrale li abbassa, il prezzo dei titoli sale.", en: "It depends on rates: if the central bank cuts them, bond prices go up." }
+        alt: ["Dipende dai tassi d'interesse.", "Secondo me sì, i tassi sono ancora alti."]
+        grammar: [g.economic-register, g.periodo-ipotetico-1]
+        vocab: [w.titoli-di-stato, w.tasso, w.banca-centrale]
+      - q: { es: "Perché la vita costa sempre di più?", en: "Why is life getting more and more expensive?" }
+        a: { es: "Perché i prezzi salgono più degli stipendi e il potere d'acquisto si riduce.", en: "Because prices are rising faster than wages and purchasing power is shrinking." }
+        alt: ["Colpa dell'inflazione.", "Perché gli stipendi non crescono quanto i prezzi."]
+        grammar: [g.economic-register, g.comparatives]
+        vocab: [w.potere-dacquisto]
+      - q: { es: "Quanto paghi di affitto a Orvieto?", en: "How much rent do you pay in Orvieto?" }
+        a: { es: "Una cifra esorbitante: il centro storico è carissimo.", en: "An exorbitant amount: the historic centre is very expensive." }
+        alt: ["Troppo: il centro costa tantissimo.", "Una cifra esorbitante."]
+        grammar: [g.economic-register]
+        vocab: [w.esorbitante]
+      - q: { es: "Il tuo capo ti ha dato l'aumento?", en: "Did your boss give you the pay rise?" }
+        a: { es: "Macché: lesina perfino sulla carta per la stampante.", en: "Not a chance: he even skimps on paper for the printer." }
+        alt: ["No, un aumento irrisorio: venti euro al mese.", "Macché, è tirchio."]
+        grammar: [g.economic-register]
+        vocab: [w.lesinare, w.irrisorio]
+    texts:
+      - title: "Notiziario economico"
+        es: ["Lo spread chiude a 140 punti base.", "Piazza Affari in rialzo dello 0,6 %, bene i titoli bancari.", "L'Istat stima per il prossimo trimestre una crescita congiunturale dello 0,2 %."]
+        en: ["The spread closes at 140 basis points.", "The Milan Stock Exchange up 0.6%, banking stocks doing well.", "Istat forecasts quarter-on-quarter growth of 0.2% for the next quarter."]
+        grammar: [g.economic-register, g.journalistic-language]
+        vocab: [w.rialzo, w.congiunturale]
+      - title: "Lettera del nonno"
+        es: ["Caro nipote, i soldi non si sperperano e non si lesinano: si usano con giudizio.", "Ai miei tempi la lira si svalutava ogni anno e i risparmi si dimezzavano.", "Il Comune elargiva contributi a tutti, ma i conti non tornavano mai.", "Tu non dilapidare tutto in cene e vestiti!"]
+        en: ["Dear grandson, money shouldn't be squandered or skimped on: it should be used wisely.", "In my day the lira lost value every year and savings were halved.", "The council handed out grants to everybody, but the accounts never added up.", "Don't you go squandering it all on dinners and clothes!"]
+        grammar: [g.economic-register, g.si-passivante]
+        vocab: [w.sperperare, w.lesinare, w.lira, w.dimezzare, w.elargire, w.dilapidare]
+    spicy:
+      - { es: "Il mio potere d'acquisto si è dimezzato da quando ti offro tutte le cene.", en: "My purchasing power has halved since I started buying you every dinner.", grammar: [g.economic-register], vocab: [w.potere-dacquisto, w.dimezzare] }
+      - { es: "Con te non lesino sui complimenti: sei un investimento ad alto rendimento.", en: "I don't skimp on compliments with you: you're a high-yield investment.", grammar: [g.economic-register], vocab: [w.lesinare] }
+      - { es: "Il mio tasso d'interesse nei tuoi confronti è salito del cento per cento in una settimana.", en: "My interest rate in you has gone up by a hundred per cent in a week.", grammar: [g.economic-register], vocab: [w.tasso-dinteresse] }
+      - { es: "Le tue battute hanno un valore irrisorio, ma il tuo fascino è esorbitante.", en: "Your jokes are worth next to nothing, but your charm is exorbitant.", grammar: [g.economic-register], vocab: [w.irrisorio, w.esorbitante] }
+      - { es: "Ho sperperato lo stipendio in fiori per te: adesso mi spetta almeno un dividendo, tipo un bacio.", en: "I've blown my salary on flowers for you: now I'm owed at least a dividend, like a kiss.", grammar: [g.economic-register], vocab: [w.sperperare, w.dividendo] }
+dialogues:
+  - id: c2.u06.d1
+    title: Dal notaio a Orvieto
+    context: Benedetta and Ruggero are buying a little house on the cliff of Orvieto. The notary reads them the deed before they sign.
+    lines:
+      - { speaker: Notaio, es: "Buongiorno. Procediamo con la lettura dell'atto, come previsto dalla legge.", en: "Good morning. Let's proceed with the reading of the deed, as the law requires." }
+      - { speaker: Ruggero, es: "Tutto, dottore? Sono trenta pagine.", en: "All of it? It's thirty pages." }
+      - { speaker: Notaio, es: "Tutto. Le parti devono comprendere ogni clausola prima di firmare.", en: "All of it. The parties must understand every clause before signing." }
+      - { speaker: Benedetta, es: "Scusi, che cosa significa «fatto salvo quanto previsto dall'articolo cinque»?", en: "Excuse me, what does 'without prejudice to the provisions of article five' mean?" }
+      - { speaker: Notaio, es: "Significa che la regola vale sempre, tranne nei casi descritti all'articolo cinque.", en: "It means the rule always applies, except in the cases described in article five." }
+      - { speaker: Ruggero, es: "E l'articolo cinque che cosa dice?", en: "And what does article five say?" }
+      - { speaker: Notaio, es: "Che il venditore risponde dei vizi nascosti della casa, purché siano denunciati entro otto giorni dalla scoperta.", en: "That the seller is liable for hidden defects in the house, provided they are reported within eight days of discovery." }
+      - { speaker: Benedetta, es: "Vizi nascosti? Tipo un pozzo segreto in cantina?", en: "Hidden defects? Like a secret well in the cellar?" }
+      - { speaker: Notaio, es: "A Orvieto non sarebbe la prima volta: sotto la città ci sono più di mille grotte scavate nel tufo.", en: "In Orvieto it wouldn't be the first time: under the town there are more than a thousand caves dug into the tuff." }
+      - { speaker: Ruggero, es: "Allora firmiamo subito, prima di trovare un'altra sorpresa!", en: "Then let's sign right away, before we find another surprise!" }
+      - { speaker: Notaio, es: "Un momento: prima il saldo del prezzo, poi le firme. E la casa sarà vostra.", en: "Just a moment: first the balance of the price, then the signatures. And the house will be yours." }
+    questions:
+      - { q: "Perché il notaio legge tutto l'atto?", options: ["Perché i clienti non sanno leggere", "Perché le parti devono comprendere ogni clausola", "Perché lo chiede il venditore"], answer: 1, explain: "The law requires the parties to understand every clause before signing." }
+      - { q: "Che cosa significa «fatto salvo quanto previsto dall'articolo cinque»?", options: ["Che l'articolo cinque è annullato", "Che la regola vale tranne nei casi dell'articolo cinque", "Che l'articolo cinque vale solo per il venditore"], answer: 1, explain: "Fatto salvo = without prejudice to: the rule applies except in the cases of article five." }
+      - { q: "Entro quando vanno denunciati i vizi nascosti?", options: ["Entro otto giorni dalla scoperta", "Entro un mese dal rogito", "Entro un anno dalla firma"], answer: 0, explain: "Article five says within eight days of discovery." }
+      - { q: "Che cosa c'è sotto Orvieto, secondo il notaio?", options: ["Un fiume sotterraneo", "Più di mille grotte scavate nel tufo", "Un antico teatro romano"], answer: 1, explain: "Orvieto stands on a tuff cliff riddled with more than a thousand man-made caves." }
