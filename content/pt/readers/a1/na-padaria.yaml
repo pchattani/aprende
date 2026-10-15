@@ -1,0 +1,35 @@
+id: r.a1.na-padaria
+level: a1
+title: Na padaria do seu Manuel
+kind: dialogue
+intro: It's eight in the morning in Copacabana. Kate goes to the corner bakery for breakfast and chats with the owner, Seu Manuel.
+allow: [kate, manuel, seu, copacabana, ok, pão, francês]
+paragraphs:
+  - { es: "São oito horas da manhã em Copacabana. A padaria do seu Manuel fica na esquina, perto da praia. Ela é pequena, mas está sempre cheia. A Kate entra e vai ao balcão.", en: "It's eight o'clock in the morning in Copacabana. Seu Manuel's bakery is on the corner, near the beach. It's small, but it's always full. Kate goes in and goes to the counter." }
+  - { es: "— Bom dia! Tudo bem? — diz o seu Manuel.", en: "'Good morning! How are you?' says Seu Manuel." }
+  - { es: "— Bom dia, tudo bem! Eu quero um café com leite, por favor.", en: "'Good morning, fine! I'd like a coffee with milk, please.'" }
+  - { es: "— Pequeno ou grande?", en: "'Small or large?'" }
+  - { es: "— Grande, por favor. Estou com muito sono hoje! E o que é isso?", en: "'Large, please. I'm very sleepy today! And what's that?'" }
+  - { es: "— Isso é pão de queijo, uma delícia de Minas Gerais. Você quer provar?", en: "'That's pão de queijo, a treat from Minas Gerais. Do you want to try it?'" }
+  - { es: "— Quero, sim! Dois pães de queijo, por favor. E também um pão francês com manteiga.", en: "'Yes, I do! Two pães de queijo, please. And also a bread roll with butter.'" }
+  - { es: "— Na chapa?", en: "'On the griddle?'" }
+  - { es: "— Desculpa, não entendo. O que é «na chapa»?", en: "'Sorry, I don't understand. What is «na chapa»?'" }
+  - { es: "— É o pão quente, com a manteiga por dentro. Os cariocas adoram! — responde o seu Manuel.", en: "'It's the bread hot, with the butter inside. People from Rio love it!' Seu Manuel replies." }
+  - { es: "— Então, na chapa! E um suco de laranja também, por favor.", en: "'On the griddle, then! And an orange juice too, please.'" }
+  - { es: "A Kate senta numa cadeira perto da janela. O pão de queijo é quente e gostoso. O café é forte e doce. O seu Manuel é português, de Lisboa, mas mora no Rio há quarenta anos. Ele conversa com todos os clientes.", en: "Kate sits on a chair near the window. The pão de queijo is hot and tasty. The coffee is strong and sweet. Seu Manuel is Portuguese, from Lisbon, but has lived in Rio for forty years. He chats with all the customers." }
+  - { es: "— Quanto é, seu Manuel?", en: "'How much is it, Seu Manuel?'" }
+  - { es: "— São dezoito reais. Você paga com cartão ou pix?", en: "'It's eighteen reais. Are you paying by card or Pix?'" }
+  - { es: "— Com cartão. Obrigada! Até amanhã!", en: "'By card. Thank you! See you tomorrow!'" }
+  - { es: "— De nada, menina. Até amanhã! E amanhã você prova a coxinha!", en: "'You're welcome, dear. See you tomorrow! And tomorrow you try the coxinha!'" }
+questions:
+  - { q: "Onde fica a padaria?", options: ["Na esquina, perto da praia", "No centro da cidade", "Em Lisboa"], answer: 0, explain: "«A padaria do seu Manuel fica na esquina, perto da praia.»" }
+  - { q: "Por que a Kate quer um café grande?", options: ["Porque está com fome", "Porque está com muito sono", "Porque o café é barato"], answer: 1, explain: "She says «Estou com muito sono hoje!» — estar com sono = to be sleepy." }
+  - { q: "O que é o pão «na chapa»?", options: ["Pão com queijo e presunto", "Pão quente, com manteiga por dentro", "Pão de Minas Gerais"], answer: 1, explain: "Seu Manuel explains: «É o pão quente, com a manteiga por dentro.»" }
+  - { q: "De onde é o seu Manuel?", options: ["Do Rio", "De Minas Gerais", "De Lisboa"], answer: 2, explain: "«O seu Manuel é português, de Lisboa, mas mora no Rio há quarenta anos.»" }
+  - { q: "Quanto a Kate paga?", options: ["Oito reais", "Dezoito reais", "Quarenta reais"], answer: 1, explain: "«São dezoito reais.» Eight is the time and forty is how long Seu Manuel has lived in Rio." }
+glossary:
+  - { es: balcão, en: counter }
+  - { es: chapa, en: griddle (pão na chapa = griddled bread roll) }
+  - { es: forte, en: strong }
+  - { es: clientes, en: customers }
+  - { es: conversa, en: chats (conversar = to chat) }

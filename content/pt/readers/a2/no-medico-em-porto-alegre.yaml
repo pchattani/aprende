@@ -1,0 +1,40 @@
+id: r.a2.no-medico-em-porto-alegre
+level: a2
+title: No médico em Porto Alegre
+kind: dialogue
+intro: Tom, a Canadian teacher living in Porto Alegre, has had a sore throat for days. He goes to the doctor, who gives him some advice — and a lesson about chimarrão.
+allow: [tom, estádio, aaa, porto, alegre, gaúcho, gaúchos, ok, dra, beatriz]
+paragraphs:
+  - { es: "O Tom é canadense e mora em Porto Alegre há um ano. Ele dá aulas de inglês numa escola de idiomas. Há quatro dias, ele está com dor de garganta e não consegue falar direito. Hoje, ele finalmente foi ao médico.", en: "Tom is Canadian and has lived in Porto Alegre for a year. He teaches English at a language school. For four days he's had a sore throat and can't speak properly. Today he finally went to the doctor." }
+  - { es: "— Bom dia, Tom. Eu sou a doutora Beatriz. O que você está sentindo?", en: "'Good morning, Tom. I'm Doctor Beatriz. What are you feeling?'" }
+  - { es: "— Bom dia, doutora. Estou com muita dor de garganta e um pouco de febre. Também estou muito cansado.", en: "'Good morning, doctor. I have a very sore throat and a bit of a temperature. I'm also very tired.'" }
+  - { es: "— Desde quando você está assim?", en: "'Since when have you been like this?'" }
+  - { es: "— Desde sábado. No fim de semana, eu fui a um jogo de futebol no estádio. Fazia muito frio e ventava muito, e eu gritei o jogo todo.", en: "'Since Saturday. At the weekend I went to a football match at the stadium. It was very cold and windy, and I shouted the whole game.'" }
+  - { es: "— Ah, então você já é um gaúcho de verdade! — ri a médica. — Abra a boca, por favor. Diga «aaa».", en: "'Ah, so you're a real gaúcho now!' the doctor laughs. 'Open your mouth, please. Say «aaa».'" }
+  - { es: "A doutora examina a garganta do Tom e mede a temperatura dele.", en: "The doctor examines Tom's throat and takes his temperature." }
+  - { es: "— Você está com uma infecção na garganta, mas não é nada grave. Vou receitar um remédio. Tome um comprimido a cada oito horas, durante cinco dias.", en: "'You have a throat infection, but it's nothing serious. I'm going to prescribe some medicine. Take one tablet every eight hours, for five days.'" }
+  - { es: "— Eu posso trabalhar amanhã?", en: "'Can I work tomorrow?'" }
+  - { es: "— Eu não aconselharia. Você é professor e precisa da voz. Fique em casa dois dias, descanse e beba muita água. Eu vou dar um atestado para a escola.", en: "'I wouldn't advise it. You're a teacher and you need your voice. Stay home for two days, rest and drink lots of water. I'll give you a sick note for the school.'" }
+  - { es: "— E o chimarrão? Os meus colegas da escola tomam chimarrão o dia todo e sempre me oferecem.", en: "'And chimarrão? My colleagues at school drink chimarrão all day and always offer me some.'" }
+  - { es: "— O chimarrão é ótimo, mas ele é muito quente. Agora, com a garganta assim, eu esperaria uns dias. E, por favor, não use a mesma bomba dos colegas esta semana. Eu não quero a escola toda aqui no consultório!", en: "'Chimarrão is great, but it's very hot. Right now, with your throat like this, I'd wait a few days. And please don't share your colleagues' straw this week. I don't want the whole school here in my surgery!'" }
+  - { es: "— Entendi, doutora. Mais alguma coisa?", en: "'Got it, doctor. Anything else?'" }
+  - { es: "— Sim. Se você ainda estiver com febre na sexta, volte aqui. E no próximo jogo, leve um casaco e grite um pouco menos!", en: "'Yes. If you still have a temperature on Friday, come back. And at the next match, take a coat and shout a bit less!'" }
+  - { es: "O Tom saiu do consultório, comprou o remédio na farmácia e foi para casa. À noite, ele mandou uma mensagem para os colegas: «Desculpem, sem chimarrão por uma semana. Ordens da médica!»", en: "Tom left the surgery, bought the medicine at the pharmacy and went home. In the evening he sent his colleagues a message: 'Sorry, no chimarrão for a week. Doctor's orders!'" }
+questions:
+  - { q: "Quais são os sintomas do Tom?", options: ["Dor de cabeça e dor nas costas", "Dor de garganta, um pouco de febre e cansaço", "Dor de barriga"], answer: 1, explain: "«Estou com muita dor de garganta e um pouco de febre. Também estou muito cansado.»" }
+  - { q: "O que o Tom fez no sábado?", options: ["Foi a um jogo de futebol", "Foi à praia", "Deu aulas na escola"], answer: 0, explain: "«Eu fui a um jogo de futebol no estádio. Fazia muito frio... e eu gritei o jogo todo.»" }
+  - { q: "Como o Tom deve tomar o remédio?", options: ["Um comprimido por dia", "Um comprimido a cada oito horas, durante cinco dias", "Dois comprimidos à noite"], answer: 1, explain: "«Tome um comprimido a cada oito horas, durante cinco dias.»" }
+  - { q: "Por que a médica não aconselha o Tom a trabalhar amanhã?", options: ["Porque ele precisa da voz", "Porque a escola está fechada", "Porque ele tem que voltar ao consultório"], answer: 0, explain: "«Você é professor e precisa da voz. Fique em casa dois dias.»" }
+  - { q: "O que a médica diz sobre o chimarrão?", options: ["Que é ruim para a saúde", "Que é melhor esperar uns dias e não usar a bomba dos colegas", "Que ele deve tomar mais"], answer: 1, explain: "«Eu esperaria uns dias. E... não use a mesma bomba dos colegas esta semana.»" }
+glossary:
+  - { es: idiomas, en: languages (escola de idiomas = language school) }
+  - { es: direito, en: properly }
+  - { es: examina, en: examines }
+  - { es: mede, en: measures (medir) }
+  - { es: infecção, en: infection }
+  - { es: receitar, en: to prescribe }
+  - { es: aconselharia, en: I would advise (aconselhar) }
+  - { es: atestado, en: sick note, medical certificate }
+  - { es: bomba, en: metal straw for chimarrão }
+  - { es: consultório, en: doctor's surgery, office }
+  - { es: ordens, en: orders }
