@@ -1,0 +1,1063 @@
+# C1 grammar notes (the Southwest and Corsica). Explanations use light markdown:
+# ### headings, bullets, tables, **bold**, *italic* (italic = French inline).
+- id: g.passe-simple-forms
+  level: c1
+  title: "The passé simple: all forms"
+  summary: "Three vowel types: -ai/-as/-a/-âmes/-âtes/-èrent (-er), -is/-is/-it/-îmes/-îtes/-irent, -us/-us/-ut/-ûmes/-ûtes/-urent; plus venir/tenir in -in-."
+  explanation: |
+    | | parler (a) | finir, prendre (i) | vouloir, être (u) | venir (in) |
+    |---|---|---|---|---|
+    | je | parl**ai** | fin**is**, pr**is** | voul**us**, f**us** | v**ins** |
+    | tu | parl**as** | fin**is**, pr**is** | voul**us**, f**us** | v**ins** |
+    | il / elle | parl**a** | fin**it**, pr**it** | voul**ut**, f**ut** | v**int** |
+    | nous | parl**âmes** | fin**îmes**, pr**îmes** | voul**ûmes**, f**ûmes** | v**înmes** |
+    | vous | parl**âtes** | fin**îtes**, pr**îtes** | voul**ûtes**, f**ûtes** | v**întes** |
+    | ils / elles | parl**èrent** | fin**irent**, pr**irent** | voul**urent**, f**urent** | v**inrent** |
+
+    ### Which type?
+    - All **-er** verbs (including *aller*: *il alla*) → **a**.
+    - Most -ir and -re verbs → **i**: *dormit, répondit, fit, dit, mit, vit, écrivit, naquit*.
+    - Many verbs with a participle in -u → **u**: *eut, fut, put, sut, dut, but, lut, crut, connut, parut, vécut, mourut* (participle *mort*!).
+    - *venir, tenir* and compounds → **in**: *vint, tint, devint, retint*.
+
+    ### Spelling
+    *-cer, -ger*: *il commença, il mangea, ils mangèrent*. Circumflex only on *nous / vous*: *-âmes, -îtes, -ûtes*.
+
+    In practice the 3rd persons dominate; 1st person forms appear in memoirs and first-person novels.
+  examples:
+    - { es: "En 1137, Aliénor d'Aquitaine épousa le futur roi de France.", en: "In 1137 Eleanor of Aquitaine married the future king of France." }
+    - { es: "Montaigne naquit en 1533 et mourut en 1592.", en: "Montaigne was born in 1533 and died in 1592." }
+    - { es: "Les négociants firent fortune grâce au commerce du vin.", en: "The merchants made their fortune from the wine trade." }
+    - { es: "Je pris la plume et j'écrivis toute la nuit.", en: "I took up my pen and wrote all night." }
+  pitfalls:
+    - "*Il naquit* (naître), *il vécut* (vivre), *il mourut* (mourir): learn these three."
+    - "*Ils parlèrent* (è), not *ils parlirent*."
+    - "*Il crut* (croire) vs *il crût* (croître, with circumflex)."
+  related: [g.passe-simple-recognition, g.passe-simple-usage, g.passe-anterieur]
+  drills:
+    - { es: "Elle ouvrit la fenêtre.", en: "She opened the window." }
+    - { es: "Ils vinrent nous voir.", en: "They came to see us." }
+    - { es: "Nous fûmes très surpris.", en: "We were very surprised." }
+- id: g.passe-simple-usage
+  level: c1
+  title: "Using the passé simple: narrative distance"
+  summary: "Written, literary or historical narrative uses passé simple + imparfait; journalism, letters and speech use passé composé. Don't mix them in one narrative layer."
+  explanation: |
+    ### Two systems of the past
+    | | spoken / "discourse" | written narrative / "history" |
+    |---|---|---|
+    | events | passé composé | **passé simple** |
+    | background | imparfait | imparfait |
+    | earlier events | plus-que-parfait | plus-que-parfait / **passé antérieur** |
+    | link to the present | yes (*j'ai vu* = I've seen) | none: closed, distant past |
+
+    ### Where you find the passé simple
+    Novels and short stories, fairy tales, history books, biographies, encyclopedias, some press (sports, culture), formal speeches recounting the past.
+
+    ### Effect
+    It presents events as a **completed chain**, cut off from the speaker's present. Writers like Camus (*L'Étranger*) deliberately chose the passé composé to create a different, more immediate voice.
+
+    ### Writing advice
+    - Pick one system and stick to it for the narrative line.
+    - Dialogue inside a novel stays in spoken tenses: *« J'**ai vu** le port », **dit**-il.*
+  examples:
+    - { es: "Le port de la Lune connut son âge d'or au XVIIIe siècle.", en: "The Port of the Moon knew its golden age in the 18th century." }
+    - { es: "Elle descendit sur les quais ; la Garonne brillait sous la lune.", en: "She went down to the quays; the Garonne was shining under the moon." }
+    - { es: "« J'ai trouvé du travail au port », annonça-t-il fièrement.", en: "'I've found work at the port,' he announced proudly." }
+  pitfalls:
+    - "Don't use it in emails or conversation: it sounds absurdly pompous or comic."
+    - "Don't switch between passé composé and passé simple for the same narrative line."
+  related: [g.passe-simple-forms, g.pc-vs-imparfait, g.literary-prose-style]
+  drills:
+    - { es: "La ville se développa rapidement.", en: "The town developed rapidly." }
+    - { es: "Il faisait nuit quand le navire entra dans le port.", en: "It was dark when the ship entered the port." }
+    - { es: "Montesquieu publia De l'esprit des lois en 1748.", en: "Montesquieu published The Spirit of the Laws in 1748." }
+- id: g.passe-anterieur
+  level: c1
+  title: "The passé antérieur: quand il eut fini"
+  summary: "passé simple of avoir/être + participle: an action completed just before another in the passé simple, after quand, lorsque, dès que, après que, à peine."
+  explanation: |
+    | | avoir | être |
+    |---|---|---|
+    | je / j' | **eus** fini | **fus** parti(e) |
+    | il / elle | **eut** fini | **fut** parti(e) |
+    | nous | **eûmes** fini | **fûmes** parti(e)s |
+    | ils / elles | **eurent** fini | **furent** parti(e)s |
+
+    ### Use
+    It's the literary counterpart of the plus-que-parfait, for **immediate** anteriority, almost always in a time clause before a main verb in the passé simple:
+    - ***Quand** il **eut terminé** sa lettre, il la cacheta.*
+    - ***Dès qu'**elle **fut arrivée**, on servit le dîner.*
+    - ***À peine** **eut**-il **fini** **qu'**on l'applaudit.*
+    - ***Après qu'**ils **furent partis**, le silence revint.*
+
+    In a main clause with *bientôt, vite, en un instant*, it stresses speed: *En un instant, il **eut compris**.*
+
+    ### Spoken equivalent
+    The *passé surcomposé* (*quand il a eu fini*) is heard in some regions, notably in the south of France and Switzerland: recognise it, use with care.
+  examples:
+    - { es: "Lorsque le négociant eut goûté le vin, il fit une offre.", en: "When the merchant had tasted the wine, he made an offer." }
+    - { es: "Dès que les invités furent partis, elle s'effondra dans un fauteuil.", en: "As soon as the guests had left, she collapsed into an armchair." }
+    - { es: "À peine eut-il ouvert la porte qu'une odeur de vin l'envahit.", en: "No sooner had he opened the door than a smell of wine overwhelmed him." }
+  pitfalls:
+    - "*Il eut fini* (indicative), not *il eût fini* (subjonctif plus-que-parfait)."
+    - "Used with a passé simple main clause, not with a passé composé."
+  related: [g.passe-simple-forms, g.plus-que-parfait, g.subjonctif-plus-que-parfait]
+  drills:
+    - { es: "Quand il eut fini, il sortit.", en: "When he had finished, he went out." }
+    - { es: "Après qu'elle fut partie, il pleura.", en: "After she had left, he wept." }
+    - { es: "Dès qu'ils eurent mangé, ils repartirent.", en: "As soon as they had eaten, they set off again." }
+- id: g.subjonctif-imparfait
+  level: c1
+  title: "Recognising the imparfait du subjonctif: qu'il fût, qu'il eût, qu'il vînt"
+  summary: "Formed from the passé simple: il parla → qu'il parlât, il fit → qu'il fît. Only the 3rd person singular (with its circumflex) is still met in formal writing."
+  explanation: |
+    ### Formation
+    Take the *tu* form of the passé simple + **-se, -ses, -^t, -sions, -siez, -sent**:
+
+    | | parler (tu parlas) | finir (tu finis) | être (tu fus) | avoir (tu eus) |
+    |---|---|---|---|---|
+    | que je | parla**sse** | fini**sse** | fu**sse** | eu**sse** |
+    | qu'il | parl**ât** | fin**ît** | f**ût** | e**ût** |
+    | que nous | parla**ssions** | fini**ssions** | fu**ssions** | eu**ssions** |
+    | qu'ils | parla**ssent** | fini**ssent** | fu**ssent** | eu**ssent** |
+
+    ### Where you meet it
+    In classic literature, after a past main verb (*concordance des temps*): *Il fallait qu'il **partît**. Je voulais qu'elle **vînt**.* Modern French replaces it with the present subjonctif: *qu'il parte, qu'elle vienne*.
+
+    Still alive in set phrases: ***fût-ce*** (even if it were), ***dût-il*** (even if he had to), ***ne fût-ce que*** (if only), ***qu'il fût***, and in formal writing at the 3rd person singular.
+
+    ### Distinguish by the circumflex
+    - *il fut* (passé simple: was) / *qu'il fût* (subjonctif: that he were)
+    - *il eut* / *qu'il eût*; *il vint* / *qu'il vînt*
+  examples:
+    - { es: "Il voulait que la dune restât sauvage.", en: "He wanted the dune to remain wild." }
+    - { es: "Bien qu'elle fût épuisée, elle grimpa jusqu'au sommet.", en: "Although she was exhausted, she climbed to the top." }
+    - { es: "Je l'aiderai, ne fût-ce qu'une heure.", en: "I'll help him, if only for an hour." }
+  pitfalls:
+    - "Don't produce it in modern speech: *que je parlasse* sounds comic."
+    - "The circumflex is the only written difference between *il fut* and *qu'il fût*."
+  related: [g.subjonctif-plus-que-parfait, g.concordance-des-temps, g.passe-simple-forms]
+  drills:
+    - { es: "Il fallait qu'il partît sur-le-champ.", en: "He had to leave immediately." }
+    - { es: "Quoiqu'il fût riche, il vivait simplement.", en: "Although he was rich, he lived simply." }
+    - { es: "Elle attendait qu'on lui répondît.", en: "She was waiting for someone to answer her." }
+- id: g.subjonctif-plus-que-parfait
+  level: c1
+  title: "The plus-que-parfait du subjonctif: qu'il eût fait, j'eusse aimé"
+  summary: "eût / fût + participle: an earlier action after a past main verb, and the literary 'conditionnel passé deuxième forme' (il eût été préférable)."
+  explanation: |
+    | | avoir | être |
+    |---|---|---|
+    | que j' / je | **eusse** vu | **fusse** venu(e) |
+    | qu'il / elle | **eût** vu | **fût** venu(e) |
+    | qu'ils / elles | **eussent** vu | **fussent** venu(e)s |
+
+    ### 1. Subjonctif after a past main verb (earlier action)
+    *Je doutais qu'il **eût compris**.* (modern: *qu'il ait compris*)
+
+    ### 2. "Conditionnel passé 2e forme" (literary)
+    It replaces the conditionnel passé, often in both halves of a past *si*-clause:
+    - ***Il eût été** préférable de partir.* = *Il aurait été préférable…*
+    - *S'il **eût su**, il **eût agi** autrement.* = *S'il avait su, il aurait agi autrement.*
+    - ***J'eusse aimé** vous voir.* = *J'aurais aimé…*
+
+    Pascal: *« Le nez de Cléopâtre : s'il **eût été** plus court, toute la face de la terre **aurait changé**. »*
+
+    ### Recognition, not production
+    Found in classic literature, legal and very formal prose. In your own writing, prefer the modern forms.
+  examples:
+    - { es: "Il eût été dommage de quitter Saint-Émilion sans visiter l'église monolithe.", en: "It would have been a shame to leave Saint-Émilion without visiting the monolithic church." }
+    - { es: "Si les moines n'eussent creusé la roche, l'église n'existerait pas.", en: "Had the monks not dug into the rock, the church would not exist." }
+    - { es: "Bien qu'il eût beaucoup voyagé, il revenait toujours à ses vignes.", en: "Although he had travelled a great deal, he always came back to his vines." }
+  pitfalls:
+    - "*Qu'il eût* (subjonctif, circumflex) vs *il eut* (passé simple)."
+    - "In literary *si*-clauses, *eût* can appear after *si*: an exception to the 'no conditional after si' rule, because it's formally a subjonctif."
+  related: [g.subjonctif-imparfait, g.conditionnel-passe, g.si-plus-que-parfait, g.passe-anterieur]
+  drills:
+    - { es: "J'eusse préféré qu'on me prévînt.", en: "I would have preferred to be warned." }
+    - { es: "Il eût mieux valu se taire.", en: "It would have been better to keep quiet." }
+    - { es: "Elle regrettait qu'il ne fût pas venu.", en: "She regretted that he hadn't come." }
+- id: g.literary-inversion
+  level: c1
+  title: "Literary inversion and word order"
+  summary: "Verb before subject for rhythm and emphasis: Ainsi parlait…, Restait la question de…, Tel est…, Rares sont ceux qui…, Peu importe…"
+  explanation: |
+    Beyond questions and adverbs (B2), literary French inverts for **balance and emphasis**:
+
+    | pattern | example |
+    |---|---|
+    | relative clause with a long subject | *la vallée où **coule la Dordogne*** |
+    | adjective / attribute first | ***Rares sont** les vignobles aussi anciens.* |
+    | *tel* first | ***Telle est** la question.* |
+    | *rester, venir, suivre* first (lists, narrative) | ***Restait** le problème du prix. **Vint** ensuite l'hiver.* |
+    | *soit* (hypothesis, math) | ***Soit** un triangle ABC.* |
+    | concessive *si* + adj. + subj. | ***Si** riche **soit-il**, il n'est pas heureux.* |
+    | hypothetical inversion (= *si*) | ***Dût-il** pleuvoir, nous partirions.* / ***Viendrait-il**, je ne le recevrais pas.* |
+    | after *ainsi, aussi, encore, à peine, du moins, sans doute* | ***Du moins** l'a-t-il essayé.* |
+    | incise after direct speech | *« Non », **répondit le vigneron**.* |
+
+    These structures are a hallmark of polished written style; spotting them helps you read the classics and the quality press.
+  examples:
+    - { es: "Rares sont les villages qui ont gardé un tel patrimoine.", en: "Few villages have kept such a heritage." }
+    - { es: "Telle fut la fin de l'abbaye.", en: "Such was the end of the abbey." }
+    - { es: "Restait à convaincre les vignerons.", en: "The winegrowers still had to be convinced." }
+    - { es: "Si célèbre soit-il, ce vin reste abordable.", en: "Famous as it may be, this wine remains affordable." }
+  pitfalls:
+    - "These inversions don't take *-t-il* when the noun is inverted directly: *Rares sont les…*, not *Rares les … sont-ils*."
+    - "Don't use them in conversation."
+  related: [g.formal-inversion, g.literary-prose-style, g.qui-que-quoi-que]
+  drills:
+    - { es: "Telle est la loi.", en: "Such is the law." }
+    - { es: "Vint alors le moment de la récolte.", en: "Then came the time of the harvest." }
+    - { es: "Peu importe le prix.", en: "The price doesn't matter." }
+- id: g.subjonctif-nuance
+  level: c1
+  title: "Mood as meaning: indicative or subjonctif changes the message"
+  summary: "The same structure can take either mood, with a shift in meaning: certainty vs hypothesis, fact vs evaluation, result vs purpose."
+  explanation: |
+    | indicative (fact, real) | subjonctif (idea, virtual) |
+    |---|---|
+    | *Je cherche une maison qui **a** vue sur la dune.* (I know it exists) | *…qui **ait** vue sur la dune.* (if one exists) |
+    | *C'est le seul sentier qui **mène** au sommet.* (plain fact) | *…qui **mène**…* written *qui **mène*** — use *puisse* to show it: *le seul qui **puisse** y mener* (evaluation) |
+    | *Il parle fort, **de sorte qu'**on l'**entend**.* (result) | *Parle fort **de sorte qu'**on t'**entende**.* (purpose) |
+    | *Je comprends qu'il **est** parti.* (I realise) | *Je comprends qu'il **soit** parti.* (I understand why) |
+    | *Il est sûr qu'il **viendra**.* | *Il n'est pas sûr qu'il **vienne**.* |
+    | *Admettons qu'il **a** raison.* (he is right, I concede) | *Admettons qu'il **ait** raison.* (suppose he is) |
+    | *Le fait est qu'il **ment**.* | *Le fait qu'il **mente** me choque.* (evaluated) |
+
+    ### After superlatives and *le premier / le seul*
+    The subjonctif adds subjectivity; the indicative states an objective fact: *C'est la plus haute dune qu'on **a** mesurée* (fact) / *qu'on **ait** jamais vue* (judgement).
+
+    ### Questions with inversion
+    *Croyez-vous qu'il **vienne** ?* (doubtful) / *Croyez-vous qu'il **viendra** ?* (you expect so).
+  examples:
+    - { es: "Je comprends qu'on soit fasciné par cette dune.", en: "I understand why people are fascinated by this dune." }
+    - { es: "Je comprends que la dune avance de quelques mètres par an.", en: "I gather that the dune moves a few metres each year." }
+    - { es: "Nous cherchons un guide qui connaisse les marées.", en: "We're looking for a guide who knows the tides (if there is one)." }
+    - { es: "Le fait que la dune se déplace inquiète les habitants.", en: "The fact that the dune is moving worries residents." }
+  pitfalls:
+    - "*Comprendre que* + indicative = realise; + subjonctif = find it understandable."
+    - "*Le fait que* is now usually followed by the subjonctif, especially at the start of a sentence."
+  related: [g.indicatif-ou-subjonctif, g.subjonctif-relatives, g.purpose-clauses]
+  drills:
+    - { es: "Je comprends que tu sois déçu.", en: "I understand that you're disappointed." }
+    - { es: "Admettons que ce soit vrai.", en: "Let's suppose it's true." }
+    - { es: "Je cherche quelqu'un qui sache le basque.", en: "I'm looking for someone who knows Basque." }
+- id: g.qui-que-quoi-que
+  level: c1
+  title: "Universal concession: qui que, quoi que, où que, quel que, si … que"
+  summary: "whoever, whatever, wherever, however: qui que vous soyez, quoi qu'il arrive, où que l'on regarde, quelle que soit la saison, si haute qu'elle soit + subjonctif."
+  explanation: |
+    | form | meaning | example |
+    |---|---|---|
+    | ***qui que*** + subj. | whoever | ***Qui que** vous **soyez**, soyez les bienvenus.* |
+    | ***quoi que*** + subj. | whatever | ***Quoi qu'**il **arrive**, je reviendrai.* |
+    | ***où que*** + subj. | wherever | ***Où qu'**on **regarde**, il y a du sable.* |
+    | ***quel(le)(s) que*** + *être* (subj.) | whatever, whichever (+ noun) | ***Quelle que soit** la saison, la dune est belle.* |
+    | ***quelque(s)*** + noun + *que* + subj. | whatever (formal) | ***Quelques** efforts **que** vous **fassiez**…* |
+    | ***si / aussi*** + adj. + *que* + subj. | however (adj.) | ***Si** haute **qu'**elle **soit**, on la gravit facilement.* |
+    | ***pour*** + adj. + *que* + subj. | however (formal) | ***Pour** fatigué **qu'**il **fût**…* |
+
+    ### Spelling traps
+    - ***Quoi que*** (whatever, two words) vs ***quoique*** (although, one word).
+    - ***Quel que*** agrees with the noun after *être*: *quel que soit le prix, quelle que soit l'heure, quels que soient les risques*.
+    - ***Quelque*** before an adjective = "however" (invariable adverb): *quelque riches qu'ils soient*.
+
+    In speech: *n'importe qui / quoi / où*, *peu importe*: *Quoi qu'il arrive* ≈ *Peu importe ce qui arrive*.
+  examples:
+    - { es: "Où que l'on regarde depuis le sommet, on voit l'océan ou la forêt.", en: "Wherever you look from the top, you see ocean or forest." }
+    - { es: "Quelle que soit la météo, des centaines de personnes montent chaque jour.", en: "Whatever the weather, hundreds of people climb up every day." }
+    - { es: "Quoi qu'en disent les guides, la descente est plus dure que la montée.", en: "Whatever the guides say, going down is harder than going up." }
+    - { es: "Si impressionnante qu'elle soit, la dune n'a que quelques milliers d'années.", en: "Impressive as it is, the dune is only a few thousand years old." }
+  pitfalls:
+    - "*Quoi qu'il en soit* (be that as it may), two words, not *quoiqu'il en soit*."
+    - "*Quel que soit*: agree *quel* with the noun: *quelles que soient vos raisons*."
+  related: [g.concession, g.subjonctif-independent, g.literary-inversion]
+  drills:
+    - { es: "Quoi que tu fasses, fais-le bien.", en: "Whatever you do, do it well." }
+    - { es: "Qui que ce soit, je ne suis pas là.", en: "Whoever it is, I'm not in." }
+    - { es: "Quels que soient les risques, il partira.", en: "Whatever the risks, he'll go." }
+- id: g.subjonctif-independent
+  level: c1
+  title: "Independent subjonctif: Qu'il entre ! Vive la France ! Soit."
+  summary: "The subjonctif in main clauses: third-person orders and wishes (qu'il parte !), fixed formulas (vive…, ainsi soit-il, Dieu vous bénisse, sauve qui peut), and soit."
+  explanation: |
+    | use | example | meaning |
+    |---|---|---|
+    | order to a third person | ***Qu'il entre !*** | Let him come in! |
+    | wish | ***Que** la fête **commence** !* | Let the party begin! |
+    | indignation | *Moi, que je **mente** ? Jamais !* | Me, lie? Never! |
+    | fixed formulas (no *que*) | ***Vive** les vacances ! **Ainsi soit-il.** **Dieu vous bénisse.** **Sauve qui peut !** **Advienne que pourra.*** | Long live / So be it / God bless you / Every man for himself / Come what may |
+    | *soit* (agreement, hypothesis) | ***Soit**, j'accepte. **Soit** x un nombre.* | Very well / Let x be |
+    | *soit … soit* | ***soit** à pied, **soit** à vélo* | either … or |
+    | *pourvu que* alone | ***Pourvu qu'**il fasse beau !* | Let's hope… |
+    | *que* + subj. … *ou* (alternative) | ***Qu'**il pleuve **ou qu'**il vente, on surfe.* | whether … or |
+
+    *Vive* is often left invariable before a plural: *Vive les mariés !* (also *Vivent*).
+  examples:
+    - { es: "Qu'il pleuve ou qu'il vente, les surfeurs sont à l'eau.", en: "Come rain or shine, the surfers are in the water." }
+    - { es: "Pourvu que les vagues soient bonnes demain !", en: "Let's hope the waves are good tomorrow!" }
+    - { es: "Que ceux qui ont peur restent sur la plage !", en: "Let those who are afraid stay on the beach!" }
+    - { es: "Soit, je vous accompagne jusqu'au phare.", en: "Very well, I'll come with you as far as the lighthouse." }
+  pitfalls:
+    - "*Soit … soit* (either … or) is pronounced [swa]; *soit* meaning 'very well' is pronounced [swat]."
+    - "*Vive le roi*, not *vit le roi*."
+  related: [g.qui-que-quoi-que, g.subjonctif-irregular, g.imperative]
+  drills:
+    - { es: "Qu'ils attendent !", en: "Let them wait!" }
+    - { es: "Vive la mariée !", en: "Long live the bride!" }
+    - { es: "Advienne que pourra.", en: "Come what may." }
+- id: g.nominalisation
+  level: c1
+  title: "Nominalisation: from verbs and adjectives to nouns"
+  summary: "Written French prefers nouns: Les surfeurs arrivent → l'arrivée des surfeurs; La mer est dangereuse → la dangerosité de la mer."
+  explanation: |
+    | verbal / adjectival style | nominal style |
+    |---|---|
+    | *On a construit le casino en 1901.* | *la **construction** du casino en 1901* |
+    | *Les prix augmentent.* | *l'**augmentation** des prix* |
+    | *La plage est propre.* | *la **propreté** de la plage* |
+    | *Parce qu'il pleuvait…* | *En raison de la **pluie**…* |
+    | *Quand il est arrivé…* | *À son **arrivée**…* |
+    | *pour protéger la côte* | *pour la **protection** de la côte* |
+
+    ### Common suffixes
+    | from verbs | from adjectives |
+    |---|---|
+    | *-tion / -sion*: *réaliser → réalisation* | *-té*: *beau → beauté* |
+    | *-ment*: *développer → développement* | *-ité*: *rapide → rapidité* |
+    | *-age*: *nettoyer → nettoyage* | *-esse*: *riche → richesse* |
+    | *-ure*: *ouvrir → ouverture* | *-eur*: *large → largeur* |
+    | *-ée / -e / -ie*: *arriver → arrivée, sortir → sortie* | *-ise*: *franc → franchise* |
+    | zero suffix: *refuser → refus, accorder → accord* | *-ance / -ence*: *patient → patience* |
+
+    Uses: headlines, reports, note-taking, summaries, slides, academic writing. Overdoing it makes prose heavy: balance with verbs.
+  examples:
+    - { es: "L'arrivée des surfeurs australiens a transformé Biarritz.", en: "The arrival of Australian surfers transformed Biarritz." }
+    - { es: "La construction de l'hôtel du Palais date du Second Empire.", en: "The building of the Hôtel du Palais dates from the Second Empire." }
+    - { es: "La dangerosité des courants impose une grande prudence.", en: "The danger of the currents calls for great caution." }
+  pitfalls:
+    - "Check gender: *la décision, le développement, la fermeture, le refus*."
+    - "Avoid chains of *de*: *la décision de la commission de la protection de la côte* is clumsy."
+  related: [g.press-headlines, g.derivation-affixes, g.summary-synthesis]
+  drills:
+    - { es: "la fermeture de la plage", en: "the closure of the beach" }
+    - { es: "l'ouverture de la saison", en: "the opening of the season" }
+    - { es: "la hausse du niveau de la mer", en: "the rise in sea level" }
+- id: g.press-headlines
+  level: c1
+  title: "Press headlines: nominal style, no articles, present and future"
+  summary: "Headlines drop articles and verbs (Biarritz : record d'affluence), use the present for the past, colons and quotes: « Surf : la vague du siècle ? »"
+  explanation: |
+    | feature | example |
+    |---|---|
+    | nominal sentence | ***Fermeture** des plages après la tempête* |
+    | no article | ***Record** d'affluence à Biarritz* |
+    | colon: topic : news | ***Surf** : une Basque championne du monde* |
+    | historic present | *La ville **inaugure** sa nouvelle digue* (it happened yesterday) |
+    | future for plans | *Le festival **aura lieu** en juillet* |
+    | passive participle | *Trois baigneurs **secourus** par les sauveteurs* |
+    | infinitive (instructions) | ***Bien choisir** sa planche* |
+    | question | *Le surf, sport d'avenir pour la ville ?* |
+    | quotation | *« Nous n'avions jamais vu ça », témoigne un pêcheur* |
+    | conditional (unconfirmed) | *Le maire **démissionnerait*** |
+    | wordplay | *La déferlante des surfeurs* (wave / flood) |
+
+    The *chapeau* (standfirst) under the headline then gives full sentences with articles.
+  examples:
+    - { es: "Biarritz : hausse record de la fréquentation estivale", en: "Biarritz: record rise in summer visitor numbers" }
+    - { es: "Tempête sur la côte basque : trois surfeurs secourus", en: "Storm on the Basque coast: three surfers rescued" }
+    - { es: "La ville accueille les championnats d'Europe de surf", en: "The town hosts the European surfing championships" }
+  pitfalls:
+    - "Don't translate headline present as present: *La ville inaugure* = The town has opened / opened."
+    - "In a full article, articles and verbs come back."
+  related: [g.nominalisation, g.conditionnel-journalistique, g.wordplay]
+  drills:
+    - { es: "Ouverture de la saison balnéaire", en: "Opening of the beach season" }
+    - { es: "Pollution : la plage fermée jusqu'à nouvel ordre", en: "Pollution: beach closed until further notice" }
+    - { es: "Un surfeur basque sacré champion", en: "Basque surfer crowned champion" }
+- id: g.derivation-affixes
+  level: c1
+  title: "Word formation: prefixes and suffixes"
+  summary: "Build and decode vocabulary: re-, dé-/dés-, in-/im-/il-/ir-, mé-, pré-, sur-, sous-, anti-; -able, -eux, -iste, -isme, -ier, -erie, -ette, -âtre."
+  explanation: |
+    ### Prefixes
+    | prefix | meaning | examples |
+    |---|---|---|
+    | *re- / ré- / r-* | again, back | *refaire, réécrire, rentrer* |
+    | *dé- / dés- / dis-* | undo, opposite | *défaire, désordre, disparaître* |
+    | *in- / im- / il- / ir-* | not | *inutile, impossible, illégal, irréel* |
+    | *mé- / més-* | badly | *mécontent, mésentente* |
+    | *pré- / post-* | before / after | *préavis, postdater* |
+    | *sur- / sous-* | over / under | *surcharger, sous-estimer* |
+    | *anti- / pro-* | against / for | *antigel, pro-européen* |
+    | *co- / con-* | with | *cohabiter, concitoyen* |
+    | *auto-* | self | *autodidacte* |
+
+    ### Suffixes
+    | suffix | meaning | examples |
+    |---|---|---|
+    | *-able / -ible* | can be | *buvable, lisible* |
+    | *-eux / -euse* | full of | *dangereux, pluvieux* |
+    | *-iste / -isme* | person / doctrine | *cycliste, alpiniste, tourisme* |
+    | *-ier / -ière* | trade, tree | *pâtissier, pommier* |
+    | *-erie* | shop, activity | *boulangerie, plaisanterie* |
+    | *-et / -ette, -on* | diminutive | *maisonnette, chaton* |
+    | *-âtre* | -ish (pejorative) | *verdâtre, bellâtre* |
+    | *-ard* | pejorative | *chauffard, vantard* |
+    | *-iser / -ifier* | make | *moderniser, simplifier* |
+  examples:
+    - { es: "La municipalité veut réaménager le front de mer.", en: "The council wants to redevelop the seafront." }
+    - { es: "Les touristes mécontents ont écrit au maire.", en: "Dissatisfied tourists wrote to the mayor." }
+    - { es: "L'eau avait une couleur verdâtre après l'orage.", en: "The water was a greenish colour after the storm." }
+  pitfalls:
+    - "*In-* becomes *im-* before b, m, p (*imbuvable, immobile, impossible*), *il-* before l, *ir-* before r."
+    - "False friends from affixes: *incessamment* = very soon, not 'incessantly'."
+  related: [g.nominalisation, g.neologisms, g.adverbs-ment]
+  drills:
+    - { es: "C'est illisible.", en: "It's illegible." }
+    - { es: "Il faut tout refaire.", en: "Everything has to be redone." }
+    - { es: "Ce café est imbuvable.", en: "This coffee is undrinkable." }
+- id: g.argumentation-structure
+  level: c1
+  title: "Structuring an argument: plan, introduction, conclusion"
+  summary: "The French dissertation: introduction (accroche, problématique, annonce du plan), two or three parts (thèse, antithèse, synthèse), conclusion (bilan, ouverture)."
+  explanation: |
+    ### The classic plan
+    | part | content | useful phrases |
+    |---|---|---|
+    | **introduction** | hook, define terms, the *problématique* (key question), announce the plan | *De nos jours… On peut se demander si… Nous verrons d'abord… puis…* |
+    | **I. thèse** | arguments for | *Tout d'abord… En premier lieu… D'une part…* |
+    | **II. antithèse** | arguments against, limits | *Cependant… En revanche… Il convient toutefois de nuancer…* |
+    | **III. synthèse** (optional) | going beyond the opposition | *Au-delà de ce débat… Il s'agit en réalité de…* |
+    | **conclusion** | answer the question, open up | *En définitive… Ainsi… Reste à savoir si…* |
+
+    ### Each paragraph
+    Idea → argument → example → mini-conclusion: *Prenons l'exemple de… C'est notamment le cas de… Cela montre que…*
+
+    ### Transitions between parts
+    *Si [part I], il n'en reste pas moins que [part II].* / *Après avoir montré que…, nous verrons que…*
+
+    The *plan dialectique* (for / against / beyond) suits debate questions; the *plan thématique* (aspects: economic, social, cultural) suits descriptive ones.
+  examples:
+    - { es: "On peut se demander si l'appellation d'origine protège vraiment les producteurs.", en: "One may wonder whether the protected designation really protects producers." }
+    - { es: "Nous verrons d'abord les avantages de l'AOP, puis ses limites.", en: "We will first look at the advantages of the PDO, then at its limits." }
+    - { es: "Il convient toutefois de nuancer ce constat.", en: "This observation should, however, be qualified." }
+    - { es: "En définitive, le piment d'Espelette illustre bien les enjeux du terroir.", en: "Ultimately, the Espelette chilli clearly illustrates what is at stake with terroir." }
+  pitfalls:
+    - "Don't give your opinion in the introduction; announce the question and the plan."
+    - "Avoid *je* in academic French: use *nous* or impersonal forms (*on peut, il convient de*)."
+  related: [g.connectors-advanced, g.hedging, g.summary-synthesis]
+  drills:
+    - { es: "Dans un premier temps, nous analyserons les causes.", en: "First, we will analyse the causes." }
+    - { es: "Il n'en reste pas moins que le problème demeure.", en: "The fact remains that the problem persists." }
+    - { es: "Reste à savoir si cette solution est durable.", en: "It remains to be seen whether this solution is sustainable." }
+- id: g.connectors-advanced
+  level: c1
+  title: "Advanced connectors: or, en effet, d'ailleurs, toutefois, néanmoins, ainsi"
+  summary: "Precise logical links for writing: en effet (indeed — confirms), or (now, yet), d'ailleurs (moreover), toutefois / néanmoins (however), ainsi (thus), dès lors, quant à."
+  explanation: |
+    | function | connectors | note |
+    |---|---|---|
+    | adding | *de plus, en outre, par ailleurs, d'ailleurs, qui plus est* | *d'ailleurs* adds a supporting point |
+    | confirming / explaining | ***en effet***, *c'est-à-dire, à savoir* | *en effet* = "indeed, for" (explains), not "in effect" |
+    | illustrating | *par exemple, notamment, ainsi, entre autres* | |
+    | turning point | ***or*** | introduces a decisive new fact: "now", "yet" |
+    | opposing | *toutefois, néanmoins, cependant, pourtant, en revanche, au contraire* | |
+    | conceding | *certes … mais, il est vrai que … toutefois, admettons que* | |
+    | consequence | *ainsi, dès lors, par conséquent, de ce fait, c'est pourquoi* | *dès lors* = from then on / consequently |
+    | topic shift | *quant à, en ce qui concerne, pour ce qui est de* | *Quant aux producteurs, ils…* |
+    | concluding | *en somme, en définitive, bref, en conclusion, finalement* | *bref* is informal |
+
+    ### Or: the classic syllogism
+    *Tous les hommes sont mortels. **Or** Socrate est un homme. **Donc** Socrate est mortel.*
+  examples:
+    - { es: "Le piment est cultivé depuis le XVIIe siècle ; il fait en effet partie de l'identité basque.", en: "The chilli has been grown since the 17th century; indeed it is part of Basque identity." }
+    - { es: "Les touristes veulent du piment toute l'année. Or la récolte n'a lieu qu'en automne.", en: "Tourists want chillies all year round. Yet the harvest only takes place in autumn." }
+    - { es: "Quant aux petits producteurs, ils craignent la concurrence.", en: "As for the small producers, they fear competition." }
+    - { es: "Néanmoins, l'appellation reste un atout majeur.", en: "Nevertheless, the designation remains a major asset." }
+  pitfalls:
+    - "*En effet* ≠ 'in effect'; it confirms or explains what was just said."
+    - "*Or* (now, yet) vs *alors* (so): *or* introduces a new premise, not a consequence."
+    - "*Quant à* contracts: *quant au, quant aux*."
+  related: [g.connectors-cause-consequence, g.connectors-opposition, g.argumentation-structure, g.cause-advanced]
+  drills:
+    - { es: "Il était malade ; il n'est d'ailleurs pas venu.", en: "He was ill; in fact he didn't come." }
+    - { es: "Quant à moi, je reste.", en: "As for me, I'm staying." }
+    - { es: "Dès lors, tout a changé.", en: "From then on, everything changed." }
+- id: g.hedging
+  level: c1
+  title: "Hedging and qualifying claims"
+  summary: "Soften and qualify: il semblerait que, dans une certaine mesure, a priori, en principe, plus ou moins, sembler, paraître, the conditional."
+  explanation: |
+    | technique | examples |
+    |---|---|
+    | conditional | *Cela **pourrait** expliquer… Il **semblerait** que… On **dirait** que…* |
+    | *sembler, paraître* | *Ce modèle **semble** fonctionner. Il **paraît** efficace.* |
+    | limiting adverbs | *dans une certaine mesure, en partie, relativement, plutôt, en principe, a priori, apparemment* |
+    | approximation | *environ, à peu près, une trentaine de, quelque* + number (*quelque 200 producteurs*) |
+    | frequency | *souvent, en général, la plupart du temps, il arrive que* + subj. |
+    | modal verbs | *pouvoir* (*cela peut s'expliquer*), *devoir* (*il doit s'agir de…*) |
+    | impersonal | *Il est possible / probable que… On peut penser que… Il n'est pas exclu que* + subj. |
+    | quotation of sources | *selon, d'après, si l'on en croit…* |
+
+    Academic French expects this caution: absolute claims (*toujours, jamais, tout le monde*) weaken an argument.
+  examples:
+    - { es: "Il semblerait que le réchauffement modifie le goût du piment.", en: "It would seem that warming is changing the taste of the chilli." }
+    - { es: "Cette explication n'est valable que dans une certaine mesure.", en: "This explanation is valid only to a certain extent." }
+    - { es: "Quelque deux cents producteurs cultivent le piment d'Espelette.", en: "Some two hundred producers grow Espelette chillies." }
+    - { es: "Il n'est pas exclu que les prix augmentent.", en: "Prices may well rise." }
+  pitfalls:
+    - "*Quelque* + number = about, invariable: *quelque deux cents*, not *quelques deux cents*."
+    - "*Il semble que* + subj. (usually), *il semblerait que* + subj. too."
+  related: [g.opinion-nuance, g.conditionnel-journalistique, g.argumentation-structure]
+  drills:
+    - { es: "Cela pourrait expliquer le retard.", en: "That could explain the delay." }
+    - { es: "A priori, il n'y a pas de problème.", en: "On the face of it, there's no problem." }
+    - { es: "Il semble que la situation s'améliore.", en: "It seems the situation is improving." }
+- id: g.formal-letter
+  level: c1
+  title: "Formal letters and emails: formulas that matter"
+  summary: "Madame, Monsieur, … Je me permets de vous écrire afin de… Dans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
+  explanation: |
+    ### Opening (no "Dear")
+    | situation | opening |
+    |---|---|
+    | unknown recipient | *Madame, Monsieur,* |
+    | known person | *Madame Durand,* / *Monsieur le Directeur,* |
+    | colleague (email) | *Bonjour Madame Martin,* / *Chère Madame,* (warmer) |
+
+    ### First sentence: state the purpose
+    *Je me permets de vous écrire afin de… / Suite à notre entretien téléphonique du 3 mai, … / Je vous écris au sujet de… / Par la présente, je souhaite…*
+
+    ### Body phrases
+    *Je vous serais reconnaissant(e) de bien vouloir… / Vous trouverez ci-joint… / Je reste à votre disposition pour tout renseignement complémentaire.*
+
+    ### Closing formula (one long sentence, repeating the opening)
+    | tone | formula |
+    |---|---|
+    | standard | *Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.* |
+    | to a superior | *Veuillez agréer, Monsieur le Directeur, l'expression de ma considération distinguée.* |
+    | lighter (email) | *Bien cordialement, / Cordialement, / Bien à vous,* |
+
+    Lead-in: *Dans l'attente de votre réponse, … / En vous remerciant par avance, …*
+
+    In Québec, emails often close with *Salutations distinguées* or *Bien à vous*; in Belgium *Veuillez agréer…* remains common.
+  examples:
+    - { es: "Madame, Monsieur, je me permets de vous écrire afin de solliciter un séjour d'observation à l'observatoire du pic du Midi.", en: "Dear Sir or Madam, I am writing to request an observation stay at the Pic du Midi observatory." }
+    - { es: "Vous trouverez ci-joint mon curriculum vitae.", en: "Please find my CV attached." }
+    - { es: "Je vous serais reconnaissante de bien vouloir me confirmer les dates.", en: "I would be grateful if you could confirm the dates." }
+    - { es: "Dans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.", en: "I look forward to hearing from you. Yours faithfully." }
+  pitfalls:
+    - "Never *Cher Monsieur Dupont* in a first formal letter; *Monsieur,* alone is safest."
+    - "Repeat the exact opening title in the closing formula."
+    - "Avoid *sentiments* from a man to a woman in old formulas (*mes sentiments respectueux*); *salutations distinguées* is neutral."
+  related: [g.administrative-french, g.conditional-politeness, g.register-levels]
+  drills:
+    - { es: "Je vous écris au sujet de votre annonce.", en: "I am writing regarding your advertisement." }
+    - { es: "Je reste à votre disposition.", en: "I remain at your disposal." }
+    - { es: "En vous remerciant par avance de votre attention.", en: "Thank you in advance for your attention." }
+- id: g.administrative-french
+  level: c1
+  title: "Administrative French: veuillez, ci-joint, le cas échéant"
+  summary: "The language of forms, notices and official letters: veuillez + infinitive, ci-joint, ledit, le cas échéant, sous réserve de, à compter du, dûment rempli."
+  explanation: |
+    | expression | meaning |
+    |---|---|
+    | *veuillez* + inf. | please (instruction): *Veuillez remplir le formulaire.* |
+    | *ci-joint / ci-inclus* | enclosed, attached |
+    | *le cas échéant* | if applicable, where appropriate |
+    | *sous réserve de* | subject to |
+    | *à compter du / à partir du* | as from (date) |
+    | *dûment rempli / signé* | duly completed / signed |
+    | *ledit, ladite, lesdits* | the said |
+    | *en vigueur* | in force |
+    | *faire parvenir* | to send, submit |
+    | *dans les meilleurs délais* | as soon as possible |
+    | *au plus tard le* | no later than |
+    | *pièce justificative* | supporting document |
+    | *un justificatif de domicile* | proof of address |
+    | *le / la soussigné(e)* | the undersigned |
+    | *nous accusons réception de* | we acknowledge receipt of |
+
+    ### Style features
+    Nominal style, impersonal passive (*Il est rappelé que…*), *nous* of the institution, the future for instructions (*Le dossier sera envoyé…*), infinitives on forms (*Cocher la case*).
+
+    ### Ci-joint agreement
+    Invariable at the start or before a noun without article (*Ci-joint la facture*), agrees after the noun (*les pièces ci-jointes*).
+  examples:
+    - { es: "Veuillez nous faire parvenir votre dossier dûment complété avant le 15 mars.", en: "Please send us your duly completed file before 15 March." }
+    - { es: "Le cas échéant, joignez un justificatif de domicile.", en: "If applicable, attach proof of address." }
+    - { es: "Ce tarif est applicable à compter du 1er janvier, sous réserve de modifications.", en: "This rate applies as from 1 January, subject to change." }
+    - { es: "Je soussignée, Marie Dupont, certifie l'exactitude des renseignements ci-dessus.", en: "I, the undersigned, Marie Dupont, certify that the above information is correct." }
+  pitfalls:
+    - "*Veuillez* is formal: with friends say *Merci de…* or *Tu peux…*"
+    - "*Le cas échéant* ≠ 'in that case' only: it means 'should the need arise / if applicable'."
+  related: [g.formal-letter, g.impersonal-passive-formal, g.nominalisation]
+  drills:
+    - { es: "Veuillez patienter.", en: "Please wait." }
+    - { es: "Vous trouverez les documents ci-joints.", en: "Please find the documents attached." }
+    - { es: "Le règlement en vigueur s'applique.", en: "The regulations in force apply." }
+- id: g.impersonal-passive-formal
+  level: c1
+  title: "Impersonal and passive constructions in formal writing"
+  summary: "Il a été décidé que…, Il est rappelé aux usagers que…, Il convient de…, Il importe que + subj., Il en résulte que…"
+  explanation: |
+    | construction | example | meaning |
+    |---|---|---|
+    | impersonal passive | ***Il a été décidé** de fermer la route.* | It has been decided to… |
+    | | ***Il est rappelé** aux visiteurs **que**…* | Visitors are reminded that… |
+    | | ***Il est demandé** de ne pas fumer.* | You are asked not to smoke. |
+    | *il convient de* + inf. | ***Il convient de** réserver à l'avance.* | It is advisable to… |
+    | *il importe que* + subj. | ***Il importe que** chacun respecte les consignes.* | It is important that… |
+    | *il en résulte que* | ***Il en résulte que** l'accès est limité.* | Consequently… |
+    | *il s'avère que* | ***Il s'avère que** le site est fragile.* | It turns out that… |
+    | *il ressort de* | ***Il ressort de** l'étude **que**…* | It emerges from… |
+    | *il appartient à … de* | ***Il appartient au** visiteur **de** vérifier.* | It is the responsibility of… |
+    | *il est à noter que* | ***Il est à noter que** l'accès est payant.* | It should be noted that… |
+
+    These keep the text objective and depersonalised: typical of reports, regulations, minutes and academic writing.
+  examples:
+    - { es: "Il est rappelé aux visiteurs que l'éclairage est interdit sur la terrasse d'observation.", en: "Visitors are reminded that lights are forbidden on the observation terrace." }
+    - { es: "Il a été décidé de limiter le nombre de nuitées au sommet.", en: "It has been decided to limit the number of overnight stays at the summit." }
+    - { es: "Il ressort de cette étude que la pollution lumineuse a diminué.", en: "This study shows that light pollution has decreased." }
+    - { es: "Il appartient à chacun de respecter le site.", en: "It is everyone's responsibility to respect the site." }
+  pitfalls:
+    - "*Il convient de* = it is advisable; *il convient à* = it suits."
+    - "*Il importe que* takes the subjonctif."
+  related: [g.passive-voice, g.impersonal-constructions, g.administrative-french]
+  drills:
+    - { es: "Il est demandé de respecter le silence.", en: "Please keep silent." }
+    - { es: "Il convient de noter que les places sont limitées.", en: "It should be noted that places are limited." }
+    - { es: "Il s'avère que le projet est trop cher.", en: "It turns out the project is too expensive." }
+- id: g.idioms-everyday
+  level: c1
+  title: "Everyday idioms"
+  summary: "poser un lapin, coûter les yeux de la tête, avoir le cafard, tomber dans les pommes, il pleut des cordes, c'est la fin des haricots…"
+  explanation: |
+    | idiom | literal | meaning |
+    |---|---|---|
+    | *poser un lapin à qqn* | put down a rabbit | stand someone up |
+    | *avoir le cafard* | have the cockroach | feel down |
+    | *tomber dans les pommes* | fall into the apples | faint |
+    | *il pleut des cordes* | it's raining ropes | it's pouring |
+    | *c'est la fin des haricots* | end of the beans | it's the last straw / all over |
+    | *raconter des salades* | tell salads | tell fibs |
+    | *avoir un poil dans la main* | have a hair in one's hand | be lazy |
+    | *casser les pieds à qqn* | break someone's feet | annoy |
+    | *être dans la lune* | be in the moon | daydream |
+    | *mettre son grain de sel* | put one's grain of salt | butt in |
+    | *se faire rouler dans la farine* | be rolled in flour | be conned |
+    | *revenir à ses moutons* | return to one's sheep | get back to the point |
+    | *avoir du pain sur la planche* | have bread on the board | have a lot to do |
+    | *ça ne casse pas trois pattes à un canard* | doesn't break three legs off a duck | nothing special |
+    | *en faire tout un fromage* | make a whole cheese of it | make a fuss |
+
+    Use them in informal and standard speech; avoid in formal writing. Tense and person adapt normally: *Il m'a posé un lapin hier.*
+  examples:
+    - { es: "Il m'a posé un lapin devant le Capitole.", en: "He stood me up outside the Capitole." }
+    - { es: "Un cassoulet ici, ça coûte les yeux de la tête !", en: "A cassoulet here costs an arm and a leg!" }
+    - { es: "J'ai du pain sur la planche avant le match.", en: "I've got a lot to do before the match." }
+    - { es: "Ne fais pas tout un fromage pour si peu !", en: "Don't make such a fuss over so little!" }
+  pitfalls:
+    - "Don't translate English idioms literally: 'it's raining cats and dogs' is *il pleut des cordes / à verse*."
+    - "Some idioms are dated (*sapristi*) — check before using."
+  variant: "Québec has its own idioms: *avoir de la misère* (have a hard time), *tomber en amour* (fall in love), *se tirer une bûche* (pull up a chair), *c'est plate* (it's boring)."
+  related: [g.idioms-body, g.proverbs, g.register-levels]
+  drills:
+    - { es: "Il pleut des cordes.", en: "It's pouring." }
+    - { es: "Tu es dans la lune ?", en: "Are you daydreaming?" }
+    - { es: "Revenons à nos moutons.", en: "Let's get back to the point." }
+- id: g.idioms-body
+  level: c1
+  title: "Body idioms: avoir le cœur sur la main, coûter un bras"
+  summary: "avoir le cœur sur la main, mettre les pieds dans le plat, avoir la tête dans les nuages, se mettre le doigt dans l'œil, avoir les dents longues…"
+  explanation: |
+    | idiom | meaning |
+    |---|---|
+    | *avoir le cœur sur la main* | be very generous |
+    | *coûter un bras / les yeux de la tête* | cost a fortune |
+    | *mettre les pieds dans le plat* | put one's foot in it |
+    | *se mettre le doigt dans l'œil* | be completely wrong |
+    | *avoir la tête dans les nuages* | have one's head in the clouds |
+    | *avoir les dents longues* | be very ambitious |
+    | *avoir un cheveu sur la langue* | have a lisp |
+    | *ne pas avoir froid aux yeux* | be fearless |
+    | *tenir la jambe à qqn* | keep someone talking (boringly) |
+    | *faire la tête* | sulk |
+    | *avoir le bras long* | have influence |
+    | *prendre ses jambes à son cou* | run away fast |
+    | *se casser la tête* | rack one's brains |
+    | *avoir quelque chose sur le bout de la langue* | have it on the tip of one's tongue |
+    | *à vue de nez* | at a rough guess |
+    | *mon œil !* | my foot! (I don't believe you) |
+    | *sur le bout des doigts* | (know) inside out |
+  examples:
+    - { es: "Les Toulousains ont le cœur sur la main.", en: "The people of Toulouse are very generous." }
+    - { es: "Il a mis les pieds dans le plat en parlant du match.", en: "He put his foot in it by talking about the match." }
+    - { es: "Si tu crois que c'est facile, tu te mets le doigt dans l'œil.", en: "If you think it's easy, you're very much mistaken." }
+    - { es: "Elle connaît l'histoire de la ville sur le bout des doigts.", en: "She knows the city's history inside out." }
+  pitfalls:
+    - "*Faire la tête* = sulk; *en avoir par-dessus la tête* = be fed up."
+    - "*Coûter un bras* is common; *un bras et une jambe* is a calque of English."
+  related: [g.idioms-everyday, g.body-parts-article, g.proverbs]
+  drills:
+    - { es: "Il a les dents longues.", en: "He's very ambitious." }
+    - { es: "Pourquoi tu fais la tête ?", en: "Why are you sulking?" }
+    - { es: "Je l'ai sur le bout de la langue.", en: "It's on the tip of my tongue." }
+- id: g.proverbs
+  level: c1
+  title: "Proverbs and sayings"
+  summary: "Petit à petit, l'oiseau fait son nid. Qui vivra verra. Après la pluie, le beau temps. L'habit ne fait pas le moine. Il ne faut pas vendre la peau de l'ours…"
+  explanation: |
+    | proverb | English equivalent |
+    |---|---|
+    | *Petit à petit, l'oiseau fait son nid.* | Little by little does the trick. |
+    | *Qui vivra verra.* | Time will tell. |
+    | *Après la pluie, le beau temps.* | Every cloud has a silver lining. |
+    | *L'habit ne fait pas le moine.* | Don't judge a book by its cover. |
+    | *Il ne faut pas vendre la peau de l'ours avant de l'avoir tué.* | Don't count your chickens before they hatch. |
+    | *Quand le chat n'est pas là, les souris dansent.* | When the cat's away, the mice will play. |
+    | *Mieux vaut tard que jamais.* | Better late than never. |
+    | *Qui ne tente rien n'a rien.* | Nothing ventured, nothing gained. |
+    | *Pierre qui roule n'amasse pas mousse.* | A rolling stone gathers no moss. |
+    | *Les chiens aboient, la caravane passe.* | Let them talk. |
+    | *Tel père, tel fils.* | Like father, like son. |
+    | *Rome ne s'est pas faite en un jour.* | Rome wasn't built in a day. |
+    | *Chacun voit midi à sa porte.* | Everyone sees things from their own point of view. |
+
+    ### Grammar of proverbs
+    Archaic structures survive: *qui* = whoever (*Qui dort dîne*), no article (*Pierre qui roule*), ellipsis (*Tel père, tel fils*), present of general truth. People often quote only the first half: *Quand le chat n'est pas là…*
+  examples:
+    - { es: "Le chantier n'avance pas vite, mais petit à petit, l'oiseau fait son nid.", en: "The building work is slow, but little by little it'll get there." }
+    - { es: "On a perdu le match, mais après la pluie, le beau temps !", en: "We lost the match, but things will get better!" }
+    - { es: "Ne vends pas la peau de l'ours avant de l'avoir tué.", en: "Don't count your chickens before they hatch." }
+  pitfalls:
+    - "Don't overuse proverbs: one well-placed is elegant, three sound comic."
+    - "Proverbs are fixed: don't change the words."
+  related: [g.idioms-everyday, g.idioms-body]
+  drills:
+    - { es: "Mieux vaut tard que jamais.", en: "Better late than never." }
+    - { es: "Qui vivra verra.", en: "Time will tell." }
+    - { es: "Qui ne tente rien n'a rien.", en: "Nothing ventured, nothing gained." }
+- id: g.ne-litteraire
+  level: c1
+  title: "Literary ne without pas: je ne saurais, je n'ose, il ne cesse de"
+  summary: "With cesser, oser, pouvoir and savoir, formal French can drop pas: Je n'ose le croire. Il ne cesse de pleuvoir. Je ne saurais vous dire."
+  explanation: |
+    | verb | example | meaning |
+    |---|---|---|
+    | *oser* | *Je **n'ose** imaginer le siège.* | I dare not imagine |
+    | *cesser* | *Il **ne cesse** de pleuvoir.* | It keeps raining |
+    | *pouvoir* | *Je **ne puis** accepter.* | I cannot accept (*puis* = literary *peux*) |
+    | *savoir* (conditional) | *Je **ne saurais** vous le dire.* | I couldn't tell you |
+    | *si ce n'est* | *personne, **si ce n'est** lui* | except him |
+    | *n'importe* | ***N'importe**.* | No matter. |
+    | *ne … que* (already known) | *Il **n'**a **que** dix ans.* | only |
+    | after *depuis que, il y a … que* + compound tense | *Il y a deux ans que je **ne** l'ai vu.* | I haven't seen him for two years |
+    | *que* = why not (literary) | ***Que ne** le disiez-vous ?* | Why didn't you say so? |
+
+    ### Also literary
+    - *ne … guère* (hardly), *ne … point* (not at all), *ne … nullement* (in no way).
+    - *Je ne sais quoi*, *je ne sais qui* (some… or other): *un je-ne-sais-quoi de mystérieux*.
+
+    In speech: *Je n'ose pas, il n'arrête pas de pleuvoir, je ne peux pas, je ne sais pas*.
+  examples:
+    - { es: "Je n'ose imaginer la vie des habitants pendant le siège.", en: "I dare not imagine the inhabitants' lives during the siege." }
+    - { es: "Depuis des siècles, la cité ne cesse de fasciner les visiteurs.", en: "For centuries the walled city has never ceased to fascinate visitors." }
+    - { es: "Je ne saurais vous dire combien de tours elle compte.", en: "I couldn't tell you how many towers it has." }
+    - { es: "Ce lieu a un je-ne-sais-quoi de magique.", en: "This place has a certain magical something." }
+  pitfalls:
+    - "*Je ne saurais* = I couldn't (polite), not 'I wouldn't know' in the casual sense."
+    - "Don't drop *pas* with other verbs: *Je ne mange* is wrong."
+  related: [g.ne-expletif, g.spoken-negation, g.negation-ne-pas]
+  drills:
+    - { es: "Il ne cesse de se plaindre.", en: "He never stops complaining." }
+    - { es: "Je n'ose y penser.", en: "I dare not think about it." }
+    - { es: "Je ne saurais mieux dire.", en: "I couldn't have put it better." }
+- id: g.adjective-position-meaning
+  level: c1
+  title: "Adjectives that change meaning with position"
+  summary: "un grand homme (great) / un homme grand (tall); mon ancien château (former) / un château ancien (old); ma propre chambre (own) / une chambre propre (clean)."
+  explanation: |
+    | adjective | before the noun (figurative) | after the noun (literal) |
+    |---|---|---|
+    | *grand* | *un **grand** homme* — a great man | *un homme **grand*** — a tall man |
+    | *ancien* | *mon **ancien** prof* — former | *un meuble **ancien*** — antique |
+    | *propre* | *ma **propre** voiture* — my own | *une voiture **propre*** — clean |
+    | *cher* | *mon **cher** ami* — dear | *un restaurant **cher*** — expensive |
+    | *pauvre* | *le **pauvre** homme* — poor (pitiable) | *un homme **pauvre*** — poor (no money) |
+    | *seul* | *le **seul** survivant* — the only | *un homme **seul*** — alone, lonely |
+    | *dernier* | *la **dernière** semaine* — the final | *la semaine **dernière*** — last week |
+    | *prochain* | *la **prochaine** fois* — the next (in a series) | *lundi **prochain*** — next Monday |
+    | *même* | *la **même** tour* — the same | *la tour **même*** — the very tower |
+    | *certain* | *une **certaine** idée* — a certain | *un succès **certain*** — sure |
+    | *brave* | *un **brave** homme* — decent | *un homme **brave*** — brave |
+    | *sale* | *un **sale** type* — nasty | *un pull **sale*** — dirty |
+    | *curieux* | *un **curieux** personnage* — strange | *un enfant **curieux*** — inquisitive |
+    | *simple* | *un **simple** soldat* — mere | *un plat **simple*** — simple |
+
+    Generally: **before** = subjective, figurative, evaluative; **after** = objective, literal, distinguishing.
+  examples:
+    - { es: "Viollet-le-Duc fut un grand architecte.", en: "Viollet-le-Duc was a great architect." }
+    - { es: "Les anciennes casernes abritent aujourd'hui un musée.", en: "The former barracks now house a museum." }
+    - { es: "On y trouve des remparts très anciens.", en: "There are very old ramparts there." }
+    - { es: "Chaque tour a sa propre histoire.", en: "Each tower has its own history." }
+  pitfalls:
+    - "*Mon ancienne maison* = my former house, not necessarily an old one."
+    - "*La semaine dernière* (last week) vs *la dernière semaine* (the final week)."
+  related: [g.adjective-position, g.beau-nouveau-vieux, g.stylistic-registers]
+  drills:
+    - { es: "C'est un homme seul.", en: "He's a lonely man." }
+    - { es: "Le pauvre garçon a tout perdu.", en: "The poor boy lost everything." }
+    - { es: "Je l'ai vu de mes propres yeux.", en: "I saw it with my own eyes." }
+- id: g.infinitive-clauses
+  level: c1
+  title: "Advanced infinitive constructions"
+  summary: "Infinitive as subject (Visiter la cité est un must), interrogative (Que faire ? Où aller ?), exclamative (Moi, mentir !), narrative (Et lui de répondre…), and after verbs of perception (Je l'entends chanter)."
+  explanation: |
+    | construction | example | meaning |
+    |---|---|---|
+    | infinitive as subject | ***Restaurer** la cité a pris des décennies.* | Restoring… |
+    | deliberative question | ***Que faire ?** **Où aller ?** **Comment dire ?*** | What is to be done? |
+    | exclamation / indignation | ***Moi, abandonner ?** Jamais !* | Me, give up? |
+    | narrative infinitive (*de* + inf.) | *Et les villageois **de** se moquer de lui.* | And the villagers started mocking him. |
+    | instructions | ***Ne pas** se pencher. **Bien** mélanger.* | |
+    | perception verbs | *J'**entends** les cloches **sonner**. Je l'**ai vu** partir.* | I hear the bells ring |
+    | *à* + inf. (passive / necessity) | *une maison **à vendre**, un livre **à lire**, c'est **à voir*** | to be sold, worth reading |
+    | *de quoi* + inf. | *Il y a **de quoi** manger. Il n'y a pas **de quoi**.* | enough to eat / you're welcome |
+    | *sans* + past infinitive | *Il est parti **sans avoir payé**.* | without having paid |
+    | *pour* + past infinitive (cause) | *Il a été puni **pour avoir menti**.* | for having lied |
+
+    ### Negative infinitive
+    Both parts **before** the infinitive: *Je préfère **ne pas** savoir. Il a promis de **ne jamais** revenir.*
+  examples:
+    - { es: "Que faire face à un tel siège ?", en: "What was to be done in the face of such a siege?" }
+    - { es: "Et le peuple de croire à la légende de Dame Carcas.", en: "And the people believed the legend of Dame Carcas." }
+    - { es: "Du haut des remparts, on voit les vignes s'étendre jusqu'à l'horizon.", en: "From the top of the ramparts you see the vineyards stretching to the horizon." }
+    - { es: "Il a été condamné pour avoir trahi la ville.", en: "He was condemned for having betrayed the town." }
+  pitfalls:
+    - "Negative infinitive: *ne pas venir*, not *ne venir pas*."
+    - "Narrative *de* + infinitive is literary; don't use it in speech."
+  related: [g.verbs-plus-infinitive, g.pour-sans-infinitive, g.apres-avoir-avant-de]
+  drills:
+    - { es: "Je préfère ne rien dire.", en: "I'd rather say nothing." }
+    - { es: "Où trouver un bon restaurant ?", en: "Where can one find a good restaurant?" }
+    - { es: "Je l'ai entendue chanter.", en: "I heard her sing." }
+- id: g.discourse-markers
+  level: c1
+  title: "Discourse markers: bon, ben, alors, enfin, du coup, quoi, genre"
+  summary: "Little words that organise conversation: bon (right), ben (well), enfin (I mean), du coup (so), quoi (end filler), genre (like), bref (anyway), tiens (here, hey)."
+  explanation: |
+    | marker | function | example |
+    |---|---|---|
+    | *bon* | moving on, resignation | ***Bon**, on y va ?* / *Bon, tant pis.* |
+    | *ben* / *eh ben* | hesitation, obviousness | ***Ben** oui ! **Eh ben**, dis donc !* |
+    | *alors* | so, well then | ***Alors**, c'était comment ?* |
+    | *enfin* | correction, mild protest | *Il est sympa… **enfin**, parfois.* / ***Enfin**, voyons !* |
+    | *du coup* | so, as a result (very frequent) | ***Du coup**, on a raté le bateau.* |
+    | *quoi* (final) | summarising, "you know" | *C'était magnifique, **quoi**.* |
+    | *genre* | like, kind of (young) | *Il était **genre** trop content.* |
+    | *bref* | anyway, to cut a long story short | ***Bref**, on est rentrés.* |
+    | *tiens / tenez* | here (giving), hey (surprise) | ***Tiens**, prends ça. **Tiens**, Paul !* |
+    | *dis donc* | wow; hey (reproach) | ***Dis donc**, c'est beau !* |
+    | *en fait* | actually | ***En fait**, je préfère rester.* |
+    | *voilà* | that's it, there you go | *On a mangé, on s'est baignés, **voilà**.* |
+    | *quand même* | still; really! | *C'est **quand même** cher. Tu exagères **quand même** !* |
+    | *hein* | eh?, right? | *C'est beau, **hein** ?* |
+
+    Using a few of these makes your speech sound natural; overusing *du coup* and *genre* sounds like a teenager.
+  examples:
+    - { es: "Bon, ben, on va voir les falaises ou pas ?", en: "Right, well, are we going to see the cliffs or not?" }
+    - { es: "Du coup, on a pris le bateau pour la Sardaigne.", en: "So we took the boat to Sardinia." }
+    - { es: "C'était une ville incroyable, au bord du vide, quoi.", en: "It was an incredible town, right on the edge, you know." }
+    - { es: "En fait, je ne suis jamais venu en Corse.", en: "Actually, I've never been to Corsica." }
+  pitfalls:
+    - "*En fait* (actually) vs *en effet* (indeed): don't confuse them."
+    - "Discourse markers belong to speech; avoid them in formal writing."
+  variant: "Québec: *là* is a frequent filler (*Je sais pas, là*), *coudonc* (well then / for heaven's sake), *t'sais* (you know); Belgium: *une fois* (*Viens ici une fois*)."
+  related: [g.register-levels, g.spoken-negation, g.native-fluency-markers]
+  drills:
+    - { es: "Bref, c'était génial.", en: "Anyway, it was great." }
+    - { es: "Tiens, voilà ton café.", en: "Here's your coffee." }
+    - { es: "C'est quand même dommage.", en: "It's a shame all the same." }
+- id: g.litotes-euphemism
+  level: c1
+  title: "Litotes, understatement and euphemism"
+  summary: "French loves saying less to mean more: Ce n'est pas mal (it's good), Je ne te hais point (I love you), Il n'est pas très malin (he's stupid); euphemisms: il nous a quittés, les personnes âgées."
+  explanation: |
+    ### Litotes: saying less to mean more
+    | said | meant |
+    |---|---|
+    | *C'est pas mal du tout.* | It's really good. |
+    | *Ce n'est pas bête.* | That's a clever idea. |
+    | *Il n'est pas idiot.* | He's smart. |
+    | *Je ne dis pas non.* | Yes, gladly. |
+    | *Ce n'est pas donné.* | It's expensive. |
+    | *Elle n'est pas moche.* | She's beautiful. |
+    | *Va, je ne te hais point.* (Corneille, *Le Cid*) | I love you. |
+
+    ### Euphemism: softening the unpleasant
+    | euphemism | meaning |
+    |---|---|
+    | *il nous a quittés, il s'est éteint* | he died |
+    | *les personnes âgées, les seniors* | old people |
+    | *un demandeur d'emploi* | an unemployed person |
+    | *un plan social* | mass redundancies |
+    | *les malentendants, les non-voyants* | the hard of hearing, the blind |
+    | *il n'est pas très malin* | he's stupid |
+    | *un léger différend* | a row |
+
+    ### Antiphrasis (irony)
+    *C'est du joli !* (That's a fine mess!) *Bravo !* (after a blunder) *Il fait un temps magnifique* (in pouring rain).
+  examples:
+    - { es: "La vue depuis Bonifacio ? Pas mal du tout !", en: "The view from Bonifacio? Absolutely stunning!" }
+    - { es: "Un dîner sur le port, ce n'est pas donné.", en: "Dinner on the harbour isn't cheap." }
+    - { es: "Un petit verre de myrte ? Je ne dis pas non.", en: "A little glass of myrtle liqueur? Don't mind if I do." }
+    - { es: "Son grand-père s'est éteint l'an dernier.", en: "His grandfather passed away last year." }
+  pitfalls:
+    - "*Pas mal* is a compliment, not lukewarm."
+    - "Don't take irony literally: *C'est malin !* usually means 'That was stupid!'"
+  related: [g.implicit-meaning, g.figures-of-style]
+  drills:
+    - { es: "Ce n'est pas faux.", en: "That's true." }
+    - { es: "Il n'est pas très doué.", en: "He's hopeless." }
+    - { es: "Ce n'est pas l'idée du siècle.", en: "It's not a great idea." }
+- id: g.implicit-meaning
+  level: c1
+  title: "Reading between the lines: implicit meaning and politeness"
+  summary: "Indirect requests (Il fait froid ici… = close the window), presuppositions (Tu as arrêté de fumer ?), polite refusals (Je vais voir…, C'est un peu compliqué)."
+  explanation: |
+    ### Indirect requests
+    | said | meant |
+    |---|---|
+    | *Il fait un peu frais, non ?* | Could you close the window? |
+    | *Tu as vu l'heure ?* | We need to go / you're late. |
+    | *Ça ne te dérange pas si… ?* | I'm going to do it. |
+    | *On pourrait peut-être…* | I want us to… |
+
+    ### Polite refusals and doubts
+    | said | meant |
+    |---|---|
+    | *Je vais réfléchir. / Je vais voir.* | Probably not. |
+    | *C'est un peu compliqué.* | No. |
+    | *Pourquoi pas…* (flat tone) | I'm not keen. |
+    | *C'est intéressant.* (flat) | I don't like it. |
+    | *On verra.* | Unlikely. |
+
+    ### Presupposition
+    *Tu as **arrêté** de fumer ?* presupposes you smoked. *Il est **encore** en retard* presupposes he was late before. *Même Paul est venu* presupposes Paul rarely comes.
+
+    ### Insinuation
+    *Je dis ça, je dis rien…* (I'm just saying), *Suivez mon regard* (you know who I mean), *Sans vouloir te vexer…* (prepare to be offended).
+
+    Corsican, southern and French manners in general value indirectness in requests: a direct *Ferme la fenêtre* can sound abrupt between adults.
+  examples:
+    - { es: "Tu as vu l'heure ? Le dernier bateau part dans dix minutes.", en: "Have you seen the time? The last boat leaves in ten minutes." }
+    - { es: "Votre proposition est intéressante, nous allons y réfléchir.", en: "Your proposal is interesting; we'll think about it. (= probably not)" }
+    - { es: "Je dis ça, je dis rien, mais le restaurant d'à côté est meilleur.", en: "I'm just saying, but the restaurant next door is better." }
+  pitfalls:
+    - "A flat *pourquoi pas* or *on verra* is often a soft no."
+    - "*Sans vouloir te vexer* announces a criticism."
+  related: [g.litotes-euphemism, g.discourse-markers, g.conditional-politeness]
+  drills:
+    - { es: "Il fait chaud ici, tu ne trouves pas ?", en: "It's hot in here, don't you think?" }
+    - { es: "Je vais voir ce que je peux faire.", en: "I'll see what I can do." }
+    - { es: "Sans vouloir te vexer, c'est trop salé.", en: "No offence, but it's too salty." }
+- id: g.summary-synthesis
+  level: c1
+  title: "Summary and synthesis: résumé, compte rendu, synthèse de documents"
+  summary: "Résumé: shorten one text in your own words, same order, no opinion. Synthèse: combine several documents around a problématique. Useful verbs: l'auteur souligne, met en évidence, déplore…"
+  explanation: |
+    | exercise | what it is | rules |
+    |---|---|---|
+    | **résumé** | one text reduced to about ¼ | follow the author's order, reformulate, no quotations, no opinion, keep the author's voice |
+    | **compte rendu** | report on a text or meeting | third person, reporting verbs, can follow your own order |
+    | **synthèse de documents** | several texts combined | introduction with *problématique*, thematic plan, compare sources, no personal opinion |
+
+    ### Reporting verbs for summaries
+    *L'auteur **affirme / souligne / rappelle / constate / déplore / dénonce / met en évidence / s'interroge sur / nuance / conclut que…***
+
+    ### Comparing sources
+    *Les deux documents s'accordent sur… / Contrairement à X, Y estime que… / X rejoint Y lorsqu'il… / Seul le document 3 évoque…*
+
+    ### Technique
+    1. Identify the thesis and key arguments (connectors are your map).
+    2. Remove examples, repetitions, digressions.
+    3. Rewrite with nominalisations and precise verbs; count words (*± 10 %*).
+  examples:
+    - { es: "L'auteur souligne l'importance de la langue corse dans l'identité de l'île.", en: "The author stresses the importance of the Corsican language for the island's identity." }
+    - { es: "Les deux articles s'accordent sur le rôle du tourisme, mais divergent quant à ses effets.", en: "Both articles agree on the role of tourism but differ as to its effects." }
+    - { es: "Contrairement au premier document, le second met en avant les enjeux environnementaux.", en: "Unlike the first document, the second highlights environmental issues." }
+  pitfalls:
+    - "No *je* and no opinion in a résumé or synthèse."
+    - "Don't copy whole sentences from the source: reformulate."
+  related: [g.reformulation, g.nominalisation, g.argumentation-structure, g.precise-verbs]
+  drills:
+    - { es: "Le texte met en évidence trois causes principales.", en: "The text highlights three main causes." }
+    - { es: "L'auteur déplore le manque de moyens.", en: "The author deplores the lack of resources." }
+    - { es: "En conclusion, le document invite à repenser le tourisme.", en: "In conclusion, the document calls for a rethink of tourism." }
+- id: g.reformulation
+  level: c1
+  title: "Reformulating and clarifying: autrement dit, c'est-à-dire, en d'autres termes"
+  summary: "Rephrase to clarify or check understanding: c'est-à-dire, autrement dit, en d'autres termes, à savoir, soit, si je comprends bien, ce que je veux dire, c'est que…"
+  explanation: |
+    | function | expressions |
+    |---|---|
+    | clarify yourself | *c'est-à-dire (que), autrement dit, en d'autres termes, je veux dire, plus précisément* |
+    | specify / list | *à savoir, soit, notamment, en l'occurrence* |
+    | correct yourself | *ou plutôt, enfin, pour être exact, je me suis mal exprimé* |
+    | summarise | *bref, en un mot, en somme, pour résumer* |
+    | check understanding | *Si je comprends bien, … / Vous voulez dire que… ? / Autrement dit, … ?* |
+    | ask for clarification | *Qu'entendez-vous par… ? / Pourriez-vous préciser ? / C'est-à-dire ?* |
+
+    ### Reformulation techniques
+    - Synonym: *Napoléon est né à Ajaccio → la ville natale de l'empereur*.
+    - Nominalisation: *Il a été exilé → son exil*.
+    - Active ↔ passive, positive ↔ negative: *C'est difficile → ce n'est pas simple*.
+    - Hypernym: *le pinzutu et le figatellu → les spécialités corses*.
+
+    *En l'occurrence* = in this case: *Il faut un document officiel, en l'occurrence votre passeport.*
+  examples:
+    - { es: "Napoléon est né à Ajaccio en 1769, c'est-à-dire un an après le rattachement de la Corse à la France.", en: "Napoleon was born in Ajaccio in 1769, that is, a year after Corsica became part of France." }
+    - { es: "Si je comprends bien, la maison natale est fermée le lundi ?", en: "If I understand correctly, the birthplace is closed on Mondays?" }
+    - { es: "Il faut une pièce d'identité, en l'occurrence votre carte.", en: "You need ID, in this case your card." }
+  pitfalls:
+    - "*En l'occurrence* means 'in this case', not 'by the way'."
+    - "*À savoir* introduces a list or specification, not 'you know'."
+  related: [g.summary-synthesis, g.precise-verbs, g.discourse-markers]
+  drills:
+    - { es: "Autrement dit, c'est impossible.", en: "In other words, it's impossible." }
+    - { es: "Qu'entendez-vous par là ?", en: "What do you mean by that?" }
+    - { es: "Trois îles, à savoir la Corse, la Sardaigne et la Sicile.", en: "Three islands, namely Corsica, Sardinia and Sicily." }
+- id: g.precise-verbs
+  level: c1
+  title: "Precise verbs instead of faire, dire, mettre, avoir, il y a"
+  summary: "Replace all-purpose verbs: faire un gâteau → préparer, dire son avis → exprimer, mettre une affiche → apposer, avoir un diplôme → obtenir, il y a → se trouver, figurer, régner."
+  explanation: |
+    | vague | precise alternatives |
+    |---|---|
+    | *faire* | *faire un plan → **élaborer**; faire un film → **réaliser**; faire une maison → **construire, bâtir**; faire une erreur → **commettre**; faire un effort → **fournir**; faire un discours → **prononcer**; faire une enquête → **mener*** |
+    | *dire* | ***affirmer, déclarer, annoncer, expliquer, préciser, souligner, prétendre, avouer, révéler, exprimer, suggérer*** |
+    | *mettre* | *mettre un vêtement → **enfiler**; mettre de l'argent → **placer, investir**; mettre en place → **instaurer**; mettre une note → **attribuer*** |
+    | *avoir* | *avoir un diplôme → **obtenir**; avoir des qualités → **posséder**; avoir un rôle → **jouer, tenir**; avoir des problèmes → **rencontrer*** |
+    | *il y a* | ***se trouver, figurer, exister, régner** (le silence règne), **se dresser** (une tour se dresse), **compter** (la ville compte…)* |
+    | *voir* | ***constater, observer, remarquer, apercevoir, distinguer*** |
+    | *donner* | ***offrir, accorder, attribuer, fournir, remettre*** |
+    | *chose* | ***objet, élément, aspect, fait, question, problème*** |
+
+    This is the single most effective way to raise the level of your writing.
+  examples:
+    - { es: "La citadelle se dresse au-dessus du port d'Ajaccio.", en: "The citadel towers above Ajaccio harbour." }
+    - { es: "Le musée retrace l'enfance de Napoléon.", en: "The museum traces Napoleon's childhood." }
+    - { es: "La ville compte environ soixante-dix mille habitants.", en: "The town has about seventy thousand inhabitants." }
+    - { es: "Le maire a prononcé un discours devant la maison natale.", en: "The mayor gave a speech outside the birthplace." }
+  pitfalls:
+    - "Precision ≠ pomposity: *effectuer une promenade* for *se promener* sounds bureaucratic."
+    - "Check constructions: *commettre une erreur*, *mener une enquête*, *fournir un effort*."
+  related: [g.reformulation, g.summary-synthesis, g.nominalisation]
+  drills:
+    - { es: "Il a commis une grave erreur.", en: "He made a serious mistake." }
+    - { es: "Un silence total règne dans la salle.", en: "Total silence reigns in the room." }
+    - { es: "Elle a obtenu son diplôme en juin.", en: "She got her degree in June." }

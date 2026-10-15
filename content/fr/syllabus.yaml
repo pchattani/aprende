@@ -1,0 +1,757 @@
+# The whole journey, A1 -> C2, in standard French of France with Québec, Belgian
+# and Swiss notes. Each unit lists the grammar points it teaches (ids resolve to
+# notes in grammar/<level>.yaml) and CEFR can-do statements. `authored: true`
+# means units/<level>/<unit>.yaml exists; no French unit is authored yet.
+# `themes` and `functions` are planning notes for unit authors (not read by the app).
+# Journey (one stop per unit, see journey.yaml): A1 Paris; A2 Normandy, Brittany
+# and the Loire; B1 Provence and the Riviera; B2 Lyon, the Alps, Burgundy and
+# Alsace; C1 the Southwest and Corsica; C2 the French-speaking world, ending in
+# Québec City.
+levels:
+  - id: a1
+    title: A1
+    name: Breakthrough
+    description: Understand and use everyday expressions and very basic phrases. Introduce yourself, ask and answer simple personal questions, and get by in Paris when people speak slowly and clearly.
+    wordTarget: 700
+    canDo:
+      - Greet people, introduce myself and others, and choose between tu and vous.
+      - Talk about my family, my home and my daily routine in the present.
+      - Order at a café, shop in a department store, ask prices and tell the time.
+      - Ask for and understand simple directions and get around by métro.
+      - Understand short, simple texts and slow, clear speech on familiar topics.
+    units:
+      - id: a1.u01
+        title: "Bonjour, je m'appelle…"
+        subtitle: "Hello, my name is…: greetings and introductions"
+        authored: true
+        canDo:
+          - "Greet people and say goodbye, formally and informally."
+          - "Introduce myself and ask someone their name."
+          - "Choose between tu and vous."
+        grammar: [g.greetings, g.subject-pronouns, g.etre-present, g.s-appeler, g.tu-vs-vous, g.stressed-pronouns]
+        themes: [arriving at Roissy-Charles-de-Gaulle, greetings, names, passport control]
+        functions: [greeting, introducing yourself, asking someone's name, saying goodbye]
+      - id: a1.u02
+        title: "Tu es d'où ?"
+        subtitle: "Where are you from? People and nationalities"
+        authored: true
+        canDo:
+          - "Say where I and other people are from and what nationality we are."
+          - "Describe people and things with basic adjectives."
+          - "Ask yes/no questions and say what something is not."
+        grammar: [g.gender-nouns, g.articles-definite, g.adjective-agreement, g.negation-ne-pas, g.yes-no-questions]
+        themes: [tourists from everywhere at the Eiffel Tower, countries, nationalities, languages]
+        functions: [saying where you are from, describing people, asking yes/no questions, denying]
+      - id: a1.u03
+        title: "Ma famille à Montmartre"
+        subtitle: "My family"
+        authored: true
+        canDo:
+          - "Talk about my family, their names and their ages."
+          - "Count to sixty-nine and ask simple questions."
+        grammar: [g.avoir-present, g.possessives, g.plural-nouns, g.numbers-0-69, g.question-words]
+        themes: [family, ages, pets, a family portrait by the painters of the place du Tertre]
+        functions: [presenting your family, giving ages, asking who, where, when and how]
+      - id: a1.u04
+        title: "Mon quartier, le Marais"
+        subtitle: "My home and my neighbourhood"
+        authored: true
+        canDo:
+          - "Describe my home and say where things are."
+          - "Say what there is and isn't in my neighbourhood."
+        grammar: [g.il-y-a, g.articles-indefinite, g.prepositions-place, g.elision-liaison, g.c-est-il-est]
+        themes: [rooms, furniture, shops, the place des Vosges, old streets]
+        functions: [describing a place, locating things, identifying people and things]
+      - id: a1.u05
+        title: "Un café, s'il vous plaît"
+        subtitle: "At the café in Saint-Germain-des-Prés: food and drink"
+        authored: true
+        canDo:
+          - "Order at a café, a boulangerie or a brasserie."
+          - "Say what I like and don't like to eat and drink."
+          - "Ask for some bread, some water, some cheese."
+        grammar: [g.present-er, g.partitive-articles, g.je-voudrais, g.aimer-preferer, g.de-after-negation, g.moi-aussi-non-plus]
+        themes: [food, drink, the boulangerie, café terraces, the Café de Flore]
+        functions: [ordering, expressing likes and dislikes, agreeing and disagreeing]
+      - id: a1.u06
+        title: "Les cloches de Notre-Dame"
+        subtitle: "My day: daily routine and the time"
+        authored: true
+        canDo:
+          - "Describe my daily routine and tell the time."
+          - "Say what day it is, give dates and say how often I do things."
+        grammar: [g.time-telling, g.reflexive-intro, g.days-months-dates, g.frequency-adverbs, g.present-ir-verbs]
+        themes: [daily routine, the bells ringing the hours, work and study, métro-boulot-dodo]
+        functions: [telling the time, giving dates, describing routines, saying how often]
+      - id: a1.u07
+        title: "Le sourire de la Joconde"
+        subtitle: "Describing people at the Louvre"
+        authored: true
+        canDo:
+          - "Describe someone's appearance and character."
+          - "Say how someone feels: hungry, cold, scared, right or wrong."
+        grammar: [g.adjective-position, g.beau-nouveau-vieux, g.avoir-expressions, g.colours, g.tres-trop-assez]
+        themes: [appearance, character, portraits, colours, the Mona Lisa]
+        functions: [describing people, expressing physical states, nuancing descriptions]
+      - id: a1.u08
+        title: "Ça coûte combien ?"
+        subtitle: "Shopping at the Galeries Lafayette"
+        authored: true
+        canDo:
+          - "Buy clothes and food and ask for prices, sizes and quantities."
+          - "Count above one hundred and talk about money in euros."
+        grammar: [g.numbers-70-100, g.numbers-100-plus, g.demonstratives, g.stem-changing-er, g.quantities]
+        themes: [clothes, department stores, the food hall, prices, sales]
+        functions: [asking prices, buying, pointing things out, quantities]
+      - id: a1.u09
+        title: "En métro, on va où ?"
+        subtitle: "Going, doing and making plans"
+        authored: true
+        canDo:
+          - "Say where I am going and what I am doing."
+          - "Talk about plans for later today and this weekend."
+        grammar: [g.aller-present, g.contractions-au-du, g.faire-present, g.futur-proche, g.on-nous]
+        themes: [the métro map, sights, going out, weekend plans]
+        functions: [suggesting, making plans, saying where you are going]
+      - id: a1.u10
+        title: "Un dimanche au Luxembourg"
+        subtitle: "Free time and the weather"
+        authored: true
+        canDo:
+          - "Talk about hobbies, sports and music, and the weather."
+          - "Say what I can, want and must do, and where people come from."
+        grammar: [g.weather, g.modal-verbs, g.jouer-faire-de, g.venir-present]
+        themes: [hobbies, sport, music, weather, the gardens and the toy sailing boats]
+        functions: [talking about free time, inviting, accepting and refusing, talking about the weather]
+      - id: a1.u11
+        title: "Sur les quais de Seine"
+        subtitle: "Getting around town"
+        authored: true
+        canDo:
+          - "Ask for and give simple directions and use public transport."
+          - "Say which city or country I'm going to or live in."
+        grammar: [g.prendre-present, g.prepositions-transport, g.prepositions-cities-countries, g.directions, g.inversion-questions]
+        themes: [bridges, the bouquinistes, Vélib' bikes, river boats, arrondissements]
+        functions: [asking the way, giving directions, buying a ticket, polite formal questions]
+      - id: a1.u12
+        title: "Au revoir, Paris !"
+        subtitle: "Life in Paris on the Champs-Élysées"
+        authored: true
+        canDo:
+          - "Say how long I have been doing something and what I have just done."
+          - "Say what is necessary and react with exclamations."
+        grammar: [g.present-re-verbs, g.il-faut, g.quel, g.venir-de, g.depuis-present]
+        themes: [the Arc de Triomphe, living in Paris, the 14th of July parade, review of the level]
+        functions: [saying how long, describing recent actions, expressing necessity, exclaiming]
+
+  - id: a2
+    title: A2
+    name: Waystage
+    description: Understand sentences and frequent expressions about areas of immediate relevance. Communicate in simple, routine tasks from Normandy to the Loire. Describe your background and surroundings, and narrate past events with the passé composé and the imparfait.
+    wordTarget: 1500
+    canDo:
+      - Narrate past events and tell short stories, distinguishing completed actions from background.
+      - Talk about plans, make predictions and give instructions.
+      - Compare things, give opinions and make polite requests.
+      - Avoid repetition with object pronouns, y and en.
+      - Read short articles and personal messages and follow slow conversations.
+    units:
+      - id: a2.u01
+        title: "Le week-end dernier à Rouen"
+        subtitle: "What did you do? The passé composé with avoir"
+        authored: true
+        canDo:
+          - "Say what I did yesterday, last weekend and last year."
+          - "Ask others what they did."
+        grammar: [g.passe-compose-avoir, g.past-participles-irregular, g.past-time-expressions]
+        themes: [weekends, Rouen cathedral, Joan of Arc, the old market square]
+        functions: [narrating past actions, asking about the past]
+      - id: a2.u02
+        title: "Je suis allée à Giverny"
+        subtitle: "Trips and movement: the passé composé with être"
+        authored: true
+        canDo:
+          - "Tell the story of a trip: arriving, leaving, going up and coming back."
+          - "Say what I have never done and no longer do."
+        grammar: [g.passe-compose-etre, g.pc-agreement-etre, g.partir-sortir-dormir, g.negation-passe-compose, g.negation-jamais-plus-rien]
+        themes: [a day trip from Paris, Monet's garden, the water lilies, trains]
+        functions: [narrating a trip, negating in the past, saying never, nothing, no one]
+      - id: a2.u03
+        title: "Quand j'étais petit, à Étretat"
+        subtitle: "Childhood memories: the imparfait"
+        authored: true
+        canDo:
+          - "Describe what life was like when I was a child."
+          - "Talk about past habits and describe past scenes."
+        grammar: [g.imparfait-forms, g.imparfait-uses, g.c-etait]
+        themes: [childhood, holidays by the sea, the white cliffs, Maupassant and Arsène Lupin]
+        functions: [describing the past, talking about habits, reminiscing]
+      - id: a2.u04
+        title: "Le 6 juin 1944"
+        subtitle: "Telling a story at the D-Day beaches: passé composé or imparfait"
+        authored: true
+        canDo:
+          - "Tell a story, separating events from background."
+          - "Order events and say how long things lasted."
+        grammar: [g.pc-vs-imparfait, g.narrative-connectors, g.pendant-depuis-il-y-a]
+        themes: [history, the Normandy landings, memorials, family stories, the Bayeux Tapestry]
+        functions: [storytelling, sequencing events, saying how long and how long ago]
+      - id: a2.u05
+        title: "Camembert et cidre au pays d'Auge"
+        subtitle: "Object pronouns: le, la, les, lui, leur"
+        authored: true
+        canDo:
+          - "Avoid repeating nouns with le, la, les, lui and leur."
+          - "Say what I know and whom I know."
+        grammar: [g.direct-object-pronouns, g.indirect-object-pronouns, g.verbs-indirect-object, g.savoir-connaitre]
+        themes: [farms, cheese, apples and cider, half-timbered houses, gifts]
+        functions: [referring back, offering, giving and lending, talking about knowledge]
+      - id: a2.u06
+        title: "Le Mont-Saint-Michel, on y va ?"
+        subtitle: "Y and en: there, some, of it"
+        authored: true
+        canDo:
+          - "Replace places with y and quantities with en."
+          - "Answer questions about where I go and how much I want."
+        grammar: [g.pronoun-y, g.pronoun-en, g.en-quantities]
+        themes: [the tides, the abbey, crossing the bay on foot, the famous omelette]
+        functions: [answering briefly, talking about quantities and places]
+      - id: a2.u07
+        title: "Saint-Malo, la cité corsaire"
+        subtitle: "Comparing places and people"
+        authored: true
+        canDo:
+          - "Compare people, places and things."
+          - "Say what is the best, the worst, the most beautiful."
+        grammar: [g.comparatives, g.superlatives, g.meilleur-mieux]
+        themes: [ramparts, corsairs, Jacques Cartier, beaches, Brittany vs Normandy]
+        functions: [comparing, expressing preferences, giving superlatives]
+      - id: a2.u08
+        title: "Demain, à Quimper"
+        subtitle: "The future: plans, predictions, conditions"
+        authored: true
+        canDo:
+          - "Make predictions and promises in the future."
+          - "Say what will happen if or when something happens."
+        grammar: [g.futur-simple-forms, g.futur-irregular-stems, g.si-present-futur, g.quand-futur]
+        themes: [galettes and crêpes, the Breton festival, weather forecasts, plans]
+        functions: [predicting, promising, making plans, stating conditions]
+      - id: a2.u09
+        title: "En forme à Carnac"
+        subtitle: "Health, body and pronominal verbs"
+        authored: true
+        canDo:
+          - "Describe my routine and how I feel, with pronominal verbs."
+          - "Say where it hurts and talk to a pharmacist or doctor."
+        grammar: [g.pronominal-verbs, g.pronominal-passe-compose, g.body-parts-article, g.avoir-mal, g.etre-en-train-de]
+        themes: [walking among the menhirs, the beach, sport, the pharmacy, legends]
+        functions: [describing symptoms, talking about routines in the past, saying what you are doing right now]
+      - id: a2.u10
+        title: "Nantes, la recette du beurre blanc"
+        subtitle: "Instructions and recipes: the imperative"
+        authored: true
+        canDo:
+          - "Give and follow instructions and recipes."
+          - "Tell someone what to do and what not to do."
+        grammar: [g.imperative, g.imperative-with-pronouns, g.adverbs-ment]
+        themes: [cooking, recipes, the giant elephant of the Machines de l'île, Jules Verne]
+        functions: [instructing, advising, warning, describing how]
+      - id: a2.u11
+        title: "Léonard à Amboise"
+        subtitle: "Visits, souvenirs and what belongs to whom"
+        authored: true
+        canDo:
+          - "Talk about things I have seen and bought, referring back with pronouns."
+          - "Say what belongs to whom and talk about all, each and several."
+        grammar: [g.pc-object-agreement, g.tout-chaque-plusieurs, g.possessive-pronouns]
+        themes: [Leonardo da Vinci at the Clos Lucé, the châteaux of the Loire, souvenirs, the kings of France]
+        functions: [describing a visit, expressing possession, generalising]
+      - id: a2.u12
+        title: "Une nuit à Chambord"
+        subtitle: "Polite requests and plans"
+        authored: true
+        canDo:
+          - "Make polite requests and suggestions with the conditional."
+          - "Talk about someone, something, no one and nothing."
+          - "Say what I am starting, trying or deciding to do."
+        grammar: [g.conditional-politeness, g.indefinite-pronouns, g.verbs-plus-infinitive]
+        themes: [hotels, bookings, complaints, the double-helix staircase, François Ier]
+        functions: [requesting politely, booking, complaining, expressing intentions]
+
+  - id: b1
+    title: B1
+    name: Threshold
+    description: Deal with most situations while travelling through Provence and the Riviera. Produce connected text on familiar topics. Describe experiences, events, hopes and ambitions, give reasons and opinions with the subjonctif, and report what others said.
+    wordTarget: 3000
+    canDo:
+      - Combine pronouns (je le lui donne, il y en a) and use them with the imperative.
+      - Express wishes, emotions, necessity and opinions with the subjonctif.
+      - Imagine and advise with the conditionnel, and narrate complex past sequences.
+      - Report what others said and asked.
+      - Describe things with relative clauses and write structured messages.
+    units:
+      - id: b1.u01
+        title: "Au Vieux-Port, je vous le mets ?"
+        subtitle: "Combining pronouns at the fish market: je le lui donne"
+        authored: true
+        canDo:
+          - "Use two object pronouns together in the right order."
+          - "Use pronouns with the imperative: donne-le-moi, ne me le donne pas."
+        grammar: [g.double-object-pronouns, g.pronoun-order-imperative, g.y-en-combinations]
+        themes: [the fish market, bouillabaisse, Marseille's 2,600 years, lending and borrowing]
+        functions: [buying, lending, returning, giving instructions about objects]
+      - id: b1.u02
+        title: "La Bonne Mère, qui veille sur Marseille"
+        subtitle: "Relative clauses: qui, que, où, dont"
+        authored: true
+        canDo:
+          - "Describe people, places and things with relative clauses."
+          - "Join two sentences instead of repeating a noun."
+        grammar: [g.relative-qui-que, g.relative-ou, g.relative-dont, g.relative-preposition]
+        themes: [Notre-Dame-de-la-Garde, ex-votos, the view over the city, neighbourhoods]
+        functions: [defining, describing, identifying]
+      - id: b1.u03
+        title: "Les Calanques, ce qui me plaît"
+        subtitle: "What I like: ce qui, ce que, celui"
+        authored: true
+        canDo:
+          - "Say what I like, need and want with ce qui, ce que and ce dont."
+          - "Point things out with celui, celle, ceux, celles."
+        grammar: [g.ce-qui-ce-que, g.demonstrative-pronouns, g.quelque-chose-de]
+        themes: [turquoise coves, hiking, kayaking, the national park]
+        functions: [expressing preferences, choosing, describing nature]
+      - id: b1.u04
+        title: "Aix-en-Provence : je veux que tu viennes"
+        subtitle: "Wishes and wants: the subjonctif"
+        authored: true
+        canDo:
+          - "Form the present subjonctif, regular and irregular."
+          - "Say what I want, prefer and ask others to do."
+        grammar: [g.subjonctif-forms, g.subjonctif-irregular, g.subjonctif-volonte]
+        themes: [Cézanne and the Sainte-Victoire, students, markets, family expectations]
+        functions: [expressing wishes, making requests, giving permission]
+      - id: b1.u05
+        title: "Il faut que tu voies la lavande"
+        subtitle: "Feelings and necessity at Gordes and Sénanque"
+        authored: true
+        canDo:
+          - "Express emotions and necessity with the subjonctif."
+          - "Choose between the subjonctif and the infinitive."
+        grammar: [g.subjonctif-emotion, g.subjonctif-necessite, g.subjonctif-vs-infinitive]
+        themes: [lavender fields, the abbey, villages perchés, protecting the landscape, tourism]
+        functions: [expressing feelings, stating obligations, recommending]
+      - id: b1.u06
+        title: "Si j'étais comédien à Avignon"
+        subtitle: "Dreams and advice: the conditionnel"
+        authored: true
+        canDo:
+          - "Imagine an ideal life with si + imparfait and the conditionnel."
+          - "Give advice: à ta place, tu devrais…"
+        grammar: [g.conditionnel-present, g.si-imparfait-conditionnel, g.conditional-advice]
+        themes: [the theatre festival, the Palais des Papes, the bridge, life choices]
+        functions: [hypothesising, advising, wishing]
+      - id: b1.u07
+        title: "Arles, sur les pas de Van Gogh"
+        subtitle: "Further back in the past: the plus-que-parfait"
+        authored: true
+        canDo:
+          - "Narrate events that happened before other past events."
+          - "Link actions with avant de, après avoir and time clauses."
+        grammar: [g.plus-que-parfait, g.apres-avoir-avant-de, g.time-clauses]
+        themes: [Van Gogh's year in Arles, the Roman arena, photography, misunderstandings]
+        functions: [explaining, apologising, narrating in sequence]
+      - id: b1.u08
+        title: "La Camargue : le gardian m'a dit que…"
+        subtitle: "Reported speech"
+        authored: true
+        canDo:
+          - "Report what someone said, asked or ordered."
+          - "Use reporting verbs other than dire."
+        grammar: [g.discours-indirect, g.discours-indirect-past, g.indirect-questions, g.reporting-verbs]
+        themes: [white horses, bulls and gardians, flamingos, interviews, gossip]
+        functions: [reporting, passing on messages, retelling]
+      - id: b1.u09
+        title: "Grasse, c'est en sentant qu'on apprend"
+        subtitle: "How and while: the gérondif"
+        authored: true
+        canDo:
+          - "Say how and while I do things with en + -ant."
+          - "Use the right preposition after verbs, and pour or sans + infinitive."
+        grammar: [g.gerondif, g.verbs-prepositions, g.pour-sans-infinitive]
+        themes: [perfume, noses, jasmine and roses, learning a craft]
+        functions: [describing manner and simultaneity, expressing purpose]
+      - id: b1.u10
+        title: "Cannes, la Palme d'or est décernée"
+        subtitle: "The red carpet and the passive voice"
+        authored: true
+        canDo:
+          - "Describe processes and events with the passive."
+          - "Use on and pronominal verbs instead of the passive."
+        grammar: [g.passive-voice, g.on-instead-of-passive, g.agent-par-de]
+        themes: [the film festival, cinema, celebrities, news reports]
+        functions: [describing a process, reporting news]
+      - id: b1.u11
+        title: "Nice, à mon avis"
+        subtitle: "Opinions, reasons and consequences on the Promenade des Anglais"
+        authored: true
+        canDo:
+          - "Give and justify opinions, and say what I don't think."
+          - "Link arguments with cause, consequence and contrast connectors."
+        grammar: [g.opinion-mood, g.connectors-cause-consequence, g.connectors-opposition]
+        themes: [the Promenade, socca, the carnival, debates on tourism]
+        functions: [giving opinions, justifying, contrasting, concluding]
+      - id: b1.u12
+        title: "Monaco, quand j'aurai gagné"
+        subtitle: "Future plans and deadlines"
+        authored: true
+        canDo:
+          - "Say what will have happened by a certain time."
+          - "Use time prepositions precisely and negate with ni…ni and aucun."
+        grammar: [g.futur-anterieur, g.prepositions-time, g.ni-ni-aucun]
+        themes: [a tiny country, the Grand Prix, the casino, projects and ambitions]
+        functions: [planning, setting deadlines, negating completely]
+
+  - id: b2
+    title: B2
+    name: Vantage
+    description: Understand the main ideas of complex text, including technical discussion in your field. Interact with fluency and spontaneity with native speakers from Lyon to Strasbourg. Produce clear, detailed text on a wide range of subjects and argue a viewpoint.
+    wordTarget: 5000
+    canDo:
+      - Express conditions, concessions, doubts, regrets and hypotheses about the past.
+      - Use the subjonctif after conjunctions and in relative clauses with confidence.
+      - Argue a position in writing with cohesion and the right register.
+      - Follow films, the news and extended speech, and recognise the passé simple.
+      - Emphasise and reorder information the way native speakers do.
+    units:
+      - id: b2.u01
+        title: "Les traboules, pour que tu ne te perdes pas"
+        subtitle: "Conditions and concessions: subjonctif after conjunctions"
+        authored: true
+        canDo:
+          - "Use bien que, pour que, avant que, à moins que and sans que."
+          - "Use the past subjonctif for completed actions."
+        grammar: [g.subjonctif-conjonctions, g.ne-expletif, g.subjonctif-passe]
+        themes: [Vieux-Lyon, secret passageways, the silk workers, guided tours]
+        functions: [expressing conditions, purpose and concession]
+      - id: b2.u02
+        title: "Les bouchons : je doute que tu finisses"
+        subtitle: "Doubt and certainty"
+        authored: true
+        canDo:
+          - "Express doubt, possibility and certainty with the right mood."
+          - "Describe what I am looking for with the subjonctif in relative clauses."
+        grammar: [g.subjonctif-doute, g.subjonctif-relatives, g.indicatif-ou-subjonctif]
+        themes: [Lyon's bouchons, gastronomy, Paul Bocuse, food critics]
+        functions: [doubting, speculating, specifying requirements]
+      - id: b2.u03
+        title: "La Fête des Lumières : si j'avais su"
+        subtitle: "Past hypotheses and the conditionnel passé"
+        authored: true
+        canDo:
+          - "Imagine how the past could have been different."
+          - "Mix past and present hypotheses."
+        grammar: [g.conditionnel-passe, g.si-plus-que-parfait, g.mixed-si-clauses]
+        themes: [the 8th of December, candles in the windows, crowds, missed chances]
+        functions: [hypothesising about the past, regretting, imagining]
+      - id: b2.u04
+        title: "Annecy : on aurait dû louer un pédalo"
+        subtitle: "Regrets, reproaches and unconfirmed news"
+        authored: true
+        canDo:
+          - "Express regrets and reproaches: j'aurais dû, tu aurais pu."
+          - "Understand the journalistic conditionnel for unconfirmed facts."
+        grammar: [g.devoir-nuances, g.regret-reproach, g.conditionnel-journalistique]
+        themes: [the lake, water quality, the animation film festival, local news]
+        functions: [reproaching, regretting, reporting unconfirmed information]
+      - id: b2.u05
+        title: "Chamonix : le guide avait dit qu'il ferait beau"
+        subtitle: "Sequence of tenses"
+        authored: true
+        canDo:
+          - "Report past speech with full tense agreement."
+          - "Shift time expressions: la veille, le lendemain."
+        grammar: [g.concordance-des-temps, g.discours-indirect-avance, g.time-shift-expressions]
+        themes: [Mont Blanc, mountaineering, glaciers, mountain guides, broken promises]
+        functions: [reporting past conversations, recounting, clarifying]
+      - id: b2.u06
+        title: "Grenoble, la ville sur laquelle on parie"
+        subtitle: "Relative pronouns with lequel"
+        authored: true
+        canDo:
+          - "Use lequel, auquel, duquel after prepositions."
+          - "Choose between dont and duquel."
+        grammar: [g.relative-lequel, g.auquel-duquel, g.dont-vs-duquel]
+        themes: [science and research, innovation, the Bastille cable car, the mountains around]
+        functions: [defining precisely, describing projects]
+      - id: b2.u07
+        title: "Dijon, ancienne capitale des ducs"
+        subtitle: "Participles and participial clauses"
+        authored: true
+        canDo:
+          - "Use the present participle in writing."
+          - "Distinguish the participe présent from the adjectif verbal."
+        grammar: [g.participe-present, g.adjectif-verbal, g.participial-clauses]
+        themes: [mustard, the owl trail, the dukes of Burgundy, gingerbread]
+        functions: [describing, explaining causes concisely, writing formally]
+      - id: b2.u08
+        title: "Beaune, c'est ici qu'on vend les vins"
+        subtitle: "Emphasis and word order"
+        authored: true
+        canDo:
+          - "Emphasise information with c'est… qui / que."
+          - "Use dislocation the way people speak: Moi, le vin, je l'adore."
+        grammar: [g.mise-en-relief, g.dislocation, g.ce-qui-c-est]
+        themes: [the Hospices and their tiled roofs, the wine auction, terroir and climats]
+        functions: [emphasising, contrasting, correcting]
+      - id: b2.u09
+        title: "Cluny, l'abbaye qui régnait sur l'Europe"
+        subtitle: "Argument and connectors"
+        authored: true
+        canDo:
+          - "Express concession, purpose and cause in a structured argument."
+          - "Write an opinion piece with clear connectors."
+        grammar: [g.concession, g.purpose-clauses, g.cause-advanced]
+        themes: [the medieval abbey, heritage and restoration, Europe then and now]
+        functions: [arguing, conceding, justifying]
+      - id: b2.u10
+        title: "Strasbourg, du Parlement à la winstub"
+        subtitle: "Registers: from slang to formal"
+        authored: true
+        canDo:
+          - "Recognise and switch between familiar, standard and formal French."
+          - "Understand spoken French without ne, and inversion in formal writing."
+        grammar: [g.register-levels, g.spoken-negation, g.formal-inversion]
+        themes: [the European Parliament, the Christmas market, the cathedral, small talk vs official speeches]
+        functions: [adapting register, speaking naturally, writing formally]
+      - id: b2.u11
+        title: "Il était une fois à Colmar"
+        subtitle: "Tales, the passé simple and getting things done"
+        authored: true
+        canDo:
+          - "Recognise the passé simple in tales and novels."
+          - "Say what I have done for me or let happen: faire and laisser + infinitive."
+        grammar: [g.passe-simple-recognition, g.faire-causatif, g.laisser-infinitive]
+        themes: [Little Venice, Alsatian legends, storks, Bartholdi, services and repairs]
+        functions: [reading narrative, delegating, allowing]
+      - id: b2.u12
+        title: "Riquewihr : il paraît que c'est le meilleur"
+        subtitle: "Impersonal French and nuanced opinions on the wine route"
+        authored: true
+        canDo:
+          - "Use pronominal passives and impersonal constructions."
+          - "Nuance an opinion: il me semble que, j'ai l'impression que."
+        grammar: [g.pronominal-passive, g.impersonal-constructions, g.opinion-nuance]
+        themes: [the Route des vins, Riesling and Gewurztraminer, tastings, bilingual Alsace]
+        functions: [generalising, nuancing, debating]
+
+  - id: c1
+    title: C1
+    name: Effective operational proficiency
+    description: Understand demanding, longer texts and implicit meaning, from Bordeaux newspapers to Corsican conversations. Express yourself fluently without obvious searching for expressions. Use French flexibly for social, academic and professional purposes with clear, well-structured, detailed text.
+    wordTarget: 8000
+    canDo:
+      - Use the passé simple and recognise the literary tenses of classic prose.
+      - Handle the subjonctif with nuance, including concessive and independent uses.
+      - Produce academic, professional and administrative texts with appropriate cohesion.
+      - Use idioms, proverbs and fixed expressions appropriately.
+      - Understand humour, understatement, implicit meaning and discourse markers.
+    units:
+      - id: c1.u01
+        title: "Bordeaux, le port de la Lune"
+        subtitle: "Literary narrative: the passé simple"
+        authored: true
+        canDo:
+          - "Read and write narratives in the passé simple."
+          - "Recognise the passé antérieur."
+        grammar: [g.passe-simple-forms, g.passe-simple-usage, g.passe-anterieur]
+        themes: [the quays, the wine trade, the history of Bordeaux, Montaigne and Montesquieu]
+        functions: [narrating in writing, reading literature]
+      - id: c1.u02
+        title: "Saint-Émilion, qu'il eût fallu voir"
+        subtitle: "Literary tenses of the subjonctif"
+        authored: true
+        canDo:
+          - "Recognise the imparfait and plus-que-parfait du subjonctif in classic texts."
+          - "Understand literary inversion."
+        grammar: [g.subjonctif-imparfait, g.subjonctif-plus-que-parfait, g.literary-inversion]
+        themes: [the monolithic church, World Heritage vineyards, classic novels]
+        functions: [reading classic prose, recognising literary style]
+      - id: c1.u03
+        title: "La dune du Pilat, où qu'on regarde"
+        subtitle: "Nuances of the subjonctif"
+        authored: true
+        canDo:
+          - "Choose the mood to change the meaning of a sentence."
+          - "Use qui que, quoi que, où que, quel que and independent subjonctifs."
+        grammar: [g.subjonctif-nuance, g.qui-que-quoi-que, g.subjonctif-independent]
+        themes: [a mountain of sand, the Atlantic, oysters of Arcachon, a moving landscape]
+        functions: [conceding universally, expressing nuance, wishing and ordering in the third person]
+      - id: c1.u04
+        title: "Biarritz : la déferlante des surfeurs"
+        subtitle: "Nominal style and word formation"
+        authored: true
+        canDo:
+          - "Turn verbs and adjectives into nouns for a written style."
+          - "Understand and write press headlines."
+        grammar: [g.nominalisation, g.press-headlines, g.derivation-affixes]
+        themes: [surfing, the Basque coast, the Belle Époque resort, the regional press]
+        functions: [summarising, writing headlines, formal note-taking]
+      - id: c1.u05
+        title: "Espelette, un débat qui pique"
+        subtitle: "Building an argument"
+        authored: true
+        canDo:
+          - "Structure an essay or presentation with thesis, antithesis and synthesis."
+          - "Hedge claims and use advanced connectors."
+        grammar: [g.argumentation-structure, g.connectors-advanced, g.hedging]
+        themes: [the chilli pepper and its protected name, Basque identity, local products vs globalisation]
+        functions: [arguing, presenting, hedging, refuting]
+      - id: c1.u06
+        title: "Le pic du Midi : veuillez agréer…"
+        subtitle: "Formal and administrative writing"
+        authored: true
+        canDo:
+          - "Write formal letters and emails with the right formulas."
+          - "Understand administrative and official French."
+        grammar: [g.formal-letter, g.administrative-french, g.impersonal-passive-formal]
+        themes: [the observatory, the dark-sky reserve, applying for a research stay, bureaucracy]
+        functions: [applying, complaining formally, requesting officially]
+      - id: c1.u07
+        title: "Toulouse, le cœur sur la main"
+        subtitle: "Idioms and proverbs"
+        authored: true
+        canDo:
+          - "Understand and use common idioms and body idioms."
+          - "Use proverbs appropriately."
+        grammar: [g.idioms-everyday, g.idioms-body, g.proverbs]
+        themes: [the Pink City, rugby, aerospace, cassoulet, character and temperament]
+        functions: [speaking idiomatically, commenting, advising]
+      - id: c1.u08
+        title: "Carcassonne : je n'ose imaginer le siège"
+        subtitle: "Literary negation, adjective position and infinitives"
+        authored: true
+        canDo:
+          - "Recognise ne used alone in formal French."
+          - "Change meaning with adjective position: un grand homme, un homme grand."
+          - "Use advanced infinitive constructions."
+        grammar: [g.ne-litteraire, g.adjective-position-meaning, g.infinitive-clauses]
+        themes: [the medieval city and its 52 towers, Viollet-le-Duc, the Cathars, legends]
+        functions: [writing elegantly, describing precisely]
+      - id: c1.u09
+        title: "Bonifacio, bon, ben, du coup…"
+        subtitle: "What people really mean"
+        authored: true
+        canDo:
+          - "Understand and use discourse markers like bon, ben, du coup, quoi."
+          - "Recognise litotes, euphemism and implicit meaning."
+        grammar: [g.discourse-markers, g.litotes-euphemism, g.implicit-meaning]
+        themes: [the cliffs, the strait, Corsican hospitality, conversation and politeness]
+        functions: [conversing naturally, reading between the lines, softening]
+      - id: c1.u10
+        title: "Ajaccio, en résumé"
+        subtitle: "Summarising and reformulating"
+        authored: true
+        canDo:
+          - "Summarise and synthesise documents."
+          - "Reformulate and replace vague verbs with precise ones."
+        grammar: [g.summary-synthesis, g.reformulation, g.precise-verbs]
+        themes: [Napoléon's birthplace, the Corsican language, history and memory]
+        functions: [summarising, clarifying, reformulating]
+
+  - id: c2
+    title: C2
+    name: Mastery
+    description: Understand with ease virtually everything heard or read, from Brussels comics to Québec novels. Summarise and reconstruct arguments from different sources. Express yourself spontaneously, very fluently and precisely, across the varieties of the French-speaking world.
+    wordTarget: 12000
+    canDo:
+      - Understand Belgian, Swiss, African, Caribbean, Cajun and Québec French.
+      - Read classic and contemporary literature with appreciation of style and verse.
+      - Write with stylistic control in any register.
+      - "Play with language: humour, wordplay, slang and neologisms."
+      - Switch register and variety naturally, like a native speaker.
+    units:
+      - id: c2.u01
+        title: "Bruxelles, septante et gaufres"
+        subtitle: "Belgian French"
+        authored: true
+        canDo:
+          - "Understand Belgian vocabulary, numbers and expressions."
+          - "Use the right meal names in Belgium, Switzerland, Québec and France."
+        grammar: [g.belgian-french, g.regional-numbers, g.regional-meals]
+        themes: [comics, the Grand-Place, European institutions, frites and waffles]
+        functions: [understanding regional speech, adapting vocabulary]
+      - id: c2.u02
+        title: "Genève, la ville de la paix"
+        subtitle: "Swiss French, style and modern usage"
+        authored: true
+        canDo:
+          - "Understand Swiss French features."
+          - "Shift between stylistic registers."
+          - "Use feminised job titles and understand inclusive writing."
+        grammar: [g.swiss-french, g.stylistic-registers, g.feminisation]
+        themes: [diplomacy, the Red Cross, watchmaking, Rousseau, multilingual Switzerland]
+        functions: [analysing style, writing for a public audience, writing inclusively]
+      - id: c2.u03
+        title: "Dakar, la pointe de l'Afrique"
+        subtitle: "French in Africa, the Francophonie and verse"
+        authored: true
+        canDo:
+          - "Understand features of West African French."
+          - "Discuss the history and politics of the Francophonie."
+          - "Read French verse: metre and rhyme, from Baudelaire to Senghor."
+        grammar: [g.african-french, g.francophonie-overview, g.versification]
+        themes: [Senegal, Senghor and Négritude, the Téranga, music]
+        functions: [discussing language and identity, reading poetry]
+      - id: c2.u04
+        title: "Kinshasa, deux capitales face à face"
+        subtitle: "Street French: neologisms, slang and wordplay"
+        authored: true
+        canDo:
+          - "Understand how new words are created across the French-speaking world."
+          - "Recognise verlan and argot without misusing them."
+          - "Understand puns, contrepèteries and humour."
+        grammar: [g.neologisms, g.verlan-slang, g.wordplay]
+        themes: [the largest French-speaking city, rumba and lyrics, the sapeurs, youth language]
+        functions: [joking, understanding humour, recognising register]
+      - id: c2.u05
+        title: "Fort-de-France, le pays de Césaire"
+        subtitle: "Créole, poetic syntax and figures of style"
+        authored: true
+        canDo:
+          - "Understand the relation between Antillean Créole and French."
+          - "Analyse poetic syntax and figures of style."
+        grammar: [g.creole-and-french, g.poetic-syntax, g.figures-of-style]
+        themes: [Martinique, Aimé Césaire, the Cahier d'un retour au pays natal, Créole proverbs]
+        functions: [reading poetry and rhetoric, analysing style]
+      - id: c2.u06
+        title: "Lafayette, chez les Cadiens"
+        subtitle: "Cajun and Acadian French, and the French of the classics"
+        authored: true
+        canDo:
+          - "Understand Cajun and Acadian French and their history."
+          - "Read seventeenth-century French: Molière, La Fontaine."
+          - "Understand anglicisms and calques on both sides of the Atlantic."
+        grammar: [g.acadian-french, g.classical-french, g.anglicisms-calques]
+        themes: [the Grand Dérangement, bayous, Cajun music, the classics, English contact]
+        functions: [understanding historical varieties, discussing language contact]
+      - id: c2.u07
+        title: "Montréal, la ville sous la ville"
+        subtitle: "Québec French"
+        authored: true
+        canDo:
+          - "Understand spoken Québec French and its grammar."
+          - "Use Québec vocabulary and recognise sacres without misusing them."
+        grammar: [g.quebecois-grammar, g.quebec-vocabulary, g.quebec-sacres]
+        themes: [the underground city, bilingualism, Bill 101, hockey, the comedy festival]
+        functions: [understanding Québécois, choosing vocabulary for the audience]
+      - id: c2.u08
+        title: "Québec, je me souviens"
+        subtitle: "Native mastery: style, fluency and the whole course"
+        authored: true
+        canDo:
+          - "Read literary prose with an ear for style, from Flaubert to Proust and Québec writers."
+          - "Sound natural in rhythm, idiom and discourse."
+          - "Review the whole course."
+        grammar: [g.literary-prose-style, g.native-fluency-markers, g.c2-review]
+        themes: [the Château Frontenac, Old Québec, Québec literature, journey's end]
+        functions: [appreciating literature, speaking like a native, reviewing]
