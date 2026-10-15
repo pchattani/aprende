@@ -1,0 +1,737 @@
+# The journey: regions (one per level), stops (one per unit, in unit order), souvenirs.
+# Text in `es` is the target language (French here); `en` is English.
+# French typography: a no-break space goes before ! ? : ; and inside « », and in 9 000.
+regions:
+  - level: a1
+    name: Paris
+    es: La Ville Lumière
+    stops:
+      - name: Roissy-Charles-de-Gaulle
+        emoji: 🛬
+        es: Bonjour, la France !
+        en: Hello, France!
+        fact:
+          es: "L'aéroport Charles-de-Gaulle est à Roissy, à environ 25 kilomètres de Paris. C'est le plus grand aéroport de France. Il a le nom d'un ancien président."
+          en: "Charles de Gaulle airport is in Roissy, about 25 kilometres from Paris. It is the biggest airport in France. It has the name of a former president."
+      - name: La tour Eiffel
+        emoji: 🗼
+        es: La Dame de fer
+        en: The Iron Lady
+        fact:
+          es: "La tour Eiffel est en fer. Elle date de 1889, pour l'Exposition universelle. Aujourd'hui, elle mesure 330 mètres. Chaque année, environ six millions de personnes la visitent."
+          en: "The Eiffel Tower is made of iron. It dates from 1889, for the World's Fair. Today it is 330 metres tall. Every year about six million people visit it."
+      - name: Montmartre
+        emoji: 🎨
+        es: Les peintres de la colline
+        en: The painters on the hill
+        fact:
+          es: "Montmartre est une colline au nord de Paris. En haut, il y a la basilique du Sacré-Cœur, toute blanche. Sur la place du Tertre, des peintres travaillent dehors."
+          en: "Montmartre is a hill in the north of Paris. At the top is the Sacré-Cœur basilica, all white. On the Place du Tertre, painters work outdoors."
+      - name: Le Marais
+        emoji: 🏘️
+        es: Un vieux quartier
+        en: An old neighbourhood
+        fact:
+          es: "Le Marais est un vieux quartier de Paris. Il a de petites rues, des musées et de vieilles maisons. La place des Vosges date de 1612."
+          en: "The Marais is an old neighbourhood of Paris. It has little streets, museums and old houses. The Place des Vosges dates from 1612."
+      - name: Saint-Germain-des-Prés
+        emoji: ☕
+        es: Un café en terrasse
+        en: A coffee on the terrace
+        fact:
+          es: "Saint-Germain-des-Prés est un quartier près de la Seine. Il a deux cafés célèbres, le Café de Flore et Les Deux Magots. Ils ont plus de 130 ans."
+          en: "Saint-Germain-des-Prés is a neighbourhood near the Seine. It has two famous cafés, the Café de Flore and Les Deux Magots. They are more than 130 years old."
+      - name: Notre-Dame
+        emoji: 🔔
+        es: Les cloches de l'île de la Cité
+        en: The bells of the Île de la Cité
+        fact:
+          es: "Notre-Dame est sur l'île de la Cité. Elle rouvre en décembre 2024, après le feu de 2019. Devant, il y a le point zéro des routes de France."
+          en: "Notre-Dame is on the Île de la Cité. It reopens in December 2024, after the fire of 2019. In front of it is point zero of the roads of France."
+      - name: Le Louvre
+        emoji: 🖼️
+        es: Le sourire de la Joconde
+        en: The Mona Lisa's smile
+        fact:
+          es: "Le Louvre est un ancien palais des rois. Aujourd'hui, c'est un grand musée, avec une pyramide de verre. On y voit la Joconde de Léonard de Vinci."
+          en: "The Louvre is a former palace of the kings. Today it is a big museum, with a glass pyramid. There you can see Leonardo da Vinci's Mona Lisa."
+      - name: Les Galeries Lafayette
+        emoji: 🛍️
+        es: Shopping sous la coupole
+        en: Shopping under the dome
+        fact:
+          es: "Les Galeries Lafayette sont un grand magasin sur le boulevard Haussmann. Sous la coupole de verre, il y a un très grand sapin de Noël chaque hiver."
+          en: "The Galeries Lafayette is a department store on the Boulevard Haussmann. Under the glass dome there is a very big Christmas tree every winter."
+      - name: Le métro
+        emoji: 🚇
+        es: Sous la ville
+        en: Under the city
+        fact:
+          es: "Le métro de Paris ouvre en 1900. Aujourd'hui, il a plus de 300 stations. Certaines entrées, vertes, sont de l'artiste Hector Guimard."
+          en: "The Paris metro opens in 1900. Today it has more than 300 stations. Some entrances, painted green, are by the artist Hector Guimard."
+      - name: Le jardin du Luxembourg
+        emoji: ⛵
+        es: Un dimanche au jardin
+        en: A Sunday in the garden
+        fact:
+          es: "Le jardin du Luxembourg est un grand parc. Au centre, il y a un bassin. Les enfants poussent de petits bateaux sur l'eau. Le Sénat est dans le palais."
+          en: "The Luxembourg Garden is a big park. In the centre there is a pond. Children push little boats on the water. The Senate is in the palace."
+      - name: Les quais de Seine
+        emoji: 🌉
+        es: Le Pont Neuf n'est pas neuf
+        en: The New Bridge isn't new
+        fact:
+          es: "La Seine traverse Paris. Il y a 37 ponts dans la ville. Le plus vieux s'appelle le Pont Neuf, mais il date de 1607."
+          en: "The Seine crosses Paris. There are 37 bridges in the city. The oldest is called the Pont Neuf (“New Bridge”), but it dates from 1607."
+      - name: Les Champs-Élysées
+        emoji: 🎆
+        es: Au revoir, Paris !
+        en: Goodbye, Paris!
+        fact:
+          es: "Le 14 juillet, c'est la fête nationale. Le matin, il y a un défilé sur les Champs-Élysées. Le soir, il y a un feu d'artifice à la tour Eiffel."
+          en: "The 14th of July is the national holiday. In the morning there is a parade on the Champs-Élysées. In the evening there are fireworks at the Eiffel Tower."
+  - level: a2
+    name: Normandie, Bretagne et Loire
+    es: Falaises, menhirs et châteaux
+    stops:
+      - name: Rouen
+        emoji: ⛪
+        es: La cathédrale de Monet
+        en: Monet's cathedral
+        fact:
+          es: "Jeanne d'Arc est morte à Rouen en 1431. Plus tard, Claude Monet a peint la façade de la cathédrale plus de trente fois, à différentes heures de la journée."
+          en: "Joan of Arc died in Rouen in 1431. Later, Claude Monet painted the front of the cathedral more than thirty times, at different times of day."
+      - name: Giverny
+        emoji: 🪷
+        es: Le jardin des nymphéas
+        en: The water-lily garden
+        fact:
+          es: "Claude Monet a vécu à Giverny de 1883 jusqu'à sa mort, en 1926. Dans son jardin d'eau, il a créé un pont japonais et un étang de nymphéas, qu'il a peints environ 250 fois."
+          en: "Claude Monet lived in Giverny from 1883 until his death in 1926. In his water garden he made a Japanese bridge and a pond of water lilies, which he painted about 250 times."
+      - name: Étretat
+        emoji: 🌊
+        es: Les falaises blanches
+        en: The white cliffs
+        fact:
+          es: "À Étretat, la mer et le vent ont sculpté les falaises de craie blanche : on y voit des arches et une haute aiguille de pierre. Monet et Maupassant aimaient beaucoup cet endroit."
+          en: "At Étretat, the sea and the wind have carved the white chalk cliffs: you can see arches and a tall needle of rock. Monet and Maupassant loved this place."
+      - name: Les plages du Débarquement
+        emoji: 🕊️
+        es: Le 6 juin 1944
+        en: The 6th of June 1944
+        fact:
+          es: "Le 6 juin 1944, les soldats alliés ont débarqué sur cinq plages de Normandie : Utah, Omaha, Gold, Juno et Sword. Au cimetière américain de Colleville-sur-Mer, il y a plus de 9 000 tombes."
+          en: "On 6 June 1944, Allied soldiers landed on five beaches in Normandy: Utah, Omaha, Gold, Juno and Sword. The American cemetery at Colleville-sur-Mer has more than 9,000 graves."
+      - name: Le pays d'Auge
+        emoji: 🧀
+        es: Fromage, pommes et cidre
+        en: Cheese, apples and cider
+        fact:
+          es: "Selon la tradition, Marie Harel a créé le camembert vers 1791, dans le village de Camembert. Depuis 1890 environ, on le vend dans une boîte ronde en bois de peuplier."
+          en: "According to tradition, Marie Harel created camembert around 1791, in the village of Camembert. Since about 1890 it has been sold in a round box made of poplar wood."
+      - name: Le Mont-Saint-Michel
+        emoji: 🏰
+        es: L'île des marées
+        en: The island of the tides
+        fact:
+          es: "Le Mont-Saint-Michel est un îlot de Normandie, tout près de la Bretagne. Ses marées sont parmi les plus fortes d'Europe. L'évêque Aubert y a fondé un sanctuaire en 708."
+          en: "Mont-Saint-Michel is a small island in Normandy, very close to Brittany. Its tides are among the strongest in Europe. Bishop Aubert founded a sanctuary there in 708."
+      - name: Saint-Malo
+        emoji: 🏴‍☠️
+        es: La cité corsaire
+        en: The corsair city
+        fact:
+          es: "Saint-Malo, la « cité corsaire », est entourée de remparts. Ses corsaires attaquaient les navires ennemis avec l'accord du roi. Jacques Cartier, qui a exploré le Canada en 1534, est né ici."
+          en: "Saint-Malo, the “corsair city”, is surrounded by ramparts. Its corsairs attacked enemy ships with the king's permission. Jacques Cartier, who explored Canada in 1534, was born here."
+      - name: Quimper
+        emoji: 🥞
+        es: Galettes et crêpes
+        en: Galettes and crêpes
+        fact:
+          es: "À Quimper, comme partout en Bretagne, on mange des galettes et des crêpes. La galette est salée et faite avec du sarrasin, ou blé noir, et la crêpe, sucrée, avec du froment."
+          en: "In Quimper, as everywhere in Brittany, people eat galettes and crêpes. The galette is savoury and made with buckwheat (“black wheat”); the sweet crêpe is made with wheat flour."
+      - name: Carnac
+        emoji: 🪨
+        es: Des milliers de menhirs
+        en: Thousands of standing stones
+        fact:
+          es: "À Carnac, environ 3 000 menhirs forment de longues lignes sur quatre kilomètres. Des hommes les ont dressés il y a plus de 6 000 ans, bien avant les pyramides d'Égypte."
+          en: "At Carnac, about 3,000 standing stones form long lines over four kilometres. People raised them more than 6,000 years ago, long before the pyramids of Egypt."
+      - name: Nantes
+        emoji: 🐘
+        es: Un éléphant sur l'île
+        en: An elephant on the island
+        fact:
+          es: "Nantes a été la capitale des ducs de Bretagne. Jules Verne y est né en 1828. Aujourd'hui, sur l'île de Nantes, un éléphant mécanique de 12 mètres de haut promène les visiteurs."
+          en: "Nantes was the capital of the Dukes of Brittany. Jules Verne was born there in 1828. Today, on the Île de Nantes, a 12-metre-tall mechanical elephant gives visitors rides."
+      - name: Amboise
+        emoji: 🎨
+        es: Léonard au Clos Lucé
+        en: Leonardo at the Clos Lucé
+        fact:
+          es: "Invité par François Ier, Léonard de Vinci a passé les dernières années de sa vie au Clos Lucé, à Amboise. Il y est mort en 1519 et repose dans la chapelle du château."
+          en: "Invited by King Francis I, Leonardo da Vinci spent the last years of his life at the Clos Lucé, in Amboise. He died there in 1519 and rests in the château's chapel."
+      - name: Chambord
+        emoji: 👑
+        es: Le château du roi
+        en: The king's château
+        fact:
+          es: "François Ier a fait construire le château de Chambord à partir de 1519. Son célèbre escalier à double révolution permet à deux personnes de monter et de descendre sans jamais se croiser."
+          en: "Francis I had the château of Chambord built from 1519. Its famous double-helix staircase lets two people go up and down without ever crossing paths."
+  - level: b1
+    name: Provence et Côte d'Azur
+    es: Lavande, soleil et mer
+    stops:
+      - name: Marseille, le Vieux-Port
+        emoji: ⚓
+        es: La plus vieille ville de France
+        en: France's oldest city
+        fact:
+          es: "Fondée par des marins grecs de Phocée vers 600 avant J.-C., Marseille est considérée comme la plus ancienne ville de France. Sur le Vieux-Port, l'Ombrière, un immense miroir conçu par Norman Foster, reflète les passants depuis 2013."
+          en: "Founded by Greek sailors from Phocaea around 600 BC, Marseille is considered the oldest city in France. On the Old Port, the Ombrière, a huge mirror designed by Norman Foster, has reflected passers-by since 2013."
+      - name: Notre-Dame-de-la-Garde
+        emoji: ⛪
+        es: La Bonne Mère
+        en: The Good Mother
+        fact:
+          es: "Les Marseillais l'appellent « la Bonne Mère ». Consacrée en 1864, la basilique domine la ville du haut de sa colline, et la statue dorée de la Vierge à l'Enfant qui la surmonte mesure plus de onze mètres."
+          en: "The people of Marseille call it “the Good Mother”. Consecrated in 1864, the basilica looks down on the city from its hill, and the golden statue of the Virgin and Child on top is more than eleven metres tall."
+      - name: Les Calanques
+        emoji: 🏝️
+        es: Criques turquoise
+        en: Turquoise coves
+        fact:
+          es: "Créé en 2012, le parc national des Calanques s'étend entre Marseille et Cassis. C'est le premier parc national d'Europe à la fois terrestre, marin et périurbain. Ses criques d'eau turquoise se méritent : on y arrive à pied ou en bateau."
+          en: "Created in 2012, the Calanques National Park stretches between Marseille and Cassis. It is the first national park in Europe that is at once on land, at sea and on the edge of a city. Its turquoise coves must be earned: you arrive on foot or by boat."
+      - name: Aix-en-Provence
+        emoji: ⛲
+        es: La montagne de Cézanne
+        en: Cézanne's mountain
+        fact:
+          es: "Paul Cézanne est né à Aix-en-Provence en 1839. Il a peint la montagne Sainte-Victoire plus de quatre-vingts fois, à l'huile et à l'aquarelle. En ville, le cours Mirabeau est bordé de platanes et de fontaines."
+          en: "Paul Cézanne was born in Aix-en-Provence in 1839. He painted the Sainte-Victoire mountain more than eighty times, in oils and in watercolour. In town, the Cours Mirabeau is lined with plane trees and fountains."
+      - name: Gordes et Sénanque
+        emoji: 🪻
+        es: Les champs de lavande
+        en: The lavender fields
+        fact:
+          es: "Fondée en 1148, l'abbaye cistercienne de Sénanque, près de Gordes, abrite toujours une communauté de moines. En été, les champs de lavande qui l'entourent fleurissent, généralement de fin juin à fin juillet, avant la récolte."
+          en: "Founded in 1148, the Cistercian abbey of Sénanque, near Gordes, is still home to a community of monks. In summer the lavender fields around it bloom, usually from late June to late July, before the harvest."
+      - name: Avignon
+        emoji: 🌉
+        es: Sur le pont d'Avignon
+        en: On the bridge at Avignon
+        fact:
+          es: "De 1309 à 1377, les papes ont résidé à Avignon, dans l'immense palais des Papes. Le célèbre pont Saint-Bénézet, celui de la chanson, ne garde que quatre de ses vingt-deux arches. Chaque juillet depuis 1947, le Festival d'Avignon envahit la ville."
+          en: "From 1309 to 1377 the popes lived in Avignon, in the huge Palace of the Popes. The famous Pont Saint-Bénézet, the one in the song, has only four of its twenty-two arches left. Every July since 1947 the Avignon Festival has taken over the town."
+      - name: Arles
+        emoji: 🌻
+        es: Sur les pas de Van Gogh
+        en: In Van Gogh's footsteps
+        fact:
+          es: "Vincent van Gogh a vécu à Arles de février 1888 à mai 1889. Il y a réalisé environ 300 tableaux et dessins, dont « Les Tournesols » et « Terrasse du café le soir ». La ville conserve des arènes romaines du Ier siècle."
+          en: "Vincent van Gogh lived in Arles from February 1888 to May 1889. He made about 300 paintings and drawings there, including Sunflowers and Café Terrace at Night. The town still has a Roman arena from the 1st century."
+      - name: La Camargue
+        emoji: 🦩
+        es: Chevaux blancs et flamants roses
+        en: White horses and pink flamingos
+        fact:
+          es: "Dans le delta du Rhône, la Camargue abrite des chevaux blancs, des taureaux noirs et des milliers de flamants roses. À cheval, les gardians, les cow-boys camarguais, surveillent les troupeaux. Les poulains naissent foncés et blanchissent en grandissant."
+          en: "In the Rhône delta, the Camargue is home to white horses, black bulls and thousands of pink flamingos. On horseback, the gardians, the local cowboys, watch over the herds. The foals are born dark and turn white as they grow."
+      - name: Grasse
+        emoji: 🌸
+        es: La capitale du parfum
+        en: The perfume capital
+        fact:
+          es: "Grasse, dans l'arrière-pays de Cannes, est connue comme la capitale mondiale du parfum. Jasmin, rose centifolia et tubéreuse y poussent grâce au climat doux. Depuis 2018, les savoir-faire du parfum en pays de Grasse figurent au patrimoine culturel immatériel de l'UNESCO."
+          en: "Grasse, in the hills behind Cannes, is known as the world capital of perfume. Jasmine, centifolia rose and tuberose grow there thanks to the mild climate. Since 2018, the perfume skills of the Grasse area have been on UNESCO's list of intangible cultural heritage."
+      - name: Cannes
+        emoji: 🎬
+        es: Le tapis rouge
+        en: The red carpet
+        fact:
+          es: "Le premier Festival de Cannes a eu lieu en 1946. Chaque mois de mai, les stars montent les marches du Palais des Festivals sur le tapis rouge. La Palme d'or, créée en 1955, récompense le meilleur film."
+          en: "The first Cannes Film Festival took place in 1946. Every May, the stars climb the steps of the Palais des Festivals on the red carpet. The Palme d'Or, created in 1955, goes to the best film."
+      - name: Nice
+        emoji: 🏖️
+        es: La promenade des Anglais
+        en: The Promenade des Anglais
+        fact:
+          es: "La promenade des Anglais longe la baie des Anges sur environ sept kilomètres. Son nom vient des Anglais qui passaient l'hiver à Nice et qui ont financé un premier chemin vers 1822. Spécialité locale : la socca, une galette de pois chiches."
+          en: "The Promenade des Anglais runs along the Bay of Angels for about seven kilometres. Its name comes from the English who spent the winter in Nice and paid for a first path around 1822. Local speciality: socca, a chickpea pancake."
+      - name: Monaco
+        emoji: 🏎️
+        es: Un petit pays sur la Riviera
+        en: A tiny country on the Riviera
+        fact:
+          es: "Indépendante, la principauté de Monaco est le deuxième plus petit État du monde, après le Vatican. La famille Grimaldi y règne depuis 1297, avec quelques interruptions. Chaque année, le Grand Prix de Formule 1 se court dans ses rues étroites."
+          en: "Independent Monaco is the second-smallest state in the world, after the Vatican. The Grimaldi family has ruled it since 1297, with a few interruptions. Every year the Formula 1 Grand Prix is raced through its narrow streets."
+  - level: b2
+    name: Lyon, Alpes, Bourgogne et Alsace
+    es: Gastronomie, sommets et vignobles
+    stops:
+      - name: Lyon, le Vieux-Lyon
+        emoji: 🏘️
+        es: Le secret des traboules
+        en: The secret of the traboules
+        fact:
+          es: "Le Vieux-Lyon et la Croix-Rousse cachent des traboules, des passages qui traversent les immeubles d'une rue à l'autre. Les canuts, ouvriers de la soie, les empruntaient pour transporter leurs tissus à l'abri. Le site historique est classé à l'UNESCO depuis 1998."
+          en: "Old Lyon and the Croix-Rousse hide traboules, passages that cut through buildings from one street to the next. The canuts, the silk workers, used them to carry their cloth under cover. The historic site has been on UNESCO's list since 1998."
+      - name: Lyon, les bouchons
+        emoji: 🍽️
+        es: À table, à la lyonnaise
+        en: Dinner, Lyon style
+        fact:
+          es: "Dans les bouchons, ces petits restaurants typiquement lyonnais, on sert quenelles, andouillette et cervelle de canut, un fromage blanc aux herbes. Non loin de Lyon, à Collonges, le restaurant de Paul Bocuse a gardé ses trois étoiles Michelin de 1965 à 2020."
+          en: "In the bouchons, small restaurants typical of Lyon, they serve quenelles, andouillette and cervelle de canut (“silk worker's brain”), a soft cheese with herbs. Near Lyon, in Collonges, Paul Bocuse's restaurant kept its three Michelin stars from 1965 to 2020."
+      - name: Lyon, la Fête des Lumières
+        emoji: 🕯️
+        es: Le 8 décembre
+        en: The 8th of December
+        fact:
+          es: "Le 8 décembre 1852, pour l'inauguration d'une statue de la Vierge sur la colline de Fourvière, les Lyonnais ont posé des lumignons sur leurs fenêtres. Cette tradition est devenue la Fête des Lumières, qui attire chaque année des centaines de milliers de visiteurs."
+          en: "On 8 December 1852, for the unveiling of a statue of the Virgin on Fourvière hill, the people of Lyon put little candles in their windows. The tradition became the Festival of Lights, which draws hundreds of thousands of visitors every year."
+      - name: Annecy
+        emoji: 🦢
+        es: Le lac le plus pur
+        en: The purest lake
+        fact:
+          es: "À Annecy, le Palais de l'Isle, construit au XIIe siècle sur un îlot au milieu du canal du Thiou, a longtemps servi de prison. Grâce à un collecteur d'égouts bâti à partir des années 1960, le lac d'Annecy compte parmi les plus purs d'Europe."
+          en: "In Annecy, the Palais de l'Isle, built in the 12th century on an islet in the middle of the Thiou canal, long served as a prison. Thanks to a sewer main built from the 1960s on, Lake Annecy is among the cleanest in Europe."
+      - name: Chamonix et le mont Blanc
+        emoji: 🏔️
+        es: Le toit des Alpes
+        en: The roof of the Alps
+        fact:
+          es: "Le mont Blanc, qui culmine à plus de 4 800 mètres, est le plus haut sommet des Alpes. Jacques Balmat et Michel-Gabriel Paccard l'ont gravi pour la première fois en 1786, depuis Chamonix. En 1924, la ville a accueilli les premiers Jeux olympiques d'hiver."
+          en: "Mont Blanc, which rises to more than 4,800 metres, is the highest peak in the Alps. Jacques Balmat and Michel-Gabriel Paccard first climbed it in 1786, from Chamonix. In 1924 the town hosted the first Winter Olympic Games."
+      - name: Grenoble
+        emoji: 🚡
+        es: Les bulles de la Bastille
+        en: The Bastille bubbles
+        fact:
+          es: "Ouvert en 1934, le téléphérique de la Bastille, à Grenoble, est l'un des premiers téléphériques urbains du monde. Ses cabines sphériques, surnommées « les bulles », relient le centre-ville au fort de la Bastille, d'où l'on aperçoit le mont Blanc par temps clair."
+          en: "Opened in 1934, the Bastille cable car in Grenoble is one of the first urban cable cars in the world. Its round cabins, nicknamed “the bubbles”, link the city centre with the Bastille fort, from where you can see Mont Blanc on a clear day."
+      - name: Dijon
+        emoji: 🦉
+        es: Moutarde et chouette
+        en: Mustard and an owl
+        fact:
+          es: "Depuis 1937, « moutarde de Dijon » désigne une recette, pas une origine : la plupart des graines viennent du Canada. Sur l'église Notre-Dame, on caresse de la main gauche une petite chouette sculptée pour avoir de la chance."
+          en: "Since 1937, “Dijon mustard” has meant a recipe, not a place of origin: most of the seeds come from Canada. On the church of Notre-Dame, people stroke a small carved owl with their left hand for luck."
+      - name: Beaune
+        emoji: 🍷
+        es: Les toits des Hospices
+        en: The roofs of the Hospices
+        fact:
+          es: "Fondés en 1443 par le chancelier Nicolas Rolin, les Hospices de Beaune sont célèbres pour leurs toits de tuiles vernissées multicolores. Chaque troisième dimanche de novembre, leur vente aux enchères de vins finance l'hôpital et des œuvres caritatives."
+          en: "Founded in 1443 by Chancellor Nicolas Rolin, the Hospices de Beaune are famous for their roofs of multicoloured glazed tiles. Every third Sunday in November, their wine auction raises money for the hospital and for charity."
+      - name: Cluny
+        emoji: ⛪
+        es: L'abbaye qui régnait sur l'Europe
+        en: The abbey that ruled over Europe
+        fact:
+          es: "Fondée en 910, l'abbaye de Cluny a dirigé un réseau de plus d'un millier de monastères à travers l'Europe. Son immense église, Cluny III, est restée la plus grande église de la chrétienté jusqu'à la reconstruction de Saint-Pierre de Rome, au XVIe siècle."
+          en: "Founded in 910, the abbey of Cluny led a network of more than a thousand monasteries across Europe. Its huge church, Cluny III, remained the largest church in Christendom until St Peter's in Rome was rebuilt in the 16th century."
+      - name: Strasbourg
+        emoji: 🎄
+        es: La capitale de Noël
+        en: The capital of Christmas
+        fact:
+          es: "Haute de 142 mètres, la cathédrale de Strasbourg a été le plus haut édifice du monde de 1647 à 1874. À ses pieds se tient depuis 1570 le Christkindelsmärik, l'un des plus anciens marchés de Noël d'Europe. La ville accueille aussi le Parlement européen."
+          en: "At 142 metres, Strasbourg Cathedral was the tallest building in the world from 1647 to 1874. At its feet, the Christkindelsmärik, one of the oldest Christmas markets in Europe, has been held since 1570. The city is also home to the European Parliament."
+      - name: Colmar
+        emoji: 🗽
+        es: La Petite Venise
+        en: Little Venice
+        fact:
+          es: "Colmar est la ville natale d'Auguste Bartholdi, le sculpteur de la statue de la Liberté de New York. Dans le quartier de la Petite Venise, on se promène en barque sur la Lauch, entre des maisons à colombages colorées."
+          en: "Colmar is the birthplace of Auguste Bartholdi, the sculptor of the Statue of Liberty in New York. In the Little Venice quarter, you can take a boat along the Lauch, between colourful half-timbered houses."
+      - name: Riquewihr et la route des vins
+        emoji: 🍇
+        es: Entre vignes et villages
+        en: Between vineyards and villages
+        fact:
+          es: "Riquewihr a conservé ses remparts et ses maisons des XVIe et XVIIe siècles au milieu des vignes. Elle se trouve sur la route des vins d'Alsace, inaugurée en 1953, qui serpente sur environ 170 kilomètres de Marlenheim à Thann."
+          en: "Riquewihr has kept its ramparts and its 16th- and 17th-century houses in the middle of the vineyards. It lies on the Alsace Wine Route, opened in 1953, which winds for about 170 kilometres from Marlenheim to Thann."
+  - level: c1
+    name: Sud-Ouest et Corse
+    es: Océan, montagnes et cités de pierre
+    stops:
+      - name: Bordeaux
+        emoji: 🪞
+        es: Le port de la Lune
+        en: The Port of the Moon
+        fact:
+          es: "Bordeaux, surnommée « port de la Lune » à cause du croissant que forme la Garonne, est inscrite au patrimoine mondial depuis 2007. Face à la place de la Bourse, le miroir d'eau, inauguré en 2006, reflète les façades du XVIIIe siècle."
+          en: "Bordeaux, nicknamed the “Port of the Moon” because of the crescent the Garonne forms, has been a World Heritage Site since 2007. Opposite the Place de la Bourse, the water mirror, opened in 2006, reflects the 18th-century façades."
+      - name: Saint-Émilion
+        emoji: 🍷
+        es: Un vignoble au patrimoine mondial
+        en: A vineyard with World Heritage status
+        fact:
+          es: "En 1999, la juridiction de Saint-Émilion est devenue le premier vignoble inscrit au patrimoine mondial de l'UNESCO en tant que paysage culturel. Sous le village, l'église monolithe, creusée dans le calcaire aux XIe et XIIe siècles, est l'une des plus grandes églises souterraines d'Europe."
+          en: "In 1999 the Jurisdiction of Saint-Émilion became the first vineyard on UNESCO's World Heritage list as a cultural landscape. Under the village, the monolithic church, carved out of the limestone in the 11th and 12th centuries, is one of the largest underground churches in Europe."
+      - name: La dune du Pilat
+        emoji: 🏜️
+        es: Une montagne de sable
+        en: A mountain of sand
+        fact:
+          es: "À l'entrée du bassin d'Arcachon, la dune du Pilat, haute d'environ 100 mètres, est la plus haute dune d'Europe. Poussée par les vents d'ouest, elle avance de un à cinq mètres par an vers l'intérieur des terres, avalant la forêt de pins."
+          en: "At the mouth of the Arcachon basin, the Dune du Pilat, about 100 metres high, is the tallest dune in Europe. Pushed by the westerly winds, it moves one to five metres inland every year, swallowing the pine forest."
+      - name: Biarritz
+        emoji: 🏄
+        es: Les vagues de la côte basque
+        en: The waves of the Basque coast
+        fact:
+          es: "Lancée par l'impératrice Eugénie et Napoléon III vers 1854, Biarritz est devenue une station balnéaire à la mode. En 1957, le scénariste Peter Viertel y a fait découvrir le surf : la ville se présente depuis comme le berceau du surf européen."
+          en: "Made fashionable by Empress Eugénie and Napoleon III around 1854, Biarritz became a stylish seaside resort. In 1957 the American screenwriter Peter Viertel introduced surfing there, and the town has called itself the birthplace of European surfing ever since."
+      - name: Espelette
+        emoji: 🌶️
+        es: Le village des piments
+        en: The village of chillies
+        fact:
+          es: "À Espelette, Ezpeleta en basque, les façades se couvrent à l'automne de guirlandes de piments rouges qui sèchent au soleil. Rapporté du Nouveau Monde, le piment d'Espelette bénéficie d'une AOC depuis 2000."
+          en: "In Espelette, Ezpeleta in Basque, the house fronts are covered in autumn with strings of red chillies drying in the sun. Brought back from the New World, the Espelette pepper has had a protected designation (AOC) since 2000."
+      - name: Le pic du Midi
+        emoji: 🔭
+        es: Les étoiles des Pyrénées
+        en: The stars of the Pyrenees
+        fact:
+          es: "Perché à 2 877 mètres dans les Pyrénées, l'observatoire du Pic du Midi scrute le ciel depuis la fin du XIXe siècle. Dans les années 1960, ses télescopes ont photographié la Lune pour préparer les missions Apollo de la NASA."
+          en: "Perched at 2,877 metres in the Pyrenees, the Pic du Midi observatory has been watching the sky since the late 19th century. In the 1960s its telescopes photographed the Moon to prepare NASA's Apollo missions."
+      - name: Toulouse
+        emoji: 🚀
+        es: La Ville rose
+        en: The Pink City
+        fact:
+          es: "On surnomme Toulouse « la Ville rose » à cause de la brique de terre cuite de ses bâtiments. Elle abrite des chaînes d'assemblage d'Airbus et la Cité de l'espace, où se dresse une réplique grandeur nature de la fusée Ariane 5."
+          en: "Toulouse is nicknamed “the Pink City” because of the terracotta brick of its buildings. It is home to Airbus assembly lines and the Cité de l'espace, where a full-size replica of the Ariane 5 rocket stands."
+      - name: Carcassonne
+        emoji: 🏰
+        es: La cité aux 52 tours
+        en: The city of 52 towers
+        fact:
+          es: "La Cité de Carcassonne compte deux enceintes, 52 tours et environ trois kilomètres de remparts. Au XIXe siècle, l'architecte Viollet-le-Duc l'a restaurée en la coiffant de toits pointus d'ardoise, un choix longtemps critiqué. Elle est classée à l'UNESCO depuis 1997."
+          en: "The Cité of Carcassonne has two rings of walls, 52 towers and about three kilometres of ramparts. In the 19th century the architect Viollet-le-Duc restored it, topping it with pointed slate roofs, a choice criticised for a long time. It has been on UNESCO's list since 1997."
+      - name: Bonifacio
+        emoji: 🪨
+        es: Une ville au bord du vide
+        en: A town on the edge
+        fact:
+          es: "Bonifacio est perchée sur des falaises de calcaire blanc qui surplombent la mer de plus de 60 mètres. Par beau temps, on aperçoit la Sardaigne, à une douzaine de kilomètres seulement, de l'autre côté des Bouches de Bonifacio."
+          en: "Bonifacio sits on white limestone cliffs more than 60 metres above the sea. On a clear day you can see Sardinia, only about a dozen kilometres away, across the Strait of Bonifacio."
+      - name: Ajaccio
+        emoji: 🎖️
+        es: La ville natale de Napoléon
+        en: Napoleon's birthplace
+        fact:
+          es: "Napoléon Bonaparte est né à Ajaccio le 15 août 1769, un an seulement après la cession de la Corse à la France par la république de Gênes. Sa maison natale est aujourd'hui un musée national. On y parle français et corse."
+          en: "Napoleon Bonaparte was born in Ajaccio on 15 August 1769, only a year after the Republic of Genoa handed Corsica over to France. His birthplace is now a national museum. People there speak French and Corsican."
+  - level: c2
+    name: Francophonie
+    es: Le français autour du monde
+    stops:
+      - name: Bruxelles
+        emoji: 🧇
+        es: Septante, nonante et gaufres
+        en: Septante, nonante and waffles
+        fact:
+          es: "À Bruxelles, le français et le néerlandais sont langues officielles, et l'on y dit septante et nonante. Sur la Grand-Place, classée à l'UNESCO depuis 1998, se dresse l'hôtel de ville gothique ; tout près, le Manneken-Pis possède plus de mille costumes."
+          en: "In Brussels, French and Dutch are both official languages, and people say septante and nonante (seventy, ninety). On the Grand-Place, on UNESCO's list since 1998, stands the Gothic town hall; nearby, the Manneken Pis owns more than a thousand costumes."
+      - name: Genève
+        emoji: ⛲
+        es: La ville de la paix
+        en: The city of peace
+        fact:
+          es: "Genève accueille le siège européen des Nations unies et le Comité international de la Croix-Rouge, fondé en 1863. Son Jet d'eau projette l'eau à 140 mètres. En Suisse romande, on dit septante et nonante ; dans le canton de Vaud, huitante."
+          en: "Geneva hosts the European headquarters of the United Nations and the International Committee of the Red Cross, founded in 1863. Its Jet d'Eau shoots water 140 metres high. In French-speaking Switzerland people say septante and nonante; in the canton of Vaud, huitante (eighty)."
+      - name: Dakar
+        emoji: 🌍
+        es: La pointe de l'Afrique
+        en: The tip of Africa
+        fact:
+          es: "Capitale du Sénégal, Dakar occupe la presqu'île du Cap-Vert, dont la pointe des Almadies est l'extrémité occidentale de l'Afrique continentale. Le français, langue officielle, y côtoie le wolof. L'île de Gorée, mémoire de la traite atlantique, est classée à l'UNESCO depuis 1978."
+          en: "The capital of Senegal, Dakar sits on the Cap-Vert peninsula, whose Pointe des Almadies is the westernmost point of mainland Africa. French, the official language, lives side by side with Wolof. Gorée Island, a memorial of the Atlantic slave trade, has been on UNESCO's list since 1978."
+      - name: Kinshasa
+        emoji: 🎶
+        es: Deux capitales face à face
+        en: Two capitals face to face
+        fact:
+          es: "Kinshasa, capitale de la RD Congo, compte plus de 15 millions d'habitants : on la présente souvent comme la plus grande ville francophone du monde. En face, sur l'autre rive du fleuve Congo, se trouve Brazzaville, capitale de la république du Congo."
+          en: "Kinshasa, capital of the DR Congo, has more than 15 million inhabitants and is often described as the largest French-speaking city in the world. Opposite, on the other bank of the Congo River, lies Brazzaville, capital of the Republic of the Congo."
+      - name: Fort-de-France, Martinique
+        emoji: 🌋
+        es: Le pays de Césaire
+        en: Césaire's country
+        fact:
+          es: "En Martinique, on parle français et créole. Aimé Césaire, poète de la négritude né à Basse-Pointe en 1913, a été maire de Fort-de-France pendant 56 ans. Au nord, la montagne Pelée a détruit la ville de Saint-Pierre en 1902."
+          en: "In Martinique people speak French and Creole. Aimé Césaire, poet of Négritude, born in Basse-Pointe in 1913, was mayor of Fort-de-France for 56 years. In the north, Mount Pelée destroyed the town of Saint-Pierre in 1902."
+      - name: Lafayette, Louisiane
+        emoji: 🎻
+        es: Les Cadiens
+        en: The Cajuns
+        fact:
+          es: "En 1755, les Britanniques ont déporté des milliers d'Acadiens : c'est le Grand Dérangement. Beaucoup se sont installés en Louisiane, où certains de leurs descendants, les Cadiens, parlent encore un français bien à eux. Depuis 2018, la Louisiane est membre observateur de l'OIF."
+          en: "In 1755 the British deported thousands of Acadians: the Great Upheaval. Many settled in Louisiana, where some of their descendants, the Cajuns, still speak a French all their own. Since 2018 Louisiana has been an observer member of the International Organisation of La Francophonie."
+      - name: Montréal
+        emoji: 🏒
+        es: La ville sous la ville
+        en: The city beneath the city
+        fact:
+          es: "Fondée en 1642 sous le nom de Ville-Marie, Montréal est une métropole où l'on passe souvent du français à l'anglais. L'hiver, on circule à l'abri du froid dans la ville souterraine, le RÉSO, qui compte plus de 30 kilomètres de tunnels."
+          en: "Founded in 1642 as Ville-Marie, Montréal is a city where people often switch between French and English. In winter you can get around out of the cold in the underground city, the RÉSO, with more than 30 kilometres of tunnels."
+      - name: Québec
+        emoji: ⚜️
+        es: Je me souviens
+        en: I remember
+        fact:
+          es: "Fondée par Samuel de Champlain en 1608, Québec est la seule ville au nord du Mexique à avoir conservé ses remparts. Le Vieux-Québec est classé à l'UNESCO depuis 1985, et la devise « Je me souviens » orne les plaques d'immatriculation québécoises."
+          en: "Founded by Samuel de Champlain in 1608, Québec City is the only city north of Mexico that has kept its ramparts. Old Québec has been on UNESCO's list since 1985, and the motto “Je me souviens” (I remember) appears on Québec licence plates."
+souvenirs:
+  # ---- A1: Paris
+  - id: beret
+    level: a1
+    emoji: 🧢
+    es: un béret
+    en: a beret
+    blurb: "Black, woolly and tilted just so. Leo wears it to look like a painter in Montmartre."
+    slot: hat
+  - id: foulard-soie
+    level: a1
+    emoji: 🧣
+    es: un foulard en soie
+    en: a silk scarf
+    blurb: "Knotted the Parisian way, effortlessly. Luna took twenty minutes to make it look effortless."
+    slot: neck
+  - id: croissant
+    level: a1
+    emoji: 🥐
+    es: un croissant
+    en: a croissant
+    blurb: "Still warm from the boulangerie, flakes everywhere. Bonchita leaves a trail of crumbs across Paris."
+    slot: mouth
+  - id: baguette
+    level: a1
+    emoji: 🥖
+    es: une baguette
+    en: a baguette
+    blurb: "Carried under the arm like a real Parisian, or in the mouth like a real dog. The end is always missing."
+    slot: mouth
+  - id: macaron
+    level: a1
+    emoji: 🍪
+    es: un macaron
+    en: a macaron
+    blurb: "Pistachio, raspberry, salted caramel. Luna only wanted to sniff it; the box is somehow empty."
+    slot: mouth
+  - id: tour-eiffel
+    level: a1
+    emoji: 🗼
+    es: une tour Eiffel miniature
+    en: a mini Eiffel Tower
+    blurb: "Bought from a stall at the Trocadéro. Leo holds it up to the real one to compare."
+    slot: paw
+  # ---- A2: Normandy, Brittany and the Loire
+  - id: mariniere
+    level: a2
+    emoji: 👕
+    es: une marinière
+    en: a Breton striped top
+    blurb: "Blue and white stripes, first worn by sailors. Leo says he can feel the sea breeze already."
+    slot: neck
+  - id: coiffe-bigoudene
+    level: a2
+    emoji: 👒
+    es: une coiffe bigoudène
+    en: a Bigouden lace headdress
+    blurb: "A tall tower of white lace from the Pays Bigouden, near Quimper. Bonchita wears it for the festival and gains thirty centimetres."
+    slot: hat
+  - id: crepe-bretonne
+    level: a2
+    emoji: 🥞
+    es: une crêpe bretonne
+    en: a Breton crêpe
+    blurb: "Butter and sugar, folded in four, eaten in two bites. Bonchita asks for a second one with salted caramel."
+    slot: mouth
+  - id: camembert
+    level: a2
+    emoji: 🧀
+    es: un camembert
+    en: a camembert
+    blurb: "In its round wooden box, ripe and proud of it. Luna can smell it from three streets away."
+    slot: mouth
+  - id: triskell
+    level: a2
+    emoji: 🌀
+    es: un pendentif triskell
+    en: a triskelion pendant
+    blurb: "Three spirals, the old Celtic symbol of Brittany. Luna wears it for luck on the windy coast."
+    slot: neck
+  - id: mont-saint-michel
+    level: a2
+    emoji: 🏰
+    es: une boule à neige du Mont-Saint-Michel
+    en: a Mont-Saint-Michel snow globe
+    blurb: "Shake it and the tide comes in. Leo shakes it a lot."
+  # ---- B1: Provence and the Riviera
+  - id: sachet-lavande
+    level: b1
+    emoji: 🪻
+    es: un sachet de lavande
+    en: a lavender sachet
+    blurb: "A little cloth bag of dried lavender from the Luberon. Luna wears it on her collar and smells like a summer field."
+    slot: neck
+  - id: savon-marseille
+    level: b1
+    emoji: 🧼
+    es: un savon de Marseille
+    en: a block of Marseille soap
+    blurb: "A green cube of olive-oil soap, stamped on every side. Leo carries it everywhere and hopes nobody uses it on him."
+    slot: paw
+  - id: boule-petanque
+    level: b1
+    emoji: 🎱
+    es: une boule de pétanque
+    en: a pétanque ball
+    blurb: "Pétanque was born in La Ciotat in 1907. Leo has not understood that you are not supposed to fetch the ball."
+    slot: paw
+  - id: calisson
+    level: b1
+    emoji: 🍬
+    es: un calisson d'Aix
+    en: a calisson from Aix
+    blurb: "Almond paste and candied melon under a layer of white icing, shaped like an eye. Bonchita winks back at it before eating it."
+    slot: mouth
+  - id: chapeau-gardian
+    level: b1
+    emoji: 🤠
+    es: un chapeau de gardian
+    en: a Camargue cowboy hat
+    blurb: "Wide black felt, made for riding among the bulls and flamingos. Bonchita rides nothing, but looks the part."
+    slot: hat
+  - id: santon
+    level: b1
+    emoji: 🧑‍🌾
+    es: un santon de Provence
+    en: a Provençal santon figurine
+    blurb: "A little clay villager for the Christmas crib. Luna lines them up and counts them every evening."
+  # ---- B2: Lyon, the Alps, Burgundy and Alsace
+  - id: edelweiss
+    level: b2
+    emoji: 🤍
+    es: un edelweiss
+    en: an edelweiss
+    blurb: "The woolly white star of the high Alps (a souvenir-shop one: the wild ones stay on the mountain). Luna tucks it behind her ear."
+    slot: hat
+  - id: bretzel
+    level: b2
+    emoji: 🥨
+    es: un bretzel
+    en: a pretzel
+    blurb: "Shiny, salty and knotted, straight from an Alsace bakery. Bonchita tries to untie it with her teeth."
+    slot: mouth
+  - id: cloche-savoyarde
+    level: b2
+    emoji: 🔔
+    es: une cloche savoyarde
+    en: a Savoy cowbell
+    blurb: "The bell the cows wear in the Alpine pastures. Leo wears it too, so nobody ever loses him again."
+    slot: neck
+  - id: guignol
+    level: b2
+    emoji: 🎭
+    es: une marionnette de Guignol
+    en: a Guignol puppet
+    blurb: "Lyon's famous puppet, a cheeky silk worker born around 1808. Leo puts on shows for the other two."
+    slot: paw
+  - id: moutarde-dijon
+    level: b2
+    emoji: 🫙
+    es: un pot de moutarde de Dijon
+    en: a jar of Dijon mustard
+    blurb: "Strong enough to make your nose tingle. Bonchita sniffed it once and has kept her distance ever since."
+  - id: cigogne
+    level: b2
+    emoji: 🪶
+    es: une cigogne en peluche
+    en: a cuddly stork
+    blurb: "The stork is the symbol of Alsace and nests on the rooftops. Luna sleeps with this one."
+  # ---- C1: the Southwest and Corsica
+  - id: beret-basque
+    level: c1
+    emoji: 🧢
+    es: un béret basque
+    en: a Basque beret
+    blurb: "A big black txapela, the kind worn at Basque festivals and pelota matches. On Bonchita it covers most of her ears."
+    slot: hat
+  - id: espadrilles
+    level: c1
+    emoji: 🩴
+    es: une paire d'espadrilles
+    en: a pair of espadrilles
+    blurb: "Canvas tops and rope soles, made in Mauléon, the espadrille capital. Leo wants a pair for each end."
+    slot: paw
+  - id: canele
+    level: c1
+    emoji: 🧁
+    es: un canelé de Bordeaux
+    en: a canelé from Bordeaux
+    blurb: "Caramelised outside, soft inside, scented with rum and vanilla. Bonchita calls it a little bell you can eat."
+    slot: mouth
+  - id: foulard-rouge
+    level: c1
+    emoji: 🟥
+    es: un foulard rouge des fêtes de Bayonne
+    en: a red scarf from the Bayonne festival
+    blurb: "Everyone dresses in white and red for the fêtes de Bayonne in summer. Luna matches perfectly."
+    slot: neck
+  - id: violettes-toulouse
+    level: c1
+    emoji: 💜
+    es: une boîte de violettes de Toulouse
+    en: a box of Toulouse violets
+    blurb: "Crystallised violet flowers, the sweet emblem of the Pink City. Too pretty to eat, says Luna, who eats one anyway."
+  # ---- C2: the French-speaking world
+  - id: gaufre-bruxelles
+    level: c2
+    emoji: 🧇
+    es: une gaufre de Bruxelles
+    en: a Brussels waffle
+    blurb: "Light, crisp and rectangular, with deep squares for the sugar. Bonchita fits her whole nose in one square."
+    slot: mouth
+  - id: madras
+    level: c2
+    emoji: 🧣
+    es: un foulard en madras
+    en: a madras headscarf
+    blurb: "Bright checked cotton from the Antilles, tied the Martinique way. Luna has never looked so elegant."
+    slot: neck
+  - id: sirop-erable
+    level: c2
+    emoji: 🍁
+    es: un sirop d'érable du Québec
+    en: a bottle of Québec maple syrup
+    blurb: "Québec makes most of the world's maple syrup, boiled down in the sugar shacks every spring. Leo guards the bottle with both paws."
+    slot: paw
+  - id: tuque
+    level: c2
+    emoji: 🧶
+    es: une tuque
+    en: a Québec woolly hat
+    blurb: "In Québec a bobble hat is a tuque, and at minus twenty you will want one. Bonchita refuses to take hers off."
+    slot: hat
+  - id: ceinture-flechee
+    level: c2
+    emoji: 🎀
+    es: une ceinture fléchée
+    en: an arrow sash
+    blurb: "The colourful woven sash of the voyageurs, worn by Bonhomme at the Québec Winter Carnival. Leo wears it as a scarf."
+    slot: neck
+  - id: passeport-tamponne
+    level: c2
+    emoji: 🛂
+    es: un passeport plein de tampons
+    en: a passport full of stamps
+    blurb: "Paris to Québec, one stamp per stop. Luna reads it every night before sleeping."
+    slot: paw

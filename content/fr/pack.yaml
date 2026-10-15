@@ -6,7 +6,10 @@ sourceLanguage: en
 variety:
   default: fr-FR
   label: Standard French (France)
-  alternatives: [fr-CA, fr-BE, fr-CH]
+  alternatives:
+    - { code: fr-CA, label: Québec French }
+    - { code: fr-BE, label: Belgian French }
+    - { code: fr-CH, label: Swiss French }
 tts:
   lang: fr-FR
   preferredVoices:

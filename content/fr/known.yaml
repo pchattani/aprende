@@ -1,0 +1,80 @@
+# Words treated as known at every level (function words), and proper nouns / place names
+# that may appear in any text. Used by the content checker and the journey test.
+# Elided forms are listed both with and without the apostrophe, so either tokenisation works.
+# Entries in `always` and `facts` are lowercase.
+always: [
+  # articles, partitives and contractions
+  le, la, les, l, "l'", un, une, des, du, de, d, "d'", au, aux,
+  # prepositions
+  à, en, dans, sur, sous, avec, sans, pour, par, chez, entre, vers, contre,
+  # subject, object and stressed pronouns
+  je, j, "j'", tu, il, elle, on, nous, vous, ils, elles,
+  me, m, "m'", te, t, "t'", se, s, "s'", lui, leur, y,
+  moi, toi, soi, eux, ce, c, "c'", ça, cela, ceci,
+  # relatives and question words
+  qui, que, qu, "qu'", quoi, où, quand, comment, pourquoi, combien, quel, quelle, quels, quelles,
+  # être / avoir / c'est / il y a
+  suis, es, est, sommes, êtes, sont, ai, as, a, avons, avez, ont, "c'est", "n'est", "qu'il", "qu'elle", "s'il",
+  # negation, yes/no
+  ne, n, "n'", pas, non, oui, si,
+  # conjunctions and common adverbs
+  et, ou, mais, donc, car, ni, comme, puis, aussi, très, bien, plus, moins, ici, là, déjà, encore,
+  jusqu, "jusqu'", lorsqu, "lorsqu'", puisqu, "puisqu'", quelqu, "quelqu'",
+  # determiners and possessives
+  mon, ma, mes, ton, ta, tes, son, sa, ses, notre, nos, votre, vos, leurs,
+  cet, cette, ces, tout, toute, tous, toutes,
+  ]
+# Common nouns (and a few other words) allowed in A1 stop facts beyond the A1 word list.
+facts: [
+  aéroport, aéroports, ancien, ancienne, année, années, an, ans, basilique, bassin, bateau, bateaux,
+  blanc, blanche, boulevard, café, cafés, centre, chaque, colline, coupole, célèbre, célèbres,
+  artifice, "d'artifice", date, dehors, devant, décembre, défilé, enfants, entrée, entrées, environ,
+  fer, feu, fête, haut, hiver, jardin, juillet, kilomètre, kilomètres, km, artiste, "l'artiste",
+  eau, "l'eau", exposition, "l'exposition", île, "l'île", magasin, maison, maisons, matin, mesure,
+  millions, musée, musées, mètre, mètres, métro, nationale, national, nom, nord, ouvre, rouvre,
+  palais, parc, peintre, peintres, personnes, petit, petite, petits, petites, place, point, pont, ponts,
+  poussent, président, près, pyramide, quartier, roi, rois, route, routes, rue, rues, appelle, "s'appelle",
+  sapin, soir, station, stations, tour, traverse, travaillent, universelle, verre, vert, verte, vertes,
+  vieux, vieil, vieille, vieilles, ville, visitent, voit, zéro, certaines, certains,
+  aujourd, "aujourd'hui", hui, après, grand, grande, deux, trois, six, "d'un", "d'une",
+  ]
+# Proper nouns, place names and name particles that may appear anywhere.
+names: [
+  France, Paris, Leo, Bonchita, Luna,
+  # Paris
+  Roissy, Charles, Gaulle, Charles-de-Gaulle, Eiffel, Montmartre, Sacré-Cœur, Tertre, Marais, Vosges,
+  Saint-Germain-des-Prés, Seine, Flore, Magots, Notre-Dame, Cité, Louvre, Joconde, Léonard, Vinci,
+  Galeries, Lafayette, Haussmann, Noël, Hector, Guimard, Luxembourg, Sénat, Pont, Neuf, Champs-Élysées,
+  Trocadéro, Bastille, Belleville, Pigalle, Marseillaise,
+  # Normandy, Brittany and the Loire
+  Normandie, Bretagne, Loire, Rouen, Jeanne, Arc, Claude, Monet, Giverny, Étretat, Maupassant,
+  Utah, Omaha, Gold, Juno, Sword, Colleville-sur-Mer, Auge, Camembert, Marie, Harel,
+  Mont-Saint-Michel, Aubert, Saint-Malo, Jacques, Cartier, Canada, Quimper, Carnac, Égypte,
+  Nantes, Jules, Verne, Amboise, Clos, Lucé, François, Ier, Chambord, Rennes, Tours, Blois, Chenonceau,
+  # Provence and the Riviera
+  Provence, Côte, Azur, Marseille, Phocée, Ombrière, Norman, Foster, Garde, Calanques, Cassis,
+  Aix-en-Provence, Aix, Cézanne, Sainte-Victoire, Mirabeau, Gordes, Sénanque, Luberon, Avignon,
+  Saint-Bénézet, Arles, Vincent, Gogh, Camargue, Rhône, Grasse, Cannes, Nice, Anges, Monaco, Grimaldi,
+  Ciotat,
+  # Lyon, the Alps, Burgundy and Alsace
+  Lyon, Vieux-Lyon, Croix-Rousse, Fourvière, Bocuse, Collonges, Guignol, Alpes, Annecy, Thiou,
+  Chamonix, Blanc, Balmat, Paccard, Grenoble, Bourgogne, Dijon, Beaune, Rolin, Cluny, Alsace,
+  Strasbourg, Christkindelsmärik, Colmar, Bartholdi, Lauch, Riquewihr, Marlenheim, Thann, Savoie,
+  # the Southwest and Corsica
+  Sud-Ouest, Bordeaux, Garonne, Saint-Émilion, Arcachon, Pilat, Landes, Biarritz, Eugénie, Napoléon,
+  Bayonne, Espelette, Ezpeleta, Pyrénées, Midi, Toulouse, Airbus, Ariane, Carcassonne, Viollet-le-Duc,
+  Corse, Bonifacio, Sardaigne, Ajaccio, Bonaparte, Gênes, Lourdes, Pau, Basque, Basques,
+  # the French-speaking world
+  Francophonie, Bruxelles, Belgique, Wallonie, Manneken-Pis, Grand-Place, Genève, Suisse, Léman, Vaud,
+  Lausanne, Dakar, Sénégal, Almadies, Cap-Vert, Gorée, Senghor, Kinshasa, Congo, Brazzaville,
+  Martinique, Guadeloupe, Antilles, Haïti, Fort-de-France, Césaire, Aimé, Basse-Pointe, Pelée,
+  Saint-Pierre, Louisiane, Lafayette, Acadie, Acadiens, Cadiens, Montréal, Ville-Marie, RÉSO,
+  Québec, Vieux-Québec, Champlain, Samuel, Frontenac, Laurent,
+  # continents and countries often mentioned
+  Europe, Afrique, Amérique, Asie, Angleterre, Allemagne, Espagne, Italie, Portugal, États-Unis,
+  Mexique, Japon, Chine, Maroc, Algérie, Tunisie, Londres, Rome, Madrid, Berlin, New, York,
+  # writers in the readers
+  La, Fontaine, Molière, Hugo, Victor, Flaubert, Baudelaire, Verlaine, Rimbaud, Apollinaire, Proust,
+  # name particles
+  "d'", de, du, des, la, le,
+  ]

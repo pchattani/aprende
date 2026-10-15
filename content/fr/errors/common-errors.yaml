@@ -1,0 +1,371 @@
+# Learner-error patterns for the writing checker. Patterns are JavaScript
+# regexes (flags giu) applied to the lowercased text. Keep them tight to avoid
+# false positives. \b is ASCII-only in JavaScript, so the patterns use
+# (?<![\p{L}'’]) and (?!\p{L}) as word boundaries, and ['’] for apostrophes.
+rules:
+  # ---- avoir, not être
+  - id: etre-age
+    pattern: '(?<![\p{L}''’])(je suis|tu es|il est|elle est|on est|nous sommes|vous êtes|ils sont|elles sont) (\d+|un|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt[\p{L}-]*|trente[\p{L}-]*|quarante[\p{L}-]*|cinquante[\p{L}-]*|soixante[\p{L}-]*|quatre-vingt[\p{L}-]*|cent) ans(?!\p{L})'
+    message: "Age is expressed with avoir: j'ai vingt ans (I have twenty years)."
+    grammar: g.avoir-expressions
+    example: { wrong: "je suis vingt ans", right: "j'ai vingt ans" }
+  - id: etre-faim
+    pattern: '(?<![\p{L}''’])(je suis|tu es|nous sommes|vous êtes) (faim|soif|froid|chaud|peur|sommeil|raison|tort|besoin)(?!\p{L})|(?<![\p{L}''’])(il est|elle est|on est|ils sont|elles sont) (faim|soif|peur|sommeil|raison|tort|besoin)(?!\p{L})'
+    message: "Hunger, thirst, fear, feeling cold or hot, being right and needing take avoir: j'ai faim, j'ai froid, tu as raison."
+    grammar: g.avoir-expressions
+    example: { wrong: "je suis faim", right: "j'ai faim" }
+  - id: etre-correct
+    pattern: '(?<![\p{L}''’])(je suis|tu es|vous êtes|nous sommes|il est|elle est) (correct|correcte|corrects|correctes)(?!\p{L})'
+    message: "To say someone is right, use avoir raison."
+    grammar: g.avoir-expressions
+    example: { wrong: "tu es correct", right: "tu as raison" }
+  - id: il-y-ont
+    pattern: '(?<![\p{L}''’])il y (ont|sont|est)(?!\p{L})'
+    message: "There is / there are is always il y a, singular, even before a plural."
+    grammar: g.il-y-a
+    example: { wrong: "il y sont trois chambres", right: "il y a trois chambres" }
+  # ---- c'est / il est
+  - id: il-est-un-metier
+    pattern: '(?<![\p{L}''’])(il est|elle est|je suis|tu es|ils sont|elles sont) (un|une|des) (médecin|médecins|professeur|professeure|prof|étudiant|étudiante|étudiants|avocat|avocate|ingénieur|ingénieure|serveur|serveuse|infirmier|infirmière|journaliste|architecte|dentiste|acteur|actrice|cuisinier|cuisinière|vendeur|vendeuse|boulanger|boulangère|pharmacien|pharmacienne|policier|policière|musicien|musicienne|chanteur|chanteuse|écrivain|écrivaine|secrétaire|comptable|informaticien|informaticienne|plombier|chauffeur|coiffeur|coiffeuse|artiste|peintre|guide|pilote)(?!\p{L})'
+    message: "With a bare profession there is no article: il est médecin. With an article use c'est: c'est un médecin."
+    grammar: g.c-est-il-est
+    example: { wrong: "il est un médecin", right: "il est médecin" }
+  # ---- articles, partitives, quantities
+  - id: beaucoup-des
+    pattern: '(?<![\p{L}''’])(beaucoup|trop|assez|tellement|autant|peu) (des|du|de la)(?!\p{L})'
+    message: "After beaucoup, trop, assez, peu… use plain de (d'): beaucoup de livres, trop de sucre. Beaucoup des only means 'many of the (specific)…'."
+    grammar: g.quantities
+    example: { wrong: "beaucoup des amis", right: "beaucoup d'amis" }
+  - id: pas-des
+    pattern: '(?<![\p{L}''’])n[''’]?(ai|as|a|avons|avez|ont|y a|achète|achètes|mange|manges|bois|boit|veux|veut|prends|prend) (pas|plus|jamais) (de la|du|des|un|une)(?!\p{L})'
+    message: "After a negation, un, une, du, de la and des become de (d'): je n'ai pas de voiture. (Être is the exception: ce n'est pas un problème.)"
+    grammar: g.de-after-negation
+    example: { wrong: "je n'ai pas une voiture", right: "je n'ai pas de voiture" }
+  - id: aimer-sans-article
+    pattern: '(?<!\p{L})(aime|aimes|aimons|aimez|aiment|adore|adores|adorons|adorez|adorent|déteste|détestes|détestons|détestez|détestent|préfère|préfères|préférons|préférez|préfèrent) (café|thé|chocolat|pizza|musique|sport|football|foot|cinéma|vin|fromage|chiens|chats|lecture|danse|natation|pain|lait|bière|viande|poisson|légumes|fruits|voyages)(?!\p{L})'
+    message: "Verbs of liking take the definite article for things in general: j'aime le café, elle adore les chats."
+    grammar: g.aimer-preferer
+    example: { wrong: "j'aime café", right: "j'aime le café" }
+  - id: contraction-a-de-le
+    pattern: '(?<![\p{L}''’])(à le|à les|de le|de les) (?!\p{L}*(er|ir|oir|re)(?!\p{L}))(?=\p{L})'
+    message: "à + le = au, à + les = aux, de + le = du, de + les = des (but not before a pronoun object: de les voir)."
+    grammar: g.contractions-au-du
+    example: { wrong: "je vais à le cinéma", right: "je vais au cinéma" }
+  - id: gender-masculine-nouns
+    pattern: '(?<![\p{L}''’])(la|une|cette|ma|ta|sa) (problème|système|programme|thème|musée|lycée|silence|groupe|dentifrice|parapluie|téléphone|beurre|fromage|légume|modèle|crime|chocolat|magazine|vélo|portable)(?!\p{L})'
+    message: "These nouns are masculine in French: le problème, le musée, le lycée, le téléphone…"
+    grammar: g.gender-nouns
+    example: { wrong: "la problème", right: "le problème" }
+  - id: gender-feminine-nouns
+    pattern: '(?<![\p{L}''’])(le|un|ce|mon|ton|son) (voiture|maison|photo|plage|fois|forêt|chanson|page|fin|mer|clé|nuit|souris|radio|moto|météo|main|peur|faim|soif|dent|fleur|télé|ville|chambre|cuisine|salle)(?!\p{L})'
+    message: "These nouns are feminine: la voiture, la photo, la plage, une fois, la main, la mer…"
+    grammar: g.gender-nouns
+    example: { wrong: "un fois", right: "une fois" }
+  # ---- elision and contraction
+  - id: elision-le-la
+    pattern: '(?<![\p{L}''’])(le|la|de|ce) (ami|amie|amis|école|hôtel|homme|enfant|eau|île|université|église|hôpital|orange|appartement|avion|arbre|oiseau|été|hiver|automne|heure|histoire|idée|année|argent|ordinateur|aéroport|anglais|espagnol|italien|opéra|accord|abord|habitude|est|était)(?!\p{L})'
+    message: "Before a vowel or silent h, le, la, de and ce elide: l'ami, l'école, d'accord, c'est."
+    grammar: g.elision-liaison
+    example: { wrong: "le ami", right: "l'ami" }
+  - id: elision-je
+    pattern: '(?<![\p{L}''’])je (ai|aime|aimes|habite|étudie|arrive|appelle|attends|achète|écoute|écris|espère|adore|aide|entends|essaie|oublie|y|en)(?!\p{L})'
+    message: "Je becomes j' before a vowel or silent h: j'ai, j'aime, j'habite."
+    grammar: g.elision-liaison
+    example: { wrong: "je ai faim", right: "j'ai faim" }
+  - id: elision-ne-que-si
+    pattern: '(?<![\p{L}''’])(ne (ai|as|a|avons|avez|ont|est|es|aime|aimes|habite|y|en|écoute|étudie|oublie)|que (il|elle|on|ils|elles|un|une)|si (il|ils))(?!\p{L})'
+    message: "Ne and que elide before a vowel (n'ai, qu'il), and si becomes s' before il and ils only (s'il, but si elle)."
+    grammar: g.elision-liaison
+    example: { wrong: "si il pleut", right: "s'il pleut" }
+  # ---- possessives and adjectives
+  - id: possessive-vowel
+    pattern: '(?<![\p{L}''’])(ma|ta|sa) (amie|école|histoire|idée|adresse|équipe|université|église|image|opinion|heure|orange|enfance|oreille|assiette|eau|entreprise|émission|île)(?!\p{L})'
+    message: "Before a feminine noun starting with a vowel, ma, ta, sa become mon, ton, son: mon amie, son école."
+    grammar: g.possessives
+    example: { wrong: "ma amie", right: "mon amie" }
+  - id: possessive-gender
+    pattern: '(?<![\p{L}''’])(sa|ma|ta) (père|frère|mari|fils|oncle|grand-père|cousin|copain|stylo|livre|chien|chat|téléphone|vélo|travail|nom|anniversaire|appartement|sac|petit ami)(?!\p{L})'
+    message: "Son/sa agrees with the thing owned, not with the owner: son père (her father or his father), sa mère."
+    grammar: g.possessives
+    example: { wrong: "elle aime sa père", right: "elle aime son père" }
+  - id: bel-nouvel-vieil
+    pattern: '(?<![\p{L}''’])(beau|nouveau|vieux) (ami|homme|hôtel|appartement|arbre|endroit|immeuble|été|oiseau|enfant|objet|ordinateur|an)(?!\p{L})'
+    message: "Before a masculine singular noun starting with a vowel or silent h, beau, nouveau, vieux become bel, nouvel, vieil."
+    grammar: g.beau-nouveau-vieux
+    example: { wrong: "un beau homme", right: "un bel homme" }
+  - id: adjective-before-noun
+    pattern: '(?<![\p{L}''’])(un|une|le|la|les|des|mon|ma|mes|ton|ta|son|sa) (rouge|rouges|bleu|bleue|vert|verte|noir|noire|blanc|blanche|jaune|gris|grise|français|française|anglais|anglaise|américain|américaine|italien|italienne|espagnol|espagnole|chinois|chinoise|intéressant|intéressante|délicieux|délicieuse) (voiture|maison|robe|chemise|pull|vin|livre|film|ville|homme|femme|fille|garçon|ami|amie|chat|chien|restaurant|cuisine|fromage|plat|porte|table|sac|stylo|vélo|pantalon|voitures|livres|films)(?!\p{L})'
+    message: "Colours, nationalities and most adjectives go after the noun: une voiture rouge, un film intéressant. Only a few short ones (beau, petit, grand, bon…) go before."
+    grammar: g.adjective-position
+    example: { wrong: "une rouge voiture", right: "une voiture rouge" }
+  # ---- comparisons and adverbs
+  - id: plus-bon
+    pattern: '(?<!(?:n[''’]est|n[''’]était|ne sont|ne sera|n[''’]est pas|pas) )(?<![\p{L}''’])plus (bon|bons|bonne|bonnes|bien)(?!\p{L})'
+    message: "The comparative of bon is meilleur, and of bien is mieux: c'est meilleur, il chante mieux."
+    grammar: g.meilleur-mieux
+    example: { wrong: "ce gâteau est plus bon", right: "ce gâteau est meilleur" }
+  - id: plus-meilleur
+    pattern: '(?<![\p{L}''’])(plus|très) (meilleur|meilleure|meilleurs|meilleures|mieux)(?!\p{L})'
+    message: "Meilleur and mieux are already comparatives: drop plus. For emphasis say bien meilleur, beaucoup mieux."
+    grammar: g.meilleur-mieux
+    example: { wrong: "c'est plus meilleur", right: "c'est meilleur" }
+  - id: bon-as-adverb
+    pattern: '(?<!\p{L})(parle|parles|parlent|parlez|parlons|chante|chantes|chantent|chantez|danse|danses|dansent|dansez|travaille|travailles|travaillent|travaillez|joue|joues|jouent|jouez|cuisine|cuisines|cuisinent|cuisinez|dors|dort|dorment|dormez|écris|écrit|écrivent|écrivez) (\p{L}+ )?(très |trop |assez |vraiment )?(bon|bonne)(?!\p{L})'
+    message: "To say how something is done, use the adverb bien, not the adjective bon: il chante bien."
+    grammar: g.adverbs-ment
+    example: { wrong: "il parle français très bon", right: "il parle français très bien" }
+  - id: tres-beaucoup
+    pattern: '(?<![\p{L}''’])(très beaucoup|beaucoup très)(?!\p{L})'
+    message: "Très never goes with beaucoup: say beaucoup, or énormément."
+    grammar: g.tres-trop-assez
+    example: { wrong: "j'aime très beaucoup Paris", right: "j'aime beaucoup Paris" }
+  - id: beaucoup-adjective
+    pattern: '(?<![\p{L}''’])beaucoup (grand|grande|petit|petite|bon|bonne|cher|chère|intéressant|intéressante|important|importante|beau|belle|difficile|facile|content|contente|fatigué|fatiguée|joli|jolie)(?!\p{L})'
+    message: "Use très with adjectives and beaucoup with verbs: très intéressant, j'aime beaucoup."
+    grammar: g.tres-trop-assez
+    example: { wrong: "c'est beaucoup intéressant", right: "c'est très intéressant" }
+  - id: plus-que-number
+    pattern: '(?<!\p{L})(y a|y avait|ai|as|a|avons|avez|ont|coûte|coûtent|coûtait|dure|durait|pèse|mesure|attendu|compte) (plus|moins) que (\d+|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|vingt|cent|mille)(?!\p{L})'
+    message: "Before a number, more than / less than is plus de / moins de: plus de dix personnes."
+    grammar: g.comparatives
+    example: { wrong: "il y a plus que dix personnes", right: "il y a plus de dix personnes" }
+  # ---- countries, cities, transport, time
+  - id: a-pays-feminin
+    pattern: '(?<![\p{L}''’])(à|au|dans) (france|espagne|italie|allemagne|angleterre|chine|belgique|suisse|russie|grèce|inde|irlande|écosse|turquie|norvège|suède|australie|argentine|algérie|tunisie|corée|pologne|autriche|europe|afrique|asie|amérique)(?!\p{L})'
+    message: "Feminine countries and continents (most ending in -e) take en: en France, en Italie, en Europe."
+    grammar: g.prepositions-cities-countries
+    example: { wrong: "je vais à France", right: "je vais en France" }
+  - id: en-pays-masculin
+    pattern: '(?<![\p{L}''’])(en|à) (canada|japon|brésil|mexique|portugal|maroc|sénégal|pérou|chili|vietnam|danemark|luxembourg|liban|cameroun|congo)(?!\p{L})|(?<![\p{L}''’])en québec(?!\p{L})'
+    message: "Masculine countries take au: au Canada, au Japon, au Portugal, au Québec (but à Québec for the city)."
+    grammar: g.prepositions-cities-countries
+    example: { wrong: "j'habite en Canada", right: "j'habite au Canada" }
+  - id: pays-pluriel
+    pattern: '(?<![\p{L}''’])(à|en|au) (états-unis|etats-unis|pays-bas|philippines|antilles|seychelles)(?!\p{L})'
+    message: "Plural countries take aux: aux États-Unis, aux Pays-Bas."
+    grammar: g.prepositions-cities-countries
+    example: { wrong: "je vais en États-Unis", right: "je vais aux États-Unis" }
+  - id: en-ville
+    pattern: '(?<![\p{L}''’])en (paris|londres|rome|madrid|berlin|lyon|marseille|bruxelles|genève|montréal|new york|tokyo|nice|bordeaux|toulouse|dakar|lisbonne)(?!\p{L})'
+    message: "Cities take à: à Paris, à Londres, à Montréal."
+    grammar: g.prepositions-cities-countries
+    example: { wrong: "j'habite en Paris", right: "j'habite à Paris" }
+  - id: venir-de-la-pays
+    pattern: '(?<![\p{L}''’])(viens|vient|venons|venez|viennent|venu|venue|venus|arrive|arrivé|arrivée|rentre|rentré|rentrée|reviens|revient|revenu|revenue) de la (france|belgique|suisse|chine|italie|espagne|allemagne|angleterre|grèce|russie|turquie)(?!\p{L})|(?<![\p{L}''’])(viens|vient|venons|venez|viennent|venu|venue|arrive|arrivé|rentre|rentré|reviens|revenu) de (canada|japon|brésil|mexique|portugal|maroc|sénégal|québec|liban)(?!\p{L})'
+    message: "Coming from a feminine country drops the article (je viens de France); a masculine one keeps it (je viens du Canada)."
+    grammar: g.prepositions-cities-countries
+    example: { wrong: "je viens de la France", right: "je viens de France" }
+  - id: country-without-article
+    pattern: '(?:^|[.!?]\s*)(france|espagne|italie|allemagne|angleterre|chine|japon|canada|belgique|suisse|portugal|brésil|mexique) (est|a|sont|était|reste|compte|produit|exporte)(?!\p{L})|(?<!\p{L})(aime|aimes|adore|adores|visite|visites|visitez|visiter|déteste|connais|connaît|préfère|quitte|quitter) (france|espagne|italie|allemagne|angleterre|chine|japon|canada|belgique|suisse|portugal|brésil|mexique)(?!\p{L})'
+    message: "Country names take the definite article as subject or object: la France est belle, j'adore le Japon, je visite l'Italie."
+    grammar: g.articles-definite
+    example: { wrong: "j'adore Italie", right: "j'adore l'Italie" }
+  - id: transport-preposition
+    pattern: '(?<![\p{L}''’])(en pied|par pied|à (voiture|train|avion|bus|autobus|métro|bateau|taxi|car))(?!\p{L})'
+    message: "Inside vehicles take en (en voiture, en train, en avion, en bus); on foot is à pied (and à vélo, à cheval)."
+    grammar: g.prepositions-transport
+    example: { wrong: "je vais au bureau à voiture", right: "je vais au bureau en voiture" }
+  - id: dans-year-day
+    pattern: '(?<![\p{L}''’])dans (19|20)\d\d(?!\d)|(?<![\p{L}''’])(en|sur) (lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)(?!\p{L})'
+    message: "Years take en (en 2026); days take no preposition (lundi = on Monday, le lundi = on Mondays)."
+    grammar: g.prepositions-time
+    example: { wrong: "je pars sur lundi", right: "je pars lundi" }
+  - id: date-de-mois
+    pattern: '(?<![\p{L}''’])le (\d{1,2}|premier|1er|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|quinze|vingt|trente) de (janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)(?!\p{L})'
+    message: "Dates have no de: le 14 juillet, le premier mai."
+    grammar: g.days-months-dates
+    example: { wrong: "le 14 de juillet", right: "le 14 juillet" }
+  - id: vingt-un
+    pattern: '(?<![\p{L}''’])(vingt|trente|quarante|cinquante|soixante)-un(?!\p{L})'
+    message: "21, 31, 41, 51, 61 use et: vingt et un, trente et un (but quatre-vingt-un)."
+    grammar: g.numbers-0-69
+    example: { wrong: "vingt-un", right: "vingt et un" }
+  # ---- depuis, pendant, pour
+  - id: depuis-passe-compose
+    pattern: '(?<!\p{L})(ai|as|a|avons|avez|ont) (habité|travaillé|étudié|vécu|appris|été|joué|enseigné) (\p{L}+ ){0,3}depuis (\d+|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|quelques|plusieurs|longtemps)(?!\p{L})'
+    message: "For something that started in the past and is still going on, French uses the present with depuis: j'habite ici depuis trois ans."
+    grammar: g.depuis-present
+    example: { wrong: "j'ai habité ici depuis trois ans", right: "j'habite ici depuis trois ans" }
+  - id: pendant-for-ongoing
+    pattern: '(?<![\p{L}''’])(j[''’]habite|j[''’]apprends|j[''’]étudie|je travaille|je vis|je suis ici|je connais|j[''’]attends|je t[''’]attends|nous habitons|on habite|il habite|elle habite) (\p{L}+ ){0,3}pendant (\d+|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|quelques|plusieurs|longtemps)(?!\p{L})'
+    message: "With the present tense for an ongoing situation, 'for' is depuis, not pendant: j'habite ici depuis deux ans."
+    grammar: g.pendant-depuis-il-y-a
+    example: { wrong: "j'habite à Paris pendant deux ans", right: "j'habite à Paris depuis deux ans" }
+  - id: pour-duration-past
+    pattern: '(?<!\p{L})(ai|as|a|avons|avez|ont) (\p{L}+é|vécu|été|dormi|attendu) (\p{L}+ ){0,3}pour (\d+|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|quelques|plusieurs) (ans|années|mois|semaines|jours|heures|minutes|an|semaine|jour|heure)(?!\p{L})'
+    message: "For a completed period in the past, 'for' is pendant (or nothing): j'ai habité à Paris pendant deux ans. Pour is for planned durations: je pars pour une semaine."
+    grammar: g.pendant-depuis-il-y-a
+    example: { wrong: "j'ai habité à Paris pour deux ans", right: "j'ai habité à Paris pendant deux ans" }
+  # ---- verbs and their objects
+  - id: visiter-personne
+    pattern: '(?<!\p{L})visit(er|e|es|ons|ez|ent|é|ée|és|ais|ait|ions|iez|aient|erai|eras|era|erons|erez|eront) (mon|ma|mes|ton|ta|tes|son|sa|ses|notre|nos|votre|vos|leur|leurs) (ami|amie|amis|amies|grand-mère|grand-père|grands-parents|parents|mère|père|famille|oncle|tante|cousin|cousine|cousins|sœur|frère|frères|sœurs|copain|copine|voisin|voisine|collègue|fille|fils)(?!\p{L})'
+    message: "Visiter is for places. For people say rendre visite à or aller voir: je rends visite à ma grand-mère."
+    grammar: g.verbs-prepositions
+    example: { wrong: "je visite ma grand-mère", right: "je rends visite à ma grand-mère" }
+  - id: attendre-pour
+    pattern: '(?<!\p{L})attend\p{L}* pour (le|la|les|l[''’]|un|une|mon|ma|mes|ton|ta|tes|son|sa|ses|toi|moi|lui|elle|eux|nous|vous)(?!\p{L})'
+    message: "Attendre, chercher, écouter, regarder and payer take a direct object: no pour. J'attends le bus."
+    grammar: g.verbs-prepositions
+    example: { wrong: "j'attends pour le bus", right: "j'attends le bus" }
+  - id: chercher-payer-pour
+    pattern: '(?<!\p{L})(cherch\p{L}*|pa[yi]\p{L}*) pour (les|la|le|l[''’]|un|une|mon|ma|mes|ton|ta|tes|son|sa|ses) ?(clés|clefs|lunettes|portable|téléphone|sac|passeport|portefeuille|adresse|gare|hôtel|travail|emploi|appartement|solution|toilettes|café|repas|billet|billets|addition|dîner|déjeuner|loyer|chambre|taxi|courses)(?!\p{L})'
+    message: "Chercher (to look for) and payer (to pay for) take a direct object: je cherche mes clés, je paie le café."
+    grammar: g.verbs-prepositions
+    example: { wrong: "je cherche pour mes clés", right: "je cherche mes clés" }
+  - id: ecouter-a
+    pattern: '(?<!\p{L})écout\p{L}* (à la musique|à de la musique|au prof\p{L}*|aux chansons|à la chanson|à mon|à ma|à mes|à ton|à ta|à tes|à son|à sa|à ses)(?!\p{L})'
+    message: "Écouter takes a direct object: j'écoute la musique, j'écoute mon prof."
+    grammar: g.verbs-prepositions
+    example: { wrong: "j'écoute à la musique", right: "j'écoute la musique" }
+  - id: telephoner-direct
+    pattern: '(?<!\p{L})téléphon\p{L}* (mon|ma|mes|ton|ta|tes|son|sa|ses|notre|nos|votre|vos|leur|leurs|le|la|les) (mère|père|ami|amie|amis|parents|médecin|docteur|frère|sœur|patron|patronne|banque|copain|copine|grand-mère|grand-père)(?!\p{L})'
+    message: "Téléphoner, parler, répondre and demander take à before a person: je téléphone à ma mère."
+    grammar: g.verbs-indirect-object
+    example: { wrong: "je téléphone ma mère", right: "je téléphone à ma mère" }
+  - id: le-for-lui
+    pattern: '(?<![\p{L}''’])(je|tu|il|elle|on|nous|vous|ils|elles) (le|la|les|l[''’]) ?(téléphon\p{L}*|souri\p{L}*|ressembl\p{L}*|obéi\p{L}*|répond\p{L}*)(?!\p{L})'
+    message: "Verbs that take à + person use the indirect pronouns lui and leur: je lui téléphone, elle leur répond."
+    grammar: g.indirect-object-pronouns
+    example: { wrong: "je le téléphone", right: "je lui téléphone" }
+  - id: lui-for-le
+    pattern: '(?<![\p{L}''’])(je|tu|il|elle|on|nous|vous|ils|elles) (lui|leur) (aid\p{L}*|remerci\p{L}*|invit\p{L}*|écout\p{L}*|regard\p{L}*|attend\p{L}*|aim\p{L}*|connai\p{L}*|connaî\p{L}*|vois|voit|voient|appell?\p{L}*)(?!\p{L})'
+    message: "Aider, remercier, inviter, écouter, regarder, attendre, aimer, voir and appeler take a direct object: je l'aide, je les invite."
+    grammar: g.direct-object-pronouns
+    example: { wrong: "je lui aide", right: "je l'aide" }
+  - id: pronoun-order
+    pattern: '(?<![\p{L}''’])(lui|leur) (le|la|les) (donn\p{L}*|di[st]|envoi\p{L}*|envoy\p{L}*|prêt\p{L}*|montr\p{L}*|rend\p{L}*|offr\p{L}*|expliqu\p{L}*|apport\p{L}*|achèt\p{L}*|achet\p{L}*|lis|lit|vend\p{L}*)(?!\p{L})|(?<![\p{L}''’])(je|tu|il|elle|on|ils|elles) (le|la|les) (me|te|nous|vous) (?=\p{L})'
+    message: "Pronoun order: me/te/nous/vous before le/la/les, and le/la/les before lui/leur. Je le lui donne, il me le dit."
+    grammar: g.double-object-pronouns
+    example: { wrong: "je lui le donne", right: "je le lui donne" }
+  - id: manquer-direction
+    pattern: '(?<![\p{L}''’])(je|tu|nous|vous) manqu\p{L}* (toi|moi|vous|lui|elle|eux|mon ami|mon amie|ma famille|mes parents|mes amis|ma mère|mon père|paris|la france)(?!\p{L})'
+    message: "Manquer works backwards: the person or thing missed is the subject. I miss you = tu me manques; I miss Paris = Paris me manque."
+    grammar: g.verbs-indirect-object
+    example: { wrong: "je manque toi", right: "tu me manques" }
+  - id: dependre-penser-sur
+    pattern: '(?<!\p{L})(dépend\p{L}*|pens\p{L}*) sur(?!\p{L})'
+    message: "Dépendre takes de (ça dépend de toi); penser takes à (je pense à toi) or de for opinions."
+    grammar: g.verbs-prepositions
+    example: { wrong: "ça dépend sur le temps", right: "ça dépend du temps" }
+  - id: jouer-sport-instrument
+    pattern: '(?<!\p{L})jou\p{L}* (le|la|du|de la|l[''’]) ?(football|foot|tennis|basket|rugby|golf|volley|hockey|échecs|cartes)(?!\p{L})|(?<!\p{L})jou\p{L}* (le|la|l[''’]|au|à la|aux) ?(piano|guitare|violon|flûte|batterie|trompette|saxophone|harpe|violoncelle|accordéon)(?!\p{L})'
+    message: "Jouer à for games and sports (jouer au foot), jouer de for instruments (jouer du piano, de la guitare)."
+    grammar: g.jouer-faire-de
+    example: { wrong: "je joue le piano", right: "je joue du piano" }
+  # ---- passé composé
+  - id: avoir-with-etre-verbs
+    pattern: '(?<![\p{L}''’])(j[''’]ai|tu as|il a|elle a|on a|nous avons|vous avez|ils ont|elles ont) (allé|allée|allés|allées|venu|venue|venus|venues|arrivé|arrivée|arrivés|arrivées|parti|partie|partis|parties|resté|restée|restés|tombé|tombée|tombés|né|née|nés|mort|morte|morts|devenu|devenue|devenus|revenu|revenue|revenus|décédé|décédée)(?!\p{L})'
+    message: "Verbs of movement and change of state (aller, venir, arriver, partir, rester, tomber, naître, mourir, devenir…) form the passé composé with être."
+    grammar: g.passe-compose-etre
+    example: { wrong: "j'ai allé au cinéma", right: "je suis allé au cinéma" }
+  - id: reflexive-avoir
+    pattern: '(?<![\p{L}''’])(je m[''’]ai|tu t[''’]as|il s[''’]a|elle s[''’]a|on s[''’]a|nous nous avons|ils s[''’]ont|elles s[''’]ont)(?!\p{L})'
+    message: "Pronominal verbs always take être in the passé composé: je me suis levé, elle s'est réveillée."
+    grammar: g.pronominal-passe-compose
+    example: { wrong: "je m'ai levé tôt", right: "je me suis levé tôt" }
+  - id: etre-agreement
+    pattern: '(?<![\p{L}''’])(elle|elles) (est|sont|était|étaient) (allé|venu|arrivé|parti|resté|tombé|né|devenu|revenu|rentré|sorti|entré|monté|descendu|retourné|passé|allés|venus|arrivés|partis)(?!\p{L})|(?<![\p{L}''’])(nous sommes|ils sont) (allé|venu|arrivé|parti|resté|tombé|né|devenu|revenu|rentré|sorti|entré)(?!\p{L})'
+    message: "With être the participle agrees with the subject: elle est allée, ils sont partis, elles sont venues."
+    grammar: g.pc-agreement-etre
+    example: { wrong: "elle est allé à Paris", right: "elle est allée à Paris" }
+  - id: negation-position-pc
+    pattern: '(?<![\p{L}''’])n[''’](ai|as|a|avons|avez|ont|est|sont|suis|es|sommes|êtes) (\p{L}+é|\p{L}+i|\p{L}+u|fait|dit|pris|mis|écrit|ouvert) (pas|jamais|plus|rien)(?!\p{L})'
+    message: "In the passé composé, ne…pas goes around the auxiliary: je n'ai pas mangé, il n'est jamais venu."
+    grammar: g.negation-passe-compose
+    example: { wrong: "je n'ai mangé pas", right: "je n'ai pas mangé" }
+  - id: present-progressive
+    pattern: '(?<![\p{L}''’])(je suis|tu es|il est|elle est|on est|nous sommes|vous êtes|ils sont|elles sont) (mangeant|parlant|faisant|allant|regardant|lisant|écrivant|travaillant|dormant|écoutant|jouant|attendant|buvant|courant|cuisinant|chantant|dansant|venant|prenant|cherchant|étudiant|marchant)(?!\p{L})'
+    message: "French has no -ing tense: use the simple present (je mange), or être en train de + infinitive to stress that it is happening now."
+    grammar: g.etre-en-train-de
+    example: { wrong: "je suis mangeant", right: "je suis en train de manger" }
+  - id: weather-il-fait
+    pattern: '(?<![\p{L}''’])(il est|c[''’]est) (très |trop |assez )?(froid|chaud|beau|frais|nuageux|ensoleillé|du soleil|du vent)( aujourd[''’]hui| ce matin| ce soir| dehors| en hiver| en été)'
+    message: "Weather uses il fait: il fait froid, il fait beau, il fait du soleil."
+    grammar: g.weather
+    example: { wrong: "il est froid aujourd'hui", right: "il fait froid aujourd'hui" }
+  # ---- infinitives, time clauses and connectors
+  - id: apres-infinitif-present
+    pattern: '(?<!\p{L})après (finir|partir|arriver|travailler|lire|faire|voir|parler|sortir|rentrer|étudier|regarder|terminer|visiter)(?!\p{L})'
+    message: "Après + infinitive needs the past infinitive: après avoir fini, après être parti(e)."
+    grammar: g.apres-avoir-avant-de
+    level: a2
+    example: { wrong: "après finir le travail", right: "après avoir fini le travail" }
+  - id: avant-sans-de
+    pattern: '(?<!\p{L})avant (partir|manger|dormir|sortir|aller|faire|finir|venir|arriver|commencer|rentrer|répondre|prendre|lire|parler|acheter|payer)(?!\p{L})'
+    message: "Before + -ing is avant de + infinitive: avant de partir."
+    grammar: g.apres-avoir-avant-de
+    level: a2
+    example: { wrong: "avant partir", right: "avant de partir" }
+  - id: parce-que-de
+    pattern: '(?<![\p{L}''’])parce que de(?!\p{L})'
+    message: "Parce que is followed by a clause; before a noun use à cause de: à cause de la pluie."
+    grammar: g.connectors-cause-consequence
+    level: a2
+    example: { wrong: "parce que de la pluie", right: "à cause de la pluie" }
+  - id: quel-est
+    pattern: '(?<![\p{L}''’])qu(?:e |[''’])(est|sont)(?=\s+(ton|ta|tes|votre|vos|son|sa|ses|le|la|les|leur|leurs)\s)'
+    message: "What is your…? is quel est (quelle est, quels sont…): quel est ton nom ?"
+    grammar: g.quel
+    example: { wrong: "qu'est ton nom ?", right: "quel est ton nom ?" }
+  - id: si-conditionnel
+    pattern: '(?<!(?:demande|demandé|demandais|demandait|sais|sait|savais|savoir|ignore|voir|dis-moi) )(?<![\p{L}''’])s(?:i |[''’])(?:je |j[''’]|tu |il |elle |on |nous |vous |ils |elles )?(?:ne |n[''’])?(?:(?:le|la|les|lui|leur|me|te|se|y|en) |[lmts][''’])?(\p{L}*er(?:ais|ait|ions|iez|aient)|(?:aur|ser|fer|ir|pourr|voudr|devr|saur|viendr|prendr|faudr|vaudr|verr|tiendr|enverr|courr|mourr)(?:ais|ait|ions|iez|aient))(?!\p{L})'
+    message: "Never use the conditional after si (if): si + imparfait, then the conditional. Si j'avais le temps, je viendrais. (After je me demande si / je ne sais pas si it is fine.)"
+    grammar: g.si-imparfait-conditionnel
+    level: b1
+    example: { wrong: "si j'aurais le temps, je viendrais", right: "si j'avais le temps, je viendrais" }
+  - id: si-futur
+    pattern: '(?<!(?:demande|demandé|demandais|demandait|sais|sait|savais|savoir|ignore|voir|dis-moi) )(?<![\p{L}''’])s(?:i |[''’])(?:je |j[''’]|tu |il |elle |on |nous |vous |ils |elles )(?:ne |n[''’])?(serai|seras|sera|serons|serez|seront|aurai|auras|aura|aurons|aurez|auront|ferai|feras|fera|ferons|ferez|feront|irai|iras|ira|irons|irez|iront|pourrai|pourras|pourra|pourrons|pourrez|pourront|viendrai|viendras|viendra|viendrons|viendrez|viendront|pleuvra)(?!\p{L})'
+    message: "After si (if) use the present, not the future: s'il fait beau demain, on ira à la plage."
+    grammar: g.si-present-futur
+    level: a2
+    example: { wrong: "si il sera beau demain, on ira à la plage", right: "s'il fait beau demain, on ira à la plage" }
+  - id: apres-que-subjonctif
+    pattern: '(?<![\p{L}''’])après qu(?:e |[''’])(?:je |j[''’]|tu |il |elle |on |nous |vous |ils |elles )?(?:\p{L}+ )?(soit|soient|sois|soyons|soyez|ait|aient|aies|ayons|ayez|fasse|fassent|puisse|puissent|aille|aillent|vienne|viennent|parte|partent)(?!\p{L})'
+    message: "Après que takes the indicative (it states a fact): après qu'il est parti, après qu'elle a fini. Avant que takes the subjunctive."
+    grammar: g.time-clauses
+    level: b1
+    example: { wrong: "après qu'il soit parti", right: "après qu'il est parti" }
+  - id: conjonction-indicatif
+    pattern: '(?<![\p{L}''’])(avant|pour|afin|bien|sans|jusqu[''’]à ce|à moins) qu(?:e |[''’])(?:je |j[''’]|tu |il |elle |on |nous |vous |ils |elles )(suis|es|est|sommes|êtes|sont|ai|as|a|avons|avez|ont|vais|vas|va|allons|allez|vont|fais|fait|faisons|font|peux|peut|pouvons|pouvez|peuvent|viens|vient|viennent|sais|sait|savons|savez|savent|pars|part|partent)(?!\p{L})'
+    message: "Avant que, pour que, afin que, bien que, sans que, jusqu'à ce que and à moins que take the subjunctive: avant que tu partes, bien qu'il soit tard."
+    grammar: g.subjonctif-conjonctions
+    level: b2
+    example: { wrong: "bien qu'il est tard", right: "bien qu'il soit tard" }
+  - id: il-faut-que-indicatif
+    pattern: '(?<![\p{L}''’])(il faut|il faudrait|il est important|il est nécessaire|veux|veut|voulons|voulez|veulent|voudrais|voudrait|aimerais|aimerait|souhaite|souhaites|préfère|préfères|exige) qu(?:e |[''’])(?:je |j[''’]|tu |il |elle |on |nous |vous |ils |elles )(suis|es|est|sommes|êtes|sont|ai|as|a|avons|avez|ont|vais|vas|va|allons|allez|vont|fais|fait|faisons|font|peux|peut|pouvons|pouvez|peuvent|sais|sait|savons|savez|savent|viens|vient|viennent)(?!\p{L})'
+    message: "Il faut que and verbs of wanting (vouloir que, préférer que, souhaiter que) take the subjunctive: il faut que tu viennes, je veux qu'il soit là."
+    grammar: g.subjonctif-necessite
+    level: b1
+    example: { wrong: "il faut que tu viens", right: "il faut que tu viennes" }
+  - id: vouloir-que-meme-sujet
+    pattern: '(?<![\p{L}''’])je (ne )?(veux|voudrais|aimerais|préfère|souhaite)( pas)? que (je|j[''’])'
+    message: "With the same subject, use the infinitive, not que + subjunctive: je veux partir (not je veux que je parte)."
+    grammar: g.subjonctif-vs-infinitive
+    level: b1
+    example: { wrong: "je veux que je parte", right: "je veux partir" }
+  # ---- false friends and calques
+  - id: etre-en-accord
+    pattern: '(?<![\p{L}''’])(je suis|tu es|il est|elle est|on est|nous sommes|vous êtes|ils sont|elles sont) (en )?accord(?!\p{L})'
+    message: "To agree is être d'accord: je suis d'accord avec toi."
+    grammar: g.anglicisms-calques
+    example: { wrong: "je suis en accord", right: "je suis d'accord" }
+  - id: faire-une-decision
+    pattern: '(?<!\p{L})(faire|fais|fait|faisons|faites|font|ferai|ferais) (une|la|cette|ma|ta|sa|notre|votre|leur) décision(?!\p{L})'
+    message: "You take a decision in French: prendre une décision."
+    grammar: g.anglicisms-calques
+    example: { wrong: "j'ai fait une décision", right: "j'ai pris une décision" }
+  - id: attendre-reunion
+    pattern: '(?<!\p{L})attend\p{L}* (la|une|cette|ma) (réunion|conférence|classe|messe|cérémonie)(?!\p{L})'
+    message: "Attendre means to wait for. To attend is assister à: j'ai assisté à la réunion."
+    grammar: g.anglicisms-calques
+    example: { wrong: "j'ai attendu la réunion de 9 heures", right: "j'ai assisté à la réunion de 9 heures" }
+  - id: dans-langue
+    pattern: '(?<![\p{L}''’])dans (français|anglais|espagnol|italien|allemand|portugais|chinois|japonais|arabe)(?!\p{L})'
+    message: "In a language is en: en français, en anglais."
+    grammar: g.prepositions-place
+    example: { wrong: "comment on dit ça dans français ?", right: "comment on dit ça en français ?" }
+  - id: maison-de-chez
+    pattern: '(?<![\p{L}''’])(à|a) la maison de (mon|ma|mes|ton|ta|tes|son|sa|ses|notre|nos|votre|vos|leur|leurs) (?=\p{L})'
+    message: "At someone's place is chez + person: chez mon ami, chez mes parents."
+    grammar: g.prepositions-place
+    example: { wrong: "je dors à la maison de mon ami", right: "je dors chez mon ami" }
