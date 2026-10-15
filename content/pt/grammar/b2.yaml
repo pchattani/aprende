@@ -1,0 +1,1320 @@
+# B2 grammar notes (Brazilian Portuguese; European Portuguese in `variant`).
+# Explanations use light markdown: ### headings, bullets, tables, **bold**,
+# *italic* (italic = Portuguese inline). Field `es` = Portuguese text.
+- id: g.subjunctive-imperfect
+  level: b2
+  title: "The imperfect subjunctive — falasse, fizesse, fosse"
+  summary: "From the eles preterite: falaram → falasse; fizeram → fizesse; foram → fosse. Used after past triggers and in unreal conditions."
+  explanation: |
+    Take the **eles** preterite, drop *-ram*, add *-sse, -sses, -sse, -ssemos, -ssem*:
+
+    | | falar | comer | fazer | ser / ir | ter |
+    |---|---|---|---|---|---|
+    | eu / ele | falasse | comesse | fizesse | fosse | tivesse |
+    | nós | fal**á**ssemos | com**ê**ssemos | fiz**é**ssemos | f**ô**ssemos | tiv**é**ssemos |
+    | eles | falassem | comessem | fizessem | fossem | tivessem |
+    | (tu) | (falasses) | (comesses) | (fizesses) | (fosses) | (tivesses) |
+
+    Every irregular preterite carries over: *estivesse, pudesse, quisesse, soubesse, dissesse, trouxesse, pusesse, viesse* (vir), *visse* (ver), *desse, houvesse*.
+
+    ### Uses
+    - Subjunctive triggers in the **past or conditional**: *Ela queria que eu fosse. Seria bom que vocês viessem.*
+    - Unreal conditions: *Se eu tivesse tempo…*
+    - *como se*: *Fala como se soubesse tudo.*
+    - Politeness: *Se não fosse incômodo…*
+  examples:
+    - { es: "Minha mãe pediu que eu ligasse quando chegasse.", en: "My mother asked me to call when I arrived." }
+    - { es: "Não achei que fosse tão difícil.", en: "I didn't think it would be so hard." }
+    - { es: "Seria ótimo se vocês pudessem vir a Salvador.", en: "It would be great if you could come to Salvador." }
+    - { es: "Era preciso que todos estivessem de acordo.", en: "Everyone had to agree." }
+  pitfalls:
+    - "Spanish speakers: Portuguese has only the *-sse* form; *falara* is the literary pluperfect indicative ('had spoken'), not a subjunctive."
+    - "Accent on *nós*: *falássemos, fizéssemos, fôssemos*."
+    - "*Viesse* (vir) vs *visse* (ver)."
+  variant: "Same forms in Portugal, with *tu falasses, fizesses*."
+  related: [g.se-clauses-unreal, g.como-se, g.reported-speech-subjunctive, g.subjunctive-present-forms]
+  drills:
+    - { es: "Eu queria que você conhecesse a Bahia.", en: "I wanted you to see Bahia." }
+    - { es: "Ele saiu sem que ninguém percebesse.", en: "He left without anyone noticing." }
+    - { es: "Duvidava que ela soubesse a verdade.", en: "I doubted she knew the truth." }
+    - { es: "Foi bom que vocês trouxessem a rede.", en: "It was good that you brought the hammock." }
+- id: g.se-clauses-unreal
+  level: b2
+  title: "Se eu tivesse tempo, eu iria — unreal conditions"
+  summary: "se + imperfect subjunctive, + conditional (or imperfect / ia in speech)."
+  explanation: |
+    - *Se eu tivesse tempo, iria a Lençóis.* — If I had time, I'd go to Lençóis.
+    - *Se eu fosse você, não faria isso.* — If I were you, I wouldn't do that.
+    - *Se não chovesse, a gente ia à praia.* (speech: *ia* = *iria*)
+
+    ### Spoken result clause
+    | written | spoken Brazil |
+    |---|---|
+    | *eu viajaria* | *eu viajava / eu ia viajar* |
+    | *seria ótimo* | *ia ser ótimo / era ótimo* |
+
+    ### Suggestions with E se…?
+    *E se a gente fosse de barco?* — What if we went by boat?
+
+    ### Three conditionals compared
+    | | |
+    |---|---|
+    | real future | *Se eu tiver tempo, vou.* |
+    | unreal present | *Se eu tivesse tempo, iria.* |
+    | unreal past | *Se eu tivesse tido tempo, teria ido.* |
+  examples:
+    - { es: "Se eu morasse em Recife, iria à praia todo dia.", en: "If I lived in Recife, I'd go to the beach every day." }
+    - { es: "Se você pudesse morar em qualquer lugar, onde moraria?", en: "If you could live anywhere, where would you live?" }
+    - { es: "Se eu fosse você, ligava para ela.", en: "If I were you, I'd call her.", altEs: ["Se eu fosse você, ligaria para ela."] }
+    - { es: "E se a gente alugasse um buggy?", en: "What if we rented a buggy?" }
+  pitfalls:
+    - "Never the conditional after *se*: *se eu tivesse*, not *se eu teria*."
+    - "Don't use the future subjunctive for unreal situations: *se eu tivesse* (unreal) vs *se eu tiver* (likely)."
+    - "Spanish speakers: *si yo fuera tú* = *se eu fosse você*."
+  variant: "European speech uses the imperfect in the result even more: *Se tivesse dinheiro, comprava uma casa no Algarve.*"
+  related: [g.subjunctive-imperfect, g.future-subjunctive-se, g.se-clauses-past, g.conditional-hypothetical]
+  drills:
+    - { es: "Se eu soubesse cozinhar, faria uma moqueca.", en: "If I knew how to cook, I'd make a moqueca." }
+    - { es: "Se não fosse tão caro, eu comprava.", en: "If it weren't so expensive, I'd buy it.", altEs: ["Se não fosse tão caro, eu compraria."] }
+    - { es: "O que você faria se ganhasse na loteria?", en: "What would you do if you won the lottery?" }
+    - { es: "Se tivéssemos mais tempo, ficaríamos em Olinda.", en: "If we had more time, we'd stay in Olinda." }
+- id: g.como-se
+  level: b2
+  title: "Como se — as if"
+  summary: "como se + imperfect (or pluperfect) subjunctive: Ele fala como se soubesse tudo."
+  explanation: |
+    *Como se* is always followed by the **subjunctive**:
+    - *Ele fala como se soubesse tudo.* — He talks as if he knew everything. (same time)
+    - *Ela agiu como se nada tivesse acontecido.* — She acted as if nothing had happened. (earlier)
+
+    ### Related structures
+    | | |
+    |---|---|
+    | *parece que* + indicative | it seems that |
+    | *é como se* + subj. | it's as if |
+    | *nem que* + subj. | even if (strong): *Vou nem que seja a pé.* |
+    | *feito* (speech) | like, as if: *Corria feito louco.* |
+  examples:
+    - { es: "Ela me tratou como se eu fosse uma criança.", en: "She treated me as if I were a child." }
+    - { es: "Ele gasta como se fosse rico.", en: "He spends as if he were rich." }
+    - { es: "É como se eu já conhecesse esse lugar.", en: "It's as if I already knew this place." }
+    - { es: "Ele sorriu como se não tivesse ouvido nada.", en: "He smiled as if he hadn't heard anything." }
+    - { es: "Vou terminar hoje, nem que seja de madrugada.", en: "I'll finish today, even if it's in the early hours." }
+  pitfalls:
+    - "Never the indicative: *como se soubesse*, not *como se sabia*."
+    - "English 'as if he knows' (informal) still needs the imperfect subjunctive in Portuguese."
+    - "*Feito* = 'like' is colloquial: *Ele dormiu feito pedra.*"
+  variant: "Same in Portugal."
+  related: [g.subjunctive-imperfect, g.subjunctive-pluperfect]
+  drills:
+    - { es: "Ela dança como se ninguém estivesse olhando.", en: "She dances as if nobody were watching." }
+    - { es: "Ele fala do Recife como se tivesse nascido lá.", en: "He talks about Recife as if he'd been born there." }
+    - { es: "Comi como se não houvesse amanhã.", en: "I ate as if there were no tomorrow." }
+    - { es: "Parece que vai chover.", en: "It looks like it's going to rain." }
+- id: g.subjunctive-perfect
+  level: b2
+  title: "The perfect subjunctive — tenha feito"
+  summary: "tenha / tenhamos / tenham + participle: a completed action after a present trigger."
+  explanation: |
+    | | |
+    |---|---|
+    | eu / você / ele | *tenha falado* |
+    | nós | *tenhamos falado* |
+    | vocês / eles | *tenham falado* |
+
+    Use it when the trigger is present and the action is **already completed**:
+    - *Espero que você tenha gostado.* — I hope you (have) liked it.
+    - *Não acredito que ele tenha dito isso.* — I can't believe he said that.
+    - *É possível que ela já tenha saído.* — She may have already left.
+    - *Talvez eles tenham se perdido.* — Maybe they got lost.
+
+    *Haja feito* exists but is very formal.
+  examples:
+    - { es: "Que bom que vocês tenham vindo!", en: "How nice that you came!" }
+    - { es: "Duvido que ele tenha estudado.", en: "I doubt he studied." }
+    - { es: "Espero que não tenha acontecido nada.", en: "I hope nothing has happened." }
+    - { es: "É estranho que ninguém tenha reclamado.", en: "It's strange that nobody has complained." }
+  pitfalls:
+    - "Spanish speakers: *haya hecho* is *tenha feito* (with *ter*)."
+    - "Don't confuse with *tenho feito* (indicative, 'have been doing')."
+    - "Participles stay invariable with *ter*: *Espero que tenham gostado.*"
+  variant: "Same in Portugal."
+  related: [g.subjunctive-pluperfect, g.subjunctive-doubt, g.subjunctive-emotion]
+  drills:
+    - { es: "Tomara que ela tenha passado na prova.", en: "I hope she passed the exam." }
+    - { es: "Não acho que eles tenham entendido.", en: "I don't think they understood." }
+    - { es: "Pode ser que o voo tenha atrasado.", en: "The flight may have been delayed." }
+    - { es: "Lamento que você tenha esperado tanto.", en: "I'm sorry you waited so long." }
+- id: g.subjunctive-pluperfect
+  level: b2
+  title: "The pluperfect subjunctive — tivesse feito"
+  summary: "tivesse + participle: an earlier action after a past trigger, past unreal conditions and regrets."
+  explanation: |
+    | | |
+    |---|---|
+    | eu / você / ele | *tivesse falado* |
+    | nós | *tivéssemos falado* |
+    | vocês / eles | *tivessem falado* |
+
+    Uses:
+    - After a **past** trigger, for an earlier action: *Fiquei feliz que ele tivesse vindo. Ela duvidava que eu tivesse terminado.*
+    - **Past unreal conditions**: *Se eu tivesse sabido, teria vindo.*
+    - **Regrets**: *Quem me dera que eu tivesse ido!*
+    - *como se* for earlier actions: *como se nada tivesse acontecido*.
+  examples:
+    - { es: "Ela não acreditou que eu tivesse feito tudo sozinho.", en: "She didn't believe I had done it all on my own." }
+    - { es: "Se você tivesse chegado antes, teria visto o pôr do sol.", en: "If you had arrived earlier, you would have seen the sunset." }
+    - { es: "Me incomodou que eles não tivessem avisado.", en: "It bothered me that they hadn't told us." }
+    - { es: "Quem me dera que eu tivesse aprendido isso antes!", en: "If only I had learned this earlier!" }
+  pitfalls:
+    - "Spanish speakers: *hubiera hecho* is *tivesse feito*."
+    - "*Houvesse feito* is the formal written variant."
+    - "Remember the accent on *tivéssemos*."
+  variant: "Same in Portugal."
+  related: [g.subjunctive-perfect, g.se-clauses-past, g.quem-dera, g.como-se]
+  drills:
+    - { es: "Era impossível que ele tivesse visto.", en: "He couldn't possibly have seen." }
+    - { es: "Se tivéssemos saído cedo, não teríamos pegado trânsito.", en: "If we'd left early, we wouldn't have got stuck in traffic." }
+    - { es: "Ela agiu como se nada tivesse acontecido.", en: "She acted as if nothing had happened." }
+    - { es: "Lamentei que você não tivesse vindo.", en: "I was sorry you hadn't come." }
+- id: g.se-clauses-past
+  level: b2
+  title: "Se eu tivesse sabido — past unreal conditions"
+  summary: "se + pluperfect subjunctive, + conditional perfect (teria feito) or, in speech, tinha feito."
+  explanation: |
+    - *Se eu tivesse sabido, teria vindo.* — If I had known, I would have come.
+    - Spoken: *Se eu tivesse sabido, tinha vindo.*
+
+    ### Mixed conditionals
+    - Past condition, present result: *Se eu tivesse estudado medicina, hoje seria médico.*
+    - Present condition, past result: *Se eu fosse mais organizado, não teria perdido o voo.*
+
+    ### Se não fosse…
+    *Se não fosse você, eu estaria perdido.* (If it weren't for you…) / *Se não fosse a chuva, teríamos ido.* (If it hadn't been for the rain…)
+  examples:
+    - { es: "Se eu tivesse trazido o protetor, não teria me queimado.", en: "If I'd brought sunscreen, I wouldn't have got burned." }
+    - { es: "Se a gente tivesse saído mais cedo, tinha pegado o barco.", en: "If we'd left earlier, we'd have caught the boat.", altEs: ["Se nós tivéssemos saído mais cedo, teríamos pegado o barco."] }
+    - { es: "Se ela tivesse aceitado o emprego, hoje moraria em Fortaleza.", en: "If she'd accepted the job, she'd be living in Fortaleza now." }
+    - { es: "Se não fosse o guia, a gente tinha se perdido.", en: "If it hadn't been for the guide, we'd have got lost." }
+  pitfalls:
+    - "Spanish speakers: *si hubiera sabido, habría venido* → *se tivesse sabido, teria vindo*."
+    - "*Tinha* + participle as a result clause is spoken; *teria* is the written choice."
+    - "Participle *pegado* / *pego*: both are heard in Brazil; *pegado* is the safe choice with *ter*."
+  variant: "European speech also uses *tinha* + participle in the result: *Se tivesse sabido, tinha vindo.*"
+  related: [g.subjunctive-pluperfect, g.conditional-perfect, g.se-clauses-unreal]
+  drills:
+    - { es: "Se você tivesse me avisado, eu teria ajudado.", en: "If you'd told me, I would have helped." }
+    - { es: "Se tivesse chovido, o show teria sido cancelado.", en: "If it had rained, the concert would have been cancelled." }
+    - { es: "Se eu não tivesse perdido o ônibus, não teria conhecido você.", en: "If I hadn't missed the bus, I wouldn't have met you." }
+    - { es: "Se não fosse ele, eu não estaria aqui.", en: "If it weren't for him, I wouldn't be here." }
+- id: g.future-subjunctive-compound
+  level: b2
+  title: "Quando você tiver terminado — the compound future subjunctive"
+  summary: "tiver + participle: an action that will have been completed before another future one."
+  explanation: |
+    | | |
+    |---|---|
+    | eu / você / ele | *tiver feito* |
+    | nós | *tivermos feito* |
+    | vocês / eles | *tiverem feito* |
+
+    - *Quando você tiver terminado, me avise.* — When you have finished, let me know.
+    - *Se até sexta ele não tiver respondido, ligo de novo.* — If he hasn't replied by Friday, I'll call again.
+    - *Assim que tivermos recebido o pagamento, enviaremos o produto.*
+
+    Common in formal, legal and business language; in speech the simple form is often enough: *Quando você terminar…*
+  examples:
+    - { es: "Quando vocês tiverem lido o contrato, assinem aqui.", en: "When you have read the contract, sign here." }
+    - { es: "Se até amanhã não tiver chovido, vamos às dunas.", en: "If it hasn't rained by tomorrow, we'll go to the dunes." }
+    - { es: "Só saio depois que tiver terminado tudo.", en: "I'll only leave once I've finished everything." }
+    - { es: "Quem não tiver feito a inscrição não poderá participar.", en: "Anyone who hasn't registered won't be able to take part." }
+  pitfalls:
+    - "Spanish speakers: *cuando hayas terminado* → *quando você tiver terminado*."
+    - "Don't use *tenha* here: the future subjunctive is required after *quando / se* about the future."
+    - "In casual speech *quando você terminar* is perfectly fine."
+  variant: "Same in Portugal: *Quando tiveres acabado, avisa-me.*"
+  related: [g.future-subjunctive-forms, g.future-perfect, g.future-subjunctive-legal]
+  drills:
+    - { es: "Quando eu tiver juntado dinheiro, vou viajar.", en: "When I've saved some money, I'll travel." }
+    - { es: "Se ele não tiver chegado às oito, a gente começa.", en: "If he hasn't arrived by eight, we'll start." }
+    - { es: "Assim que tivermos decidido, avisaremos.", en: "As soon as we've decided, we'll let you know." }
+    - { es: "Quem tiver terminado pode sair.", en: "Anyone who has finished may leave." }
+- id: g.conditional-perfect
+  level: b2
+  title: "Teria feito — would have"
+  summary: "teria + participle: unreal past results, regrets, and (in the press) unconfirmed reports."
+  explanation: |
+    | | |
+    |---|---|
+    | eu / você / ele | *teria feito* |
+    | nós | *teríamos feito* |
+    | vocês / eles | *teriam feito* |
+
+    Uses:
+    - Result of an unreal past condition: *Eu teria ido se soubesse.*
+    - Regret, judgement: *Teria sido melhor ficar em casa. Eu não teria dito isso.*
+    - **Journalism**: reported, unconfirmed facts: *O suspeito teria fugido pela janela.* (allegedly escaped)
+    - Speech often uses *tinha* + participle: *Eu tinha ido.*
+  examples:
+    - { es: "Eu teria adorado ver o Carnaval de Olinda.", en: "I would have loved to see Carnival in Olinda." }
+    - { es: "Sem a sua ajuda, a gente não teria conseguido.", en: "Without your help, we wouldn't have managed." }
+    - { es: "Teria sido mais fácil ir de avião.", en: "It would have been easier to fly." }
+    - { es: "Segundo a polícia, o motorista teria dormido ao volante.", en: "According to the police, the driver allegedly fell asleep at the wheel." }
+  pitfalls:
+    - "In news reports *teria* + participle signals 'allegedly', not a hypothesis."
+    - "Spanish speakers: *habría* is *teria* (with *ter*)."
+    - "Don't put *teria* after *se*: *se tivesse ido*, not *se teria ido*."
+  variant: "Same in Portugal, where speech also uses *tinha* + participle; formal writing may use mesoclisis with pronouns (*ter-lhe-ia dito*)."
+  related: [g.se-clauses-past, g.deveria-ter, g.journalistic-language]
+  drills:
+    - { es: "Eu teria ligado, mas fiquei sem bateria.", en: "I would have called, but my battery died." }
+    - { es: "Vocês teriam gostado do passeio.", en: "You would have liked the trip." }
+    - { es: "Ela nunca teria aceitado.", en: "She would never have accepted." }
+    - { es: "O incêndio teria começado na cozinha.", en: "The fire reportedly started in the kitchen." }
+- id: g.quem-dera
+  level: b2
+  title: "Quem dera, tomara, se ao menos — wishing"
+  summary: "Tomara que + present subjunctive (possible); quem me dera + infinitive or que + imperfect subjunctive (unlikely or impossible)."
+  explanation: |
+    | | |
+    |---|---|
+    | possible | *Tomara que ela venha!* (I hope she comes!) |
+    | unlikely / impossible now | *Quem me dera ter férias!* / *Quem me dera que eu tivesse férias!* |
+    | impossible past | *Quem me dera que eu tivesse ido!* |
+    | short reply | *Quem dera!* (If only! / I wish!) |
+    | if only | *Se ao menos eu soubesse…* |
+    | literary | *Oxalá…* |
+
+    *Pudera!* means "No wonder!": *Ele está cansado. — Pudera, trabalhou a noite toda!*
+  examples:
+    - { es: "Quem me dera morar em Fernando de Noronha!", en: "I wish I lived on Fernando de Noronha!" }
+    - { es: "Você vai tirar férias? — Quem dera!", en: "Are you taking a holiday? — I wish!" }
+    - { es: "Tomara que o voo não atrase.", en: "Let's hope the flight isn't delayed." }
+    - { es: "Se ao menos ele tivesse ligado…", en: "If only he had called…" }
+    - { es: "Ela passou! — Pudera, estudou o ano todo.", en: "She passed! — No wonder, she studied all year." }
+  pitfalls:
+    - "Spanish speakers: *ojalá tuviera* → *quem me dera ter* / *quem me dera que eu tivesse*."
+    - "*Tomara que* + present subjunctive is for real hopes, not impossible wishes."
+    - "*Quem dera* doesn't ask 'who'; it's a fixed expression."
+  variant: "In Portugal *Oxalá!* is everyday, *Quem me dera!* is also very common, and *tomara* is less frequent."
+  related: [g.subjunctive-wishes, g.subjunctive-pluperfect, g.subjunctive-imperfect]
+  drills:
+    - { es: "Quem me dera falar português como você!", en: "I wish I spoke Portuguese like you!" }
+    - { es: "Tomara que faça sol no fim de semana.", en: "Let's hope it's sunny at the weekend." }
+    - { es: "Quem me dera que fosse sexta!", en: "I wish it were Friday!" }
+    - { es: "Se ao menos eu tivesse escutado!", en: "If only I had listened!" }
+- id: g.deveria-ter
+  level: b2
+  title: "Deveria ter, poderia ter — should have, could have"
+  summary: "deveria / devia ter + participle (should have), poderia ter (could have), não precisava (didn't need to)."
+  explanation: |
+    | | |
+    |---|---|
+    | *Você deveria ter me avisado.* | You should have told me. |
+    | *Eu devia ter ido.* (speech) | I should have gone. |
+    | *A gente poderia ter ganhado.* | We could have won. |
+    | *Você podia ter se machucado!* | You could have hurt yourself! |
+    | *Não precisava ter trazido nada.* | You didn't need to bring anything. |
+    | *Teria sido melhor + inf.* | It would have been better to… |
+
+    ### Polite reproach
+    *Você podia ter ligado, né?* (You could have called, you know.) *Não custava nada avisar.* (It wouldn't have hurt to let me know.)
+  examples:
+    - { es: "Eu deveria ter reservado antes.", en: "I should have booked earlier." }
+    - { es: "Vocês podiam ter me chamado!", en: "You could have invited me!" }
+    - { es: "Não precisava ter se incomodado.", en: "You shouldn't have gone to any trouble." }
+    - { es: "Ele não deveria ter dito aquilo.", en: "He shouldn't have said that." }
+  pitfalls:
+    - "Never *deveria tido*: the structure is *deveria ter* + participle."
+    - "Spanish speakers: *deberías haberlo dicho* → *você deveria ter dito*."
+    - "*Podia ter* can mean 'could have (but didn't)' or 'may have': context decides."
+  variant: "In Portugal the imperfect is normal: *Devias ter avisado. Podias ter ligado.*"
+  related: [g.conditional-perfect, g.dever-ter-que, g.politeness-strategies]
+  drills:
+    - { es: "A gente devia ter saído mais cedo.", en: "We should have left earlier." }
+    - { es: "Você poderia ter pedido ajuda.", en: "You could have asked for help." }
+    - { es: "Eu não deveria ter comido tanto.", en: "I shouldn't have eaten so much." }
+    - { es: "Não precisava ter pagado.", en: "You didn't have to pay." }
+- id: g.embora-concession
+  level: b2
+  title: "Embora, mesmo que, ainda que — although and even if"
+  summary: "embora / ainda que / se bem que + subjunctive (although); mesmo que + subjunctive (even if); mesmo + gerund."
+  explanation: |
+    ### Although (a real fact) — still subjunctive
+    - *Embora esteja chovendo, vamos sair.*
+    - *Embora ele tenha estudado, não passou.*
+    - *Ainda que fosse tarde, ela ligou.*
+
+    ### Even if (hypothetical)
+    - *Mesmo que chova, vamos sair.*
+    - *Mesmo que eu quisesse, não poderia.*
+
+    ### Mesmo + gerund (very Brazilian)
+    *Mesmo chovendo, fomos à praia.* (Even though it was raining…) *Mesmo sabendo, não disse nada.*
+
+    ### Se bem que
+    Often "mind you, although" in speech: *A comida é boa, se bem que um pouco cara.*
+  examples:
+    - { es: "Embora seja longe, vale a pena ir aos Lençóis Maranhenses.", en: "Although it's far, it's worth going to the Lençóis Maranhenses." }
+    - { es: "Mesmo que você não goste, experimenta.", en: "Even if you don't like it, try it." }
+    - { es: "Mesmo cansada, ela foi ao ensaio.", en: "Even though she was tired, she went to rehearsal." }
+    - { es: "Embora tivesse pouco dinheiro, viajou pelo Nordeste todo.", en: "Although he had little money, he travelled all over the Northeast." }
+  pitfalls:
+    - "Spanish speakers: *aunque* + indicative (a fact) is still *embora* + **subjunctive** in Portuguese."
+    - "*Mesmo que* is 'even if'; *mesmo assim* is 'even so'."
+    - "*Embora* (although) and *ir embora* (leave) are unrelated in use."
+  variant: "Same in Portugal; *conquanto* is a literary alternative on both sides."
+  related: [g.por-mais-que, g.apesar-de, g.connectors-contrast]
+  drills:
+    - { es: "Embora eu entenda, não concordo.", en: "Although I understand, I don't agree." }
+    - { es: "Mesmo que demore, vou esperar.", en: "Even if it takes a while, I'll wait." }
+    - { es: "Ainda que estivesse doente, foi trabalhar.", en: "Even though he was ill, he went to work." }
+    - { es: "Mesmo sem dinheiro, eles foram felizes.", en: "Even without money, they were happy." }
+- id: g.por-mais-que
+  level: b2
+  title: "Por mais que — however much"
+  summary: "por mais que / por muito que + subjunctive; por mais + adjective + que: por mais difícil que seja."
+  explanation: |
+    - *Por mais que eu tente, não consigo.* — However hard I try, I can't.
+    - *Por mais difícil que seja, vamos conseguir.* — However hard it may be, we'll manage.
+    - *Por menos que ganhe, ele economiza.* — However little he earns, he saves.
+    - *Por pior que estivesse, ela sorria.* — However bad she felt, she smiled.
+
+    Always with the **subjunctive** (present or imperfect according to time).
+
+    Related: *por mais que* = *mesmo que* + intensity; *nem que* = not even if.
+  examples:
+    - { es: "Por mais que eu explique, ele não entende.", en: "However much I explain, he doesn't understand." }
+    - { es: "Por mais cansado que estivesse, ele dançou a noite toda.", en: "However tired he was, he danced all night." }
+    - { es: "Por mais caro que seja, eu vou comprar.", en: "However expensive it is, I'm going to buy it." }
+    - { es: "Por menos que goste, você precisa ir.", en: "However little you like it, you have to go." }
+  pitfalls:
+    - "The subjunctive is obligatory: *por mais que tente*, not *tenta*."
+    - "The adjective goes between *mais* and *que*: *por mais difícil que seja*."
+    - "Spanish speakers: *por mucho que* = *por mais que*."
+  variant: "Europeans also say *por muito que* (*Por muito que tente…*)."
+  related: [g.embora-concession, g.apesar-de]
+  drills:
+    - { es: "Por mais que chova, a festa continua.", en: "However much it rains, the party goes on." }
+    - { es: "Por mais rápido que corresse, não chegou a tempo.", en: "However fast he ran, he didn't make it in time." }
+    - { es: "Por mais que você insista, a resposta é não.", en: "However much you insist, the answer is no." }
+    - { es: "Por mais simples que pareça, não é fácil.", en: "However simple it seems, it isn't easy." }
+- id: g.apesar-de
+  level: b2
+  title: "Apesar de — despite, in spite of"
+  summary: "apesar de + noun / infinitive / personal infinitive; apesar disso; mesmo com; nem por isso."
+  explanation: |
+    | | |
+    |---|---|
+    | + noun | *Apesar do calor, saímos.* |
+    | + infinitive (same subject) | *Apesar de estar cansada, ela foi.* |
+    | + personal infinitive | *Apesar de eles serem jovens, são responsáveis.* |
+    | + que + subj. / ind. (speech) | *Apesar de que…* |
+    | as a linker | *Choveu. Apesar disso, o show aconteceu.* |
+
+    Related:
+    - *mesmo com* + noun: *Mesmo com chuva, fomos.*
+    - *nem por isso*: not for that reason: *É caro, mas nem por isso é bom.*
+    - *a despeito de* (formal)
+
+    Formal writing avoids contracting *de* with the subject of an infinitive: *apesar de o tempo estar ruim* (speech: *apesar do tempo estar ruim*).
+  examples:
+    - { es: "Apesar da chuva, o forró foi animado.", en: "Despite the rain, the forró was lively." }
+    - { es: "Apesar de morar em Natal, nunca fui a Pipa.", en: "Despite living in Natal, I've never been to Pipa." }
+    - { es: "Apesar de os preços terem subido, o turismo cresceu.", en: "Despite prices having risen, tourism grew.", altEs: ["Apesar dos preços terem subido, o turismo cresceu."] }
+    - { es: "É famoso, mas nem por isso é arrogante.", en: "He's famous, but he isn't arrogant for all that." }
+  pitfalls:
+    - "Spanish speakers: *a pesar de* is one word in Portuguese: *apesar de*."
+    - "Don't forget *de*: *apesar do trânsito*, not *apesar o trânsito*."
+    - "Use the personal infinitive when the subject differs: *apesar de vocês estarem*."
+  variant: "Same in Portugal."
+  related: [g.embora-concession, g.personal-infinitive-uses, g.connectors-contrast]
+  drills:
+    - { es: "Apesar do frio, a praia estava cheia.", en: "Despite the cold, the beach was full." }
+    - { es: "Apesar de ser caro, o passeio vale a pena.", en: "Although it's expensive, the tour is worth it." }
+    - { es: "Apesar de tudo, foi uma ótima viagem.", en: "Despite everything, it was a great trip." }
+    - { es: "Ele perdeu; apesar disso, ficou feliz.", en: "He lost; even so, he was happy." }
+- id: g.temporal-clauses-advanced
+  level: b2
+  title: "Advanced time clauses — mal, até que, à medida que, desde que"
+  summary: "mal (as soon as), até que, antes que, à medida que (as), cada vez que, desde que (since) — and their moods."
+  explanation: |
+    | | mood |
+    |---|---|
+    | *mal* (as soon as, no sooner) | indicative (past) / fut. subj. |
+    | *assim que / logo que* | indicative (past) / fut. subj. |
+    | *até que* | indicative (past fact) / subjunctive (future) |
+    | *antes que* | present / imperfect subjunctive |
+    | *à medida que* (as, gradually) | indicative |
+    | *cada vez que / toda vez que* | indicative / fut. subj. |
+    | *desde que* (since — time) | indicative |
+
+    - *Mal cheguei, começou a chover.*
+    - *Fique aqui até que eu volte.* (= *até eu voltar*)
+    - *À medida que o sol subia, a areia esquentava.*
+    - *Desde que me mudei, não vejo meus amigos.*
+
+    ### Desde que: two meanings
+    - + indicative = **since** (time): *desde que cheguei*
+    - + subjunctive = **provided that**: *desde que você pague* (next note)
+  examples:
+    - { es: "Mal entrei no mar, uma onda me derrubou.", en: "No sooner had I gone into the sea than a wave knocked me over." }
+    - { es: "Vamos esperar até que a maré baixe.", en: "Let's wait until the tide goes down.", altEs: ["Vamos esperar até a maré baixar."] }
+    - { es: "À medida que subíamos a serra, fazia mais frio.", en: "As we climbed the hills, it got colder." }
+    - { es: "Toda vez que vou a Salvador, como acarajé.", en: "Every time I go to Salvador, I eat acarajé." }
+    - { es: "Desde que voltei de Recife, só ouço frevo.", en: "Since I got back from Recife, I only listen to frevo." }
+  pitfalls:
+    - "*Desde que* + subjunctive means 'provided that', not 'since'."
+    - "*À medida que* (as, in proportion) is not *na medida em que* (insofar as)."
+    - "*Mal* as a conjunction is literary-sounding but common in narration."
+  variant: "Same in Portugal, where *mal* and *logo que* are frequent in speech."
+  related: [g.future-subjunctive-time, g.antes-depois-de, g.conditional-conjunctions]
+  drills:
+    - { es: "Mal ela saiu, o telefone tocou.", en: "No sooner had she left than the phone rang." }
+    - { es: "Fique quieto até que eu diga.", en: "Stay still until I say so." }
+    - { es: "À medida que o tempo passa, fico mais tranquilo.", en: "As time goes by, I get calmer." }
+    - { es: "Saia antes que alguém veja.", en: "Leave before anyone sees." }
+- id: g.conditional-conjunctions
+  level: b2
+  title: "Caso, desde que, contanto que, a não ser que — conditions"
+  summary: "caso + present / imperfect subjunctive (in case, if); desde que / contanto que (provided that); a não ser que / a menos que (unless)."
+  explanation: |
+    | | |
+    |---|---|
+    | *caso* | if, in case |
+    | *desde que* / *contanto que* | provided that, as long as |
+    | *a não ser que* / *a menos que* | unless |
+    | *sem que* | without |
+    | *na hipótese de* + inf. | in the event of |
+    | *em caso de* + noun | in case of |
+
+    All take the **present or imperfect subjunctive** — never the future subjunctive:
+    - *Caso você precise, me ligue.* (not *caso você precisar*)
+    - *Pode ir, desde que volte cedo.*
+    - *Vamos à praia, a não ser que chova.*
+    - *Disse que viria, caso tivesse tempo.*
+
+    Compare: *Se você precisar, me liga* (se + future subjunctive).
+  examples:
+    - { es: "Caso chova, o passeio será remarcado.", en: "If it rains, the trip will be rescheduled." }
+    - { es: "Te empresto o carro, desde que você devolva amanhã.", en: "I'll lend you the car, as long as you bring it back tomorrow." }
+    - { es: "Não vou, a não ser que você venha comigo.", en: "I'm not going unless you come with me." }
+    - { es: "Em caso de emergência, ligue 192.", en: "In an emergency, call 192." }
+  pitfalls:
+    - "*Caso* takes the present subjunctive: *caso você queira*, not *caso você quiser* (a common slip)."
+    - "*Desde que* + subjunctive = provided that; + indicative = since."
+    - "Spanish speakers: *en caso de que* = *caso*; *a no ser que* = *a não ser que*."
+  variant: "Same in Portugal."
+  related: [g.future-subjunctive-se, g.temporal-clauses-advanced, g.legal-register]
+  drills:
+    - { es: "Caso você não possa vir, me avise.", en: "If you can't come, let me know." }
+    - { es: "Pode usar, contanto que tome cuidado.", en: "You can use it, as long as you're careful." }
+    - { es: "A menos que haja um milagre, vamos perder.", en: "Unless there's a miracle, we'll lose." }
+    - { es: "Saí sem que ninguém notasse.", en: "I left without anyone noticing." }
+- id: g.consequence-clauses
+  level: b2
+  title: "Tão… que, tanto que, de modo que — consequence"
+  summary: "tão + adj. + que; tanto/tanta + noun + que; verb + tanto que; de modo que (+ indicative = result, + subjunctive = purpose)."
+  explanation: |
+    | | |
+    |---|---|
+    | *tão* + adjective / adverb + *que* | *Estava tão cansado que dormi no ônibus.* |
+    | *tanto / tanta / tantos / tantas* + noun + *que* | *Tinha tanta gente que não deu para entrar.* |
+    | verb + *tanto que* | *Choveu tanto que a rua alagou.* |
+    | *tanto que* (so much so that) | *Ela adora o Ceará, tanto que se mudou para lá.* |
+    | *de modo que / de forma que / de maneira que* | so (that) |
+
+    ### Mood with de modo que
+    - + indicative = **result**: *Perdi a chave, de modo que não pude entrar.*
+    - + subjunctive = **purpose**: *Fale alto, de modo que todos ouçam.*
+  examples:
+    - { es: "A água estava tão quente que ficamos horas no mar.", en: "The water was so warm that we stayed in the sea for hours." }
+    - { es: "Comi tanto acarajé que passei mal.", en: "I ate so much acarajé that I felt ill." }
+    - { es: "Ele treinou tanto que ganhou a corrida.", en: "He trained so much that he won the race." }
+    - { es: "Organize os papéis de forma que qualquer um encontre.", en: "Organise the papers so that anyone can find them." }
+  pitfalls:
+    - "*Tão* with adjectives / adverbs, *tanto* with nouns (agreeing) and verbs."
+    - "Spanish speakers: *tan… que* = *tão… que*; *tanto que* works as in Spanish."
+    - "*De modo que* + subjunctive expresses purpose, not result."
+  variant: "Same in Portugal."
+  related: [g.connectors-cause-consequence, g.subjunctive-purpose, g.comparatives]
+  drills:
+    - { es: "Estava tão escuro que não vi nada.", en: "It was so dark I couldn't see anything." }
+    - { es: "Ela riu tanto que chorou.", en: "She laughed so much she cried." }
+    - { es: "Havia tantos turistas que desistimos.", en: "There were so many tourists that we gave up." }
+    - { es: "Fale devagar, de modo que todos entendam.", en: "Speak slowly so that everyone understands." }
+- id: g.reported-speech-subjunctive
+  level: b2
+  title: "Reported speech with the subjunctive — pediu que eu viesse"
+  summary: "Reported wishes and requests: present report → present subjunctive; past report → imperfect subjunctive."
+  explanation: |
+    | direct | reported now | reported in the past |
+    |---|---|---|
+    | *"Venha!"* | *Ela pede que eu venha.* | *Ela pediu que eu viesse.* |
+    | *"Espero que você goste."* | *Ele diz que espera que eu goste.* | *Ele disse que esperava que eu gostasse.* |
+    | *"Quando chegar, ligo."* | *Ela diz que, quando chegar, liga.* | *Ela disse que, quando chegasse, ligaria.* |
+
+    - The future subjunctive becomes the **imperfect subjunctive** in the past: *quando chegar → quando chegasse; se puder → se pudesse*.
+    - Brazilian speech often reports with *para* + infinitive: *Ela pediu para eu vir.*
+  examples:
+    - { es: "O guia pediu que a gente não se afastasse do grupo.", en: "The guide asked us not to stray from the group." }
+    - { es: "Ela disse que, se pudesse, viria ao São João.", en: "She said that if she could, she'd come to the São João festival." }
+    - { es: "Meu pai queria que eu estudasse Direito.", en: "My father wanted me to study law." }
+    - { es: "Ele me disse para eu não me preocupar.", en: "He told me not to worry.", altEs: ["Ele me disse que eu não me preocupasse."] }
+  pitfalls:
+    - "Spanish speakers: *me dijo que viniera* → *ele me disse que viesse* / *ele me disse para vir*."
+    - "Shift *se puder / quando chegar* to *se pudesse / quando chegasse* after a past verb."
+    - "*Disse que vinha* (report of a fact) ≠ *disse que viesse* (report of a command)."
+  variant: "In Portugal: *Pediu-me que viesse. Disse-me que não me preocupasse.*"
+  related: [g.reported-speech-past, g.reported-commands, g.subjunctive-imperfect]
+  drills:
+    - { es: "Ela pediu que eu trouxesse vinho.", en: "She asked me to bring wine." }
+    - { es: "Disseram que, quando o barco chegasse, avisariam.", en: "They said they'd let us know when the boat arrived." }
+    - { es: "Ele sugeriu que fôssemos de manhã.", en: "He suggested we go in the morning." }
+    - { es: "A professora mandou que todos ficassem quietos.", en: "The teacher told everyone to be quiet." }
+- id: g.reported-commands
+  level: b2
+  title: "Reporting commands — mandar, pedir, proibir, aconselhar"
+  summary: "mandou que eu fizesse / mandou eu fazer; pediu para eu esperar; proibiu de sair; aconselhou a descansar."
+  explanation: |
+    | verb | structure | example |
+    |---|---|---|
+    | *mandar* | + inf. / *que* + subj. | *Mandou a gente sair. / Mandou que saíssemos.* |
+    | *pedir* | *para* + inf. / *que* + subj. | *Pediu para eu esperar. / Pediu que eu esperasse.* |
+    | *dizer* | *para* + inf. / *que* + subj. | *Disse para eu ligar.* |
+    | *proibir* | (*de*) + inf. / *que* + subj. | *Proibiu os filhos de sair.* |
+    | *aconselhar* | *a* + inf. / *que* + subj. | *Aconselhou-me a descansar.* |
+    | *exigir, recomendar, sugerir, implorar, ordenar* | *que* + subj. | *Exigiu que pagássemos.* |
+
+    Negative commands: *"Não saia!" → Disse para eu não sair / que eu não saísse.*
+  examples:
+    - { es: "O médico mandou eu ficar de repouso.", en: "The doctor told me to rest.", altEs: ["O médico mandou que eu ficasse de repouso."] }
+    - { es: "Ela implorou que ele não fosse embora.", en: "She begged him not to leave." }
+    - { es: "Os pais proibiram as crianças de nadar sozinhas.", en: "The parents forbade the children to swim alone." }
+    - { es: "O chefe exigiu que o relatório fosse refeito.", en: "The boss demanded that the report be redone." }
+  pitfalls:
+    - "*Mandar alguém fazer* = make / tell someone to do; *mandar fazer* = have something done (*mandei fazer um vestido*)."
+    - "With *pedir para*, check meaning: in Brazil it reports a request; in Portugal it asks permission."
+    - "Spanish speakers: *prohibir* + inf. is *proibir de* + inf. when there is an object person."
+  variant: "Portugal: *Mandou-nos sair. Pediu-me que esperasse.* (*Pediu para sair* = he asked if he could leave.)"
+  related: [g.reported-speech-subjunctive, g.indirect-commands, g.subjunctive-advice]
+  drills:
+    - { es: "Ela pediu para a gente falar mais baixo.", en: "She asked us to talk more quietly." }
+    - { es: "O policial mandou o motorista parar.", en: "The police officer ordered the driver to stop." }
+    - { es: "Me aconselharam a não ir sozinho.", en: "They advised me not to go alone." }
+    - { es: "Ele disse para eu não esquecer o passaporte.", en: "He told me not to forget my passport." }
+- id: g.reporting-verbs
+  level: b2
+  title: "Reporting verbs — afirmar, alegar, garantir, negar, admitir"
+  summary: "Go beyond dizer: afirmar, declarar, alegar, garantir, admitir, negar, confessar, revelar, prometer, acrescentar."
+  explanation: |
+    | verb | meaning | mood |
+    |---|---|---|
+    | *afirmar / declarar* | state, declare | indicative |
+    | *alegar* | claim | indicative |
+    | *garantir / assegurar* | assure, guarantee | indicative |
+    | *admitir / reconhecer* | admit | indicative |
+    | *negar* | deny | **subjunctive** (*negou que tivesse…*) |
+    | *confessar / revelar* | confess, reveal | indicative |
+    | *prometer / ameaçar* | promise, threaten | inf. / *que* + ind. |
+    | *explicar / esclarecer* | explain, clarify | indicative |
+    | *acrescentar* | add | indicative |
+    | *reclamar* | complain | *que* + ind. / *de* |
+    | *lembrar* | remind | *que* + ind. / *de* + inf. |
+
+    In the press: *segundo, conforme, de acordo com* (according to).
+  examples:
+    - { es: "O ministro afirmou que a obra será concluída em junho.", en: "The minister stated that the work will be completed in June." }
+    - { es: "Ele negou que tivesse recebido o dinheiro.", en: "He denied having received the money." }
+    - { es: "A empresa garantiu que ninguém seria demitido.", en: "The company assured that nobody would be fired." }
+    - { es: "Ela admitiu que tinha se enganado.", en: "She admitted she had been wrong." }
+    - { es: "Segundo os pescadores, a maré vai subir.", en: "According to the fishermen, the tide is going to rise." }
+  pitfalls:
+    - "False friend: *pretender* = to intend; 'to pretend' is *fingir*."
+    - "*Negar que* takes the subjunctive; *afirmar que* the indicative."
+    - "*Alegar* means 'claim' (often doubtful), not 'allege' in a legal sense only."
+  variant: "Same in Portugal, where *referir* (to mention, state) is very common in the press: *O ministro referiu que…*"
+  related: [g.reported-speech-past, g.quotation, g.journalistic-language]
+  drills:
+    - { es: "O réu alegou que estava em casa.", en: "The defendant claimed he was at home." }
+    - { es: "Ela prometeu que voltaria.", en: "She promised she would come back." }
+    - { es: "O diretor negou que houvesse problemas.", en: "The director denied there were any problems." }
+    - { es: "Ele acrescentou que a decisão era definitiva.", en: "He added that the decision was final." }
+- id: g.passive-advanced
+  level: b2
+  title: "The passive in every tense — está sendo construído, precisa ser feito"
+  summary: "Compound, progressive and modal passives: tem sido discutido, está sendo feito, deve ser analisado, precisa ser trocado."
+  explanation: |
+    | | |
+    |---|---|
+    | present perfect | *O projeto **tem sido discutido**.* (has been being discussed) |
+    | pluperfect | *A igreja **tinha sido restaurada**.* |
+    | progressive | *A ponte **está sendo construída**.* |
+    | ongoing from the past | *O tema **vem sendo debatido** há anos.* |
+    | future | *O resultado **será divulgado**.* |
+    | with modals | *Isso **deve / pode / precisa ser** feito.* |
+
+    - *Precisa ser* + participle is the natural Brazilian "needs to be done": *O pneu precisa ser trocado.*
+    - The agent is often omitted; when present it follows *por*: *pelo governo*. In literary style *de* is possible with feelings: *amado de todos*.
+    - The participle agrees: *As obras estão sendo feitas.*
+  examples:
+    - { es: "O Pelourinho foi restaurado nos anos 90.", en: "The Pelourinho was restored in the 1990s." }
+    - { es: "A nova lei está sendo discutida no Congresso.", en: "The new law is being discussed in Congress." }
+    - { es: "O casarão precisa ser reformado.", en: "The mansion needs to be renovated." }
+    - { es: "Os moradores não tinham sido avisados.", en: "The residents had not been warned." }
+    - { es: "Essa tradição vem sendo mantida há séculos.", en: "This tradition has been kept up for centuries." }
+  pitfalls:
+    - "Agreement: *a casa está sendo pintada*, *os muros estão sendo pintados*."
+    - "*Precisa ser feito*, without *de* (not *precisa de ser feito* in Brazil)."
+    - "English speakers: don't overuse the passive in Portuguese; active or *se* is often more natural."
+  variant: "European Portuguese uses *estar a ser* for the progressive passive (*A ponte está a ser construída*) and *precisa de ser feito* with *de*."
+  related: [g.passive-ser, g.impersonal-expressions, g.nominalization]
+  drills:
+    - { es: "O museu está sendo ampliado.", en: "The museum is being extended." }
+    - { es: "A decisão já tinha sido tomada.", en: "The decision had already been taken." }
+    - { es: "Esse documento deve ser assinado hoje.", en: "This document must be signed today." }
+    - { es: "As praias têm sido muito procuradas.", en: "The beaches have been very popular." }
+- id: g.impersonal-expressions
+  level: b2
+  title: "Formal impersonal style — sabe-se que, estima-se que, vale lembrar"
+  summary: "Sabe-se que…, Acredita-se que…, Estima-se que…, Observa-se…, Cabe ressaltar…, Vale lembrar…, Há quem diga…"
+  explanation: |
+    ### With se
+    *Sabe-se que…, Diz-se que…, Acredita-se que…, Estima-se que…, Observa-se que…, Verifica-se que…, Nota-se que…*
+
+    ### Fixed formal frames
+    | | |
+    |---|---|
+    | *É sabido que…* | It is known that… |
+    | *Convém* + inf. / *que* + subj. | It is advisable… |
+    | *Cabe ressaltar que…* | It should be stressed that… |
+    | *Vale lembrar que…* | It is worth remembering that… |
+    | *Faz-se necessário* + inf. | It is necessary to… |
+    | *Há quem diga que…* | Some say that… |
+    | *Trata-se de…* | It is a matter of… |
+
+    These are the backbone of reports, essays and the press: they avoid *eu* and *a gente*.
+  examples:
+    - { es: "Estima-se que dois milhões de pessoas visitem Salvador no Carnaval.", en: "It is estimated that two million people visit Salvador during Carnival." }
+    - { es: "Sabe-se que o turismo gera empregos na região.", en: "It is known that tourism creates jobs in the region." }
+    - { es: "Vale lembrar que a seca afeta o sertão há séculos.", en: "It is worth remembering that drought has affected the sertão for centuries." }
+    - { es: "Há quem diga que o forró nasceu em festas inglesas.", en: "Some say forró was born at English parties." }
+    - { es: "Faz-se necessário investir em educação.", en: "It is necessary to invest in education." }
+  pitfalls:
+    - "*Há quem* takes a singular verb: *Há quem pense…*"
+    - "Agreement with *se* + plural object: *Analisaram-se os dados* (norm)."
+    - "Don't mix registers: *Vale lembrar que a gente…* sounds odd; keep the whole text impersonal."
+  variant: "Same in European formal writing, where *Importa referir que…* and *Refira-se que…* are also common."
+  related: [g.se-passive, g.indeterminate-subject, g.academic-register]
+  drills:
+    - { es: "Acredita-se que a cidade foi fundada em 1549.", en: "It is believed that the city was founded in 1549." }
+    - { es: "Observa-se um aumento no número de turistas.", en: "An increase in the number of tourists can be observed." }
+    - { es: "Convém chegar cedo.", en: "It's advisable to arrive early." }
+    - { es: "Cabe ressaltar que a pesquisa é preliminar.", en: "It should be stressed that the research is preliminary." }
+- id: g.nominalization
+  level: b2
+  title: "Nominalization — from verbs to nouns"
+  summary: "construir → construção, chegar → chegada, aumentar → aumento: compact, formal style."
+  explanation: |
+    Formal Portuguese often packs a clause into a noun:
+    - *Depois que o presidente chegou…* → *Após a **chegada** do presidente…*
+    - *Porque os preços aumentaram…* → *Devido ao **aumento** dos preços…*
+
+    ### Common suffixes
+    | suffix | examples |
+    |---|---|
+    | *-ção / -são* | *construir → construção, decidir → decisão, discutir → discussão* |
+    | *-mento* | *aumentar → aumento, crescer → crescimento, pagar → pagamento* |
+    | *-ada / -ida* | *chegar → chegada, sair → saída, partir → partida* |
+    | *-agem* | *lavar → lavagem, montar → montagem* |
+    | *-ança / -ença* | *mudar → mudança, crer → crença* |
+    | adjective → *-dade, -eza, -ura* | *possível → possibilidade, belo → beleza, alto → altura* |
+    | no suffix | *analisar → análise, perder → perda, pesquisar → pesquisa, ajudar → ajuda* |
+  examples:
+    - { es: "Após a inauguração da ponte, o trânsito melhorou.", en: "After the bridge opened, traffic improved." }
+    - { es: "O crescimento do turismo trouxe desafios.", en: "The growth of tourism brought challenges." }
+    - { es: "A falta de chuva preocupa os agricultores.", en: "The lack of rain worries farmers." }
+    - { es: "A decisão foi tomada após longa discussão.", en: "The decision was taken after a long discussion." }
+  pitfalls:
+    - "Too many nouns make a text heavy: balance nominal and verbal style."
+    - "*-agem* nouns are feminine: *a lavagem, a viagem*."
+    - "Spanish speakers: *-ción* → *-ção*, *-miento* → *-mento*."
+  variant: "Same in Portugal; European spelling differs in a few nouns (*receção* vs Brazilian *recepção*)."
+  related: [g.word-formation, g.academic-register, g.passive-advanced]
+  drills:
+    - { es: "A chegada do voo está prevista para as dez.", en: "The flight is due to arrive at ten." }
+    - { es: "A mudança foi difícil.", en: "The move was difficult." }
+    - { es: "O pagamento deve ser feito à vista.", en: "Payment must be made in cash." }
+    - { es: "A análise dos dados levou semanas.", en: "Analysing the data took weeks." }
+- id: g.periphrases-aspect
+  level: b2
+  title: "Vou levando, venho pensando — aspect with ir, vir, andar, sair"
+  summary: "ir + gerund (gradual), vir + gerund (from the past until now), sair + gerund (off and away), and why to avoid gerundismo."
+  explanation: |
+    | | meaning | example |
+    |---|---|---|
+    | *ir* + gerund | gradual progress | *A cidade vai crescendo. Vou levando.* (I'm getting by.) |
+    | *vir* + gerund | building up to now | *Venho pensando nisso há meses.* |
+    | *andar* + gerund | lately, repeatedly | *Ela anda dormindo mal.* |
+    | *sair* + gerund | rush off doing | *Saiu correndo.* (He ran off.) |
+    | *acabar* + gerund | end up | *Acabamos ficando.* |
+    | *vir a* + inf. | come to, end up | *Ele veio a falecer em 1908.* |
+    | *estar* + gerund | in progress | *Está chovendo.* |
+
+    ### Avoid gerundismo
+    *Vou estar enviando o documento* ("I will be sending") spread through call-centre language and is widely mocked. Say *Vou enviar* / *Envio amanhã*.
+  examples:
+    - { es: "Como vai? — Vou levando.", en: "How's it going? — Getting by." }
+    - { es: "Os preços vêm subindo desde janeiro.", en: "Prices have been rising since January." }
+    - { es: "Aos poucos, a gente foi se acostumando com o calor.", en: "Little by little, we got used to the heat." }
+    - { es: "Quando viu o cachorro, o menino saiu correndo.", en: "When he saw the dog, the boy ran off." }
+    - { es: "O escritor veio a ser reconhecido só depois de morto.", en: "The writer only came to be recognised after his death." }
+  pitfalls:
+    - "*Vou estar fazendo* (gerundismo) sounds like telemarketing; avoid it."
+    - "*Ir* + gerund is gradual, not future: *Vai escurecendo* = it's gradually getting dark."
+    - "Spanish speakers: *ir / venir / andar* + gerund work much as in Spanish."
+  variant: "European Portuguese prefers *a* + infinitive: *Vai crescendo* exists, but *Ando a dormir mal, Continua a chover, Saiu a correr*."
+  related: [g.verbal-periphrases, g.periphrases-modal, g.ep-aspect-periphrases]
+  drills:
+    - { es: "Fui aprendendo com o tempo.", en: "I learned gradually over time." }
+    - { es: "A gente vem conversando sobre isso.", en: "We've been talking about this." }
+    - { es: "O dia vai clareando.", en: "The day is gradually getting lighter." }
+    - { es: "Ele saiu gritando.", en: "He ran out shouting." }
+- id: g.periphrases-modal
+  level: b2
+  title: "Modal periphrases — haver de, conseguir, chegar a, estar por"
+  summary: "ter de / ter que, haver de (surely will), dever, poder, conseguir (manage), chegar a (go so far as), estar por (still to be done)."
+  explanation: |
+    | | meaning | example |
+    |---|---|---|
+    | *ter de / ter que* | have to | *Tenho de entregar hoje.* |
+    | *haver de* | will surely, must (resolve, prophecy) | *Hei de vencer!* |
+    | *dever* | should, must (probability) | *Deve chover.* |
+    | *poder* | can, may | *Pode ser.* |
+    | *conseguir* | manage to | *Consegui falar com ele.* |
+    | *chegar a* | go so far as | *Cheguei a chorar.* |
+    | *estar para* | be about to | *O barco está para sair.* |
+    | *estar por* | still to be done | *A casa está por limpar.* |
+    | *tornar a* (literary) | do again | *Tornou a sorrir.* |
+
+    *Haver de* sounds literary or regional in Brazil (*Deus há de ajudar*); it is everyday in Portugal.
+  examples:
+    - { es: "Consegui um lugar no barco para Morro de São Paulo.", en: "I managed to get a seat on the boat to Morro de São Paulo." }
+    - { es: "Um dia hei de voltar ao Recife.", en: "One day I shall return to Recife." }
+    - { es: "Ele chegou a pensar em desistir.", en: "He even thought about giving up." }
+    - { es: "Muita coisa ainda está por fazer.", en: "A lot still remains to be done." }
+  pitfalls:
+    - "Spanish speakers: *conseguir* + infinitive means 'manage to', and + noun 'get': *Consegui ingresso.*"
+    - "*Haver de* is conjugated: *hei de, há de, havemos de, hão de*."
+    - "*Estar por* (still to do) ≠ *estar para* (about to)."
+  variant: "In Portugal *haver de* is common in speech for intentions and predictions (*Hás de gostar* — you'll like it), and *ter de* is preferred to *ter que*."
+  related: [g.periphrases-aspect, g.dever-ter-que, g.ter-que]
+  drills:
+    - { es: "Não consegui dormir com o barulho.", en: "I couldn't sleep with the noise." }
+    - { es: "Isso há de dar certo.", en: "This is bound to work out." }
+    - { es: "Ela chegou a morar em Natal.", en: "She actually lived in Natal for a while." }
+    - { es: "O ônibus está para partir.", en: "The bus is about to leave." }
+- id: g.future-perfect
+  level: b2
+  title: "The future perfect — terei feito"
+  summary: "terei + participle: will have done by a certain time; also probability about the past."
+  explanation: |
+    | | |
+    |---|---|
+    | eu | *terei terminado* |
+    | você / ele | *terá terminado* |
+    | nós | *teremos terminado* |
+    | eles | *terão terminado* |
+
+    - Completed before a future moment: *Até dezembro, terei terminado o curso.*
+    - Probability about the past: *Ele já terá saído.* (He'll have left by now.)
+
+    ### In speech
+    *Vou ter terminado* (ir + ter + participle) is the spoken equivalent: *Às oito já vou ter chegado.*
+  examples:
+    - { es: "Quando você chegar, eu já terei saído.", en: "When you arrive, I'll already have left." }
+    - { es: "Até o fim do ano, teremos visitado todas as capitais do Nordeste.", en: "By the end of the year, we'll have visited every state capital in the Northeast." }
+    - { es: "Às dez a gente já vai ter jantado.", en: "By ten we'll already have had dinner." }
+    - { es: "O que terá acontecido com ele?", en: "What can have happened to him?" }
+  pitfalls:
+    - "Spanish speakers: *habré terminado* is *terei terminado* (with *ter*)."
+    - "After *quando / se* use the compound future subjunctive (*quando tiver terminado*), not *terei*."
+    - "In conversation *vou ter* + participle is more natural than *terei*."
+  variant: "Same in Portugal."
+  related: [g.future-subjunctive-compound, g.future-simple, g.probability-future-conditional]
+  drills:
+    - { es: "Em junho, terei morado aqui dez anos.", en: "In June I'll have lived here for ten years." }
+    - { es: "Eles já terão chegado a Fortaleza.", en: "They'll have reached Fortaleza by now." }
+    - { es: "Amanhã a essa hora eu já vou ter viajado.", en: "By this time tomorrow I'll have left." }
+    - { es: "Será que ela terá recebido a mensagem?", en: "Do you think she'll have got the message?" }
+- id: g.register-formal-informal
+  level: b2
+  title: "Register — from tá beleza to atenciosamente"
+  summary: "Brazilian Portuguese has a wide gap between speech and writing: pronouns, verbs, vocabulary and contractions all change."
+  explanation: |
+    | informal speech | neutral / formal |
+    |---|---|
+    | *tá, tô, pra, cê* | *está, estou, para, você* |
+    | *a gente vai* | *nós vamos* |
+    | *vi ele* | *eu o vi* |
+    | *tem muita gente* | *há muitas pessoas* |
+    | *me dá* | *dê-me / poderia me dar* |
+    | *aí ele falou* | *então ele disse* |
+    | *botar* | *colocar / pôr* |
+    | *começar / acabar* | *iniciar / encerrar* |
+    | *pedir* | *solicitar* |
+    | *ajudar* | *auxiliar* |
+    | *ver* | *verificar* |
+    | *legal, massa, show* | *interessante, ótimo* |
+    | *cara, mano, meu* | — |
+
+    ### Tips
+    - Match the register to the situation: a WhatsApp to a friend, an email to a client, an essay.
+    - Formal ≠ pompous: *Venho por meio desta solicitar…* is old-fashioned officialese.
+  examples:
+    - { es: "Cara, tá muito calor, bora pra praia?", en: "Mate, it's so hot, shall we hit the beach?" }
+    - { es: "Está muito calor; vamos à praia?", en: "It's very hot; shall we go to the beach?" }
+    - { es: "Solicitamos que os documentos sejam enviados até sexta.", en: "We request that the documents be sent by Friday." }
+    - { es: "Botei o celular na bolsa.", en: "I put my phone in my bag.", altEs: ["Coloquei o celular na bolsa."] }
+  pitfalls:
+    - "Mixing registers in one text (*Prezado senhor, tô te mandando…*) sounds careless."
+    - "*Você* to a client or older person in writing may sound too familiar; prefer *o senhor / a senhora* or impersonal forms."
+    - "Slang ages fast: *show de bola*, *massa*, *top* — use with care."
+  variant: "The gap between speech and writing is smaller in Portugal; European formal style uses more enclisis (*Agradeço-lhe*) and titles (*Senhor Doutor*)."
+  related: [g.spoken-reductions, g.formal-email, g.regional-features-brazil, g.academic-register]
+  drills:
+    - { es: "A gente se fala depois.", en: "We'll talk later." }
+    - { es: "Nós entraremos em contato em breve.", en: "We will be in touch shortly." }
+    - { es: "Poderia verificar a reserva, por favor?", en: "Could you check the reservation, please?" }
+    - { es: "Valeu, mano!", en: "Thanks, bro!" }
+- id: g.regional-features-brazil
+  level: b2
+  title: "Oxente, uai, bah — regional Brazilian speech"
+  summary: "Accents and grammar vary from region to region: Rio's chiado, Minas's uai, the Northeast's oxente and sei não, the South's bah and tu."
+  explanation: |
+    | region | sounds | words and grammar |
+    |---|---|---|
+    | **Rio de Janeiro** | *s* as "sh" (*mais* = "maish"), guttural *r* | *maneiro* (cool), *caraca!*, *tu* + 3rd person |
+    | **São Paulo** | "caipira" *r* in the interior | *meu* / *mano* (dude), *orra!*, *farol* (traffic light) |
+    | **Minas Gerais** | reduced words (*cê, ocê*) | *uai!*, *trem* (thing), *sô*, diminutive *-im* (*cafezim*) |
+    | **Northeast** | open pre-stress vowels (*pègar*) | *oxente / oxe!*, *vixe!*, *arretado* (great / angry), *massa* (cool), *visse?* (Recife), *painho / mainha* (Bahia), final *não* (*sei não*), *tu* + 3rd person |
+    | **South** | clear *t* / *d* before *i* | *bah!*, *tchê*, *tri* (very), *guri / guria*, *tu* with standard forms in places |
+    | **North** | *s* as "sh" in Belém | *égua!* (wow), *mana / mano*, *tu* conjugated (*tu vais*) |
+
+    All are perfectly correct Brazilian Portuguese; standard written Portuguese is shared.
+  examples:
+    - { es: "Oxente, menino, que confusão é essa?", en: "Goodness, boy, what's all this fuss?" }
+    - { es: "Uai, cê não vem?", en: "What, aren't you coming?" }
+    - { es: "Bah, tchê, que frio!", en: "Wow, mate, it's freezing!" }
+    - { es: "O show foi massa, visse?", en: "The show was great, you know?" }
+    - { es: "Me passa aquele trem ali.", en: "Pass me that thing over there." }
+  pitfalls:
+    - "Don't imitate regional words to sound local; it can come across as mockery. Recognise them."
+    - "*Arretado* can mean 'awesome' or 'furious' depending on context."
+    - "*Trem* in Minas means 'thing' as often as 'train'."
+  variant: "Portugal has its own regional speech: Porto swaps *v* and *b* (*binho*) and says *carago!*, the Alentejo uses the gerund (*estou falando*), and the Azores have a very distinctive accent."
+  related: [g.register-formal-informal, g.tu-regional, g.lusophone-varieties]
+  drills:
+    - { es: "Vixe, esqueci a chave!", en: "Oh no, I forgot the key!" }
+    - { es: "Bah, que tri legal!", en: "Wow, that's really cool!" }
+    - { es: "Égua, que chuva!", en: "Wow, what rain!" }
+    - { es: "Sei não, viu?", en: "I really don't know, you know?" }
+- id: g.diminutives-augmentatives
+  level: b2
+  title: "Diminutives and augmentatives — cafezinho, rapidinho, casarão"
+  summary: "-inho / -zinho for size, affection, politeness and intensity; -ão / -ona / -aço for size and emphasis."
+  explanation: |
+    ### Forming the diminutive
+    | | rule | examples |
+    |---|---|---|
+    | *-inho / -inha* | words ending in unstressed *-o / -a* | *casa → casinha, gato → gatinho* |
+    | *-zinho / -zinha* | stressed vowel, nasal, diphthong, consonant | *café → cafezinho, pão → pãozinho, mãe → mãezinha, flor → florzinha* |
+    | plural of *-zinho* | plural stem + *-zinhos* | *pães → pãezinhos, flores → florezinhas* |
+
+    ### What it means
+    - small: *uma casinha*
+    - affection: *filhinho, vozinha*
+    - politeness, softening: *um minutinho, um cafezinho, um favorzinho*
+    - intensity: *cedinho* (really early), *pertinho* (very near), *rapidinho* (super quick)
+    - contempt: *um empreguinho* (a lousy little job)
+
+    ### Augmentatives
+    *-ão / -ona*: *casarão, carrão, mulherona*; *-aço*: *golaço* (great goal), *calorão*.
+    Some *-ão* words are new words, often masculine: *a porta → o portão* (gate), *a caixa → o caixão* (coffin).
+  examples:
+    - { es: "Aceita um cafezinho?", en: "Would you like a coffee?" }
+    - { es: "Só um minutinho, já te atendo.", en: "Just a moment, I'll be right with you." }
+    - { es: "A praia fica pertinho daqui.", en: "The beach is really close to here." }
+    - { es: "Que golaço!", en: "What a goal!" }
+    - { es: "Moramos num casarão colonial em São Luís.", en: "We live in a big colonial house in São Luís." }
+  pitfalls:
+    - "Spanish speakers: *-ito* becomes *-inho*; *cafecito* is *cafezinho*."
+    - "Augmentatives can change gender and meaning: *o portão* is a gate, not a big door."
+    - "*-inho* on adjectives or adverbs often intensifies rather than diminishes: *bonitinho* (cute), *devagarinho* (nice and slowly)."
+  variant: "Europeans use *-inho* too (*um bocadinho*, a little bit) and, especially in the south, *-ito* (*bocadito*). *Cafezinho* is a Brazilian institution; in Lisbon you ask for *uma bica*."
+  related: [g.word-formation, g.register-formal-informal, g.muito-pouco]
+  drills:
+    - { es: "Volto rapidinho.", en: "I'll be back in a jiffy." }
+    - { es: "Acordei cedinho para ver o sol nascer.", en: "I woke up really early to watch the sunrise." }
+    - { es: "Comprei dois pãezinhos.", en: "I bought two little rolls." }
+    - { es: "Ele tem um carrão importado.", en: "He has a big imported car." }
+- id: g.argumentation-connectors
+  level: b2
+  title: "Connectors for argument — além disso, ou seja, aliás, em suma"
+  summary: "Add, contrast, reformulate, exemplify, emphasise and conclude."
+  explanation: |
+    | function | connectors |
+    |---|---|
+    | adding | *além disso, ademais* (formal), *não só… mas também, inclusive* (even) |
+    | contrast | *no entanto, contudo, todavia, por outro lado, ao passo que* |
+    | concession | *é verdade que… mas, embora, ainda que* |
+    | reformulating | *ou seja, isto é, em outras palavras* |
+    | example | *por exemplo, como, a exemplo de* |
+    | emphasis | *sobretudo, principalmente, aliás* (in fact, moreover) |
+    | cause | *visto que, uma vez que, dado que* |
+    | conclusion | *portanto, logo, assim, dessa forma, em suma, em síntese* |
+
+    ### Two Brazilian favourites
+    - *inclusive* = even, including: *Todos foram, inclusive o prefeito.*
+    - *aliás* = moreover / by the way / actually (correcting): *Ele é baiano — aliás, de Ilhéus.*
+  examples:
+    - { es: "O turismo gera renda; além disso, valoriza a cultura local.", en: "Tourism generates income; moreover, it values local culture." }
+    - { es: "A seca é um problema antigo, ou seja, não é novidade.", en: "Drought is an old problem; in other words, it's nothing new." }
+    - { es: "Não só o calor, mas também a umidade incomoda.", en: "Not only the heat but also the humidity is a nuisance." }
+    - { es: "Em suma, a proposta é viável.", en: "In short, the proposal is viable." }
+    - { es: "Todos aprovaram, inclusive os mais críticos.", en: "Everyone approved, even the harshest critics." }
+  pitfalls:
+    - "*Inclusive* in Brazilian usage means 'even', not 'inclusive'."
+    - "Don't stack connectors: *Mas, no entanto,…* is redundant."
+    - "*Logo* as 'therefore' is formal; in speech *logo* means 'soon'."
+  variant: "Europeans say *por outras palavras* (not *em outras palavras*) and use *aliás* and *ou seja* just as much."
+  related: [g.connectors-contrast, g.connectors-cause-consequence, g.essay-structure, g.discourse-markers-advanced]
+  drills:
+    - { es: "Além disso, o preço é justo.", en: "Besides, the price is fair." }
+    - { es: "Isto é, precisamos de mais tempo.", en: "That is, we need more time." }
+    - { es: "A comida, aliás, estava ótima.", en: "The food, by the way, was excellent." }
+    - { es: "Portanto, a solução é investir em educação.", en: "Therefore, the solution is to invest in education." }
+- id: g.opinion-structures
+  level: b2
+  title: "Expressing and nuancing opinions — a meu ver, não é que…"
+  summary: "A meu ver, do meu ponto de vista, parece-me que, estou convencido de que, não é que + subjunctive, o problema é que…"
+  explanation: |
+    ### Stating a view
+    *A meu ver… Do meu ponto de vista… Ao meu ver* (common but criticised) … *Parece-me que… Estou convencido de que… Não há dúvida de que… É inegável que…*
+
+    ### Taking sides
+    *Sou a favor de / contra… Concordo em parte… Discordo totalmente de…*
+
+    ### Nuancing
+    | | |
+    |---|---|
+    | *Por um lado… por outro (lado)…* | on the one hand… on the other |
+    | *Não é que* + subj., *mas…* | it's not that…, but… |
+    | *O problema é que…* | the problem is that… |
+    | *O que me preocupa é…* | what worries me is… |
+    | *Até certo ponto…* | to a certain extent… |
+
+    Mood: certainty → indicative; denial or doubt → subjunctive: *Não creio que seja justo.*
+  examples:
+    - { es: "A meu ver, o Carnaval de Recife é o mais democrático.", en: "In my view, Recife's Carnival is the most democratic." }
+    - { es: "Não é que eu não goste, mas prefiro o interior.", en: "It's not that I don't like it, but I prefer the countryside." }
+    - { es: "Por um lado, o turismo traz dinheiro; por outro, encarece a vida.", en: "On the one hand, tourism brings money; on the other, it raises the cost of living." }
+    - { es: "Estou convencida de que é a melhor opção.", en: "I'm convinced it's the best option." }
+    - { es: "Até certo ponto, você tem razão.", en: "To a certain extent, you're right." }
+  pitfalls:
+    - "*A meu ver* (no article) is the norm; *ao meu ver* is frequent but frowned upon."
+    - "*Não é que* is followed by the subjunctive."
+    - "Spanish speakers: *desde mi punto de vista* is *do meu ponto de vista*."
+  variant: "Europeans favour *parece-me que* and *a meu ver*; *na minha opinião* is common everywhere."
+  related: [g.opinions, g.achar-que, g.argumentation-connectors, g.essay-structure]
+  drills:
+    - { es: "Do meu ponto de vista, falta planejamento.", en: "From my point of view, there's a lack of planning." }
+    - { es: "Sou contra a construção do hotel.", en: "I'm against building the hotel." }
+    - { es: "O que me preocupa é o lixo nas praias.", en: "What worries me is the litter on the beaches." }
+    - { es: "Não há dúvida de que a situação melhorou.", en: "There's no doubt the situation has improved." }
+- id: g.essay-structure
+  level: b2
+  title: "The argumentative essay (dissertação) — the ENEM model"
+  summary: "Introduction with a thesis, two development paragraphs, and a conclusion with a concrete proposal; impersonal, formal style."
+  explanation: |
+    Brazil's national exam (ENEM) made the *redação dissertativo-argumentativa* the model of formal writing.
+
+    ### Structure
+    | part | content | useful openers |
+    |---|---|---|
+    | introduction | context + **thesis** | *No Brasil, … Nesse contexto, …* |
+    | development 1 | argument + evidence | *Em primeiro lugar, … Segundo dados do IBGE, …* |
+    | development 2 | second argument | *Além disso, … Nesse sentido, …* |
+    | conclusion | **proposal** that solves the problem | *Portanto, cabe ao governo… a fim de…* |
+
+    ### The proposal (*proposta de intervenção*)
+    A complete proposal says **who** acts, **what** they do, **how**, and **for what purpose**: *Cabe ao Ministério da Educação criar campanhas nas escolas, por meio de palestras, a fim de reduzir o desperdício de água.*
+
+    ### Style
+    Impersonal (avoid *eu, a gente*), no slang, cohesive connectors, cited facts or references (*repertório*).
+  examples:
+    - { es: "Nesse contexto, é fundamental discutir o acesso à água no sertão.", en: "In this context, it is essential to discuss access to water in the sertão." }
+    - { es: "Em primeiro lugar, deve-se considerar o impacto ambiental.", en: "Firstly, the environmental impact must be considered." }
+    - { es: "Segundo o filósofo, a educação transforma a sociedade.", en: "According to the philosopher, education transforms society." }
+    - { es: "Portanto, cabe ao Estado ampliar os investimentos em saneamento.", en: "Therefore, it is up to the State to increase investment in sanitation." }
+  pitfalls:
+    - "No *a gente*, *tá*, rhetorical questions in a row, or exclamations."
+    - "A thesis is a position, not just a topic: state what you defend."
+    - "Every paragraph should link back to the thesis."
+  variant: "In Portugal the school model is the *texto de opinião*, with a similar introduction–development–conclusion structure but no fixed intervention proposal."
+  related: [g.argumentation-connectors, g.opinion-structures, g.academic-register]
+  drills:
+    - { es: "Diante disso, torna-se evidente a necessidade de mudanças.", en: "Given this, the need for change becomes evident." }
+    - { es: "Dessa forma, o problema poderá ser amenizado.", en: "In this way, the problem may be eased." }
+    - { es: "Nesse sentido, a escola tem papel essencial.", en: "In this sense, schools play an essential role." }
+    - { es: "Conclui-se, portanto, que o tema exige atenção.", en: "It can therefore be concluded that the issue requires attention." }
+- id: g.emphatic-structures
+  level: b2
+  title: "Emphasis — é que, foi ela que, o que eu quero é…"
+  summary: "Clefts (Foi o João que…), pseudo-clefts (O que eu quero é…), Eu quero é…, Eu é que…, emphatic sim and bem que."
+  explanation: |
+    | structure | example |
+    |---|---|
+    | *ser* + focus + *que / quem* | *Foi a Bia que ligou.* / *Foi a Bia quem ligou.* |
+    | *o que* … *é* | *O que eu quero é descansar.* |
+    | verb + *é* + focus (very Brazilian) | *Eu quero é descansar!* |
+    | subject + *é que* | *Eu é que sei!* (I'm the one who knows!) |
+    | *é que* in questions | *Onde é que você estava?* |
+    | topic first | *Esse filme, eu já vi.* |
+    | emphatic *sim* | *Eu vou, sim!* (I am going!) |
+    | *bem que* | *Bem que eu avisei!* (I did warn you!) |
+
+    ### Agreement in clefts
+    *ser* agrees with the focus: ***Fui** eu que fiz. **Foram** eles que pagaram.*
+  examples:
+    - { es: "Foi em Olinda que eu vi o frevo pela primeira vez.", en: "It was in Olinda that I first saw frevo." }
+    - { es: "O que mais me impressionou foi a hospitalidade.", en: "What impressed me most was the hospitality." }
+    - { es: "Eu quero é sombra e água fresca!", en: "What I want is to take it easy!" }
+    - { es: "Fomos nós que organizamos a festa.", en: "We were the ones who organised the party." }
+    - { es: "Bem que você podia me ajudar, né?", en: "You could help me, you know." }
+  pitfalls:
+    - "Agreement: *Fui eu que…*, not *Foi eu que…*"
+    - "English speakers: Portuguese uses clefts more than English in speech."
+    - "*É que* also introduces explanations: *É que eu estava ocupado.* (It's just that I was busy.)"
+  variant: "European Portuguese uses *é que* constantly in questions (*O que é que queres?*) and *Vou, sim* for emphasis; *Eu quero é…* is common in both."
+  related: [g.question-words, g.yes-no-answers, g.null-object]
+  drills:
+    - { es: "Foi ele quem pagou a conta.", en: "He was the one who paid the bill." }
+    - { es: "O que eu preciso é de férias.", en: "What I need is a holiday." }
+    - { es: "Eles é que sabem.", en: "They're the ones who know." }
+    - { es: "Eu gosto, sim!", en: "I do like it!" }
+- id: g.clitic-placement-norm
+  level: b2
+  title: "Clitic placement — the written norm"
+  summary: "Proclisis after attractors (não, que, já, quem…); enclisis at the start of a sentence and with affirmative imperatives; Brazil also accepts proclisis after a subject."
+  explanation: |
+    ### 1. Attractors → pronoun BEFORE the verb (both varieties)
+    | attractor | example |
+    |---|---|
+    | negatives: *não, nunca, ninguém, nada* | *Não me lembro.* |
+    | relatives: *que, quem, onde* | *o livro que me deste* |
+    | subordinators: *que, se, quando, embora* | *Disse que se mudou.* |
+    | adverbs: *já, sempre, ainda, também, só, aqui* | *Já te disse.* |
+    | indefinites: *tudo, todos, alguém* | *Todos se divertiram.* |
+    | question words | *Quem te contou?* |
+    | wishes | *Deus te abençoe!* |
+
+    ### 2. Pronoun AFTER the verb (enclisis)
+    - At the very start of a sentence: *Disseram-me que…* (never *Me disseram* in formal writing)
+    - Affirmative imperative: *Diga-me. Sente-se.*
+    - With the gerund: *…dizendo-lhe que…*
+
+    ### 3. Subject + verb with no attractor
+    - Brazil (speech and most writing): *Ele me disse.*
+    - Portugal and conservative writing: *Ele disse-me.*
+  examples:
+    - { es: "Não me diga que você esqueceu!", en: "Don't tell me you forgot!" }
+    - { es: "Disseram-me que o museu estava fechado.", en: "I was told the museum was closed.", altEs: ["Me disseram que o museu estava fechado."] }
+    - { es: "Quem te ensinou a dançar xote?", en: "Who taught you to dance xote?" }
+    - { es: "Ela me convidou para o São João.", en: "She invited me to the São João festival.", altEs: ["Ela convidou-me para o São João."] }
+    - { es: "Sente-se, por favor.", en: "Please sit down." }
+  pitfalls:
+    - "Never start a formal written sentence with a clitic: *Me parece* → *Parece-me*."
+    - "Attractors always win: *Não se preocupe*, never *Não preocupe-se*."
+    - "Never place a clitic after a participle or a future/conditional verb (see mesoclisis)."
+  variant: "In European Portuguese enclisis is the default in all registers when there is no attractor: *Ele disse-me. A Ana chama-se Ana. Vejo-te amanhã.*"
+  related: [g.pronoun-placement-brazil, g.clitics-verb-phrases, g.ep-enclisis, g.ep-proclisis-attractors]
+  drills:
+    - { es: "Ninguém me avisou.", en: "Nobody told me." }
+    - { es: "Espero que se divirtam.", en: "I hope you enjoy yourselves." }
+    - { es: "Entregaram-nos as chaves ontem.", en: "They gave us the keys yesterday.", altEs: ["Nos entregaram as chaves ontem."] }
+    - { es: "Já lhe disse a verdade.", en: "I've already told him the truth." }
+- id: g.clitics-verb-phrases
+  level: b2
+  title: "Clitics with two verbs — vou me deitar, tinha me dito, vou fazê-lo"
+  summary: "Brazil: before the main verb (vou te ligar, tinha me dito); Portugal / formal: after the infinitive or before the auxiliary."
+  explanation: |
+    ### Auxiliary + infinitive or gerund
+    | Brazil | Portugal / formal | with an attractor |
+    |---|---|---|
+    | *Vou me deitar.* | *Vou deitar-me.* | *Não me vou deitar.* / *Não vou me deitar.* |
+    | *Estou te esperando.* | *Estou à tua espera* / *a esperar-te* | *Não estou te esperando.* |
+    | *Quero te ver.* | *Quero ver-te.* | *Não te quero ver.* |
+
+    ### Auxiliary + participle
+    The clitic never follows the participle:
+    - Brazil: *Ele tinha me dito.* — Portugal: *Ele tinha-me dito.*
+    - Never *tinha dito-me*.
+
+    ### o / a with an infinitive
+    *Vou fazê-lo. Preciso vê-la. Quero comprá-los.* — formal and written; in speech Brazilians say *Vou fazer isso / Preciso ver ela*.
+  examples:
+    - { es: "Vou te mostrar a orla de Fortaleza.", en: "I'll show you the Fortaleza seafront.", altEs: ["Vou mostrar-te a orla de Fortaleza."] }
+    - { es: "Ela tinha me avisado.", en: "She had warned me.", altEs: ["Ela tinha-me avisado."] }
+    - { es: "Precisamos resolvê-lo hoje.", en: "We need to solve it today." }
+    - { es: "Não vou me atrasar.", en: "I won't be late.", altEs: ["Não me vou atrasar."] }
+  pitfalls:
+    - "No hyphen in the Brazilian middle position: *vou me deitar*, not *vou-me deitar* (which is European)."
+    - "Never put the pronoun after the participle: *tinha me dito*, not *tinha dito-me*."
+    - "*-lo / -la* after an infinitive drops the r and adds an accent: *fazê-lo, comprá-la, abri-lo*."
+  variant: "Portugal: *Vou deitar-me. Tinha-me dito. Não me vou deitar.* The Brazilian *vou me deitar* sounds foreign there."
+  related: [g.clitic-placement-norm, g.pronoun-placement-brazil, g.direct-object-pronouns]
+  drills:
+    - { es: "Quero te apresentar minha família.", en: "I want to introduce you to my family." }
+    - { es: "Ele não tinha nos contado.", en: "He hadn't told us." }
+    - { es: "Vou convidá-los para o jantar.", en: "I'll invite them to dinner." }
+    - { es: "Estamos nos preparando para a viagem.", en: "We're getting ready for the trip." }
+- id: g.null-object
+  level: b2
+  title: "The null object — Você viu o filme? — Vi."
+  summary: "Brazilian speech leaves out third-person objects when they are clear: Comprei um bolo e levei para a festa."
+  explanation: |
+    Where English needs "it / them", Brazilian Portuguese usually says **nothing**:
+
+    | English | spoken Brazil | written norm |
+    |---|---|---|
+    | Did you see the film? — Yes, I saw it. | *Você viu o filme? — Vi.* | *Vi-o / Eu o vi.* |
+    | I bought a cake and took it to the party. | *Comprei um bolo e levei para a festa.* | *…e levei-o…* |
+    | Where's the book? — I left it on the table. | *Cadê o livro? — Deixei na mesa.* | *Deixei-o na mesa.* |
+    | I know. | *Eu sei.* | *Eu sei.* |
+
+    - It works best with **things**; for people, Brazilians prefer *ele / ela* or *o / a*: *Encontrei ela ontem.*
+    - In formal writing use the clitic or repeat the noun.
+  examples:
+    - { es: "Gostou da moqueca? — Adorei!", en: "Did you like the moqueca? — I loved it!" }
+    - { es: "Achei as chaves e coloquei na gaveta.", en: "I found the keys and put them in the drawer." }
+    - { es: "Você trouxe o carregador? — Trouxe.", en: "Did you bring the charger? — Yes, I did." }
+    - { es: "Esse vestido é lindo, vou comprar.", en: "This dress is beautiful, I'm going to buy it." }
+  pitfalls:
+    - "English speakers: adding *ele* for 'it' (*Vou comprar ele*) is colloquial; leaving it out is more natural."
+    - "Don't drop the object when it isn't clear from context."
+    - "In exams and formal writing use *o / a / lo / la*."
+  variant: "European Portuguese uses the null object less and prefers the clitic: *Vi-o. Deixei-o na mesa.* *Vou comprar ele* is not used in Portugal."
+  related: [g.ele-as-object, g.direct-object-pronouns, g.emphatic-structures]
+  drills:
+    - { es: "Leu o livro? — Li, gostei muito.", en: "Did you read the book? — Yes, I really liked it." }
+    - { es: "Fiz um café, quer?", en: "I've made some coffee, do you want some?" }
+    - { es: "Perdi o guarda-chuva, deixei no ônibus.", en: "I lost my umbrella, I left it on the bus." }
+    - { es: "Você pagou a conta? — Paguei.", en: "Did you pay the bill? — Yes, I did." }
+- id: g.lusophone-varieties
+  level: b2
+  title: "Portuguese around the world"
+  summary: "Brazilian, European and African Portuguese: one language, several norms, with differences in sound, grammar and vocabulary."
+  explanation: |
+    Portuguese is an official language in nine countries of the CPLP (Community of Portuguese Language Countries): **Brazil, Portugal, Angola, Mozambique, Cape Verde, Guinea-Bissau, São Tomé and Príncipe, Timor-Leste and Equatorial Guinea**, and co-official in Macau. Brazil has by far the most speakers.
+
+    ### Brazil vs Portugal at a glance
+    | | Brazil | Portugal |
+    |---|---|---|
+    | sound | open, clear vowels | unstressed vowels reduced or dropped |
+    | informal "you" | *você* | *tu* |
+    | in progress | *estou fazendo* | *estou a fazer* |
+    | pronouns | *me diga, vou te ligar* | *diga-me, vou ligar-te* |
+    | there is | *tem* (speech) | *há* |
+    | words | *ônibus, trem, celular* | *autocarro, comboio, telemóvel* |
+
+    ### African Portuguese
+    Angola, Mozambique and the other African countries generally follow the European written norm, with vocabulary from local languages: Angolan *kota* (older person), *mambo* (thing), *machimbombo* (bus, in Mozambique and Angola). Lisbon slang *bué* (a lot) was popularised from Angolan Portuguese.
+  examples:
+    - { es: "O português é falado em quatro continentes.", en: "Portuguese is spoken on four continents." }
+    - { es: "Em Moçambique, o ônibus se chama machimbombo.", en: "In Mozambique, the bus is called machimbombo." }
+    - { es: "Em Portugal, as vogais átonas quase desaparecem.", en: "In Portugal, unstressed vowels almost disappear." }
+    - { es: "Estou fazendo / estou a fazer: as duas formas estão certas.", en: "Estou fazendo / estou a fazer: both forms are correct." }
+  pitfalls:
+    - "There is no 'Brazilian language': it is Portuguese, with a Brazilian norm."
+    - "European Portuguese is harder to understand at first because of its reduced vowels; listen often."
+    - "Don't mix norms within one text: choose one and be consistent."
+  variant: "This note is about variation itself. Galician, spoken in north-west Spain, is the closest relative of Portuguese and largely intelligible to Portuguese speakers."
+  related: [g.address-across-lusophone, g.spelling-agreement, g.regional-features-brazil, g.br-ep-grammar-overview]
+  drills:
+    - { es: "Angola e Moçambique ficam na África.", en: "Angola and Mozambique are in Africa." }
+    - { es: "Em Portugal, o ônibus se chama autocarro.", en: "In Portugal, the bus is called autocarro." }
+    - { es: "Cabo Verde é um arquipélago.", en: "Cape Verde is an archipelago." }
+    - { es: "Em Lisboa se diz telemóvel.", en: "In Lisbon they say telemóvel." }
+- id: g.address-across-lusophone
+  level: b2
+  title: "Forms of address across the Portuguese-speaking world"
+  summary: "você in Brazil, tu in Portugal, o senhor everywhere; titles like Doutor and Dona; vós only in church and poetry."
+  explanation: |
+    | | Brazil | Portugal |
+    |---|---|---|
+    | friends, family | *você* (*tu* in some regions) | *tu* |
+    | neutral stranger | *você* | name / 3rd person: *O Pedro quer…?*; *você* is delicate |
+    | respect | *o senhor / a senhora* | *o senhor / a senhora*, often with title |
+    | titles | *Dona Maria, Seu João, Doutor* (for doctors, lawyers) | *Senhor Doutor, Senhora Engenheira, Dona Maria* |
+    | plural | *vocês* | *vocês* (*vós* in the north and in church) |
+
+    ### Portugal: the você question
+    *Você* can sound condescending in Portugal; people avoid the pronoun and use the verb or the name: *Quer um café? / A Ana quer um café?*
+
+    ### Africa
+    Angola and Mozambique use *tu* and *você* with local nuances; respect for elders is shown with titles such as Angolan *mais-velho* or *kota*.
+  examples:
+    - { es: "Você aceita um café?", en: "Would you like a coffee? (Brazil)" }
+    - { es: "Aceita um café?", en: "Would you like a coffee? (neutral, both countries)" }
+    - { es: "O senhor doutor pode entrar.", en: "You may come in, doctor. (Portugal)" }
+    - { es: "Tu queres vir connosco?", en: "Do you want to come with us? (Portugal)" }
+  pitfalls:
+    - "Avoid *você* with older people in Portugal; leave out the pronoun or use *o senhor / a senhora*."
+    - "In Brazil, *doutor* is also used for lawyers and as a general term of respect."
+    - "*Vós* is only for prayer, poetry and some northern Portuguese dialects."
+  variant: "In Portugal academic and professional titles are used in address far more than in Brazil: *Senhor Engenheiro, Senhora Doutora, Senhor Professor*."
+  related: [g.voce-o-senhor, g.tu-regional, g.ep-forms-of-address, g.formal-address-titles]
+  drills:
+    - { es: "A senhora quer sentar-se?", en: "Would you like to sit down, madam?" }
+    - { es: "Seu João, bom dia!", en: "Good morning, Mr João!" }
+    - { es: "Queres um café?", en: "Do you want a coffee? (Portugal, tu)" }
+    - { es: "Vocês são de onde?", en: "Where are you all from?" }
+- id: g.spelling-agreement
+  level: b2
+  title: "The 1990 Spelling Agreement — ideia, voo, linguiça, ação"
+  summary: "The Acordo Ortográfico unified much of Brazilian and European spelling; Brazil lost the trema and some accents, Portugal lost silent consonants."
+  explanation: |
+    The *Acordo Ortográfico da Língua Portuguesa* (1990) came into force in Brazil and Portugal in 2009, becoming mandatory in the following years. Older books follow the old spelling.
+
+    ### What changed in Brazil
+    | old | new |
+    |---|---|
+    | *lingüiça, freqüente* (trema) | *linguiça, frequente* |
+    | *idéia, heróico, assembléia* | *ideia, heroico, assembleia* |
+    | *vôo, enjôo, lêem, vêem* | *voo, enjoo, leem, veem* |
+    | *pára* (stops), *pêlo* (hair) | *para, pelo* |
+    | *auto-escola, anti-social* | *autoescola, antissocial* |
+    | *fim-de-semana, dia-a-dia* | *fim de semana, dia a dia* |
+
+    ### What changed in Portugal
+    Silent consonants went: *acção → ação, óptimo → ótimo, director → diretor*. Pronounced ones stay: *facto, receção* (EP) vs *fato, recepção* (BR).
+
+    ### What still differs
+    Accents that reflect pronunciation: *econômico / económico, Antônio / António, bebê / bebé*.
+  examples:
+    - { es: "Tive uma ideia ótima.", en: "I had a great idea." }
+    - { es: "O voo para Natal atrasou.", en: "The flight to Natal was delayed." }
+    - { es: "Eles leem jornal todo dia.", en: "They read the paper every day." }
+    - { es: "A linguiça aparece com frequência no cardápio.", en: "Sausage appears frequently on the menu." }
+  pitfalls:
+    - "Don't copy old spellings from older texts: *ideia*, not *idéia*."
+    - "*Para* (stops) and *para* (for) are now spelled alike; context decides."
+    - "Keep the accents that remain: *pôr, pôde, têm, vêm*."
+  variant: "Portugal keeps some spellings that differ from Brazil because they reflect pronunciation (*facto, receção, económico*), and implementation in African countries has been slower."
+  related: [g.accents, g.ep-spelling-accents, g.lusophone-varieties]
+  drills:
+    - { es: "A assembleia foi adiada.", en: "The assembly was postponed." }
+    - { es: "O trem para em todas as estações.", en: "The train stops at every station." }
+    - { es: "Eles veem o mar da janela.", en: "They see the sea from the window." }
+    - { es: "Foi uma ação heroica.", en: "It was a heroic act." }

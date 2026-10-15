@@ -1,0 +1,2285 @@
+# A1 grammar notes (Brazilian Portuguese; European Portuguese in `variant`).
+# Explanations use light markdown: ### headings, bullets, tables, **bold**,
+# *italic* (italic = Portuguese inline). Field `es` = Portuguese text.
+- id: g.greetings
+  level: a1
+  title: "Greetings and goodbyes"
+  summary: "Oi, bom dia, boa tarde, boa noite, tudo bem?, tchau, até logo."
+  explanation: |
+    ### Saying hello
+    - *Oi* is the everyday Brazilian "hi", with anyone. *Olá* is a little more formal or written.
+    - *Bom dia* until about noon, *boa tarde* until it gets dark, *boa noite* in the evening, both arriving and leaving.
+    - *Tudo bem?* / *Tudo bom?* / *Tudo certo?* (all good?) is the standard follow-up. It is a greeting, not a real question.
+
+    ### Answering
+    | Question | Typical answer |
+    |---|---|
+    | *Tudo bem?* | *Tudo (bem), e você?* |
+    | *Como vai?* | *Vou bem, obrigado / obrigada.* |
+    | *E aí?* (slang: what's up?) | *Beleza!* / *Tranquilo!* |
+
+    ### Saying goodbye
+    - *Tchau* (bye) is by far the most common.
+    - *Até logo* / *até mais* (see you later), *até amanhã* (see you tomorrow), *até já* (see you in a minute).
+    - In messages: *beijo* / *beijos* (kisses, between friends and family), *abraço* (hug, between men or colleagues).
+
+    *Obrigado* (said by a man) and *obrigada* (said by a woman) agree with the **speaker**, not the listener.
+  examples:
+    - { es: "Oi, tudo bem?", en: "Hi, how's it going?", altEn: ["Hi, all good?"] }
+    - { es: "Tudo, e você?", en: "Fine, and you?", altEs: ["Tudo bem, e você?"] }
+    - { es: "Bom dia, dona Maria!", en: "Good morning, Dona Maria!" }
+    - { es: "Boa noite, até amanhã.", en: "Good night, see you tomorrow." }
+    - { es: "Tchau, beijos!", en: "Bye, kisses!", altEn: ["Bye, love!"] }
+  pitfalls:
+    - "Spanish speakers: it is *bom dia* in the singular, not *bons dias* (Spanish *buenos días*)."
+    - "*Tudo bem?* is not an invitation to talk about your problems; answer *Tudo!* and ask back."
+    - "*Obrigado/obrigada* depends on who is speaking: a woman always says *obrigada*."
+    - "*Adeus* sounds final and dramatic in Brazil (farewell for ever); use *tchau*."
+  variant: "In Portugal *olá* is the everyday greeting and *oi* sounds Brazilian. *Adeus* is a normal goodbye in Portugal, and *até já* / *até logo* are very common; Portuguese friends kiss twice on the cheek, Brazilians once to three times depending on the city."
+  related: [g.subject-pronouns, g.voce-o-senhor, g.chamar-se]
+  drills:
+    - { es: "Boa tarde, como vai?", en: "Good afternoon, how are you?" }
+    - { es: "Oi, Ana! Tudo bom?", en: "Hi, Ana! All good?" }
+    - { es: "Muito obrigada, até logo!", en: "Thank you very much, see you later!" }
+    - { es: "Tchau, até mais!", en: "Bye, see you!" }
+- id: g.subject-pronouns
+  level: a1
+  title: "Subject pronouns (eu, você, ele…)"
+  summary: "eu, você, ele, ela, nós, vocês, eles, elas: você takes the same verb form as ele."
+  explanation: |
+    | Person | Singular | Plural |
+    |---|---|---|
+    | 1st | *eu* (I) | *nós* (we), *a gente* (we, informal) |
+    | 2nd | *você* (you) | *vocês* (you all) |
+    | 3rd | *ele* (he), *ela* (she) | *eles* (they, m / mixed), *elas* (they, f) |
+
+    ### Você is grammatically third person
+    *Você fala* looks exactly like *ele fala*. That is why Brazilians use subject pronouns much more than Spanish speakers: *Ele fala inglês* and *Você fala inglês* would be ambiguous without them.
+
+    ### Dropping the pronoun
+    You can still drop *eu* and *nós*, because their verb forms are unique: *Falo português. Somos do Rio.*
+
+    ### No "it"
+    There is no subject pronoun for "it": *É bom.* (It's good.) *Está chovendo.* (It's raining.)
+
+    *Tu* (informal you) is used in some regions (the South, the North, parts of the Northeast, Rio in casual speech), often with the *você* verb form: *tu vai*. You will meet it at A2.
+  examples:
+    - { es: "Eu sou o Pedro e ela é a Júlia.", en: "I'm Pedro and she's Júlia.", altEs: ["Eu sou Pedro e ela é Júlia."] }
+    - { es: "Você fala inglês?", en: "Do you speak English?" }
+    - { es: "Nós somos amigos.", en: "We are friends.", altEs: ["Somos amigos."] }
+    - { es: "Vocês são do Rio?", en: "Are you (all) from Rio?" }
+    - { es: "É muito bonito.", en: "It's very beautiful." }
+  pitfalls:
+    - "Spanish speakers: don't drop *você* and *ele/ela* as freely as *tú/él* in Spanish; the verb alone does not tell who is meant."
+    - "There is no Brazilian *vós* / *vosotros*: *vocês* is the only plural 'you'."
+    - "Mixed groups take the masculine: *eles* for Ana and Pedro."
+    - "Never translate English 'it' as *ele* for a thing in subject position: *É caro*, not *Ele é caro* when talking about a price in general."
+  variant: "In Portugal *tu* (with its own verb form: *tu falas, tu és*) is normal among friends and family, and *você* can sound distant or even rude; people prefer the name or *o senhor / a senhora*. European Portuguese drops subject pronouns more often, like Spanish."
+  related: [g.voce-o-senhor, g.ser-present, g.a-gente, g.tu-regional]
+  drills:
+    - { es: "Ele é professor.", en: "He is a teacher." }
+    - { es: "Elas são irmãs.", en: "They (women) are sisters." }
+    - { es: "Você é muito simpático.", en: "You are very nice." }
+    - { es: "Eles moram em Niterói.", en: "They live in Niterói." }
+- id: g.ser-present
+  level: a1
+  title: "The verb ser (to be) — identity"
+  summary: "sou, é, somos, são — for who or what someone or something is."
+  explanation: |
+    | | ser |
+    |---|---|
+    | eu | **sou** |
+    | você / ele / ela | **é** |
+    | nós | **somos** |
+    | vocês / eles / elas | **são** |
+    | (tu) | (*és*) |
+
+    Use *ser* for identity and defining features:
+    - **Names and identity**: *Sou a Carla.*
+    - **Origin and nationality**: *Somos de Recife. Ela é inglesa.*
+    - **Profession**: *Ele é médico.*
+    - **Characteristics**: *A praia é linda. Você é alto.*
+    - **Time and dates**: *É uma hora. São três horas. Hoje é segunda.*
+
+    Portuguese has a second "to be", *estar*, for location of people and temporary states.
+
+    Note the accent: *é* (is) vs *e* (and).
+  examples:
+    - { es: "Eu sou estudante.", en: "I am a student.", altEs: ["Sou estudante."] }
+    - { es: "Você é de São Paulo?", en: "Are you from São Paulo?" }
+    - { es: "Nós somos brasileiros.", en: "We are Brazilian.", altEs: ["Somos brasileiros."] }
+    - { es: "Eles são muito simpáticos.", en: "They are very nice." }
+    - { es: "São duas horas.", en: "It's two o'clock." }
+  pitfalls:
+    - "No article with professions: *sou professor*, not *sou um professor*."
+    - "Spanish speakers: *são*, not *son*; *é*, not *es*."
+    - "Don't forget the accent: *é* means 'is', *e* means 'and'."
+  variant: "In Portugal you will hear *tu és* (you are) constantly among friends: *Tu és de Lisboa?* The old plural *vós sois* survives only in the Bible, poetry and some northern speech."
+  related: [g.subject-pronouns, g.ser-origin, g.ser-vs-estar-basics, g.estar-present]
+  drills:
+    - { es: "Ela é engenheira.", en: "She is an engineer." }
+    - { es: "Somos amigos do Lucas.", en: "We are Lucas's friends." }
+    - { es: "Vocês são irmãos?", en: "Are you brothers?" }
+    - { es: "O Rio é muito bonito.", en: "Rio is very beautiful." }
+- id: g.chamar-se
+  level: a1
+  title: "Meu nome é… / Eu me chamo… — saying your name"
+  summary: "Brazilians usually say Meu nome é…; Eu me chamo… is also common."
+  explanation: |
+    - *Meu nome é Ana.* — the most common way in Brazil.
+    - *Eu me chamo Ana.* / *Me chamo Ana.* — literally "I call myself Ana".
+    - *Qual é o seu nome?* — What's your name? (neutral)
+    - *Como você se chama?* — What are you called?
+    - *Como ele se chama?* / *Qual é o nome dele?* — What's his name?
+
+    ### The little pronoun
+    *chamar-se* is a reflexive verb: *eu me chamo, você se chama, ele se chama, nós nos chamamos, eles se chamam*. In Brazil the pronoun goes **before** the verb in speech.
+
+    To answer *Muito prazer!* (nice to meet you): *O prazer é meu.* (The pleasure is mine.)
+  examples:
+    - { es: "Oi, meu nome é Lucas. E você?", en: "Hi, my name is Lucas. And you?", altEs: ["Oi, eu me chamo Lucas. E você?"] }
+    - { es: "Como você se chama?", en: "What's your name?", altEs: ["Qual é o seu nome?", "Qual o seu nome?"] }
+    - { es: "Ela se chama Beatriz.", en: "Her name is Beatriz.", altEs: ["O nome dela é Beatriz."] }
+    - { es: "Muito prazer! — O prazer é meu.", en: "Nice to meet you! — The pleasure is mine." }
+  pitfalls:
+    - "Never mix the two: *Meu nome se chama Ana* is wrong."
+    - "Spanish speakers: *¿Cómo te llamas?* is usually *Como você se chama?* (with *se*, because *você* is third person)."
+    - "*Qual*, not *o que*, for 'what is your name / number': *Qual é o seu nome?*"
+  variant: "In Portugal the pronoun follows the verb: *Chamo-me Ana. Como te chamas? Como se chama?* Starting a sentence with *Me chamo* is considered wrong in European Portuguese."
+  related: [g.reflexive-verbs-present, g.possessives, g.question-words]
+  drills:
+    - { es: "Eu me chamo Rafael.", en: "My name is Rafael.", altEs: ["Me chamo Rafael.", "Meu nome é Rafael."] }
+    - { es: "Qual é o nome do seu pai?", en: "What's your father's name?" }
+    - { es: "Como eles se chamam?", en: "What are their names?" }
+    - { es: "O nome dela é Fernanda.", en: "Her name is Fernanda." }
+- id: g.voce-o-senhor
+  level: a1
+  title: "Você or o senhor? Informal and formal 'you'"
+  summary: "você for most people; o senhor / a senhora for older people and formal situations. Both take the ele/ela verb form."
+  explanation: |
+    | | singular | plural |
+    |---|---|---|
+    | neutral / informal | *você* | *vocês* |
+    | respectful | *o senhor* (m), *a senhora* (f) | *os senhores, as senhoras* |
+
+    - *Você* is the default "you" in Brazil, with friends, colleagues, shop assistants your age and most strangers.
+    - *O senhor / a senhora* shows respect: older people, clients, officials, your friends' parents. *O senhor quer um café?*
+    - All of them take the **third-person** verb: *você fala, o senhor fala, vocês falam*.
+    - *Seu* + first name (*Seu João*) and *Dona* + first name (*Dona Maria*) are warm, respectful titles for older people.
+
+    ### Tu
+    In parts of Brazil *tu* is the everyday informal "you" (see A2). Learners can always use *você*.
+  examples:
+    - { es: "Você quer um café?", en: "Do you want a coffee?" }
+    - { es: "O senhor é o médico?", en: "Are you the doctor? (to a man, formal)" }
+    - { es: "A senhora precisa de ajuda?", en: "Do you need help? (to a woman, formal)" }
+    - { es: "Bom dia, Seu Antônio!", en: "Good morning, Mr Antônio!" }
+    - { es: "Vocês são daqui?", en: "Are you (all) from here?" }
+  pitfalls:
+    - "Spanish speakers: *você* is not as formal as *usted*; it is the normal word for 'you'."
+    - "The verb is third person: *Você é*, never *Você és*."
+    - "*Dona* and *Seu* go with the first name: *Dona Ana*, not *Dona Silva*."
+  variant: "Portugal is different: *tu* is informal, *você* is tricky (often avoided), and polite address uses *o senhor / a senhora* or the person's name in the third person: *A Ana quer café?* *Vocês* is the normal plural in both countries."
+  related: [g.subject-pronouns, g.tu-regional, g.ep-forms-of-address]
+  drills:
+    - { es: "A senhora mora aqui?", en: "Do you live here? (to an older woman)" }
+    - { es: "Você é brasileiro?", en: "Are you Brazilian?" }
+    - { es: "Os senhores querem a conta?", en: "Would you (gentlemen) like the bill?" }
+    - { es: "Boa tarde, Dona Lúcia, tudo bem?", en: "Good afternoon, Dona Lúcia, how are you?" }
+- id: g.accents
+  level: a1
+  title: "Accents and special letters — á, â, ã, à, ç"
+  summary: "Portuguese marks stress and vowel quality with accents; a missing accent can change the word (é / e, está / esta, avó / avô)."
+  explanation: |
+    | mark | name | what it does | examples |
+    |---|---|---|---|
+    | **´** | *acento agudo* | stressed open vowel | *café, é, avó, está, até* |
+    | **^** | *acento circunflexo* | stressed closed vowel | *você, avô, português, três, ônibus* |
+    | **~** | *til* | nasal vowel | *não, mãe, pão, irmã, lições* |
+    | **`** | *crase* | *a* + *a* contracted | *à, às, àquele* |
+    | **ç** | *cedilha* | "s" sound before a, o, u | *açaí, almoço, açúcar* |
+
+    ### Where accents go (the basic rules)
+    - Most words ending in **a, e, o (+ s), em, ens** are stressed on the second-to-last syllable and need **no accent**: *casa, nome, homem, jovens*.
+    - Words ending in **i, u, l, r, z, im, um** are stressed on the last syllable: *aqui, Brasil, falar, feliz, jardim*.
+    - Any word that breaks these patterns carries an accent: *café, você, até, açúcar, fácil, táxi, ônibus*.
+    - Every word stressed on the third-to-last syllable has an accent: *música, médico, pública, último*.
+
+    ### Pairs where the accent changes the meaning
+    | | |
+    |---|---|
+    | *é* (is) | *e* (and) |
+    | *está* (is) | *esta* (this) |
+    | *avó* (grandmother) | *avô* (grandfather) |
+    | *pôr* (to put) | *por* (by, for) |
+    | *pôde* (could, past) | *pode* (can) |
+    | *têm* (they have) | *tem* (has) |
+    | *país* (country) | *pais* (parents) |
+
+    Capital letters keep their accents: *É, Ásia, Ônibus*.
+  examples:
+    - { es: "Você é do Brasil?", en: "Are you from Brazil?" }
+    - { es: "Minha avó e meu avô moram em Niterói.", en: "My grandmother and my grandfather live in Niterói." }
+    - { es: "Esta casa está vazia.", en: "This house is empty." }
+    - { es: "Meus pais moram em outro país.", en: "My parents live in another country." }
+    - { es: "Um café com açúcar, por favor.", en: "A coffee with sugar, please." }
+  pitfalls:
+    - "Never drop accents when typing: *e* and *é*, *esta* and *está* are different words, and the writing checker will flag them."
+    - "Spanish speakers: Portuguese has three more marks than Spanish (^, ~, `) and uses ç; *nación* is *nação*, *también* is *também* (no accent: it ends in -em)."
+    - "The tilde is not stress on its own: *órgão* is stressed on the first syllable, despite the ~ on the second."
+    - "Since the 1990 spelling agreement Brazil has dropped some old accents: *ideia, heroico, voo, leem, veem* (no accent)."
+  variant: "European Portuguese uses the acute where Brazil has the circumflex in many words, because the vowel is pronounced open: *econômico / económico, Antônio / António, gênero / género, bebê / bebé*. Portugal also writes *falámos* (we spoke) with an accent."
+  related: [g.subject-pronouns, g.gender-nouns, g.spelling-agreement, g.ep-spelling-accents]
+  drills:
+    - { es: "Ela está no café.", en: "She is at the café." }
+    - { es: "O ônibus é às três.", en: "The bus is at three." }
+    - { es: "Você pode pôr isso ali?", en: "Can you put that over there?" }
+    - { es: "Eles têm uma música nova.", en: "They have a new song." }
+- id: g.gender-nouns
+  level: a1
+  title: "Gender — every noun is masculine or feminine"
+  summary: "Most nouns in -o are masculine and most in -a feminine; learn each noun with o or a."
+  explanation: |
+    Every noun is masculine (*o livro*) or feminine (*a casa*).
+
+    ### Usually masculine
+    - **-o**: *o carro, o prato, o vinho*
+    - Greek words in **-ma**: *o problema, o sistema, o tema, o clima, o programa, o idioma* — and *o dia, o mapa, o sofá*
+
+    ### Usually feminine
+    - **-a**: *a mesa, a praia*
+    - **-ção, -são, -dade, -tude, -gem**: *a canção, a cidade, a juventude, a viagem, a garagem*
+    - Exceptions in -o: *a mão, a foto, a tribo*
+
+    ### -e and consonants: learn them
+    *o leite, a noite, o mar, a flor, a cor, o sol, a dor, o nariz*
+
+    ### Different from Spanish
+    | Portuguese | Spanish |
+    |---|---|
+    | *o leite* | *la leche* |
+    | *o sangue* | *la sangre* |
+    | *a viagem* | *el viaje* |
+    | *a ponte* | *el puente* |
+    | *a árvore* | *el árbol* |
+    | *a dor* | *el dolor* |
+    | *o nariz* | *la nariz* |
+    | *a origem* | *el origen* |
+  examples:
+    - { es: "O problema é o trânsito.", en: "The problem is the traffic." }
+    - { es: "A viagem é longa.", en: "The trip is long." }
+    - { es: "O leite está frio.", en: "The milk is cold." }
+    - { es: "A cidade é grande.", en: "The city is big." }
+  pitfalls:
+    - "All nouns in *-gem* are feminine: *a viagem, a mensagem, a garagem* (Spanish *el viaje, el mensaje*)."
+    - "Grammatical gender is not about meaning: *a pessoa* and *a criança* are feminine even for a man or a boy."
+    - "English speakers: learn every noun with its article; *o* and *a* are short but they carry the gender."
+  variant: "Genders are the same in Portugal, but some everyday nouns differ: Brazilian *a tela* is European *o ecrã*, *o trem* is *o comboio*, *o ônibus* is *o autocarro*."
+  related: [g.articles-definite, g.articles-indefinite, g.adjective-agreement, g.plural-nouns]
+  drills:
+    - { es: "A mensagem é curta.", en: "The message is short." }
+    - { es: "O dia está lindo.", en: "The day is beautiful." }
+    - { es: "A ponte é nova.", en: "The bridge is new." }
+    - { es: "O sistema é simples.", en: "The system is simple." }
+- id: g.articles-definite
+  level: a1
+  title: "The definite article — o, a, os, as"
+  summary: "'the' agrees with the noun: o carro, a casa, os carros, as casas."
+  explanation: |
+    | | singular | plural |
+    |---|---|---|
+    | masculine | **o** livro | **os** livros |
+    | feminine | **a** casa | **as** casas |
+
+    ### Where Portuguese uses "the" and English does not
+    - General statements: *O café brasileiro é famoso.* *Gosto dos cachorros.*
+    - Most countries: *o Brasil, a Argentina, os Estados Unidos, a França* — but not *Portugal, Angola, Moçambique, Cuba*.
+    - Often with first names in Rio and São Paulo: *a Ana, o Pedro* (friendly, not obligatory).
+    - Optionally with possessives: *(o) meu carro*.
+    - Days and times: *às três horas*, *no sábado*.
+
+    ### Contractions
+    The article joins the prepositions *de, em, a, por*: *do, na, ao, pelo* (see the contraction notes).
+
+    Remember *a* is also a preposition (to): *Vou a Paris.*
+  examples:
+    - { es: "Os meninos estão na escola.", en: "The boys are at school." }
+    - { es: "O Brasil é enorme.", en: "Brazil is huge." }
+    - { es: "A Carla é minha amiga.", en: "Carla is my friend.", altEs: ["Carla é minha amiga."] }
+    - { es: "O açaí é delicioso.", en: "Açaí is delicious." }
+  pitfalls:
+    - "Spanish speakers: *el/la/los/las* become *o/a/os/as*; never *lo* as an article."
+    - "No article with *Portugal*: *Moro em Portugal*, but *Moro no Brasil*."
+    - "English speakers: use the article for general statements: *A vida é bela*, not *Vida é bela*."
+  variant: "European Portuguese uses the article before first names and possessives almost always: *a Maria, o meu carro*. In Brazil both are optional and vary by region (less common in the Northeast)."
+  related: [g.gender-nouns, g.articles-indefinite, g.contractions-de, g.contractions-em, g.ep-articles-names-possessives]
+  drills:
+    - { es: "As praias são lindas.", en: "The beaches are beautiful." }
+    - { es: "O professor fala com os alunos.", en: "The teacher talks to the students." }
+    - { es: "A França e a Itália ficam na Europa.", en: "France and Italy are in Europe.", altEs: ["A França e a Itália são na Europa."] }
+    - { es: "Os Estados Unidos são grandes.", en: "The United States is big." }
+- id: g.adjective-agreement
+  level: a1
+  title: "Adjectives agree with the noun"
+  summary: "bonito, bonita, bonitos, bonitas — adjectives change for gender and number."
+  explanation: |
+    ### Four forms (adjectives in -o)
+    *um carro novo, uma casa nova, uns carros novos, umas casas novas*
+
+    ### Two forms (-e, -l, -z, -r, -m)
+    Same for both genders; only the plural changes: *grande / grandes, feliz / felizes, jovem / jovens*.
+
+    ### Plural of adjectives in -l
+    | singular | plural |
+    |---|---|
+    | *legal* | *legais* |
+    | *azul* | *azuis* |
+    | *fácil* | *fáceis* |
+    | *gentil* | *gentis* |
+    | *espanhol* | *espanhóis* |
+
+    ### Nationalities and -ês / -or add -a
+    *português → portuguesa, inglês → inglesa, espanhol → espanhola, trabalhador → trabalhadora*. *Alemão → alemã*.
+
+    Mixed groups take the masculine plural: *A Ana e o Rui são altos.*
+  examples:
+    - { es: "As casas são brancas e grandes.", en: "The houses are white and big." }
+    - { es: "Minha amiga é inglesa.", en: "My friend is English." }
+    - { es: "Os sucos são naturais.", en: "The juices are natural." }
+    - { es: "Que pessoas legais!", en: "What nice people!" }
+  pitfalls:
+    - "Spanish speakers: *azul* becomes *azuis*, not *azules*; *fácil* becomes *fáceis*."
+    - "English speakers: the adjective must change: *as meninas altas*, not *as meninas alto*."
+    - "Adjectives in *-ista* don't change for gender: *um homem otimista, uma mulher otimista*."
+  variant: "Forms are the same in Portugal; vocabulary differs: European *giro* (cute, cool) for Brazilian *bonitinho / legal*, and *fixe* (cool) for *legal*."
+  related: [g.gender-nouns, g.plural-nouns, g.adjective-position, g.colours]
+  drills:
+    - { es: "Uma mulher trabalhadora.", en: "A hard-working woman." }
+    - { es: "Uns livros interessantes.", en: "Some interesting books." }
+    - { es: "Os exercícios são fáceis.", en: "The exercises are easy." }
+    - { es: "Os turistas são espanhóis.", en: "The tourists are Spanish." }
+- id: g.ser-origin
+  level: a1
+  title: "Where are you from? — ser de + place"
+  summary: "De onde você é? Sou do Brasil, de Portugal, dos Estados Unidos."
+  explanation: |
+    - *De onde você é?* — Where are you from?
+    - Answer with **ser de + place**. If the country has an article, *de* contracts with it:
+
+    | Country | Sou… |
+    |---|---|
+    | *o Brasil* | *do Brasil* |
+    | *a Inglaterra* | *da Inglaterra* |
+    | *os Estados Unidos* | *dos Estados Unidos* |
+    | *Portugal* (no article) | *de Portugal* |
+    | cities (*São Paulo*) | *de São Paulo* — but *do Rio* |
+
+    - Or use a nationality: *Sou brasileiro / brasileira.* Nationalities are written in lower case.
+    - Where you live: *Moro em… / no… / na…*: *Sou de Londres, mas moro no Rio.*
+
+    ### Brazilian regional adjectives
+    *carioca* (from Rio city), *paulistano* (São Paulo city), *paulista* (São Paulo state), *mineiro* (Minas Gerais), *gaúcho* (Rio Grande do Sul), *baiano* (Bahia).
+  examples:
+    - { es: "De onde vocês são? Somos do Canadá.", en: "Where are you from? We're from Canada." }
+    - { es: "Ela é alemã, mas mora em Salvador.", en: "She is German, but she lives in Salvador." }
+    - { es: "Meus pais são da Itália.", en: "My parents are from Italy." }
+    - { es: "Eu sou carioca.", en: "I'm from Rio.", altEn: ["I am from Rio de Janeiro."] }
+  pitfalls:
+    - "Spanish speakers: *soy de Brasil* becomes *sou do Brasil* (with the article)."
+    - "No capital letters for nationalities: *inglês, americana, brasileiro*."
+    - "*Carioca* is the city of Rio; someone from the state is *fluminense*."
+  variant: "In Portugal: *De onde és?* (tu) or *De onde é?*; people from Lisbon are *lisboetas* and from Porto *portuenses* (or, jokingly, *tripeiros*)."
+  related: [g.ser-present, g.contractions-de, g.adjective-agreement]
+  drills:
+    - { es: "Sou da Austrália, mas moro no Brasil.", en: "I'm from Australia, but I live in Brazil." }
+    - { es: "De onde é a sua professora?", en: "Where is your teacher from?" }
+    - { es: "O Marcos é mineiro.", en: "Marcos is from Minas Gerais." }
+    - { es: "Somos de Portugal.", en: "We're from Portugal." }
+- id: g.negation
+  level: a1
+  title: "Saying no — não before the verb"
+  summary: "Put não right before the verb; Brazilians often repeat it at the end: Não sei não."
+  explanation: |
+    - *Não* goes directly before the verb and before any object pronoun: *Não sou daqui. Não me lembro.*
+    - Answering: *Você é médico? — Não, não sou.* (Yes = *Sim*, but see yes-no answers.)
+    - Negative words after the verb need *não* before it (double negative): *Não sei nada. Não vejo ninguém. Não vou nunca.*
+    - Before the verb they work alone: *Nunca bebo café. Ninguém sabe.*
+
+    ### Brazilian double and final não
+    In speech Brazilians often add a second *não* at the end for emphasis, or (especially in the Northeast) only at the end:
+    - *Não sei não.* — I really don't know.
+    - *Sei não.* — Dunno.
+  examples:
+    - { es: "Não falo francês.", en: "I don't speak French.", altEs: ["Eu não falo francês."] }
+    - { es: "Esse carro é seu? Não, não é.", en: "Is that car yours? No, it isn't." }
+    - { es: "Não, obrigado.", en: "No, thank you.", altEs: ["Não, obrigada."] }
+    - { es: "Ele não come nada.", en: "He doesn't eat anything." }
+    - { es: "Não gosto não.", en: "I really don't like it.", altEs: ["Não gosto."] }
+  pitfalls:
+    - "There is no 'do/does': *não falo* = I don't speak."
+    - "Double negatives are correct: *Não tem ninguém aqui* (there's nobody here)."
+    - "Spanish speakers: *no* becomes *não* (nasal); *no* in Portuguese means 'in the' (*no Brasil*)."
+  variant: "European Portuguese does not use the final *não* (*Sei não* sounds Brazilian). It also likes the emphatic *Não, não* at the start: *Não, não quero.*"
+  related: [g.yes-no-answers, g.indefinite-pronouns, g.tambem-tambem-nao]
+  drills:
+    - { es: "Ela não é professora.", en: "She isn't a teacher." }
+    - { es: "Nós não somos de São Paulo.", en: "We aren't from São Paulo." }
+    - { es: "Não tem ninguém em casa.", en: "There's nobody at home." }
+    - { es: "Eu nunca bebo cerveja.", en: "I never drink beer.", altEs: ["Nunca bebo cerveja."] }
+- id: g.possessives
+  level: a1
+  title: "Possessives — meu, seu, nosso, dele"
+  summary: "meu/minha, seu/sua, nosso/nossa agree with the thing owned; dele/dela come after the noun."
+  explanation: |
+    | owner | m. sing. | f. sing. | m. pl. | f. pl. |
+    |---|---|---|---|---|
+    | eu | *meu* | *minha* | *meus* | *minhas* |
+    | você | *seu* | *sua* | *seus* | *suas* |
+    | nós | *nosso* | *nossa* | *nossos* | *nossas* |
+    | (tu) | *teu* | *tua* | *teus* | *tuas* |
+
+    ### Agreement with the thing, not the owner
+    *meu irmão, minha irmã* — a man says *minha mãe*, a woman says *meu pai*.
+
+    ### His, her, their: dele, dela, deles, delas
+    In Brazil *seu* usually means "your". For "his / her / their" use **noun + de + person**: *o carro dele* (his car), *a casa dela* (her house), *os filhos deles* (their children).
+
+    ### Article
+    The article is optional in Brazil: *minha casa* or *a minha casa*. After a noun: *um amigo meu* (a friend of mine).
+  examples:
+    - { es: "Minha mãe é professora.", en: "My mother is a teacher.", altEs: ["A minha mãe é professora."] }
+    - { es: "Qual é o seu telefone?", en: "What's your phone number?" }
+    - { es: "Nossa casa é pequena.", en: "Our house is small.", altEs: ["A nossa casa é pequena."] }
+    - { es: "O carro dele é vermelho.", en: "His car is red." }
+    - { es: "Ela é uma amiga minha.", en: "She's a friend of mine." }
+  pitfalls:
+    - "Spanish speakers: *mi* has two forms: *meu* (m) and *minha* (f)."
+    - "English speakers: 'his sister' is *a irmã dele*; the possessive agrees with *irmã*, the owner comes after."
+    - "*Seu* for 'his/her' is correct but ambiguous in Brazil; prefer *dele / dela* in speech."
+  variant: "In Portugal the article is almost always used (*o meu carro, a minha casa*), *teu / tua* is very common with *tu*, and *seu / sua* is used for 'your' when addressing someone formally."
+  related: [g.seu-vs-dele, g.contractions-de, g.articles-definite]
+  drills:
+    - { es: "Meus irmãos moram em Belo Horizonte.", en: "My brothers live in Belo Horizonte." }
+    - { es: "A irmã dela é médica.", en: "Her sister is a doctor." }
+    - { es: "Nossos amigos são cariocas.", en: "Our friends are from Rio." }
+    - { es: "Onde está a sua chave?", en: "Where's your key?" }
+- id: g.plural-nouns
+  level: a1
+  title: "Plural of nouns"
+  summary: "Add -s; but -m → -ns, -l → -is, -r/-z → -es, and -ão has three plurals."
+  explanation: |
+    | ending | rule | example |
+    |---|---|---|
+    | vowel | + *s* | *casa → casas, café → cafés* |
+    | *-m* | → *-ns* | *homem → homens, viagem → viagens* |
+    | *-r, -z* | + *es* | *flor → flores, luz → luzes* |
+    | stressed *-s* | + *es* | *mês → meses, país → países* |
+    | *-al, -el, -ol, -ul* | → *-ais, -éis, -óis, -uis* | *animal → animais, papel → papéis* |
+    | stressed *-il* | → *-is* | *barril → barris* |
+    | unstressed *-s, -x* | no change | *o ônibus → os ônibus, o tórax → os tórax* |
+
+    ### The three plurals of -ão
+    - Most: **-ões**: *avião → aviões, estação → estações*
+    - Some: **-ães**: *pão → pães, cão → cães, alemão → alemães*
+    - Some: **-ãos**: *mão → mãos, irmão → irmãos, cidadão → cidadãos*
+
+    Learn the *-ão* plurals word by word.
+  examples:
+    - { es: "Dois pães, por favor.", en: "Two bread rolls, please." }
+    - { es: "Os homens e as mulheres.", en: "The men and the women." }
+    - { es: "Tenho dois irmãos.", en: "I have two brothers.", altEn: ["I have two siblings."] }
+    - { es: "Os hotéis são caros.", en: "The hotels are expensive." }
+    - { es: "As estações de metrô.", en: "The metro stations." }
+  pitfalls:
+    - "Spanish speakers: *hombres* is *homens*; *animales* is *animais*."
+    - "Don't add *-s* to words ending in unstressed *-s*: *dois ônibus, três lápis*."
+    - "*Irmãos* can mean 'brothers' or 'brothers and sisters'."
+  variant: "Plural rules are the same in Portugal; the bus is *o autocarro / os autocarros* there."
+  related: [g.gender-nouns, g.adjective-agreement, g.numbers-0-100]
+  drills:
+    - { es: "As flores são lindas.", en: "The flowers are beautiful." }
+    - { es: "Os aviões chegam às dez.", en: "The planes arrive at ten." }
+    - { es: "Três meses no Brasil.", en: "Three months in Brazil." }
+    - { es: "Os animais estão com fome.", en: "The animals are hungry." }
+- id: g.ter-present
+  level: a1
+  title: "The verb ter (to have)"
+  summary: "tenho, tem, temos, têm — possession, age and (in Brazil) 'there is'."
+  explanation: |
+    | | ter |
+    |---|---|
+    | eu | **tenho** |
+    | você / ele / ela | **tem** |
+    | nós | **temos** |
+    | vocês / eles / elas | **têm** |
+    | (tu) | (*tens*) |
+
+    Uses:
+    - **Possession**: *Tenho um irmão. Você tem carro?*
+    - **Age**: *Tenho trinta anos.* (I am thirty.) *Quantos anos você tem?*
+    - **There is** (Brazil, colloquial): *Tem um mercado aqui.* (see *tem* = there is)
+    - **Obligation**: *tenho que trabalhar* (see *ter que*).
+
+    *Têm* (they have) has a circumflex; *tem* (has) does not. They sound the same in Brazil.
+  examples:
+    - { es: "Eu tenho dois filhos.", en: "I have two children.", altEs: ["Tenho dois filhos."] }
+    - { es: "Quantos anos você tem?", en: "How old are you?" }
+    - { es: "Ela tem vinte e cinco anos.", en: "She is twenty-five." }
+    - { es: "Eles têm uma casa na praia.", en: "They have a house at the beach." }
+    - { es: "Nós não temos tempo.", en: "We don't have time." }
+  pitfalls:
+    - "Age uses *ter*, not *ser*: *Tenho 20 anos*, never *Sou 20*."
+    - "Write *eles têm* with the hat; *ele tem* without."
+    - "Spanish speakers: *tengo* becomes *tenho* (nh, not ng)."
+  variant: "In Portugal *tu tens* is everyday, and *ter* is not used for 'there is' (Portugal uses *há*). Pronunciation differs: *têm* is pronounced with two nasal syllables in Portugal (*tẽjẽj*), so it sounds different from *tem*."
+  related: [g.tem-there-is, g.ter-que, g.numbers-0-100]
+  drills:
+    - { es: "Você tem irmãos?", en: "Do you have siblings?" }
+    - { es: "Meu avô tem oitenta anos.", en: "My grandfather is eighty." }
+    - { es: "Vocês têm cachorro?", en: "Do you have a dog?" }
+    - { es: "Temos uma reunião amanhã.", en: "We have a meeting tomorrow." }
+- id: g.numbers-0-100
+  level: a1
+  title: "Numbers 0–100"
+  summary: "um/uma and dois/duas agree in gender; tens + e + units: vinte e um."
+  explanation: |
+    | | | | |
+    |---|---|---|---|
+    | 0 *zero* | 6 *seis* | 12 *doze* | 18 *dezoito* |
+    | 1 *um / uma* | 7 *sete* | 13 *treze* | 19 *dezenove* |
+    | 2 *dois / duas* | 8 *oito* | 14 *catorze* / *quatorze* | 20 *vinte* |
+    | 3 *três* | 9 *nove* | 15 *quinze* | 30 *trinta* |
+    | 4 *quatro* | 10 *dez* | 16 *dezesseis* | 40 *quarenta* |
+    | 5 *cinco* | 11 *onze* | 17 *dezessete* | 50 *cinquenta* |
+
+    60 *sessenta*, 70 *setenta*, 80 *oitenta*, 90 *noventa*, 100 *cem*.
+
+    - Tens and units are joined with *e*: *vinte e um, trinta e dois, noventa e nove*.
+    - *Um / uma* and *dois / duas* agree: *um real, uma pessoa, dois meninos, duas meninas, vinte e duas pessoas*.
+
+    ### "Meia" for six
+    When saying phone numbers, Brazilians say *meia* (from *meia dúzia*, half a dozen) instead of *seis* so it isn't confused with *três*: *nove, meia, dois…*
+  examples:
+    - { es: "Tenho vinte e dois anos.", en: "I'm twenty-two." }
+    - { es: "São duas cervejas, por favor.", en: "Two beers, please.", altEs: ["Duas cervejas, por favor."] }
+    - { es: "Meu telefone é nove, meia, oito, três…", en: "My phone number is nine, six, eight, three…" }
+    - { es: "Ela tem cinquenta e uma fotos.", en: "She has fifty-one photos." }
+  pitfalls:
+    - "*Dois / duas* agree with the noun: *duas horas*, not *dois horas*."
+    - "Spanish speakers: *dieciséis* is *dezesseis*, *cien* is *cem*, *cincuenta* is *cinquenta*."
+    - "Don't say *meia* for six when counting money or ages, only when reading out digits."
+  variant: "In Portugal: *dezasseis, dezassete, dezanove* (with -a-), *catorze* rather than *quatorze*, and *meia* for six is not used."
+  related: [g.numbers-100-plus, g.ter-present, g.telling-time]
+  drills:
+    - { es: "Ela tem trinta e três anos.", en: "She is thirty-three." }
+    - { es: "Uma pessoa e duas crianças.", en: "One person and two children." }
+    - { es: "São quarenta e cinco reais.", en: "It's forty-five reais." }
+    - { es: "Dezesseis mais quatro são vinte.", en: "Sixteen plus four is twenty." }
+- id: g.question-words
+  level: a1
+  title: "Question words — o que, qual, quem, onde, como, quando, por que"
+  summary: "O que? Qual? Quem? Onde? Como? Quando? Quanto? Por que? — and cadê?"
+  explanation: |
+    | Portuguese | English |
+    |---|---|
+    | *o que* | what |
+    | *qual / quais* | which, what (with *ser*) |
+    | *quem* | who |
+    | *onde* | where |
+    | *aonde* | where to |
+    | *de onde* | where from |
+    | *como* | how |
+    | *quando* | when |
+    | *quanto / quanta / quantos / quantas* | how much, how many |
+    | *por que* | why |
+
+    ### O que or qual?
+    - *O que* asks for a definition or an action: *O que é isso? O que você faz?*
+    - *Qual* picks from a set and is used with *ser* for names, numbers, addresses: *Qual é o seu nome? Qual é o seu e-mail?*
+
+    ### The four porquês
+    *Por que você chora?* (why) — *Porque estou triste.* (because) — *Você chora por quê?* (why, at the end) — *o porquê* (the reason).
+
+    ### É que and cadê
+    Spoken Brazilian adds *é que*: *Onde é que você mora?* And *cadê…?* means "where is…?": *Cadê meu celular?*
+  examples:
+    - { es: "O que você quer?", en: "What do you want?", altEs: ["O que é que você quer?"] }
+    - { es: "Qual é o seu endereço?", en: "What's your address?" }
+    - { es: "Quantos irmãos você tem?", en: "How many siblings do you have?" }
+    - { es: "Por que você está aqui?", en: "Why are you here?" }
+    - { es: "Cadê a Júlia?", en: "Where's Júlia?", altEs: ["Onde está a Júlia?"] }
+  pitfalls:
+    - "Spanish speakers: *¿qué?* is usually *o que?* (with *o*); *¿Cuál es tu nombre?* is *Qual é o seu nome?*"
+    - "*Por que* (why, two words) vs *porque* (because, one word) — a classic spelling mistake even for Brazilians."
+    - "*Quanto* agrees: *quantas pessoas*, *quanta água*."
+  variant: "European Portuguese writes *porque* in questions too (*Porque é que não vens?*), uses *é que* constantly (*Onde é que moras?*), and does not use *cadê*."
+  related: [g.ser-present, g.yes-no-answers, g.quanto-custa]
+  drills:
+    - { es: "Quem é aquele homem?", en: "Who is that man?" }
+    - { es: "Quando é o seu aniversário?", en: "When is your birthday?" }
+    - { es: "Como se diz isso em português?", en: "How do you say that in Portuguese?" }
+    - { es: "De onde é o seu namorado?", en: "Where is your boyfriend from?" }
+- id: g.tem-there-is
+  level: a1
+  title: "Tem = there is / there are (Brazil)"
+  summary: "In spoken Brazilian Portuguese tem means 'there is/are'; há is the formal and written equivalent."
+  explanation: |
+    - *Tem um supermercado aqui perto.* — There's a supermarket near here.
+    - *Tem muitas pessoas na praia.* — There are a lot of people on the beach.
+    - *Não tem lugar.* — There's no room.
+    - *Tem banheiro?* — Is there a bathroom?
+
+    ### Invariable
+    For "there is" and "there are" the verb stays singular: *tem dois bancos*, never *têm dois bancos*.
+
+    ### Tem or há?
+    | | spoken Brazil | written / formal |
+    |---|---|---|
+    | there is / are | *tem* | *há* |
+    | there was | *tinha / teve* | *havia / houve* |
+
+    *Há* is also invariable: *Há muitas opções.*
+  examples:
+    - { es: "Tem uma farmácia nesta rua?", en: "Is there a pharmacy on this street?", altEs: ["Há uma farmácia nesta rua?"] }
+    - { es: "No meu bairro tem dois parques.", en: "There are two parks in my neighbourhood.", altEs: ["No meu bairro há dois parques."] }
+    - { es: "Não tem pão hoje.", en: "There's no bread today." }
+    - { es: "Há um problema.", en: "There is a problem.", altEs: ["Tem um problema."] }
+  pitfalls:
+    - "Never pluralise: *tem muitos carros*, not *têm muitos carros* (that means 'they have')."
+    - "Spanish speakers: *hay* is *tem* (speech) or *há* (writing), not *está*."
+    - "English speakers: don't translate 'there' as *lá*: *Tem um café lá* = There's a café over there."
+  variant: "Portugal uses *há* in everyday speech (*Há um café ali*); *tem* for 'there is' sounds clearly Brazilian."
+  related: [g.ter-present, g.estar-present, g.articles-indefinite]
+  drills:
+    - { es: "Tem um restaurante bom na esquina.", en: "There's a good restaurant on the corner." }
+    - { es: "Na geladeira tem leite e ovos.", en: "There's milk and eggs in the fridge." }
+    - { es: "Aqui não tem metrô.", en: "There's no metro here." }
+    - { es: "Tem alguém em casa?", en: "Is anybody home?" }
+- id: g.estar-present
+  level: a1
+  title: "The verb estar (to be) — location and states"
+  summary: "estou, está, estamos, estão — where people are and how they are right now."
+  explanation: |
+    | | estar | spoken |
+    |---|---|---|
+    | eu | **estou** | *tô* |
+    | você / ele / ela | **está** | *tá* |
+    | nós | **estamos** | *tamo* |
+    | vocês / eles / elas | **estão** | *tão* |
+    | (tu) | (*estás*) | |
+
+    Uses:
+    - **Where people and movable things are**: *Estou em casa. O livro está na mesa.*
+    - **Temporary states and feelings**: *Estou cansado. A sopa está quente.*
+    - **How someone is**: *Como você está? Estou bem.*
+    - **Weather**: *Está calor. Está frio.*
+    - With the gerund: *Estou trabalhando.* (see *estar* + gerund)
+
+    For fixed places (buildings, cities) Brazilians prefer *ficar*: *Onde fica o museu?*
+  examples:
+    - { es: "Estou no hotel.", en: "I'm at the hotel.", altEs: ["Eu estou no hotel."] }
+    - { es: "A Ana está cansada.", en: "Ana is tired." }
+    - { es: "Onde vocês estão?", en: "Where are you?" }
+    - { es: "Hoje está muito calor.", en: "It's very hot today.", altEs: ["Hoje está muito quente."] }
+    - { es: "Tô com pressa!", en: "I'm in a hurry!", altEs: ["Estou com pressa!"] }
+  pitfalls:
+    - "Spanish speakers: *estoy* becomes *estou*; *están* becomes *estão*."
+    - "*Tô, tá, tamo* are normal in speech and texts but not in formal writing."
+    - "Use *ser*, not *estar*, for where an event takes place: *A festa é na casa da Ana.*"
+  variant: "In Portugal *tu estás* (spoken *tás*) is common, and the progressive is *estar a* + infinitive: *Estou a trabalhar.*"
+  related: [g.ser-vs-estar-basics, g.ficar-location, g.estar-com, g.estar-gerund]
+  drills:
+    - { es: "Eu estou na praia.", en: "I'm at the beach." }
+    - { es: "Nós estamos com frio.", en: "We are cold." }
+    - { es: "O café está quente.", en: "The coffee is hot." }
+    - { es: "As crianças estão na escola.", en: "The children are at school." }
+- id: g.ficar-location
+  level: a1
+  title: "Onde fica…? — ficar for fixed locations"
+  summary: "ficar says where buildings, cities and places are; it also means 'to stay'."
+  explanation: |
+    | | ficar |
+    |---|---|
+    | eu | *fico* |
+    | você / ele / ela | *fica* |
+    | nós | *ficamos* |
+    | vocês / eles / elas | *ficam* |
+
+    ### Location of things that don't move
+    - *Onde fica a estação?* — Where is the station?
+    - *O Pão de Açúcar fica na Urca.* — Sugarloaf Mountain is in Urca.
+    - *Fica longe?* — Is it far?
+    - *Onde é…?* is also fine for places: *Onde é o banheiro?*
+
+    ### Estar or ficar?
+    | | |
+    |---|---|
+    | people and movable objects | *estar*: *O Pedro está no bar. Meu celular está na bolsa.* |
+    | buildings, cities, countries | *ficar*: *O bar fica na praia.* |
+
+    ### To stay
+    *Fico em casa hoje.* (I'm staying home today.) *Ficamos num hotel.* (We're staying in a hotel.) Later you will also see *ficar* = "to become".
+  examples:
+    - { es: "Onde fica o banheiro?", en: "Where's the bathroom?", altEs: ["Onde é o banheiro?"] }
+    - { es: "O Cristo Redentor fica no Corcovado.", en: "Christ the Redeemer is on Corcovado." }
+    - { es: "A praia fica perto do hotel.", en: "The beach is near the hotel." }
+    - { es: "Hoje eu fico em casa.", en: "Today I'm staying home." }
+  pitfalls:
+    - "Spanish speakers: *¿Dónde está el museo?* is more naturally *Onde fica o museu?*"
+    - "Don't use *ficar* for people's current location: *Estou no trabalho*, not *Fico no trabalho* (that means 'I stay at work')."
+    - "*Ficar* doesn't mean 'to fix'; it is one of the most frequent verbs in Portuguese, with many meanings."
+  variant: "Same use in Portugal; the bathroom is *a casa de banho*: *Onde fica a casa de banho?*"
+  related: [g.estar-present, g.prepositions-place, g.ficar-change-of-state]
+  drills:
+    - { es: "Onde fica a rodoviária?", en: "Where's the bus station?" }
+    - { es: "O hotel fica em Copacabana.", en: "The hotel is in Copacabana." }
+    - { es: "A farmácia fica longe daqui?", en: "Is the pharmacy far from here?" }
+    - { es: "Vocês ficam até domingo?", en: "Are you staying until Sunday?" }
+- id: g.articles-indefinite
+  level: a1
+  title: "The indefinite article — um, uma, uns, umas"
+  summary: "a/an and some: um carro, uma casa, uns amigos, umas horas."
+  explanation: |
+    | | singular | plural |
+    |---|---|---|
+    | masculine | **um** carro | **uns** carros |
+    | feminine | **uma** casa | **umas** casas |
+
+    - *Uns / umas* means "some" or "about": *uns amigos* (some friends), *umas três horas* (about three hours).
+    - **No article** with professions after *ser*: *Sou dentista.*
+    - **No article** before *meio* (half) and usually before *outro* (another): *meio quilo, outro café*.
+    - Exclamations with *que* have no article: *Que dia lindo!* (What a beautiful day!)
+
+    ### Contractions in speech
+    With *em* and *de*: *num, numa, dum, duma* (*Moro num apartamento.*). In Brazilian writing *em um / de um* is also standard.
+  examples:
+    - { es: "Moro num apartamento pequeno.", en: "I live in a small flat.", altEs: ["Moro em um apartamento pequeno."] }
+    - { es: "Quero uma água, por favor.", en: "I'd like a water, please.", altEs: ["Eu quero uma água, por favor."] }
+    - { es: "Tenho uns amigos em Recife.", en: "I have some friends in Recife." }
+    - { es: "Ele é advogado.", en: "He is a lawyer." }
+    - { es: "Que praia bonita!", en: "What a beautiful beach!" }
+  pitfalls:
+    - "No *um* before professions: *Ela é médica*, not *Ela é uma médica* (unless you add an adjective: *uma médica excelente*)."
+    - "English 'another coffee' is *outro café*, not *um outro café* in most contexts."
+    - "Spanish speakers: *una* is *uma* (with m)."
+  variant: "European Portuguese writes the contractions *num, numa, dum, duma* freely; in Brazilian formal writing *em um* and *de um* are preferred."
+  related: [g.articles-definite, g.gender-nouns, g.contractions-em]
+  drills:
+    - { es: "Tem um banco aqui perto?", en: "Is there a bank near here?" }
+    - { es: "Ela é professora.", en: "She is a teacher." }
+    - { es: "Eu quero outro suco.", en: "I want another juice.", altEs: ["Quero outro suco."] }
+    - { es: "Esperei umas duas horas.", en: "I waited about two hours." }
+- id: g.contractions-em
+  level: a1
+  title: "Contractions with em — no, na, nos, nas"
+  summary: "em + o = no, em + a = na: Moro no Rio. Estou na praia."
+  explanation: |
+    *Em* means in, on and at. With the definite article it **must** contract:
+
+    | em + | o | a | os | as | um | uma |
+    |---|---|---|---|---|---|---|
+    | | **no** | **na** | **nos** | **nas** | *num* | *numa* |
+
+    - *Moro no Brasil / no Rio / na Bahia / nos Estados Unidos.*
+    - *O livro está na mesa.* (on the table)
+    - *Estou no trabalho.* (at work)
+
+    ### Without the article
+    Places without an article keep *em*: *em Portugal, em São Paulo, em Copacabana, em casa* (at home).
+
+    Later you will also see *em* + demonstratives: *neste, nesse, naquele*.
+  examples:
+    - { es: "Moro no Rio de Janeiro.", en: "I live in Rio de Janeiro." }
+    - { es: "As chaves estão na mesa.", en: "The keys are on the table." }
+    - { es: "Ela trabalha num banco.", en: "She works in a bank.", altEs: ["Ela trabalha em um banco."] }
+    - { es: "Estamos em casa.", en: "We're at home." }
+    - { es: "Tem muita gente nas ruas.", en: "There are a lot of people in the streets." }
+  pitfalls:
+    - "Never write *em o* or *em a*: it is always *no / na*."
+    - "Spanish speakers: *en el* is *no* (this *no* is not a negation)."
+    - "*Em casa* (at home) has no article; *na casa da Ana* (at Ana's house) does."
+  variant: "Identical in Portugal; European Portuguese also writes *num, numa* more freely."
+  related: [g.contractions-de, g.contractions-a, g.prepositions-place, g.demonstrative-contractions]
+  drills:
+    - { es: "Ele está no escritório.", en: "He's at the office." }
+    - { es: "O gato está na cozinha.", en: "The cat is in the kitchen." }
+    - { es: "Moramos em Niterói.", en: "We live in Niterói." }
+    - { es: "Tem pessoas nos bares.", en: "There are people in the bars." }
+- id: g.prepositions-place
+  level: a1
+  title: "Prepositions of place — em cima de, embaixo de, ao lado de…"
+  summary: "Most place expressions end in de, which contracts with the article: perto do mar, ao lado da padaria."
+  explanation: |
+    | Portuguese | English |
+    |---|---|
+    | *em, no, na* | in, on, at |
+    | *em cima de* | on top of |
+    | *embaixo de* / *debaixo de* | under |
+    | *dentro de* | inside |
+    | *fora de* | outside |
+    | *ao lado de* | next to |
+    | *perto de* | near |
+    | *longe de* | far from |
+    | *na frente de* / *em frente a* | in front of, opposite |
+    | *atrás de* | behind |
+    | *entre* | between |
+
+    The final *de* contracts with the article: *perto **do** mar, em cima **da** mesa, ao lado **dos** bancos.*
+
+    Without a noun the *de* drops: *Fica perto. Está lá em cima.*
+
+    Useful adverbs: *aqui* (here), *aí* (there, near you), *lá / ali* (over there).
+  examples:
+    - { es: "O gato está embaixo da cama.", en: "The cat is under the bed.", altEs: ["O gato está debaixo da cama."] }
+    - { es: "A padaria fica ao lado do banco.", en: "The bakery is next to the bank." }
+    - { es: "Moro perto da praia.", en: "I live near the beach." }
+    - { es: "O carro está atrás do prédio.", en: "The car is behind the building." }
+    - { es: "O ponto de ônibus fica em frente ao hotel.", en: "The bus stop is opposite the hotel.", altEs: ["O ponto de ônibus fica na frente do hotel."] }
+  pitfalls:
+    - "Don't forget *de*: *perto da praia*, not *perto a praia*."
+    - "Spanish speakers: *debajo de* is *embaixo de* (one word in Brazil) and *encima de* is *em cima de* (two words)."
+    - "*Em frente a* takes *a*: *em frente ao museu*."
+  variant: "In Portugal *em baixo* is written as two words, *por baixo de* is common for 'under', and *à frente de* or *em frente de* are used: *em frente do museu*."
+  related: [g.contractions-de, g.contractions-em, g.ficar-location, g.prepositions-movement]
+  drills:
+    - { es: "O livro está em cima da mesa.", en: "The book is on the table." }
+    - { es: "A escola fica entre a igreja e o parque.", en: "The school is between the church and the park." }
+    - { es: "O hotel fica longe do centro.", en: "The hotel is far from the centre." }
+    - { es: "As crianças estão dentro de casa.", en: "The children are inside the house." }
+- id: g.present-regular-ar
+  level: a1
+  title: "Present tense of regular -ar verbs"
+  summary: "falar → falo, fala, falamos, falam: the biggest verb group."
+  explanation: |
+    Drop *-ar* and add the endings:
+
+    | | falar | morar |
+    |---|---|---|
+    | eu | fal**o** | mor**o** |
+    | você / ele / ela | fal**a** | mor**a** |
+    | nós | fal**amos** | mor**amos** |
+    | vocês / eles / elas | fal**am** | mor**am** |
+    | (tu) | (fal**as**) | (mor**as**) |
+
+    Common -ar verbs: *trabalhar, estudar, morar, tomar, comprar, almoçar, jantar, chegar, gostar, precisar, andar, ajudar, esperar, pagar, usar*.
+
+    ### Uses of the present
+    - Habits and facts: *Moro em Botafogo. Trabalho de manhã.*
+    - The near future: *Amanhã eu viajo.*
+    - Offers: *Eu pago!* (I'll pay!)
+    - *Tomar* is "to have" a drink or a meal: *tomar café, tomar uma cerveja, tomar banho* (to shower).
+  examples:
+    - { es: "Eu moro em Copacabana.", en: "I live in Copacabana.", altEs: ["Moro em Copacabana."] }
+    - { es: "Você trabalha aos sábados?", en: "Do you work on Saturdays?" }
+    - { es: "Nós almoçamos ao meio-dia.", en: "We have lunch at noon.", altEs: ["A gente almoça ao meio-dia."] }
+    - { es: "Eles estudam português.", en: "They study Portuguese." }
+    - { es: "Ela toma café sem açúcar.", en: "She drinks coffee without sugar." }
+  pitfalls:
+    - "Spanish speakers: the plural ends in nasal *-am* (*falam*), not *-an*."
+    - "English speakers: no 'do' in questions: *Você fala inglês?* — just a rising intonation."
+    - "*Tomar café* can also mean 'have breakfast' (*tomar café da manhã*)."
+  variant: "In Portugal *tu falas, tu moras* are normal. Breakfast is *o pequeno-almoço* (*tomar o pequeno-almoço*) and 'to take a shower' is *tomar duche* as well as *tomar banho*."
+  related: [g.present-regular-er-ir, g.subject-pronouns, g.negation]
+  drills:
+    - { es: "Eu trabalho num hospital.", en: "I work in a hospital.", altEs: ["Trabalho num hospital.", "Eu trabalho em um hospital."] }
+    - { es: "Vocês moram perto daqui?", en: "Do you live near here?" }
+    - { es: "Ela fala três línguas.", en: "She speaks three languages." }
+    - { es: "Nós jantamos às oito.", en: "We have dinner at eight." }
+- id: g.querer-present
+  level: a1
+  title: "Querer (to want) and ordering politely"
+  summary: "quero, quer, queremos, querem — and the polite Eu queria… / Vou querer…"
+  explanation: |
+    | | querer |
+    |---|---|
+    | eu | **quero** |
+    | você / ele / ela | **quer** |
+    | nós | **queremos** |
+    | vocês / eles / elas | **querem** |
+
+    Note the short *quer* (no final *-e*).
+
+    - With a noun: *Quero um suco de laranja.*
+    - With an infinitive: *Quero aprender a surfar.*
+    - *Quer dizer* = it means / I mean: *O que quer dizer "saudade"?*
+
+    ### Ordering like a Brazilian
+    | | |
+    |---|---|
+    | *Eu queria um café.* | I'd like a coffee (polite) |
+    | *Vou querer um pão de queijo.* | I'll have a cheese bread (very common) |
+    | *Me vê / me dá um guaraná.* | Give me a guaraná (casual, Rio / São Paulo) |
+    | *Pode me trazer a conta?* | Can you bring me the bill? |
+  examples:
+    - { es: "Eu quero uma água sem gás.", en: "I want a still water.", altEs: ["Quero uma água sem gás."] }
+    - { es: "Você quer sair hoje?", en: "Do you want to go out today?" }
+    - { es: "Eu queria um café, por favor.", en: "I'd like a coffee, please." }
+    - { es: "Vou querer o prato do dia.", en: "I'll have the dish of the day." }
+    - { es: "Eles querem morar no Rio.", en: "They want to live in Rio." }
+  pitfalls:
+    - "Spanish speakers: no diphthong: *quero, querem* (not *quiero, quieren*)."
+    - "*Ele quer*, without final *-e*."
+    - "A bare *Quero…* when ordering is fine but sounds abrupt; *Eu queria…* or *Vou querer…* is friendlier."
+  variant: "In Portugal people often order with the imperfect *queria* or even *era*: *Era um galão, se faz favor.* *Se faz favor* (please, to get attention) is typically European; Brazilians say *por favor* or *moço / moça!* to call a waiter."
+  related: [g.present-regular-er-ir, g.conditional-simple, g.polite-requests]
+  drills:
+    - { es: "Nós queremos uma mesa para quatro.", en: "We'd like a table for four.", altEs: ["Queremos uma mesa para quatro."] }
+    - { es: "O que você quer beber?", en: "What do you want to drink?" }
+    - { es: "Eu queria a conta, por favor.", en: "I'd like the bill, please." }
+    - { es: "Ela quer aprender português.", en: "She wants to learn Portuguese." }
+- id: g.gostar-de
+  level: a1
+  title: "Gostar de — to like"
+  summary: "Eu gosto de café. The person who likes is the subject, and gostar always takes de."
+  explanation: |
+    Portuguese *gostar* works like English "like" — **not** like Spanish *gustar*:
+
+    | Portuguese | English | Spanish |
+    |---|---|---|
+    | *Eu gosto de café.* | I like coffee. | *Me gusta el café.* |
+    | *Ela gosta de dançar.* | She likes dancing. | *Le gusta bailar.* |
+    | *Nós gostamos do Rio.* | We like Rio. | *Nos gusta Río.* |
+
+    - Always *gostar **de***, which contracts with the article: *gosto **do** samba, **da** praia, **dos** cariocas*.
+    - Questions and short answers: *Você gosta de futebol? — Gosto! / Não gosto.*
+    - Stronger: *adorar* and *amar* (love), *odiar* and *detestar* (hate) — **without** *de*: *Adoro praia. Detesto chuva.*
+    - Polite wish: *Eu gostaria de…* (I would like to…).
+  examples:
+    - { es: "Eu gosto muito de açaí.", en: "I really like açaí.", altEs: ["Gosto muito de açaí."] }
+    - { es: "Você gosta de samba?", en: "Do you like samba?" }
+    - { es: "Ela não gosta de acordar cedo.", en: "She doesn't like getting up early." }
+    - { es: "A gente adora a praia.", en: "We love the beach.", altEs: ["Nós adoramos a praia."] }
+    - { es: "Gostamos dos seus amigos.", en: "We like your friends." }
+  pitfalls:
+    - "Spanish speakers: never *me gosta*. It is *eu gosto de…*"
+    - "Don't drop *de*: *Gosto de música*, not *Gosto música*."
+    - "*Adorar* has no *de*: *Adoro chocolate*, not *Adoro de chocolate*."
+  variant: "Identical in Portugal. Europeans often say *Gostava de…* (imperfect) for 'I would like to…', where Brazilians say *Gostaria de…*"
+  related: [g.contractions-de, g.present-regular-ar, g.conditional-simple]
+  drills:
+    - { es: "Eu gosto de ler na praia.", en: "I like reading on the beach." }
+    - { es: "Eles gostam do Brasil.", en: "They like Brazil." }
+    - { es: "Você gosta de cozinhar?", en: "Do you like cooking?" }
+    - { es: "Meu pai detesta futebol.", en: "My father hates football." }
+- id: g.contractions-de
+  level: a1
+  title: "Contractions with de — do, da, dele, daqui"
+  summary: "de + o = do, de + a = da, de + ele = dele, de + aqui = daqui."
+  explanation: |
+    *De* (of, from, about) joins the words that follow it:
+
+    | de + | result | example |
+    |---|---|---|
+    | *o, a, os, as* | **do, da, dos, das** | *a casa do Pedro* |
+    | *ele, ela, eles, elas* | **dele, dela, deles, delas** | *o carro dela* |
+    | *um, uma* | *dum, duma* (speech) | *o nome dum amigo* |
+    | *aqui, aí, ali* | **daqui, daí, dali** | *É longe daqui?* |
+    | *este, esse, aquele* | **deste, desse, daquele** | *Gosto desse.* |
+
+    Uses of *de*:
+    - Possession: *o celular da Ana* (Ana's phone)
+    - Origin: *Sou do Rio.*
+    - Material and type (no article): *suco de laranja, casa de madeira*
+    - After many verbs and expressions: *gostar de, precisar de, perto de*
+  examples:
+    - { es: "Este é o carro do meu pai.", en: "This is my father's car." }
+    - { es: "Gosto da música brasileira.", en: "I like Brazilian music." }
+    - { es: "A casa deles é grande.", en: "Their house is big." }
+    - { es: "Você é daqui?", en: "Are you from here?" }
+    - { es: "Um suco de manga, por favor.", en: "A mango juice, please." }
+  pitfalls:
+    - "Spanish speakers: Spanish contracts only *del*; Portuguese contracts all forms: *da, dos, das*."
+    - "Never write *de o* in normal sentences: *o livro do João*."
+    - "English speakers: there is no 's: 'Ana's friend' is *o amigo da Ana*."
+  variant: "Same in Portugal, where *dum / duma* are also common in writing."
+  related: [g.contractions-em, g.contractions-a, g.possessives, g.gostar-de]
+  drills:
+    - { es: "A mãe da Júlia é professora.", en: "Júlia's mother is a teacher." }
+    - { es: "O hotel fica longe do centro.", en: "The hotel is far from the centre." }
+    - { es: "Eu preciso dos documentos.", en: "I need the documents." }
+    - { es: "O nome dele é Marcelo.", en: "His name is Marcelo." }
+- id: g.quantity-words
+  level: a1
+  title: "Quantities — muito, pouco, um pouco de, um copo de"
+  summary: "muito/muita agree before nouns; containers and measures take de: uma xícara de café."
+  explanation: |
+    ### Before nouns: they agree
+    | | m. | f. | m. pl. | f. pl. |
+    |---|---|---|---|---|
+    | much / many | *muito* | *muita* | *muitos* | *muitas* |
+    | little / few | *pouco* | *pouca* | *poucos* | *poucas* |
+
+    *muita água, muitos turistas, poucas pessoas*.
+
+    ### Other quantities
+    - *um pouco de* (a little): *um pouco de açúcar*
+    - *mais* (more), *menos* (less), *bastante* (quite a lot), *demais* (too much, after the noun)
+    - *nenhum / nenhuma* (no, not any): *Não tenho nenhuma ideia.*
+
+    ### Containers and measures + de
+    *um copo de água, uma xícara de café, uma garrafa de vinho, um pedaço de bolo, um quilo de arroz, meio quilo de queijo, uma dúzia de ovos, uma lata de cerveja*.
+
+    ### Muito is also "very"
+    *Muito* before an adjective means "very" and does not change: *muito bonitas*.
+  examples:
+    - { es: "Tem muita gente na praia hoje.", en: "There are a lot of people on the beach today." }
+    - { es: "Uma xícara de café e um pedaço de bolo, por favor.", en: "A cup of coffee and a piece of cake, please." }
+    - { es: "Quero um pouco de água.", en: "I want a little water." }
+    - { es: "Ele tem poucos amigos aqui.", en: "He has few friends here." }
+    - { es: "Meio quilo de queijo, por favor.", en: "Half a kilo of cheese, please." }
+  pitfalls:
+    - "Spanish speakers: Portuguese has no *muy*: *muito* is both 'very' and 'a lot'."
+    - "*Muito* agrees with nouns (*muitas casas*) but not with adjectives (*muito altas*)."
+    - "No article after *meio*: *meio quilo*, not *um meio quilo*."
+  variant: "In Portugal a cup is *uma chávena*, a draught beer *uma imperial* (Brazil: *um chope*), and Lisbon slang uses *bué* for 'a lot': *bué de gente*."
+  related: [g.muito-pouco, g.indefinite-pronouns, g.contractions-de]
+  drills:
+    - { es: "Uma garrafa de água, por favor.", en: "A bottle of water, please." }
+    - { es: "Temos pouco tempo.", en: "We have little time." }
+    - { es: "Ela compra muitas frutas na feira.", en: "She buys a lot of fruit at the market." }
+    - { es: "Um quilo de arroz e uma dúzia de ovos.", en: "A kilo of rice and a dozen eggs." }
+- id: g.present-regular-er-ir
+  level: a1
+  title: "Present tense of regular -er and -ir verbs"
+  summary: "comer → como, come, comemos, comem; abrir → abro, abre, abrimos, abrem."
+  explanation: |
+    | | comer | abrir |
+    |---|---|---|
+    | eu | com**o** | abr**o** |
+    | você / ele / ela | com**e** | abr**e** |
+    | nós | com**emos** | abr**imos** |
+    | vocês / eles / elas | com**em** | abr**em** |
+    | (tu) | (com**es**) | (abr**es**) |
+
+    *-er* and *-ir* differ only in the *nós* form.
+
+    Common verbs: *comer, beber, aprender, entender, escrever, vender, correr, viver, abrir, partir, dividir, decidir, assistir, discutir, subir*.
+
+    ### Spelling to keep the sound
+    - *-cer → -ço*: *conhecer → conheço*
+    - *-ger / -gir → -jo*: *proteger → protejo, dirigir → dirijo*
+    - *-guir → -go*: *seguir → sigo*
+  examples:
+    - { es: "Eu como arroz e feijão todo dia.", en: "I eat rice and beans every day.", altEs: ["Como arroz e feijão todo dia."] }
+    - { es: "Você entende?", en: "Do you understand?" }
+    - { es: "Nós abrimos às nove.", en: "We open at nine." }
+    - { es: "Eles vivem em Petrópolis.", en: "They live in Petrópolis." }
+    - { es: "Ela escreve muito bem.", en: "She writes very well." }
+  pitfalls:
+    - "Spanish speakers: *comen* is *comem* (nasal *-em*); *vivimos* stays *vivimos*."
+    - "*Assistir* means 'to watch': *assistir (a) um filme*; 'to assist' is *ajudar*."
+    - "*Dirigir* means 'to drive' in Brazil (*Eu dirijo*), not only 'to direct'."
+  variant: "In Portugal *tu comes, tu abres* are normal, 'to drive' is *conduzir*, and *assistir a* keeps its preposition in speech (*assistir ao jogo*)."
+  related: [g.present-regular-ar, g.present-irregular-first-person, g.reflexive-verbs-present]
+  drills:
+    - { es: "Você bebe café?", en: "Do you drink coffee?" }
+    - { es: "Nós aprendemos português.", en: "We are learning Portuguese.", altEn: ["We learn Portuguese."] }
+    - { es: "A loja abre às dez.", en: "The shop opens at ten." }
+    - { es: "Eles assistem à novela toda noite.", en: "They watch the soap opera every night.", altEs: ["Eles assistem a novela toda noite."] }
+- id: g.reflexive-verbs-present
+  level: a1
+  title: "Reflexive verbs — eu me levanto"
+  summary: "levantar-se, deitar-se, chamar-se: in Brazil the pronoun goes before the verb, and is often dropped in speech."
+  explanation: |
+    | | levantar-se |
+    |---|---|
+    | eu | **me** levanto |
+    | você / ele / ela | **se** levanta |
+    | nós | **nos** levantamos |
+    | vocês / eles / elas | **se** levantam |
+    | (tu) | (**te** levantas) |
+
+    Common reflexive verbs: *levantar-se* (get up), *deitar-se* (go to bed), *vestir-se* (get dressed), *sentar-se* (sit down), *chamar-se*, *lembrar-se de* (remember), *esquecer-se de* (forget), *divertir-se* (have fun), *preocupar-se* (worry).
+
+    ### Brazilian habits
+    - The pronoun goes **before** the verb: *Eu me levanto às sete.*
+    - In everyday speech many speakers drop it: *Eu levanto às sete. Eu lembro. Ele esqueceu.*
+    - With *a gente* use *se*: *A gente se diverte.*
+
+    Not reflexive in Portuguese: *tomar banho* (shower), *acordar* (wake up).
+  examples:
+    - { es: "Eu me levanto às seis e meia.", en: "I get up at half past six.", altEs: ["Eu levanto às seis e meia.", "Me levanto às seis e meia."] }
+    - { es: "Ela se veste rápido.", en: "She gets dressed quickly." }
+    - { es: "Nós nos divertimos muito.", en: "We have a lot of fun.", altEs: ["A gente se diverte muito."] }
+    - { es: "Você se lembra de mim?", en: "Do you remember me?", altEs: ["Você lembra de mim?"] }
+    - { es: "Eles se deitam tarde.", en: "They go to bed late." }
+  pitfalls:
+    - "Spanish speakers: *ducharse* is *tomar banho* (not reflexive) and *despertarse* is *acordar*."
+    - "In formal writing avoid starting a sentence with the pronoun: write *Levanto-me cedo* or *Eu me levanto cedo*."
+    - "*Lembrar-se de* and *esquecer-se de* need *de*: *Ele se esquece de tudo.*"
+  variant: "European Portuguese puts the pronoun after the verb in statements: *Levanto-me às sete. Deito-me tarde. Chamo-me Rui.* It keeps the reflexive pronoun much more consistently than Brazilian speech."
+  related: [g.chamar-se, g.present-regular-ar, g.pronoun-placement-brazil, g.ep-enclisis]
+  drills:
+    - { es: "Eu me deito às onze.", en: "I go to bed at eleven.", altEs: ["Eu deito às onze.", "Me deito às onze."] }
+    - { es: "Você se preocupa demais.", en: "You worry too much." }
+    - { es: "A gente se senta aqui.", en: "We'll sit here.", altEn: ["We sit here."] }
+    - { es: "Ele não se lembra do nome dela.", en: "He doesn't remember her name.", altEs: ["Ele não lembra do nome dela."] }
+- id: g.telling-time
+  level: a1
+  title: "Telling the time — Que horas são?"
+  summary: "É uma hora, são duas horas, são três e meia, às oito, quinze para as nove."
+  explanation: |
+    - *Que horas são?* — What time is it?
+    - *É uma hora. É meio-dia. É meia-noite.* (singular)
+    - *São duas horas. São dez (horas).* (plural from two)
+
+    | | |
+    |---|---|
+    | 3:10 | *três e dez* |
+    | 3:15 | *três e quinze* / *três e um quarto* |
+    | 3:30 | *três e meia* |
+    | 3:45 | *quinze para as quatro* / *faltam quinze para as quatro* |
+    | 12:30 | *meio-dia e meia* |
+
+    ### At what time?
+    *A que horas…? — À uma. Às duas. Ao meio-dia. À meia-noite.* (*às* = *a* + *as*)
+
+    ### Parts of the day
+    *de manhã* (in the morning), *à tarde*, *à noite*; with a time: *às oito da manhã, às sete da noite*. Timetables use the 24-hour clock: *às dezoito horas*.
+  examples:
+    - { es: "Que horas são? São quatro e vinte.", en: "What time is it? It's twenty past four." }
+    - { es: "A aula começa às nove.", en: "The class starts at nine." }
+    - { es: "Almoço ao meio-dia e meia.", en: "I have lunch at half past twelve." }
+    - { es: "São quinze para as seis.", en: "It's a quarter to six.", altEs: ["Faltam quinze para as seis."] }
+    - { es: "O voo sai às vinte e duas horas.", en: "The flight leaves at 10 pm." }
+  pitfalls:
+    - "*É uma hora* (singular), but *são duas horas* (plural)."
+    - "Spanish speakers: *las seis menos cuarto* becomes *quinze para as seis* in Brazil."
+    - "'At' is *às* with a grave accent (*a + as*): *às três*, not *as três*."
+  variant: "European Portuguese uses the Spanish-like *menos*: *São seis menos um quarto. É uma menos dez.* It also says *um quarto para as seis*."
+  related: [g.numbers-0-100, g.days-months, g.contractions-a]
+  drills:
+    - { es: "São duas e meia.", en: "It's half past two." }
+    - { es: "O restaurante abre ao meio-dia.", en: "The restaurant opens at noon." }
+    - { es: "A gente se encontra às oito da noite.", en: "We're meeting at eight in the evening.", altEs: ["Nós nos encontramos às oito da noite."] }
+    - { es: "É uma e dez.", en: "It's ten past one." }
+- id: g.days-months
+  level: a1
+  title: "Days of the week, months and dates"
+  summary: "segunda-feira, terça…; na segunda, no sábado; dia 5 de março."
+  explanation: |
+    ### Days are numbered
+    | | | |
+    |---|---|---|
+    | *segunda-feira* (Mon) | *terça-feira* (Tue) | *quarta-feira* (Wed) |
+    | *quinta-feira* (Thu) | *sexta-feira* (Fri) | *sábado* (Sat) |
+    | *domingo* (Sun) | | |
+
+    In speech: *segunda, terça, quarta, quinta, sexta*. Weekdays are feminine (*a segunda*), the weekend days masculine (*o sábado, o domingo*).
+
+    - On Monday: *na segunda (-feira)*; on Saturday: *no sábado*
+    - On Mondays: *às segundas* / *toda segunda*
+    - The weekend: *o fim de semana*
+
+    ### Months (lower case)
+    *janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro*.
+
+    ### Dates
+    *Hoje é dia 5 de março.* *No dia 12 eu viajo.* *Em julho.* *O primeiro de janeiro* (ordinal for the 1st is common: *primeiro de maio*).
+  examples:
+    - { es: "Na segunda eu trabalho até tarde.", en: "On Monday I work late." }
+    - { es: "O que você faz no sábado?", en: "What are you doing on Saturday?" }
+    - { es: "Meu aniversário é dia 20 de agosto.", en: "My birthday is on the 20th of August." }
+    - { es: "O Carnaval é em fevereiro ou março.", en: "Carnival is in February or March." }
+    - { es: "Às sextas a gente sai.", en: "On Fridays we go out.", altEs: ["Toda sexta a gente sai."] }
+  pitfalls:
+    - "*Na segunda* (feminine, from *feira*), but *no sábado* and *no domingo*."
+    - "Spanish speakers: Monday is *segunda*, not a planet name; don't say *lunes*-style forms."
+    - "Months and days take lower case."
+  variant: "Same names in Portugal. Europeans write dates the same way (*5 de março*) and also say *à segunda* (at/on Monday) or *às segundas*."
+  related: [g.telling-time, g.frequency-adverbs, g.dates-years]
+  drills:
+    - { es: "Hoje é quarta-feira.", en: "Today is Wednesday.", altEs: ["Hoje é quarta."] }
+    - { es: "Eu jogo futebol aos domingos.", en: "I play football on Sundays." }
+    - { es: "As aulas começam em março.", en: "Classes start in March." }
+    - { es: "Na quinta tem show na Lapa.", en: "On Thursday there's a gig in Lapa." }
+- id: g.frequency-adverbs
+  level: a1
+  title: "How often — sempre, às vezes, nunca, todo dia"
+  summary: "sempre, geralmente, muitas vezes, às vezes, de vez em quando, raramente, nunca; uma vez por semana."
+  explanation: |
+    | from always to never | |
+    |---|---|
+    | *sempre* | always |
+    | *quase sempre* | almost always |
+    | *geralmente / normalmente* | usually |
+    | *muitas vezes* / *com frequência* | often |
+    | *às vezes* | sometimes |
+    | *de vez em quando* | from time to time |
+    | *raramente* / *quase nunca* | rarely, hardly ever |
+    | *nunca* | never |
+
+    ### Expressions
+    - *todo dia* / *todos os dias* (every day), *toda semana* (every week)
+    - *uma vez por semana* (once a week), *duas vezes por mês*
+
+    ### Position
+    Usually before the verb (*Sempre almoço em casa*) or at the end (*Vou à praia às vezes*). *Nunca* before the verb works alone; after it needs *não*: *Não bebo nunca.*
+  examples:
+    - { es: "Eu sempre tomo café de manhã.", en: "I always have coffee in the morning." }
+    - { es: "Às vezes a gente vai ao cinema.", en: "Sometimes we go to the cinema." }
+    - { es: "Ele nunca chega na hora.", en: "He never arrives on time." }
+    - { es: "Corro três vezes por semana.", en: "I run three times a week." }
+    - { es: "De vez em quando eu cozinho.", en: "From time to time I cook." }
+  pitfalls:
+    - "*Às vezes* (sometimes) has a grave accent; *as vezes* without it means 'the times'."
+    - "*Todo dia* (every day) is not *o dia todo* (all day long)."
+    - "Spanish speakers: *a veces* is *às vezes*; *a menudo* is *muitas vezes* / *com frequência*."
+  variant: "In Portugal *todos os dias* is preferred to *todo dia*, and *muitas vezes* is the usual 'often'."
+  related: [g.days-months, g.negation, g.todo-tudo]
+  drills:
+    - { es: "Ela quase nunca come carne.", en: "She hardly ever eats meat." }
+    - { es: "Geralmente eu acordo às sete.", en: "I usually wake up at seven." }
+    - { es: "Vamos à feira uma vez por semana.", en: "We go to the market once a week." }
+    - { es: "Você sempre trabalha aos sábados?", en: "Do you always work on Saturdays?" }
+- id: g.ser-vs-estar-basics
+  level: a1
+  title: "Ser or estar? The basics"
+  summary: "ser for what something is (identity, characteristics); estar for how or where it is now."
+  explanation: |
+    | ser | estar |
+    |---|---|
+    | identity: *Sou a Ana.* | location of people/things: *Estou em casa.* |
+    | origin: *Sou de Belém.* | temporary states: *Estou cansada.* |
+    | profession: *É médico.* | feelings now: *Estamos felizes hoje.* |
+    | characteristics: *É alto, é simpático.* | how something seems now: *A sopa está ótima.* |
+    | time, dates: *São duas horas.* | weather now: *Está frio.* |
+    | where an event takes place: *A festa é aqui.* | with the gerund: *Está chovendo.* |
+
+    ### Same adjective, different meaning
+    - *Ele é chato.* (He's a boring / annoying person.) — *Ele está chato hoje.* (He's being annoying today.)
+    - *Ela é bonita.* (She is beautiful.) — *Ela está bonita!* (She looks beautiful today!)
+    - *O bolo é bom.* (It's a good cake — the recipe.) — *O bolo está bom.* (This cake tastes good.)
+
+    Marital status in Brazil normally uses *ser*: *Sou casado. Ela é solteira.*
+  examples:
+    - { es: "A Bia é muito alegre, mas hoje está triste.", en: "Bia is very cheerful, but today she's sad." }
+    - { es: "O Rio é lindo.", en: "Rio is beautiful." }
+    - { es: "O café está frio.", en: "The coffee is cold." }
+    - { es: "Você está ótima hoje!", en: "You look great today!" }
+    - { es: "Sou casado e tenho dois filhos.", en: "I'm married and I have two children." }
+  pitfalls:
+    - "Events use *ser* for location: *O show é no Maracanã*, not *está no Maracanã*."
+    - "English speakers: 'I am tired' is *estou cansado*; 'I am tall' is *sou alto*."
+    - "Spanish speakers: the system is very close to Spanish, but Portuguese adds a third option, *ficar*, for locations and changes."
+  variant: "The distinction is the same in Portugal; *estar casado* is also heard on both sides of the Atlantic."
+  related: [g.ser-present, g.estar-present, g.ficar-location, g.ser-estar-ficar-advanced]
+  drills:
+    - { es: "Meu irmão é engenheiro.", en: "My brother is an engineer." }
+    - { es: "Nós estamos no aeroporto.", en: "We're at the airport." }
+    - { es: "A comida está deliciosa.", en: "The food is delicious." }
+    - { es: "A reunião é na sala 3.", en: "The meeting is in room 3." }
+- id: g.adjective-position
+  level: a1
+  title: "Where adjectives go"
+  summary: "Usually after the noun (um carro novo); a few go before and change meaning (um grande amigo)."
+  explanation: |
+    ### After the noun (normal)
+    *uma casa branca, um filme interessante, uma cidade grande*
+
+    ### Before the noun
+    - Some very common adjectives: *bom / boa, mau / má, novo, velho, grande, pequeno*: *um bom restaurante, uma boa ideia*.
+    - Numbers and order words: *o primeiro dia, a última vez, a próxima semana*.
+
+    ### Meaning changes
+    | before | after |
+    |---|---|
+    | *um grande homem* (a great man) | *um homem grande* (a big man) |
+    | *um velho amigo* (an old, long-time friend) | *um amigo velho* (an elderly friend) |
+    | *um pobre homem* (a poor, unfortunate man) | *um homem pobre* (a poor, not rich man) |
+    | *um novo carro* (another, different car) | *um carro novo* (a brand-new car) |
+  examples:
+    - { es: "Moro numa casa pequena.", en: "I live in a small house.", altEs: ["Moro em uma casa pequena."] }
+    - { es: "Ela é uma grande amiga.", en: "She's a great friend." }
+    - { es: "Tenho uma boa notícia.", en: "I have some good news." }
+    - { es: "Na próxima semana eu viajo.", en: "Next week I'm travelling." }
+  pitfalls:
+    - "Spanish speakers: no shortening: *um bom dia, um grande amigo* (not *bom* → *buen*, *grande* → *gran*)."
+    - "English speakers: colours and nationalities always come after: *um carro vermelho, uma amiga francesa*."
+  variant: "Identical in Portugal."
+  related: [g.adjective-agreement, g.colours]
+  drills:
+    - { es: "É um restaurante muito bom.", en: "It's a very good restaurant.", altEs: ["É um ótimo restaurante."] }
+    - { es: "Meu velho amigo mora em Paraty.", en: "My old friend lives in Paraty." }
+    - { es: "Ele compra um carro novo.", en: "He's buying a new car." }
+    - { es: "É a última vez!", en: "It's the last time!" }
+- id: g.estar-com
+  level: a1
+  title: "Estar com fome — how you feel"
+  summary: "Brazilians say estar com + noun for hunger, thirst, cold, sleepiness, fear, hurry…"
+  explanation: |
+    Where English uses "to be + adjective" and Spanish *tener*, Brazilian Portuguese prefers **estar com + noun**:
+
+    | Portuguese | English | Spanish |
+    |---|---|---|
+    | *estar com fome* | to be hungry | *tener hambre* |
+    | *estar com sede* | to be thirsty | *tener sed* |
+    | *estar com frio / calor* | to be cold / hot | *tener frío / calor* |
+    | *estar com sono* | to be sleepy | *tener sueño* |
+    | *estar com medo (de)* | to be afraid (of) | *tener miedo (de)* |
+    | *estar com pressa* | to be in a hurry | *tener prisa* |
+    | *estar com saudade (de)* | to miss | *extrañar* |
+    | *estar com dor de cabeça* | to have a headache | *tener dolor de cabeza* |
+
+    *Ter fome, ter medo* also exist and are correct, but *estar com* is more natural in Brazil.
+
+    Weather vs person: *Está frio.* (It's cold.) / *Estou com frio.* (I'm cold.)
+  examples:
+    - { es: "Estou com muita fome!", en: "I'm really hungry!", altEs: ["Tô com muita fome!"] }
+    - { es: "Você está com frio?", en: "Are you cold?" }
+    - { es: "As crianças estão com sono.", en: "The children are sleepy." }
+    - { es: "Estou com saudade de você.", en: "I miss you.", altEs: ["Estou com saudades de você."] }
+    - { es: "Ela tem medo de avião.", en: "She's afraid of flying.", altEs: ["Ela está com medo de avião."] }
+  pitfalls:
+    - "Not *estou faminto* for everyday hunger: it sounds dramatic ('starving')."
+    - "*Estou frio* means 'I am cold to the touch / unfriendly'; for feeling cold say *estou com frio*."
+    - "*Muito* agrees with the noun: *com muita fome, com muito sono*."
+  variant: "In Portugal *ter* is the usual verb: *Tenho fome. Tens frio? Tenho sono.* *Estar com* is also understood."
+  related: [g.estar-present, g.ser-vs-estar-basics, g.doer]
+  drills:
+    - { es: "Estou com sede.", en: "I'm thirsty." }
+    - { es: "A gente está com pressa.", en: "We're in a hurry.", altEs: ["Nós estamos com pressa."] }
+    - { es: "Ele está com dor de cabeça.", en: "He has a headache." }
+    - { es: "Vocês estão com calor?", en: "Are you hot?" }
+- id: g.muito-pouco
+  level: a1
+  title: "Intensifiers — muito, bem, meio, pouco, demais"
+  summary: "muito bonito, bem perto, meio cansado, pouco interessante, bom demais."
+  explanation: |
+    Before an adjective or adverb these words **don't change**:
+
+    | | |
+    |---|---|
+    | *muito* | very: *muito bonita* |
+    | *bem* | quite, really (very common in Brazil): *bem perto, bem gelado* |
+    | *bastante* | quite: *bastante difícil* |
+    | *meio* | sort of, a bit: *meio cansada* |
+    | *um pouco* | a bit (often negative): *um pouco caro* |
+    | *pouco* | not very: *pouco interessante* |
+    | *tão* | so: *tão bonito* |
+    | *demais* (after) | really, too: *bom demais, caro demais* |
+    | *super-* (prefix) | super: *superlegal, superfácil* |
+
+    *Demais* in Brazilian speech is often positive: *Esse show é bom demais!* (This gig is amazing!) — in other contexts it means "too": *É caro demais.*
+  examples:
+    - { es: "A praia é muito bonita.", en: "The beach is very beautiful." }
+    - { es: "O hotel fica bem perto.", en: "The hotel is really close." }
+    - { es: "Estou meio cansada hoje.", en: "I'm a bit tired today." }
+    - { es: "Esse pão de queijo é bom demais!", en: "This cheese bread is so good!" }
+    - { es: "O filme é pouco interessante.", en: "The film isn't very interesting." }
+  pitfalls:
+    - "*Meio* doesn't agree before adjectives: *ela está meio cansada* (not *meia cansada*, a common colloquial slip)."
+    - "*Muito* before adjectives never changes: *muito altas*, not *muitas altas*."
+    - "*Pouco* (not very) and *um pouco* (a bit) are different: *pouco caro* is rare; say *um pouco caro*."
+  variant: "Lisbon slang uses *bué* (*bué fixe*, really cool) and Europeans say *imenso* (*Gosto imenso*). *Bem* as an intensifier is less frequent in Portugal."
+  related: [g.quantity-words, g.adjective-agreement, g.superlatives]
+  drills:
+    - { es: "A água está bem gelada.", en: "The water is really cold." }
+    - { es: "O português é um pouco difícil.", en: "Portuguese is a bit difficult." }
+    - { es: "Esse vestido é caro demais.", en: "This dress is too expensive." }
+    - { es: "Que dia tão lindo!", en: "What a lovely day!" }
+- id: g.numbers-100-plus
+  level: a1
+  title: "Numbers from 100"
+  summary: "cem, cento e um, duzentos/duzentas, quinhentos, mil, um milhão de."
+  explanation: |
+    | | | |
+    |---|---|---|
+    | 100 *cem* | 101 *cento e um* | 200 *duzentos / duzentas* |
+    | 300 *trezentos* | 400 *quatrocentos* | 500 *quinhentos* |
+    | 600 *seiscentos* | 700 *setecentos* | 800 *oitocentos* |
+    | 900 *novecentos* | 1.000 *mil* | 2.000 *dois mil* |
+    | 1.000.000 *um milhão* | 2.000.000 *dois milhões* | 1.000.000.000 *um bilhão* |
+
+    - *Cem* is exactly 100; from 101 it is *cento*: *cento e vinte*.
+    - Hundreds agree with feminine nouns: *duzentas pessoas, quinhentas casas* (but *quinhentos reais*, because *real* is masculine).
+    - *E* joins every part except between thousands and a full hundreds group: *mil **e** duzentos, dois mil trezentos **e** quarenta **e** cinco*.
+    - *Mil* never takes *um*: *mil reais*. *Milhão* is a noun: *um milhão **de** pessoas*.
+
+    ### Writing numbers and money
+    Brazil uses a point for thousands and a comma for decimals: *R$ 1.250,90* = *mil duzentos e cinquenta reais e noventa centavos*.
+  examples:
+    - { es: "O ingresso custa cento e vinte reais.", en: "The ticket costs a hundred and twenty reais." }
+    - { es: "Tem duzentas pessoas na festa.", en: "There are two hundred people at the party." }
+    - { es: "O Rio tem mais de seis milhões de habitantes.", en: "Rio has more than six million inhabitants." }
+    - { es: "Mil e quinhentos reais por mês.", en: "One thousand five hundred reais a month." }
+  pitfalls:
+    - "Spanish speakers: *quinientos* is *quinhentos*, *setecientos* is *setecentos*, *novecientos* is *novecentos*."
+    - "Never *um mil*: just *mil*."
+    - "*Duzentas, trezentas…* with feminine nouns: *trezentas casas*."
+  variant: "In Portugal *um bilião* means a million million (10^12); a thousand million is *mil milhões*. Portugal's currency is the euro: *dois euros e cinquenta cêntimos* (Brazil: *centavos*)."
+  related: [g.numbers-0-100, g.quanto-custa, g.dates-years]
+  drills:
+    - { es: "São trezentos e cinquenta reais.", en: "It's three hundred and fifty reais." }
+    - { es: "Ela ganha dois mil reais por mês.", en: "She earns two thousand reais a month." }
+    - { es: "A cidade tem quinhentas escolas.", en: "The city has five hundred schools." }
+    - { es: "O apartamento custa um milhão de reais.", en: "The flat costs a million reais." }
+- id: g.quanto-custa
+  level: a1
+  title: "Quanto custa? — prices and paying"
+  summary: "Quanto custa? Quanto custam? Quanto é? Está caro. Posso pagar no cartão?"
+  explanation: |
+    ### Asking the price
+    - *Quanto custa (esta camisa)?* — How much is (this shirt)?
+    - *Quanto custam (os sapatos)?* — the verb agrees with plural things.
+    - *Quanto é?* / *Quanto fica?* — How much is it (all together)?
+    - *Qual é o preço?* — What's the price?
+
+    ### Answers and comments
+    *Custa oitenta reais. Fica cem no total. Está caro / barato. Tem desconto?*
+
+    ### Paying
+    | | |
+    |---|---|
+    | *Posso pagar com cartão / no cartão?* | Can I pay by card? |
+    | *No débito ou no crédito?* | Debit or credit? |
+    | *Aceita Pix?* | Do you take Pix? (instant bank transfer, everywhere in Brazil) |
+    | *em dinheiro* | in cash |
+    | *Pode parcelar?* | Can I pay in instalments? |
+  examples:
+    - { es: "Quanto custa esse biquíni?", en: "How much is this bikini?" }
+    - { es: "Quanto custam as havaianas?", en: "How much are the flip-flops?" }
+    - { es: "Está muito caro! Tem desconto?", en: "That's very expensive! Is there a discount?" }
+    - { es: "Posso pagar no Pix?", en: "Can I pay by Pix?" }
+    - { es: "Quanto fica tudo?", en: "How much is it all together?", altEs: ["Quanto é tudo?"] }
+  pitfalls:
+    - "Use the plural with plural things: *Quanto custam as frutas?*"
+    - "*Caro* and *barato* agree: *As frutas estão baratas.*"
+    - "The currency is *o real*, plural *os reais*."
+  variant: "In Portugal prices are in euros (*cinco euros*), cents are *cêntimos*, a card terminal or ATM is *o multibanco*, and you may hear *É para pagar com cartão?*"
+  related: [g.numbers-100-plus, g.demonstratives, g.question-words]
+  drills:
+    - { es: "Quanto custa um coco?", en: "How much is a coconut?" }
+    - { es: "Os sapatos custam duzentos reais.", en: "The shoes cost two hundred reais." }
+    - { es: "Vocês aceitam cartão?", en: "Do you take cards?" }
+    - { es: "Está barato, vou levar.", en: "It's cheap, I'll take it." }
+- id: g.demonstratives
+  level: a1
+  title: "Demonstratives — este, esse, aquele; isto, isso, aquilo"
+  summary: "este (this, near me), esse (that, near you), aquele (that over there); in Brazilian speech esse often means 'this' too."
+  explanation: |
+    | | m. | f. | m. pl. | f. pl. | neuter |
+    |---|---|---|---|---|---|
+    | near me | *este* | *esta* | *estes* | *estas* | *isto* |
+    | near you | *esse* | *essa* | *esses* | *essas* | *isso* |
+    | far from both | *aquele* | *aquela* | *aqueles* | *aquelas* | *aquilo* |
+
+    ### Brazilian speech
+    Most Brazilians use *esse / isso* for both "this" and "that (near you)": *Esse aqui é o meu.* (This one here is mine.) *Este / isto* survive in writing and careful speech.
+
+    ### Neuter forms
+    *isto, isso, aquilo* point at things without naming them: *O que é isso?* (What's that?) *Isso!* also means "Exactly! That's it!"
+
+    Add *aqui, aí, lá* to be precise: *esse aqui* (this one), *esse aí* (that one by you), *aquele lá* (that one over there).
+  examples:
+    - { es: "Este celular é novo.", en: "This mobile is new.", altEs: ["Esse celular é novo."] }
+    - { es: "Quanto custa essa camisa?", en: "How much is that shirt?" }
+    - { es: "Aquele prédio é um hotel.", en: "That building over there is a hotel." }
+    - { es: "O que é isso?", en: "What's that?", altEs: ["O que é isto?"] }
+    - { es: "Isso! Muito bem!", en: "That's it! Well done!" }
+  pitfalls:
+    - "Spanish speakers: *esto/eso* are *isto/isso* (with i); *ese* is *esse* (double s)."
+    - "Don't use *isso / isto* before a noun: *essa casa*, not *isso casa*."
+    - "*Isso* is invariable: *Isso é ótimo*, never *Issa*."
+  variant: "European Portuguese keeps the three-way system (*este / esse / aquele*) much more strictly in speech: *este* is near me, *esse* near you."
+  related: [g.demonstrative-contractions, g.quanto-custa, g.articles-definite]
+  drills:
+    - { es: "Esses sapatos são caros.", en: "Those shoes are expensive.", altEn: ["These shoes are expensive."] }
+    - { es: "Aquela praia é Ipanema.", en: "That beach over there is Ipanema." }
+    - { es: "Isto é para você.", en: "This is for you.", altEs: ["Isso é para você."] }
+    - { es: "Eu quero essa aqui.", en: "I want this one here." }
+- id: g.demonstrative-contractions
+  level: a1
+  title: "Neste, desse, naquele — demonstratives with em and de"
+  summary: "em and de join the demonstratives: neste, nessa, naquele, deste, disso, daquilo."
+  explanation: |
+    | | este | esse | aquele | isto | isso | aquilo |
+    |---|---|---|---|---|---|---|
+    | **em** + | *neste* | *nesse* | *naquele* | *nisto* | *nisso* | *naquilo* |
+    | **de** + | *deste* | *desse* | *daquele* | *disto* | *disso* | *daquilo* |
+    | **a** + | — | — | *àquele* | — | — | *àquilo* |
+
+    Feminine and plural follow: *nesta, nessas, daquela, daqueles*.
+
+    - *Neste momento* (at this moment), *nessa hora* (at that point)
+    - *Gosto desse vestido.* (I like that dress.)
+    - *Moro naquele prédio.* (I live in that building.)
+    - *Eu não sei nada disso.* (I don't know anything about that.)
+  examples:
+    - { es: "Eu gosto muito dessa música.", en: "I really like this song.", altEn: ["I really like that song."] }
+    - { es: "Nesta rua tem três bares.", en: "There are three bars on this street.", altEs: ["Nessa rua tem três bares."] }
+    - { es: "Ela mora naquela casa amarela.", en: "She lives in that yellow house." }
+    - { es: "Não precisa disso.", en: "There's no need for that." }
+  pitfalls:
+    - "Never *em este* or *de esse*: always the contracted form."
+    - "*Àquele* (to that) has a grave accent: *Vou àquele restaurante.*"
+    - "Spanish speakers: *de ese* is *desse*, *en aquel* is *naquele*."
+  variant: "Same in Portugal, where *nesta altura* (at this point) is a frequent expression."
+  related: [g.demonstratives, g.contractions-de, g.contractions-em]
+  drills:
+    - { es: "Quero um quilo desse queijo.", en: "I'd like a kilo of that cheese." }
+    - { es: "Naquele bar tem samba.", en: "There's samba in that bar." }
+    - { es: "Neste hotel tem piscina?", en: "Is there a pool in this hotel?" }
+    - { es: "Eu gosto disso.", en: "I like that." }
+- id: g.colours
+  level: a1
+  title: "Colours — branco, preto, azul, laranja…"
+  summary: "Colours in -o agree; azul, verde agree in number only; laranja, rosa, cinza don't change."
+  explanation: |
+    | | | |
+    |---|---|---|
+    | *branco* white | *preto* black | *vermelho* red |
+    | *azul* blue | *verde* green | *amarelo* yellow |
+    | *laranja* orange | *rosa* pink | *roxo* purple |
+    | *marrom* brown | *cinza* grey | *bege* beige |
+
+    ### Agreement
+    - **-o colours**: four forms: *uma bolsa branca, sapatos pretos*
+    - **azul, verde, marrom**: number only: *olhos verdes, camisas azuis, sapatos marrons*
+    - **colours that are nouns** (*laranja, rosa, cinza, vinho*) don't change: *camisetas laranja, carros cinza*
+    - **Shades**: *azul-claro* (light blue), *verde-escuro* (dark green) — invariable: *calças azul-escuro*
+
+    *De que cor é?* — What colour is it?
+
+    Hair and eyes: *castanho* (brown), *loiro* (blond), *ruivo* (red-haired).
+  examples:
+    - { es: "Quero a camisa azul.", en: "I want the blue shirt." }
+    - { es: "Ela tem olhos verdes.", en: "She has green eyes." }
+    - { es: "As havaianas rosa são bonitas.", en: "The pink flip-flops are pretty." }
+    - { es: "De que cor é o seu carro? — É prata.", en: "What colour is your car? — It's silver." }
+  pitfalls:
+    - "Spanish speakers: *roxo* is purple, not red (*rojo* = *vermelho*); 'black' is *preto*, not *negro* for things."
+    - "*Azul* plural is *azuis*."
+    - "In everyday speech you will hear *cinzas, laranjas* as plural adjectives, but the norm keeps them invariable."
+  variant: "In Portugal brown is *castanho* (not *marrom*), grey is *cinzento*, orange is *cor de laranja* and pink *cor-de-rosa*."
+  related: [g.adjective-agreement, g.adjective-position]
+  drills:
+    - { es: "O céu está azul.", en: "The sky is blue." }
+    - { es: "Ele usa sapatos pretos.", en: "He wears black shoes." }
+    - { es: "A bandeira do Brasil é verde, amarela, azul e branca.", en: "The flag of Brazil is green, yellow, blue and white." }
+    - { es: "Quero as camisetas laranja.", en: "I want the orange T-shirts." }
+- id: g.ir-present
+  level: a1
+  title: "The verb ir (to go)"
+  summary: "vou, vai, vamos, vão — and how to say where: ao, à, para, pra."
+  explanation: |
+    | | ir |
+    |---|---|
+    | eu | **vou** |
+    | você / ele / ela | **vai** |
+    | nós | **vamos** |
+    | vocês / eles / elas | **vão** |
+    | (tu) | (*vais*) |
+
+    ### Where to: a or para
+    - *ir a* — a visit, a short trip: *Vou ao mercado. Vamos à praia.*
+    - *ir para* — a destination, often to stay: *Vou para casa. Ela vai para Portugal no ano que vem.*
+    - Spoken Brazilian uses *pra* (= *para*) and even *em*: *Vou pra praia. Vou na padaria.* (very common; avoid *em* in writing)
+
+    ### How
+    *de ônibus, de carro, de metrô, de bicicleta, de avião* — but *a pé* (on foot).
+
+    ### Vamos!
+    *Vamos!* = Let's go! *Vamos embora!* = Let's leave!
+  examples:
+    - { es: "Eu vou à praia todo domingo.", en: "I go to the beach every Sunday.", altEs: ["Vou à praia todo domingo.", "Eu vou pra praia todo domingo."] }
+    - { es: "Você vai de ônibus ou de metrô?", en: "Are you going by bus or by metro?" }
+    - { es: "Eles vão para São Paulo amanhã.", en: "They're going to São Paulo tomorrow.", altEs: ["Eles vão pra São Paulo amanhã."] }
+    - { es: "Vamos embora!", en: "Let's go!", altEn: ["Let's leave!"] }
+    - { es: "Ela vai a pé para o trabalho.", en: "She walks to work.", altEn: ["She goes to work on foot."] }
+  pitfalls:
+    - "Spanish speakers: *voy, va, vamos, van* become *vou, vai, vamos, vão*."
+    - "*A pé*, not *de pé* (which means 'standing')."
+    - "*Ao* = *a + o*; *à* = *a + a*: *Vou ao cinema, vou à festa.*"
+  variant: "Europeans say *tu vais* and use *a* much more than *para* for short trips: *Vou ao café. Vou à praia.* *Ir na padaria* is purely Brazilian."
+  related: [g.ir-infinitive, g.contractions-a, g.prepositions-movement, g.vir-vs-ver]
+  drills:
+    - { es: "Nós vamos ao cinema hoje.", en: "We're going to the cinema today.", altEs: ["A gente vai ao cinema hoje.", "Vamos ao cinema hoje."] }
+    - { es: "Aonde você vai?", en: "Where are you going?" }
+    - { es: "Eu vou de bicicleta.", en: "I go by bike.", altEn: ["I'm going by bike."] }
+    - { es: "Vocês vão para casa agora?", en: "Are you going home now?" }
+- id: g.ir-infinitive
+  level: a1
+  title: "Ir + infinitive — the everyday future"
+  summary: "Vou viajar amanhã. In Brazil this is the normal way to talk about the future, and there is no a."
+  explanation: |
+    **ir (present) + infinitive**:
+    - *Vou estudar hoje à noite.* — I'm going to study tonight.
+    - *Você vai gostar.* — You're going to like it / you'll like it.
+    - *A gente vai comer fora.* — We're going to eat out.
+
+    It covers both "going to" and "will" in everyday Brazilian speech. The synthetic future (*viajarei*) is mostly written (A2).
+
+    ### Time expressions
+    *hoje à noite, amanhã, depois de amanhã, semana que vem / na próxima semana, mês que vem, ano que vem, daqui a pouco* (in a little while), *daqui a dois dias* (in two days).
+
+    ### Let's…
+    *Vamos* + infinitive = let's: *Vamos comer!* (Let's eat!)
+
+    ### Vou ir?
+    *Vou ir* is common in speech, but the plain present is more elegant: *Amanhã eu vou à praia.*
+  examples:
+    - { es: "Vou viajar para Búzios no sábado.", en: "I'm going to travel to Búzios on Saturday." }
+    - { es: "Vai chover amanhã.", en: "It's going to rain tomorrow." }
+    - { es: "O que você vai fazer no fim de semana?", en: "What are you going to do at the weekend?" }
+    - { es: "A gente vai jantar daqui a pouco.", en: "We're going to have dinner in a little while.", altEs: ["Nós vamos jantar daqui a pouco."] }
+    - { es: "Vamos dançar!", en: "Let's dance!" }
+  pitfalls:
+    - "Spanish speakers: no *a* before the infinitive: *vou viajar*, not *vou a viajar*."
+    - "English speakers: 'I'll help you' is naturally *Vou te ajudar* in speech."
+    - "*Semana que vem* has no article: 'next week'."
+  variant: "Europeans also use *ir* + infinitive, but they use the synthetic future and *haver de* more than Brazilians in speech, and say *para a semana* (next week)."
+  related: [g.ir-present, g.future-simple, g.future-spoken-vs-written]
+  drills:
+    - { es: "Amanhã eu vou acordar cedo.", en: "Tomorrow I'm going to get up early.", altEs: ["Amanhã vou acordar cedo."] }
+    - { es: "Eles vão casar ano que vem.", en: "They're getting married next year." }
+    - { es: "Vocês vão sair hoje à noite?", en: "Are you going out tonight?" }
+    - { es: "Vamos tomar um café?", en: "Shall we have a coffee?" }
+- id: g.fazer-present
+  level: a1
+  title: "The verb fazer (to do, to make)"
+  summary: "faço, faz, fazemos, fazem — and expressions like fazer compras, fazer aniversário."
+  explanation: |
+    | | fazer |
+    |---|---|
+    | eu | **faço** |
+    | você / ele / ela | **faz** |
+    | nós | **fazemos** |
+    | vocês / eles / elas | **fazem** |
+    | (tu) | (*fazes*) |
+
+    *Fazer* covers both "do" and "make":
+    - *O que você faz?* — What do you do (for a living)?
+    - *Faço um bolo.* — I'm making a cake.
+
+    ### Everyday expressions
+    | | |
+    |---|---|
+    | *fazer compras* | go shopping |
+    | *fazer aniversário* | have one's birthday |
+    | *fazer academia* | go to the gym (Brazil) |
+    | *fazer faculdade* | go to university |
+    | *fazer calor / frio* | to be hot / cold (weather) |
+    | *fazer falta* | to be missed, to be needed |
+    | *fazer questão de* | to insist on |
+  examples:
+    - { es: "O que você faz no fim de semana?", en: "What do you do at the weekend?" }
+    - { es: "Eu faço yoga de manhã.", en: "I do yoga in the morning." }
+    - { es: "Ela faz aniversário hoje!", en: "It's her birthday today!" }
+    - { es: "Nós fazemos compras no sábado.", en: "We go shopping on Saturday." }
+    - { es: "Faz muito calor no Rio.", en: "It's very hot in Rio." }
+  pitfalls:
+    - "*Ele faz*, with no final *-e*; *eu faço* with *ç*."
+    - "Spanish speakers: *hago* is *faço*; *hace* is *faz*."
+    - "English 'make a decision' is *tomar uma decisão*, not *fazer*."
+  variant: "In Portugal a birthday is *fazer anos* (*Ela faz anos hoje*), the gym is *o ginásio*, and *tu fazes* is common."
+  related: [g.present-irregular-first-person, g.weather, g.ha-faz-time]
+  drills:
+    - { es: "Eu faço o jantar hoje.", en: "I'll make dinner today.", altEs: ["Hoje eu faço o jantar."] }
+    - { es: "Vocês fazem academia?", en: "Do you go to the gym?" }
+    - { es: "Meu filho faz faculdade em Niterói.", en: "My son goes to university in Niterói." }
+    - { es: "Você faz falta aqui.", en: "We miss you here.", altEn: ["You are missed here."] }
+- id: g.contractions-a
+  level: a1
+  title: "Contractions with a — ao, à, aos, às"
+  summary: "a + o = ao, a + a = à: Vou ao mercado. Vou à praia. Às três horas."
+  explanation: |
+    | a + | o | a | os | as | aquele | aquilo |
+    |---|---|---|---|---|---|---|
+    | | **ao** | **à** | **aos** | **às** | *àquele* | *àquilo* |
+
+    The grave accent (*à*, called *crase*) marks *a* (preposition) + *a* (article).
+
+    ### Where you see it
+    - Going: *Vou ao banco. Vou à farmácia.*
+    - Time: *à uma, às duas, ao meio-dia*
+    - Direction and manner: *à direita, à esquerda, à vontade, à noite, à tarde*
+    - Days: *aos sábados* (on Saturdays)
+
+    ### When there is no crase
+    - Before masculine words: *a pé, a cavalo*
+    - Before verbs: *começar a estudar*
+    - Before most cities and *Portugal*: *Vou a Salvador. Vou a Lisboa.* (but *à Bahia*, *ao Rio*)
+
+    Trick: swap in a masculine noun. If you would say *ao*, the feminine is *à*: *vou ao mercado → vou à feira*.
+  examples:
+    - { es: "Vou ao supermercado.", en: "I'm going to the supermarket." }
+    - { es: "Vamos à praia amanhã?", en: "Shall we go to the beach tomorrow?" }
+    - { es: "A aula é às duas.", en: "The class is at two." }
+    - { es: "Vire à direita.", en: "Turn right." }
+    - { es: "Fique à vontade!", en: "Make yourself at home!" }
+  pitfalls:
+    - "Never write *a o*: it is always *ao*."
+    - "No crase before masculine words or verbs: *a pé*, *vou a Paris*, *começo a trabalhar*."
+    - "Spanish speakers: *a la* becomes *à*; *al* becomes *ao*."
+  variant: "In Portugal *à* is pronounced with an open *a* (different from the article *a*), and *ir a* is the everyday choice where Brazilians say *ir para / ir na*."
+  related: [g.ir-present, g.contractions-de, g.contractions-em, g.telling-time]
+  drills:
+    - { es: "Ela vai à academia às sete.", en: "She goes to the gym at seven." }
+    - { es: "Nós vamos ao show do Seu Jorge.", en: "We're going to Seu Jorge's concert." }
+    - { es: "A farmácia fica à esquerda.", en: "The pharmacy is on the left." }
+    - { es: "Aos domingos a gente vai à feira.", en: "On Sundays we go to the market." }
+- id: g.poder-present
+  level: a1
+  title: "The verb poder (can, may)"
+  summary: "posso, pode, podemos, podem — permission, possibility and requests."
+  explanation: |
+    | | poder |
+    |---|---|
+    | eu | **posso** |
+    | você / ele / ela | **pode** |
+    | nós | **podemos** |
+    | vocês / eles / elas | **podem** |
+    | (tu) | (*podes*) |
+
+    Uses:
+    - **Permission**: *Posso entrar?* (May I come in?) — *Pode!* (Sure!)
+    - **Requests**: *Você pode me ajudar?* (Can you help me?)
+    - **Possibility**: *Pode chover.* (It might rain.)
+    - **Not allowed**: *Aqui não pode fumar.* (No smoking here.)
+
+    ### Useful phrases
+    *Pode ser.* (Maybe / OK, sounds good.) *Pode deixar!* (Leave it to me! / Don't worry!) *Não posso.* (I can't.)
+
+    For learned skills use *saber*: *Sei nadar.* (I can swim.)
+  examples:
+    - { es: "Posso abrir a janela?", en: "Can I open the window?" }
+    - { es: "Você pode falar mais devagar?", en: "Can you speak more slowly?" }
+    - { es: "Hoje eu não posso, tenho que trabalhar.", en: "I can't today, I have to work." }
+    - { es: "Pode deixar, eu faço isso.", en: "Don't worry, I'll do it." }
+    - { es: "Aqui não pode estacionar.", en: "You can't park here." }
+  pitfalls:
+    - "Spanish speakers: *puedo / puede* are *posso / pode* (no diphthong)."
+    - "'I can swim' (a skill) is *Sei nadar*, not *Posso nadar*."
+    - "*Pode ser* doesn't only mean 'maybe'; it's a casual 'yes, OK': *Um café? — Pode ser.*"
+  variant: "In Portugal *tu podes* is normal; requests are often in the imperfect for politeness: *Podia ajudar-me?* (note the pronoun after the verb)."
+  related: [g.saber-vs-conhecer, g.polite-requests, g.present-irregular-first-person]
+  drills:
+    - { es: "Posso pagar com cartão?", en: "Can I pay by card?" }
+    - { es: "Vocês podem vir amanhã?", en: "Can you come tomorrow?" }
+    - { es: "Ela não pode sair hoje.", en: "She can't go out today." }
+    - { es: "Um suco? — Pode ser.", en: "A juice? — Sure." }
+- id: g.weather
+  level: a1
+  title: "The weather — Está calor, faz sol, está chovendo"
+  summary: "Weather verbs have no subject: Chove. Está quente. Faz frio. Está ventando."
+  explanation: |
+    - *Como está o tempo?* — What's the weather like?
+
+    | | |
+    |---|---|
+    | *Está calor / Faz calor.* | It's hot. |
+    | *Está frio / Faz frio.* | It's cold. |
+    | *Está sol / Faz sol.* | It's sunny. |
+    | *Está chovendo.* | It's raining. |
+    | *Chove muito em Belém.* | It rains a lot in Belém. |
+    | *Está ventando.* | It's windy. |
+    | *Está nublado.* | It's cloudy. |
+    | *Está garoando.* | It's drizzling (São Paulo!). |
+    | *Faz 35 graus.* | It's 35 degrees. |
+
+    - Weather verbs (*chover, ventar, garoar*) have no subject: never *ele chove*.
+    - *O tempo* means both "weather" and "time".
+    - Exclamations: *Que calor!* (It's so hot!) *Que frio!*
+  examples:
+    - { es: "Hoje está muito calor no Rio.", en: "It's very hot in Rio today.", altEs: ["Hoje faz muito calor no Rio."] }
+    - { es: "Está chovendo, leva o guarda-chuva!", en: "It's raining, take the umbrella!" }
+    - { es: "No inverno faz frio no Sul.", en: "In winter it's cold in the South." }
+    - { es: "Amanhã vai fazer sol.", en: "Tomorrow it'll be sunny." }
+    - { es: "Que calor!", en: "It's so hot!" }
+  pitfalls:
+    - "Spanish speakers: *hace calor* can be *faz calor* or *está calor*; *está calor* is very common in Brazil."
+    - "No 'it': *Está frio*, not *Ele está frio*."
+    - "*Estou com calor* is about you; *está calor* is about the weather."
+  variant: "In Portugal: *Está a chover. Está muito calor. Está um frio de rachar* (it's freezing). Europeans also say *Está um dia lindo.*"
+  related: [g.estar-present, g.fazer-present, g.estar-gerund, g.estar-com]
+  drills:
+    - { es: "Está ventando muito hoje.", en: "It's very windy today." }
+    - { es: "Em São Paulo garoa muito.", en: "It drizzles a lot in São Paulo." }
+    - { es: "Está nublado, mas não está frio.", en: "It's cloudy, but it isn't cold." }
+    - { es: "Como está o tempo aí?", en: "What's the weather like there?" }
+- id: g.present-irregular-first-person
+  level: a1
+  title: "Irregular 'eu' forms — ouço, peço, durmo, ponho, digo"
+  summary: "Many verbs are irregular only with eu; Portuguese has no Spanish-style ie/ue diphthongs."
+  explanation: |
+    ### Irregular only with eu
+    | infinitive | eu | você / ele |
+    |---|---|---|
+    | *ouvir* (hear) | **ouço** | *ouve* |
+    | *pedir* (ask for) | **peço** | *pede* |
+    | *perder* (lose) | **perco** | *perde* |
+    | *dormir* (sleep) | **durmo** | *dorme* |
+    | *sentir* (feel) | **sinto** | *sente* |
+    | *preferir* (prefer) | **prefiro** | *prefere* |
+    | *vestir* (wear) | **visto** | *veste* |
+    | *seguir* (follow) | **sigo** | *segue* |
+    | *ver* (see) | **vejo** | *vê* |
+    | *ler* (read) | **leio** | *lê* |
+
+    ### Other common irregular verbs
+    | | dar | dizer | trazer | sair | pôr |
+    |---|---|---|---|---|---|
+    | eu | *dou* | *digo* | *trago* | *saio* | *ponho* |
+    | você / ele | *dá* | *diz* | *traz* | *sai* | *põe* |
+    | nós | *damos* | *dizemos* | *trazemos* | *saímos* | *pomos* |
+    | eles | *dão* | *dizem* | *trazem* | *saem* | *põem* |
+
+    ### No diphthongs
+    Spanish *quiero, puede, duerme, vuelvo* correspond to Portuguese *quero, pode, dorme, volto*. The vowel changes, if any, are in the *eu* form only.
+  examples:
+    - { es: "Eu durmo oito horas por noite.", en: "I sleep eight hours a night." }
+    - { es: "Ela dorme muito pouco.", en: "She sleeps very little." }
+    - { es: "Peço sempre a mesma coisa.", en: "I always order the same thing." }
+    - { es: "O que você diz?", en: "What do you say?" }
+    - { es: "Eu ponho o celular na bolsa.", en: "I put my phone in my bag." }
+  pitfalls:
+    - "Spanish speakers: no *ue / ie*: *dorme*, not *duerme*; *quer*, not *quiere*."
+    - "*Pôr* keeps its circumflex to distinguish it from *por* (by, for)."
+    - "*Eles leem / veem* have no accent since the spelling reform (old *lêem, vêem*)."
+  variant: "Forms are the same in Portugal, where *tu ouves, tu pedes, tu dormes, tu dizes, tu pões* are everyday forms."
+  related: [g.present-regular-er-ir, g.fazer-present, g.poder-present, g.vir-vs-ver]
+  drills:
+    - { es: "Eu prefiro chá.", en: "I prefer tea." }
+    - { es: "Você ouve música brasileira?", en: "Do you listen to Brazilian music?" }
+    - { es: "Eu saio de casa às oito.", en: "I leave home at eight." }
+    - { es: "Ela sempre traz bolo.", en: "She always brings cake." }
+- id: g.saber-vs-conhecer
+  level: a1
+  title: "Saber or conhecer? Two ways to know"
+  summary: "saber = facts and skills (Sei nadar); conhecer = people and places (Conheço o Rio)."
+  explanation: |
+    | | saber | conhecer |
+    |---|---|---|
+    | eu | **sei** | **conheço** |
+    | você / ele / ela | **sabe** | **conhece** |
+    | nós | **sabemos** | **conhecemos** |
+    | eles | **sabem** | **conhecem** |
+
+    ### Saber
+    - Facts and information: *Você sabe onde fica o metrô? Não sei.*
+    - Skills (+ infinitive): *Sei dançar samba.* (I can dance samba.)
+    - *Sei lá!* (Who knows! / No idea!) — very colloquial.
+
+    ### Conhecer
+    - People: *Conheço a Ana.* (I know Ana.)
+    - Places: *Você conhece Salvador?* (Have you been to Salvador?)
+    - Being familiar with something: *Conheço esse restaurante.*
+  examples:
+    - { es: "Você sabe o telefone dele?", en: "Do you know his phone number?" }
+    - { es: "Eu não sei cozinhar.", en: "I can't cook.", altEn: ["I don't know how to cook."] }
+    - { es: "Você conhece o Rio?", en: "Have you been to Rio?", altEn: ["Do you know Rio?"] }
+    - { es: "Conheço a irmã dela.", en: "I know her sister." }
+    - { es: "Onde ela mora? Sei lá!", en: "Where does she live? No idea!" }
+  pitfalls:
+    - "Spanish speakers: no personal *a*: *Conheço a Ana* (here *a* is the article!), *Conheço o Pedro*, *Conheço ele*."
+    - "*Conhecer* a city means having been there: *Não conheço Manaus* = I've never been to Manaus."
+    - "Skills use *saber*, not *poder*: *Ela sabe falar alemão.*"
+  variant: "Same in Portugal, with *tu sabes, tu conheces*. *Sei lá* is also common there."
+  related: [g.poder-present, g.present-irregular-first-person]
+  drills:
+    - { es: "Você sabe nadar?", en: "Can you swim?" }
+    - { es: "Nós não conhecemos a Bahia.", en: "We've never been to Bahia." }
+    - { es: "Eles sabem a resposta.", en: "They know the answer." }
+    - { es: "Você conhece algum restaurante bom?", en: "Do you know a good restaurant?" }
+- id: g.jogar-vs-tocar
+  level: a1
+  title: "Jogar, tocar, brincar — three ways to 'play'"
+  summary: "jogar a sport or game, tocar an instrument, brincar like a child."
+  explanation: |
+    | verb | use | examples |
+    |---|---|---|
+    | *jogar* | sports, games | *jogar futebol, jogar bola, jogar vôlei, jogar cartas, jogar videogame* |
+    | *tocar* | instruments, music | *tocar violão, tocar piano, tocar pandeiro* |
+    | *brincar* | children playing; joking | *As crianças brincam no parque. Tô brincando!* (Just kidding!) |
+
+    - No article or preposition with the sport: *jogo futebol* (Spanish *juego al fútbol*).
+    - *Tocar* also means "to touch" and "to ring": *O telefone está tocando.*
+    - *Jogar* also means "to throw": *jogar fora* (throw away).
+
+    ### Guitars in Brazil
+    *violão* = acoustic guitar, *guitarra* = electric guitar, *cavaquinho* = small four-string guitar of samba.
+  examples:
+    - { es: "Eu jogo futebol com os amigos.", en: "I play football with my friends." }
+    - { es: "Ela toca violão muito bem.", en: "She plays the guitar very well." }
+    - { es: "As crianças estão brincando na praia.", en: "The children are playing on the beach." }
+    - { es: "Calma, estou brincando!", en: "Relax, I'm joking!" }
+    - { es: "Vamos jogar vôlei na praia?", en: "Shall we play volleyball on the beach?" }
+  pitfalls:
+    - "Spanish speakers: children don't *jogar*; they *brincam*."
+    - "No *a* + article: *jogar futebol*, not *jogar ao futebol* (in Brazil)."
+    - "English speakers: *violão* is a guitar, not a violin (*violino*)."
+  variant: "In Portugal people say *jogar à bola / jogar às cartas* (with *a* + article), an acoustic guitar is often *uma viola*, and *a guitarra portuguesa* is the twelve-string guitar of fado."
+  related: [g.gostar-de, g.present-regular-ar]
+  drills:
+    - { es: "Você toca algum instrumento?", en: "Do you play an instrument?" }
+    - { es: "Meu irmão joga basquete.", en: "My brother plays basketball." }
+    - { es: "O telefone está tocando.", en: "The phone is ringing." }
+    - { es: "Os meninos brincam na rua.", en: "The boys play in the street." }
+- id: g.vir-vs-ver
+  level: a1
+  title: "Vir (to come) and ver (to see)"
+  summary: "venho, vem, vimos, vêm (come) vs vejo, vê, vemos, veem (see) — and ir vs vir."
+  explanation: |
+    | | vir (come) | ver (see) |
+    |---|---|---|
+    | eu | **venho** | **vejo** |
+    | você / ele / ela | **vem** | **vê** |
+    | nós | **vimos** | **vemos** |
+    | vocês / eles / elas | **vêm** | **veem** |
+    | (tu) | (*vens*) | (*vês*) |
+
+    Watch the accents: *ele vem* (comes), *eles vêm* (come), *eles veem* (see).
+
+    ### Ir or vir?
+    - *vir* = to come **towards where the speaker is**: *Vem cá!* (Come here!) *Você vem à festa?* (asked by the host)
+    - *ir* = to go **away from the speaker**: *Já vou!* (I'm coming! — to someone calling you)
+  examples:
+    - { es: "Você vem à minha festa?", en: "Are you coming to my party?" }
+    - { es: "Eu venho de Niterói todo dia.", en: "I come from Niterói every day." }
+    - { es: "Eu vejo o mar da minha janela.", en: "I can see the sea from my window.", altEn: ["I see the sea from my window."] }
+    - { es: "Eles veem novela toda noite.", en: "They watch soap operas every night." }
+    - { es: "Já vou!", en: "I'm coming!", altEn: ["Coming!"] }
+  pitfalls:
+    - "English speakers: 'I'm coming!' (to someone calling) is *Já vou!*, not *Já venho!*"
+    - "*Vimos* is both 'we come' (vir) and 'we saw' (ver, past); context decides."
+    - "Spanish speakers: *vienen* is *vêm*; *ven* (they see) is *veem*."
+  variant: "In Portugal *tu vens, tu vês* are normal, and *Anda cá!* is a common 'Come here!'."
+  related: [g.ir-present, g.present-irregular-first-person, g.preterite-dar-ver-vir]
+  drills:
+    - { es: "Vem comigo!", en: "Come with me!" }
+    - { es: "Vocês vêm amanhã?", en: "Are you coming tomorrow?" }
+    - { es: "Você vê aquela casa?", en: "Do you see that house?" }
+    - { es: "Nós vemos filmes no domingo.", en: "We watch films on Sunday." }
+- id: g.estar-gerund
+  level: a1
+  title: "Estar + gerund — what is happening now"
+  summary: "Estou falando, estamos comendo, está chovendo: -ando, -endo, -indo."
+  explanation: |
+    **estar (present) + gerund** describes actions in progress:
+
+    | infinitive | gerund |
+    |---|---|
+    | *falar* | *falando* |
+    | *comer* | *comendo* |
+    | *abrir* | *abrindo* |
+    | *pôr* | *pondo* |
+
+    The gerund never changes: *Ela está dormindo. Eles estão dormindo.*
+
+    ### Uses
+    - Happening right now: *Estou trabalhando.*
+    - A temporary period: *Estou morando em Botafogo este ano.*
+    - In speech: *Tô chegando!* (I'm almost there!)
+
+    ### Not for future plans
+    English "I'm leaving tomorrow" is *Vou sair amanhã* or *Saio amanhã*.
+  examples:
+    - { es: "O que você está fazendo?", en: "What are you doing?" }
+    - { es: "Estou esperando o ônibus.", en: "I'm waiting for the bus.", altEs: ["Tô esperando o ônibus."] }
+    - { es: "Está chovendo muito.", en: "It's raining a lot." }
+    - { es: "As crianças estão dormindo.", en: "The children are sleeping." }
+    - { es: "Estou morando em São Paulo agora.", en: "I'm living in São Paulo now." }
+  pitfalls:
+    - "Spanish speakers: the gerund is very similar (*-ando, -endo, -iendo*), but *-ir* verbs give *-indo*: *abrindo*, not *abriendo*."
+    - "English speakers: don't use it for the future: *Amanhã eu viajo* or *vou viajar*, not *estou viajando amanhã*."
+    - "With pronouns in Brazil: *Estou te esperando* (I'm waiting for you)."
+  variant: "European Portuguese uses **estar a + infinitive** instead: *Estou a trabalhar. Está a chover. O que estás a fazer?* The gerund form is heard in the south of Portugal (Alentejo, Algarve)."
+  related: [g.estar-present, g.estar-gerund-past, g.ep-estar-a-infinitive]
+  drills:
+    - { es: "Ela está falando no telefone.", en: "She's talking on the phone." }
+    - { es: "Nós estamos aprendendo português.", en: "We're learning Portuguese.", altEs: ["A gente está aprendendo português."] }
+    - { es: "Você está assistindo ao jogo?", en: "Are you watching the match?", altEs: ["Você está assistindo o jogo?"] }
+    - { es: "Tô chegando!", en: "I'm almost there!", altEs: ["Estou chegando!"] }
+- id: g.imperative-directions
+  level: a1
+  title: "Giving directions — vire, siga, pegue"
+  summary: "Siga reto, vire à direita, pegue a segunda rua — or simply: você vira, você segue…"
+  explanation: |
+    ### Asking
+    *Com licença, onde fica…? / Como eu chego a…? / Fica longe?*
+
+    ### Instructions (formal command forms)
+    | | |
+    |---|---|
+    | *Siga reto / em frente.* | Go straight on. |
+    | *Vire à direita / à esquerda.* | Turn right / left. |
+    | *Pegue a primeira rua.* | Take the first street. |
+    | *Atravesse a rua.* | Cross the street. |
+    | *Suba / desça a rua.* | Go up / down the street. |
+    | *Continue até o sinal.* | Carry on to the traffic light. |
+
+    ### The Brazilian way
+    In conversation Brazilians usually give directions with the **present tense**: *Você segue reto, vira na segunda à esquerda e o hotel fica ali.*
+
+    Useful words: *a esquina* (corner), *o sinal / o semáforo* (traffic light; *farol* in São Paulo), *o quarteirão / a quadra* (block), *depois de* (after), *até* (as far as).
+  examples:
+    - { es: "Com licença, onde fica a estação?", en: "Excuse me, where is the station?" }
+    - { es: "Siga reto e vire à direita.", en: "Go straight on and turn right." }
+    - { es: "Você vira na segunda rua à esquerda.", en: "You turn into the second street on the left." }
+    - { es: "Atravesse a avenida e o museu fica na esquina.", en: "Cross the avenue and the museum is on the corner." }
+    - { es: "Fica a dois quarteirões daqui.", en: "It's two blocks from here." }
+  pitfalls:
+    - "Spanish speakers (Latin America): *derecho* (straight) is *reto* or *direto*; *direita* means 'right'."
+    - "*À direita / à esquerda* take a grave accent."
+    - "These forms (*vire, siga*) are polite commands; the full imperative comes at A2."
+  variant: "In Portugal you'll hear *Siga sempre em frente* (go straight on), *os semáforos*, and *Vire na segunda à direita*. *Reto* for 'straight on' is Brazilian."
+  related: [g.prepositions-movement, g.contractions-a, g.imperative-formal]
+  drills:
+    - { es: "Vire à esquerda no sinal.", en: "Turn left at the traffic light." }
+    - { es: "Siga reto até a praia.", en: "Go straight on to the beach." }
+    - { es: "Pegue a primeira à direita.", en: "Take the first on the right." }
+    - { es: "Como eu chego ao Maracanã?", en: "How do I get to the Maracanã?" }
+- id: g.ter-que
+  level: a1
+  title: "Ter que / ter de — having to"
+  summary: "Tenho que trabalhar. Tem que ter paciência. Obligation with ter que (+ infinitive)."
+  explanation: |
+    **ter que / ter de + infinitive** = to have to:
+    - *Tenho que trabalhar amanhã.* — I have to work tomorrow.
+    - *Você tem que provar a feijoada!* — You have to try the feijoada!
+    - *Não tenho que pagar.* — I don't have to pay.
+
+    *Ter que* is more frequent in Brazilian speech; *ter de* is a bit more formal.
+
+    ### Impersonal: one has to
+    - *Tem que* (speech) / *É preciso* (neutral): *Tem que ter paciência. É preciso reservar.* — You have to be patient. You have to book.
+
+    ### Must not
+    "You mustn't" is *não pode*: *Você não pode fumar aqui.* (*Não tem que* means "you don't have to".)
+  examples:
+    - { es: "Eu tenho que acordar cedo amanhã.", en: "I have to get up early tomorrow.", altEs: ["Tenho que acordar cedo amanhã.", "Eu tenho de acordar cedo amanhã."] }
+    - { es: "Vocês têm que conhecer Paraty.", en: "You have to visit Paraty." }
+    - { es: "Ela não tem que trabalhar hoje.", en: "She doesn't have to work today." }
+    - { es: "É preciso levar o passaporte.", en: "You have to take your passport.", altEs: ["Tem que levar o passaporte."] }
+  pitfalls:
+    - "Spanish speakers: *hay que* is *é preciso* or (speech) *tem que*, not *há que* (which is rare and formal)."
+    - "*Não tem que* = don't have to; for 'mustn't' use *não pode*."
+    - "Plural: *eles têm que*, with the circumflex."
+  variant: "European Portuguese prefers *ter de*: *Tenho de ir. Tens de ver isto.* *Ter que* is also heard but criticised by some purists."
+  related: [g.ter-present, g.precisar-de, g.dever-ter-que]
+  drills:
+    - { es: "Nós temos que ir agora.", en: "We have to go now.", altEs: ["A gente tem que ir agora."] }
+    - { es: "Você tem que descansar.", en: "You have to rest." }
+    - { es: "Tem que pagar na entrada.", en: "You have to pay at the entrance.", altEs: ["É preciso pagar na entrada."] }
+    - { es: "Eles têm que estudar para a prova.", en: "They have to study for the test." }
+- id: g.precisar-de
+  level: a1
+  title: "Precisar (de) — to need"
+  summary: "precisar de + noun (Preciso de ajuda), precisar + infinitive with no de (Preciso sair)."
+  explanation: |
+    | | |
+    |---|---|
+    | **precisar de** + noun / pronoun | *Preciso de um táxi. Você precisa de mim?* |
+    | **precisar** + infinitive | *Preciso trabalhar. Você precisa descansar.* |
+
+    - *De* contracts with articles: *Preciso do seu telefone. Preciso da chave.*
+    - *Não precisa!* — There's no need! / Don't bother!
+    - *Precisa-se de garçom.* — Waiter needed (sign).
+
+    In relaxed Brazilian speech *de* is often dropped before nouns too (*Preciso um táxi*), but keep it when writing.
+  examples:
+    - { es: "Eu preciso de ajuda.", en: "I need help.", altEs: ["Preciso de ajuda."] }
+    - { es: "Você precisa de alguma coisa?", en: "Do you need anything?" }
+    - { es: "Preciso comprar protetor solar.", en: "I need to buy sunscreen." }
+    - { es: "Não precisa pagar, é grátis.", en: "You don't need to pay, it's free." }
+    - { es: "Obrigado! — Não precisa agradecer.", en: "Thank you! — No need to thank me." }
+  pitfalls:
+    - "Spanish speakers: *necesitar* is *precisar* (*necessitar* exists but is formal); Spanish *precisar* means 'to specify'."
+    - "No *de* before an infinitive: *Preciso ir*, not *Preciso de ir* (in Brazil)."
+    - "'You don't need to' is *Não precisa* (+ infinitive)."
+  variant: "In Portugal *precisar de* is also used before infinitives: *Preciso de ir ao banco.* That sounds European to Brazilian ears."
+  related: [g.ter-que, g.contractions-de, g.prepositions-with-verbs]
+  drills:
+    - { es: "A gente precisa de mais tempo.", en: "We need more time.", altEs: ["Nós precisamos de mais tempo."] }
+    - { es: "Você precisa descansar.", en: "You need to rest." }
+    - { es: "Eu preciso do seu endereço.", en: "I need your address." }
+    - { es: "Ela não precisa de nada.", en: "She doesn't need anything." }
+- id: g.prepositions-movement
+  level: a1
+  title: "Moving around — a, para, de, até, por; de ônibus, a pé"
+  summary: "ir a/para, chegar a (em in speech), sair de, de… até, passar por, de carro, a pé."
+  explanation: |
+    | | |
+    |---|---|
+    | *ir a / para* | go to: *Vou ao centro. Vou para casa.* |
+    | *chegar a* (norm) / *chegar em* (speech) | arrive at / in: *Cheguei ao hotel. Cheguei em casa.* |
+    | *sair de* | leave: *Saio de casa às oito.* |
+    | *entrar em* | go into: *Entro no metrô.* |
+    | *de… até / de… a* | from… to: *de Copacabana até o centro* |
+    | *passar por* | go through / past: *O ônibus passa pela praia.* |
+    | *voltar de / para* | come back from / to |
+
+    ### Transport
+    *de ônibus, de carro, de metrô, de táxi, de bicicleta, de avião, de barco* — but **a pé** (on foot).
+    *pegar* = to take / catch: *pegar o ônibus, pegar um táxi*.
+  examples:
+    - { es: "Eu chego em casa às sete.", en: "I get home at seven.", altEs: ["Eu chego a casa às sete."] }
+    - { es: "Ela sai do trabalho às seis.", en: "She leaves work at six." }
+    - { es: "Pego o metrô na Glória.", en: "I take the metro at Glória." }
+    - { es: "De Ipanema até o centro são vinte minutos.", en: "From Ipanema to the centre it's twenty minutes." }
+    - { es: "Vamos a pé ou de táxi?", en: "Shall we walk or take a taxi?" }
+  pitfalls:
+    - "Spanish speakers: *en coche / en autobús* become *de carro / de ônibus*."
+    - "*Entrar em* (not *entrar a*): *Entrei no carro.*"
+    - "*Chegar em* is everyday Brazilian; in exams and formal writing use *chegar a*."
+  variant: "In Portugal *chegar a* is the only norm (*Cheguei a casa*), the bus is *o autocarro*, the train *o comboio* and 'to catch' is *apanhar*: *apanhar o autocarro* (avoid *pegar* there, which can sound odd)."
+  related: [g.ir-present, g.contractions-a, g.prepositions-place, g.imperative-directions]
+  drills:
+    - { es: "Vou para o trabalho de bicicleta.", en: "I go to work by bike." }
+    - { es: "O ônibus passa pelo centro.", en: "The bus goes through the centre." }
+    - { es: "A que horas você sai de casa?", en: "What time do you leave home?" }
+    - { es: "Eles entram no restaurante.", en: "They go into the restaurant." }
+- id: g.connectors-basic
+  level: a1
+  title: "Basic connectors — e, mas, ou, porque, então"
+  summary: "Link ideas: e (and), mas (but), ou (or), porque (because), então / por isso (so), quando, se."
+  explanation: |
+    | | |
+    |---|---|
+    | *e* | and |
+    | *mas* | but |
+    | *ou* | or |
+    | *porque* | because |
+    | *então* | so, then |
+    | *por isso* | that's why, so |
+    | *quando* | when |
+    | *se* | if |
+    | *também* | also |
+
+    - *Gosto de praia, mas hoje está frio.*
+    - *Estou cansado, então vou dormir.*
+    - *Não vou porque tenho que trabalhar.*
+
+    ### In speech
+    Brazilians tell stories with *aí* (then, and so): *Aí eu falei…, aí ela disse…* Fine in conversation, not in writing.
+
+    *E* and *ou* never change form (Spanish *y → e, o → u*).
+  examples:
+    - { es: "Eu moro no Rio, mas trabalho em Niterói.", en: "I live in Rio, but I work in Niterói." }
+    - { es: "Café ou chá?", en: "Coffee or tea?" }
+    - { es: "Estou com fome, então vamos comer.", en: "I'm hungry, so let's eat." }
+    - { es: "Ela não vem porque está doente.", en: "She isn't coming because she's ill." }
+    - { es: "Se chover, a gente fica em casa.", en: "If it rains, we'll stay home." }
+  pitfalls:
+    - "*Mas* (but) and *mais* (more) sound alike in Brazil; spell them carefully."
+    - "Spanish speakers: there is no *pero*: use *mas*; and 'and' is always *e*."
+    - "*Porque* (because) is one word; the question 'why' is *por que*."
+  variant: "Europeans use *pois* a lot (*Pois é!* = Exactly / that's right) and *portanto* (so); *aí* as 'then' is Brazilian."
+  related: [g.tambem-tambem-nao, g.narration-connectors, g.question-words]
+  drills:
+    - { es: "Quero ir, mas não posso.", en: "I want to go, but I can't." }
+    - { es: "Está chovendo, por isso vou de táxi.", en: "It's raining, so I'm taking a taxi." }
+    - { es: "Quando chego em casa, tomo banho.", en: "When I get home, I have a shower." }
+    - { es: "Você quer cerveja ou caipirinha?", en: "Do you want beer or a caipirinha?" }
+- id: g.tambem-tambem-nao
+  level: a1
+  title: "Também, também não, nem eu"
+  summary: "Me too = Eu também. Me neither = Eu também não / Nem eu."
+  explanation: |
+    | | |
+    |---|---|
+    | *Eu gosto de samba. — Eu também.* | Me too. |
+    | *Eu não gosto de jiló. — Eu também não.* | Me neither. |
+    | *— Nem eu.* | Me neither (stronger). |
+
+    - Position: *Eu também falo inglês. Ela também não sabe.*
+    - *Nem* = not even / neither: *Nem sei.* (I don't even know.) *Nem pensar!* (No way!)
+    - *Nem… nem* = neither… nor: *Não bebo nem café nem chá.*
+
+    Because *gostar* has the person as its subject, the answer is *Eu também*, not *A mim também*.
+
+    *Tampouco* exists but is formal and rare in Brazil.
+  examples:
+    - { es: "Estou cansado. — Eu também.", en: "I'm tired. — Me too." }
+    - { es: "Não conheço Recife. — Eu também não.", en: "I've never been to Recife. — Me neither.", altEs: ["Não conheço Recife. — Nem eu."] }
+    - { es: "Ela também mora em Botafogo.", en: "She also lives in Botafogo." }
+    - { es: "Não quero nem café nem suco.", en: "I want neither coffee nor juice." }
+    - { es: "Nem pensar!", en: "No way!" }
+  pitfalls:
+    - "Spanish speakers: *tampoco* is *também não*; *a mí también* (with *gustar*) is *eu também*."
+    - "*Também* goes before the verb: *Eu também quero*, not *Eu quero também* (possible, but less common)."
+    - "*Nem eu* already contains the negative; no extra *não*."
+  variant: "Same in Portugal; *tampouco* is a bit more common in European formal writing."
+  related: [g.negation, g.connectors-basic, g.gostar-de]
+  drills:
+    - { es: "Eu também gosto de forró.", en: "I like forró too." }
+    - { es: "Ele não fuma. — Eu também não.", en: "He doesn't smoke. — Neither do I.", altEs: ["Ele não fuma. — Nem eu."] }
+    - { es: "Nem eu sei.", en: "Not even I know.", altEn: ["I don't know either."] }
+    - { es: "A gente também vai.", en: "We're going too.", altEs: ["Nós também vamos."] }
+- id: g.yes-no-answers
+  level: a1
+  title: "Answering yes and no — repeat the verb"
+  summary: "Você fala inglês? — Falo. Brazilians answer yes by echoing the verb, and add né? to check."
+  explanation: |
+    *Sim* exists, but on its own it can sound stiff. The natural "yes" is the **verb of the question**, in the right person:
+
+    | Question | Yes | No |
+    |---|---|---|
+    | *Você fala inglês?* | *Falo.* | *Não (falo).* |
+    | *Está com fome?* | *Estou.* / *Tô.* | *Não.* |
+    | *Vocês vão?* | *Vamos.* | *Não vamos.* |
+    | *Gosta?* | *Gosto!* | *Não gosto.* |
+    | *Você já comeu?* | *Já.* | *Ainda não.* |
+
+    - *É* often works as "yes, that's right": *É aqui? — É.*
+    - *Sim* + verb is emphatic: *Sim, falo.*
+
+    ### Tags
+    *né?* (= *não é?*) checks agreement: *Bonito, né?* (Pretty, isn't it?) — the answer is *É!* or *Pois é.*
+  examples:
+    - { es: "Você conhece o Rio? — Conheço.", en: "Have you been to Rio? — Yes, I have." }
+    - { es: "Vocês querem café? — Queremos, obrigado.", en: "Do you want coffee? — Yes, please." }
+    - { es: "Está calor hoje, né? — Pois é!", en: "It's hot today, isn't it? — It sure is!" }
+    - { es: "Ela é sua irmã? — É.", en: "Is she your sister? — Yes." }
+    - { es: "Você pode me ajudar? — Posso, claro.", en: "Can you help me? — Yes, of course." }
+  pitfalls:
+    - "Don't answer every question with *Sim*: echo the verb."
+    - "Spanish speakers: *¿Hablas inglés? — Sí* sounds fine in Spanish; in Portuguese *Falo* is more natural."
+    - "Match the person: *Você vai? — Vou* (I), not *Vai*."
+  variant: "European Portuguese echoes the verb even more consistently and uses *pois* / *pois é* / *pois claro* for agreement; the tag is *não é?*, rarely *né*."
+  related: [g.negation, g.question-words, g.ja-ainda-nao]
+  drills:
+    - { es: "Você mora aqui? — Moro.", en: "Do you live here? — Yes, I do." }
+    - { es: "Ele tem carro? — Tem.", en: "Does he have a car? — Yes, he does." }
+    - { es: "A praia é linda, né?", en: "The beach is beautiful, isn't it?" }
+    - { es: "Vocês gostam de samba? — Gostamos muito!", en: "Do you like samba? — We love it!" }
+- id: g.todo-tudo
+  level: a1
+  title: "Tudo or todo?"
+  summary: "tudo = everything (invariable); todo/toda/todos/todas = all, every, whole."
+  explanation: |
+    ### Tudo — everything
+    Never changes: *Tudo bem? Comi tudo. Tudo isso é seu.*
+
+    ### Todo — all, every, whole
+    Agrees with the noun:
+
+    | | meaning |
+    |---|---|
+    | *todo dia / toda semana* | every day / every week (Brazil) |
+    | *todos os dias* | every day |
+    | *o dia todo* / *todo o dia* | the whole day |
+    | *todos os alunos* | all the students |
+    | *toda a cidade* / *a cidade toda* | the whole city |
+    | *todo mundo* | everybody (Brazil) |
+
+    - *Todos* / *todas* alone = everyone: *Todos gostam.*
+    - *Todo mundo* takes a singular verb: *Todo mundo sabe.*
+  examples:
+    - { es: "Tudo bem, obrigada.", en: "All good, thanks." }
+    - { es: "Todo mundo adora o Carnaval.", en: "Everybody loves Carnival." }
+    - { es: "Hoje eu trabalho o dia todo.", en: "Today I'm working all day.", altEs: ["Hoje eu trabalho todo o dia."] }
+    - { es: "Ela corre todo dia.", en: "She runs every day.", altEs: ["Ela corre todos os dias."] }
+    - { es: "Todos os meus amigos são cariocas.", en: "All my friends are from Rio." }
+  pitfalls:
+    - "Spanish speakers: Spanish *todo* (everything) is Portuguese *tudo*: *Lo sé todo* = *Sei tudo*."
+    - "*Todo mundo* means 'everybody', not 'the whole world' (that's *o mundo inteiro*)."
+    - "*Todo dia* (every day) vs *o dia todo* (all day)."
+  variant: "In Portugal 'everybody' is *toda a gente*, 'every day' is *todos os dias*, and *todo o dia* means 'all day'."
+  related: [g.frequency-adverbs, g.indefinite-pronouns, g.quantity-words]
+  drills:
+    - { es: "Ela sabe tudo.", en: "She knows everything." }
+    - { es: "Todas as lojas estão fechadas.", en: "All the shops are closed." }
+    - { es: "Todo mundo está aqui?", en: "Is everybody here?" }
+    - { es: "Chove a semana toda.", en: "It rains all week." }

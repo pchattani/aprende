@@ -1,0 +1,1186 @@
+# C1 grammar notes (Brazilian Portuguese; European Portuguese in `variant`).
+# Explanations use light markdown: ### headings, bullets, tables, **bold**,
+# *italic* (italic = Portuguese inline). Field `es` = Portuguese text.
+- id: g.subjunctive-nuance
+  level: c1
+  title: "Mood as meaning — when the subjunctive changes the message"
+  summary: "The same verb can take indicative or subjunctive with different meanings: sinto que está / sinto que esteja; diz que vem / diz que venha."
+  explanation: |
+    ### Same verb, two meanings
+    | indicative (fact, perception) | subjunctive (attitude, request) |
+    |---|---|
+    | *Sinto que você **está** triste.* — I sense you're sad. | *Sinto que você **esteja** triste.* — I'm sorry you're sad. |
+    | *Ele diz que **vem**.* — He says he's coming. | *Ele diz que **venha**.* — He says you should come. |
+    | *Insistiu que **tinha** razão.* — He insisted he was right. | *Insistiu que **fôssemos**.* — He insisted we go. |
+    | *Compreendo que **está** cansado.* — I realise you're tired. | *Compreendo que **esteja** cansado.* — I understand (accept) your being tired. |
+    | *Não digo que ele **é** mau.* — I'm not saying (it's a fact)… | *Não digo que ele **seja** mau.* — I'm not suggesting he might be… |
+
+    ### Fixed restrictive phrases
+    *que eu saiba* (as far as I know), *que eu me lembre* (as far as I remember), *que se saiba* (as far as is known).
+
+    ### Questions and negations
+    Negating or questioning belief opens the door to the subjunctive, which signals more doubt: *Você acha que ele **vem**?* (neutral) / *Você acha que ele **venha**?* (sceptical).
+  examples:
+    - { es: "Sinto muito que vocês tenham perdido o barco.", en: "I'm so sorry you missed the boat." }
+    - { es: "Senti que algo estava errado.", en: "I sensed something was wrong." }
+    - { es: "Que eu saiba, o mercado abre às seis.", en: "As far as I know, the market opens at six." }
+    - { es: "O guia insistiu que levássemos repelente.", en: "The guide insisted we take insect repellent." }
+    - { es: "Não estou dizendo que seja impossível.", en: "I'm not saying it's impossible." }
+  pitfalls:
+    - "Don't treat mood as mechanical; at this level it carries attitude."
+    - "*Que eu saiba* is a fixed subjunctive: never *que eu sei* in this sense."
+    - "Spanish speakers: the contrasts mirror Spanish (*siento que estés*), so trust your instinct."
+  variant: "The same contrasts apply in Portugal; Europeans say *Lamento que…* or *Tenho pena que…* for 'I'm sorry that'."
+  related: [g.subjunctive-doubt, g.subjunctive-emotion, g.subjunctive-relative-advanced]
+  drills:
+    - { es: "Que eu me lembre, ela nunca esteve aqui.", en: "As far as I remember, she's never been here." }
+    - { es: "Lamento que a viagem tenha sido cancelada.", en: "I'm sorry the trip was cancelled." }
+    - { es: "Ele disse que esperássemos no porto.", en: "He told us to wait at the port." }
+    - { es: "Admito que você tenha razão, mas…", en: "I grant that you may be right, but…" }
+- id: g.subjunctive-relative-advanced
+  level: c1
+  title: "Onde quer que, seja quem for — concessive relatives"
+  summary: "onde quer que / quem quer que / o que quer que + subjunctive; qualquer que seja; seja quem for; superlatives take the indicative."
+  explanation: |
+    ### "-ever" with quer que (present / imperfect subjunctive)
+    | | |
+    |---|---|
+    | *onde quer que você vá* | wherever you go |
+    | *quem quer que seja* | whoever it may be |
+    | *o que quer que aconteça* | whatever happens |
+    | *como quer que seja* | however it may be |
+    | *qualquer que seja a decisão* | whatever the decision (plural: *quaisquer que sejam*) |
+
+    ### Reduplicated forms
+    *seja quem for, seja o que for, aconteça o que acontecer, custe o que custar, doa a quem doer* (whoever it hurts).
+
+    ### Superlatives and "the only": indicative
+    Unlike Spanish, Portuguese normally uses the **indicative** after superlatives: *É o rio mais bonito que eu já vi.* *É a única pessoa que me entende.* (The subjunctive *que haja* sounds bookish.)
+  examples:
+    - { es: "Onde quer que você esteja, vou te encontrar.", en: "Wherever you are, I'll find you." }
+    - { es: "Quaisquer que sejam as consequências, vou falar.", en: "Whatever the consequences, I'm going to speak." }
+    - { es: "Foi a viagem mais bonita que eu já fiz.", en: "It was the most beautiful trip I've ever taken." }
+    - { es: "Vou dizer a verdade, doa a quem doer.", en: "I'll tell the truth, whoever it hurts." }
+  pitfalls:
+    - "Spanish speakers: *el mejor que haya visto* is *o melhor que já vi* (indicative)."
+    - "*Qualquer que* agrees: *quaisquer que sejam os motivos*."
+    - "*Onde quer que* takes the present subjunctive, not the future: *onde quer que vá*."
+  variant: "Same in Portugal."
+  related: [g.future-subjunctive-relative, g.relative-subjunctive, g.subjunctive-nuance]
+  drills:
+    - { es: "O que quer que ele diga, não acredite.", en: "Whatever he says, don't believe him." }
+    - { es: "Seja quem for, diga que não estou.", en: "Whoever it is, say I'm not in." }
+    - { es: "É o melhor açaí que eu já tomei.", en: "It's the best açaí I've ever had." }
+    - { es: "Qualquer que fosse o tempo, ele saía para pescar.", en: "Whatever the weather, he went out fishing." }
+- id: g.o-fato-de-que
+  level: c1
+  title: "O fato de (que) — clauses as subjects"
+  summary: "O fato de ele ter mentido / O fato de que ele mentiu (or tenha mentido) — and Que + subjunctive as subject."
+  explanation: |
+    ### O fato de + (personal) infinitive — the most natural
+    *O fato de ele ter mentido me decepcionou.*
+    *O fato de vivermos longe dificulta tudo.*
+
+    ### O fato de que + indicative or subjunctive
+    - Indicative stresses the fact: *O fato de que a floresta está encolhendo é preocupante.*
+    - Subjunctive evaluates or presupposes: *O fato de que ele tenha aceitado surpreendeu a todos.*
+
+    ### A clause as the subject (formal)
+    *Que ele seja competente ninguém duvida.* (subjunctive) — *É inegável que…* (indicative)
+
+    ### Spelling
+    Brazil *fato*; Portugal *facto* (in Portugal *fato* means a suit!).
+  examples:
+    - { es: "O fato de Manaus estar no meio da floresta impressiona os turistas.", en: "The fact that Manaus is in the middle of the forest impresses tourists." }
+    - { es: "O fato de que ninguém tenha reclamado é estranho.", en: "The fact that nobody complained is strange." }
+    - { es: "Que a Amazônia precise de proteção é consenso.", en: "That the Amazon needs protection is a matter of consensus." }
+    - { es: "Apesar do fato de chover muito, a cidade é quente.", en: "Despite the fact that it rains a lot, the city is hot." }
+  pitfalls:
+    - "*O fato de* + infinitive avoids the mood question entirely and sounds very natural."
+    - "Norm: *o fato de ele ter* (not *do ele ter*)."
+    - "European readers: *o facto*; *um fato* is a suit in Portugal."
+  variant: "In Portugal: *o facto de*. A *fato* is a suit, and *fato de banho* a swimsuit."
+  related: [g.subjunctive-nuance, g.personal-infinitive-uses, g.nominalization]
+  drills:
+    - { es: "O fato de eu ser estrangeiro não importa.", en: "The fact that I'm a foreigner doesn't matter." }
+    - { es: "O fato de terem chegado cedo ajudou.", en: "The fact that they arrived early helped." }
+    - { es: "Que ele esteja nervoso é compreensível.", en: "That he's nervous is understandable." }
+    - { es: "O fato de que o rio subiu assustou os ribeirinhos.", en: "The fact that the river rose frightened the riverside dwellers." }
+- id: g.legal-register
+  level: c1
+  title: "Legal and official Portuguese"
+  summary: "Contracts and laws: impersonal and future-subjunctive structures, fixed formulae (nos termos de, fica vedado, sob pena de), Latinisms and archaisms."
+  explanation: |
+    ### Typical formulae
+    | | |
+    |---|---|
+    | *nos termos do art. 5º* | under article 5 |
+    | *fica vedado / é vedado* | it is forbidden |
+    | *sob pena de* | on pain of, failing which |
+    | *ressalvado(s)* | except for |
+    | *incumbe a / compete a* | it is the duty / competence of |
+    | *doravante denominado* | hereinafter referred to as |
+    | *o(a) supracitado(a)* | the above-mentioned |
+    | *outrossim* | furthermore (archaic) |
+    | *data venia* | with respect (to a judge) |
+
+    ### Structure of a contract
+    *Cláusula Primeira – Do Objeto*, *Cláusula Segunda – Do Prazo*… Parties: *o(a) Contratante / Contratado(a)*, *o Locador / Locatário* (landlord / tenant).
+
+    ### Style
+    Third person, passive and impersonal *se*, long sentences, the future subjunctive for conditions.
+  examples:
+    - { es: "Fica vedada a sublocação do imóvel.", en: "Subletting the property is prohibited." }
+    - { es: "O pagamento deverá ser efetuado até o dia 5, sob pena de multa.", en: "Payment must be made by the 5th, failing which a fine will be charged." }
+    - { es: "Doravante denominada Contratante.", en: "Hereinafter referred to as the Client." }
+    - { es: "Nos termos da lei, compete ao município a coleta de lixo.", en: "Under the law, waste collection is the responsibility of the municipality." }
+  pitfalls:
+    - "*Vedado* means 'prohibited', not 'veiled'."
+    - "Avoid *o mesmo / a mesma* as a pronoun (*antes de entrar no mesmo*); it's officialese that grammarians criticise."
+    - "Don't copy legal style into ordinary letters; it sounds pompous."
+  variant: "European legal vocabulary differs: a lease is *contrato de arrendamento* (Brazil: *contrato de locação*), landlord *senhorio*, tenant *arrendatário*."
+  related: [g.future-subjunctive-legal, g.formal-address-titles, g.impersonal-expressions]
+  drills:
+    - { es: "Compete ao locatário a manutenção do imóvel.", en: "Maintenance of the property is the tenant's responsibility." }
+    - { es: "É vedada a entrada de pessoas não autorizadas.", en: "Entry by unauthorised persons is prohibited." }
+    - { es: "Ressalvados os casos previstos em lei.", en: "Except for the cases provided for by law." }
+    - { es: "As partes elegem o foro da comarca de Manaus.", en: "The parties choose the courts of the district of Manaus as their jurisdiction." }
+- id: g.future-subjunctive-legal
+  level: c1
+  title: "The future subjunctive in laws and rules"
+  summary: "Quem descumprir…, Se o locatário atrasar…, Os que forem aprovados…, quando houver… — the backbone of legal conditions."
+  explanation: |
+    Laws, regulations and contracts express general future conditions with the **future subjunctive**:
+    - *Quem descumprir esta norma será multado.*
+    - *Se o locatário atrasar o pagamento, pagará juros de 1% ao mês.*
+    - *Os candidatos que não comparecerem serão eliminados.*
+    - *Quando houver divergência, prevalecerá o texto em português.*
+    - *Salvo se as partes acordarem de outra forma.*
+
+    ### Compound form
+    *Os que tiverem sido aprovados deverão apresentar os documentos.*
+
+    ### Caso vs se
+    *Se* + future subjunctive; *caso* + present subjunctive: *Caso o locatário atrase…*
+  examples:
+    - { es: "Quem for flagrado pescando na reserva pagará multa.", en: "Anyone caught fishing in the reserve will be fined." }
+    - { es: "Se houver atraso, serão cobrados juros.", en: "If there is a delay, interest will be charged." }
+    - { es: "Os alunos que obtiverem nota inferior a cinco farão nova prova.", en: "Students who score below five will retake the exam." }
+    - { es: "Caso o contratado não cumpra o prazo, o contrato poderá ser rescindido.", en: "Should the contractor fail to meet the deadline, the contract may be terminated." }
+  pitfalls:
+    - "*Obter → obtiverem*, *manter → mantiverem*, *dispor → dispuserem*: derived verbs keep the irregular stem."
+    - "*Caso* never takes the future subjunctive: *caso haja*, not *caso houver*."
+    - "Spanish legal texts still use the archaic *-re* future subjunctive; in Portuguese it's simply the living form."
+  variant: "Identical in European legal language."
+  related: [g.legal-register, g.future-subjunctive-relative, g.future-subjunctive-compound, g.conditional-conjunctions]
+  drills:
+    - { es: "Quem não pagar até o vencimento perderá o desconto.", en: "Anyone who doesn't pay by the due date will lose the discount." }
+    - { es: "Se o produto apresentar defeito, será trocado.", en: "If the product proves defective, it will be exchanged." }
+    - { es: "Os que se mantiverem em silêncio serão ouvidos depois.", en: "Those who remain silent will be heard later." }
+    - { es: "Quando houver necessidade, a reunião será antecipada.", en: "When necessary, the meeting will be brought forward." }
+- id: g.formal-address-titles
+  level: c1
+  title: "Vossa Excelência, Vossa Senhoria — formal titles"
+  summary: "Pronomes de tratamento take third-person verbs and seu/sua: Vossa Excelência está convidado para a sua posse."
+  explanation: |
+    | title | abbreviation | for |
+    |---|---|---|
+    | *Vossa Excelência* | *V. Exa.* | president, ministers, governors, judges, members of parliament |
+    | *Vossa Senhoria* | *V. Sa.* | officials, managers, formal business letters |
+    | *Vossa Magnificência* | *V. Mag.ª* | university rectors |
+    | *Vossa Santidade* | *V. S.* | the Pope |
+    | *Meritíssimo (Juiz)* | *MM.* | judges in court |
+
+    ### Grammar
+    - The verb is **third person** and possessives are *seu / sua*: *Vossa Excelência **sabe** que **seu** projeto…* (never *vosso*).
+    - Adjectives agree with the person: *Vossa Excelência está **cansada**?* (to a woman).
+    - *Vossa* when speaking **to** the person; *Sua* when speaking **about** them: *Sua Excelência, o Governador, chegou.*
+
+    ### Doutor
+    In Brazil *doutor / doutora* is used for physicians and lawyers and as a general mark of respect.
+  examples:
+    - { es: "Vossa Excelência me permite uma pergunta?", en: "Would Your Excellency permit me a question?" }
+    - { es: "Sua Excelência, o Governador do Amazonas, chegou.", en: "His Excellency the Governor of Amazonas has arrived." }
+    - { es: "Solicitamos a Vossa Senhoria a gentileza de responder.", en: "We kindly ask you to reply." }
+    - { es: "Meritíssimo, a defesa pede a palavra.", en: "Your Honour, the defence requests the floor." }
+  pitfalls:
+    - "Never *Vossa Excelência sabeis* or *vosso*: the grammar is third person."
+    - "*Vossa* (to them) vs *Sua* (about them)."
+    - "Overusing *doutor* with academics who don't hold a doctorate is normal in Brazil, but not in academic contexts."
+  variant: "Portugal uses titles constantly in professional life: *Senhor Doutor, Senhora Engenheira, Senhor Professor*; letters open with *Excelentíssimo Senhor* (*Exmo. Sr.*)."
+  related: [g.legal-register, g.address-across-lusophone, g.formal-email]
+  drills:
+    - { es: "Vossa Excelência está convidado para a cerimônia.", en: "Your Excellency is invited to the ceremony." }
+    - { es: "Agradeço a Vossa Senhoria a atenção.", en: "I thank you for your attention." }
+    - { es: "Sua Santidade visitou Belém.", en: "His Holiness visited Belém." }
+    - { es: "Doutora, posso entrar?", en: "Doctor, may I come in?" }
+- id: g.discourse-markers-advanced
+  level: c1
+  title: "Advanced discourse markers — no que tange a, com efeito, em contrapartida"
+  summary: "Topic, emphasis, contrast and digression markers for long texts: quanto a, no que diz respeito a, com efeito, diga-se de passagem, em contrapartida, não obstante."
+  explanation: |
+    | function | markers |
+    |---|---|
+    | topic | *quanto a, no que diz respeito a, no que se refere a, no que tange a* (formal), *em relação a* |
+    | confirmation | *com efeito, de fato, efetivamente, na verdade* |
+    | contrast | *em contrapartida, ao passo que, não obstante, ainda assim* |
+    | digression | *a propósito, por sinal, diga-se de passagem, aliás* |
+    | dismissal | *seja como for, de qualquer modo, em todo caso* |
+    | summing up | *em última análise, afinal de contas, em síntese* |
+
+    - *Não obstante* = nevertheless; can also govern a noun: *Não obstante as críticas, o projeto avançou.*
+    - *Em contrapartida* = on the other hand / in return, stronger than *por outro lado*.
+  examples:
+    - { es: "No que diz respeito ao desmatamento, os dados são alarmantes.", en: "As regards deforestation, the data are alarming." }
+    - { es: "Com efeito, o rio Negro é um dos maiores do mundo.", en: "Indeed, the Rio Negro is one of the largest rivers in the world." }
+    - { es: "O ecoturismo cresceu; em contrapartida, a pressão sobre as aldeias aumentou.", en: "Ecotourism has grown; on the other hand, pressure on the villages has increased." }
+    - { es: "A comida, diga-se de passagem, estava excelente.", en: "The food, incidentally, was excellent." }
+    - { es: "Não obstante as dificuldades, a expedição chegou ao destino.", en: "Despite the difficulties, the expedition reached its destination." }
+  pitfalls:
+    - "*No que tange a* is very formal; overusing it sounds bureaucratic."
+    - "*De fato* (in fact) vs *de facto* (EP spelling)."
+    - "*A propósito* = by the way; 'on purpose' is *de propósito*."
+  variant: "Europeans prefer *no que respeita a*, *de facto*, and use *aliás* and *portanto* as frequent spoken fillers."
+  related: [g.argumentation-connectors, g.anaphora-cohesion, g.connectors-sequence]
+  drills:
+    - { es: "Quanto ao orçamento, falaremos amanhã.", en: "As for the budget, we'll talk tomorrow." }
+    - { es: "Seja como for, a decisão está tomada.", en: "Be that as it may, the decision has been made." }
+    - { es: "Em última análise, o problema é político.", en: "Ultimately, the problem is political." }
+    - { es: "Por sinal, você já foi a Parintins?", en: "By the way, have you ever been to Parintins?" }
+- id: g.anaphora-cohesion
+  level: c1
+  title: "Cohesion — reference, este/esse/aquele, tal, o referido"
+  summary: "Keep reference clear: este (what follows / the latter), esse (what preceded), aquele (the former); synonyms, hypernyms and ellipsis."
+  explanation: |
+    ### Demonstratives in writing
+    | | |
+    |---|---|
+    | *este / isto* | what follows; the latter of two |
+    | *esse / isso* | what has just been said |
+    | *aquele* | the former of two |
+
+    - *Pedro e Ana chegaram: esta de barco, aquele de avião.* (Ana by boat, Pedro by plane)
+    - *O problema é este: falta verba.* / *Falta verba. Esse é o problema.*
+
+    ### Other devices
+    - Synonyms and hypernyms: *Manaus… a capital amazonense… a cidade…*
+    - *tal / tais*: *Tal decisão gerou protestos.*
+    - *o referido, o citado, o mencionado* (formal)
+    - Ellipsis: *Ana estudou em Belém e (Ø) trabalhou em Santarém.*
+    - *respectivamente*: *Ana e Rui moram em Belém e Macapá, respectivamente.*
+
+    Avoid *o mesmo* as a pronoun and repeating the same noun in every sentence.
+  examples:
+    - { es: "Visitamos Belém e Manaus; esta nos pareceu mais quente, aquela mais charmosa.", en: "We visited Belém and Manaus; the latter seemed hotter to us, the former more charming." }
+    - { es: "O objetivo é este: reduzir o desmatamento em dez anos.", en: "The goal is this: to reduce deforestation within ten years." }
+    - { es: "O governo anunciou cortes. Tal medida foi criticada.", en: "The government announced cuts. This measure was criticised." }
+    - { es: "Carla e Rui nasceram em Macapá e Boa Vista, respectivamente.", en: "Carla and Rui were born in Macapá and Boa Vista, respectively." }
+  pitfalls:
+    - "In speech Brazilians use *esse* for everything; in careful writing keep the *este / esse* distinction."
+    - "*O mesmo* as a pronoun (*Ao ver o rio, admirei o mesmo*) is poor style."
+    - "Too many pronouns cause ambiguity: repeat or rename the noun when needed."
+  variant: "European Portuguese keeps *este / esse* apart in speech as well, which makes the written distinction feel natural."
+  related: [g.demonstratives, g.discourse-markers-advanced, g.text-types]
+  drills:
+    - { es: "Isso é o que eu queria dizer.", en: "That's what I wanted to say." }
+    - { es: "A questão é esta: quem vai pagar?", en: "The question is this: who's going to pay?" }
+    - { es: "O referido documento foi anexado.", en: "The aforementioned document has been attached." }
+    - { es: "Tais problemas exigem soluções urgentes.", en: "Such problems require urgent solutions." }
+- id: g.text-types
+  level: c1
+  title: "Text types and genres — crônica, resenha, ata, editorial"
+  summary: "Narrative, descriptive, expository, argumentative and instructional texts, and Brazilian genres such as the crônica."
+  explanation: |
+    | type | typical language |
+    |---|---|
+    | narrative | preterite / imperfect, time markers, dialogue |
+    | descriptive | imperfect, *ser / estar*, adjectives, sensory detail |
+    | expository | present tense, definitions, impersonal *se* |
+    | argumentative | thesis, connectors, modality (*deve-se, é preciso*) |
+    | instructional | imperative or infinitive (*Misturar bem*) |
+
+    ### Genres
+    - **crônica** — short literary column on everyday life, a much-loved Brazilian genre (Rubem Braga, Fernando Sabino, Clarice Lispector, Luis Fernando Verissimo).
+    - **resenha** — review (book, film)
+    - **ata** — minutes of a meeting (traditionally one continuous paragraph)
+    - **editorial / artigo de opinião** — argumentative press texts
+    - **carta do leitor** — letter to the editor
+    - **relatório** — report
+  examples:
+    - { es: "Era uma manhã abafada, e o rio parecia parado.", en: "It was a muggy morning, and the river seemed still." }
+    - { es: "A vitória-régia é uma planta aquática da Amazônia.", en: "The giant water lily is an aquatic plant of the Amazon." }
+    - { es: "Aos dez dias do mês de março, reuniram-se os membros da associação.", en: "On the tenth day of March, the members of the association met." }
+    - { es: "O filme, apesar de longo, prende a atenção do início ao fim.", en: "The film, though long, holds your attention from start to finish." }
+  pitfalls:
+    - "Match tense to type: description in the imperfect, events in the preterite."
+    - "A *crônica* is not a news chronicle: it's literary and personal."
+    - "Minutes (*ata*) use set formulae and the third person."
+  variant: "In Portugal the genre is spelled *crónica* (António Lobo Antunes's crónicas are famous), and minutes are also called *ata* (formerly *acta*)."
+  related: [g.anaphora-cohesion, g.essay-structure, g.literary-language]
+  drills:
+    - { es: "Corte o peixe em postas e tempere com sal.", en: "Cut the fish into steaks and season with salt." }
+    - { es: "O livro trata da vida dos seringueiros.", en: "The book is about the lives of the rubber tappers." }
+    - { es: "Nada mais havendo a tratar, encerrou-se a reunião.", en: "There being no further business, the meeting was closed." }
+    - { es: "Naquela tarde, o barco demorou a chegar.", en: "That afternoon, the boat was slow to arrive." }
+- id: g.idioms
+  level: c1
+  title: "Brazilian idioms — pisar na bola, cair a ficha, pagar o pato"
+  summary: "High-frequency idioms you will hear every day, with their meanings and register."
+  explanation: |
+    | idiom | meaning |
+    |---|---|
+    | *pisar na bola* | to mess up, let someone down |
+    | *pagar o pato* | to take the blame (for someone else) |
+    | *cair a ficha* | the penny drops |
+    | *enfiar o pé na jaca* | to overdo it (food, drink) |
+    | *chutar o balde* | to give up, lose it |
+    | *dar uma mãozinha* | to lend a hand |
+    | *quebrar um galho* | to help out, improvise |
+    | *ser uma mão na roda* | to be a great help |
+    | *pegar no pé* | to nag, pick on |
+    | *encher linguiça* | to pad out, waffle |
+    | *ficar de molho* | to rest up (when ill) |
+    | *fazer vista grossa* | to turn a blind eye |
+    | *estar com a pulga atrás da orelha* | to be suspicious |
+    | *falar pelos cotovelos* | to talk non-stop |
+    | *custar os olhos da cara* | to cost an arm and a leg |
+    | *dor de cotovelo* | jealousy (romantic) |
+    | *tirar o cavalo da chuva* | to forget it, give up hope |
+
+    Idioms conjugate normally: *Ele pisou na bola. A ficha só caiu depois.*
+  examples:
+    - { es: "Desculpa, pisei na bola com você.", en: "Sorry, I let you down." }
+    - { es: "Só depois de uma semana caiu a ficha.", en: "Only after a week did it sink in." }
+    - { es: "Sempre sobra para mim pagar o pato.", en: "I always end up taking the blame." }
+    - { es: "Esse barco custou os olhos da cara.", en: "That boat cost an arm and a leg." }
+    - { es: "Pode tirar o cavalo da chuva, ele não vem.", en: "You can forget it, he isn't coming." }
+  pitfalls:
+    - "Don't translate idioms word for word into English or Spanish."
+    - "Many idioms are informal: fine in conversation, odd in a report."
+    - "Some are dated; listen for which ones your friends actually use."
+  variant: "Portugal has its own stock: *meter o pé na poça* (put your foot in it), *pagar as favas* (take the blame), *estar com os azeites* (be in a bad mood), *ir para o maneta* (get ruined). *Cair a ficha* and *pisar na bola* sound Brazilian."
+  related: [g.proverbs, g.fixed-expressions, g.irony-humor]
+  drills:
+    - { es: "Ele fala pelos cotovelos.", en: "He talks non-stop." }
+    - { es: "Me dá uma mãozinha aqui?", en: "Can you give me a hand here?" }
+    - { es: "Ela está com a pulga atrás da orelha.", en: "She smells a rat." }
+    - { es: "No fim de semana enfiei o pé na jaca.", en: "I overdid it at the weekend." }
+- id: g.proverbs
+  level: c1
+  title: "Proverbs — quem não tem cão caça com gato"
+  summary: "Common proverbs, how they are used (often half-quoted) and their English equivalents."
+  explanation: |
+    | proverb | English equivalent |
+    |---|---|
+    | *Quem não tem cão caça com gato.* | Make do with what you have. |
+    | *De grão em grão a galinha enche o papo.* | Little by little, the bird builds its nest. |
+    | *Água mole em pedra dura, tanto bate até que fura.* | Constant dripping wears away the stone. |
+    | *Cavalo dado não se olha os dentes.* | Don't look a gift horse in the mouth. |
+    | *Mais vale um pássaro na mão do que dois voando.* | A bird in the hand is worth two in the bush. |
+    | *Em terra de cego, quem tem um olho é rei.* | In the land of the blind, the one-eyed man is king. |
+    | *Quem vê cara não vê coração.* | Don't judge a book by its cover. |
+    | *Deus ajuda quem cedo madruga.* | The early bird catches the worm. |
+    | *Cada macaco no seu galho.* | Mind your own business / stick to what you know. |
+    | *Antes tarde do que nunca.* | Better late than never. |
+
+    Speakers often quote only the first half: *Bom, quem não tem cão…*
+  examples:
+    - { es: "Não tinha remo, usei uma tábua: quem não tem cão caça com gato.", en: "I didn't have a paddle, so I used a plank: you make do." }
+    - { es: "Economize um pouco por mês; de grão em grão a galinha enche o papo.", en: "Save a little each month; it all adds up." }
+    - { es: "Ele parecia antipático, mas quem vê cara não vê coração.", en: "He seemed unfriendly, but you can't judge by appearances." }
+    - { es: "Chegou atrasado, mas antes tarde do que nunca.", en: "He arrived late, but better late than never." }
+  pitfalls:
+    - "Proverbs keep old grammar: *Cavalo dado não se olha os dentes* is fixed, even if odd."
+    - "Overusing proverbs sounds folksy; one well-placed proverb is enough."
+    - "Don't translate English proverbs literally; find the Portuguese equivalent."
+  variant: "European versions differ slightly: *Mais vale um pássaro na mão do que dois a voar*; *Cada macaco no seu galho* is Brazilian (Portugal: *Cada um no seu lugar*)."
+  related: [g.idioms, g.fixed-expressions]
+  drills:
+    - { es: "Água mole em pedra dura, tanto bate até que fura.", en: "Constant dripping wears away the stone." }
+    - { es: "Cada macaco no seu galho.", en: "Each to their own." }
+    - { es: "Deus ajuda quem cedo madruga.", en: "The early bird catches the worm." }
+    - { es: "Em terra de cego, quem tem um olho é rei.", en: "In the land of the blind, the one-eyed man is king." }
+- id: g.fixed-expressions
+  level: c1
+  title: "Fixed expressions and collocations — à toa, à beça, prestar atenção"
+  summary: "Set adverbial phrases (à toa, à beça, de propósito, por via das dúvidas) and verb + noun collocations (tomar uma decisão, prestar atenção)."
+  explanation: |
+    ### Adverbial phrases
+    | | |
+    |---|---|
+    | *à toa* | for no reason, idly |
+    | *à beça / pra caramba* | loads, really (Brazil, informal) |
+    | *de propósito / sem querer* | on purpose / by accident |
+    | *por via das dúvidas* | just in case |
+    | *de mão beijada* | on a plate, for nothing |
+    | *a torto e a direito* | left, right and centre |
+    | *são e salvo* | safe and sound |
+    | *de cabo a rabo* | from start to finish |
+    | *aos trancos e barrancos* | with great difficulty |
+
+    ### Collocations
+    | Portuguese | English |
+    |---|---|
+    | *tomar uma decisão* | make a decision |
+    | *fazer uma pergunta* | ask a question |
+    | *prestar atenção* | pay attention |
+    | *correr um risco* | run a risk |
+    | *dar uma volta* | go for a walk / spin |
+    | *chegar a uma conclusão* | reach a conclusion |
+    | *dar um jeito* | find a way, sort it out |
+    | *levar a sério* | take seriously |
+  examples:
+    - { es: "Não briguei à toa: ele me provocou.", en: "I didn't argue for no reason: he provoked me." }
+    - { es: "Choveu à beça ontem em Belém.", en: "It rained loads in Belém yesterday." }
+    - { es: "Leve uma capa de chuva, por via das dúvidas.", en: "Take a raincoat, just in case." }
+    - { es: "A gente dá um jeito.", en: "We'll find a way." }
+    - { es: "Preste atenção nas instruções do guia.", en: "Pay attention to the guide's instructions." }
+  pitfalls:
+    - "English speakers: 'make a question' is *fazer uma pergunta*; 'make a decision' is *tomar uma decisão*."
+    - "*À toa* is not 'to a towel'; and *pessoa à toa* means a worthless person."
+    - "*Prestar atenção em / a*: Brazilians use *em*: *preste atenção nisso*."
+  variant: "European slang has *à brava* (loads), *às tantas* (at some point, late), and *dar um jeito* is used less; *pra caramba* and *à beça* are Brazilian."
+  related: [g.idioms, g.proverbs, g.word-formation]
+  drills:
+    - { es: "Ele fez isso de propósito.", en: "He did it on purpose." }
+    - { es: "Chegaram sãos e salvos.", en: "They arrived safe and sound." }
+    - { es: "Ninguém levou a ameaça a sério.", en: "Nobody took the threat seriously." }
+    - { es: "Li o relatório de cabo a rabo.", en: "I read the report from start to finish." }
+- id: g.academic-register
+  level: c1
+  title: "Academic Portuguese"
+  summary: "Impersonal se, the plural of modesty, hedging, citations (segundo X, 2020) and precise academic verbs."
+  explanation: |
+    ### Voice
+    - Impersonal: *Analisou-se… Observa-se que…*
+    - Plural of modesty: *Neste artigo, discutimos… Consideramos que…*
+    - Passive: *Foram entrevistados 40 pescadores.*
+
+    ### Hedging
+    *parece, tende a, pode-se afirmar que, em certa medida, ao que tudo indica, sugere-se que*
+
+    ### Citing (Brazilian ABNT style)
+    *Segundo Freyre (1933), … / … (FREYRE, 1933, p. 45).* *Conforme aponta X…*, *De acordo com…*, *apud* (quoted in), *et al.*
+
+    ### Academic verbs
+    *abordar, analisar, investigar, evidenciar, corroborar, salientar, ressaltar, apontar, propor, delimitar, no âmbito de*
+
+    ### Avoid
+    *eu acho, a gente, tipo, coisa*; *a nível de* (prefer *em nível de / no âmbito de*); *onde* for non-places.
+  examples:
+    - { es: "Neste estudo, analisamos o impacto da pesca predatória no rio Tapajós.", en: "In this study, we analyse the impact of overfishing on the Tapajós River." }
+    - { es: "Os dados sugerem que a temperatura média tem aumentado.", en: "The data suggest that the average temperature has been rising." }
+    - { es: "Segundo Ab'Sáber (2003), a Amazônia é um domínio morfoclimático.", en: "According to Ab'Sáber (2003), the Amazon is a morphoclimatic domain." }
+    - { es: "Foram entrevistados 60 moradores de comunidades ribeirinhas.", en: "Sixty residents of riverside communities were interviewed." }
+  pitfalls:
+    - "*A nível de* is widely criticised; use *em nível de* or *no âmbito de*."
+    - "Don't mix *eu* and *nós* in the same paper."
+    - "*Onde* only for places: *o contexto em que*, not *o contexto onde* (in careful writing)."
+  variant: "European academic writing prefers impersonal *se* and accepts *ao nível de*; citation styles (APA, NP 405) differ from Brazil's ABNT."
+  related: [g.formal-reports, g.impersonal-expressions, g.nominalization, g.relative-o-qual]
+  drills:
+    - { es: "Observa-se uma redução significativa.", en: "A significant reduction can be observed." }
+    - { es: "Os resultados corroboram a hipótese inicial.", en: "The results corroborate the initial hypothesis." }
+    - { es: "Em certa medida, o modelo explica o fenômeno.", en: "To a certain extent, the model explains the phenomenon." }
+    - { es: "Este trabalho aborda a questão indígena.", en: "This paper addresses the indigenous question." }
+- id: g.formal-reports
+  level: c1
+  title: "Reports and abstracts — relatório, resumo, palavras-chave"
+  summary: "Standard sections, tense choice (past for methods, present for findings), percentages and recommendations."
+  explanation: |
+    ### Structure
+    *Resumo (+ palavras-chave) → Introdução → Objetivos → Metodologia → Resultados → Discussão → Conclusão / Recomendações → Referências*
+
+    ### Tenses
+    | section | tense | example |
+    |---|---|---|
+    | method | preterite / passive | *Foram coletadas 200 amostras.* |
+    | results | preterite or present | *A Tabela 1 mostra… / 70% afirmaram…* |
+    | conclusion | present / future | *Conclui-se que… Recomenda-se…* |
+
+    ### Numbers and agreement
+    - Decimal comma: *3,5%*; thousands with a point: *1.200*.
+    - With percentages the verb usually agrees with the noun: *30% da população **vive**…*, *30% dos moradores **vivem**…*
+
+    ### Recommending
+    *Recomenda-se…, Sugere-se…, Seria oportuno…, É fundamental que…*
+  examples:
+    - { es: "Foram entrevistados 120 turistas em Alter do Chão.", en: "120 tourists were interviewed in Alter do Chão." }
+    - { es: "Cerca de 65% dos entrevistados afirmaram estar satisfeitos.", en: "About 65% of respondents said they were satisfied." }
+    - { es: "Conclui-se que o saneamento básico é prioritário.", en: "It is concluded that basic sanitation is a priority." }
+    - { es: "Recomenda-se ampliar a fiscalização ambiental.", en: "It is recommended that environmental monitoring be extended." }
+  pitfalls:
+    - "Percentages: agree with the noun after *de*: *40% da turma faltou*, *40% dos alunos faltaram*."
+    - "Use the decimal comma: *2,5 milhões*, not *2.5 milhões*."
+    - "An abstract (*resumo*) is one paragraph, impersonal, with no citations."
+  variant: "In Portugal survey respondents are *inquiridos* (Brazil *entrevistados*), and a questionnaire is an *inquérito*."
+  related: [g.academic-register, g.presentations, g.nominalization]
+  drills:
+    - { es: "A metodologia adotada foi qualitativa.", en: "The methodology adopted was qualitative." }
+    - { es: "O Gráfico 2 apresenta a evolução do desmatamento.", en: "Graph 2 shows the evolution of deforestation." }
+    - { es: "Metade dos participantes não respondeu.", en: "Half of the participants did not respond." }
+    - { es: "Sugere-se a realização de novos estudos.", en: "Further studies are suggested." }
+- id: g.presentations
+  level: c1
+  title: "Giving a presentation — signposting and handling questions"
+  summary: "Hoje vou falar sobre…, Passando agora para…, Como vocês podem ver…, Para concluir…, Ótima pergunta."
+  explanation: |
+    ### Opening
+    *Bom dia a todos. Meu nome é… Hoje vou falar sobre… A apresentação está dividida em três partes.*
+
+    ### Signposting
+    | | |
+    |---|---|
+    | *Em primeiro lugar…* | First… |
+    | *Passando agora para…* | Moving on to… |
+    | *Como vocês podem ver neste gráfico…* | As you can see in this graph… |
+    | *Voltando ao ponto anterior…* | Going back to the previous point… |
+    | *Vale destacar que…* | It's worth highlighting that… |
+    | *Para concluir / Resumindo…* | To conclude / In summary… |
+
+    ### Questions
+    *Ótima pergunta. Se eu entendi bem, você quer saber se… Não tenho esse dado agora, mas posso verificar e te dar um retorno.*
+
+    ### Closing
+    *Obrigado / Obrigada pela atenção. Fico à disposição para perguntas.*
+  examples:
+    - { es: "Hoje vou apresentar os resultados da nossa pesquisa em Santarém.", en: "Today I'm going to present the results of our research in Santarém." }
+    - { es: "Como vocês podem ver, o nível do rio caiu drasticamente.", en: "As you can see, the river level fell dramatically." }
+    - { es: "Passando agora para a segunda parte, vamos falar dos custos.", en: "Moving on to the second part, let's talk about costs." }
+    - { es: "Obrigada pela atenção. Fico à disposição para perguntas.", en: "Thank you for your attention. I'm happy to take questions." }
+  pitfalls:
+    - "Address the audience as *vocês* (or *os senhores* in very formal settings)."
+    - "*Dar um retorno* (Brazil) = get back to someone; *retornar a ligação* = call back."
+    - "Don't read your slides; spoken Portuguese is less nominal than written."
+  variant: "In Portugal: *Passemos agora a…*, *Fico ao dispor para quaisquer questões*, and *questão* is more common than *pergunta* in formal Q&A."
+  related: [g.formal-reports, g.academic-register, g.discourse-markers-advanced]
+  drills:
+    - { es: "A apresentação está dividida em três partes.", en: "The presentation is divided into three parts." }
+    - { es: "Vale destacar que os números são preliminares.", en: "It's worth noting that the figures are preliminary." }
+    - { es: "Se eu entendi bem, sua pergunta é sobre o orçamento.", en: "If I understood correctly, your question is about the budget." }
+    - { es: "Para concluir, gostaria de agradecer à equipe.", en: "To conclude, I'd like to thank the team." }
+- id: g.subordination-complex
+  level: c1
+  title: "Long sentences under control — embedding, inversion and punctuation"
+  summary: "Stack subordinate clauses clearly, keep agreement at a distance, invert subjects naturally, and never put a comma between subject and verb."
+  explanation: |
+    ### Embedding
+    *Os pesquisadores **que** estudam o rio **onde** os botos vivem afirmam **que**, **se** nada for feito, a população diminuirá.*
+    Keep each clause complete and close to what it modifies.
+
+    ### Agreement at a distance
+    The verb agrees with its real subject, however far away: *A maioria dos moradores **das comunidades que visitamos** vive da pesca.* (or *vivem*, with *a maioria de*)
+
+    ### Subject inversion
+    Portuguese often puts the subject after the verb, especially with verbs of appearance or arrival: *Chegaram os primeiros barcos. Faltam dois dias. Surgiu um problema.*
+
+    ### Punctuation rules
+    - **No comma** between subject and verb, even if the subject is long.
+    - Commas around inserted clauses: *O Teatro Amazonas, **inaugurado em 1896**, recebe óperas até hoje.*
+    - Comma before *mas*, after fronted adverbial clauses.
+
+    ### De que / que
+    Keep *de* where the verb or noun requires it: *Tenho certeza **de que**…*, *Gosto **de que**…*; don't add it where it doesn't belong: *Ele disse que…* (not *disse de que*).
+  examples:
+    - { es: "O Teatro Amazonas, inaugurado em 1896, recebe óperas até hoje.", en: "The Amazon Theatre, opened in 1896, still stages operas today." }
+    - { es: "Chegaram ontem os barcos que trazem as frutas de Parintins.", en: "The boats bringing fruit from Parintins arrived yesterday." }
+    - { es: "Os turistas que visitam o encontro das águas no inverno amazônico ficam impressionados.", en: "Tourists who visit the Meeting of the Waters in the Amazon rainy season are amazed." }
+    - { es: "Tenho certeza de que, quando a cheia passar, a estrada será reaberta.", en: "I'm sure that when the flood is over, the road will be reopened." }
+  pitfalls:
+    - "A long subject is still a subject: no comma before its verb."
+    - "*Dequeísmo* (*Ele disse de que…*) is a stigmatised error."
+    - "Inverted subjects still control agreement: *Faltam dois dias*, not *Falta dois dias*."
+  variant: "The same rules apply in Portugal; European style tolerates slightly longer sentences in formal prose."
+  related: [g.relative-o-qual, g.infinitive-clauses-advanced, g.anaphora-cohesion]
+  drills:
+    - { es: "Surgiram dúvidas sobre o projeto.", en: "Doubts arose about the project." }
+    - { es: "A cidade, que cresceu com a borracha, entrou em crise depois de 1912.", en: "The city, which grew with rubber, went into crisis after 1912." }
+    - { es: "Restam poucas vagas no barco.", en: "There are few places left on the boat." }
+    - { es: "Ninguém duvida de que a floresta precisa de proteção.", en: "Nobody doubts that the forest needs protection." }
+- id: g.gerund-uses-advanced
+  level: c1
+  title: "Gerund clauses — chegando a Manaus, tendo terminado"
+  summary: "Gerunds express time, cause, condition, manner and result; the compound gerund (tendo feito) marks completed actions."
+  explanation: |
+    | meaning | example |
+    |---|---|
+    | time | ***Chegando** a Manaus, procure o porto.* (When you arrive…) |
+    | cause | ***Sendo** tarde, decidimos voltar.* (As it was late…) |
+    | condition | ***Tendo** tempo, passo aí.* (If I have time…) |
+    | manner | *Saiu **cantando**.* |
+    | concession | ***Mesmo sabendo** nadar, ficou com medo.* |
+    | result | *A chuva alagou a rua, **impedindo** a passagem.* |
+    | completed before | ***Tendo terminado** o trabalho, saiu.* |
+
+    ### Style warnings
+    - The gerund's implicit subject should match the main clause's subject (avoid "dangling" gerunds).
+    - Don't use the gerund as a relative clause for a single event: *uma lei **que proíbe**…* is better than *uma lei proibindo…*
+    - Avoid *gerundismo* (*vou estar enviando*).
+  examples:
+    - { es: "Subindo o rio, avistamos botos cor-de-rosa.", en: "Going up the river, we spotted pink river dolphins." }
+    - { es: "Não tendo dinheiro, ele vendeu o barco.", en: "Having no money, he sold the boat." }
+    - { es: "Tendo visitado Belém, seguimos para Marajó.", en: "Having visited Belém, we went on to Marajó." }
+    - { es: "O rio transbordou, deixando muitas famílias desabrigadas.", en: "The river overflowed, leaving many families homeless." }
+  pitfalls:
+    - "Dangling gerund: *Andando pela floresta, uma cobra me assustou* suggests the snake was walking."
+    - "Avoid chains of result gerunds (*…, causando…, gerando…, provocando…*)."
+    - "*Gerundismo* is mocked; say *vou enviar*."
+  variant: "European speech prefers *ao* + infinitive for time (*Ao chegar a Manaus…*), but gerund clauses are normal in European writing."
+  related: [g.infinitive-clauses-advanced, g.absolute-participle, g.periphrases-aspect]
+  drills:
+    - { es: "Chegando ao hotel, me ligue.", en: "When you get to the hotel, call me." }
+    - { es: "Estando cansados, dormimos cedo.", en: "Being tired, we went to bed early." }
+    - { es: "Tendo lido o livro, ela quis ver o filme.", en: "Having read the book, she wanted to see the film." }
+    - { es: "Mesmo chovendo, o barco partiu.", en: "Even though it was raining, the boat left." }
+- id: g.infinitive-clauses-advanced
+  level: c1
+  title: "Advanced infinitive clauses — por terem chegado, ao chegarmos, vi os barcos chegarem"
+  summary: "Perfect and passive personal infinitives, infinitives as subjects, after perception verbs, and when not to inflect."
+  explanation: |
+    ### Perfect and passive personal infinitive
+    - *Foram multados **por terem pescado** na reserva.*
+    - *Depois de **terem sido aprovados**, os projetos receberam verba.*
+    - *Sem **termos sido avisados**, chegamos à aldeia.*
+
+    ### Ao + infinitive (on / when)
+    ***Ao chegarmos** a Santarém, alugamos uma lancha.*
+
+    ### Infinitive as subject
+    *Navegar é preciso.* *Proteger a floresta é dever de todos.*
+
+    ### Perception and causative verbs
+    *Vi os barcos **chegarem** / **chegar** / **chegando**.* — *Mandei os alunos **saírem** / **sair**.* (both inflected and plain are accepted)
+
+    ### Never inflect after modals and auxiliaries
+    *Eles **podem sair**, **vão sair**, **devem sair*** — never *podem saírem*.
+  examples:
+    - { es: "Foram premiados por terem salvado a tartaruga.", en: "They were rewarded for having saved the turtle." }
+    - { es: "Ao entrarmos no igarapé, o silêncio foi total.", en: "As we entered the creek, there was total silence." }
+    - { es: "Vi os pescadores voltarem ao entardecer.", en: "I saw the fishermen come back at dusk.", altEs: ["Vi os pescadores voltando ao entardecer."] }
+    - { es: "Preservar a cultura ribeirinha é fundamental.", en: "Preserving riverside culture is essential." }
+  pitfalls:
+    - "No inflection after modal verbs: *Eles querem viajar*, not *querem viajarem*."
+    - "Inflect when the subject is different or needs to be clear."
+    - "Norm: *apesar de os rios terem subido* (no contraction with the subject)."
+  variant: "European Portuguese also uses *a* + infinitive as a condition: *A continuar assim, vamos perder o barco* (If this goes on…) — rare in Brazilian speech."
+  related: [g.personal-infinitive-uses, g.gerund-uses-advanced, g.subordination-complex]
+  drills:
+    - { es: "Por serem jovens, não foram levados a sério.", en: "Because they were young, they weren't taken seriously." }
+    - { es: "Ao sairmos, fechem a porta.", en: "When we leave, close the door." }
+    - { es: "Ouvi as crianças cantarem.", en: "I heard the children sing." }
+    - { es: "Depois de terem jantado, saíram para dançar.", en: "After having dinner, they went out dancing." }
+- id: g.absolute-participle
+  level: c1
+  title: "Absolute participles — terminada a reunião, dito isso"
+  summary: "Participle + noun at the start: Terminada a reunião, todos saíram. The participle agrees with its noun."
+  explanation: |
+    A participle clause with its own subject sets up a completed event:
+
+    | | |
+    |---|---|
+    | ***Terminada** a reunião, todos saíram.* | Once the meeting was over… |
+    | ***Feitas** as contas, sobrou pouco.* | Once the sums were done… |
+    | ***Dito** isso, passemos ao próximo ponto.* | That said… |
+    | ***Uma vez aprovado** o projeto, as obras começam.* | Once the project is approved… |
+    | ***Posto** isso, …* | That being so… |
+    | ***Chegados** ao porto, desembarcamos.* | Having reached the port… |
+
+    - The participle **agrees** with its noun: *terminad**a** a aula, terminad**os** os exames*.
+    - The participle comes first, the noun after.
+    - Very common in formal writing and journalism.
+  examples:
+    - { es: "Encerrada a votação, começou a contagem.", en: "Once voting closed, the count began." }
+    - { es: "Dito isso, vamos ao que interessa.", en: "That said, let's get to the point." }
+    - { es: "Passada a cheia, os moradores voltaram para casa.", en: "Once the flood had passed, the residents returned home." }
+    - { es: "Uma vez assinado o contrato, não há volta.", en: "Once the contract is signed, there's no going back." }
+  pitfalls:
+    - "Agreement: *Resolvidos os problemas…*, not *Resolvido os problemas…*"
+    - "Use the short participle where one exists: *Aceita a proposta…*, *Entregues os documentos…*"
+    - "Don't overuse it in speech; it sounds formal."
+  variant: "Very frequent in European Portuguese, including speech: *Chegados a casa, jantámos.*"
+  related: [g.past-participles, g.gerund-uses-advanced, g.journalistic-language]
+  drills:
+    - { es: "Terminado o jantar, fomos à praia do rio.", en: "Once dinner was over, we went to the river beach." }
+    - { es: "Feitas as malas, chamamos o táxi.", en: "With the bags packed, we called a taxi." }
+    - { es: "Resolvidas as pendências, o acordo foi assinado.", en: "With the outstanding issues resolved, the agreement was signed." }
+    - { es: "Passado o susto, todos riram.", en: "Once the fright had passed, everyone laughed." }
+- id: g.pragmatics
+  level: c1
+  title: "What Brazilians mean — invitations, refusals and time"
+  summary: "Aparece lá em casa!, Vamos marcar!, Vou ver, Pode deixar, já já, daqui a pouco: reading the intention behind the words."
+  explanation: |
+    | what is said | what it often means |
+    |---|---|
+    | *Aparece lá em casa!* | a warm gesture, not a dated invitation |
+    | *Vamos marcar!* | let's meet sometime (vague) |
+    | *Vou ver.* / *Vou tentar.* | probably not |
+    | *Acho meio difícil.* | no |
+    | *Pode deixar!* | leave it to me |
+    | *Já já* | in a moment (could be a while) |
+    | *Daqui a pouco* | soon (flexible) |
+    | *Pois não?* | How can I help you? (shop assistant) |
+    | *Imagina!* | Not at all! (reply to thanks) |
+    | *Se Deus quiser* | hopefully (also polite non-commitment) |
+
+    ### Reading refusals
+    A direct *não* can sound harsh; refusals are usually wrapped: *Hoje não vai dar, mas fica para a próxima!*
+
+    ### Confirming a real plan
+    Ask for details: *Fechado! Sábado às oito, então?*
+  examples:
+    - { es: "Aparece lá em casa qualquer dia!", en: "Drop by my place some time!" }
+    - { es: "Vamos ao show amanhã? — Hum, vou ver.", en: "Shall we go to the gig tomorrow? — Hmm, I'll see." }
+    - { es: "Pode deixar que eu resolvo.", en: "Leave it to me, I'll sort it out." }
+    - { es: "Pois não, senhora?", en: "Can I help you, madam?" }
+    - { es: "Fechado: sábado às oito no porto.", en: "Deal: Saturday at eight at the port." }
+  pitfalls:
+    - "Don't show up at someone's house just because they said *aparece lá*; wait for a concrete plan."
+    - "*Pois não* means 'yes, certainly / how can I help', not 'no'."
+    - "*Já já* doesn't guarantee speed."
+  variant: "Europeans tend to be a little more direct and literal; *Pois não* is also 'certainly' in Portugal, and *Logo se vê* (we'll see) is a classic non-committal reply."
+  related: [g.politeness-strategies, g.irony-humor, g.polite-requests]
+  drills:
+    - { es: "Hoje não vai dar, fica para a próxima.", en: "Today won't work, let's do it another time." }
+    - { es: "Já já eu chego.", en: "I'll be there in a minute." }
+    - { es: "Obrigado pela carona! — Imagina!", en: "Thanks for the lift! — Don't mention it!" }
+    - { es: "A gente se vê, se Deus quiser.", en: "We'll see each other, God willing." }
+- id: g.irony-humor
+  level: c1
+  title: "Irony and humour — Ah, tá!, Que maravilha!, zoar"
+  summary: "Ironic formulas, exaggeration, ironic diminutives and the vocabulary of teasing."
+  explanation: |
+    ### Ironic formulas
+    | | |
+    |---|---|
+    | *Ah, tá!* / *Sei…* | Yeah, right. |
+    | *Que maravilha!* (about something bad) | Great, just great. |
+    | *Era só o que faltava!* | That's all I needed! |
+    | *Claro, né?* | Obviously… (sarcastic) |
+    | *Imagina se…* | Imagine if… (mock) |
+
+    ### Exaggeration (hyperbole)
+    *Estou morrendo de fome. Esperei uma eternidade. Tinha um milhão de mosquitos.*
+
+    ### Ironic diminutives
+    *Um trabalhinho de nada* (a "little" job that is huge), *Que solzinho, hein?* (in scorching heat)
+
+    ### Teasing
+    *zoar / tirar sarro de* (make fun of), *a zoeira* (banter), *uma piada* (a joke), *um trocadilho* (a pun), *Tô te zoando!* (I'm messing with you!)
+  examples:
+    - { es: "Quarenta graus e sem ar-condicionado. Que maravilha!", en: "Forty degrees and no air conditioning. Wonderful!" }
+    - { es: "Ele disse que vai chegar na hora. — Ah, tá!", en: "He said he'll be on time. — Yeah, right!" }
+    - { es: "Furou o pneu no meio da estrada. Era só o que faltava!", en: "A flat tyre in the middle of the road. That's all we needed!" }
+    - { es: "Calma, tô te zoando!", en: "Relax, I'm just teasing you!" }
+  pitfalls:
+    - "Intonation carries irony: the same words can be sincere."
+    - "*Tirar sarro* and *zoar* are informal; *ironizar* is the neutral verb."
+    - "Avoid *gozar* for 'make fun of' in Brazil: it has a sexual meaning there."
+  variant: "In Portugal *Pois, pois…* means 'yeah, right', and *gozar com alguém* is the everyday 'make fun of someone' — a phrase best avoided in Brazil."
+  related: [g.pragmatics, g.idioms, g.diminutives-augmentatives]
+  drills:
+    - { es: "Sei… e eu sou o Papa.", en: "Sure… and I'm the Pope." }
+    - { es: "Estou morrendo de calor.", en: "I'm dying of the heat." }
+    - { es: "Que pontualidade, hein?", en: "So punctual, aren't we?" }
+    - { es: "Eles adoram tirar sarro de mim.", en: "They love making fun of me." }
+- id: g.politeness-strategies
+  level: c1
+  title: "Politeness strategies — softening, hedging and the jeitinho"
+  summary: "Imperfect and conditional for requests, diminutives, pre-apologies, indirect refusals, deflecting compliments."
+  explanation: |
+    ### Softening a request
+    | | |
+    |---|---|
+    | *Eu queria…* / *Eu gostaria…* | I'd like… |
+    | *Será que você poderia…?* | I wonder if you could…? |
+    | *Você se importaria de…?* | Would you mind…? |
+    | *Desculpa incomodar, mas…* | Sorry to bother you, but… |
+    | *Só um minutinho / um favorzinho* | diminutives shrink the imposition |
+    | *Se não for incômodo…* | if it's no trouble… |
+
+    ### Refusing without saying no
+    *Infelizmente hoje não vai dar. Adoraria, mas…* *Vou ver e te falo.*
+
+    ### Compliments
+    Brazilians often deflect: *Que vestido lindo! — Imagina, é velhinho!*
+
+    ### The jeitinho
+    *Dar um jeitinho* — finding a flexible, often informal way round a rule or problem. Admired as creativity, criticised when it bends rules.
+  examples:
+    - { es: "Desculpa incomodar, mas será que você podia me dar uma informação?", en: "Sorry to bother you, but could you give me some information?" }
+    - { es: "Adoraria ir, mas infelizmente não vai dar.", en: "I'd love to go, but unfortunately I can't make it." }
+    - { es: "Que comida maravilhosa! — Imagina, foi uma coisinha simples.", en: "What wonderful food! — Oh, it was just something simple." }
+    - { es: "Será que não tem um jeitinho de embarcar hoje?", en: "Isn't there some way I could board today?" }
+  pitfalls:
+    - "A flat *não* or a bare command can sound rude; add softeners."
+    - "Too many softeners in writing can sound servile."
+    - "*Jeitinho* can imply bending rules; use the word with care in professional settings."
+  variant: "Portuguese politeness relies more on titles and the imperfect (*Podia…? Queria…*) and less on diminutives; *se faz favor* is everywhere."
+  related: [g.polite-requests, g.pragmatics, g.diminutives-augmentatives, g.deveria-ter]
+  drills:
+    - { es: "Você se importaria de trocar de lugar?", en: "Would you mind swapping seats?" }
+    - { es: "Só um minutinho, por favor.", en: "Just a moment, please." }
+    - { es: "Se não for incômodo, eu fico mais um dia.", en: "If it's no trouble, I'll stay one more day." }
+    - { es: "Vou ver se dá e te aviso.", en: "I'll see if I can and let you know." }
+- id: g.literary-language
+  level: c1
+  title: "Literary Portuguese — reading Machado de Assis"
+  summary: "Inversion, enclisis and mesoclisis, rich vocabulary, the narrator talking to the reader, irony and free indirect discourse."
+  explanation: |
+    ### Features of 19th- and 20th-century prose
+    - **Inversion** (hyperbaton): *Ouviram do Ipiranga as margens plácidas…* (the national anthem: "The placid banks of the Ipiranga heard…")
+    - **Classical clitic placement**, including mesoclisis: *dir-se-ia* (one would say), *fá-lo-ei*.
+    - **Simple pluperfect**: *fizera, dissera, estivera*.
+    - **The narrator addresses the reader**: Machado's narrators chat, joke and mislead.
+    - **Machadian irony**: understatement and ambiguity (is Capitu guilty in *Dom Casmurro*?).
+    - **Free indirect discourse** (Clarice Lispector): the narrator slips into a character's thoughts.
+
+    ### Two famous lines
+    - *Ao verme que primeiro roeu as frias carnes do meu cadáver dedico como saudosa lembrança estas memórias póstumas.* — dedication of *Memórias Póstumas de Brás Cubas* (1881).
+    - *olhos de cigana oblíqua e dissimulada* — Capitu's eyes in *Dom Casmurro* (1899).
+
+    Read with a dictionary, and expect long sentences and Latinate vocabulary.
+  examples:
+    - { es: "Dir-se-ia que o tempo havia parado.", en: "One would say that time had stopped." }
+    - { es: "Leitor, não te zangues comigo.", en: "Reader, don't be angry with me." }
+    - { es: "Capitu tinha olhos de cigana oblíqua e dissimulada.", en: "Capitu had the eyes of a sly, deceitful gypsy." }
+    - { es: "Era já noite quando ele, enfim, tomou a resolução.", en: "It was already night when he finally made up his mind." }
+  pitfalls:
+    - "Don't imitate 19th-century clitics (*fá-lo-ei*) in everyday Brazilian writing."
+    - "*Tu* and *vós* in old texts are not regional; they were literary conventions."
+    - "The simple pluperfect (*fizera*) is not a subjunctive."
+  variant: "Eça de Queirós is the Portuguese counterpart to Machado; European literary prose keeps enclisis and the simple pluperfect even more (see C2)."
+  related: [g.narrative-tenses-literary, g.vos-archaic, g.text-types, g.classical-portuguese]
+  drills:
+    - { es: "Não sei se o leitor me compreende.", en: "I don't know whether the reader understands me." }
+    - { es: "Dissera-lhe tudo, mas ela não acreditara.", en: "He had told her everything, but she hadn't believed him." }
+    - { es: "Pareceu-me que ela sorria.", en: "It seemed to me that she was smiling." }
+    - { es: "Far-se-ia tudo para evitar o escândalo.", en: "Everything would be done to avoid the scandal." }
+- id: g.narrative-tenses-literary
+  level: c1
+  title: "Literary tenses — the simple pluperfect (fizera), historic present"
+  summary: "falara, fizera, dissera = had spoken / done / said; also fixed in quem dera, pudera, tomara. Plus the historic present and imperfect for conditional."
+  explanation: |
+    ### The simple pluperfect (mais-que-perfeito simples)
+    From the *eles* preterite minus *-m*:
+
+    | preterite | pluperfect |
+    |---|---|
+    | *falaram* | **falara** (had spoken) |
+    | *fizeram* | **fizera** (had done) |
+    | *disseram* | **dissera** |
+    | *foram* | **fora** (had been / gone) |
+    | *tiveram* | **tivera** |
+
+    *nós*: *faláramos, fizéramos, fôramos*.
+
+    - Literature and formal writing: *Quando chegou, o navio já partira.* (= *tinha partido*)
+    - Fixed in speech: *Quem dera!, Pudera!, Tomara!*
+    - Literary conditional: *Fora eu rico…* (Were I rich…), *Mais valera…* (It would have been better…)
+
+    ### Other narrative devices
+    - **Historic present** for vividness: *Em 1500, Cabral chega à Bahia…*
+    - **Imperfect for conditional**: *Se pudesse, fugia.*
+  examples:
+    - { es: "Quando o seringueiro voltou, a mulher já partira.", en: "When the rubber tapper returned, his wife had already left." }
+    - { es: "Nunca vira um rio tão largo.", en: "He had never seen such a wide river." }
+    - { es: "Em 1616, Francisco Caldeira Castelo Branco funda o Forte do Presépio, origem de Belém.", en: "In 1616, Francisco Caldeira Castelo Branco founds Fort Presépio, the origin of Belém." }
+    - { es: "Fora ele mais paciente, tudo teria sido diferente.", en: "Had he been more patient, everything would have been different." }
+  pitfalls:
+    - "Spanish speakers: *falara* looks like the Spanish imperfect subjunctive (*hablara*) but means 'had spoken'."
+    - "*Fora* can also be the adverb 'outside' or the preposition 'except': context decides."
+    - "In modern speech always use *tinha* + participle."
+  variant: "The simple pluperfect is slightly more alive in European journalistic and literary prose."
+  related: [g.pluperfect, g.literary-language, g.quem-dera]
+  drills:
+    - { es: "Ela já dissera que não viria.", en: "She had already said she wouldn't come." }
+    - { es: "Quando acordou, o barco partira.", en: "When he woke up, the boat had left." }
+    - { es: "Tudo fora em vão.", en: "It had all been in vain." }
+    - { es: "Pudera! Ele trabalhou a noite inteira.", en: "No wonder! He worked all night." }
+- id: g.vos-archaic
+  level: c1
+  title: "Vós — the archaic 'you all' (and vos)"
+  summary: "vós falais, sois, tendes, ides; imperative falai, vinde, ide; vosso, convosco — in prayers, literature, speeches and northern Portugal."
+  explanation: |
+    | | falar | ser | ter | ir | vir |
+    |---|---|---|---|---|---|
+    | present | *falais* | *sois* | *tendes* | *ides* | *vindes* |
+    | preterite | *falastes* | *fostes* | *tivestes* | *fostes* | *viestes* |
+    | imperative | *falai* | *sede* | *tende* | *ide* | *vinde* |
+
+    Pronouns: object *vos*, possessive *vosso / vossa*, *convosco*.
+
+    ### Where you meet it
+    - Prayers: *Pai Nosso, que estais no céu, santificado seja o vosso nome…*
+    - The Bible, hymns, classical literature, solemn speeches.
+    - Northern Portugal and some rural areas, where *vós* still means "you all".
+
+    ### Vos with vocês
+    In formal writing (and widely in Portugal), *vos* is the object pronoun for *vocês*: *Agradeço-vos a presença.*
+  examples:
+    - { es: "Vinde a mim todos os que estais cansados.", en: "Come unto me, all ye that labour." }
+    - { es: "Santificado seja o vosso nome.", en: "Hallowed be thy name." }
+    - { es: "Senhores, eu vos agradeço a confiança.", en: "Gentlemen, I thank you for your trust." }
+    - { es: "Ide em paz.", en: "Go in peace." }
+  pitfalls:
+    - "Don't use *vós* in ordinary conversation: it sounds biblical or comic."
+    - "*Vosso* (your, of *vós*) vs *Vossa Excelência* (third-person grammar)."
+    - "*Sede* is both 'thirst' (noun) and 'be!' (imperative of *ser* with *vós*)."
+  variant: "In northern Portugal *vós* survives in speech (*Vós sabeis…*), and *vos* / *convosco* are normal everywhere in Portugal as the object forms of *vocês*: *Vejo-vos amanhã!*"
+  related: [g.literary-language, g.subject-pronouns, g.address-across-lusophone]
+  drills:
+    - { es: "Sede bem-vindos!", en: "Be welcome!" }
+    - { es: "Eu vos digo a verdade.", en: "I tell you the truth." }
+    - { es: "A paz esteja convosco.", en: "Peace be with you." }
+    - { es: "Que fizestes vós?", en: "What have ye done?" }
+- id: g.journalistic-language
+  level: c1
+  title: "The language of the press"
+  summary: "The lead (lide), the inverted pyramid, attribution, allegational teria, acronyms with articles and euphemisms."
+  explanation: |
+    ### The lead (*lide*)
+    The first paragraph answers *o quê, quem, quando, onde, como, por quê*. Details follow in decreasing importance (inverted pyramid).
+
+    ### Features
+    - **Attribution**: *segundo, de acordo com, conforme, para* (*Para o ministro, …* = in the minister's view).
+    - **Allegation**: *O suspeito **teria** fugido* (reportedly).
+    - **Acronyms with articles**: *o STF* (Supreme Court), *a PF* (Federal Police), *o IBGE*, *o Inpe*.
+    - **Absolute participles and nominalizations**: *Encerrada a sessão… Após a aprovação…*
+    - **Euphemisms**: *comunidade* (for *favela*), *pessoa em situação de rua* (homeless person).
+  examples:
+    - { es: "Um incêndio atingiu na madrugada de ontem um mercado no centro de Belém.", en: "A fire hit a market in central Belém in the early hours of yesterday." }
+    - { es: "Segundo o Inpe, o desmatamento caiu em relação ao ano anterior.", en: "According to INPE, deforestation fell compared with the previous year." }
+    - { es: "Para a especialista, a medida chega tarde.", en: "In the expert's view, the measure comes too late." }
+    - { es: "O empresário teria recebido propina.", en: "The businessman allegedly received a bribe." }
+  pitfalls:
+    - "*Teria* + participle in news = 'allegedly', not 'would have'."
+    - "*Para* + person in the press means 'according to / in the view of', not 'for'."
+    - "Brazilian *propina* = bribe; in Portugal it means university fees."
+  variant: "European newspapers use guillemets (« ») for quotes, different acronyms (PSP, GNR, PJ for the police), and *segundo apurou o jornal* (the paper has learned)."
+  related: [g.headlines, g.quotation, g.conditional-perfect, g.reporting-verbs]
+  drills:
+    - { es: "De acordo com a polícia, ninguém ficou ferido.", en: "According to the police, nobody was injured." }
+    - { es: "O STF julga o caso nesta quarta.", en: "The Supreme Court rules on the case this Wednesday." }
+    - { es: "O avião teria sofrido uma pane.", en: "The plane reportedly suffered a failure." }
+    - { es: "Após a votação, a sessão foi encerrada.", en: "After the vote, the session was closed." }
+- id: g.headlines
+  level: c1
+  title: "Headlines (manchetes) — present for the past, infinitive for the future"
+  summary: "Governo anuncia… (announced), Prefeito deve vetar… (is expected to), no articles, colons, bare participles: Preso suspeito de…"
+  explanation: |
+    | headline feature | example | meaning |
+    |---|---|---|
+    | present for a past event | *Governo **anuncia** novo plano* | announced |
+    | *vai* / *deve* + inf. for the future | *Prefeito **deve vetar** projeto* | is expected to veto |
+    | infinitive (Portugal-style, also Brazil) | *Governo **vai cortar** gastos* | will cut |
+    | no articles | *Seca atinge comunidades do Amazonas* | |
+    | colon for topic | *Amazônia: rios atingem nível recorde* | |
+    | bare participle (passive) | ***Preso** suspeito de tráfico* | Suspect arrested |
+    | *diz* at the end | *Ministro: "Não haverá cortes", diz* | |
+
+    Read headlines as telegrams: fill in articles and the past tense mentally.
+  examples:
+    - { es: "Seca histórica isola comunidades no Amazonas", en: "Historic drought cuts off communities in Amazonas" }
+    - { es: "Presidente sanciona lei de proteção aos rios", en: "President signs river protection law" }
+    - { es: "Preso suspeito de garimpo ilegal em terra indígena", en: "Suspect arrested for illegal mining on indigenous land" }
+    - { es: "Festival de Parintins deve atrair 100 mil turistas", en: "Parintins Festival expected to draw 100,000 tourists" }
+  pitfalls:
+    - "*Anuncia* in a headline usually refers to the past."
+    - "*Deve* + infinitive = 'is expected to', not 'must'."
+    - "Don't copy headline style into normal prose."
+  variant: "European headlines work the same way and often use the infinitive with *a* for planned events (*Governo a cortar gastos*), plus « » for quotes."
+  related: [g.journalistic-language, g.quotation, g.absolute-participle]
+  drills:
+    - { es: "Chuvas deixam mil desabrigados", en: "Rains leave a thousand homeless" }
+    - { es: "Ministro deve anunciar cortes nesta semana", en: "Minister expected to announce cuts this week" }
+    - { es: "Encontrado barco desaparecido no rio Madeira", en: "Missing boat found on the Madeira River" }
+    - { es: "Inflação sobe pelo terceiro mês seguido", en: "Inflation rises for third month in a row" }
+- id: g.quotation
+  level: c1
+  title: "Quoting — travessão, aspas, disse ela, segundo"
+  summary: "Fiction uses the dash (—) with inverted reporting verbs (— Não vou — disse ela); the press uses quotation marks and segundo / para."
+  explanation: |
+    ### Dialogue in fiction: the travessão
+    *— Você vem? — perguntou Ana.*
+    *— Não sei — respondeu ele, sem levantar os olhos.*
+    - Each new speaker starts a new line with a dash.
+    - The reporting verb comes **before** the subject: *disse ela, perguntou o pai*.
+
+    ### The press: aspas
+    *"Não vamos recuar", afirmou o ministro.* / *O ministro afirmou que "não haverá recuo".*
+
+    ### Attribution
+    *segundo, conforme, de acordo com, para* (in X's view), *nas palavras de*.
+
+    ### Other conventions
+    *[sic]* marks an error in the original; *(…)* or *[…]* marks a cut.
+  examples:
+    - { es: "— Vamos pegar o barco das seis — disse o pescador.", en: "\"Let's catch the six o'clock boat,\" said the fisherman." }
+    - { es: "— E se chover? — perguntou ela.", en: "\"And what if it rains?\" she asked." }
+    - { es: "\"A floresta não pode esperar\", declarou a ministra.", en: "\"The forest cannot wait,\" the minister declared." }
+    - { es: "Nas palavras do cacique, a terra é a vida do povo.", en: "In the chief's words, the land is the life of the people." }
+  pitfalls:
+    - "After a quote, invert: *disse ela*, not *ela disse*."
+    - "Brazilian fiction uses the dash for dialogue rather than quotation marks."
+    - "*Para* + person in reports = 'in X's opinion'."
+  variant: "European print uses guillemets « » for quotations: *«Não vamos recuar», afirmou o ministro.*"
+  related: [g.journalistic-language, g.reporting-verbs, g.headlines]
+  drills:
+    - { es: "— Está tarde — disse a mãe.", en: "\"It's late,\" said the mother." }
+    - { es: "Segundo o guia, o passeio dura três horas.", en: "According to the guide, the tour lasts three hours." }
+    - { es: "— Quem está aí? — gritou o vigia.", en: "\"Who's there?\" shouted the watchman." }
+    - { es: "Para os moradores, a obra foi um erro.", en: "In the residents' view, the project was a mistake." }
+- id: g.word-formation
+  level: c1
+  title: "Word formation — derivation, compounds, blends"
+  summary: "Prefixes and suffixes, compounds (guarda-chuva, beija-flor), verbs from adjectives (entardecer), back-formations (pesca), conversions (o jantar), blends (sambódromo)."
+  explanation: |
+    | process | examples |
+    |---|---|
+    | derivation | *feliz → infeliz → felicidade* |
+    | parasynthesis (prefix + suffix at once) | *tarde → entardecer, velho → envelhecer, manhã → amanhecer* |
+    | back-formation | *pescar → a pesca, combater → o combate, ajudar → a ajuda* |
+    | conversion | *jantar → o jantar, olhar → o olhar, porquê → o porquê* |
+    | compound with hyphen | *guarda-chuva, beija-flor, arco-íris, segunda-feira* |
+    | compound without hyphen (since 1990) | *pé de moleque, fim de semana, dia a dia* |
+    | fused compound | *girassol, pontapé, passatempo* |
+    | blend | *sambódromo, portunhol, showmício* |
+
+    ### Plural of compounds
+    - noun + noun / noun + adjective: both change: *couves-flores, amores-perfeitos*
+    - verb + noun: only the noun: *guarda-chuvas, beija-flores*
+  examples:
+    - { es: "Os beija-flores voltam ao entardecer.", en: "The hummingbirds come back at dusk." }
+    - { es: "A pesca é proibida durante a piracema.", en: "Fishing is prohibited during the spawning season." }
+    - { es: "Ela fala um portunhol divertido.", en: "She speaks a funny mix of Portuguese and Spanish." }
+    - { es: "Esqueci os guarda-chuvas no barco.", en: "I left the umbrellas on the boat." }
+  pitfalls:
+    - "Plurals: *guarda-chuvas* (not *guardas-chuvas*)."
+    - "Hyphen rules changed in 1990: *fim de semana, dia a dia* have no hyphen."
+    - "Infinitives become masculine nouns: *o amanhecer, o pôr do sol*."
+  variant: "European vocabulary uses different compounds in some fields: goalkeeper is *guarda-redes* in Portugal (*goleiro* in Brazil)."
+  related: [g.prefixes-suffixes, g.nominalization, g.spelling-agreement]
+  drills:
+    - { es: "O amanhecer no rio é inesquecível.", en: "Dawn on the river is unforgettable." }
+    - { es: "Comprei dois guarda-sóis.", en: "I bought two beach umbrellas." }
+    - { es: "Os cabelos começaram a embranquecer.", en: "His hair started to turn white." }
+    - { es: "O combate ao garimpo ilegal se intensificou.", en: "The fight against illegal mining intensified." }
+- id: g.prefixes-suffixes
+  level: c1
+  title: "Prefixes and suffixes — des-, re-, -eiro, -al, -ense, -manauara"
+  summary: "Productive affixes for meaning and register, gentilics of the North (manauara, paraense), and hyphen rules for prefixes."
+  explanation: |
+    ### Prefixes
+    *des-* (un-: *desfazer*), *in- / im- / i-* (*impossível, ilegal*), *re-* (*refazer*), *pré- / pós-* (*pré-história, pós-graduação*), *sub-, super-, hiper-, anti-, auto-, co-, ex-* (*ex-marido*), *inter-, semi-*
+
+    ### Suffixes
+    | suffix | meaning | examples |
+    |---|---|---|
+    | *-eiro / -eira* | trade; tree | *sapateiro; mangueira* (mango tree), *castanheira* |
+    | *-al* | plantation | *cafezal, bananal, seringal* |
+    | *-aria* | shop | *padaria, sorveteria* |
+    | *-oso* | full of | *perigoso, gostoso* |
+    | *-vel* | -able | *comestível, navegável* |
+    | *-ada* | blow; group; dish | *facada, boiada, bananada* |
+    | *-ense, -ano, -ista* | origin | *paraense, amazonense, acreano* |
+
+    ### Gentilics of the North
+    *Manaus → manauara*, *Belém → belenense*, *Santarém → santareno*, *Pará → paraense*, *Amapá → amapaense*, *Acre → acreano*.
+
+    ### Hyphens with prefixes (since 1990)
+    Hyphen before the same vowel or *h*: *anti-inflamatório, micro-ondas, anti-higiênico*; doubled *r / s* otherwise: *antissocial, autorretrato*; *pré-, pós-, ex-* always: *pós-doutorado*.
+  examples:
+    - { es: "A castanheira pode viver centenas de anos.", en: "The Brazil-nut tree can live for hundreds of years." }
+    - { es: "O rio é navegável o ano todo.", en: "The river is navigable all year round." }
+    - { es: "Ela é manauara, mas mora em Santarém.", en: "She's from Manaus, but she lives in Santarém." }
+    - { es: "O seringal ficava longe da cidade.", en: "The rubber plantation was far from the town." }
+    - { es: "A autoestima dela melhorou muito.", en: "Her self-esteem has improved a lot." }
+  pitfalls:
+    - "*Mangueira* is a mango tree (or a hose), not a mango (*manga*)."
+    - "Gentilics are irregular: learn *manauara, carioca, potiguar* as words."
+    - "Hyphenation: *autoestima* (no hyphen), *auto-observação* (same vowel)."
+  variant: "Suffixes are shared; European spellings differ in a few words (*autoestrada* is the normal Portuguese word for motorway; Brazil says *rodovia* / *estrada*)."
+  related: [g.word-formation, g.false-friends, g.tupi-african-loanwords]
+  drills:
+    - { es: "Esse peixe é comestível?", en: "Is this fish edible?" }
+    - { es: "Desfiz a mala logo que cheguei.", en: "I unpacked as soon as I arrived." }
+    - { es: "O cafezal fica atrás da casa.", en: "The coffee plantation is behind the house." }
+    - { es: "Os paraenses adoram açaí com peixe.", en: "People from Pará love açaí with fish." }
+- id: g.false-friends
+  level: c1
+  title: "False friends — for English and Spanish speakers"
+  summary: "puxar (pull), pretender (intend), esquisito (weird), apelido (nickname), borracha (eraser), largo (wide), polvo (octopus), grávida (pregnant)."
+  explanation: |
+    ### English speakers
+    | Portuguese | means | not |
+    |---|---|---|
+    | *puxar / empurrar* | pull / push | (*puxar* ≠ push) |
+    | *pretender* | intend | pretend (= *fingir*) |
+    | *atualmente* | currently | actually (= *na verdade*) |
+    | *eventualmente* | occasionally, possibly | eventually (= *finalmente*) |
+    | *livraria* | bookshop | library (= *biblioteca*) |
+    | *parente* | relative | parent (= *pai / mãe*) |
+    | *compromisso* | appointment | compromise (= *acordo*) |
+    | *sensível / sensato* | sensitive / sensible | |
+    | *prejuízo* | loss, damage | prejudice (= *preconceito*) |
+    | *novela* | soap opera | novel (= *romance*) |
+
+    ### Spanish speakers
+    | Portuguese | means | Spanish word it resembles |
+    |---|---|---|
+    | *esquisito* | weird | *exquisito* (delicious) |
+    | *apelido* | nickname | *apellido* (surname = *sobrenome*) |
+    | *borracha* | eraser, rubber | *borracha* (drunk = *bêbada*) |
+    | *largo* | wide | *largo* (long = *comprido*) |
+    | *polvo* | octopus | *polvo* (dust = *pó*) |
+    | *oficina* | workshop, garage | *oficina* (office = *escritório*) |
+    | *cena* | scene | *cena* (dinner = *jantar*) |
+    | *grávida* | pregnant | *embarazada* (≈ *embaraçada*, embarrassed) |
+    | *presunto* | ham | *presunto* (alleged = *suposto*) |
+  examples:
+    - { es: "Puxe a porta, não empurre.", en: "Pull the door, don't push it." }
+    - { es: "Pretendo voltar à Amazônia no ano que vem.", en: "I intend to come back to the Amazon next year." }
+    - { es: "Que comida esquisita!", en: "What strange food!" }
+    - { es: "Meu apelido é Dudu; meu sobrenome é Souza.", en: "My nickname is Dudu; my surname is Souza." }
+    - { es: "Levei o carro à oficina.", en: "I took the car to the garage." }
+  pitfalls:
+    - "*Atualmente* never means 'actually'."
+    - "*Estou embaraçada* means 'I'm embarrassed / confused', not pregnant (*grávida*)."
+    - "*Exquisito* (Spanish, delicious) and *esquisito* (Portuguese, weird) are opposites in tone."
+  variant: "Some false friends differ between Brazil and Portugal too: *propina* (bribe in Brazil, tuition fees in Portugal), *rapariga* (girl in Portugal, offensive in Brazil) — see the C2 note on European false friends."
+  related: [g.prefixes-suffixes, g.ep-false-friends, g.word-formation]
+  drills:
+    - { es: "Eventualmente trabalho aos sábados.", en: "I occasionally work on Saturdays." }
+    - { es: "Ela é minha parente distante.", en: "She's a distant relative of mine." }
+    - { es: "Me empresta uma borracha?", en: "Can you lend me an eraser?" }
+    - { es: "A rua é larga e comprida.", en: "The street is wide and long." }
+- id: g.tupi-african-loanwords
+  level: c1
+  title: "Words from Tupi and African languages"
+  summary: "abacaxi, mandioca, jacaré, capivara, Iguaçu (Tupi); samba, caçula, cafuné, moleque, axé (African) — and Nheengatu on the Rio Negro."
+  explanation: |
+    ### From Tupi and other Indigenous languages
+    - Food and plants: *abacaxi, mandioca, caju, maracujá, jabuticaba, pipoca, açaí*
+    - Animals: *jacaré, capivara, tatu, piranha, sucuri, arara, tucano*
+    - Verbs and slang: *cutucar* (poke), *pindaíba* (being broke)
+    - Place names: *Ipanema, Ibirapuera, Iguaçu* ("big water"), *Pará* ("river / sea"); *-guaçu / -açu* = big, *-mirim* = small, *ita-* = stone
+
+    **Nheengatu**, the "língua geral" based on Tupi, is still spoken along the Rio Negro and is co-official in the municipality of São Gabriel da Cachoeira (Amazonas).
+
+    ### From African languages (Kimbundu, Kikongo, Yoruba…)
+    *samba, caçula* (youngest child), *cafuné* (stroking someone's hair), *moleque* (kid, rascal), *cochilar* (doze), *quitanda* (grocer's), *quilombo*, *dendê, acarajé, axé, berimbau, marimbondo* (wasp), *xingar* (to curse at), *fubá* (cornmeal)
+  examples:
+    - { es: "Vimos uma capivara e dois jacarés no igarapé.", en: "We saw a capybara and two caimans in the creek." }
+    - { es: "Ela é a caçula da família.", en: "She's the youngest in the family." }
+    - { es: "Nada melhor que um cafuné depois de um dia cansativo.", en: "Nothing beats having your hair stroked after a tiring day." }
+    - { es: "Mirim quer dizer pequeno, e guaçu, grande.", en: "Mirim means small, and guaçu, big." }
+  pitfalls:
+    - "Many of these words are unknown or different in Portugal (*abacaxi* = *ananás* there)."
+    - "*Moleque* can be affectionate or pejorative depending on tone."
+    - "Place names keep their Tupi meaning: *Paraná*, *Paranaguá*, *Itaipu* all contain *pará / ita*."
+  variant: "European Portuguese has far fewer Tupi and African loans in everyday use: pineapple is *ananás*, and *cafuné* is understood as a Brazilianism. Angolan and Mozambican Portuguese have their own Bantu loanwords (*kota, machimbombo*)."
+  related: [g.prefixes-suffixes, g.lusophone-varieties, g.ep-vocabulary-differences]
+  drills:
+    - { es: "O abacaxi está bem doce.", en: "The pineapple is really sweet." }
+    - { es: "Ele cochilou no barco.", en: "He dozed off on the boat." }
+    - { es: "A arara voou sobre a floresta.", en: "The macaw flew over the forest." }
+    - { es: "Comprei mandioca na quitanda.", en: "I bought cassava at the grocer's." }

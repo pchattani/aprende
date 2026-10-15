@@ -1,0 +1,913 @@
+# C2 grammar notes. The C2 units are set in Portugal and teach European
+# Portuguese: examples are European, with Brazilian equivalents in `altEs`,
+# and `variant` describes the Brazilian usage. Field `es` = Portuguese text.
+- id: g.ep-tu-forms
+  level: c2
+  title: "Tu with its own verb forms — falas, foste, fizeste"
+  summary: "In Portugal tu is the everyday informal 'you' and takes second-person forms in every tense: tu falas, tu foste, se tu quiseres."
+  explanation: |
+    | tense | falar | ser | fazer | ter |
+    |---|---|---|---|---|
+    | present | *falas* | *és* | *fazes* | *tens* |
+    | preterite | *falaste* | *foste* | *fizeste* | *tiveste* |
+    | imperfect | *falavas* | *eras* | *fazias* | *tinhas* |
+    | future | *falarás* | *serás* | *farás* | *terás* |
+    | conditional | *falarias* | *serias* | *farias* | *terias* |
+    | pres. subj. | *fales* | *sejas* | *faças* | *tenhas* |
+    | imperf. subj. | *falasses* | *fosses* | *fizesses* | *tivesses* |
+    | fut. subj. / pers. inf. | *falares* | *fores / seres* | *fizeres / fazeres* | *tiveres / teres* |
+
+    Other key presents: *estás, vais, vens, dizes, podes, queres, sabes, vês, dás, pões*.
+
+    ### Pronouns that go with tu
+    *te* (object), *ti* (after prepositions), *contigo*, *teu / tua*.
+  examples:
+    - { es: "Tu és de Lisboa?", en: "Are you from Lisbon?", altEs: ["Você é de Lisboa?"] }
+    - { es: "Onde foste ontem à noite?", en: "Where did you go last night?", altEs: ["Aonde você foi ontem à noite?"] }
+    - { es: "Se quiseres, vou contigo ao Chiado.", en: "If you like, I'll go to the Chiado with you.", altEs: ["Se você quiser, vou com você ao Chiado."] }
+    - { es: "Este livro é teu?", en: "Is this book yours?", altEs: ["Esse livro é seu?"] }
+    - { es: "Tinhas razão.", en: "You were right.", altEs: ["Você tinha razão."] }
+  pitfalls:
+    - "Preterite: *tu falaste*, not *tu falastes* (a common non-standard form)."
+    - "Don't mix *tu* with *você* forms in Portugal (*tu vai* sounds Brazilian)."
+    - "*Ti* after prepositions, but *contigo* with *com*: *para ti*, *contigo*."
+  variant: "In most of Brazil *você* with third-person forms is the norm; where *tu* is used it often takes the *você* form (*tu vai*), except in parts of the South and North."
+  related: [g.ep-forms-of-address, g.ep-imperative-tu, g.tu-regional, g.subject-pronouns]
+  drills:
+    - { es: "O que fizeste no fim de semana?", en: "What did you do at the weekend?" }
+    - { es: "Queres um café?", en: "Do you want a coffee?" }
+    - { es: "Quando vieres ao Porto, avisa-me.", en: "When you come to Porto, let me know." }
+    - { es: "Espero que te divirtas.", en: "I hope you have fun." }
+- id: g.ep-forms-of-address
+  level: c2
+  title: "Addressing people in Portugal — tu, o senhor, the name, and the você question"
+  summary: "tu for friends; for others, the verb alone, the person's name or title in the third person, or o senhor / a senhora. Você is often avoided."
+  explanation: |
+    | situation | typical address |
+    |---|---|
+    | friends, family, young people, many colleagues | *tu* |
+    | neutral stranger | verb alone: *Quer um café?* |
+    | someone you know but not intimately | name + 3rd person: *A Ana quer um café?* (said to Ana) |
+    | respect, older people | *o senhor / a senhora*: *O senhor deseja?* |
+    | professionals | title: *O senhor doutor / A senhora engenheira já almoçou?* |
+    | shops (to a young woman / man) | *a menina / o menino*: *A menina deseja mais alguma coisa?* |
+    | plural | *vocês*, *os senhores* |
+
+    ### Você
+    In Portugal *você* is grammatically fine but socially delicate: it can sound distant or even condescending, especially to someone older. When in doubt, drop the pronoun.
+
+    *Dona* + first name for older women is warm and respectful: *a Dona Fernanda*.
+  examples:
+    - { es: "A Sofia já conhece o Porto?", en: "Have you been to Porto yet, Sofia?", altEs: ["Você já conhece o Porto, Sofia?"] }
+    - { es: "O senhor doutor pode entrar.", en: "You can go in now, doctor." }
+    - { es: "A menina deseja mais alguma coisa?", en: "Would you like anything else, miss?", altEs: ["A senhora deseja mais alguma coisa?"] }
+    - { es: "Quer que lhe chame um táxi?", en: "Would you like me to call you a taxi?", altEs: ["Quer que eu chame um táxi para o senhor?"] }
+  pitfalls:
+    - "Avoid *você* with an older Portuguese person; use the verb alone or *o senhor / a senhora*."
+    - "Addressing someone by name in the third person is polite, not odd: *O Pedro quer sentar-se?*"
+    - "Titles matter: a doctor, engineer or lawyer may expect *Senhor Doutor / Senhora Engenheira*."
+  variant: "In Brazil *você* is the neutral default with almost everyone, *o senhor / a senhora* marks respect, and professional titles other than *doutor* are rarely used in address."
+  related: [g.ep-tu-forms, g.address-across-lusophone, g.voce-o-senhor, g.formal-address-titles]
+  drills:
+    - { es: "O senhor precisa de ajuda?", en: "Do you need help, sir?" }
+    - { es: "A Marta vem jantar connosco?", en: "Are you coming to dinner with us, Marta?", altEs: ["Você vem jantar conosco, Marta?"] }
+    - { es: "Deseja mais alguma coisa?", en: "Would you like anything else?" }
+    - { es: "A senhora engenheira já chegou.", en: "The engineer has arrived." }
+- id: g.ep-imperative-tu
+  level: c2
+  title: "The tu imperative — fala!, não fales!, diz-me!"
+  summary: "Affirmative: the ele form of the present (fala, come, faz). Negative: the tu subjunctive (não fales, não faças). Pronouns after the affirmative."
+  explanation: |
+    | verb | affirmative | negative |
+    |---|---|---|
+    | *falar* | **fala** | **não fales** |
+    | *comer* | **come** | **não comas** |
+    | *fazer* | **faz** | **não faças** |
+    | *dizer* | **diz** | **não digas** |
+    | *ir* | **vai** | **não vás** |
+    | *vir* | **vem** | **não venhas** |
+    | *ser* | **sê** | **não sejas** |
+    | *estar* | **está** | **não estejas** |
+    | *pôr* | **põe** | **não ponhas** |
+
+    ### With pronouns
+    - Affirmative → after: *Diz-me. Senta-te. Dá-mo.*
+    - Negative → before: *Não me digas! Não te preocupes! Não mo dês.*
+
+    ### Plural
+    *vocês* uses the subjunctive both ways: *Falem! Não falem!*
+  examples:
+    - { es: "Diz-me a verdade.", en: "Tell me the truth.", altEs: ["Me diz a verdade.", "Me fala a verdade."] }
+    - { es: "Não te preocupes, eu trato disso.", en: "Don't worry, I'll take care of it.", altEs: ["Não se preocupe, eu cuido disso."] }
+    - { es: "Senta-te aqui ao pé de mim.", en: "Sit here next to me.", altEs: ["Senta aqui do meu lado."] }
+    - { es: "Não sejas tonto!", en: "Don't be silly!", altEs: ["Não seja bobo!"] }
+    - { es: "Anda cá!", en: "Come here!", altEs: ["Vem cá!"] }
+  pitfalls:
+    - "*Não fala!* as a command is Brazilian; in Portugal it must be *Não fales!*"
+    - "Pronoun after the affirmative: *Liga-me*, not *Me liga*."
+    - "*Sê* (be!) has a circumflex: *Sê bem-vindo.*"
+  variant: "Brazilian speech uses the affirmative *fala, come* too, but also for negatives (*não fala*), and puts pronouns first (*Me liga!*). Standard Brazilian writing prefers *fale / não fale* (the *você* forms)."
+  related: [g.ep-tu-forms, g.imperative-informal, g.imperative-negative, g.ep-enclisis]
+  drills:
+    - { es: "Não digas nada à Rita.", en: "Don't say anything to Rita." }
+    - { es: "Traz-me um copo de água, por favor.", en: "Bring me a glass of water, please." }
+    - { es: "Não vás já embora!", en: "Don't go just yet!" }
+    - { es: "Põe o casaco, está frio.", en: "Put your coat on, it's cold." }
+- id: g.ep-estar-a-infinitive
+  level: c2
+  title: "Estar a + infinitive — the European progressive"
+  summary: "Estou a trabalhar, está a chover, o que estás a fazer? — where Brazil says estou trabalhando."
+  explanation: |
+    European Portuguese forms the progressive with **estar a + infinitive**:
+
+    | Portugal | Brazil |
+    |---|---|
+    | *Estou a trabalhar.* | *Estou trabalhando.* |
+    | *Está a chover.* | *Está chovendo.* |
+    | *O que estás a fazer?* | *O que você está fazendo?* |
+    | *Estava a dormir quando ligaste.* | *Estava dormindo quando você ligou.* |
+
+    ### Pronouns
+    The clitic often "climbs" to *estar*: *Estás-me a ouvir?* / *Estou-te a ver.* (or *Estou a ver-te*). With an attractor: *Não te estou a ouvir.*
+
+    ### Other a + infinitive uses
+    - *água a ferver* (boiling water), *Ficou a olhar.* (stood looking)
+
+    The gerund progressive is still heard in the Alentejo, the Algarve and the islands, and is normal in European writing for other uses (*chegando a casa, …*).
+  examples:
+    - { es: "Estou a aprender a tocar guitarra portuguesa.", en: "I'm learning to play the Portuguese guitar.", altEs: ["Estou aprendendo a tocar guitarra portuguesa."] }
+    - { es: "Estás-me a ouvir?", en: "Can you hear me?", altEs: ["Você está me ouvindo?"] }
+    - { es: "Quando cheguei, estavam a jantar.", en: "When I arrived, they were having dinner.", altEs: ["Quando cheguei, eles estavam jantando."] }
+    - { es: "Está a chover em Lisboa.", en: "It's raining in Lisbon.", altEs: ["Está chovendo em Lisboa."] }
+  pitfalls:
+    - "Don't mix: *estou a trabalhando* is wrong."
+    - "*Estou a ver* also means 'I see / I get it'."
+    - "In Portugal, *estou trabalhando* is understood but marks you as Brazilian (or from the south)."
+  variant: "Brazil uses *estar* + gerund everywhere: *Estou trabalhando, está chovendo.* *Estar a* + infinitive is only literary or regional there."
+  related: [g.estar-gerund, g.estar-gerund-past, g.ep-aspect-periphrases]
+  drills:
+    - { es: "O que estás a ler?", en: "What are you reading?", altEs: ["O que você está lendo?"] }
+    - { es: "Estamos a pensar ir ao Algarve.", en: "We're thinking of going to the Algarve.", altEs: ["Estamos pensando em ir ao Algarve."] }
+    - { es: "Ela estava a falar ao telemóvel.", en: "She was talking on her mobile.", altEs: ["Ela estava falando no celular."] }
+    - { es: "Não te estou a perceber.", en: "I don't understand you.", altEs: ["Não estou te entendendo."] }
+- id: g.ep-aspect-periphrases
+  level: c2
+  title: "Andar a, ficar a, pôr-se a, acabar por — European aspect"
+  summary: "andar a (lately), ficar a (stay doing), pôr-se a (suddenly start), continuar a, acabar por (end up), estar à espera (be waiting)."
+  explanation: |
+    | Portugal | meaning | Brazil |
+    |---|---|---|
+    | *Ando a dormir mal.* | lately | *Ando dormindo mal.* |
+    | *Fiquei a ver o pôr do sol.* | stayed doing | *Fiquei vendo o pôr do sol.* |
+    | *Pôs-se a chorar.* | suddenly started | *Começou a chorar.* |
+    | *Continua a chover.* | still, keep on | *Continua chovendo.* |
+    | *Acabei por ficar.* | ended up | *Acabei ficando.* |
+    | *Estou à espera do autocarro.* | be waiting for | *Estou esperando o ônibus.* |
+    | *Estou prestes a sair.* | about to | *Estou para sair.* |
+
+    *Voltar a, começar a, deixar de* work the same on both sides.
+  examples:
+    - { es: "Ando a trabalhar demais.", en: "I've been working too much lately.", altEs: ["Ando trabalhando demais."] }
+    - { es: "Ficámos a conversar até às três.", en: "We stayed talking until three.", altEs: ["Ficamos conversando até as três."] }
+    - { es: "De repente, o miúdo pôs-se a cantar.", en: "Suddenly the kid started singing.", altEs: ["De repente, o menino começou a cantar."] }
+    - { es: "Acabámos por jantar em casa.", en: "We ended up having dinner at home.", altEs: ["Acabamos jantando em casa."] }
+    - { es: "Estou à tua espera há meia hora.", en: "I've been waiting for you for half an hour.", altEs: ["Estou te esperando há meia hora."] }
+  pitfalls:
+    - "*Pôr-se a* is sudden: *Pôs-se a rir* = burst out laughing."
+    - "*Estar à espera de* takes *de*: *à espera do comboio*."
+    - "Note EP *ficámos / acabámos* (past) with an accent."
+  variant: "Brazil uses gerunds (*ando trabalhando, fiquei vendo, acabei ficando*) and says *estou esperando* rather than *estou à espera*."
+  related: [g.ep-estar-a-infinitive, g.verbal-periphrases, g.periphrases-aspect]
+  drills:
+    - { es: "Continua a fazer frio.", en: "It's still cold.", altEs: ["Continua fazendo frio."] }
+    - { es: "Pôs-se a chover de repente.", en: "It suddenly started raining.", altEs: ["Começou a chover de repente."] }
+    - { es: "Fiquei a pensar no que disseste.", en: "I kept thinking about what you said.", altEs: ["Fiquei pensando no que você disse."] }
+    - { es: "Estamos prestes a partir.", en: "We're about to leave." }
+- id: g.ep-articles-names-possessives
+  level: c2
+  title: "Articles with names and possessives — a Maria, o meu carro"
+  summary: "In Portugal the article before first names and possessives is the norm: o João, a minha mãe, o nosso bairro."
+  explanation: |
+    | Portugal | Brazil (common) |
+    |---|---|
+    | *A Maria chegou.* | *Maria chegou.* / *A Maria chegou.* |
+    | *o meu carro* | *meu carro* |
+    | *a minha mãe* | *minha mãe* |
+    | *Gosto muito da tua casa.* | *Gosto muito da sua casa.* |
+    | *o senhor Silva, a Dona Ana* | *o seu Silva, a Dona Ana* |
+
+    ### Exceptions
+    - Vocative (calling someone): *Maria, anda cá!* / *Meu caro amigo,*
+    - Some fixed expressions: *em minha casa* (also *em casa*), *Nossa Senhora*.
+    - Famous historical or literary figures may drop it: *Camões escreveu…*
+
+    Leaving out the article in Portugal makes your speech sound Brazilian or overly formal.
+  examples:
+    - { es: "O Miguel e a Inês vivem em Coimbra.", en: "Miguel and Inês live in Coimbra.", altEs: ["Miguel e Inês moram em Coimbra."] }
+    - { es: "A minha avó faz o melhor bacalhau do mundo.", en: "My grandmother makes the best salt cod in the world.", altEs: ["Minha avó faz o melhor bacalhau do mundo."] }
+    - { es: "Esta é a nossa rua.", en: "This is our street.", altEs: ["Essa é nossa rua."] }
+    - { es: "Ligaste à Joana?", en: "Did you call Joana?", altEs: ["Você ligou para a Joana?"] }
+  pitfalls:
+    - "Contract with prepositions: *do João, na minha casa, à Ana*."
+    - "No article when calling someone: *Olá, Pedro!*"
+    - "*Teu / tua* (tu) is the everyday possessive among friends in Portugal."
+  variant: "Brazilian usage varies: the article before names is common in Rio and São Paulo but rarer in the Northeast, and possessives often go without it (*meu carro*)."
+  related: [g.articles-definite, g.possessives, g.ep-forms-of-address]
+  drills:
+    - { es: "O meu irmão trabalha no Porto.", en: "My brother works in Porto.", altEs: ["Meu irmão trabalha no Porto."] }
+    - { es: "A Rita está atrasada.", en: "Rita is late." }
+    - { es: "Gostei muito da vossa casa.", en: "I really liked your house.", altEs: ["Gostei muito da casa de vocês."] }
+    - { es: "Onde está o teu casaco?", en: "Where's your coat?", altEs: ["Cadê seu casaco?"] }
+- id: g.ep-enclisis
+  level: c2
+  title: "Enclisis — the pronoun after the verb (chamo-me, dá-me, vemo-nos)"
+  summary: "In European Portuguese, with no attractor, the pronoun follows the verb with a hyphen, even after a subject: Eu chamo-me Rui. Amo-te."
+  explanation: |
+    ### The default in Portugal
+    | Portugal | Brazil |
+    |---|---|
+    | *Chamo-me Rui.* | *Me chamo Rui.* / *Eu me chamo Rui.* |
+    | *A Ana chama-se Ana.* | *A Ana se chama Ana.* |
+    | *Amo-te.* | *Te amo.* |
+    | *Dei-lhe o livro.* | *Dei o livro para ele.* |
+    | *Vemo-nos amanhã.* | *A gente se vê amanhã.* |
+
+    ### Spelling changes
+    - *nos* after a *-mos* verb drops the *-s*: *vemos + nos → vemo-nos*, *sentamos + nos → sentamo-nos*.
+    - *o / a* after *-r, -s, -z* → *lo / la* (the consonant drops): *fazer + o → fazê-lo*, *fiz + o → fi-lo*, *compramos + o → compramo-lo*.
+    - *o / a* after a nasal → *no / na*: *dão + o → dão-no*, *põe + a → põe-na*.
+
+    A subject before the verb does **not** pull the pronoun forward: *Eu levanto-me cedo.*
+  examples:
+    - { es: "Chamo-me Inês e sou do Porto.", en: "My name is Inês and I'm from Porto.", altEs: ["Eu me chamo Inês e sou do Porto.", "Me chamo Inês e sou do Porto."] }
+    - { es: "Encontramo-nos no Rossio às oito.", en: "We'll meet in Rossio at eight.", altEs: ["A gente se encontra no Rossio às oito."] }
+    - { es: "O Pedro deu-me um livro de Saramago.", en: "Pedro gave me a Saramago book.", altEs: ["O Pedro me deu um livro de Saramago."] }
+    - { es: "Comprei-a na Feira da Ladra.", en: "I bought it at the Feira da Ladra flea market.", altEs: ["Comprei na Feira da Ladra."] }
+    - { es: "Vou fazê-lo amanhã.", en: "I'll do it tomorrow.", altEs: ["Vou fazer isso amanhã."] }
+  pitfalls:
+    - "Brazilian-style *Me chamo…* at the start of a sentence sounds wrong in Portugal."
+    - "*Vemo-nos*, not *vemos-nos*."
+    - "Attractors still win (*Não me chamo…*); see the next note."
+  variant: "In Brazil proclisis is normal in speech and widely accepted in writing after a subject (*Ele me disse*); enclisis appears mainly in formal writing and at the start of sentences."
+  related: [g.ep-proclisis-attractors, g.clitic-contractions, g.clitic-placement-norm, g.pronoun-placement-brazil]
+  drills:
+    - { es: "Levanto-me às sete.", en: "I get up at seven.", altEs: ["Eu me levanto às sete."] }
+    - { es: "Disse-lhe que não podia.", en: "I told him I couldn't.", altEs: ["Eu disse para ele que não podia."] }
+    - { es: "Sentamo-nos na esplanada.", en: "We sat on the terrace.", altEs: ["Nós nos sentamos na varanda do café."] }
+    - { es: "Ajuda-me com as malas?", en: "Will you help me with the bags?", altEs: ["Me ajuda com as malas?"] }
+- id: g.ep-proclisis-attractors
+  level: c2
+  title: "What pulls the pronoun forward — não, que, já, também, quem…"
+  summary: "In Portugal enclisis is the default, but negatives, subordinators, relatives, question words and certain adverbs force proclisis: Não te esqueças."
+  explanation: |
+    | attractor | Portugal |
+    |---|---|
+    | negatives (*não, nunca, nada, ninguém, nem*) | *Não te esqueças.* *Nunca me disseram.* |
+    | subordinators (*que, se, quando, porque, embora*) | *Acho que te vi.* *Se me ligares…* |
+    | relatives (*que, quem, onde*) | *o rapaz que me ajudou* |
+    | question words | *Como te chamas?* *Onde é que nos encontramos?* |
+    | adverbs (*já, ainda, também, só, sempre, talvez, bem, cá*) | *Já te disse.* *Também me apetece.* *Sempre me disseste…* |
+    | quantifiers (*todos, tudo, alguém, ambos*) | *Todos se riram.* *Alguém me ligou.* |
+    | wishes | *Deus te ajude!* |
+
+    ### Two verbs with an attractor
+    Both are fine: *Não te vou dizer.* / *Não vou dizer-te.* — the first is more colloquial.
+  examples:
+    - { es: "Não me digas que perdeste o comboio!", en: "Don't tell me you missed the train!", altEs: ["Não me diga que você perdeu o trem!"] }
+    - { es: "Já te disse mil vezes.", en: "I've told you a thousand times.", altEs: ["Já te falei mil vezes."] }
+    - { es: "Acho que te vi ontem no Bairro Alto.", en: "I think I saw you in the Bairro Alto yesterday.", altEs: ["Acho que te vi ontem no Bairro Alto."] }
+    - { es: "Como se diz isto em inglês?", en: "How do you say this in English?" }
+    - { es: "Também me apetece um pastel de nata.", en: "I feel like a custard tart too.", altEs: ["Também estou com vontade de comer um pastel de nata."] }
+  pitfalls:
+    - "*Não diz-me* is always wrong: the negative pulls the pronoun."
+    - "*Também* and *já* are attractors: *Já me vou embora*, not *Já vou-me embora*."
+    - "A plain subject is not an attractor: *Eu chamo-me*, but *Eu também me chamo…*"
+  variant: "In Brazil proclisis is used everywhere in speech, so attractors are only noticeable in formal writing, where the same rules apply."
+  related: [g.ep-enclisis, g.clitic-placement-norm, g.clitic-contractions]
+  drills:
+    - { es: "Ninguém me avisou.", en: "Nobody warned me." }
+    - { es: "Quem te deu isso?", en: "Who gave you that?" }
+    - { es: "Espero que te divirtas em Sintra.", en: "I hope you have fun in Sintra." }
+    - { es: "Não te vou esperar.", en: "I won't wait for you.", altEs: ["Não vou te esperar."] }
+- id: g.clitic-contractions
+  level: c2
+  title: "Contracted pronouns — mo, to, lho, no-lo"
+  summary: "Indirect + direct pronouns merge in Portugal: dá-mo (give it to me), já to disse, entreguei-lho (I gave it to him/her/them)."
+  explanation: |
+    | indirect + direct | o | a | os | as |
+    |---|---|---|---|---|
+    | *me* | **mo** | **ma** | **mos** | **mas** |
+    | *te* | **to** | **ta** | **tos** | **tas** |
+    | *lhe / lhes* | **lho** | **lha** | **lhos** | **lhas** |
+    | *nos* | **no-lo** | **no-la** | **no-los** | **no-las** |
+    | *vos* | **vo-lo** | **vo-la** | **vo-los** | **vo-las** |
+
+    - *O livro? Dá-mo.* — The book? Give it to me.
+    - *A notícia? Já ta contei.* — The news? I've already told you (it).
+    - *As chaves? Entreguei-lhas.* — The keys? I gave them to him / her / them.
+
+    These are normal in European speech (*mo, to, lho* especially) and in formal writing everywhere. Brazil practically never uses them in speech.
+  examples:
+    - { es: "Se precisares do carro, eu empresto-to.", en: "If you need the car, I'll lend it to you.", altEs: ["Se você precisar do carro, eu te empresto."] }
+    - { es: "A carta? Já lha enviei.", en: "The letter? I've already sent it to her.", altEs: ["A carta? Já mandei para ela."] }
+    - { es: "Não mo digas!", en: "Don't tell me (that)!", altEs: ["Não me diga!"] }
+    - { es: "Quem to disse?", en: "Who told you (that)?", altEs: ["Quem te disse isso?"] }
+  pitfalls:
+    - "*Lho* is ambiguous: to him, her, you (formal) or them + it."
+    - "With an attractor the cluster goes before: *Não mo dês*; otherwise after: *Dá-mo*."
+    - "Don't use these in Brazilian speech: they sound European or very literary."
+  variant: "Brazilians repeat the noun, use *isso*, or drop the object: *Me dá. Já te contei. Entreguei para ele.* The contracted forms appear only in very formal or literary Brazilian writing."
+  related: [g.ep-enclisis, g.ep-proclisis-attractors, g.indirect-object-pronouns, g.direct-object-pronouns]
+  drills:
+    - { es: "A fotografia? Mostra-ma!", en: "The photo? Show it to me!", altEs: ["A foto? Me mostra!"] }
+    - { es: "Já to tinha dito.", en: "I had already told you.", altEs: ["Eu já tinha te dito."] }
+    - { es: "Pediu-me o livro e eu dei-lho.", en: "He asked me for the book and I gave it to him.", altEs: ["Ele me pediu o livro e eu dei para ele."] }
+    - { es: "Ninguém no-lo explicou.", en: "Nobody explained it to us.", altEs: ["Ninguém explicou isso para a gente."] }
+- id: g.mesoclisis
+  level: c2
+  title: "Mesoclisis — far-se-á, dir-lhe-ia, dar-te-ei"
+  summary: "With the future and conditional, a pronoun that would follow the verb goes inside it: infinitive stem + pronoun + ending."
+  explanation: |
+    The future and conditional can't take a pronoun at the end. When enclisis would be required, the pronoun goes **between** the infinitive and the ending:
+
+    | without pronoun | with pronoun |
+    |---|---|
+    | *darei* | *dar-**te**-ei* (I will give you) |
+    | *diria* | *dir-**lhe**-ia* (I would tell him) |
+    | *fará* | *far-**se**-á* (it will be done) |
+    | *encontraríamos* | *encontrar-**nos**-íamos* |
+    | *farei + o* | *fá-**lo**-ei* (I will do it) |
+    | *traria + a* | *trá-**la**-ia* |
+
+    ### When it's used
+    - Formal writing, law, official speeches, the press in Portugal: *Realizar-se-á uma reunião.*
+    - With an attractor, use proclisis instead: *Não te darei. Que se fará?*
+    - In speech, Europeans avoid it with *ir* + infinitive or the imperfect: *Vou dar-te. Dava-te.*
+
+    Never put the pronoun after a future: *darei-te* is wrong.
+  examples:
+    - { es: "Realizar-se-á uma reunião na próxima segunda-feira.", en: "A meeting will be held next Monday.", altEs: ["Vai ser realizada uma reunião na próxima segunda-feira."] }
+    - { es: "Dir-se-ia que o tempo parou em Óbidos.", en: "One would say time had stopped in Óbidos." }
+    - { es: "Dar-te-ei uma resposta amanhã.", en: "I will give you an answer tomorrow.", altEs: ["Vou te dar uma resposta amanhã."] }
+    - { es: "Se pudesse, fá-lo-ia já.", en: "If I could, I would do it straight away.", altEs: ["Se pudesse, eu faria isso agora mesmo."] }
+    - { es: "Não te direi nada.", en: "I won't tell you anything." }
+  pitfalls:
+    - "Never *darei-te* or *diria-lhe*: it's *dar-te-ei*, *dir-lhe-ia*."
+    - "Irregular stems shorten: *fazer → far-, dizer → dir-, trazer → trar-*: *dir-lhe-ei, trar-te-ei*."
+    - "With *o / a*, the *r* drops and an accent appears: *fá-lo-ei, di-lo-ia*."
+  variant: "In Brazil mesoclisis is practically absent from speech and rare even in writing, where it sounds extremely formal or old-fashioned; Brazilians say *vou te dar* or *te darei*."
+  related: [g.ep-enclisis, g.future-simple, g.conditional-simple, g.ep-formal-writing]
+  drills:
+    - { es: "Enviar-lhe-emos o contrato por correio.", en: "We will send you the contract by post." }
+    - { es: "Ver-nos-íamos mais vezes se vivêssemos perto.", en: "We would see each other more often if we lived nearby." }
+    - { es: "Ninguém te dirá isso.", en: "Nobody will tell you that." }
+    - { es: "Far-se-á tudo para resolver o problema.", en: "Everything will be done to solve the problem." }
+- id: g.ep-imperfect-for-conditional
+  level: c2
+  title: "Gostava, podia, era capaz de — the imperfect as conditional"
+  summary: "Europeans use the imperfect for polite wishes and hypotheses: Gostava de ir, Podia ajudar-me?, Se tivesse tempo, ia. Era capaz de chover."
+  explanation: |
+    | Portugal (speech) | standard / Brazil |
+    |---|---|
+    | *Gostava de um café.* | *Gostaria de um café.* |
+    | *Podia ajudar-me?* | *Poderia me ajudar?* |
+    | *Devias descansar.* | *Você deveria descansar.* |
+    | *Se tivesse dinheiro, comprava uma casa.* | *…compraria uma casa.* |
+    | *Era melhor irmos.* | *Seria melhor irmos.* |
+
+    ### European expressions
+    - *Era capaz de* + infinitive = it might, probably: *Era capaz de chover.* / *Sou capaz de ir.* (I might go)
+    - *Dava-me jeito* = it would suit me / be handy: *Dava-me jeito sair mais cedo.*
+    - *Apetecia-me* = I'd fancy: *Apetecia-me uma bica.*
+
+    Context separates this from the past imperfect (*Gostava de ler em criança* = I used to like reading).
+  examples:
+    - { es: "Gostava de visitar o Douro na vindima.", en: "I'd like to visit the Douro during the grape harvest.", altEs: ["Eu gostaria de visitar o Douro na vindima."] }
+    - { es: "Podia dizer-me onde fica a Sé?", en: "Could you tell me where the cathedral is?", altEs: ["Poderia me dizer onde fica a Sé?"] }
+    - { es: "Era capaz de chover logo à tarde.", en: "It might rain this afternoon.", altEs: ["Pode ser que chova hoje à tarde."] }
+    - { es: "Dava-me jeito que viesses amanhã.", en: "It would suit me if you came tomorrow.", altEs: ["Seria bom para mim se você viesse amanhã."] }
+    - { es: "Apetecia-me um pastel de nata.", en: "I fancy a custard tart.", altEs: ["Eu queria um pastel de nata."] }
+  pitfalls:
+    - "*Era capaz de* doesn't mean 'was able to' here; it means 'might, would probably'."
+    - "*Dar jeito* is European: in Brazil *dar um jeito* means 'sort something out'."
+    - "*Apetecer* (to fancy) is everyday in Portugal and unusual in Brazil."
+  variant: "Brazilians also use the imperfect this way in speech (*eu ia, eu adorava*), but *gostaria / poderia* are more frequent, and *era capaz de, dar jeito, apetecer* sound European."
+  related: [g.imperfect-uses, g.conditional-simple, g.ep-formal-writing]
+  drills:
+    - { es: "Queria dois bilhetes para Sintra, se faz favor.", en: "I'd like two tickets to Sintra, please.", altEs: ["Eu queria duas passagens para Sintra, por favor."] }
+    - { es: "Se soubesse, tinha vindo mais cedo.", en: "If I'd known, I would have come earlier." }
+    - { es: "Sou capaz de chegar atrasado.", en: "I might be late.", altEs: ["Acho que vou chegar atrasado."] }
+    - { es: "Devias provar a francesinha.", en: "You should try the francesinha.", altEs: ["Você deveria provar a francesinha."] }
+- id: g.ep-formal-writing
+  level: c2
+  title: "Formal European Portuguese — letters, notices and officialese"
+  summary: "Exmo. Senhor, Venho por este meio, Relativamente a, Junto envio, Com os melhores cumprimentos — with enclisis, mesoclisis and European spelling."
+  explanation: |
+    ### Letter frame
+    | | |
+    |---|---|
+    | *Exmo. Senhor / Exma. Senhora* | Dear Sir / Madam (very formal) |
+    | *Caro Dr. Almeida,* | Dear Dr Almeida |
+    | *Venho por este meio solicitar…* | I am writing to request… |
+    | *No seguimento de…* | Further to… |
+    | *Relativamente a…* | With regard to… |
+    | *Junto envio / Envio em anexo…* | Please find enclosed / attached… |
+    | *Fico a aguardar a sua resposta.* | I look forward to your reply. |
+    | *Com os melhores cumprimentos, / Atentamente,* | Yours sincerely |
+
+    ### European connectors and phrases
+    *face a* (in view of), *aquando de* (at the time of), *por forma a* (so as to), *no âmbito de*, *ao abrigo de* (under, e.g. a law).
+
+    ### Grammar
+    Enclisis (*Informa-se que…, Solicita-se…*), mesoclisis in official notices (*Proceder-se-á à…*), European spelling (*facto, receção, contacto*).
+  examples:
+    - { es: "Exma. Senhora, venho por este meio apresentar a minha candidatura.", en: "Dear Madam, I am writing to submit my application." }
+    - { es: "Relativamente à fatura n.º 245, informamos que já foi paga.", en: "With regard to invoice no. 245, we inform you that it has been paid.", altEs: ["Com relação à fatura n.º 245, informamos que já foi paga."] }
+    - { es: "Informa-se que o museu estará encerrado para obras.", en: "Please note that the museum will be closed for works.", altEs: ["Informamos que o museu estará fechado para reforma."] }
+    - { es: "Com os melhores cumprimentos, Ana Ferreira", en: "Yours sincerely, Ana Ferreira", altEs: ["Atenciosamente, Ana Ferreira"] }
+  pitfalls:
+    - "*Prezado* is less common in Portugal; prefer *Caro / Cara* or *Exmo. / Exma.*"
+    - "Don't mix European and Brazilian spellings (*contacto* vs *contato*) in one letter."
+    - "*Aquando de* and *por forma a* are European; in Brazil they sound odd."
+  variant: "Brazilian formal letters open with *Prezado(a)*, close with *Atenciosamente* or *Cordialmente*, use *Segue em anexo* and *Fico no aguardo*, and avoid mesoclisis."
+  related: [g.formal-email, g.mesoclisis, g.ep-spelling-accents, g.formal-address-titles]
+  drills:
+    - { es: "No seguimento do nosso contacto telefónico, envio a documentação.", en: "Further to our phone call, I am sending the documents.", altEs: ["Conforme nosso contato telefônico, envio a documentação."] }
+    - { es: "Proceder-se-á à votação no final da sessão.", en: "The vote will take place at the end of the session." }
+    - { es: "Fico a aguardar a sua resposta.", en: "I look forward to your reply.", altEs: ["Fico no aguardo da sua resposta."] }
+    - { es: "Face ao exposto, solicito a revisão do processo.", en: "In view of the above, I request a review of the case.", altEs: ["Diante do exposto, solicito a revisão do processo."] }
+- id: g.ep-vocabulary-differences
+  level: c2
+  title: "Everyday words that change — autocarro, comboio, telemóvel"
+  summary: "The core everyday vocabulary that differs between Portugal and Brazil: transport, home, food, clothes, tech."
+  explanation: |
+    | English | Portugal | Brazil |
+    |---|---|---|
+    | bus | *autocarro* | *ônibus* |
+    | train | *comboio* | *trem* |
+    | bus stop | *paragem* | *ponto de ônibus* |
+    | mobile phone | *telemóvel* | *celular* |
+    | screen | *ecrã* | *tela* |
+    | breakfast | *pequeno-almoço* | *café da manhã* |
+    | bathroom | *casa de banho* | *banheiro* |
+    | fridge | *frigorífico* | *geladeira* |
+    | ice cream | *gelado* | *sorvete* |
+    | juice | *sumo* | *suco* |
+    | cup | *chávena* | *xícara* |
+    | menu | *ementa* | *cardápio* |
+    | espresso | *bica* (Lisbon), *cimbalino* (Porto) | *cafezinho* |
+    | butcher's | *talho* | *açougue* |
+    | team | *equipa* | *equipe / time* |
+    | goalkeeper | *guarda-redes* | *goleiro* |
+    | pedestrian | *peão* | *pedestre* |
+    | driving licence | *carta de condução* | *carteira de motorista* |
+    | to catch (a bus) | *apanhar* | *pegar* |
+    | to drive | *conduzir* | *dirigir* |
+    | cool! | *fixe!* | *legal!* |
+  examples:
+    - { es: "Apanhei o comboio para Sintra no Rossio.", en: "I caught the train to Sintra at Rossio.", altEs: ["Peguei o trem para Sintra no Rossio."] }
+    - { es: "Onde é a casa de banho?", en: "Where's the bathroom?", altEs: ["Onde é o banheiro?"] }
+    - { es: "Uma bica e um sumo de laranja, se faz favor.", en: "An espresso and an orange juice, please.", altEs: ["Um cafezinho e um suco de laranja, por favor."] }
+    - { es: "Fiquei sem bateria no telemóvel.", en: "My mobile ran out of battery.", altEs: ["Fiquei sem bateria no celular."] }
+    - { es: "A paragem do autocarro é ali.", en: "The bus stop is over there.", altEs: ["O ponto de ônibus é ali."] }
+  pitfalls:
+    - "Both sets are understood almost everywhere thanks to TV, but switch when you live in one country."
+    - "*Pegar* exists in Portugal but *apanhar* is the natural 'catch' there."
+    - "Some words exist on both sides with different meanings (see false friends)."
+  variant: "This note compares both varieties; Brazilian forms are in the right-hand column and in each example's alternative."
+  related: [g.ep-false-friends, g.ep-spelling-accents, g.lusophone-varieties]
+  drills:
+    - { es: "Esqueci-me do telemóvel no autocarro.", en: "I left my mobile on the bus.", altEs: ["Esqueci o celular no ônibus."] }
+    - { es: "O gelado de pistácio é o meu preferido.", en: "Pistachio ice cream is my favourite.", altEs: ["O sorvete de pistache é o meu preferido."] }
+    - { es: "Podia trazer-me a ementa?", en: "Could you bring me the menu?", altEs: ["Poderia me trazer o cardápio?"] }
+    - { es: "Ele conduz muito bem.", en: "He drives very well.", altEs: ["Ele dirige muito bem."] }
+- id: g.ep-false-friends
+  level: c2
+  title: "False friends between Portugal and Brazil"
+  summary: "Same word, different meaning: camisola, propina, mala, apanhar, constipado, miúdo, prenda, rapariga."
+  explanation: |
+    | word | in Portugal | in Brazil |
+    |---|---|---|
+    | *camisola* | jumper, sweater (also sports shirt) | nightdress |
+    | *propina* | university tuition fees | bribe |
+    | *mala* | handbag (also suitcase) | suitcase |
+    | *bolsa* | grant, stock exchange | handbag (also grant) |
+    | *constipado* | having a cold | constipated |
+    | *apanhar* | to catch (bus, cold) | to catch; also to get a beating |
+    | *miúdo* | kid | tiny; *miúdos* = giblets |
+    | *prenda* | present, gift | gift (rare); a skill |
+    | *peão* | pedestrian | farmhand; spinning top |
+    | *ginásio* | gym | (old) secondary school; gym |
+    | *rapariga* | girl (neutral) | derogatory word for a woman in much of Brazil |
+    | *giro* | cute, cool | spin, round |
+
+    Always check which country you are in before using these.
+  examples:
+    - { es: "Leva uma camisola, que à noite arrefece.", en: "Take a jumper, it gets cold at night.", altEs: ["Leva um suéter, que à noite esfria."] }
+    - { es: "As propinas da universidade subiram.", en: "University tuition fees have gone up.", altEs: ["As mensalidades da universidade subiram."] }
+    - { es: "Estou constipado, não vou sair.", en: "I've got a cold, I'm not going out.", altEs: ["Estou resfriado, não vou sair."] }
+    - { es: "Deixei a carteira na mala.", en: "I left my wallet in my handbag.", altEs: ["Deixei a carteira na bolsa."] }
+    - { es: "Que vestido tão giro!", en: "What a cute dress!", altEs: ["Que vestido lindo!", "Que vestido bonitinho!"] }
+  pitfalls:
+    - "*Estou constipado* means very different things in Lisbon and São Paulo."
+    - "*Rapariga* is neutral in Portugal but offensive in much of Brazil: use *moça / menina* there."
+    - "*Propina* in a Brazilian newspaper is about corruption, not universities."
+  variant: "This note is about the two varieties; meanings in Brazil are in the right-hand column."
+  related: [g.ep-vocabulary-differences, g.false-friends, g.slang-br-pt]
+  drills:
+    - { es: "Comprei uma prenda para a minha mãe.", en: "I bought a present for my mother.", altEs: ["Comprei um presente para a minha mãe."] }
+    - { es: "Os miúdos estão a brincar no jardim.", en: "The kids are playing in the garden.", altEs: ["As crianças estão brincando no jardim."] }
+    - { es: "Os peões devem usar a passadeira.", en: "Pedestrians must use the zebra crossing.", altEs: ["Os pedestres devem usar a faixa de pedestres."] }
+    - { es: "Vou ao ginásio depois do trabalho.", en: "I'm going to the gym after work.", altEs: ["Vou à academia depois do trabalho."] }
+- id: g.ep-spelling-accents
+  level: c2
+  title: "European spelling — económico, facto, receção, falámos"
+  summary: "Acute vs circumflex (António / Antônio), consonants kept where pronounced (facto, contacto), and the accented falámos."
+  explanation: |
+    ### Open vowels: acute in Portugal, circumflex in Brazil
+    | Portugal | Brazil |
+    |---|---|
+    | *económico* | *econômico* |
+    | *António* | *Antônio* |
+    | *género* | *gênero* |
+    | *bebé* | *bebê* |
+    | *ténis* | *tênis* |
+    | *Amazónia* | *Amazônia* |
+    | *telefónico* | *telefônico* |
+
+    ### Consonants
+    Since 1990 each country writes the consonants it pronounces:
+    | Portugal | Brazil |
+    |---|---|
+    | *facto* | *fato* |
+    | *contacto* | *contato* |
+    | *receção* | *recepção* |
+    | *perceção* | *percepção* |
+    | *ação, ótimo, diretor* | *ação, ótimo, diretor* (now the same) |
+
+    ### Other differences
+    - *falámos* (we spoke) vs *falamos* (we speak) in Portugal; Brazil writes both *falamos*.
+    - Vocabulary-based spellings: *registo / registro, equipa / equipe, ecrã / tela*.
+  examples:
+    - { es: "A situação económica melhorou.", en: "The economic situation has improved.", altEs: ["A situação econômica melhorou."] }
+    - { es: "De facto, o António tem razão.", en: "In fact, António is right.", altEs: ["De fato, o Antônio tem razão."] }
+    - { es: "Deixe o seu contacto na receção.", en: "Leave your contact details at reception.", altEs: ["Deixe seu contato na recepção."] }
+    - { es: "Ontem falámos com o bebé.", en: "Yesterday we talked to the baby.", altEs: ["Ontem falamos com o bebê."] }
+  pitfalls:
+    - "Choose one norm per text and keep it."
+    - "*Fato* in Portugal means 'suit'; 'fact' is *facto*."
+    - "Brazilian keyboards and spell-checkers will 'correct' European spellings; set the right language."
+  variant: "This note compares both norms; the Brazilian spellings are in the right-hand columns and each example's alternative."
+  related: [g.spelling-agreement, g.accents, g.ep-vocabulary-differences]
+  drills:
+    - { es: "O género do filme é comédia.", en: "The film's genre is comedy.", altEs: ["O gênero do filme é comédia."] }
+    - { es: "Jogamos ténis aos sábados.", en: "We play tennis on Saturdays.", altEs: ["Jogamos tênis aos sábados."] }
+    - { es: "Perdi o contacto dela.", en: "I lost her contact details.", altEs: ["Perdi o contato dela."] }
+    - { es: "A Amazónia é enorme.", en: "The Amazon is huge.", altEs: ["A Amazônia é enorme."] }
+- id: g.classical-portuguese
+  level: c2
+  title: "Classical Portuguese — reading Camões"
+  summary: "Os Lusíadas (1572): ottava rima, Latinate word order, archaic forms (cousa, fermoso, imigo), vós and mythological allusion."
+  explanation: |
+    ### The opening of *Os Lusíadas*
+    *As armas e os barões assinalados,*
+    *Que da ocidental praia Lusitana,*
+    *Por mares nunca de antes navegados,*
+    *Passaram ainda além da Taprobana…*
+
+    ("The arms and the distinguished barons who, from the western Lusitanian shore, through seas never sailed before, went even beyond Taprobane [Sri Lanka]…")
+
+    ### Features
+    - **Ottava rima**: eight ten-syllable lines rhyming ABABABCC.
+    - **Hyperbaton**: the subject *As armas e os barões* waits for its verb (*cantando espalharei*, in the second stanza).
+    - **Archaic forms**: *cousa* (coisa), *fermoso* (formoso), *imigo* (inimigo), *despois* (depois), *ũa* (uma).
+    - **Pronouns and verbs**: *vós*, enclisis and mesoclisis, the simple pluperfect.
+    - **Classical mythology**: Venus, Bacchus, Neptune intervene in the voyage of Vasco da Gama.
+
+    ### The sonnets
+    *Amor é fogo que arde sem se ver* and *Mudam-se os tempos, mudam-se as vontades* are learned by heart in Portuguese and Brazilian schools.
+  examples:
+    - { es: "Por mares nunca de antes navegados", en: "Through seas never sailed before" }
+    - { es: "Amor é fogo que arde sem se ver", en: "Love is a fire that burns unseen" }
+    - { es: "Mudam-se os tempos, mudam-se as vontades", en: "Times change, and wishes change" }
+    - { es: "Cesse tudo o que a Musa antiga canta, / Que outro valor mais alto se alevanta.", en: "Let all that the ancient Muse sings cease, for a higher valour now arises." }
+  pitfalls:
+    - "Don't parse the word order literally: find the verb first, then rebuild the sentence."
+    - "*De antes* (before) is archaic; modern Portuguese says *antes*."
+    - "Spelling in modern editions is updated; original 16th-century spelling looks very different."
+  variant: "Camões is equally canonical in Brazil; Gonçalves Dias's *Canção do Exílio* (*Minha terra tem palmeiras, / Onde canta o Sabiá*) is the Brazilian Romantic echo of this tradition of longing for home."
+  related: [g.poetic-syntax, g.literary-devices, g.literary-language, g.vos-archaic]
+  drills:
+    - { es: "As armas e os barões assinalados", en: "The arms and the distinguished barons" }
+    - { es: "Que da ocidental praia Lusitana", en: "Who from the western Lusitanian shore" }
+    - { es: "É ferida que dói, e não se sente", en: "It's a wound that hurts and is not felt" }
+    - { es: "Passaram ainda além da Taprobana", en: "Went even beyond Taprobane" }
+- id: g.poetic-syntax
+  level: c2
+  title: "Poetic syntax — inversion, ellipsis, metre; reading Pessoa"
+  summary: "Hyperbaton, ellipsis, enjambment, apostrophe, contractions like p'ra and c'o; the redondilha and the decasyllable."
+  explanation: |
+    ### Devices of word order
+    - **Hyperbaton** (inversion): *Do teu sal quanto são lágrimas…*
+    - **Ellipsis**: words left out and understood.
+    - **Enjambment**: a sentence runs over the line break.
+    - **Apostrophe**: addressing someone or something absent: *Ó mar salgado…*
+
+    ### Metre
+    - *redondilha maior* (7 syllables): folk songs, *cordel*, much of Pessoa's lyric verse.
+    - *decassílabo* (10 syllables): Camões, the sonnet.
+    Syllables are counted to the last stressed syllable, merging vowels across words.
+
+    ### Pessoa
+    *Ó mar salgado, quanto do teu sal / São lágrimas de Portugal!* (*Mar Português*)
+    *Tudo vale a pena / Se a alma não é pequena.*
+    *O poeta é um fingidor. / Finge tão completamente / Que chega a fingir que é dor / A dor que deveras sente.* (*Autopsicografia*)
+
+    Poetic contractions: *p'ra* (para), *c'o* (com o), *co'a* (com a), *n'* (em).
+  examples:
+    - { es: "Ó mar salgado, quanto do teu sal / São lágrimas de Portugal!", en: "O salty sea, how much of your salt is tears of Portugal!" }
+    - { es: "Tudo vale a pena / Se a alma não é pequena.", en: "Everything is worthwhile if the soul is not small." }
+    - { es: "O poeta é um fingidor.", en: "The poet is a pretender." }
+    - { es: "Que chega a fingir que é dor / A dor que deveras sente.", en: "That he even pretends is pain the pain he truly feels." }
+  pitfalls:
+    - "*Deveras* = truly (literary); *fingir* = to pretend (not 'to finger')."
+    - "Agreement can look odd in poetry because of inversion: find the real subject."
+    - "Don't use poetic contractions (*p'ra*) in normal writing."
+  variant: "Brazilian poetry uses the same metres; the *redondilha* thrives in the Northeast's *literatura de cordel*, and modernists such as Manuel Bandeira and Drummond favoured free verse."
+  related: [g.classical-portuguese, g.literary-devices, g.literary-language]
+  drills:
+    - { es: "Ó mar salgado", en: "O salty sea" }
+    - { es: "Finge tão completamente", en: "He pretends so completely" }
+    - { es: "Deus quer, o homem sonha, a obra nasce.", en: "God wills, man dreams, the work is born." }
+    - { es: "Navegar é preciso; viver não é preciso.", en: "To sail is necessary; to live is not necessary." }
+- id: g.literary-devices
+  level: c2
+  title: "Literary devices and the great modern writers"
+  summary: "Metaphor, metonymy, antithesis, paradox, irony, anaphora, synaesthesia — in Camões, Eça, Pessoa's heteronyms and Saramago."
+  explanation: |
+    | device | definition | example |
+    |---|---|---|
+    | *metáfora* | implicit comparison | *Amor é fogo…* |
+    | *metonímia* | part for whole, author for work | *Li Eça.* |
+    | *antítese* | opposed ideas | *contente / descontente* |
+    | *paradoxo* | apparent contradiction | *ferida que dói e não se sente* |
+    | *ironia* | saying the opposite | Eça's portraits of Lisbon society |
+    | *anáfora* | repeated opening | *Mudam-se…, mudam-se…* |
+    | *aliteração* | repeated consonants | |
+    | *sinestesia* | mixing senses | *um grito vermelho* |
+    | *hipérbole* | exaggeration | |
+    | *prosopopeia* | personification | *O mar chorava.* |
+
+    ### Writers
+    - **Eça de Queirós** — realist irony: *O Primo Basílio* (1878), *Os Maias* (1888).
+    - **Fernando Pessoa** — the heteronyms Alberto Caeiro, Ricardo Reis and Álvaro de Campos, each with a distinct style.
+    - **José Saramago** — Nobel Prize 1998; long sentences, dialogue marked only by commas and capitals.
+  examples:
+    - { es: "Amor é um contentamento descontente.", en: "Love is a discontented contentment." }
+    - { es: "Li Pessoa durante toda a viagem.", en: "I read Pessoa throughout the trip." }
+    - { es: "Saramago escreve diálogos sem travessões.", en: "Saramago writes dialogue without dashes." }
+    - { es: "Álvaro de Campos é o heterónimo mais futurista de Pessoa.", en: "Álvaro de Campos is Pessoa's most futurist heteronym.", altEs: ["Álvaro de Campos é o heterônimo mais futurista de Pessoa."] }
+  pitfalls:
+    - "A heteronym is not a pseudonym: each has a biography and a style."
+    - "Saramago's punctuation is deliberate; don't 'correct' it when quoting."
+    - "*Romance* in Portuguese means 'novel'."
+  variant: "Brazilian school curricula pair these with Machado de Assis, Guimarães Rosa and Clarice Lispector; the terms for devices are identical."
+  related: [g.classical-portuguese, g.poetic-syntax, g.literary-language, g.irony-humor]
+  drills:
+    - { es: "É um contentamento descontente.", en: "It's a discontented contentment." }
+    - { es: "O Primo Basílio é um romance de Eça de Queirós.", en: "Cousin Basílio is a novel by Eça de Queirós." }
+    - { es: "Ricardo Reis escreve odes clássicas.", en: "Ricardo Reis writes classical odes." }
+    - { es: "A cidade dormia, e o rio velava.", en: "The city slept, and the river kept watch." }
+- id: g.untranslatables
+  level: c2
+  title: "Untranslatables — saudade, desenrascar, cafuné"
+  summary: "Words with no one-word English equivalent, how natives use them, and strategies for translating them."
+  explanation: |
+    | word | rough meaning | where |
+    |---|---|---|
+    | *saudade* | longing for someone or something absent, sweet and sad | both |
+    | *desenrascar(-se)* / *desenrascanço* | to improvise one's way out of trouble | Portugal |
+    | *fazer serão* | to work late into the evening | Portugal |
+    | *lusco-fusco* | twilight, dusk | both |
+    | *cafuné* | running fingers through someone's hair | Brazil |
+    | *xodó* | sweetheart, favourite | Brazil |
+    | *jeitinho* | the knack of getting round a problem | Brazil |
+    | *bom proveito* | enjoy (said to someone eating) | both |
+    | *fado* | fate; the Lisbon / Coimbra song | Portugal |
+
+    ### Strategies
+    1. Keep the word and explain it once (*saudade*).
+    2. Paraphrase (*desenrascar* → "to wing it, to muddle through").
+    3. Find a situational equivalent (*Bom proveito!* → "Enjoy your meal!").
+  examples:
+    - { es: "Tenho saudades de Lisboa.", en: "I miss Lisbon.", altEs: ["Estou com saudade de Lisboa."] }
+    - { es: "Não sabia a resposta, mas lá me desenrasquei.", en: "I didn't know the answer, but I managed to muddle through." }
+    - { es: "Ao lusco-fusco, o Tejo fica dourado.", en: "At dusk, the Tagus turns golden." }
+    - { es: "Bom proveito!", en: "Enjoy your meal!" }
+  pitfalls:
+    - "*Saudade* isn't just nostalgia: you can have *saudade* of a person who is merely away."
+    - "Europeans usually say *ter saudades* (plural); Brazilians *estar com saudade(s)* / *sentir saudade*."
+    - "Don't over-explain in translation: one gloss is enough."
+  variant: "Brazil has its own untranslatables (*cafuné, xodó, jeitinho, malandragem*) and uses *saudade* in the singular more often."
+  related: [g.translation-nuance, g.slang-br-pt, g.idioms]
+  drills:
+    - { es: "Que saudades tenho tuas!", en: "I miss you so much!", altEs: ["Que saudade de você!"] }
+    - { es: "Ontem fiz serão no escritório.", en: "Yesterday I worked late at the office.", altEs: ["Ontem fiquei até tarde no escritório."] }
+    - { es: "O fado fala de saudade e destino.", en: "Fado sings of longing and fate." }
+    - { es: "Ela é o xodó da avó.", en: "She's her grandmother's favourite." }
+- id: g.translation-nuance
+  level: c2
+  title: "Translating with nuance — avoiding calques"
+  summary: "Choose 'you', tense and register deliberately; avoid anglicisms like aplicar para, realizar (= realise), assumir que; adapt to European or Brazilian norms."
+  explanation: |
+    ### Choices English hides
+    - **you** → *tu / você / o senhor / vocês* — decide by country and relationship.
+    - **present perfect** → usually the preterite (*Já comeste?* / *Você já comeu?*), not *tenho comido*.
+    - **-ing** → *estar a* + inf. (PT) / gerund (BR) / infinitive after prepositions.
+    - **noun stacks** → prepositional phrases: *climate change policy* = *política de combate às alterações climáticas* (PT) / *mudanças climáticas* (BR).
+
+    ### Calques to avoid
+    | calque | better |
+    |---|---|
+    | *aplicar para uma vaga* | *candidatar-se a uma vaga* |
+    | *realizar que* (realise) | *perceber / dar-se conta de que* |
+    | *assumir que* (assume) | *supor / partir do princípio de que* |
+    | *suportar* (support a team) | *torcer por* (BR), *apoiar* |
+    | *é suposto* (is supposed to) | *é para…, deve…* (*É suposto* is common in Portugal but criticised) |
+    | *eventualmente* (eventually) | *finalmente, por fim* |
+
+    ### Register and culture
+    Formal English letters → *Exmo. Senhor* (PT) / *Prezado Senhor* (BR); *Cheers!* → *Saúde!*
+  examples:
+    - { es: "Candidatei-me a uma vaga em Coimbra.", en: "I applied for a job in Coimbra.", altEs: ["Me candidatei a uma vaga em Coimbra."] }
+    - { es: "Só então percebi que estava enganado.", en: "Only then did I realise I was wrong.", altEs: ["Só então me dei conta de que estava enganado."] }
+    - { es: "Partimos do princípio de que todos leram o relatório.", en: "We're assuming everyone has read the report." }
+    - { es: "As alterações climáticas afetam o Alentejo.", en: "Climate change is affecting the Alentejo.", altEs: ["As mudanças climáticas afetam o Alentejo."] }
+  pitfalls:
+    - "*Realizar* means 'carry out', not 'realise'."
+    - "*Assumir* means 'take on (a role, responsibility)'; for 'assume' use *supor*."
+    - "Watch the variety: *perceber* (PT) = understand; in Brazil *perceber* is 'notice'."
+  variant: "Brazilian translation norms prefer *você*, *mudanças climáticas*, *entender* for 'understand', *torcer por* a team, and Brazilian spelling; European norms use *tu / o senhor*, *alterações climáticas*, *perceber* and European spelling."
+  related: [g.untranslatables, g.false-friends, g.br-ep-grammar-overview]
+  drills:
+    - { es: "Não percebi a pergunta.", en: "I didn't understand the question.", altEs: ["Não entendi a pergunta."] }
+    - { es: "Para que equipa torces?", en: "Which team do you support?", altEs: ["Para que time você torce?"] }
+    - { es: "A reunião realizou-se em Lisboa.", en: "The meeting took place in Lisbon.", altEs: ["A reunião foi realizada em Lisboa."] }
+    - { es: "Suponho que já saibas.", en: "I assume you already know.", altEs: ["Suponho que você já saiba."] }
+- id: g.slang-br-pt
+  level: c2
+  title: "Slang on both sides — fixe, bué, pá / legal, massa, cara"
+  summary: "Everyday informal words from Lisbon and Brazil: what they mean and where they work."
+  explanation: |
+    | meaning | Portugal | Brazil |
+    |---|---|---|
+    | cool, great | *fixe, porreiro, baril* | *legal, massa, show, top* |
+    | very, a lot | *bué (de)* | *muito, pra caramba, mó* (São Paulo) |
+    | mate, dude | *pá, meu* | *cara, mano, véi* |
+    | guy | *gajo* | *cara* |
+    | kid | *miúdo, catraio* | *moleque, guri* (South) |
+    | old person, parent | *cota* | *coroa* |
+    | yeah | *ya* | *é, aham* |
+    | gang, crowd | *malta* | *galera, turma* |
+    | thing, stuff | *cena* | *parada, coisa, trem* (Minas) |
+    | it's fine, chill | *na boa, tá-se bem* | *de boa, suave, tranquilo* |
+    | outing | *saída* | *rolê* |
+    | drama, fight | *bronca* | *treta* |
+
+    Slang changes fast and marks age and region: recognise it before you use it.
+  examples:
+    - { es: "Ya, a festa estava bué fixe!", en: "Yeah, the party was really cool!", altEs: ["É, a festa estava muito legal!"] }
+    - { es: "Pá, que cena é essa?", en: "Mate, what's that thing?", altEs: ["Cara, que parada é essa?"] }
+    - { es: "A malta vai jantar ao Bairro Alto.", en: "The gang is going to have dinner in the Bairro Alto.", altEs: ["A galera vai jantar no Bairro Alto."] }
+    - { es: "Tá-se bem, não te preocupes.", en: "It's all good, don't worry.", altEs: ["Tá de boa, não se preocupa."] }
+  pitfalls:
+    - "Slang that is harmless on one side can be vulgar on the other: check before using it."
+    - "*Gajo* and *cota* are informal and can be disrespectful depending on tone."
+    - "In Portugal *cena* (thing) is everywhere in young people's speech; in Brazil *cena* only means 'scene'."
+  variant: "This note covers both varieties; Brazilian equivalents are in the right-hand column and in each example's alternative."
+  related: [g.untranslatables, g.ep-false-friends, g.register-formal-informal, g.spoken-reductions]
+  drills:
+    - { es: "Esse concerto foi porreiro!", en: "That concert was great!", altEs: ["Esse show foi massa!"] }
+    - { es: "Os meus cotas não me deixam sair.", en: "My parents won't let me go out.", altEs: ["Meus coroas não me deixam sair."] }
+    - { es: "Estava bué de gente na praia.", en: "There were loads of people on the beach.", altEs: ["Tinha muita gente na praia."] }
+    - { es: "Na boa, pá.", en: "No worries, mate.", altEs: ["De boa, cara."] }
+- id: g.br-ep-grammar-overview
+  level: c2
+  title: "Brazilian and European grammar side by side"
+  summary: "A synthesis of every grammatical difference in the course: address, progressive, clitics, articles, há/tem, future and conditional, prepositions."
+  explanation: |
+    | feature | Portugal | Brazil |
+    |---|---|---|
+    | informal you | *tu falas* | *você fala* (*tu fala*) |
+    | progressive | *estou a falar* | *estou falando* |
+    | clitic, plain sentence | *Ele disse-me.* | *Ele me disse.* |
+    | clitic, sentence start | *Diz-me.* | *Me diz.* |
+    | two verbs | *Vou dizer-te.* | *Vou te dizer.* |
+    | future / conditional + clitic | *dir-te-ei* (formal) | *vou te dizer / te direi* |
+    | contracted clitics | *dá-mo, lho* | *me dá, para ele* |
+    | 3rd-person object | *Vi-o.* | *Vi ele. / Vi.* |
+    | articles | *a Maria, o meu carro* | *(a) Maria, (o) meu carro* |
+    | there is | *há* | *tem* (speech), *há* |
+    | polite conditional | *gostava, podia* | *gostaria, poderia* |
+    | have to | *ter de* | *ter que* |
+    | arrive at | *chegar a* | *chegar em* (speech) |
+    | need to | *precisar de ir* | *precisar ir* |
+    | negative tu command | *Não fales!* | *Não fala!* (speech) |
+    | 'we' (colloquial) | *nós* (*a gente* less) | *a gente* |
+    | past *-ar* 'we' | *falámos* | *falamos* |
+
+    Both are correct Portuguese; consistency within one text is what matters.
+  examples:
+    - { es: "Estou a ler um livro que a Ana me emprestou.", en: "I'm reading a book Ana lent me.", altEs: ["Estou lendo um livro que a Ana me emprestou."] }
+    - { es: "Tens de ver isto!", en: "You've got to see this!", altEs: ["Você tem que ver isso!"] }
+    - { es: "Ontem chegámos a casa tarde.", en: "Yesterday we got home late.", altEs: ["Ontem a gente chegou em casa tarde."] }
+    - { es: "Há muita gente na Baixa.", en: "There are a lot of people in the Baixa.", altEs: ["Tem muita gente na Baixa."] }
+    - { es: "Gostava que me ligasses.", en: "I'd like you to call me.", altEs: ["Eu gostaria que você me ligasse."] }
+  pitfalls:
+    - "Hybrid sentences (*Você estás a…*, *Me disse-lhe*) sound wrong to everyone."
+    - "Brazilian writing is closer to European than Brazilian speech is; formal texts converge."
+    - "Don't 'correct' a Portuguese speaker's enclisis or a Brazilian's proclisis: both are native."
+  variant: "Every row compares the two norms; this is the master reference for switching between them."
+  related: [g.lusophone-varieties, g.ep-enclisis, g.ep-estar-a-infinitive, g.ep-tu-forms]
+  drills:
+    - { es: "Diz-me o que estás a pensar.", en: "Tell me what you're thinking.", altEs: ["Me diz o que você está pensando."] }
+    - { es: "Preciso de ir ao banco.", en: "I need to go to the bank.", altEs: ["Preciso ir ao banco."] }
+    - { es: "Vi-o ontem no metro.", en: "I saw him yesterday on the metro.", altEs: ["Vi ele ontem no metrô."] }
+    - { es: "Não te preocupes, eu levo-te.", en: "Don't worry, I'll take you.", altEs: ["Não se preocupa, eu te levo."] }
+- id: g.native-fluency-markers
+  level: c2
+  title: "Sounding native — fillers, backchannels and rhythm"
+  summary: "Discourse particles (né, tipo, pois, pá, olha, então), backchannelling (pois é, a sério?, jura?), reductions and natural collocations."
+  explanation: |
+    ### Fillers and particles
+    | function | Portugal | Brazil |
+    |---|---|---|
+    | tag | *não é?, sabes?* | *né?* |
+    | hesitation | *pronto, portanto, ora bem* | *tipo, então, assim* |
+    | getting attention | *olha, ouve lá* | *olha, ó, escuta* |
+    | agreement | *pois, pois é, exato* | *pois é, é, exatamente* |
+    | surprise | *a sério?!* | *sério?!, jura?!, nossa!* |
+    | wrapping up | *pronto* | *enfim, então tá* |
+
+    ### Backchannelling
+    Short reactions while someone talks: *Hum-hum. Pois. Ahã. Ah, é? Que coisa!*
+
+    ### Rhythm and reduction
+    Natives link and reduce words: PT *'tás bom?* (estás), BR *cê tá bom?* Listening to fast connected speech is part of C2.
+
+    ### Collocations and idioms
+    Fluency is less about rare words than natural combinations: *fazer uma pergunta, tomar uma decisão, ter jeito para, dar jeito, correr bem*.
+  examples:
+    - { es: "Pronto, então fica combinado.", en: "Right, so that's settled.", altEs: ["Então tá, fica combinado."] }
+    - { es: "A sério? Não sabia!", en: "Really? I didn't know!", altEs: ["Sério? Não sabia!", "Jura? Não sabia!"] }
+    - { es: "Olha, sabes que mais? Vamos a pé.", en: "Look, you know what? Let's walk.", altEs: ["Olha, quer saber? Vamos a pé."] }
+    - { es: "Pois é, a vida é assim.", en: "Yeah, that's life." }
+  pitfalls:
+    - "Overusing fillers sounds nervous; use them as natives do — lightly."
+    - "*Pronto* in Portugal is a filler ('right, OK'), not 'ready'."
+    - "*Tipo* every few words marks a young Brazilian speaker; adjust to your audience."
+  variant: "This note compares both varieties; Brazilian equivalents are in the table and each example's alternative."
+  related: [g.br-ep-grammar-overview, g.slang-br-pt, g.pragmatics, g.spoken-reductions]
+  drills:
+    - { es: "Pois, tens razão.", en: "Yeah, you're right.", altEs: ["É, você tem razão."] }
+    - { es: "Correu tudo bem, pronto.", en: "Everything went fine, so there we are.", altEs: ["Deu tudo certo, enfim."] }
+    - { es: "Ouve lá, vens ou não vens?", en: "Listen, are you coming or not?", altEs: ["Escuta, você vem ou não vem?"] }
+    - { es: "Que coisa!", en: "Well, I never!" }
+- id: g.c2-review
+  level: c2
+  title: "C2 review — choosing form, norm and register"
+  summary: "A final checklist: mood and tense, clitic placement by variety, register, and consistency between European and Brazilian norms."
+  explanation: |
+    ### 1. Mood
+    Fact → indicative; attitude, wish, doubt, purpose, concession → subjunctive; open future (*quando, se, quem*) → future subjunctive; own subject after a preposition → personal infinitive.
+
+    ### 2. Tense
+    Preterite for completed events (including English "have done"); *tenho feito* only for repeated or ongoing actions; imperfect for background, habits and (in speech) the conditional.
+
+    ### 3. Clitics
+    | | Brazil | Portugal |
+    |---|---|---|
+    | speech | proclisis | enclisis unless attracted |
+    | formal writing | no clitic at sentence start; attractors | same, plus mesoclisis |
+
+    ### 4. Register
+    WhatsApp, conversation, email, report, essay, literature: each has its pronouns, vocabulary and syntax.
+
+    ### 5. Norm
+    Pick Brazilian or European for the whole text: address, progressive, clitics, spelling and vocabulary should all agree.
+  examples:
+    - { es: "Quando chegares a Lisboa, liga-me.", en: "When you get to Lisbon, call me.", altEs: ["Quando você chegar a Lisboa, me liga."] }
+    - { es: "Embora estivesse cansada, ficou a ouvir fado até de madrugada.", en: "Although she was tired, she stayed listening to fado until the early hours.", altEs: ["Embora estivesse cansada, ficou ouvindo fado até de madrugada."] }
+    - { es: "Ter-te-ia avisado, se soubesse.", en: "I would have warned you, had I known.", altEs: ["Eu teria te avisado, se soubesse."] }
+    - { es: "É importante sabermos as duas normas.", en: "It's important for us to know both norms." }
+  pitfalls:
+    - "Consistency beats perfection: one norm per text."
+    - "At C2, errors that matter are register clashes and hybrid norms, not single endings."
+    - "Keep reading literature and press from both countries: they are the best teachers now."
+  variant: "The checklist applies to both norms; the Brazilian forms are given as alternatives in the examples."
+  related: [g.b1-review, g.br-ep-grammar-overview, g.native-fluency-markers, g.subjunctive-nuance]
+  drills:
+    - { es: "Se me tivesses dito, tinha ido.", en: "If you'd told me, I'd have gone.", altEs: ["Se você tivesse me dito, eu teria ido."] }
+    - { es: "Espero que tenhas gostado de Portugal.", en: "I hope you enjoyed Portugal.", altEs: ["Espero que você tenha gostado de Portugal."] }
+    - { es: "Não te esqueças de mim.", en: "Don't forget me.", altEs: ["Não se esqueça de mim."] }
+    - { es: "Ao chegarmos ao Porto, fomos ver o Douro.", en: "When we got to Porto, we went to see the Douro." }

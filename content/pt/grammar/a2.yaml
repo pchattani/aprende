@@ -1,0 +1,1818 @@
+# A2 grammar notes (Brazilian Portuguese; European Portuguese in `variant`).
+# Explanations use light markdown: ### headings, bullets, tables, **bold**,
+# *italic* (italic = Portuguese inline). Field `es` = Portuguese text.
+- id: g.preterite-regular
+  level: a2
+  title: "The preterite (pretérito perfeito) of regular verbs"
+  summary: "falei, falou, falamos, falaram; comi, comeu; abri, abriu — completed past actions."
+  explanation: |
+    | | falar | comer | abrir |
+    |---|---|---|---|
+    | eu | fal**ei** | com**i** | abr**i** |
+    | você / ele / ela | fal**ou** | com**eu** | abr**iu** |
+    | nós | fal**amos** | com**emos** | abr**imos** |
+    | vocês / eles / elas | fal**aram** | com**eram** | abr**iram** |
+    | (tu) | (fal**aste**) | (com**este**) | (abr**iste**) |
+
+    ### Uses
+    - Completed actions at a specific time: *Ontem eu trabalhei até tarde.*
+    - A sequence of events: *Cheguei, tomei banho e saí.*
+    - **Also where English uses "have done"**: *Você já comeu?* (Have you eaten?) *Nunca vi isso.* (I've never seen that.)
+
+    The *nós* form of *-ar* and *-ir* verbs is the same as the present: *falamos, abrimos*. Context or a time word makes it clear.
+  examples:
+    - { es: "Ontem eu trabalhei até as dez.", en: "Yesterday I worked until ten.", altEs: ["Ontem trabalhei até as dez."] }
+    - { es: "Você já almoçou?", en: "Have you had lunch yet?", altEn: ["Did you have lunch already?"] }
+    - { es: "A gente comeu num restaurante japonês.", en: "We ate in a Japanese restaurant.", altEs: ["Nós comemos num restaurante japonês."] }
+    - { es: "Eles assistiram ao jogo no bar.", en: "They watched the match in the bar.", altEs: ["Eles assistiram o jogo no bar."] }
+    - { es: "Ela abriu a janela.", en: "She opened the window." }
+  pitfalls:
+    - "Spanish speakers: *habló* becomes *falou*, *comió* becomes *comeu*, *hablaron* becomes *falaram*."
+    - "English speakers: use the preterite for most 'have done' sentences; the Portuguese *tenho feito* means something different (see A2 u06)."
+    - "*Eu* and *você* forms differ: *eu falei*, *você falou*."
+  variant: "European Portuguese writes the *nós* past of *-ar* verbs with an accent to tell it from the present: *falámos* (we spoke) vs *falamos* (we speak). *Tu falaste, comeste, abriste* are everyday forms in Portugal."
+  related: [g.past-time-markers, g.preterite-spelling, g.preterite-irregular, g.preterite-vs-imperfect]
+  drills:
+    - { es: "Eu comprei um presente para a minha mãe.", en: "I bought a present for my mother." }
+    - { es: "Vocês gostaram do show?", en: "Did you like the concert?" }
+    - { es: "Ele não entendeu a pergunta.", en: "He didn't understand the question." }
+    - { es: "Nós dividimos a conta.", en: "We split the bill." }
+- id: g.past-time-markers
+  level: a2
+  title: "Past time expressions — ontem, semana passada, há dois dias"
+  summary: "ontem, anteontem, semana passada, ano passado, há / faz dois dias, em 2019, outro dia."
+  explanation: |
+    | | |
+    |---|---|
+    | *ontem* | yesterday |
+    | *anteontem* | the day before yesterday |
+    | *ontem à noite* | last night |
+    | *semana passada* / *na semana passada* | last week |
+    | *mês passado, ano passado* | last month, last year |
+    | *no sábado (passado)* | (last) Saturday |
+    | *há dois dias* / *faz dois dias* | two days ago |
+    | *outro dia* | the other day |
+    | *em 2019, em março* | in 2019, in March |
+    | *uma vez* | once |
+    | *de repente* | suddenly |
+
+    ### "Ago"
+    *Há* (from *haver*) or, in speech, *faz* + time: *Cheguei há três semanas.* / *Cheguei faz três semanas.* Don't confuse *há* (ago) with *a* (distance or future time): *daqui a três semanas* (in three weeks).
+  examples:
+    - { es: "Ontem à noite a gente foi a um bar.", en: "Last night we went to a bar." }
+    - { es: "Mudei para São Paulo há dois anos.", en: "I moved to São Paulo two years ago.", altEs: ["Mudei para São Paulo faz dois anos."] }
+    - { es: "Semana passada choveu muito.", en: "Last week it rained a lot.", altEs: ["Na semana passada choveu muito."] }
+    - { es: "Outro dia eu vi o seu irmão.", en: "The other day I saw your brother." }
+  pitfalls:
+    - "Spanish speakers: *hace dos días* is *há dois dias* (from *haver*) or, in speech, *faz dois dias*."
+    - "*Há* (ago) is spelled with h; *a* without h refers to the future or distance: *daqui a dois dias*."
+    - "*Semana passada* in Brazil often drops the article and preposition."
+  variant: "In Portugal *na semana passada* (with *na*) is the norm, and *faz dois dias* is less common than *há dois dias*."
+  related: [g.preterite-regular, g.ha-faz-time, g.dates-years]
+  drills:
+    - { es: "Anteontem fiquei em casa.", en: "The day before yesterday I stayed home." }
+    - { es: "Ela chegou há uma hora.", en: "She arrived an hour ago.", altEs: ["Ela chegou faz uma hora."] }
+    - { es: "Ano passado eu viajei para o Sul.", en: "Last year I travelled to the South." }
+    - { es: "No sábado a gente jantou fora.", en: "On Saturday we ate out." }
+- id: g.preterite-spelling
+  level: a2
+  title: "Spelling changes in the preterite — fiquei, cheguei, comecei"
+  summary: "-car → -quei, -gar → -guei, -çar → -cei in the eu form; saí, caí, construí with accents."
+  explanation: |
+    To keep the sound of the stem, the **eu** form changes spelling:
+
+    | ending | eu | ele |
+    |---|---|---|
+    | *-car*: ficar | **fiquei** | ficou |
+    | *-gar*: chegar | **cheguei** | chegou |
+    | *-çar*: começar | **comecei** | começou |
+
+    More: *tocar → toquei, buscar → busquei, pagar → paguei, jogar → joguei, almoçar → almocei, abraçar → abracei*.
+
+    ### Verbs in -air, -uir, -oer
+    They need accents to mark the separate vowel:
+
+    | | sair | construir |
+    |---|---|---|
+    | eu | *saí* | *construí* |
+    | ele | *saiu* | *construiu* |
+    | nós | *saímos* | *construímos* |
+    | eles | *saíram* | *construíram* |
+
+    *Ler → li, leu, lemos, leram.*
+  examples:
+    - { es: "Cheguei tarde ao trabalho.", en: "I got to work late.", altEs: ["Cheguei atrasado no trabalho."] }
+    - { es: "Fiquei em casa o fim de semana todo.", en: "I stayed home all weekend." }
+    - { es: "Comecei a estudar português em janeiro.", en: "I started studying Portuguese in January." }
+    - { es: "Paguei com cartão.", en: "I paid by card." }
+    - { es: "Saímos às nove.", en: "We left at nine." }
+  pitfalls:
+    - "Only the *eu* form changes: *eu fiquei* but *ele ficou*."
+    - "Don't forget the accent on *saí, caí, saímos*: *sai* without it is present ('he leaves')."
+    - "Spanish speakers: the logic is the same as *busqué, llegué, empecé*."
+  variant: "Same spelling in Portugal, plus the accent on *-ar* verbs in the *nós* form: *chegámos, ficámos*."
+  related: [g.preterite-regular, g.preterite-irregular]
+  drills:
+    - { es: "Eu joguei futebol ontem.", en: "I played football yesterday." }
+    - { es: "Toquei violão na festa.", en: "I played the guitar at the party." }
+    - { es: "Eu li o livro em dois dias.", en: "I read the book in two days." }
+    - { es: "Ela saiu sem dizer tchau.", en: "She left without saying goodbye." }
+- id: g.preterite-irregular
+  level: a2
+  title: "Irregular preterites — tive, fiz, disse, pude, quis"
+  summary: "ter, estar, fazer, dizer, poder, querer, saber, trazer, pôr: irregular stems with special eu and ele forms."
+  explanation: |
+    | | eu | você / ele | nós | eles |
+    |---|---|---|---|---|
+    | *ter* | **tive** | **teve** | tivemos | tiveram |
+    | *estar* | **estive** | **esteve** | estivemos | estiveram |
+    | *fazer* | **fiz** | **fez** | fizemos | fizeram |
+    | *dizer* | **disse** | **disse** | dissemos | disseram |
+    | *poder* | **pude** | **pôde** | pudemos | puderam |
+    | *querer* | **quis** | **quis** | quisemos | quiseram |
+    | *saber* | **soube** | **soube** | soubemos | souberam |
+    | *trazer* | **trouxe** | **trouxe** | trouxemos | trouxeram |
+    | *pôr* | **pus** | **pôs** | pusemos | puseram |
+    | *haver* | — | **houve** | — | — |
+
+    Note the eu / ele contrast in many: *tive / teve, fiz / fez, pude / pôde, estive / esteve*.
+
+    *Pôde* (could, past) has a circumflex; *pode* (can, present) does not. *Trouxe* is pronounced "trôssi".
+  examples:
+    - { es: "Tive um problema com o carro.", en: "I had a problem with the car." }
+    - { es: "O que você fez no fim de semana?", en: "What did you do at the weekend?" }
+    - { es: "Ela disse que vem amanhã.", en: "She said she's coming tomorrow." }
+    - { es: "Não pude ir à festa.", en: "I couldn't go to the party." }
+    - { es: "Quem trouxe o vinho?", en: "Who brought the wine?" }
+  pitfalls:
+    - "Spanish speakers: *hizo* is *fez*, *tuvo* is *teve*, *trajo* is *trouxe*, *quiso* is *quis*."
+    - "Don't mix eu and ele: *eu fiz*, *ele fez*; *eu tive*, *ele teve*."
+    - "*Pôde* (past) vs *pode* (present): the hat matters in writing."
+  variant: "In Portugal *tu tiveste, fizeste, disseste* are everyday forms, and *estive* / *esteve* are pronounced with reduced vowels (*'stive*)."
+  related: [g.preterite-regular, g.preterite-ser-ir, g.preterite-dar-ver-vir, g.preterite-vs-imperfect]
+  drills:
+    - { es: "Estive em São Paulo semana passada.", en: "I was in São Paulo last week." }
+    - { es: "Eles fizeram um churrasco no domingo.", en: "They had a barbecue on Sunday." }
+    - { es: "Ninguém quis sair.", en: "Nobody wanted to go out.", altEn: ["Nobody felt like going out."] }
+    - { es: "Onde você pôs as chaves?", en: "Where did you put the keys?" }
+    - { es: "Houve um acidente na avenida.", en: "There was an accident on the avenue." }
+- id: g.preterite-ser-ir
+  level: a2
+  title: "Fui, foi, fomos, foram — ser and ir share the preterite"
+  summary: "fui = I was and I went; context tells you which."
+  explanation: |
+    | | ser / ir |
+    |---|---|
+    | eu | **fui** |
+    | você / ele / ela | **foi** |
+    | nós | **fomos** |
+    | vocês / eles / elas | **foram** |
+    | (tu) | (*foste*) |
+
+    ### How to tell them apart
+    - **ir** is followed by a destination with *a / para*: *Fui ao Rio. Fomos para a praia.*
+    - **ser** is followed by a description, a noun or a time: *Foi ótimo! Foi um dia longo. Ele foi meu professor.*
+
+    ### Very common phrases
+    *Como foi?* (How was it?) — *Foi muito bom!* *Foi mal!* (My bad! Sorry!, slang) *Já foi!* (Done!)
+  examples:
+    - { es: "Fui a Curitiba de ônibus.", en: "I went to Curitiba by bus." }
+    - { es: "A viagem foi incrível.", en: "The trip was amazing." }
+    - { es: "Como foi a entrevista?", en: "How was the interview?" }
+    - { es: "Eles foram ao jogo do Corinthians.", en: "They went to the Corinthians match." }
+    - { es: "Foi mal, esqueci!", en: "Sorry, I forgot!" }
+  pitfalls:
+    - "Spanish speakers: *fue* is *foi*, *fueron* is *foram*."
+    - "*Foi* + adjective describes how something was: *Foi difícil*, not *Esteve difícil*."
+    - "*Fomos* (we went / were) vs *formos* (future subjunctive, B1)."
+  variant: "Identical in Portugal, with *tu foste*. *Foi mal* is Brazilian slang."
+  related: [g.preterite-irregular, g.ir-present, g.ser-present]
+  drills:
+    - { es: "Nós fomos à praia no sábado.", en: "We went to the beach on Saturday.", altEs: ["A gente foi à praia no sábado."] }
+    - { es: "O jantar foi delicioso.", en: "Dinner was delicious." }
+    - { es: "Você foi ao médico?", en: "Did you go to the doctor?" }
+    - { es: "Foi um prazer!", en: "It was a pleasure!" }
+- id: g.preterite-dar-ver-vir
+  level: a2
+  title: "Dei, vi, vim — the preterite of dar, ver and vir"
+  summary: "dar: dei, deu; ver: vi, viu; vir: vim, veio — three short verbs that are easy to mix up."
+  explanation: |
+    | | dar (give) | ver (see) | vir (come) |
+    |---|---|---|---|
+    | eu | **dei** | **vi** | **vim** |
+    | você / ele / ela | **deu** | **viu** | **veio** |
+    | nós | **demos** | **vimos** | **viemos** |
+    | vocês / eles / elas | **deram** | **viram** | **vieram** |
+    | (tu) | (*deste*) | (*viste*) | (*vieste*) |
+
+    ### Traps
+    - *viu* (he saw) vs *veio* (he came)
+    - *vimos* = we saw (past of *ver*) **and** we come (present of *vir*); *viemos* = we came
+    - *viram* (they saw) vs *vieram* (they came)
+
+    ### Expressions with dar
+    *Deu certo!* (It worked!) *Não deu.* (It didn't work out / I couldn't.) *Deu tudo errado.* (Everything went wrong.)
+  examples:
+    - { es: "Eu vi o show do Gil em 2019.", en: "I saw Gil's concert in 2019." }
+    - { es: "Ela veio de Porto Alegre de carro.", en: "She came from Porto Alegre by car." }
+    - { es: "A gente deu um presente para ele.", en: "We gave him a present.", altEs: ["Nós demos um presente para ele."] }
+    - { es: "Vocês viram o jogo ontem?", en: "Did you see the match yesterday?" }
+    - { es: "Deu certo!", en: "It worked!" }
+  pitfalls:
+    - "Spanish speakers: *vino* (he came) is *veio*; *vio* (he saw) is *viu*."
+    - "*Vieram* (came) and *viram* (saw) differ by one syllable; read carefully."
+    - "*Não deu* is very common: 'it wasn't possible': *Desculpa, não deu para ir.*"
+  variant: "In Portugal *tu deste, viste, vieste* are the informal forms. *Deu certo* is mostly Brazilian; Europeans say *Correu bem* (it went well)."
+  related: [g.vir-vs-ver, g.preterite-irregular, g.preterite-ser-ir]
+  drills:
+    - { es: "Eu vim aqui para trabalhar.", en: "I came here to work." }
+    - { es: "Você viu meu celular?", en: "Have you seen my phone?" }
+    - { es: "Eles vieram para o meu aniversário.", en: "They came to my birthday party." }
+    - { es: "Não deu para terminar.", en: "I couldn't finish.", altEn: ["There wasn't time to finish."] }
+- id: g.dates-years
+  level: a2
+  title: "Years, dates and ordinal numbers"
+  summary: "em 1998, no dia 7 de setembro de 1822, primeiro de janeiro, o século XX; primeiro, segundo, terceiro…"
+  explanation: |
+    ### Years
+    Read years as normal numbers: *1998* = *mil novecentos e noventa e oito*, *2024* = *dois mil e vinte e quatro*. "In 2010" is *em 2010*.
+
+    ### Dates
+    - *Nasci no dia 15 de maio de 1990.* / *Nasci em 15 de maio de 1990.*
+    - The first of the month uses the ordinal: *1º de janeiro* (*primeiro de janeiro*).
+    - Decades: *nos anos 80* (in the eighties).
+    - Centuries in Roman numerals: *século XIX* (*dezenove*), *século XXI* (*vinte e um*).
+
+    ### Ordinals
+    | | | |
+    |---|---|---|
+    | 1º *primeiro* | 4º *quarto* | 7º *sétimo* |
+    | 2º *segundo* | 5º *quinto* | 8º *oitavo* |
+    | 3º *terceiro* | 6º *sexto* | 9º *nono* |
+    | 10º *décimo* | 20º *vigésimo* | 100º *centésimo* |
+
+    Ordinals agree: *a primeira vez, o segundo andar, as primeiras semanas*.
+  examples:
+    - { es: "O Brasil ficou independente em 1822.", en: "Brazil became independent in 1822." }
+    - { es: "Meu pai nasceu no dia 3 de março de 1965.", en: "My father was born on 3 March 1965." }
+    - { es: "É a primeira vez que venho a São Paulo.", en: "It's the first time I've come to São Paulo." }
+    - { es: "Moro no quinto andar.", en: "I live on the fifth floor." }
+    - { es: "Nos anos 90 a música sertaneja ficou famosa.", en: "In the nineties sertanejo music became famous." }
+  pitfalls:
+    - "Spanish speakers: *el 5 de mayo* is *(no dia) 5 de maio*; the 1st is *primeiro*, not *um*."
+    - "*Dois mil e vinte* (2020): keep the *e* before the last group."
+    - "Centuries after ten use cardinals when read: *século XXI* = *século vinte e um*."
+  variant: "European Portuguese uses *a* for dates: *Nasceu a 10 de junho de 1580.* It also says *o dia um* less often than Brazil and writes ordinals the same way."
+  related: [g.numbers-100-plus, g.days-months, g.preterite-irregular]
+  drills:
+    - { es: "Hoje é dia vinte de outubro.", en: "Today is the twentieth of October." }
+    - { es: "Ela chegou em segundo lugar.", en: "She came in second place." }
+    - { es: "O metrô de São Paulo abriu em 1974.", en: "The São Paulo metro opened in 1974." }
+    - { es: "A festa é no primeiro sábado do mês.", en: "The party is on the first Saturday of the month." }
+- id: g.imperfect
+  level: a2
+  title: "The imperfect (pretérito imperfeito) — forms"
+  summary: "falava, comia, abria; only four irregular verbs: era, tinha, vinha, punha."
+  explanation: |
+    | | falar | comer | abrir |
+    |---|---|---|---|
+    | eu | fal**ava** | com**ia** | abr**ia** |
+    | você / ele / ela | fal**ava** | com**ia** | abr**ia** |
+    | nós | fal**ávamos** | com**íamos** | abr**íamos** |
+    | vocês / eles / elas | fal**avam** | com**iam** | abr**iam** |
+    | (tu) | (fal**avas**) | (com**ias**) | (abr**ias**) |
+
+    ### The only irregular verbs
+    | | ser | ter | vir | pôr |
+    |---|---|---|---|---|
+    | eu / ele | *era* | *tinha* | *vinha* | *punha* |
+    | nós | *éramos* | *tínhamos* | *vínhamos* | *púnhamos* |
+    | eles | *eram* | *tinham* | *vinham* | *punham* |
+
+    *Eu* and *ele* share the same form, so use the pronoun when it isn't clear: *Eu falava…*
+  examples:
+    - { es: "Quando eu era criança, morava em Florianópolis.", en: "When I was a child, I lived in Florianópolis." }
+    - { es: "A gente tinha um cachorro chamado Bob.", en: "We had a dog called Bob.", altEs: ["Nós tínhamos um cachorro chamado Bob."] }
+    - { es: "Meu avô vinha nos visitar aos domingos.", en: "My grandfather used to come and visit us on Sundays." }
+    - { es: "Eles falavam alemão em casa.", en: "They spoke German at home.", altEn: ["They used to speak German at home."] }
+  pitfalls:
+    - "Spanish speakers: *tenía* is *tinha*, *venía* is *vinha*; no other surprises."
+    - "The *nós* forms carry an accent: *falávamos, comíamos, éramos*."
+    - "*Eu era* and *ele era* are identical: add the subject."
+  variant: "Same forms in Portugal, with *tu falavas, tu eras, tu tinhas*. Europeans use the imperfect very often in place of the conditional (*gostava*, *podia*)."
+  related: [g.imperfect-uses, g.costumar, g.preterite-vs-imperfect]
+  drills:
+    - { es: "Eu estudava à noite.", en: "I used to study at night.", altEn: ["I studied at night."] }
+    - { es: "A casa era pequena, mas tinha um jardim.", en: "The house was small, but it had a garden." }
+    - { es: "Nós íamos à praia todo verão.", en: "We used to go to the beach every summer.", altEs: ["A gente ia à praia todo verão."] }
+    - { es: "Você bebia muito café?", en: "Did you use to drink a lot of coffee?" }
+- id: g.imperfect-uses
+  level: a2
+  title: "Uses of the imperfect — habits, descriptions, background"
+  summary: "used to, was doing, description, age and time in the past, and polite requests."
+  explanation: |
+    ### 1. Past habits (used to / would)
+    *Todo sábado a gente ia ao parque.*
+
+    ### 2. Descriptions and background
+    *A cidade era tranquila. Fazia frio. Tinha muita gente na rua.*
+
+    ### 3. Age, time and states in the past
+    *Eu tinha dez anos. Eram oito horas. Estava cansado.*
+
+    ### 4. Ongoing actions (often with estava + gerund)
+    *Eu lia enquanto ela cozinhava.*
+
+    ### 5. Politeness
+    *Eu queria um café. Você podia me ajudar?*
+
+    ### 6. Brazilian speech: instead of the conditional
+    *Se eu tivesse tempo, eu ia.* (= *iria*) *Eu adorava morar lá.* (= *adoraria*, "I'd love to live there")
+  examples:
+    - { es: "Antigamente as pessoas escreviam cartas.", en: "In the old days people used to write letters." }
+    - { es: "Era uma noite quente e o bar estava cheio.", en: "It was a hot night and the bar was full." }
+    - { es: "Eu tinha quinze anos quando aprendi a nadar.", en: "I was fifteen when I learned to swim." }
+    - { es: "Eu queria fazer uma reserva.", en: "I'd like to make a reservation." }
+    - { es: "Eu adorava conhecer o Japão.", en: "I'd love to visit Japan.", altEs: ["Eu adoraria conhecer o Japão."] }
+  pitfalls:
+    - "English 'would' for past habits is the imperfect: 'We would go fishing' = *A gente ia pescar*."
+    - "Age in the past is almost always imperfect: *Eu tinha 20 anos*, not *tive*."
+    - "Don't translate 'used to' with *usar*: *Eu morava lá* = I used to live there."
+  variant: "European Portuguese uses the imperfect for the conditional even in careful speech: *Gostava de ir* (I'd like to go), *Podia ajudar-me?* — see the C2 note."
+  related: [g.imperfect, g.preterite-vs-imperfect, g.costumar, g.ep-imperfect-for-conditional]
+  drills:
+    - { es: "Quando eu morava em Curitiba, andava muito de bicicleta.", en: "When I lived in Curitiba, I cycled a lot." }
+    - { es: "Fazia sol e as crianças brincavam.", en: "It was sunny and the children were playing." }
+    - { es: "Você podia fechar a porta?", en: "Could you close the door?" }
+    - { es: "Eram três da manhã.", en: "It was three in the morning." }
+- id: g.costumar
+  level: a2
+  title: "Costumar + infinitive — usually, used to"
+  summary: "Costumo acordar cedo (I usually get up early). Costumava ir (I used to go)."
+  explanation: |
+    **costumar + infinitive** expresses habits:
+
+    | | |
+    |---|---|
+    | present | *Costumo almoçar em casa.* — I usually have lunch at home. |
+    | imperfect | *Costumava jogar bola na rua.* — I used to play football in the street. |
+    | question | *Você costuma sair à noite?* — Do you usually go out at night? |
+
+    - Often the plain imperfect does the same job: *Eu jogava bola* = *Eu costumava jogar bola*.
+    - *Como de costume* = as usual.
+
+    ### Don't confuse
+    - *acostumar-se a* / *estar acostumado a* = to get / be used to: *Já me acostumei ao frio.*
+    - *o costume* = custom, habit; a costume is *uma fantasia*.
+  examples:
+    - { es: "Costumo correr no Ibirapuera.", en: "I usually run in Ibirapuera Park." }
+    - { es: "Meus avós costumavam passar o verão em Santa Catarina.", en: "My grandparents used to spend the summer in Santa Catarina." }
+    - { es: "Aqui não costuma nevar.", en: "It doesn't usually snow here." }
+    - { es: "Ela não está acostumada com o trânsito.", en: "She isn't used to the traffic.", altEs: ["Ela não está acostumada ao trânsito."] }
+  pitfalls:
+    - "Spanish speakers: *soler* is *costumar*: *suelo* = *costumo*."
+    - "*Costumar* (habit) ≠ *acostumar-se* (get used to)."
+    - "English speakers: a fancy-dress costume is *uma fantasia* in Brazil."
+  variant: "Same in Portugal; *estar habituado a* (to be used to) is more frequent there than *acostumado*."
+  related: [g.imperfect-uses, g.frequency-adverbs]
+  drills:
+    - { es: "A gente costuma jantar às oito.", en: "We usually have dinner at eight.", altEs: ["Nós costumamos jantar às oito."] }
+    - { es: "Você costumava ir à praia?", en: "Did you use to go to the beach?" }
+    - { es: "Ele não costuma beber.", en: "He doesn't usually drink." }
+    - { es: "Já me acostumei com a comida.", en: "I've got used to the food.", altEs: ["Já me acostumei à comida."] }
+- id: g.preterite-vs-imperfect
+  level: a2
+  title: "Preterite or imperfect?"
+  summary: "Preterite = what happened (completed events); imperfect = what was going on (background, habits)."
+  explanation: |
+    | preterite (*perfeito*) | imperfect (*imperfeito*) |
+    |---|---|
+    | single, completed events | background and description |
+    | *ontem, de repente, uma vez, em 2010* | *sempre, todo dia, antigamente, quando era criança* |
+    | the story moves forward | the scene is set |
+    | *Ele chegou, sentou e pediu.* | *Era tarde, chovia, ele estava cansado.* |
+
+    ### An action interrupted by another
+    *Eu estava tomando banho quando o telefone tocou.* (imperfect for the ongoing action, preterite for the interruption)
+
+    ### Verbs that change meaning
+    | preterite | imperfect |
+    |---|---|
+    | *conheci* — I met | *conhecia* — I knew |
+    | *soube* — I found out | *sabia* — I knew |
+    | *quis* — I tried, wanted (and acted) | *queria* — I wanted |
+    | *pude* — I managed | *podia* — I could (was able to) |
+    | *tive* — I got, received | *tinha* — I had |
+  examples:
+    - { es: "Quando cheguei, a festa já estava animada.", en: "When I arrived, the party was already lively." }
+    - { es: "Eu dormia quando você ligou.", en: "I was sleeping when you called.", altEs: ["Eu estava dormindo quando você ligou."] }
+    - { es: "Conheci minha esposa em Porto Alegre.", en: "I met my wife in Porto Alegre." }
+    - { es: "Eu já conhecia a cidade.", en: "I already knew the city." }
+    - { es: "Fazia frio, então a gente ficou em casa.", en: "It was cold, so we stayed home." }
+  pitfalls:
+    - "English speakers: the simple past ('I lived') can be either: *morei* (for a closed period) or *morava* (background)."
+    - "A closed period, even a long one, takes the preterite: *Morei dez anos em Londres.*"
+    - "Spanish speakers: the system is almost identical to *pretérito indefinido* vs *imperfecto*."
+  variant: "The contrast works the same way in Portugal."
+  related: [g.preterite-regular, g.imperfect, g.imperfect-uses, g.estar-gerund-past]
+  drills:
+    - { es: "Estava chovendo quando saí de casa.", en: "It was raining when I left home." }
+    - { es: "Ela soube da notícia pela TV.", en: "She found out about the news on TV." }
+    - { es: "Eu morava em Londrina quando conheci o Paulo.", en: "I was living in Londrina when I met Paulo." }
+    - { es: "Era meia-noite e de repente a luz acabou.", en: "It was midnight and suddenly the power went out." }
+- id: g.narration-connectors
+  level: a2
+  title: "Telling a story — primeiro, depois, de repente, no fim"
+  summary: "primeiro, depois, em seguida, então, aí, de repente, enquanto isso, no dia seguinte, no fim."
+  explanation: |
+    | | |
+    |---|---|
+    | *primeiro* | first |
+    | *depois* / *em seguida* | then, next |
+    | *então* | then, so |
+    | *aí* (speech) | then, and so |
+    | *logo depois* | right after |
+    | *mais tarde* | later |
+    | *de repente* | suddenly |
+    | *enquanto isso* | meanwhile |
+    | *no dia seguinte* | the next day |
+    | *uma vez* | once |
+    | *no fim* / *finalmente* | in the end, finally |
+
+    ### Logo
+    In Brazil *logo* means "soon" or "right away": *Volto logo.* (I'll be right back.) *Até logo!* — it does not mean "later" like Spanish *luego*. For "then" use *depois*.
+  examples:
+    - { es: "Primeiro a gente foi ao museu, depois almoçou no Mercadão.", en: "First we went to the museum, then we had lunch at the Mercadão." }
+    - { es: "De repente começou a chover.", en: "Suddenly it started to rain." }
+    - { es: "No dia seguinte, ela ligou pedindo desculpas.", en: "The next day, she called to apologise." }
+    - { es: "Aí eu falei: chega!", en: "So I said: enough!" }
+    - { es: "No fim, deu tudo certo.", en: "In the end, everything worked out." }
+  pitfalls:
+    - "Spanish speakers: *luego* (then) is *depois*; Portuguese *logo* means 'soon / right away'."
+    - "*Aí* as 'then' is perfectly normal in speech but avoid it in writing."
+    - "*Finalmente* can also mean 'at last!' (relief): *Finalmente você chegou!*"
+  variant: "Europeans say *a seguir* (next, then) a lot, and *entretanto* means 'meanwhile' in Portugal, whereas in Brazil it means 'however'."
+  related: [g.preterite-vs-imperfect, g.connectors-basic, g.connectors-sequence]
+  drills:
+    - { es: "Primeiro tomei café, depois fui trabalhar.", en: "First I had breakfast, then I went to work." }
+    - { es: "Mais tarde a gente se encontrou no bar.", en: "Later we met at the bar." }
+    - { es: "Enquanto isso, o Pedro esperava no carro.", en: "Meanwhile, Pedro was waiting in the car." }
+    - { es: "Volto logo!", en: "I'll be right back!" }
+- id: g.quando-enquanto
+  level: a2
+  title: "Quando and enquanto — when and while"
+  summary: "quando + preterite (one moment), quando + imperfect (whenever), enquanto + imperfect (while)."
+  explanation: |
+    | | meaning | example |
+    |---|---|---|
+    | *quando* + preterite | when (a specific moment) | *Quando cheguei, todos estavam dormindo.* |
+    | *quando* + imperfect | when, whenever (habit) | *Quando eu era jovem, saía toda noite.* |
+    | *enquanto* + imperfect | while (two things at once) | *Enquanto ele cozinhava, eu arrumava a mesa.* |
+
+    - *Enquanto* also means "whereas": *Ela gosta de praia, enquanto eu prefiro a serra.*
+    - Talking about the **future**, *quando* and *enquanto* take the future subjunctive (B1): *Quando eu chegar, te ligo.*
+  examples:
+    - { es: "Quando o show começou, a gente ainda estava na fila.", en: "When the show started, we were still in the queue." }
+    - { es: "Quando chovia, a gente brincava em casa.", en: "Whenever it rained, we played at home." }
+    - { es: "Enquanto eu trabalhava, ele dormia.", en: "While I was working, he was sleeping." }
+    - { es: "Ela lia enquanto esperava o ônibus.", en: "She read while she waited for the bus." }
+  pitfalls:
+    - "Spanish speakers: *mientras* is *enquanto*."
+    - "Don't use the present after *quando* for the future: *Quando eu chegar*, not *Quando eu chego* (in writing)."
+    - "English 'while' + -ing is often *enquanto* + finite verb: *enquanto esperava*."
+  variant: "Same in Portugal, where *ao mesmo tempo que* (at the same time as) is also frequent."
+  related: [g.preterite-vs-imperfect, g.estar-gerund-past, g.future-subjunctive-time]
+  drills:
+    - { es: "Quando eu morava no Sul, fazia muito frio no inverno.", en: "When I lived in the South, it was very cold in winter." }
+    - { es: "Enquanto você dormia, eu fiz o almoço.", en: "While you were sleeping, I made lunch." }
+    - { es: "Quando ela ligou, eu estava no banho.", en: "When she called, I was in the shower." }
+    - { es: "Eu ouvia música enquanto estudava.", en: "I listened to music while I studied." }
+- id: g.estar-gerund-past
+  level: a2
+  title: "Estava fazendo — the past progressive"
+  summary: "estava + gerund for actions in progress in the past; ficou esperando for actions that went on."
+  explanation: |
+    **estar (imperfect) + gerund**:
+
+    | | |
+    |---|---|
+    | eu / ele | *estava trabalhando* |
+    | nós | *estávamos trabalhando* |
+    | eles | *estavam trabalhando* |
+
+    - An action in progress at a moment, often interrupted: *Eu estava saindo quando você chegou.*
+    - Background: *Estava chovendo e todo mundo estava com frio.*
+
+    ### Other past progressives
+    - *esteve + gerund* (preterite): a limited period, now over: *Ele esteve trabalhando em Londres por dois anos.*
+    - *ficar + gerund*: kept on doing, stayed doing: *Ficamos esperando duas horas.* (We kept waiting for two hours.)
+  examples:
+    - { es: "O que você estava fazendo ontem às oito?", en: "What were you doing yesterday at eight?" }
+    - { es: "A gente estava jantando quando a luz acabou.", en: "We were having dinner when the power went out." }
+    - { es: "Eu estava pensando em você.", en: "I was thinking about you." }
+    - { es: "Ficamos conversando até de madrugada.", en: "We kept talking until the early hours." }
+  pitfalls:
+    - "The simple imperfect often means the same: *Eu dormia quando…* = *Eu estava dormindo quando…*"
+    - "*Estava* (imperfect) for the ongoing action; the interrupting action uses the preterite."
+    - "English speakers: 'I was going to call you' is *Eu ia te ligar*, not a progressive."
+  variant: "European Portuguese: *estava a + infinitive*: *Estava a jantar quando ligaste. Ficámos a conversar até tarde.*"
+  related: [g.estar-gerund, g.preterite-vs-imperfect, g.quando-enquanto, g.ep-estar-a-infinitive]
+  drills:
+    - { es: "Ela estava dormindo quando eu cheguei.", en: "She was sleeping when I arrived." }
+    - { es: "Nós estávamos falando de você!", en: "We were just talking about you!" }
+    - { es: "Estava ventando muito na praia.", en: "It was very windy on the beach." }
+    - { es: "Fiquei olhando o mar.", en: "I stayed looking at the sea.", altEn: ["I kept looking at the sea."] }
+- id: g.a-gente
+  level: a2
+  title: "A gente — the everyday 'we'"
+  summary: "A gente = we, with a third-person singular verb: a gente vai, a gente se vê."
+  explanation: |
+    In Brazilian speech *a gente* (literally "the people") is the most common way to say "we":
+
+    | nós | a gente |
+    |---|---|
+    | *Nós vamos.* | *A gente vai.* |
+    | *Nós somos amigos.* | *A gente é amigo / amigos.* |
+    | *Nós nos vemos.* | *A gente se vê.* |
+    | *nosso carro* | *nosso carro* / *o carro da gente* |
+    | *Ele nos viu.* | *Ele viu a gente.* |
+
+    - The verb is **singular**: *a gente fala, a gente foi, a gente estava*.
+    - The reflexive pronoun is *se*: *A gente se diverte.*
+    - Adjectives agree with who is really meant: *A gente está cansada* (two women) / *cansados*.
+    - *Nós* is still used in writing and careful speech; mixing both is common.
+
+    ### Gente!
+    *Gente* alone means "people": *muita gente* (a lot of people). As an exclamation, *Gente!* = Guys! / Wow!
+  examples:
+    - { es: "A gente vai ao cinema hoje.", en: "We're going to the cinema today.", altEs: ["Nós vamos ao cinema hoje."] }
+    - { es: "A gente se vê amanhã!", en: "See you tomorrow!", altEn: ["We'll see each other tomorrow!"] }
+    - { es: "A gente morava perto da praia.", en: "We used to live near the beach.", altEs: ["Nós morávamos perto da praia."] }
+    - { es: "Ele convidou a gente para a festa.", en: "He invited us to the party.", altEs: ["Ele nos convidou para a festa."] }
+    - { es: "Gente, que calor!", en: "Guys, it's so hot!" }
+  pitfalls:
+    - "Never *a gente vamos*: it is heard but strongly stigmatised. Use *a gente vai* or *nós vamos*."
+    - "Spanish speakers: *la gente* (people) is *as pessoas* or *gente*; *a gente* usually means 'we'."
+    - "Don't use *a gente* in formal writing (essays, official letters)."
+  variant: "Europeans also use *a gente* in casual speech, but less than Brazilians; *nós* is the neutral choice in Portugal. 'Everybody' in Portugal is *toda a gente*."
+  related: [g.subject-pronouns, g.spoken-reductions, g.tu-regional]
+  drills:
+    - { es: "A gente adora churrasco.", en: "We love barbecue.", altEs: ["Nós adoramos churrasco."] }
+    - { es: "A gente se conheceu em Curitiba.", en: "We met in Curitiba.", altEs: ["Nós nos conhecemos em Curitiba."] }
+    - { es: "Você vem com a gente?", en: "Are you coming with us?", altEs: ["Você vem conosco?"] }
+    - { es: "A gente estava com fome.", en: "We were hungry.", altEs: ["Nós estávamos com fome."] }
+- id: g.tu-regional
+  level: a2
+  title: "Tu in Brazil — and te, teu with você"
+  summary: "tu is everyday in the South, the North and parts of the Northeast, often with the você verb form: tu vai."
+  explanation: |
+    ### Where you hear tu
+    - **Rio Grande do Sul, Santa Catarina**, **Pará, Amazonas, Maranhão**, parts of the Northeast, and casual speech in **Rio de Janeiro**.
+    - In most of São Paulo, Minas and the Centre-West, *você* (or *cê*) is the norm.
+
+    ### Two ways of conjugating
+    | standard | common Brazilian speech |
+    |---|---|
+    | *tu vais, tu és, tu falas* | *tu vai, tu é, tu fala* |
+
+    The standard forms are heard in Florianópolis, Belém and São Luís; elsewhere *tu* + third-person verb is usual. In writing, use *você* or the standard *tu* forms.
+
+    ### Mixing is normal
+    Even *você* speakers use **te** and **teu** freely: *Eu te amo. Te ligo amanhã. Esse livro é teu?*
+  examples:
+    - { es: "Tu vai na festa hoje?", en: "Are you going to the party today?", altEs: ["Você vai à festa hoje?", "Tu vais à festa hoje?"] }
+    - { es: "Bah, tu é muito engraçado!", en: "Wow, you're really funny!" }
+    - { es: "Eu te ligo mais tarde.", en: "I'll call you later.", altEs: ["Te ligo mais tarde."] }
+    - { es: "Esse casaco é teu?", en: "Is this coat yours?", altEs: ["Esse casaco é seu?"] }
+  pitfalls:
+    - "Learners: use *você* consistently; recognise *tu* when you hear it."
+    - "*Tu vai* is normal speech but not standard writing."
+    - "Spanish speakers: Brazilian *tu* doesn't always have the -s ending you expect."
+  variant: "In Portugal *tu* always takes second-person verbs (*tu vais, tu és, tu falas*) and is the normal informal address; *tu vai* sounds Brazilian. See the C2 note on *tu* forms."
+  related: [g.subject-pronouns, g.voce-o-senhor, g.a-gente, g.ep-tu-forms]
+  drills:
+    - { es: "Tu é de onde?", en: "Where are you from?", altEs: ["Você é de onde?", "De onde tu és?"] }
+    - { es: "Eu te espero na esquina.", en: "I'll wait for you on the corner." }
+    - { es: "Tu queres um chimarrão?", en: "Do you want a chimarrão?", altEs: ["Você quer um chimarrão?", "Tu quer um chimarrão?"] }
+    - { es: "Te vejo amanhã.", en: "See you tomorrow." }
+- id: g.seu-vs-dele
+  level: a2
+  title: "Seu or dele? Avoiding ambiguity"
+  summary: "In Brazil seu = your; for his/her/their use o carro dele, a casa dela, os filhos deles."
+  explanation: |
+    Because *você* took over as "you", *seu / sua* in Brazilian speech mainly means **your**. For third persons Brazilians use **de + pronoun after the noun**:
+
+    | | |
+    |---|---|
+    | your car | *o seu carro* |
+    | his car | *o carro dele* |
+    | her car | *o carro dela* |
+    | their car | *o carro deles / delas* |
+    | your car (to *o senhor*) | *o carro do senhor* |
+    | your (pl.) car | *o carro de vocês* |
+
+    - *Seu / sua* agrees with the thing owned; *dele / dela* agrees with the owner.
+    - In formal writing *seu* can still mean "his / her / their": *O presidente chegou com sua esposa.*
+  examples:
+    - { es: "O Marcos e a irmã dele moram em Curitiba.", en: "Marcos and his sister live in Curitiba." }
+    - { es: "Esse é o seu celular ou o dela?", en: "Is this your phone or hers?" }
+    - { es: "A casa de vocês é linda!", en: "Your house is beautiful! (to several people)" }
+    - { es: "O senhor esqueceu o guarda-chuva do senhor.", en: "Sir, you forgot your umbrella.", altEs: ["O senhor esqueceu o seu guarda-chuva."] }
+  pitfalls:
+    - "Spanish speakers: *su casa* (his/her/your) becomes either *a sua casa* (your) or *a casa dele / dela*."
+    - "English speakers: *dele* follows the noun: *o carro dele*, not *dele carro*."
+    - "*Seu* in a formal text about a third person is correct; just be aware of the ambiguity."
+  variant: "In Portugal *seu / sua* is commonly used for third persons and for *o senhor / a senhora*, while *teu / tua* is 'your' among friends; *dele / dela* is used too when clarity is needed."
+  related: [g.possessives, g.contractions-de, g.voce-o-senhor]
+  drills:
+    - { es: "Qual é o nome dele?", en: "What's his name?" }
+    - { es: "Adorei o seu vestido!", en: "I loved your dress!" }
+    - { es: "Os filhos deles estudam em Porto Alegre.", en: "Their children study in Porto Alegre." }
+    - { es: "A mãe dela é professora.", en: "Her mother is a teacher." }
+- id: g.spoken-reductions
+  level: a2
+  title: "Spoken Brazilian — tá, tô, pra, cê, né"
+  summary: "tá (está), tô (estou), pra (para), pro (para o), cê (você), né (não é): everywhere in speech and texts."
+  explanation: |
+    | full | spoken | example |
+    |---|---|---|
+    | *está* | **tá** | *Tá bom!* (OK!) |
+    | *estou* | **tô** | *Tô chegando.* |
+    | *estava* | **tava** | *Tava ótimo.* |
+    | *para* | **pra** | *Vou pra casa.* |
+    | *para o / para a* | **pro / pra** | *Liga pro Pedro.* |
+    | *você* | **cê** | *Cê vai?* |
+    | *não é?* | **né?** | *Legal, né?* |
+    | *vamos* | **bora / vamo** | *Bora!* (Let's go!) |
+
+    ### Text messages
+    *vc* (você), *tb* / *tbm* (também), *q* (que), *pq* (porque / por que), *blz* (beleza, OK), *kkkk* or *rsrs* (haha).
+
+    ### Fillers
+    *tipo* (like), *então* (so), *aí* (then), *nossa!* (wow!), *beleza* (OK, cool), *valeu* (thanks).
+
+    Use the full forms in formal writing; *pra* is acceptable in informal texts.
+  examples:
+    - { es: "Tá bom, a gente se fala depois.", en: "OK, we'll talk later.", altEs: ["Está bom, a gente se fala depois."] }
+    - { es: "Tô indo pra casa.", en: "I'm heading home.", altEs: ["Estou indo para casa."] }
+    - { es: "Cê viu o jogo?", en: "Did you see the match?", altEs: ["Você viu o jogo?"] }
+    - { es: "Bora tomar um café?", en: "Shall we grab a coffee?", altEs: ["Vamos tomar um café?"] }
+    - { es: "Valeu, cara!", en: "Thanks, mate!" }
+  pitfalls:
+    - "*Tá* alone means 'OK': *Tá, eu vou.*"
+    - "Don't write *tô, cê, bora* in a formal email or essay."
+    - "*Né* is a tag, not a negation: *Bonito, né?* = 'Pretty, isn't it?'"
+  variant: "European speech reduces differently: *tás* (estás), *tou* (estou), *p'ra*, and Lisbon slang uses *pá* (mate), *bué* (very), *fixe* (cool). *Cê* and *bora* sound Brazilian (though *bora* is spreading in Portugal)."
+  related: [g.a-gente, g.estar-present, g.register-formal-informal]
+  drills:
+    - { es: "Tava muito cheio.", en: "It was really crowded.", altEs: ["Estava muito cheio."] }
+    - { es: "Leva isso pro seu pai.", en: "Take this to your dad.", altEs: ["Leve isso para o seu pai."] }
+    - { es: "Tô com fome, bora comer?", en: "I'm hungry, shall we eat?", altEs: ["Estou com fome, vamos comer?"] }
+    - { es: "Beleza, até amanhã!", en: "Cool, see you tomorrow!" }
+- id: g.ja-ainda-nao
+  level: a2
+  title: "Já, ainda não, não… mais — already, not yet, no longer"
+  summary: "Você já foi a Curitiba? — Já. / Ainda não. Já is 'already' and 'ever'; não… mais is 'no longer'."
+  explanation: |
+    | | |
+    |---|---|
+    | *já* | already; ever (in questions) |
+    | *ainda não* | not yet |
+    | *ainda* | still |
+    | *não… mais* | not any more, no longer |
+    | *nunca* | never |
+
+    These go with the **preterite** where English uses "have done":
+    - *Você já comeu pão de queijo?* — Have you ever eaten cheese bread?
+    - *Já.* (Yes, I have.) / *Ainda não.* (Not yet.) / *Nunca.* (Never.)
+    - *Já terminei.* — I've already finished.
+
+    ### Still and no longer
+    - *Ela ainda mora em Londrina.* — She still lives in Londrina.
+    - *Ela não mora mais lá.* — She doesn't live there any more.
+
+    *Já* also means "right away": *Já vou!* (Coming!) *Já volto.* (Be right back.)
+  examples:
+    - { es: "Você já foi ao Paraná? — Já, duas vezes.", en: "Have you ever been to Paraná? — Yes, twice." }
+    - { es: "Ainda não vi esse filme.", en: "I haven't seen that film yet." }
+    - { es: "Eles já chegaram.", en: "They've already arrived." }
+    - { es: "Não trabalho mais lá.", en: "I don't work there any more." }
+    - { es: "Você ainda está no escritório?", en: "Are you still at the office?" }
+  pitfalls:
+    - "Spanish speakers: *ya no* is usually *não… mais* in Brazil: *Não fumo mais*."
+    - "English speakers: 'Have you ever…?' = *Você já…?* + preterite; don't use *tenho*."
+    - "Short answers are just *Já* or *Ainda não*: no verb needed."
+  variant: "In Portugal *já não* is the common 'no longer': *Já não moro lá.* Brazilians understand it but prefer *não moro mais*."
+  related: [g.preterite-regular, g.perfeito-composto, g.yes-no-answers]
+  drills:
+    - { es: "Você já experimentou chimarrão?", en: "Have you ever tried chimarrão?" }
+    - { es: "Ainda não decidi.", en: "I haven't decided yet." }
+    - { es: "Ele não joga mais futebol.", en: "He doesn't play football any more." }
+    - { es: "A loja ainda está aberta?", en: "Is the shop still open?" }
+- id: g.past-participles
+  level: a2
+  title: "Past participles — falado, comido, feito, dito, aberto"
+  summary: "-ado / -ido, with common irregulars (feito, dito, visto, escrito, aberto, posto) and short forms (pago, ganho, gasto)."
+  explanation: |
+    ### Regular
+    *falar → falado, comer → comido, partir → partido*
+
+    ### Irregular
+    | | | |
+    |---|---|---|
+    | *fazer → feito* | *dizer → dito* | *ver → visto* |
+    | *escrever → escrito* | *abrir → aberto* | *cobrir → coberto* |
+    | *pôr → posto* | *vir → vindo* | *ganhar → ganho* |
+    | *pagar → pago* | *gastar → gasto* | *chegar → chegado* |
+
+    ### Double participles
+    Some verbs have a long and a short form: *aceitar (aceitado / aceito), entregar (entregado / entregue), limpar (limpado / limpo), imprimir (imprimido / impresso), acender (acendido / aceso), morrer / matar (morrido / morto)*.
+    - The long form goes with *ter*: *Tinha aceitado.*
+    - The short form goes with *ser / estar* and as an adjective: *Foi aceito. Está limpo.*
+    - In Brazil *pago, ganho, gasto* are used with *ter* too: *Já tinha pago.*
+
+    ### As adjectives they agree
+    *A porta está aberta. As cartas foram escritas.*
+  examples:
+    - { es: "A loja está fechada.", en: "The shop is closed." }
+    - { es: "O trabalho já está feito.", en: "The work is already done." }
+    - { es: "Essa música foi escrita por Chico Buarque.", en: "This song was written by Chico Buarque." }
+    - { es: "A conta já está paga.", en: "The bill has already been paid." }
+  pitfalls:
+    - "Spanish speakers: *hecho* is *feito*, *vuelto* is *voltado* (regular), *roto* is *quebrado*."
+    - "*Vindo* is both the participle and the gerund of *vir*."
+    - "Adjective participles agree: *as janelas abertas*."
+  variant: "Forms are the same in Portugal; Europeans also prefer the short *pago, ganho, gasto* with *ter*."
+  related: [g.perfeito-composto, g.pluperfect, g.passive-ser]
+  drills:
+    - { es: "Você já tinha visto isso?", en: "Had you seen this before?" }
+    - { es: "O museu está aberto aos domingos.", en: "The museum is open on Sundays." }
+    - { es: "A carta foi entregue ontem.", en: "The letter was delivered yesterday." }
+    - { es: "Tudo isso foi dito na reunião.", en: "All that was said in the meeting." }
+- id: g.perfeito-composto
+  level: a2
+  title: "Tenho feito — 'I have been doing' (lately)"
+  summary: "ter (present) + participle means a repeated or continuing action up to now — NOT a single completed action."
+  explanation: |
+    **ter (present) + participle** = the *pretérito perfeito composto*:
+
+    | | |
+    |---|---|
+    | *Tenho trabalhado muito.* | I've been working a lot (lately). |
+    | *Ela tem viajado bastante.* | She's been travelling quite a lot. |
+    | *Não temos dormido bem.* | We haven't been sleeping well. |
+
+    It describes something **repeated or continuous**, from the past up to now, often with *ultimamente, nos últimos tempos, este mês*.
+
+    ### Not for one completed action
+    | English | Portuguese |
+    |---|---|
+    | I've finished. | *Terminei. / Já terminei.* |
+    | I've been to Brazil. | *Já fui ao Brasil.* |
+    | I've been working a lot. | *Tenho trabalhado muito.* |
+
+    The participle doesn't change with *ter*: *Elas têm saído muito.*
+  examples:
+    - { es: "Tenho estudado português todo dia.", en: "I've been studying Portuguese every day." }
+    - { es: "Tem chovido muito em São Paulo.", en: "It's been raining a lot in São Paulo." }
+    - { es: "Como você tem passado?", en: "How have you been?" }
+    - { es: "Ultimamente eles têm saído pouco.", en: "Lately they haven't been going out much." }
+  pitfalls:
+    - "Spanish speakers: *he comido* (one action) is *comi* or *já comi*, not *tenho comido* ('I have been eating')."
+    - "English speakers: 'I have seen that film' is *Já vi esse filme*."
+    - "The participle with *ter* is invariable: *Tenho visto as meninas*, not *vistas*."
+  variant: "European Portuguese uses this tense in exactly the same way."
+  related: [g.ja-ainda-nao, g.past-participles, g.preterite-regular]
+  drills:
+    - { es: "Tenho dormido mal.", en: "I've been sleeping badly." }
+    - { es: "Ela tem trabalhado em casa.", en: "She's been working from home." }
+    - { es: "A gente tem ido muito ao cinema.", en: "We've been going to the cinema a lot." }
+    - { es: "O que você tem feito?", en: "What have you been up to?" }
+- id: g.acabar-de
+  level: a2
+  title: "Acabar de — to have just done"
+  summary: "Acabei de chegar (I've just arrived). Also: acabar = to finish, to run out."
+  explanation: |
+    **acabar de + infinitive** = to have just done:
+    - *Acabei de chegar.* — I've just arrived.
+    - *Ela acabou de sair.* — She's just left.
+    - *A gente acabou de comer.* — We've just eaten.
+
+    In Brazil the **preterite** (*acabei de*) is the usual form; *acabo de* (present) is more formal.
+
+    ### Other meanings of acabar
+    | | |
+    |---|---|
+    | *A aula acabou.* | The class has finished. |
+    | *Acabou o leite.* | We've run out of milk. |
+    | *A luz acabou.* | The power went out. |
+    | *acabar + gerund* | to end up doing: *Acabei ficando em casa.* |
+    | *acabar com* | to put an end to, break up with |
+  examples:
+    - { es: "Acabei de falar com ela.", en: "I've just spoken to her." }
+    - { es: "O ônibus acabou de passar.", en: "The bus has just gone." }
+    - { es: "Acabou o café!", en: "We've run out of coffee!", altEn: ["The coffee's finished!"] }
+    - { es: "Ia sair, mas acabei dormindo.", en: "I was going to go out, but I ended up falling asleep." }
+  pitfalls:
+    - "Spanish speakers: *acabo de llegar* is usually *acabei de chegar* in Brazil."
+    - "*Acabar com alguém* means to break up with someone (or destroy them), not 'finish with'."
+    - "*De* is required: *acabei de comer*, not *acabei comer*."
+  variant: "In Portugal both *acabei de* and *acabo de* are common, and *acabar por* + infinitive is the usual 'end up': *Acabei por ficar em casa.*"
+  related: [g.ja-ainda-nao, g.preterite-regular, g.verbal-periphrases]
+  drills:
+    - { es: "Ele acabou de acordar.", en: "He's just woken up." }
+    - { es: "Acabamos de chegar de Florianópolis.", en: "We've just got back from Florianópolis." }
+    - { es: "O filme acabou tarde.", en: "The film finished late." }
+    - { es: "Acabou a bateria do celular.", en: "My phone battery's dead." }
+- id: g.indefinite-pronouns
+  level: a2
+  title: "Alguém, ninguém, alguma coisa, nada, algum, nenhum"
+  summary: "someone / no one, something / nothing, some / none — with double negatives: Não vi ninguém."
+  explanation: |
+    | positive | negative |
+    |---|---|
+    | *alguém* (someone, anyone?) | *ninguém* (no one) |
+    | *alguma coisa* / *algo* (something) | *nada* (nothing) |
+    | *algum, alguma, alguns, algumas* (some, any?) | *nenhum, nenhuma* (no, none) |
+    | *alguma vez* (ever) | *nunca* (never) |
+    | *em algum lugar* (somewhere) | *em lugar nenhum* (nowhere) |
+
+    - Negative words after the verb need *não* before it: *Não conheço ninguém. Não comprei nada.*
+    - Before the verb they stand alone: *Ninguém sabe. Nada mudou.*
+    - *Alguma coisa* is more common than *algo* in Brazilian speech.
+
+    ### Other indefinites
+    *qualquer* (any, whichever; plural *quaisquer*), *cada* (each), *outro* (other, another), *vários* (several), *todo / tudo* (see A1).
+    *Qualquer coisa, me liga.* — If anything comes up, call me.
+  examples:
+    - { es: "Tem alguém aí?", en: "Is anybody there?" }
+    - { es: "Não tem ninguém em casa.", en: "There's nobody at home." }
+    - { es: "Você quer alguma coisa?", en: "Do you want anything?", altEs: ["Você quer algo?"] }
+    - { es: "Não aconteceu nada.", en: "Nothing happened." }
+    - { es: "Pode escolher qualquer um.", en: "You can choose any one." }
+  pitfalls:
+    - "Spanish speakers: *nadie* is *ninguém*, *ningún* is *nenhum* (with nh)."
+    - "English speakers: 'I didn't see anything' = *Não vi nada* (double negative is required)."
+    - "*Qualquer* has the irregular plural *quaisquer*."
+  variant: "Same in Portugal; Europeans use *algo* a little more and say *em lado nenhum* (nowhere)."
+  related: [g.negation, g.todo-tudo, g.ja-ainda-nao]
+  drills:
+    - { es: "Alguém viu meu celular?", en: "Has anyone seen my phone?" }
+    - { es: "Ele não disse nada.", en: "He didn't say anything." }
+    - { es: "Nenhum aluno faltou.", en: "No student was absent." }
+    - { es: "Cada um paga o seu.", en: "Everyone pays for their own." }
+- id: g.direct-object-pronouns
+  level: a2
+  title: "Direct object pronouns — me, te, o, a, nos, os, as"
+  summary: "o / a for him, her, it, you; lo / la after -r, -s, -z; no / na after nasal sounds. In speech Brazilians often use ele / ela."
+  explanation: |
+    | | |
+    |---|---|
+    | me | *me* |
+    | you | *te* (informal), *o / a* (formal, *você / o senhor*) |
+    | him, it (m) | *o* |
+    | her, it (f) | *a* |
+    | us | *nos* |
+    | them / you all | *os / as* |
+
+    ### Changing form
+    - After a verb ending in **-r, -s, -z**, the consonant drops and the pronoun becomes **lo, la, los, las**: *comprar + o → comprá-lo*, *fiz + o → fi-lo*.
+    - After a **nasal** ending (*-m, -ão, -õe*): **no, na, nos, nas**: *compraram-no*.
+
+    ### In Brazil
+    - Writing and careful speech: *Eu o vi ontem. Vou comprá-la.*
+    - Everyday speech: *Eu vi ele ontem. Vou comprar ela.* — or the object is simply left out: *Comprei.* (see *ele* as object).
+  examples:
+    - { es: "Eu a conheci em Curitiba.", en: "I met her in Curitiba.", altEs: ["Eu conheci ela em Curitiba."] }
+    - { es: "Você me ama?", en: "Do you love me?" }
+    - { es: "O livro? Vou comprá-lo amanhã.", en: "The book? I'll buy it tomorrow.", altEs: ["O livro? Vou comprar amanhã."] }
+    - { es: "Eles nos convidaram para o jantar.", en: "They invited us to dinner." }
+    - { es: "Te encontro na estação.", en: "I'll meet you at the station.", altEs: ["Eu te encontro na estação."] }
+  pitfalls:
+    - "Spanish speakers: *lo / la* are *o / a* except after -r, -s, -z (*comprá-lo*)."
+    - "Don't forget the accent when *-ar / -er* lose their r: *comprá-lo, vendê-la, fazê-lo*."
+    - "Mixing *você* and *te* is normal in Brazil: *Você vem? Te espero.*"
+  variant: "European Portuguese uses *o, a, lo, no* all the time and puts them after the verb: *Vi-o ontem. Comprei-a. Vou comprá-lo.* *Vi ele* is considered wrong in Portugal."
+  related: [g.indirect-object-pronouns, g.pronoun-placement-brazil, g.ele-as-object, g.null-object]
+  drills:
+    - { es: "Eu o vi no shopping.", en: "I saw him at the mall.", altEs: ["Eu vi ele no shopping."] }
+    - { es: "Ela me chamou para dançar.", en: "She asked me to dance." }
+    - { es: "Quero conhecê-la.", en: "I want to meet her.", altEs: ["Quero conhecer ela."] }
+    - { es: "A gente te ajuda.", en: "We'll help you." }
+- id: g.indirect-object-pronouns
+  level: a2
+  title: "Indirect objects — me, te, lhe, nos, and para ele"
+  summary: "to me / to you: me, te; to him / her: lhe in writing, para ele / para ela in speech."
+  explanation: |
+    | | written | everyday Brazil |
+    |---|---|---|
+    | to me | *me* | *me* |
+    | to you | *te*, *lhe* | *te*, *pra você* |
+    | to him / her | *lhe* | *pra ele / pra ela* |
+    | to us | *nos* | *nos*, *pra gente* |
+    | to them | *lhes* | *pra eles / pra elas* |
+
+    Common verbs: *dar, dizer, mandar, emprestar, mostrar, explicar, perguntar, pedir, contar, telefonar (para), escrever (para)*.
+
+    - *Me dá um minuto?* — Can you give me a minute?
+    - *Mandei uma mensagem pra ela.* — I sent her a message.
+    - *Vou te mostrar a cidade.* — I'll show you the city.
+    - *Eu lhe agradeço.* — I thank you (formal, or Northeast speech).
+
+    *Lhe* in many regions sounds formal; in parts of the Northeast it is everyday for "you".
+  examples:
+    - { es: "Ela me deu um presente.", en: "She gave me a present." }
+    - { es: "Mandei um e-mail para o professor.", en: "I sent the teacher an email." }
+    - { es: "Pode me passar o sal?", en: "Can you pass me the salt?" }
+    - { es: "Vou te contar um segredo.", en: "I'm going to tell you a secret." }
+    - { es: "Perguntei para ela onde fica o hotel.", en: "I asked her where the hotel is.", altEs: ["Perguntei-lhe onde fica o hotel."] }
+  pitfalls:
+    - "Spanish speakers: *le dije* is *eu disse para ele* (speech) or *eu lhe disse* (written)."
+    - "*Lhe* is never a direct object in the norm: 'I saw him' is *eu o vi*, not *eu lhe vi* (though you will hear it in the Northeast)."
+    - "English speakers: 'I gave her the book' needs *para*: *Dei o livro para ela*."
+  variant: "In Portugal *lhe* is the normal indirect pronoun, placed after the verb: *Dei-lhe o livro. Disse-lhe que sim. Telefono-lhe amanhã.*"
+  related: [g.direct-object-pronouns, g.prepositional-pronouns, g.pronoun-placement-brazil, g.clitic-contractions]
+  drills:
+    - { es: "Ele me emprestou o carro.", en: "He lent me the car." }
+    - { es: "Vou mostrar as fotos para vocês.", en: "I'll show you the photos." }
+    - { es: "Me fala a verdade.", en: "Tell me the truth.", altEs: ["Fale-me a verdade.", "Me diga a verdade."] }
+    - { es: "Ela escreveu para os pais.", en: "She wrote to her parents." }
+- id: g.pronoun-placement-brazil
+  level: a2
+  title: "Where pronouns go in Brazilian speech — before the main verb"
+  summary: "Me dá, Te amo, Vou te ligar, Estou te esperando: Brazilians put the pronoun before the main verb."
+  explanation: |
+    ### One verb
+    In speech the pronoun goes **before** the verb, even at the start of a sentence:
+    - *Me liga amanhã.* — Call me tomorrow.
+    - *Te amo.* — I love you.
+    - *Eu me levanto cedo.*
+
+    ### Two verbs
+    It goes before the **second** (main) verb:
+    - *Vou te ligar.* (I'll call you.)
+    - *Estou te esperando.* (I'm waiting for you.)
+    - *Quero me deitar.* (I want to lie down.)
+    - *Posso te ajudar?* (Can I help you?)
+
+    ### Words that always pull the pronoun forward
+    *não, nunca, já, que, quem, também, sempre*: *Não me lembro. Quem te contou? Já se foi.* These work the same in Brazil and Portugal.
+
+    ### In formal writing
+    Avoid starting a sentence with a pronoun: write *Dê-me* / *Ligue-me* or rephrase. The full written norm is at B2.
+  examples:
+    - { es: "Me espera aqui!", en: "Wait for me here!", altEs: ["Espere-me aqui!"] }
+    - { es: "Vou te mandar uma mensagem.", en: "I'll send you a message." }
+    - { es: "Ela não me respondeu.", en: "She didn't answer me." }
+    - { es: "Estamos nos divertindo muito.", en: "We're having a lot of fun." }
+    - { es: "Quem te disse isso?", en: "Who told you that?" }
+  pitfalls:
+    - "Spanish speakers: *llámame* is *me liga* in Brazil; *voy a llamarte* is *vou te ligar*."
+    - "English speakers: the pronoun comes before the verb, not after: *Eu te amo*."
+    - "In exams and formal letters, don't begin a sentence with *me / te / se*."
+  variant: "European Portuguese puts the pronoun **after** the verb in plain statements and commands: *Liga-me amanhã. Amo-te. Vou ligar-te. Levanto-me cedo.* With *não, que, quem…* it goes before, as in Brazil."
+  related: [g.direct-object-pronouns, g.indirect-object-pronouns, g.clitic-placement-norm, g.ep-enclisis]
+  drills:
+    - { es: "Me dá um abraço!", en: "Give me a hug!" }
+    - { es: "Posso te fazer uma pergunta?", en: "Can I ask you a question?" }
+    - { es: "Ele nunca me liga.", en: "He never calls me." }
+    - { es: "Estou me sentindo melhor.", en: "I'm feeling better." }
+- id: g.ele-as-object
+  level: a2
+  title: "Vi ele — subject pronouns as objects in speech"
+  summary: "Everyday Brazilian uses ele / ela / você as objects (Vi ele ontem); writing uses o / a (Eu o vi)."
+  explanation: |
+    | written norm | everyday Brazil |
+    |---|---|
+    | *Eu o vi ontem.* | *Eu vi ele ontem.* |
+    | *Encontrei-a no mercado.* | *Encontrei ela no mercado.* |
+    | *Vou chamá-los.* | *Vou chamar eles.* |
+    | *Eu o convido* (a você). | *Eu convido você.* / *Te convido.* |
+
+    - The *ele* / *ela* version is used by almost all Brazilians in conversation, including educated speakers.
+    - It is **not accepted** in formal writing, school exams or in Portugal.
+    - Often the object is simply dropped when it is clear: *Você viu o filme? — Vi.* (see B2 *null object*).
+
+    Recognise both; in writing and formal speech, use *o / a*.
+  examples:
+    - { es: "Eu vi ela na festa.", en: "I saw her at the party.", altEs: ["Eu a vi na festa."] }
+    - { es: "Chama ele pra jantar!", en: "Invite him to dinner!", altEs: ["Chame-o para jantar!"] }
+    - { es: "Conheço você de algum lugar.", en: "I know you from somewhere.", altEs: ["Te conheço de algum lugar."] }
+    - { es: "Comprei os ingressos. Deixei eles na mesa.", en: "I bought the tickets. I left them on the table.", altEs: ["Comprei os ingressos. Deixei-os na mesa."] }
+  pitfalls:
+    - "In a formal email write *Eu o encontrei*, not *Eu encontrei ele*."
+    - "Don't use *ele* as an object in Portugal: it sounds wrong there."
+    - "*Ele* as an object never contracts: *Vi ele*, never *Vi-ele*."
+  variant: "European Portuguese always uses the clitic: *Vi-o ontem. Encontrei-a no mercado.* *Vi ele* is a recognisable Brazilianism."
+  related: [g.direct-object-pronouns, g.null-object, g.register-formal-informal]
+  drills:
+    - { es: "Leva ela pra casa.", en: "Take her home.", altEs: ["Leve-a para casa."] }
+    - { es: "Eu encontrei eles no metrô.", en: "I ran into them on the metro.", altEs: ["Eu os encontrei no metrô."] }
+    - { es: "Ninguém viu você chegar.", en: "Nobody saw you arrive." }
+    - { es: "Ajuda ela, por favor.", en: "Help her, please.", altEs: ["Ajude-a, por favor."] }
+- id: g.prepositional-pronouns
+  level: a2
+  title: "Pronouns after prepositions — para mim, comigo, com você, conosco"
+  summary: "para mim, para você, com ele; comigo, contigo, conosco — and para eu fazer, not para mim fazer."
+  explanation: |
+    | | after a preposition | with *com* |
+    |---|---|---|
+    | eu | *mim* | **comigo** |
+    | você | *você* | *com você* |
+    | (tu) | *ti* | **contigo** |
+    | ele / ela | *ele / ela* | *com ele / com ela* |
+    | nós | *nós* | **conosco** / *com a gente* |
+    | vocês | *vocês* | *com vocês* |
+    | eles | *eles* | *com eles* |
+
+    - *Isso é para mim?* — Is this for me?
+    - *Você vem comigo?* — Are you coming with me?
+    - *Ele pensa em você.* — He thinks about you.
+
+    ### Para mim or para eu?
+    Before an infinitive, the pronoun is the **subject** of that infinitive, so use *eu*:
+    *Ele me deu o livro **para eu ler**.* (not *para mim ler*)
+  examples:
+    - { es: "Esse presente é para mim?", en: "Is this present for me?" }
+    - { es: "Quer jantar comigo?", en: "Do you want to have dinner with me?" }
+    - { es: "Ela foi ao cinema com a gente.", en: "She went to the cinema with us.", altEs: ["Ela foi ao cinema conosco."] }
+    - { es: "Sem você, a festa não é a mesma.", en: "Without you, the party isn't the same." }
+    - { es: "Trouxe o mapa para eu ver.", en: "I brought the map so I could look at it.", altEn: ["He brought the map for me to see."] }
+  pitfalls:
+    - "*Para mim fazer* is very common in speech but wrong in writing: *para eu fazer*."
+    - "Spanish speakers: *con nosotros* is *conosco* (Brazil), not *con nós*."
+    - "*Entre mim e você*: after *entre*, use *mim*."
+  variant: "European Portuguese spells it *connosco* (double n), uses *contigo* constantly with *tu*, and has *convosco* (with you all)."
+  related: [g.indirect-object-pronouns, g.a-gente, g.personal-infinitive-uses]
+  drills:
+    - { es: "Você pode vir comigo?", en: "Can you come with me?" }
+    - { es: "Isso não é para você.", en: "This isn't for you." }
+    - { es: "Eles moram perto de nós.", en: "They live near us." }
+    - { es: "Me dá o endereço para eu anotar.", en: "Give me the address so I can write it down." }
+- id: g.future-simple
+  level: a2
+  title: "The simple future — falarei, comerá, abriremos"
+  summary: "infinitive + -ei, -á, -emos, -ão: formal, written and for promises; speech prefers vou + infinitive."
+  explanation: |
+    Add the endings to the **whole infinitive**:
+
+    | | falar | comer | abrir |
+    |---|---|---|---|
+    | eu | falar**ei** | comer**ei** | abrir**ei** |
+    | você / ele / ela | falar**á** | comer**á** | abrir**á** |
+    | nós | falar**emos** | comer**emos** | abrir**emos** |
+    | vocês / eles / elas | falar**ão** | comer**ão** | abrir**ão** |
+    | (tu) | (falar**ás**) | (comer**ás**) | (abrir**ás**) |
+
+    ### When to use it
+    - News, forecasts, official texts: *O metrô funcionará até a meia-noite.*
+    - Solemn promises: *Nunca te esquecerei.*
+    - Probability and wondering (*será que…*).
+
+    In conversation, *vou + infinitive* is the default: *Vou falar com ele.*
+  examples:
+    - { es: "Amanhã choverá no litoral.", en: "Tomorrow it will rain on the coast.", altEs: ["Amanhã vai chover no litoral."] }
+    - { es: "O voo partirá às dez.", en: "The flight will depart at ten." }
+    - { es: "Um dia eu morarei em Florianópolis.", en: "One day I will live in Florianópolis.", altEs: ["Um dia eu vou morar em Florianópolis."] }
+    - { es: "Vocês gostarão do hotel.", en: "You'll like the hotel.", altEs: ["Vocês vão gostar do hotel."] }
+  pitfalls:
+    - "*Falarão* (they will speak) vs *falaram* (they spoke): one letter and a stress change."
+    - "Don't overuse it in casual speech; it sounds formal or poetic."
+    - "Spanish speakers: the endings are close to Spanish (*hablaré → falarei*), but many Spanish irregulars are regular here."
+  variant: "Europeans use the simple future a little more in speech than Brazilians, and *tu falarás* is the informal form. With pronouns they use mesoclisis in formal writing (*falar-lhe-ei*; see C2)."
+  related: [g.future-irregular, g.future-spoken-vs-written, g.ir-infinitive, g.mesoclisis]
+  drills:
+    - { es: "A loja abrirá às nove.", en: "The shop will open at nine." }
+    - { es: "Nós chegaremos no sábado.", en: "We will arrive on Saturday.", altEs: ["Nós vamos chegar no sábado."] }
+    - { es: "Ela venderá o apartamento.", en: "She will sell the flat." }
+    - { es: "Eu sempre te amarei.", en: "I will always love you." }
+- id: g.future-irregular
+  level: a2
+  title: "Only three irregular futures — farei, direi, trarei"
+  summary: "fazer → farei, dizer → direi, trazer → trarei. Everything else is regular: terei, poderei, sairei, virei."
+  explanation: |
+    | | fazer | dizer | trazer |
+    |---|---|---|---|
+    | eu | **farei** | **direi** | **trarei** |
+    | você / ele | **fará** | **dirá** | **trará** |
+    | nós | **faremos** | **diremos** | **traremos** |
+    | eles | **farão** | **dirão** | **trarão** |
+
+    The same short stems give the conditional: *faria, diria, traria*.
+
+    ### Regular in Portuguese, irregular in Spanish
+    | Portuguese | Spanish |
+    |---|---|
+    | *terei* | *tendré* |
+    | *poderei* | *podré* |
+    | *sairei* | *saldré* |
+    | *virei* | *vendré* |
+    | *quererei* | *querré* |
+    | *saberei* | *sabré* |
+    | *porei* (pôr) | *pondré* |
+  examples:
+    - { es: "Farei o possível.", en: "I'll do my best.", altEn: ["I will do what I can."] }
+    - { es: "Ele trará os documentos amanhã.", en: "He'll bring the documents tomorrow." }
+    - { es: "O que dirão os vizinhos?", en: "What will the neighbours say?" }
+    - { es: "Teremos uma reunião às três.", en: "We'll have a meeting at three." }
+  pitfalls:
+    - "Spanish speakers: don't import Spanish stems: *terei*, not *tenrei*; *poderei*, not *podrei*."
+    - "*Pôr* loses its accent in the future: *porei, porá*."
+    - "*Fará* (he will do) has an accent; *fara* doesn't exist."
+  variant: "Same forms in Portugal."
+  related: [g.future-simple, g.conditional-simple]
+  drills:
+    - { es: "Faremos uma festa no sábado.", en: "We'll have a party on Saturday." }
+    - { es: "Ela não dirá nada.", en: "She won't say anything." }
+    - { es: "Quem trará a sobremesa?", en: "Who will bring dessert?" }
+    - { es: "Vocês poderão entrar às oito.", en: "You'll be able to go in at eight." }
+- id: g.future-spoken-vs-written
+  level: a2
+  title: "Talking about the future — speech vs writing"
+  summary: "Speech: present or vou + infinitive. Writing: the simple future. Ir + ir: vou (ir) amanhã."
+  explanation: |
+    | situation | spoken Brazil | written / formal |
+    |---|---|---|
+    | plans | *Vou viajar sábado.* | *Viajarei no sábado.* |
+    | scheduled events | *O show começa às nove.* | *O espetáculo começará às 21h.* |
+    | predictions | *Vai chover.* | *Choverá.* |
+    | promises | *Vou te ligar, prometo.* | *Ligarei, prometo.* |
+    | ser | *Vai ser legal.* | *Será interessante.* |
+
+    ### Vou ir?
+    *Vou ir* is common but many consider it clumsy. Prefer *Vou amanhã* or *Vou lá amanhã*.
+
+    ### Fixed future forms in speech
+    Some synthetic futures are everyday: *Será?* (Really? I wonder), *Será que…?*, *Veremos.* (We'll see.)
+  examples:
+    - { es: "Sábado eu vou à praia.", en: "On Saturday I'm going to the beach.", altEs: ["Sábado eu vou pra praia."] }
+    - { es: "Vai ser incrível!", en: "It's going to be amazing!", altEs: ["Será incrível!"] }
+    - { es: "As inscrições terminarão no dia 30.", en: "Registration will close on the 30th." }
+    - { es: "Amanhã eu te ligo.", en: "I'll call you tomorrow.", altEs: ["Amanhã vou te ligar."] }
+  pitfalls:
+    - "Using *falarei, comerei* with friends sounds stiff or ironic."
+    - "The present is often enough for the near future: *Amanhã eu trabalho.*"
+    - "In an essay or formal email, prefer the simple future to *vou + infinitive* where it reads naturally."
+  variant: "Europeans use *ir* + infinitive too, but also *haver de* + infinitive for intentions (*Hei de lá voltar* — I will go back there one day), which in Brazil is literary or regional."
+  related: [g.future-simple, g.ir-infinitive, g.register-formal-informal]
+  drills:
+    - { es: "Amanhã a gente conversa.", en: "We'll talk tomorrow." }
+    - { es: "A reunião será na sala 5.", en: "The meeting will be in room 5.", altEs: ["A reunião vai ser na sala 5."] }
+    - { es: "Vou lá depois do almoço.", en: "I'll go there after lunch." }
+    - { es: "Veremos!", en: "We'll see!", altEs: ["Vamos ver!"] }
+- id: g.sera-que
+  level: a2
+  title: "Será que…? — wondering aloud"
+  summary: "Será que vai chover? (Do you think it'll rain? / I wonder if…) — one of the most Brazilian phrases there is."
+  explanation: |
+    *Será que* + indicative = "I wonder if… / do you think…?":
+    - *Será que vai chover?* — Do you think it's going to rain?
+    - *Será que ele esqueceu?* — I wonder if he forgot.
+    - *Onde será que ela está?* — Where can she be?
+    - *Será que você podia me ajudar?* — I wonder if you could help me? (very polite)
+
+    On its own, *Será?* = "Really? / Do you think so?"
+
+    ### Future of probability
+    The simple future can also express a guess about the present: *Quem será?* (Who can that be?) *Ele terá uns quarenta anos.* (He must be about forty — formal.)
+  examples:
+    - { es: "Será que o restaurante ainda está aberto?", en: "Do you think the restaurant's still open?" }
+    - { es: "Quem será a essa hora?", en: "Who can that be at this time?" }
+    - { es: "Será que ela gostou do presente?", en: "I wonder if she liked the present." }
+    - { es: "Ele disse que vem. — Será?", en: "He said he's coming. — Really?", altEn: ["He said he's coming. — Do you think so?"] }
+  pitfalls:
+    - "The verb after *será que* is indicative: *Será que ele vem?*, not *venha*."
+    - "Don't translate it literally ('will it be that'); it's a softener."
+    - "Spanish speakers: it's similar to *¿será que…?* in Latin America, but far more frequent in Brazil."
+  variant: "*Será que…?* is also very common in Portugal."
+  related: [g.future-simple, g.probability-future-conditional, g.question-words]
+  drills:
+    - { es: "Será que a gente chega a tempo?", en: "Do you think we'll get there in time?" }
+    - { es: "Onde será que deixei a chave?", en: "Where could I have left the key?" }
+    - { es: "Será que vai dar certo?", en: "Do you think it'll work out?" }
+    - { es: "Será que eles vêm?", en: "I wonder if they're coming." }
+- id: g.comparatives
+  level: a2
+  title: "Comparing — mais… do que, menos… do que, tão… quanto"
+  summary: "mais caro (do) que, menos frio (do) que, tão alto quanto, tanto dinheiro quanto."
+  explanation: |
+    | | |
+    |---|---|
+    | more … than | *mais* + adj. / noun + *(do) que* |
+    | less … than | *menos* + adj. / noun + *(do) que* |
+    | as … as | *tão* + adj. / adv. + *quanto / como* |
+    | as much / many … as | *tanto / tanta / tantos / tantas* + noun + *quanto / como* |
+
+    - *São Paulo é maior do que o Rio.* (*do que* or *que*)
+    - *Curitiba é menos quente que Fortaleza.*
+    - *Ela é tão alta quanto o irmão.*
+    - *Não tenho tanto tempo quanto você.*
+    - *Trabalho tanto quanto ele.* (verbs: *tanto quanto*)
+
+    ### With numbers: mais de
+    *Mais de mil pessoas.* (More than a thousand people.)
+  examples:
+    - { es: "O metrô é mais rápido do que o ônibus.", en: "The metro is faster than the bus.", altEs: ["O metrô é mais rápido que o ônibus."] }
+    - { es: "Porto Alegre é menos quente que o Rio.", en: "Porto Alegre is less hot than Rio.", altEn: ["Porto Alegre isn't as hot as Rio."] }
+    - { es: "Ele é tão simpático quanto a irmã.", en: "He's as nice as his sister.", altEs: ["Ele é tão simpático como a irmã."] }
+    - { es: "Tem tanta gente aqui quanto no Carnaval.", en: "There are as many people here as at Carnival." }
+    - { es: "A viagem durou mais de dez horas.", en: "The trip lasted more than ten hours." }
+  pitfalls:
+    - "Spanish speakers: *tan… como* is *tão… quanto* (or *como*); *más de* with numbers is *mais de*."
+    - "*Tanto* agrees with the noun: *tantas pessoas*."
+    - "Use *mais de* (not *mais do que*) before numbers."
+  variant: "European Portuguese prefers *tão… como* and *tanto… como*; *quanto* is mostly Brazilian."
+  related: [g.superlatives, g.irregular-comparatives, g.muito-pouco]
+  drills:
+    - { es: "Esse restaurante é mais barato do que aquele.", en: "This restaurant is cheaper than that one." }
+    - { es: "Eu sou tão alto quanto meu pai.", en: "I'm as tall as my father." }
+    - { es: "Ela lê mais do que eu.", en: "She reads more than I do." }
+    - { es: "Hoje está menos frio que ontem.", en: "It's less cold today than yesterday." }
+- id: g.superlatives
+  level: a2
+  title: "Superlatives — o mais alto do Brasil, lindíssimo"
+  summary: "o/a mais + adjective + de (the most…); -íssimo for 'extremely': caríssimo, lindíssima."
+  explanation: |
+    ### Relative superlative
+    **article + (noun) + mais / menos + adjective + de**:
+    - *o prédio mais alto de São Paulo* (the tallest building in São Paulo)
+    - *a cidade mais fria do Brasil*
+    - *o restaurante menos caro da rua*
+
+    "In" after a superlative is **de**, not *em*.
+
+    ### Absolute superlative (-íssimo)
+    | | |
+    |---|---|
+    | *caro → caríssimo* | *lindo → lindíssimo* |
+    | *rico → riquíssimo* | *fácil → facílimo / facilíssimo* |
+    | *difícil → dificílimo* | *feliz → felicíssimo* |
+
+    In speech: *muito caro, super caro, caro demais, bem caro*.
+  examples:
+    - { es: "Esse é o melhor pastel da feira.", en: "This is the best pastel at the market." }
+    - { es: "Foz do Iguaçu é um dos lugares mais bonitos do mundo.", en: "Foz do Iguaçu is one of the most beautiful places in the world." }
+    - { es: "O hotel é caríssimo.", en: "The hotel is extremely expensive." }
+    - { es: "Ela é a pessoa mais engraçada que eu conheço.", en: "She's the funniest person I know." }
+    - { es: "A prova foi facílima.", en: "The exam was really easy.", altEs: ["A prova foi facilíssima.", "A prova foi super fácil."] }
+  pitfalls:
+    - "'The best in the world' = *o melhor do mundo* (*de*, not *em*)."
+    - "Spelling: *rico → riquíssimo*, *amigo → amicíssimo* / *amiguíssimo*."
+    - "*-íssimo* forms agree: *lindíssimas*."
+  variant: "Same in Portugal; Lisbon slang intensifies with *bué* (*bué caro*) and *mesmo* (*caro mesmo*)."
+  related: [g.comparatives, g.irregular-comparatives, g.muito-pouco]
+  drills:
+    - { es: "É o dia mais quente do ano.", en: "It's the hottest day of the year." }
+    - { es: "A comida estava gostosíssima.", en: "The food was extremely tasty." }
+    - { es: "Ele é o aluno menos atento da turma.", en: "He's the least attentive student in the class." }
+    - { es: "Esse foi o pior filme do ano.", en: "That was the worst film of the year." }
+- id: g.irregular-comparatives
+  level: a2
+  title: "Melhor, pior, maior, menor"
+  summary: "bom → melhor, mau / ruim → pior, grande → maior, pequeno → menor (no mais bom, mais grande)."
+  explanation: |
+    | | comparative | superlative |
+    |---|---|---|
+    | *bom / bem* | **melhor** (better) | *o melhor* |
+    | *mau / ruim / mal* | **pior** (worse) | *o pior* |
+    | *grande* | **maior** (bigger) | *o maior* |
+    | *pequeno* | **menor** (smaller) | *o menor* |
+    | *muito* | **mais** | — |
+    | *pouco* | **menos** | — |
+
+    - *Melhor / pior* are both adjectives and adverbs: *um carro melhor* / *Ela canta melhor.*
+    - Plurals: *melhores, piores, maiores, menores*.
+
+    ### Older and younger
+    *mais velho* (older), *mais novo* (younger): *meu irmão mais velho*. *Maior / menor de idade* = adult / minor.
+  examples:
+    - { es: "Esse café é melhor que o outro.", en: "This coffee is better than the other one." }
+    - { es: "Hoje estou me sentindo pior.", en: "Today I'm feeling worse." }
+    - { es: "São Paulo é a maior cidade do Brasil.", en: "São Paulo is the biggest city in Brazil." }
+    - { es: "Minha irmã mais nova mora em Curitiba.", en: "My younger sister lives in Curitiba." }
+  pitfalls:
+    - "Never *mais bom* or *mais grande*: *melhor, maior*."
+    - "Spanish speakers: *mayor* (older) is *mais velho*; *maior* means 'bigger'."
+    - "*Ruim* (bad) is the everyday Brazilian adjective; *mau* is more formal or moral ('evil')."
+  variant: "In Portugal *mais pequeno* is standard and very common alongside *menor*; *ruim* is rare (Europeans say *mau*)."
+  related: [g.comparatives, g.superlatives]
+  drills:
+    - { es: "Ele joga melhor do que eu.", en: "He plays better than me." }
+    - { es: "O apartamento novo é maior.", en: "The new flat is bigger." }
+    - { es: "Esse é o pior trânsito do mundo!", en: "This is the worst traffic in the world!" }
+    - { es: "Meu irmão mais velho é médico.", en: "My older brother is a doctor." }
+- id: g.opinions
+  level: a2
+  title: "Giving opinions — acho que, na minha opinião, concordo"
+  summary: "Acho que sim. Para mim… Concordo com você. Você tem razão. Depende."
+  explanation: |
+    ### Giving an opinion
+    | | |
+    |---|---|
+    | *Acho que…* | I think… (the most common) |
+    | *Para mim / Pra mim…* | For me… |
+    | *Na minha opinião…* | In my opinion… |
+    | *Eu acho que sim / que não.* | I think so / I don't think so. |
+
+    ### Agreeing and disagreeing
+    | | |
+    |---|---|
+    | *Concordo (com você).* | I agree (with you). |
+    | *Você tem razão.* | You're right. |
+    | *Com certeza!* / *Exatamente!* | Definitely! / Exactly! |
+    | *Não concordo.* / *Discordo.* | I don't agree. |
+    | *Não acho.* | I don't think so. |
+    | *Depende.* | It depends. |
+    | *Pode ser.* | Maybe. |
+
+    *Acho que* + indicative: *Acho que ele está certo.* (Negative *não acho que* + subjunctive comes at B1.)
+  examples:
+    - { es: "Acho que vai chover.", en: "I think it's going to rain." }
+    - { es: "Na minha opinião, São Paulo tem a melhor comida do Brasil.", en: "In my opinion, São Paulo has the best food in Brazil." }
+    - { es: "Concordo com você.", en: "I agree with you." }
+    - { es: "Você tem razão, desculpa.", en: "You're right, sorry." }
+    - { es: "Pra mim, tanto faz.", en: "It's all the same to me." }
+  pitfalls:
+    - "Spanish speakers: *creo que* is usually *acho que*; *creio que* is formal."
+    - "*Concordar com* takes *com*: *Concordo com ela*."
+    - "English speakers: 'I think so' is *Acho que sim*, not *Acho assim*."
+  variant: "Same in Portugal, where people also agree with *Pois é* / *Pois claro* and say *Tens razão* (tu)."
+  related: [g.achar-que, g.comparatives, g.opinion-structures]
+  drills:
+    - { es: "Acho que não.", en: "I don't think so." }
+    - { es: "Eu não concordo com essa ideia.", en: "I don't agree with that idea." }
+    - { es: "Para mim, o melhor é ir de carro.", en: "For me, the best thing is to go by car." }
+    - { es: "Ele tem razão.", en: "He's right." }
+- id: g.imperative-formal
+  level: a2
+  title: "The imperative for você / o senhor — fale, coma, abra"
+  summary: "Take the eu form, drop -o, swap the vowel: falo → fale, como → coma, faço → faça."
+  explanation: |
+    The standard imperative for *você, o senhor / a senhora, vocês* comes from the **present subjunctive**:
+
+    | eu (present) | você | vocês |
+    |---|---|---|
+    | *falo* | **fale** | **falem** |
+    | *como* | **coma** | **comam** |
+    | *abro* | **abra** | **abram** |
+    | *faço* | **faça** | **façam** |
+    | *digo* | **diga** | **digam** |
+    | *tenho* | **tenha** | **tenham** |
+
+    *-ar* verbs switch to **-e**, *-er / -ir* verbs switch to **-a**.
+
+    ### Negative
+    Just add *não*: *Não fale. Não abram a porta.*
+
+    ### Where you see it
+    Signs, instructions, shops and service, formal speech: *Aguarde. Empurre. Puxe. Volte sempre!*
+    Recipes often use the infinitive instead: *Misturar bem. Assar por 30 minutos.*
+
+    ### Let's
+    *Vamos* + infinitive: *Vamos começar!*
+  examples:
+    - { es: "Fale mais devagar, por favor.", en: "Speak more slowly, please." }
+    - { es: "Abram o livro na página dez.", en: "Open your books at page ten." }
+    - { es: "Não se preocupe!", en: "Don't worry!" }
+    - { es: "Volte sempre!", en: "Come back soon!", altEn: ["Do come again!"] }
+    - { es: "Corte a cebola e frite no óleo.", en: "Chop the onion and fry it in oil." }
+  pitfalls:
+    - "Spanish speakers: same logic as *hable, coma*: *fale, coma*."
+    - "Spelling changes: *ficar → fique, chegar → chegue, começar → comece*."
+    - "In formal writing put pronouns after: *Sente-se, por favor.* In speech: *Se senta.*"
+  variant: "In Portugal these forms are used for *você* and *o senhor*, always with the pronoun after the verb: *Sente-se. Diga-me. Desculpe-me.*"
+  related: [g.imperative-informal, g.imperative-irregular, g.imperative-directions, g.subjunctive-present-forms]
+  drills:
+    - { es: "Espere aqui, por favor.", en: "Wait here, please." }
+    - { es: "Fechem a janela.", en: "Close the window. (to several people)" }
+    - { es: "Não esqueça o guarda-chuva.", en: "Don't forget your umbrella." }
+    - { es: "Pegue a segunda à direita.", en: "Take the second on the right." }
+- id: g.imperative-informal
+  level: a2
+  title: "The everyday Brazilian imperative — fala!, vem!, olha!"
+  summary: "In speech Brazilians use the ele form of the present as a command: fala, come, vem, faz, espera aí."
+  explanation: |
+    Among friends, most Brazilians (even *você* speakers) give commands with the **third-person present** form, which is historically the *tu* imperative:
+
+    | standard | everyday |
+    |---|---|
+    | *Fale!* | **Fala!** |
+    | *Coma!* | **Come!** |
+    | *Venha cá!* | **Vem cá!** |
+    | *Faça isso!* | **Faz isso!** |
+    | *Olhe!* | **Olha!** |
+    | *Espere aí!* | **Espera aí!** |
+
+    - With pronouns: *Me passa o sal. Me liga!*
+    - The negative in speech often stays the same: *Não fala isso!* (standard: *Não fale isso!*)
+    - Very common fixed phrases: *Olha só!* (Look!), *Fala sério!* (Come on! / Seriously?), *Espera aí!* (Hang on!), *Fala aí!* (Hey, what's up?)
+
+    Use it with friends and family; use *fale, venha* with strangers, customers and in writing.
+  examples:
+    - { es: "Vem cá, quero te mostrar uma coisa.", en: "Come here, I want to show you something.", altEs: ["Venha cá, quero te mostrar uma coisa."] }
+    - { es: "Me passa a água?", en: "Can you pass me the water?" }
+    - { es: "Olha que lindo!", en: "Look how beautiful!", altEs: ["Olhe que lindo!"] }
+    - { es: "Fala sério!", en: "Come on, seriously?" }
+    - { es: "Não fala alto, o bebê está dormindo.", en: "Don't talk loudly, the baby's sleeping.", altEs: ["Não fale alto, o bebê está dormindo."] }
+  pitfalls:
+    - "Don't use this register with a customer or in a formal email: *Envie*, not *Envia*."
+    - "*Olha* at the start of a sentence often just means 'Look, …' / 'Well, …'."
+    - "Spanish speakers: it looks like the Spanish *tú* imperative (*habla, come*) and works the same way in speech."
+  variant: "In Portugal this is the true *tu* imperative (*Fala! Come! Vem cá!*), but the negative must be *Não fales! Não comas!* (second-person subjunctive). See the C2 note."
+  related: [g.imperative-formal, g.imperative-irregular, g.tu-regional, g.ep-imperative-tu]
+  drills:
+    - { es: "Espera aí, já volto!", en: "Hang on, I'll be right back!" }
+    - { es: "Me liga quando chegar.", en: "Call me when you get there." }
+    - { es: "Faz um favor pra mim?", en: "Will you do me a favour?" }
+    - { es: "Abre a porta!", en: "Open the door!", altEs: ["Abra a porta!"] }
+- id: g.imperative-irregular
+  level: a2
+  title: "Irregular imperatives — seja, esteja, vá, dê, saiba, faça"
+  summary: "seja, esteja, vá, dê, saiba, queira, haja; and from irregular eu forms: faça, diga, traga, ponha, venha, veja."
+  explanation: |
+    ### Completely irregular
+    | verb | você | vocês |
+    |---|---|---|
+    | *ser* | **seja** | **sejam** |
+    | *estar* | **esteja** | **estejam** |
+    | *ir* | **vá** | **vão** |
+    | *dar* | **dê** | **deem** |
+    | *saber* | **saiba** | **saibam** |
+    | *querer* | **queira** | **queiram** |
+
+    ### From the eu form
+    *faço → faça, digo → diga, trago → traga, ponho → ponha, tenho → tenha, venho → venha, vejo → veja, saio → saia, peço → peça, ouço → ouça, posso → possa*.
+
+    ### Fixed expressions
+    *Seja bem-vindo!* (Welcome!) *Fique à vontade.* (Make yourself at home.) *Tenha um bom dia.* *Vá com Deus.* *Queira sentar-se.* (Please take a seat — very formal.)
+
+    Everyday informal forms: *vai, vem, faz, diz, traz, põe, dá, vê*.
+  examples:
+    - { es: "Seja bem-vinda ao Brasil!", en: "Welcome to Brazil!" }
+    - { es: "Traga o passaporte, por favor.", en: "Bring your passport, please." }
+    - { es: "Vá até o fim da rua.", en: "Go to the end of the street." }
+    - { es: "Tenha paciência!", en: "Be patient!" }
+    - { es: "Ponha o casaco, está frio.", en: "Put your coat on, it's cold.", altEs: ["Põe o casaco, está frio."] }
+  pitfalls:
+    - "Spanish speakers: *sea* is *seja*, *vaya* is *vá*, *haga* is *faça*, *ponga* is *ponha*."
+    - "*Dê* has a circumflex (it distinguishes it from the preposition *de*); plural *deem* has none."
+    - "Informal *vai* vs standard *vá*: *Vai embora!* (speech) / *Vá embora!*"
+  variant: "In Portugal the *tu* imperatives are *sê, está, vai, dá, faz, diz, traz, põe, tem, vem, vê*: *Sê simpático! Está quieto!*"
+  related: [g.imperative-formal, g.imperative-informal, g.subjunctive-irregular]
+  drills:
+    - { es: "Esteja aqui às oito.", en: "Be here at eight." }
+    - { es: "Diga a verdade.", en: "Tell the truth." }
+    - { es: "Venham jantar com a gente!", en: "Come and have dinner with us!" }
+    - { es: "Saiba que eu estou aqui.", en: "Know that I'm here for you." }
+- id: g.polite-requests
+  level: a2
+  title: "Asking nicely — Você pode…?, Dá para…?, Tem como…?"
+  summary: "Soften requests with pode, poderia, será que, dá para, tem como, você se importa de…"
+  explanation: |
+    From casual to very polite:
+
+    | | |
+    |---|---|
+    | *Me passa o sal?* | casual, between friends |
+    | *Dá pra fechar a janela?* | Could you…? / Is it possible…? (Brazil) |
+    | *Tem como trocar?* | Is there a way to exchange it? (Brazil) |
+    | *Você pode me ajudar?* | Can you help me? |
+    | *Você poderia me ajudar?* | Could you help me? |
+    | *Será que você podia…?* | I wonder if you could…? |
+    | *Você se importa de…?* | Do you mind…? |
+    | *Por gentileza, …* | Kindly… (formal, service) |
+
+    ### Getting attention and saying thanks
+    *Com licença* (excuse me, to pass or interrupt), *Desculpa / Desculpe* (sorry), *Moço! / Moça!* (to a waiter), *Obrigado/a*, *Valeu!* (thanks, casual).
+    Replies: *De nada. Por nada. Imagina!* (Don't mention it!)
+  examples:
+    - { es: "Dá pra você abaixar o som?", en: "Could you turn the music down?", altEs: ["Dá para você abaixar o som?"] }
+    - { es: "Tem como pagar em duas vezes?", en: "Is it possible to pay in two instalments?" }
+    - { es: "Você poderia repetir, por favor?", en: "Could you repeat that, please?" }
+    - { es: "Com licença, posso passar?", en: "Excuse me, can I get past?" }
+    - { es: "Obrigada pela ajuda! — Imagina!", en: "Thanks for your help! — Don't mention it!" }
+  pitfalls:
+    - "A bare command (*Me dá um café*) is normal with friends but can sound rude to strangers; add *por favor* or use *pode*."
+    - "*Imagina!* means 'not at all / don't mention it', not 'imagine!'."
+    - "Spanish speakers: *¿me puedes…?* is *você pode me…?* — with *você* and the pronoun before the verb."
+  variant: "In Portugal: *Se faz favor* (please / excuse me), *Podia…?* (imperfect, very polite), *Importa-se de…?*, and the reply to thanks is *De nada* or *Não tem de quê*."
+  related: [g.conditional-simple, g.poder-present, g.imperative-formal, g.politeness-strategies]
+  drills:
+    - { es: "Você pode me emprestar uma caneta?", en: "Can you lend me a pen?" }
+    - { es: "Será que você podia me dar uma carona?", en: "I wonder if you could give me a lift?" }
+    - { es: "Você se importa de esperar um pouco?", en: "Do you mind waiting a little?" }
+    - { es: "Moço, a conta, por favor!", en: "Excuse me, the bill, please!" }
+- id: g.por-vs-para
+  level: a2
+  title: "Por or para?"
+  summary: "para = destination, purpose, recipient, deadline; por = cause, through, means, exchange, duration."
+  explanation: |
+    ### Para (pra)
+    | | |
+    |---|---|
+    | destination | *Vou para Florianópolis.* |
+    | purpose (in order to) | *Estudo para passar na prova.* |
+    | recipient | *Esse presente é para você.* |
+    | deadline | *Preciso disso para sexta.* |
+    | opinion | *Para mim, está ótimo.* |
+
+    ### Por (pelo, pela)
+    | | |
+    |---|---|
+    | cause, reason | *Obrigado pelo convite. Fiz isso por você.* |
+    | through, along | *Passeamos pela praia.* |
+    | means | *Mandei por e-mail.* |
+    | exchange, price | *Comprei por cinquenta reais.* |
+    | duration | *Fiquei lá por duas semanas.* |
+    | per | *três vezes por dia* |
+    | agent (passive) | *O prédio foi projetado por Niemeyer.* |
+    | approximate place | *Ele mora por aqui.* |
+
+    *Estar para* = to be about to; *estar por* = to be still to be done.
+  examples:
+    - { es: "Vamos para Gramado no fim de semana.", en: "We're going to Gramado at the weekend.", altEs: ["Vamos pra Gramado no fim de semana."] }
+    - { es: "Obrigado por tudo!", en: "Thanks for everything!" }
+    - { es: "Ela trabalha para pagar a faculdade.", en: "She works to pay for university." }
+    - { es: "O trem passa por Curitiba.", en: "The train goes through Curitiba." }
+    - { es: "Paguei trinta reais pela camiseta.", en: "I paid thirty reais for the T-shirt." }
+  pitfalls:
+    - "Spanish speakers: the split is almost the same as Spanish *por / para*."
+    - "Thanks *for* = *obrigado por / pelo / pela*, never *para*."
+    - "English speakers: 'for two hours' is *por* (or nothing): *Esperei (por) duas horas.*"
+  variant: "Same distinction in Portugal; *pra* is also heard in fast European speech."
+  related: [g.contractions-por, g.prepositions-with-verbs, g.subjunctive-purpose]
+  drills:
+    - { es: "Isso é para amanhã?", en: "Is this for tomorrow?" }
+    - { es: "Ele foi preso por roubar um carro.", en: "He was arrested for stealing a car." }
+    - { es: "Fui ao mercado para comprar pão.", en: "I went to the market to buy bread." }
+    - { es: "Ela me ligou pelo WhatsApp.", en: "She called me on WhatsApp." }
+- id: g.prepositions-with-verbs
+  level: a2
+  title: "Verbs and their prepositions — pensar em, sonhar com, gostar de"
+  summary: "Many verbs need a fixed preposition (pensar em, casar com); others take none where English uses one (esperar, procurar)."
+  explanation: |
+    ### de
+    *gostar de, precisar de, lembrar(-se) de, esquecer(-se) de, depender de, falar de, cuidar de, desistir de, mudar de*
+
+    ### em
+    *pensar em, acreditar em, confiar em, entrar em, morar em, insistir em, reparar em*
+
+    ### com
+    *sonhar com, casar(-se) com, concordar com, preocupar-se com, parecer com, contar com* (count on), *encontrar com* (meet up with)
+
+    ### a
+    *ajudar a, começar a, aprender a, voltar a, chegar a, assistir a* (watch), *obedecer a*
+
+    ### No preposition (unlike English)
+    *esperar* (wait for), *procurar* (look for), *pedir* (ask for), *pagar* (pay for), *ouvir* (listen to), *olhar* (look at), *buscar* (fetch, pick up)
+  examples:
+    - { es: "Estou pensando em você.", en: "I'm thinking about you." }
+    - { es: "Ela sonhou com o mar.", en: "She dreamed about the sea." }
+    - { es: "Eles vão casar com quem?", en: "Who are they marrying?", altEs: ["Com quem eles vão casar?"] }
+    - { es: "Estou esperando o ônibus.", en: "I'm waiting for the bus." }
+    - { es: "Você parece com sua mãe.", en: "You look like your mother.", altEs: ["Você se parece com sua mãe."] }
+  pitfalls:
+    - "English speakers: no *por* after *esperar* or *procurar*: *Procuro meu celular.*"
+    - "Spanish speakers: *parecerse a* is *parecer com* in Brazil; *casarse con* is *casar com*."
+    - "Contractions apply: *penso no Rio, gosto da praia, sonho com o dia…*"
+  variant: "In Portugal: *parecer-se com*, *chegar a* (never *em*), *assistir a* even in speech, and *ir ter com alguém* (to go and meet someone)."
+  related: [g.gostar-de, g.precisar-de, g.por-vs-para]
+  drills:
+    - { es: "Você acredita em fantasmas?", en: "Do you believe in ghosts?" }
+    - { es: "Não se esqueça de mim!", en: "Don't forget me!" }
+    - { es: "Pode contar comigo.", en: "You can count on me." }
+    - { es: "Estou procurando um apartamento.", en: "I'm looking for a flat." }
+- id: g.contractions-por
+  level: a2
+  title: "Pelo, pela — por + article"
+  summary: "por + o = pelo, por + a = pela: obrigado pela ajuda, passei pelo centro, pelo menos."
+  explanation: |
+    | por + | o | a | os | as |
+    |---|---|---|---|---|
+    | | **pelo** | **pela** | **pelos** | **pelas** |
+
+    ### Everyday phrases
+    | | |
+    |---|---|
+    | *pelo menos* | at least |
+    | *pela manhã* | in the morning |
+    | *pela primeira vez* | for the first time |
+    | *pelo jeito* | apparently, by the looks of it |
+    | *pelo amor de Deus!* | for heaven's sake! |
+    | *pelo contrário* | on the contrary |
+
+    - *Obrigado pelo presente. Obrigada pela paciência.*
+    - *Andamos pela cidade.*
+    - *O livro foi escrito pela Clarice Lispector.*
+  examples:
+    - { es: "Obrigado pela visita!", en: "Thanks for coming!", altEn: ["Thanks for the visit!"] }
+    - { es: "A gente passeou pelo centro histórico.", en: "We walked around the historic centre." }
+    - { es: "Pelo menos não choveu.", en: "At least it didn't rain." }
+    - { es: "Vi neve pela primeira vez em Gramado.", en: "I saw snow for the first time in Gramado." }
+  pitfalls:
+    - "Never *por o / por a*: always *pelo / pela*."
+    - "Spanish speakers: *por el* is *pelo*; it is also the word for 'hair' — context makes it clear."
+    - "*Pelo menos* (at least) vs *ao menos*: both fine; *pelo menos* is more common."
+  variant: "Same in Portugal."
+  related: [g.por-vs-para, g.contractions-de, g.passive-ser]
+  drills:
+    - { es: "Obrigada pelas flores.", en: "Thank you for the flowers." }
+    - { es: "O ônibus passa pela universidade.", en: "The bus goes past the university." }
+    - { es: "Pelo jeito, vai chover.", en: "By the looks of it, it's going to rain." }
+    - { es: "Ele trabalha pela manhã.", en: "He works in the morning." }
+- id: g.ha-faz-time
+  level: a2
+  title: "Há / faz + time, desde — how long and since when"
+  summary: "Moro aqui há dois anos (present!). Faz dois anos que moro aqui. Desde 2020. Há quanto tempo…?"
+  explanation: |
+    ### For how long (still true) — present tense
+    - *Moro em São Paulo **há** cinco anos.* — I've lived in São Paulo for five years.
+    - ***Faz** cinco anos que moro em São Paulo.*
+    - *Há quanto tempo você estuda português?* / *Quanto tempo faz que…?*
+
+    ### Ago — preterite
+    *Cheguei há cinco anos.* — I arrived five years ago.
+
+    ### Since
+    *desde 2020, desde janeiro, desde criança, desde que cheguei*
+
+    ### Other time prepositions
+    | | |
+    |---|---|
+    | *durante* | during, for |
+    | *por* | for (a period) |
+    | *em* | in (time taken): *Fiz em duas horas.* |
+    | *daqui a* | in (from now): *daqui a uma semana* |
+    | *até* | until |
+  examples:
+    - { es: "Moro em Curitiba há três anos.", en: "I've been living in Curitiba for three years.", altEs: ["Faz três anos que moro em Curitiba."] }
+    - { es: "Há quanto tempo vocês se conhecem?", en: "How long have you known each other?" }
+    - { es: "Não vejo meus pais desde o Natal.", en: "I haven't seen my parents since Christmas." }
+    - { es: "Ela trabalha aqui desde 2019.", en: "She's worked here since 2019." }
+    - { es: "Volto daqui a duas semanas.", en: "I'll be back in two weeks." }
+  pitfalls:
+    - "English speakers: 'I have lived here for two years' uses the **present**: *Moro aqui há dois anos.*"
+    - "*Há* (time) is from *haver* and has an h; *daqui a* (future) has none."
+    - "Spanish speakers: *hace dos años que vivo aquí* = *faz / há dois anos que moro aqui*."
+  variant: "Europeans prefer *há* to *faz* and also say *desde há* (*Moro aqui desde há dois anos*)."
+  related: [g.past-time-markers, g.por-vs-para, g.fazer-present]
+  drills:
+    - { es: "Faz muito tempo que não te vejo!", en: "It's been ages since I saw you!", altEs: ["Há muito tempo que não te vejo!"] }
+    - { es: "Estou esperando há meia hora.", en: "I've been waiting for half an hour." }
+    - { es: "Somos amigos desde a escola.", en: "We've been friends since school." }
+    - { es: "Há quanto tempo você mora no Brasil?", en: "How long have you lived in Brazil?" }
+- id: g.doer
+  level: a2
+  title: "Doer and estar com dor — saying what hurts"
+  summary: "Minha cabeça dói / Estou com dor de cabeça. Dói, doem. Machuquei o pé."
+  explanation: |
+    ### Doer (to hurt)
+    The thing that hurts is the subject; the verb is usually *dói* (singular) or *doem* (plural):
+    - *Minha cabeça dói.* / *Me dói a cabeça.*
+    - *Minhas costas doem.* (*costas* is plural)
+    - *Dói aqui.* (It hurts here.)
+
+    ### Estar com dor de… (most common)
+    *Estou com dor de cabeça / de garganta / de barriga / de dente / nas costas.*
+
+    ### At the doctor's or the pharmacy
+    | | |
+    |---|---|
+    | *Estou com febre / tosse / gripe / resfriado.* | I have a fever / a cough / flu / a cold. |
+    | *Estou enjoado/a.* | I feel sick (nauseous). |
+    | *Passei mal.* | I felt ill. |
+    | *Machuquei o pé.* | I hurt my foot. |
+    | *Tem alguma coisa para…?* | Do you have something for…? |
+    | *Sou alérgico a…* | I'm allergic to… |
+  examples:
+    - { es: "Estou com dor de garganta.", en: "I have a sore throat." }
+    - { es: "Meu joelho dói quando eu corro.", en: "My knee hurts when I run." }
+    - { es: "Doem as costas depois da viagem.", en: "My back hurts after the trip.", altEs: ["Minhas costas doem depois da viagem."] }
+    - { es: "Tem alguma coisa para febre?", en: "Do you have something for a fever?" }
+    - { es: "Ela machucou o braço no jogo.", en: "She hurt her arm in the match." }
+  pitfalls:
+    - "Spanish speakers: *me duele la cabeza* is usually *estou com dor de cabeça* or *minha cabeça dói* in Brazil."
+    - "*Costas* (back) is plural: *minhas costas doem*."
+    - "*Dói* has an accent; *doem* (plural) doesn't."
+    - "False friend: Brazilian *constipação* means 'constipation'; a cold is *resfriado*."
+  variant: "In Portugal: *Dói-me a cabeça. Tenho dores de costas.* A cold is *uma constipação* (*estou constipado* = I have a cold), which means something very different in Brazil."
+  related: [g.estar-com, g.dever-ter-que, g.conditional-simple]
+  drills:
+    - { es: "Estou com dor de barriga.", en: "I have a stomach ache." }
+    - { es: "Meus pés doem muito.", en: "My feet really hurt." }
+    - { es: "Onde dói?", en: "Where does it hurt?" }
+    - { es: "Estou com febre desde ontem.", en: "I've had a fever since yesterday." }
+- id: g.conditional-simple
+  level: a2
+  title: "The conditional (futuro do pretérito) — falaria, gostaria, poderia"
+  summary: "infinitive + -ia, -ia, -íamos, -iam: polite requests, wishes, advice and hypotheses."
+  explanation: |
+    | | falar | ser | fazer |
+    |---|---|---|---|
+    | eu | falar**ia** | ser**ia** | **far**ia |
+    | você / ele | falar**ia** | ser**ia** | **far**ia |
+    | nós | falar**íamos** | ser**íamos** | **far**íamos |
+    | eles | falar**iam** | ser**iam** | **far**iam |
+
+    Irregular only *fazer → faria, dizer → diria, trazer → traria*.
+
+    ### Uses
+    - **Politeness**: *Eu gostaria de um quarto. Você poderia me ajudar?*
+    - **Advice**: *Eu, no seu lugar, iria ao médico.*
+    - **Wishes and hypotheses**: *Eu moraria na praia.* *Seria ótimo!*
+    - **Future in the past**: *Ele disse que viria.*
+
+    ### Brazilian speech
+    The imperfect often replaces it: *Eu ia* (= *iria*), *Seria bom* / *Era bom*.
+  examples:
+    - { es: "Eu gostaria de marcar uma consulta.", en: "I'd like to make an appointment." }
+    - { es: "Você poderia falar mais devagar?", en: "Could you speak more slowly?" }
+    - { es: "No seu lugar, eu descansaria.", en: "If I were you, I'd rest." }
+    - { es: "Seria ótimo te ver!", en: "It would be great to see you!" }
+    - { es: "Ele disse que traria o vinho.", en: "He said he would bring the wine." }
+  pitfalls:
+    - "Spanish speakers: *tendría, podría* are regular in Portuguese: *teria, poderia*."
+    - "*Gostaria* (would like) vs *gostarei* (will like): don't mix them up."
+    - "Accent on *nós*: *falaríamos, seríamos*."
+  variant: "European Portuguese very often uses the imperfect instead: *Gostava de um café. Podia ajudar-me? Era bom.* With pronouns, formal writing uses mesoclisis: *dir-lhe-ia* (I would tell him)."
+  related: [g.future-irregular, g.polite-requests, g.conditional-hypothetical, g.ep-imperfect-for-conditional]
+  drills:
+    - { es: "Nós gostaríamos de ver o cardápio.", en: "We'd like to see the menu." }
+    - { es: "Você deveria ir ao médico.", en: "You should go to the doctor." }
+    - { es: "Eu viajaria pelo mundo todo.", en: "I'd travel all over the world." }
+    - { es: "Seria possível trocar de quarto?", en: "Would it be possible to change rooms?" }
+- id: g.dever-ter-que
+  level: a2
+  title: "Dever, deveria, ter que — should and must"
+  summary: "Você deve descansar (must, should); Você deveria ir ao médico (should, softer); Tenho que trabalhar (have to)."
+  explanation: |
+    | | meaning | example |
+    |---|---|---|
+    | *dever* + inf. | must, should (advice, duty) | *Você deve beber muita água.* |
+    | *deveria* + inf. | should (softer advice) | *Você deveria dormir mais.* |
+    | *ter que / ter de* | have to (external obligation) | *Tenho que acordar às seis.* |
+    | *precisar* + inf. | need to | *Preciso descansar.* |
+    | *é melhor* + inf. | had better | *É melhor tomar um táxi.* |
+
+    ### Negative
+    *Você não deve fumar.* (You mustn't / shouldn't smoke.) *Você não tem que vir.* (You don't have to come.)
+
+    ### Other meaning
+    *dever* + noun = to owe: *Devo cem reais para ela.*
+
+    *Deve* + infinitive can also express probability (*Ele deve estar em casa*) — see B1.
+  examples:
+    - { es: "Você deve tomar o remédio de oito em oito horas.", en: "You must take the medicine every eight hours." }
+    - { es: "Você deveria descansar mais.", en: "You should rest more." }
+    - { es: "Tenho que ir ao dentista amanhã.", en: "I have to go to the dentist tomorrow." }
+    - { es: "É melhor você ficar em casa hoje.", en: "You'd better stay home today." }
+    - { es: "Quanto eu te devo?", en: "How much do I owe you?" }
+  pitfalls:
+    - "English 'must not' = *não deve* / *não pode*; *não tem que* means 'don't have to'."
+    - "Spanish speakers: *deber* works the same way; *debería* is *deveria*."
+    - "*Dever* + noun means 'owe', so *Devo um café* = 'I owe (you) a coffee'."
+  variant: "In Portugal the imperfect replaces *deveria*: *Devias ir ao médico.* And *ter de* is preferred: *Tens de descansar.*"
+  related: [g.ter-que, g.conditional-simple, g.dever-probability, g.subjunctive-advice]
+  drills:
+    - { es: "Você não deve dirigir depois de beber.", en: "You mustn't drive after drinking." }
+    - { es: "A gente deveria sair mais cedo.", en: "We should leave earlier." }
+    - { es: "Ela tem que trabalhar no sábado.", en: "She has to work on Saturday." }
+    - { es: "É melhor levar um casaco.", en: "You'd better take a coat." }
+- id: g.ficar-change-of-state
+  level: a2
+  title: "Ficar + adjective — to become, to get"
+  summary: "Fiquei feliz, ele ficou doente, ficou pronto: ficar describes a change of state."
+  explanation: |
+    **ficar + adjective** = to become, to get, to turn:
+
+    | | |
+    |---|---|
+    | *Fiquei muito feliz.* | I was / got really happy. |
+    | *Ele ficou doente.* | He got ill. |
+    | *Ela ficou brava.* | She got angry. |
+    | *O jantar ficou pronto.* | Dinner is ready (has become ready). |
+    | *Fica tranquilo!* | Don't worry! / Relax! |
+
+    - *Ficar com* + noun = start to feel: *fiquei com fome, ficou com medo, fiquei com raiva*.
+    - *Ficar bem* (em alguém) = to suit: *Esse vestido fica bem em você.*
+    - *Ficar de* + infinitive = to agree to, say you will: *Ele ficou de ligar.* (He said he'd call.)
+
+    ### Other "become" verbs
+    *virar* (colloquial: *Ele virou médico*), *tornar-se* (formal: *tornou-se famoso*).
+  examples:
+    - { es: "Fiquei triste com a notícia.", en: "I was sad to hear the news." }
+    - { es: "Ela ficou nervosa antes da entrevista.", en: "She got nervous before the interview." }
+    - { es: "O bolo ficou ótimo!", en: "The cake turned out great!" }
+    - { es: "Fica calmo, vai dar tudo certo.", en: "Stay calm, it'll all be fine.", altEs: ["Fique calmo, vai dar tudo certo."] }
+    - { es: "Essa cor fica bem em você.", en: "That colour suits you." }
+  pitfalls:
+    - "Spanish speakers: *ponerse triste* / *quedarse ciego* are both *ficar*: *ficou triste, ficou cego*."
+    - "*Estar* describes the state; *ficar* the change: *Estou cansado* / *Fiquei cansado*."
+    - "*Ficar de* (+ inf.) is a promise, not a location: *Ela ficou de trazer o bolo.*"
+  variant: "Same in Portugal; *virar* for 'become' is mainly Brazilian, and Europeans say *ficar contente* more than *ficar feliz*."
+  related: [g.ficar-location, g.ser-estar-ficar-advanced, g.passive-estar-ficar]
+  drills:
+    - { es: "Fiquei com sono depois do almoço.", en: "I got sleepy after lunch." }
+    - { es: "Meu pai ficou orgulhoso.", en: "My father was proud." }
+    - { es: "A casa ficou linda.", en: "The house turned out beautiful." }
+    - { es: "Ela ficou de me mandar o endereço.", en: "She said she'd send me the address." }

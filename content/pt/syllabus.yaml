@@ -1,0 +1,650 @@
+# The whole journey, A1 -> C2, in Brazilian Portuguese (European Portuguese as
+# notes; the C2 units are set in Portugal and teach European features). Each unit
+# lists the grammar points it teaches (ids resolve to notes in grammar/<level>.yaml)
+# and CEFR can-do statements. `authored: true` means units/<level>/<unit>.yaml exists.
+# Journey: A1 Rio de Janeiro, A2 São Paulo & the South, B1 Minas Gerais & the
+# Centre-West, B2 the Northeast, C1 the Amazon & the North, C2 Portugal.
+levels:
+  - id: a1
+    title: A1
+    name: Breakthrough
+    description: Understand and use everyday expressions and very basic phrases. Introduce yourself, ask and answer simple personal questions, and interact simply when the other person speaks slowly. The journey starts in Rio de Janeiro.
+    wordTarget: 700
+    canDo:
+      - Greet people, introduce myself and others, and say where I am from.
+      - Talk about my family, my home and my daily routine in the present.
+      - Order food and drink, shop for basics, ask prices and tell the time.
+      - Ask for and give simple directions and talk about plans with ir + infinitive.
+      - Understand short, simple texts and slow, clear speech on familiar topics.
+    units:
+      - id: a1.u01
+        title: Oi, tudo bem?
+        subtitle: Greetings and introductions
+        authored: true
+        canDo:
+          - "Greet people and say goodbye formally and informally."
+          - "Introduce myself and ask someone their name."
+          - "Choose between você and o senhor / a senhora."
+        grammar: [g.greetings, g.subject-pronouns, g.ser-present, g.chamar-se, g.voce-o-senhor]
+      - id: a1.u02
+        title: De onde você é?
+        subtitle: People and countries
+        authored: true
+        canDo:
+          - "Say where I and others are from."
+          - "Describe people and things with basic adjectives."
+          - "Say what something is not, and spell with the right accents."
+        grammar: [g.accents, g.gender-nouns, g.articles-definite, g.adjective-agreement, g.ser-origin, g.negation]
+      - id: a1.u03
+        title: Minha família
+        subtitle: Family and numbers
+        authored: true
+        canDo:
+          - "Talk about my family and say people's ages."
+          - "Count to one hundred."
+          - "Ask simple questions with who, what, where and how many."
+        grammar: [g.possessives, g.plural-nouns, g.ter-present, g.numbers-0-100, g.question-words]
+      - id: a1.u04
+        title: Minha casa no Rio
+        subtitle: My home and my neighbourhood
+        authored: true
+        canDo:
+          - "Describe my home and say where things are."
+          - "Say what there is in my neighbourhood using tem."
+          - "Ask where a place is."
+        grammar: [g.tem-there-is, g.estar-present, g.ficar-location, g.articles-indefinite, g.contractions-em, g.prepositions-place]
+      - id: a1.u05
+        title: Na padaria
+        subtitle: Food and drink
+        authored: true
+        canDo:
+          - "Order in a padaria, café or restaurant."
+          - "Say what I like and dislike."
+          - "Ask for quantities of food and drink."
+        grammar: [g.present-regular-ar, g.querer-present, g.gostar-de, g.contractions-de, g.quantity-words]
+      - id: a1.u06
+        title: Meu dia a dia
+        subtitle: Daily routine
+        authored: true
+        canDo:
+          - "Describe my daily routine and tell the time."
+          - "Say how often I do things."
+          - "Talk about days of the week and months."
+        grammar: [g.present-regular-er-ir, g.reflexive-verbs-present, g.telling-time, g.days-months, g.frequency-adverbs]
+      - id: a1.u07
+        title: Como ela é?
+        subtitle: Describing people
+        authored: true
+        canDo:
+          - "Describe appearance and character."
+          - "Say how someone feels right now (hungry, cold, sleepy)."
+        grammar: [g.ser-vs-estar-basics, g.adjective-position, g.estar-com, g.muito-pouco]
+      - id: a1.u08
+        title: Quanto custa?
+        subtitle: Shopping and prices
+        authored: true
+        canDo:
+          - "Buy clothes and food and ask for prices and sizes."
+          - "Count to a thousand and talk about money in reais."
+          - "Point things out with this, that and that over there."
+        grammar: [g.numbers-100-plus, g.quanto-custa, g.demonstratives, g.demonstrative-contractions, g.colours]
+      - id: a1.u09
+        title: Vamos à praia!
+        subtitle: Going, doing, being able
+        authored: true
+        canDo:
+          - "Say where I am going and what I am going to do."
+          - "Make simple requests and ask permission."
+          - "Talk about what I do and make."
+        grammar: [g.ir-present, g.ir-infinitive, g.fazer-present, g.contractions-a, g.poder-present]
+      - id: a1.u10
+        title: Fim de semana carioca
+        subtitle: Free time and the weather
+        authored: true
+        canDo:
+          - "Talk about hobbies, sports, music and the weather."
+          - "Say what I know and whom I know."
+          - "Use common irregular verbs in the present."
+        grammar: [g.weather, g.present-irregular-first-person, g.saber-vs-conhecer, g.jogar-vs-tocar, g.vir-vs-ver]
+      - id: a1.u11
+        title: Como eu chego lá?
+        subtitle: Around town
+        authored: true
+        canDo:
+          - "Ask for and give directions."
+          - "Say what I am doing right now."
+          - "Say what I have to do and what I need."
+        grammar: [g.estar-gerund, g.imperative-directions, g.ter-que, g.precisar-de, g.prepositions-movement]
+      - id: a1.u12
+        title: Planos no Rio
+        subtitle: Plans and review
+        authored: true
+        canDo:
+          - "Talk about plans and connect ideas in short texts."
+          - "Answer yes-no questions the Brazilian way."
+          - "Agree with also and neither."
+        grammar: [g.connectors-basic, g.tambem-tambem-nao, g.yes-no-answers, g.todo-tudo]
+
+  - id: a2
+    title: A2
+    name: Waystage
+    description: Understand sentences and frequent expressions related to areas of immediate relevance. Communicate in simple, routine tasks, describe your background and surroundings, and narrate past events. The journey continues through São Paulo and the South.
+    wordTarget: 1500
+    canDo:
+      - Narrate past events and tell short stories, distinguishing completed actions from background.
+      - Speak naturally with a gente, object pronouns and everyday spoken forms.
+      - Talk about plans, make predictions, give instructions and make polite requests.
+      - Compare things, give opinions and handle shopping, travel and health.
+      - Read short articles and personal messages; follow slow conversations.
+    units:
+      - id: a2.u01
+        title: Ontem em São Paulo
+        subtitle: Yesterday - the preterite
+        authored: true
+        canDo:
+          - "Say what I did yesterday and last weekend."
+          - "Use past time expressions."
+        grammar: [g.preterite-regular, g.past-time-markers, g.preterite-spelling]
+      - id: a2.u02
+        title: Biografias
+        subtitle: Life stories - the irregular preterite
+        authored: true
+        canDo:
+          - "Tell the main events of someone's life."
+          - "Ask what happened and when."
+          - "Say dates and years."
+        grammar: [g.preterite-irregular, g.preterite-ser-ir, g.preterite-dar-ver-vir, g.dates-years]
+      - id: a2.u03
+        title: Quando eu era criança
+        subtitle: When I was a child - the imperfect
+        authored: true
+        canDo:
+          - "Describe habits and situations in the past."
+          - "Describe how places and people used to be."
+        grammar: [g.imperfect, g.imperfect-uses, g.costumar]
+      - id: a2.u04
+        title: Contando histórias
+        subtitle: Telling stories
+        authored: true
+        canDo:
+          - "Tell an anecdote combining events and background."
+          - "Say what was happening when something happened."
+          - "Use time connectors."
+        grammar: [g.preterite-vs-imperfect, g.narration-connectors, g.quando-enquanto, g.estar-gerund-past]
+      - id: a2.u05
+        title: A gente se vê!
+        subtitle: A gente and everyday spoken Portuguese
+        authored: true
+        canDo:
+          - "Use a gente for we in everyday speech."
+          - "Recognise regional tu and spoken reductions like tá and pra."
+          - "Avoid ambiguity with dele and dela."
+        grammar: [g.a-gente, g.tu-regional, g.seu-vs-dele, g.spoken-reductions]
+      - id: a2.u06
+        title: Você já foi a Curitiba?
+        subtitle: Experiences and the recent past
+        authored: true
+        canDo:
+          - "Talk about experiences and what I have already or not yet done."
+          - "Say what I have just done and what I have been doing lately."
+          - "Use words like someone, nothing and nobody."
+        grammar: [g.ja-ainda-nao, g.past-participles, g.perfeito-composto, g.acabar-de, g.indefinite-pronouns]
+      - id: a2.u07
+        title: Eu te ligo
+        subtitle: Object pronouns
+        authored: true
+        canDo:
+          - "Avoid repeating nouns with object pronouns."
+          - "Say who gives what to whom."
+          - "Place pronouns the Brazilian way in speech."
+        grammar: [g.direct-object-pronouns, g.indirect-object-pronouns, g.pronoun-placement-brazil, g.ele-as-object, g.prepositional-pronouns]
+      - id: a2.u08
+        title: O que será?
+        subtitle: The future
+        authored: true
+        canDo:
+          - "Make predictions and promises."
+          - "Choose between the spoken and the written future."
+          - "Wonder aloud with será que."
+        grammar: [g.future-simple, g.future-irregular, g.future-spoken-vs-written, g.sera-que]
+      - id: a2.u09
+        title: Melhor que o meu
+        subtitle: Comparing and giving opinions
+        authored: true
+        canDo:
+          - "Compare people, places and things."
+          - "Express and justify opinions simply."
+        grammar: [g.comparatives, g.superlatives, g.irregular-comparatives, g.opinions]
+      - id: a2.u10
+        title: Faça assim
+        subtitle: Instructions - the imperative
+        authored: true
+        canDo:
+          - "Give instructions, directions and recipes."
+          - "Tell someone politely what to do."
+          - "Recognise the informal Brazilian imperative."
+        grammar: [g.imperative-formal, g.imperative-informal, g.imperative-irregular, g.polite-requests]
+      - id: a2.u11
+        title: Por aí, pelo Sul
+        subtitle: Prepositions - por, para and time
+        authored: true
+        canDo:
+          - "Explain cause, purpose and destination."
+          - "Say how long ago and for how long."
+          - "Use verbs with their prepositions."
+        grammar: [g.por-vs-para, g.prepositions-with-verbs, g.contractions-por, g.ha-faz-time]
+      - id: a2.u12
+        title: Saúde em dia
+        subtitle: Health, advice and the conditional
+        authored: true
+        canDo:
+          - "Describe symptoms at a pharmacy or doctor's."
+          - "Give advice and make polite requests with the conditional."
+          - "Describe changes of state with ficar."
+        grammar: [g.doer, g.conditional-simple, g.dever-ter-que, g.ficar-change-of-state]
+
+  - id: b1
+    title: B1
+    name: Threshold
+    description: Deal with most situations while travelling. Produce connected text on familiar topics. Describe experiences, events, dreams and ambitions, and give reasons for opinions and plans. The journey crosses Minas Gerais and the Centre-West.
+    wordTarget: 3000
+    canDo:
+      - Express wishes, emotions, doubts and advice using the present subjunctive.
+      - Talk about future conditions with the future subjunctive and use the personal infinitive.
+      - Narrate complex past sequences and report what others said.
+      - Describe things with relative clauses and passive or impersonal constructions.
+      - Write structured messages and short texts with connectors.
+    units:
+      - id: b1.u01
+        title: Tomara que dê certo
+        subtitle: Present subjunctive - wishes
+        authored: true
+        canDo:
+          - "Express wishes and hopes for myself and others."
+          - "Form the present subjunctive of regular and irregular verbs."
+        grammar: [g.subjunctive-present-forms, g.subjunctive-irregular, g.subjunctive-wishes]
+      - id: b1.u02
+        title: Que bom que você veio!
+        subtitle: Emotions and judgements
+        authored: true
+        canDo:
+          - "React to news with emotion."
+          - "Judge situations with impersonal expressions."
+          - "Choose between subjunctive and infinitive."
+        grammar: [g.subjunctive-emotion, g.subjunctive-impersonal, g.subjunctive-vs-infinitive]
+      - id: b1.u03
+        title: Acho que sim
+        subtitle: Doubt, opinion and reasons
+        authored: true
+        canDo:
+          - "Express certainty, doubt and probability."
+          - "Disagree politely."
+          - "Give reasons and consequences."
+        grammar: [g.subjunctive-doubt, g.achar-que, g.talvez, g.connectors-cause-consequence]
+      - id: b1.u04
+        title: Conselhos de amigo
+        subtitle: Advice and commands
+        authored: true
+        canDo:
+          - "Give advice and recommendations."
+          - "Tell someone what not to do."
+          - "Pass on commands to third persons."
+        grammar: [g.subjunctive-advice, g.imperative-negative, g.indirect-commands]
+      - id: b1.u05
+        title: Quando você vier
+        subtitle: The future subjunctive
+        authored: true
+        canDo:
+          - "Talk about future plans with when, as soon as and if."
+          - "Say whoever, whatever and wherever about the future."
+        grammar: [g.future-subjunctive-forms, g.future-subjunctive-time, g.future-subjunctive-se, g.future-subjunctive-relative]
+      - id: b1.u06
+        title: Para a gente chegar a tempo
+        subtitle: The personal infinitive
+        authored: true
+        canDo:
+          - "Use the personal infinitive after prepositions and impersonal expressions."
+          - "Explain purpose with para and para que."
+        grammar: [g.personal-infinitive-forms, g.personal-infinitive-uses, g.subjunctive-purpose]
+      - id: b1.u07
+        title: Quando cheguei, ele já tinha saído
+        subtitle: Past perfect and sequencing
+        authored: true
+        canDo:
+          - "Order past events relative to each other."
+          - "Tell a story with background and prior events."
+        grammar: [g.pluperfect, g.antes-depois-de, g.connectors-sequence]
+      - id: b1.u08
+        title: A cidade onde eu nasci
+        subtitle: Relative clauses
+        authored: true
+        canDo:
+          - "Define and describe people, places and things."
+          - "Describe what I am looking for."
+        grammar: [g.relative-que-quem, g.relative-onde-cujo, g.relative-o-qual, g.relative-subjunctive]
+      - id: b1.u09
+        title: Foi inaugurada em 1960
+        subtitle: Passive and impersonal constructions
+        authored: true
+        canDo:
+          - "Describe processes and historical facts in the passive."
+          - "Talk about general rules impersonally."
+          - "Describe results and states."
+        grammar: [g.passive-ser, g.se-passive, g.indeterminate-subject, g.passive-estar-ficar]
+      - id: b1.u10
+        title: Ele disse que viria
+        subtitle: Reported speech and messages
+        authored: true
+        canDo:
+          - "Report what someone said or asked."
+          - "Pass on messages."
+          - "Write a semi-formal email."
+        grammar: [g.reported-speech-present, g.reported-speech-past, g.reported-questions, g.formal-email]
+      - id: b1.u11
+        title: Seria bom, mas...
+        subtitle: Hypothesis, probability and contrast
+        authored: true
+        canDo:
+          - "Say what I would do."
+          - "Speculate about the present and the past."
+          - "Contrast ideas with embora and no entanto."
+        grammar: [g.conditional-hypothetical, g.probability-future-conditional, g.dever-probability, g.connectors-contrast]
+      - id: b1.u12
+        title: Ficar, continuar, acabar
+        subtitle: Ser, estar, ficar and verbal periphrases
+        authored: true
+        canDo:
+          - "Use ser, estar and ficar with changing meanings."
+          - "Describe ongoing, continuing and interrupted actions."
+        grammar: [g.ser-estar-ficar-advanced, g.verbal-periphrases, g.b1-review]
+
+  - id: b2
+    title: B2
+    name: Vantage
+    description: Understand the main ideas of complex text, including technical discussion in your field. Interact with fluency and spontaneity with native speakers. Produce clear, detailed text on a wide range of subjects and argue a viewpoint. The journey travels along the Northeast.
+    wordTarget: 5000
+    canDo:
+      - Express unreal and past hypotheses, regrets and concessions.
+      - Argue a position in writing with cohesion and appropriate register.
+      - Follow films, music and news in standard varieties and extended speech.
+      - Place clitic pronouns according to spoken and written norms.
+      - Recognise the main regional and international varieties of Portuguese.
+    units:
+      - id: b2.u01
+        title: "Se eu tivesse tempo"
+        subtitle: "Imperfect subjunctive and unreal conditions"
+        authored: true
+        canDo:
+          - "Talk about unreal situations and their consequences."
+          - "Compare with como se."
+        grammar: [g.subjunctive-imperfect, g.se-clauses-unreal, g.como-se]
+      - id: b2.u02
+        title: "Se eu tivesse sabido"
+        subtitle: "Compound subjunctive tenses"
+        authored: true
+        canDo:
+          - "Express doubts and emotions about completed events."
+          - "Build past unreal conditions."
+          - "Talk about actions that will have been completed."
+        grammar: [g.subjunctive-perfect, g.subjunctive-pluperfect, g.se-clauses-past, g.future-subjunctive-compound]
+      - id: b2.u03
+        title: "Eu teria feito diferente"
+        subtitle: "Conditional perfect and regret"
+        authored: true
+        canDo:
+          - "Express regret and what should have happened."
+          - "Reproach politely."
+          - "Make wishes with quem dera."
+        grammar: [g.conditional-perfect, g.quem-dera, g.deveria-ter]
+      - id: b2.u04
+        title: "Embora chova"
+        subtitle: "Concession and contrast"
+        authored: true
+        canDo:
+          - "Concede points in an argument."
+          - "Contrast ideas with nuance."
+        grammar: [g.embora-concession, g.por-mais-que, g.apesar-de]
+      - id: b2.u05
+        title: "Contanto que você venha"
+        subtitle: "Advanced time, condition and consequence clauses"
+        authored: true
+        canDo:
+          - "Sequence future and habitual events precisely."
+          - "Set conditions and express consequences."
+        grammar: [g.temporal-clauses-advanced, g.conditional-conjunctions, g.consequence-clauses]
+      - id: b2.u06
+        title: "Ela pediu que eu viesse"
+        subtitle: "Advanced reported speech"
+        authored: true
+        canDo:
+          - "Report commands, requests and wishes."
+          - "Choose precise reporting verbs."
+        grammar: [g.reported-speech-subjunctive, g.reported-commands, g.reporting-verbs]
+      - id: b2.u07
+        title: "Fundada pelos portugueses"
+        subtitle: "Formal passive and impersonal style"
+        authored: true
+        canDo:
+          - "Describe history, processes and institutions formally."
+          - "Write in an objective style."
+        grammar: [g.passive-advanced, g.impersonal-expressions, g.nominalization]
+      - id: b2.u08
+        title: "Vou levando"
+        subtitle: "Verbal periphrases and the future perfect"
+        authored: true
+        canDo:
+          - "Express aspect and modality precisely."
+          - "Describe gradual change and repetition."
+          - "Say what will have happened by a certain time."
+        grammar: [g.periphrases-aspect, g.periphrases-modal, g.future-perfect]
+      - id: b2.u09
+        title: "Oxente! Registro e sotaques"
+        subtitle: "Register, regional speech and diminutives"
+        authored: true
+        canDo:
+          - "Shift between colloquial and formal register."
+          - "Recognise regional features of Brazilian speech."
+          - "Use diminutives and augmentatives with nuance."
+        grammar: [g.register-formal-informal, g.regional-features-brazil, g.diminutives-augmentatives]
+      - id: b2.u10
+        title: "Argumentar"
+        subtitle: "Argumentation"
+        authored: true
+        canDo:
+          - "Structure an argumentative essay."
+          - "Rebut and concede."
+        grammar: [g.argumentation-connectors, g.opinion-structures, g.essay-structure]
+      - id: b2.u11
+        title: "É isso que eu quero dizer"
+        subtitle: "Emphasis, clitics and the null object"
+        authored: true
+        canDo:
+          - "Emphasise parts of a sentence."
+          - "Place clitics according to the written norm."
+          - "Leave out objects naturally in speech."
+        grammar: [g.emphatic-structures, g.clitic-placement-norm, g.clitics-verb-phrases, g.null-object]
+      - id: b2.u12
+        title: "O português no mundo"
+        subtitle: "Lusophone varieties"
+        authored: true
+        canDo:
+          - "Recognise Brazilian, European and African Portuguese."
+          - "Adapt forms of address and spelling to the variety."
+        grammar: [g.lusophone-varieties, g.address-across-lusophone, g.spelling-agreement]
+
+  - id: c1
+    title: C1
+    name: Effective operational proficiency
+    description: Understand demanding, longer texts and implicit meaning. Express yourself fluently without obvious searching for expressions. Use language flexibly for social, academic and professional purposes with clear, well-structured, detailed text. The journey goes up the Amazon and through the North.
+    wordTarget: 8000
+    canDo:
+      - Use the subjunctive, the personal infinitive and complex subordination with nuance.
+      - Read literature and press with understanding of register, irony and allusion.
+      - Produce academic, legal and professional texts with appropriate cohesion.
+      - Use idioms, proverbs and fixed expressions appropriately.
+      - Understand humour, implicit meaning and pragmatic intent.
+    units:
+      - id: c1.u01
+        title: "Nuances do subjuntivo"
+        subtitle: "Subjunctive nuance"
+        authored: true
+        canDo:
+          - "Choose mood to shade meaning."
+          - "Use the subjunctive in relative and noun clauses with subtlety."
+        grammar: [g.subjunctive-nuance, g.subjunctive-relative-advanced, g.o-fato-de-que]
+      - id: c1.u02
+        title: "Linguagem jurídica"
+        subtitle: "Legal and formal register"
+        authored: true
+        canDo:
+          - "Understand contracts and official texts."
+          - "Use formal titles and forms of address."
+        grammar: [g.legal-register, g.future-subjunctive-legal, g.formal-address-titles]
+      - id: c1.u03
+        title: "Discurso e coesão"
+        subtitle: "Discourse and cohesion"
+        authored: true
+        canDo:
+          - "Structure long texts with advanced markers."
+          - "Keep reference clear across paragraphs."
+        grammar: [g.discourse-markers-advanced, g.anaphora-cohesion, g.text-types]
+      - id: c1.u04
+        title: "Expressões idiomáticas"
+        subtitle: "Idioms and proverbs"
+        authored: true
+        canDo:
+          - "Understand and use frequent idioms."
+          - "Use proverbs appropriately."
+        grammar: [g.idioms, g.proverbs, g.fixed-expressions]
+      - id: c1.u05
+        title: "Português acadêmico"
+        subtitle: "Academic and professional Portuguese"
+        authored: true
+        canDo:
+          - "Write reports and abstracts."
+          - "Give a structured presentation."
+        grammar: [g.academic-register, g.formal-reports, g.presentations]
+      - id: c1.u06
+        title: "Sintaxe complexa"
+        subtitle: "Complex syntax"
+        authored: true
+        canDo:
+          - "Use long subordinated sentences with control."
+          - "Use gerund, infinitive and participle clauses correctly."
+        grammar: [g.subordination-complex, g.gerund-uses-advanced, g.infinitive-clauses-advanced, g.absolute-participle]
+      - id: c1.u07
+        title: "Humor, ironia e jeitinho"
+        subtitle: "Pragmatics and politeness"
+        authored: true
+        canDo:
+          - "Understand irony and humour."
+          - "Soften and intensify with politeness strategies."
+        grammar: [g.pragmatics, g.irony-humor, g.politeness-strategies]
+      - id: c1.u08
+        title: "Leitura literária"
+        subtitle: "Reading literature - Machado de Assis and the classics"
+        authored: true
+        canDo:
+          - "Read short stories and chronicles with understanding."
+          - "Recognise literary tenses, vós and other classical forms."
+        grammar: [g.literary-language, g.narrative-tenses-literary, g.vos-archaic]
+      - id: c1.u09
+        title: "Mídia e jornalismo"
+        subtitle: "Media and journalism"
+        authored: true
+        canDo:
+          - "Read and summarise news critically."
+          - "Understand headlines and quotations."
+        grammar: [g.journalistic-language, g.headlines, g.quotation]
+      - id: c1.u10
+        title: "Palavras da floresta"
+        subtitle: "Advanced vocabulary and word formation"
+        authored: true
+        canDo:
+          - "Deduce meaning from word formation."
+          - "Avoid advanced false friends."
+          - "Recognise words of Tupi and African origin."
+        grammar: [g.word-formation, g.prefixes-suffixes, g.false-friends, g.tupi-african-loanwords]
+
+  - id: c2
+    title: C2
+    name: Mastery
+    description: Understand with ease virtually everything heard or read. Summarise information from different sources, reconstructing arguments coherently. Express yourself spontaneously, very fluently and precisely. The journey ends in Portugal, where the units teach European Portuguese.
+    wordTarget: 12000
+    canDo:
+      - Understand and use European Portuguese alongside Brazilian Portuguese.
+      - Place clitics by European rules, including enclisis and mesoclisis.
+      - Read classic and contemporary literature from Camões to Pessoa with appreciation of style.
+      - Translate, argue and persuade with nuance and precision.
+      - "Play with language: humour, wordplay and slang on both sides of the Atlantic."
+    units:
+      - id: c2.u01
+        title: "Olá, estás bom?"
+        subtitle: "Forms of address in Portugal"
+        authored: true
+        canDo:
+          - "Use tu with second-person verb forms."
+          - "Address people the European way with o senhor and names."
+        grammar: [g.ep-tu-forms, g.ep-forms-of-address, g.ep-imperative-tu]
+      - id: c2.u02
+        title: "Estou a aprender"
+        subtitle: "Estar a + infinitive and European usage"
+        authored: true
+        canDo:
+          - "Describe ongoing actions with estar a + infinitive."
+          - "Use articles with names and possessives the European way."
+        grammar: [g.ep-estar-a-infinitive, g.ep-aspect-periphrases, g.ep-articles-names-possessives]
+      - id: c2.u03
+        title: "Diz-me tudo"
+        subtitle: "Enclisis and clitic placement in Portugal"
+        authored: true
+        canDo:
+          - "Place pronouns after the verb in European Portuguese."
+          - "Recognise the words that pull pronouns before the verb."
+          - "Understand contracted pronouns like mo and lho."
+        grammar: [g.ep-enclisis, g.ep-proclisis-attractors, g.clitic-contractions]
+      - id: c2.u04
+        title: "Far-se-á"
+        subtitle: "Mesoclisis and formal European Portuguese"
+        authored: true
+        canDo:
+          - "Understand and produce mesoclisis."
+          - "Use the European imperfect for polite wishes."
+          - "Write formal European Portuguese."
+        grammar: [g.mesoclisis, g.ep-imperfect-for-conditional, g.ep-formal-writing]
+      - id: c2.u05
+        title: "Autocarro, comboio, telemóvel"
+        subtitle: "European vocabulary and spelling"
+        authored: true
+        canDo:
+          - "Switch everyday vocabulary between Brazil and Portugal."
+          - "Avoid false friends between the two varieties."
+          - "Spell the European way."
+        grammar: [g.ep-vocabulary-differences, g.ep-false-friends, g.ep-spelling-accents]
+      - id: c2.u06
+        title: "De Camões a Pessoa"
+        subtitle: "Classical and modern literature"
+        authored: true
+        canDo:
+          - "Read Camões, Eça and Pessoa with support."
+          - "Analyse style and literary devices."
+        grammar: [g.classical-portuguese, g.poetic-syntax, g.literary-devices]
+      - id: c2.u07
+        title: "Saudade e fado"
+        subtitle: "Translation, untranslatables and slang"
+        authored: true
+        canDo:
+          - "Translate idiomatically in both directions."
+          - "Handle untranslatable concepts."
+          - "Understand slang from Lisbon and Brazil."
+        grammar: [g.untranslatables, g.translation-nuance, g.slang-br-pt]
+      - id: c2.u08
+        title: "Dominar o português"
+        subtitle: "Native mastery across both varieties"
+        authored: true
+        canDo:
+          - "Switch between Brazilian and European grammar at will."
+          - "Sound native in rhythm, idiom and discourse."
+          - "Review everything."
+        grammar: [g.br-ep-grammar-overview, g.native-fluency-markers, g.c2-review]
+
