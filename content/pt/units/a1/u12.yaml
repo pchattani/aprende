@@ -1,0 +1,282 @@
+id: a1.u12
+title: Planos no Rio
+lessons:
+  - id: a1.u12.l1
+    title: Planos para as férias
+    teach: [g.connectors-basic]
+    tip: "e, mas, ou, porque, então, por isso, quando, se link short ideas. Porque (because) is one word; the question por que (why) is two."
+    vocab: [w.então, w.porque, w.por-que, w.quando, w.se.conj, w.que.conj, w.plano, w.férias, w.viagem, w.mala, w.passaporte, w.logo, w.pois]
+    sentences:
+      - { es: "Gosto do Rio, mas amanhã vou para São Paulo.", en: "I like Rio, but tomorrow I'm going to São Paulo.", altEs: ["Eu gosto do Rio, mas amanhã vou para São Paulo.", "Gosto do Rio, mas amanhã vou pra São Paulo."], grammar: [g.connectors-basic, g.gostar-de], vocab: [w.mas, w.amanhã] }
+      - { es: "Estou cansado, então vou dormir cedo.", en: "I'm tired, so I'm going to bed early.", altEs: ["Estou cansada, então vou dormir cedo.", "Tô cansado, então vou dormir cedo."], grammar: [g.connectors-basic, g.ir-infinitive], vocab: [w.então, w.cansado], transform: { instruction: "Use 'por isso' instead of 'então'", answer: "Estou cansado, por isso vou dormir cedo.", alt: ["Estou cansada, por isso vou dormir cedo."], en: "I'm tired, so I'm going to bed early." } }
+      - { es: "Por que você vai embora? — Porque as minhas férias terminam amanhã.", en: "Why are you leaving? — Because my holidays end tomorrow.", altEs: ["Por que você vai embora? — Porque minhas férias terminam amanhã."], altEn: ["Why are you going away? — Because my vacation ends tomorrow."], grammar: [g.connectors-basic, g.question-words], vocab: [w.por-que, w.porque, w.férias], error: { wrong: "Porque você vai embora? — Porque as minhas férias terminam amanhã.", explain: "The question 'why' is two words, por que; porque (one word) means 'because'.", grammar: g.connectors-basic } }
+      - { es: "Quando chove, nós ficamos em casa.", en: "When it rains, we stay at home.", altEs: ["Quando chove, ficamos em casa.", "Quando chove, a gente fica em casa."], grammar: [g.connectors-basic, g.weather], vocab: [w.quando, w.chover] }
+      - { es: "Se você quer, podemos ir juntos.", en: "If you want, we can go together.", altEs: ["Se você quiser, podemos ir juntos.", "Se você quer, a gente pode ir junto."], grammar: [g.connectors-basic, g.poder-present], vocab: [w.se.conj, w.junto], transform: { instruction: "Change 'você' to 'eles'", answer: "Se eles querem, podemos ir juntos.", alt: ["Se eles quiserem, podemos ir juntos."], en: "If they want, we can go together." } }
+      - { es: "Ela diz que o Rio é lindo.", en: "She says that Rio is beautiful.", altEs: ["Ela diz que o Rio é muito lindo."], altEn: ["She says Rio is beautiful."], grammar: [g.connectors-basic], vocab: [w.que.conj, w.dizer] }
+      - { es: "Qual é o seu plano para amanhã?", en: "What's your plan for tomorrow?", altEs: ["Quais são os seus planos para amanhã?", "Qual é o seu plano pra amanhã?"], altEn: ["What are your plans for tomorrow?"], grammar: [g.question-words], vocab: [w.plano] }
+      - { es: "A viagem de ônibus para São Paulo é de seis horas.", en: "The bus journey to São Paulo takes six hours.", altEs: ["A viagem de ônibus até São Paulo é de seis horas."], altEn: ["The bus trip to São Paulo is six hours."], grammar: [g.connectors-basic], vocab: [w.viagem, w.ônibus, w.hora] }
+      - { es: "A minha mala está pronta, e o passaporte está na bolsa.", en: "My suitcase is ready, and my passport is in my bag.", altEs: ["Minha mala está pronta e o passaporte está na bolsa."], grammar: [g.connectors-basic, g.ser-vs-estar-basics], vocab: [w.mala, w.passaporte, w.pronto] }
+      - { es: "O ônibus sai logo: vamos!", en: "The bus is leaving soon: let's go!", altEs: ["O ônibus já vai sair: vamos!"], grammar: [g.connectors-basic], vocab: [w.logo, w.sair] }
+      - { es: "Você quer ir de ônibus ou de avião?", en: "Do you want to go by bus or by plane?", altEs: ["Você quer ir de avião ou de ônibus?"], grammar: [g.connectors-basic, g.prepositions-movement], vocab: [w.ou, w.avião] }
+      - { es: "Não tenho carro, por isso ando de bicicleta.", en: "I don't have a car, so I ride a bike.", altEs: ["Eu não tenho carro, por isso ando de bicicleta.", "Não tenho carro, então ando de bicicleta."], grammar: [g.connectors-basic], vocab: [w.carro, w.bicicleta] }
+      - { es: "O Rio é lindo, mas é caro. — Pois é!", en: "Rio is beautiful, but it's expensive. — Tell me about it!", altEs: ["O Rio é lindo, mas é caro. — É verdade!"], altEn: ["Rio is beautiful, but it's expensive. — It sure is!"], grammar: [g.connectors-basic, g.yes-no-answers], vocab: [w.pois, w.caro], note: "Pois é! = Exactly! / Tell me about it!" }
+      - { es: "Quando você volta para casa?", en: "When are you going back home?", altEs: ["Quando você volta pra casa?"], grammar: [g.question-words], vocab: [w.quando, w.voltar] }
+      - { es: "Primeiro vou a São Paulo e depois vou para o Sul.", en: "First I'm going to São Paulo and then to the South.", altEs: ["Primeiro vou para São Paulo e depois para o Sul."], grammar: [g.connectors-basic, g.ir-present], vocab: [w.primeiro, w.depois] }
+    exchanges:
+      - q: { es: "Por que você está fazendo a mala?", en: "Why are you packing your suitcase?" }
+        a: { es: "Porque amanhã eu vou para São Paulo.", en: "Because tomorrow I'm going to São Paulo." }
+        alt: ["Porque vou viajar.", "Porque as minhas férias terminam.", "Porque vou embora amanhã."]
+        grammar: [g.connectors-basic, g.question-words]
+        vocab: [w.por-que, w.porque, w.mala]
+      - q: { es: "Qual é o seu plano para hoje?", en: "What's your plan for today?" }
+        a: { es: "Vou à Floresta da Tijuca e depois à praia.", en: "I'm going to the Tijuca Forest and then to the beach." }
+        alt: ["Não tenho planos.", "Vou descansar.", "Vou à praia."]
+        grammar: [g.connectors-basic, g.ir-present]
+        vocab: [w.plano]
+      - q: { es: "Quando você volta?", en: "When are you coming back?" }
+        a: { es: "Volto no verão, porque adoro o calor.", en: "I'm coming back in the summer, because I love the heat." }
+        alt: ["Em dezembro.", "Não sei ainda.", "Volto logo!"]
+        grammar: [g.connectors-basic]
+        vocab: [w.quando, w.porque, w.verão]
+      - q: { es: "Você vai de ônibus ou de avião?", en: "Are you going by bus or by plane?" }
+        a: { es: "De ônibus, porque é mais barato.", en: "By bus, because it's cheaper." }
+        alt: ["De avião.", "De ônibus.", "De avião, porque é rápido."]
+        grammar: [g.connectors-basic, g.prepositions-movement]
+        vocab: [w.porque, w.barato]
+      - q: { es: "Cadê o seu passaporte?", en: "Where's your passport?" }
+        a: { es: "Está na mala, então tudo bem.", en: "It's in the suitcase, so it's all good." }
+        alt: ["Está na bolsa.", "Não sei!", "Aqui."]
+        grammar: [g.connectors-basic]
+        vocab: [w.passaporte, w.mala, w.então]
+    texts:
+      - title: "Mensagem da Bia"
+        es: ["Tom, quando é a sua viagem?", "Se você quer, eu levo você à rodoviária.", "Mas antes vamos à Floresta da Tijuca!"]
+        en: ["Tom, when is your trip?", "If you like, I'll take you to the bus station.", "But first let's go to the Tijuca Forest!"]
+        grammar: [g.connectors-basic]
+        vocab: [w.quando, w.viagem, w.se.conj]
+      - title: "Diário do Tom"
+        es: ["As minhas férias no Rio terminam amanhã.", "Estou triste, mas estou feliz também.", "Por quê? Porque agora vou conhecer São Paulo!"]
+        en: ["My holidays in Rio end tomorrow.", "I'm sad, but I'm happy too.", "Why? Because now I'm going to see São Paulo!"]
+        grammar: [g.connectors-basic, g.ser-vs-estar-basics]
+        vocab: [w.férias, w.porque]
+    spicy:
+      - { es: "Vou para São Paulo, mas quero voltar… por você.", en: "I'm going to São Paulo, but I want to come back… for you.", altEs: ["Vou pra São Paulo, mas quero voltar… por você."], grammar: [g.connectors-basic], vocab: [w.voltar] }
+      - { es: "Se você vem comigo, a viagem fica mais bonita.", en: "If you come with me, the trip gets more beautiful.", grammar: [g.connectors-basic], vocab: [w.se.conj, w.viagem, w.comigo] }
+      - { es: "Não sei por que, mas quando você está aqui eu fico nervoso.", en: "I don't know why, but when you're here I get nervous.", altEs: ["Não sei por quê, mas quando você está aqui eu fico nervosa."], grammar: [g.connectors-basic], vocab: [w.por-que, w.quando, w.nervoso] }
+      - { es: "Tenho mala, passaporte e um lugar ao meu lado. Então?", en: "I have a suitcase, a passport and a seat next to me. So?", grammar: [g.connectors-basic], vocab: [w.mala, w.passaporte, w.então] }
+      - { es: "Por que você é tão lindo? — Porque durmo bem e como muita fruta.", en: "Why are you so gorgeous? — Because I sleep well and eat lots of fruit.", altEs: ["Por que você é tão linda? — Porque durmo bem e como muita fruta."], grammar: [g.connectors-basic, g.question-words], vocab: [w.por-que, w.porque] }
+  - id: a1.u12.l2
+    title: Eu também! Nem eu.
+    teach: [g.tambem-tambem-nao]
+    tip: "Me too = Eu também. Me neither = Eu também não, or Nem eu. Também goes before the verb: Eu também quero."
+    vocab: [w.também-não, w.nem, w.mesmo, w.junto, w.sozinho, w.convite, w.convidar, w.comemorar, w.parabéns, w.presente, w.agradecer, w.outro]
+    sentences:
+      - { es: "Eu adoro o Rio. — Eu também!", en: "I love Rio. — Me too!", altEs: ["Adoro o Rio. — Eu também!"], grammar: [g.tambem-tambem-nao], vocab: [w.também, w.adorar] }
+      - { es: "Eu não gosto de frio. — Eu também não.", en: "I don't like the cold. — Me neither.", altEs: ["Eu não gosto de frio. — Nem eu.", "Não gosto de frio. — Eu também não."], altEn: ["I don't like the cold. — Neither do I."], grammar: [g.tambem-tambem-nao, g.gostar-de], vocab: [w.também-não, w.frio.n], error: { wrong: "Eu não gosto de frio. — Eu também.", explain: "To agree with a negative, say eu também não or nem eu.", grammar: g.tambem-tambem-nao } }
+      - { es: "O Lucas também vem à festa.", en: "Lucas is coming to the party too.", altEs: ["O Lucas vem à festa também."], grammar: [g.tambem-tambem-nao, g.vir-vs-ver], vocab: [w.também, w.festa] }
+      - { es: "Não quero nem café nem chá.", en: "I want neither coffee nor tea.", altEs: ["Não quero café nem chá."], altEn: ["I don't want coffee or tea."], grammar: [g.tambem-tambem-nao, g.negation], vocab: [w.nem, w.café, w.chá] }
+      - { es: "Nem pensar!", en: "No way!", altEs: ["De jeito nenhum!"], altEn: ["Don't even think about it!"], grammar: [g.tambem-tambem-nao], vocab: [w.nem, w.pensar] }
+      - { es: "Vamos comemorar juntos o seu aniversário!", en: "Let's celebrate your birthday together!", altEs: ["Vamos comemorar o seu aniversário juntos!", "Vamos comemorar juntas o seu aniversário!"], grammar: [g.ir-infinitive], vocab: [w.comemorar, w.junto, w.aniversário] }
+      - { es: "Obrigado pelo convite!", en: "Thanks for the invitation!", altEs: ["Obrigada pelo convite!", "Muito obrigado pelo convite!"], grammar: [g.contractions-de], vocab: [w.convite, w.obrigado] }
+      - { es: "Quero convidar você para jantar.", en: "I want to invite you to dinner.", altEs: ["Quero te convidar para jantar.", "Eu quero convidar você pra jantar."], altEn: ["I'd like to invite you to dinner."], grammar: [g.querer-present], vocab: [w.convidar, w.jantar] }
+      - { es: "Parabéns! Esse presente é para você.", en: "Happy birthday! This present is for you.", altEs: ["Parabéns! Este presente é para você.", "Parabéns! Esse presente é pra você."], grammar: [g.demonstratives], vocab: [w.parabéns, w.presente] }
+      - { es: "Não gosto de viajar sozinho.", en: "I don't like travelling alone.", altEs: ["Não gosto de viajar sozinha.", "Eu não gosto de viajar sozinho."], grammar: [g.gostar-de, g.negation], vocab: [w.sozinho, w.viajar], transform: { instruction: "Change to 'we'", answer: "Não gostamos de viajar sozinhos.", alt: ["Nós não gostamos de viajar sozinhos.", "Não gostamos de viajar sozinhas."], en: "We don't like travelling alone." } }
+      - { es: "Nós moramos na mesma rua.", en: "We live on the same street.", altEs: ["Moramos na mesma rua.", "A gente mora na mesma rua."], grammar: [g.contractions-em], vocab: [w.mesmo, w.rua] }
+      - { es: "Quero agradecer a todos pela ajuda.", en: "I want to thank everyone for their help.", altEs: ["Quero agradecer a todos pela ajuda de vocês."], grammar: [g.todo-tudo], vocab: [w.agradecer, w.ajuda] }
+      - { es: "Você quer outro café? — Quero, obrigado.", en: "Do you want another coffee? — Yes, please.", altEs: ["Quer outro café? — Quero, obrigada."], grammar: [g.yes-no-answers], vocab: [w.outro, w.café] }
+      - { es: "O Tom não conhece Salvador, e a Bia também não.", en: "Tom hasn't been to Salvador, and neither has Bia.", altEs: ["O Tom não conhece Salvador, nem a Bia."], grammar: [g.tambem-tambem-nao, g.saber-vs-conhecer], vocab: [w.também-não, w.conhecer] }
+      - { es: "Eu também sei a resposta.", en: "I know the answer too.", altEs: ["Também sei a resposta."], grammar: [g.tambem-tambem-nao], vocab: [w.também, w.resposta], transform: { instruction: "Make it negative", answer: "Eu também não sei a resposta.", alt: ["Nem eu sei a resposta.", "Também não sei a resposta."], en: "I don't know the answer either." } }
+    exchanges:
+      - q: { es: "Eu adoro pão de queijo!", en: "I love cheese bread!" }
+        a: { es: "Eu também!", en: "Me too!" }
+        alt: ["Eu também adoro!", "Eu não.", "Eu também, muito!"]
+        grammar: [g.tambem-tambem-nao]
+        vocab: [w.também]
+      - q: { es: "Não conheço a Bahia.", en: "I've never been to Bahia." }
+        a: { es: "Nem eu. Vamos juntos um dia?", en: "Me neither. Shall we go together one day?" }
+        alt: ["Eu também não.", "Eu conheço!", "Nem eu."]
+        grammar: [g.tambem-tambem-nao]
+        vocab: [w.nem, w.junto]
+      - q: { es: "Você quer vir à minha festa?", en: "Do you want to come to my party?" }
+        a: { es: "Quero! Obrigada pelo convite.", en: "Yes! Thanks for the invitation." }
+        alt: ["Quero, sim!", "Não posso, sinto muito.", "Quero, obrigado."]
+        grammar: [g.yes-no-answers, g.vir-vs-ver]
+        vocab: [w.convite, w.festa]
+      - q: { es: "Hoje é o meu aniversário!", en: "It's my birthday today!" }
+        a: { es: "Parabéns! Vamos comemorar!", en: "Happy birthday! Let's celebrate!" }
+        alt: ["Parabéns!", "Feliz aniversário!", "Parabéns! Quantos anos?"]
+        grammar: [g.ir-infinitive]
+        vocab: [w.parabéns, w.comemorar]
+      - q: { es: "Você vai sozinho?", en: "Are you going alone?" }
+        a: { es: "Não, vou com outros amigos.", en: "No, I'm going with some other friends." }
+        alt: ["Vou, sim.", "Não, vou com a Bia.", "Vou."]
+        grammar: [g.yes-no-answers]
+        vocab: [w.sozinho, w.outro]
+    texts:
+      - title: "Convite"
+        es: ["Sábado é o meu aniversário e quero comemorar com vocês!", "A festa é no meu apartamento, às oito.", "Não precisa trazer presente!"]
+        en: ["Saturday is my birthday and I want to celebrate with you all!", "The party is at my flat, at eight.", "No need to bring a present!"]
+        grammar: [g.connectors-basic]
+        vocab: [w.comemorar, w.presente]
+      - title: "Dois amigos"
+        es: ["A Bia não gosta de frio.", "O Tom também não.", "Os dois adoram a praia.", "Então, vão juntos a Ipanema!"]
+        en: ["Bia doesn't like the cold.", "Neither does Tom.", "They both love the beach.", "So they go to Ipanema together!"]
+        grammar: [g.tambem-tambem-nao, g.connectors-basic]
+        vocab: [w.também-não, w.junto]
+    spicy:
+      - { es: "Você também está sozinho hoje? Que bom!", en: "Are you on your own tonight too? How nice!", altEs: ["Você também está sozinha hoje? Que bom!"], grammar: [g.tambem-tambem-nao], vocab: [w.sozinho] }
+      - { es: "Eu não sei dançar forró. — Nem eu. Vamos aprender juntos?", en: "I can't dance forró. — Me neither. Shall we learn together?", altEs: ["Eu não sei dançar forró. — Eu também não. Vamos aprender juntos?"], grammar: [g.tambem-tambem-nao], vocab: [w.nem, w.junto] }
+      - { es: "Obrigado pelo convite. O vinho eu levo; o beijo, você.", en: "Thanks for the invitation. I'll bring the wine; you bring the kiss.", altEs: ["Obrigada pelo convite. O vinho eu levo; o beijo, você."], grammar: [g.contractions-de], vocab: [w.convite, w.vinho, w.beijo] }
+      - { es: "Parabéns! O seu presente sou eu.", en: "Happy birthday! I'm your present.", grammar: [g.ser-present], vocab: [w.parabéns, w.presente] }
+      - { es: "Nem chocolate nem pão de queijo: hoje eu só quero você.", en: "Not chocolate, not cheese bread: tonight I only want you.", grammar: [g.tambem-tambem-nao], vocab: [w.nem, w.só] }
+  - id: a1.u12.l3
+    title: Você vem? — Vou!
+    teach: [g.yes-no-answers]
+    tip: "Answer yes by repeating the verb in your own person: Você fala inglês? — Falo. Vocês vão? — Vamos. Check with né?: Bonito, né? — É!"
+    vocab: [w.claro, w.né, w.já, w.ainda, w.combinar, w.combinado, w.esperar, w.ideia, w.problema, w.alguém, w.ninguém, w.algum]
+    sentences:
+      - { es: "Você fala inglês? — Falo.", en: "Do you speak English? — Yes, I do.", altEs: ["Você fala inglês? — Falo, sim."], grammar: [g.yes-no-answers], vocab: [w.falar, w.inglês] }
+      - { es: "Vocês vão à Floresta da Tijuca amanhã? — Vamos!", en: "Are you going to the Tijuca Forest tomorrow? — Yes, we are!", altEs: ["Vocês vão à Floresta da Tijuca amanhã? — Vamos, sim!"], grammar: [g.yes-no-answers, g.ir-present], vocab: [w.amanhã], error: { wrong: "Vocês vão à Floresta da Tijuca amanhã? — Vão!", explain: "Answer in your own person: vocês vão? — vamos.", grammar: g.yes-no-answers } }
+      - { es: "A vista é linda, né? — É!", en: "The view is beautiful, isn't it? — It is!", altEs: ["A vista é linda, né? — Pois é!", "A vista é linda, não é? — É!"], grammar: [g.yes-no-answers], vocab: [w.né, w.lindo], variant: "Portugal: não é? rather than né?" }
+      - { es: "Você já conhece o Cristo Redentor? — Já.", en: "Have you already been to Christ the Redeemer? — Yes, I have.", altEs: ["Você já conhece o Cristo? — Já.", "Já conhece o Cristo Redentor? — Já, sim."], grammar: [g.yes-no-answers, g.saber-vs-conhecer], vocab: [w.já, w.conhecer] }
+      - { es: "Você já está pronto? — Ainda não.", en: "Are you ready yet? — Not yet.", altEs: ["Você já está pronta? — Ainda não.", "Já está pronto? — Ainda não."], grammar: [g.yes-no-answers], vocab: [w.já, w.ainda, w.pronto], transform: { instruction: "Answer yes instead", answer: "Você já está pronto? — Estou!", alt: ["Você já está pronto? — Já.", "Você já está pronto? — Já estou."], en: "Are you ready yet? — I am!" } }
+      - { es: "Posso usar o seu celular? — Claro!", en: "Can I use your phone? — Of course!", altEs: ["Posso usar seu celular? — Claro!", "Posso usar o seu celular? — Pode, claro!"], grammar: [g.yes-no-answers, g.poder-present], vocab: [w.claro, w.celular] }
+      - { es: "Esse é o ônibus para a Tijuca? — É.", en: "Is this the bus to Tijuca? — Yes.", altEs: ["Esse ônibus vai para a Tijuca? — Vai."], grammar: [g.yes-no-answers], vocab: [w.ônibus], note: "É on its own often means 'yes, that's right'." }
+      - { es: "Vamos combinar um lugar para o jantar?", en: "Shall we agree on a place for dinner?", altEs: ["Vamos combinar um lugar pro jantar?"], altEn: ["Shall we decide where to have dinner?"], grammar: [g.ir-infinitive], vocab: [w.combinar, w.lugar] }
+      - { es: "Às oito na rodoviária? — Combinado!", en: "Eight o'clock at the bus station? — Deal!", altEs: ["Às oito na rodoviária? — Combinado, até lá!"], altEn: ["At eight at the bus station? — Agreed!"], grammar: [g.telling-time], vocab: [w.combinado, w.rodoviária] }
+      - { es: "Espera um pouco, estou chegando!", en: "Wait a moment, I'm almost there!", altEs: ["Espera um pouco, tô chegando!", "Espere um pouco, estou chegando!"], grammar: [g.estar-gerund], vocab: [w.esperar] }
+      - { es: "Que boa ideia!", en: "What a good idea!", altEs: ["Que ideia boa!", "Ótima ideia!"], grammar: [g.adjective-position], vocab: [w.ideia] }
+      - { es: "Não tem problema.", en: "No problem.", altEs: ["Sem problema.", "Tudo bem, não tem problema."], altEn: ["That's not a problem."], grammar: [g.tem-there-is], vocab: [w.problema] }
+      - { es: "Alguém tem protetor solar? — Eu tenho.", en: "Has anyone got sunscreen? — I have.", altEs: ["Alguém tem protetor solar? — Tenho."], grammar: [g.yes-no-answers], vocab: [w.alguém, w.protetor-solar] }
+      - { es: "Ninguém está em casa.", en: "Nobody's at home.", altEs: ["Não tem ninguém em casa."], grammar: [g.negation], vocab: [w.ninguém] }
+      - { es: "Você tem algum plano para hoje à noite? — Tenho.", en: "Do you have any plans for tonight? — I do.", altEs: ["Tem algum plano para hoje à noite? — Tenho."], grammar: [g.yes-no-answers], vocab: [w.algum, w.plano] }
+      - { es: "Você gosta de Niterói? — Gosto muito!", en: "Do you like Niterói? — I really do!", altEs: ["Você gosta de Niterói? — Gosto!"], grammar: [g.yes-no-answers, g.gostar-de], vocab: [w.gostar], transform: { instruction: "Answer no, the Brazilian way", answer: "Você gosta de Niterói? — Não gosto.", alt: ["Você gosta de Niterói? — Não, não gosto."], en: "Do you like Niterói? — No, I don't." } }
+    exchanges:
+      - q: { es: "Você gosta de samba?", en: "Do you like samba?" }
+        a: { es: "Gosto muito!", en: "I love it!" }
+        alt: ["Gosto!", "Não gosto.", "Gosto, sim."]
+        grammar: [g.yes-no-answers, g.gostar-de]
+        vocab: [w.samba]
+      - q: { es: "Vocês querem café?", en: "Do you want coffee?" }
+        a: { es: "Queremos, obrigado.", en: "Yes, please." }
+        alt: ["Queremos!", "Não, obrigado.", "Queremos, sim."]
+        grammar: [g.yes-no-answers, g.querer-present]
+        vocab: [w.café]
+      - q: { es: "Lindo, né?", en: "Beautiful, isn't it?" }
+        a: { es: "É! Lindo demais.", en: "It is! Gorgeous." }
+        alt: ["Pois é!", "É, sim.", "É!"]
+        grammar: [g.yes-no-answers]
+        vocab: [w.né, w.lindo]
+      - q: { es: "Você já está pronta?", en: "Are you ready yet?" }
+        a: { es: "Ainda não. Espera cinco minutos!", en: "Not yet. Wait five minutes!" }
+        alt: ["Já!", "Estou!", "Ainda não."]
+        grammar: [g.yes-no-answers]
+        vocab: [w.já, w.ainda, w.esperar]
+      - q: { es: "Amanhã às nove, na Praça XV?", en: "Tomorrow at nine, at Praça XV?" }
+        a: { es: "Combinado!", en: "Deal!" }
+        alt: ["Pode ser.", "Combinado, até amanhã!", "Combinado."]
+        grammar: [g.yes-no-answers, g.telling-time]
+        vocab: [w.combinado]
+    texts:
+      - title: "Mensagem do Lucas"
+        es: ["Tom, alguém vai à Floresta da Tijuca amanhã?", "Eu vou, e a Bia também.", "Vamos às oito, combinado?"]
+        en: ["Tom, is anyone going to the Tijuca Forest tomorrow?", "I'm going, and so is Bia.", "Let's go at eight, OK?"]
+        grammar: [g.yes-no-answers, g.tambem-tambem-nao]
+        vocab: [w.alguém, w.combinado]
+      - title: "Bilhete para a Bia"
+        es: ["Bia, ninguém está em casa.", "Estou esperando você no bar da esquina.", "Pode chegar tarde: não tem problema!"]
+        en: ["Bia, nobody's at home.", "I'm waiting for you at the bar on the corner.", "You can come late: it's no problem!"]
+        grammar: [g.estar-gerund, g.poder-present]
+        vocab: [w.ninguém, w.esperar, w.problema]
+    spicy:
+      - { es: "Você é solteiro? — Sou. — Que ótima notícia!", en: "Are you single? — I am. — What great news!", altEs: ["Você é solteira? — Sou. — Que ótima notícia!"], grammar: [g.yes-no-answers], vocab: [w.solteiro, w.notícia] }
+      - { es: "Lindo, né? — O pôr do sol? Não, você.", en: "Gorgeous, isn't it? — The sunset? No, you.", grammar: [g.yes-no-answers], vocab: [w.né, w.pôr-do-sol] }
+      - { es: "Você já tem planos para sábado? — Ainda não. — Agora tem.", en: "Do you have plans for Saturday yet? — Not yet. — Now you do.", grammar: [g.yes-no-answers], vocab: [w.já, w.ainda, w.plano] }
+      - { es: "Ninguém dança como você, né?", en: "Nobody dances like you, right?", grammar: [g.yes-no-answers], vocab: [w.ninguém, w.né] }
+      - { es: "Posso esperar você depois do trabalho? — Pode!", en: "Can I wait for you after work? — You can!", altEs: ["Posso te esperar depois do trabalho? — Pode!"], grammar: [g.yes-no-answers, g.poder-present], vocab: [w.esperar] }
+  - id: a1.u12.l4
+    title: Tudo ou todo?
+    teach: [g.todo-tudo]
+    tip: "tudo = everything (it never changes); todo, toda, todos, todas = all, every, whole. Todo dia = every day; o dia todo = all day."
+    vocab: [w.todo, w.tudo, w.cada, w.coisa, w.lugar, w.longo, w.curto, w.enorme, w.natural, w.sistema, w.bandeira, w.falta, w.só]
+    sentences:
+      - { es: "Tudo bem? — Tudo ótimo!", en: "All good? — Everything's great!", altEs: ["Tudo bem? — Tudo ótimo, e você?"], grammar: [g.todo-tudo], vocab: [w.tudo, w.ótimo] }
+      - { es: "Todo mundo conhece o Cristo Redentor.", en: "Everybody knows Christ the Redeemer.", altEs: ["Todos conhecem o Cristo Redentor."], grammar: [g.todo-tudo], vocab: [w.todo, w.mundo], note: "todo mundo = everybody, with a singular verb.", error: { wrong: "Todo mundo conhecem o Cristo Redentor.", explain: "todo mundo takes a singular verb: todo mundo conhece.", grammar: g.todo-tudo } }
+      - { es: "Hoje eu fico na praia o dia todo.", en: "Today I'm staying on the beach all day.", altEs: ["Hoje fico na praia o dia todo.", "Hoje eu fico na praia todo o dia."], grammar: [g.todo-tudo], vocab: [w.todo, w.ficar], transform: { instruction: "Change to 'every day'", answer: "Eu fico na praia todo dia.", alt: ["Eu fico na praia todos os dias.", "Fico na praia todo dia."], en: "I stay on the beach every day." } }
+      - { es: "Meu pai corre na Floresta da Tijuca todo domingo.", en: "My father runs in the Tijuca Forest every Sunday.", altEs: ["O meu pai corre na Floresta da Tijuca todos os domingos."], grammar: [g.todo-tudo, g.present-regular-er-ir], vocab: [w.todo, w.correr] }
+      - { es: "Todos os meus amigos vêm à minha festa.", en: "All my friends are coming to my party.", altEs: ["Todos os meus amigos vão à minha festa."], grammar: [g.todo-tudo, g.vir-vs-ver], vocab: [w.todo, w.amigo] }
+      - { es: "Ela sabe tudo sobre o Rio.", en: "She knows everything about Rio.", altEs: ["Ela sabe tudo do Rio."], grammar: [g.todo-tudo, g.saber-vs-conhecer], vocab: [w.tudo, w.saber] }
+      - { es: "A Floresta da Tijuca é enorme.", en: "The Tijuca Forest is huge.", altEs: ["A Floresta da Tijuca é muito grande."], grammar: [g.ser-vs-estar-basics], vocab: [w.enorme] }
+      - { es: "Eu gosto de suco natural de laranja.", en: "I like fresh orange juice.", altEs: ["Gosto de suco natural de laranja."], grammar: [g.gostar-de], vocab: [w.natural, w.suco, w.laranja], note: "suco natural = freshly squeezed juice." }
+      - { es: "Cada pessoa leva uma coisa para o piquenique.", en: "Each person brings something for the picnic.", altEs: ["Cada um leva uma coisa para o piquenique."], grammar: [g.todo-tudo], vocab: [w.cada, w.coisa, w.piquenique], transform: { instruction: "Change to 'all the people'", answer: "Todas as pessoas levam uma coisa para o piquenique.", alt: ["Todos levam uma coisa para o piquenique."], en: "All the people bring something for the picnic." } }
+      - { es: "A viagem é longa, mas o ônibus é confortável.", en: "The journey is long, but the bus is comfortable.", altEs: ["A viagem é longa, mas o ônibus é bem confortável."], grammar: [g.connectors-basic, g.adjective-agreement], vocab: [w.longo, w.viagem, w.confortável] }
+      - { es: "O passeio é curto: só uma hora.", en: "The tour is short: only an hour.", altEs: ["O passeio é curto, só uma hora."], grammar: [g.adjective-agreement], vocab: [w.curto, w.passeio, w.só] }
+      - { es: "Na Copa, a cidade toda tem bandeiras do Brasil.", en: "During the World Cup, the whole city is full of Brazilian flags.", altEs: ["Na Copa do Mundo, a cidade toda tem bandeiras do Brasil.", "Na Copa, toda a cidade tem bandeiras do Brasil."], grammar: [g.todo-tudo], vocab: [w.bandeira, w.cidade] }
+      - { es: "O sistema de ônibus do Rio é enorme.", en: "Rio's bus system is huge.", altEs: ["O Rio tem um sistema de ônibus enorme."], grammar: [g.contractions-de], vocab: [w.sistema, w.ônibus, w.enorme] }
+      - { es: "Você vai fazer muita falta!", en: "We're going to miss you so much!", altEs: ["Você vai fazer muita falta aqui!", "Vou sentir muita falta de você!"], altEn: ["You'll be really missed!"], grammar: [g.ir-infinitive, g.fazer-present], vocab: [w.falta], note: "fazer falta = to be missed." }
+      - { es: "Esse é o meu lugar favorito no Rio.", en: "This is my favourite place in Rio.", altEs: ["Este é o meu lugar favorito no Rio.", "Esse é meu lugar favorito no Rio."], grammar: [g.demonstratives], vocab: [w.lugar, w.favorito] }
+      - { es: "Só tenho uma coisa para dizer: obrigado por tudo, Rio!", en: "I've only got one thing to say: thanks for everything, Rio!", altEs: ["Só tenho uma coisa pra dizer: obrigada por tudo, Rio!"], grammar: [g.todo-tudo], vocab: [w.só, w.coisa, w.tudo] }
+    exchanges:
+      - q: { es: "Tudo bem?", en: "All good?" }
+        a: { es: "Tudo! E com você?", en: "Yes! And you?" }
+        alt: ["Tudo ótimo!", "Tudo bem, e você?", "Tudo."]
+        grammar: [g.todo-tudo]
+        vocab: [w.tudo]
+      - q: { es: "Quem vem ao piquenique?", en: "Who's coming to the picnic?" }
+        a: { es: "Todo mundo! Cada um leva uma coisa.", en: "Everybody! Each person brings something." }
+        alt: ["Todos os nossos amigos.", "Todo mundo!"]
+        grammar: [g.todo-tudo]
+        vocab: [w.todo, w.cada, w.coisa]
+      - q: { es: "O que você vai levar do Rio?", en: "What are you going to take from Rio?" }
+        a: { es: "Uma bandeira do Flamengo e muita saudade.", en: "A Flamengo flag and a lot of longing." }
+        alt: ["Tudo!", "Muitas fotos.", "Os meus amigos!"]
+        grammar: [g.ir-infinitive]
+        vocab: [w.bandeira, w.saudade]
+      - q: { es: "Qual é o seu lugar favorito no Rio?", en: "What's your favourite place in Rio?" }
+        a: { es: "A Floresta da Tijuca, porque é enorme e muito verde.", en: "The Tijuca Forest, because it's huge and very green." }
+        alt: ["Ipanema.", "A Lapa, à noite.", "O Pão de Açúcar."]
+        grammar: [g.connectors-basic, g.question-words]
+        vocab: [w.lugar, w.enorme]
+      - q: { es: "Você vai ficar o dia todo na praia?", en: "Are you going to stay on the beach all day?" }
+        a: { es: "Vou! Até o pôr do sol.", en: "Yes! Until sunset." }
+        alt: ["Vou, sim.", "Não, só de manhã.", "Vou."]
+        grammar: [g.todo-tudo, g.yes-no-answers]
+        vocab: [w.todo, w.pôr-do-sol]
+    texts:
+      - title: "Tchau, Rio!"
+        es: ["Amanhã eu vou para São Paulo.", "Vou levar tudo: as fotos, os amigos e a saudade.", "Obrigado por tudo, Rio!"]
+        en: ["Tomorrow I'm going to São Paulo.", "I'll take everything with me: the photos, the friends and the longing.", "Thanks for everything, Rio!"]
+        grammar: [g.todo-tudo, g.ir-infinitive]
+        vocab: [w.tudo, w.saudade]
+      - title: "Mensagem da Bia"
+        es: ["Tom, você vai fazer muita falta!", "Todo mundo aqui está triste.", "Volta logo, tá?"]
+        en: ["Tom, we're going to miss you so much!", "Everybody here is sad.", "Come back soon, OK?"]
+        grammar: [g.todo-tudo]
+        vocab: [w.falta, w.todo, w.logo]
+    spicy:
+      - { es: "Você é tudo para mim… e o pão de queijo também.", en: "You're everything to me… and so is cheese bread.", altEs: ["Você é tudo pra mim… e o pão de queijo também."], grammar: [g.todo-tudo], vocab: [w.tudo] }
+      - { es: "Todo dia eu penso em você. O dia todo também.", en: "Every day I think about you. All day long, too.", altEs: ["Todos os dias eu penso em você. O dia todo também."], grammar: [g.todo-tudo], vocab: [w.todo, w.pensar] }
+      - { es: "Cada beijo seu é uma viagem.", en: "Every kiss of yours is a journey.", grammar: [g.todo-tudo], vocab: [w.cada, w.beijo, w.viagem] }
+      - { es: "Você vai fazer falta… mas eu vou a São Paulo no próximo fim de semana.", en: "I'm going to miss you… but I'm going to São Paulo next weekend.", grammar: [g.ir-infinitive], vocab: [w.falta, w.próximo] }
+      - { es: "Quero conhecer todos os lugares do Rio… com você.", en: "I want to see every place in Rio… with you.", grammar: [g.todo-tudo, g.saber-vs-conhecer], vocab: [w.todo, w.lugar, w.conhecer] }
+dialogues:
+  - id: a1.u12.d1
+    title: Tchau, Rio!
+    context: It's Tom's last day in Rio. Bia and Lucas want to make it special before he leaves for São Paulo.
+    lines:
+      - { speaker: Bia, es: "Tom, é o seu último dia no Rio, né?", en: "Tom, it's your last day in Rio, isn't it?" }
+      - { speaker: Tom, es: "É. Amanhã eu vou para São Paulo de ônibus.", en: "Yes. Tomorrow I'm going to São Paulo by bus." }
+      - { speaker: Lucas, es: "Então hoje vamos à Floresta da Tijuca! Você já conhece?", en: "Then today we're going to the Tijuca Forest! Have you been?" }
+      - { speaker: Tom, es: "Ainda não. É longe?", en: "Not yet. Is it far?" }
+      - { speaker: Lucas, es: "Não, fica dentro da cidade. É enorme e muito verde.", en: "No, it's inside the city. It's huge and very green." }
+      - { speaker: Bia, es: "Eu levo água e sanduíches. E você, Lucas?", en: "I'll bring water and sandwiches. And you, Lucas?" }
+      - { speaker: Lucas, es: "Eu levo o violão, claro!", en: "I'll bring the guitar, of course!" }
+      - { speaker: Tom, es: "Eu não quero ir embora. Vou sentir muita saudade de vocês.", en: "I don't want to leave. I'm going to miss you all so much." }
+      - { speaker: Bia, es: "Nós também! Você vai fazer muita falta.", en: "We'll miss you too! You're going to be really missed." }
+      - { speaker: Lucas, es: "Mas São Paulo não é longe. Nós vamos visitar você, combinado?", en: "But São Paulo isn't far. We're going to visit you, deal?" }
+      - { speaker: Tom, es: "Combinado! Obrigado por tudo, gente.", en: "Deal! Thanks for everything, guys." }
+    questions:
+      - { q: "Para onde o Tom vai amanhã?", options: ["Para Niterói", "Para São Paulo", "Para Lisboa"], answer: 1, explain: "Tom is taking the bus to São Paulo tomorrow." }
+      - { q: "O Tom conhece a Floresta da Tijuca?", options: ["Conhece, sim", "Ainda não", "Conhece muito bem"], answer: 1, explain: "Tom answers ainda não: he hasn't been yet." }
+      - { q: "O que o Lucas vai levar?", options: ["Água", "Sanduíches", "O violão"], answer: 2, explain: "Bia brings water and sandwiches; Lucas brings his guitar." }
+      - { q: "O que os amigos vão fazer depois?", options: ["Visitar o Tom em São Paulo", "Morar em São Paulo", "Viajar para Portugal"], answer: 0, explain: "Lucas promises that they will visit Tom in São Paulo." }
