@@ -50,6 +50,9 @@ describe('Jyutping', () => {
     expect(toSyllables('我到咗')).toEqual(['ngo5', 'dou3', 'zo2'])
     expect(toSyllables('我搵到')).toEqual(['ngo5', 'wan2', 'dou2'])
     expect(toSyllables('慢慢行')).toEqual(['maan6', 'maan2', 'haang4'])
+    addWords([{ lemma: '下', jp: 'haa5' }, { lemma: '星期', jp: 'sing1 kei4' }])
+    expect(toSyllables('下星期')).toEqual(['haa6', 'sing1', 'kei4'])
+    expect(toSyllables('你唔應該')[1]).toBe('m4')
   })
   it('uses an authored sentence reading over the automatic one', () => {
     useSentenceReadings([{ es: '陳太請我飲茶。', jp: 'can4 taai2 ceng2 ngo5 jam2 caa4' }])

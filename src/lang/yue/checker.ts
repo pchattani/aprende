@@ -14,6 +14,12 @@ export interface CheckerDeps {
 }
 
 const COUNTERS = /^([一二兩三四五六七八九十幾呢嗰每]+|[0-9]+)$/
+/** The everyday measure words learners mix up; a mismatch is only reported between two of these. */
+const CORE = new Set([...'個隻本張條架間部件枝粒對'])
+/** Counters that are also time, percentage or age words (七點, 七成, 一分, 十歲): not measure words there. */
+const NOT_MEASURE = new Set([...'點成分號歲時'])
+/** People can always take the polite 位 or the formal 名 (嗰位婆婆, 一名遊客); questions also take 條 (一條問題). */
+const ALSO_OK: Record<string, string[]> = { 問題: ['條'] }
 /** Measure words that go with any noun: the plural 啲, containers and quantities (一碟帶子, 一杯茶, 一份工, 二百級). */
 const ANY_NOUN = new Set([...'啲些碟杯碗盒樽包袋箱煲籠盤份種款次級斤磅罐瓶壺盅串堆排群班對雙打半'])
 
@@ -38,7 +44,9 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     if (!COUNTERS.test(a.text)) continue
     const cl = entry(b.text, 'classifier')
     const noun = entry(c.text, 'noun')
-    if (cl && noun?.cl && noun.cl !== b.text && !ANY_NOUN.has(b.text)) {
+    if (NOT_MEASURE.has(b.text)) continue
+    const person = noun?.cl === '個' && (b.text === '位' || b.text === '名')
+    if (cl && noun?.cl && noun.cl !== b.text && !ANY_NOUN.has(b.text) && CORE.has(b.text) && CORE.has(noun.cl) && !person && !ALSO_OK[noun.lemma]?.includes(b.text)) {
       out.push({ code: 'agreement', message: `“${noun.lemma}” is counted with ${noun.cl}: ${a.text}${noun.cl}${noun.lemma}.`, start: b.start, end: b.end, suggestion: noun.cl, grammar: 'g.classifiers' })
     }
   }

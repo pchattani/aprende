@@ -14,6 +14,8 @@ const WORDS = new Map<string, string>(Object.entries(wordsData as Record<string,
 for (const w of ['打畀你', '打畀', '好冇', '冇女', '快啲啦', '冇時', '我有', '十九', '喺唔喺度', '畀咗你', '係呢']) WORDS.delete(w)
 WORDS.set('會唔會', 'wui5 m4 wui5')
 WORDS.set('慢慢行', 'maan6 maan2 haang4')
+// 唔 is m4 in speech; the word list sometimes gives the literary ng5 (唔應該, 唔小心)
+for (const [w, jp] of WORDS) if (w.startsWith('唔') && /^ng[45] /.test(jp)) WORDS.set(w, jp.replace(/^ng[45]/, 'm4'))
 /** Course vocabulary: preferred when segmenting. */
 const COURSE = new Set<string>()
 let maxLen = Math.max(2, ...[...WORDS.keys()].map((w) => w.length))
@@ -126,6 +128,12 @@ export function segment(text: string): Segment[] {
   out.forEach((s, i) => {
     const prev = out[i - 1]
     if (s.kind === 'han' && s.text === '到' && prev?.kind === 'han' && RESULT_DOU2.has([...prev.text].pop()!)) s.syl = ['dou2']
+  })
+  // 上 and 下 before a time word mean "last" and "next": soeng6, haa6 (下星期, 上個月, 下次)
+  out.forEach((s, i) => {
+    const next = out[i + 1]
+    if (s.kind !== 'han' || (s.text !== '上' && s.text !== '下') || next?.kind !== 'han' || !/^[星個次年月晝午一禮週周排轉]/.test(next.text)) return
+    s.syl = [s.text === '上' ? 'soeng6' : 'haa6']
   })
   // 吓 after a verb is the suffix haa5 "a bit" (試吓, 行吓); on its own it is the interjection haa2
   out.forEach((s, i) => {
