@@ -133,7 +133,11 @@ export function loadUnit(unitId: string): Promise<Unit> {
   if (!p) {
     const path = unitPath(unitId)
     if (!path) return Promise.reject(new Error(`Unit ${unitId} is not authored yet`))
-    p = unitFiles[path]!().then((raw) => UnitSchema.parse(raw))
+    p = unitFiles[path]!().then((raw) => {
+      const unit = UnitSchema.parse(raw)
+      languagePack.useSentenceReadings?.(unit.lessons.flatMap((l) => [...l.sentences, ...l.spicy]))
+      return unit
+    })
     unitCache.set(unitId, p)
   }
   return p

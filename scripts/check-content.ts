@@ -162,6 +162,12 @@ const ALWAYS_KNOWN = new Set([...(knownFile.always ?? []), ...(knownFile.names ?
 function scriptIssues(where: string, text: string): void {
   for (const issue of languagePack.validateText?.(text) ?? []) err(`${where}: "${text.slice(0, 40)}": ${issue}`)
 }
+/** An authored sentence reading (Cantonese `jp`) must fit the characters; it then overrides the automatic one. */
+function sentenceReading(where: string, s: { es: string; jp?: string }): void {
+  if (!s.jp) return
+  for (const issue of languagePack.validateReading?.(s.es, s.jp) ?? []) err(`${where}: "${s.es.slice(0, 30)}" jp: ${issue}`)
+  languagePack.useSentenceReadings?.([s])
+}
 /** A Han segment the segmenter kept whole (a dictionary word) is known if it splits into known words. */
 function splitsIntoKnown(w: string, known: (x: string) => boolean): boolean {
   const ok: boolean[] = [true, ...new Array<boolean>(w.length).fill(false)]
@@ -222,6 +228,7 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       tokens += words.length
       unknown.push(...unknownWords(s.es, level, allow))
       for (const a of [s.es, ...s.altEs]) scriptIssues(rel(p), a)
+      sentenceReading(rel(p), s)
     }
     for (const x of l.exchanges) {
       for (const g of x.grammar) if (!grammar.has(g)) err(`${rel(p)}: exchange "${x.q.es}" tags unknown grammar ${g}`)
@@ -256,6 +263,7 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       unknown.push(...unknownWords(s.es, level, allow))
       tokens += tokenize(s.es).filter((t) => t.kind === 'word').length
       scriptIssues(rel(p), s.es)
+      sentenceReading(rel(p), s)
     }
   })
   for (const d of unit.dialogues) {

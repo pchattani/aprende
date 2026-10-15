@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { parseRun, stripTones, looksLikeJyutping } from '@/lang/yue/jyutping'
-import { toSyllables, addWords, romanize, validateReading, validateText, wordsOf } from '@/lang/yue/lexicon'
+import { toSyllables, addWords, romanize, validateReading, validateText, wordsOf, useSentenceReadings } from '@/lang/yue/lexicon'
 import { match, normalize } from '@/lang/yue/normalize'
 import { chineseToNumber, numberWordsToDigits, hasNumberWord } from '@/lang/yue/numbers'
 import { check } from '@/lang/yue/checker'
@@ -36,6 +36,21 @@ describe('Jyutping', () => {
   })
   it('gives ruby readings per character', () => {
     expect(romanize('你好！')).toEqual([{ text: '你', reading: 'nei5' }, { text: '好', reading: 'hou2' }, { text: '！' }])
+  })
+  it('reads characters standing alone colloquially and segments into the fewest words', () => {
+    addWords([{ lemma: '時間', jp: 'si4 gaan3' }])
+    expect(toSyllables('好平')).toEqual(['hou2', 'peng4'])
+    expect(toSyllables('好近')).toEqual(['hou2', 'kan5'])
+    expect(toSyllables('我冇時間')).toEqual(['ngo5', 'mou5', 'si4', 'gaan3'])
+    expect(toSyllables('呢位')).toEqual(['nei1', 'wai2'])
+    expect(toSyllables('你呢')).toEqual(['nei5', 'ne1'])
+    expect(toSyllables('二十分鐘')).toEqual(['ji6', 'sap6', 'fan1', 'zung1'])
+  })
+  it('uses an authored sentence reading over the automatic one', () => {
+    useSentenceReadings([{ es: '陳太請我飲茶。', jp: 'can4 taai2 ceng2 ngo5 jam2 caa4' }])
+    expect(toSyllables('陳太請我飲茶')).toEqual(['can4', 'taai2', 'ceng2', 'ngo5', 'jam2', 'caa4'])
+    expect(romanize('陳太請我飲茶！')[1]).toEqual({ text: '太', reading: 'taai2' })
+    expect(validateReading('睇吓', 'tai2 haa5')).toEqual([])
   })
   it('segments words for tiles and tokens', () => {
     expect(wordsOf('多謝你！')).toEqual(['多謝', '你'])

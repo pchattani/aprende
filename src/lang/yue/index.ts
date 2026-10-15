@@ -2,7 +2,7 @@ import type { LanguagePackFull } from '../contract'
 import type { VocabEntry } from '../../engine/schema'
 import { normalize, match, words, stripAccents } from './normalize'
 import { tokenize } from './tokenize'
-import { toSyllables, useVocabulary, romanize, validateText, validateReading } from './lexicon'
+import { toSyllables, useVocabulary, useSentenceReadings, romanize, validateText, validateReading } from './lexicon'
 
 /** The Cantonese pack: characters or Jyutping in, Jyutping comparison, ruby readings out. */
 export const languagePack: LanguagePackFull & {
@@ -18,6 +18,7 @@ export const languagePack: LanguagePackFull & {
   stripMarks: stripAccents,
   comparable: (text) => toSyllables(text).join(' '),
   useVocabulary: (entries: Iterable<VocabEntry>) => useVocabulary(entries),
+  useSentenceReadings,
   romanize,
   validateText,
   validateReading,

@@ -10,7 +10,23 @@ import { charReadings, parseRun } from './jyutping'
 
 const HAN = /\p{Script=Han}/u
 const WORDS = new Map<string, string>(Object.entries(wordsData as Record<string, string>))
+/** Entries of the generic word list with a wrong reading, or phrases that cut across words. */
+for (const w of ['打畀你', '打畀', '好冇', '冇女', '快啲啦', '冇時', '我有', '十九', '喺唔喺度', '畀咗你', '係呢']) WORDS.delete(w)
+WORDS.set('會唔會', 'wui5 m4 wui5')
+/** Course vocabulary: preferred when segmenting. */
+const COURSE = new Set<string>()
 let maxLen = Math.max(2, ...[...WORDS.keys()].map((w) => w.length))
+
+/**
+ * Colloquial readings of characters standing alone, where the dictionary lists the
+ * literary reading first (平 peng4 "cheap", 請 ceng2 "treat", 近 kan5 "near") and the
+ * usual tones of sentence particles (呀 aa3, 㗎 gaa3, 咪 mai6). Words keep their own readings.
+ */
+const COLLOQUIAL: Record<string, string> = {
+  平: 'peng4', 請: 'ceng2', 近: 'kan5', 着: 'zoek3', 名: 'meng2', 樣: 'joeng2', 會: 'wui5', 輕: 'heng1', 聽: 'teng1', 生: 'saang1',
+  青: 'ceng1', 驚: 'geng1', 病: 'beng6', 命: 'meng6', 返: 'faan1', 成: 'seng4', 呀: 'aa3', 咪: 'mai6', 㗎: 'gaa3', 吓: 'haa5',
+  位: 'wai2', 相: 'soeng2', 袋: 'doi2',
+}
 
 /** Add course vocabulary: its readings win over the generic word list. */
 export function addWords(entries: Iterable<{ lemma: string; jp?: string }>): void {
@@ -19,11 +35,24 @@ export function addWords(entries: Iterable<{ lemma: string; jp?: string }>): voi
     const lemma = e.lemma.replace(/\s+/g, '')
     if ([...lemma].filter((c) => HAN.test(c)).length !== e.jp.split(' ').length) continue
     WORDS.set(lemma, e.jp)
+    if (lemma.length > 1) COURSE.add(lemma)
     maxLen = Math.max(maxLen, lemma.length)
   }
 }
 export function useVocabulary(entries: Iterable<VocabEntry>): void {
   addWords(entries)
+}
+
+/** Whole-sentence readings authored in the course (sentence `jp`), keyed by the sentence's characters. */
+const SENTENCES = new Map<string, string[]>()
+const hanKey = (text: string) => [...text.normalize('NFC')].filter((c) => HAN.test(c)).join('')
+export function useSentenceReadings(items: Iterable<{ es: string; jp?: string }>): void {
+  for (const it of items) {
+    if (!it.jp) continue
+    const key = hanKey(it.es)
+    const syl = it.jp.trim().split(/\s+/)
+    if (key && [...key].length === syl.length) SENTENCES.set(key, syl)
+  }
 }
 
 export interface Segment {
@@ -33,30 +62,38 @@ export interface Segment {
   kind: 'han' | 'jp' | 'latin' | 'num' | 'space' | 'punct'
 }
 
-/** Forward maximum matching over a run of Han characters. */
+/**
+ * Segment a run of Han characters into the fewest words; ties go to course vocabulary,
+ * then to the longer final word (有時間 → 有 + 時間, not 有時 + 間).
+ */
 function segmentHan(run: string): Segment[] {
-  const out: Segment[] = []
-  let i = 0
-  while (i < run.length) {
-    let hit: string | undefined
-    for (let len = Math.min(maxLen, run.length - i); len >= 2; len--) {
-      const w = run.slice(i, i + len)
-      if (WORDS.has(w)) {
-        hit = w
-        break
+  const chars = [...run]
+  const n = chars.length
+  // best[j]: cost of chars[0..j): 10 per segment, minus 1 per course word
+  const best: number[] = new Array(n + 1).fill(Infinity)
+  const back: number[] = new Array(n + 1).fill(0)
+  best[0] = 0
+  for (let j = 1; j <= n; j++) {
+    for (let len = Math.min(maxLen, j); len >= 1; len--) {
+      const w = chars.slice(j - len, j).join('')
+      if (len > 1 && !WORDS.has(w)) continue
+      const cost = best[j - len]! + 10 - (COURSE.has(w) ? 1 : 0)
+      if (cost < best[j]!) {
+        best[j] = cost
+        back[j] = len
       }
     }
-    if (hit) {
-      out.push({ text: hit, syl: WORDS.get(hit)!.split(' '), kind: 'han' })
-      i += hit.length
-    } else {
-      const c = run[i]!
-      const r = charReadings(c)?.[0]
-      out.push({ text: c, syl: r ? [r] : undefined, kind: 'han' })
-      i++
+  }
+  const out: Segment[] = []
+  for (let j = n; j > 0; j -= back[j]!) {
+    const w = chars.slice(j - back[j]!, j).join('')
+    if (back[j]! > 1) out.push({ text: w, syl: WORDS.get(w)!.split(' '), kind: 'han' })
+    else {
+      const r = WORDS.get(w) ?? COLLOQUIAL[w] ?? charReadings(w)?.[0]
+      out.push({ text: w, syl: r ? [r] : undefined, kind: 'han' })
     }
   }
-  return out
+  return out.reverse()
 }
 
 const CHUNK = /(\p{Script=Han}+)|([A-Za-z]+[1-6]?(?:[A-Za-z]+[1-6]?)*)|(\d+(?:[.,]\d+)*)|(\s+)|([^\p{Script=Han}A-Za-z\d\s])/gu
@@ -72,6 +109,18 @@ export function segment(text: string): Segment[] {
     } else if (m[3]) out.push({ text: m[3], kind: 'num' })
     else if (m[4]) out.push({ text: m[4], kind: 'space' })
     else out.push({ text: m[5]!, kind: 'punct' })
+  }
+  // 呢 before another word is the demonstrative nei1 (呢位, 呢把); at the end it is the particle ne1
+  out.forEach((s, i) => {
+    if (s.kind !== 'han' || s.text !== '呢') return
+    const next = out.slice(i + 1).find((x) => x.kind !== 'space')
+    if (next?.kind === 'han' && !PARTICLES.has(next.text)) s.syl = ['nei1']
+  })
+  // an authored sentence reading replaces the automatic one, character by character
+  const own = SENTENCES.get(hanKey(text))
+  if (own) {
+    let k = 0
+    for (const s of out) if (s.kind === 'han') s.syl = own.slice(k, (k += [...s.text].length))
   }
   return out
 }
@@ -112,6 +161,8 @@ export function validateText(text: string): string[] {
   return missing.length ? [`no Jyutping reading for ${missing.join('')}`] : []
 }
 
+/** Colloquial readings the character table lacks: 吓 haa5 is the verbal suffix "a bit" (睇吓), properly 下. */
+const EXTRA_READINGS: Record<string, string[]> = { 吓: ['haa5'] }
 const PARTICLES = new Set([...'呀啦喇吖咋喎囉啩嘛咩㗎嗎呢噃啊哦喔咯嘅嚟囖噉添'])
 
 /** A vocabulary reading must use, for each character, one of its dictionary readings (or a changed tone). */
@@ -121,9 +172,9 @@ export function validateReading(lemma: string, jp: string): string[] {
   if (chars.length !== syl.length) return [`jp “${jp}” has ${syl.length} syllables for ${chars.length} characters`]
   const issues: string[] = []
   chars.forEach((c, i) => {
-    const r = charReadings(c)
+    const r = [...(charReadings(c) ?? []), ...(EXTRA_READINGS[c] ?? [])]
     const sy = syl[i]!
-    if (!r || r.includes(sy)) return
+    if (!r.length || r.includes(sy)) return
     const base = sy.replace(/[1-6]$/, '')
     const sameBase = r.some((x) => x.replace(/[1-6]$/, '') === base)
     // Changed tones (變調): a syllable may rise to tone 2 or 1 in compounds (陳太 taai2, 膠袋 doi2).

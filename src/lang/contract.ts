@@ -146,6 +146,8 @@ export interface LanguagePackFull extends LanguagePack {
   comparable(text: string): string
   /** Called once with the course vocabulary (Cantonese uses it for segmentation). */
   useVocabulary?(entries: Iterable<VocabEntry>): void
+  /** Authored whole-sentence readings (Cantonese `jp` on a sentence) that override the automatic ones. */
+  useSentenceReadings?(items: Iterable<{ es: string; jp?: string }>): void
   /** Romanisation of a text as [segment, reading] pairs, for ruby display (Cantonese). */
   romanize?(text: string): { text: string; reading?: string }[]
 }
