@@ -81,11 +81,26 @@ const SUBJECT_PRONOUNS: Record<string, number[]> = {
 const BETWEEN_SUBJECT_AND_VERB = new Set(['me', 'te', 'se', 'nos', 'vos', 'lhe', 'lhes', 'o', 'a', 'os', 'as', 'não', 'nunca', 'já', 'também', 'ainda', 'só', 'sempre', 'jamais'])
 /** A pronoun joined to another subject (ela e eu fomos) is not checked. */
 const COORDINATORS = new Set(['e', 'ou', 'nem', 'com'])
+/** A pronoun after a preposition is not a subject (para você, sem ele, de vocês). */
+const PREPOSITIONS = new Set(['a', 'de', 'em', 'para', 'pra', 'com', 'por', 'sem', 'sobre', 'entre', 'até', 'desde', 'contra', 'após', 'sob', 'perante', 'que', 'como', 'do', 'da', 'no', 'na', 'pelo', 'pela'])
+/** Prepositions fused with a determiner: a noun after them is not a subject. */
+const PREP_DETERMINERS = new Set([
+  'do', 'da', 'dos', 'das', 'no', 'na', 'nos', 'nas', 'ao', 'à', 'aos', 'às', 'pelo', 'pela', 'pelos', 'pelas', 'num', 'numa', 'nuns', 'numas', 'dum', 'duma', 'duns', 'dumas',
+  'deste', 'desta', 'destes', 'destas', 'neste', 'nesta', 'nestes', 'nestas', 'desse', 'dessa', 'desses', 'dessas', 'nesse', 'nessa', 'nesses', 'nessas',
+  'daquele', 'daquela', 'daqueles', 'daquelas', 'naquele', 'naquela', 'naqueles', 'naquelas', 'àquele', 'àquela', 'àqueles', 'àquelas',
+])
+/** Words after which a noun phrase starts a clause and can be its subject. */
+const CLAUSE_OPENERS = new Set(['e', 'mas', 'porém', 'que', 'porque', 'quando', 'se', 'também', 'enquanto', 'depois', 'hoje', 'ontem', 'amanhã', 'agora', 'aqui', 'onde', 'como'])
+/** Parts of speech whose forms are not adjectives even when they look like one (perto de, junto a). */
+const NOT_ATTRIBUTIVE = new Set(['adv', 'prep', 'conj'])
+/** European and Brazilian spellings that differ only in the accent (sinónimo / sinônimo, penálti / pênalti). */
+const variantMark = (a: string, b: string) => a.replace(/[óô]/g, 'o').replace(/[éê]/g, 'e').replace(/[áâ]/g, 'a') === b.replace(/[óô]/g, 'o').replace(/[éê]/g, 'e').replace(/[áâ]/g, 'a') && /[óéá]/.test(a) && /[ôêâ]/.test(b)
 
 /** Determine gender/number of a word form from a dictionary entry. */
 function featuresOf(form: string, e: VocabEntry): Features | undefined {
   const lemma = e.lemma.toLowerCase()
   if (e.pos !== 'noun' && e.pos !== 'adj') return undefined
+  if (e.pos === 'adj' && e.plural?.toLowerCase() === lemma) return { gender: 'mf', number: 'any', role: 'adj' } // camisas laranja
   const nationality = e.tags.includes('nationality')
   const fem = e.feminine?.toLowerCase() ?? (e.pos === 'adj' || e.gender === 'mf' || nationality ? feminineOf(lemma, { nationality: e.pos === 'noun' || nationality }) : undefined)
   const mPl = e.plural && e.pos === 'noun' ? [e.plural.toLowerCase()] : pluralize(lemma)
@@ -118,42 +133,53 @@ function markWhy(given: string, correct: string): string {
 
 export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   const findings: CheckerFinding[] = []
-  const words = tokenize(text).filter((t) => t.kind === 'word')
+  const tokens = tokenize(text)
+  const words = tokens.filter((t) => t.kind === 'word')
   const lower = words.map((t) => t.text.toLowerCase())
+  // a punctuation mark or number between two words ends a phrase: "as estrelas, claro"
+  const wordAt = tokens.map((t, k) => (t.kind === 'word' ? k : -1)).filter((k) => k >= 0)
+  const gap = words.map((_, i) => i + 1 < words.length && tokens.slice(wordAt[i]! + 1, wordAt[i + 1]!).some((t) => t.kind !== 'space'))
+  const verbIndex = getVerbIndex(deps)
 
   // ---- spelling / accents
   const plainIndex = getPlainIndex(deps.dict)
   const feats: (Features | undefined)[] = []
+  /** Every gender/number reading of each word (avós: avô m pl or avó f pl) and its entries. */
+  const cands: Features[][] = []
+  const entriesOf: (VocabEntry[] | undefined)[] = []
+  const setFeats = (i: number, form: string, es: VocabEntry[] | undefined) => {
+    entriesOf[i] = es
+    cands[i] = DETERMINERS[form] ? [DETERMINERS[form]] : (es ?? []).map((e) => featuresOf(form, e)).filter((f): f is Features => Boolean(f))
+    feats[i] = cands[i]![0]
+  }
   words.forEach((t, i) => {
     const w = lower[i]!
     const entries = lookup(deps.dict, w)
-    if (entries) {
-      feats[i] = DETERMINERS[w] ?? entries.map((e) => featuresOf(w, e)).find(Boolean)
-      return
-    }
-    if (DETERMINERS[w]) {
-      feats[i] = DETERMINERS[w]
-      return
-    }
-    if (/^\p{Lu}/u.test(t.text) && i > 0) return // proper noun
+    setFeats(i, w, entries)
+    if (entries || DETERMINERS[w]) return
+    const capital = /^\p{Lu}/u.test(t.text)
+    if (capital && i > 0) return // proper noun
+    if (verbIndex.has(w)) return // a verb form the dictionary does not list
     const candidates = plainIndex.get(stripAccents(w))
     if (candidates && candidates.length) {
       // the closest spelling wins (comecamos → começamos, not the European começámos)
       const correct = [...candidates].sort((a, b) => editDistance(w, a) - editDistance(w, b))[0]!
-      if (correct !== w) {
+      if (correct !== w && !variantMark(w, correct)) {
         const cedilla = correct.includes('ç') && correct.replace(/ç/g, 'c') === w
         findings.push({
           code: 'accent', message: `${cedilla ? 'Cedilla' : 'Accent'}: “${t.text}” should be “${correct}”. ${markWhy(w, correct)}`,
           start: t.start, end: t.end, suggestion: correct, grammar: 'g.accents',
         })
-        const e = deps.dict.get(correct)
-        if (e) feats[i] = DETERMINERS[correct] ?? e.map((x) => featuresOf(correct, x)).find(Boolean)
+        setFeats(i, correct, deps.dict.get(correct))
       }
       return
     }
-    if (w.length >= 4) {
+    if (capital) return // a capitalised first word we don't know is probably a name (Machado, Salvador)
+    const hyphenated = /[-–]/.test(text.slice(words[i - 1]?.end ?? t.start, t.start)) || /^[-–]/.test(text.slice(t.end))
+    if (w.length >= 4 && !hyphenated) {
       const near = nearest(w, deps.dict, plainIndex)
-      if (near) {
+      // a different final vowel is usually another form of a word we lack, not a typo
+      if (near && near.slice(0, -1) !== w.slice(0, -1) && near !== w.slice(0, -1) && near.slice(0, -1) !== w) {
         findings.push({ code: 'spelling', message: `Spelling: did you mean “${near}”?`, start: t.start, end: t.end, suggestion: near })
         return
       }
@@ -162,34 +188,44 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   })
 
   // ---- agreement within noun phrases: det (adv)* adj* noun (adv)* adj*
+  // an adjective here, not a verb form (são) or the head of a phrase (perto de)
+  const isAdjAt = (x: number) => !DETERMINERS[lower[x]!] && cands[x]!.some((c) => c.role === 'adj') && !verbIndex.has(lower[x]!) && !entriesOf[x]?.some((e) => NOT_ATTRIBUTIVE.has(e.pos))
+  const startsPhrase = (x: number) => x < words.length && !gap[x - 1] && (PREPOSITIONS.has(lower[x]!) || PREP_DETERMINERS.has(lower[x]!))
   for (let i = 0; i < words.length; i++) {
     const f = feats[i]
-    if (!f || f.role !== 'det') continue
+    if (!f || f.role !== 'det' || gap[i]) continue
     const d = lower[i]!
     if (ADVERBS_IN_NP.has(d) && feats[i + 1]?.role === 'adj') continue // muito bonita: adverb
+    if ((d === 'um' || d === 'uma') && lower[i - 1] === 'e') continue // vinte e um anos
+    // fixed phrases that start with an article: a propósito, os olhos da cara
+    if ((entriesOf[i] ?? lookup(deps.dict, d) ?? []).some((e) => e.pos === 'phrase' && lower.slice(i).join(' ').startsWith(e.lemma.toLowerCase() + ' '))) continue
     let j = i + 1
     const adjs: number[] = []
     while (j < words.length && j <= i + 3) {
-      if (ADVERBS_IN_NP.has(lower[j]!) && feats[j]?.role !== 'noun') {
+      if (ADVERBS_IN_NP.has(lower[j]!) && feats[j]?.role !== 'noun' && !gap[j]) {
         j++
         continue
       }
-      if (feats[j]?.role === 'adj') {
+      if (isAdjAt(j) && !gap[j]) {
         adjs.push(j)
         j++
         continue
       }
       break
     }
-    const nf = feats[j]
-    if (!nf || nf.role !== 'noun' || j >= words.length) continue
+    if (j >= words.length || (j > i + 1 && gap[j - 1])) continue
+    // muito, todo, outro… are also adverbs and pronouns: "tu dança muito"
+    if (verbIndex.has(lower[j]!) && (ADVERBS_IN_NP.has(d) || ['todo', 'toda', 'outro', 'outra', 'o', 'a', 'os', 'as'].includes(d))) continue
+    const nounC = cands[j]!.filter((c) => c.role === 'noun')
+    if (!nounC.length) continue
+    const nf = nounC.find((c) => agrees(f, c)) ?? nounC[0]!
     let k = j + 1
-    while (k < words.length && k <= j + 2) {
+    while (k < words.length && k <= j + 2 && !gap[k - 1]) {
       if (ADVERBS_IN_NP.has(lower[k]!)) {
         k++
         continue
       }
-      if (feats[k]?.role === 'adj') {
+      if (isAdjAt(k) && !startsPhrase(k + 1)) {
         adjs.push(k)
         k++
         continue
@@ -204,7 +240,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       })
     }
     for (const a of adjs) {
-      if (!agrees(feats[a]!, nf)) {
+      if (!cands[a]!.some((af) => af.role === 'adj' && nounC.some((n) => agrees(af, n)))) {
         findings.push({
           code: 'agreement', message: `Agreement: “${words[a]!.text}” must agree with “${words[j]!.text}” (${describe(nf)}).`,
           start: Math.min(words[a]!.start, words[j]!.start), end: Math.max(words[a]!.end, words[j]!.end), grammar: 'g.adjective-agreement',
@@ -212,12 +248,14 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       }
     }
     // predicate adjective: a casa é bonita
+    // only for a subject: not after a preposition (o namorado da minha prima é argentino)
     let c = k
-    if (COPULAS.has(lower[c] ?? '')) {
+    const clauseStart = i === 0 || gap[i - 1] || CLAUSE_OPENERS.has(lower[i - 1]!)
+    if (clauseStart && !PREP_DETERMINERS.has(d) && !gap[c - 1] && COPULAS.has(lower[c] ?? '')) {
       c++
-      while (c < words.length && ADVERBS_IN_NP.has(lower[c]!)) c++
-      const af = feats[c]
-      if (af?.role === 'adj' && !agrees(af, nf)) {
+      while (c < words.length && ADVERBS_IN_NP.has(lower[c]!) && !gap[c - 1]) c++
+      const ac = c < words.length && !gap[c - 1] && isAdjAt(c) && !startsPhrase(c + 1) ? cands[c]!.filter((x) => x.role === 'adj') : []
+      if (ac.length && !ac.some((af) => nounC.some((n) => agrees(af, n)))) {
         findings.push({
           code: 'agreement', message: `Agreement: “${words[c]!.text}” describes “${words[j]!.text}” and must agree with it (${describe(nf)}).`,
           start: words[c]!.start, end: words[c]!.end, grammar: 'g.adjective-agreement',
@@ -227,21 +265,28 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   }
 
   // ---- subject pronoun + verb person
-  const verbIndex = getVerbIndex(deps)
   for (let i = 0; i < words.length; i++) {
     const aGente = lower[i] === 'gente' && lower[i - 1] === 'a'
     const w = aGente ? 'a gente' : lower[i]!
     const persons = aGente ? [2] : SUBJECT_PRONOUNS[w]
-    if (!persons) continue
-    if (COORDINATORS.has(lower[aGente ? i - 2 : i - 1] ?? '') || COORDINATORS.has(lower[i + 1] ?? '')) continue
+    if (!persons || gap[i]) continue
+    const before = aGente ? i - 2 : i - 1
+    if (COORDINATORS.has(lower[before] ?? '') || COORDINATORS.has(lower[i + 1] ?? '')) continue
+    if (before >= 0 && !gap[before] && PREPOSITIONS.has(lower[before]!) && !aGente) continue // para você, sem ele
+    // a subject after its verb: "se fores tu a escolher"
+    if (i > 0 && !gap[i - 1] && verbIndex.get(lower[i - 1]!)?.some((h) => persons.includes(h.person))) continue
+    if (lower[i + 1] === 'é' && lower[i + 2] === 'que') continue // eu é que sei
     let j = i + 1
-    while (j < words.length && BETWEEN_SUBJECT_AND_VERB.has(lower[j]!)) j++
+    while (j < words.length && BETWEEN_SUBJECT_AND_VERB.has(lower[j]!) && !gap[j - 1]) j++
     const raw = lower[j]
-    if (!raw) continue
+    if (!raw || gap[j - 1]) continue
     const v = raw.split('-')[0]! // levantei-me → levantei
     const hits = verbIndex.get(v)
     if (!hits || hits.length === 0) continue
     if (hits.some((h) => persons.includes(h.person))) continue
+    // Brazilian tu with the você form (tu vai, tu é), taught in the course
+    if (w === 'tu' && hits.some((h) => h.person === 2)) continue
+    if (lower.slice(i + 1, j).includes('se') && hits.some((h) => h.person === 2)) continue // impersonal se: vós só se usa…
     const h = hits[0]!
     const correct = conjugate(h.lemma, deps.verbs).forms[h.tense][persons[0]!]
     findings.push({

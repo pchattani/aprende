@@ -124,4 +124,30 @@ describe('checker', () => {
     expect(f.map((x) => x.start)).toEqual([...f.map((x) => x.start)].sort((a, b) => a - b))
     expect('O casa é bonito.'.slice(f[0]!.start, f[0]!.end)).toBe('O casa')
   })
+  it('does not flag correct Portuguese (real-course false positives)', () => {
+    const more = [
+      ...entries, V('w.avô', 'avô', 'noun', { gender: 'm', plural: 'avós' }), V('w.avó', 'avó', 'noun', { gender: 'f' }), V('w.morar', 'morar', 'verb'),
+      V('w.pai', 'pai', 'noun', { gender: 'm' }), V('w.são', 'são', 'adj'), V('w.menino', 'menino', 'noun', { gender: 'mf' }), V('w.pequeno', 'pequeno', 'adj'),
+      V('w.namorado', 'namorado', 'noun', { gender: 'mf' }), V('w.primo', 'primo', 'noun', { gender: 'mf' }), V('w.argentino', 'argentino', 'adj'),
+      V('w.ano', 'ano', 'noun', { gender: 'm' }), V('w.ter', 'ter', 'verb'), V('w.vinte', 'vinte', 'num'), V('w.estrela', 'estrela', 'noun', { gender: 'f' }),
+      V('w.claro', 'claro', 'adj'), V('w.olhar', 'olhar', 'verb'), V('w.camisa', 'camisa', 'noun', { gender: 'f' }), V('w.laranja', 'laranja', 'adj', { plural: 'laranja' }),
+      V('w.ir', 'ir', 'verb'), V('w.festa', 'festa', 'noun', { gender: 'f' }), V('w.tu', 'tu', 'pron'), V('w.você', 'você', 'pron'), V('w.perder', 'perder', 'verb'),
+      V('w.trem', 'trem', 'noun', { gender: 'm' }), V('w.graças', 'graças', 'noun', { gender: 'f' }), V('w.lindo', 'lindo', 'adj'),
+    ]
+    const d2 = { dict: buildDictionary(more, IRREGULAR), rules: [], verbs: IRREGULAR }
+    const ok = (t: string) => expect(check(t, d2).filter((f) => f.code !== 'unknown'), t).toEqual([])
+    ok('Os meninos são pequenos.')
+    ok('Meus avós moram com os meus pais.')
+    ok('O namorado da minha prima é argentino.')
+    ok('Tenho vinte e um anos.')
+    ok('Quero olhar as estrelas, claro.')
+    ok('As camisas laranja são lindas.')
+    ok('Tu vai na festa?')
+    ok('Graças a você, perdi o trem.')
+    ok('Salvador é linda.')
+    // and still catches the real mistakes
+    expect(check('O casa é linda.', d2).map((f) => f.code)).toContain('agreement')
+    expect(check('A casa é lindo.', d2).map((f) => f.code)).toContain('agreement')
+    expect(check('Eu vai na festa.', d2).map((f) => f.code)).toContain('verb-agreement')
+  })
 })
