@@ -1,0 +1,281 @@
+id: a1.u03
+title: Minha família
+lessons:
+  - id: a1.u03.l1
+    title: Minha família
+    teach: [g.possessives, g.ter-present]
+    vocab: [w.família, w.pai, w.mãe, w.filho, w.irmão, w.avô, w.avó, w.marido, w.esposa, w.ter, w.meu, w.seu, w.nosso, w.dele, w.casa, w.casado, w.solteiro]
+    tip: "Possessives agree with the thing owned: a man says minha mãe, a woman says meu pai. For 'his' and 'her', Brazilians say o irmão dele, a casa dela."
+    sentences:
+      - { es: "Minha família é grande.", en: "My family is big.", altEs: ["A minha família é grande.", "Tenho uma família grande."], altEn: ["I have a big family."], grammar: [g.possessives], vocab: [w.família, w.meu], variant: "In Portugal the article is almost always used: a minha família." }
+      - { es: "Eu tenho dois irmãos e uma irmã.", en: "I have two brothers and a sister.", altEs: ["Tenho dois irmãos e uma irmã."], altEn: ["I've got two brothers and one sister."], grammar: [g.ter-present, g.plural-nouns], vocab: [w.ter, w.irmão] }
+      - { es: "Você tem irmãos?", en: "Do you have any brothers or sisters?", altEs: ["Você tem irmão?", "Tem irmãos?"], altEn: ["Do you have siblings?", "Have you got any brothers or sisters?"], grammar: [g.ter-present], vocab: [w.ter, w.irmão], note: "irmãos can mean brothers, or brothers and sisters." }
+      - { es: "Meu pai se chama Roberto e minha mãe se chama Lúcia.", en: "My father's name is Roberto and my mother's name is Lúcia.", altEs: ["O meu pai se chama Roberto e a minha mãe se chama Lúcia.", "Meu pai é o Roberto e minha mãe é a Lúcia."], altEn: ["My father is called Roberto and my mother is called Lúcia."], grammar: [g.possessives, g.chamar-se], vocab: [w.pai, w.mãe] }
+      - { es: "Minha mãe é professora.", en: "My mother is a teacher.", altEs: ["A minha mãe é professora."], grammar: [g.possessives], vocab: [w.mãe, w.meu], error: { wrong: "Meu mãe é professora.", explain: "Possessives agree with the thing owned: mãe is feminine, so minha mãe.", grammar: g.possessives } }
+      - { es: "O irmão dele mora em Ipanema.", en: "His brother lives in Ipanema.", altEs: ["O seu irmão mora em Ipanema."], grammar: [g.possessives], vocab: [w.irmão, w.dele], note: "For 'his' and 'her', put dele / dela after the noun.", transform: { instruction: "Say 'her brother' instead", answer: "O irmão dela mora em Ipanema.", alt: [], en: "Her brother lives in Ipanema." } }
+      - { es: "Nossa casa é perto da praia.", en: "Our house is near the beach.", altEs: ["A nossa casa é perto da praia.", "Nossa casa fica perto da praia."], altEn: ["Our home is close to the beach."], grammar: [g.possessives], vocab: [w.nosso, w.casa] }
+      - { es: "Meus avós moram com os meus pais.", en: "My grandparents live with my parents.", altEs: ["Os meus avós moram com os meus pais.", "Meus avós moram com meus pais."], grammar: [g.possessives, g.plural-nouns], vocab: [w.avô, w.avó, w.pai], note: "os avós = grandparents; os pais = parents." }
+      - { es: "Vocês têm filhos?", en: "Do you (all) have children?", altEs: ["Vocês têm filho?"], altEn: ["Do you have kids?"], grammar: [g.ter-present], vocab: [w.ter, w.filho], error: { wrong: "Vocês tem filhos?", explain: "With vocês / eles, write têm with a circumflex; ele tem has none.", grammar: g.ter-present } }
+      - { es: "Não, nós não temos filhos.", en: "No, we don't have children.", altEs: ["Não, não temos filhos.", "Não temos filhos não."], grammar: [g.ter-present, g.negation], vocab: [w.ter, w.filho], transform: { instruction: "Change to 'they'", answer: "Não, eles não têm filhos.", alt: ["Eles não têm filhos.", "Não, elas não têm filhos."], en: "No, they don't have children." } }
+      - { es: "Você é casado? — Não, sou solteiro.", en: "Are you married? — No, I'm single.", altEs: ["Você é casada? — Não, sou solteira.", "Você é casado? — Não, eu sou solteiro."], grammar: [g.ser-present], vocab: [w.casado, w.solteiro], note: "Brazilians say both ser casado and estar casado." }
+      - { es: "O meu marido é engenheiro.", en: "My husband is an engineer.", altEs: ["Meu marido é engenheiro."], grammar: [g.possessives], vocab: [w.marido] }
+      - { es: "A esposa do Paulo é professora.", en: "Paulo's wife is a teacher.", altEs: ["A mulher do Paulo é professora."], grammar: [g.possessives, g.contractions-de], vocab: [w.esposa], note: "mulher also means wife." }
+      - { es: "Qual é o nome do seu filho?", en: "What's your son's name?", altEs: ["Como se chama o seu filho?", "Como o seu filho se chama?", "Qual o nome do seu filho?"], grammar: [g.possessives, g.question-words], vocab: [w.seu, w.filho] }
+      - { es: "A casa dela é grande, mas a nossa é pequena.", en: "Her house is big, but ours is small.", altEs: ["A casa dela é grande, mas a nossa casa é pequena."], grammar: [g.possessives], vocab: [w.dele, w.nosso, w.casa] }
+    exchanges:
+      - q: { es: "Você tem irmãos?", en: "Do you have any brothers or sisters?" }
+        a: { es: "Tenho, sim: um irmão e duas irmãs.", en: "Yes, I do: a brother and two sisters." }
+        alt: ["Tenho um irmão.", "Não, não tenho irmãos.", "Não tenho não."]
+        grammar: [g.ter-present]
+        vocab: [w.ter, w.irmão]
+      - q: { es: "Como se chama a sua mãe?", en: "What's your mother's name?" }
+        a: { es: "Minha mãe se chama Lúcia.", en: "My mother's name is Lúcia." }
+        alt: ["Ela se chama Lúcia.", "Lúcia.", "O nome dela é Lúcia."]
+        grammar: [g.possessives, g.chamar-se]
+        vocab: [w.mãe, w.seu]
+      - q: { es: "Sua família é grande?", en: "Is your family big?" }
+        a: { es: "Não, a minha família é pequena.", en: "No, my family is small." }
+        alt: ["É, sim, muito grande.", "É pequena.", "Não, é pequena."]
+        grammar: [g.possessives]
+        vocab: [w.família, w.meu]
+      - q: { es: "Vocês têm filhos?", en: "Do you (all) have children?" }
+        a: { es: "Temos, sim: uma filha.", en: "Yes, we do: a daughter." }
+        alt: ["Não, não temos.", "Temos dois filhos.", "Temos uma filha."]
+        grammar: [g.ter-present]
+        vocab: [w.ter, w.filho]
+      - q: { es: "Ela é casada?", en: "Is she married?" }
+        a: { es: "Não, ela é solteira.", en: "No, she's single." }
+        alt: ["É, sim.", "Não, é solteira.", "É, sim, com o Paulo."]
+        grammar: [g.ser-present]
+        vocab: [w.casado, w.solteiro]
+    texts:
+      - title: "Minha família"
+        es: ["Minha família é pequena.", "Tenho um irmão, mas não tenho irmãs.", "Meus pais moram em Niterói e meus avós moram em Ipanema."]
+        en: ["My family is small.", "I have a brother, but I don't have any sisters.", "My parents live in Niterói and my grandparents live in Ipanema."]
+        grammar: [g.possessives, g.ter-present]
+        vocab: [w.família, w.irmão, w.pai, w.avô]
+      - title: "Mensagem da Camila"
+        es: ["Daniel, domingo é o dia da família.", "Meus pais, meus avós e meu irmão vão à praia de Ipanema.", "Você vem também?"]
+        en: ["Daniel, Sunday is family day.", "My parents, my grandparents and my brother are going to Ipanema beach.", "Are you coming too?"]
+        grammar: [g.possessives]
+        vocab: [w.família, w.pai, w.avô, w.irmão]
+    spicy:
+      - { es: "Você tem namorado? E tem planos para hoje?", en: "Do you have a boyfriend? And do you have plans for today?", altEs: ["Você tem namorada? E tem planos para hoje?", "Você tem namorado? E tem planos pra hoje?"], grammar: [g.ter-present], vocab: [w.ter] }
+      - { es: "Minha mãe diz que você é muito bonito.", en: "My mother says you're very good-looking.", altEs: ["Minha mãe diz que você é muito bonita.", "A minha mãe diz que você é muito bonito."], grammar: [g.possessives], vocab: [w.mãe, w.meu] }
+      - { es: "Sua irmã é simpática, mas eu prefiro você.", en: "Your sister is nice, but I prefer you.", altEs: ["Seu irmão é simpático, mas eu prefiro você.", "A sua irmã é simpática, mas eu prefiro você."], grammar: [g.possessives], vocab: [w.seu, w.irmão] }
+      - { es: "Eu tenho um sofá, um gato e tempo para você.", en: "I have a sofa, a cat and time for you.", altEs: ["Tenho um sofá, um gato e tempo para você.", "Eu tenho um sofá, um gato e tempo pra você."], grammar: [g.ter-present], vocab: [w.ter] }
+      - { es: "Minha avó tem oitenta anos e dança melhor do que você.", en: "My grandmother is eighty and she dances better than you.", altEs: ["A minha avó tem oitenta anos e dança melhor que você."], grammar: [g.ter-present, g.possessives], vocab: [w.avó, w.ter] }
+  - id: a1.u03.l2
+    title: Tios, primos e cachorros
+    teach: [g.plural-nouns]
+    vocab: [w.tio, w.primo, w.namorado, w.neto, w.bebê, w.criança, w.cachorro, w.gato, w.cão, w.peixe, w.pássaro, w.au, w.foto, w.computador, w.internet, w.mensagem]
+    tip: "Most nouns add -s. But -m becomes -ns (mensagens), -l becomes -is (hotéis), and -ão has three plurals: cães, irmãos, aviões."
+    sentences:
+      - { es: "Meus tios têm três filhos.", en: "My aunt and uncle have three children.", altEs: ["Os meus tios têm três filhos."], altEn: ["My uncle and aunt have three kids."], grammar: [g.plural-nouns, g.ter-present], vocab: [w.tio], note: "os tios = uncle and aunt (or uncles)." }
+      - { es: "Meus primos moram em São Paulo.", en: "My cousins live in São Paulo.", altEs: ["As minhas primas moram em São Paulo.", "Os meus primos moram em São Paulo."], grammar: [g.plural-nouns, g.possessives], vocab: [w.primo] }
+      - { es: "O bebê é muito pequeno.", en: "The baby is very small.", altEs: ["O bebê é pequenininho."], altEn: ["The baby is tiny."], grammar: [g.adjective-agreement], vocab: [w.bebê], variant: "In Portugal: o bebé." }
+      - { es: "Temos um cachorro e dois gatos.", en: "We have a dog and two cats.", altEs: ["Nós temos um cachorro e dois gatos."], grammar: [g.plural-nouns, g.ter-present], vocab: [w.cachorro, w.gato], variant: "In Portugal a dog is usually um cão." }
+      - { es: "Os cães do meu tio são enormes.", en: "My uncle's dogs are huge.", altEs: ["Os cachorros do meu tio são enormes."], grammar: [g.plural-nouns], vocab: [w.cão, w.tio], error: { wrong: "Os cãos do meu tio são enormes.", explain: "cão has the plural cães, like pão → pães and alemão → alemães.", grammar: g.plural-nouns } }
+      - { es: "Minha avó tem cinco netos.", en: "My grandmother has five grandchildren.", altEs: ["A minha avó tem cinco netos."], grammar: [g.plural-nouns, g.ter-present], vocab: [w.neto] }
+      - { es: "Tem muitas crianças na praia hoje.", en: "There are lots of children on the beach today.", altEs: ["Hoje tem muitas crianças na praia.", "Há muitas crianças na praia hoje."], grammar: [g.plural-nouns, g.tem-there-is], vocab: [w.criança], note: "criança is always feminine, for a boy or a girl." }
+      - { es: "Os peixes e os pássaros são da minha irmã.", en: "The fish and the birds are my sister's.", altEs: ["Os pássaros e os peixes são da minha irmã."], grammar: [g.plural-nouns], vocab: [w.peixe, w.pássaro] }
+      - { es: "O namorado da minha prima é argentino.", en: "My cousin's boyfriend is Argentinian.", altEs: ["O namorado da minha prima é da Argentina."], grammar: [g.possessives], vocab: [w.namorado, w.primo] }
+      - { es: "Esta é uma foto dos meus avós.", en: "This is a photo of my grandparents.", altEs: ["Essa é uma foto dos meus avós."], grammar: [g.plural-nouns, g.possessives], vocab: [w.foto] }
+      - { es: "As fotos estão no computador.", en: "The photos are on the computer.", altEs: ["As fotos estão no meu computador."], grammar: [g.plural-nouns], vocab: [w.foto, w.computador], transform: { instruction: "Change to singular: the photo", answer: "A foto está no computador.", alt: ["A foto está no meu computador."], en: "The photo is on the computer." } }
+      - { es: "Na casa da minha avó não tem internet.", en: "At my grandmother's house there's no internet.", altEs: ["Não tem internet na casa da minha avó."], grammar: [g.tem-there-is, g.negation], vocab: [w.internet] }
+      - { es: "Au, au! — É o Leo, o meu cachorro.", en: "Woof, woof! — That's Leo, my dog.", altEs: ["Au, au! — É o Leo, meu cachorro."], grammar: [g.possessives], vocab: [w.au, w.cachorro] }
+      - { es: "Os pais dela têm dois hotéis em Ipanema.", en: "Her parents have two hotels in Ipanema.", altEs: ["Os pais dela têm dois hotéis lá em Ipanema."], grammar: [g.plural-nouns, g.ter-present], vocab: [w.pai], transform: { instruction: "Change to singular: her father, one hotel", answer: "O pai dela tem um hotel em Ipanema.", alt: [], en: "Her father has a hotel in Ipanema." } }
+      - { es: "Tenho três mensagens do meu primo.", en: "I have three messages from my cousin.", altEs: ["Eu tenho três mensagens do meu primo."], grammar: [g.plural-nouns], vocab: [w.mensagem, w.primo], error: { wrong: "Tenho três mensagems do meu primo.", explain: "Nouns in -m make the plural in -ns: mensagem → mensagens.", grammar: g.plural-nouns } }
+    exchanges:
+      - q: { es: "Você tem cachorro?", en: "Do you have a dog?" }
+        a: { es: "Tenho, sim: dois cachorros e um gato.", en: "Yes, I do: two dogs and a cat." }
+        alt: ["Tenho um cachorro.", "Não, não tenho.", "Não, mas tenho um gato."]
+        grammar: [g.plural-nouns, g.ter-present]
+        vocab: [w.cachorro, w.gato]
+      - q: { es: "Quantos primos você tem?", en: "How many cousins do you have?" }
+        a: { es: "Tenho oito primos.", en: "I have eight cousins." }
+        alt: ["Oito.", "Muitos!", "Tenho muitos primos."]
+        grammar: [g.plural-nouns, g.question-words]
+        vocab: [w.primo]
+      - q: { es: "Quem são essas pessoas na foto?", en: "Who are those people in the photo?" }
+        a: { es: "São os meus tios e os meus primos.", en: "They're my aunt and uncle and my cousins." }
+        alt: ["É a minha família.", "São os meus tios."]
+        grammar: [g.plural-nouns, g.possessives]
+        vocab: [w.foto, w.tio, w.primo]
+      - q: { es: "O bebê é seu?", en: "Is the baby yours?" }
+        a: { es: "Não, é o filho da minha prima.", en: "No, he's my cousin's son." }
+        alt: ["Não, é da minha irmã.", "É, sim!", "Não, é da minha prima."]
+        grammar: [g.possessives]
+        vocab: [w.bebê, w.primo]
+      - q: { es: "Tem internet aqui?", en: "Is there internet here?" }
+        a: { es: "Tem, sim, mas é muito ruim.", en: "Yes, there is, but it's really bad." }
+        alt: ["Tem, sim.", "Não tem não.", "Não, não tem."]
+        grammar: [g.tem-there-is]
+        vocab: [w.internet]
+    texts:
+      - title: "Legenda da foto"
+        es: ["Domingo em Ipanema.", "Meus tios, meus primos e o bebê da minha prima.", "E os cachorros, claro!"]
+        en: ["Sunday in Ipanema.", "My aunt and uncle, my cousins and my cousin's baby.", "And the dogs, of course!"]
+        grammar: [g.plural-nouns, g.possessives]
+        vocab: [w.tio, w.primo, w.bebê, w.cachorro]
+      - title: "Mensagem no grupo da família"
+        es: ["Bom dia, família!", "Tem fotos novas do bebê no computador da avó.", "Beijos para todos!"]
+        en: ["Good morning, family!", "There are new photos of the baby on Grandma's computer.", "Kisses to everyone!"]
+        grammar: [g.plural-nouns]
+        vocab: [w.foto, w.bebê, w.computador]
+    spicy:
+      - { es: "Você é solteiro? Meus gatos querem saber.", en: "Are you single? My cats want to know.", altEs: ["Você é solteira? Meus gatos querem saber.", "Você é solteiro? Os meus gatos querem saber."], grammar: [g.plural-nouns], vocab: [w.gato] }
+      - { es: "Meus cachorros são lindos, mas você é mais lindo.", en: "My dogs are gorgeous, but you're more gorgeous.", altEs: ["Meus cachorros são lindos, mas você é mais linda."], grammar: [g.plural-nouns, g.adjective-agreement], vocab: [w.cachorro] }
+      - { es: "Uma foto com você? É para a minha avó.", en: "A photo with you? It's for my grandmother.", altEs: ["Uma foto com você? É pra minha avó."], grammar: [g.possessives], vocab: [w.foto] }
+      - { es: "Não tenho namorado, mas tenho dois gatos muito simpáticos.", en: "I don't have a boyfriend, but I have two very friendly cats.", altEs: ["Não tenho namorada, mas tenho dois gatos muito simpáticos."], grammar: [g.plural-nouns, g.ter-present], vocab: [w.namorado, w.gato] }
+      - { es: "Nossos cachorros já são namorados. E nós?", en: "Our dogs are already a couple. And us?", altEs: ["Os nossos cachorros já são namorados. E nós?"], grammar: [g.plural-nouns, g.possessives], vocab: [w.cachorro, w.namorado] }
+  - id: a1.u03.l3
+    title: Do zero ao vinte
+    teach: [g.numbers-0-100]
+    vocab: [w.um.num, w.zero, w.dois, w.três, w.quatro, w.cinco, w.seis, w.sete, w.oito, w.nove, w.dez, w.onze, w.doze, w.treze, w.catorze, w.quinze, w.dezesseis, w.dezessete, w.dezoito, w.dezenove, w.vinte, w.número, w.telefone]
+    tip: "um / uma and dois / duas agree with the noun: duas irmãs. In phone numbers Brazilians say meia for six."
+    sentences:
+      - { es: "Um, dois, três, quatro, cinco.", en: "One, two, three, four, five.", grammar: [g.numbers-0-100], vocab: [w.um.num, w.dois, w.três, w.quatro, w.cinco], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Seis, sete, oito, nove, dez.", en: "Six, seven, eight, nine, ten.", grammar: [g.numbers-0-100], vocab: [w.seis, w.sete, w.oito, w.nove, w.dez], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Onze, doze, treze, catorze, quinze.", en: "Eleven, twelve, thirteen, fourteen, fifteen.", altEs: ["Onze, doze, treze, quatorze, quinze."], grammar: [g.numbers-0-100], vocab: [w.onze, w.doze, w.treze, w.catorze, w.quinze], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Dezesseis, dezessete, dezoito, dezenove, vinte.", en: "Sixteen, seventeen, eighteen, nineteen, twenty.", grammar: [g.numbers-0-100], vocab: [w.dezesseis, w.dezessete, w.dezoito, w.dezenove, w.vinte], kinds: [dictation, listen, typeEs, order], variant: "In Portugal: dezasseis, dezassete, dezanove." }
+      - { es: "Meu irmão tem quinze anos.", en: "My brother is fifteen.", altEs: ["O meu irmão tem quinze anos.", "Meu irmão tem quinze."], altEn: ["My brother is fifteen years old."], grammar: [g.ter-present, g.numbers-0-100], vocab: [w.quinze], error: { wrong: "Meu irmão é quinze anos.", explain: "Age uses ter: ele tem quinze anos.", grammar: g.ter-present } }
+      - { es: "Qual é o seu número de telefone?", en: "What's your phone number?", altEs: ["Qual é o seu telefone?", "Qual o seu número?", "Qual é o seu número?"], grammar: [g.question-words, g.numbers-0-100], vocab: [w.número, w.telefone] }
+      - { es: "Meu número é nove, meia, dois, quatro, oito, sete, zero, três.", en: "My number is nine, six, two, four, eight, seven, zero, three.", altEs: ["Meu número é nove, seis, dois, quatro, oito, sete, zero, três."], grammar: [g.numbers-0-100], vocab: [w.número, w.zero], kinds: [dictation, listen, typeEn], note: "meia (half a dozen) = six when reading out digits." }
+      - { es: "Tenho duas irmãs e um irmão.", en: "I have two sisters and one brother.", altEs: ["Eu tenho duas irmãs e um irmão."], grammar: [g.numbers-0-100, g.ter-present], vocab: [w.dois, w.um.num], error: { wrong: "Tenho dois irmãs e um irmão.", explain: "dois becomes duas before a feminine noun: duas irmãs.", grammar: g.numbers-0-100 } }
+      - { es: "Uma pessoa e duas crianças, por favor.", en: "One adult and two children, please.", altEs: ["Um adulto e duas crianças, por favor."], altEn: ["One person and two children, please."], grammar: [g.numbers-0-100], vocab: [w.um.num, w.dois] }
+      - { es: "Minha filha tem dezoito anos e o meu filho tem vinte.", en: "My daughter is eighteen and my son is twenty.", altEs: ["A minha filha tem dezoito anos e o meu filho, vinte."], grammar: [g.numbers-0-100, g.ter-present], vocab: [w.dezoito, w.vinte] }
+      - { es: "Temos três gatos e um cachorro.", en: "We have three cats and a dog.", altEs: ["Nós temos três gatos e um cachorro."], grammar: [g.numbers-0-100, g.ter-present], vocab: [w.três], transform: { instruction: "Change to two cats and two dogs", answer: "Temos dois gatos e dois cachorros.", alt: ["Nós temos dois gatos e dois cachorros."], en: "We have two cats and two dogs." } }
+      - { es: "Zero a zero! Que jogo chato!", en: "Nil-nil! What a boring game!", altEs: ["Zero a zero. Que jogo chato!"], altEn: ["Zero-zero! What a boring match!"], grammar: [g.numbers-0-100], vocab: [w.zero] }
+      - { es: "O número da casa é doze.", en: "The house number is twelve.", altEs: ["A casa é o número doze."], grammar: [g.numbers-0-100], vocab: [w.número, w.doze] }
+      - { es: "O bebê tem onze meses.", en: "The baby is eleven months old.", altEs: ["O bebê tem onze meses de idade."], grammar: [g.numbers-0-100, g.ter-present], vocab: [w.onze] }
+      - { es: "Cinco mais três são oito.", en: "Five plus three is eight.", altEs: ["Cinco mais três é igual a oito."], altEn: ["Five and three make eight."], grammar: [g.numbers-0-100], vocab: [w.cinco, w.três, w.oito], transform: { instruction: "Change to six plus four", answer: "Seis mais quatro são dez.", alt: ["Seis mais quatro é igual a dez."], en: "Six plus four is ten." } }
+    exchanges:
+      - q: { es: "Quantos anos o seu irmão tem?", en: "How old is your brother?" }
+        a: { es: "Ele tem dezessete anos.", en: "He's seventeen." }
+        alt: ["Dezessete.", "Tem dezessete.", "Ele tem dezessete."]
+        grammar: [g.numbers-0-100, g.ter-present]
+        vocab: [w.dezessete]
+      - q: { es: "Qual é o seu telefone?", en: "What's your phone number?" }
+        a: { es: "É nove, meia, oito, dois, cinco, zero, um, quatro.", en: "It's nine, six, eight, two, five, zero, one, four." }
+        alt: ["Nove, seis, oito, dois, cinco, zero, um, quatro."]
+        grammar: [g.numbers-0-100]
+        vocab: [w.telefone, w.zero]
+      - q: { es: "Quantos irmãos você tem?", en: "How many brothers and sisters do you have?" }
+        a: { es: "Tenho três: dois irmãos e uma irmã.", en: "I have three: two brothers and a sister." }
+        alt: ["Três.", "Não tenho irmãos.", "Tenho três irmãos."]
+        grammar: [g.numbers-0-100, g.ter-present]
+        vocab: [w.três, w.dois]
+      - q: { es: "Quantas pessoas?", en: "How many people?" }
+        a: { es: "Duas pessoas, por favor.", en: "Two people, please." }
+        alt: ["Duas.", "Somos duas.", "Somos dois."]
+        grammar: [g.numbers-0-100]
+        vocab: [w.dois]
+      - q: { es: "Qual é o número da sua casa?", en: "What number is your house?" }
+        a: { es: "É o quinze.", en: "It's number fifteen." }
+        alt: ["Quinze.", "Número quinze.", "É o número quinze."]
+        grammar: [g.numbers-0-100]
+        vocab: [w.número, w.quinze]
+    texts:
+      - title: "Bilhete"
+        es: ["Meu telefone: nove, meia, um, cinco, três, oito, dois, sete.", "Minha irmã tem quinze anos.", "Eu tenho dezenove."]
+        en: ["My phone number: nine, six, one, five, three, eight, two, seven.", "My sister is fifteen.", "I'm nineteen."]
+        grammar: [g.numbers-0-100]
+        vocab: [w.telefone, w.quinze, w.dezenove]
+      - title: "Placar"
+        es: ["Maracanã, domingo.", "Flamengo três, Fluminense dois.", "Que jogo!"]
+        en: ["Maracanã, Sunday.", "Flamengo three, Fluminense two.", "What a game!"]
+        grammar: [g.numbers-0-100]
+        vocab: [w.três, w.dois]
+    spicy:
+      - { es: "Você me dá o seu número de telefone ou o seu chocolate?", en: "Will you give me your phone number or your chocolate?", altEs: ["Me dá o seu número ou o seu chocolate?"], grammar: [g.numbers-0-100], vocab: [w.número, w.telefone] }
+      - { es: "Tenho vinte anos e zero namorados.", en: "I'm twenty and I have zero boyfriends.", altEs: ["Tenho vinte anos e zero namoradas."], grammar: [g.numbers-0-100, g.ter-present], vocab: [w.vinte, w.zero] }
+      - { es: "Meu número é fácil: um, dois, três... e o resto é com você.", en: "My number is easy: one, two, three... and the rest is up to you.", altEs: ["Meu número é fácil: um, dois, três... o resto é com você."], grammar: [g.numbers-0-100], vocab: [w.número, w.um.num, w.dois, w.três] }
+      - { es: "Dez de dez. Você, não o pastel.", en: "Ten out of ten. You, not the pastel.", altEs: ["Dez de dez: você, não o pastel."], grammar: [g.numbers-0-100], vocab: [w.dez] }
+      - { es: "Duas pessoas, uma mesa e nove, meia, dois... você completa?", en: "Two people, one table and nine, six, two... will you finish it?", altEs: ["Duas pessoas, uma mesa e nove, seis, dois... você completa?"], grammar: [g.numbers-0-100], vocab: [w.dois, w.nove] }
+  - id: a1.u03.l4
+    title: Quantos anos você tem?
+    teach: [g.question-words]
+    vocab: [w.trinta, w.quarenta, w.cinquenta, w.sessenta, w.setenta, w.oitenta, w.noventa, w.cem, w.idade, w.aniversário, w.ano, w.quanto, w.quantos-anos, w.palma]
+    tip: "Tens and units are joined with e: vinte e um, noventa e nove. Por que (why) is two words; porque (because) is one."
+    sentences:
+      - { es: "Quantos anos você tem?", en: "How old are you?", altEs: ["Você tem quantos anos?", "Qual é a sua idade?"], grammar: [g.question-words, g.ter-present], vocab: [w.quantos-anos], error: { wrong: "Quantos anos você é?", explain: "Age uses ter: Quantos anos você tem?", grammar: g.ter-present } }
+      - { es: "Minha mãe tem quarenta e cinco anos.", en: "My mother is forty-five.", altEs: ["A minha mãe tem quarenta e cinco anos.", "Minha mãe tem quarenta e cinco."], altEn: ["My mother is forty-five years old."], grammar: [g.numbers-0-100], vocab: [w.quarenta], transform: { instruction: "Ask how old her mother is", answer: "Quantos anos a sua mãe tem?", alt: ["Quantos anos tem a sua mãe?", "Qual é a idade da sua mãe?"], en: "How old is your mother?" } }
+      - { es: "Meu avô tem setenta e oito anos.", en: "My grandfather is seventy-eight.", altEs: ["O meu avô tem setenta e oito anos.", "Meu avô tem setenta e oito."], grammar: [g.numbers-0-100], vocab: [w.setenta] }
+      - { es: "Trinta, quarenta, cinquenta, sessenta.", en: "Thirty, forty, fifty, sixty.", grammar: [g.numbers-0-100], vocab: [w.trinta, w.quarenta, w.cinquenta, w.sessenta], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Setenta, oitenta, noventa, cem.", en: "Seventy, eighty, ninety, one hundred.", grammar: [g.numbers-0-100], vocab: [w.setenta, w.oitenta, w.noventa, w.cem], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Tenho vinte e um anos.", en: "I'm twenty-one.", altEs: ["Eu tenho vinte e um anos.", "Tenho vinte e um."], altEn: ["I am twenty-one years old."], grammar: [g.numbers-0-100, g.ter-present], vocab: [w.ano], transform: { instruction: "Say you're thirty-two", answer: "Tenho trinta e dois anos.", alt: ["Eu tenho trinta e dois anos."], en: "I'm thirty-two." } }
+      - { es: "Quando é o seu aniversário?", en: "When's your birthday?", altEs: ["O seu aniversário é quando?", "Quando é seu aniversário?"], grammar: [g.question-words], vocab: [w.aniversário] }
+      - { es: "Por que você mora no Rio? — Porque a minha família é daqui.", en: "Why do you live in Rio? — Because my family is from here.", altEs: ["Por que você mora no Rio? — Porque minha família é daqui."], grammar: [g.question-words, g.connectors-basic], vocab: [w.família], error: { wrong: "Porque você mora no Rio? — Porque a minha família é daqui.", explain: "Why is por que, two words; because is porque, one word.", grammar: g.question-words } }
+      - { es: "Cadê o meu celular?", en: "Where's my phone?", altEs: ["Onde está o meu celular?", "Cadê meu celular?"], grammar: [g.question-words], vocab: [w.cadê], note: "cadê = where is (informal Brazilian).", variant: "Not used in Portugal: Onde está o meu telemóvel?" }
+      - { es: "Quem é o homem na foto? — É o meu avô.", en: "Who's the man in the photo? — It's my grandfather.", altEs: ["Quem é o homem da foto? — É meu avô."], grammar: [g.question-words], vocab: [w.avô] }
+      - { es: "Quantas pessoas tem na sua família?", en: "How many people are there in your family?", altEs: ["Quantas pessoas há na sua família?", "Na sua família tem quantas pessoas?"], grammar: [g.question-words, g.tem-there-is], vocab: [w.quanto], note: "quanto agrees: quantas pessoas, quantos anos." }
+      - { es: "Como é a sua irmã?", en: "What's your sister like?", altEs: ["Como é sua irmã?"], grammar: [g.question-words], vocab: [w.irmão] }
+      - { es: "O que o seu pai faz? — Ele é médico.", en: "What does your father do? — He's a doctor.", altEs: ["O que o seu pai faz? — É médico.", "O seu pai faz o quê? — Ele é médico."], grammar: [g.question-words], vocab: [w.pai] }
+      - { es: "Minha avó tem cem anos!", en: "My grandmother is a hundred!", altEs: ["A minha avó tem cem anos!"], altEn: ["My grandmother is one hundred years old!"], grammar: [g.numbers-0-100], vocab: [w.cem] }
+      - { es: "Qual é a idade do seu filho?", en: "How old is your son?", altEs: ["Quantos anos tem o seu filho?", "Quantos anos o seu filho tem?"], altEn: ["What's your son's age?"], grammar: [g.question-words], vocab: [w.idade] }
+    exchanges:
+      - q: { es: "Quando é o seu aniversário?", en: "When's your birthday?" }
+        a: { es: "É amanhã!", en: "It's tomorrow!" }
+        alt: ["Amanhã.", "É hoje!", "É em maio."]
+        grammar: [g.question-words]
+        vocab: [w.aniversário]
+      - q: { es: "Por que você estuda português?", en: "Why are you studying Portuguese?" }
+        a: { es: "Porque a minha namorada é brasileira.", en: "Because my girlfriend is Brazilian." }
+        alt: ["Porque eu moro no Brasil.", "Porque o meu namorado é brasileiro.", "Porque eu adoro o Brasil."]
+        grammar: [g.question-words, g.connectors-basic]
+        vocab: [w.namorado]
+      - q: { es: "Com quem você mora?", en: "Who do you live with?" }
+        a: { es: "Moro com os meus pais e a minha irmã.", en: "I live with my parents and my sister." }
+        alt: ["Com os meus pais.", "Moro sozinho.", "Moro sozinha."]
+        grammar: [g.question-words]
+        vocab: [w.pai]
+      - q: { es: "Quantos anos tem a sua mãe?", en: "How old is your mother?" }
+        a: { es: "Ela tem cinquenta e dois anos.", en: "She's fifty-two." }
+        alt: ["Cinquenta e dois.", "Tem cinquenta e dois.", "Ela tem cinquenta e dois."]
+        grammar: [g.numbers-0-100, g.question-words]
+        vocab: [w.cinquenta, w.quanto]
+      - q: { es: "Cadê o Daniel?", en: "Where's Daniel?" }
+        a: { es: "Está na praia, com a Camila.", en: "He's on the beach, with Camila." }
+        alt: ["Na praia.", "Não sei.", "Ele está na praia."]
+        grammar: [g.question-words]
+        vocab: [w.cadê]
+    texts:
+      - title: "Convite"
+        es: ["Sábado é o aniversário da minha avó.", "Ela faz oitenta anos!", "Festa em Ipanema, às oito. Você vem?"]
+        en: ["Saturday is my grandmother's birthday.", "She's turning eighty!", "Party in Ipanema, at eight. Are you coming?"]
+        grammar: [g.numbers-0-100, g.question-words]
+        vocab: [w.aniversário, w.oitenta]
+      - title: "Pôr do sol em Ipanema"
+        es: ["Por que as pessoas batem palmas em Ipanema?", "Porque o pôr do sol é lindo!", "É às seis da tarde, mais ou menos."]
+        en: ["Why do people clap in Ipanema?", "Because the sunset is beautiful!", "It's at about six in the evening."]
+        grammar: [g.question-words]
+        vocab: [w.palma]
+    spicy:
+      - { es: "Quando é o seu aniversário? Quero um presente bonito para você.", en: "When's your birthday? I want a nice present for you.", altEs: ["Quando é o seu aniversário? Quero um presente bonito pra você."], grammar: [g.question-words], vocab: [w.aniversário] }
+      - { es: "Por que você é tão bonito? — Porque como muita fruta.", en: "Why are you so good-looking? — Because I eat lots of fruit.", altEs: ["Por que você é tão bonita? — Porque como muita fruta."], grammar: [g.question-words, g.connectors-basic], vocab: [w.por-que, w.porque] }
+      - { es: "Com quem você vai dançar hoje? Comigo?", en: "Who are you going to dance with tonight? With me?", altEs: ["Com quem você dança hoje? Comigo?"], grammar: [g.question-words], vocab: [w.dançar] }
+      - { es: "Qual é o seu plano para hoje à noite? Eu não tenho planos... ainda.", en: "What's your plan for tonight? I don't have any plans... yet.", altEs: ["Qual o seu plano pra hoje à noite? Eu não tenho planos... ainda."], grammar: [g.question-words], vocab: [w.plano] }
+      - { es: "Tenho trinta anos, um cachorro e o fim de semana todo para você.", en: "I'm thirty, I have a dog and the whole weekend for you.", altEs: ["Tenho trinta anos, um cachorro e o fim de semana inteiro para você."], grammar: [g.numbers-0-100, g.ter-present], vocab: [w.trinta, w.ano] }
+dialogues:
+  - id: a1.u03.d1
+    title: Fotos em Ipanema
+    context: At sunset on Ipanema beach, Camila shows Daniel a photo of her family on her phone.
+    lines:
+      - { speaker: Camila, es: "Olha, essa é a foto da minha família.", en: "Look, this is the photo of my family." }
+      - { speaker: Daniel, es: "Que família grande! Quem é esse homem?", en: "What a big family! Who is this man?" }
+      - { speaker: Camila, es: "É o meu pai. Ele se chama Roberto e tem sessenta anos.", en: "He's my father. His name is Roberto and he's sixty." }
+      - { speaker: Daniel, es: "E essa mulher é a sua mãe?", en: "And is this woman your mother?" }
+      - { speaker: Camila, es: "Não, é a minha tia Lúcia, irmã da minha mãe. Minha mãe não está na foto.", en: "No, it's my aunt Lúcia, my mother's sister. My mother isn't in the photo." }
+      - { speaker: Daniel, es: "Você tem irmãos?", en: "Do you have any brothers or sisters?" }
+      - { speaker: Camila, es: "Tenho um irmão mais velho e uma irmã mais nova. Ela tem quinze anos.", en: "I have an older brother and a younger sister. She's fifteen." }
+      - { speaker: Daniel, es: "E o cachorro?", en: "And the dog?" }
+      - { speaker: Camila, es: "É o Bolinha, o cachorro dos meus avós. E você, Daniel? Como é a sua família?", en: "That's Bolinha, my grandparents' dog. And you, Daniel? What's your family like?" }
+      - { speaker: Daniel, es: "É pequena: meus pais, minha irmã e eu. E dois gatos.", en: "It's small: my parents, my sister and me. And two cats." }
+      - { speaker: Camila, es: "Olha o pôr do sol! Agora todo mundo bate palmas.", en: "Look at the sunset! Now everybody claps." }
+      - { speaker: Daniel, es: "Palmas para o sol? Que legal!", en: "Applause for the sun? How cool!" }
+    questions:
+      - { q: "Quantos anos tem o pai da Camila?", options: ["Cinquenta", "Sessenta", "Setenta"], answer: 1, explain: "Camila says: Ele se chama Roberto e tem sessenta anos." }
+      - { q: "Quem é a Lúcia?", options: ["A mãe da Camila", "A tia da Camila", "A irmã da Camila"], answer: 1, explain: "Lúcia is Camila's aunt, her mother's sister." }
+      - { q: "Quantos gatos a família do Daniel tem?", options: ["Nenhum", "Um", "Dois"], answer: 2, explain: "Daniel says: E dois gatos." }
+      - { q: "O que as pessoas fazem no pôr do sol?", options: ["Batem palmas", "Vão para casa", "Tomam banho de mar"], answer: 0, explain: "In Ipanema people clap for the sunset: todo mundo bate palmas." }

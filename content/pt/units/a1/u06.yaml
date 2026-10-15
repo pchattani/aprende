@@ -1,0 +1,283 @@
+id: a1.u06
+title: Meu dia a dia
+lessons:
+  - id: a1.u06.l1
+    title: Que horas são?
+    teach: [g.telling-time]
+    vocab: [w.hora, w.minuto, w.meio-dia, w.meia-noite, w.relógio, w.manhã, w.tarde, w.noite, w.cedo, w.tarde.adv, w.agora, w.chegar, w.sair, w.voltar, w.abrir, w.fechar, w.começar, w.terminar]
+    tip: "É uma hora, but são duas horas. 'At' a time is às (a + as): às oito, à uma, ao meio-dia."
+    sentences:
+      - { es: "Que horas são? — São duas e meia.", en: "What time is it? — It's half past two.", altEs: ["Que horas são? — Duas e meia.", "Que horas são? — São duas e trinta."], grammar: [g.telling-time], vocab: [w.hora] }
+      - { es: "É uma hora.", en: "It's one o'clock.", altEs: ["É uma hora em ponto."], grammar: [g.telling-time], vocab: [w.hora], error: { wrong: "São uma hora.", explain: "One o'clock is singular: é uma hora. From two on it's plural: são duas horas.", grammar: g.telling-time } }
+      - { es: "São quinze para as nove.", en: "It's a quarter to nine.", altEs: ["Faltam quinze para as nove.", "São oito e quarenta e cinco."], grammar: [g.telling-time], vocab: [w.hora], variant: "In Portugal: São nove menos um quarto." }
+      - { es: "A aula começa às oito e termina às dez.", en: "The class starts at eight and ends at ten.", altEs: ["A aula começa às oito e acaba às dez."], grammar: [g.telling-time], vocab: [w.começar, w.terminar], error: { wrong: "A aula começa as oito e termina as dez.", explain: "'At' + a time takes the grave accent: às oito (a + as).", grammar: g.telling-time } }
+      - { es: "O bonde sai às dez da manhã.", en: "The tram leaves at ten in the morning.", altEs: ["O bonde sai às dez horas da manhã."], grammar: [g.telling-time], vocab: [w.sair, w.manhã], transform: { instruction: "Change the time to half past eleven", answer: "O bonde sai às onze e meia da manhã.", alt: ["O bonde sai às onze e meia."], en: "The tram leaves at half past eleven in the morning." } }
+      - { es: "Eu chego em casa às sete da noite.", en: "I get home at seven in the evening.", altEs: ["Chego em casa às sete da noite.", "Eu chego em casa às dezenove horas."], grammar: [g.telling-time], vocab: [w.chegar, w.noite], note: "Brazilians say chegar em casa; in Portugal, chegar a casa.", transform: { instruction: "Change to 'we'", answer: "Nós chegamos em casa às sete da noite.", alt: ["Chegamos em casa às sete da noite."], en: "We get home at seven in the evening." } }
+      - { es: "É meio-dia. Vamos almoçar?", en: "It's noon. Shall we have lunch?", altEs: ["É meio-dia, vamos almoçar?"], altEn: ["It's midday. Shall we have lunch?"], grammar: [g.telling-time], vocab: [w.meio-dia] }
+      - { es: "Ele volta à meia-noite.", en: "He comes back at midnight.", altEs: ["Ele volta só à meia-noite."], altEn: ["He gets back at midnight."], grammar: [g.telling-time], vocab: [w.voltar, w.meia-noite] }
+      - { es: "A farmácia abre às oito e fecha às dez da noite.", en: "The pharmacy opens at eight and closes at ten at night.", altEs: ["A farmácia abre às oito e fecha às vinte e duas horas."], grammar: [g.telling-time, g.present-regular-er-ir], vocab: [w.abrir, w.fechar] }
+      - { es: "Agora são três e vinte.", en: "It's twenty past three now.", altEs: ["São três e vinte agora."], grammar: [g.telling-time], vocab: [w.agora] }
+      - { es: "Você sai cedo ou tarde?", en: "Do you leave early or late?", altEs: ["Você sai de casa cedo ou tarde?"], grammar: [g.telling-time], vocab: [w.sair, w.cedo, w.tarde.adv] }
+      - { es: "A que horas o museu abre?", en: "What time does the museum open?", altEs: ["Que horas o museu abre?", "O museu abre a que horas?"], grammar: [g.telling-time, g.question-words], vocab: [w.hora, w.abrir] }
+      - { es: "O filme começa daqui a dez minutos.", en: "The film starts in ten minutes.", altEs: ["O filme começa em dez minutos."], altEn: ["The movie starts in ten minutes."], grammar: [g.telling-time], vocab: [w.minuto, w.começar] }
+      - { es: "Que horas são no seu relógio?", en: "What time is it by your watch?", altEs: ["Que horas são no seu relógio, por favor?"], altEn: ["What time does your watch say?"], grammar: [g.telling-time], vocab: [w.relógio] }
+      - { es: "A reunião termina às quatro da tarde.", en: "The meeting ends at four in the afternoon.", altEs: ["A reunião acaba às quatro da tarde.", "A reunião termina às dezesseis horas."], grammar: [g.telling-time], vocab: [w.terminar, w.tarde] }
+    exchanges:
+      - q: { es: "Que horas são?", en: "What time is it?" }
+        a: { es: "São cinco e quinze.", en: "It's a quarter past five." }
+        alt: ["Cinco e quinze.", "São cinco e um quarto.", "É uma hora."]
+        grammar: [g.telling-time]
+        vocab: [w.hora]
+      - q: { es: "A que horas abre o museu?", en: "What time does the museum open?" }
+        a: { es: "Abre às dez e fecha às seis.", en: "It opens at ten and closes at six." }
+        alt: ["Às dez.", "Abre às dez."]
+        grammar: [g.telling-time]
+        vocab: [w.abrir, w.fechar]
+      - q: { es: "Que horas você chega?", en: "What time are you arriving?" }
+        a: { es: "Chego às oito, mais ou menos.", en: "I'll get there at about eight." }
+        alt: ["Às oito.", "Chego tarde.", "Lá pelas oito."]
+        grammar: [g.telling-time]
+        vocab: [w.chegar]
+      - q: { es: "Você volta cedo?", en: "Are you coming back early?" }
+        a: { es: "Não, volto tarde, depois da meia-noite.", en: "No, I'm coming back late, after midnight." }
+        alt: ["Volto, sim.", "Não, volto tarde."]
+        grammar: [g.telling-time]
+        vocab: [w.voltar, w.tarde.adv, w.meia-noite]
+      - q: { es: "Quando sai o próximo bonde?", en: "When does the next tram leave?" }
+        a: { es: "Sai daqui a vinte minutos.", en: "It leaves in twenty minutes." }
+        alt: ["Às duas.", "Daqui a pouco.", "Em vinte minutos."]
+        grammar: [g.telling-time]
+        vocab: [w.sair, w.minuto]
+    texts:
+      - title: "Horário do bonde de Santa Teresa"
+        es: ["Segunda a sexta: das oito da manhã às seis da tarde.", "Sábado e domingo: das dez às quatro.", "Um bonde a cada vinte minutos."]
+        en: ["Monday to Friday: from eight in the morning to six in the evening.", "Saturday and Sunday: from ten to four.", "A tram every twenty minutes."]
+        grammar: [g.telling-time, g.days-months]
+        vocab: [w.manhã, w.tarde, w.minuto]
+      - title: "Mensagem do Daniel"
+        es: ["Camila, estou no centro agora.", "Chego em Santa Teresa às três e meia.", "Até já!"]
+        en: ["Camila, I'm in the centre now.", "I'll get to Santa Teresa at half past three.", "See you soon!"]
+        grammar: [g.telling-time]
+        vocab: [w.agora, w.chegar]
+    spicy:
+      - { es: "Que horas são? Hora de um café comigo.", en: "What time is it? Time for a coffee with me.", altEs: ["Que horas são? É hora de um café comigo."], grammar: [g.telling-time], vocab: [w.hora] }
+      - { es: "Meu bonde sai às dez, mas posso pegar o próximo.", en: "My tram leaves at ten, but I can take the next one.", altEs: ["O meu bonde sai às dez, mas eu posso pegar o próximo."], grammar: [g.telling-time], vocab: [w.sair] }
+      - { es: "É meia-noite e você ainda está aqui. Que bom.", en: "It's midnight and you're still here. Nice.", altEs: ["É meia-noite e você ainda tá aqui. Que bom."], grammar: [g.telling-time], vocab: [w.meia-noite] }
+      - { es: "A festa começa às nove, mas eu chego às oito... para te ver.", en: "The party starts at nine, but I'm getting there at eight... to see you.", altEs: ["A festa começa às nove, mas eu chego às oito... pra te ver."], grammar: [g.telling-time], vocab: [w.começar, w.chegar] }
+      - { es: "Cinco minutos? Para você, eu tenho a noite toda.", en: "Five minutes? For you, I have the whole night.", altEs: ["Cinco minutos? Pra você, eu tenho a noite inteira."], grammar: [g.telling-time], vocab: [w.minuto, w.noite] }
+  - id: a1.u06.l2
+    title: Eu me levanto cedo
+    teach: [g.reflexive-verbs-present]
+    vocab: [w.dia-a-dia, w.acordar, w.levantar-se, w.levantar, w.deitar-se, w.vestir-se, w.vestir, w.sentar-se, w.divertir-se, w.preocupar-se, w.tomar-banho, w.escovar, w.dormir, w.se, w.nos, w.depois, w.antes, w.rápido, w.lembrar, w.descansar, w.pensar]
+    tip: "In Brazil the reflexive pronoun goes before the verb: eu me levanto, ela se veste. In casual speech it is often dropped: eu levanto às sete."
+    sentences:
+      - { es: "Eu acordo às seis e me levanto às seis e meia.", en: "I wake up at six and get up at half past six.", altEs: ["Acordo às seis e me levanto às seis e meia.", "Eu acordo às seis e levanto às seis e meia."], grammar: [g.reflexive-verbs-present, g.telling-time], vocab: [w.acordar, w.levantar-se], note: "acordar is not reflexive." }
+      - { es: "Ela se veste rápido.", en: "She gets dressed quickly.", altEs: ["Ela se veste muito rápido."], grammar: [g.reflexive-verbs-present], vocab: [w.vestir-se, w.rápido] }
+      - { es: "Nós nos deitamos tarde.", en: "We go to bed late.", altEs: ["A gente se deita tarde.", "Nos deitamos tarde."], grammar: [g.reflexive-verbs-present], vocab: [w.deitar-se, w.nos], transform: { instruction: "Change to 'I'", answer: "Eu me deito tarde.", alt: ["Me deito tarde.", "Eu deito tarde."], en: "I go to bed late." } }
+      - { es: "Eu tomo banho de manhã.", en: "I have a shower in the morning.", altEs: ["Tomo banho de manhã."], altEn: ["I shower in the morning."], grammar: [g.reflexive-verbs-present], vocab: [w.tomar-banho], error: { wrong: "Eu me tomo banho de manhã.", explain: "tomar banho is not reflexive in Portuguese: eu tomo banho.", grammar: g.reflexive-verbs-present }, variant: "In Portugal also tomar duche." }
+      - { es: "Você se levanta cedo?", en: "Do you get up early?", altEs: ["Você levanta cedo?"], grammar: [g.reflexive-verbs-present], vocab: [w.levantar-se, w.se], transform: { instruction: "Change to 'they'", answer: "Eles se levantam cedo?", alt: ["Elas se levantam cedo?"], en: "Do they get up early?" } }
+      - { es: "Escovo os dentes depois do café.", en: "I brush my teeth after breakfast.", altEs: ["Eu escovo os dentes depois do café.", "Escovo os dentes depois do café da manhã."], grammar: [g.present-regular-ar], vocab: [w.escovar, w.depois] }
+      - { es: "As crianças se divertem no parque.", en: "The children have fun in the park.", altEs: ["As crianças se divertem muito no parque."], grammar: [g.reflexive-verbs-present], vocab: [w.divertir-se] }
+      - { es: "Ele se preocupa demais.", en: "He worries too much.", altEs: ["Ele se preocupa muito."], grammar: [g.reflexive-verbs-present], vocab: [w.preocupar-se] }
+      - { es: "Eu me sento aqui, tá?", en: "I'll sit here, OK?", altEs: ["Eu sento aqui, tá?", "Me sento aqui, tá bom?"], grammar: [g.reflexive-verbs-present], vocab: [w.sentar-se] }
+      - { es: "Antes de dormir, eu leio um pouco.", en: "Before going to sleep, I read a little.", altEs: ["Antes de dormir, leio um pouco."], altEn: ["Before bed, I read a little."], grammar: [g.present-regular-er-ir], vocab: [w.antes, w.dormir] }
+      - { es: "Você se lembra do meu nome?", en: "Do you remember my name?", altEs: ["Você lembra do meu nome?", "Você se lembra de mim?"], grammar: [g.reflexive-verbs-present], vocab: [w.lembrar], note: "lembrar-se de: the de contracts with the article (do meu nome)." }
+      - { es: "Durmo oito horas por noite.", en: "I sleep eight hours a night.", altEs: ["Eu durmo oito horas por noite."], grammar: [g.present-regular-er-ir], vocab: [w.dormir], error: { wrong: "Dormo oito horas por noite.", explain: "dormir changes o to u in the eu form: eu durmo.", grammar: g.present-regular-er-ir } }
+      - { es: "No domingo eu descanso e penso na vida.", en: "On Sunday I rest and think about life.", altEs: ["No domingo descanso e penso na vida."], grammar: [g.present-regular-ar], vocab: [w.descansar, w.pensar] }
+      - { es: "Meu dia a dia é muito simples.", en: "My daily routine is very simple.", altEs: ["O meu dia a dia é muito simples."], altEn: ["My day-to-day life is very simple."], grammar: [g.reflexive-verbs-present], vocab: [w.dia-a-dia] }
+      - { es: "Ele se levanta, se veste e sai de casa.", en: "He gets up, gets dressed and leaves the house.", altEs: ["Ele levanta, se veste e sai de casa."], grammar: [g.reflexive-verbs-present], vocab: [w.levantar-se, w.vestir-se], variant: "In Portugal the pronoun follows the verb: Levanta-se, veste-se e sai de casa." }
+    exchanges:
+      - q: { es: "A que horas você se levanta?", en: "What time do you get up?" }
+        a: { es: "Me levanto às sete.", en: "I get up at seven." }
+        alt: ["Às sete.", "Eu me levanto às sete.", "Eu levanto às sete."]
+        grammar: [g.reflexive-verbs-present, g.telling-time]
+        vocab: [w.levantar-se]
+      - q: { es: "Você toma banho de manhã ou à noite?", en: "Do you shower in the morning or at night?" }
+        a: { es: "De manhã, antes do café.", en: "In the morning, before breakfast." }
+        alt: ["À noite.", "De manhã.", "Tomo banho de manhã."]
+        grammar: [g.reflexive-verbs-present]
+        vocab: [w.tomar-banho, w.antes]
+      - q: { es: "Você dorme bem?", en: "Do you sleep well?" }
+        a: { es: "Durmo muito bem, obrigado.", en: "I sleep very well, thanks." }
+        alt: ["Mais ou menos.", "Não, durmo mal.", "Durmo, sim."]
+        grammar: [g.present-regular-er-ir]
+        vocab: [w.dormir]
+      - q: { es: "Vocês se divertem em Santa Teresa?", en: "Do you have fun in Santa Teresa?" }
+        a: { es: "Muito! O bairro é lindo.", en: "A lot! The neighbourhood is beautiful." }
+        alt: ["Nos divertimos muito.", "Sim, muito."]
+        grammar: [g.reflexive-verbs-present]
+        vocab: [w.divertir-se]
+      - q: { es: "Você se lembra de mim?", en: "Do you remember me?" }
+        a: { es: "Claro! Você é a Helena.", en: "Of course! You're Helena." }
+        alt: ["Lembro, sim.", "Desculpa, não me lembro.", "Me lembro, sim."]
+        grammar: [g.reflexive-verbs-present]
+        vocab: [w.lembrar]
+    texts:
+      - title: "A manhã da Helena"
+        es: ["A Helena acorda às seis.", "Ela toma banho, se veste e toma um café.", "Às sete, ela já está trabalhando."]
+        en: ["Helena wakes up at six.", "She has a shower, gets dressed and has a coffee.", "At seven, she's already working."]
+        grammar: [g.reflexive-verbs-present, g.telling-time]
+        vocab: [w.acordar, w.tomar-banho, w.vestir-se]
+      - title: "Bilhete"
+        es: ["Daniel, eu me levanto cedo amanhã.", "O café está na mesa.", "Pode dormir: eu fecho a porta."]
+        en: ["Daniel, I'm getting up early tomorrow.", "The coffee is on the table.", "You can sleep: I'll close the door."]
+        grammar: [g.reflexive-verbs-present]
+        vocab: [w.levantar-se, w.dormir]
+    spicy:
+      - { es: "Eu me levanto cedo todo dia... mas hoje só penso em você.", en: "I get up early every day... but today I can only think about you.", altEs: ["Me levanto cedo todo dia... mas hoje só penso em você."], grammar: [g.reflexive-verbs-present], vocab: [w.levantar-se, w.pensar] }
+      - { es: "Você se lembra de mim? Eu me lembro muito bem de você.", en: "Do you remember me? I remember you very well.", altEs: ["Você lembra de mim? Eu lembro muito bem de você."], grammar: [g.reflexive-verbs-present], vocab: [w.lembrar] }
+      - { es: "Eu me visto em cinco minutos. Para você, em uma hora.", en: "I get dressed in five minutes. For you, in an hour.", altEs: ["Eu me visto em cinco minutos; para você, em uma hora."], grammar: [g.reflexive-verbs-present], vocab: [w.vestir-se] }
+      - { es: "Com você eu me divirto muito.", en: "I have a lot of fun with you.", altEs: ["Eu me divirto muito com você.", "Me divirto muito com você."], grammar: [g.reflexive-verbs-present], vocab: [w.divertir-se] }
+      - { es: "Antes de dormir, penso em você. Depois de acordar, também.", en: "Before I go to sleep, I think of you. After I wake up, too.", altEs: ["Antes de dormir eu penso em você, e depois de acordar também."], grammar: [g.reflexive-verbs-present], vocab: [w.antes, w.depois, w.pensar] }
+  - id: a1.u06.l3
+    title: Trabalho e estudo
+    teach: [g.present-regular-er-ir]
+    vocab: [w.trabalhar, w.estudar, w.aprender, w.ler, w.assistir, w.viver, w.correr, w.encontrar, w.trabalho, w.aula, w.faculdade, w.universidade, w.livro, w.caderno, w.caneta, w.lápis, w.escritório, w.emprego, w.empresa, w.reunião, w.usar, w.ganhar]
+    tip: "-er and -ir verbs differ only in the nós form: comemos, abrimos. Everything else is the same: como, come, comem / abro, abre, abrem."
+    sentences:
+      - { es: "Eu trabalho numa empresa no centro.", en: "I work for a company in the centre.", altEs: ["Trabalho numa empresa no centro.", "Eu trabalho em uma empresa no centro."], grammar: [g.present-regular-ar], vocab: [w.trabalhar, w.empresa] }
+      - { es: "Ela estuda na universidade.", en: "She studies at university.", altEs: ["Ela estuda na faculdade."], grammar: [g.present-regular-ar], vocab: [w.estudar, w.universidade], note: "faculdade is the everyday word for going to university." }
+      - { es: "Nós aprendemos português todo dia.", en: "We learn Portuguese every day.", altEs: ["Aprendemos português todo dia.", "Nós aprendemos português todos os dias."], altEn: ["We're learning Portuguese every day."], grammar: [g.present-regular-er-ir], vocab: [w.aprender], transform: { instruction: "Change to 'I'", answer: "Eu aprendo português todo dia.", alt: ["Aprendo português todo dia."], en: "I learn Portuguese every day." } }
+      - { es: "Você lê muitos livros?", en: "Do you read a lot of books?", altEs: ["Você lê muito?"], grammar: [g.present-regular-er-ir], vocab: [w.ler, w.livro] }
+      - { es: "Eles vivem em Santa Teresa.", en: "They live in Santa Teresa.", altEs: ["Eles moram em Santa Teresa."], grammar: [g.present-regular-er-ir], vocab: [w.viver], note: "viver and morar both mean 'to live'; morar is more common for where you live." }
+      - { es: "Meu pai assiste ao jogo na televisão.", en: "My father watches the game on TV.", altEs: ["Meu pai assiste o jogo na televisão.", "Meu pai vê o jogo na televisão."], grammar: [g.present-regular-er-ir], vocab: [w.assistir], note: "assistir = to watch; in speech Brazilians often drop the a.", error: { wrong: "Meu pai assista ao jogo na televisão.", explain: "The ele form of -ir verbs ends in -e: ele assiste.", grammar: g.present-regular-er-ir } }
+      - { es: "Corro na praia de manhã.", en: "I run on the beach in the morning.", altEs: ["Eu corro na praia de manhã."], grammar: [g.present-regular-er-ir], vocab: [w.correr] }
+      - { es: "Escrevo no caderno com uma caneta azul.", en: "I write in my notebook with a blue pen.", altEs: ["Eu escrevo no caderno com uma caneta azul."], grammar: [g.present-regular-er-ir], vocab: [w.caderno, w.caneta] }
+      - { es: "Você tem um lápis?", en: "Do you have a pencil?", altEs: ["Tem um lápis?", "Você tem lápis?"], grammar: [g.ter-present], vocab: [w.lápis], note: "lápis is the same in the plural: dois lápis." }
+      - { es: "Tenho uma reunião no escritório às duas.", en: "I have a meeting at the office at two.", altEs: ["Eu tenho uma reunião no escritório às duas."], grammar: [g.telling-time], vocab: [w.reunião, w.escritório] }
+      - { es: "Ela ganha bem, mas trabalha muito.", en: "She earns well, but she works a lot.", altEs: ["Ela ganha bem mas trabalha muito."], grammar: [g.present-regular-ar], vocab: [w.ganhar, w.trabalhar] }
+      - { es: "Eles comem no restaurante da empresa.", en: "They eat in the company restaurant.", altEs: ["Eles almoçam no restaurante da empresa."], grammar: [g.present-regular-er-ir], vocab: [w.empresa], error: { wrong: "Eles comen no restaurante da empresa.", explain: "The eles form ends in -em: comem (the m makes the vowel nasal).", grammar: g.present-regular-er-ir } }
+      - { es: "Encontro os meus amigos depois da aula.", en: "I meet my friends after class.", altEs: ["Eu encontro os meus amigos depois da aula."], grammar: [g.present-regular-ar], vocab: [w.encontrar, w.aula] }
+      - { es: "Você usa o computador no trabalho?", en: "Do you use a computer at work?", altEs: ["Você usa computador no trabalho?"], grammar: [g.present-regular-ar], vocab: [w.usar, w.trabalho] }
+      - { es: "Meu irmão quer um emprego novo.", en: "My brother wants a new job.", altEs: ["O meu irmão quer um emprego novo."], grammar: [g.querer-present], vocab: [w.emprego] }
+      - { es: "Nós abrimos a loja às nove.", en: "We open the shop at nine.", altEs: ["Abrimos a loja às nove."], grammar: [g.present-regular-er-ir], vocab: [w.abrir], transform: { instruction: "Change to 'they'", answer: "Eles abrem a loja às nove.", alt: ["Elas abrem a loja às nove."], en: "They open the shop at nine." } }
+    exchanges:
+      - q: { es: "O que você faz?", en: "What do you do?" }
+        a: { es: "Sou estudante. Estudo na universidade.", en: "I'm a student. I study at university." }
+        alt: ["Trabalho num escritório.", "Sou professora.", "Estudo e trabalho."]
+        grammar: [g.present-regular-ar]
+        vocab: [w.estudar, w.universidade]
+      - q: { es: "Onde você trabalha?", en: "Where do you work?" }
+        a: { es: "Trabalho numa empresa no centro.", en: "I work for a company in the centre." }
+        alt: ["Num escritório.", "Em casa.", "Trabalho em casa."]
+        grammar: [g.present-regular-ar]
+        vocab: [w.trabalhar, w.empresa]
+      - q: { es: "Você lê em português?", en: "Do you read in Portuguese?" }
+        a: { es: "Leio, sim, mas devagar.", en: "Yes, I do, but slowly." }
+        alt: ["Leio um pouco.", "Ainda não.", "Leio, sim."]
+        grammar: [g.present-regular-er-ir]
+        vocab: [w.ler]
+      - q: { es: "A que horas termina a aula?", en: "What time does the class finish?" }
+        a: { es: "Termina às onze.", en: "It finishes at eleven." }
+        alt: ["Às onze.", "Ao meio-dia."]
+        grammar: [g.telling-time]
+        vocab: [w.aula, w.terminar]
+      - q: { es: "Vocês assistem novela?", en: "Do you watch soap operas?" }
+        a: { es: "Assistimos, sim, toda noite.", en: "Yes, we do, every night." }
+        alt: ["Não, nunca.", "Às vezes.", "Assistimos, sim."]
+        grammar: [g.present-regular-er-ir]
+        vocab: [w.assistir]
+    texts:
+      - title: "A vida da Helena"
+        es: ["A Helena vive em Santa Teresa.", "Ela é artista e trabalha em casa.", "À tarde, ela dá aula numa escola do bairro."]
+        en: ["Helena lives in Santa Teresa.", "She's an artist and works from home.", "In the afternoon, she teaches at a school in the neighbourhood."]
+        grammar: [g.present-regular-er-ir]
+        vocab: [w.viver, w.trabalhar, w.aula]
+      - title: "Mensagem do Thiago"
+        es: ["Tenho uma reunião às três.", "Depois, corro na praia.", "Encontro vocês no bar às oito?"]
+        en: ["I have a meeting at three.", "Afterwards, I'm going running on the beach.", "Shall I meet you at the bar at eight?"]
+        grammar: [g.present-regular-er-ir]
+        vocab: [w.reunião, w.correr, w.encontrar]
+    spicy:
+      - { es: "Você estuda aqui? Então eu também vou estudar aqui.", en: "You study here? Then I'm going to study here too.", altEs: ["Você estuda aqui? Então eu vou estudar aqui também."], grammar: [g.present-regular-ar], vocab: [w.estudar] }
+      - { es: "Eu leio muitos livros, mas você é mais interessante.", en: "I read lots of books, but you're more interesting.", altEs: ["Leio muitos livros, mas você é mais interessante."], grammar: [g.present-regular-er-ir], vocab: [w.ler, w.livro] }
+      - { es: "Trabalho muito e ganho pouco, mas pago o seu café.", en: "I work a lot and earn little, but I'll buy your coffee.", altEs: ["Eu trabalho muito e ganho pouco, mas pago o seu café."], grammar: [g.present-regular-ar], vocab: [w.trabalhar, w.ganhar] }
+      - { es: "Corro todo dia na praia. Hoje, corro atrás de você.", en: "I run on the beach every day. Today, I'm running after you.", altEs: ["Eu corro todo dia na praia. Hoje, corro atrás de você."], grammar: [g.present-regular-er-ir], vocab: [w.correr] }
+      - { es: "Na reunião eu escrevo no caderno... o seu nome.", en: "In the meeting I write in my notebook... your name.", altEs: ["Na reunião escrevo no caderno... o seu nome."], grammar: [g.present-regular-er-ir], vocab: [w.reunião, w.caderno] }
+  - id: a1.u06.l4
+    title: Segunda, terça… e o fim de semana
+    teach: [g.days-months, g.frequency-adverbs]
+    vocab: [w.dia, w.semana, w.mês, w.fim-de-semana, w.fim, w.hoje, w.amanhã, w.segunda-feira, w.terça-feira, w.quarta-feira, w.quinta-feira, w.sexta-feira, w.sábado, w.domingo, w.janeiro, w.fevereiro, w.março, w.abril, w.maio, w.junho, w.julho, w.agosto, w.setembro, w.outubro, w.novembro, w.dezembro, w.sempre, w.nunca, w.às-vezes, w.geralmente, w.normalmente, w.vez, w.todo-dia, w.quase]
+    tip: "Weekdays are numbered and feminine: na segunda, na sexta; the weekend is masculine: no sábado, no domingo. Days and months take a small letter."
+    sentences:
+      - { es: "Segunda, terça, quarta, quinta, sexta.", en: "Monday, Tuesday, Wednesday, Thursday, Friday.", altEs: ["Segunda-feira, terça-feira, quarta-feira, quinta-feira, sexta-feira."], grammar: [g.days-months], vocab: [w.segunda-feira, w.terça-feira, w.quarta-feira, w.quinta-feira, w.sexta-feira], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Sábado e domingo é fim de semana!", en: "Saturday and Sunday are the weekend!", altEs: ["Sábado e domingo são o fim de semana!"], grammar: [g.days-months], vocab: [w.sábado, w.domingo, w.fim-de-semana] }
+      - { es: "Hoje é sexta-feira!", en: "Today is Friday!", altEs: ["Hoje é sexta!"], altEn: ["It's Friday today!"], grammar: [g.days-months], vocab: [w.hoje, w.sexta-feira] }
+      - { es: "Na segunda eu trabalho até tarde.", en: "On Monday I work until late.", altEs: ["Na segunda-feira eu trabalho até tarde.", "Segunda eu trabalho até tarde."], grammar: [g.days-months], vocab: [w.segunda-feira], error: { wrong: "No segunda eu trabalho até tarde.", explain: "segunda (segunda-feira) is feminine: na segunda. Only sábado and domingo take no.", grammar: g.days-months } }
+      - { es: "No sábado eu vou à praia.", en: "On Saturday I go to the beach.", altEs: ["No sábado vou à praia.", "Sábado eu vou à praia."], grammar: [g.days-months], vocab: [w.sábado] }
+      - { es: "Janeiro, fevereiro, março, abril, maio, junho.", en: "January, February, March, April, May, June.", grammar: [g.days-months], vocab: [w.janeiro, w.fevereiro, w.março, w.abril, w.maio, w.junho], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Julho, agosto, setembro, outubro, novembro, dezembro.", en: "July, August, September, October, November, December.", grammar: [g.days-months], vocab: [w.julho, w.agosto, w.setembro, w.outubro, w.novembro, w.dezembro], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Meu aniversário é dia vinte de agosto.", en: "My birthday is on the twentieth of August.", altEs: ["O meu aniversário é no dia vinte de agosto."], altEn: ["My birthday is August the twentieth."], grammar: [g.days-months], vocab: [w.dia, w.agosto] }
+      - { es: "O Carnaval é em fevereiro ou março.", en: "Carnival is in February or March.", altEs: ["O Carnaval é em fevereiro ou em março."], grammar: [g.days-months], vocab: [w.fevereiro, w.março], note: "Months take a small letter and em, with no article: em março." }
+      - { es: "Eu sempre tomo café de manhã.", en: "I always have coffee in the morning.", altEs: ["Sempre tomo café de manhã."], grammar: [g.frequency-adverbs], vocab: [w.sempre], transform: { instruction: "Say you never have coffee in the morning", answer: "Eu nunca tomo café de manhã.", alt: ["Nunca tomo café de manhã.", "Eu não tomo café de manhã nunca."], en: "I never have coffee in the morning." } }
+      - { es: "Às vezes eu almoço em casa.", en: "Sometimes I have lunch at home.", altEs: ["Às vezes almoço em casa.", "Eu almoço em casa às vezes."], grammar: [g.frequency-adverbs], vocab: [w.às-vezes], error: { wrong: "As vezes eu almoço em casa.", explain: "Às vezes (sometimes) has a grave accent; as vezes means 'the times'.", grammar: g.frequency-adverbs } }
+      - { es: "Ele nunca chega na hora.", en: "He never arrives on time.", altEs: ["Ele não chega nunca na hora."], grammar: [g.frequency-adverbs], vocab: [w.nunca] }
+      - { es: "Corro três vezes por semana.", en: "I run three times a week.", altEs: ["Eu corro três vezes por semana."], grammar: [g.frequency-adverbs], vocab: [w.vez, w.semana], transform: { instruction: "Say once a week", answer: "Corro uma vez por semana.", alt: ["Eu corro uma vez por semana."], en: "I run once a week." } }
+      - { es: "Geralmente eu durmo cedo, mas no fim de semana durmo tarde.", en: "I usually go to sleep early, but at the weekend I go to sleep late.", altEs: ["Normalmente eu durmo cedo, mas no fim de semana durmo tarde."], grammar: [g.frequency-adverbs, g.days-months], vocab: [w.geralmente, w.normalmente, w.fim-de-semana] }
+      - { es: "Quase todo dia eu pego o bonde.", en: "I take the tram almost every day.", altEs: ["Eu pego o bonde quase todo dia."], grammar: [g.frequency-adverbs], vocab: [w.quase, w.todo-dia], variant: "In Portugal: quase todos os dias apanho o elétrico." }
+      - { es: "Em dezembro faz muito calor no Rio.", en: "In December it's very hot in Rio.", altEs: ["Faz muito calor no Rio em dezembro."], grammar: [g.days-months], vocab: [w.dezembro] }
+    exchanges:
+      - q: { es: "Que dia é hoje?", en: "What day is it today?" }
+        a: { es: "Hoje é quarta-feira.", en: "Today is Wednesday." }
+        alt: ["Quarta.", "É quarta-feira.", "Hoje é quarta."]
+        grammar: [g.days-months]
+        vocab: [w.hoje, w.quarta-feira]
+      - q: { es: "O que você faz no fim de semana?", en: "What do you do at the weekend?" }
+        a: { es: "No sábado vou à praia e no domingo descanso.", en: "On Saturday I go to the beach and on Sunday I rest." }
+        alt: ["Descanso.", "Saio com os amigos.", "Vou à praia."]
+        grammar: [g.days-months]
+        vocab: [w.fim-de-semana, w.sábado, w.domingo]
+      - q: { es: "Você trabalha aos sábados?", en: "Do you work on Saturdays?" }
+        a: { es: "Às vezes. Um sábado sim, um não.", en: "Sometimes. Every other Saturday." }
+        alt: ["Nunca!", "Sempre.", "Não, nunca."]
+        grammar: [g.frequency-adverbs, g.days-months]
+        vocab: [w.às-vezes, w.sábado]
+      - q: { es: "Você corre muito?", en: "Do you run a lot?" }
+        a: { es: "Corro duas vezes por semana.", en: "I run twice a week." }
+        alt: ["Todo dia.", "Quase nunca.", "Uma vez por semana."]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.vez, w.semana]
+      - q: { es: "Em que mês você chega ao Brasil?", en: "What month do you arrive in Brazil?" }
+        a: { es: "Em julho.", en: "In July." }
+        alt: ["Em janeiro.", "Chego em julho.", "No fim de julho."]
+        grammar: [g.days-months]
+        vocab: [w.mês, w.julho]
+    texts:
+      - title: "Agenda da semana"
+        es: ["Segunda: reunião às nove.", "Quarta: aula de português às sete da noite.", "Sábado: praia! Domingo: feijoada na casa da avó."]
+        en: ["Monday: meeting at nine.", "Wednesday: Portuguese class at seven in the evening.", "Saturday: beach! Sunday: feijoada at Grandma's house."]
+        grammar: [g.days-months]
+        vocab: [w.segunda-feira, w.quarta-feira, w.sábado, w.domingo]
+      - title: "O bonde de Santa Teresa"
+        es: ["O bonde amarelo passa todo dia.", "Às vezes está cheio de turistas.", "As pessoas do bairro quase nunca pegam o bonde no fim de semana."]
+        en: ["The yellow tram goes by every day.", "Sometimes it's full of tourists.", "The people from the neighbourhood hardly ever take the tram at the weekend."]
+        grammar: [g.frequency-adverbs]
+        vocab: [w.todo-dia, w.às-vezes, w.quase, w.nunca]
+    spicy:
+      - { es: "Você está livre no sábado? E no domingo? E na segunda?", en: "Are you free on Saturday? And on Sunday? And on Monday?", altEs: ["Você tá livre no sábado? E no domingo? E na segunda?"], grammar: [g.days-months], vocab: [w.sábado, w.domingo, w.segunda-feira] }
+      - { es: "Eu nunca danço... mas com você, às vezes.", en: "I never dance... but with you, sometimes.", altEs: ["Nunca danço... mas com você, às vezes."], grammar: [g.frequency-adverbs], vocab: [w.nunca, w.às-vezes] }
+      - { es: "Segunda, terça, quarta... todo dia é um bom dia para um café com você.", en: "Monday, Tuesday, Wednesday... every day is a good day for a coffee with you.", altEs: ["Segunda, terça, quarta... todo dia é bom para um café com você."], grammar: [g.days-months, g.frequency-adverbs], vocab: [w.todo-dia] }
+      - { es: "Eu nunca chego cedo... só quando você está lá.", en: "I never arrive early... only when you're there.", altEs: ["Nunca chego cedo... só quando você está lá."], grammar: [g.frequency-adverbs], vocab: [w.nunca] }
+      - { es: "Em fevereiro é Carnaval. Você vai sozinho?", en: "In February it's Carnival. Are you going on your own?", altEs: ["Em fevereiro é Carnaval. Você vai sozinha?"], grammar: [g.days-months], vocab: [w.fevereiro] }
+dialogues:
+  - id: a1.u06.d1
+    title: Um dia em Santa Teresa
+    context: Daniel takes the yellow tram up to Santa Teresa and visits Helena, a painter and a friend of Camila's.
+    lines:
+      - { speaker: Daniel, es: "Oi, Helena! Que bairro lindo! Você mora aqui?", en: "Hi, Helena! What a beautiful neighbourhood! Do you live here?" }
+      - { speaker: Helena, es: "Moro, sim, e trabalho em casa. Sou artista.", en: "Yes, I do, and I work from home. I'm an artist." }
+      - { speaker: Daniel, es: "Como é o seu dia a dia?", en: "What's your daily routine like?" }
+      - { speaker: Helena, es: "Eu acordo cedo, às seis. Tomo café e começo a trabalhar às sete.", en: "I wake up early, at six. I have breakfast and start working at seven." }
+      - { speaker: Daniel, es: "Às sete? Que cedo! E à tarde?", en: "At seven? How early! And in the afternoon?" }
+      - { speaker: Helena, es: "À tarde, de segunda a quinta, dou aula numa escola aqui do bairro.", en: "In the afternoon, Monday to Thursday, I teach at a school here in the neighbourhood." }
+      - { speaker: Daniel, es: "E na sexta?", en: "And on Friday?" }
+      - { speaker: Helena, es: "Na sexta eu descanso. E no sábado, às vezes, vendo os meus quadros na feira.", en: "On Friday I rest. And on Saturday I sometimes sell my paintings at the market." }
+      - { speaker: Daniel, es: "Você pega o bonde todo dia?", en: "Do you take the tram every day?" }
+      - { speaker: Helena, es: "Quase nunca! Eu ando a pé. O bonde é para os turistas, como você!", en: "Hardly ever! I walk. The tram is for tourists, like you!" }
+      - { speaker: Daniel, es: "Ei! Eu não sou turista, eu moro no Rio agora!", en: "Hey! I'm not a tourist, I live in Rio now!" }
+      - { speaker: Helena, es: "Tá bom, carioca! Então hoje você janta aqui, comigo e com a Camila.", en: "OK, carioca! Then tonight you're having dinner here, with me and Camila." }
+    questions:
+      - { q: "A que horas a Helena acorda?", options: ["Às seis", "Às sete", "Ao meio-dia"], answer: 0, explain: "Helena says: Eu acordo cedo, às seis." }
+      - { q: "O que a Helena faz na sexta?", options: ["Dá aula", "Descansa", "Vende quadros"], answer: 1, explain: "Na sexta eu descanso." }
+      - { q: "Quando a Helena vende os quadros?", options: ["Todo dia", "Às vezes, no sábado", "Na sexta"], answer: 1, explain: "No sábado, às vezes, vendo os meus quadros na feira." }
+      - { q: "A Helena pega o bonde?", options: ["Sempre", "Quase nunca", "Todo dia"], answer: 1, explain: "Quase nunca! Eu ando a pé." }

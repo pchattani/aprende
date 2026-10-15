@@ -1,0 +1,284 @@
+id: a1.u05
+title: Na padaria
+lessons:
+  - id: a1.u05.l1
+    title: Na padaria
+    teach: [g.querer-present]
+    vocab: [w.padaria, w.pão, w.pão-de-queijo, w.queijo, w.presunto, w.manteiga, w.ovo, w.café-da-manhã, w.café, w.cafezinho, w.leite, w.suco, w.água, w.bolo, w.sanduíche, w.açúcar, w.tapioca, w.querer, w.pedir, w.com, w.sem, w.para, w.mim]
+    tip: "To order: Eu quero…, the softer Eu queria… (I'd like), or the very Brazilian Vou querer… (I'll have)."
+    sentences:
+      - { es: "Eu quero um café com leite, por favor.", en: "I'd like a white coffee, please.", altEs: ["Quero um café com leite, por favor.", "Um café com leite, por favor."], altEn: ["I want a coffee with milk, please."], grammar: [g.querer-present], vocab: [w.querer, w.café, w.leite], transform: { instruction: "Make it more polite with queria", answer: "Eu queria um café com leite, por favor.", alt: ["Queria um café com leite, por favor."], en: "I'd like a white coffee, please." } }
+      - { es: "Você quer um pão de queijo?", en: "Do you want a cheese bread?", altEs: ["Quer um pão de queijo?", "Você quer pão de queijo?"], altEn: ["Would you like a cheese roll?"], grammar: [g.querer-present], vocab: [w.querer, w.pão-de-queijo] }
+      - { es: "Vou querer um pão com manteiga.", en: "I'll have bread and butter.", altEs: ["Eu vou querer um pão com manteiga.", "Quero um pão com manteiga."], altEn: ["I'll have a bread roll with butter."], grammar: [g.querer-present], vocab: [w.pão, w.manteiga, w.com], note: "Vou querer… (I'm going to want) is a very common way to order." }
+      - { es: "Nós queremos dois sucos de laranja.", en: "We want two orange juices.", altEs: ["Queremos dois sucos de laranja."], altEn: ["We'd like two orange juices."], grammar: [g.querer-present], vocab: [w.suco], transform: { instruction: "Change to 'they'", answer: "Eles querem dois sucos de laranja.", alt: ["Elas querem dois sucos de laranja."], en: "They want two orange juices." } }
+      - { es: "Ela não quer açúcar no café.", en: "She doesn't want sugar in her coffee.", altEs: ["Ela não quer açúcar no cafezinho."], grammar: [g.querer-present, g.negation], vocab: [w.açúcar, w.café], error: { wrong: "Ela não quere açúcar no café.", explain: "The ele / ela / você form of querer is quer, with no -e.", grammar: g.querer-present } }
+      - { es: "Um sanduíche de queijo e presunto, por favor.", en: "A ham and cheese sandwich, please.", altEs: ["Um sanduíche de presunto e queijo, por favor.", "Um misto, por favor."], grammar: [g.querer-present], vocab: [w.sanduíche, w.queijo, w.presunto], note: "A toasted ham-and-cheese sandwich is um misto quente." }
+      - { es: "No Brasil, o café da manhã tem pão, fruta e café.", en: "In Brazil, breakfast has bread, fruit and coffee.", altEs: ["O café da manhã no Brasil tem pão, fruta e café."], grammar: [g.tem-there-is], vocab: [w.café-da-manhã], variant: "In Portugal breakfast is o pequeno-almoço." }
+      - { es: "Eu queria uma tapioca com queijo.", en: "I'd like a tapioca with cheese.", altEs: ["Queria uma tapioca com queijo.", "Eu queria uma tapioca de queijo."], grammar: [g.querer-present], vocab: [w.tapioca, w.queijo], note: "Eu queria… (literally 'I wanted') is the polite way to ask." }
+      - { es: "Depois do almoço, um cafezinho.", en: "After lunch, a little coffee.", altEs: ["Depois do almoço, um cafezinho, por favor."], altEn: ["After lunch, a quick coffee."], grammar: [g.contractions-de], vocab: [w.cafezinho], note: "cafezinho: a small, strong, sweet coffee, offered everywhere in Brazil." }
+      - { es: "Para mim, um suco sem açúcar.", en: "For me, a juice with no sugar.", altEs: ["Pra mim, um suco sem açúcar.", "Para mim, um suco sem açúcar, por favor."], altEn: ["A juice without sugar for me."], grammar: [g.querer-present], vocab: [w.para, w.mim, w.sem], error: { wrong: "Para eu, um suco sem açúcar.", explain: "After a preposition, 'me' is mim: para mim, sem mim.", grammar: g.subject-pronouns } }
+      - { es: "Você quer o bolo de chocolate ou o bolo de laranja?", en: "Do you want the chocolate cake or the orange cake?", altEs: ["Você quer bolo de chocolate ou de laranja?"], grammar: [g.querer-present], vocab: [w.bolo] }
+      - { es: "O que você vai pedir?", en: "What are you going to order?", altEs: ["O que você vai querer?", "Você vai pedir o quê?"], altEn: ["What are you having?"], grammar: [g.question-words], vocab: [w.pedir] }
+      - { es: "Vou pedir dois ovos e um pão.", en: "I'm going to order two eggs and a bread roll.", altEs: ["Eu vou pedir dois ovos e um pão."], grammar: [g.querer-present], vocab: [w.pedir, w.ovo, w.pão] }
+      - { es: "A padaria abre às seis da manhã.", en: "The bakery opens at six in the morning.", altEs: ["A padaria abre às seis."], grammar: [g.telling-time], vocab: [w.padaria] }
+      - { es: "Vocês querem água com gás ou sem gás?", en: "Do you want sparkling or still water?", altEs: ["Vocês querem água com ou sem gás?"], altEn: ["Would you like fizzy or still water?"], grammar: [g.querer-present], vocab: [w.água, w.com, w.sem] }
+    exchanges:
+      - q: { es: "O que você vai querer?", en: "What will you have?" }
+        a: { es: "Um pão de queijo e um cafezinho, por favor.", en: "A cheese bread and a coffee, please." }
+        alt: ["Vou querer um café com leite.", "Um pão com manteiga, por favor.", "Eu queria um suco."]
+        grammar: [g.querer-present]
+        vocab: [w.pão-de-queijo, w.cafezinho]
+      - q: { es: "Você quer açúcar?", en: "Do you want sugar?" }
+        a: { es: "Não, obrigado. Sem açúcar.", en: "No, thanks. No sugar." }
+        alt: ["Quero, sim.", "Só um pouco.", "Não, obrigada."]
+        grammar: [g.querer-present]
+        vocab: [w.açúcar, w.sem]
+      - q: { es: "Mais alguma coisa?", en: "Anything else?" }
+        a: { es: "Não, só isso. Obrigada.", en: "No, that's all. Thank you." }
+        alt: ["Sim, um suco de laranja.", "Só isso, obrigado.", "Mais um pão de queijo."]
+        grammar: [g.querer-present]
+        vocab: [w.pão-de-queijo]
+      - q: { es: "Para viagem ou para comer aqui?", en: "To take away or to eat in?" }
+        a: { es: "Para comer aqui.", en: "To eat in." }
+        alt: ["Para viagem.", "Pra comer aqui.", "Pra viagem."]
+        grammar: [g.querer-present]
+        vocab: [w.para]
+      - q: { es: "Vocês querem café?", en: "Do you (both) want coffee?" }
+        a: { es: "Queremos, sim: dois cafés com leite.", en: "Yes, we do: two white coffees." }
+        alt: ["Não, obrigado.", "Sim, dois cafés.", "Queremos, sim."]
+        grammar: [g.querer-present]
+        vocab: [w.café, w.leite]
+    texts:
+      - title: "Na porta da padaria"
+        es: ["Padaria Pão de Açúcar.", "Pão fresco às seis da manhã!", "Café, sucos e sanduíches."]
+        en: ["Sugarloaf Bakery.", "Fresh bread at six in the morning!", "Coffee, juices and sandwiches."]
+        grammar: [g.querer-present]
+        vocab: [w.padaria, w.pão, w.suco, w.sanduíche]
+      - title: "Pedido"
+        es: ["Para a Camila, um café com leite e um pão de queijo.", "Para mim, um suco de laranja sem açúcar.", "E um bolo de chocolate para nós dois!"]
+        en: ["For Camila, a white coffee and a cheese bread.", "For me, an orange juice with no sugar.", "And a chocolate cake for the two of us!"]
+        grammar: [g.querer-present]
+        vocab: [w.para, w.mim, w.bolo]
+    spicy:
+      - { es: "Eu quero um café... e o seu telefone.", en: "I'd like a coffee... and your phone number.", altEs: ["Quero um café... e o seu telefone."], grammar: [g.querer-present], vocab: [w.querer, w.café] }
+      - { es: "Você quer açúcar? Não precisa: você já é um doce.", en: "Do you want sugar? No need: you're sweet enough already.", altEs: ["Quer açúcar? Não precisa: você já é um doce."], grammar: [g.querer-present], vocab: [w.açúcar] }
+      - { es: "Um pão de queijo para mim e um beijo para você?", en: "A cheese bread for me and a kiss for you?", altEs: ["Um pão de queijo pra mim e um beijo pra você?"], grammar: [g.querer-present], vocab: [w.pão-de-queijo, w.mim] }
+      - { es: "Eu queria um café da manhã... com você.", en: "I'd like a breakfast... with you.", altEs: ["Queria um café da manhã... com você."], grammar: [g.querer-present], vocab: [w.café-da-manhã] }
+      - { es: "Ele quer bolo, ela quer sorvete, e eu só quero você.", en: "He wants cake, she wants ice cream, and I only want you.", altEs: ["Ele quer bolo, ela quer sorvete e eu só quero você."], grammar: [g.querer-present], vocab: [w.querer, w.bolo] }
+  - id: a1.u05.l2
+    title: Eu gosto de…
+    teach: [g.gostar-de]
+    vocab: [w.gostar, w.adorar, w.detestar, w.preferir, w.fruta, w.banana, w.laranja, w.maçã, w.manga, w.mamão, w.abacaxi, w.limão, w.coco, w.açaí, w.água-de-coco, w.chocolate, w.sorvete, w.brigadeiro, w.doce, w.salgado, w.gostoso, w.delicioso, w.delícia, w.gelado]
+    tip: "gostar always takes de: Eu gosto de café. De contracts with the article: Gosto do bolo da sua mãe."
+    sentences:
+      - { es: "Eu gosto de chocolate.", en: "I like chocolate.", altEs: ["Gosto de chocolate."], grammar: [g.gostar-de], vocab: [w.gostar, w.chocolate], error: { wrong: "Eu gosto chocolate.", explain: "gostar always takes de: gosto de chocolate.", grammar: g.gostar-de } }
+      - { es: "Você gosta de açaí?", en: "Do you like açaí?", altEs: ["Gosta de açaí?"], grammar: [g.gostar-de], vocab: [w.gostar, w.açaí] }
+      - { es: "Ela gosta muito de frutas.", en: "She really likes fruit.", altEs: ["Ela gosta muito de fruta."], altEn: ["She likes fruit a lot."], grammar: [g.gostar-de], vocab: [w.fruta] }
+      - { es: "Nós adoramos sorvete de coco.", en: "We love coconut ice cream.", altEs: ["Adoramos sorvete de coco."], grammar: [g.present-regular-ar], vocab: [w.adorar, w.sorvete, w.coco], note: "adorar takes no de: adoro sorvete." }
+      - { es: "Eu detesto banana.", en: "I hate bananas.", altEs: ["Detesto banana."], altEn: ["I can't stand bananas."], grammar: [g.present-regular-ar], vocab: [w.detestar, w.banana] }
+      - { es: "Você prefere manga ou mamão?", en: "Do you prefer mango or papaya?", altEs: ["Prefere manga ou mamão?"], grammar: [g.gostar-de], vocab: [w.preferir, w.manga, w.mamão] }
+      - { es: "Prefiro abacaxi.", en: "I prefer pineapple.", altEs: ["Eu prefiro abacaxi."], grammar: [g.gostar-de], vocab: [w.preferir, w.abacaxi] }
+      - { es: "Ele gosta do suco de limão.", en: "He likes the lime juice.", altEs: ["Ele gosta muito do suco de limão."], grammar: [g.gostar-de, g.contractions-de], vocab: [w.limão], note: "limão is usually a lime in Brazil.", error: { wrong: "Ele gosta de o suco de limão.", explain: "de + o contracts: gosta do suco.", grammar: g.contractions-de } }
+      - { es: "O brigadeiro é muito doce.", en: "Brigadeiro is very sweet.", altEs: ["Brigadeiro é muito doce."], grammar: [g.adjective-agreement], vocab: [w.brigadeiro, w.doce], note: "brigadeiro: a chocolate truffle at every Brazilian birthday party." }
+      - { es: "Esse bolo é uma delícia!", en: "This cake is delicious!", altEs: ["Esse bolo está uma delícia!", "Que delícia esse bolo!"], grammar: [g.gostar-de], vocab: [w.delícia] }
+      - { es: "A água de coco está bem gelada.", en: "The coconut water is nice and cold.", altEs: ["A água de coco tá bem gelada."], grammar: [g.estar-present], vocab: [w.água-de-coco, w.gelado] }
+      - { es: "Vocês gostam de comida salgada ou doce?", en: "Do you like savoury or sweet food?", altEs: ["Vocês gostam mais de comida salgada ou doce?"], grammar: [g.gostar-de], vocab: [w.salgado, w.doce] }
+      - { es: "Não gosto de maçã, mas adoro laranja.", en: "I don't like apples, but I love oranges.", altEs: ["Eu não gosto de maçã, mas adoro laranja."], grammar: [g.gostar-de, g.negation], vocab: [w.maçã, w.laranja], transform: { instruction: "Make it positive: you like apples too", answer: "Gosto de maçã e adoro laranja.", alt: ["Eu gosto de maçã e adoro laranja."], en: "I like apples and I love oranges." } }
+      - { es: "O sorvete de chocolate é delicioso.", en: "The chocolate ice cream is delicious.", altEs: ["O sorvete de chocolate é uma delícia."], grammar: [g.adjective-agreement], vocab: [w.delicioso, w.sorvete], transform: { instruction: "Change to 'the ice creams'", answer: "Os sorvetes de chocolate são deliciosos.", alt: [], en: "The chocolate ice creams are delicious." } }
+      - { es: "Lá em cima do Pão de Açúcar, eu gosto de tomar água de coco.", en: "Up on Sugarloaf Mountain, I like to drink coconut water.", altEs: ["Lá no alto do Pão de Açúcar, gosto de tomar água de coco."], grammar: [g.gostar-de], vocab: [w.gostar, w.água-de-coco], note: "gostar de + infinitive = to like doing." }
+      - { es: "O açaí daqui é muito gostoso.", en: "The açaí here is really tasty.", altEs: ["O açaí daqui é uma delícia."], grammar: [g.gostar-de], vocab: [w.açaí, w.gostoso] }
+    exchanges:
+      - q: { es: "Você gosta de açaí?", en: "Do you like açaí?" }
+        a: { es: "Adoro! Com banana, por favor.", en: "I love it! With banana, please." }
+        alt: ["Gosto, sim.", "Não gosto não.", "Gosto muito."]
+        grammar: [g.gostar-de]
+        vocab: [w.açaí, w.adorar]
+      - q: { es: "Você prefere suco ou refrigerante?", en: "Do you prefer juice or a soft drink?" }
+        a: { es: "Prefiro suco de manga.", en: "I prefer mango juice." }
+        alt: ["Prefiro suco.", "Refrigerante.", "Prefiro água."]
+        grammar: [g.gostar-de]
+        vocab: [w.preferir, w.manga]
+      - q: { es: "O bolo está bom?", en: "Is the cake good?" }
+        a: { es: "Está uma delícia!", en: "It's delicious!" }
+        alt: ["Está ótimo!", "Está muito gostoso.", "Está, sim."]
+        grammar: [g.gostar-de]
+        vocab: [w.delícia, w.gostoso]
+      - q: { es: "Do que você não gosta?", en: "What don't you like?" }
+        a: { es: "Não gosto de mamão.", en: "I don't like papaya." }
+        alt: ["Detesto limão.", "Eu gosto de tudo!", "De mamão."]
+        grammar: [g.gostar-de, g.negation]
+        vocab: [w.mamão, w.detestar]
+      - q: { es: "Vocês gostam de brigadeiro?", en: "Do you (all) like brigadeiros?" }
+        a: { es: "Adoramos!", en: "We love them!" }
+        alt: ["Gostamos, sim.", "Eu gosto, ela não.", "Muito!"]
+        grammar: [g.gostar-de]
+        vocab: [w.brigadeiro]
+    texts:
+      - title: "Placa da sorveteria"
+        es: ["Sorvetes de frutas do Brasil:", "manga, coco, açaí e abacaxi.", "Uma delícia!"]
+        en: ["Ice creams made from Brazilian fruit:", "mango, coconut, açaí and pineapple.", "Delicious!"]
+        grammar: [g.contractions-de]
+        vocab: [w.sorvete, w.manga, w.coco, w.abacaxi]
+      - title: "Mensagem da Camila"
+        es: ["Daniel, você gosta de doce?", "Tem brigadeiro na festa hoje.", "E bolo de chocolate também!"]
+        en: ["Daniel, do you like sweet things?", "There are brigadeiros at the party today.", "And chocolate cake too!"]
+        grammar: [g.gostar-de]
+        vocab: [w.doce, w.brigadeiro, w.chocolate]
+    spicy:
+      - { es: "Gosto de chocolate, gosto de açaí... mas gosto mais de você.", en: "I like chocolate, I like açaí... but I like you more.", altEs: ["Eu gosto de chocolate, gosto de açaí... mas gosto mais de você."], grammar: [g.gostar-de], vocab: [w.gostar, w.chocolate, w.açaí] }
+      - { es: "Você é mais doce do que brigadeiro.", en: "You're sweeter than a brigadeiro.", altEs: ["Você é mais doce que brigadeiro."], grammar: [g.adjective-agreement], vocab: [w.doce, w.brigadeiro] }
+      - { es: "Você prefere sorvete ou um beijo? Pergunta difícil, eu sei.", en: "Do you prefer ice cream or a kiss? Tough question, I know.", altEs: ["Você prefere um sorvete ou um beijo? Pergunta difícil, eu sei."], grammar: [g.gostar-de], vocab: [w.preferir, w.sorvete] }
+      - { es: "Eu detesto acordar cedo, mas adoro tomar café com você.", en: "I hate waking up early, but I love having coffee with you.", altEs: ["Detesto acordar cedo, mas adoro tomar café com você."], grammar: [g.gostar-de, g.present-regular-ar], vocab: [w.detestar, w.adorar] }
+      - { es: "Que delícia! — O sorvete? — Não, você.", en: "Delicious! — The ice cream? — No, you.", altEs: ["Que delícia! — O sorvete? — Não: você."], grammar: [g.gostar-de], vocab: [w.delícia, w.sorvete] }
+  - id: a1.u05.l3
+    title: Almoço e jantar
+    teach: [g.present-regular-ar, g.contractions-de]
+    vocab: [w.almoço, w.jantar.n, w.lanche, w.comida, w.arroz, w.feijão, w.feijoada, w.farofa, w.carne, w.frango, w.salada, w.sopa, w.batata, w.tomate, w.coxinha, w.pastel, w.sal, w.almoçar, w.jantar, w.cozinhar, w.comer, w.beber, w.tomar, w.fome, w.sede]
+    tip: "Regular -ar verbs: almoço, almoça, almoçamos, almoçam. Brazilians tomar café, tomar suco, tomar cerveja: tomar is the everyday verb for drinking."
+    sentences:
+      - { es: "Eu almoço ao meio-dia.", en: "I have lunch at noon.", altEs: ["Almoço ao meio-dia."], grammar: [g.present-regular-ar], vocab: [w.almoçar] }
+      - { es: "Nós jantamos às oito.", en: "We have dinner at eight.", altEs: ["Jantamos às oito.", "A gente janta às oito."], grammar: [g.present-regular-ar], vocab: [w.jantar], transform: { instruction: "Change to 'I'", answer: "Eu janto às oito.", alt: ["Janto às oito."], en: "I have dinner at eight." } }
+      - { es: "No Brasil, o almoço tem arroz, feijão e salada.", en: "In Brazil, lunch has rice, beans and salad.", altEs: ["O almoço no Brasil tem arroz, feijão e salada."], altEn: ["In Brazil, lunch is rice, beans and salad."], grammar: [g.tem-there-is], vocab: [w.almoço, w.arroz, w.feijão, w.salada] }
+      - { es: "Você cozinha bem?", en: "Do you cook well?", altEs: ["Você cozinha bem mesmo?"], altEn: ["Are you a good cook?"], grammar: [g.present-regular-ar], vocab: [w.cozinhar] }
+      - { es: "Minha avó cozinha uma feijoada deliciosa.", en: "My grandmother cooks a delicious feijoada.", altEs: ["A minha avó cozinha uma feijoada deliciosa.", "Minha avó faz uma feijoada deliciosa."], grammar: [g.present-regular-ar], vocab: [w.cozinhar, w.feijoada] }
+      - { es: "A feijoada tem feijão preto e carne de porco.", en: "Feijoada has black beans and pork.", altEs: ["A feijoada é de feijão preto e carne de porco."], grammar: [g.contractions-de], vocab: [w.feijoada, w.feijão, w.carne] }
+      - { es: "Eu tomo café e ela toma chá.", en: "I drink coffee and she drinks tea.", altEs: ["Tomo café e ela toma chá."], altEn: ["I have coffee and she has tea."], grammar: [g.present-regular-ar], vocab: [w.tomar], error: { wrong: "Eu toma café e ela toma chá.", explain: "The eu form of -ar verbs ends in -o: eu tomo.", grammar: g.present-regular-ar } }
+      - { es: "Estou com fome! E você?", en: "I'm hungry! And you?", altEs: ["Tô com fome! E você?", "Eu estou com fome! E você?"], grammar: [g.estar-com], vocab: [w.fome], note: "Hunger and thirst use estar com: estou com fome, estou com sede." }
+      - { es: "Você está com sede? Tem água na geladeira.", en: "Are you thirsty? There's water in the fridge.", altEs: ["Tá com sede? Tem água na geladeira."], grammar: [g.estar-com, g.tem-there-is], vocab: [w.sede] }
+      - { es: "Não como carne, só frango e peixe.", en: "I don't eat red meat, only chicken and fish.", altEs: ["Eu não como carne, só frango e peixe."], grammar: [g.present-regular-er-ir, g.negation], vocab: [w.comer, w.carne, w.frango], transform: { instruction: "Change to 'we'", answer: "Não comemos carne, só frango e peixe.", alt: ["Nós não comemos carne, só frango e peixe."], en: "We don't eat red meat, only chicken and fish." } }
+      - { es: "A sopa do restaurante é de tomate.", en: "The restaurant's soup is tomato.", altEs: ["A sopa do restaurante é sopa de tomate."], altEn: ["The soup at the restaurant is tomato soup."], grammar: [g.contractions-de], vocab: [w.sopa, w.tomate] }
+      - { es: "O frango com batata é o prato do dia.", en: "Chicken with potatoes is the dish of the day.", altEs: ["O prato do dia é frango com batata."], grammar: [g.contractions-de], vocab: [w.frango, w.batata] }
+      - { es: "Um lanche rápido: uma coxinha e um pastel.", en: "A quick snack: a coxinha and a pastel.", altEs: ["Um lanche rápido: um pastel e uma coxinha."], grammar: [g.articles-indefinite], vocab: [w.lanche, w.coxinha, w.pastel], note: "coxinha: fried dough filled with chicken; pastel: a crispy fried pastry." }
+      - { es: "A comida da Bahia é muito boa.", en: "The food from Bahia is very good.", altEs: ["A comida baiana é muito boa."], altEn: ["Bahian food is very good."], grammar: [g.contractions-de], vocab: [w.comida], error: { wrong: "A comida de a Bahia é muito boa.", explain: "de + a contracts: da Bahia.", grammar: g.contractions-de } }
+      - { es: "Vocês bebem cerveja no almoço?", en: "Do you drink beer at lunch?", altEs: ["Vocês tomam cerveja no almoço?"], grammar: [g.present-regular-er-ir], vocab: [w.beber, w.almoço] }
+      - { es: "A farofa precisa de um pouco de sal.", en: "The farofa needs a bit of salt.", altEs: ["A farofa precisa de mais sal."], grammar: [g.contractions-de], vocab: [w.farofa, w.sal], note: "farofa: toasted cassava flour, served with feijoada and barbecue." }
+    exchanges:
+      - q: { es: "Onde você almoça?", en: "Where do you have lunch?" }
+        a: { es: "Almoço num restaurante perto do trabalho.", en: "I have lunch at a restaurant near work." }
+        alt: ["Em casa.", "No restaurante da esquina.", "Almoço em casa."]
+        grammar: [g.present-regular-ar]
+        vocab: [w.almoçar]
+      - q: { es: "O que tem para o jantar?", en: "What's for dinner?" }
+        a: { es: "Sopa de batata e salada.", en: "Potato soup and salad." }
+        alt: ["Frango com arroz.", "Não sei, não tem nada!", "Feijoada!"]
+        grammar: [g.tem-there-is]
+        vocab: [w.jantar.n, w.sopa]
+      - q: { es: "Você está com fome?", en: "Are you hungry?" }
+        a: { es: "Estou, sim! Muita fome.", en: "Yes, I am! Very hungry." }
+        alt: ["Estou.", "Não, estou com sede.", "Um pouco."]
+        grammar: [g.estar-com]
+        vocab: [w.fome]
+      - q: { es: "Quem cozinha na sua casa?", en: "Who cooks in your house?" }
+        a: { es: "O meu pai. Ele cozinha muito bem.", en: "My father. He cooks really well." }
+        alt: ["Eu cozinho.", "Ninguém!", "A minha mãe."]
+        grammar: [g.present-regular-ar]
+        vocab: [w.cozinhar]
+      - q: { es: "Você come carne?", en: "Do you eat meat?" }
+        a: { es: "Não, não como carne.", en: "No, I don't eat meat." }
+        alt: ["Como, sim.", "Só frango.", "Não como não."]
+        grammar: [g.present-regular-er-ir]
+        vocab: [w.comer, w.carne]
+    texts:
+      - title: "Cardápio do dia"
+        es: ["Prato do dia: feijoada com arroz, farofa e laranja.", "Doce: brigadeiro.", "Bebida: suco ou refrigerante."]
+        en: ["Dish of the day: feijoada with rice, farofa and orange.", "Dessert: brigadeiro.", "Drink: juice or soft drink."]
+        grammar: [g.contractions-de]
+        vocab: [w.feijoada, w.arroz, w.farofa]
+      - title: "Sábado de feijoada"
+        es: ["No sábado, a família almoça na casa da avó.", "Ela cozinha uma feijoada enorme.", "Todo mundo come muito e depois dorme no sofá!"]
+        en: ["On Saturday, the family has lunch at Grandma's house.", "She cooks an enormous feijoada.", "Everybody eats a lot and then sleeps on the sofa!"]
+        grammar: [g.present-regular-ar, g.contractions-de]
+        vocab: [w.almoçar, w.cozinhar, w.feijoada, w.comer]
+    spicy:
+      - { es: "Você cozinha? Não? Tudo bem, eu cozinho e você traz o vinho.", en: "Do you cook? No? That's fine, I'll cook and you bring the wine.", altEs: ["Você cozinha? Não? Tá bom, eu cozinho e você traz o vinho."], grammar: [g.present-regular-ar], vocab: [w.cozinhar] }
+      - { es: "Estou com fome. Jantamos juntos?", en: "I'm hungry. Shall we have dinner together?", altEs: ["Tô com fome. Jantamos juntos?", "Estou com fome. Vamos jantar juntos?"], grammar: [g.present-regular-ar, g.estar-com], vocab: [w.fome, w.jantar] }
+      - { es: "Você janta comigo hoje? Eu pago o sorvete.", en: "Will you have dinner with me tonight? I'll pay for the ice cream.", altEs: ["Janta comigo hoje? Eu pago o sorvete."], grammar: [g.present-regular-ar], vocab: [w.jantar] }
+      - { es: "Minha avó diz que quem cozinha bem é bom para casar.", en: "My grandmother says anyone who cooks well is good to marry.", altEs: ["A minha avó diz que quem cozinha bem é bom pra casar."], grammar: [g.present-regular-ar], vocab: [w.cozinhar] }
+      - { es: "Um pastel, uma coxinha e você: o lanche perfeito.", en: "A pastel, a coxinha and you: the perfect snack.", altEs: ["Uma coxinha, um pastel e você: o lanche perfeito."], grammar: [g.articles-indefinite], vocab: [w.pastel, w.coxinha, w.lanche] }
+  - id: a1.u05.l4
+    title: Um copo de suco
+    teach: [g.quantity-words]
+    vocab: [w.refrigerante, w.guaraná, w.cerveja, w.chope, w.vinho, w.chá, w.caipirinha, w.bebida, w.garçom, w.cardápio, w.conta, w.prato, w.copo, w.xícara, w.garrafa, w.pedaço, w.quilo, w.dúzia, w.meio, w.muito, w.pouco, w.um-pouco, w.mais, w.menos, w.nada, w.comprar, w.pagar]
+    tip: "Containers and measures take de: uma xícara de café, meio quilo de queijo. Muito and pouco agree with the noun: muita gente, pouca comida."
+    sentences:
+      - { es: "Uma xícara de café, por favor.", en: "A cup of coffee, please.", altEs: ["Uma xícara de café, por favor!"], grammar: [g.quantity-words], vocab: [w.xícara], variant: "In Portugal a cup is uma chávena." }
+      - { es: "Um copo de água sem gás.", en: "A glass of still water.", altEs: ["Um copo de água sem gás, por favor."], grammar: [g.quantity-words], vocab: [w.copo], transform: { instruction: "Ask for two glasses", answer: "Dois copos de água sem gás.", alt: ["Dois copos de água sem gás, por favor."], en: "Two glasses of still water." } }
+      - { es: "Uma garrafa de vinho para a mesa, por favor.", en: "A bottle of wine for the table, please.", altEs: ["Uma garrafa de vinho pra mesa, por favor."], grammar: [g.quantity-words], vocab: [w.garrafa, w.vinho] }
+      - { es: "Meio quilo de queijo, por favor.", en: "Half a kilo of cheese, please.", altEs: ["Meio quilo de queijo."], grammar: [g.quantity-words], vocab: [w.meio, w.quilo], error: { wrong: "Um meio quilo de queijo, por favor.", explain: "No article before meio: meio quilo.", grammar: g.quantity-words } }
+      - { es: "Uma dúzia de ovos e um quilo de tomate.", en: "A dozen eggs and a kilo of tomatoes.", altEs: ["Uma dúzia de ovos e um quilo de tomates."], grammar: [g.quantity-words], vocab: [w.dúzia, w.quilo], transform: { instruction: "Ask for half a dozen eggs instead", answer: "Meia dúzia de ovos e um quilo de tomate.", alt: ["Meia dúzia de ovos e um quilo de tomates."], en: "Half a dozen eggs and a kilo of tomatoes." } }
+      - { es: "Um pedaço de bolo para mim.", en: "A piece of cake for me.", altEs: ["Um pedaço de bolo pra mim."], altEn: ["A slice of cake for me."], grammar: [g.quantity-words], vocab: [w.pedaço] }
+      - { es: "Tem muita gente e pouca comida!", en: "There are lots of people and not much food!", altEs: ["Tem muita gente e pouca comida aqui!"], grammar: [g.quantity-words, g.tem-there-is], vocab: [w.muito, w.pouco], error: { wrong: "Tem muito gente e pouco comida!", explain: "muito and pouco agree with the noun: muita gente, pouca comida.", grammar: g.quantity-words } }
+      - { es: "Dois chopes bem gelados, por favor!", en: "Two nice cold draught beers, please!", altEs: ["Dois chopes bem gelados!"], grammar: [g.quantity-words], vocab: [w.chope], variant: "In Portugal a draught beer is uma imperial (Lisbon) or um fino (Porto)." }
+      - { es: "Garçom, o cardápio, por favor.", en: "Waiter, the menu, please.", altEs: ["Moço, o cardápio, por favor."], grammar: [g.querer-present], vocab: [w.garçom, w.cardápio], variant: "In Portugal: a ementa, se faz favor." }
+      - { es: "A conta, por favor.", en: "The bill, please.", altEs: ["Traz a conta, por favor?", "Fecha a conta, por favor."], altEn: ["The check, please."], grammar: [g.quantity-words], vocab: [w.conta] }
+      - { es: "Quero mais um pouco de arroz.", en: "I'd like a bit more rice.", altEs: ["Eu quero mais um pouco de arroz.", "Mais um pouco de arroz, por favor."], grammar: [g.quantity-words], vocab: [w.mais, w.um-pouco] }
+      - { es: "Menos açúcar, por favor: o suco está muito doce.", en: "Less sugar, please: the juice is very sweet.", altEs: ["Menos açúcar, por favor, o suco está muito doce."], grammar: [g.quantity-words], vocab: [w.menos] }
+      - { es: "Não quero nada, obrigada.", en: "I don't want anything, thanks.", altEs: ["Não quero nada, obrigado.", "Eu não quero nada, obrigada."], grammar: [g.quantity-words, g.negation], vocab: [w.nada], note: "não… nada: the double negative is correct." }
+      - { es: "Quanto é? — São trinta reais.", en: "How much is it? — It's thirty reais.", altEs: ["Quanto é? — Trinta reais."], grammar: [g.quantity-words, g.numbers-0-100], vocab: [w.pagar] }
+      - { es: "Eu pago a caipirinha e você paga o guaraná.", en: "I'll pay for the caipirinha and you pay for the guaraná.", altEs: ["Eu pago a caipirinha, você paga o guaraná."], grammar: [g.present-regular-ar], vocab: [w.pagar, w.caipirinha, w.guaraná] }
+      - { es: "Vamos comprar bebidas para a festa: cerveja, refrigerante e água.", en: "Let's buy drinks for the party: beer, soft drinks and water.", altEs: ["Vamos comprar bebida para a festa: cerveja, refrigerante e água."], grammar: [g.quantity-words], vocab: [w.comprar, w.bebida, w.cerveja, w.refrigerante] }
+    exchanges:
+      - q: { es: "O que vocês vão beber?", en: "What are you going to drink?" }
+        a: { es: "Dois chopes e um guaraná, por favor.", en: "Two draught beers and a guaraná, please." }
+        alt: ["Uma caipirinha.", "Água, por favor.", "Um chá, por favor."]
+        grammar: [g.quantity-words]
+        vocab: [w.chope, w.guaraná, w.chá]
+      - q: { es: "Quanto é o quilo do queijo?", en: "How much is a kilo of the cheese?" }
+        a: { es: "São quarenta reais o quilo.", en: "It's forty reais a kilo." }
+        alt: ["Quarenta reais.", "É quarenta o quilo."]
+        grammar: [g.quantity-words]
+        vocab: [w.quilo]
+      - q: { es: "Mais um pouco de vinho?", en: "A bit more wine?" }
+        a: { es: "Só um pouco, obrigada.", en: "Just a little, thanks." }
+        alt: ["Não, obrigado.", "Sim, por favor!", "Só um pouquinho."]
+        grammar: [g.quantity-words]
+        vocab: [w.um-pouco, w.vinho]
+      - q: { es: "Garçom, a conta, por favor!", en: "Waiter, the bill, please!" }
+        a: { es: "É pra já!", en: "Right away!" }
+        alt: ["Claro!", "Sim, senhor.", "Já trago."]
+        grammar: [g.quantity-words]
+        vocab: [w.garçom, w.conta]
+      - q: { es: "Você quer alguma coisa?", en: "Do you want anything?" }
+        a: { es: "Não, não quero nada, obrigado.", en: "No, I don't want anything, thanks." }
+        alt: ["Só uma água.", "Quero um chá.", "Nada, obrigada."]
+        grammar: [g.quantity-words, g.negation]
+        vocab: [w.nada]
+    texts:
+      - title: "Lista de compras"
+        es: ["Uma dúzia de ovos.", "Meio quilo de queijo e um pouco de presunto.", "Duas garrafas de guaraná."]
+        en: ["A dozen eggs.", "Half a kilo of cheese and a little ham.", "Two bottles of guaraná."]
+        grammar: [g.quantity-words]
+        vocab: [w.dúzia, w.meio, w.quilo, w.garrafa]
+      - title: "No alto do Pão de Açúcar"
+        es: ["Lá em cima tem um café.", "Pedimos duas águas de coco e um pedaço de bolo.", "A vista é linda e a conta é pequena!"]
+        en: ["Up at the top there's a café.", "We order two coconut waters and a piece of cake.", "The view is beautiful and the bill is small!"]
+        grammar: [g.quantity-words]
+        vocab: [w.pedaço, w.conta]
+    spicy:
+      - { es: "Um copo de vinho, uma xícara de café... e um pouco mais de tempo com você.", en: "A glass of wine, a cup of coffee... and a little more time with you.", altEs: ["Um copo de vinho, uma xícara de café e um pouco mais de tempo com você."], grammar: [g.quantity-words], vocab: [w.copo, w.xícara, w.um-pouco] }
+      - { es: "Garçom, a conta! Não, espera: mais uma caipirinha.", en: "Waiter, the bill! No, wait: one more caipirinha.", altEs: ["Garçom, a conta! Não, espera, mais uma caipirinha."], grammar: [g.quantity-words], vocab: [w.garçom, w.conta, w.caipirinha] }
+      - { es: "Eu pago o jantar; você paga com um beijo.", en: "I'll pay for dinner; you pay with a kiss.", altEs: ["Eu pago o jantar e você paga com um beijo."], grammar: [g.present-regular-ar], vocab: [w.pagar] }
+      - { es: "Pouca comida, muito vinho e você: que noite!", en: "Not much food, lots of wine and you: what a night!", altEs: ["Pouca comida, muito vinho e você... que noite!"], grammar: [g.quantity-words], vocab: [w.pouco, w.muito, w.vinho] }
+      - { es: "Não quero nada do cardápio... só o seu telefone.", en: "I don't want anything on the menu... just your phone number.", altEs: ["Não quero nada do cardápio, só o seu telefone."], grammar: [g.quantity-words, g.negation], vocab: [w.nada, w.cardápio] }
+dialogues:
+  - id: a1.u05.d1
+    title: Na padaria da Urca
+    context: Before taking the cable car up Sugarloaf Mountain, Camila and Daniel have breakfast at Seu Manuel's bakery in Urca.
+    lines:
+      - { speaker: Seu Manuel, es: "Bom dia! O que vocês vão querer?", en: "Good morning! What will you have?" }
+      - { speaker: Camila, es: "Bom dia, Seu Manuel! Eu quero um café com leite e um pão com manteiga.", en: "Good morning, Seu Manuel! I'd like a white coffee and bread and butter." }
+      - { speaker: Seu Manuel, es: "E o rapaz?", en: "And the young man?" }
+      - { speaker: Daniel, es: "Eu queria um suco de laranja e um pão de queijo, por favor.", en: "I'd like an orange juice and a cheese bread, please." }
+      - { speaker: Seu Manuel, es: "Suco de laranja não tem hoje. Tem de manga, de abacaxi e de limão.", en: "There's no orange juice today. There's mango, pineapple and lime." }
+      - { speaker: Daniel, es: "Hum... Eu não gosto muito de manga. Prefiro abacaxi.", en: "Hmm... I don't really like mango. I prefer pineapple." }
+      - { speaker: Seu Manuel, es: "Com açúcar ou sem açúcar?", en: "With or without sugar?" }
+      - { speaker: Daniel, es: "Sem açúcar, por favor.", en: "Without sugar, please." }
+      - { speaker: Camila, es: "E mais dois pães de queijo para viagem. Lá em cima do Pão de Açúcar tudo é caro!", en: "And two more cheese breads to take away. Up on Sugarloaf Mountain everything is expensive!" }
+      - { speaker: Seu Manuel, es: "Isso mesmo! Mais alguma coisa?", en: "That's right! Anything else?" }
+      - { speaker: Camila, es: "Não, só isso. Quanto é?", en: "No, that's all. How much is it?" }
+      - { speaker: Seu Manuel, es: "São vinte e oito reais. Bom passeio!", en: "It's twenty-eight reais. Enjoy your trip!" }
+    questions:
+      - { q: "O que a Camila pede para beber?", options: ["Um suco de manga", "Um café com leite", "Uma água de coco"], answer: 1, explain: "Camila says: Eu quero um café com leite." }
+      - { q: "Por que o Daniel não pede suco de laranja?", options: ["Porque não gosta de laranja", "Porque hoje não tem suco de laranja", "Porque é muito caro"], answer: 1, explain: "Seu Manuel says: Suco de laranja não tem hoje." }
+      - { q: "Qual suco o Daniel prefere?", options: ["Manga", "Abacaxi", "Limão"], answer: 1, explain: "Daniel says: Prefiro abacaxi." }
+      - { q: "Quanto é a conta?", options: ["Vinte e oito reais", "Dezoito reais", "Oito reais"], answer: 0, explain: "São vinte e oito reais." }
