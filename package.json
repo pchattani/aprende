@@ -12,7 +12,8 @@
     "test": "vitest",
     "test:e2e": "playwright test",
     "content:check": "tsx --import ./scripts/yaml-register.mjs scripts/check-content.ts",
-    "content:stats": "tsx scripts/content-stats.ts"
+    "content:stats": "tsx scripts/content-stats.ts",
+    "yue:data": "tsx scripts/yue-data.ts"
   },
   "dependencies": {
     "@fontsource-variable/nunito": "^5.3.0",
