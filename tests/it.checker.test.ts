@@ -155,4 +155,33 @@ describe('checker', () => {
     expect(check("L'acqua è qui.", deps)).toEqual([])
     expect(check("Un'acqua", deps)).toEqual([])
   })
+  it('does not flag correct Italian (real-course false positives)', () => {
+    const more = [
+      ...entries, V('cameriere', 'noun', { gender: 'mf', feminine: 'cameriera' }), V('gentile', 'adj'), V('taxi', 'noun', { gender: 'm' }), V('pronto', 'adj'),
+      V('fine settimana', 'noun', { gender: 'm', forms: ['fine', 'settimana'] }), V('fine', 'noun', { gender: 'f' }), V('lavorare', 'verb'),
+      V('portare', 'verb'), V('chef', 'noun', { gender: 'm' }), V('pagare', 'verb'), V('tu', 'pron'), V('cena', 'noun', { gender: 'f' }),
+      V('preparare', 'verb'), V('caffettiera', 'noun', { gender: 'f' }), V('scuola', 'noun', { gender: 'f' }), V('bambino', 'noun', { gender: 'mf' }),
+      V('vicino', 'adj'), V('parco', 'noun', { gender: 'm' }), V('camicia', 'noun', { gender: 'f' }), V('azzurro', 'adj'), V('chiaro', 'adj'),
+      V('tagliatelle', 'noun', { gender: 'f', plural: 'tagliatelle' }), V('lungo', 'adj'), V('forte', 'adj'), V('naturale', 'adj'),
+    ]
+    const d2 = { dict: buildDictionary(more, IRREGULAR), rules: [], verbs: IRREGULAR }
+    const ok = (t: string) => expect(check(t, d2).filter((f) => f.code !== 'unknown'), t).toEqual([])
+    ok('Il cameriere è molto gentile.')
+    ok('Ecco il taxi! Sei pronta?')
+    ok('Il fine settimana non lavoro.')
+    ok('Questo libro? Lo porto io.')
+    ok('Lo chef è italiano.')
+    ok('Se vinco io, paghi tu la cena.')
+    ok('Lui lava le tazze; tu prepara la caffettiera.')
+    ok('La scuola dei bambini è vicino al parco.')
+    ok('Vorrei una camicia azzurro chiaro.')
+    ok('Le tagliatelle sono buone.')
+    ok('Roma è grande.')
+    ok('Lui e lei! E adesso?')
+    ok('La strada è lunghissima, ma naturalmente arrivo.')
+    // and still catches the real mistakes
+    expect(check('Il cameriera è gentile.', d2).map((f) => f.code)).toContain('agreement')
+    expect(check('La taxi è pronto.', d2).map((f) => f.code)).toContain('agreement')
+    expect(check('Il libro è bianca.', d2).map((f) => f.code)).toContain('agreement')
+  })
 })

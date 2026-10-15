@@ -22,10 +22,11 @@ export const IRREGULAR_PLURALS: Readonly<Record<string, string[]>> = {
 /** Nouns and adjectives that never change in the plural (besides accented, consonant-final and -i words). */
 const INVARIANT: ReadonlySet<string> = new Set([
   'cinema', 'foto', 'moto', 'radio', 'auto', 'metro', 'euro', 'video', 'zoo', 'stereo', 'frigo', 'gorilla', 'boia',
-  'sosia', 'vaglia', 'serie', 'specie', 'bici', 'vaglia', 'dinamo', 'tivù',
-  // invariable adjectives (colours from nouns, pari/dispari…)
-  'rosa', 'blu', 'viola', 'beige', 'lilla', 'ocra', 'fucsia', 'pari', 'dispari', 'perbene', 'avana', 'nocciola',
+  'sosia', 'vaglia', 'serie', 'specie', 'bici', 'vaglia', 'dinamo', 'tivù', 'blu', 'beige', 'pari', 'dispari', 'perbene',
 ])
+/** Adjectives that never change, though the nouns they come from do (una gonna rosa, but le rose). */
+const INVARIANT_ADJ: ReadonlySet<string> = new Set(['rosa', 'viola', 'lilla', 'ocra', 'fucsia', 'avana', 'nocciola', 'arancione'])
+export const isInvariantAdjective = (w: string): boolean => INVARIANT_ADJ.has(w) || INVARIANT.has(w)
 
 /** Masculine nouns in -a (problema → problemi). */
 const MASC_A: ReadonlySet<string> = new Set([
@@ -125,8 +126,9 @@ export function adjectiveForms(lemma: string, opts: { feminine?: string } = {}):
     out.add(f)
     for (const p of pluralize(f, { gender: g })) out.add(p)
   }
-  if (INVARIANT.has(w) || ACCENTED_END.test(w) || !VOWELS.includes(w.slice(-1))) return [...out]
+  if (isInvariantAdjective(w) || ACCENTED_END.test(w) || !VOWELS.includes(w.slice(-1))) return [...out]
   let fem = opts.feminine?.toLowerCase()
+  if (!fem && w.endsWith('one') && w.length > 5) fem = w.slice(0, -1) + 'a' // chiacchierone → chiacchierona
   if (!fem && w.endsWith('o')) fem = w.slice(0, -1) + 'a'
   if (!fem && w.endsWith('tore')) fem = w.slice(0, -4) + 'trice'
   if (w.endsWith('a') && !fem) {
@@ -293,6 +295,36 @@ export function lookup(dict: Dictionary, form: string): VocabEntry[] | undefined
       const hit2 = hostLookup(dict, host.slice(0, -c0.length), c0)
       if (hit2) return hit2
     }
+  }
+  return derivedLookup(dict, w)
+}
+
+const isAdj = (es: VocabEntry[] | undefined) => (es && es.some((e) => e.pos === 'adj') ? es.filter((e) => e.pos === 'adj') : undefined)
+
+/** Regular derivations not listed in the dictionary: superlatives, -mente adverbs, truncated forms. */
+function derivedLookup(dict: Dictionary, w: string): VocabEntry[] | undefined {
+  // altissimo → alto, lunghissime → lungo, simpaticissimo → simpatico, fortissimo → forte
+  const sup = /^(.{2,}?)h?issim[oaie]$/.exec(w)
+  if (sup) {
+    const stem = sup[1]!
+    for (const c of [stem + 'o', stem + 'e']) {
+      const hit = isAdj(dict.get(c))
+      if (hit) return hit
+    }
+  }
+  // naturalmente → naturale, sinceramente → sincero, facilmente → facile
+  if (w.endsWith('mente') && w.length > 8) {
+    const stem = w.slice(0, -5)
+    const cands = stem.endsWith('a') ? [stem.slice(0, -1) + 'o', stem] : /[lr]$/.test(stem) ? [stem + 'e'] : [stem + 'e']
+    for (const c of cands) {
+      const hit = isAdj(dict.get(c))
+      if (hit) return hit
+    }
+  }
+  // vuol(e), poter(e), fin(o), signor(e), buon(o): final vowel dropped before another word
+  if (/[lnr]$/.test(w) && w.length >= 3) for (const v of ['o', 'e']) {
+    const hit = dict.get(w + v)
+    if (hit) return hit
   }
   return undefined
 }

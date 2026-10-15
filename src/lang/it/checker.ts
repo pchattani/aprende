@@ -9,7 +9,7 @@
 import type { CheckerFinding } from '../types'
 import type { ErrorRule, VocabEntry } from '../../engine/schema'
 import type { ItVerb } from './schema'
-import { lookup, pluralize, IRREGULAR_PLURALS, type Dictionary } from './inflect'
+import { lookup, pluralize, isInvariantAdjective, IRREGULAR_PLURALS, type Dictionary } from './inflect'
 import { tokenize } from './tokenize'
 import { stripAccents, editDistance, apostropheAccents } from './normalize'
 import { conjugate, parseLemma, PERSONS, AUXILIARY_FORMS, type Aux, type Tense } from './conjugator'
@@ -88,7 +88,7 @@ function detOf(w: string): Det | undefined {
 /** Sound at the start of a word, which decides il/lo/l', un/uno/un', quel/quello/quell'. */
 export function onsetOf(word: string): Onset {
   const w = stripAccents(word.toLowerCase())
-  if (/^(s[^aeiou]|z|gn|ps|pn|x|y|i[aeiou])/.test(w)) return 'lo'
+  if (/^(s[^aeiou]|z|gn|ps|pn|x|y|i[aeiou])/.test(w) || /^(sh|ch(ef|ampagne|alet))/.test(w)) return 'lo' // lo chef, lo show
   if (/^h?[aeiou]/.test(w)) return 'vowel'
   return 'cons'
 }
@@ -118,30 +118,39 @@ export function articulate(prep: string, article: string): string {
   return stem + 'l' + article // lo → dello, la → della, l' → dell', le → delle
 }
 
-/** Gender/number of a noun or adjective form from its dictionary entry. */
-function featuresOf(form: string, e: VocabEntry): Features | undefined {
+/** Every gender/number reading of a noun or adjective form (cameriere: m sg, or f pl of cameriera). */
+function featuresOf(form: string, e: VocabEntry): Features[] {
   const lemma = e.lemma.toLowerCase()
   if (e.pos === 'noun') {
+    const out: Features[] = []
     const plurals = e.plural ? [e.plural.toLowerCase()] : pluralize(lemma, { gender: e.gender })
     // nouns with a feminine form: amico/amica, studente/studentessa, attore/attrice
     const fem = e.feminine?.toLowerCase() ?? (e.gender === 'mf' && lemma.endsWith('o') ? lemma.slice(0, -1) + 'a' : undefined)
-    if (fem) {
-      if (form === fem) return { gender: 'f', number: 'sg', role: 'noun' }
-      if (pluralize(fem, { gender: 'f' }).includes(form)) return { gender: 'f', number: 'pl', role: 'noun' }
-    }
     const base: Gender = fem ? 'm' : (e.gender ?? 'mf')
-    if (form === lemma) return { gender: base, number: plurals.includes(lemma) ? 'any' : 'sg', role: 'noun' }
+    if (form === lemma) out.push({ gender: base, number: plurals.includes(lemma) ? 'any' : 'sg', role: 'noun' })
+    if (fem) {
+      if (form === fem) out.push({ gender: 'f', number: 'sg', role: 'noun' })
+      if (pluralize(fem, { gender: 'f' }).includes(form)) out.push({ gender: 'f', number: 'pl', role: 'noun' })
+    }
     const k = plurals.indexOf(form)
-    if (k < 0) return undefined
-    let gender = base
-    if (!fem && e.gender === 'mf' && plurals.length > 1) gender = k === 0 ? 'm' : 'f' // turisti / turiste
-    // uovo → le uova, braccio → le braccia, orecchio → le orecchie
-    if (gender === 'm' && lemma.endsWith('o') && (form.endsWith('a') || (form.endsWith('e') && (e.plural || IRREGULAR_PLURALS[lemma])))) gender = 'f'
-    return { gender, number: 'pl', role: 'noun' }
+    if (k >= 0 && form !== lemma) {
+      let gender = base
+      if (!fem && e.gender === 'mf' && plurals.length > 1) gender = k === 0 ? 'm' : 'f' // turisti / turiste
+      // uovo → le uova, braccio → le braccia, orecchio → le orecchie
+      if (gender === 'm' && lemma.endsWith('o') && (form.endsWith('a') || (form.endsWith('e') && (e.plural || IRREGULAR_PLURALS[lemma])))) gender = 'f'
+      out.push({ gender, number: 'pl', role: 'noun' })
+    }
+    return out
   }
+  const a = adjFeatures(form, e)
+  return a ? [a] : []
+}
+
+function adjFeatures(form: string, e: VocabEntry): Features | undefined {
+  const lemma = e.lemma.toLowerCase()
   if (e.pos === 'adj') {
     const role = 'adj'
-    if (pluralize(lemma)[0] === lemma) return { gender: 'mf', number: 'any', role } // blu, rosa, pari
+    if (isInvariantAdjective(lemma) || pluralize(lemma)[0] === lemma) return { gender: 'mf', number: 'any', role } // blu, rosa, pari
     if (lemma.endsWith('a') && !e.feminine) {
       const pl = pluralize(lemma, { gender: 'mf' }) // ottimista → ottimisti, ottimiste
       if (form === lemma) return { gender: 'mf', number: 'sg', role }
@@ -169,6 +178,15 @@ const BEFORE_E_IS = new Set(['lui', 'lei', 'chi', 'dove', 'come', 'cosa', 'che',
 const ELIDED_BEFORE_E_IS = new Set(["c'", "dov'", "cos'", "com'", "quand'", "qual'", "chi'"])
 const NOT_AFTER_E_IS = new Set(['io', 'tu', 'lui', 'lei', 'noi', 'voi', 'loro', 'questo', 'questa', 'quello', 'quella', 'quando', 'dove', 'come', 'perché', 'chi', 'cosa', 'poi', 'anche', 'non', 'e', 'o'])
 
+/** Accented words that are not in every course dictionary but are always correct as written. */
+const ACCENTED_WORDS = new Set(['né', 'sé', 'là', 'lì', 'dà', 'già', 'più', 'può', 'giù', 'ciò', 'perché', 'poiché', 'affinché', 'benché', 'finché', 'sì', 'tè', 'è', 'cioè', 'però', 'così'])
+/** Parts of speech whose forms are not adjectives even when they look like one (prima di, vicino a). */
+const NOT_ATTRIBUTIVE = new Set(['adv', 'prep', 'conj'])
+const PREPOSITIONS = new Set(['a', 'ad', 'di', 'da', 'in', 'con', 'su', 'per', 'tra', 'fra'])
+/** Words after which a noun phrase starts a clause and can be its subject. */
+const CLAUSE_OPENERS = new Set(['e', 'ed', 'ma', 'però', 'che', 'perché', 'quando', 'se', 'anche', 'mentre', 'poi', 'dove', 'come', 'cioè', 'quindi', 'oggi', 'ieri', 'domani', 'adesso', 'ora'])
+const COLOUR_SHADES = new Set(['chiaro', 'scuro', 'pastello', 'acceso', 'elettrico'])
+
 const ESSERE_FORMS = new Set(['è', 'sono', 'sei', 'siamo', 'siete', 'era', 'erano', 'ero', 'eri', 'eravamo', 'eravate', 'sarà', 'saranno', 'sia', 'siano', 'fosse', 'fossero', 'sembra', 'sembrano', 'diventa', 'diventano', 'resta', 'restano', 'rimane', 'rimangono'])
 
 /** Auxiliary form → [auxiliary, tense, person]. */
@@ -187,8 +205,19 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
 
   // ---- spelling / accents
   const plainIndex = getPlainIndex(deps.dict)
-  const feats: (Features | undefined)[] = []
+  const verbIndex = getVerbIndex(deps)
+  const participles = getParticipleIndex(deps)
+  /** All gender/number readings of each word, and its dictionary entries. */
+  const cands: Features[][] = []
+  const entriesOf: (VocabEntry[] | undefined)[] = []
   const dets: (Det | undefined)[] = []
+  // a punctuation mark or number between two words ends a phrase: "il taxi! Sei pronta?"
+  const wordAt = tokens.map((t, k) => (t.kind === 'word' ? k : -1)).filter((k) => k >= 0)
+  const gap = words.map((_, i) => i + 1 < words.length && tokens.slice(wordAt[i]! + 1, wordAt[i + 1]!).some((t) => t.kind !== 'space'))
+  const setFeats = (i: number, form: string, es: VocabEntry[] | undefined) => {
+    entriesOf[i] = es
+    cands[i] = es ? es.flatMap((x) => featuresOf(form, x)) : []
+  }
   words.forEach((t, i) => {
     const w = lw[i]!
     dets[i] = detOf(w)
@@ -203,22 +232,21 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       return
     }
     // accent typed as an apostrophe: perche' → perché
-    if (/['’]$/.test(t.text) && !lw[i]!.match(/^(po|mo|va|fa|da|sta|di|to|be|ca)'$/)) {
+    if (/['’]$/.test(t.text) && !lw[i]!.match(/^(po|mo|va|fa|da|sta|di|to|be|ca|de)'$/)) {
       const fixed = apostropheAccents(w)
       if (fixed !== w) {
         findings.push({ code: 'accent', message: `Accent: write “${fixed}” with an accent, not an apostrophe. ${explainAccent(fixed)}`, start: t.start, end: t.end, suggestion: fixed })
-        const e = deps.dict.get(fixed)
-        if (e) feats[i] = e.map((x) => featuresOf(fixed, x)).find(Boolean)
+        setFeats(i, fixed, deps.dict.get(fixed))
         return
       }
     }
     const entries = lookup(deps.dict, w)
-    if (entries) {
-      feats[i] = entries.map((e) => featuresOf(w, e)).find(Boolean)
-      return
-    }
-    if (dets[i] || ARTICULATED[w] || w.endsWith("'")) return // function word not in the course dictionary
-    if (/^\p{Lu}/u.test(t.text) && i > 0) return // proper noun
+    setFeats(i, w, entries)
+    if (entries) return
+    if (dets[i] || ARTICULATED[w] || w.endsWith("'") || ACCENTED_WORDS.has(w)) return // function word not in the course dictionary
+    if (verbIndex.has(w) || participles.has(w) || participles.has(w.slice(0, -1) + 'o')) return // a verb form (unita, colpite)
+    const capital = /^\p{Lu}/u.test(t.text)
+    if (capital && i > 0) return // proper noun
     const plain = stripAccents(w)
     const candidates = plainIndex.get(plain)
     if (candidates && candidates.length) {
@@ -226,14 +254,16 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       if (correct !== w) {
         const why = /[àèéìòù]/.test(correct) ? explainAccent(correct) : `“${correct}” has no written accent: only a stressed final vowel takes one.`
         findings.push({ code: 'accent', message: `Accent: “${t.text}” should be “${correct}”. ${why}`, start: t.start, end: t.end, suggestion: correct, grammar: 'g.accents' })
-        const e = deps.dict.get(correct)
-        if (e) feats[i] = e.map((x) => featuresOf(correct, x)).find(Boolean)
+        setFeats(i, correct, deps.dict.get(correct))
       }
       return
     }
-    if (w.length >= 4) {
+    const hyphenated = /[-–]/.test(text.slice(words[i - 1]?.end ?? t.start, t.start)) || /^[-–]/.test(text.slice(t.end))
+    if (capital) return // a capitalised first word we don't know is probably a name (Roma, Dante)
+    if (w.length >= 4 && !hyphenated && !/(at|it|ut)[oaie]$/.test(w)) {
       const near = nearest(w, deps.dict, plainIndex)
-      if (near) {
+      // a different final vowel is usually another form of a word we lack (geni/genio), not a typo
+      if (near && near.slice(0, -1) !== w.slice(0, -1) && near !== w.slice(0, -1) && near.slice(0, -1) !== w) {
         findings.push({ code: 'spelling', message: `Spelling: did you mean “${near}”?`, start: t.start, end: t.end, suggestion: near })
         return
       }
@@ -242,6 +272,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   })
 
   function isEIs(i: number): boolean {
+    if (gap[i - 1]) return false // "…a lei! E adesso": a new sentence starting with "and"
     const prev = lw[i - 1]!
     const next = lw[i + 1]
     if (ELIDED_BEFORE_E_IS.has(prev)) return true
@@ -252,41 +283,68 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   }
 
   // ---- articles and agreement within noun phrases: det (adv)* adj* noun adj*
+  const isAdjAt = (x: number) => !dets[x] && cands[x]!.some((f) => f.role === 'adj') && !entriesOf[x]?.some((e) => NOT_ATTRIBUTIVE.has(e.pos))
+  /** A preposition at x: the word before it heads a phrase (vicino al ponte, pieno di gente). */
+  const startsPhrase = (x: number) => x < words.length && !gap[x - 1] && (PREPOSITIONS.has(lw[x]!) || Boolean(ARTICULATED[lw[x]!]))
+  const agrees = (a: Features, b: Features) => (a.gender === 'mf' || b.gender === 'mf' || a.gender === b.gender) && (a.number === 'any' || b.number === 'any' || a.number === b.number)
   for (let i = 0; i < words.length; i++) {
     const d = dets[i]
-    if (!d) continue
+    if (!d || gap[i]) continue
+    if (words[i]!.text === 'I' && i > 0) continue // Roman numeral: del I secolo
+    // fixed phrases that start with an article: al fine di, ai fini di
+    if ((entriesOf[i] ?? lookup(deps.dict, lw[i]!) ?? []).some((e) => e.pos === 'phrase' && lw.slice(i).join(' ').startsWith(e.lemma.toLowerCase() + ' '))) continue
+    // lo, la, le, gli, l' are also object pronouns (lo porto, me lo ricordo); molto, tanto, altro… also adverbs and pronouns
+    const pronounLike = (d.kind === 'def' && !d.prep && /^(lo|la|le|gli|l')$/.test(lw[i]!)) || d.kind === 'other'
     let j = i + 1
     const adjs: number[] = []
     while (j < words.length && j <= i + 3) {
       if (ADVERBS_IN_NP.has(lw[j]!) || (dets[j]?.kind === 'other' && d.kind !== 'other')) {
+        if (gap[j]) break
         j++ // il mio amico: the article agrees with the noun, the possessive too
         continue
       }
-      if (feats[j]?.role === 'adj' && !dets[j]) {
+      if (isAdjAt(j) && !gap[j]) {
         adjs.push(j)
         j++
         continue
       }
       break
     }
-    const nf = feats[j]
-    if (!nf || nf.role !== 'noun' || j >= words.length) continue
-    const noun = lw[j]!
+    if (j >= words.length || (j > i + 1 && gap[j - 1])) continue
+    let noun = lw[j]!
+    if (pronounLike && (verbIndex.has(noun) || AUX_INDEX.has(noun))) continue
+    let nounC = cands[j]!.filter((f) => f.role === 'noun')
+    // compound nouns: il fine settimana, la scuola guida
+    for (const e of entriesOf[j] ?? []) {
+      if (e.pos !== 'noun' || !e.lemma.includes(' ')) continue
+      const parts = e.lemma.toLowerCase().split(' ')
+      if (lw.slice(j, j + parts.length).join(' ') !== parts.join(' ') || gap.slice(j, j + parts.length - 1).some(Boolean)) continue
+      nounC = [{ gender: e.gender ?? 'mf', number: 'sg', role: 'noun' }]
+      noun = e.lemma.toLowerCase()
+      j += parts.length - 1
+      break
+    }
+    if (!nounC.length) continue
+    // the article form depends on the next word, its gender and number on the noun (any reading that fits)
+    const fits = (f: Features) => (d.gender === 'mf' || f.gender === 'mf' || d.gender === f.gender) && (f.number === 'any' || d.number === f.number)
+    const nf = nounC.find(fits) ?? nounC[0]!
     let k = j + 1
-    while (k < words.length && k <= j + 2) {
+    while (k < words.length && k <= j + 2 && !gap[k - 1]) {
       if (ADVERBS_IN_NP.has(lw[k]!)) {
         k++
         continue
       }
-      if (feats[k]?.role === 'adj') {
+      // azzurro chiaro, verde scuro: colour compounds never agree
+      // skip forms that are also verbs (la festa del paese dura…) and adjectives heading a phrase (vicino al ponte)
+      if (isAdjAt(k) && !verbIndex.has(lw[k]!) && !COLOUR_SHADES.has(lw[k + 1] ?? '') && !COLOUR_SHADES.has(lw[k]!) && !startsPhrase(k + 1)) {
         adjs.push(k)
         k++
         continue
       }
       break
     }
-    // the article form depends on the next word, its gender and number on the noun
     const next = lw[i + 1]!
+    if (next === 'ex') continue // la ex / l'ex: both are used
     const gOk = d.gender === 'mf' || nf.gender === 'mf' || d.gender === nf.gender
     const nOk = nf.number === 'any' || d.number === nf.number
     if (!gOk || !nOk) {
@@ -310,23 +368,24 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       }
     }
     for (const a of adjs) {
-      const af = feats[a]!
-      const ok = (af.gender === 'mf' || nf.gender === 'mf' || af.gender === nf.gender) && (af.number === 'any' || nf.number === 'any' || af.number === nf.number)
-      if (!ok) {
+      const ac = cands[a]!.filter((f) => f.role === 'adj')
+      if (!ac.length || ac.some((af) => nounC.some((n) => agrees(af, n)))) continue
+      {
         findings.push({
           code: 'agreement', message: `Agreement: “${words[a]!.text}” must agree with “${noun}” (${describe(nf)}).`,
           start: Math.min(words[a]!.start, words[j]!.start), end: Math.max(words[a]!.end, words[j]!.end), grammar: 'g.adjective-agreement',
         })
       }
     }
-    // predicate adjective: la casa è bianco
+    // predicate adjective: la casa è bianco (only for a subject, not a noun after a preposition: la scuola dei bambini è vicina)
     let p = k
-    if (p < words.length && ESSERE_FORMS.has(lw[p]!)) {
+    const clauseStart = i === 0 || gap[i - 1] || CLAUSE_OPENERS.has(lw[i - 1]!)
+    if (!d.prep && clauseStart && p < words.length && !gap[p - 1] && ESSERE_FORMS.has(lw[p]!)) {
       p++
-      while (p < words.length && ADVERBS_IN_NP.has(lw[p]!)) p++
-      const af = feats[p]
-      if (af?.role === 'adj' && !dets[p]) {
-        const ok = (af.gender === 'mf' || nf.gender === 'mf' || af.gender === nf.gender) && (af.number === 'any' || nf.number === 'any' || af.number === nf.number)
+      while (p < words.length && ADVERBS_IN_NP.has(lw[p]!) && !gap[p - 1]) p++
+      const ac = p < words.length && !gap[p - 1] && isAdjAt(p) ? cands[p]!.filter((f) => f.role === 'adj') : []
+      if (ac.length && !COLOUR_SHADES.has(lw[p + 1] ?? '') && !startsPhrase(p + 1)) {
+        const ok = ac.some((af) => nounC.some((n) => agrees(af, n)))
         if (!ok) {
           findings.push({
             code: 'agreement', message: `Agreement: “${words[p]!.text}” describes “${noun}”, so it must be ${describe(nf)}.`,
@@ -338,13 +397,13 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   }
 
   // ---- auxiliary in compound tenses: "ho andato" → "sono andato"
-  const participles = getParticipleIndex(deps)
   for (let i = 0; i < words.length; i++) {
     const auxHits = AUX_INDEX.get(lw[i]!)
     const avere = auxHits?.find((h) => h.aux === 'avere')
     if (!avere) continue
     let j = i + 1
-    while (j < words.length && ADVERBS_IN_VP.has(lw[j]!)) j++
+    while (j < words.length && ADVERBS_IN_VP.has(lw[j]!) && !gap[j - 1]) j++
+    if (gap[j - 1]) continue
     const part = lw[j]
     if (!part) continue
     const verb = participles.get(part)
@@ -361,17 +420,23 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   }
 
   // ---- subject pronoun + verb person
-  const verbIndex = getVerbIndex(deps)
+  const imperatives = getImperativeIndex(deps)
+  const agreesWith = (form: string, persons: number[]) =>
+    verbIndex.get(form)?.some((h) => persons.includes(h.person)) || AUX_INDEX.get(form)?.some((h) => persons.includes(h.person)) || imperatives.get(form)?.some((p) => persons.includes(p))
   for (let i = 0; i < words.length; i++) {
     const w = lw[i]!
     const persons = SUBJECT_PRONOUNS[w]
-    if (!persons) continue
+    if (!persons || gap[i]) continue
     if (i > 0 && SUBJECT_BLOCKERS.has(lw[i - 1]!)) continue // a loro, io e lei, la loro casa
     if (w === 'loro' && i > 0 && dets[i - 1]) continue
+    // a subject after its verb: "paghi tu la cena", "che hai tu"
+    if (i > 0 && !gap[i - 1] && agreesWith(lw[i - 1]!, persons)) continue
     let j = i + 1
-    while (j < words.length && CLITICS.has(lw[j]!)) j++
+    while (j < words.length && CLITICS.has(lw[j]!) && !gap[j - 1]) j++
     const v = lw[j]
-    if (!v) continue
+    if (!v || gap[j - 1]) continue
+    if (w === 'noi' && lw.slice(i + 1, j).includes('si')) continue // Tuscan "noi si va"
+    if (imperatives.get(v)?.some((p) => persons.includes(p))) continue // tu prepara la caffettiera
     const hits = verbIndex.get(v)
     const auxHits = AUX_INDEX.get(v)
     let fix: string | undefined
@@ -529,6 +594,34 @@ function getVerbIndex(deps: CheckerDeps): Map<string, VerbHit[]> {
     }
   }
   verbIndexCache.set(deps.dict, idx)
+  return idx
+}
+
+/** Affirmative imperative form → persons (prepara: tu). */
+const imperativeCache = new WeakMap<Dictionary, Map<string, number[]>>()
+function getImperativeIndex(deps: CheckerDeps): Map<string, number[]> {
+  let idx = imperativeCache.get(deps.dict)
+  if (idx) return idx
+  idx = new Map()
+  const seen = new Set<string>()
+  for (const entries of deps.dict.values()) {
+    for (const e of entries) {
+      if (e.pos !== 'verb') continue
+      const base = parseLemma(e.lemma.split(' ')[0]!).inf
+      if (seen.has(base)) continue
+      seen.add(base)
+      let c
+      try {
+        c = conjugate(base, deps.verbs)
+      } catch {
+        continue
+      }
+      ;(c.forms.impAff ?? []).forEach((f, person) => {
+        if (f && !f.includes(' ')) idx!.set(f, [...(idx!.get(f) ?? []), person])
+      })
+    }
+  }
+  imperativeCache.set(deps.dict, idx)
   return idx
 }
 
