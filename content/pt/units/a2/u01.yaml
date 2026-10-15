@@ -1,0 +1,283 @@
+id: a2.u01
+title: Ontem em São Paulo
+lessons:
+  - id: a2.u01.l1
+    title: Ontem na Paulista
+    teach: [g.preterite-regular]
+    vocab: [w.ontem, w.conversar, w.decidir, w.receber, w.gastar, w.dividir, w.experimentar, w.esquecer, w.ligar, w.mandar, w.metrópole, w.arranha-céu, w.exposição, w.arte, w.pintura, w.incrível, w.visita, w.durar]
+    tip: "Regular preterite: -ar → falei, falou, falamos, falaram; -er → comi, comeu, comemos, comeram; -ir → abri, abriu, abrimos, abriram."
+    sentences:
+      - { es: "Ontem eu visitei o MASP, na Avenida Paulista.", en: "Yesterday I visited MASP, on Avenida Paulista.", altEs: ["Ontem visitei o MASP, na Avenida Paulista.", "Eu visitei o MASP ontem, na Avenida Paulista.", "Ontem visitei o MASP na Paulista."], altEn: ["I visited MASP on Avenida Paulista yesterday."], grammar: [g.preterite-regular], vocab: [w.ontem, w.visitar], note: "MASP = Museu de Arte de São Paulo, the art museum on stilts on Avenida Paulista." }
+      - { es: "A exposição de pintura brasileira durou três meses.", en: "The Brazilian painting exhibition lasted three months.", altEs: ["A exposição de pintura brasileira durou três meses inteiros."], grammar: [g.preterite-regular], vocab: [w.exposição, w.pintura, w.durar] }
+      - { es: "Você gostou da exposição?", en: "Did you like the exhibition?", altEs: ["Gostou da exposição?", "Você curtiu a exposição?"], altEn: ["Did you enjoy the exhibition?"], grammar: [g.preterite-regular, g.gostar-de], vocab: [w.gostar, w.exposição] }
+      - { es: "Nós conversamos sobre arte até tarde.", en: "We talked about art until late.", altEs: ["A gente conversou sobre arte até tarde.", "Conversamos sobre arte até tarde."], altEn: ["We chatted about art until late."], grammar: [g.preterite-regular], vocab: [w.conversar, w.arte] }
+      - { es: "Eles decidiram subir num arranha-céu para ver a cidade.", en: "They decided to go up a skyscraper to see the city.", altEs: ["Eles decidiram subir num arranha-céu pra ver a cidade.", "Eles decidiram subir em um arranha-céu para ver a cidade."], grammar: [g.preterite-regular], vocab: [w.decidir, w.arranha-céu, w.subir] }
+      - { es: "Recebi uma mensagem da minha irmã e liguei para ela.", en: "I got a message from my sister and called her.", altEs: ["Eu recebi uma mensagem da minha irmã e liguei para ela.", "Recebi uma mensagem da minha irmã e liguei pra ela."], altEn: ["I received a message from my sister and phoned her."], grammar: [g.preterite-regular], vocab: [w.receber, w.ligar, w.mensagem], transform: { instruction: "Change to 'we'", answer: "Recebemos uma mensagem da minha irmã e ligamos para ela.", alt: ["Nós recebemos uma mensagem da minha irmã e ligamos para ela.", "A gente recebeu uma mensagem da minha irmã e ligou para ela.", "Recebemos uma mensagem da minha irmã e ligamos pra ela."], en: "We got a message from my sister and called her." } }
+      - { es: "Quanto você gastou no shopping?", en: "How much did you spend at the shopping centre?", altEs: ["Quanto você gastou no shopping ontem?", "Você gastou quanto no shopping?"], altEn: ["How much did you spend at the mall?"], grammar: [g.preterite-regular, g.question-words], vocab: [w.gastar, w.shopping] }
+      - { es: "Não gastei nada: só experimentei roupas.", en: "I didn't spend anything: I only tried on clothes.", altEs: ["Eu não gastei nada: só experimentei roupas.", "Não gastei nada, só experimentei roupa."], altEn: ["I spent nothing: I just tried on clothes."], grammar: [g.preterite-regular, g.negation], vocab: [w.gastar, w.experimentar, w.roupa], error: { wrong: "Não gastou nada: só experimentei roupas.", explain: "The subject is eu, so the verb is gastei; gastou is the você / ele form.", grammar: g.preterite-regular } }
+      - { es: "Dividimos a conta do almoço.", en: "We split the lunch bill.", altEs: ["Nós dividimos a conta do almoço.", "A gente dividiu a conta do almoço."], grammar: [g.preterite-regular], vocab: [w.dividir, w.conta, w.almoço], note: "The nós form of -ar and -ir verbs is the same in the present and the preterite: context decides." }
+      - { es: "Ela esqueceu o guarda-chuva no metrô.", en: "She forgot her umbrella on the metro.", altEs: ["Ela esqueceu o guarda-chuva dela no metrô."], altEn: ["She left her umbrella on the metro."], grammar: [g.preterite-regular], vocab: [w.esquecer, w.guarda-chuva, w.metrô], transform: { instruction: "Change to 'I'", answer: "Eu esqueci o guarda-chuva no metrô.", alt: ["Esqueci o guarda-chuva no metrô.", "Esqueci meu guarda-chuva no metrô.", "Eu esqueci o meu guarda-chuva no metrô."], en: "I forgot my umbrella on the metro." } }
+      - { es: "Mandei uma foto do MASP para a minha mãe.", en: "I sent my mum a photo of MASP.", altEs: ["Mandei uma foto do MASP pra minha mãe.", "Eu mandei uma foto do MASP para minha mãe."], altEn: ["I sent a photo of MASP to my mother."], grammar: [g.preterite-regular], vocab: [w.mandar, w.foto, w.mãe] }
+      - { es: "Vocês visitaram São Paulo? É uma metrópole incrível!", en: "Did you visit São Paulo? It's an amazing metropolis!", altEs: ["Vocês já visitaram São Paulo? É uma metrópole incrível!"], altEn: ["Have you visited São Paulo? It's an incredible metropolis!"], grammar: [g.preterite-regular], vocab: [w.metrópole, w.incrível, w.visitar] }
+      - { es: "Quanto tempo durou a sua visita?", en: "How long did your visit last?", altEs: ["Quanto tempo durou sua visita?"], grammar: [g.preterite-regular, g.question-words], vocab: [w.durar, w.visita] }
+      - { es: "Na segunda-feira o MASP não abriu, então a gente voltou na terça.", en: "On Monday MASP didn't open, so we came back on Tuesday.", altEs: ["Na segunda o MASP não abriu, então nós voltamos na terça.", "Na segunda-feira o MASP não abriu, então voltamos na terça-feira."], grammar: [g.preterite-regular, g.negation], vocab: [w.abrir, w.voltar], note: "MASP is closed on Mondays." }
+      - { es: "Você ligou para o seu pai ontem?", en: "Did you call your dad yesterday?", altEs: ["Você ligou pro seu pai ontem?", "Ligou para o seu pai ontem?", "Você ligou para seu pai ontem?"], altEn: ["Did you phone your father yesterday?"], grammar: [g.preterite-regular], vocab: [w.ligar, w.pai], note: "ligar para alguém = to phone someone." }
+    exchanges:
+      - q: { es: "O que você fez ontem?", en: "What did you do yesterday?" }
+        a: { es: "Visitei o MASP e almocei na Paulista.", en: "I visited MASP and had lunch on Paulista." }
+        alt: ["Trabalhei o dia todo.", "Descansei em casa.", "Visitei o MASP."]
+        grammar: [g.preterite-regular]
+        vocab: [w.ontem, w.visitar, w.almoçar]
+      - q: { es: "Você gostou da exposição?", en: "Did you like the exhibition?" }
+        a: { es: "Gostei muito! As pinturas são incríveis.", en: "I loved it! The paintings are amazing." }
+        alt: ["Gostei, sim.", "Não gostei muito.", "Adorei!"]
+        grammar: [g.preterite-regular, g.gostar-de]
+        vocab: [w.exposição, w.pintura, w.incrível]
+      - q: { es: "Quanto vocês gastaram?", en: "How much did you spend?" }
+        a: { es: "Gastamos pouco: dividimos tudo.", en: "We spent very little: we split everything." }
+        alt: ["Quase nada.", "Gastamos cem reais.", "A gente gastou pouco."]
+        grammar: [g.preterite-regular]
+        vocab: [w.gastar, w.dividir]
+      - q: { es: "Você ligou para a Júlia?", en: "Did you call Júlia?" }
+        a: { es: "Não, mas mandei uma mensagem para ela.", en: "No, but I sent her a message." }
+        alt: ["Liguei, sim.", "Não, esqueci!", "Mandei uma mensagem."]
+        grammar: [g.preterite-regular]
+        vocab: [w.ligar, w.mandar, w.esquecer]
+      - q: { es: "Quanto tempo durou a visita?", en: "How long did the visit last?" }
+        a: { es: "Durou umas três horas.", en: "It lasted about three hours." }
+        alt: ["Três horas.", "Durou a tarde toda.", "Umas três horas."]
+        grammar: [g.preterite-regular]
+        vocab: [w.durar, w.visita]
+    texts:
+      - title: "Mensagem para a Júlia"
+        es: ["Oi, Júlia! Ontem visitei o MASP.", "Gostei muito da exposição de arte brasileira.", "Depois conversei com um pintor na Avenida Paulista."]
+        en: ["Hi, Júlia! Yesterday I visited MASP.", "I really liked the Brazilian art exhibition.", "Afterwards I chatted with a painter on Avenida Paulista."]
+        grammar: [g.preterite-regular]
+        vocab: [w.ontem, w.exposição, w.arte, w.conversar]
+      - title: "Domingo na Paulista"
+        es: ["No domingo, a avenida fechou para os carros.", "Muita gente passeou, cantou e dançou na rua.", "A gente comprou um sorvete e voltou a pé."]
+        en: ["On Sunday, the avenue closed to cars.", "Lots of people strolled, sang and danced in the street.", "We bought an ice cream and walked back."]
+        grammar: [g.preterite-regular]
+        vocab: [w.fechar, w.passear, w.cantar, w.dançar]
+    spicy:
+      - { es: "Ontem eu sonhei com você. Gostei muito.", en: "Last night I dreamt about you. I liked it a lot.", altEs: ["Ontem sonhei com você. Gostei muito."], altEn: ["Yesterday I dreamt about you. I really liked it."], grammar: [g.preterite-regular], vocab: [w.ontem, w.sonhar] }
+      - { es: "Você não me ligou ontem. Esqueceu ou ficou tímido?", en: "You didn't call me yesterday. Did you forget or did you get shy?", altEs: ["Você não me ligou ontem. Esqueceu ou ficou tímida?"], grammar: [g.preterite-regular], vocab: [w.ligar, w.esquecer, w.tímido] }
+      - { es: "Dividimos a sobremesa e você comeu a minha parte. Agora você me deve um jantar.", en: "We shared dessert and you ate my half. Now you owe me a dinner.", altEs: ["A gente dividiu a sobremesa e você comeu a minha parte. Agora você me deve um jantar."], grammar: [g.preterite-regular], vocab: [w.dividir, w.sobremesa, w.dever] }
+      - { es: "Experimentei dez vestidos, mas você só olhou para os meus olhos.", en: "I tried on ten dresses, but you only looked into my eyes.", altEs: ["Experimentei dez camisas, mas você só olhou para os meus olhos."], grammar: [g.preterite-regular], vocab: [w.experimentar, w.vestido, w.olhar] }
+      - { es: "Mandei uma mensagem pra você às duas da manhã. Desculpa: o vinho decidiu, não eu.", en: "I sent you a message at two in the morning. Sorry: the wine decided, not me.", altEs: ["Mandei uma mensagem para você às duas da manhã. Desculpa: o vinho decidiu, não eu."], grammar: [g.preterite-regular], vocab: [w.mandar, w.decidir, w.vinho] }
+  - id: a2.u01.l2
+    title: Semana passada
+    teach: [g.past-time-markers]
+    vocab: [w.anteontem, w.passado, w.ontem-à-noite, w.há-pouco, w.de-manhã, w.madrugada, w.inteiro, w.seguinte, w.acontecer, w.mudar, w.mudar-se, w.engarrafamento, w.atrasado, w.atrasar, w.atraso, w.pontual, w.acidente, w.voltar-para-casa]
+    tip: "há dois dias (or, in speech, faz dois dias) = two days ago. In Brazil semana passada often drops the article: Semana passada choveu."
+    sentences:
+      - { es: "Anteontem eu trabalhei até as dez da noite.", en: "The day before yesterday I worked until ten at night.", altEs: ["Anteontem trabalhei até as dez da noite.", "Eu trabalhei até as dez da noite anteontem."], grammar: [g.past-time-markers, g.preterite-regular], vocab: [w.anteontem, w.trabalhar] }
+      - { es: "Semana passada choveu todos os dias em São Paulo.", en: "Last week it rained every day in São Paulo.", altEs: ["Na semana passada choveu todos os dias em São Paulo.", "Semana passada choveu todo dia em São Paulo."], grammar: [g.past-time-markers, g.preterite-regular], vocab: [w.passado, w.chover], variant: "Portugal: Na semana passada choveu todos os dias.", error: { wrong: "Semana passada chove todos os dias em São Paulo.", explain: "A finished period in the past takes the preterite: choveu, not chove.", grammar: g.past-time-markers } }
+      - { es: "Ontem à noite a gente jantou num restaurante da Paulista.", en: "Last night we had dinner at a restaurant on Paulista.", altEs: ["Ontem à noite nós jantamos num restaurante da Paulista.", "Ontem à noite jantamos num restaurante na Paulista."], altEn: ["Last night we ate at a restaurant on Avenida Paulista."], grammar: [g.past-time-markers, g.preterite-regular], vocab: [w.ontem-à-noite, w.jantar, w.restaurante] }
+      - { es: "Mudei para São Paulo há dois anos.", en: "I moved to São Paulo two years ago.", altEs: ["Eu me mudei para São Paulo há dois anos.", "Mudei para São Paulo faz dois anos.", "Me mudei pra São Paulo há dois anos."], grammar: [g.past-time-markers, g.preterite-regular], vocab: [w.mudar-se, w.mudar], error: { wrong: "Mudei para São Paulo a dois anos.", explain: "'Ago' is há, with an h (from haver): há dois anos.", grammar: g.past-time-markers } }
+      - { es: "O ônibus passou há pouco.", en: "The bus went past a moment ago.", altEs: ["O ônibus passou agora há pouco."], altEn: ["The bus came by a little while ago."], grammar: [g.past-time-markers], vocab: [w.há-pouco, w.ônibus, w.passar] }
+      - { es: "O que aconteceu na avenida?", en: "What happened on the avenue?", altEs: ["O que é que aconteceu na avenida?", "Que aconteceu na avenida?"], grammar: [g.preterite-regular, g.question-words], vocab: [w.acontecer, w.avenida] }
+      - { es: "Aconteceu um acidente e o trânsito parou.", en: "There was an accident and the traffic stopped.", altEs: ["Aconteceu um acidente e o trânsito parou completamente."], altEn: ["An accident happened and the traffic came to a standstill."], grammar: [g.preterite-regular], vocab: [w.acidente, w.acontecer, w.trânsito, w.parar] }
+      - { es: "Passei uma hora no engarrafamento.", en: "I spent an hour in the traffic jam.", altEs: ["Eu passei uma hora no engarrafamento."], altEn: ["I was stuck in traffic for an hour."], grammar: [g.preterite-regular], vocab: [w.engarrafamento, w.passar], variant: "Portugal: fila de trânsito." }
+      - { es: "O meu voo atrasou duas horas.", en: "My flight was delayed two hours.", altEs: ["Meu voo atrasou duas horas."], altEn: ["My flight was two hours late."], grammar: [g.preterite-regular], vocab: [w.atrasar, w.voo] }
+      - { es: "Ela é sempre pontual, mas ontem chegou atrasada.", en: "She's always punctual, but yesterday she arrived late.", altEs: ["Ela é sempre pontual, mas ontem ela chegou atrasada."], grammar: [g.preterite-regular, g.past-time-markers], vocab: [w.pontual, w.atrasado, w.chegar], transform: { instruction: "Change to 'they' (two women)", answer: "Elas são sempre pontuais, mas ontem chegaram atrasadas.", alt: ["Elas são sempre pontuais, mas ontem elas chegaram atrasadas."], en: "They're always punctual, but yesterday they arrived late." } }
+      - { es: "Passei a manhã inteira no escritório.", en: "I spent the whole morning at the office.", altEs: ["Eu passei a manhã inteira no escritório.", "Passei a manhã toda no escritório."], grammar: [g.preterite-regular], vocab: [w.inteiro, w.escritório, w.passar] }
+      - { es: "No dia seguinte, eles voltaram para casa de manhã.", en: "The next day, they went back home in the morning.", altEs: ["No dia seguinte, voltaram para casa de manhã.", "No dia seguinte eles voltaram pra casa de manhã."], altEn: ["The following day, they went home in the morning."], grammar: [g.past-time-markers, g.preterite-regular], vocab: [w.seguinte, w.voltar-para-casa, w.de-manhã] }
+      - { es: "A festa terminou de madrugada.", en: "The party ended in the early hours.", altEs: ["A festa acabou de madrugada."], altEn: ["The party finished in the small hours."], grammar: [g.preterite-regular], vocab: [w.madrugada, w.terminar, w.festa] }
+      - { es: "Desculpa o atraso! O metrô parou vinte minutos.", en: "Sorry for the delay! The metro stopped for twenty minutes.", altEs: ["Desculpe o atraso! O metrô parou vinte minutos.", "Desculpe pelo atraso! O metrô parou por vinte minutos."], altEn: ["Sorry I'm late! The metro stopped for twenty minutes."], grammar: [g.preterite-regular], vocab: [w.atraso, w.metrô, w.parar] }
+      - { es: "Você mudou de emprego no ano passado?", en: "Did you change jobs last year?", altEs: ["Você mudou de emprego ano passado?", "Mudou de emprego no ano passado?"], grammar: [g.past-time-markers, g.preterite-regular], vocab: [w.mudar, w.emprego, w.passado], transform: { instruction: "Replace 'no ano passado' with 'two months ago'", answer: "Você mudou de emprego há dois meses?", alt: ["Você mudou de emprego faz dois meses?", "Mudou de emprego há dois meses?"], en: "Did you change jobs two months ago?" } }
+    exchanges:
+      - q: { es: "Quando você chegou a São Paulo?", en: "When did you arrive in São Paulo?" }
+        a: { es: "Cheguei há três semanas.", en: "I arrived three weeks ago." }
+        alt: ["Faz três semanas.", "Há três semanas.", "Semana passada."]
+        grammar: [g.past-time-markers]
+        vocab: [w.chegar]
+      - q: { es: "O que aconteceu? Você está atrasado!", en: "What happened? You're late!" }
+        a: { es: "Desculpa, peguei um engarrafamento enorme.", en: "Sorry, I got stuck in a huge traffic jam." }
+        alt: ["Aconteceu um acidente na avenida.", "O metrô parou.", "Meu ônibus atrasou."]
+        grammar: [g.preterite-regular]
+        vocab: [w.acontecer, w.atrasado, w.engarrafamento]
+      - q: { es: "Você saiu ontem à noite?", en: "Did you go out last night?" }
+        a: { es: "Saí, mas voltei para casa cedo.", en: "I did, but I went back home early." }
+        alt: ["Não, fiquei em casa.", "Saí, sim.", "Saí e voltei de madrugada."]
+        grammar: [g.past-time-markers, g.preterite-regular]
+        vocab: [w.ontem-à-noite, w.voltar-para-casa]
+      - q: { es: "Quando a Marina se mudou?", en: "When did Marina move?" }
+        a: { es: "No ano passado, em agosto.", en: "Last year, in August." }
+        alt: ["Ano passado.", "Há um ano.", "Faz um ano."]
+        grammar: [g.past-time-markers]
+        vocab: [w.mudar-se, w.passado]
+      - q: { es: "A que horas a festa terminou?", en: "What time did the party end?" }
+        a: { es: "Às três da madrugada!", en: "At three in the morning!" }
+        alt: ["De madrugada.", "Às três da manhã.", "Tarde, muito tarde."]
+        grammar: [g.past-time-markers]
+        vocab: [w.madrugada]
+    texts:
+      - title: "Mensagem do Pedro"
+        es: ["Oi, Ana! Desculpa o atraso.", "Aconteceu um acidente na Avenida Paulista há meia hora.", "Chego em vinte minutos."]
+        en: ["Hi, Ana! Sorry for the delay.", "There was an accident on Avenida Paulista half an hour ago.", "I'll be there in twenty minutes."]
+        grammar: [g.past-time-markers]
+        vocab: [w.atraso, w.acidente, w.acontecer]
+      - title: "Diário"
+        es: ["Semana passada foi cansativa.", "Na segunda, trabalhei o dia inteiro; na terça, cheguei atrasada.", "Ontem à noite, finalmente, descansei."]
+        en: ["Last week was tiring.", "On Monday I worked all day; on Tuesday I arrived late.", "Last night, at last, I rested."]
+        grammar: [g.past-time-markers, g.preterite-regular]
+        vocab: [w.passado, w.inteiro, w.atrasado, w.ontem-à-noite]
+    spicy:
+      - { es: "Ontem à noite pensei em você. Anteontem também.", en: "Last night I thought about you. The day before yesterday too.", altEs: ["Ontem à noite eu pensei em você. Anteontem também."], grammar: [g.past-time-markers, g.preterite-regular], vocab: [w.ontem-à-noite, w.anteontem, w.pensar] }
+      - { es: "Você chegou atrasado, mas eu esperei com prazer.", en: "You arrived late, but I was happy to wait.", altEs: ["Você chegou atrasada, mas eu esperei com prazer."], grammar: [g.preterite-regular], vocab: [w.atrasado, w.esperar] }
+      - { es: "A gente conversou até de madrugada e ninguém olhou o relógio.", en: "We talked until the small hours and nobody looked at the clock.", altEs: ["Nós conversamos até de madrugada e ninguém olhou o relógio."], grammar: [g.preterite-regular, g.past-time-markers], vocab: [w.madrugada, w.conversar, w.relógio] }
+      - { es: "Mudei de academia semana passada. Agora treino perto da sua casa.", en: "I changed gyms last week. Now I train near your house.", altEs: ["Mudei de academia na semana passada. Agora treino perto da sua casa."], grammar: [g.past-time-markers], vocab: [w.mudar, w.academia, w.treinar] }
+      - { es: "O que aconteceu ontem? Só lembro de um sorriso e de uma pizza.", en: "What happened yesterday? I only remember a smile and a pizza.", grammar: [g.preterite-regular], vocab: [w.acontecer, w.lembrar] }
+  - id: a2.u01.l3
+    title: Cheguei, fiquei, comecei
+    teach: [g.preterite-spelling]
+    vocab: [w.carregar, w.carregador, w.bateria, w.marcar, w.entregar, w.cansar, w.cansar-se, w.cansativo, w.hora-extra, w.entrevista, w.faltar, w.escolher, w.conseguir, w.tentar, w.continuar, w.lista, w.possível, w.impossível]
+    tip: "Only the eu form changes its spelling: cheguei, fiquei, comecei, paguei, toquei — but ele chegou, ficou, começou."
+    sentences:
+      - { es: "Cheguei tarde à entrevista.", en: "I arrived late for the interview.", altEs: ["Cheguei atrasado na entrevista.", "Cheguei atrasada na entrevista.", "Eu cheguei tarde à entrevista.", "Cheguei tarde na entrevista."], altEn: ["I was late for the interview."], grammar: [g.preterite-spelling], vocab: [w.chegar, w.entrevista], error: { wrong: "Chegei tarde à entrevista.", explain: "chegar → cheguei: the u keeps the hard g sound before e.", grammar: g.preterite-spelling } }
+      - { es: "Fiquei no escritório até as nove fazendo hora extra.", en: "I stayed at the office until nine doing overtime.", altEs: ["Eu fiquei no escritório até as nove fazendo hora extra.", "Fiquei no escritório até nove horas fazendo hora extra."], grammar: [g.preterite-spelling], vocab: [w.ficar, w.hora-extra, w.escritório] }
+      - { es: "Comecei no trabalho novo na segunda-feira.", en: "I started at the new job on Monday.", altEs: ["Comecei no trabalho novo na segunda.", "Eu comecei no trabalho novo na segunda-feira.", "Comecei no emprego novo na segunda-feira."], grammar: [g.preterite-spelling], vocab: [w.começar, w.trabalho], transform: { instruction: "Change to 'he'", answer: "Ele começou no trabalho novo na segunda-feira.", alt: ["Ele começou no trabalho novo na segunda.", "Começou no trabalho novo na segunda-feira."], en: "He started at the new job on Monday." } }
+      - { es: "Paguei o almoço com cartão.", en: "I paid for lunch by card.", altEs: ["Eu paguei o almoço com cartão.", "Paguei o almoço no cartão."], grammar: [g.preterite-spelling], vocab: [w.pagar, w.cartão, w.almoço] }
+      - { es: "Ontem não carreguei o celular e fiquei sem bateria.", en: "Yesterday I didn't charge my phone and ran out of battery.", altEs: ["Ontem eu não carreguei o celular e fiquei sem bateria."], altEn: ["I didn't charge my phone yesterday and the battery died."], grammar: [g.preterite-spelling, g.negation], vocab: [w.carregar, w.bateria, w.celular], variant: "Portugal: telemóvel." }
+      - { es: "Alguém pegou o meu carregador?", en: "Has anyone taken my charger?", altEs: ["Alguém pegou meu carregador?"], altEn: ["Did someone take my charger?"], grammar: [g.preterite-regular], vocab: [w.carregador, w.pegar, w.alguém] }
+      - { es: "Marquei um café com a Lúcia para sexta.", en: "I arranged a coffee with Lúcia for Friday.", altEs: ["Eu marquei um café com a Lúcia para sexta.", "Marquei um café com a Lúcia pra sexta-feira."], altEn: ["I set up a coffee with Lúcia for Friday."], grammar: [g.preterite-spelling], vocab: [w.marcar, w.café] }
+      - { es: "Ontem entreguei todos os documentos na empresa.", en: "Yesterday I handed in all the documents at the company.", altEs: ["Entreguei todos os documentos na empresa ontem.", "Ontem eu entreguei todos os documentos na empresa."], grammar: [g.preterite-spelling], vocab: [w.entregar, w.documento, w.empresa] }
+      - { es: "Joguei futebol e toquei violão: um dia perfeito!", en: "I played football and played the guitar: a perfect day!", altEs: ["Eu joguei futebol e toquei violão: um dia perfeito!"], grammar: [g.preterite-spelling, g.jogar-vs-tocar], vocab: [w.jogar, w.tocar, w.violão] }
+      - { es: "Cansei de esperar e voltei para casa.", en: "I got tired of waiting and went back home.", altEs: ["Me cansei de esperar e voltei para casa.", "Eu me cansei de esperar e voltei pra casa.", "Cansei de esperar e voltei pra casa."], grammar: [g.preterite-regular], vocab: [w.cansar, w.cansar-se, w.esperar] }
+      - { es: "Saí do trabalho às sete e li no metrô.", en: "I left work at seven and read on the metro.", altEs: ["Eu saí do trabalho às sete e li no metrô."], grammar: [g.preterite-spelling], vocab: [w.sair, w.ler], error: { wrong: "Sai do trabalho às sete e li no metrô.", explain: "In the past, eu saí carries an accent; sai without it is the present (he leaves).", grammar: g.preterite-spelling } }
+      - { es: "Faltou alguém na reunião?", en: "Was anyone missing from the meeting?", altEs: ["Alguém faltou na reunião?", "Alguém faltou à reunião?"], altEn: ["Was anybody absent from the meeting?"], grammar: [g.preterite-regular], vocab: [w.faltar, w.reunião] }
+      - { es: "Escolhi o restaurante, mas ele escolheu o vinho.", en: "I chose the restaurant, but he chose the wine.", altEs: ["Eu escolhi o restaurante, mas ele escolheu o vinho."], grammar: [g.preterite-regular], vocab: [w.escolher, w.vinho] }
+      - { es: "Tentei ligar três vezes, mas não consegui.", en: "I tried to call three times, but I couldn't get through.", altEs: ["Eu tentei ligar três vezes, mas não consegui."], altEn: ["I tried to phone three times, but I didn't manage."], grammar: [g.preterite-regular], vocab: [w.tentar, w.conseguir, w.ligar], transform: { instruction: "Change to 'we'", answer: "Tentamos ligar três vezes, mas não conseguimos.", alt: ["Nós tentamos ligar três vezes, mas não conseguimos.", "A gente tentou ligar três vezes, mas não conseguiu."], en: "We tried to call three times, but we couldn't get through." } }
+      - { es: "Visitar tudo em São Paulo é impossível, mas eu continuei a minha lista.", en: "Visiting everything in São Paulo is impossible, but I carried on with my list.", altEs: ["Visitar tudo em São Paulo é impossível, mas continuei a minha lista.", "É impossível visitar tudo em São Paulo, mas eu continuei a minha lista."], grammar: [g.preterite-regular], vocab: [w.impossível, w.continuar, w.lista] }
+      - { es: "Ontem paguei o táxi com pix: é possível em quase todo lugar.", en: "Yesterday I paid for the taxi with Pix: you can do it almost everywhere.", altEs: ["Paguei o táxi com pix ontem: é possível em quase todo lugar."], altEn: ["Yesterday I paid the taxi by Pix: it's possible almost everywhere."], grammar: [g.preterite-spelling], vocab: [w.possível, w.pix, w.táxi], note: "Pix is Brazil's instant bank-transfer system, used for almost everything." }
+    exchanges:
+      - q: { es: "Por que você chegou tarde?", en: "Why did you arrive late?" }
+        a: { es: "Porque fiquei sem bateria e não achei o endereço.", en: "Because my battery died and I couldn't find the address." }
+        alt: ["Peguei um engarrafamento.", "Porque o ônibus atrasou.", "Fiquei sem bateria."]
+        grammar: [g.preterite-spelling]
+        vocab: [w.bateria, w.endereço]
+      - q: { es: "Como foi a entrevista?", en: "How did the interview go?" }
+        a: { es: "Cansativa! Durou duas horas, mas acho que consegui o emprego.", en: "Tiring! It lasted two hours, but I think I got the job." }
+        alt: ["Foi ótima!", "Foi cansativa.", "Acho que consegui!"]
+        grammar: [g.preterite-regular]
+        vocab: [w.entrevista, w.cansativo, w.conseguir]
+      - q: { es: "Você marcou o médico?", en: "Did you book the doctor?" }
+        a: { es: "Marquei para quinta, às dez.", en: "I booked it for Thursday at ten." }
+        alt: ["Marquei, sim.", "Ainda não, esqueci.", "Marquei pra quinta."]
+        grammar: [g.preterite-spelling]
+        vocab: [w.marcar, w.médico]
+      - q: { es: "Quem escolheu este restaurante?", en: "Who chose this restaurant?" }
+        a: { es: "Eu escolhi! Gostou?", en: "I did! Do you like it?" }
+        alt: ["Fui eu.", "A Lúcia escolheu.", "Eu!"]
+        grammar: [g.preterite-regular]
+        vocab: [w.escolher, w.restaurante]
+      - q: { es: "Você entregou o trabalho?", en: "Did you hand in the assignment?" }
+        a: { es: "Entreguei ontem à noite, às onze e cinquenta e nove!", en: "I handed it in last night, at eleven fifty-nine!" }
+        alt: ["Entreguei, sim.", "Ainda não.", "Entreguei ontem."]
+        grammar: [g.preterite-spelling]
+        vocab: [w.entregar]
+    texts:
+      - title: "Bilhete"
+        es: ["Mãe, cheguei às oito e fiquei só dez minutos.", "Peguei o meu carregador e saí de novo.", "Paguei a conta de luz, não se preocupe!"]
+        en: ["Mum, I got home at eight and only stayed ten minutes.", "I picked up my charger and went out again.", "I paid the electricity bill, don't worry!"]
+        grammar: [g.preterite-spelling]
+        vocab: [w.carregador, w.pagar, w.chegar]
+      - title: "Primeiro dia"
+        es: ["Ontem comecei no trabalho novo.", "Cheguei cedo, mas fiquei nervoso o dia inteiro.", "No fim, almocei com os colegas e gostei de todo mundo."]
+        en: ["Yesterday I started at my new job.", "I arrived early, but I was nervous all day.", "In the end, I had lunch with my colleagues and liked everyone."]
+        grammar: [g.preterite-spelling]
+        vocab: [w.começar, w.ficar, w.almoçar]
+    spicy:
+      - { es: "Cheguei cedo só para ver você chegar.", en: "I arrived early just to watch you arrive.", altEs: ["Cheguei cedo só pra ver você chegar.", "Eu cheguei cedo só para ver você chegar."], grammar: [g.preterite-spelling], vocab: [w.chegar] }
+      - { es: "Fiquei sem bateria, mas guardei o seu número na memória.", en: "My battery died, but I saved your number in my memory.", altEs: ["Fiquei sem bateria, mas guardei seu número na memória."], grammar: [g.preterite-spelling], vocab: [w.bateria, w.guardar, w.memória] }
+      - { es: "Escolhi este vestido pensando em você. Gostou?", en: "I chose this dress thinking of you. Do you like it?", altEs: ["Escolhi esta camisa pensando em você. Gostou?"], grammar: [g.preterite-regular], vocab: [w.escolher, w.vestido] }
+      - { es: "Tentei não olhar para você a noite toda. Não consegui.", en: "I tried not to look at you all night. I couldn't.", altEs: ["Tentei não olhar pra você a noite toda. Não consegui."], grammar: [g.preterite-regular], vocab: [w.tentar, w.conseguir, w.olhar] }
+      - { es: "Paguei o seu café. Agora você me deve uma conversa.", en: "I paid for your coffee. Now you owe me a chat.", altEs: ["Paguei seu café. Agora você me deve uma conversa."], grammar: [g.preterite-spelling], vocab: [w.pagar, w.conversa] }
+  - id: a2.u01.l4
+    title: Fim de semana em Sampa
+    teach: [g.preterite-regular, g.past-time-markers]
+    vocab: [w.mercadão, w.mortadela, w.churrasco, w.pizza, w.pizzaria, w.japonês.n, w.comunidade, w.imigrante, w.cheio-de-gente, w.aproveitar, w.resolver, w.parte, w.forma, w.exemplo, w.por-exemplo, w.caso, w.motivo, w.voz, w.mandar-bem]
+    tip: "Sampa is São Paulo's nickname. Tell your weekend in order: no sábado…, no domingo…, ontem à noite…"
+    sentences:
+      - { es: "No sábado almoçamos no Mercadão.", en: "On Saturday we had lunch at the Mercadão.", altEs: ["No sábado a gente almoçou no Mercadão.", "Sábado nós almoçamos no Mercadão."], altEn: ["On Saturday we had lunch at the Municipal Market."], grammar: [g.preterite-regular, g.past-time-markers], vocab: [w.mercadão, w.almoçar], note: "O Mercadão = São Paulo's Municipal Market." }
+      - { es: "Comi o famoso sanduíche de mortadela.", en: "I ate the famous mortadella sandwich.", altEs: ["Eu comi o famoso sanduíche de mortadela."], grammar: [g.preterite-regular], vocab: [w.mortadela, w.sanduíche, w.famoso] }
+      - { es: "Aos sábados, o Mercadão fica cheio de gente.", en: "On Saturdays, the Mercadão gets crowded.", altEs: ["No sábado o Mercadão fica cheio de gente."], altEn: ["On Saturdays the Municipal Market is packed."], grammar: [g.ficar-location], vocab: [w.cheio-de-gente, w.mercadão] }
+      - { es: "No domingo, os meus primos prepararam um churrasco.", en: "On Sunday, my cousins made a barbecue.", altEs: ["Domingo meus primos prepararam um churrasco.", "No domingo, meus primos fizeram um churrasco."], grammar: [g.preterite-regular, g.past-time-markers], vocab: [w.churrasco, w.preparar, w.primo] }
+      - { es: "Ontem à noite pedimos uma pizza.", en: "Last night we ordered a pizza.", altEs: ["Ontem à noite a gente pediu uma pizza.", "Ontem à noite nós pedimos uma pizza."], grammar: [g.preterite-regular, g.past-time-markers], vocab: [w.pizza, w.pedir], note: "São Paulo celebrates Pizza Day (Dia da Pizza) on 10 July.", transform: { instruction: "Change to 'I'", answer: "Ontem à noite pedi uma pizza.", alt: ["Ontem à noite eu pedi uma pizza."], en: "Last night I ordered a pizza." } }
+      - { es: "Qual pizzaria você escolheu?", en: "Which pizzeria did you choose?", altEs: ["Que pizzaria você escolheu?"], altEn: ["Which pizza place did you pick?"], grammar: [g.preterite-regular, g.question-words], vocab: [w.pizzaria, w.escolher] }
+      - { es: "O Brasil tem a maior comunidade japonesa fora do Japão.", en: "Brazil has the largest Japanese community outside Japan.", grammar: [g.tem-there-is], vocab: [w.comunidade, w.japonês] }
+      - { es: "Os primeiros imigrantes japoneses chegaram ao Brasil em 1908.", en: "The first Japanese immigrants arrived in Brazil in 1908.", altEs: ["Os primeiros imigrantes japoneses chegaram no Brasil em 1908."], grammar: [g.preterite-regular], vocab: [w.imigrante, w.chegar] }
+      - { es: "Muitos imigrantes italianos moraram no bairro do Bixiga.", en: "Many Italian immigrants lived in the Bixiga neighbourhood.", altEs: ["Muitos imigrantes italianos moraram no Bixiga."], grammar: [g.preterite-regular], vocab: [w.imigrante, w.italiano, w.morar], note: "Bixiga (officially Bela Vista) is São Paulo's old Italian quarter." }
+      - { es: "Aproveitamos o fim de semana para conhecer a cidade.", en: "We made the most of the weekend to get to know the city.", altEs: ["A gente aproveitou o fim de semana para conhecer a cidade.", "Nós aproveitamos o fim de semana pra conhecer a cidade."], grammar: [g.preterite-regular], vocab: [w.aproveitar, w.conhecer], transform: { instruction: "Change to 'I'", answer: "Aproveitei o fim de semana para conhecer a cidade.", alt: ["Eu aproveitei o fim de semana para conhecer a cidade.", "Aproveitei o fim de semana pra conhecer a cidade."], en: "I made the most of the weekend to get to know the city." } }
+      - { es: "Você resolveu o problema do apartamento?", en: "Did you sort out the problem with the flat?", altEs: ["Resolveu o problema do apartamento?"], altEn: ["Did you solve the apartment problem?"], grammar: [g.preterite-regular], vocab: [w.resolver, w.problema, w.apartamento] }
+      - { es: "Por que você se mudou para São Paulo? — Por vários motivos: o trabalho, por exemplo.", en: "Why did you move to São Paulo? — For several reasons: work, for example.", altEs: ["Por que você mudou para São Paulo? — Por vários motivos: o trabalho, por exemplo."], grammar: [g.preterite-regular, g.question-words], vocab: [w.motivo, w.por-exemplo, w.mudar-se] }
+      - { es: "Qual foi a melhor parte do fim de semana?", en: "What was the best part of the weekend?", grammar: [g.preterite-ser-ir], vocab: [w.parte, w.melhor] }
+      - { es: "Gostei da forma como ele explicou a história da cidade.", en: "I liked the way he explained the city's history.", altEs: ["Gostei do jeito como ele explicou a história da cidade."], grammar: [g.preterite-regular, g.gostar-de], vocab: [w.forma, w.explicar] }
+      - { es: "No meu caso, eu gostei mais do bairro da Liberdade.", en: "In my case, I liked the Liberdade neighbourhood best.", altEs: ["No meu caso, gostei mais do bairro da Liberdade.", "No meu caso, eu gostei mais da Liberdade."], grammar: [g.preterite-regular], vocab: [w.caso, w.bairro] }
+      - { es: "Você dançou forró pela primeira vez? Mandou bem!", en: "You danced forró for the first time? Nice one!", altEs: ["Você dançou forró pela primeira vez? Mandou muito bem!"], altEn: ["Did you dance forró for the first time? Well done!"], grammar: [g.preterite-regular], vocab: [w.mandar-bem, w.dançar, w.forró], error: { wrong: "Você dancei forró pela primeira vez?", explain: "With você the verb takes the ele form: você dançou.", grammar: g.preterite-regular } }
+    exchanges:
+      - q: { es: "O que vocês fizeram no fim de semana?", en: "What did you do at the weekend?" }
+        a: { es: "No sábado almoçamos no Mercadão; no domingo, descansamos.", en: "On Saturday we had lunch at the Mercadão; on Sunday, we rested." }
+        alt: ["Ficamos em casa.", "Passeamos na Paulista.", "A gente almoçou no Mercadão."]
+        grammar: [g.preterite-regular, g.past-time-markers]
+        vocab: [w.mercadão, w.descansar]
+      - q: { es: "Você gostou da pizza?", en: "Did you like the pizza?" }
+        a: { es: "Adorei! Comi três pedaços.", en: "I loved it! I ate three slices." }
+        alt: ["Gostei muito.", "Não gostei muito.", "Adorei!"]
+        grammar: [g.preterite-regular]
+        vocab: [w.pizza, w.pedaço]
+      - q: { es: "Por que você escolheu São Paulo?", en: "Why did you choose São Paulo?" }
+        a: { es: "Por muitos motivos: a comida e a cultura, por exemplo.", en: "For lots of reasons: the food and the culture, for example." }
+        alt: ["Por causa do trabalho.", "Por causa da comida.", "Pelo trabalho."]
+        grammar: [g.preterite-regular]
+        vocab: [w.motivo, w.por-exemplo, w.exemplo]
+      - q: { es: "Você resolveu o problema do cartão?", en: "Did you sort out the card problem?" }
+        a: { es: "Resolvi! Liguei para o banco hoje de manhã.", en: "I did! I called the bank this morning." }
+        alt: ["Ainda não.", "Resolvi, sim.", "Liguei para o banco."]
+        grammar: [g.preterite-regular]
+        vocab: [w.resolver, w.banco]
+      - q: { es: "Como foi o show?", en: "How was the concert?" }
+        a: { es: "Ótimo! A cantora tem uma voz linda e mandou muito bem.", en: "Great! The singer has a beautiful voice and she was brilliant." }
+        alt: ["Foi incrível!", "Mandou bem!", "Foi ótimo."]
+        grammar: [g.preterite-ser-ir]
+        vocab: [w.voz, w.mandar-bem]
+    texts:
+      - title: "Post da Fernanda"
+        es: ["Fim de semana em Sampa!", "Sábado: sanduíche de mortadela no Mercadão, cheio de gente.", "Domingo: churrasco com a família e pizza à noite.", "Aproveitei cada minuto!"]
+        en: ["Weekend in Sampa!", "Saturday: a mortadella sandwich at the packed Mercadão.", "Sunday: a barbecue with the family and pizza at night.", "I made the most of every minute!"]
+        grammar: [g.preterite-regular, g.past-time-markers]
+        vocab: [w.mortadela, w.cheio-de-gente, w.churrasco, w.aproveitar]
+      - title: "Guia rápido"
+        es: ["A Liberdade é um bom exemplo da comunidade japonesa de São Paulo.", "Os primeiros imigrantes chegaram há mais de cem anos.", "Hoje o bairro tem restaurantes, lojas e uma feira nos fins de semana."]
+        en: ["Liberdade is a good example of São Paulo's Japanese community.", "The first immigrants arrived more than a hundred years ago.", "Today the neighbourhood has restaurants, shops and a market at weekends."]
+        grammar: [g.past-time-markers]
+        vocab: [w.exemplo, w.comunidade, w.imigrante]
+    spicy:
+      - { es: "Dividimos uma pizza: para mim, isso já foi um encontro.", en: "We shared a pizza: for me, that already counted as a date.", altEs: ["A gente dividiu uma pizza: pra mim, isso já foi um encontro."], grammar: [g.preterite-regular], vocab: [w.pizza, w.dividir, w.encontro] }
+      - { es: "Você preparou o churrasco ou só ficou bonito perto do fogo?", en: "Did you make the barbecue or did you just stand by the fire looking handsome?", altEs: ["Você preparou o churrasco ou só ficou bonita perto do fogo?"], grammar: [g.preterite-regular], vocab: [w.churrasco, w.preparar, w.fogo] }
+      - { es: "Aproveitei a sua visita para mostrar a cidade... e o meu melhor sorriso.", en: "I made the most of your visit to show you the city... and my best smile.", altEs: ["Aproveitei sua visita pra mostrar a cidade... e o meu melhor sorriso."], grammar: [g.preterite-regular], vocab: [w.aproveitar, w.visita, w.mostrar] }
+      - { es: "O cantor mandou bem, mas eu só olhei para você.", en: "The singer was great, but I only looked at you.", altEs: ["A cantora mandou bem, mas eu só olhei pra você."], grammar: [g.preterite-regular], vocab: [w.mandar-bem, w.olhar] }
+      - { es: "No meu caso, o motivo da visita foi você.", en: "In my case, the reason for the visit was you.", grammar: [g.preterite-ser-ir], vocab: [w.caso, w.motivo, w.visita] }
+dialogues:
+  - id: a2.u01.d1
+    title: Como foi o seu domingo?
+    context: Monday morning at the office. Fernanda asks her colleague Ricardo about his Sunday on Avenida Paulista.
+    lines:
+      - { speaker: Fernanda, es: "Oi, Ricardo! Como foi o seu domingo?", en: "Hi, Ricardo! How was your Sunday?" }
+      - { speaker: Ricardo, es: "Ótimo! Passei a tarde inteira na Avenida Paulista.", en: "Great! I spent the whole afternoon on Avenida Paulista." }
+      - { speaker: Fernanda, es: "Na Paulista? Com aquele trânsito?", en: "On Paulista? With all that traffic?" }
+      - { speaker: Ricardo, es: "Não, aos domingos ela fecha para os carros. Eu andei de bicicleta, e muita gente passeou a pé.", en: "No, on Sundays it closes to cars. I rode my bike, and lots of people walked around." }
+      - { speaker: Fernanda, es: "Que legal! E você visitou o MASP?", en: "How cool! And did you visit MASP?" }
+      - { speaker: Ricardo, es: "Visitei. A exposição de pintura durou umas duas horas, e eu adorei.", en: "I did. The painting exhibition took about two hours, and I loved it." }
+      - { speaker: Fernanda, es: "Eu nunca entrei no MASP. Você gastou muito?", en: "I've never been inside MASP. Did you spend a lot?" }
+      - { speaker: Ricardo, es: "Não muito. Depois almocei com uma amiga e a gente dividiu a conta.", en: "Not much. Afterwards I had lunch with a friend and we split the bill." }
+      - { speaker: Fernanda, es: "E à noite?", en: "And in the evening?" }
+      - { speaker: Ricardo, es: "Voltei para casa cedo, mas esqueci o celular num café da avenida!", en: "I went back home early, but I left my phone in a café on the avenue!" }
+      - { speaker: Fernanda, es: "Não acredito! E aí?", en: "No way! And then?" }
+      - { speaker: Ricardo, es: "Liguei para o café do celular da minha irmã, e o garçom guardou para mim.", en: "I called the café from my sister's phone, and the waiter kept it for me." }
+    questions:
+      - { q: "Onde o Ricardo passou a tarde de domingo?", options: ["Na praia", "Na Avenida Paulista", "Em casa"], answer: 1, explain: "Ricardo says: Passei a tarde inteira na Avenida Paulista." }
+      - { q: "Como o Ricardo passeou na avenida?", options: ["De carro", "De bicicleta", "De ônibus"], answer: 1, explain: "Eu andei de bicicleta: the avenue closes to cars on Sundays." }
+      - { q: "Com quem ele dividiu a conta do almoço?", options: ["Com a Fernanda", "Com uma amiga", "Com a irmã"], answer: 1, explain: "Almocei com uma amiga e a gente dividiu a conta." }
+      - { q: "O que o Ricardo esqueceu no café?", options: ["O guarda-chuva", "A bicicleta", "O celular"], answer: 2, explain: "Esqueci o celular num café da avenida." }
