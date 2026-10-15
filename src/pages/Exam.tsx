@@ -4,6 +4,7 @@ import type { Exam as ExamT, LevelId } from '../engine/schema'
 import { loadExam, levels, nextLevel } from '../engine/loader'
 import { recordExam } from '../db/progress'
 import { match } from '@lang/normalize'
+import { languagePack } from '@lang'
 import { checkText } from '../hooks/useDeps'
 import { listenOnce, sttSupported } from '../engine/speech'
 import { pack } from '../engine/loader'
@@ -132,7 +133,8 @@ function WritingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => 
   const [text, setText] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [checks, setChecks] = useState<boolean[]>(() => exam.writing.checklist.map(() => false))
-  const words = text.trim().split(/\s+/).filter(Boolean).length
+  // the pack's own word split: Cantonese is written without spaces
+  const words = languagePack.words(text).length
   const findings: CheckerFinding[] = useMemo(() => (submitted ? checkText(text) : []), [submitted, text])
   const serious = findings.filter((f) => f.code !== 'unknown')
   if (!submitted) {
