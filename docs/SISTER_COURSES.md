@@ -1,4 +1,4 @@
-# Sister courses: Cantonese, Portuguese, Italian
+# Sister courses: Cantonese, Portuguese, Italian, French
 
 The same app, method and journey, built for other languages from the same code.
 Spanish (`content/es`) is the reference course: **match its scale and quality**.
@@ -9,6 +9,7 @@ Read `CONTENT_GUIDE.md` first; everything there applies, with the differences be
 | Cantonese (Hong Kong) | `yue` | /aprende/cantonese/ | Gong 講 | Hong Kong, Macau, Guangzhou |
 | Portuguese (Brazilian, European notes) | `pt` | /aprende/portuguese/ | Aprenda | Brazil, ending in Portugal |
 | Italian | `it` | /aprende/italian/ | Impara | Italy |
+| French (France, with Québec and Belgian notes) | `fr` | /aprende/french/ | Apprends | France, ending in the French-speaking world |
 
 ## Field names
 
@@ -125,16 +126,43 @@ sexual vocabulary, slurs, minors, violence, drugs) in that language.
   combinations (glielo), passato remoto (recognition from B1, production C1),
   congiuntivo, periodo ipotetico, *Lei* formal address.
 
+## French (`fr`)
+
+- **Standard French of France**, *tu* and *vous* both taught from A1 (vous as the
+  polite and plural default with strangers). Québec, Belgian and Swiss French appear
+  as notes: vocabulary `variant: { fr-CA: déjeuner }` (fr-CA: déjeuner / dîner / souper,
+  char, magasiner, fin de semaine, courriel; fr-BE/CH: septante, nonante, huitante),
+  sentence `variant` notes, and synonym groups (week-end/fin de semaine,
+  mail/courriel, portable/cellulaire). The C2 region is the French-speaking world and
+  its units may use Québécois or Belgian forms with standard alternatives in `altEs`.
+- Nouns need `gender` (m, f, mf); irregular plurals in `plural` (`œil → yeux`,
+  `cheval → chevaux` where the engine does not derive them). Verb lemmas are
+  infinitives; pronominal verbs start with `se`/`s'` (`se lever`, `s'appeler`).
+- Elision (l'ami, j'ai, qu'il, c'est) and contractions (du, au, des, aux) are normal
+  text; numbers (soixante-dix, quatre-vingts) compare with digits.
+- Grammar includes articles and partitives (du, de la, des, de after negation),
+  être vs avoir in the passé composé with agreement, reflexive verbs, y and en,
+  pronoun order (je le lui donne), passé composé vs imparfait, futur proche/simple,
+  conditionnel, subjonctif, passé simple (recognition from B2, literary C1),
+  ne…que / ne…plus / ne…jamais, spoken dropping of *ne*, *on* = nous, inversion.
+- Journey (6 regions, one stop per unit): A1 **Paris**; A2 **Normandy, Brittany and
+  the Loire**; B1 **Provence and the Riviera**; B2 **Lyon, the Alps, Burgundy and
+  Alsace**; C1 **the Southwest** (Bordeaux, Basque coast, Pyrenees, Toulouse,
+  Carcassonne, Corsica…); C2 **the French-speaking world** (Brussels, Geneva, Dakar,
+  the Antilles, Montréal) ending in **Québec City**.
+
 ## Readers, exams, phonology, errors
 
 Same shapes as Spanish. C1–C2 readers include public-domain literature:
 Portuguese (Machado de Assis, Eça de Queirós, Camões, Pessoa), Italian (Dante,
-Manzoni, Verga, Collodi, Leopardi, Pirandello), Cantonese (Cantonese folk rhymes
+Manzoni, Verga, Collodi, Leopardi, Pirandello), French (La Fontaine, Molière,
+Hugo, Maupassant, Flaubert, Baudelaire, Verlaine, Rimbaud, Apollinaire, Proust), Cantonese (Cantonese folk rhymes
 such as 月光光, Zhao Ziyong's 粵謳 (1828), Tang poems read in Cantonese, with
 glossaries). Phonology: Cantonese covers the six tones, Jyutping initials and finals,
 entering tones and tone pairs; Portuguese nasal vowels, open/closed e and o, r/rr,
 lh/nh, Brazilian vs European; Italian double consonants, c/g + e/i, gl/gn, open/closed
-vowels, stress.
+vowels, stress; French nasal vowels, u/ou, silent letters, liaison and enchaînement,
+e caduc, r, accents and spelling.
 
 ## Checking
 

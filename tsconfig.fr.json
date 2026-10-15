@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.fr.tsbuildinfo",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@lang": [
+        "./src/lang/fr/index.ts"
+      ],
+      "@lang/*": [
+        "./src/lang/fr/*"
+      ],
+      "@content/*": [
+        "./content/fr/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "tests/course-fr",
+    "content/**/*.d.ts"
+  ],
+  "exclude": [
+    "src/lang/es",
+    "src/lang/yue",
+    "src/lang/pt",
+    "src/lang/it"
+  ]
+}

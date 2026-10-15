@@ -119,7 +119,7 @@ export default defineConfig({
     // Language-specific suites only run for their own course.
     // tests/course-<code>/ hold tests written in one course's language (they run only for that course);
     // tests/<code>.*.test.ts import their pack directly and run everywhere.
-    exclude: ['**/node_modules/**', 'tests/zz*', ...['es', 'yue', 'pt', 'it'].filter((l) => l !== LANG).map((l) => `tests/course-${l}/**`)],
+    exclude: ['**/node_modules/**', 'tests/zz*', ...['es', 'yue', 'pt', 'it', 'fr'].filter((l) => l !== LANG).map((l) => `tests/course-${l}/**`)],
     coverage: { provider: 'v8', include: ['src/**'] },
   },
 })
