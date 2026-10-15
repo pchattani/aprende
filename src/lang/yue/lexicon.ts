@@ -13,6 +13,7 @@ const WORDS = new Map<string, string>(Object.entries(wordsData as Record<string,
 /** Entries of the generic word list with a wrong reading, or phrases that cut across words. */
 for (const w of ['打畀你', '打畀', '好冇', '冇女', '快啲啦', '冇時', '我有', '十九', '喺唔喺度', '畀咗你', '係呢']) WORDS.delete(w)
 WORDS.set('會唔會', 'wui5 m4 wui5')
+WORDS.set('慢慢行', 'maan6 maan2 haang4')
 /** Course vocabulary: preferred when segmenting. */
 const COURSE = new Set<string>()
 let maxLen = Math.max(2, ...[...WORDS.keys()].map((w) => w.length))
@@ -25,7 +26,7 @@ let maxLen = Math.max(2, ...[...WORDS.keys()].map((w) => w.length))
 const COLLOQUIAL: Record<string, string> = {
   平: 'peng4', 請: 'ceng2', 近: 'kan5', 着: 'zoek3', 名: 'meng2', 樣: 'joeng2', 會: 'wui5', 輕: 'heng1', 聽: 'teng1', 生: 'saang1',
   青: 'ceng1', 驚: 'geng1', 病: 'beng6', 命: 'meng6', 返: 'faan1', 成: 'seng4', 呀: 'aa3', 咪: 'mai6', 㗎: 'gaa3', 吓: 'haa5',
-  位: 'wai2', 相: 'soeng2', 袋: 'doi2',
+  位: 'wai2', 相: 'soeng2', 袋: 'doi2', 淡: 'taam5', 到: 'dou3',
 }
 
 /** Add course vocabulary: its readings win over the generic word list. */
@@ -63,7 +64,9 @@ export interface Segment {
 }
 
 /** One-character words that usually stand alone, so ties split next to them (海邊 + 有, 有 + 時間). */
-const STANDALONE = new Set([...'有冇係喺我你佢唔都就好嘅咗緊過去嚟同定又再仲會要想識畀等可'])
+/** Verbs after which 到 marks the result, read dou2 (睇到 "see", 搵到 "find"). */
+const RESULT_DOU2 = new Set([...'睇聽搵見揾捉買收諗做識食飲拎攞得遇撞感覺接找猜估'])
+const STANDALONE = new Set([...'有冇係喺我你佢唔都就好嘅咗緊過去嚟同定又再仲會要想識畀等可行食飲睇講買坐企走玩'])
 
 /**
  * Segment a run of Han characters into the fewest words; ties go to course vocabulary,
@@ -118,6 +121,11 @@ export function segment(text: string): Segment[] {
     if (s.kind !== 'han' || s.text !== '呢') return
     const next = out.slice(i + 1).find((x) => x.kind !== 'space')
     if (next?.kind === 'han' && !PARTICLES.has(next.text)) s.syl = ['nei1']
+  })
+  // 到 after a verb of perceiving or getting is the result dou2 (睇到, 搵到); otherwise dou3 (到咗, 去到, 攰到)
+  out.forEach((s, i) => {
+    const prev = out[i - 1]
+    if (s.kind === 'han' && s.text === '到' && prev?.kind === 'han' && RESULT_DOU2.has([...prev.text].pop()!)) s.syl = ['dou2']
   })
   // 吓 after a verb is the suffix haa5 "a bit" (試吓, 行吓); on its own it is the interjection haa2
   out.forEach((s, i) => {
