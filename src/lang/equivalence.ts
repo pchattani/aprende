@@ -8,7 +8,8 @@
  * are equivalent when they share at least one group. Multi-word members
  * ("echar de menos") are folded into a group token before comparison.
  */
-import { stripAccents } from './es/normalize'
+import { stripAccents } from '@lang/normalize'
+import { explainConfig } from '@lang/explain'
 
 export interface Equivalence {
   /** multi-word phrase (lowercase, single spaces) → group ids */
@@ -52,11 +53,10 @@ export function buildEquivalence(groups: string[][]): Equivalence {
 /** A token after folding: a plain word, or a phrase folded into its group ids. */
 type Tok = { w: string; groups: Set<number> }
 
-/** Subject pronouns Spanish speakers routinely drop; stripped at the start of the answer. */
-const ES_SUBJECTS = new Set(['yo', 'tú', 'vos', 'él', 'ella', 'usted', 'nosotros', 'nosotras', 'vosotros', 'vosotras', 'ellos', 'ellas', 'ustedes'])
-const ES_EMPHATIC = new Map<string, string>([['a mí', 'me'], ['a ti', 'te'], ['a él', 'le'], ['a ella', 'le'], ['a usted', 'le'], ['a nosotros', 'nos'], ['a nosotras', 'nos'], ['a vosotros', 'os'], ['a vosotras', 'os'], ['a ellos', 'les'], ['a ellas', 'les'], ['a ustedes', 'les']])
-const ES_OBJECT = new Set(['me', 'te', 'le', 'nos', 'os', 'les', 'lo', 'la', 'los', 'las', 'se'])
-const ES_NOT_AFTER_SUBJECT = new Set(['y', 'o', 'también', 'tampoco', 'mismo', 'misma', 'solo', 'sola'])
+/** Subject pronouns the target language routinely drops (from the pack); stripped at the start of the answer. */
+const ES_SUBJECTS = explainConfig.subjects
+const ES_EMPHATIC = explainConfig.emphatic
+const ES_NOT_AFTER_SUBJECT = explainConfig.notAfterSubject
 
 function words(text: string): string[] {
   return [...(text.toLowerCase().match(WORD_RE) ?? [])]
@@ -67,8 +67,6 @@ function dropOptionalSpanish(t: string[]): string[] {
   if (out.length >= 3 && ES_EMPHATIC.get(`${out[0]} ${out[1]}`) === out[2]) out.splice(0, 2)
   // Leading subject pronoun before a verb. "él" with accent only (never the article "el"); "tú" never "tu".
   if (out.length >= 2 && ES_SUBJECTS.has(out[0]!) && !ES_NOT_AFTER_SUBJECT.has(out[1]!)) out.shift()
-  // Subject pronoun right after "no" or a leading object pronoun is rarer; leave it.
-  void ES_OBJECT
   return out
 }
 

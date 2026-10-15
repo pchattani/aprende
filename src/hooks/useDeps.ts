@@ -1,11 +1,11 @@
 import { useMemo } from 'react'
-import { vocab, errorRules, spanishSynonymGroups, englishSynonymGroups } from '../engine/loader'
+import { vocab, errorRules, targetSynonymGroups, englishSynonymGroups } from '../engine/loader'
 import { buildEquivalence, compareEquivalent } from '../lang/equivalence'
-import { IRREGULAR } from '../lang/es/verbs'
-import { buildDictionary, lookup, type Dictionary } from '../lang/es/inflect'
-import { check } from '../lang/es/checker'
-import { spanish } from '../lang/es'
-import { conjugate } from '../lang/es/verbs'
+import { IRREGULAR } from '@lang/verbs'
+import { buildDictionary, lookup, type Dictionary } from '@lang/inflect'
+import { check } from '@lang/checker'
+import { languagePack } from '@lang'
+import { conjugate } from '@lang/verbs'
 import type { GradeDeps } from '../engine/grade'
 import type { ExplainDeps } from '../engine/explain'
 
@@ -23,8 +23,9 @@ export function checkText(text: string) {
 let eqEs: ReturnType<typeof buildEquivalence> | undefined
 let eqEn: ReturnType<typeof buildEquivalence> | undefined
 export function equivEs(given: string, expected: string) {
-  if (!eqEs) eqEs = buildEquivalence(spanishSynonymGroups())
-  return compareEquivalent(given, expected, eqEs, 'es')
+  // Cantonese compares in Jyutping, so synonym groups and answers go through `comparable`.
+  if (!eqEs) eqEs = buildEquivalence(targetSynonymGroups().map((g) => g.map(languagePack.comparable)))
+  return compareEquivalent(languagePack.comparable(given), languagePack.comparable(expected), eqEs, 'es')
 }
 export function equivEn(given: string, expected: string) {
   if (!eqEn) eqEn = buildEquivalence(englishSynonymGroups)
@@ -41,5 +42,5 @@ export function lookupForm(form: string) {
 export const explainDeps: ExplainDeps = { lookup: lookupForm, conjugate }
 
 export function useGradeDeps(): GradeDeps {
-  return useMemo(() => ({ pack: spanish, check: checkText, equivEs, equivEn, isWord }), [])
+  return useMemo(() => ({ pack: languagePack, check: checkText, equivEs, equivEn, isWord }), [])
 }

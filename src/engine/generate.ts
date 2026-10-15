@@ -2,19 +2,20 @@
  * Builds the exercise sequence for a lesson or a review session from content
  * plus learner state. Deterministic for a given seed.
  */
-import type { Lesson, Sentence, VocabEntry, ExerciseKind, IrregularVerb, Exchange, MiniText } from './schema'
+import type { Lesson, Sentence, VocabEntry, ExerciseKind, Exchange, MiniText } from './schema'
 import type { Exercise, Stage, ChoiceExercise, WordBankExercise, TypeExercise, MatchExercise, FindErrorExercise, ItemKind, PinRow } from './types'
 import { kindsFor } from './ladder'
 import { Rng, hashString } from './random'
-import { words as wordsOf, stripAccents } from '../lang/es/normalize'
-import { conjugate, TENSE_LABELS, PERSONS, type Tense } from '../lang/es/conjugator'
-import { inflections } from '../lang/es/inflect'
+import { words as wordsOf, stripAccents } from '@lang/normalize'
+import { conjugateWith, TENSE_LABELS, PERSONS, VERB_TRAINER, type Tense, type VerbTable } from '@lang/verbs'
+import { inflections } from '@lang/inflect'
+import { explainConfig } from '@lang/explain'
 
 export interface GenContext {
   vocab: Map<string, VocabEntry>
   /** Vocabulary pool for distractors (same level or below). */
   pool: VocabEntry[]
-  verbs: ReadonlyMap<string, IrregularVerb>
+  verbs: VerbTable
   /** Stage per item id; undefined = never seen. */
   stageOf: (id: string) => Stage | undefined
   /** Speech recognition available -> allow 'speak' exercises. */
@@ -84,9 +85,9 @@ export function replyExercise(x: Exchange, id: string, lesson: Lesson, rng: Rng)
   const options = rng.shuffle([x.a.es, ...others.slice(0, 3)])
   return { kind: 'reply', items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.es, audio: x.q.es, options, answer: options.indexOf(x.a.es), translation: `${x.q.en} — ${x.a.en}`, review: reviewOfExchange(x) }
 }
-/** Typed reply: the question in Spanish, the expected reply given in English. */
+/** Typed reply: the question in the target language, the expected reply given in English. */
 export function replyTyped(x: Exchange, id: string): TypeExercise {
-  return { kind: 'typeEs', items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.es, audio: x.q.es, hint: `Reply in Spanish: “${x.a.en}”`, answers: [x.a.es, ...x.alt], translation: x.a.en, review: reviewOfExchange(x) }
+  return { kind: 'typeEs', items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.es, audio: x.q.es, hint: `Reply in ${explainConfig.languageName}: “${x.a.en}”`, answers: [x.a.es, ...x.alt], translation: x.a.en, review: reviewOfExchange(x) }
 }
 /** Spoken reply: hear the question, answer aloud. */
 export function replyAloud(x: Exchange, id: string): TypeExercise {
@@ -510,7 +511,7 @@ interface VerbInfo {
   person: number
 }
 
-const SKIP_TENSES = new Set<Tense>(['impNeg', 'impAff'])
+const SKIP_TENSES = new Set<string>(VERB_TRAINER.skipInExercises)
 
 /** Find a conjugated verb in the sentence whose lemma is lesson vocabulary (or any vocab verb when `any`). */
 function findVerbForm(es: string, lesson: Lesson, ctx: GenContext, any = false): VerbInfo | undefined {
@@ -519,10 +520,10 @@ function findVerbForm(es: string, lesson: Lesson, ctx: GenContext, any = false):
   for (const id of verbIds) {
     const v = ctx.vocab.get(id)
     if (!v || v.pos !== 'verb') continue
-    const lemma = v.lemma.toLowerCase().replace(/se$/, '')
+    const lemma = VERB_TRAINER.baseLemma(v.lemma)
     let c
     try {
-      c = conjugate(lemma, ctx.verbs)
+      c = conjugateWith(lemma, ctx.verbs)
     } catch {
       continue
     }

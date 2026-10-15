@@ -6,6 +6,8 @@ import { DOG_NAMES } from '../engine/dogs'
 import { wearableSouvenirs, type WearSlot } from '../engine/journey'
 import { useOutfits, setOutfit, type DogName } from '../hooks/useOutfits'
 import { useSouvenirs } from '../hooks/useProgress'
+import { TL } from '../engine/course'
+import { ui } from '../engine/loader'
 
 const SLOTS: { slot: WearSlot; label: string; emoji: string }[] = [
   { slot: 'hat', label: 'On the head', emoji: '🎩' },
@@ -29,7 +31,7 @@ export default function Perros() {
   const equip = (slot: WearSlot, id: string | undefined) => void setOutfit(outfits, dog, slot, id)
   return (
     <div className="animate-rise pb-6">
-      <PageHeader title="Los perros" subtitle="Dress Leo, Bonchita and Luna with the souvenirs they find on quests." />
+      <PageHeader title={ui.dogsPage} subtitle="Dress Leo, Bonchita and Luna with the souvenirs they find on quests." />
       <div className="mb-4 flex gap-1 rounded-full bg-surface-2 p-1" role="tablist" aria-label="Choose a dog">
         {(['leo', 'bonchita', 'luna'] as DogName[]).map((d) => (
           <button key={d} type="button" role="tab" aria-selected={dog === d} onClick={() => setDog(d)} className={`flex-1 rounded-full py-1.5 text-sm font-extrabold transition ${dog === d ? 'bg-brand-gradient text-white shadow-md' : 'text-muted'}`}>
@@ -70,7 +72,7 @@ export default function Perros() {
                       className={`flex items-center gap-1.5 rounded-full border-2 px-3 py-1.5 text-sm font-bold transition ${on ? 'border-brand-500 bg-brand-100 dark:bg-brand-500/20' : have ? 'border-line bg-surface' : 'border-dashed border-line opacity-50'}`}
                     >
                       <span aria-hidden="true">{have ? sv.emoji : '❔'}</span>
-                      <span lang="es">{have ? sv.es : 'Find it on a quest'}</span>
+                      <span lang={TL}>{have ? sv.es : 'Find it on a quest'}</span>
                     </button>
                   </li>
                 )

@@ -7,9 +7,10 @@
 import type { Exercise } from './types'
 import type { VocabEntry } from './schema'
 import type { Answer } from './grade'
-import { stripAccents } from '../lang/es/normalize'
+import { stripAccents } from '@lang/normalize'
 import { editDistance } from '../lang/equivalence'
-import { TENSE_LABELS, type Conjugation, type Tense } from '../lang/es/conjugator'
+import { TENSE_LABELS, PERSONS, type Conjugation, type Tense } from '@lang/verbs'
+import { explainConfig as C } from '@lang/explain'
 
 export interface ExplainDeps {
   lookup: (form: string) => VocabEntry[] | undefined
@@ -23,15 +24,13 @@ export interface Explanation {
   hints: string[]
 }
 
-const PERSON = ['yo', 'tú', 'él/ella/usted', 'nosotros', 'vosotros', 'ellos/ellas/ustedes']
-const ARTICLES = new Set(['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'del', 'al', 'lo'])
-const PREPS = new Set(['a', 'de', 'en', 'con', 'por', 'para', 'sin', 'sobre', 'desde', 'hasta', 'hacia', 'entre'])
-const SER = new Set(['soy', 'eres', 'es', 'somos', 'sois', 'son', 'era', 'eras', 'éramos', 'erais', 'eran', 'fui', 'fue', 'fueron', 'sea', 'seas', 'sean', 'ser', 'sido', 'será'])
-const ESTAR = new Set(['estoy', 'estás', 'está', 'estamos', 'estáis', 'están', 'estaba', 'estabas', 'estábamos', 'estaban', 'estuve', 'estuvo', 'esté', 'estés', 'estén', 'estar', 'estado', 'estará'])
+const PERSON = PERSONS.map((p) => p.replace(/\s*\/\s*/g, '/'))
+const ARTICLES = C.articles
+const PREPS = C.preps
 
 const WORD_RE = /[\p{L}\p{N}']+/gu
-const words = (s: string) => [...(s.match(WORD_RE) ?? [])]
-const key = (w: string) => stripAccents(w.toLowerCase())
+const words = C.tokens ?? ((s: string) => [...(s.match(WORD_RE) ?? [])])
+const key = C.key ?? ((w: string) => stripAccents(w.toLowerCase()))
 
 /** Longest-common-subsequence diff of two word lists (accent-insensitive equality). */
 export function diffWords(given: string[], expected: string[]): DiffTok[] {
@@ -74,6 +73,7 @@ function verbSlots(form: string, lemma: string, deps: ExplainDeps): { tense: Ten
   const c = deps.conjugate(lemma)
   const out: { tense: Tense; person: number }[] = []
   for (const [t, forms] of Object.entries(c.forms) as [Tense, (string | null)[]][]) {
+    if (!forms) continue
     forms.forEach((f, p) => {
       if (f && f.split(' ').pop()!.toLowerCase() === form.toLowerCase()) out.push({ tense: t, person: p })
     })
@@ -94,17 +94,14 @@ function gloss(form: string, deps: ExplainDeps): string | undefined {
 function replacementHint(g: string, e: string, next: string | undefined, deps: ExplainDeps): string {
   const gl = g.toLowerCase()
   const el = e.toLowerCase()
-  if (stripAccents(gl) === stripAccents(el)) return `Accent: write “${e}”, not “${g}”.`
-  if ((SER.has(gl) && ESTAR.has(el)) || (ESTAR.has(gl) && SER.has(el))) {
-    return ESTAR.has(el) ? `Use estar (“${e}”) here: location, a temporary state or a result.` : `Use ser (“${e}”) here: identity, origin, profession, time or a lasting quality.`
+  if (key(gl) === key(el)) return C.accentHint(g, e)
+  for (const p of C.pairs) {
+    if (p.a.has(gl) && p.b.has(el)) return p.useB(e)
+    if (p.b.has(gl) && p.a.has(el)) return p.useA(e)
   }
   if (ARTICLES.has(gl) && ARTICLES.has(el)) {
     const noun = next ? deps.lookup(next)?.find((x) => x.pos === 'noun') : undefined
-    const g2 = noun?.gender === 'f' ? 'feminine' : noun?.gender === 'm' ? 'masculine' : undefined
-    return g2 && next ? `Article: “${e}”, because “${next}” is ${g2}${/s$/.test(next) ? ' plural' : ''}.` : `Article: “${e}”, not “${g}”.`
-  }
-  if ((gl === 'por' && el === 'para') || (gl === 'para' && el === 'por')) {
-    return el === 'para' ? `“para”, not “por”: purpose, destination, deadline or recipient.` : `“por”, not “para”: cause, means, exchange, duration or movement through a place.`
+    return next ? C.articleHint(e, noun, next, g) : `Article: “${e}”, not “${g}”.`
   }
   if (PREPS.has(gl) && PREPS.has(el)) return `Preposition: “${e}”, not “${g}”.`
   const ge = deps.lookup(gl)
@@ -123,11 +120,7 @@ function replacementHint(g: string, e: string, next: string | undefined, deps: E
       }
       return `Verb form: “${e}” (from ${shared.lemma}), not “${g}”.`
     }
-    const plural = /s$/.test(el) && !/s$/.test(gl)
-    const singular = !/s$/.test(el) && /s$/.test(gl)
-    const fem = /as?$/.test(el) && /os?$/.test(gl)
-    const masc = /os?$/.test(el) && /as?$/.test(gl)
-    const bits = [fem && 'feminine', masc && 'masculine', plural && 'plural', singular && 'singular'].filter(Boolean)
+    const bits = C.agreement(gl, el)
     if (bits.length) return `Agreement: “${e}” (${bits.join(', ')}), to match the word it describes.`
     return `Form: “${e}”, not “${g}”.`
   }
@@ -141,11 +134,11 @@ function replacementHint(g: string, e: string, next: string | undefined, deps: E
 
 function missingHint(e: string, next: string | undefined, deps: ExplainDeps): string {
   const el = e.toLowerCase()
-  if (el === 'a' && next && /^[A-ZÁÉÍÓÚÑ]/.test(next)) return `Missing “a”: Spanish puts a before a person who is the direct object (personal a).`
-  if (el === 'a') return `Missing “a”.`
-  if (el === 'no') return `Missing “no”: the sentence is negative.`
-  if (el === 'se' || el === 'me' || el === 'te' || el === 'nos' || el === 'os') return `Missing “${e}”: this verb needs its pronoun here.`
-  if (ARTICLES.has(el)) return `Missing article “${e}”: Spanish uses the article here even where English does not.`
+  const special = C.missingHint?.(e, next)
+  if (special) return special
+  if (el === C.negation) return `Missing “${e}”: the sentence is negative.`
+  if (C.objectPronouns.has(el)) return `Missing “${e}”: this verb needs its pronoun here.`
+  if (ARTICLES.has(el)) return C.missingArticle(e)
   if (PREPS.has(el)) return `Missing preposition “${e}”.`
   const g = gloss(el, deps)
   return g ? `Missing word: “${e}” (“${g}”).` : `Missing word: “${e}”.`
@@ -153,7 +146,7 @@ function missingHint(e: string, next: string | undefined, deps: ExplainDeps): st
 
 function extraHint(g: string): string {
   const gl = g.toLowerCase()
-  if (['yo', 'tú', 'él', 'ella', 'nosotros', 'vosotros', 'ellos', 'ellas'].includes(gl)) return `“${g}” is optional here; the verb ending already shows who.`
+  if (C.subjects.has(gl)) return `“${g}” is optional here; the verb ending already shows who.`
   if (ARTICLES.has(gl)) return `No article needed: drop “${g}”.`
   return `“${g}” isn't needed here.`
 }
@@ -187,7 +180,7 @@ export function explainAnswer(ex: Exercise, answer: Answer | undefined, deps: Ex
           const after = ex.prompt.split('____')[1] ?? ''
           hints.push(replacementHint(chosen, right, words(after)[0], deps))
         }
-        else hints.push(cg ? `“${chosen}” means “${cg}”.${rg ? ` “${right}” means “${rg}”.` : ''}` : `The Spanish is “${right}”.`)
+        else hints.push(cg ? `“${chosen}” means “${cg}”.${rg ? ` “${right}” means “${rg}”.` : ''}` : `The ${C.languageName} is “${right}”.`)
       }
       if (ex.translation && ex.kind !== 'choiceEs' && ex.kind !== 'listen') hints.push(`The whole sentence: ${ex.translation}`)
       return { hints }
@@ -210,7 +203,7 @@ export function explainAnswer(ex: Exercise, answer: Answer | undefined, deps: Ex
       const hints: string[] = []
       const sorted = (xs: string[]) => xs.map(key).sort().join(' ')
       if (g.length === e.length && sorted(g) === sorted(e) && g.join(' ') !== e.join(' ')) {
-        hints.push('Right words, different order. Spanish usually puts adjectives after the noun and object pronouns before the verb.')
+        hints.push(C.wordOrder)
         return { diff, hints }
       }
       diff.forEach((t, idx) => {

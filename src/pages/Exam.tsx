@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router'
 import type { Exam as ExamT, LevelId } from '../engine/schema'
 import { loadExam, levels, nextLevel } from '../engine/loader'
 import { recordExam } from '../db/progress'
-import { match } from '../lang/es/normalize'
+import { match } from '@lang/normalize'
 import { checkText } from '../hooks/useDeps'
 import { listenOnce, sttSupported } from '../engine/speech'
 import { pack } from '../engine/loader'
@@ -13,6 +13,7 @@ import { IconX, IconMic, IconTrophy } from '../components/ui/icons'
 import { SPECIAL_CHARS } from '../components/exercises/chars'
 import { playSound } from '../engine/sounds'
 import type { CheckerFinding } from '../lang/types'
+import { TL } from '../engine/course'
 
 type Section = 'reading' | 'listening' | 'grammar' | 'writing' | 'speaking' | 'result'
 const ORDER: Section[] = ['reading', 'listening', 'grammar', 'writing', 'speaking', 'result']
@@ -64,7 +65,7 @@ function ReadingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => 
   return (
     <div>
       <h2 className="mt-3 text-xl font-extrabold">Reading</h2>
-      <div className="card mt-3 whitespace-pre-line text-lg leading-relaxed" lang="es">{exam.reading.text}</div>
+      <div className="card mt-3 whitespace-pre-line text-lg leading-relaxed" lang={TL}>{exam.reading.text}</div>
       <MCQ items={exam.reading.questions.map((q) => ({ prompt: q.q, options: q.options, answer: q.answer }))} onDone={onDone} />
     </div>
   )
@@ -87,7 +88,7 @@ function ListeningSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) =
                 <SpeakerButton text={s} slow size="sm" />
                 <span className="text-sm text-muted">Sentence {i + 1}</span>
               </div>
-              <textarea value={typed[i]} onChange={(e) => setTyped((t) => t.map((x, k) => (k === i ? e.target.value : x)))} rows={2} lang="es" className="mt-2 w-full rounded-xl border-2 border-line bg-surface-2 p-2 outline-none focus:border-sky-500" aria-label={`Dictation ${i + 1}`} />
+              <textarea value={typed[i]} onChange={(e) => setTyped((t) => t.map((x, k) => (k === i ? e.target.value : x)))} rows={2} lang={TL} className="mt-2 w-full rounded-xl border-2 border-line bg-surface-2 p-2 outline-none focus:border-sky-500" aria-label={`Dictation ${i + 1}`} />
             </div>
           ))}
           <div className="flex flex-wrap gap-1.5">{SPECIAL_CHARS.map((c) => <span key={c} className="rounded-lg border-2 border-line px-2 py-0.5 text-sm font-bold text-muted">{c}</span>)}</div>
@@ -141,9 +142,9 @@ function WritingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => 
           <p className="font-bold">{exam.writing.prompt}</p>
           <p className="mt-1 text-xs text-muted">At least {exam.writing.minWords} words. No dictionary.</p>
         </div>
-        <textarea value={text} onChange={(e) => setText(e.target.value)} rows={8} lang="es" className="mt-3 w-full rounded-2xl border-2 border-line bg-surface-2 p-3 text-lg outline-none focus:border-sky-500" aria-label="Your text" />
+        <textarea value={text} onChange={(e) => setText(e.target.value)} rows={8} lang={TL} className="mt-3 w-full rounded-2xl border-2 border-line bg-surface-2 p-3 text-lg outline-none focus:border-sky-500" aria-label="Your text" />
         <div className="mt-2 flex flex-wrap gap-1.5">
-          {SPECIAL_CHARS.map((c) => <button key={c} type="button" onClick={() => setText((t) => t + c)} className="rounded-lg border-2 border-line bg-surface px-2.5 py-1 font-bold" lang="es">{c}</button>)}
+          {SPECIAL_CHARS.map((c) => <button key={c} type="button" onClick={() => setText((t) => t + c)} className="rounded-lg border-2 border-line bg-surface px-2.5 py-1 font-bold" lang={TL}>{c}</button>)}
         </div>
         <p className="mt-2 text-sm text-muted">{words} words</p>
         <Button className="mt-3 w-full" disabled={words < exam.writing.minWords} onClick={() => setSubmitted(true)}>Submit</Button>
@@ -158,7 +159,7 @@ function WritingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => 
       <h2 className="mt-3 text-xl font-extrabold">Writing — review your text</h2>
       <div className="card mt-3">
         <p className="text-xs font-bold uppercase tracking-wide text-muted">Your text</p>
-        <p className="mt-1 whitespace-pre-line" lang="es">{text}</p>
+        <p className="mt-1 whitespace-pre-line" lang={TL}>{text}</p>
       </div>
       <div className="card mt-3">
         <p className="text-xs font-bold uppercase tracking-wide text-muted">Automatic check · {serious.length} issue{serious.length === 1 ? '' : 's'}</p>
@@ -172,7 +173,7 @@ function WritingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => 
       </div>
       <div className="card mt-3">
         <p className="text-xs font-bold uppercase tracking-wide text-muted">Model answer</p>
-        <p className="mt-1 whitespace-pre-line text-sm" lang="es">{exam.writing.modelAnswer}</p>
+        <p className="mt-1 whitespace-pre-line text-sm" lang={TL}>{exam.writing.modelAnswer}</p>
       </div>
       <div className="card mt-3">
         <p className="text-xs font-bold uppercase tracking-wide text-muted">Self-assessment — be honest, tick what your text does</p>
@@ -198,7 +199,7 @@ function SpeakingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) =>
   const [busy, setBusy] = useState<number | undefined>()
   const record = async (i: number) => {
     setBusy(i)
-    const r = await listenOnce(pack.tts.lang)
+    const r = await listenOnce(pack.stt ?? pack.tts.lang)
     setBusy(undefined)
     const m = match(r.transcript, [exam.speaking[i]!])
     const alt = r.alternatives.some((a) => match(a, [exam.speaking[i]!]).verdict !== 'wrong')
@@ -214,7 +215,7 @@ function SpeakingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) =>
           <li key={i} className="card">
             <div className="flex items-center gap-3">
               <SpeakerButton text={s} size="sm" />
-              <p className="flex-1 font-bold" lang="es">{s}</p>
+              <p className="flex-1 font-bold" lang={TL}>{s}</p>
               {supported ? (
                 <button type="button" onClick={() => void record(i)} className={`flex h-10 w-10 items-center justify-center rounded-full text-white ${busy === i ? 'animate-pulse bg-bad-500' : 'bg-sky-500'}`} aria-label="Record"><IconMic width={20} height={20} /></button>
               ) : (

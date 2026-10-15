@@ -20,8 +20,19 @@ if (ttsSupported()) {
   window.speechSynthesis.addEventListener?.('voiceschanged', loadVoices)
 }
 
-export function spanishVoices(lang = 'es'): SpeechSynthesisVoice[] {
-  return loadVoices().filter((v) => v.lang.toLowerCase().startsWith(lang.toLowerCase()))
+/**
+ * Voices for the course language. Matches on the primary language subtag (any
+ * Spanish or Portuguese voice), except Chinese, where only Cantonese voices
+ * (zh-HK, yue) count.
+ */
+export function targetVoices(lang = 'es-ES'): SpeechSynthesisVoice[] {
+  const l = lang.toLowerCase()
+  const primary = l.split('-')[0]!
+  const cantonese = primary === 'zh' || primary === 'yue'
+  return loadVoices().filter((v) => {
+    const vl = v.lang.toLowerCase().replace('_', '-')
+    return cantonese ? vl.startsWith('zh-hk') || vl.startsWith('yue') : vl.split('-')[0] === primary
+  })
 }
 
 export interface SpeakOptions {
@@ -39,7 +50,8 @@ export function pickVoice(opts: SpeakOptions): SpeechSynthesisVoice | undefined 
   }
   const lang = (opts.lang ?? 'es-ES').toLowerCase()
   const exact = voices.filter((v) => v.lang.toLowerCase().replace('_', '-') === lang)
-  const any = voices.filter((v) => v.lang.toLowerCase().startsWith(lang.split('-')[0]!))
+  // Never fall back to a Mandarin voice for Cantonese: targetVoices only accepts zh-HK / yue.
+  const any = targetVoices(lang)
   for (const name of opts.preferred ?? []) {
     const v = [...exact, ...any].find((x) => x.name.includes(name))
     if (v) return v

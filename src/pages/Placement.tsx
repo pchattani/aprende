@@ -7,6 +7,7 @@ import { Button, ProgressBar, SpeakerButton } from '../components/ui/basics'
 import { IconX, IconTrophy } from '../components/ui/icons'
 import { playSound } from '../engine/sounds'
 import type { LevelId } from '../engine/schema'
+import { tlOf } from '../engine/course'
 
 interface Hook {
   placement: { index: number; total: number; answer: number; stage: LevelId }
@@ -145,7 +146,7 @@ export default function Placement() {
           <p className="text-sm font-bold text-muted">{item.kind === 'vocab' ? 'What does this word mean?' : 'Choose the correct option'}</p>
           <div className="mt-2 flex items-center gap-3">
             {item.kind === 'vocab' && <SpeakerButton text={item.prompt} size="sm" />}
-            <p className="text-2xl font-extrabold" lang={item.lang}>{item.prompt}</p>
+            <p className="text-2xl font-extrabold" lang={tlOf(item.lang)}>{item.prompt}</p>
           </div>
           <div className="mt-5 grid gap-2" role="radiogroup" aria-label="Options">
             {item.options.map((o, i) => (

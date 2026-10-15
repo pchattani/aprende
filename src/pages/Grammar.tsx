@@ -6,7 +6,8 @@ import { GrammarNoteView } from '../components/GrammarNote'
 import { PageHeader, Button, Chip } from '../components/ui/basics'
 import { IconArrowLeft, IconSearch } from '../components/ui/icons'
 import { useAllCards } from '../hooks/useProgress'
-import { stripAccents } from '../lang/es/normalize'
+import { stripAccents } from '@lang/normalize'
+import { TL } from '../engine/course'
 
 export default function Grammar() {
   const { id } = useParams()
@@ -37,7 +38,7 @@ export default function Grammar() {
             <ul className="space-y-1 text-sm">
               {note.drills.map((d, i) => (
                 <li key={i} className="rounded-xl bg-surface-2 p-2">
-                  <span className="font-semibold" lang="es">{d.es}</span> <span className="text-muted">— {d.en}</span>
+                  <span className="font-semibold" lang={TL}>{d.es}</span> <span className="text-muted">— {d.en}</span>
                 </li>
               ))}
             </ul>

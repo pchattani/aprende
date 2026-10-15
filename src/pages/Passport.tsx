@@ -9,6 +9,7 @@ import { useLessonRows, useSouvenirs, useKvPrefix } from '../hooks/useProgress'
 import { useOutfits } from '../hooks/useOutfits'
 import { units } from '../engine/loader'
 import type { QuizRecord } from './RegionQuiz'
+import { TL } from '../engine/course'
 
 export default function Passport() {
   const rows = useLessonRows()
@@ -79,7 +80,7 @@ export default function Passport() {
                   <li key={sv.id} className={`flex items-start gap-2 rounded-2xl p-2 ${have ? 'bg-gold-100/70 dark:bg-gold-500/10' : 'bg-surface-2 opacity-60'}`}>
                     <span className="text-2xl" aria-hidden="true">{have ? sv.emoji : '❔'}</span>
                     <span className="min-w-0">
-                      <span className="block text-sm font-extrabold leading-tight" lang="es">{have ? sv.es : '?????'}</span>
+                      <span className="block text-sm font-extrabold leading-tight" lang={TL}>{have ? sv.es : '?????'}</span>
                       <span className="block text-[11px] text-muted">{have ? sv.blurb : sv.en}{have && sv.wearable ? ' · wearable' : ''}</span>
                     </span>
                   </li>

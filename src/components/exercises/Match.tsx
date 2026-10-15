@@ -3,6 +3,8 @@ import type { MatchExercise } from '../../engine/types'
 import { Rng, hashString } from '../../engine/random'
 import { useSpeak } from '../../hooks/useSpeak'
 import { Instruction, type ExerciseProps } from './shared'
+import { TL } from '../../engine/course'
+import { TargetText } from '../ui/TargetText'
 
 export function Match({ exercise, onChange, onSubmit, checked }: ExerciseProps<MatchExercise>) {
   const { say } = useSpeak()
@@ -53,7 +55,7 @@ export function Match({ exercise, onChange, onSubmit, checked }: ExerciseProps<M
     <div>
       <Instruction>Tap the matching pairs</Instruction>
       <div className="grid grid-cols-2 gap-2">
-        <div className="grid gap-2" lang="es">
+        <div className="grid gap-2" lang={TL}>
           {exercise.pairs.map((p, i) => (
             <button
               key={i}
@@ -64,8 +66,9 @@ export function Match({ exercise, onChange, onSubmit, checked }: ExerciseProps<M
                 void say(p.left)
               }}
               className={`tile min-h-14 ${done.has(i) ? 'correct opacity-60' : flash?.l === i ? 'wrong' : left === i ? 'selected' : ''}`}
+              data-tile={p.left}
             >
-              {p.left}
+              <TargetText text={p.left} />
             </button>
           ))}
         </div>
@@ -77,6 +80,7 @@ export function Match({ exercise, onChange, onSubmit, checked }: ExerciseProps<M
               disabled={checked || rightDone.has(r)}
               onClick={() => pickRight(i)}
               className={`tile min-h-14 ${rightDone.has(r) ? 'correct opacity-60' : flash?.r === i ? 'wrong' : right === i ? 'selected' : ''}`}
+              data-tile={r}
             >
               {r}
             </button>

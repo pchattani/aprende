@@ -12,6 +12,8 @@ export const LEVEL_ORDER: LevelId[] = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2']
 
 export const PartOfSpeech = z.enum([
   'noun', 'verb', 'adj', 'adv', 'prep', 'conj', 'pron', 'det', 'num', 'interj', 'phrase',
+  // Cantonese: measure words (個, 隻, 本) and sentence-final / aspect particles (呀, 咗, 緊)
+  'classifier', 'particle',
 ])
 export type PartOfSpeech = z.infer<typeof PartOfSpeech>
 
@@ -42,8 +44,72 @@ export const PackSchema = z.object({
     alternatives: z.array(z.object({ code: z.string(), label: z.string() })).default([]),
   }),
   tts: z.object({ lang: z.string(), preferredVoices: z.array(z.string()).default([]) }),
+  /** Speech-recognition locale (defaults to the TTS language). */
+  stt: z.string().optional(),
+  /** Path segment under the site (`''` for the root course, `cantonese` → /aprende/cantonese/). */
+  slug: z.string().default(''),
+  flag: z.string().default('🌍'),
+  features: z
+    .object({
+      /** Verb conjugation tables and conjugate exercises. */
+      conjugation: z.boolean().default(true),
+      /** Grammatical gender on nouns (articles, agreement). */
+      gender: z.boolean().default(true),
+      /** Romanisation shown above the script (Cantonese Jyutping). */
+      romanization: z.enum(['none', 'jyutping']).default('none'),
+      /** Measure words on nouns and a classifier trainer. */
+      classifiers: z.boolean().default(false),
+    })
+    .default({ conjugation: true, gender: true, romanization: 'none', classifiers: false }),
+  /** Characters offered on the helper row under text boxes. */
+  specialChars: z.array(z.string()).default([]),
 })
 export type Pack = z.infer<typeof PackSchema>
+
+// ---------------------------------------------------------------------------
+// ui.yaml: interface text in the target language
+const Line = z.object({ es: z.string(), en: z.string() })
+export const UiSchema = z.object({
+  appName: z.string(),
+  tagline: z.string(),
+  welcome: z.object({ title: z.string(), intro: z.string(), firstStop: z.string() }),
+  greetings: z.object({ morning: z.string(), afternoon: z.string(), evening: z.string() }),
+  feedback: z.object({ correct: z.string(), almost: z.string(), goalDone: z.string() }),
+  stampEarned: z.string(),
+  spicyName: z.string(),
+  games: z.object({ name: z.string(), memory: z.string(), rapid: z.string(), win: z.string() }),
+  dogsPage: z.string(),
+  quizGreat: z.string(),
+  whatDoesItMean: z.string(),
+  badgeName: z.string(),
+  typePlaceholder: z.string(),
+  voiceTest: z.string(),
+  voiceHelp: z.string(),
+  pronunciationIntro: z.string(),
+  cheers: z.array(Line).min(3),
+  quests: z.record(z.string(), z.string()),
+  dogLines: z.object({ leo: z.array(z.string()).min(3), bonchita: z.array(z.string()).min(3), luna: z.array(z.string()).min(3) }),
+  unitStickers: z.record(z.string(), z.string()).default({}),
+})
+export type Ui = z.infer<typeof UiSchema>
+
+// ---------------------------------------------------------------------------
+// journey.yaml: regions (one per level) and stops (one per unit, in order), souvenirs
+export const WearSlot = z.enum(['hat', 'neck', 'mouth', 'paw'])
+export const JourneySchema = z.object({
+  regions: z.array(
+    z.object({
+      level: z.enum(['a1', 'a2', 'b1', 'b2', 'c1', 'c2']),
+      name: z.string(),
+      es: z.string(),
+      stops: z.array(z.object({ name: z.string(), emoji: z.string(), es: z.string(), en: z.string(), fact: Line.optional() })).min(1),
+    }),
+  ),
+  souvenirs: z.array(
+    z.object({ id: z.string().regex(/^[a-z0-9-]+$/), level: z.enum(['a1', 'a2', 'b1', 'b2', 'c1', 'c2']), emoji: z.string(), es: z.string(), en: z.string(), blurb: z.string(), slot: WearSlot.optional() }),
+  ),
+})
+export type JourneyFile = z.infer<typeof JourneySchema>
 
 // ---------------------------------------------------------------------------
 // syllabus.yaml
@@ -95,7 +161,7 @@ export const GrammarFileSchema = z.array(GrammarNote)
 // ---------------------------------------------------------------------------
 // vocab/<level>.yaml : list of lemmas
 export const VocabEntry = z.object({
-  id: z.string().regex(/^w\.[a-z0-9ñáéíóúü-]+(\.[a-z]+)?$/, 'word id like w.casa or w.banco.n'),
+  id: z.string().regex(/^w\.[\p{Ll}0-9-]+(\.[a-z]+)?$/u, 'word id like w.casa or w.banco.n'),
   lemma: z.string(),
   pos: PartOfSpeech,
   gender: Gender.optional(),
@@ -115,6 +181,10 @@ export const VocabEntry = z.object({
   variant: z.record(z.string(), z.string()).optional(),
   notes: z.string().optional(),
   tags: z.array(z.string()).default([]),
+  /** Cantonese: Jyutping of the lemma, syllables separated by spaces (nei5 hou2). */
+  jp: z.string().regex(/^[a-z]+[1-6]( [a-z]+[1-6])*$/).optional(),
+  /** Cantonese: the measure word this noun takes (隻 for 狗). */
+  cl: z.string().optional(),
 })
 export type VocabEntry = z.infer<typeof VocabEntry>
 export const VocabFileSchema = z.array(VocabEntry)
@@ -159,6 +229,8 @@ export const Sentence = Pair.extend({
   note: z.string().optional(),
   /** Latin American (or other regional) way of saying it, shown as a note. */
   variant: z.string().optional(),
+  /** Cantonese: Jyutping override when automatic romanisation would pick the wrong reading. */
+  jp: z.string().optional(),
 })
 export type Sentence = z.infer<typeof Sentence>
 

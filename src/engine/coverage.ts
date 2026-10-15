@@ -1,6 +1,6 @@
 /** How much of a text a learner can read: share of word tokens they know. */
 import type { Token } from '../lang/types'
-import { lookup, type Dictionary } from '../lang/es/inflect'
+import { lookup, type Dictionary } from '@lang/inflect'
 
 export interface Coverage {
   total: number

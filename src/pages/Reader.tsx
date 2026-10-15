@@ -6,14 +6,16 @@ import type { ReadingRow } from '../engine/types'
 import { db } from '../db'
 import { saveReading, deleteReading, ensureCards } from '../db/progress'
 import { useLiveQuery } from 'dexie-react-hooks'
-import { tokenize } from '../lang/es/tokenize'
+import { tokenize } from '@lang/tokenize'
 import { coverage, readability } from '../engine/coverage'
-import { lookup } from '../lang/es/inflect'
+import { lookup } from '@lang/inflect'
 import { getDictionary } from '../hooks/useDeps'
 import { useAllCards } from '../hooks/useProgress'
 import { Button, Chip, PageHeader, SpeakerButton, Empty } from '../components/ui/basics'
 import { IconArrowLeft, IconPlus, IconCheck, IconX } from '../components/ui/icons'
-import { stripAccents } from '../lang/es/normalize'
+import { stripAccents } from '@lang/normalize'
+import { TL } from '../engine/course'
+import { LANGUAGE } from '../engine/loader'
 
 export default function Reader() {
   const { id } = useParams()
@@ -29,7 +31,7 @@ function Library() {
   const status = new Map(rows.map((r) => [r.id, r]))
   return (
     <div>
-      <PageHeader title="Reader" subtitle="Graded texts for your level, or paste anything in Spanish." right={<Button variant="ghost" className="px-3 py-2" onClick={() => setImporting(true)}><IconPlus width={18} height={18} /> Import</Button>} />
+      <PageHeader title="Reader" subtitle={`Graded texts for your level, or paste anything in ${LANGUAGE}.`} right={<Button variant="ghost" className="px-3 py-2" onClick={() => setImporting(true)}><IconPlus width={18} height={18} /> Import</Button>} />
       <p className="mb-4 text-sm text-muted">Tap any word for its meaning and add it to your reviews. The meter tells you how much of a text you already know — research suggests 95–98% is the sweet spot for learning.</p>
       {imported.length > 0 && (
         <section className="mb-5">
@@ -84,10 +86,10 @@ function ImportDialog({ onClose, onDone }: { onClose: () => void; onDone: (id: s
   return (
     <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true">
       <div className="card w-full max-w-lg">
-        <p className="text-lg font-extrabold">Import a Spanish text</p>
+        <p className="text-lg font-extrabold">Import a {LANGUAGE} text</p>
         <p className="text-sm text-muted">Paste an article, a story, song lyrics… It stays on this device.</p>
         <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" className="mt-3 w-full rounded-xl border-2 border-line bg-surface-2 p-2 outline-none focus:border-sky-500" aria-label="Title" />
-        <textarea value={text} onChange={(e) => setText(e.target.value)} rows={8} placeholder="Pega el texto aquí…" lang="es" className="mt-2 w-full rounded-xl border-2 border-line bg-surface-2 p-2 outline-none focus:border-sky-500" aria-label="Text" />
+        <textarea value={text} onChange={(e) => setText(e.target.value)} rows={8} placeholder="Pega el texto aquí…" lang={TL} className="mt-2 w-full rounded-xl border-2 border-line bg-surface-2 p-2 outline-none focus:border-sky-500" aria-label="Text" />
         <p className="mt-1 text-xs text-muted">{words} words</p>
         <div className="mt-3 grid grid-cols-2 gap-2">
           <Button variant="ghost" onClick={onClose}>Cancel</Button>
@@ -156,7 +158,7 @@ function ReaderView({ id }: { id: string }) {
           <div key={i} className="card">
             <div className="flex items-start gap-2">
               <SpeakerButton text={p.es} size="sm" />
-              <p className="flex-1 text-lg leading-relaxed" lang="es">
+              <p className="flex-1 text-lg leading-relaxed" lang={TL}>
                 {tokenize(p.es).map((t, j) =>
                   t.kind === 'word' ? (
                     <button key={j} type="button" onClick={() => tapWord(t.text)} className={`rounded px-0.5 ${wordClass(t.text, dict, knownIds)}`}>
@@ -204,7 +206,7 @@ function ReaderView({ id }: { id: string }) {
           <h2 className="mb-2 text-lg font-extrabold">Glossary</h2>
           <ul className="card divide-y divide-[var(--line)] text-sm">
             {bundled.glossary.map((g, i) => (
-              <li key={i} className="flex justify-between py-1.5"><span className="font-bold" lang="es">{g.es}</span><span className="text-muted">{g.en}</span></li>
+              <li key={i} className="flex justify-between py-1.5"><span className="font-bold" lang={TL}>{g.es}</span><span className="text-muted">{g.en}</span></li>
             ))}
           </ul>
         </section>
@@ -232,7 +234,7 @@ function WordPopup({ word, entries, known, onClose }: { word: string; entries: V
       <div className="card w-full max-w-xl rounded-b-none pb-[calc(1rem+env(safe-area-inset-bottom))]" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center gap-3">
           <SpeakerButton text={word} size="sm" />
-          <p className="text-2xl font-extrabold" lang="es">{word}</p>
+          <p className="text-2xl font-extrabold" lang={TL}>{word}</p>
         </div>
         {entries.length === 0 ? (
           <p className="mt-2 text-sm text-muted">Not in the course dictionary yet. Capitalised words are usually names.</p>
@@ -240,12 +242,12 @@ function WordPopup({ word, entries, known, onClose }: { word: string; entries: V
           <ul className="mt-3 space-y-2">
             {entries.map((e) => (
               <li key={e.id} className="rounded-xl bg-surface-2 p-3">
-                <p className="font-bold" lang="es">
+                <p className="font-bold" lang={TL}>
                   {e.pos === 'noun' && e.gender ? `${e.gender === 'f' ? 'la' : 'el'} ` : ''}
                   {e.lemma} <Chip className="ml-1">{e.pos}{e.gender ? ` · ${e.gender}` : ''}</Chip> <Chip tone="brand" className="uppercase">{e.level}</Chip>
                 </p>
                 <p className="text-sm">{e.en.join(', ')}</p>
-                {e.example && <p className="mt-1 text-xs text-muted" lang="es">{e.example.es} — {e.example.en}</p>}
+                {e.example && <p className="mt-1 text-xs text-muted" lang={TL}>{e.example.es} — {e.example.en}</p>}
                 {e.variant && <p className="mt-1 text-xs text-muted">Latin America: {Object.values(e.variant).join(', ')}</p>}
                 {known.has(e.id) ? (
                   <p className="mt-2 text-xs font-bold text-ok-600">In your reviews</p>

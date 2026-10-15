@@ -215,3 +215,7 @@ h2 { line-height: 1.15; }
 @media (prefers-reduced-motion: reduce) {
   .animate-float, .animate-wiggle, .confetti { animation: none; }
 }
+
+/* Jyutping above Cantonese characters */
+ruby.ruby-jp { ruby-position: over; }
+ruby.ruby-jp rt { font-size: 0.48em; font-weight: 600; letter-spacing: 0; opacity: 0.75; font-family: ui-sans-serif, system-ui, sans-serif; }

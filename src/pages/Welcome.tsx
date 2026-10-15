@@ -7,6 +7,7 @@ import { IconStar, IconTrophy, IconBook } from '../components/ui/icons'
 import { Mark } from '../components/ui/Mark'
 import { DogsScene } from '../components/ui/Dogs'
 import type { LevelId } from '../engine/schema'
+import { ui, LANGUAGE } from '../engine/loader'
 
 export default function Welcome() {
   const nav = useNavigate()
@@ -21,22 +22,20 @@ export default function Welcome() {
       <div className="flex items-center gap-3">
         <Mark size={56} className="animate-float" />
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-widest text-brand-600">Aprende</p>
-          <p className="text-sm font-semibold text-muted">Spanish, from your first words to fluency</p>
+          <p className="text-xs font-extrabold uppercase tracking-widest text-brand-600">{ui.appName}</p>
+          <p className="text-sm font-semibold text-muted">{ui.tagline}</p>
         </div>
       </div>
       <DogsScene size={320} className="mt-4" />
-      <h1 className="text-gradient mt-2 text-[2.4rem]">Leo, Bonchita and Luna are off to Argentina</h1>
-      <p className="mt-3 text-lg text-muted">
-        Three small dogs, one big country, and only you can talk to the locals. Luna has the map, Leo has the ball, Bonchita has the appetite. Every unit is a stop on the road from Buenos Aires to the end of the world. Where should the journey start? Everything is open; this just marks the first stop.
-      </p>
+      <h1 className="text-gradient mt-2 text-[2.4rem]">{ui.welcome.title}</h1>
+      <p className="mt-3 text-lg text-muted">{ui.welcome.intro}</p>
 
       <div className="mt-6 grid gap-3">
         <button type="button" onClick={() => void start('a1')} className="card flex items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient text-white"><IconStar /></span>
           <span>
-            <span className="block font-extrabold">I'm new to Spanish</span>
-            <span className="block text-sm text-muted">Land in Buenos Aires: A1, lesson 1.</span>
+            <span className="block font-extrabold">I'm new to {LANGUAGE}</span>
+            <span className="block text-sm text-muted">{ui.welcome.firstStop}</span>
           </span>
         </button>
         <button type="button" onClick={() => nav('/placement')} className="card flex items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">

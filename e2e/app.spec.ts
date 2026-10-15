@@ -31,7 +31,7 @@ test('complete the first lesson and unlock the next lesson', async ({ page }) =>
     if (guard <= 3) {
       // Every answer shows what was practised in Spanish and in English.
       const status = page.getByRole('status')
-      await expect(status.locator('[lang="es"]').first()).toBeVisible()
+      await expect(status.locator('[lang^="es"]').first()).toBeVisible()
       await expect(status.locator('[lang="en"]').first()).toBeVisible()
       if (hook.exercise.review) await expect(status.getByText(hook.exercise.review.en, { exact: false }).first()).toBeVisible()
     }

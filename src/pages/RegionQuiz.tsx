@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import type { LevelId, Unit } from '../engine/schema'
-import { levels, loadUnit, loadExam, vocab, units as unitIndex } from '../engine/loader'
+import { levels, loadUnit, loadExam, vocab, ui, units as unitIndex } from '../engine/loader'
 import { lessonRows, getKv, setKv, awardSouvenir } from '../db/progress'
 import { buildRegionQuiz, QUIZ_PASS, type QuizItem } from '../engine/quiz'
 import { regionFor, isStamped, souvenirById } from '../engine/journey'
@@ -104,7 +104,7 @@ export default function RegionQuiz() {
             <DogButton dog="bonchita" size={64} outfit={outfits.bonchita} />
             <DogButton dog="luna" size={64} outfit={outfits.luna} />
           </div>
-          <h2 className="mt-4 text-3xl font-extrabold">{result.score >= QUIZ_PASS ? '¡Muy bien!' : 'Not yet'}</h2>
+          <h2 className="mt-4 text-3xl font-extrabold">{result.score >= QUIZ_PASS ? ui.quizGreat : 'Not yet'}</h2>
           <p className="mt-1 text-muted">{result.correct} of {items?.length ?? 0} correct · {Math.round(result.score * 100)}%</p>
           {result.score >= QUIZ_PASS ? (
             <p className="mt-3 rounded-2xl bg-gold-100 p-3 text-sm font-bold dark:bg-gold-500/15">

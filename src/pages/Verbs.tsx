@@ -1,18 +1,20 @@
 import { useMemo, useState } from 'react'
 import { vocab } from '../engine/loader'
-import { conjugate, PERSONS, TENSES, TENSE_LABELS, withReflexive, type Tense } from '../lang/es/verbs'
-import { match, stripAccents } from '../lang/es/normalize'
+import { conjugate, PERSONS, TENSES, TENSE_LABELS, withReflexive, VERB_TRAINER, type Tense } from '@lang/verbs'
+import { match, stripAccents } from '@lang/normalize'
 import { Rng } from '../engine/random'
 import { PageHeader, Button, Chip, SpeakerButton } from '../components/ui/basics'
 import { IconSearch } from '../components/ui/icons'
 import { SPECIAL_CHARS } from '../components/exercises/chars'
 import { LEVEL_ORDER, type LevelId } from '../engine/schema'
+import { TL } from '../engine/course'
+import { ui } from '../engine/loader'
 
 
 export default function Verbs() {
   const verbs = useMemo(() => [...vocab.values()].filter((v) => v.pos === 'verb' && !v.lemma.includes(' ')).sort((a, b) => a.lemma.localeCompare(b.lemma)), [])
   const [q, setQ] = useState('')
-  const [lemma, setLemma] = useState('ser')
+  const [lemma, setLemma] = useState(VERB_TRAINER.defaultVerb)
   const [tense, setTense] = useState<Tense>('pres')
   const [mode, setMode] = useState<'table' | 'drill'>('table')
   const suggestions = useMemo(() => {
@@ -49,9 +51,9 @@ export default function Verbs() {
                     setQ('')
                   }
                 }}
-                placeholder="Type a verb (hablar, tener, irse…)"
+                placeholder={VERB_TRAINER.placeholder}
                 className="w-full bg-transparent py-2 outline-none"
-                lang="es"
+                lang={TL}
                 aria-label="Verb"
               />
             </label>
@@ -60,7 +62,7 @@ export default function Verbs() {
                 {suggestions.map((v) => (
                   <li key={v.id}>
                     <button type="button" className="flex w-full justify-between px-3 py-2 text-left" onClick={() => { setLemma(v.lemma); setQ('') }}>
-                      <span className="font-bold" lang="es">{v.lemma}</span>
+                      <span className="font-bold" lang={TL}>{v.lemma}</span>
                       <span className="text-sm text-muted">{v.en[0]}</span>
                     </button>
                   </li>
@@ -73,8 +75,8 @@ export default function Verbs() {
               <div className="mb-3 flex items-center gap-3">
                 <SpeakerButton text={conj.lemma} size="sm" />
                 <div>
-                  <h2 className="text-2xl font-extrabold" lang="es">{conj.lemma}</h2>
-                  <p className="text-sm text-muted">{entry?.en.join(', ') ?? ''} · participle <b lang="es">{conj.participle}</b> · gerund <b lang="es">{conj.gerund}</b></p>
+                  <h2 className="text-2xl font-extrabold" lang={TL}>{conj.lemma}</h2>
+                  <p className="text-sm text-muted">{entry?.en.join(', ') ?? ''} · participle <b lang={TL}>{conj.participle}</b> · gerund <b lang={TL}>{conj.gerund}</b></p>
                 </div>
               </div>
               <div className="mb-3 flex gap-1 overflow-x-auto pb-1">
@@ -85,7 +87,7 @@ export default function Verbs() {
                 ))}
               </div>
               <p className="mb-2 text-sm text-muted">
-                <span lang="es" className="font-bold">{TENSE_LABELS[tense].es}</span> · introduced at {TENSE_LABELS[tense].level.toUpperCase()}
+                <span lang={TL} className="font-bold">{TENSE_LABELS[tense].es}</span> · introduced at {TENSE_LABELS[tense].level.toUpperCase()}
               </p>
               <table className="w-full text-sm">
                 <tbody>
@@ -94,7 +96,7 @@ export default function Verbs() {
                     return (
                       <tr key={p} className="border-t border-line">
                         <td className="py-2 pr-2 text-muted">{p}</td>
-                        <td className="py-2 font-bold" lang="es">{f ?? '—'}</td>
+                        <td className="py-2 font-bold" lang={TL}>{f ?? '—'}</td>
                         <td className="py-2 text-right">{f && <SpeakerButton text={f} size="sm" />}</td>
                       </tr>
                     )
@@ -103,7 +105,7 @@ export default function Verbs() {
               </table>
             </div>
           ) : (
-            <p className="card text-sm text-muted">That does not look like a Spanish infinitive (it should end in -ar, -er or -ir).</p>
+            <p className="card text-sm text-muted">{VERB_TRAINER.notAVerb}</p>
           )}
         </>
       ) : (
@@ -183,7 +185,7 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
           <p className="text-sm text-muted">
             Score {score.right}/{score.total}
           </p>
-          <p className="mt-2 text-2xl font-extrabold" lang="es">{q.lemma}</p>
+          <p className="mt-2 text-2xl font-extrabold" lang={TL}>{q.lemma}</p>
           <p className="text-sm">
             <Chip tone="sky">{TENSE_LABELS[q.tense].en}</Chip> <Chip>{PERSONS[q.person]}</Chip>
           </p>
@@ -197,7 +199,7 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
               else next()
             }}
             className="mt-3 w-full rounded-2xl border-2 border-line bg-surface-2 p-3 text-lg outline-none focus:border-sky-500"
-            lang="es"
+            lang={TL}
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}
@@ -205,14 +207,14 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
           />
           <div className="mt-2 flex flex-wrap gap-1.5">
             {SPECIAL_CHARS.slice(0, 7).map((c) => (
-              <button key={c} type="button" onClick={() => setText((t) => t + c)} className="rounded-lg border-2 border-line bg-surface px-2.5 py-1 font-bold" lang="es">
+              <button key={c} type="button" onClick={() => setText((t) => t + c)} className="rounded-lg border-2 border-line bg-surface px-2.5 py-1 font-bold" lang={TL}>
                 {c}
               </button>
             ))}
           </div>
           {state !== 'ask' && (
-            <p className={`mt-3 rounded-xl p-3 font-bold ${state === 'bad' ? 'bg-bad-100 text-bad-700' : 'bg-ok-100 text-ok-700'}`} lang="es">
-              {state === 'ok' ? '¡Correcto!' : state === 'almost' ? `Almost: ${q.answer}` : `Answer: ${q.answer}`}
+            <p className={`mt-3 rounded-xl p-3 font-bold ${state === 'bad' ? 'bg-bad-100 text-bad-700' : 'bg-ok-100 text-ok-700'}`} lang={TL}>
+              {state === 'ok' ? ui.feedback.correct : state === 'almost' ? `Almost: ${q.answer}` : `Answer: ${q.answer}`}
             </p>
           )}
           <div className="mt-3 grid grid-cols-2 gap-2">

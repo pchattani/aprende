@@ -4,7 +4,9 @@ import { join, basename } from 'node:path'
 import { load } from 'js-yaml'
 
 export const ROOT = new URL('..', import.meta.url).pathname
-export const CONTENT = join(ROOT, 'content', 'es')
+/** Course being checked: VITE_LANG, or `--lang=yue`, default Spanish. */
+export const LANG = process.argv.find((a) => a.startsWith('--lang='))?.slice(7) ?? process.env.VITE_LANG ?? 'es'
+export const CONTENT = join(ROOT, 'content', LANG)
 
 export function readYaml(path: string): unknown {
   return load(readFileSync(path, 'utf8'), { filename: path })

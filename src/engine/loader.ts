@@ -1,5 +1,6 @@
 import { z } from 'zod'
-import { conjugate, type Conjugation } from '../lang/es/verbs'
+import { conjugate, VERB_TRAINER } from '@lang/verbs'
+import { languagePack } from '@lang'
 /**
  * Content loader. Small, always-needed files (syllabus, grammar notes, vocab,
  * error rules, phonology, reader index) are bundled eagerly; unit lesson files
@@ -7,28 +8,40 @@ import { conjugate, type Conjugation } from '../lang/es/verbs'
  */
 import {
   PackSchema, SyllabusSchema, GrammarFileSchema, VocabFileSchema, UnitSchema, Reader as ReaderSchema,
-  PhonologyFileSchema, ExamSchema, ErrorsFileSchema, LEVEL_ORDER,
-  type Pack, type Syllabus, type LevelMeta, type UnitMeta, type GrammarNote, type VocabEntry, type Unit,
+  PhonologyFileSchema, ExamSchema, ErrorsFileSchema, UiSchema, JourneySchema, LEVEL_ORDER,
+  type Pack, type Ui, type JourneyFile, type Syllabus, type LevelMeta, type UnitMeta, type GrammarNote, type VocabEntry, type Unit,
   type Reader, type PhonologyLesson, type Exam, type ErrorRule, type LevelId, type Lesson,
 } from './schema'
-import packRaw from '../../content/es/pack.yaml'
-import syllabusRaw from '../../content/es/syllabus.yaml'
-import synonymsRaw from '../../content/es/synonyms.yaml'
-import errorsRaw from '../../content/es/errors/common-errors.yaml'
-import phonologyRaw from '../../content/es/phonology/lessons.yaml'
+import packRaw from '@content/pack.yaml'
+import uiRaw from '@content/ui.yaml'
+import journeyRaw from '@content/journey.yaml'
+import syllabusRaw from '@content/syllabus.yaml'
+import synonymsRaw from '@content/synonyms.yaml'
+import errorsRaw from '@content/errors/common-errors.yaml'
+import phonologyRaw from '@content/phonology/lessons.yaml'
 
 export const pack: Pack = PackSchema.parse(packRaw)
+/** Interface text in the target language. */
+export const ui: Ui = UiSchema.parse(uiRaw)
+export const journeyData: JourneyFile = JourneySchema.parse(journeyRaw)
+/** "Spanish", "Cantonese"… for English interface text. */
+export const LANGUAGE = pack.name
+/** Fill {word}/{region}/{language} placeholders in a ui string. */
+export function fill(template: string, values: Record<string, string>): string {
+  return template.replace(/\{(\w+)\}/g, (m, k: string) => values[k] ?? m)
+}
 export const syllabus: Syllabus = SyllabusSchema.parse(syllabusRaw)
 export const levels: LevelMeta[] = syllabus.levels
 export const errorRules: ErrorRule[] = ErrorsFileSchema.parse(errorsRaw).rules
 export const phonology: PhonologyLesson[] = PhonologyFileSchema.parse(phonologyRaw).lessons
 const SynonymsSchema = z.object({ groups: z.array(z.array(z.string()).min(2)), english: z.array(z.array(z.string()).min(2)).default([]) })
 const synonymsFile = SynonymsSchema.parse(synonymsRaw)
-/** Spanish synonym/variant groups: the curated file plus every vocabulary entry's es-419 variants. */
-export function spanishSynonymGroups(): string[][] {
+/** Target-language synonym/variant groups: the curated file plus every vocabulary entry's regional variants. */
+export function targetSynonymGroups(): string[][] {
   const base = [...synonymsFile.groups]
+  const variantCodes = pack.variety.alternatives.map((a) => a.code)
   for (const v of vocab.values()) {
-    const alt = v.variant?.['es-419']
+    const alt = variantCodes.map((c) => v.variant?.[c]).find(Boolean)
     if (!alt) continue
     const forms = alt.split('/').map((x) => x.replace(/\(.*?\)/g, '').trim()).filter(Boolean)
     if (forms.length) base.push([v.lemma, ...forms])
@@ -43,11 +56,11 @@ export function spanishSynonymGroups(): string[][] {
       const [head, ...rest] = m.trim().split(/\s+/)
       return { c: conjugate(head!), rest: rest.join(' ') }
     })
-    const tenses = Object.keys(conj[0]!.c.forms) as (keyof Conjugation['forms'])[]
+    const tenses = Object.keys(conj[0]!.c.forms)
     for (const t of tenses) {
       for (let p = 0; p < 6; p++) {
         const row = conj.map(({ c, rest }) => {
-          const f = c.forms[t]?.[p]
+          const f = (c.forms as Partial<Record<string, (string | null)[]>>)[t]?.[p]
           return f ? (rest ? `${f} ${rest}` : f) : undefined
         })
         if (row.every(Boolean)) groups.push(row as string[])
@@ -60,12 +73,19 @@ export function spanishSynonymGroups(): string[][] {
   return groups
 }
 function isVerbPhrase(m: string): boolean {
+  if (!pack.features.conjugation) return false
   const head = m.trim().split(/\s+/)[0] ?? ''
-  if (!/(ar|er|ir|arse|erse|irse)$/.test(head) || head.length < 4) return false
+  if (!VERB_TRAINER.isInfinitive(head) || head.length < 4) return false
   const entry = [...vocab.values()].find((v) => v.lemma === m.trim() || v.lemma === head)
-  return entry ? entry.pos === 'verb' || entry.pos === 'phrase' : /(ar|er|ir)$/.test(head)
+  return entry ? entry.pos === 'verb' || entry.pos === 'phrase' : true
 }
 export const englishSynonymGroups: string[][] = synonymsFile.english
+
+/** Function words known at every level, extra fact words, and proper nouns (content/<lang>/known.yaml). */
+const KnownSchema = z.object({ always: z.array(z.string()).default([]), facts: z.array(z.string()).default([]), names: z.array(z.string()).default([]) })
+const knownFiles = import.meta.glob('@content/known.yaml', { eager: true, import: 'default' }) as Record<string, unknown>
+const knownRaw = KnownSchema.parse(Object.values(knownFiles)[0] ?? {})
+export const known = { always: new Set(knownRaw.always), facts: new Set(knownRaw.facts), names: new Set(knownRaw.names) }
 
 export interface UnitRef extends UnitMeta {
   level: LevelId
@@ -76,29 +96,30 @@ for (const lvl of levels) {
   lvl.units.forEach((u, i) => units.set(u.id, { ...u, level: lvl.id, index: i }))
 }
 
-const grammarFiles = import.meta.glob('../../content/es/grammar/*.yaml', { eager: true, import: 'default' }) as Record<string, unknown>
+const grammarFiles = import.meta.glob('@content/grammar/*.yaml', { eager: true, import: 'default' }) as Record<string, unknown>
 export const grammar: Map<string, GrammarNote> = new Map()
 for (const data of Object.values(grammarFiles)) {
   for (const note of GrammarFileSchema.parse(data)) grammar.set(note.id, note)
 }
 
-const vocabFiles = import.meta.glob('../../content/es/vocab/*.yaml', { eager: true, import: 'default' }) as Record<string, unknown>
+const vocabFiles = import.meta.glob('@content/vocab/*.yaml', { eager: true, import: 'default' }) as Record<string, unknown>
 export const vocab: Map<string, VocabEntry> = new Map()
 for (const data of Object.values(vocabFiles)) {
   for (const e of VocabFileSchema.parse(data)) vocab.set(e.id, e)
 }
+languagePack.useVocabulary?.(vocab.values())
 export function vocabUpTo(level: LevelId): VocabEntry[] {
   const max = LEVEL_ORDER.indexOf(level)
   return [...vocab.values()].filter((v) => LEVEL_ORDER.indexOf(v.level) <= max)
 }
 
-const readerFiles = import.meta.glob('../../content/es/readers/*/*.yaml', { eager: true, import: 'default' }) as Record<string, unknown>
+const readerFiles = import.meta.glob('@content/readers/*/*.yaml', { eager: true, import: 'default' }) as Record<string, unknown>
 export const readers: Reader[] = Object.values(readerFiles).map((d) => ReaderSchema.parse(d))
 export function readersFor(level: LevelId): Reader[] {
   return readers.filter((r) => r.level === level)
 }
 
-const unitFiles = import.meta.glob('../../content/es/units/*/*.yaml', { import: 'default' }) as Record<string, () => Promise<unknown>>
+const unitFiles = import.meta.glob('@content/units/*/*.yaml', { import: 'default' }) as Record<string, () => Promise<unknown>>
 const unitCache = new Map<string, Promise<Unit>>()
 function unitPath(unitId: string): string | undefined {
   const [level, u] = unitId.split('.')
@@ -125,7 +146,7 @@ export async function loadLesson(lessonId: string): Promise<{ unit: Unit; lesson
   return { unit, lesson }
 }
 
-const examFiles = import.meta.glob('../../content/es/exams/*.yaml', { import: 'default' }) as Record<string, () => Promise<unknown>>
+const examFiles = import.meta.glob('@content/exams/*.yaml', { import: 'default' }) as Record<string, () => Promise<unknown>>
 export function examExists(level: LevelId): boolean {
   return Object.keys(examFiles).some((p) => p.endsWith(`/exams/${level}.yaml`))
 }

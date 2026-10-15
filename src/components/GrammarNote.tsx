@@ -2,6 +2,8 @@ import type { GrammarNote } from '../engine/schema'
 import { Markdown } from './ui/Markdown'
 import { inline } from './ui/inline'
 import { SpeakerButton, Chip } from './ui/basics'
+import { TL } from '../engine/course'
+import { TargetText } from './ui/TargetText'
 
 export function GrammarNoteView({ note, compact = false }: { note: GrammarNote; compact?: boolean }) {
   return (
@@ -23,7 +25,7 @@ export function GrammarNoteView({ note, compact = false }: { note: GrammarNote; 
               <li key={i} className="flex items-start gap-2 rounded-xl bg-surface-2 p-2">
                 <SpeakerButton text={e.es} size="sm" />
                 <div>
-                  <p className="font-semibold" lang="es">{e.es}</p>
+                  <p className="font-semibold" lang={TL}><TargetText text={e.es} /></p>
                   <p className="text-sm text-muted">{e.en}</p>
                 </div>
               </li>

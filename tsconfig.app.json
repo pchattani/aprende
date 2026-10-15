@@ -20,7 +20,8 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "paths": { "@/*": ["./src/*"], "@content/*": ["./content/*"] }
+    "paths": { "@/*": ["./src/*"], "@lang": ["./src/lang/es/index.ts"], "@lang/*": ["./src/lang/es/*"], "@content/*": ["./content/es/*"] }
   },
-  "include": ["src", "tests", "content/**/*.d.ts"]
+  "include": ["src", "tests", "content/**/*.d.ts"],
+  "exclude": ["tests/course-yue", "tests/course-pt", "tests/course-it"]
 }

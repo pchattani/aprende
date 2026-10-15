@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button, SpeakerButton } from './ui/basics'
+import { TL, tlOf } from '../engine/course'
 
 export interface MCQItem {
   prompt: string
@@ -40,7 +41,7 @@ export function MCQ({ items, onDone, reveal = false, label = 'Continue' }: { ite
         <div key={i} className="card">
           <div className="flex items-start gap-2">
             {q.audio && <SpeakerButton text={q.audio} size="sm" />}
-            <p className="font-bold" lang={q.promptLang ?? (q.audio ? 'en' : 'es')}>{q.prompt}</p>
+            <p className="font-bold" lang={tlOf(q.promptLang ?? (q.audio ? 'en' : 'es'))}>{q.prompt}</p>
           </div>
           <div className="mt-2 grid gap-1.5" role="radiogroup" aria-label={q.prompt}>
             {q.options.map((o, oi) => {
@@ -50,7 +51,7 @@ export function MCQ({ items, onDone, reveal = false, label = 'Continue' }: { ite
                 else if (answers[i] === oi) cls = 'wrong'
               } else if (answers[i] === oi) cls = 'selected'
               return (
-                <button key={oi} type="button" role="radio" aria-checked={answers[i] === oi} disabled={checked} onClick={() => setAnswers((a) => a.map((x, k) => (k === i ? oi : x)))} className={`tile py-2 text-sm ${cls}`} lang="es">
+                <button key={oi} type="button" role="radio" aria-checked={answers[i] === oi} disabled={checked} onClick={() => setAnswers((a) => a.map((x, k) => (k === i ? oi : x)))} className={`tile py-2 text-sm ${cls}`} lang={TL}>
                   {o}
                 </button>
               )

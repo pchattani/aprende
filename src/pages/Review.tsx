@@ -6,7 +6,7 @@ import { db } from '../db'
 import { dueCards, bumpDay, recordPinnedAnswer, unpin } from '../db/progress'
 import { generateReview, generatePinned, exchangeAsSentence, textAsSentence } from '../engine/generate'
 import { vocab, vocabUpTo, loadLesson, grammar, LEVEL_ORDER_LIST, levelOf } from '../engine/loader'
-import { IRREGULAR } from '../lang/es/verbs'
+import { IRREGULAR } from '@lang/verbs'
 import { sttSupported } from '../engine/speech'
 import { useSettings } from '../store/settings'
 import { useDueCount, useAllCards, usePins } from '../hooks/useProgress'
@@ -16,6 +16,7 @@ import { Button, PageHeader, Empty, Chip } from '../components/ui/basics'
 import { todayKey } from '../engine/mastery'
 import { playSound } from '../engine/sounds'
 import { lookupForm } from '../hooks/useDeps'
+import { TL } from '../engine/course'
 
 const SESSION = 20
 type Tab = 'due' | 'pinned' | 'practice'
@@ -219,7 +220,7 @@ function PinnedTab({ pins, building, onStart }: { pins: PinRow[]; building: bool
         {pins.map((p) => (
           <li key={p.id} className="card flex items-start gap-3">
             <div className="min-w-0 flex-1">
-              <p className="font-bold leading-snug" lang="es">{p.es}</p>
+              <p className="font-bold leading-snug" lang={TL}>{p.es}</p>
               <p className="text-xs text-muted" lang="en">{p.en}</p>
               <p className="mt-1 text-xs"><span className="text-bad-600 line-through">{p.given}</span> → <span className="font-bold text-ok-600">{p.expected}</span></p>
               {p.hint && <p className="mt-1 text-xs text-muted">{p.hint}</p>}

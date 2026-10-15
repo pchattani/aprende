@@ -22,6 +22,7 @@ const Passport = lazy(() => import('./pages/Passport'))
 const RegionQuiz = lazy(() => import('./pages/RegionQuiz'))
 const Palabras = lazy(() => import('./pages/Palabras'))
 const Perros = lazy(() => import('./pages/Perros'))
+const Classifiers = lazy(() => import('./pages/Classifiers'))
 
 function Loading() {
   return <div className="p-8 text-center text-muted">Loading…</div>
@@ -113,6 +114,7 @@ export default function App() {
         <Route path="passport" element={<Passport />} />
         <Route path="palabras" element={<Palabras />} />
         <Route path="perros" element={<Perros />} />
+        <Route path="classifiers" element={<Classifiers />} />
       </Route>
       <Route
         path="quiz/:level"

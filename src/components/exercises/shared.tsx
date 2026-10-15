@@ -1,5 +1,7 @@
 import type { Exercise, GradeResult } from '../../engine/types'
 import type { Answer } from '../../engine/grade'
+import { tlOf } from '../../engine/course'
+import { MaybeTarget } from '../ui/TargetText'
 
 export interface ExerciseProps<E extends Exercise = Exercise> {
   exercise: E
@@ -13,8 +15,8 @@ export interface ExerciseProps<E extends Exercise = Exercise> {
 
 export function Prompt({ children, lang = 'es' }: { children: React.ReactNode; lang?: 'es' | 'en' }) {
   return (
-    <p className="font-display text-2xl leading-snug" lang={lang}>
-      {children}
+    <p className="font-display text-2xl leading-snug" lang={tlOf(lang)}>
+      {lang === 'es' ? <MaybeTarget>{children}</MaybeTarget> : children}
     </p>
   )
 }

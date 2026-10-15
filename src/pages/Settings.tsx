@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useSettings, SESSION_COUNT, type Settings as SettingsState } from '../store/settings'
-import { spanishVoices, speak, sttSupported, ttsSupported } from '../engine/speech'
+import { targetVoices, speak, sttSupported, ttsSupported } from '../engine/speech'
 import { exportAll, importAll, resetAll, type Backup } from '../db/progress'
 import { PageHeader, Button } from '../components/ui/basics'
-import { pack } from '../engine/loader'
+import { pack, ui, LANGUAGE } from '../engine/loader'
+import { COURSES } from '../courses'
 
 export default function Settings() {
   const s = useSettings()
@@ -14,7 +15,7 @@ export default function Settings() {
   const [confirmReset, setConfirmReset] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
   useEffect(() => {
-    const load = () => setVoices(spanishVoices())
+    const load = () => setVoices(targetVoices(pack.tts.lang))
     load()
     const t = setTimeout(load, 500)
     window.speechSynthesis?.addEventListener?.('voiceschanged', load)
@@ -54,10 +55,15 @@ export default function Settings() {
         <Select label="Speaking exercises" hint={stt ? 'Uses your browser’s speech recognition. Nothing is sent to us.' : 'Speech recognition is not supported in this browser.'} value={stt ? s.speaking : 'off'} onChange={(v) => s.setSpeaking(v as SettingsState['speaking'])} options={[['off', 'Off'], ['some', 'Some · up to 2 per lesson'], ['lots', 'Lots · up to 3 per lesson, answer questions aloud']]} disabled={!stt} />
         <Toggle label="Keep my mistakes for later" hint="Wrong answers are pinned automatically for a focused re-test (Review → Pinned)." checked={s.autoPin} onChange={s.setAutoPin} />
         <Range label={`Daily practice goal: ${s.dailyMinutes} minutes`} min={5} max={40} step={5} value={s.dailyMinutes} onChange={s.setDailyMinutes} />
-        <Select label="Spanish variety" value={s.variety} onChange={(v) => s.setVariety(v as 'es-ES' | 'es-419')} options={[['es-ES', 'Castilian (Spain) — default'], ['es-419', 'Latin American (notes shown)']]} />
+        {pack.variety.alternatives.length > 0 && (
+          <Select label={`${LANGUAGE} variety`} value={s.variety || pack.variety.default} onChange={(v) => s.setVariety(v)} options={[[pack.variety.default, `${pack.variety.label} — default`], ...pack.variety.alternatives.map((a) => [a.code, `${a.label} (notes shown)`] as [string, string])]} />
+        )}
+        {pack.features.romanization !== 'none' && (
+          <Toggle label="Show Jyutping" hint="Romanisation above every character. Turn it off to practise reading characters." checked={s.romanization} onChange={s.setRomanization} />
+        )}
       </Section>
       <Section title="Just for fun">
-        <Toggle label="Modo picante 🌶️" hint="Cheeky, flirty example sentences for grown-ups, mixed into lessons at your level. Off by default." checked={s.spicy} onChange={s.setSpicy} />
+        <Toggle label={`${ui.spicyName} 🌶️`} hint="Cheeky, flirty example sentences for grown-ups, mixed into lessons at your level. Off by default." checked={s.spicy} onChange={s.setSpicy} />
       </Section>
       <Section title="Sound and voice">
         <Toggle label="Sounds" hint="Feedback sounds and audio." checked={s.sound} onChange={s.setSound} />
@@ -65,8 +71,8 @@ export default function Settings() {
         {ttsSupported() ? (
           <>
             <Select label="Voice" value={s.voiceURI ?? ''} onChange={(v) => s.setVoice(v || undefined)} options={[['', 'Automatic (best es-ES voice)'], ...voices.map((v) => [v.voiceURI, `${v.name} (${v.lang})${v.localService ? '' : ' · online'}`] as [string, string])]} />
-            <Button variant="ghost" className="mt-2 w-full" onClick={() => void speak('Hola, ¿qué tal? Me llamo Aprende y voy a ayudarte con el español.', { lang: pack.tts.lang, rate: s.ttsRate, voiceURI: s.voiceURI, preferred: pack.tts.preferredVoices })}>Test voice</Button>
-            {voices.length === 0 && <p className="mt-2 text-xs text-muted">No Spanish voice installed. On Windows add “Spanish (Spain)” speech in Settings → Time & Language; on Android install Google TTS Spanish; iOS and macOS include Mónica/Jorge.</p>}
+            <Button variant="ghost" className="mt-2 w-full" onClick={() => void speak(ui.voiceTest, { lang: pack.tts.lang, rate: s.ttsRate, voiceURI: s.voiceURI, preferred: pack.tts.preferredVoices })}>Test voice</Button>
+            {voices.length === 0 && <p className="mt-2 text-xs text-muted">{ui.voiceHelp}</p>}
           </>
         ) : (
           <p className="text-sm text-muted">Text-to-speech is not available in this browser.</p>
@@ -76,7 +82,7 @@ export default function Settings() {
         <Select label="Theme" value={s.theme} onChange={(v) => s.setTheme(v as 'system' | 'light' | 'dark')} options={[['system', 'System'], ['light', 'Light'], ['dark', 'Dark']]} />
       </Section>
       <Section title="Starting level">
-        <p className="text-sm text-muted">Already know some Spanish? Retake the placement test or pick the level where lessons should start. Earlier levels stay open for practice.</p>
+        <p className="text-sm text-muted">Already know some {LANGUAGE}? Retake the placement test or pick the level where lessons should start. Earlier levels stay open for practice.</p>
         <Button variant="ghost" className="mt-3 w-full" onClick={() => nav('/welcome')}>Change starting level</Button>
       </Section>
       <Section title="Backup">
@@ -101,7 +107,21 @@ export default function Settings() {
           </div>
         )}
       </Section>
-      <p className="mt-6 text-center text-xs text-muted">Aprende · open source · no accounts, no tracking, no AI, works offline.</p>
+      <Section title="Sister courses">
+        <p className="text-sm text-muted">The same journey, method and games for other languages. Each course keeps its own progress on this device.</p>
+        <ul className="mt-2 grid gap-2">
+          {COURSES.filter((c) => c.id !== pack.id).map((c) => (
+            <li key={c.id}>
+              <a href={c.href} className="tile flex items-center gap-3 py-2.5">
+                <span className="text-2xl" aria-hidden="true">{c.flag}</span>
+                <span className="min-w-0 flex-1"><span className="block font-extrabold">{c.name}</span><span className="block text-xs text-muted">{c.app} · {c.native}</span></span>
+                <span aria-hidden="true">›</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </Section>
+      <p className="mt-6 text-center text-xs text-muted">{ui.appName} · open source · no accounts, no tracking, no AI, works offline.</p>
       <p className="mt-3 text-center text-[11px] leading-relaxed text-muted">
         Aprende is an independent project by an individual. It is not affiliated with, endorsed by or connected to Duolingo, Inc. or any other language-learning company, and uses none of their content or trademarks.
       </p>

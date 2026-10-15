@@ -7,7 +7,8 @@ import type { Unit, Exam, VocabEntry, LevelId } from './schema'
 import type { MCQItem } from '../components/MCQ'
 import { Rng } from './random'
 import { distractorWords, type GenContext } from './generate'
-import { IRREGULAR } from '../lang/es/verbs'
+import { IRREGULAR } from '@lang/verbs'
+import { ui, fill } from './loader'
 
 export interface QuizItem extends MCQItem {
   source: 'dialogue' | 'grammar' | 'vocab'
@@ -39,14 +40,14 @@ export function buildRegionQuiz(level: LevelId, units: Unit[], exam: Exam | unde
   // 2. Grammar items from the level check.
   const grammarItems = rng.shuffle(exam?.grammar ?? [])
   for (const g of grammarItems.slice(0, 3)) push({ prompt: g.prompt, options: g.options, answer: g.answer, explain: g.explain, source: 'grammar' })
-  // 3. Vocabulary: Spanish word → English meaning, distractors from the same topic/unit.
+  // 3. Vocabulary: target-language word → English meaning, distractors from the same topic/unit.
   const levelWords = vocab.filter((v) => v.level === level && v.en[0])
   const ctx: GenContext = { vocab: new Map(vocab.map((v) => [v.id, v])), pool: vocab, verbs: IRREGULAR, stageOf: () => 0, speech: false }
   const wordItem = (v: VocabEntry): QuizItem | undefined => {
     const ds = distractorWords(v, ctx, rng, 3)
     if (ds.length < 3) return undefined
     const options = rng.shuffle([v.en[0]!, ...ds.map((d) => d.en[0]!)])
-    return { prompt: `¿Qué significa “${v.lemma}”?`, options, answer: options.indexOf(v.en[0]!), explain: `${v.lemma} = ${v.en.slice(0, 2).join(', ')}`, source: 'vocab' }
+    return { prompt: fill(ui.whatDoesItMean, { word: v.lemma }), options, answer: options.indexOf(v.en[0]!), explain: `${v.lemma} = ${v.en.slice(0, 2).join(', ')}`, source: 'vocab' }
   }
   const words = rng.shuffle(levelWords)
   let wi = 0

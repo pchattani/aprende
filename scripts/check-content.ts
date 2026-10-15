@@ -2,19 +2,24 @@
  * Validates every content file against the schemas and cross-checks ids,
  * coverage and minimum sizes. Exit code 1 on any error.
  *
- *   npm run content:check
+ *   npm run content:check                  (Spanish)
+ *   VITE_LANG=yue npm run content:check    (any course: yue, pt, it)
  */
 import { join, relative } from 'node:path'
 import type { z } from 'zod'
 import { existsSync } from 'node:fs'
 import {
   PackSchema, SyllabusSchema, GrammarFileSchema, VocabFileSchema, UnitSchema, Reader, PhonologyFileSchema,
-  ExamSchema, ErrorsFileSchema, VerbsFileSchema, LEVEL_ORDER, type GrammarNote, type VocabEntry, type LevelId,
+  ExamSchema, ErrorsFileSchema, UiSchema, JourneySchema, LEVEL_ORDER, type GrammarNote, type VocabEntry, type LevelId,
 } from '../src/engine/schema'
-import { buildDictionary, lookup } from '../src/lang/es/inflect'
-import { tokenize } from '../src/lang/es/tokenize'
-import { conjugate } from '../src/lang/es/conjugator'
-import { CONTENT, ROOT, readYaml, listYaml, unitIdFromPath } from './content-lib'
+import type { InflectModule, TokenizeModule, VerbsModule, LanguagePackFull } from '../src/lang/contract'
+import { CONTENT, ROOT, LANG, readYaml, listYaml, unitIdFromPath } from './content-lib'
+
+// The course's own language pack (the yaml hooks let its verb tables load outside Vite).
+const { buildDictionary, lookup } = (await import(`../src/lang/${LANG}/inflect.ts`)) as InflectModule
+const { tokenize } = (await import(`../src/lang/${LANG}/tokenize.ts`)) as TokenizeModule
+const verbsModule = (await import(`../src/lang/${LANG}/verbs.ts`)) as VerbsModule
+const { languagePack } = (await import(`../src/lang/${LANG}/index.ts`)) as { languagePack: LanguagePackFull & { validateText?: (t: string) => string[] } }
 import { SPICY_BANNED } from './spicy-banned'
 
 const MIN_LESSONS_PER_UNIT = 3
@@ -43,8 +48,11 @@ function parse<S extends z.ZodTypeAny>(schema: S, path: string): z.infer<S> | un
   return r.data as z.infer<S>
 }
 
-// ---- pack, syllabus
-parse(PackSchema, join(CONTENT, 'pack.yaml'))
+// ---- pack, syllabus, interface text, journey
+const pack = parse(PackSchema, join(CONTENT, 'pack.yaml'))
+const features = pack?.features ?? { conjugation: true, gender: true, romanization: 'none', classifiers: false }
+parse(UiSchema, join(CONTENT, 'ui.yaml'))
+const journey = parse(JourneySchema, join(CONTENT, 'journey.yaml'))
 const syllabus = parse(SyllabusSchema, join(CONTENT, 'syllabus.yaml'))
 if (!syllabus) {
   report()
@@ -64,15 +72,30 @@ for (const lvl of syllabus.levels) {
   }
 }
 
-// ---- verbs
-const verbsData = parse(VerbsFileSchema, join(CONTENT, 'verbs', 'irregular.yaml'))
-const verbs = new Map((verbsData?.verbs ?? []).map((v) => [v.lemma, v]))
-for (const v of verbs.values()) {
+// ---- verbs (the pack parses its own irregular table)
+const verbs = verbsModule.IRREGULAR
+for (const lemma of verbs.keys()) {
   try {
-    conjugate(v.lemma, verbs)
+    verbsModule.conjugateWith(lemma, verbs)
   } catch (e) {
-    err(`verbs: ${v.lemma}: ${(e as Error).message}`)
+    err(`verbs: ${lemma}: ${(e as Error).message}`)
   }
+}
+
+// ---- journey: one region per level and one stop per syllabus unit
+if (journey) {
+  for (const lvl of syllabus.levels) {
+    const r = journey.regions.find((x) => x.level === lvl.id)
+    if (!r) err(`journey: no region for ${lvl.id}`)
+    else if (r.stops.length !== lvl.units.length) err(`journey: region ${lvl.id} has ${r.stops.length} stops for ${lvl.units.length} units`)
+    for (const st of r?.stops ?? []) if (!st.fact) warn(`journey: stop ${st.name} (${lvl.id}) has no fact`)
+  }
+  const ids = new Set<string>()
+  for (const sv of journey.souvenirs) {
+    if (ids.has(sv.id)) err(`journey: duplicate souvenir ${sv.id}`)
+    ids.add(sv.id)
+  }
+  if (journey.souvenirs.filter((sv) => sv.slot).length < 20) warn('journey: fewer than 20 wearable souvenirs')
 }
 
 // ---- grammar
@@ -103,7 +126,12 @@ for (const p of listYaml(join(CONTENT, 'vocab'))) {
     const key = `${e.lemma.toLowerCase()}|${e.pos}`
     if (lemmaPos.has(key)) warn(`${rel(p)}: lemma ${e.lemma} (${e.pos}) appears twice: ${lemmaPos.get(key)} and ${e.id}`)
     lemmaPos.set(key, e.id)
-    if (e.pos === 'noun' && !e.gender) err(`${rel(p)}: noun ${e.id} needs a gender`)
+    if (e.pos === 'noun' && !e.gender && features.gender) err(`${rel(p)}: noun ${e.id} needs a gender`)
+    if (features.romanization === 'jyutping') {
+      if (!e.jp) err(`${rel(p)}: ${e.id} needs jp (Jyutping)`)
+      for (const issue of languagePack.validateText?.(e.lemma) ?? []) err(`${rel(p)}: ${e.id}: ${issue}`)
+    }
+    if (features.classifiers && e.pos === 'noun' && !e.cl && !e.tags.includes('mass') && !e.tags.includes('name')) warn(`${rel(p)}: noun ${e.id} has no classifier (cl)`)
     if (e.unit && !unitLevel.has(e.unit)) err(`${rel(p)}: ${e.id} references unknown unit ${e.unit}`)
     if (e.unit && unitLevel.get(e.unit) !== e.level) err(`${rel(p)}: ${e.id} level ${e.level} does not match unit ${e.unit}`)
   }
@@ -115,6 +143,8 @@ for (const p of listYaml(join(CONTENT, 'vocab'))) {
   for (const [k, n] of byTopic) if (n < MIN_TOPIC_WORDS) warn(`vocab: topic ${k} has only ${n} word(s) (aim for ≥${MIN_TOPIC_WORDS} so distractors come from the same field)`)
 }
 
+languagePack.useVocabulary?.(vocab.values())
+
 // dictionary per level (cumulative)
 const dictByLevel = new Map<LevelId, Map<string, VocabEntry[]>>()
 for (const lvl of LEVEL_ORDER) {
@@ -122,7 +152,12 @@ for (const lvl of LEVEL_ORDER) {
   const entries = [...vocab.values()].filter((v) => LEVEL_ORDER.indexOf(v.level) <= max)
   dictByLevel.set(lvl, buildDictionary(entries, verbs))
 }
-const ALWAYS_KNOWN = new Set(['y', 'e', 'o', 'u', 'a', 'de', 'en', 'el', 'la', 'los', 'las', 'un', 'una', 'que', 'no', 'se', 'me', 'te', 'le', 'lo', 'es', 'por', 'para', 'con', 'su', 'mi', 'tu', 'al', 'del', 'tan', 'buen', 'ti', 'mí', 'sí', 'cada', 'fin', 'conmigo', 'contigo', 'ni', 'qué', 'cómo', 'quién', 'cuál', 'dónde', 'cuándo', 'cuánto', 'cuánta', 'cuántos', 'cuántas', 'tal', 'ya', 'más', 'menos', 'muy', 'bien', 'así', 'aquí', 'allí', 'ahí'])
+const knownFile = existsSync(join(CONTENT, 'known.yaml')) ? (readYaml(join(CONTENT, 'known.yaml')) as { always?: string[]; names?: string[] }) : {}
+const ALWAYS_KNOWN = new Set([...(knownFile.always ?? []), ...(knownFile.names ?? [])].map((w) => w.toLowerCase()))
+/** Romanisation / script problems in a target-language string (Cantonese: characters without a reading). */
+function scriptIssues(where: string, text: string): void {
+  for (const issue of languagePack.validateText?.(text) ?? []) err(`${where}: "${text.slice(0, 40)}": ${issue}`)
+}
 function unknownWords(text: string, level: LevelId, allow: Set<string>): string[] {
   const dict = dictByLevel.get(level)!
   const out: string[] = []
@@ -130,7 +165,7 @@ function unknownWords(text: string, level: LevelId, allow: Set<string>): string[
     if (t.kind !== 'word') continue
     const w = t.text.toLowerCase()
     if (lookup(dict, w) || ALWAYS_KNOWN.has(w) || allow.has(w)) continue
-    if (/^[A-ZÁÉÍÓÚÑ]/.test(t.text)) continue // proper nouns / sentence starts are checked lowercased above; capitalised unknowns pass
+    if (/^\p{Lu}/u.test(t.text)) continue // proper nouns / sentence starts are checked lowercased above; capitalised unknowns pass
     out.push(w)
   }
   return out
@@ -172,6 +207,7 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       const words = tokenize(s.es).filter((t) => t.kind === 'word')
       tokens += words.length
       unknown.push(...unknownWords(s.es, level, allow))
+      for (const a of [s.es, ...s.altEs]) scriptIssues(rel(p), a)
     }
     for (const x of l.exchanges) {
       for (const g of x.grammar) if (!grammar.has(g)) err(`${rel(p)}: exchange "${x.q.es}" tags unknown grammar ${g}`)
@@ -179,6 +215,7 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       for (const t of [x.q.es, x.a.es]) {
         tokens += tokenize(t).filter((tk) => tk.kind === 'word').length
         unknown.push(...unknownWords(t, level, allow))
+        scriptIssues(rel(p), t)
       }
     }
     for (const t of l.texts) {
@@ -188,6 +225,7 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       for (const sent of t.es) {
         tokens += tokenize(sent).filter((tk) => tk.kind === 'word').length
         unknown.push(...unknownWords(sent, level, allow))
+        scriptIssues(rel(p), sent)
       }
     }
     if (l.exchanges.length < 3 || l.texts.length < 1) warn(`${rel(p)}: ${l.id} has ${l.exchanges.length} exchanges and ${l.texts.length} mini-texts (aim for ≥3 and ≥1 for variety)`)
@@ -202,6 +240,7 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       if (seenSent.has(s.es)) warn(`${rel(p)}: spicy "${s.es}" duplicates a lesson sentence`)
       unknown.push(...unknownWords(s.es, level, allow))
       tokens += tokenize(s.es).filter((t) => t.kind === 'word').length
+      scriptIssues(rel(p), s.es)
     }
   })
   for (const d of unit.dialogues) {
@@ -210,6 +249,7 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
     for (const line of d.lines) {
       tokens += tokenize(line.es).filter((t) => t.kind === 'word').length
       unknown.push(...unknownWords(line.es, level, allow))
+      scriptIssues(rel(p), line.es)
     }
   }
   const ratio = tokens ? unknown.length / tokens : 0
@@ -269,6 +309,7 @@ if (existsSync(errorsFile)) {
   }
 } else err('errors/common-errors.yaml missing')
 
+console.log(`course: ${LANG}`)
 report()
 process.exit(errors.length ? 1 : 0)
 

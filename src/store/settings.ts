@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { SETTINGS_KEY } from '../engine/course'
 
 export interface Settings {
   sound: boolean
@@ -12,7 +13,8 @@ export interface Settings {
   theme: 'system' | 'light' | 'dark'
   /** Daily practice goal in minutes. */
   dailyMinutes: number
-  variety: 'es-ES' | 'es-419'
+  /** Regional variety code from pack.yaml (es-ES, es-419, pt-BR, pt-PT…). */
+  variety: string
   /** Exercises per lesson session. */
   sessionLength: 'short' | 'normal' | 'long'
   /** Keep wrong answers for a focused re-test automatically. */
@@ -29,7 +31,10 @@ export interface Settings {
   setSpicy: (v: boolean) => void
   setTheme: (v: Settings['theme']) => void
   setDailyMinutes: (v: number) => void
-  setVariety: (v: Settings['variety']) => void
+  setVariety: (v: string) => void
+  /** Show romanisation (Jyutping) above characters. */
+  romanization: boolean
+  setRomanization: (v: boolean) => void
 }
 
 export const useSettings = create<Settings>()(
@@ -42,7 +47,8 @@ export const useSettings = create<Settings>()(
       speaking: 'some',
       theme: 'system',
       dailyMinutes: 10,
-      variety: 'es-ES',
+      variety: '',
+      romanization: true,
       sessionLength: 'normal',
       autoPin: true,
       spicy: false,
@@ -57,9 +63,10 @@ export const useSettings = create<Settings>()(
       setTheme: (theme) => set({ theme }),
       setDailyMinutes: (dailyMinutes) => set({ dailyMinutes }),
       setVariety: (variety) => set({ variety }),
+      setRomanization: (romanization) => set({ romanization }),
     }),
     {
-      name: 'aprende-settings',
+      name: SETTINGS_KEY,
       merge: (persisted, current) => {
         const p = (persisted ?? {}) as Partial<Settings>
         const speaking = p.speaking ?? (p.speech === false ? 'off' : current.speaking)

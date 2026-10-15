@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import type { Exercise, GradeResult } from '../engine/types'
-import { grammar } from '../engine/loader'
+import { grammar, ui, LANGUAGE } from '../engine/loader'
 import type { Explanation } from '../engine/explain'
-import { stripAccents } from '../lang/es/normalize'
+import { stripAccents } from '@lang/normalize'
 import { Button, SpeakerButton } from './ui/basics'
 import { GrammarNoteView } from './GrammarNote'
 import { inline } from './ui/inline'
+import { TL } from '../engine/course'
+import { TargetText } from './ui/TargetText'
 
 const same = (a: string, b: string) => stripAccents(a.toLowerCase()).replace(/[^\p{L}\p{N}]+/gu, ' ').trim() === stripAccents(b.toLowerCase()).replace(/[^\p{L}\p{N}]+/gu, ' ').trim()
 
@@ -32,7 +34,7 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
   const showCorrect = (!ok || almost) && result.correct && !(review && (same(result.correct, review.es) || same(result.correct, review.en)))
   // Checker notes and grader notes first (they are the most specific), then diff-based hints, without repeats.
   const hints = [...new Set([...result.notes, ...explanation.hints])].slice(0, 5)
-  const title = result.verdict === 'correct' ? (result.lenient ? '¡Correcto! One small slip' : '¡Correcto!') : almost ? '¡Casi! Watch the details' : 'Not quite'
+  const title = result.verdict === 'correct' ? (result.lenient ? `${ui.feedback.correct} One small slip` : ui.feedback.correct) : almost ? `${ui.feedback.almost} Watch the details` : 'Not quite'
   return (
     <div className={`animate-slide-up fixed inset-x-0 bottom-0 z-20 max-h-[85vh] overflow-y-auto rounded-t-[2rem] border-t ${ok ? 'border-ok-500/40 bg-ok-100 text-ok-700 dark:bg-[#2a3620] dark:text-ok-100' : 'border-bad-500/40 bg-bad-100 text-bad-700 dark:bg-[#3a2321] dark:text-bad-100'}`} style={{ boxShadow: '0 -12px 32px -16px rgba(60,40,20,0.35)' }} role="status">
       <div className="mx-auto max-w-xl px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
@@ -42,24 +44,24 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
             <p className="text-lg font-extrabold">{title}</p>
             {showCorrect && (
               <div className="mt-1 flex items-center gap-2">
-                <p className="font-semibold" lang={spanishAnswer ? 'es' : 'en'}>
+                <p className="font-semibold" lang={spanishAnswer ? TL : 'en'}>
                   <span className="font-normal opacity-80">Correct answer: </span>
-                  {result.correct}
+                  {spanishAnswer ? <TargetText text={result.correct} /> : result.correct}
                 </p>
                 {spanishAnswer && <SpeakerButton text={result.correct} size="sm" />}
               </div>
             )}
             {review && (
-              <div className="mt-2 flex items-start gap-2 rounded-xl bg-white/70 px-2.5 py-2 text-[var(--text)] dark:bg-black/20" aria-label="What you practised, in Spanish and English">
+              <div className="mt-2 flex items-start gap-2 rounded-xl bg-white/70 px-2.5 py-2 text-[var(--text)] dark:bg-black/20" aria-label={`What you practised, in ${LANGUAGE} and English`}>
                 <SpeakerButton text={review.es} size="sm" className="mt-0.5 shrink-0" />
                 <div className="min-w-0">
-                  <p className="font-bold leading-snug" lang="es">{review.es}</p>
+                  <p className="font-bold leading-snug" lang={TL}><TargetText text={review.es} /></p>
                   <p className="text-sm leading-snug opacity-80" lang="en">{review.en}</p>
                 </div>
               </div>
             )}
             {explanation.diff && explanation.diff.some((t) => t.kind !== 'same') && (
-              <p className="mt-2 rounded-xl bg-white/70 px-2.5 py-1.5 text-sm leading-relaxed text-[var(--text)] dark:bg-black/20" lang={exercise.kind === 'typeEn' ? 'en' : 'es'} aria-label="Your answer compared with the correct one">
+              <p className="mt-2 rounded-xl bg-white/70 px-2.5 py-1.5 text-sm leading-relaxed text-[var(--text)] dark:bg-black/20" lang={exercise.kind === 'typeEn' ? 'en' : TL} aria-label="Your answer compared with the correct one">
                 <span className="mr-1 text-xs font-bold opacity-70">You wrote:</span>
                 {explanation.diff.map((t, i) => (
                   <span key={i} className="mr-1">

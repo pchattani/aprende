@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import type { VocabEntry } from '../engine/schema'
 import { vocab, vocabUpTo, LEVEL_ORDER_LIST } from '../engine/loader'
-import { IRREGULAR } from '../lang/es/verbs'
+import { IRREGULAR } from '@lang/verbs'
 import { allCards, recordAnswer, bumpDay, getKv, setKv } from '../db/progress'
 import { Rng } from '../engine/random'
 import { pickGameWords, memoryBoard, rapidRound, rapidPoints, type MemoryTile, type RapidQuestion } from '../engine/vocabGame'
@@ -13,6 +13,8 @@ import { useSpeak } from '../hooks/useSpeak'
 import { playSound } from '../engine/sounds'
 import { Confetti } from '../components/ui/Confetti'
 import type { LevelId } from '../engine/schema'
+import { TL, tlOf } from '../engine/course'
+import { ui, LANGUAGE } from '../engine/loader'
 
 type Game = 'memory' | 'rapid'
 interface Best {
@@ -50,19 +52,19 @@ export default function Palabras() {
   }
   return (
     <div className="animate-rise pb-6">
-      <PageHeader title="Palabras" subtitle="Two quick games with the words you are learning. Every answer counts as a review." />
+      <PageHeader title={ui.games.name} subtitle="Two quick games with the words you are learning. Every answer counts as a review." />
       <button type="button" onClick={() => void start('memory')} className="card mb-3 flex w-full items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient text-2xl" aria-hidden="true">🎴</span>
         <span className="min-w-0 flex-1">
-          <span className="block font-extrabold">Memoria</span>
-          <span className="block text-sm text-muted">Flip tiles and match each Spanish word with its meaning. 8 pairs against the clock.</span>
+          <span className="block font-extrabold">{ui.games.memory}</span>
+          <span className="block text-sm text-muted">Flip tiles and match each {LANGUAGE} word with its meaning. 8 pairs against the clock.</span>
           {best?.memoryMs ? <span className="mt-1 block text-xs font-bold text-ok-600">Best: {(best.memoryMs / 1000).toFixed(1)} s</span> : null}
         </span>
       </button>
       <button type="button" onClick={() => void start('rapid')} className="card mb-3 flex w-full items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sunset-gradient text-2xl" aria-hidden="true">⚡</span>
         <span className="min-w-0 flex-1">
-          <span className="block font-extrabold">Rápido</span>
+          <span className="block font-extrabold">{ui.games.rapid}</span>
           <span className="block text-sm text-muted">60 seconds, as many meanings as you can. Keep a streak for a multiplier.</span>
           {best?.rapid ? <span className="mt-1 block text-xs font-bold text-ok-600">Best: {best.rapid} points</span> : null}
         </span>
@@ -137,7 +139,7 @@ function Memory({ words, onDone, best }: { words: VocabEntry[]; onDone: () => vo
   }
   return (
     <div className="animate-rise pb-6">
-      <PageHeader title="Memoria" subtitle={`${matched.size} / ${pairs} pairs · ${moves} moves`} right={<Chip tone="sky">{((finishedMs ?? elapsed) / 1000).toFixed(1)} s</Chip>} />
+      <PageHeader title={ui.games.memory} subtitle={`${matched.size} / ${pairs} pairs · ${moves} moves`} right={<Chip tone="sky">{((finishedMs ?? elapsed) / 1000).toFixed(1)} s</Chip>} />
       {finishedMs !== undefined && <Confetti />}
       <div className="grid grid-cols-4 gap-2" role="grid" aria-label="Memory board">
         {tiles.map((t: MemoryTile, i) => {
@@ -150,7 +152,7 @@ function Memory({ words, onDone, best }: { words: VocabEntry[]; onDone: () => vo
               onClick={() => flip(i)}
               disabled={done || finishedMs !== undefined}
               aria-label={up ? t.text : 'Hidden tile'}
-              lang={t.side}
+              lang={tlOf(t.side)}
               className={`flex aspect-square items-center justify-center rounded-2xl border-2 p-1 text-center text-xs font-extrabold leading-tight transition sm:text-sm ${done ? 'border-ok-500 bg-ok-100 text-ok-700 dark:bg-ok-500/20' : up ? 'border-brand-500 bg-brand-100 dark:bg-brand-500/20' : 'border-line bg-surface shadow-card hover:-translate-y-0.5'}`}
             >
               {up ? t.text : <span className="text-2xl" aria-hidden="true">🐾</span>}
@@ -160,7 +162,7 @@ function Memory({ words, onDone, best }: { words: VocabEntry[]; onDone: () => vo
       </div>
       {finishedMs !== undefined && (
         <div className="card mt-4 text-center">
-          <p className="text-2xl font-extrabold">¡Lo lograste!</p>
+          <p className="text-2xl font-extrabold">{ui.games.win}</p>
           <p className="text-sm text-muted">
             {pairs} pairs in {(finishedMs / 1000).toFixed(1)} s and {moves} moves.{best && finishedMs < best ? ' New best time!' : best ? ` Best: ${(best / 1000).toFixed(1)} s.` : ''}
           </p>
@@ -230,7 +232,7 @@ function Rapid({ words, maxLevel, onDone, best }: { words: VocabEntry[]; maxLeve
   if (finished) {
     return (
       <div className="animate-rise pb-6 text-center">
-        <PageHeader title="Rápido" />
+        <PageHeader title={ui.games.rapid} />
         {score > 0 && score >= (best ?? 0) && <Confetti />}
         <p className="text-5xl font-extrabold text-gradient">{score}</p>
         <p className="text-sm text-muted">points · {right} of {i} right{best !== undefined && score > best ? ' · new best!' : best ? ` · best ${best}` : ''}</p>
@@ -240,12 +242,12 @@ function Rapid({ words, maxLevel, onDone, best }: { words: VocabEntry[]; maxLeve
   }
   return (
     <div className="animate-rise pb-6">
-      <PageHeader title="Rápido" subtitle={`${score} points · streak ${streak}`} right={<Chip tone={left <= 10 ? 'bad' : 'sky'}>{left} s</Chip>} />
+      <PageHeader title={ui.games.rapid} subtitle={`${score} points · streak ${streak}`} right={<Chip tone={left <= 10 ? 'bad' : 'sky'}>{left} s</Chip>} />
       {mult > 1 && <p className="mb-2 text-center text-xs font-extrabold text-gold-600">×{mult} multiplier</p>}
       {q && (
         <div className="card">
           <p className="text-center text-xs font-extrabold uppercase tracking-wider text-brand-600">What does it mean?</p>
-          <p className="my-4 text-center font-display text-3xl" lang="es">{q.v.lemma}</p>
+          <p className="my-4 text-center font-display text-3xl" lang={TL}>{q.v.lemma}</p>
           <div className="grid gap-2" role="radiogroup">
             {q.options.map((o, oi) => {
               let cls = ''

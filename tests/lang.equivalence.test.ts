@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 import { buildEquivalence, canonicalize, equivalent, compareEquivalent, expandAnswers, typoMatch } from '@/lang/equivalence'
-import { spanishSynonymGroups, englishSynonymGroups } from '@/engine/loader'
+import { targetSynonymGroups, englishSynonymGroups } from '@/engine/loader'
 import { grade, type GradeDeps } from '@/engine/grade'
 import { spanish } from '@/lang/es'
 import type { TypeExercise } from '@/engine/types'
 
-const eqEs = buildEquivalence(spanishSynonymGroups())
+const eqEs = buildEquivalence(targetSynonymGroups())
 const eqEn = buildEquivalence(englishSynonymGroups)
 const isWord = (w: string) => ['gusta', 'gustan', 'tengo', 'casa', 'coche', 'rojo', 'roja', 'una', 'un'].includes(w.toLowerCase())
 const deps: GradeDeps = { pack: spanish, equivEs: (g, e) => compareEquivalent(g, e, eqEs, 'es'), equivEn: (g, e) => compareEquivalent(g, e, eqEn, 'en'), isWord }

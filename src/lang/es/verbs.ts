@@ -8,6 +8,20 @@ export type { Tense, Conjugation } from './conjugator'
 const parsed = VerbsFileSchema.parse(irregularRaw)
 export const IRREGULAR: ReadonlyMap<string, IrregularVerb> = new Map(parsed.verbs.map((v) => [v.lemma, v]))
 
+/** Irregular-verb table type passed around by the engine. */
+export type VerbTable = ReadonlyMap<string, IrregularVerb>
+export { conjugateWith }
+
+/** Text and defaults for the verb trainer page. */
+export const VERB_TRAINER = {
+  defaultVerb: 'ser',
+  placeholder: 'Type a verb (hablar, tener, irse…)',
+  isInfinitive: (w: string) => /(ar|er|ir|ír)(se)?$/.test(w.trim().toLowerCase()),
+  notAVerb: 'That does not look like a Spanish infinitive (it should end in -ar, -er or -ir).',
+  baseLemma: (lemma: string) => lemma.toLowerCase().replace(/se$/, ''),
+  skipInExercises: ['impNeg', 'impAff'] as readonly string[],
+}
+
 const cache = new Map<string, Conjugation>()
 
 /** Conjugate a Spanish verb using the bundled irregular table. */

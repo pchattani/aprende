@@ -2,7 +2,8 @@
 import type { Exercise, GradeResult } from './types'
 import type { LanguagePack, CheckerFinding } from '../lang/types'
 import { expandAnswers, typoMatch } from '../lang/equivalence'
-import { numberWordsToDigits, hasNumberWord } from '../lang/es/numbers'
+import { numberWordsToDigits, hasNumberWord } from '@lang/numbers'
+import { explainConfig } from '@lang/explain'
 import { numberWordsToDigitsEn, hasNumberWordEn } from '../lang/en/numbers'
 
 const CONTRACTIONS: [RegExp, string][] = [
@@ -54,13 +55,14 @@ export function matchEnglish(given: string, expectedIn: string[], equiv?: Equiv)
 }
 
 export interface GradeDeps {
-  pack: LanguagePack
+  /** The target-language pack; `comparable` (Cantonese → Jyutping) is used for typo tolerance. */
+  pack: LanguagePack & { comparable?: (text: string) => string }
   /** Optional checker for explanations on wrong typed answers. */
   check?: (text: string) => CheckerFinding[]
   /** Equivalence comparators (synonyms, regional variants, optional pronouns); see lang/equivalence. */
   equivEs?: Equiv
   equivEn?: Equiv
-  /** True when a form is a real Spanish word (so a "typo" that forms another word is not forgiven). */
+  /** True when a form is a real word of the target language (so a "typo" that forms another word is not forgiven). */
   isWord?: (w: string) => boolean
 }
 
@@ -74,18 +76,19 @@ function matchSpanishOnce(text: string, expected: string[], deps: GradeDeps, exa
     for (const e of expected) {
       const c = deps.equivEs(text, e)
       if (c === 'exact') return { verdict: 'correct', notes: [], matched: e, viaEquivalence: true }
-      if (c === 'accents') return { verdict: 'almost', notes: ['Check the accents.'], matched: e, viaEquivalence: true, lenient: 'accents' }
+      if (c === 'accents') return { verdict: 'almost', notes: [`Check the ${explainConfig.marks}.`], matched: e, viaEquivalence: true, lenient: 'accents' }
     }
   }
+  const cmp = deps.pack.comparable ?? ((t: string) => t)
   for (const e of expected) {
-    const t = typoMatch(text, e, deps.isWord, exact ? 5 : 4)
+    const t = typoMatch(cmp(text), cmp(e), deps.isWord, exact ? 5 : 4)
     if (t.ok) return { verdict: 'almost', notes: t.fixes.map(([a, b]) => `Small typo: “${a}” → “${b}”.`), matched: e, viaEquivalence: false, lenient: 'typo' }
   }
   return { verdict: 'wrong', notes: [], viaEquivalence: false }
 }
 
 /**
- * Spanish answer matching: literal, then equivalence, then dictionary-aware typo tolerance.
+ * Target-language answer matching: literal, then equivalence, then dictionary-aware typo tolerance.
  * Digits and number words compare equal ("Tengo 15 años" = "Tengo quince años").
  * Unless `exact` (dictation, conjugation, error fixes), missing accents and a small
  * typo still count as correct, with a reminder note.

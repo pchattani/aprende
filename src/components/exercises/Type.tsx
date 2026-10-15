@@ -3,9 +3,12 @@ import type { TypeExercise, FindErrorExercise } from '../../engine/types'
 import { SpeakerButton, Chip } from '../ui/basics'
 import { Instruction, Prompt, type ExerciseProps } from './shared'
 import { SPECIAL_CHARS } from './chars'
+import { TL } from '../../engine/course'
+import { LANGUAGE } from '../../engine/course'
+import { ui } from '../../engine/loader'
 
 const TITLES: Record<string, string> = {
-  typeEs: 'Write this in Spanish',
+  typeEs: `Write this in ${LANGUAGE}`,
   typeEn: 'Write this in English',
   dictation: 'Type what you hear',
   conjugate: 'Complete with the right verb form',
@@ -67,18 +70,18 @@ export function TypeAnswer({ exercise, value, onChange, onSubmit, checked }: Exe
           }
         }}
         rows={3}
-        lang={isEnglish ? 'en' : 'es'}
+        lang={isEnglish ? 'en' : TL}
         autoCapitalize="sentences"
         autoCorrect="off"
         spellCheck={false}
-        placeholder={isEnglish ? 'Type in English' : 'Escribe en español'}
+        placeholder={isEnglish ? 'Type in English' : ui.typePlaceholder}
         className="w-full resize-none rounded-2xl border-2 border-line bg-surface-2 p-3 text-lg outline-none focus:border-sky-500"
         aria-label="Your answer"
       />
       {!isEnglish && !checked && (
         <div className="mt-2 flex flex-wrap gap-1.5" aria-label="Special characters">
           {SPECIAL_CHARS.map((c) => (
-            <button key={c} type="button" onClick={() => insert(c)} className="rounded-lg border-2 border-line bg-surface px-2.5 py-1 font-bold" lang="es">
+            <button key={c} type="button" onClick={() => insert(c)} className="rounded-lg border-2 border-line bg-surface px-2.5 py-1 font-bold" lang={TL}>
               {c}
             </button>
           ))}

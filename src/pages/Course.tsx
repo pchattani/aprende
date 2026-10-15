@@ -18,6 +18,7 @@ import { takeReturn } from '../engine/returnTo'
 import { questsForDate, progressFor, pickReward } from '../engine/quests'
 import type { LevelMeta, LevelId, Lesson } from '../engine/schema'
 import type { DayRow, LessonRow } from '../engine/types'
+import { ui } from '../engine/loader'
 
 const STATUS_LABEL: Record<string, string> = { new: 'new', started: 'in progress', learned: 'learned', mastered: 'solid' }
 
@@ -125,7 +126,7 @@ export default function Course() {
     else break
   }
   const minutesToday = byDate.get(today)?.minutes ?? 0
-  const greeting = hour < 12 ? 'Buenos días' : hour < 20 ? 'Buenas tardes' : 'Buenas noches'
+  const greeting = hour < 12 ? ui.greetings.morning : hour < 20 ? ui.greetings.afternoon : ui.greetings.evening
   const goalDone = minutesToday >= goal
 
   // Current stop: the last lesson worked on, else the first lesson of the recommended level.
@@ -166,7 +167,7 @@ export default function Course() {
             })}
           </div>
           <p className="mt-1.5 text-xs font-semibold text-muted">
-            {goalDone ? 'Practice done for today. ¡Olé! · ' : ''}{weekCount} of 7 days this week{inARow > 1 ? ` · ${inARow} in a row` : ''}
+            {goalDone ? `Practice done for today. ${ui.feedback.goalDone} · ` : ''}{weekCount} of 7 days this week{inARow > 1 ? ` · ${inARow} in a row` : ''}
           </p>
         </div>
       </section>

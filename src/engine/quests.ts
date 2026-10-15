@@ -7,6 +7,7 @@ import { Rng, hashString } from './random'
 import type { DayRow } from './types'
 import type { LevelId } from './schema'
 import { souvenirsFor, SOUVENIRS, type Souvenir } from './journey'
+import { ui } from './loader'
 
 export type QuestKind = 'reviews' | 'lessons' | 'minutes' | 'perfect' | 'newItems'
 export interface QuestDef {
@@ -20,15 +21,18 @@ export interface QuestDef {
 }
 
 export const QUEST_POOL: QuestDef[] = [
-  { id: 'rev15', kind: 'reviews', target: 15, es: 'Leo quiere repasar', en: 'Answer 15 review items', emoji: '🔁' },
-  { id: 'rev30', kind: 'reviews', target: 30, es: 'Bonchita no se cansa', en: 'Answer 30 review items', emoji: '🔁' },
-  { id: 'les1', kind: 'lessons', target: 1, es: 'Una parada más', en: 'Complete a lesson', emoji: '📍' },
-  { id: 'les2', kind: 'lessons', target: 2, es: 'Dos paradas en un día', en: 'Complete two lessons', emoji: '📍' },
-  { id: 'min10', kind: 'minutes', target: 10, es: 'Diez minutos de paseo', en: 'Practise for 10 minutes', emoji: '⏱️' },
-  { id: 'min20', kind: 'minutes', target: 20, es: 'Un paseo largo', en: 'Practise for 20 minutes', emoji: '⏱️' },
-  { id: 'perf1', kind: 'perfect', target: 1, es: 'Sin tropezar', en: 'Finish a lesson with no mistakes', emoji: '✨' },
-  { id: 'new10', kind: 'newItems', target: 10, es: 'Luna abre el mapa', en: 'Meet 10 new items', emoji: '🗺️' },
+  { id: 'rev15', kind: 'reviews', target: 15, es: '', en: 'Answer 15 review items', emoji: '🔁' },
+  { id: 'rev30', kind: 'reviews', target: 30, es: '', en: 'Answer 30 review items', emoji: '🔁' },
+  { id: 'les1', kind: 'lessons', target: 1, es: '', en: 'Complete a lesson', emoji: '📍' },
+  { id: 'les2', kind: 'lessons', target: 2, es: '', en: 'Complete two lessons', emoji: '📍' },
+  { id: 'min10', kind: 'minutes', target: 10, es: '', en: 'Practise for 10 minutes', emoji: '⏱️' },
+  { id: 'min20', kind: 'minutes', target: 20, es: '', en: 'Practise for 20 minutes', emoji: '⏱️' },
+  { id: 'perf1', kind: 'perfect', target: 1, es: '', en: 'Finish a lesson with no mistakes', emoji: '✨' },
+  { id: 'new10', kind: 'newItems', target: 10, es: '', en: 'Meet 10 new items', emoji: '🗺️' },
 ]
+
+// Quest titles are in the target language, from content/<lang>/ui.yaml.
+for (const q of QUEST_POOL) q.es = ui.quests[q.id] ?? q.en
 
 export function progressFor(q: QuestDef, day: Partial<DayRow> | undefined): number {
   if (!day) return 0

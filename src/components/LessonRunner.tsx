@@ -3,6 +3,7 @@ import type { Exercise, GradeResult, LessonResult, PinRow } from '../engine/type
 import { grade, type Answer } from '../engine/grade'
 import { explainAnswer, firstReplacement, type Explanation } from '../engine/explain'
 import { recordAnswer, pinAnswer, unpin } from '../db/progress'
+import { languagePack } from '@lang'
 import { pinIdFor } from '../engine/pins'
 import { useGradeDeps, explainDeps } from '../hooks/useDeps'
 import { useSettings } from '../store/settings'
@@ -158,7 +159,9 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   useEffect(() => {
     try {
       if (typeof window !== 'undefined' && window.sessionStorage.getItem('e2e')) {
-        ;(window as unknown as { __aprende?: unknown }).__aprende = { exercise: ex, index: s.index, total, finished: s.finished }
+        // `solution`: tiles of the first accepted answer, in order (language-neutral for tests).
+        const solution = ex && 'answers' in ex && 'tiles' in ex ? languagePack.words(ex.answers[0] ?? '') : undefined
+        ;(window as unknown as { __aprende?: unknown }).__aprende = { exercise: ex, index: s.index, total, finished: s.finished, solution }
       }
     } catch {
       /* ignore */

@@ -2,6 +2,9 @@ import { useMemo, useRef, useState } from 'react'
 import type { WordBankExercise } from '../../engine/types'
 import { SpeakerButton } from '../ui/basics'
 import { Instruction, Prompt, type ExerciseProps } from './shared'
+import { TL } from '../../engine/course'
+import { LANGUAGE } from '../../engine/course'
+import { TargetText } from '../ui/TargetText'
 
 type Drag = { from: 'pool' | 'answer'; index: number; word: string; x: number; y: number; dx: number; dy: number; moved: boolean; pointerId: number }
 
@@ -105,12 +108,12 @@ export function WordBank({ exercise, value, onChange, checked }: ExerciseProps<W
 
   return (
     <div>
-      <Instruction>{exercise.kind === 'orderText' ? 'Put the sentences in order' : exercise.kind === 'order' ? 'Put the words in order' : 'Write this in Spanish'}</Instruction>
+      <Instruction>{exercise.kind === 'orderText' ? 'Put the sentences in order' : exercise.kind === 'order' ? 'Put the words in order' : `Write this in ${LANGUAGE}`}</Instruction>
       <div className="mb-4 flex items-center gap-3">
         {exercise.kind === 'order' && exercise.answers[0] && <SpeakerButton text={exercise.answers[0]} size="sm" />}
         <Prompt lang={exercise.kind === 'order' ? 'es' : 'en'}>{exercise.kind === 'order' ? exercise.translation ?? '' : exercise.kind === 'orderText' ? exercise.translation ?? exercise.prompt : exercise.prompt}</Prompt>
       </div>
-      <div ref={answerRef} className={`mb-4 min-h-[3.5rem] rounded-2xl border-b-2 border-dashed px-1 py-2 transition ${drag?.moved && dropAt !== undefined ? 'border-brand-400 bg-brand-100/40 dark:bg-brand-500/10' : 'border-line'}`} aria-label="Your answer" lang="es">
+      <div ref={answerRef} className={`mb-4 min-h-[3.5rem] rounded-2xl border-b-2 border-dashed px-1 py-2 transition ${drag?.moved && dropAt !== undefined ? 'border-brand-400 bg-brand-100/40 dark:bg-brand-500/10' : 'border-line'}`} aria-label="Your answer" lang={TL}>
         <div className="flex flex-wrap gap-2">
           {chosen.map((w, pos) => (
             <span key={pos} className={`flex items-center ${wide ? 'w-full' : ''}`}>
@@ -125,14 +128,14 @@ export function WordBank({ exercise, value, onChange, checked }: ExerciseProps<W
                 disabled={checked}
                 {...handlers('answer', pos, w)}
               >
-                {w}
+                <TargetText text={w} />
               </button>
             </span>
           ))}
           {drag?.moved && dropAt === chosen.length && <span className="h-9 w-1 self-center rounded-full bg-brand-500" aria-hidden="true" />}
         </div>
       </div>
-      <div className="flex flex-wrap gap-2" lang="es">
+      <div className="flex flex-wrap gap-2" lang={TL}>
         {tiles.map(({ t, i }) => (
           <button
             key={i}
@@ -140,9 +143,10 @@ export function WordBank({ exercise, value, onChange, checked }: ExerciseProps<W
             onClick={() => !suppressClick.current && add(i)}
             disabled={checked || usedIdx.has(i)}
             className={`tile cursor-grab px-3 py-2 active:cursor-grabbing ${wide ? 'w-full text-left' : ''} ${usedIdx.has(i) ? 'invisible' : ''}`}
+            data-tile={t}
             {...handlers('pool', i, t)}
           >
-            {t}
+            <TargetText text={t} />
           </button>
         ))}
       </div>

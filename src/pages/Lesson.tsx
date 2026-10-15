@@ -5,7 +5,7 @@ import type { Exercise, LessonResult, Stage } from '../engine/types'
 import { loadLesson, vocab, vocabUpTo, levelOf, grammar, units } from '../engine/loader'
 import { generateLesson, sentenceId, exchangeId, textId, spicyId } from '../engine/generate'
 import { ensureCards, getCards, recordLesson, getKv, setKv, lessonRows, type ItemSpec } from '../db/progress'
-import { IRREGULAR } from '../lang/es/verbs'
+import { IRREGULAR } from '@lang/verbs'
 import { sttSupported } from '../engine/speech'
 import { useSettings, SESSION_COUNT } from '../store/settings'
 import { LessonRunner } from '../components/LessonRunner'
@@ -26,6 +26,7 @@ import { useOutfits } from '../hooks/useOutfits'
 import { isStamped, stopFor, type Souvenir, type Stop, type Region } from '../engine/journey'
 import { lookupForm } from '../hooks/useDeps'
 import { playSound } from '../engine/sounds'
+import { TL } from '../engine/course'
 
 type Phase =
   | { kind: 'loading' }
@@ -175,7 +176,7 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
               <li key={w!.id} className="flex items-center gap-3 py-2">
                 <SpeakerButton text={w!.lemma} size="sm" />
                 <div className="flex-1">
-                  <p className="font-bold" lang="es">
+                  <p className="font-bold" lang={TL}>
                     {w!.pos === 'noun' && w!.gender ? `${w!.gender === 'f' ? 'la' : 'el'} ` : ''}
                     {w!.lemma}
                   </p>

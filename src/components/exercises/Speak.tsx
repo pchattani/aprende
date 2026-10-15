@@ -2,10 +2,12 @@ import { useState } from 'react'
 import type { TypeExercise } from '../../engine/types'
 import { listenOnce, sttSupported, ensureMicPermission, listenErrorMessage, isIosStandalone, stopListening, type ListenError } from '../../engine/speech'
 import { pack } from '../../engine/loader'
-import { spanish } from '../../lang/es'
+import { languagePack as spanish } from '@lang'
 import { SpeakerButton, Chip } from '../ui/basics'
 import { IconMic } from '../ui/icons'
 import { Instruction, Prompt, type ExerciseProps } from './shared'
+import { TL } from '../../engine/course'
+import { LANGUAGE } from '../../engine/course'
 
 /** Pick the recogniser alternative closest to an accepted answer. */
 function bestAlternative(alts: string[], answers: string[]): string {
@@ -48,7 +50,7 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
       return
     }
     setListening(true)
-    const r = await listenOnce(pack.tts.lang, 10000, setLive)
+    const r = await listenOnce(pack.stt ?? pack.tts.lang, 10000, setLive)
     setListening(false)
     if (r.error) {
       setError(r.error)
@@ -77,7 +79,7 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
           {exercise.hint && <Chip tone="sky">{exercise.hint}</Chip>}
           {checked && (
             <p className="mt-3 text-sm text-muted">
-              A natural answer: <span className="font-bold text-[var(--text)]" lang="es">{exercise.answers[0]}</span>
+              A natural answer: <span className="font-bold text-[var(--text)]" lang={TL}>{exercise.answers[0]}</span>
             </p>
           )}
         </div>
@@ -96,7 +98,7 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
             <IconMic width={44} height={44} />
           </button>
           <p className="min-h-[2.5rem] text-center text-sm text-muted" aria-live="polite">
-            {listening ? (live ? <>Hearing: <span className="font-bold text-[var(--text)]" lang="es">“{live}”</span></> : 'Listening… speak now') : transcript.trim() ? `I heard: “${transcript.trim()}”` : variant === 'reply' ? 'Tap the microphone and answer the question in Spanish' : variant === 'repeat' ? 'Tap the microphone and repeat the word' : 'Tap the microphone and read the sentence aloud'}
+            {listening ? (live ? <>Hearing: <span className="font-bold text-[var(--text)]" lang={TL}>“{live}”</span></> : 'Listening… speak now') : transcript.trim() ? `I heard: “${transcript.trim()}”` : variant === 'reply' ? `Tap the microphone and answer the question in ${LANGUAGE}` : variant === 'repeat' ? 'Tap the microphone and repeat the word' : 'Tap the microphone and read the sentence aloud'}
           </p>
           {error && <p className="rounded-2xl bg-gold-100 px-3 py-2 text-center text-sm font-semibold text-[var(--text)] dark:bg-gold-500/15" role="alert">{listenErrorMessage(error)}</p>}
           {!checked && (

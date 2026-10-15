@@ -1,2 +1,2 @@
-/** Characters offered on the on-screen helper row for typing Spanish. */
-export const SPECIAL_CHARS = ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡']
+/** Characters offered on the on-screen helper row for typing the target language (from pack.yaml). */
+export { SPECIAL_CHARS } from '../../engine/course'

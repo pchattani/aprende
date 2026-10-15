@@ -7,6 +7,7 @@ import { souvenirById, type WearSlot } from '../../engine/journey'
 import type { Outfit, DogName } from '../../hooks/useOutfits'
 import { useSpeak } from '../../hooks/useSpeak'
 import { DOG_NAMES, DOG_LINES } from '../../engine/dogs'
+import { TL } from '../../engine/course'
 
 type P = SVGProps<SVGSVGElement> & { size?: number; mood?: 'happy' | 'curious' | 'sleepy'; outfit?: Outfit }
 
@@ -202,7 +203,7 @@ export function DogButton({ dog, size = 48, mood, outfit, className = '', onClic
     <button type="button" onClick={tap} className={`relative inline-flex rounded-full ${className}`} aria-label={`${DOG_NAMES[dog]} says hello`}>
       <Svg size={size} mood={mood} outfit={outfit} className={bounce ? 'animate-pop' : ''} />
       {line && (
-        <span className="pointer-events-none absolute -top-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-surface px-2 py-0.5 text-[10px] font-extrabold shadow-card" lang="es" aria-live="polite">
+        <span className="pointer-events-none absolute -top-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-surface px-2 py-0.5 text-[10px] font-extrabold shadow-card" lang={TL} aria-live="polite">
           {line}
         </span>
       )}

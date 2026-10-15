@@ -8,10 +8,10 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "oxlint src tests scripts e2e",
-    "typecheck": "tsc -b",
+    "typecheck": "tsc -b && node scripts/typecheck-courses.mjs",
     "test": "vitest",
     "test:e2e": "playwright test",
-    "content:check": "tsx scripts/check-content.ts",
+    "content:check": "tsx --import ./scripts/yaml-register.mjs scripts/check-content.ts",
     "content:stats": "tsx scripts/content-stats.ts"
   },
   "dependencies": {

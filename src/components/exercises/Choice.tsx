@@ -1,10 +1,13 @@
 import type { ChoiceExercise } from '../../engine/types'
 import { SpeakerButton } from '../ui/basics'
 import { Instruction, Prompt, type ExerciseProps } from './shared'
+import { tlOf } from '../../engine/course'
+import { LANGUAGE } from '../../engine/course'
+import { TargetText } from '../ui/TargetText'
 
 const TITLES: Record<ChoiceExercise['kind'], string> = {
   choiceEs: 'What does this mean?',
-  choiceEn: 'Which is the Spanish?',
+  choiceEn: `Which is the ${LANGUAGE}?`,
   listen: 'What did you hear?',
   fillBlank: 'Fill in the blank',
   reply: 'How would you reply?',
@@ -43,10 +46,10 @@ export function Choice({ exercise, value, onChange, checked, result }: ExerciseP
               disabled={checked}
               onClick={() => onChange(i)}
               className={`tile flex items-center gap-3 ${cls}`}
-              lang={exercise.kind === 'fillBlank' || exercise.kind === 'reply' ? 'es' : isEs ? 'en' : 'es'}
+              lang={tlOf(exercise.kind === 'fillBlank' || exercise.kind === 'reply' ? 'es' : isEs ? 'en' : 'es')}
             >
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 border-line text-xs text-muted">{i + 1}</span>
-              <span>{opt}</span>
+              <span>{exercise.kind === 'choiceEs' || exercise.kind === 'listen' ? opt : <TargetText text={opt} />}</span>
             </button>
           )
         })}
