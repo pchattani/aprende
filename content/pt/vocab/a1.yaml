@@ -1,0 +1,848 @@
+# A1 vocabulary (834 lemmas; course target ~700), grouped by the unit that introduces each word.
+# Brazilian Portuguese; European Portuguese equivalents in `variant: { pt-PT: … }`.
+# ---------------------------------------------------------------- a1.u01 Oi, tudo bem?
+- { id: w.oi, lemma: oi, pos: interj, en: [hi, hello], level: a1, unit: a1.u01, topic: greetings, notes: "The everyday Brazilian hi, with anyone. In Portugal olá is more usual." }
+- { id: w.olá, lemma: olá, pos: interj, en: [hello], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.tchau, lemma: tchau, pos: interj, en: [bye], level: a1, unit: a1.u01, topic: greetings, notes: From Italian ciao. In Portugal adeus is also a normal goodbye. }
+- { id: w.adeus, lemma: adeus, pos: interj, en: [goodbye, farewell], level: a1, unit: a1.u01, topic: greetings, notes: Sounds final in Brazil; everyday in Portugal. }
+- { id: w.bom-dia, lemma: bom dia, pos: phrase, en: [good morning], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.boa-tarde, lemma: boa tarde, pos: phrase, en: [good afternoon], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.boa-noite, lemma: boa noite, pos: phrase, en: [good evening, good night], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.tudo-bem, lemma: tudo bem, pos: phrase, en: [how are you, all good], level: a1, unit: a1.u01, topic: greetings, example: { es: "Oi, tudo bem?", en: "Hi, how are you?" } }
+- { id: w.tudo-bom, lemma: tudo bom, pos: phrase, en: [all good, how's it going], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.e-aí, lemma: e aí, pos: phrase, en: [what's up], level: a1, unit: a1.u01, topic: greetings, notes: Informal; answer beleza! or tranquilo! }
+- { id: w.beleza, lemma: beleza, pos: interj, en: [great, cool, OK], level: a1, unit: a1.u01, topic: greetings, notes: "Informal answer to e aí? Also a noun: beauty." }
+- { id: w.até-logo, lemma: até logo, pos: phrase, en: [see you later], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.até-mais, lemma: até mais, pos: phrase, en: [see you], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.até-amanhã, lemma: até amanhã, pos: phrase, en: [see you tomorrow], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.até-já, lemma: até já, pos: phrase, en: [see you in a minute], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.obrigado, lemma: obrigado, pos: adj, en: [thank you, thanks, obliged], level: a1, unit: a1.u01, topic: greetings, notes: "Agrees with the speaker: a woman says obrigada." }
+- { id: w.de-nada, lemma: de nada, pos: phrase, en: [you're welcome], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.por-favor, lemma: por favor, pos: phrase, en: [please], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.desculpa, lemma: desculpa, pos: interj, en: [sorry], level: a1, unit: a1.u01, topic: greetings, notes: desculpe is the more formal form. }
+- { id: w.com-licença, lemma: com licença, pos: phrase, en: [excuse me], level: a1, unit: a1.u01, topic: greetings, notes: To get past someone or to interrupt politely. }
+- { id: w.prazer, lemma: prazer, pos: noun, gender: m, en: [pleasure, nice to meet you], level: a1, unit: a1.u01, topic: greetings, example: { es: "Muito prazer, Ana.", en: "Nice to meet you, Ana." } }
+- { id: w.muito-prazer, lemma: muito prazer, pos: phrase, en: [nice to meet you], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.igualmente, lemma: igualmente, pos: adv, en: [likewise, you too], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.bem-vindo, lemma: bem-vindo, pos: adj, en: [welcome], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.beijo, lemma: beijo, pos: noun, gender: m, en: [kiss, love (in messages)], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.abraço, lemma: abraço, pos: noun, gender: m, en: [hug, best wishes (in messages)], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.sim, lemma: sim, pos: adv, en: ["yes"], level: a1, unit: a1.u01 }
+- { id: w.não, lemma: não, pos: adv, en: ["no", not], level: a1, unit: a1.u01 }
+- { id: w.bem, lemma: bem, pos: adv, en: [well, fine], level: a1, unit: a1.u01 }
+- { id: w.mal, lemma: mal, pos: adv, en: [badly, poorly], level: a1, unit: a1.u01 }
+- { id: w.mais-ou-menos, lemma: mais ou menos, pos: phrase, en: [so-so, more or less], level: a1, unit: a1.u01 }
+- { id: w.eu, lemma: eu, pos: pron, en: [I], level: a1, unit: a1.u01, forms: [eu] }
+- { id: w.você, lemma: você, pos: pron, en: [you], level: a1, unit: a1.u01, forms: [você], notes: The default you in Brazil; takes the same verb form as ele. In Portugal tu or the name/title is usual. }
+- { id: w.vocês, lemma: vocês, pos: pron, en: [you (plural)], level: a1, unit: a1.u01, forms: [vocês] }
+- { id: w.ele, lemma: ele, pos: pron, en: [he, it], level: a1, unit: a1.u01, forms: [ele] }
+- { id: w.ela, lemma: ela, pos: pron, en: [she, it], level: a1, unit: a1.u01, forms: [ela] }
+- { id: w.nós, lemma: nós, pos: pron, en: [we], level: a1, unit: a1.u01, forms: [nós] }
+- { id: w.eles, lemma: eles, pos: pron, en: [they], level: a1, unit: a1.u01, forms: [eles, elas], notes: elas for an all-female group. }
+- { id: w.me, lemma: me, pos: pron, en: [me, myself], level: a1, unit: a1.u01, forms: [me] }
+- { id: w.o-senhor, lemma: o senhor, pos: phrase, en: ["you (formal, to a man)", sir], level: a1, unit: a1.u01, notes: "Polite you for older people and strangers: O senhor é daqui?" }
+- { id: w.a-senhora, lemma: a senhora, pos: phrase, en: ["you (formal, to a woman)", madam], level: a1, unit: a1.u01 }
+- { id: w.senhor, lemma: senhor, pos: noun, gender: mf, en: [Mr, sir, gentleman], level: a1, unit: a1.u01 }
+- { id: w.dona, lemma: dona, pos: noun, gender: f, en: [Mrs (with first name), lady, owner], level: a1, unit: a1.u01, notes: "dona Maria: respectful, with the first name." }
+- { id: w.ser, lemma: ser, pos: verb, en: ["to be (identity, origin, profession)"], level: a1, unit: a1.u01, example: { es: Eu sou professora., en: I am a teacher. } }
+- { id: w.estar, lemma: estar, pos: verb, en: ["to be (state, location)"], level: a1, unit: a1.u01, example: { es: "Como você está?", en: "How are you?" } }
+- { id: w.chamar-se, lemma: chamar-se, pos: verb, en: [to be called], level: a1, unit: a1.u01, example: { es: Eu me chamo Ana., en: My name is Ana. } }
+- { id: w.chamar, lemma: chamar, pos: verb, en: [to call], level: a1, unit: a1.u01 }
+- { id: w.nome, lemma: nome, pos: noun, gender: m, en: [name], level: a1, unit: a1.u01 }
+- { id: w.sobrenome, lemma: sobrenome, pos: noun, gender: m, en: [surname, last name], level: a1, unit: a1.u01, variant: { pt-PT: apelido }, notes: In Brazil apelido means nickname. }
+- { id: w.como, lemma: como, pos: adv, en: [how, what (as in what's your name)], level: a1, unit: a1.u01 }
+- { id: w.como-vai, lemma: como vai, pos: phrase, en: [how are you], level: a1, unit: a1.u01, topic: greetings }
+- { id: w.que, lemma: que, pos: pron, en: [what], level: a1, unit: a1.u01, forms: [que, quê] }
+- { id: w.o-que, lemma: o que, pos: phrase, en: [what], level: a1, unit: a1.u01 }
+- { id: w.quem, lemma: quem, pos: pron, en: [who], level: a1, unit: a1.u01 }
+- { id: w.qual, lemma: qual, pos: pron, en: [which, what], level: a1, unit: a1.u01, forms: [qual, quais] }
+- { id: w.e, lemma: e, pos: conj, en: [and], level: a1, unit: a1.u01, topic: connectors }
+- { id: w.ou, lemma: ou, pos: conj, en: [or], level: a1, unit: a1.u01, topic: connectors }
+- { id: w.mas, lemma: mas, pos: conj, en: [but], level: a1, unit: a1.u01, topic: connectors }
+- { id: w.também, lemma: também, pos: adv, en: [also, too], level: a1, unit: a1.u01, topic: connectors }
+- { id: w.aqui, lemma: aqui, pos: adv, en: [here], level: a1, unit: a1.u01, topic: directions }
+- { id: w.tá, lemma: tá, pos: phrase, en: [OK, (spoken) is], level: a1, unit: a1.u01, notes: "Spoken form of está; also means OK: Tá bom!" }
+- { id: w.tá-bom, lemma: tá bom, pos: phrase, en: [OK, all right], level: a1, unit: a1.u01 }
+- { id: w.amigo, lemma: amigo, pos: noun, gender: mf, en: [friend], level: a1, unit: a1.u01, topic: relationships }
+- { id: w.professor, lemma: professor, pos: noun, gender: mf, en: [teacher, professor], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.aluno, lemma: aluno, pos: noun, gender: mf, en: [student, pupil], level: a1, unit: a1.u01, topic: school }
+- { id: w.estudante, lemma: estudante, pos: noun, gender: mf, en: [student], level: a1, unit: a1.u01, topic: school }
+- { id: w.médico, lemma: médico, pos: noun, gender: mf, en: [doctor], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.engenheiro, lemma: engenheiro, pos: noun, gender: mf, en: [engineer], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.advogado, lemma: advogado, pos: noun, gender: mf, en: [lawyer], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.enfermeiro, lemma: enfermeiro, pos: noun, gender: mf, en: [nurse], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.motorista, lemma: motorista, pos: noun, gender: mf, en: [driver], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.cozinheiro, lemma: cozinheiro, pos: noun, gender: mf, en: [cook, chef], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.vendedor, lemma: vendedor, pos: noun, gender: mf, en: [salesperson, seller], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.ator, lemma: ator, pos: noun, gender: mf, feminine: atriz, en: [actor], level: a1, unit: a1.u01, topic: jobs }
+- { id: w.isso-aí, lemma: isso aí, pos: phrase, en: [that's it, exactly], level: a1, unit: a1.u01 }
+- { id: w.muito-bem, lemma: muito bem, pos: phrase, en: [very good, well done], level: a1, unit: a1.u01 }
+# ---------------------------------------------------------------- a1.u02 De onde você é?
+- { id: w.de, lemma: de, pos: prep, en: [of, from], level: a1, unit: a1.u02 }
+- { id: w.do, lemma: do, pos: prep, en: [of the, from the], level: a1, unit: a1.u02, forms: [do, da, dos, das], notes: de + o/a/os/as. }
+- { id: w.de-onde, lemma: de onde, pos: phrase, en: [where from], level: a1, unit: a1.u02, example: { es: "De onde você é?", en: "Where are you from?" } }
+- { id: w.onde, lemma: onde, pos: adv, en: [where], level: a1, unit: a1.u02, topic: directions }
+- { id: w.país, lemma: país, pos: noun, gender: m, en: [country], level: a1, unit: a1.u02, topic: countries }
+- { id: w.cidade, lemma: cidade, pos: noun, gender: f, en: [city, town], level: a1, unit: a1.u02, topic: city }
+- { id: w.mundo, lemma: mundo, pos: noun, gender: m, en: [world], level: a1, unit: a1.u02 }
+- { id: w.língua, lemma: língua, pos: noun, gender: f, en: [language, tongue], level: a1, unit: a1.u02, topic: school }
+- { id: w.falar, lemma: falar, pos: verb, en: [to speak, to talk], level: a1, unit: a1.u02, topic: verbs-speech }
+- { id: w.morar, lemma: morar, pos: verb, en: [to live (somewhere)], level: a1, unit: a1.u02 }
+- { id: w.o, lemma: o, pos: det, en: [the], level: a1, unit: a1.u02, forms: [o, a, os, as] }
+- { id: w.brasileiro, lemma: brasileiro, pos: adj, en: [Brazilian], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.português, lemma: português, pos: adj, en: [Portuguese], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.inglês, lemma: inglês, pos: adj, en: [English], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.americano, lemma: americano, pos: adj, en: [American], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.francês, lemma: francês, pos: adj, en: [French], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.espanhol, lemma: espanhol, pos: adj, en: [Spanish], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.italiano, lemma: italiano, pos: adj, en: [Italian], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.alemão, lemma: alemão, pos: adj, en: [German], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.argentino, lemma: argentino, pos: adj, en: [Argentinian], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.japonês, lemma: japonês, pos: adj, en: [Japanese], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.chinês, lemma: chinês, pos: adj, en: [Chinese], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.canadense, lemma: canadense, pos: adj, en: [Canadian], level: a1, unit: a1.u02, topic: countries, variant: { pt-PT: canadiano }, tags: [nationality] }
+- { id: w.mexicano, lemma: mexicano, pos: adj, en: [Mexican], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.angolano, lemma: angolano, pos: adj, en: [Angolan], level: a1, unit: a1.u02, topic: countries, tags: [nationality] }
+- { id: w.carioca, lemma: carioca, pos: adj, en: [from Rio de Janeiro (city)], level: a1, unit: a1.u02, tags: [nationality], notes: "Also a noun: os cariocas." }
+- { id: w.paulista, lemma: paulista, pos: adj, en: [from São Paulo (state)], level: a1, unit: a1.u02, tags: [nationality] }
+- { id: w.mineiro, lemma: mineiro, pos: adj, en: [from Minas Gerais], level: a1, unit: a1.u02, tags: [nationality] }
+- { id: w.estados-unidos, lemma: Estados Unidos, pos: phrase, en: [United States], level: a1, unit: a1.u02, topic: countries }
+- { id: w.inglaterra, lemma: Inglaterra, pos: phrase, en: [England], level: a1, unit: a1.u02, topic: countries }
+- { id: w.frança, lemma: França, pos: phrase, en: [France], level: a1, unit: a1.u02, topic: countries }
+- { id: w.espanha, lemma: Espanha, pos: phrase, en: [Spain], level: a1, unit: a1.u02, topic: countries }
+- { id: w.itália, lemma: Itália, pos: phrase, en: [Italy], level: a1, unit: a1.u02, topic: countries }
+- { id: w.alemanha, lemma: Alemanha, pos: phrase, en: [Germany], level: a1, unit: a1.u02, topic: countries }
+- { id: w.japão, lemma: Japão, pos: phrase, en: [Japan], level: a1, unit: a1.u02, topic: countries }
+- { id: w.argentina, lemma: Argentina, pos: phrase, en: [Argentina], level: a1, unit: a1.u02, topic: countries }
+- { id: w.homem, lemma: homem, pos: noun, gender: m, en: [man], level: a1, unit: a1.u02, topic: family }
+- { id: w.mulher, lemma: mulher, pos: noun, gender: f, en: [woman, wife], level: a1, unit: a1.u02, topic: family }
+- { id: w.menino, lemma: menino, pos: noun, gender: mf, en: [boy, child], level: a1, unit: a1.u02, topic: family }
+- { id: w.rapaz, lemma: rapaz, pos: noun, gender: m, en: [young man, guy], level: a1, unit: a1.u02 }
+- { id: w.moça, lemma: moça, pos: noun, gender: f, en: [young woman, girl], level: a1, unit: a1.u02, variant: { pt-PT: rapariga }, notes: Rapariga is normal in Portugal but offensive in Brazil. }
+- { id: w.pessoa, lemma: pessoa, pos: noun, gender: f, en: [person], level: a1, unit: a1.u02 }
+- { id: w.gente, lemma: gente, pos: noun, gender: f, en: [people], level: a1, unit: a1.u02, notes: a gente (we) comes in A2. }
+- { id: w.bonito, lemma: bonito, pos: adj, en: [pretty, beautiful, handsome], level: a1, unit: a1.u02, topic: adjectives-people }
+- { id: w.feio, lemma: feio, pos: adj, en: [ugly], level: a1, unit: a1.u02, topic: adjectives-people }
+- { id: w.grande, lemma: grande, pos: adj, en: [big, large, great], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.pequeno, lemma: pequeno, pos: adj, en: [small, little], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.novo, lemma: novo, pos: adj, en: [new, young], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.velho, lemma: velho, pos: adj, en: [old], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.bom, lemma: bom, pos: adj, en: [good], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.mau, lemma: mau, pos: adj, en: [bad, evil], level: a1, unit: a1.u02, topic: adjectives-things, notes: "The adverb is mal: Ele canta mal." }
+- { id: w.ruim, lemma: ruim, pos: adj, en: [bad], level: a1, unit: a1.u02, topic: adjectives-things, notes: "Everyday Brazilian for bad: A comida é ruim." }
+- { id: w.legal, lemma: legal, pos: adj, en: [cool, nice, fun], level: a1, unit: a1.u02, topic: adjectives-things, variant: { pt-PT: fixe }, notes: In Portugal legal mostly means lawful. }
+- { id: w.interessante, lemma: interessante, pos: adj, en: [interesting], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.fácil, lemma: fácil, pos: adj, en: [easy], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.difícil, lemma: difícil, pos: adj, en: [difficult, hard], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.simples, lemma: simples, pos: adj, en: [simple, plain], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.famoso, lemma: famoso, pos: adj, en: [famous], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.lindo, lemma: lindo, pos: adj, en: [beautiful, lovely], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.diferente, lemma: diferente, pos: adj, en: [different], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.igual, lemma: igual, pos: adj, en: [the same, equal], level: a1, unit: a1.u02, topic: adjectives-things }
+- { id: w.palavra, lemma: palavra, pos: noun, gender: f, en: [word], level: a1, unit: a1.u02, topic: school }
+- { id: w.significar, lemma: significar, pos: verb, en: [to mean], level: a1, unit: a1.u02, topic: verbs-speech, example: { es: "O que significa saudade?", en: "What does saudade mean?" } }
+- { id: w.escrever, lemma: escrever, pos: verb, en: [to write], level: a1, unit: a1.u02, topic: verbs-speech }
+- { id: w.soletrar, lemma: soletrar, pos: verb, en: [to spell], level: a1, unit: a1.u02, topic: verbs-speech }
+- { id: w.entender, lemma: entender, pos: verb, en: [to understand], level: a1, unit: a1.u02, topic: verbs-speech }
+- { id: w.repetir, lemma: repetir, pos: verb, en: [to repeat], level: a1, unit: a1.u02, topic: verbs-speech }
+- { id: w.perguntar, lemma: perguntar, pos: verb, en: [to ask (a question)], level: a1, unit: a1.u02, topic: verbs-speech }
+- { id: w.responder, lemma: responder, pos: verb, en: [to answer, to reply], level: a1, unit: a1.u02, topic: verbs-speech }
+- { id: w.pergunta, lemma: pergunta, pos: noun, gender: f, en: [question], level: a1, unit: a1.u02, topic: school }
+- { id: w.frase, lemma: frase, pos: noun, gender: f, en: [sentence, phrase], level: a1, unit: a1.u02, topic: school }
+# ---------------------------------------------------------------- a1.u03 Minha família
+- { id: w.família, lemma: família, pos: noun, gender: f, en: [family], level: a1, unit: a1.u03, topic: family }
+- { id: w.pai, lemma: pai, pos: noun, gender: m, en: [father, dad], level: a1, unit: a1.u03, topic: family, notes: pais = parents (and fathers). }
+- { id: w.mãe, lemma: mãe, pos: noun, gender: f, en: [mother, mum], level: a1, unit: a1.u03, topic: family }
+- { id: w.filho, lemma: filho, pos: noun, gender: mf, en: [son, child], level: a1, unit: a1.u03, topic: family, notes: filha = daughter; filhos = children. }
+- { id: w.irmão, lemma: irmão, pos: noun, gender: mf, en: [brother], level: a1, unit: a1.u03, topic: family, notes: irmã = sister; irmãos = siblings. }
+- { id: w.avô, lemma: avô, pos: noun, gender: m, en: [grandfather], level: a1, unit: a1.u03, topic: family, notes: avós = grandparents. }
+- { id: w.avó, lemma: avó, pos: noun, gender: f, en: [grandmother], level: a1, unit: a1.u03, topic: family }
+- { id: w.tio, lemma: tio, pos: noun, gender: mf, en: [uncle], level: a1, unit: a1.u03, topic: family, notes: tia = aunt. }
+- { id: w.primo, lemma: primo, pos: noun, gender: mf, en: [cousin], level: a1, unit: a1.u03, topic: family }
+- { id: w.marido, lemma: marido, pos: noun, gender: m, en: [husband], level: a1, unit: a1.u03, topic: family }
+- { id: w.esposa, lemma: esposa, pos: noun, gender: f, en: [wife], level: a1, unit: a1.u03, topic: family }
+- { id: w.namorado, lemma: namorado, pos: noun, gender: mf, en: [boyfriend], level: a1, unit: a1.u03, topic: relationships, notes: namorada = girlfriend. }
+- { id: w.neto, lemma: neto, pos: noun, gender: mf, en: [grandson, grandchild], level: a1, unit: a1.u03, topic: family }
+- { id: w.bebê, lemma: bebê, pos: noun, gender: mf, en: [baby], level: a1, unit: a1.u03, topic: family, variant: { pt-PT: bebé } }
+- { id: w.criança, lemma: criança, pos: noun, gender: f, en: [child], level: a1, unit: a1.u03, topic: family, notes: "Always feminine, for a boy or a girl." }
+- { id: w.cachorro, lemma: cachorro, pos: noun, gender: m, en: [dog], level: a1, unit: a1.u03, topic: animals, variant: { pt-PT: cão }, notes: In Portugal cachorro is a puppy; the dog is o cão. }
+- { id: w.gato, lemma: gato, pos: noun, gender: mf, en: [cat], level: a1, unit: a1.u03, topic: animals }
+- { id: w.cão, lemma: cão, pos: noun, gender: m, en: [dog], level: a1, unit: a1.u03, topic: animals, notes: Formal in Brazil; the everyday word in Portugal. }
+- { id: w.peixe, lemma: peixe, pos: noun, gender: m, en: [fish], level: a1, unit: a1.u03, topic: animals, notes: "Also fish as food: peixe grelhado." }
+- { id: w.pássaro, lemma: pássaro, pos: noun, gender: m, en: [bird], level: a1, unit: a1.u03, topic: animals }
+- { id: w.idade, lemma: idade, pos: noun, gender: f, en: [age], level: a1, unit: a1.u03 }
+- { id: w.aniversário, lemma: aniversário, pos: noun, gender: m, en: [birthday], level: a1, unit: a1.u03, notes: Fazer aniversário = to have a birthday. }
+- { id: w.ano, lemma: ano, pos: noun, gender: m, en: [year], level: a1, unit: a1.u03, topic: time }
+- { id: w.ter, lemma: ter, pos: verb, en: [to have], level: a1, unit: a1.u03, example: { es: Eu tenho dois irmãos., en: I have two brothers. } }
+- { id: w.casado, lemma: casado, pos: adj, en: [married], level: a1, unit: a1.u03, topic: relationships }
+- { id: w.solteiro, lemma: solteiro, pos: adj, en: [single, unmarried], level: a1, unit: a1.u03, topic: relationships }
+- { id: w.meu, lemma: meu, pos: det, en: [my, mine], level: a1, unit: a1.u03, forms: [meu, minha, meus, minhas] }
+- { id: w.seu, lemma: seu, pos: det, en: [your, his, her, their], level: a1, unit: a1.u03, forms: [seu, sua, seus, suas], notes: In Brazil seu usually means your (você); for his/her use dele/dela. }
+- { id: w.nosso, lemma: nosso, pos: det, en: [our, ours], level: a1, unit: a1.u03 }
+- { id: w.dele, lemma: dele, pos: pron, en: [his, of him], level: a1, unit: a1.u03, forms: [dele, dela, deles, delas], notes: "de + ele: o carro dela = her car." }
+- { id: w.quanto, lemma: quanto, pos: det, en: [how much, how many], level: a1, unit: a1.u03, topic: quantity }
+- { id: w.quantos-anos, lemma: quantos anos, pos: phrase, en: [how old], level: a1, unit: a1.u03, example: { es: "Quantos anos você tem?", en: "How old are you?" } }
+- { id: w.um.num, lemma: um, pos: num, en: [one], level: a1, unit: a1.u03, topic: numbers, forms: [um, uma] }
+- { id: w.zero, lemma: zero, pos: num, en: [zero], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.dois, lemma: dois, pos: num, en: [two], level: a1, unit: a1.u03, topic: numbers, forms: [dois, duas] }
+- { id: w.três, lemma: três, pos: num, en: [three], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.quatro, lemma: quatro, pos: num, en: [four], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.cinco, lemma: cinco, pos: num, en: [five], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.seis, lemma: seis, pos: num, en: [six], level: a1, unit: a1.u03, topic: numbers, notes: "Often meia (half a dozen) on the phone: meia, meia, dois." }
+- { id: w.sete, lemma: sete, pos: num, en: [seven], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.oito, lemma: oito, pos: num, en: [eight], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.nove, lemma: nove, pos: num, en: [nine], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.dez, lemma: dez, pos: num, en: [ten], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.onze, lemma: onze, pos: num, en: [eleven], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.doze, lemma: doze, pos: num, en: [twelve], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.treze, lemma: treze, pos: num, en: [thirteen], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.catorze, lemma: catorze, pos: num, en: [fourteen], level: a1, unit: a1.u03, topic: numbers, forms: [catorze, quatorze] }
+- { id: w.quinze, lemma: quinze, pos: num, en: [fifteen], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.dezesseis, lemma: dezesseis, pos: num, en: [sixteen], level: a1, unit: a1.u03, topic: numbers, variant: { pt-PT: dezasseis } }
+- { id: w.dezessete, lemma: dezessete, pos: num, en: [seventeen], level: a1, unit: a1.u03, topic: numbers, variant: { pt-PT: dezassete } }
+- { id: w.dezoito, lemma: dezoito, pos: num, en: [eighteen], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.dezenove, lemma: dezenove, pos: num, en: [nineteen], level: a1, unit: a1.u03, topic: numbers, variant: { pt-PT: dezanove } }
+- { id: w.vinte, lemma: vinte, pos: num, en: [twenty], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.trinta, lemma: trinta, pos: num, en: [thirty], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.quarenta, lemma: quarenta, pos: num, en: [forty], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.cinquenta, lemma: cinquenta, pos: num, en: [fifty], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.sessenta, lemma: sessenta, pos: num, en: [sixty], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.setenta, lemma: setenta, pos: num, en: [seventy], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.oitenta, lemma: oitenta, pos: num, en: [eighty], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.noventa, lemma: noventa, pos: num, en: [ninety], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.cem, lemma: cem, pos: num, en: [a hundred], level: a1, unit: a1.u03, topic: numbers }
+- { id: w.número, lemma: número, pos: noun, gender: m, en: [number], level: a1, unit: a1.u03 }
+- { id: w.telefone, lemma: telefone, pos: noun, gender: m, en: [telephone, phone number], level: a1, unit: a1.u03, topic: tech }
+- { id: w.foto, lemma: foto, pos: noun, gender: f, en: [photo], level: a1, unit: a1.u03, topic: tech }
+- { id: w.computador, lemma: computador, pos: noun, gender: m, en: [computer], level: a1, unit: a1.u03, topic: tech }
+- { id: w.internet, lemma: internet, pos: noun, gender: f, en: [internet], level: a1, unit: a1.u03, topic: tech }
+- { id: w.mensagem, lemma: mensagem, pos: noun, gender: f, en: [message], level: a1, unit: a1.u03, topic: tech }
+- { id: w.casa, lemma: casa, pos: noun, gender: f, en: [house, home], level: a1, unit: a1.u03, topic: house }
+- { id: w.au, lemma: au, pos: interj, en: [woof], level: a1, unit: a1.u03, topic: animals, notes: au au = woof woof. }
+# ---------------------------------------------------------------- a1.u04 Minha casa no Rio
+- { id: w.um, lemma: um, pos: det, en: [a, an, some], level: a1, unit: a1.u04, forms: [um, uma, uns, umas] }
+- { id: w.em, lemma: em, pos: prep, en: [in, "on", at], level: a1, unit: a1.u04 }
+- { id: w.no, lemma: "no", pos: prep, en: [in the, on the, at the], level: a1, unit: a1.u04, forms: ["no", na, nos, nas], notes: em + o/a/os/as. }
+- { id: w.num, lemma: num, pos: prep, en: [in a, on a], level: a1, unit: a1.u04, forms: [num, numa, nuns, numas], notes: em + um/uma. }
+- { id: w.haver, lemma: haver, pos: verb, en: [there to be (formal)], level: a1, unit: a1.u04, notes: há = there is/are; in speech Brazilians prefer tem. }
+- { id: w.ficar, lemma: ficar, pos: verb, en: [to be (located), to stay], level: a1, unit: a1.u04, example: { es: "Onde fica o banheiro?", en: "Where is the bathroom?" } }
+- { id: w.apartamento, lemma: apartamento, pos: noun, gender: m, en: [flat, apartment], level: a1, unit: a1.u04, topic: house }
+- { id: w.prédio, lemma: prédio, pos: noun, gender: m, en: [building], level: a1, unit: a1.u04, topic: city }
+- { id: w.quarto, lemma: quarto, pos: noun, gender: m, en: [bedroom, room], level: a1, unit: a1.u04, topic: house }
+- { id: w.sala, lemma: sala, pos: noun, gender: f, en: [living room, room], level: a1, unit: a1.u04, topic: house }
+- { id: w.cozinha, lemma: cozinha, pos: noun, gender: f, en: [kitchen], level: a1, unit: a1.u04, topic: house }
+- { id: w.banheiro, lemma: banheiro, pos: noun, gender: m, en: [bathroom], level: a1, unit: a1.u04, topic: house, variant: { pt-PT: casa de banho } }
+- { id: w.jardim, lemma: jardim, pos: noun, gender: m, en: [garden], level: a1, unit: a1.u04, topic: house }
+- { id: w.varanda, lemma: varanda, pos: noun, gender: f, en: [balcony, veranda], level: a1, unit: a1.u04, topic: house }
+- { id: w.janela, lemma: janela, pos: noun, gender: f, en: [window], level: a1, unit: a1.u04, topic: house }
+- { id: w.porta, lemma: porta, pos: noun, gender: f, en: [door], level: a1, unit: a1.u04, topic: house }
+- { id: w.parede, lemma: parede, pos: noun, gender: f, en: [wall], level: a1, unit: a1.u04, topic: house }
+- { id: w.chão, lemma: chão, pos: noun, gender: m, en: [floor, ground], level: a1, unit: a1.u04, topic: house }
+- { id: w.escada, lemma: escada, pos: noun, gender: f, en: [stairs, ladder], level: a1, unit: a1.u04, topic: house }
+- { id: w.andar.n, lemma: andar, pos: noun, gender: m, en: [floor, storey], level: a1, unit: a1.u04, topic: house }
+- { id: w.garagem, lemma: garagem, pos: noun, gender: f, en: [garage], level: a1, unit: a1.u04, topic: house }
+- { id: w.mesa, lemma: mesa, pos: noun, gender: f, en: [table], level: a1, unit: a1.u04, topic: furniture }
+- { id: w.cadeira, lemma: cadeira, pos: noun, gender: f, en: [chair], level: a1, unit: a1.u04, topic: furniture }
+- { id: w.cama, lemma: cama, pos: noun, gender: f, en: [bed], level: a1, unit: a1.u04, topic: furniture }
+- { id: w.sofá, lemma: sofá, pos: noun, gender: m, en: [sofa, couch], level: a1, unit: a1.u04, topic: furniture }
+- { id: w.armário, lemma: armário, pos: noun, gender: m, en: [cupboard, wardrobe], level: a1, unit: a1.u04, topic: furniture }
+- { id: w.estante, lemma: estante, pos: noun, gender: f, en: [bookcase, shelf], level: a1, unit: a1.u04, topic: furniture }
+- { id: w.geladeira, lemma: geladeira, pos: noun, gender: f, en: [fridge], level: a1, unit: a1.u04, topic: furniture, variant: { pt-PT: frigorífico } }
+- { id: w.fogão, lemma: fogão, pos: noun, gender: m, en: [cooker, stove], level: a1, unit: a1.u04, topic: furniture }
+- { id: w.televisão, lemma: televisão, pos: noun, gender: f, en: [television], level: a1, unit: a1.u04, topic: furniture }
+- { id: w.chuveiro, lemma: chuveiro, pos: noun, gender: m, en: [shower], level: a1, unit: a1.u04, topic: house }
+- { id: w.chave, lemma: chave, pos: noun, gender: f, en: [key], level: a1, unit: a1.u04, topic: house }
+- { id: w.rua, lemma: rua, pos: noun, gender: f, en: [street], level: a1, unit: a1.u04, topic: city }
+- { id: w.bairro, lemma: bairro, pos: noun, gender: m, en: [neighbourhood, district], level: a1, unit: a1.u04, topic: city }
+- { id: w.praça, lemma: praça, pos: noun, gender: f, en: [square], level: a1, unit: a1.u04, topic: city }
+- { id: w.parque, lemma: parque, pos: noun, gender: m, en: [park], level: a1, unit: a1.u04, topic: city }
+- { id: w.centro, lemma: centro, pos: noun, gender: m, en: [centre, downtown], level: a1, unit: a1.u04, topic: city }
+- { id: w.escola, lemma: escola, pos: noun, gender: f, en: [school], level: a1, unit: a1.u04, topic: city }
+- { id: w.igreja, lemma: igreja, pos: noun, gender: f, en: [church], level: a1, unit: a1.u04, topic: city }
+- { id: w.hospital, lemma: hospital, pos: noun, gender: m, en: [hospital], level: a1, unit: a1.u04, topic: city }
+- { id: w.farmácia, lemma: farmácia, pos: noun, gender: f, en: [pharmacy, chemist's], level: a1, unit: a1.u04, topic: city }
+- { id: w.banco, lemma: banco, pos: noun, gender: m, en: [bank, bench], level: a1, unit: a1.u04, topic: city }
+- { id: w.mercado, lemma: mercado, pos: noun, gender: m, en: [market], level: a1, unit: a1.u04, topic: city }
+- { id: w.supermercado, lemma: supermercado, pos: noun, gender: m, en: [supermarket], level: a1, unit: a1.u04, topic: city }
+- { id: w.loja, lemma: loja, pos: noun, gender: f, en: [shop, store], level: a1, unit: a1.u04, topic: city }
+- { id: w.shopping, lemma: shopping, pos: noun, gender: m, en: [shopping centre, mall], level: a1, unit: a1.u04, topic: city, variant: { pt-PT: centro comercial } }
+- { id: w.hotel, lemma: hotel, pos: noun, gender: m, en: [hotel], level: a1, unit: a1.u04, topic: city }
+- { id: w.museu, lemma: museu, pos: noun, gender: m, en: [museum], level: a1, unit: a1.u04, topic: city }
+- { id: w.restaurante, lemma: restaurante, pos: noun, gender: m, en: [restaurant], level: a1, unit: a1.u04, topic: city }
+- { id: w.bar, lemma: bar, pos: noun, gender: m, en: [bar], level: a1, unit: a1.u04, topic: city }
+- { id: w.praia, lemma: praia, pos: noun, gender: f, en: [beach], level: a1, unit: a1.u04, topic: nature }
+- { id: w.morro, lemma: morro, pos: noun, gender: m, en: [hill], level: a1, unit: a1.u04, topic: nature }
+- { id: w.vizinho, lemma: vizinho, pos: noun, gender: mf, en: [neighbour], level: a1, unit: a1.u04, topic: relationships }
+- { id: w.endereço, lemma: endereço, pos: noun, gender: m, en: [address], level: a1, unit: a1.u04 }
+- { id: w.perto, lemma: perto, pos: adv, en: [near, close], level: a1, unit: a1.u04, topic: directions, notes: perto de = near (to). }
+- { id: w.longe, lemma: longe, pos: adv, en: [far], level: a1, unit: a1.u04, topic: directions }
+- { id: w.ali, lemma: ali, pos: adv, en: [there (near)], level: a1, unit: a1.u04, topic: directions }
+- { id: w.lá, lemma: lá, pos: adv, en: [there, over there], level: a1, unit: a1.u04, topic: directions }
+- { id: w.aí, lemma: aí, pos: adv, en: [there (near you)], level: a1, unit: a1.u04, topic: directions }
+- { id: w.cima, lemma: cima, pos: noun, gender: f, en: [top], level: a1, unit: a1.u04, topic: directions, notes: em cima de = on top of; lá em cima = up there. }
+- { id: w.embaixo, lemma: embaixo, pos: adv, en: [under, below, downstairs], level: a1, unit: a1.u04, topic: directions, variant: { pt-PT: em baixo } }
+- { id: w.dentro, lemma: dentro, pos: adv, en: [inside], level: a1, unit: a1.u04, topic: directions }
+- { id: w.fora, lemma: fora, pos: adv, en: [outside, out], level: a1, unit: a1.u04, topic: directions }
+- { id: w.atrás, lemma: atrás, pos: adv, en: [behind], level: a1, unit: a1.u04, topic: directions, notes: atrás de = behind. }
+- { id: w.frente, lemma: frente, pos: noun, gender: f, en: [front], level: a1, unit: a1.u04, topic: directions, notes: "em frente a / de = opposite, in front of." }
+- { id: w.lado, lemma: lado, pos: noun, gender: m, en: [side], level: a1, unit: a1.u04, topic: directions, notes: ao lado de = next to. }
+- { id: w.entre, lemma: entre, pos: prep, en: [between, among], level: a1, unit: a1.u04, topic: directions }
+- { id: w.confortável, lemma: confortável, pos: adj, en: [comfortable], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.moderno, lemma: moderno, pos: adj, en: [modern], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.antigo, lemma: antigo, pos: adj, en: [old, ancient, former], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.tranquilo, lemma: tranquilo, pos: adj, en: [quiet, calm, peaceful], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.barulhento, lemma: barulhento, pos: adj, en: [noisy], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.limpo, lemma: limpo, pos: adj, en: [clean], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.sujo, lemma: sujo, pos: adj, en: [dirty], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.cheio, lemma: cheio, pos: adj, en: [full, crowded], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.vazio, lemma: vazio, pos: adj, en: [empty], level: a1, unit: a1.u04, topic: adjectives-things }
+- { id: w.daqui, lemma: daqui, pos: adv, en: [from here], level: a1, unit: a1.u04, topic: directions, notes: de + aqui. daqui a pouco = in a little while. }
+- { id: w.ponto, lemma: ponto, pos: noun, gender: m, en: [point, stop, dot], level: a1, unit: a1.u04, topic: city, notes: ponto de ônibus = bus stop. }
+- { id: w.piscina, lemma: piscina, pos: noun, gender: f, en: [swimming pool], level: a1, unit: a1.u04, topic: house }
+- { id: w.flor, lemma: flor, pos: noun, gender: f, en: [flower], level: a1, unit: a1.u04, topic: nature }
+- { id: w.animal, lemma: animal, pos: noun, gender: m, en: [animal], level: a1, unit: a1.u04, topic: animals }
+- { id: w.habitante, lemma: habitante, pos: noun, gender: mf, en: [inhabitant], level: a1, unit: a1.u04, topic: city }
+- { id: w.turista, lemma: turista, pos: noun, gender: mf, en: [tourist], level: a1, unit: a1.u04, topic: travel }
+# ---------------------------------------------------------------- a1.u05 Na padaria
+- { id: w.padaria, lemma: padaria, pos: noun, gender: f, en: [bakery], level: a1, unit: a1.u05, topic: food }
+- { id: w.pão, lemma: pão, pos: noun, gender: m, en: [bread], level: a1, unit: a1.u05, topic: food, example: { es: "Dois pães, por favor.", en: "Two bread rolls, please." } }
+- { id: w.pão-de-queijo, lemma: pão de queijo, pos: noun, gender: m, en: [cheese bread (Minas Gerais snack)], level: a1, unit: a1.u05, topic: food }
+- { id: w.queijo, lemma: queijo, pos: noun, gender: m, en: [cheese], level: a1, unit: a1.u05, topic: food }
+- { id: w.presunto, lemma: presunto, pos: noun, gender: m, en: [ham], level: a1, unit: a1.u05, topic: food, variant: { pt-PT: fiambre }, notes: In Portugal presunto is cured ham; cooked ham is fiambre. }
+- { id: w.manteiga, lemma: manteiga, pos: noun, gender: f, en: [butter], level: a1, unit: a1.u05, topic: food }
+- { id: w.ovo, lemma: ovo, pos: noun, gender: m, en: [egg], level: a1, unit: a1.u05, topic: food }
+- { id: w.café-da-manhã, lemma: café da manhã, pos: noun, gender: m, en: [breakfast], level: a1, unit: a1.u05, topic: food, variant: { pt-PT: pequeno-almoço } }
+- { id: w.almoço, lemma: almoço, pos: noun, gender: m, en: [lunch], level: a1, unit: a1.u05, topic: food }
+- { id: w.jantar.n, lemma: jantar, pos: noun, gender: m, en: [dinner], level: a1, unit: a1.u05, topic: food }
+- { id: w.lanche, lemma: lanche, pos: noun, gender: m, en: [snack], level: a1, unit: a1.u05, topic: food }
+- { id: w.comida, lemma: comida, pos: noun, gender: f, en: [food], level: a1, unit: a1.u05, topic: food }
+- { id: w.arroz, lemma: arroz, pos: noun, gender: m, en: [rice], level: a1, unit: a1.u05, topic: food }
+- { id: w.feijão, lemma: feijão, pos: noun, gender: m, en: [beans], level: a1, unit: a1.u05, topic: food, notes: Arroz com feijão is the everyday Brazilian plate. }
+- { id: w.feijoada, lemma: feijoada, pos: noun, gender: f, en: [feijoada (black bean and pork stew)], level: a1, unit: a1.u05, topic: food }
+- { id: w.farofa, lemma: farofa, pos: noun, gender: f, en: [toasted cassava flour], level: a1, unit: a1.u05, topic: food }
+- { id: w.carne, lemma: carne, pos: noun, gender: f, en: [meat], level: a1, unit: a1.u05, topic: food }
+- { id: w.frango, lemma: frango, pos: noun, gender: m, en: [chicken], level: a1, unit: a1.u05, topic: food }
+- { id: w.salada, lemma: salada, pos: noun, gender: f, en: [salad], level: a1, unit: a1.u05, topic: food }
+- { id: w.sopa, lemma: sopa, pos: noun, gender: f, en: [soup], level: a1, unit: a1.u05, topic: food }
+- { id: w.batata, lemma: batata, pos: noun, gender: f, en: [potato], level: a1, unit: a1.u05, topic: food }
+- { id: w.tomate, lemma: tomate, pos: noun, gender: m, en: [tomato], level: a1, unit: a1.u05, topic: food }
+- { id: w.fruta, lemma: fruta, pos: noun, gender: f, en: [fruit], level: a1, unit: a1.u05, topic: food }
+- { id: w.banana, lemma: banana, pos: noun, gender: f, en: [banana], level: a1, unit: a1.u05, topic: food }
+- { id: w.laranja, lemma: laranja, pos: noun, gender: f, en: [orange], level: a1, unit: a1.u05, topic: food }
+- { id: w.maçã, lemma: maçã, pos: noun, gender: f, en: [apple], level: a1, unit: a1.u05, topic: food }
+- { id: w.manga, lemma: manga, pos: noun, gender: f, en: [mango], level: a1, unit: a1.u05, topic: food }
+- { id: w.mamão, lemma: mamão, pos: noun, gender: m, en: [papaya], level: a1, unit: a1.u05, topic: food, variant: { pt-PT: papaia } }
+- { id: w.abacaxi, lemma: abacaxi, pos: noun, gender: m, en: [pineapple], level: a1, unit: a1.u05, topic: food, variant: { pt-PT: ananás } }
+- { id: w.limão, lemma: limão, pos: noun, gender: m, en: [lime, lemon], level: a1, unit: a1.u05, topic: food }
+- { id: w.coco, lemma: coco, pos: noun, gender: m, en: [coconut], level: a1, unit: a1.u05, topic: food }
+- { id: w.açaí, lemma: açaí, pos: noun, gender: m, en: [açaí (Amazon palm berry)], level: a1, unit: a1.u05, topic: food }
+- { id: w.coxinha, lemma: coxinha, pos: noun, gender: f, en: [coxinha (chicken croquette)], level: a1, unit: a1.u05, topic: food }
+- { id: w.pastel, lemma: pastel, pos: noun, gender: m, en: [pastel (fried filled pastry)], level: a1, unit: a1.u05, topic: food }
+- { id: w.brigadeiro, lemma: brigadeiro, pos: noun, gender: m, en: [brigadeiro (chocolate truffle)], level: a1, unit: a1.u05, topic: food }
+- { id: w.tapioca, lemma: tapioca, pos: noun, gender: f, en: [tapioca crepe], level: a1, unit: a1.u05, topic: food }
+- { id: w.bolo, lemma: bolo, pos: noun, gender: m, en: [cake], level: a1, unit: a1.u05, topic: food }
+- { id: w.chocolate, lemma: chocolate, pos: noun, gender: m, en: [chocolate], level: a1, unit: a1.u05, topic: food }
+- { id: w.sorvete, lemma: sorvete, pos: noun, gender: m, en: [ice cream], level: a1, unit: a1.u05, topic: food, variant: { pt-PT: gelado } }
+- { id: w.sanduíche, lemma: sanduíche, pos: noun, gender: m, en: [sandwich], level: a1, unit: a1.u05, topic: food, variant: { pt-PT: sandes } }
+- { id: w.açúcar, lemma: açúcar, pos: noun, gender: m, en: [sugar], level: a1, unit: a1.u05, topic: food }
+- { id: w.sal, lemma: sal, pos: noun, gender: m, en: [salt], level: a1, unit: a1.u05, topic: food }
+- { id: w.café, lemma: café, pos: noun, gender: m, en: [coffee, café], level: a1, unit: a1.u05, topic: drink }
+- { id: w.cafezinho, lemma: cafezinho, pos: noun, gender: m, en: [small black coffee], level: a1, unit: a1.u05, topic: drink, variant: { pt-PT: bica (Lisbon) } }
+- { id: w.leite, lemma: leite, pos: noun, gender: m, en: [milk], level: a1, unit: a1.u05, topic: drink }
+- { id: w.suco, lemma: suco, pos: noun, gender: m, en: [juice], level: a1, unit: a1.u05, topic: drink, variant: { pt-PT: sumo } }
+- { id: w.água, lemma: água, pos: noun, gender: f, en: [water], level: a1, unit: a1.u05, topic: drink, notes: água com gás = sparkling; sem gás = still. }
+- { id: w.água-de-coco, lemma: água de coco, pos: noun, gender: f, en: [coconut water], level: a1, unit: a1.u05, topic: drink }
+- { id: w.refrigerante, lemma: refrigerante, pos: noun, gender: m, en: [soft drink, soda], level: a1, unit: a1.u05, topic: drink }
+- { id: w.guaraná, lemma: guaraná, pos: noun, gender: m, en: [guaraná (soft drink)], level: a1, unit: a1.u05, topic: drink }
+- { id: w.cerveja, lemma: cerveja, pos: noun, gender: f, en: [beer], level: a1, unit: a1.u05, topic: drink }
+- { id: w.chope, lemma: chope, pos: noun, gender: m, en: [draught beer], level: a1, unit: a1.u05, topic: drink, variant: { pt-PT: imperial; fino } }
+- { id: w.vinho, lemma: vinho, pos: noun, gender: m, en: [wine], level: a1, unit: a1.u05, topic: drink }
+- { id: w.chá, lemma: chá, pos: noun, gender: m, en: [tea], level: a1, unit: a1.u05, topic: drink }
+- { id: w.caipirinha, lemma: caipirinha, pos: noun, gender: f, en: [caipirinha (lime and cachaça cocktail)], level: a1, unit: a1.u05, topic: drink }
+- { id: w.bebida, lemma: bebida, pos: noun, gender: f, en: [drink], level: a1, unit: a1.u05, topic: drink }
+- { id: w.gelado, lemma: gelado, pos: adj, en: [ice-cold, chilled], level: a1, unit: a1.u05, notes: In Portugal o gelado (noun) is ice cream. }
+- { id: w.garçom, lemma: garçom, pos: noun, gender: mf, feminine: garçonete, en: [waiter], level: a1, unit: a1.u05, topic: jobs, variant: { pt-PT: empregado de mesa } }
+- { id: w.cardápio, lemma: cardápio, pos: noun, gender: m, en: [menu], level: a1, unit: a1.u05, topic: food, variant: { pt-PT: ementa } }
+- { id: w.conta, lemma: conta, pos: noun, gender: f, en: [bill, check, account], level: a1, unit: a1.u05, topic: money }
+- { id: w.prato, lemma: prato, pos: noun, gender: m, en: [plate, dish], level: a1, unit: a1.u05, topic: food }
+- { id: w.copo, lemma: copo, pos: noun, gender: m, en: [glass (for drinking)], level: a1, unit: a1.u05, topic: food }
+- { id: w.xícara, lemma: xícara, pos: noun, gender: f, en: [cup], level: a1, unit: a1.u05, topic: food, variant: { pt-PT: chávena } }
+- { id: w.garrafa, lemma: garrafa, pos: noun, gender: f, en: [bottle], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.pedaço, lemma: pedaço, pos: noun, gender: m, en: [piece, slice], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.quilo, lemma: quilo, pos: noun, gender: m, en: [kilo], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.dúzia, lemma: dúzia, pos: noun, gender: f, en: [dozen], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.meio, lemma: meio, pos: adj, en: [half], level: a1, unit: a1.u05, topic: quantity, notes: "meio quilo; meia hora; also adverb: meio cansado (a bit tired)." }
+- { id: w.muito, lemma: muito, pos: det, en: [a lot of, many, very, much], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.pouco, lemma: pouco, pos: det, en: [little, few, not much], level: a1, unit: a1.u05, topic: quantity, notes: um pouco (de) = a little. }
+- { id: w.um-pouco, lemma: um pouco, pos: phrase, en: [a little], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.mais, lemma: mais, pos: adv, en: [more, else], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.menos, lemma: menos, pos: adv, en: [less, fewer], level: a1, unit: a1.u05, topic: quantity }
+- { id: w.nada, lemma: nada, pos: pron, en: [nothing, anything], level: a1, unit: a1.u05, forms: [nada] }
+- { id: w.gostar, lemma: gostar, pos: verb, en: [to like], level: a1, unit: a1.u05, notes: Always gostar de + noun or infinitive., example: { es: Eu gosto de café., en: I like coffee. } }
+- { id: w.querer, lemma: querer, pos: verb, en: [to want], level: a1, unit: a1.u05, example: { es: Eu quero um café., en: I'd like a coffee. } }
+- { id: w.comer, lemma: comer, pos: verb, en: [to eat], level: a1, unit: a1.u05 }
+- { id: w.beber, lemma: beber, pos: verb, en: [to drink], level: a1, unit: a1.u05 }
+- { id: w.tomar, lemma: tomar, pos: verb, en: ["to have (food, drink)", to take], level: a1, unit: a1.u05, notes: "tomar café, tomar um suco, tomar banho." }
+- { id: w.pedir, lemma: pedir, pos: verb, en: [to order, to ask for], level: a1, unit: a1.u05 }
+- { id: w.comprar, lemma: comprar, pos: verb, en: [to buy], level: a1, unit: a1.u05 }
+- { id: w.pagar, lemma: pagar, pos: verb, en: [to pay], level: a1, unit: a1.u05 }
+- { id: w.cozinhar, lemma: cozinhar, pos: verb, en: [to cook], level: a1, unit: a1.u05 }
+- { id: w.almoçar, lemma: almoçar, pos: verb, en: [to have lunch], level: a1, unit: a1.u05 }
+- { id: w.jantar, lemma: jantar, pos: verb, en: [to have dinner], level: a1, unit: a1.u05 }
+- { id: w.adorar, lemma: adorar, pos: verb, en: [to love (things), to adore], level: a1, unit: a1.u05 }
+- { id: w.detestar, lemma: detestar, pos: verb, en: [to hate], level: a1, unit: a1.u05 }
+- { id: w.preferir, lemma: preferir, pos: verb, en: [to prefer], level: a1, unit: a1.u05 }
+- { id: w.gostoso, lemma: gostoso, pos: adj, en: [tasty, delicious], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.delicioso, lemma: delicioso, pos: adj, en: [delicious], level: a1, unit: a1.u05, topic: adjectives-things }
+- { id: w.doce, lemma: doce, pos: adj, en: [sweet], level: a1, unit: a1.u05, topic: adjectives-things, notes: "Also a noun: um doce = a sweet." }
+- { id: w.salgado, lemma: salgado, pos: adj, en: [salty, savoury], level: a1, unit: a1.u05, topic: adjectives-things, notes: "os salgados = savoury snacks (coxinha, pastel)." }
+- { id: w.delícia, lemma: delícia, pos: noun, gender: f, en: [delight, delicious thing], level: a1, unit: a1.u05, topic: food, notes: Que delícia! = How delicious! }
+- { id: w.fome, lemma: fome, pos: noun, gender: f, en: [hunger], level: a1, unit: a1.u05, notes: estar com fome = to be hungry. }
+- { id: w.sede, lemma: sede, pos: noun, gender: f, en: [thirst], level: a1, unit: a1.u05, notes: estar com sede = to be thirsty. }
+- { id: w.com, lemma: com, pos: prep, en: [with], level: a1, unit: a1.u05 }
+- { id: w.sem, lemma: sem, pos: prep, en: [without], level: a1, unit: a1.u05 }
+- { id: w.para, lemma: para, pos: prep, en: [for, to, in order to], level: a1, unit: a1.u05, notes: Spoken pra. }
+- { id: w.mim, lemma: mim, pos: pron, en: [me (after a preposition)], level: a1, unit: a1.u05, forms: [mim], notes: para mim = for me. }
+# ---------------------------------------------------------------- a1.u06 Meu dia a dia
+- { id: w.dia-a-dia, lemma: dia a dia, pos: noun, gender: m, en: [daily life, day-to-day], level: a1, unit: a1.u06, topic: time }
+- { id: w.dia, lemma: dia, pos: noun, gender: m, en: [day], level: a1, unit: a1.u06, topic: time, notes: "Masculine despite the -a: o dia." }
+- { id: w.semana, lemma: semana, pos: noun, gender: f, en: [week], level: a1, unit: a1.u06, topic: time }
+- { id: w.mês, lemma: mês, pos: noun, gender: m, en: [month], level: a1, unit: a1.u06, topic: time }
+- { id: w.fim-de-semana, lemma: fim de semana, pos: noun, gender: m, en: [weekend], level: a1, unit: a1.u06, topic: time }
+- { id: w.hoje, lemma: hoje, pos: adv, en: [today], level: a1, unit: a1.u06, topic: time }
+- { id: w.amanhã, lemma: amanhã, pos: adv, en: [tomorrow], level: a1, unit: a1.u06, topic: time }
+- { id: w.agora, lemma: agora, pos: adv, en: [now], level: a1, unit: a1.u06, topic: time }
+- { id: w.cedo, lemma: cedo, pos: adv, en: [early], level: a1, unit: a1.u06, topic: time }
+- { id: w.tarde.adv, lemma: tarde, pos: adv, en: [late], level: a1, unit: a1.u06, topic: time }
+- { id: w.depois, lemma: depois, pos: adv, en: [after, afterwards, later], level: a1, unit: a1.u06, topic: time, notes: depois de = after. }
+- { id: w.antes, lemma: antes, pos: adv, en: [before], level: a1, unit: a1.u06, topic: time, notes: antes de = before. }
+- { id: w.manhã, lemma: manhã, pos: noun, gender: f, en: [morning], level: a1, unit: a1.u06, topic: time }
+- { id: w.tarde, lemma: tarde, pos: noun, gender: f, en: [afternoon], level: a1, unit: a1.u06, topic: time }
+- { id: w.noite, lemma: noite, pos: noun, gender: f, en: [night, evening], level: a1, unit: a1.u06, topic: time }
+- { id: w.hora, lemma: hora, pos: noun, gender: f, en: [hour, time (of day)], level: a1, unit: a1.u06, topic: time, example: { es: "Que horas são?", en: "What time is it?" } }
+- { id: w.minuto, lemma: minuto, pos: noun, gender: m, en: [minute], level: a1, unit: a1.u06, topic: time }
+- { id: w.meio-dia, lemma: meio-dia, pos: noun, gender: m, en: [midday, noon], level: a1, unit: a1.u06, topic: time }
+- { id: w.meia-noite, lemma: meia-noite, pos: noun, gender: f, en: [midnight], level: a1, unit: a1.u06, topic: time }
+- { id: w.relógio, lemma: relógio, pos: noun, gender: m, en: [clock, watch], level: a1, unit: a1.u06, topic: time }
+- { id: w.segunda-feira, lemma: segunda-feira, pos: noun, gender: f, en: [Monday], level: a1, unit: a1.u06, topic: days, forms: [segunda, segundas] }
+- { id: w.terça-feira, lemma: terça-feira, pos: noun, gender: f, en: [Tuesday], level: a1, unit: a1.u06, topic: days, forms: [terça, terças] }
+- { id: w.quarta-feira, lemma: quarta-feira, pos: noun, gender: f, en: [Wednesday], level: a1, unit: a1.u06, topic: days, forms: [quarta, quartas] }
+- { id: w.quinta-feira, lemma: quinta-feira, pos: noun, gender: f, en: [Thursday], level: a1, unit: a1.u06, topic: days, forms: [quinta, quintas] }
+- { id: w.sexta-feira, lemma: sexta-feira, pos: noun, gender: f, en: [Friday], level: a1, unit: a1.u06, topic: days, forms: [sexta, sextas] }
+- { id: w.sábado, lemma: sábado, pos: noun, gender: m, en: [Saturday], level: a1, unit: a1.u06, topic: days }
+- { id: w.domingo, lemma: domingo, pos: noun, gender: m, en: [Sunday], level: a1, unit: a1.u06, topic: days }
+- { id: w.janeiro, lemma: janeiro, pos: noun, gender: m, en: [January], level: a1, unit: a1.u06, topic: months }
+- { id: w.fevereiro, lemma: fevereiro, pos: noun, gender: m, en: [February], level: a1, unit: a1.u06, topic: months }
+- { id: w.março, lemma: março, pos: noun, gender: m, en: [March], level: a1, unit: a1.u06, topic: months }
+- { id: w.abril, lemma: abril, pos: noun, gender: m, en: [April], level: a1, unit: a1.u06, topic: months }
+- { id: w.maio, lemma: maio, pos: noun, gender: m, en: [May], level: a1, unit: a1.u06, topic: months }
+- { id: w.junho, lemma: junho, pos: noun, gender: m, en: [June], level: a1, unit: a1.u06, topic: months }
+- { id: w.julho, lemma: julho, pos: noun, gender: m, en: [July], level: a1, unit: a1.u06, topic: months }
+- { id: w.agosto, lemma: agosto, pos: noun, gender: m, en: [August], level: a1, unit: a1.u06, topic: months }
+- { id: w.setembro, lemma: setembro, pos: noun, gender: m, en: [September], level: a1, unit: a1.u06, topic: months }
+- { id: w.outubro, lemma: outubro, pos: noun, gender: m, en: [October], level: a1, unit: a1.u06, topic: months }
+- { id: w.novembro, lemma: novembro, pos: noun, gender: m, en: [November], level: a1, unit: a1.u06, topic: months }
+- { id: w.dezembro, lemma: dezembro, pos: noun, gender: m, en: [December], level: a1, unit: a1.u06, topic: months }
+- { id: w.sempre, lemma: sempre, pos: adv, en: [always], level: a1, unit: a1.u06, topic: time }
+- { id: w.nunca, lemma: nunca, pos: adv, en: [never], level: a1, unit: a1.u06, topic: time }
+- { id: w.às-vezes, lemma: às vezes, pos: phrase, en: [sometimes], level: a1, unit: a1.u06, topic: time }
+- { id: w.geralmente, lemma: geralmente, pos: adv, en: [usually, generally], level: a1, unit: a1.u06, topic: time }
+- { id: w.normalmente, lemma: normalmente, pos: adv, en: [normally, usually], level: a1, unit: a1.u06, topic: time }
+- { id: w.vez, lemma: vez, pos: noun, gender: f, en: [time (occasion)], level: a1, unit: a1.u06, topic: time, notes: uma vez = once; duas vezes = twice. }
+- { id: w.todo-dia, lemma: todo dia, pos: phrase, en: [every day], level: a1, unit: a1.u06, topic: time, notes: In Portugal todos os dias. }
+- { id: w.acordar, lemma: acordar, pos: verb, en: [to wake up], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.levantar-se, lemma: levantar-se, pos: verb, en: [to get up], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.levantar, lemma: levantar, pos: verb, en: [to lift, to raise], level: a1, unit: a1.u06 }
+- { id: w.deitar-se, lemma: deitar-se, pos: verb, en: [to go to bed, to lie down], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.vestir-se, lemma: vestir-se, pos: verb, en: [to get dressed], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.vestir, lemma: vestir, pos: verb, en: [to wear, to put on], level: a1, unit: a1.u06, topic: clothing }
+- { id: w.sentar-se, lemma: sentar-se, pos: verb, en: [to sit down], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.divertir-se, lemma: divertir-se, pos: verb, en: [to have fun], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.preocupar-se, lemma: preocupar-se, pos: verb, en: [to worry], level: a1, unit: a1.u06, topic: feelings }
+- { id: w.tomar-banho, lemma: tomar banho, pos: phrase, en: [to have a shower, to bathe], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.escovar, lemma: escovar, pos: verb, en: [to brush], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.dormir, lemma: dormir, pos: verb, en: [to sleep], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.sair, lemma: sair, pos: verb, en: [to go out, to leave], level: a1, unit: a1.u06, topic: verbs-motion }
+- { id: w.voltar, lemma: voltar, pos: verb, en: [to come back, to return], level: a1, unit: a1.u06, topic: verbs-motion }
+- { id: w.chegar, lemma: chegar, pos: verb, en: [to arrive], level: a1, unit: a1.u06, topic: verbs-motion }
+- { id: w.trabalhar, lemma: trabalhar, pos: verb, en: [to work], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.estudar, lemma: estudar, pos: verb, en: [to study], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.aprender, lemma: aprender, pos: verb, en: [to learn], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.ler, lemma: ler, pos: verb, en: [to read], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.assistir, lemma: assistir, pos: verb, en: [to watch], level: a1, unit: a1.u06, topic: verbs-daily, notes: assistir (a) TV / um filme. }
+- { id: w.viver, lemma: viver, pos: verb, en: [to live], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.abrir, lemma: abrir, pos: verb, en: [to open], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.fechar, lemma: fechar, pos: verb, en: [to close], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.começar, lemma: começar, pos: verb, en: [to begin, to start], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.terminar, lemma: terminar, pos: verb, en: [to finish, to end], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.correr, lemma: correr, pos: verb, en: [to run], level: a1, unit: a1.u06, topic: verbs-motion }
+- { id: w.encontrar, lemma: encontrar, pos: verb, en: [to find, to meet], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.trabalho, lemma: trabalho, pos: noun, gender: m, en: [work, job], level: a1, unit: a1.u06, topic: work }
+- { id: w.aula, lemma: aula, pos: noun, gender: f, en: [class, lesson], level: a1, unit: a1.u06, topic: school }
+- { id: w.faculdade, lemma: faculdade, pos: noun, gender: f, en: [university, college], level: a1, unit: a1.u06, topic: school }
+- { id: w.universidade, lemma: universidade, pos: noun, gender: f, en: [university], level: a1, unit: a1.u06, topic: school }
+- { id: w.livro, lemma: livro, pos: noun, gender: m, en: [book], level: a1, unit: a1.u06, topic: school }
+- { id: w.caderno, lemma: caderno, pos: noun, gender: m, en: [notebook], level: a1, unit: a1.u06, topic: school }
+- { id: w.caneta, lemma: caneta, pos: noun, gender: f, en: [pen], level: a1, unit: a1.u06, topic: school }
+- { id: w.lápis, lemma: lápis, pos: noun, gender: m, en: [pencil], level: a1, unit: a1.u06, topic: school }
+- { id: w.escritório, lemma: escritório, pos: noun, gender: m, en: [office], level: a1, unit: a1.u06, topic: work }
+- { id: w.emprego, lemma: emprego, pos: noun, gender: m, en: [job, employment], level: a1, unit: a1.u06, topic: work }
+- { id: w.empresa, lemma: empresa, pos: noun, gender: f, en: [company, firm], level: a1, unit: a1.u06, topic: work }
+- { id: w.reunião, lemma: reunião, pos: noun, gender: f, en: [meeting], level: a1, unit: a1.u06, topic: work }
+- { id: w.se, lemma: se, pos: pron, en: [himself, herself, oneself, each other], level: a1, unit: a1.u06, forms: [se] }
+- { id: w.nos, lemma: nos, pos: pron, en: [us, ourselves], level: a1, unit: a1.u06, forms: [nos] }
+- { id: w.rápido, lemma: rápido, pos: adj, en: [fast, quick], level: a1, unit: a1.u06, topic: adjectives-things, notes: "Also adverb: Ele fala rápido." }
+- { id: w.quase, lemma: quase, pos: adv, en: [almost], level: a1, unit: a1.u06, topic: quantity }
+- { id: w.lembrar, lemma: lembrar, pos: verb, en: [to remember, to remind], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.descansar, lemma: descansar, pos: verb, en: [to rest], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.pensar, lemma: pensar, pos: verb, en: [to think], level: a1, unit: a1.u06, topic: verbs-daily, notes: pensar em = to think about. }
+- { id: w.usar, lemma: usar, pos: verb, en: [to use, to wear], level: a1, unit: a1.u06, topic: verbs-daily }
+- { id: w.ganhar, lemma: ganhar, pos: verb, en: [to earn, to win, to get], level: a1, unit: a1.u06, topic: work }
+- { id: w.fim, lemma: fim, pos: noun, gender: m, en: [end], level: a1, unit: a1.u06, topic: time, notes: fim de semana = weekend; no fim = at the end. }
+# ---------------------------------------------------------------- a1.u07 Como ela é?
+- { id: w.alto, lemma: alto, pos: adj, en: [tall, high, loud], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.baixo, lemma: baixo, pos: adj, en: [short, low], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.magro, lemma: magro, pos: adj, en: [thin, slim], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.gordo, lemma: gordo, pos: adj, en: [fat], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.jovem, lemma: jovem, pos: adj, en: [young], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.moreno, lemma: moreno, pos: adj, en: [dark-haired, tanned], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.loiro, lemma: loiro, pos: adj, en: [blond], level: a1, unit: a1.u07, topic: adjectives-people, variant: { pt-PT: louro } }
+- { id: w.ruivo, lemma: ruivo, pos: adj, en: [red-haired], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.simpático, lemma: simpático, pos: adj, en: [nice, friendly], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.antipático, lemma: antipático, pos: adj, en: [unfriendly, unpleasant], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.chato, lemma: chato, pos: adj, en: [boring, annoying], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.inteligente, lemma: inteligente, pos: adj, en: [intelligent, clever], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.engraçado, lemma: engraçado, pos: adj, en: [funny], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.tímido, lemma: tímido, pos: adj, en: [shy], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.alegre, lemma: alegre, pos: adj, en: [cheerful, happy], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.triste, lemma: triste, pos: adj, en: [sad], level: a1, unit: a1.u07, topic: feelings }
+- { id: w.feliz, lemma: feliz, pos: adj, en: [happy], level: a1, unit: a1.u07, topic: feelings }
+- { id: w.contente, lemma: contente, pos: adj, en: [glad, pleased], level: a1, unit: a1.u07, topic: feelings }
+- { id: w.cansado, lemma: cansado, pos: adj, en: [tired], level: a1, unit: a1.u07, topic: feelings }
+- { id: w.nervoso, lemma: nervoso, pos: adj, en: [nervous, angry], level: a1, unit: a1.u07, topic: feelings }
+- { id: w.calmo, lemma: calmo, pos: adj, en: [calm], level: a1, unit: a1.u07, topic: feelings }
+- { id: w.preocupado, lemma: preocupado, pos: adj, en: [worried], level: a1, unit: a1.u07, topic: feelings }
+- { id: w.doente, lemma: doente, pos: adj, en: [ill, sick], level: a1, unit: a1.u07, topic: feelings }
+- { id: w.ótimo, lemma: ótimo, pos: adj, en: [great, excellent], level: a1, unit: a1.u07, topic: adjectives-things }
+- { id: w.trabalhador, lemma: trabalhador, pos: adj, en: [hard-working], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.gentil, lemma: gentil, pos: adj, en: [kind], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.educado, lemma: educado, pos: adj, en: [polite], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.sério, lemma: sério, pos: adj, en: [serious], level: a1, unit: a1.u07, topic: adjectives-people }
+- { id: w.cabelo, lemma: cabelo, pos: noun, gender: m, en: [hair], level: a1, unit: a1.u07, topic: body }
+- { id: w.olho, lemma: olho, pos: noun, gender: m, en: [eye], level: a1, unit: a1.u07, topic: body }
+- { id: w.cabeça, lemma: cabeça, pos: noun, gender: f, en: [head], level: a1, unit: a1.u07, topic: body }
+- { id: w.rosto, lemma: rosto, pos: noun, gender: m, en: [face], level: a1, unit: a1.u07, topic: body }
+- { id: w.boca, lemma: boca, pos: noun, gender: f, en: [mouth], level: a1, unit: a1.u07, topic: body }
+- { id: w.nariz, lemma: nariz, pos: noun, gender: m, en: [nose], level: a1, unit: a1.u07, topic: body }
+- { id: w.orelha, lemma: orelha, pos: noun, gender: f, en: [ear], level: a1, unit: a1.u07, topic: body }
+- { id: w.mão, lemma: mão, pos: noun, gender: f, en: [hand], level: a1, unit: a1.u07, topic: body }
+- { id: w.braço, lemma: braço, pos: noun, gender: m, en: [arm], level: a1, unit: a1.u07, topic: body }
+- { id: w.perna, lemma: perna, pos: noun, gender: f, en: [leg], level: a1, unit: a1.u07, topic: body }
+- { id: w.pé, lemma: pé, pos: noun, gender: m, en: [foot], level: a1, unit: a1.u07, topic: body }
+- { id: w.corpo, lemma: corpo, pos: noun, gender: m, en: [body], level: a1, unit: a1.u07, topic: body }
+- { id: w.barba, lemma: barba, pos: noun, gender: f, en: [beard], level: a1, unit: a1.u07, topic: body }
+- { id: w.óculos, lemma: óculos, pos: noun, gender: m, en: [glasses], level: a1, unit: a1.u07, topic: clothing }
+- { id: w.frio.n, lemma: frio, pos: noun, gender: m, en: [cold], level: a1, unit: a1.u07, topic: weather, notes: estar com frio = to be cold. }
+- { id: w.calor, lemma: calor, pos: noun, gender: m, en: [heat], level: a1, unit: a1.u07, topic: weather, notes: estar com calor = to be hot. }
+- { id: w.sono, lemma: sono, pos: noun, gender: m, en: [sleep, sleepiness], level: a1, unit: a1.u07, notes: estar com sono = to be sleepy. }
+- { id: w.medo, lemma: medo, pos: noun, gender: m, en: [fear], level: a1, unit: a1.u07, topic: feelings, notes: estar com medo / ter medo = to be afraid. }
+- { id: w.pressa, lemma: pressa, pos: noun, gender: f, en: [hurry, rush], level: a1, unit: a1.u07, notes: estar com pressa = to be in a hurry. }
+- { id: w.saudade, lemma: saudade, pos: noun, gender: f, en: [longing, missing someone], level: a1, unit: a1.u07, topic: feelings, notes: estar com saudade(s) de = to miss. }
+- { id: w.dor, lemma: dor, pos: noun, gender: f, en: [pain, ache], level: a1, unit: a1.u07, notes: dor de cabeça = headache. }
+- { id: w.tô, lemma: tô, pos: phrase, en: [I'm (spoken estou)], level: a1, unit: a1.u07, notes: "Spoken Brazilian: Tô cansada." }
+- { id: w.tão, lemma: tão, pos: adv, en: [so, such], level: a1, unit: a1.u07, topic: quantity }
+- { id: w.bastante, lemma: bastante, pos: adv, en: [quite, rather, enough], level: a1, unit: a1.u07, topic: quantity }
+- { id: w.demais, lemma: demais, pos: adv, en: [too much, too, really], level: a1, unit: a1.u07, topic: quantity, notes: "Também: Que demais! = How awesome!" }
+- { id: w.meio.adv, lemma: meio, pos: adv, en: [a bit, rather], level: a1, unit: a1.u07, topic: quantity }
+# ---------------------------------------------------------------- a1.u08 Quanto custa?
+- { id: w.quanto-custa, lemma: quanto custa, pos: phrase, en: [how much is it], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.custar, lemma: custar, pos: verb, en: [to cost], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.preço, lemma: preço, pos: noun, gender: m, en: [price], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.real, lemma: real, pos: noun, gender: m, en: [real (Brazilian currency)], level: a1, unit: a1.u08, topic: money, notes: "Plural reais: R$ 10 = dez reais." }
+- { id: w.centavo, lemma: centavo, pos: noun, gender: m, en: [cent], level: a1, unit: a1.u08, topic: money }
+- { id: w.dinheiro, lemma: dinheiro, pos: noun, gender: m, en: [money], level: a1, unit: a1.u08, topic: money }
+- { id: w.cartão, lemma: cartão, pos: noun, gender: m, en: [card], level: a1, unit: a1.u08, topic: money, notes: cartão de crédito / de débito. }
+- { id: w.pix, lemma: pix, pos: noun, gender: m, en: [Pix (instant bank transfer)], level: a1, unit: a1.u08, topic: money }
+- { id: w.troco, lemma: troco, pos: noun, gender: m, en: [change (money back)], level: a1, unit: a1.u08, topic: money }
+- { id: w.caro, lemma: caro, pos: adj, en: [expensive, dear], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.barato, lemma: barato, pos: adj, en: [cheap], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.desconto, lemma: desconto, pos: noun, gender: m, en: [discount], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.promoção, lemma: promoção, pos: noun, gender: f, en: [special offer, sale], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.sacola, lemma: sacola, pos: noun, gender: f, en: [shopping bag], level: a1, unit: a1.u08, topic: shopping, variant: { pt-PT: saco } }
+- { id: w.feira, lemma: feira, pos: noun, gender: f, en: [street market, fair], level: a1, unit: a1.u08, topic: shopping, notes: "Also in weekday names: segunda-feira." }
+- { id: w.roupa, lemma: roupa, pos: noun, gender: f, en: [clothes, clothing], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.camisa, lemma: camisa, pos: noun, gender: f, en: [shirt], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.camiseta, lemma: camiseta, pos: noun, gender: f, en: [T-shirt], level: a1, unit: a1.u08, topic: clothing, variant: { pt-PT: t-shirt } }
+- { id: w.calça, lemma: calça, pos: noun, gender: f, en: [trousers, pants], level: a1, unit: a1.u08, topic: clothing, variant: { pt-PT: calças } }
+- { id: w.saia, lemma: saia, pos: noun, gender: f, en: [skirt], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.vestido, lemma: vestido, pos: noun, gender: m, en: [dress], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.sapato, lemma: sapato, pos: noun, gender: m, en: [shoe], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.tênis, lemma: tênis, pos: noun, gender: m, en: [trainers, sneakers, tennis], level: a1, unit: a1.u08, topic: clothing, variant: { pt-PT: sapatilhas (ténis) } }
+- { id: w.sandália, lemma: sandália, pos: noun, gender: f, en: [sandal], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.chinelo, lemma: chinelo, pos: noun, gender: m, en: [flip-flop, slipper], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.biquíni, lemma: biquíni, pos: noun, gender: m, en: [bikini], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.bermuda, lemma: bermuda, pos: noun, gender: f, en: [shorts, Bermuda shorts], level: a1, unit: a1.u08, topic: clothing, variant: { pt-PT: calções } }
+- { id: w.casaco, lemma: casaco, pos: noun, gender: m, en: [coat, jacket], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.bolsa, lemma: bolsa, pos: noun, gender: f, en: [handbag, bag], level: a1, unit: a1.u08, topic: clothing, notes: Also bolsa de estudos = scholarship. }
+- { id: w.chapéu, lemma: chapéu, pos: noun, gender: m, en: [hat], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.boné, lemma: boné, pos: noun, gender: m, en: [cap], level: a1, unit: a1.u08, topic: clothing }
+- { id: w.tamanho, lemma: tamanho, pos: noun, gender: m, en: [size], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.cor, lemma: cor, pos: noun, gender: f, en: [colour], level: a1, unit: a1.u08, topic: colours }
+- { id: w.branco, lemma: branco, pos: adj, en: [white], level: a1, unit: a1.u08, topic: colours }
+- { id: w.preto, lemma: preto, pos: adj, en: [black], level: a1, unit: a1.u08, topic: colours }
+- { id: w.vermelho, lemma: vermelho, pos: adj, en: [red], level: a1, unit: a1.u08, topic: colours }
+- { id: w.azul, lemma: azul, pos: adj, en: [blue], level: a1, unit: a1.u08, topic: colours }
+- { id: w.verde, lemma: verde, pos: adj, en: [green], level: a1, unit: a1.u08, topic: colours }
+- { id: w.amarelo, lemma: amarelo, pos: adj, en: [yellow], level: a1, unit: a1.u08, topic: colours }
+- { id: w.laranja.adj, lemma: laranja, pos: adj, en: [orange], level: a1, unit: a1.u08, topic: colours, notes: "Invariable: camisas laranja." }
+- { id: w.rosa, lemma: rosa, pos: adj, en: [pink], level: a1, unit: a1.u08, topic: colours, notes: "Invariable: blusas rosa." }
+- { id: w.roxo, lemma: roxo, pos: adj, en: [purple], level: a1, unit: a1.u08, topic: colours }
+- { id: w.marrom, lemma: marrom, pos: adj, en: [brown], level: a1, unit: a1.u08, topic: colours, variant: { pt-PT: castanho } }
+- { id: w.cinza, lemma: cinza, pos: adj, en: [grey], level: a1, unit: a1.u08, topic: colours, variant: { pt-PT: cinzento } }
+- { id: w.colorido, lemma: colorido, pos: adj, en: [colourful], level: a1, unit: a1.u08, topic: colours }
+- { id: w.provar, lemma: provar, pos: verb, en: [to try on, to taste], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.vender, lemma: vender, pos: verb, en: [to sell], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.levar, lemma: levar, pos: verb, en: [to take, to carry], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.trocar, lemma: trocar, pos: verb, en: [to exchange, to change], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.aceitar, lemma: aceitar, pos: verb, en: [to accept], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.custo, lemma: custo, pos: noun, gender: m, en: [cost], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.este, lemma: este, pos: det, en: [this], level: a1, unit: a1.u08, forms: [este, esta, estes, estas] }
+- { id: w.esse, lemma: esse, pos: det, en: [that (near you), this], level: a1, unit: a1.u08, forms: [esse, essa, esses, essas], notes: In Brazilian speech esse often replaces este. }
+- { id: w.aquele, lemma: aquele, pos: det, en: [that (over there)], level: a1, unit: a1.u08, forms: [aquele, aquela, aqueles, aquelas] }
+- { id: w.isto, lemma: isto, pos: pron, en: [this (thing)], level: a1, unit: a1.u08, forms: [isto] }
+- { id: w.isso, lemma: isso, pos: pron, en: [that (thing)], level: a1, unit: a1.u08, forms: [isso] }
+- { id: w.aquilo, lemma: aquilo, pos: pron, en: [that (thing over there)], level: a1, unit: a1.u08, forms: [aquilo] }
+- { id: w.deste, lemma: deste, pos: prep, en: [of this, from this], level: a1, unit: a1.u08, forms: [deste, desta, destes, destas, disto] }
+- { id: w.desse, lemma: desse, pos: prep, en: [of that, from that], level: a1, unit: a1.u08, forms: [desse, dessa, desses, dessas, disso] }
+- { id: w.daquele, lemma: daquele, pos: prep, en: [of that (over there)], level: a1, unit: a1.u08, forms: [daquele, daquela, daqueles, daquelas, daquilo] }
+- { id: w.neste, lemma: neste, pos: prep, en: [in this, on this], level: a1, unit: a1.u08, forms: [neste, nesta, nestes, nestas, nisto] }
+- { id: w.nesse, lemma: nesse, pos: prep, en: [in that, on that], level: a1, unit: a1.u08, forms: [nesse, nessa, nesses, nessas, nisso] }
+- { id: w.naquele, lemma: naquele, pos: prep, en: [in that (over there)], level: a1, unit: a1.u08, forms: [naquele, naquela, naqueles, naquelas, naquilo] }
+- { id: w.cento, lemma: cento, pos: num, en: [hundred (in 101–199)], level: a1, unit: a1.u08, topic: numbers, notes: cento e um = 101; cem = exactly 100. }
+- { id: w.duzentos, lemma: duzentos, pos: num, en: [two hundred], level: a1, unit: a1.u08, topic: numbers, forms: [duzentos, duzentas] }
+- { id: w.trezentos, lemma: trezentos, pos: num, en: [three hundred], level: a1, unit: a1.u08, topic: numbers, forms: [trezentos, trezentas] }
+- { id: w.quatrocentos, lemma: quatrocentos, pos: num, en: [four hundred], level: a1, unit: a1.u08, topic: numbers, forms: [quatrocentos, quatrocentas] }
+- { id: w.quinhentos, lemma: quinhentos, pos: num, en: [five hundred], level: a1, unit: a1.u08, topic: numbers, forms: [quinhentos, quinhentas] }
+- { id: w.seiscentos, lemma: seiscentos, pos: num, en: [six hundred], level: a1, unit: a1.u08, topic: numbers, forms: [seiscentos, seiscentas] }
+- { id: w.setecentos, lemma: setecentos, pos: num, en: [seven hundred], level: a1, unit: a1.u08, topic: numbers, forms: [setecentos, setecentas] }
+- { id: w.oitocentos, lemma: oitocentos, pos: num, en: [eight hundred], level: a1, unit: a1.u08, topic: numbers, forms: [oitocentos, oitocentas] }
+- { id: w.novecentos, lemma: novecentos, pos: num, en: [nine hundred], level: a1, unit: a1.u08, topic: numbers, forms: [novecentos, novecentas] }
+- { id: w.mil, lemma: mil, pos: num, en: [thousand], level: a1, unit: a1.u08, topic: numbers }
+- { id: w.milhão, lemma: milhão, pos: noun, gender: m, en: [million], level: a1, unit: a1.u08, topic: numbers }
+- { id: w.havaianas, lemma: havaianas, pos: noun, gender: f, en: [Havaianas (flip-flops)], level: a1, unit: a1.u08, topic: clothing, tags: [passive] }
+- { id: w.prata, lemma: prata, pos: noun, gender: f, en: [silver], level: a1, unit: a1.u08, topic: colours }
+- { id: w.grátis, lemma: grátis, pos: adj, en: [free (of charge)], level: a1, unit: a1.u08, topic: shopping }
+- { id: w.bege, lemma: bege, pos: adj, en: [beige], level: a1, unit: a1.u08, topic: colours }
+- { id: w.meia, lemma: meia, pos: noun, gender: f, en: [sock, stocking], level: a1, unit: a1.u08, topic: clothing, notes: "Also meia = half (a dozen), and meia = six on the phone." }
+# ---------------------------------------------------------------- a1.u09 Vamos à praia!
+- { id: w.ir, lemma: ir, pos: verb, en: [to go], level: a1, unit: a1.u09, topic: verbs-motion, example: { es: Vamos à praia!, en: Let's go to the beach! } }
+- { id: w.a, lemma: a, pos: prep, en: [to, at], level: a1, unit: a1.u09 }
+- { id: w.ao, lemma: ao, pos: prep, en: [to the, at the], level: a1, unit: a1.u09, forms: [ao, aos], notes: a + o. }
+- { id: w.à, lemma: à, pos: prep, en: [to the, at the (feminine)], level: a1, unit: a1.u09, forms: [à, às], notes: "a + a: vou à praia." }
+- { id: w.aonde, lemma: aonde, pos: adv, en: [where (to)], level: a1, unit: a1.u09, topic: directions }
+- { id: w.fazer, lemma: fazer, pos: verb, en: [to do, to make], level: a1, unit: a1.u09 }
+- { id: w.poder, lemma: poder, pos: verb, en: [can, to be able to, may], level: a1, unit: a1.u09 }
+- { id: w.mar, lemma: mar, pos: noun, gender: m, en: [sea], level: a1, unit: a1.u09, topic: nature }
+- { id: w.sol, lemma: sol, pos: noun, gender: m, en: [sun], level: a1, unit: a1.u09, topic: nature }
+- { id: w.areia, lemma: areia, pos: noun, gender: f, en: [sand], level: a1, unit: a1.u09, topic: nature }
+- { id: w.onda, lemma: onda, pos: noun, gender: f, en: [wave], level: a1, unit: a1.u09, topic: nature }
+- { id: w.ilha, lemma: ilha, pos: noun, gender: f, en: [island], level: a1, unit: a1.u09, topic: nature }
+- { id: w.protetor-solar, lemma: protetor solar, pos: phrase, en: [sunscreen], level: a1, unit: a1.u09 }
+- { id: w.guarda-sol, lemma: guarda-sol, pos: noun, gender: m, en: [beach umbrella, parasol], level: a1, unit: a1.u09 }
+- { id: w.toalha, lemma: toalha, pos: noun, gender: f, en: [towel], level: a1, unit: a1.u09, topic: house }
+- { id: w.passear, lemma: passear, pos: verb, en: [to go for a walk, to stroll], level: a1, unit: a1.u09, topic: verbs-motion }
+- { id: w.passeio, lemma: passeio, pos: noun, gender: m, en: [walk, outing, trip], level: a1, unit: a1.u09, topic: travel }
+- { id: w.nadar, lemma: nadar, pos: verb, en: [to swim], level: a1, unit: a1.u09, topic: sport }
+- { id: w.viajar, lemma: viajar, pos: verb, en: [to travel], level: a1, unit: a1.u09, topic: travel }
+- { id: w.visitar, lemma: visitar, pos: verb, en: [to visit], level: a1, unit: a1.u09, topic: travel }
+- { id: w.dançar, lemma: dançar, pos: verb, en: [to dance], level: a1, unit: a1.u09 }
+- { id: w.ajudar, lemma: ajudar, pos: verb, en: [to help], level: a1, unit: a1.u09 }
+- { id: w.deixar, lemma: deixar, pos: verb, en: [to leave, to let], level: a1, unit: a1.u09 }
+- { id: w.estacionar, lemma: estacionar, pos: verb, en: [to park], level: a1, unit: a1.u09, topic: transport }
+- { id: w.compras, lemma: compras, pos: noun, gender: f, en: [shopping], level: a1, unit: a1.u09, topic: shopping, notes: fazer compras = to go shopping. }
+- { id: w.festa, lemma: festa, pos: noun, gender: f, en: [party], level: a1, unit: a1.u09, notes: festa junina = June festival. }
+- { id: w.show, lemma: show, pos: noun, gender: m, en: [concert, show], level: a1, unit: a1.u09, topic: arts }
+- { id: w.cinema, lemma: cinema, pos: noun, gender: m, en: [cinema], level: a1, unit: a1.u09, topic: arts }
+- { id: w.teatro, lemma: teatro, pos: noun, gender: m, en: [theatre], level: a1, unit: a1.u09, topic: arts }
+- { id: w.academia, lemma: academia, pos: noun, gender: f, en: [gym], level: a1, unit: a1.u09, topic: sport, variant: { pt-PT: ginásio } }
+- { id: w.exercício, lemma: exercício, pos: noun, gender: m, en: [exercise], level: a1, unit: a1.u09, topic: sport }
+- { id: w.futebol, lemma: futebol, pos: noun, gender: m, en: [football, soccer], level: a1, unit: a1.u09, topic: sport }
+- { id: w.jogo, lemma: jogo, pos: noun, gender: m, en: [game, match], level: a1, unit: a1.u09, topic: sport }
+- { id: w.bola, lemma: bola, pos: noun, gender: f, en: [ball], level: a1, unit: a1.u09, topic: sport }
+- { id: w.vontade, lemma: vontade, pos: noun, gender: f, en: [wish, will], level: a1, unit: a1.u09, notes: Fique à vontade = Make yourself at home. }
+- { id: w.comigo, lemma: comigo, pos: pron, en: [with me], level: a1, unit: a1.u09, forms: [comigo] }
+- { id: w.vamos, lemma: vamos, pos: phrase, en: [let's go, let's], level: a1, unit: a1.u09, notes: Vamos! is also a form of ir. }
+- { id: w.pronto, lemma: pronto, pos: adj, en: [ready], level: a1, unit: a1.u09, notes: Pronto! also means done! / there you go. }
+- { id: w.licença, lemma: licença, pos: noun, gender: f, en: [permission, leave], level: a1, unit: a1.u09 }
+- { id: w.brincar, lemma: brincar, pos: verb, en: [to play (children), to joke], level: a1, unit: a1.u09 }
+- { id: w.casar, lemma: casar, pos: verb, en: [to marry, to get married], level: a1, unit: a1.u09, topic: relationships }
+- { id: w.fumar, lemma: fumar, pos: verb, en: [to smoke], level: a1, unit: a1.u09 }
+- { id: w.ingresso, lemma: ingresso, pos: noun, gender: m, en: [ticket (for an event)], level: a1, unit: a1.u09, topic: arts, variant: { pt-PT: bilhete } }
+- { id: w.ioga, lemma: ioga, pos: noun, gender: f, en: [yoga], level: a1, unit: a1.u09, topic: sport, forms: [ioga, yoga] }
+- { id: w.embora, lemma: embora, pos: adv, en: [away], level: a1, unit: a1.u09, notes: "ir embora = to leave, to go away. As a conjunction (although) it comes at B2." }
+# ---------------------------------------------------------------- a1.u10 Fim de semana carioca
+- { id: w.tempo, lemma: tempo, pos: noun, gender: m, en: [weather, time], level: a1, unit: a1.u10, topic: weather, example: { es: "Como está o tempo?", en: "What's the weather like?" } }
+- { id: w.chover, lemma: chover, pos: verb, en: [to rain], level: a1, unit: a1.u10, topic: weather }
+- { id: w.chuva, lemma: chuva, pos: noun, gender: f, en: [rain], level: a1, unit: a1.u10, topic: weather }
+- { id: w.nublado, lemma: nublado, pos: adj, en: [cloudy], level: a1, unit: a1.u10, topic: weather }
+- { id: w.ensolarado, lemma: ensolarado, pos: adj, en: [sunny], level: a1, unit: a1.u10, topic: weather, variant: { pt-PT: soalheiro } }
+- { id: w.vento, lemma: vento, pos: noun, gender: m, en: [wind], level: a1, unit: a1.u10, topic: weather }
+- { id: w.ventar, lemma: ventar, pos: verb, en: [to be windy], level: a1, unit: a1.u10, topic: weather }
+- { id: w.garoa, lemma: garoa, pos: noun, gender: f, en: [drizzle], level: a1, unit: a1.u10, topic: weather, notes: "Typical of São Paulo, a terra da garoa." }
+- { id: w.quente, lemma: quente, pos: adj, en: [hot, warm], level: a1, unit: a1.u10, topic: weather }
+- { id: w.frio, lemma: frio, pos: adj, en: [cold], level: a1, unit: a1.u10, topic: weather }
+- { id: w.fresco, lemma: fresco, pos: adj, en: [cool, fresh], level: a1, unit: a1.u10, topic: weather }
+- { id: w.temperatura, lemma: temperatura, pos: noun, gender: f, en: [temperature], level: a1, unit: a1.u10, topic: weather }
+- { id: w.grau, lemma: grau, pos: noun, gender: m, en: [degree], level: a1, unit: a1.u10, topic: weather }
+- { id: w.céu, lemma: céu, pos: noun, gender: m, en: [sky], level: a1, unit: a1.u10, topic: weather }
+- { id: w.nuvem, lemma: nuvem, pos: noun, gender: f, en: [cloud], level: a1, unit: a1.u10, topic: weather }
+- { id: w.verão, lemma: verão, pos: noun, gender: m, en: [summer], level: a1, unit: a1.u10, topic: weather }
+- { id: w.inverno, lemma: inverno, pos: noun, gender: m, en: [winter], level: a1, unit: a1.u10, topic: weather }
+- { id: w.primavera, lemma: primavera, pos: noun, gender: f, en: [spring], level: a1, unit: a1.u10, topic: weather }
+- { id: w.outono, lemma: outono, pos: noun, gender: m, en: [autumn, fall], level: a1, unit: a1.u10, topic: weather }
+- { id: w.estação, lemma: estação, pos: noun, gender: f, en: [season, station], level: a1, unit: a1.u10, topic: weather }
+- { id: w.esporte, lemma: esporte, pos: noun, gender: m, en: [sport], level: a1, unit: a1.u10, topic: sport, variant: { pt-PT: desporto } }
+- { id: w.vôlei, lemma: vôlei, pos: noun, gender: m, en: [volleyball], level: a1, unit: a1.u10, topic: sport, variant: { pt-PT: voleibol } }
+- { id: w.basquete, lemma: basquete, pos: noun, gender: m, en: [basketball], level: a1, unit: a1.u10, topic: sport, variant: { pt-PT: basquetebol } }
+- { id: w.time, lemma: time, pos: noun, gender: m, en: [team], level: a1, unit: a1.u10, topic: sport, variant: { pt-PT: equipa } }
+- { id: w.jogar, lemma: jogar, pos: verb, en: ["to play (games, sport)"], level: a1, unit: a1.u10, topic: sport }
+- { id: w.tocar, lemma: tocar, pos: verb, en: [to play (an instrument), to touch], level: a1, unit: a1.u10, topic: arts }
+- { id: w.violão, lemma: violão, pos: noun, gender: m, en: [acoustic guitar], level: a1, unit: a1.u10, topic: arts, variant: { pt-PT: viola } }
+- { id: w.guitarra, lemma: guitarra, pos: noun, gender: f, en: [electric guitar], level: a1, unit: a1.u10, topic: arts, notes: In Portugal guitarra is also the Portuguese guitar used in fado. }
+- { id: w.piano, lemma: piano, pos: noun, gender: m, en: [piano], level: a1, unit: a1.u10, topic: arts }
+- { id: w.instrumento, lemma: instrumento, pos: noun, gender: m, en: [instrument], level: a1, unit: a1.u10, topic: arts }
+- { id: w.música, lemma: música, pos: noun, gender: f, en: [music, song], level: a1, unit: a1.u10, topic: arts }
+- { id: w.cantar, lemma: cantar, pos: verb, en: [to sing], level: a1, unit: a1.u10, topic: arts }
+- { id: w.samba, lemma: samba, pos: noun, gender: m, en: [samba], level: a1, unit: a1.u10, topic: arts }
+- { id: w.forró, lemma: forró, pos: noun, gender: m, en: [forró (northeastern dance music)], level: a1, unit: a1.u10, topic: arts }
+- { id: w.filme, lemma: filme, pos: noun, gender: m, en: [film, movie], level: a1, unit: a1.u10, topic: arts }
+- { id: w.série, lemma: série, pos: noun, gender: f, en: [series, TV series], level: a1, unit: a1.u10, topic: media }
+- { id: w.novela, lemma: novela, pos: noun, gender: f, en: [soap opera], level: a1, unit: a1.u10, topic: media, notes: telenovela in Portugal. }
+- { id: w.jornal, lemma: jornal, pos: noun, gender: m, en: [newspaper], level: a1, unit: a1.u10, topic: media }
+- { id: w.rádio, lemma: rádio, pos: noun, gender: m, en: [radio], level: a1, unit: a1.u10, topic: media }
+- { id: w.notícia, lemma: notícia, pos: noun, gender: f, en: [news, piece of news], level: a1, unit: a1.u10, topic: media }
+- { id: w.saber, lemma: saber, pos: verb, en: ["to know (facts, how to)"], level: a1, unit: a1.u10 }
+- { id: w.conhecer, lemma: conhecer, pos: verb, en: ["to know (people, places)", to meet], level: a1, unit: a1.u10 }
+- { id: w.ver, lemma: ver, pos: verb, en: [to see, to watch], level: a1, unit: a1.u10 }
+- { id: w.vir, lemma: vir, pos: verb, en: [to come], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.dizer, lemma: dizer, pos: verb, en: [to say, to tell], level: a1, unit: a1.u10, topic: verbs-speech }
+- { id: w.trazer, lemma: trazer, pos: verb, en: [to bring], level: a1, unit: a1.u10, topic: verbs-motion }
+- { id: w.ouvir, lemma: ouvir, pos: verb, en: [to hear, to listen], level: a1, unit: a1.u10 }
+- { id: w.pôr, lemma: pôr, pos: verb, en: [to put, to place], level: a1, unit: a1.u10, notes: o pôr do sol = sunset. }
+- { id: w.pôr-do-sol, lemma: pôr do sol, pos: noun, gender: m, en: [sunset], level: a1, unit: a1.u10, topic: nature }
+- { id: w.dar, lemma: dar, pos: verb, en: [to give], level: a1, unit: a1.u10 }
+- { id: w.sentir, lemma: sentir, pos: verb, en: [to feel], level: a1, unit: a1.u10, topic: feelings }
+- { id: w.resposta, lemma: resposta, pos: noun, gender: f, en: [answer, reply], level: a1, unit: a1.u10, topic: school }
+- { id: w.hobby, lemma: hobby, pos: noun, gender: m, en: [hobby], level: a1, unit: a1.u10, notes: Plural hobbies. }
+- { id: w.tempo-livre, lemma: tempo livre, pos: phrase, en: [free time], level: a1, unit: a1.u10 }
+# ---------------------------------------------------------------- a1.u11 Como eu chego lá?
+- { id: w.direita, lemma: direita, pos: noun, gender: f, en: [right], level: a1, unit: a1.u11, topic: directions, notes: à direita = on the right. }
+- { id: w.esquerda, lemma: esquerda, pos: noun, gender: f, en: [left], level: a1, unit: a1.u11, topic: directions, notes: à esquerda = on the left. }
+- { id: w.reto, lemma: reto, pos: adv, en: [straight on], level: a1, unit: a1.u11, topic: directions, variant: { pt-PT: em frente }, notes: Siga reto = go straight on. }
+- { id: w.virar, lemma: virar, pos: verb, en: [to turn], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.seguir, lemma: seguir, pos: verb, en: [to follow, to go on], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.atravessar, lemma: atravessar, pos: verb, en: [to cross], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.pegar, lemma: pegar, pos: verb, en: [to take (a bus), to catch, to pick up], level: a1, unit: a1.u11, topic: transport, variant: { pt-PT: apanhar } }
+- { id: w.descer, lemma: descer, pos: verb, en: [to go down, to get off], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.subir, lemma: subir, pos: verb, en: [to go up, to climb, to get on], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.andar, lemma: andar, pos: verb, en: [to walk, to go, to ride], level: a1, unit: a1.u11, topic: verbs-motion, notes: andar de ônibus / de bicicleta. }
+- { id: w.a-pé, lemma: a pé, pos: phrase, en: [on foot], level: a1, unit: a1.u11, topic: transport }
+- { id: w.entrar, lemma: entrar, pos: verb, en: [to enter, to go in], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.passar, lemma: passar, pos: verb, en: [to pass, to go past, to spend (time)], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.avenida, lemma: avenida, pos: noun, gender: f, en: [avenue], level: a1, unit: a1.u11, topic: city }
+- { id: w.esquina, lemma: esquina, pos: noun, gender: f, en: [corner], level: a1, unit: a1.u11, topic: city }
+- { id: w.quarteirão, lemma: quarteirão, pos: noun, gender: m, en: [block], level: a1, unit: a1.u11, topic: city }
+- { id: w.sinal, lemma: sinal, pos: noun, gender: m, en: [traffic light, sign, signal], level: a1, unit: a1.u11, topic: city, variant: { pt-PT: semáforo } }
+- { id: w.ponte, lemma: ponte, pos: noun, gender: f, en: [bridge], level: a1, unit: a1.u11, topic: city }
+- { id: w.estrada, lemma: estrada, pos: noun, gender: f, en: [road], level: a1, unit: a1.u11, topic: city }
+- { id: w.ônibus, lemma: ônibus, pos: noun, gender: m, en: [bus], level: a1, unit: a1.u11, topic: transport, variant: { pt-PT: autocarro } }
+- { id: w.metrô, lemma: metrô, pos: noun, gender: m, en: [underground, metro], level: a1, unit: a1.u11, topic: transport, variant: { pt-PT: metro } }
+- { id: w.trem, lemma: trem, pos: noun, gender: m, en: [train], level: a1, unit: a1.u11, topic: transport, variant: { pt-PT: comboio } }
+- { id: w.bonde, lemma: bonde, pos: noun, gender: m, en: [tram], level: a1, unit: a1.u11, topic: transport, variant: { pt-PT: elétrico } }
+- { id: w.táxi, lemma: táxi, pos: noun, gender: m, en: [taxi], level: a1, unit: a1.u11, topic: transport }
+- { id: w.carro, lemma: carro, pos: noun, gender: m, en: [car], level: a1, unit: a1.u11, topic: transport }
+- { id: w.bicicleta, lemma: bicicleta, pos: noun, gender: f, en: [bicycle], level: a1, unit: a1.u11, topic: transport }
+- { id: w.moto, lemma: moto, pos: noun, gender: f, en: [motorbike], level: a1, unit: a1.u11, topic: transport }
+- { id: w.avião, lemma: avião, pos: noun, gender: m, en: [plane], level: a1, unit: a1.u11, topic: transport }
+- { id: w.barco, lemma: barco, pos: noun, gender: m, en: [boat], level: a1, unit: a1.u11, topic: transport }
+- { id: w.aeroporto, lemma: aeroporto, pos: noun, gender: m, en: [airport], level: a1, unit: a1.u11, topic: transport }
+- { id: w.rodoviária, lemma: rodoviária, pos: noun, gender: f, en: [bus station], level: a1, unit: a1.u11, topic: transport }
+- { id: w.ponto-de-ônibus, lemma: ponto de ônibus, pos: noun, gender: m, en: [bus stop], level: a1, unit: a1.u11, topic: transport, variant: { pt-PT: paragem de autocarro } }
+- { id: w.parada, lemma: parada, pos: noun, gender: f, en: [stop], level: a1, unit: a1.u11, topic: transport, variant: { pt-PT: paragem } }
+- { id: w.passagem, lemma: passagem, pos: noun, gender: f, en: [ticket, fare, passage], level: a1, unit: a1.u11, topic: transport, variant: { pt-PT: bilhete } }
+- { id: w.bilhete, lemma: bilhete, pos: noun, gender: m, en: [ticket, note], level: a1, unit: a1.u11, topic: transport }
+- { id: w.trânsito, lemma: trânsito, pos: noun, gender: m, en: [traffic], level: a1, unit: a1.u11, topic: transport }
+- { id: w.mapa, lemma: mapa, pos: noun, gender: m, en: [map], level: a1, unit: a1.u11, topic: travel, notes: "Masculine: o mapa." }
+- { id: w.perdido, lemma: perdido, pos: adj, en: [lost], level: a1, unit: a1.u11 }
+- { id: w.correio, lemma: correio, pos: noun, gender: m, en: [post office, mail], level: a1, unit: a1.u11, topic: city, variant: { pt-PT: correios } }
+- { id: w.polícia, lemma: polícia, pos: noun, gender: f, en: [police], level: a1, unit: a1.u11, topic: city, notes: o/a polícia = police officer. }
+- { id: w.metro, lemma: metro, pos: noun, gender: m, en: [metre], level: a1, unit: a1.u11, topic: quantity }
+- { id: w.pelo, lemma: pelo, pos: prep, en: [through the, by the, along the], level: a1, unit: a1.u11, forms: [pelo, pela, pelos, pelas], notes: por + o/a. }
+- { id: w.por, lemma: por, pos: prep, en: [through, by, for, along], level: a1, unit: a1.u11 }
+- { id: w.até, lemma: até, pos: prep, en: [until, as far as, up to], level: a1, unit: a1.u11 }
+- { id: w.cadê, lemma: cadê, pos: adv, en: [where is], level: a1, unit: a1.u11, topic: directions, notes: "Informal Brazilian: Cadê o meu celular?" }
+- { id: w.precisar, lemma: precisar, pos: verb, en: [to need], level: a1, unit: a1.u11, notes: "precisar de + noun: Preciso de ajuda." }
+- { id: w.ter-que, lemma: ter que, pos: phrase, en: [to have to], level: a1, unit: a1.u11, notes: "Also ter de, more usual in Portugal." }
+- { id: w.ajuda, lemma: ajuda, pos: noun, gender: f, en: [help], level: a1, unit: a1.u11 }
+- { id: w.primeiro, lemma: primeiro, pos: adj, en: [first], level: a1, unit: a1.u11, topic: numbers }
+- { id: w.segundo, lemma: segundo, pos: adj, en: [second], level: a1, unit: a1.u11, topic: numbers }
+- { id: w.terceiro, lemma: terceiro, pos: adj, en: [third], level: a1, unit: a1.u11, topic: numbers }
+- { id: w.próximo, lemma: próximo, pos: adj, en: [next], level: a1, unit: a1.u11, topic: time }
+- { id: w.último, lemma: último, pos: adj, en: [last], level: a1, unit: a1.u11, topic: time }
+- { id: w.celular, lemma: celular, pos: noun, gender: m, en: [mobile phone], level: a1, unit: a1.u11, topic: tech, variant: { pt-PT: telemóvel } }
+- { id: w.devagar, lemma: devagar, pos: adv, en: [slowly], level: a1, unit: a1.u11, topic: verbs-motion }
+- { id: w.voo, lemma: voo, pos: noun, gender: m, en: [flight], level: a1, unit: a1.u11, topic: transport }
+- { id: w.guarda-chuva, lemma: guarda-chuva, pos: noun, gender: m, en: [umbrella], level: a1, unit: a1.u11, topic: weather }
+- { id: w.gás, lemma: gás, pos: noun, gender: m, en: [gas], level: a1, unit: a1.u11, notes: água com gás = sparkling water. }
+- { id: w.documento, lemma: documento, pos: noun, gender: m, en: [document], level: a1, unit: a1.u11, topic: travel }
+# ---------------------------------------------------------------- a1.u12 Planos no Rio
+- { id: w.plano, lemma: plano, pos: noun, gender: m, en: [plan], level: a1, unit: a1.u12 }
+- { id: w.férias, lemma: férias, pos: noun, gender: f, en: [holidays, vacation], level: a1, unit: a1.u12, topic: travel, notes: "Always plural: as férias." }
+- { id: w.viagem, lemma: viagem, pos: noun, gender: f, en: [trip, journey], level: a1, unit: a1.u12, topic: travel }
+- { id: w.convite, lemma: convite, pos: noun, gender: m, en: [invitation], level: a1, unit: a1.u12, topic: relationships }
+- { id: w.convidar, lemma: convidar, pos: verb, en: [to invite], level: a1, unit: a1.u12, topic: relationships }
+- { id: w.comemorar, lemma: comemorar, pos: verb, en: [to celebrate], level: a1, unit: a1.u12, topic: relationships }
+- { id: w.esperar, lemma: esperar, pos: verb, en: [to wait, to hope, to expect], level: a1, unit: a1.u12 }
+- { id: w.combinar, lemma: combinar, pos: verb, en: [to arrange, to agree, to match], level: a1, unit: a1.u12 }
+- { id: w.combinado, lemma: combinado, pos: interj, en: [deal, agreed], level: a1, unit: a1.u12 }
+- { id: w.parabéns, lemma: parabéns, pos: interj, en: [congratulations, happy birthday], level: a1, unit: a1.u12, topic: greetings }
+- { id: w.presente, lemma: presente, pos: noun, gender: m, en: [present, gift], level: a1, unit: a1.u12, topic: relationships }
+- { id: w.então, lemma: então, pos: adv, en: [so, then], level: a1, unit: a1.u12, topic: connectors }
+- { id: w.porque, lemma: porque, pos: conj, en: [because], level: a1, unit: a1.u12, topic: connectors }
+- { id: w.por-que, lemma: por que, pos: phrase, en: [why], level: a1, unit: a1.u12, notes: "Written apart in questions; porquê at the end: Por quê? (pt-PT: porquê)" }
+- { id: w.quando, lemma: quando, pos: adv, en: [when], level: a1, unit: a1.u12, topic: time }
+- { id: w.se.conj, lemma: se, pos: conj, en: [if, whether], level: a1, unit: a1.u12, topic: connectors }
+- { id: w.que.conj, lemma: que, pos: conj, en: [that], level: a1, unit: a1.u12, topic: connectors, notes: Acho que sim = I think so. }
+- { id: w.também-não, lemma: também não, pos: phrase, en: [not either, neither], level: a1, unit: a1.u12, topic: connectors }
+- { id: w.nem, lemma: nem, pos: conj, en: [nor, not even], level: a1, unit: a1.u12, topic: connectors }
+- { id: w.todo, lemma: todo, pos: det, en: [all, every, whole], level: a1, unit: a1.u12, topic: quantity, notes: todo dia = every day; todo o dia = all day. }
+- { id: w.tudo, lemma: tudo, pos: pron, en: [everything, all], level: a1, unit: a1.u12, forms: [tudo], notes: "Invariable: tudo bem." }
+- { id: w.cada, lemma: cada, pos: det, en: [each, every], level: a1, unit: a1.u12, topic: quantity, forms: [cada] }
+- { id: w.outro, lemma: outro, pos: det, en: [other, another], level: a1, unit: a1.u12, topic: quantity }
+- { id: w.mesmo, lemma: mesmo, pos: adj, en: [same, even, really], level: a1, unit: a1.u12, notes: "o mesmo = the same; Mesmo? = Really?" }
+- { id: w.já, lemma: já, pos: adv, en: [already, now, ever], level: a1, unit: a1.u12, topic: time }
+- { id: w.ainda, lemma: ainda, pos: adv, en: [still, yet], level: a1, unit: a1.u12, topic: time }
+- { id: w.logo, lemma: logo, pos: adv, en: [soon, right away, later], level: a1, unit: a1.u12, topic: time }
+- { id: w.claro, lemma: claro, pos: interj, en: [of course], level: a1, unit: a1.u12, notes: "Also adjective: light, clear." }
+- { id: w.né, lemma: né, pos: interj, en: ["right?", "isn't it?"], level: a1, unit: a1.u12, notes: "Spoken tag question, from não é?" }
+- { id: w.pois, lemma: pois, pos: conj, en: [well, so, since], level: a1, unit: a1.u12, topic: connectors, notes: "In Portugal pois (é) = yes, quite." }
+- { id: w.só, lemma: só, pos: adv, en: [only, just], level: a1, unit: a1.u12 }
+- { id: w.junto, lemma: junto, pos: adj, en: [together], level: a1, unit: a1.u12 }
+- { id: w.sozinho, lemma: sozinho, pos: adj, en: [alone, on one's own], level: a1, unit: a1.u12 }
+- { id: w.ideia, lemma: ideia, pos: noun, gender: f, en: [idea], level: a1, unit: a1.u12 }
+- { id: w.coisa, lemma: coisa, pos: noun, gender: f, en: [thing], level: a1, unit: a1.u12 }
+- { id: w.problema, lemma: problema, pos: noun, gender: m, en: [problem], level: a1, unit: a1.u12, notes: "Masculine: o problema." }
+- { id: w.lugar, lemma: lugar, pos: noun, gender: m, en: [place, seat], level: a1, unit: a1.u12, topic: travel }
+- { id: w.mala, lemma: mala, pos: noun, gender: f, en: [suitcase], level: a1, unit: a1.u12, topic: travel }
+- { id: w.passaporte, lemma: passaporte, pos: noun, gender: m, en: [passport], level: a1, unit: a1.u12, topic: travel }
+- { id: w.algum, lemma: algum, pos: det, en: [some, any], level: a1, unit: a1.u12, topic: quantity, forms: [algum, alguma, alguns, algumas] }
+- { id: w.alguém, lemma: alguém, pos: pron, en: [someone, anyone], level: a1, unit: a1.u12, forms: [alguém] }
+- { id: w.ninguém, lemma: ninguém, pos: pron, en: [no one, nobody, anyone], level: a1, unit: a1.u12, forms: [ninguém] }
+- { id: w.agradecer, lemma: agradecer, pos: verb, en: [to thank], level: a1, unit: a1.u12, topic: verbs-speech }
+- { id: w.longo, lemma: longo, pos: adj, en: [long], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.curto, lemma: curto, pos: adj, en: [short], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.enorme, lemma: enorme, pos: adj, en: [huge, enormous], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.natural, lemma: natural, pos: adj, en: [natural], level: a1, unit: a1.u12, topic: adjectives-things }
+- { id: w.sistema, lemma: sistema, pos: noun, gender: m, en: [system], level: a1, unit: a1.u12, notes: "Masculine despite the -a: o sistema." }
+- { id: w.bandeira, lemma: bandeira, pos: noun, gender: f, en: [flag], level: a1, unit: a1.u12 }
+- { id: w.falta, lemma: falta, pos: noun, gender: f, en: [lack, absence], level: a1, unit: a1.u12, notes: "fazer falta = to be missed: Você me faz falta." }
