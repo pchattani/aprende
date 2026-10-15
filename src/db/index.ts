@@ -1,6 +1,6 @@
 /** IndexedDB via Dexie: all learner state lives here (no accounts, no server). */
 import Dexie, { type EntityTable } from 'dexie'
-import type { CardRow, ReviewRow, LessonRow, DayRow, ReadingRow, ExamRow, KvRow, QuestRow, SouvenirRow } from '../engine/types'
+import type { CardRow, ReviewRow, LessonRow, DayRow, ReadingRow, ExamRow, KvRow, QuestRow, SouvenirRow, PinRow } from '../engine/types'
 
 export class AprendeDB extends Dexie {
   cards!: EntityTable<CardRow, 'id'>
@@ -12,6 +12,7 @@ export class AprendeDB extends Dexie {
   kv!: EntityTable<KvRow, 'key'>
   quests!: EntityTable<QuestRow, 'id'>
   souvenirs!: EntityTable<SouvenirRow, 'id'>
+  pins!: EntityTable<PinRow, 'id'>
 
   constructor(name = 'aprende') {
     super(name)
@@ -28,9 +29,12 @@ export class AprendeDB extends Dexie {
       quests: 'id, date',
       souvenirs: 'id, ts',
     })
+    this.version(3).stores({
+      pins: 'id, ts, lessonId',
+    })
   }
 }
 
 export const db = new AprendeDB()
 
-export const SCHEMA_VERSION = 2
+export const SCHEMA_VERSION = 3

@@ -55,6 +55,12 @@ lessons:
         en: ["Hi, Tom. The keys are on the kitchen table.", "In the bedroom there is a new bed and a wardrobe.", "There's no television, sorry."]
         grammar: [g.hay, g.negation]
         vocab: [w.llave, w.cama, w.armario]
+    spicy:
+      - { es: "En mi casa hay un sofá muy grande... para dos.", en: "In my house there's a very big sofa... for two.", grammar: [g.hay, g.articles-indefinite], vocab: [w.haber, w.casa, w.sofa] }
+      - { es: "Hay una silla aquí, enfrente de mí. Es para ti.", en: "There's a chair here, opposite me. It's for you.", grammar: [g.hay, g.prepositions-place], vocab: [w.haber, w.silla] }
+      - { es: "Hay un jardín, un gato y una cena para ti.", en: "There's a garden, a cat and a dinner for you.", grammar: [g.hay, g.articles-indefinite], vocab: [w.jardin] }
+      - { es: "En mi cocina no hay nada, pero hay vino.", en: "There's nothing in my kitchen, but there's wine.", altEs: ["En mi cocina no hay nada... pero hay vino."], grammar: [g.hay, g.negation], vocab: [w.cocina] }
+      - { es: "Hay muchos libros en mi habitación. ¿Leemos juntos?", en: "There are lots of books in my room. Shall we read together?", grammar: [g.hay, g.quantity-words], vocab: [w.libro, w.habitacion] }
   - id: a1.u04.l2
     title: ¿Dónde está?
     teach: [g.estar-location, g.prepositions-place]
@@ -109,6 +115,12 @@ lessons:
         en: ["The keys are on the table.", "The book is under the bed.", "The cat is behind the sofa."]
         grammar: [g.prepositions-place, g.al-del-contractions]
         vocab: [w.encima, w.debajo, w.detras, w.sofa]
+    spicy:
+      - { es: "¿Por qué estás tan lejos? Hay una silla aquí, a mi derecha.", en: "Why are you so far away? There's a chair here, on my right.", grammar: [g.estar-location, g.prepositions-place], vocab: [w.lejos, w.derecha] }
+      - { es: "El chico guapo está detrás de ti. No, soy yo.", en: "The handsome guy is behind you. No, it's me.", altEs: ["La chica guapa está detrás de ti. No, soy yo."], grammar: [g.estar-location, g.prepositions-place], vocab: [w.detras] }
+      - { es: "Mi gato está entre tú y yo. Siempre.", en: "My cat is between you and me. Always.", grammar: [g.estar-location, g.prepositions-place], vocab: [w.entre] }
+      - { es: "¿Dónde está mi café? Ah, está delante de la persona más guapa del bar.", en: "Where's my coffee? Ah, it's in front of the best-looking person in the bar.", grammar: [g.estar-location, g.prepositions-place, g.al-del-contractions], vocab: [w.delante] }
+      - { es: "Estoy cerca, muy cerca. ¿Bailamos?", en: "I'm close, very close. Shall we dance?", grammar: [g.estar-location], vocab: [w.cerca] }
   - id: a1.u04.l3
     title: Mi barrio
     teach: [g.demonstratives]
@@ -164,6 +176,12 @@ lessons:
         en: ["I'm in this square, in front of the cinema.", "That shop is very expensive.", "That café over there is cheap and good."]
         grammar: [g.demonstratives]
         vocab: [w.plaza, w.cine, w.tienda, w.cafeteria]
+    spicy:
+      - { es: "¿Este bar o aquel restaurante? Contigo, los dos.", en: "This bar or that restaurant? With you, both.", grammar: [g.demonstratives], vocab: [w.bar, w.restaurante] }
+      - { es: "En este barrio hay un chico muy guapo: tú.", en: "In this neighbourhood there's a very handsome guy: you.", altEs: ["En este barrio hay una chica muy guapa: tú."], grammar: [g.demonstratives, g.hay], vocab: [w.barrio] }
+      - { es: "Esta cafetería es bonita, pero tú eres más bonita.", en: "This café is pretty, but you're prettier.", altEs: ["Esta cafetería es bonita, pero tú eres más bonito."], grammar: [g.demonstratives, g.adjective-agreement], vocab: [w.cafeteria] }
+      - { es: "¿Ese cine está cerca? Hay una película muy buena esta noche.", en: "Is that cinema near? There's a very good film tonight.", grammar: [g.demonstratives, g.estar-location], vocab: [w.cine] }
+      - { es: "Aquella plaza es perfecta para un paseo... contigo.", en: "That square is perfect for a stroll... with you.", grammar: [g.demonstratives], vocab: [w.plaza] }
   - id: a1.u04.l4
     title: ¿Cómo es tu casa?
     teach: [g.articles-indefinite]
@@ -218,6 +236,12 @@ lessons:
         en: ["Hi, Lucía. Your flat is very nice.", "It's old, but comfortable and clean.", "And the metro is very close."]
         grammar: [g.adjective-agreement]
         vocab: [w.antiguo, w.comodo, w.limpio, w.metro]
+    spicy:
+      - { es: "Mi coche es viejo, pero mi sofá es muy cómodo.", en: "My car is old, but my sofa is very comfortable.", grammar: [g.adjective-agreement, g.ser-vs-estar-basics], vocab: [w.coche, w.comodo] }
+      - { es: "Tienes una casa bonita y un gato bonito. ¿Y un novio?", en: "You have a pretty house and a pretty cat. And a boyfriend?", altEs: ["Tienes una casa bonita y un gato bonito. ¿Y una novia?"], grammar: [g.articles-indefinite, g.adjective-agreement], vocab: [w.bonito] }
+      - { es: "El metro es ruidoso, pero contigo es tranquilo.", en: "The metro is noisy, but with you it's calm.", grammar: [g.adjective-agreement], vocab: [w.metro, w.ruidoso, w.tranquilo] }
+      - { es: "Este bar es barato y tú eres especial. Perfecto.", en: "This bar is cheap and you are special. Perfect.", grammar: [g.demonstratives, g.adjective-agreement], vocab: [w.barato] }
+      - { es: "¿Hay una habitación tranquila? Quiero hablar contigo.", en: "Is there a quiet room? I want to talk to you.", grammar: [g.hay, g.articles-indefinite], vocab: [w.tranquilo] }
 dialogues:
   - id: a1.u04.d1
     title: Un piso nuevo

@@ -15,12 +15,18 @@ import { buildDictionary, lookup } from '../src/lang/es/inflect'
 import { tokenize } from '../src/lang/es/tokenize'
 import { conjugate } from '../src/lang/es/conjugator'
 import { CONTENT, ROOT, readYaml, listYaml, unitIdFromPath } from './content-lib'
+import { SPICY_BANNED } from './spicy-banned'
 
 const MIN_LESSONS_PER_UNIT = 3
 const MIN_SENTENCES_PER_LESSON = 8
 const MAX_UNKNOWN_RATIO_READER = 0.06
 const MAX_UNKNOWN_RATIO_LITERATURE = 0.12
 const MAX_UNKNOWN_RATIO_UNIT = 0.1
+const MIN_DIALOGUE_QUESTIONS = 3
+const MAX_SPICY_PER_LESSON = 5
+const MIN_TOPIC_WORDS = 4
+const stripAcc = (w: string) => w.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+const BANNED = SPICY_BANNED.map(stripAcc)
 
 const errors: string[] = []
 const warnings: string[] = []
@@ -102,6 +108,12 @@ for (const p of listYaml(join(CONTENT, 'vocab'))) {
     if (e.unit && unitLevel.get(e.unit) !== e.level) err(`${rel(p)}: ${e.id} level ${e.level} does not match unit ${e.unit}`)
   }
 }
+// topics: a topic with too few words at a level cannot supply plausible distractors
+{
+  const byTopic = new Map<string, number>()
+  for (const v of vocab.values()) if (v.topic) byTopic.set(`${v.level}:${v.topic}`, (byTopic.get(`${v.level}:${v.topic}`) ?? 0) + 1)
+  for (const [k, n] of byTopic) if (n < MIN_TOPIC_WORDS) warn(`vocab: topic ${k} has only ${n} word(s) (aim for ≥${MIN_TOPIC_WORDS} so distractors come from the same field)`)
+}
 
 // dictionary per level (cumulative)
 const dictByLevel = new Map<LevelId, Map<string, VocabEntry[]>>()
@@ -179,9 +191,22 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
       }
     }
     if (l.exchanges.length < 3 || l.texts.length < 1) warn(`${rel(p)}: ${l.id} has ${l.exchanges.length} exchanges and ${l.texts.length} mini-texts (aim for ≥3 and ≥1 for variety)`)
+    // modo picante: validated like sentences, plus a banned-word list and a cap
+    if (l.spicy.length > MAX_SPICY_PER_LESSON) warn(`${rel(p)}: ${l.id} has ${l.spicy.length} spicy sentences (max ${MAX_SPICY_PER_LESSON})`)
+    for (const s of l.spicy) {
+      for (const g of s.grammar) if (!grammar.has(g)) err(`${rel(p)}: spicy "${s.es}" tags unknown grammar ${g}`)
+      for (const v of s.vocab) if (!vocab.has(v)) err(`${rel(p)}: spicy "${s.es}" tags unknown vocab ${v}`)
+      const text = stripAcc(`${s.es} ${s.altEs.join(' ')} ${s.en}`)
+      const hit = BANNED.find((b) => new RegExp(`(^|[^\\p{L}])${b.endsWith('*') ? b.slice(0, -1) : `${b}(?=$|[^\\p{L}])`}`, 'u').test(text))
+      if (hit) err(`${rel(p)}: spicy "${s.es}" contains a banned word (${hit}); keep modo picante cheeky, PG-13 and kind`)
+      if (seenSent.has(s.es)) warn(`${rel(p)}: spicy "${s.es}" duplicates a lesson sentence`)
+      unknown.push(...unknownWords(s.es, level, allow))
+      tokens += tokenize(s.es).filter((t) => t.kind === 'word').length
+    }
   })
   for (const d of unit.dialogues) {
     for (const q of d.questions) if (q.answer >= q.options.length) err(`${rel(p)}: dialogue ${d.id} question answer index out of range`)
+    if (d.questions.length < MIN_DIALOGUE_QUESTIONS) warn(`${rel(p)}: dialogue ${d.id} has ${d.questions.length} question(s) (aim for ≥${MIN_DIALOGUE_QUESTIONS}; the region quiz draws on them)`)
     for (const line of d.lines) {
       tokens += tokenize(line.es).filter((t) => t.kind === 'word').length
       unknown.push(...unknownWords(line.es, level, allow))

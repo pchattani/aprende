@@ -56,6 +56,12 @@ lessons:
         en: ["Good morning.", "Sorry, I'm not well today.", "See you soon, and thank you."]
         grammar: [g.greetings]
         vocab: [w.lo-siento, w.mal, w.hasta-pronto]
+    spicy:
+      - { es: "Hola, guapo. ¿Qué tal?", en: "Hi, handsome. How's it going?", altEs: ["Hola, guapa. ¿Qué tal?"], altEn: ["Hi, gorgeous. How are you?"], grammar: [g.greetings], vocab: [w.hola, w.que-tal] }
+      - { es: "Buenas noches, bonita. Hasta mañana.", en: "Good night, beautiful. See you tomorrow.", altEs: ["Buenas noches, bonito. Hasta mañana."], grammar: [g.greetings], vocab: [w.buenas-noches, w.hasta-manana] }
+      - { es: "Adiós no; hasta pronto, por favor.", en: "Not goodbye; see you soon, please.", altEs: ["Adiós no, hasta pronto."], grammar: [g.greetings], vocab: [w.adios, w.hasta-pronto, w.por-favor] }
+      - { es: "Perdón, ¿estás bien? Estás muy guapo hoy.", en: "Sorry, are you okay? You look very handsome today.", altEs: ["Perdón, ¿estás bien? Estás muy guapa hoy."], grammar: [g.greetings], vocab: [w.perdon, w.bien, w.muy] }
+      - { es: "Hasta luego, guapa. Mañana aquí, ¿sí?", en: "See you later, gorgeous. Here tomorrow, yes?", altEs: ["Hasta luego, guapo. Mañana aquí, ¿sí?"], grammar: [g.greetings], vocab: [w.hasta-luego] }
   - id: a1.u01.l2
     title: ¿Cómo te llamas?
     teach: [g.llamarse, g.subject-pronouns]
@@ -110,6 +116,12 @@ lessons:
         en: ["Hi! I'm Luis and she is Marta.", "Nice to meet you.", "See you soon."]
         grammar: [g.subject-pronouns, g.ser-present]
         vocab: [w.yo, w.ella, w.mucho-gusto]
+    spicy:
+      - { es: "¿Cómo te llamas, guapo?", en: "What's your name, handsome?", altEs: ["¿Cómo te llamas, guapa?"], grammar: [g.llamarse], vocab: [w.llamarse] }
+      - { es: "Yo me llamo Ana y tú eres muy simpático.", en: "My name is Ana and you are very nice.", altEs: ["Me llamo Ana y tú eres muy simpático.", "Yo me llamo Ana y tú eres muy simpática."], grammar: [g.llamarse, g.subject-pronouns], vocab: [w.llamarse, w.yo, w.tu] }
+      - { es: "Encantada, señor. Mucho gusto... mucho.", en: "Delighted, sir. A pleasure... a big one.", altEs: ["Encantado, señora. Mucho gusto... mucho."], grammar: [g.greetings], vocab: [w.encantado, w.mucho-gusto, w.senor] }
+      - { es: "¿Quién es ella? Es muy guapa.", en: "Who is she? She's very pretty.", altEs: ["¿Quién es él? Es muy guapo."], grammar: [g.subject-pronouns, g.question-words], vocab: [w.quien, w.ella] }
+      - { es: "Mi perro se llama Romeo, como yo.", en: "My dog is called Romeo, like me.", grammar: [g.llamarse], vocab: [w.llamarse, w.yo] }
   - id: a1.u01.l3
     title: Soy, eres, es
     teach: [g.ser-present]
@@ -166,6 +178,12 @@ lessons:
         en: ["They are Luis and Carla.", "They are teachers.", "They aren't from here, they're from Seville."]
         grammar: [g.ser-present, g.negation]
         vocab: [w.ellos, w.profesor]
+    spicy:
+      - { es: "¿Eres soltero o solo simpático?", en: "Are you single or just nice?", altEs: ["¿Eres soltera o solo simpática?"], grammar: [g.ser-present], vocab: [w.ser] }
+      - { es: "Somos amigos... por ahora.", en: "We're friends... for now.", altEs: ["Nosotros somos amigos, por ahora."], grammar: [g.ser-present, g.subject-pronouns], vocab: [w.ser, w.amigo, w.nosotros] }
+      - { es: "Tú eres guapo y yo soy inteligente: perfecto.", en: "You're handsome and I'm smart: perfect.", altEs: ["Tú eres guapa y yo soy inteligente: perfecto."], grammar: [g.ser-present, g.subject-pronouns], vocab: [w.ser, w.tu, w.yo] }
+      - { es: "Mi gato también es tímido, como tú.", en: "My cat is shy too, like you.", grammar: [g.ser-present, g.tambien-tampoco], vocab: [w.tambien, w.ser] }
+      - { es: "Usted es muy amable... y muy guapo.", en: "You are very kind... and very handsome.", altEs: ["Usted es muy amable y muy guapa."], grammar: [g.ser-present, g.tu-vs-usted], vocab: [w.usted, w.ser] }
   - id: a1.u01.l4
     title: Tú y usted
     teach: [g.tu-vs-usted]
@@ -221,6 +239,12 @@ lessons:
         en: ["Hi, Pablo! How's it going?", "This is my friend Ana.", "She is a student too.", "Well, see you later."]
         grammar: [g.demonstratives, g.ser-present]
         vocab: [w.este.pron, w.amigo, w.pues]
+    spicy:
+      - { es: "¿Usted o tú? Contigo, tú, claro.", en: "Usted or tú? With you, tú, of course.", grammar: [g.tu-vs-usted], vocab: [w.tu, w.usted, w.claro] }
+      - { es: "Hoy está usted muy elegante, señora.", en: "You look very elegant today, madam.", altEs: ["Hoy está muy elegante, señora.", "Hoy está usted muy elegante, señor."], grammar: [g.tu-vs-usted, g.adjective-agreement], vocab: [w.hoy, w.usted] }
+      - { es: "¿Mañana aquí, a esta hora? Vale.", en: "Tomorrow here, at this time? Okay.", altEs: ["¿Mañana aquí a la misma hora? Vale."], grammar: [g.demonstratives], vocab: [w.manana, w.aqui, w.vale] }
+      - { es: "Pues... tú eres mi persona favorita de hoy.", en: "Well... you're my favourite person today.", altEs: ["Pues tú eres mi persona favorita de hoy."], grammar: [g.ser-present, g.tu-vs-usted], vocab: [w.pues, w.tu, w.hoy] }
+      - { es: "Perdone, señor, ¿está usted soltero?", en: "Excuse me, sir, are you single?", altEs: ["Perdone, señora, ¿está usted soltera?"], grammar: [g.tu-vs-usted], vocab: [w.usted] }
 dialogues:
   - id: a1.u01.d1
     title: En la cafetería

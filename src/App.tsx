@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from 'react'
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef } from 'react'
 import { Routes, Route, NavLink, Outlet, useLocation } from 'react-router'
 import { useSettings, applyTheme } from './store/settings'
 import { useSession } from './store/session'
@@ -19,14 +19,44 @@ const Study = lazy(() => import('./pages/Study'))
 const Welcome = lazy(() => import('./pages/Welcome'))
 const Placement = lazy(() => import('./pages/Placement'))
 const Passport = lazy(() => import('./pages/Passport'))
+const RegionQuiz = lazy(() => import('./pages/RegionQuiz'))
+const Palabras = lazy(() => import('./pages/Palabras'))
+const Perros = lazy(() => import('./pages/Perros'))
 
 function Loading() {
   return <div className="p-8 text-center text-muted">Loading…</div>
 }
 
+/** Remembers the scroll offset of each tab so switching tabs and coming back lands on the same spot. */
+function useScrollMemory(pathname: string, skip: boolean) {
+  const positions = useRef(new Map<string, number>())
+  const current = useRef(pathname)
+  useEffect(() => {
+    const onScroll = () => positions.current.set(current.current, window.scrollY)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  useLayoutEffect(() => {
+    current.current = pathname
+    if (skip) return
+    const y = positions.current.get(pathname) ?? 0
+    let tries = 0
+    const tick = () => {
+      if (document.documentElement.scrollHeight - window.innerHeight >= y - 2 || tries > 40) window.scrollTo(0, y)
+      else {
+        tries++
+        requestAnimationFrame(tick)
+      }
+    }
+    tick()
+  }, [pathname, skip])
+}
+
 function Shell() {
   const loc = useLocation()
   const immersive = useSession((s) => s.immersive)
+  const from = (loc.state as { from?: string } | null)?.from
+  useScrollMemory(loc.pathname, Boolean(from) || immersive)
   const tabs = [
     { to: '/', label: 'Course', icon: IconHome },
     { to: '/review', label: 'Review', icon: IconRepeat },
@@ -81,7 +111,19 @@ export default function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="settings" element={<Settings />} />
         <Route path="passport" element={<Passport />} />
+        <Route path="palabras" element={<Palabras />} />
+        <Route path="perros" element={<Perros />} />
       </Route>
+      <Route
+        path="quiz/:level"
+        element={
+          <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+              <RegionQuiz />
+            </Suspense>
+          </ErrorBoundary>
+        }
+      />
       <Route
         path="lesson/:id"
         element={

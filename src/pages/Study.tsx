@@ -1,12 +1,18 @@
 import { Link } from 'react-router'
 import { PageHeader } from '../components/ui/basics'
 import { IconBook, IconVerb, IconEar } from '../components/ui/icons'
+import type { SVGProps } from 'react'
+
+const IconCards = (p: SVGProps<SVGSVGElement>) => <span className="text-2xl" aria-hidden="true" {...(p as object)}>🎴</span>
+const IconPaw = (p: SVGProps<SVGSVGElement>) => <span className="text-2xl" aria-hidden="true" {...(p as object)}>🐾</span>
 
 export default function Study() {
   const items = [
     { to: '/grammar', icon: IconBook, title: 'Grammar reference', text: 'Every grammar point from A1 to C2, searchable, with examples and pitfalls.' },
     { to: '/verbs', icon: IconVerb, title: 'Verb trainer', text: 'Full conjugation tables and timed drills for every tense and mood.' },
     { to: '/pronunciation', icon: IconEar, title: 'Pronunciation', text: 'Sounds, stress and the written accent, minimal pairs and shadowing.' },
+    { to: '/palabras', icon: IconCards, title: 'Palabras', text: 'Memory and quick-fire games with the words you are learning.' },
+    { to: '/perros', icon: IconPaw, title: 'Los perros', text: 'Dress Leo, Bonchita and Luna with the souvenirs they find.' },
   ]
   return (
     <div>
@@ -14,7 +20,7 @@ export default function Study() {
       <div className="grid gap-3">
         {items.map((it) => (
           <Link key={it.to} to={it.to} className="card flex items-center gap-4 transition hover:-translate-y-0.5 active:scale-[0.99]">
-            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white ${['bg-brand-gradient', 'bg-sunset-gradient', 'bg-mint-gradient'][items.indexOf(it)]}`}>
+            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white ${['bg-brand-gradient', 'bg-sunset-gradient', 'bg-mint-gradient', 'bg-brand-gradient', 'bg-sunset-gradient'][items.indexOf(it)]}`}>
               <it.icon />
             </div>
             <div>

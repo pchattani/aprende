@@ -22,20 +22,34 @@ test('complete the first lesson and unlock the next lesson', async ({ page }) =>
   await page.screenshot({ path: 'e2e/__screenshots__/teach.png' })
   await page.getByRole('button', { name: 'Start the exercises' }).click()
   let guard = 0
+  let first: Awaited<ReturnType<typeof readHook>> | undefined
   while (guard++ < 40) {
     const hook = await readHook(page)
+    first ??= hook
     if (guard === 2) await page.screenshot({ path: 'e2e/__screenshots__/exercise.png' })
     await answerCurrent(page, true)
+    if (guard <= 3) {
+      // Every answer shows what was practised in Spanish and in English.
+      const status = page.getByRole('status')
+      await expect(status.locator('[lang="es"]').first()).toBeVisible()
+      await expect(status.locator('[lang="en"]').first()).toBeVisible()
+      if (hook.exercise.review) await expect(status.getByText(hook.exercise.review.en, { exact: false }).first()).toBeVisible()
+    }
     const last = hook.index + 1 >= hook.total
     await continueFeedback(page)
     if (last) break
   }
+  // Normal session length is exactly 12 exercises (plus any re-queued mistakes, none here).
+  expect(first!.total).toBe(12)
   await expect(page.getByRole('heading', { name: /Olé|Qué bien|Genial|crack|Así se hace|De lujo/ })).toBeVisible({ timeout: 15_000 })
   await expect(page.getByText(/^\d+%$/)).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/done.png' })
   await page.getByRole('button', { name: 'Continue' }).click()
   await expect(page.getByRole('link', { name: /¿Cómo te llamas\?/ })).toBeVisible()
-  await expect(page.getByRole('link', { name: /Hola y adiós: learned/ })).toBeVisible()
+  const row = page.getByRole('link', { name: /Hola y adiós: learned/ })
+  await expect(row).toBeVisible()
+  // Back on the course we land on the lesson we just finished, not at the top.
+  await expect(row).toBeInViewport()
   // rhythm and minutes visible on the header
   await expect(page.getByText(/of 7 days this week/)).toBeVisible()
 })
@@ -54,6 +68,65 @@ test('mistakes come back later in the lesson instead of ending it', async ({ pag
   const later = await readHook(page)
   expect(later.total).toBeGreaterThan(first.total)
   await expect(page.getByRole('heading', { name: /Session ended|Out of/ })).toHaveCount(0)
+  // Wrong answers are pinned automatically for a focused re-test (speak exercises cannot be answered wrongly, so retry a few times).
+  let pinnedSeen = false
+  for (let i = 0; i < 6 && !pinnedSeen; i++) {
+    await answerCurrent(page, false)
+    pinnedSeen = await page.getByRole('status').getByRole('button', { name: /Pinned/ }).isVisible()
+    await continueFeedback(page)
+  }
+  expect(pinnedSeen).toBe(true)
+  await page.goto('/#/review?tab=pinned')
+  await expect(page.getByText(/pinned mistakes? waiting/)).toBeVisible()
+  await page.getByRole('button', { name: 'Practise pinned' }).click()
+  const pinned = await readHook(page)
+  expect(pinned.total).toBeGreaterThan(0)
+  await expect(page.getByText('Pinned: your mistakes')).toBeVisible()
+  await answerCurrent(page, true)
+  await page.screenshot({ path: 'e2e/__screenshots__/pinned.png' })
+})
+
+test('tabs remember their scroll position', async ({ page }) => {
+  await openPath(page)
+  await expect(page.getByRole('heading', { name: 'Fin del mundo' })).toBeAttached()
+  await page.evaluate(() => window.scrollTo(0, 1500))
+  await page.waitForFunction(() => window.scrollY > 1000)
+  await page.getByRole('link', { name: 'Review' }).click()
+  await expect(page.getByRole('heading', { name: 'Review' })).toBeVisible()
+  await page.getByRole('link', { name: 'Course' }).click()
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeAttached()
+  await page.waitForFunction(() => window.scrollY > 1000)
+})
+
+test('region quiz, vocabulary games and the dogs page load', async ({ page }) => {
+  test.setTimeout(180_000)
+  await openPath(page)
+  await page.goto('/#/quiz/a1')
+  await expect(page.getByText(/Region quiz · Buenos Aires/)).toBeVisible()
+  await expect(page.getByRole('radio').first()).toBeVisible({ timeout: 20_000 })
+  const groups = page.getByRole('radiogroup')
+  const n = await groups.count()
+  expect(n).toBe(12)
+  for (let i = 0; i < n; i++) await groups.nth(i).getByRole('radio').first().click()
+  await page.getByRole('button', { name: 'Check' }).click()
+  await expect(page.getByRole('status')).toContainText(/of 12 correct/)
+  await page.getByRole('button', { name: 'Finish' }).click()
+  await expect(page.getByRole('heading', { name: /Muy bien|Not yet/ })).toBeVisible()
+  await page.screenshot({ path: 'e2e/__screenshots__/quiz.png' })
+  await page.getByRole('button', { name: 'Back to the course' }).click()
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
+
+  await page.goto('/#/perros')
+  await expect(page.getByRole('heading', { name: 'Los perros' })).toBeVisible()
+  await expect(page.getByRole('tab', { name: 'Bonchita' })).toBeVisible()
+  await expect(page.getByText('Find it on a quest').first()).toBeVisible()
+  await page.getByRole('button', { name: /Leo says hello/ }).first().click()
+  await page.screenshot({ path: 'e2e/__screenshots__/perros.png' })
+
+  await page.goto('/#/palabras')
+  await expect(page.getByRole('heading', { name: 'Palabras' })).toBeVisible()
+  await page.getByRole('button', { name: /Memoria/ }).click()
+  await expect(page.getByText(/Not enough words yet|pairs ·/)).toBeVisible()
 })
 
 test('review page, practice session and study tools work', async ({ page }) => {
@@ -109,6 +182,8 @@ test('pronunciation lesson and settings load', async ({ page }) => {
   await expect(page.getByText('Minimal pairs')).toBeVisible()
   await page.goto('/#/settings')
   await expect(page.getByRole('heading', { name: 'Settings' })).toBeVisible()
+  await expect(page.getByLabel(/Lesson length/)).toBeVisible()
+  await expect(page.getByRole('switch', { name: /Modo picante/ })).not.toBeChecked()
   await page.getByRole('button', { name: 'Export' }).click()
 })
 

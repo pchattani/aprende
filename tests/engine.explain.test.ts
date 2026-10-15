@@ -31,6 +31,10 @@ describe('explain', () => {
     const e = explainAnswer(typeEs('Tengo un coche rojo.'), 'Tengo un rojo coche', deps)
     expect(e.hints[0]).toMatch(/Right words, different order/)
   })
+  it('explains a wrong fill-in-the-blank article from the following noun', () => {
+    const ex: ChoiceExercise = { kind: 'fillBlank', items: [], grammar: [], prompt: 'Vivo en ____ ciudad.', options: ['el', 'la', 'los'], answer: 1 }
+    expect(explainAnswer(ex, 0, deps).hints[0]).toMatch(/Article: “la”, because “ciudad” is feminine/)
+  })
   it('explains a wrong choice with the meaning', () => {
     const ex: ChoiceExercise = { kind: 'choiceEs', items: [], grammar: [], prompt: 'Hasta luego', options: ['See you later', 'Good morning'], answer: 0 }
     expect(explainAnswer(ex, 1, deps).hints[0]).toMatch(/You picked “Good morning”, but it means “See you later”/)

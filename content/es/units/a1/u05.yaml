@@ -57,6 +57,12 @@ lessons:
         en: ["Breakfast is at eight.", "There is bread, milk and juice.", "There's no coffee, sorry."]
         grammar: [g.hay, g.time-telling]
         vocab: [w.desayuno, w.pan, w.leche, w.zumo]
+    spicy:
+      - { es: "¿Quieres un café conmigo o quieres un café solo?", en: "Do you want a coffee with me or a coffee on your own?", altEn: ["Do you want a coffee with me or just a black coffee?"], grammar: [g.querer-present], vocab: [w.querer, w.cafe] }
+      - { es: "Quiero una cerveza y tu número.", en: "I want a beer and your number.", altEs: ["Yo quiero una cerveza y tu número."], grammar: [g.querer-present], vocab: [w.querer, w.cerveza] }
+      - { es: "¿Tomamos un vino? Yo pago la cuenta.", en: "Shall we have a wine? I'll pay the bill.", altEs: ["¿Tomamos un vino? Pago yo."], grammar: [g.regular-ar-present], vocab: [w.tomar, w.vino, w.cuenta] }
+      - { es: "Una taza de té para mí y una cena contigo, por favor.", en: "A cup of tea for me and a dinner with you, please.", grammar: [g.articles-indefinite], vocab: [w.taza, w.te.noun, w.cena] }
+      - { es: "¿Quieres desayunar conmigo mañana?", en: "Do you want to have breakfast with me tomorrow?", altEs: ["¿Desayunas conmigo mañana?"], grammar: [g.querer-present], vocab: [w.querer, w.desayuno] }
   - id: a1.u05.l2
     title: Comer bien
     teach: [g.regular-ar-present]
@@ -111,6 +117,12 @@ lessons:
         en: ["I have breakfast at eight with my family.", "I have lunch at work at two.", "In the evening my partner cooks and we have dinner at nine."]
         grammar: [g.regular-ar-present]
         vocab: [w.desayunar, w.comer, w.cocinar, w.cenar]
+    spicy:
+      - { es: "Cocino muy bien. ¿Cenas conmigo el viernes?", en: "I cook very well. Will you have dinner with me on Friday?", altEs: ["Yo cocino muy bien. ¿Cenas conmigo el viernes?"], grammar: [g.regular-ar-present], vocab: [w.cocinar, w.cenar] }
+      - { es: "No necesito azúcar: tú eres muy dulce.", en: "I don't need sugar: you're very sweet.", altEs: ["No necesito azúcar, tú eres muy dulce."], grammar: [g.regular-ar-present, g.negation], vocab: [w.necesitar, w.azucar] }
+      - { es: "Compro queso, pan y vino. ¿Vienes a cenar?", en: "I'm buying cheese, bread and wine. Are you coming to dinner?", grammar: [g.regular-ar-present], vocab: [w.comprar, w.queso, w.pan] }
+      - { es: "¿Desayunas café o desayunas conmigo?", en: "Is it coffee for breakfast, or breakfast with me?", grammar: [g.regular-ar-present], vocab: [w.desayunar] }
+      - { es: "Mi gato cocina mejor que tu novio.", en: "My cat cooks better than your boyfriend.", altEs: ["Mi gato cocina mejor que tu novia."], grammar: [g.regular-ar-present], vocab: [w.cocinar] }
   - id: a1.u05.l3
     title: Me gusta
     teach: [g.gustar]
@@ -167,6 +179,12 @@ lessons:
         en: ["My mother likes tea and my father likes coffee.", "My brothers love chocolate.", "And I like everything."]
         grammar: [g.gustar-plural]
         vocab: [w.le, w.encantar, w.chocolate, w.todo]
+    spicy:
+      - { es: "Me gusta el chocolate, pero tú me gustas más.", en: "I like chocolate, but I like you more.", altEs: ["Me gusta el chocolate, pero me gustas más tú."], grammar: [g.gustar], vocab: [w.gustar, w.chocolate] }
+      - { es: "¿Te gusta el helado? A mí me encantas... quiero decir, me encanta.", en: "Do you like ice cream? I love you... I mean, I love it.", grammar: [g.gustar], vocab: [w.gustar, w.encantar, w.helado] }
+      - { es: "Me encantan las tapas y los chicos simpáticos.", en: "I love tapas and nice guys.", altEs: ["Me encantan las tapas y las chicas simpáticas."], grammar: [g.gustar-plural], vocab: [w.encantar, w.tapa] }
+      - { es: "¿Postre? Sí, una tarta para dos.", en: "Dessert? Yes, a cake for two.", altEs: ["¿Postre? Sí: una tarta para dos."], grammar: [g.articles-indefinite], vocab: [w.postre, w.tarta] }
+      - { es: "No me gusta la cebolla, pero me gustan tus ojos.", en: "I don't like onion, but I like your eyes.", grammar: [g.gustar, g.gustar-plural, g.negation], vocab: [w.gustar, w.cebolla] }
   - id: a1.u05.l4
     title: Mucho, poco, algo
     teach: [g.quantity-words]
@@ -222,6 +240,12 @@ lessons:
         en: ["Set menu: twelve euros.", "Soup or salad; chicken or fish.", "For dessert, ice cream or fruit.", "Bread and water."]
         grammar: [g.articles-definite]
         vocab: [w.menu, w.postre, w.plato]
+    spicy:
+      - { es: "Hablas poco, pero miras mucho. ¿Algo que decir?", en: "You talk little, but you look a lot. Anything to say?", grammar: [g.quantity-words], vocab: [w.poco, w.algo] }
+      - { es: "Eres demasiado guapo para este bar.", en: "You're too handsome for this bar.", altEs: ["Eres demasiado guapa para este bar."], grammar: [g.quantity-words], vocab: [w.demasiado, w.para] }
+      - { es: "Un poco de vino, bastante música y tú. Nada más.", en: "A bit of wine, plenty of music and you. Nothing else.", grammar: [g.quantity-words], vocab: [w.un-poco, w.bastante, w.nada] }
+      - { es: "¿Quieres otro café? ¿O quieres algo dulce, como yo?", en: "Do you want another coffee? Or do you want something sweet, like me?", grammar: [g.quantity-words, g.querer-present], vocab: [w.otro, w.algo, w.dulce] }
+      - { es: "Yo pago hoy; tú pagas la próxima cena.", en: "I'm paying today; you pay for the next dinner.", altEs: ["Hoy pago yo; la próxima cena la pagas tú."], grammar: [g.regular-ar-present], vocab: [w.pagar] }
 dialogues:
   - id: a1.u05.d1
     title: En el restaurante

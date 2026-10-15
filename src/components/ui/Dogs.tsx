@@ -2,12 +2,41 @@
  * Cartoon Leo, Bonchita and Luna, the three travelling dogs. Pure inline SVG so they work
  * offline, scale crisply and can be tinted or animated with CSS.
  */
-import type { SVGProps } from 'react'
+import { useState, type SVGProps, type ReactElement } from 'react'
+import { souvenirById, type WearSlot } from '../../engine/journey'
+import type { Outfit, DogName } from '../../hooks/useOutfits'
+import { useSpeak } from '../../hooks/useSpeak'
+import { DOG_NAMES, DOG_LINES } from '../../engine/dogs'
 
-type P = SVGProps<SVGSVGElement> & { size?: number; mood?: 'happy' | 'curious' | 'sleepy' }
+type P = SVGProps<SVGSVGElement> & { size?: number; mood?: 'happy' | 'curious' | 'sleepy'; outfit?: Outfit }
+
+/** Where each wearable sits on each dog, in the 120×120 viewBox. */
+const ANCHORS: Record<DogName, Record<WearSlot, [number, number]>> = {
+  leo: { hat: [60, 24], neck: [60, 86], mouth: [76, 74], paw: [92, 104] },
+  bonchita: { hat: [60, 26], neck: [60, 86], mouth: [78, 78], paw: [92, 106] },
+  luna: { hat: [60, 20], neck: [60, 90], mouth: [76, 72], paw: [92, 106] },
+}
+/** Emoji overlays for an outfit; rendered last so they sit on top of the drawing. */
+function Wearables({ dog, outfit }: { dog: DogName; outfit?: Outfit }) {
+  if (!outfit) return null
+  return (
+    <>
+      {(Object.keys(outfit) as WearSlot[]).map((slot) => {
+        const sv = outfit[slot] ? souvenirById(outfit[slot]!) : undefined
+        if (!sv) return null
+        const [x, y] = ANCHORS[dog][slot]
+        return (
+          <text key={slot} x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize={slot === 'hat' ? 30 : 22} data-wear={sv.id} aria-label={sv.es}>
+            {sv.emoji}
+          </text>
+        )
+      })}
+    </>
+  )
+}
 
 /** Leo: tan Yorkie-mix, long floppy ears with darker tips, tiny tongue, red harness and a blue tag. */
-export function Leo({ size = 96, mood = 'happy', ...rest }: P) {
+export function Leo({ size = 96, mood = 'happy', outfit, ...rest }: P) {
   return (
     <svg width={size} height={size} viewBox="0 0 120 120" aria-label="Leo" role="img" {...rest}>
       {/* body */}
@@ -48,12 +77,13 @@ export function Leo({ size = 96, mood = 'happy', ...rest }: P) {
       {mood === 'curious' ? <path d="M52 73 q8 -4 16 0" stroke="#2b2117" strokeWidth="2" fill="none" strokeLinecap="round" /> : <path d="M52 72 q8 6 16 0" stroke="#2b2117" strokeWidth="2" fill="none" strokeLinecap="round" />}
       {/* tongue tip */}
       {mood === 'happy' && <path d="M56 75 q4 6 8 0 z" fill="#ff8aa6" />}
+      <Wearables dog="leo" outfit={outfit} />
     </svg>
   )
 }
 
 /** Bonchita: dark grey scruffy fur, lighter muzzle, big open smile with tongue, red harness. */
-export function Bonchita({ size = 96, mood = 'happy', ...rest }: P) {
+export function Bonchita({ size = 96, mood = 'happy', outfit, ...rest }: P) {
   return (
     <svg width={size} height={size} viewBox="0 0 120 120" aria-label="Bonchita" role="img" {...rest}>
       {/* body */}
@@ -84,13 +114,14 @@ export function Bonchita({ size = 96, mood = 'happy', ...rest }: P) {
           <path d="M46 72 q14 2 28 0" stroke="#fff" strokeWidth="2" fill="none" />
         </>
       )}
+      <Wearables dog="bonchita" outfit={outfit} />
     </svg>
   )
 }
 
 
 /** Luna: cream curly cockapoo-style coat, big round dark eyes, floppy curly ears, brown nose; she carries the map. */
-export function Luna({ size = 96, mood = 'happy', ...rest }: P) {
+export function Luna({ size = 96, mood = 'happy', outfit, ...rest }: P) {
   return (
     <svg width={size} height={size} viewBox="0 0 120 120" aria-label="Luna" role="img" {...rest}>
       {/* body: curly */}
@@ -130,6 +161,7 @@ export function Luna({ size = 96, mood = 'happy', ...rest }: P) {
       <ellipse cx="57.5" cy="61.5" rx="1.8" ry="1" fill="#fff" opacity="0.5" />
       <path d="M60 68 v3" stroke="#6b4a3a" strokeWidth="2" strokeLinecap="round" />
       {mood === 'curious' ? <path d="M53 73 q7 -3 14 0" stroke="#6b4a3a" strokeWidth="2" fill="none" strokeLinecap="round" /> : <path d="M53 72 q7 5 14 0" stroke="#6b4a3a" strokeWidth="2" fill="none" strokeLinecap="round" />}
+      <Wearables dog="luna" outfit={outfit} />
     </svg>
   )
 }
@@ -145,5 +177,35 @@ export function DogsScene({ size = 220, mood = 'happy', className = '' }: { size
       <Bonchita size={one} mood={mood} className="animate-float" />
       <Luna size={one} mood={mood} className="animate-float" style={{ animationDelay: '0.45s' }} />
     </div>
+  )
+}
+
+const DOG_SVG: Record<DogName, (p: P) => ReactElement> = { leo: Leo, bonchita: Bonchita, luna: Luna }
+
+/** A tappable dog: bounces and says a short Spanish line. Shows its outfit when given one. */
+export function DogButton({ dog, size = 48, mood, outfit, className = '', onClick }: { dog: DogName; size?: number; mood?: P['mood']; outfit?: Outfit; className?: string; onClick?: () => void }) {
+  const { say } = useSpeak()
+  const [bounce, setBounce] = useState(false)
+  const [line, setLine] = useState<string | undefined>()
+  const Svg = DOG_SVG[dog]
+  const tap = () => {
+    const lines = DOG_LINES[dog]
+    const l = lines[Math.floor(Math.random() * lines.length)]!
+    setLine(l)
+    setBounce(true)
+    void say(l)
+    setTimeout(() => setBounce(false), 450)
+    setTimeout(() => setLine(undefined), 1800)
+    onClick?.()
+  }
+  return (
+    <button type="button" onClick={tap} className={`relative inline-flex rounded-full ${className}`} aria-label={`${DOG_NAMES[dog]} says hello`}>
+      <Svg size={size} mood={mood} outfit={outfit} className={bounce ? 'animate-pop' : ''} />
+      {line && (
+        <span className="pointer-events-none absolute -top-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-surface px-2 py-0.5 text-[10px] font-extrabold shadow-card" lang="es" aria-live="polite">
+          {line}
+        </span>
+      )}
+    </button>
   )
 }

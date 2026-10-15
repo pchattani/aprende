@@ -3,7 +3,7 @@
  * tables with the engine's rules (FSRS scheduling, ladder, minutes and active days).
  */
 import { db, SCHEMA_VERSION } from './index'
-import type { CardRow, ReviewRow, LessonRow, DayRow, ItemKind, LessonResult, ReadingRow, ExamRow, QuestRow, SouvenirRow } from '../engine/types'
+import type { CardRow, ReviewRow, LessonRow, DayRow, ItemKind, LessonResult, ReadingRow, ExamRow, QuestRow, SouvenirRow, PinRow } from '../engine/types'
 import { newCard, review as applyReview, gradeFor } from '../engine/srs'
 import { todayKey, streakFrom } from '../engine/mastery'
 import type { ExerciseKind, LevelId } from '../engine/schema'
@@ -61,7 +61,7 @@ export async function bumpDay(date: string, delta: Partial<Omit<DayRow, 'date'>>
 }
 
 export async function recordLesson(result: LessonResult, unitId: string, level: LevelId, now = new Date()): Promise<LessonRow> {
-  const accuracy = result.total ? result.correct / result.total : 0
+  const accuracy = result.total ? (result.correct + result.almost) / result.total : 0
   const row: LessonRow = (await db.lessons.get(result.lessonId)) ?? {
     id: result.lessonId, unitId, level, attempts: 0, completions: 0, bestAccuracy: 0, lastAccuracy: 0, xp: 0,
   }
@@ -160,6 +160,7 @@ export interface Backup {
   kv: { key: string; value: unknown }[]
   quests?: QuestRow[]
   souvenirs?: SouvenirRow[]
+  pins?: PinRow[]
 }
 
 export async function exportAll(): Promise<Backup> {
@@ -167,14 +168,14 @@ export async function exportAll(): Promise<Backup> {
     app: 'aprende', schema: SCHEMA_VERSION, exportedAt: new Date().toISOString(),
     cards: await db.cards.toArray(), reviews: await db.reviews.toArray(), lessons: await db.lessons.toArray(),
     days: await db.days.toArray(), reading: await db.reading.toArray(), exams: await db.exams.toArray(), kv: await db.kv.toArray(),
-    quests: await db.quests.toArray(), souvenirs: await db.souvenirs.toArray(),
+    quests: await db.quests.toArray(), souvenirs: await db.souvenirs.toArray(), pins: await db.pins.toArray(),
   }
 }
 
 export async function importAll(b: Backup): Promise<void> {
   if (b.app !== 'aprende' || !Array.isArray(b.cards)) throw new Error('Not an Aprende backup file')
-  await db.transaction('rw', [db.cards, db.reviews, db.lessons, db.days, db.reading, db.exams, db.kv, db.quests, db.souvenirs], async () => {
-    await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear(), db.quests.clear(), db.souvenirs.clear()])
+  await db.transaction('rw', [db.cards, db.reviews, db.lessons, db.days, db.reading, db.exams, db.kv, db.quests, db.souvenirs, db.pins], async () => {
+    await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear(), db.quests.clear(), db.souvenirs.clear(), db.pins.clear()])
     await db.cards.bulkAdd(b.cards)
     await db.reviews.bulkAdd(b.reviews.map(({ id: _id, ...r }) => r) as ReviewRow[])
     await db.lessons.bulkAdd(b.lessons)
@@ -184,13 +185,44 @@ export async function importAll(b: Backup): Promise<void> {
     await db.kv.bulkAdd(b.kv ?? [])
     await db.quests.bulkAdd(b.quests ?? [])
     await db.souvenirs.bulkAdd(b.souvenirs ?? [])
+    await db.pins.bulkAdd(b.pins ?? [])
   })
 }
 
 export async function resetAll(): Promise<void> {
-  await db.transaction('rw', [db.cards, db.reviews, db.lessons, db.days, db.reading, db.exams, db.kv, db.quests, db.souvenirs], async () => {
-    await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear(), db.quests.clear(), db.souvenirs.clear()])
+  await db.transaction('rw', [db.cards, db.reviews, db.lessons, db.days, db.reading, db.exams, db.kv, db.quests, db.souvenirs, db.pins], async () => {
+    await Promise.all([db.cards.clear(), db.reviews.clear(), db.lessons.clear(), db.days.clear(), db.reading.clear(), db.exams.clear(), db.kv.clear(), db.quests.clear(), db.souvenirs.clear(), db.pins.clear()])
   })
+}
+
+// ---- pins (wrong answers kept for a focused re-test)
+export async function pinAnswer(row: Omit<PinRow, 'ts' | 'streak'>, now = Date.now()): Promise<void> {
+  const prev = await db.pins.get(row.id)
+  await db.pins.put({ ...row, ts: now, streak: 0, missed: row.missed ?? prev?.missed })
+}
+export async function unpin(id: string): Promise<void> {
+  await db.pins.delete(id)
+}
+export async function pinnedRows(): Promise<PinRow[]> {
+  return db.pins.orderBy('ts').reverse().toArray()
+}
+export async function isPinned(id: string): Promise<boolean> {
+  return Boolean(await db.pins.get(id))
+}
+/** Pinned practice: two correct answers in a row unpin the item; a miss resets the streak. Returns true when unpinned. */
+export async function recordPinnedAnswer(id: string, verdict: 'correct' | 'almost' | 'wrong'): Promise<boolean> {
+  const row = await db.pins.get(id)
+  if (!row) return false
+  if (verdict === 'wrong') {
+    await db.pins.put({ ...row, streak: 0 })
+    return false
+  }
+  if (row.streak + 1 >= 2) {
+    await db.pins.delete(id)
+    return true
+  }
+  await db.pins.put({ ...row, streak: row.streak + 1 })
+  return false
 }
 
 /** Marks onboarding done and records the level the learner starts the course at. */

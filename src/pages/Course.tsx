@@ -1,16 +1,20 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link, useNavigate } from 'react-router'
+import { Link, useNavigate, useLocation } from 'react-router'
 import { levels, loadUnit, units as unitIndex } from '../engine/loader'
 import { lessonMastery, ringFor, shiftDay, todayKey } from '../engine/mastery'
 import { lessonIdsFor, levelComplete, DEFAULT_START_LEVEL, levelIndex } from '../engine/unlock'
 import { getKv, claimQuest } from '../db/progress'
 import { db } from '../db'
-import { useLessonRows, useAllCards, useDays, useDueCount, useExams, useKvValue, useQuests } from '../hooks/useProgress'
+import { useLessonRows, useAllCards, useDays, useDueCount, useExams, useKvValue, useQuests, useKvPrefix } from '../hooks/useProgress'
+import { useOutfits } from '../hooks/useOutfits'
+import type { QuizRecord } from './RegionQuiz'
 import { useSettings } from '../store/settings'
 import { IconCheck, IconTrophy, IconRepeat } from '../components/ui/icons'
 import { Chip } from '../components/ui/basics'
-import { Leo, Bonchita, Luna } from '../components/ui/Dogs'
-import { REGIONS, stopFor, souvenirById } from '../engine/journey'
+import { Leo, Bonchita, Luna, DogButton } from '../components/ui/Dogs'
+import { REGIONS, stopFor, souvenirById, isStamped } from '../engine/journey'
+import { QUIZ_PASS } from '../engine/quiz'
+import { takeReturn } from '../engine/returnTo'
 import { questsForDate, progressFor, pickReward } from '../engine/quests'
 import type { LevelMeta, LevelId, Lesson } from '../engine/schema'
 import type { DayRow, LessonRow } from '../engine/types'
@@ -26,8 +30,12 @@ export default function Course() {
   const goal = useSettings((s) => s.dailyMinutes)
   const startLevel = useKvValue<LevelId>('startLevel', DEFAULT_START_LEVEL)
   const nav = useNavigate()
+  const loc = useLocation()
+  const outfits = useOutfits()
+  const quizRecords = useKvPrefix<QuizRecord>('regionQuiz:')
   const [lessonMeta, setLessonMeta] = useState<Map<string, Lesson[]>>(new Map())
   const [checked, setChecked] = useState(false)
+  const [highlight, setHighlight] = useState<string | undefined>()
   const [hour] = useState(() => new Date().getHours())
   const today = todayKey()
   const quests = useQuests(today)
@@ -69,6 +77,30 @@ export default function Course() {
   }, [])
 
   const lessonCounts = useMemo(() => new Map([...lessonMeta.entries()].map(([k, v]) => [k, v.length])), [lessonMeta])
+  const ready = checked && Boolean(lessonRows && cards && days && exams && startLevel !== undefined) && lessonMeta.size > 0
+
+  // Coming back from a lesson or a quiz: scroll to the spot the learner left from.
+  useEffect(() => {
+    if (!ready) return
+    const target = (loc.state as { from?: string } | null)?.from ?? takeReturn()
+    if (!target) return
+    const elId = /^(unit|region)-/.test(target) ? target : `lesson-${target}`
+    let tries = 0
+    let cancelled = false
+    const tick = () => {
+      if (cancelled) return
+      const el = document.getElementById(elId)
+      if (el) {
+        el.scrollIntoView({ block: 'center' })
+        setHighlight(elId)
+        setTimeout(() => setHighlight(undefined), 2200)
+      } else if (tries++ < 30) requestAnimationFrame(tick)
+    }
+    tick()
+    return () => {
+      cancelled = true
+    }
+  }, [ready]) // eslint-disable-line react-hooks/exhaustive-deps
   const cardsByLesson = useMemo(() => {
     const m = new Map<string, typeof cards>()
     for (const c of cards ?? []) {
@@ -105,11 +137,14 @@ export default function Course() {
       <header className="mb-4">
         <div className="flex items-center justify-between">
           <div className="flex -space-x-3">
-            <Leo size={52} className="animate-float" />
-            <Bonchita size={52} className="animate-float" style={{ animationDelay: '0.3s' }} />
-            <Luna size={52} className="animate-float" style={{ animationDelay: '0.6s' }} />
+            <DogButton dog="leo" size={52} outfit={outfits.leo} className="animate-float" />
+            <DogButton dog="bonchita" size={52} outfit={outfits.bonchita} className="animate-float" />
+            <DogButton dog="luna" size={52} outfit={outfits.luna} className="animate-float" />
           </div>
-          <Link to="/passport" className="btn btn-ghost px-3 py-2 text-xs" aria-label="Passport">🛂 Passport</Link>
+          <div className="flex gap-1">
+            <Link to="/perros" className="btn btn-ghost px-3 py-2 text-xs" aria-label="Dress the dogs">🐾 Dogs</Link>
+            <Link to="/passport" className="btn btn-ghost px-3 py-2 text-xs" aria-label="Passport">🛂 Passport</Link>
+          </div>
         </div>
         <h1 className="text-gradient mt-2 text-[1.7rem]">{greeting} 👋</h1>
         <p className="text-sm font-semibold text-muted">
@@ -160,8 +195,11 @@ export default function Course() {
         const doneCount = ids.filter((l) => (lessonRows.get(l.id)?.completions ?? 0) > 0).length
         const passed = exams.get(level.id)?.passed
         const recommended = level.id === startLevel
+        const stampedCount = level.units.filter((u) => isStamped(u.id, lessonRows, lessonCounts.get(u.id) ?? 4)).length
+        const quizOpen = stampedCount >= Math.ceil(level.units.length / 2)
+        const quiz = quizRecords?.get(`regionQuiz:${level.id}`)
         return (
-          <section key={level.id} className="mb-8">
+          <section key={level.id} id={`region-${level.id}`} className={`mb-8 rounded-[1.75rem] transition ${highlight === `region-${level.id}` ? 'ring-4 ring-brand-400/60' : ''}`}>
             <div className={`level-banner mb-4 level-${level.id}`}>
               <div className="relative flex items-start justify-between gap-3">
                 <div>
@@ -183,20 +221,30 @@ export default function Course() {
                 )}
                 {recommended && <span className="rounded-full bg-white/90 px-2 py-0.5 text-[10px] uppercase tracking-wide text-brand-600">Recommended start</span>}
               </div>
+              {ids.length > 0 && (
+                <div className="relative mt-3 flex items-center gap-2 text-xs font-extrabold">
+                  {quizOpen ? (
+                    <Link to={`/quiz/${level.id}`} className="rounded-full bg-white/90 px-3 py-1.5 text-brand-600 shadow-sm">🏅 Region quiz</Link>
+                  ) : (
+                    <span className="rounded-full bg-white/20 px-3 py-1.5 opacity-90">🏅 Region quiz opens at {Math.ceil(level.units.length / 2)} stamps · {stampedCount} so far</span>
+                  )}
+                  {quiz && <span className="opacity-95">Best {Math.round(quiz.best * 100)}%{quiz.best >= QUIZ_PASS ? ' · badge earned' : ''}</span>}
+                </div>
+              )}
             </div>
             <ol className="relative ml-4 border-l-2 border-dashed border-line pl-5">
               {level.units.map((u, unitIdx) => {
                 const stop = region?.stops[unitIdx]
                 const lessons = lessonMeta.get(u.id)
                 const list = lessons ?? Array.from({ length: lessonCounts.get(u.id) ?? 4 }, (_, i) => ({ id: `${u.id}.l${i + 1}`, title: `Lesson ${i + 1}` }))
-                const unitDone = u.authored && list.every((l) => (lessonRows.get(l.id)?.completions ?? 0) > 0)
+                const unitDone = u.authored && isStamped(u.id, lessonRows, list.length)
                 const isCurrent = current?.unitId === u.id
                 return (
-                  <li key={u.id} className="relative mb-4">
+                  <li key={u.id} id={`unit-${u.id}`} className="relative mb-4">
                     <span className={`absolute -left-[2.1rem] top-4 flex h-8 w-8 items-center justify-center rounded-full text-base shadow-md ${unitDone ? 'bg-mint-gradient' : isCurrent ? 'bg-brand-gradient' : 'bg-surface'}`} aria-hidden="true">
                       {unitDone ? '✓' : stop?.emoji ?? '📍'}
                     </span>
-                    <div className={`card ${isCurrent ? 'ring-2 ring-brand-400' : ''}`}>
+                    <div className={`card transition ${isCurrent ? 'ring-2 ring-brand-400' : ''} ${highlight === `unit-${u.id}` ? 'ring-4 ring-brand-400/60' : ''}`}>
                       <div className="flex items-start gap-3">
                         <div className="min-w-0 flex-1">
                           <p className="text-[11px] font-extrabold uppercase tracking-wider text-muted">Stop {unitIdx + 1} · {stop?.name ?? `Unit ${unitIdx + 1}`}</p>
@@ -228,7 +276,7 @@ export default function Course() {
                             const row = lessonRows.get(l.id)
                             const mastery = lessonMastery(cardsByLesson.get(l.id) ?? [])
                             const ring = ringFor(row, mastery)
-                            return <LessonRow key={l.id} id={l.id} n={i + 1} title={l.title} status={ring} mastery={mastery} />
+                            return <LessonRow key={l.id} id={l.id} n={i + 1} title={l.title} status={ring} mastery={mastery} highlight={highlight === `lesson-${l.id}`} />
                           })}
                         </ul>
                       )}
@@ -327,13 +375,13 @@ function MinutesRing({ minutes, goal }: { minutes: number; goal: number }) {
   )
 }
 
-function LessonRow({ id, n, title, status, mastery }: { id: string; n: number; title: string; status: string; mastery: number }) {
+function LessonRow({ id, n, title, status, mastery, highlight = false }: { id: string; n: number; title: string; status: string; mastery: number; highlight?: boolean }) {
   const label = STATUS_LABEL[status] ?? status
   const badge =
     status === 'mastered' ? 'bg-sunset-gradient text-white' : status === 'learned' ? 'bg-mint-gradient text-white' : status === 'started' ? 'bg-brand-gradient text-white' : 'bg-brand-100 text-brand-600 dark:bg-brand-500/25 dark:text-brand-100'
   return (
-    <li>
-      <Link to={`/lesson/${id}`} className="flex items-center gap-3 rounded-xl py-2.5 transition hover:bg-surface-2/60 active:scale-[0.99]" aria-label={`${title}: ${label}`}>
+    <li id={`lesson-${id}`} className={`rounded-xl transition ${highlight ? 'bg-brand-100/70 ring-2 ring-brand-400 dark:bg-brand-500/15' : ''}`}>
+      <Link to={`/lesson/${id}`} className="flex items-center gap-3 rounded-xl px-1 py-2.5 transition hover:bg-surface-2/60 active:scale-[0.99]" aria-label={`${title}: ${label}`}>
         <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold ${badge}`}>
           {status === 'learned' || status === 'mastered' ? <IconCheck width={18} height={18} /> : n}
         </span>

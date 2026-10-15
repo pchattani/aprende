@@ -158,6 +158,14 @@ function extraHint(g: string): string {
   return `“${g}” isn't needed here.`
 }
 
+/** The single replaced word in a diff, when exactly one word was wrong (used to pin a focused re-test). */
+export function firstReplacement(diff: DiffTok[] | undefined): { given: string; expected: string } | undefined {
+  if (!diff) return undefined
+  const wrong = diff.filter((t) => t.kind !== 'same')
+  if (wrong.length !== 1 || wrong[0]!.kind !== 'wrong' || !wrong[0]!.fix) return undefined
+  return { given: wrong[0]!.text, expected: wrong[0]!.fix! }
+}
+
 /** Explanation for a graded answer. Returns no hints for a correct answer. */
 export function explainAnswer(ex: Exercise, answer: Answer | undefined, deps: ExplainDeps): Explanation {
   switch (ex.kind) {
@@ -175,7 +183,10 @@ export function explainAnswer(ex: Exercise, answer: Answer | undefined, deps: Ex
       else {
         const cg = gloss(chosen, deps)
         const rg = gloss(right, deps)
-        if (ex.kind === 'fillBlank') hints.push(replacementHint(chosen, right, undefined, deps))
+        if (ex.kind === 'fillBlank') {
+          const after = ex.prompt.split('____')[1] ?? ''
+          hints.push(replacementHint(chosen, right, words(after)[0], deps))
+        }
         else hints.push(cg ? `“${chosen}” means “${cg}”.${rg ? ` “${right}” means “${rg}”.` : ''}` : `The Spanish is “${right}”.`)
       }
       if (ex.translation && ex.kind !== 'choiceEs' && ex.kind !== 'listen') hints.push(`The whole sentence: ${ex.translation}`)

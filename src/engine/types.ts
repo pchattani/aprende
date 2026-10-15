@@ -85,6 +85,27 @@ export interface SouvenirRow {
   lessonId?: string
 }
 
+/** A wrong answer the learner (or auto-pin) kept for a focused re-test. */
+export interface PinRow {
+  /** Item id (w.*, s.*, x.*, t.*) or `x:<hash>` for item-less sentences. */
+  id: string
+  ts: number
+  lessonId: string
+  exerciseKind: ExerciseKind
+  /** What the learner wrote or chose, and the accepted answer. */
+  given: string
+  expected: string
+  /** The most specific hint shown at the time ("Article: la, because ciudad is feminine"). */
+  hint?: string
+  /** The practised sentence or word in both languages. */
+  es: string
+  en: string
+  /** The single word that was wrong, when the diff found exactly one replacement. */
+  missed?: { given: string; expected: string }
+  /** Consecutive correct answers in pinned practice; two in a row unpins. */
+  streak: number
+}
+
 export interface ReadingRow {
   id: string
   title: string
@@ -119,6 +140,8 @@ export interface ExerciseBase {
   grammar: string[]
   /** Explanation shown after answering (grammar note id). */
   teach?: string
+  /** What was practised, in both languages, shown after every answer. */
+  review?: { es: string; en: string }
 }
 export interface ChoiceExercise extends ExerciseBase {
   kind: 'choiceEs' | 'choiceEn' | 'listen' | 'fillBlank' | 'reply'
@@ -145,6 +168,8 @@ export interface TypeExercise extends ExerciseBase {
   /** Hint shown under the prompt (e.g. tense/person for conjugate). */
   hint?: string
   translation?: string
+  /** For speak: 'reply' = hear a question and answer aloud; 'repeat' = listen and repeat a word. Default: read the prompt aloud. */
+  variant?: 'reply' | 'repeat'
 }
 export interface MatchExercise extends ExerciseBase {
   kind: 'match'
@@ -165,6 +190,8 @@ export interface GradeResult {
   /** The correct answer to display. */
   correct: string
   notes: string[]
+  /** Set when a 'correct' verdict forgave missing accents or a small typo. */
+  lenient?: 'accents' | 'typo'
 }
 
 export interface LessonResult {

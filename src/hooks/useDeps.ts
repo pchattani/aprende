@@ -5,7 +5,9 @@ import { IRREGULAR } from '../lang/es/verbs'
 import { buildDictionary, lookup, type Dictionary } from '../lang/es/inflect'
 import { check } from '../lang/es/checker'
 import { spanish } from '../lang/es'
+import { conjugate } from '../lang/es/verbs'
 import type { GradeDeps } from '../engine/grade'
+import type { ExplainDeps } from '../engine/explain'
 
 let dictCache: Dictionary | undefined
 /** Full-course dictionary (built once; a few thousand entries). */
@@ -31,6 +33,12 @@ export function equivEn(given: string, expected: string) {
 export function isWord(w: string): boolean {
   return Boolean(lookup(getDictionary(), w.toLowerCase()))
 }
+export function lookupForm(form: string) {
+  return lookup(getDictionary(), form.toLowerCase())
+}
+
+/** Dependencies for personalised feedback (dictionary lookups + conjugator). */
+export const explainDeps: ExplainDeps = { lookup: lookupForm, conjugate }
 
 export function useGradeDeps(): GradeDeps {
   return useMemo(() => ({ pack: spanish, check: checkText, equivEs, equivEn, isWord }), [])

@@ -53,9 +53,9 @@ export function questsForDate(date: string): QuestDef[] {
 /** Pick a reward souvenir: unowned, from the current region first, then anywhere; undefined if all owned. */
 export function pickReward(level: LevelId, owned: Set<string>, seed: number): Souvenir | undefined {
   const rng = new Rng(seed)
-  const local = souvenirsFor(level).filter((s) => !owned.has(s.id))
+  const local = souvenirsFor(level).filter((s) => !owned.has(s.id) && !s.badge)
   if (local.length) return rng.pick(local)
-  const any = SOUVENIRS.filter((s) => !owned.has(s.id))
+  const any = SOUVENIRS.filter((s) => !owned.has(s.id) && !s.badge)
   return any.length ? rng.pick(any) : undefined
 }
 

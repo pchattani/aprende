@@ -9,6 +9,8 @@ export interface HookExercise {
   tiles?: string[]
   pairs?: { left: string; right: string }[]
   items: string[]
+  audio?: string
+  review?: { es: string; en: string }
 }
 export interface Hook {
   exercise: HookExercise

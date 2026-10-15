@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react'
-import type { Exercise, GradeResult, LessonResult } from '../engine/types'
+import type { Exercise, GradeResult, LessonResult, PinRow } from '../engine/types'
 import { grade, type Answer } from '../engine/grade'
-import { recordAnswer } from '../db/progress'
-import { useGradeDeps } from '../hooks/useDeps'
+import { explainAnswer, firstReplacement, type Explanation } from '../engine/explain'
+import { recordAnswer, pinAnswer, unpin } from '../db/progress'
+import { pinIdFor } from '../engine/pins'
+import { useGradeDeps, explainDeps } from '../hooks/useDeps'
 import { useSettings } from '../store/settings'
 import { useSession } from '../store/session'
 import { ExerciseView } from './exercises'
@@ -16,6 +18,8 @@ interface State {
   index: number
   answer: Answer | undefined
   result?: GradeResult
+  explanation?: Explanation
+  pinned: boolean
   correct: number
   almost: number
   wrong: number
@@ -23,7 +27,7 @@ interface State {
   startedAt: number
   finished: boolean
 }
-type Action = { type: 'answer'; value: Answer | undefined } | { type: 'check'; result: GradeResult } | { type: 'next' } | { type: 'skip' }
+type Action = { type: 'answer'; value: Answer | undefined } | { type: 'check'; result: GradeResult; explanation: Explanation; pinned: boolean } | { type: 'pin'; pinned: boolean } | { type: 'next' } | { type: 'skip' }
 
 function reducer(s: State, a: Action): State {
   switch (a.type) {
@@ -38,38 +42,51 @@ function reducer(s: State, a: Action): State {
         requeued.add(queue.length - 1)
       }
       return {
-        ...s, queue, requeued, result: a.result,
+        ...s, queue, requeued, result: a.result, explanation: a.explanation, pinned: a.pinned,
         correct: s.correct + (a.result.verdict === 'correct' ? 1 : 0),
         almost: s.almost + (a.result.verdict === 'almost' ? 1 : 0),
         wrong: s.wrong + (ok ? 0 : 1),
       }
     }
+    case 'pin':
+      return { ...s, pinned: a.pinned }
     case 'next': {
       const last = s.index + 1 >= s.queue.length
-      return { ...s, index: s.index + 1, answer: undefined, result: undefined, finished: last }
+      return { ...s, index: s.index + 1, answer: undefined, result: undefined, explanation: undefined, pinned: false, finished: last }
     }
     case 'skip':
-      return { ...s, index: s.index + 1, answer: undefined, result: undefined, finished: s.index + 1 >= s.queue.length }
+      return { ...s, index: s.index + 1, answer: undefined, result: undefined, explanation: undefined, pinned: false, finished: s.index + 1 >= s.queue.length }
     default:
       return s
   }
 }
 
+function answerText(ex: Exercise, answer: Answer | undefined): string {
+  if (answer === undefined) return ''
+  if (typeof answer === 'number') return 'options' in ex ? ex.options[answer] ?? String(answer) : String(answer)
+  if (Array.isArray(answer)) return answer.join(' ')
+  if (typeof answer === 'object') return `${answer.mistakes} mismatched`
+  return answer
+}
+
 export interface RunnerProps {
   exercises: Exercise[]
-  /** 'lesson' records a lesson completion; 'review' and 'practice' only schedule cards. */
-  mode: 'lesson' | 'review' | 'practice'
+  /** 'lesson' records a lesson completion; 'review', 'practice' and 'pinned' only schedule cards. */
+  mode: 'lesson' | 'review' | 'practice' | 'pinned'
   lessonId: string
   title: string
   onFinish: (r: LessonResult) => void
   onQuit: () => void
+  /** Called after each graded answer (pinned practice uses it to track streaks). */
+  onAnswer?: (ex: Exercise, verdict: GradeResult['verdict']) => void
 }
 
-export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQuit }: RunnerProps) {
+export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQuit, onAnswer }: RunnerProps) {
   const deps = useGradeDeps()
   const sound = useSettings((s) => s.sound)
+  const autoPin = useSettings((s) => s.autoPin)
   const [s, dispatch] = useReducer(reducer, undefined, () => ({
-    queue: exercises, index: 0, answer: undefined, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), startedAt: Date.now(), finished: false,
+    queue: exercises, index: 0, answer: undefined, pinned: false, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), startedAt: Date.now(), finished: false,
   }))
   const [confirmQuit, setConfirmQuit] = useState(false)
   const finishedRef = useRef(false)
@@ -95,6 +112,12 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
     })
   }, [s.finished]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  const buildPin = (curEx: Exercise, answer: Answer, r: GradeResult, explanation: Explanation): Omit<PinRow, 'ts' | 'streak'> => {
+    const hint = [...r.notes, ...explanation.hints][0]
+    const review = curEx.review ?? { es: r.correct, en: 'translation' in curEx && curEx.translation ? curEx.translation : '' }
+    return { id: pinIdFor(curEx), lessonId, exerciseKind: curEx.kind, given: answerText(curEx, answer), expected: r.correct, hint, es: review.es, en: review.en, missed: firstReplacement(explanation.diff) }
+  }
+
   const check = (value?: Answer) => {
     const cur = stateRef.current
     const curEx = cur.queue[cur.index]
@@ -102,10 +125,27 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
     if (!curEx || cur.result || answer === undefined) return
     if (value !== undefined) dispatch({ type: 'answer', value })
     const r = grade(curEx, answer, deps)
-    dispatch({ type: 'check', result: r })
+    const explanation = r.verdict === 'correct' ? { hints: [] } : explainAnswer(curEx, answer, explainDeps)
+    const shouldPin = r.verdict === 'wrong' && autoPin && mode !== 'pinned'
+    dispatch({ type: 'check', result: r, explanation, pinned: shouldPin })
     if (sound) playSound(r.verdict === 'wrong' ? 'wrong' : 'correct')
     const verdict = r.verdict
-    for (const item of new Set(curEx.items)) void recordAnswer(item, verdict, curEx.kind)
+    // Items and the grammar points they exercise are both scheduled.
+    for (const item of new Set([...curEx.items, ...curEx.grammar])) void recordAnswer(item, verdict, curEx.kind)
+    if (shouldPin) void pinAnswer(buildPin(curEx, answer, r, explanation))
+    onAnswer?.(curEx, verdict)
+  }
+  const togglePin = () => {
+    const cur = stateRef.current
+    const curEx = cur.queue[cur.index]
+    if (!curEx || !cur.result || cur.answer === undefined) return
+    if (cur.pinned) {
+      void unpin(pinIdFor(curEx))
+      dispatch({ type: 'pin', pinned: false })
+    } else {
+      void pinAnswer(buildPin(curEx, cur.answer, cur.result, cur.explanation ?? { hints: [] }))
+      dispatch({ type: 'pin', pinned: true })
+    }
   }
   const canCheck = useMemo(() => {
     if (!ex || s.answer === undefined) return false
@@ -153,12 +193,14 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
           </div>
         </div>
       )}
-      {s.result && <Feedback exercise={ex} result={s.result} answer={s.answer} last={s.index + 1 >= total} onContinue={() => dispatch({ type: 'next' })} />}
+      {s.result && (
+        <Feedback exercise={ex} result={s.result} explanation={s.explanation ?? { hints: [] }} last={s.index + 1 >= total} onContinue={() => dispatch({ type: 'next' })} pinned={s.pinned} onPin={mode === 'pinned' ? undefined : togglePin} />
+      )}
       {confirmQuit && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true">
           <div className="card w-full max-w-sm">
             <p className="text-lg font-extrabold">Quit this session?</p>
-            <p className="mt-1 text-sm text-muted">Your answers so far are saved to your review schedule, but the {mode} will not count as completed.</p>
+            <p className="mt-1 text-sm text-muted">Your answers so far are saved to your review schedule, but the {mode === 'pinned' ? 'practice' : mode} will not count as completed.</p>
             <div className="mt-4 grid grid-cols-2 gap-2">
               <Button variant="ghost" onClick={() => setConfirmQuit(false)}>
                 Keep going

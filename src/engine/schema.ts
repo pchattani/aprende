@@ -105,6 +105,8 @@ export const VocabEntry = z.object({
   en: z.array(z.string()).min(1),
   level: LevelId,
   unit: z.string().optional(),
+  /** Semantic field (directions, food, family, body…) used to pick plausible distractors. */
+  topic: z.string().regex(/^[a-z][a-z0-9-]*$/).optional(),
   /** Corpus frequency rank (lower = more frequent). */
   rank: z.number().int().positive().optional(),
   example: Pair.optional(),
@@ -149,7 +151,7 @@ export const Sentence = Pair.extend({
   kinds: z.array(ExerciseKind).optional(),
   /** For transform exercises: instruction + answer. */
   transform: z
-    .object({ instruction: z.string(), answer: z.string(), alt: z.array(z.string()).default([]) })
+    .object({ instruction: z.string(), answer: z.string(), alt: z.array(z.string()).default([]), /** English of the transformed sentence (shown after answering). */ en: z.string().optional() })
     .optional(),
   /** For findError: the incorrect version and explanation. */
   error: z.object({ wrong: z.string(), explain: z.string(), grammar: z.string().optional() }).optional(),
@@ -214,6 +216,8 @@ export const Lesson = z.object({
   texts: z.array(MiniText).default([]),
   /** Optional tip shown at the start (plain text). */
   tip: z.string().optional(),
+  /** Opt-in "modo picante" sentences: cheeky, flirty, PG-13, reusing the lesson's grammar. Off by default. */
+  spicy: z.array(Sentence).default([]),
 })
 export type Lesson = z.infer<typeof Lesson>
 

@@ -56,6 +56,12 @@ lessons:
         en: ["What awful weather!", "It's windy and there are lots of clouds.", "We're not going to the beach today."]
         grammar: [g.weather, g.hay]
         vocab: [w.tiempo, w.viento, w.nube]
+    spicy:
+      - { es: "Hace frío, pero contigo hace calor.", en: "It's cold, but with you it's warm.", grammar: [g.weather], vocab: [w.frio.noun, w.calor] }
+      - { es: "Llueve. Es un buen día para un café contigo.", en: "It's raining. It's a good day for a coffee with you.", altEs: ["Está lloviendo. Es un buen día para un café contigo."], grammar: [g.weather], vocab: [w.llover] }
+      - { es: "Hace sol, hace calor y tú estás muy guapo. Buen día.", en: "It's sunny, it's hot and you look very handsome. Good day.", altEs: ["Hace sol, hace calor y tú estás muy guapa. Buen día."], grammar: [g.weather], vocab: [w.sol, w.calor] }
+      - { es: "¿Qué tiempo hace? No sé, solo te miro a ti.", en: "What's the weather like? I don't know, I'm only looking at you.", grammar: [g.weather, g.question-words], vocab: [w.tiempo] }
+      - { es: "En invierno nieva y hace frío: perfecto para el sofá y una película contigo.", en: "In winter it snows and it's cold: perfect for the sofa and a film with you.", grammar: [g.weather], vocab: [w.invierno, w.nevar] }
   - id: a1.u10.l2
     title: Deportes y aficiones
     teach: [g.jugar-tocar]
@@ -112,6 +118,12 @@ lessons:
         en: ["I like music a lot.", "I play the guitar and sing Spanish songs.", "I also play tennis and swim in summer."]
         grammar: [g.jugar-tocar]
         vocab: [w.musica, w.guitarra, w.cancion, w.tenis, w.nadar]
+    spicy:
+      - { es: "Toco la guitarra muy mal, pero bailo muy bien. ¿Bailas conmigo?", en: "I play the guitar very badly, but I dance very well. Will you dance with me?", grammar: [g.jugar-tocar], vocab: [w.tocar, w.guitarra, w.bailar] }
+      - { es: "¿Juegas al tenis? Yo juego muy mal, pero miro muy bien.", en: "Do you play tennis? I play very badly, but I watch very well.", grammar: [g.jugar-tocar], vocab: [w.jugar, w.tenis] }
+      - { es: "Esta canción es para ti. La canto yo, lo siento.", en: "This song is for you. I'm the one singing it, sorry.", grammar: [g.regular-ar-present], vocab: [w.cancion, w.cantar] }
+      - { es: "Mi perro juega al fútbol mejor que tu equipo.", en: "My dog plays football better than your team.", grammar: [g.jugar-tocar], vocab: [w.jugar, w.futbol, w.equipo] }
+      - { es: "¿Jugamos a las cartas? Si gano, me das tu número.", en: "Shall we play cards? If I win, you give me your number.", grammar: [g.jugar-tocar], vocab: [w.jugar, w.cartas] }
   - id: a1.u10.l3
     title: Quiero, puedo, prefiero
     teach: [g.stem-changing-present]
@@ -173,6 +185,12 @@ lessons:
         en: ["I always miss the eight o'clock bus.", "That's why I prefer to go by bike.", "It's easier and it's free."]
         grammar: [g.stem-changing-present]
         vocab: [w.perder, w.preferir, w.facil, w.gratis]
+    spicy:
+      - { es: "Pienso en ti y pierdo el autobús. Todos los días.", en: "I think about you and miss the bus. Every day.", grammar: [g.stem-changing-present], vocab: [w.pensar, w.perder] }
+      - { es: "¿Recuerdas mi nombre? Yo recuerdo tus ojos.", en: "Do you remember my name? I remember your eyes.", grammar: [g.stem-changing-present], vocab: [w.recordar] }
+      - { es: "No entiendo nada de fútbol, pero entiendo que eres muy guapo.", en: "I don't understand anything about football, but I understand that you're very handsome.", altEs: ["No entiendo nada de fútbol, pero entiendo que eres muy guapa."], grammar: [g.stem-changing-present, g.connectors-basic], vocab: [w.entender] }
+      - { es: "Pido dos cafés: uno para mí y otro para la persona más interesante de aquí.", en: "I'm ordering two coffees: one for me and another for the most interesting person here.", grammar: [g.stem-changing-present], vocab: [w.pedir, w.interesante] }
+      - { es: "Siempre encuentro una razón para repetir el café contigo.", en: "I always find a reason to repeat the coffee with you.", grammar: [g.stem-changing-present], vocab: [w.encontrar, w.repetir] }
   - id: a1.u10.l4
     title: ¿Te gusta? A mí también
     teach: [g.gustar-plural, g.saber-vs-conocer]
@@ -233,6 +251,12 @@ lessons:
         en: ["I can't play the piano, but I can sing.", "My sister likes basketball and I like tennis.", "On Sundays we play outside."]
         grammar: [g.saber-vs-conocer, g.gustar-plural]
         vocab: [w.saber, w.piano, w.cantar, w.fuera]
+    spicy:
+      - { es: "Me gustan los perros, el chocolate y tú.", en: "I like dogs, chocolate and you.", grammar: [g.gustar-plural], vocab: [w.gustar] }
+      - { es: "¿Te gustan los paseos? A mí también. ¿Vamos?", en: "Do you like walks? Me too. Shall we go?", grammar: [g.gustar-plural, g.tambien-tampoco], vocab: [w.tambien.phr] }
+      - { es: "No sé bailar y tú tampoco: perfecto, bailamos mal juntos.", en: "I can't dance and neither can you: perfect, we dance badly together.", grammar: [g.saber-vs-conocer, g.tambien-tampoco], vocab: [w.tampoco, w.saber] }
+      - { es: "¿Sabes que eres muy guapo? Ahora lo sabes.", en: "Do you know you're very handsome? Now you know.", altEs: ["¿Sabes que eres muy guapa? Ahora lo sabes."], grammar: [g.saber-vs-conocer, g.direct-object-intro], vocab: [w.saber] }
+      - { es: "Me gustan tus ojos y tu perro. Los dos son gratis, ¿no?", en: "I like your eyes and your dog. Both are free, right?", grammar: [g.gustar-plural], vocab: [w.gratis] }
 dialogues:
   - id: a1.u10.d1
     title: Un domingo de lluvia

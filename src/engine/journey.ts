@@ -3,6 +3,8 @@
  * each unit is a stop. Pure data + helpers; the course page renders it.
  */
 import type { LevelId } from './schema'
+import type { LessonRow } from './types'
+import { STOP_FACTS } from './journey-facts'
 
 export interface Stop {
   unitId: string
@@ -11,6 +13,8 @@ export interface Stop {
   /** One-line Spanish caption shown on the stop card. */
   es: string
   en: string
+  /** A short fact about the place, in Spanish at the region's level and in English, shown when the stamp is earned. */
+  fact?: { es: string; en: string }
 }
 export interface Region {
   level: LevelId
@@ -109,6 +113,8 @@ export const REGIONS: Region[] = [
   ]),
 ]
 
+for (const r of REGIONS) for (const s of r.stops) if (STOP_FACTS[s.unitId]) s.fact = STOP_FACTS[s.unitId]
+
 const BY_UNIT = new Map<string, { region: Region; stop: Stop; index: number }>()
 for (const region of REGIONS) region.stops.forEach((stop, index) => BY_UNIT.set(stop.unitId, { region, stop, index }))
 
@@ -119,7 +125,19 @@ export function regionFor(level: LevelId): Region | undefined {
   return REGIONS.find((r) => r.level === level)
 }
 
+/** Lessons of a unit that earn its passport stamp: four, or every lesson when the unit has fewer. */
+export function stampTarget(lessonCount: number): number {
+  return Math.min(4, Math.max(1, lessonCount || 4))
+}
+/** A stop is stamped once enough of its lessons have been completed at least once. */
+export function isStamped(unitId: string, rows: ReadonlyMap<string, LessonRow> | LessonRow[], lessonCount = 4): boolean {
+  const list = Array.isArray(rows) ? rows : [...rows.values()]
+  const done = list.filter((r) => r.unitId === unitId && r.completions > 0).length
+  return done >= stampTarget(lessonCount)
+}
+
 /** Souvenirs the dogs can find at each region, awarded by quests and surprise finds. */
+export type WearSlot = 'hat' | 'neck' | 'mouth' | 'paw'
 export interface Souvenir {
   id: string
   level: LevelId
@@ -127,8 +145,20 @@ export interface Souvenir {
   es: string
   en: string
   blurb: string
+  /** Souvenirs the dogs can wear or carry (see the Perros page). */
+  wearable?: { slot: WearSlot }
+  /** Region badges earned by passing the region quiz; never handed out by quests. */
+  badge?: boolean
 }
-const S = (level: LevelId, rows: [string, string, string, string, string][]): Souvenir[] => rows.map(([id, emoji, es, en, blurb]) => ({ id, level, emoji, es, en, blurb }))
+const WEARABLE: Record<string, WearSlot> = {
+  mate: 'paw', alfajor: 'mouth', bandoneon: 'paw', camiseta: 'neck', medialuna: 'mouth', choripan: 'mouth',
+  terere: 'paw', mascara: 'hat', boina: 'hat', chamame: 'paw',
+  poncho: 'neck', empanada: 'mouth', charango: 'paw', coca: 'paw', sal: 'paw',
+  vino: 'paw', botas: 'paw', pluma: 'hat', fosil: 'mouth',
+  chocolate: 'mouth', calafate: 'paw', ballena: 'paw', cereza: 'mouth',
+  hielo: 'paw', pinguino: 'paw', faro: 'hat', centolla: 'mouth', bandera: 'paw',
+}
+const S = (level: LevelId, rows: [string, string, string, string, string][]): Souvenir[] => rows.map(([id, emoji, es, en, blurb]) => ({ id, level, emoji, es, en, blurb, ...(WEARABLE[id] ? { wearable: { slot: WEARABLE[id] } } : {}) }))
 export const SOUVENIRS: Souvenir[] = [
   ...S('a1', [
     ['mate', '🧉', 'un mate', 'a mate gourd', 'Bonchita sniffs it suspiciously; Leo wants the bombilla.'],
@@ -176,7 +206,12 @@ export const SOUVENIRS: Souvenir[] = [
     ['centolla', '🦀', 'una centolla', 'a king crab', 'Ushuaia dinner.'],
     ['bandera', '🏁', 'la bandera del viaje', 'the journey flag', 'Signed by all three dogs. Paw prints.'],
   ]),
+  // Region badges: earned with 80% or more in the region quiz.
+  ...REGIONS.map((r) => ({ id: `badge-${r.level}`, level: r.level, emoji: '🏅', es: `insignia de ${r.name}`, en: `${r.name} badge`, blurb: `Passed the ${r.name} region quiz.`, badge: true }) as Souvenir),
 ]
+export function wearableSouvenirs(): Souvenir[] {
+  return SOUVENIRS.filter((s) => s.wearable)
+}
 export function souvenirsFor(level: LevelId): Souvenir[] {
   return SOUVENIRS.filter((s) => s.level === level)
 }

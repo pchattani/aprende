@@ -16,6 +16,8 @@ export interface AnswerMatch {
   matched?: string
   /** Human-readable reasons for an 'almost' verdict. */
   notes: string[]
+  /** Why the verdict was only 'almost': accents missing/misplaced, or a small typo. */
+  reason?: 'accents' | 'typo'
 }
 
 export interface CheckerFinding {

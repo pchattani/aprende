@@ -21,7 +21,7 @@ content/es/
 ## Authoring a unit
 
 1. Add the unit to `syllabus.yaml` with `authored: true`, 2–3 can-do statements and the grammar ids it teaches.
-2. Add its vocabulary to `vocab/<level>.yaml` (`unit: a2.u05`). Nouns need `gender`; irregular plurals/feminines use `plural` / `feminine`; words the inflector cannot derive (articles, pronouns) list `forms`. Use `tags: [nationality]` for nationality adjectives, `tags: [passive]` for words that need not be introduced by a lesson.
+2. Add its vocabulary to `vocab/<level>.yaml` (`unit: a2.u05`). Nouns need `gender`; irregular plurals/feminines use `plural` / `feminine`; words the inflector cannot derive (articles, pronouns) list `forms`. Use `tags: [nationality]` for nationality adjectives, `tags: [passive]` for words that need not be introduced by a lesson. Give every word in an obvious semantic field a `topic` (see **Topics** below) so multiple-choice distractors come from the same field.
 3. Create `units/<level>/uNN.yaml`:
 
 ```yaml
@@ -88,3 +88,30 @@ The generator turns exchanges into *reply* exercises (pick or type the natural a
 *orderText* (put the sentences in order), dictation and translation in context. Vary the sentence types in
 `sentences` too: questions, negatives, exclamations, commands, two-clause sentences, and give `altEs` /
 `altEn` alternatives wherever more than one wording is natural (including Latin American variants).
+
+## Topics (plausible distractors)
+
+Multiple-choice distractors are sampled in tiers: same lesson → same unit → same `topic` and part of speech → same part of speech and level → anything. A learner asked for *derecha* should see *izquierda*, *arriba*, *detrás*, never *ojo* or *bolsa*. Tag words with one of these slugs (lowercase, hyphens):
+
+`directions`, `food`, `drink`, `family`, `body`, `clothing`, `weather`, `time`, `days`, `months`, `colours`, `numbers`, `transport`, `jobs`, `feelings`, `house`, `furniture`, `animals`, `school`, `health`, `shopping`, `travel`, `nature`, `tech`, `sport`, `money`, `city`, `countries`, `greetings`, `verbs-daily`, `verbs-motion`, `verbs-speech`, `adjectives-people`, `adjectives-things`, `connectors`, `quantity`, `politics`, `work`, `media`, `law`, `science`, `arts`, `environment`, `economy`, `relationships`.
+
+Add a topic only when it is unambiguous; a topic with fewer than 4 words at a level is flagged, because it cannot supply three distractors. Topics are optional on everything else.
+
+## Dialogue questions
+
+Every dialogue should carry **at least 3** comprehension questions (`questions:`), in Spanish at the unit's level, with 3–4 options and an optional `explain`. The region quiz (one per level, 12 items) draws one question per unit from them, so thin dialogues make a thin quiz.
+
+## Modo picante (optional spicy sentences)
+
+Each lesson may carry 3–5 `spicy:` sentences, shown only when the learner switches **Modo picante** on in Settings. They are drilled like ordinary sentences (ids `p.<lesson>.<n>`), so they follow the same shape (`es`, `en`, `altEs`, `altEn`, `grammar`, `vocab`) and must reuse the lesson's grammar point and vocabulary level.
+
+Tone guide: **cheeky and flirty, PG-13, between consenting adults.** Think compliments, dates, dancing, a cheeky wink, the dogs stealing a kiss-shaped alfajor: humour over innuendo. At A1–A2 keep to compliments and light flirting ("Tienes una sonrisa muy bonita."). From B1 the humour can be sharper and the situations more adult (dates that go wrong, double meanings handled with a wink), but never explicit anatomy, never crude vocabulary, nothing coercive, nothing involving minors, no slurs. `scripts/spicy-banned.ts` lists words that fail the check outright; use judgement for the rest. Every spicy sentence must still be a *useful* sentence a learner might say.
+
+```yaml
+    spicy:
+      - { es: "¿Bailas conmigo o solo me miras?", en: "Are you dancing with me or just looking?", altEs: ["¿Bailas conmigo o sólo me miras?"], grammar: [g.present-regular], vocab: [w.bailar, w.mirar] }
+```
+
+## Stop facts
+
+`src/engine/journey-facts.ts` holds one fact per stop (`unitId → { es, en }`), shown when the stop's passport stamp is earned. A1 facts: present tense, A1 vocabulary plus proper nouns, at most 30 words. A2: up to 35 words, past tenses allowed. B1 and above: up to 45 words. Facts must be true and checkable (geography, history, food, culture); no superlatives you cannot source.

@@ -61,7 +61,7 @@ export function match(given: string, expected: string[]): AnswerMatch {
     const en = normalize(e)
     if (stripAccents(en) === gNoAcc) {
       const diffs = accentDiffs(g, en)
-      return { verdict: 'almost', matched: e, notes: diffs.map((d) => `Watch the accent: “${d.given}” should be “${d.expected}”.`) }
+      return { verdict: 'almost', matched: e, reason: 'accents', notes: diffs.map((d) => `Watch the accent: “${d.given}” should be “${d.expected}”.`) }
     }
   }
   // Single typo tolerance: compare word by word.
@@ -93,11 +93,11 @@ export function match(given: string, expected: string[]): AnswerMatch {
       break
     }
   }
-  if (best) return { verdict: 'almost', matched: best.e, notes: best.notes }
+  if (best) return { verdict: 'almost', matched: best.e, reason: 'typo', notes: best.notes }
   return { verdict: 'wrong', notes: [] }
 }
 
-function accentDiffs(given: string, expected: string): { given: string; expected: string }[] {
+export function accentDiffs(given: string, expected: string): { given: string; expected: string }[] {
   const gw = given.split(' ')
   const ew = expected.split(' ')
   const out: { given: string; expected: string }[] = []

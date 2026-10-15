@@ -8,6 +8,7 @@ import { checkText } from '../hooks/useDeps'
 import { listenOnce, sttSupported } from '../engine/speech'
 import { pack } from '../engine/loader'
 import { Button, ProgressBar, SpeakerButton, Chip } from '../components/ui/basics'
+import { MCQ } from '../components/MCQ'
 import { IconX, IconMic, IconTrophy } from '../components/ui/icons'
 import { SPECIAL_CHARS } from '../components/exercises/chars'
 import { playSound } from '../engine/sounds'
@@ -55,33 +56,6 @@ export default function Exam() {
       {section === 'writing' && <WritingSection exam={exam} onDone={(s) => done('writing', s)} />}
       {section === 'speaking' && <SpeakingSection exam={exam} onDone={(s) => done('speaking', s)} />}
       {section === 'result' && <Result scores={scores} pass={exam.passScore} levelTitle={lvl?.title ?? level} next={nextLevel(level as LevelId)} onHome={() => nav('/')} />}
-    </div>
-  )
-}
-
-function MCQ({ items, onDone }: { items: { prompt: string; options: string[]; answer: number; audio?: string }[]; onDone: (score: number) => void }) {
-  const [answers, setAnswers] = useState<(number | undefined)[]>(() => items.map(() => undefined))
-  const complete = answers.every((a) => a !== undefined)
-  return (
-    <div className="mt-4 space-y-3">
-      {items.map((q, i) => (
-        <div key={i} className="card">
-          <div className="flex items-start gap-2">
-            {q.audio && <SpeakerButton text={q.audio} size="sm" />}
-            <p className="font-bold" lang={q.audio ? 'en' : 'es'}>{q.prompt}</p>
-          </div>
-          <div className="mt-2 grid gap-1.5">
-            {q.options.map((o, oi) => (
-              <button key={oi} type="button" onClick={() => setAnswers((a) => a.map((x, k) => (k === i ? oi : x)))} className={`tile py-2 text-sm ${answers[i] === oi ? 'selected' : ''}`} lang="es">
-                {o}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-      <Button className="w-full" disabled={!complete} onClick={() => onDone(items.filter((q, i) => answers[i] === q.answer).length / items.length)}>
-        Continue
-      </Button>
     </div>
   )
 }

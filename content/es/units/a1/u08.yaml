@@ -56,6 +56,12 @@ lessons:
         en: ["The shirt costs thirty euros and the shoes ninety.", "That's a hundred and twenty euros.", "It's too expensive, I don't have any money."]
         grammar: [g.costar-cuanto, g.numbers-100-1000]
         vocab: [w.costar, w.cien, w.dinero]
+    spicy:
+      - { es: "¿Cuánto cuesta una cena contigo? — Nada, es gratis.", en: "How much does a dinner with you cost? — Nothing, it's free.", grammar: [g.costar-cuanto], vocab: [w.costar] }
+      - { es: "No tengo un millón de euros, pero tengo un millón de ideas para el fin de semana.", en: "I don't have a million euros, but I have a million ideas for the weekend.", grammar: [g.numbers-100-1000, g.negation], vocab: [w.millon, w.euro] }
+      - { es: "Esta camisa cuesta cincuenta euros, pero tú no tienes precio.", en: "This shirt costs fifty euros, but you're priceless.", grammar: [g.costar-cuanto], vocab: [w.costar, w.euro, w.precio] }
+      - { es: "¿Cuánto vale? ¿Doscientos euros? Vale, pero solo si vienes conmigo.", en: "How much is it? Two hundred euros? Okay, but only if you come with me.", grammar: [g.costar-cuanto, g.numbers-100-1000], vocab: [w.valer, w.doscientos] }
+      - { es: "El vino cuesta cien euros, pero contigo vale mil.", en: "The wine costs a hundred euros, but with you it's worth a thousand.", grammar: [g.costar-cuanto, g.numbers-100-1000], vocab: [w.costar, w.valer, w.mil] }
   - id: a1.u08.l2
     title: La ropa
     teach: [g.este-ese-aquel]
@@ -112,6 +118,12 @@ lessons:
         en: ["I need some socks, a white shirt and some jeans.", "My brother wants a cap and a backpack.", "That shop has cheap clothes."]
         grammar: [g.este-ese-aquel, g.articles-indefinite]
         vocab: [w.calcetines, w.vaqueros, w.gorra, w.mochila]
+    spicy:
+      - { es: "Ese vestido te queda muy bien. ¿Es para mí?", en: "That dress looks great on you. Is it for me?", altEs: ["Esa camisa te queda muy bien. ¿Es para mí?"], grammar: [g.este-ese-aquel], vocab: [w.vestido, w.quedar] }
+      - { es: "¿Esta chaqueta es de tu novio? — No, no tengo novio.", en: "Is this jacket your boyfriend's? — No, I don't have a boyfriend.", altEs: ["¿Esta chaqueta es de tu novia? — No, no tengo novia."], grammar: [g.este-ese-aquel, g.negation], vocab: [w.chaqueta] }
+      - { es: "Aquel chico de la camiseta roja me mira. ¡Qué bien!", en: "That guy in the red T-shirt is looking at me. How nice!", altEs: ["Aquella chica de la camiseta roja me mira. ¡Qué bien!"], grammar: [g.este-ese-aquel], vocab: [w.camiseta] }
+      - { es: "Estos vaqueros son nuevos y me quedan muy bien, ¿verdad?", en: "These jeans are new and they look great on me, right?", grammar: [g.este-ese-aquel], vocab: [w.vaqueros, w.quedar] }
+      - { es: "Ese perro con gorra y jersey es más elegante que yo.", en: "That dog with a cap and a jumper is more elegant than me.", grammar: [g.este-ese-aquel], vocab: [w.gorra, w.jersey] }
   - id: a1.u08.l3
     title: En la tienda
     teach: [g.demonstratives-usage]
@@ -167,6 +179,12 @@ lessons:
         en: ["This week everything is on offer.", "You can pay by card or in cash.", "The fitting rooms are on the right."]
         grammar: [g.demonstratives-usage, g.poder-present]
         vocab: [w.oferta, w.tarjeta, w.efectivo, w.probador]
+    spicy:
+      - { es: "Busco un regalo para una persona especial. ¿Te gusta este?", en: "I'm looking for a present for a special person. Do you like this one?", grammar: [g.demonstratives-usage], vocab: [w.buscar, w.regalo] }
+      - { es: "¿Prefieres este o aquel? Yo te prefiero a ti.", en: "Do you prefer this one or that one? I prefer you.", grammar: [g.demonstratives-usage], vocab: [w.preferir] }
+      - { es: "Me llevo este sombrero y, si quieres, te llevo a cenar.", en: "I'll take this hat and, if you like, I'll take you to dinner.", grammar: [g.demonstratives-usage, g.querer-present], vocab: [w.llevarse] }
+      - { es: "Estás muy elegante. ¿Es una oferta o eres siempre así?", en: "You look very elegant. Is it a special offer or are you always like this?", altEs: ["Estás muy elegante. ¿Es oferta o eres siempre así?"], grammar: [g.ser-vs-estar-basics], vocab: [w.elegante, w.oferta] }
+      - { es: "Esta oferta es perfecta: dos cafés por el precio de uno. ¿Vienes?", en: "This offer is perfect: two coffees for the price of one. Coming?", grammar: [g.demonstratives-usage], vocab: [w.oferta, w.perfecto] }
   - id: a1.u08.l4
     title: Lo, la, los, las
     teach: [g.direct-object-intro]
@@ -221,6 +239,12 @@ lessons:
         en: ["I like this skirt, but I want it in red.", "Do you have it in red? No, I don't.", "Well then, I'm not buying it."]
         grammar: [g.direct-object-intro]
         vocab: [w.falda, w.rojo, w.pues]
+    spicy:
+      - { es: "¿Tienes algún plan? Yo lo tengo: tú y yo y un café.", en: "Do you have any plans? I do: you and me and a coffee.", grammar: [g.direct-object-intro, g.quantity-words], vocab: [w.algun, w.lo] }
+      - { es: "No tengo ningún problema. Bueno, uno: no tengo tu número y lo quiero.", en: "I don't have any problem. Well, one: I don't have your number and I want it.", grammar: [g.direct-object-intro, g.quantity-words], vocab: [w.ningun, w.lo] }
+      - { es: "¿Tu chocolate? Lo quiero. ¿Tu número? También lo quiero.", en: "Your chocolate? I want it. Your number? I want that too.", grammar: [g.direct-object-intro], vocab: [w.lo] }
+      - { es: "¿Ves a mi perro? Lo quiero mucho, pero tú también me gustas.", en: "Do you know my dog? I love him a lot, but I like you too.", grammar: [g.direct-object-intro, g.saber-vs-conocer], vocab: [w.lo] }
+      - { es: "Esta canción la bailo contigo o no la bailo.", en: "This song I dance with you or I don't dance it at all.", grammar: [g.direct-object-intro], vocab: [w.lo] }
 dialogues:
   - id: a1.u08.d1
     title: En la tienda de ropa

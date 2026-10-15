@@ -69,10 +69,14 @@ describe('grading with equivalence', () => {
   })
   it('accepts English answers without the bracketed part and with small typos', () => {
     expect(grade(typeEn(['I am (very) tired.']), 'I am tired', deps).verdict).toBe('correct')
-    expect(grade(typeEn(['The museum is closed.']), 'the musuem is closed', deps).verdict).toBe('almost')
+    const r = grade(typeEn(['The museum is closed.']), 'the musuem is closed', deps)
+    expect(r.verdict).toBe('correct')
+    expect(r.lenient).toBe('typo')
   })
   it('accepts a Spanish typo that is not another word, rejects one that is', () => {
-    expect(grade(typeEs(['Me gustan los perros.']), 'Me gustann los perros', deps).verdict).toBe('almost')
+    const r = grade(typeEs(['Me gustan los perros.']), 'Me gustann los perros', deps)
+    expect(r.verdict).toBe('correct')
+    expect(r.lenient).toBe('typo')
     expect(grade(typeEs(['Me gustan los perros.']), 'Me gusta los perros', deps).verdict).toBe('wrong')
   })
   it('accepts British spelling in English answers', () => {

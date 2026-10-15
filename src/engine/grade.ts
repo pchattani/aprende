@@ -2,6 +2,8 @@
 import type { Exercise, GradeResult } from './types'
 import type { LanguagePack, CheckerFinding } from '../lang/types'
 import { expandAnswers, typoMatch } from '../lang/equivalence'
+import { numberWordsToDigits, hasNumberWord } from '../lang/es/numbers'
+import { numberWordsToDigitsEn, hasNumberWordEn } from '../lang/en/numbers'
 
 const CONTRACTIONS: [RegExp, string][] = [
   [/\bi'm\b/g, 'i am'], [/\byou're\b/g, 'you are'], [/\bwe're\b/g, 'we are'], [/\bthey're\b/g, 'they are'],
@@ -21,19 +23,34 @@ export function normalizeEnglish(s: string): string {
   return t.replace(/\b(the|a|an)\b /g, (m) => m) // articles kept; alternatives list handles optional ones
 }
 
-function matchEnglish(given: string, expectedIn: string[], equiv?: (g: string, e: string) => 'exact' | 'accents' | false): GradeResult['verdict'] {
-  const g = normalizeEnglish(given)
-  if (!g) return 'wrong'
-  const expected = expandAnswers(expectedIn)
-  const exps = expected.map(normalizeEnglish)
-  if (exps.includes(g)) return 'correct'
-  if (equiv && exps.some((e) => equiv(g, e))) return 'correct'
+type Equiv = (g: string, e: string) => 'exact' | 'accents' | false
+
+/** English answer matching: literal, synonyms, optional articles, small typos. Digits and number words compare equal. */
+export function matchEnglish(given: string, expectedIn: string[], equiv?: Equiv): { verdict: GradeResult['verdict']; notes: string[]; lenient?: 'typo' } {
+  const g0 = normalizeEnglish(given)
+  if (!g0) return { verdict: 'wrong', notes: [] }
+  const expected0 = expandAnswers(expectedIn).map(normalizeEnglish)
+  const numeric = /\d/.test(g0) || hasNumberWordEn(g0) || expected0.some((e) => /\d/.test(e) || hasNumberWordEn(e))
+  const variants: [string, string[]][] = [[g0, expected0]]
+  if (numeric) variants.push([numberWordsToDigitsEn(g0), expected0.map(numberWordsToDigitsEn)])
+  for (const [g, exps] of variants) {
+    if (exps.includes(g)) return { verdict: 'correct', notes: [] }
+    if (equiv && exps.some((e) => equiv(g, e))) return { verdict: 'correct', notes: [] }
+  }
   // optional articles
   const strip = (x: string) => x.replace(/\b(the|a|an)\b/g, '').replace(/\s+/g, ' ').trim()
-  if (exps.some((e) => strip(e) === strip(g) || (equiv && equiv(strip(g), strip(e))))) return 'almost'
+  for (const [g, exps] of variants) {
+    if (exps.some((e) => strip(e) === strip(g) || (equiv && equiv(strip(g), strip(e))))) return { verdict: 'correct', notes: [] }
+  }
   // small typos in words of 4+ letters (no dictionary for English: meaning is what counts)
-  if (exps.some((e) => typoMatch(g, e, undefined, 4).ok || typoMatch(strip(g), strip(e), undefined, 4).ok)) return 'almost'
-  return 'wrong'
+  for (const [g, exps] of variants) {
+    for (const e of exps) {
+      const direct = typoMatch(g, e, undefined, 4)
+      const t = direct.ok ? direct : typoMatch(strip(g), strip(e), undefined, 4)
+      if (t.ok) return { verdict: 'correct', notes: t.fixes.map(([a, b]) => `Small typo: “${a}” → “${b}”.`), lenient: 'typo' }
+    }
+  }
+  return { verdict: 'wrong', notes: [] }
 }
 
 export interface GradeDeps {
@@ -41,32 +58,55 @@ export interface GradeDeps {
   /** Optional checker for explanations on wrong typed answers. */
   check?: (text: string) => CheckerFinding[]
   /** Equivalence comparators (synonyms, regional variants, optional pronouns); see lang/equivalence. */
-  equivEs?: (given: string, expected: string) => 'exact' | 'accents' | false
-  equivEn?: (given: string, expected: string) => 'exact' | 'accents' | false
+  equivEs?: Equiv
+  equivEn?: Equiv
   /** True when a form is a real Spanish word (so a "typo" that forms another word is not forgiven). */
   isWord?: (w: string) => boolean
 }
 
-type Match = { verdict: GradeResult['verdict']; notes: string[]; matched?: string; viaEquivalence: boolean }
+type Match = { verdict: GradeResult['verdict']; notes: string[]; matched?: string; viaEquivalence: boolean; lenient?: 'accents' | 'typo' }
 
-/** Spanish answer matching: literal, then equivalence, then dictionary-aware typo tolerance. */
-export function matchSpanish(text: string, expectedIn: string[], deps: GradeDeps, opts: { exact?: boolean } = {}): Match {
-  const expected = expandAnswers(expectedIn)
+function matchSpanishOnce(text: string, expected: string[], deps: GradeDeps, exact: boolean): Match {
   const r = deps.pack.match(text, expected)
-  if (r.verdict !== 'wrong') return { ...r, viaEquivalence: false }
+  if (r.verdict !== 'wrong') return { verdict: r.verdict, notes: r.notes, matched: r.matched, viaEquivalence: false, lenient: r.reason }
   if (!text.trim()) return { verdict: 'wrong', notes: [], viaEquivalence: false }
-  if (!opts.exact && deps.equivEs) {
+  if (!exact && deps.equivEs) {
     for (const e of expected) {
       const c = deps.equivEs(text, e)
       if (c === 'exact') return { verdict: 'correct', notes: [], matched: e, viaEquivalence: true }
-      if (c === 'accents') return { verdict: 'almost', notes: ['Check the accents.'], matched: e, viaEquivalence: true }
+      if (c === 'accents') return { verdict: 'almost', notes: ['Check the accents.'], matched: e, viaEquivalence: true, lenient: 'accents' }
     }
   }
   for (const e of expected) {
-    const t = typoMatch(text, e, deps.isWord, opts.exact ? 5 : 4)
-    if (t.ok) return { verdict: 'almost', notes: t.fixes.map(([a, b]) => `Small typo: “${a}” → “${b}”.`), matched: e, viaEquivalence: false }
+    const t = typoMatch(text, e, deps.isWord, exact ? 5 : 4)
+    if (t.ok) return { verdict: 'almost', notes: t.fixes.map(([a, b]) => `Small typo: “${a}” → “${b}”.`), matched: e, viaEquivalence: false, lenient: 'typo' }
   }
   return { verdict: 'wrong', notes: [], viaEquivalence: false }
+}
+
+/**
+ * Spanish answer matching: literal, then equivalence, then dictionary-aware typo tolerance.
+ * Digits and number words compare equal ("Tengo 15 años" = "Tengo quince años").
+ * Unless `exact` (dictation, conjugation, error fixes), missing accents and a small
+ * typo still count as correct, with a reminder note.
+ */
+export function matchSpanish(text: string, expectedIn: string[], deps: GradeDeps, opts: { exact?: boolean } = {}): Match {
+  const exact = Boolean(opts.exact)
+  const expected = expandAnswers(expectedIn)
+  let r = matchSpanishOnce(text, expected, deps, exact)
+  if (r.verdict === 'wrong') {
+    const numeric = /\d/.test(text) || hasNumberWord(text) || expected.some((e) => /\d/.test(e) || hasNumberWord(e))
+    if (numeric) {
+      const canon = expected.map(numberWordsToDigits)
+      const r2 = matchSpanishOnce(numberWordsToDigits(text), canon, deps, exact)
+      if (r2.verdict !== 'wrong') {
+        const idx = r2.matched ? canon.indexOf(r2.matched) : -1
+        r = { ...r2, matched: idx >= 0 ? expected[idx] : r2.matched }
+      }
+    }
+  }
+  if (r.verdict === 'almost' && !exact) return { ...r, verdict: 'correct', lenient: r.lenient ?? 'typo' }
+  return r
 }
 
 export type Answer = number | string | string[] | { mistakes: number }
@@ -93,8 +133,8 @@ export function grade(ex: Exercise, answer: Answer, deps: GradeDeps): GradeResul
       return { verdict: r.verdict === 'almost' ? 'correct' : r.verdict, correct: ex.answers[0]!, notes: [] }
     }
     case 'typeEn': {
-      const v = matchEnglish(String(answer ?? ''), ex.answers, deps.equivEn)
-      return { verdict: v, correct: ex.answers[0]!, notes: v === 'almost' ? ['Close enough — check the exact wording.'] : [] }
+      const r = matchEnglish(String(answer ?? ''), ex.answers, deps.equivEn)
+      return { verdict: r.verdict, correct: ex.answers[0]!, notes: r.notes, lenient: r.lenient }
     }
     case 'speak': {
       const text = String(answer ?? '')
@@ -124,7 +164,7 @@ export function grade(ex: Exercise, answer: Answer, deps: GradeDeps): GradeResul
         for (const f of deps.check(text).slice(0, 2)) notes.push(f.message)
       }
       if (ex.kind === 'findError' && r.verdict === 'wrong') notes.push(ex.explain)
-      return { verdict: r.verdict, correct: ex.answers[0]!, notes }
+      return { verdict: r.verdict, correct: ex.answers[0]!, notes, lenient: r.lenient }
     }
     default:
       return { verdict: 'wrong', correct: '', notes: [] }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
-import { useSettings } from '../store/settings'
+import { useSettings, SESSION_COUNT, type Settings as SettingsState } from '../store/settings'
 import { spanishVoices, speak, sttSupported, ttsSupported } from '../engine/speech'
 import { exportAll, importAll, resetAll, type Backup } from '../db/progress'
 import { PageHeader, Button } from '../components/ui/basics'
@@ -44,14 +44,20 @@ export default function Settings() {
       setMsg(`Import failed: ${(e as Error).message}`)
     }
   }
+  const stt = sttSupported()
 
   return (
     <div className="pb-8">
       <PageHeader title="Settings" />
       <Section title="Learning">
-        <Toggle label="Speaking exercises" hint={sttSupported() ? 'Uses your browser’s speech recognition. Nothing is sent to us.' : 'Not supported in this browser.'} checked={s.speech && sttSupported()} onChange={s.setSpeech} disabled={!sttSupported()} />
+        <Select label="Lesson length" hint="How many exercises a lesson session has." value={s.sessionLength} onChange={(v) => s.setSessionLength(v as SettingsState['sessionLength'])} options={[['short', `Short · ${SESSION_COUNT.short} exercises`], ['normal', `Normal · ${SESSION_COUNT.normal} exercises`], ['long', `Long · ${SESSION_COUNT.long} exercises`]]} />
+        <Select label="Speaking exercises" hint={stt ? 'Uses your browser’s speech recognition. Nothing is sent to us.' : 'Speech recognition is not supported in this browser.'} value={stt ? s.speaking : 'off'} onChange={(v) => s.setSpeaking(v as SettingsState['speaking'])} options={[['off', 'Off'], ['some', 'Some · up to 2 per lesson'], ['lots', 'Lots · up to 3 per lesson, answer questions aloud']]} disabled={!stt} />
+        <Toggle label="Keep my mistakes for later" hint="Wrong answers are pinned automatically for a focused re-test (Review → Pinned)." checked={s.autoPin} onChange={s.setAutoPin} />
         <Range label={`Daily practice goal: ${s.dailyMinutes} minutes`} min={5} max={40} step={5} value={s.dailyMinutes} onChange={s.setDailyMinutes} />
         <Select label="Spanish variety" value={s.variety} onChange={(v) => s.setVariety(v as 'es-ES' | 'es-419')} options={[['es-ES', 'Castilian (Spain) — default'], ['es-419', 'Latin American (notes shown)']]} />
+      </Section>
+      <Section title="Just for fun">
+        <Toggle label="Modo picante 🌶️" hint="Cheeky, flirty example sentences for grown-ups, mixed into lessons at your level. Off by default." checked={s.spicy} onChange={s.setSpicy} />
       </Section>
       <Section title="Sound and voice">
         <Toggle label="Sounds" hint="Feedback sounds and audio." checked={s.sound} onChange={s.setSound} />
@@ -130,11 +136,12 @@ function Range({ label, min, max, step, value, onChange }: { label: string; min:
     </label>
   )
 }
-function Select({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: [string, string][] }) {
+function Select({ label, hint, value, onChange, options, disabled }: { label: string; hint?: string; value: string; onChange: (v: string) => void; options: [string, string][]; disabled?: boolean }) {
   return (
     <label className="block">
       <span className="block font-bold">{label}</span>
-      <select value={value} onChange={(e) => onChange(e.target.value)} className="mt-1 w-full rounded-xl border-2 border-line bg-surface-2 p-2">
+      {hint && <span className="block text-xs text-muted">{hint}</span>}
+      <select value={value} disabled={disabled} onChange={(e) => onChange(e.target.value)} className="mt-1 w-full rounded-xl border-2 border-line bg-surface-2 p-2 disabled:opacity-50">
         {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
       </select>
     </label>

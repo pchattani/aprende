@@ -3,7 +3,7 @@ import type { TypeExercise } from '../../engine/types'
 import { listenOnce, sttSupported, ensureMicPermission, listenErrorMessage, isIosStandalone, stopListening, type ListenError } from '../../engine/speech'
 import { pack } from '../../engine/loader'
 import { spanish } from '../../lang/es'
-import { SpeakerButton } from '../ui/basics'
+import { SpeakerButton, Chip } from '../ui/basics'
 import { IconMic } from '../ui/icons'
 import { Instruction, Prompt, type ExerciseProps } from './shared'
 
@@ -63,15 +63,27 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
     onSubmit(exercise.answers[0]!)
   }
 
+  const variant = exercise.variant
   return (
     <div>
-      <Instruction>Say this sentence</Instruction>
+      <Instruction>{variant === 'reply' ? 'Answer aloud' : variant === 'repeat' ? 'Listen and repeat' : 'Say this sentence'}</Instruction>
       <div className="mb-4 flex items-start gap-3">
-        <SpeakerButton text={exercise.prompt} size="sm" />
-        <SpeakerButton text={exercise.prompt} size="sm" slow />
+        <SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" autoPlay={variant !== undefined} />
+        <SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" slow />
         <Prompt lang="es">{exercise.prompt}</Prompt>
       </div>
-      {exercise.translation && <p className="mb-6 text-sm text-muted">{exercise.translation}</p>}
+      {variant === 'reply' ? (
+        <div className="mb-6">
+          {exercise.hint && <Chip tone="sky">{exercise.hint}</Chip>}
+          {checked && (
+            <p className="mt-3 text-sm text-muted">
+              A natural answer: <span className="font-bold text-[var(--text)]" lang="es">{exercise.answers[0]}</span>
+            </p>
+          )}
+        </div>
+      ) : (
+        exercise.translation && <p className="mb-6 text-sm text-muted">{exercise.translation}</p>
+      )}
       {supported ? (
         <div className="flex flex-col items-center gap-3">
           <button
@@ -84,7 +96,7 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
             <IconMic width={44} height={44} />
           </button>
           <p className="min-h-[2.5rem] text-center text-sm text-muted" aria-live="polite">
-            {listening ? (live ? <>Hearing: <span className="font-bold text-[var(--text)]" lang="es">“{live}”</span></> : 'Listening… speak now') : transcript.trim() ? `I heard: “${transcript.trim()}”` : 'Tap the microphone and read the sentence aloud'}
+            {listening ? (live ? <>Hearing: <span className="font-bold text-[var(--text)]" lang="es">“{live}”</span></> : 'Listening… speak now') : transcript.trim() ? `I heard: “${transcript.trim()}”` : variant === 'reply' ? 'Tap the microphone and answer the question in Spanish' : variant === 'repeat' ? 'Tap the microphone and repeat the word' : 'Tap the microphone and read the sentence aloud'}
           </p>
           {error && <p className="rounded-2xl bg-gold-100 px-3 py-2 text-center text-sm font-semibold text-[var(--text)] dark:bg-gold-500/15" role="alert">{listenErrorMessage(error)}</p>}
           {!checked && (
@@ -95,7 +107,7 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
         </div>
       ) : (
         <div className="card text-sm text-muted">
-          {isIosStandalone() ? listenErrorMessage('not-allowed') : listenErrorMessage('unsupported')} Read the sentence aloud, compare it with the audio, then continue.
+          {isIosStandalone() ? listenErrorMessage('not-allowed') : listenErrorMessage('unsupported')} {variant === 'reply' ? 'Answer aloud, then compare with the suggested reply after checking.' : 'Read it aloud, compare it with the audio, then continue.'}
           <button type="button" className="btn btn-ghost mt-3 w-full" onClick={selfCheck}>
             I said it
           </button>

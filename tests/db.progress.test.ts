@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { db } from '@/db'
-import { ensureCards, recordAnswer, recordLesson, dueCards, streak, exportAll, importAll, resetAll, totalMinutes } from '@/db/progress'
+import { ensureCards, recordAnswer, recordLesson, dueCards, streak, exportAll, importAll, resetAll, totalMinutes, pinAnswer, pinnedRows, recordPinnedAnswer, unpin } from '@/db/progress'
 
 beforeEach(async () => {
   await resetAll()
@@ -24,7 +24,24 @@ describe('progress', () => {
     expect(s.current).toBe(1)
     const row = await db.lessons.get('a1.u01.l1')
     expect(row?.completions).toBe(1)
-    expect(row?.bestAccuracy).toBeCloseTo(0.9)
+    expect(row?.bestAccuracy).toBeCloseTo(1)
+  })
+  it('pins a wrong answer and unpins after two correct answers', async () => {
+    await pinAnswer({ id: 's.a1.u01.l1.2', lessonId: 'a1.u01.l1', exerciseKind: 'typeEs', given: 'El casa', expected: 'La casa', es: 'La casa es pequeña.', en: 'The house is small.', missed: { given: 'El', expected: 'La' } })
+    expect((await pinnedRows()).map((p) => p.id)).toEqual(['s.a1.u01.l1.2'])
+    expect(await recordPinnedAnswer('s.a1.u01.l1.2', 'correct')).toBe(false)
+    expect(await recordPinnedAnswer('s.a1.u01.l1.2', 'wrong')).toBe(false)
+    expect((await pinnedRows())[0]!.streak).toBe(0)
+    expect(await recordPinnedAnswer('s.a1.u01.l1.2', 'correct')).toBe(false)
+    expect(await recordPinnedAnswer('s.a1.u01.l1.2', 'almost')).toBe(true)
+    expect(await pinnedRows()).toEqual([])
+    await pinAnswer({ id: 'x:1', lessonId: 'a1.u01.l1', exerciseKind: 'listen', given: 'a', expected: 'b', es: 'Hola', en: 'Hello' })
+    const b = await exportAll()
+    expect(b.pins?.length).toBe(1)
+    await unpin('x:1')
+    expect(await pinnedRows()).toEqual([])
+    await importAll(b)
+    expect((await pinnedRows()).length).toBe(1)
   })
   it('round-trips a backup', async () => {
     await ensureCards([{ id: 'w.adios', kind: 'word', level: 'a1', lessonId: 'a1.u01.l1', grammar: [] }])

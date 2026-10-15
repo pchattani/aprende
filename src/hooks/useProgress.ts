@@ -27,6 +27,11 @@ export function useKvValue<T>(key: string, fallback: T): T | undefined {
   }, [key])
 }
 
+/** Live map of every kv row whose key starts with `prefix` (key → value). */
+export function useKvPrefix<T>(prefix: string): Map<string, T> | undefined {
+  return useLiveQuery(async () => new Map((await db.kv.where('key').startsWith(prefix).toArray()).map((r) => [r.key, r.value as T])), [prefix])
+}
+
 /** Today's three quests with progress and claim state. */
 export function useQuests(date: string) {
   return useLiveQuery(async () => {
@@ -36,4 +41,10 @@ export function useQuests(date: string) {
 }
 export function useSouvenirs() {
   return useLiveQuery(() => db.souvenirs.orderBy('ts').reverse().toArray(), [])
+}
+export function usePins() {
+  return useLiveQuery(() => db.pins.orderBy('ts').reverse().toArray(), [])
+}
+export function usePinCount(): number | undefined {
+  return useLiveQuery(() => db.pins.count(), [])
 }
