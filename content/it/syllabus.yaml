@@ -1,0 +1,631 @@
+# The whole journey, A1 -> C2, in standard Italian. Each unit lists the grammar
+# points it teaches (ids resolve to notes in grammar/<level>.yaml) and CEFR
+# can-do statements. `authored: true` means units/<level>/<unit>.yaml exists.
+# Journey: A1 Rome, A2 Tuscany, B1 the North, B2 the South, C1 Sicily and
+# Sardinia, C2 central Italy and back to Rome.
+levels:
+  - id: a1
+    title: A1
+    name: Breakthrough
+    description: Understand and use everyday expressions and very basic phrases. Introduce yourself, ask and answer simple personal questions, and get by in Rome when people speak slowly and clearly.
+    wordTarget: 700
+    canDo:
+      - Greet people, introduce myself and others, and say where I am from.
+      - Talk about my family, my home and my daily routine in the present.
+      - Order at a bar or trattoria, shop at a market, ask prices and tell the time.
+      - Ask for and understand simple directions around town.
+      - Understand short, simple texts and slow, clear speech on familiar topics.
+    units:
+      - id: a1.u01
+        title: "Ciao, come ti chiami?"
+        subtitle: "Hello, what's your name?"
+        authored: true
+        canDo:
+          - "Greet people and say goodbye, formally and informally."
+          - "Introduce myself and ask someone their name."
+          - "Choose between tu and Lei, and write the accents on è, sì and perché."
+        grammar: [g.greetings, g.subject-pronouns, g.essere-present, g.chiamarsi, g.tu-vs-lei, g.accents]
+      - id: a1.u02
+        title: "Di dove sei?"
+        subtitle: "Where are you from? People and countries"
+        authored: true
+        canDo:
+          - "Say where I and other people are from and what nationality we are."
+          - "Describe people and things with basic adjectives."
+          - "Say what something is not."
+        grammar: [g.gender-nouns, g.articles, g.adjective-agreement, g.essere-di, g.negation]
+      - id: a1.u03
+        title: "La mia famiglia"
+        subtitle: "My family"
+        authored: true
+        canDo:
+          - "Talk about my family, their names and their ages."
+          - "Count to one hundred and ask simple questions."
+        grammar: [g.avere-present, g.possessives, g.possessives-family, g.plural-nouns, g.numbers-0-100, g.question-words]
+      - id: a1.u04
+        title: "Casa mia a Trastevere"
+        subtitle: "My home and my neighbourhood"
+        authored: true
+        canDo:
+          - "Describe my home and say where things are."
+          - "Say what there is and isn't in my neighbourhood."
+        grammar: [g.c-e-ci-sono, g.articles-indefinite, g.simple-prepositions, g.articulated-prepositions, g.questo]
+      - id: a1.u05
+        title: "Un caffè, per favore"
+        subtitle: "At the bar: food and drink"
+        authored: true
+        canDo:
+          - "Order at a bar, a pizzeria or a trattoria."
+          - "Say what I like and don't like to eat and drink."
+          - "Ask for some bread, some water, a few olives."
+        grammar: [g.present-are, g.volere-vorrei, g.piacere-intro, g.partitive-di]
+      - id: a1.u06
+        title: "La mia giornata"
+        subtitle: "My day: daily routine"
+        authored: true
+        canDo:
+          - "Describe my daily routine and tell the time."
+          - "Say how often I do things."
+        grammar: [g.present-ere-ire, g.present-isc, g.reflexive-present, g.time-telling, g.frequency-adverbs]
+      - id: a1.u07
+        title: "Com'è la tua amica?"
+        subtitle: "Describing people"
+        authored: true
+        canDo:
+          - "Describe someone's appearance and character."
+          - "Say how someone is and how they feel right now."
+        grammar: [g.stare-present, g.adjective-position, g.bello-buono, g.avere-expressions, g.molto-poco-troppo]
+      - id: a1.u08
+        title: "Quanto costa?"
+        subtitle: "Shopping at the market"
+        authored: true
+        canDo:
+          - "Buy food and clothes, and ask for prices, sizes and colours."
+          - "Count above one hundred and talk about money in euros."
+        grammar: [g.numbers-100-plus, g.quanto-costa, g.quello-forms, g.colours, g.lo-prendo]
+      - id: a1.u09
+        title: "Andiamo al Colosseo!"
+        subtitle: "Going, doing and being able"
+        authored: true
+        canDo:
+          - "Say where I am going, how and with whom."
+          - "Say what I can, must and want to do."
+          - "Make simple requests and ask permission."
+        grammar: [g.andare-venire, g.fare-present, g.irregular-present, g.potere-dovere, g.prepositions-motion]
+      - id: a1.u10
+        title: "Tempo libero e che tempo fa"
+        subtitle: "Free time and the weather"
+        authored: true
+        canDo:
+          - "Talk about hobbies, sports and the weather."
+          - "Say what I like doing and which days and months I do it."
+          - "Say what I know how to do and whom I know."
+        grammar: [g.weather, g.days-months, g.piacere-plural, g.sapere-conoscere, g.giocare-suonare]
+      - id: a1.u11
+        title: "Scusi, dov'è la fontana?"
+        subtitle: "Around town: directions"
+        authored: true
+        canDo:
+          - "Ask for and give simple directions."
+          - "Say what I am doing right now and what is needed."
+        grammar: [g.stare-gerundio, g.imperative-directions, g.bisogna-avere-bisogno, g.ordinal-numbers]
+      - id: a1.u12
+        title: "Che fai questo weekend?"
+        subtitle: "Plans and review"
+        authored: true
+        canDo:
+          - "Talk about plans for the near future with the present tense."
+          - "Connect ideas in short messages and texts."
+        grammar: [g.present-for-future, g.connectors-basic, g.anche-neanche, g.a1-review]
+
+  - id: a2
+    title: A2
+    name: Waystage
+    description: Understand sentences and frequent expressions about areas of immediate relevance. Communicate in simple, routine tasks across Tuscany. Describe your background and surroundings, and narrate past events with the passato prossimo and the imperfetto.
+    wordTarget: 1500
+    canDo:
+      - Narrate past events and tell short stories, distinguishing completed actions from background.
+      - Talk about plans, make predictions and give instructions.
+      - Compare things, give opinions and make polite requests.
+      - Avoid repetition with object pronouns, ci and ne.
+      - Read short articles and personal messages and follow slow conversations.
+    units:
+      - id: a2.u01
+        title: "Ieri a Firenze"
+        subtitle: "Yesterday: the passato prossimo with avere"
+        authored: true
+        canDo:
+          - "Say what I did yesterday and last weekend."
+          - "Use past time expressions like ieri, la settimana scorsa and due giorni fa."
+        grammar: [g.passato-prossimo-avere, g.participles-irregular, g.time-markers-past]
+      - id: a2.u02
+        title: "Siamo andati a Siena"
+        subtitle: "The passato prossimo with essere"
+        authored: true
+        canDo:
+          - "Tell where I went and what happened, choosing essere or avere."
+          - "Make the participle agree with the subject after essere."
+          - "Say what I have already done and haven't done yet."
+        grammar: [g.passato-prossimo-essere, g.auxiliary-choice, g.reflexive-passato-prossimo, g.gia-ancora-mai]
+      - id: a2.u03
+        title: "Quando ero piccolo"
+        subtitle: "When I was little: the imperfetto"
+        authored: true
+        canDo:
+          - "Describe habits and situations in the past."
+          - "Describe how people and places used to be."
+        grammar: [g.imperfetto-forms, g.imperfetto-uses, g.da-bambino]
+      - id: a2.u04
+        title: "C'era una volta"
+        subtitle: "Telling stories: passato prossimo and imperfetto"
+        authored: true
+        canDo:
+          - "Tell an anecdote combining events and background."
+          - "Say what I was doing when something happened."
+        grammar: [g.passato-prossimo-vs-imperfetto, g.mentre-quando, g.narrative-connectors, g.stare-gerundio-past]
+      - id: a2.u05
+        title: "Lo prendo io!"
+        subtitle: "Object pronouns"
+        authored: true
+        canDo:
+          - "Avoid repeating nouns with lo, la, li, le."
+          - "Say who gives what to whom with mi, ti, gli, le."
+        grammar: [g.direct-object-pronouns, g.indirect-object-pronouns, g.pronoun-participle-agreement, g.stressed-pronouns]
+      - id: a2.u06
+        title: "Che cosa farai a Pisa?"
+        subtitle: "The future"
+        authored: true
+        canDo:
+          - "Make predictions, promises and plans."
+          - "Guess about the present with the future."
+          - "Talk about real conditions with se."
+        grammar: [g.futuro-semplice, g.futuro-irregular, g.futuro-probability, g.periodo-ipotetico-1]
+      - id: a2.u07
+        title: "Più bello di così?"
+        subtitle: "Comparing and giving opinions"
+        authored: true
+        canDo:
+          - "Compare people, places and things."
+          - "Say something is the best, the worst or really good."
+          - "Give and justify simple opinions."
+        grammar: [g.comparatives, g.superlatives, g.comparatives-irregular, g.opinions]
+      - id: a2.u08
+        title: "Ci vado volentieri"
+        subtitle: "Ci and ne"
+        authored: true
+        canDo:
+          - "Replace places with ci and quantities with ne."
+          - "Say how long something takes with volerci and metterci."
+        grammar: [g.ci-place, g.ne-partitive, g.ne-participle-agreement, g.metterci-volerci]
+      - id: a2.u09
+        title: "Mescola e assaggia!"
+        subtitle: "Instructions: the imperative"
+        authored: true
+        canDo:
+          - "Give instructions, directions and recipes."
+          - "Tell someone politely what to do, and what not to do."
+        grammar: [g.imperativo-tu, g.imperativo-lei, g.imperativo-noi-voi, g.imperativo-negative]
+      - id: a2.u10
+        title: "Da quanto tempo?"
+        subtitle: "Time and prepositions"
+        authored: true
+        canDo:
+          - "Say since when and for how long I have done something."
+          - "Say when something will happen and how I travel."
+          - "Use verbs that need a, di or da."
+        grammar: [g.da-since, g.fra-tra-per, g.verbs-with-prepositions, g.prepositions-transport]
+      - id: a2.u11
+        title: "Dal medico"
+        subtitle: "Health, the body and the conditional"
+        authored: true
+        canDo:
+          - "Describe symptoms at the doctor's or the pharmacy."
+          - "Make polite requests and give advice with the conditional."
+        grammar: [g.fare-male, g.irregular-plurals-body, g.condizionale-presente, g.condizionale-courtesy]
+      - id: a2.u12
+        title: "In giro per la Toscana"
+        subtitle: "Travel, experiences and review"
+        authored: true
+        canDo:
+          - "Talk about trips, plans that are about to happen and things done again."
+          - "Use words like someone, nothing, nobody and never."
+        grammar: [g.stare-per, g.di-nuovo-ri, g.indefinites, g.double-negation, g.a2-review]
+
+  - id: b1
+    title: B1
+    name: Threshold
+    description: Deal with most situations while travelling through northern Italy. Produce connected text on familiar topics. Describe experiences, events, hopes and ambitions, give reasons and opinions with the congiuntivo, and report what others said.
+    wordTarget: 3000
+    canDo:
+      - Combine pronouns (glielo, ce ne) and use them with the imperative.
+      - Express wishes, emotions, doubts and opinions with the congiuntivo.
+      - Narrate complex past sequences and report what others said.
+      - Describe things with relative clauses and impersonal constructions.
+      - Write structured messages and formal letters using Lei.
+    units:
+      - id: b1.u01
+        title: "Glielo dico io"
+        subtitle: "Combined pronouns"
+        authored: true
+        canDo:
+          - "Combine indirect and direct pronouns: me lo, te la, glielo."
+          - "Use combined pronouns in the passato prossimo."
+          - "Say there is some, I have it, I've got enough with ce n'è and ce l'ho."
+        grammar: [g.combined-pronouns, g.combined-pronouns-past, g.ce-ne-ce-lo]
+      - id: b1.u02
+        title: "Dimmelo!"
+        subtitle: "The imperative with pronouns"
+        authored: true
+        canDo:
+          - "Give commands with pronouns attached: fallo, dimmelo, vacci."
+          - "Give polite commands to Lei with pronouns before the verb."
+        grammar: [g.imperativo-pronouns, g.imperativo-short-forms, g.imperativo-lei-pronouns]
+      - id: b1.u03
+        title: "Mi piacerebbe vivere a Bologna"
+        subtitle: "The conditional, present and past"
+        authored: true
+        canDo:
+          - "Say what I would like, would do and should do."
+          - "Express regret and say what I would have done."
+          - "Report unconfirmed news with the conditional."
+        grammar: [g.condizionale-uses, g.condizionale-passato, g.modals-condizionale-passato, g.condizionale-hearsay]
+      - id: b1.u04
+        title: "Il treno era già partito"
+        subtitle: "Trapassato prossimo, futuro anteriore and sequence"
+        authored: true
+        canDo:
+          - "Order past events relative to each other."
+          - "Say what will have happened by a certain time."
+          - "Use prima di and dopo aver to link actions."
+        grammar: [g.trapassato-prossimo, g.futuro-anteriore, g.past-infinitive]
+      - id: b1.u05
+        title: "Penso che sia giusto"
+        subtitle: "The present subjunctive: opinions"
+        authored: true
+        canDo:
+          - "Form the congiuntivo presente of regular and irregular verbs."
+          - "Give opinions and express belief and doubt."
+        grammar: [g.congiuntivo-presente-forms, g.congiuntivo-irregular, g.congiuntivo-opinion]
+      - id: b1.u06
+        title: "Spero che tu venga a Venezia"
+        subtitle: "Wishes, emotions and impersonal expressions"
+        authored: true
+        canDo:
+          - "Express wishes, hopes and feelings about others."
+          - "Judge situations with è importante che, bisogna che."
+          - "Choose between the congiuntivo and the infinitive."
+        grammar: [g.congiuntivo-wishes-emotion, g.congiuntivo-impersonal, g.congiuntivo-vs-infinitive]
+      - id: b1.u07
+        title: "Prima che sia troppo tardi"
+        subtitle: "Conjunctions and the past subjunctive"
+        authored: true
+        canDo:
+          - "Express purpose, condition and time with conjunctions like perché, purché, prima che."
+          - "Express opinions and feelings about past events."
+        grammar: [g.congiuntivo-conjunctions, g.congiuntivo-passato, g.prima-che-prima-di]
+      - id: b1.u08
+        title: "La città in cui vivo"
+        subtitle: "Relative pronouns"
+        authored: true
+        canDo:
+          - "Define and describe people, places and things."
+          - "Say whose with il cui, and talk about what and who in general."
+        grammar: [g.relative-che, g.relative-cui, g.relative-il-cui, g.relative-chi-quello-che]
+      - id: b1.u09
+        title: "Qui si mangia bene"
+        subtitle: "Impersonal si and the si passivante"
+        authored: true
+        canDo:
+          - "Describe general rules, customs and processes impersonally."
+          - "Read signs, recipes and adverts that use si."
+        grammar: [g.si-impersonale, g.si-passivante, g.ci-si]
+      - id: b1.u10
+        title: "Ha detto che arrivava"
+        subtitle: "Reported speech"
+        authored: true
+        canDo:
+          - "Report what someone said, asked or told me to do."
+          - "Pass on messages with the right tense changes."
+        grammar: [g.discorso-indiretto-present, g.discorso-indiretto-past, g.reported-questions, g.reported-commands-di]
+      - id: b1.u11
+        title: "Gentile Direttrice"
+        subtitle: "Connectors, formal letters and Lei"
+        authored: true
+        canDo:
+          - "Write a structured opinion text with connectors."
+          - "Write a formal email or letter using Lei, La, Le and Suo."
+        grammar: [g.connectors-cause-consequence, g.connectors-contrast, g.lei-forms, g.formal-letters]
+      - id: b1.u12
+        title: "Leggendo il giornale"
+        subtitle: "The gerund, the passato remoto and review"
+        authored: true
+        canDo:
+          - "Use the gerund for manner, time and cause."
+          - "Recognise the passato remoto in stories, history and the news."
+        grammar: [g.gerundio-uses, g.passato-remoto-recognition, g.b1-review]
+
+  - id: b2
+    title: B2
+    name: Vantage
+    description: Understand the main ideas of complex text, including technical discussion in your field. Interact with fluency and spontaneity with native speakers from Naples to Bari. Produce clear, detailed text on a wide range of subjects and argue a viewpoint.
+    wordTarget: 5000
+    canDo:
+      - Express unreal and past hypotheses, wishes, regrets and concessions.
+      - Use the passive, causative and pronominal verbs with confidence.
+      - Argue a position in writing with cohesion and the right register.
+      - Follow films, the news and extended speech in standard and regional Italian.
+      - Emphasise and reorder information the way native speakers do.
+    units:
+      - id: b2.u01
+        title: "Se avessi tempo..."
+        subtitle: "The imperfect subjunctive and possible hypotheses"
+        authored: true
+        canDo:
+          - "Form the congiuntivo imperfetto."
+          - "Talk about unlikely or imaginary situations and their consequences."
+          - "Compare with come se."
+        grammar: [g.congiuntivo-imperfetto, g.periodo-ipotetico-2, g.come-se]
+      - id: b2.u02
+        title: "Se l'avessi saputo..."
+        subtitle: "The pluperfect subjunctive and past hypotheses"
+        authored: true
+        canDo:
+          - "Talk about past situations that did not happen."
+          - "Link a past condition to a present consequence."
+        grammar: [g.congiuntivo-trapassato, g.periodo-ipotetico-3, g.periodo-ipotetico-misto]
+      - id: b2.u03
+        title: "Magari!"
+        subtitle: "Wishes, regrets and the sequence of tenses"
+        authored: true
+        canDo:
+          - "Express wishes and regrets with magari and se solo."
+          - "Choose the right congiuntivo tense after a present, past or conditional verb."
+        grammar: [g.magari-se-solo, g.vorrei-che, g.concordanza-congiuntivo]
+      - id: b2.u04
+        title: "È stata costruita dai Romani"
+        subtitle: "The passive with essere, venire and andare"
+        authored: true
+        canDo:
+          - "Describe historical events, processes and institutions in the passive."
+          - "Say what must be done with andare + participle."
+        grammar: [g.passive-essere, g.passive-venire, g.passive-andare]
+      - id: b2.u05
+        title: "Nonostante tutto"
+        subtitle: "Concession and indefinite clauses"
+        authored: true
+        canDo:
+          - "Concede points in an argument with benché, nonostante and anche se."
+          - "Say whoever, whatever, wherever and however."
+        grammar: [g.concessive-clauses, g.chiunque-qualunque, g.pur-gerundio]
+      - id: b2.u06
+        title: "Me ne vado!"
+        subtitle: "Pronominal and causative verbs"
+        authored: true
+        canDo:
+          - "Use everyday pronominal verbs like andarsene, farcela and prendersela."
+          - "Say I had something done and let someone do something."
+        grammar: [g.pronominal-verbs, g.fare-causative, g.lasciare-infinitive]
+      - id: b2.u07
+        title: "Il quale, la quale"
+        subtitle: "Formal relatives and the compound gerund"
+        authored: true
+        canDo:
+          - "Use il quale, ciò che, per cui and il che in formal texts."
+          - "Express prior actions with avendo fatto and essendo arrivato."
+        grammar: [g.relative-il-quale, g.relative-advanced, g.gerundio-composto]
+      - id: b2.u08
+        title: "Mi disse che sarebbe tornato"
+        subtitle: "Advanced reported speech"
+        authored: true
+        canDo:
+          - "Report statements, promises and orders with full tense changes."
+          - "Shift time and place words when reporting."
+          - "Choose precise reporting verbs."
+        grammar: [g.reported-speech-advanced, g.deictic-shift, g.reporting-verbs]
+      - id: b2.u09
+        title: "Parla come mangi"
+        subtitle: "Register, colloquial Italian and suffixes"
+        authored: true
+        canDo:
+          - "Shift between colloquial and formal register."
+          - "Use diminutives, augmentatives and pejoratives."
+          - "Understand everyday colloquial structures."
+        grammar: [g.register-formal-informal, g.suffixes-alterati, g.colloquial-italian]
+      - id: b2.u10
+        title: "A mio avviso"
+        subtitle: "Argumentation"
+        authored: true
+        canDo:
+          - "Structure an argumentative essay."
+          - "State, support, concede and rebut opinions."
+        grammar: [g.argumentation-connectors, g.opinion-structures, g.essay-structure]
+      - id: b2.u11
+        title: "Il caffè lo prendo amaro"
+        subtitle: "Emphasis and word order"
+        authored: true
+        canDo:
+          - "Put the topic first or last with a doubling pronoun."
+          - "Emphasise with cleft sentences and focus words like proprio and perfino."
+        grammar: [g.dislocation, g.cleft-sentences, g.focus-particles]
+      - id: b2.u12
+        title: "L'italiano del Sud"
+        subtitle: "Regional Italian and review"
+        authored: true
+        canDo:
+          - "Recognise the main features of regional Italian, especially in the South."
+          - "Understand how Italian varies across the country and between registers."
+        grammar: [g.italian-varieties-overview, g.regional-italian-south, g.b2-review]
+
+  - id: c1
+    title: C1
+    name: Effective operational proficiency
+    description: Understand demanding, longer texts and implicit meaning, from Sicilian novels to Sardinian news. Express yourself fluently without obvious searching for expressions. Use Italian flexibly for social, academic and professional purposes with clear, well-structured, detailed text.
+    wordTarget: 8000
+    canDo:
+      - Use the congiuntivo, the passato remoto and complex subordination with nuance.
+      - Read literature and the press with an ear for register, irony and allusion.
+      - Produce academic, professional and administrative texts with appropriate cohesion.
+      - Use idioms, proverbs and fixed expressions appropriately.
+      - Understand humour, implicit meaning and discourse particles.
+    units:
+      - id: c1.u01
+        title: "Sfumature del congiuntivo"
+        subtitle: "Subjunctive nuance"
+        authored: true
+        canDo:
+          - "Choose mood to shade meaning."
+          - "Use the congiuntivo in main clauses and after il fatto che."
+        grammar: [g.congiuntivo-nuance, g.congiuntivo-independent, g.il-fatto-che]
+      - id: c1.u02
+        title: "Fu allora che capì"
+        subtitle: "The passato remoto in production"
+        authored: true
+        canDo:
+          - "Write narratives and biographies in the passato remoto."
+          - "Choose between passato remoto and passato prossimo."
+          - "Recognise the trapassato remoto."
+        grammar: [g.passato-remoto-forms, g.passato-remoto-irregular, g.passato-remoto-vs-prossimo, g.trapassato-remoto]
+      - id: c1.u03
+        title: "Il sottoscritto dichiara"
+        subtitle: "Bureaucratic language and implicit clauses"
+        authored: true
+        canDo:
+          - "Understand and fill in official forms and notices."
+          - "Use the absolute participle and the nominal infinitive."
+        grammar: [g.bureaucratic-italian, g.participio-assoluto, g.infinito-sostantivato]
+      - id: c1.u04
+        title: "Coesione e discorso"
+        subtitle: "Discourse and cohesion"
+        authored: true
+        canDo:
+          - "Structure long texts with advanced discourse markers."
+          - "Keep reference clear across paragraphs."
+        grammar: [g.discourse-markers-advanced, g.anaphora-cohesion, g.text-types]
+      - id: c1.u05
+        title: "In bocca al lupo!"
+        subtitle: "Idioms and proverbs"
+        authored: true
+        canDo:
+          - "Understand and use frequent idioms."
+          - "Use proverbs and fixed expressions appropriately."
+        grammar: [g.idioms, g.proverbs, g.fixed-expressions]
+      - id: c1.u06
+        title: "Studio e lavoro"
+        subtitle: "Academic and professional Italian"
+        authored: true
+        canDo:
+          - "Write reports, abstracts and professional emails."
+          - "Give a structured presentation."
+        grammar: [g.academic-register, g.nominalization, g.presentations]
+      - id: c1.u07
+        title: "Sintassi complessa"
+        subtitle: "Complex syntax"
+        authored: true
+        canDo:
+          - "Use long subordinated sentences with control."
+          - "Express conditions formally with qualora, purché and nel caso in cui."
+          - "Use marked word order for effect."
+        grammar: [g.subordination-implicit, g.conditional-conjunctions, g.word-order-marked]
+      - id: c1.u08
+        title: "Ma figurati!"
+        subtitle: "Pragmatics: politeness, irony and particles"
+        authored: true
+        canDo:
+          - "Soften requests and criticism with politeness strategies."
+          - "Understand irony and use discourse particles like mica, pure and dai."
+        grammar: [g.politeness-strategies, g.irony-humour, g.discourse-particles]
+      - id: c1.u09
+        title: "Verga e Pirandello"
+        subtitle: "Reading literature"
+        authored: true
+        canDo:
+          - "Read short stories and novels by Sicilian authors with support."
+          - "Recognise literary forms and free indirect speech."
+        grammar: [g.literary-language, g.discorso-indiretto-libero, g.enclitics-literary]
+      - id: c1.u10
+        title: "Titoli e parole"
+        subtitle: "Journalism, word formation and review"
+        authored: true
+        canDo:
+          - "Read headlines and news articles critically."
+          - "Work out meaning from word formation and avoid false friends."
+        grammar: [g.journalistic-language, g.word-formation, g.false-friends-advanced, g.c1-review]
+
+  - id: c2
+    title: C2
+    name: Mastery
+    description: Understand with ease virtually everything heard or read, from Dante to Roman street talk. Summarise and reconstruct arguments from different sources. Express yourself spontaneously, very fluently and precisely, differentiating finer shades of meaning.
+    wordTarget: 12000
+    canDo:
+      - Understand regional Italian and recognise the main dialects and their history.
+      - Read classic and contemporary literature with appreciation of style.
+      - Argue, persuade and translate with nuance and precision.
+      - Handle specialised registers in law, science and economics.
+      - "Play with language: humour, wordplay, slang and neologisms."
+    units:
+      - id: c2.u01
+        title: "Dialetti e varietà"
+        subtitle: "Dialects and regional varieties"
+        authored: true
+        canDo:
+          - "Explain the difference between dialects and regional Italian."
+          - "Recognise regional features in speech from different parts of Italy."
+          - "Understand how standard Italian came to be."
+        grammar: [g.dialects-overview, g.regional-italian-features, g.questione-della-lingua]
+      - id: c2.u02
+        title: "Nel mezzo del cammin"
+        subtitle: "Dante and early Italian"
+        authored: true
+        canDo:
+          - "Read passages of Dante and Petrarca with support."
+          - "Recognise archaic forms and poetic syntax."
+        grammar: [g.old-italian, g.archaic-forms, g.poetic-syntax]
+      - id: c2.u03
+        title: "Manzoni e Leopardi"
+        subtitle: "Nineteenth-century prose and verse"
+        authored: true
+        canDo:
+          - "Read Manzoni, Leopardi and Collodi in the original."
+          - "Analyse style, metre and literary devices."
+        grammar: [g.ottocento-prose, g.literary-devices, g.verse-metre]
+      - id: c2.u04
+        title: "L'arte della persuasione"
+        subtitle: "Rhetoric and persuasion"
+        authored: true
+        canDo:
+          - "Recognise and use rhetorical figures."
+          - "Write and analyse persuasive speeches and political language."
+        grammar: [g.rhetorical-figures, g.persuasion-structures, g.political-language]
+      - id: c2.u05
+        title: "Tradurre è tradire"
+        subtitle: "Translation and nuance"
+        authored: true
+        canDo:
+          - "Translate idiomatically in both directions."
+          - "Handle untranslatable words and anglicisms."
+        grammar: [g.translation-nuance, g.untranslatables, g.anglicisms-calques]
+      - id: c2.u06
+        title: "Linguaggi specialistici"
+        subtitle: "Specialised registers"
+        authored: true
+        canDo:
+          - "Read legal, scientific and economic texts."
+          - "Recognise the conventions of each specialised register."
+        grammar: [g.legal-register, g.scientific-register, g.economic-register]
+      - id: c2.u07
+        title: "Giochi di parole"
+        subtitle: "Wordplay, slang and neologisms"
+        authored: true
+        canDo:
+          - "Understand puns, slang and new words."
+          - "Be playful and creative in Italian."
+        grammar: [g.wordplay, g.slang-giovanile, g.neologisms]
+      - id: c2.u08
+        title: "Tutte le strade portano a Roma"
+        subtitle: "Back to Rome: native mastery"
+        authored: true
+        canDo:
+          - "Understand Roman speech and romanesco."
+          - "Sound natural in rhythm, idiom and discourse."
+          - "Review the whole course."
+        grammar: [g.romanesco, g.native-fluency-markers, g.c2-review]
