@@ -1,0 +1,296 @@
+id: a1.u05
+title: 一個、兩隻、三本
+lessons:
+  - id: a1.u05.l1
+    title: 一隻狗，三本書
+    teach: [g.classifiers-intro]
+    tip: "A number never goes straight before a noun: put a measure word in between. Learn each noun with its own measure word: 隻狗, 本書, 條魚."
+    vocab: [w.zek3, w.bun2, w.wai2, w.joeng6, w.gau2.b, w.maau1, w.zoek2, w.jyu2, w.maa5, w.gau2-zai2, w.maau1-zai2, w.syu1, w.bou2, w.zaap6-zi3, w.si6, w.gin6]
+    sentences:
+      - { es: "我有一隻狗。", en: "I have a dog.", altEs: ["我有隻狗。"], grammar: [g.classifiers-intro, g.jau-have], vocab: [w.zek3, w.gau2.b],
+          transform: { instruction: "Say you have two cats", answer: "我有兩隻貓。" },
+          error: { wrong: "我有一個狗。", explain: "Animals take 隻: 一隻狗.", grammar: g.common-classifiers } }
+      - { es: "佢有三本書。", en: "She has three books.", altEs: ["佢有三本書呀。"], altEn: ["He has three books."], grammar: [g.classifiers-intro], vocab: [w.bun2, w.syu1],
+          error: { wrong: "佢有三書。", explain: "A number needs a measure word before the noun: 三本書.", grammar: g.classifiers-intro } }
+      - { es: "上環有好多貓。", en: "There are lots of cats in Sheung Wan.", altEs: ["上環有好多隻貓。"], grammar: [g.jau-have], vocab: [w.maau1], note: "Many old shops in Sheung Wan keep a shop cat." }
+      - { es: "嗰間舖頭有兩隻貓仔。", en: "That shop has two kittens.", altEs: ["嗰間舖頭有兩隻貓。"], grammar: [g.classifiers-intro, g.loeng-vs-ji], vocab: [w.maau1-zai2] }
+      - { es: "我想買一條魚。", en: "I'd like to buy a fish.", altEs: ["我想買條魚。"], grammar: [g.classifiers-intro, g.jiu-want], vocab: [w.jyu2],
+          transform: { instruction: "Say you'd like to buy two fish", answer: "我想買兩條魚。" } }
+      - { es: "公園有幾隻雀。", en: "There are a few birds in the park.", altEs: ["公園入面有幾隻雀。"], grammar: [g.gei-how-many], vocab: [w.zoek2] }
+      - { es: "跑馬地有好多隻馬。", en: "There are lots of horses in Happy Valley.", altEs: ["跑馬地有好多馬。"], grammar: [g.jau-have], vocab: [w.maa5] }
+      - { es: "呢隻狗仔好得意。", en: "This puppy is really cute.", altEs: ["呢隻狗仔好可愛。"], grammar: [g.demonstratives], vocab: [w.gau2-zai2] }
+      - { es: "你有幾多本簿呀？", en: "How many exercise books do you have?", altEs: ["你有幾本簿呀？"], grammar: [g.gei-how-many], vocab: [w.bou2] }
+      - { es: "我買咗兩本雜誌。", en: "I bought two magazines.", altEs: ["我買咗兩本雜誌呀。"], grammar: [g.classifiers-intro, g.loeng-vs-ji], vocab: [w.zaap6-zi3] }
+      - { es: "我有一件事想問你。", en: "There's something I'd like to ask you.", altEs: ["我有件事想問你。"], grammar: [g.classifiers-intro], vocab: [w.si6, w.gin6] }
+      - { es: "我要三樣嘢。", en: "I want three things.", altEs: ["我要買三樣嘢。"], grammar: [g.classifiers-intro], vocab: [w.joeng6] }
+      - { es: "呢位係陳太。", en: "This is Mrs Chan.", altEs: ["呢位係陳太太。"], grammar: [g.common-classifiers, g.demonstratives], vocab: [w.wai2], jp: "ni1 wai2 hai6 can4 taai2", note: "位 is the polite measure word for people." }
+      - { es: "一個人，兩隻狗，三隻貓。", en: "One person, two dogs, three cats.", grammar: [g.classifiers-intro], vocab: [w.zek3], kinds: [dictation, listen, typeEs, order] }
+      - { es: "我有一件褸。", en: "I have a coat.", altEs: ["我有件褸。"], grammar: [g.common-classifiers], vocab: [w.gin6, w.lau1] }
+    exchanges:
+      - q: { es: "你有冇狗呀？", en: "Do you have a dog?" }
+        a: { es: "有，我有兩隻。", en: "Yes, I have two." }
+        alt: ["冇呀。", "有，一隻。"]
+        grammar: [g.classifiers-intro, g.jau-have]
+        vocab: [w.gau2.b, w.zek3]
+      - q: { es: "你有幾多本書呀？", en: "How many books do you have?" }
+        a: { es: "好多，差唔多一百本。", en: "Lots, about a hundred." }
+        alt: ["三本。", "唔多。"]
+        grammar: [g.classifiers-intro, g.gei-how-many]
+        vocab: [w.bun2, w.syu1]
+      - q: { es: "嗰間舖頭有冇貓呀？", en: "Does that shop have a cat?" }
+        a: { es: "有，有一隻好肥嘅貓。", en: "Yes, it has a very fat cat." }
+        alt: ["有呀。", "冇呀。"]
+        grammar: [g.jau-have]
+        vocab: [w.maau1]
+      - q: { es: "你想買乜嘢呀？", en: "What would you like to buy?" }
+        a: { es: "我想買兩條魚。", en: "I'd like to buy two fish." }
+        alt: ["一條魚，唔該。", "兩條魚。"]
+        grammar: [g.classifiers-intro, g.jiu-want]
+        vocab: [w.jyu2]
+      - q: { es: "你有冇時間？我有件事想問你。", en: "Have you got a moment? There's something I want to ask you." }
+        a: { es: "有，乜嘢事呀？", en: "Sure, what is it?" }
+        alt: ["有呀，你講啦。", "冇呀，對唔住。"]
+        grammar: [g.classifiers-intro]
+        vocab: [w.si6]
+    texts:
+      - title: "上環"
+        es: ["上環有好多舊舖頭。", "好多舖頭都有一隻貓。", "我最鍾意嗰隻好肥嘅貓。"]
+        en: ["Sheung Wan has lots of old shops.", "Lots of the shops have a cat.", "My favourite is that very fat cat."]
+        grammar: [g.classifiers-intro]
+        vocab: [w.maau1, w.zek3]
+      - title: "我屋企"
+        es: ["我屋企有兩隻狗同一條魚。", "我有好多本書。", "我冇貓。"]
+        en: ["At home I have two dogs and a fish.", "I have lots of books.", "I don't have a cat."]
+        grammar: [g.classifiers-intro, g.jau-have]
+        vocab: [w.gau2.b, w.jyu2, w.syu1]
+    spicy:
+      - { es: "我有一隻狗、兩隻貓，仲有好多時間畀你。", en: "I have a dog, two cats, and lots of time for you.", altEs: ["我有一隻狗同兩隻貓，仲有好多時間畀你。"], grammar: [g.classifiers-intro], vocab: [w.zek3], jp: "ngo5 jau5 jat1 zek3 gau2 loeng5 zek3 maau1 zung6 jau5 hou2 do1 si4 gaan3 bei2 nei5" }
+      - { es: "我隻狗好鍾意你，我都係。", en: "My dog really likes you. So do I.", altEs: ["我隻狗好鍾意你，我都好鍾意。"], grammar: [g.classifier-as-the, g.dou-also], vocab: [w.gau2.b] }
+      - { es: "我有一件事想同你講：你好靚。", en: "There's something I want to tell you: you're gorgeous.", altEs: ["我有件事想同你講：你好靚。"], grammar: [g.classifiers-intro], vocab: [w.si6, w.gin6] }
+      - { es: "我讀咗好多本書，冇一本有你咁好睇。", en: "I've read lots of books, and not one is as nice to look at as you.", altEs: ["我睇咗好多本書，冇一本有你咁好睇。"], grammar: [g.classifiers-intro], vocab: [w.bun2, w.syu1] }
+      - { es: "你隻貓仔好得意，好似你咁。", en: "Your kitten is so cute, just like you.", altEs: ["你隻貓仔好可愛，好似你咁。"], grammar: [g.classifier-as-the], vocab: [w.maau1-zai2] }
+  - id: a1.u05.l2
+    title: 一張枱、一條褲、一杯茶
+    teach: [g.common-classifiers]
+    tip: "Measure words follow shape: 張 for flat things (枱, 床, 紙), 條 for long thin things (魚, 鎖匙, 褲), 枝 for sticks (筆), 把 for things with a handle (遮). Containers work too: 一杯茶, 一碗飯."
+    vocab: [w.zoeng1.b, w.tiu4, w.bui1, w.wun2, w.deoi3, w.zi1.b, w.nap1, w.faai3, w.baa2, w.hap2, w.baau1, w.zi2, w.bat1, w.toi2, w.syu1-toi2, w.ji2, w.cong4, w.mun4, w.coeng1, w.ze1, w.so2-si4, w.lau1, w.zeon1, w.bou3-zi2]
+    sentences:
+      - { es: "我要一張紙同一枝筆。", en: "I need a sheet of paper and a pen.", altEs: ["我要張紙同枝筆。", "唔該畀張紙同一枝筆我。"], grammar: [g.common-classifiers], vocab: [w.zoeng1.b, w.zi2, w.zi1.b, w.bat1],
+          transform: { instruction: "Ask for two pens instead", answer: "我要兩枝筆。" } }
+      - { es: "我間房有一張床同一張書枱。", en: "My room has a bed and a desk.", altEs: ["我間房有張床同張書枱。"], grammar: [g.common-classifiers, g.classifier-as-the], vocab: [w.cong4, w.syu1-toi2], jp: "ngo5 gaan1 fong2 jau5 jat1 zoeng1 cong4 tung4 jat1 zoeng1 syu1 toi2" }
+      - { es: "嗰度有四張椅同一張枱。", en: "There are four chairs and a table over there.", altEs: ["嗰度有四張椅同埋一張枱。"], grammar: [g.common-classifiers], vocab: [w.ji2, w.toi2] }
+      - { es: "一杯奶茶，唔該。", en: "A milk tea, please.", altEs: ["唔該，一杯奶茶。", "奶茶，唔該。"], grammar: [g.common-classifiers], vocab: [w.bui1] }
+      - { es: "我要一碗飯。", en: "I'd like a bowl of rice.", altEs: ["一碗飯，唔該。"], grammar: [g.common-classifiers], vocab: [w.wun2],
+          transform: { instruction: "Ask for two bowls", answer: "我要兩碗飯。", alt: ["兩碗飯，唔該。"] } }
+      - { es: "一對筷子，唔該。", en: "A pair of chopsticks, please.", altEs: ["唔該畀對筷子我。"], grammar: [g.common-classifiers], vocab: [w.deoi3] }
+      - { es: "我條鎖匙喺邊度呀？", en: "Where's my key?", altEs: ["我條鎖匙呢？"], grammar: [g.common-classifiers, g.classifier-as-the], vocab: [w.tiu4, w.so2-si4],
+          error: { wrong: "我個鎖匙喺邊度呀？", explain: "A key is long and thin, so it takes 條: 我條鎖匙.", grammar: g.common-classifiers } }
+      - { es: "落雨喇，帶把遮啦。", en: "It's raining. Take an umbrella.", altEs: ["落緊雨，帶把遮啦。"], grammar: [g.common-classifiers], vocab: [w.baa2, w.ze1] }
+      - { es: "一粒糖，兩塊麵包。", en: "One sweet and two slices of bread.", grammar: [g.common-classifiers], vocab: [w.nap1, w.faai3], kinds: [dictation, listen, typeEs, order] }
+      - { es: "佢買咗一盒糖。", en: "She bought a box of sweets.", altEs: ["佢買咗盒糖。"], altEn: ["He bought a box of sweets."], grammar: [g.common-classifiers], vocab: [w.hap2] }
+      - { es: "我想買一包米。", en: "I want to buy a bag of rice.", altEs: ["我想買包米。"], grammar: [g.common-classifiers, g.jiu-want], vocab: [w.baau1] }
+      - { es: "唔該開咗隻窗佢。", en: "Please open the window.", altEs: ["唔該你開窗。"], grammar: [g.common-classifiers, g.classifier-as-the], vocab: [w.coeng1] }
+      - { es: "度門好舊。", en: "The door is very old.", altEs: ["嗰度門好舊。"], grammar: [g.common-classifiers, g.classifier-as-the], vocab: [w.mun4], note: "Doors take 度: 一度門." }
+      - { es: "我件褸喺你屋企。", en: "My coat is at your place.", altEs: ["我件褸喺你度。"], grammar: [g.common-classifiers, g.classifier-as-the], vocab: [w.lau1] }
+      - { es: "兩樽水，唔該。", en: "Two bottles of water, please.", altEs: ["唔該，兩樽水。"], grammar: [g.common-classifiers], vocab: [w.zeon1] }
+      - { es: "我爸爸日日都睇一份報紙。", en: "My dad reads a newspaper every day.", altEs: ["我阿爸日日都睇報紙。"], grammar: [g.common-classifiers], vocab: [w.bou3-zi2] }
+    exchanges:
+      - q: { es: "你要乜嘢呀？", en: "What would you like?" }
+        a: { es: "一杯奶茶，一碗粥，唔該。", en: "A milk tea and a bowl of congee, please." }
+        alt: ["一杯奶茶，唔該。", "一碗粥。"]
+        grammar: [g.common-classifiers]
+        vocab: [w.bui1, w.wun2]
+      - q: { es: "你有冇筆呀？", en: "Do you have a pen?" }
+        a: { es: "有，我有兩枝。", en: "Yes, I have two." }
+        alt: ["有，畀你。", "冇呀，對唔住。"]
+        grammar: [g.common-classifiers]
+        vocab: [w.bat1, w.zi1.b]
+      - q: { es: "我條鎖匙呢？", en: "Where's my key?" }
+        a: { es: "喺張枱度。", en: "On the table." }
+        alt: ["喺書枱度。", "我唔知呀。"]
+        grammar: [g.common-classifiers, g.ne-follow-up]
+        vocab: [w.so2-si4, w.toi2]
+      - q: { es: "落緊雨，你有冇遮呀？", en: "It's raining outside. Do you have an umbrella?" }
+        a: { es: "有，我有一把。", en: "Yes, I've got one." }
+        alt: ["冇呀。", "有，喺我度。"]
+        grammar: [g.common-classifiers]
+        vocab: [w.ze1, w.baa2]
+      - q: { es: "你要幾多樽水呀？", en: "How many bottles of water do you want?" }
+        a: { es: "三樽，唔該。", en: "Three, please." }
+        alt: ["一樽。", "兩樽，唔該。"]
+        grammar: [g.common-classifiers, g.gei-how-many]
+        vocab: [w.zeon1]
+    texts:
+      - title: "我間房"
+        es: ["我間房好細。", "入面有一張床、一張書枱同一張椅。", "仲有一隻窗。"]
+        en: ["My room is very small.", "Inside there's a bed, a desk and a chair.", "And there's a window."]
+        grammar: [g.common-classifiers]
+        vocab: [w.cong4, w.syu1-toi2, w.ji2, w.coeng1]
+      - title: "WhatsApp"
+        es: ["你見唔見到我條鎖匙呀？", "我諗喺你屋企張枱度。", "唔該晒！"]
+        en: ["Have you seen my key?", "I think it's on the table at your place.", "Thanks a lot!"]
+        grammar: [g.common-classifiers, g.classifier-as-the]
+        vocab: [w.so2-si4, w.toi2]
+    spicy:
+      - { es: "兩杯咖啡，一張枱，你同我。", en: "Two coffees, one table, you and me.", altEs: ["兩杯咖啡、一張枱、你同我。"], grammar: [g.common-classifiers], vocab: [w.bui1, w.toi2] }
+      - { es: "落雨喇，我得一把遮，一齊行啦。", en: "It's raining and I've only got one umbrella. Let's walk together.", altEs: ["落雨喇，我淨係得一把遮，一齊行啦。"], grammar: [g.common-classifiers], vocab: [w.baa2, w.ze1], jp: "lok6 jyu5 laa3 ngo5 dak1 jat1 baa2 ze1 jat1 cai4 haang4 laa1" }
+      - { es: "一盒糖畀你，不過冇你咁甜。", en: "A box of sweets for you, though nothing's as sweet as you.", altEs: ["一盒糖畀你，不過都冇你咁甜。"], grammar: [g.common-classifiers], vocab: [w.hap2] }
+      - { es: "你件褸喺我度，你要嚟拎喎。", en: "Your coat is at my place. You'll have to come and get it.", altEs: ["你件褸喺我屋企，你要嚟拎喎。"], grammar: [g.classifier-as-the], vocab: [w.lau1] }
+      - { es: "我畀咗張紙仔你，入面有我電話號碼。", en: "I gave you a little note, with my phone number inside.", altEs: ["我畀咗張紙你，入面有我電話號碼。"], grammar: [g.common-classifiers], vocab: [w.zi2] }
+  - id: a1.u05.l3
+    title: 呢個定嗰個？
+    teach: [g.demonstratives, g.classifier-as-the]
+    tip: "呢 'this' and 嗰 'that' always need a measure word: 呢本書, 嗰隻貓. A bare measure word + noun means 'the', and after a pronoun it means 'my, your': 我部手機."
+    vocab: [w.ni1, w.go2, w.ni1-go3, w.go2-go3, w.ni1-di1, w.go2-di1, w.bin1, w.soeng2, w.jing2-soeng2, w.din6-si6, w.doi2, w.gaau1-doi2, w.ngan4-baau1]
+    sentences:
+      - { es: "我要呢個。", en: "I'll take this one.", altEs: ["我要呢個呀。", "呢個，唔該。"], grammar: [g.demonstratives], vocab: [w.ni1-go3],
+          transform: { instruction: "Say you want that one", answer: "我要嗰個。" } }
+      - { es: "嗰個人係邊個呀？", en: "Who's that person?", altEs: ["嗰個係邊個呀？"], grammar: [g.demonstratives, g.question-words], vocab: [w.go2-go3] }
+      - { es: "呢本書係我嘅。", en: "This book is mine.", altEs: ["呢本書係我㗎。"], grammar: [g.demonstratives], vocab: [w.ni1],
+          error: { wrong: "呢書係我嘅。", explain: "呢 and 嗰 need a measure word: 呢本書.", grammar: g.demonstratives } }
+      - { es: "嗰隻貓好肥。", en: "That cat is very fat.", altEs: ["嗰隻貓好肥呀。"], grammar: [g.demonstratives], vocab: [w.go2] }
+      - { es: "呢啲係乜嘢呀？", en: "What are these?", altEs: ["呢啲係咩嚟㗎？"], grammar: [g.demonstratives], vocab: [w.ni1-di1] }
+      - { es: "嗰啲係海味。", en: "Those are dried seafood.", altEs: ["嗰啲係海味嚟㗎。"], grammar: [g.demonstratives], vocab: [w.go2-di1], note: "Sheung Wan's streets are famous for dried seafood shops." }
+      - { es: "你要邊個呀？", en: "Which one do you want?", altEs: ["你要邊個？"], grammar: [g.demonstratives, g.question-words], vocab: [w.bin1] }
+      - { es: "你鍾意邊本書呀？", en: "Which book do you like?", altEs: ["你鍾意邊本呀？"], grammar: [g.demonstratives], vocab: [w.bin1] }
+      - { es: "呢三本書都係我嘅。", en: "These three books are all mine.", altEs: ["呢三本書全部都係我嘅。"], grammar: [g.demonstratives, g.dou-also], vocab: [w.ni1], jp: "ni1 saam1 bun2 syu1 dou1 hai6 ngo5 ge3",
+          error: { wrong: "三呢本書都係我嘅。", explain: "The order is demonstrative + number + measure word: 呢三本書.", grammar: g.demonstratives } }
+      - { es: "我部手機喺張枱度。", en: "My phone is on the table.", altEs: ["我部手機喺枱度。"], grammar: [g.classifier-as-the, g.hai2-location], vocab: [w.toi2] }
+      - { es: "隻貓喺張床度。", en: "The cat is on the bed.", altEs: ["隻貓喺床度。"], grammar: [g.classifier-as-the], vocab: [w.maau1], note: "A bare measure word at the start means 'the'." }
+      - { es: "你部電視好大。", en: "Your TV is really big.", altEs: ["你部電視好大呀。"], grammar: [g.classifier-as-the], vocab: [w.din6-si6],
+          transform: { instruction: "Say 'my TV is very old'", answer: "我部電視好舊。" } }
+      - { es: "我想喺文武廟度影相。", en: "I'd like to take photos at Man Mo Temple.", altEs: ["我想喺文武廟影相。"], grammar: [g.hai2-location], vocab: [w.jing2-soeng2] }
+      - { es: "呢張相好靚。", en: "This photo is beautiful.", altEs: ["呢張相好好睇。"], grammar: [g.demonstratives], vocab: [w.soeng2], jp: "ni1 zoeng1 soeng2 hou2 leng3" }
+      - { es: "我個銀包唔喺個袋度。", en: "My wallet isn't in the bag.", altEs: ["我個銀包唔喺袋度。"], grammar: [g.classifier-as-the, g.m-negation], vocab: [w.ngan4-baau1, w.doi2], jp: "ngo5 go3 ngan4 baau1 m4 hai2 go3 doi2 dou6" }
+      - { es: "你要唔要膠袋呀？", en: "Do you want a plastic bag?", altEs: ["你使唔使膠袋呀？", "要唔要膠袋呀？"], grammar: [g.a-not-a-questions], vocab: [w.gaau1-doi2] }
+    exchanges:
+      - q: { es: "你要呢個定嗰個呀？", en: "Do you want this one or that one?" }
+        a: { es: "我要嗰個。", en: "I'll have that one." }
+        alt: ["呢個。", "兩個都要。"]
+        grammar: [g.demonstratives]
+        vocab: [w.ni1-go3, w.go2-go3]
+      - q: { es: "嗰啲係乜嘢呀？", en: "What are those?" }
+        a: { es: "嗰啲係海味。", en: "Those are dried seafood." }
+        alt: ["我都唔知。", "係海味嚟㗎。"]
+        grammar: [g.demonstratives]
+        vocab: [w.go2-di1]
+      - q: { es: "你部手機呢？", en: "Where's your phone?" }
+        a: { es: "喺我個銀包隔籬。", en: "Next to my wallet." }
+        alt: ["喺屋企。", "我唔知呀。"]
+        grammar: [g.classifier-as-the]
+        vocab: [w.ngan4-baau1]
+      - q: { es: "要唔要膠袋呀？", en: "Do you want a plastic bag?" }
+        a: { es: "唔要，唔該。", en: "No, thanks." }
+        alt: ["要，唔該。", "唔使喇。"]
+        grammar: [g.a-not-a-questions]
+        vocab: [w.gaau1-doi2]
+      - q: { es: "你鍾意邊隻貓呀？", en: "Which cat do you like?" }
+        a: { es: "嗰隻肥肥哋嘅。", en: "That chubby one." }
+        alt: ["嗰隻。", "兩隻都鍾意。"]
+        grammar: [g.demonstratives]
+        vocab: [w.bin1, w.go2]
+    texts:
+      - title: "文武廟"
+        es: ["呢度係上環嘅文武廟。", "好多遊客喺度影相。", "嗰啲遊客都好鍾意呢度。"]
+        en: ["This is Man Mo Temple in Sheung Wan.", "Lots of tourists take photos here.", "Those tourists all love this place."]
+        grammar: [g.demonstratives]
+        vocab: [w.jing2-soeng2, w.go2-di1]
+      - title: "WhatsApp"
+        es: ["我部手機冇電喇。", "我個銀包喺你度嗎？", "唔該你睇吓。"]
+        en: ["My phone's battery is dead.", "Is my wallet at your place?", "Please have a look."]
+        grammar: [g.classifier-as-the]
+        vocab: [w.ngan4-baau1]
+    spicy:
+      - { es: "呢個係我電話號碼，嗰個係我WhatsApp，你揀啦。", en: "This is my phone number and that's my WhatsApp. Take your pick.", altEs: ["呢個係我電話號碼，嗰個係我WhatsApp。你揀啦。"], grammar: [g.demonstratives], vocab: [w.ni1-go3, w.go2-go3] }
+      - { es: "我要呢杯咖啡，同埋嗰個靚仔。", en: "I'll have this coffee, and that handsome guy.", altEs: ["我要呢杯咖啡，同埋嗰個靚女。"], altEn: ["I'll have this coffee, and that pretty girl."], grammar: [g.demonstratives], vocab: [w.go2-go3], jp: "ngo5 jiu3 ni1 bui1 gaa3 fe1 tung4 maai4 go2 go3 leng3 zai2" }
+      - { es: "我部手機有好多相，最靚嗰張係你。", en: "My phone has lots of photos, and the best one is of you.", altEs: ["我部手機有好多相，最靚嗰張係你嘅。"], grammar: [g.classifier-as-the], vocab: [w.soeng2], jp: "ngo5 bou6 sau2 gei1 jau5 hou2 do1 soeng2 zeoi3 leng3 go2 zoeng1 hai6 nei5" }
+      - { es: "嗰啲花係畀你嘅。", en: "Those flowers are for you.", altEs: ["嗰啲花畀你㗎。"], grammar: [g.demonstratives], vocab: [w.go2-di1] }
+      - { es: "我哋一齊影張相，好唔好呀？", en: "Shall we take a photo together?", altEs: ["我哋一齊影相，好唔好？"], grammar: [g.common-classifiers], vocab: [w.jing2-soeng2], jp: "ngo5 dei6 jat1 cai4 jing2 zoeng1 soeng2 hou2 m4 hou2 aa3" }
+  - id: a1.u05.l4
+    title: 啲書好重
+    teach: [g.di-some]
+    tip: "啲 is the measure word for plurals and uncountable things: 啲書 'the books', 買啲生果 'buy some fruit'. After an adjective it means 'a bit more': 大啲, 平啲."
+    vocab: [w.di1, w.jat1-di1, w.daai6, w.sai3, w.san1, w.gau6, w.coeng4, w.dyun2, w.cung5, w.heng1]
+    sentences:
+      - { es: "啲書好重。", en: "The books are very heavy.", altEs: ["呢啲書好重。"], grammar: [g.di-some], vocab: [w.di1, w.cung5], jp: "di1 syu1 hou2 cung5" }
+      - { es: "我想買啲水果。", en: "I'd like to buy some fruit.", altEs: ["我想買啲生果。"], grammar: [g.di-some, g.jiu-want], vocab: [w.di1] }
+      - { es: "你飲啲水啦。", en: "Have some water.", altEs: ["飲啲水啦。"], grammar: [g.di-some], vocab: [w.di1] }
+      - { es: "啲海味好貴。", en: "The dried seafood is very expensive.", altEs: ["呢啲海味好貴。"], grammar: [g.di-some], vocab: [w.di1] }
+      - { es: "我想要一啲茶。", en: "I'd like a little tea.", altEs: ["我要少少茶。"], grammar: [g.di-some], vocab: [w.jat1-di1] }
+      - { es: "呢間舖頭好細，但係啲嘢好靚。", en: "This shop is very small, but the things are lovely.", altEs: ["呢間舖頭好細，不過啲嘢好靚。"], grammar: [g.di-some], vocab: [w.sai3] }
+      - { es: "我部手機好舊，我想買部新嘅。", en: "My phone is very old. I want to buy a new one.", altEs: ["我部手機好舊，想買部新嘅。"], grammar: [g.classifier-as-the], vocab: [w.gau6, w.san1] }
+      - { es: "呢條褲太長，有冇短啲嘅？", en: "These trousers are too long. Do you have shorter ones?", altEs: ["呢條褲太長喇，有冇短啲嘅？"], grammar: [g.di-some], vocab: [w.coeng4, w.dyun2], jp: "ni1 tiu4 fu3 taai3 coeng4 jau5 mou5 dyun2 di1 ge3",
+          transform: { instruction: "Say they're too short and ask for longer ones", answer: "呢條褲太短，有冇長啲嘅？", alt: ["呢條褲太短喇，有冇長啲嘅？"] } }
+      - { es: "呢個袋好輕。", en: "This bag is very light.", altEs: ["呢個袋好輕呀。"], grammar: [g.demonstratives], vocab: [w.heng1], jp: "ni1 go3 doi2 hou2 heng1",
+          transform: { instruction: "Say it's very heavy", answer: "呢個袋好重。" } }
+      - { es: "我要大啲嘅。", en: "I want a bigger one.", altEs: ["有冇大啲嘅？"], altEn: ["I'd like a bigger one."], grammar: [g.di-some], vocab: [w.daai6],
+          error: { wrong: "我要啲大嘅。", explain: "'A bit bigger' is adjective + 啲: 大啲. 啲大嘅 would mean 'the big ones'.", grammar: g.di-some } }
+      - { es: "講慢啲，唔該。", en: "Speak a bit more slowly, please.", altEs: ["唔該講慢啲。"], grammar: [g.di-some], vocab: [w.di1] }
+      - { es: "我啲朋友都喺上環。", en: "My friends are all in Sheung Wan.", altEs: ["我啲朋友全部都喺上環。"], grammar: [g.di-some, g.dou-also], vocab: [w.di1] }
+      - { es: "我買咗三本書。", en: "I bought three books.", altEs: ["我買咗三本書呀。"], grammar: [g.classifiers-intro], vocab: [w.syu1],
+          error: { wrong: "我買咗三啲書。", explain: "啲 never takes a number. With a number use the noun's own measure word: 三本書.", grammar: g.di-some } }
+      - { es: "嗰隻狗好大，呢隻好細。", en: "That dog is big and this one is small.", altEs: ["嗰隻狗好大，呢隻狗好細。"], grammar: [g.demonstratives], vocab: [w.daai6, w.sai3], jp: "go2 zek3 gau2 hou2 daai6 ni1 zek3 hou2 sai3" }
+      - { es: "快啲啦！", en: "Hurry up!", altEs: ["快啲啦，就嚟遲到喇！"], grammar: [g.di-some], vocab: [w.di1] }
+    exchanges:
+      - q: { es: "你想買乜嘢呀？", en: "What would you like to buy?" }
+        a: { es: "我想買啲海味。", en: "I'd like to buy some dried seafood." }
+        alt: ["啲生果。", "我想買啲茶。"]
+        grammar: [g.di-some]
+        vocab: [w.di1]
+      - q: { es: "呢件褸啱唔啱呀？", en: "Does this coat fit?" }
+        a: { es: "太細喇，有冇大啲嘅？", en: "It's too small. Do you have a bigger one?" }
+        alt: ["好啱。", "太大喇。"]
+        grammar: [g.di-some]
+        vocab: [w.sai3, w.daai6]
+      - q: { es: "啲點心好唔好食呀？", en: "Is the dim sum good?" }
+        a: { es: "好好食！你食啲啦。", en: "Delicious! Have some." }
+        alt: ["好好食。", "麻麻哋。"]
+        grammar: [g.di-some]
+        vocab: [w.di1]
+      - q: { es: "你部手機係咪新嘅？", en: "Is your phone new?" }
+        a: { es: "唔係，好舊喇。", en: "No, it's really old." }
+        alt: ["係呀，新嘅。", "唔係，舊嘅。"]
+        grammar: [g.classifier-as-the]
+        vocab: [w.san1, w.gau6]
+      - q: { es: "你要唔要飲一啲茶呀？", en: "Would you like a little tea?" }
+        a: { es: "好呀，唔該。", en: "Yes, please." }
+        alt: ["唔使喇，唔該。", "好呀。"]
+        grammar: [g.di-some]
+        vocab: [w.jat1-di1]
+    texts:
+      - title: "上環嘅舖頭"
+        es: ["上環有好多舊舖頭。", "啲舖頭賣海味同中藥。", "啲嘢好貴，不過好新鮮。"]
+        en: ["Sheung Wan has lots of old shops.", "The shops sell dried seafood and Chinese medicine.", "The goods are expensive, but very fresh."]
+        grammar: [g.di-some]
+        vocab: [w.di1, w.gau6]
+      - title: "WhatsApp"
+        es: ["我買咗好多嘢，好攰呀。", "你可唔可以嚟同我拎啲嘢？", "快啲嚟啦！"]
+        en: ["I've bought so much stuff, I'm exhausted.", "Can you come and carry the things for me?", "Come quickly!"]
+        grammar: [g.di-some]
+        vocab: [w.di1]
+    spicy:
+      - { es: "你可唔可以行近啲？我想睇真啲你。", en: "Could you come a bit closer? I want to see you better.", altEs: ["你行近啲吖，我想睇真啲你。"], grammar: [g.di-some], vocab: [w.di1], jp: "nei5 ho2 m4 ho2 ji5 haang4 kan5 di1 ngo5 soeng2 tai2 zan1 di1 nei5" }
+      - { es: "啲花好靚，不過你靚啲。", en: "The flowers are lovely, but you're lovelier.", altEs: ["啲花好靚，但係你靚啲。"], grammar: [g.di-some], vocab: [w.di1] }
+      - { es: "我啲朋友都話你好靚仔。", en: "My friends all say you're really handsome.", altEs: ["我啲朋友都話你好靚女。"], altEn: ["My friends all say you're really pretty."], grammar: [g.di-some, g.dou-also], vocab: [w.di1] }
+      - { es: "你講多啲嘢啦，我鍾意聽你把聲。", jp: "nei5 gong2 do1 di1 je5 laa1 ngo5 zung1 ji3 teng1 nei5 baa2 seng1", en: "Say a bit more. I love hearing your voice.", altEs: ["講多啲啦，我鍾意聽你把聲。"], grammar: [g.di-some], vocab: [w.di1] }
+      - { es: "我個袋好重，你可唔可以同我拎？", en: "My bag is so heavy. Could you carry it for me?", altEs: ["我個袋好重呀，你同我拎吖。"], grammar: [g.classifier-as-the], vocab: [w.cung5], jp: "ngo5 go3 doi2 hou2 cung5 nei5 ho2 m4 ho2 ji5 tung4 ngo5 ling1" }
+dialogues:
+  - id: a1.u05.d1
+    title: 上環嘅海味舖
+    context: Sam and Mandy go into an old dried-seafood shop in Sheung Wan. The shop has a cat.
+    lines:
+      - { speaker: 老闆, es: "歡迎！想買啲乜嘢呀？", en: "Welcome! What would you like?" }
+      - { speaker: Sam, es: "嗰啲係乜嘢呀？", en: "What are those?" }
+      - { speaker: 老闆, es: "嗰啲係海味，好新鮮㗎。", en: "Those are dried seafood. Very fresh." }
+      - { speaker: Mandy, es: "我想買啲畀我阿媽。", en: "I'd like to buy some for my mum." }
+      - { speaker: 老闆, es: "你要呢啲定嗰啲呀？", en: "Do you want these or those?" }
+      - { speaker: Mandy, es: "我要嗰啲，唔該。", en: "I'll have those, please." }
+      - { speaker: Sam, es: "嘩，嗰隻貓好肥呀！佢叫咩呀？", en: "Wow, that cat is so fat! What's he called?" }
+      - { speaker: 老闆, es: "佢叫肥仔，日日都喺張枱度瞓覺。", en: "He's called Fatty. He sleeps on the table every day." }
+      - { speaker: Sam, es: "我可唔可以同佢影相呀？", en: "Can I take a photo with him?" }
+      - { speaker: 老闆, es: "得，冇問題！", en: "Sure, no problem!" }
+    questions:
+      - { q: "嗰啲係乜嘢呀？", options: ["海味", "生果", "書"], answer: 0, explain: "The owner says 嗰啲係海味: those are dried seafood." }
+      - { q: "Mandy買啲海味畀邊個？", options: ["畀Sam", "畀佢阿媽", "畀老闆"], answer: 1, explain: "我想買啲畀我阿媽: for her mum." }
+      - { q: "隻貓叫咩名呀？", options: ["肥仔", "Luna", "阿明"], answer: 0, explain: "佢叫肥仔: the cat is called Fatty." }
+      - { q: "隻貓日日喺邊度瞓覺？", options: ["喺張床度", "喺張枱度", "喺門口"], answer: 1, explain: "日日都喺張枱度瞓覺: on the table." }

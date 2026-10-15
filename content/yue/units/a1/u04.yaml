@@ -1,0 +1,298 @@
+id: a1.u04
+title: 數字同電話號碼
+lessons:
+  - id: a1.u04.l1
+    title: 一、二、三
+    teach: [g.numbers-1-99]
+    tip: "Build 11–99 from 一 to 十: 十五 is 15, 五十 is 50, 五十五 is 55. In fast speech 二十一 becomes 廿一."
+    vocab: [w.ling4, w.jat1, w.ji6, w.saam1, w.sei3, w.ng5, w.luk6, w.cat1, w.baat3, w.gau2, w.sap6, w.jaa6, w.saa1, w.sou2, w.sou3-zi6]
+    sentences:
+      - { es: "一、二、三、四、五。", en: "One, two, three, four, five.", grammar: [g.numbers-1-99], vocab: [w.jat1, w.ji6, w.saam1, w.sei3, w.ng5], kinds: [dictation, listen, typeEs, order] }
+      - { es: "六、七、八、九、十。", en: "Six, seven, eight, nine, ten.", grammar: [g.numbers-1-99], vocab: [w.luk6, w.cat1, w.baat3, w.gau2, w.sap6], kinds: [dictation, listen, typeEs, order] }
+      - { es: "十一、十二、十三、十四、十五。", en: "Eleven, twelve, thirteen, fourteen, fifteen.", grammar: [g.numbers-1-99], vocab: [w.sap6], kinds: [dictation, listen, typeEs, order] }
+      - { es: "二十、三十、四十、五十。", en: "Twenty, thirty, forty, fifty.", grammar: [g.numbers-1-99], vocab: [w.ji6, w.sap6], kinds: [dictation, listen, typeEs, order] }
+      - { es: "廿一、廿二、廿三。", en: "Twenty-one, twenty-two, twenty-three.", altEs: ["二十一、二十二、二十三。"], grammar: [g.numbers-1-99], vocab: [w.jaa6], kinds: [dictation, listen, typeEs, order] }
+      - { es: "六十、七十、八十、九十。", en: "Sixty, seventy, eighty, ninety.", grammar: [g.numbers-1-99], vocab: [w.luk6, w.cat1, w.baat3, w.gau2], kinds: [dictation, listen, typeEs, order] }
+      - { es: "十四唔係四十。", en: "Fourteen isn't forty.", altEs: ["十四同四十唔同。"], grammar: [g.numbers-1-99, g.m-negation], vocab: [w.sap6, w.sei3] }
+      - { es: "我數到十。", en: "I'll count to ten.", altEs: ["我數到十呀。"], altEn: ["I'm counting to ten."], grammar: [g.numbers-1-99], vocab: [w.sou2] }
+      - { es: "你識唔識用廣東話數數字呀？", en: "Can you count in Cantonese?", altEs: ["你識用廣東話數數字嗎？"], grammar: [g.numbers-1-99, g.a-not-a-questions], vocab: [w.sou2, w.sou3-zi6] }
+      - { es: "呢個數字係幾多呀？", en: "What number is this?", altEs: ["呢個係幾多呀？"], grammar: [g.numbers-1-99], vocab: [w.sou3-zi6] }
+      - { es: "坐船過海要差唔多十分鐘。", en: "Crossing the harbour by boat takes about ten minutes.", altEs: ["坐船過海差唔多十分鐘。"], grammar: [g.numbers-1-99], vocab: [w.sap6],
+          transform: { instruction: "Say it takes about twenty minutes", answer: "坐船過海要差唔多二十分鐘。", alt: ["坐船過海要差唔多廿分鐘。", "坐船過海差唔多二十分鐘。"] } }
+      - { es: "今日三十三度，好熱呀！", en: "It's thirty-three degrees today. So hot!", altEs: ["今日有三十三度，好熱！"], grammar: [g.numbers-1-99], vocab: [w.saam1] }
+      - { es: "卅五就係三十五。", en: "卅五 just means thirty-five.", altEs: ["卅五即係三十五。"], grammar: [g.numbers-1-99], vocab: [w.saa1] }
+      - { es: "我住喺二十四樓。", en: "I live on the twenty-fourth floor.", altEs: ["我住喺廿四樓。"], grammar: [g.numbers-1-99, g.hai2-location], vocab: [w.ji6, w.sei3], jp: "ngo5 zyu6 hai2 ji6 sap6 sei3 lau2",
+          transform: { instruction: "Use the spoken shortcut for 24", answer: "我住喺廿四樓。" },
+          error: { wrong: "我住喺兩十四樓。", explain: "Inside numbers, 'two' is 二: 二十四. 兩 is only for 'two of something'.", grammar: g.loeng-vs-ji } }
+      - { es: "呢度有三十個人。", en: "There are thirty people here.", altEs: ["呢度有卅個人。"], grammar: [g.numbers-1-99, g.classifiers-intro], vocab: [w.saam1],
+          error: { wrong: "呢度有三十人。", explain: "A number needs a measure word before the noun: 三十個人.", grammar: g.classifiers-intro } }
+      - { es: "零、一、二。", en: "Zero, one, two.", grammar: [g.numbers-1-99], vocab: [w.ling4, w.jat1, w.ji6], kinds: [dictation, listen, typeEs, order] }
+    exchanges:
+      - q: { es: "一加一係幾多呀？", en: "What's one plus one?" }
+        a: { es: "二。", en: "Two." }
+        alt: ["係二。", "一加一係二。"]
+        grammar: [g.numbers-1-99]
+        vocab: [w.ji6]
+      - q: { es: "今日幾多度呀？", en: "How many degrees is it today?" }
+        a: { es: "三十二度，好熱！", en: "Thirty-two degrees. Very hot!" }
+        alt: ["三十度。", "廿八度。"]
+        grammar: [g.numbers-1-99]
+        vocab: [w.saam1]
+      - q: { es: "你識唔識用廣東話數到十呀？", en: "Can you count to ten in Cantonese?" }
+        a: { es: "識，一、二、三、四、五、六、七、八、九、十！", en: "Yes: one, two, three, four, five, six, seven, eight, nine, ten!" }
+        alt: ["識少少。", "唔識呀。"]
+        grammar: [g.numbers-1-99]
+        vocab: [w.sou2]
+      - q: { es: "五十加五十係幾多呀？", en: "What's fifty plus fifty?" }
+        a: { es: "我唔知，我淨係識數到九十！", en: "I don't know, I can only count to ninety!" }
+        alt: ["一百。", "唔知呀。"]
+        grammar: [g.numbers-1-99]
+        vocab: [w.gau2]
+      - q: { es: "十四定四十呀？", en: "Fourteen or forty?" }
+        a: { es: "四十。", en: "Forty." }
+        alt: ["十四。", "係四十。"]
+        grammar: [g.numbers-1-99]
+        vocab: [w.sei3, w.sap6]
+    texts:
+      - title: "天星小輪"
+        es: ["天星小輪由中環去尖沙咀。", "坐船過海差唔多十分鐘。", "又快又舒服！"]
+        en: ["The Star Ferry goes from Central to Tsim Sha Tsui.", "Crossing the harbour takes about ten minutes.", "It's quick and comfortable!"]
+        grammar: [g.numbers-1-99]
+        vocab: [w.sap6]
+      - title: "數數字"
+        es: ["一、二、三、四、五。", "六、七、八、九、十。", "我識用廣東話數數字喇！"]
+        en: ["One, two, three, four, five.", "Six, seven, eight, nine, ten.", "I can count in Cantonese now!"]
+        grammar: [g.numbers-1-99]
+        vocab: [w.sou2, w.sou3-zi6]
+    spicy:
+      - { es: "我畀你十分。", en: "I give you ten out of ten.", altEs: ["你有十分。"], grammar: [g.numbers-1-99], vocab: [w.sap6] }
+      - { es: "我數到十，你就要同我飲杯嘢。", en: "I'll count to ten, and then you have to have a drink with me.", altEs: ["我數到十，你就同我飲杯嘢啦。"], grammar: [g.numbers-1-99], vocab: [w.sou2] }
+      - { es: "坐船過海十分鐘，同你一齊就好似一分鐘咁快。", en: "Ten minutes across the harbour, but with you it feels like one.", altEs: ["過海十分鐘，同你一齊好似一分鐘咁快。"], grammar: [g.numbers-1-99], vocab: [w.sap6, w.jat1] }
+      - { es: "三十三度？你喺度，好似四十度咁。", en: "Thirty-three degrees? With you here, it feels like forty.", altEs: ["三十三度？有你喺度，好似四十度咁。"], grammar: [g.numbers-1-99], vocab: [w.saam1, w.sei3] }
+      - { es: "一、二、三……你仲未話我知你叫咩名。", en: "One, two, three... you still haven't told me your name.", altEs: ["一、二、三，你仲未話我知你叫咩名。"], grammar: [g.numbers-1-99], vocab: [w.jat1, w.ji6, w.saam1], jp: "jat1 ji6 saam1 nei5 zung6 mei6 waa6 ngo5 zi1 nei5 giu3 me1 meng2" }
+  - id: a1.u04.l2
+    title: 兩張飛
+    teach: [g.loeng-vs-ji, g.gei-how-many]
+    tip: "'Two of something' is 兩 + measure word (兩張飛); 二 is for counting, inside numbers and in ordinals (第二). 幾 + measure word asks 'how many?'."
+    vocab: [w.loeng5, w.go3, w.bun3, w.dai6, w.dai6-jat1, w.jat1-go3-jan4, w.gei2, w.gei2-do1, w.jau5-gei2, w.sai3-lou6, w.daai6-jan4]
+    sentences:
+      - { es: "兩位，唔該。", en: "Two people, please.", altEs: ["兩個人，唔該。"], altEn: ["A table for two, please."], grammar: [g.loeng-vs-ji], vocab: [w.loeng5], jp: "loeng5 wai2 m4 goi1" }
+      - { es: "我要兩張飛。", en: "I'd like two tickets.", altEs: ["兩張飛，唔該。"], grammar: [g.loeng-vs-ji, g.classifiers-intro], vocab: [w.loeng5],
+          transform: { instruction: "Ask for three tickets", answer: "我要三張飛。", alt: ["三張飛，唔該。"] },
+          error: { wrong: "我要二張飛。", explain: "Before a measure word, 'two' is 兩: 兩張飛.", grammar: g.loeng-vs-ji } }
+      - { es: "一個大人，兩個細路。", en: "One adult and two children.", altEs: ["一個大人同兩個細路。"], grammar: [g.loeng-vs-ji, g.classifiers-intro], vocab: [w.daai6-jan4, w.sai3-lou6],
+          transform: { instruction: "Change to two adults and one child", answer: "兩個大人，一個細路。", alt: ["兩個大人同一個細路。"] } }
+      - { es: "你哋幾多位呀？", en: "How many of you are there?", altEs: ["你哋幾多個人呀？", "幾多位呀？"], grammar: [g.gei-how-many], vocab: [w.gei2-do1], jp: "nei5 dei6 gei2 do1 wai2 aa3" }
+      - { es: "你有幾個細路呀？", en: "How many children do you have?", altEs: ["你有幾多個細路呀？"], grammar: [g.gei-how-many], vocab: [w.gei2, w.sai3-lou6],
+          transform: { instruction: "Answer: two", answer: "兩個。", alt: ["我有兩個細路。", "兩個呀。"] } }
+      - { es: "我哋坐第二隻船。", en: "We'll take the second boat.", altEs: ["我哋坐第二隻船啦。"], grammar: [g.loeng-vs-ji], vocab: [w.dai6],
+          error: { wrong: "我哋坐第兩隻船。", explain: "Ordinals use 二: 第二, never 第兩.", grammar: g.loeng-vs-ji } }
+      - { es: "我哋一共有十二個人。", en: "There are twelve of us altogether.", altEs: ["我哋一共十二個人。"], grammar: [g.loeng-vs-ji, g.numbers-1-99], vocab: [w.go3] }
+      - { es: "我一個人坐船過海。", en: "I'm crossing the harbour by boat on my own.", altEs: ["我自己一個人坐船過海。"], grammar: [g.classifiers-intro], vocab: [w.jat1-go3-jan4] }
+      - { es: "兩點半喺天星碼頭等。", en: "Let's meet at the Star Ferry pier at half past two.", altEs: ["兩點半喺天星碼頭等啦。"], grammar: [g.loeng-vs-ji], vocab: [w.bun3] }
+      - { es: "你要幾多張飛呀？", en: "How many tickets do you need?", altEs: ["你要幾張飛呀？"], grammar: [g.gei-how-many], vocab: [w.gei2-do1] }
+      - { es: "船上面有幾個外國人。", en: "There are a few foreigners on the boat.", altEs: ["船上面有幾個外國人呀。"], grammar: [g.gei-how-many], vocab: [w.gei2], note: "In a statement, 幾 + measure word means 'a few'." }
+      - { es: "有幾個人喺度等緊船。", en: "A few people are waiting for the boat.", altEs: ["有幾個人喺度等船。"], grammar: [g.gei-how-many], vocab: [w.jau5-gei2] }
+      - { es: "第一隻船好多人。", en: "The first boat is very crowded.", altEs: ["第一隻船有好多人。"], grammar: [g.loeng-vs-ji], vocab: [w.dai6-jat1] }
+      - { es: "兩杯奶茶，一杯咖啡。", en: "Two milk teas and one coffee.", altEs: ["兩杯奶茶同一杯咖啡，唔該。"], grammar: [g.loeng-vs-ji, g.classifiers-intro], vocab: [w.loeng5] }
+      - { es: "呢度有十幾個人。", en: "There are a dozen or so people here.", altEs: ["呢度有十幾個人呀。"], grammar: [g.gei-how-many], vocab: [w.gei2] }
+    exchanges:
+      - q: { es: "你哋幾多個人呀？", en: "How many of you are there?" }
+        a: { es: "兩個人，唔該。", en: "Two, please." }
+        alt: ["三個人。", "一個人。"]
+        grammar: [g.gei-how-many, g.loeng-vs-ji]
+        vocab: [w.gei2-do1, w.loeng5]
+      - q: { es: "你要幾張飛呀？", en: "How many tickets do you want?" }
+        a: { es: "兩張，唔該。", en: "Two, please." }
+        alt: ["一張。", "三張，唔該。"]
+        grammar: [g.gei-how-many, g.loeng-vs-ji]
+        vocab: [w.gei2, w.loeng5]
+      - q: { es: "你有幾個細路呀？", en: "How many children do you have?" }
+        a: { es: "兩個，一個仔同一個細路女。", en: "Two: a boy and a little girl." }
+        alt: ["兩個。", "冇呀。"]
+        grammar: [g.gei-how-many]
+        vocab: [w.sai3-lou6]
+      - q: { es: "你一個人嚟呀？", en: "Did you come on your own?" }
+        a: { es: "唔係，我同朋友兩個人。", en: "No, there are two of us, me and a friend." }
+        alt: ["係呀，一個人。", "唔係。"]
+        grammar: [g.loeng-vs-ji]
+        vocab: [w.jat1-go3-jan4]
+      - q: { es: "你坐第幾隻船呀？", en: "Which boat are you taking?" }
+        a: { es: "第二隻。", en: "The second one." }
+        alt: ["第一隻。", "第三隻。"]
+        grammar: [g.loeng-vs-ji]
+        vocab: [w.dai6]
+    texts:
+      - title: "買飛"
+        es: ["我哋一共有五個人：三個大人，兩個細路。", "我要五張飛。", "我哋坐第二隻船。"]
+        en: ["There are five of us altogether: three adults and two children.", "I want five tickets.", "We're taking the second boat."]
+        grammar: [g.loeng-vs-ji]
+        vocab: [w.daai6-jan4, w.sai3-lou6, w.dai6]
+      - title: "WhatsApp"
+        es: ["我喺天星碼頭。", "呢度有幾個外國人喺度影相。", "你幾點到呀？"]
+        en: ["I'm at the Star Ferry pier.", "There are a few foreigners here taking photos.", "What time will you get here?"]
+        grammar: [g.gei-how-many]
+        vocab: [w.gei2]
+    spicy:
+      - { es: "兩杯咖啡，一杯畀你，一杯畀我。", en: "Two coffees: one for you, one for me.", altEs: ["兩杯咖啡：一杯畀你，一杯畀我。"], grammar: [g.loeng-vs-ji], vocab: [w.loeng5] }
+      - { es: "我哋兩個人，一張枱，就夠喇。", en: "The two of us, one table. That's all we need.", altEs: ["我哋兩個人，一張枱就夠喇。"], grammar: [g.loeng-vs-ji], vocab: [w.loeng5] }
+      - { es: "我數咗幾個靚仔，你係第一。", en: "I've counted a few handsome guys. You're number one.", altEs: ["我數咗幾個靚女，你係第一。"], altEn: ["I've counted a few pretty girls. You're number one."], grammar: [g.gei-how-many], vocab: [w.gei2, w.dai6-jat1] }
+      - { es: "兩張飛，一張係你嘅。一齊坐船啦。", en: "Two tickets, and one is yours. Let's take the boat together.", altEs: ["兩張飛，一張係你嘅，一齊坐船啦。"], grammar: [g.loeng-vs-ji], vocab: [w.loeng5] }
+      - { es: "我有幾個朋友，不過冇女朋友。", en: "I have a few friends, but no girlfriend.", altEs: ["我有幾個朋友，不過冇男朋友。"], altEn: ["I have a few friends, but no boyfriend."], grammar: [g.gei-how-many], vocab: [w.gei2], jp: "ngo5 jau5 gei2 go3 pang4 jau5 bat1 gwo3 mou5 neoi5 pang4 jau5" }
+  - id: a1.u04.l3
+    title: 你電話幾多號呀？
+    teach: [g.phone-numbers]
+    tip: "Read phone numbers one digit at a time, usually in two groups of four: 九一二三，四五六七. In digit strings 2 is always 二."
+    vocab: [w.hou6-maa5, w.din6-waa2-hou6-maa5, w.hou6, w.daa2-din6-waa2, w.daa2]
+    sentences:
+      - { es: "你電話幾多號呀？", en: "What's your phone number?", altEs: ["你電話號碼係幾多呀？", "你個電話號碼幾多呀？"], grammar: [g.phone-numbers, g.gei-how-many], vocab: [w.hou6],
+          transform: { instruction: "Ask for his number", answer: "佢電話幾多號呀？", alt: ["佢電話號碼係幾多呀？"] } }
+      - { es: "我電話係九一二三，四五六七。", en: "My number is 9123 4567.", altEs: ["我個電話係九一二三，四五六七。"], grammar: [g.phone-numbers], vocab: [w.din6-waa2], kinds: [dictation, listen, typeEn, typeEs],
+          error: { wrong: "我電話係九千一百二十三，四千五百六十七。", explain: "Phone numbers are read digit by digit: 九一二三，四五六七.", grammar: g.phone-numbers } }
+      - { es: "佢電話係六二二八，三四五一。", en: "Her number is 6228 3451.", altEn: ["His number is 6228 3451."], grammar: [g.phone-numbers, g.loeng-vs-ji], vocab: [w.din6-waa2], kinds: [dictation, listen, typeEn, typeEs],
+          error: { wrong: "佢電話係六兩兩八，三四五一。", explain: "In digit strings, 2 is always 二, never 兩.", grammar: g.phone-numbers } }
+      - { es: "唔該你講多次。", en: "Could you say it again, please?", altEs: ["唔該再講多次。", "唔該講多次。"], altEn: ["Once more, please."], grammar: [g.phone-numbers], vocab: [w.hou6-maa5] }
+      - { es: "你個電話號碼係咪六二三四，五五八八？", en: "Is your number 6234 5588?", altEs: ["你電話號碼係唔係六二三四，五五八八呀？"], grammar: [g.phone-numbers, g.a-not-a-questions], vocab: [w.din6-waa2-hou6-maa5] }
+      - { es: "我打電話畀你。", en: "I'll call you.", altEs: ["我打畀你。", "我等陣打電話畀你。"], altEn: ["I'll give you a ring."], grammar: [g.phone-numbers], vocab: [w.daa2-din6-waa2],
+          transform: { instruction: "Say 'he'll call you'", answer: "佢打電話畀你。", alt: ["佢打畀你。"] } }
+      - { es: "我間房係三零八號。", jp: "ngo5 gaan1 fong2 hai6 saam1 ling4 baat3 hou6", en: "My room is number 308.", altEs: ["我間房係三零八。"], grammar: [g.phone-numbers], vocab: [w.hou6, w.ling4] }
+      - { es: "呢個號碼唔啱。", en: "This number isn't right.", altEs: ["呢個號碼唔係啱嘅。"], altEn: ["That's the wrong number."], grammar: [g.phone-numbers, g.m-negation], vocab: [w.hou6-maa5] }
+      - { es: "我冇佢電話號碼。", en: "I don't have her number.", altEs: ["我冇佢個電話號碼。"], altEn: ["I don't have his phone number."], grammar: [g.mou-negation], vocab: [w.din6-waa2-hou6-maa5],
+          transform: { instruction: "Make it positive", answer: "我有佢電話號碼。", alt: ["我有佢個電話號碼。"] } }
+      - { es: "有事就打九九九。", en: "If something happens, call 999.", altEs: ["有事打九九九。"], grammar: [g.phone-numbers], vocab: [w.daa2], note: "999 is Hong Kong's emergency number." }
+      - { es: "呢個號碼就係我嘅WhatsApp。", en: "This number is my WhatsApp.", altEs: ["呢個號碼係我嘅WhatsApp。"], grammar: [g.phone-numbers], vocab: [w.hou6-maa5] }
+      - { es: "香港嘅電話號碼有八個數字。", en: "Hong Kong phone numbers have eight digits.", altEs: ["香港電話號碼有八個數字。"], grammar: [g.phone-numbers, g.jau-have], vocab: [w.din6-waa2-hou6-maa5, w.sou3-zi6] }
+      - { es: "你打去天星碼頭問吓啦。", en: "Call the Star Ferry pier and ask.", altEs: ["你打電話去天星碼頭問吓啦。"], grammar: [g.phone-numbers], vocab: [w.daa2] }
+      - { es: "九八七六，五四三二。", en: "Nine eight seven six, five four three two.", grammar: [g.phone-numbers], vocab: [w.gau2, w.baat3, w.cat1, w.luk6], kinds: [dictation, listen, typeEs, order] }
+    exchanges:
+      - q: { es: "你電話幾多號呀？", en: "What's your phone number?" }
+        a: { es: "九八七六，五四三二。", en: "9876 5432." }
+        alt: ["我電話係九八七六，五四三二。"]
+        grammar: [g.phone-numbers]
+        vocab: [w.hou6]
+      - q: { es: "唔該講多次。", en: "Once more, please." }
+        a: { es: "好，六一二三，四四五五。", en: "OK: 6123 4455." }
+        alt: ["六一二三，四四五五。"]
+        grammar: [g.phone-numbers]
+        vocab: [w.hou6-maa5]
+      - q: { es: "你有冇佢電話呀？", en: "Do you have her number?" }
+        a: { es: "有，我WhatsApp畀你。", en: "Yes, I'll WhatsApp it to you." }
+        alt: ["冇呀。", "有，等陣。"]
+        grammar: [g.jau-have]
+        vocab: [w.din6-waa2]
+      - q: { es: "請問係唔係陳生呀？", en: "Excuse me, is that Mr Chan?" }
+        a: { es: "唔係呀，呢個號碼唔係陳生。", en: "No, this isn't Mr Chan's number." }
+        alt: ["係呀，我就係。", "佢唔喺度。"]
+        grammar: [g.phone-numbers, g.hai6-identity]
+        vocab: [w.hou6-maa5]
+      - q: { es: "有事打幾多號呀？", en: "What number do you call in an emergency?" }
+        a: { es: "九九九。", en: "999." }
+        alt: ["打九九九。"]
+        grammar: [g.phone-numbers]
+        vocab: [w.daa2]
+    texts:
+      - title: "留言"
+        es: ["我係Sam，我電話係九一二三，四五六七。", "唔該你打電話畀我。", "多謝！"]
+        en: ["This is Sam. My number is 9123 4567.", "Please call me.", "Thank you!"]
+        grammar: [g.phone-numbers]
+        vocab: [w.daa2-din6-waa2]
+      - title: "WhatsApp"
+        es: ["你個電話號碼唔啱。", "係九一二三，四五六七，唔係九一二三，四五六一。"]
+        en: ["Your phone number isn't right.", "It's 9123 4567, not 9123 4561."]
+        grammar: [g.phone-numbers]
+        vocab: [w.din6-waa2-hou6-maa5]
+    spicy:
+      - { es: "你電話幾多號呀？我想問你今晚得唔得閒。", en: "What's your number? I want to ask if you're free tonight.", altEs: ["你電話號碼係幾多呀？我想問你今晚得唔得閒。"], grammar: [g.phone-numbers], vocab: [w.hou6] }
+      - { es: "我電話係九一二三，四五六七，記得打畀我呀。", en: "My number is 9123 4567. Remember to call me.", altEs: ["我電話係九一二三，四五六七，記住打畀我呀。"], grammar: [g.phone-numbers], vocab: [w.din6-waa2] }
+      - { es: "我冇你電話號碼，好唔開心呀。", en: "I don't have your number. I'm so sad.", altEs: ["我冇你個電話號碼，好唔開心。"], grammar: [g.phone-numbers, g.mou-negation], vocab: [w.din6-waa2-hou6-maa5] }
+      - { es: "唔啱號碼？冇問題，我哋傾吓偈啦。", en: "Wrong number? No problem, let's chat anyway.", altEs: ["唔啱號碼呀？冇問題，傾吓偈啦。"], grammar: [g.phone-numbers], vocab: [w.hou6-maa5] }
+      - { es: "八個數字，就可以搵到我。", en: "Eight digits and you can find me.", altEs: ["八個數字就搵到我。"], grammar: [g.phone-numbers], vocab: [w.sou3-zi6] }
+  - id: a1.u04.l4
+    title: 你幾多歲呀？
+    teach: [g.age]
+    tip: "Age is just number + 歲, with no verb: 我三十歲. 幾歲 is mostly for children; for adults ask 幾多歲, or politely 貴庚."
+    vocab: [w.seoi3, w.nin4-gei2, w.gei2-daai6, w.gam1-nin2, w.saang1-jat6, w.saang1-jat6-faai3-lok6, w.gwai3-gang1]
+    sentences:
+      - { es: "你幾多歲呀？", en: "How old are you?", altEs: ["你今年幾多歲呀？"], grammar: [g.age, g.gei-how-many], vocab: [w.seoi3],
+          transform: { instruction: "Ask a child (expecting a small number)", answer: "你幾歲呀？", alt: ["你今年幾歲呀？"] } }
+      - { es: "我三十歲。", en: "I'm thirty.", altEs: ["我今年三十歲。"], altEn: ["I'm thirty years old."], grammar: [g.age], vocab: [w.seoi3],
+          transform: { instruction: "Say she is twenty-two", answer: "佢二十二歲。", alt: ["佢廿二歲。"] },
+          error: { wrong: "我係三十歲。", explain: "No 係 or 有 with ages: just number + 歲, 我三十歲.", grammar: g.age } }
+      - { es: "佢今年十八歲。", en: "She's eighteen this year.", altEs: ["佢十八歲。"], altEn: ["He's eighteen this year."], grammar: [g.age], vocab: [w.gam1-nin2] }
+      - { es: "你個仔幾歲呀？", en: "How old is your son?", altEs: ["你個仔幾多歲呀？"], grammar: [g.age, g.classifier-as-the], vocab: [w.seoi3] }
+      - { es: "我細佬兩歲。", en: "My little brother is two.", altEs: ["我細佬今年兩歲。"], grammar: [g.age, g.loeng-vs-ji], vocab: [w.seoi3],
+          error: { wrong: "我細佬二歲。", explain: "歲 works like a measure word, so 'two' is 兩: 兩歲.", grammar: g.loeng-vs-ji } }
+      - { es: "我今年廿五歲。", en: "I'm twenty-five this year.", altEs: ["我今年二十五歲。"], grammar: [g.age, g.numbers-1-99], vocab: [w.gam1-nin2, w.jaa6] }
+      - { es: "請問你今年貴庚呀？", en: "May I ask how old you are?", altEs: ["你今年貴庚呀？"], grammar: [g.age], vocab: [w.gwai3-gang1], note: "A polite fixed phrase for older people." }
+      - { es: "今日係我生日！", en: "Today is my birthday!", altEs: ["今日我生日！"], grammar: [g.age], vocab: [w.saang1-jat6],
+          transform: { instruction: "Say today is her birthday", answer: "今日係佢生日！", alt: ["今日佢生日！"] } }
+      - { es: "生日快樂！", en: "Happy birthday!", altEs: ["生日快樂呀！"], grammar: [g.age], vocab: [w.saang1-jat6-faai3-lok6] }
+      - { es: "佢幾大呀？", en: "How old is he?", altEs: ["佢幾多歲呀？"], altEn: ["How old is she?"], grammar: [g.age], vocab: [w.gei2-daai6] }
+      - { es: "佢年紀好細。", en: "She's very young.", altEs: ["佢好細個。"], altEn: ["He's very young."], grammar: [g.age], vocab: [w.nin4-gei2] }
+      - { es: "天星小輪已經一百幾歲喇！", en: "The Star Ferry is already over a hundred years old!", altEs: ["天星小輪已經有一百幾歲喇！"], grammar: [g.age], vocab: [w.seoi3], note: "The Star Ferry has crossed the harbour since 1888." }
+      - { es: "你阿媽幾多歲呀？", en: "How old is your mum?", altEs: ["你媽媽幾多歲呀？"], grammar: [g.age, g.gei-how-many], vocab: [w.seoi3] }
+      - { es: "我阿爸今年六十歲。", en: "My dad is sixty this year.", altEs: ["我爸爸今年六十歲。"], grammar: [g.age], vocab: [w.gam1-nin2] }
+      - { es: "你幾時生日呀？", en: "When is your birthday?", altEs: ["你嘅生日係幾時呀？"], grammar: [g.age, g.question-words], vocab: [w.saang1-jat6] }
+    exchanges:
+      - q: { es: "你幾多歲呀？", en: "How old are you?" }
+        a: { es: "我廿八歲，你呢？", en: "I'm twenty-eight, and you?" }
+        alt: ["廿八。", "我二十八歲。"]
+        grammar: [g.age, g.ne-follow-up]
+        vocab: [w.seoi3]
+      - q: { es: "你個細路幾歲呀？", en: "How old is your child?" }
+        a: { es: "佢三歲。", en: "She's three." }
+        alt: ["三歲。", "佢今年三歲。"]
+        grammar: [g.age]
+        vocab: [w.seoi3]
+      - q: { es: "今日係我生日！", en: "It's my birthday today!" }
+        a: { es: "生日快樂！", en: "Happy birthday!" }
+        alt: ["生日快樂呀！"]
+        grammar: [g.age]
+        vocab: [w.saang1-jat6, w.saang1-jat6-faai3-lok6]
+      - q: { es: "你今年貴庚呀？", en: "May I ask your age?" }
+        a: { es: "我今年六十歲喇。", en: "I'm sixty this year." }
+        alt: ["六十。", "六十歲。"]
+        grammar: [g.age]
+        vocab: [w.gwai3-gang1, w.gam1-nin2]
+      - q: { es: "你幾時生日呀？", en: "When's your birthday?" }
+        a: { es: "聽日！", en: "Tomorrow!" }
+        alt: ["今日。", "下個月。"]
+        grammar: [g.age]
+        vocab: [w.saang1-jat6]
+    texts:
+      - title: "生日卡"
+        es: ["生日快樂，媽媽！", "你今年六十歲喇。", "我哋同你去飲茶！"]
+        en: ["Happy birthday, Mum!", "You're sixty this year.", "We're going for yum cha with you!"]
+        grammar: [g.age]
+        vocab: [w.saang1-jat6-faai3-lok6, w.gam1-nin2]
+      - title: "天星小輪"
+        es: ["天星小輪已經一百幾歲喇。", "佢係香港人嘅好朋友。"]
+        en: ["The Star Ferry is over a hundred years old.", "It's a good friend of Hongkongers."]
+        grammar: [g.age]
+        vocab: [w.seoi3]
+    spicy:
+      - { es: "你幾多歲呀？唔緊要，我鍾意你就得。", en: "How old are you? Never mind, I like you and that's enough.", altEs: ["你幾多歲呀？唔緊要，我鍾意你就得喇。"], grammar: [g.age], vocab: [w.seoi3] }
+      - { es: "我廿五歲，冇女朋友，鍾意飲茶。", en: "I'm twenty-five, no girlfriend, likes yum cha.", altEs: ["我廿五歲，冇男朋友，鍾意飲茶。"], altEn: ["I'm twenty-five, no boyfriend, likes yum cha."], grammar: [g.age], vocab: [w.seoi3], jp: "ngo5 jaa6 ng5 seoi3 mou5 neoi5 pang4 jau5 zung1 ji3 jam2 caa4" }
+      - { es: "今日係我生日，你請我食飯好唔好呀？", en: "It's my birthday today. How about you take me to dinner?", altEs: ["今日我生日，你請我食飯好唔好？"], grammar: [g.age], vocab: [w.saang1-jat6], jp: "gam1 jat6 hai6 ngo5 saang1 jat6 nei5 ceng2 ngo5 sik6 faan6 hou2 m4 hou2 aa3" }
+      - { es: "你三十歲？好似廿歲咁。", en: "You're thirty? You look twenty.", altEs: ["你三十歲呀？好似二十歲咁。"], grammar: [g.age], vocab: [w.seoi3] }
+      - { es: "年紀唔緊要，開心就得。", en: "Age doesn't matter. Being happy is what counts.", altEs: ["年紀唔緊要，最緊要開心。"], grammar: [g.age], vocab: [w.nin4-gei2] }
+dialogues:
+  - id: a1.u04.d1
+    title: 坐天星小輪
+    context: Sam is crossing the harbour on the Star Ferry. A young woman, Kelly, sits down next to him.
+    lines:
+      - { speaker: Kelly, es: "唔好意思，呢度有冇人坐呀？", en: "Excuse me, is anyone sitting here?" }
+      - { speaker: Sam, es: "冇人，你坐啦。", en: "No one. Have a seat." }
+      - { speaker: Kelly, es: "多謝。你係唔係遊客呀？", en: "Thanks. Are you a tourist?" }
+      - { speaker: Sam, es: "係呀，我係英國人，今年二十二歲，喺大學讀書。", en: "Yes, I'm British. I'm twenty-two and I'm at university." }
+      - { speaker: Kelly, es: "我都係學生！我二十一歲。你嚟咗香港幾耐呀？", en: "I'm a student too! I'm twenty-one. How long have you been in Hong Kong?" }
+      - { speaker: Sam, es: "兩個星期。坐船過海又快又舒服！", en: "Two weeks. Taking the boat across the harbour is so quick and comfortable!" }
+      - { speaker: Kelly, es: "係呀，差唔多十分鐘就到尖沙咀。", en: "Yes, it's about ten minutes to Tsim Sha Tsui." }
+      - { speaker: Sam, es: "你電話幾多號呀？我哋一齊學廣東話，好唔好？", en: "What's your number? Shall we learn Cantonese together?" }
+      - { speaker: Kelly, es: "好呀！我電話係九一二三，四五六七。", en: "Sure! My number is 9123 4567." }
+      - { speaker: Sam, es: "九一二三，四五六七。我而家打電話畀你！", en: "9123 4567. I'm calling you now!" }
+    questions:
+      - { q: "Sam今年幾多歲呀？", options: ["二十一歲", "二十二歲", "十二歲"], answer: 1, explain: "Sam says 今年二十二歲; Kelly is the one who is twenty-one." }
+      - { q: "坐船去尖沙咀要幾耐呀？", options: ["差唔多十分鐘", "兩個鐘", "兩個星期"], answer: 0, explain: "差唔多十分鐘就到尖沙咀: about ten minutes. Two weeks is how long Sam has been in Hong Kong." }
+      - { q: "Kelly電話幾多號呀？", options: ["九一二三，四五六七", "九八七六，五四三二", "六一二三，四四五五"], answer: 0, explain: "我電話係九一二三，四五六七." }
+      - { q: "Kelly做乜嘢㗎？", options: ["佢係老師", "佢係學生", "佢係遊客"], answer: 1, explain: "我都係學生: Kelly is a student too." }
