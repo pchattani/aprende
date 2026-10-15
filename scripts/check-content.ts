@@ -19,7 +19,9 @@ import { CONTENT, ROOT, LANG, readYaml, listYaml, unitIdFromPath } from './conte
 const { buildDictionary, lookup } = (await import(`../src/lang/${LANG}/inflect.ts`)) as InflectModule
 const { tokenize } = (await import(`../src/lang/${LANG}/tokenize.ts`)) as TokenizeModule
 const verbsModule = (await import(`../src/lang/${LANG}/verbs.ts`)) as VerbsModule
-const { languagePack } = (await import(`../src/lang/${LANG}/index.ts`)) as { languagePack: LanguagePackFull & { validateText?: (t: string) => string[] } }
+const { languagePack } = (await import(`../src/lang/${LANG}/index.ts`)) as {
+  languagePack: LanguagePackFull & { validateText?: (t: string) => string[]; validateReading?: (lemma: string, jp: string) => string[] }
+}
 import { SPICY_BANNED } from './spicy-banned'
 
 const MIN_LESSONS_PER_UNIT = 3
@@ -31,7 +33,8 @@ const MIN_DIALOGUE_QUESTIONS = 3
 const MAX_SPICY_PER_LESSON = 5
 const MIN_TOPIC_WORDS = 4
 const stripAcc = (w: string) => w.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
-const BANNED = SPICY_BANNED.map(stripAcc)
+// Each course may list its own banned words (content/<lang>/spicy-banned.yaml); Spanish uses scripts/spicy-banned.ts.
+const BANNED = (existsSync(join(CONTENT, 'spicy-banned.yaml')) ? (readYaml(join(CONTENT, 'spicy-banned.yaml')) as string[]) : SPICY_BANNED).map(stripAcc)
 
 const errors: string[] = []
 const warnings: string[] = []
@@ -130,6 +133,7 @@ for (const p of listYaml(join(CONTENT, 'vocab'))) {
     if (features.romanization === 'jyutping') {
       if (!e.jp) err(`${rel(p)}: ${e.id} needs jp (Jyutping)`)
       for (const issue of languagePack.validateText?.(e.lemma) ?? []) err(`${rel(p)}: ${e.id}: ${issue}`)
+      if (e.jp) for (const issue of languagePack.validateReading?.(e.lemma, e.jp) ?? []) err(`${rel(p)}: ${e.id}: ${issue}`)
     }
     if (features.classifiers && e.pos === 'noun' && !e.cl && !e.tags.includes('mass') && !e.tags.includes('name')) warn(`${rel(p)}: noun ${e.id} has no classifier (cl)`)
     if (e.unit && !unitLevel.has(e.unit)) err(`${rel(p)}: ${e.id} references unknown unit ${e.unit}`)
@@ -158,6 +162,15 @@ const ALWAYS_KNOWN = new Set([...(knownFile.always ?? []), ...(knownFile.names ?
 function scriptIssues(where: string, text: string): void {
   for (const issue of languagePack.validateText?.(text) ?? []) err(`${where}: "${text.slice(0, 40)}": ${issue}`)
 }
+/** A Han segment the segmenter kept whole (a dictionary word) is known if it splits into known words. */
+function splitsIntoKnown(w: string, known: (x: string) => boolean): boolean {
+  const ok: boolean[] = [true, ...new Array<boolean>(w.length).fill(false)]
+  for (let i = 0; i < w.length; i++) {
+    if (!ok[i]) continue
+    for (let j = i + 1; j <= w.length; j++) if (known(w.slice(i, j))) ok[j] = true
+  }
+  return ok[w.length]!
+}
 function unknownWords(text: string, level: LevelId, allow: Set<string>): string[] {
   const dict = dictByLevel.get(level)!
   const out: string[] = []
@@ -165,6 +178,7 @@ function unknownWords(text: string, level: LevelId, allow: Set<string>): string[
     if (t.kind !== 'word') continue
     const w = t.text.toLowerCase()
     if (lookup(dict, w) || ALWAYS_KNOWN.has(w) || allow.has(w)) continue
+    if (/\p{Script=Han}/u.test(w) && splitsIntoKnown(w, (x) => Boolean(lookup(dict, x)) || ALWAYS_KNOWN.has(x) || allow.has(x))) continue
     if (/^\p{Lu}/u.test(t.text)) continue // proper nouns / sentence starts are checked lowercased above; capitalised unknowns pass
     out.push(w)
   }

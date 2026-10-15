@@ -6,7 +6,10 @@ All course content lives in `content/es/` as YAML, validated by Zod schemas in `
 
 ```
 content/es/
-  pack.yaml                 language metadata (locale, TTS voices, variety)
+  pack.yaml                 language metadata (locale, TTS voices, variety, slug, features)
+  ui.yaml                   interface text in the target language (greetings, cheers, quest titles, dog lines…)
+  journey.yaml              regions (one per level), stops (one per unit) with facts, souvenirs
+  known.yaml                function words always known, extra A1-fact words, proper names
   syllabus.yaml             A1-C2 levels, units, can-do statements, grammar ids, authored flag
   grammar/<level>.yaml      grammar notes (id g.*)
   vocab/<level>.yaml        lemmas (id w.*)
@@ -64,7 +67,7 @@ Reading (text + 5 MCQ), listening (5 dictations + optional audio MCQ), grammar (
 
 ## Adding a language pack
 
-Implement `LanguagePack` from `src/lang/types.ts` under `src/lang/<code>/` (normalize, tokenize, match, words). Optional engines (conjugator, inflector, checker) plug into the generator and grader. Create `content/<code>/` with the same file layout and update the loader paths.
+One codebase builds every course: `VITE_LANG=<code>` selects `src/lang/<code>/` (the language engine) and `content/<code>/` (the course). The engine must provide the modules listed in `src/lang/contract.ts`; `_contract.ts` in each pack checks this at compile time. See `docs/SISTER_COURSES.md` for the Cantonese, Portuguese and Italian courses.
 
 ## Lesson variety: exchanges and mini-texts
 
@@ -114,4 +117,4 @@ Tone guide: **cheeky and flirty, PG-13, between consenting adults.** Think compl
 
 ## Stop facts
 
-`src/engine/journey-facts.ts` holds one fact per stop (`unitId → { es, en }`), shown when the stop's passport stamp is earned. A1 facts: present tense, A1 vocabulary plus proper nouns, at most 30 words. A2: up to 35 words, past tenses allowed. B1 and above: up to 45 words. Facts must be true and checkable (geography, history, food, culture); no superlatives you cannot source.
+Each stop in `journey.yaml` carries a `fact: { es, en }`, shown when the stop's passport stamp is earned. A1 facts: present tense, A1 vocabulary plus proper nouns, at most 30 words. A2: up to 35 words, past tenses allowed. B1 and above: up to 45 words. Facts must be true and checkable (geography, history, food, culture); no superlatives you cannot source.
