@@ -1,0 +1,73 @@
+level: b2
+title: Level check B2
+passScore: 0.8
+reading:
+  text: |
+    喺南丫島住咗十年，我已經唔記得城市嘅生活係點樣。島上冇車，連單車都唔係好多，返工就靠渡輪，每朝坐半個鐘船去中環。好多朋友問我：「咁唔方便，點解唔搬返出去？」我通常都答：「因為住喺度，我先覺得自己係住喺香港，唔係住喺一間辦公室入面。」
+
+    當初搬嚟，其實係因為平。嗰陣我啱啱畢業，人工唔高，市區啲租貴到離譜，一間細細嘅劏房都要成萬蚊。南丫島嘅村屋，同樣嘅錢可以租到兩層，仲有個天台。我諗住住一兩年，儲到錢就走，點知一住就住咗十年。
+
+    當然，島上生活唔係樣樣都好。打風嘅時候冇船，連返工都返唔到；想食啲特別嘅嘢，又要專登出市區。仲有，近年遊客越嚟越多，週末成條大街迫到行唔郁，有啲遊客仲周圍掉垃圾，搞到啲街坊好嬲。不過講到尾，只要你肯慢落嚟，呢度嘅好處多過壞處。
+
+    我最鍾意嘅，係放工搭船返嚟嗰半個鐘。一上船，部手機就收得唔係幾好，我只可以望住個海發吓呆。一落船，就聞到海水同樹嘅味道，好似成日嘅壓力都畀海風吹走咗。我老闆成日笑我「懶」，我話：「我唔係懶，我係揀咗一種唔同嘅生活。」
+  questions:
+    - { q: "Why did the writer originally move to Lamma Island?", options: ["Because rent was cheap", "Because her family lived there", "Because she worked on the island"], answer: 0 }
+    - { q: "How long did she originally plan to stay?", options: ["Ten years", "One or two years", "For ever"], answer: 1 }
+    - { q: "Which of these is NOT mentioned as a disadvantage of island life?", options: ["No ferries during typhoons", "Crowds of tourists at weekends", "Noisy traffic"], answer: 2 }
+    - { q: "What does she like most?", options: ["Weekend markets", "The half-hour ferry ride home after work", "Working in Central"], answer: 1 }
+    - { q: "How does she answer her boss who calls her lazy?", options: ["She agrees and promises to work harder", "She says she has simply chosen a different way of life", "She says she will move back to the city"], answer: 1 }
+listening:
+  dictation:
+    - "佢話今晚唔嚟食飯喎。"
+    - "連阿婆都識用手機買嘢。"
+    - "我一落船就去食海鮮。"
+    - "無論幾多人排隊，佢都照等。"
+    - "佢唔單止識煮飯，仲煮得好好食添。"
+  questions:
+    - { audio: "咦，你剪咗頭髮喎，好靚喎！——係咩？我老公都冇發覺。", options: ["The speaker notices the friend's new haircut and compliments it", "The speaker wants to get a haircut", "The husband compliments the haircut"], answer: 0 }
+    - { audio: "佢咁遲都未到，應該塞車啩。", options: ["The speaker knows for sure there is a traffic jam", "The speaker guesses he is stuck in traffic", "He has already arrived"], answer: 1 }
+    - { audio: "你唔知咩？呢間舖上個月已經執咗笠喇。", options: ["The speaker is surprised the listener doesn't know the shop closed last month", "The shop is opening next month", "The shop is having a sale"], answer: 0 }
+    - { audio: "佢做嘢成日放飛機，我對佢已經心淡喇。", options: ["He is very reliable", "He keeps letting people down, and the speaker has lost heart", "He works as a pilot"], answer: 1 }
+grammar:
+  - { prompt: "阿明話佢聽日唔得閒___。（reporting what he said）", options: ["喎", "咩", "啩"], answer: 0, explain: "喎 (wo5) marks reported information (g.wo5-hearsay)." }
+  - { prompt: "佢係醫生___，梗係識啦。", options: ["嘛", "咩", "啩"], answer: 0, explain: "嘛 presents a reason as obvious or already known (g.maa3-as-you-know)." }
+  - { prompt: "你唔知___？佢結咗婚喇。", options: ["咩", "嘛", "囉"], answer: 0, explain: "Statement + 咩 asks with surprise (g.me1-surprise)." }
+  - { prompt: "落咁大雨，佢應該唔嚟___。", options: ["啩", "喎", "嘛"], answer: 0, explain: "啩 makes a statement a tentative guess (g.gwaa3-guess)." }
+  - { prompt: "冇車就坐的士___，有乜好諗？", options: ["囉", "咩", "啩"], answer: 0, explain: "囉 marks an obvious, inevitable conclusion (g.lo1-obvious)." }
+  - { prompt: "___阿婆都識用手機。", options: ["連", "就", "越"], answer: 0, explain: "連 + surprising item + 都 means 'even' (g.lin-dou-even)." }
+  - { prompt: "間房一個人___冇。", options: ["都", "就", "仲"], answer: 0, explain: "一 + measure word + 都 + negative: 一個人都冇 'not a single person' (g.jat-dou-negative)." }
+  - { prompt: "佢一落船___去食海鮮。", options: ["就", "都", "先"], answer: 0, explain: "一…就 'as soon as' (g.jat-zau-as-soon-as)." }
+  - { prompt: "呢度越嚟___熱。", options: ["越", "就", "都"], answer: 0, explain: "越嚟越 + adjective 'more and more' (g.jyut-jyut-the-more)." }
+  - { prompt: "只要你肯學，___一定學得識。", options: ["就", "都", "先"], answer: 0, explain: "只要…就 states a sufficient condition (g.zi-jiu-zau-as-long-as)." }
+  - { prompt: "___幾多人，佢哋都照搶包山。", options: ["無論", "只要", "雖然"], answer: 0, explain: "無論 + question, 都 + result: 'no matter how many' (g.mou-leon-dou-no-matter)." }
+  - { prompt: "佢唔單止識煮，___煮得好好食。", options: ["仲", "就", "都"], answer: 0, explain: "唔單止 A，仲 B is the colloquial 'not only … but also' (g.bat-daan-not-only)." }
+  - { prompt: "佢上個月畀老闆___，而家搵緊工。", options: ["炒咗魷魚", "放咗飛機", "食咗白果"], answer: 0, explain: "炒魷魚 'fry squid' means to be fired (g.colloquial-idioms)." }
+  - { prompt: "佢成日遲到，___我好嬲。", options: ["搞到", "由於", "以免"], answer: 0, explain: "搞到 is a colloquial, usually negative causative: 'got me really angry' (g.causatives-ling-gaau-dou)." }
+  - { prompt: "我攰___唔想郁。", options: ["到", "得", "咗"], answer: 0, explain: "到 after an adjective introduces the extreme result (g.dou-extent)." }
+writing:
+  prompt: "Write a post for a Hong Kong discussion forum (at least 150 words) on the question: 應唔應該喺香港限制遊客人數？ State your position, give two or three arguments ordered with 首先 / 其次 / 另外, concede a point (固然…但係 / 就算係噉), use at least one rhetorical question, one 連…都 or 越…越 sentence and one causative with 令 or 搞到, and sum up with 總之 or 講到尾."
+  minWords: 150
+  modelAnswer: |
+    我覺得香港唔應該直接限制遊客人數，但係一定要管理好。
+
+    首先，旅遊業養活咗好多香港人。由酒店、餐廳到小店，好多人都靠遊客搵食。如果真係限制人數，連街邊賣魚蛋嘅阿伯都會受影響，邊個賠錢畀佢哋呢？
+
+    其次，遊客多固然會帶嚟問題，例如週末旺角迫到行唔郁，有啲人周圍掉垃圾，搞到啲街坊好嬲。但係問題唔係遊客太多，而係佢哋全部擠喺同一啲地方。如果政府肯推廣多啲唔同嘅景點，例如離島、新界嘅行山徑同圍村，遊客就唔會淨係去尖沙咀同旺角。
+
+    另外，遊客越嚟越多，其實都令香港有更多機會介紹自己嘅文化。只要做好宣傳，佢哋就會明白香港唔單止係購物天堂。
+
+    就算係噉，我都同意要有啲規矩，例如喺熱門地方加多啲垃圾桶同警察。總之，限制人數係最簡單嘅方法，但唔係最好嘅方法。講到尾，香港要嘅唔係少啲遊客，而係好啲嘅遊客同好啲嘅管理。
+  checklist:
+    - "I stated my position clearly in the first sentence."
+    - "I ordered my arguments with 首先, 其次, 另外 and added weight with 而且 / 仲有."
+    - "I conceded a point before countering it (固然…但係 / 就算係噉)."
+    - "I used a rhetorical question (邊個賠錢畀佢哋呢？) and an emphatic 連…都 or 越…越 sentence."
+    - "I used a causative with 令 or 搞到."
+    - "I summed up with 總之 or 講到尾."
+speaking:
+  - "佢話今晚唔嚟食飯喎，你唔使煮佢嗰份。"
+  - "連我阿爺都識用手機買嘢，你唔好再講你唔識喇。"
+  - "我一落船就去食海鮮，越食越開心。"
+  - "無論幾多人排隊，我都要試吓呢間嘅雲吞麵。"
+  - "佢成日放飛機，搞到大家都對佢好心淡。"
+  - "總之，只要你肯堅持，就一定學得好廣東話。"
