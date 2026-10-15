@@ -1,0 +1,1591 @@
+# A2 grammar notes (Hong Kong Cantonese). Explanations use light markdown:
+# ### headings, bullets, pipe tables, **bold**. Cantonese examples are in
+# traditional characters followed by toned Jyutping in brackets.
+- id: g.zo-perfective
+  level: a2
+  title: "咗 - completed actions"
+  summary: "Verb + 咗 marks an action as done: 我食咗飯 'I've eaten / I ate'."
+  explanation: |
+    咗 (zo2) goes **right after the verb** and shows the action is completed. It covers both English "I ate" and "I have eaten":
+    - 我食咗飯 (ngo5 sik6 zo2 faan6) - I've eaten.
+    - 佢去咗日本 (keoi5 heoi3 zo2 jat6 bun2) - He's gone to Japan.
+    - 我買咗兩本書 (ngo5 maai5 zo2 loeng5 bun2 syu1) - I bought two books.
+
+    ### 咗 is not a past tense
+    咗 marks completion, not time. Past habits and states take no 咗:
+    | Sentence | Why |
+    |---|---|
+    | 我尋日食咗點心 | a completed event: ✓ 咗 |
+    | 我細個住喺灣仔 | a past state: no 咗 |
+    | 我以前日日游水 | a past habit: no 咗 |
+
+    It can also refer to the future: 你食咗飯先走啦 "Leave after you've eaten."
+
+    ### Change of state: 咗 + 喇
+    咗 often combines with 喇 (laa3) for news: 佢走咗喇 (keoi5 zau2 zo2 laa3) "He's left (now)." 落咗雨喇 "It's started raining."
+
+    ### Negative
+    The negative of V + 咗 is 冇 + V, without 咗: 我冇去 "I didn't go".
+  examples:
+    - { es: "我今朝飲咗兩杯咖啡。", en: "I had two cups of coffee this morning." }
+    - { es: "佢搬咗去九龍城。", en: "She has moved to Kowloon City.", altEn: ["He has moved to Kowloon City.", "She moved to Kowloon City."] }
+    - { es: "架巴士走咗喇。", en: "The bus has left." }
+    - { es: "我做完功課，食咗飯先出去。", en: "I'll go out after I've done my homework and eaten." }
+  pitfalls:
+    - "Don't keep 咗 in the negative: 我冇去, not 我冇去咗 or 我唔去咗."
+    - "咗 goes after the verb, not at the end: 我買咗本書, not 我買本書咗."
+    - "Don't use 咗 for past habits or states: 我以前住喺尖沙咀, not 我以前住咗喺尖沙咀."
+  related: [g.mei-questions, g.mou-past-negation, g.zo-vs-gwo]
+  drills:
+    - { es: "我寄咗封信。", en: "I've sent the letter.", altEn: ["I sent the letter."] }
+    - { es: "佢去咗廁所。", en: "She's gone to the toilet.", altEn: ["He's gone to the toilet."] }
+    - { es: "我哋尋日睇咗場戲。", en: "We watched a film yesterday." }
+    - { es: "啲餸凍咗喇。", en: "The food has gone cold." }
+
+- id: g.mei-questions
+  level: a2
+  title: "未 - not yet, and 'have you … yet?'"
+  summary: "Ask 'V + 咗 + 未？' for 'have you … yet?'; answer V咗喇 'yes' or 未 / 仲未 'not yet'."
+  explanation: |
+    ### Asking "yet?"
+    Put 未 (mei6) at the end of a sentence with 咗:
+    - 你食咗飯未呀？ (nei5 sik6 zo2 faan6 mei6 aa3) - Have you eaten yet?
+    - 佢到咗未呀？ (keoi5 dou3 zo2 mei6 aa3) - Has she arrived yet?
+
+    ### Answering
+    | Answer | Jyutping | Meaning |
+    |---|---|---|
+    | 食咗喇 | sik6 zo2 laa3 | Yes, I have. |
+    | 未呀 / 未 | mei6 aa3 | Not yet. |
+    | 仲未 | zung6 mei6 | Still not. |
+    | 我仲未食 | ngo5 zung6 mei6 sik6 | I haven't eaten yet. |
+
+    ### 未 + verb: "haven't yet"
+    In statements 未 goes before the verb, with no 咗: 我未去過 "I haven't been yet", 佢仲未嚟 "He still hasn't come."
+
+    ### 未 vs 冇
+    - 冇 + V: it didn't happen (finished time).
+    - 未 + V: it hasn't happened **yet** (it may still happen).
+  examples:
+    - { es: "你做完功課未呀？", en: "Have you finished your homework yet?" }
+    - { es: "仲未，就快喇。", en: "Not yet, almost." }
+    - { es: "佢仲未起身。", en: "He still hasn't got up.", altEn: ["She still hasn't got up."] }
+    - { es: "你買咗飛未呀？買咗喇。", en: "Have you bought the tickets yet? Yes, I have." }
+  pitfalls:
+    - "Don't use 咗 after 未: 我未食, not 我未食咗."
+    - "Answer 'yes' by repeating the verb with 咗喇, not with 係: 食咗喇."
+    - "未 means 'not yet'; for 'didn't' (finished, no chance) use 冇: 尋日我冇去."
+  related: [g.zo-perfective, g.mou-past-negation, g.ji-ging-already]
+  drills:
+    - { es: "你瞓咗覺未呀？", en: "Have you gone to bed yet?" }
+    - { es: "我未食早餐。", en: "I haven't had breakfast yet." }
+    - { es: "架車到咗未呀？", en: "Has the car arrived yet?" }
+    - { es: "佢仲未覆我。", en: "She still hasn't replied to me.", altEn: ["He still hasn't replied to me."] }
+
+- id: g.mou-past-negation
+  level: a2
+  title: "冇 + verb - didn't"
+  summary: "To say an action did not happen, use 冇 + verb (no 咗): 我尋日冇返工。"
+  explanation: |
+    For completed time, Cantonese negates with 冇 (mou5) before the verb:
+    - 我尋日冇返工 (ngo5 cam4 jat6 mou5 faan1 gung1) - I didn't go to work yesterday.
+    - 佢冇話畀我知 (keoi5 mou5 waa6 bei2 ngo5 zi1) - He didn't tell me.
+
+    ### Questions: 有冇 + verb
+    - 你有冇去呀？ (nei5 jau5 mou5 heoi3 aa3) - Did you go?
+    - Answers: 有 (jau5) "yes, I did" / 冇 (mou5) "no, I didn't".
+
+    ### Three negatives compared
+    | Negative | Use | Example |
+    |---|---|---|
+    | 唔 + V | don't, won't (habit, will) | 我唔去 - I'm not going |
+    | 冇 + V | didn't (it didn't happen) | 我冇去 - I didn't go |
+    | 未 + V | haven't yet | 我未去 - I haven't gone yet |
+  examples:
+    - { es: "我今朝冇食早餐。", en: "I didn't have breakfast this morning." }
+    - { es: "你有冇見到我部手機呀？", en: "Did you see my phone?", altEn: ["Have you seen my phone?"] }
+    - { es: "冇，我冇見到。", en: "No, I didn't see it." }
+    - { es: "佢冇帶遮，濕晒。", en: "She didn't bring an umbrella and got soaked.", altEn: ["He didn't bring an umbrella and got soaked."] }
+  pitfalls:
+    - "唔 + verb is not past: 我尋日唔去 means 'I refused to go / wasn't going to go', not simply 'I didn't go'."
+    - "Drop 咗 in the negative: 我冇買, not 我冇買咗."
+  related: [g.mou-negation, g.zo-perfective, g.mei-questions]
+  drills:
+    - { es: "我冇做功課。", en: "I didn't do my homework." }
+    - { es: "你有冇食藥呀？", en: "Did you take your medicine?" }
+    - { es: "佢冇講。", en: "He didn't say.", altEn: ["She didn't say."] }
+    - { es: "我哋上個星期冇見面。", en: "We didn't meet last week." }
+
+- id: g.ji-ging-already
+  level: a2
+  title: "已經 - already"
+  summary: "已經 goes before the verb, usually with 咗 and 喇: 我已經食咗飯喇。"
+  explanation: |
+    已經 (ji5 ging1) means "already" and comes **before the verb**:
+    - 我已經買咗飛喇 (ngo5 ji5 ging1 maai5 zo2 fei1 laa3) - I've already bought the tickets.
+    - 佢已經走咗 - She's already left.
+
+    ### With states and times
+    - 已經十點喇 (ji5 ging1 sap6 dim2 laa3) - It's already ten o'clock.
+    - 我已經好攰 - I'm already really tired.
+
+    ### Just now: 啱啱
+    啱啱 (ngaam1 ngaam1) before the verb means "just": 我啱啱到 "I've just arrived". (More on 啱啱 at B1.)
+
+    ### Opposite: 仲未
+    | Question | Yes | No |
+    |---|---|---|
+    | 你食咗飯未呀？ | 已經食咗喇 | 仲未 |
+  examples:
+    - { es: "佢已經結咗婚。", en: "She's already married.", altEn: ["He's already married."] }
+    - { es: "已經夜喇，我哋走啦。", en: "It's late already, let's go." }
+    - { es: "我已經同佢講咗。", en: "I've already told him.", altEn: ["I've already told her."] }
+    - { es: "我啱啱到，你喺邊呀？", en: "I've just arrived, where are you?" }
+  pitfalls:
+    - "已經 goes before the verb, never at the end: 我已經食咗, not 我食咗已經."
+    - "Keep 咗 with action verbs: 已經食咗, not just 已經食."
+  related: [g.zo-perfective, g.mei-questions, g.ngaam-ngaam-just]
+  drills:
+    - { es: "我已經做完喇。", en: "I've already finished." }
+    - { es: "已經三點喇！", en: "It's already three o'clock!" }
+    - { es: "佢已經返咗屋企。", en: "He's already gone home.", altEn: ["She's already gone home."] }
+
+- id: g.gan-progressive
+  level: a2
+  title: "緊 - in progress (-ing)"
+  summary: "Verb + 緊 means the action is happening now: 我食緊飯 'I'm eating'."
+  explanation: |
+    緊 (gan2) goes **right after the verb** to show an action in progress:
+    - 我食緊飯 (ngo5 sik6 gan2 faan6) - I'm eating.
+    - 佢講緊電話 (keoi5 gong2 gan2 din6 waa2) - She's on the phone.
+    - 落緊雨 (lok6 gan2 jyu5) - It's raining.
+
+    ### Past and future progress
+    緊 isn't tied to now; a time word sets the time:
+    - 你打電話嚟嗰陣，我沖緊涼 - When you called, I was in the shower.
+
+    ### Coming: 嚟緊
+    嚟緊 (lai4 gan2) means "coming", and also "next / upcoming": 架車嚟緊 "the bus is coming", 嚟緊星期一 "this coming Monday".
+
+    ### Negative
+    Progressive is rarely negated directly; say what is happening instead, or use 唔係 + V緊: 我唔係瞓緊覺 "I'm not sleeping".
+  examples:
+    - { es: "你做緊乜嘢呀？", en: "What are you doing?" }
+    - { es: "我等緊巴士。", en: "I'm waiting for the bus." }
+    - { es: "佢哋開緊會。", en: "They're in a meeting." }
+    - { es: "我嚟緊，等我五分鐘。", en: "I'm on my way, give me five minutes." }
+  pitfalls:
+    - "With two-syllable verbs, 緊 goes between the verb and its object: 沖緊涼, 瞓緊覺, 開緊會 - not 沖涼緊."
+    - "Don't add 咗 and 緊 together: one aspect marker per verb."
+    - "緊 goes after the verb, not before: 食緊, not 緊食."
+  related: [g.zyu-continuous, g.hai-dou-progressive, g.zo-perfective]
+  drills:
+    - { es: "我煮緊飯。", en: "I'm cooking." }
+    - { es: "佢睇緊電視。", en: "He's watching TV.", altEn: ["She's watching TV."] }
+    - { es: "外面落緊雨。", en: "It's raining outside." }
+    - { es: "我哋食緊飯，遲啲打畀你。", en: "We're eating, I'll call you later." }
+
+- id: g.zyu-continuous
+  level: a2
+  title: "住 - continuing states (wearing, holding, sitting)"
+  summary: "Verb + 住 describes a state that continues: 佢著住紅色衫 'she's wearing red'."
+  explanation: |
+    住 (zyu6) after a verb shows a **state that lasts** as a result of an action, rather than the action in progress:
+    | 緊 (action in progress) | 住 (resulting state) |
+    |---|---|
+    | 佢著緊衫 - she's getting dressed | 佢著住件紅衫 - she's wearing a red top |
+    | 佢坐緊落嚟 - he's sitting down | 佢坐住 - he's sitting |
+
+    ### Common verbs with 住
+    著住 (zoek3 zyu6) wearing, 拎住 (ling1 zyu6) holding, 坐住 (co5 zyu6) sitting, 企住 (kei5 zyu6) standing, 開住 (hoi1 zyu6) left on/open, 等住 (dang2 zyu6) waiting.
+
+    ### Background action
+    V住 + another verb: doing one thing while in a state: 佢笑住講 "she said, smiling", 唔好拎住手機過馬路 "don't cross the road holding your phone".
+
+    ### Hold on: 住先
+    等住先 / 咪住 (mai5 zyu6) "hold on, wait a moment".
+  examples:
+    - { es: "佢著住件白色恤衫。", en: "He's wearing a white shirt.", altEn: ["She's wearing a white shirt."] }
+    - { es: "我拎住好多嘢，唔該開門。", en: "I'm carrying lots of things, could you open the door?" }
+    - { es: "部冷氣開住。", en: "The air conditioner is on." }
+    - { es: "佢坐住睇書。", en: "She's sitting reading a book.", altEn: ["He's sitting reading a book."] }
+  pitfalls:
+    - "Use 住 for states, 緊 for actions: 'wearing glasses' is 戴住眼鏡, not 戴緊眼鏡 (which means 'putting on glasses')."
+    - "住 here (zyu6) is the same character as 'live' (住喺), but after another verb it is a state marker."
+  related: [g.gan-progressive, g.hai-dou-progressive]
+  drills:
+    - { es: "佢戴住頂帽。", en: "He's wearing a hat.", altEn: ["She's wearing a hat."] }
+    - { es: "啲燈開住。", en: "The lights are on." }
+    - { es: "咪住，我未搞掂。", en: "Hang on, I'm not done yet." }
+    - { es: "佢企住等車。", en: "She's standing waiting for the bus.", altEn: ["He's standing waiting for the bus."] }
+
+- id: g.hai-dou-progressive
+  level: a2
+  title: "喺度 + verb - be busy doing"
+  summary: "喺度 before a verb also marks ongoing action, often with 緊: 佢喺度做緊嘢 'he's (over there) working'."
+  explanation: |
+    喺度 (hai2 dou6) literally "at here/there", placed before a verb, describes an action going on, like "be busy doing":
+    - 佢喺度睇書 (keoi5 hai2 dou6 tai2 syu1) - She's reading.
+    - 我喺度諗嘢 (ngo5 hai2 dou6 nam2 je5) - I'm thinking.
+
+    ### With 緊
+    喺度 and 緊 often appear together for emphasis: 佢喺度食緊飯 "He's (right in the middle of) eating."
+
+    ### Complaining
+    喺度 + verb often suggests something continuing annoyingly:
+    - 佢成日喺度玩手機 - He's always on his phone.
+    - 你喺度做乜嘢呀？ - What on earth are you doing?
+
+    | Pattern | Feel |
+    |---|---|
+    | 佢食緊飯 | neutral: he's eating |
+    | 佢喺度食飯 | he's busy eating |
+    | 佢喺度食緊飯 | right in the middle of eating |
+  examples:
+    - { es: "阿媽喺度煮緊飯。", en: "Mum's cooking." }
+    - { es: "你喺度做乜嘢呀？", en: "What are you doing?" }
+    - { es: "佢哋喺度傾偈。", en: "They're chatting." }
+    - { es: "唔好成日喺度打機啦！", en: "Stop playing video games all the time!" }
+  pitfalls:
+    - "喺度 + verb doesn't need a real place; it just marks the ongoing action."
+    - "Don't confuse 佢喺度 'he's here' with 佢喺度 + verb 'he's doing …'; the verb tells you which."
+  related: [g.gan-progressive, g.hai2-location, g.zyu-continuous]
+  drills:
+    - { es: "我喺度溫書。", en: "I'm studying." }
+    - { es: "佢喺度瞓緊覺。", en: "He's sleeping.", altEn: ["She's sleeping."] }
+    - { es: "啲細路喺度玩。", en: "The kids are playing." }
+
+- id: g.gwo-experiential
+  level: a2
+  title: "過 - have ever done"
+  summary: "Verb + 過 means you have had the experience: 我去過日本; never is 未…過 or 從來冇…過."
+  explanation: |
+    過 (gwo3) after a verb means "have done at some time, have the experience of":
+    - 我去過日本 (ngo5 heoi3 gwo3 jat6 bun2) - I've been to Japan.
+    - 你食過榴槤未呀？ (nei5 sik6 gwo3 lau4 lin4 mei6 aa3) - Have you ever eaten durian?
+
+    ### Questions and answers
+    | Question | Yes | No |
+    |---|---|---|
+    | 你去過未呀？ | 去過 | 未去過 (not yet) |
+    | 你有冇去過？ | 有 / 去過 | 冇 / 冇去過 |
+
+    ### Never
+    - 我未食過 (ngo5 mei6 sik6 gwo3) - I've never eaten it (yet).
+    - 我從來冇去過 (ngo5 cung4 loi4 mou5 heoi3 gwo3) - I've never ever been.
+
+    ### Counting times
+    V過 + number + 次: 我去過三次澳門 "I've been to Macau three times."
+
+    Note: 過 is also a verb ("cross", 過馬路) and the comparison word (高過). After a verb with no object comparison, it's the experience marker.
+  examples:
+    - { es: "我去過兩次台灣。", en: "I've been to Taiwan twice." }
+    - { es: "你有冇試過蛇羹呀？", en: "Have you ever tried snake soup?" }
+    - { es: "我從來冇搭過天星小輪。", en: "I've never taken the Star Ferry." }
+    - { es: "佢以前做過老師。", en: "She used to be a teacher.", altEn: ["He used to be a teacher.", "She has worked as a teacher."] }
+  pitfalls:
+    - "過 goes right after the verb: 我去過日本, not 我去日本過."
+    - "Unlike 咗, 過 stays in the negative: 我冇去過 / 我未去過."
+    - "'Have you ever …?' is 你V過…未呀？ or 你有冇V過…？, not 你V咗…未呀？ (which means 'have you done it yet?')."
+  related: [g.cang-ging, g.zo-vs-gwo, g.mei-questions]
+  drills:
+    - { es: "我未去過北京。", en: "I've never been to Beijing.", altEn: ["I haven't been to Beijing yet."] }
+    - { es: "你見過佢未呀？", en: "Have you ever met him?", altEn: ["Have you ever met her?"] }
+    - { es: "我食過一次。", en: "I've eaten it once." }
+    - { es: "佢從來冇學過廣東話。", en: "She has never studied Cantonese.", altEn: ["He has never studied Cantonese."] }
+
+- id: g.cang-ging
+  level: a2
+  title: "曾經 and 以前 - once, used to"
+  summary: "曾經 + V過 stresses that something did once happen; 以前 marks the past as 'before, used to'."
+  explanation: |
+    ### 曾經 (cang4 ging1): once, at one time
+    A slightly formal word that underlines a past experience, usually with 過:
+    - 我曾經喺英國住過 (ngo5 cang4 ging1 hai2 jing1 gwok3 zyu6 gwo3) - I once lived in the UK.
+
+    ### 以前 (ji5 cin4): before, in the past
+    The everyday word for "in the past" and "used to":
+    - 我以前好肥 (ngo5 ji5 cin4 hou2 fei4) - I used to be fat.
+    - 以前呢度係海 - This used to be sea.
+
+    ### 從來 (cung4 loi4): ever / never
+    Only with negatives: 從來唔 (never, as a habit), 從來冇 (never, as an experience):
+    | | Meaning |
+    |---|---|
+    | 我從來唔飲酒 | I never drink (habit) |
+    | 我從來冇飲過酒 | I've never had alcohol (experience) |
+  examples:
+    - { es: "我曾經喺尖沙咀返過工。", en: "I once worked in Tsim Sha Tsui." }
+    - { es: "以前旺角冇咁多人。", en: "Mong Kok didn't use to be so crowded." }
+    - { es: "我以前日日都游水。", en: "I used to swim every day." }
+    - { es: "佢從來唔遲到。", en: "He's never late.", altEn: ["She's never late."] }
+  pitfalls:
+    - "曾經 is mostly used for positive experiences; for 'never' use 從來冇 or 未…過, not 曾經冇."
+    - "以前 is not 'ago' on its own; 'three years ago' is 三年前."
+  related: [g.gwo-experiential, g.frequency-adverbs]
+  drills:
+    - { es: "我曾經見過佢一次。", en: "I met him once.", altEn: ["I met her once."] }
+    - { es: "以前我唔鍾意食魚。", en: "I didn't use to like fish." }
+    - { es: "我從來冇去過澳洲。", en: "I've never been to Australia." }
+    - { es: "三年前我嚟咗香港。", en: "I came to Hong Kong three years ago." }
+
+- id: g.zo-vs-gwo
+  level: a2
+  title: "咗 or 過? - done vs experienced"
+  summary: "咗 says a specific action is done (and its result may last); 過 says you have the experience (the result need not last)."
+  explanation: |
+    | | 咗 (zo2) | 過 (gwo3) |
+    |---|---|---|
+    | Meaning | completed, specific event | experience, at some time |
+    | 佢去咗日本 | he has gone to Japan (he's there now) | |
+    | 佢去過日本 | | he has been to Japan (and came back) |
+    | Negative | 冇 + V (no 咗) | 冇 / 未 + V過 (keeps 過) |
+    | "yet?" | V咗…未？ have you done it yet? | V過…未？ have you ever done it? |
+
+    ### Examples side by side
+    - 我食咗藥 (ngo5 sik6 zo2 joek6) - I've taken my medicine.
+    - 我食過呢隻藥 (ngo5 sik6 gwo3 ni1 zek3 joek6) - I've taken this medicine before.
+    - 佢結咗婚 - She's married.
+    - 佢結過婚 - She has been married (before).
+  examples:
+    - { es: "佢去咗英國。", en: "He's gone to the UK.", altEn: ["She's gone to the UK."] }
+    - { es: "佢去過英國。", en: "He's been to the UK.", altEn: ["She's been to the UK."] }
+    - { es: "你睇咗嗰套戲未呀？", en: "Have you watched that film yet?" }
+    - { es: "你睇過嗰套戲未呀？", en: "Have you ever seen that film?" }
+  pitfalls:
+    - "佢去咗北京 means he is (probably) still there; to say he has been there before, use 去過."
+    - "In the negative, 咗 disappears but 過 stays: 我冇睇 vs 我冇睇過."
+  related: [g.zo-perfective, g.gwo-experiential]
+  drills:
+    - { es: "我買咗嗰本書。", en: "I've bought that book." }
+    - { es: "我讀過嗰本書。", en: "I've read that book (before)." }
+    - { es: "佢哋分咗手。", en: "They've broken up." }
+    - { es: "你學過游水未呀？", en: "Have you ever learned to swim?" }
+
+- id: g.bei2-comparison
+  level: a2
+  title: "A 比 B + adjective - comparisons with 比"
+  summary: "A 比 B + adjective means 'A is more … than B': 旺角比銅鑼灣多人。"
+  explanation: |
+    ### Pattern
+    **A + 比 + B + adjective (+ difference)**
+    - 呢間比嗰間平 (ni1 gaan1 bei2 go2 gaan1 peng4) - This one is cheaper than that one.
+    - 佢比我高 (keoi5 bei2 ngo5 gou1) - He's taller than me.
+
+    ### Adding the difference
+    The amount goes **after** the adjective:
+    - 佢比我高十公分 - He's 10 cm taller than me.
+    - 呢件比嗰件貴好多 (hou2 do1) - This one is much more expensive.
+    - 今日比尋日凍啲 (dung3 di1) - Today is a bit colder than yesterday.
+
+    ### No 好
+    Never use 好 or 非常 in a 比 sentence: use 好多 (much) or 啲 (a bit) after the adjective instead.
+
+    比 is common in Hong Kong Cantonese, especially with longer phrases; the more traditional Cantonese pattern is adjective + 過 (see next note).
+  examples:
+    - { es: "九龍比港島多人。", en: "Kowloon has more people than Hong Kong Island." }
+    - { es: "坐港鐵比坐巴士快。", en: "Taking the MTR is faster than taking the bus." }
+    - { es: "今年比舊年熱好多。", en: "This year is much hotter than last year." }
+    - { es: "我細佬比我高少少。", en: "My younger brother is a little taller than me." }
+  pitfalls:
+    - "Don't add 好 before the adjective: 佢比我高, not 佢比我好高."
+    - "The difference goes after the adjective: 貴十蚊, not 十蚊貴."
+    - "This 比 (bei2) is written like the 'compare' word, not 畀 'give', though both are bei2."
+  related: [g.adj-gwo-comparison, g.mou-gam-not-as, g.zeoi-superlative]
+  drills:
+    - { es: "呢度比嗰度靜。", en: "It's quieter here than there." }
+    - { es: "佢比我大三歲。", en: "She's three years older than me.", altEn: ["He's three years older than me."] }
+    - { es: "我嘅電話比你嘅新。", en: "My phone is newer than yours." }
+    - { es: "今日比尋日好啲。", en: "Today is a bit better than yesterday." }
+
+- id: g.adj-gwo-comparison
+  level: a2
+  title: "Adjective + 過 - the Cantonese comparative"
+  summary: "A + adjective + 過 + B means 'A is more … than B': 佢高過我 'he's taller than me'."
+  explanation: |
+    The typically Cantonese comparison puts 過 (gwo3) **after the adjective**:
+    - 佢高過我 (keoi5 gou1 gwo3 ngo5) - He's taller than me.
+    - 坐的士快過坐巴士 (co5 dik1 si2 faai3 gwo3 co5 baa1 si2) - A taxi is faster than the bus.
+    - 呢度平過中環 - It's cheaper here than in Central.
+
+    ### Adding the difference
+    The amount goes at the end: 佢高過我十公分 "He's 10 cm taller than me", 平過佢好多 "much cheaper than it".
+
+    ### 好過 - better than, would rather
+    好過 (hou2 gwo3) "better than" is very common:
+    - 屋企飯好過出面 - Home cooking is better than eating out.
+    - 早啲去好過 - Better to go early.
+
+    | 比 pattern | 過 pattern |
+    |---|---|
+    | 佢比我高 | 佢高過我 |
+    | 呢間比嗰間平 | 呢間平過嗰間 |
+  examples:
+    - { es: "佢嘅廣東話好過我。", en: "Her Cantonese is better than mine.", altEn: ["His Cantonese is better than mine."] }
+    - { es: "今日熱過尋日。", en: "Today is hotter than yesterday." }
+    - { es: "行路快過搭車。", en: "Walking is faster than taking the bus." }
+    - { es: "呢對鞋貴過嗰對兩百蚊。", en: "These shoes are $200 more expensive than those." }
+  pitfalls:
+    - "過 goes after the adjective, before B: 高過我, not 過我高."
+    - "Don't combine 比 and 過 in one sentence: 佢比我高過 is wrong."
+    - "Only one-word adjectives work smoothly with 過; with longer phrases use 比."
+  related: [g.bei2-comparison, g.mou-gam-not-as, g.zeoi-superlative]
+  drills:
+    - { es: "我哥哥大過我五歲。", en: "My older brother is five years older than me." }
+    - { es: "呢度平過網上。", en: "It's cheaper here than online." }
+    - { es: "佢跑得快過我。", en: "He runs faster than me.", altEn: ["She runs faster than me."] }
+    - { es: "唔去好過去。", en: "Better not to go than to go." }
+
+- id: g.mou-gam-not-as
+  level: a2
+  title: "冇…咁 - not as … as"
+  summary: "A 冇 B 咁 + adjective means 'A is not as … as B': 我冇佢咁高。"
+  explanation: |
+    To say "A is not as … as B":
+    **A + 冇 + B + 咁 + adjective**
+    - 我冇佢咁高 (ngo5 mou5 keoi5 gam3 gou1) - I'm not as tall as him.
+    - 今日冇尋日咁熱 (gam1 jat6 mou5 cam4 jat6 gam3 jit6) - Today isn't as hot as yesterday.
+    - 九龍城冇旺角咁多人 - Kowloon City isn't as crowded as Mong Kok.
+
+    ### Positive "as … as": 有…咁
+    有 + B + 咁 + adjective: 佢有我咁高 "He's as tall as me." Questions: 有冇佢咁貴呀？ "Is it as expensive as that one?"
+
+    ### Without B: 冇咁 + adjective
+    "Not so …": 今日冇咁凍 (mou5 gam3 dung3) "It's not so cold today."
+  examples:
+    - { es: "呢間餐廳冇嗰間咁貴。", en: "This restaurant isn't as expensive as that one." }
+    - { es: "我嘅廣東話冇你咁好。", en: "My Cantonese isn't as good as yours." }
+    - { es: "坐巴士冇坐港鐵咁快。", en: "The bus isn't as fast as the MTR." }
+    - { es: "今日冇咁攰。", en: "I'm not so tired today." }
+  pitfalls:
+    - "Don't negate the 比 sentence with 唔: 佢唔比我高 is unusual; 佢冇我咁高 is the normal way to say 'he isn't as tall as me'."
+    - "咁 (gam3, 'so') is needed: 我冇佢高 sounds incomplete."
+  related: [g.bei2-comparison, g.adj-gwo-comparison, g.gam3-vs-gam2]
+  drills:
+    - { es: "我冇佢咁忙。", en: "I'm not as busy as him.", altEn: ["I'm not as busy as her."] }
+    - { es: "今年冇舊年咁熱。", en: "This year isn't as hot as last year." }
+    - { es: "呢度冇中環咁貴。", en: "It's not as expensive here as in Central." }
+
+- id: g.zeoi-superlative
+  level: a2
+  title: "最 - the most"
+  summary: "最 before an adjective or verb means 'most': 最平, 最鍾意; 'of all' is 邊個最…？"
+  explanation: |
+    最 (zeoi3) goes before an adjective or a verb of liking:
+    - 呢間最平 (ni1 gaan1 zeoi3 peng4) - This one is the cheapest.
+    - 我最鍾意蝦餃 (ngo5 zeoi3 zung1 ji3 haa1 gaau2) - I like har gow best.
+
+    ### Questions
+    - 邊個最高呀？ - Who's the tallest?
+    - 你最鍾意邊度呀？ - Where do you like best?
+
+    ### In a group
+    Put the group first: 我哋班入面，佢最叻 "In our class, she's the cleverest." 全香港最高嘅大廈 "the tallest building in Hong Kong".
+
+    ### Fixed phrases
+    | Phrase | Jyutping | Meaning |
+    |---|---|---|
+    | 最好 | zeoi3 hou2 | best; had better |
+    | 最近 | zeoi3 gan6 | recently; nearest |
+    | 最後 | zeoi3 hau6 | finally, last |
+    | 最少 | zeoi3 siu2 | at least |
+  examples:
+    - { es: "邊間茶樓最好食呀？", en: "Which teahouse is the best?" }
+    - { es: "呢度係九龍最熱鬧嘅地方。", en: "This is the liveliest place in Kowloon." }
+    - { es: "我最鍾意黃大仙。", en: "I like Wong Tai Sin best." }
+    - { es: "最少要等半個鐘。", en: "You'll have to wait at least half an hour." }
+  pitfalls:
+    - "Don't add 好 after 最: 最平, not 最好平."
+    - "最近 can mean 'recently' or 'nearest' depending on context: 最近點呀？ 'how have you been recently?' vs 最近嘅站 'the nearest station'."
+  related: [g.bei2-comparison, g.adj-ge-noun, g.zeoi-hou-better]
+  drills:
+    - { es: "佢係我最好嘅朋友。", en: "He's my best friend.", altEn: ["She's my best friend."] }
+    - { es: "邊款最平呀？", en: "Which model is the cheapest?" }
+    - { es: "我最唔鍾意落雨。", en: "I hate rain the most." }
+
+- id: g.jat-joeng-same
+  level: a2
+  title: "同…一樣 / 唔同 - the same, different"
+  summary: "A 同 B 一樣 means 'A is the same as B'; add an adjective for 'as … as': 同我一樣高."
+  explanation: |
+    ### Same
+    **A + 同 + B + 一樣**
+    - 我同佢一樣 (ngo5 tung4 keoi5 jat1 joeng6) - I'm the same as him.
+    - 呢個同嗰個一樣 - This one is the same as that one.
+
+    ### Same + adjective: "as … as"
+    - 佢同我一樣高 (keoi5 tung4 ngo5 jat1 joeng6 gou1) - He's as tall as me.
+
+    ### Different
+    - 唔同 (m4 tung4): 呢個同嗰個唔同 "This is different from that."
+    - 唔一樣 (m4 jat1 joeng6) is also used.
+
+    ### Similar
+    差唔多 (caa1 m4 do1) "more or less the same, about": 兩個差唔多 "They're about the same." 似 (ci5) "look like": 佢好似佢媽媽 "She looks like her mother."
+
+    | Pattern | Example |
+    |---|---|
+    | 同…一樣 | 同我一樣 |
+    | 同…唔同 | 同香港唔同 |
+    | 同…差唔多 | 同舊年差唔多 |
+  examples:
+    - { es: "澳門嘅天氣同香港差唔多。", en: "Macau's weather is about the same as Hong Kong's." }
+    - { es: "我嘅電話同你嘅一樣。", en: "My phone is the same as yours." }
+    - { es: "廣東話同普通話好唔同。", en: "Cantonese and Mandarin are very different." }
+    - { es: "佢同佢家姐一樣靚。", en: "She's as pretty as her older sister." }
+  pitfalls:
+    - "Use 同 (and/with) to link A and B: 我同你一樣, not 我一樣你."
+    - "The adjective comes after 一樣: 一樣高, not 高一樣."
+  related: [g.bei2-comparison, g.mou-gam-not-as]
+  drills:
+    - { es: "我同你一樣咁攰。", en: "I'm as tired as you." }
+    - { es: "呢度同以前唔同喇。", en: "This place isn't what it used to be." }
+    - { es: "兩件衫差唔多。", en: "The two tops are about the same." }
+
+- id: g.wui-will
+  level: a2
+  title: "會 - will, would, be likely to"
+  summary: "會 + verb predicts or promises: 聽日會落雨 'it'll rain tomorrow'; 唔會 'won't'."
+  explanation: |
+    會 (wui5) before a verb expresses what **will** or **is likely to** happen:
+    - 聽日會落雨 (ting1 jat6 wui5 lok6 jyu5) - It'll rain tomorrow.
+    - 我會打電話畀你 (ngo5 wui5 daa2 din6 waa2 bei2 nei5) - I'll call you.
+    - 佢唔會嚟 (keoi5 m4 wui5 lai4) - He won't come.
+
+    ### No future tense
+    Cantonese has no future tense. Plain verbs with a time word are enough for plans: 我聽日去澳門. 會 adds prediction or promise.
+
+    ### Habit and tendency
+    會 also means "tends to": 佢飲酒會面紅 "She goes red when she drinks."
+
+    ### Questions
+    會唔會…？ (wui5 m4 wui5) "Will … ?": 會唔會塞車呀？ "Will there be traffic?"
+
+    | 會 vs 識 | |
+    |---|---|
+    | 會 | will / likely |
+    | 識 | know how to (a skill) |
+  examples:
+    - { es: "佢一陣會嚟。", en: "He'll come in a bit.", altEn: ["She'll come in a bit."] }
+    - { es: "我唔會話畀人知。", en: "I won't tell anyone." }
+    - { es: "今晚會唔會好凍呀？", en: "Will it be cold tonight?" }
+    - { es: "放心，冇事嘅，唔會遲到。", en: "Relax, it's fine, we won't be late." }
+  pitfalls:
+    - "In Hong Kong Cantonese 'can (skill)' is 識, not 會: 我識游水 'I can swim'. 我會游水 means 'I will swim' to most speakers."
+    - "Don't add 會 to every future sentence; 我聽日返工 is already future."
+  related: [g.sik-know-how, g.ho-ji-can-may, g.probability]
+  drills:
+    - { es: "聽日會好熱。", en: "It'll be hot tomorrow." }
+    - { es: "我會早啲返嚟。", en: "I'll be back early." }
+    - { es: "佢唔會鍾意。", en: "She won't like it.", altEn: ["He won't like it."] }
+    - { es: "會唔會太貴呀？", en: "Will it be too expensive?" }
+
+- id: g.ho-ji-can-may
+  level: a2
+  title: "可以 - can, may"
+  summary: "可以 + verb gives or asks permission and possibility: 我可以坐呢度嗎？; ask favours with 可唔可以…？"
+  explanation: |
+    可以 (ho2 ji5) means "can" in the sense of **permission** or **possibility**:
+    - 你可以入嚟 (nei5 ho2 ji5 jap6 lai4) - You can come in.
+    - 呢度可以影相嗎？ - Can you take photos here?
+
+    ### Asking politely: 可唔可以
+    可唔可以 (ho2 m4 ho2 ji5) is the standard polite request:
+    - 可唔可以幫我影張相呀？ - Could you take a photo for me?
+    - 可唔可以平啲呀？ - Could you make it cheaper?
+
+    ### Answering
+    可以 "Yes, you can", 唔可以 "No, you can't", or 得 (dak1) "OK" / 唔得 (m4 dak1) "no way". 得 is very common: 用卡得唔得呀？ "Can I pay by card?"
+
+    | Meaning | Word |
+    |---|---|
+    | allowed, possible | 可以 / 得 |
+    | know how to | 識 |
+    | will, likely | 會 |
+  examples:
+    - { es: "我可唔可以試吓呀？", en: "Can I try it on?" }
+    - { es: "呢度唔可以食煙。", en: "You can't smoke here." }
+    - { es: "用八達通得唔得呀？", en: "Can I use Octopus?" }
+    - { es: "你可以坐呢度。", en: "You can sit here." }
+  pitfalls:
+    - "Use 識, not 可以, for skills: 我識講英文 'I can speak English'."
+    - "可以 + verb is permission; 'possible to' something outside your control is often 會 or 可能."
+  related: [g.wui-will, g.sik-know-how, g.potential-complements]
+  drills:
+    - { es: "可唔可以講慢啲呀？", en: "Could you speak more slowly?" }
+    - { es: "我可以用你部電話嗎？", en: "Can I use your phone?" }
+    - { es: "唔得，呢度唔可以泊車。", en: "No, you can't park here." }
+    - { es: "得，冇問題。", en: "Sure, no problem." }
+
+- id: g.sik-know-how
+  level: a2
+  title: "識 - know how to, know someone"
+  summary: "識 + verb is a learned skill (我識游水 'I can swim'); 識 + person is 'know someone'."
+  explanation: |
+    ### Skills: 識 + verb
+    識 (sik1) means "know how to, can (because you learned it)":
+    - 我識講廣東話 (ngo5 sik1 gong2 gwong2 dung1 waa2) - I can speak Cantonese.
+    - 你識唔識揸車呀？ (nei5 sik1 m4 sik1 zaa1 ce1 aa3) - Can you drive?
+    - 我唔識游水 - I can't swim.
+
+    ### People and places: 識 + noun
+    - 我識佢 (ngo5 sik1 keoi5) - I know him.
+    - 你識唔識去呀？ - Do you know how to get there?
+
+    ### 知 vs 識
+    | Word | Jyutping | Use |
+    |---|---|---|
+    | 識 | sik1 | skills; people you're acquainted with |
+    | 知 / 知道 | zi1 / zi1 dou6 | facts, information |
+
+    我唔知佢住喺邊 "I don't know where he lives" (a fact) vs 我唔識佢 "I don't know him" (acquaintance).
+
+    識 + 做 can also mean "know better": 佢好識做 "She knows how to handle things."
+  examples:
+    - { es: "我識少少廣東話。", en: "I know a little Cantonese." }
+    - { es: "你識唔識煮飯呀？", en: "Can you cook?" }
+    - { es: "我唔識嗰個人。", en: "I don't know that person." }
+    - { es: "我唔知佢幾時返嚟。", en: "I don't know when he's coming back.", altEn: ["I don't know when she's coming back."] }
+  pitfalls:
+    - "Facts take 知, not 識: 我唔知, not 我唔識 for 'I don't know (that)'."
+    - "In Hong Kong, 'I can swim' is 我識游水; 我會游水 sounds like Mandarin."
+  related: [g.wui-will, g.ho-ji-can-may]
+  drills:
+    - { es: "佢識講三種語言。", en: "She speaks three languages.", altEn: ["He speaks three languages."] }
+    - { es: "我唔識踩單車。", en: "I can't ride a bike." }
+    - { es: "你識唔識佢呀？", en: "Do you know him?", altEn: ["Do you know her?"] }
+    - { es: "我唔知點去。", en: "I don't know how to get there." }
+
+- id: g.jiu-must-m-sai
+  level: a2
+  title: "要 and 唔使 - must, needn't"
+  summary: "要 + verb means 'have to'; the negative 'don't have to' is 唔使: 我要返工，你唔使。"
+  explanation: |
+    ### 要: have to, need to
+    - 我要返工 (ngo5 jiu3 faan1 gung1) - I have to go to work.
+    - 你要早啲起身 - You need to get up earlier.
+    - 一定要 (jat1 ding6 jiu3) - absolutely must: 你一定要去 "You must go."
+
+    ### 唔使: don't have to
+    The negative of "have to" is **唔使** (m4 sai2), not 唔要:
+    - 你唔使畀錢 (nei5 m4 sai2 bei2 cin2) - You don't have to pay.
+    - 唔使客氣 - Don't mention it (lit. no need to be polite).
+
+    ### Questions: 使唔使 / 要唔要
+    使唔使 (sai2 m4 sai2) "Do I need to …?": 使唔使預約呀？ "Do I need a booking?"
+
+    ### Must not: 唔准 / 唔可以
+    唔准 (m4 zeon2) "not allowed": 唔准食煙 "No smoking."
+
+    | | Cantonese |
+    |---|---|
+    | must | 要 / 一定要 |
+    | needn't | 唔使 |
+    | mustn't | 唔准 / 唔可以 / 唔好 |
+  examples:
+    - { es: "我聽日要早起身。", en: "I have to get up early tomorrow." }
+    - { es: "使唔使除鞋呀？唔使。", en: "Do I need to take my shoes off? No." }
+    - { es: "你一定要試吓呢度嘅蛋撻。", en: "You must try the egg tarts here." }
+    - { es: "呢度唔准影相。", en: "No photos allowed here." }
+  pitfalls:
+    - "'Don't have to' is 唔使, never 唔要 (which means 'don't want')."
+    - "要 + noun means 'want'; 要 + verb usually means 'have to': 我要咖啡 vs 我要走."
+  related: [g.jiu-want, g.ho-ji-can-may, g.m-hou-dont]
+  drills:
+    - { es: "我要交功課。", en: "I have to hand in my homework." }
+    - { es: "你唔使等我。", en: "You don't have to wait for me." }
+    - { es: "使唔使買飛呀？", en: "Do we need to buy tickets?" }
+    - { es: "你一定要嚟呀！", en: "You must come!" }
+
+- id: g.dak-descriptive
+  level: a2
+  title: "Verb + 得 + description - how well, how fast"
+  summary: "Verb + 得 + adjective describes how an action is done: 佢講得好快 'she speaks fast'."
+  explanation: |
+    To describe **how** an action is done, put 得 (dak1) after the verb and the description after it:
+    - 佢講得好快 (keoi5 gong2 dak1 hou2 faai3) - She speaks fast.
+    - 你唱得好好聽 (nei5 coeng3 dak1 hou2 hou2 teng1) - You sing beautifully.
+    - 我瞓得唔好 - I didn't sleep well.
+
+    ### With an object: repeat the verb or front the object
+    | Pattern | Example |
+    |---|---|
+    | V + O + V得 + adj | 佢講廣東話講得好好 |
+    | O + V得 + adj | 佢廣東話講得好好 |
+
+    ### Negative and question
+    - 講得唔好 / 講得唔係幾好 - doesn't speak well
+    - 講得好唔好呀？ - Does she speak well?
+
+    ### Compliments
+    你廣東話講得好好呀！ is a compliment learners hear a lot. A modest reply: 麻麻哋啦 "so-so" or 過獎 (gwo3 zoeng2) "you flatter me".
+  examples:
+    - { es: "你廣東話講得好好呀！", en: "Your Cantonese is really good!" }
+    - { es: "佢揸車揸得好快。", en: "He drives very fast.", altEn: ["She drives very fast."] }
+    - { es: "我尋晚瞓得唔好。", en: "I didn't sleep well last night." }
+    - { es: "佢煮飯煮得好好食。", en: "She cooks really well.", altEn: ["He cooks really well."] }
+  pitfalls:
+    - "Don't put the object between 得 and the adjective: 佢講廣東話講得好好 or 佢廣東話講得好好, not 佢講得廣東話好好."
+    - "The negative goes after 得: 講得唔好, not 唔講得好."
+  related: [g.potential-complements, g.adj-gwo-comparison, g.dou-extent]
+  drills:
+    - { es: "佢跑得好快。", en: "He runs fast.", altEn: ["She runs fast."] }
+    - { es: "你寫得好靚。", en: "Your handwriting is beautiful." }
+    - { es: "我英文講得唔係幾好。", en: "I don't speak English very well." }
+    - { es: "佢哋玩得好開心。", en: "They had a great time." }
+
+- id: g.dou-attain
+  level: a2
+  title: "Verb + 到 - managing to (find, see, buy)"
+  summary: "到 after a verb means the action succeeded: 搵到 'found', 見到 'saw', 買到 'managed to buy'."
+  explanation: |
+    到 (dou2 or dou3) after a verb shows the action **reached its goal**:
+    | Plain verb | + 到 | Meaning |
+    |---|---|---|
+    | 搵 (look for) | 搵到 (wan2 dou2) | find |
+    | 睇 (look) | 睇到 (tai2 dou2) | see |
+    | 聽 (listen) | 聽到 (teng1 dou2) | hear |
+    | 買 (buy) | 買到 | manage to buy |
+    | 見 (see, meet) | 見到 (gin3 dou2) | see, run into |
+
+    - 我搵到我條鎖匙喇 - I've found my key.
+    - 你聽唔聽到呀？ - Can you hear me?
+
+    ### Negative and "can't": V唔到
+    唔 goes between the verb and 到: 搵唔到 (wan2 m4 dou2) "can't find / couldn't find", 買唔到飛 "couldn't get tickets". More on this in the next note.
+
+    ### 到 as "until / to"
+    After motion verbs 到 means "arrive at": 行到 (walk to), 到咗 (have arrived). That use is related.
+  examples:
+    - { es: "我搵唔到我部手機。", en: "I can't find my phone." }
+    - { es: "我喺旺角見到你老公。", en: "I saw your husband in Mong Kok." }
+    - { es: "你聽唔聽到我講嘢呀？", en: "Can you hear me?" }
+    - { es: "終於買到飛喇！", en: "I finally got the tickets!" }
+  pitfalls:
+    - "搵 is 'look for' and 搵到 is 'find': 我搵緊 means 'I'm looking', not 'I'm finding'."
+    - "Negate with 唔 inside: 搵唔到, not 唔搵到."
+  related: [g.potential-complements, g.resultative-complements]
+  drills:
+    - { es: "我搵到工喇！", en: "I've found a job!" }
+    - { es: "我睇唔到。", en: "I can't see." }
+    - { es: "你有冇見到佢呀？", en: "Did you see him?", altEn: ["Have you seen her?"] }
+    - { es: "我聽到有人叫我。", en: "I heard someone calling me." }
+
+- id: g.potential-complements
+  level: a2
+  title: "Can or can't - V得 / V唔到 / V唔V得"
+  summary: "V + 唔到 means 'can't manage to'; V得 / V唔得 says whether something can be done: 食得 'edible', 去唔去得？"
+  explanation: |
+    ### V唔到: can't (manage)
+    - 我瞓唔着 (ngo5 fan3 m4 zoek6) - I can't fall asleep.
+    - 我搵唔到 - I can't find it.
+    - 我聽唔到 - I can't hear.
+
+    ### V得 / V唔得: can / can't be done
+    得 (dak1) after a verb means "possible, allowed, fit to":
+    - 呢啲食得 (ni1 di1 sik6 dak1) - These are edible / you can eat these.
+    - 你行唔行得呀？ (nei5 haang4 m4 haang4 dak1 aa3) - Can you walk?
+    - 今晚我去唔到 / 去唔得 - I can't go tonight.
+
+    ### Question forms
+    | Question | Meaning |
+    |---|---|
+    | 你聽唔聽到呀？ | Can you hear? |
+    | 去唔去得呀？ | Is it possible to go? |
+    | 搞唔搞得掂呀？ | Can you manage it? |
+
+    ### Compare 可以
+    可以 is about permission; V得/V唔到 is about ability in the situation: 我食唔晒 "I can't finish it (too much)".
+  examples:
+    - { es: "我今晚嚟唔到喇，唔好意思。", en: "I can't make it tonight, sorry." }
+    - { es: "呢個菇食唔食得㗎？", en: "Is this mushroom edible?" }
+    - { es: "太嘈喇，我聽唔到。", en: "It's too noisy, I can't hear." }
+    - { es: "你搞唔搞得掂呀？搞得掂。", en: "Can you manage? Yes, I can." }
+  pitfalls:
+    - "Put 唔 between the verb and its complement: 瞓唔着, not 唔瞓着."
+    - "V得 can be ambiguous: 佢食得 can mean 'he's allowed to eat' or 'he eats a lot'; context decides."
+  related: [g.dou-attain, g.ho-ji-can-may, g.potential-resultatives]
+  drills:
+    - { es: "我瞓唔着。", en: "I can't sleep." }
+    - { es: "你嚟唔嚟到呀？", en: "Can you make it?" }
+    - { es: "呢度入唔入得呀？", en: "Can we go in here?" }
+    - { es: "我搞唔掂，你幫吓我啦。", en: "I can't manage, give me a hand." }
+
+- id: g.haa-briefly
+  level: a2
+  title: "Verb + 吓 - have a quick go"
+  summary: "吓 after a verb softens it to 'a bit, briefly, have a go': 睇吓, 試吓, 等吓."
+  explanation: |
+    吓 (haa5, also written 下) after a verb means "a little, briefly", making requests and suggestions softer:
+    - 我睇吓 (ngo5 tai2 haa5) - Let me have a look.
+    - 試吓啦 (si3 haa5 laa1) - Give it a try.
+    - 等吓 (dang2 haa5) - Wait a moment.
+
+    ### With objects
+    V吓 + object: 問吓佢 (man6 haa5 keoi5) "ask him", 休息吓 "rest a bit", 行吓街 "stroll around the shops".
+
+    ### Doubling
+    Repeating a one-syllable verb has a similar effect: 睇睇 "have a look". V吓 is more common in Hong Kong.
+
+    ### Polite requests
+    | Blunt | Softer |
+    |---|---|
+    | 你睇 | 你睇吓 |
+    | 幫我 | 幫吓我 |
+    | 等 | 等一陣 / 等吓 |
+
+    Shop assistants say 隨便睇吓 (ceoi4 bin6 tai2 haa5) "feel free to look around".
+  examples:
+    - { es: "我可唔可以試吓件衫呀？", en: "Can I try on the top?" }
+    - { es: "等吓，我問吓經理。", en: "One moment, let me ask the manager." }
+    - { es: "我哋去海旁行吓啦。", en: "Let's go for a stroll on the waterfront." }
+    - { es: "隨便睇吓。", en: "Feel free to look around." }
+  pitfalls:
+    - "吓 goes straight after the verb, before the object: 問吓佢, not 問佢吓."
+    - "Don't combine 吓 with 咗 and 緊 freely: 睇咗吓 is fine ('had a quick look'), but 睇緊吓 is wrong."
+  related: [g.particles-aa-laa, g.laa1-suggestion]
+  drills:
+    - { es: "你嚐吓啦，好好食㗎。", en: "Have a taste, it's delicious." }
+    - { es: "我諗吓先。", en: "Let me think about it first." }
+    - { es: "幫吓我啦。", en: "Give me a hand." }
+    - { es: "我哋休息吓啦。", en: "Let's take a short break." }
+
+- id: g.laa1-suggestion
+  level: a2
+  title: "啦 (laa1) - requests, suggestions, urging"
+  summary: "啦 at the end makes a friendly command or suggestion: 坐啦, 我哋走啦, 快啲啦."
+  explanation: |
+    啦 (laa1) is the particle of **friendly persuasion**:
+    | Use | Example | Jyutping |
+    |---|---|---|
+    | invitation | 坐啦 | co5 laa1 |
+    | suggestion | 我哋去飲茶啦 | ngo5 dei6 heoi3 jam2 caa4 laa1 |
+    | urging | 快啲啦 | faai3 di1 laa1 |
+    | giving in | 好啦，好啦 | hou2 laa1, hou2 laa1 |
+    | listing | 有蝦餃啦、燒賣啦… | and so on, such as |
+
+    ### Listing things
+    啦 after each item in a list sounds like "… and …, you know": 我鍾意行山啦、游水啦、踩單車啦 "I like hiking, swimming, cycling…"
+
+    ### Not 喇
+    啦 (laa1) and 喇 (laa3) differ by tone: 啦 urges, 喇 announces a change (see next note). Many people write both as 啦, so listen for the tone.
+  examples:
+    - { es: "唔使客氣，食多啲啦。", en: "Don't be shy, eat some more." }
+    - { es: "我哋聽日再傾啦。", en: "Let's talk about it again tomorrow." }
+    - { es: "好啦，我陪你去啦。", en: "OK, OK, I'll go with you." }
+    - { es: "我鍾意打波啦、睇戲啦、行街啦。", en: "I like playing ball, watching films, shopping, that kind of thing." }
+  pitfalls:
+    - "Don't overuse 啦 with people above you; 唔該 + request is safer with strangers and bosses."
+    - "啦 (laa1) urges; 喇 (laa3) reports a change. 走啦 'let's go!' vs 走喇 'I'm off now'."
+  related: [g.particles-aa-laa, g.laa3-change, g.hou-m-hou-suggestions]
+  drills:
+    - { es: "入嚟坐啦。", en: "Come in and sit down." }
+    - { es: "快啲啦，就嚟開場喇！", en: "Hurry up, it's about to start!" }
+    - { es: "我哋影張相啦。", en: "Let's take a photo." }
+    - { es: "算啦。", en: "Forget it." }
+
+- id: g.laa3-change
+  level: a2
+  title: "喇 (laa3) - things have changed"
+  summary: "喇 at the end announces a new situation: 落雨喇 'it's started raining', 夠喇 'that's enough now'."
+  explanation: |
+    喇 (laa3) marks a **change of state** or new information, like "now" or "already":
+    - 落雨喇 (lok6 jyu5 laa3) - It's raining now (it wasn't before).
+    - 我食飽喇 (ngo5 sik6 baau2 laa3) - I'm full now.
+    - 夠喇 (gau3 laa3) - That's enough.
+    - 到喇 (dou3 laa3) - We're here.
+
+    ### With 咗
+    V咗 + 喇 reports a finished action as news: 佢走咗喇 "He's left." 我食咗喇 "I've already eaten."
+
+    ### About to: 就嚟…喇
+    就嚟 (zau6 lai4) or 就快 (zau6 faai3) + V + 喇 means "about to": 就嚟到喇 "almost there", 就快下雨喇 "it's about to rain".
+
+    ### Negative change: 唔…喇
+    唔 + V + 喇 means "not any more": 我唔去喇 "I'm not going after all."
+  examples:
+    - { es: "夠鐘喇，我哋走啦。", en: "It's time, let's go." }
+    - { es: "佢大個仔喇。", en: "He's a big boy now." }
+    - { es: "我唔食喇，好飽。", en: "I won't have any more, I'm full." }
+    - { es: "就嚟到喇，等多陣。", en: "We're almost there, hang on a bit." }
+  pitfalls:
+    - "Don't confuse 喇 (laa3, change) with 啦 (laa1, urging); the tone matters."
+    - "唔…喇 means 'no longer': 我唔飲喇 is 'I'm not drinking any more', not just 'I don't drink'."
+  related: [g.laa1-suggestion, g.zo-perfective, g.particles-aa-laa]
+  drills:
+    - { es: "天黑喇。", en: "It's got dark." }
+    - { es: "我明喇！", en: "I get it now!" }
+    - { es: "架車嚟喇。", en: "The bus is here now." }
+    - { es: "我唔等喇。", en: "I'm not waiting any longer." }
+
+- id: g.aa1-offer
+  level: a2
+  title: "吖 (aa1) - offers, agreeing and gentle requests"
+  summary: "吖 makes offers and agreements sound warm: 好吖 'sure', 你試吓吖 'why don't you try'."
+  explanation: |
+    吖 (aa1) is a high, light particle used for:
+    | Use | Example | Jyutping | Meaning |
+    |---|---|---|---|
+    | agreeing | 好吖 | hou2 aa1 | sure, good idea |
+    | gentle request | 唔該畀杯水我吖 | m4 goi1 bei2 bui1 seoi2 ngo5 aa1 | a glass of water, please |
+    | suggestion | 你試吓吖 | nei5 si3 haa5 aa1 | why don't you try |
+    | offering | 我幫你吖 | ngo5 bong1 nei5 aa1 | let me help you |
+
+    ### 吖 vs 呀 vs 啦
+    - 好吖 (aa1): keen and friendly agreement.
+    - 好呀 (aa3): "sure!", also friendly; very common.
+    - 好啦 (laa1): "OK then", giving in.
+
+    ### Rhetorical 吖嘛
+    吖嘛 (aa1 maa3) means "isn't it obvious?": 佢都係學生吖嘛 "He's a student too, you know." (More on 嘛 at B2.)
+  examples:
+    - { es: "一齊去飲茶好唔好？好吖！", en: "Shall we go for yum cha together? Sure!" }
+    - { es: "唔該畀張紙巾我吖。", en: "Could I have a tissue, please?" }
+    - { es: "你試吓呢個吖，好好食。", en: "Try this one, it's really good." }
+    - { es: "我同你拎吖。", en: "Let me carry it for you." }
+  pitfalls:
+    - "吖 is aa1 (high, level); don't confuse it with question 呀 (aa3)."
+    - "吖 is not used to ask questions: 你去唔去呀？, not 你去唔去吖？"
+  related: [g.particles-aa-laa, g.laa1-suggestion, g.maa3-as-you-know]
+  drills:
+    - { es: "好吖，幾點呀？", en: "Sure, what time?" }
+    - { es: "畀個餐牌我吖。", en: "Could I have the menu?" }
+    - { es: "我請你吖。", en: "Let me treat you." }
+
+- id: g.zaa3-ze1-only
+  level: a2
+  title: "咋 and 啫 - only, just"
+  summary: "咋 (zaa3) means 'only, that's all': 十蚊咋; 啫 (ze1) means 'just, merely', playing something down."
+  explanation: |
+    ### 咋 (zaa3): only
+    Shows that something is less than expected:
+    - 十蚊咋 (sap6 man1 zaa3) - Only ten dollars.
+    - 我得一個咋 - I've only got one.
+    - 佢先至三歲咋 - She's only three.
+
+    Often combined with 得 "only have" or 淨係 "only": 我得五分鐘咋.
+
+    ### 啫 (ze1): just, merely
+    Plays down importance, a bit like "it's just …, no big deal":
+    - 小事啫 (siu2 si6 ze1) - It's just a small thing.
+    - 講吓啫 - I'm just saying.
+    - 我得閒啫，唔係好有興趣 - I'm only free, I'm not that interested.
+
+    | Particle | Feel |
+    |---|---|
+    | 咋 | surprisingly little: only! |
+    | 啫 | it doesn't matter: just |
+
+    ### Question 咋？
+    Said with question intonation, 咋 asks "only …?": 十蚊咋？ "Only ten dollars?"
+  examples:
+    - { es: "呢件衫五十蚊咋！", en: "This top is only fifty dollars!" }
+    - { es: "我等咗五分鐘咋。", en: "I only waited five minutes." }
+    - { es: "唔緊要，小事啫。", en: "Never mind, it's nothing." }
+    - { es: "我講笑啫。", en: "I'm only joking." }
+  pitfalls:
+    - "Don't put 咋 after a verb in the middle: it goes at the end of the sentence."
+    - "啫 can sound dismissive in arguments: 你講啫 'that's just what you say'. Use it with care."
+  related: [g.zing-hai-only, g.particle-clusters]
+  drills:
+    - { es: "我得一百蚊咋。", en: "I've only got a hundred dollars." }
+    - { es: "行五分鐘咋。", en: "It's only a five-minute walk." }
+    - { es: "我問吓啫。", en: "I'm just asking." }
+    - { es: "佢先至十八歲咋。", en: "He's only eighteen.", altEn: ["She's only eighteen."] }
+
+- id: g.jan-wai-so-ji
+  level: a2
+  title: "因為…所以… - because, so"
+  summary: "因為 gives the reason and 所以 the result, usually in that order: 因為落雨，所以我冇去。"
+  explanation: |
+    - 因為 (jan1 wai6) - because
+    - 所以 (so2 ji5) - so, therefore
+
+    ### Reason first
+    Cantonese usually gives the reason first, then the result. You may use both words together:
+    - 因為佢病咗，所以冇返工 (jan1 wai6 keoi5 beng6 zo2, so2 ji5 mou5 faan1 gung1) - Because he was ill, he didn't go to work.
+
+    Either word alone is also fine: 我好攰，所以想早啲瞓 "I'm tired, so I want to sleep early."
+
+    ### Answering "why?"
+    點解…？ is answered with 因為…: 點解你遲到呀？因為塞車 "Why are you late? Because of the traffic."
+
+    ### Result first: 係因為
+    To give the result first: 我冇去係因為落雨 "I didn't go because it was raining."
+  examples:
+    - { es: "因為塞車，所以我遲到。", en: "I was late because of the traffic." }
+    - { es: "點解你唔食呀？因為我唔餓。", en: "Why aren't you eating? Because I'm not hungry." }
+    - { es: "佢病咗，所以今日請假。", en: "She's ill, so she's taken the day off.", altEn: ["He's ill, so he's taken the day off."] }
+    - { es: "我學廣東話係因為我老婆係香港人。", en: "I'm learning Cantonese because my wife is from Hong Kong." }
+  pitfalls:
+    - "Don't put 因為 at the end like English: 我冇去因為落雨 is heard, but 因為落雨，所以我冇去 or 我冇去係因為落雨 is better."
+    - "所以 starts the result clause; it doesn't go after the verb."
+  related: [g.question-words, g.jyu-gwo-zau, g.jau-jyu-because]
+  drills:
+    - { es: "因為好熱，所以我留喺屋企。", en: "Because it was hot, I stayed at home." }
+    - { es: "我好肚餓，所以食咗兩碗飯。", en: "I was hungry, so I had two bowls of rice." }
+    - { es: "點解佢唔嚟呀？", en: "Why isn't he coming?", altEn: ["Why isn't she coming?"] }
+
+- id: g.jyu-gwo-zau
+  level: a2
+  title: "如果…就… - if … then"
+  summary: "如果 introduces the condition and 就 goes before the verb of the result: 如果落雨，我哋就唔去。"
+  explanation: |
+    - 如果 (jyu4 gwo2) - if
+    - 就 (zau6) - then (before the verb of the result)
+
+    ### Pattern
+    **如果 + condition, (subject) + 就 + result**
+    - 如果你唔舒服，就留喺屋企啦 (jyu4 gwo2 nei5 m4 syu1 fuk6, zau6 lau4 hai2 uk1 kei2 laa1) - If you don't feel well, stay at home.
+    - 如果聽日落雨，我哋就唔去 - If it rains tomorrow, we won't go.
+
+    ### Word order
+    就 goes **after the subject**, before the verb: 我哋就唔去, not 就我哋唔去.
+
+    ### Other "if" words
+    | Word | Jyutping | Feel |
+    |---|---|---|
+    | 如果 | jyu4 gwo2 | neutral |
+    | 要係 | jiu3 hai6 | colloquial |
+    | …嘅話 | ge3 waa2 | added at the end of the condition (B1) |
+
+    The condition always comes first.
+  examples:
+    - { es: "如果你有咩唔舒服，就話我知。", en: "If you feel unwell, let me know." }
+    - { es: "如果佢唔嚟，我哋就自己去。", en: "If he doesn't come, we'll go by ourselves.", altEn: ["If she doesn't come, we'll go by ourselves."] }
+    - { es: "要係你得閒，就嚟啦。", en: "If you're free, come along." }
+    - { es: "如果發燒，就要睇醫生。", en: "If you have a fever, you need to see a doctor." }
+  pitfalls:
+    - "就 comes after the subject: 如果落雨，我哋就唔去, not 如果落雨，就我哋唔去."
+    - "The 'if' clause comes first, not at the end as often in English."
+  related: [g.jan-wai-so-ji, g.zau-then, g.ge-waa-conditional]
+  drills:
+    - { es: "如果好攰，就早啲瞓啦。", en: "If you're tired, go to bed early." }
+    - { es: "如果有時間，我就去探你。", en: "If I have time, I'll come and visit you." }
+    - { es: "要係唔記得，就打電話畀我。", en: "If you forget, call me." }
+
+- id: g.body-pain
+  level: a2
+  title: "Body part + 痛 - saying where it hurts"
+  summary: "Body part + 痛 means it hurts: 我頭痛 'I have a headache'; ask 你邊度唔舒服呀？"
+  explanation: |
+    Cantonese describes symptoms with **body part + adjective/verb**, with no "have":
+    | Cantonese | Jyutping | Meaning |
+    |---|---|---|
+    | 頭痛 | tau4 tung3 | headache |
+    | 肚痛 | tou5 tung3 | stomach ache |
+    | 喉嚨痛 | hau4 lung4 tung3 | sore throat |
+    | 牙痛 | ngaa4 tung3 | toothache |
+    | 發燒 | faat3 siu1 | have a fever |
+    | 咳 | kat1 | cough |
+    | 流鼻水 | lau4 bei6 seoi2 | runny nose |
+    | 感冒 | gam2 mou6 | have a cold |
+
+    - 我頭痛 (ngo5 tau4 tung3) - I've got a headache.
+    - 我有啲肚痛 - My stomach hurts a bit.
+    - 我隻腳好痛 - My foot really hurts.
+
+    ### At the doctor
+    - 你邊度唔舒服呀？ (nei5 bin1 dou6 m4 syu1 fuk6 aa3) - What's the matter? (Where do you feel unwell?)
+    - 痛咗幾耐呀？ - How long has it hurt?
+    - 食藥 (sik6 joek6) take medicine; 一日三次 three times a day; 飯後 after meals.
+  examples:
+    - { es: "我今朝開始喉嚨痛。", en: "My throat started hurting this morning." }
+    - { es: "你邊度唔舒服呀？", en: "What seems to be the problem?", altEn: ["Where don't you feel well?"] }
+    - { es: "我發燒，仲有啲咳。", en: "I've got a fever and a bit of a cough." }
+    - { es: "呢啲藥一日食三次，飯後食。", en: "Take this medicine three times a day after meals." }
+  pitfalls:
+    - "Don't say 我有頭痛; just 我頭痛."
+    - "Medicine is 'eaten': 食藥, not 飲藥 (unless it's a liquid, like 飲咳藥水)."
+  related: [g.jau-di-a-bit, g.zeoi-hou-better]
+  drills:
+    - { es: "我好頭痛。", en: "I have a bad headache." }
+    - { es: "佢肚痛，冇返學。", en: "He had a stomach ache and didn't go to school.", altEn: ["She had a stomach ache and didn't go to school."] }
+    - { es: "我感冒咗。", en: "I've caught a cold." }
+    - { es: "記得食藥呀。", en: "Remember to take your medicine." }
+
+- id: g.zeoi-hou-better
+  level: a2
+  title: "最好 and 不如 - had better, why not"
+  summary: "最好 + verb gives advice ('you'd better'); 不如 + verb suggests something softly ('why don't we')."
+  explanation: |
+    ### 最好: had better, ideally
+    - 你最好休息吓 (nei5 zeoi3 hou2 jau1 sik1 haa5) - You'd better rest.
+    - 最好唔好飲凍嘢 - Better not to have cold drinks.
+
+    ### 應該: should
+    你應該睇醫生 (nei5 jing1 goi1 tai2 ji1 sang1) "You should see a doctor." (More at B1.)
+
+    ### 不如: why don't (we/you)
+    A soft suggestion, often with 啦:
+    - 不如去睇醫生啦 (bat1 jyu4 heoi3 tai2 ji1 sang1 laa1) - Why don't you see a doctor?
+    - 不如我哋坐的士啦 - How about we take a taxi?
+
+    ### Strength
+    | Phrase | Strength |
+    |---|---|
+    | 不如…啦 | gentle suggestion |
+    | 最好… | advice |
+    | 應該… | should |
+    | 一定要… | must |
+  examples:
+    - { es: "你最好早啲瞓。", en: "You'd better go to bed early." }
+    - { es: "最好飲多啲水。", en: "It's best to drink more water." }
+    - { es: "不如我哋聽日再去啦。", en: "Why don't we go tomorrow instead?" }
+    - { es: "你最好唔好食辣嘢。", en: "You'd better not eat spicy food." }
+  pitfalls:
+    - "'Better not' is 最好唔好 + verb, not 唔最好."
+    - "最好 at the start of an answer can also mean 'that would be best': 你嚟接我？最好喇！"
+  related: [g.zeoi-superlative, g.jing-goi-should, g.bat-jyu-suggest]
+  drills:
+    - { es: "你最好帶埋遮。", en: "You'd better take an umbrella too." }
+    - { es: "不如食完飯先走啦。", en: "Why not leave after dinner?" }
+    - { es: "最好唔好咁夜返。", en: "Better not come back so late." }
+
+- id: g.daa-syun-plans
+  level: a2
+  title: "打算, 諗住, 準備 - plans and intentions"
+  summary: "打算 + verb 'plan to', 諗住 + verb 'be thinking of', 準備 + verb 'be getting ready to'."
+  explanation: |
+    | Word | Jyutping | Meaning |
+    |---|---|---|
+    | 打算 | daa2 syun3 | plan to, intend to |
+    | 諗住 | nam2 zyu6 | be thinking of, have in mind |
+    | 準備 | zeon2 bei6 | be about to, prepare to |
+    | 想 | soeng2 | would like to |
+
+    - 我打算暑假去台灣 (ngo5 daa2 syun3 syu2 gaa3 heoi3 toi4 waan1) - I plan to go to Taiwan in the summer holidays.
+    - 我諗住坐船去澳門 (ngo5 nam2 zyu6 co5 syun4 heoi3 ou3 mun2) - I'm thinking of taking the ferry to Macau.
+    - 我哋準備出發喇 - We're about to set off.
+
+    ### Asking about plans
+    - 你有咩打算呀？ - What are your plans?
+    - 你打算去幾耐呀？ - How long are you planning to go for?
+
+    ### Travel words
+    訂酒店 (deng6 zau2 dim3) book a hotel, 買機票 buy plane tickets, 執行李 (zap1 hang4 lei5) pack, 出發 set off.
+  examples:
+    - { es: "你打算幾時去日本呀？", en: "When are you planning to go to Japan?" }
+    - { es: "我諗住住三晚。", en: "I'm thinking of staying three nights." }
+    - { es: "我哋準備出門口喇。", en: "We're about to head out." }
+    - { es: "我未有咩打算。", en: "I don't have any plans yet." }
+  pitfalls:
+    - "打算 and 諗住 take a verb straight after them, without 'to': 打算去, not 打算去到 or 打算為咗去."
+    - "準備 + verb means 'about to', not just 'prepare': 準備食飯 'about to eat'."
+  related: [g.time-before-verb, g.duration, g.wui-will]
+  drills:
+    - { es: "我打算學游水。", en: "I plan to learn to swim." }
+    - { es: "佢諗住轉工。", en: "She's thinking of changing jobs.", altEn: ["He's thinking of changing jobs."] }
+    - { es: "我準備訂酒店。", en: "I'm about to book the hotel." }
+    - { es: "你今個暑假有咩打算呀？", en: "What are your plans for this summer?" }
+
+- id: g.duration
+  level: a2
+  title: "How long - duration after the verb"
+  summary: "Duration goes after the verb (and after 咗): 我住咗三年; ask 幾耐？"
+  explanation: |
+    Time **when** goes before the verb; time **how long** goes **after** it:
+    - 我喺香港住咗三年 (ngo5 hai2 hoeng1 gong2 zyu6 zo2 saam1 nin4) - I've lived in Hong Kong for three years.
+    - 我等咗你半個鐘 (ngo5 dang2 zo2 nei5 bun3 go3 zung1) - I waited for you for half an hour.
+
+    ### Duration words
+    | Cantonese | Jyutping | Meaning |
+    |---|---|---|
+    | 一陣 | jat1 zan6 | a moment |
+    | 五分鐘 | ng5 fan1 zung1 | five minutes |
+    | 兩個鐘 | loeng5 go3 zung1 | two hours |
+    | 三日 | saam1 jat6 | three days |
+    | 一個禮拜 | jat1 go3 lai5 baai3 | a week |
+    | 兩個月 | loeng5 go3 jyut6 | two months |
+    | 一年 | jat1 nin4 | a year |
+
+    ### With an object
+    Either repeat the verb or put the duration before the object:
+    - 我學廣東話學咗一年 / 我學咗一年廣東話 - I've studied Cantonese for a year.
+
+    ### Asking
+    幾耐 (gei2 noi6) "how long": 你去幾耐呀？ "How long are you going for?"
+  examples:
+    - { es: "我哋喺台灣玩咗五日。", en: "We spent five days in Taiwan." }
+    - { es: "你等咗幾耐呀？", en: "How long have you been waiting?" }
+    - { es: "我學咗兩年廣東話。", en: "I've studied Cantonese for two years.", altEs: ["我學廣東話學咗兩年。"] }
+    - { es: "坐船去澳門要一個鐘。", en: "The ferry to Macau takes an hour." }
+  pitfalls:
+    - "Duration goes after the verb: 我住咗三年, not 我三年住咗."
+    - "An hour is 一個鐘 (or 一個鐘頭); 一點鐘 is 'one o'clock'."
+    - "Months as durations need 個: 三個月, not 三月 (which is March)."
+  related: [g.time-before-verb, g.zo-perfective, g.daa-syun-plans]
+  drills:
+    - { es: "我瞓咗十個鐘。", en: "I slept for ten hours." }
+    - { es: "佢喺英國讀咗四年書。", en: "She studied in the UK for four years.", altEn: ["He studied in the UK for four years."] }
+    - { es: "等我一陣。", en: "Wait for me a moment." }
+    - { es: "你打算住幾耐呀？", en: "How long do you plan to stay?" }
+
+- id: g.zoi-vs-jau
+  level: a2
+  title: "再 vs 又 - again (future) and again (past)"
+  summary: "再 is 'again' for things not yet done (再嚟); 又 is 'again' for things that already happened (又遲到)."
+  explanation: |
+    | Word | Jyutping | Use | Example |
+    |---|---|---|---|
+    | 再 | zoi3 | again, for the future or requests | 再講一次 say it again |
+    | 又 | jau6 | again, for something that has happened (often annoyed) | 佢又遲到 he's late again |
+
+    - 我下年再嚟 (ngo5 haa6 nin2 zoi3 lai4) - I'll come again next year.
+    - 佢又唔記得 (keoi5 jau6 m4 gei3 dak1) - He forgot again.
+
+    ### 又…又… : both … and …
+    又 + adj + 又 + adj means "both … and …": 又平又好食 (jau6 peng4 jau6 hou2 sik6) "cheap and tasty".
+
+    ### 再 also means "then, more"
+    - 先食飯，再去 - Eat first, then go.
+    - 再平啲 - a bit cheaper still.
+    - 唔好再… - don't … any more: 唔好再遲到喇.
+  examples:
+    - { es: "我好鍾意呢度，一定會再嚟。", en: "I love it here, I'll definitely come again." }
+    - { es: "又落雨！", en: "It's raining again!" }
+    - { es: "呢間酒店又平又乾淨。", en: "This hotel is both cheap and clean." }
+    - { es: "唔該再講一次。", en: "Please say it again." }
+  pitfalls:
+    - "Don't use 又 for future repetition: 'I'll come again' is 我會再嚟, not 我會又嚟."
+    - "又 often sounds like a complaint: 你又遲到！ 'You're late again!'"
+  related: [g.sin-zoi-sequence, g.zung-still]
+  drills:
+    - { es: "我哋遲啲再傾。", en: "Let's talk again later." }
+    - { es: "佢又唔覆我。", en: "He's not replying to me again.", altEn: ["She's not replying to me again."] }
+    - { es: "嗰度又遠又貴。", en: "It's far away and expensive." }
+    - { es: "唔好再噉做喇。", en: "Don't do that again." }
+
+- id: g.phone-phrases
+  level: a2
+  title: "On the phone - 喂, 搵邊位？"
+  summary: "Answer with 喂？, ask for someone with 唔該搵…, and use 等等 / 佢唔喺度 / 留口訊."
+  explanation: |
+    | Cantonese | Jyutping | Meaning |
+    |---|---|---|
+    | 喂？ | wai2 | Hello? (on the phone only) |
+    | 唔該搵陳生 | m4 goi1 wan2 can4 saang1 | Could I speak to Mr Chan? |
+    | 請問搵邊位？ | cing2 man6 wan2 bin1 wai2 | Who would you like to speak to? |
+    | 請問你係邊位？ | cing2 man6 nei5 hai6 bin1 wai2 | Who's calling? |
+    | 等等 / 等一陣 | dang2 dang2 | Hold on. |
+    | 佢唔喺度 | keoi5 m4 hai2 dou6 | He's not here. |
+    | 要唔要留口訊？ | jiu3 m4 jiu3 lau4 hau2 seon3 | Would you like to leave a message? |
+    | 打錯 | daa2 co3 | wrong number |
+
+    ### Calling and calling back
+    - 打電話畀… - call someone: 我打電話畀你.
+    - 覆電話 (fuk1 din6 waa2) - call back: 佢返嚟我叫佢覆你電話.
+    - 聽電話 (teng1 din6 waa2) - answer the phone.
+
+    ### 搵 = look for, want to talk to
+    On the phone 搵 + person means "ask for" someone: 我搵 Peter.
+  examples:
+    - { es: "喂？請問搵邊位？", en: "Hello? Who would you like to speak to?" }
+    - { es: "唔該，我想搵李小姐。", en: "Hi, I'd like to speak to Miss Lee." }
+    - { es: "佢而家唔喺度，你要唔要留口訊呀？", en: "She's not in at the moment. Would you like to leave a message?" }
+    - { es: "唔好意思，你打錯電話喇。", en: "Sorry, you've got the wrong number." }
+  pitfalls:
+    - "喂 is only for the phone (or to call out rudely 'hey!'); don't use it as a face-to-face greeting."
+    - "'Call me' is 打電話畀我, not 打我 (which means 'hit me')."
+  related: [g.bei-give, g.giu-someone, g.hai2-location]
+  drills:
+    - { es: "唔該搵陳生。", en: "Mr Chan, please." }
+    - { es: "等等，我叫佢聽。", en: "Hold on, I'll get him to come to the phone.", altEn: ["Hold on, I'll get her."] }
+    - { es: "我遲啲覆你電話。", en: "I'll call you back later." }
+    - { es: "請問你係邊位？", en: "May I ask who's calling?" }
+
+- id: g.bong-help
+  level: a2
+  title: "幫 - help, for, on behalf of"
+  summary: "幫 + person + verb means 'help someone do' or 'do for someone': 幫我影張相."
+  explanation: |
+    幫 (bong1) + person + verb:
+    - 你可唔可以幫我影張相呀？ (nei5 ho2 m4 ho2 ji5 bong1 ngo5 jing2 zoeng1 soeng2 aa3) - Could you take a photo for me?
+    - 我幫你拎 (ngo5 bong1 nei5 ling1) - I'll carry it for you.
+    - 幫我話畀佢知 - Tell him for me.
+
+    ### Asking for help
+    | Request | Feel |
+    |---|---|
+    | 幫吓我啦 | Give me a hand (friends) |
+    | 可唔可以幫我…呀？ | Could you … for me? (polite) |
+    | 唔該幫我… | Please … for me |
+    | 麻煩你幫我… | Sorry to trouble you, could you … |
+
+    ### 幫手: to help (no object)
+    幫手 (bong1 sau2) "lend a hand": 使唔使幫手呀？ "Do you need help?"
+  examples:
+    - { es: "唔該幫我叫架的士。", en: "Could you call me a taxi, please?" }
+    - { es: "使唔使幫手呀？", en: "Do you need a hand?" }
+    - { es: "我幫你問吓。", en: "I'll ask for you." }
+    - { es: "麻煩你幫我留個口訊畀佢。", en: "Could you leave a message for him, please?", altEn: ["Could you leave a message for her, please?"] }
+  pitfalls:
+    - "The person comes right after 幫: 幫我拎, not 幫拎我."
+    - "幫手 has no object: 使唔使幫手？, but 幫我 (not 幫手我)."
+  related: [g.giu-someone, g.bei-give, g.ho-ji-can-may]
+  drills:
+    - { es: "幫我睇吓呢個字點讀。", en: "Help me see how to read this character." }
+    - { es: "我幫你搵。", en: "I'll look for it for you." }
+    - { es: "佢成日幫我。", en: "She always helps me.", altEn: ["He always helps me."] }
+
+- id: g.giu-someone
+  level: a2
+  title: "叫 + person + verb - ask or tell someone to"
+  summary: "叫 + person + verb means 'tell/ask someone to do': 叫佢覆我電話。"
+  explanation: |
+    叫 (giu3) means "call" (a name) and also "tell someone to do something":
+    - 叫佢覆我電話 (giu3 keoi5 fuk1 ngo5 din6 waa2) - Tell him to call me back.
+    - 阿媽叫我早啲返屋企 - Mum told me to come home early.
+
+    ### Ordering in a restaurant
+    叫 also means "order" food: 叫外賣 (giu3 ngoi6 maai6) "order takeaway", 叫多個菜 "order another dish".
+
+    ### Related verbs
+    | Verb | Jyutping | Meaning |
+    |---|---|---|
+    | 叫 | giu3 | tell/ask someone to |
+    | 請 | ceng2 | invite; treat (pay for) |
+    | 話畀…知 | waa6 bei2 … zi1 | tell (information) |
+    | 問 | man6 | ask (a question) |
+
+    話畀佢知 tells him **something**; 叫佢 tells him **to do** something.
+  examples:
+    - { es: "唔該叫佢返嚟打畀我。", en: "Please ask him to call me when he's back.", altEn: ["Please ask her to call me when she's back."] }
+    - { es: "老細叫我聽日早啲返。", en: "The boss told me to come in early tomorrow." }
+    - { es: "我哋叫外賣啦。", en: "Let's order takeaway." }
+    - { es: "你話畀佢知我會遲啲到。", en: "Tell him I'll be a bit late.", altEn: ["Tell her I'll be a bit late."] }
+  pitfalls:
+    - "叫 + person + verb is 'tell to do'; to pass on information use 話畀…知."
+    - "'Ask a question' is 問, not 叫: 我問吓佢."
+  related: [g.bong-help, g.phone-phrases, g.reported-speech]
+  drills:
+    - { es: "叫佢等我。", en: "Tell him to wait for me.", altEn: ["Tell her to wait for me."] }
+    - { es: "醫生叫我多啲休息。", en: "The doctor told me to rest more." }
+    - { es: "我請你食飯。", en: "I'll treat you to a meal." }
+
+- id: g.hou-m-hou-suggestions
+  level: a2
+  title: "…好唔好？ - shall we …?"
+  summary: "Add 好唔好？ to a suggestion to ask 'how about it?': 聽日去睇戲好唔好呀？"
+  explanation: |
+    ### Suggesting
+    Put 好唔好 (hou2 m4 hou2) or 得唔得 (dak1 m4 dak1) at the end of a suggestion:
+    - 我哋聽晚去食飯好唔好呀？ (ngo5 dei6 ting1 maan5 heoi3 sik6 faan6 hou2 m4 hou2 aa3) - Shall we go for dinner tomorrow night?
+    - 七點喺尖沙咀見，得唔得？ - Meet in Tsim Sha Tsui at seven, OK?
+
+    ### Accepting
+    好呀！ (hou2 aa3) "Sure!", 冇問題 "No problem", 得 "OK".
+
+    ### Declining politely
+    | Phrase | Jyutping | Meaning |
+    |---|---|---|
+    | 唔好意思，我唔得閒 | m4 hou2 ji3 si1, ngo5 m4 dak1 haan4 | Sorry, I'm not free |
+    | 下次啦 | haa6 ci3 laa1 | Next time |
+    | 改日啦 | goi2 jat6 laa1 | Another day |
+    | 我約咗人 | ngo5 joek3 zo2 jan4 | I have plans |
+
+    ### Fixing a time
+    幾點？ / 喺邊度等？ "Where shall we meet?" 約 (joek3) "arrange to meet": 我哋約幾點？
+  examples:
+    - { es: "星期六去行山好唔好呀？", en: "Shall we go hiking on Saturday?" }
+    - { es: "好呀，幾點喺邊度等？", en: "Sure, what time and where shall we meet?" }
+    - { es: "唔好意思，我約咗人，下次啦。", en: "Sorry, I've got plans. Next time." }
+    - { es: "八點喺旺角站等，得唔得？", en: "Meet at Mong Kok station at eight, OK?" }
+  pitfalls:
+    - "Don't add 嗎: 好唔好呀？, not 好唔好嗎？"
+    - "A flat 唔好 sounds rude when declining; soften it: 唔好意思，我唔得閒呀."
+  related: [g.a-not-a-questions, g.jat-cai-together, g.laa1-suggestion]
+  drills:
+    - { es: "我哋一齊食飯好唔好呀？", en: "Shall we have a meal together?" }
+    - { es: "改日啦。", en: "Another day." }
+    - { es: "聽日七點，得唔得？", en: "Tomorrow at seven, OK?" }
+    - { es: "我哋約喺邊度呀？", en: "Where shall we meet?" }
+
+- id: g.jat-cai-together
+  level: a2
+  title: "同…一齊 - together with"
+  summary: "同 + person + 一齊 + verb means 'do something together with someone': 我同佢一齊去。"
+  explanation: |
+    ### 一齊 (jat1 cai4): together
+    Goes before the verb: 我哋一齊去 (ngo5 dei6 jat1 cai4 heoi3) "Let's go together."
+
+    ### 同 + person + 一齊
+    同 (tung4) means "with" when it introduces a person:
+    - 我同朋友一齊去澳門 - I'm going to Macau with friends.
+    - 你同唔同我哋一齊去呀？ - Are you coming with us?
+
+    ### 同 also means "and"
+    Between nouns, 同 is "and": 我同佢 "he and I". 同埋 (tung4 maai4) is used for "and" in lists: 麵包同埋牛奶.
+
+    ### Word order
+    **Subject + 同 + person + 一齊 + verb**. The 同 phrase comes before the verb, never at the end.
+
+    ### Paying together or separately
+    一齊計 (jat1 cai4 gai3) "one bill", 分開計 (fan1 hoi1 gai3) "separate bills", 夾錢 (gaap3 cin2) "split the cost".
+  examples:
+    - { es: "你要唔要同我哋一齊去呀？", en: "Do you want to come with us?" }
+    - { es: "我同屋企人一齊食飯。", en: "I'm eating with my family." }
+    - { es: "我哋夾錢買份禮物啦。", en: "Let's chip in for a present." }
+    - { es: "一齊計定分開計呀？", en: "One bill or separate?" }
+  pitfalls:
+    - "The 'with' phrase comes before the verb: 我同佢去, not 我去同佢."
+    - "同 links nouns, not sentences: 'I eat and then sleep' is 我食完飯就瞓, not 我食飯同瞓覺."
+  related: [g.hou-m-hou-suggestions, g.dei-plural]
+  drills:
+    - { es: "我哋一齊影張相啦。", en: "Let's take a photo together." }
+    - { es: "我同佢一齊返工。", en: "I go to work with him.", altEn: ["I go to work with her."] }
+    - { es: "我要麵包同埋牛奶。", en: "I want bread and milk." }
+    - { es: "分開計，唔該。", en: "Separate bills, please." }
+
+- id: g.m-hou-dont
+  level: a2
+  title: "唔好 - don't"
+  summary: "唔好 + verb is a negative command: 唔好客氣 'don't be shy', 唔好遲到 'don't be late'."
+  explanation: |
+    唔好 (m4 hou2) + verb tells someone **not** to do something:
+    - 唔好遲到呀 (m4 hou2 ci4 dou3 aa3) - Don't be late.
+    - 唔好客氣 (m4 hou2 haak3 hei3) - Don't stand on ceremony / help yourself.
+    - 唔好嘈 - Be quiet (don't make noise).
+
+    ### Softer forms
+    | Form | Feel |
+    |---|---|
+    | 唔好… | don't … |
+    | 唔好…啦 | please don't … |
+    | 最好唔好… | better not … |
+    | 咪… (mai5) | don't … (very colloquial, abrupt) |
+
+    咪 (mai5) is a fast colloquial "don't": 咪郁 "don't move", 咪嘈 "shut up".
+
+    ### Different from 唔 + 好
+    唔好 + verb = don't; 唔好 + adjective-like use = "not good": 呢個唔好 "this isn't good". Context separates them.
+
+    ### "Don't need to"
+    唔使 means "needn't", 唔好 means "don't": 唔使嚟 "no need to come" vs 唔好嚟 "don't come".
+  examples:
+    - { es: "唔好客氣，當自己屋企。", en: "Make yourself at home." }
+    - { es: "過馬路唔好睇手機。", en: "Don't look at your phone while crossing the road." }
+    - { es: "唔好擔心，冇事嘅。", en: "Don't worry, it's fine." }
+    - { es: "咪郁！", en: "Don't move!" }
+  pitfalls:
+    - "唔好 is 'don't'; 唔使 is 'no need'. 唔好嚟 'don't come' sounds much stronger than 唔使嚟 'you needn't come'."
+    - "Don't use 唔好 for statements: 'I don't eat' is 我唔食, not 我唔好食 (which means 'I'd better not eat' or 'it doesn't taste good')."
+  related: [g.jiu-must-m-sai, g.m-negation, g.zeoi-hou-better]
+  drills:
+    - { es: "唔好走住！", en: "Don't go yet!" }
+    - { es: "唔好咁大聲。", en: "Don't be so loud." }
+    - { es: "唔好唔記得帶銀包。", en: "Don't forget your wallet." }
+    - { es: "唔使擔心。", en: "There's no need to worry." }
+
+- id: g.ji-cin-ji-hau
+  level: a2
+  title: "…之前 / …之後 / …完 - before and after"
+  summary: "Clause + 之前 'before', clause + 之後 'after', both at the start of the sentence: 食飯之前洗手。"
+  explanation: |
+    之前 (zi1 cin4) and 之後 (zi1 hau6) come **after** the event they refer to, and the whole phrase comes first:
+    - 食飯之前要洗手 (sik6 faan6 zi1 cin4 jiu3 sai2 sau2) - Wash your hands before eating.
+    - 放工之後我去咗健身 (fong3 gung1 zi1 hau6 ngo5 heoi3 zo2 gin6 san1) - After work I went to the gym.
+
+    ### With time expressions
+    - 三日之前 / 三日前 - three days ago
+    - 一個鐘之後 / 一個鐘後 - an hour later
+    - 之前 alone: before, previously: 我之前喺度做過 "I worked here before."
+
+    ### V完 + 就: once … has finished
+    V + 完 (jyun4) means "finish doing", often with 就 for "and then": 食完飯就走 "leave once you've eaten".
+
+    ### Order
+    | English | Cantonese |
+    |---|---|
+    | I shower after I get home. | 我返到屋企之後沖涼。 |
+    | Call me before you come. | 你嚟之前打畀我。 |
+  examples:
+    - { es: "出門口之前記得熄燈。", en: "Remember to turn off the lights before you go out." }
+    - { es: "食完早餐之後，我哋去咗海洋公園。", en: "After breakfast we went to Ocean Park." }
+    - { es: "兩年前我喺九龍城住。", en: "Two years ago I lived in Kowloon City." }
+    - { es: "做完嘢就返屋企啦。", en: "Go home once you've finished work." }
+  pitfalls:
+    - "之前 / 之後 follow the event; the phrase comes first: 食飯之前洗手, not 洗手之前食飯 (that means the reverse!)."
+    - "'Ago' is 前 after a time period: 三年前, not 前三年 (which means 'the first three years')."
+  related: [g.ge-si-hau, g.zau-then, g.jyun-hou]
+  drills:
+    - { es: "瞓覺之前唔好飲咖啡。", en: "Don't drink coffee before bed." }
+    - { es: "落堂之後我哋去食嘢。", en: "After class we're going to get something to eat." }
+    - { es: "我十年前嚟咗香港。", en: "I came to Hong Kong ten years ago." }
+    - { es: "睇完戲就返屋企。", en: "Go home after the film." }
+
+- id: g.zau-then
+  level: a2
+  title: "就 - then, right away, just"
+  summary: "就 before a verb links a result to what came before ('then'), and stresses 'right then, just': 食完就走, 就係呢度."
+  explanation: |
+    就 (zau6) is one of the most frequent adverbs. It always goes **before the verb**, after the subject.
+
+    ### "Then" (sequence or result)
+    - 食完飯就走 (sik6 jyun4 faan6 zau6 zau2) - Leave right after eating.
+    - 如果落雨，我哋就唔去 - If it rains, then we won't go.
+
+    ### "Early / quickly"
+    - 我七點就起身 - I got up as early as seven.
+    - 佢一陣就到 - She'll be here in a moment.
+
+    ### "Just, exactly"
+    - 就係呢度 (zau6 hai6 ni1 dou6) - This is the very place.
+    - 我就係陳大文 - I'm Chan Tai-man (the very one).
+
+    ### "About to": 就嚟 / 就快
+    就嚟到 "almost there", 就快放假 "the holidays are coming soon".
+
+    | Pattern | Meaning |
+    |---|---|
+    | A，就B | A, then B |
+    | 時間 + 就 + V | as early as / already |
+    | 就係… | exactly, precisely |
+  examples:
+    - { es: "我落咗班就去搵你。", en: "I'll come and find you right after class." }
+    - { es: "佢五點就走咗。", en: "She left as early as five.", altEn: ["He left as early as five."] }
+    - { es: "就係佢！", en: "That's him!", altEn: ["That's her!"] }
+    - { es: "等我一陣，我就嚟。", en: "Give me a moment, I'm coming." }
+  pitfalls:
+    - "就 goes after the subject: 我就去, not 就我去 (which means 'only I go' in some contexts)."
+    - "就 is not 'and': don't use it to link two nouns."
+  related: [g.jyu-gwo-zau, g.ji-cin-ji-hau, g.jat-zau-as-soon-as]
+  drills:
+    - { es: "到咗就打畀我。", en: "Call me as soon as you get there." }
+    - { es: "我一陣就返。", en: "I'll be back in a moment." }
+    - { es: "就係呢間。", en: "It's this one." }
+    - { es: "佢八點就瞓咗。", en: "He was already asleep at eight.", altEn: ["She was already asleep at eight."] }
+
+- id: g.zing-hai-only
+  level: a2
+  title: "淨係 and 得 - only"
+  summary: "淨係 + verb/noun means 'only, just' (我淨係飲咗杯咖啡); 得 + amount means 'only have'."
+  explanation: |
+    ### 淨係 (zing6 hai6): only, just
+    Goes before the verb or the noun it limits:
+    - 我淨係飲咗杯咖啡 (ngo5 zing6 hai6 jam2 zo2 bui1 gaa3 fe1) - I only had a coffee.
+    - 淨係佢知 - Only he knows.
+    - 唔好淨係玩 - Don't just play.
+
+    ### 得 (dak1) + amount: only have
+    - 我得十蚊 (ngo5 dak1 sap6 man1) - I've only got ten dollars.
+    - 得返兩個 - There are only two left.
+
+    ### 只係 / 只有
+    只係 (zi2 hai6) and 只有 (zi2 jau5) are slightly more formal equivalents.
+
+    ### With 咋
+    淨係 and 得 often team up with sentence-final 咋 "that's all": 我淨係得一日假咋 "I've only got one day off."
+  examples:
+    - { es: "上個週末我淨係瞓覺。", en: "Last weekend all I did was sleep." }
+    - { es: "淨係我一個人去。", en: "Only I am going.", altEn: ["I'm going by myself."] }
+    - { es: "我得一日假咋。", en: "I've only got one day off." }
+    - { es: "你唔好淨係食肉，食啲菜啦。", en: "Don't just eat meat, have some vegetables." }
+  pitfalls:
+    - "淨係 goes before the verb, not at the end: 我淨係飲咗咖啡, not 我飲咗咖啡淨係."
+    - "得 'only have' replaces 有: 我得十蚊, not 我得有十蚊."
+  related: [g.zaa3-ze1-only, g.jau-have]
+  drills:
+    - { es: "我淨係識少少。", en: "I only know a little." }
+    - { es: "得返五分鐘。", en: "There are only five minutes left." }
+    - { es: "淨係佢冇嚟。", en: "Only he didn't come.", altEn: ["Only she didn't come."] }

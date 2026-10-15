@@ -1,0 +1,1952 @@
+# A1 grammar notes (Hong Kong Cantonese). Explanations use light markdown:
+# ### headings, bullets, pipe tables, **bold**. Cantonese examples are in
+# traditional characters followed by toned Jyutping in brackets.
+- id: g.greetings
+  level: a1
+  title: "Greetings and goodbyes"
+  summary: "你好, 早晨, 拜拜 and 再見: the everyday ways to say hello and goodbye in Hong Kong."
+  explanation: |
+    ### Saying hello
+    | Cantonese | Jyutping | Use |
+    |---|---|---|
+    | 你好 | nei5 hou2 | hello (polite, a little formal) |
+    | 早晨 | zou2 san4 | good morning (until about 11 am) |
+    | 哈囉 | haa1 lo3 | hello (casual, from English) |
+    | 你好嗎？ | nei5 hou2 maa3 | how are you? (a bit textbook) |
+    | 最近點呀？ | zeoi3 gan6 dim2 aa3 | how have you been? (natural) |
+    | 好耐冇見 | hou2 noi6 mou5 gin3 | long time no see |
+
+    Hong Kongers often greet friends without a greeting word at all, by asking a question: 食咗飯未呀？ (sik6 zo2 faan6 mei6 aa3) "Have you eaten yet?" You simply answer 食咗喇 (sik6 zo2 laa3) or 未呀 (mei6 aa3).
+
+    ### Saying goodbye
+    - 拜拜 (baai1 baai3): bye-bye, by far the most common.
+    - 再見 (zoi3 gin3): goodbye, more formal.
+    - 遲啲見 (ci4 di1 gin3): see you later. 聽日見 (ting1 jat6 gin3): see you tomorrow.
+    - 早唞 (zou2 tau2): good night, when someone is going to bed. 晚安 (maan5 on1) is also used.
+
+    ### Answering "how are you?"
+    幾好呀 (gei2 hou2 aa3) "pretty good", 好好 (hou2 hou2) "very well", 麻麻哋 (maa4 maa4 dei2) "so-so", 唔錯 (m4 co3) "not bad".
+  examples:
+    - { es: "早晨，陳生！", en: "Good morning, Mr Chan!", altEs: ["早晨，陳先生！"] }
+    - { es: "你好，我係阿明。", en: "Hello, I'm Ming." }
+    - { es: "好耐冇見！最近點呀？", en: "Long time no see! How have you been?" }
+    - { es: "幾好呀，你呢？", en: "Pretty good, and you?" }
+    - { es: "拜拜，遲啲見！", en: "Bye, see you later!" }
+  pitfalls:
+    - "早晨 is only for the morning. There is no everyday 'good afternoon' greeting: in the afternoon just say 你好 or 哈囉."
+    - "晚安 and 早唞 both mean 'good night' when parting or going to bed, never 'good evening' when you arrive."
+    - "你好嗎？ is understood but sounds stiff among friends; 最近點呀？ or 食咗飯未呀？ is more natural."
+  related: [g.ne-follow-up, g.particles-aa-laa]
+  drills:
+    - { es: "早晨，李太！", en: "Good morning, Mrs Lee!" }
+    - { es: "你好，好高興認識你。", en: "Hello, nice to meet you." }
+    - { es: "麻麻哋啦，你呢？", en: "So-so, and you?" }
+    - { es: "聽日見，拜拜！", en: "See you tomorrow, bye!" }
+
+- id: g.personal-pronouns
+  level: a1
+  title: "Personal pronouns - 我, 你, 佢"
+  summary: "Cantonese has three singular pronouns, 我, 你 and 佢, and they never change form."
+  explanation: |
+    | Person | Cantonese | Jyutping | Meaning |
+    |---|---|---|---|
+    | 1st | 我 | ngo5 | I, me |
+    | 2nd | 你 | nei5 | you |
+    | 3rd | 佢 | keoi5 | he, she, it; him, her |
+
+    ### One form for everything
+    Cantonese pronouns do not change for subject and object: 我鍾意佢 (ngo5 zung1 ji3 keoi5) "I like him/her", 佢鍾意我 (keoi5 zung1 ji3 ngo5) "he/she likes me".
+
+    ### No he/she distinction in speech
+    佢 covers he, she and it. Context tells you who is meant. Mandarin and written Chinese use 他/她/它; in spoken Cantonese it is always 佢.
+
+    ### Polite "you"
+    Spoken Cantonese has no everyday polite "you" like French *vous*. Politeness comes from titles and particles: 陳生 (can4 saang1) "Mr Chan", 陳太 (can4 taai2) "Mrs Chan", 陳小姐 (can4 siu2 ze2) "Miss Chan". 您 is a written or very formal service word.
+
+    Plurals add 哋 (dei6): see the note on 我哋, 你哋, 佢哋.
+  examples:
+    - { es: "我係學生。", en: "I'm a student." }
+    - { es: "你係老師？", en: "You're a teacher?" }
+    - { es: "佢係我朋友。", en: "He's my friend.", altEn: ["She's my friend.", "He is my friend.", "She is my friend."] }
+    - { es: "佢識我。", en: "She knows me.", altEn: ["He knows me."] }
+  pitfalls:
+    - "Don't look for separate words for 'he' and 'she': 佢 is both, and also 'it'."
+    - "Object pronouns are the same as subject pronouns: 'I see her' is 我見到佢, never a special 'her' form."
+    - "Using 您 in casual speech sounds like Mandarin or a hotel announcement; with people you know just use 你."
+  related: [g.dei-plural, g.hai6-identity]
+  drills:
+    - { es: "我係香港人。", en: "I'm from Hong Kong." }
+    - { es: "你係邊位？", en: "Who are you? (polite)" }
+    - { es: "佢好忙。", en: "He's very busy.", altEn: ["She's very busy."] }
+    - { es: "我等你。", en: "I'll wait for you.", altEn: ["I'm waiting for you."] }
+
+- id: g.hai6-identity
+  level: a1
+  title: "係 - to be (identity)"
+  summary: "係 links two nouns: 我係學生 'I am a student'; its negative is 唔係."
+  explanation: |
+    係 (hai6) means "to be" when you say **who or what** something is:
+    - 我係學生 (ngo5 hai6 hok6 saang1) - I am a student.
+    - 佢係陳太 (keoi5 hai6 can4 taai2) - She is Mrs Chan.
+    - 呢度係中環 (ni1 dou6 hai6 zung1 waan4) - This is Central.
+
+    ### Negative
+    Put 唔 (m4) in front: 我唔係老師 (ngo5 m4 hai6 lou5 si1) - I am not a teacher.
+
+    ### Short answers
+    Cantonese has no single word for "yes". You answer with the verb: 係 (hai6) "yes, it is", 唔係 (m4 hai6) "no, it isn't". 係呀 (hai6 aa3) is a friendly "yes".
+
+    ### What 係 is not used for
+    | Meaning | Cantonese | Not |
+    |---|---|---|
+    | I am tired | 我好攰 (ngo5 hou2 gui6) | ~~我係攰~~ |
+    | I am in Hong Kong | 我喺香港 (ngo5 hai2 hoeng1 gong2) | ~~我係香港~~ |
+
+    Adjectives take 好 instead of 係, and location takes 喺 (hai2), a different word with a different tone.
+  examples:
+    - { es: "我係陳大文。", en: "I'm Chan Tai-man." }
+    - { es: "佢唔係醫生，佢係護士。", en: "She's not a doctor, she's a nurse.", altEn: ["He's not a doctor, he's a nurse."] }
+    - { es: "呢度係銅鑼灣。", en: "This is Causeway Bay." }
+    - { es: "你係唔係學生呀？係呀。", en: "Are you a student? Yes." }
+  pitfalls:
+    - "係 (hai6) and 喺 (hai2) sound alike but differ in tone and meaning: 係 is 'to be (someone/something)', 喺 is 'to be at (a place)'."
+    - "Don't use 係 before adjectives: 'I'm busy' is 我好忙, not 我係忙."
+    - "Reply 係 or 唔係 rather than looking for a word for 'yes' or 'no'."
+  related: [g.hai2-location, g.adjective-predicates, g.m-negation]
+  drills:
+    - { es: "我係英國人。", en: "I'm British." }
+    - { es: "佢係我老師。", en: "He's my teacher.", altEn: ["She's my teacher."] }
+    - { es: "呢個唔係我嘅。", en: "This isn't mine." }
+    - { es: "嗰度係金鐘。", en: "That's Admiralty." }
+
+- id: g.name-giu-sing
+  level: a1
+  title: "Names - 我叫…, 我姓…"
+  summary: "叫 gives your full or given name, 姓 your surname; ask with 你叫咩名呀？ or 貴姓呀？"
+  explanation: |
+    ### Saying your name
+    - 我叫陳大文 (ngo5 giu3 can4 daai6 man4) - My name is Chan Tai-man.
+    - 我姓陳 (ngo5 sing3 can4) - My surname is Chan.
+    - 叫我阿文得喇 (giu3 ngo5 aa3 man4 dak1 laa3) - Just call me Man.
+
+    ### Asking
+    | Question | Jyutping | Register |
+    |---|---|---|
+    | 你叫咩名呀？ | nei5 giu3 me1 meng2 aa3 | What's your name? (everyday) |
+    | 你叫乜嘢名？ | nei5 giu3 mat1 je5 meng2 | What's your name? (fuller) |
+    | 請問貴姓？ | cing2 man6 gwai3 sing3 | May I ask your surname? (polite) |
+
+    Answer 貴姓 with 我姓… - never repeat 貴 about yourself, because it means "honourable".
+
+    ### Names in Hong Kong
+    - Chinese names put the surname first: 陳大文 is Mr Chan.
+    - Many people also use an English name: 我叫 Peter，姓陳.
+    - Friends often add 阿 (aa3) to one syllable of a name: 阿文, 阿明.
+  examples:
+    - { es: "你好，我叫李美玲。", en: "Hello, my name is Lee Mei-ling." }
+    - { es: "請問貴姓？我姓黃。", en: "May I ask your surname? My surname is Wong." }
+    - { es: "你叫咩名呀？", en: "What's your name?", altEs: ["你叫乜嘢名呀？"] }
+    - { es: "佢叫 Peter，姓張。", en: "He's called Peter, surname Cheung." }
+  pitfalls:
+    - "Answer 貴姓 with 我姓陳, never 我貴姓陳: 貴 is an honorific for other people only."
+    - "叫 needs no 係: 我叫阿明, not 我係叫阿明."
+    - "Remember the surname comes first in Chinese names: in 黃志明, 黃 is the surname."
+  related: [g.hai6-identity, g.question-words]
+  drills:
+    - { es: "我姓陳，叫陳大文。", en: "My surname is Chan; I'm Chan Tai-man." }
+    - { es: "佢叫咩名呀？", en: "What's his name?", altEn: ["What's her name?"] }
+    - { es: "叫我阿明得喇。", en: "Just call me Ming." }
+    - { es: "請問先生貴姓？", en: "May I ask your surname, sir?" }
+
+- id: g.ne-follow-up
+  level: a1
+  title: "呢 - 'and you?' and follow-up questions"
+  summary: "Noun + 呢 asks 'what about …?': 我幾好，你呢？ 'I'm fine, and you?'"
+  explanation: |
+    呢 (ne1) at the end of a short phrase means "what about …?" or "and …?":
+    - 我係學生，你呢？ (ngo5 hai6 hok6 saang1, nei5 ne1) - I'm a student, and you?
+    - 阿媽呢？ (aa3 maa1 ne1) - Where's Mum? / What about Mum?
+    - 噉聽日呢？ (gam2 ting1 jat6 ne1) - What about tomorrow then?
+
+    ### With question words
+    呢 also softens a question that already has a question word: 點解呢？ (dim2 gaai2 ne1) "Why, I wonder?" 去邊度呢？ (heoi3 bin1 dou6 ne1) "Where shall we go?"
+
+    ### Not with yes/no questions
+    呢 does not turn a statement into a yes/no question. For that use 嗎 (maa3) or the "A-not-A" form (去唔去).
+
+    Note: 呢 has a second, different use as a demonstrative, 呢個 (ni1 go3) "this one", read with a different vowel.
+  examples:
+    - { es: "我叫阿詩，你呢？", en: "I'm Sze, and you?" }
+    - { es: "我好忙，你呢？", en: "I'm very busy. What about you?" }
+    - { es: "你部手機呢？", en: "Where's your phone?" }
+    - { es: "今晚唔得，聽晚呢？", en: "Tonight's no good. What about tomorrow night?" }
+  pitfalls:
+    - "Don't use 呢 to make a plain yes/no question: 你係學生呢？ is wrong; say 你係唔係學生呀？ or 你係學生嗎？"
+    - "Question-final 呢 (ne1) and the 'this' in 呢個 (ni1) are written the same but pronounced differently."
+  related: [g.maa-questions, g.question-words, g.greetings]
+  drills:
+    - { es: "我係英國人，你呢？", en: "I'm British, and you?" }
+    - { es: "你哥哥呢？", en: "What about your brother?", altEn: ["Where's your brother?"] }
+    - { es: "噉星期六呢？", en: "What about Saturday then?" }
+
+- id: g.hai2-location
+  level: a1
+  title: "喺 - to be at, in, on (location)"
+  summary: "喺 + place says where someone or something is: 我喺香港 'I'm in Hong Kong'."
+  explanation: |
+    喺 (hai2) means "to be at/in/on" a place:
+    - 我喺香港 (ngo5 hai2 hoeng1 gong2) - I'm in Hong Kong.
+    - 佢喺屋企 (keoi5 hai2 uk1 kei2) - He's at home.
+    - 你喺邊度呀？ (nei5 hai2 bin1 dou6 aa3) - Where are you?
+
+    ### 喺 before another verb: "at"
+    喺 + place comes **before** the main verb, like "at" in English but in a different position:
+    - 我喺中環返工 (ngo5 hai2 zung1 waan4 faan1 gung1) - I work in Central.
+    - 我哋喺餐廳食飯 - We eat at the restaurant.
+
+    ### Living somewhere
+    "I live in Wan Chai" is 我住喺灣仔 (ngo5 zyu6 hai2 waan1 zai2): 住 + 喺 + place. 我喺灣仔住 is also correct.
+
+    ### Negative
+    唔喺 (m4 hai2): 佢唔喺度 (keoi5 m4 hai2 dou6) "He's not here" - a very common phone phrase.
+  examples:
+    - { es: "我而家喺銅鑼灣。", en: "I'm in Causeway Bay now." }
+    - { es: "你喺邊度呀？", en: "Where are you?" }
+    - { es: "佢住喺北角。", en: "She lives in North Point.", altEs: ["佢喺北角住。"], altEn: ["He lives in North Point."] }
+    - { es: "陳生唔喺度。", en: "Mr Chan isn't here." }
+  pitfalls:
+    - "Don't confuse 喺 (hai2, be at) with 係 (hai6, be someone/something): 我喺香港 'I'm in Hong Kong' vs 我係香港人 'I'm a Hongkonger'."
+    - "The place comes before the action: 我喺中環返工, not 我返工喺中環."
+    - "'Here' is 喺度 or 呢度, not just 度: 佢喺度 'he's here'."
+  related: [g.hai6-identity, g.position-words, g.time-before-verb]
+  drills:
+    - { es: "我喺屋企。", en: "I'm at home." }
+    - { es: "佢喺灣仔返工。", en: "She works in Wan Chai.", altEn: ["He works in Wan Chai."] }
+    - { es: "你住喺邊度呀？", en: "Where do you live?" }
+    - { es: "我哋喺山頂。", en: "We're at the Peak." }
+
+- id: g.jau-have
+  level: a1
+  title: "有 - to have, there is"
+  summary: "有 means both 'have' and 'there is/are'; its negative is 冇."
+  explanation: |
+    ### Have
+    - 我有一個細佬 (ngo5 jau5 jat1 go3 sai3 lou2) - I have a younger brother.
+    - 你有冇八達通呀？ (nei5 jau5 mou5 baat3 daat6 tung1 aa3) - Do you have an Octopus card?
+
+    ### There is / there are
+    Put the place first, then 有:
+    - 呢度有好多餐廳 (ni1 dou6 jau5 hou2 do1 caan1 teng1) - There are lots of restaurants here.
+    - 銅鑼灣有一間大商場 - There's a big mall in Causeway Bay.
+
+    ### Questions and answers
+    | | Cantonese | Jyutping |
+    |---|---|---|
+    | Do you have …? | 你有冇…？ | nei5 jau5 mou5 |
+    | Yes | 有 | jau5 |
+    | No | 冇 | mou5 |
+
+    The question form is 有冇 (jau5 mou5) "have or not", never 有唔有.
+  examples:
+    - { es: "我有兩個家姐。", en: "I have two older sisters." }
+    - { es: "你有冇時間呀？", en: "Do you have time?" }
+    - { es: "呢度有好多人。", en: "There are lots of people here." }
+    - { es: "附近有冇廁所呀？", en: "Is there a toilet nearby?" }
+  pitfalls:
+    - "The negative of 有 is 冇, never 唔有."
+    - "'There is X in Y' starts with the place: 公園有好多樹, not 有好多樹喺公園."
+    - "Ask with 有冇 ('have-not have'), not 有唔有."
+  related: [g.mou-negation, g.a-not-a-questions, g.hai2-location]
+  drills:
+    - { es: "我有一隻狗。", en: "I have a dog." }
+    - { es: "你有冇兄弟姊妹呀？", en: "Do you have any brothers or sisters?" }
+    - { es: "樓下有一間便利店。", en: "There's a convenience store downstairs." }
+    - { es: "有，我有。", en: "Yes, I do." }
+
+- id: g.m-negation
+  level: a1
+  title: "唔 - not"
+  summary: "唔 before a verb or adjective makes it negative: 我唔食, 唔貴."
+  explanation: |
+    唔 (m4) is the everyday "not". It goes directly **before** the verb or adjective:
+    - 我唔食牛肉 (ngo5 m4 sik6 ngau4 juk6) - I don't eat beef.
+    - 佢唔係老師 (keoi5 m4 hai6 lou5 si1) - She isn't a teacher.
+    - 呢件衫唔貴 (ni1 gin6 saam1 m4 gwai3) - This top isn't expensive.
+    - 我唔識 (ngo5 m4 sik1) - I don't know (how).
+
+    ### Common fixed phrases
+    | Phrase | Jyutping | Meaning |
+    |---|---|---|
+    | 唔該 | m4 goi1 | please / thank you (for a service) |
+    | 唔緊要 | m4 gan2 jiu3 | never mind, it doesn't matter |
+    | 唔好意思 | m4 hou2 ji3 si1 | sorry, excuse me |
+    | 唔知 | m4 zi1 | don't know |
+
+    ### What 唔 cannot negate
+    - 有 "have": its negative is 冇 (mou5).
+    - Completed past actions: 我冇去 "I didn't go" (see A2).
+  examples:
+    - { es: "我唔飲咖啡。", en: "I don't drink coffee." }
+    - { es: "佢唔係香港人。", en: "He isn't from Hong Kong.", altEn: ["She isn't from Hong Kong."] }
+    - { es: "今日唔熱。", en: "It isn't hot today." }
+    - { es: "唔好意思，我唔知。", en: "Sorry, I don't know." }
+  pitfalls:
+    - "唔 negates verbs and adjectives, but 'not have' is 冇, never 唔有."
+    - "Put 唔 right before the verb, after time and place words: 我聽日唔返工, not 唔我聽日返工."
+    - "唔 is a syllable with just the sound m (tone 4); don't read it as 'wu'."
+  related: [g.mou-negation, g.hai6-identity, g.a-not-a-questions]
+  drills:
+    - { es: "我唔鍾意落雨。", en: "I don't like rain." }
+    - { es: "呢度唔係中環。", en: "This isn't Central." }
+    - { es: "佢今日唔得閒。", en: "He isn't free today.", altEn: ["She isn't free today."] }
+    - { es: "唔緊要。", en: "Never mind." }
+
+- id: g.mou-negation
+  level: a1
+  title: "冇 - don't have, there isn't"
+  summary: "冇 is the negative of 有: 我冇錢 'I have no money', 呢度冇人 'there's nobody here'."
+  explanation: |
+    冇 (mou5) means "not have" or "there isn't". It is one word, not 唔 + 有:
+    - 我冇車 (ngo5 mou5 ce1) - I don't have a car.
+    - 雪櫃冇嘢食 (syut3 gwai6 mou5 je5 sik6) - There's nothing to eat in the fridge.
+    - 冇問題 (mou5 man6 tai4) - No problem.
+
+    ### 唔 vs 冇
+    | | Use | Example |
+    |---|---|---|
+    | 唔 (m4) | not (do / be) | 我唔去 - I'm not going |
+    | 冇 (mou5) | not have / there isn't | 我冇時間 - I have no time |
+
+    ### Useful phrases with 冇
+    冇所謂 (mou5 so2 wai6) "I don't mind", 冇嘢 (mou5 je5) "nothing / I'm fine", 冇得揀 (mou5 dak1 gaan2) "no choice".
+
+    冇 is also used for "didn't" with past actions; you will meet that use in A2.
+  examples:
+    - { es: "我冇兄弟姊妹。", en: "I don't have any brothers or sisters." }
+    - { es: "今日冇人喺度。", en: "Nobody's here today." }
+    - { es: "冇問題！", en: "No problem!" }
+    - { es: "唔好意思，我冇散紙。", en: "Sorry, I don't have any change." }
+  pitfalls:
+    - "Never say 唔有: the negative of 有 is always 冇."
+    - "冇 means 'not have', not 'not be': 'he isn't a teacher' is 佢唔係老師, not 佢冇係老師."
+  related: [g.jau-have, g.m-negation, g.mou-past-negation]
+  drills:
+    - { es: "我冇時間。", en: "I don't have time." }
+    - { es: "呢度冇Wi-Fi。", en: "There's no Wi-Fi here." }
+    - { es: "冇所謂，你揀啦。", en: "I don't mind, you choose." }
+    - { es: "佢冇手機。", en: "He doesn't have a phone.", altEn: ["She doesn't have a phone."] }
+
+- id: g.maa-questions
+  level: a1
+  title: "嗎 - yes/no questions"
+  summary: "Add 嗎 to a statement to make a yes/no question: 你係學生嗎？"
+  explanation: |
+    The simplest way to ask a yes/no question is to add 嗎 (maa3) to the end of a statement:
+    - 你係學生 → 你係學生嗎？ (nei5 hai6 hok6 saang1 maa3) - Are you a student?
+    - 佢喺度嗎？ (keoi5 hai2 dou6 maa3) - Is he here?
+
+    ### How natural is 嗎?
+    嗎 is correct and understood, but in everyday Hong Kong speech the **A-not-A** question is more common:
+    | With 嗎 | A-not-A (more colloquial) |
+    |---|---|
+    | 你係學生嗎？ | 你係唔係學生呀？ |
+    | 你去嗎？ | 你去唔去呀？ |
+    | 你有錢嗎？ | 你有冇錢呀？ |
+
+    嗎 is especially natural when you are checking something you half expect: 你都去嗎？ "You're going too?"
+
+    ### Answering
+    Repeat the verb: 係 / 唔係, 去 / 唔去, 有 / 冇.
+  examples:
+    - { es: "你係老師嗎？", en: "Are you a teacher?" }
+    - { es: "佢識講英文嗎？", en: "Can she speak English?", altEn: ["Can he speak English?", "Does she speak English?"] }
+    - { es: "你今日得閒嗎？", en: "Are you free today?" }
+    - { es: "你都係香港人嗎？", en: "Are you from Hong Kong too?" }
+  pitfalls:
+    - "Don't put 嗎 on a question that already has a question word: 你去邊度呀？, not 你去邊度嗎？"
+    - "Don't combine 嗎 with the A-not-A form: 你去唔去嗎？ is wrong."
+    - "Answer with the verb itself, not with a word for 'yes': 係 / 唔係, 有 / 冇."
+  related: [g.a-not-a-questions, g.ne-follow-up, g.question-words]
+  drills:
+    - { es: "你喺屋企嗎？", en: "Are you at home?" }
+    - { es: "呢個係你嘅嗎？", en: "Is this yours?" }
+    - { es: "你鍾意香港嗎？", en: "Do you like Hong Kong?" }
+
+- id: g.dei-plural
+  level: a1
+  title: "我哋, 你哋, 佢哋 - plural pronouns"
+  summary: "Add 哋 to a pronoun to make it plural: 我哋 'we', 你哋 'you all', 佢哋 'they'."
+  explanation: |
+    | Singular | Plural | Jyutping | Meaning |
+    |---|---|---|---|
+    | 我 | 我哋 | ngo5 dei6 | we, us |
+    | 你 | 你哋 | nei5 dei6 | you (plural) |
+    | 佢 | 佢哋 | keoi5 dei6 | they, them |
+
+    ### Only on pronouns
+    哋 (dei6) is used only with pronouns. Ordinary nouns have no plural ending: 一個朋友 "one friend", 三個朋友 "three friends". To say "the friends" or "some friends" use 啲 (di1): 啲朋友.
+
+    ### Pronouns as possessives
+    Before family members, homes and close relations you can drop 嘅: 我哋屋企 (ngo5 dei6 uk1 kei2) "our home", 你哋公司 "your company".
+
+    ### Inclusive "we"
+    我哋 covers both "you and I" and "we, not you". Context decides.
+  examples:
+    - { es: "我哋係同學。", en: "We are classmates." }
+    - { es: "你哋去邊度呀？", en: "Where are you (all) going?" }
+    - { es: "佢哋喺香港住。", en: "They live in Hong Kong.", altEs: ["佢哋住喺香港。"] }
+    - { es: "我等你哋。", en: "I'll wait for you (all)." }
+  pitfalls:
+    - "Don't add 哋 to nouns: 'friends' is 朋友 or 啲朋友, never 朋友哋."
+    - "哋 is pronounced dei6; don't confuse it with 地 (dei6/dei2 'ground') even though they sound alike."
+  related: [g.personal-pronouns, g.di-some, g.ge-possessive]
+  drills:
+    - { es: "我哋係朋友。", en: "We're friends." }
+    - { es: "佢哋好忙。", en: "They're very busy." }
+    - { es: "你哋係唔係學生呀？", en: "Are you students?" }
+    - { es: "我哋屋企喺灣仔。", en: "Our home is in Wan Chai." }
+
+- id: g.dou-also
+  level: a1
+  title: "都 - also, both, all"
+  summary: "都 goes before the verb and means 'also' or 'all/both': 我都係學生, 我哋都鍾意."
+  explanation: |
+    都 (dou1) is an adverb that must stand **before the verb** (or before 唔 / 冇).
+
+    ### "Also, too"
+    - 我都係香港人 (ngo5 dou1 hai6 hoeng1 gong2 jan4) - I'm from Hong Kong too.
+    - 佢都去 (keoi5 dou1 heoi3) - She's going too.
+
+    ### "All, both"
+    With a plural subject, 都 sums everyone up:
+    - 我哋都係學生 (ngo5 dei6 dou1 hai6 hok6 saang1) - We are all students.
+    - 兩個都好 (loeng5 go3 dou1 hou2) - Both are good.
+
+    ### Negative
+    - 都唔 = also not / none of them: 佢哋都唔去 "None of them are going."
+    - 我都唔知 "I don't know either."
+  examples:
+    - { es: "我都鍾意飲茶。", en: "I like yum cha too." }
+    - { es: "佢哋都係老師。", en: "They're all teachers.", altEn: ["They're both teachers."] }
+    - { es: "我都唔知。", en: "I don't know either." }
+    - { es: "兩件衫都好靚。", en: "Both tops are really pretty." }
+  pitfalls:
+    - "都 can never come at the end like English 'too': 我都去, not 我去都."
+    - "都 can't come before the subject: 我哋都係, not 都我哋係."
+    - "'Me too!' on its own is 我都係！ (literally 'I also am')."
+  related: [g.dei-plural, g.wh-dou-every]
+  drills:
+    - { es: "我都係學生。", en: "I'm a student too." }
+    - { es: "我哋都住喺港島。", en: "We all live on Hong Kong Island." }
+    - { es: "佢都唔食辣。", en: "He doesn't eat spicy food either.", altEn: ["She doesn't eat spicy food either."] }
+    - { es: "我都係！", en: "Me too!" }
+
+- id: g.a-not-a-questions
+  level: a1
+  title: "A-not-A questions - 去唔去？有冇？"
+  summary: "Say the verb, then 唔 + the verb, to ask yes/no: 你去唔去呀？"
+  explanation: |
+    The most natural way to ask a yes/no question in Cantonese is **verb + 唔 + verb**:
+    - 你去唔去呀？ (nei5 heoi3 m4 heoi3 aa3) - Are you going?
+    - 你係唔係學生呀？ (nei5 hai6 m4 hai6 hok6 saang1 aa3) - Are you a student?
+    - 好唔好食呀？ (hou2 m4 hou2 sik6 aa3) - Is it tasty?
+
+    ### With 有: 有冇
+    有 has its own negative, so the question is 有冇 (jau5 mou5): 你有冇車呀？ "Do you have a car?"
+
+    ### Two-syllable verbs and adjectives
+    Usually only the first syllable is repeated: 鍾唔鍾意 (zung1 m4 zung1 ji3) "do you like?", 開唔開心 "are you happy?", 識唔識 "do you know?". The full 鍾意唔鍾意 is also heard.
+
+    ### Ending particle
+    These questions usually end in 呀 (aa3), which makes them sound friendlier. Answer with the verb: 去 / 唔去.
+  examples:
+    - { es: "你飲唔飲茶呀？", en: "Will you have some tea?", altEn: ["Do you drink tea?"] }
+    - { es: "佢係唔係你老公呀？", en: "Is he your husband?" }
+    - { es: "你有冇兄弟姊妹呀？", en: "Do you have any brothers or sisters?" }
+    - { es: "你鍾唔鍾意香港呀？", en: "Do you like Hong Kong?", altEs: ["你鍾意唔鍾意香港呀？"] }
+  pitfalls:
+    - "Don't add 嗎 to an A-not-A question: 你去唔去呀？, not 你去唔去嗎？"
+    - "With 有 the form is 有冇, never 有唔有."
+    - "The object comes after the whole A-not-A verb: 你食唔食飯呀？, not 你食飯唔食呀？ (the latter exists but is less common)."
+  related: [g.maa-questions, g.jau-have, g.m-negation]
+  drills:
+    - { es: "你今晚得唔得閒呀？", en: "Are you free tonight?" }
+    - { es: "呢度係唔係中環呀？", en: "Is this Central?" }
+    - { es: "你識唔識講廣東話呀？", en: "Can you speak Cantonese?" }
+    - { es: "啲點心好唔好食呀？", en: "Is the dim sum good?" }
+
+- id: g.nationality-language
+  level: a1
+  title: "Nationalities and languages - …人, 講…話"
+  summary: "Country + 人 gives a nationality; languages are …話 or …文: 我係英國人，識講英文。"
+  explanation: |
+    ### Country + 人 = person from there
+    | Place | Person | Jyutping |
+    |---|---|---|
+    | 香港 | 香港人 | hoeng1 gong2 jan4 |
+    | 英國 | 英國人 | jing1 gwok3 jan4 |
+    | 美國 | 美國人 | mei5 gwok3 jan4 |
+    | 日本 | 日本人 | jat6 bun2 jan4 |
+    | 中國 | 中國人 | zung1 gwok3 jan4 |
+
+    Ask: 你係邊度人呀？ (nei5 hai6 bin1 dou6 jan4 aa3) "Where are you from?"
+
+    ### Languages
+    - …話 (waa2) for spoken languages and dialects: 廣東話 (gwong2 dung1 waa2) Cantonese, 普通話 (pou2 tung1 waa2) Mandarin.
+    - …文 (man2) especially for languages you read and write: 英文 (jing1 man2) English, 中文 (zung1 man2) Chinese, 日文 Japanese.
+    - Verb: 講 (gong2) "speak": 我講少少廣東話 "I speak a little Cantonese".
+
+    廣東話 and 粵語 (jyut6 jyu5) both mean Cantonese; 廣東話 is the everyday word.
+  examples:
+    - { es: "你係邊度人呀？", en: "Where are you from?" }
+    - { es: "我係澳洲人。", en: "I'm Australian." }
+    - { es: "佢識講普通話同英文。", en: "She can speak Mandarin and English.", altEn: ["He can speak Mandarin and English."] }
+    - { es: "我講少少廣東話。", en: "I speak a little Cantonese." }
+  pitfalls:
+    - "英文 and 英語 both mean English, but 英文 is far more common in Hong Kong speech."
+    - "Don't drop 人: 我係英國 means 'I am Britain'; say 我係英國人."
+    - "Use 講 for 'speak' a language, not 說 (written Chinese)."
+  related: [g.hai6-identity, g.question-words]
+  drills:
+    - { es: "我係美國人。", en: "I'm American." }
+    - { es: "佢唔識講廣東話。", en: "He can't speak Cantonese.", altEn: ["She can't speak Cantonese."] }
+    - { es: "你識唔識講英文呀？", en: "Can you speak English?" }
+    - { es: "我哋都係日本人。", en: "We're all Japanese." }
+
+- id: g.numbers-1-99
+  level: a1
+  title: "Numbers 1 to 99"
+  summary: "Learn 一 to 十, then build 11-99 like 十一, 二十, 二十一; in speech 二十 often shortens to 廿."
+  explanation: |
+    | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+    |---|---|---|---|---|---|---|---|---|---|
+    | 一 jat1 | 二 ji6 | 三 saam1 | 四 sei3 | 五 ng5 | 六 luk6 | 七 cat1 | 八 baat3 | 九 gau2 | 十 sap6 |
+
+    0 is 零 (ling4).
+
+    ### Building numbers
+    - 11-19: 十 + unit: 十一 (sap6 jat1), 十五 (sap6 ng5).
+    - Tens: unit + 十: 二十 (ji6 sap6), 三十 (saam1 sap6), 九十 (gau2 sap6).
+    - Others: 三十八 (saam1 sap6 baat3) = 38.
+
+    ### Spoken shortcuts
+    In fast speech the 十 in the middle is replaced:
+    | Number | Full | Spoken |
+    |---|---|---|
+    | 21 | 二十一 | 廿一 (jaa6 jat1) |
+    | 35 | 三十五 | 卅五, said saa1 aa6 ng5 |
+    | 48 | 四十八 | 四十八 or 四呀八 (sei3 aa6 baat3) |
+
+    You need to recognise these; using the full forms is always correct.
+  examples:
+    - { es: "十二", en: "twelve" }
+    - { es: "我今年廿五歲。", en: "I'm twenty-five this year.", altEs: ["我今年二十五歲。"] }
+    - { es: "九十九號", en: "number ninety-nine" }
+    - { es: "三十八度", en: "thirty-eight degrees" }
+  pitfalls:
+    - "Before a measure word, 'two' is 兩, not 二: 兩個人, not 二個人 (see 兩 vs 二)."
+    - "四 (sei3, four) and 死 (sei2, die) differ only in tone, which is why many buildings skip floors with 4."
+    - "十 sap6 and 四 sei3 are often confused by learners: 十四 is 14, 四十 is 40."
+  related: [g.loeng-vs-ji, g.big-numbers, g.age]
+  drills:
+    - { es: "十七", en: "seventeen" }
+    - { es: "六十六", en: "sixty-six" }
+    - { es: "廿三", en: "twenty-three", altEs: ["二十三"] }
+    - { es: "八十八", en: "eighty-eight" }
+
+- id: g.loeng-vs-ji
+  level: a1
+  title: "兩 vs 二 - two"
+  summary: "Use 兩 for 'two of something' (兩個, 兩杯) and 二 when counting, in numbers and in ordinals."
+  explanation: |
+    Cantonese has two words for "two":
+
+    ### 兩 (loeng5): two things
+    Before a measure word, always 兩:
+    - 兩個人 (loeng5 go3 jan4) - two people
+    - 兩杯咖啡 (loeng5 bui1 gaa3 fe1) - two cups of coffee
+    - 兩點 (loeng5 dim2) - two o'clock
+    - 兩百 (loeng5 baak3) - two hundred, 兩千 - two thousand
+
+    ### 二 (ji6): counting and numbers
+    - Counting aloud: 一、二、三
+    - Inside larger numbers: 十二 (12), 二十 (20), 一百二 (120)
+    - Ordinals and dates: 第二 (dai6 ji6) "second", 二月 (ji6 jyut6) "February", 二號 "the 2nd"
+
+    | Use 兩 | Use 二 |
+    |---|---|
+    | 兩個 two (of them) | 第二個 the second one |
+    | 兩點 2 o'clock | 二號 the 2nd (date) |
+    | 兩蚊 $2 | 十二蚊 $12 |
+  examples:
+    - { es: "我要兩個叉燒包。", en: "I'd like two char siu buns." }
+    - { es: "佢有兩個仔。", en: "She has two sons.", altEn: ["He has two sons."] }
+    - { es: "今日係二月二號。", en: "Today is the second of February." }
+    - { es: "我住喺十二樓。", en: "I live on the twelfth floor." }
+  pitfalls:
+    - "二個 is always wrong: say 兩個."
+    - "'The second one' is 第二個, not 第兩個."
+    - "In numbers ending in 2, use 二: 十二個 (12 of them), 二十二個 (22 of them)."
+  related: [g.numbers-1-99, g.classifiers-intro, g.clock-time]
+  drills:
+    - { es: "兩杯奶茶，唔該。", en: "Two milk teas, please." }
+    - { es: "我等咗兩個鐘。", en: "I waited for two hours." }
+    - { es: "我哋去第二間啦。", en: "Let's go to the second one.", altEn: ["Let's go to another one."] }
+    - { es: "十二點", en: "twelve o'clock" }
+
+- id: g.phone-numbers
+  level: a1
+  title: "Phone numbers and digit strings"
+  summary: "Read phone numbers digit by digit, usually in groups of four: 九一二三 四五六七."
+  explanation: |
+    Hong Kong phone numbers have eight digits and are read **one digit at a time**, usually in two groups of four:
+    - 9123 4567 → 九一二三，四五六七 (gau2 jat1 ji6 saam1, sei3 ng5 luk6 cat1)
+
+    ### Notes
+    - 0 is 零 (ling4).
+    - In digit strings, 2 is 二 (ji6), never 兩.
+    - Repeated digits can be grouped: 88 is read 八八.
+    - Flat numbers, room numbers and bus routes are often read digit by digit too: 一零三號房 (room 103).
+
+    ### Asking and giving numbers
+    - 你電話幾多號呀？ (nei5 din6 waa2 gei2 do1 hou6 aa3) - What's your phone number?
+    - 我電話係… - My number is …
+    - 我 WhatsApp 你 - I'll WhatsApp you.
+  examples:
+    - { es: "你電話幾多號呀？", en: "What's your phone number?" }
+    - { es: "我電話係九八七六，五四三二。", en: "My number is 9876 5432." }
+    - { es: "佢住喺一零二室。", en: "She lives in flat 102.", altEn: ["He lives in flat 102."] }
+    - { es: "可唔可以講多次呀？", en: "Could you say it again?" }
+  pitfalls:
+    - "Don't read a phone number as a large number: 9123 is 九一二三, not 九千一百二十三."
+    - "In digit strings use 二 for 2, never 兩."
+  related: [g.numbers-1-99, g.loeng-vs-ji]
+  drills:
+    - { es: "我電話係六一二三，四四五五。", en: "My number is 6123 4455." }
+    - { es: "請再講多次。", en: "Please say it once more." }
+    - { es: "我住喺零八室。", en: "I live in flat 08." }
+
+- id: g.age
+  level: a1
+  title: "Age - 幾多歲？"
+  summary: "Ask 你幾多歲呀？ and answer number + 歲, with no verb: 我三十歲。"
+  explanation: |
+    ### Asking
+    - 你幾多歲呀？ (nei5 gei2 do1 seoi3 aa3) - How old are you?
+    - 佢幾歲呀？ (keoi5 gei2 seoi3 aa3) - How old is he? (often used for children)
+
+    ### Answering
+    Number + 歲 (seoi3). No verb is needed:
+    - 我三十歲 (ngo5 saam1 sap6 seoi3) - I'm thirty.
+    - 佢今年八歲 - She's eight this year.
+    - 我兩歲 - two years old (兩, because 歲 acts like a measure word).
+
+    ### Politeness
+    Asking adults their age directly can be a bit personal. Older people may be asked 你今年貴庚呀？ (nei5 gam1 nin4 gwai3 gang1 aa3) "may I ask your age?" — a polite fixed phrase.
+
+    ### Related words
+    今年 (gam1 nin4) this year, 生日 (saang1 jat6) birthday, 大 / 細 older / younger: 我大過佢兩歲 "I'm two years older than him" (see comparisons in A2).
+  examples:
+    - { es: "你個仔幾多歲呀？", en: "How old is your son?" }
+    - { es: "佢今年十八歲。", en: "She's eighteen this year.", altEn: ["He's eighteen this year."] }
+    - { es: "我二十二歲。", en: "I'm twenty-two." }
+    - { es: "我細佬兩歲。", en: "My little brother is two." }
+  pitfalls:
+    - "No 係 or 有 with ages: 我三十歲, not 我係三十歲 or 我有三十歲."
+    - "Two years old is 兩歲, but twenty-two is 二十二歲 (or 廿二歲)."
+    - "幾歲 suggests the answer is small (under ten); for adults 幾多歲 is safer."
+  related: [g.numbers-1-99, g.gei-how-many, g.loeng-vs-ji]
+  drills:
+    - { es: "你幾多歲呀？", en: "How old are you?" }
+    - { es: "我阿媽六十歲。", en: "My mum is sixty." }
+    - { es: "佢個女三歲。", en: "Her daughter is three.", altEn: ["His daughter is three."] }
+    - { es: "我今年廿九歲。", en: "I'm twenty-nine this year.", altEs: ["我今年二十九歲。"] }
+
+- id: g.gei-how-many
+  level: a1
+  title: "幾 and 幾多 - how many, how much"
+  summary: "幾 + measure word asks 'how many' (幾個？); 幾多 asks 'how much / how many' more generally."
+  explanation: |
+    ### 幾 + measure word
+    幾 (gei2) works like a number, so it needs a measure word:
+    - 你有幾個細路呀？ (nei5 jau5 gei2 go3 sai3 lou6 aa3) - How many children do you have?
+    - 幾點呀？ (gei2 dim2 aa3) - What time is it?
+    - 幾耐？ (gei2 noi6) - How long?
+
+    ### 幾多
+    幾多 (gei2 do1) "how much / how many" can stand directly before a noun or alone:
+    - 幾多錢？ (gei2 do1 cin2) - How much money?
+    - 幾多人？ - How many people?
+    - 有幾多？ - How many are there?
+
+    ### 幾 meaning "a few"
+    In statements 幾 means "a few, several": 我有幾個朋友喺度 "I have a few friends here". 十幾個 means "a dozen or so".
+
+    ### 幾 meaning "quite"
+    Before an adjective 幾 means "quite": 幾好 (gei2 hou2) "quite good" (see degree adverbs).
+  examples:
+    - { es: "你哋幾多位呀？", en: "How many of you are there? (restaurant)" }
+    - { es: "你要幾個呀？", en: "How many do you want?" }
+    - { es: "佢有幾本中文書。", en: "She has a few Chinese books.", altEn: ["He has a few Chinese books."] }
+    - { es: "呢度有十幾個人。", en: "There are a dozen or so people here." }
+  pitfalls:
+    - "幾 needs a measure word before a noun: 幾個人, not 幾人 (except fixed words like 幾點, 幾歲)."
+    - "In a statement 幾 means 'a few', not 'how many': 我買咗幾本書 = I bought a few books."
+  related: [g.classifiers-intro, g.age, g.prices-gei-do-cin]
+  drills:
+    - { es: "你屋企有幾多人呀？", en: "How many people are there in your family?" }
+    - { es: "兩位，唔該。", en: "Two people, please." }
+    - { es: "你要幾杯呀？", en: "How many cups do you want?" }
+    - { es: "我有幾個香港朋友。", en: "I have a few Hong Kong friends." }
+
+- id: g.classifiers-intro
+  level: a1
+  title: "Measure words - number + measure word + noun"
+  summary: "Every counted noun needs a measure word between the number and the noun: 一個人, 兩隻狗, 三本書."
+  explanation: |
+    In Cantonese you cannot put a number directly before a noun. You need a **measure word** (classifier, 量詞), like "a *cup* of tea" or "a *piece* of paper" in English, but for every noun:
+
+    | Number | Measure word | Noun | Jyutping | Meaning |
+    |---|---|---|---|---|
+    | 一 | 個 | 人 | jat1 go3 jan4 | a person |
+    | 兩 | 隻 | 狗 | loeng5 zek3 gau2 | two dogs |
+    | 三 | 本 | 書 | saam1 bun2 syu1 | three books |
+
+    ### The pattern
+    **Number / 呢 / 嗰 / 幾 + measure word + noun**: 呢本書 "this book", 幾隻狗 "how many dogs".
+
+    ### Learn the noun with its measure word
+    The measure word often reflects shape or type (flat things take 張, long thin things take 條, vehicles take 架). Learn 狗 together with 隻, 書 with 本.
+
+    ### 個: the general measure word
+    個 (go3) is the most common, used for people and many objects. If you forget the right one, 個 is often understood, but using the right one sounds much more natural.
+  examples:
+    - { es: "我有一個哥哥。", en: "I have an older brother." }
+    - { es: "佢養咗兩隻貓。", en: "She keeps two cats.", altEn: ["He keeps two cats."] }
+    - { es: "我買咗三本書。", en: "I bought three books." }
+    - { es: "一杯奶茶，唔該。", en: "A milk tea, please." }
+  pitfalls:
+    - "Never put a number straight before a noun: 三本書, not 三書."
+    - "'Two' before a measure word is 兩, not 二: 兩本書."
+    - "Use the noun's own measure word where you can: 一隻狗, not 一個狗."
+  related: [g.common-classifiers, g.loeng-vs-ji, g.demonstratives]
+  drills:
+    - { es: "一個朋友", en: "a friend" }
+    - { es: "兩本雜誌", en: "two magazines" }
+    - { es: "五隻雞蛋", en: "five eggs" }
+    - { es: "我要三杯凍檸茶。", en: "I'd like three iced lemon teas." }
+
+- id: g.common-classifiers
+  level: a1
+  title: "The common measure words"
+  summary: "個 for people and things, 隻 for animals and one of a pair, 本 for books, 張 for flat things, 件 for tops, 架 for vehicles, 條 for long things."
+  explanation: |
+    | Measure word | Jyutping | Used for | Examples |
+    |---|---|---|---|
+    | 個 | go3 | people, many objects, general | 個人, 個蘋果, 個袋 |
+    | 位 | wai2 | people (polite) | 位先生, 位客人 |
+    | 隻 | zek3 | animals; one of a pair; some objects | 隻狗, 隻鞋, 隻手, 隻碟 |
+    | 本 | bun2 | books, magazines | 本書, 本簿 |
+    | 張 | zoeng1 | flat things; tables, chairs, beds | 張紙, 張相, 張枱, 張床 |
+    | 件 | gin6 | clothes for the upper body, items, matters | 件衫, 件褸, 件事 |
+    | 條 | tiu4 | long thin things; trousers; roads; fish | 條褲, 條路, 條魚, 條裙 |
+    | 架 | gaa3 | vehicles, machines | 架車, 架巴士, 架飛機 |
+    | 部 | bou6 | machines, devices; films | 部手機, 部電腦, 部戲 |
+    | 枝 | zi1 | pens, bottles, sticks | 枝筆, 枝遮 |
+    | 對 | deoi3 | a pair | 對鞋, 對筷子 |
+    | 間 | gaan1 | buildings, shops, rooms | 間屋, 間餐廳 |
+
+    Container words also work as measure words: 杯 (bui1) cup, 碗 (wun2) bowl, 碟 (dip6) plate, 樽 (zeon1) bottle, 籠 (lung4) steamer basket.
+  examples:
+    - { es: "我想買一件衫同一條褲。", en: "I want to buy a top and a pair of trousers." }
+    - { es: "嗰架巴士去中環。", en: "That bus goes to Central." }
+    - { es: "我部手機冇電。", en: "My phone is out of battery." }
+    - { es: "一對筷子，唔該。", en: "A pair of chopsticks, please." }
+  pitfalls:
+    - "褲 (trousers) and 裙 (skirt) take 條, but 衫 (top) takes 件."
+    - "One shoe is 一隻鞋; a pair is 一對鞋."
+    - "Animals are mostly 隻, but fish and snakes are 條."
+  related: [g.classifiers-intro, g.classifier-as-the]
+  drills:
+    - { es: "一張相", en: "a photo" }
+    - { es: "兩條魚", en: "two fish" }
+    - { es: "呢間餐廳好出名。", en: "This restaurant is very famous." }
+    - { es: "我要一碗雲吞麵。", en: "I'd like a bowl of wonton noodles." }
+
+- id: g.demonstratives
+  level: a1
+  title: "呢 and 嗰 - this and that"
+  summary: "呢 'this' and 嗰 'that' go before a measure word: 呢個, 嗰本書, 呢啲, 嗰度."
+  explanation: |
+    | | this | that | which? |
+    |---|---|---|---|
+    | one | 呢個 (ni1 go3) | 嗰個 (go2 go3) | 邊個 (bin1 go3) |
+    | some / these | 呢啲 (ni1 di1) | 嗰啲 (go2 di1) | 邊啲 (bin1 di1) |
+    | place | 呢度 (ni1 dou6) | 嗰度 (go2 dou6) | 邊度 (bin1 dou6) |
+    | time | 呢排 (ni1 paai2) these days | 嗰陣 (go2 zan6) back then | 幾時 (gei2 si4) |
+
+    ### Always with a measure word
+    呢 and 嗰 cannot stand directly before a noun:
+    - 呢本書 (ni1 bun2 syu1) - this book
+    - 嗰隻狗 (go2 zek3 gau2) - that dog
+    - 呢兩杯 (ni1 loeng5 bui1) - these two cups (demonstrative + number + measure word)
+
+    ### On their own
+    呢個 and 嗰個 also mean "this one", "that one": 我要呢個 "I'll have this one".
+  examples:
+    - { es: "呢個幾多錢呀？", en: "How much is this one?" }
+    - { es: "嗰個人係邊個呀？", en: "Who is that person?" }
+    - { es: "我鍾意呢件衫。", en: "I like this top." }
+    - { es: "嗰兩隻狗好得意。", en: "Those two dogs are really cute." }
+  pitfalls:
+    - "Don't put 呢 or 嗰 straight before a noun: 呢本書, not 呢書."
+    - "邊個 means both 'who?' and 'which one?': context tells you which."
+    - "The order is demonstrative + number + measure word: 呢三本書, not 三呢本書."
+  related: [g.classifiers-intro, g.di-some, g.position-words]
+  drills:
+    - { es: "我要嗰個。", en: "I want that one." }
+    - { es: "呢啲係乜嘢呀？", en: "What are these?" }
+    - { es: "嗰間餐廳好貴。", en: "That restaurant is expensive." }
+    - { es: "你要邊個呀？", en: "Which one do you want?" }
+
+- id: g.classifier-as-the
+  level: a1
+  title: "Measure word + noun - 'the' and 'my'"
+  summary: "A measure word with no number in front means 'the': 架車好新 'the car is new'; after a pronoun it means 'my/your': 我部電話."
+  explanation: |
+    Cantonese has no word for "the", but a **bare measure word + noun** often does the job:
+    - 本書喺枱面 (bun2 syu1 hai2 toi2 min6) - The book is on the table.
+    - 隻貓好肥 (zek3 maau1 hou2 fei4) - The cat is fat.
+
+    ### Possession: pronoun + measure word + noun
+    Instead of 嘅, Cantonese often uses the measure word to mean "my, your, his":
+    | With measure word (very common) | With 嘅 |
+    |---|---|
+    | 我部手機 (ngo5 bou6 sau2 gei1) my phone | 我嘅手機 |
+    | 你架車 (nei5 gaa3 ce1) your car | 你嘅車 |
+    | 佢個仔 (keoi5 go3 zai2) his/her son | 佢嘅仔 |
+
+    For plural or uncountable things use 啲: 我啲衫 (ngo5 di1 saam1) "my clothes".
+
+    ### Where it works
+    This bare "measure word + noun" is used for specific things both speakers know about, usually at the start of the sentence.
+  examples:
+    - { es: "架巴士嚟緊。", en: "The bus is coming." }
+    - { es: "我部電腦壞咗。", en: "My computer is broken." }
+    - { es: "你件衫好靚。", en: "Your top is really pretty." }
+    - { es: "佢個女喺英國讀書。", en: "Her daughter studies in the UK.", altEn: ["His daughter studies in the UK."] }
+  pitfalls:
+    - "Don't drop the measure word: 我手機 is understood but 我部手機 is the natural form."
+    - "A bare measure word at the start means 'the', not 'a': 隻狗好惡 = the dog is fierce. 'A dog' needs 一隻狗."
+  related: [g.common-classifiers, g.ge-possessive, g.di-some]
+  drills:
+    - { es: "我部手機冇電喇。", en: "My phone's battery is dead." }
+    - { es: "杯咖啡好熱。", en: "The coffee is very hot." }
+    - { es: "你本書喺度。", en: "Your book is here." }
+    - { es: "我啲朋友都係香港人。", en: "My friends are all Hongkongers." }
+
+- id: g.di-some
+  level: a1
+  title: "啲 - some, the (plural), a bit"
+  summary: "啲 is the measure word for plurals and uncountables: 啲書 'the books', 飲啲水 'drink some water'."
+  explanation: |
+    啲 (di1) is a special measure word for **more than one** or for **uncountable** things.
+
+    ### "The" (plural or mass)
+    - 啲書喺邊度呀？ (di1 syu1 hai2 bin1 dou6 aa3) - Where are the books?
+    - 啲餸好好食 (di1 sung3 hou2 hou2 sik6) - The dishes are delicious.
+
+    ### "Some"
+    - 我想買啲水果 (ngo5 soeng2 maai5 di1 seoi2 gwo2) - I want to buy some fruit.
+    - 食啲嘢 - eat something.
+
+    ### With 呢 / 嗰 / pronouns
+    呢啲 these, 嗰啲 those, 我啲朋友 my friends.
+
+    ### After adjectives: "a bit more"
+    Adjective + 啲 means "a bit more …": 平啲 (peng4 di1) "a bit cheaper", 快啲 (faai3 di1) "faster, hurry up", 大聲啲 "louder".
+  examples:
+    - { es: "啲點心嚟咗。", en: "The dim sum has arrived." }
+    - { es: "你飲啲水啦。", en: "Have some water." }
+    - { es: "可唔可以平啲呀？", en: "Can you make it a bit cheaper?" }
+    - { es: "快啲啦，就嚟遲到喇！", en: "Hurry up, we're about to be late!" }
+  pitfalls:
+    - "Don't use a number with 啲: 三啲書 is wrong; say 三本書."
+    - "Adjective + 啲 is 'a bit more X', not 'some X': 貴啲 means 'more expensive', not 'some expensive things'."
+    - "啲 is not the same as 有啲 (somewhat, a bit): 有啲貴 'a bit expensive' vs 貴啲 'more expensive'."
+  related: [g.classifier-as-the, g.demonstratives, g.jau-di-a-bit]
+  drills:
+    - { es: "啲人好好。", en: "The people are very nice." }
+    - { es: "我想買啲麵包。", en: "I want to buy some bread." }
+    - { es: "講慢啲，唔該。", en: "Speak a bit more slowly, please." }
+    - { es: "呢啲係我嘅。", en: "These are mine." }
+
+- id: g.big-numbers
+  level: a1
+  title: "Hundreds, thousands and ten-thousands - 百, 千, 萬"
+  summary: "Count in 百 (100), 千 (1,000) and 萬 (10,000); use 零 for gaps and drop the last unit in speech (一百五 = 150)."
+  explanation: |
+    | Number | Cantonese | Jyutping |
+    |---|---|---|
+    | 100 | 一百 | jat1 baak3 |
+    | 200 | 兩百 | loeng5 baak3 |
+    | 1,000 | 一千 | jat1 cin1 |
+    | 10,000 | 一萬 | jat1 maan6 |
+    | 100,000 | 十萬 | sap6 maan6 |
+    | 1,000,000 | 一百萬 | jat1 baak3 maan6 |
+
+    ### 萬 is the key unit
+    Chinese counts large numbers in ten-thousands: 50,000 is 五萬 (five ten-thousands), 300,000 is 三十萬.
+
+    ### Gaps: 零
+    A missing place in the middle is filled with 零 (ling4): 105 = 一百零五, 2,008 = 兩千零八.
+
+    ### Spoken shortcut
+    If the number ends in a round unit, the last unit word is dropped: 150 = 一百五 (jat1 baak3 ng5), 2,500 = 兩千五, 34,000 = 三萬四. So 一百五 is 150, not 105!
+  examples:
+    - { es: "呢部手機三千八百蚊。", en: "This phone is $3,800.", altEs: ["呢部手機三千八蚊。"] }
+    - { es: "一百五十個人", en: "a hundred and fifty people", altEs: ["一百五個人"] }
+    - { es: "人工兩萬五。", en: "The salary is $25,000." }
+    - { es: "一百零八", en: "one hundred and eight" }
+  pitfalls:
+    - "一百五 is 150, not 105; 105 is 一百零五."
+    - "200 is 兩百 and 2,000 is 兩千 (二百 is also heard, but 兩百 is more common)."
+    - "Don't count in thousands above 9,999: 20,000 is 兩萬, not 二十千."
+  related: [g.numbers-1-99, g.money, g.loeng-vs-ji]
+  drills:
+    - { es: "三百", en: "three hundred" }
+    - { es: "四千五", en: "four thousand five hundred", altEs: ["四千五百"] }
+    - { es: "六萬", en: "sixty thousand" }
+    - { es: "一千零一", en: "one thousand and one" }
+
+- id: g.money
+  level: a1
+  title: "Money - 蚊, 毫, 個"
+  summary: "In speech dollars are 蚊 (or 個) and ten-cent units are 毫: 十蚊, 五毫, 三個半."
+  explanation: |
+    Hong Kong dollars (港幣, gong2 bai6) are written 元 but spoken differently:
+
+    | Written | Spoken | Jyutping | Meaning |
+    |---|---|---|---|
+    | $10 | 十蚊 | sap6 man1 | ten dollars |
+    | $0.50 | 五毫 | ng5 hou4 | fifty cents |
+    | $3.50 | 三個半 | saam1 go3 bun3 | three fifty |
+    | $3.50 | 三蚊五毫 / 三蚊五 | saam1 man1 ng5 | three fifty |
+    | $12.80 | 十二蚊八 | sap6 ji6 man1 baat3 | twelve eighty |
+
+    - 蚊 (man1) is the everyday word for dollar.
+    - 個 (go3) also means "dollar" in prices: 五個 = $5, 三個半 = $3.50.
+    - 毫 (hou4) or 毫子 is ten cents. A $5 coin is 五蚊雞 (ng5 man1 gai1), slang.
+    - Large sums: 一舊水 (jat1 gau6 seoi2) is slang for $100; you will hear it but don't need to use it.
+
+    ### Paying
+    - 埋單 (maai4 daan1) - the bill, please.
+    - 用八達通 (jung6 baat3 daat6 tung1) - pay by Octopus.
+    - 找錢 (zaau2 cin2) - give change. 散紙 (saan2 zi2) - small change.
+  examples:
+    - { es: "一杯咖啡廿八蚊。", en: "A coffee is $28.", altEs: ["一杯咖啡二十八蚊。"] }
+    - { es: "車費五個半。", en: "The fare is $5.50.", altEs: ["車費五蚊五。"] }
+    - { es: "我冇散紙，可唔可以用八達通？", en: "I don't have change. Can I use Octopus?" }
+    - { es: "唔該埋單。", en: "The bill, please.", altEs: ["埋單，唔該。"] }
+  pitfalls:
+    - "Don't say 元 aloud in everyday prices; say 蚊: 十蚊, not 十元."
+    - "The digit after 蚊 is tens of cents: 十二蚊八 = $12.80, not $12.08."
+    - "$2 is 兩蚊, not 二蚊."
+  related: [g.big-numbers, g.prices-gei-do-cin]
+  drills:
+    - { es: "一共八十五蚊。", en: "That's $85 altogether." }
+    - { es: "兩蚊半", en: "two dollars fifty" }
+    - { es: "我用八達通畀錢。", en: "I'll pay by Octopus." }
+    - { es: "唔該找錢。", en: "My change, please." }
+
+- id: g.prices-gei-do-cin
+  level: a1
+  title: "幾多錢？ - asking prices"
+  summary: "Ask 幾多錢呀？ or 點賣呀？; answer with the price, often with 一 + unit for 'per': 三十蚊一斤."
+  explanation: |
+    ### Asking
+    | Question | Jyutping | Use |
+    |---|---|---|
+    | 幾多錢呀？ | gei2 do1 cin2 aa3 | How much is it? |
+    | 呢個幾錢呀？ | ni1 go3 gei2 cin2 aa3 | How much is this? (shorter) |
+    | 點賣呀？ | dim2 maai6 aa3 | How are they sold? (market) |
+    | 一共幾多錢？ | jat1 gung6 gei2 do1 cin2 | How much altogether? |
+
+    ### Price per unit: "price + 一 + unit"
+    At a market the price comes first, then 一 + measure word:
+    - 十蚊一個 (sap6 man1 jat1 go3) - ten dollars each
+    - 三十蚊一斤 (saam1 sap6 man1 jat1 gan1) - thirty dollars a catty (about 600 g)
+    - 廿蚊三個 - three for twenty dollars
+
+    ### Bargaining (markets only)
+    平啲得唔得呀？ (peng4 di1 dak1 m4 dak1 aa3) "Can you make it cheaper?" 太貴喇 (taai3 gwai3 laa3) "Too expensive!" In shops with marked prices, bargaining is unusual.
+  examples:
+    - { es: "呢對鞋幾多錢呀？", en: "How much are these shoes?" }
+    - { es: "啲橙點賣呀？", en: "How much are the oranges?" }
+    - { es: "十蚊三個。", en: "Three for ten dollars." }
+    - { es: "一共幾多錢呀？", en: "How much is it altogether?" }
+  pitfalls:
+    - "The price comes before 一 + unit: 十蚊一個, not 一個十蚊 (heard, but less usual at markets)."
+    - "幾錢 is short for 幾多錢; don't drop 錢 altogether: 幾多呀？ means 'how many?'"
+    - "Market produce is weighed in 斤 (catty, about 600 g), not kilos."
+  related: [g.money, g.gei-how-many, g.jiu-want]
+  drills:
+    - { es: "呢個幾錢呀？", en: "How much is this?" }
+    - { es: "廿蚊一斤。", en: "Twenty dollars a catty.", altEs: ["二十蚊一斤。"] }
+    - { es: "平啲得唔得呀？", en: "Can you do it a bit cheaper?" }
+    - { es: "太貴喇！", en: "Too expensive!" }
+
+- id: g.jiu-want
+  level: a1
+  title: "要 and 想 - want, would like"
+  summary: "要 + noun orders or asks for something; 想 + verb says what you would like to do."
+  explanation: |
+    ### 要 (jiu3): want, will take
+    The everyday verb for ordering and buying:
+    - 我要兩個 (ngo5 jiu3 loeng5 go3) - I'll take two.
+    - 要唔要袋呀？ (jiu3 m4 jiu3 doi2 aa3) - Do you want a bag?
+    - 唔要，唔該 (m4 jiu3, m4 goi1) - No thanks.
+
+    ### 想 (soeng2): would like to
+    想 + verb is softer and talks about wishes:
+    - 我想買件衫 (ngo5 soeng2 maai5 gin6 saam1) - I'd like to buy a top.
+    - 你想食乜嘢呀？ - What would you like to eat?
+
+    ### Ordering politely
+    Add 唔該 (m4 goi1): 唔該，我要一碗粥 / 一碗粥，唔該. Using the item + 唔該 alone is very natural in a busy café: 凍檸茶，唔該！
+
+    要 also means "need to, must" before a verb (我要返工 "I have to work"); you will meet that use in A2.
+  examples:
+    - { es: "我要一磅豬肉。", en: "I'd like a pound of pork." }
+    - { es: "你要唔要膠袋呀？", en: "Do you want a plastic bag?" }
+    - { es: "我想去山頂。", en: "I'd like to go to the Peak." }
+    - { es: "唔要喇，唔該。", en: "No, thanks." }
+  pitfalls:
+    - "要 + verb often means 'have to', not 'want to': 我要返工 = I have to work. For 'I want to go' say 我想去."
+    - "Don't say 我想要 for every order; at a counter, 我要… or just the item + 唔該 is normal."
+  related: [g.prices-gei-do-cin, g.mgoi-doze, g.jiu-must-m-sai]
+  drills:
+    - { es: "我要呢個。", en: "I'll take this one." }
+    - { es: "你想食乜嘢呀？", en: "What would you like to eat?" }
+    - { es: "一份早餐，唔該。", en: "One breakfast set, please." }
+    - { es: "我想買啲生果。", en: "I'd like to buy some fruit." }
+
+- id: g.clock-time
+  level: a1
+  title: "Telling the time - 點, 個字, 半"
+  summary: "Hours are 點; minutes are counted in 5-minute 'characters' (個字) on the clock face: 三點三 = 3:15, 三點半 = 3:30."
+  explanation: |
+    ### Hours
+    Number + 點 (dim2) or 點鐘 (dim2 zung1): 三點 (saam1 dim2) three o'clock, 兩點 (loeng5 dim2) two o'clock.
+
+    ### Minutes: 個字
+    Each number on a clock face (5 minutes) is one 字 (zi6):
+    | Time | Cantonese | Jyutping |
+    |---|---|---|
+    | 3:05 | 三點一個字 / 三點零五分 | saam1 dim2 jat1 go3 zi6 |
+    | 3:15 | 三點三 / 三點三個字 | saam1 dim2 saam1 |
+    | 3:30 | 三點半 | saam1 dim2 bun3 |
+    | 3:45 | 三點九 / 三點三個骨 | saam1 dim2 gau2 |
+    | 3:12 | 三點十二分 | saam1 dim2 sap6 ji6 fan1 |
+
+    So 三點三 is 3:15 (the minute hand on 3), **not** 3:03.
+
+    ### Asking and parts of the day
+    - 而家幾點呀？ (ji4 gaa1 gei2 dim2 aa3) - What time is it now?
+    - 朝早 (ziu1 zou2) morning, 晏晝 (aan3 zau3) midday/early afternoon, 下晝 (haa6 zau3) afternoon, 夜晚 (je6 maan5) evening.
+    - The part of the day comes first: 下晝三點 "3 pm", 夜晚八點 "8 pm".
+  examples:
+    - { es: "而家幾點呀？", en: "What time is it now?" }
+    - { es: "而家十點半。", en: "It's half past ten." }
+    - { es: "我哋七點三見。", en: "See you at 7:15." }
+    - { es: "下晝兩點開會。", en: "The meeting is at 2 pm." }
+  pitfalls:
+    - "三點三 is 3:15 (three 'characters'), not 3:03; 3:03 is 三點零三分."
+    - "Two o'clock is 兩點, never 二點."
+    - "The part of the day goes before the hour: 夜晚八點, not 八點夜晚."
+  related: [g.time-before-verb, g.loeng-vs-ji, g.days-weeks]
+  drills:
+    - { es: "朝早八點", en: "eight in the morning" }
+    - { es: "五點九", en: "5:45" }
+    - { es: "夜晚十一點", en: "eleven at night" }
+    - { es: "我十二點半食飯。", en: "I have lunch at half past twelve." }
+
+- id: g.days-weeks
+  level: a1
+  title: "Days of the week and relative days"
+  summary: "星期 or 禮拜 + number gives the weekday (星期一 = Monday, 星期日 = Sunday); 今日, 聽日, 尋日 are today, tomorrow, yesterday."
+  explanation: |
+    ### Weekdays
+    星期 (sing1 kei4) or 禮拜 (lai5 baai3), both common, + number:
+    | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+    |---|---|---|---|---|---|---|
+    | 星期一 | 星期二 | 星期三 | 星期四 | 星期五 | 星期六 | 星期日 |
+
+    Sunday is 星期日 (sing1 kei4 jat6) or 禮拜日 (lai5 baai3 jat6). Ask 今日星期幾呀？ (gam1 jat6 sing1 kei4 gei2 aa3) "What day is it today?"
+
+    ### Relative days
+    | 前日 | 尋日 / 琴日 | 今日 | 聽日 | 後日 |
+    |---|---|---|---|---|
+    | cin4 jat6 | cam4 jat6 / kam4 jat6 | gam1 jat6 | ting1 jat6 | hau6 jat6 |
+    | day before yesterday | yesterday | today | tomorrow | day after tomorrow |
+
+    Weeks: 上個星期 last week, 呢個星期 this week, 下個星期 next week. Weekend: 週末 (zau1 mut6).
+  examples:
+    - { es: "今日星期幾呀？", en: "What day is it today?" }
+    - { es: "今日星期五。", en: "Today is Friday." }
+    - { es: "我聽日唔使返工。", en: "I don't have to work tomorrow." }
+    - { es: "下個禮拜六你得唔得閒呀？", en: "Are you free next Saturday?" }
+  pitfalls:
+    - "Sunday is 星期日, not 星期七."
+    - "'Yesterday' has two spellings, 尋日 and 琴日, both common; the sound differs slightly (cam4 / kam4)."
+    - "No preposition before days: 星期六去, not 喺星期六去."
+  related: [g.dates, g.time-before-verb]
+  drills:
+    - { es: "尋日星期三。", en: "Yesterday was Wednesday.", altEs: ["琴日星期三。"] }
+    - { es: "我哋星期日去飲茶。", en: "We go for yum cha on Sundays.", altEn: ["We're going for yum cha on Sunday."] }
+    - { es: "後日見！", en: "See you the day after tomorrow!" }
+    - { es: "呢個週末你做乜嘢呀？", en: "What are you doing this weekend?" }
+
+- id: g.dates
+  level: a1
+  title: "Months, dates and years - 月, 號, 年"
+  summary: "Dates go from big to small: year, month, day: 二零二六年十月十五號."
+  explanation: |
+    ### Months: number + 月
+    一月 (jat1 jyut6) January, 二月 February … 十二月 (sap6 ji6 jyut6) December.
+
+    ### Days: number + 號
+    In speech the day of the month is 號 (hou6): 十五號 the 15th. Written Chinese uses 日.
+
+    ### Years: digits + 年
+    Read years digit by digit: 二零二六年 (ji6 ling4 ji6 luk6 nin4) "2026".
+
+    ### Order: big to small
+    | English | Cantonese |
+    |---|---|
+    | Wednesday 15 October 2026 | 二零二六年十月十五號，星期三 |
+    | 1 July | 七月一號 (cat1 jyut6 jat1 hou6) |
+
+    ### Asking
+    - 今日幾號呀？ (gam1 jat6 gei2 hou6 aa3) - What's the date today?
+    - 你幾時生日呀？ (nei5 gei2 si4 saang1 jat6 aa3) - When is your birthday?
+    - "Month" as a duration is 個月: 一個月 one month (一月 is January!).
+  examples:
+    - { es: "今日幾號呀？", en: "What's the date today?" }
+    - { es: "今日十月十五號。", en: "Today is the fifteenth of October." }
+    - { es: "我生日係三月八號。", en: "My birthday is the eighth of March." }
+    - { es: "我二零二四年嚟香港。", en: "I came to Hong Kong in 2024." }
+  pitfalls:
+    - "一月 is January, but 一個月 is 'one month'; 兩個月 'two months'."
+    - "Dates go year-month-day, the opposite of British order: 十月十五號, not 十五號十月."
+    - "Read years digit by digit: 二零二六, not 兩千零二十六 (which is a quantity)."
+  related: [g.days-weeks, g.numbers-1-99, g.time-before-verb]
+  drills:
+    - { es: "十二月廿五號", en: "the twenty-fifth of December", altEs: ["十二月二十五號"] }
+    - { es: "你幾時生日呀？", en: "When is your birthday?" }
+    - { es: "我住咗三個月。", en: "I've lived here three months." }
+    - { es: "一九九七年七月一號", en: "the first of July 1997" }
+
+- id: g.time-before-verb
+  level: a1
+  title: "Word order - time and place before the verb"
+  summary: "Cantonese order is subject, time, place, verb, object: 我聽日喺中環食飯."
+  explanation: |
+    The basic word order is **Subject - Time - Place - Verb - Object**:
+
+    | Subject | Time | Place | Verb | Object |
+    |---|---|---|---|---|
+    | 我 | 聽日 | 喺中環 | 食 | 飯 |
+    | ngo5 | ting1 jat6 | hai2 zung1 waan4 | sik6 | faan6 |
+
+    "I'm having a meal in Central tomorrow."
+
+    ### Time can also go first
+    The time word may come before the subject: 聽日我返工 (ting1 jat6 ngo5 faan1 gung1) "Tomorrow I work." But it never goes at the end as in English.
+
+    ### Times of day, then clock time
+    Bigger time units come first: 聽日朝早九點 "tomorrow at 9 am".
+
+    ### Never after the verb
+    Time **when** something happens goes before the verb. (Time **how long** something lasts goes after the verb - see duration in A2.)
+  examples:
+    - { es: "我聽日去澳門。", en: "I'm going to Macau tomorrow.", altEs: ["聽日我去澳門。"] }
+    - { es: "佢每日七點起身。", en: "She gets up at seven every day.", altEn: ["He gets up at seven every day."] }
+    - { es: "我哋星期六喺銅鑼灣睇戲。", en: "We're watching a film in Causeway Bay on Saturday." }
+    - { es: "你幾點放工呀？", en: "What time do you finish work?" }
+  pitfalls:
+    - "Don't put the time at the end: 我去澳門聽日 is wrong; say 我聽日去澳門."
+    - "Place with 喺 also comes before the verb: 我喺屋企食飯, not 我食飯喺屋企."
+    - "Larger units come first: 星期一朝早, not 朝早星期一."
+  related: [g.hai2-location, g.clock-time, g.duration]
+  drills:
+    - { es: "我今晚喺屋企食飯。", en: "I'm eating at home tonight." }
+    - { es: "佢下個月返英國。", en: "He's going back to Britain next month.", altEn: ["She's going back to Britain next month."] }
+    - { es: "我哋聽朝九點見。", en: "See you tomorrow at nine a.m." }
+    - { es: "你幾時得閒呀？", en: "When are you free?" }
+
+- id: g.ge-possessive
+  level: a1
+  title: "嘅 - possession ('s, of)"
+  summary: "嘅 marks possession like English 's: 我嘅書 'my book', 陳生嘅車 'Mr Chan's car'."
+  explanation: |
+    嘅 (ge3) links an owner to what is owned:
+    - 我嘅 (ngo5 ge3) - my, mine
+    - 你嘅電話 (nei5 ge3 din6 waa2) - your phone
+    - 陳生嘅公司 (can4 saang1 ge3 gung1 si1) - Mr Chan's company
+
+    ### Mine, yours
+    嘅 can end a phrase: 呢本書係我嘅 (ni1 bun2 syu1 hai6 ngo5 ge3) "This book is mine."
+
+    ### When to drop 嘅
+    | Pattern | Example | Use |
+    |---|---|---|
+    | pronoun + family / home | 我媽媽, 我哋屋企 | close relations: no 嘅 |
+    | pronoun + measure word + noun | 我部手機 | single specific items |
+    | pronoun + 嘅 + noun | 我嘅手機 | always correct, slightly heavier |
+
+    ### Written Chinese
+    嘅 corresponds to 的 in written Chinese. In Cantonese speech you never say 的 (dik1) for possession.
+  examples:
+    - { es: "呢個係邊個嘅袋呀？", en: "Whose bag is this?" }
+    - { es: "嗰架車係我爸爸嘅。", en: "That car is my dad's." }
+    - { es: "我媽媽係老師。", en: "My mum is a teacher." }
+    - { es: "我哋公司喺鰂魚涌。", en: "Our company is in Quarry Bay." }
+  pitfalls:
+    - "Say 嘅 (ge3) in speech, not Mandarin-style 的."
+    - "With family members 嘅 is usually dropped: 我阿爸 is more natural than 我嘅阿爸."
+    - "'Whose?' is 邊個嘅: 呢支筆係邊個嘅？"
+  related: [g.classifier-as-the, g.kinship-terms, g.adj-ge-noun]
+  drills:
+    - { es: "呢個係我嘅。", en: "This is mine." }
+    - { es: "佢嘅中文好好。", en: "Her Chinese is very good.", altEn: ["His Chinese is very good."] }
+    - { es: "我哥哥喺倫敦讀書。", en: "My brother studies in London." }
+    - { es: "呢支筆係邊個嘅呀？", en: "Whose pen is this?" }
+
+- id: g.kinship-terms
+  level: a1
+  title: "Family words and 阿"
+  summary: "Cantonese separates older and younger siblings and paternal and maternal grandparents; 阿 is a friendly prefix for family and names."
+  explanation: |
+    ### Older and younger
+    | Older | Younger |
+    |---|---|
+    | 哥哥 (go4 go1) older brother | 細佬 (sai3 lou2) younger brother |
+    | 家姐 (gaa1 ze1) older sister | 妹妹 (mui4 mui2) younger sister |
+
+    兄弟姊妹 (hing1 dai6 zi2 mui6) means "siblings".
+
+    ### Grandparents
+    | Father's side | Mother's side |
+    |---|---|
+    | 爺爺 (je4 je2) grandfather | 公公 (gung4 gung1) grandfather |
+    | 嫲嫲 (maa4 maa4) grandmother | 婆婆 (po4 po2) grandmother |
+
+    ### 阿 (aa3)
+    阿 is a friendly prefix: 阿爸 (aa3 baa4) dad, 阿媽 (aa3 maa1) mum, 阿哥 older brother, and before one syllable of a name: 阿明, 阿珍. 爸爸 / 媽媽 are also fine.
+
+    ### Spouses and children
+    老公 (lou5 gung1) husband, 老婆 (lou5 po4) wife, 仔 (zai2) son, 女 (neoi2) daughter; 個仔 "my/the son".
+  examples:
+    - { es: "我有一個家姐同一個細佬。", en: "I have an older sister and a younger brother." }
+    - { es: "我嫲嫲今年八十歲。", en: "My (paternal) grandmother is eighty this year." }
+    - { es: "阿媽，我返嚟喇！", en: "Mum, I'm home!" }
+    - { es: "佢老公係廚師。", en: "Her husband is a chef." }
+  pitfalls:
+    - "'Brother' alone is ambiguous: say 哥哥 (older) or 細佬 (younger)."
+    - "Grandparents have different words on each side: 嫲嫲 is your father's mother, 婆婆 your mother's mother."
+    - "仔 and 女 mean son and daughter when they are someone's children: 我個女 'my daughter'."
+  related: [g.ge-possessive, g.jau-have]
+  drills:
+    - { es: "你有冇兄弟姊妹呀？", en: "Do you have any brothers or sisters?" }
+    - { es: "我細佬讀大學。", en: "My younger brother is at university." }
+    - { es: "我公公婆婆住喺澳門。", en: "My grandparents (mother's side) live in Macau." }
+    - { es: "阿爸，食飯喇！", en: "Dad, dinner's ready!" }
+
+- id: g.adjective-predicates
+  level: a1
+  title: "Adjectives as predicates - 佢好高"
+  summary: "Adjectives work like verbs, with no 係: 佢好高 'he is tall'; 好 is usually added even when you don't mean 'very'."
+  explanation: |
+    In Cantonese adjectives act as verbs, so "to be" is not needed:
+    - 佢好高 (keoi5 hou2 gou1) - He is tall.
+    - 今日好熱 (gam1 jat6 hou2 jit6) - It's hot today.
+    - 呢間餐廳好平 - This restaurant is cheap.
+
+    ### Why 好?
+    A bare adjective sounds like a **comparison**: 佢高 implies "he's the taller one". 好 (hou2) makes a neutral statement, so it is added even when you don't really mean "very".
+
+    ### Negative and questions
+    | | Example | Jyutping |
+    |---|---|---|
+    | negative | 唔高 | m4 gou1 |
+    | question | 高唔高呀？ | gou1 m4 gou1 aa3 |
+    | "not very" | 唔係好高 | m4 hai6 hou2 gou1 |
+
+    In negatives and questions 好 is dropped: 佢唔高 "he isn't tall", 貴唔貴呀？ "is it expensive?"
+  examples:
+    - { es: "我細佬好高。", en: "My little brother is tall." }
+    - { es: "呢度啲嘢好貴。", en: "Things here are expensive." }
+    - { es: "今日唔係好凍。", en: "It's not very cold today." }
+    - { es: "嗰間餐廳平唔平呀？", en: "Is that restaurant cheap?" }
+  pitfalls:
+    - "Don't use 係 before an adjective: 佢好靚, not 佢係靚."
+    - "A bare adjective sounds contrastive; add 好 for a plain statement: 佢好忙."
+    - "Drop 好 in the negative: 唔忙, not 唔好忙 (which means 'don't be busy'!)."
+  related: [g.hai6-identity, g.degree-adverbs, g.adj-ge-noun]
+  drills:
+    - { es: "佢好靚。", en: "She's beautiful." }
+    - { es: "我今日好攰。", en: "I'm very tired today." }
+    - { es: "呢件衫唔貴。", en: "This top isn't expensive." }
+    - { es: "你忙唔忙呀？", en: "Are you busy?" }
+
+- id: g.question-words
+  level: a1
+  title: "Question words stay in place - 乜嘢, 邊個, 邊度, 幾時, 點解, 點樣"
+  summary: "Put the question word where the answer goes, without moving it: 你食乜嘢？ 'What are you eating?'"
+  explanation: |
+    | Question word | Jyutping | Meaning |
+    |---|---|---|
+    | 乜嘢 / 咩 | mat1 je5 / me1 | what |
+    | 邊個 | bin1 go3 | who; which one |
+    | 邊度 | bin1 dou6 | where |
+    | 幾時 | gei2 si4 | when |
+    | 點解 | dim2 gaai2 | why |
+    | 點樣 / 點 | dim2 joeng2 / dim2 | how |
+    | 幾多 | gei2 do1 | how much, how many |
+
+    ### No word-order change
+    Unlike English, the question word **stays where the answer would be**:
+    | Statement | Question |
+    |---|---|
+    | 我食飯 - I eat rice | 你食乜嘢？ - What do you eat? |
+    | 佢係阿明 - He's Ming | 佢係邊個？ - Who is he? |
+    | 我去中環 - I'm going to Central | 你去邊度？ - Where are you going? |
+    | 我聽日去 - I'm going tomorrow | 你幾時去？ - When are you going? |
+
+    ### Ending particle
+    Add 呀 (aa3) to sound friendly: 你去邊度呀？ Don't add 嗎.
+  examples:
+    - { es: "你叫乜嘢名呀？", en: "What's your name?", altEs: ["你叫咩名呀？"] }
+    - { es: "佢係邊個呀？", en: "Who is he?", altEn: ["Who is she?"] }
+    - { es: "你幾時返嚟呀？", en: "When are you coming back?" }
+    - { es: "點解你唔去呀？", en: "Why aren't you going?", altEs: ["你點解唔去呀？"] }
+  pitfalls:
+    - "Don't move the question word to the front: 你食乜嘢？, not 乜嘢你食？"
+    - "Never add 嗎 to a question with a question word."
+    - "咩 is a short spoken form of 乜嘢: 你做咩呀？ 'What are you doing?'"
+  related: [g.maa-questions, g.ne-follow-up, g.wh-dou-every]
+  drills:
+    - { es: "你住喺邊度呀？", en: "Where do you live?" }
+    - { es: "呢個係乜嘢呀？", en: "What is this?" }
+    - { es: "你點樣返工呀？", en: "How do you get to work?" }
+    - { es: "邊個係你老師呀？", en: "Who is your teacher?" }
+
+- id: g.mgoi-doze
+  level: a1
+  title: "唔該 vs 多謝 - two kinds of thank you"
+  summary: "唔該 thanks someone for a service or asks a favour; 多謝 thanks someone for a gift or compliment."
+  explanation: |
+    ### 唔該 (m4 goi1): service, favours, "please"
+    - When someone does something for you: a waiter brings tea, someone holds the door.
+    - When you ask for something: 唔該，埋單 "The bill, please."
+    - To get attention: 唔該！ "Excuse me!" (calling a waiter).
+    - 唔該晒 (m4 goi1 saai3) - thanks a lot.
+
+    ### 多謝 (do1 ze6): gifts, compliments, kindness
+    - When you receive a present: 多謝你嘅禮物.
+    - When someone praises you or invites you: 多謝你請我食飯.
+    - 多謝晒 (do1 ze6 saai3) - thank you very much.
+
+    ### Answering
+    | Thanks | Reply | Jyutping |
+    |---|---|---|
+    | 唔該 | 唔使唔該 | m4 sai2 m4 goi1 |
+    | 多謝 | 唔使客氣 / 唔使謝 | m4 sai2 haak3 hei3 |
+
+    唔使 means "no need": "no need to thank me".
+  examples:
+    - { es: "唔該，畀杯水我。", en: "Could I have a glass of water, please?", altEs: ["唔該，畀杯水我吖。"] }
+    - { es: "多謝你嘅禮物！", en: "Thank you for the present!" }
+    - { es: "唔該晒！唔使唔該。", en: "Thanks so much! No problem." }
+    - { es: "唔該，借借。", en: "Excuse me, coming through." }
+  pitfalls:
+    - "Don't say 多謝 when a waiter pours your tea; 唔該 is for services."
+    - "唔該 is also 'please' and 'excuse me'; 多謝 is never used for those."
+    - "Tapping two fingers on the table at yum cha is a silent 'thank you' for pouring tea."
+  related: [g.greetings, g.bei-give, g.jiu-want]
+  drills:
+    - { es: "唔該，埋單。", en: "The bill, please." }
+    - { es: "多謝你請我食飯。", en: "Thank you for treating me to dinner." }
+    - { es: "唔使客氣。", en: "You're welcome." }
+    - { es: "唔該，加啲茶。", en: "More tea, please." }
+
+- id: g.zung-ji-like
+  level: a1
+  title: "鍾意 - to like"
+  summary: "鍾意 + noun or verb means 'like': 我鍾意飲茶; the negative is 唔鍾意."
+  explanation: |
+    鍾意 (zung1 ji3) means "to like" and can be followed by a noun or a verb:
+    - 我鍾意蝦餃 (ngo5 zung1 ji3 haa1 gaau2) - I like har gow.
+    - 佢鍾意游水 (keoi5 zung1 ji3 jau4 seoi2) - She likes swimming.
+
+    ### Degrees
+    | Cantonese | Jyutping | Meaning |
+    |---|---|---|
+    | 好鍾意 | hou2 zung1 ji3 | really like |
+    | 幾鍾意 | gei2 zung1 ji3 | quite like |
+    | 唔係幾鍾意 | m4 hai6 gei2 zung1 ji3 | don't really like |
+    | 唔鍾意 | m4 zung1 ji3 | don't like |
+    | 最鍾意 | zeoi3 zung1 ji3 | like most, favourite |
+
+    ### Asking
+    你鍾唔鍾意…呀？ or 你鍾意…嗎？ "Do you like …?" 你最鍾意食乜嘢呀？ "What's your favourite food?"
+
+    ### Liking a person
+    鍾意 + person means "have a crush on": 我鍾意佢 "I like him/her" in the romantic sense.
+  examples:
+    - { es: "我好鍾意飲茶。", en: "I love yum cha." }
+    - { es: "你鍾唔鍾意食辣呀？", en: "Do you like spicy food?" }
+    - { es: "我唔係幾鍾意食雞腳。", en: "I don't really like chicken feet." }
+    - { es: "佢最鍾意燒賣。", en: "Siu mai are her favourite.", altEn: ["Siu mai are his favourite."] }
+  pitfalls:
+    - "鍾意 is the spoken word; 喜歡 is written Chinese and sounds bookish in conversation."
+    - "No extra word is needed between 鍾意 and a verb: 我鍾意行山, not 我鍾意去行山 unless you mean 'like going hiking'."
+  related: [g.a-not-a-questions, g.degree-adverbs]
+  drills:
+    - { es: "我鍾意香港。", en: "I like Hong Kong." }
+    - { es: "你最鍾意食乜嘢點心呀？", en: "What's your favourite dim sum?" }
+    - { es: "佢唔鍾意落雨。", en: "She doesn't like rain.", altEn: ["He doesn't like rain."] }
+    - { es: "我好鍾意睇戲。", en: "I really like watching films." }
+
+- id: g.bei-give
+  level: a1
+  title: "畀 - to give (thing before person)"
+  summary: "畀 means 'give', and the thing comes before the person: 畀杯水我 'give me a glass of water'."
+  explanation: |
+    畀 (bei2) means "to give". In Cantonese the **thing comes first, then the person**:
+    - 畀杯水我 (bei2 bui1 seoi2 ngo5) - Give me a glass of water.
+    - 我畀本書你 (ngo5 bei2 bun2 syu1 nei5) - I'll give you a book.
+
+    ### Ordering and asking
+    | Cantonese | Jyutping | Meaning |
+    |---|---|---|
+    | 畀個餐牌我睇吓 | bei2 go3 caan1 paai2 ngo5 tai2 haa5 | let me see the menu |
+    | 畀錢 | bei2 cin2 | pay |
+    | 我畀 | ngo5 bei2 | I'll pay |
+
+    ### Two verbs: 畀 + thing + 畀 + person
+    With other verbs, 畀 introduces the receiver at the end: 我寄封信畀你 (ngo5 gei3 fung1 seon3 bei2 nei5) "I'll send you a letter".
+    You will also hear the Mandarin-like order 畀我杯水; both are understood, but the thing-first order is more typically Cantonese.
+  examples:
+    - { es: "唔該畀張紙我。", en: "Could you give me a piece of paper, please?" }
+    - { es: "我畀錢啦。", en: "I'll pay." }
+    - { es: "佢畀咗份禮物我。", en: "She gave me a present.", altEn: ["He gave me a present."] }
+    - { es: "我打電話畀你。", en: "I'll call you." }
+  pitfalls:
+    - "Remember the order: 畀杯茶我 (thing, then person), not the English order 'give me tea'."
+    - "'Call someone' is 打電話畀 + person: 我打電話畀你, not 我打你電話."
+    - "畀 is often written 俾 in informal texts; this course uses 畀."
+  related: [g.mgoi-doze, g.bei-passive, g.bei-permissive]
+  drills:
+    - { es: "畀杯熱茶我，唔該。", en: "A hot tea for me, please." }
+    - { es: "我畀張相你睇。", en: "Let me show you a photo." }
+    - { es: "邊個畀錢呀？", en: "Who's paying?" }
+    - { es: "我聽日打電話畀你。", en: "I'll call you tomorrow." }
+
+- id: g.particles-aa-laa
+  level: a1
+  title: "呀 and 啦 - friendly sentence endings"
+  summary: "呀 softens questions and statements; 啦 turns a sentence into a friendly request or suggestion."
+  explanation: |
+    Cantonese sentences often end with a small **particle** that adds tone, much like intonation in English. Without them speech can sound blunt.
+
+    ### 呀 (aa3)
+    - Softens questions: 你去邊度呀？ (nei5 heoi3 bin1 dou6 aa3) "Where are you going?"
+    - Softens answers: 係呀 (hai6 aa3) "Yes (it is)", 好呀 (hou2 aa3) "Sure!"
+    - Calling out: 阿媽呀！
+
+    ### 啦 (laa1)
+    - Friendly requests and commands: 坐啦 (co5 laa1) "Have a seat", 食啦 (sik6 laa1) "Go on, eat."
+    - Suggestions: 我哋去啦 "Let's go."
+    - Gentle agreement: 好啦 (hou2 laa1) "OK then."
+
+    | Bare | With particle | Feel |
+    |---|---|---|
+    | 你去邊度？ | 你去邊度呀？ | friendlier |
+    | 坐。 | 坐啦。 | "please, sit" |
+    | 好。 | 好呀！/ 好啦。 | keen / OK then |
+
+    You will learn many more particles in A2 and B2; these two are the most frequent.
+  examples:
+    - { es: "你食咗飯未呀？", en: "Have you eaten yet?" }
+    - { es: "請入嚟坐啦。", en: "Please come in and sit down." }
+    - { es: "好呀，我哋去飲茶。", en: "Great, let's go for yum cha." }
+    - { es: "你飲多啲啦。", en: "Drink some more." }
+  pitfalls:
+    - "Questions without 呀 can sound abrupt or interrogating; add it in everyday speech."
+    - "好呀 sounds enthusiastic ('sure!'), 好啦 sounds like giving in ('OK, fine'); pick the one you mean."
+  related: [g.greetings, g.laa1-suggestion, g.laa3-change]
+  drills:
+    - { es: "你係邊度人呀？", en: "Where are you from?" }
+    - { es: "食啦，唔使客氣。", en: "Go on, eat, don't be shy." }
+    - { es: "好呀！", en: "Sure!" }
+    - { es: "快啲嚟啦。", en: "Come quickly." }
+
+- id: g.position-words
+  level: a1
+  title: "Position words - 上面, 入面, 隔籬, 對面"
+  summary: "Thing + position word gives 'on top of', 'inside', 'next to': 枱上面, 銀行隔籬."
+  explanation: |
+    Position words come **after** the reference noun, usually with 喺 before:
+    - 喺枱上面 (hai2 toi2 soeng6 min6) - on the table
+    - 喺銀行隔籬 (hai2 ngan4 hong4 gaak3 lei4) - next to the bank
+
+    | Word | Jyutping | Meaning |
+    |---|---|---|
+    | 上面 | soeng6 min6 | on, above |
+    | 下面 | haa6 min6 | under, below |
+    | 入面 | jap6 min6 | inside |
+    | 出面 | ceot1 min6 | outside |
+    | 前面 | cin4 min6 | in front |
+    | 後面 | hau6 min6 | behind |
+    | 隔籬 | gaak3 lei4 | next to |
+    | 對面 | deoi3 min6 | opposite |
+    | 中間 | zung1 gaan1 | in the middle, between |
+    | 附近 | fu6 gan6 | nearby |
+    | 左邊 / 右邊 | zo2 bin1 / jau6 bin1 | left / right |
+
+    ### Short forms
+    With short nouns 面 is often dropped: 枱面 (toi2 min2) "on the table", 屋企附近 "near home", 樓下 (lau4 haa6) "downstairs".
+
+    ### Here and there
+    呢度 / 喺度 (here), 嗰度 (there).
+  examples:
+    - { es: "你部手機喺枱面。", en: "Your phone is on the table." }
+    - { es: "便利店喺銀行隔籬。", en: "The convenience store is next to the bank." }
+    - { es: "我屋企附近有個街市。", en: "There's a market near my home." }
+    - { es: "港鐵站喺商場對面。", en: "The MTR station is opposite the mall." }
+  pitfalls:
+    - "The position word comes after the noun: 銀行隔籬, not 隔籬銀行."
+    - "Don't forget 喺 when saying where something is: 佢喺門口, not 佢門口."
+  related: [g.hai2-location, g.asking-directions, g.demonstratives]
+  drills:
+    - { es: "隻貓喺床下面。", en: "The cat is under the bed." }
+    - { es: "洗手間喺後面。", en: "The toilet is at the back." }
+    - { es: "銀行喺左邊。", en: "The bank is on the left." }
+    - { es: "我喺商場入面等你。", en: "I'll wait for you inside the mall." }
+
+- id: g.heoi-lai
+  level: a1
+  title: "去 and 嚟 - going and coming"
+  summary: "去 means go (away from the speaker), 嚟 means come (towards the speaker); both take a place directly, with no 'to'."
+  explanation: |
+    | Verb | Jyutping | Meaning |
+    |---|---|---|
+    | 去 | heoi3 | go (away from here) |
+    | 嚟 | lai4 | come (towards here) |
+    | 返 | faan1 | go back, return (to a regular place) |
+
+    ### No "to"
+    The destination follows the verb directly:
+    - 我去銅鑼灣 (ngo5 heoi3 tung4 lo4 waan1) - I'm going to Causeway Bay.
+    - 你嚟我屋企啦 (nei5 lai4 ngo5 uk1 kei2 laa1) - Come to my place.
+
+    ### 返: going back to home, work, school
+    返屋企 (faan1 uk1 kei2) go home, 返工 (faan1 gung1) go to work, 返學 (faan1 hok6) go to school.
+
+    ### Purpose: 去 + place + verb
+    - 我去街市買餸 - I'm going to the market to buy groceries.
+    - 嚟香港讀書 - come to Hong Kong to study.
+  examples:
+    - { es: "你去邊度呀？", en: "Where are you going?" }
+    - { es: "我去中環開會。", en: "I'm going to Central for a meeting." }
+    - { es: "佢幾點返屋企呀？", en: "What time is he going home?", altEn: ["What time is she going home?"] }
+    - { es: "你幾時嚟香港㗎？", en: "When did you come to Hong Kong?" }
+  pitfalls:
+    - "Don't add a word for 'to': 我去中環, not 我去到中環 (which means 'I reached Central')."
+    - "Going home or to work is 返, not 去: 返屋企, 返工."
+    - "嚟 is 'come here'; if you are going to someone else's place, it is 去: 我聽日去你度."
+  related: [g.transport-verbs, g.serial-verbs, g.directional-complements]
+  drills:
+    - { es: "我聽日去澳門。", en: "I'm going to Macau tomorrow." }
+    - { es: "嚟呢度啦！", en: "Come here!" }
+    - { es: "我要返工喇。", en: "I have to go to work now." }
+    - { es: "我哋去公園行吓。", en: "Let's go for a walk in the park." }
+
+- id: g.transport-verbs
+  level: a1
+  title: "Getting around - 坐, 搭, 揸, 行路"
+  summary: "坐 or 搭 + vehicle comes before 去 + place: 我坐港鐵去中環."
+  explanation: |
+    ### Verbs for transport
+    | Verb | Jyutping | Use |
+    |---|---|---|
+    | 坐 | co5 | ride (as a passenger): 坐巴士, 坐的士 |
+    | 搭 | daap3 | take (public transport): 搭港鐵, 搭小輪 |
+    | 揸 | zaa1 | drive: 揸車 |
+    | 踩 | caai2 | ride a bike: 踩單車 |
+    | 行路 | haang4 lou6 | walk, go on foot |
+
+    ### Order: how first, then where
+    **Subject + 坐/搭 + vehicle + 去 + place**:
+    - 我坐港鐵去金鐘 (ngo5 co5 gong2 tit3 heoi3 gam1 zung1) - I take the MTR to Admiralty.
+    - 佢搭天星小輪去尖沙咀 - She takes the Star Ferry to Tsim Sha Tsui.
+    - 我行路返屋企 - I walk home.
+
+    ### Asking
+    你點樣去呀？ (nei5 dim2 joeng2 heoi3 aa3) "How are you getting there?" 坐乜嘢車去？ "Which transport do you take?"
+
+    Hong Kong Island transport: 電車 (din6 ce1) tram, 巴士 (baa1 si2) bus, 小巴 (siu2 baa1) minibus, 的士 (dik1 si2) taxi, 港鐵 (gong2 tit3) MTR.
+  examples:
+    - { es: "我每日坐電車返工。", en: "I take the tram to work every day." }
+    - { es: "我哋搭的士去山頂啦。", en: "Let's take a taxi to the Peak." }
+    - { es: "你點樣去機場呀？", en: "How are you getting to the airport?" }
+    - { es: "我行路去，好近咋。", en: "I'll walk, it's really close." }
+  pitfalls:
+    - "The vehicle comes before the destination: 坐巴士去中環, not 去中環坐巴士 (which means 'go to Central to take a bus')."
+    - "Don't use 揸 for buses or taxis you ride in: 坐的士, but 揸的士 means you are the taxi driver."
+  related: [g.heoi-lai, g.serial-verbs, g.asking-directions]
+  drills:
+    - { es: "我坐港鐵去銅鑼灣。", en: "I take the MTR to Causeway Bay." }
+    - { es: "佢揸車返工。", en: "He drives to work.", altEn: ["She drives to work."] }
+    - { es: "我哋搭小輪去長洲。", en: "We take the ferry to Cheung Chau." }
+    - { es: "你坐唔坐巴士呀？", en: "Are you taking the bus?" }
+
+- id: g.asking-directions
+  level: a1
+  title: "Asking for and giving directions"
+  summary: "Ask 請問…點去呀？ and understand 直行, 轉左, 轉右, 過馬路."
+  explanation: |
+    ### Asking
+    - 請問中環站點去呀？ (cing2 man6 zung1 waan4 zaam6 dim2 heoi3 aa3) - Excuse me, how do I get to Central station?
+    - …喺邊度呀？ - Where is …?
+    - 遠唔遠呀？ (jyun5 m4 jyun5 aa3) - Is it far? 行幾耐呀？ - How long a walk?
+
+    ### Directions
+    | Cantonese | Jyutping | Meaning |
+    |---|---|---|
+    | 直行 | zik6 haang4 | go straight on |
+    | 轉左 / 轉右 | zyun3 zo2 / zyun3 jau6 | turn left / right |
+    | 過馬路 | gwo3 maa5 lou6 | cross the road |
+    | 上 / 落 | soeng5 / lok6 | go up / down (stairs, escalator) |
+    | 行到… | haang4 dou3 | walk as far as … |
+    | 喺…出 | hai2 … ceot1 | exit at … |
+
+    ### Linking steps
+    Use 先 (sin1) "first" and 跟住 (gan1 zyu6) or 然後 (jin4 hau6) "then": 先直行，跟住轉左，就到喇 "Go straight, then turn left, and you're there."
+
+    MTR: 喺A出口出 "take exit A", 喺金鐘轉車 "change at Admiralty".
+  examples:
+    - { es: "請問最近嘅港鐵站點去呀？", en: "Excuse me, how do I get to the nearest MTR station?" }
+    - { es: "直行，第二個路口轉右。", en: "Go straight, then turn right at the second junction." }
+    - { es: "過咗馬路就係。", en: "It's right across the road.", altEn: ["Cross the road and you're there."] }
+    - { es: "喺金鐘轉車，然後喺C出口出。", en: "Change at Admiralty, then take exit C." }
+  pitfalls:
+    - "點去 means 'how to get there' and goes after the place: 銀行點去呀？, not 點去銀行呀？ (also heard, but less common for directions)."
+    - "Up and down stairs or escalators use 上 (soeng5) and 落 (lok6), not 去."
+  related: [g.position-words, g.transport-verbs, g.sin-zoi-sequence]
+  drills:
+    - { es: "請問洗手間喺邊度呀？", en: "Excuse me, where is the toilet?" }
+    - { es: "轉左，再直行。", en: "Turn left, then go straight." }
+    - { es: "遠唔遠呀？行五分鐘就到。", en: "Is it far? It's a five-minute walk." }
+    - { es: "喺銅鑼灣站E出口出。", en: "Take exit E at Causeway Bay station." }
+
+- id: g.serial-verbs
+  level: a1
+  title: "Verbs in a row - 去飲茶, 坐車返工"
+  summary: "Cantonese strings verbs together in the order things happen, with no 'and' or 'to': 我去街市買菜."
+  explanation: |
+    Two or more verb phrases can follow each other directly, in **the order events happen**:
+    - 我去街市買餸 (ngo5 heoi3 gaai1 si5 maai5 sung3) - I go to the market to buy food.
+    - 佢坐巴士返工 (keoi5 co5 baa1 si2 faan1 gung1) - He takes the bus to work.
+    - 我哋出去食飯 - We're going out to eat.
+
+    ### Common patterns
+    | Pattern | Meaning | Example |
+    |---|---|---|
+    | 去 + place + verb | go somewhere to do | 去公園跑步 |
+    | 坐/搭 + vehicle + 去 | go by | 搭港鐵去 |
+    | 用 + thing + verb | use … to | 用筷子食 |
+    | 嚟 + verb | come to do | 嚟食飯啦 |
+
+    ### No linking words
+    Don't add "and" (同) or "to" between the verbs: 同 links nouns, not verbs.
+  examples:
+    - { es: "我放工去健身室做運動。", en: "After work I go to the gym to exercise." }
+    - { es: "佢用筷子食飯。", en: "She eats with chopsticks.", altEn: ["He eats with chopsticks."] }
+    - { es: "我哋去海旁影相。", en: "We're going to the harbourfront to take photos." }
+    - { es: "嚟我屋企食飯啦。", en: "Come and eat at my place." }
+  pitfalls:
+    - "Don't link verbs with 同: 我去街市同買餸 is wrong; say 我去街市買餸."
+    - "Keep the order of events: 坐車去 (ride, then arrive), not 去坐車 unless you mean 'go to catch a bus'."
+  related: [g.heoi-lai, g.transport-verbs, g.sin-zoi-sequence]
+  drills:
+    - { es: "我去超市買嘢。", en: "I'm going to the supermarket to buy things." }
+    - { es: "佢每日搭電車返學。", en: "She takes the tram to school every day.", altEn: ["He takes the tram to school every day."] }
+    - { es: "我哋出去行吓啦。", en: "Let's go out for a walk." }
+    - { es: "我用手機畀錢。", en: "I pay with my phone." }
+
+- id: g.frequency-adverbs
+  level: a1
+  title: "How often - 成日, 間中, 通常, 每日"
+  summary: "Frequency words go before the verb: 我成日飲咖啡, 我間中去游水."
+  explanation: |
+    | Word | Jyutping | Meaning |
+    |---|---|---|
+    | 每日 / 日日 | mui5 jat6 / jat6 jat6 | every day |
+    | 成日 | seng4 jat6 | always, all the time |
+    | 通常 | tung1 soeng4 | usually |
+    | 好多時 | hou2 do1 si4 | often |
+    | 有時 | jau5 si4 | sometimes |
+    | 間中 | gaan3 zung1 | occasionally |
+    | 好少 | hou2 siu2 | rarely |
+    | 從來唔 | cung4 loi4 m4 | never |
+
+    ### Position
+    Frequency words come **before the verb**, after the subject (or at the very start):
+    - 我成日遲到 (ngo5 seng4 jat6 ci4 dou3) - I'm always late.
+    - 通常我七點起身 - Usually I get up at seven.
+
+    ### Every …
+    每 + measure word + noun, often with 都: 每個星期都去 "go every week", 每朝 "every morning". Doubling also means "every": 日日 every day, 個個 everyone.
+
+    ### How often?
+    你幾耐…一次呀？ (nei5 gei2 noi6 … jat1 ci3 aa3) "How often do you …?" 一個星期兩次 "twice a week".
+  examples:
+    - { es: "我日日都飲奶茶。", en: "I drink milk tea every day." }
+    - { es: "佢通常坐港鐵返工。", en: "She usually takes the MTR to work.", altEn: ["He usually takes the MTR to work."] }
+    - { es: "我間中去游水。", en: "I go swimming now and then." }
+    - { es: "我從來唔食早餐。", en: "I never eat breakfast." }
+  pitfalls:
+    - "Frequency words don't go at the end: 我飲咖啡成日 is wrong."
+    - "每日 / 每個星期 usually takes 都 before the verb: 我每日都行山."
+    - "成日 (always) is different from 成日 meaning 'the whole day' in some contexts; the meaning comes from context."
+  related: [g.time-before-verb, g.dou-also, g.serial-verbs]
+  drills:
+    - { es: "我成日唔記得帶遮。", en: "I always forget my umbrella." }
+    - { es: "我哋有時去澳門。", en: "We sometimes go to Macau." }
+    - { es: "佢好少食快餐。", en: "He rarely eats fast food.", altEn: ["She rarely eats fast food."] }
+    - { es: "你幾耐去一次健身室呀？", en: "How often do you go to the gym?" }
+
+- id: g.sin-zoi-sequence
+  level: a1
+  title: "先…再… / 跟住 / 然後 - first, then"
+  summary: "先 + first action, 再 / 跟住 / 然後 + next action: 我先沖涼，再食早餐。"
+  explanation: |
+    ### First … then …
+    先 (sin1) and 再 (zoi3) go **before their verbs**:
+    - 我先沖涼，再食早餐 (ngo5 sin1 cung1 loeng4, zoi3 sik6 zou2 caan1) - I shower first, then have breakfast.
+
+    ### Linking steps
+    | Word | Jyutping | Meaning |
+    |---|---|---|
+    | 先 | sin1 | first |
+    | 再 | zoi3 | then (next) |
+    | 跟住 | gan1 zyu6 | then, after that |
+    | 然後 | jin4 hau6 | then, afterwards |
+    | 最後 | zeoi3 hau6 | finally |
+
+    - 我七點起身，跟住食早餐，然後坐車返工 - I get up at seven, then have breakfast, and then take the bus to work.
+
+    ### 再 also means "again"
+    再講一次 "say it again", 再見 "see you again / goodbye".
+  examples:
+    - { es: "我哋先去飲茶，再去行街。", en: "Let's go for yum cha first, then go shopping." }
+    - { es: "我起身，跟住刷牙。", en: "I get up, then brush my teeth." }
+    - { es: "先買飛，然後入去。", en: "Buy a ticket first, then go in." }
+    - { es: "最後我十二點瞓覺。", en: "Finally I go to bed at twelve." }
+  pitfalls:
+    - "先 and 再 go before the verb, after the subject: 我先食飯, not 先我食飯."
+    - "然後 and 跟住 start the next clause; they don't go before the subject's verb in the same clause."
+  related: [g.serial-verbs, g.ge-si-hau, g.sin-final]
+  drills:
+    - { es: "你先坐吓，我再嚟。", en: "Have a seat first, I'll be right back." }
+    - { es: "我先返屋企，跟住去健身。", en: "I'll go home first, then go to the gym." }
+    - { es: "先洗手，再食飯。", en: "Wash your hands first, then eat." }
+    - { es: "我放工，然後去超市。", en: "I finish work, then go to the supermarket." }
+
+- id: g.ge-si-hau
+  level: a1
+  title: "…嘅時候 - when, while"
+  summary: "Clause + 嘅時候 means 'when …', and it comes first: 我返工嘅時候聽音樂。"
+  explanation: |
+    嘅時候 (ge3 si4 hau6) after a clause or noun means "when / at the time of":
+    - 我坐車嘅時候睇書 (ngo5 co5 ce1 ge3 si4 hau6 tai2 syu1) - I read when I'm on the bus.
+    - 細個嘅時候 (sai3 go3 ge3 si4 hau6) - when I was little.
+    - 食飯嘅時候唔好玩手機 - Don't play with your phone while eating.
+
+    ### Order: "when" clause first
+    Unlike English, the 嘅時候 clause comes **before** the main clause:
+    | English | Cantonese |
+    |---|---|
+    | I listen to music when I run. | 我跑步嘅時候聽音樂。 |
+
+    ### Shorter forms
+    In speech you will also hear 時 (si4): 返工時. And 嗰陣 (go2 zan6) / 嗰陣時 is very colloquial: 我細個嗰陣 "when I was little".
+  examples:
+    - { es: "我放假嘅時候成日去行山。", en: "When I'm on holiday I often go hiking." }
+    - { es: "落雨嘅時候我留喺屋企。", en: "When it rains I stay at home." }
+    - { es: "我細個嗰陣住喺西環。", en: "When I was little I lived in Sai Wan." }
+    - { es: "過馬路嘅時候要小心。", en: "Be careful when you cross the road." }
+  pitfalls:
+    - "The 'when' clause goes first: 我做嘢嘅時候聽歌, not 我聽歌我做嘢嘅時候."
+    - "嘅時候 is for 'when / while'; it is not a question word. 'When?' is 幾時."
+  related: [g.sin-zoi-sequence, g.question-words, g.ji-cin-ji-hau]
+  drills:
+    - { es: "我食早餐嘅時候睇新聞。", en: "I read the news while I have breakfast." }
+    - { es: "得閒嘅時候嚟搵我啦。", en: "Come and see me when you're free." }
+    - { es: "佢返到屋企嘅時候已經好夜。", en: "When he got home it was already late.", altEn: ["When she got home it was already late."] }
+
+- id: g.weather
+  level: a1
+  title: "Talking about the weather"
+  summary: "Weather is described with verbs and adjectives, often with no subject: 落雨, 好熱, 打風."
+  explanation: |
+    | Cantonese | Jyutping | Meaning |
+    |---|---|---|
+    | 落雨 | lok6 jyu5 | rain (literally "fall rain") |
+    | 出太陽 | ceot1 taai3 joeng4 | the sun is out |
+    | 打風 | daa2 fung1 | there's a typhoon |
+    | 行雷 | haang4 leoi4 | thunder |
+    | 好熱 / 好凍 | hou2 jit6 / hou2 dung3 | hot / cold |
+    | 翳焗 | ai3 guk6 | muggy, stuffy |
+    | 潮濕 | ciu4 sap1 | humid |
+    | 有霧 | jau5 mou6 | foggy |
+
+    ### No "it"
+    Weather sentences need no subject: 落緊雨 "It's raining", 今日好熱 "It's hot today".
+
+    ### Asking
+    今日天氣點呀？ (gam1 jat6 tin1 hei3 dim2 aa3) "What's the weather like today?" Temperature: 三十度 (saam1 sap6 dou6) "30 degrees".
+
+    ### Hong Kong essentials
+    天文台 (tin1 man4 toi4) the Observatory, 八號風球 (baat3 hou6 fung1 kau4) typhoon signal no. 8, 黑雨 (hak1 jyu5) black rainstorm warning. Seasons: 春天, 夏天, 秋天, 冬天.
+  examples:
+    - { es: "今日天氣點呀？", en: "What's the weather like today?" }
+    - { es: "出面落緊雨，記得帶遮。", en: "It's raining outside, remember your umbrella." }
+    - { es: "天文台話聽日會打風。", en: "The Observatory says a typhoon is coming tomorrow." }
+    - { es: "香港夏天好熱又好潮濕。", en: "Hong Kong summers are hot and humid." }
+  pitfalls:
+    - "Don't add 'it' or 係: 今日好熱, not 佢係熱."
+    - "Cold weather is 凍 (dung3) in speech; 冷 (laang5) is used too, especially for climate, but 好凍 is the everyday word."
+    - "'Rain' is the verb 落雨; 'rain is falling' doesn't need 有: 落緊雨."
+  related: [g.degree-adverbs, g.adjective-predicates]
+  drills:
+    - { es: "聽日會落雨。", en: "It'll rain tomorrow." }
+    - { es: "今日好翳焗。", en: "It's really muggy today." }
+    - { es: "冬天唔係好凍。", en: "Winter isn't very cold." }
+    - { es: "今日三十三度。", en: "It's thirty-three degrees today." }
+
+- id: g.degree-adverbs
+  level: a1
+  title: "How much - 好, 幾, 太, 非常, 唔係幾"
+  summary: "Degree words come before the adjective: 好熱 'very hot', 幾好 'quite good', 太貴 'too expensive'."
+  explanation: |
+    | Word | Jyutping | Meaning | Example |
+    |---|---|---|---|
+    | 好 | hou2 | very (or neutral) | 好熱 hot |
+    | 非常 | fei1 soeng4 | extremely | 非常好 excellent |
+    | 幾 | gei2 | quite, fairly | 幾好 quite good |
+    | 太 | taai3 | too | 太貴 too expensive |
+    | 唔係幾 | m4 hai6 gei2 | not very | 唔係幾遠 not very far |
+    | 好…呀！ | hou2 … aa3 | so …! | 好靚呀！ so beautiful! |
+    | 超 | ciu1 | super (slang) | 超正 awesome |
+
+    ### 太 often takes a particle
+    太…喇 or 太…啦: 太貴喇 (taai3 gwai3 laa3) "That's too expensive!"
+
+    ### Not very
+    唔係好 + adj or 唔係幾 + adj both mean "not very": 唔係好貴 "not very expensive".
+  examples:
+    - { es: "呢度啲嘢幾平。", en: "Things here are quite cheap." }
+    - { es: "今日太熱喇！", en: "It's too hot today!" }
+    - { es: "嗰間餐廳非常出名。", en: "That restaurant is extremely famous." }
+    - { es: "佢屋企唔係幾遠。", en: "His place isn't very far.", altEn: ["Her place isn't very far."] }
+  pitfalls:
+    - "幾 before an adjective means 'quite', not 'how': 幾好 'quite good'. 'How good?' is 有幾好？"
+    - "Degree words go before the adjective, never after: 好熱, not 熱好."
+    - "太 means 'too', usually with a complaint; for praise use 好 or 非常."
+  related: [g.adjective-predicates, g.jau-di-a-bit, g.weather]
+  drills:
+    - { es: "呢杯咖啡太甜喇。", en: "This coffee is too sweet." }
+    - { es: "佢嘅廣東話幾好。", en: "His Cantonese is quite good.", altEn: ["Her Cantonese is quite good."] }
+    - { es: "今日唔係好凍。", en: "It's not very cold today." }
+    - { es: "好靚呀！", en: "It's so beautiful!" }
+
+- id: g.jau-di-a-bit
+  level: a1
+  title: "有啲 - a bit, somewhat"
+  summary: "有啲 + adjective means 'a bit / somewhat' (usually a mild complaint): 有啲凍; compare adjective + 啲 'a bit more'."
+  explanation: |
+    ### 有啲 + adjective: "a bit"
+    Describes a state as slightly, often unpleasantly, so:
+    - 我有啲攰 (ngo5 jau5 di1 gui6) - I'm a bit tired.
+    - 今日有啲凍 (gam1 jat6 jau5 di1 dung3) - It's a bit cold today.
+    - 呢度有啲嘈 - It's a bit noisy here.
+
+    ### Adjective + 啲: "a bit more"
+    Compares or asks for more:
+    - 平啲 (peng4 di1) - a bit cheaper
+    - 行快啲 - walk a bit faster
+
+    | Pattern | Meaning |
+    |---|---|
+    | 有啲貴 | a bit expensive (as it is) |
+    | 貴啲 | (a bit) more expensive |
+    | 少少 | a little: 我識少少廣東話 |
+
+    ### 有啲 + noun: "some"
+    有啲人 (jau5 di1 jan4) "some people": 有啲人鍾意，有啲人唔鍾意 "Some people like it, some don't."
+  examples:
+    - { es: "我有啲肚餓。", en: "I'm a bit hungry." }
+    - { es: "呢對鞋有啲細。", en: "These shoes are a bit small." }
+    - { es: "有冇大啲嘅呀？", en: "Is there a bigger one?" }
+    - { es: "有啲人唔食牛肉。", en: "Some people don't eat beef." }
+  pitfalls:
+    - "Don't mix them up: 有啲細 'a bit small' vs 細啲 'smaller'."
+    - "有啲 usually sounds like a mild complaint; for something positive, 幾 is better: 幾好 'quite good'."
+  related: [g.di-some, g.degree-adverbs, g.body-pain]
+  drills:
+    - { es: "今日有啲熱。", en: "It's a bit hot today." }
+    - { es: "可唔可以講慢啲呀？", en: "Could you speak a bit more slowly?" }
+    - { es: "佢有啲唔開心。", en: "She's a bit unhappy.", altEn: ["He's a bit unhappy."] }
+    - { es: "我識少少廣東話。", en: "I know a little Cantonese." }
+
+- id: g.adj-ge-noun
+  level: a1
+  title: "Adjective + 嘅 + noun - describing things"
+  summary: "Put the adjective before the noun with 嘅: 好靚嘅天氣 'lovely weather'; one-syllable adjectives can join directly: 大屋."
+  explanation: |
+    Descriptions come **before** the noun, linked by 嘅 (ge3):
+    - 好靚嘅相 (hou2 leng3 ge3 soeng2) - a beautiful photo
+    - 好凍嘅天氣 - very cold weather
+    - 新鮮嘅魚 (san1 sin1 ge3 jyu2) - fresh fish
+
+    ### Without 嘅
+    Short, common combinations of a one-syllable adjective + noun don't need 嘅; they act like one word:
+    | Short form | Meaning |
+    |---|---|
+    | 大屋 (daai6 uk1) | a big house |
+    | 新衫 (san1 saam1) | new clothes |
+    | 熱茶 (jit6 caa4) | hot tea |
+    | 凍飲 (dung3 jam2) | cold drink |
+
+    As soon as there is a degree word (好, 幾, 非常), 嘅 is needed: 好大嘅屋.
+
+    ### With a measure word
+    Number + measure word + adjective + 嘅 + noun: 一間好舊嘅茶樓 "a very old teahouse".
+  examples:
+    - { es: "今日係好好嘅天氣。", en: "It's lovely weather today." }
+    - { es: "我想要杯熱咖啡。", en: "I'd like a hot coffee." }
+    - { es: "佢買咗一架新車。", en: "He bought a new car.", altEn: ["She bought a new car."] }
+    - { es: "呢度有好多好食嘅嘢。", en: "There are lots of tasty things here." }
+  pitfalls:
+    - "The adjective always comes before the noun: 熱茶, not 茶熱 (which means 'the tea is hot')."
+    - "With 好 or another degree word you need 嘅: 好平嘅餐廳, not 好平餐廳."
+  related: [g.ge-possessive, g.adjective-predicates, g.relative-ge]
+  drills:
+    - { es: "一杯凍檸茶", en: "an iced lemon tea" }
+    - { es: "佢係一個好有耐性嘅老師。", en: "She's a very patient teacher.", altEn: ["He's a very patient teacher."] }
+    - { es: "我鍾意新鮮嘅生果。", en: "I like fresh fruit." }
+    - { es: "嗰度有間好舊嘅茶樓。", en: "There's a very old teahouse there." }

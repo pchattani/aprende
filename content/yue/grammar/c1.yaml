@@ -1,0 +1,1141 @@
+# C1 grammar notes (Hong Kong Cantonese). Explanations use light markdown:
+# ### headings, bullets, pipe tables, **bold**. Cantonese examples are in
+# traditional characters followed by toned Jyutping in brackets. C1 teaches
+# the contrast between spoken Cantonese (口語) and written Chinese (書面語),
+# so some examples are deliberately in written Chinese.
+- id: g.spoken-vs-written
+  level: c1
+  title: "口語 vs 書面語 - spoken Cantonese and written Chinese"
+  summary: "Hong Kong writes formally in Standard Written Chinese (書面語) but reads it aloud in Cantonese; the core words differ systematically from colloquial Cantonese (口語)."
+  explanation: |
+    Hong Kong has **diglossia**: people speak Cantonese, but formal writing (newspapers, official documents, school essays) uses Standard Written Chinese, which is based on Mandarin grammar and vocabulary. It is still **read aloud in Cantonese pronunciation**.
+
+    ### Core correspondences
+    | 口語 | Jyutping | 書面語 | Jyutping | Meaning |
+    |---|---|---|---|---|
+    | 係 | hai6 | 是 | si6 | to be |
+    | 喺 | hai2 | 在 | zoi6 | at, in |
+    | 冇 | mou5 | 沒有 | mut6 jau5 | not have |
+    | 佢 | keoi5 | 他 / 她 | taa1 | he, she |
+    | 我哋 | ngo5 dei6 | 我們 | ngo5 mun4 | we |
+    | 嘅 | ge3 | 的 | dik1 | 's, of |
+    | 乜嘢 | mat1 je5 | 甚麼 | sam6 mo1 | what |
+    | 邊度 | bin1 dou6 | 哪裏 | naa5 leoi5 | where |
+    | 呢個 | ni1 go3 | 這個 | ze5 go3 | this |
+    | 嘢 | je5 | 東西 | dung1 sai1 | thing |
+    | 睇 | tai2 | 看 | hon3 | look |
+    | 講 | gong2 | 說 | syut3 | say |
+    | 畀 | bei2 | 給 | kap1 | give |
+
+    ### Example
+    - 口語: 佢喺屋企睇緊電視 (keoi5 hai2 uk1 kei2 tai2 gan2 din6 si6)
+    - 書面語: 他正在家裏看電視 - He is watching TV at home.
+
+    ### Watch the false friends
+    走 means "run / leave" in Cantonese but "walk" in written Chinese; 行 is "walk" in Cantonese. 食 is used in both, but written Chinese prefers 吃.
+  examples:
+    - { es: "佢係我哋嘅老師。", en: "He is our teacher. (spoken)", altEn: ["She is our teacher. (spoken)"] }
+    - { es: "他是我們的老師。", en: "He is our teacher. (written)" }
+    - { es: "我冇時間。", en: "I don't have time. (spoken)" }
+    - { es: "我沒有時間。", en: "I don't have time. (written)" }
+    - { es: "你喺邊度買嘅？", en: "Where did you buy it? (spoken)" }
+    - { es: "你在哪裏買的？", en: "Where did you buy it? (written)" }
+  pitfalls:
+    - "Don't write colloquial characters (嘅, 咗, 佢) in a formal letter or essay; and don't speak in written forms (我們, 沒有) in casual chat - it sounds like reading a script."
+    - "Reading written Chinese aloud uses Cantonese sounds: 他是 is taa1 si6, not Mandarin tā shì."
+    - "走 is a false friend: 他走了 in writing means 'he walked / left', in speech 佢走咗 means 'he left'."
+  related: [g.written-negation, g.written-aspect, g.literary-colloquial-readings]
+  drills:
+    - { es: "佢哋喺邊度？", en: "Where are they? (spoken)" }
+    - { es: "他們在哪裏？", en: "Where are they? (written)" }
+    - { es: "呢啲係乜嘢？", en: "What are these? (spoken)" }
+    - { es: "這些是甚麼？", en: "What are these? (written)" }
+
+- id: g.written-negation
+  level: c1
+  title: "Negation in written Chinese - 不, 沒有, 未, 無, 別"
+  summary: "Spoken 唔, 冇, 未, 唔好 correspond to written 不, 沒有/沒, 未/尚未, 別/不要, with 無 and 非 in formal styles."
+  explanation: |
+    | 口語 | 書面語 | Jyutping (書面語) | Use |
+    |---|---|---|---|
+    | 唔 | 不 | bat1 | not (general) |
+    | 冇 (not have) | 沒有 | mut6 jau5 | not have, there isn't |
+    | 冇 + V (didn't) | 沒有 + V | mut6 jau5 | didn't |
+    | 未 | 未 / 尚未 / 還沒有 | mei6 / soeng6 mei6 | not yet |
+    | 唔好 | 不要 / 別 | bat1 jiu3 / bit6 | don't |
+    | 唔係 | 不是 | bat1 si6 | is not |
+    | 唔使 | 不用 / 毋須 | bat1 jung6 / mou4 seoi1 | needn't |
+
+    ### Examples
+    - 口語: 佢冇嚟 → 書面語: 他沒有來 (taa1 mut6 jau5 loi4) - He didn't come.
+    - 口語: 我仲未食飯 → 書面語: 我還沒有吃飯 - I haven't eaten yet.
+    - 口語: 唔好食煙 → 書面語: 請不要吸煙 - Please don't smoke.
+
+    ### Formal and classical forms
+    無 (mou4) "without", 非 (fei1) "not be", 勿 (mat6) "do not" appear in formal and official writing (see C1.09).
+  examples:
+    - { es: "我唔明。", en: "I don't understand. (spoken)" }
+    - { es: "我不明白。", en: "I don't understand. (written)" }
+    - { es: "佢尋日冇返工。", en: "He didn't go to work yesterday. (spoken)", altEn: ["She didn't go to work yesterday. (spoken)"] }
+    - { es: "他昨天沒有上班。", en: "He didn't go to work yesterday. (written)" }
+    - { es: "請不要在此吸煙。", en: "Please do not smoke here. (written)" }
+  pitfalls:
+    - "Never write 唔 or 冇 in formal documents; convert them to 不 and 沒有."
+    - "沒有 in writing covers both 冇 'not have' and 冇 + V 'didn't'; 不 is never used for completed past events."
+    - "不要 is written; in speech it sounds stiff - say 唔好."
+  related: [g.spoken-vs-written, g.classical-negatives, g.mou-past-negation]
+  drills:
+    - { es: "他不是學生。", en: "He is not a student. (written)" }
+    - { es: "我們還沒有決定。", en: "We have not decided yet. (written)" }
+    - { es: "你不用擔心。", en: "You needn't worry. (written)" }
+
+- id: g.written-aspect
+  level: c1
+  title: "Aspect in written Chinese - 了, 着, 過, 正在"
+  summary: "Spoken 咗, 緊, 住 correspond to written 了, 正在/在, 着; 過 is shared, and 嚟 / 返 / 畀 become 來 / 回 / 給 or 被."
+  explanation: |
+    | 口語 | Jyutping | 書面語 | Jyutping | Meaning |
+    |---|---|---|---|---|
+    | V咗 | zo2 | V了 | liu5 | completed |
+    | V緊 | gan2 | 正在 V | zing3 zoi6 | in progress |
+    | V住 | zyu6 | V着 | zoek6 | continuing state |
+    | V過 | gwo3 | V過 | gwo3 | experience |
+    | 嚟 | lai4 | 來 | loi4 | come |
+    | 返 | faan1 | 回 | wui4 | return |
+    | 畀 (passive) | bei2 | 被 | bei6 | by |
+
+    ### Examples
+    - 佢食咗飯 → 他吃了飯 (taa1 hek3 liu5 faan6) - He has eaten.
+    - 我做緊功課 → 我正在做功課 - I am doing my homework.
+    - 佢著住件紅衫 → 她穿着一件紅色的衣服 - She is wearing a red top.
+
+    ### 了 in Cantonese reading
+    了 is read liu5 when reading written text aloud. It covers both 咗 (after the verb) and 喇 (at the end: 下雨了 "it's raining now").
+  examples:
+    - { es: "我已經寄咗封信。", en: "I've already sent the letter. (spoken)" }
+    - { es: "我已經寄了那封信。", en: "I have already sent the letter. (written)" }
+    - { es: "佢哋開緊會。", en: "They're in a meeting. (spoken)" }
+    - { es: "他們正在開會。", en: "They are in a meeting. (written)" }
+  pitfalls:
+    - "Don't mix registers: 他食咗飯 or 佢吃了飯 are both wrong in style; convert the whole sentence."
+    - "Written 了 at the end of a sentence corresponds to 喇, not 咗: 下雨了 = 落雨喇."
+  related: [g.spoken-vs-written, g.zo-perfective, g.gan-progressive]
+  drills:
+    - { es: "他已經回家了。", en: "He has gone home. (written)" }
+    - { es: "她正在打電話。", en: "She is on the phone. (written)" }
+    - { es: "我們看過這部電影。", en: "We have seen this film. (written)" }
+
+- id: g.literary-colloquial-readings
+  level: c1
+  title: "Literary and colloquial readings (文白異讀)"
+  summary: "Many characters have a colloquial reading (生 saang1 in 學生) and a literary one (生 sang1 in 醫生, 生命); the word decides which."
+  explanation: |
+    Cantonese preserves two layers of pronunciation for many characters: a **colloquial** (白讀) reading for everyday words and a **literary** (文讀) one for learned words.
+
+    | Character | Colloquial | Example | Literary | Example |
+    |---|---|---|---|---|
+    | 生 | saang1 | 學生 (hok6 saang1) | sang1 | 醫生 (ji1 sang1), 生命 (sang1 ming6) |
+    | 命 | meng6 | 救命 (gau3 meng6) | ming6 | 生命 (sang1 ming6) |
+    | 名 | meng2 | 個名 (go3 meng2) | ming4 | 名人 (ming4 jan4) |
+    | 平 | peng4 | 好平 (hou2 peng4) | ping4 | 平安 (ping4 on1) |
+    | 請 | ceng2 | 請客 (ceng2 haak3) | cing2 | 請問 (cing2 man6) |
+    | 輕 | heng1 | 好輕 (hou2 heng1) | hing1 | 年輕 (nin4 hing1) |
+    | 青 | ceng1 | 青菜 (ceng1 coi3) | cing1 | 青年 (cing1 nin4) |
+
+    ### Rule of thumb
+    - Everyday, concrete words → colloquial reading.
+    - Learned, abstract or classical words, and reading formal text aloud → literary reading.
+
+    ### Why it matters for reading news
+    News readers use literary readings in formal compounds; using the colloquial one in 生命 or 平安 sounds wrong.
+  examples:
+    - { es: "佢係醫生，唔係學生。", en: "He's a doctor, not a student." }
+    - { es: "呢度啲嘢好平。", en: "Things here are cheap." }
+    - { es: "祝你一路平安。", en: "Have a safe journey." }
+    - { es: "請問你係唔係陳先生？", en: "Excuse me, are you Mr Chan?" }
+  pitfalls:
+    - "Don't read every 生 as saang1: 醫生 is ji1 sang1, 生命 is sang1 ming6."
+    - "The reading belongs to the word, not the character; learn readings word by word."
+  related: [g.spoken-vs-written, g.news-register, g.entering-tones]
+  drills:
+    - { es: "生命好寶貴。", en: "Life is precious." }
+    - { es: "我哋請佢食飯。", en: "We're treating him to dinner.", altEn: ["We're treating her to dinner."] }
+    - { es: "佢好年輕。", en: "She's very young.", altEn: ["He's very young."] }
+
+- id: g.news-register
+  level: c1
+  title: "The language of news bulletins"
+  summary: "TV and radio news use written-style Chinese read in Cantonese: 表示, 指出, 據悉, 當局, 涉嫌, 送院."
+  explanation: |
+    Hong Kong and Macau news bulletins are scripted in written Chinese and read aloud in Cantonese, with characteristic vocabulary:
+    | Term | Jyutping | Meaning |
+    |---|---|---|
+    | 表示 | biu2 si6 | said, stated |
+    | 指出 | zi2 ceot1 | pointed out |
+    | 據悉 | geoi3 sik1 | it is understood that |
+    | 當局 | dong1 guk6 | the authorities |
+    | 警方 | ging2 fong1 | the police |
+    | 涉嫌 | sip3 jim4 | suspected of |
+    | 送院 | sung3 jyun2 | taken to hospital |
+    | 事件 | si6 gin2 | incident |
+    | 目前 | muk6 cin4 | at present |
+
+    ### Typical sentence
+    警方表示，一名男子涉嫌盜竊被捕 - The police said a man was arrested on suspicion of theft.
+
+    ### Features
+    - People are counted with 名 (ming4): 一名男子, 三名傷者.
+    - Formal passives: 被捕, 送院.
+    - Time is precise: 今日下午三時 (si4) instead of 三點.
+
+    ### Spoken news commentary
+    Phone-in programmes and street interviews switch back to 口語, which is a good way to hear both registers side by side.
+  examples:
+    - { es: "警方表示，事件中無人受傷。", en: "Police said no one was injured in the incident." }
+    - { es: "據悉，傷者已經送院治理。", en: "It is understood the injured have been taken to hospital for treatment." }
+    - { es: "當局指出，渡輪服務今日下午三時恢復。", en: "The authorities said ferry services will resume at 3 pm today." }
+    - { es: "一名男子涉嫌醉駕被捕。", en: "A man was arrested on suspicion of drink-driving." }
+  pitfalls:
+    - "In news, people take the measure word 名, not 個: 兩名學生."
+    - "Clock times use 時 in news (下午三時), but 點 in speech (下晝三點)."
+  related: [g.formal-passive, g.literary-colloquial-readings, g.reporting-verbs]
+  drills:
+    - { es: "政府發言人表示會盡快處理。", en: "A government spokesperson said it would be dealt with as soon as possible." }
+    - { es: "事件中有三名途人受傷。", en: "Three passers-by were injured in the incident." }
+    - { es: "警方目前仍在調查。", en: "Police are still investigating." }
+
+- id: g.formal-passive
+  level: c1
+  title: "Formal passives - 被, 遭, 受到, 獲"
+  summary: "Written Chinese uses 被 (neutral or bad), 遭 (bad), 受到 (affected by) and 獲 (good) where speech uses 畀."
+  explanation: |
+    | Form | Jyutping | Use | Example |
+    |---|---|---|---|
+    | 被 | bei6 | general passive | 被捕 arrested |
+    | 遭 | zou1 | suffer (bad) | 遭搶劫 robbed |
+    | 受到 | sau6 dou3 | be affected by | 受到影響 affected |
+    | 獲 | wok6 | receive (good) | 獲獎 win an award |
+    | 為…所 | wai4 … so2 | classical | 為人所知 known to people |
+
+    ### Agent optional
+    Unlike spoken 畀, written 被 can omit the agent: 他被捕了 "He was arrested." With an agent: 被警方拘捕.
+
+    ### Good things: 獲
+    Positive events use 獲 rather than 被: 澳門歷史城區獲列入世界遺產名錄 "The Historic Centre of Macau was inscribed on the World Heritage List."
+
+    ### Converting from speech
+    | 口語 | 書面語 |
+    |---|---|
+    | 佢畀人打咗 | 他被人打傷 |
+    | 間舖畀人爆格 | 店舖遭人爆竊 |
+  examples:
+    - { es: "疑犯已被警方拘捕。", en: "The suspect has been arrested by police." }
+    - { es: "多間商店遭爆竊。", en: "Several shops were burgled." }
+    - { es: "航班受到颱風影響。", en: "Flights have been affected by the typhoon." }
+    - { es: "澳門歷史城區於二零零五年獲列入世界遺產名錄。", en: "The Historic Centre of Macau was inscribed on the World Heritage List in 2005." }
+  pitfalls:
+    - "Don't use 被 for good news: 他獲選為主席, not 他被選為主席 (acceptable but less positive)."
+    - "In speech, 被 sounds bookish; say 畀 + agent."
+  related: [g.bei-passive, g.news-register]
+  drills:
+    - { es: "該名男子被判監三個月。", en: "The man was sentenced to three months in prison." }
+    - { es: "本港多區受到暴雨影響。", en: "Many districts of Hong Kong were affected by the rainstorm." }
+    - { es: "她獲頒最佳女主角獎。", en: "She was awarded Best Actress." }
+
+- id: g.honorifics
+  level: c1
+  title: "Honorifics - 貴姓, 府上, 閣下, 令尊"
+  summary: "Formal Cantonese elevates the other person with 貴 'your honourable', 令 'your (family)', 府上 'your home', 閣下 'you (sir)'."
+  explanation: |
+    | Honorific | Jyutping | Meaning |
+    |---|---|---|
+    | 貴姓 | gwai3 sing3 | your surname |
+    | 貴公司 | gwai3 gung1 si1 | your company |
+    | 府上 | fu2 soeng6 | your home |
+    | 閣下 | gok3 haa6 | you (formal, letters) |
+    | 令尊 | ling6 zyun1 | your father |
+    | 令郎 / 令千金 | ling6 long4 / ling6 cin1 gam1 | your son / daughter |
+    | 光臨 | gwong1 lam4 | your visit (honoured presence) |
+    | 指教 | zi2 gaau3 | your guidance |
+
+    ### In practice
+    - 歡迎光臨 (fun1 jing4 gwong1 lam4) - Welcome (shops, restaurants).
+    - 請問貴公司幾時方便？ - When would be convenient for your company?
+    - 請多多指教 - I look forward to your guidance (when starting work with someone).
+
+    ### Titles
+    In speech, politeness often comes through titles: 陳生, 李太, 黃醫生, 張經理, 何教授. Professional titles replace names in direct address: 經理，… "Manager, …".
+
+    These forms are never used about yourself; that would be boasting.
+  examples:
+    - { es: "請問先生貴姓？", en: "May I ask your surname, sir?" }
+    - { es: "歡迎各位光臨。", en: "Welcome, everyone." }
+    - { es: "令尊身體好嗎？", en: "How is your father's health?" }
+    - { es: "以後請多多指教。", en: "I look forward to working with you." }
+  pitfalls:
+    - "Never use honorifics about yourself or your family: 我貴姓 or 我令尊 are absurd."
+    - "閣下 is for letters and very formal speech; in conversation use the person's title."
+  related: [g.humble-forms, g.formal-requests, g.name-giu-sing]
+  drills:
+    - { es: "多謝貴公司嘅支持。", en: "Thank you for your company's support." }
+    - { es: "請問府上喺邊度？", en: "May I ask where you live?" }
+    - { es: "歡迎光臨！", en: "Welcome!" }
+
+- id: g.formal-requests
+  level: c1
+  title: "Formal requests and apologies"
+  summary: "Scale your requests from 唔該 to 麻煩你, 可唔可以請你…, and in writing 煩請, 敬請, 懇請."
+  explanation: |
+    ### Spoken scale
+    | Phrase | Jyutping | Politeness |
+    |---|---|---|
+    | 唔該… | m4 goi1 | everyday |
+    | 麻煩你… | maa4 faan4 nei5 | sorry to trouble you |
+    | 可唔可以請你…？ | ho2 m4 ho2 ji5 ceng2 nei5 | could I ask you to …? |
+    | 唔知可唔可以… | m4 zi1 ho2 m4 ho2 ji5 | I wonder if it might be possible … |
+
+    ### Written formulas
+    - 敬請 (ging3 cing2) - kindly: 敬請留意 "please note"
+    - 懇請 (han2 cing2) - earnestly request
+    - 煩請 - please (would you be so kind)
+    - 如蒙 + V，不勝感激 - if you would …, I would be most grateful
+
+    ### Apologies
+    | Phrase | Use |
+    |---|---|
+    | 唔好意思 | sorry, excuse me (light) |
+    | 對唔住 (deoi3 m4 zyu6) | I'm sorry (real fault) |
+    | 抱歉 (pou5 hip3) | apologies (formal) |
+    | 不便之處，敬請原諒 | we apologise for any inconvenience (notices) |
+  examples:
+    - { es: "麻煩你幫我轉告陳經理。", en: "Could you please pass this on to Manager Chan?" }
+    - { es: "唔知可唔可以改期呢？", en: "I wonder if it might be possible to reschedule?" }
+    - { es: "敬請準時出席。", en: "Kindly attend punctually." }
+    - { es: "工程期間如有不便之處，敬請原諒。", en: "We apologise for any inconvenience during the works." }
+  pitfalls:
+    - "Don't use 敬請 or 懇請 in conversation; they belong to letters and notices."
+    - "對唔住 admits real fault; for small things, 唔好意思 is enough."
+  related: [g.honorifics, g.humble-forms, g.notice-language]
+  drills:
+    - { es: "麻煩你等一陣。", en: "Would you mind waiting a moment?" }
+    - { es: "對唔住，係我嘅錯。", en: "I'm sorry, it's my fault." }
+    - { es: "敬請留意。", en: "Please note." }
+
+- id: g.humble-forms
+  level: c1
+  title: "Humble forms - 敝公司, 小弟, 拙見, 獻醜"
+  summary: "Formal speech lowers oneself: 敝公司 'our (humble) company', 小弟 'I (your little brother)', 拙見 'my humble opinion', 獻醜 'show my poor skill'."
+  explanation: |
+    Chinese politeness elevates the listener and **lowers the speaker**:
+    | Humble form | Jyutping | Meaning |
+    |---|---|---|
+    | 敝公司 | bai6 gung1 si1 | our company (vs 貴公司) |
+    | 小弟 | siu2 dai6 | I (male speaker, modest) |
+    | 拙見 | zyut3 gin3 | my humble opinion |
+    | 寒舍 | hon4 se3 | my humble home |
+    | 獻醜 | hin3 cau2 | perform / show my poor skill |
+    | 過獎 | gwo3 zoeng2 | you flatter me |
+    | 不敢當 | bat1 gam2 dong1 | I don't deserve it |
+
+    ### Accepting compliments
+    The traditional response to praise is modest denial: 邊度呀 (bin1 dou6 aa3) "not at all", 過獎過獎, 麻麻哋啦.
+
+    ### Register
+    敝公司 and 拙見 belong to formal speeches and letters; 小弟 is also used jokingly among friends: 小弟今日請客 "This humble one is treating today."
+
+    | Your side (honour) | My side (humble) |
+    |---|---|
+    | 貴公司 | 敝公司 |
+    | 高見 | 拙見 |
+    | 府上 | 寒舍 |
+  examples:
+    - { es: "敝公司會盡快回覆。", en: "Our company will reply as soon as possible." }
+    - { es: "依小弟拙見，呢個方案仲有改善空間。", en: "In my humble opinion, this plan still has room for improvement." }
+    - { es: "過獎過獎，我只係盡力而為。", en: "You flatter me, I just did my best." }
+    - { es: "我唱得唔好，獻醜喇。", en: "I don't sing well, but here goes." }
+  pitfalls:
+    - "Don't call someone else's company 敝公司; that insults them. Theirs is 貴公司."
+    - "Accepting praise with 多謝 is fine today, but a modest 過獎 or 邊度呀 is still very common."
+  related: [g.honorifics, g.formal-requests]
+  drills:
+    - { es: "歡迎嚟寒舍坐吓。", en: "You're welcome to drop by my humble home." }
+    - { es: "多謝貴公司對敝公司嘅支持。", en: "Thank you for your company's support of ours." }
+    - { es: "邊度呀，你過獎喇。", en: "Not at all, you flatter me." }
+
+- id: g.chengyu-structure
+  level: c1
+  title: "成語 - four-character idioms and how they are built"
+  summary: "成語 are compressed classical phrases, usually four characters, with internal grammar: parallel pairs (一心一意), mini-sentences (畫蛇添足) and story allusions (守株待兔)."
+  explanation: |
+    成語 (sing4 jyu5) come from classical texts and stories. Knowing their structure helps you decode new ones.
+
+    ### Common structures
+    | Type | Example | Jyutping | Meaning |
+    |---|---|---|---|
+    | parallel (AXAY) | 一心一意 | jat1 sam1 jat1 ji3 | wholeheartedly |
+    | verb-object + verb-object | 入鄉隨俗 | jap6 hoeng1 ceoi4 zuk6 | when in Rome |
+    | mini-sentence | 畫蛇添足 | waak6 se4 tim1 zuk1 | overdo it (draw legs on a snake) |
+    | story allusion | 守株待兔 | sau2 zyu1 doi6 tou3 | wait for luck instead of working |
+    | numbers | 一石二鳥 | jat1 sek6 ji6 niu5 | kill two birds with one stone |
+    | with 之 | 井底之蛙 | zeng2 dai2 zi1 waa1 | a frog in a well (narrow view) |
+
+    ### Classical grammar inside
+    成語 keep classical function words: 之 = 嘅, 而 = and/but (半途而廢 bun3 tou4 ji4 fai3 "give up halfway").
+
+    ### Stories
+    Many have a story (典故): 亡羊補牢 (mong4 joeng4 bou2 lou4), "mend the pen after the sheep is lost" - it's never too late to fix a problem.
+  examples:
+    - { es: "佢做嘢一心一意。", en: "He puts his whole heart into his work.", altEn: ["She puts her whole heart into her work."] }
+    - { es: "你再解釋就係畫蛇添足喇。", en: "If you explain any more, you'll be overdoing it." }
+    - { es: "入鄉隨俗，喺澳門就試吓葡國菜。", en: "When in Rome: in Macau, try Portuguese food." }
+    - { es: "做事唔好半途而廢。", en: "Don't give up halfway." }
+  pitfalls:
+    - "Don't change characters in a 成語; they are fixed."
+    - "Many 成語 have a story; using one without knowing its connotation can misfire (守株待兔 is criticism, not praise)."
+  related: [g.chengyu-in-speech, g.four-character-colloquial, g.classical-function-words]
+  drills:
+    - { es: "亡羊補牢，未為晚也。", en: "It's never too late to mend." }
+    - { es: "呢個方法一石二鳥。", en: "This method kills two birds with one stone." }
+    - { es: "唔好做井底之蛙。", en: "Don't be a frog in a well." }
+
+- id: g.chengyu-in-speech
+  level: c1
+  title: "Using 成語 in a Cantonese sentence"
+  summary: "成語 slot into colloquial sentences as predicates, adverbs or modifiers: 佢胸有成竹噉講, 一帆風順嘅旅程."
+  explanation: |
+    成語 work like single words inside a Cantonese sentence:
+
+    ### As a predicate (like an adjective)
+    - 佢對今次考試胸有成竹 (hung1 jau5 sing4 zuk1) - He's confident about this exam.
+    - 呢件事真係一頭霧水 - This matter is totally baffling (colloquial set phrase).
+
+    ### As an adverb, with 噉 / 地
+    - 佢胸有成竹噉回答 - He answered confidently.
+
+    ### As a modifier, with 嘅
+    - 一帆風順 (jat1 faan4 fung1 seon6) 嘅旅程 - a smooth journey.
+
+    ### Wishes
+    Many greetings are 成語 used alone: 一帆風順 (smooth sailing), 心想事成 (may your wishes come true), 身體健康, 萬事如意 (may everything go as you wish).
+
+    ### Register
+    One well-chosen 成語 makes speech sound educated; too many sound pompous. In casual chat, Cantonese colloquial idioms (B2) are more natural.
+  examples:
+    - { es: "祝你一帆風順！", en: "Wishing you smooth sailing!" }
+    - { es: "佢講到天花龍鳳，其實冇咩內容。", en: "He talked it up spectacularly, but there was nothing to it.", altEn: ["She talked it up spectacularly, but there was nothing to it."] }
+    - { es: "同佢講道理，簡直係對牛彈琴。", en: "Reasoning with him is like playing the lute to a cow." }
+    - { es: "佢胸有成竹噉行入考場。", en: "She walked into the exam hall full of confidence.", altEn: ["He walked into the exam hall full of confidence."] }
+  pitfalls:
+    - "成語 don't take 咗 or 緊 inside them; put aspect around them if needed."
+    - "Stacking several 成語 in casual speech sounds pretentious."
+  related: [g.chengyu-structure, g.four-character-colloquial, g.register-shift]
+  drills:
+    - { es: "新年快樂，萬事如意！", en: "Happy New Year, may all go well!" }
+    - { es: "我哋今次真係對牛彈琴。", en: "We were talking to a brick wall this time." }
+    - { es: "佢做事好有計劃，胸有成竹。", en: "He works with a plan and is always confident.", altEn: ["She works with a plan and is always confident."] }
+
+- id: g.four-character-colloquial
+  level: c1
+  title: "Cantonese four-character set phrases - 雞同鴨講, 一頭霧水"
+  summary: "Besides classical 成語, Cantonese has its own colloquial four-character phrases: 雞同鴨講, 一頭霧水, 七國咁亂, 三唔識七."
+  explanation: |
+    These look like 成語 but are **Cantonese and colloquial**; you won't find most of them in Mandarin.
+    | Phrase | Jyutping | Literal | Meaning |
+    |---|---|---|---|
+    | 雞同鴨講 | gai1 tung4 aap3 gong2 | chicken talks to duck | talking at cross purposes |
+    | 一頭霧水 | jat1 tau4 mou6 seoi2 | a head full of fog | baffled |
+    | 七國咁亂 | cat1 gwok3 gam3 lyun6 | as chaotic as seven kingdoms | total chaos |
+    | 雞手鴨腳 | gai1 sau2 aap3 goek3 | chicken hands, duck feet | clumsy |
+    | 三唔識七 | saam1 m4 sik1 cat1 | 3 doesn't know 7 | complete strangers |
+    | 九唔搭八 | gau2 m4 daap3 baat3 | 9 doesn't connect to 8 | irrelevant, off-topic |
+    | 心大心細 | sam1 daai6 sam1 sai3 | heart big, heart small | can't make up one's mind |
+    | 手忙腳亂 | sau2 mong4 goek3 lyun6 | hands busy, feet chaotic | in a flap |
+
+    ### Usage
+    Like adjectives: 佢哋兩個雞同鴨講 "Those two are talking at cross purposes." 我聽到一頭霧水 "I listened and was completely lost."
+
+    ### Register
+    These are informal but widely used in media and even in some newspaper headlines for colour.
+  examples:
+    - { es: "我同個客雞同鴨講，講極都唔明。", en: "The client and I were talking at cross purposes; he just didn't get it." }
+    - { es: "佢解釋完我仲一頭霧水。", en: "After his explanation I was still baffled.", altEn: ["After her explanation I was still baffled."] }
+    - { es: "搬屋嗰日成間屋七國咁亂。", en: "On moving day the whole flat was total chaos." }
+    - { es: "我哋三唔識七，佢點解搵我？", en: "We're complete strangers, why is he looking for me?" }
+  pitfalls:
+    - "Don't use these in formal writing; they are spoken Cantonese."
+    - "七國咁亂 contains 咁 'so' - it's a comparison, not a list of seven countries."
+  related: [g.chengyu-structure, g.colloquial-idioms]
+  drills:
+    - { es: "佢講嘢九唔搭八。", en: "What he says is all over the place.", altEn: ["What she says is all over the place."] }
+    - { es: "我心大心細，唔知揀邊個好。", en: "I'm torn, I don't know which to choose." }
+    - { es: "趕住出門口，搞到手忙腳亂。", en: "Rushing to get out the door, I was in a total flap." }
+
+- id: g.formal-time
+  level: c1
+  title: "Formal time expressions - 於, 自…以來, 隨着, 至今"
+  summary: "Narrating history in a formal register uses 於 'in/at', 自…以來 'since', 隨着 'along with', 其後 'subsequently', 至今 'to this day'."
+  explanation: |
+    | Formal | Jyutping | Colloquial | Meaning |
+    |---|---|---|---|
+    | 於 | jyu1 | 喺 | in, at (time/place) |
+    | 自…以來 | zi6 … ji5 loi4 | 由…開始 | since |
+    | 隨着 | ceoi4 zoek6 | 跟住 | along with, as |
+    | 其後 | kei4 hau6 | 之後 | subsequently |
+    | 至今 | zi3 gam1 | 到而家 | to this day |
+    | 期間 | kei4 gaan1 | 嗰陣 | during |
+    | 早於 | zou2 jyu1 | 早喺 | as early as |
+
+    ### A Macau narrative
+    - 葡萄牙人於十六世紀中葉抵達澳門 - The Portuguese arrived in Macau in the mid-16th century.
+    - 聖保祿教堂於一八三五年被大火燒毀，只剩下前壁，即今日嘅大三巴牌坊 (daai6 saam1 baa1 paai4 fong1) - St Paul's Church was destroyed by fire in 1835, leaving only the façade, today's Ruins of St Paul's.
+    - 澳門於一九九九年回歸 (wui4 gwai1) - Macau was handed over in 1999.
+    - 自回歸以來，澳門經濟發展迅速 - Since the handover, Macau's economy has developed rapidly.
+
+    ### Spoken history
+    In speech, mix: 喺一九九九年回歸 is natural; 於 belongs to written and presentation style.
+  examples:
+    - { es: "澳門歷史城區於二零零五年列入世界遺產名錄。", en: "The Historic Centre of Macau was inscribed on the World Heritage List in 2005." }
+    - { es: "自十九世紀以來，呢度一直係商業中心。", en: "Since the 19th century, this has been a commercial centre." }
+    - { es: "隨着旅遊業發展，城市面貌不斷改變。", en: "As tourism developed, the face of the city kept changing." }
+    - { es: "呢座廟至今已有幾百年歷史。", en: "This temple has a history of several hundred years to date." }
+  pitfalls:
+    - "於 is formal; using it in casual chat (我於聽日去) sounds absurd."
+    - "自…以來 needs a starting point and usually a continuing state: 自回歸以來一直….'"
+  related: [g.written-conjunctions, g.classical-function-words, g.time-before-verb]
+  drills:
+    - { es: "聖保祿教堂於一八三五年遭大火焚毀。", en: "St Paul's Church was destroyed by fire in 1835." }
+    - { es: "自開幕以來，參觀人數不斷上升。", en: "Since opening, visitor numbers have kept rising." }
+    - { es: "呢個傳統保留至今。", en: "This tradition survives to this day." }
+
+- id: g.written-conjunctions
+  level: c1
+  title: "Written connectors - 然而, 因此, 並且, 以及, 此外"
+  summary: "Formal texts link ideas with 然而 'however', 因此 'therefore', 並且 'moreover', 以及 'as well as', 此外 'in addition', 從而 'thereby'."
+  explanation: |
+    | Written | Jyutping | Colloquial equivalent | Meaning |
+    |---|---|---|---|
+    | 然而 | jin4 ji4 | 不過 | however |
+    | 因此 | jan1 ci2 | 所以 | therefore |
+    | 並且 | bing6 ce2 | 仲有 / 而且 | moreover, and |
+    | 以及 | ji5 kap6 | 同埋 | as well as (nouns) |
+    | 此外 | ci2 ngoi6 | 另外 | in addition |
+    | 從而 | cung4 ji4 | 噉就 | thereby |
+    | 卻 | koek3 | 但係 | yet, but |
+    | 即 | zik1 | 即係 | namely, that is |
+
+    ### Examples
+    - 澳門面積細小，然而人口密度極高 - Macau is small; however, its population density is extremely high.
+    - 政府增加資助，從而改善服務質素 - The government increased funding, thereby improving service quality.
+
+    ### 以及 links nouns only
+    以及 joins noun phrases: 葡國菜、澳門菜以及粵菜 "Portuguese, Macanese and Cantonese cuisine." For clauses use 並且.
+  examples:
+    - { es: "澳門保留咗好多葡式建築，此外仲有唔少中式廟宇。", en: "Macau has kept many Portuguese buildings; in addition, there are quite a few Chinese temples." }
+    - { es: "計劃有好處，然而成本太高。", en: "The plan has advantages; however, the cost is too high." }
+    - { es: "遊客增加，因此交通更加擠迫。", en: "Visitor numbers have risen; therefore traffic is more congested." }
+    - { es: "會議討論咗財政、人事以及宣傳問題。", en: "The meeting discussed finance, staffing and publicity." }
+  pitfalls:
+    - "Don't use 以及 to join clauses; use 並且 or 而且."
+    - "然而 and 卻 are written; in speech prefer 不過 / 但係."
+  related: [g.formal-time, g.adding-points, g.essay-structure]
+  drills:
+    - { es: "此外，我哋仲要考慮環境問題。", en: "In addition, we must consider environmental issues." }
+    - { es: "他很努力，然而成績不理想。", en: "He worked hard; however, the results were disappointing." }
+    - { es: "因此，我們建議延期。", en: "We therefore recommend postponement." }
+
+- id: g.classical-function-words
+  level: c1
+  title: "Classical function words - 之, 其, 此, 乃, 亦, 皆"
+  summary: "Formal writing borrows classical words: 之 'of', 其 'its/his', 此 'this', 乃 'is', 亦 'also', 皆 'all', 以 'with/in order to'."
+  explanation: |
+    | Classical | Jyutping | Colloquial | Meaning |
+    |---|---|---|---|
+    | 之 | zi1 | 嘅 | of, 's |
+    | 其 | kei4 | 佢嘅 | his, her, its, their |
+    | 此 | ci2 | 呢 | this |
+    | 乃 | naai5 | 係 | is (emphatic) |
+    | 亦 | jik6 | 都 | also |
+    | 皆 / 均 | gaai1 / gwan1 | 都 (all) | all |
+    | 以 | ji5 | 用 / 嚟 | with; in order to |
+    | 而 | ji4 | 而且 / 但 | and; but |
+    | 為 | wai4 | 係 / 做 | is; to be (as) |
+
+    ### In fixed phrases
+    You meet them constantly in fixed expressions: 之一 (zi1 jat1) "one of", 此外 "besides", 其中 (kei4 zung1) "among them", 以便 "so as to", 為止 "until".
+
+    ### Examples
+    - 澳門乃中西文化交匯之地 - Macau is a meeting point of Chinese and Western cultures.
+    - 此處嚴禁吸煙 - Smoking is strictly forbidden here.
+    - 其中一個原因… - One of the reasons …
+
+    You don't need to speak like this; the goal is to read signs, documents and speeches comfortably.
+  examples:
+    - { es: "大三巴係澳門最著名嘅景點之一。", en: "The Ruins of St Paul's is one of Macau's most famous sights." }
+    - { es: "此路不通。", en: "No through road." }
+    - { es: "參加者均須登記。", en: "All participants must register." }
+    - { es: "其中有三個人係學生。", en: "Three of them are students." }
+  pitfalls:
+    - "Don't sprinkle 之 and 乃 into casual speech; keep them for writing, signs and set phrases."
+    - "其 refers back to something already mentioned; it is not a general 'his' for a new person."
+  related: [g.chengyu-structure, g.classical-negatives, g.formal-time]
+  drills:
+    - { es: "此乃本公司之規定。", en: "This is company policy." }
+    - { es: "學生亦可申請。", en: "Students may also apply." }
+    - { es: "呢個係其中一個例子。", en: "This is one of the examples." }
+
+- id: g.business-correspondence
+  level: c1
+  title: "Business emails and letters"
+  summary: "Formal Chinese emails use set formulas: 敬啟者 'Dear Sir/Madam', 謹此 'hereby', 煩請 'please', 如有查詢 'if you have any queries', 順頌商祺 'with best regards'."
+  explanation: |
+    ### Structure of a formal letter
+    | Part | Formula | Jyutping | Meaning |
+    |---|---|---|---|
+    | salutation | 敬啟者： | ging3 kai2 ze2 | Dear Sir/Madam |
+    | named | 陳先生台鑒： | | Dear Mr Chan |
+    | opening | 謹此通知 | | we hereby inform you |
+    | request | 煩請於…前回覆 | | please reply by … |
+    | attachment | 附件 | fu6 gin2 | attachment |
+    | queries | 如有查詢，請致電… | jyu4 jau5 caa4 seon1 | for enquiries, call … |
+    | closing | 順頌商祺 | | with best regards (business) |
+
+    ### Everyday office emails
+    Many Hong Kong office emails are less formal and mix languages: 陳生，附件係報價單，麻煩你睇吓，有問題再搵我。Thanks! Choose the register by the recipient.
+
+    ### Speaking about emails
+    覆 email (fuk1) reply, fwd 畀你 forward to you, cc 埋經理 copy in the manager, 跟進 (gan1 zeon3) follow up.
+  examples:
+    - { es: "敬啟者：謹此通知閣下，會議改於下星期三舉行。", en: "Dear Sir/Madam, we hereby inform you that the meeting has been moved to next Wednesday." }
+    - { es: "煩請於本月底前回覆。", en: "Please reply by the end of this month." }
+    - { es: "如有查詢，請致電二八一二三四五六。", en: "For enquiries, please call 2812 3456." }
+    - { es: "我已經 fwd 咗份報價畀你，麻煩你跟進。", en: "I've forwarded you the quotation, please follow up." }
+  pitfalls:
+    - "Don't write colloquial characters (嘅, 咗) in a formal letter; switch fully to 書面語."
+    - "Match the closing to the context: 順頌商祺 for business, 此致 + name for official letters."
+  related: [g.formal-requests, g.humble-forms, g.code-mixing]
+  drills:
+    - { es: "附件為本公司之報價單。", en: "Attached is our quotation." }
+    - { es: "多謝你嘅回覆。", en: "Thank you for your reply." }
+    - { es: "我會盡快跟進。", en: "I'll follow up as soon as possible." }
+
+- id: g.negotiation-softeners
+  level: c1
+  title: "Negotiating politely - softeners and hedges"
+  summary: "Soften demands with 睇吓有冇空間, 原則上冇問題, 我哋需要考慮吓, 坦白講 and conditional offers with 如果…嘅話."
+  explanation: |
+    ### Opening and probing
+    | Phrase | Jyutping | Use |
+    |---|---|---|
+    | 我哋可唔可以傾吓… | ngo5 dei6 ho2 m4 ho2 ji5 king1 haa5 | could we discuss … |
+    | 睇吓有冇商量餘地 | tai2 haa5 jau5 mou5 soeng1 loeng4 jyu4 dei6 | see if there's room to negotiate |
+    | 價錢方面… | gaa3 cin4 fong1 min6 | regarding the price … |
+
+    ### Holding back
+    - 原則上冇問題，不過… - In principle no problem, but …
+    - 我哋需要考慮吓 / 內部商量吓 - We need to think it over / discuss internally.
+    - 呢個我要請示上司 - I'll have to check with my superior.
+
+    ### Being frank (but polite)
+    坦白講 / 老實講 (lou5 sat6 gong2) "frankly speaking" introduces a firm point gently.
+
+    ### Conditional offers
+    如果貴公司可以…嘅話，我哋可以考慮… - If your company can …, we could consider …
+
+    ### Declining
+    Direct 唔得 is rare in business; say 可能有啲困難 "that might be a bit difficult."
+  examples:
+    - { es: "價錢方面，睇吓有冇商量餘地？", en: "On the price, is there any room for negotiation?" }
+    - { es: "原則上冇問題，不過我哋要睇清楚合約。", en: "In principle there's no problem, but we need to read the contract carefully." }
+    - { es: "老實講，呢個價錢我哋好難接受。", en: "Frankly, this price is very hard for us to accept." }
+    - { es: "如果數量多啲嘅話，可唔可以打個九折？", en: "If we order more, could you give us 10% off?" }
+  pitfalls:
+    - "A flat 唔得 can sound rude; prefer 可能有啲困難."
+    - "原則上冇問題 often signals a 'but' is coming; listen for 不過."
+  related: [g.formal-requests, g.percent-discounts, g.ge-waa-conditional]
+  drills:
+    - { es: "我哋需要內部商量吓。", en: "We need to discuss it internally." }
+    - { es: "可能有啲困難。", en: "That might be a little difficult." }
+    - { es: "坦白講，我哋預算有限。", en: "Frankly, our budget is limited." }
+
+- id: g.percent-discounts
+  level: c1
+  title: "Percentages, discounts and growth - 百分之, 成, 折"
+  summary: "百分之 + number is per cent; 成 counts tenths (七成 = 70%); 折 gives the price you pay (八折 = 20% off)."
+  explanation: |
+    ### Per cent: 百分之 (baak3 fan6 zi1)
+    The whole (100) comes first: 百分之二十 = 20%, 百分之五點五 = 5.5%.
+
+    ### Tenths: 成 (sing4)
+    Very common in speech: 七成人 "70% of people", 三成 "30%", 九成九 "99%".
+
+    ### Discounts: 折 (zit3)
+    The number is the **percentage you pay**, in tenths:
+    | Sign | Meaning |
+    |---|---|
+    | 九折 | 10% off (pay 90%) |
+    | 八折 | 20% off |
+    | 七五折 | 25% off |
+    | 半價 (bun3 gaa3) | half price |
+    | 買一送一 | buy one get one free |
+
+    ### Change and growth
+    | Word | Jyutping | Meaning |
+    |---|---|---|
+    | 升 / 上升 | sing1 / soeng5 sing1 | rise |
+    | 跌 / 下跌 | dit3 / haa6 dit3 | fall |
+    | 增長 | zang1 zoeng2 | growth |
+    | 倍 | pui5 | times, -fold |
+    | 個百分點 | go3 baak3 fan6 dim2 | percentage point |
+
+    升咗兩成 "rose by 20%", 跌咗三個百分點 "fell by three percentage points", 多咗一倍 "doubled".
+  examples:
+    - { es: "全場貨品八折。", en: "Everything is 20% off." }
+    - { es: "今年營業額增長咗百分之十二。", en: "Turnover grew by 12% this year." }
+    - { es: "七成受訪者支持呢個建議。", en: "70% of respondents support this proposal." }
+    - { es: "租金比去年貴咗一倍。", en: "The rent has doubled compared with last year." }
+  pitfalls:
+    - "八折 is 20% off, not 80% off: the number is what you pay."
+    - "百分之 comes before the number: 百分之二十, not 二十百分之."
+  related: [g.big-numbers, g.negotiation-softeners]
+  drills:
+    - { es: "會員有九折。", en: "Members get 10% off." }
+    - { es: "股市跌咗百分之三。", en: "The stock market fell 3%." }
+    - { es: "成本上升咗兩成。", en: "Costs have risen by 20%." }
+
+- id: g.hedging
+  level: c1
+  title: "Hedging and sourcing - 據了解, 有指, 相信, 疑似"
+  summary: "Media language marks uncertain claims with 據了解 'it is understood', 有指 'it is alleged', 相信 'it is believed', 疑似 'suspected', 不排除 'cannot rule out'."
+  explanation: |
+    | Hedge | Jyutping | Meaning |
+    |---|---|---|
+    | 據了解 | geoi3 liu5 gaai2 | it is understood that |
+    | 有指 | jau5 zi2 | it is alleged that |
+    | 相信 | soeng1 seon3 | it is believed |
+    | 估計 | gu2 gai3 | it is estimated |
+    | 疑似 | ji4 ci5 | suspected |
+    | 消息指 | siu1 sik1 zi2 | sources say |
+    | 未能證實 | mei6 nang4 zing3 sat6 | could not be confirmed |
+    | 不排除 | bat1 paai4 ceoi4 | cannot rule out |
+
+    ### Example
+    消息指，事件疑似由電線短路引起，警方不排除有人縱火 - Sources say the incident was suspected to be caused by a short circuit; police cannot rule out arson.
+
+    ### In conversation
+    Spoken equivalents: 聽講, 好似, 應該係, 唔知真唔真. Using 據了解 in a chat sounds like a news anchor - sometimes deliberately funny.
+
+    Hedging protects the speaker: commentary programmes use these words to avoid presenting rumours as fact.
+  examples:
+    - { es: "據了解，有關部門已經展開調查。", en: "It is understood that the relevant department has begun an investigation." }
+    - { es: "有指公司今年會裁員。", en: "It is alleged the company will lay off staff this year." }
+    - { es: "估計有超過十萬人參加。", en: "More than 100,000 people are estimated to have taken part." }
+    - { es: "警方不排除有其他人涉案。", en: "Police cannot rule out the involvement of others." }
+  pitfalls:
+    - "相信 at the start of a news sentence means 'it is believed', not 'I believe'."
+    - "Don't drop hedges when reporting rumours; it changes the claim into fact."
+  related: [g.reporting-verbs, g.news-register, g.probability]
+  drills:
+    - { es: "消息未能證實。", en: "The report could not be confirmed." }
+    - { es: "相信事件係意外。", en: "The incident is believed to have been an accident." }
+    - { es: "疑似食物中毒。", en: "Suspected food poisoning." }
+
+- id: g.nominalisation
+  level: c1
+  title: "Formal verb frames - 進行, 作出, 加以, 予以"
+  summary: "Formal Chinese wraps verbs in 'dummy' verbs: 進行調查 'carry out an investigation', 作出決定 'make a decision', 加以考慮 'give consideration'."
+  explanation: |
+    Official and media language often turns an action into a noun after a general verb:
+    | Dummy verb | Jyutping | + verb | Colloquial |
+    |---|---|---|---|
+    | 進行 | zeon3 hang4 | 調查 investigation | 查 |
+    | 作出 | zok3 ceot1 | 決定 decision | 決定 |
+    | 加以 | gaa1 ji5 | 考慮 consideration | 諗吓 |
+    | 予以 | jyu5 ji5 | 處理 handling | 處理 |
+    | 展開 | zin2 hoi1 | 行動 action | 開始做 |
+    | 給予 | kap1 jyu5 | 支持 support | 支持 |
+
+    ### Examples
+    - 警方正就事件進行調查 - Police are investigating the incident.
+    - 政府會盡快作出決定 - The government will decide as soon as possible.
+    - 我哋會對你嘅意見加以考慮 - We will give your views due consideration.
+
+    ### Why it matters
+    These frames make texts sound official and impersonal. When paraphrasing for friends, strip them: 警方進行調查 → 警察查緊.
+  examples:
+    - { es: "當局將會對事件進行全面調查。", en: "The authorities will conduct a full investigation into the incident." }
+    - { es: "公司已經作出回應。", en: "The company has responded." }
+    - { es: "有關建議會加以研究。", en: "The proposal will be studied." }
+    - { es: "警察查緊件事。", en: "The police are looking into it. (colloquial)" }
+  pitfalls:
+    - "Overusing 進行 in speech sounds bureaucratic; 我哋進行食飯 is a joke, not Cantonese."
+    - "The noun after the dummy verb usually has two characters: 進行調查, not 進行查."
+  related: [g.news-register, g.reporting-verbs, g.speech-structure]
+  drills:
+    - { es: "我哋會盡快作出安排。", en: "We will make arrangements as soon as possible." }
+    - { es: "雙方正進行談判。", en: "The two sides are negotiating." }
+    - { es: "政府會給予支援。", en: "The government will provide support." }
+
+- id: g.reporting-verbs
+  level: c1
+  title: "Precise reporting verbs - 表示, 強調, 承認, 否認, 透露"
+  summary: "Beyond 話, formal reporting uses verbs that show stance: 表示 'stated', 強調 'stressed', 承認 'admitted', 否認 'denied', 透露 'revealed', 批評 'criticised'."
+  explanation: |
+    | Verb | Jyutping | Meaning | Stance |
+    |---|---|---|---|
+    | 表示 | biu2 si6 | stated | neutral |
+    | 指出 | zi2 ceot1 | pointed out | factual |
+    | 強調 | koeng4 diu6 | stressed | emphatic |
+    | 承認 | sing4 jing6 | admitted | concession |
+    | 否認 | fau2 jing6 | denied | rejection |
+    | 透露 | tau3 lou6 | revealed | new information |
+    | 聲稱 | sing1 cing1 | claimed | doubtful |
+    | 批評 | pai1 ping4 | criticised | negative |
+    | 回應 | wui4 jing3 | responded | reaction |
+    | 澄清 | cing4 cing1 | clarified | correction |
+
+    ### Choosing a verb shows your view
+    - 佢聲稱… suggests you doubt the claim.
+    - 佢指出… suggests you accept it as fact.
+
+    ### Pattern
+    Speaker + verb + (，) + content: 局長強調，政府會繼續支援中小企 "The secretary stressed that the government would continue to support SMEs."
+  examples:
+    - { es: "發言人否認公司有違規。", en: "The spokesperson denied that the company had broken any rules." }
+    - { es: "佢承認自己處理得唔好。", en: "He admitted he hadn't handled it well.", altEn: ["She admitted she hadn't handled it well."] }
+    - { es: "消息人士透露，合併計劃已經談妥。", en: "Sources revealed that the merger had been agreed." }
+    - { es: "局長強調，安全係首要考慮。", en: "The secretary stressed that safety is the top priority." }
+  pitfalls:
+    - "聲稱 implies doubt; don't use it for statements you consider reliable."
+    - "In casual retelling, 話 is fine; overusing formal verbs in chat sounds like a news script."
+  related: [g.reported-speech, g.hedging, g.news-register]
+  drills:
+    - { es: "佢回應話會考慮。", en: "He responded that he would consider it.", altEn: ["She responded that she would consider it."] }
+    - { es: "公司澄清有關報道唔正確。", en: "The company clarified that the report was incorrect." }
+    - { es: "專家指出問題好嚴重。", en: "Experts pointed out that the problem is serious." }
+
+- id: g.speech-structure
+  level: c1
+  title: "Opening, structuring and closing a speech"
+  summary: "Formal speeches follow a pattern: 各位嘉賓 greeting, 今日好榮幸 thanks, 首先…其次… body, 最後 / 多謝大家 close."
+  explanation: |
+    ### Opening
+    | Phrase | Jyutping | Meaning |
+    |---|---|---|
+    | 主席、各位嘉賓 | zyu2 zik6, gok3 wai2 gaa1 ban1 | Chair, distinguished guests |
+    | 各位同事，大家好 | | Dear colleagues, hello everyone |
+    | 今日好榮幸… | gam1 jat6 hou2 wing4 hang6 | I'm honoured today to … |
+    | 承蒙…邀請 | | thanks to … for the invitation |
+
+    ### Body
+    首先 / 其次 / 第三 / 另外; signposting: 我想分享三點 (ngo5 soeng2 fan1 hoeng2 saam1 dim2) "I'd like to share three points", 講到…方面 "turning to …".
+
+    ### Closing
+    - 最後，我想多謝… - Finally, I'd like to thank …
+    - 祝大家身體健康，工作順利 - I wish you all good health and success.
+    - 多謝大家 (do1 ze6 daai6 gaa1) - Thank you all.
+
+    ### Register
+    Speeches are spoken Cantonese with a high proportion of written vocabulary; sentence-final particles are rare, and 我哋 / 大家 are used rather than 你哋 to include the audience.
+  examples:
+    - { es: "主席、各位嘉賓，大家好。", en: "Chair, distinguished guests, good afternoon." }
+    - { es: "今日好榮幸可以喺度同大家分享。", en: "I'm honoured to be able to share with you today." }
+    - { es: "我想講三點：第一，成本；第二，時間；第三，人手。", en: "I'd like to make three points: first, cost; second, time; third, staffing." }
+    - { es: "最後，祝大家工作順利，多謝大家。", en: "Finally, I wish you every success in your work. Thank you all." }
+  pitfalls:
+    - "Don't fill a formal speech with particles like 囉, 喎, 啫; they make it sound casual."
+    - "Address the most senior person first: 主席 before 各位嘉賓."
+  related: [g.adding-points, g.register-shift, g.summing-up]
+  drills:
+    - { es: "多謝主辦單位嘅邀請。", en: "Thank you to the organisers for the invitation." }
+    - { es: "講到成本方面，我哋要小心。", en: "Turning to cost, we need to be careful." }
+    - { es: "多謝各位。", en: "Thank you, everyone." }
+
+- id: g.formal-modals
+  level: c1
+  title: "Formal modals - 須, 應, 可, 不得, 毋須, 務必"
+  summary: "Rules and regulations use formal modals: 須 / 必須 'must', 應 'should', 可 'may', 不得 'must not', 毋須 'need not', 務必 'be sure to'."
+  explanation: |
+    | Formal | Jyutping | Colloquial | Meaning |
+    |---|---|---|---|
+    | 須 / 必須 | seoi1 / bit1 seoi1 | 要 / 一定要 | must |
+    | 應 / 應當 | jing1 / jing1 dong1 | 應該 | should |
+    | 可 | ho2 | 可以 | may |
+    | 不得 | bat1 dak1 | 唔准 | must not |
+    | 毋須 | mou4 seoi1 | 唔使 | need not |
+    | 務必 | mou6 bit1 | 記住一定要 | be sure to |
+    | 宜 | ji4 | 最好 | it is advisable |
+
+    ### In documents
+    - 申請人須年滿十八歲 - Applicants must be at least 18.
+    - 會員可免費入場 - Members may enter free of charge.
+    - 場內不得飲食 - No eating or drinking inside.
+    - 毋須預約 - No appointment necessary.
+
+    ### In formal speech
+    Meeting chairs and officials use them aloud: 各部門務必準時提交報告 "All departments must submit reports on time."
+  examples:
+    - { es: "所有參加者必須準時報到。", en: "All participants must register on time." }
+    - { es: "如有任何問題，應盡快通知負責人。", en: "Any problems should be reported to the person in charge promptly." }
+    - { es: "場內不得拍照。", en: "Photography is not permitted inside." }
+    - { es: "請務必帶備身份證明文件。", en: "Please be sure to bring proof of identity." }
+  pitfalls:
+    - "不得 is 'must not', not 'cannot get': 不得入內 'no entry'."
+    - "毋須 means 'need not' (permission not to), not 'must not'."
+  related: [g.notice-language, g.jing-goi-should, g.jiu-must-m-sai]
+  drills:
+    - { es: "學生須穿着校服。", en: "Students must wear school uniform." }
+    - { es: "閣下毋須回覆此信。", en: "You need not reply to this letter." }
+    - { es: "未經許可，不得進入。", en: "No entry without permission." }
+
+- id: g.register-shift
+  level: c1
+  title: "Shifting register for effect"
+  summary: "Skilled speakers switch between 書面語 and 口語 mid-speech: formal for authority and quotation, colloquial for warmth, humour and emphasis."
+  explanation: |
+    Hong Kong speakers constantly move along a scale from formal to colloquial:
+    | Level | Example: "We will deal with it seriously." |
+    |---|---|
+    | very formal | 我們定必嚴肅處理。 |
+    | formal spoken | 我哋一定會嚴肅處理。 |
+    | colloquial | 我哋一定會認真搞掂佢。 |
+
+    ### Why switch?
+    - **Quoting** documents or slogans: keep the written wording, then comment in Cantonese: 個標語寫住「安全第一」，但係實際上呢…
+    - **Authority**: officials use more written forms to sound careful.
+    - **Rapport and humour**: dropping into slang or particles after a formal passage makes a speaker sound human: 講咗咁多，其實好簡單啫.
+    - **Irony**: using news-style language about trivial things (本人今日進行咗食飯) is a common joke.
+
+    ### Matching the audience
+    At a press conference, keep high; at a team meeting, start formal then relax; with clients, formal vocabulary but friendly particles.
+  examples:
+    - { es: "根據公司規定，所有員工須準時上班。即係話，九點前要到喇。", en: "According to company rules, all staff must arrive on time. In other words, be here before nine." }
+    - { es: "講咗咁多，其實重點好簡單啫。", en: "After all that, the point is really simple." }
+    - { es: "本人經過深入研究，決定今晚食火鍋。", en: "After in-depth research, I have decided we'll have hotpot tonight. (mock-formal)" }
+    - { es: "標語寫住「節約用水」，你又成日唔閂水喉。", en: "The sign says 'save water', and you keep leaving the tap running." }
+  pitfalls:
+    - "Shifting mid-sentence without a reason sounds sloppy; shift at clause boundaries with a signal like 即係話 or 講返…."
+    - "Mock-formal humour only works when the listener knows you can speak normally."
+  related: [g.spoken-vs-written, g.speech-structure, g.code-mixing]
+  drills:
+    - { es: "即係話，我哋要早啲出發。", en: "In other words, we need to set off earlier." }
+    - { es: "講返正經嘢，我哋點做好？", en: "Back to serious matters, what should we do?" }
+    - { es: "我哋會認真處理。", en: "We will deal with it seriously." }
+
+- id: g.notice-language
+  level: c1
+  title: "Public notices - 請勿, 嚴禁, 違者, 敬請留意"
+  summary: "Signs and notices use compressed formal language: 請勿吸煙, 嚴禁進入, 違者罰款, 閒人免進, 小心地滑, 敬請留意."
+  explanation: |
+    | Notice | Jyutping | Meaning |
+    |---|---|---|
+    | 請勿吸煙 | cing2 mat6 kap1 jin1 | no smoking |
+    | 嚴禁… | jim4 gam3 | strictly prohibited |
+    | 違者罰款 | wai4 ze2 fat6 fun2 | offenders will be fined |
+    | 閒人免進 | haan4 jan4 min5 zeon3 | staff only |
+    | 小心地滑 | siu2 sam1 dei6 waat6 | caution: slippery floor |
+    | 暫停服務 | zaam6 ting4 fuk6 mou6 | service suspended |
+    | 敬請留意 | ging3 cing2 lau4 ji3 | please note |
+    | 不便之處，敬請原諒 | | sorry for any inconvenience |
+
+    ### Grammar of notices
+    - Subjects dropped: 請勿 + V.
+    - Classical negatives: 勿, 禁, 免.
+    - Penalties: 違者 (offenders) + 可被檢控 / 罰款 + amount: 違者最高可被罰款五千元 "offenders are liable to a maximum fine of $5,000".
+
+    ### Reading aloud
+    Notices are read in literary Cantonese; when explaining one to a friend, paraphrase: 呢度唔准食煙，會罰錢㗎.
+  examples:
+    - { es: "車廂內請勿飲食。", en: "No eating or drinking in the train." }
+    - { es: "嚴禁擅自進入，違者必究。", en: "Unauthorised entry strictly prohibited; offenders will be prosecuted." }
+    - { es: "本店逢星期一休息，敬請留意。", en: "Please note the shop is closed on Mondays." }
+    - { es: "呢度唔准食煙，會罰錢㗎。", en: "You can't smoke here, you'll be fined. (paraphrase)" }
+  pitfalls:
+    - "免 in 閒人免進 means 'not allowed', not 'free of charge' as in 免費."
+    - "勿 is 'do not'; don't confuse it with 物 (thing), which looks similar."
+  related: [g.classical-negatives, g.formal-modals, g.formal-requests]
+  drills:
+    - { es: "請勿觸摸展品。", en: "Please do not touch the exhibits." }
+    - { es: "此處嚴禁泊車。", en: "Parking strictly prohibited here." }
+    - { es: "電梯暫停服務。", en: "Lift out of service." }
+
+- id: g.classical-negatives
+  level: c1
+  title: "Classical negatives - 勿, 毋, 非, 無, 莫, 否"
+  summary: "Formal Chinese keeps classical negatives: 勿 'do not', 毋 'need not / do not', 非 'is not', 無 'without', 莫 'none / do not', 否 'or not'."
+  explanation: |
+    | Negative | Jyutping | Meaning | Example |
+    |---|---|---|---|
+    | 勿 | mat6 | do not (command) | 請勿喧嘩 please keep quiet |
+    | 毋 | mou4 | do not; need not | 毋須 need not, 毋忘 never forget |
+    | 非 | fei1 | is not | 非賣品 not for sale, 非常 extremely |
+    | 無 | mou4 | without, no | 無人 nobody, 無論 no matter |
+    | 莫 | mok6 | none; do not | 莫名其妙 inexplicable |
+    | 否 | fau2 | or not; deny | 是否 whether, 否則 otherwise |
+    | 未 | mei6 | not yet | 未成年 underage |
+
+    ### 是否 and 能否
+    Formal yes/no questions use 是否 (si6 fau2) and 能否 (nang4 fau2) instead of A-not-A: 請問閣下是否同意？ "Do you agree?" (= 你同唔同意？)
+
+    ### 非…不可
+    Classical double negative "must": 非去不可 "absolutely have to go".
+
+    ### In compounds
+    Many everyday words contain them: 非常 "very", 無聊 "boring", 無論 "no matter". Recognising the negative helps you decode new terms: 非法 illegal, 無效 invalid.
+  examples:
+    - { es: "非請勿進。", en: "No entry unless invited." }
+    - { es: "此為非賣品。", en: "This item is not for sale." }
+    - { es: "請問閣下是否需要協助？", en: "Do you need any assistance?" }
+    - { es: "呢個會議我非去不可。", en: "I absolutely have to go to this meeting." }
+  pitfalls:
+    - "是否 is a formal 'whether / is it so'; don't add 嗎: 是否同意？, not 是否同意嗎？"
+    - "非常 means 'extremely', not 'not usual': 非常好 'excellent'."
+  related: [g.written-negation, g.notice-language, g.formal-conditionals]
+  drills:
+    - { es: "未成年人士不得進入。", en: "Minors may not enter." }
+    - { es: "毋忘初心。", en: "Never forget why you started." }
+    - { es: "請問你能否出席？", en: "Will you be able to attend?" }
+
+- id: g.formal-conditionals
+  level: c1
+  title: "Formal conditionals - 如, 若, 倘若…則, 否則"
+  summary: "Written and official language uses 如 / 若 / 倘若 'if', 則 'then', 如有 'should there be', 否則 'otherwise', 除非 'unless'."
+  explanation: |
+    | Formal | Jyutping | Colloquial | Meaning |
+    |---|---|---|---|
+    | 如 / 如果 | jyu4 | 如果 / 要係 | if |
+    | 若 / 倘若 | joek6 / tong2 joek6 | 如果 | if (more literary) |
+    | 則 | zak1 | 就 | then |
+    | 如有 | jyu4 jau5 | 如果有 | should there be |
+    | 否則 | fau2 zak1 | 唔係就 | otherwise |
+    | 除非 | ceoi4 fei1 | 除非 | unless |
+
+    ### Examples
+    - 如有任何查詢，請與本公司聯絡 - Should you have any queries, please contact us.
+    - 倘若天氣惡劣，活動則會取消 - Should the weather be bad, the event will be cancelled.
+    - 請準時出席，否則當棄權論 - Please attend on time; otherwise you'll be deemed to have withdrawn.
+
+    ### 則 needs a subject before it
+    Like 就, 則 comes after the subject of the result: 活動則會取消.
+
+    ### Speaking
+    除非 and 否則 are also common in formal speech: 除非有特殊情況，否則唔可以延期 "Unless there are special circumstances, there can be no extension."
+  examples:
+    - { es: "如有遺失，概不負責。", en: "We accept no responsibility for any loss." }
+    - { es: "若八號風球生效，考試將會延期。", en: "If typhoon signal no. 8 is hoisted, the exam will be postponed." }
+    - { es: "請盡快付款，否則服務會被暫停。", en: "Please pay promptly; otherwise the service will be suspended." }
+    - { es: "除非有醫生證明，否則唔可以請假。", en: "Unless you have a medical certificate, you can't take leave." }
+  pitfalls:
+    - "否則 means 'otherwise', not 'or': 'tea or coffee' is 茶或咖啡 / 茶定咖啡."
+    - "除非 usually pairs with 否則 or 先: 除非你嚟，否則我唔去 / 除非你嚟我先去."
+  related: [g.jyu-gwo-zau, g.ge-waa-conditional, g.classical-negatives]
+  drills:
+    - { es: "如有查詢，請致電本處。", en: "For enquiries, please call this office." }
+    - { es: "快啲出發，否則會遲到。", en: "Set off quickly, otherwise we'll be late." }
+    - { es: "除非落大雨，否則照常舉行。", en: "Unless it pours, it will go ahead as usual." }
+
+- id: g.essay-structure
+  level: c1
+  title: "Organising an essay - 起承轉合"
+  summary: "Classical Chinese composition follows 起承轉合: open (起), develop (承), turn (轉), conclude (合); argumentative essays add 論點, 論據 and 結論."
+  explanation: |
+    ### 起承轉合 (hei2 sing4 zyun3 hap6)
+    | Stage | Role | Typical openers |
+    |---|---|---|
+    | 起 | introduce the topic | 近年來…, 隨着社會發展… |
+    | 承 | develop the idea | 首先…, 例如… |
+    | 轉 | turn: counter-view or new angle | 然而…, 另一方面… |
+    | 合 | conclude | 總括而言…, 由此可見… |
+
+    ### Argumentative essay (議論文)
+    - 論點 (leon6 dim2) thesis: 我認為…
+    - 論據 (leon6 geoi3) evidence: 根據統計…, 以…為例
+    - 結論 (git3 leon6) conclusion: 由此可見 (jau4 ci2 ho2 gin3) "it can thus be seen".
+
+    ### Register
+    School and newspaper essays are written in 書面語. An opinion column (評論) may include colloquial quotes for colour, set in 「」.
+
+    ### Paragraph links
+    Each paragraph opens with a connector that shows its role: 首先, 其次, 此外, 然而, 總括而言.
+  examples:
+    - { es: "近年來，澳門旅遊業發展迅速。", en: "In recent years, Macau's tourism industry has developed rapidly." }
+    - { es: "以大三巴為例，每日都有大批遊客。", en: "Take the Ruins of St Paul's: there are crowds of visitors every day." }
+    - { es: "然而，遊客過多亦帶來唔少問題。", en: "However, too many tourists also bring quite a few problems." }
+    - { es: "由此可見，城市發展同文化保育必須取得平衡。", en: "It can thus be seen that urban development and heritage conservation must be balanced." }
+  pitfalls:
+    - "Don't skip the 轉 stage in argumentative writing: acknowledging the other side makes the conclusion stronger."
+    - "Keep colloquial words out of the essay body; quote speech in 「」 if you need it."
+  related: [g.written-conjunctions, g.parallelism, g.summing-up]
+  drills:
+    - { es: "總括而言，我支持呢個建議。", en: "In summary, I support this proposal." }
+    - { es: "另一方面，我哋亦要考慮居民嘅需要。", en: "On the other hand, we must also consider residents' needs." }
+    - { es: "根據統計，人口不斷老化。", en: "According to statistics, the population keeps ageing." }
+
+- id: g.parallelism
+  level: c1
+  title: "Parallelism - 排比 and 對偶"
+  summary: "Chinese rhetoric prizes balanced structures: 排比 (three or more parallel clauses) and 對偶 (matched pairs), from essays to slogans and couplets."
+  explanation: |
+    ### 排比 (paai4 bei2): parallel series
+    Three or more clauses with the same structure build momentum:
+    - 我哋要保護海洋，保護山林，保護我哋嘅下一代 - We must protect the sea, protect the forests, protect our next generation.
+
+    ### 對偶 (deoi3 ngau5): matched pairs
+    Two lines of equal length and matching grammar, often with contrasting meaning:
+    - 有則改之，無則加勉 - If you have faults, correct them; if not, keep striving.
+    - Spring couplets (揮春 / 對聯): 一帆風順年年好，萬事如意步步高.
+
+    ### In speeches and slogans
+    Hong Kong slogans and adverts use 四字 + 四字 pairs: 安全至上，以人為本 "Safety first, people-centred."
+
+    ### Why it works in Cantonese
+    Paired lines also balance **tones** (平仄, see C2); couplets are traditionally written so that the last syllable of the first line is oblique and of the second is level.
+  examples:
+    - { es: "多一分耐性，少一分衝突。", en: "A little more patience, a little less conflict." }
+    - { es: "佢哋嘅努力，佢哋嘅汗水，佢哋嘅堅持，大家都睇得到。", en: "Their effort, their sweat, their perseverance - everyone can see them." }
+    - { es: "家和萬事興。", en: "A harmonious family prospers in everything." }
+    - { es: "今日嘅付出，係聽日嘅收穫。", en: "Today's effort is tomorrow's harvest." }
+  pitfalls:
+    - "Parallel clauses must really match in structure; mixing lengths weakens the effect."
+    - "Overusing 排比 in short texts sounds like a political slogan."
+  related: [g.essay-structure, g.ping-zak, g.written-emphasis]
+  drills:
+    - { es: "講得出，做得到。", en: "What we say, we do." }
+    - { es: "少啲抱怨，多啲行動。", en: "Less complaining, more action." }
+    - { es: "安全至上，以人為本。", en: "Safety first, people first." }
+
+- id: g.written-emphasis
+  level: c1
+  title: "Formal emphasis - 正是, 乃是, 何嘗不是, 非…不可"
+  summary: "Written emphasis uses 正是 'precisely', 乃是 'is indeed', 無疑 'undoubtedly', 何嘗不是 'is it not also', 不得不 'have no choice but to'."
+  explanation: |
+    | Form | Jyutping | Meaning |
+    |---|---|---|
+    | 正是 | zing3 si6 | precisely, exactly |
+    | 乃是 | naai5 si6 | is indeed |
+    | 無疑 | mou4 ji4 | undoubtedly |
+    | 何嘗不是 | ho4 soeng4 bat1 si6 | is it not also (= it also is) |
+    | 不得不 | bat1 dak1 bat1 | have no choice but to |
+    | 唯有 | wai4 jau5 | only (can), have to |
+    | 尤其是 | jau4 kei4 si6 | especially |
+
+    ### Examples
+    - 保育正是為咗下一代 - Conservation is precisely for the next generation.
+    - 呢個無疑係一個重要嘅決定 - This is undoubtedly an important decision.
+    - 挫折何嘗不是一種學習 - Isn't setback also a kind of learning? (= it is)
+    - 面對競爭，企業不得不改變 - Facing competition, businesses have no choice but to change.
+
+    ### Spoken equivalents
+    正是 ↔ 就係, 無疑 ↔ 梗係 / 肯定, 不得不 ↔ 唔…唔得 / 冇得揀.
+  examples:
+    - { es: "語言正是文化嘅載體。", en: "Language is precisely the vehicle of culture." }
+    - { es: "呢件事無疑會影響市民生活。", en: "This will undoubtedly affect people's lives." }
+    - { es: "失敗何嘗不是一個機會？", en: "Isn't failure also an opportunity?" }
+    - { es: "由於成本上升，公司不得不加價。", en: "With rising costs, the company has had no choice but to raise prices." }
+  pitfalls:
+    - "何嘗不是 is a positive statement in question form; it doesn't mean 'it never was'."
+    - "These are written-style; in a chat, 就係 and 梗係 sound natural."
+  related: [g.essay-structure, g.parallelism, g.classical-negatives]
+  drills:
+    - { es: "呢個正是我想講嘅。", en: "This is exactly what I wanted to say." }
+    - { es: "我哋唯有等。", en: "We can only wait." }
+    - { es: "教育尤其重要。", en: "Education is especially important." }

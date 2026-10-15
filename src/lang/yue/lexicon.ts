@@ -112,7 +112,9 @@ export function validateText(text: string): string[] {
   return missing.length ? [`no Jyutping reading for ${missing.join('')}`] : []
 }
 
-/** A vocabulary reading must use, for each character, one of its dictionary readings. */
+const PARTICLES = new Set([...'呀啦喇吖咋喎囉啩嘛咩㗎嗎呢噃啊哦喔咯嘅嚟囖噉添'])
+
+/** A vocabulary reading must use, for each character, one of its dictionary readings (or a changed tone). */
 export function validateReading(lemma: string, jp: string): string[] {
   const chars = [...lemma].filter((c) => HAN.test(c))
   const syl = jp.split(' ')
@@ -120,7 +122,15 @@ export function validateReading(lemma: string, jp: string): string[] {
   const issues: string[] = []
   chars.forEach((c, i) => {
     const r = charReadings(c)
-    if (r && !r.includes(syl[i]!)) issues.push(`${c} is read ${r.join('/')}, not ${syl[i]}`)
+    const sy = syl[i]!
+    if (!r || r.includes(sy)) return
+    const base = sy.replace(/[1-6]$/, '')
+    const sameBase = r.some((x) => x.replace(/[1-6]$/, '') === base)
+    // Changed tones (變調): a syllable may rise to tone 2 or 1 in compounds (陳太 taai2, 膠袋 doi2).
+    if (sameBase && /[12]$/.test(sy)) return
+    // Sentence-final particles carry many tones (呀 aa1/aa3/aa4, 啦 laa1/laa3).
+    if (sameBase && PARTICLES.has(c)) return
+    issues.push(`${c} is read ${r.join('/')}, not ${sy}`)
   })
   return issues
 }

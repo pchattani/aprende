@@ -46,6 +46,9 @@ describe('Jyutping', () => {
     expect(validateReading('好', 'hou5')[0]).toMatch(/not hou5/)
     expect(validateReading('你好', 'nei5')[0]).toMatch(/syllables/)
     expect(validateText('你好')).toEqual([])
+    // changed tones (變調) and particle tones are accepted
+    expect(validateReading('陳太', 'can4 taai2')).toEqual([])
+    expect(validateReading('呀', 'aa3')).toEqual([])
   })
 })
 

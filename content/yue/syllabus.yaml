@@ -1,0 +1,678 @@
+# The whole journey, A1 -> C2, in Hong Kong Cantonese (traditional characters,
+# colloquial written Cantonese). Each unit lists the grammar points it teaches
+# (ids resolve to notes in grammar/<level>.yaml) and CEFR can-do statements.
+# `authored: true` means units/<level>/<unit>.yaml exists with lessons.
+# Journey: A1 Hong Kong Island, A2 Kowloon, B1 New Territories,
+# B2 Outlying Islands, C1 Macau, C2 Guangzhou & Foshan.
+levels:
+  - id: a1
+    title: A1
+    name: Breakthrough
+    description: Understand and use everyday Cantonese expressions and very basic phrases. Introduce yourself, ask and answer simple personal questions, count, shop and order food, and get around Hong Kong Island when people speak slowly.
+    wordTarget: 700
+    canDo:
+      - Greet people, introduce myself and others, and say where I am from and where I live.
+      - Count, give my phone number and age, and use the right measure word for common things.
+      - Ask prices, pay and shop at a market; order dim sum at a yum cha restaurant.
+      - Tell the time, give dates and describe my family and my daily routine.
+      - Ask for directions, take the MTR and talk about the weather.
+    units:
+      - id: a1.u01
+        title: 打招呼同自我介紹
+        subtitle: Greetings and introductions
+        authored: true
+        canDo:
+          - "Greet people and say goodbye at different times of day."
+          - "Say my name and surname and ask someone theirs."
+          - 'Say who I am and ask "and you?".'
+        grammar: [g.greetings, g.personal-pronouns, g.hai6-identity, g.name-giu-sing, g.ne-follow-up]
+      - id: a1.u02
+        title: 我喺香港
+        subtitle: Being, being somewhere, having - 係, 喺, 有
+        authored: true
+        canDo:
+          - "Say where I am and where I live."
+          - "Say what I have and do not have."
+          - "Make a sentence negative and turn it into a yes/no question."
+        grammar: [g.hai2-location, g.jau-have, g.m-negation, g.mou-negation, g.maa-questions]
+      - id: a1.u03
+        title: 我哋係朋友
+        subtitle: We, you and they - plurals and yes/no questions
+        authored: true
+        canDo:
+          - "Talk about groups of people with 我哋, 你哋, 佢哋."
+          - "Say where people are from and which languages they speak."
+          - "Ask yes/no questions with 係唔係 and 去唔去."
+        grammar: [g.dei-plural, g.dou-also, g.a-not-a-questions, g.nationality-language]
+      - id: a1.u04
+        title: 數字同電話號碼
+        subtitle: Numbers, ages and phone numbers
+        authored: true
+        canDo:
+          - "Count from one to ninety-nine."
+          - "Give my phone number and age and ask for someone else's."
+          - 'Ask "how many?" with 幾.'
+        grammar: [g.numbers-1-99, g.loeng-vs-ji, g.phone-numbers, g.age, g.gei-how-many]
+      - id: a1.u05
+        title: 一個、兩隻、三本
+        subtitle: Measure words, this and that
+        authored: true
+        canDo:
+          - "Count things with the right measure word."
+          - "Point things out with 呢個 and 嗰個."
+          - 'Talk about "my phone" and "some books" the Cantonese way.'
+        grammar: [g.classifiers-intro, g.common-classifiers, g.demonstratives, g.classifier-as-the, g.di-some]
+      - id: a1.u06
+        title: 去街市買嘢
+        subtitle: Money and shopping at the market
+        authored: true
+        canDo:
+          - "Understand prices in dollars and cents."
+          - "Ask how much something costs and say how many I want."
+          - "Count into the hundreds and thousands."
+        grammar: [g.big-numbers, g.money, g.prices-gei-do-cin, g.jiu-want]
+      - id: a1.u07
+        title: 而家幾點？
+        subtitle: Time, days and dates
+        authored: true
+        canDo:
+          - "Tell and ask the time."
+          - "Say the day of the week and the date."
+          - "Say when I do things, with the time before the verb."
+        grammar: [g.clock-time, g.days-weeks, g.dates, g.time-before-verb]
+      - id: a1.u08
+        title: 我屋企人
+        subtitle: My family
+        authored: true
+        canDo:
+          - "Introduce the members of my family."
+          - "Describe people with simple adjectives."
+          - "Ask who, what, where and when."
+        grammar: [g.ge-possessive, g.kinship-terms, g.adjective-predicates, g.question-words]
+      - id: a1.u09
+        title: 去飲茶
+        subtitle: Yum cha and food
+        authored: true
+        canDo:
+          - "Order dim sum and drinks and ask for the bill."
+          - "Thank people correctly with 唔該 and 多謝."
+          - "Say what I like and don't like."
+        grammar: [g.mgoi-doze, g.zung-ji-like, g.bei-give, g.particles-aa-laa]
+      - id: a1.u10
+        title: 坐港鐵、問路
+        subtitle: Directions and the MTR
+        authored: true
+        canDo:
+          - "Ask how to get somewhere and understand simple directions."
+          - "Say where things are using position words."
+          - "Say how I travel - by MTR, bus, tram or ferry."
+        grammar: [g.position-words, g.heoi-lai, g.transport-verbs, g.asking-directions]
+      - id: a1.u11
+        title: 我嘅一日
+        subtitle: My daily routine
+        authored: true
+        canDo:
+          - "Describe my day in order."
+          - "Say how often I do things."
+          - "Say what I do when something happens."
+        grammar: [g.serial-verbs, g.frequency-adverbs, g.sin-zoi-sequence, g.ge-si-hau]
+      - id: a1.u12
+        title: 今日天氣點呀？
+        subtitle: The weather and describing things
+        authored: true
+        canDo:
+          - "Talk about the weather and the seasons in Hong Kong."
+          - "Say how hot, cold or tired I am - very, a bit, too."
+          - "Describe things with adjective + 嘅 + noun."
+        grammar: [g.weather, g.degree-adverbs, g.jau-di-a-bit, g.adj-ge-noun]
+
+  - id: a2
+    title: A2
+    name: Waystage
+    description: Understand sentences and frequent expressions about everyday life. Talk about what you have done, are doing and have experienced, compare things, say what you can and must do, and soften what you say with sentence-final particles while exploring Kowloon.
+    wordTarget: 1500
+    canDo:
+      - Say what I have done, what I am doing and what I have never done, with 咗, 緊 and 過.
+      - Compare places, prices and people with 比 and 過.
+      - Say what I can, may, know how to and must do with 會, 可以, 識 and 要.
+      - Describe how well and how fast something is done, and whether I manage to do it.
+      - Make and answer invitations, phone calls and visits to the doctor using natural particles.
+    units:
+      - id: a2.u01
+        title: 你食咗飯未呀？
+        subtitle: Done and not yet - 咗 and 未
+        authored: true
+        canDo:
+          - "Say what I have already done today."
+          - 'Ask and answer "have you … yet?" with 未.'
+          - "Say what I did not do with 冇."
+        grammar: [g.zo-perfective, g.mei-questions, g.mou-past-negation, g.ji-ging-already]
+      - id: a2.u02
+        title: 我做緊嘢
+        subtitle: In progress - 緊, 住 and 喺度
+        authored: true
+        canDo:
+          - "Say what I and others are doing right now."
+          - "Describe ongoing states like sitting, wearing and holding."
+          - "Explain on the phone why I can't talk."
+        grammar: [g.gan-progressive, g.zyu-continuous, g.hai-dou-progressive]
+      - id: a2.u03
+        title: 你去過日本未呀？
+        subtitle: Experiences - 過
+        authored: true
+        canDo:
+          - "Talk about places I have been to and things I have tried."
+          - "Say I have never done something."
+          - "Choose between 咗 and 過."
+        grammar: [g.gwo-experiential, g.cang-ging, g.zo-vs-gwo]
+      - id: a2.u04
+        title: 旺角定銅鑼灣好？
+        subtitle: Comparisons - 比 and 過
+        authored: true
+        canDo:
+          - "Compare two things with 比 and with adjective + 過."
+          - "Say something is not as … as something else."
+          - "Say what is the best, the cheapest or the same."
+        grammar: [g.bei2-comparison, g.adj-gwo-comparison, g.mou-gam-not-as, g.zeoi-superlative, g.jat-joeng-same]
+      - id: a2.u05
+        title: 我識講廣東話
+        subtitle: Can, may, know how to, must - 會, 可以, 識, 要
+        authored: true
+        canDo:
+          - "Say what will probably happen."
+          - "Ask for and give permission."
+          - "Say what I know how to do and what I must or needn't do."
+        grammar: [g.wui-will, g.ho-ji-can-may, g.sik-know-how, g.jiu-must-m-sai]
+      - id: a2.u06
+        title: 你講得好好
+        subtitle: Verb complements - 得, 到, 吓
+        authored: true
+        canDo:
+          - "Say how well or how fast someone does something."
+          - "Say whether I managed to find, see or buy something."
+          - "Suggest having a quick look or a quick try."
+        grammar: [g.dak-descriptive, g.dou-attain, g.potential-complements, g.haa-briefly]
+      - id: a2.u07
+        title: 啦、喇、吖、咋
+        subtitle: Sentence-final particles
+        authored: true
+        canDo:
+          - "Soften requests and suggestions with 啦."
+          - "Announce a change with 喇."
+          - "Make offers with 吖 and play things down with 咋 and 啫."
+        grammar: [g.laa1-suggestion, g.laa3-change, g.aa1-offer, g.zaa3-ze1-only]
+      - id: a2.u08
+        title: 睇醫生
+        subtitle: Health and seeing a doctor
+        authored: true
+        canDo:
+          - "Say where it hurts and how I feel."
+          - "Give reasons with 因為…所以…"
+          - 'Give advice and make "if" sentences.'
+        grammar: [g.jan-wai-so-ji, g.jyu-gwo-zau, g.body-pain, g.zeoi-hou-better]
+      - id: a2.u09
+        title: 去旅行
+        subtitle: Travel plans
+        authored: true
+        canDo:
+          - "Talk about my travel plans."
+          - "Say how long I stayed or will stay somewhere."
+          - "Say I will do something again or did it again."
+        grammar: [g.daa-syun-plans, g.duration, g.zoi-vs-jau]
+      - id: a2.u10
+        title: 打電話
+        subtitle: Phone calls
+        authored: true
+        canDo:
+          - "Answer the phone and ask for someone."
+          - "Leave a message and ask someone to call back."
+          - "Ask someone to help me do something."
+        grammar: [g.phone-phrases, g.bong-help, g.giu-someone]
+      - id: a2.u11
+        title: 一齊去食飯好唔好？
+        subtitle: Invitations and suggestions
+        authored: true
+        canDo:
+          - "Invite someone and suggest a time and place."
+          - "Accept or decline politely."
+          - "Tell someone not to do something."
+        grammar: [g.hou-m-hou-suggestions, g.jat-cai-together, g.m-hou-dont]
+      - id: a2.u12
+        title: 上個週末
+        subtitle: Last weekend - sequencing events
+        authored: true
+        canDo:
+          - "Tell what I did before and after something."
+          - "Link events with 就."
+          - "Say I only did one thing with 淨係."
+        grammar: [g.ji-cin-ji-hau, g.zau-then, g.zing-hai-only]
+
+  - id: b1
+    title: B1
+    name: Threshold
+    description: Deal with most situations in Hong Kong and the New Territories. Produce connected speech on familiar topics, describe results and movement precisely with verb complements, use passives and 將, give opinions with reasons, tell stories and follow the main points of the news.
+    wordTarget: 3000
+    canDo:
+      - Say whether actions were finished, understood or done completely with resultative complements.
+      - Describe movement in, out, up, down and back with directional complements.
+      - Say what happened to me with 畀 and what I did to something with 將.
+      - Describe people, places and things with relative clauses.
+      - Give and justify opinions, report what others said and tell a story with a twist.
+    units:
+      - id: b1.u01
+        title: 做完功課先出街
+        subtitle: Finishing things - resultative complements
+        authored: true
+        canDo:
+          - "Say I have finished, understood or got something wrong."
+          - "Say something is all gone or all done with 晒."
+          - "Say I can't finish or can't understand something."
+        grammar: [g.resultative-complements, g.jyun-hou, g.saai-all, g.potential-resultatives]
+      - id: b1.u02
+        title: 行上大帽山
+        subtitle: Up and down - directional complements
+        authored: true
+        canDo:
+          - "Describe walking up, down, in and out."
+          - "Say I am going back or coming back with 返."
+          - "Say I will join in or do something too with 埋."
+        grammar: [g.directional-complements, g.compound-directionals, g.faan-back, g.maai-closer]
+      - id: b1.u03
+        title: 我部手機畀人偷咗
+        subtitle: Things that happen to you - 畀 passives
+        authored: true
+        canDo:
+          - "Say what happened to me or my things."
+          - "Ask someone to let me do something with 畀."
+          - "Report an incident to the police."
+        grammar: [g.bei-passive, g.bei-permissive, g.jau-jan-someone]
+      - id: b1.u04
+        title: 將啲嘢執好
+        subtitle: Tidying up - 將, 搵 and 攞
+        authored: true
+        canDo:
+          - "Say what I did to an object with 將."
+          - "Say what I use to do something with 攞 / 搵…嚟."
+          - "Give brisk instructions like 食咗佢."
+        grammar: [g.zoeng-disposal, g.wan-lo-use, g.keoi-final]
+      - id: b1.u05
+        title: 我住嘅屋邨
+        subtitle: Where I live - relative clauses
+        authored: true
+        canDo:
+          - "Describe my flat and my estate."
+          - 'Say "the person who…" and "the thing that…" with 嘅.'
+          - "Use a measure word instead of 嘅 in relative clauses."
+        grammar: [g.relative-ge, g.relative-classifier, g.ge-nominaliser]
+      - id: b1.u06
+        title: 我覺得…
+        subtitle: Giving opinions
+        authored: true
+        canDo:
+          - "Give my opinion and ask for others'."
+          - "Say what should be done."
+          - "Concede a point and make a counter-suggestion."
+        grammar: [g.gok-dak-opinions, g.seoi-jin-daan-hai, g.jing-goi-should, g.bat-jyu-suggest]
+      - id: b1.u07
+        title: 返工
+        subtitle: At work
+        authored: true
+        canDo:
+          - "Say I do two things at the same time."
+          - "Say what has to happen first."
+          - "Say what has just happened at the office."
+        grammar: [g.jat-bin-while, g.sin-final, g.ngaam-ngaam-just]
+      - id: b1.u08
+        title: 睇新聞
+        subtitle: Following the news
+        authored: true
+        canDo:
+          - "Report what people said."
+          - "Stress when, where or how something happened with 係…嘅."
+          - "Say what a report is about."
+        grammar: [g.reported-speech, g.hai-ge-focus, g.gwaan-jyu-about]
+      - id: b1.u09
+        title: 講故仔
+        subtitle: Telling stories
+        authored: true
+        canDo:
+          - "Open a story and move it along."
+          - "Reveal a twist with 原來."
+          - "Say how things finally turned out."
+        grammar: [g.story-openers, g.jyun-loi-turns-out, g.git-gwo-finally]
+      - id: b1.u10
+        title: 圍村食盆菜
+        subtitle: Festivals and village traditions
+        authored: true
+        canDo:
+          - "Talk about festivals and customs in the New Territories."
+          - 'Add "as well!" with 添.'
+          - "Say whether there is a chance to do something with 有得 and 冇得."
+        grammar: [g.tim-too, g.ge-assertion, g.jau-dak-chance]
+      - id: b1.u11
+        title: 去西貢行山
+        subtitle: The countryside - conditions and probability
+        authored: true
+        canDo:
+          - "Make plans that depend on the weather."
+          - 'Say "even if …" with 就算…都.'
+          - "Say how sure I am that something will happen."
+        grammar: [g.ge-waa-conditional, g.zau-syun-even-if, g.probability]
+      - id: b1.u12
+        title: 我嘅將來
+        subtitle: Plans, hopes and purpose
+        authored: true
+        canDo:
+          - "Say why I am doing something with 為咗."
+          - "Talk about my hopes and dreams."
+          - "Say something is still the case, or even more so, with 仲."
+        grammar: [g.wai-zo-purpose, g.hei-mong-hope, g.zung-still]
+
+  - id: b2
+    title: B2
+    name: Vantage
+    description: Interact with fluency and spontaneity with native speakers. Read attitude and stance in the particles people use, express emphasis with 連…都, 一…就 and 越…越, use everyday idioms, argue a point in a debate and talk about Hong Kong culture on the Outlying Islands.
+    wordTarget: 5000
+    canDo:
+      - Understand and use the attitude particles 喎, 囉, 啩, 嘛, 咩 and 㗎.
+      - Express emphasis, immediacy and escalation with 連…都, 一…就 and 越…越.
+      - Use common Cantonese idioms and colloquial expressions naturally.
+      - Take part in a debate, add points, concede and sum up.
+      - Follow films, radio phone-ins and conversations about culture and the environment.
+    units:
+      - id: b2.u01
+        title: 原來係噉㗎
+        subtitle: Attitude particles I - 喎 and 㗎
+        authored: true
+        canDo:
+          - "Pass on what someone else said with 喎."
+          - "React to something I've just noticed with 喎."
+          - "Explain and insist with 㗎."
+        grammar: [g.wo5-hearsay, g.wo3-noticing, g.gaa3-explaining]
+      - id: b2.u02
+        title: 梗係啦，咁簡單嘛
+        subtitle: Attitude particles II - 囉, 嘛 and 咩
+        authored: true
+        canDo:
+          - "Say \"that's just how it is\" with 囉."
+          - "Point out the obvious with 嘛."
+          - "Show surprise or disbelief with 咩."
+        grammar: [g.lo1-obvious, g.maa3-as-you-know, g.me1-surprise]
+      - id: b2.u03
+        title: 應該係噉啩
+        subtitle: Guessing and particle combinations
+        authored: true
+        canDo:
+          - "Make a tentative guess with 啩."
+          - "Understand particle clusters like 㗎喇 and 咋嘛."
+          - "Hear how the tone of a particle changes its meaning."
+        grammar: [g.gwaa3-guess, g.particle-clusters, g.particle-tones]
+      - id: b2.u04
+        title: 連阿婆都識用
+        subtitle: Even - 連…都 and universal 都
+        authored: true
+        canDo:
+          - 'Say "even …" with 連…都.'
+          - 'Say "not a single one" with 一…都唔/冇.'
+          - 'Say "everyone", "everything" and "anywhere" with question word + 都.'
+        grammar: [g.lin-dou-even, g.jat-dou-negative, g.wh-dou-every]
+      - id: b2.u05
+        title: 一落船就食海鮮
+        subtitle: As soon as, the more, as long as
+        authored: true
+        canDo:
+          - "Say one thing happens as soon as another does."
+          - "Say the more …, the more … ."
+          - "State a minimum condition with 只要…就."
+        grammar: [g.jat-zau-as-soon-as, g.jyut-jyut-the-more, g.zi-jiu-zau-as-long-as]
+      - id: b2.u06
+        title: 長洲太平清醮
+        subtitle: The Cheung Chau Bun Festival - customs and traditions
+        authored: true
+        canDo:
+          - "Describe a festival and its customs."
+          - 'Say "no matter …" with 無論…都.'
+          - "Add and exclude items with 除咗…之外 and 不但…而且."
+        grammar: [g.mou-leon-dou-no-matter, g.ceoi-zo-apart-from, g.bat-daan-not-only]
+      - id: b2.u07
+        title: 炒魷魚同食白果
+        subtitle: Everyday idioms and set expressions
+        authored: true
+        canDo:
+          - "Understand and use common colloquial idioms."
+          - "Use three-character expressions naturally."
+          - "Describe feelings with body-part idioms."
+        grammar: [g.colloquial-idioms, g.three-character-idioms, g.body-idioms]
+      - id: b2.u08
+        title: 辯論
+        subtitle: Debate and argument
+        authored: true
+        canDo:
+          - "Structure and add points to an argument."
+          - "Concede a point while holding my position."
+          - "Sum up and use rhetorical questions."
+        grammar: [g.adding-points, g.concessive-ji-sai, g.summing-up, g.rhetorical-questions]
+      - id: b2.u09
+        title: 南丫島嘅環保生活
+        subtitle: Lamma Island - environment, cause and effect
+        authored: true
+        canDo:
+          - "Say what causes or caused something."
+          - "Say something made someone feel or do something with 令 and 搞到."
+          - "Say what we do so as to avoid a problem."
+        grammar: [g.causatives-ling-gaau-dou, g.jau-jyu-because, g.ji-min-so-as-not]
+      - id: b2.u10
+        title: 大嶼山大佛
+        subtitle: Lantau - beliefs, change and appearances
+        authored: true
+        canDo:
+          - "Say what something seems like."
+          - "State a necessary condition with 只有…先."
+          - "Describe how things have changed with 變成 and 變得."
+        grammar: [g.hou-ci-seem, g.zi-jau-sin-only-if, g.bin-sing-become]
+      - id: b2.u11
+        title: 坪洲慢活
+        subtitle: Peng Chau - feelings and intensity
+        authored: true
+        canDo:
+          - "Describe how strongly I feel with V/adj + 到."
+          - "Use 咁 and 噉 correctly."
+          - "Exclaim with 有幾…呀 and deny with 冇幾…"
+        grammar: [g.dou-extent, g.gam3-vs-gam2, g.jau-gei-how]
+      - id: b2.u12
+        title: 港式文化
+        subtitle: Hong Kong pop culture and code-mixing
+        authored: true
+        canDo:
+          - "Mix English into Cantonese the way Hong Kongers do."
+          - "Use vivid reduplicated adjectives like 紅卜卜."
+          - "Talk about films, music and food culture."
+        grammar: [g.code-mixing, g.abb-adjectives, g.adj-reduplication]
+
+  - id: c1
+    title: C1
+    name: Effective operational proficiency
+    description: Move between spoken Cantonese (口語) and written Chinese (書面語) read aloud in Cantonese. Understand news, notices and business documents, use formal and polite registers, deploy 成語 appropriately and speak at meetings and on formal occasions in Macau and beyond.
+    wordTarget: 8000
+    canDo:
+      - Convert between colloquial Cantonese and standard written Chinese, and read written Chinese aloud in Cantonese.
+      - Follow and report news and commentary, using hedging and reporting verbs.
+      - Use honorifics, humble forms and polite formulae in formal and business settings.
+      - Use 成語 and classical function words appropriately in speech and writing.
+      - Understand official notices and write structured, persuasive texts.
+    units:
+      - id: c1.u01
+        title: 口語同書面語
+        subtitle: Spoken Cantonese and written Chinese
+        authored: true
+        canDo:
+          - "Recognise the written-Chinese equivalent of common colloquial words."
+          - "Convert negation and aspect between the two registers."
+          - "Read a written sentence aloud in Cantonese."
+        grammar: [g.spoken-vs-written, g.written-negation, g.written-aspect]
+      - id: c1.u02
+        title: 讀新聞
+        subtitle: Reading the news aloud
+        authored: true
+        canDo:
+          - "Choose literary or colloquial readings of characters."
+          - "Follow the register of a news bulletin."
+          - "Understand formal passives with 被, 遭 and 受到."
+        grammar: [g.literary-colloquial-readings, g.news-register, g.formal-passive]
+      - id: c1.u03
+        title: 正式場合
+        subtitle: Formal occasions and polite speech
+        authored: true
+        canDo:
+          - "Address people respectfully with honorifics."
+          - "Make formal requests and apologies."
+          - "Refer to myself and my company with humble forms."
+        grammar: [g.honorifics, g.formal-requests, g.humble-forms]
+      - id: c1.u04
+        title: 四字成語
+        subtitle: Four-character idioms
+        authored: true
+        canDo:
+          - "Understand how 成語 are built."
+          - "Use 成語 inside a colloquial sentence."
+          - "Use Cantonese four-character set phrases."
+        grammar: [g.chengyu-structure, g.chengyu-in-speech, g.four-character-colloquial]
+      - id: c1.u05
+        title: 澳門歷史城區
+        subtitle: Macau's history - narrating in a formal register
+        authored: true
+        canDo:
+          - "Narrate historical events with formal time expressions."
+          - "Link ideas with written conjunctions."
+          - "Understand classical function words like 之, 其 and 此."
+        grammar: [g.formal-time, g.written-conjunctions, g.classical-function-words]
+      - id: c1.u06
+        title: 做生意
+        subtitle: Business Cantonese
+        authored: true
+        canDo:
+          - "Write and read formal business emails."
+          - "Negotiate politely and soften demands."
+          - "Talk about percentages, discounts and growth."
+        grammar: [g.business-correspondence, g.negotiation-softeners, g.percent-discounts]
+      - id: c1.u07
+        title: 傳媒同評論
+        subtitle: Media and commentary
+        authored: true
+        canDo:
+          - "Hedge claims and signal sources."
+          - "Recognise formal nominalised verbs like 進行 and 作出."
+          - "Report statements with precise reporting verbs."
+        grammar: [g.hedging, g.nominalisation, g.reporting-verbs]
+      - id: c1.u08
+        title: 開會同演講
+        subtitle: Meetings and speeches
+        authored: true
+        canDo:
+          - "Open, structure and close a speech."
+          - "Use formal modal verbs of obligation and permission."
+          - "Shift register between formal and colloquial for effect."
+        grammar: [g.speech-structure, g.formal-modals, g.register-shift]
+      - id: c1.u09
+        title: 告示同公文
+        subtitle: Notices and official documents
+        authored: true
+        canDo:
+          - "Understand public notices and regulations."
+          - "Read classical negatives like 勿, 毋 and 非."
+          - "Understand formal conditionals with 如, 若 and 則."
+        grammar: [g.notice-language, g.classical-negatives, g.formal-conditionals]
+      - id: c1.u10
+        title: 寫評論文章
+        subtitle: Writing an opinion piece
+        authored: true
+        canDo:
+          - "Organise an essay in the 起承轉合 pattern."
+          - "Use parallelism for rhetorical effect."
+          - "Emphasise points with formal emphatic structures."
+        grammar: [g.essay-structure, g.parallelism, g.written-emphasis]
+
+  - id: c2
+    title: C2
+    name: Mastery
+    description: Understand Cantonese in every register, from street slang and puns to opera, Cantopop lyrics and Tang poetry read aloud. Appreciate wordplay, 歇後語 and folk rhymes, and recognise the differences between Hong Kong and Guangzhou Cantonese on the final leg in Guangzhou and Foshan.
+    wordTarget: 12000
+    canDo:
+      - Understand current slang and colloquial intensifiers and know when they fit.
+      - Understand puns, taboo euphemisms and 歇後語, and play with them myself.
+      - Appreciate how tones shape Cantopop melodies and Cantonese opera.
+      - Read Tang poems and folk rhymes aloud in Cantonese and explain their sound patterns.
+      - Recognise Guangzhou usage and the history of written Cantonese.
+    units:
+      - id: c2.u01
+        title: 潮語同俚語
+        subtitle: Slang and street talk
+        authored: true
+        canDo:
+          - "Understand current Hong Kong slang."
+          - "Use slang intensifiers appropriately."
+          - "Explain how new slang is formed."
+        grammar: [g.slang-modern, g.slang-intensifiers, g.slang-word-formation]
+      - id: c2.u02
+        title: 諧音同避忌
+        subtitle: Puns, taboos and sound play
+        authored: true
+        canDo:
+          - "Understand homophone puns in greetings and advertising."
+          - "Use euphemisms that avoid unlucky sounds."
+          - 'Recognise "lazy sounds" in casual speech.'
+        grammar: [g.homophone-puns, g.taboo-euphemisms, g.lazy-sounds]
+      - id: c2.u03
+        title: 歇後語同俗語
+        subtitle: Two-part sayings and proverbs
+        authored: true
+        canDo:
+          - "Understand how 歇後語 work and complete common ones."
+          - "Decode the puns inside 歇後語."
+          - "Use Cantonese proverbs in conversation."
+        grammar: [g.xiehouyu, g.xiehouyu-puns, g.cantonese-proverbs]
+      - id: c2.u04
+        title: 佛山粵劇
+        subtitle: Cantonese opera in Foshan
+        authored: true
+        canDo:
+          - "Understand the language and conventions of Cantonese opera."
+          - "Recognise classical pronouns in libretti."
+          - "Use everyday expressions that come from the opera stage."
+        grammar: [g.opera-language, g.classical-pronouns, g.opera-idioms]
+      - id: c2.u05
+        title: 廣東歌
+        subtitle: Cantopop and lyric writing
+        authored: true
+        canDo:
+          - "Explain how Cantonese tones must match the melody."
+          - "Recognise the register of Cantopop lyrics."
+          - "Find rhymes in Cantonese."
+        grammar: [g.tone-melody, g.lyrics-register, g.cantonese-rhyme]
+      - id: c2.u06
+        title: 用粵語讀唐詩
+        subtitle: Tang poems read in Cantonese
+        authored: true
+        canDo:
+          - "Explain how entering tones survive in Cantonese."
+          - "Identify level and oblique tones in a line of verse."
+          - "Understand basic classical grammar in a poem."
+        grammar: [g.entering-tones, g.ping-zak, g.classical-grammar]
+      - id: c2.u07
+        title: 廣州西關
+        subtitle: Old Guangzhou - Cantonese across the border
+        authored: true
+        canDo:
+          - "Recognise differences between Guangzhou and Hong Kong Cantonese."
+          - "Notice Mandarin influence on vocabulary."
+          - "Use traditional terms of address appropriately."
+        grammar: [g.guangzhou-vs-hk, g.mandarin-influence, g.address-terms]
+      - id: c2.u08
+        title: 月光光同粵謳
+        subtitle: Folk rhymes, 粵謳 and writing Cantonese
+        authored: true
+        canDo:
+          - "Recite and explain traditional nursery rhymes."
+          - "Read a passage of Zhao Ziyong's 粵謳 with a glossary."
+          - "Explain how Cantonese came to be written down."
+        grammar: [g.folk-rhymes, g.yuet-au, g.writing-cantonese]
