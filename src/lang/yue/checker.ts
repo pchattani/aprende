@@ -14,6 +14,8 @@ export interface CheckerDeps {
 }
 
 const COUNTERS = /^([一二兩三四五六七八九十幾呢嗰每]+|[0-9]+)$/
+/** Measure words that go with any noun: the plural 啲, containers and quantities (一碟帶子, 一杯茶, 一份工, 二百級). */
+const ANY_NOUN = new Set([...'啲些碟杯碗盒樽包袋箱煲籠盤份種款次級斤磅罐瓶壺盅串堆排群班對雙打半'])
 
 export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   const out: CheckerFinding[] = []
@@ -36,7 +38,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     if (!COUNTERS.test(a.text)) continue
     const cl = entry(b.text, 'classifier')
     const noun = entry(c.text, 'noun')
-    if (cl && noun?.cl && noun.cl !== b.text) {
+    if (cl && noun?.cl && noun.cl !== b.text && !ANY_NOUN.has(b.text)) {
       out.push({ code: 'agreement', message: `“${noun.lemma}” is counted with ${noun.cl}: ${a.text}${noun.cl}${noun.lemma}.`, start: b.start, end: b.end, suggestion: noun.cl, grammar: 'g.classifiers' })
     }
   }

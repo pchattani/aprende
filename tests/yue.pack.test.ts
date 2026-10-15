@@ -115,5 +115,6 @@ describe('Cantonese checker and dictionary', () => {
     expect(f[0]?.code).toBe('agreement')
     expect(f[0]?.message).toMatch(/隻/)
     expect(check('我有一隻狗。', { dict, rules: [] })).toEqual([])
+    expect(check('我買咗一袋狗糧，佢食咗三碗狗', { dict, rules: [] })).toEqual([])
   })
 })
