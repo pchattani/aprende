@@ -214,7 +214,11 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   const hyphenBefore = (i: number) => i > 0 && between(i - 1).some((t) => /^[-‑]|^-t-$/.test(t.text))
   const setFeats = (i: number, form: string, es: VocabEntry[] | undefined) => {
     entriesOf[i] = es
-    const fs = es ? es.flatMap((x) => featuresOf(form, x)) : []
+    // a capitalised word is the name when there is one (la Corse); a lowercase one never is (le corse, les suisses)
+    const cap = /^\p{Lu}/u.test(words[i]?.text ?? '')
+    const names = (es ?? []).filter((x) => x.tags.includes('name'))
+    const use = cap && names.length ? names : (es ?? []).filter((x) => !x.tags.includes('name'))
+    const fs = use.flatMap((x) => featuresOf(form, x))
     const part = participles.get(form)
     if (part && !part.invariable && !fs.some((f) => f.role === 'adj')) fs.push(...participleFeatures(form, part.forms))
     cands[i] = fs
@@ -240,7 +244,9 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     const fallback = ACCENT_FALLBACK[plain]
     if ((candidates && candidates.length) || (fallback && fallback !== w)) {
       const correct = candidates?.[0] ?? fallback!
-      if (correct !== w) {
+      // a word ending in -é(e)(s) is usually a participle or adjective we lack (taillé, orangé), not a wrong accent
+      const participleLike = /é(e?s?)$/.test(w) && !/é(e?s?)$/.test(correct)
+      if (correct !== w && !participleLike) {
         findings.push({ code: 'accent', message: `Accent: “${t.text}” should be “${correct}”. ${explainAccent(correct)}`, start: t.start, end: t.end, suggestion: correct, grammar: 'g.accents' })
         setFeats(i, correct, deps.dict.get(correct))
       }
@@ -392,7 +398,9 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       })
     } else {
       const want = expectedForm(d, nf, next)
-      if (want && want !== lw[i]) {
+      // letter names (le e muet) and la une (the front page) keep le/la
+      const keepsArticle = next.length === 1 || (next === 'une' && lw[i] === 'la')
+      if (want && want !== lw[i] && !keepsArticle) {
         findings.push({
           code: 'article', message: `Article: “${want}”, not “${words[i]!.text}”, before “${nextText}”. ${articleRule(want, next)}`,
           start: words[i]!.start, end: words[i + 1]!.end, suggestion: want, grammar: 'g.articles',
@@ -528,7 +536,9 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     const auxHits = AUX_INDEX.get(v)
     // nous / vous before a third-person verb are objects with the subject after: « Venez ! » nous dit la cavalière
     const invertedSubject = j + 1 < words.length && !gap[j] && (/^(le|la|les|l')$/.test(lw[j + 1]!) || /^\p{Lu}/u.test(words[j + 1]!.text))
-    if ((w === 'nous' || w === 'vous') && invertedSubject && (hits ?? auxHits ?? []).some((h) => h.person === 2 || h.person === 5)) continue
+    if (w === 'je' && v === 'vas') continue // Québec and familiar French: je vas
+    const afterComma = i > 0 && between(i - 1).some((t) => t.text === ',')
+    if ((w === 'nous' || w === 'vous') && (invertedSubject || afterComma) && (hits ?? auxHits ?? []).some((h) => h.person === 2 || h.person === 5)) continue
     let fix: string | undefined
     if (auxHits && auxHits.length) {
       if (auxHits.some((h) => persons.includes(h.person)) || hits?.some((h) => persons.includes(h.person))) continue
