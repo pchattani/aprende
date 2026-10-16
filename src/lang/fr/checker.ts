@@ -265,7 +265,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     const prev = i > 0 && !gap[i - 1] ? lw[i - 1] : undefined
     const next = !gap[i] ? lw[i + 1] : undefined
     const end = i + 1 >= words.length || gap[i]
-    if (w === 'a') {
+    if (w === 'a' && !(next !== undefined && participles.has(next))) { // a eu, a fini: the verb avoir
       const prevIsVerb = prev !== undefined && verbIndex.has(prev) && !SUBJECT_PRONOUNS[prev] && !lookup(deps.dict, prev)?.some((e) => e.pos !== 'verb')
       const fixedBefore = prev !== undefined && A_AFTER.has(prev)
       const startPhrase = (prev === undefined || CLAUSE_OPENERS.has(prev)) && next !== undefined && A_BEFORE.has(next)
@@ -304,7 +304,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   }
 
   // ---- articles and agreement within noun phrases: det (adv)* adj* noun adj*
-  const isAdjAt = (x: number) => !dets[x] && cands[x]!.some((f) => f.role === 'adj') && !entriesOf[x]?.some((e) => NOT_ATTRIBUTIVE.has(e.pos))
+  const isAdjAt = (x: number) => x < words.length && !dets[x] && !SUBJECT_PRONOUNS[lw[x]!] && cands[x]!.some((f) => f.role === 'adj') && !entriesOf[x]?.some((e) => NOT_ATTRIBUTIVE.has(e.pos))
   const isNounAt = (x: number) => x < words.length && cands[x]!.some((f) => f.role === 'noun')
   /** A preposition at x: the word before it heads a phrase (plein de, prêt à, proche de). */
   const startsPhrase = (x: number) => x < words.length && !gap[x - 1] && PREPOSITIONS.has(lw[x]!)
@@ -315,6 +315,8 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     // fixed phrases that start with a determiner: tout à fait, tout le monde, du coup
     if ((entriesOf[i] ?? []).some((e) => e.pos === 'phrase' && lw.slice(i).join(' ').startsWith(cleanText(e.lemma).toLowerCase() + ' '))) continue
     // le, la, les, l', leur are also object pronouns (je la vois, je leur parle); tout, quel… also adverbs and pronouns
+    if (d.kind === 'def' && /^(plus|moins)$/.test(lw[i + 1] ?? '')) continue // superlative: la plus calme
+    if (/^une?$/.test(lw[i]!) && lw[i - 1] === 'et') continue // trente et un élèves
     const pronounLike = (d.kind === 'def' && !d.prep && /^(le|la|les|l')$/.test(lw[i]!)) || d.kind === 'other' || lw[i] === 'des'
     let j = i + 1
     const adjs: number[] = []
@@ -325,7 +327,8 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
         continue
       }
       // an adjective before the noun (un petit chat); a word that can be a noun is the noun unless a noun follows (le passé / le petit chat)
-      if (isAdjAt(j) && !(isNounAt(j) && !(isNounAt(j + 1) && !gap[j]))) {
+      // (participles come after the noun in French: "cette vue est" is not an adjective before "est")
+      if (isAdjAt(j) && entriesOf[j]?.some((e) => e.pos === 'adj') && !(isNounAt(j) && !(isNounAt(j + 1) && !gap[j]))) {
         adjs.push(j)
         j++
         continue
@@ -403,6 +406,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       }
     }
     for (const a of adjs) {
+      if (noun === 'air' || noun === 'numéro') continue // avoir l'air fatiguée (agrees with the subject), le bus numéro 69
       const ac = cands[a]!.filter((f) => f.role === 'adj')
       if (!ac.length || ac.some((af) => nounC.some((n) => agrees(af, n)))) continue
       findings.push({
@@ -522,6 +526,9 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     if (!v || gap[j - 1]) continue
     const hits = verbIndex.get(v)
     const auxHits = AUX_INDEX.get(v)
+    // nous / vous before a third-person verb are objects with the subject after: « Venez ! » nous dit la cavalière
+    const invertedSubject = j + 1 < words.length && !gap[j] && (/^(le|la|les|l')$/.test(lw[j + 1]!) || /^\p{Lu}/u.test(words[j + 1]!.text))
+    if ((w === 'nous' || w === 'vous') && invertedSubject && (hits ?? auxHits ?? []).some((h) => h.person === 2 || h.person === 5)) continue
     let fix: string | undefined
     if (auxHits && auxHits.length) {
       if (auxHits.some((h) => persons.includes(h.person)) || hits?.some((h) => persons.includes(h.person))) continue

@@ -218,10 +218,20 @@ describe('no false positives on correct French', () => {
     V('parce que', 'phrase'), V('étudiant', 'noun', { gender: 'mf' }), V('venir de', 'phrase'), V('Lyon', 'noun', { gender: 'm' }),
     V('gagner', 'verb'), V('maintenant', 'adv'), V('vendre', 'verb'), V("s'il te plaît", 'phrase'), V('huit', 'num'), V('parent', 'noun', { gender: 'm' }),
     V('lettre', 'noun', { gender: 'f' }), V('écrire', 'verb'), V('envoyer', 'verb'), V('appeler', 'verb'), V("s'appeler", 'verb'),
+    V('boisson', 'noun', { gender: 'f' }), V('vue', 'noun', { gender: 'f' }), V('voir', 'verb'), V('magnifique', 'adj'), V('plage', 'noun', { gender: 'f' }),
+    V('calme', 'adj'), V('élève', 'noun', { gender: 'mf' }), V('trente', 'num'), V('air', 'noun', { gender: 'm' }), V('avoir', 'verb'), V('mariage', 'noun', { gender: 'm' }),
+    V('lieu', 'noun', { gender: 'm' }), V('sympa', 'adj', { feminine: 'sympa' }), V('sœur', 'noun', { gender: 'f' }), V('quel', 'det'),
   ]
   const d2 = { dict: buildDictionary(more, IRREGULAR), rules: [], verbs: IRREGULAR }
   const ok = (t: string) => expect(check(t, d2).filter((f) => f.code !== 'unknown'), t).toEqual([])
   const sentences = [
+    'Quelle boisson tu prends ?',
+    'Cette vue est magnifique.',
+    'Quelle est la plage la plus calme ?',
+    'Il y a trente et un élèves.',
+    'Elle a l\'air fatiguée.',
+    'Le mariage a eu lieu à Paris.',
+    'Ta sœur est très sympa.',
     'Le serveur est très gentil.',
     'Voici le taxi ! Tu es prête ?',
     'Le week-end, je ne travaille pas.',
