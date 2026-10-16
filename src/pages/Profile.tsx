@@ -6,7 +6,7 @@ import { useAllCards, useDays, useExams, useLessonRows } from '../hooks/useProgr
 import { streakFrom, todayKey, shiftDay, wordCounts, weakSkills, estimateLevel } from '../engine/mastery'
 import { grammar, levels, vocab } from '../engine/loader'
 import { PageHeader, Chip, Button } from '../components/ui/basics'
-import { IconGear } from '../components/ui/icons'
+import { IconGear, IconPaw, IconChart } from '../components/ui/icons'
 
 const NO_REVIEWS: never[] = []
 
@@ -31,30 +31,34 @@ export default function Profile() {
   return (
     <div className="pb-6">
       <PageHeader title="Your progress" right={<Link to="/settings" className="rounded-full p-2 text-muted" aria-label="Settings"><IconGear /></Link>} />
-      <section className="relative overflow-hidden rounded-3xl bg-sunset-gradient p-5 text-white shadow-[0_6px_0_0_#d97f00]" aria-label="Rhythm">
-        <span className="pointer-events-none absolute -right-10 -top-12 h-44 w-44 rounded-full bg-white/15" aria-hidden="true" />
-        <div className="relative flex items-center gap-4">
-          <span className={`text-7xl ${streak.current > 0 ? 'animate-flame' : 'opacity-70 grayscale'}`} aria-hidden="true">🔥</span>
+      <section className="card overflow-hidden p-0" aria-label="Rhythm">
+        <div className="airmail h-1.5" aria-hidden="true" />
+        <div className="flex items-center gap-4 p-4">
+          <span className={`flex h-20 w-20 shrink-0 rotate-[-8deg] items-center justify-center rounded-full border-[3px] border-double ${streak.current > 0 ? 'border-red text-red' : 'border-line text-ink-2'}`} aria-hidden="true"><IconPaw width={34} height={34} /></span>
           <div className="min-w-0">
-            <p className="text-xs font-extrabold uppercase tracking-widest opacity-90">Rhythm</p>
-            <p className="font-display text-5xl leading-none">{streak.current}</p>
-            <p className="font-extrabold">{streak.current === 1 ? 'day' : 'days'} in a row</p>
+            <p className="eyebrow">Rhythm · days on the road</p>
+            <p className="font-mono text-5xl leading-none">{streak.current}</p>
+            <p className="text-sm text-ink-2">{streak.current === 1 ? 'day' : 'days'} in a row · longest <span className="font-mono text-ink">{streak.longest}</span> · <span className="font-mono text-ink">{activeDays}</span> active in all</p>
           </div>
         </div>
-        <p className="relative mt-3 rounded-2xl bg-black/10 px-3 py-2 text-sm font-bold">Longest: {streak.longest} {streak.longest === 1 ? 'day' : 'days'} · {activeDays} active {activeDays === 1 ? 'day' : 'days'} in all</p>
       </section>
       <div className="mt-4 grid grid-cols-2 gap-3">
-        <Stat icon="⚡" tone="bg-gold-100 dark:bg-gold-500/15" label="Total XP" value={String(totalXp)} sub={`${days.find((d) => d.date === today)?.xp ?? 0} today`} />
-        <Stat icon="⏱" tone="bg-sky-100 dark:bg-sky-500/15" label="Time practised" value={totalMinutes >= 90 ? `${(totalMinutes / 60).toFixed(1)} h` : `${totalMinutes} min`} sub={`${reviews.length} recent answers`} />
-        <Stat icon="🏆" tone="bg-brand-100 dark:bg-brand-500/15" label="Estimated level" value={level} sub={`${lessonsDone} ${lessonsDone === 1 ? 'lesson' : 'lessons'} completed`} />
-        <Stat icon="📚" tone="bg-ok-100 dark:bg-ok-500/15" label="Words you can use" value={String(wc.productive)} sub={`${wc.recognised} recognised · ${wc.seen} met · ${vocab.size} in course`} />
+        <Stat label="Kilometres" value={String(totalXp)} sub={`${days.find((d) => d.date === today)?.xp ?? 0} km today`} />
+        <Stat label="Time practised" value={totalMinutes >= 90 ? `${(totalMinutes / 60).toFixed(1)} h` : `${totalMinutes} min`} sub={`${reviews.length} recent answers`} />
+        <Stat label="Estimated level" value={level} sub={`${lessonsDone} ${lessonsDone === 1 ? 'lesson' : 'lessons'} completed`} />
+        <Stat label="Words you can use" value={String(wc.productive)} sub={`${wc.recognised} recognised · ${wc.seen} met · ${vocab.size} in course`} />
       </div>
+      <Link to="/insights" className="card mt-3 flex items-center gap-3">
+        <IconChart width={26} height={26} className="shrink-0 text-blue" />
+        <span className="min-w-0 flex-1"><span className="block font-semibold">Insights</span><span className="block text-xs text-ink-2">Memory, recall, calibration, workload and what to work on next.</span></span>
+        <span className="text-ink-2" aria-hidden="true">›</span>
+      </Link>
       <section className="card mt-4">
-        <p className="font-display text-lg">Last 12 weeks</p>
+        <p className="eyebrow">Travel log · last 12 weeks</p>
         <Heatmap days={days} today={today} />
       </section>
       <section className="card mt-4">
-        <p className="font-display text-lg">Grammar</p>
+        <p className="eyebrow">Grammar</p>
         <p className="mt-1 text-sm">{grammarMastered} points mastered · {grammarMet} met · {grammar.size} in the course</p>
         {weak.length > 0 ? (
           <>
@@ -74,7 +78,7 @@ export default function Profile() {
         )}
       </section>
       <section className="card mt-4">
-        <p className="font-display text-lg">Level checks</p>
+        <p className="eyebrow">Border controls · level checks</p>
         <ul className="mt-1 divide-y divide-[var(--line)] text-sm">
           {levels.map((l) => {
             const e = exams?.get(l.id)
@@ -92,15 +96,12 @@ export default function Profile() {
   )
 }
 
-function Stat({ icon, tone, label, value, sub }: { icon: string; tone: string; label: string; value: string; sub: string }) {
+function Stat({ label, value, sub }: { label: string; value: string; sub: string }) {
   return (
     <div className="card p-3.5">
-      <div className="flex items-center gap-2.5">
-        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl ${tone}`} aria-hidden="true">{icon}</span>
-        <p className="font-display text-2xl leading-none">{value}</p>
-      </div>
-      <p className="mt-2 text-sm font-extrabold leading-tight">{label}</p>
-      <p className="text-xs font-semibold text-muted">{sub}</p>
+      <p className="eyebrow">{label}</p>
+      <p className="mt-1 font-mono text-2xl leading-tight">{value}</p>
+      <p className="mt-0.5 text-xs text-ink-2">{sub}</p>
     </div>
   )
 }
@@ -117,7 +118,7 @@ function Heatmap({ days, today }: { days: { date: string; minutes: number; revie
     <div className="mt-2 grid grid-flow-col grid-rows-7 gap-1" aria-label="Activity heatmap">
       {cells.map((c) => {
         const t = c.xp / max
-        const bg = c.xp === 0 ? 'bg-surface-2' : t < 0.34 ? 'bg-gold-300' : t < 0.67 ? 'bg-gold-500' : 'bg-tangerine-500'
+        const bg = c.xp === 0 ? 'bg-card-2' : t < 0.34 ? 'bg-red/30' : t < 0.67 ? 'bg-red/65' : 'bg-red'
         return <div key={c.date} title={`${c.date}: ${c.xp === 0 ? 'rest day' : 'practised'}`} className={`h-4 w-4 rounded-[5px] ${bg}`} />
       })}
     </div>

@@ -87,7 +87,7 @@ function ImportDialog({ onClose, onDone }: { onClose: () => void; onDone: (id: s
   return (
     <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true">
       <div className="card w-full max-w-lg">
-        <p className="text-lg font-extrabold">Import a {LANGUAGE} text</p>
+        <p className="text-lg font-semibold">Import a {LANGUAGE} text</p>
         <p className="text-sm text-muted">Paste an article, a story, song lyrics… It stays on this device.</p>
         <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" className="mt-3 w-full rounded-xl border-2 border-line bg-surface-2 p-2 outline-none focus:border-sky-500" aria-label="Title" />
         <textarea value={text} onChange={(e) => setText(e.target.value)} rows={8} placeholder="Pega el texto aquí…" lang={TL} className="mt-2 w-full rounded-xl border-2 border-line bg-surface-2 p-2 outline-none focus:border-sky-500" aria-label="Text" />
@@ -139,7 +139,7 @@ function ReaderView({ id }: { id: string }) {
       <button type="button" onClick={() => nav('/reader')} className="mb-3 flex items-center gap-1 text-sm font-bold text-muted">
         <IconArrowLeft width={18} height={18} /> Library
       </button>
-      <h1 className="text-2xl font-extrabold">{title}</h1>
+      <h1 className="text-2xl font-semibold">{title}</h1>
       {bundled?.author && <p className="text-sm text-muted">{bundled.author}{bundled.source ? ` · ${bundled.source}` : ''}</p>}
       <div className="card mt-3 flex items-center gap-3">
         <div className="flex-1">
@@ -182,7 +182,7 @@ function ReaderView({ id }: { id: string }) {
       </article>
       {bundled && bundled.questions.length > 0 && (
         <section className="mt-6">
-          <h2 className="mb-2 text-lg font-extrabold">Comprehension</h2>
+          <h2 className="mb-2 text-lg font-semibold">Comprehension</h2>
           {bundled.questions.map((q, qi) => (
             <div key={qi} className="card mb-2">
               <p className="font-bold">{q.q}</p>
@@ -204,7 +204,7 @@ function ReaderView({ id }: { id: string }) {
       )}
       {bundled && bundled.glossary.length > 0 && (
         <section className="mt-6">
-          <h2 className="mb-2 text-lg font-extrabold">Glossary</h2>
+          <h2 className="mb-2 text-lg font-semibold">Glossary</h2>
           <ul className="card divide-y divide-[var(--line)] text-sm">
             {bundled.glossary.map((g, i) => (
               <li key={i} className="flex justify-between py-1.5"><span className="font-bold" lang={TL}>{g.es}</span><span className="text-muted">{g.en}</span></li>
@@ -235,7 +235,7 @@ function WordPopup({ word, entries, known, onClose }: { word: string; entries: V
       <div className="card w-full max-w-xl rounded-b-none pb-[calc(1rem+env(safe-area-inset-bottom))]" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center gap-3">
           <SpeakerButton text={word} size="sm" />
-          <p className="text-2xl font-extrabold" lang={TL}>{word}</p>
+          <p className="text-2xl font-semibold" lang={TL}>{word}</p>
         </div>
         {entries.length === 0 ? (
           <p className="mt-2 text-sm text-muted">Not in the course dictionary yet. Capitalised words are usually names.</p>

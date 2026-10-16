@@ -2,7 +2,7 @@
 import { chromium } from 'playwright'
 import { answerCurrent, readHook } from './helpers.ts'
 const out = process.argv[2]!
-const base = process.argv[3] ?? 'http://localhost:5173/aprende/'
+const base = process.argv[3] ?? 'http://localhost:5173/aprende/spanish/'
 const dark = process.env.DARK === '1'
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' })
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, colorScheme: dark ? 'dark' : 'light' })

@@ -23,7 +23,7 @@ export default function Pronunciation() {
           <IconArrowLeft width={18} height={18} /> Pronunciation
         </button>
         <Chip tone="brand">Lesson {i + 1}</Chip>
-        <h1 className="mt-1 text-2xl font-extrabold">{lesson.title}</h1>
+        <h1 className="mt-1 text-2xl font-semibold">{lesson.title}</h1>
         <div className="card mt-3">
           <Markdown text={lesson.explanation} />
         </div>
@@ -78,7 +78,7 @@ export default function Pronunciation() {
         {phonology.map((l, i) => (
           <li key={l.id}>
             <Link to={`/pronunciation/${l.id}`} className="card flex items-center gap-3">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-100 font-extrabold text-brand-700">{i + 1}</span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-100 font-semibold text-brand-700">{i + 1}</span>
               <div>
                 <p className="font-bold">{l.title}</p>
                 <p className="text-xs text-muted">{l.items.length} sounds · {l.minimalPairs.length} pairs · {l.practice.length} sentences</p>

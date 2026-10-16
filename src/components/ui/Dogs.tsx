@@ -1,22 +1,30 @@
 /**
- * Cartoon Leo, Bonchita and Luna, the three travelling dogs. Pure inline SVG so they work
- * offline, scale crisply and can be tinted or animated with CSS.
+ * Leo, Bonchita and Luna, the three travelling dogs, painted in a gouache storybook
+ * style (see components/art). Pure inline SVG so they work offline and scale crisply.
  */
-import { useState, type SVGProps, type ReactElement } from 'react'
+import { useState, type SVGProps } from 'react'
 import { souvenirById, type WearSlot } from '../../engine/journey'
 import type { Outfit, DogName } from '../../hooks/useOutfits'
 import { useSpeak } from '../../hooks/useSpeak'
 import { DOG_NAMES, DOG_LINES } from '../../engine/dogs'
 import { TL } from '../../engine/course'
+import { DogFigure } from '../art/DogFigure'
+import { DogsTrio } from '../art/DogsTrio'
 
-type P = SVGProps<SVGSVGElement> & { size?: number; mood?: 'happy' | 'curious' | 'sleepy'; outfit?: Outfit }
+export { DogStamp } from '../art/DogStamp'
+export { DogsTrio } from '../art/DogsTrio'
+
+type Mood = 'happy' | 'curious' | 'sleepy'
+type P = Omit<SVGProps<SVGSVGElement>, 'children'> & { size?: number; mood?: Mood; outfit?: Outfit }
 
 /** Where each wearable sits on each dog, in the 120×120 viewBox. */
 const ANCHORS: Record<DogName, Record<WearSlot, [number, number]>> = {
-  leo: { hat: [60, 24], neck: [60, 86], mouth: [76, 74], paw: [92, 104] },
-  bonchita: { hat: [60, 26], neck: [60, 86], mouth: [78, 78], paw: [92, 106] },
-  luna: { hat: [60, 20], neck: [60, 90], mouth: [76, 72], paw: [92, 106] },
+  leo: { hat: [60, 20], neck: [60, 80], mouth: [70, 63], paw: [84, 106] },
+  bonchita: { hat: [60, 22], neck: [60, 84], mouth: [70, 64], paw: [84, 106] },
+  luna: { hat: [60, 17], neck: [60, 76], mouth: [70, 62], paw: [46, 106] },
 }
+const WEAR_SIZE: Record<WearSlot, number> = { hat: 28, neck: 18, mouth: 18, paw: 20 }
+
 /** Emoji overlays for an outfit; rendered last so they sit on top of the drawing. */
 function Wearables({ dog, outfit }: { dog: DogName; outfit?: Outfit }) {
   if (!outfit) return null
@@ -27,7 +35,7 @@ function Wearables({ dog, outfit }: { dog: DogName; outfit?: Outfit }) {
         if (!sv) return null
         const [x, y] = ANCHORS[dog][slot]
         return (
-          <text key={slot} x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize={slot === 'hat' ? 30 : 22} data-wear={sv.id} aria-label={sv.es}>
+          <text key={slot} x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize={WEAR_SIZE[slot]} data-wear={sv.id} aria-label={sv.es} style={{ filter: 'drop-shadow(0 1px 0.6px rgba(40,25,20,0.35))' }}>
             {sv.emoji}
           </text>
         )
@@ -36,155 +44,34 @@ function Wearables({ dog, outfit }: { dog: DogName; outfit?: Outfit }) {
   )
 }
 
-/** Leo: tan Yorkie-mix, long floppy ears with darker tips, tiny tongue, red harness and a blue tag. */
+/** Leo: golden-tan Yorkie mix, long floppy ears with darker tips, fringe and beard, red harness with a blue tag. */
 export function Leo({ size = 96, mood = 'happy', outfit, ...rest }: P) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 120 120" aria-label="Leo" role="img" {...rest}>
-      {/* body */}
-      <ellipse cx="60" cy="92" rx="30" ry="20" fill="#e6b980" />
-      <ellipse cx="60" cy="98" rx="20" ry="12" fill="#f7e2bd" />
-      {/* harness */}
-      <path d="M34 90 Q60 78 86 90" stroke="#c0392b" strokeWidth="6" fill="none" strokeLinecap="round" />
-      <circle cx="60" cy="97" r="5" fill="#3ba7ff" stroke="#1f6fb3" strokeWidth="1.5" />
-      {/* ears */}
-      <path d="M22 52 C14 36 24 20 36 26 C40 28 40 40 34 54 Z" fill="#c98f4f" />
-      <path d="M98 52 C106 36 96 20 84 26 C80 28 80 40 86 54 Z" fill="#c98f4f" />
-      <path d="M24 50 C18 38 26 26 34 30 C37 32 36 42 32 52 Z" fill="#e6b980" />
-      <path d="M96 50 C102 38 94 26 86 30 C83 32 84 42 88 52 Z" fill="#e6b980" />
-      {/* head */}
-      <ellipse cx="60" cy="54" rx="32" ry="30" fill="#e9c38e" />
-      {/* fringe */}
-      <path d="M32 44 Q45 24 60 28 Q75 24 88 44 Q74 36 60 38 Q46 36 32 44 Z" fill="#f3d9a9" />
-      {/* beard */}
-      <ellipse cx="60" cy="70" rx="20" ry="13" fill="#f7e8cf" />
-      {/* eyes */}
-      {mood === 'sleepy' ? (
-        <>
-          <path d="M44 52 q5 4 10 0" stroke="#2b2117" strokeWidth="3" fill="none" strokeLinecap="round" />
-          <path d="M66 52 q5 4 10 0" stroke="#2b2117" strokeWidth="3" fill="none" strokeLinecap="round" />
-        </>
-      ) : (
-        <>
-          <circle cx="49" cy="52" r="4.5" fill="#2b2117" />
-          <circle cx="71" cy="52" r="4.5" fill="#2b2117" />
-          <circle cx="50.5" cy="50.5" r="1.5" fill="#fff" />
-          <circle cx="72.5" cy="50.5" r="1.5" fill="#fff" />
-        </>
-      )}
-      {/* nose and mouth */}
-      <ellipse cx="60" cy="63" rx="7" ry="5.5" fill="#1c1a33" />
-      <ellipse cx="57.5" cy="61.5" rx="2" ry="1.2" fill="#fff" opacity="0.7" />
-      <path d="M60 68 v4" stroke="#2b2117" strokeWidth="2" strokeLinecap="round" />
-      {mood === 'curious' ? <path d="M52 73 q8 -4 16 0" stroke="#2b2117" strokeWidth="2" fill="none" strokeLinecap="round" /> : <path d="M52 72 q8 6 16 0" stroke="#2b2117" strokeWidth="2" fill="none" strokeLinecap="round" />}
-      {/* tongue tip */}
-      {mood === 'happy' && <path d="M56 75 q4 6 8 0 z" fill="#ff8aa6" />}
-      <Wearables dog="leo" outfit={outfit} />
-    </svg>
-  )
+  return <DogFigure dog="leo" size={size} mood={mood} overlay={<Wearables dog="leo" outfit={outfit} />} {...rest} />
 }
 
-/** Bonchita: dark grey scruffy fur, lighter muzzle, big open smile with tongue, red harness. */
+/** Bonchita: small black scruffy dog with wiry fur, grey-white muzzle, big eyes under bushy brows, red harness. */
 export function Bonchita({ size = 96, mood = 'happy', outfit, ...rest }: P) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 120 120" aria-label="Bonchita" role="img" {...rest}>
-      {/* body */}
-      <ellipse cx="60" cy="92" rx="31" ry="21" fill="#4a4a52" />
-      <path d="M30 86 l-6 -8 M90 86 l6 -8 M36 104 l-7 6 M84 104 l7 6" stroke="#4a4a52" strokeWidth="5" strokeLinecap="round" />
-      {/* harness */}
-      <path d="M33 90 Q60 78 87 90" stroke="#d64541" strokeWidth="6" fill="none" strokeLinecap="round" />
-      {/* scruffy head outline */}
-      <path d="M30 60 l-6 -10 l9 2 l-2 -12 l9 6 l2 -12 l8 8 l5 -12 l5 12 l8 -8 l2 12 l9 -6 l-2 12 l9 -2 l-6 10 l6 10 l-9 0 l3 10 l-9 -3 l0 10 l-8 -6 l-3 9 l-5 -8 l-5 8 l-3 -9 l-8 6 l0 -10 l-9 3 l3 -10 l-9 0 z" fill="#3b3b44" />
-      <ellipse cx="60" cy="58" rx="27" ry="25" fill="#55555f" />
-      {/* lighter muzzle */}
-      <ellipse cx="60" cy="70" rx="18" ry="13" fill="#9a9aa3" />
-      {/* eyes peeking through fur */}
-      <circle cx="49" cy="55" r="4" fill="#1c1a33" />
-      <circle cx="71" cy="55" r="4" fill="#1c1a33" />
-      <circle cx="50.5" cy="53.5" r="1.3" fill="#fff" />
-      <circle cx="72.5" cy="53.5" r="1.3" fill="#fff" />
-      <path d="M42 50 q7 -6 14 -1 M64 49 q7 -5 14 1" stroke="#3b3b44" strokeWidth="4" fill="none" strokeLinecap="round" />
-      {/* nose */}
-      <ellipse cx="60" cy="64" rx="6.5" ry="5" fill="#1c1a33" />
-      {/* big open smile with tongue */}
-      {mood === 'sleepy' ? (
-        <path d="M50 76 q10 4 20 0" stroke="#1c1a33" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-      ) : (
-        <>
-          <path d="M46 72 q14 16 28 0 z" fill="#2b1b1f" />
-          <path d="M52 76 q8 10 16 0 q-8 4 -16 0 z" fill="#ff6b8a" />
-          <path d="M46 72 q14 2 28 0" stroke="#fff" strokeWidth="2" fill="none" />
-        </>
-      )}
-      <Wearables dog="bonchita" outfit={outfit} />
-    </svg>
-  )
+  return <DogFigure dog="bonchita" size={size} mood={mood} overlay={<Wearables dog="bonchita" outfit={outfit} />} {...rest} />
 }
 
-
-/** Luna: cream curly cockapoo-style coat, big round dark eyes, floppy curly ears, brown nose; she carries the map. */
+/** Luna: cream curly powder-puff, dark button eyes, blue collar with a tag; she carries the map. */
 export function Luna({ size = 96, mood = 'happy', outfit, ...rest }: P) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 120 120" aria-label="Luna" role="img" {...rest}>
-      {/* body: curly */}
-      <ellipse cx="60" cy="93" rx="31" ry="20" fill="#efdcc0" />
-      <circle cx="36" cy="86" r="7" fill="#f5e6cf" /><circle cx="48" cy="80" r="7" fill="#f5e6cf" /><circle cx="72" cy="80" r="7" fill="#f5e6cf" /><circle cx="84" cy="86" r="7" fill="#f5e6cf" />
-      {/* map tucked in a blue bandana */}
-      <path d="M36 88 Q60 100 84 88 L80 96 Q60 104 40 96 Z" fill="#3ba7ff" />
-      <path d="M66 84 l12 -6 l6 8 l-12 6 z" fill="#fff7d6" stroke="#d9a431" strokeWidth="1.5" />
-      <path d="M69 86 q4 -2 8 0" stroke="#ff6b6b" strokeWidth="1.5" fill="none" />
-      {/* ears: long, curly */}
-      <path d="M26 58 C14 50 16 28 32 30 C40 31 42 44 38 60 Z" fill="#e8cfae" />
-      <path d="M94 58 C106 50 104 28 88 30 C80 31 78 44 82 60 Z" fill="#e8cfae" />
-      <circle cx="24" cy="46" r="5" fill="#f0dcc0" /><circle cx="28" cy="56" r="5" fill="#f0dcc0" /><circle cx="96" cy="46" r="5" fill="#f0dcc0" /><circle cx="92" cy="56" r="5" fill="#f0dcc0" />
-      {/* head: round and fluffy */}
-      <circle cx="60" cy="52" r="30" fill="#f3e3c8" />
-      <circle cx="40" cy="36" r="8" fill="#f8ecd6" /><circle cx="52" cy="28" r="9" fill="#f8ecd6" /><circle cx="66" cy="27" r="9" fill="#f8ecd6" /><circle cx="79" cy="35" r="8" fill="#f8ecd6" />
-      {/* muzzle */}
-      <ellipse cx="60" cy="66" rx="16" ry="12" fill="#f8ecd6" />
-      {/* big round eyes */}
-      {mood === 'sleepy' ? (
-        <>
-          <path d="M43 50 q6 5 12 0" stroke="#2b2117" strokeWidth="3" fill="none" strokeLinecap="round" />
-          <path d="M65 50 q6 5 12 0" stroke="#2b2117" strokeWidth="3" fill="none" strokeLinecap="round" />
-        </>
-      ) : (
-        <>
-          <circle cx="48" cy="51" r="6.5" fill="#1c1a33" />
-          <circle cx="72" cy="51" r="6.5" fill="#1c1a33" />
-          <circle cx="50.5" cy="48.5" r="2.2" fill="#fff" />
-          <circle cx="74.5" cy="48.5" r="2.2" fill="#fff" />
-          <circle cx="46" cy="54" r="1" fill="#fff" opacity="0.7" />
-          <circle cx="70" cy="54" r="1" fill="#fff" opacity="0.7" />
-        </>
-      )}
-      {/* brown nose and mouth */}
-      <ellipse cx="60" cy="63" rx="6.5" ry="5" fill="#6b4a3a" />
-      <ellipse cx="57.5" cy="61.5" rx="1.8" ry="1" fill="#fff" opacity="0.5" />
-      <path d="M60 68 v3" stroke="#6b4a3a" strokeWidth="2" strokeLinecap="round" />
-      {mood === 'curious' ? <path d="M53 73 q7 -3 14 0" stroke="#6b4a3a" strokeWidth="2" fill="none" strokeLinecap="round" /> : <path d="M53 72 q7 5 14 0" stroke="#6b4a3a" strokeWidth="2" fill="none" strokeLinecap="round" />}
-      <Wearables dog="luna" outfit={outfit} />
-    </svg>
-  )
+  return <DogFigure dog="luna" size={size} mood={mood} overlay={<Wearables dog="luna" outfit={outfit} />} {...rest} />
 }
 
-/** The three together, with their football, for welcome and celebration screens. */
-export function DogsScene({ size = 220, mood = 'happy', className = '' }: { size?: number; mood?: 'happy' | 'curious' | 'sleepy'; className?: string }) {
-  const h = Math.round(size * 0.62)
-  const one = Math.round(size * 0.46)
+/** The three together, for welcome and celebration screens. */
+export function DogsScene({ size = 220, mood = 'happy', className = '' }: { size?: number; mood?: Mood; className?: string }) {
   return (
-    <div className={`relative mx-auto flex items-end justify-center -space-x-4 ${className}`} style={{ width: size, height: h }} aria-label="Leo, Bonchita and Luna" role="img">
-      <Leo size={one} mood={mood} className="animate-float" style={{ animationDelay: '0.2s' }} />
-      <span className="mb-1 text-2xl" aria-hidden="true">⚽</span>
-      <Bonchita size={one} mood={mood} className="animate-float" />
-      <Luna size={one} mood={mood} className="animate-float" style={{ animationDelay: '0.45s' }} />
+    <div className={`relative mx-auto ${className}`} style={{ width: size }} aria-label="Leo, Bonchita and Luna" role="img">
+      <DogsTrio size={size} pose={mood === 'sleepy' ? 'sleep' : mood === 'curious' ? 'wave' : 'celebrate'} />
     </div>
   )
 }
 
-const DOG_SVG: Record<DogName, (p: P) => ReactElement> = { leo: Leo, bonchita: Bonchita, luna: Luna }
+const DOG_SVG: Record<DogName, (p: P) => React.ReactElement> = { leo: Leo, bonchita: Bonchita, luna: Luna }
 
-/** A tappable dog: bounces and says a short Spanish line. Shows its outfit when given one. */
-export function DogButton({ dog, size = 48, mood, outfit, className = '', onClick }: { dog: DogName; size?: number; mood?: P['mood']; outfit?: Outfit; className?: string; onClick?: () => void }) {
+/** A tappable dog: bounces and says a short line. Shows its outfit when given one. */
+export function DogButton({ dog, size = 48, mood, outfit, className = '', onClick }: { dog: DogName; size?: number; mood?: Mood; outfit?: Outfit; className?: string; onClick?: () => void }) {
   const { say } = useSpeak()
   const [bounce, setBounce] = useState(false)
   const [line, setLine] = useState<string | undefined>()

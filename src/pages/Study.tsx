@@ -19,16 +19,16 @@ export default function Study() {
   ]
   return (
     <div>
-      <PageHeader title="Tools" subtitle="Reference and drills alongside the course." />
+      <PageHeader title="Tools" subtitle="The guidebook, the phrasebook and games for the road." />
       <div className="grid gap-3">
         {items.map((it) => (
           <Link key={it.to} to={it.to} className="card flex items-center gap-4 transition hover:-translate-y-0.5 active:scale-[0.99]">
-            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white ${['bg-brand-gradient', 'bg-sunset-gradient', 'bg-mint-gradient'][items.indexOf(it) % 3]}`}>
+            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-dashed ${['border-blue text-blue', 'border-red text-red', 'border-ok-500 text-ok-500'][items.indexOf(it) % 3]}`}>
               <it.icon />
             </div>
             <div>
-              <p className="font-extrabold">{it.title}</p>
-              <p className="text-sm text-muted">{it.text}</p>
+              <p className="font-semibold">{it.title}</p>
+              <p className="text-sm text-ink-2">{it.text}</p>
             </div>
           </Link>
         ))}

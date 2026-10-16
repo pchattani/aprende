@@ -11,7 +11,7 @@ export function GrammarNoteView({ note, compact = false }: { note: GrammarNote; 
       {!compact && (
         <header className="mb-3">
           <Chip tone="brand" className="mb-2 uppercase">{note.level}</Chip>
-          <h1 className="text-2xl font-extrabold">{note.title}</h1>
+          <h1 className="text-2xl font-semibold">{note.title}</h1>
           <p className="mt-1 text-muted">{inline(note.summary)}</p>
         </header>
       )}

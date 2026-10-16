@@ -37,15 +37,15 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
   const hints = [...new Set([...result.notes, ...explanation.hints])].slice(0, 5)
   const title = result.verdict === 'correct' ? (result.lenient ? `${ui.feedback.correct} One small slip` : ui.feedback.correct) : almost ? `${ui.feedback.almost} Watch the details` : 'Not quite'
   return (
-    <div className={`animate-slide-up fixed inset-x-0 bottom-0 z-20 max-h-[85vh] overflow-y-auto ${ok ? 'bg-[var(--sheet-ok)] text-ok-700 dark:text-ok-100' : 'bg-[var(--sheet-bad)] text-bad-700 dark:text-bad-100'}`} role="status">
-      <div className="mx-auto max-w-xl px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-5">
-        <div className="flex items-center gap-3">
-          <div className={`animate-bounce-in flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-surface text-2xl ${ok ? 'text-ok-500' : 'text-bad-500'}`} aria-hidden="true">
-            {ok && !almost ? <IconCheck width={30} height={30} strokeWidth={3.5} /> : almost ? '👀' : <IconX width={28} height={28} strokeWidth={3.5} />}
-          </div>
-          <div className="min-w-0 flex-1">
-            <p className="font-display text-2xl leading-tight">{title}</p>
-          </div>
+    <div className="animate-slide-up fixed inset-x-0 bottom-0 z-20 max-h-[85vh] overflow-y-auto border-t border-line bg-card shadow-float" role="status">
+      <div className={`h-1.5 w-full ${ok && !almost ? 'bg-ok-500' : almost ? 'bg-sun' : 'bg-bad-500'}`} aria-hidden="true" />
+      <div className="mx-auto max-w-xl px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
+        <div className="flex items-start justify-between gap-3">
+          <p className={`inkstamp animate-stamp mb-3 mt-1 ${ok && !almost ? 'text-ok-500' : almost ? 'text-gold-600' : 'text-bad-500'}`}>
+            {ok && !almost ? <IconCheck width={20} height={20} strokeWidth={3} /> : almost ? null : <IconX width={20} height={20} strokeWidth={3} />}
+            {ok && !almost ? ui.feedback.correct.replace(/[!¡]/g, '') : almost ? 'Postage due' : 'Return to sender'}
+          </p>
+          <p className="mt-1 text-right text-sm text-ink-2">{title}</p>
         </div>
         <div className="mt-1">
             {showCorrect && (
@@ -58,7 +58,7 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
               </div>
             )}
             {review && (
-              <div className="mt-3 flex items-start gap-2.5 rounded-2xl bg-surface/80 px-3 py-2.5 text-[var(--text)]" aria-label={`What you practised, in ${LANGUAGE} and English`}>
+              <div className="mt-3 flex items-start gap-2.5 rounded-xl border border-line bg-paper px-3 py-2.5 text-ink" aria-label={`What you practised, in ${LANGUAGE} and English`}>
                 <SpeakerButton text={review.es} size="sm" className="mt-0.5 shrink-0" />
                 <div className="min-w-0">
                   <p className="font-bold leading-snug" lang={TL}><TargetText text={review.es} /></p>
@@ -67,7 +67,7 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
               </div>
             )}
             {explanation.diff && explanation.diff.some((t) => t.kind !== 'same') && (
-              <p className="mt-2 rounded-2xl bg-surface/80 px-3 py-2 text-sm leading-relaxed text-[var(--text)]" lang={exercise.kind === 'typeEn' ? 'en' : TL} aria-label="Your answer compared with the correct one">
+              <p className="mt-2 rounded-xl border border-line bg-paper px-3 py-2 text-sm leading-relaxed text-ink" lang={exercise.kind === 'typeEn' ? 'en' : TL} aria-label="Your answer compared with the correct one">
                 <span className="mr-1 text-xs font-bold opacity-70">You wrote:</span>
                 {explanation.diff.map((t, i) => (
                   <span key={i} className="mr-1">
@@ -91,8 +91,8 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
               </ul>
             )}
             {note && !ok && (
-              <div className="mt-2 rounded-2xl bg-surface/80 px-3 py-2 text-sm text-[var(--text)]">
-                <p><span className="font-extrabold">Rule:</span> {inline(note.summary)}</p>
+              <div className="mt-2 rounded-xl border border-line bg-paper px-3 py-2 text-sm text-ink">
+                <p><span className="font-semibold">Rule:</span> {inline(note.summary)}</p>
                 <button type="button" className="mt-1 text-xs font-bold underline" onClick={() => setShowRule((v) => !v)}>
                   {showRule ? 'Hide the full explanation' : `Full explanation: ${note.title}`}
                 </button>
@@ -115,7 +115,7 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
               {pinned ? '📌 Pinned' : '📌 Pin'}
             </Button>
           )}
-          <Button variant={ok ? 'ok' : 'bad'} className="flex-1 py-4" onClick={onContinue} autoFocus>
+          <Button variant="primary" className="flex-1 py-4" onClick={onContinue} autoFocus>
             {last ? 'Finish' : 'Continue'}
           </Button>
         </div>

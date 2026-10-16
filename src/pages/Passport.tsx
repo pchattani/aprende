@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { StopArt } from '../components/StopArt'
 import { Link } from 'react-router'
 import { PageHeader, Chip } from '../components/ui/basics'
 import { DogButton } from '../components/ui/Dogs'
@@ -30,8 +31,8 @@ export default function Passport() {
         right={<div className="flex -space-x-2"><DogButton dog="leo" size={36} outfit={outfits.leo} /><DogButton dog="bonchita" size={36} outfit={outfits.bonchita} /><DogButton dog="luna" size={36} outfit={outfits.luna} /></div>}
       />
       <div className="mb-4 grid grid-cols-2 gap-2">
-        <div className="card text-center"><p className="text-3xl font-extrabold">{stamps}</p><p className="text-xs font-semibold text-muted">stamps of {REGIONS.reduce((n, r) => n + r.stops.length, 0)} stops</p></div>
-        <div className="card text-center"><p className="text-3xl font-extrabold">{[...owned].filter((id) => !souvenirById(id)?.badge).length}</p><p className="text-xs font-semibold text-muted">souvenirs of {collectible.length}</p></div>
+        <div className="card text-center"><p className="font-mono text-3xl">{stamps}</p><p className="text-xs text-ink-2">stamps of {REGIONS.reduce((n, r) => n + r.stops.length, 0)} stops</p></div>
+        <div className="card text-center"><p className="font-mono text-3xl">{[...owned].filter((id) => !souvenirById(id)?.badge).length}</p><p className="text-xs text-ink-2">souvenirs of {collectible.length}</p></div>
       </div>
       {open && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true" onClick={() => setOpen(undefined)}>
@@ -47,7 +48,7 @@ export default function Passport() {
         const quizOpen = n >= Math.ceil(region.stops.length / 2)
         const badge = owned.has(`badge-${region.level}`)
         return (
-          <section key={region.level} className="card mb-4">
+          <section key={region.level} className={`lvl-${region.level} card mb-4`}>
             <div className="flex items-center justify-between gap-2">
               <h2 className="text-xl">{region.name} {badge && <span title="Region badge" aria-label="Region badge earned">🏅</span>}</h2>
               <Chip>{n} / {region.stops.length} stamps</Chip>
@@ -56,14 +57,14 @@ export default function Passport() {
               {region.stops.map((s) => {
                 const ok = stamped(s.unitId)
                 return ok ? (
-                  <button key={s.unitId} type="button" onClick={() => setOpen({ stop: s, region })} title={`${s.name}: stamped`} className="flex aspect-square rotate-[-4deg] flex-col items-center justify-center rounded-2xl border-2 border-brand-500 bg-brand-100 text-center text-brand-700 transition hover:rotate-0 dark:bg-brand-500/20 dark:text-brand-100">
-                    <span className="text-xl" aria-hidden="true">{s.emoji}</span>
-                    <span className="mt-0.5 line-clamp-2 px-1 text-[9px] font-extrabold leading-tight">{s.name}</span>
+                  <button key={s.unitId} type="button" onClick={() => setOpen({ stop: s, region })} title={`${s.name}: stamped`} className="stamp flex rotate-[-3deg] flex-col items-stretch text-center transition hover:rotate-0">
+                    <StopArt stop={s} level={region.level} className="aspect-square w-full" />
+                    <span className="mt-1 line-clamp-1 px-0.5 text-[9px] font-semibold leading-tight">{s.name}</span>
                   </button>
                 ) : (
-                  <Link key={s.unitId} to="/" state={{ from: `unit-${s.unitId}` }} title={`${s.name}: not yet`} className="flex aspect-square flex-col items-center justify-center rounded-2xl border-2 border-dashed border-line text-center text-muted opacity-70">
-                    <span className="text-xl" aria-hidden="true">·</span>
-                    <span className="mt-0.5 line-clamp-2 px-1 text-[9px] font-extrabold leading-tight">{s.name}</span>
+                  <Link key={s.unitId} to="/" state={{ from: `unit-${s.unitId}` }} title={`${s.name}: not yet`} className="flex aspect-square flex-col items-center justify-center rounded-md border-[1.5px] border-dashed border-line text-center text-ink-2">
+                    <span className="h-5 w-5 rounded-full border border-dashed border-line" aria-hidden="true" />
+                    <span className="mt-0.5 line-clamp-2 px-1 text-[9px] font-semibold leading-tight">{s.name}</span>
                   </Link>
                 )
               })}
@@ -72,15 +73,15 @@ export default function Passport() {
               {quizOpen ? <Link to={`/quiz/${region.level}`} className="btn btn-ghost px-3 py-1.5 text-xs">🏅 Region quiz</Link> : <span className="text-muted">🏅 Region quiz opens at {Math.ceil(region.stops.length / 2)} stamps</span>}
               {quiz && <span className="text-muted">Best {Math.round(quiz.best * 100)}%{quiz.best >= QUIZ_PASS ? ' · badge' : ''}</span>}
             </div>
-            <p className="mt-4 text-xs font-extrabold uppercase tracking-wider text-muted">Souvenirs</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted">Souvenirs</p>
             <ul className="mt-2 grid grid-cols-2 gap-2">
               {regionSouvenirs.map((sv) => {
                 const have = owned.has(sv.id)
                 return (
-                  <li key={sv.id} className={`flex items-start gap-2 rounded-2xl p-2 ${have ? 'bg-gold-100/70 dark:bg-gold-500/10' : 'bg-surface-2 opacity-60'}`}>
-                    <span className="text-2xl" aria-hidden="true">{have ? sv.emoji : '❔'}</span>
+                  <li key={sv.id} className={`flex items-start gap-2 rounded-xl border p-2 ${have ? 'border-line bg-card' : 'border-dashed border-line opacity-60'}`}>
+                    <span className="text-2xl" aria-hidden="true">{have ? sv.emoji : <span className="block h-7 w-7 rounded border border-dashed border-line" />}</span>
                     <span className="min-w-0">
-                      <span className="block text-sm font-extrabold leading-tight" lang={TL}>{have ? sv.es : '?????'}</span>
+                      <span className="block text-sm font-semibold leading-tight" lang={TL}>{have ? sv.es : '?????'}</span>
                       <span className="block text-[11px] text-muted">{have ? sv.blurb : sv.en}{have && sv.wearable ? ' · wearable' : ''}</span>
                     </span>
                   </li>
@@ -92,7 +93,7 @@ export default function Passport() {
       })}
       {souvenirs.length > 0 && (
         <section className="card">
-          <p className="text-xs font-extrabold uppercase tracking-wider text-muted">Latest finds</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted">Latest finds</p>
           <ul className="mt-2 space-y-1 text-sm">
             {souvenirs.slice(0, 8).map((s) => {
               const sv = souvenirById(s.id)

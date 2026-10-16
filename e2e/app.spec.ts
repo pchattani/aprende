@@ -76,7 +76,7 @@ test('mistakes come back later in the lesson instead of ending it', async ({ pag
     await continueFeedback(page)
   }
   expect(pinnedSeen).toBe(true)
-  await page.goto('/#/review?tab=pinned')
+  await page.goto('./#/review?tab=pinned')
   await expect(page.getByText(/pinned mistakes? waiting/)).toBeVisible()
   await page.getByRole('button', { name: 'Practise pinned' }).click()
   const pinned = await readHook(page)
@@ -88,12 +88,14 @@ test('mistakes come back later in the lesson instead of ending it', async ({ pag
 
 test('tabs remember their scroll position', async ({ page }) => {
   await openPath(page)
+  // The top bar leads back to the Pawsport hub (all languages).
+  await expect(page.getByRole('link', { name: /All languages/ })).toHaveAttribute('href', '/aprende/')
   await expect(page.getByRole('heading', { name: 'Fin del mundo' })).toBeAttached()
   await page.evaluate(() => window.scrollTo(0, 1500))
   await page.waitForFunction(() => window.scrollY > 1000)
   await page.getByRole('link', { name: 'Review' }).click()
   await expect(page.getByRole('heading', { name: 'Review' })).toBeVisible()
-  await page.getByRole('link', { name: 'Course' }).click()
+  await page.getByRole('link', { name: 'Journey', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeAttached()
   await page.waitForFunction(() => window.scrollY > 1000)
 })
@@ -101,7 +103,7 @@ test('tabs remember their scroll position', async ({ page }) => {
 test('region quiz, vocabulary games and the dogs page load', async ({ page }) => {
   test.setTimeout(180_000)
   await openPath(page)
-  await page.goto('/#/quiz/a1')
+  await page.goto('./#/quiz/a1')
   await expect(page.getByText(/Region quiz · Buenos Aires/)).toBeVisible()
   await expect(page.getByRole('radio').first()).toBeVisible({ timeout: 20_000 })
   const groups = page.getByRole('radiogroup')
@@ -116,14 +118,14 @@ test('region quiz, vocabulary games and the dogs page load', async ({ page }) =>
   await page.getByRole('button', { name: 'Back to the course' }).click()
   await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
 
-  await page.goto('/#/perros')
+  await page.goto('./#/perros')
   await expect(page.getByRole('heading', { name: 'Los perros' })).toBeVisible()
   await expect(page.getByRole('tab', { name: 'Bonchita' })).toBeVisible()
   await expect(page.getByText('Find it on a quest').first()).toBeVisible()
   await page.getByRole('button', { name: /Leo says hello/ }).first().click()
   await page.screenshot({ path: 'e2e/__screenshots__/perros.png' })
 
-  await page.goto('/#/palabras')
+  await page.goto('./#/palabras')
   await expect(page.getByRole('heading', { name: 'Palabras' })).toBeVisible()
   await page.getByRole('button', { name: /Memoria/ }).click()
   await expect(page.getByText(/Not enough words yet|pairs ·/)).toBeVisible()
@@ -144,7 +146,7 @@ test('review page, practice session and study tools work', async ({ page }) => {
     if (last) break
   }
   await expect(page.getByRole('heading', { name: /Olé|Qué bien|Genial|crack|Así se hace|De lujo/ })).toBeVisible({ timeout: 15_000 })
-  await page.goto('/#/review')
+  await page.goto('./#/review')
   await expect(page.getByRole('heading', { name: 'Review' })).toBeVisible()
   const practise = page.getByRole('button', { name: /practise anyway|Start review/ })
   await practise.first().click()
@@ -153,34 +155,34 @@ test('review page, practice session and study tools work', async ({ page }) => {
   await answerCurrent(page, true)
   await page.screenshot({ path: 'e2e/__screenshots__/review.png' })
 
-  await page.goto('/#/grammar')
+  await page.goto('./#/grammar')
   await expect(page.getByRole('heading', { name: 'Grammar' })).toBeVisible()
   await page.getByLabel('Search grammar').fill('gustar')
   await page.getByRole('link', { name: /Me gusta — liking things/ }).click()
   await expect(page.getByText('to be pleasing')).toBeVisible()
 
-  await page.goto('/#/verbs')
+  await page.goto('./#/verbs')
   await expect(page.getByText('soy')).toBeVisible()
   await page.getByLabel('Verb').fill('tener')
   await page.getByLabel('Verb').press('Enter')
   await expect(page.getByText('tengo')).toBeVisible()
 
-  await page.goto('/#/reader')
+  await page.goto('./#/reader')
   await page.getByRole('link', { name: /Mi familia y yo/ }).click()
   await expect(page.getByText(/You know \d+% of the words/)).toBeVisible()
   await page.locator('article button', { hasText: /^familia$/ }).first().click()
   await expect(page.getByRole('dialog').getByText('family')).toBeVisible()
 
-  await page.goto('/#/profile')
+  await page.goto('./#/profile')
   await expect(page.getByRole('heading', { name: 'Your progress' })).toBeVisible()
   await expect(page.getByText('Rhythm')).toBeVisible()
 })
 
 test('pronunciation lesson and settings load', async ({ page }) => {
-  await page.goto('/#/pronunciation')
+  await page.goto('./#/pronunciation')
   await page.getByRole('link', { name: /The five vowels/ }).click()
   await expect(page.getByText('Minimal pairs')).toBeVisible()
-  await page.goto('/#/settings')
+  await page.goto('./#/settings')
   await expect(page.getByRole('heading', { name: 'Settings' })).toBeVisible()
   await expect(page.getByLabel(/Lesson length/)).toBeVisible()
   await expect(page.getByRole('switch', { name: /Modo picante/ })).not.toBeChecked()
@@ -208,7 +210,7 @@ test('works offline once the service worker has cached the app', async ({ page, 
   await context.setOffline(true)
   await page.reload()
   await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
-  // Base-relative so the URL stays inside the service worker's /aprende/ scope.
+  // Base-relative so the URL stays inside the course's service worker scope (/aprende/spanish/).
   await page.goto('./#/grammar')
   await expect(page.getByRole('heading', { name: 'Grammar' })).toBeVisible()
   await context.setOffline(false)
@@ -216,7 +218,7 @@ test('works offline once the service worker has cached the app', async ({ page, 
 
 test('placement test places a strong learner at C2 and every level stays open', async ({ page }) => {
   test.setTimeout(180_000)
-  await page.goto('/')
+  await page.goto('./')
   await page.getByRole('button', { name: /Take the placement test/ }).click()
   await expect(page.getByText(/Placement test · A1/)).toBeVisible()
   let guard = 0
@@ -238,7 +240,7 @@ test('placement test places a strong learner at C2 and every level stays open', 
 })
 
 test('choosing a level manually marks the recommended start; every lesson is open', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('./')
   await expect(page.getByRole('button', { name: /I know my level/ })).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/welcome.png' })
   await page.getByRole('button', { name: /I know my level/ }).click()

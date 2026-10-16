@@ -108,7 +108,7 @@ export default function Placement() {
     return (
       <div className="mx-auto min-h-full max-w-xl px-4 pb-10 pt-[calc(1.5rem+env(safe-area-inset-top))] text-center">
         <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gold-300 text-gold-600"><IconTrophy width={48} height={48} /></div>
-        <h1 className="mt-4 text-3xl font-extrabold">Your level: {meta?.title ?? result.toUpperCase()}</h1>
+        <h1 className="mt-4 text-3xl font-semibold">Your level: {meta?.title ?? result.toUpperCase()}</h1>
         <p className="mt-1 text-muted">{meta?.name}</p>
         <p className="mt-4 text-left">
           {passed.length === STAGE_LEVELS.length && passed.every(Boolean)
@@ -147,7 +147,7 @@ export default function Placement() {
           <p className="text-sm font-bold text-muted">{item.kind === 'vocab' ? 'What does this word mean?' : 'Choose the correct option'}</p>
           <div className="mt-2 flex items-center gap-3">
             {item.kind === 'vocab' && <SpeakerButton text={item.prompt} size="sm" />}
-            <p className="text-2xl font-extrabold" lang={tlOf(item.lang)}>{item.lang === 'es' ? <TargetText text={item.prompt} /> : item.prompt}</p>
+            <p className="text-2xl font-semibold" lang={tlOf(item.lang)}>{item.lang === 'es' ? <TargetText text={item.prompt} /> : item.prompt}</p>
           </div>
           <div className="mt-5 grid gap-2" role="radiogroup" aria-label="Options">
             {item.options.map((o, i) => (

@@ -1,19 +1,22 @@
-# Aprende — a complete Spanish course, from first words to fluency
+# Pawsport — free language courses that travel, from first words to fluency
 
 **Live app:** https://pchattani.github.io/aprende/ (install it to your phone's home screen; it works offline)
 
-**Sister courses** (same app, same features, their own course from A1 to C2):
+Pawsport (formerly *Aprende*) is one app with five complete courses, each from A1 to C2. The home page is the **Pawsport hub**: every language you can learn, your progress in each (level, lessons, words learned, days on the road) and a summary across all of them. Each course is its own journey with Leo, Bonchita and Luna:
 
 | Course | Link | Journey |
 |---|---|---|
-| 🇮🇹 Italian (*Impara*) | https://pchattani.github.io/aprende/italian/ | Rome, Tuscany, the North, the South, Sicily and Sardinia, then back to Rome |
-| 🇧🇷 Portuguese (*Aprenda*) | https://pchattani.github.io/aprende/portuguese/ | Rio round Brazil, then Portugal; Brazilian with European notes |
-| 🇭🇰 Cantonese (*Gong 講*) | https://pchattani.github.io/aprende/cantonese/ | Hong Kong Island, Kowloon, the New Territories and islands, Macau, Guangzhou; traditional characters with Jyutping |
-| 🇫🇷 French (*Apprends*) | https://pchattani.github.io/aprende/french/ | Paris round France, then Brussels, Geneva, Dakar, the Antilles and Montréal to Québec |
+| 🇪🇸 Spanish | https://pchattani.github.io/aprende/spanish/ | Argentina: Buenos Aires, the Pampa, the North, Cuyo, Patagonia and the end of the world |
+| 🇭🇰 Cantonese | https://pchattani.github.io/aprende/cantonese/ | Hong Kong Island, Kowloon, the New Territories and islands, Macau, Guangzhou; traditional characters with Jyutping |
+| 🇧🇷 Portuguese | https://pchattani.github.io/aprende/portuguese/ | Rio round Brazil, then Portugal; Brazilian with European notes |
+| 🇮🇹 Italian | https://pchattani.github.io/aprende/italian/ | Rome, Tuscany, the North, the South, Sicily and Sardinia, then back to Rome |
+| 🇫🇷 French | https://pchattani.github.io/aprende/french/ | Paris round France, then Brussels, Geneva, Dakar, the Antilles and Montréal to Québec |
 
-Each course has its own progress, settings and offline install. See [docs/SISTER_COURSES.md](docs/SISTER_COURSES.md) for how a course is put together.
+Each course keeps its own progress, settings and offline install on your device; the hub only reads them. Old Spanish links (`/aprende/#/…`) still work: they forward to `/aprende/spanish/#/…` and your progress is kept. See [docs/SITE.md](docs/SITE.md) for how the site is put together and [docs/SISTER_COURSES.md](docs/SISTER_COURSES.md) for how a course is built.
 
-Aprende is a free, open, no-account language course that actually teaches Spanish instead of leaving you with a bag of random words. Short daily lessons and a visible rhythm keep you coming back, and underneath them sits a real course: explicit grammar, a frequency-ordered vocabulary of thousands of words, spaced repetition that runs the show, a reading library with coverage metering, a full verb trainer, a pronunciation course, and checkpoint exams for every CEFR level.
+> The GitHub repository and the URL path are still called `aprende` until the repository is renamed; see [Renaming the repository](docs/SITE.md#renaming-the-repository).
+
+The rest of this page describes the Spanish course, the reference that every other course matches. Pawsport is a free, open, no-account language course that actually teaches the language instead of leaving you with a bag of random words. Short daily lessons and a visible rhythm keep you coming back, and underneath them sits a real course: explicit grammar, a frequency-ordered vocabulary of thousands of words, spaced repetition that runs the show, a reading library with coverage metering, a full verb trainer, a pronunciation course, and checkpoint exams for every CEFR level.
 
 There is **no AI and no server**: every explanation was written by hand, and every piece of feedback is computed on your device by deterministic Spanish language engines (a full conjugator, accent rules, an agreement checker, a dictionary built from the course vocabulary) plus your browser's free text-to-speech and speech recognition.
 
@@ -60,11 +63,14 @@ The whole course is authored: 66 units, 264 lessons, 3,968 sentences, 1,217 ques
 
 ```bash
 npm install
-npm run dev            # http://localhost:5173/aprende/
+npm run dev            # Spanish course: http://localhost:5173/aprende/spanish/
+VITE_LANG=fr npm run dev   # any other course (yue, pt, it, fr)
+npm run dev:hub        # the Pawsport hub: http://localhost:5173/aprende/
 npm test               # unit tests (Vitest)
 npm run content:check  # validate all course content
-npm run test:e2e       # Playwright (needs: npx playwright install chromium)
-npm run build && npm run preview
+npm run build:all      # hub → dist/, every course → dist/<slug>/
+npm run serve:dist     # serve dist/ at http://localhost:4173/aprende/ (like GitHub Pages)
+npm run test:e2e       # Playwright against dist/ (needs build:all and: npx playwright install chromium)
 ```
 
 ## Tech
@@ -77,7 +83,7 @@ The engine is language-agnostic. A language is a `LanguagePack` (normaliser, tok
 
 ## Independence
 
-Aprende is an independent, open-source project by an individual. It is not affiliated with, endorsed by, sponsored by or connected to Duolingo, Inc. or any other language-learning company or product, and it uses none of their content, code, characters or trademarks. Any product names mentioned belong to their respective owners.
+Pawsport is an independent, open-source project by an individual. It is not affiliated with, endorsed by, sponsored by or connected to Duolingo, Inc. or any other language-learning company or product, and it uses none of their content, code, characters or trademarks. Any product names mentioned belong to their respective owners.
 
 ## License
 

@@ -14,7 +14,8 @@ import { rememberReturn } from '../engine/returnTo'
 import { GrammarNoteView } from '../components/GrammarNote'
 import { StampCard } from '../components/StampCard'
 import { Button, SpeakerButton, Chip } from '../components/ui/basics'
-import { IconArrowLeft } from '../components/ui/icons'
+import { IconArrowLeft, IconPaw } from '../components/ui/icons'
+import { StopArt } from '../components/StopArt'
 import { Confetti } from '../components/ui/Confetti'
 import { CHEERS } from '../engine/stickers'
 import { surpriseFind, pickReward } from '../engine/quests'
@@ -142,7 +143,7 @@ export default function LessonPage() {
         }}
       />
     )
-  return <DoneScreen result={phase.result} found={phase.found} stamp={phase.stamp} onHome={goHome} onRetry={() => setPhase({ kind: 'loading' })} />
+  return <DoneScreen result={phase.result} found={phase.found} stamp={phase.stamp} where={stopFor(id.split('.').slice(0, 2).join('.'))} onHome={goHome} onRetry={() => setPhase({ kind: 'loading' })} />
 }
 
 function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () => void; onBack: () => void }) {
@@ -151,25 +152,25 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
   const [tab, setTab] = useState(0)
   return (
     <div className="mx-auto max-w-xl px-4 pb-28 pt-[calc(0.75rem+env(safe-area-inset-top))]">
-      <button type="button" onClick={onBack} className="mb-2 flex items-center gap-1 text-sm font-bold text-muted">
-        <IconArrowLeft width={18} height={18} /> Course
+      <button type="button" onClick={onBack} className="mb-3 flex items-center gap-1 text-sm text-ink-2">
+        <IconArrowLeft width={18} height={18} /> Journey
       </button>
-      <Chip tone="brand">New in this lesson</Chip>
-      <h1 className="mt-2 text-3xl">{lesson.title}</h1>
-      {lesson.tip && <p className="mt-3 rounded-2xl bg-gold-100/80 p-3 text-sm font-semibold dark:bg-gold-500/15">💡 {lesson.tip}</p>}
-      <div className="mt-4 flex gap-2">
+      <p className="eyebrow">Guidebook · before you board</p>
+      <h1 className="mt-1 text-[2.1rem]">{lesson.title}</h1>
+      {lesson.tip && <p className="mt-3 -rotate-1 rounded-sm border-l-4 border-sun bg-card px-4 py-2 font-hand text-xl leading-snug shadow-card">{lesson.tip}</p>}
+      <div className="mt-5 flex gap-5 border-b border-line" role="tablist">
         {notes.map((n, i) => (
-          <button key={n!.id} type="button" onClick={() => setTab(i)} className={`rounded-full px-3.5 py-1.5 text-sm font-extrabold transition ${tab === i ? 'bg-brand-gradient text-white shadow-md' : 'bg-surface-2 text-muted'}`}>
+          <button key={n!.id} type="button" onClick={() => setTab(i)} role="tab" aria-selected={tab === i} className={`-mb-px border-b-2 pb-2 text-sm font-semibold transition ${tab === i ? 'border-ink text-ink' : 'border-transparent text-ink-2'}`}>
             {n!.title}
           </button>
         ))}
         {words.length > 0 && (
-          <button type="button" onClick={() => setTab(notes.length)} className={`rounded-full px-3.5 py-1.5 text-sm font-extrabold transition ${tab === notes.length ? 'bg-brand-gradient text-white shadow-md' : 'bg-surface-2 text-muted'}`}>
+          <button type="button" onClick={() => setTab(notes.length)} role="tab" aria-selected={tab === notes.length} className={`-mb-px border-b-2 pb-2 text-sm font-semibold transition ${tab === notes.length ? 'border-ink text-ink' : 'border-transparent text-ink-2'}`}>
             Words ({words.length})
           </button>
         )}
       </div>
-      <div className="card mt-3">
+      <div className="card mt-4">
         {tab < notes.length ? (
           <GrammarNoteView note={notes[tab]!} />
         ) : (
@@ -190,7 +191,7 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
           </ul>
         )}
       </div>
-      <div className="fixed inset-x-0 bottom-0 bg-[var(--bg)]/90 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 border-t border-line bg-paper p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
         <div className="mx-auto max-w-xl">
           <Button className="w-full" onClick={onStart}>
             Start the exercises
@@ -201,60 +202,62 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
   )
 }
 
-function DoneScreen({ result, found, stamp, onHome, onRetry }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void }) {
+function DoneScreen({ result, found, stamp, where, onHome, onRetry }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; where?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void }) {
   const acc = result.total ? Math.round(((result.correct + result.almost) / result.total) * 100) : 0
   const minutes = Math.floor(result.durationMs / 60000)
   const seconds = Math.round((result.durationMs % 60000) / 1000)
   const cheer = CHEERS[result.correct % CHEERS.length]!
   const outfits = useOutfits()
   const days = useDays()
-  const xp = xpFor(result)
-  const shown = useCountUp(xp)
-  const streak = days ? streakFrom(days.filter((d) => d.minutes > 0 || d.lessons > 0 || d.reviews > 0).map((d) => d.date), todayKey()).current : 0
+  const km = xpFor(result)
+  const shown = useCountUp(km)
+  const road = days ? streakFrom(days.filter((d) => d.minutes > 0 || d.lessons > 0 || d.reviews > 0).map((d) => d.date), todayKey()).current : 0
   const perfect = result.completed && result.wrong === 0
+  const [date] = useState(() => new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' }))
   return (
-    <div className="animate-rise mx-auto flex min-h-full max-w-xl flex-col items-center px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-[calc(2rem+env(safe-area-inset-top))] text-center">
+    <div className="animate-rise mx-auto flex min-h-full max-w-xl flex-col px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-[calc(1.5rem+env(safe-area-inset-top))]">
       {result.completed && <Confetti />}
-      <div className="relative mt-4">
-        <span className="absolute inset-x-6 -bottom-1 h-6 rounded-[50%] bg-black/10 blur-sm dark:bg-black/40" aria-hidden="true" />
-        <div className="animate-bounce-in flex items-end -space-x-5">
-          <DogButton dog="leo" size={110} outfit={outfits.leo} className="animate-float" />
-          <DogButton dog="bonchita" size={124} outfit={outfits.bonchita} className="animate-float [animation-delay:0.3s]" />
-          <DogButton dog="luna" size={110} outfit={outfits.luna} className="animate-float [animation-delay:0.6s]" />
+      <p className="eyebrow text-center">{result.completed ? 'Postcard mailed home' : 'Session saved'}</p>
+      <div className="relative mx-auto mt-3 w-full max-w-sm rotate-[-1.5deg] rounded-[6px] border-[6px] border-card bg-card shadow-float">
+        {where && <StopArt stop={where.stop} level={where.region.level} progress={result.completed ? 1 : 0.4} quality="full" lazy={false} className="animate-develop aspect-[3/2] w-full" />}
+        <div className="pointer-events-none absolute -bottom-6 right-3 flex h-24 w-24 rotate-[-12deg] flex-col items-center justify-center rounded-full border-[2.5px] border-double text-center text-red" style={{ mixBlendMode: 'multiply' }} aria-hidden="true">
+          <span className="font-mono text-[9px] uppercase tracking-widest">{where?.stop.name.slice(0, 16) ?? 'Pawsport'}</span>
+          <span className="font-mono text-[11px] font-semibold">{date}</span>
+          <span className="font-mono text-[9px] uppercase tracking-widest">+{km} km</span>
         </div>
       </div>
-      <h1 className={`mt-5 text-[2.6rem] ${result.completed ? 'text-gradient' : ''}`}>{result.completed ? cheer.es : 'Session ended'}</h1>
-      <p className="mt-1 text-lg font-extrabold">{result.completed ? (perfect ? 'Perfect lesson! 🌟' : 'Lesson complete!') : 'Everything you practised is saved.'}</p>
-      <p className="mt-1 text-sm font-bold text-muted">{result.completed ? `${cheer.en} ${perfect ? 'A clean sweep: nothing to revisit.' : `${result.wrong} ${result.wrong === 1 ? 'item' : 'items'} will come back in your reviews.`}` : ''}</p>
-
-      <div className="mt-6 grid w-full grid-cols-3 gap-3">
-        <Stat label={perfect ? 'Bonus XP' : 'Total XP'} icon="⚡" value={`+${shown}`} tone="gold" />
-        <Stat label={acc >= 90 ? 'Amazing' : acc >= 70 ? 'Good' : 'Accuracy'} icon="🎯" value={`${acc}%`} tone="ok" />
-        <Stat label="Speedy" icon="⏱" value={`${minutes}:${String(seconds).padStart(2, '0')}`} tone="sky" />
+      <div className="mx-auto mt-8 w-full max-w-sm text-center">
+        <h1 className="font-hand text-[3rem] leading-none">{result.completed ? cheer.es : 'Session ended'}</h1>
+        <p className="mt-2 text-sm text-ink-2">{result.completed ? `${cheer.en} ${perfect ? 'A clean sweep: nothing to revisit.' : `${result.wrong} ${result.wrong === 1 ? 'postcard' : 'postcards'} will come back in your reviews.`}` : 'Everything you practised is saved.'}</p>
+        <p className="mt-1 font-hand text-xl text-ink-2">— Leo, Bonchita & Luna</p>
       </div>
 
-      {result.completed && streak > 0 && (
-        <div className="animate-bounce-in mt-4 flex w-full items-center gap-3 rounded-3xl border-2 border-line bg-surface p-3 text-left shadow-card [animation-delay:0.5s]">
-          <span className="animate-flame text-4xl" aria-hidden="true">🔥</span>
-          <div className="min-w-0 flex-1">
-            <p className="font-display text-xl leading-tight text-tangerine-500">{streak} day streak!</p>
-            <p className="text-xs font-bold text-muted">Come back tomorrow to keep the fire going.</p>
-          </div>
+      <dl className="mx-auto mt-6 grid w-full max-w-sm grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-card text-center shadow-card">
+        <div className="py-3"><dt className="eyebrow">Distance</dt><dd className="mt-1 font-mono text-xl">+{shown}<span className="text-xs text-ink-2"> km</span></dd></div>
+        <div className="py-3"><dt className="eyebrow">Accuracy</dt><dd className="mt-1 font-mono text-xl"><span>{acc}%</span></dd></div>
+        <div className="py-3"><dt className="eyebrow">Time</dt><dd className="mt-1 font-mono text-xl">{minutes}:{String(seconds).padStart(2, '0')}</dd></div>
+      </dl>
+
+      {result.completed && road > 0 && (
+        <div className="mx-auto mt-3 flex w-full max-w-sm items-center gap-3 rounded-2xl border border-dashed border-line px-4 py-3">
+          <span className="flex h-10 w-10 shrink-0 rotate-[-8deg] items-center justify-center rounded-full border-2 border-red text-red"><IconPaw width={20} height={20} /></span>
+          <p className="text-sm"><span className="font-mono text-base">{road}</span> {road === 1 ? 'day' : 'days'} on the road. <span className="text-ink-2">Come back tomorrow for the next stamp.</span></p>
         </div>
       )}
-      {stamp && <div className="mt-4 w-full"><StampCard stop={stamp.stop} region={stamp.region} /></div>}
+      {stamp && <div className="mx-auto mt-4 w-full max-w-sm"><StampCard stop={stamp.stop} region={stamp.region} /></div>}
       {found && (
-        <div className="animate-pop mt-4 flex w-full items-center gap-3 rounded-3xl border-2 border-gold-300 bg-gold-100 p-3 text-left dark:bg-gold-500/15">
-          <span className="text-4xl" aria-hidden="true">{found.emoji}</span>
+        <div className="animate-pop mx-auto mt-4 flex w-full max-w-sm items-center gap-3 rounded-2xl border border-line bg-card p-3 shadow-card">
+          <span className="stamp text-3xl" aria-hidden="true">{found.emoji}</span>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-extrabold">Lucky find! {found.es}</p>
-            <p className="text-xs font-semibold text-muted">{found.blurb} Added to your passport.</p>
+            <p className="text-sm font-semibold">Lucky find: {found.es}</p>
+            <p className="text-xs text-ink-2">{found.blurb} Added to your passport.</p>
           </div>
+          <div className="flex -space-x-3"><DogButton dog="luna" size={34} outfit={outfits.luna} /></div>
         </div>
       )}
-      <div className="mt-auto grid w-full gap-3 pt-8">
-        {!result.completed && <Button onClick={onRetry}>Try again</Button>}
-        <Button variant={result.completed ? 'ok' : 'ghost'} className="py-4" onClick={onHome}>
+      <div className="mx-auto mt-auto grid w-full max-w-sm gap-3 pt-8">
+        {!result.completed && <Button variant="ghost" onClick={onRetry}>Try again</Button>}
+        <Button variant="primary" className="py-4" onClick={onHome}>
           Continue
         </Button>
       </div>
@@ -279,17 +282,4 @@ function useCountUp(target: number): number {
     return () => cancelAnimationFrame(raf)
   }, [target, reduce])
   return n
-}
-
-function Stat({ label, value, icon, tone }: { label: string; value: string; icon: string; tone: 'gold' | 'ok' | 'sky' }) {
-  const c = tone === 'gold' ? 'border-gold-500 bg-gold-500 text-gold-600' : tone === 'ok' ? 'border-ok-500 bg-ok-500 text-ok-600' : 'border-sky-500 bg-sky-500 text-sky-600'
-  return (
-    <div className={`animate-bounce-in overflow-hidden rounded-2xl border-2 ${c}`}>
-      <p className="py-1 text-[11px] font-extrabold uppercase tracking-wider text-white">{label}</p>
-      <p className="m-[2px] mt-0 flex items-center justify-center gap-1 rounded-[0.8rem] bg-surface py-2.5 font-display text-xl">
-        <span aria-hidden="true">{icon}</span>
-        <span>{value}</span>
-      </p>
-    </div>
-  )
 }

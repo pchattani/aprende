@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-const COLORS = ['#7c5cff', '#ff5fa2', '#ff9f43', '#2ed8a3', '#3ba7ff', '#ffd36a']
+const COLORS = ['#d9473b', '#2f5bd3', '#e9a92e', '#2f8f5b', '#1c2541', '#f2e6cf']
 
 /** A burst of falling confetti, CSS-animated, removed after it falls. */
 export function Confetti({ count = 60 }: { count?: number }) {

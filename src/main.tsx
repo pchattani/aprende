@@ -11,3 +11,14 @@ createRoot(document.getElementById('root')!).render(
     </HashRouter>
   </StrictMode>,
 )
+
+// Demo learner for screenshots and end-to-end tests: loaded on demand only, never in the main chunk.
+try {
+  if (sessionStorage.getItem('e2e') === '1' || /[?&]demo\b/.test(location.search)) {
+    void import('./dev/demo').then((m) => {
+      ;(window as unknown as { __pawsportDemo?: typeof m.seedDemo }).__pawsportDemo = m.seedDemo
+    })
+  }
+} catch {
+  /* sessionStorage unavailable */
+}

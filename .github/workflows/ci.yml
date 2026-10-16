@@ -27,11 +27,15 @@ jobs:
       - run: npm run typecheck
       # Every live course in courses.json: content check and unit tests with VITE_LANG set
       - run: npm run check:all
-      # Spanish builds to dist/, each sister course to dist/<slug>/
+      # The Pawsport hub builds to dist/ (the site root), every course to dist/<slug>/
       - run: npm run build:all
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
-      - run: npm run test:e2e -- e2e/app.spec.ts
+      # e2e runs against dist/ served at /aprende/ by scripts/serve-dist.mjs (started by Playwright)
+      - name: Hub
+        run: npm run test:e2e -- e2e/hub.spec.ts
+      - name: Spanish
+        run: npm run test:e2e -- e2e/app.spec.ts
       - name: Smoke-test every course
         run: node scripts/courses.mjs "npx playwright test e2e/sister.spec.ts"
       - uses: actions/upload-artifact@v4
@@ -41,8 +45,8 @@ jobs:
 
   deploy:
     # Publishes dist/ to the gh-pages branch, which GitHub Pages serves at
-    # https://pchattani.github.io/aprende/ (Settings -> Pages -> source: gh-pages);
-    # sister courses live in dist/<slug>/ → /aprende/<slug>/.
+    # https://pchattani.github.io/aprende/ (Settings -> Pages -> source: gh-pages):
+    # the Pawsport hub at /aprende/, each course in dist/<slug>/ → /aprende/<slug>/.
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: check
     runs-on: ubuntu-latest

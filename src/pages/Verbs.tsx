@@ -85,7 +85,7 @@ export default function Verbs() {
               <div className="mb-3 flex items-center gap-3">
                 <SpeakerButton text={conj.lemma} size="sm" />
                 <div>
-                  <h2 className="text-2xl font-extrabold" lang={TL}>{conj.lemma}</h2>
+                  <h2 className="text-2xl font-semibold" lang={TL}>{conj.lemma}</h2>
                   <p className="text-sm text-muted">{entry?.en.join(', ') ?? ''} · participle <b lang={TL}>{conj.participle}</b> · gerund <b lang={TL}>{conj.gerund}</b></p>
                 </div>
               </div>
@@ -195,7 +195,7 @@ function Drill({ verbs }: { verbs: { lemma: string; level: LevelId }[] }) {
           <p className="text-sm text-muted">
             Score {score.right}/{score.total}
           </p>
-          <p className="mt-2 text-2xl font-extrabold" lang={TL}>{q.lemma}</p>
+          <p className="mt-2 text-2xl font-semibold" lang={TL}>{q.lemma}</p>
           <p className="text-sm">
             <Chip tone="sky">{TENSE_LABELS[q.tense]?.en}</Chip> <Chip>{PERSONS[q.person]}</Chip>
           </p>

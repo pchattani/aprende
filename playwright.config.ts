@@ -5,10 +5,12 @@ import { existsSync, readFileSync } from 'node:fs'
 const localChromium = ['/opt/pw-browsers/chromium', '/opt/pw-browsers/chromium/chrome', '/opt/pw-browsers/chromium-linux/chrome'].find((p) => existsSync(p))
 const launchOptions = process.env.CI || !localChromium ? {} : { executablePath: localChromium }
 
-// The course under test (VITE_LANG) decides the base path: /aprende/ or /aprende/<slug>/.
+// The whole site is served from dist/ (npm run build:all) the way GitHub Pages serves it: the hub at /aprende/,
+// each course at /aprende/<slug>/. The course under test (VITE_LANG, default Spanish) is the baseURL, so
+// course specs use relative URLs ('./#/review'); hub specs use absolute ones ('/aprende/').
 const LANG = process.env.VITE_LANG ?? 'es'
-const slug = LANG === 'es' ? '' : (JSON.parse(readFileSync('courses.json', 'utf8')) as { id: string; slug: string }[]).find((c) => c.id === LANG)?.slug ?? LANG
-const BASE = slug ? `/aprende/${slug}/` : '/aprende/'
+const slug = (JSON.parse(readFileSync('courses.json', 'utf8')) as { id: string; slug: string }[]).find((c) => c.id === LANG)?.slug ?? LANG
+const BASE = `/aprende/${slug}/`
 
 export default defineConfig({
   testDir: './e2e',
@@ -22,8 +24,8 @@ export default defineConfig({
     viewport: { width: 390, height: 844 },
   },
   webServer: {
-    command: 'npm run preview -- --port 4173 --strictPort',
-    url: `http://localhost:4173${BASE}`,
+    command: 'node scripts/serve-dist.mjs --port 4173',
+    url: 'http://localhost:4173/aprende/',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },

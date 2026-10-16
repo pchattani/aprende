@@ -24,7 +24,7 @@ export class ErrorBoundary extends Component<Props, State> {
     if (!error) return this.props.children
     return (
       <div role="alert" className="card m-4 p-5">
-        <h1 className="text-xl font-extrabold">Something went wrong</h1>
+        <h1 className="text-xl font-semibold">Something went wrong</h1>
         <p className="mt-2 text-sm text-muted">
           The app hit an error while loading this screen. Reloading usually fixes it. If it keeps happening, the content files may be invalid.
         </p>

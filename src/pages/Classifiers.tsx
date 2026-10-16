@@ -80,11 +80,11 @@ function Drill({ nouns, classifiers }: { nouns: VocabEntry[]; classifiers: strin
     <div>
       <div className="mb-3 flex flex-wrap gap-1.5">
         {LEVEL_ORDER.map((l, i) => (
-          <button key={l} type="button" onClick={() => { setLevel(i); setPicked(undefined); setQ(make()) }} className={`rounded-full px-3 py-1 text-xs font-extrabold ${i === level ? 'bg-brand-gradient text-white' : 'bg-surface-2 text-muted'}`}>up to {l.toUpperCase()}</button>
+          <button key={l} type="button" onClick={() => { setLevel(i); setPicked(undefined); setQ(make()) }} className={`rounded-full px-3 py-1 text-xs font-semibold ${i === level ? 'bg-brand-gradient text-white' : 'bg-surface-2 text-muted'}`}>up to {l.toUpperCase()}</button>
         ))}
       </div>
       <div className="card text-center">
-        <p className="text-xs font-extrabold uppercase tracking-wider text-brand-600">Which measure word?</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-brand-600">Which measure word?</p>
         <p className="mt-3 font-display text-3xl"><TargetText text={`一 ＿ ${q.n.lemma}`} /></p>
         <p className="text-sm text-muted">one {q.n.en[0]}</p>
         <div className="mt-4 grid grid-cols-2 gap-2" role="radiogroup">

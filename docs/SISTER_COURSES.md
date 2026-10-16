@@ -4,12 +4,22 @@ The same app, method and journey, built for other languages from the same code.
 Spanish (`content/es`) is the reference course: **match its scale and quality**.
 Read `CONTENT_GUIDE.md` first; everything there applies, with the differences below.
 
-| Course | Code | Path | App name | Journey |
-|---|---|---|---|---|
-| Cantonese (Hong Kong) | `yue` | /aprende/cantonese/ | Gong 講 | Hong Kong, Macau, Guangzhou |
-| Portuguese (Brazilian, European notes) | `pt` | /aprende/portuguese/ | Aprenda | Brazil, ending in Portugal |
-| Italian | `it` | /aprende/italian/ | Impara | Italy |
-| French (France, with Québec and Belgian notes) | `fr` | /aprende/french/ | Apprends | France, ending in the French-speaking world |
+| Course | Code | Path | Journey |
+|---|---|---|---|
+| Spanish (reference course) | `es` | /aprende/spanish/ | Argentina |
+| Cantonese (Hong Kong) | `yue` | /aprende/cantonese/ | Hong Kong, Macau, Guangzhou |
+| Portuguese (Brazilian, European notes) | `pt` | /aprende/portuguese/ | Brazil, ending in Portugal |
+| Italian | `it` | /aprende/italian/ | Italy |
+| French (France, with Québec and Belgian notes) | `fr` | /aprende/french/ | France, ending in the French-speaking world |
+
+Every course is called **Pawsport** (`appName` in `ui.yaml`; the tagline names the
+language: "French, one stamp at a time"). The site root /aprende/ is the Pawsport
+hub, which lists the courses from `courses.json`; see `docs/SITE.md`.
+
+To publish a new course: give it a `slug` in `pack.yaml` (its folder under
+/aprende/), add it to `courses.json` with the same slug, a `country` and a one-line
+`pitch` for the hub, and set `live: true`. The build, the hub, its service worker
+exclusions and CI all follow `courses.json`.
 
 ## Field names
 
@@ -52,7 +62,7 @@ forms; readers ≤ 6 %, literature ≤ 12 %): **add every word a unit uses to th
 (greetings, `feedback`, `stampEarned`, `spicyName`, `games`, `dogsPage`, `quizGreat`,
 `whatDoesItMean` with `{word}`, `badgeName` with `{region}`, `typePlaceholder`,
 `voiceTest`, `cheers` with English, `quests` (all 8 ids), `dogLines` (5 per dog),
-`unitStickers` (one emoji per unit id)). `appName`, `tagline`, `welcome`,
+`unitStickers` (one emoji per unit id)). `appName` (always `Pawsport`), `tagline`, `welcome`,
 `voiceHelp`, `pronunciationIntro` are English.
 
 `journey.yaml`: 6 regions (`level`, `name`, `es` caption), one stop per unit in

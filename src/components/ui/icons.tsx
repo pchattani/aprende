@@ -75,3 +75,35 @@ export const IconLeaf = (p: SVGProps<SVGSVGElement>) => (
 export const IconSparkle = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" /><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" /></svg>
 )
+/** Journey: a dashed route between two pins. */
+export const IconRoute = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><circle cx="6" cy="19" r="2.2" /><circle cx="18" cy="5" r="2.2" /><path d="M8 17.5c3-1 3.5-4.5 6.5-6.5 1.4-.9 2.3-2.4 2.8-3.8" strokeDasharray="2.2 2.6" /></svg>
+)
+/** A paw print (days on the road). */
+export const IconPaw = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base({ fill: 'currentColor', stroke: 'none', ...p })}><ellipse cx="12" cy="16" rx="4.6" ry="3.8" /><ellipse cx="6" cy="10.5" rx="1.9" ry="2.4" transform="rotate(-18 6 10.5)" /><ellipse cx="9.6" cy="6.6" rx="1.9" ry="2.5" /><ellipse cx="14.4" cy="6.6" rx="1.9" ry="2.5" /><ellipse cx="18" cy="10.5" rx="1.9" ry="2.4" transform="rotate(18 18 10.5)" /></svg>
+)
+/** A postcard with a stamp corner (reviews: postcards that fade). */
+export const IconPostcard = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><rect x="2.5" y="5" width="19" height="14" rx="1.5" /><rect x="15" y="8" width="3.8" height="4.4" rx="0.5" /><path d="M12 8v8M5.5 10h4M5.5 13h4" /></svg>
+)
+/** Insights: a candlestick-like chart. */
+export const IconChart = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M3 3v18h18" /><path d="M8 9v6M8 7v1M8 16v1" /><rect x="6.8" y="9" width="2.4" height="6" rx="0.4" /><rect x="12.3" y="6" width="2.4" height="5" rx="0.4" /><path d="M13.5 4v2M13.5 11v2" /><rect x="17.8" y="10" width="2.4" height="5" rx="0.4" /><path d="M19 8v2M19 15v2" /></svg>
+)
+/** Tailwind (combo): three gusts. */
+export const IconWind = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M3 8h10a2.5 2.5 0 1 0-2.5-2.5" /><path d="M3 12h15a2.5 2.5 0 1 1-2.5 2.5" /><path d="M3 16h7" /></svg>
+)
+/** A plane, for the boarding pass. */
+export const IconPlane = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base({ fill: 'currentColor', stroke: 'none', ...p })}><path d="M21.5 13.2v-1.6L13.5 7V2.8a1.5 1.5 0 0 0-3 0V7l-8 4.6v1.6l8-2.1v5.2l-2.3 1.7v1.4l3.8-1 3.8 1v-1.4l-2.3-1.7v-5.2z" /></svg>
+)
+/** A globe with meridians (all languages / the hub). */
+export const IconGlobe = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9s1.2-6.2 3.8-9z" /></svg>
+)
+/** Passport control (level check). */
+export const IconPassport = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><rect x="5" y="2.5" width="14" height="19" rx="1.8" /><circle cx="12" cy="10" r="3.4" /><path d="M8.6 10h6.8M12 6.6c1 1 1.4 2.1 1.4 3.4s-.4 2.4-1.4 3.4M9 17h6" /></svg>
+)

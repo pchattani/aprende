@@ -14,3 +14,6 @@ export interface CourseLink {
 export const COURSES: CourseLink[] = courses
   .filter((c) => c.live)
   .map((c) => ({ id: c.id, name: c.name, native: c.native, app: c.app, flag: c.flag, href: c.slug ? `/aprende/${c.slug}/` : '/aprende/' }))
+
+/** The Pawsport hub (all languages and your progress in each), at the site root. */
+export const HUB_URL = '/aprende/'

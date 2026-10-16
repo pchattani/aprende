@@ -5,7 +5,7 @@ import { targetVoices, speak, sttSupported, ttsSupported } from '../engine/speec
 import { exportAll, importAll, resetAll, type Backup } from '../db/progress'
 import { PageHeader, Button } from '../components/ui/basics'
 import { pack, ui, LANGUAGE } from '../engine/loader'
-import { COURSES } from '../courses'
+import { COURSES, HUB_URL } from '../courses'
 
 export default function Settings() {
   const s = useSettings()
@@ -107,14 +107,15 @@ export default function Settings() {
           </div>
         )}
       </Section>
-      <Section title="Sister courses">
-        <p className="text-sm text-muted">The same journey, method and games for other languages. Each course keeps its own progress on this device.</p>
+      <Section title="Other languages">
+        <p className="text-sm text-muted">The same journey, method and games in other languages. Each keeps its own journal on this device; the Pawsport hub shows them all.</p>
+        <a href={HUB_URL} className="btn btn-ghost mt-2 w-full">All languages · Pawsport hub</a>
         <ul className="mt-2 grid gap-2">
           {COURSES.filter((c) => c.id !== pack.id).map((c) => (
             <li key={c.id}>
               <a href={c.href} className="tile flex items-center gap-3 py-2.5">
                 <span className="text-2xl" aria-hidden="true">{c.flag}</span>
-                <span className="min-w-0 flex-1"><span className="block font-extrabold">{c.name}</span><span className="block text-xs text-muted">{c.app} · {c.native}</span></span>
+                <span className="min-w-0 flex-1"><span className="block font-semibold">{c.name}</span><span className="block text-xs text-muted">{c.native}</span></span>
                 <span aria-hidden="true">›</span>
               </a>
             </li>
@@ -123,7 +124,7 @@ export default function Settings() {
       </Section>
       <p className="mt-6 text-center text-xs text-muted">{ui.appName} · open source · no accounts, no tracking, no AI, works offline.</p>
       <p className="mt-3 text-center text-[11px] leading-relaxed text-muted">
-        Aprende is an independent project by an individual. It is not affiliated with, endorsed by or connected to Duolingo, Inc. or any other language-learning company, and uses none of their content or trademarks.
+        Pawsport is an independent project by an individual. It is not affiliated with, endorsed by or connected to Duolingo, Inc. or any other language-learning company, and uses none of their content or trademarks.
       </p>
     </div>
   )

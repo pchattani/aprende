@@ -34,7 +34,7 @@ export default function Perros() {
       <PageHeader title={ui.dogsPage} subtitle="Dress Leo, Bonchita and Luna with the souvenirs they find on quests." />
       <div className="mb-4 flex gap-1 rounded-full bg-surface-2 p-1" role="tablist" aria-label="Choose a dog">
         {(['leo', 'bonchita', 'luna'] as DogName[]).map((d) => (
-          <button key={d} type="button" role="tab" aria-selected={dog === d} onClick={() => setDog(d)} className={`flex-1 rounded-full py-1.5 text-sm font-extrabold transition ${dog === d ? 'bg-brand-gradient text-white shadow-md' : 'text-muted'}`}>
+          <button key={d} type="button" role="tab" aria-selected={dog === d} onClick={() => setDog(d)} className={`flex-1 rounded-full py-1.5 text-sm font-semibold transition ${dog === d ? 'bg-brand-gradient text-white shadow-md' : 'text-muted'}`}>
             {DOG_NAMES[d]}
           </button>
         ))}
@@ -54,7 +54,7 @@ export default function Perros() {
         return (
           <section key={slot} className="card mb-3">
             <div className="flex items-center justify-between">
-              <p className="text-xs font-extrabold uppercase tracking-wider text-muted">{emoji} {label}</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted">{emoji} {label}</p>
               {current && <button type="button" className="text-xs font-bold text-muted underline" onClick={() => equip(slot, undefined)}>Take off</button>}
             </div>
             <ul className="mt-2 flex flex-wrap gap-2">

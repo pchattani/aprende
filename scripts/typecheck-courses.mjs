@@ -1,4 +1,5 @@
 // Type-check the app against every sister-course language pack that exists (tsconfig.<code>.json).
+// (Spanish, the hub and the configs are checked by `tsc -b`: tsconfig.app.json, tsconfig.hub.json, tsconfig.node.json.)
 import { existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'

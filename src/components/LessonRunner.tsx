@@ -10,8 +10,8 @@ import { useSettings } from '../store/settings'
 import { useSession } from '../store/session'
 import { ExerciseView } from './exercises'
 import { Feedback } from './Feedback'
-import { Button, ProgressBar } from './ui/basics'
-import { IconX } from './ui/icons'
+import { Button } from './ui/basics'
+import { IconX, IconWind, IconPaw } from './ui/icons'
 import { playSound } from '../engine/sounds'
 
 interface State {
@@ -176,30 +176,30 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   return (
     <div className="mx-auto flex min-h-full max-w-xl flex-col px-4 pt-[calc(0.75rem+env(safe-area-inset-top))]">
       <div className="flex items-center gap-3" title={title}>
-        <button type="button" onClick={() => setConfirmQuit(true)} className="-ml-1 rounded-full p-1.5 text-muted transition hover:text-[var(--text)]" aria-label="Quit">
-          <IconX width={28} height={28} strokeWidth={2.6} />
+        <button type="button" onClick={() => setConfirmQuit(true)} className="-ml-1 rounded-full p-1.5 text-ink-2 transition hover:text-ink" aria-label="Quit">
+          <IconX width={26} height={26} strokeWidth={2} />
         </button>
-        <ProgressBar value={done} max={total} tone="ok" className="h-4 flex-1" />
-        <span className={`flex min-w-[3.2rem] items-center justify-end gap-0.5 font-display text-lg transition ${s.streak >= 2 ? 'text-tangerine-500' : 'text-muted/50'}`} aria-label={`${s.streak} in a row`}>
-          <span className={s.streak >= 2 ? 'animate-flame' : 'grayscale'} aria-hidden="true">🔥</span>{s.streak}
+        <RouteProgress value={done} max={total} />
+        <span className={`flex min-w-[3.4rem] items-center justify-end gap-1 font-mono text-sm transition ${s.streak >= 2 ? 'text-blue' : 'text-ink-2/50'}`} aria-label={`Tailwind: ${s.streak} in a row`} title="Tailwind: answers in a row">
+          <IconWind width={18} height={18} />×{s.streak}
         </span>
       </div>
-      {mode !== 'lesson' && <p className="mt-2 truncate text-xs font-extrabold uppercase tracking-wider text-muted">{title}</p>}
+      {mode !== 'lesson' && <p className="eyebrow mt-2 truncate">{title}</p>}
       {s.result && s.result.verdict !== 'wrong' && s.streak >= 3 && s.streak % 3 === 0 && (
-        <p key={s.streak} className="animate-bounce-in mx-auto mt-2 rounded-full bg-tangerine-500 px-3 py-0.5 text-sm font-extrabold text-white shadow-[0_3px_0_0_#d16800]">{s.streak} in a row!</p>
+        <p key={s.streak} className="animate-pop mx-auto mt-2 font-hand text-2xl leading-none text-blue">Tailwind! {s.streak} in a row</p>
       )}
       <div className="flex-1 pb-6 pt-6">
         <ExerciseView key={`${s.index}`} exercise={ex} value={s.answer} onChange={(v) => dispatch({ type: 'answer', value: v })} onSubmit={(v) => check(v)} checked={Boolean(s.result)} result={s.result} />
       </div>
       {!s.result && !autoSubmit && (
-        <div className="sticky bottom-0 -mx-4 border-t-2 border-line bg-[var(--bg)] px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
+        <div className="sticky bottom-0 -mx-4 border-t border-line bg-paper px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
           <div className="flex gap-3">
             {mode !== 'lesson' && (
               <Button variant="ghost" onClick={() => dispatch({ type: 'skip' })}>
                 Skip
               </Button>
             )}
-            <Button variant="ok" className="flex-1" disabled={!canCheck} onClick={() => check()}>
+            <Button variant="primary" className="flex-1" disabled={!canCheck} onClick={() => check()}>
               Check
             </Button>
           </div>
@@ -211,10 +211,9 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
       {confirmQuit && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true">
           <div className="card animate-pop w-full max-w-sm text-center">
-            <p className="text-5xl" aria-hidden="true">🥺</p>
-            <p className="mt-2 font-display text-2xl">Wait, don't go!</p>
-            <p className="font-extrabold">Quit this session?</p>
-            <p className="mt-1 text-sm text-muted">Your answers so far are saved to your review schedule, but the {mode === 'pinned' ? 'practice' : mode} will not count as completed.</p>
+            <p className="font-hand text-3xl leading-none">Leaving the train?</p>
+            <p className="mt-2 font-semibold">Quit this session?</p>
+            <p className="mt-1 text-sm text-ink-2">Your answers so far are saved to your review schedule, but the {mode === 'pinned' ? 'practice' : mode} will not count as completed.</p>
             <div className="mt-4 grid grid-cols-2 gap-2">
               <Button variant="ghost" onClick={() => setConfirmQuit(false)}>
                 Keep going
@@ -226,6 +225,21 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+/** Lesson progress as a leg of the journey: a dotted route that fills with ink, a paw marking where you are. */
+function RouteProgress({ value, max }: { value: number; max: number }) {
+  const pct = Math.max(0, Math.min(1, value / Math.max(1, max)))
+  return (
+    <div className="relative h-6 flex-1" role="progressbar" aria-valuenow={Math.round(pct * 100)} aria-valuemin={0} aria-valuemax={100}>
+      <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 border-t-2 border-dotted border-line" />
+      <span className="absolute left-0 top-1/2 h-[3px] -translate-y-1/2 rounded-full bg-ink transition-[width] duration-500 ease-out" style={{ width: `${pct * 100}%` }} />
+      <span className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full border-2 border-ink bg-paper" aria-hidden="true" />
+      <span className="absolute top-1/2 flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-red text-white shadow-card transition-[left] duration-500 ease-out" style={{ left: `${Math.max(4, pct * 100)}%` }} aria-hidden="true">
+        <IconPaw width={13} height={13} />
+      </span>
     </div>
   )
 }

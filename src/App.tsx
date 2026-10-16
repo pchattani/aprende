@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useLayoutEffect, useRef } from 'react'
 import { Routes, Route, NavLink, Outlet, useLocation } from 'react-router'
 import { useSettings, applyTheme } from './store/settings'
 import { useSession } from './store/session'
-import { IconHome, IconRepeat, IconBook, IconVerb, IconUser } from './components/ui/icons'
+import { IconRoute, IconPostcard, IconBook, IconVerb, IconChart } from './components/ui/icons'
 import { ErrorBoundary } from './components/ErrorBoundary'
 
 const Course = lazy(() => import('./pages/Course'))
@@ -23,6 +23,8 @@ const RegionQuiz = lazy(() => import('./pages/RegionQuiz'))
 const Palabras = lazy(() => import('./pages/Palabras'))
 const Perros = lazy(() => import('./pages/Perros'))
 const Classifiers = lazy(() => import('./pages/Classifiers'))
+const Insights = lazy(() => import('./pages/Insights'))
+const ArtGallery = lazy(() => import('./pages/ArtGallery'))
 
 function Loading() {
   return <div className="p-8 text-center text-muted">Loading…</div>
@@ -59,11 +61,11 @@ function Shell() {
   const from = (loc.state as { from?: string } | null)?.from
   useScrollMemory(loc.pathname, Boolean(from) || immersive)
   const tabs = [
-    { to: '/', label: 'Course', icon: IconHome },
-    { to: '/review', label: 'Review', icon: IconRepeat },
+    { to: '/', label: 'Journey', icon: IconRoute },
+    { to: '/review', label: 'Review', icon: IconPostcard },
     { to: '/reader', label: 'Read', icon: IconBook },
+    { to: '/insights', label: 'Insights', icon: IconChart },
     { to: '/study', label: 'Tools', icon: IconVerb },
-    { to: '/profile', label: 'Progress', icon: IconUser },
   ]
   return (
     <div className="mx-auto min-h-full max-w-xl pb-[calc(6rem+env(safe-area-inset-bottom))]">
@@ -74,14 +76,15 @@ function Shell() {
           </Suspense>
         </ErrorBoundary>
       </main>
-      <nav className={`fixed inset-x-0 bottom-0 z-10 border-t-2 border-line bg-surface pb-[env(safe-area-inset-bottom)] transition ${immersive ? 'pointer-events-none translate-y-24 opacity-0' : ''}`} aria-label="Main" aria-hidden={immersive}>
-        <ul className="mx-auto flex max-w-xl justify-around px-2 py-1.5">
+      <nav className={`fixed inset-x-0 bottom-0 z-10 border-t border-line bg-paper pb-[env(safe-area-inset-bottom)] transition ${immersive ? 'pointer-events-none translate-y-24 opacity-0' : ''}`} aria-label="Main" aria-hidden={immersive}>
+        <ul className="mx-auto flex max-w-xl justify-around px-2">
           {tabs.map((t) => {
             const active = t.to === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/lesson') : loc.pathname.startsWith(t.to)
             return (
               <li key={t.to} className="flex-1">
-                <NavLink to={t.to} className={`mx-auto flex max-w-[4.5rem] flex-col items-center gap-0.5 rounded-2xl border-2 py-1 text-[11px] font-extrabold transition ${active ? 'border-brand-200 bg-brand-50 text-brand-600 dark:border-brand-500/40 dark:bg-brand-500/15 dark:text-brand-200' : 'border-transparent text-muted'}`} aria-current={active ? 'page' : undefined}>
-                  <t.icon width={26} height={26} className={active ? 'stroke-[2.4]' : 'stroke-[2]'} />
+                <NavLink to={t.to} className={`relative mx-auto flex flex-col items-center gap-0.5 pb-2 pt-2.5 text-[11px] font-semibold tracking-wide transition ${active ? 'text-ink' : 'text-ink-2'}`} aria-current={active ? 'page' : undefined}>
+                  <span className={`absolute inset-x-5 top-0 h-[3px] rounded-b-full ${active ? 'airmail' : ''}`} aria-hidden="true" />
+                  <t.icon width={23} height={23} strokeWidth={active ? 2.2 : 1.7} />
                   {t.label}
                 </NavLink>
               </li>
@@ -115,6 +118,8 @@ export default function App() {
         <Route path="palabras" element={<Palabras />} />
         <Route path="perros" element={<Perros />} />
         <Route path="classifiers" element={<Classifiers />} />
+        <Route path="insights" element={<Insights />} />
+        <Route path="art" element={<ArtGallery />} />
       </Route>
       <Route
         path="quiz/:level"

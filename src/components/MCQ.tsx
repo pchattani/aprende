@@ -33,7 +33,7 @@ export function MCQ({ items, onDone, reveal = false, label = 'Continue' }: { ite
   return (
     <div className="mt-4 space-y-3">
       {checked && (
-        <p className="rounded-2xl bg-surface-2 px-3 py-2 text-center text-sm font-extrabold" role="status">
+        <p className="rounded-2xl bg-surface-2 px-3 py-2 text-center text-sm font-semibold" role="status">
           {correct} of {items.length} correct
         </p>
       )}

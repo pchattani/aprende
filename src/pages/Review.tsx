@@ -143,10 +143,10 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
   const pinCount = pins?.length ?? 0
   return (
     <div>
-      <PageHeader title={note ? 'Targeted practice' : 'Review'} subtitle={note ? note.title : 'Spaced repetition keeps what you learned.'} />
+      <PageHeader title={note ? 'Targeted practice' : 'Review'} subtitle={note ? note.title : 'Postcards fade as memory fades. Retouch them just before they go.'} />
       {summary && (
         <div className="card mb-4 border-ok-500">
-          <p className="font-extrabold">{sessionMode === 'pinned' ? 'Pinned practice complete' : 'Session complete'} · {summary.total} answered</p>
+          <p className="font-semibold">{sessionMode === 'pinned' ? 'Pinned practice complete' : 'Session complete'} · {summary.total} answered</p>
           <p className="text-sm text-muted">
             {summary.correct} correct, {summary.almost} almost, {summary.wrong} to repeat. {sessionMode === 'pinned' ? 'Two correct answers in a row unpin an item.' : 'Items you missed come back sooner.'}
           </p>
@@ -156,9 +156,9 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
         </div>
       )}
       {!summary && !grammarFilter && (
-        <div className="mb-4 flex gap-1 rounded-full bg-surface-2 p-1" role="tablist" aria-label="Review sections">
+        <div className="mb-4 flex gap-5 border-b border-line" role="tablist" aria-label="Review sections">
           {(['due', 'pinned', 'practice'] as Tab[]).map((t) => (
-            <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)} className={`flex-1 rounded-full py-1.5 text-sm font-extrabold capitalize transition ${tab === t ? 'bg-brand-gradient text-white shadow-md' : 'text-muted'}`}>
+            <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)} className={`-mb-px border-b-2 pb-2 text-sm font-semibold capitalize transition ${tab === t ? 'border-ink text-ink' : 'border-transparent text-ink-2'}`}>
               {t === 'due' ? `Due${due ? ` · ${due}` : ''}` : t === 'pinned' ? `Pinned${pinCount ? ` · ${pinCount}` : ''}` : 'Practice'}
             </button>
           ))}
@@ -167,7 +167,8 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
       {!summary && (grammarFilter || tab === 'due') && (
         <>
           <div className="card mb-4 text-center">
-            <p className="text-5xl font-extrabold text-sky-600">{grammarFilter ? (all?.filter((c) => c.grammar.includes(grammarFilter)).length ?? 0) : due ?? 0}</p>
+            <p className="eyebrow">{grammarFilter ? 'On this grammar point' : 'Fading now'}</p>
+            <p className="mt-1 font-mono text-6xl font-semibold tracking-tight">{grammarFilter ? (all?.filter((c) => c.grammar.includes(grammarFilter)).length ?? 0) : due ?? 0}</p>
             <p className="text-sm text-muted">{grammarFilter ? 'items on this grammar point' : 'due now'}</p>
             <Button className="mt-4 w-full" disabled={building || (grammarFilter ? false : (due ?? 0) === 0)} onClick={() => void start('due')}>
               {building ? 'Building session…' : grammarFilter ? 'Practise this point' : 'Start review'}
@@ -188,7 +189,7 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
       {!summary && !grammarFilter && tab === 'pinned' && <PinnedTab pins={pins ?? []} building={building} onStart={() => void startPinned(pins ?? [])} />}
       {!summary && !grammarFilter && tab === 'practice' && (
         <div className="card text-center">
-          <p className="font-extrabold">Practise anyway</p>
+          <p className="font-semibold">Practise anyway</p>
           <p className="mt-1 text-sm text-muted">A mixed session of {Math.min(SESSION, all?.length ?? 0)} items, soonest-due first, even if nothing is due yet.</p>
           <Button className="mt-4 w-full" disabled={building || (all?.length ?? 0) === 0} onClick={() => void start('practice')}>
             {building ? 'Building session…' : 'Start practice'}
@@ -211,7 +212,7 @@ function PinnedTab({ pins, building, onStart }: { pins: PinRow[]; building: bool
   return (
     <div>
       <div className="card mb-4 text-center">
-        <p className="text-5xl font-extrabold text-brand-600">{pins.length}</p>
+        <p className="text-5xl font-semibold text-brand-600">{pins.length}</p>
         <p className="text-sm text-muted">pinned {pins.length === 1 ? 'mistake' : 'mistakes'} waiting for a focused re-test</p>
         <Button className="mt-4 w-full" disabled={building} onClick={onStart}>
           {building ? 'Building session…' : 'Practise pinned'}
@@ -249,12 +250,12 @@ function Forecast({ cards }: { cards: CardRow[] }) {
   const words = cards.filter((c) => c.kind === 'word')
   return (
     <div className="card">
-      <p className="mb-2 text-xs font-bold uppercase tracking-wide text-muted">Schedule</p>
-      <div className="grid grid-cols-4 gap-2 text-center">
+      <p className="eyebrow mb-2">Fading schedule</p>
+      <div className="grid grid-cols-4 divide-x divide-line rounded-xl border border-line text-center">
         {buckets.map((b) => (
-          <div key={b.label} className="rounded-xl bg-surface-2 p-2">
-            <p className="text-xl font-extrabold">{b.n}</p>
-            <p className="text-[11px] text-muted">{b.label}</p>
+          <div key={b.label} className="p-2">
+            <p className="font-mono text-xl">{b.n}</p>
+            <p className="text-[11px] text-ink-2">{b.label}</p>
           </div>
         ))}
       </div>

@@ -66,7 +66,7 @@ export default function Exam() {
 function ReadingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => void }) {
   return (
     <div>
-      <h2 className="mt-3 text-xl font-extrabold">Reading</h2>
+      <h2 className="mt-3 text-xl font-semibold">Reading</h2>
       <div className="card mt-3 whitespace-pre-line text-lg leading-relaxed" lang={TL}><TargetText text={exam.reading.text} /></div>
       <MCQ items={exam.reading.questions.map((q) => ({ prompt: q.q, options: q.options, answer: q.answer }))} onDone={onDone} />
     </div>
@@ -80,7 +80,7 @@ function ListeningSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) =
   if (phase === 'dictation') {
     return (
       <div>
-        <h2 className="mt-3 text-xl font-extrabold">Listening — dictation</h2>
+        <h2 className="mt-3 text-xl font-semibold">Listening — dictation</h2>
         <p className="text-sm text-muted">Listen and type exactly what you hear. You can replay as often as you like.</p>
         <div className="mt-3 space-y-3">
           {exam.listening.dictation.map((s, i) => (
@@ -114,7 +114,7 @@ function ListeningSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) =
   }
   return (
     <div>
-      <h2 className="mt-3 text-xl font-extrabold">Listening — comprehension</h2>
+      <h2 className="mt-3 text-xl font-semibold">Listening — comprehension</h2>
       <MCQ items={exam.listening.questions.map((q) => ({ prompt: 'Listen and choose the right meaning', options: q.options, answer: q.answer, audio: q.audio }))} onDone={(s) => onDone((dictScore + s) / 2)} />
     </div>
   )
@@ -123,7 +123,7 @@ function ListeningSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) =
 function GrammarSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => void }) {
   return (
     <div>
-      <h2 className="mt-3 text-xl font-extrabold">Grammar and vocabulary</h2>
+      <h2 className="mt-3 text-xl font-semibold">Grammar and vocabulary</h2>
       <MCQ items={exam.grammar.map((q) => ({ prompt: q.prompt, options: q.options, answer: q.answer }))} onDone={onDone} />
     </div>
   )
@@ -140,7 +140,7 @@ function WritingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => 
   if (!submitted) {
     return (
       <div>
-        <h2 className="mt-3 text-xl font-extrabold">Writing</h2>
+        <h2 className="mt-3 text-xl font-semibold">Writing</h2>
         <div className="card mt-3">
           <p className="font-bold">{exam.writing.prompt}</p>
           <p className="mt-1 text-xs text-muted">At least {exam.writing.minWords} words. No dictionary.</p>
@@ -159,7 +159,7 @@ function WritingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) => 
   const score = Math.max(0, checkScore - penalty)
   return (
     <div>
-      <h2 className="mt-3 text-xl font-extrabold">Writing — review your text</h2>
+      <h2 className="mt-3 text-xl font-semibold">Writing — review your text</h2>
       <div className="card mt-3">
         <p className="text-xs font-bold uppercase tracking-wide text-muted">Your text</p>
         <p className="mt-1 whitespace-pre-line" lang={TL}>{text}</p>
@@ -211,7 +211,7 @@ function SpeakingSection({ exam, onDone }: { exam: ExamT; onDone: (s: number) =>
   const complete = results.every((r) => r !== undefined)
   return (
     <div>
-      <h2 className="mt-3 text-xl font-extrabold">Speaking</h2>
+      <h2 className="mt-3 text-xl font-semibold">Speaking</h2>
       <p className="text-sm text-muted">{supported ? 'Read each sentence aloud. Speech recognition checks it.' : 'Speech recognition is not available in this browser. Read each sentence aloud and rate yourself honestly.'}</p>
       <ul className="mt-3 space-y-2">
         {exam.speaking.map((s, i) => (
@@ -245,7 +245,7 @@ function Result({ scores, pass, levelTitle, next, onHome }: { scores: Partial<Re
   return (
     <div className="mt-6 text-center">
       <div className={`mx-auto flex h-24 w-24 items-center justify-center rounded-full ${passed ? 'bg-gold-300 text-gold-600' : 'bg-bad-100 text-bad-600'}`}><IconTrophy width={48} height={48} /></div>
-      <h2 className="mt-4 text-3xl font-extrabold">{passed ? `${levelTitle} passed!` : 'Not yet'}</h2>
+      <h2 className="mt-4 text-3xl font-semibold">{passed ? `${levelTitle} passed!` : 'Not yet'}</h2>
       <p className="mt-1 text-muted">Overall {Math.round(total * 100)}% · pass mark {Math.round(pass * 100)}%</p>
       <ul className="card mt-4 divide-y divide-[var(--line)] text-left text-sm">
         {keys.map((k) => (

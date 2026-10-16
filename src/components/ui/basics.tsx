@@ -31,7 +31,7 @@ export function SpeakerButton({ text, slow = false, size = 'md', autoPlay = fals
           void say(text, slow)
         }
       }}
-      className={`inline-flex shrink-0 items-center justify-center rounded-2xl bg-sky-500 text-white shadow-[0_4px_0_0_var(--lip-sky)] transition-transform active:translate-y-[4px] active:shadow-none ${dim} ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-full bg-blue text-white shadow-card transition-transform active:scale-95 ${dim} ${className}`}
       aria-label={slow ? 'Play slowly' : 'Play audio'}
     >
       {slow ? <IconTurtle width={icon} height={icon} /> : <IconSpeaker width={icon} height={icon} />}
@@ -58,8 +58,8 @@ export function PageHeader({ title, subtitle, right }: { title: string; subtitle
   return (
     <header className="mb-4 flex items-start justify-between gap-3">
       <div>
-        <h1 className="font-display text-3xl">{title}</h1>
-        {subtitle && <p className="text-sm font-bold text-muted">{subtitle}</p>}
+        <h1 className="text-[2rem]">{title}</h1>
+        {subtitle && <p className="mt-0.5 text-sm text-ink-2">{subtitle}</p>}
       </div>
       {right}
     </header>
