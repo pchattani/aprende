@@ -4,7 +4,9 @@ import { seedDemo } from '@/dev/demo'
 import { levels, vocab, grammar } from '@/engine/loader'
 import { computeInsights, courseSummary, type CourseMeta } from '@/engine/analytics'
 
-const NOW = new Date(2026, 9, 16, 20, 0).getTime()
+// The demo's thresholds are calibrated on the Spanish course in UTC (day boundaries are local time).
+process.env.TZ = 'UTC'
+const NOW = Date.UTC(2026, 9, 16, 20, 0)
 
 function meta(): CourseMeta {
   const words = new Map<string, number>()
