@@ -13,7 +13,7 @@ export interface CourseLink {
 /** Courses that are live on the site, for the sister-course switcher. */
 export const COURSES: CourseLink[] = courses
   .filter((c) => c.live)
-  .map((c) => ({ id: c.id, name: c.name, native: c.native, app: c.app, flag: c.flag, href: c.slug ? `/aprende/${c.slug}/` : '/aprende/' }))
+  .map((c) => ({ id: c.id, name: c.name, native: c.native, app: c.app, flag: c.flag, href: `${__SITE_BASE__}${c.slug}/` }))
 
 /** The Pawsport hub (all languages and your progress in each), at the site root. */
-export const HUB_URL = '/aprende/'
+export const HUB_URL = __SITE_BASE__

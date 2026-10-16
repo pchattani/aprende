@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { enableTestHook, answerCurrent, continueFeedback, readHook, openPath } from './helpers'
+import { SITE_BASE } from '../scripts/site-base.mjs'
 
 test.beforeEach(async ({ page }) => {
   await enableTestHook(page)
@@ -89,7 +90,7 @@ test('mistakes come back later in the lesson instead of ending it', async ({ pag
 test('tabs remember their scroll position', async ({ page }) => {
   await openPath(page)
   // The top bar leads back to the Pawsport hub (all languages).
-  await expect(page.getByRole('link', { name: /All languages/ })).toHaveAttribute('href', '/aprende/')
+  await expect(page.getByRole('link', { name: /All languages/ })).toHaveAttribute('href', SITE_BASE)
   await expect(page.getByRole('heading', { name: 'Fin del mundo' })).toBeAttached()
   await page.evaluate(() => window.scrollTo(0, 1500))
   await page.waitForFunction(() => window.scrollY > 1000)

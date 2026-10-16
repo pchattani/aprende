@@ -1,15 +1,17 @@
 /**
- * The Pawsport hub at /aprende/: lists every language, shows the ones you started, forwards old Spanish
+ * The Pawsport hub at the site root (SITE_BASE, e.g. /pawsport/): lists every language, shows the ones you started, forwards old Spanish
  * links, never creates empty course databases and never caches the course folders.
  * Runs against the whole site (npm run build:all, served by scripts/serve-dist.mjs); URLs are absolute.
  */
 import { test, expect } from '@playwright/test'
 import { readFileSync } from 'node:fs'
 import { load } from 'js-yaml'
+import { SITE_BASE } from '../scripts/site-base.mjs'
 
 const courses = (JSON.parse(readFileSync('courses.json', 'utf8')) as { id: string; name: string; slug: string; live: boolean }[]).filter((c) => c.live)
 const spanishRegion = (load(readFileSync('content/es/journey.yaml', 'utf8')) as { regions: { name: string }[] }).regions[0]!.name
-const HUB = '/aprende/'
+const HUB = SITE_BASE
+const at = (path: string) => new RegExp(`${HUB.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')}${path}`)
 
 test('the hub lists every language and creates no databases', async ({ page }) => {
   await page.goto(HUB)
@@ -28,7 +30,7 @@ test('the hub lists every language and creates no databases', async ({ page }) =
 test('after starting Spanish, the hub shows it under Your languages', async ({ page }) => {
   await page.goto(HUB)
   await page.getByRole('link', { name: 'Start Spanish' }).click()
-  await expect(page).toHaveURL(/\/aprende\/spanish\//)
+  await expect(page).toHaveURL(at('spanish/'))
   await page.getByRole('button', { name: /I'm new to Spanish/ }).click()
   await expect(page.getByRole('heading', { name: spanishRegion, exact: true })).toBeVisible()
 
@@ -79,9 +81,9 @@ test('the hub summarises a course from its database', async ({ page }) => {
 
 test('old Spanish links land in the Spanish course with the route kept', async ({ page }) => {
   await page.goto(`${HUB}#/review`)
-  await expect(page).toHaveURL(/\/aprende\/spanish\/#\/review$/)
+  await expect(page).toHaveURL(at('spanish/#/review$'))
   await page.goto(`${HUB}#/lesson/a1.u01.l1`)
-  await expect(page).toHaveURL(/\/aprende\/spanish\/#\/lesson\/a1\.u01\.l1$/)
+  await expect(page).toHaveURL(at('spanish/#/lesson/a1\\.u01\\.l1$'))
 })
 
 test("the hub's service worker never caches a course folder", async ({ page }) => {

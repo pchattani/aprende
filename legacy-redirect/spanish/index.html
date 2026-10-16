@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pawsport has moved</title>
+    <script>
+      // Aprende is now Pawsport: forward /aprende/<anything> to /pawsport/<anything>, keeping the query and hash.
+      ;(function () {
+        var rest = location.pathname.replace(/^\/aprende\/?/, '')
+        // Old Spanish links (/aprende/#/…) now live in the Spanish course.
+        if (!rest && location.hash.indexOf('#/') === 0) rest = 'spanish/'
+        location.replace('/pawsport/' + rest + location.search + location.hash)
+      })()
+    </script>
+    <script>
+      // Retire the old service workers registered under /aprende/ so they stop serving cached pages.
+      if ('serviceWorker' in navigator) navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { if (r.scope.indexOf('/aprende/') > -1) r.unregister() }) })
+    </script>
+  </head>
+  <body>
+    <p>Aprende is now <a href="/pawsport/">Pawsport</a>. Your progress is still on this device.</p>
+  </body>
+</html>

@@ -5,8 +5,9 @@
 import { createServer } from 'node:http'
 import { createReadStream, statSync } from 'node:fs'
 import { extname, join, normalize, resolve, sep } from 'node:path'
+import { SITE_BASE } from './site-base.mjs'
 
-const BASE = '/aprende/'
+const BASE = SITE_BASE
 const ROOT = resolve(process.env.DIST_DIR ?? 'dist')
 const portArg = process.argv.indexOf('--port')
 const PORT = Number(portArg > 0 ? process.argv[portArg + 1] : process.env.PORT ?? 4173)

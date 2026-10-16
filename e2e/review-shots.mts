@@ -2,8 +2,9 @@
 // Needs the built site served by scripts/serve-dist.mjs on :4173.
 import { chromium, type Page } from 'playwright'
 import { answerCurrent, readHook } from './helpers.ts'
+import { SITE_BASE } from '../scripts/site-base.mjs'
 const out = process.argv[2]!
-const ROOT = 'http://localhost:4173/aprende/'
+const ROOT = `http://localhost:4173${SITE_BASE}`
 const ES = ROOT + 'spanish/'
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' })
 const ctxFor = (dark: boolean, width = 390) => browser.newContext({ viewport: { width, height: 844 }, deviceScaleFactor: 2, isMobile: width < 600, hasTouch: width < 600, colorScheme: dark ? 'dark' : 'light' })

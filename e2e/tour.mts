@@ -1,8 +1,9 @@
 // Screenshot tour of the main screens (not a test). usage: node --experimental-strip-types e2e/tour.mts <outdir> [base]
 import { chromium } from 'playwright'
 import { answerCurrent, readHook } from './helpers.ts'
+import { SITE_BASE } from '../scripts/site-base.mjs'
 const out = process.argv[2]!
-const base = process.argv[3] ?? 'http://localhost:5173/aprende/spanish/'
+const base = process.argv[3] ?? `http://localhost:5173${SITE_BASE}spanish/`
 const dark = process.env.DARK === '1'
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' })
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, colorScheme: dark ? 'dark' : 'light' })

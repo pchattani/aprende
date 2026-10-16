@@ -97,22 +97,20 @@ node scripts/courses.mjs "npx playwright test e2e/sister.spec.ts"   # every cour
 
 ## Renaming the repository
 
-The repository and so the URL path are still `aprende`. To move to
-`https://pchattani.github.io/pawsport/`:
+The base path follows the repository's name: in GitHub Actions `scripts/site-base.mjs`
+reads `GITHUB_REPOSITORY`, so `pchattani/aprende` builds the site at `/aprende/` and
+`pchattani/pawsport` at `/pawsport/` (locally it defaults to `/pawsport/`; `SITE_BASE`
+overrides it). No code changes are needed to move the site:
 
-1. Rename the repository on GitHub (Settings → General). GitHub redirects the git
-   remote, but **not** Pages: the old `/aprende/` URLs will 404.
-2. Replace the base path `/aprende/` everywhere it is written: `vite.config.ts`
-   (`BASE`), `vite.hub.config.ts` (`BASE`), `src/courses.ts` (`HUB_URL` and the
-   course `href`s), `scripts/serve-dist.mjs` (`BASE`), `playwright.config.ts`,
-   `e2e/hub.spec.ts` and this documentation. `grep -rn "/aprende/"` finds them.
-3. Keep the storage names (`aprende`, `aprende-<id>`, `aprende-settings`, …): the
-   origin does not change, so learners keep their progress as long as the names stay.
-4. Old links and installed apps point at `/aprende/…`. To keep them working, publish
-   a small repository that is still called `aprende` with a `404.html` and an
-   `index.html` that redirect `location.pathname`/`hash` from `/aprende/` to
-   `/pawsport/` (Pages serves `404.html` for every missing path). The service workers
-   registered under `/aprende/` keep serving their cached apps until they update and
-   find the redirect, so give that stub its own tiny `sw.js` that unregisters itself.
-5. Update the README links, `manifest` ids are derived from the base and change with it
-   (installed apps will need to be re-installed once).
+1. Rename the repository on GitHub (Settings → General → Repository name → `pawsport`).
+   GitHub redirects the git remote, but **not** Pages: the old `/aprende/` URLs stop working.
+2. Re-run the "CI and deploy" workflow (Actions → CI and deploy → Run workflow), or push
+   any commit. It rebuilds everything under `/pawsport/` and publishes it.
+3. Storage names stay as they are (`aprende`, `aprende-<id>`, `aprende-settings`, …): the
+   origin (`pchattani.github.io`) does not change, so learners keep their progress.
+4. Old links and installed apps point at `/aprende/…`. To keep them working, publish the
+   stub in `legacy-redirect/` as a new repository called `aprende` with Pages enabled: its
+   `index.html` and `404.html` forward any `/aprende/…` URL (path, query and hash) to
+   `/pawsport/…`, and its `sw.js` replaces the old service worker and unregisters itself.
+5. Installed home-screen apps are tied to the old path; learners re-install once from the
+   new address (their progress is still there).

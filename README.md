@@ -6,7 +6,7 @@ Pawsport (formerly *Aprende*) is one app with five complete courses, each from A
 
 | Course | Link | Journey |
 |---|---|---|
-| 🇪🇸 Spanish | https://pchattani.github.io/aprende/spanish/ | Argentina: Buenos Aires, the Pampa, the North, Cuyo, Patagonia and the end of the world |
+| 🇦🇷 Spanish | https://pchattani.github.io/aprende/spanish/ | Argentina: Buenos Aires, the Pampa, the North, Cuyo, Patagonia and the end of the world |
 | 🇭🇰 Cantonese | https://pchattani.github.io/aprende/cantonese/ | Hong Kong Island, Kowloon, the New Territories and islands, Macau, Guangzhou; traditional characters with Jyutping |
 | 🇧🇷 Portuguese | https://pchattani.github.io/aprende/portuguese/ | Rio round Brazil, then Portugal; Brazilian with European notes |
 | 🇮🇹 Italian | https://pchattani.github.io/aprende/italian/ | Rome, Tuscany, the North, the South, Sicily and Sardinia, then back to Rome |

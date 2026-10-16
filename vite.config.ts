@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { load as loadYaml } from 'js-yaml'
 import { readFileSync, existsSync } from 'node:fs'
+import { SITE_BASE } from './scripts/site-base.mjs'
 
 /** Turns any imported .yaml/.yml file into an ES module exporting the parsed data. */
 function yamlPlugin(): Plugin {
@@ -31,7 +32,7 @@ const UI = existsSync(`content/${LANG}/ui.yaml`) ? readYaml<UiYaml>(`content/${L
 const SLUG = PACK.slug ?? ''
 // The root belongs to the hub: a course at /aprende/ would fight it for the same service worker (/aprende/sw.js).
 if (!SLUG) throw new Error(`content/${LANG}/pack.yaml needs a slug: courses are published at /aprende/<slug>/, the root is the hub`)
-const BASE = process.env.VITE_BASE ?? `/aprende/${SLUG}/`
+const BASE = process.env.VITE_BASE ?? `${SITE_BASE}${SLUG}/`
 const TITLE = `${UI.appName} · ${PACK.name}`
 
 /** import.meta.glob ignores aliases: point `@content/` globs at this course's folder before Vite expands them. */
@@ -60,6 +61,7 @@ function htmlPlugin(): Plugin {
 
 export default defineConfig({
   base: BASE,
+  define: { __SITE_BASE__: JSON.stringify(SITE_BASE) },
   plugins: [
     yamlPlugin(),
     contentGlobPlugin(),

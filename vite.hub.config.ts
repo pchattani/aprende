@@ -9,8 +9,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { load as loadYaml } from 'js-yaml'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import { SITE_BASE } from './scripts/site-base.mjs'
 
-const BASE = '/aprende/'
+const BASE = SITE_BASE
 const here = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
@@ -70,6 +71,7 @@ function noCourseImports(): Plugin {
 export default defineConfig({
   root: here('./hub'),
   base: BASE,
+  define: { __SITE_BASE__: JSON.stringify(SITE_BASE) },
   publicDir: here('./public'),
   plugins: [
     noCourseImports(),
