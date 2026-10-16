@@ -1,0 +1,284 @@
+id: c2.u05
+title: "Fort-de-France, le pays de Césaire"
+lessons:
+  - id: c2.u05.l1
+    title: "Le créole, une langue à part entière"
+    teach: [g.creole-and-french]
+    tip: "Créole verbs never change: small markers in front do the work. Mwen ka manjé (I'm eating), mwen té manjé (I had eaten), mwen ké manjé (I'll eat), mwen pa sav (I don't know)."
+    vocab: [w.créole, w.créole.adj, w.créolité, w.antillais, w.martiniquais, w.guadeloupéen, w.haïtien, w.mwen, w.ka, w.manjé, w.nou, w.zot, w.yo, w.ay, w.pa, w.sav, w.té, w.ké, w.doudou, w.béké, w.outre-mer, w.ultramarin, w.dom-tom, w.départementalisation, w.zouk, w.biguine, w.madras, w.verbe, w.grammaire, w.marqueur, w.traduire, w.traduction, w.identique, w.placer, w.nouer, w.chéri, w.département]
+    sentences:
+      - { es: "À Fort-de-France, on passe du français au créole sans même y penser.", en: "In Fort-de-France people switch from French to Créole without even thinking about it.", altEs: ["À Fort-de-France, on passe du français au créole sans même s'en rendre compte.", "À Fort-de-France, les gens passent du français au créole sans même y penser."], altEn: ["In Fort-de-France we switch from French to Créole without even thinking about it."], grammar: [g.creole-and-french], vocab: [w.créole] }
+      - { es: "Le créole n'est pas du français déformé : c'est une langue à part entière.", en: "Créole isn't distorted French: it's a language in its own right.", altEs: ["Le créole n'est pas un français déformé : c'est une langue à part entière.", "Le créole, ce n'est pas du français déformé, c'est une langue à part entière."], grammar: [g.creole-and-french], vocab: [w.créole] }
+      - { es: "En créole martiniquais, « mwen ka manjé » veut dire « je mange » ou « je suis en train de manger ».", en: "In Martinican Créole, 'mwen ka manjé' means 'I eat' or 'I'm eating'.", altEs: ["En créole de la Martinique, « mwen ka manjé » veut dire « je mange » ou « je suis en train de manger ».", "En créole martiniquais, « mwen ka manjé » signifie « je mange » ou « je suis en train de manger »."], grammar: [g.creole-and-french], vocab: [w.martiniquais, w.mwen, w.ka, w.manjé], transform: { instruction: "Put both the Créole and the French into the future (Créole marker ké)", answer: "En créole martiniquais, « mwen ké manjé » veut dire « je mangerai ».", alt: ["En créole martiniquais, « mwen ké manjé » signifie « je mangerai »."], en: "In Martinican Créole, 'mwen ké manjé' means 'I will eat'." } }
+      - { es: "Le verbe ne change jamais : ce sont de petits marqueurs placés devant lui qui indiquent le temps.", en: "The verb never changes: small markers placed in front of it show the tense.", altEs: ["Le verbe ne change jamais : ce sont de petits marqueurs placés devant qui indiquent le temps."], grammar: [g.creole-and-french, g.mise-en-relief], vocab: [w.verbe, w.marqueur], error: { wrong: "Le verbe ne change pas jamais : ce sont de petits marqueurs placés devant lui qui indiquent le temps.", explain: "ne … jamais replaces ne … pas: never use pas and jamais together.", grammar: g.negation-jamais-plus-rien } }
+      - { es: "« Mwen té manjé » se traduit par « j'avais mangé », et « mwen ké manjé » par « je mangerai ».", en: "'Mwen té manjé' translates as 'I had eaten', and 'mwen ké manjé' as 'I will eat'.", altEs: ["« Mwen té manjé » veut dire « j'avais mangé », et « mwen ké manjé », « je mangerai »."], grammar: [g.creole-and-french], vocab: [w.té, w.ké, w.traduire] }
+      - { es: "Pour dire « je ne sais pas », on dit simplement « mwen pa sav ».", en: "To say 'I don't know', you simply say 'mwen pa sav'.", altEs: ["Pour dire « je ne sais pas », il suffit de dire « mwen pa sav »."], grammar: [g.creole-and-french], vocab: [w.pa, w.sav] }
+      - { es: "« Nou ka manjé » veut dire « nous mangeons ».", en: "'Nou ka manjé' means 'we are eating'.", altEs: ["« Nou ka manjé » veut dire « on mange »."], altEn: ["'Nou ka manjé' means 'we eat'."], grammar: [g.creole-and-french], vocab: [w.nou, w.ka], transform: { instruction: "Make it negative in both languages (in Créole, pa goes before ka)", answer: "« Nou pa ka manjé » veut dire « nous ne mangeons pas ».", alt: ["« Nou pa ka manjé » veut dire « on ne mange pas »."], en: "'Nou pa ka manjé' means 'we are not eating'." } }
+      - { es: "Ma grand-mère parlait créole à la maison, mais elle voulait qu'on lui réponde en français.", en: "My grandmother spoke Créole at home, but she wanted us to answer her in French.", altEs: ["Ma grand-mère parlait créole à la maison, mais elle exigeait qu'on lui réponde en français.", "Ma grand-mère parlait le créole à la maison, mais elle voulait qu'on lui réponde en français."], grammar: [g.creole-and-french, g.subjonctif-volonte], vocab: [w.créole], transform: { instruction: "Change 'on' to 'nous'", answer: "Ma grand-mère parlait créole à la maison, mais elle voulait que nous lui répondions en français.", alt: ["Ma grand-mère parlait le créole à la maison, mais elle voulait que nous lui répondions en français."], en: "My grandmother spoke Créole at home, but she wanted us to answer her in French." } }
+      - { es: "Aujourd'hui, le créole est enseigné dans les écoles martiniquaises et guadeloupéennes.", en: "Today Créole is taught in Martinican and Guadeloupean schools.", altEs: ["De nos jours, le créole est enseigné dans les écoles martiniquaises et guadeloupéennes.", "Aujourd'hui, on enseigne le créole dans les écoles martiniquaises et guadeloupéennes."], grammar: [g.creole-and-french, g.passive-voice], vocab: [w.martiniquais, w.guadeloupéen], error: { wrong: "Aujourd'hui, le créole est enseignée dans les écoles martiniquaises et guadeloupéennes.", explain: "Le créole (the language) is masculine, so the participle stays enseigné.", grammar: g.passive-voice } }
+      - { es: "Le créole haïtien et le créole martiniquais se ressemblent, mais ils ne sont pas identiques.", en: "Haitian Créole and Martinican Créole are alike, but they aren't identical.", altEs: ["Le créole haïtien et celui de la Martinique se ressemblent, mais ils ne sont pas identiques."], grammar: [g.creole-and-french], vocab: [w.haïtien, w.identique] }
+      - { es: "Depuis 1946, la Martinique est un département d'outre-mer, et non plus une colonie.", en: "Since 1946 Martinique has been an overseas department, and no longer a colony.", altEs: ["Depuis 1946, la Martinique n'est plus une colonie mais un département d'outre-mer."], grammar: [g.creole-and-french, g.depuis-present], vocab: [w.outre-mer, w.départementalisation], note: "The departmentalisation law of 19 March 1946 turned Martinique, Guadeloupe, French Guiana and Réunion into départements." }
+      - { es: "Les auteurs de l'Éloge de la créolité refusaient de choisir entre l'Afrique, l'Europe et l'Amérique.", en: "The authors of In Praise of Creoleness refused to choose between Africa, Europe and America.", altEs: ["Les auteurs de l'Éloge de la créolité ne voulaient pas choisir entre l'Afrique, l'Europe et l'Amérique."], grammar: [g.creole-and-french, g.imparfait-uses], vocab: [w.créolité], note: "Éloge de la créolité (1989), by Jean Bernabé, Patrick Chamoiseau and Raphaël Confiant." }
+      - { es: "Les békés, descendants des colons blancs, ne forment qu'une petite minorité de la population.", en: "The békés, descendants of the white settlers, make up only a small minority of the population.", altEs: ["Les békés, qui descendent des colons blancs, ne forment qu'une petite minorité de la population."], grammar: [g.creole-and-french, g.negation-jamais-plus-rien], vocab: [w.béké, w.colon] }
+      - { es: "Le samedi soir, on danse le zouk ; ma grand-mère, elle, préfère encore la biguine.", en: "On Saturday nights people dance zouk; my grandmother still prefers the beguine.", altEs: ["Le samedi soir, on danse le zouk, mais ma grand-mère préfère encore la biguine."], grammar: [g.creole-and-french, g.dislocation], vocab: [w.zouk, w.biguine] }
+      - { es: "Pour la fête, elle a noué sur sa tête un foulard en madras.", en: "For the festival she tied a madras scarf on her head.", altEs: ["Pour la fête, elle s'est noué un foulard en madras sur la tête."], grammar: [g.creole-and-french, g.passe-compose-avoir], vocab: [w.madras, w.nouer] }
+      - { es: "Allez, an nou ay ! Le bus pour Sainte-Anne part dans cinq minutes.", en: "Come on, let's go! The bus to Sainte-Anne leaves in five minutes.", altEs: ["Allez, on y va ! Le bus pour Sainte-Anne part dans cinq minutes."], grammar: [g.creole-and-french], vocab: [w.ay], note: "An nou ay = let's go (Créole)." }
+    exchanges:
+      - q: { es: "Tu parles créole ?", en: "Do you speak Créole?" }
+        a: { es: "Je le comprends bien, mais je le parle mal : chez nous, on me répondait toujours en français.", en: "I understand it well, but I speak it badly: at home they always answered me in French." }
+        alt: ["Un peu, je le comprends surtout.", "Oui, avec ma famille, mais pas au travail."]
+        grammar: [g.creole-and-french]
+        vocab: [w.créole]
+      - q: { es: "Comment on dit « je ne sais pas » en créole ?", en: "How do you say 'I don't know' in Créole?" }
+        a: { es: "« Mwen pa sav. » Le pa se met devant le verbe.", en: "'Mwen pa sav.' The pa goes in front of the verb." }
+        alt: ["On dit « mwen pa sav ».", "« Mwen pa sav », tout simplement."]
+        grammar: [g.creole-and-french]
+        vocab: [w.mwen, w.pa, w.sav]
+      - q: { es: "Le créole, c'est un dialecte du français ?", en: "Is Créole a dialect of French?" }
+        a: { es: "Non, c'est une langue à part entière, avec sa propre grammaire.", en: "No, it's a language in its own right, with its own grammar." }
+        alt: ["Pas du tout, c'est une langue à part entière.", "Non, il a sa propre grammaire."]
+        grammar: [g.creole-and-french]
+        vocab: [w.créole]
+      - q: { es: "Depuis quand la Martinique est-elle un département ?", en: "Since when has Martinique been a department?" }
+        a: { es: "Depuis 1946 ; Césaire, alors jeune député, a défendu la loi à Paris.", en: "Since 1946; Césaire, then a young member of parliament, defended the law in Paris." }
+        alt: ["Depuis 1946.", "Depuis la loi de 1946."]
+        grammar: [g.creole-and-french, g.depuis-present]
+        vocab: [w.départementalisation]
+      - q: { es: "Qu'est-ce que ça veut dire, « doudou » ?", en: "What does 'doudou' mean?" }
+        a: { es: "C'est un mot tendre, comme « chéri » ou « chérie ».", en: "It's an affectionate word, like 'darling'." }
+        alt: ["Ça veut dire « chéri ».", "C'est comme « mon amour »."]
+        grammar: [g.creole-and-french]
+        vocab: [w.doudou, w.chéri]
+    texts:
+      - title: "Panneau à l'entrée d'une école"
+        es: ["Dans cette école, on apprend en français et en créole.", "Les deux langues font partie de notre histoire.", "Parlez-les toutes les deux avec fierté !"]
+        en: ["In this school we learn in French and in Créole.", "Both languages are part of our history.", "Speak them both with pride!"]
+        grammar: [g.creole-and-french, g.imperative-with-pronouns]
+        vocab: [w.créole]
+      - title: "Petit lexique pour les visiteurs"
+        es: ["« Mwen ka manjé » : je mange.", "« Mwen té manjé » : j'avais mangé.", "« Mwen ké manjé » : je mangerai.", "« Mwen pa sav » : je ne sais pas."]
+        en: ["'Mwen ka manjé': I'm eating.", "'Mwen té manjé': I had eaten.", "'Mwen ké manjé': I will eat.", "'Mwen pa sav': I don't know."]
+        grammar: [g.creole-and-french]
+        vocab: [w.ka, w.té, w.ké, w.pa]
+    spicy:
+      - { es: "Mwen pa sav comment tu fais, mais chaque fois que tu dis « doudou », j'oublie mon français.", en: "I don't know how you do it, but every time you say 'doudou', I forget my French.", altEs: ["Je ne sais pas comment tu fais, mais chaque fois que tu dis « doudou », j'oublie mon français."], grammar: [g.creole-and-french], vocab: [w.mwen, w.pa, w.sav, w.doudou] }
+      - { es: "« An nou ay ! », m'a-t-il dit en me prenant la main ; je n'ai pas demandé de traduction.", en: "'Let's go!' he said, taking my hand; I didn't ask for a translation.", altEs: ["« An nou ay ! », m'a-t-il dit en me prenant la main, et je n'ai pas demandé de traduction."], grammar: [g.creole-and-french, g.gerondif], vocab: [w.ay, w.traduction] }
+      - { es: "Ma grand-mère voulait qu'on lui parle français ; toi, tu peux me parler créole toute la nuit.", en: "My grandmother wanted us to speak French to her; you can speak Créole to me all night.", altEs: ["Ma grand-mère voulait qu'on lui parle en français ; toi, tu peux me parler créole toute la nuit."], grammar: [g.creole-and-french, g.subjonctif-volonte], vocab: [w.créole] }
+      - { es: "Il m'a appelée « doudou » devant toute sa famille : en créole comme en français, c'est une déclaration.", en: "He called me 'doudou' in front of his whole family: in Créole as in French, that's a declaration.", altEs: ["Il m'a appelée « doudou » devant toute sa famille : en créole comme en français, ça s'appelle une déclaration."], grammar: [g.creole-and-french, g.pc-object-agreement], vocab: [w.doudou] }
+      - { es: "Tu danses le zouk comme si personne ne te regardait ; dommage, tout le monde te regarde.", en: "You dance zouk as if nobody were watching you; too bad, everyone is.", altEs: ["Tu danses le zouk comme si personne ne te regardait ; dommage, tout le monde te regarde !"], grammar: [g.creole-and-french], vocab: [w.zouk] }
+  - id: c2.u05.l2
+    title: "Sous les alizés volent les colibris"
+    teach: [g.poetic-syntax]
+    tip: "Poetry bends word order: put a place or time complement first and the subject can follow the verb (Sous le pont Mirabeau coule la Seine). The verb still agrees with its subject. Ellipsis drops the verb (Ici, la mer ; là-bas, le volcan)."
+    vocab: [w.inversion, w.ellipse, w.morne, w.éruption, w.cendre, w.lave, w.cyclone, w.ouragan, w.tropical, w.moiteur, w.alizé, w.mangrove, w.récif, w.corail, w.colibri, w.bananier, w.mangue, w.ananas, w.noix-de-coco, w.canne-à-sucre, w.rhum, w.ti-punch, w.accras, w.colombo, w.habitation, w.plantation, w.douceur, w.sueur, w.agricole, w.actif, w.volcanique, w.irrésistible]
+    sentences:
+      - { es: "Au nord de l'île, au-dessus des mornes, se dresse la montagne Pelée.", en: "In the north of the island, above the hills, rises Mount Pelée.", altEs: ["Au nord de l'île, la montagne Pelée se dresse au-dessus des mornes."], grammar: [g.poetic-syntax], vocab: [w.morne, w.inversion], note: "Place complement first, then verb, then subject: a stylistic inversion." }
+      - { es: "Le 8 mai 1902, une éruption de la montagne Pelée a détruit Saint-Pierre en quelques minutes.", en: "On 8 May 1902 an eruption of Mount Pelée destroyed Saint-Pierre in a few minutes.", altEs: ["Le 8 mai 1902, en quelques minutes, une éruption de la montagne Pelée a détruit Saint-Pierre."], grammar: [g.poetic-syntax, g.passe-compose-avoir], vocab: [w.éruption] }
+      - { es: "Sur la ville tombèrent la cendre et le feu ; puis vint le silence.", en: "Onto the town fell ash and fire; then came silence.", altEs: ["Sur la ville sont tombés la cendre et le feu ; puis est venu le silence."], grammar: [g.poetic-syntax, g.passe-simple-usage], vocab: [w.cendre], error: { wrong: "Sur la ville tomba la cendre et le feu ; puis vint le silence.", explain: "Even after the verb, a double subject (la cendre et le feu) takes a plural verb: tombèrent.", grammar: g.poetic-syntax } }
+      - { es: "Ici, la mangrove ; là-bas, le récif ; partout, la lumière.", en: "Here, the mangrove; over there, the reef; everywhere, the light.", altEs: ["Ici la mangrove, là-bas le récif, partout la lumière."], grammar: [g.poetic-syntax], vocab: [w.mangrove, w.récif, w.ellipse], note: "Ellipsis: no verb at all, only a rhythm of three." }
+      - { es: "Ô volcan endormi, ne te réveille pas !", en: "O sleeping volcano, do not wake!", altEs: ["Ô volcan endormi, ne te réveille pas."], altEn: ["O sleeping volcano, don't wake up!"], grammar: [g.poetic-syntax, g.imperative-with-pronouns], vocab: [w.volcan], note: "Apostrophe: the poem speaks directly to a thing." }
+      - { es: "Les colibris volent sous les alizés.", en: "The hummingbirds fly beneath the trade winds.", grammar: [g.poetic-syntax], vocab: [w.colibri, w.alizé], transform: { instruction: "Put the place complement first and invert the subject", answer: "Sous les alizés volent les colibris.", alt: [], en: "Beneath the trade winds fly the hummingbirds." } }
+      - { es: "La Seine coule sous le pont Mirabeau.", en: "The Seine flows under the Mirabeau bridge.", grammar: [g.poetic-syntax], vocab: [w.inversion], transform: { instruction: "Rewrite it with Apollinaire's inversion", answer: "Sous le pont Mirabeau coule la Seine.", alt: [], en: "Under the Mirabeau bridge flows the Seine." } }
+      - { es: "« De la musique avant toute chose » : Verlaine met l'essentiel en tête du vers, sans même un verbe.", en: "'Music above all else': Verlaine puts the essential at the head of the line, without even a verb.", altEs: ["« De la musique avant toute chose » : Verlaine place l'essentiel en tête du vers, sans même un verbe."], grammar: [g.poetic-syntax], vocab: [w.ellipse], note: "Verlaine, « Art poétique » (Jadis et naguère)." }
+      - { es: "En poésie, on peut écrire « encor » sans e pour respecter le nombre de syllabes.", en: "In poetry you may write 'encor' without an e to keep the syllable count.", altEs: ["En poésie, on a le droit d'écrire « encor » sans e pour respecter le nombre de syllabes."], grammar: [g.poetic-syntax, g.versification], vocab: [w.syllabe] }
+      - { es: "Champs de canne à sucre, cases, habitations : l'énumération sans « et » accélère le rythme.", en: "Sugar cane fields, huts, plantation houses: a list without 'and' speeds up the rhythm.", altEs: ["Champs de canne, cases, habitations : l'énumération sans « et » accélère le rythme."], grammar: [g.poetic-syntax], vocab: [w.canne-à-sucre, w.habitation] }
+      - { es: "Sur l'ancienne habitation, on distille encore du rhum agricole.", en: "On the old plantation estate, they still distil agricultural rum.", altEs: ["On distille encore du rhum agricole sur l'ancienne habitation."], grammar: [g.poetic-syntax, g.partitive-articles], vocab: [w.habitation, w.rhum], note: "In the Antilles, une habitation is a plantation estate." }
+      - { es: "Venu de l'Atlantique, le cyclone a frappé l'île en pleine nuit.", en: "Coming in from the Atlantic, the hurricane struck the island in the middle of the night.", altEs: ["Arrivé de l'Atlantique, le cyclone a frappé l'île en pleine nuit."], grammar: [g.poetic-syntax, g.participial-clauses], vocab: [w.cyclone] }
+      - { es: "Mangues, ananas, noix de coco : au marché de Fort-de-France, tout est couleur.", en: "Mangoes, pineapples, coconuts: at the Fort-de-France market, everything is colour.", altEs: ["Mangues, ananas et noix de coco : au marché de Fort-de-France, tout est couleur."], grammar: [g.poetic-syntax], vocab: [w.mangue, w.ananas, w.noix-de-coco] }
+      - { es: "Je n'oublierai jamais la douceur de ces nuits tropicales.", en: "I will never forget the sweetness of those tropical nights.", grammar: [g.poetic-syntax, g.literary-inversion], vocab: [w.tropical], transform: { instruction: "Start with 'Jamais' for emphasis", answer: "Jamais je n'oublierai la douceur de ces nuits tropicales.", alt: [], en: "Never shall I forget the sweetness of those tropical nights." } }
+      - { es: "Sous la mer dorment les coraux, que les ouragans n'atteignent pas.", en: "Beneath the sea sleep the corals, which the hurricanes do not reach.", altEs: ["Les coraux dorment sous la mer, là où les ouragans ne les atteignent pas."], grammar: [g.poetic-syntax, g.relative-qui-que], vocab: [w.corail, w.ouragan], error: { wrong: "Sous la mer dort les coraux, que les ouragans n'atteignent pas.", explain: "The inverted subject les coraux is plural, so the verb is dorment.", grammar: g.poetic-syntax } }
+      - { es: "Bananiers, plantations, moiteur : derrière la carte postale, il y a une histoire de travail et de sueur.", en: "Banana trees, plantations, damp heat: behind the postcard there is a story of work and sweat.", altEs: ["Bananiers, plantations et moiteur : derrière la carte postale, il y a une histoire de travail et de sueur."], grammar: [g.poetic-syntax], vocab: [w.bananier, w.plantation, w.moiteur] }
+    exchanges:
+      - q: { es: "La montagne Pelée est-elle encore active ?", en: "Is Mount Pelée still active?" }
+        a: { es: "Oui, c'est un volcan actif ; un observatoire la surveille jour et nuit.", en: "Yes, it's an active volcano; an observatory monitors it day and night." }
+        alt: ["Oui, elle est surveillée de près.", "Oui, mais elle dort pour le moment."]
+        grammar: [g.poetic-syntax]
+        vocab: [w.volcan]
+      - q: { es: "Qu'est-ce qui s'est passé à Saint-Pierre en 1902 ?", en: "What happened in Saint-Pierre in 1902?" }
+        a: { es: "Une éruption a détruit la ville en quelques minutes ; presque tous les habitants sont morts.", en: "An eruption destroyed the town in a few minutes; almost all the inhabitants died." }
+        alt: ["La montagne Pelée a détruit la ville.", "Une éruption a tout détruit."]
+        grammar: [g.passe-compose-avoir]
+        vocab: [w.éruption]
+      - q: { es: "Pourquoi Apollinaire écrit-il « Sous le pont Mirabeau coule la Seine » ?", en: "Why does Apollinaire write 'Under the Mirabeau bridge flows the Seine'?" }
+        a: { es: "Pour mettre l'image du pont en tête et garder le rythme du vers.", en: "To put the image of the bridge first and keep the rhythm of the line." }
+        alt: ["Pour le rythme et pour l'image.", "C'est une inversion, pour le rythme."]
+        grammar: [g.poetic-syntax]
+        vocab: [w.inversion]
+      - q: { es: "On prend un ti-punch avant le colombo ?", en: "Shall we have a rum punch before the curry?" }
+        a: { es: "Volontiers, mais un seul : il fait trop chaud pour le rhum.", en: "Gladly, but just one: it's too hot for rum." }
+        alt: ["Avec plaisir !", "Un petit, alors."]
+        grammar: [g.pronoun-en]
+        vocab: [w.ti-punch, w.colombo, w.rhum]
+      - q: { es: "C'est quand, la saison des cyclones ?", en: "When is the hurricane season?" }
+        a: { es: "En gros de juin à novembre ; on surveille surtout la fin de l'été.", en: "Roughly from June to November; people watch the end of summer most closely." }
+        alt: ["De juin à novembre.", "Surtout en août et en septembre."]
+        grammar: [g.dislocation]
+        vocab: [w.cyclone]
+    texts:
+      - title: "Carte postale de Fort-de-France"
+        es: ["Ici, la chaleur ; là-bas, les mornes verts.", "Sur la baie passent les voiliers.", "Je t'embrasse sous les alizés."]
+        en: ["Here, the heat; over there, the green hills.", "Across the bay pass the sailing boats.", "Love from beneath the trade winds."]
+        grammar: [g.poetic-syntax]
+        vocab: [w.morne, w.alizé]
+      - title: "Alerte météo"
+        es: ["Vigilance cyclone : restez chez vous à partir de 18 heures.", "Rentrez le mobilier de jardin et faites des réserves d'eau.", "L'ouragan devrait toucher l'île dans la nuit."]
+        en: ["Hurricane alert: stay at home from 6 p.m.", "Bring in garden furniture and stock up on water.", "The hurricane should reach the island during the night."]
+        grammar: [g.imperative, g.devoir-nuances]
+        vocab: [w.cyclone, w.ouragan]
+    spicy:
+      - { es: "Ô ti-punch, suspends ton effet : je n'ai pas encore osé lui parler !", en: "O rum punch, suspend your effect: I haven't dared talk to him yet!", altEs: ["Ô ti-punch, suspends ton effet, je n'ai pas encore osé lui parler !"], grammar: [g.poetic-syntax, g.imperative], vocab: [w.ti-punch] }
+      - { es: "Ici, la plage ; là-bas, le coucher de soleil ; entre les deux, toi, qui as oublié la crème solaire.", en: "Here, the beach; over there, the sunset; between the two, you, who forgot the sun cream.", altEs: ["Ici la plage, là-bas le coucher de soleil, et entre les deux, toi, qui as oublié la crème solaire."], grammar: [g.poetic-syntax], vocab: [w.ellipse] }
+      - { es: "Jamais je n'ai vu quelqu'un danser la biguine aussi mal et avec autant de charme.", en: "Never have I seen anyone dance the beguine so badly and with so much charm.", altEs: ["Je n'ai jamais vu quelqu'un danser la biguine aussi mal et avec autant de charme."], grammar: [g.poetic-syntax, g.literary-inversion], vocab: [w.biguine] }
+      - { es: "Sur ton épaule s'est posé un colibri : même les oiseaux te trouvent irrésistible.", en: "A hummingbird has landed on your shoulder: even the birds find you irresistible.", altEs: ["Un colibri s'est posé sur ton épaule : même les oiseaux te trouvent irrésistible."], grammar: [g.poetic-syntax], vocab: [w.colibri, w.irrésistible] }
+      - { es: "Comme la montagne Pelée, tu dors tranquille, mais je sais que tu peux entrer en éruption à tout moment.", en: "Like Mount Pelée, you sleep peacefully, but I know you can erupt at any moment.", altEs: ["Comme la montagne Pelée, tu as l'air de dormir, mais je sais que tu peux entrer en éruption à tout moment."], grammar: [g.poetic-syntax], vocab: [w.éruption] }
+  - id: c2.u05.l3
+    title: "L'île aux fleurs : les figures de style"
+    teach: [g.figures-of-style]
+    tip: "A comparison needs a tool word (comme, tel, pareil à); without one it's a metaphor. Name the figure, quote it, then explain its effect. Watch the genders: un oxymore, un chiasme, une métaphore, une hyperbole."
+    vocab: [w.figure-de-style, w.comparaison, w.métaphore, w.métaphorique, w.personnification, w.hyperbole, w.oxymore, w.chiasme, w.anaphore, w.gradation, w.allitération, w.assonance, w.métonymie, w.périphrase, w.assourdissant, w.connotation, w.voyelle, w.consigne, w.commentaire, w.contraire, w.contenu, w.structure, w.mûr, w.éternité, w.refus]
+    sentences:
+      - { es: "« L'île aux fleurs » est une périphrase qui désigne la Martinique.", en: "'The island of flowers' is a periphrasis for Martinique.", altEs: ["« L'île aux fleurs » est une périphrase pour désigner la Martinique."], grammar: [g.figures-of-style], vocab: [w.périphrase] }
+      - { es: "« Belle comme une mangue mûre », c'est une comparaison ; sans « comme », ce serait une métaphore.", en: "'Beautiful as a ripe mango' is a simile; without 'comme' it would be a metaphor.", altEs: ["« Belle comme une mangue mûre » est une comparaison ; sans « comme », ce serait une métaphore."], grammar: [g.figures-of-style, g.conditionnel-present], vocab: [w.comparaison, w.métaphore, w.mûr] }
+      - { es: "« Cette obscure clarté qui tombe des étoiles » : chez Corneille, l'oxymore réunit deux mots contraires.", en: "'That dark light falling from the stars': in Corneille, the oxymoron joins two opposite words.", altEs: ["« Cette obscure clarté qui tombe des étoiles » : dans Le Cid, l'oxymore réunit deux mots contraires."], grammar: [g.figures-of-style], vocab: [w.oxymore, w.contraire], note: "Corneille, Le Cid, Act IV." }
+      - { es: "Molière joue sur le chiasme : « il faut manger pour vivre, et non pas vivre pour manger ».", en: "Molière plays on chiasmus: 'one must eat to live, and not live to eat'.", altEs: ["Molière utilise un chiasme : « il faut manger pour vivre, et non pas vivre pour manger »."], grammar: [g.figures-of-style], vocab: [w.chiasme], note: "L'Avare, Act III: Valère says it, and Harpagon gets it the wrong way round." }
+      - { es: "Il faut manger pour vivre.", en: "One must eat to live.", grammar: [g.figures-of-style], vocab: [w.chiasme], transform: { instruction: "Complete the chiasmus with et non pas", answer: "Il faut manger pour vivre, et non pas vivre pour manger.", alt: ["Il faut manger pour vivre et non pas vivre pour manger.", "Il faut manger pour vivre, et non vivre pour manger."], en: "One must eat to live, and not live to eat." } }
+      - { es: "« Le Poète est semblable au prince des nuées » : Baudelaire compare le poète à l'albatros.", en: "'The Poet is like the prince of the clouds': Baudelaire compares the poet to the albatross.", altEs: ["« Le Poète est semblable au prince des nuées » : dans L'Albatros, Baudelaire compare le poète à l'oiseau."], grammar: [g.figures-of-style], vocab: [w.comparaison], note: "Semblable à is a comparison tool, like comme. Baudelaire, Les Fleurs du mal." }
+      - { es: "Quand on dit « boire un verre », on fait une métonymie : on boit le contenu, pas le verre.", en: "When you say 'have a glass', you're using metonymy: you drink the contents, not the glass.", altEs: ["Dire « boire un verre », c'est faire une métonymie : on boit le contenu, pas le verre."], grammar: [g.figures-of-style], vocab: [w.métonymie, w.contenu] }
+      - { es: "« Je meurs de chaud » est une hyperbole que tout le monde comprend à Fort-de-France.", en: "'I'm dying of heat' is a hyperbole everyone understands in Fort-de-France.", altEs: ["« Je meurs de chaud », c'est une hyperbole que tout le monde comprend à Fort-de-France."], grammar: [g.figures-of-style, g.relative-qui-que], vocab: [w.hyperbole] }
+      - { es: "La ville est calme la nuit.", en: "The town is quiet at night.", grammar: [g.figures-of-style], vocab: [w.personnification], transform: { instruction: "Personify the town with the verb dormir", answer: "La nuit, la ville dort.", alt: ["La ville dort la nuit."], en: "At night, the town sleeps." } }
+      - { es: "Un silence assourdissant a suivi l'annonce des résultats.", en: "A deafening silence followed the announcement of the results.", altEs: ["L'annonce des résultats a été suivie d'un silence assourdissant."], grammar: [g.figures-of-style], vocab: [w.assourdissant, w.oxymore] }
+      - { es: "Répéter le même mot au début de chaque vers, c'est faire une anaphore : « Ma ville, ma mer, mon volcan… »", en: "Repeating the same word at the start of each line is anaphora: 'My town, my sea, my volcano…'", altEs: ["Reprendre le même mot au début de chaque vers, c'est faire une anaphore : « Ma ville, ma mer, mon volcan… »"], grammar: [g.figures-of-style, g.mise-en-relief], vocab: [w.anaphore] }
+      - { es: "« Il marche, il court, il vole » : chaque verbe va plus vite que le précédent, c'est une gradation.", en: "'He walks, he runs, he flies': each verb goes faster than the one before; it's a climax.", altEs: ["« Il marche, il court, il vole » : chaque verbe est plus rapide que le précédent ; c'est une gradation."], grammar: [g.figures-of-style], vocab: [w.gradation] }
+      - { es: "Dans « le soleil sur le sable », l'allitération en s fait entendre le souffle de la mer.", en: "In 'le soleil sur le sable', the alliteration in s lets you hear the breath of the sea.", altEs: ["Dans « le soleil sur le sable », l'allitération en s nous fait entendre le souffle de la mer."], grammar: [g.figures-of-style, g.faire-causatif], vocab: [w.allitération, w.souffle] }
+      - { es: "Un silence assourdissant ? C'est un oxymore.", en: "A deafening silence? That's an oxymoron.", grammar: [g.figures-of-style, g.gender-nouns], vocab: [w.oxymore], error: { wrong: "Un silence assourdissant ? C'est une oxymore.", explain: "Oxymore is masculine: un oxymore, like un chiasme.", grammar: g.figures-of-style } }
+      - { es: "Pour beaucoup de lecteurs, le mot « volcan » a une connotation de colère et de feu.", en: "For many readers, the word 'volcano' has connotations of anger and fire.", altEs: ["Pour beaucoup de lecteurs, le mot « volcan » évoque la colère et le feu."], grammar: [g.figures-of-style], vocab: [w.connotation] }
+      - { es: "Nommer une figure de style ne suffit pas : il faut en expliquer l'effet.", en: "Naming a figure of speech isn't enough: you have to explain its effect.", altEs: ["Il ne suffit pas de nommer une figure de style : il faut en expliquer l'effet.", "Nommer une figure de style ne suffit pas : il faut expliquer son effet."], grammar: [g.figures-of-style, g.pronoun-en], vocab: [w.figure-de-style] }
+    exchanges:
+      - q: { es: "Quelle est la différence entre une comparaison et une métaphore ?", en: "What's the difference between a simile and a metaphor?" }
+        a: { es: "La comparaison utilise un outil comme « comme » ; la métaphore, non.", en: "A simile uses a tool word like 'comme'; a metaphor doesn't." }
+        alt: ["La métaphore n'a pas de « comme ».", "Il n'y a pas de « comme » dans une métaphore."]
+        grammar: [g.figures-of-style]
+        vocab: [w.comparaison, w.métaphore]
+      - q: { es: "Pourquoi appelle-t-on la Martinique « l'île aux fleurs » ?", en: "Why is Martinique called 'the island of flowers'?" }
+        a: { es: "C'est une périphrase ; selon la tradition, c'est le sens de son ancien nom, Madinina.", en: "It's a periphrasis; according to tradition, that's the meaning of its old name, Madinina." }
+        alt: ["C'est une périphrase.", "À cause de son ancien nom, Madinina, dit-on."]
+        grammar: [g.figures-of-style]
+        vocab: [w.périphrase]
+      - q: { es: "« Un silence assourdissant », c'est quelle figure ?", en: "'A deafening silence': which figure is that?" }
+        a: { es: "Un oxymore : deux mots contraires réunis.", en: "An oxymoron: two opposite words joined together." }
+        alt: ["C'est un oxymore.", "Un oxymore, évidemment."]
+        grammar: [g.figures-of-style]
+        vocab: [w.oxymore, w.assourdissant]
+      - q: { es: "Tu as fini ton commentaire de texte ?", en: "Have you finished your text commentary?" }
+        a: { es: "Presque : j'ai repéré les figures de style, il me reste à expliquer leurs effets.", en: "Almost: I've spotted the figures of speech, I still have to explain their effects." }
+        alt: ["Pas encore, il me reste la conclusion.", "Oui, enfin !"]
+        grammar: [g.figures-of-style]
+        vocab: [w.figure-de-style, w.commentaire]
+      - q: { es: "Tu meurs vraiment de faim ?", en: "Are you really dying of hunger?" }
+        a: { es: "Non, c'est une hyperbole, mais je mangerais bien quelques accras.", en: "No, it's a hyperbole, but I could do with a few fritters." }
+        alt: ["C'est une hyperbole !", "Presque, oui."]
+        grammar: [g.figures-of-style, g.conditional-politeness]
+        vocab: [w.hyperbole, w.accras]
+    texts:
+      - title: "Consigne du professeur"
+        es: ["Relevez trois figures de style dans le poème.", "Pour chacune, citez le vers et nommez la figure.", "Expliquez ensuite son effet : c'est là l'essentiel."]
+        en: ["Find three figures of speech in the poem.", "For each one, quote the line and name the figure.", "Then explain its effect: that's what really matters."]
+        grammar: [g.figures-of-style, g.imperative]
+        vocab: [w.figure-de-style, w.consigne]
+      - title: "Fiche de révision"
+        es: ["Comparaison : avec « comme ».", "Métaphore : sans outil de comparaison.", "Oxymore : deux mots contraires réunis.", "Chiasme : une structure en miroir, ABBA."]
+        en: ["Simile: with 'comme'.", "Metaphor: without a comparison word.", "Oxymoron: two opposite words joined.", "Chiasmus: a mirror structure, ABBA."]
+        grammar: [g.figures-of-style]
+        vocab: [w.comparaison, w.métaphore, w.oxymore, w.chiasme]
+    spicy:
+      - { es: "Tu n'es pas belle comme le soleil : tu es le soleil, et j'ai oublié ma crème solaire.", en: "You're not as beautiful as the sun: you are the sun, and I forgot my sun cream.", altEs: ["Tu n'es pas belle comme le soleil, tu es le soleil, et j'ai oublié ma crème solaire."], grammar: [g.figures-of-style], vocab: [w.comparaison, w.métaphore] }
+      - { es: "« Je meurs d'envie de te revoir » : c'est une hyperbole, peut-être, mais pas tant que ça.", en: "'I'm dying to see you again': it's a hyperbole, maybe, but not by much.", altEs: ["« Je meurs d'envie de te revoir » : une hyperbole, peut-être, mais pas tant que ça."], grammar: [g.figures-of-style], vocab: [w.hyperbole] }
+      - { es: "Ton silence assourdissant après mon message, c'était un oxymore ou un refus ?", en: "Your deafening silence after my message: was that an oxymoron or a no?", altEs: ["Ton silence assourdissant après mon message, c'était un oxymore ou un non ?"], grammar: [g.figures-of-style, g.dislocation], vocab: [w.assourdissant, w.oxymore] }
+      - { es: "Je ne t'invite pas à dîner pour te voir, je te vois pour t'inviter à dîner : oui, c'est un chiasme, et oui, c'est une invitation.", en: "I'm not inviting you to dinner to see you, I'm seeing you to invite you to dinner: yes, it's a chiasmus, and yes, it's an invitation.", altEs: ["Je ne t'invite pas à dîner pour te voir, je te vois pour t'inviter à dîner : c'est un chiasme, et c'est une invitation."], grammar: [g.figures-of-style], vocab: [w.chiasme] }
+      - { es: "Je t'ai attendu une heure, un siècle, une éternité : la gradation est exagérée, pas le retard.", en: "I waited for you an hour, a century, an eternity: the climax is exaggerated, the lateness isn't.", altEs: ["Je t'ai attendue une heure, un siècle, une éternité : la gradation est exagérée, pas le retard."], grammar: [g.figures-of-style], vocab: [w.gradation] }
+  - id: c2.u05.l4
+    title: "Le cri d'un poète insoumis"
+    teach: [g.poetic-syntax, g.figures-of-style]
+    tip: "To read Césaire aloud, follow the breath: long versets, anaphora, accumulation and groups of three build an incantatory rhythm. Then say what each device does to the reader."
+    vocab: [w.lyrique, w.lyrisme, w.élégie, w.ode, w.recueil, w.cri, w.insoumis, w.dignité, w.envoûtant, w.incantatoire, w.vers-libre, w.verset, w.souffle, w.image, w.symbole, w.symbolique, w.allégorie, w.déraciné, w.assimilation, w.aliénation, w.tambour, w.poétique, w.épique, w.mouvement, w.couver, w.hommage, w.guider, w.relire, w.longueur, w.dénoncer, w.réciter, w.regard, w.universel]
+    sentences:
+      - { es: "Aimé Césaire a publié la première version du Cahier d'un retour au pays natal en 1939.", en: "Aimé Césaire published the first version of the Notebook of a Return to the Native Land in 1939.", altEs: ["C'est en 1939 qu'Aimé Césaire a publié la première version du Cahier d'un retour au pays natal."], grammar: [g.passe-compose-avoir], vocab: [w.recueil] }
+      - { es: "C'est en Europe, loin de la Martinique, que Césaire a commencé à écrire le Cahier.", en: "It was in Europe, far from Martinique, that Césaire began writing the Cahier.", altEs: ["Césaire a commencé à écrire le Cahier en Europe, loin de la Martinique."], grammar: [g.mise-en-relief], vocab: [w.déraciné] }
+      - { es: "Le Cahier est un long cri, écrit en versets et en vers libres.", en: "The Cahier is one long cry, written in versets and free verse.", altEs: ["Le Cahier est un long cri écrit en versets et en vers libres."], grammar: [g.figures-of-style], vocab: [w.cri, w.verset, w.vers-libre] }
+      - { es: "Avec Senghor et Damas, Césaire a fait de la négritude un mouvement de dignité et de fierté.", en: "With Senghor and Damas, Césaire made négritude a movement of dignity and pride.", altEs: ["Avec Léopold Sédar Senghor et Léon-Gontran Damas, Césaire a fait de la négritude un mouvement de dignité et de fierté."], grammar: [g.figures-of-style], vocab: [w.dignité] }
+      - { es: "Son lyrisme est incantatoire : les mêmes mots reviennent comme les coups d'un tambour.", en: "His lyricism is incantatory: the same words come back like the beats of a drum.", altEs: ["Son lyrisme est incantatoire : les mêmes mots reviennent comme des coups de tambour."], grammar: [g.figures-of-style], vocab: [w.lyrisme, w.incantatoire, w.tambour] }
+      - { es: "Le poète est debout. Le poète est libre. Le poète est insoumis.", en: "The poet stands. The poet is free. The poet is unbowed.", grammar: [g.poetic-syntax], vocab: [w.insoumis], transform: { instruction: "Join the three sentences into one with a ternary rhythm", answer: "Le poète est debout, libre et insoumis.", alt: ["Le poète est debout, libre, insoumis."], en: "The poet stands, free and unbowed." } }
+      - { es: "Dans beaucoup de poèmes antillais, la mer est le symbole de la mémoire et de l'exil.", en: "In many West Indian poems the sea is the symbol of memory and exile.", altEs: ["Dans de nombreux poèmes antillais, la mer symbolise la mémoire et l'exil."], grammar: [g.figures-of-style], vocab: [w.symbole, w.antillais] }
+      - { es: "On a souvent lu le volcan, chez Césaire, comme un symbole de la colère qui couve.", en: "The volcano in Césaire has often been read as a symbol of smouldering anger.", altEs: ["Chez Césaire, le volcan a souvent été lu comme un symbole de la colère qui couve."], grammar: [g.figures-of-style, g.on-instead-of-passive], vocab: [w.symbolique, w.couver] }
+      - { es: "Lisez ce passage à voix haute : on sent le souffle du poète dans la longueur des phrases.", en: "Read this passage aloud: you can feel the poet's breath in the length of the sentences.", altEs: ["Lisez ce passage à haute voix : on sent le souffle du poète dans la longueur des phrases."], grammar: [g.poetic-syntax, g.imperative], vocab: [w.souffle] }
+      - { es: "L'allégorie donne un corps à une idée : la Liberté guidant le peuple, par exemple.", en: "Allegory gives an idea a body: Liberty leading the people, for example.", altEs: ["L'allégorie donne un corps à une idée, comme la Liberté guidant le peuple."], grammar: [g.figures-of-style, g.participe-present], vocab: [w.allégorie] }
+      - { es: "Les images du poème sont si envoûtantes qu'on oublie de chercher les figures de style.", en: "The poem's images are so spellbinding that you forget to look for the figures of speech.", altEs: ["Les images de ce poème sont tellement envoûtantes qu'on oublie de chercher les figures de style."], grammar: [g.figures-of-style, g.connectors-cause-consequence], vocab: [w.image, w.envoûtant] }
+      - { es: "Le poème dénonce l'aliénation de ceux qui ont appris à avoir honte de leur propre histoire.", en: "The poem denounces the alienation of those who have learnt to be ashamed of their own history.", altEs: ["Le poème dénonce l'aliénation de ceux à qui on a appris à avoir honte de leur propre histoire."], grammar: [g.demonstrative-pronouns], vocab: [w.aliénation, w.dénoncer] }
+      - { es: "Le poète refuse l'assimilation.", en: "The poet refuses assimilation.", grammar: [g.passive-voice], vocab: [w.assimilation], transform: { instruction: "Turn it into a passive sentence", answer: "L'assimilation est refusée par le poète.", alt: [], en: "Assimilation is refused by the poet." } }
+      - { es: "Césaire a écrit en français, mais on entend l'île dans chacun de ses vers.", en: "Césaire wrote in French, but you can hear the island in every one of his lines.", grammar: [g.concession, g.subjonctif-passe], vocab: [w.lyrique], transform: { instruction: "Rewrite it with bien que", answer: "Bien que Césaire ait écrit en français, on entend l'île dans chacun de ses vers.", alt: ["Bien que Césaire ait écrit en français, on entend l'île dans tous ses vers."], en: "Although Césaire wrote in French, you can hear the island in every one of his lines." } }
+      - { es: "Bien que ce poème soit difficile, il est envoûtant.", en: "Although this poem is difficult, it is spellbinding.", altEs: ["Quoique ce poème soit difficile, il est envoûtant."], grammar: [g.concession], vocab: [w.envoûtant], error: { wrong: "Bien que ce poème est difficile, il est envoûtant.", explain: "bien que always takes the subjonctif: soit, not est.", grammar: g.concession } }
+      - { es: "Lyrique, épique, politique : la poésie de Césaire est tout cela à la fois.", en: "Lyrical, epic, political: Césaire's poetry is all of these at once.", altEs: ["Lyrique, épique et politique : la poésie de Césaire est tout cela à la fois."], grammar: [g.poetic-syntax, g.figures-of-style], vocab: [w.lyrique, w.épique] }
+    exchanges:
+      - q: { es: "Tu as lu le Cahier d'un retour au pays natal ?", en: "Have you read the Notebook of a Return to the Native Land?" }
+        a: { es: "Oui, deux fois : la première, je n'ai rien compris ; la deuxième, j'ai été envoûtée.", en: "Yes, twice: the first time I understood nothing; the second, I was spellbound." }
+        alt: ["Pas encore, mais c'est sur ma liste.", "Oui, en cours de français."]
+        grammar: [g.passe-compose-avoir]
+        vocab: [w.envoûtant]
+      - q: { es: "C'est quoi, un verset ?", en: "What's a verset?" }
+        a: { es: "Une très longue ligne poétique, qui respire presque comme de la prose.", en: "A very long poetic line that breathes almost like prose." }
+        alt: ["Une très longue ligne de poème.", "Un vers très long, presque de la prose."]
+        grammar: [g.figures-of-style]
+        vocab: [w.verset]
+      - q: { es: "Pourquoi l'aéroport porte-t-il le nom de Césaire ?", en: "Why is the airport named after Césaire?" }
+        a: { es: "Pour rendre hommage au poète et au maire, qui a dirigé Fort-de-France pendant cinquante-six ans.", en: "To honour the poet and mayor who ran Fort-de-France for fifty-six years." }
+        alt: ["Pour lui rendre hommage.", "En hommage au poète."]
+        grammar: [g.relative-qui-que]
+        vocab: [w.hommage]
+      - q: { es: "Ce poème, c'est une élégie ou une ode ?", en: "Is this poem an elegy or an ode?" }
+        a: { es: "Plutôt une ode : il célèbre l'île au lieu de la pleurer.", en: "More of an ode: it celebrates the island instead of mourning it." }
+        alt: ["Une ode, je crois.", "Plutôt une élégie, c'est triste."]
+        grammar: [g.figures-of-style]
+        vocab: [w.élégie, w.ode]
+      - q: { es: "Quel est le symbole le plus fort du texte, d'après toi ?", en: "What's the strongest symbol in the text, in your view?" }
+        a: { es: "Le volcan : il dort, mais on sent qu'il peut se réveiller.", en: "The volcano: it sleeps, but you feel it could wake up." }
+        alt: ["La mer, sans hésiter.", "Le cri du poète."]
+        grammar: [g.figures-of-style, g.superlatives]
+        vocab: [w.symbole]
+    texts:
+      - title: "Notice de musée"
+        es: ["Aimé Césaire (1913-2008), poète et homme politique.", "Député de la Martinique pendant près de cinquante ans, il a été maire de Fort-de-France pendant cinquante-six ans.", "Son Cahier d'un retour au pays natal a fait de lui l'une des grandes voix de la négritude."]
+        en: ["Aimé Césaire (1913-2008), poet and politician.", "Member of parliament for Martinique for nearly fifty years, he was mayor of Fort-de-France for fifty-six years.", "His Notebook of a Return to the Native Land made him one of the great voices of négritude."]
+        grammar: [g.passe-compose-avoir]
+        vocab: [w.recueil]
+      - title: "Atelier d'écriture"
+        es: ["Écrivez un poème en vers libres sur votre ville.", "Commencez trois vers par le même mot.", "Terminez par une image forte."]
+        en: ["Write a free-verse poem about your town.", "Start three lines with the same word.", "End with a strong image."]
+        grammar: [g.imperative, g.figures-of-style]
+        vocab: [w.vers-libre, w.image]
+    spicy:
+      - { es: "Ton regard est un poème en vers libres : impossible d'en compter les syllabes, mais je le relis sans arrêt.", en: "Your gaze is a free-verse poem: impossible to count its syllables, but I keep rereading it.", altEs: ["Ton regard, c'est un poème en vers libres : impossible d'en compter les syllabes, mais je le relis sans arrêt."], grammar: [g.figures-of-style, g.pronoun-en], vocab: [w.vers-libre] }
+      - { es: "J'ai écrit une ode à tes yeux ; ma prof de français dit que c'est surtout une élégie à mon orgueil.", en: "I wrote an ode to your eyes; my French teacher says it's mostly an elegy to my pride.", altEs: ["J'ai écrit une ode à tes yeux ; mon prof de français dit que c'est surtout une élégie à mon orgueil."], grammar: [g.figures-of-style], vocab: [w.ode, w.élégie] }
+      - { es: "Tu me récites Baudelaire sous les étoiles : c'est envoûtant, mais tu as le droit de respirer entre deux vers.", en: "You recite Baudelaire to me under the stars: it's spellbinding, but you're allowed to breathe between two lines.", altEs: ["Tu me récites du Baudelaire sous les étoiles : c'est envoûtant, mais tu as le droit de respirer entre deux vers."], grammar: [g.figures-of-style], vocab: [w.envoûtant, w.réciter] }
+      - { es: "Lyrique au dîner, épique au dessert, insoumis au moment de payer : tu es un recueil à toi tout seul.", en: "Lyrical at dinner, epic at dessert, rebellious when it's time to pay: you're a whole collection on your own.", altEs: ["Lyrique au dîner, épique au dessert et insoumis au moment de payer : tu es un recueil à toi tout seul."], grammar: [g.poetic-syntax, g.figures-of-style], vocab: [w.lyrique, w.insoumis, w.recueil] }
+      - { es: "Ce n'est pas une allégorie : quand je dis que tu es mon île, je veux vraiment partir en vacances avec toi.", en: "It's not an allegory: when I say you're my island, I really do want to go on holiday with you.", altEs: ["Ce n'est pas une allégorie : quand je dis que tu es mon île, j'ai vraiment envie de partir en vacances avec toi."], grammar: [g.figures-of-style], vocab: [w.allégorie] }
+dialogues:
+  - id: c2.u05.d1
+    title: "À la bibliothèque Schœlcher"
+    context: "Mylène, a student from Fort-de-France, shows her friend Thomas around the city and answers his questions about Créole and Césaire."
+    lines:
+      - { speaker: Mylène, es: "Bienvenue à Fort-de-France ! Tu as déjà vu la bibliothèque Schœlcher ?", en: "Welcome to Fort-de-France! Have you seen the Schœlcher library yet?" }
+      - { speaker: Thomas, es: "Pas encore. C'est vrai qu'elle a été construite à Paris ?", en: "Not yet. Is it true it was built in Paris?" }
+      - { speaker: Mylène, es: "Oui, pour l'Exposition universelle de 1889 ; ensuite, on l'a démontée et remontée ici, pièce par pièce.", en: "Yes, for the 1889 World's Fair; then it was taken apart and rebuilt here, piece by piece." }
+      - { speaker: Thomas, es: "Dis-moi, quand ta grand-mère m'a répondu « mwen pa sav », elle parlait créole ?", en: "Tell me, when your grandmother answered me 'mwen pa sav', was she speaking Créole?" }
+      - { speaker: Mylène, es: "Oui : ça veut dire « je ne sais pas ». En créole, le verbe ne change pas ; ce sont les petits mots devant lui qui comptent.", en: "Yes: it means 'I don't know'. In Créole the verb doesn't change; it's the little words in front of it that count." }
+      - { speaker: Thomas, es: "Comme ce « ka » que j'entends partout ?", en: "Like that 'ka' I hear everywhere?" }
+      - { speaker: Mylène, es: "Exactement. « Mwen ka manjé », je mange ; « mwen ké manjé », je mangerai.", en: "Exactly. 'Mwen ka manjé', I'm eating; 'mwen ké manjé', I will eat." }
+      - { speaker: Thomas, es: "Et Césaire, il écrivait en créole ?", en: "And Césaire, did he write in Créole?" }
+      - { speaker: Mylène, es: "Non, en français, mais un français volcanique : des versets immenses, des anaphores, des images qui explosent.", en: "No, in French, but a volcanic French: huge versets, anaphoras, images that explode." }
+      - { speaker: Thomas, es: "Un français volcanique… c'est une métaphore, ça !", en: "A volcanic French… that's a metaphor!" }
+      - { speaker: Mylène, es: "Bravo ! Tu es prêt pour le commentaire de texte. Allez, an nou ay, la bibliothèque ferme à cinq heures !", en: "Well done! You're ready for the text commentary. Come on, let's go, the library closes at five!" }
+    questions:
+      - { q: "Où la bibliothèque Schœlcher a-t-elle été construite ?", options: ["À Fort-de-France", "À Paris", "À Saint-Pierre"], answer: 1, explain: "Mylène says it was built in Paris for the 1889 World's Fair, then taken apart and rebuilt in Fort-de-France." }
+      - { q: "Que veut dire « mwen pa sav » ?", options: ["Je mangerai", "Je ne sais pas", "Allons-y"], answer: 1, explain: "Mwen = je, pa = ne … pas, sav = savoir." }
+      - { q: "En quelle langue Césaire écrivait-il ?", options: ["En créole", "En français", "En anglais"], answer: 1, explain: "He wrote in French, a 'volcanic' French full of versets and images." }
+      - { q: "Quelle figure de style Thomas reconnaît-il dans « un français volcanique » ?", options: ["Une métaphore", "Un chiasme", "Une allitération"], answer: 0, explain: "French is described as a volcano without any comparison word: a metaphor." }
