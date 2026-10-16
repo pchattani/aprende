@@ -1,0 +1,284 @@
+id: b2.u05
+title: "Chamonix : le guide avait dit qu'il ferait beau"
+lessons:
+  - id: b2.u05.l1
+    title: Le guide avait dit qu'il ferait beau
+    teach: [g.concordance-des-temps]
+    tip: "After a past main verb: same time → imparfait (il savait que le glacier reculait), earlier → plus-que-parfait (qu'il avait reculé), later → conditionnel (qu'il reculerait)."
+    vocab: [w.reculer, w.fondre, w.fonte, w.alpiniste, w.guide-de-haute-montagne, w.ascension, w.descente, w.escalader, w.gravir, w.culminer, w.refuge, w.cordée, w.corde, w.crampon, w.piolet, w.casque, w.avalanche, w.crevasse, w.altitude, w.mont, w.massif, w.chaîne-de-montagnes, w.col, w.vertige, w.promesse, w.tenir-sa-promesse, w.trahir]
+    sentences:
+      - { es: "Le guide nous a dit que le glacier reculait chaque année.", en: "The guide told us the glacier was retreating every year.", altEs: ["Le guide nous a expliqué que le glacier reculait chaque année.", "Le guide nous a dit que le glacier recule chaque année."], grammar: [g.concordance-des-temps], vocab: [w.reculer], transform: { instruction: "Report it with a present verb: 'Le guide nous dit que…'", answer: "Le guide nous dit que le glacier recule chaque année.", en: "The guide tells us the glacier is retreating every year." } }
+      - { es: "Nous savions que la descente serait difficile.", en: "We knew the descent would be difficult.", altEs: ["On savait que la descente serait difficile."], grammar: [g.concordance-des-temps], vocab: [w.descente], error: { wrong: "Nous savions que la descente sera difficile.", explain: "After a past main verb, a later action takes the conditional: serait.", grammar: g.concordance-des-temps } }
+      - { es: "Le guide de haute montagne avait promis qu'il ferait beau, mais il a neigé toute la journée.", en: "The mountain guide had promised it would be fine, but it snowed all day.", altEs: ["Le guide avait promis qu'il ferait beau, mais il a neigé toute la journée."], grammar: [g.concordance-des-temps], vocab: [w.guide-de-haute-montagne, w.promesse], error: { wrong: "Le guide de haute montagne avait promis qu'il fera beau, mais il a neigé toute la journée.", explain: "The future seen from the past is the conditional: qu'il ferait beau.", grammar: g.concordance-des-temps } }
+      - { es: "Il espérait qu'on aurait atteint le refuge avant la nuit.", en: "He hoped we'd have reached the hut before nightfall.", altEs: ["Il espérait que nous aurions atteint le refuge avant la nuit."], grammar: [g.concordance-des-temps, g.conditionnel-passe], vocab: [w.refuge] }
+      - { es: "Elle m'a avoué qu'elle avait le vertige depuis toujours.", en: "She admitted to me that she'd always suffered from vertigo.", grammar: [g.concordance-des-temps], vocab: [w.vertige] }
+      - { es: "On croyait que la glace fondait seulement en été.", en: "We thought the ice only melted in summer.", altEs: ["Nous croyions que la glace fondait seulement en été.", "On croyait que la glace ne fondait qu'en été."], grammar: [g.concordance-des-temps], vocab: [w.fondre] }
+      - { es: "En 1786, Balmat et Paccard ont gravi le mont Blanc, alors que beaucoup pensaient qu'on n'atteindrait jamais le sommet.", en: "In 1786, Balmat and Paccard climbed Mont Blanc, when many people thought the summit would never be reached.", grammar: [g.concordance-des-temps], vocab: [w.gravir, w.mont] }
+      - { es: "Les alpinistes ont expliqué qu'ils avaient pris une corde à cause des crevasses.", en: "The climbers explained that they'd taken a rope because of the crevasses.", grammar: [g.concordance-des-temps], vocab: [w.alpiniste, w.corde, w.crevasse] }
+      - { es: "Je ne savais pas que le mont Blanc culminait à plus de 4 800 mètres.", en: "I didn't know Mont Blanc rose to more than 4,800 metres.", altEs: ["Je ne savais pas que le mont Blanc culmine à plus de 4 800 mètres."], grammar: [g.concordance-des-temps], vocab: [w.culminer], note: "A fact that is still true may keep the present in speech." }
+      - { es: "Il m'a juré qu'il avait vérifié les crampons et le piolet.", en: "He swore to me he'd checked the crampons and the ice axe.", grammar: [g.concordance-des-temps], vocab: [w.crampon, w.piolet] }
+      - { es: "On nous avait assuré qu'il n'y avait aucun risque d'avalanche.", en: "We'd been assured there was no risk of an avalanche.", grammar: [g.concordance-des-temps], vocab: [w.avalanche] }
+      - { es: "À cette altitude, je ne savais pas si je pourrais continuer.", en: "At that altitude, I didn't know whether I'd be able to carry on.", grammar: [g.concordance-des-temps], vocab: [w.altitude], transform: { instruction: "Change to the present: 'I don't know if I'll be able to…'", answer: "À cette altitude, je ne sais pas si je pourrai continuer.", en: "At this altitude, I don't know whether I'll be able to carry on." } }
+      - { es: "Tu m'avais promis qu'on arriverait au sommet ! — J'ai tenu ma promesse à moitié : on est au col.", en: "You'd promised me we'd get to the top! — I half kept my promise: we're at the pass.", grammar: [g.concordance-des-temps], vocab: [w.col, w.tenir-sa-promesse] }
+      - { es: "Il pensait que sa cordée ne le trahirait jamais.", en: "He thought his roped party would never let him down.", grammar: [g.concordance-des-temps], vocab: [w.cordée, w.trahir] }
+      - { es: "Je croyais que le massif du Mont-Blanc était entièrement en France ; il touche aussi l'Italie et la Suisse.", en: "I thought the Mont Blanc massif was entirely in France; it also reaches into Italy and Switzerland.", grammar: [g.concordance-des-temps], vocab: [w.massif] }
+      - { es: "Il nous a raconté qu'il avait escaladé l'Aiguille du Midi à vingt ans.", en: "He told us he'd climbed the Aiguille du Midi at the age of twenty.", grammar: [g.concordance-des-temps], vocab: [w.escalader] }
+    exchanges:
+      - q: { es: "Qu'est-ce que le guide vous a dit ?", en: "What did the guide tell you?" }
+        a: { es: "Il nous a dit que le glacier reculait chaque année.", en: "He told us the glacier was retreating every year." }
+        alt: ["Que le glacier reculait.", "Qu'il ferait beau le lendemain."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.reculer]
+      - q: { es: "Tu savais que la descente serait si longue ?", en: "Did you know the descent would be so long?" }
+        a: { es: "Non, je pensais qu'elle serait plus facile que la montée.", en: "No, I thought it would be easier than the climb up." }
+        alt: ["Non, personne ne me l'avait dit.", "Oui, le guide m'avait prévenu."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.descente]
+      - q: { es: "Pourquoi tu as pris un casque ?", en: "Why did you take a helmet?" }
+        a: { es: "Le guide nous avait prévenus que des pierres risquaient de tomber.", en: "The guide had warned us that stones might fall." }
+        alt: ["Parce que c'est obligatoire.", "Par prudence."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.casque]
+      - q: { es: "Vous avez vu toute la chaîne de montagnes ?", en: "Did you see the whole mountain range?" }
+        a: { es: "Oui, le gardien nous avait dit que, par temps clair, on verrait jusqu'en Suisse.", en: "Yes, the warden had told us that on a clear day we'd see as far as Switzerland." }
+        alt: ["Oui, c'était magnifique.", "Non, il y avait trop de nuages."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.chaîne-de-montagnes]
+      - q: { es: "Tu avais déjà fait de l'alpinisme ?", en: "Had you done any mountaineering before?" }
+        a: { es: "Jamais ! Je ne savais même pas comment on utilisait un piolet.", en: "Never! I didn't even know how to use an ice axe." }
+        alt: ["Oui, une fois, dans les Pyrénées.", "Non, c'était ma première ascension."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.piolet]
+    texts:
+      - title: "Récit d'une ascension"
+        es: ["Le guide nous avait promis qu'il ferait beau.", "Mais à trois mille mètres, le ciel s'est couvert et il a commencé à neiger.", "Il a dit qu'on ferait demi-tour si le vent se levait."]
+        en: ["The guide had promised us the weather would be fine.", "But at three thousand metres, the sky clouded over and it started to snow.", "He said we'd turn back if the wind got up."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.promesse]
+      - title: "La Mer de Glace"
+        es: ["Mon grand-père m'a raconté qu'autrefois la glace arrivait presque jusqu'à la gare du Montenvers.", "Aujourd'hui, il faut descendre des centaines de marches pour l'atteindre.", "Il ne croyait pas qu'elle fondrait aussi vite."]
+        en: ["My grandfather told me that the ice used to come almost up to the Montenvers station.", "Today you have to go down hundreds of steps to reach it.", "He didn't believe it would melt so fast."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.fondre]
+    spicy:
+      - { es: "Tu m'avais dit que tu n'avais pas le vertige… alors pourquoi tu me serres la main si fort ?", en: "You told me you didn't suffer from vertigo… so why are you squeezing my hand so hard?", grammar: [g.concordance-des-temps], vocab: [w.vertige] }
+      - { es: "Le guide avait dit qu'il ferait froid au refuge ; il ne savait pas que je serais avec toi.", en: "The guide had said it would be cold at the hut; he didn't know I'd be with you.", grammar: [g.concordance-des-temps], vocab: [w.refuge] }
+      - { es: "Je croyais que c'était l'altitude qui me faisait tourner la tête ; en fait, c'était toi.", en: "I thought it was the altitude making my head spin; actually, it was you.", grammar: [g.concordance-des-temps], vocab: [w.altitude] }
+      - { es: "Tu m'avais promis une ascension facile ; tu ne m'avais pas dit que je passerais la journée à te regarder.", en: "You'd promised me an easy climb; you hadn't told me I'd spend the day looking at you.", grammar: [g.concordance-des-temps], vocab: [w.ascension] }
+      - { es: "On m'avait dit que les guides de Chamonix étaient prudents, mais personne ne m'avait parlé de leur sourire.", en: "I'd been told Chamonix guides were careful, but nobody had told me about their smile.", grammar: [g.concordance-des-temps], vocab: [] }
+  - id: b2.u05.l2
+    title: Il nous a demandé si on avait vu le sommet
+    teach: [g.discours-indirect-avance]
+    tip: "Reported questions: si / ce que / où… with no inversion. Orders: de + infinitive. And the shifts: futur antérieur → conditionnel passé (quand il aurait fini)."
+    vocab: [w.bulletin, w.alerte, w.vigilance, w.canicule, w.tempête-de-neige, w.grêle, w.tonnerre, w.éclair, w.foudre, w.rafale, w.dégager, w.se-couvrir, w.verglas, w.dégel, w.gelé, w.geler, w.il-paraît-que, w.assurer, w.garantir, w.secours, w.secourir, w.sauveteur, w.hélicoptère, w.épuisé]
+    sentences:
+      - { es: "Le guide a dit qu'on partirait dès que le brouillard se serait levé.", en: "The guide said we'd leave as soon as the fog had lifted.", altEs: ["Le guide a dit que nous partirions dès que le brouillard se serait levé."], grammar: [g.discours-indirect-avance], vocab: [], error: { wrong: "Le guide a dit qu'on partirait dès que le brouillard se sera levé.", explain: "In reported speech the futur antérieur becomes the conditionnel passé: se serait levé.", grammar: g.discours-indirect-avance } }
+      - { es: "Elle m'a demandé si j'avais déjà fait de l'escalade.", en: "She asked me whether I'd ever done any climbing.", altEs: ["Elle m'a demandé si j'avais déjà fait de l'alpinisme."], grammar: [g.discours-indirect-avance], vocab: [], error: { wrong: "Elle m'a demandé si avais-je déjà fait de l'escalade.", explain: "No inversion in indirect questions: si j'avais déjà fait.", grammar: g.discours-indirect-avance } }
+      - { es: "Il nous a conseillé de ne pas monter sans crampons.", en: "He advised us not to go up without crampons.", grammar: [g.discours-indirect-avance], vocab: [w.crampon] }
+      - { es: "Ils voulaient savoir ce que nous ferions s'il neigeait.", en: "They wanted to know what we'd do if it snowed.", altEs: ["Ils voulaient savoir ce qu'on ferait s'il neigeait."], grammar: [g.discours-indirect-avance], vocab: [], transform: { instruction: "Put the question back into direct speech (vous)", answer: "Qu'est-ce que vous ferez s'il neige ?", alt: ["Que ferez-vous s'il neige ?"], en: "What will you do if it snows?" } }
+      - { es: "Le bulletin annonçait une alerte orange aux orages pour le lendemain.", en: "The bulletin forecast an orange storm warning for the next day.", grammar: [g.discours-indirect-avance, g.time-shift-expressions], vocab: [w.bulletin, w.alerte] }
+      - { es: "Météo-France a dit que la vigilance canicule durerait jusqu'à dimanche.", en: "Météo-France said the heatwave warning would last until Sunday.", grammar: [g.discours-indirect-avance], vocab: [w.vigilance, w.canicule] }
+      - { es: "Le gardien du refuge nous a assuré qu'il y aurait une tempête de neige dans la nuit.", en: "The hut warden assured us there'd be a snowstorm in the night.", grammar: [g.discours-indirect-avance], vocab: [w.assurer, w.tempête-de-neige] }
+      - { es: "On nous avait prévenus qu'il risquait d'y avoir de la grêle, mais personne n'avait parlé du tonnerre.", en: "We'd been warned there might be hail, but nobody had mentioned thunder.", grammar: [g.discours-indirect-avance], vocab: [w.grêle, w.tonnerre] }
+      - { es: "Le guide nous a dit de descendre dès qu'on a vu les premiers éclairs.", en: "The guide told us to come down as soon as we saw the first flashes of lightning.", altEs: ["Le guide nous a demandé de descendre dès qu'on a vu les premiers éclairs."], grammar: [g.discours-indirect-avance], vocab: [w.éclair] }
+      - { es: "La radio a annoncé des rafales à plus de cent kilomètres à l'heure.", en: "The radio forecast gusts of more than a hundred kilometres an hour.", grammar: [g.passe-compose-avoir], vocab: [w.rafale] }
+      - { es: "Le gardien a dit que le ciel se dégagerait le lendemain matin, mais il s'est couvert dès midi.", en: "The warden said the sky would clear the next morning, but it clouded over by noon.", grammar: [g.discours-indirect-avance, g.time-shift-expressions], vocab: [w.dégager, w.se-couvrir] }
+      - { es: "Il paraît que la route du col est fermée à cause du verglas.", en: "Apparently the road over the pass is closed because of black ice.", grammar: [g.indicatif-ou-subjonctif], vocab: [w.il-paraît-que, w.verglas], transform: { instruction: "Report it after 'On m'a dit que…'", answer: "On m'a dit que la route du col était fermée à cause du verglas.", en: "I was told the road over the pass was closed because of black ice." } }
+      - { es: "Le moniteur nous avait garanti que le lac serait gelé, mais c'était déjà le dégel.", en: "The instructor had guaranteed us the lake would be frozen, but the thaw had already begun.", grammar: [g.discours-indirect-avance], vocab: [w.garantir, w.gelé, w.dégel] }
+      - { es: "Les secours ont demandé aux randonneurs s'ils pouvaient marcher.", en: "The rescue team asked the hikers if they could walk.", grammar: [g.discours-indirect-avance], vocab: [w.secours] }
+      - { es: "Le sauveteur a raconté qu'un hélicoptère était venu secourir deux alpinistes épuisés.", en: "The rescuer said a helicopter had come to rescue two exhausted climbers.", grammar: [g.discours-indirect-avance], vocab: [w.sauveteur, w.hélicoptère, w.secourir, w.épuisé] }
+      - { es: "Il a gelé cette nuit : le guide a dit qu'il faudrait attendre que le soleil réchauffe la neige.", en: "It froze last night: the guide said we'd have to wait for the sun to warm the snow.", grammar: [g.discours-indirect-avance], vocab: [w.geler] }
+    exchanges:
+      - q: { es: "Qu'est-ce qu'ils ont dit à la météo ?", en: "What did they say on the weather forecast?" }
+        a: { es: "Ils ont dit qu'il y aurait des orages en fin de journée.", en: "They said there'd be storms at the end of the day." }
+        alt: ["Qu'il ferait beau jusqu'à midi.", "Il paraît qu'il va neiger."]
+        grammar: [g.discours-indirect-avance]
+        vocab: []
+      - q: { es: "Le guide t'a demandé quoi ?", en: "What did the guide ask you?" }
+        a: { es: "Il m'a demandé si j'avais déjà marché avec des crampons.", en: "He asked me whether I'd ever walked in crampons." }
+        alt: ["Si j'avais le vertige.", "Ce que je ferais en cas d'orage."]
+        grammar: [g.discours-indirect-avance]
+        vocab: [w.crampon]
+      - q: { es: "Pourquoi vous êtes revenus si vite ?", en: "Why did you come back so quickly?" }
+        a: { es: "Le guide nous a dit de descendre dès qu'il a entendu le tonnerre.", en: "The guide told us to come down as soon as he heard thunder." }
+        alt: ["À cause de la foudre.", "Il y avait une alerte orage."]
+        grammar: [g.discours-indirect-avance]
+        vocab: [w.tonnerre]
+      - q: { es: "Tout le monde va bien ?", en: "Is everyone all right?" }
+        a: { es: "Oui, les secours sont arrivés en hélicoptère, mais deux personnes étaient épuisées.", en: "Yes, the rescue team arrived by helicopter, but two people were exhausted." }
+        alt: ["Oui, heureusement.", "Les sauveteurs ont dit que personne n'était blessé."]
+        grammar: [g.pc-vs-imparfait]
+        vocab: [w.secours, w.hélicoptère, w.épuisé]
+      - q: { es: "La foudre peut tomber en montagne ?", en: "Can lightning strike in the mountains?" }
+        a: { es: "Bien sûr ; le guide nous a expliqué qu'elle tombait souvent sur les sommets.", en: "Of course; the guide explained that it often strikes the peaks." }
+        alt: ["Oui, très souvent.", "Oui, c'est pour ça qu'on descend en cas d'orage."]
+        grammar: [g.discours-indirect-avance]
+        vocab: [w.foudre]
+    texts:
+      - title: "Bulletin de vigilance"
+        es: ["Météo-France a placé la Haute-Savoie en vigilance orange.", "Des orages avec de la grêle et de fortes rafales sont attendus en fin d'après-midi.", "Il est recommandé de ne pas partir en montagne."]
+        en: ["Météo-France has put Haute-Savoie on orange alert.", "Storms with hail and strong gusts are expected late in the afternoon.", "You are advised not to go into the mountains."]
+        grammar: [g.passive-voice]
+        vocab: [w.vigilance, w.grêle, w.rafale]
+      - title: "Message de Paul"
+        es: ["Le gardien du refuge m'a dit qu'il y avait du verglas sur le sentier.", "Il m'a conseillé d'attendre que le soleil soit levé.", "Il a ajouté que les secours étaient déjà venus deux fois cette semaine."]
+        en: ["The hut warden told me there was black ice on the path.", "He advised me to wait until the sun was up.", "He added that the rescue team had already been out twice this week."]
+        grammar: [g.discours-indirect-avance]
+        vocab: [w.verglas, w.secours]
+    spicy:
+      - { es: "Elle m'a demandé si j'avais froid ; j'ai dit oui, pour qu'elle me prête son écharpe.", en: "She asked me if I was cold; I said yes, so that she'd lend me her scarf.", grammar: [g.discours-indirect-avance], vocab: [] }
+      - { es: "Tu m'as demandé ce que je ferais en cas de tempête de neige ; je t'ai proposé de rester au refuge avec moi.", en: "You asked me what I'd do in a snowstorm; I suggested you stay at the hut with me.", grammar: [g.discours-indirect-avance], vocab: [w.tempête-de-neige] }
+      - { es: "Le bulletin disait qu'il y aurait du tonnerre ; il ne disait pas que ce serait dans mon cœur.", en: "The bulletin said there'd be thunder; it didn't say it would be in my heart.", grammar: [g.discours-indirect-avance], vocab: [w.bulletin, w.tonnerre] }
+      - { es: "Il m'a dit qu'il me garantissait une vue magnifique ; il parlait de lui, pas du mont Blanc.", en: "He told me he guaranteed me a magnificent view; he was talking about himself, not Mont Blanc.", grammar: [g.discours-indirect-avance], vocab: [w.garantir] }
+      - { es: "Le sauveteur m'a demandé si j'étais blessée ; j'ai répondu que non, juste un peu amoureuse.", en: "The rescuer asked me if I was hurt; I said no, just a little in love.", altEs: ["Le sauveteur m'a demandé si j'étais blessé ; j'ai répondu que non, juste un peu amoureux."], grammar: [g.discours-indirect-avance], vocab: [w.sauveteur] }
+  - id: b2.u05.l3
+    title: La veille, le lendemain
+    teach: [g.time-shift-expressions]
+    tip: "Relative to a past moment: hier → la veille, demain → le lendemain, après-demain → le surlendemain, la semaine prochaine → la semaine suivante, aujourd'hui → ce jour-là."
+    vocab: [w.le-surlendemain, w.l-avant-veille, w.la-semaine-précédente, w.le-mois-suivant, w.précédemment, w.ultérieurement, w.piste, w.ski, w.skier, w.skieur, w.station-de-ski, w.remontée-mécanique, w.télésiège, w.luge, w.raquette, w.moniteur, w.olympique, w.jeux-olympiques, w.médaille, w.champion, w.championnat, w.compétition, w.record, w.victoire, w.défaite]
+    sentences:
+      - { es: "Il m'avait dit qu'il partirait le lendemain pour la station de ski.", en: "He'd told me he'd leave for the ski resort the next day.", grammar: [g.time-shift-expressions, g.discours-indirect-avance], vocab: [w.station-de-ski], transform: { instruction: "Put his words in direct speech: « Je … demain »", answer: "Je pars demain pour la station de ski.", alt: ["Je partirai demain pour la station de ski.", "Je vais partir demain pour la station de ski."], en: "I'm leaving for the ski resort tomorrow." }, error: { wrong: "Il m'avait dit qu'il partirait demain pour la station de ski.", explain: "Seen from a past moment, demain becomes le lendemain.", grammar: g.time-shift-expressions } }
+      - { es: "La veille de la course, nous avons dormi au pied des pistes.", en: "The day before the race, we slept at the foot of the slopes.", altEs: ["La veille de la course, on a dormi au pied des pistes."], grammar: [g.time-shift-expressions], vocab: [w.piste] }
+      - { es: "Ce jour-là, il faisait un temps magnifique pour skier.", en: "That day the weather was magnificent for skiing.", grammar: [g.time-shift-expressions], vocab: [w.skier] }
+      - { es: "Le surlendemain, il est tombé un mètre de neige.", en: "Two days later, a metre of snow fell.", altEs: ["Deux jours plus tard, il est tombé un mètre de neige."], grammar: [g.time-shift-expressions], vocab: [w.le-surlendemain], transform: { instruction: "Relate it to now: 'the day after tomorrow, … will fall'", answer: "Après-demain, il tombera un mètre de neige.", alt: ["Après-demain, il va tomber un mètre de neige."], en: "The day after tomorrow, a metre of snow will fall." } }
+      - { es: "L'avant-veille de notre départ, le télésiège est tombé en panne.", en: "Two days before we left, the chairlift broke down.", grammar: [g.time-shift-expressions], vocab: [w.l-avant-veille, w.télésiège] }
+      - { es: "La semaine précédente, les remontées mécaniques étaient fermées faute de neige.", en: "The week before, the ski lifts were closed for lack of snow.", grammar: [g.time-shift-expressions], vocab: [w.la-semaine-précédente, w.remontée-mécanique] }
+      - { es: "Il m'a dit au téléphone que le moniteur était malade depuis la veille.", en: "He told me on the phone that the instructor had been ill since the day before.", grammar: [g.time-shift-expressions, g.concordance-des-temps], vocab: [w.moniteur] }
+      - { es: "Le mois suivant, elle a gagné sa première médaille.", en: "The following month, she won her first medal.", grammar: [g.time-shift-expressions], vocab: [w.le-mois-suivant, w.médaille] }
+      - { es: "En 1924, Chamonix a accueilli les premiers Jeux olympiques d'hiver.", en: "In 1924 Chamonix hosted the first Winter Olympic Games.", grammar: [g.passe-compose-avoir], vocab: [w.jeux-olympiques] }
+      - { es: "Le champion a déclaré qu'il avait battu son record deux jours plus tôt.", en: "The champion said he'd beaten his record two days earlier.", grammar: [g.time-shift-expressions, g.concordance-des-temps], vocab: [w.champion, w.record], error: { wrong: "Le champion a déclaré qu'il a battu son record deux jours plus tôt.", explain: "An earlier action after a past reporting verb takes the plus-que-parfait: il avait battu.", grammar: g.concordance-des-temps } }
+      - { es: "Comme je l'ai dit précédemment, le championnat aura lieu en mars.", en: "As I said earlier, the championship will take place in March.", grammar: [g.futur-simple-forms], vocab: [w.précédemment, w.championnat] }
+      - { es: "Les résultats de la compétition seront annoncés ultérieurement.", en: "The results of the competition will be announced at a later date.", grammar: [g.passive-voice], vocab: [w.ultérieurement, w.compétition] }
+      - { es: "Après sa victoire, le skieur a dit qu'il fêterait ça le soir même.", en: "After his victory, the skier said he'd celebrate that very evening.", altEs: ["Après sa victoire, la skieuse a dit qu'elle fêterait ça le soir même."], grammar: [g.time-shift-expressions, g.discours-indirect-avance], vocab: [w.victoire, w.skieur] }
+      - { es: "Elle a raconté que la défaite de la veille l'avait rendue plus forte.", en: "She said the previous day's defeat had made her stronger.", grammar: [g.time-shift-expressions, g.concordance-des-temps], vocab: [w.défaite] }
+      - { es: "On a fait de la luge le matin et des raquettes l'après-midi ; le lendemain, on était épuisés.", en: "We went sledging in the morning and snowshoeing in the afternoon; the next day, we were exhausted.", altEs: ["Nous avons fait de la luge le matin et des raquettes l'après-midi ; le lendemain, nous étions épuisés."], grammar: [g.time-shift-expressions], vocab: [w.luge, w.raquette] }
+      - { es: "Mon grand-père disait qu'il avait appris le ski sur une piste olympique.", en: "My grandfather used to say he'd learned to ski on an Olympic slope.", grammar: [g.concordance-des-temps], vocab: [w.ski, w.olympique] }
+    exchanges:
+      - q: { es: "Quand est-ce que tu es arrivé à Chamonix ?", en: "When did you get to Chamonix?" }
+        a: { es: "La veille de la compétition, vers minuit.", en: "The day before the competition, around midnight." }
+        alt: ["L'avant-veille.", "Le jour même."]
+        grammar: [g.time-shift-expressions]
+        vocab: [w.compétition]
+      - q: { es: "Il a dit quand il reviendrait ?", en: "Did he say when he'd be back?" }
+        a: { es: "Il a dit qu'il reviendrait le surlendemain.", en: "He said he'd be back two days later." }
+        alt: ["Dans deux jours.", "Le lendemain, je crois."]
+        grammar: [g.time-shift-expressions, g.discours-indirect-avance]
+        vocab: [w.le-surlendemain]
+      - q: { es: "Les remontées mécaniques étaient ouvertes ?", en: "Were the ski lifts open?" }
+        a: { es: "Non, elles étaient fermées depuis la semaine précédente.", en: "No, they'd been closed since the week before." }
+        alt: ["Oui, toutes.", "Seulement le télésiège."]
+        grammar: [g.time-shift-expressions]
+        vocab: [w.remontée-mécanique, w.la-semaine-précédente]
+      - q: { es: "Tu sais skier ?", en: "Can you ski?" }
+        a: { es: "Un peu ; mon moniteur disait que j'étais meilleure en luge qu'à ski.", en: "A bit; my instructor used to say I was better on a sledge than on skis." }
+        alt: ["Oui, depuis toute petite.", "Non, je préfère les raquettes."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.moniteur, w.luge]
+      - q: { es: "Elle a gagné ?", en: "Did she win?" }
+        a: { es: "Pas ce jour-là, mais le mois suivant, elle est devenue championne de France.", en: "Not that day, but the following month she became French champion." }
+        alt: ["Oui, une médaille d'or.", "Non, elle est arrivée deuxième."]
+        grammar: [g.time-shift-expressions]
+        vocab: [w.le-mois-suivant, w.champion]
+    texts:
+      - title: "Souvenirs de 1924"
+        es: ["Mon arrière-grand-père racontait qu'il avait vu les premiers Jeux olympiques d'hiver à Chamonix.", "La veille de la cérémonie, il avait neigé toute la nuit.", "Le lendemain, il faisait un soleil magnifique."]
+        en: ["My great-grandfather used to say he'd seen the first Winter Olympics in Chamonix.", "The day before the ceremony, it had snowed all night.", "The next day, the sun was shining gloriously."]
+        grammar: [g.time-shift-expressions, g.concordance-des-temps]
+        vocab: [w.jeux-olympiques]
+      - title: "Carnet de voyage"
+        es: ["Lundi, nous sommes arrivés à la station de ski.", "Le lendemain, j'ai pris mon premier cours avec un moniteur.", "Le surlendemain, je descendais déjà une piste bleue !"]
+        en: ["On Monday we arrived at the ski resort.", "The next day I had my first lesson with an instructor.", "Two days later I was already going down a blue run!"]
+        grammar: [g.time-shift-expressions]
+        vocab: [w.station-de-ski, w.moniteur, w.le-surlendemain, w.piste]
+    spicy:
+      - { es: "Tu m'avais dit que tu partirais le lendemain ; trois jours plus tard, tu étais encore dans mon chalet.", en: "You told me you'd leave the next day; three days later you were still in my chalet.", grammar: [g.time-shift-expressions], vocab: [] }
+      - { es: "La veille, je ne te connaissais pas ; le lendemain, je ne pouvais plus skier sans toi.", en: "The day before, I didn't know you; the day after, I couldn't ski without you any more.", grammar: [g.time-shift-expressions], vocab: [w.skier] }
+      - { es: "Le moniteur m'a dit que je tombais trop souvent ; il ne savait pas que c'était pour que tu viennes m'aider.", en: "The instructor told me I fell over too often; he didn't know it was so that you'd come and help me.", grammar: [g.concordance-des-temps], vocab: [w.moniteur] }
+      - { es: "Ce soir-là, au pied des pistes, tu m'as dit que j'étais ta plus belle victoire.", en: "That evening, at the foot of the slopes, you told me I was your finest victory.", grammar: [g.time-shift-expressions], vocab: [w.piste, w.victoire] }
+      - { es: "Je t'ai attendu au télésiège ; le surlendemain, tu m'as enfin demandé mon numéro.", en: "I waited for you at the chairlift; two days later, you finally asked for my number.", altEs: ["Je t'ai attendue au télésiège ; le surlendemain, tu m'as enfin demandé mon numéro."], grammar: [g.time-shift-expressions], vocab: [w.télésiège, w.le-surlendemain] }
+  - id: b2.u05.l4
+    title: Il avait promis que le glacier serait encore là
+    teach: [g.concordance-des-temps, g.discours-indirect-avance]
+    tip: "Reporting news and interviews: il a déclaré que…, elle a expliqué que…, ils voulaient savoir si… Every verb moves one step into the past."
+    vocab: [w.réchauffement, w.climatique, w.gaz-à-effet-de-serre, w.effet-de-serre, w.carbone, w.empreinte-carbone, w.fossile, w.biodiversité, w.écosystème, w.développement-durable, w.durable, w.transition, w.militant, w.exploit, w.performance, w.endurance, w.effort, w.s-efforcer, w.dépasser, w.franchir, w.supporter.n, w.stade, w.course-automobile, w.voiture-de-course, w.entraîneur, w.arbitre, w.score]
+    sentences:
+      - { es: "Les scientifiques ont expliqué que le réchauffement climatique accélérait la fonte des glaciers.", en: "The scientists explained that global warming was speeding up the melting of the glaciers.", grammar: [g.concordance-des-temps], vocab: [w.réchauffement, w.climatique, w.fonte] }
+      - { es: "Elle m'a demandé quelle était mon empreinte carbone.", en: "She asked me what my carbon footprint was.", grammar: [g.discours-indirect-avance], vocab: [w.empreinte-carbone], transform: { instruction: "Put her question in direct speech (tu)", answer: "Quelle est ton empreinte carbone ?", en: "What's your carbon footprint?" } }
+      - { es: "Le militant a déclaré que les énergies fossiles devaient disparaître.", en: "The activist declared that fossil fuels had to disappear.", altEs: ["La militante a déclaré que les énergies fossiles devaient disparaître."], grammar: [g.concordance-des-temps], vocab: [w.militant, w.fossile] }
+      - { es: "On nous a expliqué que les gaz à effet de serre retenaient la chaleur.", en: "It was explained to us that greenhouse gases trap heat.", grammar: [g.concordance-des-temps], vocab: [w.gaz-à-effet-de-serre, w.effet-de-serre] }
+      - { es: "Le guide nous a dit que la biodiversité de la montagne était menacée.", en: "The guide told us the mountain's biodiversity was under threat.", grammar: [g.concordance-des-temps], vocab: [w.biodiversité] }
+      - { es: "Une chercheuse a expliqué que tout l'écosystème du glacier changerait.", en: "A researcher explained that the glacier's whole ecosystem would change.", grammar: [g.concordance-des-temps], vocab: [w.écosystème] }
+      - { es: "La station a annoncé qu'elle s'engagerait dans le développement durable.", en: "The resort announced it would commit to sustainable development.", grammar: [g.discours-indirect-avance], vocab: [w.développement-durable], error: { wrong: "La station a annoncé qu'elle s'engagera dans le développement durable.", explain: "The future after a past reporting verb becomes the conditional: s'engagerait.", grammar: g.discours-indirect-avance } }
+      - { es: "Ils voulaient savoir si la transition vers un tourisme durable serait possible.", en: "They wanted to know whether the transition to sustainable tourism would be possible.", grammar: [g.discours-indirect-avance], vocab: [w.transition, w.durable] }
+      - { es: "L'entraîneur a dit à ses joueurs qu'ils devraient faire un dernier effort.", en: "The coach told his players they'd have to make one last effort.", grammar: [g.discours-indirect-avance], vocab: [w.entraîneur, w.effort], transform: { instruction: "Put the coach's words in direct speech (vous)", answer: "Vous devrez faire un dernier effort.", alt: ["Vous devez faire un dernier effort."], en: "You'll have to make one last effort." } }
+      - { es: "Après le match, les supporters se demandaient pourquoi l'arbitre n'avait rien vu.", en: "After the match, the fans wondered why the referee hadn't seen anything.", grammar: [g.concordance-des-temps], vocab: [w.supporter.n, w.arbitre], error: { wrong: "Après le match, les supporters se demandaient pourquoi l'arbitre n'a rien vu.", explain: "An earlier action after a past main verb takes the plus-que-parfait: n'avait rien vu.", grammar: g.concordance-des-temps } }
+      - { es: "Le journaliste a annoncé que le score était de deux à un au bout de quarante-cinq minutes.", en: "The journalist announced the score was two-one after forty-five minutes.", grammar: [g.concordance-des-temps], vocab: [w.score] }
+      - { es: "Au stade, tout le monde croyait que l'équipe allait perdre.", en: "At the stadium, everyone thought the team was going to lose.", grammar: [g.concordance-des-temps], vocab: [w.stade] }
+      - { es: "Le pilote a raconté que sa voiture de course avait dépassé les trois cents kilomètres à l'heure.", en: "The driver said his racing car had gone over three hundred kilometres an hour.", grammar: [g.concordance-des-temps], vocab: [w.voiture-de-course, w.dépasser] }
+      - { es: "Elle m'a avoué qu'elle s'était efforcée de sourire malgré la fatigue.", en: "She admitted to me she'd made an effort to smile despite her tiredness.", grammar: [g.concordance-des-temps, g.pronominal-passe-compose], vocab: [w.s-efforcer] }
+      - { es: "Le journaliste a dit que c'était un véritable exploit.", en: "The journalist said it was a real feat.", grammar: [g.concordance-des-temps], vocab: [w.exploit] }
+      - { es: "La coureuse a expliqué que son endurance lui avait permis de franchir la ligne d'arrivée en tête.", en: "The runner explained that her stamina had allowed her to cross the finishing line first.", altEs: ["Le coureur a expliqué que son endurance lui avait permis de franchir la ligne d'arrivée en tête."], grammar: [g.concordance-des-temps], vocab: [w.endurance, w.franchir] }
+    exchanges:
+      - q: { es: "Qu'est-ce que le maire a promis ?", en: "What did the mayor promise?" }
+        a: { es: "Il a promis que la ville diminuerait ses émissions de carbone.", en: "He promised the town would cut its carbon emissions." }
+        alt: ["De planter des arbres.", "Qu'il y aurait plus de bus."]
+        grammar: [g.discours-indirect-avance]
+        vocab: [w.carbone]
+      - q: { es: "Tu as regardé la course automobile hier ?", en: "Did you watch the motor race yesterday?" }
+        a: { es: "Oui ; le vainqueur a dit qu'il n'avait jamais roulé aussi vite.", en: "Yes; the winner said he'd never driven so fast." }
+        alt: ["Non, je n'aime pas les voitures.", "Oui, c'était passionnant."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.course-automobile]
+      - q: { es: "Comment était sa performance ?", en: "How was her performance?" }
+        a: { es: "Son entraîneur a dit que c'était la meilleure de sa carrière.", en: "Her coach said it was the best of her career." }
+        alt: ["Excellente.", "Décevante, d'après les journaux."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.performance, w.entraîneur]
+      - q: { es: "Le glacier sera encore là dans cinquante ans ?", en: "Will the glacier still be there in fifty years?" }
+        a: { es: "Le guide nous a dit qu'il aurait peut-être disparu d'ici là.", en: "The guide told us it might have disappeared by then." }
+        alt: ["Personne ne le sait.", "Il paraît qu'il reculera encore."]
+        grammar: [g.concordance-des-temps, g.conditionnel-passe]
+        vocab: []
+      - q: { es: "Qu'est-ce qu'il t'a demandé, le militant ?", en: "What did the activist ask you?" }
+        a: { es: "Il m'a demandé si j'étais prêt à prendre moins l'avion.", en: "He asked me if I was ready to fly less." }
+        alt: ["Si je voulais signer sa pétition.", "Ce que je faisais pour la planète."]
+        grammar: [g.discours-indirect-avance]
+        vocab: [w.militant]
+    texts:
+      - title: "Article"
+        es: ["Les guides de Chamonix ont expliqué que les itinéraires changeaient à cause du réchauffement.", "Certains passages, autrefois couverts de glace, étaient devenus dangereux.", "Ils ont ajouté qu'il faudrait bientôt adapter les ascensions au climat."]
+        en: ["The Chamonix guides explained that the routes were changing because of global warming.", "Some passages, once covered in ice, had become dangerous.", "They added that climbs would soon have to be adapted to the climate."]
+        grammar: [g.concordance-des-temps]
+        vocab: [w.réchauffement]
+      - title: "Interview d'une championne"
+        es: ["La championne a déclaré qu'elle s'était entraînée pendant quatre ans pour ce moment.", "Elle a dit que sa médaille était aussi celle de son entraîneur.", "Et elle a promis qu'elle reviendrait l'année suivante."]
+        en: ["The champion said she'd trained for four years for this moment.", "She said her medal also belonged to her coach.", "And she promised she'd come back the following year."]
+        grammar: [g.concordance-des-temps, g.discours-indirect-avance]
+        vocab: [w.champion, w.entraîneur]
+    spicy:
+      - { es: "Tu m'avais dit que tu avais de l'endurance ; tu t'es endormi avant le dessert.", en: "You told me you had stamina; you fell asleep before dessert.", altEs: ["Tu m'avais dit que tu avais de l'endurance ; tu t'es endormie avant le dessert."], grammar: [g.concordance-des-temps], vocab: [w.endurance] }
+      - { es: "Mon entraîneur m'a dit de faire un dernier effort ; alors je suis venu te parler.", en: "My coach told me to make one last effort; so I came to talk to you.", altEs: ["Mon entraîneur m'a dit de faire un dernier effort ; alors je suis venue te parler."], grammar: [g.discours-indirect-avance], vocab: [w.entraîneur, w.effort] }
+      - { es: "Elle m'a demandé si j'étais supporter de l'équipe ; j'ai répondu que j'étais surtout supporter de son sourire.", en: "She asked me if I supported the team; I said I mostly supported her smile.", grammar: [g.discours-indirect-avance], vocab: [w.supporter.n] }
+      - { es: "Tu as franchi la ligne d'arrivée en premier, mais c'est moi qui ai gagné ton numéro.", en: "You crossed the finishing line first, but I'm the one who won your number.", altEs: ["Tu as franchi la ligne d'arrivée en première, mais c'est moi qui ai gagné ton numéro."], grammar: [g.ce-qui-c-est], vocab: [w.franchir] }
+      - { es: "Il m'avait promis qu'il diminuerait son empreinte carbone ; il a donc proposé de me raccompagner à pied.", en: "He'd promised me he'd shrink his carbon footprint; so he offered to walk me home.", grammar: [g.concordance-des-temps], vocab: [w.empreinte-carbone] }
+dialogues:
+  - id: b2.u05.d1
+    title: Le sommet attendra
+    context: "Back in Chamonix, Thomas tells Julie why his Mont Blanc climb didn't go as planned."
+    lines:
+      - { speaker: Julie, es: "Alors, ce mont Blanc ? Vous êtes arrivés au sommet ?", en: "So, how was Mont Blanc? Did you reach the top?" }
+      - { speaker: Thomas, es: "Non ! Le guide nous avait dit qu'il ferait beau, mais le lendemain matin, le ciel s'est couvert.", en: "No! The guide had told us the weather would be fine, but the next morning the sky clouded over." }
+      - { speaker: Julie, es: "Il ne vous avait pas prévenus qu'il risquait de neiger ?", en: "Hadn't he warned you it might snow?" }
+      - { speaker: Thomas, es: "Si. La veille, il avait dit qu'on ferait demi-tour si le vent se levait. Et c'est ce qui s'est passé.", en: "Yes, he had. The day before, he'd said we'd turn back if the wind got up. And that's what happened." }
+      - { speaker: Julie, es: "Vous étiez où, à ce moment-là ?", en: "Where were you at that point?" }
+      - { speaker: Thomas, es: "Au refuge du Goûter, à presque quatre mille mètres.", en: "At the Goûter hut, at almost four thousand metres." }
+      - { speaker: Julie, es: "Et qu'est-ce qu'il vous a dit de faire ?", en: "And what did he tell you to do?" }
+      - { speaker: Thomas, es: "Il nous a dit de redescendre tout de suite. Il a ajouté qu'on pourrait réessayer la semaine suivante.", en: "He told us to go back down straight away. He added that we could try again the following week." }
+      - { speaker: Julie, es: "Tu vas y retourner ?", en: "Are you going back?" }
+      - { speaker: Thomas, es: "Bien sûr ! Je lui ai demandé s'il me garantissait du soleil cette fois-ci. Il a ri.", en: "Of course! I asked him if he could guarantee me sunshine this time. He laughed." }
+      - { speaker: Julie, es: "Il a eu raison : en montagne, personne ne peut tenir ce genre de promesse !", en: "He was right: in the mountains, nobody can keep that kind of promise!" }
+    questions:
+      - { q: "Pourquoi Thomas n'est-il pas arrivé au sommet ?", options: ["Il était malade", "Le temps a changé et le vent s'est levé", "Il a perdu son piolet"], answer: 1, explain: "The sky clouded over and, as the guide had warned, they turned back when the wind got up." }
+      - { q: "Qu'avait dit le guide la veille ?", options: ["Qu'ils feraient demi-tour si le vent se levait", "Qu'il ferait beau toute la semaine", "Qu'il fallait dormir dans la vallée"], answer: 0, explain: "« La veille, il avait dit qu'on ferait demi-tour si le vent se levait »." }
+      - { q: "Que leur a proposé le guide ?", options: ["De réessayer la semaine suivante", "D'attendre au refuge", "De prendre l'hélicoptère"], answer: 0, explain: "« qu'on pourrait réessayer la semaine suivante »: la semaine suivante = the week after." }
+      - { q: "Pourquoi le guide a-t-il ri ?", options: ["Thomas est tombé", "Thomas lui a demandé de garantir du soleil", "Julie a fait une blague"], answer: 1, explain: "Thomas asked « s'il me garantissait du soleil »." }
