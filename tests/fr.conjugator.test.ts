@@ -363,4 +363,8 @@ describe('table and trainer', () => {
     expect(conjugateWith('aller', IRREGULAR).forms.pres[0]).toBe('vais')
     expect(() => conjugate('maison')).toThrow()
   })
+  it('changes é to è before gu and qu too', () => {
+    expect(conjugate('déléguer').forms.pres).toEqual(['délègue', 'délègues', 'délègue', 'déléguons', 'déléguez', 'délèguent'])
+    expect(conjugate('disséquer').forms.pres[0]).toBe('dissèque')
+  })
 })

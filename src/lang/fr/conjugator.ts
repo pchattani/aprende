@@ -144,7 +144,8 @@ export function join(stem: string, ending: string, cls: Class): string {
 export function muteStem(stem: string, inf: string, future = false): { main: string; alt?: string } {
   if (/[ou]y$/.test(stem)) return { main: stem.slice(0, -1) + 'i' }
   if (/ay$/.test(stem)) return { main: stem.slice(0, -1) + 'i', alt: stem }
-  const acute = /é([^aeiouyéèêëàâîïôûùœ]+)$/.exec(stem)
+  // the consonants before the ending may include the u of gu/qu (déléguer → délègue, disséquer → dissèque)
+  const acute = /é([^aeiouyéèêëàâîïôûùœ]+|[^aeiouyéèêëàâîïôûùœ]*[gq]u)$/.exec(stem)
   if (acute) {
     const changed = stem.slice(0, acute.index) + 'è' + acute[1]
     return future ? { main: stem, alt: changed } : { main: changed }
