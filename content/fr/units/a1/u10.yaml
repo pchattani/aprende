@@ -1,0 +1,279 @@
+id: a1.u10
+title: "Un dimanche au Luxembourg"
+lessons:
+  - id: a1.u10.l1
+    title: Quel temps fait-il ?
+    teach: [g.weather]
+    vocab: [w.temps, w.il-fait-beau, w.soleil, w.pluie, w.pleuvoir, w.neige, w.neiger, w.vent, w.nuage, w.degré, w.météo, w.hiver, w.printemps, w.automne, w.saison, w.parapluie]
+    tip: "Weather uses il: il fait beau, il fait froid, il pleut, il neige, il y a du vent. People use avoir: j'ai froid."
+    sentences:
+      - { es: "Quel temps fait-il aujourd'hui ?", en: "What's the weather like today?", altEs: ["Il fait quel temps aujourd'hui ?", "Quel temps il fait aujourd'hui ?"], altEn: ["What is the weather like today?"], grammar: [g.weather, g.quel], vocab: [w.temps] }
+      - { es: "Il fait beau et il y a du soleil.", en: "The weather's nice and it's sunny.", altEs: ["Il y a du soleil et il fait beau."], altEn: ["It's nice and sunny.", "The weather is fine and there's sunshine."], grammar: [g.weather], vocab: [w.il-fait-beau, w.soleil], transform: { instruction: "Make it negative", answer: "Il ne fait pas beau et il n'y a pas de soleil.", en: "The weather isn't nice and there's no sun." } }
+      - { es: "Il pleut, prends ton parapluie !", en: "It's raining, take your umbrella!", altEs: ["Il pleut, prenez votre parapluie !"], grammar: [g.weather], vocab: [w.pleuvoir, w.parapluie], error: { wrong: "C'est pleut, prends ton parapluie !", explain: "Weather verbs take the subject il: il pleut.", grammar: g.weather } }
+      - { es: "En hiver, il fait froid et il neige parfois.", en: "In winter it's cold and it sometimes snows.", altEs: ["En hiver, il fait froid et parfois il neige."], altEn: ["In winter it's cold and sometimes it snows."], grammar: [g.weather, g.frequency-adverbs], vocab: [w.hiver, w.neiger], error: { wrong: "En hiver, il est froid et il neige parfois.", explain: "For the weather, use il fait + adjective: il fait froid.", grammar: g.weather } }
+      - { es: "Il y a beaucoup de vent sur le pont.", en: "It's very windy on the bridge.", altEn: ["There's a lot of wind on the bridge."], grammar: [g.weather, g.quantities], vocab: [w.vent] }
+      - { es: "Il y a des nuages, mais il ne pleut pas.", en: "There are clouds, but it isn't raining.", altEs: ["Il y a des nuages mais il ne pleut pas."], altEn: ["It's cloudy, but it isn't raining."], grammar: [g.weather, g.negation-ne-pas], vocab: [w.nuage, w.pleuvoir] }
+      - { es: "Il fait vingt-cinq degrés au jardin du Luxembourg.", en: "It's twenty-five degrees in the Luxembourg Garden.", altEs: ["Il fait 25 degrés au jardin du Luxembourg."], grammar: [g.weather], vocab: [w.degré], transform: { instruction: "Make it ten degrees colder", answer: "Il fait quinze degrés au jardin du Luxembourg.", alt: ["Il fait 15 degrés au jardin du Luxembourg."], en: "It's fifteen degrees in the Luxembourg Garden." } }
+      - { es: "La météo dit qu'il va pleuvoir demain.", en: "The forecast says it's going to rain tomorrow.", altEs: ["La météo dit qu'il pleut demain."], altEn: ["The weather forecast says it will rain tomorrow."], grammar: [g.weather, g.futur-proche], vocab: [w.météo, w.pleuvoir] }
+      - { es: "Le printemps est ma saison préférée.", en: "Spring is my favourite season.", altEs: ["Ma saison préférée, c'est le printemps."], altEn: ["Spring is my favorite season."], grammar: [g.weather], vocab: [w.printemps, w.saison] }
+      - { es: "En automne, les arbres du jardin sont jaunes et rouges.", en: "In autumn the trees in the garden are yellow and red.", altEn: ["In the fall the trees in the garden are yellow and red."], grammar: [g.weather, g.colours], vocab: [w.automne] }
+      - { es: "Il fait mauvais : il y a de la pluie et du vent.", en: "The weather is bad: there's rain and wind.", altEs: ["Il fait mauvais, il y a de la pluie et du vent."], altEn: ["The weather's awful: it's rainy and windy."], grammar: [g.weather, g.partitive-articles], vocab: [w.pluie, w.vent, w.mauvais] }
+      - { es: "Il fait froid, mais moi, je n'ai pas froid.", en: "It's cold, but I'm not cold.", altEs: ["Il fait froid, mais je n'ai pas froid."], grammar: [g.weather, g.avoir-expressions], vocab: [], note: "Il fait froid = the weather is cold; j'ai froid = I feel cold." }
+      - { es: "Il neige ! On va au parc ?", en: "It's snowing! Shall we go to the park?", altEs: ["Il neige ! Nous allons au parc ?"], grammar: [g.weather], vocab: [w.neiger] }
+      - { es: "Il y a rarement de la neige à Paris.", en: "There's rarely snow in Paris.", altEs: ["À Paris, il y a rarement de la neige."], altEn: ["It rarely snows in Paris."], grammar: [g.weather, g.frequency-adverbs], vocab: [w.neige] }
+      - { es: "Il va faire beau ce week-end.", en: "The weather's going to be nice this weekend.", altEs: ["Ce week-end, il va faire beau."], altEn: ["It's going to be nice this weekend."], grammar: [g.weather, g.futur-proche], vocab: [w.il-fait-beau], transform: { instruction: "Make it negative", answer: "Il ne va pas faire beau ce week-end.", alt: ["Ce week-end, il ne va pas faire beau."], en: "The weather isn't going to be nice this weekend." } }
+    exchanges:
+      - q: { es: "Quel temps fait-il à Paris ?", en: "What's the weather like in Paris?" }
+        a: { es: "Il fait beau, mais il y a du vent.", en: "It's nice, but it's windy." }
+        alt: ["Il pleut.", "Il fait froid.", "Il fait beau."]
+        grammar: [g.weather]
+        vocab: [w.temps, w.vent]
+      - q: { es: "Il fait combien de degrés ?", en: "How many degrees is it?" }
+        a: { es: "Il fait dix-huit degrés.", en: "It's eighteen degrees." }
+        alt: ["Dix-huit.", "Environ vingt degrés."]
+        grammar: [g.weather]
+        vocab: [w.degré]
+      - q: { es: "Tu as ton parapluie ?", en: "Have you got your umbrella?" }
+        a: { es: "Non, la météo dit qu'il fait beau aujourd'hui.", en: "No, the forecast says it's nice today." }
+        alt: ["Oui, il est dans mon sac.", "Non, je n'ai pas de parapluie."]
+        grammar: [g.weather]
+        vocab: [w.parapluie, w.météo]
+      - q: { es: "Tu préfères quelle saison ?", en: "Which season do you prefer?" }
+        a: { es: "L'automne : j'adore les couleurs des arbres.", en: "Autumn: I love the colours of the trees." }
+        alt: ["L'été.", "L'hiver, pour la neige.", "Le printemps."]
+        grammar: [g.weather]
+        vocab: [w.saison, w.automne]
+      - q: { es: "Il neige à Paris en hiver ?", en: "Does it snow in Paris in winter?" }
+        a: { es: "Parfois, mais pas beaucoup.", en: "Sometimes, but not much." }
+        alt: ["Rarement.", "Oui, un peu."]
+        grammar: [g.weather]
+        vocab: [w.neiger, w.hiver]
+    texts:
+      - title: "La météo"
+        es: ["Aujourd'hui à Paris, il y a des nuages le matin.", "L'après-midi, il fait beau et il y a du soleil.", "Il fait vingt-deux degrés."]
+        en: ["Today in Paris it's cloudy in the morning.", "In the afternoon it's nice and sunny.", "It's twenty-two degrees."]
+        grammar: [g.weather]
+        vocab: [w.nuage, w.soleil, w.degré]
+      - title: "Carte postale"
+        es: ["Je suis à Paris : il pleut tous les jours !", "Mais Paris est beau sous la pluie.", "Bises, Anne."]
+        en: ["I'm in Paris: it rains every day!", "But Paris is beautiful in the rain.", "Love, Anne."]
+        grammar: [g.weather]
+        vocab: [w.pleuvoir, w.pluie]
+    spicy:
+      - { es: "Il pleut ? J'ai un grand parapluie… pour deux.", en: "It's raining? I've got a big umbrella... for two.", grammar: [g.weather], vocab: [w.pleuvoir, w.parapluie] }
+      - { es: "Il fait froid, mais avec toi, j'ai chaud.", en: "It's cold, but with you I'm warm.", grammar: [g.weather, g.avoir-expressions], vocab: [] }
+      - { es: "Tu es mon soleil quand il pleut.", en: "You're my sunshine when it rains.", grammar: [g.weather], vocab: [w.soleil, w.pleuvoir] }
+      - { es: "La météo dit qu'il va faire beau, mais moi, je vois des nuages : tu pars demain.", en: "The forecast says it's going to be nice, but I see clouds: you're leaving tomorrow.", grammar: [g.weather], vocab: [w.météo, w.nuage] }
+      - { es: "Il fait trente degrés ou c'est toi ?", en: "Is it thirty degrees, or is it you?", grammar: [g.weather], vocab: [w.degré] }
+  - id: a1.u10.l2
+    title: Je peux, je veux, je dois
+    teach: [g.modal-verbs]
+    vocab: [w.pouvoir, w.devoir, w.savoir, w.réserver, w.inviter, w.accepter, w.refuser, w.dommage, w.lentement, w.nager, w.courir, w.pelouse]
+    tip: "Pouvoir (can), vouloir (want) and devoir (must) go straight before an infinitive, with no preposition: je peux venir, je veux partir, je dois travailler."
+    sentences:
+      - { es: "Je peux venir avec toi ?", en: "Can I come with you?", altEs: ["Est-ce que je peux venir avec toi ?", "Je peux venir avec vous ?"], altEn: ["May I come with you?"], grammar: [g.modal-verbs], vocab: [w.pouvoir], error: { wrong: "Je peut venir avec toi ?", explain: "With je and tu, pouvoir ends in -x: je peux. Only il, elle and on take peut.", grammar: g.modal-verbs } }
+      - { es: "Tu veux aller au jardin du Luxembourg ?", en: "Do you want to go to the Luxembourg Garden?", altEs: ["Vous voulez aller au jardin du Luxembourg ?", "Tu as envie d'aller au jardin du Luxembourg ?"], grammar: [g.modal-verbs], vocab: [] }
+      - { es: "Je dois travailler samedi.", en: "I have to work on Saturday.", altEs: ["Samedi, je dois travailler."], altEn: ["I must work on Saturday."], grammar: [g.modal-verbs], vocab: [w.devoir], error: { wrong: "Je dois de travailler samedi.", explain: "No preposition after devoir, pouvoir or vouloir: je dois travailler.", grammar: g.modal-verbs } }
+      - { es: "Vous pouvez répéter, s'il vous plaît ?", en: "Can you repeat that, please?", altEs: ["Pouvez-vous répéter, s'il vous plaît ?", "Tu peux répéter, s'il te plaît ?"], altEn: ["Could you repeat, please?"], grammar: [g.modal-verbs], vocab: [w.pouvoir] }
+      - { es: "Nous voulons réserver une table pour quatre.", en: "We want to book a table for four.", altEs: ["On veut réserver une table pour quatre.", "Nous voudrions réserver une table pour quatre."], altEn: ["We'd like to book a table for four."], grammar: [g.modal-verbs], vocab: [w.réserver], transform: { instruction: "Change to 'I'", answer: "Je veux réserver une table pour quatre.", alt: ["Je voudrais réserver une table pour quatre."], en: "I want to book a table for four." } }
+      - { es: "Elle sait nager ? — Oui, très bien.", en: "Can she swim? — Yes, very well.", altEs: ["Est-ce qu'elle sait nager ? — Oui, très bien."], altEn: ["Does she know how to swim? — Yes, very well."], grammar: [g.modal-verbs], vocab: [w.savoir, w.nager], note: "Savoir + infinitive = to know how to: je sais nager (I can swim)." }
+      - { es: "Je ne peux pas courir, je suis trop fatigué.", en: "I can't run, I'm too tired.", altEs: ["Je ne peux pas courir, je suis trop fatiguée."], grammar: [g.modal-verbs, g.tres-trop-assez], vocab: [w.courir], transform: { instruction: "Change to 'we' (nous)", answer: "Nous ne pouvons pas courir, nous sommes trop fatigués.", alt: ["On ne peut pas courir, on est trop fatigués.", "Nous ne pouvons pas courir, nous sommes trop fatiguées."], en: "We can't run, we're too tired." } }
+      - { es: "Ils doivent partir tôt demain.", en: "They have to leave early tomorrow.", altEs: ["Elles doivent partir tôt demain."], altEn: ["They must leave early tomorrow."], grammar: [g.modal-verbs], vocab: [w.devoir], transform: { instruction: "Change to 'we' (nous)", answer: "Nous devons partir tôt demain.", alt: ["On doit partir tôt demain."], en: "We have to leave early tomorrow." } }
+      - { es: "Je t'invite au restaurant ce soir.", en: "I'm taking you out to a restaurant tonight.", altEs: ["Ce soir, je t'invite au restaurant."], altEn: ["I'm inviting you to a restaurant tonight.", "Dinner's on me tonight."], grammar: [g.present-er], vocab: [w.inviter] }
+      - { es: "Merci, j'accepte !", en: "Thanks, I accept!", altEs: ["Merci, j'accepte."], grammar: [g.present-er], vocab: [w.accepter] }
+      - { es: "Il refuse de venir ? C'est dommage.", en: "He refuses to come? What a shame.", altEs: ["Il refuse de venir ? Quel dommage."], altEn: ["He won't come? That's a pity."], grammar: [g.present-er], vocab: [w.refuser, w.dommage] }
+      - { es: "Vous pouvez parler plus lentement, s'il vous plaît ?", en: "Can you speak more slowly, please?", altEs: ["Tu peux parler plus lentement, s'il te plaît ?", "Pouvez-vous parler plus lentement, s'il vous plaît ?"], altEn: ["Could you speak more slowly, please?"], grammar: [g.modal-verbs], vocab: [w.pouvoir, w.lentement] }
+      - { es: "Au Luxembourg, on ne peut pas toujours marcher sur la pelouse.", en: "In the Luxembourg Garden, you can't always walk on the grass.", altEn: ["At the Luxembourg, you can't always walk on the lawn."], grammar: [g.modal-verbs, g.on-nous], vocab: [w.pouvoir, w.pelouse] }
+      - { es: "Vous savez à quelle heure le jardin ferme ?", en: "Do you know what time the garden closes?", altEs: ["Savez-vous à quelle heure le jardin ferme ?", "Tu sais à quelle heure le jardin ferme ?"], grammar: [g.modal-verbs, g.time-telling], vocab: [w.savoir] }
+      - { es: "Tu veux un café ? — Non merci, je ne peux pas, je dois partir.", en: "Do you want a coffee? — No thanks, I can't, I have to go.", altEs: ["Tu veux un café ? — Non, merci, je ne peux pas : je dois partir."], grammar: [g.modal-verbs], vocab: [w.pouvoir, w.devoir] }
+    exchanges:
+      - q: { es: "Tu peux venir samedi ?", en: "Can you come on Saturday?" }
+        a: { es: "Désolé, je ne peux pas : je dois travailler.", en: "Sorry, I can't: I have to work." }
+        alt: ["Oui, bien sûr !", "Oui, je peux."]
+        grammar: [g.modal-verbs]
+        vocab: [w.pouvoir, w.devoir]
+      - q: { es: "Tu veux venir au concert avec moi ?", en: "Do you want to come to the concert with me?" }
+        a: { es: "Oui, je veux bien !", en: "Yes, I'd love to!" }
+        alt: ["Avec plaisir !", "Non, merci."]
+        grammar: [g.modal-verbs]
+        vocab: [w.concert]
+      - q: { es: "Vous savez nager ?", en: "Can you swim?" }
+        a: { es: "Oui, mais pas très bien.", en: "Yes, but not very well." }
+        alt: ["Oui, très bien.", "Non, pas du tout."]
+        grammar: [g.modal-verbs]
+        vocab: [w.savoir, w.nager]
+      - q: { es: "Je peux réserver pour ce soir ?", en: "Can I book for tonight?" }
+        a: { es: "Oui, pour combien de personnes ?", en: "Yes, for how many people?" }
+        alt: ["Désolé, il n'y a pas de table.", "Oui, à quelle heure ?"]
+        grammar: [g.modal-verbs]
+        vocab: [w.réserver]
+      - q: { es: "Il ne vient pas ?", en: "Isn't he coming?" }
+        a: { es: "Non, il refuse. C'est dommage !", en: "No, he refuses. What a shame!" }
+        alt: ["Non, il est fatigué.", "Si, il arrive."]
+        grammar: [g.negation-ne-pas]
+        vocab: [w.refuser, w.dommage]
+    texts:
+      - title: "Invitation"
+        es: ["Samedi, c'est mon anniversaire !", "Je veux inviter tous mes amis au jardin du Luxembourg.", "Tu peux venir avec un gâteau ?"]
+        en: ["Saturday is my birthday!", "I want to invite all my friends to the Luxembourg Garden.", "Can you come with a cake?"]
+        grammar: [g.modal-verbs]
+        vocab: [w.inviter, w.pouvoir]
+      - title: "Réponse de Paul"
+        es: ["Merci pour le message !", "Je ne peux pas venir : je dois travailler.", "C'est vraiment dommage."]
+        en: ["Thanks for the message!", "I can't come: I have to work.", "It's a real shame."]
+        grammar: [g.modal-verbs]
+        vocab: [w.pouvoir, w.devoir, w.dommage]
+    spicy:
+      - { es: "Je peux t'inviter à dîner ? Tu peux refuser… mais ne refuse pas.", en: "Can I invite you to dinner? You can say no... but don't.", grammar: [g.modal-verbs], vocab: [w.inviter, w.refuser] }
+      - { es: "Tu sais danser ? Non ? Je peux t'apprendre.", en: "Can you dance? No? I can teach you.", grammar: [g.modal-verbs], vocab: [w.savoir, w.pouvoir] }
+      - { es: "Tu dois partir ? Déjà ? C'est dommage.", en: "You have to leave? Already? What a shame.", grammar: [g.modal-verbs], vocab: [w.devoir, w.dommage] }
+      - { es: "Je veux un café, un croissant et ton numéro.", en: "I want a coffee, a croissant and your number.", grammar: [g.modal-verbs], vocab: [] }
+      - { es: "Parle lentement : je veux comprendre chaque mot.", en: "Speak slowly: I want to understand every word.", altEs: ["Parlez lentement : je veux comprendre chaque mot."], grammar: [g.modal-verbs], vocab: [w.lentement] }
+  - id: a1.u10.l3
+    title: Tu joues au tennis ?
+    teach: [g.jouer-faire-de]
+    vocab: [w.jouer, w.football, w.tennis, w.vélo, w.natation, w.danse, w.guitare, w.piano, w.violon, w.instrument, w.jeu, w.match, w.loisirs, w.chanson, w.chanter, w.danser, w.échecs, w.yoga]
+    tip: "Jouer à for games and sports (jouer au tennis), jouer de for instruments (jouer du piano), faire de for activities (faire du vélo)."
+    sentences:
+      - { es: "Je joue au tennis le dimanche.", en: "I play tennis on Sundays.", altEs: ["Le dimanche, je joue au tennis."], grammar: [g.jouer-faire-de, g.contractions-au-du], vocab: [w.jouer, w.tennis] }
+      - { es: "Mon fils joue du piano depuis deux ans.", en: "My son has been playing the piano for two years.", altEn: ["My son has played the piano for two years."], grammar: [g.jouer-faire-de, g.depuis-present], vocab: [w.piano], error: { wrong: "Mon fils joue au piano depuis deux ans.", explain: "Instruments take jouer de: jouer du piano. Jouer à is for games and sports.", grammar: g.jouer-faire-de } }
+      - { es: "Tu joues d'un instrument ?", en: "Do you play an instrument?", altEs: ["Vous jouez d'un instrument ?", "Est-ce que tu joues d'un instrument ?", "Joues-tu d'un instrument ?"], altEn: ["Do you play a musical instrument?"], grammar: [g.jouer-faire-de], vocab: [w.instrument] }
+      - { es: "Elle joue de la guitare et elle chante.", en: "She plays the guitar and sings.", altEs: ["Elle joue de la guitare et chante."], altEn: ["She plays guitar and she sings."], grammar: [g.jouer-faire-de], vocab: [w.guitare, w.chanter], transform: { instruction: "Change to 'they' (elles)", answer: "Elles jouent de la guitare et elles chantent.", alt: ["Elles jouent de la guitare et chantent."], en: "They play the guitar and sing." } }
+      - { es: "Les enfants jouent au football dans le parc.", en: "The children are playing football in the park.", altEs: ["Les enfants jouent au foot dans le parc."], altEn: ["The kids are playing soccer in the park."], grammar: [g.jouer-faire-de], vocab: [w.football] }
+      - { es: "Je fais du vélo et de la natation.", en: "I go cycling and swimming.", altEs: ["Je fais de la natation et du vélo."], altEn: ["I cycle and swim."], grammar: [g.jouer-faire-de, g.faire-present], vocab: [w.vélo, w.natation] }
+      - { es: "Ma sœur fait de la danse le mercredi.", en: "My sister does dance on Wednesdays.", altEs: ["Le mercredi, ma sœur fait de la danse."], altEn: ["My sister goes to dance class on Wednesdays."], grammar: [g.jouer-faire-de], vocab: [w.danse] }
+      - { es: "Je ne fais pas de sport : je joue aux cartes !", en: "I don't do sport: I play cards!", altEs: ["Je ne fais pas de sport, je joue aux cartes !"], grammar: [g.jouer-faire-de, g.de-after-negation], vocab: [w.jouer], error: { wrong: "Je ne fais pas du sport : je joue aux cartes !", explain: "After a negative, du becomes de: je ne fais pas de sport.", grammar: g.de-after-negation } }
+      - { es: "On joue aux échecs au jardin du Luxembourg ?", en: "Shall we play chess in the Luxembourg Garden?", altEs: ["Nous jouons aux échecs au jardin du Luxembourg ?"], grammar: [g.jouer-faire-de, g.on-nous], vocab: [w.échecs] }
+      - { es: "Il y a un match de foot ce soir.", en: "There's a football match tonight.", altEs: ["Ce soir, il y a un match de foot.", "Il y a un match de football ce soir."], altEn: ["There's a soccer game tonight."], grammar: [g.il-y-a], vocab: [w.match, w.football] }
+      - { es: "J'adore danser et chanter.", en: "I love dancing and singing.", altEs: ["J'adore chanter et danser."], altEn: ["I love to dance and sing."], grammar: [g.aimer-preferer], vocab: [w.danser, w.chanter] }
+      - { es: "Quels sont tes loisirs ? — La musique et le sport.", en: "What are your hobbies? — Music and sport.", altEs: ["Quels sont vos loisirs ? — La musique et le sport."], grammar: [g.quel], vocab: [w.loisirs] }
+      - { es: "Mon grand-père joue du violon dans le métro.", en: "My grandfather plays the violin in the metro.", altEn: ["My grandad plays the violin in the underground."], grammar: [g.jouer-faire-de], vocab: [w.violon], transform: { instruction: "Change to 'the guitar' (la guitare)", answer: "Mon grand-père joue de la guitare dans le métro.", en: "My grandfather plays the guitar in the metro." } }
+      - { es: "C'est quoi, ta chanson préférée ?", en: "What's your favourite song?", altEs: ["Quelle est ta chanson préférée ?", "Quelle est votre chanson préférée ?"], altEn: ["What is your favorite song?"], grammar: [g.quel], vocab: [w.chanson] }
+      - { es: "Je fais du yoga le matin.", en: "I do yoga in the morning.", altEs: ["Le matin, je fais du yoga."], altEn: ["I do yoga in the mornings."], grammar: [g.jouer-faire-de], vocab: [w.yoga], transform: { instruction: "Change to 'we' (nous)", answer: "Nous faisons du yoga le matin.", alt: ["On fait du yoga le matin.", "Le matin, nous faisons du yoga."], en: "We do yoga in the morning." } }
+    exchanges:
+      - q: { es: "Tu fais du sport ?", en: "Do you do any sport?" }
+        a: { es: "Oui, je joue au tennis et je fais de la natation.", en: "Yes, I play tennis and I swim." }
+        alt: ["Oui, du vélo.", "Non, pas beaucoup."]
+        grammar: [g.jouer-faire-de]
+        vocab: [w.tennis, w.natation]
+      - q: { es: "Tu joues d'un instrument ?", en: "Do you play an instrument?" }
+        a: { es: "Oui, je joue de la guitare.", en: "Yes, I play the guitar." }
+        alt: ["Oui, du piano.", "Non, mais je chante."]
+        grammar: [g.jouer-faire-de]
+        vocab: [w.instrument, w.guitare]
+      - q: { es: "Qu'est-ce que tu aimes faire le week-end ?", en: "What do you like doing at the weekend?" }
+        a: { es: "J'aime danser et jouer aux cartes avec mes amis.", en: "I like dancing and playing cards with my friends." }
+        alt: ["Je fais du vélo.", "Je lis."]
+        grammar: [g.jouer-faire-de]
+        vocab: [w.danser, w.jouer]
+      - q: { es: "On joue un match de foot ?", en: "Shall we play a football match?" }
+        a: { es: "D'accord, mais je ne joue pas très bien !", en: "OK, but I don't play very well!" }
+        alt: ["Oui, super !", "Non, je suis fatigué."]
+        grammar: [g.jouer-faire-de]
+        vocab: [w.match, w.football]
+      - q: { es: "C'est quoi, ce jeu ?", en: "What's this game?" }
+        a: { es: "C'est un jeu de cartes. Tu veux jouer ?", en: "It's a card game. Do you want to play?" }
+        alt: ["C'est un jeu pour enfants.", "Je ne sais pas."]
+        grammar: [g.jouer-faire-de]
+        vocab: [w.jeu]
+    texts:
+      - title: "Au jardin du Luxembourg"
+        es: ["Le dimanche, il y a beaucoup de monde au jardin.", "On joue au tennis ou aux échecs.", "Les enfants jouent avec de petits bateaux sur l'eau."]
+        en: ["On Sundays there are lots of people in the garden.", "People play tennis or chess.", "The children play with little boats on the water."]
+        grammar: [g.jouer-faire-de]
+        vocab: [w.tennis, w.échecs, w.jouer]
+      - title: "Mes loisirs"
+        es: ["Je joue du piano depuis dix ans.", "Je fais aussi de la danse.", "Et le dimanche, je chante avec mes amis."]
+        en: ["I've been playing the piano for ten years.", "I also do dance.", "And on Sundays I sing with my friends."]
+        grammar: [g.jouer-faire-de]
+        vocab: [w.piano, w.danse, w.chanter]
+    spicy:
+      - { es: "Tu joues de la guitare ? Joue une chanson pour moi.", en: "You play the guitar? Play a song for me.", grammar: [g.jouer-faire-de], vocab: [w.guitare, w.chanson] }
+      - { es: "Tu danses ? Non ? Moi non plus. On apprend ensemble ?", en: "Do you dance? No? Me neither. Shall we learn together?", grammar: [g.moi-aussi-non-plus], vocab: [w.danser] }
+      - { es: "Tu joues au tennis ? Moi, je joue seulement pour te regarder.", en: "You play tennis? I only play to watch you.", grammar: [g.jouer-faire-de], vocab: [w.tennis, w.jouer] }
+      - { es: "Une chanson, un violon, et toi : la soirée est parfaite.", en: "A song, a violin, and you: the evening is perfect.", grammar: [g.jouer-faire-de], vocab: [w.chanson, w.violon] }
+      - { es: "Je ne fais pas de sport, mais pour toi, je fais du vélo jusqu'à Versailles.", en: "I don't do sport, but for you I'll cycle all the way to Versailles.", grammar: [g.jouer-faire-de, g.de-after-negation], vocab: [w.vélo] }
+  - id: a1.u10.l4
+    title: "D'où tu viens ?"
+    teach: [g.venir-present]
+    vocab: [w.lire, w.marcher, w.concert, w.bateau]
+    tip: "Venir: je viens, tu viens, il vient, nous venons, vous venez, ils viennent. Venir de = to come from: je viens de Lyon, du Canada, des États-Unis."
+    sentences:
+      - { es: "D'où viens-tu ? — Je viens de Lyon.", en: "Where are you from? — I'm from Lyon.", altEs: ["Tu viens d'où ? — Je viens de Lyon.", "D'où est-ce que tu viens ? — Je viens de Lyon."], altEn: ["Where do you come from? — I come from Lyon."], grammar: [g.venir-present], vocab: [] }
+      - { es: "Elle vient du Canada et lui, il vient des États-Unis.", en: "She comes from Canada and he comes from the United States.", altEs: ["Elle vient du Canada et lui vient des États-Unis."], altEn: ["She's from Canada and he's from the United States."], grammar: [g.venir-present, g.contractions-au-du, g.stressed-pronouns], vocab: [], error: { wrong: "Elle vient de le Canada et lui, il vient des États-Unis.", explain: "De + le always contracts to du: du Canada.", grammar: g.contractions-au-du } }
+      - { es: "Tu viens avec nous au concert ?", en: "Are you coming to the concert with us?", altEs: ["Tu viens au concert avec nous ?", "Est-ce que tu viens avec nous au concert ?"], grammar: [g.venir-present], vocab: [w.concert], transform: { instruction: "Use vous instead of tu", answer: "Vous venez avec nous au concert ?", alt: ["Vous venez au concert avec nous ?", "Venez-vous avec nous au concert ?"], en: "Are you coming to the concert with us? (formal)" } }
+      - { es: "Nous venons au jardin tous les dimanches.", en: "We come to the garden every Sunday.", altEs: ["On vient au jardin tous les dimanches."], grammar: [g.venir-present], vocab: [], transform: { instruction: "Change to 'they'", answer: "Ils viennent au jardin tous les dimanches.", alt: ["Elles viennent au jardin tous les dimanches."], en: "They come to the garden every Sunday." } }
+      - { es: "Les touristes viennent de tous les pays.", en: "Tourists come from every country.", altEn: ["The tourists come from all over the world."], grammar: [g.venir-present], vocab: [], error: { wrong: "Les touristes vienent de tous les pays.", explain: "Ils viennent has a double n (but nous venons has one).", grammar: g.venir-present } }
+      - { es: "Je lis un livre sur une chaise au soleil.", en: "I'm reading a book on a chair in the sun.", altEs: ["Je lis un livre au soleil, sur une chaise."], grammar: [g.present-re-verbs], vocab: [w.lire] }
+      - { es: "On marche jusqu'au Panthéon ?", en: "Shall we walk to the Panthéon?", altEs: ["Nous marchons jusqu'au Panthéon ?", "On va à pied jusqu'au Panthéon ?"], grammar: [g.on-nous, g.contractions-au-du], vocab: [w.marcher] }
+      - { es: "Les enfants jouent avec de petits bateaux sur l'eau.", en: "The children play with little boats on the water.", altEs: ["Les enfants jouent avec des petits bateaux sur l'eau."], grammar: [g.adjective-position], vocab: [w.bateau] }
+      - { es: "Vous venez souvent ici ?", en: "Do you come here often?", altEs: ["Tu viens souvent ici ?", "Venez-vous souvent ici ?"], grammar: [g.venir-present, g.frequency-adverbs], vocab: [] }
+      - { es: "Ce soir, mes parents viennent dîner chez moi.", en: "Tonight my parents are coming to dinner at my place.", altEs: ["Mes parents viennent dîner chez moi ce soir."], altEn: ["My parents are coming for dinner at my place tonight."], grammar: [g.venir-present], vocab: [] }
+      - { es: "Elle vient d'Italie, mais elle habite à Paris depuis cinq ans.", en: "She comes from Italy, but she's been living in Paris for five years.", altEn: ["She's from Italy, but she has lived in Paris for five years."], grammar: [g.venir-present, g.depuis-present], vocab: [] }
+      - { es: "Mon père lit le journal et ma mère marche dans le jardin.", en: "My father is reading the paper and my mother is walking in the garden.", altEn: ["My father reads the newspaper and my mother walks in the garden."], grammar: [g.present-re-verbs], vocab: [w.lire, w.marcher] }
+      - { es: "Viens, on va voir les bateaux !", en: "Come on, let's go and see the boats!", altEs: ["Viens, on va regarder les bateaux !"], grammar: [g.venir-present], vocab: [w.bateau] }
+      - { es: "Vous venez d'où ? — Nous venons du Japon.", en: "Where are you from? — We're from Japan.", altEs: ["D'où venez-vous ? — Nous venons du Japon.", "Vous venez d'où ? — On vient du Japon."], grammar: [g.venir-present, g.contractions-au-du], vocab: [] }
+      - { es: "Tu lis quoi ? — Un livre de cuisine.", en: "What are you reading? — A cookbook.", altEs: ["Qu'est-ce que tu lis ? — Un livre de cuisine."], altEn: ["What are you reading? — A cookery book."], grammar: [g.question-words], vocab: [w.lire] }
+    exchanges:
+      - q: { es: "Vous venez d'où ?", en: "Where are you from?" }
+        a: { es: "Je viens d'Espagne, de Madrid.", en: "I'm from Spain, from Madrid." }
+        alt: ["De Madrid.", "Je viens du Canada."]
+        grammar: [g.venir-present]
+        vocab: []
+      - q: { es: "Tu viens au concert samedi ?", en: "Are you coming to the concert on Saturday?" }
+        a: { es: "Oui, je viens avec ma sœur.", en: "Yes, I'm coming with my sister." }
+        alt: ["Non, je ne peux pas.", "Peut-être."]
+        grammar: [g.venir-present]
+        vocab: [w.concert]
+      - q: { es: "Qu'est-ce que tu lis ?", en: "What are you reading?" }
+        a: { es: "Un livre sur Paris.", en: "A book about Paris." }
+        alt: ["Le journal.", "Rien, je regarde les bateaux."]
+        grammar: [g.question-words]
+        vocab: [w.lire]
+      - q: { es: "On fait un tour en bateau ?", en: "Shall we go on a boat trip?" }
+        a: { es: "Non, je préfère marcher.", en: "No, I'd rather walk." }
+        alt: ["Oui, super !", "Pourquoi pas ?"]
+        grammar: [g.aimer-preferer]
+        vocab: [w.bateau, w.marcher]
+      - q: { es: "Ils viennent quand, tes parents ?", en: "When are your parents coming?" }
+        a: { es: "Ils viennent dimanche.", en: "They're coming on Sunday." }
+        alt: ["Dimanche.", "La semaine prochaine."]
+        grammar: [g.venir-present]
+        vocab: []
+    texts:
+      - title: "Un dimanche au Luxembourg"
+        es: ["Le dimanche, je viens au jardin avec mon chien.", "Je lis sur une chaise verte.", "Mon chien regarde les petits bateaux sur l'eau."]
+        en: ["On Sundays I come to the garden with my dog.", "I read on a green chair.", "My dog watches the little boats on the water."]
+        grammar: [g.venir-present]
+        vocab: [w.lire, w.bateau]
+      - title: "Message de Sophie"
+        es: ["Je viens de Lille demain matin.", "Le train arrive à dix heures.", "Tu viens à la gare ?"]
+        en: ["I'm coming from Lille tomorrow morning.", "The train arrives at ten.", "Are you coming to the station?"]
+        grammar: [g.venir-present]
+        vocab: []
+    spicy:
+      - { es: "Tu viens souvent ici ? Moi, je viens pour toi.", en: "Do you come here often? I come for you.", grammar: [g.venir-present], vocab: [] }
+      - { es: "Tu viens d'où ? Du paradis ?", en: "Where are you from? Heaven?", altEs: ["D'où viens-tu ? Du paradis ?"], grammar: [g.venir-present], vocab: [] }
+      - { es: "Viens, on marche au soleil.", en: "Come on, let's walk in the sun.", grammar: [g.venir-present], vocab: [w.marcher] }
+      - { es: "Je lis ton livre préféré. Tu veux en parler ce soir ?", en: "I'm reading your favourite book. Do you want to talk about it tonight?", grammar: [g.modal-verbs], vocab: [w.lire] }
+      - { es: "Mes parents viennent dîner. Tu viens aussi ? Ils veulent te voir.", en: "My parents are coming to dinner. Are you coming too? They want to meet you.", grammar: [g.venir-present, g.modal-verbs], vocab: [] }
+dialogues:
+  - id: a1.u10.d1
+    title: Au jardin du Luxembourg
+    context: Sophie and Louis plan a Sunday afternoon in the Luxembourg Garden.
+    lines:
+      - { speaker: Sophie, es: "Il fait beau aujourd'hui ! On va au jardin du Luxembourg ?", en: "It's nice today! Shall we go to the Luxembourg Garden?" }
+      - { speaker: Louis, es: "Bonne idée. Mais la météo dit qu'il va pleuvoir à quatre heures.", en: "Good idea. But the forecast says it's going to rain at four." }
+      - { speaker: Sophie, es: "Alors on prend un parapluie. Tu veux jouer au tennis ?", en: "Then we'll take an umbrella. Do you want to play tennis?" }
+      - { speaker: Louis, es: "Je ne sais pas jouer au tennis.", en: "I don't know how to play tennis." }
+      - { speaker: Sophie, es: "Pas de problème. On peut jouer aux échecs.", en: "No problem. We can play chess." }
+      - { speaker: Louis, es: "D'accord ! Et après, on regarde les petits bateaux ?", en: "OK! And afterwards, shall we watch the little boats?" }
+      - { speaker: Sophie, es: "Oui, j'adore les petits bateaux des enfants.", en: "Yes, I love the children's little boats." }
+      - { speaker: Louis, es: "Tu viens souvent ici ?", en: "Do you come here often?" }
+      - { speaker: Sophie, es: "Oui, tous les dimanches. Je lis sur les chaises vertes.", en: "Yes, every Sunday. I read on the green chairs." }
+      - { speaker: Louis, es: "Oh, regarde : des nuages. Vite, le parapluie !", en: "Oh, look: clouds. Quick, the umbrella!" }
+    questions:
+      - { q: "Quel temps fait-il au début ?", options: ["Il pleut.", "Il fait beau.", "Il neige."], answer: 1, explain: "Sophie: « Il fait beau aujourd'hui ! »" }
+      - { q: "Pourquoi Louis ne joue pas au tennis ?", options: ["Il est fatigué.", "Il ne sait pas jouer.", "Il pleut."], answer: 1, explain: "« Je ne sais pas jouer au tennis. »" }
+      - { q: "Qu'est-ce que Sophie fait le dimanche au jardin ?", options: ["Elle joue au tennis.", "Elle lit.", "Elle fait du vélo."], answer: 1, explain: "« Je lis sur les chaises vertes. »" }
+      - { q: "Qu'est-ce que la météo dit ?", options: ["Il va neiger.", "Il va pleuvoir.", "Il va faire très chaud."], answer: 1, explain: "« La météo dit qu'il va pleuvoir à quatre heures. »" }

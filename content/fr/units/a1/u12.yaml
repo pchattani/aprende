@@ -1,0 +1,278 @@
+id: a1.u12
+title: "Au revoir, Paris !"
+lessons:
+  - id: a1.u12.l1
+    title: "J'attends le défilé"
+    teach: [g.present-re-verbs]
+    vocab: [w.attendre, w.vendre, w.répondre, w.entendre, w.perdre, w.rendre, w.téléphone, w.portable, w.retard, w.en-retard, w.à-l-heure, w.défilé]
+    tip: "Regular -re verbs: drop -re and add -s, -s, —, -ons, -ez, -ent: j'attends, il attend (no ending), nous attendons, ils attendent."
+    sentences:
+      - { es: "J'attends le défilé sur les Champs-Élysées.", en: "I'm waiting for the parade on the Champs-Élysées.", altEn: ["I'm waiting for the procession on the Champs-Élysées."], grammar: [g.present-re-verbs], vocab: [w.attendre, w.défilé], error: { wrong: "J'attends pour le défilé sur les Champs-Élysées.", explain: "Attendre already means 'to wait for': no preposition — j'attends le défilé.", grammar: g.present-re-verbs } }
+      - { es: "Vous attendez le bus ?", en: "Are you waiting for the bus?", altEs: ["Tu attends le bus ?", "Attendez-vous le bus ?", "Est-ce que vous attendez le bus ?"], grammar: [g.present-re-verbs], vocab: [w.attendre] }
+      - { es: "Il vend des glaces devant l'Arc de Triomphe.", en: "He sells ice creams in front of the Arc de Triomphe.", altEn: ["He's selling ice creams in front of the Arc de Triomphe."], grammar: [g.present-re-verbs], vocab: [w.vendre], transform: { instruction: "Change to 'they'", answer: "Ils vendent des glaces devant l'Arc de Triomphe.", alt: ["Elles vendent des glaces devant l'Arc de Triomphe."], en: "They sell ice creams in front of the Arc de Triomphe." } }
+      - { es: "Elle ne répond pas au téléphone.", en: "She isn't answering the phone.", altEn: ["She doesn't answer the phone."], grammar: [g.present-re-verbs, g.negation-ne-pas], vocab: [w.répondre, w.téléphone], transform: { instruction: "Change to 'they' (elles)", answer: "Elles ne répondent pas au téléphone.", alt: ["Ils ne répondent pas au téléphone."], en: "They aren't answering the phone." } }
+      - { es: "Tu entends la musique ? C'est le défilé !", en: "Can you hear the music? It's the parade!", altEs: ["Vous entendez la musique ? C'est le défilé !", "Est-ce que tu entends la musique ? C'est le défilé !"], altEn: ["Do you hear the music? It's the parade!"], grammar: [g.present-re-verbs], vocab: [w.entendre, w.défilé] }
+      - { es: "Je perds toujours mes clés !", en: "I always lose my keys!", altEn: ["I'm always losing my keys!"], grammar: [g.present-re-verbs, g.frequency-adverbs], vocab: [w.perdre] }
+      - { es: "Où est mon portable ? Je perds tout !", en: "Where's my phone? I lose everything!", altEs: ["Il est où, mon portable ? Je perds tout !"], altEn: ["Where's my mobile? I lose everything!"], grammar: [g.present-re-verbs], vocab: [w.portable, w.perdre], variant: "Québec: le cellulaire (or le cell)." }
+      - { es: "Je te rends ton livre demain.", en: "I'll give you your book back tomorrow.", altEs: ["Demain, je te rends ton livre."], altEn: ["I'm giving you your book back tomorrow."], grammar: [g.present-re-verbs], vocab: [w.rendre] }
+      - { es: "Le train est en retard, comme toujours.", en: "The train is late, as always.", altEn: ["The train is late, as usual."], grammar: [g.etre-present], vocab: [w.en-retard, w.retard] }
+      - { es: "Pour une fois, tu es à l'heure !", en: "For once, you're on time!", altEs: ["Pour une fois, vous êtes à l'heure !"], grammar: [g.etre-present], vocab: [w.à-l-heure] }
+      - { es: "Nous descendons à la station George-V.", en: "We get off at George V station.", altEs: ["On descend à la station George-V."], altEn: ["We're getting off at George V station."], grammar: [g.present-re-verbs], vocab: [w.descendre], transform: { instruction: "Change to 'I'", answer: "Je descends à la station George-V.", en: "I get off at George V station." } }
+      - { es: "Ils répondent en anglais, mais je parle français !", en: "They answer in English, but I speak French!", altEs: ["Elles répondent en anglais, mais je parle français !"], grammar: [g.present-re-verbs], vocab: [w.répondre], error: { wrong: "Ils répondont en anglais, mais je parle français !", explain: "With ils/elles, -re verbs end in -ent: ils répondent.", grammar: g.present-re-verbs } }
+      - { es: "On attend Paul ? — Non, il est toujours en retard.", en: "Shall we wait for Paul? — No, he's always late.", altEs: ["Nous attendons Paul ? — Non, il est toujours en retard."], grammar: [g.present-re-verbs, g.on-nous], vocab: [w.attendre, w.en-retard] }
+      - { es: "Les magasins des Champs-Élysées vendent des vêtements très chers.", en: "The shops on the Champs-Élysées sell very expensive clothes.", grammar: [g.present-re-verbs], vocab: [w.vendre] }
+      - { es: "Parlez plus fort, je n'entends rien !", en: "Speak louder, I can't hear anything!", altEs: ["Parle plus fort, je n'entends rien !"], altEn: ["Speak up, I can't hear a thing!"], grammar: [g.present-re-verbs, g.negation-ne-pas], vocab: [w.entendre, w.fort] }
+    exchanges:
+      - q: { es: "Qu'est-ce que vous attendez ?", en: "What are you waiting for?" }
+        a: { es: "Le défilé du 14 Juillet !", en: "The 14th of July parade!" }
+        alt: ["Le bus.", "Mes amis."]
+        grammar: [g.present-re-verbs]
+        vocab: [w.attendre, w.défilé]
+      - q: { es: "Pourquoi tu ne réponds pas au téléphone ?", en: "Why don't you answer the phone?" }
+        a: { es: "Parce que je n'entends rien : il y a trop de monde !", en: "Because I can't hear anything: there are too many people!" }
+        alt: ["Je perds toujours mon portable !", "Désolé, je suis au cinéma."]
+        grammar: [g.present-re-verbs]
+        vocab: [w.répondre, w.entendre]
+      - q: { es: "Le train est à l'heure ?", en: "Is the train on time?" }
+        a: { es: "Non, il est en retard, comme toujours.", en: "No, it's late, as always." }
+        alt: ["Oui, il arrive.", "Non, il a dix minutes de retard."]
+        grammar: [g.etre-present]
+        vocab: [w.à-l-heure, w.en-retard, w.retard]
+      - q: { es: "Qu'est-ce qu'il vend, ce monsieur ?", en: "What's that man selling?" }
+        a: { es: "Il vend des petites tours Eiffel.", en: "He's selling little Eiffel Towers." }
+        alt: ["Des souvenirs.", "Des glaces."]
+        grammar: [g.present-re-verbs]
+        vocab: [w.vendre]
+      - q: { es: "Tu me rends mon parapluie ?", en: "Will you give me my umbrella back?" }
+        a: { es: "Oui, ce soir.", en: "Yes, tonight." }
+        alt: ["Bien sûr, voilà.", "Oh, pardon, voilà !"]
+        grammar: [g.present-re-verbs]
+        vocab: [w.rendre]
+    texts:
+      - title: "La fête nationale"
+        es: ["Le 14 Juillet, c'est la fête nationale.", "On attend le défilé sur les Champs-Élysées.", "On entend la musique et on voit les avions dans le ciel."]
+        en: ["The 14th of July is the national holiday.", "People wait for the parade on the Champs-Élysées.", "You hear the music and you see the planes in the sky."]
+        grammar: [g.present-re-verbs, g.on-nous]
+        vocab: [w.fête-nationale, w.attendre, w.entendre]
+      - title: "Message de Manon"
+        es: ["Je suis en retard, désolée !", "J'attends le bus depuis vingt minutes.", "Vous m'attendez devant le café ?"]
+        en: ["I'm late, sorry!", "I've been waiting for the bus for twenty minutes.", "Will you wait for me in front of the café?"]
+        grammar: [g.present-re-verbs]
+        vocab: [w.en-retard, w.attendre]
+    spicy:
+      - { es: "Je t'attends depuis… toujours.", en: "I've been waiting for you... forever.", grammar: [g.present-re-verbs, g.depuis-present], vocab: [w.attendre] }
+      - { es: "Tu ne réponds pas au téléphone, mais tu réponds à mes sourires.", en: "You don't answer the phone, but you answer my smiles.", grammar: [g.present-re-verbs], vocab: [w.répondre, w.téléphone] }
+      - { es: "Je perds mes clés, mon portable et mon français quand je te vois.", en: "I lose my keys, my phone and my French when I see you.", grammar: [g.present-re-verbs], vocab: [w.perdre, w.portable] }
+      - { es: "Tu entends cette chanson ? On danse ?", en: "Do you hear this song? Shall we dance?", grammar: [g.present-re-verbs], vocab: [w.entendre] }
+      - { es: "Pour une fois, je suis à l'heure. C'est pour toi.", en: "For once, I'm on time. It's for you.", grammar: [g.etre-present], vocab: [w.à-l-heure] }
+  - id: a1.u12.l2
+    title: Il faut partir !
+    teach: [g.il-faut]
+    vocab: [w.il-faut, w.falloir, w.adresse, w.obtenir, w.aide, w.recette, w.faute, w.classe, w.toucher]
+    tip: "Il faut never changes: il faut + infinitive (you have to, we must) or + noun (you need, it takes). Il ne faut pas = you mustn't."
+    sentences:
+      - { es: "Il faut réserver une table pour ce soir.", en: "We need to book a table for tonight.", altEn: ["You have to book a table for tonight.", "We have to book a table for tonight."], grammar: [g.il-faut], vocab: [w.il-faut, w.réserver] }
+      - { es: "Il faut un passeport pour aller au Canada.", en: "You need a passport to go to Canada.", altEn: ["A passport is needed to go to Canada."], grammar: [g.il-faut, g.prepositions-cities-countries], vocab: [w.il-faut] }
+      - { es: "Il ne faut pas toucher les tableaux.", en: "You mustn't touch the paintings.", altEn: ["Don't touch the paintings."], grammar: [g.il-faut], vocab: [w.toucher], error: { wrong: "Il ne faut toucher pas les tableaux.", explain: "Ne … pas goes around faut: il ne faut pas toucher.", grammar: g.il-faut } }
+      - { es: "Pour aller à l'Arc de Triomphe, il faut descendre à Charles-de-Gaulle-Étoile.", en: "To get to the Arc de Triomphe, you have to get off at Charles-de-Gaulle-Étoile.", altEs: ["Il faut descendre à Charles-de-Gaulle-Étoile pour aller à l'Arc de Triomphe."], grammar: [g.il-faut], vocab: [w.il-faut, w.descendre], transform: { instruction: "Use tu dois instead of il faut", answer: "Pour aller à l'Arc de Triomphe, tu dois descendre à Charles-de-Gaulle-Étoile.", alt: ["Tu dois descendre à Charles-de-Gaulle-Étoile pour aller à l'Arc de Triomphe."], en: "To get to the Arc de Triomphe, you have to get off at Charles-de-Gaulle-Étoile." } }
+      - { es: "Il faut deux heures pour visiter le musée.", en: "It takes two hours to visit the museum.", altEn: ["You need two hours to visit the museum."], grammar: [g.il-faut], vocab: [w.il-faut] }
+      - { es: "Quelle est ton adresse ? Il faut l'écrire ici.", en: "What's your address? You have to write it here.", altEs: ["Quelle est votre adresse ? Il faut l'écrire ici."], grammar: [g.il-faut, g.quel], vocab: [w.adresse] }
+      - { es: "Où est-ce qu'on peut obtenir un plan de la ville ?", en: "Where can you get a map of the city?", altEs: ["Où peut-on obtenir un plan de la ville ?"], altEn: ["Where can we get a city map?"], grammar: [g.modal-verbs], vocab: [w.obtenir, w.plan] }
+      - { es: "Merci pour ton aide !", en: "Thanks for your help!", altEs: ["Merci pour votre aide !", "Merci beaucoup pour ton aide !"], grammar: [g.possessives], vocab: [w.aide] }
+      - { es: "Pour cette recette, il faut trois œufs et un peu de sucre.", en: "For this recipe you need three eggs and a little sugar.", grammar: [g.il-faut, g.quantities], vocab: [w.recette, w.il-faut] }
+      - { es: "Il y a une faute dans le nom de la rue !", en: "There's a mistake in the street name!", altEn: ["There's a spelling mistake in the name of the street!"], grammar: [g.il-y-a], vocab: [w.faute] }
+      - { es: "Il faut parler français en classe !", en: "You have to speak French in class!", altEn: ["We must speak French in class!"], grammar: [g.il-faut], vocab: [w.classe, w.il-faut], transform: { instruction: "Use je dois instead of il faut", answer: "Je dois parler français en classe !", en: "I have to speak French in class!" } }
+      - { es: "Il faut combien de temps pour aller à Versailles ?", en: "How long does it take to get to Versailles?", altEs: ["Combien de temps faut-il pour aller à Versailles ?"], grammar: [g.il-faut, g.question-words], vocab: [w.il-faut, w.versailles.nm] }
+      - { es: "On peut toucher ? — Non, il ne faut pas.", en: "Can we touch? — No, you mustn't.", altEs: ["Je peux toucher ? — Non, il ne faut pas."], altEn: ["Can we touch it? — No, you mustn't."], grammar: [g.il-faut, g.modal-verbs], vocab: [w.toucher] }
+      - { es: "Il faut partir, le dernier métro arrive.", en: "We have to go, the last metro is coming.", altEn: ["We must leave, the last metro is coming."], grammar: [g.il-faut], vocab: [w.il-faut, w.dernier], transform: { instruction: "Use nous devons instead of il faut", answer: "Nous devons partir, le dernier métro arrive.", alt: ["On doit partir, le dernier métro arrive."], en: "We have to go, the last metro is coming." }, error: { wrong: "Je faut partir, le dernier métro arrive.", explain: "Il faut is impersonal: always il faut, never je faut. For 'I must', say je dois.", grammar: g.il-faut } }
+    exchanges:
+      - q: { es: "Qu'est-ce qu'il faut pour la recette ?", en: "What do you need for the recipe?" }
+        a: { es: "Il faut des œufs, du lait et du sucre.", en: "You need eggs, milk and sugar." }
+        alt: ["Des œufs et du lait.", "Je ne sais pas."]
+        grammar: [g.il-faut]
+        vocab: [w.recette, w.il-faut]
+      - q: { es: "Il faut réserver ?", en: "Do we need to book?" }
+        a: { es: "Oui, il faut réserver : il y a beaucoup de monde le samedi.", en: "Yes, you have to book: it's very busy on Saturdays." }
+        alt: ["Non, pas besoin.", "Oui, c'est mieux."]
+        grammar: [g.il-faut]
+        vocab: [w.il-faut, w.réserver]
+      - q: { es: "Quelle est votre adresse ?", en: "What's your address?" }
+        a: { es: "J'habite au 12, rue de Rivoli.", en: "I live at 12 rue de Rivoli." }
+        alt: ["12, rue de Rivoli.", "C'est 12, rue de Rivoli."]
+        grammar: [g.quel]
+        vocab: [w.adresse]
+      - q: { es: "Je peux toucher ?", en: "Can I touch?" }
+        a: { es: "Non, désolé, il ne faut pas toucher.", en: "No, sorry, you mustn't touch." }
+        alt: ["Oui, allez-y.", "Non, il ne faut pas."]
+        grammar: [g.il-faut]
+        vocab: [w.toucher, w.il-faut]
+      - q: { es: "Tu as besoin d'aide ?", en: "Do you need help?" }
+        a: { es: "Oui, merci ! Il faut porter ces sacs au troisième étage.", en: "Yes, thanks! These bags have to go up to the third floor." }
+        alt: ["Non, ça va, merci.", "Oui, s'il te plaît."]
+        grammar: [g.il-faut]
+        vocab: [w.aide, w.il-faut]
+    texts:
+      - title: "Recette des crêpes"
+        es: ["Pour les crêpes, il faut deux œufs, du lait et un peu de sucre.", "Il faut aussi du beurre.", "Et il faut manger les crêpes chaudes !"]
+        en: ["For crêpes you need two eggs, milk and a little sugar.", "You also need butter.", "And you have to eat the crêpes hot!"]
+        grammar: [g.il-faut]
+        vocab: [w.il-faut]
+      - title: "En classe"
+        es: ["En classe, il faut parler français.", "Il faut écouter le professeur.", "Et il ne faut pas avoir peur des fautes !"]
+        en: ["In class, you have to speak French.", "You have to listen to the teacher.", "And you mustn't be afraid of mistakes!"]
+        grammar: [g.il-faut, g.avoir-expressions]
+        vocab: [w.classe, w.faute, w.il-faut]
+    spicy:
+      - { es: "Il faut danser avec moi : c'est la fête nationale !", en: "You have to dance with me: it's the national holiday!", grammar: [g.il-faut], vocab: [w.il-faut, w.fête-nationale] }
+      - { es: "Il ne faut pas toucher les tableaux, mais tu peux prendre ma main.", en: "You mustn't touch the paintings, but you can take my hand.", grammar: [g.il-faut], vocab: [w.toucher] }
+      - { es: "Pour obtenir mon numéro, il faut un sourire.", en: "To get my number, it takes a smile.", grammar: [g.il-faut], vocab: [w.obtenir, w.il-faut] }
+      - { es: "Il faut une heure pour aller chez toi ? Pour toi, ce n'est rien.", en: "It takes an hour to get to your place? For you, that's nothing.", grammar: [g.il-faut], vocab: [w.il-faut] }
+      - { es: "Il faut goûter ma recette de crêpes. Ce soir, chez moi ?", en: "You have to taste my crêpe recipe. Tonight, at my place?", grammar: [g.il-faut], vocab: [w.recette, w.il-faut] }
+  - id: a1.u12.l3
+    title: Quelle belle vue !
+    teach: [g.quel]
+    vocab: [w.vue, w.chance, w.quelle-chance, w.bravo, w.parfait, w.exact, w.fête-nationale, w.feu-d-artifice, w.fort, w.film]
+    tip: "Quel, quelle, quels, quelles agree with the noun and all sound the same. Quel + noun also makes exclamations: Quelle belle vue ! Quel dommage !"
+    sentences:
+      - { es: "Quelle belle vue !", en: "What a beautiful view!", altEn: ["What a lovely view!"], grammar: [g.quel], vocab: [w.vue], error: { wrong: "Quelle une belle vue !", explain: "No article after exclamatory quel: quelle belle vue !", grammar: g.quel } }
+      - { es: "Quelle chance ! Il fait beau pour le 14 Juillet.", en: "How lucky! The weather's nice for the 14th of July.", altEn: ["What luck! It's sunny for Bastille Day."], grammar: [g.quel, g.weather], vocab: [w.quelle-chance, w.chance] }
+      - { es: "Quel est ton film préféré ?", en: "What's your favourite film?", altEs: ["C'est quoi, ton film préféré ?", "Quel est votre film préféré ?"], altEn: ["What is your favorite movie?"], grammar: [g.quel], vocab: [w.film], error: { wrong: "Qu'est-ce que est ton film préféré ?", explain: "To ask 'what is…?' about a noun, use quel est: quel est ton film préféré ?", grammar: g.quel } }
+      - { es: "Quelle heure est-il ?", en: "What time is it?", altEs: ["Il est quelle heure ?"], grammar: [g.quel, g.time-telling], vocab: [] }
+      - { es: "Quelles chaussures tu préfères ?", en: "Which shoes do you prefer?", altEs: ["Quelles chaussures préfères-tu ?", "Tu préfères quelles chaussures ?"], grammar: [g.quel], vocab: [], transform: { instruction: "Change to 'which jumper' (pull)", answer: "Quel pull tu préfères ?", alt: ["Quel pull préfères-tu ?", "Tu préfères quel pull ?"], en: "Which jumper do you prefer?" } }
+      - { es: "À quelle heure commence le feu d'artifice ?", en: "What time do the fireworks start?", altEs: ["Le feu d'artifice commence à quelle heure ?", "À quelle heure est-ce que le feu d'artifice commence ?"], altEn: ["When do the fireworks begin?"], grammar: [g.quel], vocab: [w.feu-d-artifice] }
+      - { es: "Le 14 Juillet, c'est la fête nationale française.", en: "The 14th of July is the French national holiday.", altEn: ["Bastille Day is the French national holiday."], grammar: [g.days-months-dates], vocab: [w.fête-nationale] }
+      - { es: "Bravo ! C'est parfait !", en: "Well done! It's perfect!", altEs: ["Bravo, c'est parfait !"], grammar: [g.c-est-il-est], vocab: [w.bravo, w.parfait] }
+      - { es: "C'est exact : la tour Eiffel date de 1889.", en: "That's right: the Eiffel Tower dates from 1889.", altEs: ["Exact : la tour Eiffel date de 1889."], altEn: ["That's correct: the Eiffel Tower dates from 1889."], grammar: [g.c-est-il-est], vocab: [w.exact] }
+      - { es: "Quel dommage ! Il pleut.", en: "What a shame! It's raining.", altEs: ["C'est dommage, il pleut."], altEn: ["What a pity! It's raining."], grammar: [g.quel, g.weather], vocab: [w.dommage] }
+      - { es: "Tu es très fort en français !", en: "You're really good at French!", altEs: ["Vous êtes très fort en français !", "Tu es très forte en français !"], grammar: [g.adjective-agreement], vocab: [w.fort] }
+      - { es: "Quel temps ! Il y a du vent et de la pluie.", en: "What weather! It's windy and rainy.", altEn: ["What awful weather! There's wind and rain."], grammar: [g.quel, g.weather], vocab: [] }
+      - { es: "Dans quel quartier habites-tu ?", en: "Which neighbourhood do you live in?", altEs: ["Tu habites dans quel quartier ?", "Dans quel quartier est-ce que tu habites ?"], altEn: ["Which area do you live in?"], grammar: [g.quel, g.inversion-questions], vocab: [], transform: { instruction: "Use vous", answer: "Dans quel quartier habitez-vous ?", alt: ["Vous habitez dans quel quartier ?"], en: "Which neighbourhood do you live in? (formal)" } }
+      - { es: "Quelle surprise ! Qu'est-ce que tu fais ici ?", en: "What a surprise! What are you doing here?", altEs: ["Quelle surprise ! Tu fais quoi ici ?"], grammar: [g.quel], vocab: [] }
+      - { es: "Le feu d'artifice est à la tour Eiffel, à vingt-trois heures.", en: "The fireworks are at the Eiffel Tower, at eleven p.m.", altEs: ["Le feu d'artifice est à la tour Eiffel, à 23 heures."], grammar: [g.time-telling], vocab: [w.feu-d-artifice], transform: { instruction: "Ask what time it is, with à quelle heure", answer: "À quelle heure est le feu d'artifice ?", alt: ["Le feu d'artifice est à quelle heure ?"], en: "What time are the fireworks?" } }
+    exchanges:
+      - q: { es: "Quel est ton film préféré ?", en: "What's your favourite film?" }
+        a: { es: "« Amélie », bien sûr !", en: "'Amélie', of course!" }
+        alt: ["Je n'ai pas de film préféré.", "Un film français."]
+        grammar: [g.quel]
+        vocab: [w.film]
+      - q: { es: "Il fait beau pour le feu d'artifice !", en: "The weather's nice for the fireworks!" }
+        a: { es: "Oui, quelle chance !", en: "Yes, how lucky!" }
+        alt: ["Super !", "Génial !"]
+        grammar: [g.quel]
+        vocab: [w.quelle-chance, w.feu-d-artifice]
+      - q: { es: "Regarde, c'est l'Arc de Triomphe !", en: "Look, it's the Arc de Triomphe!" }
+        a: { es: "Quelle belle vue !", en: "What a beautiful view!" }
+        alt: ["Oh, il est grand !", "C'est très beau !"]
+        grammar: [g.quel]
+        vocab: [w.vue]
+      - q: { es: "Mon gâteau est prêt !", en: "My cake is ready!" }
+        a: { es: "Bravo, il est parfait !", en: "Well done, it's perfect!" }
+        alt: ["Miam !", "Bravo !"]
+        grammar: [g.adjective-agreement]
+        vocab: [w.bravo, w.parfait]
+      - q: { es: "La tour Eiffel date de 1889, non ?", en: "The Eiffel Tower dates from 1889, doesn't it?" }
+        a: { es: "Oui, c'est exact.", en: "Yes, that's right." }
+        alt: ["Exact !", "Oui, c'est vrai."]
+        grammar: [g.c-est-il-est]
+        vocab: [w.exact]
+    texts:
+      - title: "Le soir du 14 Juillet"
+        es: ["Le soir, on va au Champ-de-Mars.", "Le feu d'artifice commence vers vingt-trois heures.", "Quelles couleurs ! Quelle belle soirée !"]
+        en: ["In the evening, we go to the Champ-de-Mars.", "The fireworks start around eleven p.m.", "What colours! What a lovely evening!"]
+        grammar: [g.quel]
+        vocab: [w.feu-d-artifice]
+      - title: "Message de Lucas"
+        es: ["Quelle chance : j'ai deux places pour le concert !", "Tu viens avec moi ?", "Il commence à vingt heures."]
+        en: ["How lucky: I've got two tickets for the concert!", "Are you coming with me?", "It starts at eight p.m."]
+        grammar: [g.quel]
+        vocab: [w.quelle-chance]
+    spicy:
+      - { es: "Quelle belle vue… et je ne parle pas de Paris.", en: "What a beautiful view... and I'm not talking about Paris.", grammar: [g.quel], vocab: [w.vue] }
+      - { es: "Quelle chance : un feu d'artifice et toi à côté de moi.", en: "How lucky: fireworks and you next to me.", grammar: [g.quel], vocab: [w.quelle-chance, w.feu-d-artifice] }
+      - { es: "Quel est ton numéro ? C'est pour une amie, bien sûr.", en: "What's your number? It's for a friend, of course.", grammar: [g.quel], vocab: [] }
+      - { es: "Bravo, tu es parfait. Bon, presque.", en: "Well done, you're perfect. Well, almost.", altEs: ["Bravo, tu es parfaite. Bon, presque."], grammar: [g.adjective-agreement], vocab: [w.bravo, w.parfait] }
+      - { es: "Quel sourire ! Tu fais ça souvent ?", en: "What a smile! Do you do that often?", grammar: [g.quel], vocab: [w.sourire] }
+  - id: a1.u12.l4
+    title: "Je viens d'arriver, j'habite ici depuis un an"
+    teach: [g.venir-de, g.depuis-present]
+    vocab: [w.venir-de, w.depuis, w.vivre, w.presque, w.souvenir, w.fin, w.début, w.encore, w.mémoire]
+    tip: "Venir de + infinitive = to have just done (je viens d'arriver). Depuis + present = for / since, for things still true now (j'habite ici depuis un an)."
+    sentences:
+      - { es: "Je viens d'arriver à Paris.", en: "I've just arrived in Paris.", altEs: ["Je viens juste d'arriver à Paris."], altEn: ["I just arrived in Paris."], grammar: [g.venir-de], vocab: [w.venir-de], error: { wrong: "Je viens arriver à Paris.", explain: "Venir de + infinitive = to have just done: je viens d'arriver. Without de it means 'I'm coming to…'.", grammar: g.venir-de } }
+      - { es: "Le train vient de partir.", en: "The train has just left.", altEn: ["The train just left."], grammar: [g.venir-de], vocab: [w.venir-de], transform: { instruction: "Change to the near future (going to)", answer: "Le train va partir.", en: "The train is about to leave." } }
+      - { es: "Nous venons de manger, merci.", en: "We've just eaten, thanks.", altEs: ["On vient de manger, merci."], altEn: ["We just ate, thank you."], grammar: [g.venir-de], vocab: [w.venir-de] }
+      - { es: "J'habite à Paris depuis deux ans.", en: "I've been living in Paris for two years.", altEs: ["Ça fait deux ans que j'habite à Paris."], altEn: ["I've lived in Paris for two years."], grammar: [g.depuis-present], vocab: [w.depuis], error: { wrong: "J'ai habité à Paris depuis deux ans.", explain: "For something still true now, French uses the present with depuis: j'habite à Paris depuis deux ans.", grammar: g.depuis-present } }
+      - { es: "Depuis quand tu apprends le français ? — Depuis janvier.", en: "Since when have you been learning French? — Since January.", altEs: ["Tu apprends le français depuis quand ? — Depuis janvier.", "Depuis quand apprends-tu le français ? — Depuis janvier."], grammar: [g.depuis-present], vocab: [w.depuis, w.apprendre] }
+      - { es: "Depuis combien de temps vous êtes en France ? — Depuis trois semaines.", en: "How long have you been in France? — For three weeks.", altEs: ["Vous êtes en France depuis combien de temps ? — Depuis trois semaines.", "Depuis combien de temps êtes-vous en France ? — Depuis trois semaines."], grammar: [g.depuis-present], vocab: [w.depuis] }
+      - { es: "Je t'attends depuis une heure !", en: "I've been waiting for you for an hour!", altEs: ["Ça fait une heure que je t'attends !"], grammar: [g.depuis-present, g.present-re-verbs], vocab: [w.depuis, w.attendre], transform: { instruction: "Use vous instead of tu", answer: "Je vous attends depuis une heure !", alt: ["Ça fait une heure que je vous attends !"], en: "I've been waiting for you for an hour! (formal)" } }
+      - { es: "Elle vit à Paris depuis presque dix ans.", en: "She's been living in Paris for almost ten years.", altEs: ["Elle habite à Paris depuis presque dix ans."], altEn: ["She has lived in Paris for nearly ten years."], grammar: [g.depuis-present], vocab: [w.vivre, w.presque] }
+      - { es: "Ils viennent de finir le cours.", en: "They've just finished the class.", altEs: ["Elles viennent de finir le cours."], altEn: ["They just finished the lesson."], grammar: [g.venir-de], vocab: [w.venir-de], transform: { instruction: "Change to 'I'", answer: "Je viens de finir le cours.", en: "I've just finished the class." } }
+      - { es: "Au début, je ne comprends rien ; à la fin, je comprends presque tout.", en: "At the start I don't understand anything; by the end I understand almost everything.", altEs: ["Au début, je ne comprends rien, et à la fin, je comprends presque tout."], grammar: [g.negation-ne-pas], vocab: [w.début, w.fin, w.presque] }
+      - { es: "C'est un beau souvenir de Paris.", en: "It's a lovely souvenir of Paris.", altEn: ["It's a lovely memory of Paris."], grammar: [g.adjective-position], vocab: [w.souvenir] }
+      - { es: "Encore un café, s'il vous plaît !", en: "Another coffee, please!", altEs: ["Un autre café, s'il vous plaît !"], altEn: ["One more coffee, please!"], grammar: [g.je-voudrais], vocab: [w.encore] }
+      - { es: "Tu as une bonne mémoire !", en: "You have a good memory!", altEs: ["Vous avez une bonne mémoire !"], altEn: ["You've got a good memory!"], grammar: [g.adjective-position], vocab: [w.mémoire] }
+      - { es: "On vient de voir le défilé, et maintenant on va voir le feu d'artifice.", en: "We've just seen the parade, and now we're going to see the fireworks.", altEs: ["Nous venons de voir le défilé, et maintenant nous allons voir le feu d'artifice."], grammar: [g.venir-de, g.futur-proche], vocab: [w.venir-de, w.défilé, w.feu-d-artifice] }
+      - { es: "Ça fait combien de temps que tu vis ici ?", en: "How long have you been living here?", altEs: ["Depuis combien de temps tu vis ici ?", "Tu vis ici depuis combien de temps ?"], grammar: [g.depuis-present], vocab: [w.vivre] }
+    exchanges:
+      - q: { es: "Tu habites ici depuis quand ?", en: "Since when have you lived here?" }
+        a: { es: "Depuis 2020.", en: "Since 2020." }
+        alt: ["Depuis six ans.", "Depuis janvier."]
+        grammar: [g.depuis-present]
+        vocab: [w.depuis]
+      - q: { es: "Tu as faim ?", en: "Are you hungry?" }
+        a: { es: "Non, merci, je viens de manger.", en: "No, thanks, I've just eaten." }
+        alt: ["Oui, un peu.", "Non, je viens de déjeuner."]
+        grammar: [g.venir-de]
+        vocab: [w.venir-de]
+      - q: { es: "Le bus est là ?", en: "Is the bus here?" }
+        a: { es: "Non, il vient de partir !", en: "No, it's just left!" }
+        alt: ["Oui, il arrive.", "Il vient de partir."]
+        grammar: [g.venir-de]
+        vocab: [w.venir-de]
+      - q: { es: "Tu attends depuis longtemps ?", en: "Have you been waiting long?" }
+        a: { es: "Depuis une heure ! Tu es en retard !", en: "For an hour! You're late!" }
+        alt: ["Non, je viens d'arriver.", "Depuis dix minutes."]
+        grammar: [g.depuis-present]
+        vocab: [w.depuis, w.en-retard]
+      - q: { es: "Encore un peu de gâteau ?", en: "A bit more cake?" }
+        a: { es: "Oui, encore un petit morceau, merci.", en: "Yes, another small piece, thanks." }
+        alt: ["Non merci, ça va.", "Avec plaisir !"]
+        grammar: [g.quantities]
+        vocab: [w.encore]
+    texts:
+      - title: "Au revoir, Paris !"
+        es: ["J'habite à Paris depuis un an.", "Je viens de finir mon cours de français.", "Demain, je rentre chez moi avec beaucoup de souvenirs."]
+        en: ["I've been living in Paris for a year.", "I've just finished my French course.", "Tomorrow I'm going home with lots of memories."]
+        grammar: [g.depuis-present, g.venir-de]
+        vocab: [w.depuis, w.venir-de, w.souvenir]
+      - title: "Carte postale de Léa"
+        es: ["Je suis sur les Champs-Élysées depuis ce matin.", "Je viens de monter en haut de l'Arc de Triomphe : quelle vue !", "À bientôt, Léa."]
+        en: ["I've been on the Champs-Élysées since this morning.", "I've just climbed to the top of the Arc de Triomphe: what a view!", "See you soon, Léa."]
+        grammar: [g.depuis-present, g.venir-de]
+        vocab: [w.depuis, w.venir-de, w.vue]
+    spicy:
+      - { es: "Je viens de te voir et je pense déjà à toi.", en: "I've just seen you and I'm already thinking about you.", grammar: [g.venir-de], vocab: [w.venir-de] }
+      - { es: "Je vis à Paris depuis trois ans, mais avec toi, c'est une autre ville.", en: "I've lived in Paris for three years, but with you it's a different city.", grammar: [g.depuis-present], vocab: [w.vivre, w.depuis] }
+      - { es: "Tu viens d'arriver ? Parfait, moi aussi.", en: "You've just arrived? Perfect, me too.", grammar: [g.venir-de], vocab: [w.venir-de] }
+      - { es: "Un souvenir de Paris ? Une bise sur le Pont Neuf.", en: "A souvenir of Paris? A kiss on the cheek on the Pont Neuf.", grammar: [g.articles-indefinite], vocab: [w.souvenir] }
+      - { es: "Encore une danse, encore un verre… et encore toi, s'il te plaît.", en: "Another dance, another drink... and more of you, please.", grammar: [g.quantities], vocab: [w.encore] }
+dialogues:
+  - id: a1.u12.d1
+    title: Le dernier jour
+    context: On the 14th of July, Julie and Thomas watch the parade on the Champs-Élysées. It's Julie's last day in Paris.
+    lines:
+      - { speaker: Thomas, es: "C'est le 14 Juillet ! Tu entends ? Le défilé commence !", en: "It's the 14th of July! Can you hear? The parade is starting!" }
+      - { speaker: Julie, es: "Oui, mais je ne vois rien. Il y a trop de monde !", en: "Yes, but I can't see anything. There are too many people!" }
+      - { speaker: Thomas, es: "Regarde les avions : bleu, blanc, rouge !", en: "Look at the planes: blue, white, red!" }
+      - { speaker: Julie, es: "Quelle belle fête ! Tu habites à Paris depuis combien de temps, toi ?", en: "What a great celebration! How long have you lived in Paris?" }
+      - { speaker: Thomas, es: "Depuis deux ans. Et toi, tu rentres à Montréal demain ?", en: "For two years. And you, you're going back to Montreal tomorrow?" }
+      - { speaker: Julie, es: "Oui… Je viens de faire ma valise.", en: "Yes... I've just packed my suitcase." }
+      - { speaker: Thomas, es: "Déjà ? Quel dommage ! Il faut revenir bientôt.", en: "Already? What a shame! You have to come back soon." }
+      - { speaker: Julie, es: "D'accord ! Mais ce soir, on va voir le feu d'artifice à la tour Eiffel ?", en: "OK! But tonight, shall we go and see the fireworks at the Eiffel Tower?" }
+      - { speaker: Thomas, es: "Bien sûr. Il faut arriver tôt pour avoir une bonne place.", en: "Of course. We have to get there early to get a good spot." }
+      - { speaker: Julie, es: "Alors on y va ! Au revoir, les Champs-Élysées !", en: "Let's go, then! Goodbye, Champs-Élysées!" }
+    questions:
+      - { q: "Quel jour est-ce ?", options: ["Le 1er janvier.", "Le 14 juillet.", "Le 25 décembre."], answer: 1, explain: "Thomas: « C'est le 14 Juillet ! », the French national holiday." }
+      - { q: "Depuis combien de temps Thomas habite à Paris ?", options: ["Depuis deux mois.", "Depuis deux ans.", "Depuis toujours."], answer: 1, explain: "« Depuis deux ans. »" }
+      - { q: "Où va Julie demain ?", options: ["À Montréal.", "À Lyon.", "À la tour Eiffel."], answer: 0, explain: "« Tu rentres à Montréal demain ? » — « Oui… »" }
+      - { q: "Pourquoi faut-il arriver tôt ce soir ?", options: ["Pour avoir une bonne place.", "Pour acheter des billets.", "Pour manger."], answer: 0, explain: "« Il faut arriver tôt pour avoir une bonne place. »" }

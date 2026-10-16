@@ -1,0 +1,279 @@
+id: a1.u07
+title: "Le sourire de la Joconde"
+lessons:
+  - id: a1.u07.l1
+    title: Des portraits au Louvre
+    teach: [g.adjective-position]
+    vocab: [w.cheveux, w.œil, w.visage, w.sourire, w.sourire.v, w.nez, w.bouche, w.long, w.court, w.jeune, w.mince, w.gros, w.blond, w.brun, w.roux, w.tableau, w.portrait, w.dame, w.barbe, w.moustache, w.mauvais]
+    tip: "Most adjectives follow the noun (des yeux bleus); beauty, age, goodness and size (BAGS) come before it (un petit tableau, un mauvais portrait)."
+    sentences:
+      - { es: "La Joconde est un petit tableau.", en: "The Mona Lisa is a small painting.", altEs: ["La Joconde, c'est un petit tableau."], grammar: [g.adjective-position], vocab: [w.tableau], error: { wrong: "La Joconde est un tableau petit.", explain: "Petit is a BAGS adjective (size): it goes before the noun — un petit tableau.", grammar: g.adjective-position } }
+      - { es: "Elle a les cheveux longs et les yeux marron.", en: "She has long hair and brown eyes.", altEs: ["Elle a des cheveux longs et des yeux marron.", "Elle a les yeux marron et les cheveux longs."], grammar: [g.adjective-position, g.colours], vocab: [w.cheveux, w.long, w.œil] }
+      - { es: "Sur le tableau, il y a une jeune dame.", en: "In the painting there's a young lady.", altEs: ["Il y a une jeune dame sur le tableau."], altEn: ["There's a young lady in the painting.", "On the painting there is a young lady."], grammar: [g.adjective-position, g.il-y-a], vocab: [w.jeune, w.dame, w.tableau] }
+      - { es: "Mon frère a les cheveux courts et une petite barbe.", en: "My brother has short hair and a little beard.", altEs: ["Mon frère a des cheveux courts et une petite barbe."], altEn: ["My brother has short hair and a small beard."], grammar: [g.adjective-position], vocab: [w.court, w.cheveux, w.barbe], error: { wrong: "Mon frère a les cheveux courts et une barbe petite.", explain: "Petit goes before the noun: une petite barbe. Court, like most adjectives, goes after: les cheveux courts.", grammar: g.adjective-position } }
+      - { es: "Le monsieur à côté de moi a une grosse moustache.", en: "The man next to me has a big moustache.", altEs: ["Le monsieur à côté de moi a une très grosse moustache."], altEn: ["The gentleman next to me has a big moustache."], grammar: [g.adjective-position, g.prepositions-place], vocab: [w.gros, w.moustache] }
+      - { es: "Il est grand et mince.", en: "He's tall and slim.", altEs: ["Il est mince et grand."], altEn: ["He is tall and thin."], grammar: [g.adjective-agreement], vocab: [w.mince], transform: { instruction: "Change to 'she'", answer: "Elle est grande et mince.", alt: ["Elle est mince et grande."], en: "She's tall and slim." } }
+      - { es: "Ma sœur est blonde, mais ma mère est brune.", en: "My sister is blonde, but my mother has dark hair.", altEn: ["My sister is blonde but my mother is dark-haired."], grammar: [g.adjective-agreement], vocab: [w.blond, w.brun] }
+      - { es: "Tu as un joli sourire.", en: "You have a pretty smile.", altEs: ["Vous avez un joli sourire.", "Tu as un beau sourire."], altEn: ["You've got a nice smile.", "You have a lovely smile."], grammar: [g.adjective-position], vocab: [w.sourire] }
+      - { es: "Pourquoi est-ce qu'elle sourit ?", en: "Why is she smiling?", altEs: ["Pourquoi elle sourit ?", "Pourquoi sourit-elle ?", "Elle sourit pourquoi ?"], altEn: ["Why does she smile?"], grammar: [g.question-words], vocab: [w.sourire.v] }
+      - { es: "C'est un homme roux avec un grand nez.", en: "He's a red-haired man with a big nose.", altEn: ["It's a red-haired man with a big nose.", "He's a ginger man with a big nose."], grammar: [g.adjective-position, g.colours], vocab: [w.roux, w.nez], transform: { instruction: "Change to 'a woman'", answer: "C'est une femme rousse avec un grand nez.", en: "She's a red-haired woman with a big nose." } }
+      - { es: "Elle a un joli visage et une petite bouche.", en: "She has a pretty face and a small mouth.", altEs: ["Elle a une petite bouche et un joli visage."], grammar: [g.adjective-position], vocab: [w.visage, w.bouche] }
+      - { es: "C'est un mauvais portrait : il n'a pas de nez !", en: "It's a bad portrait: he has no nose!", altEs: ["C'est un mauvais portrait, il n'a pas de nez !"], altEn: ["It's a bad portrait: he hasn't got a nose!"], grammar: [g.adjective-position, g.de-after-negation], vocab: [w.mauvais, w.portrait, w.nez] }
+      - { es: "C'est un tableau français.", en: "It's a French painting.", altEn: ["This is a French painting."], grammar: [g.adjective-position], vocab: [w.tableau], transform: { instruction: "Add beau (beautiful)", answer: "C'est un beau tableau français.", en: "It's a beautiful French painting." } }
+      - { es: "Le portrait est petit, mais il y a beaucoup de monde devant.", en: "The portrait is small, but there are lots of people in front of it.", altEs: ["Le portrait est petit, mais il y a beaucoup de gens devant."], grammar: [g.adjective-agreement, g.il-y-a], vocab: [w.portrait] }
+      - { es: "Les jeunes peintres ont des idées.", en: "Young painters have ideas.", altEs: ["Les jeunes peintres ont beaucoup d'idées."], altEn: ["The young painters have ideas."], grammar: [g.adjective-position], vocab: [w.jeune] }
+    exchanges:
+      - q: { es: "Il est comment, ton frère ?", en: "What's your brother like?" }
+        a: { es: "Il est grand et brun, avec une petite barbe.", en: "He's tall and dark-haired, with a little beard." }
+        alt: ["Il est grand et brun.", "Il est petit et blond.", "Il est mince, avec les cheveux courts."]
+        grammar: [g.adjective-position]
+        vocab: [w.brun, w.barbe]
+      - q: { es: "Elle a les cheveux comment ?", en: "What's her hair like?" }
+        a: { es: "Elle a les cheveux longs et blonds.", en: "She has long blond hair." }
+        alt: ["Longs et blonds.", "Elle a les cheveux courts.", "Elle est rousse."]
+        grammar: [g.adjective-position]
+        vocab: [w.cheveux, w.long, w.blond]
+      - q: { es: "C'est un grand tableau, la Joconde ?", en: "Is the Mona Lisa a big painting?" }
+        a: { es: "Non, c'est un petit tableau.", en: "No, it's a small painting." }
+        alt: ["Non, il est petit.", "Non, pas très grand."]
+        grammar: [g.adjective-position]
+        vocab: [w.tableau]
+      - q: { es: "Pourquoi tu souris ?", en: "Why are you smiling?" }
+        a: { es: "Parce que le monsieur sur ce tableau a ton nez !", en: "Because the man in this painting has your nose!" }
+        alt: ["Parce que je suis content.", "Parce que c'est drôle."]
+        grammar: [g.question-words]
+        vocab: [w.sourire.v, w.nez]
+      - q: { es: "Tu as une photo de ta copine ?", en: "Have you got a photo of your girlfriend?" }
+        a: { es: "Oui, regarde : elle est petite et rousse.", en: "Yes, look: she's small and red-haired." }
+        alt: ["Oui, la voilà.", "Non, désolé."]
+        grammar: [g.adjective-agreement]
+        vocab: [w.roux]
+    texts:
+      - title: "Au Louvre"
+        es: ["Voici la Joconde, au Louvre.", "C'est un petit portrait d'une jeune dame.", "Elle a les cheveux longs et bruns.", "Mais pourquoi est-ce qu'elle sourit ?"]
+        en: ["Here is the Mona Lisa, at the Louvre.", "It's a small portrait of a young lady.", "She has long dark hair.", "But why is she smiling?"]
+        grammar: [g.adjective-position]
+        vocab: [w.portrait, w.jeune, w.dame, w.cheveux, w.sourire.v]
+      - title: "Message de Julie"
+        es: ["Je suis au Louvre avec Thomas.", "Il y a un grand monsieur avec une grosse moustache devant moi.", "Je ne vois pas le tableau !"]
+        en: ["I'm at the Louvre with Thomas.", "There's a tall man with a big moustache in front of me.", "I can't see the painting!"]
+        grammar: [g.adjective-position]
+        vocab: [w.gros, w.moustache, w.tableau]
+    spicy:
+      - { es: "Tu as de jolis yeux… et un joli sourire.", en: "You have pretty eyes... and a pretty smile.", altEs: ["Tu as des jolis yeux… et un joli sourire.", "Vous avez de jolis yeux… et un joli sourire."], grammar: [g.adjective-position], vocab: [w.œil, w.sourire] }
+      - { es: "La Joconde sourit, mais ton sourire est plus joli.", en: "The Mona Lisa is smiling, but your smile is prettier.", altEs: ["La Joconde sourit, mais ton sourire est plus beau."], altEn: ["The Mona Lisa smiles, but your smile is prettier."], grammar: [g.adjective-position], vocab: [w.sourire.v, w.sourire] }
+      - { es: "Je cherche un grand brun avec une petite barbe.", en: "I'm looking for a tall dark-haired man with a little beard.", altEs: ["Je cherche une grande brune avec un joli sourire."], grammar: [g.adjective-position], vocab: [w.brun, w.barbe] }
+      - { es: "Ta moustache est drôle, mais tes yeux sont parfaits.", en: "Your moustache is funny, but your eyes are perfect.", grammar: [g.adjective-agreement], vocab: [w.moustache, w.œil] }
+      - { es: "Il y a beaucoup de beaux tableaux ici, mais c'est toi que je regarde.", en: "There are lots of beautiful paintings here, but it's you I'm looking at.", altEs: ["Il y a beaucoup de beaux tableaux ici, mais moi, je te regarde."], grammar: [g.adjective-position], vocab: [w.tableau] }
+  - id: a1.u07.l2
+    title: Un bel homme, une vieille dame
+    teach: [g.beau-nouveau-vieux, g.tres-trop-assez]
+    vocab: [w.nouveau, w.sympathique, w.gentil, w.méchant, w.drôle, w.intelligent, w.timide, w.sérieux, w.mignon, w.moche, w.très, w.trop, w.assez, w.vraiment, w.autre]
+    tip: "Before a masculine noun starting with a vowel or silent h, beau, nouveau and vieux become bel, nouvel, vieil: un bel homme, un vieil ami. Très = very; trop = too (more than you want)."
+    sentences:
+      - { es: "C'est un bel homme.", en: "He's a handsome man.", altEs: ["Il est beau."], altEn: ["He is a handsome man.", "He's a good-looking man."], grammar: [g.beau-nouveau-vieux], vocab: [], error: { wrong: "C'est un beau homme.", explain: "Before a masculine noun starting with a vowel or silent h, beau becomes bel: un bel homme.", grammar: g.beau-nouveau-vieux } }
+      - { es: "Mon nouvel ami est très drôle.", en: "My new friend is very funny.", altEs: ["Mon nouveau copain est très drôle."], grammar: [g.beau-nouveau-vieux, g.tres-trop-assez], vocab: [w.nouveau, w.drôle, w.très] }
+      - { es: "Ma grand-mère est une vieille dame très gentille.", en: "My grandmother is a very kind old lady.", altEn: ["My grandmother is a very nice old lady."], grammar: [g.beau-nouveau-vieux, g.tres-trop-assez], vocab: [w.gentil, w.très], transform: { instruction: "Change to 'my grandfather'", answer: "Mon grand-père est un vieil homme très gentil.", alt: ["Mon grand-père est un vieux monsieur très gentil."], en: "My grandfather is a very kind old man." } }
+      - { es: "C'est un vieil ami de mon père.", en: "He's an old friend of my father's.", altEn: ["He's an old friend of my father.", "It's an old friend of my dad's."], grammar: [g.beau-nouveau-vieux], vocab: [], transform: { instruction: "Change to 'a new friend'", answer: "C'est un nouvel ami de mon père.", alt: ["C'est un nouveau copain de mon père."], en: "He's a new friend of my father's." } }
+      - { es: "Le nouveau professeur est assez sérieux.", en: "The new teacher is quite serious.", altEn: ["The new teacher is rather serious."], grammar: [g.beau-nouveau-vieux, g.tres-trop-assez], vocab: [w.nouveau, w.assez, w.sérieux] }
+      - { es: "Elle est un peu timide, mais elle est vraiment sympathique.", en: "She's a bit shy, but she's really nice.", altEs: ["Elle est un peu timide, mais vraiment sympathique.", "Elle est un peu timide, mais elle est vraiment sympa."], altEn: ["She's a little shy, but she's really nice."], grammar: [g.tres-trop-assez], vocab: [w.timide, w.vraiment, w.sympathique] }
+      - { es: "Ton chien est trop mignon !", en: "Your dog is so cute!", altEs: ["Il est trop mignon, ton chien !"], altEn: ["Your dog is too cute!"], grammar: [g.tres-trop-assez], vocab: [w.trop, w.mignon], note: "In everyday speech, trop often means 'so, really' rather than 'too'." }
+      - { es: "Ce chat n'est pas méchant : il est vieux et fatigué.", en: "This cat isn't nasty: he's old and tired.", altEs: ["Ce chat n'est pas méchant, il est vieux et fatigué."], altEn: ["That cat isn't mean: he's old and tired."], grammar: [g.beau-nouveau-vieux, g.negation-ne-pas], vocab: [w.méchant] }
+      - { es: "Ce pull est trop grand pour moi.", en: "This jumper is too big for me.", altEn: ["This sweater is too big for me."], grammar: [g.tres-trop-assez], vocab: [w.trop] }
+      - { es: "Le Louvre est un très beau musée.", en: "The Louvre is a very beautiful museum.", altEs: ["Le Louvre, c'est un très beau musée."], grammar: [g.tres-trop-assez, g.adjective-position], vocab: [w.très] }
+      - { es: "Les nouvelles voisines sont assez drôles.", en: "The new neighbours are quite funny.", grammar: [g.beau-nouveau-vieux, g.tres-trop-assez], vocab: [w.nouveau, w.assez, w.drôle], transform: { instruction: "Change to the singular", answer: "La nouvelle voisine est assez drôle.", en: "The new neighbour is quite funny." } }
+      - { es: "Il est intelligent, mais il n'est pas très gentil.", en: "He's clever, but he's not very kind.", altEs: ["Il est intelligent, mais pas très gentil."], altEn: ["He's intelligent, but he's not very nice."], grammar: [g.tres-trop-assez], vocab: [w.intelligent, w.gentil] }
+      - { es: "Ce portrait est un peu moche, non ?", en: "This portrait is a bit ugly, isn't it?", altEs: ["Il est un peu moche, ce portrait, non ?"], altEn: ["This portrait is a little ugly, isn't it?"], grammar: [g.tres-trop-assez], vocab: [w.moche] }
+      - { es: "Tu as une autre idée ?", en: "Do you have another idea?", altEs: ["Vous avez une autre idée ?", "As-tu une autre idée ?", "Est-ce que tu as une autre idée ?"], altEn: ["Have you got another idea?"], grammar: [g.adjective-position], vocab: [w.autre] }
+      - { es: "Ce sont de beaux hommes, mais ils sont trop sérieux.", en: "They're handsome men, but they're too serious.", altEs: ["Ce sont des beaux hommes, mais ils sont trop sérieux."], grammar: [g.beau-nouveau-vieux, g.tres-trop-assez], vocab: [w.trop, w.sérieux], error: { wrong: "Ce sont de bels hommes, mais ils sont trop sérieux.", explain: "Bel exists only in the masculine singular. The plural is always beaux: de beaux hommes.", grammar: g.beau-nouveau-vieux } }
+    exchanges:
+      - q: { es: "Il est comment, ton nouveau voisin ?", en: "What's your new neighbour like?" }
+        a: { es: "Il est très gentil, mais un peu timide.", en: "He's very kind, but a bit shy." }
+        alt: ["Il est assez sympathique.", "Il est vraiment drôle.", "Il est sympa."]
+        grammar: [g.beau-nouveau-vieux, g.tres-trop-assez]
+        vocab: [w.nouveau, w.gentil, w.timide]
+      - q: { es: "Tu aimes ton nouvel appartement ?", en: "Do you like your new flat?" }
+        a: { es: "Oui, il est très beau, mais un peu trop petit.", en: "Yes, it's very nice, but a bit too small." }
+        alt: ["Oui, il est vraiment joli.", "Non, il est trop cher.", "Oui, beaucoup."]
+        grammar: [g.beau-nouveau-vieux, g.tres-trop-assez]
+        vocab: [w.nouveau, w.trop]
+      - q: { es: "C'est qui, cette vieille dame ?", en: "Who's that old lady?" }
+        a: { es: "C'est ma grand-mère : elle est vraiment drôle !", en: "That's my grandmother: she's really funny!" }
+        alt: ["C'est ma grand-mère.", "C'est une amie de ma mère."]
+        grammar: [g.beau-nouveau-vieux, g.tres-trop-assez]
+        vocab: [w.dame, w.vraiment, w.drôle]
+      - q: { es: "Ton chat est méchant ?", en: "Is your cat nasty?" }
+        a: { es: "Non, pas du tout, il est trop mignon !", en: "No, not at all, he's so cute!" }
+        alt: ["Non, il est très gentil.", "Un peu, oui.", "Non, pas du tout."]
+        grammar: [g.tres-trop-assez]
+        vocab: [w.méchant, w.mignon]
+      - q: { es: "Tu trouves ce portrait beau ?", en: "Do you think this portrait is beautiful?" }
+        a: { es: "Non, je le trouve assez moche.", en: "No, I find it rather ugly." }
+        alt: ["Oui, il est très beau.", "Pas vraiment.", "Oui, vraiment."]
+        grammar: [g.tres-trop-assez]
+        vocab: [w.moche, w.assez]
+    texts:
+      - title: "Ma famille"
+        es: ["Mon grand-père est un vieil homme très drôle.", "Ma grand-mère est assez sérieuse, mais vraiment gentille.", "Et mon petit frère ? Il est trop mignon !"]
+        en: ["My grandfather is a very funny old man.", "My grandmother is rather serious, but really kind.", "And my little brother? He's so cute!"]
+        grammar: [g.beau-nouveau-vieux, g.tres-trop-assez]
+        vocab: [w.drôle, w.sérieux, w.gentil, w.mignon]
+      - title: "Message de Léa"
+        es: ["J'ai un nouvel ami au cours de français.", "Il s'appelle Hugo.", "Il est un peu timide, mais très intelligent."]
+        en: ["I have a new friend in my French class.", "His name is Hugo.", "He's a bit shy, but very clever."]
+        grammar: [g.beau-nouveau-vieux, g.tres-trop-assez]
+        vocab: [w.nouveau, w.timide, w.intelligent]
+    spicy:
+      - { es: "Tu es un bel homme, et en plus tu es drôle.", en: "You're a handsome man, and you're funny too.", altEs: ["Vous êtes un bel homme, et en plus vous êtes drôle."], altEn: ["You're a handsome man, and on top of that you're funny."], grammar: [g.beau-nouveau-vieux], vocab: [w.drôle] }
+      - { es: "Mon nouvel ami est mignon… mais pas aussi mignon que toi.", en: "My new friend is cute... but not as cute as you.", altEs: ["Ma nouvelle amie est mignonne… mais pas aussi mignonne que toi."], grammar: [g.beau-nouveau-vieux], vocab: [w.nouveau, w.mignon] }
+      - { es: "Tu es trop gentille et trop belle pour moi.", en: "You're too kind and too beautiful for me.", altEs: ["Tu es trop gentil et trop beau pour moi."], altEn: ["You're too nice and too beautiful for me."], grammar: [g.tres-trop-assez, g.beau-nouveau-vieux], vocab: [w.trop, w.gentil] }
+      - { es: "Je ne suis pas timide, je suis… un peu timide avec toi.", en: "I'm not shy, I'm... a bit shy with you.", grammar: [g.tres-trop-assez], vocab: [w.timide] }
+      - { es: "Un vieil ami ? Non, c'est un nouvel ami, et il est vraiment beau.", en: "An old friend? No, he's a new friend, and he's really good-looking.", altEs: ["Un vieil ami ? Non, un nouvel ami, et il est vraiment beau."], grammar: [g.beau-nouveau-vieux, g.tres-trop-assez], vocab: [w.nouveau, w.vraiment] }
+  - id: a1.u07.l3
+    title: "J'ai faim, j'ai peur !"
+    teach: [g.avoir-expressions]
+    vocab: [w.faim, w.soif, w.peur, w.raison, w.tort, w.besoin, w.envie, w.sommeil, w.avoir-besoin-de, w.avoir-envie-de]
+    tip: "Where English says 'I am hungry, cold, right', French says 'I have hunger, cold, reason': j'ai faim, j'ai froid, j'ai raison."
+    sentences:
+      - { es: "J'ai faim ! On mange au café du musée ?", en: "I'm hungry! Shall we eat at the museum café?", altEs: ["J'ai faim ! On va manger au café du musée ?"], altEn: ["I'm hungry! Shall we eat in the museum café?"], grammar: [g.avoir-expressions, g.on-nous], vocab: [w.faim], error: { wrong: "Je suis faim ! On mange au café du musée ?", explain: "Hunger takes avoir: j'ai faim, never je suis faim.", grammar: g.avoir-expressions } }
+      - { es: "Tu as soif ? Il y a de l'eau dans mon sac.", en: "Are you thirsty? There's water in my bag.", altEs: ["As-tu soif ? Il y a de l'eau dans mon sac.", "Vous avez soif ? Il y a de l'eau dans mon sac."], altEn: ["Are you thirsty? There's some water in my bag."], grammar: [g.avoir-expressions], vocab: [w.soif] }
+      - { es: "Mon petit frère a peur du noir.", en: "My little brother is afraid of the dark.", altEn: ["My little brother is scared of the dark."], grammar: [g.avoir-expressions, g.contractions-au-du], vocab: [w.peur] }
+      - { es: "Vous avez raison, madame.", en: "You're right, madam.", altEs: ["Vous avez raison."], altEn: ["You are right, madam."], grammar: [g.avoir-expressions, g.tu-vs-vous], vocab: [w.raison] }
+      - { es: "Non, tu as tort : la Joconde n'est pas grande.", en: "No, you're wrong: the Mona Lisa isn't big.", altEs: ["Non, tu as tort, la Joconde n'est pas grande."], grammar: [g.avoir-expressions], vocab: [w.tort], transform: { instruction: "Use vous instead of tu", answer: "Non, vous avez tort : la Joconde n'est pas grande.", alt: ["Non, vous avez tort, la Joconde n'est pas grande."], en: "No, you're wrong (formal): the Mona Lisa isn't big." } }
+      - { es: "J'ai besoin d'un café, s'il te plaît.", en: "I need a coffee, please.", altEs: ["J'ai besoin d'un café, s'il vous plaît."], grammar: [g.avoir-expressions], vocab: [w.besoin, w.avoir-besoin-de] }
+      - { es: "Nous avons besoin d'un plan du musée.", en: "We need a map of the museum.", altEs: ["On a besoin d'un plan du musée."], grammar: [g.avoir-expressions], vocab: [w.avoir-besoin-de], transform: { instruction: "Change to 'I'", answer: "J'ai besoin d'un plan du musée.", en: "I need a map of the museum." } }
+      - { es: "Tu as envie d'une glace ?", en: "Do you feel like an ice cream?", altEs: ["As-tu envie d'une glace ?", "Vous avez envie d'une glace ?", "Est-ce que tu as envie d'une glace ?"], altEn: ["Do you fancy an ice cream?"], grammar: [g.avoir-expressions], vocab: [w.envie, w.avoir-envie-de] }
+      - { es: "Je n'ai pas envie de marcher.", en: "I don't feel like walking.", altEn: ["I don't want to walk."], grammar: [g.avoir-expressions, g.negation-ne-pas], vocab: [w.avoir-envie-de] }
+      - { es: "Les enfants ont sommeil.", en: "The children are sleepy.", altEn: ["The kids are sleepy."], grammar: [g.avoir-expressions], vocab: [w.sommeil], transform: { instruction: "Change to 'I'", answer: "J'ai sommeil.", en: "I'm sleepy." } }
+      - { es: "J'ai froid ici, pas toi ?", en: "I'm cold in here, aren't you?", altEs: ["J'ai froid ici, et toi ?"], altEn: ["I'm cold here, aren't you?"], grammar: [g.avoir-expressions], vocab: [] }
+      - { es: "Il a chaud parce qu'il porte un gros pull.", en: "He's hot because he's wearing a thick jumper.", altEn: ["He's hot because he's wearing a big jumper.", "He's hot because he's wearing a thick sweater."], grammar: [g.avoir-expressions], vocab: [w.gros] }
+      - { es: "Elle a l'air fatiguée.", en: "She looks tired.", altEs: ["Elle a l'air fatigué."], altEn: ["She seems tired."], grammar: [g.avoir-expressions], vocab: [] }
+      - { es: "Tu as de la chance : il n'y a pas de queue aujourd'hui.", en: "You're lucky: there's no queue today.", altEs: ["Tu as de la chance, il n'y a pas de queue aujourd'hui."], grammar: [g.avoir-expressions, g.de-after-negation], vocab: [] }
+      - { es: "Mon fils a dix ans et il a toujours faim.", en: "My son is ten and he's always hungry.", altEn: ["My son is ten years old and he's always hungry."], grammar: [g.avoir-expressions], vocab: [w.faim], error: { wrong: "Mon fils est dix ans et il a toujours faim.", explain: "Age also takes avoir: il a dix ans.", grammar: g.avoir-expressions } }
+    exchanges:
+      - q: { es: "Tu as faim ?", en: "Are you hungry?" }
+        a: { es: "Oui, très faim ! On mange ?", en: "Yes, very! Shall we eat?" }
+        alt: ["Oui, j'ai très faim.", "Non, pas encore.", "Non, merci."]
+        grammar: [g.avoir-expressions]
+        vocab: [w.faim]
+      - q: { es: "Vous avez besoin d'aide ?", en: "Do you need help?" }
+        a: { es: "Oui, merci. Où est la Joconde, s'il vous plaît ?", en: "Yes, thank you. Where's the Mona Lisa, please?" }
+        alt: ["Non, merci, ça va.", "Oui, je cherche la Joconde."]
+        grammar: [g.avoir-expressions]
+        vocab: [w.besoin]
+      - q: { es: "Tu as envie de voir la Joconde ?", en: "Do you feel like seeing the Mona Lisa?" }
+        a: { es: "Oui, mais j'ai peur de la queue !", en: "Yes, but I'm scared of the queue!" }
+        alt: ["Oui, très envie.", "Non, pas vraiment."]
+        grammar: [g.avoir-expressions]
+        vocab: [w.envie, w.peur]
+      - q: { es: "La Joconde est grande, non ?", en: "The Mona Lisa is big, isn't it?" }
+        a: { es: "Non, tu as tort : elle est petite.", en: "No, you're wrong: it's small." }
+        alt: ["Non, elle est assez petite.", "Pas du tout !"]
+        grammar: [g.avoir-expressions]
+        vocab: [w.tort]
+      - q: { es: "On rentre ? J'ai sommeil.", en: "Shall we go home? I'm sleepy." }
+        a: { es: "Tu as raison, il est tard.", en: "You're right, it's late." }
+        alt: ["D'accord, moi aussi, j'ai sommeil.", "Oui, on rentre."]
+        grammar: [g.avoir-expressions]
+        vocab: [w.sommeil, w.raison]
+    texts:
+      - title: "Au café du musée"
+        es: ["Thomas a faim et Julie a soif.", "Ils ont envie d'un café et d'un croissant.", "Mais il y a beaucoup de monde !"]
+        en: ["Thomas is hungry and Julie is thirsty.", "They feel like a coffee and a croissant.", "But there are lots of people!"]
+        grammar: [g.avoir-expressions]
+        vocab: [w.faim, w.soif, w.avoir-envie-de]
+      - title: "Message à maman"
+        es: ["Maman, j'ai froid et j'ai sommeil.", "Tu as raison : le musée, c'est long !", "On rentre à quelle heure ?"]
+        en: ["Mum, I'm cold and I'm sleepy.", "You're right: the museum takes ages!", "What time are we going home?"]
+        grammar: [g.avoir-expressions]
+        vocab: [w.sommeil, w.raison]
+    spicy:
+      - { es: "J'ai faim, j'ai soif… et j'ai envie de danser avec toi.", en: "I'm hungry, I'm thirsty... and I feel like dancing with you.", grammar: [g.avoir-expressions], vocab: [w.faim, w.soif, w.avoir-envie-de] }
+      - { es: "Tu as raison, je suis timide. Mais j'ai envie de ton numéro.", en: "You're right, I'm shy. But I want your number.", altEn: ["You're right, I'm shy. But I'd like your number."], grammar: [g.avoir-expressions], vocab: [w.raison, w.avoir-envie-de] }
+      - { es: "Tu as froid ? Prends ma veste.", en: "Are you cold? Take my jacket.", altEs: ["Vous avez froid ? Prenez ma veste."], grammar: [g.avoir-expressions], vocab: [] }
+      - { es: "Je n'ai pas peur des chiens, j'ai peur de tes yeux bleus.", en: "I'm not afraid of dogs, I'm afraid of your blue eyes.", grammar: [g.avoir-expressions], vocab: [w.peur] }
+      - { es: "Tu as sommeil ? Ou tu as besoin d'un café avec moi ?", en: "Are you sleepy? Or do you need a coffee with me?", grammar: [g.avoir-expressions], vocab: [w.sommeil, w.avoir-besoin-de] }
+  - id: a1.u07.l4
+    title: Les couleurs et les vêtements
+    teach: [g.colours]
+    vocab: [w.couleur, w.rouge, w.bleu, w.vert, w.jaune, w.noir, w.blanc, w.gris, w.rose, w.orange, w.marron, w.violet, w.beige, w.clair, w.foncé, w.porter, w.chercher, w.pantalon, w.chemise, w.robe, w.veste, w.pull, w.chaussure, w.lunettes]
+    tip: "Colours go after the noun and agree (une robe verte), but marron and orange never change: des yeux marron."
+    sentences:
+      - { es: "Elle porte une robe noire et une veste rouge.", en: "She's wearing a black dress and a red jacket.", altEn: ["She wears a black dress and a red jacket."], grammar: [g.colours], vocab: [w.porter, w.robe, w.noir, w.veste, w.rouge] }
+      - { es: "Je cherche un pantalon gris.", en: "I'm looking for grey trousers.", altEn: ["I'm looking for a pair of grey trousers.", "I'm looking for gray pants."], grammar: [g.colours], vocab: [w.chercher, w.pantalon, w.gris], error: { wrong: "Je cherche un gris pantalon.", explain: "Colours always come after the noun: un pantalon gris.", grammar: g.colours } }
+      - { es: "Mes chaussures sont blanches.", en: "My shoes are white.", grammar: [g.colours], vocab: [w.chaussure, w.blanc], transform: { instruction: "Change to 'my shirt' (ma chemise)", answer: "Ma chemise est blanche.", en: "My shirt is white." } }
+      - { es: "Il porte des lunettes noires.", en: "He wears black glasses.", altEn: ["He's wearing black glasses."], grammar: [g.colours], vocab: [w.lunettes, w.porter] }
+      - { es: "Tu aimes quelle couleur ?", en: "Which colour do you like?", altEs: ["Quelle couleur tu aimes ?", "Quelle couleur aimes-tu ?", "Vous aimez quelle couleur ?"], altEn: ["What colour do you like?"], grammar: [g.colours, g.question-words], vocab: [w.couleur] }
+      - { es: "J'adore le bleu clair.", en: "I love light blue.", grammar: [g.colours], vocab: [w.bleu, w.clair], transform: { instruction: "Change to 'dark blue'", answer: "J'adore le bleu foncé.", en: "I love dark blue." } }
+      - { es: "Elle a les yeux marron et les cheveux roux.", en: "She has brown eyes and red hair.", altEs: ["Elle a les cheveux roux et les yeux marron."], altEn: ["She has brown eyes and ginger hair."], grammar: [g.colours], vocab: [w.marron], error: { wrong: "Elle a les yeux marrons et les cheveux roux.", explain: "Marron is invariable (it is also the word for a chestnut): des yeux marron.", grammar: g.colours } }
+      - { es: "Il porte une chemise rose et un pull violet.", en: "He's wearing a pink shirt and a purple jumper.", altEn: ["He's wearing a pink shirt and a purple sweater."], grammar: [g.colours], vocab: [w.chemise, w.rose, w.pull, w.violet] }
+      - { es: "Le pull vert foncé est trop cher.", en: "The dark green jumper is too expensive.", altEn: ["The dark green sweater is too expensive."], grammar: [g.colours, g.tres-trop-assez], vocab: [w.vert, w.foncé], note: "Compound colours never agree: une veste vert foncé, des yeux bleu clair." }
+      - { es: "Les chaises du jardin du Luxembourg sont vertes.", en: "The chairs in the Luxembourg Garden are green.", grammar: [g.colours], vocab: [w.vert] }
+      - { es: "Mon vélo est jaune et orange.", en: "My bike is yellow and orange.", altEs: ["Mon vélo est orange et jaune."], grammar: [g.colours], vocab: [w.jaune, w.orange] }
+      - { es: "Tu portes souvent du beige ?", en: "Do you often wear beige?", altEs: ["Vous portez souvent du beige ?", "Est-ce que tu portes souvent du beige ?"], grammar: [g.colours, g.frequency-adverbs], vocab: [w.beige, w.porter] }
+      - { es: "Ma mère cherche des chaussures orange.", en: "My mother is looking for orange shoes.", grammar: [g.colours], vocab: [w.orange, w.chaussure, w.chercher], transform: { instruction: "Change to 'a dress' (une robe)", answer: "Ma mère cherche une robe orange.", en: "My mother is looking for an orange dress." } }
+      - { es: "Il porte toujours un pantalon bleu et une chemise blanche.", en: "He always wears blue trousers and a white shirt.", grammar: [g.colours, g.frequency-adverbs], vocab: [w.pantalon, w.bleu, w.chemise, w.blanc] }
+      - { es: "Devant le Louvre, il y a une pyramide de verre.", en: "In front of the Louvre there's a glass pyramid.", altEs: ["Il y a une pyramide de verre devant le Louvre."], grammar: [g.il-y-a, g.prepositions-place], vocab: [] }
+    exchanges:
+      - q: { es: "Tu cherches quoi ?", en: "What are you looking for?" }
+        a: { es: "Je cherche une veste noire.", en: "I'm looking for a black jacket." }
+        alt: ["Une veste noire.", "Un pull bleu.", "Mes lunettes !"]
+        grammar: [g.colours]
+        vocab: [w.chercher, w.veste, w.noir]
+      - q: { es: "De quelle couleur sont ses yeux ?", en: "What colour are her eyes?" }
+        a: { es: "Elle a les yeux bleus.", en: "She has blue eyes." }
+        alt: ["Ils sont bleus.", "Bleus.", "Elle a les yeux marron."]
+        grammar: [g.colours]
+        vocab: [w.couleur, w.bleu]
+      - q: { es: "Qu'est-ce que tu portes ce soir ?", en: "What are you wearing tonight?" }
+        a: { es: "Ma robe rouge et mes chaussures noires.", en: "My red dress and my black shoes." }
+        alt: ["Un pantalon noir et une chemise blanche.", "Ma robe rouge."]
+        grammar: [g.colours]
+        vocab: [w.porter, w.robe, w.chaussure]
+      - q: { es: "Tu préfères le pull gris ou le pull rose ?", en: "Do you prefer the grey jumper or the pink jumper?" }
+        a: { es: "Le rose ! Le gris est trop triste.", en: "The pink one! The grey one is too dull." }
+        alt: ["Le gris.", "Je préfère le rose.", "Le rose, bien sûr."]
+        grammar: [g.colours]
+        vocab: [w.gris, w.rose, w.pull]
+      - q: { es: "Où sont mes lunettes ?", en: "Where are my glasses?" }
+        a: { es: "Elles sont sur la table, à côté de ton sac.", en: "They're on the table, next to your bag." }
+        alt: ["Sur la table.", "Je ne sais pas."]
+        grammar: [g.prepositions-place]
+        vocab: [w.lunettes]
+    texts:
+      - title: "Le portrait de la Joconde"
+        es: ["La Joconde porte une robe foncée.", "Elle a les cheveux bruns et longs.", "Derrière elle, il y a des couleurs bleues et vertes."]
+        en: ["The Mona Lisa is wearing a dark dress.", "She has long dark hair.", "Behind her there are blue and green colours."]
+        grammar: [g.colours]
+        vocab: [w.porter, w.robe, w.foncé, w.couleur]
+      - title: "Message de Camille"
+        es: ["Ce soir, je porte ma robe verte.", "Et toi ? Tu portes ta chemise bleue ?", "Pas ton pull orange, s'il te plaît !"]
+        en: ["Tonight I'm wearing my green dress.", "And you? Are you wearing your blue shirt?", "Not your orange jumper, please!"]
+        grammar: [g.colours]
+        vocab: [w.robe, w.vert, w.chemise, w.pull, w.orange]
+    spicy:
+      - { es: "Le rouge, c'est ta couleur.", en: "Red is your colour.", altEs: ["Le rouge, c'est vraiment ta couleur."], altEn: ["Red is really your colour."], grammar: [g.colours], vocab: [w.rouge, w.couleur] }
+      - { es: "Tu cherches ta veste ? Moi, je cherche ton numéro.", en: "Are you looking for your jacket? I'm looking for your number.", grammar: [g.colours], vocab: [w.chercher, w.veste] }
+      - { es: "Tes yeux sont verts ou bleus ? Je dois regarder de plus près.", en: "Are your eyes green or blue? I need to take a closer look.", altEs: ["Tes yeux sont bleus ou verts ? Je dois regarder de plus près."], altEn: ["Are your eyes green or blue? I have to look more closely."], grammar: [g.colours], vocab: [w.vert, w.bleu] }
+      - { es: "Avec ta chemise rose, tu es trop mignon.", en: "In your pink shirt, you're so cute.", altEn: ["With your pink shirt, you're so cute."], grammar: [g.colours, g.tres-trop-assez], vocab: [w.chemise, w.rose] }
+      - { es: "Une robe noire, des chaussures rouges… et un sourire pour toi.", en: "A black dress, red shoes... and a smile for you.", grammar: [g.colours], vocab: [w.robe, w.noir, w.chaussure, w.rouge] }
+dialogues:
+  - id: a1.u07.d1
+    title: Devant la Joconde
+    context: Julie and Thomas are in the Louvre, in front of the most famous painting in the world.
+    lines:
+      - { speaker: Julie, es: "Regarde, Thomas, c'est la Joconde !", en: "Look, Thomas, it's the Mona Lisa!" }
+      - { speaker: Thomas, es: "Où ? Je ne vois rien. Il y a trop de monde !", en: "Where? I can't see anything. There are too many people!" }
+      - { speaker: Julie, es: "Là, derrière le monsieur avec le chapeau gris.", en: "There, behind the man with the grey hat." }
+      - { speaker: Thomas, es: "Ah oui ! Mais elle est petite !", en: "Oh yes! But it's small!" }
+      - { speaker: Julie, es: "Oui, c'est un petit tableau. Mais regarde son sourire.", en: "Yes, it's a small painting. But look at her smile." }
+      - { speaker: Thomas, es: "Elle a les cheveux longs et une robe foncée. Elle sourit ou elle est sérieuse ?", en: "She has long hair and a dark dress. Is she smiling or is she serious?" }
+      - { speaker: Julie, es: "Elle sourit un peu… ou pas. Personne ne sait !", en: "She's smiling a little... or not. Nobody knows!" }
+      - { speaker: Thomas, es: "Bon, j'ai faim. On va au café ?", en: "Right, I'm hungry. Shall we go to the café?" }
+      - { speaker: Julie, es: "Déjà ? Tu as toujours faim, toi !", en: "Already? You're always hungry, you are!" }
+      - { speaker: Thomas, es: "Et toi, tu as toujours raison, non ?", en: "And you're always right, aren't you?" }
+    questions:
+      - { q: "Pourquoi Thomas ne voit pas le tableau ?", options: ["Il n'a pas ses lunettes.", "Il y a trop de monde.", "Le musée est fermé."], answer: 1, explain: "Thomas says « Il y a trop de monde ! »: there are too many people." }
+      - { q: "Comment est le tableau ?", options: ["Il est très grand.", "Il est petit.", "Il est rouge."], answer: 1, explain: "Julie: « c'est un petit tableau »." }
+      - { q: "Qu'est-ce que la dame du tableau porte ?", options: ["Une robe foncée.", "Un chapeau gris.", "Une veste rouge."], answer: 0, explain: "Thomas: « une robe foncée ». The grey hat belongs to the man in front of them." }
+      - { q: "Qu'est-ce que Thomas a envie de faire ?", options: ["Rentrer à l'hôtel.", "Aller au café.", "Voir un autre tableau."], answer: 1, explain: "He's hungry: « On va au café ? »" }

@@ -1,0 +1,279 @@
+id: a1.u08
+title: "Ça coûte combien ?"
+lessons:
+  - id: a1.u08.l1
+    title: Ce pull ou cette jupe ?
+    teach: [g.demonstratives]
+    vocab: [w.vêtement, w.jupe, w.manteau, w.t-shirt, w.chapeau, w.sac, w.taille, w.foulard, w.béret, w.soie, w.ce, w.mode, w.shopping, w.vendeur, w.aider]
+    tip: "Ce pull, cet homme, cette robe, ces chaussures: one word for both 'this' and 'that'. Add -ci or -là to the noun to contrast."
+    sentences:
+      - { es: "Combien coûte ce pull ?", en: "How much is this jumper?", altEs: ["Ce pull coûte combien ?", "Il coûte combien, ce pull ?", "C'est combien, ce pull ?"], altEn: ["How much does this jumper cost?", "How much is that sweater?"], grammar: [g.demonstratives], vocab: [w.ce], error: { wrong: "Combien coûte cette pull ?", explain: "Pull is masculine, so it takes ce: ce pull.", grammar: g.demonstratives } }
+      - { es: "Cette jupe est trop courte.", en: "This skirt is too short.", altEn: ["That skirt is too short."], grammar: [g.demonstratives, g.tres-trop-assez], vocab: [w.jupe, w.ce], transform: { instruction: "Change to the plural", answer: "Ces jupes sont trop courtes.", en: "These skirts are too short." } }
+      - { es: "Cet été, le jaune est à la mode.", en: "This summer, yellow is in fashion.", altEs: ["Le jaune est à la mode cet été."], altEn: ["This summer yellow is fashionable."], grammar: [g.demonstratives], vocab: [w.mode, w.ce], error: { wrong: "Ce été, le jaune est à la mode.", explain: "Before a masculine noun starting with a vowel or silent h, ce becomes cet: cet été.", grammar: g.demonstratives } }
+      - { es: "Je préfère ce manteau-ci, pas ce manteau-là.", en: "I prefer this coat, not that coat.", altEs: ["Je préfère ce manteau-ci, pas celui-là."], altEn: ["I prefer this coat, not that one."], grammar: [g.demonstratives, g.aimer-preferer], vocab: [w.manteau, w.ce, w.ci] }
+      - { es: "Vous avez ce t-shirt en taille M ?", en: "Do you have this T-shirt in size M?", altEs: ["Est-ce que vous avez ce t-shirt en taille M ?", "Avez-vous ce t-shirt en taille M ?", "Vous avez ce tee-shirt en taille M ?"], altEn: ["Have you got this T-shirt in a medium?"], grammar: [g.demonstratives], vocab: [w.t-shirt, w.taille] }
+      - { es: "Vous faites quelle taille ?", en: "What size are you?", altEs: ["Quelle taille faites-vous ?", "Tu fais quelle taille ?"], altEn: ["What size do you take?"], grammar: [g.question-words], vocab: [w.taille] }
+      - { es: "Ce chapeau est drôle, non ?", en: "This hat is funny, isn't it?", altEs: ["Il est drôle, ce chapeau, non ?"], altEn: ["That hat is funny, isn't it?"], grammar: [g.demonstratives], vocab: [w.chapeau, w.ce] }
+      - { es: "Cet homme est vendeur aux Galeries Lafayette.", en: "This man is a shop assistant at the Galeries Lafayette.", altEn: ["That man is a sales assistant at the Galeries Lafayette."], grammar: [g.demonstratives], vocab: [w.vendeur, w.ce] }
+      - { es: "Je peux vous aider, madame ?", en: "Can I help you, madam?", altEs: ["Est-ce que je peux vous aider, madame ?", "Je peux vous aider ?"], altEn: ["May I help you, madam?"], grammar: [g.tu-vs-vous], vocab: [w.aider] }
+      - { es: "Ce foulard en soie est très beau.", en: "This silk scarf is very beautiful.", altEn: ["That silk scarf is very beautiful.", "This silk scarf is really lovely."], grammar: [g.demonstratives], vocab: [w.foulard, w.soie] }
+      - { es: "Ce béret est pour mon père.", en: "This beret is for my father.", altEn: ["That beret is for my dad."], grammar: [g.demonstratives], vocab: [w.béret], transform: { instruction: "Change to 'these berets'", answer: "Ces bérets sont pour mon père.", en: "These berets are for my father." } }
+      - { es: "J'adore le shopping, mais pas ce week-end : il y a trop de monde.", en: "I love shopping, but not this weekend: there are too many people.", altEs: ["J'adore le shopping, mais pas ce week-end, il y a trop de monde."], grammar: [g.demonstratives, g.quantities], vocab: [w.shopping] }
+      - { es: "Ce sac noir est à toi ?", en: "Is this black bag yours?", altEs: ["Il est à toi, ce sac noir ?", "C'est ton sac, ce sac noir ?"], altEn: ["Is that black bag yours?"], grammar: [g.demonstratives, g.colours], vocab: [w.sac], transform: { instruction: "Use vous instead of tu", answer: "Ce sac noir est à vous ?", alt: ["Il est à vous, ce sac noir ?"], en: "Is this black bag yours? (formal)" } }
+      - { es: "Les vêtements de ce magasin sont chers.", en: "The clothes in this shop are expensive.", altEn: ["The clothes in that shop are expensive."], grammar: [g.demonstratives], vocab: [w.vêtement] }
+      - { es: "Cet après-midi, on fait du shopping sous la coupole.", en: "This afternoon we're going shopping under the dome.", altEs: ["Cet après-midi, nous faisons du shopping sous la coupole."], grammar: [g.demonstratives, g.on-nous], vocab: [w.shopping, w.coupole] }
+    exchanges:
+      - q: { es: "Je peux vous aider ?", en: "Can I help you?" }
+        a: { es: "Oui, je cherche un manteau noir.", en: "Yes, I'm looking for a black coat." }
+        alt: ["Non merci, je regarde.", "Oui, je cherche une jupe."]
+        grammar: [g.tu-vs-vous]
+        vocab: [w.aider, w.manteau]
+      - q: { es: "Vous faites quelle taille ?", en: "What size are you?" }
+        a: { es: "Je fais du 38.", en: "I'm a 38." }
+        alt: ["Du 38.", "Taille M.", "Je fais du M."]
+        grammar: [g.question-words]
+        vocab: [w.taille]
+      - q: { es: "Tu préfères cette jupe-ci ou cette jupe-là ?", en: "Do you prefer this skirt or that skirt?" }
+        a: { es: "Cette jupe-là, la rouge.", en: "That skirt, the red one." }
+        alt: ["La rouge.", "Cette jupe-ci.", "Les deux !"]
+        grammar: [g.demonstratives]
+        vocab: [w.jupe, w.ce]
+      - q: { es: "Il est à qui, ce sac ?", en: "Whose bag is this?" }
+        a: { es: "C'est le sac de Julie.", en: "It's Julie's bag." }
+        alt: ["C'est mon sac.", "À Julie.", "Il est à moi."]
+        grammar: [g.demonstratives]
+        vocab: [w.sac]
+      - q: { es: "Tu aimes ce chapeau ?", en: "Do you like this hat?" }
+        a: { es: "Oui, il est très drôle ! Et ce béret ?", en: "Yes, it's very funny! And this beret?" }
+        alt: ["Non, il est moche.", "Oui, beaucoup."]
+        grammar: [g.demonstratives]
+        vocab: [w.chapeau, w.béret]
+    texts:
+      - title: "Aux Galeries Lafayette"
+        es: ["Les Galeries Lafayette sont un grand magasin.", "Il y a beaucoup de vêtements, de sacs et de chaussures.", "Sous la coupole, on lève les yeux : c'est très beau !"]
+        en: ["The Galeries Lafayette is a department store.", "There are lots of clothes, bags and shoes.", "Under the dome you look up: it's very beautiful!"]
+        grammar: [g.quantities]
+        vocab: [w.vêtement, w.sac, w.coupole]
+      - title: "Message de Sophie"
+        es: ["Je suis au troisième étage.", "Cette robe est super, mais ce manteau est trop cher.", "Tu viens m'aider ?"]
+        en: ["I'm on the third floor.", "This dress is great, but this coat is too expensive.", "Are you coming to help me?"]
+        grammar: [g.demonstratives]
+        vocab: [w.ce, w.manteau, w.aider]
+    spicy:
+      - { es: "Cette robe ? Elle est jolie, mais toi, tu es plus jolie.", en: "This dress? It's pretty, but you're prettier.", grammar: [g.demonstratives], vocab: [w.ce] }
+      - { es: "Ce vendeur est très gentil… et très mignon.", en: "This shop assistant is very kind... and very cute.", altEs: ["Cette vendeuse est très gentille… et très mignonne."], grammar: [g.demonstratives], vocab: [w.vendeur] }
+      - { es: "Cette chemise est parfaite pour un rendez-vous ce soir.", en: "This shirt is perfect for a date tonight.", grammar: [g.demonstratives], vocab: [w.ce] }
+      - { es: "Tu essaies ce chapeau ? Avec ton sourire, tout te va.", en: "Are you trying on this hat? With your smile, everything suits you.", altEs: ["Tu essayes ce chapeau ? Avec ton sourire, tout te va."], grammar: [g.demonstratives, g.stem-changing-er], vocab: [w.chapeau] }
+      - { es: "Ce béret, ce foulard, ce sourire : très parisien !", en: "This beret, this scarf, this smile: very Parisian!", grammar: [g.demonstratives], vocab: [w.béret, w.foulard] }
+  - id: a1.u08.l2
+    title: "J'achète, tu paies"
+    teach: [g.stem-changing-er]
+    vocab: [w.acheter, w.payer, w.essayer, w.coûter, w.carte-bancaire, w.espèces, w.caisse, w.soldes, w.cher, w.bon-marché, w.demander, w.argent]
+    tip: "Some -er verbs change their stem when the ending is silent (je, tu, il, ils): j'achète, je paie, je préfère — but nous achetons, vous payez."
+    sentences:
+      - { es: "J'achète une robe pour la fête.", en: "I'm buying a dress for the party.", altEn: ["I buy a dress for the party."], grammar: [g.stem-changing-er], vocab: [w.acheter], error: { wrong: "J'achete une robe pour la fête.", explain: "With je, tu, il and ils, acheter takes a grave accent: j'achète.", grammar: g.stem-changing-er } }
+      - { es: "Nous achetons du pain et du fromage.", en: "We're buying bread and cheese.", altEs: ["On achète du pain et du fromage."], altEn: ["We buy bread and cheese.", "We're buying some bread and some cheese."], grammar: [g.stem-changing-er, g.partitive-articles], vocab: [w.acheter], transform: { instruction: "Change to 'they'", answer: "Ils achètent du pain et du fromage.", alt: ["Elles achètent du pain et du fromage."], en: "They're buying bread and cheese." } }
+      - { es: "Tu paies par carte bancaire ?", en: "Are you paying by bank card?", altEs: ["Tu payes par carte bancaire ?", "Vous payez par carte bancaire ?", "Tu paies par carte ?"], altEn: ["Are you paying by card?"], grammar: [g.stem-changing-er], vocab: [w.payer, w.carte-bancaire] }
+      - { es: "Non, je paie en espèces.", en: "No, I'm paying cash.", altEs: ["Non, je paye en espèces."], altEn: ["No, I'm paying in cash.", "No, I pay cash."], grammar: [g.stem-changing-er], vocab: [w.payer, w.espèces] }
+      - { es: "Elle essaie une jupe et un pull.", en: "She's trying on a skirt and a jumper.", altEs: ["Elle essaye une jupe et un pull."], altEn: ["She tries on a skirt and a jumper.", "She's trying on a skirt and a sweater."], grammar: [g.stem-changing-er], vocab: [w.essayer], transform: { instruction: "Change to 'we' (nous)", answer: "Nous essayons une jupe et un pull.", alt: ["On essaie une jupe et un pull.", "On essaye une jupe et un pull."], en: "We're trying on a skirt and a jumper." } }
+      - { es: "Je peux essayer ce manteau ?", en: "Can I try on this coat?", altEs: ["Est-ce que je peux essayer ce manteau ?", "Je peux essayer ce manteau, s'il vous plaît ?"], altEn: ["May I try this coat on?", "Can I try this coat on?"], grammar: [g.demonstratives], vocab: [w.essayer] }
+      - { es: "Combien coûtent ces chaussures ?", en: "How much are these shoes?", altEs: ["Ces chaussures coûtent combien ?", "Elles coûtent combien, ces chaussures ?"], altEn: ["How much do these shoes cost?"], grammar: [g.demonstratives], vocab: [w.coûter] }
+      - { es: "C'est trop cher pour moi.", en: "It's too expensive for me.", altEn: ["That's too expensive for me."], grammar: [g.tres-trop-assez], vocab: [w.cher] }
+      - { es: "En janvier, ce sont les soldes : tout est bon marché.", en: "In January it's the sales: everything is cheap.", altEs: ["En janvier, c'est les soldes : tout est bon marché."], grammar: [g.days-months-dates], vocab: [w.soldes, w.bon-marché] }
+      - { es: "La caisse est là, à droite.", en: "The checkout is there, on the right.", altEs: ["La caisse est là, sur la droite."], altEn: ["The till is over there, on the right."], grammar: [g.prepositions-place], vocab: [w.caisse] }
+      - { es: "Mes parents préfèrent payer en espèces.", en: "My parents prefer to pay cash.", altEn: ["My parents prefer paying cash.", "My parents prefer to pay in cash."], grammar: [g.stem-changing-er, g.aimer-preferer], vocab: [w.payer, w.espèces] }
+      - { es: "Vous préférez le rouge ou le bleu ?", en: "Do you prefer the red or the blue?", altEs: ["Tu préfères le rouge ou le bleu ?", "Préférez-vous le rouge ou le bleu ?"], altEn: ["Do you prefer the red one or the blue one?"], grammar: [g.stem-changing-er], vocab: [], error: { wrong: "Vous préfèrez le rouge ou le bleu ?", explain: "With nous and vous the ending is heard, so the stem keeps é: vous préférez.", grammar: g.stem-changing-er } }
+      - { es: "Je demande le prix au vendeur.", en: "I ask the shop assistant the price.", altEn: ["I ask the sales assistant for the price."], grammar: [g.contractions-au-du], vocab: [w.demander, w.prix, w.vendeur] }
+      - { es: "Tu n'as pas assez d'argent ? Je paie !", en: "You haven't got enough money? I'll pay!", altEs: ["Tu n'as pas assez d'argent ? Je paye !", "Tu n'as pas assez d'argent ? C'est moi qui paie !"], altEn: ["Don't you have enough money? I'll pay!"], grammar: [g.stem-changing-er, g.quantities], vocab: [w.argent, w.payer], transform: { instruction: "Use nous instead of je", answer: "Tu n'as pas assez d'argent ? Nous payons !", alt: ["Tu n'as pas assez d'argent ? On paie !", "Tu n'as pas assez d'argent ? On paye !"], en: "You haven't got enough money? We'll pay!" } }
+      - { es: "Mon fils m'appelle toujours de la caisse : « Maman, j'ai besoin d'argent ! »", en: "My son always calls me from the checkout: 'Mum, I need money!'", grammar: [g.stem-changing-er, g.avoir-expressions], vocab: [w.caisse, w.argent] }
+    exchanges:
+      - q: { es: "Vous payez comment ?", en: "How are you paying?" }
+        a: { es: "Par carte bancaire, s'il vous plaît.", en: "By bank card, please." }
+        alt: ["En espèces.", "Par carte.", "En espèces, s'il vous plaît."]
+        grammar: [g.stem-changing-er]
+        vocab: [w.payer, w.carte-bancaire]
+      - q: { es: "Combien coûte ce sac ?", en: "How much is this bag?" }
+        a: { es: "Il coûte cinquante euros.", en: "It costs fifty euros." }
+        alt: ["Cinquante euros.", "Il est à cinquante euros."]
+        grammar: [g.demonstratives]
+        vocab: [w.coûter]
+      - q: { es: "Je peux essayer cette robe ?", en: "Can I try on this dress?" }
+        a: { es: "Oui, bien sûr. Vous faites quelle taille ?", en: "Yes, of course. What size are you?" }
+        alt: ["Oui, allez-y.", "Oui, bien sûr."]
+        grammar: [g.stem-changing-er]
+        vocab: [w.essayer]
+      - q: { es: "Tu achètes quoi pour ta sœur ?", en: "What are you buying for your sister?" }
+        a: { es: "J'achète un foulard en soie.", en: "I'm buying a silk scarf." }
+        alt: ["Un foulard.", "Je ne sais pas encore."]
+        grammar: [g.stem-changing-er]
+        vocab: [w.acheter, w.foulard]
+      - q: { es: "C'est cher ?", en: "Is it expensive?" }
+        a: { es: "Non, avec les soldes, c'est bon marché.", en: "No, with the sales, it's cheap." }
+        alt: ["Oui, trop cher.", "Non, pas très cher."]
+        grammar: [g.tres-trop-assez]
+        vocab: [w.cher, w.soldes, w.bon-marché]
+    texts:
+      - title: "Les soldes"
+        es: ["En France, les soldes d'hiver commencent en janvier.", "On achète beaucoup de vêtements.", "Il y a la queue à toutes les caisses !"]
+        en: ["In France the winter sales start in January.", "People buy lots of clothes.", "There's a queue at every checkout!"]
+        grammar: [g.stem-changing-er, g.on-nous]
+        vocab: [w.soldes, w.acheter, w.caisse]
+      - title: "Note de Paul"
+        es: ["J'achète le pain, tu paies le fromage.", "Et le vin ? On demande à Julie !", "Elle a toujours de l'argent."]
+        en: ["I'll buy the bread, you pay for the cheese.", "And the wine? Let's ask Julie!", "She always has money."]
+        grammar: [g.stem-changing-er]
+        vocab: [w.acheter, w.payer, w.demander, w.argent]
+    spicy:
+      - { es: "Je paie le dîner, tu paies le dessert ?", en: "I'll pay for dinner, will you pay for dessert?", altEs: ["Je paye le dîner, tu payes le dessert ?"], grammar: [g.stem-changing-er], vocab: [w.payer] }
+      - { es: "Tu essaies encore une chemise ? Elles sont toutes parfaites sur toi.", en: "Trying on another shirt? They all look perfect on you.", altEs: ["Tu essayes encore une chemise ? Elles sont toutes parfaites sur toi."], grammar: [g.stem-changing-er], vocab: [w.essayer] }
+      - { es: "Tu préfères le cinéma ou un dîner ? Moi, je préfère être avec toi.", en: "Do you prefer the cinema or a dinner? I prefer being with you.", grammar: [g.stem-changing-er, g.aimer-preferer], vocab: [] }
+      - { es: "J'achète deux billets pour le concert : un pour moi, un pour toi.", en: "I'm buying two concert tickets: one for me, one for you.", grammar: [g.stem-changing-er], vocab: [w.acheter] }
+      - { es: "Un sourire ne coûte rien, mais un dîner, si.", en: "A smile costs nothing, but a dinner does.", grammar: [g.stem-changing-er, g.negation-ne-pas], vocab: [w.coûter] }
+  - id: a1.u08.l3
+    title: Soixante-dix, quatre-vingts…
+    teach: [g.numbers-70-100]
+    vocab: [w.soixante-dix, w.quatre-vingts, w.quatre-vingt-dix, w.prix, w.euro, w.centime]
+    tip: "From 70 French counts in twenties: 70 = soixante-dix (60 + 10), 80 = quatre-vingts (4 × 20), 90 = quatre-vingt-dix (4 × 20 + 10)."
+    sentences:
+      - { es: "Ça fait soixante-quinze euros.", en: "That comes to seventy-five euros.", altEs: ["Ça fait 75 euros.", "Ça fait 75 €."], altEn: ["That's seventy-five euros."], grammar: [g.numbers-70-100], vocab: [w.soixante-dix, w.euro], transform: { instruction: "Add five euros", answer: "Ça fait quatre-vingts euros.", alt: ["Ça fait 80 euros.", "Ça fait 80 €."], en: "That comes to eighty euros." } }
+      - { es: "Soixante-dix, quatre-vingts, quatre-vingt-dix, cent.", en: "Seventy, eighty, ninety, a hundred.", grammar: [g.numbers-70-100], vocab: [w.soixante-dix, w.quatre-vingts, w.quatre-vingt-dix, w.cent], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Soixante et onze, soixante-douze, soixante-treize.", en: "Seventy-one, seventy-two, seventy-three.", grammar: [g.numbers-70-100], vocab: [w.soixante-dix], kinds: [dictation, listen, typeEs, order] }
+      - { es: "Ma grand-mère a quatre-vingt-deux ans.", en: "My grandmother is eighty-two.", altEs: ["Ma grand-mère a 82 ans."], altEn: ["My grandmother is eighty-two years old."], grammar: [g.numbers-70-100, g.avoir-expressions], vocab: [w.quatre-vingts], error: { wrong: "Ma grand-mère a quatre-vingts-deux ans.", explain: "Quatre-vingts loses its -s when another number follows: quatre-vingt-deux.", grammar: g.numbers-70-100 } }
+      - { es: "Le prix ? Quatre-vingt-dix-neuf euros.", en: "The price? Ninety-nine euros.", altEs: ["Le prix ? 99 euros.", "Le prix ? 99 €."], grammar: [g.numbers-70-100], vocab: [w.prix, w.quatre-vingt-dix] }
+      - { es: "Le foulard coûte quatre-vingt-cinq euros.", en: "The scarf costs eighty-five euros.", altEs: ["Le foulard coûte 85 euros.", "Le foulard coûte 85 €."], grammar: [g.numbers-70-100], vocab: [w.quatre-vingts, w.foulard] }
+      - { es: "Ça fait douze euros et cinquante centimes.", en: "That's twelve euros fifty cents.", altEs: ["Ça fait 12 euros et 50 centimes."], altEn: ["That comes to twelve euros and fifty cents."], grammar: [g.numbers-100-plus], vocab: [w.centime, w.euro], transform: { instruction: "Say it the short way, without centimes", answer: "Ça fait douze euros cinquante.", alt: ["Ça fait 12,50 €.", "Ça fait 12 euros 50."], en: "That's twelve euros fifty." } }
+      - { es: "Mon numéro, c'est le zéro six, soixante-dix-huit, quatre-vingt-onze, douze, quatre-vingts.", en: "My number is zero six, seventy-eight, ninety-one, twelve, eighty.", grammar: [g.numbers-70-100], vocab: [w.soixante-dix, w.quatre-vingt-dix, w.quatre-vingts], kinds: [dictation, listen, typeEn], note: "French phone numbers are read in pairs: 06 78 91 12 80." }
+      - { es: "Il y a soixante-dix personnes devant la caisse !", en: "There are seventy people in front of the checkout!", altEs: ["Il y a 70 personnes devant la caisse !"], grammar: [g.numbers-70-100, g.il-y-a], vocab: [w.soixante-dix, w.caisse] }
+      - { es: "Mon grand-père a quatre-vingt-dix ans aujourd'hui.", en: "My grandfather is ninety today.", altEs: ["Mon grand-père a 90 ans aujourd'hui.", "Aujourd'hui, mon grand-père a quatre-vingt-dix ans."], altEn: ["My grandfather turns ninety today."], grammar: [g.numbers-70-100], vocab: [w.quatre-vingt-dix], transform: { instruction: "Make him one year older", answer: "Mon grand-père a quatre-vingt-onze ans aujourd'hui.", alt: ["Mon grand-père a 91 ans aujourd'hui."], en: "My grandfather is ninety-one today." } }
+      - { es: "Quel est le prix de ce manteau ?", en: "What's the price of this coat?", altEs: ["Quel est le prix du manteau ?", "C'est combien, ce manteau ?"], altEn: ["How much is this coat?"], grammar: [g.quel, g.demonstratives], vocab: [w.prix] }
+      - { es: "Ce n'est pas soixante-six, c'est soixante-seize !", en: "It's not sixty-six, it's seventy-six!", altEs: ["Ce n'est pas 66, c'est 76 !"], grammar: [g.numbers-70-100], vocab: [w.soixante-dix], error: { wrong: "Ce n'est pas soixante-six, c'est soixante-dix-six !", explain: "76 is sixty-sixteen: soixante-seize. Use the numbers 11 to 19 after soixante and quatre-vingt.", grammar: g.numbers-70-100 } }
+      - { es: "Ça fait quatre-vingt-dix euros.", en: "That comes to ninety euros.", altEs: ["Ça fait 90 euros.", "Ça fait 90 €."], grammar: [g.numbers-70-100], vocab: [w.quatre-vingt-dix, w.euro], variant: "In Belgium and Switzerland: Ça fait nonante euros. (70 = septante there too.)" }
+      - { es: "Je n'ai pas quatre-vingts euros, j'ai soixante-dix euros.", en: "I don't have eighty euros, I have seventy euros.", altEs: ["Je n'ai pas 80 euros, j'ai 70 euros."], altEn: ["I haven't got eighty euros, I've got seventy."], grammar: [g.numbers-70-100, g.negation-ne-pas], vocab: [w.quatre-vingts, w.soixante-dix] }
+      - { es: "Un euro, c'est cent centimes.", en: "One euro is a hundred cents.", altEs: ["Un euro fait cent centimes."], grammar: [g.numbers-100-plus], vocab: [w.euro, w.centime, w.cent] }
+    exchanges:
+      - q: { es: "Ça fait combien ?", en: "How much is that?" }
+        a: { es: "Ça fait quatre-vingt-quatre euros, s'il vous plaît.", en: "That comes to eighty-four euros, please." }
+        alt: ["Quatre-vingt-quatre euros.", "84 euros."]
+        grammar: [g.numbers-70-100]
+        vocab: [w.quatre-vingts, w.euro]
+      - q: { es: "Quel âge a ta grand-mère ?", en: "How old is your grandmother?" }
+        a: { es: "Elle a quatre-vingt-dix-sept ans !", en: "She's ninety-seven!" }
+        alt: ["Quatre-vingt-dix-sept ans.", "Elle a 97 ans."]
+        grammar: [g.numbers-70-100, g.avoir-expressions]
+        vocab: [w.quatre-vingt-dix]
+      - q: { es: "C'est quoi, ton numéro ?", en: "What's your number?" }
+        a: { es: "Zéro six, soixante-dix, quatre-vingt-huit, quinze, quatre-vingt-dix.", en: "Zero six, seventy, eighty-eight, fifteen, ninety." }
+        alt: ["06 70 88 15 90."]
+        grammar: [g.numbers-70-100]
+        vocab: [w.soixante-dix, w.quatre-vingts, w.quatre-vingt-dix]
+      - q: { es: "Le prix est de soixante-dix euros ?", en: "Is the price seventy euros?" }
+        a: { es: "Non, soixante et onze euros.", en: "No, seventy-one euros." }
+        alt: ["Non, 71 euros.", "Oui, soixante-dix."]
+        grammar: [g.numbers-70-100]
+        vocab: [w.prix, w.soixante-dix]
+      - q: { es: "Tu as de l'argent ?", en: "Have you got any money?" }
+        a: { es: "J'ai quatre-vingts centimes…", en: "I've got eighty cents..." }
+        alt: ["Un peu.", "Non, pas du tout."]
+        grammar: [g.numbers-70-100]
+        vocab: [w.centime, w.quatre-vingts]
+    texts:
+      - title: "À la caisse"
+        es: ["Le pull : soixante-dix euros.", "La jupe : quatre-vingt-cinq euros.", "Total : cent cinquante-cinq euros."]
+        en: ["The jumper: seventy euros.", "The skirt: eighty-five euros.", "Total: one hundred and fifty-five euros."]
+        grammar: [g.numbers-70-100]
+        vocab: [w.soixante-dix, w.quatre-vingts, w.euro]
+      - title: "Message de Louis"
+        es: ["Mamie a quatre-vingt-dix ans samedi !", "On achète un gâteau ?", "Il coûte quatre-vingts euros, c'est cher !"]
+        en: ["Grandma is ninety on Saturday!", "Shall we buy a cake?", "It costs eighty euros, that's expensive!"]
+        grammar: [g.numbers-70-100]
+        vocab: [w.quatre-vingt-dix, w.quatre-vingts]
+    spicy:
+      - { es: "Mon numéro ? Zéro six, soixante-dix-sept… Tu veux la fin au dîner ?", en: "My number? Zero six, seventy-seven... Do you want the rest over dinner?", altEn: ["My number? Zero six, seventy-seven... Want the end of it at dinner?"], grammar: [g.numbers-70-100], vocab: [w.soixante-dix] }
+      - { es: "Sur cent, tu as quatre-vingt-dix-neuf. Le un, c'est pour ton chapeau.", en: "Out of a hundred, you get ninety-nine. The one is for your hat.", grammar: [g.numbers-70-100], vocab: [w.quatre-vingt-dix] }
+      - { es: "Mon grand-père a quatre-vingts ans et il danse mieux que toi.", en: "My grandfather is eighty and he dances better than you.", grammar: [g.numbers-70-100], vocab: [w.quatre-vingts] }
+      - { es: "Quatre-vingt-dix euros pour une chemise ? Pour toi, d'accord.", en: "Ninety euros for a shirt? For you, OK.", grammar: [g.numbers-70-100], vocab: [w.quatre-vingt-dix, w.euro] }
+      - { es: "Soixante-dix photos de toi sur mon portable ? Non… soixante-quinze.", en: "Seventy photos of you on my phone? No... seventy-five.", grammar: [g.numbers-70-100], vocab: [w.soixante-dix] }
+  - id: a1.u08.l4
+    title: Un kilo de pommes, deux cents euros
+    teach: [g.numbers-100-plus, g.quantities]
+    vocab: [w.cent, w.mille, w.million, w.habitant, w.personne, w.loyer, w.kilo, w.bouteille, w.boîte, w.tranche, w.morceau, w.beaucoup]
+    tip: "Cent takes -s only when multiplied and nothing follows (deux cents, deux cent dix); mille never changes. After a quantity, use de with no article: un kilo de pommes."
+    sentences:
+      - { es: "Ce manteau coûte deux cents euros.", en: "This coat costs two hundred euros.", altEs: ["Ce manteau coûte 200 euros.", "Ce manteau coûte 200 €."], grammar: [g.numbers-100-plus], vocab: [w.cent], error: { wrong: "Ce manteau coûte deux cent euros.", explain: "Cent takes -s when it is multiplied and no number follows: deux cents euros.", grammar: g.numbers-100-plus }, transform: { instruction: "Change the price to 300 euros", answer: "Ce manteau coûte trois cents euros.", alt: ["Ce manteau coûte 300 euros.", "Ce manteau coûte 300 €."], en: "This coat costs three hundred euros." } }
+      - { es: "Le loyer est de mille deux cents euros par mois.", en: "The rent is one thousand two hundred euros a month.", altEs: ["Le loyer est de 1 200 euros par mois.", "Le loyer, c'est mille deux cents euros par mois."], altEn: ["The rent is twelve hundred euros a month."], grammar: [g.numbers-100-plus], vocab: [w.loyer, w.mille] }
+      - { es: "Paris a plus de deux millions d'habitants.", en: "Paris has more than two million inhabitants.", altEs: ["Il y a plus de deux millions d'habitants à Paris."], altEn: ["Paris has over two million inhabitants."], grammar: [g.numbers-100-plus], vocab: [w.million, w.habitant] }
+      - { es: "Un kilo de tomates, s'il vous plaît.", en: "A kilo of tomatoes, please.", grammar: [g.quantities], vocab: [w.kilo], transform: { instruction: "Ask for two kilos", answer: "Deux kilos de tomates, s'il vous plaît.", en: "Two kilos of tomatoes, please." } }
+      - { es: "Je voudrais une bouteille d'eau et un morceau de fromage.", en: "I'd like a bottle of water and a piece of cheese.", altEs: ["Une bouteille d'eau et un morceau de fromage, s'il vous plaît."], grammar: [g.quantities, g.je-voudrais], vocab: [w.bouteille, w.morceau] }
+      - { es: "Quatre tranches de jambon, s'il vous plaît.", en: "Four slices of ham, please.", altEs: ["Je voudrais quatre tranches de jambon, s'il vous plaît."], grammar: [g.quantities], vocab: [w.tranche], transform: { instruction: "Ask for two slices", answer: "Deux tranches de jambon, s'il vous plaît.", en: "Two slices of ham, please." } }
+      - { es: "Il y a beaucoup de monde aux Galeries Lafayette le samedi.", en: "There are a lot of people at the Galeries Lafayette on Saturdays.", altEs: ["Le samedi, il y a beaucoup de monde aux Galeries Lafayette."], grammar: [g.quantities], vocab: [w.beaucoup], error: { wrong: "Il y a beaucoup du monde aux Galeries Lafayette le samedi.", explain: "After beaucoup, use de with no article: beaucoup de monde.", grammar: g.quantities } }
+      - { es: "J'achète une boîte de macarons pour ma mère.", en: "I'm buying a box of macarons for my mother.", altEn: ["I'm buying a box of macaroons for my mum."], grammar: [g.quantities, g.stem-changing-er], vocab: [w.boîte] }
+      - { es: "Combien de personnes travaillent ici ?", en: "How many people work here?", altEs: ["Il y a combien de personnes qui travaillent ici ?"], grammar: [g.quantities, g.question-words], vocab: [w.personne] }
+      - { es: "Tu as assez d'argent ? — Non, j'ai peu d'argent ce mois-ci.", en: "Have you got enough money? — No, I haven't got much money this month.", altEs: ["Tu as assez d'argent ? — Non, ce mois-ci, j'ai peu d'argent."], grammar: [g.quantities, g.demonstratives], vocab: [w.argent] }
+      - { es: "La tour Eiffel date de mille huit cent quatre-vingt-neuf.", en: "The Eiffel Tower dates from 1889.", altEs: ["La tour Eiffel date de 1889.", "La tour Eiffel date de dix-huit cent quatre-vingt-neuf."], altEn: ["The Eiffel Tower dates from eighteen eighty-nine."], grammar: [g.numbers-100-plus], vocab: [w.mille, w.cent] }
+      - { es: "Un peu de sucre ? — Non merci, pas de sucre.", en: "A little sugar? — No thanks, no sugar.", altEs: ["Un peu de sucre ? — Non, merci, pas de sucre."], grammar: [g.quantities, g.de-after-negation], vocab: [] }
+      - { es: "Un demi-kilo de pommes, s'il vous plaît.", en: "Half a kilo of apples, please.", altEs: ["Une livre de pommes, s'il vous plaît."], altEn: ["Five hundred grams of apples, please."], grammar: [g.quantities], vocab: [w.kilo] }
+      - { es: "Ça coûte mille cinq cents euros ? C'est beaucoup trop cher !", en: "It costs one thousand five hundred euros? That's far too expensive!", altEs: ["Ça coûte 1 500 euros ? C'est beaucoup trop cher !", "Ça coûte quinze cents euros ? C'est beaucoup trop cher !"], altEn: ["It costs fifteen hundred euros? That's way too expensive!"], grammar: [g.numbers-100-plus, g.tres-trop-assez], vocab: [w.mille, w.beaucoup] }
+      - { es: "Trois bouteilles de vin pour vingt personnes, ce n'est pas assez.", en: "Three bottles of wine for twenty people isn't enough.", altEs: ["Trois bouteilles de vin pour vingt personnes, ça ne suffit pas."], altEn: ["Three bottles of wine for twenty people is not enough."], grammar: [g.quantities], vocab: [w.bouteille, w.personne] }
+    exchanges:
+      - q: { es: "Vous désirez ?", en: "What would you like?" }
+        a: { es: "Un kilo de pommes et une bouteille de lait, s'il vous plaît.", en: "A kilo of apples and a bottle of milk, please." }
+        alt: ["Un kilo de pommes, s'il vous plaît.", "Une bouteille de lait."]
+        grammar: [g.quantities]
+        vocab: [w.kilo, w.bouteille]
+      - q: { es: "Combien de tranches de jambon ?", en: "How many slices of ham?" }
+        a: { es: "Quatre, s'il vous plaît.", en: "Four, please." }
+        alt: ["Quatre tranches.", "Six, merci."]
+        grammar: [g.quantities]
+        vocab: [w.tranche]
+      - q: { es: "Le loyer, c'est combien ?", en: "How much is the rent?" }
+        a: { es: "Mille cent euros par mois.", en: "One thousand one hundred euros a month." }
+        alt: ["1 100 euros.", "C'est mille cent euros par mois."]
+        grammar: [g.numbers-100-plus]
+        vocab: [w.loyer, w.mille]
+      - q: { es: "Il y a combien d'habitants à Paris ?", en: "How many inhabitants are there in Paris?" }
+        a: { es: "Plus de deux millions.", en: "More than two million." }
+        alt: ["Deux millions, plus ou moins.", "Environ deux millions."]
+        grammar: [g.numbers-100-plus]
+        vocab: [w.habitant, w.million]
+      - q: { es: "Tu veux un morceau de gâteau ?", en: "Do you want a piece of cake?" }
+        a: { es: "Oui, un petit morceau, merci.", en: "Yes, a small piece, thanks." }
+        alt: ["Oui, un peu.", "Non merci, je n'ai pas faim."]
+        grammar: [g.quantities]
+        vocab: [w.morceau]
+    texts:
+      - title: "Liste de courses"
+        es: ["Un kilo de tomates.", "Deux bouteilles d'eau.", "Six tranches de jambon.", "Une boîte de macarons pour Mamie !"]
+        en: ["A kilo of tomatoes.", "Two bottles of water.", "Six slices of ham.", "A box of macarons for Grandma!"]
+        grammar: [g.quantities]
+        vocab: [w.kilo, w.bouteille, w.tranche, w.boîte]
+      - title: "Le loyer"
+        es: ["Mon appartement est petit, mais il est près du métro.", "Le loyer est de mille cent euros par mois.", "C'est beaucoup d'argent !"]
+        en: ["My flat is small, but it's near the metro.", "The rent is one thousand one hundred euros a month.", "That's a lot of money!"]
+        grammar: [g.numbers-100-plus, g.quantities]
+        vocab: [w.loyer, w.mille, w.beaucoup]
+    spicy:
+      - { es: "Un kilo de chocolat, deux bouteilles de vin… et ton numéro, s'il te plaît.", en: "A kilo of chocolate, two bottles of wine... and your number, please.", grammar: [g.quantities], vocab: [w.kilo, w.bouteille] }
+      - { es: "Il y a deux millions d'habitants à Paris, et c'est toi que je regarde.", en: "There are two million people in Paris, and it's you I'm looking at.", grammar: [g.numbers-100-plus], vocab: [w.million, w.habitant] }
+      - { es: "Un morceau de mon croissant ? Pour toi, oui. Pour les autres, non.", en: "A piece of my croissant? For you, yes. For the others, no.", grammar: [g.quantities], vocab: [w.morceau] }
+      - { es: "Mille fois merci… et mille bises.", en: "A thousand thanks... and a thousand kisses.", grammar: [g.numbers-100-plus], vocab: [w.mille] }
+      - { es: "Trop de shopping, pas assez de toi.", en: "Too much shopping, not enough of you.", grammar: [g.quantities], vocab: [] }
+dialogues:
+  - id: a1.u08.d1
+    title: Un foulard pour maman
+    context: Paul is looking for a present for his mother at the Galeries Lafayette.
+    lines:
+      - { speaker: Vendeuse, es: "Bonjour, monsieur. Je peux vous aider ?", en: "Hello, sir. Can I help you?" }
+      - { speaker: Paul, es: "Oui, je cherche un foulard pour ma mère.", en: "Yes, I'm looking for a scarf for my mother." }
+      - { speaker: Vendeuse, es: "Ces foulards en soie sont très beaux. Vous aimez ce foulard bleu ?", en: "These silk scarves are very beautiful. Do you like this blue scarf?" }
+      - { speaker: Paul, es: "Oui, il est joli. Il coûte combien ?", en: "Yes, it's pretty. How much is it?" }
+      - { speaker: Vendeuse, es: "Quatre-vingt-quinze euros.", en: "Ninety-five euros." }
+      - { speaker: Paul, es: "Quatre-vingt-quinze ? C'est un peu cher… Et ce foulard-là, le rose ?", en: "Ninety-five? That's a bit expensive... And that scarf, the pink one?" }
+      - { speaker: Vendeuse, es: "Il est en soldes : soixante-dix euros.", en: "It's on sale: seventy euros." }
+      - { speaker: Paul, es: "Parfait, je le prends. Je peux payer par carte ?", en: "Perfect, I'll take it. Can I pay by card?" }
+      - { speaker: Vendeuse, es: "Bien sûr. Et voici une petite boîte pour le foulard.", en: "Of course. And here's a little box for the scarf." }
+      - { speaker: Paul, es: "Merci beaucoup, madame. Bonne journée !", en: "Thank you very much, madam. Have a nice day!" }
+    questions:
+      - { q: "Pour qui Paul achète un foulard ?", options: ["Pour sa sœur.", "Pour sa mère.", "Pour sa copine."], answer: 1, explain: "« Je cherche un foulard pour ma mère. »" }
+      - { q: "Combien coûte le foulard bleu ?", options: ["Soixante-dix euros.", "Quatre-vingt-quinze euros.", "Cent euros."], answer: 1, explain: "The blue scarf costs 95 euros (quatre-vingt-quinze)." }
+      - { q: "Pourquoi le foulard rose coûte moins cher ?", options: ["Il est petit.", "Il est en soldes.", "Il n'est pas en soie."], answer: 1, explain: "« Il est en soldes : soixante-dix euros. »" }
+      - { q: "Comment Paul paie ?", options: ["En espèces.", "Par carte.", "Il ne paie pas."], answer: 1, explain: "« Je peux payer par carte ? » — « Bien sûr. »" }

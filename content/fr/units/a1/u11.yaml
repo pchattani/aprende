@@ -1,0 +1,281 @@
+id: a1.u11
+title: "Sur les quais de Seine"
+lessons:
+  - id: a1.u11.l1
+    title: Je prends le métro
+    teach: [g.prendre-present, g.prepositions-transport]
+    vocab: [w.comprendre, w.apprendre, w.bus, w.avion, w.moto, w.tramway, w.billet, w.arrêt, w.station, w.ligne, w.direction, w.changer, w.descendre, w.monter, w.louer, w.en]
+    tip: "Prendre: je prends, tu prends, il prend, nous prenons, vous prenez, ils prennent. Inside a vehicle use en (en métro, en bus); on top of it or on foot use à (à vélo, à pied)."
+    sentences:
+      - { es: "Je prends le métro tous les jours.", en: "I take the metro every day.", altEs: ["Tous les jours, je prends le métro."], altEn: ["I take the underground every day."], grammar: [g.prendre-present], vocab: [], error: { wrong: "Je prend le métro tous les jours.", explain: "With je and tu, prendre ends in -s: je prends, tu prends. Only il/elle/on prend has no -s.", grammar: g.prendre-present } }
+      - { es: "Nous prenons le bus numéro 69.", en: "We're taking the number 69 bus.", altEs: ["On prend le bus numéro 69.", "Nous prenons le 69."], altEn: ["We take bus number 69."], grammar: [g.prendre-present], vocab: [w.bus], transform: { instruction: "Change to 'they'", answer: "Ils prennent le bus numéro 69.", alt: ["Elles prennent le bus numéro 69.", "Ils prennent le 69."], en: "They're taking the number 69 bus." } }
+      - { es: "Elle va au travail à moto.", en: "She goes to work by motorbike.", altEn: ["She rides her motorbike to work."], grammar: [g.prepositions-transport], vocab: [w.moto] }
+      - { es: "Tu vas à Versailles en train ou en voiture ?", en: "Are you going to Versailles by train or by car?", altEs: ["Vous allez à Versailles en train ou en voiture ?"], grammar: [g.prepositions-transport], vocab: [w.en, w.versailles.nm], error: { wrong: "Tu vas à Versailles par train ou par voiture ?", explain: "For everyday trips, use en with vehicles you sit inside: en train, en voiture.", grammar: g.prepositions-transport } }
+      - { es: "On prend l'avion pour Marseille ? — Non, je préfère le train.", en: "Shall we fly to Marseille? — No, I prefer the train.", altEs: ["On va à Marseille en avion ? — Non, je préfère le train."], grammar: [g.prendre-present, g.prepositions-transport], vocab: [w.avion] }
+      - { es: "Je descends à la prochaine station.", en: "I'm getting off at the next station.", altEs: ["Je descends à la prochaine."], altEn: ["I get off at the next stop."], grammar: [g.prepositions-transport], vocab: [w.descendre, w.station] }
+      - { es: "Vous changez à Châtelet et vous prenez la ligne 1.", en: "You change at Châtelet and take line 1.", altEs: ["Changez à Châtelet et prenez la ligne 1."], altEn: ["You change at Châtelet and you take line 1."], grammar: [g.prendre-present], vocab: [w.changer, w.ligne] }
+      - { es: "Prenez la ligne 1, direction La Défense.", en: "Take line 1 towards La Défense.", altEs: ["Prends la ligne 1, direction La Défense."], altEn: ["Take line 1, direction La Défense."], grammar: [g.prendre-present, g.directions], vocab: [w.direction, w.ligne] }
+      - { es: "Où est l'arrêt de bus, s'il vous plaît ?", en: "Where's the bus stop, please?", altEs: ["L'arrêt de bus, s'il vous plaît ?", "Où se trouve l'arrêt de bus, s'il vous plaît ?"], grammar: [g.question-words], vocab: [w.arrêt, w.bus] }
+      - { es: "On monte dans le bus à l'arrêt Pont Neuf.", en: "We get on the bus at the Pont Neuf stop.", altEs: ["Nous montons dans le bus à l'arrêt Pont Neuf."], grammar: [g.prepositions-transport, g.on-nous], vocab: [w.monter, w.arrêt] }
+      - { es: "Un billet pour Versailles, s'il vous plaît.", en: "A ticket to Versailles, please.", altEs: ["Je voudrais un billet pour Versailles, s'il vous plaît."], grammar: [g.je-voudrais], vocab: [w.billet], transform: { instruction: "Ask for two tickets", answer: "Deux billets pour Versailles, s'il vous plaît.", en: "Two tickets to Versailles, please." } }
+      - { es: "J'apprends le français et je comprends un peu.", en: "I'm learning French and I understand a little.", altEn: ["I'm learning French and I understand a bit."], grammar: [g.prendre-present], vocab: [w.apprendre, w.comprendre] }
+      - { es: "Pardon, je ne comprends pas.", en: "Sorry, I don't understand.", altEs: ["Désolé, je ne comprends pas.", "Excusez-moi, je ne comprends pas."], altEn: ["Excuse me, I don't understand."], grammar: [g.prendre-present, g.negation-ne-pas], vocab: [w.comprendre] }
+      - { es: "Ils prennent un taxi parce qu'il est tard.", en: "They're taking a taxi because it's late.", altEs: ["Elles prennent un taxi parce qu'il est tard."], grammar: [g.prendre-present], vocab: [w.taxi], transform: { instruction: "Change to 'you' (vous)", answer: "Vous prenez un taxi parce qu'il est tard.", en: "You're taking a taxi because it's late." } }
+      - { es: "On loue un Vélib' pour aller sur les quais.", en: "We're renting a Vélib' bike to go to the quays.", altEs: ["Nous louons un Vélib' pour aller sur les quais."], altEn: ["We rent a Vélib' to go to the quays."], grammar: [g.prepositions-transport, g.on-nous], vocab: [w.louer], note: "Vélib' is the Paris public bike-share." }
+      - { es: "Le tramway passe par le sud de Paris.", en: "The tram goes through the south of Paris.", altEs: ["Le tram passe par le sud de Paris."], altEn: ["The tram runs through the south of Paris."], grammar: [g.prepositions-transport], vocab: [w.tramway, w.sud] }
+    exchanges:
+      - q: { es: "Tu vas comment au travail ?", en: "How do you get to work?" }
+        a: { es: "Je prends le métro, ligne 9.", en: "I take the metro, line 9." }
+        alt: ["En métro.", "À pied.", "À vélo."]
+        grammar: [g.prendre-present, g.prepositions-transport]
+        vocab: [w.ligne]
+      - q: { es: "Je descends où pour le Louvre ?", en: "Where do I get off for the Louvre?" }
+        a: { es: "Descendez à Louvre-Rivoli, sur la ligne 1.", en: "Get off at Louvre-Rivoli, on line 1." }
+        alt: ["À Louvre-Rivoli.", "À la prochaine station."]
+        grammar: [g.prepositions-transport]
+        vocab: [w.descendre]
+      - q: { es: "Vous comprenez le français ?", en: "Do you understand French?" }
+        a: { es: "Oui, un peu. J'apprends depuis six mois.", en: "Yes, a little. I've been learning for six months." }
+        alt: ["Un peu.", "Non, désolé."]
+        grammar: [g.prendre-present]
+        vocab: [w.comprendre, w.apprendre]
+      - q: { es: "Où est-ce que je change ?", en: "Where do I change?" }
+        a: { es: "À Châtelet. Prenez la ligne 4.", en: "At Châtelet. Take line 4." }
+        alt: ["À Châtelet.", "Vous ne changez pas."]
+        grammar: [g.prendre-present]
+        vocab: [w.changer, w.ligne]
+      - q: { es: "Un billet, s'il vous plaît.", en: "A ticket, please." }
+        a: { es: "Voilà. Vous voulez aussi un plan du métro ?", en: "Here you are. Do you want a metro map too?" }
+        alt: ["Un ou deux ?", "Voilà, monsieur."]
+        grammar: [g.yes-no-questions]
+        vocab: [w.billet]
+    texts:
+      - title: "Les transports à Paris"
+        es: ["À Paris, on prend le métro, le bus ou le tramway.", "On peut aussi louer un Vélib'.", "Les touristes prennent le bateau sur la Seine."]
+        en: ["In Paris, people take the metro, the bus or the tram.", "You can also rent a Vélib' bike.", "Tourists take the boat on the Seine."]
+        grammar: [g.prendre-present]
+        vocab: [w.bus, w.tramway, w.louer]
+      - title: "Message de Marc"
+        es: ["Je suis dans le bus, mais il y a beaucoup de monde.", "Je descends à l'arrêt Pont Neuf.", "J'arrive dans dix minutes !"]
+        en: ["I'm on the bus, but it's very crowded.", "I'm getting off at the Pont Neuf stop.", "I'll be there in ten minutes!"]
+        grammar: [g.prepositions-transport]
+        vocab: [w.bus, w.descendre, w.arrêt]
+    spicy:
+      - { es: "Tu prends quelle ligne ? Je change de direction pour toi.", en: "Which line are you taking? I'll change direction for you.", grammar: [g.prendre-present], vocab: [w.ligne, w.changer, w.direction] }
+      - { es: "Je ne comprends pas le plan du métro, mais je comprends ton sourire.", en: "I don't understand the metro map, but I understand your smile.", grammar: [g.prendre-present], vocab: [w.comprendre] }
+      - { es: "Tu descends à la prochaine ? Moi aussi… maintenant.", en: "Are you getting off at the next one? Me too... now.", grammar: [g.prepositions-transport], vocab: [w.descendre] }
+      - { es: "On prend un taxi ou on marche ensemble sous la pluie ?", en: "Shall we take a taxi or walk together in the rain?", grammar: [g.prendre-present, g.on-nous], vocab: [w.taxi] }
+      - { es: "J'apprends le français pour une seule raison : toi.", en: "I'm learning French for one reason only: you.", grammar: [g.prendre-present], vocab: [w.apprendre] }
+  - id: a1.u11.l2
+    title: Pour aller au Pont Neuf ?
+    teach: [g.directions]
+    vocab: [w.tourner, w.traverser, w.continuer, w.tout-droit, w.droite, w.gauche, w.droit, w.pour-aller-à, w.perdu, w.deuxième, w.troisième, w.quatrième, w.cinquième, w.feu, w.jusqu-à, w.suivre, w.mètre]
+    tip: "Pour aller à… ? asks the way. Answers use vous forms: continuez tout droit, tournez à gauche, prenez la deuxième rue à droite. Careful: tout droit (straight on) is not à droite (on the right)."
+    sentences:
+      - { es: "Excusez-moi, pour aller au Pont Neuf, s'il vous plaît ?", en: "Excuse me, how do I get to the Pont Neuf, please?", altEs: ["Pardon, pour aller au Pont Neuf, s'il vous plaît ?"], altEn: ["Excuse me, which way is the Pont Neuf, please?"], grammar: [g.directions, g.contractions-au-du], vocab: [w.pour-aller-à] }
+      - { es: "Continuez tout droit, puis tournez à gauche.", en: "Go straight on, then turn left.", altEs: ["Continuez tout droit et tournez à gauche."], altEn: ["Carry on straight ahead, then turn left."], grammar: [g.directions], vocab: [w.continuer, w.tout-droit, w.tourner, w.gauche], transform: { instruction: "Use tu instead of vous", answer: "Continue tout droit, puis tourne à gauche.", alt: ["Continue tout droit et tourne à gauche."], en: "Go straight on, then turn left. (informal)" } }
+      - { es: "Prenez la deuxième rue à droite.", en: "Take the second street on the right.", altEs: ["Prenez la deuxième à droite."], altEn: ["Take the second road on the right."], grammar: [g.directions], vocab: [w.deuxième, w.droite], error: { wrong: "Prenez la deuxième rue en droite.", explain: "On the right / on the left = à droite / à gauche.", grammar: g.directions } }
+      - { es: "Traversez le pont et c'est en face.", en: "Cross the bridge and it's opposite.", altEs: ["Traversez le pont, c'est en face."], altEn: ["Cross the bridge and it's across the road."], grammar: [g.directions], vocab: [w.traverser] }
+      - { es: "Au feu, tournez à droite.", en: "At the traffic lights, turn right.", altEs: ["Tournez à droite au feu."], altEn: ["Turn right at the lights."], grammar: [g.directions], vocab: [w.feu, w.tourner, w.droite] }
+      - { es: "C'est loin ? — Non, c'est à cinq cents mètres.", en: "Is it far? — No, it's five hundred metres away.", altEs: ["C'est loin ? — Non, c'est à 500 mètres."], grammar: [g.directions, g.numbers-100-plus], vocab: [w.mètre] }
+      - { es: "Allez jusqu'au quai et suivez la Seine.", en: "Go as far as the quay and follow the Seine.", altEs: ["Allez jusqu'au quai, puis suivez la Seine."], grammar: [g.directions, g.contractions-au-du], vocab: [w.jusqu-à, w.suivre, w.quai] }
+      - { es: "Je suis perdu. Vous pouvez m'aider ?", en: "I'm lost. Can you help me?", altEs: ["Je suis perdu. Pouvez-vous m'aider ?"], altEn: ["I'm lost. Could you help me?"], grammar: [g.directions, g.modal-verbs], vocab: [w.perdu], transform: { instruction: "Change it so a woman is speaking", answer: "Je suis perdue. Vous pouvez m'aider ?", alt: ["Je suis perdue. Pouvez-vous m'aider ?"], en: "I'm lost. Can you help me? (a woman speaking)" } }
+      - { es: "La pharmacie est au coin de la rue.", en: "The pharmacy is on the corner of the street.", altEn: ["The chemist's is on the street corner."], grammar: [g.directions, g.prepositions-place], vocab: [] }
+      - { es: "Ce n'est pas à droite, c'est tout droit !", en: "It's not on the right, it's straight on!", altEs: ["Pas à droite : tout droit !"], grammar: [g.directions], vocab: [w.droite, w.tout-droit], note: "Tout droit (straight on) and à droite (on the right) sound alike: listen carefully." }
+      - { es: "C'est la troisième rue à gauche, après la banque.", en: "It's the third street on the left, after the bank.", altEn: ["It's the third road on the left, past the bank."], grammar: [g.directions], vocab: [w.troisième, w.gauche, w.banque] }
+      - { es: "C'est la première rue à droite.", en: "It's the first street on the right.", altEs: ["C'est la première à droite."], grammar: [g.directions], vocab: [w.droite], error: { wrong: "C'est la unième rue à droite.", explain: "'First' is premier / première, never unième (but 21st is vingt et unième).", grammar: g.directions } }
+      - { es: "Suivez-moi, c'est par là !", en: "Follow me, it's this way!", altEs: ["Suis-moi, c'est par là !"], altEn: ["Follow me, it's over there!"], grammar: [g.directions], vocab: [w.suivre] }
+      - { es: "Tournez à gauche au quatrième feu.", en: "Turn left at the fourth set of lights.", altEn: ["Turn left at the fourth traffic light."], grammar: [g.directions], vocab: [w.quatrième, w.feu], transform: { instruction: "Change to the second traffic light", answer: "Tournez à gauche au deuxième feu.", en: "Turn left at the second set of lights." } }
+      - { es: "La rue est droite et très longue.", en: "The street is straight and very long.", grammar: [g.adjective-agreement], vocab: [w.droit] }
+      - { es: "J'habite au cinquième étage.", en: "I live on the fifth floor.", altEs: ["J'habite au 5e étage."], grammar: [g.directions], vocab: [w.cinquième] }
+    exchanges:
+      - q: { es: "Pardon, pour aller à Notre-Dame, s'il vous plaît ?", en: "Excuse me, how do I get to Notre-Dame, please?" }
+        a: { es: "Continuez tout droit et traversez le pont.", en: "Go straight on and cross the bridge." }
+        alt: ["C'est tout droit.", "Traversez le pont, c'est là."]
+        grammar: [g.directions]
+        vocab: [w.pour-aller-à, w.continuer, w.traverser]
+      - q: { es: "C'est loin d'ici ?", en: "Is it far from here?" }
+        a: { es: "Non, c'est à deux cents mètres.", en: "No, it's two hundred metres away." }
+        alt: ["Non, c'est tout près.", "Oui, assez loin."]
+        grammar: [g.directions]
+        vocab: [w.mètre]
+      - q: { es: "Je tourne à droite ou à gauche ?", en: "Do I turn right or left?" }
+        a: { es: "À gauche, après le feu.", en: "Left, after the traffic lights." }
+        alt: ["À droite.", "Tout droit !"]
+        grammar: [g.directions]
+        vocab: [w.droite, w.gauche, w.feu]
+      - q: { es: "Vous êtes perdu ?", en: "Are you lost?" }
+        a: { es: "Oui, je cherche la station Pont Neuf.", en: "Yes, I'm looking for Pont Neuf station." }
+        alt: ["Non, merci, ça va.", "Un peu, oui."]
+        grammar: [g.directions]
+        vocab: [w.perdu]
+      - q: { es: "C'est quelle rue ?", en: "Which street is it?" }
+        a: { es: "La deuxième rue à droite.", en: "The second street on the right." }
+        alt: ["La première à gauche.", "La troisième rue à droite."]
+        grammar: [g.directions]
+        vocab: [w.deuxième]
+    texts:
+      - title: "Pour aller chez moi"
+        es: ["Prends la ligne 7 et descends à Pont Neuf.", "Traverse le pont et tourne à droite.", "J'habite au numéro douze, au troisième étage."]
+        en: ["Take line 7 and get off at Pont Neuf.", "Cross the bridge and turn right.", "I live at number twelve, on the third floor."]
+        grammar: [g.directions]
+        vocab: [w.traverser, w.tourner, w.troisième]
+      - title: "Message de Chloé"
+        es: ["Je suis perdue !", "Je suis devant une banque, au coin d'une avenue.", "Tu peux m'aider ?"]
+        en: ["I'm lost!", "I'm in front of a bank, on the corner of an avenue.", "Can you help me?"]
+        grammar: [g.directions]
+        vocab: [w.perdu, w.banque, w.avenue]
+    spicy:
+      - { es: "Je suis perdue. Vous pouvez m'aider… ou m'inviter à boire un café ?", en: "I'm lost. Can you help me... or invite me for a coffee?", altEs: ["Je suis perdu. Vous pouvez m'aider… ou m'inviter à boire un café ?"], grammar: [g.directions], vocab: [w.perdu] }
+      - { es: "Pour aller à mon cœur ? C'est tout droit.", en: "How do you get to my heart? It's straight ahead.", grammar: [g.directions], vocab: [w.pour-aller-à, w.tout-droit] }
+      - { es: "Suis-moi, il y a un petit bar sur les quais.", en: "Follow me, there's a little bar on the quays.", altEs: ["Suivez-moi, il y a un petit bar sur les quais."], grammar: [g.directions], vocab: [w.suivre, w.quai] }
+      - { es: "Je cherche la rue de la Paix… ou ton numéro.", en: "I'm looking for the Rue de la Paix... or your number.", grammar: [g.directions], vocab: [] }
+      - { es: "On traverse le Pont Neuf ensemble ? Il est vieux, mais il est beau.", en: "Shall we cross the Pont Neuf together? It's old, but it's beautiful.", grammar: [g.directions, g.on-nous], vocab: [w.traverser] }
+  - id: a1.u11.l3
+    title: À Paris, en France, au Canada
+    teach: [g.prepositions-cities-countries]
+    vocab: [w.à, w.nord, w.sud, w.est, w.ouest, w.kilomètre, w.vers, w.trouver, w.se-trouver]
+    tip: "à + city (à Paris); en + feminine country, most ending in -e (en France); au + masculine country (au Canada); aux + plural country (aux États-Unis)."
+    sentences:
+      - { es: "J'habite à Paris, en France.", en: "I live in Paris, in France.", grammar: [g.prepositions-cities-countries], vocab: [w.à], transform: { instruction: "Change to Brussels, Belgium", answer: "J'habite à Bruxelles, en Belgique.", en: "I live in Brussels, in Belgium." } }
+      - { es: "Ma sœur habite au Canada, à Montréal.", en: "My sister lives in Canada, in Montreal.", altEs: ["Ma sœur habite à Montréal, au Canada."], grammar: [g.prepositions-cities-countries], vocab: [], error: { wrong: "Ma sœur habite en Canada, à Montréal.", explain: "Canada is masculine: au Canada.", grammar: g.prepositions-cities-countries } }
+      - { es: "Ils vont aux États-Unis cet été.", en: "They're going to the United States this summer.", altEs: ["Cet été, ils vont aux États-Unis."], altEn: ["They're going to the US this summer."], grammar: [g.prepositions-cities-countries, g.demonstratives], vocab: [] }
+      - { es: "Nous allons en Espagne en voiture.", en: "We're driving to Spain.", altEs: ["On va en Espagne en voiture."], altEn: ["We're going to Spain by car."], grammar: [g.prepositions-cities-countries, g.prepositions-transport], vocab: [], transform: { instruction: "Change the destination to Portugal", answer: "Nous allons au Portugal en voiture.", alt: ["On va au Portugal en voiture."], en: "We're driving to Portugal." } }
+      - { es: "Lille est dans le nord de la France.", en: "Lille is in the north of France.", altEs: ["Lille se trouve dans le nord de la France."], grammar: [g.prepositions-cities-countries], vocab: [w.nord] }
+      - { es: "Marseille se trouve dans le sud.", en: "Marseille is in the south.", altEs: ["Marseille est dans le sud."], altEn: ["Marseille is located in the south."], grammar: [g.prepositions-cities-countries], vocab: [w.se-trouver, w.sud] }
+      - { es: "Strasbourg est à l'est et Brest est à l'ouest.", en: "Strasbourg is in the east and Brest is in the west.", grammar: [g.prepositions-cities-countries], vocab: [w.est, w.ouest] }
+      - { es: "Il vient du Mexique, mais il habite en Italie.", en: "He comes from Mexico, but he lives in Italy.", altEn: ["He's from Mexico, but he lives in Italy."], grammar: [g.prepositions-cities-countries, g.venir-present], vocab: [], error: { wrong: "Il vient du Mexique, mais il habite au Italie.", explain: "Italie is feminine (and starts with a vowel): en Italie. Mexique is an exception: masculine despite the -e, so du Mexique.", grammar: g.prepositions-cities-countries } }
+      - { es: "Versailles est à moins de vingt kilomètres de Paris.", en: "Versailles is less than twenty kilometres from Paris.", altEn: ["Versailles is under twenty kilometres from Paris."], grammar: [g.prepositions-cities-countries], vocab: [w.kilomètre, w.versailles.nm] }
+      - { es: "Tu pars où cet été ? — Au Maroc.", en: "Where are you going this summer? — To Morocco.", altEs: ["Où pars-tu cet été ? — Au Maroc."], grammar: [g.prepositions-cities-countries], vocab: [] }
+      - { es: "On part vers dix heures.", en: "We're leaving around ten.", altEs: ["Nous partons vers dix heures."], altEn: ["We're leaving at about ten o'clock."], grammar: [g.time-telling], vocab: [w.vers] }
+      - { es: "Je ne trouve pas Bruxelles sur la carte !", en: "I can't find Brussels on the map!", grammar: [g.negation-ne-pas], vocab: [w.trouver] }
+      - { es: "Mes parents habitent en Bretagne, à Rennes.", en: "My parents live in Brittany, in Rennes.", altEs: ["Mes parents habitent à Rennes, en Bretagne."], grammar: [g.prepositions-cities-countries], vocab: [] }
+      - { es: "Elle travaille au Japon, à Tokyo.", en: "She works in Japan, in Tokyo.", altEs: ["Elle travaille à Tokyo, au Japon."], grammar: [g.prepositions-cities-countries], vocab: [], transform: { instruction: "Change to China, Beijing (Pékin)", answer: "Elle travaille en Chine, à Pékin.", alt: ["Elle travaille à Pékin, en Chine."], en: "She works in China, in Beijing." } }
+      - { es: "Le train va vers le sud.", en: "The train is heading south.", altEn: ["The train is going towards the south."], grammar: [g.prepositions-cities-countries], vocab: [w.vers, w.sud] }
+    exchanges:
+      - q: { es: "Tu habites où ?", en: "Where do you live?" }
+        a: { es: "J'habite à Lyon, dans le sud-est de la France.", en: "I live in Lyon, in the south-east of France." }
+        alt: ["À Lyon.", "J'habite à Paris."]
+        grammar: [g.prepositions-cities-countries]
+        vocab: [w.sud, w.est]
+      - q: { es: "Vous venez d'où ?", en: "Where are you from?" }
+        a: { es: "Je viens du Portugal, de Lisbonne.", en: "I'm from Portugal, from Lisbon." }
+        alt: ["Du Portugal.", "Je viens d'Italie."]
+        grammar: [g.prepositions-cities-countries, g.venir-present]
+        vocab: []
+      - q: { es: "Tu vas où cet été ?", en: "Where are you going this summer?" }
+        a: { es: "Je vais aux États-Unis, à New York.", en: "I'm going to the United States, to New York." }
+        alt: ["Au Canada.", "En Espagne."]
+        grammar: [g.prepositions-cities-countries]
+        vocab: []
+      - q: { es: "Où se trouve Lille ?", en: "Where is Lille?" }
+        a: { es: "Dans le nord de la France, près de la Belgique.", en: "In the north of France, near Belgium." }
+        alt: ["Dans le nord.", "Près de la Belgique."]
+        grammar: [g.prepositions-cities-countries]
+        vocab: [w.se-trouver, w.nord]
+      - q: { es: "C'est loin, Versailles ?", en: "Is Versailles far?" }
+        a: { es: "Non, c'est à moins de vingt kilomètres.", en: "No, it's less than twenty kilometres away." }
+        alt: ["Non, pas très loin.", "Non, c'est tout près."]
+        grammar: [g.prepositions-cities-countries]
+        vocab: [w.kilomètre]
+    texts:
+      - title: "Ma famille dans le monde"
+        es: ["Mes parents habitent en France, à Lyon.", "Mon frère travaille au Canada.", "Et ma sœur habite aux États-Unis, à New York."]
+        en: ["My parents live in France, in Lyon.", "My brother works in Canada.", "And my sister lives in the United States, in New York."]
+        grammar: [g.prepositions-cities-countries]
+        vocab: [w.à]
+      - title: "La Seine"
+        es: ["La Seine traverse Paris d'est en ouest.", "Au nord, c'est la rive droite.", "Au sud, c'est la rive gauche."]
+        en: ["The Seine crosses Paris from east to west.", "To the north is the Right Bank.", "To the south is the Left Bank."]
+        grammar: [g.prepositions-cities-countries]
+        vocab: [w.est, w.ouest, w.nord, w.sud]
+    spicy:
+      - { es: "Tu habites au Canada ? Moi aussi… bientôt.", en: "You live in Canada? Me too... soon.", grammar: [g.prepositions-cities-countries], vocab: [] }
+      - { es: "Je vais en Italie cet été. Tu viens avec moi ?", en: "I'm going to Italy this summer. Are you coming with me?", grammar: [g.prepositions-cities-countries], vocab: [] }
+      - { es: "Toi au nord, moi au sud… On se voit à Lyon ?", en: "You in the north, me in the south... Shall we meet in Lyon?", grammar: [g.prepositions-cities-countries], vocab: [w.nord, w.sud] }
+      - { es: "Pour toi, je fais mille kilomètres.", en: "For you, I'd travel a thousand kilometres.", grammar: [g.numbers-100-plus], vocab: [w.kilomètre] }
+      - { es: "Au Maroc, en Grèce ou au Japon : avec toi, je vais où tu veux.", en: "Morocco, Greece or Japan: with you, I'll go wherever you want.", grammar: [g.prepositions-cities-countries], vocab: [] }
+  - id: a1.u11.l4
+    title: Où se trouve… ?
+    teach: [g.inversion-questions]
+    vocab: [w.avenue, w.boulevard, w.pont, w.quai, w.banque, w.arrondissement]
+    tip: "Formal questions swap the pronoun and the verb, with a hyphen: Parlez-vous anglais ? Add -t- between two vowels: Parle-t-il français ? Y a-t-il… ?"
+    sentences:
+      - { es: "Parlez-vous anglais ?", en: "Do you speak English?", altEs: ["Vous parlez anglais ?", "Est-ce que vous parlez anglais ?"], grammar: [g.inversion-questions], vocab: [] }
+      - { es: "Où se trouve la station de métro, s'il vous plaît ?", en: "Where is the metro station, please?", altEs: ["Où est la station de métro, s'il vous plaît ?", "La station de métro, s'il vous plaît ?"], altEn: ["Where's the underground station, please?"], grammar: [g.inversion-questions, g.question-words], vocab: [w.se-trouver, w.station] }
+      - { es: "Pouvez-vous m'aider ?", en: "Can you help me?", altEs: ["Vous pouvez m'aider ?", "Est-ce que vous pouvez m'aider ?"], altEn: ["Could you help me?"], grammar: [g.inversion-questions, g.modal-verbs], vocab: [] }
+      - { es: "Y a-t-il une banque près d'ici ?", en: "Is there a bank near here?", altEs: ["Il y a une banque près d'ici ?", "Est-ce qu'il y a une banque près d'ici ?"], altEn: ["Is there a bank nearby?"], grammar: [g.inversion-questions, g.il-y-a], vocab: [w.banque] }
+      - { es: "Prend-il le bus ou le métro ?", en: "Does he take the bus or the metro?", altEs: ["Il prend le bus ou le métro ?", "Est-ce qu'il prend le bus ou le métro ?"], altEn: ["Is he taking the bus or the metro?"], grammar: [g.inversion-questions, g.prendre-present], vocab: [w.bus] }
+      - { es: "Parle-t-elle français ?", en: "Does she speak French?", altEs: ["Elle parle français ?", "Est-ce qu'elle parle français ?"], grammar: [g.inversion-questions], vocab: [], error: { wrong: "Parle-elle français ?", explain: "When the verb ends in a vowel and the pronoun is il, elle or on, add -t-: parle-t-elle.", grammar: g.inversion-questions } }
+      - { es: "Les bouquinistes vendent de vieux livres sur les quais.", en: "The bouquinistes sell old books on the quays.", altEs: ["Les bouquinistes vendent des vieux livres sur les quais."], altEn: ["The second-hand booksellers sell old books along the quays."], grammar: [g.adjective-position, g.present-re-verbs], vocab: [w.bouquiniste, w.quai] }
+      - { es: "Dans quel arrondissement habitez-vous ?", en: "Which arrondissement do you live in?", altEs: ["Vous habitez dans quel arrondissement ?", "Dans quel arrondissement est-ce que vous habitez ?"], altEn: ["Which district do you live in?"], grammar: [g.inversion-questions, g.quel], vocab: [w.arrondissement], transform: { instruction: "Use tu, still with inversion", answer: "Dans quel arrondissement habites-tu ?", en: "Which arrondissement do you live in? (informal)" } }
+      - { es: "Paris a vingt arrondissements.", en: "Paris has twenty arrondissements.", altEs: ["Il y a vingt arrondissements à Paris."], altEn: ["Paris has twenty districts."], grammar: [g.avoir-present], vocab: [w.arrondissement], transform: { instruction: "Turn it into an inversion question", answer: "Paris a-t-il vingt arrondissements ?", en: "Does Paris have twenty arrondissements?" } }
+      - { es: "Le boulevard Saint-Michel va jusqu'à la Seine.", en: "The Boulevard Saint-Michel goes all the way to the Seine.", altEn: ["Boulevard Saint-Michel runs down to the Seine."], grammar: [g.directions], vocab: [w.boulevard, w.jusqu-à] }
+      - { es: "Les Champs-Élysées sont une grande avenue.", en: "The Champs-Élysées is a wide avenue.", altEn: ["The Champs-Élysées is a big avenue."], grammar: [g.adjective-position], vocab: [w.avenue] }
+      - { es: "Combien de ponts y a-t-il à Paris ?", en: "How many bridges are there in Paris?", altEs: ["Il y a combien de ponts à Paris ?", "Combien de ponts est-ce qu'il y a à Paris ?"], grammar: [g.inversion-questions, g.quantities], vocab: [w.pont], error: { wrong: "Combien de ponts y a-il à Paris ?", explain: "A ends in a vowel, so add -t- before il: y a-t-il.", grammar: g.inversion-questions } }
+      - { es: "Où va-t-on ce soir ?", en: "Where are we going tonight?", altEs: ["On va où ce soir ?", "Où est-ce qu'on va ce soir ?"], grammar: [g.inversion-questions, g.on-nous], vocab: [], transform: { instruction: "Ask the same question with vous", answer: "Où allez-vous ce soir ?", alt: ["Vous allez où ce soir ?"], en: "Where are you going tonight?" } }
+      - { es: "Comprenez-vous le plan ?", en: "Do you understand the map?", altEs: ["Vous comprenez le plan ?", "Est-ce que vous comprenez le plan ?"], grammar: [g.inversion-questions, g.prendre-present], vocab: [w.comprendre, w.plan] }
+      - { es: "À quelle heure part le bateau ?", en: "What time does the boat leave?", altEs: ["Le bateau part à quelle heure ?", "À quelle heure est-ce que le bateau part ?"], grammar: [g.inversion-questions, g.time-telling], vocab: [w.bateau] }
+    exchanges:
+      - q: { es: "Parlez-vous anglais ?", en: "Do you speak English?" }
+        a: { es: "Oui, un peu. Et vous, parlez-vous français ?", en: "Yes, a little. And you, do you speak French?" }
+        alt: ["Non, désolé.", "Oui, bien sûr."]
+        grammar: [g.inversion-questions]
+        vocab: []
+      - q: { es: "Où se trouve le Pont Neuf ?", en: "Where is the Pont Neuf?" }
+        a: { es: "Il traverse la Seine, près de l'île de la Cité.", en: "It crosses the Seine, near the Île de la Cité." }
+        alt: ["Près de l'île de la Cité.", "Tout droit, sur les quais."]
+        grammar: [g.inversion-questions]
+        vocab: [w.se-trouver, w.pont]
+      - q: { es: "Y a-t-il une banque près d'ici ?", en: "Is there a bank near here?" }
+        a: { es: "Oui, sur le boulevard, à côté de la pharmacie.", en: "Yes, on the boulevard, next to the pharmacy." }
+        alt: ["Non, désolé.", "Oui, au coin de la rue."]
+        grammar: [g.inversion-questions]
+        vocab: [w.banque, w.boulevard]
+      - q: { es: "Dans quel arrondissement êtes-vous ?", en: "Which arrondissement are you in?" }
+        a: { es: "Dans le cinquième, près de la Seine.", en: "In the fifth, near the Seine." }
+        alt: ["Dans le premier.", "Dans le dixième."]
+        grammar: [g.inversion-questions]
+        vocab: [w.arrondissement, w.cinquième]
+      - q: { es: "Que vendent les bouquinistes ?", en: "What do the bouquinistes sell?" }
+        a: { es: "Ils vendent de vieux livres et des cartes postales.", en: "They sell old books and postcards." }
+        alt: ["Des livres.", "De vieux livres."]
+        grammar: [g.inversion-questions]
+        vocab: [w.bouquiniste]
+    texts:
+      - title: "Les bouquinistes"
+        es: ["Sur les quais de Seine, il y a des boîtes vertes.", "Ce sont les bouquinistes.", "Ils vendent de vieux livres et des cartes postales."]
+        en: ["On the quays of the Seine there are green boxes.", "They're the bouquinistes, the second-hand booksellers.", "They sell old books and postcards."]
+        grammar: [g.il-y-a]
+        vocab: [w.quai, w.bouquiniste]
+      - title: "Les arrondissements"
+        es: ["Paris a vingt arrondissements.", "Le premier est au centre, près du Louvre.", "Ils tournent comme un escargot."]
+        en: ["Paris has twenty arrondissements.", "The first is in the centre, near the Louvre.", "They spiral round like a snail."]
+        grammar: [g.directions]
+        vocab: [w.arrondissement, w.tourner]
+    spicy:
+      - { es: "Parlez-vous français ? Non ? Alors je parle avec les yeux.", en: "Do you speak French? No? Then I'll talk with my eyes.", grammar: [g.inversion-questions], vocab: [] }
+      - { es: "Y a-t-il une place pour moi à votre table ?", en: "Is there room for me at your table?", altEs: ["Il y a une place pour moi à votre table ?"], grammar: [g.inversion-questions], vocab: [] }
+      - { es: "Puis-je vous offrir un café ?", en: "May I buy you a coffee?", altEs: ["Je peux vous offrir un café ?"], altEn: ["May I offer you a coffee?"], grammar: [g.inversion-questions], vocab: [] }
+      - { es: "Venez-vous souvent sur les quais, ou seulement quand je suis là ?", en: "Do you come to the quays often, or only when I'm here?", grammar: [g.inversion-questions, g.venir-present], vocab: [w.quai] }
+      - { es: "Habitez-vous dans le cinquième ? Moi aussi… à partir de demain.", en: "Do you live in the fifth? Me too... from tomorrow.", grammar: [g.inversion-questions], vocab: [w.cinquième] }
+dialogues:
+  - id: a1.u11.d1
+    title: Perdue sur les quais
+    context: Claire, a visitor, asks a bouquiniste on the quays of the Seine for directions.
+    lines:
+      - { speaker: Claire, es: "Excusez-moi, monsieur. Parlez-vous anglais ?", en: "Excuse me, sir. Do you speak English?" }
+      - { speaker: Bouquiniste, es: "Un peu… mais on peut parler français, non ?", en: "A little... but we can speak French, can't we?" }
+      - { speaker: Claire, es: "D'accord ! Je suis perdue. Pour aller à Notre-Dame, s'il vous plaît ?", en: "OK! I'm lost. How do I get to Notre-Dame, please?" }
+      - { speaker: Bouquiniste, es: "Continuez tout droit sur le quai, puis traversez le deuxième pont.", en: "Carry on straight along the quay, then cross the second bridge." }
+      - { speaker: Claire, es: "C'est loin ?", en: "Is it far?" }
+      - { speaker: Bouquiniste, es: "Non, à huit cents mètres. Dix minutes à pied.", en: "No, eight hundred metres. Ten minutes on foot." }
+      - { speaker: Claire, es: "Et après, je prends le métro pour aller à Montmartre ?", en: "And afterwards, do I take the metro to go to Montmartre?" }
+      - { speaker: Bouquiniste, es: "Oui, la ligne 4. Vous changez à Barbès et vous prenez la ligne 2.", en: "Yes, line 4. You change at Barbès and take line 2." }
+      - { speaker: Claire, es: "Merci beaucoup ! Vous vendez des cartes postales ?", en: "Thank you very much! Do you sell postcards?" }
+      - { speaker: Bouquiniste, es: "Bien sûr ! Et de vieux livres sur Paris, pour apprendre le français.", en: "Of course! And old books about Paris, to learn French." }
+    questions:
+      - { q: "Où veut aller Claire ?", options: ["À la tour Eiffel.", "À Notre-Dame.", "Au Louvre."], answer: 1, explain: "« Pour aller à Notre-Dame, s'il vous plaît ? »" }
+      - { q: "C'est à combien de minutes à pied ?", options: ["Deux minutes.", "Dix minutes.", "Une heure."], answer: 1, explain: "« Dix minutes à pied. »" }
+      - { q: "Quel pont est-ce qu'elle doit traverser ?", options: ["Le premier pont.", "Le deuxième pont.", "Le troisième pont."], answer: 1, explain: "« Traversez le deuxième pont. »" }
+      - { q: "Qu'est-ce que le bouquiniste vend ?", options: ["Des billets de métro.", "Des cartes postales et des livres.", "Des vêtements."], answer: 1, explain: "He sells postcards and « de vieux livres sur Paris »." }
