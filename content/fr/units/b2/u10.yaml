@@ -1,0 +1,282 @@
+id: b2.u10
+title: "Strasbourg, du Parlement à la winstub"
+lessons:
+  - id: b2.u10.l1
+    title: Bouffer, manger ou se restaurer ?
+    teach: [g.register-levels]
+    vocab: [w.familier, w.soutenu, w.courant, w.argot, w.vulgaire, w.poli, w.impoli, w.grossier, w.bouffer, w.boulot, w.bagnole, w.fric, w.mec, w.nana, w.truc, w.bouquin, w.flic, w.gosse, w.fringues, w.bosser, w.crevé, w.se-restaurer, w.se-rendre, w.patienter, w.langage, w.vocabulaire, w.expression, w.tournure, w.formule, w.formel, w.informel, w.jargon, w.abréviation, w.véhicule, w.appel]
+    tip: "French has three main registers: familier with friends (bouffer, le boulot, la bagnole), courant everywhere (manger, le travail, la voiture), soutenu in formal speech and writing (se restaurer, l'emploi, le véhicule). Familiar isn't vulgar, but it is out of place at an interview."
+    sentences:
+      - { es: "On va bouffer une choucroute ce soir ?", en: "Shall we grab a choucroute tonight?", altEs: ["On va manger une choucroute ce soir ?", "On se fait une choucroute ce soir ?"], grammar: [g.register-levels, g.futur-proche], vocab: [w.bouffer, w.choucroute], note: "Familier. Courant: On va manger une choucroute ce soir ?" }
+      - { es: "Je suis crevé, j'ai trop bossé cette semaine.", en: "I'm knackered, I've worked way too much this week.", altEs: ["Je suis crevée, j'ai trop bossé cette semaine.", "Je suis épuisé, j'ai trop travaillé cette semaine."], grammar: [g.register-levels], vocab: [w.crevé, w.bosser] }
+      - { es: "Elle s'est payé une nouvelle bagnole avec tout le fric qu'elle a gagné.", en: "She treated herself to a new car with all the cash she earned.", altEs: ["Elle s'est acheté une nouvelle voiture avec tout l'argent qu'elle a gagné."], grammar: [g.register-levels, g.relative-qui-que], vocab: [w.bagnole, w.fric] }
+      - { es: "Mesdames et messieurs, nous vous invitons à vous restaurer au buffet.", en: "Ladies and gentlemen, we invite you to help yourselves to refreshments at the buffet.", altEs: ["Mesdames, messieurs, nous vous invitons à vous restaurer au buffet."], grammar: [g.register-levels], vocab: [w.se-restaurer, w.inviter], note: "Soutenu: se restaurer = manger." }
+      - { es: "Veuillez patienter, un conseiller va prendre votre appel.", en: "Please hold, an adviser will take your call.", altEs: ["Merci de patienter, un conseiller va prendre votre appel."], grammar: [g.register-levels, g.imperative], vocab: [w.patienter, w.conseiller.n] }
+      - { es: "Le ministre se rendra à Strasbourg mardi pour la session plénière.", en: "The minister will travel to Strasbourg on Tuesday for the plenary session.", altEs: ["Le ministre ira à Strasbourg mardi pour la session plénière."], grammar: [g.register-levels, g.futur-irregular-stems], vocab: [w.se-rendre, w.ministre, w.session] }
+      - { es: "Passe-moi le truc, là, sur la table.", en: "Pass me the thingy, there, on the table.", altEs: ["Passe-moi le machin, là, sur la table.", "Passe-moi la chose, là, sur la table."], grammar: [g.register-levels, g.imperative-with-pronouns], vocab: [w.truc] }
+      - { es: "J'ai acheté trois bouquins sur l'histoire de l'Alsace.", en: "I bought three books on the history of Alsace.", altEs: ["J'ai acheté trois livres sur l'histoire de l'Alsace."], grammar: [g.register-levels], vocab: [w.bouquin, w.histoire] }
+      - { es: "Les flics ont fermé la rue pendant le marché de Noël.", en: "The cops closed the street during the Christmas market.", altEs: ["Les policiers ont fermé la rue pendant le marché de Noël.", "La police a fermé la rue pendant le marché de Noël."], grammar: [g.register-levels], vocab: [w.flic, w.marché-de-noël] }
+      - { es: "T'as vu mes nouvelles fringues ? Je les ai trouvées en soldes.", en: "Have you seen my new clothes? I got them in the sales.", altEs: ["Tu as vu mes nouveaux vêtements ? Je les ai trouvés en solde."], grammar: [g.register-levels, g.pc-object-agreement], vocab: [w.fringues, w.soldes] }
+      - { es: "Cette expression est familière, mais pas vulgaire : tu peux la dire entre amis.", en: "This expression is informal, but not vulgar: you can say it among friends.", altEs: ["Cette expression est familière, pas vulgaire : tu peux l'employer entre amis."], grammar: [g.register-levels], vocab: [w.expression, w.familier, w.vulgaire] }
+      - { es: "Dire « bouffer » à un entretien, c'est impoli ; le dire entre copains, c'est normal.", en: "Saying 'bouffer' at an interview is rude; saying it among friends is normal.", altEs: ["Dire « bouffer » pendant un entretien, c'est impoli ; le dire entre copains, c'est normal."], grammar: [g.register-levels], vocab: [w.impoli, w.entretien] }
+      - { es: "Le jargon administratif est plein d'abréviations : CAF, TVA, SNCF…", en: "Administrative jargon is full of abbreviations: CAF, TVA, SNCF…", altEs: ["Le jargon de l'administration est plein d'abréviations : CAF, TVA, SNCF…"], grammar: [g.register-levels], vocab: [w.jargon, w.abréviation] }
+      - { es: "J'ai plus de boulot depuis mars.", en: "I've had no job since March.", grammar: [g.register-levels, g.spoken-negation], vocab: [w.boulot], transform: { instruction: "Rewrite in standard French (courant)", answer: "Je n'ai plus de travail depuis mars.", alt: ["Je n'ai plus d'emploi depuis mars.", "Je n'ai plus de boulot depuis mars."], en: "I haven't had a job since March." } }
+      - { es: "Ma voiture est encore en panne.", en: "My car has broken down again.", grammar: [g.register-levels], vocab: [w.panne], transform: { instruction: "Rewrite in familiar French (use bagnole)", answer: "Ma bagnole est encore en panne.", alt: ["Ma bagnole, elle est encore en panne."], en: "My car's conked out again." } }
+      - { es: "Madame la Directrice, je suis très heureux de votre proposition.", en: "Dear Director, I am very pleased with your proposal.", altEs: ["Madame la Directrice, je suis très heureuse de votre proposition."], grammar: [g.register-levels], vocab: [w.proposition], error: { wrong: "Madame la Directrice, je suis vachement content de votre proposition.", explain: "Don't mix registers: vachement is familiar and clashes with a formal address. Use très.", grammar: g.register-levels } }
+    exchanges:
+      - q: { es: "Comment on dit « travailler » entre copains ?", en: "How do you say 'work' among friends?" }
+        a: { es: "On dit « bosser » : « Je bosse demain. »", en: "You say 'bosser': 'Je bosse demain.'" }
+        alt: ["« Bosser ».", "On dit « bosser », c'est familier."]
+        grammar: [g.register-levels]
+        vocab: [w.bosser]
+      - q: { es: "Je peux dire « mec » à mon patron ?", en: "Can I say 'mec' to my boss?" }
+        a: { es: "Surtout pas ! C'est trop familier ; garde ce mot pour tes amis.", en: "Definitely not! It's too informal; keep that word for your friends." }
+        alt: ["Non, c'est trop familier.", "Seulement si ton patron est ton meilleur ami."]
+        grammar: [g.register-levels]
+        vocab: [w.mec, w.familier]
+      - q: { es: "C'est grossier, « bagnole » ?", en: "Is 'bagnole' rude?" }
+        a: { es: "Non, c'est juste familier ; ce n'est pas un mot vulgaire.", en: "No, it's just informal; it isn't a vulgar word." }
+        alt: ["Non, c'est familier.", "Pas du tout, c'est de l'argot très courant."]
+        grammar: [g.register-levels]
+        vocab: [w.grossier, w.bagnole, w.vulgaire]
+      - q: { es: "Tu as compris la lettre de l'administration ?", en: "Did you understand the letter from the authorities?" }
+        a: { es: "Pas un mot : trop de jargon et de formules toutes faites.", en: "Not a word: too much jargon and set phrases." }
+        alt: ["Non, c'est écrit dans un langage trop soutenu.", "À peu près, mais il y a beaucoup d'abréviations."]
+        grammar: [g.register-levels]
+        vocab: [w.jargon, w.formule]
+      - q: { es: "Tu es fatigué ?", en: "Are you tired?" }
+        a: { es: "Crevé ! J'ai bossé douze heures.", en: "Knackered! I worked twelve hours." }
+        alt: ["Je suis épuisé.", "Un peu, j'ai beaucoup travaillé."]
+        grammar: [g.register-levels]
+        vocab: [w.crevé, w.bosser]
+    texts:
+      - title: "Trois registres"
+        es: ["Familier : « T'as du fric pour la bagnole ? »", "Courant : « Tu as de l'argent pour la voiture ? »", "Soutenu : « Disposez-vous des fonds nécessaires à l'achat du véhicule ? »"]
+        en: ["Informal: 'Got the cash for the car?'", "Standard: 'Do you have money for the car?'", "Formal: 'Do you have the necessary funds to purchase the vehicle?'"]
+        grammar: [g.register-levels]
+        vocab: [w.familier, w.courant, w.soutenu, w.fric]
+      - title: "Conseil du prof"
+        es: ["Le vocabulaire familier n'est pas une faute, c'est un choix.", "À l'écrit formel, préférez les tournures courantes ou soutenues.", "Entre amis, un langage trop poli peut sembler froid."]
+        en: ["Informal vocabulary isn't a mistake, it's a choice.", "In formal writing, prefer standard or formal turns of phrase.", "Among friends, overly polite language can seem cold."]
+        grammar: [g.register-levels]
+        vocab: [w.vocabulaire, w.tournure, w.langage, w.poli]
+    spicy:
+      - { es: "Ce mec bosse au Parlement, il parle quatre langues et il danse comme un dieu : je suis fichue.", en: "That guy works at the Parliament, speaks four languages and dances like a god: I'm done for.", altEs: ["Ce mec travaille au Parlement, il parle quatre langues et il danse comme un dieu : je suis fichue."], grammar: [g.register-levels], vocab: [w.mec, w.bosser] }
+      - { es: "Mademoiselle, souhaiteriez-vous vous restaurer en ma compagnie ? Autrement dit : on va bouffer ?", en: "Would you care to dine in my company? In other words: shall we grab a bite?", altEs: ["Souhaiteriez-vous vous restaurer en ma compagnie ? Autrement dit : on va manger ?"], grammar: [g.register-levels, g.conditional-politeness], vocab: [w.se-restaurer, w.bouffer] }
+      - { es: "T'as mis tes plus belles fringues ? C'est pour moi ou pour le marché de Noël ?", en: "You put on your best clothes? Is that for me or for the Christmas market?", altEs: ["Tu as mis tes plus beaux vêtements ? C'est pour moi ou pour le marché de Noël ?"], grammar: [g.register-levels, g.superlatives], vocab: [w.fringues] }
+      - { es: "Je suis crevée, mais pour un dernier verre avec toi, je trouverai de l'énergie.", en: "I'm exhausted, but for one last drink with you, I'll find the energy.", altEs: ["Je suis crevé, mais pour un dernier verre avec toi, je trouverai de l'énergie."], grammar: [g.register-levels], vocab: [w.crevé, w.énergie] }
+      - { es: "Il m'a dit « Veuillez patienter » au premier rendez-vous ; il travaille dans un centre d'appels.", en: "He said 'Please hold' to me on our first date; he works in a call centre.", altEs: ["Au premier rendez-vous, il m'a dit « Veuillez patienter » ; il travaille dans un centre d'appels."], grammar: [g.register-levels], vocab: [w.patienter] }
+  - id: b2.u10.l2
+    title: J'sais pas, y'a trop de monde
+    teach: [g.spoken-negation]
+    vocab: [w.ouais, w.bof, w.ben, w.quoi.interj, w.chais-pas, w.y-a, w.choucroute, w.flammekueche, w.bretzel, w.winstub, w.marché-de-noël, w.chalet, w.alsacien, w.bilingue, w.métropole, w.devise, w.disperser, w.projeter, w.paisiblement, w.mortel, w.rime]
+    tip: "In conversation ne almost disappears: je sais pas, c'est pas grave, y'a personne. Pas carries the negative, so it never goes. Write ne, and keep it in formal speech."
+    sentences:
+      - { es: "J'sais pas, y'a trop de monde au marché de Noël.", en: "Dunno, there are too many people at the Christmas market.", altEs: ["Je sais pas, y'a trop de monde au marché de Noël.", "Je ne sais pas, il y a trop de monde au marché de Noël."], grammar: [g.spoken-negation], vocab: [w.y-a, w.marché-de-noël] }
+      - { es: "C'est pas grave, t'inquiète.", en: "It's no big deal, don't worry.", altEs: ["Ce n'est pas grave, ne t'inquiète pas.", "C'est pas grave, t'inquiète pas."], grammar: [g.spoken-negation], vocab: [w.grave] }
+      - { es: "Faut qu'on y aille, sinon la winstub sera complète.", en: "We've got to go, otherwise the winstub will be full.", altEs: ["Il faut qu'on y aille, sinon la winstub sera complète."], grammar: [g.spoken-negation, g.subjonctif-necessite], vocab: [w.winstub, w.complet] }
+      - { es: "T'as pas froid ? Y'a un chalet qui vend du vin chaud là-bas.", en: "Aren't you cold? There's a stall selling mulled wine over there.", altEs: ["Tu n'as pas froid ? Il y a un chalet qui vend du vin chaud là-bas."], grammar: [g.spoken-negation], vocab: [w.chalet, w.chaud], note: "At Christmas markets the stalls are wooden chalets." }
+      - { es: "J'ai rien compris : il parle alsacien ou allemand ?", en: "I didn't understand a thing: is he speaking Alsatian or German?", altEs: ["Je n'ai rien compris : il parle alsacien ou allemand ?"], grammar: [g.spoken-negation, g.negation-jamais-plus-rien], vocab: [w.alsacien] }
+      - { es: "Ben non, c'est pas de l'allemand, c'est de l'alsacien !", en: "Well no, it's not German, it's Alsatian!", altEs: ["Eh bien non, ce n'est pas de l'allemand, c'est de l'alsacien !"], grammar: [g.spoken-negation, g.de-after-negation], vocab: [w.ben, w.alsacien] }
+      - { es: "Ouais, la choucroute était bonne, mais j'en peux plus.", en: "Yeah, the choucroute was good, but I'm stuffed.", altEs: ["Oui, la choucroute était bonne, mais je n'en peux plus."], grammar: [g.spoken-negation, g.pronoun-en], vocab: [w.ouais, w.choucroute], note: "Je n'en peux plus = I can't take any more (I'm full / exhausted)." }
+      - { es: "Bof, les bretzels, j'aime pas trop ça.", en: "Meh, pretzels, I'm not that keen.", altEs: ["Bof, je n'aime pas trop les bretzels."], grammar: [g.spoken-negation, g.dislocation], vocab: [w.bof, w.bretzel] }
+      - { es: "On trouve pas de table, c'est complet partout ce soir.", en: "We can't find a table, it's full everywhere tonight.", altEs: ["On ne trouve pas de table, c'est complet partout ce soir."], grammar: [g.spoken-negation], vocab: [w.table, w.complet] }
+      - { es: "Tu viens ou pas ? Je vais pas t'attendre toute la nuit !", en: "Are you coming or not? I'm not going to wait for you all night!", altEs: ["Tu viens ou pas ? Je ne vais pas t'attendre toute la nuit !"], grammar: [g.spoken-negation, g.futur-proche], vocab: [w.attendre] }
+      - { es: "Le spectacle de lumière sur la cathédrale ? C'était mortel !", en: "The light show on the cathedral? It was awesome!", altEs: ["Le spectacle de lumières sur la cathédrale ? C'était génial !"], grammar: [g.register-levels], vocab: [w.mortel, w.spectacle], note: "Familier: mortel = amazing (literally 'deadly')." }
+      - { es: "Dans le centre, les plaques de rue sont bilingues, en français et en alsacien.", en: "In the centre, the street signs are bilingual, in French and Alsatian.", altEs: ["Dans le centre, les noms de rue sont bilingues : français et alsacien."], grammar: [g.adjective-agreement], vocab: [w.bilingue, w.plaque] }
+      - { es: "Je ne sais pas où se trouve la cathédrale.", en: "I don't know where the cathedral is.", grammar: [g.spoken-negation], vocab: [w.cathédrale], transform: { instruction: "Make it casual: drop ne", answer: "Je sais pas où se trouve la cathédrale.", alt: ["J'sais pas où se trouve la cathédrale.", "Chais pas où se trouve la cathédrale.", "Je sais pas où elle est, la cathédrale."], en: "Dunno where the cathedral is." } }
+      - { es: "Il n'y a plus de flammekueche.", en: "There's no more tarte flambée.", grammar: [g.spoken-negation], vocab: [w.flammekueche], transform: { instruction: "Say it the spoken way (y'a)", answer: "Y'a plus de flammekueche.", alt: ["Y a plus de flammekueche."], en: "There's no more tarte flambée." } }
+      - { es: "T'inquiète, c'est pas grave, y'a rien de cassé.", en: "Don't worry, it's no big deal, nothing's broken.", grammar: [g.spoken-negation], vocab: [w.casser], transform: { instruction: "Rewrite in careful written French", answer: "Ne t'inquiète pas, ce n'est pas grave, il n'y a rien de cassé.", en: "Don't worry, it's not serious, nothing is broken." } }
+      - { es: "J'ai pas le temps, je bosse ce soir.", en: "I haven't got time, I'm working tonight.", altEs: ["Je n'ai pas le temps, je bosse ce soir.", "Je n'ai pas le temps, je travaille ce soir."], grammar: [g.spoken-negation], vocab: [w.temps, w.bosser], error: { wrong: "Je n'ai le temps, je bosse ce soir.", explain: "Spoken French drops ne, never pas: j'ai pas le temps. Ne alone is literary.", grammar: g.spoken-negation } }
+    exchanges:
+      - q: { es: "On va où ce soir ?", en: "Where are we going tonight?" }
+        a: { es: "Chais pas… Y'a une winstub sympa près de la Petite France.", en: "Dunno… There's a nice winstub near Petite France." }
+        alt: ["J'sais pas, au marché de Noël ?", "Je ne sais pas encore."]
+        grammar: [g.spoken-negation]
+        vocab: [w.chais-pas, w.winstub]
+      - q: { es: "Tu as aimé la choucroute ?", en: "Did you like the choucroute?" }
+        a: { es: "Bof, c'était pas terrible ; trop de chou, pas assez de saucisses.", en: "Meh, it wasn't great; too much cabbage, not enough sausages." }
+        alt: ["Ouais, c'était super bon !", "Pas trop, c'était trop gras."]
+        grammar: [g.spoken-negation]
+        vocab: [w.bof, w.choucroute]
+      - q: { es: "Il reste des bretzels ?", en: "Are there any pretzels left?" }
+        a: { es: "Non, y'en a plus, désolé.", en: "No, there are none left, sorry." }
+        alt: ["Non, il n'y en a plus.", "Ouais, deux ou trois."]
+        grammar: [g.spoken-negation, g.pronoun-en]
+        vocab: [w.y-a, w.bretzel]
+      - q: { es: "Tu parles alsacien, toi ?", en: "Do you speak Alsatian?" }
+        a: { es: "Ben non, mais ma grand-mère, elle, elle parle que ça.", en: "Well no, but my grandmother speaks nothing but." }
+        alt: ["Pas du tout.", "Un petit peu, avec ma grand-mère."]
+        grammar: [g.spoken-negation, g.dislocation]
+        vocab: [w.ben, w.alsacien]
+      - q: { es: "Pourquoi la foule part déjà ?", en: "Why is the crowd leaving already?" }
+        a: { es: "Ben, le feu d'artifice est fini, alors tout le monde se disperse.", en: "Well, the fireworks are over, so everyone's heading off." }
+        alt: ["Le spectacle est fini.", "Parce qu'il fait trop froid."]
+        grammar: [g.spoken-negation]
+        vocab: [w.disperser]
+    texts:
+      - title: "SMS entre copines"
+        es: ["T'es où ?", "J'suis devant le grand sapin, y'a un monde fou.", "Je te vois pas, t'as quel manteau ?"]
+        en: ["Where are you?", "I'm in front of the big Christmas tree, it's packed.", "I can't see you, what coat have you got on?"]
+        grammar: [g.spoken-negation]
+        vocab: [w.manteau]
+      - title: "Carte postale de Strasbourg"
+        es: ["Strasbourg est une vraie métropole européenne, mais le soir, la Petite France dort paisiblement.", "Ce soir, on projette des images sur la façade de la cathédrale.", "Demain, on visite le Parlement !"]
+        en: ["Strasbourg is a real European metropolis, but in the evening Petite France sleeps peacefully.", "Tonight they're projecting images onto the cathedral's facade.", "Tomorrow we're visiting the Parliament!"]
+        grammar: [g.on-nous]
+        vocab: [w.métropole, w.paisiblement, w.projeter]
+    spicy:
+      - { es: "J'sais pas ce que t'as mis dans ce vin chaud, mais j'ai plus du tout froid.", en: "Dunno what you put in this mulled wine, but I'm not cold at all any more.", altEs: ["Je ne sais pas ce que tu as mis dans ce vin chaud, mais je n'ai plus du tout froid."], grammar: [g.spoken-negation], vocab: [w.chaud] }
+      - { es: "T'inquiète, je dirai rien à personne… sauf si tu m'embrasses pas.", en: "Don't worry, I won't tell anyone… unless you don't kiss me.", altEs: ["Ne t'inquiète pas, je ne dirai rien à personne… sauf si tu ne m'embrasses pas."], grammar: [g.spoken-negation], vocab: [w.embrasser] }
+      - { es: "Ouais, ouais, c'est ça : t'es venu au marché de Noël pour les bretzels, pas pour moi.", en: "Yeah, yeah, sure: you came to the Christmas market for the pretzels, not for me.", altEs: ["Oui, oui, c'est ça : tu es venu au marché de Noël pour les bretzels, pas pour moi."], grammar: [g.spoken-negation], vocab: [w.ouais, w.bretzel] }
+      - { es: "Y'a pas de rime avec « Strasbourg » dans mon poème, alors j'ai écrit ton prénom à la place.", en: "There's no rhyme for 'Strasbourg' in my poem, so I wrote your name instead.", altEs: ["Il n'y a pas de rime avec « Strasbourg » dans mon poème, alors j'ai écrit ton prénom à la place."], grammar: [g.spoken-negation], vocab: [w.rime, w.y-a] }
+      - { es: "Bof, la cathédrale, je l'ai déjà vue ; toi, par contre, je me lasse pas de te regarder.", en: "Meh, the cathedral, I've seen it already; you, on the other hand, I never tire of looking at.", altEs: ["Bof, la cathédrale, je l'ai déjà vue ; toi, par contre, je ne me lasse pas de te regarder."], grammar: [g.spoken-negation, g.dislocation], vocab: [w.bof] }
+  - id: b2.u10.l3
+    title: Le Parlement siège-t-il à Strasbourg ?
+    teach: [g.formal-inversion]
+    vocab: [w.parlement, w.parlementaire, w.député-européen, w.siège, w.session, w.séance, w.voter-une-loi, w.institution, w.union-européenne.nm, w.traité, w.frontière, w.douane, w.honneur, w.discours, w.prononcer, w.à-peine, w.peine, w.réunir, w.se-réunir, w.assemblée, w.sénat, w.sénateur, w.projet-de-loi, w.amendement, w.rejeter, w.majorité, w.minorité, w.opposition, w.démocratie, w.démocratique, w.république, w.état, w.nation, w.international, w.diplomatie, w.ambassade, w.ambassadeur, w.siéger, w.assister, w.plénier]
+    tip: "Formal questions keep the noun and add a pronoun after the verb: Le Parlement siège-t-il ici ? Peut-être, sans doute, à peine and ainsi at the start of a sentence also trigger inversion: Peut-être viendra-t-il. Add -t- between two vowels."
+    sentences:
+      - { es: "Le Parlement européen siège-t-il toujours à Strasbourg ?", en: "Does the European Parliament still sit in Strasbourg?", altEs: ["Est-ce que le Parlement européen siège toujours à Strasbourg ?"], grammar: [g.formal-inversion], vocab: [w.parlement, w.siéger] }
+      - { es: "Peut-être la séance sera-t-elle reportée à demain.", en: "Perhaps the sitting will be postponed until tomorrow.", altEs: ["Peut-être que la séance sera reportée à demain."], grammar: [g.formal-inversion], vocab: [w.séance, w.reporter.v] }
+      - { es: "Sans doute avez-vous raison, madame la députée.", en: "No doubt you are right, Madam MP.", altEs: ["Vous avez sans doute raison, madame la députée."], grammar: [g.formal-inversion], vocab: [w.député] }
+      - { es: "À peine la séance était-elle ouverte que l'opposition protestait déjà.", en: "No sooner had the sitting opened than the opposition was already protesting.", altEs: ["La séance était à peine ouverte que l'opposition protestait déjà."], grammar: [g.formal-inversion], vocab: [w.à-peine, w.opposition] }
+      - { es: "« C'est un honneur d'être parmi vous », déclara la présidente de l'Assemblée.", en: "'It is an honour to be among you,' declared the President of the Assembly.", altEs: ["« C'est un honneur d'être parmi vous », a déclaré la présidente de l'Assemblée."], grammar: [g.formal-inversion, g.passe-simple-recognition], vocab: [w.honneur, w.assemblée] }
+      - { es: "Pourquoi le projet de loi a-t-il été rejeté ?", en: "Why was the bill rejected?", altEs: ["Pourquoi est-ce que le projet de loi a été rejeté ?"], grammar: [g.formal-inversion, g.passive-voice], vocab: [w.projet-de-loi, w.rejeter] }
+      - { es: "L'amendement a-t-il obtenu la majorité ?", en: "Did the amendment get a majority?", altEs: ["Est-ce que l'amendement a obtenu la majorité ?"], grammar: [g.formal-inversion], vocab: [w.amendement, w.majorité] }
+      - { es: "Aussi faut-il trouver un accord avec la minorité.", en: "We must therefore find an agreement with the minority.", altEs: ["Il faut donc trouver un accord avec la minorité."], grammar: [g.formal-inversion], vocab: [w.minorité, w.accord], note: "Aussi at the start means 'therefore' and triggers inversion." }
+      - { es: "La ville où siège le Parlement accueille aussi le Conseil de l'Europe.", en: "The city where the Parliament sits is also home to the Council of Europe.", altEs: ["La ville où le Parlement siège accueille aussi le Conseil de l'Europe."], grammar: [g.formal-inversion, g.relative-ou], vocab: [w.siéger, w.accueillir] }
+      - { es: "Quand les sénateurs voteront-ils cette loi ?", en: "When will the senators pass this law?", altEs: ["Quand est-ce que les sénateurs voteront cette loi ?"], grammar: [g.formal-inversion], vocab: [w.sénateur, w.voter-une-loi] }
+      - { es: "Votre ambassadeur assistera-t-il au discours de la présidente ?", en: "Will your ambassador attend the president's speech?", altEs: ["Est-ce que votre ambassadeur assistera au discours de la présidente ?"], grammar: [g.formal-inversion], vocab: [w.ambassadeur, w.discours, w.assister] }
+      - { es: "Les Serments de Strasbourg, prononcés en 842, sont l'un des plus anciens témoignages de la langue française.", en: "The Oaths of Strasbourg, sworn in 842, are one of the oldest records of the French language.", altEs: ["Prononcés en 842, les Serments de Strasbourg sont l'un des plus anciens témoignages de la langue française."], grammar: [g.participial-clauses], vocab: [w.prononcer, w.témoignage], note: "Written in an early Romance language, ancestor of French, and in Old High German." }
+      - { es: "Depuis 2017, le tram traverse le Rhin jusqu'en Allemagne : plus de douane, juste un pont.", en: "Since 2017, the tram has crossed the Rhine into Germany: no more customs, just a bridge.", altEs: ["Depuis 2017, le tramway traverse le Rhin jusqu'en Allemagne : plus de douane, juste un pont."], grammar: [g.depuis-present], vocab: [w.douane, w.frontière, w.tramway] }
+      - { es: "Est-ce que le traité a été signé par tous les États ?", en: "Has the treaty been signed by all the states?", grammar: [g.formal-inversion], vocab: [w.traité, w.état], transform: { instruction: "Make the question formal (complex inversion)", answer: "Le traité a-t-il été signé par tous les États ?", en: "Has the treaty been signed by all the states?" } }
+      - { es: "Peut-être que le ministre viendra.", en: "Perhaps the minister will come.", grammar: [g.formal-inversion], vocab: [w.ministre], transform: { instruction: "Start with Peut-être and invert", answer: "Peut-être le ministre viendra-t-il.", en: "Perhaps the minister will come." } }
+      - { es: "A-t-il voté la loi ?", en: "Did he vote for the law?", altEs: ["Est-ce qu'il a voté la loi ?"], grammar: [g.formal-inversion], vocab: [w.voter], error: { wrong: "A-il voté la loi ?", explain: "Between two vowels, inversion needs -t-: a-t-il, va-t-elle.", grammar: g.formal-inversion } }
+    exchanges:
+      - q: { es: "Le Parlement se réunit-il en ce moment ?", en: "Is the Parliament sitting at the moment?" }
+        a: { es: "Oui, la session a commencé lundi ; elle se termine jeudi.", en: "Yes, the session started on Monday; it ends on Thursday." }
+        alt: ["Oui, jusqu'à jeudi.", "Non, la prochaine session est en mars."]
+        grammar: [g.formal-inversion]
+        vocab: [w.se-réunir, w.session]
+      - q: { es: "Combien d'États compte l'Union européenne ?", en: "How many states does the European Union have?" }
+        a: { es: "Vingt-sept, depuis le départ du Royaume-Uni.", en: "Twenty-seven, since the United Kingdom left." }
+        alt: ["Vingt-sept.", "Vingt-sept États membres."]
+        grammar: [g.formal-inversion]
+        vocab: [w.union-européenne.nm, w.état]
+      - q: { es: "La présidente prononcera-t-elle un discours ?", en: "Will the president give a speech?" }
+        a: { es: "Oui, à l'ouverture de la séance, en français et en allemand.", en: "Yes, at the opening of the sitting, in French and German." }
+        alt: ["Oui, demain matin.", "Sans doute, mais l'heure n'est pas confirmée."]
+        grammar: [g.formal-inversion]
+        vocab: [w.prononcer, w.discours]
+      - q: { es: "Pourquoi l'amendement a-t-il été rejeté ?", en: "Why was the amendment rejected?" }
+        a: { es: "Faute de majorité : l'opposition a voté contre.", en: "For lack of a majority: the opposition voted against." }
+        alt: ["Parce que l'opposition a voté contre.", "Il n'avait pas la majorité."]
+        grammar: [g.cause-advanced]
+        vocab: [w.amendement, w.majorité, w.opposition]
+      - q: { es: "Où se trouve l'ambassade de France ?", en: "Where is the French embassy?" }
+        a: { es: "Il n'y en a pas ici : Strasbourg est en France ! Il y a des consulats.", en: "There isn't one here: Strasbourg is in France! There are consulates." }
+        alt: ["Il n'y a pas d'ambassade de France en France.", "À Berlin, si tu veux aller en Allemagne."]
+        grammar: [g.pronoun-en]
+        vocab: [w.ambassade]
+    texts:
+      - title: "Communiqué officiel"
+        es: ["La séance plénière s'ouvrira lundi à 17 heures.", "Le projet de loi sera-t-il adopté ? Rien n'est moins sûr.", "Ainsi le Parlement devra-t-il chercher une majorité."]
+        en: ["The plenary sitting will open on Monday at 5 p.m.", "Will the bill be passed? Nothing is less certain.", "The Parliament will thus have to look for a majority."]
+        grammar: [g.formal-inversion]
+        vocab: [w.séance, w.projet-de-loi, w.majorité]
+      - title: "Guide du visiteur"
+        es: ["Le Parlement européen est l'une des institutions de l'Union européenne.", "Les visites sont gratuites, mais faut-il réserver ? Oui, pour les groupes.", "Peut-être aurez-vous la chance d'assister à un débat."]
+        en: ["The European Parliament is one of the institutions of the European Union.", "Visits are free, but do you need to book? Yes, for groups.", "Perhaps you'll be lucky enough to watch a debate."]
+        grammar: [g.formal-inversion]
+        vocab: [w.institution, w.union-européenne.nm]
+    spicy:
+      - { es: "Mademoiselle, accepteriez-vous de prendre un verre avec un modeste député européen ?", en: "Would you agree to have a drink with a humble MEP?", altEs: ["Accepteriez-vous de prendre un verre avec un modeste député européen ?"], grammar: [g.formal-inversion, g.conditional-politeness], vocab: [w.député-européen] }
+      - { es: "À peine m'avait-il souri que j'avais oublié tout mon discours.", en: "No sooner had he smiled at me than I'd forgotten my whole speech.", altEs: ["Il m'avait à peine souri que j'avais oublié tout mon discours."], grammar: [g.formal-inversion, g.plus-que-parfait], vocab: [w.à-peine, w.discours] }
+      - { es: "Peut-être me direz-vous votre prénom après la séance ?", en: "Perhaps you'll tell me your first name after the session?", altEs: ["Peut-être que vous me direz votre prénom après la séance ?"], grammar: [g.formal-inversion], vocab: [w.séance] }
+      - { es: "Je propose un amendement à notre accord : un baiser en plus par jour. Qui vote pour ?", en: "I propose an amendment to our agreement: one extra kiss a day. Who's in favour?", altEs: ["Je propose un amendement à notre accord : un baiser de plus par jour. Qui vote pour ?"], grammar: [g.present-er], vocab: [w.amendement, w.accord] }
+      - { es: "Sans doute trouvez-vous mes questions trop directes ; c'est la diplomatie à la française.", en: "No doubt you find my questions too direct; that's French-style diplomacy.", altEs: ["Vous trouvez sans doute mes questions trop directes ; c'est la diplomatie à la française."], grammar: [g.formal-inversion], vocab: [w.diplomatie] }
+  - id: b2.u10.l4
+    title: À la une de la presse
+    teach: [g.register-levels, g.formal-inversion]
+    vocab: [w.ministre, w.président, w.gouvernement, w.politique, w.politique.adj, w.parti, w.député, w.manifestation, w.manifester, w.droit.n, w.procès, w.juge, w.avocat, w.tribunal, w.crime, w.criminel, w.prison, w.victime, w.témoin, w.enquête, w.enquêter, w.presse, w.magazine, w.reportage, w.reporter, w.titre, w.une, w.réforme, w.électeur, w.campagne-électorale, w.candidat, w.sondage, w.observateur, w.protester]
+    tip: "The same news sounds different on the radio, in a newspaper and at the bar: Le gouvernement a-t-il menti ? (press) / Est-ce que le gouvernement a menti ? (standard) / Le gouvernement, il a menti ou quoi ? (familiar)."
+    sentences:
+      - { es: "Le ministre a-t-il menti ? Toute la presse pose la question à la une.", en: "Did the minister lie? The whole press is asking the question on the front page.", altEs: ["Le ministre a-t-il menti ? Toute la presse pose la question en une."], grammar: [g.formal-inversion], vocab: [w.ministre, w.presse, w.une] }
+      - { es: "Selon un sondage, la majorité des électeurs est favorable à la réforme.", en: "According to a poll, most voters are in favour of the reform.", altEs: ["D'après un sondage, la majorité des électeurs est favorable à la réforme."], grammar: [g.register-levels], vocab: [w.sondage, w.électeur, w.réforme] }
+      - { es: "Des milliers de manifestants se sont rassemblés devant le Parlement.", en: "Thousands of demonstrators gathered in front of the Parliament.", altEs: ["Des milliers de personnes ont manifesté devant le Parlement."], grammar: [g.pronominal-passe-compose], vocab: [w.manifester, w.parlement] }
+      - { es: "Le procès s'ouvrira lundi ; le juge entendra trois témoins.", en: "The trial will open on Monday; the judge will hear three witnesses.", altEs: ["Le procès commencera lundi ; le juge entendra trois témoins."], grammar: [g.futur-simple-forms], vocab: [w.procès, w.juge, w.témoin] }
+      - { es: "L'avocat de la victime a demandé une nouvelle enquête.", en: "The victim's lawyer asked for a new investigation.", altEs: ["L'avocate de la victime a demandé une nouvelle enquête."], grammar: [g.passe-compose-avoir], vocab: [w.avocat, w.victime, w.enquête] }
+      - { es: "Le criminel a été condamné à dix ans de prison par le tribunal de Strasbourg.", en: "The criminal was sentenced to ten years in prison by the Strasbourg court.", altEs: ["Le tribunal de Strasbourg a condamné le criminel à dix ans de prison."], grammar: [g.passive-voice], vocab: [w.criminel, w.prison, w.tribunal] }
+      - { es: "La police a interpellé le suspect hier soir.", en: "The police arrested the suspect last night.", altEs: ["Le suspect a été interpellé par la police hier soir."], grammar: [g.register-levels], vocab: [w.interpeller, w.suspect], note: "Press register. Familier: Les flics ont chopé le mec." }
+      - { es: "Pourquoi le gouvernement refuse-t-il de répondre aux journalistes ?", en: "Why does the government refuse to answer the journalists?", altEs: ["Pourquoi est-ce que le gouvernement refuse de répondre aux journalistes ?"], grammar: [g.formal-inversion], vocab: [w.gouvernement, w.journaliste] }
+      - { es: "Les observateurs internationaux suivront la campagne électorale de près.", en: "International observers will follow the election campaign closely.", altEs: ["Les observateurs internationaux suivront de près la campagne électorale."], grammar: [g.futur-simple-forms], vocab: [w.observateur, w.international, w.campagne-électorale] }
+      - { es: "Le parti du président a perdu des voix, d'après les premiers résultats.", en: "The president's party lost votes, according to the first results.", altEs: ["D'après les premiers résultats, le parti du président a perdu des voix."], grammar: [g.passe-compose-avoir], vocab: [w.parti, w.président, w.voix] }
+      - { es: "Ce titre est trop familier pour un magazine sérieux.", en: "This headline is too informal for a serious magazine.", altEs: ["Ce titre est beaucoup trop familier pour un magazine sérieux."], grammar: [g.register-levels], vocab: [w.titre, w.magazine, w.familier] }
+      - { es: "Tous les citoyens ont le droit de manifester ; c'est un droit fondamental en démocratie.", en: "All citizens have the right to demonstrate; it's a fundamental right in a democracy.", altEs: ["Chaque citoyen a le droit de manifester ; c'est un droit fondamental en démocratie."], grammar: [g.register-levels], vocab: [w.droit.n, w.citoyen, w.démocratie] }
+      - { es: "Le reporter a réalisé un reportage sur le marché de Noël pour le journal de 20 heures.", en: "The reporter made a report on the Christmas market for the 8 o'clock news.", altEs: ["La reporter a réalisé un reportage sur le marché de Noël pour le journal de 20 heures."], grammar: [g.passe-compose-avoir], vocab: [w.reporter, w.reportage] }
+      - { es: "Est-ce que le président va parler ce soir ?", en: "Is the president going to speak tonight?", grammar: [g.formal-inversion], vocab: [w.président], transform: { instruction: "Make it a formal question (future + inversion)", answer: "Le président parlera-t-il ce soir ?", alt: ["Le président va-t-il parler ce soir ?"], en: "Will the president speak tonight?" } }
+      - { es: "Le juge, il a rien dit.", en: "The judge didn't say anything.", grammar: [g.register-levels, g.spoken-negation], vocab: [w.juge], transform: { instruction: "Rewrite in written standard French", answer: "Le juge n'a rien dit.", en: "The judge said nothing." } }
+      - { es: "Le Premier ministre a déclaré qu'il n'y avait aucun problème.", en: "The Prime Minister stated that there was no problem.", altEs: ["Le Premier ministre a affirmé qu'il n'y avait aucun problème."], grammar: [g.register-levels, g.discours-indirect-past], vocab: [w.ministre, w.déclarer], error: { wrong: "Le Premier ministre, il a dit qu'y a pas de problème.", explain: "In a written news report, avoid spoken features (dislocation, y'a, no ne, présent after a past verb): Le Premier ministre a déclaré qu'il n'y avait aucun problème.", grammar: g.register-levels } }
+    exchanges:
+      - q: { es: "T'as vu les infos ?", en: "Have you seen the news?" }
+        a: { es: "Ouais, le ministre a démissionné ; c'est à la une de tous les journaux.", en: "Yeah, the minister resigned; it's on the front page of every paper." }
+        alt: ["Non, pas encore.", "Ouais, c'est la folie !"]
+        grammar: [g.register-levels]
+        vocab: [w.ministre, w.une]
+      - q: { es: "Qui va gagner l'élection, d'après les sondages ?", en: "Who's going to win the election, according to the polls?" }
+        a: { es: "Les deux candidats sont au coude à coude ; impossible de savoir.", en: "The two candidates are neck and neck; impossible to tell." }
+        alt: ["Personne ne le sait.", "La candidate de l'opposition, paraît-il."]
+        grammar: [g.register-levels]
+        vocab: [w.sondage, w.candidat]
+      - q: { es: "Pourquoi les gens manifestent-ils ?", en: "Why are people demonstrating?" }
+        a: { es: "Ils protestent contre la réforme des retraites.", en: "They're protesting against the pension reform." }
+        alt: ["À cause de la réforme.", "Contre la réforme du gouvernement."]
+        grammar: [g.formal-inversion]
+        vocab: [w.manifester, w.réforme]
+      - q: { es: "Tu as été témoin de l'accident ?", en: "Did you witness the accident?" }
+        a: { es: "Oui, et la police m'a convoqué pour l'enquête.", en: "Yes, and the police have called me in for the investigation." }
+        alt: ["Oui, j'ai tout vu.", "Non, je suis arrivé après."]
+        grammar: [g.passe-compose-avoir]
+        vocab: [w.témoin, w.enquête]
+      - q: { es: "Ta sœur est avocate ?", en: "Is your sister a lawyer?" }
+        a: { es: "Oui, elle plaide au tribunal tous les jours ; elle adore les procès.", en: "Yes, she argues cases in court every day; she loves trials." }
+        alt: ["Oui, avocate en droit européen.", "Non, elle est juge."]
+        grammar: [g.c-est-il-est]
+        vocab: [w.avocat, w.tribunal, w.procès]
+    texts:
+      - title: "Titres de presse"
+        es: ["Réforme : le gouvernement cédera-t-il ?", "Sondage : la majorité des électeurs dit non.", "Procès à Strasbourg : un témoin clé entendu hier."]
+        en: ["Reform: will the government give in?", "Poll: most voters say no.", "Trial in Strasbourg: a key witness heard yesterday."]
+        grammar: [g.formal-inversion]
+        vocab: [w.gouvernement, w.sondage, w.électeur, w.témoin]
+      - title: "La même info au café"
+        es: ["T'as vu ? Le gouvernement va encore changer les retraites.", "Ouais, y'a des manifs partout demain.", "Moi, la politique, j'y comprends plus rien."]
+        en: ["Did you see? The government is going to change pensions again.", "Yeah, there are demos everywhere tomorrow.", "Me, I don't understand anything about politics any more."]
+        grammar: [g.register-levels, g.spoken-negation]
+        vocab: [w.manifestation, w.politique]
+    spicy:
+      - { es: "Monsieur le juge, je plaide coupable : je l'ai regardé toute la soirée.", en: "Your Honour, I plead guilty: I looked at him all evening.", altEs: ["Monsieur le juge, je plaide coupable : je l'ai regardée toute la soirée."], grammar: [g.register-levels], vocab: [w.juge] }
+      - { es: "Selon un sondage très sérieux réalisé par moi-même, tu es la personne la plus charmante de Strasbourg.", en: "According to a very serious poll conducted by myself, you're the most charming person in Strasbourg.", altEs: ["D'après un sondage très sérieux que j'ai réalisé moi-même, tu es la personne la plus charmante de Strasbourg."], grammar: [g.superlatives], vocab: [w.sondage] }
+      - { es: "Je mène l'enquête : qui a mangé la dernière part de flammekueche ? J'ai un suspect… et il est mignon.", en: "I'm investigating: who ate the last slice of tarte flambée? I have a suspect… and he's cute.", altEs: ["J'enquête : qui a mangé la dernière part de flammekueche ? J'ai un suspect… et il est mignon."], grammar: [g.register-levels], vocab: [w.enquête, w.suspect] }
+      - { es: "Si tu étais candidat, je ferais toute ta campagne électorale… surtout les affiches avec ta photo.", en: "If you were a candidate, I'd run your whole election campaign… especially the posters with your photo.", altEs: ["Si tu étais candidat, je ferais toute ta campagne… surtout les affiches avec ta photo."], grammar: [g.si-imparfait-conditionnel], vocab: [w.candidat, w.campagne-électorale] }
+      - { es: "Mon avocat m'a conseillé de ne rien dire ; mon cœur, lui, n'est pas d'accord.", en: "My lawyer advised me to say nothing; my heart, however, disagrees.", altEs: ["Mon avocate m'a conseillé de ne rien dire ; mon cœur, lui, n'est pas d'accord."], grammar: [g.dislocation], vocab: [w.avocat, w.cœur] }
+dialogues:
+  - id: b2.u10.d1
+    title: Au téléphone, puis à la winstub
+    context: Camille works at the European Parliament. Her friend Karim is waiting for her in a winstub; her phone rings in the middle of the conversation.
+    lines:
+      - { speaker: Karim, es: "T'es enfin là ! J'ai cru que t'allais jamais venir.", en: "You're finally here! I thought you were never coming." }
+      - { speaker: Camille, es: "Désolée, la séance a duré trois heures de plus. Je suis crevée.", en: "Sorry, the sitting went on three hours longer. I'm knackered." }
+      - { speaker: Karim, es: "Assieds-toi, j'ai commandé une flammekueche. Alors, ça bosse dur au Parlement ?", en: "Sit down, I ordered a tarte flambée. So, are they working hard at the Parliament?" }
+      - { speaker: Camille, es: "Ouais, y'a un projet de loi sur les frontières, personne est d'accord.", en: "Yeah, there's a bill on borders, nobody agrees." }
+      - { speaker: Camille, es: "Oh pardon, c'est mon chef… Allô ? Oui, monsieur. Le texte sera-t-il prêt demain ? Sans doute, je m'en occupe dès huit heures.", en: "Oh sorry, it's my boss… Hello? Yes, sir. Will the text be ready tomorrow? No doubt; I'll see to it from eight o'clock." }
+      - { speaker: Camille, es: "Je vous en prie, monsieur. Bonne soirée.", en: "You're welcome, sir. Have a good evening." }
+      - { speaker: Karim, es: "Waouh ! « Le texte sera-t-il prêt ? » T'as changé de voix, de vocabulaire, de tout !", en: "Wow! 'Will the text be ready?' You changed your voice, your vocabulary, everything!" }
+      - { speaker: Camille, es: "Ben oui, je vais pas lui dire « T'inquiète, mec, c'est pas grave » !", en: "Well yes, I'm not going to tell him 'Don't worry, dude, no big deal'!" }
+      - { speaker: Karim, es: "Ce serait mortel, pourtant. Allez, mange, ça va refroidir.", en: "It would be awesome, though. Come on, eat, it's getting cold." }
+    questions:
+      - { q: "Pourquoi Camille arrive-t-elle en retard ?", options: ["Elle s'est perdue dans Strasbourg.", "La séance a duré plus longtemps.", "Elle a raté le tram."], answer: 1, explain: "La séance a duré trois heures de plus." }
+      - { q: "Sur quoi porte le projet de loi ?", options: ["Sur les frontières", "Sur la choucroute", "Sur les retraites"], answer: 0, explain: "Y'a un projet de loi sur les frontières." }
+      - { q: "Comment Camille parle-t-elle à son chef ?", options: ["De façon familière", "De façon soutenue", "En alsacien"], answer: 1, explain: "She switches to formal French with inversion: Le texte sera-t-il prêt demain ?" }
+      - { q: "Que remarque Karim ?", options: ["Que Camille parle trop fort", "Que Camille a changé de registre", "Que la flammekueche est froide"], answer: 1, explain: "T'as changé de voix, de vocabulaire, de tout: she changed register." }
