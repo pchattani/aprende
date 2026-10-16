@@ -1,0 +1,67 @@
+level: a2
+title: Level check A2
+passScore: 0.8
+reading:
+  text: |
+    L'été dernier, Julien et sa copine Inès sont partis une semaine en Bretagne. Ils ont pris le train à Paris un samedi matin et ils sont arrivés à Saint-Malo vers midi. Il faisait beau et la mer était très calme. Le premier soir, ils ont mangé des crêpes dans une petite crêperie près du port et ils se sont promenés sur les remparts.
+
+    Le lundi, ils ont loué des vélos pour aller au Mont-Saint-Michel. C'était très loin : ils ont roulé pendant presque quatre heures ! Quand ils sont arrivés, il y avait beaucoup de touristes, mais la vue était magnifique. Inès a pris des centaines de photos. Julien, lui, était trop fatigué pour monter jusqu'à l'abbaye ; il a attendu dans un café.
+
+    Le mercredi, par contre, il a plu toute la journée. Ils sont restés à l'hôtel, ils ont lu et ils ont joué aux cartes. Le soir, la dame de l'hôtel leur a conseillé un restaurant de poissons. « C'était le meilleur dîner de mes vacances », dit Julien. L'année prochaine, ils iront en Normandie, et cette fois, ils prendront la voiture.
+  questions:
+    - { q: "How did Julien and Inès travel to Saint-Malo?", options: ["By car", "By train", "By bike"], answer: 1 }
+    - { q: "What did they do on the first evening?", options: ["They ate crêpes and walked on the ramparts", "They visited the abbey", "They played cards"], answer: 0 }
+    - { q: "Why didn't Julien go up to the abbey?", options: ["It was closed", "He was too tired", "It was raining"], answer: 1 }
+    - { q: "What did they do on Wednesday?", options: ["They went to the beach", "They stayed at the hotel because it rained all day", "They went home"], answer: 1 }
+    - { q: "How will they travel next year?", options: ["By car", "By train", "By plane"], answer: 0 }
+listening:
+  dictation:
+    - "Hier soir, nous sommes allés au cinéma avec des amis."
+    - "Quand j'étais petite, j'habitais à la campagne."
+    - "Tu as vu Marie ? Oui, je l'ai vue ce matin."
+    - "S'il fait beau demain, nous irons à la plage."
+    - "Elle s'est levée tôt et elle est partie à huit heures."
+  questions:
+    - { audio: "Tu es déjà allé au Mont-Saint-Michel ? — Oui, j'y suis allé il y a deux ans, avec mes parents.", options: ["He has never been there", "He went there two years ago with his parents", "He is going there next week"], answer: 1 }
+    - { audio: "Bonjour madame, je voudrais réserver une table pour quatre personnes, samedi soir, vers huit heures.", options: ["The person wants to book a hotel room", "The person wants to book a table for four on Saturday evening", "The person is cancelling a reservation"], answer: 1 }
+    - { audio: "J'ai mal à la tête depuis hier. — Prenez ces médicaments et reposez-vous. Si ça ne va pas mieux, revenez lundi.", options: ["The patient has a stomach ache", "The patient has had a headache since yesterday and must rest", "The patient must go to hospital"], answer: 1 }
+grammar:
+  - { prompt: "Hier, j'___ un bon film.", options: ["ai vu", "suis vu", "voyais"], answer: 0, explain: "voir takes avoir in the passé composé; irregular participle vu (g.passe-compose-avoir, g.past-participles-irregular)." }
+  - { prompt: "Marie est ___ à Rouen samedi.", options: ["allé", "allée", "allés"], answer: 1, explain: "With être the participle agrees with the subject: Marie est allée (g.pc-agreement-etre)." }
+  - { prompt: "Nous ___ à neuf heures ce matin.", options: ["nous sommes levés", "avons levé", "nous avons levés"], answer: 0, explain: "Pronominal verbs take être: nous nous sommes levés (g.pronominal-passe-compose)." }
+  - { prompt: "Quand j'étais petit, je ___ souvent à la plage.", options: ["suis allé", "allais", "irai"], answer: 1, explain: "A habit in the past: imparfait (g.imparfait-uses)." }
+  - { prompt: "Je regardais la télé quand le téléphone ___.", options: ["sonnait", "a sonné", "sonne"], answer: 1, explain: "Background in the imparfait, sudden event in the passé composé (g.pc-vs-imparfait)." }
+  - { prompt: "Tu connais Paul ? — Oui, je ___ connais bien.", options: ["lui", "le", "la"], answer: 1, explain: "Direct object pronoun for a masculine person: le (g.direct-object-pronouns)." }
+  - { prompt: "Tu as téléphoné à tes parents ? — Oui, je ___ ai téléphoné.", options: ["les", "leur", "lui"], answer: 1, explain: "téléphoner à + people → leur (g.indirect-object-pronouns)." }
+  - { prompt: "Tu vas à Saint-Malo ? — Oui, j'___ vais demain.", options: ["en", "y", "le"], answer: 1, explain: "y replaces a place introduced by à (g.pronoun-y)." }
+  - { prompt: "Tu veux des crêpes ? — Oui, j'___ veux deux.", options: ["y", "en", "les"], answer: 1, explain: "With a quantity, en replaces the noun and the number stays (g.en-quantities)." }
+  - { prompt: "Rennes est ___ grande que Saint-Malo.", options: ["plus", "plus de", "la plus"], answer: 0, explain: "Comparative with an adjective: plus … que (g.comparatives)." }
+  - { prompt: "Elle chante ___ que sa sœur.", options: ["meilleur", "mieux", "bonne"], answer: 1, explain: "chanter is a verb, so the adverb mieux (g.meilleur-mieux)." }
+  - { prompt: "Demain, nous ___ au Mont-Saint-Michel.", options: ["allons aller", "irons", "allions"], answer: 1, explain: "Irregular future stem of aller: ir- (g.futur-irregular-stems)." }
+  - { prompt: "S'il ___ demain, nous resterons à l'hôtel.", options: ["pleuvra", "pleut", "pleuvait"], answer: 1, explain: "After si, use the present, never the future (g.si-present-futur)." }
+  - { prompt: "Je ___ nager, mais je ne ___ pas cette plage.", options: ["sais … connais", "connais … sais", "sais … sais"], answer: 0, explain: "savoir + infinitive (know how to); connaître + a place (g.savoir-connaitre)." }
+  - { prompt: "___ -vous m'aider, s'il vous plaît ?", options: ["Pourriez", "Pourrez", "Pouviez"], answer: 0, explain: "The conditional softens a request: Pourriez-vous m'aider ? (g.conditional-politeness)." }
+writing:
+  prompt: "Write an email in French to a friend about your last holiday (at least 80 words): where you went, how you travelled, what the weather was like, what you did and what you ate, one thing that went wrong, and your plans for next year."
+  minWords: 80
+  modelAnswer: |
+    Salut Thomas,
+
+    Je suis rentré dimanche de mes vacances en Normandie ! Je suis parti dix jours avec ma sœur. Nous avons pris le train jusqu'à Rouen, puis nous avons loué une voiture. Il faisait beau presque tous les jours, mais il y avait du vent. Nous avons visité Étretat et Honfleur, et nous avons fait une longue promenade sur les falaises. Le soir, nous mangions des moules et du camembert, c'était délicieux ! Le seul problème : le dernier jour, j'ai perdu mon portable sur la plage. Je ne l'ai jamais trouvé… L'année prochaine, j'irai en Bretagne. Tu viendras avec moi ?
+
+    À bientôt,
+    Paul
+  checklist:
+    - "I used the passé composé with avoir and with être, with correct agreement (nous sommes partis, elle est allée)."
+    - "I used the imparfait for the weather and descriptions (il faisait beau, c'était délicieux)."
+    - "I used at least one object pronoun (le, la, les, lui, leur, y or en) in the right place."
+    - "I used narrative connectors (d'abord, puis, le soir, le dernier jour…)."
+    - "I talked about next year in the futur simple (j'irai, nous prendrons)."
+    - "I started and ended the email in a friendly way (Salut…, À bientôt)."
+speaking:
+  - "Le week-end dernier, je suis allé à Rouen avec mes amis."
+  - "Quand j'étais petite, je passais mes vacances en Bretagne."
+  - "Je voudrais réserver une chambre pour deux nuits, s'il vous plaît."
+  - "Tu as vu mes clés ? Je ne les trouve plus."
+  - "Si tu veux, nous irons au marché demain matin."
+  - "C'est la plus belle plage de Bretagne."

@@ -1,0 +1,82 @@
+level: c1
+title: Level check C1
+passScore: 0.8
+reading:
+  text: |
+    À l'entrée du bassin d'Arcachon, la dune du Pilat attire chaque année plus d'un million de visiteurs. On y monte par un escalier ou, pour les plus courageux, directement dans le sable, et l'on découvre au sommet, à une centaine de mètres de hauteur, un paysage d'une rare beauté : d'un côté l'océan, de l'autre une forêt de pins qui s'étend à perte de vue. Rares sont ceux qui redescendent sans avoir pris de photos.
+
+    Pourtant, cette montagne de sable n'est pas immobile. Poussée par les vents d'ouest, elle avance chaque année d'un à cinq mètres vers l'intérieur des terres. Au fil des décennies, elle a recouvert des routes, des arbres et même certains bâtiments ; quant aux blockhaus construits sur son sommet pendant la Seconde Guerre mondiale, ils ont glissé jusqu'à la plage, où l'on peut encore les voir à marée basse. La dune, autrement dit, est vivante : elle se déplace, se transforme et ne ressemble jamais tout à fait à ce qu'elle était l'année précédente.
+
+    Cette mobilité pose des questions délicates. Faut-il protéger la forêt et les maisons voisines en essayant de fixer la dune, ou la laisser évoluer librement, au risque de perdre une partie du paysage ? La plupart des spécialistes s'accordent aujourd'hui sur un point : il serait vain, et sans doute dangereux, de vouloir arrêter un phénomène naturel de cette ampleur. Il convient plutôt d'en accompagner l'évolution, en limitant ce qui l'aggrave.
+
+    Car la principale menace ne vient pas toujours de la nature. Le passage de centaines de milliers de visiteurs abîme la végétation qui retient le sable, et les parkings, longtemps installés au pied de la dune, ont dû être déplacés. En 2022, de violents incendies ont en outre détruit une partie de la forêt voisine, rappelant combien cet équilibre est fragile. Quoi que l'on décide, une chose est sûre : la dune du Pilat ne nous appartient pas ; nous ne faisons que la traverser.
+  questions:
+    - { q: "Why does the author say 'Rares sont ceux qui redescendent sans avoir pris de photos'?", options: ["Because taking photos is forbidden", "To stress that almost everyone takes photos of the exceptional view", "Because few people reach the top"], answer: 1 }
+    - { q: "What happens to the dune every year?", options: ["It shrinks by five metres", "It moves inland by one to five metres, pushed by the west winds", "It stays exactly the same"], answer: 1 }
+    - { q: "What happened to the Second World War bunkers?", options: ["They were destroyed by the army", "They slid down to the beach", "They were turned into a museum"], answer: 1 }
+    - { q: "What do most specialists now recommend?", options: ["Fixing the dune with concrete", "Accompanying its natural evolution while limiting what makes it worse", "Closing it to the public for ever"], answer: 1 }
+    - { q: "According to the text, what is often the main threat to the dune?", options: ["The wind", "Human activity: visitors, car parks — and, in 2022, the fires that hit the nearby forest", "The ocean"], answer: 1 }
+listening:
+  dictation:
+    - "Lorsqu'il eut terminé son discours, la salle se leva pour l'applaudir."
+    - "Quelle que soit la saison, la vue depuis le sommet est magnifique."
+    - "Veuillez trouver ci-joint les documents demandés."
+    - "Il ne cesse de pleuvoir depuis notre arrivée à Biarritz."
+    - "Ce n'est pas mal du tout, ce petit restaurant basque."
+  questions:
+    - { audio: "Je me permets de vous relancer au sujet de ma demande du 3 mars, restée à ce jour sans réponse. Dans l'attente de votre retour, je vous prie d'agréer mes salutations distinguées.", options: ["The writer is thanking someone for a quick reply", "The writer is politely following up on an unanswered request", "The writer is cancelling an order"], answer: 1 }
+    - { audio: "Il fait un peu frais ici, non ? — Ah pardon, je ferme la fenêtre.", options: ["The first speaker is complaining about the heat", "The first speaker indirectly asks for the window to be closed", "The second speaker opens the window"], answer: 1 }
+    - { audio: "Bon, ben, du coup, on fait quoi ? On y va ou pas ? Parce que là, il est déjà neuf heures, quoi.", options: ["The speaker is hesitant and pushing for a decision because it is getting late", "The speaker is giving a formal speech", "The speaker refuses to go"], answer: 0 }
+    - { audio: "Selon des sources proches du dossier, le chantier de la nouvelle ligne pourrait prendre du retard. Aucune confirmation officielle n'a toutefois été donnée.", options: ["The project is officially cancelled", "Unconfirmed sources say the project may be delayed", "The new line has just opened"], answer: 1 }
+grammar:
+  - { prompt: "Napoléon ___ à Ajaccio en 1769.", options: ["naquit", "naissait", "naquît"], answer: 0, explain: "Passé simple of naître: il naquit; naquît (with circumflex) is the imperfect subjunctive (g.passe-simple-forms)." }
+  - { prompt: "Dès qu'il ___ la lettre, il partit.", options: ["eut lu", "avait lu", "a lu"], answer: 0, explain: "After dès que in a passé simple narrative, an immediately preceding action: passé antérieur (g.passe-anterieur)." }
+  - { prompt: "Il eût fallu qu'il ___ plus tôt.", options: ["vînt", "vint", "vienne"], answer: 0, explain: "Literary sequence of tenses: imperfect subjunctive with circumflex, qu'il vînt (g.subjonctif-imparfait)." }
+  - { prompt: "S'il avait plu, la récolte ___ sauvée.", options: ["eût été", "fût", "avait été"], answer: 0, explain: "The pluperfect subjunctive as conditionnel passé deuxième forme: eût été = aurait été (g.subjonctif-plus-que-parfait)." }
+  - { prompt: "___ sont ceux qui connaissent cette crique.", options: ["Rares", "Peu", "Quelques"], answer: 0, explain: "Literary inversion with an adjective first: Rares sont ceux qui… (g.literary-inversion)." }
+  - { prompt: "___ vous soyez, vous êtes le bienvenu.", options: ["Qui que", "Quoi que", "Quel que"], answer: 0, explain: "whoever: qui que + subjonctif (g.qui-que-quoi-que)." }
+  - { prompt: "___ la saison, la dune attire les visiteurs.", options: ["Quelle que soit", "Quel que soit", "Quoi que soit"], answer: 0, explain: "quel que agrees with the noun (la saison → quelle que) and is followed by être in the subjonctif (g.qui-que-quoi-que)." }
+  - { prompt: "« Les surfeurs arrivent en masse » devient, en titre de presse : « ___ des surfeurs ».", options: ["Arrivée massive", "Arriver massivement", "Ils arrivent"], answer: 0, explain: "Headlines prefer nominalisation: l'arrivée massive (g.nominalisation, g.press-headlines)." }
+  - { prompt: "Les prix ont baissé ; ___, la fréquentation n'a pas augmenté.", options: ["toutefois", "en effet", "d'ailleurs"], answer: 0, explain: "toutefois introduces an opposition; en effet confirms; d'ailleurs adds (g.connectors-advanced)." }
+  - { prompt: "___ que la situation s'améliore, mais rien n'est encore sûr.", options: ["Il semblerait", "Il est certain", "On sait"], answer: 0, explain: "Hedging: il semblerait que expresses caution, not certainty (g.hedging)." }
+  - { prompt: "___ agréer, Madame, l'expression de mes salutations distinguées.", options: ["Veuillez", "Voulez", "Vouliez"], answer: 0, explain: "Fixed formula of a formal letter: Veuillez agréer… (g.formal-letter)." }
+  - { prompt: "Il ___ de rappeler que la baignade est interdite.", options: ["convient", "faut", "importe que"], answer: 0, explain: "Formal impersonal: il convient de + infinitive (g.impersonal-passive-formal)." }
+  - { prompt: "Quelle phrase appartient au registre soutenu ?", options: ["J'ose pas imaginer le siège.", "Je n'ose imaginer le siège.", "Je ose pas imaginer le siège."], answer: 1, explain: "With oser, cesser, pouvoir and savoir, formal French can drop pas: je n'ose imaginer (g.ne-litteraire)." }
+  - { prompt: "Mon ___ professeur m'a écrit : il est maintenant à la retraite.", options: ["ancien", "vieil", "nouvel"], answer: 0, explain: "Before the noun, ancien = former; after it, ancien = old (g.adjective-position-meaning)." }
+  - { prompt: "Il a le cœur sur la main signifie qu'il est ___.", options: ["très généreux", "malade", "amoureux"], answer: 0, explain: "avoir le cœur sur la main = to be very generous (g.idioms-body)." }
+writing:
+  prompt: "You live in the Basque Country. The town council plans to build a large car park and a new hotel next to a popular beach. Write a formal letter of at least 220 words to the mayor. Use the conventions of French correspondence (place and date, objet, Madame le Maire / Monsieur le Maire, opening formula, closing formula); present the problem, give at least two well-organised arguments with precise connectors (en effet, or, par ailleurs, en outre, toutefois), concede one point, use at least one nominalisation and one impersonal construction (il convient de, il importe que + subjonctif), and make a concrete proposal."
+  minWords: 220
+  modelAnswer: |
+    Bayonne, le 5 avril
+    Objet : projet de parking et d'hôtel à proximité de la plage
+
+    Madame le Maire,
+
+    Je me permets de vous écrire au sujet du projet de construction d'un parking de cinq cents places et d'un hôtel en bordure de la plage, présenté lors du dernier conseil municipal. Habitante de la commune depuis quinze ans, je souhaite vous faire part de mes inquiétudes.
+
+    En effet, la plage fait déjà l'objet d'une fréquentation très importante en été. L'arrivée de centaines de voitures supplémentaires entraînerait une augmentation du bruit et de la pollution, sans compter les embouteillages dans le centre. Or, notre commune s'est engagée à réduire la place de la voiture.
+
+    Par ailleurs, la dune qui protège la plage est fragile. Sa destruction partielle, même limitée, aurait des conséquences graves lors des tempêtes d'hiver.
+
+    Certes, je comprends la nécessité de développer le tourisme, qui fait vivre de nombreux commerces. Toutefois, il me semble qu'il convient de le faire autrement. Il importe que les visiteurs puissent venir sans voiture : une navette gratuite depuis la gare et des parkings à vélos répondraient à ce besoin, pour un coût bien moindre.
+
+    Je vous propose donc d'organiser une réunion publique afin que les habitants puissent s'exprimer avant toute décision.
+
+    Dans l'attente de votre réponse, je vous prie d'agréer, Madame le Maire, l'expression de ma haute considération.
+
+    Maite Irigoyen
+  checklist:
+    - "I used the layout and fixed formulas of a formal letter (lieu et date, objet, Madame le Maire, Je me permets de…, je vous prie d'agréer…)."
+    - "I organised my arguments with precise connectors (en effet, or, par ailleurs, en outre, toutefois)."
+    - "I conceded a point (certes…) before replying."
+    - "I used at least one nominalisation (l'arrivée de…, la destruction de…)."
+    - "I used an impersonal construction (il convient de, il importe que + subjonctif)."
+    - "I made a concrete proposal and kept a polite, formal register throughout (vous, no familiar words)."
+speaking:
+  - "Lorsqu'il eut fini de parler, personne n'osa répondre."
+  - "Quoi qu'il arrive, nous serons au rendez-vous à Toulouse."
+  - "Rares sont les villes qui ont conservé de tels remparts."
+  - "Il convient de rappeler que le sentier est fermé en cas de vent."
+  - "Bon, ben, du coup, on se retrouve devant la cathédrale ?"
+  - "Ce n'est pas mal du tout, ton idée : je dirais même qu'elle est excellente."
