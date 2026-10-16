@@ -9,7 +9,7 @@
 | 🇮🇹 Italian (*Impara*) | https://pchattani.github.io/aprende/italian/ | Rome, Tuscany, the North, the South, Sicily and Sardinia, then back to Rome |
 | 🇧🇷 Portuguese (*Aprenda*) | https://pchattani.github.io/aprende/portuguese/ | Rio round Brazil, then Portugal; Brazilian with European notes |
 | 🇭🇰 Cantonese (*Gong 講*) | https://pchattani.github.io/aprende/cantonese/ | Hong Kong Island, Kowloon, the New Territories and islands, Macau, Guangzhou; traditional characters with Jyutping |
-| 🇫🇷 French (*Apprends*) | coming soon at /aprende/french/ | Paris round France, then the French-speaking world to Québec |
+| 🇫🇷 French (*Apprends*) | https://pchattani.github.io/aprende/french/ | Paris round France, then Brussels, Geneva, Dakar, the Antilles and Montréal to Québec |
 
 Each course has its own progress, settings and offline install. See [docs/SISTER_COURSES.md](docs/SISTER_COURSES.md) for how a course is put together.
 
