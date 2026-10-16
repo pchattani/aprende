@@ -1,6 +1,6 @@
 import type { ChoiceExercise } from '../../engine/types'
 import { SpeakerButton } from '../ui/basics'
-import { Instruction, Prompt, type ExerciseProps } from './shared'
+import { Instruction, Prompt, DogSays, type ExerciseProps } from './shared'
 import { tlOf } from '../../engine/course'
 import { LANGUAGE } from '../../engine/course'
 import { TargetText } from '../ui/TargetText'
@@ -20,17 +20,16 @@ export function Choice({ exercise, value, onChange, checked, result }: ExerciseP
     <div>
       <Instruction>{TITLES[exercise.kind]}</Instruction>
       {exercise.kind === 'listen' ? (
-        <div className="my-6 flex items-center justify-center gap-3">
+        <div className="my-8 flex items-center justify-center gap-4">
           <SpeakerButton text={exercise.audio ?? exercise.prompt} size="lg" autoPlay />
           <SpeakerButton text={exercise.audio ?? exercise.prompt} slow />
         </div>
       ) : (
-        <div className="mb-5 flex items-center gap-3">
-          {isEs && exercise.kind !== 'fillBlank' && <SpeakerButton text={exercise.prompt} size="sm" />}
+        <DogSays seed={exercise.prompt} aside={isEs && exercise.kind !== 'fillBlank' ? <SpeakerButton text={exercise.prompt} size="sm" /> : undefined}>
           <Prompt lang={isEs ? 'es' : 'en'}>{exercise.prompt}</Prompt>
-        </div>
+        </DogSays>
       )}
-      <div className="grid gap-2" role="radiogroup">
+      <div className="grid gap-3" role="radiogroup">
         {exercise.options.map((opt, i) => {
           let cls = ''
           if (checked) {
@@ -48,7 +47,7 @@ export function Choice({ exercise, value, onChange, checked, result }: ExerciseP
               className={`tile flex items-center gap-3 ${cls}`}
               lang={tlOf(exercise.kind === 'fillBlank' || exercise.kind === 'reply' ? 'es' : isEs ? 'en' : 'es')}
             >
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 border-line text-xs text-muted">{i + 1}</span>
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 border-current text-xs opacity-40">{i + 1}</span>
               <span>{exercise.kind === 'choiceEs' || exercise.kind === 'listen' ? opt : <TargetText text={opt} />}</span>
             </button>
           )

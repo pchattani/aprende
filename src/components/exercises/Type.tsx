@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { TypeExercise, FindErrorExercise } from '../../engine/types'
 import { SpeakerButton, Chip } from '../ui/basics'
-import { Instruction, Prompt, type ExerciseProps } from './shared'
+import { Instruction, Prompt, DogSays, type ExerciseProps } from './shared'
 import { SPECIAL_CHARS } from './chars'
 import { TL } from '../../engine/course'
 import { LANGUAGE } from '../../engine/course'
@@ -39,7 +39,7 @@ export function TypeAnswer({ exercise, value, onChange, onSubmit, checked }: Exe
     <div>
       <Instruction>{TITLES[exercise.kind]}</Instruction>
       {exercise.kind === 'dictation' ? (
-        <div className="my-6 flex items-center justify-center gap-3">
+        <div className="my-8 flex items-center justify-center gap-4">
           <SpeakerButton text={exercise.audio ?? exercise.answers[0]!} size="lg" autoPlay />
           <SpeakerButton text={exercise.audio ?? exercise.answers[0]!} slow />
         </div>
@@ -48,10 +48,9 @@ export function TypeAnswer({ exercise, value, onChange, onSubmit, checked }: Exe
           <Prompt lang="es">{exercise.wrong}</Prompt>
         </div>
       ) : (
-        <div className="mb-4 flex items-start gap-3">
-          {'audio' in exercise && exercise.audio && <SpeakerButton text={exercise.audio} size="sm" />}
+        <DogSays seed={exercise.prompt} aside={'audio' in exercise && exercise.audio ? <SpeakerButton text={exercise.audio} size="sm" /> : undefined}>
           <Prompt lang={exercise.kind === 'typeEs' ? 'en' : 'es'}>{exercise.prompt}</Prompt>
-        </div>
+        </DogSays>
       )}
       {'hint' in exercise && exercise.hint && (
         <div className="mb-3">
@@ -75,13 +74,13 @@ export function TypeAnswer({ exercise, value, onChange, onSubmit, checked }: Exe
         autoCorrect="off"
         spellCheck={false}
         placeholder={isEnglish ? 'Type in English' : ui.typePlaceholder}
-        className="w-full resize-none rounded-2xl border-2 border-line bg-surface-2 p-3 text-lg outline-none focus:border-sky-500"
+        className="w-full resize-none rounded-2xl border-2 border-line bg-surface p-4 text-lg font-bold shadow-[0_4px_0_0_var(--line)] outline-none transition focus:border-sky-500 focus:shadow-[0_4px_0_0_var(--color-sky-500)]"
         aria-label="Your answer"
       />
       {!isEnglish && !checked && (
         <div className="mt-2 flex flex-wrap gap-1.5" aria-label="Special characters">
           {SPECIAL_CHARS.map((c) => (
-            <button key={c} type="button" onClick={() => insert(c)} className="rounded-lg border-2 border-line bg-surface px-2.5 py-1 font-bold" lang={TL}>
+            <button key={c} type="button" onClick={() => insert(c)} className="tile px-3 py-1.5" lang={TL}>
               {c}
             </button>
           ))}

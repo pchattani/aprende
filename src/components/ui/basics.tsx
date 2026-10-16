@@ -11,7 +11,7 @@ export function ProgressBar({ value, max = 1, tone = 'ok', className = '' }: { v
   const color = tone === 'ok' ? 'bg-ok-500' : tone === 'gold' ? 'bg-gold-500' : tone === 'sky' ? 'bg-sky-500' : 'bg-brand-500'
   return (
     <div className={`h-3 w-full overflow-hidden rounded-full bg-surface-2 ${className}`} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100}>
-      <div className={`h-full rounded-full transition-all duration-300 ${color}`} style={{ width: `${pct}%` }} />
+      <div className={`bar-fill h-full rounded-full transition-[width] duration-500 ease-out ${color}`} style={{ width: `${pct > 0 ? Math.max(pct, 6) : 0}%` }} />
     </div>
   )
 }
@@ -31,7 +31,7 @@ export function SpeakerButton({ text, slow = false, size = 'md', autoPlay = fals
           void say(text, slow)
         }
       }}
-      className={`inline-flex items-center justify-center rounded-2xl bg-sky-500 text-white shadow-[0_4px_0_0_var(--color-sky-600)] active:translate-y-[2px] active:shadow-none ${dim} ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-2xl bg-sky-500 text-white shadow-[0_4px_0_0_var(--lip-sky)] transition-transform active:translate-y-[4px] active:shadow-none ${dim} ${className}`}
       aria-label={slow ? 'Play slowly' : 'Play audio'}
     >
       {slow ? <IconTurtle width={icon} height={icon} /> : <IconSpeaker width={icon} height={icon} />}
@@ -58,8 +58,8 @@ export function PageHeader({ title, subtitle, right }: { title: string; subtitle
   return (
     <header className="mb-4 flex items-start justify-between gap-3">
       <div>
-        <h1 className="text-2xl font-extrabold tracking-tight">{title}</h1>
-        {subtitle && <p className="text-sm text-muted">{subtitle}</p>}
+        <h1 className="font-display text-3xl">{title}</h1>
+        {subtitle && <p className="text-sm font-bold text-muted">{subtitle}</p>}
       </div>
       {right}
     </header>

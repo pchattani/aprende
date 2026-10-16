@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import type { WordBankExercise } from '../../engine/types'
 import { SpeakerButton } from '../ui/basics'
-import { Instruction, Prompt, type ExerciseProps } from './shared'
+import { Instruction, Prompt, DogSays, type ExerciseProps } from './shared'
 import { TL } from '../../engine/course'
 import { LANGUAGE } from '../../engine/course'
 import { TargetText } from '../ui/TargetText'
@@ -109,11 +109,10 @@ export function WordBank({ exercise, value, onChange, checked }: ExerciseProps<W
   return (
     <div>
       <Instruction>{exercise.kind === 'orderText' ? 'Put the sentences in order' : exercise.kind === 'order' ? 'Put the words in order' : `Write this in ${LANGUAGE}`}</Instruction>
-      <div className="mb-4 flex items-center gap-3">
-        {exercise.kind === 'order' && exercise.answers[0] && <SpeakerButton text={exercise.answers[0]} size="sm" />}
+      <DogSays seed={exercise.prompt} aside={exercise.kind === 'order' && exercise.answers[0] ? <SpeakerButton text={exercise.answers[0]} size="sm" /> : undefined}>
         <Prompt lang={exercise.kind === 'order' ? 'es' : 'en'}>{exercise.kind === 'order' ? exercise.translation ?? '' : exercise.kind === 'orderText' ? exercise.translation ?? exercise.prompt : exercise.prompt}</Prompt>
-      </div>
-      <div ref={answerRef} className={`mb-4 min-h-[3.5rem] rounded-2xl border-b-2 border-dashed px-1 py-2 transition ${drag?.moved && dropAt !== undefined ? 'border-brand-400 bg-brand-100/40 dark:bg-brand-500/10' : 'border-line'}`} aria-label="Your answer" lang={TL}>
+      </DogSays>
+      <div ref={answerRef} className={`mb-6 min-h-[7.5rem] rounded-2xl px-1 py-2 transition [background-image:repeating-linear-gradient(to_bottom,transparent_0,transparent_3.6rem,var(--line)_3.6rem,var(--line)_calc(3.6rem+2px))] ${drag?.moved && dropAt !== undefined ? 'bg-brand-100/40 dark:bg-brand-500/10' : ''}`} aria-label="Your answer" lang={TL}>
         <div className="flex flex-wrap gap-2">
           {chosen.map((w, pos) => (
             <span key={pos} className={`flex items-center ${wide ? 'w-full' : ''}`}>
@@ -150,7 +149,7 @@ export function WordBank({ exercise, value, onChange, checked }: ExerciseProps<W
           </button>
         ))}
       </div>
-      {!checked && <p className="mt-3 text-center text-xs text-muted">Tap or drag the tiles. Drag between words to insert, drag out to remove.</p>}
+      {!checked && <p className="mt-4 text-center text-xs font-bold text-muted">Tap or drag the tiles. Drag between words to insert, drag out to remove.</p>}
     </div>
   )
 }

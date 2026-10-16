@@ -25,6 +25,8 @@ interface State {
   almost: number
   wrong: number
   requeued: Set<number>
+  /** Answers in a row without a mistake (the combo). */
+  streak: number
   startedAt: number
   finished: boolean
 }
@@ -47,6 +49,7 @@ function reducer(s: State, a: Action): State {
         correct: s.correct + (a.result.verdict === 'correct' ? 1 : 0),
         almost: s.almost + (a.result.verdict === 'almost' ? 1 : 0),
         wrong: s.wrong + (ok ? 0 : 1),
+        streak: ok ? s.streak + 1 : 0,
       }
     }
     case 'pin':
@@ -87,7 +90,7 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   const sound = useSettings((s) => s.sound)
   const autoPin = useSettings((s) => s.autoPin)
   const [s, dispatch] = useReducer(reducer, undefined, () => ({
-    queue: exercises, index: 0, answer: undefined, pinned: false, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), startedAt: Date.now(), finished: false,
+    queue: exercises, index: 0, answer: undefined, pinned: false, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), streak: 0, startedAt: Date.now(), finished: false,
   }))
   const [confirmQuit, setConfirmQuit] = useState(false)
   const finishedRef = useRef(false)
@@ -172,25 +175,31 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   const autoSubmit = ex.kind === 'match' || ex.kind === 'speak'
   return (
     <div className="mx-auto flex min-h-full max-w-xl flex-col px-4 pt-[calc(0.75rem+env(safe-area-inset-top))]">
-      <div className="flex items-center gap-3">
-        <button type="button" onClick={() => setConfirmQuit(true)} className="rounded-full p-2 text-muted" aria-label="Quit">
-          <IconX />
+      <div className="flex items-center gap-3" title={title}>
+        <button type="button" onClick={() => setConfirmQuit(true)} className="-ml-1 rounded-full p-1.5 text-muted transition hover:text-[var(--text)]" aria-label="Quit">
+          <IconX width={28} height={28} strokeWidth={2.6} />
         </button>
-        <ProgressBar value={done} max={total} tone="ok" className="flex-1" />
+        <ProgressBar value={done} max={total} tone="ok" className="h-4 flex-1" />
+        <span className={`flex min-w-[3.2rem] items-center justify-end gap-0.5 font-display text-lg transition ${s.streak >= 2 ? 'text-tangerine-500' : 'text-muted/50'}`} aria-label={`${s.streak} in a row`}>
+          <span className={s.streak >= 2 ? 'animate-flame' : 'grayscale'} aria-hidden="true">🔥</span>{s.streak}
+        </span>
       </div>
-      <p className="mt-2 truncate text-xs font-bold uppercase tracking-wide text-muted">{title}</p>
-      <div className="flex-1 py-5">
+      {mode !== 'lesson' && <p className="mt-2 truncate text-xs font-extrabold uppercase tracking-wider text-muted">{title}</p>}
+      {s.result && s.result.verdict !== 'wrong' && s.streak >= 3 && s.streak % 3 === 0 && (
+        <p key={s.streak} className="animate-bounce-in mx-auto mt-2 rounded-full bg-tangerine-500 px-3 py-0.5 text-sm font-extrabold text-white shadow-[0_3px_0_0_#d16800]">{s.streak} in a row!</p>
+      )}
+      <div className="flex-1 pb-6 pt-6">
         <ExerciseView key={`${s.index}`} exercise={ex} value={s.answer} onChange={(v) => dispatch({ type: 'answer', value: v })} onSubmit={(v) => check(v)} checked={Boolean(s.result)} result={s.result} />
       </div>
       {!s.result && !autoSubmit && (
-        <div className="sticky bottom-0 -mx-4 border-t border-line bg-[var(--bg)]/95 px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur">
-          <div className="flex gap-2">
+        <div className="sticky bottom-0 -mx-4 border-t-2 border-line bg-[var(--bg)] px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
+          <div className="flex gap-3">
             {mode !== 'lesson' && (
               <Button variant="ghost" onClick={() => dispatch({ type: 'skip' })}>
                 Skip
               </Button>
             )}
-            <Button variant={canCheck ? 'ok' : 'ghost'} className="flex-1" disabled={!canCheck} onClick={() => check()}>
+            <Button variant="ok" className="flex-1" disabled={!canCheck} onClick={() => check()}>
               Check
             </Button>
           </div>
@@ -201,8 +210,10 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
       )}
       {confirmQuit && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true">
-          <div className="card w-full max-w-sm">
-            <p className="text-lg font-extrabold">Quit this session?</p>
+          <div className="card animate-pop w-full max-w-sm text-center">
+            <p className="text-5xl" aria-hidden="true">🥺</p>
+            <p className="mt-2 font-display text-2xl">Wait, don't go!</p>
+            <p className="font-extrabold">Quit this session?</p>
             <p className="mt-1 text-sm text-muted">Your answers so far are saved to your review schedule, but the {mode === 'pinned' ? 'practice' : mode} will not count as completed.</p>
             <div className="mt-4 grid grid-cols-2 gap-2">
               <Button variant="ghost" onClick={() => setConfirmQuit(false)}>

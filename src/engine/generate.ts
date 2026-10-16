@@ -145,10 +145,11 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
   const wordCap = Math.floor(target / 2)
   const maxMatch = Math.min(2, Math.floor(target / 6))
   const maxChoice = Math.min(3, Math.floor(target / 4))
-  const wordQueue = rng.shuffle(newWords.length ? newWords : vocabEntries)
+  // Words spelt like their gloss (oh, taxi) make identical match tiles: they go last and never into a match.
+  const wordQueue = rng.shuffle(newWords.length ? newWords : vocabEntries).sort((a, b) => Number(!matchable(a)) - Number(!matchable(b)))
   let matches = 0
-  while (wordQueue.length >= 4 && matches < maxMatch && out.length < wordCap) {
-    const group = wordQueue.splice(0, Math.min(5, wordQueue.length))
+  while (wordQueue.filter(matchable).length >= 4 && matches < maxMatch && out.length < wordCap) {
+    const group = wordQueue.splice(0, Math.min(5, wordQueue.filter(matchable).length))
     out.push(matchExercise(group))
     matches++
   }
@@ -235,8 +236,8 @@ export function generateReview(
   const wordCards = cards.filter((c) => c.kind === 'word')
   // group stage-0/1 words into match exercises
   const low = wordCards.filter((c) => c.stage <= 1)
-  const matchable = low.map((c) => lookup.word(c.id)).filter((v): v is VocabEntry => Boolean(v))
-  while (matchable.length >= 4) out.push(matchExercise(matchable.splice(0, 5)))
+  const pairable = low.map((c) => lookup.word(c.id)).filter((v): v is VocabEntry => v !== undefined && matchable(v))
+  while (pairable.length >= 4) out.push(matchExercise(pairable.splice(0, 5)))
   const matched = new Set(out.flatMap((e) => e.items))
   const speakMax = ctx.speech ? (ctx.speaking === 'lots' ? 4 : 2) : 0
   let speaks = 0
@@ -324,6 +325,11 @@ export function focusedFillBlank(s: Sentence, id: string, missed: { given: strin
 
 // ---------------------------------------------------------------------------
 // word exercises
+
+/** A word can be matched when its tiles differ (not spelt like its gloss). */
+function matchable(v: VocabEntry): boolean {
+  return v.lemma.toLowerCase() !== (v.en[0] ?? '').toLowerCase()
+}
 
 function matchExercise(group: VocabEntry[]): MatchExercise {
   return {

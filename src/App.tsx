@@ -66,7 +66,7 @@ function Shell() {
     { to: '/profile', label: 'Progress', icon: IconUser },
   ]
   return (
-    <div className="mx-auto min-h-full max-w-xl pb-[calc(5.5rem+env(safe-area-inset-bottom))]">
+    <div className="mx-auto min-h-full max-w-xl pb-[calc(6rem+env(safe-area-inset-bottom))]">
       <main className="px-4 pt-[calc(0.75rem+env(safe-area-inset-top))]">
         <ErrorBoundary>
           <Suspense fallback={<Loading />}>
@@ -74,14 +74,14 @@ function Shell() {
           </Suspense>
         </ErrorBoundary>
       </main>
-      <nav className={`fixed inset-x-0 bottom-0 z-10 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] transition ${immersive ? 'pointer-events-none translate-y-24 opacity-0' : ''}`} aria-label="Main" aria-hidden={immersive}>
-        <ul className="mx-auto flex max-w-xl justify-around rounded-full bg-surface/95 px-1 py-1 shadow-float ring-1 ring-[var(--line)] backdrop-blur-xl">
+      <nav className={`fixed inset-x-0 bottom-0 z-10 border-t-2 border-line bg-surface pb-[env(safe-area-inset-bottom)] transition ${immersive ? 'pointer-events-none translate-y-24 opacity-0' : ''}`} aria-label="Main" aria-hidden={immersive}>
+        <ul className="mx-auto flex max-w-xl justify-around px-2 py-1.5">
           {tabs.map((t) => {
             const active = t.to === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/lesson') : loc.pathname.startsWith(t.to)
             return (
               <li key={t.to} className="flex-1">
-                <NavLink to={t.to} className={`flex flex-col items-center gap-0.5 rounded-full py-1.5 text-[10.5px] font-extrabold transition ${active ? 'bg-brand-gradient text-white shadow-md' : 'text-muted'}`} aria-current={active ? 'page' : undefined}>
-                  <t.icon width={21} height={21} className={active ? 'stroke-[2.5]' : ''} />
+                <NavLink to={t.to} className={`mx-auto flex max-w-[4.5rem] flex-col items-center gap-0.5 rounded-2xl border-2 py-1 text-[11px] font-extrabold transition ${active ? 'border-brand-200 bg-brand-50 text-brand-600 dark:border-brand-500/40 dark:bg-brand-500/15 dark:text-brand-200' : 'border-transparent text-muted'}`} aria-current={active ? 'page' : undefined}>
+                  <t.icon width={26} height={26} className={active ? 'stroke-[2.4]' : 'stroke-[2]'} />
                   {t.label}
                 </NavLink>
               </li>

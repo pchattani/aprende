@@ -6,7 +6,7 @@ import { useAllCards, useDays, useExams, useLessonRows } from '../hooks/useProgr
 import { streakFrom, todayKey, shiftDay, wordCounts, weakSkills, estimateLevel } from '../engine/mastery'
 import { grammar, levels, vocab } from '../engine/loader'
 import { PageHeader, Chip, Button } from '../components/ui/basics'
-import { IconFlame, IconGear, IconStar, IconTrophy, IconBook } from '../components/ui/icons'
+import { IconGear } from '../components/ui/icons'
 
 const NO_REVIEWS: never[] = []
 
@@ -26,22 +26,35 @@ export default function Profile() {
   const level = estimateLevel(wc.productive, grammarMastered)
   const lessonsDone = [...(lessons?.values() ?? [])].filter((l) => l.completions > 0).length
   const totalMinutes = days.reduce((s, d) => s + d.minutes, 0)
+  const totalXp = days.reduce((s, d) => s + (d.xp ?? 0), 0)
 
   return (
     <div className="pb-6">
       <PageHeader title="Your progress" right={<Link to="/settings" className="rounded-full p-2 text-muted" aria-label="Settings"><IconGear /></Link>} />
-      <div className="grid grid-cols-2 gap-2">
-        <Stat icon={<IconFlame className="text-brand-600" fill="currentColor" />} label="Rhythm" value={`${streak.current} ${streak.current === 1 ? 'day' : 'days'}`} sub={`in a row · ${activeDays} active days in all`} />
-        <Stat icon={<IconStar className="text-gold-500" fill="currentColor" />} label="Time practised" value={totalMinutes >= 90 ? `${(totalMinutes / 60).toFixed(1)} h` : `${totalMinutes} min`} sub={`${reviews.length} recent answers`} />
-        <Stat icon={<IconTrophy className="text-sky-600" />} label="Estimated level" value={level} sub={`${lessonsDone} lessons completed`} />
-        <Stat icon={<IconBook className="text-ok-600" />} label="Words you can use" value={String(wc.productive)} sub={`${wc.recognised} recognised · ${wc.seen} met · ${vocab.size} in course`} />
+      <section className="relative overflow-hidden rounded-3xl bg-sunset-gradient p-5 text-white shadow-[0_6px_0_0_#d97f00]" aria-label="Rhythm">
+        <span className="pointer-events-none absolute -right-10 -top-12 h-44 w-44 rounded-full bg-white/15" aria-hidden="true" />
+        <div className="relative flex items-center gap-4">
+          <span className={`text-7xl ${streak.current > 0 ? 'animate-flame' : 'opacity-70 grayscale'}`} aria-hidden="true">🔥</span>
+          <div className="min-w-0">
+            <p className="text-xs font-extrabold uppercase tracking-widest opacity-90">Rhythm</p>
+            <p className="font-display text-5xl leading-none">{streak.current}</p>
+            <p className="font-extrabold">{streak.current === 1 ? 'day' : 'days'} in a row</p>
+          </div>
+        </div>
+        <p className="relative mt-3 rounded-2xl bg-black/10 px-3 py-2 text-sm font-bold">Longest: {streak.longest} {streak.longest === 1 ? 'day' : 'days'} · {activeDays} active {activeDays === 1 ? 'day' : 'days'} in all</p>
+      </section>
+      <div className="mt-4 grid grid-cols-2 gap-3">
+        <Stat icon="⚡" tone="bg-gold-100 dark:bg-gold-500/15" label="Total XP" value={String(totalXp)} sub={`${days.find((d) => d.date === today)?.xp ?? 0} today`} />
+        <Stat icon="⏱" tone="bg-sky-100 dark:bg-sky-500/15" label="Time practised" value={totalMinutes >= 90 ? `${(totalMinutes / 60).toFixed(1)} h` : `${totalMinutes} min`} sub={`${reviews.length} recent answers`} />
+        <Stat icon="🏆" tone="bg-brand-100 dark:bg-brand-500/15" label="Estimated level" value={level} sub={`${lessonsDone} ${lessonsDone === 1 ? 'lesson' : 'lessons'} completed`} />
+        <Stat icon="📚" tone="bg-ok-100 dark:bg-ok-500/15" label="Words you can use" value={String(wc.productive)} sub={`${wc.recognised} recognised · ${wc.seen} met · ${vocab.size} in course`} />
       </div>
       <section className="card mt-4">
-        <p className="text-xs font-bold uppercase tracking-wide text-muted">Last 12 weeks</p>
+        <p className="font-display text-lg">Last 12 weeks</p>
         <Heatmap days={days} today={today} />
       </section>
       <section className="card mt-4">
-        <p className="text-xs font-bold uppercase tracking-wide text-muted">Grammar</p>
+        <p className="font-display text-lg">Grammar</p>
         <p className="mt-1 text-sm">{grammarMastered} points mastered · {grammarMet} met · {grammar.size} in the course</p>
         {weak.length > 0 ? (
           <>
@@ -61,7 +74,7 @@ export default function Profile() {
         )}
       </section>
       <section className="card mt-4">
-        <p className="text-xs font-bold uppercase tracking-wide text-muted">Level checks</p>
+        <p className="font-display text-lg">Level checks</p>
         <ul className="mt-1 divide-y divide-[var(--line)] text-sm">
           {levels.map((l) => {
             const e = exams?.get(l.id)
@@ -79,12 +92,15 @@ export default function Profile() {
   )
 }
 
-function Stat({ icon, label, value, sub }: { icon: React.ReactNode; label: string; value: string; sub: string }) {
+function Stat({ icon, tone, label, value, sub }: { icon: string; tone: string; label: string; value: string; sub: string }) {
   return (
-    <div className="card">
-      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-muted">{icon}{label}</div>
-      <p className="mt-1 text-2xl font-extrabold">{value}</p>
-      <p className="text-xs text-muted">{sub}</p>
+    <div className="card p-3.5">
+      <div className="flex items-center gap-2.5">
+        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl ${tone}`} aria-hidden="true">{icon}</span>
+        <p className="font-display text-2xl leading-none">{value}</p>
+      </div>
+      <p className="mt-2 text-sm font-extrabold leading-tight">{label}</p>
+      <p className="text-xs font-semibold text-muted">{sub}</p>
     </div>
   )
 }
@@ -101,8 +117,8 @@ function Heatmap({ days, today }: { days: { date: string; minutes: number; revie
     <div className="mt-2 grid grid-flow-col grid-rows-7 gap-1" aria-label="Activity heatmap">
       {cells.map((c) => {
         const t = c.xp / max
-        const bg = c.xp === 0 ? 'bg-surface-2' : t < 0.34 ? 'bg-ok-100' : t < 0.67 ? 'bg-ok-500/60' : 'bg-ok-600'
-        return <div key={c.date} title={`${c.date}: ${c.xp === 0 ? 'rest day' : 'practised'}`} className={`h-3.5 w-3.5 rounded-sm ${bg}`} />
+        const bg = c.xp === 0 ? 'bg-surface-2' : t < 0.34 ? 'bg-gold-300' : t < 0.67 ? 'bg-gold-500' : 'bg-tangerine-500'
+        return <div key={c.date} title={`${c.date}: ${c.xp === 0 ? 'rest day' : 'practised'}`} className={`h-4 w-4 rounded-[5px] ${bg}`} />
       })}
     </div>
   )

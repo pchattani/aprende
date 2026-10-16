@@ -4,6 +4,7 @@ import { grammar, ui, LANGUAGE } from '../engine/loader'
 import type { Explanation } from '../engine/explain'
 import { stripAccents } from '@lang/normalize'
 import { Button, SpeakerButton } from './ui/basics'
+import { IconCheck, IconX } from './ui/icons'
 import { GrammarNoteView } from './GrammarNote'
 import { inline } from './ui/inline'
 import { TL } from '../engine/course'
@@ -36,12 +37,17 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
   const hints = [...new Set([...result.notes, ...explanation.hints])].slice(0, 5)
   const title = result.verdict === 'correct' ? (result.lenient ? `${ui.feedback.correct} One small slip` : ui.feedback.correct) : almost ? `${ui.feedback.almost} Watch the details` : 'Not quite'
   return (
-    <div className={`animate-slide-up fixed inset-x-0 bottom-0 z-20 max-h-[85vh] overflow-y-auto rounded-t-[2rem] border-t ${ok ? 'border-ok-500/40 bg-ok-100 text-ok-700 dark:bg-[#2a3620] dark:text-ok-100' : 'border-bad-500/40 bg-bad-100 text-bad-700 dark:bg-[#3a2321] dark:text-bad-100'}`} style={{ boxShadow: '0 -12px 32px -16px rgba(60,40,20,0.35)' }} role="status">
-      <div className="mx-auto max-w-xl px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
-        <div className="flex items-start gap-3">
-          <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white text-2xl shadow-sm ${ok ? 'text-ok-600' : 'text-bad-600'}`} aria-hidden="true">{result.verdict === 'correct' ? (result.lenient ? '👍' : '🎉') : almost ? '👀' : '🤔'}</div>
+    <div className={`animate-slide-up fixed inset-x-0 bottom-0 z-20 max-h-[85vh] overflow-y-auto ${ok ? 'bg-[var(--sheet-ok)] text-ok-700 dark:text-ok-100' : 'bg-[var(--sheet-bad)] text-bad-700 dark:text-bad-100'}`} role="status">
+      <div className="mx-auto max-w-xl px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-5">
+        <div className="flex items-center gap-3">
+          <div className={`animate-bounce-in flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-surface text-2xl ${ok ? 'text-ok-500' : 'text-bad-500'}`} aria-hidden="true">
+            {ok && !almost ? <IconCheck width={30} height={30} strokeWidth={3.5} /> : almost ? '👀' : <IconX width={28} height={28} strokeWidth={3.5} />}
+          </div>
           <div className="min-w-0 flex-1">
-            <p className="text-lg font-extrabold">{title}</p>
+            <p className="font-display text-2xl leading-tight">{title}</p>
+          </div>
+        </div>
+        <div className="mt-1">
             {showCorrect && (
               <div className="mt-1 flex items-center gap-2">
                 <p className="font-semibold" lang={spanishAnswer ? TL : 'en'}>
@@ -52,7 +58,7 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
               </div>
             )}
             {review && (
-              <div className="mt-2 flex items-start gap-2 rounded-xl bg-white/70 px-2.5 py-2 text-[var(--text)] dark:bg-black/20" aria-label={`What you practised, in ${LANGUAGE} and English`}>
+              <div className="mt-3 flex items-start gap-2.5 rounded-2xl bg-surface/80 px-3 py-2.5 text-[var(--text)]" aria-label={`What you practised, in ${LANGUAGE} and English`}>
                 <SpeakerButton text={review.es} size="sm" className="mt-0.5 shrink-0" />
                 <div className="min-w-0">
                   <p className="font-bold leading-snug" lang={TL}><TargetText text={review.es} /></p>
@@ -61,7 +67,7 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
               </div>
             )}
             {explanation.diff && explanation.diff.some((t) => t.kind !== 'same') && (
-              <p className="mt-2 rounded-xl bg-white/70 px-2.5 py-1.5 text-sm leading-relaxed text-[var(--text)] dark:bg-black/20" lang={exercise.kind === 'typeEn' ? 'en' : TL} aria-label="Your answer compared with the correct one">
+              <p className="mt-2 rounded-2xl bg-surface/80 px-3 py-2 text-sm leading-relaxed text-[var(--text)]" lang={exercise.kind === 'typeEn' ? 'en' : TL} aria-label="Your answer compared with the correct one">
                 <span className="mr-1 text-xs font-bold opacity-70">You wrote:</span>
                 {explanation.diff.map((t, i) => (
                   <span key={i} className="mr-1">
@@ -85,7 +91,7 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
               </ul>
             )}
             {note && !ok && (
-              <div className="mt-2 rounded-xl bg-white/60 px-2.5 py-2 text-sm text-[var(--text)] dark:bg-black/20">
+              <div className="mt-2 rounded-2xl bg-surface/80 px-3 py-2 text-sm text-[var(--text)]">
                 <p><span className="font-extrabold">Rule:</span> {inline(note.summary)}</p>
                 <button type="button" className="mt-1 text-xs font-bold underline" onClick={() => setShowRule((v) => !v)}>
                   {showRule ? 'Hide the full explanation' : `Full explanation: ${note.title}`}
@@ -97,7 +103,6 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
                 {showRule ? 'Hide the rule' : `Rule: ${note.title}`}
               </button>
             )}
-          </div>
         </div>
         {showRule && note && (
           <div className="mt-3 max-h-[40vh] overflow-y-auto rounded-2xl bg-surface p-3 text-[var(--text)]">
@@ -106,11 +111,11 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
         )}
         <div className="mt-4 flex gap-2">
           {!ok && onPin && (
-            <Button variant="ghost" className="shrink-0" onClick={onPin} aria-pressed={pinned}>
+            <Button variant="ghost" className="shrink-0 py-4" onClick={onPin} aria-pressed={pinned}>
               {pinned ? '📌 Pinned' : '📌 Pin'}
             </Button>
           )}
-          <Button variant={ok ? 'ok' : 'bad'} className="flex-1" onClick={onContinue} autoFocus>
+          <Button variant={ok ? 'ok' : 'bad'} className="flex-1 py-4" onClick={onContinue} autoFocus>
             {last ? 'Finish' : 'Continue'}
           </Button>
         </div>

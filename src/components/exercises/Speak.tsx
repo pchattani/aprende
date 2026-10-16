@@ -5,7 +5,7 @@ import { pack } from '../../engine/loader'
 import { languagePack as spanish } from '@lang'
 import { SpeakerButton, Chip } from '../ui/basics'
 import { IconMic } from '../ui/icons'
-import { Instruction, Prompt, type ExerciseProps } from './shared'
+import { Instruction, Prompt, DogSays, type ExerciseProps } from './shared'
 import { TL } from '../../engine/course'
 import { LANGUAGE } from '../../engine/course'
 
@@ -69,11 +69,9 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
   return (
     <div>
       <Instruction>{variant === 'reply' ? 'Answer aloud' : variant === 'repeat' ? 'Listen and repeat' : 'Say this sentence'}</Instruction>
-      <div className="mb-4 flex items-start gap-3">
-        <SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" autoPlay={variant !== undefined} />
-        <SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" slow />
+      <DogSays seed={exercise.prompt} aside={<span className="flex flex-col gap-2"><SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" autoPlay={variant !== undefined} /><SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" slow /></span>}>
         <Prompt lang="es">{exercise.prompt}</Prompt>
-      </div>
+      </DogSays>
       {variant === 'reply' ? (
         <div className="mb-6">
           {exercise.hint && <Chip tone="sky">{exercise.hint}</Chip>}

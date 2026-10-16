@@ -2,6 +2,7 @@
  * Progress service: the only module that writes learner state. Wraps Dexie
  * tables with the engine's rules (FSRS scheduling, ladder, minutes and active days).
  */
+import { xpFor } from '../engine/xp'
 import { db, SCHEMA_VERSION } from './index'
 import type { CardRow, ReviewRow, LessonRow, DayRow, ItemKind, LessonResult, ReadingRow, ExamRow, QuestRow, SouvenirRow, PinRow } from '../engine/types'
 import { newCard, review as applyReview, gradeFor } from '../engine/srs'
@@ -19,10 +20,13 @@ export interface ItemSpec {
 /** Create cards for items the learner has not met yet. Returns number created. */
 export async function ensureCards(items: ItemSpec[], now = new Date()): Promise<number> {
   const ids = items.map((i) => i.id)
-  const existing = new Set((await db.cards.bulkGet(ids)).filter(Boolean).map((c) => c!.id))
-  const fresh = items.filter((i) => !existing.has(i.id)).map((i) => newCard(i.id, i.kind, i.level, i.lessonId, i.grammar, now))
-  if (fresh.length) await db.cards.bulkAdd(fresh)
-  return fresh.length
+  // One transaction, so two overlapping calls (a remount, a second tab) can't both add the same card.
+  return db.transaction('rw', db.cards, async () => {
+    const existing = new Set((await db.cards.bulkGet(ids)).filter(Boolean).map((c) => c!.id))
+    const fresh = items.filter((i) => !existing.has(i.id)).map((i) => newCard(i.id, i.kind, i.level, i.lessonId, i.grammar, now))
+    if (fresh.length) await db.cards.bulkAdd(fresh)
+    return fresh.length
+  })
 }
 
 export async function getCards(ids: string[]): Promise<Map<string, CardRow>> {
@@ -75,7 +79,7 @@ export async function recordLesson(result: LessonResult, unitId: string, level: 
   }
   await db.transaction('rw', db.lessons, db.days, async () => {
     await db.lessons.put(row)
-    await bumpDay(todayKey(now), { lessons: result.completed ? 1 : 0, perfect: result.completed && result.wrong === 0 ? 1 : 0, minutes: Math.round(result.durationMs / 60000) })
+    await bumpDay(todayKey(now), { xp: xpFor(result), lessons: result.completed ? 1 : 0, perfect: result.completed && result.wrong === 0 ? 1 : 0, minutes: Math.round(result.durationMs / 60000) })
   })
   return row
 }

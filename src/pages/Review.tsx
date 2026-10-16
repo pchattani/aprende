@@ -1,3 +1,4 @@
+import { xpFor } from '../engine/xp'
 import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router'
 import type { Exercise, CardRow, LessonResult, PinRow } from '../engine/types'
@@ -129,7 +130,7 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
           onQuit={() => setExercises(undefined)}
           onAnswer={sessionMode === 'pinned' ? (ex, verdict) => void recordPinnedAnswer(pinIdFor(ex), verdict) : undefined}
           onFinish={async (r) => {
-            await bumpDay(todayKey(), { minutes: Math.max(1, Math.round(r.durationMs / 60000)) })
+            await bumpDay(todayKey(), { xp: xpFor(r), minutes: Math.max(1, Math.round(r.durationMs / 60000)) })
             playSound('finish')
             setSummary(r)
           }}

@@ -14,12 +14,14 @@ import { rememberReturn } from '../engine/returnTo'
 import { GrammarNoteView } from '../components/GrammarNote'
 import { StampCard } from '../components/StampCard'
 import { Button, SpeakerButton, Chip } from '../components/ui/basics'
-import { IconArrowLeft, IconTrophy } from '../components/ui/icons'
+import { IconArrowLeft } from '../components/ui/icons'
 import { Confetti } from '../components/ui/Confetti'
 import { CHEERS } from '../engine/stickers'
 import { surpriseFind, pickReward } from '../engine/quests'
 import { ownedSouvenirs, awardSouvenir } from '../db/progress'
-import { todayKey } from '../engine/mastery'
+import { todayKey, streakFrom } from '../engine/mastery'
+import { xpFor } from '../engine/xp'
+import { useDays } from '../hooks/useProgress'
 import { hashString } from '../engine/random'
 import { DogButton } from '../components/ui/Dogs'
 import { useOutfits } from '../hooks/useOutfits'
@@ -201,37 +203,58 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
 
 function DoneScreen({ result, found, stamp, onHome, onRetry }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void }) {
   const acc = result.total ? Math.round(((result.correct + result.almost) / result.total) * 100) : 0
-  const minutes = Math.max(1, Math.round(result.durationMs / 60000))
+  const minutes = Math.floor(result.durationMs / 60000)
+  const seconds = Math.round((result.durationMs % 60000) / 1000)
   const cheer = CHEERS[result.correct % CHEERS.length]!
   const outfits = useOutfits()
+  const days = useDays()
+  const xp = xpFor(result)
+  const shown = useCountUp(xp)
+  const streak = days ? streakFrom(days.filter((d) => d.minutes > 0 || d.lessons > 0 || d.reviews > 0).map((d) => d.date), todayKey()).current : 0
+  const perfect = result.completed && result.wrong === 0
   return (
-    <div className="animate-rise mx-auto flex min-h-full max-w-xl flex-col items-center justify-center px-6 py-8 text-center">
+    <div className="animate-rise mx-auto flex min-h-full max-w-xl flex-col items-center px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-[calc(2rem+env(safe-area-inset-top))] text-center">
       {result.completed && <Confetti />}
-      <div className={`animate-pop flex h-32 w-32 items-center justify-center rounded-[2.5rem] text-white ${result.completed ? 'bg-sunset-gradient shadow-float' : 'bg-bad-100 text-bad-600'}`}>
-        {result.completed ? <span className="text-6xl" aria-hidden="true">{result.wrong === 0 ? '🏆' : '🎉'}</span> : <IconTrophy width={56} height={56} />}
+      <div className="relative mt-4">
+        <span className="absolute inset-x-6 -bottom-1 h-6 rounded-[50%] bg-black/10 blur-sm dark:bg-black/40" aria-hidden="true" />
+        <div className="animate-bounce-in flex items-end -space-x-5">
+          <DogButton dog="leo" size={110} outfit={outfits.leo} className="animate-float" />
+          <DogButton dog="bonchita" size={124} outfit={outfits.bonchita} className="animate-float [animation-delay:0.3s]" />
+          <DogButton dog="luna" size={110} outfit={outfits.luna} className="animate-float [animation-delay:0.6s]" />
+        </div>
       </div>
-      <h1 className="text-gradient mt-6 text-4xl">{result.completed ? cheer.es : 'Session ended'}</h1>
-      <p className="mt-1 font-semibold text-muted">{result.completed ? `${cheer.en} ${result.wrong === 0 ? 'A clean sweep: nothing to revisit.' : `${result.wrong} ${result.wrong === 1 ? 'item' : 'items'} will come back in your reviews.`}` : 'Everything you practised is saved.'}</p>
-      {stamp && <div className="mt-5 w-full"><StampCard stop={stamp.stop} region={stamp.region} /></div>}
-      {found && (
-        <div className="animate-pop mt-5 flex w-full items-center gap-3 rounded-2xl bg-gold-100 p-3 text-left dark:bg-gold-500/15">
-          <div className="flex -space-x-2"><DogButton dog="leo" size={36} mood="curious" outfit={outfits.leo} /><DogButton dog="bonchita" size={36} outfit={outfits.bonchita} /><DogButton dog="luna" size={36} outfit={outfits.luna} /></div>
+      <h1 className={`mt-5 text-[2.6rem] ${result.completed ? 'text-gradient' : ''}`}>{result.completed ? cheer.es : 'Session ended'}</h1>
+      <p className="mt-1 text-lg font-extrabold">{result.completed ? (perfect ? 'Perfect lesson! 🌟' : 'Lesson complete!') : 'Everything you practised is saved.'}</p>
+      <p className="mt-1 text-sm font-bold text-muted">{result.completed ? `${cheer.en} ${perfect ? 'A clean sweep: nothing to revisit.' : `${result.wrong} ${result.wrong === 1 ? 'item' : 'items'} will come back in your reviews.`}` : ''}</p>
+
+      <div className="mt-6 grid w-full grid-cols-3 gap-3">
+        <Stat label={perfect ? 'Bonus XP' : 'Total XP'} icon="⚡" value={`+${shown}`} tone="gold" />
+        <Stat label={acc >= 90 ? 'Amazing' : acc >= 70 ? 'Good' : 'Accuracy'} icon="🎯" value={`${acc}%`} tone="ok" />
+        <Stat label="Speedy" icon="⏱" value={`${minutes}:${String(seconds).padStart(2, '0')}`} tone="sky" />
+      </div>
+
+      {result.completed && streak > 0 && (
+        <div className="animate-bounce-in mt-4 flex w-full items-center gap-3 rounded-3xl border-2 border-line bg-surface p-3 text-left shadow-card [animation-delay:0.5s]">
+          <span className="animate-flame text-4xl" aria-hidden="true">🔥</span>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-extrabold">Lucky find! {found.emoji} {found.es}</p>
-            <p className="text-xs text-muted">{found.blurb} Added to your passport.</p>
+            <p className="font-display text-xl leading-tight text-tangerine-500">{streak} day streak!</p>
+            <p className="text-xs font-bold text-muted">Come back tomorrow to keep the fire going.</p>
           </div>
         </div>
       )}
-      <div className="mt-6 grid w-full grid-cols-3 gap-2">
-        <Stat label="Answers" value={`${result.correct + result.almost} / ${result.total}`} tone="gold" />
-        <Stat label="Accuracy" value={`${acc}%`} tone="ok" />
-        <Stat label="Time" value={`${minutes} min`} tone="sky" />
-      </div>
-      <div className="mt-8 grid w-full gap-2">
-        {!result.completed && (
-          <Button onClick={onRetry}>Try again</Button>
-        )}
-        <Button variant={result.completed ? 'primary' : 'ghost'} onClick={onHome}>
+      {stamp && <div className="mt-4 w-full"><StampCard stop={stamp.stop} region={stamp.region} /></div>}
+      {found && (
+        <div className="animate-pop mt-4 flex w-full items-center gap-3 rounded-3xl border-2 border-gold-300 bg-gold-100 p-3 text-left dark:bg-gold-500/15">
+          <span className="text-4xl" aria-hidden="true">{found.emoji}</span>
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-extrabold">Lucky find! {found.es}</p>
+            <p className="text-xs font-semibold text-muted">{found.blurb} Added to your passport.</p>
+          </div>
+        </div>
+      )}
+      <div className="mt-auto grid w-full gap-3 pt-8">
+        {!result.completed && <Button onClick={onRetry}>Try again</Button>}
+        <Button variant={result.completed ? 'ok' : 'ghost'} className="py-4" onClick={onHome}>
           Continue
         </Button>
       </div>
@@ -239,12 +262,34 @@ function DoneScreen({ result, found, stamp, onHome, onRetry }: { result: LessonR
   )
 }
 
-function Stat({ label, value, tone }: { label: string; value: string; tone: 'gold' | 'ok' | 'sky' }) {
-  const c = tone === 'gold' ? 'border-gold-500 text-gold-600' : tone === 'ok' ? 'border-ok-500 text-ok-600' : 'border-sky-500 text-sky-600'
+/** Counts up from 0 to the target over about a second (the XP reveal). */
+function useCountUp(target: number): number {
+  const [reduce] = useState(() => Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches))
+  const [n, setN] = useState(reduce ? target : 0)
+  useEffect(() => {
+    if (reduce) return
+    let raf = 0
+    const t0 = performance.now()
+    const tick = (t: number) => {
+      const k = Math.min(1, (t - t0) / 900)
+      setN(Math.round(target * (1 - (1 - k) ** 3)))
+      if (k < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [target, reduce])
+  return n
+}
+
+function Stat({ label, value, icon, tone }: { label: string; value: string; icon: string; tone: 'gold' | 'ok' | 'sky' }) {
+  const c = tone === 'gold' ? 'border-gold-500 bg-gold-500 text-gold-600' : tone === 'ok' ? 'border-ok-500 bg-ok-500 text-ok-600' : 'border-sky-500 bg-sky-500 text-sky-600'
   return (
-    <div className={`rounded-2xl border-2 ${c} overflow-hidden shadow-card`}>
-      <p className={`py-1 text-xs font-extrabold uppercase tracking-wide text-white ${tone === 'gold' ? 'bg-gold-500' : tone === 'ok' ? 'bg-ok-500' : 'bg-sky-500'}`}>{label}</p>
-      <p className="bg-surface py-2 text-xl font-extrabold">{value}</p>
+    <div className={`animate-bounce-in overflow-hidden rounded-2xl border-2 ${c}`}>
+      <p className="py-1 text-[11px] font-extrabold uppercase tracking-wider text-white">{label}</p>
+      <p className="m-[2px] mt-0 flex items-center justify-center gap-1 rounded-[0.8rem] bg-surface py-2.5 font-display text-xl">
+        <span aria-hidden="true">{icon}</span>
+        <span>{value}</span>
+      </p>
     </div>
   )
 }
