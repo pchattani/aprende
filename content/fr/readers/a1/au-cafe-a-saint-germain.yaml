@@ -1,0 +1,40 @@
+id: r.a1.au-cafe-a-saint-germain
+level: a1
+title: Au café, à Saint-Germain
+kind: dialogue
+intro: Sophie and her friend Marc sit on a café terrace in Saint-Germain-des-Prés. They order breakfast from a busy waiter, with one small problem.
+allow: [marc, croque-monsieur, espresso, cappuccino, ok]
+paragraphs:
+  - { es: "Le serveur : Bonjour, messieurs-dames ! Vous désirez ?", en: "Waiter: Good morning, both of you! What would you like?" }
+  - { es: "Sophie : Bonjour, monsieur. Je voudrais un café et un croissant, s'il vous plaît.", en: "Sophie: Good morning. I'd like a coffee and a croissant, please." }
+  - { es: "Le serveur : Un café, très bien. Et pour monsieur ?", en: "Waiter: A coffee, very good. And for the gentleman?" }
+  - { es: "Marc : Euh… Je ne sais pas. Il est dix heures, j'ai faim ! Vous avez un petit-déjeuner ?", en: "Marc: Er… I don't know. It's ten o'clock, I'm hungry! Do you have a breakfast menu?" }
+  - { es: "Le serveur : Oui, bien sûr. Le petit-déjeuner, c'est un café ou un thé, un jus d'orange, une tartine avec du beurre et de la confiture, et un croissant. C'est quatorze euros.", en: "Waiter: Yes, of course. The breakfast is a coffee or a tea, an orange juice, bread with butter and jam, and a croissant. It's fourteen euros." }
+  - { es: "Marc : Quatorze euros ? C'est cher ! Mais d'accord, je prends le petit-déjeuner, avec un thé, s'il vous plaît.", en: "Marc: Fourteen euros? That's expensive! But all right, I'll have the breakfast, with a tea, please." }
+  - { es: "Le serveur : Un thé au lait ou au citron ?", en: "Waiter: Tea with milk or with lemon?" }
+  - { es: "Marc : Au lait. Et une carafe d'eau, s'il vous plaît.", en: "Marc: With milk. And a jug of water, please." }
+  - { es: "Sophie : Moi aussi, je voudrais de l'eau. Il fait chaud ici, au soleil !", en: "Sophie: I'd like some water too. It's hot here, in the sun!" }
+  - { es: "Le serveur : Très bien. Un café, un croissant, un petit-déjeuner avec un thé au lait et une carafe d'eau. C'est tout ?", en: "Waiter: Very good. A coffee, a croissant, a breakfast with tea with milk and a jug of water. Is that all?" }
+  - { es: "Sophie : Oui, c'est tout. Merci !", en: "Sophie: Yes, that's all. Thank you!" }
+  - { es: "Marc : Tu aimes ce café ? Il est très joli, mais il y a beaucoup de touristes.", en: "Marc: Do you like this café? It's very pretty, but there are lots of tourists." }
+  - { es: "Sophie : Oui, j'adore Saint-Germain. Les cafés, les librairies, les petites rues… Et regarder les gens, c'est un sport parisien !", en: "Sophie: Yes, I love Saint-Germain. The cafés, the bookshops, the little streets… And watching people is a Parisian sport!" }
+  - { es: "Le serveur : Voilà ! Le café et le croissant pour madame, le petit-déjeuner pour monsieur… et un chocolat chaud.", en: "Waiter: Here you are! The coffee and the croissant for madam, the breakfast for the gentleman… and a hot chocolate." }
+  - { es: "Marc : Pardon, monsieur, mais je ne veux pas de chocolat. Je voudrais un thé au lait.", en: "Marc: Excuse me, but I don't want a hot chocolate. I'd like a tea with milk." }
+  - { es: "Le serveur : Oh, pardon ! Excusez-moi. Un thé, tout de suite.", en: "Waiter: Oh, sorry! Excuse me. A tea, right away." }
+  - { es: "Sophie : Ce n'est pas grave. Moi, j'aime le chocolat chaud ! Je prends le chocolat aussi. Marc, tu paies l'addition ?", en: "Sophie: It doesn't matter. I like hot chocolate! I'll have the chocolate too. Marc, are you paying the bill?" }
+  - { es: "Marc : Bien sûr… Mais c'est toi qui choisis le café la prochaine fois !", en: "Marc: Of course… But you choose the café next time!" }
+questions:
+  - { q: "Qu'est-ce que Sophie commande d'abord ?", options: ["Un thé et une tartine", "Un café et un croissant", "Un chocolat chaud"], answer: 1, explain: "«Je voudrais un café et un croissant, s'il vous plaît.»" }
+  - { q: "Combien coûte le petit-déjeuner ?", options: ["Quatre euros", "Dix euros", "Quatorze euros"], answer: 2, explain: "«C'est quatorze euros.» Marc thinks it's expensive." }
+  - { q: "Comment Marc prend son thé ?", options: ["Au lait", "Au citron", "Avec du sucre"], answer: 0, explain: "The waiter asks «au lait ou au citron ?» and Marc says «Au lait.»" }
+  - { q: "Quel est le problème ?", options: ["Le café est froid", "Le serveur apporte un chocolat chaud", "Il n'y a pas de croissants"], answer: 1, explain: "The waiter brings a hot chocolate, but Marc ordered tea." }
+  - { q: "Qui prend le chocolat chaud à la fin ?", options: ["Marc", "Le serveur", "Sophie"], answer: 2, explain: "«Moi, j'aime le chocolat chaud ! Je prends le chocolat aussi.»" }
+glossary:
+  - { es: messieurs-dames, en: ladies and gentlemen (said by waiters) }
+  - { es: tartine, en: slice of bread and butter }
+  - { es: citron, en: lemon }
+  - { es: "bien sûr", en: of course }
+  - { es: librairies, en: bookshops }
+  - { es: "tout de suite", en: right away }
+  - { es: grave, en: serious }
+  - { es: gens, en: people }

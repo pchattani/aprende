@@ -1,0 +1,38 @@
+id: r.a2.on-va-au-mont-saint-michel
+level: a2
+title: Le Mont-Saint-Michel, on y va ?
+kind: dialogue
+intro: Léo and Sarah are planning a day at Mont-Saint-Michel. Listen for y (there) and en (some, of it) in their conversation.
+allow: [sarah, poulard, ok]
+paragraphs:
+  - { es: "Sarah : Demain, on va au Mont-Saint-Michel ? Je n'y suis jamais allée !", en: "Sarah: Shall we go to Mont-Saint-Michel tomorrow? I've never been there!" }
+  - { es: "Léo : Moi, j'y suis allé avec mes parents quand j'étais petit. C'est magnifique, tu vas voir. Mais il faut faire attention à la marée.", en: "Léo: I went there with my parents when I was little. It's magnificent, you'll see. But you have to be careful about the tide." }
+  - { es: "Sarah : La marée ? Pourquoi ?", en: "Sarah: The tide? Why?" }
+  - { es: "Léo : Parce que dans la baie, les marées sont très fortes. À marée basse, il y a du sable partout autour du Mont. À marée haute, la mer arrive très vite, et pendant les grandes marées, le Mont devient une île. On dit que la mer arrive à la vitesse d'un cheval !", en: "Léo: Because in the bay the tides are very strong. At low tide there's sand all around the Mount. At high tide the sea comes in very fast, and during the biggest tides the Mount becomes an island. They say the sea comes in at the speed of a horse!" }
+  - { es: "Sarah : C'est vrai ? Et comment on y va, alors ?", en: "Sarah: Really? So how do we get there?" }
+  - { es: "Léo : On laisse la voiture au parking, sur le continent. Ensuite, on prend une navette gratuite, ou on y va à pied par le pont. Ça prend quarante minutes environ.", en: "Léo: We leave the car in the car park, on the mainland. Then we take a free shuttle, or we go on foot over the bridge. It takes about forty minutes." }
+  - { es: "Sarah : À pied, c'est bien. Et sur le Mont, qu'est-ce qu'il y a à voir ?", en: "Sarah: On foot is good. And on the Mount, what is there to see?" }
+  - { es: "Léo : Il y a un petit village avec une seule grande rue, des remparts et, tout en haut, l'abbaye. Des moines y habitent encore aujourd'hui. Il y a beaucoup de marches pour y monter, mais la vue sur la baie est superbe.", en: "Léo: There's a little village with just one main street, ramparts and, right at the top, the abbey. Monks still live there today. There are lots of steps to climb up to it, but the view over the bay is superb." }
+  - { es: "Sarah : Et on peut traverser la baie à pied ? J'ai vu des photos de gens sur le sable.", en: "Sarah: And can you cross the bay on foot? I've seen photos of people on the sand." }
+  - { es: "Léo : Oui, mais jamais seul ! Il faut y aller avec un guide. Il y a des sables mouvants et la marée est dangereuse. Les pèlerins traversaient la baie comme ça au Moyen Âge, mais beaucoup ne sont jamais arrivés.", en: "Léo: Yes, but never alone! You have to go with a guide. There's quicksand and the tide is dangerous. Pilgrims crossed the bay that way in the Middle Ages, but many never arrived." }
+  - { es: "Sarah : D'accord, on prend un guide. Et pour manger ? On dit que l'omelette du Mont est célèbre.", en: "Sarah: OK, we'll get a guide. And for food? They say the Mount's omelette is famous." }
+  - { es: "Léo : Oui, l'omelette de la Mère Poulard ! Elle est très grande et très légère. Mais elle est chère : une omelette coûte plus de trente euros !", en: "Léo: Yes, La Mère Poulard's omelette! It's very big and very light. But it's expensive: an omelette costs more than thirty euros!" }
+  - { es: "Sarah : Trente euros pour des œufs ? Combien d'œufs il y a dedans ?", en: "Sarah: Thirty euros for eggs? How many eggs are there in it?" }
+  - { es: "Léo : Je ne sais pas, mais il y en a beaucoup ! Moi, je préfère les crêpes. Il y en a partout et elles ne sont pas chères.", en: "Léo: I don't know, but there are a lot! I prefer crêpes. There are some everywhere and they aren't expensive." }
+  - { es: "Sarah : Parfait. Alors, on emporte des sandwichs et on achète des biscuits pour ta mère. Tu en veux aussi ?", en: "Sarah: Perfect. So we'll take sandwiches and buy some biscuits for your mother. Do you want some too?" }
+  - { es: "Léo : Bien sûr, j'en veux ! On part à quelle heure ?", en: "Léo: Of course I want some! What time shall we leave?" }
+  - { es: "Sarah : À sept heures. Comme ça, on y arrive avant les touristes !", en: "Sarah: At seven. That way we'll get there before the tourists!" }
+questions:
+  - { q: "Est-ce que Sarah est déjà allée au Mont-Saint-Michel ?", options: ["Oui, avec ses parents", "Non, jamais", "Oui, l'année dernière"], answer: 1, explain: "«Je n'y suis jamais allée !» It's Léo who went there as a child." }
+  - { q: "Que se passe-t-il pendant les grandes marées ?", options: ["Le Mont devient une île", "Il y a du sable partout", "Le parking est fermé"], answer: 0, explain: "«Pendant les grandes marées, le Mont devient une île.» At low tide there is sand all around." }
+  - { q: "Qui habite encore dans l'abbaye ?", options: ["Des pèlerins", "Des moines", "Des guides"], answer: 1, explain: "«Des moines y habitent encore aujourd'hui.» Y = in the abbey." }
+  - { q: "Pourquoi faut-il un guide pour traverser la baie ?", options: ["Parce que c'est cher", "Parce qu'il y a des sables mouvants et la marée est dangereuse", "Parce que c'est très long"], answer: 1, explain: "«Il y a des sables mouvants et la marée est dangereuse.»" }
+  - { q: "Dans « il y en a beaucoup », que remplace « en » ?", options: ["Des œufs", "Des crêpes", "Des touristes"], answer: 0, explain: "Sarah asks how many eggs are in the omelette; en replaces des œufs: there are a lot (of them)." }
+glossary:
+  - { es: continent, en: mainland }
+  - { es: sables mouvants, en: quicksand }
+  - { es: mouvants, en: "shifting (sables mouvants = quicksand)" }
+  - { es: "Moyen Âge", en: Middle Ages }
+  - { es: légère, en: light }
+  - { es: biscuits, en: biscuits }
+  - { es: vitesse, en: speed }

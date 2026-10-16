@@ -1,0 +1,36 @@
+id: r.a2.une-nuit-a-chambord
+level: a2
+title: Une nuit à Chambord
+kind: dialogue
+intro: Mr and Mrs Bernard arrive at a small hotel next to the Château de Chambord. The room has a few problems, and they ask, politely, for help.
+allow: [bernard, ok, wifi]
+paragraphs:
+  - { es: "Le réceptionniste : Bonsoir, madame, bonsoir, monsieur. Bienvenue à l'hôtel. Vous avez une réservation ?", en: "Receptionist: Good evening. Welcome to the hotel. Do you have a booking?" }
+  - { es: "M. Bernard : Bonsoir. Oui, au nom de Bernard. Une chambre double pour deux nuits.", en: "Mr Bernard: Good evening. Yes, in the name of Bernard. A double room for two nights." }
+  - { es: "Le réceptionniste : Parfait. Pourriez-vous remplir cette fiche, s'il vous plaît ? Voici votre clé : chambre 12, au premier étage. Le petit-déjeuner est servi de sept heures à dix heures.", en: "Receptionist: Perfect. Could you fill in this form, please? Here's your key: room 12, on the first floor. Breakfast is served from seven to ten." }
+  - { es: "Mme Bernard : Merci. Est-ce que la chambre a une vue sur le château ?", en: "Mrs Bernard: Thank you. Does the room have a view of the château?" }
+  - { es: "Le réceptionniste : Oui, madame. Vous allez voir, le soir, avec les lumières, c'est magnifique.", en: "Receptionist: Yes, madam. You'll see, in the evening, with the lights, it's magnificent." }
+  - { es: "(Dix minutes plus tard…)", en: "(Ten minutes later…)" }
+  - { es: "M. Bernard : Excusez-moi de vous déranger, mais nous avons quelques problèmes dans la chambre.", en: "Mr Bernard: Sorry to bother you, but we have a few problems in the room." }
+  - { es: "Le réceptionniste : Ah bon ? Qu'est-ce qui ne va pas, monsieur ?", en: "Receptionist: Really? What's wrong?" }
+  - { es: "M. Bernard : D'abord, la lampe à côté du lit ne fonctionne pas. Ensuite, il n'y a pas de serviettes dans la salle de bains. Et le chauffage est éteint : il fait très froid !", en: "Mr Bernard: First, the lamp next to the bed doesn't work. Then, there are no towels in the bathroom. And the heating is off: it's very cold!" }
+  - { es: "Le réceptionniste : Je suis vraiment désolé. J'envoie quelqu'un tout de suite pour la lampe et je vous apporte des serviettes. Pour le chauffage, il faut appuyer sur le bouton rouge, sous la fenêtre.", en: "Receptionist: I'm really sorry. I'll send someone right away for the lamp and I'll bring you some towels. For the heating, you have to press the red button under the window." }
+  - { es: "Mme Bernard : Merci beaucoup. Et est-ce que vous pourriez nous donner le code du wifi ? Nous voudrions réserver les billets pour le château demain.", en: "Mrs Bernard: Thank you very much. And could you give us the wifi code? We'd like to book the tickets for the château tomorrow." }
+  - { es: "Le réceptionniste : Bien sûr, le code est sur la fiche. Vous connaissez l'histoire du château ? C'est le roi François Ier qui l'a fait construire, à partir de 1519.", en: "Receptionist: Of course, the code is on the form. Do you know the history of the château? It was King Francis I who had it built, from 1519." }
+  - { es: "M. Bernard : Oui, et on dit que Léonard de Vinci a peut-être dessiné le grand escalier, c'est vrai ?", en: "Mr Bernard: Yes, and they say Leonardo da Vinci may have designed the great staircase, is that true?" }
+  - { es: "Le réceptionniste : Personne n'en est sûr. Léonard habitait à Amboise, pas très loin d'ici, et il est mort la même année, en 1519. Mais l'escalier est extraordinaire : il a deux escaliers l'un dans l'autre. Deux personnes peuvent monter et descendre en même temps sans se rencontrer !", en: "Receptionist: Nobody is sure of it. Leonardo lived in Amboise, not very far from here, and he died the same year, in 1519. But the staircase is extraordinary: it has two staircases, one inside the other. Two people can go up and down at the same time without meeting!" }
+  - { es: "Mme Bernard : Super ! Demain, on va essayer, toi en haut et moi en bas. Et le soir, est-ce que vous pourriez nous conseiller un restaurant ?", en: "Mrs Bernard: Great! Tomorrow we'll try it, you at the top and me at the bottom. And for the evening, could you recommend a restaurant?" }
+  - { es: "Le réceptionniste : Avec plaisir. Il y a un très bon restaurant au village. Je vous réserve une table pour huit heures ?", en: "Receptionist: With pleasure. There's a very good restaurant in the village. Shall I book you a table for eight o'clock?" }
+  - { es: "M. Bernard : Oui, ce serait parfait. Merci pour tout !", en: "Mr Bernard: Yes, that would be perfect. Thank you for everything!" }
+questions:
+  - { q: "Pour combien de nuits est la réservation ?", options: ["Une nuit", "Deux nuits", "Une semaine"], answer: 1, explain: "«Une chambre double pour deux nuits.»" }
+  - { q: "Quel problème n'ont-ils PAS dans la chambre ?", options: ["La lampe ne fonctionne pas", "Il n'y a pas de serviettes", "La fenêtre est cassée"], answer: 2, explain: "The problems are the lamp, the towels and the heating. The window is fine – the heating button is under it." }
+  - { q: "Comment allume-t-on le chauffage ?", options: ["Avec le bouton rouge sous la fenêtre", "Avec la clé", "Il faut téléphoner à la réception"], answer: 0, explain: "«Il faut appuyer sur le bouton rouge, sous la fenêtre.»" }
+  - { q: "Qui a fait construire le château ?", options: ["Léonard de Vinci", "Le roi François Ier", "Jeanne d'Arc"], answer: 1, explain: "«C'est le roi François Ier qui l'a fait construire, à partir de 1519.» Leonardo only may have drawn the staircase." }
+  - { q: "Qu'est-ce qui est extraordinaire dans le grand escalier ?", options: ["Il est en or", "Deux personnes peuvent monter et descendre sans se rencontrer", "Il a mille marches"], answer: 1, explain: "It's a double staircase: «deux escaliers l'un dans l'autre»." }
+glossary:
+  - { es: bouton, en: button }
+  - { es: "à partir de", en: from }
+  - { es: "en même temps", en: at the same time }
+  - { es: "ce serait", en: that would be }
+  - { es: extraordinaire, en: extraordinary }

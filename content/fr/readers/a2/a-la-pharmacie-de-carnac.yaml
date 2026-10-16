@@ -1,0 +1,41 @@
+id: r.a2.a-la-pharmacie-de-carnac
+level: a2
+title: À la pharmacie de Carnac
+kind: dialogue
+intro: After a long walk among the standing stones of Carnac, Paul has hurt his ankle and got too much sun. He goes to the pharmacy with his wife Élodie.
+allow: [élodie, cornély, ok]
+paragraphs:
+  - { es: "La pharmacienne : Bonjour, monsieur, madame. Je peux vous aider ?", en: "Pharmacist: Good morning. Can I help you?" }
+  - { es: "Paul : Bonjour, madame. Oui, j'ai mal à la cheville. Je me suis tordu la cheville ce matin.", en: "Paul: Good morning. Yes, my ankle hurts. I twisted my ankle this morning." }
+  - { es: "La pharmacienne : Ah, je suis désolée. Comment est-ce que vous vous êtes fait mal ?", en: "Pharmacist: Oh, I'm sorry. How did you hurt yourself?" }
+  - { es: "Élodie : Nous avons fait une grande randonnée près des alignements. Il y a des menhirs partout, plus de trois mille ! Mon mari regardait les pierres, il ne regardait pas ses pieds… et il est tombé.", en: "Élodie: We went on a long walk near the alignments. There are standing stones everywhere, more than three thousand! My husband was looking at the stones, he wasn't looking at his feet… and he fell." }
+  - { es: "Paul : Ce n'est pas ma faute ! Ces pierres sont incroyables. Elles sont là depuis plus de six mille ans, tu te rends compte ?", en: "Paul: It's not my fault! These stones are incredible. They've been there for more than six thousand years, can you imagine?" }
+  - { es: "La pharmacienne : C'est vrai, elles sont très anciennes. Et selon la légende, ce sont des soldats romains : saint Cornély les a transformés en pierres ! Bon, montrez-moi votre cheville. Asseyez-vous ici.", en: "Pharmacist: That's true, they're very old. And according to the legend, they're Roman soldiers: Saint Cornély turned them into stone! Right, show me your ankle. Sit down here." }
+  - { es: "Paul : Voilà. Elle est un peu rouge et j'ai mal quand je marche.", en: "Paul: Here. It's a bit red and it hurts when I walk." }
+  - { es: "La pharmacienne : Vous pouvez bouger le pied ? … Oui ? Bien. Je pense que ce n'est pas grave, ce n'est pas cassé. Mettez de la glace dessus trois fois par jour et reposez-vous. Je vous donne aussi une crème et un bandage.", en: "Pharmacist: Can you move your foot? … Yes? Good. I don't think it's serious, it isn't broken. Put ice on it three times a day and rest. I'll also give you a cream and a bandage." }
+  - { es: "Paul : Merci. Et j'ai aussi mal à la tête depuis hier soir. Et j'ai un peu de fièvre, je crois.", en: "Paul: Thank you. And I've also had a headache since last night. And I've got a bit of a temperature, I think." }
+  - { es: "La pharmacienne : Vous êtes resté longtemps au soleil hier ? Vous avez mis un chapeau ?", en: "Pharmacist: Did you stay in the sun for a long time yesterday? Did you wear a hat?" }
+  - { es: "Élodie : Non, il n'a pas mis de chapeau, et pas de crème solaire non plus. Il a dormi deux heures sur la plage !", en: "Élodie: No, he didn't wear a hat, and no sun cream either. He slept for two hours on the beach!" }
+  - { es: "La pharmacienne : Ah, voilà le problème. Il faut boire beaucoup d'eau. Prenez ce médicament pour la tête, un comprimé toutes les six heures, pas plus. Si la fièvre continue après deux jours, allez chez le médecin.", en: "Pharmacist: Ah, that's the problem. You must drink lots of water. Take this medicine for your head, one tablet every six hours, no more. If the fever goes on after two days, go to the doctor." }
+  - { es: "Paul : D'accord. Je dois payer combien ?", en: "Paul: OK. How much do I owe you?" }
+  - { es: "La pharmacienne : Ça fait dix-huit euros cinquante. Et demain, restez à l'ombre, monsieur ! Les menhirs vont vous attendre, ils ne vont pas partir.", en: "Pharmacist: That's eighteen euros fifty. And tomorrow, stay in the shade! The standing stones will wait for you, they're not going anywhere." }
+  - { es: "Élodie : Tu entends, Paul ? Demain, on se repose. Pas de randonnée, pas de soleil !", en: "Élodie: Did you hear that, Paul? Tomorrow we rest. No walking, no sun!" }
+  - { es: "Paul : D'accord… Mais ce soir, on peut aller manger des crêpes, non ?", en: "Paul: OK… But tonight we can go and eat crêpes, can't we?" }
+questions:
+  - { q: "Qu'est-ce qui est arrivé à Paul ?", options: ["Il s'est cassé le bras", "Il s'est tordu la cheville", "Il s'est coupé le doigt"], answer: 1, explain: "«Je me suis tordu la cheville ce matin.»" }
+  - { q: "Pourquoi est-il tombé ?", options: ["Il regardait les menhirs, pas ses pieds", "Il courait trop vite", "Il faisait nuit"], answer: 0, explain: "«Mon mari regardait les pierres, il ne regardait pas ses pieds… et il est tombé.»" }
+  - { q: "Selon la légende, que sont les menhirs ?", options: ["Des maisons anciennes", "Des soldats romains transformés en pierres", "Des tombes de rois"], answer: 1, explain: "«Selon la légende, ce sont des soldats romains : saint Cornély les a transformés en pierres !»" }
+  - { q: "Pourquoi Paul a-t-il mal à la tête ?", options: ["Il a trop bu", "Il est resté au soleil sans chapeau", "Il est tombé sur la tête"], answer: 1, explain: "He slept two hours on the beach with no hat and no sun cream." }
+  - { q: "Que doit faire Paul demain ?", options: ["Faire une randonnée", "Rester à l'ombre et se reposer", "Aller chez le médecin"], answer: 1, explain: "«Demain, restez à l'ombre.» He only needs a doctor if the fever lasts two more days." }
+glossary:
+  - { es: "tu te rends compte", en: can you imagine }
+  - { es: incroyables, en: incredible }
+  - { es: romains, en: Roman }
+  - { es: saint, en: saint }
+  - { es: selon, en: according to }
+  - { es: transformés, en: turned (into) }
+  - { es: bouger, en: to move }
+  - { es: dessus, en: on it }
+  - { es: bandage, en: bandage }
+  - { es: comprimé, en: "tablet, pill" }
+  - { es: ombre, en: shade }

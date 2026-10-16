@@ -1,0 +1,36 @@
+id: r.a1.bienvenue-a-paris
+level: a1
+title: Bienvenue à Paris !
+kind: dialogue
+intro: Emma, a young Canadian, lands at Roissy-Charles-de-Gaulle. She goes through passport control, then meets her French friend Hugo.
+allow: [emma, hugo, toronto, ok, rer]
+paragraphs:
+  - { es: "Le policier : Bonjour, madame. Votre passeport, s'il vous plaît.", en: "Police officer: Good morning, madam. Your passport, please." }
+  - { es: "Emma : Bonjour, monsieur. Voilà.", en: "Emma: Good morning. Here you are." }
+  - { es: "Le policier : Merci. Vous vous appelez Emma Wilson ? Vous êtes canadienne ?", en: "Officer: Thank you. Your name is Emma Wilson? You're Canadian?" }
+  - { es: "Emma : Oui, je suis canadienne. J'habite à Toronto, mais ma mère est française.", en: "Emma: Yes, I'm Canadian. I live in Toronto, but my mother is French." }
+  - { es: "Le policier : Ah, vous parlez très bien français ! Vous êtes ici pour le travail ?", en: "Officer: Ah, you speak French very well! Are you here for work?" }
+  - { es: "Emma : Non, je suis touriste. Je suis à Paris pour trois semaines. J'ai un ami ici.", en: "Emma: No, I'm a tourist. I'm in Paris for three weeks. I have a friend here." }
+  - { es: "Le policier : Très bien. Voilà votre passeport, avec le tampon. Bienvenue en France et bonne journée !", en: "Officer: Very good. Here's your passport, with the stamp. Welcome to France and have a nice day!" }
+  - { es: "Emma : Merci beaucoup, monsieur. Au revoir !", en: "Emma: Thank you very much. Goodbye!" }
+  - { es: "Hugo : Emma ! Emma ! Je suis là !", en: "Hugo: Emma! Emma! I'm here!" }
+  - { es: "Emma : Hugo ! Salut ! Ça va ?", en: "Emma: Hugo! Hi! How are you?" }
+  - { es: "Hugo : Ça va très bien, et toi ? Tu n'es pas trop fatiguée ?", en: "Hugo: Very well, and you? You're not too tired?" }
+  - { es: "Emma : Un peu fatiguée, mais très contente. Je suis enfin à Paris ! Hugo, voici Bonchita, mon petit chien.", en: "Emma: A bit tired, but very happy. I'm in Paris at last! Hugo, this is Bonchita, my little dog." }
+  - { es: "Hugo : Bonjour, Bonchita ! Elle est mignonne. Et moi, je te présente ma sœur, Léa. Elle est étudiante à Paris.", en: "Hugo: Hello, Bonchita! She's cute. And let me introduce my sister, Léa. She's a student in Paris." }
+  - { es: "Léa : Enchantée, Emma ! Tu es de Toronto, c'est ça ? Moi, j'adore le Canada.", en: "Léa: Nice to meet you, Emma! You're from Toronto, right? I love Canada." }
+  - { es: "Emma : Enchantée, Léa ! Oui, je suis de Toronto. Et vous, vous êtes de Paris ?", en: "Emma: Nice to meet you, Léa! Yes, I'm from Toronto. And you two, are you from Paris?" }
+  - { es: "Hugo : Non, nous sommes de Lyon, mais nous habitons à Paris. L'appartement est à Montmartre, près du Sacré-Cœur.", en: "Hugo: No, we're from Lyon, but we live in Paris. The flat is in Montmartre, near the Sacré-Cœur." }
+  - { es: "Emma : Super ! C'est loin d'ici ?", en: "Emma: Great! Is it far from here?" }
+  - { es: "Léa : Un peu, oui. L'aéroport est à 25 kilomètres de Paris. On prend le train ? C'est rapide et ce n'est pas cher.", en: "Léa: A bit, yes. The airport is 25 kilometres from Paris. Shall we take the train? It's fast and it isn't expensive." }
+  - { es: "Emma : D'accord ! On y va. Allez, Bonchita !", en: "Emma: OK! Let's go. Come on, Bonchita!" }
+questions:
+  - { q: "Emma est de quelle nationalité ?", options: ["Française", "Canadienne", "Américaine"], answer: 1, explain: "«Oui, je suis canadienne. J'habite à Toronto» – her mother is French, but she is Canadian." }
+  - { q: "Pourquoi Emma est à Paris ?", options: ["Pour le travail", "Elle est touriste", "Elle est étudiante"], answer: 1, explain: "«Non, je suis touriste.» Léa is the student." }
+  - { q: "Qui est Léa ?", options: ["La sœur de Hugo", "La mère d'Emma", "Une policière"], answer: 0, explain: "Hugo says «je te présente ma sœur, Léa»." }
+  - { q: "Hugo et Léa sont de quelle ville ?", options: ["De Paris", "De Toronto", "De Lyon"], answer: 2, explain: "«Nous sommes de Lyon, mais nous habitons à Paris.»" }
+  - { q: "Comment vont-ils à Paris ?", options: ["En taxi", "En train", "À pied"], answer: 1, explain: "Léa suggests «On prend le train ?» because it's fast and cheap." }
+glossary:
+  - { es: policier, en: police officer }
+  - { es: enfin, en: "at last, finally" }
+  - { es: "c'est ça ?", en: "right?, is that it?" }
