@@ -1,0 +1,278 @@
+id: a1.u04
+title: "Mon quartier, le Marais"
+lessons:
+  - id: a1.u04.l1
+    title: "Mon appartement"
+    teach: [g.il-y-a]
+    tip: "Il y a means both 'there is' and 'there are'. In the negative, un, une and des become de: il n'y a pas de balcon."
+    vocab: [w.il-y-a, w.appartement, w.immeuble, w.étage, w.pièce, w.chambre, w.cuisine, w.salon, w.salle-de-bains, w.toilettes, w.balcon, w.jardin, w.escalier, w.maison, w.calme, w.bruyant]
+    sentences:
+      - { es: "Dans mon appartement, il y a trois pièces.", en: "In my flat there are three rooms.", altEs: ["Il y a trois pièces dans mon appartement."], altEn: ["There are three rooms in my apartment."], grammar: [g.il-y-a], vocab: [w.il-y-a, w.appartement, w.pièce] }
+      - { es: "Il y a une cuisine, un salon et une chambre.", en: "There's a kitchen, a living room and a bedroom.", grammar: [g.il-y-a, g.articles-indefinite], vocab: [w.cuisine, w.salon, w.chambre] }
+      - { es: "Il n'y a pas de balcon.", en: "There's no balcony.", altEs: ["Il y a pas de balcon.", "Y a pas de balcon."], altEn: ["There isn't a balcony."], grammar: [g.il-y-a, g.de-after-negation], vocab: [w.balcon], error: { wrong: "Il n'y a pas un balcon.", explain: "After il n'y a pas, un / une / des become de: il n'y a pas de balcon.", grammar: g.il-y-a } }
+      - { es: "Est-ce qu'il y a un jardin ?", en: "Is there a garden?", altEs: ["Il y a un jardin ?", "Y a-t-il un jardin ?"], grammar: [g.il-y-a, g.yes-no-questions], vocab: [w.jardin], transform: { instruction: "Answer no", answer: "Non, il n'y a pas de jardin.", alt: ["Non, il y a pas de jardin."], en: "No, there isn't a garden." } }
+      - { es: "J'habite au troisième étage.", en: "I live on the third floor.", altEs: ["J'habite au troisième."], altEn: ["I live on the fourth floor."], grammar: [g.contractions-au-du], vocab: [w.étage], note: "French floors start above the ground floor (le rez-de-chaussée): le troisième étage is the US 'fourth floor'." }
+      - { es: "L'immeuble est vieux, mais l'appartement est moderne.", en: "The building is old, but the flat is modern.", altEn: ["The building is old, but the apartment is modern."], grammar: [g.elision-liaison, g.articles-definite], vocab: [w.immeuble, w.vieux, w.moderne] }
+      - { es: "Dans l'immeuble, il y a un escalier, mais pas d'ascenseur.", en: "In the building there are stairs, but no lift.", altEn: ["There's a staircase in the building, but no elevator."], grammar: [g.il-y-a, g.de-after-negation], vocab: [w.escalier] }
+      - { es: "La salle de bains est petite.", en: "The bathroom is small.", grammar: [g.adjective-agreement], vocab: [w.salle-de-bains] }
+      - { es: "Les toilettes sont à côté de la cuisine.", en: "The toilet is next to the kitchen.", altEn: ["The toilets are next to the kitchen."], grammar: [g.prepositions-place, g.plural-nouns], vocab: [w.toilettes, w.cuisine], note: "Les toilettes is always plural in French." }
+      - { es: "C'est une maison avec un jardin.", en: "It's a house with a garden.", grammar: [g.articles-indefinite], vocab: [w.maison, w.jardin] }
+      - { es: "Il y a combien de chambres ?", en: "How many bedrooms are there?", altEs: ["Combien de chambres il y a ?", "Combien y a-t-il de chambres ?", "Combien est-ce qu'il y a de chambres ?"], grammar: [g.il-y-a, g.question-words], vocab: [w.chambre] }
+      - { es: "La rue est calme le soir.", en: "The street is quiet in the evening.", grammar: [g.adjective-agreement], vocab: [w.calme] }
+      - { es: "Le salon est bruyant, parce qu'il y a un bar dans la rue.", en: "The living room is noisy, because there's a bar in the street.", grammar: [g.il-y-a], vocab: [w.bruyant, w.salon] }
+      - { es: "Il y a des fleurs sur le balcon.", en: "There are flowers on the balcony.", grammar: [g.il-y-a, g.articles-indefinite], vocab: [w.fleur, w.balcon], transform: { instruction: "Make it negative", answer: "Il n'y a pas de fleurs sur le balcon.", alt: ["Il y a pas de fleurs sur le balcon."], en: "There are no flowers on the balcony." } }
+    exchanges:
+      - q: { es: "Il y a combien de pièces ?", en: "How many rooms are there?" }
+        a: { es: "Il y a trois pièces.", en: "There are three rooms." }
+        alt: ["Trois.", "Trois pièces."]
+        grammar: [g.il-y-a]
+        vocab: [w.pièce]
+      - q: { es: "Il y a un balcon ?", en: "Is there a balcony?" }
+        a: { es: "Non, il n'y a pas de balcon, mais il y a un jardin.", en: "No, there's no balcony, but there's a garden." }
+        alt: ["Oui, il y a un petit balcon.", "Non, pas de balcon."]
+        grammar: [g.il-y-a, g.de-after-negation]
+        vocab: [w.balcon, w.jardin]
+      - q: { es: "Tu habites à quel étage ?", en: "Which floor do you live on?" }
+        a: { es: "J'habite au deuxième étage.", en: "I live on the second floor." }
+        alt: ["Au deuxième.", "Au rez-de-chaussée."]
+        grammar: [g.question-words]
+        vocab: [w.étage]
+      - q: { es: "Ta rue est calme ?", en: "Is your street quiet?" }
+        a: { es: "Non, elle est très bruyante !", en: "No, it's very noisy!" }
+        alt: ["Oui, très calme.", "Oui, le soir."]
+        grammar: [g.adjective-agreement]
+        vocab: [w.calme, w.bruyant]
+      - q: { es: "Où sont les toilettes, s'il vous plaît ?", en: "Where's the toilet, please?" }
+        a: { es: "Elles sont à côté de la cuisine.", en: "It's next to the kitchen." }
+        alt: ["À côté de la cuisine.", "Là, à droite."]
+        grammar: [g.prepositions-place]
+        vocab: [w.toilettes, w.cuisine]
+    texts:
+      - title: "Petite annonce"
+        es: ["Appartement à louer dans le Marais.", "Deux pièces : un salon et une chambre.", "Quatrième étage, sans ascenseur."]
+        en: ["Flat to rent in the Marais.", "Two rooms: a living room and a bedroom.", "Fourth floor, no lift."]
+        grammar: [g.il-y-a]
+        vocab: [w.appartement, w.pièce, w.salon, w.chambre, w.étage]
+      - title: "Message de Julie"
+        es: ["Mon appartement est petit, mais très joli.", "Il y a une cuisine moderne et un balcon.", "Il n'y a pas de jardin, mais la rue est calme."]
+        en: ["My flat is small, but very nice.", "There's a modern kitchen and a balcony.", "There's no garden, but the street is quiet."]
+        grammar: [g.il-y-a, g.de-after-negation]
+        vocab: [w.appartement, w.cuisine, w.balcon, w.jardin, w.calme]
+    spicy:
+      - { es: "Chez moi, il y a un canapé, un bon film… et une place pour toi.", en: "At my place there's a sofa, a good film… and a seat for you.", grammar: [g.il-y-a], vocab: [w.il-y-a] }
+      - { es: "Il n'y a pas de balcon, mais il y a une très belle vue : toi.", en: "There's no balcony, but there's a beautiful view: you.", altEs: ["Il y a pas de balcon, mais il y a une très belle vue : toi."], grammar: [g.il-y-a, g.de-after-negation], vocab: [w.balcon] }
+      - { es: "Dans mon immeuble, il y a cinq étages et un voisin très mignon.", en: "In my building there are five floors and a very cute neighbour.", altEs: ["Dans mon immeuble, il y a cinq étages et une voisine très mignonne."], grammar: [g.il-y-a], vocab: [w.immeuble, w.étage] }
+      - { es: "Il y a des fleurs sur mon balcon. Elles sont pour toi.", en: "There are flowers on my balcony. They're for you.", grammar: [g.il-y-a], vocab: [w.balcon] }
+      - { es: "Ma cuisine est petite, mais mes crêpes sont délicieuses. Tu viens ?", en: "My kitchen is small, but my crêpes are delicious. Are you coming?", grammar: [g.adjective-agreement], vocab: [w.cuisine] }
+  - id: a1.u04.l2
+    title: "Un lit, une chaise, des livres"
+    teach: [g.articles-indefinite]
+    tip: "Un (masculine), une (feminine), des (plural, often no word in English). After ce n'est pas, keep un and une: ce n'est pas un lit."
+    vocab: [w.fenêtre, w.porte, w.mur, w.chaise, w.lit, w.canapé, w.bureau, w.ordinateur, w.télévision, w.clé, w.rangé, w.moderne, w.fleur]
+    sentences:
+      - { es: "Dans ma chambre, il y a un lit, une chaise et un bureau.", en: "In my bedroom there's a bed, a chair and a desk.", altEs: ["Il y a un lit, une chaise et un bureau dans ma chambre."], grammar: [g.articles-indefinite, g.il-y-a], vocab: [w.lit, w.chaise, w.bureau] }
+      - { es: "Il y a des livres sous le lit.", en: "There are books under the bed.", grammar: [g.articles-indefinite, g.prepositions-place], vocab: [w.livre, w.lit] }
+      - { es: "C'est un ordinateur moderne.", en: "It's a modern computer.", grammar: [g.articles-indefinite, g.c-est-il-est], vocab: [w.ordinateur, w.moderne] }
+      - { es: "Il n'y a pas de télévision dans le salon.", en: "There's no TV in the living room.", altEs: ["Il y a pas de télé dans le salon.", "Il n'y a pas de télé dans le salon."], altEn: ["There isn't a television in the living room."], grammar: [g.de-after-negation, g.il-y-a], vocab: [w.télévision] }
+      - { es: "Ce n'est pas un canapé, c'est un lit !", en: "It's not a sofa, it's a bed!", altEs: ["C'est pas un canapé, c'est un lit !"], grammar: [g.articles-indefinite, g.negation-ne-pas], vocab: [w.canapé, w.lit], note: "After être, un stays: ce n'est pas un canapé." }
+      - { es: "Voici les clés de l'appartement.", en: "Here are the keys to the flat.", altEs: ["Voilà les clés de l'appartement."], altEn: ["Here are the keys of the apartment."], grammar: [g.articles-definite], vocab: [w.clé] }
+      - { es: "Il y a une grande fenêtre dans le salon.", en: "There's a big window in the living room.", grammar: [g.articles-indefinite, g.il-y-a], vocab: [w.fenêtre] }
+      - { es: "Il y a une porte bleue au coin de la rue.", en: "There's a blue door on the street corner.", altEn: ["There's a blue door at the corner of the street."], grammar: [g.articles-indefinite, g.adjective-agreement], vocab: [w.porte, w.coin] }
+      - { es: "Sur le mur, il y a des photos de ma famille.", en: "On the wall there are photos of my family.", altEs: ["Il y a des photos de ma famille sur le mur."], grammar: [g.articles-indefinite, g.il-y-a], vocab: [w.mur, w.photo] }
+      - { es: "Ma chambre n'est pas rangée !", en: "My bedroom isn't tidy!", altEs: ["Ma chambre est pas rangée !"], grammar: [g.adjective-agreement, g.negation-ne-pas], vocab: [w.rangé] }
+      - { es: "Tu as un ordinateur ?", en: "Do you have a computer?", altEs: ["Est-ce que tu as un ordinateur ?", "As-tu un ordinateur ?"], grammar: [g.articles-indefinite, g.avoir-present], vocab: [w.ordinateur], transform: { instruction: "Answer no", answer: "Non, je n'ai pas d'ordinateur.", alt: ["Non, j'ai pas d'ordinateur."], en: "No, I don't have a computer." } }
+      - { es: "Il y a des fleurs sur la table.", en: "There are flowers on the table.", grammar: [g.articles-indefinite], vocab: [w.fleur, w.table], transform: { instruction: "Make it about one flower", answer: "Il y a une fleur sur la table.", en: "There's a flower on the table." } }
+      - { es: "J'ai un canapé et deux chaises.", en: "I have a sofa and two chairs.", grammar: [g.articles-indefinite, g.plural-nouns], vocab: [w.canapé, w.chaise], error: { wrong: "J'ai une canapé et deux chaises.", explain: "canapé is masculine: un canapé.", grammar: g.articles-indefinite } }
+      - { es: "C'est une table ancienne.", en: "It's an antique table.", altEn: ["It's an old table."], grammar: [g.articles-indefinite, g.adjective-agreement], vocab: [w.ancien, w.table] }
+    exchanges:
+      - q: { es: "Qu'est-ce qu'il y a dans ta chambre ?", en: "What's in your bedroom?" }
+        a: { es: "Il y a un lit, un bureau et une chaise.", en: "There's a bed, a desk and a chair." }
+        alt: ["Un lit et un bureau.", "Il y a un lit et une télé."]
+        grammar: [g.articles-indefinite, g.il-y-a]
+        vocab: [w.lit, w.bureau, w.chaise]
+      - q: { es: "Tu as une télévision ?", en: "Do you have a television?" }
+        a: { es: "Non, je n'ai pas de télé. J'ai un ordinateur.", en: "No, I don't have a TV. I have a computer." }
+        alt: ["Oui, dans le salon.", "Non, pas de télé."]
+        grammar: [g.articles-indefinite, g.de-after-negation]
+        vocab: [w.télévision, w.ordinateur]
+      - q: { es: "Où sont les clés ?", en: "Where are the keys?" }
+        a: { es: "Elles sont sur la table.", en: "They're on the table." }
+        alt: ["Sur la table.", "Dans mon sac."]
+        grammar: [g.prepositions-place]
+        vocab: [w.clé]
+      - q: { es: "C'est un canapé ?", en: "Is it a sofa?" }
+        a: { es: "Oui, et c'est aussi un lit !", en: "Yes, and it's also a bed!" }
+        alt: ["Non, c'est un lit.", "Oui, c'est un canapé."]
+        grammar: [g.articles-indefinite, g.c-est-il-est]
+        vocab: [w.canapé, w.lit]
+      - q: { es: "Ta chambre est rangée ?", en: "Is your room tidy?" }
+        a: { es: "Non, pas vraiment !", en: "No, not really!" }
+        alt: ["Oui, très rangée.", "Non, pas du tout."]
+        grammar: [g.adjective-agreement]
+        vocab: [w.rangé]
+    texts:
+      - title: "Ma chambre"
+        es: ["Ma chambre est petite.", "Il y a un lit, un bureau et un ordinateur.", "Sur le mur, il y a des photos de Paris."]
+        en: ["My bedroom is small.", "There's a bed, a desk and a computer.", "On the wall there are photos of Paris."]
+        grammar: [g.articles-indefinite, g.il-y-a]
+        vocab: [w.lit, w.bureau, w.ordinateur, w.mur]
+      - title: "Mot pour la voisine"
+        es: ["Bonjour, madame Lévy !", "Les clés sont sous la chaise, devant la porte.", "Merci et bonne journée !"]
+        en: ["Hello, Mrs Lévy!", "The keys are under the chair, in front of the door.", "Thank you and have a nice day!"]
+        grammar: [g.prepositions-place]
+        vocab: [w.clé, w.chaise, w.porte]
+    spicy:
+      - { es: "Il y a deux chaises sur mon balcon : une pour moi, une pour toi.", en: "There are two chairs on my balcony: one for me, one for you.", grammar: [g.articles-indefinite, g.il-y-a], vocab: [w.chaise] }
+      - { es: "J'ai un canapé, une télé et du chocolat. Tu viens ?", en: "I have a sofa, a TV and chocolate. Are you coming?", grammar: [g.articles-indefinite], vocab: [w.canapé, w.télévision] }
+      - { es: "Voici la clé de mon cœur… non, pardon, de mon appartement.", en: "Here's the key to my heart… no, sorry, to my flat.", grammar: [g.articles-definite], vocab: [w.clé] }
+      - { es: "Il y a une photo de toi sur mon bureau. C'est bizarre ?", en: "There's a photo of you on my desk. Is that weird?", grammar: [g.articles-indefinite, g.il-y-a], vocab: [w.bureau] }
+      - { es: "Ma chambre n'est pas rangée, mais mon agenda est libre pour toi.", en: "My room isn't tidy, but my diary is free for you.", grammar: [g.negation-ne-pas], vocab: [w.rangé] }
+  - id: a1.u04.l3
+    title: "Dans la rue"
+    teach: [g.prepositions-place]
+    tip: "Prepositions ending in de contract with le and les: à côté du café, en face des magasins. Chez is for people: chez moi, chez Paul."
+    vocab: [w.dans, w.sur, w.sous, w.devant, w.derrière, w.entre, w.à-côté-de, w.en-face-de, w.près-de, w.loin-de, w.chez, w.côté, w.coin, w.rue, w.place, w.arbre, w.boulangerie, w.pharmacie, w.supermarché, w.parking, w.poste]
+    sentences:
+      - { es: "La boulangerie est à côté de la pharmacie.", en: "The bakery is next to the chemist's.", altEn: ["The bakery is next to the pharmacy."], grammar: [g.prepositions-place], vocab: [w.boulangerie, w.à-côté-de, w.pharmacie] }
+      - { es: "Le supermarché est en face du parc.", en: "The supermarket is opposite the park.", altEn: ["The supermarket is across from the park."], grammar: [g.prepositions-place, g.contractions-au-du], vocab: [w.supermarché, w.en-face-de, w.parc], error: { wrong: "Le supermarché est en face de le parc.", explain: "de + le contracts to du: en face du parc.", grammar: g.prepositions-place } }
+      - { es: "Le chat est sous la table.", en: "The cat is under the table.", grammar: [g.prepositions-place], vocab: [w.sous, w.chat], transform: { instruction: "Put the cat on the table", answer: "Le chat est sur la table.", en: "The cat is on the table." } }
+      - { es: "Les clés sont dans mon sac.", en: "The keys are in my bag.", grammar: [g.prepositions-place], vocab: [w.dans, w.clé] }
+      - { es: "Il y a un arbre devant l'immeuble.", en: "There's a tree in front of the building.", grammar: [g.prepositions-place, g.il-y-a], vocab: [w.arbre, w.devant] }
+      - { es: "Le parking est derrière le supermarché.", en: "The car park is behind the supermarket.", altEn: ["The parking lot is behind the supermarket."], grammar: [g.prepositions-place], vocab: [w.parking, w.derrière] }
+      - { es: "La poste est entre la banque et le café.", en: "The post office is between the bank and the café.", grammar: [g.prepositions-place], vocab: [w.poste, w.entre] }
+      - { es: "J'habite près de la place des Vosges.", en: "I live near the Place des Vosges.", grammar: [g.prepositions-place], vocab: [w.près-de, w.place] }
+      - { es: "Ce n'est pas loin de la Seine.", en: "It's not far from the Seine.", altEs: ["C'est pas loin de la Seine."], grammar: [g.prepositions-place, g.negation-ne-pas], vocab: [w.loin-de] }
+      - { es: "Ce soir, on dîne chez Julie.", en: "Tonight we're having dinner at Julie's.", altEs: ["Ce soir, nous dînons chez Julie."], altEn: ["This evening we're having dinner at Julie's place."], grammar: [g.prepositions-place, g.on-nous], vocab: [w.chez] }
+      - { es: "La pharmacie est au coin de la rue.", en: "The chemist's is on the corner of the street.", altEn: ["The pharmacy is on the street corner."], grammar: [g.prepositions-place, g.contractions-au-du], vocab: [w.coin, w.rue, w.pharmacie] }
+      - { es: "Le métro ? C'est de l'autre côté de la place.", en: "The metro? It's on the other side of the square.", grammar: [g.prepositions-place], vocab: [w.côté, w.place] }
+      - { es: "La boulangerie est tout près de chez moi.", en: "The bakery is very close to my place.", altEs: ["La boulangerie est juste à côté de chez moi."], altEn: ["The bakery is right near my home."], grammar: [g.prepositions-place, g.stressed-pronouns], vocab: [w.chez, w.boulangerie] }
+      - { es: "La station de métro est près de l'hôpital.", en: "The metro station is near the hospital.", grammar: [g.prepositions-place], vocab: [w.près-de, w.hôpital], transform: { instruction: "Say it's far instead", answer: "La station de métro est loin de l'hôpital.", en: "The metro station is far from the hospital." } }
+      - { es: "Il y a des chaises sous les arbres, sur la place.", en: "There are chairs under the trees, on the square.", grammar: [g.prepositions-place, g.plural-nouns], vocab: [w.sous, w.arbre, w.place], transform: { instruction: "Put the chairs in front of the café", answer: "Il y a des chaises devant le café.", en: "There are chairs in front of the café." } }
+    exchanges:
+      - q: { es: "Pardon, madame, où est la pharmacie ?", en: "Excuse me, madam, where's the chemist's?" }
+        a: { es: "Elle est au coin de la rue, à côté de la boulangerie.", en: "It's on the corner of the street, next to the bakery." }
+        alt: ["Au coin de la rue.", "À côté de la boulangerie."]
+        grammar: [g.prepositions-place]
+        vocab: [w.pharmacie, w.coin, w.à-côté-de]
+      - q: { es: "Il y a un supermarché près d'ici ?", en: "Is there a supermarket near here?" }
+        a: { es: "Oui, en face du parc.", en: "Yes, opposite the park." }
+        alt: ["Non, désolé.", "Oui, rue de Rivoli."]
+        grammar: [g.prepositions-place, g.il-y-a]
+        vocab: [w.supermarché, w.en-face-de]
+      - q: { es: "Où est le chat ?", en: "Where's the cat?" }
+        a: { es: "Il est sous le lit !", en: "He's under the bed!" }
+        alt: ["Sous le lit.", "Il est sur le canapé."]
+        grammar: [g.prepositions-place]
+        vocab: [w.sous]
+      - q: { es: "On dîne où ce soir ?", en: "Where are we having dinner tonight?" }
+        a: { es: "Chez moi, si tu veux.", en: "At my place, if you like." }
+        alt: ["Chez Julie.", "Au restaurant."]
+        grammar: [g.prepositions-place, g.stressed-pronouns]
+        vocab: [w.chez]
+      - q: { es: "La poste, c'est loin ?", en: "Is the post office far?" }
+        a: { es: "Non, elle est entre la banque et le café.", en: "No, it's between the bank and the café." }
+        alt: ["Non, c'est tout près.", "Non, pas loin."]
+        grammar: [g.prepositions-place]
+        vocab: [w.poste, w.entre]
+    texts:
+      - title: "Ma rue"
+        es: ["Ma rue est petite et calme.", "En face de chez moi, il y a une boulangerie.", "À côté, il y a une pharmacie et un petit supermarché."]
+        en: ["My street is small and quiet.", "Opposite my place there's a bakery.", "Next to it there's a chemist's and a small supermarket."]
+        grammar: [g.prepositions-place, g.il-y-a]
+        vocab: [w.rue, w.en-face-de, w.boulangerie, w.pharmacie, w.supermarché]
+      - title: "Message de Hugo"
+        es: ["Je suis place des Vosges, sous les arbres.", "Le café est derrière moi.", "Tu es loin ?"]
+        en: ["I'm on the Place des Vosges, under the trees.", "The café is behind me.", "Are you far?"]
+        grammar: [g.prepositions-place, g.stressed-pronouns]
+        vocab: [w.place, w.arbre, w.derrière]
+    spicy:
+      - { es: "Il y a une place à côté de moi. Elle est pour toi.", en: "There's a seat next to me. It's for you.", grammar: [g.prepositions-place], vocab: [w.à-côté-de, w.place] }
+      - { es: "Chez toi ou chez moi ? Pour le dîner, bien sûr !", en: "Your place or mine? For dinner, of course!", grammar: [g.prepositions-place, g.stressed-pronouns], vocab: [w.chez] }
+      - { es: "Entre toi et moi, il y a une table de trop.", en: "Between you and me, there's one table too many.", grammar: [g.prepositions-place, g.stressed-pronouns], vocab: [w.entre] }
+      - { es: "Je suis devant ta porte avec des fleurs. Tu ouvres ?", en: "I'm outside your door with flowers. Will you open up?", grammar: [g.prepositions-place], vocab: [w.devant, w.porte] }
+      - { es: "La boulangerie est en face de chez moi : croissants pour deux demain ?", en: "The bakery is opposite my place: croissants for two tomorrow?", grammar: [g.prepositions-place], vocab: [w.boulangerie, w.en-face-de] }
+  - id: a1.u04.l4
+    title: "Le Marais, c'est joli"
+    teach: [g.c-est-il-est, g.elision-liaison]
+    tip: "C'est + article or name (c'est un médecin, c'est Paul); il / elle est + adjective or profession alone (il est médecin). Listen for liaison: les‿amis, un‿hôtel."
+    vocab: [w.quartier, w.voisin, w.magasin, w.marché, w.parc, w.église, w.musée, w.cinéma, w.restaurant, w.café, w.hôpital, w.joli, w.ancien, w.beau, w.vieux, w.médecin, w.centre]
+    sentences:
+      - { es: "Le Marais, c'est un vieux quartier.", en: "The Marais is an old neighbourhood.", altEs: ["Le Marais est un vieux quartier."], grammar: [g.c-est-il-est], vocab: [w.quartier, w.vieux] }
+      - { es: "C'est un joli quartier, au centre de Paris.", en: "It's a pretty neighbourhood, in the centre of Paris.", grammar: [g.c-est-il-est, g.contractions-au-du], vocab: [w.joli, w.centre, w.quartier] }
+      - { es: "Mon voisin ? Il est médecin.", en: "My neighbour? He's a doctor.", altEs: ["Mon voisin ? C'est un médecin."], grammar: [g.c-est-il-est], vocab: [w.voisin, w.médecin], error: { wrong: "Mon voisin ? Il est un médecin.", explain: "Il est + profession takes no article; with an article, say c'est un médecin.", grammar: g.c-est-il-est } }
+      - { es: "C'est ma voisine, elle est italienne.", en: "That's my neighbour, she's Italian.", grammar: [g.c-est-il-est, g.adjective-agreement], vocab: [w.voisin], transform: { instruction: "Talk about your male neighbour", answer: "C'est mon voisin, il est italien.", en: "That's my neighbour, he's Italian." } }
+      - { es: "Il y a beaucoup de magasins et de restaurants.", en: "There are lots of shops and restaurants.", grammar: [g.il-y-a], vocab: [w.magasin, w.restaurant] }
+      - { es: "Le marché est ouvert le dimanche matin.", en: "The market is open on Sunday mornings.", grammar: [g.days-months-dates], vocab: [w.marché] }
+      - { es: "L'église est très ancienne.", en: "The church is very old.", grammar: [g.elision-liaison, g.adjective-agreement], vocab: [w.église, w.ancien], transform: { instruction: "Make it plural (the churches)", answer: "Les églises sont très anciennes.", en: "The churches are very old." } }
+      - { es: "Le musée Picasso est dans le Marais.", en: "The Picasso Museum is in the Marais.", grammar: [g.prepositions-place], vocab: [w.musée] }
+      - { es: "On va au cinéma ce soir ?", en: "Shall we go to the cinema tonight?", altEs: ["On va au ciné ce soir ?", "Nous allons au cinéma ce soir ?"], altEn: ["Shall we go to the movies tonight?"], grammar: [g.contractions-au-du, g.on-nous], vocab: [w.cinéma] }
+      - { es: "Mes amis sont dans un petit café.", en: "My friends are in a little café.", grammar: [g.elision-liaison, g.articles-indefinite], vocab: [w.café, w.ami], note: "Liaison: mes‿amis [me.za.mi]." }
+      - { es: "L'hôpital n'est pas loin d'ici.", en: "The hospital isn't far from here.", altEs: ["L'hôpital est pas loin d'ici."], grammar: [g.elision-liaison, g.negation-ne-pas], vocab: [w.hôpital] }
+      - { es: "C'est beau, Paris !", en: "Paris is beautiful!", altEs: ["Paris, c'est beau !"], altEn: ["It's beautiful, Paris!"], grammar: [g.c-est-il-est], vocab: [w.beau], note: "C'est + adjective for a general idea stays masculine: Paris, c'est beau." }
+      - { es: "La place des Vosges ? Elle est très belle.", en: "The Place des Vosges? It's very beautiful.", grammar: [g.c-est-il-est, g.adjective-agreement], vocab: [w.beau] }
+      - { es: "Le parc est joli au printemps.", en: "The park is pretty in the spring.", grammar: [g.adjective-agreement], vocab: [w.parc, w.joli] }
+      - { es: "Qui est-ce ? — C'est un ami, il est peintre.", en: "Who's that? — He's a friend, he's a painter.", altEs: ["C'est qui ? — C'est un ami, il est peintre."], grammar: [g.c-est-il-est], vocab: [w.ami, w.peintre] }
+    exchanges:
+      - q: { es: "C'est comment, le Marais ?", en: "What's the Marais like?" }
+        a: { es: "C'est un vieux quartier, très joli.", en: "It's an old neighbourhood, very pretty." }
+        alt: ["C'est très joli.", "C'est beau et un peu bruyant."]
+        grammar: [g.c-est-il-est]
+        vocab: [w.quartier, w.vieux, w.joli]
+      - q: { es: "Qui est-ce ?", en: "Who's that?" }
+        a: { es: "C'est mon voisin. Il est médecin.", en: "That's my neighbour. He's a doctor." }
+        alt: ["C'est mon voisin.", "C'est un médecin."]
+        grammar: [g.c-est-il-est]
+        vocab: [w.voisin, w.médecin]
+      - q: { es: "Il y a des magasins dans ton quartier ?", en: "Are there shops in your neighbourhood?" }
+        a: { es: "Oui, il y a un marché, une boulangerie et de petits magasins.", en: "Yes, there's a market, a bakery and some little shops." }
+        alt: ["Oui, beaucoup.", "Non, pas beaucoup."]
+        grammar: [g.il-y-a]
+        vocab: [w.magasin, w.marché, w.quartier]
+      - q: { es: "On va au cinéma ?", en: "Shall we go to the cinema?" }
+        a: { es: "Bonne idée ! Il y a un cinéma à côté du musée.", en: "Good idea! There's a cinema next to the museum." }
+        alt: ["D'accord !", "Non, au restaurant."]
+        grammar: [g.contractions-au-du]
+        vocab: [w.cinéma, w.musée]
+      - q: { es: "Elle est comment, ta voisine ?", en: "What's your neighbour like?" }
+        a: { es: "Elle est très sympa, et elle est peintre.", en: "She's very nice, and she's a painter." }
+        alt: ["Elle est sympa.", "C'est une amie."]
+        grammar: [g.c-est-il-est]
+        vocab: [w.voisin]
+    texts:
+      - title: "Le Marais"
+        es: ["Le Marais est un vieux quartier de Paris.", "Il y a des musées, des cafés et de petites rues.", "La place des Vosges, c'est très beau !"]
+        en: ["The Marais is an old neighbourhood of Paris.", "There are museums, cafés and little streets.", "The Place des Vosges is very beautiful!"]
+        grammar: [g.c-est-il-est, g.il-y-a]
+        vocab: [w.quartier, w.musée, w.café]
+      - title: "Mon voisin"
+        es: ["Mon voisin s'appelle monsieur Lévy.", "Il est médecin à l'hôpital.", "C'est un homme très calme."]
+        en: ["My neighbour is called Mr Lévy.", "He's a doctor at the hospital.", "He's a very calm man."]
+        grammar: [g.c-est-il-est, g.elision-liaison]
+        vocab: [w.voisin, w.médecin, w.hôpital]
+    spicy:
+      - { es: "C'est un beau quartier, et toi, tu es très beau.", en: "It's a beautiful neighbourhood, and you're very handsome.", altEs: ["C'est un beau quartier, et toi, tu es très belle."], grammar: [g.c-est-il-est], vocab: [w.quartier, w.beau] }
+      - { es: "Qui est-ce ? C'est le nouveau voisin ? Il est très mignon.", en: "Who's that? Is that the new neighbour? He's very cute.", altEs: ["Qui est-ce ? C'est la nouvelle voisine ? Elle est très mignonne."], grammar: [g.c-est-il-est], vocab: [w.voisin] }
+      - { es: "On va au cinéma ? Moi, je ne regarde pas le film, je te regarde.", en: "Shall we go to the cinema? I won't watch the film, I'll watch you.", grammar: [g.contractions-au-du], vocab: [w.cinéma] }
+      - { es: "C'est un vieux café, mais avec toi, c'est le plus joli café de Paris.", en: "It's an old café, but with you it's the prettiest café in Paris.", grammar: [g.c-est-il-est], vocab: [w.café, w.vieux, w.joli] }
+      - { es: "Il est médecin ? Parfait, mon cœur bat très vite.", en: "He's a doctor? Perfect, my heart is beating very fast.", altEs: ["Elle est médecin ? Parfait, mon cœur bat très vite."], grammar: [g.c-est-il-est], vocab: [w.médecin] }
+dialogues:
+  - id: a1.u04.d1
+    title: "Un appartement dans le Marais"
+    context: "Emma visits a flat for rent in the Marais with the owner, Madame Lévy."
+    lines:
+      - { speaker: Mme Lévy, es: "Bonjour ! Voici l'appartement. C'est au troisième étage.", en: "Hello! Here's the flat. It's on the third floor." }
+      - { speaker: Emma, es: "C'est joli ! Il y a combien de pièces ?", en: "It's nice! How many rooms are there?" }
+      - { speaker: Mme Lévy, es: "Il y a deux pièces : un salon et une chambre. La cuisine est petite, mais moderne.", en: "There are two rooms: a living room and a bedroom. The kitchen is small, but modern." }
+      - { speaker: Emma, es: "Et la salle de bains ?", en: "And the bathroom?" }
+      - { speaker: Mme Lévy, es: "Elle est à côté de la chambre. Il y a une douche.", en: "It's next to the bedroom. There's a shower." }
+      - { speaker: Emma, es: "Il y a un balcon ?", en: "Is there a balcony?" }
+      - { speaker: Mme Lévy, es: "Non, il n'y a pas de balcon, mais il y a une grande fenêtre sur la place.", en: "No, there's no balcony, but there's a big window onto the square." }
+      - { speaker: Emma, es: "Le quartier est calme ?", en: "Is the neighbourhood quiet?" }
+      - { speaker: Mme Lévy, es: "Le soir, oui. Et il y a une boulangerie en face de l'immeuble.", en: "In the evening, yes. And there's a bakery opposite the building." }
+      - { speaker: Emma, es: "Parfait ! C'est près du métro ?", en: "Perfect! Is it near the metro?" }
+      - { speaker: Mme Lévy, es: "Oui, la station est au coin de la rue.", en: "Yes, the station is on the corner of the street." }
+    questions:
+      - { q: "L'appartement est à quel étage ?", options: ["au premier étage", "au deuxième étage", "au troisième étage"], answer: 2, explain: "« C'est au troisième étage. »" }
+      - { q: "Il y a combien de pièces ?", options: ["une", "deux", "trois"], answer: 1, explain: "Two rooms: a living room and a bedroom." }
+      - { q: "Qu'est-ce qu'il n'y a pas dans l'appartement ?", options: ["une douche", "un balcon", "une fenêtre"], answer: 1, explain: "« Il n'y a pas de balcon. »" }
+      - { q: "Où est la boulangerie ?", options: ["en face de l'immeuble", "au coin de la rue", "à côté de la chambre"], answer: 0, explain: "« Il y a une boulangerie en face de l'immeuble. »" }

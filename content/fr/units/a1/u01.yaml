@@ -1,0 +1,280 @@
+id: a1.u01
+title: "Bonjour, je m'appelle…"
+lessons:
+  - id: a1.u01.l1
+    title: "Bonjour, madame !"
+    teach: [g.greetings]
+    tip: "Say bonjour to everyone when you walk in (shop, café, passport desk), and switch to bonsoir from about 6 pm."
+    vocab: [w.bonjour, w.bonsoir, w.salut, w.coucou, w.au-revoir, w.à-bientôt, w.à-plus-tard, w.à-demain, w.bonne-journée, w.bonne-soirée, w.bonne-nuit, w.merci, w.merci-beaucoup, w.de-rien, w.s-il-vous-plaît, w.s-il-te-plaît, w.pardon, w.excusez-moi, w.ça-va, w.bien, w.très-bien, w.mal, w.comme-ci-comme-ça, w.bienvenue, w.monsieur, w.madame, w.mademoiselle, w.aller, w.et, w.oh, w.bisou]
+    sentences:
+      - { es: "Bonjour, madame !", en: "Hello, madam!", altEs: ["Bonjour madame !"], altEn: ["Good morning, madam!", "Hello!"], grammar: [g.greetings], vocab: [w.bonjour, w.madame] }
+      - { es: "Bonsoir, monsieur. Vous allez bien ?", en: "Good evening, sir. Are you well?", altEs: ["Bonsoir, monsieur. Comment allez-vous ?", "Bonsoir monsieur, vous allez bien ?"], altEn: ["Good evening, sir. How are you?"], grammar: [g.greetings, g.tu-vs-vous], vocab: [w.bonsoir, w.monsieur, w.aller] }
+      - { es: "Salut, Julie ! Ça va ?", en: "Hi, Julie! How's it going?", altEs: ["Coucou, Julie ! Ça va ?", "Salut, Julie ! Comment tu vas ?", "Salut Julie, ça va ?"], altEn: ["Hi, Julie! How are you?"], grammar: [g.greetings], vocab: [w.salut, w.ça-va] }
+      - { es: "Ça va bien, merci. Et toi ?", en: "I'm fine, thanks. And you?", altEs: ["Ça va, merci. Et toi ?", "Bien, merci. Et toi ?", "Ça va bien, merci, et toi ?"], altEn: ["Fine, thanks. And you?"], grammar: [g.greetings, g.stressed-pronouns], vocab: [w.ça-va, w.bien, w.merci, w.et], error: { wrong: "Ça va bien, merci. Et tu ?", explain: "On its own after et, use the stressed pronoun: et toi ?", grammar: g.stressed-pronouns } }
+      - { es: "Comment allez-vous, madame Dupont ?", en: "How are you, Mrs Dupont?", altEs: ["Vous allez bien, madame Dupont ?", "Madame Dupont, comment allez-vous ?"], grammar: [g.greetings, g.tu-vs-vous], vocab: [w.aller, w.madame], transform: { instruction: "Ask your friend Julie instead (tu)", answer: "Comment tu vas, Julie ?", alt: ["Comment vas-tu, Julie ?", "Ça va, Julie ?", "Tu vas bien, Julie ?"], en: "How are you, Julie?" } }
+      - { es: "Très bien, merci beaucoup. Et vous ?", en: "Very well, thank you very much. And you?", altEs: ["Très bien, merci beaucoup, et vous ?"], grammar: [g.greetings, g.stressed-pronouns], vocab: [w.très-bien, w.merci-beaucoup] }
+      - { es: "Comme ci comme ça, et toi ?", en: "So-so, and you?", altEs: ["Comme ci, comme ça. Et toi ?"], grammar: [g.greetings], vocab: [w.comme-ci-comme-ça] }
+      - { es: "Ça ne va pas très bien aujourd'hui.", en: "I'm not doing very well today.", altEs: ["Ça va pas très bien aujourd'hui.", "Ça va mal aujourd'hui.", "Aujourd'hui, ça ne va pas très bien."], altEn: ["Things aren't going very well today."], grammar: [g.greetings, g.negation-ne-pas], vocab: [w.ça-va, w.mal] }
+      - { es: "Bienvenue à Paris !", en: "Welcome to Paris!", grammar: [g.greetings], vocab: [w.bienvenue] }
+      - { es: "Excusez-moi, monsieur, le métro, s'il vous plaît ?", en: "Excuse me, sir, which way is the metro, please?", altEs: ["Pardon, monsieur, le métro, s'il vous plaît ?"], altEn: ["Excuse me, sir, the metro, please?"], grammar: [g.greetings, g.tu-vs-vous], vocab: [w.excusez-moi, w.s-il-vous-plaît], transform: { instruction: "Ask a friend instead (tu)", answer: "Excuse-moi, le métro, s'il te plaît ?", alt: ["Pardon, le métro, s'il te plaît ?"], en: "Excuse me, which way is the metro, please?" } }
+      - { es: "Merci ! — De rien.", en: "Thank you! — You're welcome.", altEs: ["Merci ! — Je vous en prie.", "Merci ! — Je t'en prie.", "Merci ! — Pas de quoi."], altEn: ["Thanks! — You're welcome."], grammar: [g.greetings], vocab: [w.merci, w.de-rien] }
+      - { es: "Oh, pardon, madame !", en: "Oh, sorry, madam!", altEs: ["Oh, pardon madame !", "Oh, excusez-moi, madame !"], altEn: ["Oh, excuse me, madam!"], grammar: [g.greetings], vocab: [w.oh, w.pardon] }
+      - { es: "Au revoir, monsieur, bonne journée !", en: "Goodbye, sir, have a nice day!", altEs: ["Au revoir, monsieur. Bonne journée !", "Au revoir monsieur, bonne journée !"], grammar: [g.greetings], vocab: [w.au-revoir, w.bonne-journée], transform: { instruction: "It's 8 pm: wish him a nice evening instead", answer: "Au revoir, monsieur, bonne soirée !", alt: ["Au revoir, monsieur. Bonne soirée !", "Au revoir monsieur, bonne soirée !"], en: "Goodbye, sir, have a nice evening!" } }
+      - { es: "Salut, à demain !", en: "Bye, see you tomorrow!", altEs: ["Salut ! À demain !", "Ciao, à demain !"], grammar: [g.greetings], vocab: [w.salut, w.à-demain] }
+      - { es: "Bonne nuit, Léa, et à demain !", en: "Good night, Léa, and see you tomorrow!", altEs: ["Bonne nuit, Léa ! À demain !"], grammar: [g.greetings], vocab: [w.bonne-nuit, w.à-demain] }
+      - { es: "Merci, monsieur, et à bientôt !", en: "Thank you, sir, and see you soon!", altEs: ["Merci monsieur, et à bientôt !", "Merci, monsieur. À bientôt !"], grammar: [g.greetings], vocab: [w.merci, w.à-bientôt] }
+    exchanges:
+      - q: { es: "Bonjour, madame ! Comment allez-vous ?", en: "Hello, madam! How are you?" }
+        a: { es: "Très bien, merci. Et vous ?", en: "Very well, thank you. And you?" }
+        alt: ["Bien, merci, et vous ?", "Ça va bien, merci. Et vous ?"]
+        grammar: [g.greetings, g.tu-vs-vous]
+        vocab: [w.bonjour, w.aller, w.très-bien]
+      - q: { es: "Salut ! Ça va ?", en: "Hi! How's it going?" }
+        a: { es: "Oui, ça va bien. Et toi ?", en: "Yes, I'm fine. And you?" }
+        alt: ["Ça va, et toi ?", "Comme ci comme ça.", "Pas mal, et toi ?"]
+        grammar: [g.greetings]
+        vocab: [w.salut, w.ça-va]
+      - q: { es: "Merci beaucoup, monsieur !", en: "Thank you very much, sir!" }
+        a: { es: "De rien, madame. Bonne journée !", en: "You're welcome, madam. Have a nice day!" }
+        alt: ["Je vous en prie.", "De rien !"]
+        grammar: [g.greetings]
+        vocab: [w.merci-beaucoup, w.de-rien, w.bonne-journée]
+      - q: { es: "Bonne soirée, Julie !", en: "Have a nice evening, Julie!" }
+        a: { es: "Merci, toi aussi ! À demain !", en: "Thanks, you too! See you tomorrow!" }
+        alt: ["Merci, à demain !", "Toi aussi !"]
+        grammar: [g.greetings]
+        vocab: [w.bonne-soirée, w.à-demain]
+      - q: { es: "Coucou, Léa ! Tu vas bien ?", en: "Hi there, Léa! Are you well?" }
+        a: { es: "Coucou ! Oui, très bien, merci.", en: "Hi! Yes, very well, thanks." }
+        alt: ["Oui, ça va bien.", "Comme ci comme ça."]
+        grammar: [g.greetings]
+        vocab: [w.coucou, w.très-bien]
+    texts:
+      - title: "Message de Julie"
+        es: ["Coucou, Paul ! Bienvenue en France !", "Ça va ? Moi, ça va très bien.", "À plus tard, à l'aéroport. Bisous !"]
+        en: ["Hi, Paul! Welcome to France!", "How are you? I'm very well.", "See you later at the airport. Love!"]
+        grammar: [g.greetings]
+        vocab: [w.coucou, w.bienvenue, w.à-plus-tard, w.bisou]
+      - title: "Au contrôle des passeports"
+        es: ["Bonjour, mademoiselle.", "Votre passeport, s'il vous plaît.", "Merci. Bonne journée, et bienvenue en France !"]
+        en: ["Hello, miss.", "Your passport, please.", "Thank you. Have a nice day, and welcome to France!"]
+        grammar: [g.greetings, g.tu-vs-vous]
+        vocab: [w.mademoiselle, w.s-il-vous-plaît, w.bonne-journée]
+    spicy:
+      - { es: "Bonjour ! Vous allez bien ? Moi, très bien… maintenant.", en: "Hello! Are you well? I'm very well… now.", altEs: ["Bonjour ! Comment allez-vous ? Moi, très bien… maintenant."], grammar: [g.greetings, g.tu-vs-vous], vocab: [w.bonjour, w.aller] }
+      - { es: "Au revoir ? Non, non : à bientôt !", en: "Goodbye? No, no: see you soon!", altEs: ["Au revoir ? Non : à bientôt !"], grammar: [g.greetings], vocab: [w.au-revoir, w.à-bientôt] }
+      - { es: "Merci pour le café ! À demain, même heure ?", en: "Thanks for the coffee! See you tomorrow, same time?", altEs: ["Merci pour le café ! À demain, à la même heure ?"], grammar: [g.greetings], vocab: [w.merci, w.à-demain] }
+      - { es: "Pardon, monsieur, mais vous avez un très beau sourire. Bonne journée !", en: "Excuse me, sir, but you have a lovely smile. Have a nice day!", altEs: ["Pardon, madame, mais vous avez un très beau sourire. Bonne journée !", "Excusez-moi, monsieur, mais vous avez un très beau sourire. Bonne journée !"], grammar: [g.greetings, g.tu-vs-vous], vocab: [w.pardon, w.bonne-journée] }
+      - { es: "Salut ! Ça va ? Moi, ça va très bien quand tu es là.", en: "Hi! How are you? I'm very well when you're here.", altEs: ["Coucou ! Ça va ? Moi, ça va très bien quand tu es là."], grammar: [g.greetings], vocab: [w.salut, w.ça-va] }
+  - id: a1.u01.l2
+    title: "Je m'appelle Emma"
+    teach: [g.s-appeler, g.subject-pronouns]
+    tip: "Je m'appelle literally means 'I call myself'. Je becomes j' before a vowel, and French never drops the subject pronoun."
+    vocab: [w.s-appeler, w.je, w.tu, w.il, w.elle, w.comment, w.nom, w.prénom, w.nom-de-famille, w.enchanté, w.qui, w.c-est, w.voici, w.voilà, w.mot, w.ah, w.quoi]
+    sentences:
+      - { es: "Je m'appelle Emma.", en: "My name is Emma.", altEs: ["Moi, c'est Emma.", "Je suis Emma.", "Moi, je m'appelle Emma."], altEn: ["I'm Emma.", "I'm called Emma."], grammar: [g.s-appeler], vocab: [w.s-appeler, w.je] }
+      - { es: "Comment tu t'appelles ?", en: "What's your name?", altEs: ["Tu t'appelles comment ?", "Comment t'appelles-tu ?", "Comment est-ce que tu t'appelles ?"], grammar: [g.s-appeler, g.tu-vs-vous], vocab: [w.comment, w.s-appeler, w.tu], transform: { instruction: "Ask politely (vous)", answer: "Comment vous appelez-vous ?", alt: ["Vous vous appelez comment ?", "Comment est-ce que vous vous appelez ?"], en: "What's your name? (formal)" } }
+      - { es: "Il s'appelle Hugo et elle s'appelle Léa.", en: "His name is Hugo and her name is Léa.", altEs: ["Lui, c'est Hugo, et elle, c'est Léa.", "Il s'appelle Hugo, et elle, Léa."], altEn: ["He's called Hugo and she's called Léa."], grammar: [g.s-appeler, g.subject-pronouns], vocab: [w.il, w.elle, w.s-appeler] }
+      - { es: "Mon prénom, c'est Paul, et mon nom de famille, c'est Martin.", en: "My first name is Paul and my surname is Martin.", altEs: ["Mon prénom est Paul et mon nom de famille est Martin.", "Mon prénom, c'est Paul, et mon nom, c'est Martin."], altEn: ["My first name is Paul, and my last name is Martin."], grammar: [g.c-est-il-est], vocab: [w.prénom, w.nom-de-famille] }
+      - { es: "Votre nom, s'il vous plaît ?", en: "Your surname, please?", altEs: ["Quel est votre nom, s'il vous plaît ?", "C'est quoi, votre nom ?"], altEn: ["Your name, please?"], grammar: [g.tu-vs-vous], vocab: [w.nom], note: "In forms and offices, le nom means the surname and le prénom the first name." }
+      - { es: "Enchanté, Julie !", en: "Pleased to meet you, Julie!", altEs: ["Enchantée, Julie !", "Enchanté Julie !"], altEn: ["Nice to meet you, Julie!"], grammar: [g.greetings], vocab: [w.enchanté], note: "A woman writes enchantée; it sounds the same." }
+      - { es: "Qui est-ce ? — C'est Thomas, un ami.", en: "Who is it? — It's Thomas, a friend.", altEs: ["C'est qui ? — C'est Thomas, un ami.", "Qui est-ce ? — C'est Thomas, un copain."], altEn: ["Who's that? — That's Thomas, a friend."], grammar: [g.question-words, g.c-est-il-est], vocab: [w.qui, w.c-est] }
+      - { es: "Voici Camille, et voilà Nicolas.", en: "Here's Camille, and there's Nicolas.", altEs: ["Voici Camille et voilà Nicolas."], altEn: ["This is Camille, and that's Nicolas."], grammar: [g.subject-pronouns], vocab: [w.voici, w.voilà] }
+      - { es: "Elle ne s'appelle pas Sophie, elle s'appelle Anne.", en: "Her name isn't Sophie, it's Anne.", altEs: ["Elle s'appelle pas Sophie, elle s'appelle Anne."], altEn: ["She isn't called Sophie, she's called Anne."], grammar: [g.s-appeler, g.negation-ne-pas], vocab: [w.s-appeler], error: { wrong: "Elle s'appelle ne pas Sophie, elle s'appelle Anne.", explain: "ne goes before the pronoun s' and pas after the verb: elle ne s'appelle pas.", grammar: g.negation-ne-pas } }
+      - { es: "Tu t'appelles Louis ?", en: "Is your name Louis?", altEs: ["Est-ce que tu t'appelles Louis ?", "Tu t'appelles bien Louis ?"], altEn: ["Are you called Louis?"], grammar: [g.s-appeler, g.yes-no-questions], vocab: [w.s-appeler], error: { wrong: "Tu te appelles Louis ?", explain: "te becomes t' before a vowel: tu t'appelles.", grammar: g.s-appeler } }
+      - { es: "Comment ça s'écrit, votre nom ?", en: "How do you spell your surname?", altEs: ["Votre nom, ça s'écrit comment ?", "Comment s'écrit votre nom ?"], altEn: ["How is your name spelt?"], grammar: [g.question-words], vocab: [w.comment, w.nom] }
+      - { es: "Ah, c'est vous, monsieur Martin !", en: "Ah, it's you, Mr Martin!", altEs: ["Ah ! C'est vous, monsieur Martin !"], grammar: [g.stressed-pronouns, g.c-est-il-est], vocab: [w.ah, w.c-est] }
+      - { es: "Nous nous appelons Paul et Anne.", en: "Our names are Paul and Anne.", altEs: ["On s'appelle Paul et Anne."], altEn: ["We're called Paul and Anne."], grammar: [g.s-appeler, g.subject-pronouns], vocab: [w.s-appeler], transform: { instruction: "Change to 'they' (ils)", answer: "Ils s'appellent Paul et Anne.", en: "Their names are Paul and Anne." } }
+      - { es: "Pardon, c'est quoi, ce mot ?", en: "Sorry, what's this word?", altEs: ["Pardon, qu'est-ce que c'est, ce mot ?", "Pardon, ce mot, c'est quoi ?"], altEn: ["Excuse me, what's that word?"], grammar: [g.question-words], vocab: [w.quoi, w.mot] }
+    exchanges:
+      - q: { es: "Comment tu t'appelles ?", en: "What's your name?" }
+        a: { es: "Je m'appelle Hugo. Et toi ?", en: "My name's Hugo. And you?" }
+        alt: ["Moi, c'est Hugo.", "Hugo. Et toi ?"]
+        grammar: [g.s-appeler]
+        vocab: [w.s-appeler, w.comment]
+      - q: { es: "Comment vous appelez-vous, madame ?", en: "What's your name, madam?" }
+        a: { es: "Je m'appelle Anne Dupont.", en: "My name is Anne Dupont." }
+        alt: ["Anne Dupont.", "Dupont, Anne Dupont."]
+        grammar: [g.s-appeler, g.tu-vs-vous]
+        vocab: [w.s-appeler]
+      - q: { es: "Qui est-ce ?", en: "Who's that?" }
+        a: { es: "C'est Léa, une amie.", en: "That's Léa, a friend." }
+        alt: ["C'est Léa.", "C'est une amie."]
+        grammar: [g.c-est-il-est, g.question-words]
+        vocab: [w.qui, w.c-est]
+      - q: { es: "Voici Thomas.", en: "This is Thomas." }
+        a: { es: "Enchanté, Thomas !", en: "Pleased to meet you, Thomas!" }
+        alt: ["Enchantée !", "Bonjour, Thomas !", "Salut, Thomas !"]
+        grammar: [g.greetings]
+        vocab: [w.voici, w.enchanté]
+      - q: { es: "C'est quoi, ton prénom ?", en: "What's your first name?" }
+        a: { es: "Mon prénom, c'est Camille.", en: "My first name is Camille." }
+        alt: ["Camille.", "C'est Camille."]
+        grammar: [g.c-est-il-est]
+        vocab: [w.prénom, w.quoi]
+    texts:
+      - title: "Présentation"
+        es: ["Bonjour ! Je m'appelle Emma.", "Mon nom de famille, c'est Wilson.", "Et voici Hugo, un ami."]
+        en: ["Hello! My name is Emma.", "My surname is Wilson.", "And this is Hugo, a friend."]
+        grammar: [g.s-appeler]
+        vocab: [w.s-appeler, w.nom-de-famille, w.voici]
+      - title: "Message de Léa"
+        es: ["Coucou ! C'est Léa.", "Il s'appelle comment, ton ami ?", "Il est très sympa !"]
+        en: ["Hi! It's Léa.", "What's your friend's name?", "He's really nice!"]
+        grammar: [g.s-appeler, g.subject-pronouns]
+        vocab: [w.c-est, w.il]
+    spicy:
+      - { es: "Je m'appelle Paul. Et toi, tu t'appelles comment… et ton numéro ?", en: "My name's Paul. And you, what's your name… and your number?", altEs: ["Moi, c'est Paul. Et toi, tu t'appelles comment… et ton numéro ?"], grammar: [g.s-appeler], vocab: [w.s-appeler] }
+      - { es: "Enchanté ! Vraiment, très enchanté.", en: "Pleased to meet you! Really, very pleased.", altEs: ["Enchantée ! Vraiment, très enchantée."], grammar: [g.greetings], vocab: [w.enchanté] }
+      - { es: "Elle s'appelle Léa ? C'est un joli prénom pour un joli sourire.", en: "Her name is Léa? That's a pretty name for a pretty smile.", grammar: [g.s-appeler], vocab: [w.prénom] }
+      - { es: "C'est qui ? Il est très beau. Il s'appelle comment ?", en: "Who's that? He's very handsome. What's his name?", altEs: ["Qui est-ce ? Il est très beau. Il s'appelle comment ?", "C'est qui ? Elle est très belle. Elle s'appelle comment ?"], grammar: [g.s-appeler, g.subject-pronouns], vocab: [w.qui, w.il] }
+      - { es: "Moi, c'est Hugo. Et toi, tu es… très jolie.", en: "I'm Hugo. And you, you're… very pretty.", grammar: [g.subject-pronouns], vocab: [w.tu] }
+  - id: a1.u01.l3
+    title: "Vous êtes étudiant ?"
+    teach: [g.etre-present, g.tu-vs-vous]
+    tip: "Être is irregular: je suis, tu es, il est, nous sommes, vous êtes, ils sont. Use vous with strangers and officials, tu with friends."
+    vocab: [w.être, w.nous, w.vous, w.ils, w.elles, w.on, w.ami, w.copain, w.étudiant, w.passeport, w.aéroport, w.contrôle, w.prêt, w.désolé, w.d-accord, w.ici, w.là, w.sympa]
+    sentences:
+      - { es: "Je suis étudiant.", en: "I'm a student.", altEs: ["Je suis étudiante.", "Moi, je suis étudiant."], grammar: [g.etre-present], vocab: [w.être, w.étudiant], error: { wrong: "Je suis un étudiant.", explain: "No article with a profession or status after être: je suis étudiant (but c'est un étudiant).", grammar: g.etre-present } }
+      - { es: "Vous êtes prêt, monsieur ?", en: "Are you ready, sir?", altEs: ["Est-ce que vous êtes prêt, monsieur ?"], grammar: [g.tu-vs-vous, g.etre-present], vocab: [w.prêt, w.vous], transform: { instruction: "Ask your friend Julie (tu)", answer: "Tu es prête, Julie ?", alt: ["Est-ce que tu es prête, Julie ?"], en: "Are you ready, Julie?" } }
+      - { es: "Nous sommes à l'aéroport Charles-de-Gaulle.", en: "We're at Charles de Gaulle airport.", altEs: ["On est à l'aéroport Charles-de-Gaulle."], grammar: [g.etre-present, g.on-nous], vocab: [w.nous, w.aéroport] }
+      - { es: "Votre passeport, s'il vous plaît.", en: "Your passport, please.", grammar: [g.tu-vs-vous], vocab: [w.passeport] }
+      - { es: "Le contrôle des passeports, c'est là ?", en: "Is passport control over there?", altEs: ["C'est là, le contrôle des passeports ?", "Le contrôle des passeports, c'est ici ?"], grammar: [g.yes-no-questions], vocab: [w.contrôle, w.là] }
+      - { es: "Ils sont là, devant le café.", en: "They're there, in front of the café.", altEs: ["Ils sont là-bas, devant le café."], altEn: ["They're over there, in front of the café."], grammar: [g.etre-present, g.subject-pronouns], vocab: [w.ils, w.là] }
+      - { es: "Elles sont amies.", en: "They're friends.", altEs: ["Elles sont copines.", "Ce sont des amies."], grammar: [g.etre-present, g.subject-pronouns], vocab: [w.elles, w.ami] }
+      - { es: "Tu es sympa, toi !", en: "You're nice!", altEs: ["Toi, tu es sympa !"], grammar: [g.etre-present, g.stressed-pronouns], vocab: [w.sympa] }
+      - { es: "On est ici pour le travail.", en: "We're here for work.", altEs: ["Nous sommes ici pour le travail."], grammar: [g.on-nous, g.etre-present], vocab: [w.on, w.ici] }
+      - { es: "Désolé, je ne suis pas prêt.", en: "Sorry, I'm not ready.", altEs: ["Désolée, je ne suis pas prête.", "Désolé, je suis pas prêt."], grammar: [g.etre-present, g.negation-ne-pas], vocab: [w.désolé, w.prêt], transform: { instruction: "Change to 'we' (two men)", answer: "Désolés, nous ne sommes pas prêts.", alt: ["Désolés, on n'est pas prêts.", "Désolés, nous sommes pas prêts."], en: "Sorry, we're not ready." } }
+      - { es: "C'est Paul, un copain de Lyon.", en: "That's Paul, a friend from Lyon.", altEs: ["C'est Paul, un ami de Lyon."], altEn: ["This is Paul, a mate from Lyon."], grammar: [g.c-est-il-est], vocab: [w.copain] }
+      - { es: "Vous êtes madame Dupont ? — Oui, c'est moi.", en: "Are you Mrs Dupont? — Yes, that's me.", altEs: ["Est-ce que vous êtes madame Dupont ? — Oui, c'est moi."], grammar: [g.tu-vs-vous, g.stressed-pronouns], vocab: [w.vous] }
+      - { es: "D'accord, monsieur, merci.", en: "All right, sir, thank you.", altEs: ["D'accord, merci, monsieur."], altEn: ["OK, sir, thank you."], grammar: [g.tu-vs-vous], vocab: [w.d-accord] }
+      - { es: "On peut se tutoyer ? — Oui, d'accord !", en: "Shall we say tu to each other? — Yes, OK!", altEs: ["On se tutoie ? — Oui, d'accord !"], grammar: [g.tu-vs-vous], vocab: [w.tutoyer, w.d-accord] }
+      - { es: "Vous êtes étudiants, tous les deux ?", en: "Are you both students?", altEs: ["Vous êtes étudiantes, toutes les deux ?"], grammar: [g.etre-present, g.tu-vs-vous], vocab: [w.étudiant], note: "Vous for two or more people, even friends." }
+    exchanges:
+      - q: { es: "Vous êtes étudiante ?", en: "Are you a student?" }
+        a: { es: "Oui, je suis étudiante à Paris.", en: "Yes, I'm a student in Paris." }
+        alt: ["Oui.", "Non, je ne suis pas étudiante."]
+        grammar: [g.etre-present, g.tu-vs-vous]
+        vocab: [w.étudiant, w.être]
+      - q: { es: "Votre passeport, s'il vous plaît.", en: "Your passport, please." }
+        a: { es: "Voilà, monsieur.", en: "Here you are, sir." }
+        alt: ["Voici mon passeport.", "Oui, voilà."]
+        grammar: [g.tu-vs-vous]
+        vocab: [w.passeport, w.voilà]
+      - q: { es: "Tu es prêt ?", en: "Are you ready?" }
+        a: { es: "Oui, je suis prêt. On y va !", en: "Yes, I'm ready. Let's go!" }
+        alt: ["Non, désolé !", "Oui, d'accord."]
+        grammar: [g.etre-present]
+        vocab: [w.prêt]
+      - q: { es: "Où sont Paul et Julie ?", en: "Where are Paul and Julie?" }
+        a: { es: "Ils sont là, devant le café.", en: "They're over there, in front of the café." }
+        alt: ["Ils sont ici.", "Là, devant le café."]
+        grammar: [g.etre-present]
+        vocab: [w.ils, w.là]
+      - q: { es: "On peut se tutoyer ?", en: "Shall we say tu to each other?" }
+        a: { es: "Oui, d'accord ! Moi, c'est Hugo.", en: "Yes, OK! I'm Hugo." }
+        alt: ["D'accord !", "Oui, bien sûr."]
+        grammar: [g.tu-vs-vous]
+        vocab: [w.d-accord]
+    texts:
+      - title: "À l'aéroport"
+        es: ["Nous sommes à Roissy.", "Je suis prêt, mais Julie n'est pas là.", "Elle est au café, avec un ami."]
+        en: ["We're at Roissy.", "I'm ready, but Julie isn't here.", "She's at the café, with a friend."]
+        grammar: [g.etre-present]
+        vocab: [w.nous, w.prêt, w.là, w.ami]
+      - title: "Au contrôle"
+        es: ["Bonjour, monsieur. Vous êtes étudiant ?", "Oui, je suis étudiant à Paris.", "D'accord. Bienvenue en France !"]
+        en: ["Hello, sir. Are you a student?", "Yes, I'm a student in Paris.", "All right. Welcome to France!"]
+        grammar: [g.etre-present, g.tu-vs-vous]
+        vocab: [w.étudiant, w.contrôle, w.d-accord]
+    spicy:
+      - { es: "Vous êtes seul ici ? Moi aussi.", en: "Are you here alone? Me too.", altEs: ["Vous êtes seule ici ? Moi aussi.", "Tu es seul ici ? Moi aussi."], grammar: [g.etre-present, g.tu-vs-vous], vocab: [w.être, w.ici] }
+      - { es: "Tu es sympa… et très mignon.", en: "You're nice… and very cute.", altEs: ["Tu es sympa… et très mignonne."], grammar: [g.etre-present], vocab: [w.sympa] }
+      - { es: "On est à Paris, tu es là, je suis là… c'est parfait !", en: "We're in Paris, you're here, I'm here… it's perfect!", altEs: ["Nous sommes à Paris, tu es là, je suis là… c'est parfait !"], grammar: [g.etre-present, g.on-nous], vocab: [w.on, w.là] }
+      - { es: "Vous êtes prêt pour un café ? Moi, oui.", en: "Are you ready for a coffee? I am.", altEs: ["Vous êtes prête pour un café ? Moi, oui.", "Tu es prêt pour un café ? Moi, oui."], grammar: [g.etre-present, g.tu-vs-vous], vocab: [w.prêt] }
+      - { es: "Tu es étudiant ? Moi aussi ! On révise ensemble ?", en: "You're a student? Me too! Shall we revise together?", altEs: ["Tu es étudiante ? Moi aussi ! On révise ensemble ?"], grammar: [g.etre-present], vocab: [w.étudiant] }
+  - id: a1.u01.l4
+    title: "Et toi ?"
+    teach: [g.stressed-pronouns]
+    tip: "Moi, toi, lui, elle, nous, vous, eux, elles: use them alone (Et toi ?), for emphasis (Moi, je…) and after prepositions (avec moi)."
+    vocab: [w.moi, w.toi, w.lui, w.eux, w.aussi, w.mais, w.ou, w.si, w.oui, w.non, w.présenter]
+    sentences:
+      - { es: "Moi, je suis anglaise. Et toi ?", en: "I'm English. And you?", altEs: ["Moi, je suis anglais. Et toi ?", "Je suis anglaise. Et toi ?"], altEn: ["Me, I'm English. And you?"], grammar: [g.stressed-pronouns, g.etre-present], vocab: [w.moi, w.toi] }
+      - { es: "Lui, il est de Paris, et elle, elle est de Lyon.", en: "He's from Paris, and she's from Lyon.", altEs: ["Lui est de Paris, et elle est de Lyon."], grammar: [g.stressed-pronouns], vocab: [w.lui, w.elle] }
+      - { es: "C'est pour toi.", en: "It's for you.", altEs: ["C'est pour vous."], altEn: ["This is for you."], grammar: [g.stressed-pronouns], vocab: [w.toi] }
+      - { es: "Tu viens avec moi ?", en: "Are you coming with me?", altEs: ["Vous venez avec moi ?", "Est-ce que tu viens avec moi ?"], grammar: [g.stressed-pronouns], vocab: [w.moi, w.venir] }
+      - { es: "Eux, ils sont à l'hôtel.", en: "They're at the hotel.", altEs: ["Eux sont à l'hôtel."], altEn: ["As for them, they're at the hotel."], grammar: [g.stressed-pronouns], vocab: [w.eux] }
+      - { es: "Je suis fatigué. — Moi aussi !", en: "I'm tired. — Me too!", altEs: ["Je suis fatiguée. — Moi aussi !"], grammar: [g.stressed-pronouns, g.moi-aussi-non-plus], vocab: [w.aussi, w.fatigué] }
+      - { es: "Tu n'es pas étudiant ? — Si, je suis étudiant !", en: "Aren't you a student? — Yes, I am!", altEs: ["Tu n'es pas étudiante ? — Si, je suis étudiante !", "Tu es pas étudiant ? — Si, je suis étudiant !"], grammar: [g.yes-no-questions, g.negation-ne-pas], vocab: [w.si, w.étudiant] }
+      - { es: "Je te présente Hugo, un ami.", en: "This is Hugo, a friend.", altEs: ["Voici Hugo, un ami."], altEn: ["Let me introduce Hugo, a friend."], grammar: [g.tu-vs-vous], vocab: [w.présenter], transform: { instruction: "Introduce him formally (vous)", answer: "Je vous présente Hugo, un ami.", alt: ["Voici Hugo, un ami."], en: "May I introduce Hugo, a friend." } }
+      - { es: "C'est toi, Julie ? — Oui, c'est moi !", en: "Is that you, Julie? — Yes, it's me!", altEs: ["Julie, c'est toi ? — Oui, c'est moi !"], grammar: [g.stressed-pronouns, g.c-est-il-est], vocab: [w.toi, w.moi, w.oui] }
+      - { es: "Vous êtes français ou belge ?", en: "Are you French or Belgian?", altEs: ["Vous êtes française ou belge ?", "Est-ce que vous êtes français ou belge ?"], grammar: [g.etre-present, g.yes-no-questions], vocab: [w.ou] }
+      - { es: "Je suis canadien, mais lui, il est suisse.", en: "I'm Canadian, but he's Swiss.", altEs: ["Je suis canadienne, mais lui, il est suisse.", "Je suis canadien, mais lui est suisse."], grammar: [g.stressed-pronouns], vocab: [w.mais, w.lui], error: { wrong: "Je suis canadien, mais il, il est suisse.", explain: "For emphasis, use the stressed pronoun lui before il: lui, il est suisse.", grammar: g.stressed-pronouns } }
+      - { es: "Non, ce n'est pas lui.", en: "No, it's not him.", altEs: ["Non, c'est pas lui."], altEn: ["No, that isn't him."], grammar: [g.negation-ne-pas, g.stressed-pronouns], vocab: [w.non, w.lui] }
+      - { es: "Elles sont avec eux.", en: "They're with them.", altEs: ["Elles, elles sont avec eux."], grammar: [g.stressed-pronouns], vocab: [w.eux, w.elles], transform: { instruction: "Replace eux with 'me'", answer: "Elles sont avec moi.", en: "They're with me." } }
+      - { es: "Qui est là ? — Nous !", en: "Who's there? — Us!", altEs: ["Qui est là ? — C'est nous !"], altEn: ["Who's there? — It's us!"], grammar: [g.stressed-pronouns], vocab: [w.qui, w.là] }
+    exchanges:
+      - q: { es: "Je m'appelle Hugo. Et toi ?", en: "My name's Hugo. And you?" }
+        a: { es: "Moi, c'est Emma.", en: "I'm Emma." }
+        alt: ["Je m'appelle Emma.", "Moi, je m'appelle Emma."]
+        grammar: [g.stressed-pronouns, g.s-appeler]
+        vocab: [w.moi, w.toi]
+      - q: { es: "Je suis étudiant.", en: "I'm a student." }
+        a: { es: "Moi aussi !", en: "Me too!" }
+        alt: ["Ah, moi aussi !", "Pas moi."]
+        grammar: [g.stressed-pronouns, g.moi-aussi-non-plus]
+        vocab: [w.aussi]
+      - q: { es: "C'est pour qui, le café ?", en: "Who's the coffee for?" }
+        a: { es: "C'est pour moi, merci !", en: "It's for me, thanks!" }
+        alt: ["Pour moi !", "C'est pour lui."]
+        grammar: [g.stressed-pronouns]
+        vocab: [w.moi]
+      - q: { es: "Tu n'es pas parisien ?", en: "Aren't you Parisian?" }
+        a: { es: "Si, je suis parisien !", en: "Yes, I am Parisian!" }
+        alt: ["Si !", "Non, je suis de Lyon."]
+        grammar: [g.yes-no-questions, g.negation-ne-pas]
+        vocab: [w.si]
+      - q: { es: "Qui est-ce, à côté de Julie ?", en: "Who's that next to Julie?" }
+        a: { es: "C'est lui, mon ami Thomas.", en: "That's him, my friend Thomas." }
+        alt: ["C'est Thomas.", "Lui ? C'est Thomas."]
+        grammar: [g.stressed-pronouns, g.c-est-il-est]
+        vocab: [w.lui]
+    texts:
+      - title: "Présentations"
+        es: ["Je vous présente mes amis.", "Lui, c'est Louis, il est belge.", "Elle, c'est Sophie, elle est suisse.", "Et moi, je suis Hugo !"]
+        en: ["Let me introduce my friends.", "He's Louis, he's Belgian.", "She's Sophie, she's Swiss.", "And I'm Hugo!"]
+        grammar: [g.stressed-pronouns, g.c-est-il-est]
+        vocab: [w.présenter, w.lui, w.moi]
+      - title: "Message de Hugo"
+        es: ["Emma, tu es où ?", "Moi, je suis devant le café.", "Paul et Julie sont avec moi."]
+        en: ["Emma, where are you?", "I'm in front of the café.", "Paul and Julie are with me."]
+        grammar: [g.stressed-pronouns]
+        vocab: [w.moi]
+    spicy:
+      - { es: "Un café pour toi, et pour moi… ton numéro ?", en: "A coffee for you, and for me… your number?", grammar: [g.stressed-pronouns], vocab: [w.toi, w.moi] }
+      - { es: "Lui, il est sympa, mais toi, tu es super sympa.", en: "He's nice, but you're super nice.", altEs: ["Elle, elle est sympa, mais toi, tu es super sympa."], grammar: [g.stressed-pronouns], vocab: [w.lui, w.toi] }
+      - { es: "Tu es seule ? — Non, je suis avec toi, maintenant.", en: "Are you alone? — No, I'm with you now.", altEs: ["Tu es seul ? — Non, je suis avec toi, maintenant."], grammar: [g.stressed-pronouns], vocab: [w.toi] }
+      - { es: "Moi, je suis là ce soir. Et toi ?", en: "I'm around tonight. And you?", altEs: ["Moi, je suis ici ce soir. Et toi ?"], grammar: [g.stressed-pronouns], vocab: [w.moi, w.toi] }
+      - { es: "Je te présente mon chien. Lui, il t'adore déjà.", en: "This is my dog. He already adores you.", grammar: [g.stressed-pronouns], vocab: [w.présenter, w.lui] }
+dialogues:
+  - id: a1.u01.d1
+    title: "Bienvenue à Roissy"
+    context: "Emma lands at Roissy-Charles-de-Gaulle. At passport control she speaks to an officer, then her friend Hugo meets her."
+    lines:
+      - { speaker: L'agent, es: "Bonjour, madame. Votre passeport, s'il vous plaît.", en: "Hello, madam. Your passport, please." }
+      - { speaker: Emma, es: "Bonjour, monsieur. Voilà.", en: "Hello, sir. Here you are." }
+      - { speaker: L'agent, es: "Merci. Vous vous appelez Emma Wilson ?", en: "Thank you. Your name is Emma Wilson?" }
+      - { speaker: Emma, es: "Oui, c'est moi.", en: "Yes, that's me." }
+      - { speaker: L'agent, es: "Vous êtes étudiante ?", en: "Are you a student?" }
+      - { speaker: Emma, es: "Oui, je suis étudiante à Londres.", en: "Yes, I'm a student in London." }
+      - { speaker: L'agent, es: "Très bien. Bienvenue en France, et bonne journée !", en: "Very good. Welcome to France, and have a nice day!" }
+      - { speaker: Emma, es: "Merci, au revoir !", en: "Thank you, goodbye!" }
+      - { speaker: Hugo, es: "Emma ! Salut ! Ça va ?", en: "Emma! Hi! How are you?" }
+      - { speaker: Emma, es: "Hugo ! Ça va très bien, et toi ?", en: "Hugo! I'm very well, and you?" }
+      - { speaker: Hugo, es: "Super ! Je te présente Léa, une amie.", en: "Great! This is Léa, a friend." }
+      - { speaker: Léa, es: "Enchantée, Emma ! Bienvenue à Paris !", en: "Pleased to meet you, Emma! Welcome to Paris!" }
+    questions:
+      - { q: "Où est Emma ?", options: ["À la gare", "À l'aéroport", "Au café"], answer: 1, explain: "She is at passport control at Roissy-Charles-de-Gaulle airport." }
+      - { q: "Emma est…", options: ["professeur", "étudiante", "médecin"], answer: 1, explain: "« Oui, je suis étudiante à Londres. »" }
+      - { q: "L'agent dit « tu » ou « vous » à Emma ?", options: ["tu", "vous", "les deux"], answer: 1, explain: "An official uses vous with a stranger: « Vous êtes étudiante ? »" }
+      - { q: "Qui est Léa ?", options: ["la sœur de Hugo", "une amie de Hugo", "l'agent"], answer: 1, explain: "Hugo says « Je te présente Léa, une amie. »" }
