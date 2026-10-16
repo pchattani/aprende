@@ -1,0 +1,712 @@
+# A2 vocabulary (696 lemmas), grouped by the unit that introduces each word, most frequent first.
+# Standard French of France; Québec, Belgian and Swiss equivalents in `variant: { fr-CA: … }`.
+# Nouns carry gender; plural/feminine/forms only where src/lang/fr/inflect.ts cannot derive them.
+# Person and place names carry tags [name, passive].
+# ---------------------------------------------------------------- a2.u01 Le week-end dernier à Rouen
+- { id: w.connaissance, lemma: connaissance, pos: noun, gender: f, en: [knowledge, acquaintance], level: a2, unit: a2.u01 }
+- { id: w.faire-la-connaissance-de, lemma: faire la connaissance de, pos: phrase, en: [to meet (for the first time)], level: a2, unit: a2.u01 }
+- { id: w.matinée, lemma: matinée, pos: noun, gender: f, en: [morning (all morning)], level: a2, unit: a2.u01, topic: time }
+- { id: w.hier, lemma: hier, pos: adv, en: [yesterday], level: a2, unit: a2.u01, topic: time }
+- { id: w.avant-hier, lemma: avant-hier, pos: adv, en: [the day before yesterday], level: a2, unit: a2.u01, topic: time }
+- { id: w.déjà, lemma: déjà, pos: adv, en: [already, ever], level: a2, unit: a2.u01, topic: time }
+- { id: w.pas-encore, lemma: pas encore, pos: phrase, en: [not yet], level: a2, unit: a2.u01, topic: time }
+- { id: w.récemment, lemma: récemment, pos: adv, en: [recently], level: a2, unit: a2.u01, topic: time }
+- { id: w.pendant, lemma: pendant, pos: prep, en: [during, for], level: a2, unit: a2.u01, topic: time, notes: "J'ai dormi pendant deux heures = I slept for two hours." }
+- { id: w.autrefois, lemma: autrefois, pos: adv, en: [in the past, formerly], level: a2, unit: a2.u01, topic: time }
+- { id: w.moment, lemma: moment, pos: noun, gender: m, en: [moment, time], level: a2, unit: a2.u01, topic: time }
+- { id: w.siècle, lemma: siècle, pos: noun, gender: m, en: [century], level: a2, unit: a2.u01, topic: time }
+- { id: w.histoire, lemma: histoire, pos: noun, gender: f, en: [history, story], level: a2, unit: a2.u01 }
+- { id: w.cathédrale, lemma: cathédrale, pos: noun, gender: f, en: [cathedral], level: a2, unit: a2.u01, topic: city }
+- { id: w.façade, lemma: façade, pos: noun, gender: f, en: [front, façade], level: a2, unit: a2.u01, topic: city }
+- { id: w.vieille-ville, lemma: vieille ville, pos: noun, gender: f, plural: vieilles villes, en: [old town], level: a2, unit: a2.u01, topic: city }
+- { id: w.horloge, lemma: horloge, pos: noun, gender: f, en: [clock], level: a2, unit: a2.u01, topic: city }
+- { id: w.visite, lemma: visite, pos: noun, gender: f, en: [visit, tour], level: a2, unit: a2.u01, topic: travel }
+- { id: w.guide, lemma: guide, pos: noun, gender: mf, en: [guide, guidebook], level: a2, unit: a2.u01, topic: travel }
+- { id: w.lettre, lemma: lettre, pos: noun, gender: f, en: [letter], level: a2, unit: a2.u01 }
+- { id: w.carte-postale, lemma: carte postale, pos: noun, gender: f, plural: cartes postales, en: [postcard], level: a2, unit: a2.u01 }
+- { id: w.mail, lemma: mail, pos: noun, gender: m, en: [e-mail], level: a2, unit: a2.u01, topic: tech, forms: [e-mail, email], variant: { fr-CA: courriel } }
+- { id: w.message, lemma: message, pos: noun, gender: m, en: [message], level: a2, unit: a2.u01, topic: tech }
+- { id: w.envoyer, lemma: envoyer, pos: verb, en: [to send], level: a2, unit: a2.u01 }
+- { id: w.recevoir, lemma: recevoir, pos: verb, en: [to receive, to get], level: a2, unit: a2.u01 }
+- { id: w.téléphoner, lemma: téléphoner, pos: verb, en: [to phone, to call], level: a2, unit: a2.u01, topic: verbs-speech }
+- { id: w.appeler, lemma: appeler, pos: verb, en: [to call, to phone], level: a2, unit: a2.u01, topic: verbs-speech }
+- { id: w.oublier, lemma: oublier, pos: verb, en: [to forget], level: a2, unit: a2.u01 }
+- { id: w.peindre, lemma: peindre, pos: verb, en: [to paint], level: a2, unit: a2.u01 }
+- { id: w.peinture, lemma: peinture, pos: noun, gender: f, en: [painting, paint], level: a2, unit: a2.u01, topic: arts }
+- { id: w.mourir, lemma: mourir, pos: verb, en: [to die], level: a2, unit: a2.u01 }
+- { id: w.brûler, lemma: brûler, pos: verb, en: [to burn], level: a2, unit: a2.u01 }
+- { id: w.accident, lemma: accident, pos: noun, gender: m, en: [accident], level: a2, unit: a2.u01 }
+- { id: w.différent, lemma: différent, pos: adj, en: [different], level: a2, unit: a2.u01, topic: adjectives-things }
+- { id: w.cidre, lemma: cidre, pos: noun, gender: m, en: [cider], level: a2, unit: a2.u01, topic: drink }
+- { id: w.pique-nique, lemma: pique-nique, pos: noun, gender: m, en: [picnic], level: a2, unit: a2.u01, topic: food }
+- { id: w.fêter, lemma: fêter, pos: verb, en: [to celebrate], level: a2, unit: a2.u01 }
+- { id: w.gagner, lemma: gagner, pos: verb, en: [to win, to earn], level: a2, unit: a2.u01 }
+- { id: w.voyager, lemma: voyager, pos: verb, en: [to travel], level: a2, unit: a2.u01 }
+- { id: w.voyage, lemma: voyage, pos: noun, gender: m, en: [journey, trip], level: a2, unit: a2.u01, topic: travel }
+- { id: w.vacances, lemma: vacances, pos: noun, gender: f, en: [holidays, vacation], level: a2, unit: a2.u01, topic: travel, notes: "Always plural: les vacances." }
+- { id: w.valise, lemma: valise, pos: noun, gender: f, en: [suitcase], level: a2, unit: a2.u01, topic: travel }
+- { id: w.bagage, lemma: bagage, pos: noun, gender: m, en: [piece of luggage], level: a2, unit: a2.u01, topic: travel, notes: Les bagages = luggage. }
+- { id: w.pluvieux, lemma: pluvieux, pos: adj, en: [rainy], level: a2, unit: a2.u01, topic: weather }
+- { id: w.nuageux, lemma: nuageux, pos: adj, en: [cloudy], level: a2, unit: a2.u01, topic: weather }
+- { id: w.ensoleillé, lemma: ensoleillé, pos: adj, en: [sunny], level: a2, unit: a2.u01, topic: weather }
+- { id: w.chose, lemma: chose, pos: noun, gender: f, en: [thing], level: a2, unit: a2.u01, notes: Quelque chose = something. }
+- { id: w.gens, lemma: gens, pos: noun, gender: m, en: [people], level: a2, unit: a2.u01, notes: "Always plural: les gens." }
+- { id: w.ville-natale, lemma: ville natale, pos: noun, gender: f, plural: villes natales, en: [home town], level: a2, unit: a2.u01, topic: city }
+- { id: w.pas-mal, lemma: pas mal, pos: phrase, en: [not bad, quite a lot], level: a2, unit: a2.u01 }
+- { id: w.faire-du-shopping, lemma: faire du shopping, pos: phrase, en: [to go shopping], level: a2, unit: a2.u01, topic: shopping, variant: { fr-CA: magasiner } }
+- { id: w.brocante, lemma: brocante, pos: noun, gender: f, en: [flea market, second-hand shop], level: a2, unit: a2.u01, topic: shopping }
+- { id: w.phrase, lemma: phrase, pos: noun, gender: f, en: [sentence], level: a2, unit: a2.u01 }
+- { id: w.librairie, lemma: librairie, pos: noun, gender: f, en: [bookshop], level: a2, unit: a2.u01, topic: shopping }
+- { id: w.pointure, lemma: pointure, pos: noun, gender: f, en: [shoe size], level: a2, unit: a2.u01, topic: clothing }
+- { id: w.écharpe, lemma: écharpe, pos: noun, gender: f, en: [scarf], level: a2, unit: a2.u01, topic: clothing }
+- { id: w.jean, lemma: jean, pos: noun, gender: m, en: [jeans], level: a2, unit: a2.u01, topic: clothing }
+- { id: w.chaussette, lemma: chaussette, pos: noun, gender: f, en: [sock], level: a2, unit: a2.u01, topic: clothing, variant: { fr-CA: bas } }
+# ---------------------------------------------------------------- a2.u02 Je suis allée à Giverny
+- { id: w.entrer, lemma: entrer, pos: verb, en: [to go in, to enter], level: a2, unit: a2.u02, topic: verbs-motion }
+- { id: w.tomber, lemma: tomber, pos: verb, en: [to fall], level: a2, unit: a2.u02, topic: verbs-motion }
+- { id: w.naître, lemma: naître, pos: verb, en: [to be born], level: a2, unit: a2.u02 }
+- { id: w.devenir, lemma: devenir, pos: verb, en: [to become], level: a2, unit: a2.u02 }
+- { id: w.retourner, lemma: retourner, pos: verb, en: [to go back, to turn over], level: a2, unit: a2.u02, topic: verbs-motion }
+- { id: w.quitter, lemma: quitter, pos: verb, en: [to leave (a place or person)], level: a2, unit: a2.u02, topic: verbs-motion }
+- { id: w.laisser, lemma: laisser, pos: verb, en: [to leave, to let], level: a2, unit: a2.u02 }
+- { id: w.né, lemma: né, pos: adj, en: [born], level: a2, unit: a2.u02 }
+- { id: w.mort, lemma: mort, pos: adj, en: [dead], level: a2, unit: a2.u02 }
+- { id: w.mort.n, lemma: mort, pos: noun, gender: f, en: [death], level: a2, unit: a2.u02 }
+- { id: w.étang, lemma: étang, pos: noun, gender: m, en: [pond], level: a2, unit: a2.u02, topic: nature }
+- { id: w.nénuphar, lemma: nénuphar, pos: noun, gender: m, en: [water lily], level: a2, unit: a2.u02, topic: nature }
+- { id: w.nymphéa, lemma: nymphéa, pos: noun, gender: m, en: [water lily (Monet)], level: a2, unit: a2.u02, topic: nature, tags: [passive] }
+- { id: w.créer, lemma: créer, pos: verb, en: [to create], level: a2, unit: a2.u02 }
+- { id: w.artiste, lemma: artiste, pos: noun, gender: mf, en: [artist], level: a2, unit: a2.u02, topic: arts }
+- { id: w.excursion, lemma: excursion, pos: noun, gender: f, en: [trip, outing], level: a2, unit: a2.u02, topic: travel }
+- { id: w.journée, lemma: journée, pos: noun, gender: f, en: [day (all day long)], level: a2, unit: a2.u02, topic: time }
+- { id: w.voie, lemma: voie, pos: noun, gender: f, en: [track, lane, way], level: a2, unit: a2.u02, topic: transport }
+- { id: w.composter, lemma: composter, pos: verb, en: [to validate (a ticket)], level: a2, unit: a2.u02, tags: [passive] }
+- { id: w.correspondance, lemma: correspondance, pos: noun, gender: f, en: [connection (train), correspondence], level: a2, unit: a2.u02, topic: transport }
+- { id: w.horaire, lemma: horaire, pos: noun, gender: m, en: [timetable, schedule], level: a2, unit: a2.u02, topic: transport }
+- { id: w.aller-retour, lemma: aller-retour, pos: noun, gender: m, plural: allers-retours, en: [return ticket], level: a2, unit: a2.u02, topic: transport }
+- { id: w.aller-simple, lemma: aller simple, pos: noun, gender: m, plural: allers simples, en: [single ticket], level: a2, unit: a2.u02, topic: transport }
+- { id: w.contrôleur, lemma: contrôleur, pos: noun, gender: mf, en: [ticket inspector], level: a2, unit: a2.u02, topic: transport }
+- { id: w.ne-personne, lemma: ne… personne, pos: phrase, en: [nobody, no one], level: a2, unit: a2.u02, forms: [personne] }
+- { id: w.ne-rien, lemma: ne… rien, pos: phrase, en: [nothing], level: a2, unit: a2.u02, forms: [rien] }
+- { id: w.ne-plus, lemma: ne… plus, pos: phrase, en: [no longer, no more], level: a2, unit: a2.u02, forms: [plus] }
+- { id: w.ne-jamais, lemma: ne… jamais, pos: phrase, en: [never], level: a2, unit: a2.u02, tags: [passive] }
+- { id: w.rien, lemma: rien, pos: pron, en: [nothing], level: a2, unit: a2.u02 }
+- { id: w.personne.pron, lemma: personne, pos: pron, en: [nobody, no one], level: a2, unit: a2.u02 }
+- { id: w.quelqu-un, lemma: "quelqu'un", pos: pron, en: [someone, somebody], level: a2, unit: a2.u02 }
+- { id: w.quelque-chose, lemma: quelque chose, pos: pron, en: [something], level: a2, unit: a2.u02, forms: [quelque chose, quelque, chose] }
+- { id: w.plage, lemma: plage, pos: noun, gender: f, en: [beach], level: a2, unit: a2.u02, topic: nature }
+- { id: w.nature, lemma: nature, pos: noun, gender: f, en: [nature], level: a2, unit: a2.u02, topic: nature }
+- { id: w.paysage, lemma: paysage, pos: noun, gender: m, en: [landscape, scenery], level: a2, unit: a2.u02, topic: nature }
+- { id: w.lac, lemma: lac, pos: noun, gender: m, en: [lake], level: a2, unit: a2.u02, topic: nature }
+- { id: w.rivière, lemma: rivière, pos: noun, gender: f, en: [river], level: a2, unit: a2.u02, topic: nature }
+- { id: w.fleuve, lemma: fleuve, pos: noun, gender: m, en: [river (flowing to the sea)], level: a2, unit: a2.u02, topic: nature }
+- { id: w.herbe, lemma: herbe, pos: noun, gender: f, en: [grass, herb], level: a2, unit: a2.u02, topic: nature }
+- { id: w.forêt, lemma: forêt, pos: noun, gender: f, en: [forest], level: a2, unit: a2.u02, topic: nature }
+- { id: w.bois, lemma: bois, pos: noun, gender: m, en: [wood], level: a2, unit: a2.u02, topic: nature }
+- { id: w.champ, lemma: champ, pos: noun, gender: m, en: [field], level: a2, unit: a2.u02, topic: nature }
+- { id: w.montagne, lemma: montagne, pos: noun, gender: f, en: [mountain], level: a2, unit: a2.u02, topic: nature }
+- { id: w.zut, lemma: zut, pos: interj, en: [darn], level: a2, unit: a2.u02 }
+- { id: w.location, lemma: location, pos: noun, gender: f, en: [rental, hire], level: a2, unit: a2.u02, topic: travel }
+- { id: w.carrefour, lemma: carrefour, pos: noun, gender: m, en: [crossroads], level: a2, unit: a2.u02, topic: city }
+# ---------------------------------------------------------------- a2.u03 Quand j'étais petit, à Étretat
+- { id: w.marinière, lemma: marinière, pos: noun, gender: f, en: [Breton striped top], level: a2, unit: a2.u03, topic: clothing }
+- { id: w.pendentif, lemma: pendentif, pos: noun, gender: m, en: [pendant], level: a2, unit: a2.u03, topic: clothing }
+- { id: w.boule, lemma: boule, pos: noun, gender: f, en: [ball, scoop], level: a2, unit: a2.u03, notes: Une boule de glace = a scoop of ice cream; une boule à neige = a snow globe. }
+- { id: w.triskell, lemma: triskell, pos: noun, gender: m, en: [triskelion], level: a2, unit: a2.u03, tags: [passive] }
+- { id: w.maillot-de-bain, lemma: maillot de bain, pos: noun, gender: m, plural: maillots de bain, en: [swimsuit], level: a2, unit: a2.u03, topic: clothing, variant: { fr-CA: costume de bain } }
+- { id: w.lunettes-de-soleil, lemma: lunettes de soleil, pos: noun, gender: f, en: [sunglasses], level: a2, unit: a2.u03, topic: clothing }
+- { id: w.crème-solaire, lemma: crème solaire, pos: noun, gender: f, en: [sun cream], level: a2, unit: a2.u03, topic: health }
+- { id: w.parasol, lemma: parasol, pos: noun, gender: m, en: [beach umbrella], level: a2, unit: a2.u03, tags: [passive] }
+- { id: w.château-de-sable, lemma: château de sable, pos: noun, gender: m, plural: châteaux de sable, en: [sandcastle], level: a2, unit: a2.u03 }
+- { id: w.coquillage, lemma: coquillage, pos: noun, gender: m, en: [shell], level: a2, unit: a2.u03, topic: nature }
+- { id: w.mouette, lemma: mouette, pos: noun, gender: f, en: [seagull], level: a2, unit: a2.u03, topic: animals }
+- { id: w.ennuyer, lemma: ennuyer, pos: verb, en: [to bore, to annoy], level: a2, unit: a2.u03 }
+- { id: w.enfant-unique, lemma: enfant unique, pos: noun, gender: mf, plural: enfants uniques, feminine: enfant unique, en: [only child], level: a2, unit: a2.u03, topic: family }
+- { id: w.petit-fils, lemma: petit-fils, pos: noun, gender: m, en: [grandson], level: a2, unit: a2.u03, topic: family }
+- { id: w.petite-fille, lemma: petite-fille, pos: noun, gender: f, en: [granddaughter], level: a2, unit: a2.u03, topic: family }
+- { id: w.petits-enfants, lemma: petits-enfants, pos: noun, gender: m, en: [grandchildren], level: a2, unit: a2.u03, topic: family }
+- { id: w.enfance, lemma: enfance, pos: noun, gender: f, en: [childhood], level: a2, unit: a2.u03, topic: family }
+- { id: w.mer, lemma: mer, pos: noun, gender: f, en: [sea], level: a2, unit: a2.u03, topic: nature }
+- { id: w.falaise, lemma: falaise, pos: noun, gender: f, en: [cliff], level: a2, unit: a2.u03, topic: nature }
+- { id: w.craie, lemma: craie, pos: noun, gender: f, en: [chalk], level: a2, unit: a2.u03, topic: nature }
+- { id: w.pierre, lemma: pierre, pos: noun, gender: f, en: [stone], level: a2, unit: a2.u03, topic: nature }
+- { id: w.sable, lemma: sable, pos: noun, gender: m, en: [sand], level: a2, unit: a2.u03, topic: nature }
+- { id: w.vague, lemma: vague, pos: noun, gender: f, en: [wave], level: a2, unit: a2.u03, topic: nature }
+- { id: w.aiguille, lemma: aiguille, pos: noun, gender: f, en: [needle, hand (of a clock)], level: a2, unit: a2.u03, topic: nature }
+- { id: w.arche, lemma: arche, pos: noun, gender: f, en: [arch], level: a2, unit: a2.u03, topic: nature }
+- { id: w.endroit, lemma: endroit, pos: noun, gender: m, en: [place, spot], level: a2, unit: a2.u03, topic: city }
+- { id: w.sculpter, lemma: sculpter, pos: verb, en: [to sculpt, to carve], level: a2, unit: a2.u03 }
+- { id: w.côte, lemma: côte, pos: noun, gender: f, en: [coast, rib], level: a2, unit: a2.u03, topic: nature }
+- { id: w.port, lemma: port, pos: noun, gender: m, en: [port, harbour], level: a2, unit: a2.u03, topic: city }
+- { id: w.phare, lemma: phare, pos: noun, gender: m, en: [lighthouse, headlight], level: a2, unit: a2.u03, topic: city }
+- { id: w.à-l-époque, lemma: "à l'époque", pos: phrase, en: [at the time, back then], level: a2, unit: a2.u03, topic: time }
+- { id: w.époque, lemma: époque, pos: noun, gender: f, en: [era, time, period], level: a2, unit: a2.u03, topic: time }
+- { id: w.habitude, lemma: habitude, pos: noun, gender: f, en: [habit], level: a2, unit: a2.u03, notes: "Avoir l'habitude de = to be used to." }
+- { id: w.jouet, lemma: jouet, pos: noun, gender: m, en: [toy], level: a2, unit: a2.u03 }
+- { id: w.poupée, lemma: poupée, pos: noun, gender: f, en: [doll], level: a2, unit: a2.u03 }
+- { id: w.ballon, lemma: ballon, pos: noun, gender: m, en: [ball, balloon], level: a2, unit: a2.u03, topic: sport }
+- { id: w.cerf-volant, lemma: cerf-volant, pos: noun, gender: m, plural: cerfs-volants, en: [kite], level: a2, unit: a2.u03, topic: sport }
+- { id: w.colonie-de-vacances, lemma: colonie de vacances, pos: noun, gender: f, plural: colonies de vacances, en: [summer camp], level: a2, unit: a2.u03, notes: "Informal: la colo." }
+- { id: w.grandir, lemma: grandir, pos: verb, en: [to grow up, to grow], level: a2, unit: a2.u03 }
+- { id: w.se-baigner, lemma: se baigner, pos: verb, en: [to swim, to bathe], level: a2, unit: a2.u03 }
+- { id: w.pêcher, lemma: pêcher, pos: verb, en: [to fish], level: a2, unit: a2.u03 }
+- { id: w.pêche, lemma: pêche, pos: noun, gender: f, en: [fishing, peach], level: a2, unit: a2.u03, topic: sport }
+- { id: w.grimper, lemma: grimper, pos: verb, en: [to climb], level: a2, unit: a2.u03, topic: verbs-motion }
+- { id: w.sauter, lemma: sauter, pos: verb, en: [to jump], level: a2, unit: a2.u03, topic: verbs-motion }
+- { id: w.village, lemma: village, pos: noun, gender: m, en: [village], level: a2, unit: a2.u03, topic: city }
+- { id: w.sage, lemma: sage, pos: adj, en: [good (child), wise], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.curieux, lemma: curieux, pos: adj, en: [curious, strange], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.courageux, lemma: courageux, pos: adj, en: [brave], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.bête, lemma: bête, pos: adj, en: [stupid, silly], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.bête.n, lemma: bête, pos: noun, gender: f, en: [animal, beast], level: a2, unit: a2.u03, topic: animals }
+- { id: w.romancier, lemma: romancier, pos: noun, gender: mf, en: [novelist], level: a2, unit: a2.u03, topic: arts }
+- { id: w.roman, lemma: roman, pos: noun, gender: m, en: [novel], level: a2, unit: a2.u03, topic: arts }
+- { id: w.voleur, lemma: voleur, pos: noun, gender: mf, en: [thief], level: a2, unit: a2.u03 }
+- { id: w.cambrioleur, lemma: cambrioleur, pos: noun, gender: mf, en: [burglar], level: a2, unit: a2.u03 }
+- { id: w.bonbon, lemma: bonbon, pos: noun, gender: m, en: [sweet, candy], level: a2, unit: a2.u03, topic: food }
+- { id: w.glacier, lemma: glacier, pos: noun, gender: m, en: [ice-cream maker, glacier], level: a2, unit: a2.u03, topic: food }
+- { id: w.rouler, lemma: rouler, pos: verb, en: [to roll, to drive (along)], level: a2, unit: a2.u03 }
+- { id: w.tartine, lemma: tartine, pos: noun, gender: f, en: [slice of bread and butter], level: a2, unit: a2.u03, topic: food }
+- { id: w.jeu-vidéo, lemma: jeu vidéo, pos: noun, gender: m, plural: jeux vidéo, en: [video game], level: a2, unit: a2.u03, topic: tech }
+- { id: w.bavard, lemma: bavard, pos: adj, en: [talkative], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.paresseux, lemma: paresseux, pos: adj, en: [lazy], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.laid, lemma: laid, pos: adj, en: [ugly], level: a2, unit: a2.u03, topic: adjectives-people }
+- { id: w.aîné, lemma: aîné, pos: adj, en: [elder, eldest], level: a2, unit: a2.u03, topic: family }
+- { id: w.cadet, lemma: cadet, pos: adj, en: [younger, youngest], level: a2, unit: a2.u03, topic: family }
+- { id: w.oiseau, lemma: oiseau, pos: noun, gender: m, en: [bird], level: a2, unit: a2.u03, topic: animals }
+- { id: w.temps-libre, lemma: temps libre, pos: noun, gender: m, en: [free time], level: a2, unit: a2.u03 }
+- { id: w.tongs, lemma: tongs, pos: noun, gender: f, en: [flip-flops], level: a2, unit: a2.u03, topic: clothing, variant: { fr-CA: gougounes } }
+- { id: w.soda, lemma: soda, pos: noun, gender: m, en: [fizzy drink], level: a2, unit: a2.u03, topic: drink, variant: { fr-CA: liqueur } }
+- { id: w.chewing-gum, lemma: chewing-gum, pos: noun, gender: m, plural: chewing-gums, en: [chewing gum], level: a2, unit: a2.u03, topic: food, variant: { fr-CA: gomme } }
+# ---------------------------------------------------------------- a2.u04 Le 6 juin 1944
+- { id: w.guerre, lemma: guerre, pos: noun, gender: f, en: [war], level: a2, unit: a2.u04, topic: politics }
+- { id: w.paix, lemma: paix, pos: noun, gender: f, en: [peace], level: a2, unit: a2.u04, topic: politics }
+- { id: w.soldat, lemma: soldat, pos: noun, gender: mf, en: [soldier], level: a2, unit: a2.u04, topic: jobs }
+- { id: w.armée, lemma: armée, pos: noun, gender: f, en: [army], level: a2, unit: a2.u04, topic: politics }
+- { id: w.allié, lemma: allié, pos: noun, gender: mf, en: [ally], level: a2, unit: a2.u04, topic: politics }
+- { id: w.ennemi, lemma: ennemi, pos: noun, gender: mf, en: [enemy], level: a2, unit: a2.u04, topic: politics }
+- { id: w.débarquer, lemma: débarquer, pos: verb, en: [to land, to disembark], level: a2, unit: a2.u04 }
+- { id: w.débarquement, lemma: débarquement, pos: noun, gender: m, en: [landing], level: a2, unit: a2.u04, topic: politics }
+- { id: w.bataille, lemma: bataille, pos: noun, gender: f, en: [battle], level: a2, unit: a2.u04, topic: politics }
+- { id: w.cimetière, lemma: cimetière, pos: noun, gender: m, en: [cemetery], level: a2, unit: a2.u04, topic: city }
+- { id: w.tombe, lemma: tombe, pos: noun, gender: f, en: [grave], level: a2, unit: a2.u04, topic: city }
+- { id: w.mémorial, lemma: mémorial, pos: noun, gender: m, en: [memorial], level: a2, unit: a2.u04, topic: city }
+- { id: w.libérer, lemma: libérer, pos: verb, en: [to free, to liberate], level: a2, unit: a2.u04 }
+- { id: w.libération, lemma: libération, pos: noun, gender: f, en: [liberation], level: a2, unit: a2.u04, topic: politics }
+- { id: w.blessé, lemma: blessé, pos: adj, en: [injured, wounded], level: a2, unit: a2.u04, topic: health }
+- { id: w.tapisserie, lemma: tapisserie, pos: noun, gender: f, en: [tapestry], level: a2, unit: a2.u04, topic: arts }
+- { id: w.broder, lemma: broder, pos: verb, en: [to embroider], level: a2, unit: a2.u04, tags: [passive] }
+- { id: w.raconter, lemma: raconter, pos: verb, en: [to tell (a story)], level: a2, unit: a2.u04, topic: verbs-speech }
+- { id: w.se-passer, lemma: se passer, pos: verb, en: [to happen, to take place], level: a2, unit: a2.u04 }
+- { id: w.événement, lemma: événement, pos: noun, gender: m, en: [event], level: a2, unit: a2.u04 }
+- { id: w.rencontrer, lemma: rencontrer, pos: verb, en: [to meet], level: a2, unit: a2.u04 }
+- { id: w.construire, lemma: construire, pos: verb, en: [to build], level: a2, unit: a2.u04 }
+- { id: w.ciel, lemma: ciel, pos: noun, gender: m, en: [sky], level: a2, unit: a2.u04, topic: nature }
+- { id: w.lendemain, lemma: lendemain, pos: noun, gender: m, en: [the next day], level: a2, unit: a2.u04, topic: time }
+- { id: w.veille, lemma: veille, pos: noun, gender: f, en: [the day before, eve], level: a2, unit: a2.u04, topic: time }
+- { id: w.tout-à-coup, lemma: tout à coup, pos: phrase, en: [suddenly], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.soudain, lemma: soudain, pos: adv, en: [suddenly], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.puis, lemma: puis, pos: adv, en: [then], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.enfin, lemma: enfin, pos: adv, en: [finally, at last, well], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.finalement, lemma: finalement, pos: adv, en: [in the end, finally], level: a2, unit: a2.u04, topic: connectors }
+- { id: w.pendant-que, lemma: pendant que, pos: conj, en: [while], level: a2, unit: a2.u04, topic: connectors, forms: [pendant que, pendant] }
+- { id: w.durer, lemma: durer, pos: verb, en: [to last], level: a2, unit: a2.u04 }
+- { id: w.parachute, lemma: parachute, pos: noun, gender: m, en: [parachute], level: a2, unit: a2.u04, tags: [passive] }
+- { id: w.silence, lemma: silence, pos: noun, gender: m, en: [silence], level: a2, unit: a2.u04 }
+- { id: w.héros, lemma: héros, pos: noun, gender: m, feminine: héroïne, en: [hero], level: a2, unit: a2.u04 }
+- { id: w.courage, lemma: courage, pos: noun, gender: m, en: [courage], level: a2, unit: a2.u04 }
+- { id: w.vivant, lemma: vivant, pos: adj, en: [alive, lively], level: a2, unit: a2.u04, topic: adjectives-people }
+- { id: w.télé, lemma: télé, pos: noun, gender: f, en: [TV], level: a2, unit: a2.u04, topic: tech, tags: [passive] }
+- { id: w.caen.nm, lemma: Caen, pos: noun, gender: m, en: [Caen], level: a2, unit: a2.u04, topic: city, tags: [name, passive] }
+- { id: w.bayeux.nm, lemma: Bayeux, pos: noun, gender: m, en: [Bayeux], level: a2, unit: a2.u04, topic: city, tags: [name, passive] }
+# ---------------------------------------------------------------- a2.u05 Camembert et cidre au pays d'Auge
+- { id: w.beau-père, lemma: beau-père, pos: noun, gender: m, en: [father-in-law, stepfather], level: a2, unit: a2.u05, topic: family }
+- { id: w.belle-mère, lemma: belle-mère, pos: noun, gender: f, en: [mother-in-law, stepmother], level: a2, unit: a2.u05, topic: family }
+- { id: w.beau-frère, lemma: beau-frère, pos: noun, gender: m, en: [brother-in-law], level: a2, unit: a2.u05, topic: family }
+- { id: w.belle-sœur, lemma: belle-sœur, pos: noun, gender: f, en: [sister-in-law], level: a2, unit: a2.u05, topic: family }
+- { id: w.jumeau, lemma: jumeau, pos: noun, gender: mf, feminine: jumelle, en: [twin], level: a2, unit: a2.u05, topic: family }
+- { id: w.épicerie, lemma: épicerie, pos: noun, gender: f, en: ["grocer's"], level: a2, unit: a2.u05, topic: shopping, variant: { fr-CA: dépanneur } }
+- { id: w.supérette, lemma: supérette, pos: noun, gender: f, en: [mini-market], level: a2, unit: a2.u05, topic: shopping, variant: { fr-CA: dépanneur } }
+- { id: w.boucherie, lemma: boucherie, pos: noun, gender: f, en: ["butcher's"], level: a2, unit: a2.u05, topic: shopping }
+- { id: w.boucher, lemma: boucher, pos: noun, gender: mf, en: [butcher], level: a2, unit: a2.u05, topic: jobs }
+- { id: w.charcuterie, lemma: charcuterie, pos: noun, gender: f, en: [delicatessen, cold meats], level: a2, unit: a2.u05, topic: shopping }
+- { id: w.fromagerie, lemma: fromagerie, pos: noun, gender: f, en: [cheese shop], level: a2, unit: a2.u05, topic: shopping }
+- { id: w.poissonnerie, lemma: poissonnerie, pos: noun, gender: f, en: ["fishmonger's"], level: a2, unit: a2.u05, topic: shopping }
+- { id: w.pâtisserie, lemma: pâtisserie, pos: noun, gender: f, en: [cake shop, pastry], level: a2, unit: a2.u05, topic: shopping }
+- { id: w.boulanger, lemma: boulanger, pos: noun, gender: mf, en: [baker], level: a2, unit: a2.u05, topic: jobs }
+- { id: w.myrtille, lemma: myrtille, pos: noun, gender: f, en: [blueberry], level: a2, unit: a2.u05, topic: food, variant: { fr-CA: bleuet } }
+- { id: w.fraise, lemma: fraise, pos: noun, gender: f, en: [strawberry], level: a2, unit: a2.u05, topic: food }
+- { id: w.framboise, lemma: framboise, pos: noun, gender: f, en: [raspberry], level: a2, unit: a2.u05, topic: food }
+- { id: w.cerise, lemma: cerise, pos: noun, gender: f, en: [cherry], level: a2, unit: a2.u05, topic: food }
+- { id: w.poire, lemma: poire, pos: noun, gender: f, en: [pear], level: a2, unit: a2.u05, topic: food }
+- { id: w.banane, lemma: banane, pos: noun, gender: f, en: [banana], level: a2, unit: a2.u05, topic: food }
+- { id: w.raisin, lemma: raisin, pos: noun, gender: m, en: [grapes], level: a2, unit: a2.u05, topic: food }
+- { id: w.orange.n, lemma: orange, pos: noun, gender: f, en: [orange], level: a2, unit: a2.u05, topic: food }
+- { id: w.donner, lemma: donner, pos: verb, en: [to give], level: a2, unit: a2.u05 }
+- { id: w.offrir, lemma: offrir, pos: verb, en: [to offer, to give (a present)], level: a2, unit: a2.u05 }
+- { id: w.prêter, lemma: prêter, pos: verb, en: [to lend], level: a2, unit: a2.u05 }
+- { id: w.emprunter, lemma: emprunter, pos: verb, en: [to borrow], level: a2, unit: a2.u05 }
+- { id: w.montrer, lemma: montrer, pos: verb, en: [to show], level: a2, unit: a2.u05 }
+- { id: w.apporter, lemma: apporter, pos: verb, en: [to bring (a thing)], level: a2, unit: a2.u05 }
+- { id: w.expliquer, lemma: expliquer, pos: verb, en: [to explain], level: a2, unit: a2.u05, topic: verbs-speech }
+- { id: w.conseiller, lemma: conseiller, pos: verb, en: [to advise, to recommend], level: a2, unit: a2.u05, topic: verbs-speech }
+- { id: w.ressembler, lemma: ressembler, pos: verb, en: [to look like, to resemble], level: a2, unit: a2.u05 }
+- { id: w.plaire, lemma: plaire, pos: verb, en: [to please], level: a2, unit: a2.u05, notes: Ça me plaît = I like it. }
+- { id: w.connaître, lemma: connaître, pos: verb, en: ["to know (a person, a place)"], level: a2, unit: a2.u05 }
+- { id: w.conduire, lemma: conduire, pos: verb, en: [to drive], level: a2, unit: a2.u05 }
+- { id: w.ferme, lemma: ferme, pos: noun, gender: f, en: [farm], level: a2, unit: a2.u05, topic: nature }
+- { id: w.fermier, lemma: fermier, pos: noun, gender: mf, en: [farmer], level: a2, unit: a2.u05, topic: jobs }
+- { id: w.agriculteur, lemma: agriculteur, pos: noun, gender: mf, feminine: agricultrice, en: [farmer], level: a2, unit: a2.u05, topic: jobs }
+- { id: w.vache, lemma: vache, pos: noun, gender: f, en: [cow], level: a2, unit: a2.u05, topic: animals }
+- { id: w.cochon, lemma: cochon, pos: noun, gender: m, en: [pig], level: a2, unit: a2.u05, topic: animals }
+- { id: w.mouton, lemma: mouton, pos: noun, gender: m, en: [sheep], level: a2, unit: a2.u05, topic: animals }
+- { id: w.cheval, lemma: cheval, pos: noun, gender: m, en: [horse], level: a2, unit: a2.u05, topic: animals }
+- { id: w.poule, lemma: poule, pos: noun, gender: f, en: [hen], level: a2, unit: a2.u05, topic: animals }
+- { id: w.canard, lemma: canard, pos: noun, gender: m, en: [duck], level: a2, unit: a2.u05, topic: animals }
+- { id: w.pommier, lemma: pommier, pos: noun, gender: m, en: [apple tree], level: a2, unit: a2.u05, topic: nature }
+- { id: w.verger, lemma: verger, pos: noun, gender: m, en: [orchard], level: a2, unit: a2.u05, topic: nature }
+- { id: w.peuplier, lemma: peuplier, pos: noun, gender: m, en: [poplar], level: a2, unit: a2.u05, topic: nature }
+- { id: w.camembert, lemma: camembert, pos: noun, gender: m, en: [camembert], level: a2, unit: a2.u05, topic: food }
+- { id: w.calvados, lemma: calvados, pos: noun, gender: m, en: [calvados (apple brandy)], level: a2, unit: a2.u05, topic: drink }
+- { id: w.crème-fraîche, lemma: crème fraîche, pos: noun, gender: f, en: [crème fraîche], level: a2, unit: a2.u05, topic: food }
+- { id: w.produit, lemma: produit, pos: noun, gender: m, en: [product], level: a2, unit: a2.u05, topic: shopping }
+- { id: w.rond, lemma: rond, pos: adj, en: [round], level: a2, unit: a2.u05, topic: adjectives-things }
+- { id: w.carré, lemma: carré, pos: adj, en: [square], level: a2, unit: a2.u05, topic: adjectives-things }
+- { id: w.tradition, lemma: tradition, pos: noun, gender: f, en: [tradition], level: a2, unit: a2.u05 }
+- { id: w.traditionnel, lemma: traditionnel, pos: adj, en: [traditional], level: a2, unit: a2.u05, topic: adjectives-things }
+- { id: w.radio, lemma: radio, pos: noun, gender: f, en: [radio], level: a2, unit: a2.u05 }
+- { id: w.question, lemma: question, pos: noun, gender: f, en: [question], level: a2, unit: a2.u05 }
+- { id: w.poser-une-question, lemma: poser une question, pos: phrase, en: [to ask a question], level: a2, unit: a2.u05, topic: verbs-speech }
+- { id: w.réponse, lemma: réponse, pos: noun, gender: f, en: [answer], level: a2, unit: a2.u05, topic: verbs-speech }
+- { id: w.chemin, lemma: chemin, pos: noun, gender: m, en: [way, path], level: a2, unit: a2.u05, topic: directions }
+- { id: w.demander-son-chemin, lemma: demander son chemin, pos: phrase, en: [to ask the way], level: a2, unit: a2.u05, topic: directions }
+- { id: w.souhaiter, lemma: souhaiter, pos: verb, en: [to wish], level: a2, unit: a2.u05 }
+- { id: w.remercier, lemma: remercier, pos: verb, en: [to thank], level: a2, unit: a2.u05, topic: verbs-speech }
+- { id: w.numéro-de-téléphone, lemma: numéro de téléphone, pos: noun, gender: m, plural: numéros de téléphone, en: [phone number], level: a2, unit: a2.u05, topic: tech }
+- { id: w.conseil, lemma: conseil, pos: noun, gender: m, en: [advice, council], level: a2, unit: a2.u05 }
+- { id: w.permis-de-conduire, lemma: permis de conduire, pos: noun, gender: m, en: [driving licence], level: a2, unit: a2.u05, topic: transport }
+- { id: w.marché-couvert, lemma: marché couvert, pos: noun, gender: m, plural: marchés couverts, en: [covered market], level: a2, unit: a2.u05, topic: shopping }
+- { id: w.poser, lemma: poser, pos: verb, en: [to put, to ask (a question)], level: a2, unit: a2.u05 }
+- { id: w.lapin, lemma: lapin, pos: noun, gender: m, en: [rabbit], level: a2, unit: a2.u05, topic: animals }
+- { id: w.célibataire, lemma: célibataire, pos: adj, en: [single (not married)], level: a2, unit: a2.u05 }
+- { id: w.divorcé, lemma: divorcé, pos: adj, en: [divorced], level: a2, unit: a2.u05 }
+- { id: w.s-occuper-de, lemma: "s'occuper de", pos: verb, en: [to look after, to take care of], level: a2, unit: a2.u05 }
+- { id: w.nièce, lemma: nièce, pos: noun, gender: f, en: [niece], level: a2, unit: a2.u05, topic: family }
+- { id: w.neveu, lemma: neveu, pos: noun, gender: m, en: [nephew], level: a2, unit: a2.u05, topic: family }
+- { id: w.cadeau, lemma: cadeau, pos: noun, gender: m, en: [present, gift], level: a2, unit: a2.u05, topic: shopping }
+# ---------------------------------------------------------------- a2.u06 Le Mont-Saint-Michel, on y va ?
+- { id: w.y, lemma: "y", pos: pron, en: [there, it (after à)], level: a2, unit: a2.u06, notes: "J'y vais = I'm going there. J'y pense = I'm thinking about it." }
+- { id: w.en.pron, lemma: en, pos: pron, en: [some, of it, of them, from there], level: a2, unit: a2.u06, notes: "J'en veux deux = I want two (of them)." }
+- { id: w.marée, lemma: marée, pos: noun, gender: f, en: [tide], level: a2, unit: a2.u06, topic: nature }
+- { id: w.haut, lemma: haut, pos: adj, en: [high, tall], level: a2, unit: a2.u06, topic: adjectives-things }
+- { id: w.bas, lemma: bas, pos: adj, en: [low], level: a2, unit: a2.u06, topic: adjectives-things }
+- { id: w.baie, lemma: baie, pos: noun, gender: f, en: [bay], level: a2, unit: a2.u06, topic: nature }
+- { id: w.abbaye, lemma: abbaye, pos: noun, gender: f, en: [abbey], level: a2, unit: a2.u06, topic: city }
+- { id: w.moine, lemma: moine, pos: noun, gender: m, en: [monk], level: a2, unit: a2.u06, tags: [passive] }
+- { id: w.pèlerin, lemma: pèlerin, pos: noun, gender: mf, en: [pilgrim], level: a2, unit: a2.u06, topic: travel }
+- { id: w.pèlerinage, lemma: pèlerinage, pos: noun, gender: m, en: [pilgrimage], level: a2, unit: a2.u06, topic: travel }
+- { id: w.rempart, lemma: rempart, pos: noun, gender: m, en: [rampart, city wall], level: a2, unit: a2.u06, topic: city }
+- { id: w.îlot, lemma: îlot, pos: noun, gender: m, en: [small island], level: a2, unit: a2.u06, topic: nature, tags: [passive] }
+- { id: w.évêque, lemma: évêque, pos: noun, gender: m, en: [bishop], level: a2, unit: a2.u06, tags: [passive] }
+- { id: w.fonder, lemma: fonder, pos: verb, en: [to found], level: a2, unit: a2.u06 }
+- { id: w.sanctuaire, lemma: sanctuaire, pos: noun, gender: m, en: [sanctuary], level: a2, unit: a2.u06, tags: [passive] }
+- { id: w.omelette, lemma: omelette, pos: noun, gender: f, en: [omelette], level: a2, unit: a2.u06, topic: food }
+- { id: w.huître, lemma: huître, pos: noun, gender: f, en: [oyster], level: a2, unit: a2.u06, topic: food }
+- { id: w.moule, lemma: moule, pos: noun, gender: f, en: [mussel], level: a2, unit: a2.u06, topic: food }
+- { id: w.crevette, lemma: crevette, pos: noun, gender: f, en: [prawn, shrimp], level: a2, unit: a2.u06, topic: food }
+- { id: w.douzaine, lemma: douzaine, pos: noun, gender: f, en: [dozen], level: a2, unit: a2.u06, topic: quantity }
+- { id: w.autour, lemma: autour, pos: adv, en: [around], level: a2, unit: a2.u06, topic: directions }
+- { id: w.autour-de, lemma: autour de, pos: phrase, en: [around], level: a2, unit: a2.u06, topic: directions }
+- { id: w.environ, lemma: environ, pos: adv, en: [about, approximately], level: a2, unit: a2.u06, topic: quantity }
+- { id: w.plusieurs, lemma: plusieurs, pos: det, en: [several], level: a2, unit: a2.u06, topic: quantity }
+- { id: w.assez-de, lemma: assez de, pos: phrase, en: [enough], level: a2, unit: a2.u06, topic: quantity }
+- { id: w.beaucoup-de, lemma: beaucoup de, pos: phrase, en: [a lot of, many], level: a2, unit: a2.u06, topic: quantity }
+- { id: w.trop-de, lemma: trop de, pos: phrase, en: [too much, too many], level: a2, unit: a2.u06, topic: quantity }
+- { id: w.penser-à, lemma: penser à, pos: phrase, en: [to think about], level: a2, unit: a2.u06 }
+- { id: w.penser-de, lemma: penser de, pos: phrase, en: [to think of (opinion)], level: a2, unit: a2.u06 }
+- { id: w.dangereux, lemma: dangereux, pos: adj, en: [dangerous], level: a2, unit: a2.u06, topic: adjectives-things }
+- { id: w.parmi, lemma: parmi, pos: prep, en: [among], level: a2, unit: a2.u06 }
+- { id: w.marée-haute, lemma: marée haute, pos: noun, gender: f, plural: marées hautes, en: [high tide], level: a2, unit: a2.u06, topic: nature }
+- { id: w.marée-basse, lemma: marée basse, pos: noun, gender: f, plural: marées basses, en: [low tide], level: a2, unit: a2.u06, topic: nature }
+- { id: w.navette, lemma: navette, pos: noun, gender: f, en: [shuttle bus], level: a2, unit: a2.u06, topic: transport }
+- { id: w.marche, lemma: marche, pos: noun, gender: f, en: [step, walking, march], level: a2, unit: a2.u06 }
+- { id: w.réussir-à, lemma: réussir à, pos: phrase, en: [to manage to], level: a2, unit: a2.u06 }
+- { id: w.s-en-aller, lemma: "s'en aller", pos: verb, en: [to go away, to leave], level: a2, unit: a2.u06 }
+- { id: w.traversée, lemma: traversée, pos: noun, gender: f, en: [crossing], level: a2, unit: a2.u06, topic: travel }
+- { id: w.fruits-de-mer, lemma: fruits de mer, pos: noun, gender: m, en: [seafood], level: a2, unit: a2.u06, topic: food }
+# ---------------------------------------------------------------- a2.u07 Saint-Malo, la cité corsaire
+- { id: w.plus-de, lemma: plus de, pos: phrase, en: [more (of), more than], level: a2, unit: a2.u07, topic: quantity }
+- { id: w.moins-de, lemma: moins de, pos: phrase, en: [less, fewer], level: a2, unit: a2.u07, topic: quantity }
+- { id: w.d-ailleurs, lemma: "d'ailleurs", pos: phrase, en: [besides, moreover], level: a2, unit: a2.u07, topic: connectors }
+- { id: w.pourtant, lemma: pourtant, pos: adv, en: [yet, however], level: a2, unit: a2.u07, topic: connectors }
+- { id: w.par-contre, lemma: par contre, pos: phrase, en: [on the other hand], level: a2, unit: a2.u07, topic: connectors }
+- { id: w.par-exemple, lemma: par exemple, pos: phrase, en: [for example], level: a2, unit: a2.u07, topic: connectors }
+- { id: w.exemple, lemma: exemple, pos: noun, gender: m, en: [example], level: a2, unit: a2.u07 }
+- { id: w.plus, lemma: plus, pos: adv, en: [more], level: a2, unit: a2.u07, notes: Plus grand que = bigger than. }
+- { id: w.moins, lemma: moins, pos: adv, en: [less], level: a2, unit: a2.u07 }
+- { id: w.autant, lemma: autant, pos: adv, en: [as much, as many], level: a2, unit: a2.u07, topic: quantity }
+- { id: w.meilleur, lemma: meilleur, pos: adj, en: [better, best], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.mieux, lemma: mieux, pos: adv, en: [better, best], level: a2, unit: a2.u07 }
+- { id: w.pire, lemma: pire, pos: adj, en: [worse, worst], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.le-plus, lemma: le plus, pos: phrase, en: [the most], level: a2, unit: a2.u07 }
+- { id: w.le-moins, lemma: le moins, pos: phrase, en: [the least], level: a2, unit: a2.u07 }
+- { id: w.que, lemma: que, pos: conj, en: [than, that], level: a2, unit: a2.u07, topic: connectors }
+- { id: w.comme, lemma: comme, pos: conj, en: [like, as, since], level: a2, unit: a2.u07, topic: connectors }
+- { id: w.même, lemma: même, pos: adj, en: [same, even], level: a2, unit: a2.u07 }
+- { id: w.pareil, lemma: pareil, pos: adj, en: [the same, similar], level: a2, unit: a2.u07 }
+- { id: w.comparer, lemma: comparer, pos: verb, en: [to compare], level: a2, unit: a2.u07 }
+- { id: w.différence, lemma: différence, pos: noun, gender: f, en: [difference], level: a2, unit: a2.u07 }
+- { id: w.corsaire, lemma: corsaire, pos: noun, gender: m, en: [privateer, corsair], level: a2, unit: a2.u07, tags: [passive] }
+- { id: w.pirate, lemma: pirate, pos: noun, gender: m, en: [pirate], level: a2, unit: a2.u07 }
+- { id: w.navire, lemma: navire, pos: noun, gender: m, en: [ship], level: a2, unit: a2.u07, topic: transport }
+- { id: w.marin, lemma: marin, pos: noun, gender: m, en: [sailor], level: a2, unit: a2.u07, topic: jobs }
+- { id: w.attaquer, lemma: attaquer, pos: verb, en: [to attack], level: a2, unit: a2.u07 }
+- { id: w.roi, lemma: roi, pos: noun, gender: m, en: [king], level: a2, unit: a2.u07, topic: politics }
+- { id: w.reine, lemma: reine, pos: noun, gender: f, en: [queen], level: a2, unit: a2.u07, topic: politics }
+- { id: w.explorer, lemma: explorer, pos: verb, en: [to explore], level: a2, unit: a2.u07 }
+- { id: w.explorateur, lemma: explorateur, pos: noun, gender: mf, en: [explorer], level: a2, unit: a2.u07, topic: travel }
+- { id: w.découvrir, lemma: découvrir, pos: verb, en: [to discover], level: a2, unit: a2.u07 }
+- { id: w.découverte, lemma: découverte, pos: noun, gender: f, en: [discovery], level: a2, unit: a2.u07 }
+- { id: w.entourer, lemma: entourer, pos: verb, en: [to surround], level: a2, unit: a2.u07 }
+- { id: w.lent, lemma: lent, pos: adj, en: [slow], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.intéressant, lemma: intéressant, pos: adj, en: [interesting], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.ennuyeux, lemma: ennuyeux, pos: adj, en: [boring], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.facile, lemma: facile, pos: adj, en: [easy], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.difficile, lemma: difficile, pos: adj, en: [difficult], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.cité, lemma: cité, pos: noun, gender: f, en: [city, walled town, housing estate], level: a2, unit: a2.u07, topic: city }
+- { id: w.crêperie, lemma: crêperie, pos: noun, gender: f, en: [crêpe restaurant], level: a2, unit: a2.u07, topic: food }
+- { id: w.galette, lemma: galette, pos: noun, gender: f, en: [savoury buckwheat crêpe], level: a2, unit: a2.u07, topic: food }
+- { id: w.sens, lemma: sens, pos: noun, gender: m, en: [sense, meaning, direction], level: a2, unit: a2.u07 }
+- { id: w.large, lemma: large, pos: adj, en: [wide, broad], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.étroit, lemma: étroit, pos: adj, en: [narrow], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.profond, lemma: profond, pos: adj, en: [deep], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.célèbre, lemma: célèbre, pos: adj, en: [famous], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.connu, lemma: connu, pos: adj, en: [well-known], level: a2, unit: a2.u07, topic: adjectives-things }
+- { id: w.bretagne.nm, lemma: Bretagne, pos: noun, gender: f, en: [Brittany], level: a2, unit: a2.u07, topic: countries, tags: [name, passive] }
+- { id: w.normandie.nm, lemma: Normandie, pos: noun, gender: f, en: [Normandy], level: a2, unit: a2.u07, topic: countries, tags: [name, passive] }
+- { id: w.breton, lemma: breton, pos: adj, en: [Breton], level: a2, unit: a2.u07, topic: countries, tags: [nationality] }
+- { id: w.normand, lemma: normand, pos: adj, en: [Norman], level: a2, unit: a2.u07, topic: countries, tags: [nationality] }
+- { id: w.sablé, lemma: sablé, pos: noun, gender: m, en: [shortbread biscuit], level: a2, unit: a2.u07, topic: food }
+- { id: w.africain, lemma: africain, pos: adj, en: [African], level: a2, unit: a2.u07, topic: countries, tags: [nationality] }
+- { id: w.dinard.nm, lemma: Dinard, pos: noun, gender: m, en: [Dinard], level: a2, unit: a2.u07, topic: city, tags: [name, passive] }
+- { id: w.voile, lemma: voile, pos: noun, gender: f, en: [sail, sailing], level: a2, unit: a2.u07, topic: sport }
+# ---------------------------------------------------------------- a2.u08 Demain, à Quimper
+- { id: w.futur, lemma: futur, pos: noun, gender: m, en: [future (tense)], level: a2, unit: a2.u08, topic: time }
+- { id: w.avenir, lemma: avenir, pos: noun, gender: m, en: [future], level: a2, unit: a2.u08, topic: time, notes: "À l'avenir = in future." }
+- { id: w.un-jour, lemma: un jour, pos: phrase, en: [one day], level: a2, unit: a2.u08, topic: time }
+- { id: w.l-année-prochaine, lemma: "l'année prochaine", pos: phrase, en: [next year], level: a2, unit: a2.u08, topic: time }
+- { id: w.quand.conj, lemma: quand, pos: conj, en: [when], level: a2, unit: a2.u08, topic: connectors }
+- { id: w.dès-que, lemma: dès que, pos: conj, en: [as soon as], level: a2, unit: a2.u08, topic: connectors, forms: [dès que, dès] }
+- { id: w.dès, lemma: dès, pos: prep, en: [from, as early as], level: a2, unit: a2.u08, topic: time, notes: Dès demain = from tomorrow. }
+- { id: w.lorsque, lemma: lorsque, pos: conj, en: [when], level: a2, unit: a2.u08, topic: connectors }
+- { id: w.si.conj, lemma: si, pos: conj, en: [if], level: a2, unit: a2.u08, topic: connectors }
+- { id: w.partout, lemma: partout, pos: adv, en: [everywhere], level: a2, unit: a2.u08, topic: directions }
+- { id: w.festival, lemma: festival, pos: noun, gender: m, en: [festival], level: a2, unit: a2.u08, topic: arts }
+- { id: w.costume, lemma: costume, pos: noun, gender: m, en: [costume, suit], level: a2, unit: a2.u08, topic: clothing }
+- { id: w.coiffe, lemma: coiffe, pos: noun, gender: f, en: [(lace) headdress], level: a2, unit: a2.u08, topic: clothing }
+- { id: w.bigoudène, lemma: bigoudène, pos: adj, en: [from the Pays bigouden], level: a2, unit: a2.u08, tags: [passive] }
+- { id: w.cornemuse, lemma: cornemuse, pos: noun, gender: f, en: [bagpipes], level: a2, unit: a2.u08, topic: arts }
+- { id: w.biniou, lemma: biniou, pos: noun, gender: m, en: [Breton bagpipe], level: a2, unit: a2.u08, topic: arts, tags: [passive] }
+- { id: w.sarrasin, lemma: sarrasin, pos: noun, gender: m, en: [buckwheat], level: a2, unit: a2.u08, topic: food }
+- { id: w.blé, lemma: blé, pos: noun, gender: m, en: [wheat], level: a2, unit: a2.u08, topic: food }
+- { id: w.farine, lemma: farine, pos: noun, gender: f, en: [flour], level: a2, unit: a2.u08, topic: food }
+- { id: w.froment, lemma: froment, pos: noun, gender: m, en: [wheat (fine)], level: a2, unit: a2.u08, topic: food, tags: [passive] }
+- { id: w.caramel-au-beurre-salé, lemma: caramel au beurre salé, pos: noun, gender: m, en: [salted butter caramel], level: a2, unit: a2.u08, topic: food, tags: [passive] }
+- { id: w.température, lemma: température, pos: noun, gender: f, en: [temperature], level: a2, unit: a2.u08, topic: weather }
+- { id: w.prévision, lemma: prévision, pos: noun, gender: f, en: [forecast], level: a2, unit: a2.u08, topic: weather }
+- { id: w.averse, lemma: averse, pos: noun, gender: f, en: [shower (rain)], level: a2, unit: a2.u08, topic: weather }
+- { id: w.éclaircie, lemma: éclaircie, pos: noun, gender: f, en: [sunny spell], level: a2, unit: a2.u08, topic: weather }
+- { id: w.brouillard, lemma: brouillard, pos: noun, gender: m, en: [fog], level: a2, unit: a2.u08, topic: weather }
+- { id: w.humide, lemma: humide, pos: adj, en: [damp, humid], level: a2, unit: a2.u08, topic: weather }
+- { id: w.sec, lemma: sec, pos: adj, en: [dry], level: a2, unit: a2.u08, topic: weather }
+- { id: w.promettre, lemma: promettre, pos: verb, en: [to promise], level: a2, unit: a2.u08, topic: verbs-speech }
+- { id: w.prévoir, lemma: prévoir, pos: verb, en: [to plan, to forecast], level: a2, unit: a2.u08 }
+- { id: w.espérer, lemma: espérer, pos: verb, en: [to hope], level: a2, unit: a2.u08 }
+- { id: w.projet, lemma: projet, pos: noun, gender: m, en: [plan, project], level: a2, unit: a2.u08, topic: work }
+- { id: w.pilote, lemma: pilote, pos: noun, gender: mf, en: [pilot, driver], level: a2, unit: a2.u08, topic: jobs }
+- { id: w.préparer, lemma: préparer, pos: verb, en: [to prepare], level: a2, unit: a2.u08 }
+- { id: w.organiser, lemma: organiser, pos: verb, en: [to organise], level: a2, unit: a2.u08 }
+- { id: w.repos, lemma: repos, pos: noun, gender: m, en: [rest], level: a2, unit: a2.u08 }
+- { id: w.dedans, lemma: dedans, pos: adv, en: [inside], level: a2, unit: a2.u08, topic: directions }
+- { id: w.dehors, lemma: dehors, pos: adv, en: [outside], level: a2, unit: a2.u08, topic: directions }
+- { id: w.gagner-sa-vie, lemma: gagner sa vie, pos: phrase, en: [to earn a living], level: a2, unit: a2.u08, topic: work }
+- { id: w.chômage, lemma: chômage, pos: noun, gender: m, en: [unemployment], level: a2, unit: a2.u08, topic: work }
+- { id: w.métier, lemma: métier, pos: noun, gender: m, en: [job, trade], level: a2, unit: a2.u08, topic: work }
+- { id: w.orage, lemma: orage, pos: noun, gender: m, en: [storm], level: a2, unit: a2.u08, topic: weather }
+- { id: w.bonnet, lemma: bonnet, pos: noun, gender: m, en: [woolly hat], level: a2, unit: a2.u08, topic: clothing, variant: { fr-CA: tuque } }
+- { id: w.moufle, lemma: moufle, pos: noun, gender: f, en: [mitten], level: a2, unit: a2.u08, topic: clothing, variant: { fr-CA: mitaine } }
+# ---------------------------------------------------------------- a2.u09 En forme à Carnac
+- { id: w.former, lemma: former, pos: verb, en: [to form, to train], level: a2, unit: a2.u09 }
+- { id: w.dresser, lemma: dresser, pos: verb, en: [to put up, to raise, to train (an animal)], level: a2, unit: a2.u09 }
+- { id: w.pyramide, lemma: pyramide, pos: noun, gender: f, en: [pyramid], level: a2, unit: a2.u09 }
+- { id: w.millier, lemma: millier, pos: noun, gender: m, en: [about a thousand], level: a2, unit: a2.u09, topic: numbers, notes: Des milliers de = thousands of. }
+- { id: w.centaine, lemma: centaine, pos: noun, gender: f, en: [about a hundred], level: a2, unit: a2.u09, topic: numbers }
+- { id: w.dizaine, lemma: dizaine, pos: noun, gender: f, en: [about ten], level: a2, unit: a2.u09, topic: numbers }
+- { id: w.vingtaine, lemma: vingtaine, pos: noun, gender: f, en: [about twenty], level: a2, unit: a2.u09, topic: numbers }
+- { id: w.corps, lemma: corps, pos: noun, gender: m, en: [body], level: a2, unit: a2.u09, topic: body }
+- { id: w.tête, lemma: tête, pos: noun, gender: f, en: [head], level: a2, unit: a2.u09, topic: body }
+- { id: w.oreille, lemma: oreille, pos: noun, gender: f, en: [ear], level: a2, unit: a2.u09, topic: body }
+- { id: w.cou, lemma: cou, pos: noun, gender: m, en: [neck], level: a2, unit: a2.u09, topic: body }
+- { id: w.épaule, lemma: épaule, pos: noun, gender: f, en: [shoulder], level: a2, unit: a2.u09, topic: body }
+- { id: w.bras, lemma: bras, pos: noun, gender: m, en: [arm], level: a2, unit: a2.u09, topic: body }
+- { id: w.main, lemma: main, pos: noun, gender: f, en: [hand], level: a2, unit: a2.u09, topic: body }
+- { id: w.doigt, lemma: doigt, pos: noun, gender: m, en: [finger], level: a2, unit: a2.u09, topic: body }
+- { id: w.ventre, lemma: ventre, pos: noun, gender: m, en: [stomach, belly], level: a2, unit: a2.u09, topic: body }
+- { id: w.dos, lemma: dos, pos: noun, gender: m, en: [back], level: a2, unit: a2.u09, topic: body }
+- { id: w.jambe, lemma: jambe, pos: noun, gender: f, en: [leg], level: a2, unit: a2.u09, topic: body }
+- { id: w.genou, lemma: genou, pos: noun, gender: m, en: [knee], level: a2, unit: a2.u09, topic: body }
+- { id: w.pied, lemma: pied, pos: noun, gender: m, en: [foot], level: a2, unit: a2.u09, topic: body }
+- { id: w.dent, lemma: dent, pos: noun, gender: f, en: [tooth], level: a2, unit: a2.u09, topic: body }
+- { id: w.gorge, lemma: gorge, pos: noun, gender: f, en: [throat], level: a2, unit: a2.u09, topic: body }
+- { id: w.cheville, lemma: cheville, pos: noun, gender: f, en: [ankle], level: a2, unit: a2.u09, topic: body }
+- { id: w.cœur, lemma: cœur, pos: noun, gender: m, en: [heart], level: a2, unit: a2.u09, topic: body }
+- { id: w.peau, lemma: peau, pos: noun, gender: f, en: [skin], level: a2, unit: a2.u09, topic: body }
+- { id: w.lèvre, lemma: lèvre, pos: noun, gender: f, en: [lip], level: a2, unit: a2.u09, topic: body }
+- { id: w.santé, lemma: santé, pos: noun, gender: f, en: [health], level: a2, unit: a2.u09, topic: health }
+- { id: w.malade, lemma: malade, pos: adj, en: [ill, sick], level: a2, unit: a2.u09, topic: health }
+- { id: w.maladie, lemma: maladie, pos: noun, gender: f, en: [illness, disease], level: a2, unit: a2.u09, topic: health }
+- { id: w.fièvre, lemma: fièvre, pos: noun, gender: f, en: [fever, temperature], level: a2, unit: a2.u09, topic: health }
+- { id: w.rhume, lemma: rhume, pos: noun, gender: m, en: [cold], level: a2, unit: a2.u09, topic: health }
+- { id: w.grippe, lemma: grippe, pos: noun, gender: f, en: [flu], level: a2, unit: a2.u09, topic: health }
+- { id: w.toux, lemma: toux, pos: noun, gender: f, en: [cough], level: a2, unit: a2.u09, topic: health }
+- { id: w.tousser, lemma: tousser, pos: verb, en: [to cough], level: a2, unit: a2.u09 }
+- { id: w.médicament, lemma: médicament, pos: noun, gender: m, en: [medicine, drug], level: a2, unit: a2.u09, topic: health }
+- { id: w.ordonnance, lemma: ordonnance, pos: noun, gender: f, en: [prescription], level: a2, unit: a2.u09, topic: health }
+- { id: w.pharmacien, lemma: pharmacien, pos: noun, gender: mf, en: [pharmacist], level: a2, unit: a2.u09, topic: jobs }
+- { id: w.docteur, lemma: docteur, pos: noun, gender: mf, en: [doctor], level: a2, unit: a2.u09, topic: jobs }
+- { id: w.infirmier, lemma: infirmier, pos: noun, gender: mf, en: [nurse], level: a2, unit: a2.u09, topic: jobs }
+- { id: w.dentiste, lemma: dentiste, pos: noun, gender: mf, en: [dentist], level: a2, unit: a2.u09, topic: jobs }
+- { id: w.rendez-vous, lemma: rendez-vous, pos: noun, gender: m, en: [appointment, date, meeting], level: a2, unit: a2.u09 }
+- { id: w.mal.n, lemma: mal, pos: noun, gender: m, plural: maux, en: [pain, ache, harm], level: a2, unit: a2.u09, topic: health, notes: Avoir mal à la tête = to have a headache. }
+- { id: w.avoir-mal, lemma: avoir mal, pos: phrase, en: [to hurt, to ache], level: a2, unit: a2.u09, topic: health }
+- { id: w.se-sentir, lemma: se sentir, pos: verb, en: [to feel], level: a2, unit: a2.u09 }
+- { id: w.se-casser, lemma: se casser, pos: verb, en: [to break (a bone)], level: a2, unit: a2.u09 }
+- { id: w.se-couper, lemma: se couper, pos: verb, en: [to cut oneself], level: a2, unit: a2.u09 }
+- { id: w.se-tordre, lemma: se tordre, pos: verb, en: [to twist, to sprain], level: a2, unit: a2.u09 }
+- { id: w.se-faire-mal, lemma: se faire mal, pos: phrase, en: [to hurt oneself], level: a2, unit: a2.u09, topic: health }
+- { id: w.se-blesser, lemma: se blesser, pos: verb, en: [to get hurt], level: a2, unit: a2.u09 }
+- { id: w.se-soigner, lemma: se soigner, pos: verb, en: [to look after oneself, to get treatment], level: a2, unit: a2.u09 }
+- { id: w.guérir, lemma: guérir, pos: verb, en: [to cure, to recover], level: a2, unit: a2.u09 }
+- { id: w.s-amuser, lemma: "s'amuser", pos: verb, en: [to have fun], level: a2, unit: a2.u09, topic: verbs-daily }
+- { id: w.se-tromper, lemma: se tromper, pos: verb, en: [to make a mistake, to be wrong], level: a2, unit: a2.u09 }
+- { id: w.se-dépêcher, lemma: se dépêcher, pos: verb, en: [to hurry], level: a2, unit: a2.u09, topic: verbs-daily }
+- { id: w.s-ennuyer, lemma: "s'ennuyer", pos: verb, en: [to be bored], level: a2, unit: a2.u09 }
+- { id: w.se-maquiller, lemma: se maquiller, pos: verb, en: [to put on make-up], level: a2, unit: a2.u09, topic: verbs-daily }
+- { id: w.se-brosser, lemma: se brosser, pos: verb, en: [to brush], level: a2, unit: a2.u09, topic: verbs-daily }
+- { id: w.se-raser, lemma: se raser, pos: verb, en: [to shave], level: a2, unit: a2.u09, topic: verbs-daily }
+- { id: w.s-arrêter, lemma: "s'arrêter", pos: verb, en: [to stop], level: a2, unit: a2.u09 }
+- { id: w.se-souvenir, lemma: se souvenir, pos: verb, en: [to remember], level: a2, unit: a2.u09 }
+- { id: w.se-marier, lemma: se marier, pos: verb, en: [to get married], level: a2, unit: a2.u09 }
+- { id: w.se-disputer, lemma: se disputer, pos: verb, en: [to argue], level: a2, unit: a2.u09 }
+- { id: w.s-entendre, lemma: "s'entendre", pos: verb, en: [to get on (with)], level: a2, unit: a2.u09 }
+- { id: w.s-asseoir, lemma: "s'asseoir", pos: verb, en: [to sit down], level: a2, unit: a2.u09, topic: verbs-motion }
+- { id: w.s-inquiéter, lemma: "s'inquiéter", pos: verb, en: [to worry], level: a2, unit: a2.u09 }
+- { id: w.s-intéresser, lemma: "s'intéresser", pos: verb, en: [to be interested], level: a2, unit: a2.u09 }
+- { id: w.être-en-train-de, lemma: être en train de, pos: phrase, en: [to be (doing)], level: a2, unit: a2.u09, notes: "Je suis en train de manger = I'm eating (right now)." }
+- { id: w.en-forme, lemma: en forme, pos: phrase, en: [fit, in good shape], level: a2, unit: a2.u09, topic: health }
+- { id: w.exercice, lemma: exercice, pos: noun, gender: m, en: [exercise], level: a2, unit: a2.u09, topic: sport }
+- { id: w.menhir, lemma: menhir, pos: noun, gender: m, en: [standing stone], level: a2, unit: a2.u09, tags: [passive] }
+- { id: w.alignement, lemma: alignement, pos: noun, gender: m, en: [alignment, line], level: a2, unit: a2.u09, tags: [passive] }
+- { id: w.légende, lemma: légende, pos: noun, gender: f, en: [legend, caption], level: a2, unit: a2.u09 }
+- { id: w.déranger, lemma: déranger, pos: verb, en: [to disturb, to bother], level: a2, unit: a2.u09 }
+- { id: w.randonnée, lemma: randonnée, pos: noun, gender: f, en: [hike], level: a2, unit: a2.u09, topic: sport }
+- { id: w.coiffure, lemma: coiffure, pos: noun, gender: f, en: [hairstyle, hairdressing], level: a2, unit: a2.u09 }
+- { id: w.trentaine, lemma: trentaine, pos: noun, gender: f, en: [about thirty], level: a2, unit: a2.u09, topic: numbers }
+- { id: w.équipe, lemma: équipe, pos: noun, gender: f, en: [team], level: a2, unit: a2.u09, topic: sport }
+- { id: w.basket, lemma: basket, pos: noun, gender: m, en: [basketball], level: a2, unit: a2.u09, topic: sport }
+# ---------------------------------------------------------------- a2.u10 Nantes, la recette du beurre blanc
+- { id: w.cuisiner, lemma: cuisiner, pos: verb, en: [to cook], level: a2, unit: a2.u10, topic: food }
+- { id: w.ingrédient, lemma: ingrédient, pos: noun, gender: m, en: [ingredient], level: a2, unit: a2.u10, topic: food }
+- { id: w.casserole, lemma: casserole, pos: noun, gender: f, en: [saucepan], level: a2, unit: a2.u10, topic: house }
+- { id: w.poêle, lemma: poêle, pos: noun, gender: f, en: [frying pan], level: a2, unit: a2.u10, topic: house }
+- { id: w.four, lemma: four, pos: noun, gender: m, en: [oven], level: a2, unit: a2.u10, topic: house }
+- { id: w.frigo, lemma: frigo, pos: noun, gender: m, en: [fridge], level: a2, unit: a2.u10, topic: house, forms: [frigidaire, réfrigérateur], variant: { fr-CA: frigidaire } }
+- { id: w.cuillère, lemma: cuillère, pos: noun, gender: f, en: [spoon], level: a2, unit: a2.u10, topic: house, forms: [cuiller] }
+- { id: w.couteau, lemma: couteau, pos: noun, gender: m, en: [knife], level: a2, unit: a2.u10, topic: house }
+- { id: w.fourchette, lemma: fourchette, pos: noun, gender: f, en: [fork], level: a2, unit: a2.u10, topic: house }
+- { id: w.assiette, lemma: assiette, pos: noun, gender: f, en: [plate], level: a2, unit: a2.u10, topic: house }
+- { id: w.bol, lemma: bol, pos: noun, gender: m, en: [bowl], level: a2, unit: a2.u10, topic: house }
+- { id: w.poivre, lemma: poivre, pos: noun, gender: m, en: [pepper], level: a2, unit: a2.u10, topic: food }
+- { id: w.oignon, lemma: oignon, pos: noun, gender: m, en: [onion], level: a2, unit: a2.u10, topic: food }
+- { id: w.ail, lemma: ail, pos: noun, gender: m, en: [garlic], level: a2, unit: a2.u10, topic: food }
+- { id: w.échalote, lemma: échalote, pos: noun, gender: f, en: [shallot], level: a2, unit: a2.u10, topic: food }
+- { id: w.carotte, lemma: carotte, pos: noun, gender: f, en: [carrot], level: a2, unit: a2.u10, topic: food }
+- { id: w.citron, lemma: citron, pos: noun, gender: m, en: [lemon], level: a2, unit: a2.u10, topic: food }
+- { id: w.huile, lemma: huile, pos: noun, gender: f, en: [oil], level: a2, unit: a2.u10, topic: food }
+- { id: w.vinaigre, lemma: vinaigre, pos: noun, gender: m, en: [vinegar], level: a2, unit: a2.u10, topic: food }
+- { id: w.sauce, lemma: sauce, pos: noun, gender: f, en: [sauce], level: a2, unit: a2.u10, topic: food }
+- { id: w.chauffer, lemma: chauffer, pos: verb, en: [to heat], level: a2, unit: a2.u10, topic: food }
+- { id: w.cuire, lemma: cuire, pos: verb, en: [to cook (food)], level: a2, unit: a2.u10, topic: food, notes: Faire cuire = to cook something. }
+- { id: w.faire-cuire, lemma: faire cuire, pos: phrase, en: [to cook (something)], level: a2, unit: a2.u10, topic: food }
+- { id: w.couper, lemma: couper, pos: verb, en: [to cut], level: a2, unit: a2.u10, topic: food }
+- { id: w.mélanger, lemma: mélanger, pos: verb, en: [to mix], level: a2, unit: a2.u10, topic: food }
+- { id: w.ajouter, lemma: ajouter, pos: verb, en: [to add], level: a2, unit: a2.u10, topic: food }
+- { id: w.verser, lemma: verser, pos: verb, en: [to pour], level: a2, unit: a2.u10, topic: food }
+- { id: w.remuer, lemma: remuer, pos: verb, en: [to stir], level: a2, unit: a2.u10, topic: food }
+- { id: w.éplucher, lemma: éplucher, pos: verb, en: [to peel], level: a2, unit: a2.u10, topic: food }
+- { id: w.servir, lemma: servir, pos: verb, en: [to serve], level: a2, unit: a2.u10, topic: food }
+- { id: w.mettre, lemma: mettre, pos: verb, en: [to put, to put on], level: a2, unit: a2.u10 }
+- { id: w.doucement, lemma: doucement, pos: adv, en: [gently, slowly, quietly], level: a2, unit: a2.u10 }
+- { id: w.rapidement, lemma: rapidement, pos: adv, en: [quickly], level: a2, unit: a2.u10 }
+- { id: w.attentivement, lemma: attentivement, pos: adv, en: [carefully], level: a2, unit: a2.u10, tags: [passive] }
+- { id: w.couramment, lemma: couramment, pos: adv, en: [fluently], level: a2, unit: a2.u10 }
+- { id: w.prudemment, lemma: prudemment, pos: adv, en: [carefully], level: a2, unit: a2.u10 }
+- { id: w.gentiment, lemma: gentiment, pos: adv, en: [kindly, nicely], level: a2, unit: a2.u10 }
+- { id: w.évidemment, lemma: évidemment, pos: adv, en: [obviously, of course], level: a2, unit: a2.u10 }
+- { id: w.seulement, lemma: seulement, pos: adv, en: [only], level: a2, unit: a2.u10 }
+- { id: w.attention, lemma: attention, pos: noun, gender: f, en: [attention, "careful!"], level: a2, unit: a2.u10, notes: Faire attention = to be careful. }
+- { id: w.faire-attention, lemma: faire attention, pos: phrase, en: [to be careful], level: a2, unit: a2.u10 }
+- { id: w.vérité, lemma: vérité, pos: noun, gender: f, en: [truth], level: a2, unit: a2.u10 }
+- { id: w.inquiet, lemma: inquiet, pos: adj, en: [worried], level: a2, unit: a2.u10 }
+- { id: w.éléphant, lemma: éléphant, pos: noun, gender: m, en: [elephant], level: a2, unit: a2.u10, topic: animals }
+- { id: w.machine, lemma: machine, pos: noun, gender: f, en: [machine], level: a2, unit: a2.u10 }
+- { id: w.mécanique, lemma: mécanique, pos: adj, en: [mechanical], level: a2, unit: a2.u10, tags: [passive] }
+- { id: w.duc, lemma: duc, pos: noun, gender: m, en: [duke], level: a2, unit: a2.u10, topic: politics }
+- { id: w.duchesse, lemma: duchesse, pos: noun, gender: f, en: [duchess], level: a2, unit: a2.u10, topic: politics }
+- { id: w.visiteur, lemma: visiteur, pos: noun, gender: mf, en: [visitor], level: a2, unit: a2.u10, topic: travel }
+- { id: w.écrivain, lemma: écrivain, pos: noun, gender: m, en: [writer], level: a2, unit: a2.u10, topic: arts }
+- { id: w.je-vous-en-prie, lemma: je vous en prie, pos: phrase, en: ["you're welcome", please do], level: a2, unit: a2.u10 }
+- { id: w.bon-appétit, lemma: bon appétit, pos: phrase, en: [enjoy your meal], level: a2, unit: a2.u10 }
+- { id: w.à-table, lemma: à table, pos: phrase, en: ["dinner's ready!"], level: a2, unit: a2.u10, topic: food }
+- { id: w.pâte, lemma: pâte, pos: noun, gender: f, en: [dough, pastry, batter], level: a2, unit: a2.u10, topic: food }
+- { id: w.nettoyer, lemma: nettoyer, pos: verb, en: [to clean], level: a2, unit: a2.u10 }
+- { id: w.laver, lemma: laver, pos: verb, en: [to wash], level: a2, unit: a2.u10 }
+- { id: w.ranger, lemma: ranger, pos: verb, en: [to tidy (up)], level: a2, unit: a2.u10 }
+- { id: w.jeter, lemma: jeter, pos: verb, en: [to throw (away)], level: a2, unit: a2.u10 }
+- { id: w.végétarien, lemma: végétarien, pos: adj, en: [vegetarian], level: a2, unit: a2.u10, topic: food }
+- { id: w.riz, lemma: riz, pos: noun, gender: m, en: [rice], level: a2, unit: a2.u10, topic: food }
+- { id: w.pâtes, lemma: pâtes, pos: noun, gender: f, en: [pasta], level: a2, unit: a2.u10, topic: food }
+- { id: w.soupe, lemma: soupe, pos: noun, gender: f, en: [soup], level: a2, unit: a2.u10, topic: food }
+- { id: w.tarte, lemma: tarte, pos: noun, gender: f, en: [tart, pie], level: a2, unit: a2.u10, topic: food }
+- { id: w.steak, lemma: steak, pos: noun, gender: m, en: [steak], level: a2, unit: a2.u10, topic: food }
+- { id: w.tasse, lemma: tasse, pos: noun, gender: f, en: [cup], level: a2, unit: a2.u10, topic: drink }
+- { id: w.ménage, lemma: ménage, pos: noun, gender: m, en: [housework], level: a2, unit: a2.u10, topic: house, notes: Faire le ménage = to do the cleaning. }
+- { id: w.lessive, lemma: lessive, pos: noun, gender: f, en: [laundry, washing powder], level: a2, unit: a2.u10, topic: house }
+- { id: w.gramme, lemma: gramme, pos: noun, gender: m, en: [gram], level: a2, unit: a2.u10, topic: quantity }
+- { id: w.litre, lemma: litre, pos: noun, gender: m, en: [litre], level: a2, unit: a2.u10, topic: quantity }
+- { id: w.paquet, lemma: paquet, pos: noun, gender: m, en: [packet, parcel], level: a2, unit: a2.u10, topic: quantity }
+# ---------------------------------------------------------------- a2.u11 Léonard à Amboise
+- { id: w.château, lemma: château, pos: noun, gender: m, en: [castle, château], level: a2, unit: a2.u11, topic: city }
+- { id: w.prince, lemma: prince, pos: noun, gender: m, en: [prince], level: a2, unit: a2.u11, topic: politics }
+- { id: w.princesse, lemma: princesse, pos: noun, gender: f, en: [princess], level: a2, unit: a2.u11, topic: politics }
+- { id: w.cour, lemma: cour, pos: noun, gender: f, en: [court, courtyard], level: a2, unit: a2.u11 }
+- { id: w.chapelle, lemma: chapelle, pos: noun, gender: f, en: [chapel], level: a2, unit: a2.u11, topic: city }
+- { id: w.tombeau, lemma: tombeau, pos: noun, gender: m, en: [tomb], level: a2, unit: a2.u11, topic: city }
+- { id: w.cheminée, lemma: cheminée, pos: noun, gender: f, en: [fireplace, chimney], level: a2, unit: a2.u11, topic: house }
+- { id: w.inventeur, lemma: inventeur, pos: noun, gender: mf, feminine: inventrice, en: [inventor], level: a2, unit: a2.u11 }
+- { id: w.invention, lemma: invention, pos: noun, gender: f, en: [invention], level: a2, unit: a2.u11 }
+- { id: w.inventer, lemma: inventer, pos: verb, en: [to invent], level: a2, unit: a2.u11 }
+- { id: w.dessin, lemma: dessin, pos: noun, gender: m, en: [drawing], level: a2, unit: a2.u11, topic: arts }
+- { id: w.dessiner, lemma: dessiner, pos: verb, en: [to draw], level: a2, unit: a2.u11 }
+- { id: w.région, lemma: région, pos: noun, gender: f, en: [region], level: a2, unit: a2.u11, topic: countries }
+- { id: w.tout, lemma: tout, pos: det, en: [all, every], level: a2, unit: a2.u11, forms: [tout, toute, tous, toutes] }
+- { id: w.quelques, lemma: quelques, pos: det, en: [a few, some], level: a2, unit: a2.u11, topic: quantity, forms: [quelque, quelques] }
+- { id: w.chacun, lemma: chacun, pos: pron, en: [each one, everyone], level: a2, unit: a2.u11, forms: [chacun, chacune] }
+- { id: w.le-mien, lemma: le mien, pos: pron, en: [mine], level: a2, unit: a2.u11, forms: [mien, mienne, miens, miennes] }
+- { id: w.le-tien, lemma: le tien, pos: pron, en: [yours (informal)], level: a2, unit: a2.u11, forms: [tien, tienne, tiens, tiennes] }
+- { id: w.le-sien, lemma: le sien, pos: pron, en: [his, hers], level: a2, unit: a2.u11, forms: [sien, sienne, siens, siennes] }
+- { id: w.le-nôtre, lemma: le nôtre, pos: pron, en: [ours], level: a2, unit: a2.u11, forms: [nôtre, nôtres] }
+- { id: w.le-vôtre, lemma: le vôtre, pos: pron, en: [yours (formal or plural)], level: a2, unit: a2.u11, forms: [vôtre, vôtres] }
+- { id: w.le-leur, lemma: le leur, pos: pron, en: [theirs], level: a2, unit: a2.u11, forms: [leur, leurs] }
+- { id: w.appartenir, lemma: appartenir, pos: verb, en: [to belong], level: a2, unit: a2.u11 }
+- { id: w.immense, lemma: immense, pos: adj, en: [huge], level: a2, unit: a2.u11, topic: adjectives-things }
+- { id: w.magnifique, lemma: magnifique, pos: adj, en: [magnificent], level: a2, unit: a2.u11, topic: adjectives-things }
+- { id: w.superbe, lemma: superbe, pos: adj, en: [superb], level: a2, unit: a2.u11, topic: adjectives-things }
+- { id: w.prendre-une-photo, lemma: prendre une photo, pos: phrase, en: [to take a photo], level: a2, unit: a2.u11 }
+- { id: w.garder, lemma: garder, pos: verb, en: [to keep], level: a2, unit: a2.u11 }
+- { id: w.emporter, lemma: emporter, pos: verb, en: [to take (away)], level: a2, unit: a2.u11, notes: À emporter = to take away. }
+- { id: w.boutique, lemma: boutique, pos: noun, gender: f, en: [shop, boutique], level: a2, unit: a2.u11, topic: shopping }
+- { id: w.porte-clés, lemma: porte-clés, pos: noun, gender: m, plural: porte-clés, en: [key ring], level: a2, unit: a2.u11, topic: shopping }
+- { id: w.affiche, lemma: affiche, pos: noun, gender: f, en: [poster], level: a2, unit: a2.u11, topic: arts }
+- { id: w.tour.n, lemma: tour, pos: noun, gender: m, en: [turn, tour, trick], level: a2, unit: a2.u11, notes: Un tour (m) = a turn or a tour; la tour (f) = a tower. }
+- { id: w.plafond, lemma: plafond, pos: noun, gender: m, en: [ceiling], level: a2, unit: a2.u11, topic: house }
+- { id: w.sol, lemma: sol, pos: noun, gender: m, en: [floor, ground, soil], level: a2, unit: a2.u11, topic: house }
+- { id: w.toit, lemma: toit, pos: noun, gender: m, en: [roof], level: a2, unit: a2.u11, topic: house }
+- { id: w.tapis, lemma: tapis, pos: noun, gender: m, en: [rug, carpet], level: a2, unit: a2.u11, topic: furniture }
+- { id: w.miroir, lemma: miroir, pos: noun, gender: m, en: [mirror], level: a2, unit: a2.u11, topic: furniture }
+- { id: w.meuble, lemma: meuble, pos: noun, gender: m, en: [piece of furniture], level: a2, unit: a2.u11, topic: furniture }
+- { id: w.tenir, lemma: tenir, pos: verb, en: [to hold, to keep], level: a2, unit: a2.u11 }
+- { id: w.étagère, lemma: étagère, pos: noun, gender: f, en: [shelf, bookcase], level: a2, unit: a2.u11, topic: furniture }
+- { id: w.armoire, lemma: armoire, pos: noun, gender: f, en: [wardrobe], level: a2, unit: a2.u11, topic: furniture }
+- { id: w.fauteuil, lemma: fauteuil, pos: noun, gender: m, en: [armchair], level: a2, unit: a2.u11, topic: furniture }
+- { id: w.lampe, lemma: lampe, pos: noun, gender: f, en: [lamp], level: a2, unit: a2.u11, topic: furniture }
+- { id: w.salle-à-manger, lemma: salle à manger, pos: noun, gender: f, plural: salles à manger, en: [dining room], level: a2, unit: a2.u11, topic: house }
+- { id: w.lumière, lemma: lumière, pos: noun, gender: f, en: [light], level: a2, unit: a2.u11 }
+# ---------------------------------------------------------------- a2.u12 Une nuit à Chambord
+- { id: w.chambre-double, lemma: chambre double, pos: noun, gender: f, plural: chambres doubles, en: [double room], level: a2, unit: a2.u12, topic: travel }
+- { id: w.chambre-simple, lemma: chambre simple, pos: noun, gender: f, plural: chambres simples, en: [single room], level: a2, unit: a2.u12, topic: travel }
+- { id: w.auberge-de-jeunesse, lemma: auberge de jeunesse, pos: noun, gender: f, plural: auberges de jeunesse, en: [youth hostel], level: a2, unit: a2.u12, topic: travel }
+- { id: w.camping, lemma: camping, pos: noun, gender: m, en: [campsite, camping], level: a2, unit: a2.u12, topic: travel }
+- { id: w.gîte, lemma: gîte, pos: noun, gender: m, en: [holiday cottage], level: a2, unit: a2.u12, topic: travel }
+- { id: w.séjour, lemma: séjour, pos: noun, gender: m, en: [stay, living room], level: a2, unit: a2.u12, topic: travel }
+- { id: w.accueil, lemma: accueil, pos: noun, gender: m, en: [welcome, reception], level: a2, unit: a2.u12, topic: travel }
+- { id: w.accueillir, lemma: accueillir, pos: verb, en: [to welcome], level: a2, unit: a2.u12 }
+- { id: w.fonctionner, lemma: fonctionner, pos: verb, en: [to work (machine)], level: a2, unit: a2.u12, notes: La clim ne fonctionne pas. }
+- { id: w.allumer, lemma: allumer, pos: verb, en: [to switch on, to light], level: a2, unit: a2.u12 }
+- { id: w.éteindre, lemma: éteindre, pos: verb, en: [to switch off, to put out], level: a2, unit: a2.u12 }
+- { id: w.appuyer, lemma: appuyer, pos: verb, en: [to press, to lean], level: a2, unit: a2.u12 }
+- { id: w.pousser, lemma: pousser, pos: verb, en: [to push, to grow], level: a2, unit: a2.u12 }
+- { id: w.tirer, lemma: tirer, pos: verb, en: [to pull, to shoot], level: a2, unit: a2.u12 }
+- { id: w.étoile, lemma: étoile, pos: noun, gender: f, en: [star], level: a2, unit: a2.u12, topic: nature }
+- { id: w.lune, lemma: lune, pos: noun, gender: f, en: [moon], level: a2, unit: a2.u12, topic: nature }
+- { id: w.mot-de-passe, lemma: mot de passe, pos: noun, gender: m, plural: mots de passe, en: [password], level: a2, unit: a2.u12, topic: tech }
+- { id: w.wifi, lemma: wifi, pos: noun, gender: m, en: [wifi], level: a2, unit: a2.u12, topic: tech }
+- { id: w.code, lemma: code, pos: noun, gender: m, en: [code], level: a2, unit: a2.u12, topic: tech }
+- { id: w.réservation, lemma: réservation, pos: noun, gender: f, en: [booking, reservation], level: a2, unit: a2.u12, topic: travel }
+- { id: w.réception, lemma: réception, pos: noun, gender: f, en: [reception (desk)], level: a2, unit: a2.u12, topic: travel }
+- { id: w.réceptionniste, lemma: réceptionniste, pos: noun, gender: mf, en: [receptionist], level: a2, unit: a2.u12, topic: jobs }
+- { id: w.ascenseur, lemma: ascenseur, pos: noun, gender: m, en: [lift, elevator], level: a2, unit: a2.u12, topic: house }
+- { id: w.climatisation, lemma: climatisation, pos: noun, gender: f, en: [air conditioning], level: a2, unit: a2.u12, topic: house }
+- { id: w.chauffage, lemma: chauffage, pos: noun, gender: m, en: [heating], level: a2, unit: a2.u12, topic: house }
+- { id: w.problème, lemma: problème, pos: noun, gender: m, en: [problem], level: a2, unit: a2.u12 }
+- { id: w.plainte, lemma: plainte, pos: noun, gender: f, en: [complaint], level: a2, unit: a2.u12 }
+- { id: w.se-plaindre, lemma: se plaindre, pos: verb, en: [to complain], level: a2, unit: a2.u12, topic: verbs-speech }
+- { id: w.réclamation, lemma: réclamation, pos: noun, gender: f, en: [complaint, claim], level: a2, unit: a2.u12 }
+- { id: w.bruit, lemma: bruit, pos: noun, gender: m, en: [noise], level: a2, unit: a2.u12 }
+- { id: w.sale, lemma: sale, pos: adj, en: [dirty], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.propre, lemma: propre, pos: adj, en: [clean, own], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.cassé, lemma: cassé, pos: adj, en: [broken], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.libre, lemma: libre, pos: adj, en: [free, available], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.occupé, lemma: occupé, pos: adj, en: [busy, taken, engaged], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.complet, lemma: complet, pos: adj, en: [full, complete], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.double, lemma: double, pos: adj, en: [double], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.simple, lemma: simple, pos: adj, en: [simple, single], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.possible, lemma: possible, pos: adj, en: [possible], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.impossible, lemma: impossible, pos: adj, en: [impossible], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.typique, lemma: typique, pos: adj, en: [typical], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.grave, lemma: grave, pos: adj, en: [serious, grave], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.important, lemma: important, pos: adj, en: [important], level: a2, unit: a2.u12, topic: adjectives-things }
+- { id: w.nul, lemma: nul, pos: adj, en: [rubbish, useless, nil], level: a2, unit: a2.u12 }
+- { id: w.quelque-part, lemma: quelque part, pos: phrase, en: [somewhere], level: a2, unit: a2.u12, topic: directions }
+- { id: w.nulle-part, lemma: nulle part, pos: phrase, en: [nowhere], level: a2, unit: a2.u12, topic: directions }
+- { id: w.ailleurs, lemma: ailleurs, pos: adv, en: [elsewhere], level: a2, unit: a2.u12, topic: directions }
+- { id: w.décider, lemma: décider, pos: verb, en: [to decide], level: a2, unit: a2.u12 }
+- { id: w.arrêter, lemma: arrêter, pos: verb, en: [to stop], level: a2, unit: a2.u12 }
+- { id: w.fumer, lemma: fumer, pos: verb, en: [to smoke], level: a2, unit: a2.u12 }
+- { id: w.permettre, lemma: permettre, pos: verb, en: [to allow], level: a2, unit: a2.u12 }
+- { id: w.croiser, lemma: croiser, pos: verb, en: [to cross, to pass (someone)], level: a2, unit: a2.u12 }
+- { id: w.révolution, lemma: révolution, pos: noun, gender: f, en: [revolution], level: a2, unit: a2.u12, topic: politics }
+- { id: w.chasse, lemma: chasse, pos: noun, gender: f, en: [hunting], level: a2, unit: a2.u12, topic: sport }
+- { id: w.chasseur, lemma: chasseur, pos: noun, gender: mf, en: [hunter], level: a2, unit: a2.u12, topic: sport }
+- { id: w.serviette, lemma: serviette, pos: noun, gender: f, en: [towel, napkin, briefcase], level: a2, unit: a2.u12, topic: house }
+- { id: w.oreiller, lemma: oreiller, pos: noun, gender: m, en: [pillow], level: a2, unit: a2.u12, topic: furniture }
+- { id: w.couverture, lemma: couverture, pos: noun, gender: f, en: [blanket, cover], level: a2, unit: a2.u12, topic: furniture }
+- { id: w.drap, lemma: drap, pos: noun, gender: m, en: [sheet], level: a2, unit: a2.u12, topic: furniture }
+- { id: w.gêner, lemma: gêner, pos: verb, en: [to bother, to be in the way], level: a2, unit: a2.u12 }
+- { id: w.pourboire, lemma: pourboire, pos: noun, gender: m, en: [tip], level: a2, unit: a2.u12, variant: { fr-CH: bonne-main, fr-BE: dringuelle } }
+- { id: w.annuler, lemma: annuler, pos: verb, en: [to cancel], level: a2, unit: a2.u12 }
+- { id: w.confirmer, lemma: confirmer, pos: verb, en: [to confirm], level: a2, unit: a2.u12 }
+- { id: w.facture, lemma: facture, pos: noun, gender: f, en: [bill, invoice], level: a2, unit: a2.u12 }
+- { id: w.compris, lemma: compris, pos: adj, en: [included, understood], level: a2, unit: a2.u12 }
+- { id: w.remplir, lemma: remplir, pos: verb, en: [to fill (in)], level: a2, unit: a2.u12 }
+- { id: w.fiche, lemma: fiche, pos: noun, gender: f, en: [form, card, sheet], level: a2, unit: a2.u12 }
+- { id: w.au-moins, lemma: au moins, pos: phrase, en: [at least], level: a2, unit: a2.u12, topic: quantity }
+- { id: w.plutôt, lemma: plutôt, pos: adv, en: [rather, quite], level: a2, unit: a2.u12 }
+- { id: w.bien-sûr, lemma: bien sûr, pos: phrase, en: [of course], level: a2, unit: a2.u12 }
+- { id: w.peut-être, lemma: peut-être, pos: adv, en: [maybe, perhaps], level: a2, unit: a2.u12 }
+- { id: w.sûr, lemma: sûr, pos: adj, en: [sure, safe], level: a2, unit: a2.u12 }
+- { id: w.volontiers, lemma: volontiers, pos: adv, en: [gladly, willingly], level: a2, unit: a2.u12 }
+- { id: w.rez-de-chaussée, lemma: rez-de-chaussée, pos: noun, gender: m, plural: rez-de-chaussée, en: [ground floor], level: a2, unit: a2.u12, topic: house }
+- { id: w.discothèque, lemma: discothèque, pos: noun, gender: f, en: [nightclub], level: a2, unit: a2.u12, topic: city }
+- { id: w.boîte-de-nuit, lemma: boîte de nuit, pos: noun, gender: f, plural: boîtes de nuit, en: [nightclub], level: a2, unit: a2.u12, topic: city }
+- { id: w.avec-plaisir, lemma: avec plaisir, pos: phrase, en: [with pleasure], level: a2, unit: a2.u12 }
