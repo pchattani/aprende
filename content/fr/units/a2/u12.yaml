@@ -1,0 +1,284 @@
+id: a2.u12
+title: "Une nuit à Chambord"
+lessons:
+  - id: a2.u12.l1
+    title: "Je voudrais réserver une chambre"
+    teach: [g.conditional-politeness]
+    tip: "The conditional softens requests: je voudrais, j'aimerais, pourriez-vous, ce serait possible ? Future stem + -ais, -ait, -iez…"
+    vocab: [w.chambre-double, w.chambre-simple, w.auberge-de-jeunesse, w.camping, w.gîte, w.séjour, w.réservation, w.réception, w.réceptionniste, w.accueil, w.accueillir, w.complet, w.libre, w.double, w.simple, w.possible, w.impossible, w.confirmer, w.annuler, w.remplir, w.fiche]
+    sentences:
+      - { es: "Bonjour, je voudrais réserver une chambre double pour ce soir.", en: "Hello, I'd like to book a double room for tonight.", altEs: ["Bonjour, j'aimerais réserver une chambre double pour ce soir."], grammar: [g.conditional-politeness], vocab: [w.chambre-double, w.réserver] }
+      - { es: "Est-ce que vous auriez une chambre simple pour deux nuits ?", en: "Would you have a single room for two nights?", altEs: ["Vous auriez une chambre simple pour deux nuits ?", "Auriez-vous une chambre simple pour deux nuits ?"], altEn: ["Do you have a single room for two nights?"], grammar: [g.conditional-politeness], vocab: [w.chambre-simple] }
+      - { es: "Ce serait possible d'avoir une chambre avec vue sur le château ?", en: "Would it be possible to have a room with a view of the château?", altEs: ["Est-ce qu'il serait possible d'avoir une chambre avec vue sur le château ?"], grammar: [g.conditional-politeness], vocab: [w.possible, w.vue] }
+      - { es: "Désolé, l'hôtel est complet ce week-end.", en: "Sorry, the hotel is full this weekend.", altEs: ["Désolée, l'hôtel est complet ce week-end."], altEn: ["I'm sorry, the hotel is fully booked this weekend."], grammar: [g.adjective-agreement], vocab: [w.complet] }
+      - { es: "Il nous reste une chambre libre au premier étage.", en: "We have one room left on the first floor.", altEn: ["We still have a free room on the first floor."], grammar: [g.indirect-object-pronouns], vocab: [w.libre, w.étage] }
+      - { es: "Pourriez-vous confirmer ma réservation par mail ?", en: "Could you confirm my booking by email?", altEs: ["Vous pourriez confirmer ma réservation par mail ?", "Pourriez-vous me confirmer la réservation par mail ?"], grammar: [g.conditional-politeness], vocab: [w.confirmer, w.réservation, w.mail], variant: "Québec: par courriel." }
+      - { es: "J'aimerais annuler ma réservation pour samedi.", en: "I'd like to cancel my booking for Saturday.", altEs: ["Je voudrais annuler ma réservation pour samedi."], grammar: [g.conditional-politeness], vocab: [w.annuler, w.réservation] }
+      - { es: "Remplissez cette fiche, s'il vous plaît.", en: "Fill in this form, please.", altEs: ["Pourriez-vous remplir cette fiche, s'il vous plaît ?"], grammar: [g.imperative], vocab: [w.remplir, w.fiche] }
+      - { es: "La réceptionniste nous a accueillis avec un grand sourire.", en: "The receptionist welcomed us with a big smile.", grammar: [g.pc-object-agreement], vocab: [w.réceptionniste, w.accueillir] }
+      - { es: "La réception est ouverte jour et nuit.", en: "Reception is open day and night.", altEn: ["The reception desk is open day and night."], grammar: [g.adjective-agreement], vocab: [w.réception] }
+      - { es: "Nous aimerions dîner à l'hôtel ce soir.", en: "We would like to have dinner at the hotel tonight.", altEs: ["Nous voudrions dîner à l'hôtel ce soir.", "On aimerait dîner à l'hôtel ce soir."], grammar: [g.conditional-politeness], vocab: [w.dîner] }
+      - { es: "Pour un séjour moins cher, il y a l'auberge de jeunesse ou le camping.", en: "For a cheaper stay, there's the youth hostel or the campsite.", grammar: [g.comparatives], vocab: [w.séjour, w.auberge-de-jeunesse, w.camping] }
+      - { es: "Nous avons loué un gîte près de la forêt.", en: "We rented a holiday cottage near the forest.", grammar: [g.passe-compose-avoir], vocab: [w.gîte, w.forêt] }
+      - { es: "Pourriez-vous m'appeler un taxi ?", en: "Could you call me a taxi?", altEs: ["Vous pourriez m'appeler un taxi ?"], grammar: [g.conditional-politeness], vocab: [w.taxi], error: { wrong: "Pouriez-vous m'appeler un taxi ?", explain: "The stem of pouvoir is pourr- with a double r: pourriez-vous.", grammar: g.conditional-politeness } }
+      - { es: "Je veux une chambre double.", en: "I want a double room.", grammar: [g.conditional-politeness], vocab: [w.double, w.accueil], transform: { instruction: "Make it polite (vouloir → je voudrais)", answer: "Je voudrais une chambre double.", alt: ["J'aimerais une chambre double."], en: "I'd like a double room." } }
+      - { es: "Vous pouvez parler moins fort ?", en: "Can you speak more quietly?", grammar: [g.conditional-politeness], vocab: [w.simple, w.impossible], transform: { instruction: "Make it more polite with the conditional", answer: "Vous pourriez parler moins fort ?", alt: ["Pourriez-vous parler moins fort ?"], en: "Could you speak more quietly?" } }
+    exchanges:
+      - q: { es: "Bonjour, je peux vous aider ?", en: "Hello, can I help you?" }
+        a: { es: "Oui, je voudrais une chambre pour deux personnes, s'il vous plaît.", en: "Yes, I'd like a room for two people, please." }
+        alt: ["Oui, j'ai une réservation au nom de Martin.", "Je voudrais une chambre double."]
+        grammar: [g.conditional-politeness]
+        vocab: [w.chambre-double]
+      - q: { es: "Vous auriez une chambre libre pour ce soir ?", en: "Would you have a free room for tonight?" }
+        a: { es: "Désolé, nous sommes complets, mais il y a un gîte à côté.", en: "Sorry, we're full, but there's a holiday cottage next door." }
+        alt: ["Oui, il nous reste une chambre double.", "Non, c'est complet."]
+        grammar: [g.conditional-politeness]
+        vocab: [w.libre, w.complet, w.gîte]
+      - q: { es: "Ce serait possible d'arriver tard ?", en: "Would it be possible to arrive late?" }
+        a: { es: "Bien sûr, la réception est ouverte toute la nuit.", en: "Of course, reception is open all night." }
+        alt: ["Oui, pas de problème.", "Oui, mais avant minuit."]
+        grammar: [g.conditional-politeness]
+        vocab: [w.possible, w.réception]
+      - q: { es: "Vous pourriez remplir cette fiche ?", en: "Could you fill in this form?" }
+        a: { es: "Oui, bien sûr. Vous avez un stylo ?", en: "Yes, of course. Do you have a pen?" }
+        alt: ["Oui, tout de suite.", "Bien sûr."]
+        grammar: [g.conditional-politeness]
+        vocab: [w.remplir, w.fiche]
+      - q: { es: "Vous voulez annuler la réservation ?", en: "Do you want to cancel the booking?" }
+        a: { es: "Non, j'aimerais seulement changer la date.", en: "No, I'd just like to change the date." }
+        alt: ["Oui, je voudrais l'annuler.", "Non, je voudrais la confirmer."]
+        grammar: [g.conditional-politeness]
+        vocab: [w.annuler, w.réservation]
+    texts:
+      - title: "Mail à l'hôtel"
+        es: ["Madame, Monsieur, je voudrais réserver une chambre double du 12 au 14 mai.", "Est-ce qu'il serait possible d'avoir une chambre avec vue sur le château ?", "Pourriez-vous me confirmer le prix ? Cordialement, Sophie Martin"]
+        en: ["Dear Sir or Madam, I'd like to book a double room from 12 to 14 May.", "Would it be possible to have a room with a view of the château?", "Could you confirm the price for me? Kind regards, Sophie Martin"]
+        grammar: [g.conditional-politeness]
+        vocab: [w.chambre-double, w.possible, w.confirmer]
+      - title: "Réponse de l'hôtel"
+        es: ["Madame, merci pour votre message.", "Nous avons le plaisir de confirmer votre réservation.", "Nous serons heureux de vous accueillir à Chambord."]
+        en: ["Madam, thank you for your message.", "We are pleased to confirm your booking.", "We will be happy to welcome you in Chambord."]
+        grammar: [g.futur-irregular-stems]
+        vocab: [w.confirmer, w.réservation, w.accueillir]
+    spicy:
+      - { es: "Je voudrais une chambre avec vue... sur toi.", en: "I'd like a room with a view... of you.", grammar: [g.conditional-politeness], vocab: [w.vue] }
+      - { es: "Tu aurais une minute ? Ou une soirée entière ?", en: "Would you have a minute? Or a whole evening?", grammar: [g.conditional-politeness], vocab: [w.minute, w.soirée] }
+      - { es: "J'aimerais annuler tous mes plans de ce soir, pour toi.", en: "I'd like to cancel all my plans for tonight, for you.", grammar: [g.conditional-politeness], vocab: [w.annuler, w.plan] }
+      - { es: "Pourriez-vous me dire si le réceptionniste est libre ce soir ?", en: "Could you tell me if the receptionist is free tonight?", altEs: ["Pourriez-vous me dire si la réceptionniste est libre ce soir ?"], grammar: [g.conditional-politeness], vocab: [w.réceptionniste, w.libre] }
+      - { es: "Ce serait possible de dîner avec vous, ou c'est complet ?", en: "Would it be possible to have dinner with you, or are you fully booked?", grammar: [g.conditional-politeness], vocab: [w.possible, w.complet] }
+  - id: a2.u12.l2
+    title: "Il y a quelqu'un ?"
+    teach: [g.indefinite-pronouns]
+    tip: "quelqu'un / ne … personne, quelque chose / ne … rien, quelque part / ne … nulle part; + de + adjective: quelque chose de bon, rien de grave."
+    vocab: [w.quelque-part, w.nulle-part, w.ailleurs, w.peut-être, w.sûr, w.grave, w.important, w.typique, w.nul, w.étoile, w.lune, w.discothèque, w.boîte-de-nuit, w.au-moins, w.bien-sûr]
+    sentences:
+      - { es: "Il y a quelqu'un à la réception ?", en: "Is there anyone at reception?", altEs: ["Est-ce qu'il y a quelqu'un à la réception ?", "Y a-t-il quelqu'un à la réception ?"], grammar: [g.indefinite-pronouns], vocab: [w.quelqu-un, w.réception] }
+      - { es: "Je voudrais quelque chose de typique de la région.", en: "I'd like something typical of the region.", altEs: ["J'aimerais quelque chose de typique de la région."], grammar: [g.indefinite-pronouns, g.conditional-politeness], vocab: [w.quelque-chose, w.typique] }
+      - { es: "Ce n'est rien de grave, ne t'inquiète pas.", en: "It's nothing serious, don't worry.", altEs: ["C'est rien de grave, t'inquiète pas."], grammar: [g.indefinite-pronouns], vocab: [w.rien, w.grave] }
+      - { es: "Je ne trouve mes lunettes nulle part.", en: "I can't find my glasses anywhere.", grammar: [g.indefinite-pronouns], vocab: [w.nulle-part, w.lunettes] }
+      - { es: "Tu as vu mes clés quelque part ?", en: "Have you seen my keys anywhere?", altEs: ["Tu n'as pas vu mes clés quelque part ?"], grammar: [g.indefinite-pronouns], vocab: [w.quelque-part, w.clé] }
+      - { es: "Il n'y a personne dans le couloir.", en: "There's nobody in the corridor.", altEs: ["Il y a personne dans le couloir."], grammar: [g.indefinite-pronouns], vocab: [w.personne] }
+      - { es: "Quelqu'un a appelé pour vous ce matin.", en: "Someone called for you this morning.", grammar: [g.indefinite-pronouns], vocab: [w.quelqu-un, w.appeler] }
+      - { es: "Je n'ai rien compris : il parle trop vite.", en: "I didn't understand anything: he speaks too fast.", altEs: ["J'ai rien compris, il parle trop vite."], grammar: [g.indefinite-pronouns, g.negation-passe-compose], vocab: [w.rien, w.comprendre] }
+      - { es: "On va quelque part ce soir ? En boîte de nuit, peut-être ?", en: "Shall we go somewhere tonight? To a nightclub, maybe?", altEs: ["On sort quelque part ce soir ? En boîte, peut-être ?"], grammar: [g.indefinite-pronouns], vocab: [w.quelque-part, w.boîte-de-nuit, w.peut-être] }
+      - { es: "Il n'y a pas de discothèque ici ; il faut aller ailleurs.", en: "There's no nightclub here; you have to go elsewhere.", grammar: [g.de-after-negation], vocab: [w.discothèque, w.ailleurs] }
+      - { es: "Tu es sûr ? Il y a au moins mille étoiles ce soir !", en: "Are you sure? There are at least a thousand stars tonight!", altEs: ["Tu es sûre ? Il y a au moins mille étoiles ce soir !"], grammar: [g.numbers-100-plus], vocab: [w.sûr, w.au-moins, w.étoile] }
+      - { es: "La lune est pleine au-dessus du château.", en: "The moon is full above the château.", grammar: [g.adjective-agreement], vocab: [w.lune] }
+      - { es: "Ce film est nul, il ne se passe rien !", en: "This film is rubbish, nothing happens!", grammar: [g.indefinite-pronouns], vocab: [w.nul, w.se-passer] }
+      - { es: "J'ai quelque chose d'important à te dire.", en: "I have something important to tell you.", grammar: [g.indefinite-pronouns], vocab: [w.quelque-chose, w.important], error: { wrong: "J'ai quelque chose important à te dire.", explain: "quelque chose + de + adjective: quelque chose d'important.", grammar: g.indefinite-pronouns } }
+      - { es: "Je vois quelqu'un.", en: "I can see someone.", grammar: [g.indefinite-pronouns], vocab: [w.quelqu-un], transform: { instruction: "Make it negative", answer: "Je ne vois personne.", alt: ["Je vois personne."], en: "I can't see anyone." } }
+      - { es: "Je veux quelque chose.", en: "I want something.", grammar: [g.indefinite-pronouns], vocab: [w.quelque-chose, w.bien-sûr], transform: { instruction: "Make it negative", answer: "Je ne veux rien.", alt: ["Je veux rien."], en: "I don't want anything." } }
+    exchanges:
+      - q: { es: "Tu veux quelque chose à boire ?", en: "Do you want something to drink?" }
+        a: { es: "Non merci, je ne veux rien.", en: "No thanks, I don't want anything." }
+        alt: ["Oui, quelque chose de chaud.", "Oui, un thé, s'il te plaît."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.quelque-chose, w.rien]
+      - q: { es: "Il y a quelqu'un ?", en: "Is anyone there?" }
+        a: { es: "Non, il n'y a personne. Tout le monde dort.", en: "No, there's nobody. Everyone's asleep." }
+        alt: ["Oui, j'arrive !", "Non, personne."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.quelqu-un, w.personne]
+      - q: { es: "Qu'est-ce qui s'est passé ?", en: "What happened?" }
+        a: { es: "Rien de grave, je suis tombé dans l'escalier.", en: "Nothing serious, I fell on the stairs." }
+        alt: ["Rien.", "Rien de grave."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.rien, w.grave]
+      - q: { es: "Tu as vu mon portable quelque part ?", en: "Have you seen my phone anywhere?" }
+        a: { es: "Non, je ne l'ai vu nulle part.", en: "No, I haven't seen it anywhere." }
+        alt: ["Il est sur la table.", "Non, nulle part."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.quelque-part, w.nulle-part]
+      - q: { es: "On sort ce soir ?", en: "Shall we go out tonight?" }
+        a: { es: "Bien sûr ! Mais on va ailleurs, la discothèque de l'hôtel est nulle.", en: "Of course! But let's go elsewhere, the hotel's nightclub is rubbish." }
+        alt: ["Peut-être.", "Oui, on va quelque part en ville."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.ailleurs, w.discothèque, w.nul]
+    texts:
+      - title: "Mot sur la porte"
+        es: ["Je suis sorti, il n'y a personne dans la chambre.", "Si quelqu'un me cherche, je suis au bar.", "Ce n'est rien d'important. Paul"]
+        en: ["I've gone out, there's nobody in the room.", "If anyone is looking for me, I'm at the bar.", "It's nothing important. Paul"]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.personne, w.quelqu-un, w.important]
+      - title: "Nuit à Chambord"
+        es: ["La nuit, il n'y a plus personne dans le parc.", "On n'entend rien, seulement le vent.", "Au-dessus du château, il y a des milliers d'étoiles."]
+        en: ["At night there's no one left in the park.", "You can't hear anything, only the wind.", "Above the château there are thousands of stars."]
+        grammar: [g.indefinite-pronouns, g.negation-jamais-plus-rien]
+        vocab: [w.étoile]
+    spicy:
+      - { es: "J'ai quelque chose d'important à te dire : tu es très joli ce soir.", en: "I have something important to tell you: you look very handsome tonight.", altEs: ["J'ai quelque chose d'important à te dire : tu es très jolie ce soir."], altEn: ["I have something important to tell you: you look very pretty tonight."], grammar: [g.indefinite-pronouns], vocab: [w.quelque-chose, w.important] }
+      - { es: "Il n'y a personne d'autre que toi dans ma tête.", en: "There's no one else but you in my head.", grammar: [g.indefinite-pronouns], vocab: [w.personne, w.tête] }
+      - { es: "On va quelque part, juste toi et moi ? La lune est déjà là.", en: "Shall we go somewhere, just you and me? The moon's already out.", grammar: [g.indefinite-pronouns], vocab: [w.quelque-part, w.lune] }
+      - { es: "Je n'ai rien prévu ce soir... à part toi.", en: "I haven't planned anything tonight... apart from you.", grammar: [g.indefinite-pronouns], vocab: [w.rien, w.prévoir] }
+      - { es: "Tu es sûr que tu ne veux rien boire ? Même pas un verre avec moi ?", en: "Are you sure you don't want anything to drink? Not even one drink with me?", altEs: ["Tu es sûre que tu ne veux rien boire ? Même pas un verre avec moi ?"], grammar: [g.indefinite-pronouns], vocab: [w.sûr, w.verre] }
+  - id: a2.u12.l3
+    title: "L'escalier de François Ier"
+    teach: [g.verbs-plus-infinitive]
+    tip: "Learn each verb with its preposition: aimer / vouloir / espérer + infinitive; commencer à, apprendre à, réussir à; décider de, essayer de, arrêter de, oublier de."
+    vocab: [w.décider, w.arrêter, w.fumer, w.permettre, w.croiser, w.révolution, w.chasse, w.chasseur, w.plutôt, w.pousser, w.tirer, w.appuyer, w.volontiers, w.avec-plaisir]
+    sentences:
+      - { es: "François Ier a décidé de construire Chambord en 1519.", en: "Francis I decided to build Chambord in 1519.", altEn: ["King Francis I decided to build Chambord in 1519."], grammar: [g.verbs-plus-infinitive], vocab: [w.décider, w.construire] }
+      - { es: "Il venait surtout à Chambord pour la chasse.", en: "He came to Chambord mainly for hunting.", altEn: ["He mostly came to Chambord to hunt."], grammar: [g.imparfait-uses], vocab: [w.chasse] }
+      - { es: "L'escalier à double révolution permet de monter et de descendre sans se croiser.", en: "The double-helix staircase lets people go up and down without passing each other.", altEn: ["The double-spiral staircase makes it possible to go up and down without meeting."], grammar: [g.verbs-plus-infinitive], vocab: [w.révolution, w.permettre, w.croiser] }
+      - { es: "On dit que Léonard a aidé à dessiner cet escalier.", en: "They say Leonardo helped to design this staircase.", altEs: ["Selon certains, Léonard a aidé à dessiner cet escalier."], altEn: ["People say Leonardo helped design this staircase."], grammar: [g.verbs-plus-infinitive], vocab: [w.aider, w.dessiner] }
+      - { es: "J'essaie de comprendre l'escalier de Léonard.", en: "I'm trying to understand Leonardo's staircase.", grammar: [g.verbs-plus-infinitive], vocab: [w.essayer, w.comprendre], error: { wrong: "J'essaie à comprendre l'escalier de Léonard.", explain: "essayer takes de: j'essaie de comprendre.", grammar: g.verbs-plus-infinitive } }
+      - { es: "Nous avons décidé de dormir près du château.", en: "We decided to sleep near the château.", altEs: ["On a décidé de dormir près du château."], grammar: [g.verbs-plus-infinitive], vocab: [w.décider, w.dormir] }
+      - { es: "Elle commence à parler français avec les guides.", en: "She's starting to speak French with the guides.", grammar: [g.verbs-plus-infinitive], vocab: [w.commencer, w.guide], transform: { instruction: "Use apprendre à instead of commencer à", answer: "Elle apprend à parler français avec les guides.", en: "She's learning to speak French with the guides." } }
+      - { es: "N'oublie pas de fermer la porte de la chambre.", en: "Don't forget to close the bedroom door.", grammar: [g.verbs-plus-infinitive, g.imperative], vocab: [w.oublier, w.fermer] }
+      - { es: "Mon père a arrêté de fumer l'année dernière.", en: "My father stopped smoking last year.", grammar: [g.verbs-plus-infinitive], vocab: [w.arrêter, w.fumer] }
+      - { es: "J'apprends à monter à cheval pour visiter la forêt.", en: "I'm learning to ride a horse to visit the forest.", grammar: [g.verbs-plus-infinitive], vocab: [w.apprendre, w.cheval] }
+      - { es: "Nous espérons revenir l'année prochaine.", en: "We hope to come back next year.", grammar: [g.verbs-plus-infinitive], vocab: [w.espérer, w.revenir] }
+      - { es: "Les chasseurs ont réussi à traverser la forêt avant la nuit.", en: "The hunters managed to cross the forest before nightfall.", grammar: [g.verbs-plus-infinitive], vocab: [w.chasseur, w.réussir-à] }
+      - { es: "Pour ouvrir, appuyez sur le bouton, puis poussez la porte.", en: "To open, press the button, then push the door.", altEs: ["Pour ouvrir, appuyez sur le bouton et poussez la porte."], grammar: [g.imperative], vocab: [w.appuyer, w.pousser] }
+      - { es: "Tu viens dîner avec nous ? — Volontiers, avec plaisir !", en: "Are you coming to dinner with us? — Gladly, with pleasure!", grammar: [g.verbs-plus-infinitive], vocab: [w.volontiers, w.avec-plaisir] }
+      - { es: "Je voudrais plutôt visiter le château le matin.", en: "I'd rather visit the château in the morning.", altEs: ["Je préférerais visiter le château le matin.", "J'aimerais plutôt visiter le château le matin."], grammar: [g.verbs-plus-infinitive, g.conditional-politeness], vocab: [w.plutôt, w.préférer] }
+      - { es: "Il pleut. Nous restons à l'hôtel.", en: "It's raining. We're staying at the hotel.", grammar: [g.verbs-plus-infinitive], vocab: [w.rester], transform: { instruction: "Say 'we decided to stay at the hotel'", answer: "Nous avons décidé de rester à l'hôtel.", alt: ["On a décidé de rester à l'hôtel."], en: "We decided to stay at the hotel." } }
+    exchanges:
+      - q: { es: "Qu'est-ce que vous avez décidé de faire demain ?", en: "What have you decided to do tomorrow?" }
+        a: { es: "Nous avons décidé de visiter Chambord à vélo.", en: "We've decided to visit Chambord by bike." }
+        alt: ["On a décidé de rester à l'hôtel.", "Nous n'avons encore rien décidé."]
+        grammar: [g.verbs-plus-infinitive]
+        vocab: [w.décider]
+      - q: { es: "Tu as réussi à voir l'escalier ?", en: "Did you manage to see the staircase?" }
+        a: { es: "Oui, et j'ai essayé de monter et descendre en même temps !", en: "Yes, and I tried to go up and down at the same time!" }
+        alt: ["Oui, il est incroyable.", "Non, il y avait trop de monde."]
+        grammar: [g.verbs-plus-infinitive]
+        vocab: [w.réussir-à, w.essayer]
+      - q: { es: "Tu fumes ?", en: "Do you smoke?" }
+        a: { es: "Non, j'ai arrêté de fumer il y a deux ans.", en: "No, I stopped smoking two years ago." }
+        alt: ["Non, jamais.", "Oui, mais j'essaie d'arrêter."]
+        grammar: [g.verbs-plus-infinitive]
+        vocab: [w.fumer, w.arrêter]
+      - q: { es: "Tu veux venir à la chasse au trésor demain ?", en: "Do you want to come to the treasure hunt tomorrow?" }
+        a: { es: "Volontiers ! J'adore chercher des trésors.", en: "Gladly! I love looking for treasure." }
+        alt: ["Avec plaisir !", "Non merci, je préfère dormir."]
+        grammar: [g.verbs-plus-infinitive]
+        vocab: [w.volontiers, w.chasse]
+      - q: { es: "La porte ne s'ouvre pas !", en: "The door won't open!" }
+        a: { es: "Il faut tirer, pas pousser.", en: "You have to pull, not push." }
+        alt: ["Tire !", "Appuie sur le bouton."]
+        grammar: [g.il-faut]
+        vocab: [w.tirer, w.pousser]
+    texts:
+      - title: "Chambord en bref"
+        es: ["En 1519, François Ier a décidé de construire un château au milieu de la forêt.", "Il venait surtout à Chambord pour la chasse.", "Son escalier à double révolution permet de monter et de descendre sans jamais se croiser."]
+        en: ["In 1519, Francis I decided to build a château in the middle of the forest.", "He came to Chambord mainly for hunting.", "Its double-helix staircase lets people go up and down without ever passing each other."]
+        grammar: [g.verbs-plus-infinitive]
+        vocab: [w.décider, w.chasse, w.révolution, w.croiser]
+      - title: "Message de Thomas"
+        es: ["J'ai essayé de te téléphoner, mais tu ne réponds pas.", "On a décidé de dîner au restaurant du village.", "N'oublie pas d'apporter ton pull, il fait froid le soir !"]
+        en: ["I tried to phone you, but you're not answering.", "We've decided to have dinner at the village restaurant.", "Don't forget to bring your jumper, it's cold in the evening!"]
+        grammar: [g.verbs-plus-infinitive]
+        vocab: [w.décider, w.oublier]
+    spicy:
+      - { es: "J'ai décidé de t'inviter à dîner ; tu n'as pas le droit de refuser.", en: "I've decided to invite you to dinner; you're not allowed to refuse.", grammar: [g.verbs-plus-infinitive], vocab: [w.décider, w.refuser] }
+      - { es: "Dans cet escalier, on ne peut pas se croiser... mais je vais essayer de te trouver.", en: "On this staircase, people can't pass each other... but I'm going to try to find you.", grammar: [g.verbs-plus-infinitive], vocab: [w.croiser, w.essayer] }
+      - { es: "J'ai arrêté de fumer, mais je n'arrive pas à arrêter de te regarder.", en: "I've stopped smoking, but I can't stop looking at you.", grammar: [g.verbs-plus-infinitive], vocab: [w.arrêter, w.fumer] }
+      - { es: "Tu m'apprends à danser ? Je promets d'essayer de ne pas te marcher sur les pieds.", en: "Will you teach me to dance? I promise to try not to tread on your feet.", grammar: [g.verbs-plus-infinitive], vocab: [w.apprendre, w.promettre] }
+      - { es: "Un dîner aux chandelles ? Volontiers. Avec toi ? Avec plaisir.", en: "A candlelit dinner? Gladly. With you? With pleasure.", grammar: [g.verbs-plus-infinitive], vocab: [w.volontiers, w.avec-plaisir] }
+  - id: a2.u12.l4
+    title: "Il y a un problème dans la chambre"
+    teach: [g.conditional-politeness, g.indefinite-pronouns]
+    tip: "Complaining politely: Excusez-moi, il y a un problème… Pourriez-vous… ? Personne ne répond. Rien ne fonctionne."
+    vocab: [w.problème, w.plainte, w.se-plaindre, w.réclamation, w.bruit, w.sale, w.propre, w.cassé, w.occupé, w.fonctionner, w.allumer, w.éteindre, w.mot-de-passe, w.wifi, w.code, w.ascenseur, w.climatisation, w.chauffage, w.serviette, w.oreiller, w.couverture, w.drap, w.gêner, w.pourboire, w.facture, w.compris, w.rez-de-chaussée]
+    sentences:
+      - { es: "Excusez-moi, il y a un problème dans ma chambre.", en: "Excuse me, there's a problem in my room.", altEs: ["Pardon, il y a un problème dans ma chambre."], grammar: [g.il-y-a], vocab: [w.problème] }
+      - { es: "Le chauffage ne fonctionne pas et il fait très froid.", en: "The heating isn't working and it's very cold.", altEs: ["Le chauffage ne marche pas et il fait très froid."], grammar: [g.negation-ne-pas], vocab: [w.chauffage, w.fonctionner] }
+      - { es: "Pourriez-vous m'apporter une couverture et un autre oreiller ?", en: "Could you bring me a blanket and another pillow?", altEs: ["Vous pourriez m'apporter une couverture et un autre oreiller ?"], grammar: [g.conditional-politeness], vocab: [w.couverture, w.oreiller, w.apporter] }
+      - { es: "Les draps sont sales et il n'y a pas de serviettes propres.", en: "The sheets are dirty and there are no clean towels.", grammar: [g.de-after-negation], vocab: [w.drap, w.sale, w.serviette, w.propre] }
+      - { es: "J'ai appelé la réception, mais personne n'a répondu.", en: "I called reception, but nobody answered.", grammar: [g.indefinite-pronouns], vocab: [w.réception, w.répondre], transform: { instruction: "Change it: someone answered (quelqu'un)", answer: "J'ai appelé la réception et quelqu'un a répondu.", alt: ["J'ai appelé la réception, et quelqu'un a répondu."], en: "I called reception and someone answered." } }
+      - { es: "Rien ne fonctionne : ni la lumière, ni la climatisation !", en: "Nothing works: neither the light nor the air conditioning!", grammar: [g.indefinite-pronouns], vocab: [w.climatisation, w.fonctionner] }
+      - { es: "L'ascenseur est cassé, alors on monte à pied.", en: "The lift is broken, so we're walking up.", altEn: ["The elevator is out of order, so we're taking the stairs."], grammar: [g.adjective-agreement], vocab: [w.ascenseur, w.cassé] }
+      - { es: "Il y a trop de bruit : est-ce que je pourrais changer de chambre ?", en: "There's too much noise: could I change rooms?", altEs: ["Il y a trop de bruit, je pourrais changer de chambre ?"], grammar: [g.conditional-politeness], vocab: [w.bruit] }
+      - { es: "Quel est le mot de passe du wifi ?", en: "What's the wifi password?", altEs: ["C'est quoi, le mot de passe du wifi ?"], grammar: [g.quel], vocab: [w.mot-de-passe, w.wifi] }
+      - { es: "Le code de la porte d'entrée est sur votre fiche.", en: "The code for the front door is on your card.", altEn: ["The front door code is on your form."], grammar: [g.possessives], vocab: [w.code, w.fiche] }
+      - { es: "Allume la lumière, je ne vois rien !", en: "Turn the light on, I can't see a thing!", grammar: [g.imperative, g.indefinite-pronouns], vocab: [w.allumer] }
+      - { es: "Ça vous gênerait d'éteindre la musique après minuit ?", en: "Would you mind turning the music off after midnight?", altEs: ["Est-ce que ça vous gênerait d'éteindre la musique après minuit ?"], grammar: [g.conditional-politeness], vocab: [w.gêner, w.éteindre] }
+      - { es: "Je voudrais faire une réclamation : le petit-déjeuner est sur la facture, mais il était compris !", en: "I'd like to make a complaint: breakfast is on the bill, but it was included!", altEs: ["J'aimerais faire une réclamation : le petit-déjeuner est sur la facture, mais il était compris !"], grammar: [g.conditional-politeness], vocab: [w.réclamation, w.facture, w.compris] }
+      - { es: "Je ne veux pas me plaindre, mais personne n'a nettoyé la chambre.", en: "I don't want to complain, but nobody has cleaned the room.", grammar: [g.indefinite-pronouns, g.pronominal-verbs], vocab: [w.se-plaindre, w.nettoyer, w.plainte] }
+      - { es: "On laisse un pourboire ? Le service était parfait.", en: "Shall we leave a tip? The service was perfect.", grammar: [g.on-nous], vocab: [w.pourboire, w.rez-de-chaussée], error: { wrong: "On laisse un pourboire ? Le service était parfaite.", explain: "service is masculine: le service était parfait.", grammar: g.adjective-agreement } }
+      - { es: "Je veux une autre serviette.", en: "I want another towel.", grammar: [g.conditional-politeness], vocab: [w.serviette], transform: { instruction: "Ask politely with Pourriez-vous m'apporter …", answer: "Pourriez-vous m'apporter une autre serviette ?", alt: ["Vous pourriez m'apporter une autre serviette ?", "Pourriez-vous m'apporter une autre serviette, s'il vous plaît ?"], en: "Could you bring me another towel?" } }
+    exchanges:
+      - q: { es: "Bonsoir, je peux vous aider ?", en: "Good evening, can I help you?" }
+        a: { es: "Oui, la climatisation ne fonctionne pas dans la chambre 12.", en: "Yes, the air conditioning isn't working in room 12." }
+        alt: ["Oui, il y a un problème avec le chauffage.", "Oui, il n'y a pas de serviettes dans ma chambre."]
+        grammar: [g.negation-ne-pas]
+        vocab: [w.climatisation, w.fonctionner]
+      - q: { es: "Quel est le problème, madame ?", en: "What's the problem, madam?" }
+        a: { es: "Il y a trop de bruit ; est-ce que je pourrais changer de chambre ?", en: "There's too much noise; could I change rooms?" }
+        alt: ["Les draps sont sales.", "L'ascenseur est cassé."]
+        grammar: [g.conditional-politeness]
+        vocab: [w.problème, w.bruit]
+      - q: { es: "Le petit-déjeuner est compris ?", en: "Is breakfast included?" }
+        a: { es: "Oui, il est servi de sept heures à dix heures, au rez-de-chaussée.", en: "Yes, it's served from seven to ten, on the ground floor." }
+        alt: ["Non, il coûte douze euros.", "Oui, c'est compris."]
+        grammar: [g.time-telling]
+        vocab: [w.compris, w.rez-de-chaussée]
+      - q: { es: "Vous avez le mot de passe du wifi ?", en: "Do you have the wifi password?" }
+        a: { es: "Oui, il est écrit sur votre fiche, à côté du code de la porte.", en: "Yes, it's written on your card, next to the door code." }
+        alt: ["Oui, il est sur votre fiche.", "Il est à la réception."]
+        grammar: [g.possessives]
+        vocab: [w.mot-de-passe, w.wifi, w.code]
+      - q: { es: "Quelqu'un a répondu à votre plainte ?", en: "Has anyone replied to your complaint?" }
+        a: { es: "Non, personne. Je vais me plaindre au directeur.", en: "No, nobody. I'm going to complain to the manager." }
+        alt: ["Non, personne.", "Oui, ils m'ont donné une autre chambre."]
+        grammar: [g.indefinite-pronouns]
+        vocab: [w.plainte, w.se-plaindre]
+    texts:
+      - title: "Réclamation"
+        es: ["Madame, Monsieur, pendant notre séjour, rien n'a fonctionné.", "Le chauffage était cassé et personne n'a répondu à nos appels.", "Pourriez-vous nous rembourser une nuit ?"]
+        en: ["Dear Sir or Madam, during our stay nothing worked.", "The heating was broken and nobody answered our calls.", "Could you refund us one night?"]
+        grammar: [g.indefinite-pronouns, g.conditional-politeness]
+        vocab: [w.séjour, w.chauffage, w.cassé]
+      - title: "Informations pratiques"
+        es: ["Le wifi est gratuit ; le mot de passe est à la réception.", "Merci d'éteindre la lumière en quittant la chambre.", "Le petit-déjeuner est compris et servi au rez-de-chaussée."]
+        en: ["The wifi is free; the password is at reception.", "Please turn off the light when leaving the room.", "Breakfast is included and served on the ground floor."]
+        grammar: [g.passe-compose-avoir]
+        vocab: [w.wifi, w.mot-de-passe, w.éteindre, w.compris]
+    spicy:
+      - { es: "Il y a un problème dans ma chambre : tu n'es pas là.", en: "There's a problem in my room: you're not there.", grammar: [g.il-y-a], vocab: [w.problème] }
+      - { es: "Le chauffage est cassé ? Pas grave, je connais quelqu'un de très chaleureux.", en: "The heating's broken? Never mind, I know someone very warm.", grammar: [g.indefinite-pronouns], vocab: [w.chauffage, w.cassé] }
+      - { es: "Ça te gênerait de m'appeler avant de dormir ?", en: "Would you mind calling me before you go to sleep?", grammar: [g.conditional-politeness], vocab: [w.gêner] }
+      - { es: "Je n'ai rien contre le bruit, sauf quand c'est mon cœur qui bat trop fort.", en: "I've got nothing against noise, except when it's my heart beating too loud.", grammar: [g.indefinite-pronouns], vocab: [w.bruit, w.cœur] }
+      - { es: "Le mot de passe du wifi ? Je te le donne si tu me donnes ton numéro.", en: "The wifi password? I'll give it to you if you give me your number.", grammar: [g.si-present-futur], vocab: [w.mot-de-passe, w.wifi] }
+dialogues:
+  - id: a2.u12.d1
+    title: "À la réception de l'hôtel"
+    context: "Sophie arrives at a hotel near the château of Chambord late in the evening."
+    lines:
+      - { speaker: Réceptionniste, es: "Bonsoir, madame. Je peux vous aider ?", en: "Good evening, madam. Can I help you?" }
+      - { speaker: Sophie, es: "Bonsoir. J'ai réservé une chambre double au nom de Martin.", en: "Good evening. I booked a double room in the name of Martin." }
+      - { speaker: Réceptionniste, es: "Oui, pour deux nuits. Pourriez-vous remplir cette fiche, s'il vous plaît ?", en: "Yes, for two nights. Could you fill in this form, please?" }
+      - { speaker: Sophie, es: "Bien sûr. Est-ce qu'il serait possible d'avoir une chambre avec vue sur le château ?", en: "Of course. Would it be possible to have a room with a view of the château?" }
+      - { speaker: Réceptionniste, es: "Je suis désolé, elles sont toutes occupées. Mais votre chambre donne sur la forêt, c'est très calme.", en: "I'm sorry, they're all taken. But your room looks onto the forest, it's very quiet." }
+      - { speaker: Sophie, es: "Ce n'est rien. Le petit-déjeuner est compris ?", en: "That's fine. Is breakfast included?" }
+      - { speaker: Réceptionniste, es: "Oui, de sept heures à dix heures, au rez-de-chaussée. Voici votre clé et le mot de passe du wifi.", en: "Yes, from seven to ten, on the ground floor. Here's your key and the wifi password." }
+      - { speaker: Sophie, es: "Merci. Et demain, j'aimerais visiter le château tôt. À quelle heure ouvre-t-il ?", en: "Thank you. And tomorrow I'd like to visit the château early. What time does it open?" }
+      - { speaker: Réceptionniste, es: "À neuf heures. Je vous conseille d'essayer l'escalier de Léonard avant l'arrivée des groupes.", en: "At nine. I advise you to try Leonardo's staircase before the groups arrive." }
+      - { speaker: Sophie, es: "Parfait. Si j'ai un problème, il y a quelqu'un à la réception la nuit ?", en: "Perfect. If I have a problem, is there anyone at reception at night?" }
+      - { speaker: Réceptionniste, es: "Oui, quelqu'un est là jour et nuit. Bonne soirée, madame !", en: "Yes, someone is here day and night. Have a good evening, madam!" }
+    questions:
+      - { q: "Pour combien de nuits Sophie a-t-elle réservé ?", options: ["Une nuit", "Deux nuits", "Trois nuits"], answer: 1, explain: "The receptionist says: Oui, pour deux nuits." }
+      - { q: "Pourquoi Sophie n'a-t-elle pas de chambre avec vue sur le château ?", options: ["Elles sont toutes occupées", "Elles sont trop chères", "Elle n'a pas demandé"], answer: 0, explain: "Elles sont toutes occupées: all those rooms are taken." }
+      - { q: "Où est servi le petit-déjeuner ?", options: ["Dans la chambre", "Au rez-de-chaussée", "Au château"], answer: 1, explain: "Breakfast is served on the ground floor from seven to ten." }
+      - { q: "Qu'est-ce que le réceptionniste conseille à Sophie ?", options: ["De dormir tard", "D'aller à la piscine", "D'essayer l'escalier avant l'arrivée des groupes"], answer: 2, explain: "Je vous conseille d'essayer l'escalier de Léonard avant l'arrivée des groupes." }
