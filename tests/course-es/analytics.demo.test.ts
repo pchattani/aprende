@@ -5,7 +5,7 @@ import { levels, vocab, grammar } from '@/engine/loader'
 import { computeInsights, courseSummary, type CourseMeta } from '@/engine/analytics'
 
 // The demo's thresholds are calibrated on the Spanish course in UTC (day boundaries are local time).
-process.env.TZ = 'UTC'
+;(globalThis as unknown as { process: { env: Record<string, string | undefined> } }).process.env.TZ = 'UTC'
 const NOW = Date.UTC(2026, 9, 16, 20, 0)
 
 function meta(): CourseMeta {
