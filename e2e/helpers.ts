@@ -28,7 +28,8 @@ export async function enableTestHook(page: Page) {
 }
 
 export async function readHook(page: Page): Promise<Hook> {
-  await page.waitForFunction(() => Boolean((window as unknown as { __aprende?: Hook }).__aprende))
+  // Wait for a live exercise: a finished session leaves its hook behind (with no exercise) until the next runner starts.
+  await page.waitForFunction(() => Boolean((window as unknown as { __aprende?: Hook }).__aprende?.exercise))
   return page.evaluate(() => (window as unknown as { __aprende: Hook }).__aprende)
 }
 

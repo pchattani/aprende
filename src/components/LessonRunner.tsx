@@ -170,6 +170,13 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
       /* ignore */
     }
   }, [ex, s.index, total, s.finished])
+  // A closed session must not leave a stale hook for the next screen.
+  useEffect(
+    () => () => {
+      delete (window as unknown as { __aprende?: unknown }).__aprende
+    },
+    [],
+  )
 
   if (!ex) return null
   const autoSubmit = ex.kind === 'match' || ex.kind === 'speak'
