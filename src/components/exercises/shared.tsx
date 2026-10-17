@@ -3,6 +3,9 @@ import type { Answer } from '../../engine/grade'
 import { tlOf } from '../../engine/course'
 import { MaybeTarget } from '../ui/TargetText'
 import { DogStamp } from '../art/DogStamp'
+import { useContext } from 'react'
+import { DogReactionContext } from '../game/reaction'
+import { ACTS, useActs } from '../game/useActs'
 
 export interface ExerciseProps<E extends Exercise = Exercise> {
   exercise: E
@@ -24,12 +27,20 @@ export function Prompt({ children, lang = 'es' }: { children: React.ReactNode; l
 
 const DOGS = ['leo', 'bonchita', 'luna'] as const
 
-/** A dog says the prompt: its portrait in a postage stamp, the words on a slip of paper beside it. Which dog depends on the text. */
+/**
+ * A dog says the prompt: its portrait in a postage stamp, the words on a slip of paper beside it.
+ * In a lesson the dogs take turns (the runner's DogReactionContext) and act: the dog says the prompt,
+ * looks up while you think, cheers a right answer and droops briefly at a wrong one. Outside a runner
+ * the dog depends on the text.
+ */
 export function DogSays({ seed, children, aside }: { seed: string; children: React.ReactNode; aside?: React.ReactNode }) {
-  const dog = DOGS[[...seed].reduce((a, c) => a + c.charCodeAt(0), 0) % DOGS.length]!
+  const reaction = useContext(DogReactionContext)
+  const dog = reaction?.dog ?? DOGS[[...seed].reduce((a, c) => a + c.charCodeAt(0), 0) % DOGS.length]!
+  const verdict = reaction?.verdict
+  const act = useActs(verdict === undefined ? ACTS.ask : verdict === 'wrong' ? ACTS.stampWrong : ACTS.stampCorrect, `${dog}|${verdict ?? 'ask'}`)
   return (
     <div className="mb-6 flex items-center gap-3">
-      <span className="shrink-0" aria-hidden="true"><DogStamp dog={dog} size={78} tilt={-4} /></span>
+      <span className="shrink-0" aria-hidden="true" data-dog={dog} data-act={reaction ? act : undefined}><DogStamp dog={dog} size={78} tilt={-4} act={reaction ? act : undefined} /></span>
       <div className="relative flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-line bg-card px-4 py-3 shadow-card">
         <span className="absolute -left-[7px] top-1/2 h-3 w-3 -translate-y-1/2 rotate-45 border-b border-l border-line bg-card" aria-hidden="true" />
         {aside}

@@ -91,6 +91,23 @@ export const UiSchema = z.object({
   quests: z.record(z.string(), z.string()),
   dogLines: z.object({ leo: z.array(z.string()).min(3), bonchita: z.array(z.string()).min(3), luna: z.array(z.string()).min(3) }),
   unitStickers: z.record(z.string(), z.string()).default({}),
+  /** In-lesson game feel: what the companion dog says, and the streak banners. `{n}` is the count. */
+  game: z
+    .object({
+      /** The companion dog's reaction to a right answer. */
+      correct: z.array(z.string()).min(1).default(['Nice!', 'Yes!', 'Great!', 'Woof!']),
+      almost: z.array(z.string()).min(1).default(['Almost!', 'So close!']),
+      wrong: z.array(z.string()).min(1).default(['Nearly!', 'Next time!', 'Keep going!']),
+      /** Streak banners at 3, 5 and 10 answers in a row. */
+      combo: z.array(z.string()).length(3).default(['On a roll!', 'Unstoppable!', 'Amazing!']),
+      inARow: z.string().includes('{n}').default('{n} in a row'),
+      halfway: z.string().default('Halfway!'),
+      lastOne: z.string().default('Last one!'),
+      letsGo: z.string().default("Let's go!"),
+    })
+    .prefault({}),
+  /** The coins of the game, named after the country's money (pesos, reais, euros, 蚊). `plural` defaults to `name`. */
+  currency: z.object({ name: z.string(), plural: z.string().optional(), symbol: z.string() }).default({ name: 'coin', plural: 'coins', symbol: '¢' }),
 })
 export type Ui = z.infer<typeof UiSchema>
 

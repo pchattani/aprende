@@ -4,6 +4,8 @@ import { SETTINGS_KEY } from '../engine/course'
 
 export interface Settings {
   sound: boolean
+  /** Light haptic taps on answers (phones that support it). */
+  vibration: boolean
   ttsRate: number
   voiceURI?: string
   /** Kept for older saved settings; `speaking` is the source of truth. */
@@ -22,6 +24,7 @@ export interface Settings {
   /** Modo picante: cheeky, flirty sentences mixed into lessons. */
   spicy: boolean
   setSound: (v: boolean) => void
+  setVibration: (v: boolean) => void
   setTtsRate: (v: number) => void
   setVoice: (v?: string) => void
   setSpeech: (v: boolean) => void
@@ -41,6 +44,7 @@ export const useSettings = create<Settings>()(
   persist(
     (set) => ({
       sound: true,
+      vibration: true,
       ttsRate: 0.95,
       voiceURI: undefined,
       speech: true,
@@ -53,6 +57,7 @@ export const useSettings = create<Settings>()(
       autoPin: true,
       spicy: false,
       setSound: (sound) => set({ sound }),
+      setVibration: (vibration) => set({ vibration }),
       setTtsRate: (ttsRate) => set({ ttsRate }),
       setVoice: (voiceURI) => set({ voiceURI }),
       setSpeech: (speech) => set({ speech, speaking: speech ? 'some' : 'off' }),

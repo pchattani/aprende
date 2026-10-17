@@ -1,7 +1,6 @@
 /**
- * The painted portraits of Leo, Bonchita and Luna: acrylic pet portraits with a white sticker
- * border (Leo's and Bonchita's are the owner's canvases; Luna's is painted to match), and where
- * their features are, so worn souvenirs, stamps and avatars line up with each portrait.
+ * The illustrated portraits of Leo, Bonchita and Luna (from the owner's reference illustration of
+ * the three dogs), and where their features are, so worn souvenirs, stamps and avatars line up with each portrait.
  *
  * Feature points are fractions of the image (x of its width, y of its height); `place` fits the
  * portrait in the shared 120×120 box, centred on the face, bottom at y = 114.
@@ -31,28 +30,31 @@ interface Portrait {
   neck: Pt
   neckW: number
   chest: Pt
-  /** Beside the portrait, where a held item stands. */
+  /** Where the dog holds an item up in its front paws (in front of the chest). */
   paw: Pt
+  /** Coat colours for the paws drawn around a held item. */
+  fur: string
+  furDark: string
 }
 
 export const PORTRAITS: Record<PortraitDog, Portrait> = {
   leo: {
-    src: leoUrl, aspect: 442 / 560, height: 104,
-    eyes: [[0.29, 0.32], [0.62, 0.41]], nose: [0.38, 0.5], mouth: [0.36, 0.6],
-    hat: [0.44, 0.1], hatW: 0.56, ear: [0.8, 0.16],
-    neck: [0.43, 0.8], neckW: 0.5, chest: [0.43, 0.9], paw: [1.05, 0.98],
+    src: leoUrl, aspect: 596 / 560, height: 100, fur: '#e3b56c', furDark: '#a8763a',
+    eyes: [[0.38, 0.36], [0.66, 0.31]], nose: [0.555, 0.5], mouth: [0.56, 0.62],
+    hat: [0.5, 0.07], hatW: 0.5, ear: [0.86, 0.12],
+    neck: [0.55, 0.8], neckW: 0.5, chest: [0.55, 0.9], paw: [0.55, 0.9],
   },
   bonchita: {
-    src: bonchitaUrl, aspect: 621 / 560, height: 98,
-    eyes: [[0.345, 0.355], [0.635, 0.39]], nose: [0.47, 0.52], mouth: [0.47, 0.62],
-    hat: [0.5, 0.14], hatW: 0.5, ear: [0.8, 0.16],
-    neck: [0.5, 0.86], neckW: 0.46, chest: [0.66, 0.9], paw: [1.02, 0.98],
+    src: bonchitaUrl, aspect: 500 / 560, height: 102, fur: '#3a3436', furDark: '#151213',
+    eyes: [[0.4, 0.27], [0.69, 0.31]], nose: [0.53, 0.45], mouth: [0.53, 0.57],
+    hat: [0.53, 0.05], hatW: 0.5, ear: [0.86, 0.08],
+    neck: [0.53, 0.72], neckW: 0.52, chest: [0.53, 0.84], paw: [0.53, 0.86],
   },
   luna: {
-    src: lunaUrl, aspect: 582 / 560, height: 102,
-    eyes: [[0.32, 0.3], [0.555, 0.32]], nose: [0.455, 0.55], mouth: [0.455, 0.63],
-    hat: [0.43, 0.08], hatW: 0.5, ear: [0.7, 0.12],
-    neck: [0.46, 0.79], neckW: 0.44, chest: [0.46, 0.89], paw: [1.02, 0.98],
+    src: lunaUrl, aspect: 334 / 560, height: 108, fur: '#f3e4c8', furDark: '#c9a874',
+    eyes: [[0.2, 0.3], [0.58, 0.29]], nose: [0.4, 0.42], mouth: [0.4, 0.52],
+    hat: [0.4, 0.04], hatW: 0.62, ear: [0.82, 0.12],
+    neck: [0.42, 0.63], neckW: 0.62, chest: [0.42, 0.75], paw: [0.42, 0.8],
   },
 }
 

@@ -12,15 +12,14 @@ import { TL } from '../../engine/course'
 import { DogFigure } from '../art/DogFigure'
 import { DogsTrio } from '../art/DogsTrio'
 import { PORTRAITS, place, at, headTilt } from '../art/dogPortraits'
-import { LEAN } from '../art/dogPose'
+import type { Act, Mood } from '../art/dogPose'
 import { SouvenirShape } from '../art/SouvenirArt'
 import { souvenirArt, parseWearId, HAT_FIT, EYE_FIT, NECK_FIT, BODY_KINDS, HIGH_KINDS, EAR_KINDS, MOUTH_TURN, PAW_SIZE } from '../art/souvenirKinds'
 
 export { DogStamp } from '../art/DogStamp'
 export { DogsTrio } from '../art/DogsTrio'
 
-type Mood = 'happy' | 'curious' | 'sleepy'
-type P = Omit<SVGProps<SVGSVGElement>, 'children'> & { size?: number; mood?: Mood; outfit?: Outfit }
+type P = Omit<SVGProps<SVGSVGElement>, 'children'> & { size?: number; mood?: Mood; outfit?: Outfit; act?: Act }
 
 /**
  * Where things are worn on each dog, in the 120×120 viewBox: the hat line (where a brim sits,
@@ -81,14 +80,13 @@ function wornItem(id: string): { kind?: ArtKind; color?: string; label: string; 
 const fit = (ax: number, ay: number, s: number, px: number, py: number, rot = 0, flip = 1) => `translate(${ax} ${ay}) rotate(${rot}) scale(${s * flip} ${s}) translate(${-px} ${-py})`
 
 /** One worn item, placed and scaled for this dog. Returns its layer (paint order) and drawing. */
-function placeItem(dog: DogName, slot: WearSlot, kind: ArtKind, color: string | undefined, mood: Mood): { layer: number; head: boolean; el: ReactNode } {
+function placeItem(dog: DogName, slot: WearSlot, kind: ArtKind, color: string | undefined): { layer: number; head: boolean; el: ReactNode } {
   const g = GEO[dog]
   const shape = (tf: string, worn = false) => (
     <g transform={tf}>
       <SouvenirShape kind={kind} color={color} worn={worn} />
     </g>
   )
-  void mood
   if (slot === 'hat') {
     const hf = HAT_FIT[kind]
     if (hf) return { layer: 5, head: true, el: shape(fit(g.hat.x, g.hat.y, g.hat.w / hf.w!, 24, hf.py, hf.rot)) }
@@ -105,8 +103,11 @@ function placeItem(dog: DogName, slot: WearSlot, kind: ArtKind, color: string | 
   }
   if (slot === 'mouth') return { layer: 3, head: true, el: shape(fit(g.mouth.x, g.mouth.y, g.mouth.w / 44, 24, 24, MOUTH_TURN[kind] ?? 0)) }
   if (slot === 'paw') {
-    if (HIGH_KINDS.has(kind)) return { layer: 2, head: false, el: shape(fit(g.paw.x - 2 * g.paw.side, g.paw.y - 8, 1.9, 16, 44, 0, g.paw.side), true) }
-    return { layer: 2, head: false, el: shape(fit(g.paw.x, g.paw.y, 0.56 * (PAW_SIZE[kind] ?? 1), 24, 44)) }
+    // held in the rig's front paws (DogRig draws the paws around it); tall things stand up from one paw
+    const spread = g.neck.w * 0.32
+    if (HIGH_KINDS.has(kind)) return { layer: 6, head: false, el: shape(fit(g.paw.x + spread, g.paw.y + 2, 1.7, 16, 44), true) }
+    const s = (g.neck.w / 50) * (PAW_SIZE[kind] ?? 1)
+    return { layer: 6, head: false, el: shape(fit(g.paw.x, g.paw.y - 4 * s, s, 24, 24)) }
   }
   // neck
   if (BODY_KINDS.has(kind)) return { layer: 0, head: false, el: shape(`translate(${g.body.x} ${g.body.y}) scale(${g.body.w / 40} ${g.body.h / 29}) translate(-24 -6)`, true) }
@@ -128,15 +129,16 @@ function placeItem(dog: DogName, slot: WearSlot, kind: ArtKind, color: string | 
   }
 }
 
-/** Drawn souvenirs worn in an outfit, fitted to the dog's head, eyes, neck, mouth and paw. */
-function Wearables({ dog, outfit, mood }: { dog: DogName; outfit?: Outfit; mood: Mood }) {
-  if (!outfit) return null
+/**
+ * Drawn souvenirs worn in an outfit, fitted to the dog's head, eyes, neck, mouth and paw, split by
+ * where they live in the rig: on the body (neck pieces), on the head (moving with it) or in front
+ * (held in the paws).
+ */
+function wearParts(dog: DogName, outfit?: Outfit): { body?: ReactNode; head?: ReactNode; front?: ReactNode; holding?: boolean } | undefined {
+  if (!outfit) return undefined
   const g = GEO[dog]
-  // the portrait leans as a whole for some moods (see art/dogArt.tsx), and hats, glasses and mouth
-  // items also follow the tilt of the painted head
-  const r = place(dog)
+  // hats, glasses and mouth items follow the tilt of the painted head
   const t = headTilt(dog)
-  const leanTf = `rotate(${LEAN[mood]} ${r.x + r.w / 2} ${r.y + r.h / 2})`
   const tiltTf = `rotate(${t.deg} ${t.cx} ${t.cy})`
   type Item = { slot: WearSlot; id: string; label: string; layer: number; head: boolean; el: ReactNode }
   const items = (Object.keys(outfit) as WearSlot[]).flatMap((slot): Item[] => {
@@ -152,33 +154,40 @@ function Wearables({ dog, outfit, mood }: { dog: DogName; outfit?: Outfit; mood:
       )
       return [{ slot, id, label: it.label, layer: 6, head: slot !== 'paw' && slot !== 'neck', el }]
     }
-    return [{ slot, id, label: it.label, ...placeItem(dog, slot, it.kind, it.color, mood) }]
+    return [{ slot, id, label: it.label, ...placeItem(dog, slot, it.kind, it.color) }]
   })
   items.sort((a, b) => a.layer - b.layer)
-  return (
-    <>
-      {items.map((it) => (
-        <g key={it.slot} data-wear={it.id} aria-label={it.label} transform={it.head ? `${leanTf} ${tiltTf}` : leanTf}>
-          {it.el}
-        </g>
-      ))}
-    </>
-  )
+  const node = (list: Item[], tf?: string) =>
+    list.length ? (
+      <>
+        {list.map((it) => (
+          <g key={it.slot} data-wear={it.id} aria-label={it.label} transform={tf}>
+            {it.el}
+          </g>
+        ))}
+      </>
+    ) : undefined
+  return {
+    body: node(items.filter((i) => i.slot === 'neck')),
+    head: node(items.filter((i) => i.head && i.slot !== 'paw'), tiltTf),
+    front: node(items.filter((i) => i.slot === 'paw')),
+    holding: items.some((i) => i.slot === 'paw'),
+  }
 }
 
 /** Leo: golden-tan Yorkie mix, long floppy ears with darker tips, fringe and beard, red harness with a blue tag. */
-export function Leo({ size = 96, mood = 'happy', outfit, ...rest }: P) {
-  return <DogFigure dog="leo" size={size} mood={mood} overlay={<Wearables dog="leo" outfit={outfit} mood={mood} />} {...rest} />
+export function Leo({ size = 96, mood = 'happy', outfit, act, ...rest }: P) {
+  return <DogFigure dog="leo" size={size} mood={mood} act={act} wear={wearParts('leo', outfit)} {...rest} />
 }
 
 /** Bonchita: small black scruffy dog with wiry fur, grey-white muzzle, big eyes under bushy brows, red harness. */
-export function Bonchita({ size = 96, mood = 'happy', outfit, ...rest }: P) {
-  return <DogFigure dog="bonchita" size={size} mood={mood} overlay={<Wearables dog="bonchita" outfit={outfit} mood={mood} />} {...rest} />
+export function Bonchita({ size = 96, mood = 'happy', outfit, act, ...rest }: P) {
+  return <DogFigure dog="bonchita" size={size} mood={mood} act={act} wear={wearParts('bonchita', outfit)} {...rest} />
 }
 
 /** Luna: cream curly powder-puff, dark button eyes, blue collar with a tag; she carries the map. */
-export function Luna({ size = 96, mood = 'happy', outfit, ...rest }: P) {
-  return <DogFigure dog="luna" size={size} mood={mood} overlay={<Wearables dog="luna" outfit={outfit} mood={mood} />} {...rest} />
+export function Luna({ size = 96, mood = 'happy', outfit, act, ...rest }: P) {
+  return <DogFigure dog="luna" size={size} mood={mood} act={act} wear={wearParts('luna', outfit)} {...rest} />
 }
 
 /** The three together, for welcome and celebration screens. */
@@ -192,8 +201,8 @@ export function DogsScene({ size = 220, mood = 'happy', className = '' }: { size
 
 const DOG_SVG: Record<DogName, (p: P) => React.ReactElement> = { leo: Leo, bonchita: Bonchita, luna: Luna }
 
-/** A tappable dog: bounces and says a short line. Shows its outfit when given one. */
-export function DogButton({ dog, size = 48, mood, outfit, className = '', onClick }: { dog: DogName; size?: number; mood?: Mood; outfit?: Outfit; className?: string; onClick?: () => void }) {
+/** A tappable dog: hops with joy and says a short line. Shows its outfit when given one. */
+export function DogButton({ dog, size = 48, mood, act, outfit, className = '', onClick }: { dog: DogName; size?: number; mood?: Mood; act?: Act; outfit?: Outfit; className?: string; onClick?: () => void }) {
   const { say } = useSpeak()
   const [bounce, setBounce] = useState(false)
   const [line, setLine] = useState<string | undefined>()
@@ -204,13 +213,13 @@ export function DogButton({ dog, size = 48, mood, outfit, className = '', onClic
     setLine(l)
     setBounce(true)
     void say(l)
-    setTimeout(() => setBounce(false), 450)
+    setTimeout(() => setBounce(false), 1600)
     setTimeout(() => setLine(undefined), 1800)
     onClick?.()
   }
   return (
     <button type="button" onClick={tap} className={`relative inline-flex rounded-full ${className}`} aria-label={`${DOG_NAMES[dog]} says hello`}>
-      <Svg size={size} mood={mood} outfit={outfit} className={bounce ? 'animate-pop' : ''} />
+      <Svg size={size} mood={mood} outfit={outfit} act={bounce ? 'cheer' : act} />
       {line && (
         <span className="pointer-events-none absolute -top-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-surface px-2 py-0.5 text-[10px] font-extrabold shadow-card" lang={TL} aria-live="polite">
           {line}

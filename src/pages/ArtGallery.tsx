@@ -1,5 +1,6 @@
 /** Dev gallery of the illustrations (dogs, postcards, logo). Reached at #/art. */
 import type { ReactNode } from 'react'
+import type { Act } from '../components/art/dogPose'
 import { Leo, Bonchita, Luna, DogStamp, DogsTrio } from '../components/ui/Dogs'
 import { PaintedScene } from '../components/art/PaintedScene'
 import { PostcardFrame, Postcard, Postmark, MiniStamp } from '../components/art/PostcardFrame'
@@ -55,6 +56,8 @@ const SOUVENIR_OUTFITS: { label: string; outfit: Outfit }[] = [
   { label: 'feather · necklace · dumpling', outfit: dress({ hat: 'wear-feather', neck: 'wear-necklace', mouth: 'wear-dumpling', paw: 'wear-drum' }) },
 ]
 
+const ACTS: Act[] = ['idle', 'talk', 'cheer', 'sad', 'curious', 'think', 'sleepy', 'walk', 'wave']
+
 function Section({ title, shot, children, note }: { title: string; shot: string; children: ReactNode; note?: string }) {
   return (
     <section data-shot={shot} className="rounded-2xl p-4" style={{ background: 'var(--paper)' }}>
@@ -105,6 +108,19 @@ export default function ArtGallery() {
             <Label>icon-192</Label>
           </div>
         </div>
+      </Section>
+
+      <Section title="Characters" shot="acts" note="Each dog is a rig: idle (breathing, blinking), talk, cheer, sad, curious, think, sleepy, walk and wave.">
+        {DOGS.map((D, i) => (
+          <div key={i} data-shot={`acts${i}`} className="mb-4 flex flex-wrap items-end gap-3">
+            {ACTS.map((a) => (
+              <div key={a} className="text-center">
+                <D size={130} act={a} />
+                <Label>{a}</Label>
+              </div>
+            ))}
+          </div>
+        ))}
       </Section>
 
       <Section title="Dogs" shot="dogs" note="Moods happy / curious / sleepy at 240, 96 and 40px. Filters and fur texture switch off below 64px.">

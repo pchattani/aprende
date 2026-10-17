@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { SouvenirIcon } from '../components/art/SouvenirArt'
 import { useNavigate, useParams, Link } from 'react-router'
 import type { Unit } from '../engine/schema'
 import { loadUnit, levels, units, vocab, vocabUpTo, levelOf, unitIsAuthored } from '../engine/loader'
 import { buildCheckpoint, checkpointSeed, CHECKPOINT_PASS, CHECKPOINT_PARTS, type CheckpointExercise, type CheckpointPart, type CheckpointRecord } from '../engine/checkpoint'
-import { getKv, setKv, ownedSouvenirs, awardSouvenir } from '../db/progress'
+import { getKv, setKv, ownedSouvenirs, awardSouvenir, awardCoins } from '../db/progress'
+import { checkpointCoins } from '../engine/economy'
+import { ChestReveal } from '../components/rewards/ChestReveal'
+import { CoinChip, CoinAmount } from '../components/rewards/Coin'
 import { pickReward } from '../engine/quests'
 import { stopFor, type Souvenir } from '../engine/journey'
 import { todayKey } from '../engine/mastery'
@@ -29,6 +31,8 @@ interface Outcome {
   best: number
   souvenir?: Souvenir
   firstPass: boolean
+  /** Coins paid for this pass (0 for a fail). */
+  coins: number
 }
 type Phase =
   | { kind: 'loading' }
@@ -122,8 +126,10 @@ export default function CheckpointPage() {
       const reward = pickReward(level, await ownedSouvenirs(), hashString(`checkpoint:${unitId}`))
       if (reward && (await awardSouvenir(reward.id, 'checkpoint', unitId))) souvenir = reward
     }
+    const coins = checkpointCoins(passed, firstPass)
+    if (coins) await awardCoins(coins, `checkpoint:${unitId}`)
     if (passed) playSound('finish')
-    setPhase({ kind: 'done', outcome: { score, ok, total, parts, passed, best: record.best, souvenir, firstPass } })
+    setPhase({ kind: 'done', outcome: { score, ok, total, parts, passed, best: record.best, souvenir, firstPass, coins } })
   }
 
   if (phase.kind === 'loading') return <div className="p-6 text-center text-muted">Preparing your checkpoint…</div>
@@ -200,7 +206,10 @@ export default function CheckpointPage() {
   return (
     <div className={`lvl-${level} animate-rise mx-auto flex min-h-full max-w-xl flex-col px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-[calc(1.5rem+env(safe-area-inset-top))]`}>
       {o.passed && <Confetti />}
-      <p className="eyebrow text-center">Checkpoint · {stopName}</p>
+      <div className="mx-auto flex w-full max-w-sm items-center justify-between gap-2">
+        <p className="eyebrow">Checkpoint · {stopName}</p>
+        <CoinChip size="sm" />
+      </div>
       <div className="relative mx-auto mt-4 w-full max-w-sm rounded-2xl border border-line bg-card px-5 pb-6 pt-5 text-center shadow-card">
         <p className="eyebrow">Your score</p>
         <p className="mt-1 font-mono text-[3.4rem] leading-none" aria-label={`Score ${pct(o.score)}`}>
@@ -233,15 +242,12 @@ export default function CheckpointPage() {
         {o.passed ? (o.firstPass ? ' · first time cleared' : ' · cleared again') : ' · go over the lessons and try another version'}
       </p>
 
-      {o.souvenir && (
-        <div className="animate-pop mx-auto mt-4 flex w-full max-w-sm items-center gap-3 rounded-2xl border border-line bg-card p-3 shadow-card">
-          <span className="stamp p-1" aria-hidden="true"><SouvenirIcon souvenir={o.souvenir} size={44} /></span>
-          <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold">Souvenir: {o.souvenir.es}</p>
-            <p className="text-xs text-ink-2">{o.souvenir.blurb} Added to your passport.</p>
-          </div>
-        </div>
+      {o.coins > 0 && (
+        <p className="animate-pop mx-auto mt-3 flex w-full max-w-sm items-center justify-center gap-2 rounded-2xl border border-dashed border-line py-2 text-sm">
+          {o.firstPass ? 'First clear purse' : 'Cleared again'} <CoinAmount amount={o.coins} size={20} className="text-[#b07a0c] dark:text-sun" />
+        </p>
       )}
+      {o.souvenir && <ChestReveal className="animate-rise mx-auto mt-4 w-full max-w-sm" reward={{ kind: 'souvenir', souvenir: o.souvenir }} label="Checkpoint reward" />}
 
       <div className="mx-auto mt-auto grid w-full max-w-sm gap-3 pt-8">
         <Button variant="ghost" onClick={() => setPhase({ kind: 'loading' })}>Try another version</Button>

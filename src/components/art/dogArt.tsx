@@ -1,40 +1,41 @@
 /**
- * Leo, Bonchita and Luna as painted portraits (acrylic pet portraits with a white sticker border;
- * see dogPortraits.ts). Each is an SVG <g> in a 120×120 box, so stamps, the trio scene and worn
- * souvenirs keep working in the same coordinates.
+ * Leo, Bonchita and Luna as animated characters: each portrait is a puppet (art/DogRig.tsx) that
+ * breathes, blinks and acts (cheer, talk, walk, wave, curious, sad, sleepy) in the shared 120×120
+ * box, so stamps, the trio scene and worn souvenirs keep working in the same coordinates.
  */
 import type { ReactNode } from 'react'
-import { LEAN, type Mood } from './dogPose'
-import { PORTRAITS, place, type PortraitDog } from './dogPortraits'
+import { MOOD_ACT, type Act, type Mood } from './dogPose'
+import { DogRig } from './DogRig'
+import type { PortraitDog } from './dogPortraits'
 
-export type { Mood }
+export type { Mood, Act }
 export interface DogArtProps {
   /** Unique id prefix (kept for the shared API). */
   id: string
   mood: Mood
-  /** Full detail; the portraits look the same at every size. */
+  /** Full detail; the rig looks the same at every size. */
   hi: boolean
-  /** A little hop (waving). */
+  /** Raise a paw and wave. */
   wave?: boolean
+  /** What the dog is doing; defaults from the mood. */
+  act?: Act
+  bodyOverlay?: ReactNode
+  headOverlay?: ReactNode
+  frontOverlay?: ReactNode
+  holding?: boolean
 }
 
-function Portrait({ dog, mood, wave }: { dog: PortraitDog; mood: Mood; wave?: boolean }) {
-  const r = place(dog)
-  const cx = r.x + r.w / 2
-  const cy = r.y + r.h / 2
-  return (
-    <g transform={`rotate(${LEAN[mood]} ${cx} ${cy})${wave ? ' translate(0 -2)' : ''}`}>
-      <image href={PORTRAITS[dog].src} x={r.x} y={r.y} width={r.w} height={r.h} preserveAspectRatio="none" style={{ filter: 'drop-shadow(0 1.2px 1.4px rgba(40,28,20,0.28))' }} />
-    </g>
-  )
+type Props = DogArtProps & { dog: PortraitDog }
+function Art({ dog, mood, wave, act, bodyOverlay, headOverlay, frontOverlay, holding }: Props): ReactNode {
+  return <DogRig dog={dog} act={act ?? (wave ? 'wave' : MOOD_ACT[mood])} bodyOverlay={bodyOverlay} headOverlay={headOverlay} frontOverlay={frontOverlay} holding={holding} />
 }
 
-export function LeoArt({ mood, wave }: DogArtProps): ReactNode {
-  return <Portrait dog="leo" mood={mood} wave={wave} />
+export function LeoArt(p: DogArtProps): ReactNode {
+  return <Art dog="leo" {...p} />
 }
-export function BonchitaArt({ mood, wave }: DogArtProps): ReactNode {
-  return <Portrait dog="bonchita" mood={mood} wave={wave} />
+export function BonchitaArt(p: DogArtProps): ReactNode {
+  return <Art dog="bonchita" {...p} />
 }
-export function LunaArt({ mood, wave }: DogArtProps): ReactNode {
-  return <Portrait dog="luna" mood={mood} wave={wave} />
+export function LunaArt(p: DogArtProps): ReactNode {
+  return <Art dog="luna" {...p} />
 }

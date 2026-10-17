@@ -67,6 +67,7 @@ export default function Settings() {
       </Section>
       <Section title="Sound and voice">
         <Toggle label="Sounds" hint="Feedback sounds and audio." checked={s.sound} onChange={s.setSound} />
+        <Toggle label="Vibration" hint="A light buzz on right answers and streaks, on phones that support it." checked={s.vibration} onChange={s.setVibration} />
         <Range label={`Speech rate: ${s.ttsRate.toFixed(2)}× · slow button ${(s.ttsRate * 0.5).toFixed(2)}×, word by word`} min={0.4} max={1.3} step={0.05} value={s.ttsRate} onChange={s.setTtsRate} />
         {ttsSupported() ? (
           <>

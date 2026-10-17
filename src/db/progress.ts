@@ -252,3 +252,64 @@ export async function claimQuest(date: string, questId: string, rewardId: string
   await db.quests.put({ id, date, questId, claimedAt: now, rewardId })
   if (rewardId) await awardSouvenir(rewardId, 'quest', undefined, now)
 }
+
+// ---- coins: the game's currency (engine/economy.ts). The balance and a short ledger live in kv,
+// so exportAll/importAll carry them with every other kv row.
+export const COINS_KEY = 'coins'
+export const COIN_LOG_KEY = 'coinLog'
+const COIN_LOG_MAX = 50
+export interface CoinEntry {
+  ts: number
+  amount: number
+  reason: string
+}
+
+export async function coinBalance(): Promise<number> {
+  return getKv<number>(COINS_KEY, 0)
+}
+
+async function moveCoins(amount: number, reason: string, now: number): Promise<number> {
+  const balance = Math.max(0, (await coinBalance()) + amount)
+  const log = await getKv<CoinEntry[]>(COIN_LOG_KEY, [])
+  await setKv(COINS_KEY, balance)
+  await setKv(COIN_LOG_KEY, [{ ts: now, amount, reason }, ...log].slice(0, COIN_LOG_MAX))
+  return balance
+}
+
+/** Add coins (lesson, checkpoint, errand, streak, level-up…). Returns the new balance. */
+export async function awardCoins(amount: number, reason: string, now = Date.now()): Promise<number> {
+  const n = Math.round(amount)
+  if (!(n > 0)) return coinBalance()
+  return db.transaction('rw', db.kv, async () => await moveCoins(n, reason, now))
+}
+
+/**
+ * Buy a souvenir with coins: one transaction, so a double tap or a second tab can't pay twice.
+ * 'short' when the balance doesn't cover the price, 'owned' when it is already in the passport.
+ */
+export async function buySouvenir(id: string, price: number, now = Date.now()): Promise<'ok' | 'owned' | 'short'> {
+  return db.transaction('rw', db.kv, db.souvenirs, async () => {
+    if (await db.souvenirs.get(id)) return 'owned'
+    if ((await coinBalance()) < price) return 'short'
+    await moveCoins(-price, `shop:${id}`, now)
+    await db.souvenirs.add({ id, ts: now, source: 'shop' })
+    return 'ok'
+  })
+}
+
+/** Pay a streak milestone bonus at most once a day. Returns the coins paid (0 when none is due). */
+export async function payStreakMilestone(days: number, coins: number, date: string, now = Date.now()): Promise<number> {
+  if (!(coins > 0)) return 0
+  return db.transaction('rw', db.kv, async () => {
+    const key = `coinStreak:${date}`
+    if (await getKv(key, false)) return 0
+    await setKv(key, true)
+    await moveCoins(coins, `streak:${days}`, now)
+    return coins
+  })
+}
+
+/** Total distance travelled (km): the sum of every day's XP. */
+export async function totalKm(): Promise<number> {
+  return (await db.days.toArray()).reduce((s, d) => s + d.xp, 0)
+}

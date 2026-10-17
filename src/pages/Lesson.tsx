@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { SouvenirIcon } from '../components/art/SouvenirArt'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams, Link } from 'react-router'
 import type { Lesson, Unit } from '../engine/schema'
 import type { Exercise, LessonResult, Stage } from '../engine/types'
@@ -16,27 +15,48 @@ import { GuidebookBody, GuidebookSheet } from '../components/Guidebook'
 import { hasGuidebook } from '../engine/guidebook'
 import { StampCard } from '../components/StampCard'
 import { Button } from '../components/ui/basics'
-import { IconArrowLeft, IconPaw, IconBook } from '../components/ui/icons'
+import { IconArrowLeft, IconPaw, IconBook, IconCheck, IconRoute } from '../components/ui/icons'
 import { StopArt } from '../components/StopArt'
 import { Confetti } from '../components/ui/Confetti'
 import { CHEERS } from '../engine/stickers'
 import { surpriseFind, pickReward } from '../engine/quests'
-import { ownedSouvenirs, awardSouvenir } from '../db/progress'
+import { ownedSouvenirs, awardSouvenir, totalKm, coinBalance, awardCoins, payStreakMilestone, streak } from '../db/progress'
 import { todayKey, streakFrom } from '../engine/mastery'
 import { xpFor } from '../engine/xp'
 import { useDays } from '../hooks/useProgress'
 import { hashString } from '../engine/random'
+import { lessonCoins, streakMilestoneCoins, levelUpCoins, CURRENCY, type LessonCoins } from '../engine/economy'
+import { travellerLevel, levelsCrossed, kmForLevel, titleUnlockedAt } from '../engine/traveller'
+import { CoinChip, CoinIcon } from '../components/rewards/Coin'
+import { useCoinFlight, useCountTo, prefersReducedMotion } from '../components/rewards/motion'
+import { LevelBadge, LevelBar } from '../components/rewards/Level'
+import { LevelUp } from '../components/rewards/LevelUp'
+import { ChestReveal } from '../components/rewards/ChestReveal'
+import { playReward } from '../components/rewards/sfx'
 import { DogButton } from '../components/ui/Dogs'
 import { useOutfits } from '../hooks/useOutfits'
 import { isStamped, stopFor, type Souvenir, type Stop, type Region } from '../engine/journey'
 import { lookupForm } from '../hooks/useDeps'
 import { playSound } from '../engine/sounds'
 
+/** What the lesson paid out, for the staged tally on the results screen (already saved when it shows). */
+interface DoneReward {
+  kmBefore: number
+  kmAfter: number
+  coinsBefore: number
+  lesson: LessonCoins
+  /** Streak milestone bonus paid today (0 when none) and the days on the road. */
+  streak: number
+  streakDays: number
+  /** Travel fund for the level(s) reached. */
+  levelCoins: number
+}
+
 type Phase =
   | { kind: 'loading' }
   | { kind: 'teach'; unit: Unit; lesson: Lesson; exercises: Exercise[] }
   | { kind: 'run'; unit: Unit; lesson: Lesson; exercises: Exercise[] }
-  | { kind: 'done'; lesson: Lesson; result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region } }
+  | { kind: 'done'; lesson: Lesson; result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; reward: DoneReward }
   | { kind: 'error'; message: string }
 
 export default function LessonPage() {
@@ -132,8 +152,24 @@ export default function LessonPage() {
         }}
         onFinish={async (result) => {
           saveSession(phase.exercises)
+          const kmBefore = await totalKm()
+          const coinsBefore = await coinBalance()
           await recordLesson(result, phase.unit.id, levelOf(id))
           if (result.completed) playSound('finish')
+          // Coins: the lesson's purse, a streak milestone (once a day) and the travel fund of any level reached.
+          const kmAfter = await totalKm()
+          const coins = lessonCoins(result)
+          if (coins.total) await awardCoins(coins.total, `lesson:${id}`)
+          let streakBonus = 0
+          let streakDays = 0
+          if (result.completed) {
+            streakDays = (await streak()).current
+            streakBonus = await payStreakMilestone(streakDays, streakMilestoneCoins(streakDays), todayKey())
+          }
+          const crossed = levelsCrossed(kmBefore, kmAfter)
+          const levelCoins = crossed.reduce((n, l) => n + levelUpCoins(l), 0)
+          if (levelCoins) await awardCoins(levelCoins, `level:${crossed.at(-1)}`)
+          const reward: DoneReward = { kmBefore, kmAfter, coinsBefore, lesson: coins, streak: streakBonus, streakDays, levelCoins }
           let found: Souvenir | undefined
           const accuracy = result.total ? (result.correct + result.almost) / result.total : 0
           if (result.completed && surpriseFind(id, todayKey(), accuracy)) {
@@ -153,7 +189,7 @@ export default function LessonPage() {
             }
           }
           setGuideOpen(false)
-          setPhase({ kind: 'done', lesson: phase.lesson, result, found, stamp })
+          setPhase({ kind: 'done', lesson: phase.lesson, result, found, stamp, reward })
         }}
       />
       </>
@@ -161,7 +197,7 @@ export default function LessonPage() {
   return (
     <>
       {guide}
-      <DoneScreen result={phase.result} found={phase.found} stamp={phase.stamp} where={stopFor(id.split('.').slice(0, 2).join('.'))} onHome={goHome} onRetry={() => setPhase({ kind: 'loading' })} onGuide={hasGuidebook(phase.lesson) ? () => setGuideOpen(true) : undefined} />
+      <DoneScreen result={phase.result} found={phase.found} stamp={phase.stamp} reward={phase.reward} where={stopFor(id.split('.').slice(0, 2).join('.'))} onHome={goHome} onRetry={() => setPhase({ kind: 'loading' })} onGuide={hasGuidebook(phase.lesson) ? () => setGuideOpen(true) : undefined} />
     </>
   )
 }
@@ -190,22 +226,109 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
   )
 }
 
-function DoneScreen({ result, found, stamp, where, onHome, onRetry, onGuide }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; where?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void; onGuide?: () => void }) {
+
+/** Stages of the results screen: the tally rows one by one, the coins, the level bar, then the chest. */
+const STAGE = { accuracy: 1, time: 2, km: 3, coins: 4, level: 5, chest: 6 } as const
+const STAGE_DELAY: Record<number, number> = { 0: 450, 1: 520, 2: 380, 3: 650 }
+
+function DoneScreen({ result, found, stamp, reward, where, onHome, onRetry, onGuide }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; reward: DoneReward; where?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void; onGuide?: () => void }) {
   const acc = result.total ? Math.round(((result.correct + result.almost) / result.total) * 100) : 0
   const minutes = Math.floor(result.durationMs / 60000)
   const seconds = Math.round((result.durationMs % 60000) / 1000)
   const cheer = CHEERS[result.correct % CHEERS.length]!
-  const outfits = useOutfits()
   const days = useDays()
+  const outfits = useOutfits()
   const km = xpFor(result)
-  const shown = useCountUp(km)
   const road = days ? streakFrom(days.filter((d) => d.minutes > 0 || d.lessons > 0 || d.reviews > 0).map((d) => d.date), todayKey()).current : 0
   const perfect = result.completed && result.wrong === 0
   const [date] = useState(() => new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' }))
+
+  const [reduce] = useState(prefersReducedMotion)
+  const crossed = levelsCrossed(reward.kmBefore, reward.kmAfter)
+  const finalLevel = crossed.at(-1)
+  const earned = reward.lesson.total + reward.streak
+  const [stage, setStage] = useState<number>(reduce ? STAGE.chest : 0)
+  const [chip, setChip] = useState(reduce ? reward.coinsBefore + earned + reward.levelCoins : reward.coinsBefore)
+  const [barKm, setBarKm] = useState(reduce ? reward.kmAfter : reward.kmBefore)
+  const [levelOpen, setLevelOpen] = useState(reduce && finalLevel !== undefined)
+  const [levelShown, setLevelShown] = useState(reduce)
+  const barRef = useRef(barKm)
+  const chipRef = useRef<HTMLSpanElement>(null)
+  const coinRow = useRef<HTMLDivElement>(null)
+  const { launch, layer } = useCoinFlight()
+
+  const shownAcc = useCountTo(acc, { from: 0, active: stage >= STAGE.accuracy, duration: 650 })
+  const shownKm = useCountTo(km, { from: 0, active: stage >= STAGE.km, duration: 700 })
+  const shownCoins = useCountTo(earned, { from: 0, active: stage >= STAGE.coins, duration: 650 })
+
+  // The timed tally rows.
+  useEffect(() => {
+    const delay = STAGE_DELAY[stage]
+    if (delay === undefined) return
+    const t = setTimeout(() => setStage((s) => s + 1), delay)
+    return () => clearTimeout(t)
+  }, [stage])
+
+  // Coins fly from the tally to the purse; the level bar starts once they land.
+  useEffect(() => {
+    if (stage !== STAGE.coins || reduce) return
+    if (earned <= 0) {
+      const t = setTimeout(() => setStage(STAGE.level), 250)
+      return () => clearTimeout(t)
+    }
+    let landed = 0
+    const n = Math.min(10, Math.max(3, Math.round(earned / 3)))
+    const t = setTimeout(() => {
+      launch(coinRow.current, chipRef.current, n, (last) => {
+        landed++
+        playReward('coin')
+        setChip(last ? reward.coinsBefore + earned : reward.coinsBefore + Math.round((earned * landed) / n))
+        if (last) setTimeout(() => setStage(STAGE.level), 250)
+      })
+    }, 350)
+    return () => clearTimeout(t)
+  }, [stage, reduce, earned, launch, reward.coinsBefore])
+
+  // The level bar fills; it pauses at a new level for the celebration, then goes on to the total.
+  useEffect(() => {
+    if (stage !== STAGE.level || levelOpen || reduce) return
+    const stopAt = finalLevel !== undefined && !levelShown ? kmForLevel(finalLevel) : reward.kmAfter
+    const start = barRef.current
+    const dur = Math.min(1300, Math.max(450, ((stopAt - start) / Math.max(1, travellerLevel(start).span)) * 1400))
+    let raf = 0
+    let t0 = -1
+    const tick = (t: number) => {
+      if (t0 < 0) t0 = t
+      const k = Math.min(1, (t - t0) / dur)
+      const v = start + (stopAt - start) * (1 - (1 - k) ** 2)
+      barRef.current = v
+      setBarKm(v)
+      if (k < 1) raf = requestAnimationFrame(tick)
+      else if (finalLevel !== undefined && !levelShown) setLevelOpen(true)
+      else setStage(STAGE.chest)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [stage, levelOpen, levelShown, finalLevel, reduce, reward.kmAfter])
+
+  const closeLevel = () => {
+    setLevelOpen(false)
+    setLevelShown(true)
+    if (!reduce) setChip((c) => c + reward.levelCoins)
+  }
+  const t = travellerLevel(barKm)
+  const newTitle = crossed.map(titleUnlockedAt).filter(Boolean).at(-1)
+  const on = (s: number) => (stage >= s ? 'tally-row is-on' : 'tally-row')
+
   return (
-    <div className="animate-rise mx-auto flex min-h-full max-w-xl flex-col px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-[calc(1.5rem+env(safe-area-inset-top))]">
+    <div className="animate-rise mx-auto flex min-h-full max-w-xl flex-col px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-[calc(1rem+env(safe-area-inset-top))]">
       {result.completed && <Confetti />}
-      <p className="eyebrow text-center">{result.completed ? 'Postcard mailed home' : 'Session saved'}</p>
+      {layer}
+      {levelOpen && finalLevel !== undefined && <LevelUp level={finalLevel} newTitle={newTitle} coins={reward.levelCoins} onClose={closeLevel} />}
+      <div className="mx-auto flex w-full max-w-sm items-center justify-between">
+        <p className="eyebrow">{result.completed ? 'Postcard mailed home' : 'Session saved'}</p>
+        <CoinChip ref={chipRef} value={chip} size="sm" />
+      </div>
       <div className="relative mx-auto mt-3 w-full max-w-sm rotate-[-1.5deg] rounded-[6px] border-[6px] border-card bg-card shadow-float">
         {where && <StopArt stop={where.stop} level={where.region.level} progress={result.completed ? 1 : 0.4} quality="full" lazy={false} className="animate-develop aspect-[3/2] w-full" />}
         <div className="pointer-events-none absolute -bottom-6 right-3 flex h-24 w-24 rotate-[-12deg] flex-col items-center justify-center rounded-full border-[2.5px] border-double text-center text-red" style={{ mixBlendMode: 'multiply' }} aria-hidden="true">
@@ -214,17 +337,56 @@ function DoneScreen({ result, found, stamp, where, onHome, onRetry, onGuide }: {
           <span className="font-mono text-[9px] uppercase tracking-widest">+{km} km</span>
         </div>
       </div>
-      <div className="mx-auto mt-8 w-full max-w-sm text-center">
+      <div className="mx-auto mt-7 w-full max-w-sm text-center">
         <h1 className="font-hand text-[3rem] leading-none">{result.completed ? cheer.es : 'Session ended'}</h1>
         <p className="mt-2 text-sm text-ink-2">{result.completed ? `${cheer.en} ${perfect ? 'A clean sweep: nothing to revisit.' : `${result.wrong} ${result.wrong === 1 ? 'postcard' : 'postcards'} will come back in your reviews.`}` : 'Everything you practised is saved.'}</p>
-        <p className="mt-1 font-hand text-xl text-ink-2">— Leo, Bonchita & Luna</p>
+        <div className="mt-2 flex items-end justify-center gap-1">
+          <DogButton dog="leo" size={58} act={result.completed ? 'cheer' : 'idle'} outfit={outfits.leo} />
+          <DogButton dog="bonchita" size={52} act={result.completed ? 'cheer' : 'idle'} outfit={outfits.bonchita} />
+          <DogButton dog="luna" size={58} act={result.completed ? 'cheer' : 'idle'} outfit={outfits.luna} />
+        </div>
+        <p className="font-hand text-xl text-ink-2">— Leo, Bonchita & Luna</p>
       </div>
 
-      <dl className="mx-auto mt-6 grid w-full max-w-sm grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-card text-center shadow-card">
-        <div className="py-3"><dt className="eyebrow">Distance</dt><dd className="mt-1 font-mono text-xl">+{shown}<span className="text-xs text-ink-2"> km</span></dd></div>
-        <div className="py-3"><dt className="eyebrow">Accuracy</dt><dd className="mt-1 font-mono text-xl"><span>{acc}%</span></dd></div>
-        <div className="py-3"><dt className="eyebrow">Time</dt><dd className="mt-1 font-mono text-xl">{minutes}:{String(seconds).padStart(2, '0')}</dd></div>
-      </dl>
+      {/* the trip report: staged tally */}
+      <section className="airmail-edge mx-auto mt-5 w-full max-w-sm overflow-hidden rounded-2xl border border-line bg-card px-4 pb-3 pt-4 shadow-card" aria-label="Trip report">
+        <p className="eyebrow">Trip report</p>
+        <dl className="mt-1 divide-y divide-dashed divide-[var(--line)]">
+          <TallyRow className={on(STAGE.accuracy)} icon={<IconCheck width={16} height={16} strokeWidth={3} />} tone="var(--ok)" label="Accuracy">
+            <span className={stage >= STAGE.accuracy ? 'tally-pop' : ''}>{shownAcc}%</span>
+          </TallyRow>
+          <TallyRow className={on(STAGE.time)} icon={<ClockGlyph />} tone="var(--blue)" label="Time">
+            {minutes}:{String(seconds).padStart(2, '0')}
+          </TallyRow>
+          <TallyRow className={on(STAGE.km)} icon={<IconRoute width={16} height={16} />} tone="var(--red)" label="Distance">
+            +{shownKm}<span className="text-xs text-ink-2"> km</span>
+          </TallyRow>
+          {result.completed && (
+            <div ref={coinRow} className={on(STAGE.coins)}>
+              <TallyRow icon={<CoinIcon size={22} />} label={CURRENCY.plural.charAt(0).toUpperCase() + CURRENCY.plural.slice(1)}>
+                <span className="text-[#b07a0c] dark:text-sun">+{shownCoins}</span>
+              </TallyRow>
+              <p className="-mt-1 flex flex-wrap gap-1 pb-2 pl-10 text-[11px] font-bold text-ink-2">
+                <span className="rounded-full bg-surface-2 px-2 py-0.5">Finished +{reward.lesson.base}</span>
+                {reward.lesson.accuracy > 0 && <span className="rounded-full bg-surface-2 px-2 py-0.5">Accuracy +{reward.lesson.accuracy}</span>}
+                {reward.lesson.perfect > 0 && <span className="rounded-full bg-surface-2 px-2 py-0.5">Clean sweep +{reward.lesson.perfect}</span>}
+                {reward.streak > 0 && <span className="rounded-full bg-[color-mix(in_srgb,var(--red)_14%,var(--card))] px-2 py-0.5 text-red">{reward.streakDays}-day road +{reward.streak}</span>}
+              </p>
+            </div>
+          )}
+        </dl>
+        {/* traveller level */}
+        <div className={`${on(STAGE.level)} mt-1 flex items-center gap-3 border-t border-line pt-3`}>
+          <LevelBadge key={t.level} level={t.level} size={44} className={stage >= STAGE.level && t.level > travellerLevel(reward.kmBefore).level ? 'badge-flash shrink-0' : 'shrink-0'} />
+          <div className="min-w-0 flex-1">
+            <p className="flex items-baseline justify-between gap-2 text-sm">
+              <span className="font-display font-bold">Level {t.level} · <span className="text-ink-2">{t.title}</span></span>
+              <span className="shrink-0 font-mono text-[11px] text-ink-2">{Math.max(0, Math.ceil(t.nextKm - barKm))} km to Lv {t.level + 1}</span>
+            </p>
+            <LevelBar progress={t.progress} className="mt-1.5" />
+          </div>
+        </div>
+      </section>
 
       {result.completed && road > 0 && (
         <div className="mx-auto mt-3 flex w-full max-w-sm items-center gap-3 rounded-2xl border border-dashed border-line px-4 py-3">
@@ -233,15 +395,8 @@ function DoneScreen({ result, found, stamp, where, onHome, onRetry, onGuide }: {
         </div>
       )}
       {stamp && <div className="mx-auto mt-4 w-full max-w-sm"><StampCard stop={stamp.stop} region={stamp.region} /></div>}
-      {found && (
-        <div className="animate-pop mx-auto mt-4 flex w-full max-w-sm items-center gap-3 rounded-2xl border border-line bg-card p-3 shadow-card">
-          <span className="stamp p-1" aria-hidden="true"><SouvenirIcon souvenir={found} size={44} /></span>
-          <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold">Lucky find: {found.es}</p>
-            <p className="text-xs text-ink-2">{found.blurb} Added to your passport.</p>
-          </div>
-          <div className="flex -space-x-3"><DogButton dog="luna" size={34} outfit={outfits.luna} /></div>
-        </div>
+      {found && stage >= STAGE.chest && (
+        <ChestReveal className="animate-rise mx-auto mt-4 w-full max-w-sm" reward={{ kind: 'souvenir', souvenir: found }} label="Lucky find" note="Luna sniffed it out on the way. Added to your passport." />
       )}
       <div className="mx-auto mt-auto grid w-full max-w-sm gap-3 pt-8">
         {!result.completed && <Button variant="ghost" onClick={onRetry}>Try again</Button>}
@@ -258,21 +413,22 @@ function DoneScreen({ result, found, stamp, where, onHome, onRetry, onGuide }: {
   )
 }
 
-/** Counts up from 0 to the target over about a second (the XP reveal). */
-function useCountUp(target: number): number {
-  const [reduce] = useState(() => Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches))
-  const [n, setN] = useState(reduce ? target : 0)
-  useEffect(() => {
-    if (reduce) return
-    let raf = 0
-    const t0 = performance.now()
-    const tick = (t: number) => {
-      const k = Math.min(1, (t - t0) / 900)
-      setN(Math.round(target * (1 - (1 - k) ** 3)))
-      if (k < 1) raf = requestAnimationFrame(tick)
-    }
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [target, reduce])
-  return n
+function TallyRow({ icon, tone, label, children, className = '' }: { icon: React.ReactNode; tone?: string; label: string; children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`flex items-center gap-3 py-2 ${className}`}>
+      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full" style={tone ? { color: tone, background: `color-mix(in srgb, ${tone} 14%, var(--card))` } : undefined}>{icon}</span>
+      <dt className="text-sm font-semibold">{label}</dt>
+      <span className="mx-1 h-px flex-1 border-b-2 border-dotted border-line" aria-hidden="true" />
+      <dd className="font-mono text-xl font-semibold">{children}</dd>
+    </div>
+  )
+}
+
+function ClockGlyph() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </svg>
+  )
 }

@@ -1,32 +1,35 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { SouvenirIcon } from '../components/art/SouvenirArt'
 import { Link, useNavigate, useLocation } from 'react-router'
 import { levels, loadUnit, units as unitIndex } from '../engine/loader'
-import { lessonMastery, ringFor, shiftDay, todayKey } from '../engine/mastery'
-import { lessonIdsFor, levelComplete, DEFAULT_START_LEVEL, levelIndex } from '../engine/unlock'
-import { getKv, claimQuest } from '../db/progress'
+import { shiftDay, todayKey } from '../engine/mastery'
+import { DEFAULT_START_LEVEL, levelIndex } from '../engine/unlock'
+import { getKv, claimQuest, awardCoins } from '../db/progress'
+import { errandCoins } from '../engine/economy'
+import { ChestReveal, CoinChip } from '../components/rewards'
 import { db } from '../db'
 import { useLessonRows, useAllCards, useDays, useDueCount, useExams, useKvValue, useQuests, useKvPrefix } from '../hooks/useProgress'
 import { useOutfits } from '../hooks/useOutfits'
 import type { QuizRecord } from './RegionQuiz'
 import { useSettings, SESSION_COUNT } from '../store/settings'
 import { xpFor } from '../engine/xp'
-import { IconCheck, IconPaw, IconRoute, IconPlane, IconPassport, IconBook } from '../components/ui/icons'
-import { CheckpointRow } from '../components/CheckpointRow'
+import { IconCheck, IconPaw, IconRoute, IconPlane, IconPassport } from '../components/ui/icons'
 import { StopArt } from '../components/StopArt'
-import { Chip } from '../components/ui/basics'
 import { DogButton } from '../components/ui/Dogs'
-import { REGIONS, stopFor, souvenirById, isStamped, type Souvenir } from '../engine/journey'
-import { QUIZ_PASS } from '../engine/quiz'
+import { WorldMap } from '../components/map/WorldMap'
+import { LegBar } from '../components/map/LegBar'
+import { TicketIcon } from '../components/map/MapArt'
+import { stopFor, souvenirById, isStamped, type Souvenir } from '../engine/journey'
 import { takeReturn } from '../engine/returnTo'
 import { questsForDate, progressFor, pickReward } from '../engine/quests'
-import type { LevelMeta, LevelId, Lesson } from '../engine/schema'
-import type { DayRow, LessonRow } from '../engine/types'
+import type { LevelId, Lesson } from '../engine/schema'
+import type { CardRow, DayRow, LessonRow } from '../engine/types'
 import { ui } from '../engine/loader'
 import { COURSES, HUB_URL } from '../courses'
 import { COURSE_ID, LANGUAGE } from '../engine/course'
 
-const STATUS_LABEL: Record<string, string> = { new: 'new', started: 'in progress', learned: 'learned', mastered: 'solid' }
+/** The map scrolls to the current lesson once per page load (later visits keep their scroll position). */
+let autoScrolled = false
 
 export default function Course() {
   const lessonRows = useLessonRows()
@@ -87,20 +90,54 @@ export default function Course() {
   const lessonCounts = useMemo(() => new Map([...lessonMeta.entries()].map(([k, v]) => [k, v.length])), [lessonMeta])
   const ready = checked && Boolean(lessonRows && cards && days && exams && startLevel !== undefined) && lessonMeta.size > 0
 
+  const cardsByLesson = useMemo(() => {
+    const m = new Map<string, CardRow[]>()
+    for (const c of cards ?? []) {
+      const arr = m.get(c.lessonId) ?? []
+      arr.push(c)
+      m.set(c.lessonId, arr)
+    }
+    return m
+  }, [cards])
+
+  // The lesson the dogs are at (up next), known once titles are loaded.
+  const nextId = useMemo(() => {
+    if (!lessonRows || startLevel === undefined || lessonMeta.size === 0) return undefined
+    return nextLesson(lessonRows, lessonMeta, lessonCounts, currentStop(lessonRows, startLevel)?.unitId)?.id
+  }, [lessonRows, lessonMeta, lessonCounts, startLevel])
+
   // Coming back from a lesson or a quiz: scroll to the spot the learner left from.
+  // Otherwise, on the first visit of this page load, glide to the current lesson on the map.
   useEffect(() => {
     if (!ready) return
     const target = (loc.state as { from?: string } | null)?.from ?? takeReturn()
-    if (!target) return
-    const elId = /^(unit|region)-/.test(target) ? target : `lesson-${target}`
+    let elId: string | undefined
+    let auto = false
+    if (target) elId = /^(unit|region|checkpoint)-/.test(target) ? target : `lesson-${target}`
+    else if (!autoScrolled && nextId && window.scrollY < 10) {
+      elId = `lesson-${nextId}`
+      auto = true
+    }
+    autoScrolled = true
+    if (!elId) return
+    const id = elId
     let tries = 0
     let cancelled = false
     const tick = () => {
       if (cancelled) return
-      const el = document.getElementById(elId)
-      if (el) {
+      const el = document.getElementById(id)
+      if (el && auto) {
+        let smooth = true
+        try {
+          smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        } catch {
+          /* default to smooth */
+        }
+        // the learner may have started scrolling already: leave them be
+        if (window.scrollY < 10) el.scrollIntoView({ block: 'center', behavior: smooth ? 'smooth' : 'auto' })
+      } else if (el) {
         el.scrollIntoView({ block: 'center' })
-        setHighlight(elId)
+        setHighlight(id)
         setTimeout(() => setHighlight(undefined), 2200)
       } else if (tries++ < 30) requestAnimationFrame(tick)
     }
@@ -109,15 +146,6 @@ export default function Course() {
       cancelled = true
     }
   }, [ready]) // eslint-disable-line react-hooks/exhaustive-deps
-  const cardsByLesson = useMemo(() => {
-    const m = new Map<string, typeof cards>()
-    for (const c of cards ?? []) {
-      const arr = m.get(c.lessonId) ?? []
-      arr.push(c)
-      m.set(c.lessonId, arr)
-    }
-    return m
-  }, [cards])
 
   if (!checked || !lessonRows || !cards || !days || !exams || startLevel === undefined) return <div className="p-8 text-center text-muted">Loading…</div>
 
@@ -160,11 +188,14 @@ export default function Course() {
           </span>
         </a>
         <div className="flex items-center gap-1.5">
-          <Link to="/profile" className={`flex items-center gap-1 rounded-full border border-line px-2.5 py-1 font-mono text-sm ${practisedToday ? 'text-ink' : 'text-ink-2'}`} aria-label={`${inARow} days on the road`}>
+          <Link to="/profile" className={`g-pill ${practisedToday ? 'text-ink' : 'text-ink-2'}`} aria-label={`${inARow} days on the road`}>
             <IconPaw width={15} height={15} className={practisedToday ? 'text-red' : ''} />{inARow}
           </Link>
-          <Link to="/insights" className="flex items-center gap-1 rounded-full border border-line px-2.5 py-1 font-mono text-sm" aria-label={`${kmToday} km today`}>
+          <Link to="/insights" className="g-pill" aria-label={`${kmToday} km today`}>
             <IconRoute width={15} height={15} className="text-blue" />{kmToday}<span className="text-[10px] text-ink-2">km</span>
+          </Link>
+          <Link to="/perros" className="rounded-full" aria-label="Purse and outfit shop">
+            <CoinChip size="sm" />
           </Link>
         </div>
       </div>
@@ -185,7 +216,7 @@ export default function Course() {
         <BoardingPass next={next} info={nextInfo} started={Boolean(lessonRows.get(next.id))} km={kmMax} />
       )}
 
-      <section className="card mb-4 p-0" aria-label="Today and this week">
+      <section className="g-card mb-4" aria-label="Today and this week">
         <div className="flex items-center justify-between px-4 pt-3.5">
           <p className="eyebrow">Travel log</p>
           <p className="text-xs text-ink-2"><span className="font-mono text-ink">{weekCount}</span> of 7 days this week{inARow > 1 ? <> · <span className="font-mono text-ink">{inARow}</span> days on the road</> : ''}</p>
@@ -214,7 +245,7 @@ export default function Course() {
       </section>
 
       {(due ?? 0) > 0 && (
-        <Link to="/review" className="card mb-4 flex items-center gap-4">
+        <Link to="/review" className="g-card mb-4 flex items-center gap-4 p-4">
           <span className="relative h-12 w-14 shrink-0" aria-hidden="true">
             {[0, 1, 2].map((k) => (
               <span key={k} className="absolute inset-0 rounded-[4px] border border-line bg-card shadow-card" style={{ transform: `rotate(${(k - 1) * 8}deg) translateY(${k * -2}px)`, filter: `grayscale(${0.4 + k * 0.25})`, opacity: 1 - k * 0.12 }}>
@@ -226,137 +257,46 @@ export default function Course() {
             <p className="font-display text-lg leading-tight">{due} postcards are fading</p>
             <p className="text-xs text-ink-2">Retouch them before the ink runs out. Reviews are where words stick.</p>
           </div>
-          <span className="btn btn-blue px-4 py-2 text-sm">Retouch</span>
+          <span className="g-btn px-4 py-2 text-sm" style={{ '--g-face': 'var(--blue)' } as CSSProperties}>Retouch</span>
         </Link>
       )}
 
       {quests && <QuestsCard date={today} day={quests.day} rows={quests.rows} owned={quests.owned} level={currentInfo?.region.level ?? startLevel} />}
 
       <div className="mb-8 grid grid-cols-2 gap-3">
-        <Link to="/passport" className="card flex items-center gap-3 p-3" aria-label="Passport">
+        <Link to="/passport" className="g-card flex items-center gap-3 p-3" aria-label="Passport">
           <IconPassport width={26} height={26} className="shrink-0 text-blue" />
           <span className="min-w-0 leading-tight"><span className="block font-semibold">Passport</span><span className="block text-xs text-ink-2"><span className="font-mono">{stampsTotal}</span> {stampsTotal === 1 ? 'stamp' : 'stamps'}</span></span>
         </Link>
-        <Link to="/perros" className="card flex items-center gap-3 p-3" aria-label="Dress the dogs">
+        <Link to="/perros" className="g-card flex items-center gap-3 p-3" aria-label="Dress the dogs">
           <IconPaw width={24} height={24} className="shrink-0 text-red" />
           <span className="min-w-0 leading-tight"><span className="block font-semibold">The dogs</span><span className="block text-xs text-ink-2">Souvenirs & outfits</span></span>
         </Link>
       </div>
 
-      <div className="mb-3 flex items-end justify-between">
+      <div className="mb-4 flex items-end justify-between">
         <h2 className="font-display text-2xl">Itinerary</h2>
         <Link to="/welcome" className="text-xs text-ink-2 underline decoration-dotted underline-offset-4">Change start or retake placement</Link>
       </div>
 
-      {levels.map((lv) => {
-        const region = REGIONS.find((r) => r.level === lv.id)
-        const complete = levelComplete(lv, lessonRows, lessonCounts)
-        const ids = lessonIdsFor(lv, lessonCounts)
-        const doneCount = ids.filter((l) => (lessonRows.get(l.id)?.completions ?? 0) > 0).length
-        const passed = exams.get(lv.id)?.passed
-        const recommended = lv.id === startLevel
-        const stampedCount = lv.units.filter((u) => isStamped(u.id, lessonRows, lessonCounts.get(u.id) ?? 4)).length
-        const quizOpen = stampedCount >= Math.ceil(lv.units.length / 2)
-        const quiz = quizRecords?.get(`regionQuiz:${lv.id}`)
-        const cover = region?.stops[0]
-        return (
-          <section key={lv.id} id={`region-${lv.id}`} className={`lvl-${lv.id} mb-10 rounded-2xl transition ${highlight === `region-${lv.id}` ? 'ring-2 ring-[var(--lvl)] ring-offset-4 ring-offset-[var(--paper)]' : ''}`}>
-            <div className="overflow-hidden rounded-2xl border border-line bg-card shadow-card">
-              {cover && <StopArt stop={cover} level={lv.id} progress={ids.length ? Math.max(0.15, doneCount / ids.length) : 0.15} quality="full" className="h-32 w-full" />}
-              <div className="p-4">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <p className="eyebrow" style={{ color: 'var(--lvl)' }}>{lv.title} · {lv.name}</p>
-                    <h2 className="mt-0.5 text-[1.9rem]">{region?.name ?? lv.title}</h2>
-                    {region && <p className="font-hand text-xl leading-none text-ink-2">{region.es}</p>}
-                  </div>
-                  {recommended && <span className="inkstamp shrink-0 text-[11px]" style={{ color: 'var(--lvl)' }}>Recommended start</span>}
-                </div>
-                <p className="mt-2 text-sm leading-snug text-ink-2">{lv.description}</p>
-                {ids.length > 0 && (
-                  <>
-                    <div className="mt-3 flex items-center gap-3 text-xs">
-                      <LegBar value={doneCount} max={ids.length} className="flex-1" />
-                      <span className="font-mono text-ink-2"><span className="text-ink">{doneCount}</span>/{ids.length}</span>
-                    </div>
-                    <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-                      {quizOpen ? (
-                        <Link to={`/quiz/${lv.id}`} className="btn btn-ghost px-3 py-1.5 text-xs">Region quiz</Link>
-                      ) : (
-                        <span className="rounded-full border border-dashed border-line px-3 py-1 text-ink-2">Region quiz opens at <span className="font-mono">{Math.ceil(lv.units.length / 2)}</span> stamps · <span className="font-mono">{stampedCount}</span> so far</span>
-                      )}
-                      {quiz && <span className="text-ink-2">Best <span className="font-mono text-ink">{Math.round(quiz.best * 100)}%</span>{quiz.best >= QUIZ_PASS ? ' · badge earned' : ''}</span>}
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-            <ol className="relative ml-[1.15rem] mt-1 border-l-[3px] border-dotted pl-6" style={{ borderColor: 'var(--lvl)' }}>
-              {lv.units.map((u, unitIdx) => {
-                const stop = region?.stops[unitIdx]
-                const lessons = lessonMeta.get(u.id)
-                const list = lessons ?? Array.from({ length: lessonCounts.get(u.id) ?? 4 }, (_, i) => ({ id: `${u.id}.l${i + 1}`, title: `Lesson ${i + 1}` }))
-                const unitDone = u.authored && isStamped(u.id, lessonRows, list.length)
-                const doneHere = list.filter((l) => (lessonRows.get(l.id)?.completions ?? 0) > 0).length
-                const here = next?.unitId === u.id
-                const fade = unitFade(list.map((l) => cardsByLesson.get(l.id) ?? []).flat())
-                return (
-                  <li key={u.id} id={`unit-${u.id}`} className={`relative pt-7 transition ${highlight === `unit-${u.id}` ? 'rounded-xl ring-2 ring-[var(--lvl)] ring-offset-4 ring-offset-[var(--paper)]' : ''}`}>
-                    <span className={`absolute -left-[2.15rem] top-9 flex h-6 w-6 items-center justify-center rounded-full border-[3px] bg-paper ${unitDone ? 'text-white' : ''}`} style={{ borderColor: 'var(--lvl)', background: unitDone ? 'var(--lvl)' : undefined }} aria-hidden="true">
-                      {unitDone && <IconCheck width={12} height={12} strokeWidth={3.5} />}
-                    </span>
-                    <div className="flex items-start gap-3">
-                      <div className="min-w-0 flex-1">
-                        <p className="eyebrow">Stop {unitIdx + 1} · {stop?.name ?? `Unit ${unitIdx + 1}`}</p>
-                        <h3 className="font-display text-[1.2rem] leading-tight">{u.title}</h3>
-                        <p className="text-xs text-ink-2">{u.subtitle}{stop ? <> · <span className="font-hand text-base">{stop.es}</span></> : ''}</p>
-                      </div>
-                      {stop && (
-                        <Link to="/passport" className="relative w-[5.2rem] shrink-0 rotate-2 rounded-[3px] border-[3px] border-card bg-card shadow-card" aria-label={`Postcard from ${stop.name}${unitDone ? ': stamped' : ''}`}>
-                          <StopArt stop={stop} level={lv.id} progress={u.authored ? doneHere / Math.max(1, list.length) : 0} fade={fade} className="aspect-[4/3] w-full rounded-[1px]" />
-                          {unitDone && <span className="inkstamp absolute -bottom-2 -left-3 bg-card/0 px-1.5 py-0 text-[10px]" style={{ color: 'var(--lvl)' }}>Stamped</span>}
-                        </Link>
-                      )}
-                    </div>
-                    {!u.authored && <p className="mt-2"><Chip>Coming soon</Chip></p>}
-                    {u.authored && (
-                      <ul className="mt-2 space-y-0.5">
-                        {list.map((l, i) => {
-                          const row = lessonRows.get(l.id)
-                          const mastery = lessonMastery(cardsByLesson.get(l.id) ?? [])
-                          const ring = ringFor(row, mastery)
-                          return <LegRow key={l.id} id={l.id} n={i + 1} title={l.title} status={ring} mastery={mastery} current={next?.id === l.id} highlight={highlight === `lesson-${l.id}`} />
-                        })}
-                        <CheckpointRow unitId={u.id} stopName={stop?.name ?? u.title} lessonsDone={doneHere} lessonsTotal={list.length} />
-                      </ul>
-                    )}
-                    {here && (
-                      <div className="mt-1 flex items-center gap-2 text-xs text-ink-2" aria-label="Leo, Bonchita and Luna are here">
-                        <div className="flex -space-x-3"><DogButton dog="leo" size={30} mood="curious" outfit={outfits.leo} /><DogButton dog="bonchita" size={30} outfit={outfits.bonchita} /><DogButton dog="luna" size={30} outfit={outfits.luna} /></div>
-                        <span className="font-hand text-lg">we're here</span>
-                      </div>
-                    )}
-                  </li>
-                )
-              })}
-            </ol>
-            {ids.length > 0 && <BorderControl level={lv} complete={complete} passed={Boolean(passed)} score={exams.get(lv.id)?.score} />}
-          </section>
-        )
-      })}
+      <WorldMap
+        lessonRows={lessonRows}
+        lessonMeta={lessonMeta}
+        lessonCounts={lessonCounts}
+        cardsByLesson={cardsByLesson}
+        exams={exams}
+        startLevel={startLevel}
+        quizRecords={quizRecords}
+        currentId={next?.id}
+        highlight={highlight}
+        outfits={outfits}
+        flag={FLAG}
+      />
     </div>
   )
 }
 
 const FLAG = COURSES.find((c) => c.id === COURSE_ID)?.flag ?? '🌍'
-
-/** How faded a stop's postcard is: the share of its practised cards that are due now. */
-function unitFade(cs: { reps: number; due: number }[]): number {
-  const seen = cs.filter((c) => c.reps > 0)
-  if (!seen.length) return 0
-  const now = Date.now()
-  return seen.filter((c) => c.due <= now).length / seen.length
-}
 
 interface NextLesson { id: string; title: string; unitId: string; n: number; count: number }
 /** The first unfinished lesson at or after the given unit, else the first unfinished lesson anywhere. */
@@ -377,12 +317,12 @@ function nextLesson(rows: Map<string, LessonRow>, meta: Map<string, Lesson[]>, c
 function BoardingPass({ next, info, started, km }: { next: NextLesson; info: NonNullable<ReturnType<typeof stopFor>>; started: boolean; km: number }) {
   const code = (s: string) => s.normalize('NFD').replace(/[^A-Za-z]/g, '').slice(0, 3).toUpperCase() || 'PAW'
   return (
-    <Link to={`/lesson/${next.id}`} aria-label={`Board: lesson ${next.n} of ${next.count}`} className={`lvl-${info.region.level} relative mb-4 block overflow-hidden rounded-2xl border border-line bg-card shadow-card transition active:scale-[0.99]`}>
+    <Link to={`/lesson/${next.id}`} aria-label={`Board: lesson ${next.n} of ${next.count}`} className={`lvl-${info.region.level} g-card relative mb-4 block overflow-hidden`}>
       <div className="airmail h-1.5 w-full" aria-hidden="true" />
       <div className="flex">
         <div className="min-w-0 flex-1 p-4 pr-3">
           <div className="flex items-center justify-between">
-            <p className="eyebrow">Boarding pass · up next</p>
+            <p className="eyebrow" style={{ color: 'var(--lvl)' }}>Boarding pass · up next</p>
             <IconPlane width={16} height={16} className="rotate-45 text-ink-2" />
           </div>
           <div className="mt-2 flex items-end gap-2">
@@ -402,27 +342,18 @@ function BoardingPass({ next, info, started, km }: { next: NextLesson; info: Non
             <div><dt className="text-ink-2">Leg</dt><dd className="font-mono text-sm">~5 min</dd></div>
             <div><dt className="text-ink-2">Up to</dt><dd className="font-mono text-sm">{km} km</dd></div>
           </dl>
-          <span className="btn btn-primary mt-4 w-full">{started ? 'Continue' : 'Board'}</span>
+          <span className="g-btn mt-4 w-full text-[1.05rem] uppercase tracking-wider" style={{ '--wm-face': 'var(--lvl)' } as CSSProperties}>
+            <TicketIcon width={24} height={24} />
+            {started ? 'Continue' : 'Board'}
+          </span>
         </div>
         <div className="relative w-[5.6rem] shrink-0 border-l-2 border-dashed border-line">
-          <span className="absolute -left-[9px] -top-[9px] h-4 w-4 rounded-full border border-line bg-paper" aria-hidden="true" />
-          <span className="absolute -bottom-[9px] -left-[9px] h-4 w-4 rounded-full border border-line bg-paper" aria-hidden="true" />
+          <span className="absolute -left-[9px] -top-[9px] z-[1] h-4 w-4 rounded-full border-2 border-line bg-paper" aria-hidden="true" />
+          <span className="absolute -bottom-[9px] -left-[9px] z-[1] h-4 w-4 rounded-full border-2 border-line bg-paper" aria-hidden="true" />
           <StopArt stop={info.stop} level={info.region.level} quality="full" lazy={false} className="h-full w-full" />
         </div>
       </div>
     </Link>
-  )
-}
-
-/** A thin route line that fills with ink, with a paw marking how far you've come. */
-function LegBar({ value, max, className = '' }: { value: number; max: number; className?: string }) {
-  const pct = Math.max(0, Math.min(1, value / Math.max(1, max)))
-  return (
-    <div className={`relative mt-2 h-2.5 ${className}`} role="progressbar" aria-valuenow={Math.round(pct * 100)} aria-valuemin={0} aria-valuemax={100}>
-      <span className="absolute inset-x-0 top-1/2 h-0 -translate-y-1/2 border-t-2 border-dotted border-line" />
-      <span className="absolute left-0 top-1/2 h-[3px] -translate-y-1/2 rounded-full bg-[var(--lvl,var(--blue))] transition-[width] duration-500" style={{ width: `${pct * 100}%` }} />
-      <span className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-card bg-[var(--lvl,var(--blue))]" style={{ left: `${pct * 100}%` }} />
-    </div>
   )
 }
 
@@ -447,17 +378,19 @@ function ClaimedReward({ rewardId }: { rewardId?: string }) {
 
 function QuestsCard({ date, day, rows, owned, level }: { date: string; day: DayRow | undefined; rows: Map<string, { claimedAt?: number; rewardId?: string }>; owned: Set<string>; level: LevelId }) {
   const quests = questsForDate(date)
-  const [justClaimed, setJustClaimed] = useState<{ souvenir?: Souvenir } | undefined>()
+  const [justClaimed, setJustClaimed] = useState<{ souvenir?: Souvenir; coins: number } | undefined>()
   const claim = async (questId: string, seed: number) => {
     const reward = pickReward(level, owned, seed)
     await claimQuest(date, questId, reward?.id)
-    setJustClaimed({ souvenir: reward })
+    const coins = errandCoins(questId)
+    await awardCoins(coins, `errand:${date}:${questId}`)
+    setJustClaimed({ souvenir: reward, coins })
   }
   const doneCount = [...rows.values()].filter((r) => r.claimedAt).length
   return (
-    <section className="card mb-4" aria-label="Today's quests">
+    <section className="g-card mb-4 p-4" aria-label="Today's quests">
       <div className="flex items-center justify-between">
-        <p className="eyebrow">Errands for today</p>
+        <p className="eyebrow flex items-center gap-1.5"><span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[var(--sun)] text-[13px] shadow-[0_2px_0_#b98315]" aria-hidden="true">🧭</span>Errands for today</p>
         <span className="font-mono text-xs text-ink-2"><span className="text-ink">{doneCount}</span>/{quests.length}</span>
       </div>
       <ul className="mt-3 space-y-3">
@@ -488,48 +421,16 @@ function QuestsCard({ date, day, rows, owned, level }: { date: string; day: DayR
           )
         })}
       </ul>
-      {justClaimed && <p className="animate-pop mt-3 rounded-xl border border-dashed border-line px-3 py-2 text-sm">{justClaimed.souvenir && <SouvenirIcon souvenir={justClaimed.souvenir} size={28} className="mr-1 inline-block align-middle" />}<span className="font-hand text-lg">Luna sniffed out {justClaimed.souvenir?.es ?? 'a stamp'}!</span> It's in your passport.</p>}
+      {justClaimed && (
+        <div className="mt-3">
+          <ChestReveal
+            key={`${justClaimed.souvenir?.id ?? 'coins'}-${justClaimed.coins}`}
+            label="Errand reward"
+            reward={justClaimed.souvenir ? { kind: 'souvenir', souvenir: justClaimed.souvenir } : { kind: 'coins', amount: justClaimed.coins }}
+            note={justClaimed.souvenir ? `Luna sniffed it out. It's in your passport, plus ${justClaimed.coins} ${ui.currency.plural ?? ui.currency.name}.` : undefined}
+          />
+        </div>
+      )}
     </section>
-  )
-}
-
-function LegRow({ id, n, title, status, mastery, current, highlight = false }: { id: string; n: number; title: string; status: string; mastery: number; current: boolean; highlight?: boolean }) {
-  const label = STATUS_LABEL[status] ?? status
-  const done = status === 'learned' || status === 'mastered'
-  return (
-    <li id={`lesson-${id}`} className={`relative flex items-center gap-1 rounded-xl transition ${highlight ? 'bg-[var(--lvl-soft)]' : ''}`}>
-      <span className={`absolute -left-[1.92rem] top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 ${done ? '' : 'bg-paper'}`} style={{ borderColor: 'var(--lvl)', background: done ? 'var(--lvl)' : undefined }} aria-hidden="true" />
-      <Link to={`/lesson/${id}`} className={`flex min-w-0 flex-1 items-center gap-3 rounded-xl px-2 py-2 transition hover:bg-card active:scale-[0.99] ${current ? 'border border-line bg-card shadow-card' : ''}`} aria-label={`${title}: ${label}`}>
-        <span className="w-5 shrink-0 font-mono text-xs text-ink-2">{String(n).padStart(2, '0')}</span>
-        <span className="min-w-0 flex-1">
-          <span className={`block truncate ${current ? 'font-semibold' : ''}`}>{title}</span>
-          {(mastery > 0 || status !== 'new') && (
-            <span className="mt-1 flex items-center gap-2">
-              <span className="h-1 w-16 overflow-hidden rounded-full bg-card-2"><span className="block h-full rounded-full" style={{ width: `${Math.round(mastery * 100)}%`, background: status === 'mastered' ? 'var(--sun)' : 'var(--lvl)' }} /></span>
-              <span className="text-[11px] capitalize text-ink-2">{label}</span>
-            </span>
-          )}
-        </span>
-        {current ? <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold text-white" style={{ background: 'var(--lvl)' }}>Next</span> : status === 'mastered' ? <span className="text-[11px] font-semibold text-gold-600">Solid</span> : done ? <IconCheck width={16} height={16} className="text-ok-500" /> : <span className="text-ink-2" aria-hidden="true">›</span>}
-      </Link>
-      <Link to={`/lesson/${id}?guide`} className="shrink-0 rounded-full p-2 text-ink-2/70 transition hover:bg-card hover:text-ink" aria-label={`Guidebook, lesson ${n}`} title="Guidebook: grammar and words">
-        <IconBook width={16} height={16} />
-      </Link>
-    </li>
-  )
-}
-
-/** The level check as a border crossing: passport control between regions. */
-function BorderControl({ level, complete, passed, score }: { level: LevelMeta; complete: boolean; passed: boolean; score?: number }) {
-  return (
-    <Link to={`/exam/${level.id}`} className="card mt-5 flex items-center gap-4" aria-label={`Border control, level check ${level.title}`}>
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-dashed" style={{ borderColor: 'var(--lvl)', color: 'var(--lvl)' }}><IconPassport width={24} height={24} /></span>
-      <div className="min-w-0 flex-1">
-        <p className="eyebrow">Border control</p>
-        <p className="font-display text-lg leading-tight">Level check · {level.title}</p>
-        <p className="text-xs text-ink-2">{passed ? <>Passed · <span className="font-mono">{Math.round((score ?? 0) * 100)}%</span></> : complete ? 'Reading, listening, grammar, writing and speaking. Show your papers for this region.' : 'Open now: cross whenever you feel ready.'}</p>
-      </div>
-      {passed && <span className="inkstamp text-xs text-ok-500">Cleared</span>}
-    </Link>
   )
 }

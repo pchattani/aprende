@@ -7,7 +7,7 @@
 import type { ReactNode } from 'react'
 import { COURSE_ID } from '../../engine/course'
 import { DOG_ART, DOG_LABEL, HI_DETAIL_PX, PORTRAIT, type DogId } from './dogRegistry'
-import type { Mood } from './dogArt'
+import type { Act, Mood } from './dogArt'
 import { PaintFilters } from './paint'
 import { useArtId } from './brush'
 
@@ -22,7 +22,8 @@ const STAMP_INK: Record<DogId, { wash: string; wash2: string; hill: string; ink:
   luna: { wash: '#e6efd6', wash2: '#8fb878', hill: '#5f9560', ink: '#3d7a4f', value: '50' },
 }
 
-export function DogStamp({ dog, size = 72, mood = 'happy', country, className = '', tilt = 0 }: { dog: DogId; size?: number; mood?: Mood; country?: string; className?: string; tilt?: number }) {
+/** `act` makes the portrait inside the stamp act (talk, cheer, sad…; see art/dogPose.ts); it defaults from the mood. */
+export function DogStamp({ dog, size = 72, mood = 'happy', act, country, className = '', tilt = 0 }: { dog: DogId; size?: number; mood?: Mood; act?: Act; country?: string; className?: string; tilt?: number }) {
   const id = useArtId(`st${dog}`)
   const hi = size >= HI_DETAIL_PX
   const Art = DOG_ART[dog]
@@ -65,7 +66,7 @@ export function DogStamp({ dog, size = 72, mood = 'happy', country, className = 
             <path d={`M4 ${picH - 6} C24 ${picH - 18} 44 ${picH - 12} 60 ${picH - 8} C76 ${picH - 4} 88 ${picH - 14} 96 ${picH - 16} L96 ${picH + 8} L4 ${picH + 8} Z`} fill={ink.hill} opacity="0.5" />
             {/* the bust: the crop runs the chest off the bottom edge of the picture */}
             <svg x="7" y={7 + picH - 86} width="86" height="86" viewBox={`${cx} ${cy} ${cs} ${cs}`} overflow="hidden">
-              <Art id={id} mood={mood} hi={hi} />
+              <Art id={id} mood={mood} hi={hi} act={act} />
             </svg>
           </g>
           <rect x="7" y="7" width="86" height={picH} fill="none" stroke={ink.ink} strokeWidth="1.2" opacity="0.85" />

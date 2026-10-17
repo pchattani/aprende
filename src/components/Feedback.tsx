@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import type { Exercise, GradeResult } from '../engine/types'
 import { grammar, ui, LANGUAGE } from '../engine/loader'
 import type { Explanation } from '../engine/explain'
@@ -21,9 +21,11 @@ export interface FeedbackProps {
   /** Pin state and toggle for wrong answers (absent in pinned practice). */
   pinned?: boolean
   onPin?: () => void
+  /** The companion dog, standing on the top edge of the sheet (decorative). */
+  companion?: ReactNode
 }
 
-export function Feedback({ exercise, result, explanation, onContinue, last, pinned, onPin }: FeedbackProps) {
+export function Feedback({ exercise, result, explanation, onContinue, last, pinned, onPin, companion }: FeedbackProps) {
   const [showRule, setShowRule] = useState(false)
   const ok = result.verdict !== 'wrong'
   const almost = result.verdict === 'almost'
@@ -37,15 +39,21 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
   const hints = [...new Set([...result.notes, ...explanation.hints])].slice(0, 5)
   const title = result.verdict === 'correct' ? (result.lenient ? `${ui.feedback.correct} One small slip` : ui.feedback.correct) : almost ? `${ui.feedback.almost} Watch the details` : 'Not quite'
   return (
-    <div className="animate-slide-up fixed inset-x-0 bottom-0 z-20 max-h-[85vh] overflow-y-auto border-t border-line bg-card shadow-float" role="status">
+    <div className={`${ok && !almost ? 'animate-sheet-bounce' : 'animate-sheet-soft'} fixed inset-x-0 bottom-0 z-20`} role="status">
+      {companion && (
+        <div className="pointer-events-none absolute inset-x-0 bottom-full mx-auto flex w-full max-w-xl justify-end px-3" aria-hidden="true">
+          {companion}
+        </div>
+      )}
+      <div className="max-h-[85vh] overflow-y-auto border-t border-line bg-card shadow-float">
       <div className={`h-1.5 w-full ${ok && !almost ? 'bg-ok-500' : almost ? 'bg-sun' : 'bg-bad-500'}`} aria-hidden="true" />
       <div className="mx-auto max-w-xl px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
         <div className="flex items-start justify-between gap-3">
-          <p className={`inkstamp animate-stamp mb-3 mt-1 ${ok && !almost ? 'text-ok-500' : almost ? 'text-gold-600' : 'text-bad-500'}`}>
+          <p className={`inkstamp animate-stamp mb-3 mt-1 ${ok && !almost ? 'verdict-spark text-ok-500' : almost ? 'text-gold-600' : 'text-bad-500'}`}>
             {ok && !almost ? <IconCheck width={20} height={20} strokeWidth={3} /> : almost ? null : <IconX width={20} height={20} strokeWidth={3} />}
             {ok && !almost ? ui.feedback.correct.replace(/[!¡]/g, '') : almost ? 'Postage due' : 'Return to sender'}
           </p>
-          <p className="mt-1 text-right text-sm text-ink-2">{title}</p>
+          <p className={title === ui.feedback.correct ? 'sr-only' : 'mt-1 text-right text-sm text-ink-2'}>{title}</p>
         </div>
         <div className="mt-1">
             {showCorrect && (
@@ -120,6 +128,7 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
           </Button>
         </div>
         {!ok && pinned && <p className="mt-2 text-center text-xs font-semibold opacity-80">Saved for a focused re-test in Review → Pinned.</p>}
+      </div>
       </div>
     </div>
   )

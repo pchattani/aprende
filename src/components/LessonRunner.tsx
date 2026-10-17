@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useReducer, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState, type ReactNode } from 'react'
 import type { Exercise, GradeResult, LessonResult, PinRow } from '../engine/types'
 import { grade, type Answer } from '../engine/grade'
 import { explainAnswer, firstReplacement, type Explanation } from '../engine/explain'
@@ -11,8 +11,18 @@ import { useSession } from '../store/session'
 import { ExerciseView } from './exercises'
 import { Feedback } from './Feedback'
 import { Button } from './ui/basics'
-import { IconX, IconWind, IconPaw } from './ui/icons'
-import { playSound } from '../engine/sounds'
+import { IconX, IconCheck } from './ui/icons'
+import { playSound, buzz } from '../engine/sounds'
+import { ui } from '../engine/loader'
+import { hashString } from '../engine/random'
+import type { DogId } from './art/dogRegistry'
+import { calmMotion, isE2E, nudge } from './game/motion'
+import { DogReactionContext, DOG_TURNS, isComboMilestone, type DogReaction } from './game/reaction'
+import { RouteProgress } from './game/RouteProgress'
+import { ComboMeter, ComboBanner } from './game/Combo'
+import { Companion } from './game/Companion'
+import { StartSplash } from './game/StartSplash'
+import { Burst } from './game/Burst'
 
 interface State {
   queue: Exercise[]
@@ -91,7 +101,6 @@ export interface RunnerProps {
 
 export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQuit, onAnswer, headerExtra }: RunnerProps) {
   const deps = useGradeDeps()
-  const sound = useSettings((s) => s.sound)
   const autoPin = useSettings((s) => s.autoPin)
   const [s, dispatch] = useReducer(reducer, undefined, () => ({
     queue: exercises, index: 0, answer: undefined, pinned: false, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), streak: 0, requeue: mode !== 'checkpoint', startedAt: Date.now(), finished: false,
@@ -110,6 +119,23 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   const ex = s.queue[s.index]
   const total = s.queue.length
   const done = s.index
+
+  // Game feel. A calm runner (end-to-end runs, reduced motion) skips the movement but keeps the sounds.
+  const [calm] = useState(calmMotion)
+  const [splash, setSplash] = useState(() => mode === 'lesson' && !isE2E())
+  const closeSplash = useCallback(() => setSplash(false), [])
+  const [banner, setBanner] = useState<{ n: number; id: number; dog: DogId } | undefined>()
+  const [burst, setBurst] = useState<{ x: number; y: number; id: number } | undefined>()
+  const [leaving, setLeaving] = useState<{ index: number; ex: Exercise; answer: Answer | undefined; result?: GradeResult; dog: DogId } | undefined>()
+  const stageRef = useRef<HTMLDivElement>(null)
+  const fxId = useRef(0)
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([])
+  const later = (fn: () => void, ms: number) => void timers.current.push(setTimeout(fn, ms))
+  useEffect(() => () => timers.current.forEach(clearTimeout), [])
+  // The dogs take turns, one per exercise, starting from a different dog in each lesson.
+  const turn = useMemo(() => hashString(lessonId), [lessonId])
+  const dogFor = (i: number): DogId => DOG_TURNS[(i + turn) % DOG_TURNS.length]!
+  const reaction: DogReaction = useMemo(() => ({ dog: DOG_TURNS[(s.index + turn) % DOG_TURNS.length]!, verdict: s.result?.verdict }), [s.index, s.result, turn])
 
   useEffect(() => {
     if (!s.finished || finishedRef.current) return
@@ -136,13 +162,65 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
     const explanation = r.verdict === 'correct' ? { hints: [] } : explainAnswer(curEx, answer, explainDeps)
     const shouldPin = r.verdict === 'wrong' && autoPin && mode !== 'pinned'
     dispatch({ type: 'check', result: r, explanation, pinned: shouldPin })
-    if (sound) playSound(r.verdict === 'wrong' ? 'wrong' : 'correct')
+    const ok = r.verdict !== 'wrong'
+    playSound(ok ? 'correct' : 'wrong')
+    if (ok) buzz('correct')
+    const streak = ok ? cur.streak + 1 : 0
+    if (ok && isComboMilestone(streak)) {
+      const id = ++fxId.current
+      setBanner({ n: streak, id, dog: dogFor(cur.index) })
+      later(() => {
+        playSound('combo')
+        buzz('combo')
+      }, 260)
+      later(() => setBanner((b) => (b?.id === id ? undefined : b)), 1800)
+    }
     const verdict = r.verdict
     // Items and the grammar points they exercise are both scheduled.
     for (const item of new Set([...curEx.items, ...curEx.grammar])) void recordAnswer(item, verdict, curEx.kind)
     if (shouldPin) void pinAnswer(buildPin(curEx, answer, r, explanation))
     onAnswer?.(curEx, verdict)
   }
+
+  // Right after a verdict: the answer pops (with a sparkle burst) or gives a gentle shake.
+  useLayoutEffect(() => {
+    const r = s.result
+    const stage = stageRef.current
+    const cur = stage?.querySelector<HTMLElement>('[data-current]')
+    if (!r || !stage || !cur || calm) return
+    const ok = r.verdict !== 'wrong'
+    const kind = stateRef.current.queue[stateRef.current.index]?.kind
+    const target =
+      kind === 'match' ? cur.querySelector<HTMLElement>('.grid') : ok ? cur.querySelector<HTMLElement>('.tile.correct, [aria-label="Your answer"]') : cur.querySelector<HTMLElement>('.tile.wrong, [aria-label="Your answer"]')
+    // a wrong option already shakes by itself (.tile.wrong)
+    if (!target?.classList.contains('wrong')) nudge(target ?? cur, ok ? 'pop' : 'shake')
+    if (!ok) return
+    const box = (target ?? cur).getBoundingClientRect()
+    const base = stage.getBoundingClientRect()
+    const id = ++fxId.current
+    setBurst({ id, x: Math.max(40, Math.min(base.width - 40, box.right - base.left - 34)), y: box.top - base.top + Math.min(box.height / 2, 40) })
+    later(() => setBurst((b) => (b?.id === id ? undefined : b)), 900)
+  }, [s.result, calm]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  /** Continue (or skip): the finished exercise slides out to the left while the next slides in. */
+  const advance = (type: 'next' | 'skip') => {
+    const cur = stateRef.current
+    const curEx = cur.queue[cur.index]
+    if (!calm && curEx && cur.index + 1 < cur.queue.length) {
+      const index = cur.index
+      setLeaving({ index, ex: curEx, answer: cur.answer, result: cur.result, dog: dogFor(index) })
+      later(() => setLeaving((l) => (l?.index === index ? undefined : l)), 260)
+    }
+    setBurst(undefined)
+    dispatch({ type })
+  }
+  /** A tiny click when an answer slip is tapped. */
+  const onStagePointerDown = (e: React.PointerEvent) => {
+    if (stateRef.current.result) return
+    const t = (e.target as Element).closest?.('button.tile')
+    if (t && !(t as HTMLButtonElement).disabled) playSound('tap')
+  }
+
   const togglePin = () => {
     const cur = stateRef.current
     const curEx = cur.queue[cur.index]
@@ -184,42 +262,74 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
 
   if (!ex) return null
   const autoSubmit = ex.kind === 'match' || ex.kind === 'speak'
+  const won = s.result !== undefined && s.result.verdict !== 'wrong'
+  const lines = !s.result ? [] : s.result.verdict === 'correct' ? ui.game.correct : s.result.verdict === 'almost' ? ui.game.almost : ui.game.wrong
+  const line = lines[(s.index + s.correct + s.wrong) % Math.max(1, lines.length)] ?? ''
+  const parts = title.split(' · ').filter(Boolean)
+  const leg = Number(/\.l(\d+)$/.exec(lessonId)?.[1]) || undefined
+  const noop = () => {}
   return (
-    <div className="mx-auto flex min-h-full max-w-xl flex-col px-4 pt-[calc(0.75rem+env(safe-area-inset-top))]">
+    <div className={`mx-auto flex min-h-full max-w-xl flex-col overflow-x-clip px-4 pt-[calc(0.75rem+env(safe-area-inset-top))] ${calm ? 'calm' : ''}`}>
       <div className="flex items-center gap-3" title={title}>
         <button type="button" onClick={() => setConfirmQuit(true)} className="-ml-1 rounded-full p-1.5 text-ink-2 transition hover:text-ink" aria-label="Quit">
           <IconX width={26} height={26} strokeWidth={2} />
         </button>
         <RouteProgress value={done} max={total} />
         {headerExtra}
-        <span className={`flex min-w-[3.4rem] items-center justify-end gap-1 font-mono text-sm transition ${s.streak >= 2 ? 'text-blue' : 'text-ink-2/50'}`} aria-label={`Tailwind: ${s.streak} in a row`} title="Tailwind: answers in a row">
-          <IconWind width={18} height={18} />×{s.streak}
-        </span>
+        <ComboMeter streak={s.streak} />
       </div>
       {mode !== 'lesson' && <p className="eyebrow mt-2 truncate">{title}</p>}
-      {s.result && s.result.verdict !== 'wrong' && s.streak >= 3 && s.streak % 3 === 0 && (
-        <p key={s.streak} className="animate-pop mx-auto mt-2 font-hand text-2xl leading-none text-blue">Tailwind! {s.streak} in a row</p>
-      )}
-      <div className="flex-1 pb-6 pt-6">
-        <ExerciseView key={`${s.index}`} exercise={ex} value={s.answer} onChange={(v) => dispatch({ type: 'answer', value: v })} onSubmit={(v) => check(v)} checked={Boolean(s.result)} result={s.result} />
+      <div ref={stageRef} className="relative flex-1 pb-6 pt-6" onPointerDown={onStagePointerDown}>
+        {leaving && leaving.index !== s.index && (
+          <div key={`ex-${leaving.index}`} className="ex-leave" inert aria-hidden="true">
+            <DogReactionContext.Provider value={{ dog: leaving.dog, verdict: leaving.result?.verdict }}>
+              <ExerciseView exercise={leaving.ex} value={leaving.answer} onChange={noop} onSubmit={noop} checked={Boolean(leaving.result)} result={leaving.result} />
+            </DogReactionContext.Provider>
+          </div>
+        )}
+        <div key={`ex-${s.index}`} data-current="" className={calm ? undefined : 'ex-enter'}>
+          <DogReactionContext.Provider value={reaction}>
+            <ExerciseView exercise={ex} value={s.answer} onChange={(v) => dispatch({ type: 'answer', value: v })} onSubmit={(v) => check(v)} checked={Boolean(s.result)} result={s.result} />
+          </DogReactionContext.Provider>
+        </div>
+        {burst && <Burst key={burst.id} x={burst.x} y={burst.y} />}
       </div>
-      {!s.result && !autoSubmit && (
-        <div className="sticky bottom-0 -mx-4 border-t border-line bg-paper px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
-          <div className="flex gap-3">
-            {mode !== 'lesson' && mode !== 'checkpoint' && (
-              <Button variant="ghost" onClick={() => dispatch({ type: 'skip' })}>
+      {!autoSubmit && (
+        <div className="sticky bottom-0 z-10 -mx-4 border-t border-line bg-paper px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
+          {/* Under the answer sheet the button stays put and turns into a green "correct" ticket (decorative, out of reach). */}
+          <div className="flex gap-3" inert={s.result ? true : undefined} aria-hidden={s.result ? true : undefined}>
+            {mode !== 'lesson' && mode !== 'checkpoint' && !s.result && (
+              <Button variant="ghost" onClick={() => advance('skip')}>
                 Skip
               </Button>
             )}
-            <Button variant="primary" className="flex-1" disabled={!canCheck} onClick={() => check()}>
-              Check
+            <Button variant="primary" className={`flex-1 ${s.result ? (won ? 'btn-win' : 'btn-miss') : ''}`} disabled={!canCheck} onClick={() => check()}>
+              {won ? (
+                <>
+                  <IconCheck width={22} height={22} strokeWidth={3} />
+                  {ui.feedback.correct}
+                </>
+              ) : (
+                'Check'
+              )}
             </Button>
           </div>
         </div>
       )}
       {s.result && (
-        <Feedback exercise={ex} result={s.result} explanation={s.explanation ?? { hints: [] }} last={s.index + 1 >= total} onContinue={() => dispatch({ type: 'next' })} pinned={s.pinned} onPin={mode === 'pinned' ? undefined : togglePin} />
+        <Feedback
+          exercise={ex}
+          result={s.result}
+          explanation={s.explanation ?? { hints: [] }}
+          last={s.index + 1 >= total}
+          onContinue={() => advance('next')}
+          pinned={s.pinned}
+          onPin={mode === 'pinned' ? undefined : togglePin}
+          companion={<Companion key={s.index} dog={reaction.dog} verdict={s.result.verdict} line={line} />}
+        />
       )}
+      {banner && <ComboBanner key={banner.id} n={banner.n} dog={banner.dog} />}
+      {splash && <StartSplash leg={leg} title={parts.at(-1) ?? title} unit={parts.length > 1 ? parts.slice(0, -1).join(' · ') : undefined} onDone={closeSplash} />}
       {confirmQuit && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/50 p-4 sm:items-center" role="dialog" aria-modal="true">
           <div className="card animate-pop w-full max-w-sm text-center">
@@ -237,21 +347,6 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
           </div>
         </div>
       )}
-    </div>
-  )
-}
-
-/** Lesson progress as a leg of the journey: a dotted route that fills with ink, a paw marking where you are. */
-function RouteProgress({ value, max }: { value: number; max: number }) {
-  const pct = Math.max(0, Math.min(1, value / Math.max(1, max)))
-  return (
-    <div className="relative h-6 flex-1" role="progressbar" aria-valuenow={Math.round(pct * 100)} aria-valuemin={0} aria-valuemax={100}>
-      <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 border-t-2 border-dotted border-line" />
-      <span className="absolute left-0 top-1/2 h-[3px] -translate-y-1/2 rounded-full bg-ink transition-[width] duration-500 ease-out" style={{ width: `${pct * 100}%` }} />
-      <span className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full border-2 border-ink bg-paper" aria-hidden="true" />
-      <span className="absolute top-1/2 flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-red text-white shadow-card transition-[left] duration-500 ease-out" style={{ left: `${Math.max(4, pct * 100)}%` }} aria-hidden="true">
-        <IconPaw width={13} height={13} />
-      </span>
     </div>
   )
 }

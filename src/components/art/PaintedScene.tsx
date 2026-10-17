@@ -147,7 +147,7 @@ export function PaintedScene({ scene, progress = 1, fade = 0, quality = 'full', 
   const k = t.tintO
   const tint = `${f(1 - k * (1 - tr))} 0 0 0 0  0 ${f(1 - k * (1 - tg))} 0 0 0  0 0 ${f(1 - k * (1 - tb))} 0 0  0 0 0 1 0`
   // colour rises with progress and drains with fading
-  const sat = (0.55 + 0.45 * p) * (1 - 0.75 * fd)
+  const sat = (0.55 + 0.45 * p) * (1 - 0.75 * fd) * 1.28
   const rr = rng(scene.seed ^ 0x2c1b3c6d)
   const blobs = [
     { x: 150 + range(rr, -30, 30), y: 105 + range(rr, -15, 15), r: 18 + p * 200 },
@@ -159,18 +159,18 @@ export function PaintedScene({ scene, progress = 1, fade = 0, quality = 'full', 
       <defs>
         <filter id={`${id}-paint`} x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
           <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves={thumb ? 1 : 3} seed={scene.seed % 97} result="n" />
-          <feDisplacementMap in="SourceGraphic" in2="n" scale={thumb ? 2.6 : 4.2} xChannelSelector="R" yChannelSelector="G" result="d0" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale={thumb ? 1 : 1.4} xChannelSelector="R" yChannelSelector="G" result="d0" />
           {/* pigment pools at the edges of each wash: a gentle unsharp mask */}
-          <feGaussianBlur in="d0" stdDeviation={thumb ? 1.2 : 1.6} result="bl" />
-          <feComposite in="d0" in2="bl" operator="arithmetic" k2={thumb ? 1.35 : 1.6} k3={thumb ? -0.35 : -0.6} result="d" />
+          <feGaussianBlur in="d0" stdDeviation={thumb ? 1 : 1.3} result="bl" />
+          <feComposite in="d0" in2="bl" operator="arithmetic" k2={thumb ? 1.6 : 2.1} k3={thumb ? -0.6 : -1.1} result="d" />
           {thumb ? (
             <feColorMatrix in="d" type="saturate" values={f(sat)} />
           ) : (
             <>
               <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="1" seed={(scene.seed % 89) + 3} result="g" />
-              <feColorMatrix in="g" type="matrix" values="0.12 0 0 0 0.92  0.12 0 0 0 0.92  0.12 0 0 0 0.92  0 0 0 0 1" result="g1" />
+              <feColorMatrix in="g" type="matrix" values="0.05 0 0 0 0.97  0.05 0 0 0 0.97  0.05 0 0 0 0.97  0 0 0 0 1" result="g1" />
               <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="2" seed={(scene.seed % 83) + 7} result="b" />
-              <feColorMatrix in="b" type="matrix" values="0.4 0 0 0 0.78  0.38 0 0 0 0.8  0.34 0 0 0 0.82  0 0 0 0 1" result="b1" />
+              <feColorMatrix in="b" type="matrix" values="0.14 0 0 0 0.93  0.13 0 0 0 0.93  0.12 0 0 0 0.92  0 0 0 0 1" result="b1" />
               <feComposite in="g1" in2="b1" operator="arithmetic" k1="1.04" result="gm" />
               <feBlend in="d" in2="gm" mode="multiply" result="m" />
               <feComposite in="m" in2="d" operator="in" result="m2" />

@@ -1,0 +1,129 @@
+/*
+  Reward moments: coins, the traveller level, the chest and the level-up. Colours come from the
+  paper-and-ink tokens in src/index.css; motion uses transform and opacity only, and everything
+  settles to its final state under prefers-reduced-motion.
+*/
+
+/* A chunky game button: rounded, with a pressed-down depth edge. */
+.btn-game {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border-radius: 1.1rem; padding: 0.95rem 1.5rem;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.08rem; letter-spacing: -0.01em;
+  color: #2a1d00; background: var(--sun);
+  box-shadow: 0 5px 0 0 #b98012, 0 10px 18px -8px rgba(28, 37, 65, 0.45);
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 150ms;
+  user-select: none; -webkit-user-select: none;
+}
+.btn-game:active { transform: translateY(4px); box-shadow: 0 1px 0 0 #b98012, 0 4px 10px -6px rgba(28, 37, 65, 0.45); }
+.btn-game:disabled { opacity: 0.45; pointer-events: none; }
+.btn-game.btn-game-ink { color: var(--paper); background: var(--ink); box-shadow: 0 5px 0 0 color-mix(in srgb, var(--ink) 60%, #000), 0 10px 18px -8px rgba(28, 37, 65, 0.45); }
+.btn-game.btn-game-ghost { color: var(--ink); background: var(--card); border: 1.5px solid var(--line); box-shadow: 0 4px 0 0 var(--line); }
+
+/* Coin chip and counters */
+.coin-chip { display: inline-flex; align-items: center; gap: 0.35rem; border-radius: 999px; border: 1.5px solid var(--line); background: var(--card); padding: 0.2rem 0.65rem 0.2rem 0.25rem; box-shadow: var(--shadow-card); font-family: var(--font-mono); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink); line-height: 1; }
+.coin-chip.is-sm { padding: 0.12rem 0.5rem 0.12rem 0.18rem; font-size: 0.85rem; }
+@keyframes coin-bump { 0% { transform: scale(1); } 35% { transform: scale(1.28) rotate(-8deg); } 100% { transform: scale(1); } }
+.coin-bump { animation: coin-bump 320ms cubic-bezier(0.3, 1.5, 0.5, 1); }
+@keyframes coin-spin { 0%, 70%, 100% { transform: scaleX(1); } 80% { transform: scaleX(0.15); } 90% { transform: scaleX(1); } }
+.coin-spin { animation: coin-spin 3.2s ease-in-out infinite; }
+
+/* Coins flying from where they were earned to a counter (or from the purse to a purchase). */
+.coin-flight { position: fixed; left: 0; top: 0; z-index: 80; pointer-events: none; will-change: transform, opacity; }
+@keyframes coin-fly {
+  0% { transform: translate(var(--x0), var(--y0)) scale(0.4); opacity: 0; }
+  12% { opacity: 1; }
+  45% { transform: translate(calc(var(--x0) + (var(--x1) - var(--x0)) * 0.35), calc(var(--y0) + (var(--y1) - var(--y0)) * 0.35 - var(--arc))) scale(1.15); }
+  100% { transform: translate(var(--x1), var(--y1)) scale(0.55); opacity: 0.85; }
+}
+.coin-flight { animation: coin-fly 640ms cubic-bezier(0.45, 0, 0.3, 1) var(--delay, 0ms) both; }
+
+/* Staged tally rows on the results screen */
+.tally-row { opacity: 0; transform: translateY(6px); transition: opacity 260ms ease, transform 320ms cubic-bezier(0.2, 0.9, 0.2, 1.2); }
+.tally-row.is-on { opacity: 1; transform: none; }
+@keyframes tally-pop { 0% { transform: scale(1); } 40% { transform: scale(1.18); } 100% { transform: scale(1); } }
+.tally-pop { animation: tally-pop 300ms ease-out; display: inline-block; }
+
+/* Traveller level bar */
+.trav-bar { position: relative; height: 14px; border-radius: 999px; background: var(--card-2); overflow: hidden; box-shadow: inset 0 1px 2px rgba(28, 37, 65, 0.15); }
+.trav-bar > span { position: absolute; inset: 0; transform-origin: left center; border-radius: 999px; background: linear-gradient(90deg, #e9a92e, #f4cf7a); }
+.trav-bar > span::after { content: ""; position: absolute; inset: 2px 6px auto 6px; height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.55); }
+@keyframes badge-flash { 0% { transform: scale(1); } 30% { transform: scale(1.3) rotate(-10deg); } 100% { transform: scale(1); } }
+.badge-flash { animation: badge-flash 420ms cubic-bezier(0.3, 1.5, 0.5, 1); }
+
+/* Light rays behind a reveal */
+.rays { position: absolute; left: 50%; top: 50%; border-radius: 50%; pointer-events: none;
+  background: repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--sun) 70%, transparent) 0deg 9deg, transparent 9deg 22.5deg);
+  -webkit-mask: radial-gradient(circle, #000 12%, rgba(0, 0, 0, 0.6) 38%, transparent 68%);
+  mask: radial-gradient(circle, #000 12%, rgba(0, 0, 0, 0.6) 38%, transparent 68%);
+}
+@keyframes rays-spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes rays-in { from { opacity: 0; transform: translate(-50%, -50%) scale(0.2); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+.rays { transform: translate(-50%, -50%); animation: rays-in 500ms cubic-bezier(0.2, 0.9, 0.2, 1) both, rays-spin 14s linear 500ms infinite; }
+
+/* Sparkles bursting out of the chest */
+.sparkle { position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; pointer-events: none; opacity: 0; }
+@keyframes sparkle-burst {
+  0% { transform: rotate(var(--a)) translateY(0) scale(0.2); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateY(calc(var(--r, 100px) * -1)) scale(1); opacity: 0; }
+}
+.sparkle { animation: sparkle-burst 820ms cubic-bezier(0.1, 0.8, 0.3, 1) var(--delay, 0ms) both; }
+
+/* The chest */
+@keyframes chest-wobble {
+  0%, 52%, 100% { transform: rotate(0) translateY(0); }
+  58% { transform: rotate(-5deg) translateY(-2px); }
+  66% { transform: rotate(5deg) translateY(-4px); }
+  74% { transform: rotate(-4deg) translateY(-2px); }
+  82% { transform: rotate(3deg) translateY(0); }
+  90% { transform: rotate(-1deg); }
+}
+.chest-body { transform-origin: 50% 92%; animation: chest-wobble 2.2s ease-in-out infinite; }
+.chest-body.is-open { animation: chest-thump 360ms cubic-bezier(0.3, 1.6, 0.5, 1); }
+@keyframes chest-thump { 0% { transform: scale(1, 1); } 30% { transform: scale(1.08, 0.9); } 100% { transform: scale(1, 1); } }
+.chest-lid { transform-box: view-box; transform-origin: 18px 62px; transition: transform 420ms cubic-bezier(0.25, 1.6, 0.45, 1); }
+.chest-body.is-open .chest-lid { transform: translate(-10px, -16px) rotate(-38deg); }
+.chest-glow { opacity: 0; transition: opacity 300ms ease 120ms; }
+.chest-body.is-open .chest-glow { opacity: 1; }
+@keyframes chest-hint { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+.chest-hint { animation: chest-hint 1.6s ease-in-out infinite; }
+@keyframes shadow-breathe { 0%, 52%, 100% { transform: scaleX(1); } 66% { transform: scaleX(0.86); } }
+.chest-shadow { transform-origin: center; animation: shadow-breathe 2.2s ease-in-out infinite; }
+
+/* What comes out of the chest */
+.chest-prize { opacity: 0; transform: translateY(70px) scale(0.3); }
+.chest-prize.is-out { animation: prize-out 620ms cubic-bezier(0.2, 1.4, 0.4, 1) 160ms both; }
+@keyframes prize-out { 0% { opacity: 0; transform: translateY(70px) scale(0.3) rotate(-20deg); } 60% { opacity: 1; transform: translateY(-8px) scale(1.12) rotate(4deg); } 100% { opacity: 1; transform: none; } }
+@keyframes prize-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+.prize-float { animation: prize-float 2.8s ease-in-out 900ms infinite; }
+.chest-text { opacity: 0; transform: translateY(8px); transition: opacity 300ms ease 520ms, transform 360ms ease 520ms; }
+.chest-text.is-on { opacity: 1; transform: none; }
+
+/* Level-up modal */
+.levelup-backdrop { background: radial-gradient(120% 80% at 50% 30%, #2a3560 0%, #141a30 70%); }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.levelup-in { animation: fade-in 260ms ease-out both; }
+@keyframes badge-in { 0% { transform: scale(0.2) rotate(-40deg); opacity: 0; } 60% { transform: scale(1.14) rotate(6deg); opacity: 1; } 100% { transform: scale(1) rotate(0); } }
+.badge-in { animation: badge-in 700ms cubic-bezier(0.25, 1.4, 0.45, 1) 150ms both; }
+@keyframes card-up { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+.card-up { animation: card-up 480ms cubic-bezier(0.2, 0.9, 0.2, 1) 420ms both; }
+.ribbon { position: relative; display: inline-block; padding: 0.3rem 1.1rem; background: var(--red); color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.ribbon::before, .ribbon::after { content: ""; position: absolute; top: 4px; width: 14px; height: 100%; background: color-mix(in srgb, var(--red) 70%, #000); z-index: -1; }
+.ribbon::before { left: -9px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 40% 50%); }
+.ribbon::after { right: -9px; clip-path: polygon(0 0, 100% 0, 60% 50%, 100% 100%, 0 100%); }
+
+/* Shop: the buy sheet */
+@keyframes sheet-up { from { transform: translateY(100%); } to { transform: none; } }
+.sheet-up { animation: sheet-up 280ms cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+@keyframes bought { 0% { transform: scale(1); } 40% { transform: scale(1.25) rotate(-6deg); } 100% { transform: scale(1); } }
+.bought { animation: bought 480ms cubic-bezier(0.3, 1.5, 0.5, 1); }
+.price-tag { display: inline-flex; align-items: center; gap: 0.2rem; font-family: var(--font-mono); font-weight: 700; font-size: 0.72rem; line-height: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .coin-bump, .coin-spin, .tally-pop, .badge-flash, .chest-body, .chest-body.is-open, .chest-shadow, .chest-hint,
+  .prize-float, .levelup-in, .badge-in, .card-up, .sheet-up, .bought { animation: none; }
+  .rays { animation: none; transform: translate(-50%, -50%); }
+  .sparkle, .coin-flight { display: none; }
+  .chest-prize.is-out { animation: none; opacity: 1; transform: none; }
+  .tally-row, .chest-text, .chest-lid, .chest-glow { transition: none; }
+}

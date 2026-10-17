@@ -17,7 +17,8 @@ export function Confetti({ count = 60 }: { count?: number }) {
     [count],
   )
   return (
-    <div aria-hidden="true">
+    // A paint-contained layer clips the falling pieces, so they never widen the page on phones.
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-[5]" style={{ contain: 'paint' }}>
       {pieces.map((p, i) => (
         <span key={i} className="confetti" style={{ left: p.left, background: p.color, transform: `rotate(${p.rot}deg)`, '--dx': p.dx, '--dur': p.dur, '--delay': p.delay } as React.CSSProperties} />
       ))}
