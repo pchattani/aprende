@@ -101,7 +101,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,webp,jpg,jpeg,json,woff2}'],
         // dist/ also holds every course: the hub's worker (scope /aprende/) must never cache them or answer
         // their navigations; each course has its own worker at /aprende/<slug>/sw.js.
         globIgnores: SLUGS.map((s) => `${s}/**`),
