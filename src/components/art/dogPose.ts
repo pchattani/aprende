@@ -8,3 +8,6 @@ export const HEAD_TILT: Record<'leo' | 'bonchita' | 'luna', Record<Mood, number>
   luna: { happy: 0, curious: -10, sleepy: 6 },
 }
 export const HEAD_PIVOT: Record<'leo' | 'bonchita' | 'luna', [number, number]> = { leo: [60, 60], bonchita: [60, 66], luna: [66, 52] }
+
+/** A slight tilt of the whole portrait sticker for the curious and sleepy moods. */
+export const LEAN: Record<Mood, number> = { happy: 0, curious: -5, sleepy: 4 }

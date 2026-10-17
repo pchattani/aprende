@@ -11,7 +11,8 @@ import { DOG_NAMES, DOG_LINES } from '../../engine/dogs'
 import { TL } from '../../engine/course'
 import { DogFigure } from '../art/DogFigure'
 import { DogsTrio } from '../art/DogsTrio'
-import { HEAD_TILT, HEAD_PIVOT } from '../art/dogPose'
+import { PORTRAITS, place, at, headTilt } from '../art/dogPortraits'
+import { LEAN } from '../art/dogPose'
 import { SouvenirShape } from '../art/SouvenirArt'
 import { souvenirArt, parseWearId, HAT_FIT, EYE_FIT, NECK_FIT, BODY_KINDS, HIGH_KINDS, EAR_KINDS, MOUTH_TURN, PAW_SIZE } from '../art/souvenirKinds'
 
@@ -38,11 +39,31 @@ interface DogGeo {
   /** Behind the (viewer's) right ear: tucked flowers and feathers. */
   ear: { x: number; y: number }
 }
-const GEO: Record<DogName, DogGeo> = {
-  leo: { hat: { x: 60, y: 37, w: 36 }, eyes: { x: 60, y: 46.6, gap: 17.6 }, mouth: { x: 60, y: 63, w: 20 }, neck: { x: 60, y: 76, w: 36 }, chest: { x: 60, y: 93 }, body: { x: 60, y: 73, w: 46, h: 30 }, paw: { x: 94, y: 112, side: 1 }, ear: { x: 77, y: 31 } },
-  bonchita: { hat: { x: 60, y: 43, w: 40 }, eyes: { x: 60, y: 52.4, gap: 19 }, mouth: { x: 60, y: 70, w: 24 }, neck: { x: 60, y: 84, w: 40 }, chest: { x: 60, y: 99 }, body: { x: 60, y: 83, w: 50, h: 24 }, paw: { x: 93, y: 112, side: 1 }, ear: { x: 79, y: 38 } },
-  luna: { hat: { x: 66, y: 33, w: 37 }, eyes: { x: 66, y: 40.4, gap: 15.4 }, mouth: { x: 66, y: 54, w: 18 }, neck: { x: 66, y: 59, w: 27 }, chest: { x: 66, y: 71 }, body: { x: 65, y: 58, w: 38, h: 24 }, paw: { x: 90, y: 112, side: 1 }, ear: { x: 82, y: 26 } },
+/** Anchors read off each portrait (see art/dogPortraits.ts). */
+function geoFor(dog: DogName): DogGeo {
+  const p = PORTRAITS[dog]
+  const r = place(dog)
+  const [ex1, ey1] = at(dog, p.eyes[0])
+  const [ex2, ey2] = at(dog, p.eyes[1])
+  const pt = (f: [number, number]) => at(dog, f)
+  const [hx, hy] = pt(p.hat)
+  const [mx, my] = pt(p.mouth)
+  const [nx, ny] = pt(p.neck)
+  const [cx, cy] = pt(p.chest)
+  const [px, py] = pt(p.paw)
+  const [rx, ry] = pt(p.ear)
+  return {
+    hat: { x: hx, y: hy, w: p.hatW * r.w },
+    eyes: { x: (ex1 + ex2) / 2, y: (ey1 + ey2) / 2, gap: ex2 - ex1 },
+    mouth: { x: mx, y: my, w: (ex2 - ex1) * 1.1 },
+    neck: { x: nx, y: ny, w: p.neckW * r.w },
+    chest: { x: cx, y: cy },
+    body: { x: nx, y: ny - 2, w: p.neckW * r.w * 1.35, h: (r.y + r.h - ny) * 0.95 },
+    paw: { x: px, y: py, side: 1 },
+    ear: { x: rx, y: ry },
+  }
 }
+const GEO: Record<DogName, DogGeo> = { leo: geoFor('leo'), bonchita: geoFor('bonchita'), luna: geoFor('luna') }
 /** Emoji fallback (souvenirs without `art` yet): anchor and font size per slot. */
 const EMOJI_SIZE: Record<WearSlot, number> = { hat: 28, eyes: 16, neck: 18, mouth: 18, paw: 20 }
 const emojiAnchor = (g: DogGeo, slot: WearSlot): [number, number] =>
@@ -111,8 +132,12 @@ function placeItem(dog: DogName, slot: WearSlot, kind: ArtKind, color: string | 
 function Wearables({ dog, outfit, mood }: { dog: DogName; outfit?: Outfit; mood: Mood }) {
   if (!outfit) return null
   const g = GEO[dog]
-  const [px, py] = HEAD_PIVOT[dog]
-  const headTf = `rotate(${HEAD_TILT[dog][mood]} ${px} ${py})`
+  // the portrait leans as a whole for some moods (see art/dogArt.tsx), and hats, glasses and mouth
+  // items also follow the tilt of the painted head
+  const r = place(dog)
+  const t = headTilt(dog)
+  const leanTf = `rotate(${LEAN[mood]} ${r.x + r.w / 2} ${r.y + r.h / 2})`
+  const tiltTf = `rotate(${t.deg} ${t.cx} ${t.cy})`
   type Item = { slot: WearSlot; id: string; label: string; layer: number; head: boolean; el: ReactNode }
   const items = (Object.keys(outfit) as WearSlot[]).flatMap((slot): Item[] => {
     const id = outfit[slot as keyof Outfit]
@@ -133,7 +158,7 @@ function Wearables({ dog, outfit, mood }: { dog: DogName; outfit?: Outfit; mood:
   return (
     <>
       {items.map((it) => (
-        <g key={it.slot} data-wear={it.id} aria-label={it.label} transform={it.head ? headTf : undefined}>
+        <g key={it.slot} data-wear={it.id} aria-label={it.label} transform={it.head ? `${leanTf} ${tiltTf}` : leanTf}>
           {it.el}
         </g>
       ))}
