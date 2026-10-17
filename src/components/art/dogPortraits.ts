@@ -51,11 +51,12 @@ export const PORTRAITS: Record<PortraitDog, Portrait> = {
     neck: [0.53, 0.72], neckW: 0.52, chest: [0.53, 0.84], paw: [0.53, 0.86],
   },
   luna: {
-    src: lunaUrl, aspect: 334 / 560, height: 108, fur: '#f3e4c8', furDark: '#c9a874',
-    eyes: [[0.2, 0.3], [0.58, 0.29]], nose: [0.4, 0.42], mouth: [0.4, 0.52],
-    hat: [0.4, 0.04], hatW: 0.62, ear: [0.82, 0.12],
-    neck: [0.42, 0.63], neckW: 0.62, chest: [0.42, 0.75], paw: [0.42, 0.8],
+    src: lunaUrl, aspect: 402 / 560, height: 106, fur: '#f3e4c8', furDark: '#c9a874',
+    eyes: [[0.32, 0.29], [0.62, 0.27]], nose: [0.495, 0.41], mouth: [0.5, 0.51],
+    hat: [0.48, 0.03], hatW: 0.5, ear: [0.86, 0.12],
+    neck: [0.5, 0.63], neckW: 0.5, chest: [0.5, 0.75], paw: [0.5, 0.8],
   },
+
 }
 
 export const GROUND_Y = 114
