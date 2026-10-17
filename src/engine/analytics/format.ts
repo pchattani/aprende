@@ -9,7 +9,7 @@ export function pct(p: number, digits = 0): string {
 
 /** Signed percentage points: 0.031 → "+3.1 pp". */
 export function pp(d: number, digits = 1): string {
-  return finite(d) ? `${d >= 0 ? '+' : '−'}${Math.abs(d * 100).toFixed(digits)} pp` : '–'
+  return finite(d) ? `${d >= 0 ? '+' : '−'}${Math.abs(d * 100).toFixed(digits)} pts` : '–'
 }
 
 /** Wilson interval "81–90%". */
@@ -50,5 +50,6 @@ export function shortDate(key: string | undefined): string {
 /** p-value: "p < 0.001" or "p = 0.03". */
 export function pval(p: number): string {
   if (!finite(p)) return 'p = –'
-  return p < 0.001 ? 'p < 0.001' : `p = ${p < 0.01 ? p.toFixed(3) : p.toFixed(2)}`
+  const v = p < 0.001 ? 'p < 0.001' : `p = ${p < 0.01 ? p.toFixed(3) : p.toFixed(2)}`
+  return `${v}, ${p < 0.05 ? 'not chance' : 'could be chance'}`
 }

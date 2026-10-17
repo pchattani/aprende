@@ -83,3 +83,12 @@ describe('grading with equivalence', () => {
     expect(grade(typeEn(['My favorite color is red.']), 'my favourite colour is red', deps).verdict).toBe('correct')
   })
 })
+
+describe('English synonyms', () => {
+  it('accepts everyday synonyms in English answers', () => {
+    expect(equivalent('just today, for me', 'only today, for me', eqEn, 'en')).toBe(true)
+    expect(equivalent('a large house', 'a big house', eqEn, 'en')).toBe(true)
+    expect(equivalent('the children speak', 'the kids talk', eqEn, 'en')).toBe(true)
+    expect(equivalent('just today, for you', 'only today, for me', eqEn, 'en')).toBe(false)
+  })
+})

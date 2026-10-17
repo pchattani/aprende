@@ -55,6 +55,26 @@ test('complete the first lesson and unlock the next lesson', async ({ page }) =>
   await expect(page.getByText(/of 7 days this week/)).toBeVisible()
 })
 
+test('the guidebook stays open during a lesson and from the journey', async ({ page }) => {
+  await openPath(page)
+  await page.getByRole('link', { name: /Hola y adiós/ }).click()
+  await page.getByRole('button', { name: 'Start the exercises' }).click()
+  const before = await readHook(page)
+  await page.getByRole('button', { name: 'Open the guidebook' }).click()
+  const sheet = page.getByRole('dialog', { name: /Guidebook/ })
+  await expect(sheet).toBeVisible()
+  await sheet.getByRole('tab', { name: /Words/ }).click()
+  await expect(sheet.getByRole('listitem').first()).toBeVisible()
+  await sheet.getByRole('button', { name: 'Close guidebook' }).click()
+  await expect(sheet).toBeHidden()
+  expect((await readHook(page)).index).toBe(before.index)
+  // the journey row's book opens the guidebook before boarding, even for a lesson already started
+  await page.goto('./')
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
+  await page.getByRole('link', { name: 'Guidebook, lesson 1' }).first().click()
+  await expect(page.getByText('Guidebook · before you board')).toBeVisible()
+})
+
 test('mistakes come back later in the lesson instead of ending it', async ({ page }) => {
   test.setTimeout(120_000)
   await openPath(page)
@@ -256,4 +276,33 @@ test('choosing a level manually marks the recommended start; every lesson is ope
   await expect(page.getByRole('heading', { name: 'Passport' })).toBeVisible()
   await expect(page.getByText(/souvenirs of/)).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/passport.png' })
+})
+
+test('checkpoint quiz after a stop: reading, writing, all correct clears it', async ({ page }) => {
+  test.setTimeout(180_000)
+  await openPath(page)
+  await page.goto('./#/checkpoint/a1.u01')
+  await expect(page.getByText('Checkpoint · Stop 1')).toBeVisible()
+  await expect(page.getByRole('heading', { level: 1, name: 'Aeropuerto de Ezeiza' })).toBeVisible()
+  await expect(page.getByText('Reading', { exact: true })).toBeVisible()
+  await expect(page.getByText('Writing', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Start the checkpoint' }).click()
+  // The first questions are on a passage from the stop.
+  const first = await readHook(page)
+  expect(first.total).toBeGreaterThanOrEqual(8)
+  await expect(page.getByRole('figure', { name: 'Reading passage' })).toBeVisible()
+  await page.screenshot({ path: 'e2e/__screenshots__/checkpoint-reading.png' })
+  let guard = 0
+  while (guard++ < 20) {
+    const hook = await readHook(page)
+    await answerCurrent(page, true)
+    const last = hook.index + 1 >= hook.total
+    await continueFeedback(page)
+    if (last) break
+  }
+  await expect(page.getByText('Checkpoint cleared')).toBeVisible({ timeout: 15_000 })
+  await expect(page.getByText('100%', { exact: true }).first()).toBeVisible()
+  await page.screenshot({ path: 'e2e/__screenshots__/checkpoint.png' })
+  await page.getByRole('button', { name: 'Back to the journey' }).click()
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
 })

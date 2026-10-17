@@ -10,8 +10,9 @@ import type { z } from 'zod'
 import { existsSync } from 'node:fs'
 import {
   PackSchema, SyllabusSchema, GrammarFileSchema, VocabFileSchema, UnitSchema, Reader, PhonologyFileSchema,
-  ExamSchema, ErrorsFileSchema, UiSchema, JourneySchema, LEVEL_ORDER, type GrammarNote, type VocabEntry, type LevelId,
+  ExamSchema, ErrorsFileSchema, UiSchema, JourneySchema, WardrobeSchema, LEVEL_ORDER, type GrammarNote, type VocabEntry, type LevelId,
 } from '../src/engine/schema'
+import { ART_KINDS, WEAR_SLOTS, WARDROBE_KINDS, WARDROBE_COLOURS } from '../src/engine/artKinds'
 import type { InflectModule, TokenizeModule, VerbsModule, LanguagePackFull } from '../src/lang/contract'
 import { CONTENT, ROOT, LANG, readYaml, listYaml, unitIdFromPath } from './content-lib'
 
@@ -94,11 +95,41 @@ if (journey) {
     for (const st of r?.stops ?? []) if (!st.fact) warn(`journey: stop ${st.name} (${lvl.id}) has no fact`)
   }
   const ids = new Set<string>()
+  const artKinds = new Set<string>(ART_KINDS)
+  const slots = new Set<string>(WEAR_SLOTS)
   for (const sv of journey.souvenirs) {
     if (ids.has(sv.id)) err(`journey: duplicate souvenir ${sv.id}`)
     ids.add(sv.id)
+    // wear-* ids belong to the generated wardrobe, badge-* to the region badges
+    if (/^(wear|badge)-/.test(sv.id)) err(`journey: souvenir id ${sv.id} uses a reserved prefix`)
+    if (!artKinds.has(sv.art)) err(`journey: souvenir ${sv.id} has unknown art kind ${sv.art}`)
+    if (sv.slot && !slots.has(sv.slot)) err(`journey: souvenir ${sv.id} has unknown slot ${sv.slot}`)
+    if (sv.color && !/^#[0-9a-f]{6}$/i.test(sv.color)) err(`journey: souvenir ${sv.id} colour ${sv.color} is not #rrggbb`)
+    if (!sv.es.trim() || !sv.en.trim() || !sv.blurb.trim()) err(`journey: souvenir ${sv.id} needs es, en and blurb`)
+  }
+  for (const lvl of LEVEL_ORDER) {
+    const n = journey.souvenirs.filter((sv) => sv.level === lvl).length
+    if (n < 12) warn(`journey: only ${n} souvenirs at ${lvl} (aim for 12)`)
   }
   if (journey.souvenirs.filter((sv) => sv.slot).length < 20) warn('journey: fewer than 20 wearable souvenirs')
+}
+
+// ---- wardrobe: a target-language name for every accessory in every colour
+const wardrobePath = join(CONTENT, 'wardrobe.yaml')
+if (!existsSync(wardrobePath)) err(`${rel(wardrobePath)} is missing`)
+else {
+  const wardrobe = parse(WardrobeSchema, wardrobePath)
+  for (const { kind } of wardrobe ? WARDROBE_KINDS : []) {
+    const k = wardrobe!.kinds[kind]
+    if (!k) continue // reported by the schema
+    for (const c of WARDROBE_COLOURS) {
+      const word = wardrobe!.colours[c.id]
+      const form = typeof word === 'string' ? word : word?.[k.form]
+      if (!form?.trim()) err(`wardrobe: no ${k.form} form of ${c.id} for ${kind}`)
+      const name = k.name.replace('{colour}', form ?? '')
+      if (/[{}]/.test(name) || name.trim() === k.name.replace('{colour}', '').trim()) err(`wardrobe: bad name for ${kind} / ${c.id}: ${name}`)
+    }
+  }
 }
 
 // ---- grammar

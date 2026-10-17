@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams, Link } from 'react-router'
+import { SouvenirIcon } from '../components/art/SouvenirArt'
+import { useNavigate, useParams, useSearchParams, Link } from 'react-router'
 import type { Lesson, Unit } from '../engine/schema'
 import type { Exercise, LessonResult, Stage } from '../engine/types'
-import { loadLesson, vocab, vocabUpTo, levelOf, grammar, units } from '../engine/loader'
+import { loadLesson, vocab, vocabUpTo, levelOf, units } from '../engine/loader'
 import { generateLesson, sentenceId, exchangeId, textId, spicyId } from '../engine/generate'
 import { ensureCards, getCards, recordLesson, getKv, setKv, lessonRows, type ItemSpec } from '../db/progress'
 import { IRREGULAR } from '@lang/verbs'
@@ -11,10 +12,11 @@ import { useSettings, SESSION_COUNT } from '../store/settings'
 import { LessonRunner } from '../components/LessonRunner'
 import { pinIdFor } from '../engine/pins'
 import { rememberReturn } from '../engine/returnTo'
-import { GrammarNoteView } from '../components/GrammarNote'
+import { GuidebookBody, GuidebookSheet } from '../components/Guidebook'
+import { hasGuidebook } from '../engine/guidebook'
 import { StampCard } from '../components/StampCard'
-import { Button, SpeakerButton, Chip } from '../components/ui/basics'
-import { IconArrowLeft, IconPaw } from '../components/ui/icons'
+import { Button } from '../components/ui/basics'
+import { IconArrowLeft, IconPaw, IconBook } from '../components/ui/icons'
 import { StopArt } from '../components/StopArt'
 import { Confetti } from '../components/ui/Confetti'
 import { CHEERS } from '../engine/stickers'
@@ -29,7 +31,6 @@ import { useOutfits } from '../hooks/useOutfits'
 import { isStamped, stopFor, type Souvenir, type Stop, type Region } from '../engine/journey'
 import { lookupForm } from '../hooks/useDeps'
 import { playSound } from '../engine/sounds'
-import { TL } from '../engine/course'
 
 type Phase =
   | { kind: 'loading' }
@@ -45,6 +46,10 @@ export default function LessonPage() {
   const sessionLength = useSettings((s) => s.sessionLength)
   const spicyOn = useSettings((s) => s.spicy)
   const [phase, setPhase] = useState<Phase>({ kind: 'loading' })
+  // ?guide opens the guidebook first even for a lesson already practised (the guidebook link on the journey).
+  const [params] = useSearchParams()
+  const wantGuide = params.has('guide')
+  const [guideOpen, setGuideOpen] = useState(false)
   const goHome = () => {
     rememberReturn(id)
     nav('/', { state: { from: id } })
@@ -84,7 +89,7 @@ export default function LessonPage() {
           { count: SESSION_COUNT[sessionLength], extra, avoid, spicy },
         )
         if (!alive) return
-        setPhase(lesson.teach.length && !seen ? { kind: 'teach', unit, lesson, exercises } : { kind: 'run', unit, lesson, exercises })
+        setPhase((lesson.teach.length && !seen) || (wantGuide && hasGuidebook(lesson)) ? { kind: 'teach', unit, lesson, exercises } : { kind: 'run', unit, lesson, exercises })
       } catch (e) {
         if (alive) setPhase({ kind: 'error', message: (e as Error).message })
       }
@@ -92,7 +97,7 @@ export default function LessonPage() {
     return () => {
       alive = false
     }
-  }, [id, speaking, sessionLength, spicyOn])
+  }, [id, speaking, sessionLength, spicyOn, wantGuide])
 
   const unitRef = units.get(id.split('.').slice(0, 2).join('.'))
 
@@ -106,9 +111,17 @@ export default function LessonPage() {
       </div>
     )
   if (phase.kind === 'teach') return <TeachScreen lesson={phase.lesson} onStart={() => setPhase({ ...phase, kind: 'run' })} onBack={goHome} />
+  const guide = guideOpen && <GuidebookSheet lesson={phase.lesson} onClose={() => setGuideOpen(false)} />
   if (phase.kind === 'run')
     return (
+      <>
+      {guide}
       <LessonRunner
+        headerExtra={hasGuidebook(phase.lesson) && (
+          <button type="button" onClick={() => setGuideOpen(true)} className="shrink-0 rounded-full p-1 text-ink-2 transition hover:bg-card hover:text-ink" aria-label="Open the guidebook" title="Guidebook: grammar and words">
+            <IconBook width={22} height={22} />
+          </button>
+        )}
         exercises={phase.exercises}
         mode="lesson"
         lessonId={id}
@@ -139,17 +152,21 @@ export default function LessonPage() {
               if (info) stamp = { stop: info.stop, region: info.region }
             }
           }
+          setGuideOpen(false)
           setPhase({ kind: 'done', lesson: phase.lesson, result, found, stamp })
         }}
       />
+      </>
     )
-  return <DoneScreen result={phase.result} found={phase.found} stamp={phase.stamp} where={stopFor(id.split('.').slice(0, 2).join('.'))} onHome={goHome} onRetry={() => setPhase({ kind: 'loading' })} />
+  return (
+    <>
+      {guide}
+      <DoneScreen result={phase.result} found={phase.found} stamp={phase.stamp} where={stopFor(id.split('.').slice(0, 2).join('.'))} onHome={goHome} onRetry={() => setPhase({ kind: 'loading' })} onGuide={hasGuidebook(phase.lesson) ? () => setGuideOpen(true) : undefined} />
+    </>
+  )
 }
 
 function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () => void; onBack: () => void }) {
-  const notes = lesson.teach.map((g) => grammar.get(g)).filter(Boolean)
-  const words = lesson.vocab.map((v) => vocab.get(v)).filter(Boolean)
-  const [tab, setTab] = useState(0)
   return (
     <div className="mx-auto max-w-xl px-4 pb-28 pt-[calc(0.75rem+env(safe-area-inset-top))]">
       <button type="button" onClick={onBack} className="mb-3 flex items-center gap-1 text-sm text-ink-2">
@@ -158,39 +175,10 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
       <p className="eyebrow">Guidebook · before you board</p>
       <h1 className="mt-1 text-[2.1rem]">{lesson.title}</h1>
       {lesson.tip && <p className="mt-3 -rotate-1 rounded-sm border-l-4 border-sun bg-card px-4 py-2 font-hand text-xl leading-snug shadow-card">{lesson.tip}</p>}
-      <div className="mt-5 flex gap-5 border-b border-line" role="tablist">
-        {notes.map((n, i) => (
-          <button key={n!.id} type="button" onClick={() => setTab(i)} role="tab" aria-selected={tab === i} className={`-mb-px border-b-2 pb-2 text-sm font-semibold transition ${tab === i ? 'border-ink text-ink' : 'border-transparent text-ink-2'}`}>
-            {n!.title}
-          </button>
-        ))}
-        {words.length > 0 && (
-          <button type="button" onClick={() => setTab(notes.length)} role="tab" aria-selected={tab === notes.length} className={`-mb-px border-b-2 pb-2 text-sm font-semibold transition ${tab === notes.length ? 'border-ink text-ink' : 'border-transparent text-ink-2'}`}>
-            Words ({words.length})
-          </button>
-        )}
+      <div className="mt-5">
+        <GuidebookBody lesson={lesson} />
       </div>
-      <div className="card mt-4">
-        {tab < notes.length ? (
-          <GrammarNoteView note={notes[tab]!} />
-        ) : (
-          <ul className="divide-y divide-[var(--line)]">
-            {words.map((w) => (
-              <li key={w!.id} className="flex items-center gap-3 py-2">
-                <SpeakerButton text={w!.lemma} size="sm" />
-                <div className="flex-1">
-                  <p className="font-bold" lang={TL}>
-                    {w!.pos === 'noun' && w!.gender ? `${w!.gender === 'f' ? 'la' : 'el'} ` : ''}
-                    {w!.lemma}
-                  </p>
-                  <p className="text-sm text-muted">{w!.en.join(', ')}</p>
-                </div>
-                <Chip>{w!.pos}</Chip>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <p className="mt-3 text-center text-xs text-ink-2">The guidebook stays open to you: tap the book during the lesson.</p>
       <div className="fixed inset-x-0 bottom-0 border-t border-line bg-paper p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
         <div className="mx-auto max-w-xl">
           <Button className="w-full" onClick={onStart}>
@@ -202,7 +190,7 @@ function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () 
   )
 }
 
-function DoneScreen({ result, found, stamp, where, onHome, onRetry }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; where?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void }) {
+function DoneScreen({ result, found, stamp, where, onHome, onRetry, onGuide }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; where?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void; onGuide?: () => void }) {
   const acc = result.total ? Math.round(((result.correct + result.almost) / result.total) * 100) : 0
   const minutes = Math.floor(result.durationMs / 60000)
   const seconds = Math.round((result.durationMs % 60000) / 1000)
@@ -247,7 +235,7 @@ function DoneScreen({ result, found, stamp, where, onHome, onRetry }: { result: 
       {stamp && <div className="mx-auto mt-4 w-full max-w-sm"><StampCard stop={stamp.stop} region={stamp.region} /></div>}
       {found && (
         <div className="animate-pop mx-auto mt-4 flex w-full max-w-sm items-center gap-3 rounded-2xl border border-line bg-card p-3 shadow-card">
-          <span className="stamp text-3xl" aria-hidden="true">{found.emoji}</span>
+          <span className="stamp p-1" aria-hidden="true"><SouvenirIcon souvenir={found} size={44} /></span>
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold">Lucky find: {found.es}</p>
             <p className="text-xs text-ink-2">{found.blurb} Added to your passport.</p>
@@ -257,6 +245,11 @@ function DoneScreen({ result, found, stamp, where, onHome, onRetry }: { result: 
       )}
       <div className="mx-auto mt-auto grid w-full max-w-sm gap-3 pt-8">
         {!result.completed && <Button variant="ghost" onClick={onRetry}>Try again</Button>}
+        {onGuide && (
+          <Button variant="ghost" onClick={onGuide}>
+            <IconBook width={18} height={18} /> Review the guidebook
+          </Button>
+        )}
         <Button variant="primary" className="py-4" onClick={onHome}>
           Continue
         </Button>

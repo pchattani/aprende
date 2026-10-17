@@ -1,0 +1,50 @@
+# Wardrobe: accessories that come in colours, earned on errands once the regional souvenirs
+# thin out (see src/engine/wardrobe.ts). {colour} is replaced by the colour word in the form
+# that agrees with the noun: ms, fs, mp, fp (masculine/feminine, singular/plural).
+# blu, viola and rosa never change; occhiali is plural.
+kinds:
+  beret:
+    name: un basco {colour}
+    form: ms
+  cap:
+    name: un berretto da baseball {colour}
+    form: ms
+  beanie:
+    name: un berretto di lana {colour}
+    form: ms
+  sunhat:
+    name: un cappello da sole {colour}
+    form: ms
+  bucket-hat:
+    name: un cappello da pescatore {colour}
+    form: ms
+  sunglasses:
+    name: un paio di occhiali da sole {colour}
+    form: mp
+  round-glasses:
+    name: un paio di occhiali tondi {colour}
+    form: mp
+  scarf:
+    name: una sciarpa {colour}
+    form: fs
+  bandana:
+    name: una bandana {colour}
+    form: fs
+  bowtie:
+    name: un papillon {colour}
+    form: ms
+  umbrella:
+    name: un ombrello {colour}
+    form: ms
+  balloon:
+    name: un palloncino {colour}
+    form: ms
+colours:
+  red: { ms: rosso, fs: rossa, mp: rossi, fp: rosse }
+  blue: blu
+  green: { ms: verde, fs: verde, mp: verdi, fp: verdi }
+  yellow: { ms: giallo, fs: gialla, mp: gialli, fp: gialle }
+  purple: viola
+  pink: rosa
+  orange: { ms: arancione, fs: arancione, mp: arancioni, fp: arancioni }
+  black: { ms: nero, fs: nera, mp: neri, fp: nere }

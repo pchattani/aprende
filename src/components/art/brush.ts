@@ -163,3 +163,45 @@ export function curlStrokes(cx: number, cy: number, rx: number, ry: number, n: n
   return d
 }
 
+
+/**
+ * A shaggy outline around an ellipse: soft locks that fall with gravity (`droop` 0 = radial,
+ * 1 = straight down). Used for long silky or wiry coats.
+ */
+export function shagPath(cx: number, cy: number, rx: number, ry: number, n: number, len: number, r: Rng, droop = 0.5, start = 0): string {
+  const base = (a: number, k = 1): [number, number] => [cx + Math.cos(a) * rx * k, cy + Math.sin(a) * ry * k]
+  let [x0, y0] = base(start)
+  let d = `M${f(x0)} ${f(y0)}`
+  for (let i = 0; i < n; i++) {
+    const a1 = start + ((i + 0.55) / n) * Math.PI * 2
+    const a2 = start + ((i + 1) / n) * Math.PI * 2
+    const [mx, my] = base(a1, 1 + (r() - 0.5) * 0.06)
+    let dx = Math.cos(a1) * (1 - droop)
+    let dy = Math.sin(a1) * (1 - droop) + droop
+    const dl = Math.hypot(dx, dy) || 1
+    dx /= dl
+    dy /= dl
+    const l = len * (0.55 + r() * 0.9)
+    const tx = mx + dx * l
+    const ty = my + dy * l
+    const [x2, y2] = base(a2)
+    d += ` Q${f((x0 + tx) / 2 + dx * l * 0.25)} ${f((y0 + ty) / 2 + dy * l * 0.25)} ${f(tx)} ${f(ty)}`
+    d += ` Q${f(mx + dx * l * 0.2)} ${f(my + dy * l * 0.2)} ${f(x2)} ${f(y2)}`
+    x0 = x2
+    y0 = y2
+  }
+  return d + 'Z'
+}
+
+/** Mirror a path of absolute M/L/Q/C/Z commands (as written by hand or by the generators above) across x = cx. */
+export function mirrorX(d: string, cx = 60): string {
+  let i = 0
+  return d.replace(/-?\d*\.?\d+(?:e-?\d+)?|[A-Za-z]/g, (t) => {
+    if (/[A-Za-z]/.test(t)) {
+      i = 0
+      return t
+    }
+    const v = i++ % 2 === 0 ? 2 * cx - parseFloat(t) : parseFloat(t)
+    return f(v)
+  })
+}

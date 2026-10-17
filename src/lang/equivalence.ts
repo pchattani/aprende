@@ -57,23 +57,31 @@ type Tok = { w: string; groups: Set<number> }
 const ES_SUBJECTS = explainConfig.subjects
 const ES_EMPHATIC = explainConfig.emphatic
 const ES_NOT_AFTER_SUBJECT = explainConfig.notAfterSubject
+const ES_AMBIGUOUS = explainConfig.ambiguousSubjects ?? new Set<string>()
+
+/** Optional helpers for comparing answers: `isVerb` lets "El tiene…" count as "Él tiene…". */
+export interface CompareOptions {
+  isVerb?: (word: string) => boolean
+}
 
 function words(text: string): string[] {
   return [...(text.toLowerCase().match(WORD_RE) ?? [])]
 }
 
-function dropOptionalSpanish(t: string[]): string[] {
+function dropOptionalSpanish(t: string[], opts: CompareOptions = {}): string[] {
   const out = [...t]
   if (out.length >= 3 && ES_EMPHATIC.get(`${out[0]} ${out[1]}`) === out[2]) out.splice(0, 2)
   // Leading subject pronoun before a verb. "él" with accent only (never the article "el"); "tú" never "tu".
   if (out.length >= 3 && ES_SUBJECTS.has(`${out[0]} ${out[1]}`) && !ES_NOT_AFTER_SUBJECT.has(out[2]!)) out.splice(0, 2) // a gente
   else if (out.length >= 2 && ES_SUBJECTS.has(out[0]!) && !ES_NOT_AFTER_SUBJECT.has(out[1]!)) out.shift()
+  // "El tiene doce años": the pronoun typed without its accent, recognised because a verb follows.
+  else if (out.length >= 2 && ES_AMBIGUOUS.has(out[0]!) && opts.isVerb?.(out[1]!)) out.shift()
   return out
 }
 
-function fold(text: string, eq: Equivalence, lang: 'es' | 'en'): Tok[] {
+function fold(text: string, eq: Equivalence, lang: 'es' | 'en', opts?: CompareOptions): Tok[] {
   let ws = words(text)
-  if (lang === 'es') ws = dropOptionalSpanish(ws)
+  if (lang === 'es') ws = dropOptionalSpanish(ws, opts)
   const out: Tok[] = []
   for (let i = 0; i < ws.length; ) {
     let done = false
@@ -111,9 +119,9 @@ export function canonicalize(text: string, eq: Equivalence, lang: 'es' | 'en' = 
  * 'exact' when equivalent with accents respected, 'accents' when equivalent only
  * ignoring accents, otherwise false.
  */
-export function compareEquivalent(given: string, expected: string, eq: Equivalence, lang: 'es' | 'en' = 'es'): 'exact' | 'accents' | false {
-  const a = fold(given, eq, lang)
-  const b = fold(expected, eq, lang)
+export function compareEquivalent(given: string, expected: string, eq: Equivalence, lang: 'es' | 'en' = 'es', opts?: CompareOptions): 'exact' | 'accents' | false {
+  const a = fold(given, eq, lang, opts)
+  const b = fold(expected, eq, lang, opts)
   if (a.length !== b.length || a.length === 0) return false
   if (a.every((t, i) => sameTok(t, b[i]!, false))) return 'exact'
   if (a.every((t, i) => sameTok(t, b[i]!, true))) return 'accents'

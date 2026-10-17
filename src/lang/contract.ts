@@ -110,6 +110,8 @@ export interface ExplainConfig {
   preps: ReadonlySet<string>
   /** Subject pronouns that are optional before a verb (dropped when comparing answers). */
   subjects: ReadonlySet<string>
+  /** Unaccented spellings learners type for a subject pronoun ("el" for "él", "tu" for "tú"): dropped only before a verb. */
+  ambiguousSubjects?: ReadonlySet<string>
   /** Words after which a leading subject pronoun is not dropped (y, también…). */
   notAfterSubject: ReadonlySet<string>
   /** Emphatic forms equivalent to a clitic ("a mí" → "me"). */

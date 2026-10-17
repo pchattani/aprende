@@ -5,7 +5,7 @@
  */
 import type { ReactNode, SVGProps } from 'react'
 import type { Mood } from './dogArt'
-import { DOG_ART, DOG_LABEL, HI_DETAIL_PX, type DogId } from './dogRegistry'
+import { DOG_ART, DOG_LABEL, HI_DETAIL_PX, PORTRAIT, type DogId } from './dogRegistry'
 import { PaintFilters } from './paint'
 import { useArtId } from './brush'
 
@@ -27,7 +27,7 @@ export function DogFigure({ dog, size = 96, mood = 'happy', wave, detail, portra
   const hi = detail ? detail === 'hi' : size >= HI_DETAIL_PX
   const Art = DOG_ART[dog]
   return (
-    <svg width={size} height={size} viewBox={portrait ? '16 12 88 88' : '0 0 120 120'} role="img" aria-label={DOG_LABEL[dog]} overflow="visible" {...rest}>
+    <svg width={size} height={size} viewBox={portrait ? PORTRAIT[dog].join(' ') : '0 0 120 120'} role="img" aria-label={DOG_LABEL[dog]} overflow="visible" {...rest}>
       {hi && (
         <defs>
           <PaintFilters id={id} seed={dog.length * 7} />

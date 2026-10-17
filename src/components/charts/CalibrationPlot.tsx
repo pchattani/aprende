@@ -31,7 +31,7 @@ export function CalibrationPlot({ bins, height = 250, ariaLabel }: {
             ))}
             <line x1={x(lo)} y1={y(lo)} x2={x(1)} y2={y(1)} stroke={C.ink2} strokeWidth={1} strokeDasharray="4 3" />
             <text x={x(lo + 0.04) + 6} y={y(lo + 0.04)} fill={C.ink2} transform={`rotate(-45 ${x(lo + 0.04) + 6} ${y(lo + 0.04)})`} style={{ fontSize: 9.5 }} {...HALO}>
-              perfect calibration
+              spot on
             </text>
             {bins.map((b, i) => (
               <g key={i}>
@@ -41,7 +41,7 @@ export function CalibrationPlot({ bins, height = 250, ariaLabel }: {
               </g>
             ))}
             <text x={x0 + size / 2} y={height - 2} textAnchor="middle" fill={C.ink2}>predicted recall %</text>
-            <text transform={`translate(10 ${top + size / 2}) rotate(-90)`} textAnchor="middle" fill={C.ink2}>observed %</text>
+            <text transform={`translate(10 ${top + size / 2}) rotate(-90)`} textAnchor="middle" fill={C.ink2}>actual recall %</text>
           </g>
         )
       }}

@@ -5,6 +5,7 @@
  * UI share one definition.
  */
 import { z } from 'zod'
+import { ART_KINDS, WEAR_SLOTS, WARDROBE_KINDS, WARDROBE_COLOURS } from './artKinds'
 
 export const LevelId = z.enum(['a1', 'a2', 'b1', 'b2', 'c1', 'c2'])
 export type LevelId = z.infer<typeof LevelId>
@@ -95,7 +96,10 @@ export type Ui = z.infer<typeof UiSchema>
 
 // ---------------------------------------------------------------------------
 // journey.yaml: regions (one per level) and stops (one per unit, in order), souvenirs
-export const WearSlot = z.enum(['hat', 'neck', 'mouth', 'paw'])
+export const WearSlot = z.enum(WEAR_SLOTS)
+/** An illustration kind from src/engine/artKinds.ts (drawn by SouvenirArt). */
+export const ArtKind = z.enum(ART_KINDS)
+const HexColour = z.string().regex(/^#[0-9a-f]{6}$/i, 'colour like #d4483c')
 export const JourneySchema = z.object({
   regions: z.array(
     z.object({
@@ -106,10 +110,40 @@ export const JourneySchema = z.object({
     }),
   ),
   souvenirs: z.array(
-    z.object({ id: z.string().regex(/^[a-z0-9-]+$/), level: z.enum(['a1', 'a2', 'b1', 'b2', 'c1', 'c2']), emoji: z.string(), es: z.string(), en: z.string(), blurb: z.string(), slot: WearSlot.optional() }),
+    z.object({
+      id: z.string().regex(/^[a-z0-9-]+$/),
+      level: z.enum(['a1', 'a2', 'b1', 'b2', 'c1', 'c2']),
+      emoji: z.string(),
+      /** What SouvenirArt draws, and its main colour. */
+      art: ArtKind,
+      color: HexColour.optional(),
+      es: z.string(),
+      en: z.string(),
+      blurb: z.string(),
+      slot: WearSlot.optional(),
+    }),
   ),
 })
 export type JourneyFile = z.infer<typeof JourneySchema>
+
+// ---------------------------------------------------------------------------
+// wardrobe.yaml: target-language names of the coloured accessories (src/engine/wardrobe.ts).
+// Each kind's name holds {colour} where the colour word goes; `form` picks the colour form
+// that agrees with the noun (ms/fs/mp/fp: masculine/feminine, singular/plural).
+export const ColourForm = z.enum(['ms', 'fs', 'mp', 'fp'])
+export type ColourForm = z.infer<typeof ColourForm>
+const ColourWord = z.union([z.string().min(1), z.object({ ms: z.string().min(1), fs: z.string().min(1), mp: z.string().min(1), fp: z.string().min(1) })])
+const kindIds = WARDROBE_KINDS.map((k) => k.kind)
+export const WardrobeSchema = z.object({
+  kinds: z.record(z.string(), z.object({ name: z.string().includes('{colour}'), form: ColourForm.default('ms') })).superRefine((m, ctx) => {
+    for (const k of kindIds) if (!m[k]) ctx.addIssue({ code: 'custom', message: `missing wardrobe kind ${k}` })
+    for (const k of Object.keys(m)) if (!kindIds.includes(k as (typeof kindIds)[number])) ctx.addIssue({ code: 'custom', message: `unknown wardrobe kind ${k}` })
+  }),
+  colours: z.record(z.string(), ColourWord).superRefine((m, ctx) => {
+    for (const c of WARDROBE_COLOURS) if (!m[c.id]) ctx.addIssue({ code: 'custom', message: `missing wardrobe colour ${c.id}` })
+  }),
+})
+export type WardrobeFile = z.infer<typeof WardrobeSchema>
 
 // ---------------------------------------------------------------------------
 // syllabus.yaml

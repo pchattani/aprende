@@ -9,6 +9,8 @@ import { REGIONS, wearableSouvenirs } from '../engine/journey'
 import { COURSE_ID } from '../engine/course'
 import type { LevelId } from '../engine/schema'
 import type { Outfit } from '../hooks/useOutfits'
+import { SouvenirArt, SouvenirIcon } from '../components/art/SouvenirArt'
+import { ART_KINDS, WARDROBE_KINDS, WARDROBE_COLOURS, type WearSlot } from '../engine/artKinds'
 
 const DOGS = [Leo, Bonchita, Luna]
 const MOODS = ['happy', 'curious', 'sleepy'] as const
@@ -31,6 +33,27 @@ const SAMPLES: { motif: Motif; variant?: string; accent?: Accent; time?: TimeOfD
   { motif: 'farm', variant: 'lavender' },
 ]
 const TIMES: TimeOfDay[] = ['day', 'golden', 'day', 'dawn', 'day', 'dusk']
+const DOG_IDS = ['leo', 'bonchita', 'luna'] as const
+
+/** Outfits from wardrobe-style ids (`wear-<kind>[-<colour>]`), which the dogs can draw before the souvenir list has them. */
+const dress = (o: Partial<Record<WearSlot, string>>) => o as Outfit
+const WARDROBE_OUTFITS: Outfit[] = [
+  dress({ hat: 'wear-beret-red', eyes: 'wear-round-glasses-black', neck: 'wear-scarf-yellow', paw: 'wear-balloon-blue' }),
+  dress({ hat: 'wear-cap-blue', eyes: 'wear-sunglasses-black', neck: 'wear-bandana-red', paw: 'wear-umbrella-yellow' }),
+  dress({ hat: 'wear-beanie-green', eyes: 'wear-round-glasses-orange', neck: 'wear-bowtie-purple', paw: 'wear-balloon-pink' }),
+  dress({ hat: 'wear-sunhat-pink', eyes: 'wear-sunglasses-purple', neck: 'wear-scarf-blue', paw: 'wear-umbrella-green' }),
+  dress({ hat: 'wear-bucket-hat-orange', eyes: 'wear-sunglasses-red', neck: 'wear-bowtie-black', paw: 'wear-balloon-yellow' }),
+]
+/** Souvenir combinations (non-wardrobe kinds worn in each slot). */
+const SOUVENIR_OUTFITS: { label: string; outfit: Outfit }[] = [
+  { label: 'poncho · mate · alfajor', outfit: dress({ neck: 'wear-poncho', paw: 'wear-mate', mouth: 'wear-cookie' }) },
+  { label: 'shirt · medialuna · ball', outfit: dress({ neck: 'wear-football-shirt', mouth: 'wear-croissant', paw: 'wear-football' }) },
+  { label: 'mask · lei · fan', outfit: dress({ eyes: 'wear-carnival-mask', neck: 'wear-lei', paw: 'wear-fan' }) },
+  { label: 'sombrero · guitar · flower', outfit: dress({ hat: 'wear-sombrero', paw: 'wear-guitar', mouth: 'wear-flower' }) },
+  { label: 'flower · camera · bandoneón', outfit: dress({ hat: 'wear-flower', neck: 'wear-camera', paw: 'wear-accordion' }) },
+  { label: 'mask up · medal · baguette', outfit: dress({ hat: 'wear-carnival-mask', neck: 'wear-medal', mouth: 'wear-baguette', paw: 'wear-lantern' }) },
+  { label: 'feather · necklace · dumpling', outfit: dress({ hat: 'wear-feather', neck: 'wear-necklace', mouth: 'wear-dumpling', paw: 'wear-drum' }) },
+]
 
 function Section({ title, shot, children, note }: { title: string; shot: string; children: ReactNode; note?: string }) {
   return (
@@ -98,11 +121,72 @@ export default function ArtGallery() {
         </div>
       </Section>
 
-      <Section title="Dog stamps" shot="stamps" note="Speaker avatars beside exercise prompts.">
-        <div className="flex flex-wrap items-end gap-5">
-          {(['leo', 'bonchita', 'luna'] as const).map((d) => <DogStamp key={d} dog={d} size={96} />)}
-          {(['leo', 'bonchita', 'luna'] as const).map((d, i) => <DogStamp key={`s${d}`} dog={d} size={64} mood={MOODS[i]} tilt={i - 1} />)}
-          {(['leo', 'bonchita', 'luna'] as const).map((d) => <DogStamp key={`x${d}`} dog={d} size={44} />)}
+      <Section title="Dog stamps" shot="stamps" note="Speaker avatars beside exercise prompts (78px there), at 60, 78 and 120px in each mood: the dog is a bust, head on neck and shoulders.">
+        {[120, 78, 60].map((size) => (
+          <div key={size} data-shot={`stamps${size}`} className="mb-4 flex flex-wrap items-end gap-4">
+            {DOG_IDS.map((d) => MOODS.map((m, i) => <DogStamp key={`${d}${m}`} dog={d} size={size} mood={m} tilt={size === 78 ? (i - 1) * 3 : 0} />))}
+          </div>
+        ))}
+        <div className="flex flex-wrap items-end gap-4">
+          {DOG_IDS.map((d) => <DogStamp key={`x${d}`} dog={d} size={44} />)}
+        </div>
+      </Section>
+
+      <Section title={`Souvenirs (${ART_KINDS.length} kinds)`} shot="souvenirs" note="Every ART_KIND at 32 and 72px, in its default colour.">
+        <div className="grid grid-cols-3 gap-x-2 gap-y-3 sm:grid-cols-6 lg:grid-cols-9">
+          {ART_KINDS.map((k) => (
+            <div key={k} className="flex flex-col items-center">
+              <div className="flex items-end gap-1">
+                <SouvenirArt kind={k} size={32} />
+                <SouvenirArt kind={k} size={72} title={k} />
+              </div>
+              <Label>{k}</Label>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 flex items-end gap-3">
+          <SouvenirIcon souvenir={{ emoji: '🧉', art: 'mate' }} size={40} />
+          <SouvenirIcon souvenir={{ emoji: '🧉' }} size={40} />
+          <SouvenirIcon souvenir={{ emoji: '🎁', art: 'not-a-kind' }} size={40} />
+          <Label>SouvenirIcon: art · emoji fallback · unknown art</Label>
+        </div>
+      </Section>
+
+      <Section title="Wardrobe" shot="wardrobe" note="The 12 wardrobe kinds in all 8 colours (48px).">
+        <div className="overflow-x-auto">
+          <table className="border-separate border-spacing-1">
+            <thead>
+              <tr>
+                <th />
+                {WARDROBE_COLOURS.map((c) => <th key={c.id} className="font-mono text-[10px] text-muted">{c.id}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {WARDROBE_KINDS.map(({ kind, slot }) => (
+                <tr key={kind}>
+                  <td className="pr-2 text-right font-mono text-[10px] text-muted">{kind}<br />{slot}</td>
+                  {WARDROBE_COLOURS.map((c) => <td key={c.id}><SouvenirArt kind={kind} color={c.hex} size={48} /></td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Section>
+
+      <Section title="Dress-up" shot="dressup" note="Hat + glasses + neck + paw items fitted to each dog (160 and 64px, all moods), then souvenir combinations.">
+        <div data-shot="dressup-wardrobe" className="mb-4 flex flex-wrap items-end gap-3">
+          {DOGS.map((D, i) => WARDROBE_OUTFITS.slice(0, 3).map((_o, k) => <D key={`${i}${k}`} size={160} mood={MOODS[(i + k) % 3]} outfit={WARDROBE_OUTFITS[(i + k) % WARDROBE_OUTFITS.length]} />))}
+        </div>
+        <div data-shot="dressup-small" className="mb-4 flex flex-wrap items-end gap-2">
+          {DOGS.map((D, i) => WARDROBE_OUTFITS.map((o, k) => <D key={`${i}${k}`} size={64} outfit={o} />))}
+        </div>
+        <div data-shot="dressup-souvenirs" className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+          {SOUVENIR_OUTFITS.map(({ label, outfit }, k) => (
+            <div key={label}>
+              {DOGS.map((D, i) => <D key={i} size={i === k % 3 ? 130 : 0} outfit={outfit} style={i === k % 3 ? undefined : { display: 'none' }} />)}
+              <Label>{label}</Label>
+            </div>
+          ))}
         </div>
       </Section>
 

@@ -1,12 +1,12 @@
 /**
  * Quests and rewards. Three quests a day, chosen deterministically from the
  * date, with progress read from the day's counters. Rewards are souvenirs from
- * the region the learner is travelling through.
+ * the region the learner is travelling through, then wardrobe accessories in colours.
  */
 import { Rng, hashString } from './random'
 import type { DayRow } from './types'
-import type { LevelId } from './schema'
-import { souvenirsFor, SOUVENIRS, type Souvenir } from './journey'
+import { LEVEL_ORDER, type LevelId } from './schema'
+import { REGIONAL_SOUVENIRS, WARDROBE, SOUVENIRS, type Souvenir } from './journey'
 import { ui } from './loader'
 
 export type QuestKind = 'reviews' | 'lessons' | 'minutes' | 'perfect' | 'newItems'
@@ -54,12 +54,30 @@ export function questsForDate(date: string): QuestDef[] {
   return [easy, medium, other]
 }
 
-/** Pick a reward souvenir: unowned, from the current region first, then anywhere; undefined if all owned. */
+/** Once the region's own souvenirs are found, the share of rewards that come from the wardrobe. */
+export const WARDROBE_SHARE = 0.6
+
+/**
+ * Pick a reward souvenir (never a badge):
+ * 1. an unowned souvenir of the current region;
+ * 2. a mix of unowned souvenirs of earlier regions and unowned wardrobe items (WARDROBE_SHARE of
+ *    the time), preferring wardrobe kinds of the current level or earlier;
+ * 3. anything unowned (later regions). Undefined only when the learner owns everything.
+ */
 export function pickReward(level: LevelId, owned: Set<string>, seed: number): Souvenir | undefined {
   const rng = new Rng(seed)
-  const local = souvenirsFor(level).filter((s) => !owned.has(s.id) && !s.badge)
+  const unowned = (s: Souvenir) => !owned.has(s.id) && !s.badge
+  const rank = LEVEL_ORDER.indexOf(level)
+  const local = REGIONAL_SOUVENIRS.filter((s) => s.level === level && unowned(s))
   if (local.length) return rng.pick(local)
-  const any = SOUVENIRS.filter((s) => !owned.has(s.id) && !s.badge)
+  const earlier = REGIONAL_SOUVENIRS.filter((s) => unowned(s) && LEVEL_ORDER.indexOf(s.level) < rank)
+  const wardrobe = WARDROBE.filter(unowned)
+  const near = wardrobe.filter((s) => LEVEL_ORDER.indexOf(s.level) <= rank)
+  const wear = near.length ? near : wardrobe
+  if (earlier.length && wear.length) return rng.next() < WARDROBE_SHARE ? rng.pick(wear) : rng.pick(earlier)
+  if (wear.length) return rng.pick(wear)
+  if (earlier.length) return rng.pick(earlier)
+  const any = SOUVENIRS.filter(unowned)
   return any.length ? rng.pick(any) : undefined
 }
 

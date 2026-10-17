@@ -4,7 +4,11 @@
  */
 import type { LevelId } from './schema'
 import type { LessonRow } from './types'
+import type { ArtKind, WardrobeColour, WearSlot } from './artKinds'
 import { journeyData, ui, fill } from './loader'
+import { WARDROBE } from './wardrobe'
+
+export type { WearSlot } from './artKinds'
 
 export interface Stop {
   unitId: string
@@ -54,31 +58,48 @@ export function isStamped(unitId: string, rows: ReadonlyMap<string, LessonRow> |
   return done >= stampTarget(lessonCount)
 }
 
-/** Souvenirs the dogs can find at each region, awarded by quests and surprise finds. */
-export type WearSlot = 'hat' | 'neck' | 'mouth' | 'paw'
+/**
+ * Souvenirs: regional ones the dogs find at each region (journey.yaml), wardrobe accessories
+ * in colours (engine/wardrobe.ts), and region badges. Quests and lucky finds hand out the first two.
+ */
 export interface Souvenir {
   id: string
   level: LevelId
+  /** Fallback picture; SouvenirArt draws `art` in `color`. */
   emoji: string
+  art: ArtKind
+  /** Main colour of the illustration (#rrggbb). */
+  color?: string
   es: string
   en: string
   blurb: string
   /** Souvenirs the dogs can wear or carry (see the Perros page). */
   wearable?: { slot: WearSlot }
+  /** Wardrobe items: the accessory and its colour. */
+  wardrobe?: { kind: ArtKind; colour: WardrobeColour }
   /** Region badges earned by passing the region quiz; never handed out by quests. */
   badge?: boolean
 }
+/** The region's own souvenirs, from content/<lang>/journey.yaml. */
+export const REGIONAL_SOUVENIRS: Souvenir[] = journeyData.souvenirs.map((s) => ({
+  id: s.id, level: s.level, emoji: s.emoji, art: s.art, ...(s.color ? { color: s.color } : {}), es: s.es, en: s.en, blurb: s.blurb,
+  ...(s.slot ? { wearable: { slot: s.slot } } : {}),
+}))
+export { WARDROBE }
 export const SOUVENIRS: Souvenir[] = [
-  ...journeyData.souvenirs.map((s) => ({ id: s.id, level: s.level, emoji: s.emoji, es: s.es, en: s.en, blurb: s.blurb, ...(s.slot ? { wearable: { slot: s.slot } } : {}) })),
+  ...REGIONAL_SOUVENIRS,
+  ...WARDROBE,
   // Region badges: earned with 80% or more in the region quiz.
-  ...REGIONS.map((r) => ({ id: `badge-${r.level}`, level: r.level, emoji: '🏅', es: fill(ui.badgeName, { region: r.name }), en: `${r.name} badge`, blurb: `Passed the ${r.name} region quiz.`, badge: true }) as Souvenir),
+  ...REGIONS.map((r): Souvenir => ({ id: `badge-${r.level}`, level: r.level, emoji: '🏅', art: 'medal', es: fill(ui.badgeName, { region: r.name }), en: `${r.name} badge`, blurb: `Passed the ${r.name} region quiz.`, badge: true })),
 ]
+const BY_ID = new Map(SOUVENIRS.map((s) => [s.id, s]))
 export function wearableSouvenirs(): Souvenir[] {
   return SOUVENIRS.filter((s) => s.wearable)
 }
+/** The region's own souvenirs and its badge (not the wardrobe, which belongs to every region). */
 export function souvenirsFor(level: LevelId): Souvenir[] {
-  return SOUVENIRS.filter((s) => s.level === level)
+  return SOUVENIRS.filter((s) => s.level === level && !s.wardrobe)
 }
 export function souvenirById(id: string): Souvenir | undefined {
-  return SOUVENIRS.find((s) => s.id === id)
+  return BY_ID.get(id)
 }

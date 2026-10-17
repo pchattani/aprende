@@ -152,6 +152,11 @@ export interface ChoiceExercise extends ExerciseBase {
   answer: number
   /** Translation shown in feedback. */
   translation?: string
+  /**
+   * A reading passage shown in full above the question (checkpoint reading). Lines are in the
+   * target language; their English stays hidden until the answer is checked. `focus` highlights a line.
+   */
+  passage?: { title?: string; lines: { speaker?: string; text: string; en?: string }[]; focus?: number }
 }
 export interface WordBankExercise extends ExerciseBase {
   kind: 'wordBank' | 'order' | 'orderText'

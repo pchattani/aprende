@@ -492,6 +492,7 @@ souvenirs:
   - id: egg-tart
     level: a1
     emoji: 🥧
+    art: eggtart
     es: 一個蛋撻
     en: an egg tart
     blurb: Flaky, wobbly, still warm. Bonchita carries it very, very carefully.
@@ -499,6 +500,8 @@ souvenirs:
   - id: pineapple-bun
     level: a1
     emoji: 🍞
+    art: bun
+    color: '#e9b92e'
     es: 一個菠蘿包
     en: a pineapple bun
     blurb: No pineapple inside, just a crackly sugar top. Leo asks for one with butter.
@@ -506,6 +509,8 @@ souvenirs:
   - id: milk-tea
     level: a1
     emoji: 🧋
+    art: teacup
+    color: '#b07a4a'
     es: 一杯奶茶
     en: a cup of milk tea
     blurb: Hong Kong-style milk tea, strained through a "silk stocking". Strong enough to wake three dogs.
@@ -513,6 +518,8 @@ souvenirs:
   - id: octopus-card
     level: a1
     emoji: 💳
+    art: ticket
+    color: '#e9b92e'
     es: 一張八達通
     en: an Octopus card
     blurb: Beep for the tram, beep for the ferry, beep for a bun. Luna wears it on a lanyard.
@@ -520,6 +527,8 @@ souvenirs:
   - id: star-ferry-ticket
     level: a1
     emoji: 🎫
+    art: ticket
+    color: '#3f8f5f'
     es: 一張天星小輪船飛
     en: a Star Ferry ticket
     blurb: The cheapest harbour cruise in the world, according to Leo.
@@ -527,13 +536,67 @@ souvenirs:
   - id: mini-tram
     level: a1
     emoji: 🚋
+    art: figurine
+    color: '#3f8f5f'
     es: 一架叮叮模型
     en: a model ding ding tram
     blurb: A tiny double-decker tram. Ding ding!
     slot: paw
+  - id: folding-fan
+    level: a1
+    emoji: 🪭
+    art: fan
+    color: '#d4483c'
+    es: 一把摺扇
+    en: a folding fan
+    blurb: From Stanley Market, painted with the harbour. Luna fans Leo when he gets grumpy.
+    slot: paw
+  - id: jockey-cap
+    level: a1
+    emoji: 🏇
+    art: cap
+    color: '#e9b92e'
+    es: 一頂騎師帽
+    en: a jockey cap
+    blurb: From a Wednesday night at Happy Valley. Leo is sure he could beat the horses.
+    slot: hat
+  - id: sampan
+    level: a1
+    emoji: 🛶
+    art: toy-boat
+    color: '#8a5a3c'
+    es: 一隻舢舨模型
+    en: a model sampan
+    blurb: Like the little boats in Aberdeen harbour. Bonchita is the captain; nobody else gets a say.
+  - id: tangerine-peel
+    level: a1
+    emoji: 🍊
+    art: fruit
+    color: '#e0782e'
+    es: 一包陳皮
+    en: a packet of dried tangerine peel
+    blurb: From the dried seafood shops of Sheung Wan. The older it is, the pricier. Leo's nose twitches.
+  - id: french-toast
+    level: a1
+    emoji: 🍞
+    art: sandwich
+    color: '#e9b92e'
+    es: 一份西多士
+    en: a Hong Kong French toast
+    blurb: Deep-fried, peanut butter inside, syrup on top. Bonchita licks the plate clean.
+    slot: mouth
+  - id: yuenyeung
+    level: a1
+    emoji: ☕
+    art: coffee
+    es: 一杯鴛鴦
+    en: a cup of yuenyeung
+    blurb: Coffee and milk tea mixed together. Luna can't decide whether she likes it, which is the point.
+    slot: paw
   - id: dim-sum-basket
     level: a2
     emoji: 🥟
+    art: dumpling
     es: 一個點心蒸籠
     en: a dim sum steamer basket
     blurb: Empty now (Bonchita). It makes a very fine hat.
@@ -541,6 +604,8 @@ souvenirs:
   - id: mahjong-tile
     level: a2
     emoji: 🀄
+    art: tile
+    color: '#f2f0ea'
     es: 一隻麻雀牌
     en: a mahjong tile
     blurb: The red dragon tile. Clack, clack, clack goes every Hong Kong evening.
@@ -548,6 +613,8 @@ souvenirs:
   - id: bruce-lee-figure
     level: a2
     emoji: 🥋
+    art: figurine
+    color: '#e9b92e'
     es: 一個李小龍公仔
     en: a Bruce Lee figure
     blurb: A little kung fu master in a yellow tracksuit. Leo practises his kicks.
@@ -555,12 +622,16 @@ souvenirs:
   - id: neon-sign
     level: a2
     emoji: 🪧
+    art: lantern
+    color: '#e07aa6'
     es: 一個霓虹燈招牌
     en: a neon sign
     blurb: A tiny glowing sign of the kind that once lit every Kowloon street.
   - id: goldfish-bag
     level: a2
     emoji: 🐠
+    art: fish
+    color: '#e0782e'
     es: 一袋金魚
     en: a bag of goldfish
     blurb: From Goldfish Street in Mong Kok. Luna is not allowed to taste them.
@@ -568,6 +639,8 @@ souvenirs:
   - id: jade-pendant
     level: a2
     emoji: 💚
+    art: necklace
+    color: '#3f8f5f'
     es: 一個玉墜
     en: a jade pendant
     blurb: From the jade market in Yau Ma Tei, for good luck.
@@ -575,6 +648,8 @@ souvenirs:
   - id: red-packet
     level: a2
     emoji: 🧧
+    art: postcard
+    color: '#d4483c'
     es: 一封利是
     en: a red packet
     blurb: Lai see for the new year. Bonchita says "恭喜發財" and holds out a paw.
@@ -582,6 +657,8 @@ souvenirs:
   - id: fishball-skewer
     level: a2
     emoji: 🍢
+    art: dumpling
+    color: '#e0a03a'
     es: 一串咖喱魚蛋
     en: a skewer of curry fish balls
     blurb: The classic street snack. A little spicy, a lot delicious.
@@ -589,18 +666,71 @@ souvenirs:
   - id: wonton-noodles
     level: a2
     emoji: 🍜
+    art: noodles
     es: 一碗雲吞麵
     en: a bowl of wonton noodles
     blurb: Springy noodles, shrimp wontons, a spoon underneath so they stay crisp.
   - id: cha-chaan-teng-menu
     level: a2
     emoji: 📋
+    art: book
     es: 一張茶餐廳餐牌
     en: a cha chaan teng menu
     blurb: Full of codes the waiters shout across the room. Luna is learning them all.
+  - id: fortune-slip
+    level: a2
+    emoji: 🎋
+    art: scroll
+    color: '#e9b92e'
+    es: 一張籤文
+    en: a fortune slip
+    blurb: From Wong Tai Sin, after shaking the sticks until one falls out. Leo's says "more snacks". Very accurate.
+  - id: clock-tower-model
+    level: a2
+    emoji: 🕰️
+    art: figurine
+    color: '#c9773a'
+    es: 一個鐘樓模型
+    en: a Clock Tower model
+    blurb: The old railway clock tower of Tsim Sha Tsui. Luna checks it every time she's late.
+  - id: starfruit-lantern
+    level: a2
+    emoji: 🏮
+    art: lantern
+    color: '#e9b92e'
+    es: 一個楊桃燈籠
+    en: a star-fruit lantern
+    blurb: A paper lantern for the Mid-Autumn Festival. Luna leads the night walk with it.
+    slot: paw
+  - id: pu-er-tea
+    level: a2
+    emoji: 🫖
+    art: teacup
+    color: '#8a5a3c'
+    es: 一壺普洱
+    en: a pot of pu'er tea
+    blurb: From the teahouse by the waterfall in Nan Lian Garden. Three dogs, very calm, for once.
+  - id: cheung-fun
+    level: a2
+    emoji: 🍥
+    art: noodles
+    color: '#f2ead8'
+    es: 一碟腸粉
+    en: a plate of rice rolls
+    blurb: Silky cheung fun from Sham Shui Po, with sesame and sweet sauce. Bonchita gets the last one.
+    slot: mouth
+  - id: film-camera
+    level: a2
+    emoji: 📷
+    art: camera
+    es: 一部菲林相機
+    en: a film camera
+    blurb: Second-hand from a Mong Kok shop. Every photo has at least one ear in it.
   - id: hakka-hat
     level: b1
     emoji: 👒
+    art: sunhat
+    color: '#e9c77a'
     es: 一頂客家涼帽
     en: a Hakka cool hat
     blurb: A flat straw hat with a black cloth fringe, from the walled villages.
@@ -608,6 +738,8 @@ souvenirs:
   - id: wishing-placard
     level: b1
     emoji: 🎋
+    art: scroll
+    color: '#d4483c'
     es: 一張寶牒
     en: a wish placard
     blurb: From Lam Tsuen. Leo wished for more egg tarts.
@@ -615,6 +747,7 @@ souvenirs:
   - id: wife-cake
     level: b1
     emoji: 🥮
+    art: pastry
     es: 一個老婆餅
     en: a wife cake
     blurb: Flaky pastry with a sweet winter-melon filling, from Yuen Long.
@@ -622,6 +755,8 @@ souvenirs:
   - id: hiking-towel
     level: b1
     emoji: 🧣
+    art: scarf
+    color: '#f2f0ea'
     es: 一條行山毛巾
     en: a hiking towel
     blurb: Every Hong Kong hiker has one round the neck. Lion Rock is steep.
@@ -629,6 +764,8 @@ souvenirs:
   - id: egg-waffle
     level: b1
     emoji: 🧇
+    art: pastry
+    color: '#e9b92e'
     es: 一份雞蛋仔
     en: an egg waffle
     blurb: Crispy bubbles of sweet batter, eaten hot from the paper bag.
@@ -636,12 +773,66 @@ souvenirs:
   - id: dragon-boat
     level: b1
     emoji: 🐉
+    art: toy-boat
+    color: '#d4483c'
     es: 一隻龍舟模型
     en: a model dragon boat
     blurb: Painted eyes and a fierce head, ready for the Tuen Ng festival races.
+  - id: spoonbill-plush
+    level: b1
+    emoji: 🦩
+    art: figurine
+    color: '#f2f0ea'
+    es: 一隻黑臉琵鷺公仔
+    en: a black-faced spoonbill plush
+    blurb: Mai Po's famous winter visitor, with a spoon for a beak. Luna tries to eat soup with it.
+    slot: paw
+  - id: sai-kung-shell
+    level: b1
+    emoji: 🐚
+    art: shell
+    es: 一個貝殼
+    en: a seashell
+    blurb: From a Sai Kung beach below the six-sided rock columns. Leo holds it up to listen to the sea.
+    slot: mouth
+  - id: kite
+    level: b1
+    emoji: 🪁
+    art: kite
+    color: '#d4483c'
+    es: 一隻風箏
+    en: a kite
+    blurb: Flown on the windy dam at Tai Mei Tuk. Bonchita chases its shadow across the grass.
+    slot: paw
+  - id: pinwheel
+    level: b1
+    emoji: 🎡
+    art: pinwheel
+    color: '#e9b92e'
+    es: 一個風車
+    en: a lucky pinwheel
+    blurb: From Che Kung Temple in Sha Tin at Lunar New Year. Spin it to turn your luck. Bonchita spins it with her nose.
+    slot: paw
+  - id: compass
+    level: b1
+    emoji: 🧭
+    art: compass
+    es: 一個指南針
+    en: a compass
+    blurb: For the MacLehose Trail, all hundred kilometres of it. Luna has a map AND a compass now.
+  - id: roast-goose
+    level: b1
+    emoji: 🍗
+    art: grill
+    es: 一碟燒鵝
+    en: a plate of roast goose
+    blurb: From Sham Tseng, the roast goose village near Tsuen Wan. Three dogs, one goose, no leftovers.
+    slot: mouth
   - id: ping-on-bun
     level: b2
     emoji: 🥯
+    art: bun
+    color: '#f2f0ea'
     es: 一個平安包
     en: a lucky bun
     blurb: Stamped with red characters for peace, from the Cheung Chau Bun Festival.
@@ -649,18 +840,23 @@ souvenirs:
   - id: big-buddha-postcard
     level: b2
     emoji: 🧘
+    art: postcard
     es: 一張大佛明信片
     en: a Big Buddha postcard
     blurb: Two hundred and sixty-eight steps, and three dogs still panting.
   - id: shrimp-paste
     level: b2
     emoji: 🦐
+    art: jam
+    color: '#b06a6a'
     es: 一樽大澳蝦醬
     en: a jar of Tai O shrimp paste
     blurb: Very, very fragrant. Kept tightly closed in Luna's backpack.
   - id: dolphin-plush
     level: b2
     emoji: 🐬
+    art: figurine
+    color: '#f0a3b5'
     es: 一隻白海豚公仔
     en: a pink dolphin plush toy
     blurb: Leo's new best friend, after the real dolphins swam away.
@@ -668,6 +864,8 @@ souvenirs:
   - id: life-ring
     level: b2
     emoji: 🛟
+    art: necklace
+    color: '#e0782e'
     es: 一個救生圈
     en: a life ring
     blurb: A small one, just for ferry rides. Bonchita wears it like a collar.
@@ -675,13 +873,69 @@ souvenirs:
   - id: straw-hat
     level: b2
     emoji: 👲
+    art: sunhat
+    color: '#c9a25a'
     es: 一頂竹笠
     en: a bamboo hat
     blurb: A fisherman's conical hat from Tai O, perfect against the island sun.
     slot: hat
+  - id: buffalo-plush
+    level: b2
+    emoji: 🐃
+    art: figurine
+    color: '#5a4a3a'
+    es: 一隻水牛公仔
+    en: a water buffalo plush
+    blurb: Lantau's buffalo stroll along the beach at Pui O as if they own it. Leo politely lets them pass.
+    slot: paw
+  - id: mango-mochi
+    level: b2
+    emoji: 🥭
+    art: candy
+    color: '#f2b52e'
+    es: 一個芒果糯米糍
+    en: a mango mochi
+    blurb: Cheung Chau's giant mango mochi, soft and sticky. Bonchita wears most of it on her whiskers.
+    slot: mouth
+  - id: salted-fish
+    level: b2
+    emoji: 🐟
+    art: fish
+    color: '#c9a46a'
+    es: 一條鹹魚
+    en: a salted fish
+    blurb: Dried in the Tai O sun. Leo tried to carry it home; Luna said no.
+    slot: mouth
+  - id: pineapple-rock
+    level: b2
+    emoji: 🪨
+    art: stone
+    color: '#c9a46a'
+    es: 一個菠蘿包石紙鎮
+    en: a pineapple-bun rock paperweight
+    blurb: A copy of the cracked volcanic rocks on Sharp Island, which look just like pineapple buns. Bonchita tried to bite the real one.
+  - id: prayer-beads
+    level: b2
+    emoji: 📿
+    art: bracelet
+    color: '#8a5a3c'
+    es: 一串佛珠
+    en: a string of prayer beads
+    blurb: From Po Lin Monastery under the Big Buddha. Luna wears them and feels very calm. For a minute.
+    slot: paw
+  - id: tofu-pudding
+    level: b2
+    emoji: 🥣
+    art: pastry
+    color: '#f4ecd8'
+    es: 一碗豆腐花
+    en: a bowl of tofu pudding
+    blurb: Silky and sweet, with ginger syrup, at a Lamma Island stall after the long walk. Three spoons, please.
   - id: portuguese-egg-tart
     level: c1
     emoji: 🥧
+    art: eggtart
+    color: '#c9822e'
     es: 一個葡撻
     en: a Portuguese egg tart
     blurb: Caramelised on top, flaky underneath, from Coloane. A cousin of the Hong Kong egg tart.
@@ -689,12 +943,14 @@ souvenirs:
   - id: almond-cookies
     level: c1
     emoji: 🍪
+    art: cookie
     es: 一盒杏仁餅
     en: a box of almond cookies
     blurb: Crumbly Macau almond cookies. The box is already half empty.
   - id: pork-chop-bun
     level: c1
     emoji: 🥪
+    art: sandwich
     es: 一個豬扒包
     en: a pork chop bun
     blurb: A crispy roll with a juicy pork chop. Leo refuses to share.
@@ -702,19 +958,84 @@ souvenirs:
   - id: azulejo-tile
     level: c1
     emoji: 🟦
+    art: tile
+    color: '#2f5bd3'
     es: 一塊葡國瓷磚
     en: a Portuguese azulejo tile
     blurb: Blue and white, like the street signs of Macau.
   - id: lucky-rooster
     level: c1
     emoji: 🐓
+    art: figurine
+    color: '#2a2d3a'
     es: 一隻葡國公雞
     en: a Barcelos rooster
     blurb: The colourful Portuguese good-luck rooster, sold all over Macau.
     slot: paw
+  - id: serradura
+    level: c1
+    emoji: 🍨
+    art: gelato
+    color: '#f2e6c8'
+    es: 一杯木糠布甸
+    en: a cup of serradura
+    blurb: Its name means sawdust pudding, for the crushed biscuits between layers of cream. Bonchita eats it with her whole face.
+  - id: jerky
+    level: c1
+    emoji: 🥓
+    art: grill
+    color: '#8a3a2a'
+    es: 一包牛肉乾
+    en: a packet of beef jerky
+    blurb: Free samples all the way up the steps to St Paul's. Leo tried every single shop.
+    slot: mouth
+  - id: incense-coil
+    level: c1
+    emoji: 🌀
+    art: candle
+    color: '#d4a03a'
+    es: 一盤塔香
+    en: an incense coil
+    blurb: The giant spirals at A-Ma Temple burn for days. Luna sneezes politely.
+  - id: guia-lighthouse
+    level: c1
+    emoji: 🗼
+    art: figurine
+    color: '#f2f0ea'
+    es: 一個東望洋燈塔模型
+    en: a Guia Lighthouse model
+    blurb: The oldest modern lighthouse on the China coast. Leo makes it flash by pressing his nose on it.
+    slot: paw
+  - id: sardines
+    level: c1
+    emoji: 🐟
+    art: fish
+    color: '#2f5bd3'
+    es: 一罐葡國沙甸魚
+    en: a tin of Portuguese sardines
+    blurb: From a little shop in Taipa Village, the tin prettier than a postcard. Bonchita can smell it through the metal.
+  - id: lotus
+    level: c1
+    emoji: 🪷
+    art: flower
+    color: '#e07aa6'
+    es: 一朵荷花
+    en: a lotus flower
+    blurb: Macau's emblem, from the pond in Lou Lim Ieoc Garden. Bonchita wears it behind her ear.
+    slot: hat
+  - id: bungee-certificate
+    level: c1
+    emoji: 📜
+    art: scroll
+    color: '#2f5bd3'
+    es: 一張笨豬跳證書
+    en: a bungee jump certificate
+    blurb: Two hundred and thirty-three metres from Macau Tower. Luna jumped. Leo watched with his eyes shut.
   - id: canton-tower-model
     level: c2
     emoji: 🗼
+    art: figurine
+    color: '#7a55c2'
     es: 一個廣州塔模型
     en: a Canton Tower model
     blurb: The "slim waist", small enough to hold in one paw. It lights up at night.
@@ -722,12 +1043,16 @@ souvenirs:
   - id: wing-chun-dummy
     level: c2
     emoji: 🪵
+    art: figurine
+    color: '#8a5a3c'
     es: 一個木人樁
     en: a Wing Chun wooden dummy
     blurb: A tiny training dummy from Foshan, home of Ip Man. Leo is ready for battle.
   - id: lion-dance-head
     level: c2
     emoji: 🦁
+    art: carnival-mask
+    color: '#d4483c'
     es: 一個醒獅頭
     en: a lion-dance head
     blurb: Big eyes, a fluffy fringe and a blinking face. Bonchita dances under it.
@@ -735,6 +1060,8 @@ souvenirs:
   - id: double-skin-milk
     level: c2
     emoji: 🍮
+    art: pastry
+    color: '#f6efe0'
     es: 一碗雙皮奶
     en: a bowl of double-skin milk pudding
     blurb: Silky milk pudding from Shunde. Three spoons, three dogs.
@@ -742,6 +1069,8 @@ souvenirs:
   - id: five-rams
     level: c2
     emoji: 🐐
+    art: figurine
+    color: '#e9b92e'
     es: 一個五羊公仔
     en: a five rams figure
     blurb: Guangzhou's lucky rams, carrying ears of rice.
@@ -749,6 +1078,58 @@ souvenirs:
   - id: hsr-ticket
     level: c2
     emoji: 🚄
+    art: ticket
     es: 一張高鐵車飛
     en: a high-speed rail ticket
     blurb: Guangzhou South to West Kowloon. The last stamp before home.
+  - id: opera-mask
+    level: c2
+    emoji: 🎭
+    art: carnival-mask
+    color: '#f2f0ea'
+    es: 一個粵劇面譜
+    en: a Cantonese opera face mask
+    blurb: Foshan is where Cantonese opera grew up. Leo wears it and sings, which nobody asked for.
+    slot: hat
+  - id: canton-porcelain
+    level: c2
+    emoji: 🏺
+    art: vase
+    color: '#d4483c'
+    es: 一個廣彩花瓶
+    en: a Canton porcelain vase
+    blurb: Painted in gold, red and green, the way Guangzhou workshops have done it for three hundred years. Tails away!
+  - id: paper-cut
+    level: c2
+    emoji: ✂️
+    art: origami
+    color: '#d4483c'
+    es: 一張佛山剪紙
+    en: a Foshan paper-cut
+    blurb: Three little dogs cut from red paper. Luna says the one in the middle is her.
+  - id: har-gow
+    level: c2
+    emoji: 🥟
+    art: dumpling
+    color: '#f2ead8'
+    es: 一籠蝦餃
+    en: a basket of har gow
+    blurb: Guangzhou is the home of yum cha. See-through skin, a whole prawn inside. Bonchita sees right through them.
+    slot: mouth
+  - id: shiwan-figure
+    level: c2
+    emoji: 🧑‍🦳
+    art: figurine
+    color: '#8a6a4a'
+    es: 一個石灣公仔
+    en: a Shiwan pottery figure
+    blurb: A smiling old man in glazed clay from Shiwan in Foshan. He looks a lot like Leo after lunch.
+  - id: kapok-flower
+    level: c2
+    emoji: 🌺
+    art: flower
+    color: '#d4483c'
+    es: 一朵木棉花
+    en: a kapok flower
+    blurb: The big red flower of Guangzhou, falling from the trees every spring. Luna catches one before it lands.
+    slot: hat

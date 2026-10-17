@@ -1,0 +1,50 @@
+# Wardrobe: accessories that come in colours, earned on errands once the regional souvenirs
+# thin out (see src/engine/wardrobe.ts). {colour} is replaced by the colour word in the form
+# that agrees with the noun: ms, fs, mp, fp (masculine/feminine, singular/plural).
+# Brazilian Portuguese: boné, touca, óculos (always plural), guarda-chuva, balão.
+kinds:
+  beret:
+    name: uma boina {colour}
+    form: fs
+  cap:
+    name: um boné {colour}
+    form: ms
+  beanie:
+    name: uma touca {colour}
+    form: fs
+  sunhat:
+    name: um chapéu de praia {colour}
+    form: ms
+  bucket-hat:
+    name: um chapéu de pescador {colour}
+    form: ms
+  sunglasses:
+    name: um par de óculos de sol {colour}
+    form: mp
+  round-glasses:
+    name: um par de óculos redondos {colour}
+    form: mp
+  scarf:
+    name: um cachecol {colour}
+    form: ms
+  bandana:
+    name: uma bandana {colour}
+    form: fs
+  bowtie:
+    name: uma gravata-borboleta {colour}
+    form: fs
+  umbrella:
+    name: um guarda-chuva {colour}
+    form: ms
+  balloon:
+    name: um balão {colour}
+    form: ms
+colours:
+  red: { ms: vermelho, fs: vermelha, mp: vermelhos, fp: vermelhas }
+  blue: { ms: azul, fs: azul, mp: azuis, fp: azuis }
+  green: { ms: verde, fs: verde, mp: verdes, fp: verdes }
+  yellow: { ms: amarelo, fs: amarela, mp: amarelos, fp: amarelas }
+  purple: { ms: roxo, fs: roxa, mp: roxos, fp: roxas }
+  pink: { ms: rosa, fs: rosa, mp: rosa, fp: rosa }
+  orange: { ms: laranja, fs: laranja, mp: laranja, fp: laranja }
+  black: { ms: preto, fs: preta, mp: pretos, fp: pretas }

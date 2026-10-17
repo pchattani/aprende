@@ -1,0 +1,50 @@
+# Wardrobe: accessories that come in colours, earned on errands once the regional souvenirs
+# thin out (see src/engine/wardrobe.ts). {colour} is replaced by the colour word in the form
+# that agrees with the noun: ms, fs, mp, fp (masculine/feminine, singular/plural).
+# Argentine Spanish: lentes/anteojos, gorra, piluso, moño, capelina.
+kinds:
+  beret:
+    name: una boina {colour}
+    form: fs
+  cap:
+    name: una gorra {colour}
+    form: fs
+  beanie:
+    name: un gorro de lana {colour}
+    form: ms
+  sunhat:
+    name: una capelina {colour}
+    form: fs
+  bucket-hat:
+    name: un piluso {colour}
+    form: ms
+  sunglasses:
+    name: unos lentes de sol {colour}
+    form: mp
+  round-glasses:
+    name: unos anteojos redondos {colour}
+    form: mp
+  scarf:
+    name: una bufanda {colour}
+    form: fs
+  bandana:
+    name: un pañuelo {colour}
+    form: ms
+  bowtie:
+    name: un moño {colour}
+    form: ms
+  umbrella:
+    name: un paraguas {colour}
+    form: ms
+  balloon:
+    name: un globo {colour}
+    form: ms
+colours:
+  red: { ms: rojo, fs: roja, mp: rojos, fp: rojas }
+  blue: { ms: azul, fs: azul, mp: azules, fp: azules }
+  green: { ms: verde, fs: verde, mp: verdes, fp: verdes }
+  yellow: { ms: amarillo, fs: amarilla, mp: amarillos, fp: amarillas }
+  purple: { ms: violeta, fs: violeta, mp: violetas, fp: violetas }
+  pink: { ms: rosa, fs: rosa, mp: rosas, fp: rosas }
+  orange: { ms: naranja, fs: naranja, mp: naranjas, fp: naranjas }
+  black: { ms: negro, fs: negra, mp: negros, fp: negras }

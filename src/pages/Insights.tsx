@@ -161,6 +161,15 @@ function Figure({ title, how, children }: { title: string; how: ReactNode; child
   )
 }
 
+/** One sentence that says what the numbers mean for you right now. */
+function Takeaway({ children }: { children: ReactNode }) {
+  return (
+    <p className="rounded-xl border-l-4 bg-card-2 px-3 py-2 text-[14px] leading-snug" style={{ borderColor: C.blue }}>
+      <span className="mr-1 text-[10.5px] font-extrabold tracking-[0.12em] text-muted uppercase">In plain words</span> {children}
+    </p>
+  )
+}
+
 function Stats({ children }: { children: ReactNode }) {
   return <dl className="grid grid-cols-2 gap-x-4 gap-y-3 border-y border-line py-3 sm:grid-cols-3">{children}</dl>
 }
@@ -247,40 +256,43 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
 
       {/* KPI strip */}
       <div className="mb-5 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
-        <Kpi label="Knowledge NAV" value={num(nav.current, 0)} sub={<>{signed(nav.change30.abs, 1)} · 30 d{Number.isFinite(nav.change30.pct) ? ` (${signed(nav.change30.pct * 100, 1)}%)` : ''}</>} spark={words30} tone={nav.change30.abs >= 0 ? 'good' : 'bad'} href="#nav" />
-        <Kpi label="Recall · 30 d" value={pct(recall.d30.p)} sub={<>CI {ci(recall.d30.lo, recall.d30.hi)} · n {recall.d30.n}</>} href="#recall" />
-        <Kpi label="Sharpe-style" value={num(nav.sharpe, 1)} sub={<>NAV Δ mean/sd ×√365</>} href="#nav" />
-        <Kpi label="Max drawdown" value={nav.drawdown.pct < 0 ? pct(nav.drawdown.pct, 1) : '0%'} sub={nav.drawdown.peakDate ? <>{shortDate(nav.drawdown.peakDate)} → {shortDate(nav.drawdown.troughDate)}</> : 'none in 90 d'} tone={nav.drawdown.pct < -0.03 ? 'bad' : undefined} href="#nav" />
-        <Kpi label="Days on the road" value={String(consistency.current)} sub={<>longest {consistency.longest} · {pct(consistency.active30.p)} of 30 d</>} href="#effort" />
-        <Kpi label="Cost per postcard" value={`${num(effort.costPerPostcard, 1)} min`} sub={<>{num(effort.totalMinutes, 0)} min ÷ {num(nav.current + nav.currentOther, 0)} postcards</>} href="#effort" />
+        <Kpi label="Words in memory" value={num(nav.current, 0)} sub={<>{signed(nav.change30.abs, 1)} in 30 days{Number.isFinite(nav.change30.pct) ? ` (${signed(nav.change30.pct * 100, 1)}%)` : ''}</>} spark={words30} tone={nav.change30.abs >= 0 ? 'good' : 'bad'} href="#nav" />
+        <Kpi label="Accuracy · 30 days" value={pct(recall.d30.p)} sub={<>likely {ci(recall.d30.lo, recall.d30.hi)} · {recall.d30.n} answers</>} href="#recall" />
+        <Kpi label="Growing days" value={pct(nav.hitRate.p)} sub={<>{nav.hitRate.k} of {nav.hitRate.n} days your memory grew</>} href="#nav" />
+        <Kpi label="Biggest dip" value={nav.drawdown.pct < 0 ? pct(nav.drawdown.pct, 1) : '0%'} sub={nav.drawdown.peakDate ? <>{shortDate(nav.drawdown.peakDate)} → {shortDate(nav.drawdown.troughDate)}</> : 'no dip in 90 days'} tone={nav.drawdown.pct < -0.03 ? 'bad' : undefined} href="#nav" />
+        <Kpi label="Days on the road" value={String(consistency.current)} sub={<>best run {consistency.longest} · active {pct(consistency.active30.p)} of 30 days</>} href="#effort" />
+        <Kpi label="Minutes per item kept" value={`${num(effort.costPerPostcard, 1)} min`} sub={<>{num(effort.totalMinutes, 0)} min for {num(nav.current + nav.currentOther, 0)} items in memory</>} href="#effort" />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        {/* §1 NAV */}
+        {/* §1 Words in memory */}
         <Section
           id="nav"
           n={1}
           wide
-          title="Knowledge NAV"
-          lede={<>The number of postcards you could recall right now: every item counts by its probability of recall. Like a fund's net asset value, it grows with new learning and decays when you stop.</>}
+          title="Words in memory"
+          lede={<>If you were quizzed on every word you have met, how many would you get right today? Each word counts by its chance of being recalled: a word you would remember 80% of the time counts as 0.8. The number rises as you learn and slowly sinks on days off, because memories fade.</>}
           method={
             <>
-              <p><b>Definition.</b> <code>NAV(t) = Σᵢ Rᵢ(t)</code> over word cards (blue) and, separately, over sentence and grammar cards (grey). <code>Rᵢ(t) = (1 + F·Δt/Sᵢ)^(−d)</code> is the scheduler's (FSRS-6) forgetting curve with <code>d = 0.1542</code>, <code>F = 0.9^(−1/d) − 1</code>, Δt the days since the card's last review (fractional) and Sᵢ its stability.</p>
+              <p><b>Definition.</b> <code>M(t) = Σᵢ Rᵢ(t)</code> over word cards (blue) and, separately, over sentence and grammar cards (grey). <code>Rᵢ(t) = (1 + F·Δt/Sᵢ)^(−d)</code> is the scheduler's (FSRS-6) forgetting curve with <code>d = 0.1542</code>, <code>F = 0.9^(−1/d) − 1</code>, Δt the days since the card's last review (fractional) and Sᵢ its stability.</p>
               <p><b>History</b> is reconstructed by replaying every review in time order through the same scheduler from a fresh card, so each past day is valued with the state the card had then (sampled at 23:59; today at the current time).</p>
-              <p><b>Drawdown</b> = <code>NAV / running peak − 1</code> (start-up noise ignored: peaks below 5 postcards or 15% of the 90-day high); recovery is the first day back at the peak. <b>Hit rate</b> = share of days with a positive change. <b>Sharpe-style ratio</b> = <code>mean(ΔNAV) / sd(ΔNAV) × √365</code> over daily changes: an analogy for how steady your growth is, not a financial return.</p>
+              <p><b>Biggest dip</b> = the largest fall from a previous high, <code>M / running high − 1</code> (start-up noise ignored: highs below 5 items or 15% of the 90-day high); <b>back to the high</b> is the first day the count returned to that high. <b>Growing days</b> = share of days with a positive change. <b>Daily gain</b> = mean ± standard deviation of the day-to-day change; <b>steadiness</b> = mean ÷ standard deviation: above 1 your growth outpaces the day-to-day wobble, near 0 it is mostly wobble.</p>
             </>
           }
         >
-          <Figure title="Retention-weighted vocabulary, up to 90 days" how={<>the line is your expected recallable items; red wash is the gap to the previous peak (a drawdown). Flat or falling stretches mark breaks.</>}>
+          <Takeaway>
+            You would recall about <b className="font-mono">{num(nav.current, 0)}</b> words if tested now (plus {num(nav.currentOther, 0)} sentences and grammar points), {nav.change30.abs >= 0 ? 'up' : 'down'} <b className="font-mono">{num(Math.abs(nav.change30.abs), 1)}</b> on a month ago. Your memory grew on {pct(nav.hitRate.p)} of days{nav.drawdown.pct < 0 ? <>; the biggest dip was {pct(-nav.drawdown.pct, 1)}{nav.drawdown.recoveryDate ? `, regained in ${nav.drawdown.durationDays} days` : ', not yet regained'}</> : ' with no dip'}.
+          </Takeaway>
+          <Figure title="Words you would recall, last 90 days" how={<>the blue line counts words by their chance of recall, the grey line sentences and grammar. A red wash marks a dip below an earlier high; flat or falling stretches are breaks.</>}>
             <NavChart series={nav.series} />
           </Figure>
           <Stats>
-            <Stat label="7-day change" value={signed(nav.change7.abs, 1)} sub={Number.isFinite(nav.change7.pct) ? `${signed(nav.change7.pct * 100, 1)}%` : '–'} tone={nav.change7.abs >= 0 ? 'good' : 'bad'} />
-            <Stat label="30-day change" value={signed(nav.change30.abs, 1)} sub={Number.isFinite(nav.change30.pct) ? `${signed(nav.change30.pct * 100, 1)}%` : '–'} tone={nav.change30.abs >= 0 ? 'good' : 'bad'} />
-            <Stat label="Max drawdown" value={nav.drawdown.pct < 0 ? `${pct(nav.drawdown.pct, 1)}` : '0%'} sub={nav.drawdown.peakDate ? `${num(nav.drawdown.abs, 1)} · ${shortDate(nav.drawdown.peakDate)}→${shortDate(nav.drawdown.troughDate)}` : 'no drawdown'} tone={nav.drawdown.pct < -0.03 ? 'bad' : undefined} />
-            <Stat label="Recovery" value={nav.drawdown.recoveryDate ? shortDate(nav.drawdown.recoveryDate) : nav.drawdown.peakDate ? 'not yet' : '–'} sub={nav.drawdown.peakDate ? `${nav.drawdown.durationDays} d under water` : undefined} />
-            <Stat label="Hit rate" value={pct(nav.hitRate.p)} sub={`${nav.hitRate.k} of ${nav.hitRate.n} days up`} />
-            <Stat label="Sharpe-style" value={num(nav.sharpe, 2)} sub={`Δ ${signed(nav.meanDaily, 2)} ± ${num(nav.sdDaily, 2)}/day`} />
+            <Stat label="Change · 7 days" value={signed(nav.change7.abs, 1)} sub={Number.isFinite(nav.change7.pct) ? `${signed(nav.change7.pct * 100, 1)}%` : '–'} tone={nav.change7.abs >= 0 ? 'good' : 'bad'} />
+            <Stat label="Change · 30 days" value={signed(nav.change30.abs, 1)} sub={Number.isFinite(nav.change30.pct) ? `${signed(nav.change30.pct * 100, 1)}%` : '–'} tone={nav.change30.abs >= 0 ? 'good' : 'bad'} />
+            <Stat label="Biggest dip" value={nav.drawdown.pct < 0 ? `${pct(nav.drawdown.pct, 1)}` : '0%'} sub={nav.drawdown.peakDate ? `${num(nav.drawdown.abs, 1)} words · ${shortDate(nav.drawdown.peakDate)}→${shortDate(nav.drawdown.troughDate)}` : 'none'} tone={nav.drawdown.pct < -0.03 ? 'bad' : undefined} />
+            <Stat label="Back to the high" value={nav.drawdown.recoveryDate ? shortDate(nav.drawdown.recoveryDate) : nav.drawdown.peakDate ? 'not yet' : '–'} sub={nav.drawdown.peakDate ? `${nav.drawdown.durationDays} days below it` : undefined} />
+            <Stat label="Growing days" value={pct(nav.hitRate.p)} sub={`${nav.hitRate.k} of ${nav.hitRate.n} days`} />
+            <Stat label="Daily gain" value={`${signed(nav.meanDaily, 2)}/day`} sub={`± ${num(nav.sdDaily, 2)} · steadiness ${num(nav.sdDaily > 0 ? nav.meanDaily / nav.sdDaily : 0, 2)}`} />
           </Stats>
         </Section>
 
@@ -288,34 +300,37 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
         <Section
           id="memory"
           n={2}
-          title="Memory book"
-          lede={<>How durable your postcards are. Stability is the number of days until recall falls to 90%.</>}
+          title="How long memories last"
+          lede={<>Every item has a memory strength: the number of days you can leave it before your chance of recalling it drops to 90%. Each successful review makes it stronger, so the spacing between reviews grows.</>}
           method={
             <>
-              <p><b>Stability S</b> is the scheduler's current estimate per card (cards with at least one review). The histogram uses log-spaced bins (two per decade). <b>Mature</b> = <code>S ≥ {MATURE_DAYS} d</code>; the share has a Wilson 95% interval.</p>
-              <p><b>Half-life</b> per card = days until R = 50% on the FSRS curve, <code>t½ = S·(0.5^(−1/d) − 1)/F ≈ 90·S</code>: the power-law curve has a long tail, so half-lives are far longer than stabilities.</p>
-              <p><b>Lapse rate</b> = failed answers ÷ answers on cards that were in the long-term review state. <b>Leeches</b> = cards with ≥ {LEECH_LAPSES} lapses.</p>
+              <p><b>Memory strength (stability S)</b> is the scheduler's current estimate per card (cards with at least one review). The histogram uses log-spaced bins (two per decade). <b>Long-term</b> = <code>S ≥ {MATURE_DAYS} d</code>; the share has a Wilson 95% interval (the range the true value very likely lies in).</p>
+              <p><b>Days to 50/50 (half-life)</b> per card = days until R = 50% on the FSRS curve, <code>t½ = S·(0.5^(−1/d) − 1)/F ≈ 90·S</code>: the power-law curve has a long tail, so half-lives are far longer than stabilities.</p>
+              <p><b>Forget rate</b> = failed answers ÷ answers on cards that were already in long-term review (a "lapse"). <b>Stubborn items</b> = cards with ≥ {LEECH_LAPSES} lapses.</p>
             </>
           }
         >
-          <Figure title="Stability distribution (log scale)" how={<>each bar counts cards by how many days they stay above 90% recall; mass to the right of the dashed line is mature.</>}>
-            <Histogram ariaLabel="Stability histogram" bins={memory.stabilityHist} refX={{ value: MATURE_DAYS, label: 'mature' }} />
+          <Takeaway>
+            A typical item now lasts <b className="font-mono">{fmtDays(memory.medianStability)}</b> before it needs a review and about <b className="font-mono">{fmtDays(memory.medianHalfLife)}</b> before it becomes a coin flip. <b className="font-mono">{pct(memory.mature.p)}</b> of what you have studied is in long-term memory (three weeks or more); you forget <b className="font-mono">{pct(memory.lapseRate.p, 1)}</b> of those when they come back.
+          </Takeaway>
+          <Figure title="Memory strength of your items (log scale)" how={<>each bar counts items by how many days they stay above 90% recall; everything right of the dashed line is long-term memory.</>}>
+            <Histogram ariaLabel="Stability histogram" bins={memory.stabilityHist} refX={{ value: MATURE_DAYS, label: 'long-term' }} />
           </Figure>
           <Stats>
             <Stat label="Cards reviewed" value={memory.reviewed.toLocaleString('en-GB')} />
-            <Stat label="Median S" value={fmtDays(memory.medianStability)} sub="to 90% recall" />
-            <Stat label="Median half-life" value={fmtDays(memory.medianHalfLife)} sub="to 50% recall" />
-            <Stat label="Mature" value={pct(memory.mature.p)} sub={`CI ${ci(memory.mature.lo, memory.mature.hi)}`} />
-            <Stat label="Lapse rate" value={pct(memory.lapseRate.p, 1)} sub={`CI ${ci(memory.lapseRate.lo, memory.lapseRate.hi)} · n ${memory.lapseRate.n}`} />
-            <Stat label="Leeches" value={String(memory.leeches.length)} sub={`≥ ${LEECH_LAPSES} lapses`} tone={memory.leeches.length ? 'bad' : undefined} />
+            <Stat label="Typical strength" value={fmtDays(memory.medianStability)} sub="median, until 90% recall" />
+            <Stat label="Days to 50/50" value={fmtDays(memory.medianHalfLife)} sub="median, until 50% recall" />
+            <Stat label="Long-term" value={pct(memory.mature.p)} sub={`likely ${ci(memory.mature.lo, memory.mature.hi)}`} />
+            <Stat label="Forget rate" value={pct(memory.lapseRate.p, 1)} sub={`lower is better · ${memory.lapseRate.n} answers`} />
+            <Stat label="Stubborn items" value={String(memory.leeches.length)} sub={`forgotten ≥ ${LEECH_LAPSES} times`} tone={memory.leeches.length ? 'bad' : undefined} />
           </Stats>
           <table className="w-full font-mono text-[12px]">
             <thead>
               <tr className="text-left text-[10.5px] text-muted uppercase">
                 <th className="py-1 font-bold">Kind</th>
                 <th className="py-1 text-right font-bold">Cards</th>
-                <th className="py-1 text-right font-bold">Median S</th>
-                <th className="py-1 text-right font-bold">Mature</th>
+                <th className="py-1 text-right font-bold">Strength</th>
+                <th className="py-1 text-right font-bold">Long-term</th>
               </tr>
             </thead>
             <tbody>
@@ -335,22 +350,25 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
         <Section
           id="recall"
           n={3}
-          title="Recall & calibration"
-          lede={<>How often you get it right, and whether the scheduler's predictions match what actually happens.</>}
+          title="Accuracy & predictions"
+          lede={<>How often you answer correctly, and whether the review scheduler predicts your memory well. When it does, reviews arrive just before you would forget.</>}
           method={
             <>
-              <p><b>Answers.</b> One exercise credits several cards (the item and its grammar points) at the same instant; those rows are one observation. Recall = correct answers ÷ answers ("almost" counts as correct). Intervals are Wilson 95%. The trend is a weighted least-squares fit of weekly recall on week number (weights = answers).</p>
+              <p><b>Answers.</b> One exercise credits several cards (the item and its grammar points) at the same instant; those rows are one observation. Recall = correct answers ÷ answers ("almost" counts as correct). Intervals are Wilson 95%: the range the true accuracy very likely lies in, which narrows as answers accumulate. The trend is a weighted least-squares fit of weekly recall on week number (weights = answers).</p>
               <p><b>Calibration</b> uses spaced reviews only (≥ {SPACED_MIN_DAYS * 24} h since the card's previous review; first exposures have no prediction). The predicted probability is the scheduler's R at the moment of the answer, reconstructed by replay. Bins are equal-count deciles. <code>Brier = mean (p − y)²</code>; <code>log loss = −mean[y ln p + (1−y) ln(1−p)]</code>; <code>ECE = Σ (n_b/N)·|obs_b − pred_b|</code>; skill = <code>1 − Brier / p̄(1−p̄)</code>. Over/under-confidence is tested with <code>z = (Σy − Σp)/√Σp(1−p)</code>.</p>
               <p><b>Forgetting curve.</b> Recall of answers grouped by days since the card's previous review (doubling bins, ≥ 10 answers each). Exponential <code>a·e^(−t/τ)</code> and power <code>a·(1+t)^(−b)</code> curves are fitted by weighted least squares on log recall; the one with the lower weighted squared error is drawn. Long gaps are only given to strong cards, so this pooled curve is flatter than any single memory's.</p>
             </>
           }
         >
+          <Takeaway>
+            You answered <b className="font-mono">{pct(recall.d30.p)}</b> correctly over the last 30 days (with this many answers the true figure is very likely between {ci(recall.d30.lo, recall.d30.hi)}), {recall.trend.slopePerWeek >= 0 ? 'trending up' : 'trending down'} by {num(Math.abs(recall.trend.slopePerWeek) * 100, 1)} points a week.
+          </Takeaway>
           <Stats>
-            <Stat label="Last 7 days" value={pct(recall.d7.p)} sub={`${ci(recall.d7.lo, recall.d7.hi)} · n ${recall.d7.n}`} />
-            <Stat label="Last 30 days" value={pct(recall.d30.p)} sub={`${ci(recall.d30.lo, recall.d30.hi)} · n ${recall.d30.n}`} />
-            <Stat label="All time" value={pct(recall.all.p)} sub={`${ci(recall.all.lo, recall.all.hi)} · n ${recall.all.n}`} />
+            <Stat label="Last 7 days" value={pct(recall.d7.p)} sub={`likely ${ci(recall.d7.lo, recall.d7.hi)} · ${recall.d7.n} answers`} />
+            <Stat label="Last 30 days" value={pct(recall.d30.p)} sub={`likely ${ci(recall.d30.lo, recall.d30.hi)} · ${recall.d30.n} answers`} />
+            <Stat label="All time" value={pct(recall.all.p)} sub={`likely ${ci(recall.all.lo, recall.all.hi)} · ${recall.all.n} answers`} />
           </Stats>
-          <Figure title="Weekly recall with 95% intervals" how={<>bars are each week's recall, whiskers its interval; the dashed line is your average. Trend {pp(recall.trend.slopePerWeek)} per week (SE {num(recall.trend.se * 100, 1)} pp).</>}>
+          <Figure title="Accuracy by week" how={<>bars are each week's share of correct answers; whiskers show the likely range; the dashed line is your average. Trend {pp(recall.trend.slopePerWeek)} per week (± {num(1.96 * recall.trend.se * 100, 1)}).</>}>
             <Bars
               ariaLabel="Weekly recall"
               data={recall.weekly.map((w) => ({ label: w.start, value: w.p, lo: w.lo, hi: w.hi, title: `Week of ${shortDate(w.start)}: ${pct(w.p)} (${ci(w.lo, w.hi)}), n = ${w.n}` }))}
@@ -360,19 +378,19 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
               refLine={{ value: recall.all.p, label: `avg ${pct(recall.all.p)}` }}
             />
           </Figure>
-          <Figure title="Calibration: predicted versus observed" how={<>each dot is a tenth of your spaced reviews; on the dashed diagonal the scheduler is right. Dots below it mean you forget faster than predicted.</>}>
+          <Figure title="Predicted versus actual recall" how={<>each dot is a tenth of your spaced reviews, placed by what the scheduler predicted (across) and what you actually recalled (up). On the dashed diagonal it is spot on; dots below it mean you forget faster than it thinks.</>}>
             <CalibrationPlot ariaLabel="Calibration plot" bins={calibration.bins} />
           </Figure>
           <Stats>
-            <Stat label="Predicted" value={pct(calibration.meanPredicted, 1)} sub={`n ${calibration.n}`} />
-            <Stat label="Observed" value={pct(calibration.meanObserved, 1)} sub={`${pp(calibration.meanObserved - calibration.meanPredicted)} · ${pval(calibration.pValue)}`} tone={calibration.verdict === 'over' ? 'bad' : calibration.verdict === 'under' ? 'good' : undefined} />
-            <Stat label="ECE" value={`${num(calibration.ece * 100, 1)} pp`} />
-            <Stat label="Brier" value={num(calibration.brier, 3)} sub={`base rate ${num(calibration.brierRef, 3)}`} />
-            <Stat label="Log loss" value={num(calibration.logLoss, 3)} />
-            <Stat label="Skill" value={num(calibration.skill, 2)} sub="vs base rate" />
+            <Stat label="Predicted" value={pct(calibration.meanPredicted, 1)} sub={`${calibration.n} spaced reviews`} />
+            <Stat label="Actual" value={pct(calibration.meanObserved, 1)} sub={`${pp(calibration.meanObserved - calibration.meanPredicted)} · ${pval(calibration.pValue)}`} tone={calibration.verdict === 'over' ? 'bad' : calibration.verdict === 'under' ? 'good' : undefined} />
+            <Stat label="Average miss" value={`${num(calibration.ece * 100, 1)} pts`} sub="prediction vs actual · lower is better" />
+            <Stat label="Prediction error" value={num(calibration.brier, 3)} sub={`Brier · guessing scores ${num(calibration.brierRef, 3)}`} />
+            <Stat label="Surprise" value={num(calibration.logLoss, 3)} sub="log loss · lower is better" />
+            <Stat label="Better than guessing" value={pct(Math.max(0, calibration.skill))} sub="of the guessing error removed" />
           </Stats>
           <p className="text-[13px] leading-snug">{calibrationText(ins)}</p>
-          <Figure title="Forgetting curve" how={<>dots are observed recall after a given gap (size = answers, whiskers = 95% interval); the line is the fitted curve and the red mark where it crosses 50%.</>}>
+          <Figure title="Forgetting curve" how={<>each dot is how often you recalled items after a given number of days without seeing them (bigger dot = more answers); the line is the best-fitting curve and the red mark is where it reaches a coin flip.</>}>
             {forgetting.bins.length >= 2 ? (
               <ForgettingCurve ariaLabel="Forgetting curve" bins={forgetting.bins} fit={forgetting.fit?.predict} halfLife={forgetting.extrapolated ? undefined : forgetting.halfLife} />
             ) : (
@@ -381,7 +399,7 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
           </Figure>
           {forgetting.fit && (
             <p className="font-mono text-[12px] text-muted">
-              {forgetting.fit.model === 'power' ? `R = ${num(forgetting.fit.a, 2)}·(1+t)^−${num(forgetting.fit.k, 3)}` : `R = ${num(forgetting.fit.a, 2)}·e^(−t/${num(forgetting.fit.k, 1)})`} · half-life {forgetting.extrapolated ? `> ${fmtDays(2 * forgetting.maxObserved)} (beyond the data)` : fmtDays(forgetting.halfLife)} · n {forgetting.n}
+              {forgetting.fit.model === 'power' ? `R = ${num(forgetting.fit.a, 2)}·(1+t)^−${num(forgetting.fit.k, 3)}` : `R = ${num(forgetting.fit.a, 2)}·e^(−t/${num(forgetting.fit.k, 1)})`} · 50/50 after {forgetting.extrapolated ? `> ${fmtDays(2 * forgetting.maxObserved)} (beyond the data)` : fmtDays(forgetting.halfLife)} · {forgetting.n} answers
             </p>
           )}
         </Section>
@@ -391,7 +409,7 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
           id="slips"
           n={4}
           title="Where you slip"
-          lede={<>Skills, grammar points and moments where your recall is measurably below your own baseline of {pct(recall.baseline.p)} (last {recall.windowDays} days, n {recall.baseline.n}).</>}
+          lede={<>Skills, grammar points and times of day where you do clearly worse (or better) than your own usual {pct(recall.baseline.p)} (last {recall.windowDays} days, {recall.baseline.n} answers). Only gaps too large to be luck are coloured.</>}
           method={
             <>
               <p>Each group (skill, exercise format, grammar point) is compared with all other answers in the last {recall.windowDays} days by a two-proportion z-test with pooled standard error. Because many groups are tested at once, p-values are adjusted with Benjamini–Hochberg; a group is inked red (below) or green (above) when <code>q &lt; 0.10</code> and it has ≥ 20 answers. Groups with fewer than 12 answers are hidden.</p>
@@ -400,7 +418,7 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
             </>
           }
         >
-          <Figure title="By skill" how={<>dot = recall, line = 95% interval, dashed line = your baseline. Red means significantly below.</>}>
+          <Figure title="By skill" how={<>dot = accuracy, line = likely range, dashed line = your usual. Red means clearly below it, green clearly above.</>}>
             <ForestPlot ariaLabel="Recall by skill" rows={recall.byModality.map((b) => forestRow(b, b.id.charAt(0).toUpperCase() + b.id.slice(1)))} baseline={recall.baseline.p} />
           </Figure>
           <Figure title="By exercise format" how={<>the same comparison for each kind of exercise.</>}>
@@ -422,7 +440,7 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
           <p className="text-[13px] leading-snug">
             {fatigue.breakpoint && fatigue.recommendedMinutes ? (
               <>
-                Recall drops from <b className="font-mono">{pct(fatigue.breakpoint.before.p)}</b> to <b className="font-mono">{pct(fatigue.breakpoint.after.p)}</b> after minute {fatigue.breakpoint.minute} (z = {num(fatigue.breakpoint.z, 1)}, n = {fatigue.breakpoint.before.n} / {fatigue.breakpoint.after.n}). Median session: {num(fatigue.medianMinutes, 0)} min over {fatigue.sessions} sessions. Recommended: sessions of about <b>{fatigue.recommendedMinutes} minutes</b>.
+                Accuracy drops from <b className="font-mono">{pct(fatigue.breakpoint.before.p)}</b> to <b className="font-mono">{pct(fatigue.breakpoint.after.p)}</b> after minute {fatigue.breakpoint.minute} ({fatigue.breakpoint.before.n} answers before, {fatigue.breakpoint.after.n} after; too large a drop to be chance). Median session: {num(fatigue.medianMinutes, 0)} min over {fatigue.sessions} sessions. Recommended: sessions of about <b>{fatigue.recommendedMinutes} minutes</b>.
               </>
             ) : (
               <>No significant fatigue: recall holds across the session (median {num(fatigue.medianMinutes, 0)} min over {fatigue.sessions} sessions).</>
@@ -435,10 +453,10 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
           id="workload"
           n={5}
           title="Workload"
-          lede={<>What is due, what is coming, and whether you are keeping up.</>}
+          lede={<>What is due, what is coming, and whether you are keeping up: if you clear more cards a day than fall due, the pile shrinks.</>}
           method={
             <>
-              <p><b>Forecast</b>: cards whose due date falls on each of the next 30 days, split by stability (young <code>S &lt; {MATURE_DAYS} d</code>, mature otherwise); "now" is the overdue backlog. <b>Throughput</b> = mean distinct already-seen cards reviewed per calendar day over the last {workload.throughputDays} days (today excluded). <b>Inflow</b> = mean cards falling due per day over the next 7 days. <b>Net drain</b> = throughput − inflow; <b>days to clear</b> = backlog ÷ net drain (∞ when the drain is not positive).</p>
+              <p><b>Forecast</b>: cards whose due date falls on each of the next 30 days, split by stability (young <code>S &lt; {MATURE_DAYS} d</code>, mature otherwise); "now" is the overdue backlog. <b>Cleared per day</b> = mean distinct already-seen cards reviewed per calendar day over the last {workload.throughputDays} days (today excluded). <b>Coming due per day</b> = mean cards falling due per day over the next 7 days. <b>Daily margin</b> = cleared − coming due; <b>days to clear</b> = overdue ÷ daily margin (∞ when the drain is not positive).</p>
               <p>The backlog history is reconstructed from replayed due dates at the end of each day.</p>
             </>
           }
@@ -446,16 +464,20 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
           <Figure title="Due ladder, next 30 days" how={<>each bar is the cards falling due that day; the red bar is what is overdue now; the dashed line is how many you usually clear in a day.</>}>
             <Ladder ariaLabel="Due forecast" days={workload.forecast} backlog={workload.backlog} throughput={workload.throughput} />
           </Figure>
+          <Takeaway>
+            {workload.backlog === 0 ? <>Nothing is overdue. </> : <><b className="font-mono">{workload.backlog}</b> cards are overdue. </>}
+            You clear about <b className="font-mono">{num(workload.throughput, 0)}</b> a day and about <b className="font-mono">{num(workload.inflow7, 0)}</b> a day will fall due this week, {workload.netDrain >= 0 ? <>so you are keeping up{workload.backlog > 0 && Number.isFinite(workload.daysToClear) ? ` and will be clear in about ${num(workload.daysToClear, 0)} days` : ''}.</> : <>so the pile grows by {num(-workload.netDrain, 1)} a day unless you review a little more.</>}
+          </Takeaway>
           <Stats>
-            <Stat label="Backlog" value={String(workload.backlog)} sub={`${signed(workload.backlogChange7)} in 7 d`} tone={workload.backlogChange7 > 0 && workload.backlog > 20 ? 'bad' : undefined} />
-            <Stat label="Throughput" value={`${num(workload.throughput, 0)}/d`} sub={`trailing ${workload.throughputDays} d`} />
-            <Stat label="Inflow" value={`${num(workload.inflow7, 0)}/d`} sub="next 7 d" />
-            <Stat label="Net drain" value={`${signed(workload.netDrain, 1)}/d`} tone={workload.netDrain < 0 ? 'bad' : 'good'} />
-            <Stat label="Days to clear" value={Number.isFinite(workload.daysToClear) ? num(workload.daysToClear, 0) : '∞'} />
-            <Stat label="Peak" value={String(workload.peak.total)} sub={shortDate(workload.peak.date)} />
+            <Stat label="Overdue" value={String(workload.backlog)} sub={`${signed(workload.backlogChange7)} in 7 days`} tone={workload.backlogChange7 > 0 && workload.backlog > 20 ? 'bad' : undefined} />
+            <Stat label="Cleared per day" value={num(workload.throughput, 0)} sub={`average, last ${workload.throughputDays} days`} />
+            <Stat label="Coming due per day" value={num(workload.inflow7, 0)} sub="average, next 7 days" />
+            <Stat label="Daily margin" value={`${signed(workload.netDrain, 1)}/day`} sub="cleared − coming due" tone={workload.netDrain < 0 ? 'bad' : 'good'} />
+            <Stat label="Days to clear" value={Number.isFinite(workload.daysToClear) ? num(workload.daysToClear, 0) : '∞'} sub="at this margin" />
+            <Stat label="Busiest day ahead" value={String(workload.peak.total)} sub={shortDate(workload.peak.date)} />
           </Stats>
-          <Figure title="Backlog, last 30 days" how={<>cards overdue at the end of each day; a rising line means reviews are not keeping pace.</>}>
-            <LineArea ariaLabel="Backlog history" xLabels={workload.backlogSeries.map((b) => b.date)} series={[{ id: 'b', label: 'Backlog', values: workload.backlogSeries.map((b) => b.backlog), color: C.red, endLabel: true }]} height={130} />
+          <Figure title="Overdue cards, last 30 days" how={<>cards overdue at the end of each day; a rising line means reviews are not keeping pace.</>}>
+            <LineArea ariaLabel="Overdue cards history" xLabels={workload.backlogSeries.map((b) => b.date)} series={[{ id: 'b', label: 'Overdue', values: workload.backlogSeries.map((b) => b.backlog), color: C.red, endLabel: true }]} height={130} />
           </Figure>
         </Section>
 
@@ -464,15 +486,18 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
           id="effort"
           n={6}
           title="Effort & consistency"
-          lede={<>What your minutes buy. A postcard is an item you can recall; its cost is the time it took to get there.</>}
+          lede={<>What your minutes buy: how much each minute adds to your memory, and what a day off costs.</>}
           method={
             <>
-              <p><b>Minutes</b> are the minutes logged per day (lessons and review sessions); days without a log use the span of that day's answer sessions. <b>New items</b> are cards answered for the first time that day (from the review log); <b>answers</b> are exercises answered (one exercise can credit several cards). <b>Cost per postcard</b> = total minutes ÷ current total NAV (words + sentences + grammar). <b>Marginal NAV per minute</b> = NAV change over the last {effort.windowDays} days ÷ minutes in them.</p>
-              <p><b>Regression</b>: daily total-NAV change on daily minutes (OLS over the last {effort.windowDays} complete days): the slope is postcards gained per extra minute; the intercept is the change on a day with no practice (decay).</p>
+              <p><b>Minutes</b> are the minutes logged per day (lessons and review sessions); days without a log use the span of that day's answer sessions. <b>New items</b> are cards answered for the first time that day (from the review log); <b>answers</b> are exercises answered (one exercise can credit several cards). <b>Minutes per item kept</b> = total minutes ÷ items in memory now (words + sentences + grammar, each counted by its recall chance). <b>Recent gain per minute</b> = change in items in memory over the last {effort.windowDays} days ÷ minutes in them.</p>
+              <p><b>Each extra minute</b> and <b>a day off</b> come from a straight-line fit (ordinary least squares) of the daily change in items in memory against minutes practised over the last {effort.windowDays} complete days: the slope is items gained per extra minute, the intercept the change on a day with no practice (forgetting). SE is the standard error (± about 2 SE is the likely range); R² is the share of day-to-day variation explained by minutes.</p>
               <p><b>Days on the road</b>: consecutive active days ending today (or yesterday, as the run survives until midnight). Active share is over the days since you started, capped at the window.</p>
             </>
           }
         >
+          <Takeaway>
+            Each minute of practice adds about <b className="font-mono">{num(Math.max(0, effort.regression.slope), 2)}</b> items to your memory{effort.regression.intercept < 0 ? <>, and a day off loses about <b className="font-mono">{num(-effort.regression.intercept, 1)}</b></> : ''}. You practised on {effort.activeDays} of the last {effort.windowDays} days, about {num(effort.minutesPerActiveDay, 0)} minutes each time.
+          </Takeaway>
           <Figure title="Minutes per day, last 30 days" how={<>bars are minutes practised; the dashed line is your daily average.</>}>
             <Bars ariaLabel="Minutes per day" data={effort.daily.map((d) => ({ label: d.date, value: d.minutes, title: `${shortDate(d.date)}: ${num(d.minutes, 0)} min, ${d.newItems} new, ${d.reviews} reviews` }))} refLine={{ value: effort.minutesPerDay, label: `avg ${num(effort.minutesPerDay, 1)} min` }} />
           </Figure>
@@ -480,12 +505,12 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
             <Stat label="Minutes / active day" value={num(effort.minutesPerActiveDay, 1)} sub={`${effort.activeDays} active of ${effort.windowDays}`} />
             <Stat label="New / minute" value={num(effort.newPerMinute, 2)} />
             <Stat label="Answers / minute" value={num(effort.reviewsPerMinute, 2)} />
-            <Stat label="Marginal NAV / min" value={num(effort.marginalPerMinute, 2)} sub={`last ${effort.windowDays} d`} />
-            <Stat label="Slope (regression)" value={`${signed(effort.regression.slope, 2)}/min`} sub={`SE ${num(effort.regression.seSlope, 2)} · R² ${num(effort.regression.r2, 2)}`} />
-            <Stat label="Idle-day change" value={signed(effort.regression.intercept, 1)} sub={`SE ${num(effort.regression.seIntercept, 1)} · n ${effort.regression.n}`} tone={effort.regression.intercept < 0 ? 'bad' : undefined} />
-            <Stat label="Days on the road" value={String(consistency.current)} sub={`longest ${consistency.longest}`} />
-            <Stat label="Active · 30 d" value={pct(consistency.active30.p)} sub={`${consistency.active30.k} of ${consistency.active30.n}`} />
-            <Stat label="Active · 90 d" value={pct(consistency.active90.p)} sub={`${consistency.active90.k} of ${consistency.active90.n}`} />
+            <Stat label="Recent gain / min" value={num(effort.marginalPerMinute, 2)} sub={`items, last ${effort.windowDays} days`} />
+            <Stat label="Each extra minute" value={`${signed(effort.regression.slope, 2)}`} sub={`items · SE ${num(effort.regression.seSlope, 2)} · R² ${num(effort.regression.r2, 2)}`} />
+            <Stat label="A day off" value={signed(effort.regression.intercept, 1)} sub={`items · SE ${num(effort.regression.seIntercept, 1)} · ${effort.regression.n} days`} tone={effort.regression.intercept < 0 ? 'bad' : undefined} />
+            <Stat label="Days on the road" value={String(consistency.current)} sub={`best run ${consistency.longest}`} />
+            <Stat label="Active · 30 days" value={pct(consistency.active30.p)} sub={`${consistency.active30.k} of ${consistency.active30.n}`} />
+            <Stat label="Active · 90 days" value={pct(consistency.active90.p)} sub={`${consistency.active90.k} of ${consistency.active90.n}`} />
           </Stats>
           {consistency.breaks.length > 0 && (
             <p className="text-[13px] text-muted">
@@ -497,25 +522,25 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
         {/* §7 Level ETA */}
         <EtaSection ins={ins} />
 
-        {/* §8 Leeches */}
+        {/* §8 Stubborn items */}
         <Section
           id="leeches"
           n={8}
-          title="Leeches"
-          lede={<>Items that keep slipping away. Each lapse resets their stability, so they cost far more reviews than they should.</>}
-          method={<p>Word and sentence cards with ≥ {LEECH_LAPSES} lapses (an answer marked wrong while the card was in the long-term review state, counted by the scheduler). R now is today's recall probability on the scheduler's curve. Sorted by lapses, then by lowest R. Grammar-point cards are left out: every sentence that uses a point also reviews it, so their lapse counts measure the topic, which the grammar breakdown in §4 tests properly.</p>}
+          title="Stubborn items"
+          lede={<>Items that keep slipping away. Each time you forget one its memory strength resets, so they cost far more reviews than they should.</>}
+          method={<p>Word and sentence cards with ≥ {LEECH_LAPSES} lapses (an answer marked wrong while the card was in the long-term review state, counted by the scheduler). Recall now is today's recall probability on the scheduler's curve. Sorted by lapses, then by lowest R. Grammar-point cards are left out: every sentence that uses a point also reviews it, so their lapse counts measure the topic, which the grammar breakdown in §4 tests properly.</p>}
         >
           {memory.leeches.length === 0 ? (
-            <p className="text-[14px] text-muted">No leeches. Nothing has lapsed {LEECH_LAPSES} times.</p>
+            <p className="text-[14px] text-muted">No stubborn items. Nothing has lapsed {LEECH_LAPSES} times.</p>
           ) : (
             <>
               <table className="w-full table-fixed text-[12.5px]">
                 <thead>
                   <tr className="text-left text-[10.5px] text-muted uppercase">
                     <th className="py-1 font-bold">Item</th>
-                    <th className="w-16 py-1 text-right font-bold">Lapses</th>
+                    <th className="w-16 py-1 text-right font-bold">Forgotten</th>
                     <th className="w-16 py-1 text-right font-bold">Reviews</th>
-                    <th className="w-14 py-1 text-right font-bold">R now</th>
+                    <th className="w-16 py-1 text-right font-bold">Recall now</th>
                   </tr>
                 </thead>
                 <tbody className="font-mono">
@@ -554,7 +579,7 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
           <details className="mt-4 border-t border-line pt-3 text-[13px] leading-relaxed">
             <summary className="cursor-pointer font-bold text-muted select-none">Methodology</summary>
             <div className="mt-2 space-y-2 text-muted">
-              <p>Rules and gates: weak grammar point or skill (BH q &lt; 0.10, n ≥ 20); backlog compounding (backlog ≥ 20, growing over 7 days, net drain ≤ 0); load peak (≥ 25 cards and ≥ 1.6× usual); time-of-day gap (Bonferroni-significant, ≥ 5 pp); fatigue (z ≥ {FATIGUE_Z} and median session longer than the breakpoint); drawdown ≥ 3% or a paused run; active share &lt; 60% over ≥ 14 days; calibration gap ≥ 3 pp, p &lt; 0.05, n ≥ 150; new-to-review ratio &gt; 0.3 with lapses &gt; 15% or a negative drain; leeches; level ETA with ≥ 7 days of data.</p>
+              <p>Rules and gates: weak grammar point or skill (BH q &lt; 0.10, n ≥ 20); growing pile (overdue ≥ 20, growing over 7 days, daily margin ≤ 0); load peak (≥ 25 cards and ≥ 1.6× usual); time-of-day gap (Bonferroni-significant, ≥ 5 pp); fatigue (z ≥ {FATIGUE_Z} and median session longer than the breakpoint); a dip ≥ 3% in words in memory or a paused run; active share &lt; 60% over ≥ 14 days; calibration gap ≥ 3 pp, p &lt; 0.05, n ≥ 150; new-to-review ratio &gt; 0.3 with a forget rate &gt; 15% or a negative margin; stubborn items; level finish estimate with ≥ 7 days of data.</p>
               <p>Severity is high, medium or low by effect size; within a severity, larger effects rank first.</p>
             </div>
           </details>
@@ -578,7 +603,7 @@ function NavChart({ series }: { series: InsightsData['nav']['series'] }) {
   const shown = series.slice(Math.max(0, Math.min(first - 1, series.length - 14)))
   return (
     <LineArea
-      ariaLabel="Knowledge NAV over 90 days"
+      ariaLabel="Words in memory over 90 days"
       xLabels={shown.map((p) => p.date)}
       series={[
         { id: 'w', label: 'Words', values: shown.map((p) => p.words), color: C.blue, area: true, endLabel: true },
@@ -609,7 +634,7 @@ function GrammarForest({ rows, baseline, title }: { rows: Breakdown[]; baseline:
   const [all, setAll] = useState(false)
   const shown = all ? rows : rows.slice(0, 10)
   return (
-    <Figure title="By grammar point" how={<>weakest first; tap a topic to read its note. Red topics are significantly below your baseline after correcting for the number of topics tested.</>}>
+    <Figure title="By grammar point" how={<>weakest first; tap a topic to read its note. Red topics are clearly below your usual, even allowing for the fact that many topics are compared at once.</>}>
       {rows.length ? (
         <>
           <ForestPlot ariaLabel="Recall by grammar point" rows={shown.map((b) => forestRow(b, title(b.id), `/grammar/${encodeURIComponent(b.id)}`))} baseline={baseline} />
@@ -652,7 +677,7 @@ function HourFigure({ ins }: { ins: InsightsData }) {
       />
       {c.best && c.worst && c.test && (
         <p className="mt-1 text-[13px] leading-snug">
-          Best block <b className="font-mono">{c.best.label}</b> {pct(c.best.p)} (n {c.best.n}) versus worst <b className="font-mono">{c.worst.label}</b> {pct(c.worst.p)} (n {c.worst.n}): {pp(c.test.diff)}, {pval(c.test.pValue)}
+          Best block <b className="font-mono">{c.best.label}</b> {pct(c.best.p)} ({c.best.n} answers) versus worst <b className="font-mono">{c.worst.label}</b> {pct(c.worst.p)} ({c.worst.n} answers): {pp(c.test.diff)}, {pval(c.test.pValue)}
           {c.significant ? ', significant after correction.' : ', not significant after correction.'}
         </p>
       )}
@@ -673,17 +698,22 @@ function EtaSection({ ins }: { ins: InsightsData }) {
       id="eta"
       n={7}
       wide
-      title="Level ETA"
-      lede={next ? <>Mastered words and grammar points (production stage) and when, at your current pace, you complete {next.level.toUpperCase()} ({pct(eta.threshold)} of its items mastered).</> : <>You have mastered every level's threshold.</>}
+      title="When you finish the level"
+      lede={next ? <>How many words and grammar points you have mastered (you can produce them, not just recognise them), and when you will complete {next.level.toUpperCase()} ({pct(eta.threshold)} of its items mastered) if you keep your current pace.</> : <>You have mastered every level's threshold.</>}
       method={
         <>
           <p><b>Mastered</b> = word and grammar cards at ladder stage ≥ 2 (you can produce them), counted at the end of each day by replay; limited to levels up to the target. A level is <b>reached</b> when {pct(eta.threshold)} of the words and grammar points of that level and all earlier ones are mastered.</p>
-          <p><b>Pace</b> is the drift of the daily increments over the last {eta.fitDays} complete days, <code>μ = mean(Δ)</code> with <code>SE = sd(Δ)/√n</code> (a cumulative count is a random walk with drift, so OLS on levels would understate uncertainty). ETA = remaining ÷ μ; the range uses μ ± 1.96·SE. The shaded cone is <code>±1.96·√(h·σ² + h²·SE²)</code> for h days ahead. The thin line is the OLS trend over the same window for reference (slope {num(eta.ols.slope, 2)}/day, SE {num(eta.ols.seSlope, 2)}, R² {num(eta.ols.r2, 2)}).</p>
+          <p><b>Pace</b> is the drift of the daily increments over the last {eta.fitDays} complete days, <code>μ = mean(Δ)</code> with <code>SE = sd(Δ)/√n</code> (a cumulative count is a random walk with drift, so OLS on levels would understate uncertainty). Estimated date = remaining ÷ μ; the range uses μ ± 1.96·SE. The shaded cone is <code>±1.96·√(h·σ² + h²·SE²)</code> for h days ahead. The thin line is the OLS trend over the same window for reference (slope {num(eta.ols.slope, 2)}/day, SE {num(eta.ols.seSlope, 2)}, R² {num(eta.ols.r2, 2)}).</p>
           <p><b>Grammar coverage</b>: points met (reviewed at least once) and mastered (stage ≥ 2) out of those taught at each level.</p>
         </>
       }
     >
-      <Figure title="Mastered items and projection" how={<>blue is your history, the dashed line and wash the projection with its 95% cone; the horizontal line is the next level's target.</>}>
+      {next && (
+        <Takeaway>
+          {next.remaining} more items to master for {next.level.toUpperCase()}. At {num(eta.drift, 1)} a day you get there around <b className="font-mono">{next.date ? shortDate(next.date) : '–'}</b>{next.dateLo ? <> (likely between {shortDate(next.dateLo)} and {next.dateHi ? shortDate(next.dateHi) : 'later'})</> : ''}.
+        </Takeaway>
+      )}
+      <Figure title="Mastered items and projection" how={<>blue is your history; the dashed line is where your pace leads and the shaded cone the likely range, which widens the further ahead it looks. The horizontal line is the next level's target.</>}>
         <LineArea
           ariaLabel="Mastered items with projection"
           xLabels={labels}
@@ -699,11 +729,11 @@ function EtaSection({ ins }: { ins: InsightsData }) {
         />
       </Figure>
       <Stats>
-        <Stat label="Pace" value={`${num(eta.drift, 1)}/day`} sub={`SE ${num(eta.driftSe, 2)} · ${eta.fitDays} d`} />
+        <Stat label="Pace" value={`${num(eta.drift, 1)}/day`} sub={`items mastered · ± ${num(1.96 * eta.driftSe, 2)} · ${eta.fitDays} days`} />
         <Stat label="Working through" value={(next?.level ?? eta.reached ?? 'a1').toUpperCase()} sub={`completed: ${eta.reached ? eta.reached.toUpperCase() : 'none yet'}`} />
         {next && <Stat label={`To ${next.level.toUpperCase()}`} value={String(next.remaining)} sub={`${next.mastered} of ${next.target}`} />}
-        {next && <Stat label="ETA" value={next.date ? shortDate(next.date) : '–'} sub={Number.isFinite(next.days) ? `${Math.ceil(next.days)} days` : 'no pace yet'} />}
-        {next && <Stat label="Range (95%)" value={next.dateLo ? shortDate(next.dateLo) : '–'} sub={`to ${next.dateHi ? shortDate(next.dateHi) : 'open-ended'}`} />}
+        {next && <Stat label="Estimated date" value={next.date ? shortDate(next.date) : '–'} sub={Number.isFinite(next.days) ? `${Math.ceil(next.days)} days` : 'no pace yet'} />}
+        {next && <Stat label="Likely range" value={next.dateLo ? shortDate(next.dateLo) : '–'} sub={`to ${next.dateHi ? shortDate(next.dateHi) : 'open-ended'}`} />}
       </Stats>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[19rem] table-fixed font-mono text-[12px]">

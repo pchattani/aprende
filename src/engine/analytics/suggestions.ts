@@ -63,16 +63,16 @@ export function suggestions(ins: Omit<Insights, 'suggestions'>, meta: CourseMeta
     add({
       id: 'backlog:growing',
       severity: 'high',
-      title: 'Your backlog is compounding',
-      evidence: `${workload.backlog} cards due now, ${signed(workload.backlogChange7)} in 7 days. You review ${num(workload.throughput, 0)} a day (trailing ${workload.throughputDays} d) while ${num(workload.inflow7, 0)} a day fall due next week.`,
+      title: 'Your overdue pile is growing',
+      evidence: `${workload.backlog} cards due now, ${signed(workload.backlogChange7)} in 7 days. You clear ${num(workload.throughput, 0)} a day (average of the last ${workload.throughputDays} days) while ${num(workload.inflow7, 0)} a day fall due next week.`,
       action: { label: `Clear due cards`, to: '/review' },
     }, workload.backlog / 10)
   } else if (workload.backlog >= 30 && workload.daysToClear > 7) {
     add({
       id: 'backlog:large',
       severity: 'medium',
-      title: 'Work the backlog down',
-      evidence: `${workload.backlog} cards due; at your net drain of ${num(workload.netDrain, 1)} a day it clears in ${Number.isFinite(workload.daysToClear) ? `${Math.ceil(workload.daysToClear)} days` : 'never'}.`,
+      title: 'Work the overdue pile down',
+      evidence: `${workload.backlog} cards due; clearing ${num(workload.netDrain, 1)} more a day than fall due, it is gone in ${Number.isFinite(workload.daysToClear) ? `${Math.ceil(workload.daysToClear)} days` : 'never'}.`,
       action: { label: 'Review now', to: '/review' },
     }, workload.backlog / 10)
   }
@@ -121,7 +121,7 @@ export function suggestions(ins: Omit<Insights, 'suggestions'>, meta: CourseMeta
       id: 'road:paused',
       severity: 'high',
       title: 'Get back on the road today',
-      evidence: `No practice yesterday or today. Your postcards are fading: knowledge NAV ${num(nav.change7.abs, 1)} over 7 days.`,
+      evidence: `No practice yesterday or today. Your memories are fading: words in memory ${num(nav.change7.abs, 1)} over 7 days.`,
       action: { label: 'A short review', to: '/review' },
     }, 50)
   } else if (dd.pct <= -0.03 && dd.peakDate) {
@@ -130,7 +130,7 @@ export function suggestions(ins: Omit<Insights, 'suggestions'>, meta: CourseMeta
       id: 'drawdown',
       severity: dd.recoveryDate ? 'low' : 'medium',
       title: dd.recoveryDate ? 'Breaks cost you ground' : 'You are still below your peak',
-      evidence: `Knowledge NAV fell ${pct(-dd.pct, 1)} (${num(dd.abs, 1)} postcards) from ${shortDate(dd.peakDate)} to ${shortDate(dd.troughDate)}${brk ? `, around a ${brk.days}-day break` : ''}; ${dd.recoveryDate ? `recovered on ${shortDate(dd.recoveryDate)}, ${dd.durationDays} days peak to recovery` : 'not yet recovered'}. A few minutes a day prevents most of it.`,
+      evidence: `Words in memory fell ${pct(-dd.pct, 1)} (${num(dd.abs, 1)} words) from ${shortDate(dd.peakDate)} to ${shortDate(dd.troughDate)}${brk ? `, around a ${brk.days}-day break` : ''}; ${dd.recoveryDate ? `back to the high on ${shortDate(dd.recoveryDate)}, ${dd.durationDays} days later` : 'not yet back to the high'}. A few minutes a day prevents most of it.`,
       action: { label: dd.recoveryDate ? 'Keep the run going' : 'Recover with a review', to: '/review' },
     }, -dd.pct * 100)
   }
@@ -139,7 +139,7 @@ export function suggestions(ins: Omit<Insights, 'suggestions'>, meta: CourseMeta
       id: 'road:consistency',
       severity: 'medium',
       title: 'Practise on more days, even briefly',
-      evidence: `Active on ${consistency.active30.k} of the last ${consistency.active30.n} days (${pct(consistency.active30.p)}). On idle days NAV changes by ${num(effort.regression.intercept, 1)} postcards (regression intercept, n = ${effort.regression.n} days).`,
+      evidence: `Active on ${consistency.active30.k} of the last ${consistency.active30.n} days (${pct(consistency.active30.p)}). On a day off your words in memory change by ${num(effort.regression.intercept, 1)} (fitted over ${effort.regression.n} days).`,
       action: { label: 'Set a daily goal', to: '/settings' },
     }, (0.6 - consistency.active30.p) * 100)
   }
@@ -166,7 +166,7 @@ export function suggestions(ins: Omit<Insights, 'suggestions'>, meta: CourseMeta
       id: 'mix:too-new',
       severity: 'medium',
       title: 'Ease off new material for a few days',
-      evidence: `${newN} new items against ${revN} review answers in 14 days (${num(newN / revN, 2)} per review). Lapse rate ${pct(memory.lapseRate.p, 1)} (CI ${ci(memory.lapseRate.lo, memory.lapseRate.hi)}); net drain ${num(workload.netDrain, 1)}/day.`,
+      evidence: `${newN} new items against ${revN} review answers in 14 days (${num(newN / revN, 2)} per review). Forget rate ${pct(memory.lapseRate.p, 1)} (likely ${ci(memory.lapseRate.lo, memory.lapseRate.hi)}); daily margin ${num(workload.netDrain, 1)} cards.`,
       action: { label: 'Review instead of a new lesson', to: '/review' },
     }, (newN / revN) * 50)
   } else if (revN >= 50 && newN === 0 && workload.backlog < Math.max(10, workload.throughput)) {
@@ -174,7 +174,7 @@ export function suggestions(ins: Omit<Insights, 'suggestions'>, meta: CourseMeta
       id: 'mix:too-few',
       severity: 'low',
       title: 'Room for new material',
-      evidence: `No new items in 14 days while the backlog is just ${workload.backlog}. Your memory book is stable; the next lesson is cheap.`,
+      evidence: `No new items in 14 days while only ${workload.backlog} cards are overdue. Your memory is stable; the next lesson is cheap.`,
       action: { label: 'Next lesson', to: nextLesson },
     })
   }
@@ -186,7 +186,7 @@ export function suggestions(ins: Omit<Insights, 'suggestions'>, meta: CourseMeta
       id: 'leeches',
       severity: n >= 8 ? 'medium' : 'low',
       title: `${n} ${n === 1 ? 'item keeps' : 'items keep'} slipping away`,
-      evidence: `${n} cards with 3+ lapses (worst: ${memory.leeches.slice(0, 3).map((l) => `${meta.labelOf?.(l.id) ?? l.id} ×${l.lapses}`).join(', ')}). Each costs repeated reviews; a focused re-test or a mnemonic breaks the loop.`,
+      evidence: `${n} cards forgotten 3+ times (worst: ${memory.leeches.slice(0, 3).map((l) => `${meta.labelOf?.(l.id) ?? l.id} ×${l.lapses}`).join(', ')}). Each costs repeated reviews; a focused re-test or a mnemonic breaks the loop.`,
       action: { label: 'Pinned practice', to: '/review?tab=pinned' },
     }, n * 3)
   }

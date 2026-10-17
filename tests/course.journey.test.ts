@@ -6,6 +6,7 @@ import { vocab, levels, ui, known } from '@/engine/loader'
 import { IRREGULAR } from '@lang/verbs'
 import { tokenize } from '@lang/tokenize'
 import type { LessonRow } from '@/engine/types'
+import { WEAR_SLOTS } from '@/engine/artKinds'
 
 const row = (id: string, unitId: string, completions: number): LessonRow => ({ id, unitId, level: 'a1', attempts: 1, completions, bestAccuracy: 1, lastAccuracy: 1, xp: 0 })
 
@@ -53,7 +54,7 @@ describe('journey', () => {
     }
   })
   it('wearable souvenirs have valid slots and badges exist for every region', () => {
-    for (const s of wearableSouvenirs()) expect(['hat', 'neck', 'mouth', 'paw']).toContain(s.wearable!.slot)
+    for (const s of wearableSouvenirs()) expect(WEAR_SLOTS).toContain(s.wearable!.slot)
     expect(wearableSouvenirs().length).toBeGreaterThanOrEqual(20)
     for (const r of REGIONS) expect(souvenirById(`badge-${r.level}`)?.badge).toBe(true)
     expect(new Set(SOUVENIRS.map((s) => s.id)).size).toBe(SOUVENIRS.length)

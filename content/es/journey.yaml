@@ -679,6 +679,7 @@ souvenirs:
   - id: mate
     level: a1
     emoji: 🧉
+    art: mate
     es: un mate
     en: a mate gourd
     blurb: Bonchita sniffs it suspiciously; Leo wants the bombilla.
@@ -686,6 +687,8 @@ souvenirs:
   - id: alfajor
     level: a1
     emoji: 🍪
+    art: cookie
+    color: '#8a5a3c'
     es: un alfajor
     en: an alfajor
     blurb: Two cookies, dulce de leche in the middle. Gone in seconds.
@@ -693,6 +696,8 @@ souvenirs:
   - id: bandoneon
     level: a1
     emoji: 🪗
+    art: accordion
+    color: '#2a2d3a'
     es: un bandoneón
     en: a bandoneón
     blurb: The sound of tango. Leo howls along.
@@ -700,6 +705,8 @@ souvenirs:
   - id: camiseta
     level: a1
     emoji: 👕
+    art: football-shirt
+    color: '#2f5bd3'
     es: una camiseta de fútbol
     en: a football shirt
     blurb: Blue and yellow, from La Boca.
@@ -707,6 +714,7 @@ souvenirs:
   - id: medialuna
     level: a1
     emoji: 🥐
+    art: croissant
     es: una medialuna
     en: a croissant
     blurb: Breakfast in Palermo, with café con leche.
@@ -714,6 +722,7 @@ souvenirs:
   - id: choripan
     level: a1
     emoji: 🌭
+    art: sandwich
     es: un choripán
     en: a chorizo sandwich
     blurb: Costanera classic. Bonchita approves.
@@ -721,12 +730,74 @@ souvenirs:
   - id: fileteado
     level: a1
     emoji: 🖼️
+    art: painting
     es: un cartel fileteado
     en: a fileteado sign
     blurb: Swirly painted letters from San Telmo.
+  - id: dulce-de-leche
+    level: a1
+    emoji: 🍯
+    art: jam
+    color: '#b07a3c'
+    es: un frasco de dulce de leche
+    en: a jar of dulce de leche
+    blurb: Luna guards the spoon. Bonchita guards Luna.
+  - id: rosa
+    level: a1
+    emoji: 🌹
+    art: flower
+    color: '#d4483c'
+    es: una rosa del Rosedal
+    en: a rose from the Rosedal
+    blurb: From the rose garden in Palermo. Leo holds it in his teeth and attempts a tango.
+    slot: mouth
+  - id: sombrero-tango
+    level: a1
+    emoji: 🎩
+    art: sombrero
+    color: '#2a2d3a'
+    es: un sombrero de tango
+    en: a tango hat
+    blurb: Gardel style, tilted over one eye. Bonchita's ears hold it up.
+    slot: hat
+  - id: obelisco
+    level: a1
+    emoji: 🗼
+    art: figurine
+    color: '#f2f0ea'
+    es: un obelisco en miniatura
+    en: a mini Obelisco
+    blurb: From the Avenida 9 de Julio. Luna measures it against the real one. Slightly shorter.
+    slot: paw
+  - id: pelota
+    level: a1
+    emoji: ⚽
+    art: football
+    es: una pelota de fútbol
+    en: a football
+    blurb: Leo dribbles it down Caminito. Nobody can take it off him.
+    slot: paw
+  - id: facturas
+    level: a1
+    emoji: 🥐
+    art: pastry
+    es: una docena de facturas
+    en: a dozen pastries
+    blurb: Vigilantes, bolas de fraile, cañoncitos. Bonchita eats the cañoncito first.
+    slot: mouth
+  - id: entrada-colon
+    level: a1
+    emoji: 🎟️
+    art: ticket
+    color: '#d4483c'
+    es: una entrada del Teatro Colón
+    en: a Teatro Colón ticket
+    blurb: Gallery seats, best sound in the house. Luna sits very still. Leo does not.
   - id: terere
     level: a2
     emoji: 🥤
+    art: mate
+    color: '#3f8f5f'
     es: un tereré
     en: a tereré
     blurb: Cold mate for the hot Litoral.
@@ -734,12 +805,15 @@ souvenirs:
   - id: yerba
     level: a2
     emoji: 🌿
+    art: leaf
+    color: '#3f8f5f'
     es: un paquete de yerba
     en: a packet of yerba
     blurb: Straight from Posadas.
   - id: mascara
     level: a2
     emoji: 🎭
+    art: carnival-mask
     es: una máscara de carnaval
     en: a carnival mask
     blurb: Gualeguaychú glitter everywhere.
@@ -747,12 +821,15 @@ souvenirs:
   - id: postal
     level: a2
     emoji: 📮
+    art: postcard
     es: una postal de Iguazú
     en: an Iguazú postcard
     blurb: Wet from the spray.
   - id: boina
     level: a2
     emoji: 🧢
+    art: beret
+    color: '#2a2d3a'
     es: una boina gaucha
     en: a gaucho beret
     blurb: Leo wears it sideways.
@@ -760,13 +837,71 @@ souvenirs:
   - id: chamame
     level: a2
     emoji: 💿
+    art: accordion
+    color: '#d4483c'
     es: un disco de chamamé
     en: a chamamé record
     blurb: Accordion music for the road.
     slot: paw
+  - id: panuelo-gaucho
+    level: a2
+    emoji: 🧣
+    art: bandana
+    color: '#d4483c'
+    es: un pañuelo gaucho
+    en: a gaucho neckerchief
+    blurb: Knotted the San Antonio de Areco way. Leo now says "che" to the horses.
+    slot: neck
+  - id: escarapela
+    level: a2
+    emoji: 🎗️
+    art: flower
+    color: '#74acdf'
+    es: una escarapela
+    en: a national rosette
+    blurb: Light blue and white, first worn in Rosario in Belgrano's day. Luna pins it on her collar.
+    slot: neck
+  - id: alfajor-santafesino
+    level: a2
+    emoji: 🍪
+    art: cookie
+    color: '#f2f0ea'
+    es: un alfajor santafesino
+    en: a Santa Fe alfajor
+    blurb: Three crunchy layers and a crackly white glaze. Bonchita has sugar in her beard.
+    slot: mouth
+  - id: tocado-plumas
+    level: a2
+    emoji: 🪶
+    art: feather
+    color: '#e07aa6'
+    es: un tocado de plumas
+    en: a feathered headdress
+    blurb: Straight from the Gualeguaychú carnival. Taller than Bonchita, who refuses to take it off.
+    slot: hat
+  - id: tucan
+    level: a2
+    emoji: 🦜
+    art: figurine
+    color: '#e0782e'
+    es: un tucán de peluche
+    en: a plush toucan
+    blurb: From Iguazú. Big orange beak, small brain, says Leo. They are best friends now.
+    slot: paw
+  - id: chipa
+    level: a2
+    emoji: 🥯
+    art: bun
+    color: '#e9b92e'
+    es: una bolsa de chipá
+    en: a bag of chipá
+    blurb: Little cheese rolls from Corrientes, sold warm at the bus station. The bag is empty by Resistencia.
+    slot: mouth
   - id: poncho
     level: b1
     emoji: 🧣
+    art: poncho
+    color: '#b3262e'
     es: un poncho salteño
     en: a Salta poncho
     blurb: Red and black, warm at night.
@@ -774,6 +909,7 @@ souvenirs:
   - id: empanada
     level: b1
     emoji: 🥟
+    art: empanada
     es: una empanada salteña
     en: a Salta empanada
     blurb: Cut with a knife, eaten by hand.
@@ -781,6 +917,7 @@ souvenirs:
   - id: charango
     level: b1
     emoji: 🪕
+    art: guitar
     es: un charango
     en: a charango
     blurb: Tiny guitar, big sound.
@@ -788,12 +925,14 @@ souvenirs:
   - id: cardon
     level: b1
     emoji: 🌵
+    art: cactus
     es: un cardón de madera
     en: a wooden cardón
     blurb: A cactus souvenir from Humahuaca.
   - id: coca
     level: b1
     emoji: 🍵
+    art: teacup
     es: té de coca
     en: coca tea
     blurb: For the altitude in Purmamarca.
@@ -801,13 +940,75 @@ souvenirs:
   - id: sal
     level: b1
     emoji: 🧂
+    art: stone
+    color: '#f2f0ea'
     es: sal de las Salinas
     en: salt from the Salinas
     blurb: A white cube from the white desert.
     slot: paw
+  - id: queso-tafi
+    level: b1
+    emoji: 🧀
+    art: cheese
+    es: un queso de Tafí
+    en: a Tafí cheese
+    blurb: Made in the cool Tafí valley. Bonchita follows it around like a compass.
+    slot: mouth
+  - id: quena
+    level: b1
+    emoji: 🪈
+    art: flute
+    es: una quena
+    en: a quena flute
+    blurb: The Andean flute. Leo manages one note, very loudly.
+    slot: paw
+  - id: bombo
+    level: b1
+    emoji: 🥁
+    art: drum
+    es: un bombo legüero
+    en: a bombo legüero drum
+    blurb: From Santiago del Estero. So deep you can hear it a league away. Bonchita hides under the poncho.
+    slot: paw
+  - id: aguayo
+    level: b1
+    emoji: 🧶
+    art: scarf
+    color: '#e0782e'
+    es: un aguayo
+    en: an aguayo cloth
+    blurb: Woven stripes in every colour of the Purmamarca hills. Luna wraps her map in it.
+    slot: neck
+  - id: llama
+    level: b1
+    emoji: 🦙
+    art: figurine
+    color: '#f2e6d0'
+    es: una llama de peluche
+    en: a plush llama
+    blurb: From the Tilcara market. It only spits in Leo's imagination.
+    slot: paw
+  - id: chullo
+    level: b1
+    emoji: 🧢
+    art: beanie
+    color: '#d4483c'
+    es: un chullo
+    en: an Andean earflap hat
+    blurb: Llama wool with ear flaps, from Humahuaca. Bonchita's ears are finally warm.
+    slot: hat
+  - id: vasija
+    level: b1
+    emoji: 🏺
+    art: vase
+    color: '#b5533c'
+    es: una vasija de Purmamarca
+    en: a clay pot from Purmamarca
+    blurb: Painted by hand in the colours of the hills. Kept far away from wagging tails.
   - id: vino
     level: b2
     emoji: 🍷
+    art: wine
     es: una botella de malbec
     en: a bottle of Malbec
     blurb: From Maipú, by bike.
@@ -815,12 +1016,15 @@ souvenirs:
   - id: aceite
     level: b2
     emoji: 🫒
+    art: wine
+    color: '#8a8f2a'
     es: aceite de oliva
     en: olive oil
     blurb: San Juan gold.
   - id: botas
     level: b2
     emoji: 🥾
+    art: compass
     es: unas botas de montaña
     en: mountain boots
     blurb: Aconcagua-ready.
@@ -828,6 +1032,7 @@ souvenirs:
   - id: pluma
     level: b2
     emoji: 🪶
+    art: feather
     es: una pluma de cóndor
     en: a condor feather
     blurb: Luna found it on the trail. Probably.
@@ -835,13 +1040,75 @@ souvenirs:
   - id: fosil
     level: b2
     emoji: 🦴
+    art: stone
+    color: '#e8dcc0'
     es: un fósil (de juguete)
     en: a (toy) fossil
     blurb: From Talampaya.
     slot: mouth
+  - id: botella-petrificada
+    level: b2
+    emoji: 🍾
+    art: wine
+    color: '#c9793a'
+    es: una botella petrificada
+    en: a petrified bottle
+    blurb: Left in the springs of Puente del Inca until it turned to orange stone. Leo is scared to stand still too long.
+  - id: dinosaurio
+    level: b2
+    emoji: 🦖
+    art: figurine
+    color: '#3f8f5f'
+    es: un dinosaurio de juguete
+    en: a toy dinosaur
+    blurb: An Eoraptor, one of the first dinosaurs, found in the Valle de la Luna. Bonchita barks at it.
+    slot: paw
+  - id: uvas
+    level: b2
+    emoji: 🍇
+    art: fruit
+    color: '#6b2d5c'
+    es: un racimo de uvas
+    en: a bunch of grapes
+    blurb: Harvest time in Mendoza. Grapes are not for dogs, so the three just guard the bunch.
+  - id: mapa-estrellas
+    level: b2
+    emoji: 🌌
+    art: star
+    color: '#2a2d3a'
+    es: un mapa de estrellas
+    en: a star map
+    blurb: San Juan has some of the clearest skies on Earth. Luna finds the Southern Cross first.
+  - id: corona-vendimia
+    level: b2
+    emoji: 👑
+    art: leaf
+    color: '#3f8f5f'
+    es: una corona de la Vendimia
+    en: a grape-harvest crown
+    blurb: Every March Mendoza crowns a harvest queen. Bonchita crowns herself.
+    slot: hat
+  - id: rodocrosita
+    level: b2
+    emoji: 💗
+    art: necklace
+    color: '#e07aa6'
+    es: un dije de rodocrosita
+    en: a rhodochrosite pendant
+    blurb: Argentina's national stone, the "Inca rose". Pink as a dog's tongue.
+    slot: neck
+  - id: membrillo
+    level: b2
+    emoji: 🟧
+    art: jam
+    color: '#d4783c'
+    es: dulce de membrillo
+    en: quince paste
+    blurb: San Juan quince, eaten with cheese as a "vigilante". Leo eats the cheese part.
   - id: chocolate
     level: c1
     emoji: 🍫
+    art: chocolate
     es: chocolate de Bariloche
     en: Bariloche chocolate
     blurb: Not for dogs. Leo is outraged.
@@ -849,6 +1116,8 @@ souvenirs:
   - id: calafate
     level: c1
     emoji: 🫐
+    art: jam
+    color: '#4b3a8c'
     es: dulce de calafate
     en: calafate jam
     blurb: Eat it and you return to Patagonia.
@@ -856,6 +1125,8 @@ souvenirs:
   - id: ballena
     level: c1
     emoji: 🐋
+    art: figurine
+    color: '#8a5a3c'
     es: una ballena de madera
     en: a wooden whale
     blurb: From Puerto Madryn.
@@ -863,19 +1134,82 @@ souvenirs:
   - id: trochita
     level: c1
     emoji: 🎫
+    art: ticket
     es: un boleto de La Trochita
     en: a Trochita ticket
     blurb: Steam, smoke and sheep.
   - id: cereza
     level: c1
     emoji: 🍒
+    art: fruit
+    color: '#c0283a'
     es: cerezas de Los Antiguos
     en: Los Antiguos cherries
     blurb: The sweetest in the south.
     slot: mouth
+  - id: torta-galesa
+    level: c1
+    emoji: 🍰
+    art: pastry
+    color: '#3a2418'
+    es: una torta galesa
+    en: a Welsh black cake
+    blurb: Dark and full of fruit, from a Welsh tea house in Gaiman. Bonchita bows to the teapot.
+    slot: mouth
+  - id: foto-san-bernardo
+    level: c1
+    emoji: 📸
+    art: camera
+    es: una foto con un San Bernardo
+    en: a photo with a Saint Bernard
+    blurb: In Bariloche's Centro Cívico, next to the giant dog with the little barrel. Leo looks tiny.
+  - id: lupinos
+    level: c1
+    emoji: 💐
+    art: flower
+    color: '#7a55c2'
+    es: un ramo de lupinos
+    en: a bunch of lupins
+    blurb: Purple and pink along every Patagonian road in summer. Luna wears one behind her ear.
+    slot: mouth
+  - id: pina-araucaria
+    level: c1
+    emoji: 🌲
+    art: fruit
+    color: '#7a5a3a'
+    es: una piña de araucaria
+    en: an araucaria cone
+    blurb: The pehuén's cone, full of piñones, from Neuquén. Luna counts every one.
+  - id: lobo-marino
+    level: c1
+    emoji: 🦭
+    art: figurine
+    color: '#8a6a4a'
+    es: un lobo marino de peluche
+    en: a plush sea lion
+    blurb: Península Valdés has whole colonies of them. This one barks less than Leo.
+    slot: paw
+  - id: brujula
+    level: c1
+    emoji: 🧭
+    art: compass
+    es: una brújula
+    en: a compass
+    blurb: For the trail to Laguna de los Tres in El Chaltén. Luna still prefers her map.
+    slot: paw
+  - id: mermelada-frambuesa
+    level: c1
+    emoji: 🍓
+    art: jam
+    color: '#c0283a'
+    es: mermelada de frambuesa de El Bolsón
+    en: raspberry jam from El Bolsón
+    blurb: From the craft fair, made with berries picked that morning. Bonchita licks the lid.
   - id: hielo
     level: c2
     emoji: 🧊
+    art: stone
+    color: '#bfe3f2'
     es: hielo del glaciar
     en: glacier ice
     blurb: It melted. The memory did not.
@@ -883,6 +1217,8 @@ souvenirs:
   - id: pinguino
     level: c2
     emoji: 🐧
+    art: figurine
+    color: '#2a2d3a'
     es: un pingüino de peluche
     en: a penguin plush
     blurb: Bonchita has adopted it.
@@ -890,6 +1226,8 @@ souvenirs:
   - id: faro
     level: c2
     emoji: 🗼
+    art: figurine
+    color: '#d4483c'
     es: un faro en miniatura
     en: a miniature lighthouse
     blurb: The Lighthouse at the End of the World.
@@ -897,6 +1235,8 @@ souvenirs:
   - id: centolla
     level: c2
     emoji: 🦀
+    art: fish
+    color: '#d4483c'
     es: una centolla
     en: a king crab
     blurb: Ushuaia dinner.
@@ -904,7 +1244,66 @@ souvenirs:
   - id: bandera
     level: c2
     emoji: 🏁
+    art: flag
     es: la bandera del viaje
     en: the journey flag
     blurb: Signed by all three dogs. Paw prints.
+    slot: paw
+  - id: postal-fin-del-mundo
+    level: c2
+    emoji: 📬
+    art: postcard
+    color: '#2f5bd3'
+    es: una postal del fin del mundo
+    en: an end-of-the-world postcard
+    blurb: Sent from the southernmost post office. It will arrive. Eventually.
+  - id: cordero
+    level: c2
+    emoji: 🍖
+    art: grill
+    es: cordero patagónico
+    en: Patagonian lamb
+    blurb: Slow-roasted on an iron cross for hours. The dogs wait patiently. Mostly.
+    slot: mouth
+  - id: mapa-antartida
+    level: c2
+    emoji: 🗺️
+    art: map
+    color: '#bfe3f2'
+    es: un mapa de la Antártida
+    en: a map of Antarctica
+    blurb: Ushuaia is the door to Antarctica. Luna adds the white continent to her collection.
+  - id: boleto-tren
+    level: c2
+    emoji: 🎫
+    art: ticket
+    color: '#2a2d3a'
+    es: un boleto del Tren del Fin del Mundo
+    en: an End of the World Train ticket
+    blurb: The southernmost railway on Earth. Leo hangs his head out of the window the whole way.
+  - id: rompehielos
+    level: c2
+    emoji: 🚢
+    art: toy-boat
+    color: '#e0782e'
+    es: un rompehielos de juguete
+    en: a toy icebreaker
+    blurb: Orange like the Almirante Irízar, which carries supplies to the Antarctic bases. Leo is the captain.
+    slot: paw
+  - id: medalla-viaje
+    level: c2
+    emoji: 🥇
+    art: medal
+    es: la medalla del viaje
+    en: the journey medal
+    blurb: For crossing the whole country on four little legs. Twelve, counting all three dogs.
+    slot: neck
+  - id: guantes
+    level: c2
+    emoji: 🧤
+    art: gloves
+    color: '#d4483c'
+    es: unos guantes de lana
+    en: woolly gloves
+    blurb: For the snow at Cerro Castor. Leo wears them on his front paws only.
     slot: paw

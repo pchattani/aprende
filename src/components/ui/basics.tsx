@@ -33,6 +33,7 @@ export function SpeakerButton({ text, slow = false, size = 'md', autoPlay = fals
       }}
       className={`inline-flex shrink-0 items-center justify-center rounded-full bg-blue text-white shadow-card transition-transform active:scale-95 ${dim} ${className}`}
       aria-label={slow ? 'Play slowly' : 'Play audio'}
+      title={slow ? 'Half speed, word by word' : undefined}
     >
       {slow ? <IconTurtle width={icon} height={icon} /> : <IconSpeaker width={icon} height={icon} />}
     </button>

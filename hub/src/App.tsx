@@ -164,7 +164,7 @@ function StartedCard({ course, summary, quant }: Started) {
         <Stat label="Words" value={summary.wordsLearned} />
         <Stat label="Days" value={summary.daysOnTheRoad} />
       </dl>
-      <Sparkline values={quant?.navSeries30.length ? quant.navSeries30 : summary.last30} label={quant?.navSeries30.length ? 'Knowledge NAV, last 30 days' : 'Kilometres per day, last 30 days'} />
+      <Sparkline values={quant?.navSeries30.length ? quant.navSeries30 : summary.last30} label={quant?.navSeries30.length ? 'Words in memory, last 30 days' : 'Kilometres per day, last 30 days'} />
       <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-3">
         <p className="text-sm text-ink-2">Last studied {lastStudied(summary.lastActive)}</p>
         <a className="btn btn-primary px-5 py-2.5" href={course.href} aria-label={`Continue ${course.name}`}>Continue</a>
@@ -202,14 +202,14 @@ function Sparkline({ values, label }: { values: number[]; label: string }) {
   )
 }
 
-/** The learner's languages as a portfolio: where time goes and what it buys. */
+/** The learner's languages side by side: where time goes and what it buys. */
 function Portfolio({ started }: { started: Started[] }) {
   const totalMin = started.reduce((s, x) => s + x.summary.totalMinutes, 0) || 1
   const pct = (n: number) => `${(n * 100).toFixed(0)}%`
   return (
     <section aria-labelledby="portfolio">
-      <h2 id="portfolio" className="text-[1.7rem]">Language portfolio</h2>
-      <p className="mt-1 text-sm text-ink-2">Where your time goes and what it buys. Knowledge NAV is the expected number of words you would recall right now (the sum of each word's recall probability).</p>
+      <h2 id="portfolio" className="text-[1.7rem]">Your languages side by side</h2>
+      <p className="mt-1 text-sm text-ink-2">Where your time goes and what it buys. Words in memory is how many of your words you would recall if tested right now: each word counts by its chance of recall, so one you remember 80% of the time counts as 0.8.</p>
       <div className="mt-3 flex h-3 overflow-hidden rounded-full border border-line" role="img" aria-label="Share of practice time by language">
         {started.map((s) => (
           <span key={s.course.id} className={`lvl-${s.summary.level} h-full`} style={{ width: pct(s.summary.totalMinutes / totalMin), background: 'var(--lvl)' }} title={`${s.course.name}: ${pct(s.summary.totalMinutes / totalMin)}`} />
@@ -219,7 +219,7 @@ function Portfolio({ started }: { started: Started[] }) {
         <table className="w-full min-w-[34rem] text-sm">
           <thead>
             <tr className="border-b border-line text-left">
-              {['Language', 'Time share', 'NAV', '30d Δ', 'Recall 30d', 'Level est.'].map((h) => <th key={h} scope="col" className="eyebrow px-3 py-2 font-semibold">{h}</th>)}
+              {['Language', 'Share of time', 'Words in memory', 'Change · 30 days', 'Accuracy · 30 days', 'Level (est.)'].map((h) => <th key={h} scope="col" className="eyebrow px-3 py-2 font-semibold">{h}</th>)}
             </tr>
           </thead>
           <tbody className="font-mono">

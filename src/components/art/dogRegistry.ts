@@ -7,3 +7,5 @@ export const DOG_ART: Record<DogId, (p: DogArtProps) => ReactNode> = { leo: LeoA
 export const DOG_LABEL: Record<DogId, string> = { leo: 'Leo', bonchita: 'Bonchita', luna: 'Luna' }
 /** Size (px) from which the full painterly treatment is used. */
 export const HI_DETAIL_PX = 64
+/** Bust crop (x, y, size in the 120 box) for stamps and portraits: head, neck and chest, never a floating head. */
+export const PORTRAIT: Record<DogId, [number, number, number]> = { leo: [20, 19, 80], bonchita: [19, 17, 82], luna: [29, 14, 76] }

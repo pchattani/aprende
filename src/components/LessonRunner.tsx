@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import { useEffect, useMemo, useReducer, useRef, useState, type ReactNode } from 'react'
 import type { Exercise, GradeResult, LessonResult, PinRow } from '../engine/types'
 import { grade, type Answer } from '../engine/grade'
 import { explainAnswer, firstReplacement, type Explanation } from '../engine/explain'
@@ -27,6 +27,8 @@ interface State {
   requeued: Set<number>
   /** Answers in a row without a mistake (the combo). */
   streak: number
+  /** Wrong answers come back at the end of the queue (not in a checkpoint, which is scored once per question). */
+  requeue: boolean
   startedAt: number
   finished: boolean
 }
@@ -40,7 +42,7 @@ function reducer(s: State, a: Action): State {
       const ok = a.result.verdict !== 'wrong'
       const queue = [...s.queue]
       const requeued = new Set(s.requeued)
-      if (!ok && !requeued.has(s.index)) {
+      if (!ok && s.requeue && !requeued.has(s.index)) {
         queue.push(s.queue[s.index]!)
         requeued.add(queue.length - 1)
       }
@@ -75,22 +77,24 @@ function answerText(ex: Exercise, answer: Answer | undefined): string {
 
 export interface RunnerProps {
   exercises: Exercise[]
-  /** 'lesson' records a lesson completion; 'review', 'practice' and 'pinned' only schedule cards. */
-  mode: 'lesson' | 'review' | 'practice' | 'pinned'
+  /** 'lesson' records a lesson completion; 'review', 'practice', 'pinned' and 'checkpoint' only schedule cards. A checkpoint asks each question once (no re-queue, no skip). */
+  mode: 'lesson' | 'review' | 'practice' | 'pinned' | 'checkpoint'
   lessonId: string
   title: string
   onFinish: (r: LessonResult) => void
   onQuit: () => void
   /** Called after each graded answer (pinned practice uses it to track streaks). */
   onAnswer?: (ex: Exercise, verdict: GradeResult['verdict']) => void
+  /** Extra controls in the header, beside the progress route (e.g. the guidebook button). */
+  headerExtra?: ReactNode
 }
 
-export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQuit, onAnswer }: RunnerProps) {
+export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQuit, onAnswer, headerExtra }: RunnerProps) {
   const deps = useGradeDeps()
   const sound = useSettings((s) => s.sound)
   const autoPin = useSettings((s) => s.autoPin)
   const [s, dispatch] = useReducer(reducer, undefined, () => ({
-    queue: exercises, index: 0, answer: undefined, pinned: false, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), streak: 0, startedAt: Date.now(), finished: false,
+    queue: exercises, index: 0, answer: undefined, pinned: false, correct: 0, almost: 0, wrong: 0, requeued: new Set<number>(), streak: 0, requeue: mode !== 'checkpoint', startedAt: Date.now(), finished: false,
   }))
   const [confirmQuit, setConfirmQuit] = useState(false)
   const finishedRef = useRef(false)
@@ -187,6 +191,7 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
           <IconX width={26} height={26} strokeWidth={2} />
         </button>
         <RouteProgress value={done} max={total} />
+        {headerExtra}
         <span className={`flex min-w-[3.4rem] items-center justify-end gap-1 font-mono text-sm transition ${s.streak >= 2 ? 'text-blue' : 'text-ink-2/50'}`} aria-label={`Tailwind: ${s.streak} in a row`} title="Tailwind: answers in a row">
           <IconWind width={18} height={18} />×{s.streak}
         </span>
@@ -201,7 +206,7 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
       {!s.result && !autoSubmit && (
         <div className="sticky bottom-0 -mx-4 border-t border-line bg-paper px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
           <div className="flex gap-3">
-            {mode !== 'lesson' && (
+            {mode !== 'lesson' && mode !== 'checkpoint' && (
               <Button variant="ghost" onClick={() => dispatch({ type: 'skip' })}>
                 Skip
               </Button>

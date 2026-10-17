@@ -31,13 +31,14 @@ describe('quests', () => {
     expect(progressFor({ id: 'x', kind: 'perfect', target: 1, es: '', en: '', emoji: '' }, day)).toBe(1)
     expect(progressFor({ id: 'x', kind: 'minutes', target: 10, es: '', en: '', emoji: '' }, undefined)).toBe(0)
   })
-  it('rewards unowned souvenirs from the current region first, then anywhere, then none', () => {
+  it('rewards unowned souvenirs from the current region first, then the wardrobe, then none', () => {
     const owned = new Set<string>()
     const r1 = pickReward('a1', owned, 1)!
     expect(r1.level).toBe('a1')
+    expect(r1.wardrobe).toBeUndefined()
     for (const s of souvenirsFor('a1')) owned.add(s.id)
     const r2 = pickReward('a1', owned, 2)!
-    expect(r2.level).not.toBe('a1')
+    expect(r2.wardrobe).toBeDefined()
     for (const s of SOUVENIRS) owned.add(s.id)
     expect(pickReward('a1', owned, 3)).toBeUndefined()
   })

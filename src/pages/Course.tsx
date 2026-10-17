@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { SouvenirIcon } from '../components/art/SouvenirArt'
 import { Link, useNavigate, useLocation } from 'react-router'
 import { levels, loadUnit, units as unitIndex } from '../engine/loader'
 import { lessonMastery, ringFor, shiftDay, todayKey } from '../engine/mastery'
@@ -10,11 +11,12 @@ import { useOutfits } from '../hooks/useOutfits'
 import type { QuizRecord } from './RegionQuiz'
 import { useSettings, SESSION_COUNT } from '../store/settings'
 import { xpFor } from '../engine/xp'
-import { IconCheck, IconPaw, IconRoute, IconPlane, IconPassport } from '../components/ui/icons'
+import { IconCheck, IconPaw, IconRoute, IconPlane, IconPassport, IconBook } from '../components/ui/icons'
+import { CheckpointRow } from '../components/CheckpointRow'
 import { StopArt } from '../components/StopArt'
 import { Chip } from '../components/ui/basics'
 import { DogButton } from '../components/ui/Dogs'
-import { REGIONS, stopFor, souvenirById, isStamped } from '../engine/journey'
+import { REGIONS, stopFor, souvenirById, isStamped, type Souvenir } from '../engine/journey'
 import { QUIZ_PASS } from '../engine/quiz'
 import { takeReturn } from '../engine/returnTo'
 import { questsForDate, progressFor, pickReward } from '../engine/quests'
@@ -325,6 +327,7 @@ export default function Course() {
                           const ring = ringFor(row, mastery)
                           return <LegRow key={l.id} id={l.id} n={i + 1} title={l.title} status={ring} mastery={mastery} current={next?.id === l.id} highlight={highlight === `lesson-${l.id}`} />
                         })}
+                        <CheckpointRow unitId={u.id} stopName={stop?.name ?? u.title} lessonsDone={doneHere} lessonsTotal={list.length} />
                       </ul>
                     )}
                     {here && (
@@ -436,13 +439,19 @@ function currentStop(rows: Map<string, LessonRow>, startLevel: LevelId): { unitI
   return first ? { unitId: first.id } : undefined
 }
 
+/** The souvenir a claimed errand gave (or a passport stamp when there was none). */
+function ClaimedReward({ rewardId }: { rewardId?: string }) {
+  const sv = rewardId ? souvenirById(rewardId) : undefined
+  return sv ? <SouvenirIcon souvenir={sv} size={32} title={`Claimed: ${sv.en}`} /> : <span className="text-2xl" aria-label="Claimed">🛂</span>
+}
+
 function QuestsCard({ date, day, rows, owned, level }: { date: string; day: DayRow | undefined; rows: Map<string, { claimedAt?: number; rewardId?: string }>; owned: Set<string>; level: LevelId }) {
   const quests = questsForDate(date)
-  const [justClaimed, setJustClaimed] = useState<string | undefined>()
+  const [justClaimed, setJustClaimed] = useState<{ souvenir?: Souvenir } | undefined>()
   const claim = async (questId: string, seed: number) => {
     const reward = pickReward(level, owned, seed)
     await claimQuest(date, questId, reward?.id)
-    setJustClaimed(reward ? `${reward.emoji} ${reward.es}` : 'a stamp')
+    setJustClaimed({ souvenir: reward })
   }
   const doneCount = [...rows.values()].filter((r) => r.claimedAt).length
   return (
@@ -469,7 +478,7 @@ function QuestsCard({ date, day, rows, owned, level }: { date: string; day: DayR
                 </span>
               </span>
               {row?.claimedAt ? (
-                <span className="text-2xl" aria-label="Claimed">{row.rewardId ? souvenirById(row.rewardId)?.emoji ?? '🎁' : '🛂'}</span>
+                <ClaimedReward rewardId={row.rewardId} />
               ) : done ? (
                 <button type="button" className="btn btn-primary px-3 py-1.5 text-xs" onClick={() => void claim(q.id, seed)}>Claim</button>
               ) : (
@@ -479,7 +488,7 @@ function QuestsCard({ date, day, rows, owned, level }: { date: string; day: DayR
           )
         })}
       </ul>
-      {justClaimed && <p className="animate-pop mt-3 rounded-xl border border-dashed border-line px-3 py-2 text-sm"><span className="font-hand text-lg">Luna sniffed out {justClaimed}!</span> It's in your passport.</p>}
+      {justClaimed && <p className="animate-pop mt-3 rounded-xl border border-dashed border-line px-3 py-2 text-sm">{justClaimed.souvenir && <SouvenirIcon souvenir={justClaimed.souvenir} size={28} className="mr-1 inline-block align-middle" />}<span className="font-hand text-lg">Luna sniffed out {justClaimed.souvenir?.es ?? 'a stamp'}!</span> It's in your passport.</p>}
     </section>
   )
 }
@@ -488,9 +497,9 @@ function LegRow({ id, n, title, status, mastery, current, highlight = false }: {
   const label = STATUS_LABEL[status] ?? status
   const done = status === 'learned' || status === 'mastered'
   return (
-    <li id={`lesson-${id}`} className={`relative rounded-xl transition ${highlight ? 'bg-[var(--lvl-soft)]' : ''}`}>
+    <li id={`lesson-${id}`} className={`relative flex items-center gap-1 rounded-xl transition ${highlight ? 'bg-[var(--lvl-soft)]' : ''}`}>
       <span className={`absolute -left-[1.92rem] top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 ${done ? '' : 'bg-paper'}`} style={{ borderColor: 'var(--lvl)', background: done ? 'var(--lvl)' : undefined }} aria-hidden="true" />
-      <Link to={`/lesson/${id}`} className={`flex items-center gap-3 rounded-xl px-2 py-2 transition hover:bg-card active:scale-[0.99] ${current ? 'border border-line bg-card shadow-card' : ''}`} aria-label={`${title}: ${label}`}>
+      <Link to={`/lesson/${id}`} className={`flex min-w-0 flex-1 items-center gap-3 rounded-xl px-2 py-2 transition hover:bg-card active:scale-[0.99] ${current ? 'border border-line bg-card shadow-card' : ''}`} aria-label={`${title}: ${label}`}>
         <span className="w-5 shrink-0 font-mono text-xs text-ink-2">{String(n).padStart(2, '0')}</span>
         <span className="min-w-0 flex-1">
           <span className={`block truncate ${current ? 'font-semibold' : ''}`}>{title}</span>
@@ -502,6 +511,9 @@ function LegRow({ id, n, title, status, mastery, current, highlight = false }: {
           )}
         </span>
         {current ? <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold text-white" style={{ background: 'var(--lvl)' }}>Next</span> : status === 'mastered' ? <span className="text-[11px] font-semibold text-gold-600">Solid</span> : done ? <IconCheck width={16} height={16} className="text-ok-500" /> : <span className="text-ink-2" aria-hidden="true">›</span>}
+      </Link>
+      <Link to={`/lesson/${id}?guide`} className="shrink-0 rounded-full p-2 text-ink-2/70 transition hover:bg-card hover:text-ink" aria-label={`Guidebook, lesson ${n}`} title="Guidebook: grammar and words">
+        <IconBook width={16} height={16} />
       </Link>
     </li>
   )

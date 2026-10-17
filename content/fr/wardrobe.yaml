@@ -1,0 +1,50 @@
+# Wardrobe: accessories that come in colours, earned on errands once the regional souvenirs
+# thin out (see src/engine/wardrobe.ts). {colour} is replaced by the colour word in the form
+# that agrees with the noun: ms, fs, mp, fp (masculine/feminine, singular/plural).
+# « orange » never changes; lunettes is feminine plural.
+kinds:
+  beret:
+    name: un béret {colour}
+    form: ms
+  cap:
+    name: une casquette {colour}
+    form: fs
+  beanie:
+    name: un bonnet {colour}
+    form: ms
+  sunhat:
+    name: une capeline {colour}
+    form: fs
+  bucket-hat:
+    name: un bob {colour}
+    form: ms
+  sunglasses:
+    name: des lunettes de soleil {colour}
+    form: fp
+  round-glasses:
+    name: des lunettes rondes {colour}
+    form: fp
+  scarf:
+    name: une écharpe {colour}
+    form: fs
+  bandana:
+    name: un bandana {colour}
+    form: ms
+  bowtie:
+    name: un nœud papillon {colour}
+    form: ms
+  umbrella:
+    name: un parapluie {colour}
+    form: ms
+  balloon:
+    name: un ballon {colour}
+    form: ms
+colours:
+  red: { ms: rouge, fs: rouge, mp: rouges, fp: rouges }
+  blue: { ms: bleu, fs: bleue, mp: bleus, fp: bleues }
+  green: { ms: vert, fs: verte, mp: verts, fp: vertes }
+  yellow: { ms: jaune, fs: jaune, mp: jaunes, fp: jaunes }
+  purple: { ms: violet, fs: violette, mp: violets, fp: violettes }
+  pink: { ms: rose, fs: rose, mp: roses, fp: roses }
+  orange: orange
+  black: { ms: noir, fs: noire, mp: noirs, fp: noires }

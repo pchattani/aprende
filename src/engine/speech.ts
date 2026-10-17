@@ -59,8 +59,27 @@ export function pickVoice(opts: SpeakOptions): SpeechSynthesisVoice | undefined 
   return exact.find((v) => v.localService) ?? exact[0] ?? any.find((v) => v.localService) ?? any[0]
 }
 
+/** Bumped by every new speak/stop so an in-progress word-by-word sequence stops. */
+let generation = 0
+
 export function speak(text: string, opts: SpeakOptions = {}): Promise<void> {
   if (!ttsSupported()) return Promise.resolve()
+  generation++
+  return utter(text, opts)
+}
+
+/** Speak each part as its own utterance with a silent gap between them (slow, word-by-word playback). */
+export async function speakSequence(parts: string[], opts: SpeakOptions = {}, gapMs = 350): Promise<void> {
+  if (!ttsSupported()) return
+  const mine = ++generation
+  for (let i = 0; i < parts.length; i++) {
+    if (generation !== mine) return
+    await utter(parts[i]!, opts)
+    if (i < parts.length - 1) await new Promise((r) => setTimeout(r, gapMs))
+  }
+}
+
+function utter(text: string, opts: SpeakOptions): Promise<void> {
   return new Promise((resolve) => {
     window.speechSynthesis.cancel()
     const u = new SpeechSynthesisUtterance(text)
@@ -74,6 +93,7 @@ export function speak(text: string, opts: SpeakOptions = {}): Promise<void> {
   })
 }
 export function stopSpeaking(): void {
+  generation++
   if (ttsSupported()) window.speechSynthesis.cancel()
 }
 

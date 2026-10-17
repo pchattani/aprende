@@ -32,7 +32,7 @@ export function ForestPlot({ rows, baseline, min, max, ariaLabel }: { rows: Fore
             <span key={i} className={`absolute ${i === 0 ? '' : i === ticks.length - 1 ? '-translate-x-full' : '-translate-x-1/2'}`} style={{ left: pos(t) }}>{`${Math.round(t * 100)}%`}</span>
           ))}
         </div>
-        <span className="text-right font-mono text-[10px] text-muted">recall · n</span>
+        <span className="text-right font-mono text-[10px] text-muted">accuracy · answers</span>
         {rows.map((r) => {
           const color = r.flag === 'below' ? C.bad : r.flag === 'above' ? C.ok : C.ink
           const label = r.href ? (

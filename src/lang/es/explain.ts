@@ -10,6 +10,7 @@ export const explainConfig: ExplainConfig = {
   articles: new Set(['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'del', 'al', 'lo']),
   preps: new Set(['a', 'de', 'en', 'con', 'por', 'para', 'sin', 'sobre', 'desde', 'hasta', 'hacia', 'entre']),
   subjects: new Set(['yo', 'tú', 'vos', 'él', 'ella', 'usted', 'nosotros', 'nosotras', 'vosotros', 'vosotras', 'ellos', 'ellas', 'ustedes']),
+  ambiguousSubjects: new Set(['el', 'tu']),
   notAfterSubject: new Set(['y', 'o', 'también', 'tampoco', 'mismo', 'misma', 'solo', 'sola']),
   emphatic: new Map([['a mí', 'me'], ['a ti', 'te'], ['a él', 'le'], ['a ella', 'le'], ['a usted', 'le'], ['a nosotros', 'nos'], ['a nosotras', 'nos'], ['a vosotros', 'os'], ['a vosotras', 'os'], ['a ellos', 'les'], ['a ellas', 'les'], ['a ustedes', 'les']]),
   objectPronouns: new Set(['se', 'me', 'te', 'nos', 'os']),

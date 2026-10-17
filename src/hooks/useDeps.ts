@@ -25,11 +25,17 @@ let eqEn: ReturnType<typeof buildEquivalence> | undefined
 export function equivEs(given: string, expected: string) {
   // Cantonese compares in Jyutping, so synonym groups and answers go through `comparable`.
   if (!eqEs) eqEs = buildEquivalence(targetSynonymGroups().map((g) => g.map(languagePack.comparable)))
-  return compareEquivalent(languagePack.comparable(given), languagePack.comparable(expected), eqEs, 'es')
+  return compareEquivalent(languagePack.comparable(given), languagePack.comparable(expected), eqEs, 'es', { isVerb })
 }
 export function equivEn(given: string, expected: string) {
   if (!eqEn) eqEn = buildEquivalence(englishSynonymGroups)
   return compareEquivalent(given, expected, eqEn, 'en')
+}
+/** A conjugated verb form that is not also a noun (lets "El tiene…" count as "Él tiene…", never "el poder", "tu casa"). */
+function isVerb(w: string): boolean {
+  const lw = w.toLowerCase()
+  const entries = lookup(getDictionary(), lw)
+  return !/(ar|er|ir|ír)$/.test(lw) && Boolean(entries?.some((e) => e.pos === 'verb')) && !entries?.some((e) => e.pos === 'noun')
 }
 export function isWord(w: string): boolean {
   return Boolean(lookup(getDictionary(), w.toLowerCase()))

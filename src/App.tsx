@@ -20,6 +20,7 @@ const Welcome = lazy(() => import('./pages/Welcome'))
 const Placement = lazy(() => import('./pages/Placement'))
 const Passport = lazy(() => import('./pages/Passport'))
 const RegionQuiz = lazy(() => import('./pages/RegionQuiz'))
+const Checkpoint = lazy(() => import('./pages/Checkpoint'))
 const Palabras = lazy(() => import('./pages/Palabras'))
 const Perros = lazy(() => import('./pages/Perros'))
 const Classifiers = lazy(() => import('./pages/Classifiers'))
@@ -127,6 +128,16 @@ export default function App() {
           <ErrorBoundary>
             <Suspense fallback={<Loading />}>
               <RegionQuiz />
+            </Suspense>
+          </ErrorBoundary>
+        }
+      />
+      <Route
+        path="checkpoint/:unitId"
+        element={
+          <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+              <Checkpoint />
             </Suspense>
           </ErrorBoundary>
         }

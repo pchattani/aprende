@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import type { Region, Stop } from '../engine/journey'
 import { Leo, Bonchita, Luna } from './ui/Dogs'
 import { SpeakerButton } from './ui/basics'
@@ -6,14 +7,17 @@ import { ui } from '../engine/loader'
 import { TargetText } from './ui/TargetText'
 import { StopArt } from './StopArt'
 
-/** "Stamp earned" card: the stop, the dogs and a bilingual fact about the place. */
-export function StampCard({ stop, region, compact = false, onClose }: { stop: Stop; region: Region; compact?: boolean; onClose?: () => void }) {
+/**
+ * A stop's card: the stop, the dogs and a bilingual fact about the place. `earned` false shows the
+ * same fact for a stop not stamped yet, with a link to its lessons.
+ */
+export function StampCard({ stop, region, compact = false, earned = true, onClose }: { stop: Stop; region: Region; compact?: boolean; earned?: boolean; onClose?: () => void }) {
   return (
-    <div className={`lvl-${region.level} animate-pop rounded-2xl border border-line bg-card p-4 text-left shadow-card ${compact ? '' : 'w-full'}`} role="group" aria-label={`Stamp earned: ${stop.name}`}>
+    <div className={`lvl-${region.level} animate-pop rounded-2xl border border-line bg-card p-4 text-left shadow-card ${compact ? '' : 'w-full'}`} role="group" aria-label={`${earned ? 'Stamp earned' : 'Not stamped yet'}: ${stop.name}`}>
       <div className="flex items-center gap-3">
-        <span className="stamp w-16 shrink-0 rotate-[-6deg]" aria-hidden="true"><StopArt stop={stop} level={region.level} className="aspect-square w-full" /></span>
+        <span className={`stamp w-16 shrink-0 rotate-[-6deg] ${earned ? '' : 'opacity-60 grayscale'}`} aria-hidden="true"><StopArt stop={stop} level={region.level} className="aspect-square w-full" /></span>
         <div className="min-w-0 flex-1">
-          <p className="eyebrow" style={{ color: 'var(--lvl)' }}>{ui.stampEarned} · Stamp earned</p>
+          <p className="eyebrow" style={{ color: 'var(--lvl)' }}>{earned ? `${ui.stampEarned} · Stamp earned` : 'Not stamped yet'}</p>
           <p className="font-display text-xl leading-tight">{stop.name}</p>
           <p className="text-xs font-semibold text-muted">{region.name} · {stop.es}</p>
         </div>
@@ -29,6 +33,9 @@ export function StampCard({ stop, region, compact = false, onClose }: { stop: St
         </div>
       ) : (
         <p className="mt-3 text-sm text-muted">{stop.en}</p>
+      )}
+      {!earned && (
+        <Link to="/" state={{ from: `unit-${stop.unitId}` }} className="btn btn-primary mt-3 w-full py-2 text-sm">Go to this stop</Link>
       )}
       {onClose && (
         <button type="button" className="btn btn-ghost mt-3 w-full py-2 text-sm" onClick={onClose}>Close</button>

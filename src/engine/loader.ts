@@ -8,13 +8,14 @@ import { languagePack } from '@lang'
  */
 import {
   PackSchema, SyllabusSchema, GrammarFileSchema, VocabFileSchema, UnitSchema, Reader as ReaderSchema,
-  PhonologyFileSchema, ExamSchema, ErrorsFileSchema, UiSchema, JourneySchema, LEVEL_ORDER,
-  type Pack, type Ui, type JourneyFile, type Syllabus, type LevelMeta, type UnitMeta, type GrammarNote, type VocabEntry, type Unit,
+  PhonologyFileSchema, ExamSchema, ErrorsFileSchema, UiSchema, JourneySchema, WardrobeSchema, LEVEL_ORDER,
+  type Pack, type Ui, type JourneyFile, type WardrobeFile, type Syllabus, type LevelMeta, type UnitMeta, type GrammarNote, type VocabEntry, type Unit,
   type Reader, type PhonologyLesson, type Exam, type ErrorRule, type LevelId, type Lesson,
 } from './schema'
 import packRaw from '@content/pack.yaml'
 import uiRaw from '@content/ui.yaml'
 import journeyRaw from '@content/journey.yaml'
+import wardrobeRaw from '@content/wardrobe.yaml'
 import syllabusRaw from '@content/syllabus.yaml'
 import synonymsRaw from '@content/synonyms.yaml'
 import errorsRaw from '@content/errors/common-errors.yaml'
@@ -24,6 +25,8 @@ export const pack: Pack = PackSchema.parse(packRaw)
 /** Interface text in the target language. */
 export const ui: Ui = UiSchema.parse(uiRaw)
 export const journeyData: JourneyFile = JourneySchema.parse(journeyRaw)
+/** Target-language names of the coloured wardrobe accessories (see engine/wardrobe.ts). */
+export const wardrobeData: WardrobeFile = WardrobeSchema.parse(wardrobeRaw)
 /** "Spanish", "Cantonese"… for English interface text. */
 export const LANGUAGE = pack.name
 /** Fill {word}/{region}/{language} placeholders in a ui string. */

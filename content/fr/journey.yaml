@@ -493,6 +493,8 @@ souvenirs:
   - id: beret
     level: a1
     emoji: 🧢
+    art: beret
+    color: '#2a2d3a'
     es: un béret
     en: a beret
     blurb: "Black, woolly and tilted just so. Leo wears it to look like a painter in Montmartre."
@@ -500,6 +502,8 @@ souvenirs:
   - id: foulard-soie
     level: a1
     emoji: 🧣
+    art: scarf
+    color: '#e07aa6'
     es: un foulard en soie
     en: a silk scarf
     blurb: "Knotted the Parisian way, effortlessly. Luna took twenty minutes to make it look effortless."
@@ -507,6 +511,7 @@ souvenirs:
   - id: croissant
     level: a1
     emoji: 🥐
+    art: croissant
     es: un croissant
     en: a croissant
     blurb: "Still warm from the boulangerie, flakes everywhere. Bonchita leaves a trail of crumbs across Paris."
@@ -514,6 +519,7 @@ souvenirs:
   - id: baguette
     level: a1
     emoji: 🥖
+    art: baguette
     es: une baguette
     en: a baguette
     blurb: "Carried under the arm like a real Parisian, or in the mouth like a real dog. The end is always missing."
@@ -521,6 +527,8 @@ souvenirs:
   - id: macaron
     level: a1
     emoji: 🍪
+    art: cookie
+    color: '#e07aa6'
     es: un macaron
     en: a macaron
     blurb: "Pistachio, raspberry, salted caramel. Luna only wanted to sniff it; the box is somehow empty."
@@ -528,14 +536,66 @@ souvenirs:
   - id: tour-eiffel
     level: a1
     emoji: 🗼
+    art: figurine
+    color: '#8a6a4a'
     es: une tour Eiffel miniature
     en: a mini Eiffel Tower
     blurb: "Bought from a stall at the Trocadéro. Leo holds it up to the real one to compare."
+    slot: paw
+  - id: voilier-luxembourg
+    level: a1
+    emoji: ⛵
+    art: toy-boat
+    color: '#d4483c'
+    es: un petit voilier du Luxembourg
+    en: a toy sailboat from the Luxembourg Gardens
+    blurb: Pushed across the big pond with a stick, like Parisian children for a hundred years. Leo jumps in after it.
+    slot: paw
+  - id: ticket-metro
+    level: a1
+    emoji: 🎫
+    art: ticket
+    color: '#c9e0b0'
+    es: un ticket de métro
+    en: a métro ticket
+    blurb: A little paper ticket, now that most people use a card. Luna keeps it like treasure.
+  - id: livre-bouquiniste
+    level: a1
+    emoji: 📚
+    art: book
+    color: '#3f8f5f'
+    es: un vieux livre des bouquinistes
+    en: an old book from the riverside stalls
+    blurb: From the green boxes along the Seine. Luna reads the first page; Bonchita sniffs the last one.
+  - id: carte-joconde
+    level: a1
+    emoji: 🖼️
+    art: postcard
+    es: une carte postale de la Joconde
+    en: a Mona Lisa postcard
+    blurb: The real one is behind glass and crowds at the Louvre. Leo says she smiles at him.
+  - id: tableau-montmartre
+    level: a1
+    emoji: 🎨
+    art: painting
+    es: un petit tableau de Montmartre
+    en: a little painting from Montmartre
+    blurb: Painted on the place du Tertre while the three dogs sat very still. Bonchita looks surprised in it.
+  - id: gargouille
+    level: a1
+    emoji: 🗿
+    art: figurine
+    color: '#8a8f9a'
+    es: une gargouille de Notre-Dame
+    en: a Notre-Dame gargoyle
+    blurb: Strictly speaking it is a chimera; gargoyles spout rainwater. Luna checked. Leo makes the same face.
     slot: paw
   # ---- A2: Normandy, Brittany and the Loire
   - id: mariniere
     level: a2
     emoji: 👕
+    art: football-shirt
+    color: '#2f5bd3'
     es: une marinière
     en: a Breton striped top
     blurb: "Blue and white stripes, first worn by sailors. Leo says he can feel the sea breeze already."
@@ -543,6 +603,8 @@ souvenirs:
   - id: coiffe-bigoudene
     level: a2
     emoji: 👒
+    art: sunhat
+    color: '#f2f0ea'
     es: une coiffe bigoudène
     en: a Bigouden lace headdress
     blurb: "A tall tower of white lace from the Pays Bigouden, near Quimper. Bonchita wears it for the festival and gains thirty centimetres."
@@ -550,6 +612,8 @@ souvenirs:
   - id: crepe-bretonne
     level: a2
     emoji: 🥞
+    art: pastry
+    color: '#e9c77a'
     es: une crêpe bretonne
     en: a Breton crêpe
     blurb: "Butter and sugar, folded in four, eaten in two bites. Bonchita asks for a second one with salted caramel."
@@ -557,6 +621,7 @@ souvenirs:
   - id: camembert
     level: a2
     emoji: 🧀
+    art: cheese
     es: un camembert
     en: a camembert
     blurb: "In its round wooden box, ripe and proud of it. Luna can smell it from three streets away."
@@ -564,6 +629,8 @@ souvenirs:
   - id: triskell
     level: a2
     emoji: 🌀
+    art: necklace
+    color: '#c9a23a'
     es: un pendentif triskell
     en: a triskelion pendant
     blurb: "Three spirals, the old Celtic symbol of Brittany. Luna wears it for luck on the windy coast."
@@ -571,13 +638,68 @@ souvenirs:
   - id: mont-saint-michel
     level: a2
     emoji: 🏰
+    art: snowglobe
     es: une boule à neige du Mont-Saint-Michel
     en: a Mont-Saint-Michel snow globe
     blurb: "Shake it and the tide comes in. Leo shakes it a lot."
+  - id: bol-quimper
+    level: a2
+    emoji: 🥣
+    art: vase
+    color: '#2f5bd3'
+    es: un bol de Quimper
+    en: a Quimper bowl
+    blurb: Hand-painted with a little Breton figure and a name. Bonchita's says "Bonchita", for her water.
+  - id: menhir
+    level: a2
+    emoji: 🪨
+    art: stone
+    color: '#9aa0aa'
+    es: un menhir miniature
+    en: a mini standing stone
+    blurb: Carnac has nearly three thousand standing stones. Leo carries home the smallest one.
+    slot: paw
+  - id: petit-beurre
+    level: a2
+    emoji: 🍪
+    art: cookie
+    color: '#e9c77a'
+    es: un paquet de Petit-Beurre
+    en: a packet of Petit-Beurre biscuits
+    blurb: Made in Nantes, with fifty-two little teeth round every biscuit. Bonchita nibbles the four corners first.
+    slot: mouth
+  - id: nenuphar
+    level: a2
+    emoji: 🪷
+    art: flower
+    color: '#e07aa6'
+    es: un nénuphar de Giverny
+    en: a water lily from Giverny
+    blurb: From the pond Monet painted again and again. Luna wears it and stands very still, like a painting.
+    slot: hat
+  - id: cire-jaune
+    level: a2
+    emoji: 🧥
+    art: poncho
+    color: '#e9b92e'
+    es: un ciré jaune
+    en: a yellow oilskin
+    blurb: The Breton sailor's raincoat, perfect for Saint-Malo in a storm. Leo looks like a very small fisherman.
+    slot: neck
+  - id: coquille-saint-jacques
+    level: a2
+    emoji: 🐚
+    art: shell
+    es: une coquille Saint-Jacques
+    en: a scallop shell
+    blurb: The pilgrims' shell, found on the beaches of Normandy. Bonchita uses it as a very small bowl.
+    slot: mouth
   # ---- B1: Provence and the Riviera
   - id: sachet-lavande
     level: b1
     emoji: 🪻
+    art: flower
+    color: '#7a55c2'
     es: un sachet de lavande
     en: a lavender sachet
     blurb: "A little cloth bag of dried lavender from the Luberon. Luna wears it on her collar and smells like a summer field."
@@ -585,6 +707,8 @@ souvenirs:
   - id: savon-marseille
     level: b1
     emoji: 🧼
+    art: soap
+    color: '#3f8f5f'
     es: un savon de Marseille
     en: a block of Marseille soap
     blurb: "A green cube of olive-oil soap, stamped on every side. Leo carries it everywhere and hopes nobody uses it on him."
@@ -592,6 +716,8 @@ souvenirs:
   - id: boule-petanque
     level: b1
     emoji: 🎱
+    art: stone
+    color: '#9aa0aa'
     es: une boule de pétanque
     en: a pétanque ball
     blurb: "Pétanque was born in La Ciotat in 1907. Leo has not understood that you are not supposed to fetch the ball."
@@ -599,6 +725,8 @@ souvenirs:
   - id: calisson
     level: b1
     emoji: 🍬
+    art: candy
+    color: '#f2f0ea'
     es: un calisson d'Aix
     en: a calisson from Aix
     blurb: "Almond paste and candied melon under a layer of white icing, shaped like an eye. Bonchita winks back at it before eating it."
@@ -606,6 +734,8 @@ souvenirs:
   - id: chapeau-gardian
     level: b1
     emoji: 🤠
+    art: sombrero
+    color: '#2a2d3a'
     es: un chapeau de gardian
     en: a Camargue cowboy hat
     blurb: "Wide black felt, made for riding among the bulls and flamingos. Bonchita rides nothing, but looks the part."
@@ -613,13 +743,68 @@ souvenirs:
   - id: santon
     level: b1
     emoji: 🧑‍🌾
+    art: figurine
     es: un santon de Provence
     en: a Provençal santon figurine
     blurb: "A little clay villager for the Christmas crib. Luna lines them up and counts them every evening."
+  - id: parfum-grasse
+    level: b1
+    emoji: 🌸
+    art: perfume
+    color: '#e07aa6'
+    es: un flacon de parfum de Grasse
+    en: a bottle of Grasse perfume
+    blurb: Grasse is the world capital of perfume. Three dog noses find it far, far too strong.
+  - id: navette
+    level: b1
+    emoji: 🛥️
+    art: cookie
+    color: '#e9c77a'
+    es: une navette de Marseille
+    en: a Marseille navette biscuit
+    blurb: A boat-shaped biscuit scented with orange blossom. Leo pretends to sail it before he eats it.
+    slot: mouth
+  - id: tournesol
+    level: b1
+    emoji: 🌻
+    art: flower
+    color: '#e9b92e'
+    es: un tournesol
+    en: a sunflower
+    blurb: Van Gogh painted sunflowers in Arles. Luna holds this one very still, like a model.
+    slot: mouth
+  - id: flamant-rose
+    level: b1
+    emoji: 🦩
+    art: figurine
+    color: '#e07aa6'
+    es: un flamant rose en peluche
+    en: a plush flamingo
+    blurb: Thousands of pink flamingos live in the Camargue. This one stands on one leg too, when Bonchita props it up.
+    slot: paw
+  - id: cigale
+    level: b1
+    emoji: 🦗
+    art: figurine
+    color: '#e9b92e'
+    es: une cigale en céramique
+    en: a ceramic cicada
+    blurb: The singing insect of Provence summers, the region's lucky symbol. This one is quiet, to Leo's relief.
+  - id: socca
+    level: b1
+    emoji: 🫓
+    art: pizza
+    color: '#e9b92e'
+    es: une part de socca
+    en: a slice of socca
+    blurb: Nice's chickpea pancake, black-spotted from the wood oven, with lots of pepper. Leo sneezes, then eats.
+    slot: mouth
   # ---- B2: Lyon, the Alps, Burgundy and Alsace
   - id: edelweiss
     level: b2
     emoji: 🤍
+    art: flower
+    color: '#f2f0ea'
     es: un edelweiss
     en: an edelweiss
     blurb: "The woolly white star of the high Alps (a souvenir-shop one: the wild ones stay on the mountain). Luna tucks it behind her ear."
@@ -627,6 +812,8 @@ souvenirs:
   - id: bretzel
     level: b2
     emoji: 🥨
+    art: pastry
+    color: '#b5652a'
     es: un bretzel
     en: a pretzel
     blurb: "Shiny, salty and knotted, straight from an Alsace bakery. Bonchita tries to untie it with her teeth."
@@ -634,6 +821,7 @@ souvenirs:
   - id: cloche-savoyarde
     level: b2
     emoji: 🔔
+    art: bell
     es: une cloche savoyarde
     en: a Savoy cowbell
     blurb: "The bell the cows wear in the Alpine pastures. Leo wears it too, so nobody ever loses him again."
@@ -641,6 +829,7 @@ souvenirs:
   - id: guignol
     level: b2
     emoji: 🎭
+    art: puppet
     es: une marionnette de Guignol
     en: a Guignol puppet
     blurb: "Lyon's famous puppet, a cheeky silk worker born around 1808. Leo puts on shows for the other two."
@@ -648,19 +837,74 @@ souvenirs:
   - id: moutarde-dijon
     level: b2
     emoji: 🫙
+    art: jam
+    color: '#e9b92e'
     es: un pot de moutarde de Dijon
     en: a jar of Dijon mustard
     blurb: "Strong enough to make your nose tingle. Bonchita sniffed it once and has kept her distance ever since."
   - id: cigogne
     level: b2
     emoji: 🪶
+    art: figurine
+    color: '#f2f0ea'
     es: une cigogne en peluche
     en: a cuddly stork
     blurb: "The stork is the symbol of Alsace and nests on the rooftops. Luna sleeps with this one."
+  - id: lumignon
+    level: b2
+    emoji: 🕯️
+    art: candle
+    es: un lumignon
+    en: a little candle in a glass
+    blurb: On 8 December the people of Lyon put candles in their windows. Luna keeps hers far from Leo's tail.
+  - id: tarte-pralines
+    level: b2
+    emoji: 🥧
+    art: pastry
+    color: '#e07aa6'
+    es: une tarte aux pralines
+    en: a pink praline tart
+    blurb: Lyon's bright pink tart of sugared almonds. Bonchita's beard turns pink too.
+    slot: mouth
+  - id: noix-grenoble
+    level: b2
+    emoji: 🌰
+    art: fruit
+    color: '#8a6a3a'
+    es: un sac de noix de Grenoble
+    en: a bag of Grenoble walnuts
+    blurb: Walnuts are not good for dogs, so the three of them just roll them across the floor.
+  - id: reblochon
+    level: b2
+    emoji: 🧀
+    art: cheese
+    color: '#f2e6c8'
+    es: un reblochon
+    en: a reblochon cheese
+    blurb: The soft cheese of the Savoy mountains, melted in tartiflette by Lake Annecy. Bonchita follows the smell.
+    slot: mouth
+  - id: etoile-paille
+    level: b2
+    emoji: ⭐
+    art: star
+    color: '#e9c77a'
+    es: une étoile de Noël en paille
+    en: a straw Christmas star
+    blurb: From the Christmas market in Strasbourg, one of the oldest in Europe. Luna hangs it on Leo's ear.
+    slot: hat
+  - id: carte-mont-blanc
+    level: b2
+    emoji: 🗺️
+    art: map
+    es: une carte du massif du Mont-Blanc
+    en: a map of the Mont Blanc massif
+    blurb: The highest mountain in the Alps, seen from Chamonix. Luna plans a route; Leo plans a nap.
   # ---- C1: the Southwest and Corsica
   - id: beret-basque
     level: c1
     emoji: 🧢
+    art: beret
+    color: '#2a2d3a'
     es: un béret basque
     en: a Basque beret
     blurb: "A big black txapela, the kind worn at Basque festivals and pelota matches. On Bonchita it covers most of her ears."
@@ -668,6 +912,8 @@ souvenirs:
   - id: espadrilles
     level: c1
     emoji: 🩴
+    art: gloves
+    color: '#f2ead8'
     es: une paire d'espadrilles
     en: a pair of espadrilles
     blurb: "Canvas tops and rope soles, made in Mauléon, the espadrille capital. Leo wants a pair for each end."
@@ -675,6 +921,8 @@ souvenirs:
   - id: canele
     level: c1
     emoji: 🧁
+    art: pastry
+    color: '#8a4a2a'
     es: un canelé de Bordeaux
     en: a canelé from Bordeaux
     blurb: "Caramelised outside, soft inside, scented with rum and vanilla. Bonchita calls it a little bell you can eat."
@@ -682,6 +930,8 @@ souvenirs:
   - id: foulard-rouge
     level: c1
     emoji: 🟥
+    art: bandana
+    color: '#d4483c'
     es: un foulard rouge des fêtes de Bayonne
     en: a red scarf from the Bayonne festival
     blurb: "Everyone dresses in white and red for the fêtes de Bayonne in summer. Luna matches perfectly."
@@ -689,13 +939,77 @@ souvenirs:
   - id: violettes-toulouse
     level: c1
     emoji: 💜
+    art: candy
+    color: '#7a55c2'
     es: une boîte de violettes de Toulouse
     en: a box of Toulouse violets
     blurb: "Crystallised violet flowers, the sweet emblem of the Pink City. Too pretty to eat, says Luna, who eats one anyway."
+  - id: piments-espelette
+    level: c1
+    emoji: 🌶️
+    art: fruit
+    color: '#d4483c'
+    es: une corde de piments d'Espelette
+    en: a string of Espelette peppers
+    blurb: Hung to dry on the white houses of Espelette. Leo sniffs it and sneezes for ten minutes.
+  - id: ballon-rugby
+    level: c1
+    emoji: 🏉
+    art: football
+    color: '#8a5a3a'
+    es: un ballon de rugby
+    en: a rugby ball
+    blurb: Toulouse lives for rugby. The ball bounces the wrong way every time, and Bonchita loves it.
+    slot: paw
+  - id: chevalier
+    level: c1
+    emoji: 🛡️
+    art: figurine
+    color: '#8a8f9a'
+    es: un chevalier de Carcassonne
+    en: a knight from Carcassonne
+    blurb: Guarding the walls of the old fortified city. Leo guards him back.
+    slot: paw
+  - id: carte-du-ciel
+    level: c1
+    emoji: 🌌
+    art: star
+    color: '#2a2d3a'
+    es: une carte du ciel du pic du Midi
+    en: a star chart from the Pic du Midi
+    blurb: The observatory on the mountain has some of the darkest skies in Europe. Luna counts stars until she falls asleep.
+  - id: miel-corse
+    level: c1
+    emoji: 🍯
+    art: jam
+    color: '#e9a32e'
+    es: un pot de miel de Corse
+    en: a jar of Corsican honey
+    blurb: Honey from the wild flowers of the maquis. Bonchita's paws are sticky for two days.
+  - id: canistrelli
+    level: c1
+    emoji: 🍪
+    art: cookie
+    color: '#e9c77a'
+    es: des canistrelli
+    en: canistrelli biscuits
+    blurb: Crunchy Corsican biscuits, made for dunking. The dogs dunk them in their water bowl.
+    slot: mouth
+  - id: fusee-ariane
+    level: c1
+    emoji: 🚀
+    art: figurine
+    color: '#f2f0ea'
+    es: une fusée Ariane miniature
+    en: a mini Ariane rocket
+    blurb: Toulouse is Europe's space city. Leo counts down from ten and nothing happens. Again.
+    slot: paw
   # ---- C2: the French-speaking world
   - id: gaufre-bruxelles
     level: c2
     emoji: 🧇
+    art: pastry
+    color: '#e9c77a'
     es: une gaufre de Bruxelles
     en: a Brussels waffle
     blurb: "Light, crisp and rectangular, with deep squares for the sugar. Bonchita fits her whole nose in one square."
@@ -703,6 +1017,8 @@ souvenirs:
   - id: madras
     level: c2
     emoji: 🧣
+    art: bandana
+    color: '#e0782e'
     es: un foulard en madras
     en: a madras headscarf
     blurb: "Bright checked cotton from the Antilles, tied the Martinique way. Luna has never looked so elegant."
@@ -710,6 +1026,8 @@ souvenirs:
   - id: sirop-erable
     level: c2
     emoji: 🍁
+    art: jam
+    color: '#b5652a'
     es: un sirop d'érable du Québec
     en: a bottle of Québec maple syrup
     blurb: "Québec makes most of the world's maple syrup, boiled down in the sugar shacks every spring. Leo guards the bottle with both paws."
@@ -717,6 +1035,8 @@ souvenirs:
   - id: tuque
     level: c2
     emoji: 🧶
+    art: beanie
+    color: '#d4483c'
     es: une tuque
     en: a Québec woolly hat
     blurb: "In Québec a bobble hat is a tuque, and at minus twenty you will want one. Bonchita refuses to take hers off."
@@ -724,6 +1044,8 @@ souvenirs:
   - id: ceinture-flechee
     level: c2
     emoji: 🎀
+    art: scarf
+    color: '#d4483c'
     es: une ceinture fléchée
     en: an arrow sash
     blurb: "The colourful woven sash of the voyageurs, worn by Bonhomme at the Québec Winter Carnival. Leo wears it as a scarf."
@@ -731,7 +1053,70 @@ souvenirs:
   - id: passeport-tamponne
     level: c2
     emoji: 🛂
+    art: book
+    color: '#2f5bd3'
     es: un passeport plein de tampons
     en: a passport full of stamps
     blurb: "Paris to Québec, one stamp per stop. Luna reads it every night before sleeping."
     slot: paw
+  - id: manneken-pis
+    level: c2
+    emoji: 🗽
+    art: figurine
+    color: '#8a6a3a'
+    es: un Manneken-Pis miniature
+    en: a mini Manneken Pis
+    blurb: Brussels' tiny statue owns more than a thousand costumes. Leo is extremely jealous.
+    slot: paw
+  - id: bande-dessinee
+    level: c2
+    emoji: 📕
+    art: book
+    color: '#d4483c'
+    es: un album de bande dessinée
+    en: a comic book
+    blurb: Brussels is the capital of comics, painted on walls all over town. Luna reads it with her nose very close.
+  - id: sabar
+    level: c2
+    emoji: 🥁
+    art: drum
+    es: un sabar
+    en: a sabar drum
+    blurb: The drum of Dakar's street parties, played with one stick and one hand. Bonchita dances with both ears.
+    slot: paw
+  - id: pagne-wax
+    level: c2
+    emoji: 🟧
+    art: bandana
+    color: '#e0782e'
+    es: un pagne en wax
+    en: a wax-print cloth
+    blurb: Bright patterns from the market in Kinshasa. Luna wears it as a scarf and looks magnificent.
+    slot: neck
+  - id: collier-mardi-gras
+    level: c2
+    emoji: 📿
+    art: necklace
+    color: '#7a55c2'
+    es: un collier de Mardi gras
+    en: a string of Mardi Gras beads
+    blurb: Purple, green and gold, caught from a parade in Lafayette. Leo caught three; Bonchita caught Leo.
+    slot: neck
+  - id: accordeon-cadien
+    level: c2
+    emoji: 🪗
+    art: accordion
+    color: '#8a5a3a'
+    es: un accordéon cadien
+    en: a Cajun accordion
+    blurb: The little accordion of Cajun music in Louisiana. Leo howls along in French.
+    slot: paw
+  - id: bagel-montreal
+    level: c2
+    emoji: 🥯
+    art: bun
+    color: '#c9a46a'
+    es: un bagel de Montréal
+    en: a Montreal bagel
+    blurb: Boiled in honey water and baked in a wood oven, day and night. Bonchita wears it as a bracelet first.
+    slot: mouth
