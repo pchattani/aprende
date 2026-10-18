@@ -1,11 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import type { VocabEntry } from '../engine/schema'
 import { vocab, vocabUpTo, LEVEL_ORDER_LIST } from '../engine/loader'
 import { IRREGULAR } from '@lang/verbs'
-import { allCards, recordAnswer, bumpDay, getKv, setKv } from '../db/progress'
+import { allCards, recordAnswer, bumpDay } from '../db/progress'
 import { Rng } from '../engine/random'
-import { pickGameWords, memoryBoard, rapidRound, rapidPoints, type MemoryTile, type RapidQuestion } from '../engine/vocabGame'
+import { pickGameWords, crosswordLookup, memoryBoard, rapidRound, rapidPoints, type MemoryTile, type RapidQuestion } from '../engine/vocabGame'
+import { languagePack } from '@lang'
 import { todayKey } from '../engine/mastery'
 import { PageHeader, Button, Chip } from '../components/ui/basics'
 import { useKvValue } from '../hooks/useProgress'
@@ -13,75 +14,155 @@ import { useSpeak } from '../hooks/useSpeak'
 import { playSound } from '../engine/sounds'
 import { Confetti } from '../components/ui/Confetti'
 import type { LevelId } from '../engine/schema'
-import { TL, tlOf } from '../engine/course'
+import { TL, tlOf, FEATURES } from '../engine/course'
 import { ui, LANGUAGE } from '../engine/loader'
+import { Crossword } from './palabras/Crossword'
+import { Listen } from './palabras/Listen'
+import { SoundMatch } from './palabras/SoundMatch'
+import { TooFew, NoAudioNotice } from './palabras/shared'
+import { BEST_KEY, LISTEN_LABEL, useAudio, updateBest, addMinutes, formatTime, type Best } from './palabras/util'
 
-type Game = 'memory' | 'rapid'
-interface Best {
-  memoryMs?: number
-  rapid?: number
-}
+type Game = 'memory' | 'rapid' | 'crossword' | 'listenPick' | 'listenType' | 'sound'
+/** How many words each game asks pickGameWords for. */
+const WANT: Record<Game, number> = { memory: 8, rapid: 30, crossword: 16, listenPick: 14, listenType: 10, sound: 16 }
 
 export default function Palabras() {
   const nav = useNavigate()
-  const best = useKvValue<Best>('palabrasBest', {})
+  const best = useKvValue<Best>(BEST_KEY, {})
+  const audio = useAudio()
   const [game, setGame] = useState<Game | undefined>()
+  const [round, setRound] = useState(0)
   const [words, setWords] = useState<VocabEntry[] | undefined>()
   const [maxLevel, setMaxLevel] = useState<LevelId>('a1')
   const [count, setCount] = useState<number | undefined>()
   const start = async (g: Game) => {
     const cards = await allCards()
     const lvl = cards.reduce<LevelId>((m, c) => (LEVEL_ORDER_LIST.indexOf(c.level) > LEVEL_ORDER_LIST.indexOf(m) ? c.level : m), 'a1')
-    const picked = pickGameWords(cards, (id) => vocab.get(id), g === 'memory' ? 8 : 30, new Rng(Date.now()))
+    const lookup = g === 'crossword' ? crosswordLookup((id) => vocab.get(id), languagePack) : (id: string) => vocab.get(id)
+    const picked = pickGameWords(cards, lookup, WANT[g], new Rng(Date.now()))
     setMaxLevel(lvl)
     setCount(cards.filter((c) => c.kind === 'word').length)
     setWords(picked)
+    setRound((r) => r + 1)
     setGame(g)
+    window.scrollTo?.({ top: 0 })
   }
   const done = () => {
     setGame(undefined)
     setWords(undefined)
   }
-  if (game === 'memory' && words) {
-    if (words.length < 4) return <TooFew onBack={done} />
-    return <Memory words={words} onDone={done} best={best?.memoryMs} />
+  const again = () => {
+    if (game) void start(game)
   }
-  if (game === 'rapid' && words) {
+  if (game && words) {
     if (words.length < 4) return <TooFew onBack={done} />
-    return <Rapid words={words} maxLevel={maxLevel} onDone={done} best={best?.rapid} />
+    switch (game) {
+      case 'memory':
+        return <Memory key={round} words={words} onDone={done} best={best?.memoryMs} />
+      case 'rapid':
+        return <Rapid key={round} words={words} maxLevel={maxLevel} onDone={done} best={best?.rapid} />
+      case 'crossword':
+        return <Crossword key={round} words={words} onDone={done} onAgain={again} best={best?.crosswordMs} />
+      case 'listenPick':
+      case 'listenType':
+        return <Listen key={round} words={words} maxLevel={maxLevel} mode={game === 'listenPick' ? 'pick' : 'type'} onDone={done} onAgain={again} best={game === 'listenPick' ? best?.listenPick : best?.listenType} />
+      case 'sound':
+        return <SoundMatch key={round} words={words} onDone={done} onAgain={again} best={best?.soundMatch} />
+    }
   }
+  const pts = (n?: number) => (n ? `Best: ${n} points` : undefined)
   return (
     <div className="animate-rise pb-6">
-      <PageHeader title={ui.games.name} subtitle="Two quick games with the words you are learning. Every answer counts as a review." />
-      <button type="button" onClick={() => void start('memory')} className="card mb-3 flex w-full items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient text-2xl" aria-hidden="true">🎴</span>
-        <span className="min-w-0 flex-1">
-          <span className="block font-semibold">{ui.games.memory}</span>
-          <span className="block text-sm text-muted">Flip tiles and match each {LANGUAGE} word with its meaning. 8 pairs against the clock.</span>
-          {best?.memoryMs ? <span className="mt-1 block text-xs font-bold text-ok-600">Best: {(best.memoryMs / 1000).toFixed(1)} s</span> : null}
-        </span>
-      </button>
-      <button type="button" onClick={() => void start('rapid')} className="card mb-3 flex w-full items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sunset-gradient text-2xl" aria-hidden="true">⚡</span>
-        <span className="min-w-0 flex-1">
-          <span className="block font-semibold">{ui.games.rapid}</span>
-          <span className="block text-sm text-muted">60 seconds, as many meanings as you can. Keep a streak for a multiplier.</span>
-          {best?.rapid ? <span className="mt-1 block text-xs font-bold text-ok-600">Best: {best.rapid} points</span> : null}
-        </span>
-      </button>
-      {count === 0 && <p className="text-center text-sm text-muted">Finish a lesson first so there are words to play with.</p>}
+      <PageHeader title={ui.games.name} subtitle="Games with the words you are learning. Every answer counts as a review." />
+      <div className="grid gap-3">
+        <ModeCard icon="🎴" tint="bg-brand-gradient" title={ui.games.memory} text={`Flip tiles and match each ${LANGUAGE} word with its meaning. 8 pairs against the clock.`} best={best?.memoryMs ? `Best: ${(best.memoryMs / 1000).toFixed(1)} s` : undefined} onClick={() => void start('memory')} />
+        <ModeCard icon="⚡" tint="bg-sunset-gradient" title={ui.games.rapid} text="60 seconds, as many meanings as you can. Keep a streak for a multiplier." best={pts(best?.rapid)} onClick={() => void start('rapid')} />
+        <ModeCard
+          icon="✏️"
+          tint="bg-mint-gradient"
+          title={ui.games.crossword}
+          text={FEATURES.romanization === 'jyutping' ? 'A little crossword from your words: English clues, answers in Jyutping without tones.' : 'A little crossword from your words: English clues, accents optional.'}
+          best={best?.crosswords ? [best.crosswordMs ? `Best: ${formatTime(best.crosswordMs)}` : '', `${best.crosswords} solved`].filter(Boolean).join(' · ') : undefined}
+          onClick={() => void start('crossword')}
+        />
+        <section className="card" aria-labelledby="mode-listen">
+          <div className="flex items-center gap-4">
+            <ModeIcon icon="🎧" tint="bg-coral-500" />
+            <span className="min-w-0 flex-1">
+              <span id="mode-listen" className="block font-semibold" lang={TL}>
+                {ui.games.listen}
+              </span>
+              <span className="block text-sm text-muted">Hear a word, then pick its meaning or type it. 10 words; keep the streak going.</span>
+            </span>
+          </div>
+          {audio === 'ok' ? (
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              {(['listenPick', 'listenType'] as const).map((g) => (
+                <button key={g} type="button" onClick={() => void start(g)} className="tile flex flex-col items-center gap-0.5 px-2 py-2.5 text-center">
+                  <span className="text-xl" aria-hidden="true">
+                    {g === 'listenPick' ? '👆' : '⌨️'}
+                  </span>
+                  <span className="text-sm leading-tight">{LISTEN_LABEL[g === 'listenPick' ? 'pick' : 'type']}</span>
+                  <span className="text-[11px] font-bold text-ok-600">{best?.[g] ? `Best ${best[g]}` : ' '}</span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-3">
+              <NoAudioNotice audio={audio} compact />
+            </div>
+          )}
+        </section>
+        <ModeCard
+          icon="🔊"
+          tint="bg-pink-500"
+          title={ui.games.soundMatch}
+          text="Four sounds, four written words: match each sound to its word. Three boards."
+          best={pts(best?.soundMatch)}
+          disabled={audio !== 'ok'}
+          notice={audio !== 'ok' ? <NoAudioNotice audio={audio} compact /> : undefined}
+          onClick={() => void start('sound')}
+        />
+      </div>
+      {count === 0 && <p className="mt-3 text-center text-sm text-muted">Finish a lesson first so there are words to play with.</p>}
       <p className="mt-4 text-center text-xs"><button type="button" className="font-bold text-muted underline" onClick={() => nav('/review')}>Back to Review</button></p>
     </div>
   )
 }
 
-function TooFew({ onBack }: { onBack: () => void }) {
+function ModeIcon({ icon, tint }: { icon: string; tint: string }) {
   return (
-    <div className="card text-center">
-      <p className="font-semibold">Not enough words yet</p>
-      <p className="mt-1 text-sm text-muted">Complete a lesson or two and come back: the games use the words you have met.</p>
-      <Button className="mt-3 w-full" onClick={onBack}>Back</Button>
-    </div>
+    <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-2xl ${tint}`} aria-hidden="true">
+      {icon}
+    </span>
+  )
+}
+
+function ModeCard({ icon, tint, title, text, best, onClick, disabled = false, notice }: { icon: string; tint: string; title: string; text: string; best?: string; onClick: () => void; disabled?: boolean; notice?: ReactNode }) {
+  const body = (
+    <>
+      <ModeIcon icon={icon} tint={tint} />
+      <span className="min-w-0 flex-1">
+        <span className="block font-semibold" lang={TL}>
+          {title}
+        </span>
+        <span className="block text-sm text-muted">{text}</span>
+        {best ? <span className="mt-1 block text-xs font-bold text-ok-600">{best}</span> : null}
+      </span>
+    </>
+  )
+  if (disabled) {
+    return (
+      <section className="card" aria-label={title}>
+        <div className="flex items-center gap-4 opacity-75">{body}</div>
+        {notice && <div className="mt-3">{notice}</div>}
+      </section>
+    )
+  }
+  return (
+    <button type="button" onClick={onClick} className="card flex w-full items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
+      {body}
+    </button>
   )
 }
 
@@ -124,9 +205,8 @@ function Memory({ words, onDone, best }: { words: VocabEntry[]; onDone: () => vo
             setFinishedMs(ms)
             playSound('finish')
             void (async () => {
-              const b2 = await getKv<Best>('palabrasBest', {})
-              await setKv('palabrasBest', { ...b2, memoryMs: Math.min(b2.memoryMs ?? Infinity, ms) })
-              await bumpDay(todayKey(), { minutes: Math.max(1, Math.round(ms / 60000)) })
+              await updateBest((b2) => ({ ...b2, memoryMs: Math.min(b2.memoryMs ?? Infinity, ms) }))
+              await addMinutes(ms)
             })()
           }
         } else {
@@ -203,8 +283,7 @@ function Rapid({ words, maxLevel, onDone, best }: { words: VocabEntry[]; maxLeve
     if (!finished) return
     playSound('finish')
     void (async () => {
-      const b = await getKv<Best>('palabrasBest', {})
-      await setKv('palabrasBest', { ...b, rapid: Math.max(b.rapid ?? 0, score) })
+      await updateBest((b) => ({ ...b, rapid: Math.max(b.rapid ?? 0, score) }))
       await bumpDay(todayKey(), { minutes: 1 })
     })()
   }, [finished]) // eslint-disable-line react-hooks/exhaustive-deps

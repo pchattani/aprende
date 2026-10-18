@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router'
 import { readers, levels } from '../engine/loader'
 import type { Reader as ReaderT, VocabEntry } from '../engine/schema'
 import type { ReadingRow } from '../engine/types'
@@ -12,27 +12,73 @@ import { lookup } from '@lang/inflect'
 import { getDictionary } from '../hooks/useDeps'
 import { useAllCards } from '../hooks/useProgress'
 import { Button, Chip, PageHeader, SpeakerButton, Empty } from '../components/ui/basics'
-import { IconArrowLeft, IconPlus, IconCheck, IconX } from '../components/ui/icons'
+import { IconArrowLeft, IconPlus, IconCheck, IconX, IconBook, IconHeadphones } from '../components/ui/icons'
 import { stripAccents } from '@lang/normalize'
 import { TL } from '../engine/course'
 import { LANGUAGE } from '../engine/loader'
 import { TargetText } from '../components/ui/TargetText'
 
+// The listening list carries every unit's dialogues: its own chunk, loaded when the Listen tab opens.
+const ListenList = lazy(() => import('./Listen').then((m) => ({ default: m.ListenList })))
+
 export default function Reader() {
   const { id } = useParams()
   if (id) return <ReaderView id={id} />
-  return <Library />
+  return <ReadListen />
+}
+
+type Mode = 'read' | 'listen'
+
+/** The Read tab: graded texts to read (Library) or to listen to (ListenList), switched at the top. */
+function ReadListen() {
+  const [params, setParams] = useSearchParams()
+  const mode: Mode = params.get('tab') === 'listen' ? 'listen' : 'read'
+  const [importing, setImporting] = useState(false)
+  const nav = useNavigate()
+  const tabs: { id: Mode; label: string; icon: typeof IconBook }[] = [
+    { id: 'read', label: 'Read', icon: IconBook },
+    { id: 'listen', label: 'Listen', icon: IconHeadphones },
+  ]
+  return (
+    <div>
+      <PageHeader
+        title="Read & listen"
+        subtitle={mode === 'read' ? `Graded texts for your level, or paste anything in ${LANGUAGE}.` : `Short conversations and passages read aloud in ${LANGUAGE}. Ears first: the text stays hidden unless you ask for it.`}
+        right={mode === 'read' ? <Button variant="ghost" className="px-3 py-2" onClick={() => setImporting(true)}><IconPlus width={18} height={18} /> Import</Button> : undefined}
+      />
+      <div className="mb-4 flex gap-1 rounded-full bg-surface-2 p-1" role="tablist" aria-label="Read or listen">
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            role="tab"
+            aria-selected={mode === t.id}
+            onClick={() => setParams(t.id === 'listen' ? { tab: 'listen' } : {}, { replace: true })}
+            className={`flex flex-1 items-center justify-center gap-1.5 rounded-full py-2 text-sm font-semibold transition ${mode === t.id ? 'bg-brand-gradient text-white shadow-md' : 'text-muted'}`}
+          >
+            <t.icon width={17} height={17} />
+            {t.label}
+          </button>
+        ))}
+      </div>
+      {mode === 'read' ? (
+        <Library />
+      ) : (
+        <Suspense fallback={<p className="p-4 text-center text-muted">Loading…</p>}>
+          <ListenList />
+        </Suspense>
+      )}
+      {importing && <ImportDialog onClose={() => setImporting(false)} onDone={(rid) => { setImporting(false); nav(`/reader/${rid}`) }} />}
+    </div>
+  )
 }
 
 function Library() {
   const rows = useLiveQuery(() => db.reading.toArray(), []) ?? []
   const imported = rows.filter((r) => r.text)
-  const [importing, setImporting] = useState(false)
-  const nav = useNavigate()
   const status = new Map(rows.map((r) => [r.id, r]))
   return (
     <div>
-      <PageHeader title="Reader" subtitle={`Graded texts for your level, or paste anything in ${LANGUAGE}.`} right={<Button variant="ghost" className="px-3 py-2" onClick={() => setImporting(true)}><IconPlus width={18} height={18} /> Import</Button>} />
       <p className="mb-4 text-sm text-muted">Tap any word for its meaning and add it to your reviews. The meter tells you how much of a text you already know — research suggests 95–98% is the sweet spot for learning.</p>
       {imported.length > 0 && (
         <section className="mb-5">
@@ -75,7 +121,6 @@ function Library() {
         )
       })}
       {readers.length === 0 && imported.length === 0 && <Empty title="No texts yet">Import a text to start reading.</Empty>}
-      {importing && <ImportDialog onClose={() => setImporting(false)} onDone={(rid) => { setImporting(false); nav(`/reader/${rid}`) }} />}
     </div>
   )
 }

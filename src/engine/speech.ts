@@ -40,6 +40,8 @@ export interface SpeakOptions {
   rate?: number
   voiceURI?: string
   preferred?: string[]
+  /** 0–2, 1 is the voice's normal pitch (a second speaker can sound different on a one-voice device). */
+  pitch?: number
 }
 
 export function pickVoice(opts: SpeakOptions): SpeechSynthesisVoice | undefined {
@@ -85,6 +87,7 @@ function utter(text: string, opts: SpeakOptions): Promise<void> {
     const u = new SpeechSynthesisUtterance(text)
     u.lang = opts.lang ?? 'es-ES'
     u.rate = opts.rate ?? 0.95
+    if (opts.pitch !== undefined) u.pitch = opts.pitch
     const v = pickVoice(opts)
     if (v) u.voice = v
     u.onend = () => resolve()

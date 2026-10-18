@@ -14,7 +14,7 @@ export default function Study() {
     ...(FEATURES.conjugation ? [{ to: '/verbs', icon: IconVerb, title: 'Verb trainer', text: 'Full conjugation tables and timed drills for every tense and mood.' }] : []),
     ...(FEATURES.classifiers ? [{ to: '/classifiers', icon: IconVerb, title: 'Measure words', text: 'Which classifier each noun takes (個, 隻, 本, 張…), with a quick drill.' }] : []),
     { to: '/pronunciation', icon: IconEar, title: 'Pronunciation', text: FEATURES.romanization === 'jyutping' ? 'The six tones, Jyutping, tricky sounds, minimal pairs and shadowing.' : 'Sounds, stress and the written accent, minimal pairs and shadowing.' },
-    { to: '/palabras', icon: IconCards, title: ui.games.name, text: 'Memory and quick-fire games with the words you are learning.' },
+    { to: '/palabras', icon: IconCards, title: ui.games.name, text: 'Memory, quick-fire, crossword and listening games with the words you are learning.' },
     { to: '/perros', icon: IconPaw, title: ui.dogsPage, text: 'Dress Leo, Bonchita and Luna with the souvenirs they find.' },
   ]
   return (

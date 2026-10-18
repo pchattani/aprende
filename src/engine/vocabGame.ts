@@ -64,3 +64,57 @@ export function rapidRound(words: VocabEntry[], ctx: GenContext, rng: Rng): Rapi
 export function rapidPoints(streak: number): number {
   return 10 * Math.min(4, 1 + Math.floor(streak / 3))
 }
+
+/**
+ * The letters of a word in a crossword grid, one per cell: the lemma as the language pack
+ * normalizes it (lowercase, accents kept, ligatures spelled out), or for Cantonese the
+ * Jyutping without tone numbers. Undefined for multi-word lemmas, elisions, hyphenated
+ * words and anything shorter than 3 or longer than 10 cells.
+ */
+export function crosswordLetters(v: VocabEntry, normalize: (s: string) => string): string[] | undefined {
+  const raw = v.jp ? v.jp.split(' ').map((s) => s.replace(/[1-6]$/, '')).join('') : normalize(v.lemma)
+  const letters = [...raw.normalize('NFC')]
+  if (letters.length < 3 || letters.length > 10 || !letters.every((ch) => /^\p{L}$/u.test(ch))) return undefined
+  return letters
+}
+
+/**
+ * A lookup for pickGameWords that only returns words that fit a crossword and whose clue
+ * does not give the answer away (hotel = "hotel").
+ */
+export function crosswordLookup(lookup: (id: string) => VocabEntry | undefined, pack: { normalize: (s: string) => string; stripMarks: (s: string) => string }): (id: string) => VocabEntry | undefined {
+  return (id) => {
+    const v = lookup(id)
+    if (!v?.en[0]) return undefined
+    const letters = crosswordLetters(v, pack.normalize)
+    if (!letters) return undefined
+    const answer = pack.stripMarks(letters.join(''))
+    const clue = pack.stripMarks(v.en[0].toLowerCase().replace(/^to /, '').replace(/[^\p{L}]/gu, ''))
+    return answer === clue ? undefined : v
+  }
+}
+
+/**
+ * Boards for "match the sound": `boards` groups of `size` words, no two words in a
+ * board that sound alike (same `soundKey`), each word used once. Short boards are dropped.
+ */
+export function soundBoards(words: VocabEntry[], rng: Rng, soundKey: (v: VocabEntry) => string, size = 4, boards = 3): VocabEntry[][] {
+  const out: VocabEntry[][] = []
+  const left = [...words]
+  while (out.length < boards && left.length >= size) {
+    const board: VocabEntry[] = []
+    const keys = new Set<string>()
+    for (let i = 0; i < left.length && board.length < size; ) {
+      const k = soundKey(left[i]!)
+      if (keys.has(k)) {
+        i++
+        continue
+      }
+      keys.add(k)
+      board.push(left.splice(i, 1)[0]!)
+    }
+    if (board.length < size) break
+    out.push(rng.shuffle(board))
+  }
+  return out
+}

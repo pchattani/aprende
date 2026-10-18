@@ -65,8 +65,12 @@ function geoFor(dog: DogName): DogGeo {
 const GEO: Record<DogName, DogGeo> = { leo: geoFor('leo'), bonchita: geoFor('bonchita'), luna: geoFor('luna') }
 /** Emoji fallback (souvenirs without `art` yet): anchor and font size per slot. */
 const EMOJI_SIZE: Record<WearSlot, number> = { hat: 28, eyes: 16, neck: 18, mouth: 18, paw: 20 }
-const emojiAnchor = (g: DogGeo, slot: WearSlot): [number, number] =>
-  slot === 'hat' ? [g.hat.x, g.hat.y - 16] : slot === 'eyes' ? [g.eyes.x, g.eyes.y] : slot === 'neck' ? [g.neck.x, g.neck.y + 4] : slot === 'mouth' ? [g.mouth.x + 10, g.mouth.y] : [g.paw.x - 2 * g.paw.side, g.paw.y - 6]
+const emojiAnchor = (dog: DogName, g: DogGeo, slot: WearSlot): [number, number] => {
+  if (slot !== 'paw') return slot === 'hat' ? [g.hat.x, g.hat.y - 16] : slot === 'eyes' ? [g.eyes.x, g.eyes.y] : slot === 'neck' ? [g.neck.x, g.neck.y + 4] : [g.mouth.x + 10, g.mouth.y]
+  // paw items stand on the ground beside the dog
+  const r = place(dog)
+  return [r.x + r.w + 12, r.y + r.h - 12]
+}
 
 /** The drawable item behind an outfit entry: a souvenir (with `art` once content is tagged) or a `wear-<kind>[-<colour>]` id. */
 function wornItem(id: string): { kind?: ArtKind; color?: string; label: string; emoji?: string } | undefined {
@@ -103,11 +107,12 @@ function placeItem(dog: DogName, slot: WearSlot, kind: ArtKind, color: string | 
   }
   if (slot === 'mouth') return { layer: 3, head: true, el: shape(fit(g.mouth.x, g.mouth.y, g.mouth.w / 44, 24, 24, MOUTH_TURN[kind] ?? 0)) }
   if (slot === 'paw') {
-    // held in the rig's front paws (DogRig draws the paws around it); tall things stand up from one paw
-    const spread = g.neck.w * 0.32
-    if (HIGH_KINDS.has(kind)) return { layer: 6, head: false, el: shape(fit(g.paw.x + spread, g.paw.y + 2, 1.7, 16, 44), true) }
-    const s = (g.neck.w / 50) * (PAW_SIZE[kind] ?? 1)
-    return { layer: 6, head: false, el: shape(fit(g.paw.x, g.paw.y - 4 * s, s, 24, 24)) }
+    // set down on the ground beside the dog (no paws in the art); tall things stand upright beside it
+    const r = place(dog)
+    const x = r.x + r.w + 4
+    if (HIGH_KINDS.has(kind)) return { layer: 6, head: false, el: shape(fit(x, r.y + r.h, 1.5, 16, 46), true) }
+    const s = 0.62 * (PAW_SIZE[kind] ?? 1)
+    return { layer: 6, head: false, el: shape(fit(x + 4, r.y + r.h, s, 24, 46)) }
   }
   // neck
   if (BODY_KINDS.has(kind)) return { layer: 0, head: false, el: shape(`translate(${g.body.x} ${g.body.y}) scale(${g.body.w / 40} ${g.body.h / 29}) translate(-24 -6)`, true) }
@@ -134,7 +139,7 @@ function placeItem(dog: DogName, slot: WearSlot, kind: ArtKind, color: string | 
  * where they live in the rig: on the body (neck pieces), on the head (moving with it) or in front
  * (held in the paws).
  */
-function wearParts(dog: DogName, outfit?: Outfit): { body?: ReactNode; head?: ReactNode; front?: ReactNode; holding?: boolean } | undefined {
+function wearParts(dog: DogName, outfit?: Outfit): { body?: ReactNode; head?: ReactNode; front?: ReactNode; beside?: boolean } | undefined {
   if (!outfit) return undefined
   const g = GEO[dog]
   // hats, glasses and mouth items follow the tilt of the painted head
@@ -146,7 +151,7 @@ function wearParts(dog: DogName, outfit?: Outfit): { body?: ReactNode; head?: Re
     const it = id ? wornItem(id) : undefined
     if (!id || !it) return []
     if (!it.kind) {
-      const [x, y] = emojiAnchor(g, slot)
+      const [x, y] = emojiAnchor(dog, g, slot)
       const el = (
         <text x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize={EMOJI_SIZE[slot]} style={{ filter: 'drop-shadow(0 1px 0.6px rgba(40,25,20,0.35))' }}>
           {it.emoji}
@@ -171,7 +176,7 @@ function wearParts(dog: DogName, outfit?: Outfit): { body?: ReactNode; head?: Re
     body: node(items.filter((i) => i.slot === 'neck')),
     head: node(items.filter((i) => i.head && i.slot !== 'paw'), tiltTf),
     front: node(items.filter((i) => i.slot === 'paw')),
-    holding: items.some((i) => i.slot === 'paw'),
+    beside: items.some((i) => i.slot === 'paw'),
   }
 }
 

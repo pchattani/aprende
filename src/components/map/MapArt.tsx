@@ -1,7 +1,7 @@
 /**
- * Small drawings for the world map: node icons (paw, ticket, star), the checkpoint
- * travel chest, the border-control gate and roadside scenery. Inline SVG, colours from
- * the region ink (--lvl) so every region gets its own look.
+ * Small drawings for the journey itinerary: icons (ticket, star), the checkpoint travel
+ * chest and the border-control gate. Inline SVG, colours from the region ink (--lvl) so
+ * every region gets its own look.
  */
 import type { SVGProps } from 'react'
 
@@ -78,74 +78,6 @@ export function GateArt({ open = false, size = 64 }: { open?: boolean; size?: nu
         <path d="M23 41.5 l-3 5 M31 41.5 l-3 5 M39 41.5 l-3 5 M46 41.5 l-2.6 4.3" stroke="var(--lvl, #d4583f)" strokeWidth="2.6" />
       </g>
       <circle cx="19" cy="44" r="2.4" fill="#6b5a40" />
-    </svg>
-  )
-}
-
-export type SceneryKind = 'tree' | 'pine' | 'bush' | 'flowers' | 'rock' | 'sign' | 'hill'
-
-/** Roadside scenery: simple shapes with a soft ground shadow, tinted by the region. */
-export function Scenery({ kind, size = 40 }: { kind: SceneryKind; size?: number }) {
-  const leaf = 'color-mix(in srgb, var(--lvl) 28%, #6f9a5a)'
-  const leafDark = 'color-mix(in srgb, var(--lvl) 30%, #4f7a43)'
-  return (
-    <svg viewBox="0 0 40 40" width={size} height={size} {...hidden} overflow="visible">
-      <ellipse cx="20" cy="37" rx="13" ry="2.6" fill="#000" opacity="0.08" />
-      {kind === 'tree' && (
-        <>
-          <rect x="18.2" y="24" width="3.6" height="13" rx="1.2" fill="#8a5a36" />
-          <circle cx="20" cy="17" r="11" fill={leaf} />
-          <circle cx="15" cy="20" r="6.5" fill={leafDark} opacity="0.55" />
-          <circle cx="23.5" cy="12.5" r="3.4" fill="#fff" opacity="0.18" />
-        </>
-      )}
-      {kind === 'pine' && (
-        <>
-          <rect x="18.4" y="29" width="3.2" height="8" rx="1" fill="#7a4e30" />
-          <path d="M20 3 L30 17 H25 L32 27 H26 L33 31 H7 L14 27 H8 L15 17 H10 Z" fill={leafDark} />
-          <path d="M20 3 L25 10 L20 9 Z" fill="#fff" opacity="0.2" />
-        </>
-      )}
-      {kind === 'bush' && (
-        <>
-          <circle cx="13" cy="29" r="7" fill={leafDark} />
-          <circle cx="22" cy="26" r="9" fill={leaf} />
-          <circle cx="29" cy="31" r="5.5" fill={leafDark} />
-          <circle cx="20" cy="22" r="1.6" fill="var(--lvl)" />
-          <circle cx="26" cy="27" r="1.4" fill="var(--sun)" />
-        </>
-      )}
-      {kind === 'flowers' && (
-        <>
-          {[[11, 30, 'var(--lvl)'], [20, 25, 'var(--sun)'], [28, 31, 'var(--lvl)'], [16, 34, '#fff']].map(([x, y, c], i) => (
-            <g key={i}>
-              <path d={`M${x} ${y} V37`} stroke={leafDark} strokeWidth="1.6" />
-              <circle cx={x as number} cy={y as number} r="3.2" fill={c as string} />
-              <circle cx={x as number} cy={y as number} r="1.1" fill="#fff6d8" />
-            </g>
-          ))}
-        </>
-      )}
-      {kind === 'rock' && (
-        <>
-          <path d="M6 37 Q7 26 15 24 Q19 18 26 22 Q34 24 34 37 Z" fill="#b8ad98" />
-          <path d="M15 24 Q19 18 26 22 Q22 24 20 30 Z" fill="#fff" opacity="0.25" />
-        </>
-      )}
-      {kind === 'sign' && (
-        <>
-          <rect x="18.6" y="12" width="2.8" height="25" rx="1" fill="#8a5a36" />
-          <path d="M8 10 H28 L32 14 L28 18 H8 Z" fill="var(--card)" stroke="var(--lvl)" strokeWidth="1.6" strokeLinejoin="round" />
-          <path d="M12 14 H24" stroke="var(--lvl)" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="2 2" />
-          <path d="M31 21 H13 L9 25 L13 29 H31 Z" fill="var(--card)" stroke="var(--ink-2)" strokeWidth="1.4" strokeLinejoin="round" opacity="0.9" />
-        </>
-      )}
-      {kind === 'hill' && (
-        <>
-          <path d="M0 37 Q10 16 22 22 Q30 12 40 37 Z" fill={leaf} opacity="0.7" />
-          <path d="M22 22 Q30 12 40 37 H30 Q28 26 22 22 Z" fill={leafDark} opacity="0.45" />
-        </>
-      )}
     </svg>
   )
 }

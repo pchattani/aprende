@@ -35,7 +35,7 @@ jobs:
       - name: Hub
         run: npm run test:e2e -- e2e/hub.spec.ts
       - name: Spanish
-        run: npm run test:e2e -- e2e/app.spec.ts
+        run: npm run test:e2e -- e2e/app.spec.ts e2e/listen.spec.ts e2e/palabras.spec.ts
       - name: Smoke-test every course
         run: node scripts/courses.mjs "npx playwright test e2e/sister.spec.ts"
       - uses: actions/upload-artifact@v4

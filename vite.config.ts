@@ -6,14 +6,18 @@ import { load as loadYaml } from 'js-yaml'
 import { readFileSync, existsSync } from 'node:fs'
 import { SITE_BASE } from './scripts/site-base.mjs'
 
-/** Turns any imported .yaml/.yml file into an ES module exporting the parsed data. */
+/**
+ * Turns any imported .yaml/.yml file into an ES module exporting the parsed data.
+ * `unit.yaml?dialogues` exports only a unit's id and dialogues (the listening list needs no lessons).
+ */
 function yamlPlugin(): Plugin {
   return {
     name: 'aprende:yaml',
     transform(code, id) {
       if (!/\.ya?ml(\?.*)?$/.test(id)) return null
-      const data = loadYaml(code, { filename: id })
-      return { code: `export default ${JSON.stringify(data)};`, map: null }
+      const data = loadYaml(code, { filename: id }) as Record<string, unknown> | null
+      const out = /\?(?:.*&)?dialogues(?:&|$)/.test(id) ? { id: data?.id, dialogues: data?.dialogues ?? [] } : data
+      return { code: `export default ${JSON.stringify(out)};`, map: null }
     },
   }
 }

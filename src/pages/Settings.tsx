@@ -53,6 +53,7 @@ export default function Settings() {
       <Section title="Learning">
         <Select label="Lesson length" hint="How many exercises a lesson session has." value={s.sessionLength} onChange={(v) => s.setSessionLength(v as SettingsState['sessionLength'])} options={[['short', `Short · ${SESSION_COUNT.short} exercises`], ['normal', `Normal · ${SESSION_COUNT.normal} exercises`], ['long', `Long · ${SESSION_COUNT.long} exercises`]]} />
         <Select label="Speaking exercises" hint={stt ? 'Uses your browser’s speech recognition. Nothing is sent to us.' : 'Speech recognition is not supported in this browser.'} value={stt ? s.speaking : 'off'} onChange={(v) => s.setSpeaking(v as SettingsState['speaking'])} options={[['off', 'Off'], ['some', 'Some · up to 2 per lesson'], ['lots', 'Lots · up to 3 per lesson, answer questions aloud']]} disabled={!stt} />
+        <Toggle label="Show transcript while listening" hint="Listening practice (Read → Listen) hides the text so you train your ears. Turn this on to read along." checked={s.listenTranscript} onChange={s.setListenTranscript} />
         <Toggle label="Keep my mistakes for later" hint="Wrong answers are pinned automatically for a focused re-test (Review → Pinned)." checked={s.autoPin} onChange={s.setAutoPin} />
         <Range label={`Daily practice goal: ${s.dailyMinutes} minutes`} min={5} max={40} step={5} value={s.dailyMinutes} onChange={s.setDailyMinutes} />
         {pack.variety.alternatives.length > 0 && (

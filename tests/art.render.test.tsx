@@ -14,7 +14,9 @@ describe('painted dogs', () => {
         for (const size of [40, 240]) {
           const { container, unmount } = render(<D size={size} mood={mood} />)
           const svg = container.querySelector('svg')!
-          expect(svg.getAttribute('width')).toBe(String(size))
+          // the frame hugs each dog's width, so it is never wider than square
+          expect(svg.getAttribute('height')).toBe(String(size))
+          expect(Number(svg.getAttribute('width'))).toBeLessThanOrEqual(size)
           // filters only at large sizes
           expect(Boolean(container.querySelector('filter'))).toBe(size >= 64)
           unmount()

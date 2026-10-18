@@ -16,7 +16,7 @@ import { xpFor } from '../engine/xp'
 import { IconCheck, IconPaw, IconRoute, IconPlane, IconPassport } from '../components/ui/icons'
 import { StopArt } from '../components/StopArt'
 import { DogButton } from '../components/ui/Dogs'
-import { WorldMap } from '../components/map/WorldMap'
+import { Itinerary } from '../components/map/Itinerary'
 import { LegBar } from '../components/map/LegBar'
 import { TicketIcon } from '../components/map/MapArt'
 import { stopFor, souvenirById, isStamped, type Souvenir } from '../engine/journey'
@@ -28,7 +28,7 @@ import { ui } from '../engine/loader'
 import { COURSES, HUB_URL } from '../courses'
 import { COURSE_ID, LANGUAGE } from '../engine/course'
 
-/** The map scrolls to the current lesson once per page load (later visits keep their scroll position). */
+/** The itinerary scrolls to the current lesson once per page load (later visits keep their scroll position). */
 let autoScrolled = false
 
 export default function Course() {
@@ -107,7 +107,7 @@ export default function Course() {
   }, [lessonRows, lessonMeta, lessonCounts, startLevel])
 
   // Coming back from a lesson or a quiz: scroll to the spot the learner left from.
-  // Otherwise, on the first visit of this page load, glide to the current lesson on the map.
+  // Otherwise, on the first visit of this page load, glide to the current lesson in the itinerary.
   useEffect(() => {
     if (!ready) return
     const target = (loc.state as { from?: string } | null)?.from ?? takeReturn()
@@ -279,7 +279,7 @@ export default function Course() {
         <Link to="/welcome" className="text-xs text-ink-2 underline decoration-dotted underline-offset-4">Change start or retake placement</Link>
       </div>
 
-      <WorldMap
+      <Itinerary
         lessonRows={lessonRows}
         lessonMeta={lessonMeta}
         lessonCounts={lessonCounts}

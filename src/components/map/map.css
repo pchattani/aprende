@@ -1,272 +1,159 @@
 /*
-  World map (the journey page): a winding road per stop, chunky lesson medallions,
-  chests, border gates, stop banners and region title cards. Paper and ink from
-  index.css; each region's ink is --lvl. Motion is transform/opacity only and is
+  The journey page as a travel itinerary: region title cards, stop banners with their
+  postcards, and per stop a slim dashed route line down the left edge with a large card
+  for each lesson, the checkpoint chest and the border-control level check. Paper and ink
+  from index.css; each region's ink is --lvl. Motion is transform/opacity only and is
   switched off for prefers-reduced-motion.
 */
-.wm {
-  /* full-bleed clip box so roadside scenery can reach the screen edge without scrolling sideways */
-  margin-inline: -1rem;
-  padding-inline: 1rem;
-  overflow-x: clip;
-  --wm-road: color-mix(in srgb, var(--lvl, #c9a36a) 7%, #efe5cf);
-  --wm-road-edge: color-mix(in srgb, var(--lvl, #c9a36a) 22%, #dccdae);
-  --wm-dash: color-mix(in srgb, var(--lvl, #c9a36a) 30%, #c8b892);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .wm {
-    --wm-road: color-mix(in srgb, var(--lvl, #c9a36a) 10%, #222842);
-    --wm-road-edge: color-mix(in srgb, var(--lvl, #c9a36a) 22%, #2f3654);
-    --wm-dash: color-mix(in srgb, var(--lvl, #c9a36a) 45%, #4a5274);
-  }
-}
-:root[data-theme="dark"] .wm {
-  --wm-road: color-mix(in srgb, var(--lvl, #c9a36a) 10%, #222842);
-  --wm-road-edge: color-mix(in srgb, var(--lvl, #c9a36a) 22%, #2f3654);
-  --wm-dash: color-mix(in srgb, var(--lvl, #c9a36a) 45%, #4a5274);
-}
-
 :root { --wm-edge-cream: #dcd2bd; --wm-shadow: rgba(60, 45, 20, 0.16); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --wm-edge-cream: #0b0e18; --wm-shadow: rgba(0, 0, 0, 0.45); } }
 :root[data-theme="dark"] { --wm-edge-cream: #0b0e18; --wm-shadow: rgba(0, 0, 0, 0.45); }
 
-/* ---------- Road ---------- */
-.wm-road-stub {
+/* ---------- Route line ---------- */
+.it { --it-x: 17px; --it-gutter: 44px; }
+.it-region { margin-top: 20px; }
+.it-stop { position: relative; padding-bottom: 22px; }
+.it-line {
   position: absolute;
-  left: 50%;
+  left: calc(var(--it-x) - 1.5px);
   top: 0;
   bottom: 0;
-  width: 38px;
-  transform: translateX(-50%);
-  background: linear-gradient(to right, var(--wm-road-edge) 0 4px, var(--wm-road) 4px calc(100% - 4px), var(--wm-road-edge) calc(100% - 4px));
-  pointer-events: none;
-}
-.wm-road-stub::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  transform: translateX(-50%);
+  width: 3px;
   border-radius: 2px;
-  background: repeating-linear-gradient(to bottom, var(--wm-dash) 0 9px, transparent 9px 21px);
-}
-.wm-road-stub.is-inked::after { background: repeating-linear-gradient(to bottom, var(--lvl) 0 9px, transparent 9px 21px); }
-.wm-road { position: absolute; top: 0; left: 50%; pointer-events: none; overflow: visible; }
-.wm-road .edge { stroke: var(--wm-road-edge); }
-.wm-road .surface { stroke: var(--wm-road); }
-.wm-road .dash { stroke: var(--wm-dash); }
-.wm-road .ink { stroke: var(--lvl); }
-
-.wm-patch {
-  position: absolute;
-  left: 50%;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, color-mix(in srgb, var(--lvl) 9%, transparent), color-mix(in srgb, var(--lvl) 5%, transparent) 60%, transparent);
+  background: repeating-linear-gradient(to bottom, var(--line-strong) 0 7px, transparent 7px 14px);
   pointer-events: none;
 }
-
-/* a region border drawn across the map at the gate */
-.wm-border {
-  position: absolute;
-  left: -1rem;
-  right: -1rem;
-  height: 0;
-  border-top: 3px dashed color-mix(in srgb, var(--lvl) 55%, var(--line));
-  pointer-events: none;
+.it-line.is-inked {
+  bottom: auto;
+  left: calc(var(--it-x) - 2px);
+  width: 4px;
+  background: repeating-linear-gradient(to bottom, var(--lvl) 0 7px, transparent 7px 14px);
+  transition: height 500ms ease;
 }
-.wm-border::before, .wm-border::after {
+.it-legs { position: relative; margin: 0; padding: 16px 0 0; list-style: none; }
+.it-row { position: relative; padding-left: var(--it-gutter); --it-pad: 0px; padding-top: var(--it-pad); }
+.it-row + .it-row { margin-top: 14px; }
+.it-row.is-current { --it-pad: 54px; }
+.it-row.is-border::before {
   content: "";
   position: absolute;
-  top: -7px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--lvl) 55%, var(--line));
+  left: calc(var(--it-x) - 1.5px);
+  top: 0;
+  height: 32px;
+  width: 3px;
+  background: repeating-linear-gradient(to bottom, var(--line-strong) 0 7px, transparent 7px 14px);
 }
-.wm-border::before { left: 34px; }
-.wm-border::after { right: 34px; }
+.it-row.is-border.is-inked::before { background: repeating-linear-gradient(to bottom, var(--lvl) 0 7px, transparent 7px 14px); }
+.it-rail { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--it-x) * 2); pointer-events: none; }
 
-/* ---------- Nodes ---------- */
-.wm-spot { position: absolute; left: 50%; z-index: 5; }
-.wm-spot.is-open { z-index: 25; }
-.wm-raise { position: relative; display: block; }
-.wm-ground {
+/* stops on the line */
+.it-dot {
   position: absolute;
   left: 50%;
-  bottom: -14px;
-  width: 64px;
-  height: 14px;
-  margin-left: -32px;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, var(--wm-shadow), transparent);
-  pointer-events: none;
-}
-
-.wm-node {
-  --wm-face: var(--card);
-  --wm-edge: var(--wm-edge-cream);
-  --wm-icon: var(--lvl);
-  position: relative;
+  top: calc(var(--it-pad) + 32px);
+  z-index: 2;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--wm-size, 70px);
-  height: var(--wm-size, 70px);
-  border-radius: 9999px;
-  color: var(--wm-icon);
-  background: var(--wm-face);
-  box-shadow: 0 7px 0 var(--wm-edge), 0 12px 18px -8px var(--wm-shadow), inset 0 -4px 0 rgba(0, 0, 0, 0.07), inset 0 3px 0 rgba(255, 255, 255, 0.4);
-  transition: transform 110ms ease-out;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  user-select: none;
-}
-.wm-node:focus-visible { outline: 3px solid var(--blue); outline-offset: 10px; }
-.wm-node:active { transform: translateY(6px); box-shadow: 0 1px 0 var(--wm-edge), 0 4px 8px -6px var(--wm-shadow), inset 0 -4px 0 rgba(0, 0, 0, 0.07), inset 0 3px 0 rgba(255, 255, 255, 0.4); }
-.wm-node > svg { position: relative; }
-/* available: cream medallion with an inked rim */
-.wm-node.is-new::before, .wm-node.is-started::before {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  border-radius: inherit;
-  border: 2.5px solid color-mix(in srgb, var(--lvl) 40%, var(--card));
-}
-/* started: a progress arc round the rim */
-.wm-node.is-started { --wm-face: var(--lvl-soft); }
-.wm-arc {
-  position: absolute;
-  inset: -7px;
-  border-radius: 9999px;
-  background: conic-gradient(var(--lvl) calc(var(--p, 0) * 1turn), color-mix(in srgb, var(--lvl) 14%, transparent) 0);
-  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 5px), #000 calc(100% - 4.5px));
-  mask: radial-gradient(closest-side, transparent calc(100% - 5px), #000 calc(100% - 4.5px));
-  pointer-events: none;
-}
-/* done: inked medallion with a postmark ring */
-.wm-node.is-learned {
-  --wm-face: var(--lvl);
-  --wm-edge: color-mix(in srgb, var(--lvl) 62%, #000);
-  --wm-icon: #fff;
-}
-.wm-node.is-mastered {
-  --wm-face: var(--sun);
-  --wm-edge: color-mix(in srgb, var(--sun) 62%, #4a2c00);
-  --wm-icon: #fff;
-}
-.wm-postmark {
-  position: absolute;
-  inset: 6px;
-  border-radius: 9999px;
-  border: 2px dashed rgba(255, 255, 255, 0.55);
-  transform: rotate(-14deg);
-  pointer-events: none;
-}
-.wm-badge {
-  position: absolute;
-  right: -4px;
-  top: -4px;
-  display: flex;
-  width: 24px;
-  height: 24px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background: var(--card);
-  color: var(--lvl);
-  box-shadow: 0 2px 0 var(--wm-edge-cream), 0 0 0 2px var(--card);
-  transform: rotate(10deg);
-}
-.wm-node.is-mastered .wm-badge { color: color-mix(in srgb, var(--sun) 70%, #5a3d00); }
-
-/* current: raised, ticket icon, pulsing ring */
-.wm-node.is-current {
-  --wm-face: var(--lvl);
-  --wm-edge: color-mix(in srgb, var(--lvl) 62%, #000);
-  --wm-icon: #fff;
-  --wm-size: 78px;
-}
-.wm-node.is-current::before { content: none; }
-/* the node itself stays put (a steady tap target); the ticket inside bobs */
-.wm-spot.is-current .wm-raise { transform: translateY(-6px); }
-.wm-node.is-current > svg { animation: wm-bob-icon 2.4s ease-in-out infinite; }
-.wm-pulse {
-  position: absolute;
-  inset: -9px;
-  border-radius: 9999px;
-  border: 3px solid var(--lvl);
-  opacity: 0;
-  animation: wm-pulse 2s ease-out infinite;
-  pointer-events: none;
-}
-@keyframes wm-pulse { 0% { transform: scale(0.86); opacity: 0.7; } 80%, 100% { transform: scale(1.32); opacity: 0; } }
-@keyframes wm-bob-icon { 0%, 100% { transform: translateY(1px) rotate(-3deg); } 50% { transform: translateY(-3px) rotate(3deg); } }
-
-/* return-to-spot flash */
-.wm-flash { position: absolute; inset: -12px; border-radius: 9999px; background: var(--lvl); opacity: 0; animation: wm-flash 1.1s ease-out 2; pointer-events: none; }
-@keyframes wm-flash { 0% { transform: scale(0.8); opacity: 0.35; } 100% { transform: scale(1.5); opacity: 0; } }
-
-/* caption beside a node */
-.wm-cap {
-  position: absolute;
-  top: 50%;
-  width: max-content;
-  max-width: 128px;
-  transform: translateY(-50%);
-  font-size: 12.5px;
-  font-weight: 650;
-  line-height: 1.2;
-  color: var(--ink-2);
-  pointer-events: none;
-}
-.wm-cap.is-done { color: var(--ink); }
-.wm-cap .n { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--lvl); }
-
-/* checkpoint chest */
-.wm-node.is-chest { --wm-size: 76px; --wm-face: color-mix(in srgb, var(--sun) 16%, var(--card)); --wm-edge: color-mix(in srgb, var(--sun) 45%, #8a5a2a); border-radius: 26px; }
-.wm-node.is-chest.is-cleared { --wm-face: color-mix(in srgb, var(--sun) 38%, var(--card)); }
-.wm-node.is-chest.is-ready > svg { animation: wm-wiggle 2.4s ease-in-out infinite; }
-@keyframes wm-wiggle { 0%, 70%, 100% { transform: rotate(0); } 76% { transform: rotate(-8deg); } 84% { transform: rotate(7deg); } 92% { transform: rotate(-4deg); } }
-.wm-chest-glow { animation: wm-twinkle 1.8s ease-in-out infinite; transform-origin: 24px 10px; }
-@keyframes wm-twinkle { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
-
-/* border gate */
-.wm-node.is-gate { --wm-size: 104px; --wm-face: color-mix(in srgb, var(--lvl) 10%, var(--card)); --wm-edge: color-mix(in srgb, var(--lvl) 45%, #6b5a40); border-radius: 30px; }
-.wm-node.is-gate.is-passed { --wm-face: color-mix(in srgb, var(--ok) 16%, var(--card)); }
-.wm-gate-bar { transition: transform 400ms ease; }
-
-/* ---------- Popover ---------- */
-.wm-pop {
-  position: absolute;
-  left: 50%;
-  z-index: 30;
-  width: min(304px, calc(100% - 8px));
-  transform: translateX(-50%);
-  animation: wm-pop-in 190ms cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
-}
-.wm-pop-card {
-  position: relative;
-  border-radius: 22px;
-  border: 2px solid color-mix(in srgb, var(--lvl) 45%, var(--line));
-  background: var(--card);
-  padding: 14px 14px 16px;
-  box-shadow: 0 6px 0 color-mix(in srgb, var(--lvl) 30%, var(--wm-edge-cream)), var(--shadow-float);
-}
-.wm-pop-arrow {
-  position: absolute;
-  top: -9px;
   width: 18px;
   height: 18px;
-  margin-left: -9px;
-  transform: rotate(45deg);
-  border-left: 2px solid color-mix(in srgb, var(--lvl) 45%, var(--line));
-  border-top: 2px solid color-mix(in srgb, var(--lvl) 45%, var(--line));
-  border-top-left-radius: 4px;
-  background: var(--card);
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 3px solid color-mix(in srgb, var(--lvl) 45%, var(--line-strong));
+  background: var(--paper);
+  color: #fff;
+  transform: translate(-50%, -50%);
 }
-@keyframes wm-pop-in { from { opacity: 0; transform: translateX(-50%) translateY(-8px) scale(0.92); } to { opacity: 1; transform: translateX(-50%); } }
+.it-dot.is-started { border-color: var(--lvl); background: linear-gradient(to top, var(--lvl) 50%, var(--paper) 50%); }
+.it-dot.is-learned, .it-dot.is-mastered, .it-dot.is-chest-done, .it-dot.is-gate-done {
+  width: 22px;
+  height: 22px;
+  border: 0;
+  background: var(--lvl);
+  box-shadow: 0 0 0 3px var(--paper);
+}
+.it-dot.is-mastered { background: var(--sun); color: #fff; }
+.it-dot.is-current {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--paper);
+  background: var(--lvl);
+  box-shadow: 0 0 0 2px var(--lvl), 0 4px 10px -2px var(--wm-shadow);
+}
+.it-dot-pulse { position: absolute; inset: -7px; border-radius: inherit; border: 2.5px solid var(--lvl); opacity: 0; animation: it-pulse 2s ease-out infinite; }
+@keyframes it-pulse { 0% { transform: scale(0.8); opacity: 0.75; } 80%, 100% { transform: scale(1.35); opacity: 0; } }
+/* the chest and the gate: rounded squares, like a ticket punch */
+.it-dot.is-chest, .it-dot.is-chest-done, .it-dot.is-gate, .it-dot.is-gate-done { border-radius: 7px; }
+.it-dot.is-chest { width: 20px; height: 20px; border-color: color-mix(in srgb, var(--sun) 75%, #8a5a2a); }
+.it-dot.is-chest-done { background: var(--sun); }
+.it-dot.is-gate { width: 20px; height: 20px; border-color: var(--lvl); background: var(--lvl-soft); }
+
+/* ---------- Cards ---------- */
+.it-card {
+  position: relative;
+  border-radius: 22px;
+  border: 2px solid var(--line);
+  background: var(--card);
+  padding: 14px 14px 16px;
+  box-shadow: 0 4px 0 var(--wm-edge-cream), 0 14px 24px -20px rgba(28, 37, 65, 0.35);
+}
+.it-card.is-learned, .it-card.is-mastered { border-color: color-mix(in srgb, var(--lvl) 22%, var(--line)); }
+.it-card.is-current {
+  z-index: 3;
+  border-color: var(--lvl);
+  background: linear-gradient(to bottom, var(--lvl-soft), var(--card) 75%);
+  box-shadow: 0 5px 0 color-mix(in srgb, var(--lvl) 45%, var(--wm-edge-cream)), 0 18px 30px -18px color-mix(in srgb, var(--lvl) 55%, transparent);
+}
+a.it-card { transition: transform 110ms ease-out; -webkit-tap-highlight-color: transparent; }
+a.it-card:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--wm-edge-cream); }
+a.it-card:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.it-eyebrow { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--lvl); }
+
+.it-chip {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 4px;
+  border-radius: 9999px;
+  border: 1.5px solid transparent;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+.it-chip.is-new { border: 1.5px dashed var(--line-strong); color: var(--ink-2); }
+.it-chip.is-started { border-color: color-mix(in srgb, var(--lvl) 40%, transparent); background: var(--lvl-soft); color: color-mix(in srgb, var(--lvl) 80%, var(--ink)); }
+.it-chip.is-learned, .it-chip.is-gate { background: var(--lvl); color: #fff; }
+.it-chip.is-mastered, .it-chip.is-ready { background: var(--sun); color: #3a2600; }
+.it-chip.is-passed { background: var(--ok); color: #fff; }
+
+.it-practice, .it-guide { border-radius: 14px; padding-block: 0.66rem; box-shadow: 0 4px 0 var(--g-edge); }
+.it-practice { min-width: 0; font-size: 1rem; }
+.it-guide { flex-shrink: 0; padding-inline: 0.9rem; font-size: 0.9rem; }
+.g-btn.is-ghost.it-guide { box-shadow: 0 4px 0 var(--g-edge), inset 0 0 0 2px var(--line); }
+.g-btn.is-soft {
+  color: color-mix(in srgb, var(--lvl) 82%, var(--ink));
+  background: var(--lvl-soft);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--lvl) 35%, var(--wm-edge-cream)), inset 0 0 0 2px color-mix(in srgb, var(--lvl) 28%, transparent);
+}
+.it-practice:active, .it-guide:active, .g-btn.is-soft:active { transform: translateY(4px); box-shadow: none; }
+
+/* checkpoint chest */
+.it-cp { padding: 12px 14px; border-style: dashed; border-color: color-mix(in srgb, var(--sun) 55%, var(--line)); }
+.it-cp.is-ready { border-style: solid; border-color: var(--sun); }
+.it-cp.is-cleared { border-style: solid; background: color-mix(in srgb, var(--sun) 10%, var(--card)); }
+.it-cp-art { display: flex; height: 56px; width: 56px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 16px; background: color-mix(in srgb, var(--sun) 18%, var(--card)); }
+.it-cp.is-ready .it-cp-art > svg { animation: it-wiggle 2.4s ease-in-out infinite; }
+@keyframes it-wiggle { 0%, 70%, 100% { transform: rotate(0); } 76% { transform: rotate(-8deg); } 84% { transform: rotate(7deg); } 92% { transform: rotate(-4deg); } }
+.wm-chest-glow { animation: it-twinkle 1.8s ease-in-out infinite; transform-origin: 24px 10px; }
+@keyframes it-twinkle { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+/* border control */
+.it-border { overflow: hidden; padding: 18px 14px 14px; border-color: color-mix(in srgb, var(--lvl) 45%, var(--line)); }
+.it-border::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 7px; background: repeating-linear-gradient(-45deg, var(--lvl) 0 10px, var(--card) 10px 20px); }
+.it-border.is-passed::before { background: repeating-linear-gradient(-45deg, var(--ok) 0 10px, var(--card) 10px 20px); }
+.it-border-art { display: flex; height: 60px; width: 60px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 16px; background: var(--lvl-soft); padding-top: 6px; }
+.wm-gate-bar { transition: transform 400ms ease; }
 
 /* ---------- Game buttons ---------- */
 .g-btn {
@@ -379,7 +266,7 @@ a.g-card:active, button.g-card:active { transform: translateY(4px); box-shadow: 
 .wm-stampslot.is-on { border: 0; background: var(--lvl); transform: rotate(-8deg); box-shadow: 0 2px 0 color-mix(in srgb, var(--lvl) 60%, #000); }
 
 /* ---------- Dogs ---------- */
-.wm-dogs { position: absolute; z-index: 12; pointer-events: none; }
+.wm-dogs { position: absolute; left: 6px; bottom: calc(100% - 5px); z-index: 12; pointer-events: none; }
 .wm-dogs-walk { display: flex; align-items: flex-end; will-change: transform; }
 .wm-dogs-walk.is-walking { transition: transform 1.5s cubic-bezier(0.45, 0.05, 0.35, 1); }
 .wm-dog { pointer-events: auto; animation: wm-bob 2.6s ease-in-out infinite; }
@@ -388,7 +275,7 @@ a.g-card:active, button.g-card:active { transform: translateY(4px); box-shadow: 
 .wm-dogs-walk.is-walking .wm-dog { animation: wm-hop 0.32s ease-in-out infinite alternate; }
 .wm-dogs-walk.is-walking .wm-dog:nth-child(2) { animation-delay: -0.1s; }
 .wm-dogs-walk.is-walking .wm-dog:nth-child(3) { animation-delay: -0.2s; }
-.wm-dogs-shadow { position: absolute; left: 6px; right: 6px; bottom: -3px; height: 10px; border-radius: 50%; background: radial-gradient(closest-side, var(--wm-shadow), transparent); }
+.wm-dogs-shadow { display: none; position: absolute; left: 6px; right: 6px; bottom: -3px; height: 10px; border-radius: 50%; background: radial-gradient(closest-side, var(--wm-shadow), transparent); }
 .wm-dogs-tag {
   position: absolute;
   left: 50%;
@@ -411,9 +298,8 @@ a.g-card:active, button.g-card:active { transform: translateY(4px); box-shadow: 
 .wm-dogs-walk.is-arriving { animation: wm-hop-in 520ms cubic-bezier(0.3, 1.3, 0.5, 1) both; }
 
 @media (prefers-reduced-motion: reduce) {
-  .wm-pulse, .wm-flash, .wm-chest-glow, .wm-dog, .wm-highlight,
-  .wm-node.is-current > svg, .wm-node.is-chest.is-ready > svg,
-  .wm-dogs-walk.is-walking .wm-dog, .wm-dogs-walk.is-arriving, .wm-pop { animation: none !important; }
-  .wm-dogs-walk.is-walking { transition: none; }
-  .wm-node, .g-btn, .g-pill, .wm-banner-card, .wm-gate-bar { transition: none; }
+  .it-dot-pulse, .wm-chest-glow, .wm-dog, .wm-highlight, .it-cp.is-ready .it-cp-art > svg,
+  .wm-dogs-walk.is-walking .wm-dog, .wm-dogs-walk.is-arriving { animation: none !important; }
+  .wm-dogs-walk.is-walking, .it-line.is-inked { transition: none; }
+  a.it-card, .g-btn, .g-pill, .wm-banner-card, .wm-gate-bar { transition: none; }
 }

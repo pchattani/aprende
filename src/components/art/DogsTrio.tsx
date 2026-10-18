@@ -2,7 +2,8 @@
  * Leo, Bonchita and Luna together in a small composed scene: celebrating with
  * bunting and a football, waving goodbye, or asleep against the suitcase.
  */
-import { DOG_ART, HI_DETAIL_PX } from './dogRegistry'
+import { DOG_ART, HI_DETAIL_PX, type DogId } from './dogRegistry'
+import { place } from './dogPortraits'
 import type { Mood } from './dogArt'
 import { PaintFilters } from './paint'
 import { useArtId, fluffPath, rng } from './brush'
@@ -34,6 +35,20 @@ function Suitcase({ x, y, id, hi }: { x: number; y: number; id: string; hi: bool
     </g>
   )
 }
+
+const SIZE: Record<DogId, number> = { leo: 116, bonchita: 104, luna: 112 }
+/** Left edge (scene x) for each dog so the visible gaps Leo–Bonchita and Bonchita–Luna are equal. */
+function spread(): Record<DogId, number> {
+  const order: DogId[] = ['leo', 'bonchita', 'luna']
+  const vis = order.map((d) => { const r = place(d); const k = SIZE[d] / 120; return { d, lo: r.x * k, w: r.w * k } })
+  const gap = 4
+  const total = vis.reduce((n, v) => n + v.w, 0) + gap * 2
+  let x = 150 - total / 2
+  const out = {} as Record<DogId, number>
+  for (const v of vis) { out[v.d] = x - v.lo; x += v.w + gap }
+  return out
+}
+const at = spread()
 
 export function DogsTrio({ size = 300, pose = 'celebrate', className = '' }: { size?: number; pose?: TrioPose; className?: string }) {
   const id = useArtId('trio')
@@ -114,9 +129,9 @@ export function DogsTrio({ size = 300, pose = 'celebrate', className = '' }: { s
           <circle cx="24" cy="8" r="3" fill="#f6d27a" />
         </g>
       )}
-      {dog(178, 58, 112, lean ? -10 : 0, <Luna id={`${id}u`} mood={mood} hi={hi} wave={pose === 'wave'} />)}
-      {dog(14, 56, 116, lean ? 9 : 0, <Leo id={`${id}l`} mood={mood} hi={hi} wave={pose === 'wave'} />)}
-      {dog(96, 70, 104, lean ? 4 : 0, <Bon id={`${id}b`} mood={pose === 'wave' ? 'curious' : mood} hi={hi} />)}
+      {dog(at.luna, 58, SIZE.luna, lean ? -10 : 0, <Luna id={`${id}u`} mood={mood} hi={hi} wave={pose === 'wave'} />)}
+      {dog(at.leo, 56, SIZE.leo, lean ? 9 : 0, <Leo id={`${id}l`} mood={mood} hi={hi} wave={pose === 'wave'} />)}
+      {dog(at.bonchita, 70, SIZE.bonchita, lean ? 4 : 0, <Bon id={`${id}b`} mood={pose === 'wave' ? 'curious' : mood} hi={hi} />)}
       {pose === 'celebrate' && (
         <g transform="translate(26 158)" filter={hi ? `url(#${id}-soft)` : undefined}>
           <circle cx="0" cy="0" r="10" fill="#fbf7ee" stroke="#2a2230" strokeWidth="0.9" />

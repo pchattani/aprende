@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useSettings } from '../store/settings'
 import { languagePack } from '@lang'
-import { speak, speakSequence, ttsSupported } from '../engine/speech'
+import { speak, speakSequence, ttsSupported, type SpeakOptions } from '../engine/speech'
 import { pack } from '../engine/loader'
 
 /** The words of a text for slow playback: split on spaces, or by the language's segmenter when there are none (Cantonese). */
@@ -10,15 +10,19 @@ export function slowParts(text: string): string[] {
   return spaced.length > 1 ? spaced : languagePack.words(text)
 }
 
-/** Speak target-language text with the user's voice settings. `slow` is half the chosen rate, one word at a time with a gap. */
+/**
+ * Speak target-language text with the user's voice settings. `slow` is half the chosen rate, one word at a time with a gap.
+ * `voice` overrides the voice or pitch for this line (a second speaker in a dialogue); `rateScale` nudges the rate.
+ */
 export function useSpeak() {
   const rate = useSettings((s) => s.ttsRate)
   const voiceURI = useSettings((s) => s.voiceURI)
   const sound = useSettings((s) => s.sound)
   const say = useCallback(
-    (text: string, slow = false) => {
+    (text: string, slow = false, voice: { voiceURI?: string; pitch?: number; rateScale?: number } = {}) => {
       if (!sound || !ttsSupported()) return Promise.resolve()
-      const opts = { lang: pack.tts.lang, rate: slow ? Math.max(0.1, rate * 0.5) : rate, voiceURI, preferred: pack.tts.preferredVoices }
+      const r = rate * (voice.rateScale ?? 1)
+      const opts: SpeakOptions = { lang: pack.tts.lang, rate: slow ? Math.max(0.1, r * 0.5) : r, voiceURI: voice.voiceURI ?? voiceURI, preferred: pack.tts.preferredVoices, pitch: voice.pitch }
       const parts = slow ? slowParts(text) : []
       return parts.length > 1 ? speakSequence(parts, opts) : speak(text, opts)
     },

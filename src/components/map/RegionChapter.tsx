@@ -32,15 +32,17 @@ export function RegionChapter({ chapter, level, region, flag, recommended, doneC
         {cover ? <StopArt stop={cover} level={level.id} progress={lessonTotal ? Math.max(0.2, doneCount / lessonTotal) : 0.2} quality="full" className="absolute inset-0 h-full w-full" /> : <div className="absolute inset-0" style={{ background: 'var(--lvl)' }} />}
         <span className="absolute left-3 top-3 z-[1] rounded-full bg-card/95 px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-ink shadow-card">Chapter {chapter}</span>
         <span className="absolute right-3 top-2.5 z-[1] flex h-9 w-9 items-center justify-center rounded-full bg-card/95 text-[1.3rem] shadow-card" aria-hidden="true">{flag}</span>
+        {/* a soft dark fade under the title so white text reads on light landmark art */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-black/55 via-black/25 to-transparent" aria-hidden="true" />
         <div className="absolute inset-x-0 bottom-0 z-[1] flex items-end gap-3 px-4 pb-3.5 text-white">
           <span className="wm-level-badge shrink-0">
             <span className="font-mono text-[9px] font-bold tracking-[0.18em] opacity-80">LEVEL</span>
             <span className="font-display text-[1.6rem] leading-none">{level.title}</span>
           </span>
           <div className="min-w-0 pb-0.5">
-            <p className="text-[0.7rem] font-extrabold uppercase tracking-[0.14em] text-white/85">{level.name}</p>
+            <p className="text-[0.7rem] font-extrabold uppercase tracking-[0.14em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]">{level.name}</p>
             <h2 className="text-[1.9rem] leading-none text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.35)]">{region?.name ?? level.title}</h2>
-            {region && <p className="font-hand text-xl leading-tight text-white/90">{region.es}</p>}
+            {region && <p className="font-hand text-xl leading-tight text-white/95 [text-shadow:0_1px_6px_rgba(0,0,0,0.45)]">{region.es}</p>}
           </div>
         </div>
       </div>

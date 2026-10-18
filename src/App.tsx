@@ -11,6 +11,7 @@ const Review = lazy(() => import('./pages/Review'))
 const Grammar = lazy(() => import('./pages/Grammar'))
 const Verbs = lazy(() => import('./pages/Verbs'))
 const Reader = lazy(() => import('./pages/Reader'))
+const Listen = lazy(() => import('./pages/Listen'))
 const Pronunciation = lazy(() => import('./pages/Pronunciation'))
 const Exam = lazy(() => import('./pages/Exam'))
 const Profile = lazy(() => import('./pages/Profile'))
@@ -80,7 +81,7 @@ function Shell() {
       <nav className={`fixed inset-x-0 bottom-0 z-10 border-t border-line bg-paper pb-[env(safe-area-inset-bottom)] transition ${immersive ? 'pointer-events-none translate-y-24 opacity-0' : ''}`} aria-label="Main" aria-hidden={immersive}>
         <ul className="mx-auto flex max-w-xl justify-around px-2">
           {tabs.map((t) => {
-            const active = t.to === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/lesson') : loc.pathname.startsWith(t.to)
+            const active = t.to === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/lesson') : loc.pathname.startsWith(t.to) || (t.to === '/reader' && loc.pathname.startsWith('/listen'))
             return (
               <li key={t.to} className="flex-1">
                 <NavLink to={t.to} className={`relative mx-auto flex flex-col items-center gap-0.5 pb-2 pt-2.5 text-[11px] font-semibold tracking-wide transition ${active ? 'text-ink' : 'text-ink-2'}`} aria-current={active ? 'page' : undefined}>
@@ -107,6 +108,7 @@ export default function App() {
         <Route path="review" element={<Review />} />
         <Route path="reader" element={<Reader />} />
         <Route path="reader/:id" element={<Reader />} />
+        <Route path="listen/:id" element={<Listen />} />
         <Route path="study" element={<Study />} />
         <Route path="grammar" element={<Grammar />} />
         <Route path="grammar/:id" element={<Grammar />} />

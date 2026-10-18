@@ -107,3 +107,23 @@ export const IconGlobe = (p: SVGProps<SVGSVGElement>) => (
 export const IconPassport = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}><rect x="5" y="2.5" width="14" height="19" rx="1.8" /><circle cx="12" cy="10" r="3.4" /><path d="M8.6 10h6.8M12 6.6c1 1 1.4 2.1 1.4 3.4s-.4 2.4-1.4 3.4M9 17h6" /></svg>
 )
+/** Listening practice. */
+export const IconHeadphones = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M3 18v-6a9 9 0 0 1 18 0v6" /><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" /></svg>
+)
+export const IconPlay = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor" /></svg>
+)
+export const IconPause = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" /><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" /></svg>
+)
+export const IconSkipBack = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M19 20 9 12l10-8v16z" /><path d="M5 19V5" /></svg>
+)
+export const IconSkipForward = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="m5 4 10 8-10 8V4z" /><path d="M19 5v14" /></svg>
+)
+/** Play the current line again. */
+export const IconReplay = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M3 12a9 9 0 1 0 3-6.7L3 8" /><path d="M3 3v5h5" /></svg>
+)

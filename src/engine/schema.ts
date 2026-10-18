@@ -78,7 +78,7 @@ export const UiSchema = z.object({
   feedback: z.object({ correct: z.string(), almost: z.string(), goalDone: z.string() }),
   stampEarned: z.string(),
   spicyName: z.string(),
-  games: z.object({ name: z.string(), memory: z.string(), rapid: z.string(), win: z.string() }),
+  games: z.object({ name: z.string(), memory: z.string(), rapid: z.string(), crossword: z.string(), listen: z.string(), soundMatch: z.string(), win: z.string() }),
   dogsPage: z.string(),
   quizGreat: z.string(),
   whatDoesItMean: z.string(),

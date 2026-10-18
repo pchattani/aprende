@@ -28,11 +28,6 @@ const LAYERS: Record<PortraitDog, { body: string; head: string; earL: string; ea
   bonchita: { body: bonBody, head: bonHead, earL: bonEarL, earR: bonEarR },
   luna: { body: lunaBody, head: lunaHead, earL: lunaEarL, earR: lunaEarR },
 }
-const FUR: Record<PortraitDog, { fur: string; dark: string }> = {
-  leo: { fur: '#e3b56c', dark: '#9c6a32' },
-  bonchita: { fur: '#3a3436', dark: '#121011' },
-  luna: { fur: '#f3e4c8', dark: '#bf9c68' },
-}
 
 type Pt = [number, number]
 interface RigMeta {
@@ -52,29 +47,43 @@ export interface DogRigProps {
   bodyOverlay?: ReactNode
   /** Drawn on the head, moving with it (hats, glasses, things in the mouth). */
   headOverlay?: ReactNode
-  /** Drawn in front of everything (things held in the paws). */
+  /** Drawn in front of everything (items standing beside the dog). */
   frontOverlay?: ReactNode
-  /** Paws are drawn up holding something (an item in the paw slot). */
-  holding?: boolean
 }
 
 const o = (x: number, y: number): CSSProperties => ({ transformOrigin: `${x.toFixed(2)}px ${y.toFixed(2)}px` })
 
-/** A front paw: a round furry mitten with toe lines and a soft highlight, in the dog's coat colour. */
-function Paw({ x, y, r, fur, dark, flip = false }: { x: number; y: number; r: number; fur: string; dark: string; flip?: boolean }) {
-  // the leg rises from below the bust; the paw is a rounded mitten at its top
-  const leg = `M${-r * 0.82} ${r * 2.6} C${-r * 0.9} ${r * 1.4} ${-r * 1.05} ${r * 0.5} ${-r * 0.98} ${-r * 0.1} C${-r * 0.92} ${-r * 0.82} ${-r * 0.45} ${-r * 1.08} 0 ${-r * 1.08} C${r * 0.45} ${-r * 1.08} ${r * 0.92} ${-r * 0.82} ${r * 0.98} ${-r * 0.1} C${r * 1.05} ${r * 0.5} ${r * 0.9} ${r * 1.4} ${r * 0.82} ${r * 2.6} Z`
+const CONFETTI = ['#e8553e', '#2f6fc0', '#f2b530', '#3f9a5f', '#e07aa6', '#7a55c2']
+/** A little burst of confetti above the dog (celebrations). */
+function Confetti({ cx, top, w }: { cx: number; top: number; w: number }) {
+  const bits = Array.from({ length: 18 }, (_, i) => {
+    const a = (i / 18) * Math.PI * 2
+    const dx = Math.cos(a) * w * (0.45 + (i % 3) * 0.12)
+    const dy = -Math.abs(Math.sin(a)) * w * 0.35 - 6
+    return { dx, dy, c: CONFETTI[i % CONFETTI.length]!, r: (i * 47) % 180, d: (i % 5) * 0.08, round: i % 3 === 0 }
+  })
   return (
-    <g transform={`translate(${x} ${y}) scale(${flip ? -1 : 1} 1)`}>
-      <path d={leg} fill={fur} stroke={dark} strokeWidth={r * 0.1} strokeLinejoin="round" />
-      <path d={`M${-r * 0.36} ${-r * 1.02} q${-r * 0.06} ${r * 0.3} ${r * 0.02} ${r * 0.46} M${r * 0.12} ${-r * 1.06} q${-r * 0.04} ${r * 0.3} ${r * 0.02} ${r * 0.48}`} stroke={dark} strokeWidth={r * 0.1} fill="none" strokeLinecap="round" opacity="0.6" />
-      <path d={`M${-r * 0.55} ${-r * 0.55} Q${-r * 0.1} ${-r * 0.92} ${r * 0.5} ${-r * 0.7}`} stroke="#fff" strokeWidth={r * 0.14} fill="none" opacity="0.28" strokeLinecap="round" />
-      <path d={`M${-r * 0.7} ${r * 0.6} q${r * 0.1} ${r * 0.5} 0 ${r * 1.1} M${r * 0.55} ${r * 0.4} q${r * 0.12} ${r * 0.5} ${r * 0.02} ${r * 1.2}`} stroke={dark} strokeWidth={r * 0.07} fill="none" opacity="0.35" strokeLinecap="round" />
+    <g className="rg-confetti" aria-hidden="true">
+      {bits.map((b, i) => (
+        <g key={i} style={{ ['--dx' as string]: `${b.dx.toFixed(1)}px`, ['--dy' as string]: `${b.dy.toFixed(1)}px`, animationDelay: `${b.d}s`, transformOrigin: `${cx}px ${top + 10}px` }} className="rg-bit">
+          {b.round ? <circle cx={cx} cy={top + 10} r="2.6" fill={b.c} /> : <rect x={cx - 2.4} y={top + 8.6} width="4.8" height="2.8" rx="0.6" fill={b.c} transform={`rotate(${b.r} ${cx} ${top + 10})`} />}
+        </g>
+      ))}
     </g>
   )
 }
 
-export function DogRig({ dog, act, bodyOverlay, headOverlay, frontOverlay, holding = false }: DogRigProps) {
+/** A wave greeting drawn beside the dog: motion lines and a sparkle. */
+function Hello({ x, y }: { x: number; y: number }) {
+  return (
+    <g className="rg-hello" aria-hidden="true" style={{ transformOrigin: `${x}px ${y + 6}px` }}>
+      <path d={`M${x} ${y} q4 -4 8 0 M${x + 2} ${y + 5} q4 -4 8 0`} stroke="#2f6fc0" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+      <path d={`M${x + 9} ${y - 7} l1 2.4 2.4 1 -2.4 1 -1 2.4 -1 -2.4 -2.4 -1 2.4 -1z`} fill="#f2b530" />
+    </g>
+  )
+}
+
+export function DogRig({ dog, act, bodyOverlay, headOverlay, frontOverlay }: DogRigProps) {
   const m = (RIG as unknown as Record<string, RigMeta>)[dog]!
   const r = place(dog)
   const L = LAYERS[dog]
@@ -89,9 +98,6 @@ export function DogRig({ dog, act, bodyOverlay, headOverlay, frontOverlay, holdi
   const mouth = m.mouth.map(at)
   const mw = Math.abs(mouth[2]![0] - mouth[0]![0])
   const [mx, my] = mouth[1]!
-  const { fur, dark } = FUR[dog]
-  const pawR = r.w * 0.075
-  const pawY = bottom - r.h * 0.12
   const img = (href: string) => <image href={href} x={r.x} y={r.y} width={r.w} height={r.h} preserveAspectRatio="none" />
   return (
     <svg x="0" y="0" width="120" height="120" viewBox="0 0 120 120" overflow="visible" className={`rg rg-${act}`} style={{ ['--rg-delay' as string]: delay }}>
@@ -133,15 +139,9 @@ export function DogRig({ dog, act, bodyOverlay, headOverlay, frontOverlay, holdi
           </g>
           {headOverlay}
         </g>
-        <g className={`rg-paws${holding ? ' rg-holding' : ''}`}>
-          <g className="rg-pawL" style={o(cx - r.w * 0.16, bottom + pawR * 2)}>
-            <Paw x={cx - r.w * 0.16} y={pawY} r={pawR} fur={fur} dark={dark} />
-          </g>
-          <g className="rg-pawR" style={o(cx + r.w * 0.16, bottom + pawR * 2)}>
-            <Paw x={cx + r.w * 0.16} y={pawY} r={pawR} fur={fur} dark={dark} flip />
-          </g>
-        </g>
         {frontOverlay}
+        {act === 'cheer' && <Confetti cx={cx} top={r.y} w={r.w} />}
+        {act === 'wave' && <Hello x={r.x + r.w * 0.92} y={r.y + r.h * 0.12} />}
         {act === 'sleepy' && (
           <text className="rg-zzz" x={r.x + r.w * 0.85} y={r.y + 4} fontSize="9" fontWeight="800" fill="#5b6aa8">
             z<tspan dx="1" dy="-4" fontSize="7">z</tspan>

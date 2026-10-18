@@ -38,6 +38,9 @@ export interface Settings {
   /** Show romanisation (Jyutping) above characters. */
   romanization: boolean
   setRomanization: (v: boolean) => void
+  /** Show the transcript in listening practice (off: ears only). */
+  listenTranscript: boolean
+  setListenTranscript: (v: boolean) => void
 }
 
 export const useSettings = create<Settings>()(
@@ -53,6 +56,7 @@ export const useSettings = create<Settings>()(
       dailyMinutes: 10,
       variety: '',
       romanization: true,
+      listenTranscript: false,
       sessionLength: 'normal',
       autoPin: true,
       spicy: false,
@@ -69,6 +73,7 @@ export const useSettings = create<Settings>()(
       setDailyMinutes: (dailyMinutes) => set({ dailyMinutes }),
       setVariety: (variety) => set({ variety }),
       setRomanization: (romanization) => set({ romanization }),
+      setListenTranscript: (listenTranscript) => set({ listenTranscript }),
     }),
     {
       name: SETTINGS_KEY,

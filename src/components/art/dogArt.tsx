@@ -15,19 +15,18 @@ export interface DogArtProps {
   mood: Mood
   /** Full detail; the rig looks the same at every size. */
   hi: boolean
-  /** Raise a paw and wave. */
+  /** Greet with a wave. */
   wave?: boolean
   /** What the dog is doing; defaults from the mood. */
   act?: Act
   bodyOverlay?: ReactNode
   headOverlay?: ReactNode
   frontOverlay?: ReactNode
-  holding?: boolean
 }
 
 type Props = DogArtProps & { dog: PortraitDog }
-function Art({ dog, mood, wave, act, bodyOverlay, headOverlay, frontOverlay, holding }: Props): ReactNode {
-  return <DogRig dog={dog} act={act ?? (wave ? 'wave' : MOOD_ACT[mood])} bodyOverlay={bodyOverlay} headOverlay={headOverlay} frontOverlay={frontOverlay} holding={holding} />
+function Art({ dog, mood, wave, act, bodyOverlay, headOverlay, frontOverlay }: Props): ReactNode {
+  return <DogRig dog={dog} act={act ?? (wave ? 'wave' : MOOD_ACT[mood])} bodyOverlay={bodyOverlay} headOverlay={headOverlay} frontOverlay={frontOverlay} />
 }
 
 export function LeoArt(p: DogArtProps): ReactNode {
