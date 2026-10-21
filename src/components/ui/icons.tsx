@@ -57,6 +57,9 @@ export const IconArrowLeft = (p: SVGProps<SVGSVGElement>) => (
 export const IconArrowUp = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}><path d="M12 19V5M5 12l7-7 7 7" /></svg>
 )
+export const IconGamepad = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M6 8h12a4 4 0 0 1 4 4v1.5a3.5 3.5 0 0 1-6.3 2.1L14.5 14h-5l-1.2 1.6A3.5 3.5 0 0 1 2 13.5V12a4 4 0 0 1 4-4zM7.5 10.5v3M6 12h3" /><circle cx="15.5" cy="11.2" r=".6" fill="currentColor" /><circle cx="17.5" cy="13" r=".6" fill="currentColor" /></svg>
+)
 export const IconTrophy = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}><path d="M8 21h8M12 17v4" /><path d="M7 4h10v5a5 5 0 0 1-10 0z" /><path d="M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3" /></svg>
 )

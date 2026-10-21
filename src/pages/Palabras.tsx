@@ -20,6 +20,8 @@ import { Crossword } from './palabras/Crossword'
 import { Listen } from './palabras/Listen'
 import { SoundMatch } from './palabras/SoundMatch'
 import { TooFew, NoAudioNotice } from './palabras/shared'
+import { GAMES, type GameSection } from './games/catalog'
+import { GAMES_BEST_KEY, type GameBest } from './games/util'
 import { BEST_KEY, LISTEN_LABEL, useAudio, updateBest, addMinutes, formatTime, type Best } from './palabras/util'
 
 type Game = 'memory' | 'rapid' | 'crossword' | 'listenPick' | 'listenType' | 'sound'
@@ -29,6 +31,7 @@ const WANT: Record<Game, number> = { memory: 8, rapid: 30, crossword: 16, listen
 export default function Palabras() {
   const nav = useNavigate()
   const best = useKvValue<Best>(BEST_KEY, {})
+  const gamesBest = useKvValue<Record<string, GameBest>>(GAMES_BEST_KEY, {})
   const audio = useAudio()
   const [game, setGame] = useState<Game | undefined>()
   const [round, setRound] = useState(0)
@@ -73,7 +76,8 @@ export default function Palabras() {
   const pts = (n?: number) => (n ? `Best: ${n} points` : undefined)
   return (
     <div className="animate-rise pb-6">
-      <PageHeader title={ui.games.name} subtitle="Games with the words you are learning. Every answer counts as a review." />
+      <PageHeader title="Mini games" subtitle="Games with the words and verbs you are learning. Every answer counts as a review." />
+      <SectionTitle>Words</SectionTitle>
       <div className="grid gap-3">
         <ModeCard icon="🎴" tint="bg-brand-gradient" title={ui.games.memory} text={`Flip tiles and match each ${LANGUAGE} word with its meaning. 8 pairs against the clock.`} best={best?.memoryMs ? `Best: ${(best.memoryMs / 1000).toFixed(1)} s` : undefined} onClick={() => void start('memory')} />
         <ModeCard icon="⚡" tint="bg-sunset-gradient" title={ui.games.rapid} text="60 seconds, as many meanings as you can. Keep a streak for a multiplier." best={pts(best?.rapid)} onClick={() => void start('rapid')} />
@@ -85,6 +89,26 @@ export default function Palabras() {
           best={best?.crosswords ? [best.crosswordMs ? `Best: ${formatTime(best.crosswordMs)}` : '', `${best.crosswords} solved`].filter(Boolean).join(' · ') : undefined}
           onClick={() => void start('crossword')}
         />
+        <CatalogCards section="words" best={gamesBest} />
+      </div>
+      {GAMES.some((g) => g.available && g.section === 'verbs') && (
+        <>
+          <SectionTitle>Verbs</SectionTitle>
+          <div className="grid gap-3">
+            <CatalogCards section="verbs" best={gamesBest} />
+          </div>
+        </>
+      )}
+      {GAMES.some((g) => g.available && g.section === 'characters') && (
+        <>
+          <SectionTitle>Characters and tones</SectionTitle>
+          <div className="grid gap-3">
+            <CatalogCards section="characters" best={gamesBest} />
+          </div>
+        </>
+      )}
+      <SectionTitle>Listening</SectionTitle>
+      <div className="grid gap-3">
         <section className="card" aria-labelledby="mode-listen">
           <div className="flex items-center gap-4">
             <ModeIcon icon="🎧" tint="bg-coral-500" />
@@ -127,6 +151,24 @@ export default function Palabras() {
       {count === 0 && <p className="mt-3 text-center text-sm text-muted">Finish a lesson first so there are words to play with.</p>}
       <p className="mt-4 text-center text-xs"><button type="button" className="font-bold text-muted underline" onClick={() => nav('/review')}>Back to Review</button></p>
     </div>
+  )
+}
+
+function SectionTitle({ children }: { children: ReactNode }) {
+  return <h2 className="eyebrow mb-2 mt-6 first-of-type:mt-0">{children}</h2>
+}
+
+/** The catalog's games for one section, each opening /games/<id>. */
+function CatalogCards({ section, best }: { section: GameSection; best?: Record<string, GameBest> }) {
+  const nav = useNavigate()
+  return (
+    <>
+      {GAMES.filter((g) => g.available && g.section === section).map((g) => {
+        const b = best?.[g.id]
+        const label = b ? [b.score !== undefined ? `Best: ${b.score}` : '', b.ms !== undefined ? `Best: ${formatTime(b.ms)}` : '', b.plays ? `${b.plays} played` : ''].filter(Boolean).join(' · ') : undefined
+        return <ModeCard key={g.id} icon={g.icon} tint={g.tint} title={g.title} text={g.blurb} best={label} onClick={() => nav(`/games/${g.id}`)} />
+      })}
+    </>
   )
 }
 

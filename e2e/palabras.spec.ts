@@ -28,8 +28,8 @@ async function hooks(page: Page): Promise<Hooks> {
 
 /** Open Palabras with a demo learner's words. */
 async function openWithWords(page: Page) {
-  await page.goto('./#/palabras')
-  await expect(page.getByRole('heading', { name: 'Palabras' })).toBeVisible()
+  await page.goto('./#/games')
+  await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
   await page.waitForFunction(() => Boolean((window as unknown as Win).__pawsportDemo), null, { timeout: 20_000 })
   await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false }))
 }
@@ -151,8 +151,8 @@ test('listening modes explain when the device cannot speak', async ({ page }) =>
     delete (Object.getPrototypeOf(window) as Record<string, unknown>).speechSynthesis
     delete (Window.prototype as unknown as Record<string, unknown>).speechSynthesis
   })
-  await page.goto('./#/palabras')
-  await expect(page.getByRole('heading', { name: 'Palabras' })).toBeVisible()
+  await page.goto('./#/games')
+  await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
   await expect(page.getByText('Listening needs speech audio on this device').first()).toBeVisible()
   await expect(page.getByRole('button', { name: /Pick the meaning/ })).toHaveCount(0)
   await expect(page.getByRole('button', { name: /Crucigrama/ })).toBeVisible()

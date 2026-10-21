@@ -1,8 +1,8 @@
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef } from 'react'
-import { Routes, Route, NavLink, Outlet, useLocation } from 'react-router'
+import { Routes, Route, NavLink, Navigate, Outlet, useLocation } from 'react-router'
 import { useSettings, applyTheme } from './store/settings'
 import { useSession } from './store/session'
-import { IconRoute, IconPostcard, IconBook, IconVerb, IconChart } from './components/ui/icons'
+import { IconRoute, IconPostcard, IconBook, IconVerb, IconChart, IconGamepad } from './components/ui/icons'
 import { ErrorBoundary } from './components/ErrorBoundary'
 
 const Course = lazy(() => import('./pages/Course'))
@@ -23,6 +23,7 @@ const Passport = lazy(() => import('./pages/Passport'))
 const RegionQuiz = lazy(() => import('./pages/RegionQuiz'))
 const Checkpoint = lazy(() => import('./pages/Checkpoint'))
 const Palabras = lazy(() => import('./pages/Palabras'))
+const GamePage = lazy(() => import('./pages/games/GamePage'))
 const Perros = lazy(() => import('./pages/Perros'))
 const Classifiers = lazy(() => import('./pages/Classifiers'))
 const Insights = lazy(() => import('./pages/Insights'))
@@ -65,6 +66,7 @@ function Shell() {
   const tabs = [
     { to: '/', label: 'Journey', icon: IconRoute },
     { to: '/review', label: 'Review', icon: IconPostcard },
+    { to: '/games', label: 'Games', icon: IconGamepad },
     { to: '/reader', label: 'Read', icon: IconBook },
     { to: '/study', label: 'Tools', icon: IconVerb },
     { to: '/insights', label: 'Insights', icon: IconChart },
@@ -118,7 +120,9 @@ export default function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="settings" element={<Settings />} />
         <Route path="passport" element={<Passport />} />
-        <Route path="palabras" element={<Palabras />} />
+        <Route path="games" element={<Palabras />} />
+        <Route path="games/:id" element={<GamePage />} />
+        <Route path="palabras" element={<Navigate to="/games" replace />} />
         <Route path="perros" element={<Perros />} />
         <Route path="classifiers" element={<Classifiers />} />
         <Route path="insights" element={<Insights />} />

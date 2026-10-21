@@ -59,7 +59,7 @@ describe('painted postcards', () => {
         expect(Boolean(container.querySelector('.pw-sketch'))).toBe(progress < 1)
         unmount()
       }
-  })
+  }, 20_000) // hundreds of painted scenes: allow for a busy machine
 
   it('paints every accent', () => {
     for (const accent of ACCENTS) {

@@ -146,8 +146,8 @@ test('region quiz, vocabulary games and the dogs page load', async ({ page }) =>
   await page.getByRole('button', { name: /Leo says hello/ }).first().click()
   await page.screenshot({ path: 'e2e/__screenshots__/perros.png' })
 
-  await page.goto('./#/palabras')
-  await expect(page.getByRole('heading', { name: 'Palabras' })).toBeVisible()
+  await page.goto('./#/games')
+  await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
   await page.getByRole('button', { name: /Memoria/ }).click()
   await expect(page.getByText(/Not enough words yet|pairs ·/)).toBeVisible()
 })

@@ -194,7 +194,7 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
           <Button className="mt-4 w-full" disabled={building || (all?.length ?? 0) === 0} onClick={() => void start('practice')}>
             {building ? 'Building session…' : 'Start practice'}
           </Button>
-          <Button variant="ghost" className="mt-2 w-full" onClick={() => nav('/palabras')}>Play with your words 🎴</Button>
+          <Button variant="ghost" className="mt-2 w-full" onClick={() => nav('/games')}>Play with your words 🎴</Button>
         </div>
       )}
     </div>
