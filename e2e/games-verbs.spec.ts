@@ -98,6 +98,8 @@ test('verb slots: spin, type the form, hit the jackpot, finish ten spins', async
   await page.getByRole('button', { name: 'See results' }).click()
   await expect(page.getByText('9 of 10 right')).toBeVisible()
   await expect(page.getByRole('list', { name: 'Your spins' }).getByRole('listitem')).toHaveCount(10)
+  // jackpots at spins 3, 7 and 10 (three in a row each time) go into the real purse
+  await expect(page.getByText(/^\+75 \S+ added to your purse$/)).toBeVisible()
   await shot(page, 'slots-done')
   await page.getByRole('button', { name: 'Done' }).click()
   await expect(page.getByRole('button', { name: /^Verb slots/ })).toContainText(/Best: \d+ · 1 played/)

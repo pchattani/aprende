@@ -21,6 +21,8 @@ import { Button, SpeakerButton } from '../../components/ui/basics'
 import { Confetti } from '../../components/ui/Confetti'
 import { Leo, Bonchita } from '../../components/ui/Dogs'
 import { calmMotion } from '../../components/game/motion'
+import { awardCoins } from '../../db/progress'
+import { coinsLabel } from '../../engine/economy'
 
 const SPINS = 10
 const SECONDS = 15
@@ -141,6 +143,8 @@ function Slots({ data, onDone, onAgain }: { data: VerbRound; onDone: () => void;
     setResults((rs) => [...rs, { p, g, points, jackpot, timeout }])
     setPhase('reveal')
     if (jackpot) {
+      // jackpot bonuses go into the real purse (spendable in the shop), not just the round's score
+      void awardCoins(JACKPOT_BONUS, `game:slots:jackpot:${Date.now()}`)
       setJackpots((j) => j + 1)
       playSound('combo')
       buzz('combo')
@@ -197,6 +201,11 @@ function Slots({ data, onDone, onAgain }: { data: VerbRound; onDone: () => void;
             {jackpots ? `${jackpots} jackpot${jackpots === 1 ? '' : 's'} · ` : ''}
             {newBest ? 'New best!' : prevBest ? `Best: ${prevBest}` : 'coins'}
           </p>
+          {jackpots > 0 && (
+            <p className="mt-2 inline-block rounded-full bg-[color-mix(in_srgb,var(--sun)_24%,var(--card))] px-3 py-1 text-sm font-bold">
+              +{coinsLabel(jackpots * JACKPOT_BONUS)} added to your purse
+            </p>
+          )}
           <ol className="mt-4 grid gap-1 text-left text-sm" aria-label="Your spins">
             {results.map((r, k) => (
               <li key={k} className="flex items-baseline gap-2 border-t border-line pt-1">
@@ -281,7 +290,7 @@ function Slots({ data, onDone, onAgain }: { data: VerbRound; onDone: () => void;
             ) : null}
           </p>
         )}
-        {showJackpot && <p className="sr-only">Jackpot! Three in a row: {JACKPOT_BONUS} bonus coins.</p>}
+        {showJackpot && <p className="sr-only">Jackpot! Three in a row: {coinsLabel(JACKPOT_BONUS)} added to your purse.</p>}
       </div>
 
       {phase === 'ask' && p && (
