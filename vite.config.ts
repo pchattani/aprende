@@ -8,15 +8,19 @@ import { SITE_BASE } from './scripts/site-base.mjs'
 
 /**
  * Turns any imported .yaml/.yml file into an ES module exporting the parsed data.
- * `unit.yaml?dialogues` exports only a unit's id and dialogues (the listening list needs no lessons).
+ * `unit.yaml?dialogues` exports only a unit's id and dialogues (the listening list needs no lessons);
+ * `unit.yaml?vocab` only its id and each lesson's id and vocab (the taught-words index, engine/taughtData.ts;
+ * no lessons for a course without `features.taughtOnly`, which never loads it, so its unused chunk stays tiny).
  */
-function yamlPlugin(): Plugin {
+function yamlPlugin(taughtOnly: boolean): Plugin {
   return {
     name: 'aprende:yaml',
     transform(code, id) {
       if (!/\.ya?ml(\?.*)?$/.test(id)) return null
       const data = loadYaml(code, { filename: id }) as Record<string, unknown> | null
-      const out = /\?(?:.*&)?dialogues(?:&|$)/.test(id) ? { id: data?.id, dialogues: data?.dialogues ?? [] } : data
+      const query = (name: string) => new RegExp(`\\?(?:.*&)?${name}(?:&|$)`).test(id)
+      const lessons = (data?.lessons ?? []) as { id?: string; vocab?: string[] }[]
+      const out = query('dialogues') ? { id: data?.id, dialogues: data?.dialogues ?? [] } : query('vocab') ? { id: data?.id, lessons: taughtOnly ? lessons.map((l) => ({ id: l.id, vocab: l.vocab ?? [] })) : [] } : data
       return { code: `export default ${JSON.stringify(out)};`, map: null }
     },
   }
@@ -27,7 +31,7 @@ function yamlPlugin(): Plugin {
 //   VITE_LANG=yue npm run build   → dist/cantonese, served at /aprende/cantonese/
 // Every course lives in its own folder; the site root /aprende/ is the Pawsport hub (vite.hub.config.ts).
 const LANG = process.env.VITE_LANG ?? 'es'
-type PackYaml = { id: string; name: string; slug?: string; locale: string }
+type PackYaml = { id: string; name: string; slug?: string; locale: string; features?: { taughtOnly?: boolean } }
 type UiYaml = { appName: string; tagline: string }
 const readYaml = <T,>(p: string): T => loadYaml(readFileSync(p, 'utf8')) as T
 if (!existsSync(`content/${LANG}/pack.yaml`)) throw new Error(`Unknown course VITE_LANG=${LANG}: content/${LANG}/pack.yaml is missing`)
@@ -67,7 +71,7 @@ export default defineConfig({
   base: BASE,
   define: { __SITE_BASE__: JSON.stringify(SITE_BASE) },
   plugins: [
-    yamlPlugin(),
+    yamlPlugin(Boolean(PACK.features?.taughtOnly)),
     contentGlobPlugin(),
     htmlPlugin(),
     react(),

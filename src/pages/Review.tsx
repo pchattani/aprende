@@ -6,7 +6,7 @@ import type { Lesson, LevelId } from '../engine/schema'
 import { db } from '../db'
 import { dueCards, bumpDay, recordPinnedAnswer, unpin } from '../db/progress'
 import { generateReview, generatePinned, exchangeAsSentence, textAsSentence } from '../engine/generate'
-import { vocab, vocabUpTo, loadLesson, grammar, LEVEL_ORDER_LIST, levelOf } from '../engine/loader'
+import { vocab, vocabUpTo, loadLesson, grammar, LEVEL_ORDER_LIST, levelOf, pack } from '../engine/loader'
 import { IRREGULAR } from '@lang/verbs'
 import { sttSupported } from '../engine/speech'
 import { useSettings } from '../store/settings'
@@ -41,7 +41,7 @@ function sentenceLookup(lessons: Map<string, Lesson>) {
     const kind = parts[0]
     if (kind === 'x') {
       const x = lesson.exchanges[n - 1]
-      return x ? { s: exchangeAsSentence(x), lesson } : undefined
+      return x ? { s: exchangeAsSentence(x), lesson, exchange: x } : undefined
     }
     if (kind === 't') {
       const t = lesson.texts[n - 1]
@@ -81,7 +81,11 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
   const [summary, setSummary] = useState<LessonResult | undefined>()
   const [building, setBuilding] = useState(false)
   const speech = speaking !== 'off' && sttSupported()
-  const ctxFor = (maxLevel: LevelId, cards: CardRow[]) => ({ vocab, pool: vocabUpTo(maxLevel), verbs: IRREGULAR, stageOf: (id: string) => cards.find((c) => c.id === id)?.stage, speech, speaking: speaking === 'lots' ? ('lots' as const) : ('some' as const), lookup: lookupForm })
+  const ctxFor = async (maxLevel: LevelId, cards: CardRow[]) => ({
+    vocab, pool: vocabUpTo(maxLevel), verbs: IRREGULAR, stageOf: (id: string) => cards.find((c) => c.id === id)?.stage, speech, speaking: speaking === 'lots' ? ('lots' as const) : ('some' as const), lookup: lookupForm,
+    // Beginner courses (features.taughtOnly): what the furthest lesson started has taught.
+    taught: pack.features.taughtOnly ? (await import('../engine/taughtData')).taughtGateFor([...(all ?? []), ...cards].map((c) => c.lessonId)) : undefined,
+  })
   const notSpicy = (c: CardRow) => spicy || !c.id.startsWith('p.')
 
   const start = async (mode: 'due' | 'practice') => {
@@ -99,7 +103,7 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
     const ex = generateReview(
       cards.filter((c) => c.kind !== 'grammar').map((c) => ({ id: c.id, kind: c.kind, stage: c.stage })),
       { word: (id) => vocab.get(id), sentence: sentenceLookup(lessons) },
-      ctxFor(maxLevel, cards),
+      await ctxFor(maxLevel, cards),
     )
     setBuilding(false)
     setSessionMode('review')
@@ -113,7 +117,7 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
       return LEVEL_ORDER_LIST.indexOf(l) > LEVEL_ORDER_LIST.indexOf(m) ? l : m
     }, 'a1')
     const cards = await db.cards.bulkGet(rows.map((p) => p.id))
-    const ex = generatePinned(rows.slice(0, 12), { word: (id) => vocab.get(id), sentence: sentenceLookup(lessons) }, ctxFor(maxLevel, cards.filter((c): c is CardRow => Boolean(c))))
+    const ex = generatePinned(rows.slice(0, 12), { word: (id) => vocab.get(id), sentence: sentenceLookup(lessons) }, await ctxFor(maxLevel, cards.filter((c): c is CardRow => Boolean(c))))
     setBuilding(false)
     setSessionMode('pinned')
     setExercises(ex)

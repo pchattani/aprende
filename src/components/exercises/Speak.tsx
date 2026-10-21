@@ -68,10 +68,17 @@ export function Speak({ exercise, value, onChange, onSubmit, checked }: Exercise
   const variant = exercise.variant
   return (
     <div>
-      <Instruction>{variant === 'reply' ? 'Answer aloud' : variant === 'repeat' ? 'Listen and repeat' : 'Say this sentence'}</Instruction>
-      <DogSays seed={exercise.prompt} aside={<span className="flex flex-col gap-2"><SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" autoPlay={variant !== undefined} /><SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" slow /></span>}>
-        <Prompt lang="es">{exercise.prompt}</Prompt>
-      </DogSays>
+      <Instruction>{exercise.askEn ? `Answer aloud in ${LANGUAGE}` : variant === 'reply' ? 'Answer aloud' : variant === 'repeat' ? 'Listen and repeat' : 'Say this sentence'}</Instruction>
+      {exercise.askEn ? (
+        // an English question (its wording is not taught yet): nothing to play
+        <DogSays seed={exercise.prompt}>
+          <Prompt lang="en">{exercise.prompt}</Prompt>
+        </DogSays>
+      ) : (
+        <DogSays seed={exercise.prompt} aside={<span className="flex flex-col gap-2"><SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" autoPlay={variant !== undefined} /><SpeakerButton text={exercise.audio ?? exercise.prompt} size="sm" slow /></span>}>
+          <Prompt lang="es">{exercise.prompt}</Prompt>
+        </DogSays>
+      )}
       {variant === 'reply' ? (
         <div className="mb-6">
           {exercise.hint && <Chip tone="sky">{exercise.hint}</Chip>}

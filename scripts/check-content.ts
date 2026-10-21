@@ -26,6 +26,7 @@ const { languagePack } = (await import(`../src/lang/${LANG}/index.ts`)) as {
 import { SPICY_BANNED } from './spicy-banned'
 import { collectWriteChars, strokesPath, writeCharIssues, type StrokeEntry } from './strokes-lib.mjs'
 import { PICTOGRAMS } from '../src/engine/pictograms'
+import { taughtIndex, makeTaughtGate, gateLesson, TAUGHT_MIN_ITEMS } from '../src/engine/taught'
 
 const MIN_LESSONS_PER_UNIT = 3
 const MIN_SENTENCES_PER_LESSON = 8
@@ -56,7 +57,7 @@ function parse<S extends z.ZodTypeAny>(schema: S, path: string): z.infer<S> | un
 
 // ---- pack, syllabus, interface text, journey
 const pack = parse(PackSchema, join(CONTENT, 'pack.yaml'))
-const features = pack?.features ?? { conjugation: true, gender: true, romanization: 'none', classifiers: false }
+const features = pack?.features ?? { conjugation: true, gender: true, romanization: 'none', classifiers: false, taughtOnly: false }
 parse(UiSchema, join(CONTENT, 'ui.yaml'))
 const journey = parse(JourneySchema, join(CONTENT, 'journey.yaml'))
 const syllabus = parse(SyllabusSchema, join(CONTENT, 'syllabus.yaml'))
@@ -226,9 +227,11 @@ function unknownWords(text: string, level: LevelId, allow: Set<string>): string[
 
 // ---- units
 const unitVocabUse = new Set<string>()
+const parsedUnits: { unit: z.infer<typeof UnitSchema>; path: string }[] = []
 for (const p of listYaml(join(CONTENT, 'units'))) {
   const unit = parse(UnitSchema, p)
   if (!unit) continue
+  parsedUnits.push({ unit, path: p })
   const id = unitIdFromPath(p)
   if (unit.id !== id) err(`${rel(p)}: unit id ${unit.id} does not match path (${id})`)
   const level = unitLevel.get(unit.id)
@@ -318,6 +321,18 @@ for (const p of listYaml(join(CONTENT, 'units'))) {
   } else if (unknown.length) {
     const uniq = [...new Set(unknown)]
     warn(`${rel(p)}: ${uniq.length} word forms outside ${level} vocabulary: ${uniq.slice(0, 20).join(', ')}${uniq.length > 20 ? '…' : ''}`)
+  }
+}
+// ---- taught-words gate (features.taughtOnly): each lesson needs enough items a beginner can be shown or asked in English
+if (features.taughtOnly) {
+  const index = taughtIndex(syllabus.levels, parsedUnits.map((u) => u.unit))
+  const where = new Map(parsedUnits.flatMap(({ unit, path }) => unit.lessons.map((l) => [l.id, { lesson: l, path }] as const)))
+  for (const id of index.order) {
+    const { lesson, path } = where.get(id)!
+    const r = gateLesson(lesson, makeTaughtGate(index.at(id), vocab, tokenize, knownFile.names ?? []))
+    if (r.pass + r.english < TAUGHT_MIN_ITEMS) {
+      warn(`${rel(path)}: ${id} has only ${r.pass + r.english} sentences/exchanges/texts in taught words (aim for ≥${TAUGHT_MIN_ITEMS}; npm run taught:report -- --lesson ${id}); blocking: ${r.blocking.slice(0, 8).map(([w, n]) => `${w}×${n}`).join(' ')}`)
+    }
   }
 }
 for (const v of vocab.values()) {

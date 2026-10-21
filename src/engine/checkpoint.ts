@@ -8,7 +8,8 @@
 import type { Unit, Lesson, Sentence, Dialogue, MiniText } from './schema'
 import type { Exercise, ChoiceExercise, TypeExercise, WordBankExercise } from './types'
 import { Rng, hashString } from './random'
-import { sentenceId, exchangeId, reviewOf, replyTyped, replyExercise, focusedFillBlank, type GenContext } from './generate'
+import { sentenceId, exchangeId, reviewOf, replyTyped, replyExercise, focusedFillBlank, askedReply, askedTyped, wordExercise, type GenContext } from './generate'
+import { exchangeVerdict, type TaughtGate } from './taught'
 import { words as wordsOf } from '@lang/normalize'
 
 export type CheckpointPart = 'reading' | 'writing' | 'recall'
@@ -99,11 +100,11 @@ function authoredQuestion(d: Dialogue, qi: number, rng: Rng): ChoiceExercise | u
   }
 }
 
-/** Lines worth asking about: not too short, not too long, unique in the passage. */
-function askable(p: Passage): number[] {
+/** Lines worth asking about: not too short, not too long, unique in the passage (and, with a taught-words gate, taught). */
+function askable(p: Passage, gate?: TaughtGate): number[] {
   return p.lines
     .map((l, i) => ({ l, i }))
-    .filter(({ l }) => l.en && wordsOf(l.text).length >= 2 && wordsOf(l.text).length <= 18 && p.lines.filter((o) => o.text === l.text).length === 1)
+    .filter(({ l }) => l.en && wordsOf(l.text).length >= 2 && wordsOf(l.text).length <= 18 && p.lines.filter((o) => o.text === l.text).length === 1 && (!gate || gate.ok(l.text)))
     .map(({ i }) => i)
 }
 
@@ -143,11 +144,11 @@ function whoSaidQuestion(p: Passage, focus: number, rng: Rng): ChoiceExercise | 
 }
 
 /** Generated questions on a passage, each on a different line: meaning and true/false alternate; who-said is a fallback. */
-function generatedQuestions(p: Passage, n: number, backup: string[], rng: Rng): ChoiceExercise[] {
+function generatedQuestions(p: Passage, n: number, backup: string[], rng: Rng, gate?: TaughtGate): ChoiceExercise[] {
   const out: ChoiceExercise[] = []
   const makers = [(f: number) => meaningQuestion(p, f, backup, rng), (f: number) => trueFalseQuestion(p, f, rng)]
   let turn = rng.int(2)
-  for (const focus of rng.shuffle(askable(p))) {
+  for (const focus of rng.shuffle(askable(p, gate))) {
     if (out.length >= n) break
     const q = makers[turn]!(focus) ?? makers[1 - turn]!(focus) ?? whoSaidQuestion(p, focus, rng)
     if (!q) continue
@@ -157,11 +158,15 @@ function generatedQuestions(p: Passage, n: number, backup: string[], rng: Rng): 
   return out
 }
 
-function readingPart(unit: Unit, rng: Rng, target: number): CheckpointExercise[] {
+function readingPart(unit: Unit, rng: Rng, target: number, gate?: TaughtGate): CheckpointExercise[] {
   const backup = stopEnglish(unit)
   const out: ChoiceExercise[] = []
-  const dialogues = unit.dialogues.filter((d) => d.lines.length >= 2)
-  const texts = unit.lessons.flatMap((l) => l.texts)
+  // taught-words gate: only passages the learner can read (and questions on them in taught words or English)
+  const readable = (lines: string[]) => !gate || gate.ok(lines.join(''))
+  const dialogues = unit.dialogues
+    .filter((d) => d.lines.length >= 2 && readable(d.lines.map((l) => l.es)))
+    .map((d) => (gate ? { ...d, questions: d.questions.filter((q) => [q.q, ...q.options].every((t) => gate.ok(t))) } : d))
+  const texts = unit.lessons.flatMap((l) => l.texts).filter((t) => readable(t.es))
   // 1. A dialogue of the stop: two authored questions, then generated ones.
   if (dialogues.length) {
     const d = rng.pick(dialogues)
@@ -172,16 +177,18 @@ function readingPart(unit: Unit, rng: Rng, target: number): CheckpointExercise[]
       const q = authoredQuestion(d, qi, rng)
       if (q) out.push(q)
     }
-    out.push(...generatedQuestions(p, target - fromText - out.length, backup, rng))
+    out.push(...generatedQuestions(p, target - fromText - out.length, backup, rng, gate))
   }
   // 2. A lesson mini-text: one question (more when the stop has no dialogue).
   if (texts.length) {
     for (const t of rng.shuffle(texts)) {
       if (out.length >= target) break
-      out.push(...generatedQuestions(textPassage(t), dialogues.length ? 1 : Math.min(2, target - out.length), backup, rng))
+      out.push(...generatedQuestions(textPassage(t), dialogues.length ? 1 : Math.min(2, target - out.length), backup, rng, gate))
     }
   }
-  return out.slice(0, target).map((e) => ({ ...e, part: 'reading' as const, source: unit.id }))
+  // gate: a passage's title is shown only when taught
+  const titled = (e: ChoiceExercise): ChoiceExercise => (gate && e.passage?.title && !gate.ok(e.passage.title) ? { ...e, passage: { ...e.passage, title: undefined } } : e)
+  return out.slice(0, target).map((e) => ({ ...titled(e), part: 'reading' as const, source: unit.id }))
 }
 
 // ---------------------------------------------------------------------------
@@ -201,18 +208,18 @@ function fits(s: Sentence, kind: Exclude<WriteKind, 'reply'>): boolean {
 function typeSentence(s: Sentence, id: string): TypeExercise {
   return { kind: 'typeEs', items: [id, ...s.vocab], grammar: s.grammar, prompt: s.en, answers: [s.es, ...s.altEs], translation: s.en, review: reviewOf(s) }
 }
-function wordBankSentence(s: Sentence, id: string, lesson: Lesson, rng: Rng): WordBankExercise {
+function wordBankSentence(s: Sentence, id: string, lesson: Lesson, rng: Rng, gate?: TaughtGate): WordBankExercise {
   const ws = wordsOf(s.es)
-  const otherWords = lesson.sentences.flatMap((o) => wordsOf(o.es)).filter((w) => !ws.includes(w))
+  const otherWords = lesson.sentences.flatMap((o) => wordsOf(o.es)).filter((w) => !ws.includes(w) && (!gate || gate.ok(w)))
   const distract = rng.sample([...new Set(otherWords)], 2)
   return { kind: 'wordBank', items: [id, ...s.vocab], grammar: s.grammar, prompt: s.en, tiles: rng.shuffle([...ws, ...distract]), answers: [s.es, ...s.altEs], translation: s.en, review: reviewOf(s) }
 }
 /** English → pick the target-language sentence among other sentences of the lesson. */
-function pickSentence(s: Sentence, id: string, lesson: Lesson, rng: Rng): ChoiceExercise | undefined {
+function pickSentence(s: Sentence, id: string, lesson: Lesson, rng: Rng, gate?: TaughtGate): ChoiceExercise | undefined {
   const others: string[] = []
   for (const o of rng.shuffle(lesson.sentences)) {
     if (others.length >= 3) break
-    if (o.es === s.es || others.includes(o.es) || tooClose(o.en, s.en)) continue
+    if (o.es === s.es || others.includes(o.es) || tooClose(o.en, s.en) || (gate && !gate.ok(o.es))) continue
     others.push(o.es)
   }
   if (others.length < 2) return undefined
@@ -222,24 +229,25 @@ function pickSentence(s: Sentence, id: string, lesson: Lesson, rng: Rng): Choice
 
 /** One writing exercise from a lesson, of the wanted kind when the lesson allows it, else a typed translation. */
 function writeFrom(lesson: Lesson, kind: WriteKind, ctx: GenContext, rng: Rng, used: Set<string>): Exercise | undefined {
+  const gate = ctx.taught
   if (kind === 'reply') {
-    const xs = rng.shuffle(lesson.exchanges.map((x, i) => ({ x, id: exchangeId(lesson.id, i) }))).filter(({ x, id }) => !used.has(id) && wordsOf(x.a.es).length <= MAX_WORDS)
+    const xs = rng.shuffle(lesson.exchanges.map((x, i) => ({ x, id: exchangeId(lesson.id, i) }))).filter(({ x, id }) => !used.has(id) && wordsOf(x.a.es).length <= MAX_WORDS && (!gate || exchangeVerdict(x, gate) !== 'skip'))
     const pick = xs[0]
     if (pick) {
       used.add(pick.id)
-      return replyTyped(pick.x, pick.id)
+      return gate && exchangeVerdict(pick.x, gate) === 'english' ? askedTyped(pick.x, pick.id) : replyTyped(pick.x, pick.id)
     }
     kind = 'typeEs'
   }
   const k = kind
-  const all = lesson.sentences.map((s, i) => ({ s, id: sentenceId(lesson.id, i, s) })).filter(({ id }) => !used.has(id))
+  const all = lesson.sentences.map((s, i) => ({ s, id: sentenceId(lesson.id, i, s) })).filter(({ s, id }) => !used.has(id) && (!gate || gate.ok(s.es)))
   const pool = rng.shuffle(all.filter(({ s }) => fits(s, k)))
   const fallback = rng.shuffle(all.filter(({ s }) => fits(s, 'typeEs')))
   const pick = pool[0] ?? fallback[0]
   if (!pick) return undefined
   used.add(pick.id)
   if (!pool[0]) return typeSentence(pick.s, pick.id)
-  if (k === 'wordBank') return wordBankSentence(pick.s, pick.id, lesson, rng)
+  if (k === 'wordBank') return wordBankSentence(pick.s, pick.id, lesson, rng, gate)
   // The standard fill-in-the-blank builder (no learner slip to target: it picks the lesson word itself).
   if (k === 'fillBlank') return focusedFillBlank(pick.s, pick.id, { given: '', expected: '' }, ctx, rng, lesson)
   return typeSentence(pick.s, pick.id)
@@ -257,10 +265,22 @@ function writingPart(unit: Unit, ctx: GenContext, rng: Rng, target: number): Che
     const ex = writeFrom(lesson, kinds[out.length]!, ctx, rng, used)
     if (ex) out.push({ ...ex, part: 'writing', source: lesson.id })
   }
+  // Taught-words gate: too few taught sentences, so the stop's taught words are written from English.
+  if (ctx.taught) {
+    for (const lesson of lessons) {
+      for (const vid of rng.shuffle(lesson.vocab)) {
+        if (out.length >= target) break
+        const v = ctx.vocab.get(vid)
+        if (!v || used.has(vid) || !ctx.taught.ids.has(vid)) continue
+        used.add(vid)
+        out.push({ ...wordExercise(v, 'typeEs', ctx, rng), part: 'writing', source: lesson.id })
+      }
+    }
+  }
   return out
 }
 
-function recallPart(previous: Unit[], rng: Rng, target: number): CheckpointExercise[] {
+function recallPart(previous: Unit[], rng: Rng, target: number, gate?: TaughtGate): CheckpointExercise[] {
   const out: CheckpointExercise[] = []
   if (!previous.length) return out
   const used = new Set<string>()
@@ -274,18 +294,20 @@ function recallPart(previous: Unit[], rng: Rng, target: number): CheckpointExerc
     if (kind === 'reply' && lesson.exchanges.length >= 2) {
       const xi = rng.int(lesson.exchanges.length)
       const id = exchangeId(lesson.id, xi)
-      if (!used.has(id)) {
+      const x = lesson.exchanges[xi]!
+      const verdict = gate ? exchangeVerdict(x, gate) : 'pass'
+      if (!used.has(id) && verdict !== 'skip') {
         used.add(id)
-        const r = replyExercise(lesson.exchanges[xi]!, id, lesson, rng)
-        if (new Set(r.options).size === r.options.length && r.options.length >= 3) ex = r
+        const r = verdict === 'english' ? askedReply(x, id, lesson, rng, gate!) : replyExercise(x, id, lesson, rng, gate)
+        if (r && new Set(r.options).size === r.options.length && r.options.length >= 3) ex = r
       }
     }
     if (!ex) {
-      const cands = rng.shuffle(lesson.sentences.map((s, si) => ({ s, id: sentenceId(lesson.id, si, s) }))).filter(({ s, id }) => !used.has(id) && fits(s, 'typeEs'))
+      const cands = rng.shuffle(lesson.sentences.map((s, si) => ({ s, id: sentenceId(lesson.id, si, s) }))).filter(({ s, id }) => !used.has(id) && fits(s, 'typeEs') && (!gate || gate.ok(s.es)))
       const c = cands[0]
       if (!c) continue
       used.add(c.id)
-      ex = kind === 'pick' ? pickSentence(c.s, c.id, lesson, rng) ?? typeSentence(c.s, c.id) : typeSentence(c.s, c.id)
+      ex = kind === 'pick' ? pickSentence(c.s, c.id, lesson, rng, gate) ?? typeSentence(c.s, c.id) : typeSentence(c.s, c.id)
     }
     out.push({ ...ex, part: 'recall', source: lesson.id })
   }
@@ -301,8 +323,8 @@ export function buildCheckpoint(unit: Unit, previousUnits: Unit[], ctx: GenConte
   const rng = new Rng(seed)
   const previous = previousUnits.slice(0, 2)
   const recallTarget = previous.length === 0 ? 0 : previous.length === 1 ? 2 : 3
-  const reading = readingPart(unit, rng, 4)
-  const recall = recallPart(previous, rng, recallTarget)
+  const reading = readingPart(unit, rng, 4, ctx.taught)
+  const recall = recallPart(previous, rng, recallTarget, ctx.taught)
   // Writing fills the rest: 5 (6 without recall), plus any reading question the stop could not supply.
   const writing = writingPart(unit, ctx, rng, (recallTarget ? 5 : 6) + Math.max(0, 4 - reading.length))
   // Reading first (questions on one passage stay together), then writing, then recall.

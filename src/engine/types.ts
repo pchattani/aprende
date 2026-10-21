@@ -143,6 +143,8 @@ export interface ExerciseBase {
   teach?: string
   /** What was practised, in both languages, shown after every answer. */
   review?: { es: string; en: string }
+  /** The prompt is an English question answered in the target language (taught-words gate: its wording is not taught yet). */
+  askEn?: boolean
 }
 export interface ChoiceExercise extends ExerciseBase {
   kind: 'choiceEs' | 'choiceEn' | 'listen' | 'fillBlank' | 'reply'

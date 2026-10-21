@@ -17,6 +17,7 @@
     "content:check": "node scripts/build-strokes.mjs && tsx --import ./scripts/yaml-register.mjs scripts/check-content.ts",
     "strokes": "node scripts/build-strokes.mjs",
     "content:stats": "tsx scripts/content-stats.ts",
+    "taught:report": "tsx --import ./scripts/yaml-register.mjs scripts/taught-report.ts",
     "yue:data": "tsx scripts/yue-data.ts",
     "build:all": "node scripts/build-all.mjs",
     "check:all": "node scripts/courses.mjs \"npm run content:check\" && node scripts/courses.mjs \"vitest run\""

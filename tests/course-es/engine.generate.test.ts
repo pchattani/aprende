@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { generateLesson, generateReview, generatePinned, sentenceId, distractorWords, deAdjacent } from '@/engine/generate'
-import { Rng } from '@/engine/random'
+import { Rng, hashString } from '@/engine/random'
 import { grade } from '@/engine/grade'
 import { spanish } from '@/lang/es'
 import { IRREGULAR } from '@/lang/es/verbs'
@@ -152,6 +152,30 @@ describe('generateReview', () => {
     const ex = generateReview(cards, { word: (id) => vocab.get(id), sentence: (id) => (id === 's.a1.u01.l1.1' ? { s: lesson.sentences[0]!, lesson } : undefined) }, ctx(0), 5)
     expect(ex.some((e) => e.kind === 'match')).toBe(true)
     expect(ex.flatMap((e) => e.items)).toContain('s.a1.u01.l1.1')
+  })
+})
+
+describe('without the taught-words gate (every course but Cantonese)', () => {
+  // A pin of the generator's output on this fixture, taken before the gate was added: courses without
+  // `features.taughtOnly` must keep generating exactly the same sessions. Change it only on purpose.
+  const PINNED = 3504805879
+  it('generates exactly what it did before the gate', () => {
+    const out: unknown[] = []
+    for (const stage of [0, 1, 2, 3] as Stage[]) {
+      for (const seed of [1, 2, 3, 4, 5]) {
+        for (const count of [9, 12, 16]) out.push(generateLesson({ ...lesson, exchanges: [], texts: [] }, { ...ctx(stage, seed % 2 === 0), speaking: seed % 3 === 0 ? 'lots' : 'some' }, { seed, count, extra }))
+      }
+    }
+    const cards: { id: string; kind: ItemKind; stage: Stage }[] = [...vocabList.map((v, i) => ({ id: v.id, kind: 'word' as const, stage: (i % 4) as Stage })), ...lesson.sentences.map((s, i) => ({ id: sentenceId(lesson.id, i, s), kind: 'sentence' as const, stage: (i % 4) as Stage }))]
+    const sentence = (id: string) => {
+      const n = Number(id.split('.').pop())
+      return lesson.sentences[n - 1] ? { s: lesson.sentences[n - 1]!, lesson } : undefined
+    }
+    for (const seed of [1, 2, 3]) out.push(generateReview(cards, { word: (id) => vocab.get(id), sentence }, ctx(1, true), seed))
+    const pins = cards.slice(4, 12).map((c, i) => ({ id: c.id, ts: i, lessonId: lesson.id, exerciseKind: 'typeEs' as const, given: 'el', expected: 'la', es: 'La casa.', en: 'The house.', streak: 0, missed: i % 2 ? { given: 'el', expected: 'la' } : undefined }))
+    out.push(generatePinned(pins, { word: (id) => vocab.get(id), sentence }, ctx(1), 7))
+    expect(generateLesson(lesson, { ...ctx(0), taught: undefined }, { seed: 9, count: 12, extra })).toEqual(generateLesson(lesson, ctx(0), { seed: 9, count: 12, extra }))
+    expect(hashString(JSON.stringify(out))).toBe(PINNED)
   })
 })
 

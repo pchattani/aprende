@@ -37,7 +37,7 @@ export function TypeAnswer({ exercise, value, onChange, onSubmit, checked }: Exe
   }
   return (
     <div>
-      <Instruction>{TITLES[exercise.kind]}</Instruction>
+      <Instruction>{exercise.askEn ? `Answer in ${LANGUAGE}` : TITLES[exercise.kind]}</Instruction>
       {exercise.kind === 'dictation' ? (
         <div className="my-8 flex items-center justify-center gap-4">
           <SpeakerButton text={exercise.audio ?? exercise.answers[0]!} size="lg" autoPlay />

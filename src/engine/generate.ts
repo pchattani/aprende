@@ -12,6 +12,7 @@ import { words as wordsOf, stripAccents } from '@lang/normalize'
 import { conjugateWith, TENSE_LABELS, PERSONS, VERB_TRAINER, type Tense, type VerbTable } from '@lang/verbs'
 import { inflections } from '@lang/inflect'
 import { explainConfig } from '@lang/explain'
+import { exchangeVerdict, textVerdict, answerKey, type TaughtGate } from './taught'
 
 export interface GenContext {
   vocab: Map<string, VocabEntry>
@@ -28,6 +29,12 @@ export interface GenContext {
   seenOf?: (id: string) => number
   /** Dictionary lookup of a surface form (for same-part-of-speech distractors). */
   lookup?: (form: string) => VocabEntry[] | undefined
+  /**
+   * Taught-words gate (courses with `features.taughtOnly`): target-language text shown or played to be
+   * understood, and target-language options, must be at least TAUGHT_MIN taught; questions that are not
+   * are asked in English when their answer is taught (engine/taught.ts). Undefined: no gate.
+   */
+  taught?: TaughtGate
 }
 
 export interface GenOptions {
@@ -77,12 +84,14 @@ export function textAsSentence(t: MiniText): Sentence {
   return { es: t.es.join(' '), en: t.en.join(' '), altEs: [], altEn: [], grammar: t.grammar, vocab: t.vocab, kinds: ['listen', 'choiceEs', 'typeEn'] }
 }
 
-/** Reply exercise: read (or hear) a line, pick the natural reply among replies from other exchanges. */
-export function replyExercise(x: Exchange, id: string, lesson: Lesson, rng: Rng): ChoiceExercise {
-  const others = rng.sample(lesson.exchanges.filter((o) => o.a.es !== x.a.es), 3).map((o) => o.a.es)
+/** Reply exercise: read (or hear) a line, pick the natural reply among replies from other exchanges (with a gate: taught ones only, none an accepted reply). */
+export function replyExercise(x: Exchange, id: string, lesson: Lesson, rng: Rng, gate?: TaughtGate): ChoiceExercise {
+  const accepted = gate ? new Set([x.a.es, ...x.alt].map(answerKey)) : undefined
+  const fits = (es: string) => !gate || (gate.ok(es) && !accepted!.has(answerKey(es)))
+  const others = rng.sample(lesson.exchanges.filter((o) => o.a.es !== x.a.es && fits(o.a.es)), 3).map((o) => o.a.es)
   for (const s of rng.shuffle(lesson.sentences)) {
     if (others.length >= 3) break
-    if (s.es !== x.a.es && !others.includes(s.es)) others.push(s.es)
+    if (s.es !== x.a.es && !others.includes(s.es) && fits(s.es)) others.push(s.es)
   }
   const options = rng.shuffle([x.a.es, ...others.slice(0, 3)])
   return { kind: 'reply', items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.es, audio: x.q.es, options, answer: options.indexOf(x.a.es), translation: `${x.q.en} — ${x.a.en}`, review: reviewOfExchange(x) }
@@ -95,15 +104,56 @@ export function replyTyped(x: Exchange, id: string): TypeExercise {
 export function replyAloud(x: Exchange, id: string): TypeExercise {
   return { kind: 'speak', variant: 'reply', items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.es, audio: x.q.es, hint: `Answer aloud: “${x.a.en}”`, answers: [x.a.es, ...x.alt], translation: x.a.en, review: reviewOfExchange(x) }
 }
+/**
+ * An exchange whose question is not taught yet, asked in English (taught-words gate): pick the reply
+ * among other taught lines of the lesson. Undefined when fewer than two such lines exist.
+ */
+export function askedReply(x: Exchange, id: string, lesson: Lesson, rng: Rng, gate: TaughtGate): ChoiceExercise | undefined {
+  const keys = new Set([x.a.es, ...x.alt].map(answerKey))
+  const others: string[] = []
+  const add = (es: string) => {
+    const k = answerKey(es)
+    if (others.length >= 3 || !k || keys.has(k) || !gate.ok(es)) return
+    keys.add(k)
+    others.push(es)
+  }
+  for (const o of rng.shuffle(lesson.exchanges)) add(o.a.es)
+  for (const s of rng.shuffle(lesson.sentences)) add(s.es)
+  if (others.length < 2) return undefined
+  const options = rng.shuffle([x.a.es, ...others])
+  return { kind: 'reply', askEn: true, items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.en, options, answer: options.indexOf(x.a.es), translation: `${x.q.en} — ${x.a.en}`, review: reviewOfExchange(x) }
+}
+/** Typed reply to a question asked in English. */
+export function askedTyped(x: Exchange, id: string): TypeExercise {
+  return { kind: 'typeEs', askEn: true, items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.en, hint: `Reply in ${explainConfig.languageName}: “${x.a.en}”`, answers: [x.a.es, ...x.alt], translation: x.a.en, review: reviewOfExchange(x) }
+}
+/** Spoken reply to a question asked in English (nothing is played: the question is not taught yet). */
+export function askedAloud(x: Exchange, id: string): TypeExercise {
+  return { kind: 'speak', variant: 'reply', askEn: true, items: [id, ...x.vocab], grammar: x.grammar, prompt: x.q.en, hint: `Answer aloud: “${x.a.en}”`, answers: [x.a.es, ...x.alt], translation: x.a.en, review: reviewOfExchange(x) }
+}
+/**
+ * An exchange asked in English in a kind that suits its stage and what `allow` permits: pick the reply
+ * (a choice needs two other taught lines), type it from stage 2, say it from stage 1.
+ */
+export function askedExercise(x: Exchange, id: string, stage: Stage, lesson: Lesson, rng: Rng, gate: TaughtGate, allow: (k: ExerciseKind) => boolean): Exercise | undefined {
+  const makers: (() => Exercise | undefined)[] = []
+  if (allow('reply')) makers.push(() => askedReply(x, id, lesson, rng, gate))
+  if (allow('typeEs') && stage >= 2) makers.push(() => askedTyped(x, id))
+  if (allow('speak') && (stage >= 1 || !makers.length)) makers.push(() => askedAloud(x, id))
+  if (!makers.length && allow('typeEs')) makers.push(() => askedTyped(x, id))
+  if (!makers.length) return undefined
+  return rng.pick(makers)() ?? (allow('speak') ? askedAloud(x, id) : allow('typeEs') ? askedTyped(x, id) : undefined)
+}
 /** Listen and repeat a new word. */
 export function repeatAfterMe(v: VocabEntry): TypeExercise {
   return { kind: 'speak', variant: 'repeat', items: [v.id], grammar: [], prompt: v.lemma, audio: v.lemma, answers: [v.lemma, ...(v.forms ?? [])], translation: v.en[0], review: reviewOfWord(v) }
 }
-/** Order the sentences of a mini-text. */
-export function orderTextExercise(t: MiniText, id: string, rng: Rng): WordBankExercise {
+/** Order the sentences of a mini-text (with a taught-words gate, its title only when taught). */
+export function orderTextExercise(t: MiniText, id: string, rng: Rng, gate?: TaughtGate): WordBankExercise {
   let tiles = rng.shuffle(t.es)
   if (tiles.join('|') === t.es.join('|') && t.es.length > 1) tiles = [...t.es].reverse()
-  return { kind: 'orderText', items: [id, ...t.vocab], grammar: t.grammar, prompt: t.title ? `Put the sentences in order: ${t.title}` : 'Put the sentences in order', tiles, answers: [t.es.join(' ')], translation: t.en.join(' '), review: { es: t.es.join(' '), en: t.en.join(' ') } }
+  const title = gate && t.title && !gate.ok(t.title) ? undefined : t.title
+  return { kind: 'orderText', items: [id, ...t.vocab], grammar: t.grammar, prompt: title ? `Put the sentences in order: ${title}` : 'Put the sentences in order', tiles, answers: [t.es.join(' ')], translation: t.en.join(' '), review: { es: t.es.join(' '), en: t.en.join(' ') } }
 }
 
 const GRAMMAR_TIP_KINDS = new Set<ExerciseKind>(['fillBlank', 'conjugate', 'typeEs', 'wordBank', 'order'])
@@ -119,13 +169,18 @@ export function writeExercise(char: string, kind: WriteExercise['kind'], ctx: Pi
   return { kind, items: [charId(char)], grammar: [], char, jp: info.jp, meaning: info.en, prompt: kind === 'trace' ? 'Trace the character' : 'Write the character', audio: char, review: { es: char, en: info.en } }
 }
 
-/** See the picture a character grew from, pick the character: distractors from the lesson's characters, then pictograms of the same type. */
-export function pictogramExercise(char: string, ctx: Pick<GenContext, 'vocab'>, rng: Rng, lessonChars: readonly string[] = []): CharChoiceExercise {
+/**
+ * See the picture a character grew from, pick the character: distractors from the lesson's characters,
+ * then (taught-words gate) characters of taught words, then pictograms of the same type.
+ */
+export function pictogramExercise(char: string, ctx: Pick<GenContext, 'vocab' | 'taught'>, rng: Rng, lessonChars: readonly string[] = []): CharChoiceExercise {
   const info = charInfo(char, ctx.vocab)
   const type = PICTOGRAMS[char]?.type
   const all = Object.keys(PICTOGRAMS).filter((c) => c !== char)
+  const taughtChars = ctx.taught ? new Set([...ctx.taught.ids].flatMap((id) => [...(ctx.vocab.get(id)?.lemma ?? '')])) : undefined
   const pool = [
     ...rng.shuffle(lessonChars.filter((c) => c !== char && hasPictogram(c))),
+    ...(taughtChars ? rng.shuffle(all.filter((c) => taughtChars.has(c))) : []),
     ...rng.shuffle(all.filter((c) => PICTOGRAMS[c]!.type === type)),
     ...rng.shuffle(all),
   ]
@@ -183,6 +238,8 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
     return e
   }
   const ok = (k: ExerciseKind) => kindAllowed(k, skills)
+  // Taught-words gate: only sentences, texts and exchanges the learner can understand (the rest are asked in English or left out).
+  const g = ctx.taught
   /** One word drill in an allowed kind (skill-limited lessons); typing the word only when nothing gentler is allowed. */
   const wordDrill = (v: VocabEntry): Exercise | undefined => {
     let kinds: ExerciseKind[] = (['hearChar', 'choiceEs', 'choiceEn', 'listen', 'speak'] as const).filter((k) => ok(k) && (k !== 'hearChar' || HAN.test(v.lemma)) && (k !== 'speak' || speakOk()))
@@ -244,10 +301,13 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
 
   // 2. Sentences: least practised first (previous session's items last, then stage, then times seen), each used at most once.
   const sentences = lesson.sentences.map((s, i) => ({ s, id: sentenceId(lesson.id, i, s), stage: ctx.stageOf(sentenceId(lesson.id, i, s)) ?? 0 }))
-  const ordered = rng.shuffle(sentences).sort((a, b) => penalty(a.id) - penalty(b.id) || a.stage - b.stage || seen(a.id) - seen(b.id))
-  const replyCount = Math.min(lesson.exchanges.length, target >= 12 ? 3 : 2)
-  const textCount = lesson.texts.length && target >= 9 && ok('orderText') ? 1 : 0
-  const spicyCount = opts.spicy?.length ? Math.min(opts.spicy.length, target >= 12 ? 2 : 1) : 0
+  const ordered = rng.shuffle(g ? sentences.filter(({ s }) => g.ok(s.es)) : sentences).sort((a, b) => penalty(a.id) - penalty(b.id) || a.stage - b.stage || seen(a.id) - seen(b.id))
+  const askable = lesson.exchanges.map((x, i) => ({ x, i, id: exchangeId(lesson.id, i), verdict: g ? exchangeVerdict(x, g) : 'pass' })).filter((e) => e.verdict !== 'skip')
+  const texts = lesson.texts.map((t, i) => ({ t, id: textId(lesson.id, i) })).filter(({ t }) => !g || g.ok(t.es.join('')))
+  const spicyItems = g ? (opts.spicy ?? []).filter(({ s }) => g.ok(s.es)) : opts.spicy
+  const replyCount = Math.min(askable.length, target >= 12 ? 3 : 2)
+  const textCount = texts.length && target >= 9 && ok('orderText') ? 1 : 0
+  const spicyCount = spicyItems?.length ? Math.min(spicyItems.length, target >= 12 ? 2 : 1) : 0
   const slots = Math.max(0, target - out.length - replyCount - textCount - spicyCount)
   const taught = new Set<string>()
   const used = new Set<string>()
@@ -266,13 +326,21 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
   for (const { s, id, stage } of ordered.slice(0, slots)) addSentence(s, id, stage)
 
   // 3. Conversation and text: replies to questions and one mini-text, least practised first.
-  const exchanges = rng.shuffle(lesson.exchanges.map((x, i) => ({ x, i, id: exchangeId(lesson.id, i) }))).sort((a, b) => penalty(a.id) - penalty(b.id) || seen(a.id) - seen(b.id)).slice(0, replyCount)
-  for (const { x, id } of exchanges) {
+  const exchanges = rng.shuffle(askable).sort((a, b) => penalty(a.id) - penalty(b.id) || seen(a.id) - seen(b.id)).slice(0, replyCount)
+  for (const { x, id, verdict } of exchanges) {
     const stage = ctx.stageOf(id) ?? 0
+    if (verdict === 'english') {
+      // the question is not taught yet: asked in English, answered in the target language
+      const ex = noteSpeak(askedExercise(x, id, stage, lesson, rng, g!, (k) => ok(k) && (k !== 'speak' || speakOk())))
+      if (!ex) continue
+      used.add(id)
+      out.push(ex)
+      continue
+    }
     if (skills) {
       // pick among the allowed reply kinds (none allowed: the exchange waits; the session is topped up below)
       const makers: (() => Exercise)[] = []
-      if (ok('reply')) makers.push(() => replyExercise(x, id, lesson, rng))
+      if (ok('reply')) makers.push(() => replyExercise(x, id, lesson, rng, g))
       if (ok('typeEs') && stage >= 2) makers.push(() => replyTyped(x, id))
       if (ok('speak') && speakOk() && (stage >= 1 || !makers.length)) makers.push(() => noteSpeak(replyAloud(x, id))!)
       if (!makers.length && ok('typeEs')) makers.push(() => replyTyped(x, id))
@@ -283,15 +351,15 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
     }
     used.add(id)
     if (stage >= 1 && speakOk() && rng.next() < (ctx.speaking === 'lots' ? 0.6 : 0.35)) out.push(noteSpeak(replyAloud(x, id))!)
-    else out.push(stage >= 2 ? replyTyped(x, id) : replyExercise(x, id, lesson, rng))
+    else out.push(stage >= 2 ? replyTyped(x, id) : replyExercise(x, id, lesson, rng, g))
   }
   if (textCount) {
-    const t = rng.shuffle(lesson.texts.map((t, i) => ({ t, id: textId(lesson.id, i) }))).sort((a, b) => penalty(a.id) - penalty(b.id) || seen(a.id) - seen(b.id))[0]!
+    const t = rng.shuffle(texts).sort((a, b) => penalty(a.id) - penalty(b.id) || seen(a.id) - seen(b.id))[0]!
     used.add(t.id)
-    out.push(orderTextExercise(t.t, t.id, rng))
+    out.push(orderTextExercise(t.t, t.id, rng, g))
   }
   // 3b. Modo picante: a pinch of cheeky sentences, drilled like any other.
-  for (const { s, id } of rng.shuffle(opts.spicy ?? []).sort((a, b) => penalty(a.id) - penalty(b.id) || seen(a.id) - seen(b.id)).slice(0, spicyCount)) {
+  for (const { s, id } of rng.shuffle(spicyItems ?? []).sort((a, b) => penalty(a.id) - penalty(b.id) || seen(a.id) - seen(b.id)).slice(0, spicyCount)) {
     addSentence(s, id, ctx.stageOf(id) ?? 0)
   }
 
@@ -301,7 +369,7 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
     if (used.has(id)) continue
     addSentence(s, id, stage)
   }
-  const extras = rng.shuffle(opts.extra ?? []).sort((a, b) => penalty(a.id) - penalty(b.id))
+  const extras = rng.shuffle(g ? (opts.extra ?? []).filter(({ s }) => g.ok(s.es)) : opts.extra ?? []).sort((a, b) => penalty(a.id) - penalty(b.id))
   for (const { s, id } of extras) {
     if (out.length >= target) break
     if (used.has(id)) continue
@@ -314,11 +382,22 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
     out.push({ kind, items: [], grammar: s.grammar, prompt: kind === 'listen' ? 'What did you hear?' : s.es, audio: s.es, options, answer: options.indexOf(s.en), translation: s.en, review: reviewOf(s) } satisfies ChoiceExercise)
   }
   // 4b. A skill-limited lesson can still be short: more word drills in the allowed kinds, least drilled first.
-  if (skills && out.length < target && vocabEntries.length) {
+  // With the taught-words gate any lesson can: drills on the lesson's words, then on the latest words taught before it,
+  // starting with one more matching round.
+  const drillPool = g ? [...vocabEntries, ...[...g.ids].reverse().map((id) => ctx.vocab.get(id)).filter((v): v is VocabEntry => Boolean(v) && !lesson.vocab.includes(v!.id)).slice(0, 30)] : vocabEntries
+  if ((skills || g) && out.length < target && drillPool.length) {
     const drilled = new Map<string, number>()
     for (const e of out) for (const i of e.items) drilled.set(i, (drilled.get(i) ?? 0) + 1)
-    for (let round = 0; round < 3 && out.length < target; round++) {
-      for (const v of rng.shuffle(vocabEntries).sort((a, b) => (drilled.get(a.id) ?? 0) - (drilled.get(b.id) ?? 0))) {
+    const order = (list: VocabEntry[]) => rng.shuffle(list).sort((a, b) => (drilled.get(a.id) ?? 0) - (drilled.get(b.id) ?? 0) || Number(!lesson.vocab.includes(a.id)) - Number(!lesson.vocab.includes(b.id)))
+    if (g && ok('match') && matches < maxMatch) {
+      const group = order(drillPool.filter(matchable)).slice(0, 5)
+      if (group.length >= 4) {
+        out.push(matchExercise(group))
+        for (const v of group) drilled.set(v.id, (drilled.get(v.id) ?? 0) + 1)
+      }
+    }
+    for (let round = 0; round < (g ? 8 : 3) && out.length < target; round++) {
+      for (const v of g ? order(drillPool) : rng.shuffle(vocabEntries).sort((a, b) => (drilled.get(a.id) ?? 0) - (drilled.get(b.id) ?? 0))) {
         if (out.length >= target) break
         const ex = wordDrill(v)
         if (!ex) break
@@ -334,10 +413,13 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
   return deAdjacent([...head, ...rest])
 }
 
+/** A sentence-like card resolved for review: exchanges (x.*) also carry the exchange, so the gate can ask them in English. */
+export type SentenceLookup = (id: string) => { s: Sentence; lesson: Lesson; exchange?: Exchange } | undefined
+
 /** Review generator: one exercise per card (word or sentence), kind by stage. */
 export function generateReview(
   cards: { id: string; kind: ItemKind; stage: Stage }[],
-  lookup: { word: (id: string) => VocabEntry | undefined; sentence: (id: string) => { s: Sentence; lesson: Lesson } | undefined },
+  lookup: { word: (id: string) => VocabEntry | undefined; sentence: SentenceLookup },
   ctx: GenContext,
   seed = Date.now(),
 ): Exercise[] {
@@ -360,9 +442,26 @@ export function generateReview(
     if (kind === 'speak') speaks++
     out.push(wordExercise(v, kind, ctx, rng))
   }
+  const g = ctx.taught
   for (const c of cards.filter((x) => x.kind === 'sentence')) {
     const found = lookup.sentence(c.id)
     if (!found) continue
+    if (g) {
+      // Taught-words gate: an exchange whose question is not taught is asked in English; anything else not taught
+      // yet gives way to a drill on one of its taught words, so the session keeps its length.
+      const verdict = found.exchange ? exchangeVerdict(found.exchange, g) : textVerdict(found.s.es, g)
+      const asked = verdict === 'english' ? askedExercise(found.exchange!, c.id, c.stage, found.lesson, rng, g, (k) => k !== 'speak' || (ctx.speech && speaks < speakMax)) : undefined
+      if (asked) {
+        if (asked.kind === 'speak') speaks++
+        out.push(asked)
+        continue
+      }
+      if (verdict !== 'pass') {
+        const v = found.s.vocab.map((id) => lookup.word(id)).find((w) => w && g.ids.has(w.id) && !out.some((e) => e.items.includes(w.id)))
+        if (v) out.push(wordExercise(v, rng.pick(kindsFor('word', c.stage).filter((k) => k !== 'match' && k !== 'speak')), ctx, rng))
+        continue
+      }
+    }
     const ex = sentenceExercise(found.s, c.id, c.stage, found.lesson, ctx, rng, new Set(), speaks < speakMax ? [] : ['speak'])
     if (ex) {
       if (ex.kind === 'speak') speaks++
@@ -382,7 +481,7 @@ export function generateReview(
  */
 export function generatePinned(
   pins: PinRow[],
-  lookup: { word: (id: string) => VocabEntry | undefined; sentence: (id: string) => { s: Sentence; lesson: Lesson } | undefined },
+  lookup: { word: (id: string) => VocabEntry | undefined; sentence: SentenceLookup },
   ctx: GenContext,
   seed = Date.now(),
 ): Exercise[] {
@@ -401,14 +500,21 @@ export function generatePinned(
       made.push(writeExercise(charOf(pin.id)!, 'trace', ctx), writeExercise(charOf(pin.id)!, 'writeChar', ctx))
     } else if (/^[sxt]\./.test(pin.id)) {
       const found = lookup.sentence(pin.id)
-      if (found) {
+      const g = ctx.taught
+      const verdict = !found || !g ? 'pass' : found.exchange ? exchangeVerdict(found.exchange, g) : textVerdict(found.s.es, g)
+      if (found && verdict === 'english') {
+        // gate: the question is not taught yet, so it is asked in English (pick the reply, then type it)
+        const pick = askedReply(found.exchange!, pin.id, found.lesson, rng, g!)
+        if (pick) made.push(pick)
+        made.push(askedTyped(found.exchange!, pin.id))
+      } else if (found && verdict === 'pass') {
         const { s, lesson } = found
         if (pin.missed) made.push(focusedFillBlank(s, pin.id, pin.missed, ctx, rng, lesson))
         const prod = sentenceExercise(s, pin.id, pin.missed ? 1 : 2, lesson, ctx, rng, new Set(), ['speak', 'findError', 'transform'])
         if (prod) made.push(prod)
       }
     }
-    if (!made.length) {
+    if (!made.length && (!ctx.taught || ctx.taught.ok(pin.es))) {
       // item-less: build from the pinned text itself
       const others = rng.sample([...new Set(otherEn.filter((e) => e !== pin.en))], 3)
       while (others.length < 3) others.push(rng.pick(ctx.pool).en[0]!)
@@ -435,7 +541,9 @@ export function focusedFillBlank(s: Sentence, id: string, missed: { given: strin
     if (distract.size >= 2) break
     if (w !== target && !ws.includes(w) && w.length > 2) distract.add(w)
   }
-  const opts = rng.shuffle([target, ...[...distract].slice(0, 2)])
+  // gate: the learner's own slip stays; the other options must be taught
+  const shown = ctx.taught ? [...(wrong && wrong !== target ? [wrong] : []), ...gatedOptions([...distract].filter((d) => d !== wrong), target, ws, ctx, rng)] : [...distract]
+  const opts = rng.shuffle([target, ...shown.slice(0, 2)])
   return { kind: 'fillBlank', items: [id, ...s.vocab], grammar: s.grammar, prompt: replaceWord(s.es, target, '____'), options: opts, answer: opts.indexOf(target), translation: s.en, review: reviewOf(s) }
 }
 
@@ -469,12 +577,13 @@ function glossOverlap(a: VocabEntry, b: VocabEntry): boolean {
  * Distractors that are plausible: words from the same lesson first, then the same
  * unit, the same topic, the same part of speech (and gender) at the level, and only
  * then anything else. Never the same lemma or a word with an overlapping meaning,
- * and no two options with the same gloss.
+ * and no two options with the same gloss. With a taught-words gate, only taught words.
  */
 export function distractorWords(v: VocabEntry, ctx: GenContext, rng: Rng, n: number, lesson?: Lesson): VocabEntry[] {
   const picked: VocabEntry[] = []
   const glosses = new Set([glossKey(v.en[0]!)])
-  const ok = (p: VocabEntry) => p.id !== v.id && p.lemma.toLowerCase() !== v.lemma.toLowerCase() && !glossOverlap(p, v) && !picked.includes(p) && !glosses.has(glossKey(p.en[0]!))
+  const taught = ctx.taught?.ids
+  const ok = (p: VocabEntry) => p.id !== v.id && p.lemma.toLowerCase() !== v.lemma.toLowerCase() && !glossOverlap(p, v) && !picked.includes(p) && !glosses.has(glossKey(p.en[0]!)) && (!taught || taught.has(p.id))
   const lessonWords = lesson ? lesson.vocab.map((id) => ctx.vocab.get(id)).filter((x): x is VocabEntry => Boolean(x)) : []
   const samePos = (p: VocabEntry) => p.pos === v.pos
   const tiers: (() => VocabEntry[])[] = [
@@ -499,7 +608,12 @@ export function distractorWords(v: VocabEntry, ctx: GenContext, rng: Rng, n: num
 }
 
 function wordChoice(v: VocabEntry, ctx: GenContext, rng: Rng, kind: 'choiceEs' | 'choiceEn' | 'listen', lesson?: Lesson): ChoiceExercise {
-  const ds = distractorWords(v, ctx, rng, 3, lesson)
+  let ds = distractorWords(v, ctx, rng, 3, lesson)
+  if (ctx.taught && ds.length < 3) {
+    // gate: too few taught words for target-language options; English options may come from any word
+    if (kind === 'choiceEn' && !ds.length) return wordChoice(v, ctx, rng, 'choiceEs', lesson)
+    if (kind !== 'choiceEn') ds = [...ds, ...distractorWords(v, { ...ctx, taught: undefined }, rng, 3, lesson).filter((d) => !ds.some((x) => glossKey(x.en[0]!) === glossKey(d.en[0]!)))].slice(0, 3)
+  }
   const es = kind === 'choiceEn' ? false : true
   const correct = es ? v.en[0]! : v.lemma
   const options = rng.shuffle([correct, ...ds.map((d) => (es ? d.en[0]! : d.lemma))])
@@ -516,14 +630,15 @@ function wordChoice(v: VocabEntry, ctx: GenContext, rng: Rng, kind: 'choiceEs' |
   }
 }
 
-function wordExercise(v: VocabEntry, kind: ExerciseKind, ctx: GenContext, rng: Rng): Exercise {
+/** One exercise on a word in the given kind (the review ladder's kinds). */
+export function wordExercise(v: VocabEntry, kind: ExerciseKind, ctx: GenContext, rng: Rng): Exercise {
   switch (kind) {
     case 'choiceEs':
     case 'choiceEn':
     case 'listen':
       return wordChoice(v, ctx, rng, kind)
     case 'fillBlank': {
-      if (v.example) return fillBlankFromSentence(v.example, v.id, [], ctx, rng, new Set([v.lemma.toLowerCase()]))
+      if (v.example && (!ctx.taught || ctx.taught.ok(v.example.es))) return fillBlankFromSentence(v.example, v.id, [], ctx, rng, new Set([v.lemma.toLowerCase()]))
       return wordChoice(v, ctx, rng, 'choiceEn')
     }
     case 'dictation':
@@ -571,8 +686,8 @@ function sentenceExercise(s: Sentence, id: string, stage: Stage, lesson: Lesson,
   let kinds = kindsFor('sentence', stage).filter((k) => !exclude.includes(k))
   if (s.kinds) kinds = kinds.filter((k) => s.kinds!.includes(k))
   if (!ctx.speech) kinds = kinds.filter((k) => k !== 'speak')
-  if (!s.transform) kinds = kinds.filter((k) => k !== 'transform')
-  if (!s.error) kinds = kinds.filter((k) => k !== 'findError')
+  if (!s.transform || (ctx.taught && !ctx.taught.ok(s.transform.answer))) kinds = kinds.filter((k) => k !== 'transform')
+  if (!s.error || (ctx.taught && !ctx.taught.ok(s.error.wrong))) kinds = kinds.filter((k) => k !== 'findError')
   const short = wordsOf(s.es).length < 3
   if (short) kinds = kinds.filter((k) => k !== 'wordBank' && k !== 'order')
   if (lesson.skills) {
@@ -598,7 +713,7 @@ function sentenceExercise(s: Sentence, id: string, stage: Stage, lesson: Lesson,
     }
     case 'wordBank': {
       const ws = wordsOf(s.es)
-      const otherWords = lesson.sentences.flatMap((o) => wordsOf(o.es)).filter((w) => !ws.includes(w))
+      const otherWords = lesson.sentences.flatMap((o) => wordsOf(o.es)).filter((w) => !ws.includes(w) && (!ctx.taught || shownOk(w, ctx.taught)))
       const distract = rng.sample([...new Set(otherWords)], 2)
       return { ...base, kind, prompt: s.en, tiles: rng.shuffle([...ws, ...distract]), answers: [s.es, ...s.altEs], translation: s.en } satisfies WordBankExercise
     }
@@ -627,6 +742,24 @@ function sentenceExercise(s: Sentence, id: string, stage: Stage, lesson: Lesson,
     default:
       return { ...base, kind: 'typeEs', prompt: s.en, answers: [s.es, ...s.altEs], translation: s.en } satisfies TypeExercise
   }
+}
+
+/** A target-language option or tile the gate lets through: taught, and in the same script as the answer (no Jyutping beside characters). */
+function shownOk(text: string, gate: TaughtGate, like?: string): boolean {
+  return HAN.test(text) === HAN.test(like ?? text) && gate.ok(text)
+}
+/** Gate the target-language distractors of a blank: taught ones only, topped up with taught words of the same part of speech, then any. */
+function gatedOptions(candidates: string[], target: string, sentenceWords: string[], ctx: GenContext, rng: Rng): string[] {
+  const gate = ctx.taught!
+  const out = [...new Set(candidates.filter((d) => d !== target && shownOk(d, gate, target)))]
+  if (out.length >= 2) return out
+  const pos = ctx.lookup?.(target)?.[0]?.pos
+  const taught = [...gate.ids].map((id) => ctx.vocab.get(id)).filter((v): v is VocabEntry => Boolean(v) && v!.lemma !== target && !sentenceWords.includes(v!.lemma) && shownOk(v!.lemma, gate, target))
+  for (const v of [...rng.shuffle(taught.filter((v) => v.pos === pos)), ...rng.shuffle(taught)]) {
+    if (out.length >= 2) break
+    if (!out.includes(v.lemma)) out.push(v.lemma)
+  }
+  return out
 }
 
 function replaceWord(sentence: string, word: string, repl: string): string {
@@ -703,6 +836,7 @@ function fillBlankFromSentence(s: { es: string; en: string }, id: string, gramma
     distractors = [...new Set([...distractors, ...rng.sample(samePos, 4), ...otherWords])]
   }
   if (distractors.length < 2) distractors.push(...rng.sample(ctx.pool, 3).map((p) => p.lemma))
+  if (ctx.taught) distractors = gatedOptions(distractors, target, ws, ctx, rng)
   const opts = rng.shuffle([target, ...rng.sample(distractors.filter((d) => d !== target), 2)])
   return {
     kind: 'fillBlank',

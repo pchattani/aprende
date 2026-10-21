@@ -5,7 +5,7 @@ lessons:
     title: 一百、一千、一萬
     teach: [g.big-numbers]
     tip: "Chinese counts big numbers in 萬 (10,000): 50,000 is 五萬. A gap in the middle is 零 (一百零五 = 105), and a final round unit is dropped in speech (一百五 = 150)."
-    vocab: [w.baak3, w.cin1, w.maan6, w.jik1, w.saam1.b, w.fu3, w.haai4, w.kwan4, w.mou2, w.deng2, w.soeng1-coeng4, w.do1, w.siu2, w.hou2-do1, w.siu2-siu2, w.cyun4-bou6, w.gau3, w.zung6-jau5, w.zau6, w.si3, w.ngaam1]
+    vocab: [w.cin1, w.maan6, w.jik1, w.saam1.b, w.haai4, w.kwan4, w.mou2, w.deng2, w.soeng1-coeng4, w.siu2, w.cyun4-bou6, w.gau3, w.si3, w.jap6-heoi3, w.caa1.b, w.gaa3-cin4]
     sentences:
       - { es: "一百、兩百、三百。", en: "One hundred, two hundred, three hundred.", grammar: [g.big-numbers], vocab: [w.baak3], kinds: [dictation, listen, typeEs, order] }
       - { es: "一千、一萬、十萬。", en: "One thousand, ten thousand, a hundred thousand.", grammar: [g.big-numbers], vocab: [w.cin1, w.maan6], kinds: [dictation, listen, typeEs, order] }
@@ -38,7 +38,7 @@ lessons:
         grammar: [g.big-numbers, g.jau-have]
         vocab: [w.maan6, w.cin1]
       - q: { es: "我可唔可以試吓呢條裙呀？", en: "Can I try on this dress?" }
-        a: { es: "得，入面試啦。", en: "Sure, try it on inside." }
+        a: { es: "得，入去試啦。", en: "Sure, go in and try it on." }
         alt: ["可以。", "得，冇問題。"]
         grammar: [g.jiu-want]
         vocab: [w.si3, w.kwan4]
@@ -73,7 +73,7 @@ lessons:
     title: 十蚊、五毫、八達通
     teach: [g.money]
     tip: "Say 蚊 for dollars (十蚊) and 毫 for ten cents (五毫). The digit after 蚊 is tens of cents: 十二蚊八 is $12.80. 個 also means 'dollar': 三個半 = $3.50."
-    vocab: [w.cin2, w.man1, w.hou4, w.sin1, w.jyun4, w.gong2-bai6, w.baat3-daat6-tung1, w.zaau2-cin2, w.saan2-zi2, w.bei2-cin2, w.sau1, w.jat1-gung6, w.hou4-zi2, w.jau5-cin4, w.bin6-lei6-dim3, w.ciu1-si5]
+    vocab: [w.cin2, w.man1, w.hou4, w.sin1, w.jyun4, w.gong2-bai6, w.baat3-daat6-tung1, w.zaau2-cin2, w.saan2-zi2, w.bei2-cin2, w.sau1, w.hou4-zi2, w.jau5-cin4, w.bin6-lei6-dim3, w.ciu1-si5, w.ce1-fai3, w.gwo3, w.gaai1-si5, w.deoi3-min6, w.fu6-gan6, w.zi2-gan1, w.faan1, w.siu2-si4]
     sentences:
       - { es: "一杯咖啡廿八蚊。", en: "A coffee is $28.", altEs: ["一杯咖啡二十八蚊。"], grammar: [g.money], vocab: [w.man1],
           error: { wrong: "一杯咖啡廿八元。", explain: "In speech, dollars are 蚊; 元 is what you see written on price tags.", grammar: g.money } }
@@ -142,7 +142,7 @@ lessons:
     title: 幾多錢呀？
     teach: [g.prices-gei-do-cin]
     tip: "Ask 幾多錢呀？ or, at the market, 點賣呀？ Prices per unit put the price first: 十蚊一個, 三十蚊一斤. A 斤 (catty) is about 600 g."
-    vocab: [w.gei2-cin2, w.peng4, w.gwai3, w.peng4-di1, w.gaa3-cin4, w.gan1, w.gaai1-si5, w.si5-zaap6, w.pou3-tau2, w.lou5-baan2, w.maai6, w.saang1-gwo2, w.ping4-gwo2, w.caang2, w.hoeng1-ziu1, w.coi3, w.baak6-coi3, w.po1, w.san1-sin1, w.dak1, w.m4-dak1, w.dak1-laa3, w.dak1-m4-dak1]
+    vocab: [w.gei2-cin2, w.peng4, w.gwai3, w.peng4-di1, w.gan1, w.si5-zaap6, w.lou5-baan2, w.ping4-gwo2, w.caang2, w.hoeng1-ziu1, w.coi3, w.baak6-coi3, w.po1, w.m4-dak1, w.dak1-m4-dak1, w.waa1, w.gam1-ziu1, w.sin1.b]
     sentences:
       - { es: "呢個幾多錢呀？", en: "How much is this?", altEs: ["呢個幾錢呀？", "呢個幾多錢？"], grammar: [g.prices-gei-do-cin], vocab: [w.gei2-cin2],
           transform: { instruction: "Ask about 'that one'", answer: "嗰個幾多錢呀？", alt: ["嗰個幾錢呀？"] } }
@@ -158,7 +158,7 @@ lessons:
       - { es: "灣仔有好多舖頭賣生果。", en: "Lots of shops in Wan Chai sell fruit.", altEs: ["灣仔好多舖頭賣生果。"], grammar: [g.jau-have], vocab: [w.pou3-tau2, w.maai6, w.saang1-gwo2] }
       - { es: "香蕉幾多錢一斤呀？", en: "How much are bananas per catty?", altEs: ["香蕉點賣呀？", "香蕉幾錢一斤呀？"], grammar: [g.prices-gei-do-cin], vocab: [w.hoeng1-ziu1, w.gan1] }
       - { es: "我要一棵白菜。", en: "I'd like one bok choy.", altEs: ["一棵白菜，唔該。"], grammar: [g.common-classifiers, g.jiu-want], vocab: [w.po1, w.baak6-coi3] }
-      - { es: "呢個價錢好合理。", en: "This price is very reasonable.", altEs: ["呢個價錢唔貴。"], grammar: [g.demonstratives], vocab: [w.gaa3-cin4] }
+      - { es: "呢個價錢好平。", en: "This price is very cheap.", altEn: ["That's a very cheap price.", "The price is very low."], altEs: ["呢個價錢唔貴。"], grammar: [g.demonstratives], vocab: [w.gaa3-cin4] }
       - { es: "二十蚊三個，得唔得呀？", en: "Three for twenty dollars, is that OK?", altEs: ["廿蚊三個得唔得？"], grammar: [g.prices-gei-do-cin], vocab: [w.dak1-m4-dak1] }
       - { es: "得，冇問題。", en: "OK, no problem.", altEs: ["得呀，冇問題。"], grammar: [g.prices-gei-do-cin], vocab: [w.dak1] }
       - { es: "唔得呀，已經好平喇。", en: "No way, it's already very cheap.", altEs: ["唔得，已經好平㗎喇。"], grammar: [g.prices-gei-do-cin], vocab: [w.m4-dak1, w.peng4], jp: "m4 dak1 aa3 ji5 ging1 hou2 peng4 laa3" }
@@ -201,7 +201,7 @@ lessons:
         en: ["Wan Chai market is very busy.", "The vegetables are very fresh, twelve dollars a catty.", "The oranges are three for ten dollars. Not expensive."]
         grammar: [g.prices-gei-do-cin]
         vocab: [w.gaai1-si5, w.coi3, w.gan1, w.caang2]
-      - title: "價錢牌"
+      - title: "價錢"
         es: ["蘋果：十蚊兩個。", "香蕉：十五蚊一斤。", "白菜：十二蚊一斤。"]
         en: ["Apples: two for ten dollars.", "Bananas: fifteen dollars a catty.", "Bok choy: twelve dollars a catty."]
         grammar: [g.prices-gei-do-cin]
@@ -216,7 +216,7 @@ lessons:
     title: 我要兩斤
     teach: [g.jiu-want]
     tip: "要 + noun orders or buys something (我要兩斤); 想 + verb says what you would like to do (我想買啲生果). 要 + verb usually means 'have to'."
-    vocab: [w.jiu3, w.soeng2.b, w.maai5, w.maai5-je5, w.maai5-sung3, w.sung3, w.juk6, w.zyu1-juk6, w.ngau4-juk6, w.gai1, w.gai1-daan2, w.daan2, w.haa1, w.mai5, w.tai2, w.haa5, w.gaan2, w.do1-di1]
+    vocab: [w.jiu3, w.maai5-je5, w.maai5-sung3, w.sung3, w.juk6, w.zyu1-juk6, w.ngau4-juk6, w.gai1, w.gai1-daan2, w.daan2, w.haa1, w.do1-di1, w.gam1-maan5, w.sung3.b]
     sentences:
       - { es: "我要兩斤豬肉。", en: "I'd like two catties of pork.", altEs: ["兩斤豬肉，唔該。"], grammar: [g.jiu-want, g.loeng-vs-ji], vocab: [w.jiu3, w.zyu1-juk6],
           transform: { instruction: "Ask for one catty of beef instead", answer: "我要一斤牛肉。", alt: ["一斤牛肉，唔該。"] } }

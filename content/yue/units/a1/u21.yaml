@@ -6,8 +6,8 @@ lessons:
     teach: [g.sight-characters]
     skills: [listen, speak, read, write]
     write: [大, 小]
-    tip: "大 daai6 is a person (人) stretching their arms out wide: big! 小 siu2 is small. In speech 'small' is usually 細 sai3, but you see 小 in words like 小心 'careful!' and 小巴 'minibus'."
-    vocab: [w.daai6, w.siu2.b, w.sai3, w.siu2-sam1, w.siu2-baa1]
+    tip: "大 daai6 is a person (人) stretching their arms out wide: big! 小 siu2 is small. In speech 'small' is usually 細 sai3, but you see 小 in words like 小心 'careful!' and 小巴 'minibus'. 坐 co5 is 'to sit', and also 'to take' a bus or a train: 坐小巴."
+    vocab: [w.daai6, w.siu2.b, w.sai3, w.siu2-sam1, w.siu2-baa1, w.co5]
     sentences:
       - { es: "大。", en: "Big.", altEn: ["Large."], grammar: [g.sight-characters], vocab: [w.daai6] }
       - { es: "小。", en: "Small.", altEn: ["Little."], grammar: [g.sight-characters], vocab: [w.siu2.b] }
@@ -15,7 +15,7 @@ lessons:
       - { es: "好細。", en: "Very small.", altEn: ["So small.", "It's very small."], grammar: [g.sight-characters], vocab: [w.sai3] }
       - { es: "小心！", en: "Careful!", altEn: ["Be careful!", "Watch out!"], grammar: [g.sight-characters], vocab: [w.siu2-sam1] }
       - { es: "小巴。", en: "Minibus.", altEn: ["A minibus."], grammar: [g.sight-characters], vocab: [w.siu2-baa1] }
-      - { es: "我坐小巴。", en: "I take the minibus.", altEn: ["I go by minibus."], grammar: [g.sight-characters], vocab: [w.siu2-baa1] }
+      - { es: "我坐小巴。", en: "I take the minibus.", altEn: ["I go by minibus."], grammar: [g.sight-characters], vocab: [w.co5, w.siu2-baa1] }
       - { es: "大同小。", en: "Big and small.", grammar: [g.sight-characters], vocab: [w.daai6, w.siu2.b] }
       - { es: "山好大，人好細。", en: "The mountain is big, people are small.", altEn: ["The mountain is huge and people are tiny."], grammar: [g.sight-characters, g.adjective-predicates], vocab: [w.daai6, w.sai3] }
     exchanges:
@@ -24,11 +24,11 @@ lessons:
         alt: ["唔大。", "好細。"]
         grammar: [g.sight-characters, g.a-not-a-questions]
         vocab: [w.daai6]
-      - q: { es: "呢個係咩字呀？", en: "What character is this?" }
-        a: { es: "小字。", en: "The character 小 (small)." }
-        alt: ["係小字。"]
+      - q: { es: "大定細呀？", en: "Big or small?" }
+        a: { es: "好細。", en: "Very small." }
+        alt: ["細。", "好大。", "大。"]
         grammar: [g.sight-characters]
-        vocab: [w.siu2.b, w.zi6]
+        vocab: [w.daai6, w.sai3]
       - q: { es: "小心呀！", en: "Careful!" }
         a: { es: "唔該！", en: "Thanks!" }
         alt: ["唔該晒！"]
@@ -54,15 +54,15 @@ lessons:
       - { es: "下面。", en: "Below.", altEn: ["Down there.", "Underneath."], grammar: [g.sight-characters], vocab: [w.haa6-min6] }
       - { es: "樓上。", en: "Upstairs.", grammar: [g.sight-characters], vocab: [w.lau4-soeng6] }
       - { es: "樓下。", en: "Downstairs.", grammar: [g.sight-characters], vocab: [w.lau4-haa6] }
-      - { es: "我住樓上。", en: "I live upstairs.", grammar: [g.sight-characters], vocab: [w.zyu6, w.lau4-soeng6] }
+      - { es: "我喺樓上。", en: "I'm upstairs.", grammar: [g.sight-characters, g.hai2-location], vocab: [w.hai2, w.lau4-soeng6] }
       - { es: "Leo喺樓下。", en: "Leo is downstairs.", grammar: [g.sight-characters, g.hai2-location], vocab: [w.lau4-haa6] }
       - { es: "上個月。", en: "Last month.", grammar: [g.sight-characters, g.dates], vocab: [w.soeng6-go3-jyut6] }
       - { es: "下個月。", en: "Next month.", grammar: [g.sight-characters, g.dates], vocab: [w.haa6-go3-jyut6] }
-      - { es: "上車！", en: "Get on!", altEn: ["Get in!", "Get on the bus!"], grammar: [g.sight-characters], vocab: [w.soeng5-ce1], note: "As a verb, 'go up / get on', 上 is read soeng5." }
+      - { es: "上山！", en: "Up the mountain!", altEn: ["Let's go up the mountain!", "Up the hill!"], grammar: [g.sight-characters], vocab: [w.soeng5, w.saan1.b], jp: "soeng5 saan1", note: "As a verb, 'go up / get on', 上 is read soeng5." }
     exchanges:
-      - q: { es: "你住樓上定樓下呀？", en: "Do you live upstairs or downstairs?" }
-        a: { es: "我住樓上。", en: "I live upstairs." }
-        alt: ["樓下。", "我住樓下。"]
+      - q: { es: "你喺樓上定樓下呀？", en: "Are you upstairs or downstairs?" }
+        a: { es: "我喺樓上。", en: "I'm upstairs." }
+        alt: ["樓下。", "我喺樓下。", "樓上。"]
         grammar: [g.sight-characters]
         vocab: [w.lau4-soeng6, w.lau4-haa6]
       - q: { es: "Leo喺邊度呀？", en: "Where's Leo?" }
@@ -86,8 +86,8 @@ lessons:
     teach: [g.sight-characters]
     skills: [listen, speak, read, write]
     write: [不, 上, 下, 大, 小]
-    tip: "不 bat1 means 'not', but only in writing and in a few fixed words; in speech 'not' is 唔. You'll meet it in 不過 'but' and 不如 'how about…?'. Today you also write 上, 下, 大 and 小 again."
-    vocab: [w.bat1.b, w.bat1-gwo3, w.bat1-jyu4]
+    tip: "不 bat1 means 'not', but only in writing and in a few fixed words; in speech 'not' is 唔. You'll meet it in 不過 'but' and 不如 'how about…?'. Today you also write 上, 下, 大 and 小 again. 靚 leng3 means 'pretty, nice': 好細，不過好靚 'small, but pretty'."
+    vocab: [w.bat1.b, w.bat1-gwo3, w.bat1-jyu4, w.leng3]
     sentences:
       - { es: "不。", en: "Not.", altEn: ["No.", "Not (written)."], grammar: [g.sight-characters], vocab: [w.bat1.b], note: "Written 'not'. When you speak, say 唔." }
       - { es: "不如飲茶啦！", en: "How about yum cha!", altEn: ["Let's go for yum cha!", "How about going for yum cha?"], grammar: [g.sight-characters, g.particles-aa-laa], vocab: [w.bat1-jyu4, w.jam2-caa4] }

@@ -60,8 +60,14 @@ export const PackSchema = z.object({
       romanization: z.enum(['none', 'jyutping']).default('none'),
       /** Measure words on nouns and a classifier trainer. */
       classifiers: z.boolean().default(false),
+      /**
+       * Taught-words gate for learners who know none of the language: lessons only show or play
+       * target-language text to understand when ≥95% of its words were taught (engine/taught.ts);
+       * other questions are asked in English or left out.
+       */
+      taughtOnly: z.boolean().default(false),
     })
-    .default({ conjugation: true, gender: true, romanization: 'none', classifiers: false }),
+    .default({ conjugation: true, gender: true, romanization: 'none', classifiers: false, taughtOnly: false }),
   /** Characters offered on the helper row under text boxes. */
   specialChars: z.array(z.string()).default([]),
 })

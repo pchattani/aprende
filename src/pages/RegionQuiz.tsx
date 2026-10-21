@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import type { LevelId, Unit } from '../engine/schema'
-import { levels, loadUnit, loadExam, vocab, ui, units as unitIndex } from '../engine/loader'
+import { levels, loadUnit, loadExam, vocab, ui, units as unitIndex, pack } from '../engine/loader'
 import { lessonRows, getKv, setKv, awardSouvenir } from '../db/progress'
 import { buildRegionQuiz, QUIZ_PASS, type QuizItem } from '../engine/quiz'
 import { regionFor, isStamped, souvenirById } from '../engine/journey'
@@ -48,7 +48,9 @@ export default function RegionQuiz() {
       const exam = await loadExam(lvl)
       const rows = await lessonRows()
       const stamped = new Set(unitsOfLevel.filter((u) => isStamped(u.id, rows, u.lessons.length)).map((u) => u.id))
-      const quiz = buildRegionQuiz(lvl, unitsOfLevel, exam, [...vocab.values()], hashString(`quiz:${lvl}:${todayKey()}`), stamped)
+      // Beginner courses (features.taughtOnly): only what the furthest lesson done has taught.
+      const taught = pack.features.taughtOnly ? (await import('../engine/taughtData')).taughtGateFor(rows.keys()) : undefined
+      const quiz = buildRegionQuiz(lvl, unitsOfLevel, exam, [...vocab.values()], hashString(`quiz:${lvl}:${todayKey()}`), stamped, taught)
       if (alive) setItems(quiz)
     })()
     return () => {

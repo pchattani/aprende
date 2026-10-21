@@ -134,11 +134,12 @@ unitStickers:
 currency: { name: 蚊, plural: 蚊, symbol: HK$ }
 # In-lesson game feel: the companion dog's reactions and the streak banners ({n} is the count).
 game:
-  correct: ["啱晒！", "好嘢！", "好叻！", "犀利！", "正呀！"]
-  almost: ["差少少！", "就快得喇！"]
-  wrong: ["差少少！", "唔緊要！", "加油！", "下次得㗎！"]
-  combo: ["手風好順！", "冇得頂！", "勁到爆！"]
-  inARow: "連續啱咗{n}題"
-  halfway: "行咗一半喇！"
-  lastOne: "最後一題！"
-  letsGo: "出發！"
+  # Each line carries its English too: the Cantonese course is for absolute beginners.
+  correct: ["啱晒！ Spot on!", "好嘢！ Nice!", "好叻！ Clever!", "犀利！ Brilliant!", "正呀！ Great!"]
+  almost: ["差少少！ So close!", "就快得喇！ Nearly there!"]
+  wrong: ["差少少！ Nearly!", "唔緊要！ Never mind!", "加油！ Keep going!", "下次得㗎！ Next time!"]
+  combo: ["手風好順！ On a roll!", "冇得頂！ Unstoppable!", "勁到爆！ Amazing!"]
+  inARow: "連續啱咗{n}題 · {n} in a row"
+  halfway: "行咗一半喇！ Halfway!"
+  lastOne: "最後一題！ Last one!"
+  letsGo: "出發！ Let's go!"

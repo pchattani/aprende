@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams, Link } from 'react-router'
 import type { Unit } from '../engine/schema'
-import { loadUnit, levels, units, vocab, vocabUpTo, levelOf, unitIsAuthored } from '../engine/loader'
+import { loadUnit, levels, units, vocab, vocabUpTo, levelOf, unitIsAuthored, pack } from '../engine/loader'
 import { buildCheckpoint, checkpointSeed, CHECKPOINT_PASS, CHECKPOINT_PARTS, type CheckpointExercise, type CheckpointPart, type CheckpointRecord } from '../engine/checkpoint'
 import { getKv, setKv, ownedSouvenirs, awardSouvenir, awardCoins } from '../db/progress'
 import { checkpointCoins } from '../engine/economy'
@@ -84,7 +84,9 @@ export default function CheckpointPage() {
         const unit = await loadUnit(unitId)
         const previous = await previousUnits(unitId)
         const record = await getKv<CheckpointRecord | undefined>(`checkpoint:${unitId}`, undefined)
-        const ctx = { vocab, pool: vocabUpTo(level), verbs: IRREGULAR, stageOf: () => undefined, speech: false, lookup: lookupForm }
+        // Beginner courses (features.taughtOnly): what the stop's last lesson has taught.
+        const taught = pack.features.taughtOnly ? (await import('../engine/taughtData')).taughtGateAt(unit.lessons.at(-1)!.id) : undefined
+        const ctx = { vocab, pool: vocabUpTo(level), verbs: IRREGULAR, stageOf: () => undefined, speech: false, lookup: lookupForm, taught }
         const exercises = buildCheckpoint(unit, previous, ctx, checkpointSeed(unitId, record?.attempts ?? 0))
         if (alive) setPhase({ kind: 'intro', exercises, record })
       } catch (e) {

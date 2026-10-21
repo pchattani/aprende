@@ -15,10 +15,11 @@ const TITLES: Record<ChoiceExercise['kind'], string> = {
 
 export function Choice({ exercise, value, onChange, checked, result }: ExerciseProps<ChoiceExercise>) {
   const selected = typeof value === 'number' ? value : undefined
-  const isEs = exercise.kind === 'choiceEs' || exercise.kind === 'fillBlank' || exercise.kind === 'reply'
+  // askEn: an English question (its wording is not taught yet), answered by picking the target-language reply
+  const isEs = !exercise.askEn && (exercise.kind === 'choiceEs' || exercise.kind === 'fillBlank' || exercise.kind === 'reply')
   return (
     <div>
-      <Instruction>{exercise.passage ? 'Read and answer' : TITLES[exercise.kind]}</Instruction>
+      <Instruction>{exercise.passage ? 'Read and answer' : exercise.askEn ? `Answer in ${LANGUAGE}` : TITLES[exercise.kind]}</Instruction>
       {exercise.passage ? (
         <>
           <PassageCard passage={exercise.passage} revealed={checked} />

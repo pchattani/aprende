@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams, Link } from 'react-router'
 import type { Lesson, Unit } from '../engine/schema'
 import type { Exercise, LessonResult, Stage } from '../engine/types'
-import { loadLesson, vocab, vocabUpTo, levelOf, units } from '../engine/loader'
+import { loadLesson, vocab, vocabUpTo, levelOf, units, pack } from '../engine/loader'
 import { generateLesson, sentenceId, exchangeId, textId, spicyId } from '../engine/generate'
 import { ensureCards, getCards, recordLesson, getKv, setKv, lessonRows, type ItemSpec } from '../db/progress'
 import { IRREGULAR } from '@lang/verbs'
@@ -105,9 +105,11 @@ export default function LessonPage() {
         ].filter((x) => x.s.es.split(' ').length <= 16)
         const seenOf = (itemId: string) => cards.get(itemId)?.reps ?? 0
         const avoid = new Set(await getKv<string[]>(`lastSession:${id}`, []))
+        // Beginner courses (features.taughtOnly): only what this lesson and the ones before it taught is shown to understand.
+        const taught = pack.features.taughtOnly ? (await import('../engine/taughtData')).taughtGateAt(id) : undefined
         const exercises = generateLesson(
           lesson,
-          { vocab, pool: vocabUpTo(level), verbs: IRREGULAR, stageOf, seenOf, speech: speaking !== 'off' && sttSupported(), speaking: speaking === 'lots' ? 'lots' : 'some', lookup: lookupForm },
+          { vocab, pool: vocabUpTo(level), verbs: IRREGULAR, stageOf, seenOf, speech: speaking !== 'off' && sttSupported(), speaking: speaking === 'lots' ? 'lots' : 'some', lookup: lookupForm, taught },
           { count: SESSION_COUNT[sessionLength], extra, avoid, spicy },
         )
         if (!alive) return
