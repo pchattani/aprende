@@ -4,16 +4,24 @@ import yueJourney from '../content/yue/journey.yaml'
 import ptJourney from '../content/pt/journey.yaml'
 import itJourney from '../content/it/journey.yaml'
 import frJourney from '../content/fr/journey.yaml'
+import esSyllabus from '../content/es/syllabus.yaml'
+import yueSyllabus from '../content/yue/syllabus.yaml'
+import ptSyllabus from '../content/pt/syllabus.yaml'
+import itSyllabus from '../content/it/syllabus.yaml'
+import frSyllabus from '../content/fr/syllabus.yaml'
 import { sceneFor, MOTIFS, ACCENTS, PALETTES, SCENE_OVERRIDES, type Motif } from '@/engine/scenes'
 import { LEVEL_ORDER, type LevelId } from '@/engine/schema'
 
 type Journey = { regions: { level: LevelId; stops: { name: string; emoji: string; es: string; en: string }[] }[] }
 const COURSES = ['es', 'yue', 'pt', 'it', 'fr'] as const
 const JOURNEYS: Record<string, unknown> = { es: esJourney, yue: yueJourney, pt: ptJourney, it: itJourney, fr: frJourney }
+const SYLLABI: Record<string, unknown> = { es: esSyllabus, yue: yueSyllabus, pt: ptSyllabus, it: itSyllabus, fr: frSyllabus }
 
 function stopsOf(course: string) {
   const j = JOURNEYS[course] as Journey
-  return j.regions.flatMap((r) => r.stops.map((s, i) => ({ ...s, unitId: `${r.level}.u${String(i + 1).padStart(2, '0')}`, level: r.level })))
+  // stop i belongs to the level's i-th unit in syllabus order (Cantonese lists its starter units a1.u13–u22 first)
+  const units = (SYLLABI[course] as { levels: { id: LevelId; units: { id: string }[] }[] }).levels
+  return j.regions.flatMap((r) => r.stops.map((s, i) => ({ ...s, unitId: units.find((l) => l.id === r.level)!.units[i]!.id, level: r.level })))
 }
 
 describe('postcard scenes', () => {

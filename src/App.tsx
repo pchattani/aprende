@@ -66,8 +66,8 @@ function Shell() {
     { to: '/', label: 'Journey', icon: IconRoute },
     { to: '/review', label: 'Review', icon: IconPostcard },
     { to: '/reader', label: 'Read', icon: IconBook },
-    { to: '/insights', label: 'Insights', icon: IconChart },
     { to: '/study', label: 'Tools', icon: IconVerb },
+    { to: '/insights', label: 'Insights', icon: IconChart },
   ]
   return (
     <div className="mx-auto min-h-full max-w-xl pb-[calc(6rem+env(safe-area-inset-bottom))]">

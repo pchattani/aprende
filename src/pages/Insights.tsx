@@ -6,6 +6,7 @@ import { db } from '../db'
 import { levels, vocab, grammar, units, loadLesson } from '../engine/loader'
 import { sentenceId, exchangeId, textId, spicyId } from '../engine/generate'
 import { TL } from '../engine/course'
+import { charOf } from '../engine/chars'
 import {
   computeInsights, EXERCISE_LABEL, MIN_ANSWERS, MATURE_DAYS, LEECH_LAPSES, SPACED_MIN_DAYS, FATIGUE_Z, pct, pp, ci, num, signed, days as fmtDays, shortDate, pval,
   type CourseMeta, type Insights as InsightsData, type Suggestion, type Breakdown,
@@ -81,7 +82,7 @@ function useCourseMeta(lessonIds: string[] | undefined): CourseMeta {
     return {
       levels: levels.map((l) => ({ id: l.id, items: (words.get(l.id) ?? 0) + (gByLevel.get(l.id)?.length ?? 0), grammar: gByLevel.get(l.id) ?? [] })),
       grammarTitles: titles,
-      labelOf: (id: string) => vocab.get(id)?.lemma ?? grammar.get(id)?.title ?? texts.get(id),
+      labelOf: (id: string) => vocab.get(id)?.lemma ?? grammar.get(id)?.title ?? texts.get(id) ?? charOf(id),
       nextLessonId,
     }
   }, [nextLessonId, texts])
@@ -336,7 +337,7 @@ function Report({ ins, meta }: { ins: InsightsData; meta: CourseMeta }) {
             <tbody>
               {memory.byKind.filter((k) => k.n).map((k) => (
                 <tr key={k.kind} className="border-t border-line">
-                  <td className="py-1 font-sans font-semibold">{k.kind === 'word' ? 'Words' : k.kind === 'sentence' ? 'Sentences' : 'Grammar points'}</td>
+                  <td className="py-1 font-sans font-semibold">{k.kind === 'word' ? 'Words' : k.kind === 'sentence' ? 'Sentences' : k.kind === 'char' ? 'Characters to write' : 'Grammar points'}</td>
                   <td className="py-1 text-right">{k.n}</td>
                   <td className="py-1 text-right">{fmtDays(k.medianStability)}</td>
                   <td className="py-1 text-right">{pct(k.mature)}</td>

@@ -2,7 +2,7 @@
  * Recognition -> recall -> production ladder: which exercise kinds suit an
  * item at a given stage. The generator picks from these sets.
  */
-import type { ExerciseKind } from './schema'
+import type { ExerciseKind, LessonSkill } from './schema'
 import type { ItemKind, Stage } from './types'
 
 const WORD: Record<Stage, ExerciseKind[]> = {
@@ -17,6 +17,13 @@ const SENTENCE: Record<Stage, ExerciseKind[]> = {
   2: ['typeEs', 'dictation', 'order'],
   3: ['typeEs', 'speak', 'transform', 'findError'],
 }
+/** Characters to write: trace over the outline until it sticks, then write from memory. */
+const CHAR: Record<Stage, ExerciseKind[]> = {
+  0: ['trace'],
+  1: ['writeChar', 'trace'],
+  2: ['writeChar'],
+  3: ['writeChar'],
+}
 const GRAMMAR: Record<Stage, ExerciseKind[]> = {
   0: ['fillBlank', 'wordBank', 'choiceEn'],
   1: ['fillBlank', 'conjugate', 'order'],
@@ -25,6 +32,19 @@ const GRAMMAR: Record<Stage, ExerciseKind[]> = {
 }
 
 export function kindsFor(item: ItemKind, stage: Stage): ExerciseKind[] {
-  return item === 'word' ? WORD[stage] : item === 'sentence' ? SENTENCE[stage] : GRAMMAR[stage]
+  return item === 'word' ? WORD[stage] : item === 'sentence' ? SENTENCE[stage] : item === 'char' ? CHAR[stage] : GRAMMAR[stage]
+}
+
+/** The skills each exercise kind practises; a lesson with `skills` only gets kinds whose skills it lists. */
+const KIND_SKILLS: Record<ExerciseKind, LessonSkill[]> = {
+  choiceEs: ['read'], choiceEn: ['read'], match: ['read'], fillBlank: ['read'], reply: ['read'], order: ['read'], wordBank: ['read'], orderText: ['read'], pictogram: ['read'],
+  listen: ['listen'], hearChar: ['listen', 'read'],
+  speak: ['speak'],
+  trace: ['write'], writeChar: ['write'], typeEs: ['write'], typeEn: ['write'], dictation: ['write'], conjugate: ['write'], transform: ['write'], findError: ['write'],
+}
+
+/** Whether a lesson practising `skills` (undefined = everything) may use this exercise kind. */
+export function kindAllowed(kind: ExerciseKind, skills: readonly LessonSkill[] | undefined): boolean {
+  return !skills || KIND_SKILLS[kind].every((s) => skills.includes(s))
 }
 

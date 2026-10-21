@@ -12,6 +12,7 @@ const run = (label, cmd, env = {}) => {
   console.log(`\n=== ${label} ===`)
   execSync(cmd, { stdio: 'inherit', env: { ...process.env, ...env } })
 }
+run('Stroke data', 'node scripts/build-strokes.mjs')
 // The hub never empties dist/ and each course only empties its own folder, so the order does not matter.
 run('Pawsport hub', 'npx vite build -c vite.hub.config.ts')
 for (const c of courses) run(`${c.name} (${c.id}) → dist/${c.slug}/`, 'npx vite build', { VITE_LANG: c.id })

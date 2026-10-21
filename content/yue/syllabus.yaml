@@ -8,15 +8,106 @@ levels:
   - id: a1
     title: A1
     name: Breakthrough
-    description: Understand and use everyday Cantonese expressions and very basic phrases. Introduce yourself, ask and answer simple personal questions, count, shop and order food, and get around Hong Kong Island when people speak slowly.
+    description: Start from zero with a slow starter path (numbers, first phrases, your first characters), then understand and use everyday Cantonese expressions and very basic phrases. Introduce yourself, ask and answer simple personal questions, count, shop and order food, and get around Hong Kong Island when people speak slowly.
     wordTarget: 700
     canDo:
+      - Count to 99 and write the numbers, a first set of pictograms (山, 水, 人…) and the sight characters 上, 下, 大, 小, 不.
       - Greet people, introduce myself and others, and say where I am from and where I live.
       - Count, give my phone number and age, and use the right measure word for common things.
       - Ask prices, pay and shop at a market; order dim sum at a yum cha restaurant.
       - Tell the time, give dates and describe my family and my daily routine.
       - Ask for directions, take the MTR and talk about the weather.
     units:
+      # Starter path (a1.u13–a1.u22): very short, slow units placed before a1.u01. New ids so stored progress keeps its meaning.
+      - id: a1.u13
+        title: 數數字
+        subtitle: Numbers 1–99 - hear, say and write them
+        authored: true
+        canDo:
+          - "Recognise, say and write the numbers 一 to 十."
+          - "Count from zero to ninety-nine."
+          - "Hear a number and pick it out."
+        grammar: [g.counting-1-10, g.stroke-order, g.numbers-1-99]
+      - id: a1.u14
+        title: 你好、唔該、多謝
+        subtitle: First words - hello, please and thank you
+        authored: true
+        canDo:
+          - 'Say hello and answer "how are you?".'
+          - "Use 唔該 for please, excuse me and thanks for a service."
+          - "Use 多謝 for thanks for a gift or a compliment, and reply to both."
+        grammar: [g.greetings, g.mgoi-doze]
+      - id: a1.u15
+        title: 象形字
+        subtitle: Pictograms - characters that started as pictures
+        authored: true
+        canDo:
+          - "Recognise ten pictograms: 人 口 山 木 火 水 田 月 雨 門."
+          - "Write them in the right stroke order."
+          - "Read 出口, 入口 and 門口 on signs."
+        grammar: [g.pictograms, g.stroke-order]
+      - id: a1.u16
+        title: 我叫……
+        subtitle: Introducing yourself - name, surname, country, age
+        authored: true
+        canDo:
+          - "Say my name and surname and ask someone theirs."
+          - "Say where I am from and ask where someone is from."
+          - "Say how old I am and ask someone's age."
+        grammar: [g.name-giu-sing, g.hai6-identity, g.nationality-language, g.age]
+      - id: a1.u17
+        title: 今日幾號？
+        subtitle: Dates, days and time
+        authored: true
+        canDo:
+          - "Say the date and the day of the week."
+          - "Ask and tell the time on the hour and the half hour."
+          - "Write 日 and 月 and the number characters."
+        grammar: [g.dates, g.days-weeks, g.clock-time, g.loeng-vs-ji]
+      - id: a1.u18
+        title: 咖啡同點心
+        subtitle: First foods and drinks
+        authored: true
+        canDo:
+          - "Recognise seven foods by sound and by sight: 咖啡 茶 點心 菠蘿包 餃子 牛肉 炒飯."
+          - "Say what I eat and drink with 食 and 飲."
+        grammar: [g.sik-jam, g.classifiers-intro]
+      - id: a1.u19
+        title: 兩杯咖啡，唔該
+        subtitle: Ordering - numbers, food and please
+        authored: true
+        canDo:
+          - "Order drinks and food with a number and a measure word."
+          - "Ask how much something is and understand the price."
+          - "Say 唔該 and 多謝 at the right moment."
+        grammar: [g.order-mgoi, g.loeng-vs-ji, g.prices-gei-do-cin, g.jiu-want]
+      - id: a1.u20
+        title: 我同我屋企人
+        subtitle: Me and my family
+        authored: true
+        canDo:
+          - "Recognise the words for mum, dad, brothers and sisters."
+          - "Say who is in my family."
+          - "Talk about pets with 隻: 我屋企有三隻狗狗."
+        grammar: [g.kinship-terms, g.jau-have, g.common-classifiers]
+      - id: a1.u21
+        title: 上下大小不
+        subtitle: Five sight characters - up, down, big, small, not
+        authored: true
+        canDo:
+          - "Recognise and write 上 下 大 小 不."
+          - "Read 上面, 下面, 樓上, 樓下 and 小心."
+          - "Suggest something with 不如."
+        grammar: [g.sight-characters, g.stroke-order]
+      - id: a1.u22
+        title: 早晨！拜拜！
+        subtitle: Everyday words - morning, goodbye, today and tomorrow
+        authored: true
+        canDo:
+          - 'Say good morning, goodbye and "time to eat!".'
+          - "Talk about today, tomorrow and yesterday."
+          - "Say sorry, say food is tasty and say what I like."
+        grammar: [g.greetings, g.days-weeks, g.zung-ji-like]
       - id: a1.u01
         title: 打招呼同自我介紹
         subtitle: Greetings and introductions

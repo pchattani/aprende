@@ -3,8 +3,10 @@
  * plus learner state. Deterministic for a given seed.
  */
 import type { Lesson, Sentence, VocabEntry, ExerciseKind, Exchange, MiniText } from './schema'
-import type { Exercise, Stage, ChoiceExercise, WordBankExercise, TypeExercise, MatchExercise, FindErrorExercise, ItemKind, PinRow } from './types'
-import { kindsFor } from './ladder'
+import type { Exercise, Stage, ChoiceExercise, WordBankExercise, TypeExercise, MatchExercise, FindErrorExercise, ItemKind, PinRow, WriteExercise, CharChoiceExercise } from './types'
+import { kindsFor, kindAllowed } from './ladder'
+import { charId, charInfo, charOf } from './chars'
+import { PICTOGRAMS, hasPictogram } from './pictograms'
 import { Rng, hashString } from './random'
 import { words as wordsOf, stripAccents } from '@lang/normalize'
 import { conjugateWith, TENSE_LABELS, PERSONS, VERB_TRAINER, type Tense, type VerbTable } from '@lang/verbs'
@@ -105,6 +107,42 @@ export function orderTextExercise(t: MiniText, id: string, rng: Rng): WordBankEx
 }
 
 const GRAMMAR_TIP_KINDS = new Set<ExerciseKind>(['fillBlank', 'conjugate', 'typeEs', 'wordBank', 'order'])
+/** At most this many trace/writeChar exercises per lesson session (writing a new character is slow). */
+const WRITE_MAX = 2
+/** At most this many pictogram exercises per lesson session. */
+const PICTOGRAM_MAX = 2
+const HAN = /\p{Script=Han}/u
+
+/** Trace (watch the stroke order, then trace) or write from memory a character from a lesson's `write` list. */
+export function writeExercise(char: string, kind: WriteExercise['kind'], ctx: Pick<GenContext, 'vocab'>): WriteExercise {
+  const info = charInfo(char, ctx.vocab)
+  return { kind, items: [charId(char)], grammar: [], char, jp: info.jp, meaning: info.en, prompt: kind === 'trace' ? 'Trace the character' : 'Write the character', audio: char, review: { es: char, en: info.en } }
+}
+
+/** See the picture a character grew from, pick the character: distractors from the lesson's characters, then pictograms of the same type. */
+export function pictogramExercise(char: string, ctx: Pick<GenContext, 'vocab'>, rng: Rng, lessonChars: readonly string[] = []): CharChoiceExercise {
+  const info = charInfo(char, ctx.vocab)
+  const type = PICTOGRAMS[char]?.type
+  const all = Object.keys(PICTOGRAMS).filter((c) => c !== char)
+  const pool = [
+    ...rng.shuffle(lessonChars.filter((c) => c !== char && hasPictogram(c))),
+    ...rng.shuffle(all.filter((c) => PICTOGRAMS[c]!.type === type)),
+    ...rng.shuffle(all),
+  ]
+  const options = rng.shuffle([char, ...[...new Set(pool)].slice(0, 3)])
+  return { kind: 'pictogram', items: info.vocab ? [info.vocab.id] : [], grammar: [], char, prompt: 'Which character grew from this picture?', options, answer: options.indexOf(char), translation: info.en, review: { es: char, en: info.en } }
+}
+
+/** Hear a word, pick how it is written: distractors of the same length that do not sound the same. */
+export function hearCharExercise(v: VocabEntry, ctx: GenContext, rng: Rng, lesson?: Lesson): CharChoiceExercise {
+  const len = [...v.lemma].length
+  const ds = distractorWords(v, ctx, rng, 8, lesson)
+    .filter((d) => !v.jp || d.jp !== v.jp)
+    .sort((a, b) => Math.abs([...a.lemma].length - len) - Math.abs([...b.lemma].length - len))
+    .slice(0, 3)
+  const options = rng.shuffle([v.lemma, ...ds.map((d) => d.lemma)])
+  return { kind: 'hearChar', items: [v.id], grammar: [], prompt: 'Which one did you hear?', audio: v.lemma, options, answer: options.indexOf(v.lemma), translation: v.en[0], review: reviewOfWord(v) }
+}
 
 /** Key that identifies what an exercise practises, for adjacency checks. */
 function practiceKey(e: Exercise): string {
@@ -133,12 +171,27 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
   const vocabEntries = lesson.vocab.map((id) => ctx.vocab.get(id)).filter((v): v is VocabEntry => Boolean(v))
   const newWords = vocabEntries.filter((v) => (ctx.stageOf(v.id) ?? 0) === 0)
   const lessonWordSet = new Set(vocabEntries.map((v) => v.lemma.toLowerCase()))
-  const speakMax = ctx.speech ? (ctx.speaking === 'lots' ? 3 : 2) : 0
+  // Lessons with `skills` only practise those skills; without it every kind is allowed (and nothing below changes).
+  const skills = lesson.skills
+  // A lesson for speaking (and writing) only lifts the cap on speaking exercises, or it could not fill a session.
+  const speakOnly = skills !== undefined && !skills.includes('read') && !skills.includes('listen')
+  const speakMax = ctx.speech ? (speakOnly ? target : ctx.speaking === 'lots' ? 3 : 2) : 0
   let speakCount = 0
   const speakOk = () => speakCount < speakMax
   const noteSpeak = (e: Exercise | undefined) => {
     if (e?.kind === 'speak') speakCount++
     return e
+  }
+  const ok = (k: ExerciseKind) => kindAllowed(k, skills)
+  /** One word drill in an allowed kind (skill-limited lessons); typing the word only when nothing gentler is allowed. */
+  const wordDrill = (v: VocabEntry): Exercise | undefined => {
+    let kinds: ExerciseKind[] = (['hearChar', 'choiceEs', 'choiceEn', 'listen', 'speak'] as const).filter((k) => ok(k) && (k !== 'hearChar' || HAN.test(v.lemma)) && (k !== 'speak' || speakOk()))
+    if (!kinds.length) kinds = (['typeEs', 'dictation'] as const).filter(ok)
+    if (!kinds.length) return undefined
+    const kind = rng.pick(kinds)
+    if (kind === 'speak') return noteSpeak(repeatAfterMe(v))
+    if (kind === 'hearChar') return hearCharExercise(v, ctx, rng, lesson)
+    return kind === 'choiceEs' || kind === 'choiceEn' || kind === 'listen' ? wordChoice(v, ctx, rng, kind, lesson) : wordExercise(v, kind, ctx, rng)
   }
 
   // 1. Words: match in groups of up to 5, single choices for the rest; the block never exceeds half the session.
@@ -148,22 +201,52 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
   // Words spelt like their gloss (oh, taxi) make identical match tiles: they go last and never into a match.
   const wordQueue = rng.shuffle(newWords.length ? newWords : vocabEntries).sort((a, b) => Number(!matchable(a)) - Number(!matchable(b)))
   let matches = 0
-  while (wordQueue.filter(matchable).length >= 4 && matches < maxMatch && out.length < wordCap) {
+  while (ok('match') && wordQueue.filter(matchable).length >= 4 && matches < maxMatch && out.length < wordCap) {
     const group = wordQueue.splice(0, Math.min(5, wordQueue.filter(matchable).length))
     out.push(matchExercise(group))
     matches++
   }
   for (const v of wordQueue.slice(0, maxChoice)) {
     if (out.length >= wordCap) break
-    if (speakOk() && ctx.speaking === 'lots' && (ctx.stageOf(v.id) ?? 0) === 0 && rng.next() < 0.4) out.push(noteSpeak(repeatAfterMe(v))!)
+    if (skills) {
+      const ex = wordDrill(v)
+      if (ex) out.push(ex)
+    } else if (speakOk() && ctx.speaking === 'lots' && (ctx.stageOf(v.id) ?? 0) === 0 && rng.next() < 0.4) out.push(noteSpeak(repeatAfterMe(v))!)
     else out.push(wordChoice(v, ctx, rng, rng.next() < 0.5 ? 'choiceEs' : 'choiceEn', lesson))
+  }
+
+  // 1b. Characters to write: trace one never met, write one already seen from memory (at most WRITE_MAX, least practised
+  // first), and see the picture behind those that grew from one. Together no more than a third of the session.
+  const writeChars = lesson.write ?? []
+  if (writeChars.length) {
+    const charCap = Math.max(1, Math.floor(target / 3))
+    const byNeed = rng.shuffle(writeChars).sort((a, b) => penalty(charId(a)) - penalty(charId(b)) || seen(charId(a)) - seen(charId(b)))
+    const written = new Set<string>()
+    if (ok('trace')) {
+      for (const c of byNeed.slice(0, Math.min(WRITE_MAX, charCap))) {
+        out.push(writeExercise(c, seen(charId(c)) === 0 ? 'trace' : 'writeChar', ctx))
+        written.add(c)
+      }
+    }
+    if (ok('pictogram')) {
+      // characters not written this session first, so the picture is not shown right beside its tracing
+      const pics = byNeed.filter(hasPictogram).sort((a, b) => Number(written.has(a)) - Number(written.has(b)))
+      for (const c of pics.slice(0, Math.max(0, Math.min(PICTOGRAM_MAX, charCap - written.size)))) out.push(pictogramExercise(c, ctx, rng, writeChars))
+    }
+  }
+
+  // 1c. Lessons for listening and reading: hear a word, pick how it is written (two per session, least practised words).
+  if (skills && ok('hearChar')) {
+    const have = out.filter((e) => e.kind === 'hearChar').length
+    const heard = rng.shuffle(vocabEntries.filter((v) => HAN.test(v.lemma))).sort((a, b) => seen(a.id) - seen(b.id))
+    for (const v of heard.slice(0, Math.max(0, 2 - have))) out.push(hearCharExercise(v, ctx, rng, lesson))
   }
 
   // 2. Sentences: least practised first (previous session's items last, then stage, then times seen), each used at most once.
   const sentences = lesson.sentences.map((s, i) => ({ s, id: sentenceId(lesson.id, i, s), stage: ctx.stageOf(sentenceId(lesson.id, i, s)) ?? 0 }))
   const ordered = rng.shuffle(sentences).sort((a, b) => penalty(a.id) - penalty(b.id) || a.stage - b.stage || seen(a.id) - seen(b.id))
   const replyCount = Math.min(lesson.exchanges.length, target >= 12 ? 3 : 2)
-  const textCount = lesson.texts.length && target >= 9 ? 1 : 0
+  const textCount = lesson.texts.length && target >= 9 && ok('orderText') ? 1 : 0
   const spicyCount = opts.spicy?.length ? Math.min(opts.spicy.length, target >= 12 ? 2 : 1) : 0
   const slots = Math.max(0, target - out.length - replyCount - textCount - spicyCount)
   const taught = new Set<string>()
@@ -186,6 +269,18 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
   const exchanges = rng.shuffle(lesson.exchanges.map((x, i) => ({ x, i, id: exchangeId(lesson.id, i) }))).sort((a, b) => penalty(a.id) - penalty(b.id) || seen(a.id) - seen(b.id)).slice(0, replyCount)
   for (const { x, id } of exchanges) {
     const stage = ctx.stageOf(id) ?? 0
+    if (skills) {
+      // pick among the allowed reply kinds (none allowed: the exchange waits; the session is topped up below)
+      const makers: (() => Exercise)[] = []
+      if (ok('reply')) makers.push(() => replyExercise(x, id, lesson, rng))
+      if (ok('typeEs') && stage >= 2) makers.push(() => replyTyped(x, id))
+      if (ok('speak') && speakOk() && (stage >= 1 || !makers.length)) makers.push(() => noteSpeak(replyAloud(x, id))!)
+      if (!makers.length && ok('typeEs')) makers.push(() => replyTyped(x, id))
+      if (!makers.length) continue
+      used.add(id)
+      out.push(rng.pick(makers)())
+      continue
+    }
     used.add(id)
     if (stage >= 1 && speakOk() && rng.next() < (ctx.speaking === 'lots' ? 0.6 : 0.35)) out.push(noteSpeak(replyAloud(x, id))!)
     else out.push(stage >= 2 ? replyTyped(x, id) : replyExercise(x, id, lesson, rng))
@@ -210,12 +305,27 @@ export function generateLesson(lesson: Lesson, ctx: GenContext, opts: GenOptions
   for (const { s, id } of extras) {
     if (out.length >= target) break
     if (used.has(id)) continue
+    if (!ok('listen') && !ok('choiceEs')) break
     used.add(id)
     const others = sentenceDistractors(s, lesson, rng, extras.map((x) => x.s))
     if (others.length < 3) continue
     const options = rng.shuffle([s.en, ...others])
-    const kind = rng.next() < 0.5 ? 'listen' : 'choiceEs'
+    const kind = ok('listen') && ok('choiceEs') ? (rng.next() < 0.5 ? 'listen' : 'choiceEs') : ok('listen') ? 'listen' : 'choiceEs'
     out.push({ kind, items: [], grammar: s.grammar, prompt: kind === 'listen' ? 'What did you hear?' : s.es, audio: s.es, options, answer: options.indexOf(s.en), translation: s.en, review: reviewOf(s) } satisfies ChoiceExercise)
+  }
+  // 4b. A skill-limited lesson can still be short: more word drills in the allowed kinds, least drilled first.
+  if (skills && out.length < target && vocabEntries.length) {
+    const drilled = new Map<string, number>()
+    for (const e of out) for (const i of e.items) drilled.set(i, (drilled.get(i) ?? 0) + 1)
+    for (let round = 0; round < 3 && out.length < target; round++) {
+      for (const v of rng.shuffle(vocabEntries).sort((a, b) => (drilled.get(a.id) ?? 0) - (drilled.get(b.id) ?? 0))) {
+        if (out.length >= target) break
+        const ex = wordDrill(v)
+        if (!ex) break
+        out.push(ex)
+        drilled.set(v.id, (drilled.get(v.id) ?? 0) + 1)
+      }
+    }
   }
   // 5. Exact length, matching first, the rest mixed, and never the same item twice in a row.
   const capped = out.slice(0, target)
@@ -259,6 +369,10 @@ export function generateReview(
       out.push(ex)
     }
   }
+  // Characters to write (c.*): traced while new, then written from memory. A few per session: writing is slow.
+  for (const c of cards.filter((x) => x.kind === 'char' && charOf(x.id)).slice(0, 4)) {
+    out.push(writeExercise(charOf(c.id)!, rng.pick(kindsFor('char', c.stage)) as WriteExercise['kind'], ctx))
+  }
   return deAdjacent(rng.shuffle(out))
 }
 
@@ -283,6 +397,8 @@ export function generatePinned(
         made.push(wordExercise(v, 'choiceEn', ctx, rng))
         made.push(wordExercise(v, v.example ? 'fillBlank' : 'typeEs', ctx, rng))
       }
+    } else if (charOf(pin.id)) {
+      made.push(writeExercise(charOf(pin.id)!, 'trace', ctx), writeExercise(charOf(pin.id)!, 'writeChar', ctx))
     } else if (/^[sxt]\./.test(pin.id)) {
       const found = lookup.sentence(pin.id)
       if (found) {
@@ -448,17 +564,28 @@ function sentenceDistractors(s: Sentence, lesson: Lesson, rng: Rng, extra: Sente
   return out
 }
 
+/** Sentence kinds tried, easiest first, when none of a stage's kinds fits a skill-limited lesson. */
+const SKILL_FALLBACK: ExerciseKind[] = ['choiceEs', 'listen', 'wordBank', 'order', 'speak', 'typeEn', 'typeEs', 'dictation']
+
 function sentenceExercise(s: Sentence, id: string, stage: Stage, lesson: Lesson, ctx: GenContext, rng: Rng, lessonWords: Set<string>, exclude: ExerciseKind[] = [], extra: Sentence[] = []): Exercise | undefined {
   let kinds = kindsFor('sentence', stage).filter((k) => !exclude.includes(k))
   if (s.kinds) kinds = kinds.filter((k) => s.kinds!.includes(k))
   if (!ctx.speech) kinds = kinds.filter((k) => k !== 'speak')
   if (!s.transform) kinds = kinds.filter((k) => k !== 'transform')
   if (!s.error) kinds = kinds.filter((k) => k !== 'findError')
-  if (wordsOf(s.es).length < 3) kinds = kinds.filter((k) => k !== 'wordBank' && k !== 'order')
+  const short = wordsOf(s.es).length < 3
+  if (short) kinds = kinds.filter((k) => k !== 'wordBank' && k !== 'order')
+  if (lesson.skills) {
+    // A skill-limited lesson: the stage's kinds it allows, else any kind it allows that suits the sentence, else nothing.
+    const skills = lesson.skills
+    kinds = kinds.filter((k) => kindAllowed(k, skills))
+    if (!kinds.length) kinds = SKILL_FALLBACK.filter((k) => kindAllowed(k, skills) && !exclude.includes(k) && (!s.kinds || s.kinds.includes(k)) && (k !== 'speak' || ctx.speech) && !(short && (k === 'wordBank' || k === 'order')))
+    if (!kinds.length) return undefined
+  }
   if (kinds.length === 0) kinds = ['typeEs']
   // grammar-focused lessons: prefer conjugate when a verb from the lesson is in the sentence
   const verbInfo = findVerbForm(s.es, lesson, ctx)
-  if (verbInfo && stage >= 1 && !exclude.includes('conjugate') && rng.next() < 0.35) kinds = ['conjugate']
+  if (verbInfo && stage >= 1 && !exclude.includes('conjugate') && kindAllowed('conjugate', lesson.skills) && rng.next() < 0.35) kinds = ['conjugate']
   const kind = rng.pick(kinds)
   const base = { items: [id, ...s.vocab], grammar: s.grammar, review: reviewOf(s) }
   switch (kind) {

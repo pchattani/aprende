@@ -40,12 +40,14 @@ export const MODALITY: Record<string, 'listening' | 'speaking' | 'writing' | 're
   listen: 'listening', dictation: 'listening', speak: 'speaking',
   typeEs: 'writing', typeEn: 'writing', conjugate: 'writing', transform: 'writing', findError: 'writing',
   choiceEs: 'reading', choiceEn: 'reading', match: 'reading', fillBlank: 'reading', reply: 'reading', wordBank: 'reading', order: 'reading', orderText: 'reading',
+  trace: 'writing', writeChar: 'writing', pictogram: 'reading', hearChar: 'listening',
 }
 
 export const EXERCISE_LABEL: Record<string, string> = {
   choiceEs: 'Pick the meaning', choiceEn: 'Pick the translation', wordBank: 'Word tiles', typeEs: 'Type in the language', typeEn: 'Type in English',
   listen: 'Listen and pick', dictation: 'Dictation', match: 'Match pairs', fillBlank: 'Fill the blank', conjugate: 'Conjugate', transform: 'Transform',
   findError: 'Find the error', speak: 'Speak', order: 'Word order', reply: 'Pick the reply', orderText: 'Order the text',
+  trace: 'Trace a character', writeChar: 'Write a character', pictogram: 'Pictogram', hearChar: 'Hear and pick the characters',
 }
 
 function prop(as: readonly Answer[]): Proportion {

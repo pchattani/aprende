@@ -1,5 +1,6 @@
 import type { Page } from '@playwright/test'
 import { expect } from '@playwright/test'
+import { existsSync, readFileSync } from 'node:fs'
 
 export interface HookExercise {
   kind: string
@@ -11,6 +12,8 @@ export interface HookExercise {
   items: string[]
   audio?: string
   review?: { es: string; en: string }
+  /** trace / writeChar / pictogram: the character. */
+  char?: string
 }
 export interface Hook {
   exercise: HookExercise
@@ -102,6 +105,20 @@ export async function answerCurrent(page: Page, correct = true) {
       }
       break
     }
+    case 'pictogram':
+    case 'hearChar': {
+      const idx = correct ? ex.answer! : (ex.answer! + 1) % ex.options!.length
+      await page.getByRole('radio').nth(idx).click()
+      await page.getByRole('button', { name: 'Check' }).click()
+      break
+    }
+    case 'trace':
+    case 'writeChar': {
+      if (ex.kind === 'trace') await page.getByRole('button', { name: 'Now trace it' }).click()
+      if (correct) await writeCharacter(page, ex.char!)
+      else await page.getByRole('button', { name: /show me/ }).click()
+      break
+    }
     case 'speak': {
       const said = page.getByRole('button', { name: 'I said it' })
       await said.click()
@@ -134,4 +151,39 @@ export async function openPath(page: Page) {
   // Every test runs in a fresh browser context, so the first launch always redirects to the welcome screen.
   await page.getByRole('button', { name: /I'm new to Spanish/ }).click()
   await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
+}
+
+/** Stroke medians of a character from the course's bundled stroke data (src/lang/<lang>/data/strokes.json). */
+export function strokeMedians(char: string): number[][][] {
+  const file = `src/lang/${process.env.VITE_LANG ?? 'es'}/data/strokes.json`
+  const data = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as Record<string, { medians: number[][][] }>) : {}
+  const m = data[char]?.medians
+  if (!m) throw new Error(`no stroke data for ${char} in ${file}`)
+  return m
+}
+
+/**
+ * Write a character on the writing pad by dragging the mouse along each stroke's median, in order.
+ * hanzi-writer maps its 1024-unit box (y up, from -124 to 900) onto the pad inside `data-padding`.
+ */
+export async function writeCharacter(page: Page, char: string) {
+  const host = page.locator('[data-writer="pad"]')
+  await expect(host.locator('svg')).toBeVisible()
+  const size = Number(await host.getAttribute('data-size'))
+  const pad = Number(await host.getAttribute('data-padding'))
+  const box = (await host.locator('svg').first().boundingBox())!
+  const scale = (size - 2 * pad) / 1024
+  const at = ([x, y]: number[]) => ({ x: box.x + pad + x! * scale, y: box.y + size - pad - (y! + 124) * scale })
+  for (const median of strokeMedians(char)) {
+    const pts = median.map(at)
+    await page.mouse.move(pts[0]!.x, pts[0]!.y)
+    await page.mouse.down()
+    for (let i = 1; i < pts.length; i++) {
+      const a = pts[i - 1]!
+      const b = pts[i]!
+      for (let k = 1; k <= 4; k++) await page.mouse.move(a.x + ((b.x - a.x) * k) / 4, a.y + ((b.y - a.y) * k) / 4)
+    }
+    await page.mouse.up()
+    await page.waitForTimeout(120)
+  }
 }

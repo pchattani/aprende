@@ -18,6 +18,7 @@ import journeyRaw from '@content/journey.yaml'
 import wardrobeRaw from '@content/wardrobe.yaml'
 import syllabusRaw from '@content/syllabus.yaml'
 import synonymsRaw from '@content/synonyms.yaml'
+import englishSynonymsRaw from '../../content/english-synonyms.yaml'
 import errorsRaw from '@content/errors/common-errors.yaml'
 import phonologyRaw from '@content/phonology/lessons.yaml'
 
@@ -82,7 +83,8 @@ function isVerbPhrase(m: string): boolean {
   const entry = [...vocab.values()].find((v) => v.lemma === m.trim() || v.lemma === head)
   return entry ? entry.pos === 'verb' || entry.pos === 'phrase' : true
 }
-export const englishSynonymGroups: string[][] = synonymsFile.english
+/** English groups shared by every course (content/english-synonyms.yaml) plus this course's own. */
+export const englishSynonymGroups: string[][] = [...z.object({ groups: z.array(z.array(z.string()).min(2)) }).parse(englishSynonymsRaw).groups, ...synonymsFile.english]
 
 /** Function words known at every level, extra fact words, and proper nouns (content/<lang>/known.yaml). */
 const KnownSchema = z.object({ always: z.array(z.string()).default([]), facts: z.array(z.string()).default([]), names: z.array(z.string()).default([]) })

@@ -88,3 +88,5 @@ Pawsport is an independent, open-source project by an individual. It is not affi
 ## License
 
 MIT. Literary excerpts used in C1–C2 readers are public domain.
+
+The Cantonese course bundles stroke-order data for the characters it teaches to write (`src/lang/yue/data/strokes.json`, built by `npm run strokes` from [hanzi-writer-data](https://github.com/chanind/hanzi-writer-data), derived from Make Me a Hanzi and the Arphic PL fonts). That data is under the Arphic Public License, whose text is kept beside it in `src/lang/yue/data/strokes.LICENSE.txt`; it is drawn with [Hanzi Writer](https://hanziwriter.org) (MIT). Jyutping readings come from [rime-cantonese](https://github.com/rime/rime-cantonese) (CC BY 4.0).

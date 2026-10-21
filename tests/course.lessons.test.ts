@@ -19,9 +19,14 @@ function ownAnswer(ex: Exercise): Answer | undefined {
     case 'listen':
     case 'fillBlank':
     case 'reply':
+    case 'pictogram':
+    case 'hearChar':
       return ex.answer
     case 'match':
       return { mistakes: 0 }
+    case 'trace':
+    case 'writeChar':
+      return { mistakes: 0, hints: 0, strokes: 3 }
     case 'wordBank':
     case 'order':
     case 'orderText':

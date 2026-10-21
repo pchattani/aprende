@@ -5,7 +5,7 @@
 import type { LevelId } from './schema'
 import type { LessonRow } from './types'
 import type { ArtKind, WardrobeColour, WearSlot } from './artKinds'
-import { journeyData, ui, fill } from './loader'
+import { journeyData, levels, ui, fill } from './loader'
 import { WARDROBE } from './wardrobe'
 
 export type { WearSlot } from './artKinds'
@@ -28,13 +28,18 @@ export interface Region {
   stops: Stop[]
 }
 
-/** Regions and stops come from content/<lang>/journey.yaml; unit ids follow the stop order. */
+/** The syllabus unit id behind each stop: stops follow the level's units in syllabus order (ids need not be in number order). */
+function unitIdAt(level: LevelId, i: number): string {
+  return levels.find((l) => l.id === level)?.units[i]?.id ?? `${level}.u${String(i + 1).padStart(2, '0')}`
+}
+
+/** Regions and stops come from content/<lang>/journey.yaml; stop i belongs to the level's i-th syllabus unit. */
 export const REGIONS: Region[] = journeyData.regions.map((r) => ({
   level: r.level,
   name: r.name,
   es: r.es,
   gradient: `level-${r.level}`,
-  stops: r.stops.map((s, i) => ({ unitId: `${r.level}.u${String(i + 1).padStart(2, '0')}`, name: s.name, emoji: s.emoji, es: s.es, en: s.en, fact: s.fact })),
+  stops: r.stops.map((s, i) => ({ unitId: unitIdAt(r.level, i), name: s.name, emoji: s.emoji, es: s.es, en: s.en, fact: s.fact })),
 }))
 
 const BY_UNIT = new Map<string, { region: Region; stop: Stop; index: number }>()

@@ -7,7 +7,7 @@
  */
 import { join, relative } from 'node:path'
 import type { z } from 'zod'
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import {
   PackSchema, SyllabusSchema, GrammarFileSchema, VocabFileSchema, UnitSchema, Reader, PhonologyFileSchema,
   ExamSchema, ErrorsFileSchema, UiSchema, JourneySchema, WardrobeSchema, LEVEL_ORDER, type GrammarNote, type VocabEntry, type LevelId,
@@ -24,6 +24,8 @@ const { languagePack } = (await import(`../src/lang/${LANG}/index.ts`)) as {
   languagePack: LanguagePackFull & { validateText?: (t: string) => string[]; validateReading?: (lemma: string, jp: string) => string[] }
 }
 import { SPICY_BANNED } from './spicy-banned'
+import { collectWriteChars, strokesPath, writeCharIssues, type StrokeEntry } from './strokes-lib.mjs'
+import { PICTOGRAMS } from '../src/engine/pictograms'
 
 const MIN_LESSONS_PER_UNIT = 3
 const MIN_SENTENCES_PER_LESSON = 8
@@ -322,6 +324,16 @@ for (const v of vocab.values()) {
   if (LEVEL_ORDER.indexOf(v.level) <= LEVEL_ORDER.indexOf('b1') && !unitVocabUse.has(v.id) && !v.tags.includes('passive')) {
     warn(`vocab: ${v.id} (${v.level}) is never introduced by a lesson`)
   }
+}
+
+// ---- characters to write: each needs stroke data in the bundle (scripts/build-strokes.mjs) and a meaning
+{
+  const chars = collectWriteChars(CONTENT)
+  const file = strokesPath(LANG)
+  const bundle = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as Record<string, StrokeEntry>) : undefined
+  for (const issue of writeCharIssues(chars, bundle)) err(`write: ${issue}`)
+  const lemmas = new Set([...vocab.values()].map((v) => v.lemma))
+  for (const [c, lessons] of chars) if (!lemmas.has(c) && !PICTOGRAMS[c]) warn(`write: ${c} (${lessons.join(', ')}) has no vocabulary entry of its own, so it shows without a meaning`)
 }
 
 // ---- readers

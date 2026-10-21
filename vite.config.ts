@@ -39,14 +39,14 @@ if (!SLUG) throw new Error(`content/${LANG}/pack.yaml needs a slug: courses are 
 const BASE = process.env.VITE_BASE ?? `${SITE_BASE}${SLUG}/`
 const TITLE = `${UI.appName} · ${PACK.name}`
 
-/** import.meta.glob ignores aliases: point `@content/` globs at this course's folder before Vite expands them. */
+/** import.meta.glob ignores aliases: point `@content/` and `@lang/` globs at this course's folders before Vite expands them. */
 function contentGlobPlugin(): Plugin {
   return {
     name: 'aprende:content-glob',
     enforce: 'pre',
     transform(code, id) {
-      if (!code.includes("import.meta.glob('@content/") || id.includes('node_modules')) return null
-      return { code: code.replaceAll("import.meta.glob('@content/", `import.meta.glob('/content/${LANG}/`), map: null }
+      if (!(code.includes("import.meta.glob('@content/") || code.includes("import.meta.glob('@lang/")) || id.includes('node_modules')) return null
+      return { code: code.replaceAll("import.meta.glob('@content/", `import.meta.glob('/content/${LANG}/`).replaceAll("import.meta.glob('@lang/", `import.meta.glob('/src/lang/${LANG}/`), map: null }
     },
   }
 }

@@ -81,7 +81,7 @@ function answerText(ex: Exercise, answer: Answer | undefined): string {
   if (answer === undefined) return ''
   if (typeof answer === 'number') return 'options' in ex ? ex.options[answer] ?? String(answer) : String(answer)
   if (Array.isArray(answer)) return answer.join(' ')
-  if (typeof answer === 'object') return `${answer.mistakes} mismatched`
+  if (typeof answer === 'object') return ex.kind === 'trace' || ex.kind === 'writeChar' ? `${answer.hints ? `${answer.hints} hinted, ` : ''}${answer.mistakes} stroke retries` : `${answer.mistakes} mismatched`
   return answer
 }
 
@@ -261,7 +261,8 @@ export function LessonRunner({ exercises, mode, lessonId, title, onFinish, onQui
   )
 
   if (!ex) return null
-  const autoSubmit = ex.kind === 'match' || ex.kind === 'speak'
+  // These submit by themselves: all pairs matched, a recording, a character finished.
+  const autoSubmit = ex.kind === 'match' || ex.kind === 'speak' || ex.kind === 'trace' || ex.kind === 'writeChar'
   const won = s.result !== undefined && s.result.verdict !== 'wrong'
   const lines = !s.result ? [] : s.result.verdict === 'correct' ? ui.game.correct : s.result.verdict === 'almost' ? ui.game.almost : ui.game.wrong
   const line = lines[(s.index + s.correct + s.wrong) % Math.max(1, lines.length)] ?? ''

@@ -11,7 +11,8 @@ export function slowParts(text: string): string[] {
 }
 
 /**
- * Speak target-language text with the user's voice settings. `slow` is half the chosen rate, one word at a time with a gap.
+ * Speak target-language text with the user's voice settings. `slow` is half the chosen rate, one word at a time with a gap;
+ * `'slower'` is under a third of it (single words in listening games, where half speed still sounds quick).
  * `voice` overrides the voice or pitch for this line (a second speaker in a dialogue); `rateScale` nudges the rate.
  */
 export function useSpeak() {
@@ -19,10 +20,10 @@ export function useSpeak() {
   const voiceURI = useSettings((s) => s.voiceURI)
   const sound = useSettings((s) => s.sound)
   const say = useCallback(
-    (text: string, slow = false, voice: { voiceURI?: string; pitch?: number; rateScale?: number } = {}) => {
+    (text: string, slow: boolean | 'slower' = false, voice: { voiceURI?: string; pitch?: number; rateScale?: number } = {}) => {
       if (!sound || !ttsSupported()) return Promise.resolve()
       const r = rate * (voice.rateScale ?? 1)
-      const opts: SpeakOptions = { lang: pack.tts.lang, rate: slow ? Math.max(0.1, r * 0.5) : r, voiceURI: voice.voiceURI ?? voiceURI, preferred: pack.tts.preferredVoices, pitch: voice.pitch }
+      const opts: SpeakOptions = { lang: pack.tts.lang, rate: slow ? Math.max(0.1, r * (slow === 'slower' ? 0.3 : 0.5)) : r, voiceURI: voice.voiceURI ?? voiceURI, preferred: pack.tts.preferredVoices, pitch: voice.pitch }
       const parts = slow ? slowParts(text) : []
       return parts.length > 1 ? speakSequence(parts, opts) : speak(text, opts)
     },

@@ -81,6 +81,13 @@ test('crossword: type answers without accents, check, reveal and finish', async 
   await expect(page.getByText('¡Lo lograste!')).toBeVisible()
   await expect(page.getByText(`${entries.length} / ${entries.length} words`)).toBeVisible()
   await shot(page, 'crossword-done')
+  // words typed without accents end up written with them
+  for (const e of entries)
+    for (const [i, ch] of [...e.answer].entries()) {
+      if (ch === bare(ch)) continue
+      const [r, c] = e.dir === 'across' ? [e.row, e.col + i] : [e.row + i, e.col]
+      await expect(page.locator(`[data-cell="${r},${c}"]`)).toHaveText(new RegExp(ch, 'i'))
+    }
   await page.getByRole('button', { name: 'Done' }).click()
   await expect(page.getByText('1 solved')).toBeVisible()
 })

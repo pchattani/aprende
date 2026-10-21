@@ -9,6 +9,10 @@ import { GrammarNoteView } from './GrammarNote'
 import { inline } from './ui/inline'
 import { TL } from '../engine/course'
 import { TargetText } from './ui/TargetText'
+import { languagePack } from '@lang'
+
+/** Exercises about one written character or word: the feedback shows it big, with its reading and meaning. */
+const CHAR_KINDS = new Set<Exercise['kind']>(['trace', 'writeChar', 'pictogram', 'hearChar'])
 
 const same = (a: string, b: string) => stripAccents(a.toLowerCase()).replace(/[^\p{L}\p{N}]+/gu, ' ').trim() === stripAccents(b.toLowerCase()).replace(/[^\p{L}\p{N}]+/gu, ' ').trim()
 
@@ -65,7 +69,17 @@ export function Feedback({ exercise, result, explanation, onContinue, last, pinn
                 {spanishAnswer && <SpeakerButton text={result.correct} size="sm" />}
               </div>
             )}
-            {review && (
+            {review && CHAR_KINDS.has(exercise.kind) && (
+              <div className="mt-3 flex items-center gap-3 rounded-xl border border-line bg-paper px-3 py-2.5 text-ink" aria-label={`What you practised, in ${LANGUAGE} and English`}>
+                <p className="shrink-0 text-[2.6rem] font-semibold leading-none" lang={TL}>{review.es}</p>
+                <div className="min-w-0 flex-1">
+                  <p className="font-mono text-sm font-semibold">{'jp' in exercise && exercise.jp ? exercise.jp : languagePack.romanize?.(review.es).map((x) => x.reading).filter(Boolean).join(' ')}</p>
+                  <p className="text-sm leading-snug opacity-80" lang="en">{review.en}</p>
+                </div>
+                <SpeakerButton text={review.es} size="sm" className="shrink-0" />
+              </div>
+            )}
+            {review && !CHAR_KINDS.has(exercise.kind) && (
               <div className="mt-3 flex items-start gap-2.5 rounded-xl border border-line bg-paper px-3 py-2.5 text-ink" aria-label={`What you practised, in ${LANGUAGE} and English`}>
                 <SpeakerButton text={review.es} size="sm" className="mt-0.5 shrink-0" />
                 <div className="min-w-0">

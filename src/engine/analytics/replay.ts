@@ -75,7 +75,7 @@ export interface Replay {
 }
 
 export function kindOfId(id: string): ItemKind {
-  return id.startsWith('w.') ? 'word' : id.startsWith('g.') ? 'grammar' : 'sentence'
+  return id.startsWith('w.') ? 'word' : id.startsWith('g.') ? 'grammar' : id.startsWith('c.') ? 'char' : 'sentence'
 }
 
 export function replay(cards: readonly CardRow[], reviews: readonly ReviewRow[], decay = FSRS_DECAY): Replay {

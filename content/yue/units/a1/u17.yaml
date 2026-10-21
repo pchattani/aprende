@@ -1,0 +1,122 @@
+id: a1.u17
+title: 今日幾號？
+lessons:
+  - id: a1.u17.l1
+    title: 今日幾號？
+    teach: [g.dates]
+    skills: [listen, speak, read, write]
+    write: [日, 月]
+    tip: "Months are a number + 月: 一月 January, 十二月 December. In speech the date is a number + 號 hou6: 五號 'the 5th'. In writing you'll see 日 jat6 instead: 十月五日. Big to small: month first, then day. 日 started as a picture of the sun."
+    vocab: [w.jyut6, w.hou6, w.jat6, w.gam1-jat6, w.gei2-hou6, w.jat1-jyut6]
+    sentences:
+      - { es: "一月。", en: "January.", grammar: [g.dates], vocab: [w.jat1-jyut6] }
+      - { es: "十二月。", en: "December.", grammar: [g.dates], vocab: [w.jyut6] }
+      - { es: "五號。", en: "The fifth.", altEn: ["The 5th."], grammar: [g.dates], vocab: [w.hou6] }
+      - { es: "今日五號。", en: "Today is the fifth.", altEn: ["It's the fifth today.", "Today is the 5th."], grammar: [g.dates], vocab: [w.gam1-jat6, w.hou6] }
+      - { es: "今日幾號呀？", en: "What's the date today?", altEn: ["What date is it today?", "What's today's date?"], grammar: [g.dates], vocab: [w.gei2-hou6] }
+      - { es: "三月八號。", en: "The eighth of March.", altEn: ["March the eighth.", "March 8th.", "8 March."], grammar: [g.dates], vocab: [w.jyut6, w.hou6] }
+      - { es: "十月一日。", en: "The first of October.", altEn: ["October the first.", "October 1st.", "1 October."], grammar: [g.dates], vocab: [w.jyut6, w.jat6], note: "日 is the written word for the date; in speech you say 十月一號." }
+      - { es: "今日十月二十一號。", en: "Today is the twenty-first of October.", altEn: ["Today is October 21st.", "It's the 21st of October today."], altEs: ["今日係十月二十一號。"], grammar: [g.dates], vocab: [w.gam1-jat6, w.jyut6, w.hou6] }
+      - { es: "一月一號。", en: "The first of January.", altEn: ["January the first.", "January 1st.", "1 January."], grammar: [g.dates], vocab: [w.jat1-jyut6, w.hou6] }
+    exchanges:
+      - q: { es: "今日幾號呀？", en: "What's the date today?" }
+        a: { es: "今日五號。", en: "Today is the fifth." }
+        alt: ["五號。", "今日十號。"]
+        grammar: [g.dates]
+        vocab: [w.gei2-hou6, w.hou6]
+      - q: { es: "今日係唔係一號呀？", en: "Is today the first?" }
+        a: { es: "唔係，今日二號。", en: "No, today is the second." }
+        alt: ["係呀。", "係呀，今日一號。"]
+        grammar: [g.dates, g.a-not-a-questions]
+        vocab: [w.hou6]
+      - q: { es: "你生日係幾月幾號呀？", en: "When is your birthday?" }
+        a: { es: "三月八號。", en: "The eighth of March." }
+        alt: ["一月一號。", "十二月二十五號。"]
+        grammar: [g.dates]
+        vocab: [w.saang1-jat6, w.jyut6, w.hou6]
+    texts:
+      - title: "今日"
+        es: ["今日幾號呀？", "今日十月二十一號。"]
+        en: ["What's the date today?", "Today is the twenty-first of October."]
+        grammar: [g.dates]
+        vocab: [w.gam1-jat6, w.gei2-hou6]
+  - id: a1.u17.l2
+    title: 今日星期幾？
+    teach: [g.days-weeks]
+    skills: [listen, speak, read, write]
+    write: [日, 四, 五, 六]
+    tip: "The week is easy: 星期 sing1 kei4 + a number. Monday is 星期一, Tuesday 星期二 … Saturday 星期六. Sunday is 星期日, the 'sun day'. To ask: 今日星期幾呀？"
+    vocab: [w.sing1-kei4, w.sing1-kei4-gei2, w.sing1-kei4-jat1, w.sing1-kei4-ng5, w.sing1-kei4-luk6, w.sing1-kei4-jat6]
+    sentences:
+      - { es: "星期一。", en: "Monday.", grammar: [g.days-weeks], vocab: [w.sing1-kei4-jat1] }
+      - { es: "星期五。", en: "Friday.", grammar: [g.days-weeks], vocab: [w.sing1-kei4-ng5] }
+      - { es: "星期六。", en: "Saturday.", grammar: [g.days-weeks], vocab: [w.sing1-kei4-luk6] }
+      - { es: "星期日。", en: "Sunday.", grammar: [g.days-weeks], vocab: [w.sing1-kei4-jat6] }
+      - { es: "今日星期幾呀？", en: "What day is it today?", altEn: ["What day of the week is it today?"], grammar: [g.days-weeks], vocab: [w.sing1-kei4-gei2, w.gam1-jat6] }
+      - { es: "今日星期三。", en: "Today is Wednesday.", altEn: ["It's Wednesday today."], grammar: [g.days-weeks], vocab: [w.sing1-kei4-saam1] }
+      - { es: "今日星期日。", en: "Today is Sunday.", altEn: ["It's Sunday today."], grammar: [g.days-weeks], vocab: [w.sing1-kei4-jat6] }
+      - { es: "星期一、星期二、星期三。", en: "Monday, Tuesday, Wednesday.", grammar: [g.days-weeks], vocab: [w.sing1-kei4-jat1, w.sing1-kei4-ji6, w.sing1-kei4-saam1], kinds: [dictation, listen, typeEs, order, speak] }
+      - { es: "星期四、星期五、星期六、星期日。", en: "Thursday, Friday, Saturday, Sunday.", grammar: [g.days-weeks], vocab: [w.sing1-kei4-sei3, w.sing1-kei4-ng5, w.sing1-kei4-luk6, w.sing1-kei4-jat6], kinds: [dictation, listen, typeEs, order, speak] }
+      - { es: "一個星期有七日。", en: "A week has seven days.", altEn: ["There are seven days in a week."], grammar: [g.days-weeks, g.jau-have], vocab: [w.sing1-kei4, w.jat6] }
+    exchanges:
+      - q: { es: "今日星期幾呀？", en: "What day is it today?" }
+        a: { es: "今日星期五。", en: "Today is Friday." }
+        alt: ["星期五。", "今日星期一。"]
+        grammar: [g.days-weeks]
+        vocab: [w.sing1-kei4-gei2]
+      - q: { es: "今日係唔係星期日呀？", en: "Is today Sunday?" }
+        a: { es: "係呀，今日星期日。", en: "Yes, today is Sunday." }
+        alt: ["唔係。", "係呀。"]
+        grammar: [g.days-weeks, g.a-not-a-questions]
+        vocab: [w.sing1-kei4-jat6]
+      - q: { es: "一個星期有幾多日呀？", en: "How many days are there in a week?" }
+        a: { es: "七日。", en: "Seven days." }
+        alt: ["有七日。"]
+        grammar: [g.days-weeks]
+        vocab: [w.sing1-kei4, w.jat6]
+    texts:
+      - title: "星期六"
+        es: ["今日星期六。", "今日五號。"]
+        en: ["Today is Saturday.", "Today is the fifth."]
+        grammar: [g.days-weeks, g.dates]
+        vocab: [w.sing1-kei4-luk6]
+  - id: a1.u17.l3
+    title: 而家幾點？
+    teach: [g.clock-time, g.loeng-vs-ji]
+    skills: [listen, speak, read, write]
+    write: [七, 八, 九, 十]
+    tip: "Time is a number + 點 dim2: 三點 'three o'clock', 三點半 'half past three'. Minutes are 分 fan1: 十點十分 'ten past ten'. Two o'clock is 兩點 (loeng5), not 二點! To ask: 而家幾點呀？"
+    vocab: [w.ji4-gaa1, w.gei2-dim2, w.dim2.b, w.bun3, w.fan1, w.loeng5]
+    sentences:
+      - { es: "三點。", en: "Three o'clock.", grammar: [g.clock-time], vocab: [w.dim2.b] }
+      - { es: "三點半。", en: "Half past three.", altEn: ["Three thirty."], grammar: [g.clock-time], vocab: [w.dim2.b, w.bun3] }
+      - { es: "而家幾點呀？", en: "What time is it now?", altEn: ["What time is it?"], grammar: [g.clock-time], vocab: [w.ji4-gaa1, w.gei2-dim2] }
+      - { es: "而家八點。", en: "It's eight o'clock now.", altEn: ["It's eight now.", "It's eight o'clock."], grammar: [g.clock-time], vocab: [w.ji4-gaa1, w.dim2.b] }
+      - { es: "兩點。", en: "Two o'clock.", grammar: [g.clock-time, g.loeng-vs-ji], vocab: [w.loeng5, w.dim2.b] }
+      - { es: "而家兩點半。", en: "It's half past two now.", altEn: ["It's two thirty now.", "It's half past two."], grammar: [g.clock-time, g.loeng-vs-ji], vocab: [w.loeng5, w.bun3] }
+      - { es: "十點十分。", en: "Ten past ten.", altEn: ["Ten ten."], grammar: [g.clock-time], vocab: [w.fan1] }
+      - { es: "七點四十分。", en: "Seven forty.", altEn: ["Twenty to eight."], grammar: [g.clock-time], vocab: [w.fan1] }
+      - { es: "十二點。", en: "Twelve o'clock.", altEn: ["Noon.", "Midnight."], grammar: [g.clock-time], vocab: [w.dim2.b] }
+      - { es: "今日星期一，而家九點。", en: "Today is Monday, and it's nine o'clock now.", altEn: ["It's Monday, and it's nine now."], grammar: [g.clock-time, g.days-weeks], vocab: [w.sing1-kei4-jat1, w.ji4-gaa1] }
+    exchanges:
+      - q: { es: "而家幾點呀？", en: "What time is it now?" }
+        a: { es: "而家三點。", en: "It's three o'clock now." }
+        alt: ["三點。", "三點半。", "而家三點半。"]
+        grammar: [g.clock-time]
+        vocab: [w.gei2-dim2]
+      - q: { es: "而家係唔係兩點呀？", en: "Is it two o'clock now?" }
+        a: { es: "唔係，而家兩點半。", en: "No, it's half past two now." }
+        alt: ["係呀。", "係呀，而家兩點。"]
+        grammar: [g.clock-time, g.loeng-vs-ji]
+        vocab: [w.loeng5, w.bun3]
+      - q: { es: "今日幾號呀？", en: "What's the date today?" }
+        a: { es: "今日十號，星期一。", en: "Today is the tenth, a Monday." }
+        alt: ["十號。", "今日十號。"]
+        grammar: [g.dates, g.days-weeks]
+        vocab: [w.hou6]
+    texts:
+      - title: "而家幾點？"
+        es: ["而家幾點呀？", "而家十點半。"]
+        en: ["What time is it now?", "It's half past ten."]
+        grammar: [g.clock-time]
+        vocab: [w.gei2-dim2, w.bun3]

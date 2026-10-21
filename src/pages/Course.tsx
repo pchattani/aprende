@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { createPortal } from 'react-dom'
 import { SouvenirIcon } from '../components/art/SouvenirArt'
 import { Link, useNavigate, useLocation } from 'react-router'
 import { levels, loadUnit, units as unitIndex } from '../engine/loader'
@@ -13,7 +14,7 @@ import { useOutfits } from '../hooks/useOutfits'
 import type { QuizRecord } from './RegionQuiz'
 import { useSettings, SESSION_COUNT } from '../store/settings'
 import { xpFor } from '../engine/xp'
-import { IconCheck, IconPaw, IconRoute, IconPlane, IconPassport } from '../components/ui/icons'
+import { IconArrowUp, IconCheck, IconPaw, IconRoute, IconPlane, IconPassport } from '../components/ui/icons'
 import { StopArt } from '../components/StopArt'
 import { DogButton } from '../components/ui/Dogs'
 import { Itinerary } from '../components/map/Itinerary'
@@ -274,7 +275,7 @@ export default function Course() {
         </Link>
       </div>
 
-      <div className="mb-4 flex items-end justify-between">
+      <div id="itinerary" className="mb-4 flex items-end justify-between">
         <h2 className="font-display text-2xl">Itinerary</h2>
         <Link to="/welcome" className="text-xs text-ink-2 underline decoration-dotted underline-offset-4">Change start or retake placement</Link>
       </div>
@@ -292,7 +293,39 @@ export default function Course() {
         outfits={outfits}
         flag={FLAG}
       />
+      <BackToTop />
     </div>
+  )
+}
+
+/** Once the itinerary is on screen, a button back up to the boarding pass and today's errands. */
+function BackToTop() {
+  const [show, setShow] = useState(false)
+  useEffect(() => {
+    const mark = document.getElementById('itinerary')
+    if (!mark) return
+    const onScroll = () => setShow(mark.getBoundingClientRect().top < window.innerHeight * 0.5)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  const reduce = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  // portal: the page's rise animation uses a transform, which would trap a fixed element inside it
+  return createPortal(
+    <div className={`fixed right-4 z-[9] transition duration-200 bottom-[calc(5.25rem+env(safe-area-inset-bottom))] ${show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-3 opacity-0'}`} aria-hidden={!show}>
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })}
+        className="g-btn rounded-full px-3.5 py-2.5 text-sm"
+        style={{ '--g-face': 'var(--blue)' } as CSSProperties}
+        aria-label="Back to the top: boarding pass and today's errands"
+        tabIndex={show ? 0 : -1}
+      >
+        <IconArrowUp width={18} height={18} strokeWidth={2.6} />
+        Top
+      </button>
+    </div>,
+    document.body,
   )
 }
 

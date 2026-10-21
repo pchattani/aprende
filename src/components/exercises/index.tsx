@@ -5,6 +5,8 @@ import { WordBank } from './WordBank'
 import { TypeAnswer } from './Type'
 import { Match } from './Match'
 import { Speak } from './Speak'
+import { Trace } from './Trace'
+import { CharChoice } from './CharChoice'
 
 export function ExerciseView(props: ExerciseProps<Exercise>) {
   const ex = props.exercise
@@ -23,6 +25,12 @@ export function ExerciseView(props: ExerciseProps<Exercise>) {
       return <Match {...(props as ExerciseProps<typeof ex>)} />
     case 'speak':
       return <Speak {...(props as ExerciseProps<typeof ex>)} />
+    case 'trace':
+    case 'writeChar':
+      return <Trace {...(props as ExerciseProps<typeof ex>)} />
+    case 'pictogram':
+    case 'hearChar':
+      return <CharChoice {...(props as ExerciseProps<typeof ex>)} />
     default:
       return <TypeAnswer {...(props as ExerciseProps<typeof ex>)} />
   }

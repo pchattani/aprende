@@ -12,6 +12,8 @@ import type { LevelId } from '../engine/schema'
 import type { Outfit } from '../hooks/useOutfits'
 import { SouvenirArt, SouvenirIcon } from '../components/art/SouvenirArt'
 import { ART_KINDS, WARDROBE_KINDS, WARDROBE_COLOURS, type WearSlot } from '../engine/artKinds'
+import { Pictogram } from '../components/art/Pictogram'
+import { PICTOGRAMS } from '../engine/pictograms'
 
 const DOGS = [Leo, Bonchita, Luna]
 const MOODS = ['happy', 'curious', 'sleepy'] as const
@@ -203,6 +205,22 @@ export default function ArtGallery() {
               <Label>{label}</Label>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section title={`Pictograms (${Object.keys(PICTOGRAMS).length})`} shot="pictograms" note="Where a character came from: picture → ancient form → today. Used in pictogram exercises (last tile hidden until answered) and in the guidebook of lessons that teach writing.">
+        <div className="grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+          {Object.entries(PICTOGRAMS).map(([char, info]) => (
+            <div key={char}>
+              <Pictogram char={char} />
+              <p className="mt-1 text-sm"><span className="font-bold">{char}</span> {info.en} <span className="text-muted">· {info.type}</span></p>
+              <p className="text-xs text-muted">{info.story}</p>
+            </div>
+          ))}
+          <div>
+            <Pictogram char="火" reveal={false} />
+            <Label>reveal=false (pictogram exercise before answering)</Label>
+          </div>
         </div>
       </Section>
 

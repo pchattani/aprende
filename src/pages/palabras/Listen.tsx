@@ -170,10 +170,10 @@ function Round({ questions, mode, onDone, onAgain, best }: { questions: RapidQue
           </button>
           <button
             type="button"
-            onClick={() => void say(q.v.lemma, true)}
+            onClick={() => void say(q.v.lemma, 'slower')}
             className="inline-flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] border-line bg-surface text-blue shadow-[0_3px_0_0_var(--line-strong)] transition-transform active:translate-y-0.5 active:shadow-none"
             aria-label="Play slowly"
-            title="Half speed"
+            title="Extra slow"
           >
             <IconTurtle width={24} height={24} />
           </button>

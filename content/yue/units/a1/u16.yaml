@@ -1,0 +1,175 @@
+id: a1.u16
+title: 我叫……
+lessons:
+  - id: a1.u16.l1
+    title: 我叫Leo
+    teach: [g.name-giu-sing]
+    skills: [listen, speak, read]
+    tip: "我叫… ngo5 giu3 means 'I'm called…'. To ask: 你叫咩名呀？ 'What's your name?' (literally 'you are called what name?'). The name goes where the question word was."
+    vocab: [w.giu3, w.meng2, w.me1, w.keoi5]
+    sentences:
+      - { es: "我叫Leo。", en: "My name is Leo.", altEn: ["I'm Leo.", "I'm called Leo."], grammar: [g.name-giu-sing], vocab: [w.giu3] }
+      - { es: "我叫Bonchita。", en: "My name is Bonchita.", altEn: ["I'm Bonchita.", "I'm called Bonchita."], grammar: [g.name-giu-sing], vocab: [w.giu3] }
+      - { es: "我叫Luna。", en: "My name is Luna.", altEn: ["I'm Luna.", "I'm called Luna."], grammar: [g.name-giu-sing], vocab: [w.giu3] }
+      - { es: "你叫咩名呀？", en: "What's your name?", altEn: ["What is your name?"], grammar: [g.name-giu-sing], vocab: [w.giu3, w.me1, w.meng2] }
+      - { es: "你好，我叫Sam。", en: "Hello, I'm Sam.", altEn: ["Hello, my name is Sam.", "Hi, I'm Sam."], grammar: [g.name-giu-sing, g.greetings], vocab: [w.giu3] }
+      - { es: "佢叫Leo。", en: "He's called Leo.", altEn: ["His name is Leo."], grammar: [g.name-giu-sing], vocab: [w.keoi5, w.giu3] }
+      - { es: "佢叫Luna。", en: "She's called Luna.", altEn: ["Her name is Luna."], grammar: [g.name-giu-sing], vocab: [w.keoi5, w.giu3] }
+      - { es: "我叫Mandy，你呢？", en: "My name is Mandy, and you?", altEn: ["I'm Mandy, and you?", "I'm Mandy. And you?"], grammar: [g.name-giu-sing, g.ne-follow-up], vocab: [w.giu3] }
+      - { es: "佢叫咩名呀？", en: "What's his name?", altEn: ["What's her name?", "What is he called?"], grammar: [g.name-giu-sing], vocab: [w.keoi5, w.giu3, w.meng2], jp: "keoi5 giu3 me1 meng2 aa3" }
+      - { es: "你叫Sam呀？", en: "Your name is Sam?", altEn: ["You're called Sam?", "Are you Sam?"], grammar: [g.name-giu-sing], vocab: [w.giu3] }
+    exchanges:
+      - q: { es: "你叫咩名呀？", en: "What's your name?" }
+        a: { es: "我叫Leo。", en: "My name is Leo." }
+        alt: ["我叫Luna。", "我叫Bonchita。"]
+        grammar: [g.name-giu-sing]
+        vocab: [w.giu3]
+      - q: { es: "佢叫咩名呀？", en: "What's her name?" }
+        a: { es: "佢叫Bonchita。", en: "She's called Bonchita." }
+        alt: ["佢叫Luna。"]
+        grammar: [g.name-giu-sing]
+        vocab: [w.keoi5]
+      - q: { es: "我叫Sam，你呢？", en: "I'm Sam, and you?" }
+        a: { es: "我叫Mandy。", en: "I'm Mandy." }
+        alt: ["我叫Luna。"]
+        grammar: [g.name-giu-sing, g.ne-follow-up]
+        vocab: [w.giu3]
+    texts:
+      - title: "我叫Luna"
+        es: ["你好！", "我叫Luna。", "你叫咩名呀？"]
+        en: ["Hello!", "My name is Luna.", "What's your name?"]
+        grammar: [g.name-giu-sing]
+        vocab: [w.giu3]
+  - id: a1.u16.l2
+    title: 我姓陳
+    teach: [g.name-giu-sing, g.hai6-identity]
+    skills: [listen, speak, read]
+    tip: "我姓陳 'my surname is Chan': 姓 sing3 means 'to be surnamed'. 係 hai6 is 'to be': 我係香港人 'I'm from Hong Kong', literally 'I am Hong Kong person'."
+    vocab: [w.sing3, w.can4, w.lei5, w.hai6, w.hoeng1-gong2, w.zung1-gwok3]
+    sentences:
+      - { es: "我姓陳。", en: "My surname is Chan.", altEn: ["My family name is Chan."], grammar: [g.name-giu-sing], vocab: [w.sing3, w.can4] }
+      - { es: "我姓李。", en: "My surname is Lee.", altEn: ["My family name is Lee."], grammar: [g.name-giu-sing], vocab: [w.sing3, w.lei5] }
+      - { es: "你姓咩呀？", en: "What's your surname?", altEn: ["What is your family name?"], grammar: [g.name-giu-sing], vocab: [w.sing3, w.me1] }
+      - { es: "我叫Mandy，我姓陳。", en: "My name is Mandy, my surname is Chan.", altEn: ["I'm Mandy, and my surname is Chan."], grammar: [g.name-giu-sing], vocab: [w.giu3, w.sing3, w.can4] }
+      - { es: "我係香港人。", en: "I'm from Hong Kong.", altEn: ["I'm a Hongkonger.", "I am from Hong Kong."], grammar: [g.hai6-identity, g.nationality-language], vocab: [w.hai6, w.hoeng1-gong2] }
+      - { es: "我係中國人。", en: "I'm Chinese.", altEn: ["I'm from China."], grammar: [g.hai6-identity, g.nationality-language], vocab: [w.hai6, w.zung1-gwok3] }
+      - { es: "佢係香港人。", en: "He's from Hong Kong.", altEn: ["She's from Hong Kong.", "He's a Hongkonger."], grammar: [g.hai6-identity, g.nationality-language], vocab: [w.keoi5, w.hoeng1-gong2] }
+      - { es: "你係香港人呀？", en: "Are you from Hong Kong?", altEn: ["You're from Hong Kong?"], grammar: [g.hai6-identity], vocab: [w.hai6, w.hoeng1-gong2] }
+      - { es: "係呀，我係香港人。", en: "Yes, I'm from Hong Kong.", altEn: ["Yes, I'm a Hongkonger."], grammar: [g.hai6-identity], vocab: [w.hai6-aa3] }
+      - { es: "唔係，我係中國人。", en: "No, I'm from China.", altEn: ["No, I'm Chinese."], grammar: [g.hai6-identity, g.m-negation], vocab: [w.zung1-gwok3] }
+    exchanges:
+      - q: { es: "你姓咩呀？", en: "What's your surname?" }
+        a: { es: "我姓陳。", en: "My surname is Chan." }
+        alt: ["我姓李。"]
+        grammar: [g.name-giu-sing]
+        vocab: [w.sing3]
+      - q: { es: "你係唔係香港人呀？", en: "Are you from Hong Kong?" }
+        a: { es: "係呀，我係香港人。", en: "Yes, I'm from Hong Kong." }
+        alt: ["係呀。", "唔係。", "唔係，我係中國人。"]
+        grammar: [g.hai6-identity, g.a-not-a-questions]
+        vocab: [w.hai6, w.hoeng1-gong2]
+      - q: { es: "佢係香港人呀？", en: "Is he from Hong Kong?" }
+        a: { es: "唔係，佢係中國人。", en: "No, he's from China." }
+        alt: ["係呀。", "係呀，佢係香港人。"]
+        grammar: [g.hai6-identity]
+        vocab: [w.zung1-gwok3]
+    texts:
+      - title: "我係Mandy"
+        es: ["我叫Mandy。", "我姓陳。", "我係香港人。"]
+        en: ["My name is Mandy.", "My surname is Chan.", "I'm from Hong Kong."]
+        grammar: [g.name-giu-sing, g.hai6-identity]
+        vocab: [w.sing3, w.hoeng1-gong2]
+  - id: a1.u16.l3
+    title: 你係邊度人呀？
+    teach: [g.nationality-language]
+    skills: [listen, speak, read]
+    tip: "Country + 人 = a person from there: 加拿大人 Canadian, 美國人 American, 印度人 Indian. To ask: 你係邊度人呀？ 'You are where person?' 邊度 bin1 dou6 means 'where'."
+    vocab: [w.bin1-dou6, w.gaa1-naa4-daai6, w.mei5-gwok3, w.jan3-dou6, w.aa3-gan1-ting4]
+    sentences:
+      - { es: "你係邊度人呀？", en: "Where are you from?", grammar: [g.nationality-language], vocab: [w.bin1-dou6] }
+      - { es: "我係加拿大人。", en: "I'm Canadian.", altEn: ["I'm from Canada."], grammar: [g.nationality-language], vocab: [w.gaa1-naa4-daai6] }
+      - { es: "我係美國人。", en: "I'm American.", altEn: ["I'm from America.", "I'm from the US."], grammar: [g.nationality-language], vocab: [w.mei5-gwok3] }
+      - { es: "我係印度人。", en: "I'm Indian.", altEn: ["I'm from India."], grammar: [g.nationality-language], vocab: [w.jan3-dou6] }
+      - { es: "我係阿根廷人。", en: "I'm Argentinian.", altEn: ["I'm from Argentina.", "I'm Argentine."], grammar: [g.nationality-language], vocab: [w.aa3-gan1-ting4] }
+      - { es: "佢係美國人。", en: "He's American.", altEn: ["She's American.", "He's from America."], grammar: [g.nationality-language], vocab: [w.mei5-gwok3] }
+      - { es: "佢哋係印度人。", en: "They're Indian.", altEn: ["They're from India."], grammar: [g.nationality-language, g.dei-plural], vocab: [w.jan3-dou6] }
+      - { es: "我哋係加拿大人。", en: "We're Canadian.", altEn: ["We're from Canada."], grammar: [g.nationality-language, g.dei-plural], vocab: [w.gaa1-naa4-daai6] }
+      - { es: "加拿大好大。", en: "Canada is big.", altEn: ["Canada is very big."], grammar: [g.nationality-language], vocab: [w.gaa1-naa4-daai6, w.daai6] }
+      - { es: "中國、美國、印度。", en: "China, America, India.", altEn: ["China, the US, India."], grammar: [g.nationality-language], vocab: [w.zung1-gwok3, w.mei5-gwok3, w.jan3-dou6] }
+    exchanges:
+      - q: { es: "你係邊度人呀？", en: "Where are you from?" }
+        a: { es: "我係加拿大人。", en: "I'm Canadian." }
+        alt: ["我係美國人。", "我係印度人。", "我係阿根廷人。", "我係香港人。", "我係中國人。"]
+        grammar: [g.nationality-language]
+        vocab: [w.bin1-dou6]
+      - q: { es: "佢係邊度人呀？", en: "Where is she from?" }
+        a: { es: "佢係阿根廷人。", en: "She's Argentinian." }
+        alt: ["佢係印度人。", "佢係美國人。"]
+        grammar: [g.nationality-language]
+        vocab: [w.aa3-gan1-ting4]
+      - q: { es: "你係美國人呀？", en: "Are you American?" }
+        a: { es: "唔係，我係加拿大人。", en: "No, I'm Canadian." }
+        alt: ["係呀。", "係呀，我係美國人。"]
+        grammar: [g.nationality-language, g.hai6-identity]
+        vocab: [w.mei5-gwok3, w.gaa1-naa4-daai6]
+    texts:
+      - title: "邊度人？"
+        es: ["Sam係加拿大人。", "Priya係印度人。", "Mandy係香港人。"]
+        en: ["Sam is Canadian.", "Priya is Indian.", "Mandy is from Hong Kong."]
+        grammar: [g.nationality-language]
+        vocab: [w.gaa1-naa4-daai6, w.jan3-dou6]
+  - id: a1.u16.l4
+    title: 我今年二十歲
+    teach: [g.age]
+    skills: [listen, speak, read]
+    tip: "Age: 我今年二十歲 'this year I'm twenty'. 今年 gam1 nin2 is 'this year', 歲 seoi3 is 'years old'. To ask: 你今年幾多歲呀？ Two years old is 兩歲, not 二歲."
+    vocab: [w.gam1-nin2, w.seoi3, w.gei2-do1, w.loeng5]
+    sentences:
+      - { es: "我今年二十歲。", en: "I'm twenty.", altEn: ["I'm twenty years old.", "I'm twenty this year."], grammar: [g.age], vocab: [w.gam1-nin2, w.seoi3] }
+      - { es: "我今年三十五歲。", en: "I'm thirty-five.", altEn: ["I'm thirty-five years old."], grammar: [g.age], vocab: [w.gam1-nin2, w.seoi3] }
+      - { es: "你今年幾多歲呀？", en: "How old are you?", altEn: ["How old are you this year?"], grammar: [g.age], vocab: [w.gei2-do1, w.seoi3] }
+      - { es: "佢今年十歲。", en: "He's ten.", altEn: ["She's ten.", "He's ten years old."], grammar: [g.age], vocab: [w.seoi3] }
+      - { es: "佢今年兩歲。", en: "She's two.", altEn: ["He's two.", "She's two years old."], grammar: [g.age, g.loeng-vs-ji], vocab: [w.loeng5, w.seoi3] }
+      - { es: "我今年十八歲。", en: "I'm eighteen.", altEn: ["I'm eighteen years old."], grammar: [g.age], vocab: [w.seoi3] }
+      - { es: "我叫Sam，今年十九歲。", en: "I'm Sam, I'm nineteen.", altEn: ["My name is Sam and I'm nineteen."], grammar: [g.age, g.name-giu-sing], vocab: [w.giu3, w.seoi3] }
+      - { es: "我係加拿大人，今年二十歲。", en: "I'm Canadian and I'm twenty.", altEn: ["I'm Canadian, I'm twenty."], grammar: [g.age, g.nationality-language], vocab: [w.gaa1-naa4-daai6, w.seoi3] }
+      - { es: "我叫Mandy，我係香港人。", en: "I'm Mandy, I'm from Hong Kong.", altEn: ["My name is Mandy and I'm from Hong Kong."], grammar: [g.name-giu-sing, g.nationality-language], vocab: [w.giu3, w.hoeng1-gong2] }
+    exchanges:
+      - q: { es: "你今年幾多歲呀？", en: "How old are you?" }
+        a: { es: "我今年二十歲。", en: "I'm twenty." }
+        alt: ["二十歲。", "我今年三十歲。"]
+        grammar: [g.age]
+        vocab: [w.seoi3]
+      - q: { es: "佢今年幾多歲呀？", en: "How old is she?" }
+        a: { es: "佢今年兩歲。", en: "She's two." }
+        alt: ["兩歲。"]
+        grammar: [g.age, g.loeng-vs-ji]
+        vocab: [w.loeng5]
+      - q: { es: "你叫咩名呀？", en: "What's your name?" }
+        a: { es: "我叫Sam，今年十九歲。", en: "I'm Sam, I'm nineteen." }
+        alt: ["我叫Sam。"]
+        grammar: [g.name-giu-sing, g.age]
+        vocab: [w.giu3]
+    texts:
+      - title: "自我介紹"
+        es: ["你好！我叫Sam。", "我姓Smith。", "我係加拿大人。", "我今年十九歲。"]
+        en: ["Hello! My name is Sam.", "My surname is Smith.", "I'm Canadian.", "I'm nineteen."]
+        grammar: [g.name-giu-sing, g.nationality-language, g.age]
+        vocab: [w.giu3, w.sing3, w.seoi3]
+dialogues:
+  - id: a1.u16.d1
+    title: 喺酒店
+    context: Sam, a student from Canada, checks in at a hotel in Admiralty. Mandy works at the front desk.
+    lines:
+      - { speaker: Mandy, es: "你好！我叫Mandy。", en: "Hello! My name is Mandy." }
+      - { speaker: Sam, es: "你好，我叫Sam。", en: "Hello, I'm Sam." }
+      - { speaker: Mandy, es: "你姓咩呀？", en: "What's your surname?" }
+      - { speaker: Sam, es: "我姓Smith。", en: "My surname is Smith." }
+      - { speaker: Mandy, es: "你係邊度人呀？", en: "Where are you from?" }
+      - { speaker: Sam, es: "我係加拿大人。你呢？", en: "I'm Canadian. And you?" }
+      - { speaker: Mandy, es: "我係香港人。歡迎你！", en: "I'm from Hong Kong. Welcome!" }
+      - { speaker: Sam, es: "多謝！", en: "Thank you!" }
+    questions:
+      - { q: "What is Sam's surname?", options: ["Chan", "Smith", "Lee"], answer: 1, explain: "我姓Smith: my surname is Smith." }
+      - { q: "Where is Sam from?", options: ["Hong Kong", "The United States", "Canada"], answer: 2, explain: "我係加拿大人: I'm Canadian." }
+      - { q: "Where is Mandy from?", options: ["Hong Kong", "India", "Argentina"], answer: 0, explain: "我係香港人: I'm from Hong Kong." }

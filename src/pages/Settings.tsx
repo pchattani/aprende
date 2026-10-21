@@ -125,6 +125,11 @@ export default function Settings() {
         </ul>
       </Section>
       <p className="mt-6 text-center text-xs text-muted">{ui.appName} · open source · no accounts, no tracking, no AI, works offline.</p>
+      {pack.id === 'yue' && (
+        <p className="mt-3 text-center text-[11px] leading-relaxed text-muted">
+          Credits: Jyutping readings from <a className="underline" href="https://github.com/rime/rime-cantonese">rime-cantonese</a> (CC BY 4.0). Stroke-order data from <a className="underline" href="https://github.com/chanind/hanzi-writer-data">hanzi-writer-data</a> (Make Me a Hanzi, Arphic Public License), animated with <a className="underline" href="https://hanziwriter.org">Hanzi Writer</a> (MIT).
+        </p>
+      )}
       <p className="mt-3 text-center text-[11px] leading-relaxed text-muted">
         Pawsport is an independent project by an individual. It is not affiliated with, endorsed by or connected to Duolingo, Inc. or any other language-learning company, and uses none of their content or trademarks.
       </p>

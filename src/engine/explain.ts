@@ -185,7 +185,15 @@ export function explainAnswer(ex: Exercise, answer: Answer | undefined, deps: Ex
       if (ex.translation && ex.kind !== 'choiceEs' && ex.kind !== 'listen') hints.push(`The whole sentence: ${ex.translation}`)
       return { hints }
     }
+    case 'pictogram':
+    case 'hearChar': {
+      if (typeof answer !== 'number' || answer === ex.answer) return { hints: [] }
+      const right = ex.options[ex.answer]!
+      return { hints: [`You picked “${ex.options[answer]}”. The answer is “${right}”${ex.translation ? ` (${ex.translation})` : ''}.`] }
+    }
     case 'match':
+    case 'trace':
+    case 'writeChar':
       return { hints: [] }
     default: {
       const given = Array.isArray(answer) ? answer.join(' ') : typeof answer === 'string' ? answer : ''

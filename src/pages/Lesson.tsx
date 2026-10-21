@@ -13,6 +13,7 @@ import { pinIdFor } from '../engine/pins'
 import { rememberReturn } from '../engine/returnTo'
 import { GuidebookBody, GuidebookSheet } from '../components/Guidebook'
 import { hasGuidebook } from '../engine/guidebook'
+import { charId } from '../engine/chars'
 import { StampCard } from '../components/StampCard'
 import { Button } from '../components/ui/basics'
 import { IconArrowLeft, IconPaw, IconBook, IconCheck, IconRoute } from '../components/ui/icons'
@@ -90,6 +91,7 @@ export default function LessonPage() {
           ...lesson.texts.map((t, i) => ({ id: textId(id, i), kind: 'sentence' as const, level, lessonId: id, grammar: t.grammar })),
           ...spicy.map(({ s, id: sid }) => ({ id: sid, kind: 'sentence' as const, level, lessonId: id, grammar: s.grammar })),
           ...lesson.teach.map((g) => ({ id: g, kind: 'grammar' as const, level, lessonId: id, grammar: [g] })),
+          ...(lesson.write ?? []).map((c) => ({ id: charId(c), kind: 'char' as const, level, lessonId: id, grammar: [] as string[] })),
         ]
         await ensureCards(items)
         const cards = await getCards(items.map((i) => i.id))
@@ -109,7 +111,8 @@ export default function LessonPage() {
           { count: SESSION_COUNT[sessionLength], extra, avoid, spicy },
         )
         if (!alive) return
-        setPhase((lesson.teach.length && !seen) || (wantGuide && hasGuidebook(lesson)) ? { kind: 'teach', unit, lesson, exercises } : { kind: 'run', unit, lesson, exercises })
+        // First time: the guidebook before boarding when the lesson teaches grammar or characters to write.
+        setPhase(((lesson.teach.length || lesson.write?.length) && !seen) || (wantGuide && hasGuidebook(lesson)) ? { kind: 'teach', unit, lesson, exercises } : { kind: 'run', unit, lesson, exercises })
       } catch (e) {
         if (alive) setPhase({ kind: 'error', message: (e as Error).message })
       }

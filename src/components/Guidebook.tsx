@@ -6,22 +6,39 @@ import { GrammarNoteView } from './GrammarNote'
 import { SpeakerButton, Chip } from './ui/basics'
 import { IconX } from './ui/icons'
 import { TL } from '../engine/course'
+import { charInfo } from '../engine/chars'
+import { PICTOGRAMS } from '../engine/pictograms'
+import { StrokeOrder } from './writing/hanzi'
+import { useStrokeData } from './writing/useHanzi'
+import { Pictogram } from './art/Pictogram'
 
-/** The lesson's guidebook: one tab per grammar note plus a Words tab with the lesson's new vocabulary. */
+/**
+ * The lesson's guidebook: one tab per grammar note, a Writing tab for the characters the lesson teaches
+ * to write (lessons with `write`) and a Words tab with the lesson's new vocabulary.
+ */
 export function GuidebookBody({ lesson }: { lesson: Lesson }) {
   const notes = lesson.teach.map((g) => grammar.get(g)).filter(Boolean)
   const words = lesson.vocab.map((v) => vocab.get(v)).filter(Boolean)
+  const chars = lesson.write ?? []
   const [tab, setTab] = useState(0)
+  const writingTab = chars.length ? notes.length : -1
+  const wordsTab = notes.length + (chars.length ? 1 : 0)
+  const tabCls = (on: boolean) => `-mb-px shrink-0 border-b-2 pb-2 text-sm font-semibold transition ${on ? 'border-ink text-ink' : 'border-transparent text-ink-2'}`
   return (
     <>
       <div className="flex gap-5 overflow-x-auto border-b border-line" role="tablist">
         {notes.map((n, i) => (
-          <button key={n!.id} type="button" onClick={() => setTab(i)} role="tab" aria-selected={tab === i} className={`-mb-px shrink-0 border-b-2 pb-2 text-sm font-semibold transition ${tab === i ? 'border-ink text-ink' : 'border-transparent text-ink-2'}`}>
+          <button key={n!.id} type="button" onClick={() => setTab(i)} role="tab" aria-selected={tab === i} className={tabCls(tab === i)}>
             {n!.title}
           </button>
         ))}
+        {chars.length > 0 && (
+          <button type="button" onClick={() => setTab(writingTab)} role="tab" aria-selected={tab === writingTab} className={tabCls(tab === writingTab)}>
+            Writing ({chars.length})
+          </button>
+        )}
         {words.length > 0 && (
-          <button type="button" onClick={() => setTab(notes.length)} role="tab" aria-selected={tab === notes.length} className={`-mb-px shrink-0 border-b-2 pb-2 text-sm font-semibold transition ${tab === notes.length ? 'border-ink text-ink' : 'border-transparent text-ink-2'}`}>
+          <button type="button" onClick={() => setTab(wordsTab)} role="tab" aria-selected={tab === wordsTab} className={tabCls(tab === wordsTab)}>
             Words ({words.length})
           </button>
         )}
@@ -29,6 +46,12 @@ export function GuidebookBody({ lesson }: { lesson: Lesson }) {
       <div className="card mt-4">
         {tab < notes.length ? (
           <GrammarNoteView note={notes[tab]!} />
+        ) : tab === writingTab ? (
+          <ul className="divide-y divide-[var(--line)]" data-shot="guide-writing">
+            {chars.map((c) => (
+              <WritingEntry key={c} char={c} />
+            ))}
+          </ul>
         ) : (
           <ul className="divide-y divide-[var(--line)]">
             {words.map((w) => (
@@ -48,6 +71,35 @@ export function GuidebookBody({ lesson }: { lesson: Lesson }) {
         )}
       </div>
     </>
+  )
+}
+
+/** One character to write: its stroke order (replayable), stroke count, reading, meaning and, when it grew from one, its picture. */
+function WritingEntry({ char }: { char: string }) {
+  const info = charInfo(char, vocab)
+  const data = useStrokeData(char)
+  const picto = PICTOGRAMS[char]
+  return (
+    <li className="py-3 first:pt-0 last:pb-0">
+      <div className="flex items-start gap-3">
+        <StrokeOrder char={char} size={112} autoPlay={false} />
+        <div className="min-w-0 flex-1 pt-1">
+          <p className="flex items-center gap-2">
+            <span className="text-[2.2rem] font-semibold leading-none" lang={TL}>{char}</span>
+            <SpeakerButton text={char} size="sm" />
+          </p>
+          {info.jp && <p className="mt-1 font-mono text-base font-semibold">{info.jp}</p>}
+          <p className="text-sm text-muted">{info.en}</p>
+          {data && <p className="mt-1 text-xs font-bold text-ink-2">{data.strokes.length} stroke{data.strokes.length === 1 ? '' : 's'}</p>}
+        </div>
+      </div>
+      {picto && (
+        <div className="mt-3">
+          <Pictogram char={char} />
+          <p className="mt-1.5 text-sm text-ink-2">{picto.story}</p>
+        </div>
+      )}
+    </li>
   )
 }
 

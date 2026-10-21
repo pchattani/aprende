@@ -1,7 +1,8 @@
 /** Shared engine types for learner state and exercises. */
 import type { ExerciseKind, LevelId } from './schema'
 
-export type ItemKind = 'word' | 'sentence' | 'grammar'
+/** `char`: a character the learner writes (id `c.<char>`, from a lesson's `write` list). */
+export type ItemKind = 'word' | 'sentence' | 'grammar' | 'char'
 
 /**
  * Ladder stage of an item: how deeply the learner can produce it.
@@ -10,7 +11,7 @@ export type ItemKind = 'word' | 'sentence' | 'grammar'
 export type Stage = 0 | 1 | 2 | 3
 
 export interface CardRow {
-  /** Item id: vocab id (w.*), grammar id (g.*) or sentence id (s.<unit>.<n>). */
+  /** Item id: vocab id (w.*), grammar id (g.*), sentence id (s.<unit>.<n>) or character to write (c.<char>). */
   id: string
   kind: ItemKind
   level: LevelId
@@ -188,7 +189,31 @@ export interface FindErrorExercise extends ExerciseBase {
   answers: string[]
   explain: string
 }
-export type Exercise = ChoiceExercise | WordBankExercise | TypeExercise | MatchExercise | FindErrorExercise
+/** Pick a written character: from the picture it grew from (pictogram) or from its sound (hearChar). */
+export interface CharChoiceExercise extends ExerciseBase {
+  kind: 'pictogram' | 'hearChar'
+  prompt: string
+  /** pictogram: the character whose picture is shown (the answer). */
+  char?: string
+  /** hearChar: the word to speak. */
+  audio?: string
+  options: string[]
+  answer: number
+  translation?: string
+}
+/** Write a character with hanzi-writer: over its outline after a stroke-order demo (trace), or from memory (writeChar). */
+export interface WriteExercise extends ExerciseBase {
+  kind: 'trace' | 'writeChar'
+  /** One Han character. */
+  char: string
+  /** Its Jyutping (or other reading) and English meaning. */
+  jp?: string
+  meaning: string
+  prompt: string
+  /** What the speaker button says (the character, or the word it is). */
+  audio: string
+}
+export type Exercise = ChoiceExercise | WordBankExercise | TypeExercise | MatchExercise | FindErrorExercise | CharChoiceExercise | WriteExercise
 
 export interface GradeResult {
   verdict: 'correct' | 'almost' | 'wrong'

@@ -62,6 +62,8 @@ interface S {
   dir: Dir
   /** Result of the last Check, until the next change. */
   checked?: { wrong: number; empty: number }
+  /** The last word accepted without its accents, shown with them for a moment. */
+  accented?: string
 }
 type A =
   | { t: 'letter'; ch: string }
@@ -72,6 +74,9 @@ type A =
   | { t: 'step'; delta: number }
   | { t: 'check' }
   | { t: 'reveal' }
+  /** A word typed without its accents was accepted: write the accented letters into its squares. */
+  | { t: 'settle'; keys: string[]; word?: string }
+  | { t: 'unnote' }
 
 function init(cw: CW): S {
   const at = new Map<string, Partial<Record<Dir, number>>>()
@@ -205,6 +210,13 @@ function reducer(s: S, a: A): S {
       for (const key of wrong) for (const i of Object.values(s.at.get(key)!)) flagged.add(s.cw.entries[i]!.id)
       return { ...s, wrong, flagged, checked: { wrong: wrong.size, empty } }
     }
+    case 'settle': {
+      const fills = { ...s.fills }
+      for (const key of a.keys) fills[key] = solutionAt(s, key)
+      return { ...s, fills, accented: a.word ?? s.accented }
+    }
+    case 'unnote':
+      return { ...s, accented: undefined }
     case 'reveal': {
       if (done) return s
       const right = s.fills[k] !== undefined && fold(s.fills[k]) === fold(solutionAt(s, k))
@@ -246,6 +258,12 @@ function Board({ cw, byId, onDone, onAgain, best }: { cw: CW; byId: Map<string, 
     return () => clearInterval(t)
   }, [startedAt, finished])
 
+  useEffect(() => {
+    if (!s.accented) return
+    const t = setTimeout(() => dispatch({ t: 'unnote' }), 4000)
+    return () => clearTimeout(t)
+  }, [s.accented])
+
   // record each word once, when it is first solved; finish when all are
   useEffect(() => {
     let fresh = 0
@@ -256,6 +274,9 @@ function Board({ cw, byId, onDone, onAgain, best }: { cw: CW; byId: Map<string, 
       const shown = cellsOf(e).filter(([r, c]) => s.revealed.has(K(r, c))).length
       const verdict = shown * 2 >= e.letters.length ? 'wrong' : shown || s.flagged.has(e.id) ? 'almost' : 'correct'
       void recordAnswer(e.id, verdict, 'typeEs')
+      // accents are optional while typing; once the word is accepted its squares take the accented letters
+      const plain = cellsOf(e).map(([r, c]) => K(r, c)).filter((key, i) => s.fills[key] !== e.letters[i])
+      if (plain.length) dispatch({ t: 'settle', keys: plain, word: JYUTPING ? undefined : e.letters.join('') })
     }
     if (finished && !finishing.current) {
       finishing.current = true
@@ -455,7 +476,11 @@ function Board({ cw, byId, onDone, onAgain, best }: { cw: CW; byId: Map<string, 
             </button>
           </div>
           <p className="mt-2 min-h-5 text-center text-sm font-semibold" role="status" aria-live="polite">
-            {s.checked ? (
+            {s.accented && !s.checked ? (
+              <span className="text-[var(--ok)]" lang={TL}>
+                Accents added: <span className="font-display">{s.accented}</span>
+              </span>
+            ) : s.checked ? (
               s.checked.wrong ? (
                 <span className="text-[var(--bad)]">{s.checked.wrong === 1 ? '1 letter to fix' : `${s.checked.wrong} letters to fix`}</span>
               ) : s.checked.empty ? (

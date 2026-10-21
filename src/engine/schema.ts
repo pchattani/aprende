@@ -259,6 +259,11 @@ export const ExerciseKind = z.enum([
   'order', // reorder scrambled words (grammar focus)
   'reply', // read a question/line, pick the natural reply
   'orderText', // put the sentences of a mini-text in order
+  // Cantonese characters (lessons with `write` / `skills`)
+  'trace', // watch the stroke order, then trace the character over its outline
+  'writeChar', // write the character from memory (prompted by sound and meaning)
+  'pictogram', // see the picture a character grew from, pick the character
+  'hearChar', // hear a word, pick how it is written
 ])
 export type ExerciseKind = z.infer<typeof ExerciseKind>
 
@@ -325,6 +330,9 @@ export const Dialogue = z.object({
 })
 export type Dialogue = z.infer<typeof Dialogue>
 
+export const LessonSkill = z.enum(['listen', 'speak', 'read', 'write'])
+export type LessonSkill = z.infer<typeof LessonSkill>
+
 export const Lesson = z.object({
   id: z.string().regex(/^[a-c][12]\.u\d{2}\.l\d$/, 'lesson id like a1.u01.l1'),
   title: z.string(),
@@ -341,6 +349,13 @@ export const Lesson = z.object({
   tip: z.string().optional(),
   /** Opt-in "modo picante" sentences: cheeky, flirty, PG-13, reusing the lesson's grammar. Off by default. */
   spicy: z.array(Sentence).default([]),
+  /**
+   * What the lesson practises. When set, only exercises for these skills are generated:
+   * listen (hear and pick), speak (say it aloud), read (recognise the written form), write (trace, write, type).
+   */
+  skills: z.array(LessonSkill).min(1).optional(),
+  /** Single characters to learn to write: stroke-order demo, tracing, then writing from memory. */
+  write: z.array(z.string().regex(/^\p{Script=Han}$/u, 'one Han character')).optional(),
 })
 export type Lesson = z.infer<typeof Lesson>
 

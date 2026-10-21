@@ -112,7 +112,24 @@ export function matchSpanish(text: string, expectedIn: string[], deps: GradeDeps
   return r
 }
 
-export type Answer = number | string | string[] | { mistakes: number }
+/**
+ * Match: mismatched pairs. Writing a character: strokes that needed another try (`mistakes`), strokes
+ * finished only after the hint showed (`hints`) and the character's stroke count.
+ */
+export type StrokeAnswer = { mistakes: number; hints?: number; strokes?: number }
+export type Answer = number | string | string[] | StrokeAnswer
+
+/**
+ * Tracing is guided, so it is never wrong: few slips and no hints is correct, anything else almost.
+ * Writing from memory allows a slip or so; leaning on the hint for more than a third of the strokes is wrong.
+ */
+export function gradeStrokes(kind: 'trace' | 'writeChar', a: StrokeAnswer): GradeResult['verdict'] {
+  const n = a.strokes ?? 1
+  const hints = a.hints ?? 0
+  if (kind === 'trace') return hints === 0 && a.mistakes <= Math.max(2, Math.ceil(n / 3)) ? 'correct' : 'almost'
+  if (hints === 0 && a.mistakes <= Math.max(1, Math.floor(n / 4))) return 'correct'
+  return hints <= Math.max(1, Math.floor(n / 3)) ? 'almost' : 'wrong'
+}
 
 export function grade(ex: Exercise, answer: Answer, deps: GradeDeps): GradeResult {
   switch (ex.kind) {
@@ -120,9 +137,21 @@ export function grade(ex: Exercise, answer: Answer, deps: GradeDeps): GradeResul
     case 'choiceEn':
     case 'listen':
     case 'fillBlank':
-    case 'reply': {
+    case 'reply':
+    case 'pictogram':
+    case 'hearChar': {
       const correct = ex.options[ex.answer]!
       return { verdict: answer === ex.answer ? 'correct' : 'wrong', correct, notes: [] }
+    }
+    case 'trace':
+    case 'writeChar': {
+      const a: StrokeAnswer = typeof answer === 'object' && answer !== null && 'mistakes' in answer ? answer : { mistakes: 99, hints: 99 }
+      const hints = a.hints ?? 0
+      const notes = [
+        ...(a.mistakes ? [`${a.mistakes} stroke${a.mistakes === 1 ? '' : 's'} needed another try.`] : []),
+        ...(hints ? [`The hint showed ${hints === 1 ? 'one stroke' : `${hints} strokes`}: watch the stroke order again.`] : []),
+      ]
+      return { verdict: gradeStrokes(ex.kind, a), correct: ex.char, notes }
     }
     case 'match': {
       const m = typeof answer === 'object' && answer !== null && 'mistakes' in answer ? answer.mistakes : 99

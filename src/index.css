@@ -320,6 +320,40 @@ a.card:active, button.card:active { transform: scale(0.99); }
   .animate-float, .animate-wiggle, .confetti, .animate-stamp, .animate-develop { animation: none; }
 }
 
+/* ---------------------------------------------------------------- pictograms (components/art/Pictogram.tsx)
+   The strip fades in step by step, the ancient strokes draw in, each picture idles gently. Rest poses at 0% and 100%,
+   so a calm runner (one 1ms iteration) ends where it started. */
+@keyframes picto-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes picto-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes picto-flicker { 0%, 100% { transform: scale(1, 1); } 35% { transform: scale(0.97, 1.05); } 70% { transform: scale(1.02, 0.97); } }
+@keyframes picto-flow { to { stroke-dashoffset: -22; } }
+@keyframes picto-swing { 0%, 60%, 100% { transform: scaleX(1); } 30% { transform: scaleX(0.82); } }
+@keyframes picto-talk { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.82); } }
+@keyframes picto-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+@keyframes picto-twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@keyframes picto-rain { 0% { transform: translateY(-4px); opacity: 0.4; } 40% { opacity: 1; } 100% { transform: translateY(6px); opacity: 0.2; } }
+@keyframes picto-sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(2.5deg); } }
+.picto > .picto-step, .picto > .picto-arrow { animation: picto-in 0.55s ease-out both; }
+.picto > :nth-child(2) { animation-delay: 0.35s; }
+.picto > :nth-child(3) { animation-delay: 0.55s; }
+.picto > :nth-child(4) { animation-delay: 1.5s; }
+.picto > :nth-child(5) { animation-delay: 1.7s; }
+.picto-ink { stroke-dasharray: 1 1; animation: picto-draw 0.5s ease-out both; }
+.picto-modern { animation: picto-in 0.7s 2s ease-out both; }
+.picto-picture :is(.picto-flicker, .picto-swing-l, .picto-swing-r, .picto-talk, .picto-sway) { transform-box: fill-box; }
+.picto-flicker { transform-origin: 50% 100%; animation: picto-flicker 1.8s ease-in-out infinite; }
+.picto-flow { stroke-dasharray: 7 4; animation: picto-flow 2.6s linear infinite; }
+.picto-swing-l { transform-origin: 0 50%; animation: picto-swing 5s ease-in-out infinite; }
+.picto-swing-r { transform-origin: 100% 50%; animation: picto-swing 5s 0.25s ease-in-out infinite; }
+.picto-talk { transform-origin: 50% 50%; animation: picto-talk 2.6s ease-in-out infinite; }
+.picto-walk, .picto-bob { animation: picto-bob 1.4s ease-in-out infinite; }
+.picto-twinkle { animation: picto-twinkle 2.8s ease-in-out infinite; }
+.picto-rain { animation: picto-rain 1.3s linear infinite; }
+.picto-sway { transform-origin: 50% 100%; animation: picto-sway 4.5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .picto *, .picto-picture * { animation: none !important; }
+}
+
 /* Jyutping above Cantonese characters */
 ruby.ruby-jp { ruby-position: over; }
 ruby.ruby-jp rt { font-size: 0.48em; font-weight: 600; letter-spacing: 0; opacity: 0.75; font-family: ui-sans-serif, system-ui, sans-serif; }

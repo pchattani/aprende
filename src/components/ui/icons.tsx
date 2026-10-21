@@ -54,6 +54,9 @@ export const IconEar = (p: SVGProps<SVGSVGElement>) => (
 export const IconArrowLeft = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
 )
+export const IconArrowUp = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+)
 export const IconTrophy = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}><path d="M8 21h8M12 17v4" /><path d="M7 4h10v5a5 5 0 0 1-10 0z" /><path d="M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3" /></svg>
 )

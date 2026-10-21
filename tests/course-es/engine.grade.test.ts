@@ -54,3 +54,14 @@ describe('leniency', () => {
     expect(grade(ex, 'the house is big', deps).verdict).toBe('wrong')
   })
 })
+
+describe('English synonyms shared by every course', () => {
+  it('accepts smart for intelligent and pretty for beautiful, both ways', async () => {
+    const { equivEn } = await import('@/hooks/useDeps')
+    expect(matchEnglish('She is smart.', ['She is intelligent.'], equivEn).verdict).toBe('correct')
+    expect(matchEnglish('He is intelligent', ['He is smart.'], equivEn).verdict).toBe('correct')
+    expect(matchEnglish('The house is pretty.', ['The house is beautiful.'], equivEn).verdict).toBe('correct')
+    expect(matchEnglish('a beautiful city', ['a pretty city'], equivEn).verdict).toBe('correct')
+    expect(matchEnglish('She is tall.', ['She is intelligent.'], equivEn).verdict).toBe('wrong')
+  })
+})

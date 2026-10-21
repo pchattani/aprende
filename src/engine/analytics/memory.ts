@@ -133,7 +133,8 @@ export function memoryBook(ctx: Ctx): MemoryBook {
     .filter((c) => c.lapses >= LEECH_LAPSES && c.kind !== 'grammar')
     .map((c) => ({ id: c.id, kind: c.kind, lapses: c.lapses, reps: c.reps, r: rNow(c), grammar: c.grammar }))
     .sort((a, b) => b.lapses - a.lapses || a.r - b.r)
-  const kinds: ItemKind[] = ['word', 'sentence', 'grammar']
+  // characters to write only in courses that teach writing (a row appears once there are any)
+  const kinds: ItemKind[] = ['word', 'sentence', 'grammar', ...(cards.some((c) => c.kind === 'char') ? (['char'] as const) : [])]
   return {
     reviewed: cards.length,
     stabilityHist: logHistogram(S, 0.1, 1000, 2),
