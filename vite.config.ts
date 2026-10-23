@@ -101,6 +101,8 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,webp,jpg,jpeg,json,woff2}'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: 'index.html',
+        // the standalone repair page (public/repair.html) must never be swapped for the app
+        navigateFallbackDenylist: [/\/repair\.html$/],
       },
     }),
   ],

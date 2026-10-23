@@ -50,15 +50,9 @@ export function taughtIndex(levels: readonly { units: readonly { id: string }[] 
   const lessons = levels.flatMap((l) => l.units.flatMap((u) => byId.get(u.id)?.lessons ?? []))
   const order = lessons.map((l) => l.id)
   const pos = new Map(order.map((id, i) => [id, i]))
-  // cumulative sets, built once on first use (a few hundred lessons)
-  let sets: Set<string>[] | undefined
-  const build = () => {
-    const acc = new Set<string>()
-    return lessons.map((l) => {
-      for (const v of l.vocab) acc.add(v)
-      return new Set(acc)
-    })
-  }
+  // each lesson's set is built only when asked for (a page needs one or two), not all few hundred at once:
+  // they hold thousands of ids each, which is a lot of memory on a phone
+  const sets = new Map<number, ReadonlySet<string>>()
   const empty: ReadonlySet<string> = new Set()
   return {
     order,
@@ -66,8 +60,15 @@ export function taughtIndex(levels: readonly { units: readonly { id: string }[] 
     at(id) {
       const i = pos.get(id)
       if (i === undefined) return empty
-      sets ??= build()
-      return sets[i]!
+      let set = sets.get(i)
+      if (!set) {
+        const acc = new Set<string>()
+        for (let k = 0; k <= i; k++) for (const v of lessons[k]!.vocab) acc.add(v)
+        set = acc
+        if (sets.size >= 8) sets.delete(sets.keys().next().value!)
+        sets.set(i, set)
+      }
+      return set
     },
     furthest(ids) {
       let best = -1

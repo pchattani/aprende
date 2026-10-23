@@ -10,6 +10,7 @@ import { DeparturesBoard, type BoardRow } from '@/components/hub/DeparturesBoard
 import { PawsportMark } from '@/components/art/Logo'
 import { DogsTrio } from '@/components/art/DogsTrio'
 import { overallSummary, type CourseSummary, type OverallSummary } from './summary'
+import { RepairCourses } from './Repair'
 
 interface Started {
   course: HubCourse
@@ -99,6 +100,7 @@ export default function App() {
           </>
         )}
       </main>
+      <RepairCourses courses={courses} />
       <footer className="mt-10 border-t border-line pt-4 text-center text-xs text-ink-2">
         Pawsport · open source · no accounts, no tracking. Your progress stays on this device, one journal per language.
       </footer>
