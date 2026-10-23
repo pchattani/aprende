@@ -2,15 +2,18 @@ name: Diagnose live site in WebKit
 on:
   push:
     branches: [diag/webkit]
+concurrency:
+  group: diag-webkit
+  cancel-in-progress: true
 jobs:
   probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
+    # Playwright's image ships WebKit and Chromium with their system libraries: no install step
+    container: mcr.microsoft.com/playwright:v1.63.0-noble
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps webkit chromium
       - run: node scripts/diag/probe-live.mjs
+        env:
+          HOME: /root
