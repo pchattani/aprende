@@ -20,6 +20,45 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Boot watchdog: if the app has not started after 15 s (an older cached copy asking for files a newer
+      // deploy replaced, a network that dropped mid-download…), show a plain screen with a repair button
+      // instead of a blank page. Repair drops this page's service worker and cached files and reloads;
+      // progress (IndexedDB) is kept. main.tsx calls __pawsportStarted() as soon as the app's code runs.
+      ;(function () {
+        var started = false
+        window.__pawsportStarted = function () {
+          started = true
+          var el = document.getElementById('boot-rescue')
+          if (el) el.parentNode.removeChild(el)
+        }
+        function repair() {
+          var scope = new URL('./', location.href).href
+          var jobs = []
+          if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations)
+            jobs.push(navigator.serviceWorker.getRegistrations().then(function (rs) {
+              return Promise.all(rs.filter(function (r) { return r.scope === scope }).map(function (r) { return r.unregister() }))
+            }))
+          if (window.caches)
+            jobs.push(caches.keys().then(function (ns) {
+              return Promise.all(ns.filter(function (n) { return n.slice(-scope.length) === scope }).map(function (n) { return caches.delete(n) }))
+            }))
+          Promise.all(jobs).catch(function () {}).then(function () { location.replace(location.pathname + location.hash) })
+        }
+        function show() {
+          if (started || document.getElementById('boot-rescue')) return
+          var d = document.createElement('div')
+          d.id = 'boot-rescue'
+          d.setAttribute('role', 'alert')
+          d.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:#f6f4ee;color:#1d2238;font:16px/1.45 system-ui,-apple-system,sans-serif;text-align:center'
+          d.innerHTML = '<div style="max-width:340px"><p style="font-size:44px;margin:0">🐾</p><h1 style="font-size:22px;margin:8px 0">Pawsport is taking a while</h1><p style="margin:0 0 16px;color:#525a75">If it stays stuck, repair it: this downloads the app again. Your progress is kept.</p><button id="boot-repair" type="button" style="font:inherit;font-weight:700;padding:12px 20px;border:0;border-radius:14px;background:#2f6fc0;color:#fff">Repair and reload</button><p style="margin:12px 0 0"><button id="boot-wait" type="button" style="font:inherit;background:none;border:0;color:#525a75;text-decoration:underline">Keep waiting</button></p></div>'
+          document.body.appendChild(d)
+          document.getElementById('boot-repair').onclick = repair
+          document.getElementById('boot-wait').onclick = function () { d.parentNode.removeChild(d); setTimeout(show, 15000) }
+        }
+        setTimeout(show, 15000)
+      })()
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

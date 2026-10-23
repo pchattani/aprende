@@ -59,6 +59,36 @@ jobs:
         with:
           name: dist
           path: dist
+      # Phones and tabs still running the previous version (an installed app, an open tab) load its
+      # hashed files lazily; deleting them breaks that copy until it updates. Keep the previous deploy's
+      # assets for one more deploy (files it had itself carried over are dropped, so nothing piles up).
+      - uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: prev
+      - name: Carry over the previous deploy's assets
+        run: node -e "$CARRY"
+        env:
+          CARRY: |
+            const fs = require('fs'), path = require('path')
+            if (!fs.existsSync('prev')) process.exit(0)
+            const old = new Set(fs.existsSync('prev/.carried') ? fs.readFileSync('prev/.carried', 'utf8').split('\n') : [])
+            const carried = []
+            const walk = (dir) => {
+              for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+                const p = path.join(dir, e.name)
+                if (e.isDirectory()) { if (e.name !== '.git') walk(p); continue }
+                const rel = path.relative('prev', p)
+                if (!rel.split(path.sep).includes('assets') || old.has(rel) || fs.existsSync(path.join('dist', rel))) continue
+                fs.mkdirSync(path.dirname(path.join('dist', rel)), { recursive: true })
+                fs.copyFileSync(p, path.join('dist', rel))
+                carried.push(rel)
+              }
+            }
+            walk('prev')
+            fs.writeFileSync('dist/.carried', carried.join('\n'))
+            console.log(`carried ${carried.length} files from the previous deploy`)
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

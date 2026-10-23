@@ -4,7 +4,9 @@ import { HashRouter } from 'react-router'
 import './index.css'
 import App from './App.tsx'
 import { watchForUpdates } from './swUpdate'
+import { watchForStaleChunks } from './recover'
 
+watchForStaleChunks()
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HashRouter>
@@ -25,3 +27,5 @@ try {
 }
 
 watchForUpdates()
+// the boot watchdog in index.html can stand down: the app's code loaded and is running
+;(window as unknown as { __pawsportStarted?: () => void }).__pawsportStarted?.()
