@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/aprende/cantonese/sw.js', { scope: '/aprende/cantonese/' })})}

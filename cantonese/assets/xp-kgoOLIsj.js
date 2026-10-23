@@ -1,0 +1,1 @@
+function e(e){return e.completed?10+e.correct*2+e.almost+(e.wrong===0?5:0):e.correct*2+e.almost}export{e as t};

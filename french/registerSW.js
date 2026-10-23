@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/aprende/french/sw.js', { scope: '/aprende/french/' })})}
