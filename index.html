@@ -14,6 +14,38 @@
   <body>
     <div id="root"></div>
     <script>
+      // Start-up breadcrumbs and safe mode. Each start records how far it got (localStorage
+      // pawsport:boot:<course>); a start that never reached "ready" counts as failed. After two failed
+      // starts in a row (the phone killed the page while loading), the next start runs in safe mode: this
+      // course's service worker and cached files are dropped and not re-registered, and the journey draws
+      // less. The hub's "A language won't open?" panel shows where the last start stopped.
+      ;(function () {
+        var slug = location.pathname.replace(/\/+$/, '').split('/').pop() || 'course'
+        var KEY = 'pawsport:boot:' + slug
+        var prev = {}
+        try { prev = JSON.parse(localStorage.getItem(KEY) || '{}') || {} } catch (e) {}
+        var unfinished = prev.stage && prev.stage !== 'ready'
+        var failed = unfinished ? (prev.failed || 0) + 1 : 0
+        var safe = failed >= 2 || /[?&]safe\b/.test(location.search)
+        var rec = { stage: 'html', failed: failed, at: Date.now(), safe: safe, lastStop: unfinished ? prev.stage : prev.lastStop, lastFailAt: unfinished ? prev.at : prev.lastFailAt }
+        function save() { try { localStorage.setItem(KEY, JSON.stringify(rec)) } catch (e) {} }
+        save()
+        window.__pawsportSafe = safe
+        window.__pawsportBoot = function (stage) {
+          if (rec.stage === 'ready') return
+          rec.stage = stage
+          if (stage === 'ready') rec.failed = 0
+          save()
+        }
+        if (safe) {
+          var scope = new URL('./', location.href).href
+          try {
+            if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations)
+              navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { if (r.scope === scope) r.unregister() }) })
+            if (window.caches) caches.keys().then(function (ns) { ns.forEach(function (n) { if (n.slice(-scope.length) === scope) caches.delete(n) }) })
+          } catch (e) {}
+        }
+      })()
       // Boot watchdog: if the app has not started after 15 s (an older cached copy asking for files a newer
       // deploy replaced, a network that dropped mid-download…), show a plain screen with a repair button
       // instead of a blank page. Repair drops this page's service worker and cached files and reloads;

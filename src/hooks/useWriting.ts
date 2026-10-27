@@ -4,7 +4,7 @@
  * carried by export/import with every other kv row) and the prompt counts per stop.
  */
 import { useEffect, useState } from 'react'
-import { vocab, known, loadUnit, units, levelOf, readers, journeyData } from '../engine/loader'
+import { vocab, known, units, levelOf, readers, journeyData } from '../engine/loader'
 import { getDictionary, checkText } from './useDeps'
 import { lookup } from '@lang/inflect'
 import { tokenize } from '@lang/tokenize'
@@ -99,12 +99,13 @@ export function useWritingStops(): Map<string, WritingStop> | undefined {
   useEffect(() => {
     let alive = true
     ;(async () => {
-      const authored = [...units.values()].filter((u) => u.authored)
-      const loaded = await Promise.all(authored.map((u) => loadUnit(u.id).catch(() => undefined)))
+      // the course outline (counts only), not every unit file
+      const { unitOutlines } = await import('../engine/lessonIndex')
       const m = new Map<string, WritingStop>()
-      loaded.forEach((unit) => {
-        if (unit?.writing.length) m.set(unit.id, { prompts: unit.writing.length, lessons: unit.lessons.length })
-      })
+      for (const u of units.values()) {
+        const o = u.authored ? unitOutlines.get(u.id) : undefined
+        if (o?.writing) m.set(u.id, { prompts: o.writing, lessons: o.lessons.length })
+      }
       if (alive) setStops(m)
     })()
     return () => {

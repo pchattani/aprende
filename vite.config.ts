@@ -9,7 +9,7 @@ import { SITE_BASE } from './scripts/site-base.mjs'
 /**
  * Turns any imported .yaml/.yml file into an ES module exporting the parsed data.
  * `unit.yaml?dialogues` exports only a unit's id and dialogues (the listening list needs no lessons);
- * `unit.yaml?vocab` only its id and each lesson's id, vocab and grammar ids (its `teach` and the grammar of its
+ * `unit.yaml?vocab` only its id, its number of writing prompts and each lesson's id, title, vocab and grammar ids (its `teach` and the grammar of its
  * sentences, exchanges and texts): the lesson index of engine/lessonIndex.ts, behind the taught-words gate
  * (engine/taughtData.ts) and the games' finished-words pool (engine/finishedData.ts).
  */
@@ -23,7 +23,7 @@ function yamlPlugin(): Plugin {
       type Graded = { grammar?: string[] }
       const lessons = (data?.lessons ?? []) as ({ id?: string; vocab?: string[]; teach?: string[] } & Record<'sentences' | 'exchanges' | 'texts', Graded[] | undefined>)[]
       const grammarOf = (l: (typeof lessons)[number]) => [...new Set([...(l.teach ?? []), ...[...(l.sentences ?? []), ...(l.exchanges ?? []), ...(l.texts ?? [])].flatMap((x) => x.grammar ?? [])])]
-      const out = query('dialogues') ? { id: data?.id, dialogues: data?.dialogues ?? [] } : query('vocab') ? { id: data?.id, lessons: lessons.map((l) => ({ id: l.id, vocab: l.vocab ?? [], grammar: grammarOf(l) })) } : data
+      const out = query('dialogues') ? { id: data?.id, dialogues: data?.dialogues ?? [] } : query('vocab') ? { id: data?.id, writing: ((data?.writing ?? []) as unknown[]).length, lessons: lessons.map((l) => ({ id: l.id, title: (l as { title?: string }).title ?? '', vocab: l.vocab ?? [], grammar: grammarOf(l) })) } : data
       return { code: `export default ${JSON.stringify(out)};`, map: null }
     },
   }
@@ -81,6 +81,8 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
+      // registered by main.tsx, so safe mode (index.html) can start without the service worker
+      injectRegister: false,
       includeAssets: ['favicon.svg', 'icons/*.png'],
       manifest: {
         id: BASE,

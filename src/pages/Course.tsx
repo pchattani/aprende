@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { createPortal } from 'react-dom'
 import { SouvenirIcon } from '../components/art/SouvenirArt'
 import { Link, useNavigate, useLocation } from 'react-router'
-import { levels, loadUnit, units as unitIndex } from '../engine/loader'
+import { levels, units as unitIndex } from '../engine/loader'
+import type { UnitOutline } from '../engine/lessonIndex'
 import { shiftDay, todayKey } from '../engine/mastery'
 import { DEFAULT_START_LEVEL, levelIndex, courseAccess, courseLessons, type CourseAccess } from '../engine/unlock'
 import { getKv, claimQuest, awardCoins } from '../db/progress'
@@ -23,7 +24,7 @@ import { TicketIcon } from '../components/map/MapArt'
 import { stopFor, souvenirById, isStamped, type Souvenir } from '../engine/journey'
 import { takeReturn } from '../engine/returnTo'
 import { questsForDate, progressFor, pickReward } from '../engine/quests'
-import type { LevelId, Lesson } from '../engine/schema'
+import type { LevelId } from '../engine/schema'
 import type { CardRow, DayRow, LessonRow } from '../engine/types'
 import { ui } from '../engine/loader'
 import { COURSES, HUB_URL } from '../courses'
@@ -45,9 +46,12 @@ export default function Course() {
   const loc = useLocation()
   const outfits = useOutfits()
   const quizRecords = useKvPrefix<QuizRecord>('regionQuiz:')
-  const [lessonMeta, setLessonMeta] = useState<Map<string, Lesson[]>>(new Map())
+  const [lessonMeta, setLessonMeta] = useState<Map<string, LessonOutline[]>>(new Map())
   const [checked, setChecked] = useState(false)
   const [highlight, setHighlight] = useState<string | undefined>()
+  // Only the current level's stops are drawn (plus any the learner opens): the whole route at once is too much for a phone.
+  const [openLevels, setOpenLevels] = useState<ReadonlySet<LevelId>>(new Set())
+  const openLevel = (lv: LevelId) => setOpenLevels((s) => (s.has(lv) ? s : new Set([...s, lv])))
   const [hour] = useState(() => new Date().getHours())
   const today = todayKey()
   const quests = useQuests(today)
@@ -67,18 +71,17 @@ export default function Course() {
     }
   }, [nav])
 
-  // Load lesson titles for authored units (small files, cached).
+  // Lesson titles from the course outline (lesson ids, titles and words only: never every unit file at once).
   useEffect(() => {
     let alive = true
-    ;(async () => {
-      const authored = [...unitIndex.values()].filter((u) => u.authored)
-      const loaded = await Promise.all(authored.map((u) => loadUnit(u.id).then((unit) => unit.lessons, () => undefined)))
-      const m = new Map<string, Lesson[]>()
-      authored.forEach((u, i) => {
-        if (loaded[i]) m.set(u.id, loaded[i])
-      })
+    void import('../engine/lessonIndex').then(({ unitOutlines }) => {
+      const m = new Map<string, LessonOutline[]>()
+      for (const u of unitIndex.values()) {
+        const o = u.authored ? unitOutlines.get(u.id) : undefined
+        if (o?.lessons.length) m.set(u.id, o.lessons)
+      }
       if (alive) setLessonMeta(m)
-    })()
+    })
     return () => {
       alive = false
     }
@@ -86,6 +89,15 @@ export default function Course() {
 
   const lessonCounts = useMemo(() => new Map([...lessonMeta.entries()].map(([k, v]) => [k, v.length])), [lessonMeta])
   const ready = checked && Boolean(lessonRows && cards && days && exams && startLevel !== undefined) && lessonMeta.size > 0
+
+  // start-up breadcrumbs (index.html): the journey drew, then stayed up a moment
+  useEffect(() => {
+    if (!ready) return
+    const w = window as unknown as { __pawsportBoot?: (stage: string) => void }
+    w.__pawsportBoot?.('journey')
+    const t = setTimeout(() => w.__pawsportBoot?.('ready'), 4000)
+    return () => clearTimeout(t)
+  }, [ready])
 
   // Which lessons are open (unlock.ts): needs every stop's lessons, so it waits for the titles.
   const access = useMemo(
@@ -124,6 +136,9 @@ export default function Course() {
     autoScrolled = true
     if (!elId) return
     const id = elId
+    // the spot may be in a folded level: open it first
+    const lvOf = /(?:^|[-.])([abc][12])(?:[.]|$)/.exec(id)?.[1] as LevelId | undefined
+    if (lvOf) requestAnimationFrame(() => openLevel(lvOf))
     let tries = 0
     let cancelled = false
     const tick = () => {
@@ -203,6 +218,7 @@ export default function Course() {
         </div>
       </div>
 
+      {SAFE && <SafeModeNote />}
       <section className="mb-5 flex items-end gap-3" aria-label="A note from the dogs">
         <div className="flex shrink-0 -space-x-4">
           <DogButton dog="leo" size={48} outfit={outfits.leo} />
@@ -295,6 +311,8 @@ export default function Course() {
         highlight={highlight}
         outfits={outfits}
         flag={FLAG}
+        openLevels={next ? new Set([...openLevels, next.id.slice(0, 2) as LevelId]) : openLevels.size ? openLevels : new Set([startLevel])}
+        onOpenLevel={openLevel}
       />
       <BackToTop />
     </div>
@@ -332,11 +350,38 @@ function BackToTop() {
   )
 }
 
+/** Safe mode (index.html): the last two starts didn't finish, so this one runs without the offline copy. */
+const SAFE = Boolean((window as unknown as { __pawsportSafe?: boolean }).__pawsportSafe)
+
+function SafeModeNote() {
+  const normal = () => {
+    try {
+      const slug = location.pathname.replace(/\/+$/, '').split('/').pop() || 'course'
+      localStorage.setItem(`pawsport:boot:${slug}`, JSON.stringify({ stage: 'ready', failed: 0, at: Date.now() }))
+    } catch {
+      /* storage unavailable */
+    }
+    location.replace(location.pathname + location.hash)
+  }
+  return (
+    <div role="status" className="mb-4 rounded-2xl border border-dashed border-line bg-card px-4 py-3 text-sm">
+      <p className="font-semibold">Safe mode</p>
+      <p className="mt-0.5 text-ink-2">Pawsport had trouble starting on this device, so it is running without its offline copy. Your progress is all here.</p>
+      <button type="button" className="mt-2 text-xs font-bold underline" onClick={normal}>
+        Back to normal mode
+      </button>
+    </div>
+  )
+}
+
+/** What the journey needs of a lesson: no lesson text. */
+type LessonOutline = UnitOutline['lessons'][number]
+
 const FLAG = COURSES.find((c) => c.id === COURSE_ID)?.flag ?? '🌍'
 
 interface NextLesson { id: string; title: string; unitId: string; n: number; count: number }
 /** The current lesson (the next open, unfinished one: see CourseAccess.current) with its title. */
-function nextLesson(access: CourseAccess, meta: Map<string, Lesson[]>, fromUnit: string | undefined): NextLesson | undefined {
+function nextLesson(access: CourseAccess, meta: Map<string, LessonOutline[]>, fromUnit: string | undefined): NextLesson | undefined {
   const l = access.current(fromUnit)
   return l && { id: l.id, title: meta.get(l.unitId)?.[l.n - 1]?.title ?? `Lesson ${l.n}`, unitId: l.unitId, n: l.n, count: l.count }
 }

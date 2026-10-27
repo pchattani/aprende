@@ -28,8 +28,11 @@ import { MapDogs } from './MapDogs'
 import './map.css'
 
 export interface ItineraryProps {
+  /** Levels whose stops are shown; the others are folded into their chapter card (a phone can't hold the whole route at once). */
+  openLevels: ReadonlySet<LevelId>
+  onOpenLevel: (level: LevelId) => void
   lessonRows: Map<string, LessonRow>
-  lessonMeta: Map<string, Lesson[]>
+  lessonMeta: Map<string, Pick<Lesson, 'id' | 'title' | 'vocab'>[]>
   lessonCounts: Map<string, number>
   cardsByLesson: Map<string, CardRow[]>
   exams: Map<LevelId, ExamRow>
@@ -94,7 +97,7 @@ export function Itinerary(props: ItineraryProps) {
         const nextFirst = access.order.find((l) => l.level === nextLv?.id)
         const unlocks = nextLv && nextFirst && !access.isOpen(nextFirst.id) ? nextLv.title : undefined
         return (
-          <section key={lv.id} id={`region-${lv.id}`} className={`lvl-${lv.id} mb-12 ${highlight === `region-${lv.id}` ? 'wm-highlight rounded-[26px]' : ''}`}>
+          <section key={lv.id} id={`region-${lv.id}`} className={`lvl-${lv.id} ${props.openLevels.has(lv.id) ? 'mb-12' : 'mb-6'} ${highlight === `region-${lv.id}` ? 'wm-highlight rounded-[26px]' : ''}`}>
             <RegionChapter
               chapter={levelIdx + 1}
               level={lv}
@@ -108,7 +111,14 @@ export function Itinerary(props: ItineraryProps) {
               quizBest={quiz?.best}
               quizPass={QUIZ_PASS}
             />
-            <div className="it-region">
+            {!props.openLevels.has(lv.id) && (
+              <button type="button" className="it-unfold" onClick={() => props.onOpenLevel(lv.id)} aria-expanded="false" aria-controls={`stops-${lv.id}`}>
+                <span>Show the {lv.units.length} stops of {region?.name ?? lv.title}</span>
+                <span className="font-mono text-xs text-ink-2">{doneCount}/{ids.length} lessons</span>
+              </button>
+            )}
+            {props.openLevels.has(lv.id) && (
+            <div className="it-region" id={`stops-${lv.id}`}>
               {lv.units.map((u, unitIdx) => (
                 <StopLeg
                   key={u.id}
@@ -130,6 +140,7 @@ export function Itinerary(props: ItineraryProps) {
                 </div>
               )}
             </div>
+            )}
           </section>
         )
       })}

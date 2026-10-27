@@ -11,7 +11,8 @@ import { levels } from './loader'
 const files = import.meta.glob('@content/units/*/*.yaml', { eager: true, query: '?vocab', import: 'default' }) as Record<string, unknown>
 const UnitIds = z.object({
   id: z.string(),
-  lessons: z.array(z.object({ id: z.string(), vocab: z.array(z.string()).default([]), grammar: z.array(z.string()).default([]) })).default([]),
+  writing: z.number().default(0),
+  lessons: z.array(z.object({ id: z.string(), title: z.string().default(''), vocab: z.array(z.string()).default([]), grammar: z.array(z.string()).default([]) })).default([]),
 })
 export type LessonIds = z.infer<typeof UnitIds>['lessons'][number]
 
@@ -26,3 +27,14 @@ export const lessonOrder: readonly LessonIds[] = (() => {
 
 /** Lesson id → its vocabulary and grammar ids. */
 export const lessonIds: ReadonlyMap<string, LessonIds> = new Map(lessonOrder.map((l) => [l.id, l]))
+
+/** A unit's outline for the journey: its lessons' ids, titles and words, and its number of writing prompts. */
+export interface UnitOutline {
+  lessons: { id: string; title: string; vocab: string[] }[]
+  writing: number
+}
+/**
+ * Unit id → outline. The journey, the locks and the writing area read this instead of loading every unit file
+ * (all of them at once is megabytes of lesson text: too much for a phone on every visit).
+ */
+export const unitOutlines: ReadonlyMap<string, UnitOutline> = new Map(unitIds.map((u) => [u.id, { lessons: u.lessons.map(({ id, title, vocab }) => ({ id, title, vocab })), writing: u.writing }]))

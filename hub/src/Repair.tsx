@@ -70,6 +70,20 @@ function dayStamp(): string {
   return new Date().toISOString().slice(0, 10)
 }
 
+/** What the course's last start recorded (index.html breadcrumbs): shown so a crash can be traced. */
+function bootNote(c: HubCourse): string | undefined {
+  try {
+    const b = JSON.parse(localStorage.getItem(`pawsport:boot:${c.slug}`) ?? 'null') as { stage?: string; failed?: number; safe?: boolean; lastStop?: string; lastFailAt?: number } | null
+    if (!b) return undefined
+    const STAGE: Record<string, string> = { html: 'before its code loaded', code: 'while starting', rendered: 'right after starting', journey: 'after drawing the journey' }
+    if (b.stage && b.stage !== 'ready') return `Last start stopped ${STAGE[b.stage] ?? b.stage}${b.failed ? ` · ${b.failed + 1} failed starts` : ''}`
+    if (b.lastStop) return `Started fine last time · an earlier start stopped ${STAGE[b.lastStop] ?? b.lastStop}`
+    return undefined
+  } catch {
+    return undefined
+  }
+}
+
 export function RepairCourses({ courses }: { courses: HubCourse[] }) {
   const [note, setNote] = useState('')
   const backup = async (c: HubCourse) => {
@@ -94,6 +108,7 @@ export function RepairCourses({ courses }: { courses: HubCourse[] }) {
             <span className="min-w-[7.5rem] font-semibold">
               {c.flag} {c.name}
             </span>
+            {bootNote(c) && <span className="basis-full text-xs text-ink-2">{bootNote(c)}</span>}
             <button type="button" className="rounded-xl bg-[var(--blue)] px-3 py-1.5 text-xs font-bold text-white shadow-[0_2px_0_0_color-mix(in_srgb,var(--blue)_60%,#000)]" onClick={() => void repair(c, setNote)}>
               Repair
             </button>

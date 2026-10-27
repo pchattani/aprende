@@ -17,7 +17,7 @@
  * A stop's checkpoint and its writing stop open once all of the stop's lessons are completed.
  * Border control (the level exams), the region quizzes, reviews, games and readers are never locked.
  */
-import { units, loadUnit, type UnitRef } from './loader'
+import { units, type UnitRef } from './loader'
 import { stopFor } from './journey'
 import type { LessonRow, ExamRow } from './types'
 import { LEVEL_ORDER, type LevelId, type LevelMeta } from './schema'
@@ -183,9 +183,9 @@ export function isWritingOpen(unitId: string, lessonRows: ReadonlyMap<string, Le
   return attempted || stopLessonsDone(unitId, lessonRows, lessonCount)
 }
 
-/** Each authored unit's number of lessons (loads the unit files in parallel; they are cached). */
+/** Each authored unit's number of lessons, from the course outline (never every unit file at once). */
 export async function loadLessonCounts(): Promise<Map<string, number>> {
+  const { unitOutlines } = await import('./lessonIndex')
   const authored = [...units.values()].filter((u) => u.authored)
-  const counts = await Promise.all(authored.map((u) => loadUnit(u.id).then((x) => x.lessons.length, () => 0)))
-  return new Map(authored.map((u, i) => [u.id, counts[i]!]))
+  return new Map(authored.map((u) => [u.id, unitOutlines.get(u.id)?.lessons.length ?? 0]))
 }

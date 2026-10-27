@@ -314,3 +314,12 @@ a.g-card:active, button.g-card:active { transform: translateY(4px); box-shadow: 
   .wm-dogs-walk.is-walking, .it-line.is-inked { transition: none; }
   a.it-card, .g-btn, .g-pill, .wm-banner-card, .wm-gate-bar { transition: none; }
 }
+
+/* a folded level: its chapter card stays, its stops open on demand */
+.it-unfold {
+  display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 0.75rem;
+  margin-top: 0.75rem; padding: 0.85rem 1rem; border-radius: 16px;
+  border: 1.5px dashed var(--line-strong); background: var(--card); color: var(--ink);
+  font-weight: 700; font-size: 0.95rem; text-align: left;
+}
+.it-unfold:hover { border-style: solid; }

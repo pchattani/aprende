@@ -295,6 +295,10 @@ test('placement test places a strong learner at C2: earlier levels stay open, C2
   await page.screenshot({ path: 'e2e/__screenshots__/placement.png' })
   await page.getByRole('button', { name: 'Start at C2' }).click()
   await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
+  // only the current level's stops are drawn; the others open on demand
+  await expect(page.locator('#lesson-c2\\.u01\\.l1')).toBeAttached()
+  await expect(page.locator('#lesson-b1\\.u01\\.l1')).toHaveCount(0)
+  for (const lv of ['b1', 'a2']) await page.locator(`#region-${lv}`).getByRole('button', { name: /^Show the \d+ stops of/ }).click()
   // B1 lessons are open, and an A2 lesson deep in the level is open for practice.
   await expect(page.getByRole('link', { name: /Formas regulares/ })).toBeVisible()
   await expect(page.getByRole('link', { name: /Habla, come, escribe/ })).toBeVisible()
@@ -314,6 +318,7 @@ test('choosing a level manually marks the recommended start; earlier levels are 
   await expect(page.getByText('Recommended start')).toBeVisible()
   await expect(page.getByRole('link', { name: /¿Qué hiciste ayer\?/ })).toBeVisible()
   // A1 stays open for practice; A2 is sequential from its first lesson, so B1 waits.
+  for (const lv of ['a1', 'b1']) await page.locator(`#region-${lv}`).getByRole('button', { name: /^Show the \d+ stops of/ }).click()
   await expect(page.getByRole('link', { name: /Hola y adiós/ })).toBeAttached()
   await expect(page.locator('#lesson-a2\\.u01\\.l2')).toHaveAttribute('aria-label', /: locked$/)
   await expect(page.getByRole('link', { name: /Formas regulares/ })).toHaveCount(0)
@@ -354,4 +359,23 @@ test('checkpoint quiz after a stop: reading, writing, all correct clears it', as
   await page.screenshot({ path: 'e2e/__screenshots__/checkpoint.png' })
   await page.getByRole('button', { name: 'Back to the journey' }).click()
   await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
+})
+
+test('after two starts that never finished, the course opens in safe mode and the hub says where it stopped', async ({ page }) => {
+  await openPath(page)
+  // two earlier starts died while drawing the journey (the phone killed the page)
+  await page.evaluate(() => localStorage.setItem('pawsport:boot:spanish', JSON.stringify({ stage: 'journey', failed: 1, at: Date.now() })))
+  await page.goto(SITE_BASE)
+  await page.getByText("A language won't open?").click()
+  await expect(page.getByText(/Last start stopped after drawing the journey · 2 failed starts/)).toBeVisible()
+  await page.goto('./')
+  await expect(page.getByRole('status').filter({ hasText: 'Safe mode' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
+  // no service worker in safe mode
+  await page.waitForTimeout(1500)
+  expect(await page.evaluate(async () => (await navigator.serviceWorker.getRegistrations()).filter((r) => r.scope.endsWith('/spanish/')).length)).toBe(0)
+  // a start that stays up counts as good, and "Back to normal mode" leaves safe mode
+  await page.getByRole('button', { name: 'Back to normal mode' }).click()
+  await expect(page.getByRole('heading', { name: 'Buenos Aires' })).toBeVisible()
+  await expect(page.getByText('Safe mode')).toHaveCount(0)
 })
