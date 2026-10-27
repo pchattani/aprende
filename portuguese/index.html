@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/aprende/portuguese/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f4ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f1320" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Pawsport · Portuguese: a complete, free Portuguese course from beginner to advanced. Short daily lessons, explicit grammar, spaced repetition, reading, listening and speaking. Works offline." />
+    <title>Pawsport · Portuguese</title>
+    <script type="module" crossorigin src="/aprende/portuguese/assets/index-B-JE-hVN.js"></script>
+    <link rel="modulepreload" crossorigin href="/aprende/portuguese/assets/schema-DNEVofwD.js">
+    <link rel="modulepreload" crossorigin href="/aprende/portuguese/assets/jsx-runtime-0O81Qeuy.js">
+    <link rel="modulepreload" crossorigin href="/aprende/portuguese/assets/hooks-Cbu2dym0.js">
+    <link rel="stylesheet" crossorigin href="/aprende/portuguese/assets/index-BwE5OxJv.css">
+  <link rel="manifest" href="/aprende/portuguese/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Start-up breadcrumbs and safe mode. Each start records how far it got (localStorage
+      // pawsport:boot:<course>); a start that never reached "ready" counts as failed. After two failed
+      // starts in a row (the phone killed the page while loading), the next start runs in safe mode: this
+      // course's service worker and cached files are dropped and not re-registered, and the journey draws
+      // less. The hub's "A language won't open?" panel shows where the last start stopped.
+      ;(function () {
+        var slug = location.pathname.replace(/\/+$/, '').split('/').pop() || 'course'
+        var KEY = 'pawsport:boot:' + slug
+        var prev = {}
+        try { prev = JSON.parse(localStorage.getItem(KEY) || '{}') || {} } catch (e) {}
+        var unfinished = prev.stage && prev.stage !== 'ready'
+        var failed = unfinished ? (prev.failed || 0) + 1 : 0
+        var safe = failed >= 2 || /[?&]safe\b/.test(location.search)
+        var rec = { stage: 'html', failed: failed, at: Date.now(), safe: safe, lastStop: unfinished ? prev.stage : prev.lastStop, lastFailAt: unfinished ? prev.at : prev.lastFailAt }
+        function save() { try { localStorage.setItem(KEY, JSON.stringify(rec)) } catch (e) {} }
+        save()
+        window.__pawsportSafe = safe
+        window.__pawsportBoot = function (stage) {
+          if (rec.stage === 'ready') return
+          rec.stage = stage
+          if (stage === 'ready') rec.failed = 0
+          save()
+        }
+        if (safe) {
+          var scope = new URL('./', location.href).href
+          try {
+            if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations)
+              navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { if (r.scope === scope) r.unregister() }) })
+            if (window.caches) caches.keys().then(function (ns) { ns.forEach(function (n) { if (n.slice(-scope.length) === scope) caches.delete(n) }) })
+          } catch (e) {}
+        }
+      })()
+      // Boot watchdog: if the app has not started after 15 s (an older cached copy asking for files a newer
+      // deploy replaced, a network that dropped mid-download…), show a plain screen with a repair button
+      // instead of a blank page. Repair drops this page's service worker and cached files and reloads;
+      // progress (IndexedDB) is kept. main.tsx calls __pawsportStarted() as soon as the app's code runs.
+      ;(function () {
+        var started = false
+        window.__pawsportStarted = function () {
+          started = true
+          var el = document.getElementById('boot-rescue')
+          if (el) el.parentNode.removeChild(el)
+        }
+        function repair() {
+          var scope = new URL('./', location.href).href
+          var jobs = []
+          if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations)
+            jobs.push(navigator.serviceWorker.getRegistrations().then(function (rs) {
+              return Promise.all(rs.filter(function (r) { return r.scope === scope }).map(function (r) { return r.unregister() }))
+            }))
+          if (window.caches)
+            jobs.push(caches.keys().then(function (ns) {
+              return Promise.all(ns.filter(function (n) { return n.slice(-scope.length) === scope }).map(function (n) { return caches.delete(n) }))
+            }))
+          Promise.all(jobs).catch(function () {}).then(function () { location.replace(location.pathname + location.hash) })
+        }
+        function show() {
+          if (started || document.getElementById('boot-rescue')) return
+          var d = document.createElement('div')
+          d.id = 'boot-rescue'
+          d.setAttribute('role', 'alert')
+          d.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:#f6f4ee;color:#1d2238;font:16px/1.45 system-ui,-apple-system,sans-serif;text-align:center'
+          d.innerHTML = '<div style="max-width:340px"><p style="font-size:44px;margin:0">🐾</p><h1 style="font-size:22px;margin:8px 0">Pawsport is taking a while</h1><p style="margin:0 0 16px;color:#525a75">If it stays stuck, repair it: this downloads the app again. Your progress is kept.</p><button id="boot-repair" type="button" style="font:inherit;font-weight:700;padding:12px 20px;border:0;border-radius:14px;background:#2f6fc0;color:#fff">Repair and reload</button><p style="margin:12px 0 0"><button id="boot-wait" type="button" style="font:inherit;background:none;border:0;color:#525a75;text-decoration:underline">Keep waiting</button></p></div>'
+          document.body.appendChild(d)
+          document.getElementById('boot-repair').onclick = repair
+          document.getElementById('boot-wait').onclick = function () { d.parentNode.removeChild(d); setTimeout(show, 15000) }
+        }
+        setTimeout(show, 15000)
+      })()
+    </script>
+  </body>
+</html>

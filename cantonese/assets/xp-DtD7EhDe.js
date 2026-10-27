@@ -1,0 +1,1 @@
+function e(e){return e.completed?10+e.correct*2+e.almost+(e.wrong===0?5:0):e.correct*2+e.almost}function t(e,t,n){return t?10+Math.round(e/10):n?2:0}export{e as n,t};

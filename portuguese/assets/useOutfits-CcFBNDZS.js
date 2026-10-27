@@ -1,0 +1,1 @@
+import{O as e}from"./progress-Cnq1-7Nw.js";import{o as t}from"./useProgress-CjsESo6k.js";var n={leo:{},bonchita:{},luna:{}};function r(){return t(`outfits`,n)??n}async function i(t,n,r,i){let a={...t,[n]:{...t[n]}};return i?a[n][r]=i:delete a[n][r],await e(`outfits`,a),a}export{r as n,i as t};

@@ -1,0 +1,1 @@
+import{R as e}from"./index-BLnsePLs.js";var t=e(`returnTo`);function n(e){try{sessionStorage.setItem(t,e)}catch{}}function r(){try{let e=sessionStorage.getItem(t)??void 0;return sessionStorage.removeItem(t),e}catch{return}}export{r as n,n as t};

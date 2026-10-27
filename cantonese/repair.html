@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Repair Pawsport</title>
+    <style>
+      body { margin: 0; padding: 24px 16px; background: #f6f4ee; color: #1d2238; font: 16px/1.5 system-ui, -apple-system, sans-serif; }
+      main { max-width: 420px; margin: 0 auto; }
+      h1 { font-size: 24px; margin: 8px 0; }
+      p { color: #525a75; }
+      button { display: block; width: 100%; margin: 12px 0 0; padding: 14px 16px; font: inherit; font-weight: 700; border: 0; border-radius: 14px; background: #2f6fc0; color: #fff; }
+      button.quiet { background: #e8e2d4; color: #1d2238; }
+      button.danger { background: #c24a3a; }
+      #log { margin-top: 16px; white-space: pre-wrap; font-size: 14px; color: #1d2238; }
+      a { color: #2f6fc0; font-weight: 700; }
+      @media (prefers-color-scheme: dark) { body { background: #0f1320; color: #eef0f6; } p { color: #aab2cc; } #log { color: #eef0f6; } button.quiet { background: #2a3048; color: #eef0f6; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p style="font-size: 40px; margin: 0">🐾</p>
+      <h1>Repair Pawsport</h1>
+      <p>This page uses none of the app's code, so it works even when the app will not open. Repair removes the copy of the app saved on this device and downloads it again. Your progress is kept.</p>
+      <button id="repair" type="button">Repair and open the course</button>
+      <p style="margin-top: 28px">Still not opening after a repair? Download a copy of your progress, then start this course fresh on this device.</p>
+      <button id="backup" type="button" class="quiet">Download my progress</button>
+      <button id="reset" type="button" class="danger">Start this course fresh</button>
+      <div id="log" role="status" aria-live="polite"></div>
+    </main>
+    <script>
+      ;(function () {
+        // the course this page belongs to: /aprende/<slug>/repair.html
+        var scope = new URL('./', location.href).href
+        var slug = location.pathname.replace(/\/repair\.html$/, '').split('/').pop()
+        var DB = { spanish: 'aprende', cantonese: 'aprende-yue', portuguese: 'aprende-pt', italian: 'aprende-it', french: 'aprende-fr' }[slug]
+        var log = document.getElementById('log')
+        function say(t) { log.textContent += t + '\n' }
+        function clearApp() {
+          var jobs = []
+          if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations)
+            jobs.push(navigator.serviceWorker.getRegistrations().then(function (rs) {
+              var mine = rs.filter(function (r) { return r.scope === scope })
+              return Promise.all(mine.map(function (r) { return r.unregister() })).then(function () { say('Removed ' + mine.length + ' saved app worker(s).') })
+            }))
+          if (window.caches)
+            jobs.push(caches.keys().then(function (ns) {
+              var mine = ns.filter(function (n) { return n.slice(-scope.length) === scope })
+              return Promise.all(mine.map(function (n) { return caches.delete(n) })).then(function () { say('Cleared ' + mine.length + ' saved file store(s).') })
+            }))
+          return Promise.all(jobs)
+        }
+        function dump() {
+          return new Promise(function (resolve, reject) {
+            if (!DB) return reject(new Error('no course here'))
+            var req = indexedDB.open(DB)
+            req.onerror = function () { reject(req.error) }
+            req.onsuccess = function () {
+              var db = req.result, out = { database: DB, exportedAt: new Date().toISOString(), stores: {} }
+              var names = Array.prototype.slice.call(db.objectStoreNames)
+              if (!names.length) { db.close(); return resolve(out) }
+              var tx = db.transaction(names, 'readonly'), left = names.length
+              names.forEach(function (n) {
+                var r = tx.objectStore(n).getAll()
+                r.onsuccess = function () { out.stores[n] = r.result; if (--left === 0) { db.close(); resolve(out) } }
+                r.onerror = function () { reject(r.error) }
+              })
+            }
+          })
+        }
+        document.getElementById('repair').onclick = function () {
+          say('Repairing…')
+          clearApp().catch(function (e) { say('Note: ' + e.message) }).then(function () {
+            say('Done. Opening the course…')
+            setTimeout(function () { location.replace(scope + '?fresh=' + Date.now()) }, 600)
+          })
+        }
+        document.getElementById('backup').onclick = function () {
+          dump().then(function (data) {
+            var blob = new Blob([JSON.stringify(data)], { type: 'application/json' })
+            var a = document.createElement('a')
+            a.href = URL.createObjectURL(blob)
+            a.download = 'pawsport-' + slug + '-progress-' + new Date().toISOString().slice(0, 10) + '.json'
+            document.body.appendChild(a); a.click(); a.remove()
+            say('Progress saved to a file.')
+          }, function (e) { say('Could not read progress: ' + e.message) })
+        }
+        document.getElementById('reset').onclick = function () {
+          if (!DB || !confirm('Delete this course\'s progress on this device? Download a copy first if you want to keep it.')) return
+          clearApp().then(function () {
+            var del = indexedDB.deleteDatabase(DB)
+            del.onsuccess = del.onerror = del.onblocked = function () {
+              say('This course now starts fresh. Opening it…')
+              setTimeout(function () { location.replace(scope + '?fresh=' + Date.now()) }, 800)
+            }
+          })
+        }
+      })()
+    </script>
+  </body>
+</html>
