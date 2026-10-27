@@ -283,3 +283,44 @@ dialogues:
       - { q: "梁生提出咩動議？", options: ["延長每日開放時間", "星期一都開放燈塔", "加門票價錢"], answer: 1, explain: "He moves to open the lighthouse on Mondays too (星期一都開放燈塔)." }
       - { q: "表決結果係點？", options: ["一致通過", "七票贊成，動議通過", "動議畀人否決咗"], answer: 1, explain: "Seven for, three against, one abstention: the motion is carried (獲得通過)." }
       - { q: "維修工程會點安排？", options: ["取消", "改喺夜晚做", "延期一年"], answer: 1, explain: "The chair says the work can be moved to the evenings (改喺夜晚做)." }
+writing:
+  - task: "Write the opening and closing of a speech at your company's annual dinner (主席、各位嘉賓…多謝各位聆聽)."
+    min: 90
+    max: 160
+    use: [w.zoi6-zo6, w.ling4-teng1, w.ci2-ngoi6, w.tung4-si6-mun4, w.fu6-ceot1]
+    useAtLeast: 3
+    grammar: [g.speech-structure]
+    expect:
+      - { pattern: "主席|各位|在座", hint: "Open by addressing the audience: 主席、各位嘉賓…" }
+      - { pattern: "聆聽|多謝", hint: "Close by thanking them: 多謝各位聆聽." }
+    model: { es: "主席、各位嘉賓、各位同事們，大家好！好多謝大家今晚嚟到。過去一年，公司取得咗好好嘅成績，呢個全靠在座每一位嘅付出。此外，我亦都要多謝我哋嘅客戶一直嘅支持。最後，祝大家身體健康，新一年更上一層樓。多謝各位聆聽！", en: "Chair, distinguished guests, colleagues, good evening! Thank you all for coming tonight. Over the past year the company achieved excellent results, all thanks to the efforts of everyone here. In addition, I must thank our clients for their continued support. Finally, I wish you all good health and even greater success in the new year. Thank you for listening!" }
+  - task: "Write a short summary of yesterday's committee meeting for the minutes: who was absent, which motions were passed and what was decided."
+    min: 90
+    max: 160
+    use: [w.kyut3-zik6, w.dung6-ji5, w.tung1-gwo3, w.jat1-zi3, w.hei3-kyun4]
+    useAtLeast: 3
+    grammar: [g.formal-modals]
+    expect:
+      - { pattern: "動議|議程|決議", hint: "Mention the motion or agenda: 動議, 決議…" }
+      - { pattern: "通過|否決|表決", hint: "Say how it was decided: 一致通過, 否決…" }
+    model: { es: "會議記錄：昨天嘅委員會會議有八位委員出席，兩位缺席。第一項動議係喺東望洋燈塔附近搞導賞，經表決後一致通過。第二項動議關於延長開放時間，有五票贊成、兩票反對、一票棄權，最後亦獲得通過。下次會議將於下月舉行。", en: "Minutes: yesterday's committee meeting was attended by eight members, with two absent. The first motion, to organise guided tours near Guia Lighthouse, was passed unanimously after a vote. The second motion, on extending opening hours, received five votes in favour, two against and one abstention, and was also passed. The next meeting will be held next month." }
+  - task: "Write a formal notice to staff about next week's meeting, using formal modals of obligation and permission (須, 不得, 毋須, 宜)."
+    min: 90
+    max: 160
+    use: [w.mou4-seoi1, w.bat1-dak1, w.ji4.b, w.jyu6-sin1, w.ji5-cing4]
+    useAtLeast: 3
+    grammar: [g.formal-modals]
+    expect:
+      - { pattern: "須|必須|務必", hint: "State obligations: 必須…, 須…" }
+      - { pattern: "不得|毋須|宜|不宜", hint: "State prohibitions or permissions: 不得…, 毋須…" }
+    model: { es: "各位同事：下星期一上午十時將於會議室舉行部門會議。所有同事必須準時出席，如果未能出席，須預先通知秘書。會議期間不得使用手機。議程已經放喺附件，大家宜預先睇一次。今次會議毋須準備簡報。多謝合作。如有任何問題，請聯絡秘書。", en: "Dear colleagues: a department meeting will be held in the meeting room at 10 a.m. next Monday. All staff must attend on time; anyone unable to attend must notify the secretary in advance. Mobile phones may not be used during the meeting. The agenda is attached; it is advisable to read it beforehand. No presentation needs to be prepared this time. Thank you for your cooperation. For any questions, please contact the secretary." }
+  - task: "Write a short team briefing that starts with a joke in colloquial Cantonese, then shifts to a formal register for the business (講返正經嘢)."
+    min: 90
+    max: 160
+    use: [w.zeon3-dou6, w.lok6-sat6, w.ping4-gu2, w.haa6-jat1-bou6, w.wui6-bou3]
+    useAtLeast: 3
+    grammar: [g.register-shift]
+    expect:
+      - { pattern: "講返正經嘢|好喇", hint: "Mark the shift: 好喇，講返正經嘢…" }
+      - { pattern: "進度|落實|評估|下一步|匯報", hint: "Move into formal business: 進度, 下一步…" }
+    model: { es: "大家早晨！今朝我趕住嚟開會，連早餐都未食，等陣如果我肚餓到講錯嘢，大家唔好笑我呀。好喇，講返正經嘢。首先我想匯報一下項目嘅進度。目前第一階段已經完成，下一步我哋要落實新嘅推廣策略，並且喺月尾之前評估成效。", en: "Morning, everyone! I rushed here this morning without even having breakfast, so if hunger makes me say something wrong, don't laugh at me. Right, back to business. First I'd like to report on the project's progress. The first stage is now complete; next we need to put the new promotion strategy into effect and assess its effectiveness before the end of the month." }

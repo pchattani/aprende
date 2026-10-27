@@ -280,3 +280,41 @@ dialogues:
       - { q: "Avec quel portable est-ce que Léa a pris les photos ?", options: ["Avec le sien", "Avec celui de Paul", "Avec celui de sa mère"], answer: 1, explain: "She took them with Paul's phone because hers had no battery." }
       - { q: "Quelle affiche est pour Paul ?", options: ["La Joconde", "La machine pour voler", "Le château"], answer: 0, explain: "La tienne, c'est La Joconde." }
       - { q: "Où est le tombeau de Léonard ?", options: ["Dans le parc", "Dans sa chambre", "Dans la chapelle du château"], answer: 2, explain: "Paul says Leonardo's tomb is in the chapel they will visit tomorrow." }
+writing:
+  - task: "Your friend asks about your visit to Leonardo's house. Answer, using le, la, l' or les before the passé composé (careful with agreement)."
+    es: "Alors, tu as visité le Clos Lucé ? Tu as vu la maison de Léonard ? Et ses dessins ?"
+    min: 30
+    max: 70
+    use: [w.visiter, w.dessin, w.invention, w.magnifique, w.prendre-une-photo]
+    useAtLeast: 3
+    grammar: [g.pc-object-agreement]
+    expect:
+      - { pattern: "\\b(l['’]|les )(ai|as|a|avons|avez|ont) [a-zàâçéèêëîïôûùœ]+", hint: "Put the pronoun before avoir: je l'ai visitée, je les ai vus…" }
+    model: { es: "Oui, je l'ai visité hier ! La maison de Léonard ? Je l'ai trouvée très belle. Ses dessins, je les ai vus dans une grande salle. Ses inventions sont magnifiques : je les ai prises en photo ! Et toi, tu as vu le château d'Amboise ?", en: "Yes, I visited it yesterday! Leonardo's house? I found it very beautiful. His drawings, I saw them in a big room. His inventions are magnificent: I took photos of them! And you, have you seen the Château d'Amboise?" }
+  - task: "Describe the castles of the Loire you have visited, using tout / tous / toutes, chaque, plusieurs, quelques and chacun."
+    min: 30
+    max: 70
+    use: [w.château, w.chacun, w.quelques, w.cheminée, w.région]
+    useAtLeast: 3
+    grammar: [g.tout-chaque-plusieurs]
+    expect:
+      - { pattern: "\\b(tous|toutes|tout le|toute la|chaque|plusieurs|quelques|chacun|chacune)\\b", hint: "Use tous / toutes, chaque, plusieurs…" }
+    model: { es: "J'ai visité plusieurs châteaux de la région. Tous les châteaux sont immenses, mais chaque château est différent. À Chambord, toutes les chambres ont une grande cheminée. Il y a aussi quelques jardins magnifiques. Chacun a son histoire, et j'ai adoré tous les plafonds !", en: "I've visited several castles in the region. All the castles are huge, but each castle is different. At Chambord, all the rooms have a big fireplace. There are also a few magnificent gardens. Each one has its own history, and I loved all the ceilings!" }
+  - task: "After the visit, everyone's bags and souvenirs are mixed up on the table. Write who owns what (C'est le mien, la tienne, les siennes…)."
+    min: 30
+    max: 70
+    use: [w.le-mien, w.le-tien, w.le-sien, w.le-nôtre, w.appartenir]
+    useAtLeast: 3
+    grammar: [g.possessive-pronouns]
+    expect:
+      - { pattern: "\\b(le|la|les) (mien|mienne|miens|miennes|tien|tienne|tiens|tiennes|sien|sienne|siens|siennes|n[oô]tre|n[oô]tres|v[oô]tre|v[oô]tres|leur|leurs)\\b", hint: "Use possessive pronouns: c'est le mien, la tienne, les siens…" }
+    model: { es: "Attention, ce sac rouge n'est pas à toi, c'est le mien ! Le tien est bleu. Ces cartes postales, ce sont les siennes : Léa les a achetées à la boutique. Et ces porte-clés ? Ce sont les nôtres. Ce parapluie appartient à Hugo, c'est le sien.", en: "Careful, this red bag isn't yours, it's mine! Yours is blue. These postcards are hers: Léa bought them at the shop. And these key rings? They're ours. This umbrella belongs to Hugo, it's his." }
+  - task: "At the castle shop you bought souvenirs. Say what you bought for whom, referring back with pronouns (Les porte-clés ? Je les ai achetés pour…)."
+    min: 30
+    max: 70
+    use: [w.boutique, w.porte-clés, w.affiche, w.emporter, w.miroir]
+    useAtLeast: 3
+    grammar: [g.pc-object-agreement]
+    expect:
+      - { pattern: "\\b(l['’]|les )(ai|as|a|avons|avez|ont) [a-zàâçéèêëîïôûùœ]+", hint: "Refer back with a pronoun before avoir: je les ai achetés, je l'ai prise…" }
+    model: { es: "À la boutique du château, j'ai trouvé de jolis souvenirs. Les porte-clés ? Je les ai achetés pour mes cousins. L'affiche de Léonard, je l'ai prise pour ma chambre. Et la petite lampe ? Je l'ai offerte à ma mère. Je n'ai pas pu emporter le miroir : il était trop grand !", en: "At the castle shop I found some nice souvenirs. The key rings? I bought them for my cousins. The Leonardo poster, I took it for my bedroom. And the little lamp? I gave it to my mother. I couldn't take the mirror: it was too big!" }

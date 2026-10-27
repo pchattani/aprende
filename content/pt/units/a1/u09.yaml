@@ -280,3 +280,42 @@ dialogues:
       - { q: "Por que os cachorros não vão ao Jardim Botânico?", options: ["Porque estão cansados", "Porque não podem entrar", "Porque vão nadar"], answer: 1, explain: "Bia explains that dogs are not allowed in the Botanical Garden." }
       - { q: "O que o Tom vai levar?", options: ["Sanduíches", "O guarda-sol e as toalhas", "A bola"], answer: 1, explain: "Tom offers to bring the beach umbrella and the towels; Bia makes the sandwiches." }
       - { q: "Como eles vão?", options: ["A pé", "De metrô", "De ônibus"], answer: 2, explain: "They agree to take the bus, which comes by at eight." }
+writing:
+  - task: "Write about your plans for the weekend with ir + infinitive: where you are going to go and what you are going to do."
+    min: 15
+    max: 40
+    use: [w.ir, w.visitar, w.passear, w.nadar, w.viajar]
+    useAtLeast: 3
+    grammar: [g.ir-infinitive]
+    expect:
+      - { pattern: '\b(vou|vamos|vai|v[aã]o) ([a-zà-ú]+ )?[a-zà-ú]+(ar|er|ir)\b', hint: "Use ir + infinitive: Vou visitar … / Vamos passear …" }
+    model: { es: "No sábado, vou visitar o Jardim Botânico com a Camila. Vamos passear no parque. No domingo, vou nadar na praia e depois vou dançar na Lapa.", en: "On Saturday I'm going to visit the Botanical Garden with Camila. We're going to walk in the park. On Sunday I'm going to swim at the beach and then go dancing in Lapa." }
+  - task: "Your friend asks where you are going today. Reply: say where you are going in the morning, afternoon and evening (à praia, ao cinema, a uma festa…)."
+    es: "Aonde você vai hoje?"
+    min: 12
+    max: 35
+    use: [w.ir, w.academia, w.cinema, w.festa, w.show]
+    useAtLeast: 2
+    grammar: [g.ir-present, g.contractions-a]
+    expect:
+      - { pattern: '\b(vou|vamos|vai) (ao|aos|à|às|a|para|pra)(?![a-zà-ú])', hint: "Say where you are going: Vou à praia. / Vou ao cinema." }
+    model: { es: "Hoje de manhã vou à academia. À tarde, vou ao centro com a minha irmã. À noite, nós vamos a uma festa em Botafogo!", en: "This morning I'm going to the gym. In the afternoon I'm going to the centre with my sister. In the evening we're going to a party in Botafogo!" }
+  - task: "Describe what you and your friends do at the beach. Use fazer and other verbs (faço, fazemos, nadamos…)."
+    min: 15
+    max: 40
+    use: [w.fazer, w.exercício, w.ioga, w.areia, w.guarda-sol]
+    useAtLeast: 3
+    grammar: [g.fazer-present]
+    expect:
+      - { pattern: '\b(fa[cç]o|faz|fazemos|fazem)\b', hint: "Use fazer: Eu faço ioga … / Nós fazemos …" }
+    model: { es: "Na praia, eu faço ioga de manhã. Meus amigos fazem exercício na areia. Depois, ficamos embaixo do guarda-sol e nadamos no mar.", en: "At the beach I do yoga in the morning. My friends exercise on the sand. Then we stay under the beach umbrella and swim in the sea." }
+  - task: "You are going away tomorrow. Write a polite note to your neighbour asking two favours (Posso…? A senhora pode…?)."
+    min: 12
+    max: 35
+    use: [w.poder, w.ajudar, w.deixar, w.viajar]
+    useAtLeast: 2
+    grammar: [g.poder-present]
+    expect:
+      - { pattern: '\b(posso|pode|podemos|podem)\b', hint: "Ask with poder: Posso …? / A senhora pode …?" }
+      - { pattern: '\?', hint: "Make your requests questions, with a question mark." }
+    model: { es: "Oi, Dona Lúcia! Amanhã vou viajar. A senhora pode me ajudar com o meu gato? Posso deixar a chave com a senhora? Muito obrigado!", en: "Hi, Dona Lúcia! I'm going away tomorrow. Could you help me with my cat? Can I leave the key with you? Thank you very much!" }

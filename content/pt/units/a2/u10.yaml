@@ -277,3 +277,41 @@ dialogues:
       - { q: "O que a Marinalva precisa fazer para mandar as caixas?", options: ["Ligar para a loja", "Preencher um formulário e pagar no caixa", "Ir ao correio"], answer: 1, explain: "Klaus says: Preencha este formulário e pague no caixa." }
       - { q: "Como ela chega ao Lago Negro?", options: ["Sai da loja, vira à direita e segue em frente", "Pega um ônibus", "Vira à esquerda na Rua Coberta"], answer: 0, explain: "Saia da loja, vire à direita e siga em frente." }
       - { q: "Por que o Klaus diz para ela ir antes das seis?", options: ["Porque o lago fecha", "Porque às seis começa o show de Natal", "Porque vai chover"], answer: 1, explain: "Às seis começa o show de Natal na Rua Coberta: Gramado's Natal Luz festival." }
+writing:
+  - task: "Write a simple recipe (brigadeiro, fondue or a dish you like) with formal imperatives (coloque, misture, sirva…)."
+    min: 30
+    max: 70
+    use: [w.receita, w.misturar, w.colocar, w.panela, w.servir]
+    useAtLeast: 3
+    grammar: [g.imperative-formal]
+    expect:
+      - { pattern: '\b(corte|pique|misture|mexa|ferva|frite|asse|adicione|coloque|esquente|sirva|prepare|tempere|derreta|encha|deixe)\b', hint: "Use formal imperatives: corte…, misture…, coloque…" }
+    model: { es: "Receita de brigadeiro: coloque uma lata de leite condensado, uma colher de manteiga e três colheres de chocolate numa panela. Misture bem e mexa sempre por dez minutos. Depois, deixe a panela na mesa, faça bolinhas e sirva.", en: "Brigadeiro recipe: put a tin of condensed milk, a spoonful of butter and three spoonfuls of chocolate in a pan. Mix well and keep stirring for ten minutes. Then leave the pan on the table, roll little balls and serve." }
+  - task: "A friend is staying in your house in Gramado while you are away. Write a note with informal instructions (joga o lixo fora, guarda, fecha…)."
+    min: 30
+    max: 65
+    use: [w.lixo, w.jogar-fora, w.limpar, w.guardar, w.louça]
+    useAtLeast: 3
+    grammar: [g.imperative-informal]
+    expect:
+      - { pattern: '\b(joga|limpa|guarda|arruma|lava|deixa|fecha|abre|liga|desliga|vem|faz|p[oõ]e|passa|tira|esquece)\b', hint: "Use informal imperatives (the ele/ela form): joga o lixo fora, guarda…" }
+    model: { es: "Oi, Bia! Por favor, joga o lixo fora na terça e guarda a louça no armário. Limpa a cozinha depois do jantar. Não esquece de fechar a janela à noite, porque faz frio. E liga para mim se precisar de algo. Beijos!", en: "Hi, Bia! Please put the rubbish out on Tuesday and put the dishes away in the cupboard. Clean the kitchen after dinner. Don't forget to close the window at night, because it gets cold. And call me if you need anything. Love!" }
+  - task: "Write a welcome note for tourists in Gramado with irregular imperatives (seja, faça, venha, tenha, traga…)."
+    min: 30
+    max: 65
+    use: [w.paciência, w.fila, w.pedalinho, w.atenção, w.lanchonete]
+    useAtLeast: 2
+    grammar: [g.imperative-irregular]
+    expect:
+      - { pattern: '\b(seja|sejam|tenha|tenham|fa[cç]a|fa[cç]am|venha|venham|saiba|ponha|traga|tragam|diga|esteja|d[eê])\b', hint: "Use irregular imperatives: Seja…, Tenha…, Faça…, Venha…" }
+    model: { es: "Seja bem-vindo a Gramado! Faça um passeio de pedalinho no lago e venha conhecer as lojas de chocolate. Tenha paciência na fila do fondue: ela anda rápido. E traga um casaco, porque à noite faz muito frio!", en: "Welcome to Gramado! Take a pedal-boat ride on the lake and come and see the chocolate shops. Be patient in the fondue queue: it moves fast. And bring a coat, because it's very cold at night!" }
+  - task: "Write a polite message to a hotel receptionist asking for three things (O senhor poderia…? Pode…? Dá pra…?)."
+    min: 30
+    max: 65
+    use: [w.senha, w.formulário, w.preencher, w.desligar, w.imprimir]
+    useAtLeast: 3
+    grammar: [g.polite-requests]
+    expect:
+      - { pattern: '\b(poderia|podia|pode|d[aá] pra|d[aá] para)\b', hint: "Ask politely: O senhor poderia…? / Pode…?" }
+      - { pattern: 'por favor', hint: "Add por favor." }
+    model: { es: "Boa noite! O senhor poderia me dar a senha da internet, por favor? Também preciso de ajuda com este formulário: o senhor pode me explicar como preencher? E dá pra imprimir a minha passagem aqui? Muito obrigada!", en: "Good evening! Could you give me the internet password, please? I also need help with this form: can you explain how to fill it in? And is it possible to print my ticket here? Thank you very much!" }

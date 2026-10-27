@@ -281,3 +281,45 @@ dialogues:
       - { q: "Em que ano ele chegou a São Paulo?", options: ["Em 1933", "Em 1984", "Em 1990"], answer: 1, explain: "He came from Bahia in 1984; he opened his shop in 1990." }
       - { q: "O que ele abriu em 1990?", options: ["Um restaurante", "Uma loja de frutas", "Uma padaria"], answer: 1, explain: "Em 1990 abri a minha loja de frutas." }
       - { q: "Com quem a Jussara veio hoje?", options: ["Com a mãe", "Com o pai", "Sozinha"], answer: 0, explain: "Hoje trouxe a minha mãe." }
+writing:
+  - task: "Write a short biography of a famous person you admire: when and where they were born, what they did and when they died (if they did)."
+    min: 25
+    max: 65
+    use: [w.nascer, w.carreira, w.sucesso, w.morrer, w.canção]
+    useAtLeast: 3
+    grammar: [g.preterite-irregular, g.dates-years]
+    expect:
+      - { pattern: '\bnasceu\b', hint: "Say when and where they were born: Nasceu em …" }
+      - { pattern: '(\b(1\d|20)\d\d\b|mil novecentos|dois mil)', hint: "Give years: em 1927…" }
+      - { pattern: '\b(fez|foi|teve|veio|escreveu|deu|disse|p[oô]s|trouxe|quis|soube|esteve)\b', hint: "Use irregular preterites: fez, foi, teve, veio…" }
+    model: { es: "Tom Jobim nasceu no Rio de Janeiro em 1927. Ele foi um grande compositor e cantor. Em 1962, ele escreveu “Garota de Ipanema” com Vinicius de Moraes, e a canção fez muito sucesso no mundo inteiro. Ele morreu em 1994.", en: "Tom Jobim was born in Rio de Janeiro in 1927. He was a great composer and singer. In 1962 he wrote 'The Girl from Ipanema' with Vinicius de Moraes, and the song was a huge success all over the world. He died in 1994." }
+  - task: "Your friend wants to know about your weekend trip. Reply: where you went, how it was, who came and what you saw."
+    es: "E aí, como foi a viagem? Aonde você foi?"
+    min: 25
+    max: 60
+    use: [w.ver, w.vir, w.dar, w.que-pena, w.história]
+    useAtLeast: 2
+    grammar: [g.preterite-ser-ir, g.preterite-dar-ver-vir]
+    expect:
+      - { pattern: '\b(fui|fomos|foi|foram)\b', hint: "Use ser/ir in the preterite: fui, foi, fomos…" }
+      - { pattern: '\b(vi|vimos|viu|viram|vim|veio|viemos|vieram|dei|deu|demos|deram)\b', hint: "Use ver, vir or dar in the preterite: vi, veio, demos…" }
+    model: { es: "Oi! A viagem foi ótima. Fui a Santos com a Ana, e a irmã dela veio também. Vimos o museu do café e demos uma volta na praia. Só no domingo choveu o dia inteiro. Que pena!", en: "Hi! The trip was great. I went to Santos with Ana, and her sister came too. We saw the coffee museum and went for a walk on the beach. Only on Sunday it rained all day. What a shame!" }
+  - task: "Tell the life story of an older relative: where they were born and grew up, what they studied or did, when they married and retired."
+    min: 25
+    max: 65
+    use: [w.nascer, w.crescer, w.formar-se, w.aposentar-se, w.casar]
+    useAtLeast: 3
+    grammar: [g.preterite-irregular, g.dates-years]
+    expect:
+      - { pattern: '\b(nasceu|cresceu|formou|casou|aposentou|mudou|trabalhou)', hint: "Tell the main events in the preterite: nasceu, cresceu, se casou…" }
+      - { pattern: '(\b(1\d|20)\d\d\b|mil novecentos|dois mil|\banos\b)', hint: "Say when: em 1975, aos dezoito anos…" }
+    model: { es: "Minha avó nasceu em Minas Gerais em 1950. Ela cresceu numa cidade pequena e veio para São Paulo aos dezoito anos. Ela se formou e trabalhou como professora durante trinta anos. Casou com o meu avô em 1975 e se aposentou em 2010.", en: "My grandmother was born in Minas Gerais in 1950. She grew up in a small town and came to São Paulo at eighteen. She graduated and worked as a teacher for thirty years. She married my grandfather in 1975 and retired in 2010." }
+  - task: "Write about three important dates: one in your country's history, one in a city you know and one in your own life."
+    min: 25
+    max: 60
+    use: [w.data, w.história, w.independência, w.século, w.aniversário]
+    useAtLeast: 2
+    grammar: [g.dates-years]
+    expect:
+      - { pattern: '(\bno dia\b|\bdia \d+|\bem \d{4}\b|\bde (janeiro|fevereiro|mar[cç]o|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)\b)', hint: "Give full dates: no dia 7 de setembro de 1822…" }
+    model: { es: "Uma data importante na história do Brasil é o dia 7 de setembro de 1822, o dia da independência. O Mercado Municipal de São Paulo abriu em 1933. E eu nasci no dia 25 de janeiro, o aniversário de São Paulo!", en: "An important date in Brazil's history is 7 September 1822, independence day. The Municipal Market in São Paulo opened in 1933. And I was born on 25 January, São Paulo's birthday!" }

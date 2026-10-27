@@ -279,3 +279,42 @@ dialogues:
       - { q: "Che lavoro fa Kate?", options: ["È insegnante.", "È guida.", "È giornalista."], answer: 2, explain: "She is not on holiday: «sono giornalista»." }
       - { q: "Tom è americano?", options: ["Sì, è americano.", "No, è inglese.", "No, è canadese."], answer: 1, explain: "«No, non sono americano, sono inglese»." }
       - { q: "Com'è il Colosseo per Tom?", options: ["Piccolo.", "Molto grande.", "Difficile."], answer: 1, explain: "Tom says «Sì, è molto grande»." }
+writing:
+  - task: "Write a short profile for a language-exchange website: your name, your nationality, the city you are from and your job."
+    min: 15
+    max: 40
+    use: [w.città, w.lavoro, w.lingua, w.paese]
+    useAtLeast: 2
+    grammar: [g.essere-di, g.adjective-agreement]
+    expect:
+      - { pattern: "\\bsono di\\b", hint: "Say where you are from: Sono di …" }
+      - { pattern: "\\bsono (italian|american|ingles|frances|spagnol|tedesc|portoghes|cines|giappones|russ|brasilian|canades|svizzer|grec|australian|irlandes|scozzes)", hint: "Say your nationality: Sono inglese / americano / americana…" }
+    model: { es: "Ciao! Mi chiamo Emma e sono inglese. Sono di Manchester, una città grande e interessante. Sono infermiera: il mio lavoro è difficile, ma bello.", en: "Hi! My name is Emma and I'm English. I'm from Manchester, a big and interesting city. I'm a nurse: my job is hard, but nice." }
+  - task: "You meet a tourist at the Colosseum. Describe him or her in 3–4 sentences: name, nationality, where they are from, their job and what they are like."
+    min: 15
+    max: 40
+    use: [w.turista, w.simpatico, w.gentile, w.ragazzo, w.americano]
+    grammar: [g.essere-di, g.adjective-agreement, g.gender-nouns]
+    expect:
+      - { pattern: "(è|sono) di\\s", hint: "Say where the person is from: È di …" }
+      - { pattern: "\\b(simpatic|antipatic|gentil|brav|interessant|famos|giovan|grand|piccol|alt|bass)\\w*", hint: "Describe the person with an adjective: simpatico/a, gentile…" }
+    model: { es: "Lei è una turista. Si chiama Kate ed è americana: è di Boston. Kate è giornalista. È una ragazza simpatica e molto gentile.", en: "She's a tourist. Her name is Kate and she's American: she's from Boston. Kate is a journalist. She's a nice and very kind girl." }
+  - task: "Giulia has some wrong ideas about you. Answer her questions with non: say what is not true and then what is true."
+    es: "Sei americano? Sei medico? Roma è una città piccola?"
+    min: 12
+    max: 35
+    use: [w.non, w.vero, w.sbagliato, w.medico, w.città]
+    useAtLeast: 2
+    grammar: [g.negation, g.essere-di]
+    expect:
+      - { pattern: "\\bnon (sono|è|sei|siamo|siete)", hint: "Say what is not true: Non sono … / Non è …" }
+    model: { es: "No, non sono americano: sono canadese. Non sono medico, sono insegnante. E Roma non è una città piccola: è molto grande!", en: "No, I'm not American: I'm Canadian. I'm not a doctor, I'm a teacher. And Rome isn't a small city: it's very big!" }
+  - task: "Write a postcard to a friend from the Colosseum: say where you are, describe the Colosseum with two or three adjectives and say who the people around you are."
+    min: 15
+    max: 40
+    use: [w.grande, w.vecchio, w.famoso, w.turista, w.gente]
+    grammar: [g.adjective-agreement, g.articles]
+    expect:
+      - { pattern: "\\b(grand|vecch|famos|bellissim|interessant)\\w*", hint: "Describe the Colosseum: è grande, vecchio, famoso…" }
+      - { pattern: "\\b(turist|gente|persone|italian|american|ingles|frances|tedesc|cines|giappones|spagnol)", hint: "Say who is there: turisti, italiani…" }
+    model: { es: "Ciao, Sara! Sono a Roma. Il Colosseo è grande, vecchio e famoso. Qui c'è molta gente: ci sono turisti americani, inglesi e cinesi. A presto!", en: "Hi, Sara! I'm in Rome. The Colosseum is big, old and famous. There are lots of people here: there are American, English and Chinese tourists. See you soon!" }

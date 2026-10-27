@@ -280,3 +280,44 @@ dialogues:
       - { q: "佢哋幾點喺銅鑼灣站等？", options: ["兩點半", "三點", "七點"], answer: 1, explain: "Mandy suggests 兩點半, but Kelvin asks for three and she agrees: 三點啦." }
       - { q: "啲商場幾點閂門？", options: ["七點", "十點", "十一點"], answer: 1, explain: "Mandy says 夜晚十點先閂門: the malls stay open until ten." }
       - { q: "佢哋幾點去食飯？", options: ["下晝三點", "夜晚七點", "夜晚十點"], answer: 1, explain: "Kelvin says 我哋夜晚七點去食飯啦." }
+writing:
+  - task: "Write when you get up, finish work and go to bed. Remember: the time comes before the verb."
+    min: 12
+    max: 30
+    use: [w.hei2-san1, w.fong3-gung1, w.fan3-gaau3, w.ziu1-zou2, w.maan5-hak1]
+    useAtLeast: 3
+    grammar: [g.time-before-verb, g.clock-time]
+    expect:
+      - { pattern: "點.{0,3}(起身|放工|瞓覺|返工)", hint: "Put the time before the verb: 七點起身." }
+    model: { es: "我朝早七點起身，六點放工，晚黑十一點瞓覺。", en: "I get up at seven in the morning, finish work at six and go to bed at eleven at night." }
+  - task: "A friend asks if you're free tomorrow. Reply that you're busy tomorrow because you work, but you're free on Saturday afternoon."
+    es: "聽日得唔得閒呀？"
+    min: 10
+    max: 30
+    use: [w.ting1-jat6, w.m4-dak1-haan4, w.dak1-haan4, w.haa6-zau3, w.sing1-kei4-luk6]
+    useAtLeast: 3
+    grammar: [g.days-weeks, g.time-before-verb]
+    expect:
+      - { pattern: "唔得閒", hint: "Say you're busy: 聽日唔得閒." }
+      - { pattern: "星期.{0,4}得閒|禮拜.{0,4}得閒", hint: "Say when you're free: 星期六下晝得閒." }
+    model: { es: "聽日唔得閒呀，我要返工。星期六下晝得閒！", en: "I'm not free tomorrow, I have to work. I'm free on Saturday afternoon!" }
+  - task: "Write today's date and day, and the date of your birthday."
+    min: 10
+    max: 30
+    use: [w.gam1-jat6, w.saang1-jat6, w.saam1-jyut6, w.hou6, w.sing1-kei4-saam1]
+    useAtLeast: 3
+    grammar: [g.dates, g.days-weeks]
+    expect:
+      - { pattern: "月.{0,3}號", hint: "Give the date: …月…號." }
+      - { pattern: "生日", hint: "Give your birthday: 我生日係…" }
+    model: { es: "今日係三月八號，星期三。我生日係十月二十號。", en: "Today is the 8th of March, a Wednesday. My birthday is the 20th of October." }
+  - task: "Write a notice for the door of a small café: when it opens and closes every day, and which day it is closed."
+    min: 12
+    max: 35
+    use: [w.mui5, w.hoi1-mun4, w.saan1-mun4, w.jau1-sik1, w.je6-maan5]
+    useAtLeast: 3
+    grammar: [g.time-before-verb, g.clock-time]
+    expect:
+      - { pattern: "開門", hint: "Say when it opens: …點開門." }
+      - { pattern: "閂門|休息", hint: "Say when it closes: …點閂門." }
+    model: { es: "我哋每日朝早七點開門，夜晚十點閂門。星期日休息。", en: "We open every day at seven in the morning and close at ten at night. Closed on Sundays." }

@@ -281,3 +281,41 @@ dialogues:
       - { q: "O que aconteceu com a igreja em 2002?", options: ["Foi inaugurada", "Foi destruída pelo fogo", "Foi fechada para sempre"], answer: 1, explain: "Foi destruída pelo fogo em 2002 and reopened in 2006." }
       - { q: "Quanto custa assistir às Cavalhadas?", options: ["Nada, a entrada é gratuita", "Cinquenta reais", "Só se paga o estacionamento"], answer: 0, explain: "Não se paga nada: a entrada é gratuita." }
       - { q: "Por que a Sílvia não pode ir de carro até o campo?", options: ["Porque a estrada está interditada", "Porque o centro fica fechado para carros durante a festa", "Porque o carro está estragado"], answer: 1, explain: "Durante a festa o centro fica fechado para carros." }
+writing:
+  - task: "Write a short text about the history of Brasília in the passive (foi construída, foi inaugurada, foi projetada por…)."
+    min: 50
+    max: 100
+    use: [w.inaugurar, w.projetar, w.construção, w.arquiteto, w.urbanista]
+    useAtLeast: 3
+    grammar: [g.passive-ser]
+    expect:
+      - { pattern: '\b(foi|foram|s[aã]o|era|eram) [a-zà-ú]+(ado|ada|ados|adas|ido|ida|idos|idas|ita|ito|itas|itos|eita|eito|eitos|eitas)\b', hint: "Use the passive with ser + participle: foi construída, foi projetada por…" }
+    model: { es: "Brasília foi construída em menos de quatro anos e foi inaugurada no dia 21 de abril de 1960. A cidade foi planejada pelo urbanista Lúcio Costa, e os palácios e a catedral foram projetados pelo arquiteto Oscar Niemeyer. Os prédios foram feitos de concreto, com muitas curvas. A construção foi realizada por muitos trabalhadores, os candangos, que vieram de todo o Brasil.", en: "Brasília was built in under four years and was inaugurated on 21 April 1960. The city was planned by the urban planner Lúcio Costa, and the palaces and the cathedral were designed by the architect Oscar Niemeyer. The buildings were made of concrete, with lots of curves. The construction was carried out by many workers, the candangos, who came from all over Brazil." }
+  - task: "Write a few signs for shops and farms around Pirenópolis using se (Vende-se…, Aluga-se…, Precisa-se de…), then describe what is produced in the region."
+    min: 50
+    max: 100
+    use: [w.produzir, w.fabricar, w.agricultura, w.gado, w.soja]
+    useAtLeast: 3
+    grammar: [g.se-passive]
+    expect:
+      - { pattern: '\b[a-zà-ú]+-se\b', hint: "Use the se-passive: Vende-se…, Aluga-se…, Precisa-se de…" }
+    model: { es: "Aluga-se casa no centro histórico, perto da igreja. Vendem-se queijos e doces da fazenda. Precisa-se de garçom para o fim de semana. Na região de Pirenópolis, produz-se muita soja e cria-se gado. A agricultura é muito importante para a economia: planta-se milho e fabricam-se doces e cachaça para os turistas.", en: "House to let in the historic centre, near the church. Farm cheeses and sweets for sale. Waiter wanted for the weekend. In the Pirenópolis area a lot of soya is produced and cattle are raised. Agriculture is very important for the economy: maize is grown and sweets and cachaça are made for the tourists." }
+  - task: "An election is coming up in your town. Write what people are saying about it (Dizem que…, Falam que…, Contam que…) and give your own opinion."
+    min: 50
+    max: 100
+    use: [w.eleição, w.candidato, w.votar, w.campanha, w.partido]
+    useAtLeast: 3
+    grammar: [g.indeterminate-subject]
+    expect:
+      - { pattern: '\b(dizem|falam|comentam|contam|acham) que\b', hint: "Use the third-person plural for 'people say': Dizem que…, Falam que…" }
+      - { pattern: '\b(acho|na minha opini[aã]o|acredito|para mim)\b', hint: "Add your own opinion: Na minha opinião…" }
+    model: { es: "Dizem que a eleição deste ano vai ser difícil. Falam que os dois candidatos principais estão empatados e que a campanha vai custar muito caro. Contam também que um partido novo vai ter muitos votos. Na minha opinião, o mais importante é que todo mundo vote e que os eleitores conheçam as propostas de cada candidato.", en: "People say this year's election is going to be tough. They say the two main candidates are neck and neck and that the campaign is going to be very expensive. They also say a new party will get a lot of votes. In my opinion, the most important thing is that everybody votes and that voters know each candidate's proposals." }
+  - task: "Describe the state of the town after the Cavalhadas festival and a heavy storm: what is closed, kept or changed (está fechada, ficou cheia, foi mudado…)."
+    min: 50
+    max: 100
+    use: [w.interditado, w.responsável, w.cavaleiro, w.mascarado, w.trajeto]
+    useAtLeast: 3
+    grammar: [g.passive-estar-ficar]
+    expect:
+      - { pattern: '(?<!\p{L})(est[aá]|est[aã]o|ficou|ficaram|estava|estavam) [a-zà-ú]+(ado|ada|ados|adas|ido|ida|idos|idas|ito|ita|eito|eita)\b', hint: "Describe results with estar / ficar + participle: A estrada está fechada. / A praça ficou cheia." }
+    model: { es: "Depois das Cavalhadas, a cidade ficou cansada, mas feliz. A praça principal ainda está fechada e a estrada para Brasília está interditada por causa da chuva. Os cavalos dos cavaleiros estão guardados e as roupas dos mascarados estão guardadas no museu. O responsável pela festa disse que o trajeto dos cavaleiros vai ser mudado no ano que vem.", en: "After the Cavalhadas, the town was tired but happy. The main square is still closed and the road to Brasília is blocked because of the rain. The riders' horses are stabled and the masked riders' costumes are stored in the museum. The festival organiser said the riders' route will be changed next year." }

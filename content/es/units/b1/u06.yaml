@@ -281,3 +281,44 @@ dialogues:
       - { q: "¿Por qué pensaba Sara que Pablo estaba enfadado con ella?", options: ["Porque no contestó a sus mensajes", "Porque no la invitó a cenar", "Porque no limpió la cocina"], answer: 0, explain: "Pablo's phone had no battery, so he never answered the two messages Sara had sent him." }
       - { q: "¿Cómo se sintió Pablo al principio del apagón?", options: ["Se asustó", "Le pareció divertido", "Se enfadó con Sara"], answer: 0 }
       - { q: "¿Cómo saben al final que ha vuelto la luz?", options: ["Porque Sara enciende la lámpara", "Porque llama el vecino de enfrente", "Porque suena el despertador"], answer: 0 }
+writing:
+  - task: "Reply to your friend: when you arrived at the cheese festival, many things had already happened. Use the pluperfect (ya había empezado …)."
+    es: "¿Qué tal la fiesta del queso en Tafí del Valle? ¿Llegaste a tiempo?"
+    min: 50
+    max: 100
+    use: [w.aun, w.al-principio, w.poco-despues, w.hasta-entonces]
+    useAtLeast: 2
+    grammar: [g.pluperfect]
+    expect:
+      - { pattern: "\\b(hab[ií]a|hab[ií]as|hab[ií]amos|hab[ií]an) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the pluperfect: ya había empezado, se habían ido …" }
+      - { pattern: "\\bcuando (llegu[eé]|llegamos|entr[eé])", hint: "Say what had happened when you arrived: cuando llegué, …" }
+    model: { es: "¡Qué desastre! Cuando llegué a la plaza, la fiesta ya había empezado y los mejores quesos se habían vendido. Había perdido el autobús de las nueve porque no había oído el despertador. Al principio me enfadé, pero poco después encontré a unos amigos que me habían guardado un trozo de queso de la zona. Hasta entonces nunca había probado uno tan rico.", en: "What a disaster! When I got to the square, the festival had already started and the best cheeses had been sold. I'd missed the nine o'clock bus because I hadn't heard the alarm. At first I got angry, but soon afterwards I found some friends who had saved me a piece of local cheese. Until then I had never tried one so delicious." }
+  - task: "Describe the day of a farewell, using antes de + infinitive, después de + infinitive, nada más + infinitive and al cabo de."
+    min: 50
+    max: 100
+    use: [w.nada-mas, w.al-cabo-de, w.despedida, w.abrazar, w.lagrima]
+    useAtLeast: 3
+    grammar: [g.antes-despues-de]
+    expect:
+      - { pattern: "antes de [a-záéíóúñ]+(ar|er|ir|arme|erme|irme)\\b|despu[eé]s de [a-záéíóúñ]+(ar|er|ir)\\b|nada m[aá]s [a-záéíóúñ]+(ar|er|ir|arme|erme|irme)\\b", hint: "Use antes de / después de / nada más + infinitive: nada más levantarme …" }
+    model: { es: "El día de la despedida, el despertador sonó a las seis. Nada más levantarme, me duché y me afeité. Antes de salir de casa, preparé un regalo para mi amiga Lucía. Después de desayunar, fui a la estación. Allí la abracé con lágrimas en los ojos y, al cabo de unos minutos, el tren se marchó. Regresé a casa con una sonrisa triste.", en: "On the day of the farewell, the alarm went off at six. As soon as I got up, I showered and shaved. Before leaving home, I got a present ready for my friend Lucía. After breakfast, I went to the station. There I hugged her with tears in my eyes and, a few minutes later, the train left. I went back home with a sad smile." }
+  - task: "Write the beginning of a mystery story: a stormy night, a power cut, and something strange that had happened before."
+    min: 50
+    max: 100
+    use: [w.apagon, w.trueno, w.linterna, w.fijarse, w.temblar]
+    useAtLeast: 3
+    grammar: [g.sequence-of-past, g.pluperfect]
+    expect:
+      - { pattern: "\\b(hab[ií]a|hab[ií]an) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the pluperfect for what had happened before: alguien había abierto …" }
+      - { pattern: "\\b(era|estaba|hac[ií]a|llov[ií]a|sonaban|hab[ií]a)\\b", hint: "Set the scene with the imperfect: era de noche, llovía …" }
+    model: { es: "Era una noche de tormenta en Tafí del Valle. Había llovido todo el día y los truenos sonaban cada vez más cerca. De pronto hubo un apagón. Busqué una linterna y bajé a la cocina, temblando. Entonces me fijé en algo extraño: alguien había abierto la ventana y había dejado huellas en el suelo. Pero yo había cerrado todas las puertas antes de acostarme.", en: "It was a stormy night in Tafí del Valle. It had rained all day and the thunder was getting closer and closer. Suddenly there was a power cut. I looked for a torch and went down to the kitchen, trembling. Then I noticed something strange: someone had opened the window and left footprints on the floor. But I had locked all the doors before going to bed." }
+  - task: "Write a short history of your family: someone who emigrated, what had happened before, and how they adapted."
+    min: 50
+    max: 100
+    use: [w.emigrar, w.adaptarse, w.acostumbrarse, w.por-aquel-entonces, w.apenas]
+    useAtLeast: 3
+    grammar: [g.sequence-of-past]
+    expect:
+      - { pattern: "\\b(hab[ií]a|hab[ií]an) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the pluperfect for earlier events: sus hermanos ya se habían ido …" }
+      - { pattern: "(emigr|lleg|adapt|acostumbr|cas|naci|trabaj|volv|vivi)[a-z]*(ó|é|aron|ieron)(?![a-záéíóúñ])", hint: "Tell the main events in the preterite: emigró, llegó, se adaptó …" }
+    model: { es: "Mi bisabuelo Antonio emigró de Galicia a Argentina en 1920. Por aquel entonces, la vida en su pueblo era muy dura y dos de sus hermanos ya se habían ido a Buenos Aires. Cuando llegó, no conocía a nadie y apenas tenía dinero. Al principio le costó mucho adaptarse, pero poco a poco se acostumbró al nuevo país. Nunca volvió a ver a su madre, que había muerto durante la guerra.", en: "My great-grandfather Antonio emigrated from Galicia to Argentina in 1920. At that time, life in his village was very hard and two of his brothers had already gone to Buenos Aires. When he arrived, he didn't know anyone and had hardly any money. At first it was very hard for him to adapt, but little by little he got used to the new country. He never saw his mother again; she had died during the war." }

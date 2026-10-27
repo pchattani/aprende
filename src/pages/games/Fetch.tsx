@@ -5,10 +5,9 @@
  * Cantonese spells the Jyutping (without tones) of the characters shown.
  */
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { languagePack } from '@lang'
 import type { VocabEntry } from '../../engine/schema'
 import { ui } from '../../engine/loader'
-import { newFetch, guess, isWon, isLost, isOver, shown, hits, spared, fetchPoints, fetchVerdict, fetchKeyboard, FETCH_STEPS, FETCH_ROUND, type FetchState } from '../../engine/games/fetch'
+import { newFetch, guess, isWon, isLost, isOver, shown, hits, spared, fetchPoints, fetchVerdict, FETCH_STEPS, FETCH_ROUND, type FetchState } from '../../engine/games/fetch'
 import { recordAnswer } from '../../db/progress'
 import { playSound } from '../../engine/sounds'
 import { TL } from '../../engine/course'
@@ -22,30 +21,19 @@ import { addMinutes, e2eHook } from '../palabras/util'
 import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { useGameWords, recordGame } from './util'
-import { JYUTPING, fold, givesAway, useGameBest } from './wordGames'
+import { JYUTPING, fold, useGameBest } from './wordGames'
+import { FETCH_KEYS as KEYS, fetchAnswer as answerOf, fitsFetch } from './requirements'
 import { GameOver, Loading } from './WordGameOver'
 
 const ID = 'fetch'
 const TITLE = 'Fetch!'
-const KEYS = fetchKeyboard(fold, JYUTPING ? [] : undefined)
-const KEYSET = new Set(KEYS.flat())
 /** Leo's spot at the left of the scene (px). */
 const LEO_X = 12
-
-/** What is spelled: the word as the course writes it (lowercase, ligatures spelled out), or Jyutping without tones. */
-function answerOf(v: VocabEntry): string | undefined {
-  const a = v.jp ? v.jp.replace(/[1-6]/g, '') : languagePack.normalize(v.lemma).normalize('NFC')
-  const letters = [...a].filter((ch) => /^\p{L}$/u.test(ch))
-  if (letters.length < 3 || letters.length > 12 || a.length > 16 || a.split(' ').length > 3) return undefined
-  if (![...a].every((ch) => ch === ' ' || ch === "'" || /^\p{L}$/u.test(ch))) return undefined
-  if (givesAway(v, letters) || !letters.every((ch) => KEYSET.has(newFetch(ch, fold).keys[0]!))) return undefined
-  return a
-}
-const fits = (v: VocabEntry) => answerOf(v) !== undefined
+const KEYSET = new Set(KEYS.flat())
 
 export default function Fetch({ onDone }: GameProps) {
   const [round, setRound] = useState(0)
-  const words = useGameWords(FETCH_ROUND * 2, fits, round)
+  const words = useGameWords(FETCH_ROUND * 2, fitsFetch, round)
   const best = useGameBest(ID)
   return (
     <div className="animate-rise pb-6">
@@ -57,7 +45,7 @@ export default function Fetch({ onDone }: GameProps) {
       ) : words.length < 3 ? (
         <>
           <GameHeader title={TITLE} onBack={onDone} />
-          <TooFew onBack={onDone} />
+          <TooFew onBack={onDone} game={ID} />
         </>
       ) : (
         <Round key={round} words={words.slice(0, FETCH_ROUND)} best={best?.score} onDone={onDone} onAgain={() => setRound((r) => r + 1)} />

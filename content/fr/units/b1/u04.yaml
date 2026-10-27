@@ -291,3 +291,44 @@ dialogues:
       - { q: "Qu'est-ce que la mère de Manon veut ?", options: ["Qu'elle rentre à la maison", "Qu'elle l'appelle tous les dimanches", "Qu'elle change de fac"], answer: 1, explain: "« Je veux que tu m'appelles tous les dimanches »." }
       - { q: "Qu'est-ce que Manon doit faire demain ?", options: ["Aller au marché", "Aller à la bibliothèque", "Passer un examen"], answer: 1, explain: "« il faut que j'aille à la bibliothèque »." }
       - { q: "Qui est Lucas, selon Manon ?", options: ["Son petit ami", "Un camarade de classe", "Son cousin"], answer: 1, explain: "« C'est un camarade de classe, c'est tout »." }
+writing:
+  - task: "It's exam time at the university in Aix. Write to a friend explaining why you can't go out: everything you have to do (Il faut que je…)."
+    min: 50
+    max: 100
+    use: [w.il-faut-que, w.examen, w.réviser, w.devoirs, w.bibliothèque]
+    useAtLeast: 3
+    grammar: [g.subjonctif-forms]
+    expect:
+      - { pattern: "\\bfaut qu(e\\s|['’])", hint: "Use il faut que + subjonctif: il faut que je révise…" }
+      - { pattern: "\\b(finisse|fasse|lise|sois|aie|aille|puisse|sache|prenne|r[eé]vise|passe|parte|sorte|[eé]crive|choisisse|r[eé]ussisse|travaille|rende|apprenne|mette|dise|voie|vienne|doive|rentre)\\b", hint: "Put the verb after que in the subjonctif: que je finisse, que je fasse…" }
+    model: { es: "Salut, Léa ! Je ne peux pas sortir ce week-end : il faut que je révise pour mes examens. Lundi, il faut que je finisse un devoir d'histoire et mardi, il faut que je passe un examen d'anglais. Il faut aussi que je lise trois livres à la bibliothèque ! Après les examens, il faudra qu'on fasse la fête ensemble. Bisous !", en: "Hi, Léa! I can't go out this weekend: I have to revise for my exams. On Monday I have to finish a history assignment and on Tuesday I have to sit an English exam. I also have to read three books at the library! After the exams we'll have to party together. Love!" }
+  - task: "What does your family want for your future? Write about their wishes and yours (Mes parents veulent que je sois…, je préfère que…)."
+    min: 50
+    max: 100
+    use: [w.fier, w.déçu, w.études, w.pression, w.recherche]
+    useAtLeast: 3
+    grammar: [g.subjonctif-irregular, g.subjonctif-volonte]
+    expect:
+      - { pattern: "\\b(veu[xt]|veulent|voudrai[st]|voudraient|souhait[a-z]*|pr[eé]f[eè]r[a-z]*|exig[a-z]*|aimerai[st]|aimeraient)\\b[^.!?]{0,20}\\bqu(e\\s|['’])", hint: "Use a wish verb + que + subjonctif: ils veulent que je sois…" }
+      - { pattern: "\\b(sois|soit|soyons|soyez|soient|aie|aies|ait|ayons|ayez|aient|fasse|fasses|fassions|fassiez|fassent|aille|ailles|aillent|puisse|puisses|puissent|sache|saches|sachent|veuille|vienne|viennes|viennent|prenne|prennes|prennent|comprenne|comprennent)\\b", hint: "Use irregular subjonctif forms: sois, fasse, aie, aille…" }
+    model: { es: "Mes parents veulent que je sois médecin, comme mon père. Ma mère souhaite aussi que je fasse de longues études et que j'aie un bon salaire. Mais moi, je préfère faire de la recherche ! Je voudrais qu'ils comprennent que c'est mon choix. Ils ne sont pas fâchés, mais ils sont un peu déçus et je sens la pression. J'espère qu'ils seront fiers de moi un jour.", en: "My parents want me to be a doctor, like my father. My mother also wants me to study for a long time and have a good salary. But I'd rather do research! I'd like them to understand that it's my choice. They're not angry, but they're a bit disappointed and I feel the pressure. I hope they'll be proud of me one day." }
+  - task: "A friend invites you to the market in Aix. Accept, and say what you want him or her to do and what you would like to buy together (je veux que tu…, je voudrais qu'on…)."
+    es: "Tu viens avec moi au marché d'Aix samedi ?"
+    min: 50
+    max: 100
+    use: [w.abricot, w.figue, w.melon, w.atelier, w.platane]
+    useAtLeast: 3
+    grammar: [g.subjonctif-volonte]
+    expect:
+      - { pattern: "\\b(veu[xt]|veulent|voudrai[st]|voudrions|souhait[a-z]*|pr[eé]f[eè]r[a-z]*|aimerai[st]|aimerions)\\b[^.!?]{0,20}\\bqu(e\\s|['’])", hint: "Say what you want others to do: je veux que tu viennes, je voudrais qu'on parte tôt…" }
+    model: { es: "Avec plaisir ! Mais je voudrais qu'on parte tôt, avant la foule. Je veux que tu viennes chez moi à huit heures, d'accord ? J'aimerais qu'on achète des fruits pour le pique-nique : des abricots, des figues et un melon. On mangera sous les platanes. Et je voudrais aussi que tu me montres l'atelier de Cézanne. Tu préfères qu'on y aille à pied ?", en: "With pleasure! But I'd like us to leave early, before the crowds. I want you to come to my place at eight, OK? I'd like us to buy fruit for the picnic: apricots, figs and a melon. We'll eat under the plane trees. And I'd also like you to show me Cézanne's studio. Would you rather we walked there?" }
+  - task: "Your host family in Aix has a lot of rules. Write to a friend about what they demand, forbid and allow (Ils exigent que…, ils ne veulent pas que…, ils m'interdisent de…)."
+    min: 50
+    max: 100
+    use: [w.exiger, w.interdire, w.autoriser, w.insister, w.avoir-hâte]
+    useAtLeast: 3
+    grammar: [g.subjonctif-volonte, g.subjonctif-forms]
+    expect:
+      - { pattern: "\\b(exig|veu[xt]|veulent|insist|demand|pr[eé]f[eè]r|souhait)[a-zàâçéèêëîïôûùœ]*\\b[^.!?]{0,20}\\bqu(e\\s|['’])", hint: "Use exiger / vouloir / insister pour + que + subjonctif: ils exigent que je sois rentrée…" }
+      - { pattern: "\\b(interdi|autoris|emp[eê]ch|oblig|permet)", hint: "Say what is forbidden or allowed: ils m'interdisent de…, ils m'autorisent à…" }
+    model: { es: "Ma famille d'accueil a beaucoup de règles ! Ils exigent que je sois rentrée à minuit, même le samedi. Madame Roux ne veut pas que j'invite des amis dans ma chambre, et elle insiste pour que je fasse mon lit tous les matins. Ils m'interdisent aussi de fumer sur le balcon. Heureusement, ils m'autorisent à utiliser la cuisine. J'ai hâte que mes parents viennent me voir !", en: "My host family has lots of rules! They insist I'm back by midnight, even on Saturdays. Madame Roux doesn't want me to invite friends into my room, and she insists that I make my bed every morning. They also forbid me to smoke on the balcony. Luckily, they let me use the kitchen. I can't wait for my parents to come and see me!" }

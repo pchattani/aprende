@@ -17,7 +17,7 @@ interface VerbsHook {
   asked?: number
   spin?: number
 }
-type Win = { __palabras?: { verbs?: VerbsHook }; __pawsportDemo?: (o?: { others?: boolean }) => Promise<unknown> }
+type Win = { __palabras?: { verbs?: VerbsHook }; __pawsportDemo?: (o?: { others?: boolean; started?: number }) => Promise<unknown> }
 
 const LANG = process.env.VITE_LANG ?? 'es'
 const SHOTS = process.env.VERB_SHOTS
@@ -49,7 +49,7 @@ async function openGame(page: Page, title: string) {
   await page.goto('./#/games')
   await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
   await page.waitForFunction(() => Boolean((window as unknown as Win).__pawsportDemo), null, { timeout: 20_000 })
-  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false }))
+  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false, started: 1 }))
   await page.getByRole('button', { name: new RegExp(`^${title}`) }).click()
   await expect(page.getByRole('heading', { name: title })).toBeVisible()
 }

@@ -281,3 +281,41 @@ dialogues:
       - { q: "參觀辦公室之前，阿詩要做乜嘢先？", options: ["飲咖啡", "簽合約", "影印文件"], answer: 1, explain: "Mr Chan says 你簽咗名先, then he'll show her round." }
       - { q: "員工成日一邊食飯一邊做乜嘢？", options: ["聽歌", "望出窗睇雀", "覆電郵"], answer: 1, explain: "我哋成日一邊食飯一邊望出窗: lots of birds come to Mai Po in winter." }
       - { q: "陳經理叫阿詩跟進乜嘢？", options: ["兩個客戶嘅電郵", "三份報告", "一份合約"], answer: 0, explain: "跟進兩個客戶嘅電郵: follow up on two clients' emails." }
+writing:
+  - task: "Write about someone at work who does two things at once, and about yourself, with 一邊…一邊…"
+    min: 40
+    max: 90
+    use: [w.jat1-bin1, w.soeng6-si1, w.haau6-leot2, w.je6-haau6]
+    useAtLeast: 3
+    grammar: [g.jat-bin-while]
+    expect:
+      - { pattern: "一邊.{1,8}一邊", hint: "Say two things at once: 一邊…一邊…" }
+    model: { es: "我嘅上司成日一邊食早餐一邊覆電郵，效率好高。我就一邊返工一邊讀夜校，雖然好攰，但係學到好多嘢。", en: "My boss often answers emails while eating breakfast; she's very efficient. As for me, I work and go to evening school at the same time. It's tiring, but I'm learning a lot." }
+  - task: "A new colleague wants to leave early. Tell them what has to be done first, using sentence-final 先."
+    min: 40
+    max: 80
+    use: [w.bou3-gou3, w.hap6-joek3, w.cim1-meng2, w.haak3-wu6, w.daa2-jan3]
+    useAtLeast: 3
+    grammar: [g.sin-final]
+    expect:
+      - { pattern: "先", hint: "Say what must happen first with 先 at the end: 做完先." }
+    model: { es: "你唔好走住，要將份報告做完先。仲有份合約，經理要簽名先可以寄畀客戶。你打印咗未呀？我哋六點之前要寄出去。", en: "Don't leave yet; you need to finish the report first. There's also the contract: the manager has to sign it before we can send it to the client. Have you printed it? We need to send it out before six." }
+  - task: "Text a friend about what has just happened at work, using 啱啱."
+    min: 40
+    max: 90
+    use: [w.ngaam1-ngaam1, w.ceot1-loeng4, w.faa1-hung4, w.ci4-zik1, w.hing3-zuk1]
+    useAtLeast: 3
+    grammar: [g.ngaam-ngaam-just]
+    expect:
+      - { pattern: "啱啱", hint: "Say what has just happened: 我啱啱…" }
+    model: { es: "我啱啱出糧，仲收到年尾嘅花紅，好開心！不過坐喺我隔籬嘅同事啱啱辭職，佢話想轉行。我哋今晚去慶祝吓先！", en: "I've just been paid, and I got my year-end bonus too. So happy! But the colleague who sits next to me has just resigned; she says she wants to change careers. Let's go and celebrate tonight!" }
+  - task: "You've just come back from a job interview. Write to a friend about the job and how it went."
+    min: 40
+    max: 90
+    use: [w.gin3-gung1, w.cyun4-zik1, w.zik1-wai2, w.min6-si3, w.hei1-mong6]
+    useAtLeast: 3
+    grammar: [g.ngaam-ngaam-just]
+    expect:
+      - { pattern: "見工|面試", hint: "Mention the interview: 見工, 面試." }
+      - { pattern: "希望|想", hint: "Say what you hope: 我好希望…" }
+    model: { es: "我啱啱見完工返嚟。係一個全職文員嘅職位。面試嘅時候經理問咗我好多問題，我答得幾好。我好希望可以搵到呢份工！", en: "I've just come back from a job interview. It's a full-time office clerk position. In the interview the manager asked me lots of questions, and I answered quite well. I really hope I get this job!" }

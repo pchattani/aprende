@@ -365,11 +365,42 @@ export const Lesson = z.object({
 })
 export type Lesson = z.infer<typeof Lesson>
 
+/**
+ * A free-writing task at the end of a stop (the unit's Writing stop, after its lessons).
+ * The learner writes a short text; engine/writing.ts scores grammar, spelling, task accuracy and vocabulary.
+ */
+export const WritingPrompt = z.object({
+  /** What to write, in English, addressed to the learner ("Write 3 sentences introducing yourself: …"). */
+  task: z.string().min(1),
+  /** Optional target-language question or situation shown with the task (a message to reply to…). */
+  es: z.string().optional(),
+  /** Length to aim for, in words (Cantonese: characters). */
+  min: z.number().int().positive(),
+  max: z.number().int().positive(),
+  /** Vocabulary ids the answer should use; the scorer counts how many appear (any inflected form). */
+  use: z.array(z.string()).default([]),
+  /** How many of `use` are expected (default: up to 3). */
+  useAtLeast: z.number().int().nonnegative().optional(),
+  /** Grammar points the task practises (ids from grammar/<level>.yaml). */
+  grammar: z.array(z.string()).default([]),
+  /**
+   * Evidence that the task was done: target-language regular expressions (case-insensitive, accents as
+   * written) of which at least one should match, each with an English hint shown when it does not
+   * ("Say where you are from: soy de …").
+   */
+  expect: z.array(z.object({ pattern: z.string(), hint: z.string() })).default([]),
+  /** A model answer, with its English. */
+  model: z.object({ es: z.string(), en: z.string() }),
+})
+export type WritingPrompt = z.infer<typeof WritingPrompt>
+
 export const UnitSchema = z.object({
   id: z.string().regex(/^[a-c][12]\.u\d{2}$/),
   title: z.string(),
   lessons: z.array(Lesson).min(1),
   dialogues: z.array(Dialogue).default([]),
+  /** 3–5 writing prompts for the stop's Writing stop, at the unit's level. */
+  writing: z.array(WritingPrompt).default([]),
 })
 export type Unit = z.infer<typeof UnitSchema>
 

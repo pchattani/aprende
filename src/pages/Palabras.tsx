@@ -1,19 +1,17 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import type { VocabEntry } from '../engine/schema'
-import { vocab, vocabUpTo, LEVEL_ORDER_LIST } from '../engine/loader'
+import { vocab } from '../engine/loader'
 import { IRREGULAR } from '@lang/verbs'
 import { allCards, recordAnswer, bumpDay } from '../db/progress'
 import { Rng } from '../engine/random'
-import { pickGameWords, crosswordLookup, memoryBoard, rapidRound, rapidPoints, type MemoryTile, type RapidQuestion } from '../engine/vocabGame'
-import { languagePack } from '@lang'
+import { pickGameWords, finishedCards, memoryBoard, rapidRound, rapidPoints, type MemoryTile, type RapidQuestion } from '../engine/vocabGame'
 import { todayKey } from '../engine/mastery'
 import { PageHeader, Button, Chip } from '../components/ui/basics'
 import { useKvValue } from '../hooks/useProgress'
 import { useSpeak } from '../hooks/useSpeak'
 import { playSound } from '../engine/sounds'
 import { Confetti } from '../components/ui/Confetti'
-import type { LevelId } from '../engine/schema'
 import { TL, tlOf, FEATURES } from '../engine/course'
 import { ui, LANGUAGE } from '../engine/loader'
 import { Crossword } from './palabras/Crossword'
@@ -21,12 +19,27 @@ import { Listen } from './palabras/Listen'
 import { SoundMatch } from './palabras/SoundMatch'
 import { TooFew, NoAudioNotice } from './palabras/shared'
 import { GAMES, type GameSection } from './games/catalog'
+import { REQUIRE, lessonsToUnlock, moreLessonsText } from './games/requirements'
+import { useFinishedWords, loadFinishedWords } from '../hooks/useFinishedWords'
+import type { Finished } from '../engine/finished'
 import { GAMES_BEST_KEY, type GameBest } from './games/util'
 import { BEST_KEY, LISTEN_LABEL, useAudio, updateBest, addMinutes, formatTime, type Best } from './palabras/util'
 
 type Game = 'memory' | 'rapid' | 'crossword' | 'listenPick' | 'listenType' | 'sound'
 /** How many words each game asks pickGameWords for. */
 const WANT: Record<Game, number> = { memory: 8, rapid: 30, crossword: 16, listenPick: 14, listenType: 10, sound: 16 }
+/** Each mode's requirement (games/requirements.ts). */
+const REQ_ID: Record<Game, string> = { memory: 'memory', rapid: 'rapid', crossword: 'crossword', listenPick: 'listen', listenType: 'listen', sound: 'sound' }
+
+/** "Unlocks after 2 more lessons" while the finished words are too few for a game (undefined once it can be played). */
+function lockLabel(finished: Finished | undefined, id: string): string | undefined {
+  const req = REQUIRE[id]
+  if (!finished || !req) return undefined
+  if (req.verbs && !finished.entries.some(req.fit)) return 'Unlocks after you’ve learned your first verbs'
+  const more = lessonsToUnlock(finished, req)
+  if (more === 0) return undefined
+  return more === undefined ? 'Unlocks later in the course' : `Unlocks after ${moreLessonsText(more, finished.lessons.size > 0)}`
+}
 
 export default function Palabras() {
   const nav = useNavigate()
@@ -36,15 +49,19 @@ export default function Palabras() {
   const [game, setGame] = useState<Game | undefined>()
   const [round, setRound] = useState(0)
   const [words, setWords] = useState<VocabEntry[] | undefined>()
-  const [maxLevel, setMaxLevel] = useState<LevelId>('a1')
-  const [count, setCount] = useState<number | undefined>()
+  /** The finished words: the only words the games play, and the only distractors. */
+  const [pool, setPool] = useState<VocabEntry[]>([])
+  const finished = useFinishedWords()
+  const lock = (id: string) => lockLabel(finished, id)
   const start = async (g: Game) => {
-    const cards = await allCards()
-    const lvl = cards.reduce<LevelId>((m, c) => (LEVEL_ORDER_LIST.indexOf(c.level) > LEVEL_ORDER_LIST.indexOf(m) ? c.level : m), 'a1')
-    const lookup = g === 'crossword' ? crosswordLookup((id) => vocab.get(id), languagePack) : (id: string) => vocab.get(id)
-    const picked = pickGameWords(cards, lookup, WANT[g], new Rng(Date.now()))
-    setMaxLevel(lvl)
-    setCount(cards.filter((c) => c.kind === 'word').length)
+    const [cards, fin] = await Promise.all([allCards(), loadFinishedWords()])
+    const fit = REQUIRE[REQ_ID[g]]!.fit
+    const lookup = (id: string) => {
+      const v = vocab.get(id)
+      return v && fit(v) ? v : undefined
+    }
+    const picked = pickGameWords(finishedCards(cards, fin.words), lookup, WANT[g], new Rng(Date.now()))
+    setPool(fin.entries)
     setWords(picked)
     setRound((r) => r + 1)
     setGame(g)
@@ -58,17 +75,17 @@ export default function Palabras() {
     if (game) void start(game)
   }
   if (game && words) {
-    if (words.length < 4) return <TooFew onBack={done} />
+    if (words.length < REQUIRE[REQ_ID[game]]!.need) return <TooFew onBack={done} game={REQ_ID[game]} />
     switch (game) {
       case 'memory':
         return <Memory key={round} words={words} onDone={done} best={best?.memoryMs} />
       case 'rapid':
-        return <Rapid key={round} words={words} maxLevel={maxLevel} onDone={done} best={best?.rapid} />
+        return <Rapid key={round} words={words} pool={pool} onDone={done} best={best?.rapid} />
       case 'crossword':
         return <Crossword key={round} words={words} onDone={done} onAgain={again} best={best?.crosswordMs} />
       case 'listenPick':
       case 'listenType':
-        return <Listen key={round} words={words} maxLevel={maxLevel} mode={game === 'listenPick' ? 'pick' : 'type'} onDone={done} onAgain={again} best={game === 'listenPick' ? best?.listenPick : best?.listenType} />
+        return <Listen key={round} words={words} pool={pool} mode={game === 'listenPick' ? 'pick' : 'type'} onDone={done} onAgain={again} best={game === 'listenPick' ? best?.listenPick : best?.listenType} />
       case 'sound':
         return <SoundMatch key={round} words={words} onDone={done} onAgain={again} best={best?.soundMatch} />
     }
@@ -79,23 +96,24 @@ export default function Palabras() {
       <PageHeader title="Mini games" subtitle="Games with the words and verbs you are learning. Every answer counts as a review." />
       <SectionTitle>Words</SectionTitle>
       <div className="grid gap-3">
-        <ModeCard icon="🎴" tint="bg-brand-gradient" title={ui.games.memory} text={`Flip tiles and match each ${LANGUAGE} word with its meaning. 8 pairs against the clock.`} best={best?.memoryMs ? `Best: ${(best.memoryMs / 1000).toFixed(1)} s` : undefined} onClick={() => void start('memory')} />
-        <ModeCard icon="⚡" tint="bg-sunset-gradient" title={ui.games.rapid} text="60 seconds, as many meanings as you can. Keep a streak for a multiplier." best={pts(best?.rapid)} onClick={() => void start('rapid')} />
+        <ModeCard icon="🎴" tint="bg-brand-gradient" title={ui.games.memory} text={`Flip tiles and match each ${LANGUAGE} word with its meaning. 8 pairs against the clock.`} best={best?.memoryMs ? `Best: ${(best.memoryMs / 1000).toFixed(1)} s` : undefined} locked={lock('memory')} onClick={() => void start('memory')} />
+        <ModeCard icon="⚡" tint="bg-sunset-gradient" title={ui.games.rapid} text="60 seconds, as many meanings as you can. Keep a streak for a multiplier." best={pts(best?.rapid)} locked={lock('rapid')} onClick={() => void start('rapid')} />
         <ModeCard
           icon="✏️"
           tint="bg-mint-gradient"
           title={ui.games.crossword}
           text={FEATURES.romanization === 'jyutping' ? 'A little crossword from your words: English clues, answers in Jyutping without tones.' : 'A little crossword from your words: English clues, accents optional.'}
           best={best?.crosswords ? [best.crosswordMs ? `Best: ${formatTime(best.crosswordMs)}` : '', `${best.crosswords} solved`].filter(Boolean).join(' · ') : undefined}
+          locked={lock('crossword')}
           onClick={() => void start('crossword')}
         />
-        <CatalogCards section="words" best={gamesBest} />
+        <CatalogCards section="words" best={gamesBest} finished={finished} />
       </div>
       {GAMES.some((g) => g.available && g.section === 'verbs') && (
         <>
           <SectionTitle>Verbs</SectionTitle>
           <div className="grid gap-3">
-            <CatalogCards section="verbs" best={gamesBest} />
+            <CatalogCards section="verbs" best={gamesBest} finished={finished} />
           </div>
         </>
       )}
@@ -103,7 +121,7 @@ export default function Palabras() {
         <>
           <SectionTitle>Characters and tones</SectionTitle>
           <div className="grid gap-3">
-            <CatalogCards section="characters" best={gamesBest} />
+            <CatalogCards section="characters" best={gamesBest} finished={finished} />
           </div>
         </>
       )}
@@ -117,6 +135,7 @@ export default function Palabras() {
                 {ui.games.listen}
               </span>
               <span className="block text-sm text-muted">Hear a word, then pick its meaning or type it. 10 words; keep the streak going.</span>
+              {lock('listen') && <LockLabel text={lock('listen')!} />}
             </span>
           </div>
           {audio === 'ok' ? (
@@ -145,10 +164,11 @@ export default function Palabras() {
           best={pts(best?.soundMatch)}
           disabled={audio !== 'ok'}
           notice={audio !== 'ok' ? <NoAudioNotice audio={audio} compact /> : undefined}
+          locked={lock('sound')}
           onClick={() => void start('sound')}
         />
       </div>
-      {count === 0 && <p className="mt-3 text-center text-sm text-muted">Finish a lesson first so there are words to play with.</p>}
+      {finished?.lessons.size === 0 && <p className="mt-3 text-center text-sm text-muted">The games play the words of the lessons you have finished. Finish your first lesson to start.</p>}
       <p className="mt-4 text-center text-xs"><button type="button" className="font-bold text-muted underline" onClick={() => nav('/review')}>Back to Review</button></p>
     </div>
   )
@@ -158,15 +178,15 @@ function SectionTitle({ children }: { children: ReactNode }) {
   return <h2 className="eyebrow mb-2 mt-6 first-of-type:mt-0">{children}</h2>
 }
 
-/** The catalog's games for one section, each opening /games/<id>. */
-function CatalogCards({ section, best }: { section: GameSection; best?: Record<string, GameBest> }) {
+/** The catalog's games for one section, each opening /games/<id> (a locked one shows what it is waiting for). */
+function CatalogCards({ section, best, finished }: { section: GameSection; best?: Record<string, GameBest>; finished?: Finished }) {
   const nav = useNavigate()
   return (
     <>
       {GAMES.filter((g) => g.available && g.section === section).map((g) => {
         const b = best?.[g.id]
         const label = b ? [b.score !== undefined ? `Best: ${b.score}` : '', b.ms !== undefined ? `Best: ${formatTime(b.ms)}` : '', b.plays ? `${b.plays} played` : ''].filter(Boolean).join(' · ') : undefined
-        return <ModeCard key={g.id} icon={g.icon} tint={g.tint} title={g.title} text={g.blurb} best={label} onClick={() => nav(`/games/${g.id}`)} />
+        return <ModeCard key={g.id} icon={g.icon} tint={g.tint} title={g.title} text={g.blurb} best={label} locked={lockLabel(finished, g.id)} onClick={() => nav(`/games/${g.id}`)} />
       })}
     </>
   )
@@ -180,16 +200,26 @@ function ModeIcon({ icon, tint }: { icon: string; tint: string }) {
   )
 }
 
-function ModeCard({ icon, tint, title, text, best, onClick, disabled = false, notice }: { icon: string; tint: string; title: string; text: string; best?: string; onClick: () => void; disabled?: boolean; notice?: ReactNode }) {
+/** What a locked game is waiting for, under its description. */
+function LockLabel({ text }: { text: string }) {
+  return (
+    <span className="mt-1 flex items-center gap-1 text-xs font-bold text-muted" data-lock>
+      <span aria-hidden="true">🔒</span> {text}
+    </span>
+  )
+}
+
+/** A game card. `locked` (too few finished words) greys it out with what it is waiting for; it still opens, to say how to unlock it. */
+function ModeCard({ icon, tint, title, text, best, onClick, disabled = false, notice, locked }: { icon: string; tint: string; title: string; text: string; best?: string; onClick: () => void; disabled?: boolean; notice?: ReactNode; locked?: string }) {
   const body = (
     <>
-      <ModeIcon icon={icon} tint={tint} />
+      <ModeIcon icon={icon} tint={locked ? 'bg-surface-2 grayscale' : tint} />
       <span className="min-w-0 flex-1">
         <span className="block font-semibold" lang={TL}>
           {title}
         </span>
         <span className="block text-sm text-muted">{text}</span>
-        {best ? <span className="mt-1 block text-xs font-bold text-ok-600">{best}</span> : null}
+        {locked ? <LockLabel text={locked} /> : best ? <span className="mt-1 block text-xs font-bold text-ok-600">{best}</span> : null}
       </span>
     </>
   )
@@ -202,7 +232,7 @@ function ModeCard({ icon, tint, title, text, best, onClick, disabled = false, no
     )
   }
   return (
-    <button type="button" onClick={onClick} className="card flex w-full items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
+    <button type="button" onClick={onClick} data-locked={locked ? true : undefined} className={`card flex w-full items-center gap-4 text-left transition ${locked ? 'opacity-60' : 'hover:-translate-y-0.5 active:scale-[0.99]'}`}>
       {body}
     </button>
   )
@@ -298,9 +328,10 @@ function Memory({ words, onDone, best }: { words: VocabEntry[]; onDone: () => vo
 
 const RAPID_SECONDS = 60
 
-function Rapid({ words, maxLevel, onDone, best }: { words: VocabEntry[]; maxLevel: LevelId; onDone: () => void; best?: number }) {
+function Rapid({ words, pool, onDone, best }: { words: VocabEntry[]; pool: VocabEntry[]; onDone: () => void; best?: number }) {
   const [rng] = useState(() => new Rng(Date.now()))
-  const questions = useMemo(() => rapidRound(words, { vocab, pool: vocabUpTo(maxLevel), verbs: IRREGULAR, stageOf: () => 0, speech: false }, rng), [words, maxLevel, rng])
+  // options only from the finished words: fewer of them rather than a word the learner has not finished
+  const questions = useMemo(() => rapidRound(words, { vocab, pool, verbs: IRREGULAR, stageOf: () => 0, speech: false }, rng, 1), [words, pool, rng])
   const [i, setI] = useState(0)
   const [score, setScore] = useState(0)
   const [streak, setStreak] = useState(0)

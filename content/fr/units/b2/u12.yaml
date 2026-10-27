@@ -281,3 +281,41 @@ dialogues:
       - { q: "Selon la vigneronne, la qualité du riesling est surtout une question de…", options: ["prix", "terroir", "bouteille"], answer: 1, explain: "Il s'agit surtout d'une question de terroir." }
       - { q: "Que pense Thomas du gewurztraminer ?", options: ["Il le trouve trop sec.", "Il le trouve légèrement trop sucré.", "Il l'adore."], answer: 1, explain: "Franchement, il est légèrement trop sucré pour moi." }
       - { q: "Pourquoi Sophie va-t-elle cracher le reste du vin ?", options: ["Elle n'aime pas le crémant.", "C'est elle qui conduit.", "Elle est malade."], answer: 1, explain: "C'est moi qui conduis: she's driving." }
+writing:
+  - task: "Write a short guide to Alsace wines for tourists, using pronominal passives (le riesling se boit frais, ça se prononce…, le crémant se sert…)."
+    min: 80
+    max: 150
+    use: [w.riesling, w.crémant, w.se-prononcer, w.fruité, w.apéritif]
+    useAtLeast: 3
+    grammar: [g.pronominal-passive]
+    expect:
+      - { pattern: "\\b(se|s['’]) ?(boi|bu|sert|servent|vend|prononc|di[st]|mange|d[eé]guste|conserve|garde|trouve|marie|accompagne|f[eê]te|pr[eé]pare|appr[eé]cie|produi|cultiv|consomm)", hint: "Use pronominal passives: le riesling se boit frais, ce mot se prononce…" }
+    model: { es: "Les vins d'Alsace se reconnaissent facilement : ils se vendent dans de grandes bouteilles vertes. Le riesling, sec et fruité, se boit frais, autour de huit degrés, et se marie parfaitement avec la choucroute ou le poisson. Le gewurztraminer, plus parfumé, se déguste souvent à l'apéritif ou avec un fromage de Munster. Attention : son nom se prononce à l'allemande, pas comme en anglais ! Pour les fêtes, le crémant d'Alsace se sert très frais. Enfin, ces vins se conservent bien : un bon riesling se garde plusieurs années en cave.", en: "Alsace wines are easy to recognise: they are sold in tall green bottles. Riesling, dry and fruity, is drunk chilled, at around eight degrees, and goes perfectly with choucroute or fish. Gewurztraminer, more fragrant, is often enjoyed as an aperitif or with Munster cheese. Careful: its name is pronounced the German way, not as in English! For celebrations, Crémant d'Alsace is served very cold. Finally, these wines keep well: a good riesling can be kept for several years in a cellar." }
+  - task: "Write practical advice for cycling the Route des vins, using impersonal constructions (il suffit de…, il s'agit de…, il reste…, il convient de…, il est recommandé de…)."
+    min: 80
+    max: 150
+    use: [w.il-suffit-de, w.il-s-agit-de, w.il-convient-de, w.il-est-recommandé-de, w.route-des-vins]
+    useAtLeast: 3
+    grammar: [g.impersonal-constructions]
+    expect:
+      - { pattern: "\\bil (suffit|s['’]agit|reste|manque|arrive|convient|est (recommand[eé]|conseill[eé]|important|n[eé]cessaire|pr[eé]f[eé]rable|interdit|possible)|faut|vaut mieux)(?![a-zàâçéèêëîïôûùœ])", hint: "Use impersonal constructions: il suffit de…, il s'agit de…, il convient de…" }
+    model: { es: "La route des vins d'Alsace serpente sur cent soixante-dix kilomètres, de Marlenheim à Thann. Il s'agit d'un des plus beaux itinéraires de France à vélo. Pour en profiter, il suffit de louer un vélo électrique à Colmar ou à Riquewihr. Il est recommandé de partir tôt le matin, car il fait souvent chaud l'après-midi. Il convient aussi de réserver les dégustations dans les caves, surtout pendant les vendanges. Attention : il arrive que les chemins entre les vignes soient très difficiles. Enfin, s'il reste du temps, il faut absolument visiter le village d'Eguisheim.", en: "The Alsace wine route winds for a hundred and seventy kilometres, from Marlenheim to Thann. It is one of the most beautiful cycling routes in France. To enjoy it, you only need to hire an electric bike in Colmar or Riquewihr. It is recommended to leave early in the morning, as it is often hot in the afternoon. It is also advisable to book tastings in the cellars, especially during the grape harvest. Careful: the paths between the vines are sometimes very hard going. Finally, if there's time left, you absolutely must visit the village of Eguisheim." }
+  - task: "Give a nuanced opinion of a wine or a dish you tasted in Riquewihr (il me semble que, j'ai l'impression que, à vrai dire, dans l'ensemble, plutôt, légèrement…)."
+    min: 80
+    max: 150
+    use: [w.avoir-l-impression, w.légèrement, w.dans-l-ensemble, w.à-vrai-dire, w.relativement]
+    useAtLeast: 3
+    grammar: [g.opinion-nuance]
+    expect:
+      - { pattern: "\\b(il me semble|j['’]ai l['’]impression|vrai dire|dans l['’]ensemble|en g[eé]n[eé]ral|personnellement|franchement|honn[eê]tement|plut[oô]t|relativement|l[eé]g[eè]rement|plus ou moins|en principe)", hint: "Nuance your opinion: il me semble que, j'ai l'impression que, plutôt, légèrement…" }
+    model: { es: "Hier, à Riquewihr, nous avons goûté un gewurztraminer très doux dans une petite cave. À vrai dire, je n'étais pas convaincu au début. Il me semble que ce vin est légèrement trop sucré pour accompagner un repas. J'ai l'impression qu'il se boit plutôt avec un dessert ou un fromage fort. Cela dit, son arôme de rose est particulièrement agréable et relativement léger. Mon amie, elle, l'a trouvé extraordinaire. Dans l'ensemble, c'était une belle découverte, même si, personnellement, je préfère le riesling, plus sec et plus frais.", en: "Yesterday in Riquewihr we tasted a very sweet gewurztraminer in a small cellar. To be honest, I wasn't convinced at first. It seems to me this wine is slightly too sweet to go with a meal. I get the impression it's best drunk with a dessert or a strong cheese. That said, its rose aroma is particularly pleasant and relatively light. My friend found it extraordinary. On the whole it was a lovely discovery, even if personally I prefer riesling, which is drier and fresher." }
+  - task: "Should the Alsatian dialect be taught in schools? Write a nuanced, structured opinion (il est indéniable que…, il me semble que…, il convient de…, cependant…)."
+    min: 90
+    max: 150
+    use: [w.dialecte, w.bilinguisme, w.indéniable, w.discutable, w.il-convient-de]
+    useAtLeast: 3
+    grammar: [g.opinion-nuance, g.impersonal-constructions]
+    expect:
+      - { pattern: "\\b(il me semble|j['’]ai l['’]impression|vrai dire|dans l['’]ensemble|personnellement|plut[oô]t|relativement|il est (ind[eé]niable|incontestable|vrai|certain|discutable|possible|probable))", hint: "Nuance your view: il me semble que, il est indéniable que…" }
+      - { pattern: "\\b(cependant|toutefois|n[eé]anmoins|pourtant|en revanche|certes|bien qu)", hint: "Add a counter-argument: cependant, néanmoins, certes…" }
+    model: { es: "Il est indéniable que l'alsacien fait partie de l'histoire de la région. Pendant des siècles, ce dialecte germanique a été la langue des familles et des vignerons. Aujourd'hui, pourtant, de moins en moins de jeunes le parlent. Il me semble donc important de l'enseigner, au moins à ceux qui le souhaitent. Le bilinguisme est d'ailleurs un véritable avantage dans une région frontalière avec l'Allemagne. Cependant, l'idée de le rendre obligatoire est plus discutable : tous les élèves ne viennent pas de familles alsaciennes. Dans l'ensemble, il convient de trouver une solution entre tradition et liberté de choix.", en: "It is undeniable that Alsatian is part of the region's history. For centuries this Germanic dialect was the language of families and winegrowers. Today, however, fewer and fewer young people speak it. It therefore seems important to me to teach it, at least to those who wish to learn it. Bilingualism is also a real advantage in a region bordering Germany. However, the idea of making it compulsory is more debatable: not all pupils come from Alsatian families. On the whole, a solution should be found between tradition and freedom of choice." }

@@ -282,3 +282,43 @@ dialogues:
       - { q: "Que pense Thomas de l'andouillette ?", options: ["Il l'adore", "Il n'est pas sûr que ce soit pour lui", "Il en a déjà mangé hier"], answer: 1, explain: "« Je ne suis pas sûr que ce soit pour moi » (subjonctif after a negative of certainty)." }
       - { q: "Que souhaite Inès ?", options: ["Que Thomas goûte l'andouillette", "Partir avant le dessert", "Changer de table"], answer: 0, explain: "« J'espère que tu oseras la goûter ! »" }
       - { q: "Pourquoi est-il peu probable qu'il n'y ait plus de tarte ?", options: ["Parce que personne ne l'aime", "Parce que le chef en fait tous les matins", "Parce qu'elle est trop chère"], answer: 1, explain: "« le chef en fait tous les matins »." }
+writing:
+  - task: "Write a review of a Lyon bouchon for a food website: the dishes, the atmosphere, and why it is the best you know (le meilleur… que je connaisse, le seul… qui soit…)."
+    min: 80
+    max: 150
+    use: [w.quenelle, w.spécialité, w.plat-du-jour, w.réputation, w.lyonnais]
+    useAtLeast: 3
+    grammar: [g.subjonctif-relatives]
+    expect:
+      - { pattern: "\\b(meilleure?s?|seule?s?|premi[eè]re?|derni[eè]re?|unique|plus [a-zàâçéèêëîïôûùœ]+)\\b[^.!?]{0,30}\\b(que|qui|qu['’])\\s?(je |j['’]|on |nous |vous |tu )?(connaisse|connaissions|aie|ayons|puisse|puissions|sois|soit|fasse|soient|serve|propose)\\b", hint: "After le meilleur / le seul…, use the subjonctif: le meilleur bouchon que je connaisse…" }
+    model: { es: "Chez Marie est le meilleur bouchon que je connaisse à Lyon. La salle est petite, avec des nappes à carreaux rouges et des photos anciennes sur les murs. Le plat du jour change chaque semaine, mais la spécialité de la maison, ce sont les quenelles de brochet. C'est le seul restaurant de la ville qui serve encore un vrai tablier de sapeur. Le service est rapide et le patron est très accueillant. Bien sûr, la cuisine lyonnaise est copieuse : prévoyez une longue promenade après le repas ! Ce bouchon mérite vraiment sa réputation.", en: "Chez Marie is the best bouchon I know in Lyon. The dining room is small, with red checked tablecloths and old photos on the walls. The dish of the day changes every week, but the house speciality is pike quenelles. It's the only restaurant in town that still serves a real tablier de sapeur. The service is quick and the owner is very welcoming. Of course, Lyon cooking is hearty: plan a long walk after the meal! This bouchon really deserves its reputation." }
+  - task: "Your friend claims he can eat an enormous Lyon meal. Reply, expressing doubt, possibility and certainty with the right mood (je doute que…, il est possible que…, je suis sûr(e) que…)."
+    es: "Ce soir, je vais manger une salade lyonnaise, des quenelles, une andouillette et une tarte aux pralines !"
+    min: 80
+    max: 150
+    use: [w.douter, w.il-est-peu-probable-que, w.probablement, w.andouillette, w.persuadé]
+    useAtLeast: 3
+    grammar: [g.subjonctif-doute, g.indicatif-ou-subjonctif]
+    expect:
+      - { pattern: "\\b(doute|peu probable|pas s[uû]re?|possible|se peut|ne (pense|crois) pas|improbable)[^.!?]{0,10}\\bqu(e\\s|['’])", hint: "Express doubt or possibility + subjonctif: je doute que tu finisses…" }
+      - { pattern: "\\b(s[uû]re?s?|certaine?s?|persuad[eé]e?s?|convaincue?s?|sais|crois|pense|probable|[eé]vident)\\b[^.!?]{0,10}\\bqu(e\\s|['’])", hint: "Express certainty + indicatif: je suis sûr(e) que tu vas…" }
+    model: { es: "Tout ça ? Je doute fort que tu finisses ton assiette ! Je connais les bouchons : les portions sont énormes. Il est peu probable que tu aies encore faim après la salade lyonnaise, qui est déjà très copieuse. Il est possible que tu manges les quenelles, mais l'andouillette, franchement, ça m'étonnerait. En revanche, je suis persuadée que tu trouveras de la place pour le dessert, puisque tu adores le sucré. Et je suis sûre que tu vas faire une longue sieste demain. Probablement jusqu'à midi !", en: "All that? I very much doubt you'll finish your plate! I know bouchons: the portions are huge. It's unlikely you'll still be hungry after the salade lyonnaise, which is already very filling. You might manage the quenelles, but the andouillette, honestly, I'd be surprised. On the other hand, I'm convinced you'll find room for dessert, since you love sweet things. And I'm sure you'll have a long nap tomorrow. Probably until noon!" }
+  - task: "You want to take your parents to a special restaurant in Lyon. Write to a foodie friend describing the place you are looking for (je cherche un restaurant qui soit…, qui ait…, où l'on puisse…)."
+    min: 80
+    max: 150
+    use: [w.gastronomique, w.raffiné, w.exigeant, w.chef-cuisinier, w.satisfaire]
+    useAtLeast: 3
+    grammar: [g.subjonctif-relatives]
+    expect:
+      - { pattern: "\\b(cherch|veu|voudr|souhait|besoin|connais)[a-zàâçéèêëîïôûùœ]*[^.!?]{0,40}\\b(qui|o[uù]|que|qu['’])\\s?(on |l['’]on |nous |je |j['’]|tu )?(soit|soient|ait|aient|fasse|puisse|puissions|serve|propose|accepte|sache|connaisse|aille|plaise)\\b", hint: "Describe what you are looking for with the subjonctif: un restaurant qui soit calme, où l'on puisse…" }
+    model: { es: "Salut, Claire ! Tu connais tous les bons restaurants de Lyon, alors j'ai besoin de tes conseils. Mes parents viennent pour leur anniversaire de mariage et ils sont très exigeants. Je cherche un restaurant gastronomique qui soit raffiné, mais pas trop cher. Je voudrais un endroit où l'on puisse parler tranquillement, sans musique forte. L'idéal, ce serait un chef cuisinier qui propose des plats lyonnais modernes. Ma mère ne mange pas de viande : il faut donc une carte qui ait aussi des plats végétariens. Tu connais un endroit qui puisse les satisfaire ?", en: "Hi, Claire! You know all the good restaurants in Lyon, so I need your advice. My parents are coming for their wedding anniversary and they're very demanding. I'm looking for a gourmet restaurant that's refined but not too expensive. I'd like a place where we can talk quietly, without loud music. Ideally, a chef who offers modern Lyon dishes. My mother doesn't eat meat, so we need a menu that also has vegetarian dishes. Do you know a place that could satisfy them?" }
+  - task: "Tomorrow you are having dinner with your partner's family for the first time. Write about your hopes and wishes, using j'espère que + indicatif and je souhaite que + subjonctif."
+    min: 80
+    max: 150
+    use: [w.espérer, w.souhaiter, w.il-semble-que, w.apprécier, w.déguster]
+    useAtLeast: 3
+    grammar: [g.indicatif-ou-subjonctif]
+    expect:
+      - { pattern: "\\b(j['’]esp[eè]re|nous esp[eé]rons|on esp[eè]re) qu(e\\s|['’])", hint: "Use j'espère que + indicatif: j'espère qu'ils seront gentils." }
+      - { pattern: "\\b(souhait|veu|voudr|aimerai)[a-zàâçéèêëîïôûùœ]*\\b[^.!?]{0,10}\\bqu(e\\s|['’])", hint: "Use je souhaite que / je voudrais que + subjonctif: je souhaite que tout se passe bien." }
+    model: { es: "Demain soir, je vais dîner chez les parents de Lucas pour la première fois. J'espère qu'ils me trouveront sympathique et que je ne serai pas trop nerveux. Il semble que sa mère soit une excellente cuisinière : on va déguster ses fameuses quenelles. Je souhaite de tout cœur que tout se passe bien, parce que Lucas est très proche de sa famille. Je voudrais qu'ils comprennent que je l'aime vraiment. J'espère aussi qu'ils apprécieront le vin que j'ai choisi. Et je souhaite surtout que personne ne parle de politique à table !", en: "Tomorrow evening I'm having dinner at Lucas's parents' for the first time. I hope they'll find me nice and that I won't be too nervous. It seems his mother is an excellent cook: we're going to taste her famous quenelles. I really hope everything goes well, because Lucas is very close to his family. I'd like them to understand that I truly love him. I also hope they'll like the wine I've chosen. And above all I hope nobody talks about politics at the table!" }

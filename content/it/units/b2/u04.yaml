@@ -282,3 +282,36 @@ dialogues:
       - { q: "Che cosa successe alla facciata nel 1861?", options: ["Fu dipinta di nuovo.", "Crollò.", "Fu distrutta dalla lava."], answer: 1, explain: "Quella originale crollò nel 1861 e fu ricostruita alla fine dell'Ottocento." }
       - { q: "Come va visitata la cripta?", options: ["In silenzio e senza flash.", "Solo con una guida.", "Solo la domenica."], answer: 0, explain: "La cripta va visitata in silenzio e le foto con il flash non vanno fatte." }
       - { q: "A che cosa serviva in origine il Chiostro del Paradiso?", options: ["Era un mercato.", "Era un cimitero per i nobili.", "Era una scuola."], answer: 1, explain: "Fu costruito nel Duecento come cimitero per le famiglie nobili." }
+writing:
+  - task: "Write a short guidebook text about the temples of Paestum (or another ancient site), using the passive with essere (fu costruito, sono stati trovati…)."
+    min: 80
+    max: 140
+    use: [w.tempio, w.colonia, w.scavo, w.reperto, w.archeologico]
+    grammar: [g.passive-essere]
+    expect:
+      - { pattern: "\\b(fu|furono|stat[oaie])\\s+\\S+(at|ut|it|tt|st|s|lt)[oaie]\\b|(è|sono)\\s+\\S+(at|ut|it|tt|st|s)[oaie]\\s+(da|dai|dal|dalla|dagli|dalle)\\b", hint: "Use the passive with essere: fu costruito dai Greci, sono stati trovati…" }
+    model: { es: "Il grande tempio di Paestum fu costruito dai Greci nel quinto secolo avanti Cristo, quando la città era una colonia della Magna Grecia. In seguito la città fu conquistata dai Romani e poi abbandonata nel Medioevo. Per secoli i templi furono dimenticati e coperti dalla terra. Furono scoperti di nuovo solo nel Settecento, durante la costruzione di una strada. Negli anni successivi sono stati organizzati molti scavi e sono stati trovati reperti straordinari, come la famosa Tomba del Tuffatore, che oggi è conservata nel museo archeologico.", en: "The great temple of Paestum was built by the Greeks in the fifth century BC, when the city was a colony of Magna Graecia. Later the city was conquered by the Romans and then abandoned in the Middle Ages. For centuries the temples were forgotten and covered by earth. They were only rediscovered in the eighteenth century, during the building of a road. In the following years many excavations were organised and extraordinary finds were made, such as the famous Tomb of the Diver, which is now kept in the archaeological museum." }
+  - task: "Explain how limoncello is made and served on the Amalfi Coast, describing the process with venire + participle (viene preparato, vengono tagliate…)."
+    min: 80
+    max: 140
+    use: [w.conservare, w.servire, w.tagliare, w.zucchero]
+    grammar: [g.passive-venire]
+    expect:
+      - { pattern: "\\b(viene|vengono|veniva|venivano|verrà|verranno)\\s+\\S+(at|ut|it|tt|st|s)[oaie]\\b", hint: "Use venire + participle: viene preparato, vengono lavati…" }
+    model: { es: "Sulla Costiera Amalfitana il limoncello viene ancora preparato in casa, secondo ricette antiche. Prima i limoni vengono lavati con cura e poi viene tagliata solo la parte gialla, a pezzi sottili. I pezzi vengono lasciati per alcuni giorni nell'alcol, in un posto buio. Intanto viene preparato uno sciroppo di acqua e zucchero, che viene poi aggiunto all'alcol. Il liquore viene messo in bottiglia e conservato in frigorifero. Alla fine del pranzo il limoncello viene servito molto freddo, in piccoli bicchieri: è un rito a cui nessuno rinuncia!", en: "On the Amalfi Coast limoncello is still made at home, following old recipes. First the lemons are carefully washed and then only the yellow part is cut off, in thin pieces. The pieces are left in alcohol for a few days, in a dark place. Meanwhile a syrup of water and sugar is made, which is then added to the alcohol. The liqueur is bottled and kept in the fridge. At the end of lunch limoncello is served very cold, in small glasses: it's a ritual nobody gives up!" }
+  - task: "Write tips for visitors to the Amalfi Coast: what should be done and how, using andare + participle (va visitata, vanno prenotati…)."
+    min: 80
+    max: 140
+    use: [w.andare-fatto, w.percorrere, w.tutelare, w.territorio]
+    grammar: [g.passive-andare]
+    expect:
+      - { pattern: "\\b(va|vanno|andava|andavano|andrà|andranno)\\s+\\S+(at|ut|it|tt|st|s)[oaie]\\b", hint: "Say what must be done with andare + participle: va visitata, vanno prenotati…" }
+    model: { es: "La Costiera Amalfitana va visitata in primavera o in autunno, quando ci sono meno turisti. Gli alberghi vanno prenotati molti mesi prima, soprattutto a Positano. La strada costiera, piena di curve, va percorsa con calma: se non siete abituati, è meglio prendere l'autobus o il traghetto. Il Sentiero degli Dei va fatto la mattina presto, con scarpe adatte e molta acqua. Ricordate che questo territorio va tutelato: i rifiuti vanno sempre riportati a casa. E naturalmente il limoncello va assaggiato almeno una volta!", en: "The Amalfi Coast should be visited in spring or autumn, when there are fewer tourists. Hotels should be booked many months ahead, especially in Positano. The coast road, full of bends, should be driven slowly: if you're not used to it, it's better to take the bus or the ferry. The Path of the Gods should be walked early in the morning, with suitable shoes and plenty of water. Remember that this area must be protected: rubbish must always be taken home. And of course limoncello must be tasted at least once!" }
+  - task: "Write the history of a church, town or monument that was destroyed and rebuilt, using the passive with essere and venire (fu distrutta, venne ricostruita…)."
+    min: 80
+    max: 140
+    use: [w.distruggere, w.ricostruire, w.crollare, w.barocco, w.cattedrale]
+    grammar: [g.passive-essere, g.passive-venire]
+    expect:
+      - { pattern: "\\b(fu|furono|venne|vennero|viene|vengono|stat[oaie])\\s+\\S+(at|ut|it|tt|st|s|tt)[oaie]\\b", hint: "Use the passive: fu distrutta, venne ricostruita…" }
+    model: { es: "La cattedrale di Amalfi ha una storia lunga e complicata. La prima chiesa fu costruita nel nono secolo e venne poi trasformata più volte. Nel Settecento la chiesa fu rifatta in stile barocco. Nel 1861 la facciata crollò e dovette essere ricostruita: i lavori furono completati alla fine dell'Ottocento. Anche molti paesi vicini furono distrutti da tempeste e terremoti nel corso dei secoli, ma vennero sempre ricostruiti dagli abitanti, che non hanno mai abbandonato questa costa. Oggi la cattedrale viene visitata da molte persone ogni anno.", en: "Amalfi Cathedral has a long and complicated history. The first church was built in the ninth century and was then transformed several times. In the eighteenth century the church was redone in Baroque style. In 1861 the façade collapsed and had to be rebuilt: the work was completed at the end of the nineteenth century. Many nearby villages were also destroyed by storms and earthquakes over the centuries, but they were always rebuilt by the inhabitants, who have never abandoned this coast. Today the cathedral is visited by many people every year." }

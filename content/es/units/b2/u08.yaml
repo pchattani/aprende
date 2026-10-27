@@ -256,3 +256,42 @@ dialogues:
       - { q: "How did Rosa end up owning the workshop?", options: ["She bought it from a neighbour", "She started as an apprentice with her father and took over", "She won it in a competition"], answer: 1 }
       - { q: "What does Rosa still keep?", options: ["Her first chair", "Her father's tools", "The first table she sold"], answer: 0 }
       - { q: "How has the business adapted?", options: ["It closed the workshop", "It now sells online", "It only makes tables"], answer: 1 }
+writing:
+  - task: "Describe how something is gradually changing in San Rafael or where you live (prices, the climate, the rivers), using ir + gerund, venir + gerund and andar + gerund."
+    min: 80
+    max: 150
+    use: [w.encarecerse, w.glaciar, w.disminuir, w.escasez, w.calentamiento]
+    useAtLeast: 3
+    grammar: [g.ir-venir-andar-gerund]
+    expect:
+      - { pattern: "\\b(va|van|vamos|voy|iba|iban|ha ido|han ido|se ha ido|se van|viene|vienen|ven[ií]a|anda|andan|andaba) [a-záéíóúñ]+(ando|iendo|yendo)\\b", hint: "Use ir / venir / andar + gerund: va disminuyendo, vienen diciendo, anda buscando …" }
+    model: { es: "En San Rafael, la vida va cambiando poco a poco. Los agricultores vienen diciendo desde hace años que el clima es distinto: los veranos son más largos y, por el calentamiento, los glaciares de las montañas se van haciendo más pequeños. Por eso, el agua de los ríos va disminuyendo y en algunas zonas ya hay escasez. Además, la fruta se ha ido encareciendo, porque producirla cuesta más. Mucha gente anda buscando soluciones para usar mejor el agua. Aun así, los vecinos siguen confiando en el futuro de su región.", en: "In San Rafael, life is gradually changing. Farmers have been saying for years that the climate is different: summers are longer and, because of warming, the glaciers in the mountains are getting smaller and smaller. That's why the water in the rivers is decreasing and some areas already have shortages. Also, fruit has been getting more expensive, because it costs more to produce. Lots of people are looking for ways to use water better. Even so, local people still trust in the future of their region." }
+  - task: "Write about someone who has spent many years in the same job or craft: how long they have been doing it, how they ended up in it and what they keep doing (llevar, acabar, seguir, continuar + gerund)."
+    min: 80
+    max: 150
+    use: [w.oficio, w.taller, w.carpintero, w.empresa-familiar, w.aprendiz]
+    useAtLeast: 3
+    grammar: [g.periphrases-aspect]
+    expect:
+      - { pattern: "\\b(lleva|llevo|llevan|llevaba) [a-z0-9áéíóúñ ]+(ando|iendo)\\b", hint: "Use llevar + time + gerund: lleva cuarenta años trabajando …" }
+      - { pattern: "\\b(sigue|sigo|siguen|contin[uú]a|contin[uú]an|acab[oó]|acabaron|acab[eé]) [a-záéíóúñ]+(ando|iendo|yendo)", hint: "Use seguir / continuar / acabar + gerund: acabó enamorándose …, sigue fabricando …" }
+    model: { es: "Mi vecino Ernesto es carpintero y lleva más de cuarenta años trabajando en el mismo taller. Empezó como aprendiz a los catorce años, en la empresa familiar de su tío. Al principio quería ser conductor de camiones, pero acabó enamorándose de la madera. Hoy sigue fabricando mesas y sillas a mano con las herramientas de su abuelo, aunque ya tiene setenta años. Su hija lleva tiempo pidiéndole que descanse, pero él continúa yendo al taller cada mañana. Dice que un oficio así no se abandona nunca.", en: "My neighbour Ernesto is a carpenter and has been working in the same workshop for more than forty years. He started as an apprentice at fourteen, in his uncle's family business. At first he wanted to be a lorry driver, but he ended up falling in love with wood. Today he still makes tables and chairs by hand with his grandfather's tools, even though he's seventy. His daughter has been asking him to rest for a long time, but he keeps going to the workshop every morning. He says you never give up a craft like that." }
+  - task: "You are organising a show in San Rafael. Write a formal message to the town hall about the cost and the preparations, using modal periphrases (viene a costar, está por decidir, hemos de, damos por …)."
+    min: 80
+    max: 150
+    use: [w.espectaculo, w.estreno, w.ensayar, w.venir-a, w.estar-por]
+    useAtLeast: 3
+    grammar: [g.periphrases-modal]
+    expect:
+      - { pattern: "vien(e|en) a (costar|ser|salir|durar)|est(á|a|án|an) por [a-záéíóúñ]+(ar|er|ir)\\b|\\b(he|has|ha|hemos|han) de [a-záéíóúñ]+(ar|er|ir)\\b|\\b(doy|damos|dan) por\\b|lleg(a|an|ó|aron) a [a-záéíóúñ]+(ar|er|ir)\\b", hint: "Use modal periphrases: viene a costar …, está por decidir …, hemos de …, damos por …" }
+    model: { es: "Estimados señores de la alcaldía: les escribo en relación con el espectáculo de teatro que estamos preparando para el verano. El proyecto viene a costar unos dos millones de pesos, incluyendo el escenario y las luces. El estreno será el 15 de enero, aunque la hora todavía está por decidir. Los actores llevan dos meses ensayando y ya damos por terminado el texto de la obra. Para concluir el presupuesto, hemos de saber si la alcaldía puede pagar los gastos de seguridad. Quedamos a la espera de su respuesta. Atentamente, Grupo de Teatro de San Rafael.", en: "Dear Town Hall, I am writing to you regarding the theatre show we are preparing for the summer. The project comes to about two million pesos, including the stage and the lights. The premiere will be on 15 January, although the time is still to be decided. The actors have been rehearsing for two months and we consider the script finished. To complete the budget, we need to know whether the town hall can pay the security costs. We look forward to your reply. Yours faithfully, San Rafael Theatre Group." }
+  - task: "You're moving house on Saturday. Write a message to a friend about what is done and what is half done, using tener / llevar / dejar + participle (lo tengo todo embalado, llevo veinte cajas hechas, lo dejé a medias)."
+    min: 80
+    max: 150
+    use: [w.embalar, w.a-medias, w.recogido, w.resuelto, w.colocar]
+    useAtLeast: 3
+    grammar: [g.periphrases-aspect]
+    expect:
+      - { pattern: "\\b(tengo|tienes|tiene|tenemos|llevo|lleva|llevamos)( [a-záéíóúñ0-9]+){0,4} (hech|embalad|recogid|resuelt|preparad|pintad|colocad|guardad|limpi)[ao]s?\\b", hint: "Use tener / llevar + participle: tengo la cocina recogida, llevo veinte cajas hechas …" }
+      - { pattern: "a medias", hint: "Say what is half done: lo dejé a medias …" }
+    model: { es: "¡Qué semana! La mudanza es el sábado y ya tengo casi todo embalado. Llevo veinte cajas hechas y tengo la cocina totalmente recogida. El problema del contrato ya lo tengo resuelto, por suerte. Lo que dejé a medias fue el dormitorio: tengo la mitad de los libros colocados en cajas y la otra mitad en el suelo. Además, tengo pintadas dos paredes del piso nuevo, pero me faltan otras tres. ¿Te vienes el viernes a echarme una mano? Te invito a cenar.", en: "What a week! The move is on Saturday and I've already got almost everything packed. I've done twenty boxes and the kitchen is completely tidied away. Luckily, I've got the contract problem sorted. What I left half done was the bedroom: I've got half the books packed in boxes and the other half on the floor. Also, I've painted two walls in the new flat, but I've still got three to go. Will you come over on Friday to give me a hand? I'll buy you dinner." }

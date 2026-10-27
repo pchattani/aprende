@@ -3,9 +3,10 @@
  * the course vocabulary), the conjugator, the accent rules and a list of
  * learner-error patterns, and returns explainable findings.
  */
+import { contentRegExp } from '../wordBoundary'
 import type { CheckerFinding } from '../types'
 import type { ErrorRule, IrregularVerb, VocabEntry } from '../../engine/schema'
-import { lookup, type Dictionary } from './inflect'
+import { lookup, pluralize, adjectiveForms, INVARIANT_OR, type Dictionary } from './inflect'
 import { tokenize } from './tokenize'
 import { stripAccents, editDistance } from './normalize'
 import { analyzeAccent, explainAccent } from './accents'
@@ -52,37 +53,64 @@ const ARTICLES: Record<string, Features> = {
   vuestro: { gender: 'm', number: 'sg', role: 'det' }, vuestra: { gender: 'f', number: 'sg', role: 'det' },
   vuestros: { gender: 'm', number: 'pl', role: 'det' }, vuestras: { gender: 'f', number: 'pl', role: 'det' },
 }
+/** Adjectives that also work as adverbs in their masculine singular form. */
+const ADVERBIAL_ADJECTIVES = new Set(['justo', 'medio', 'solo', 'mismo', 'claro', 'rápido', 'alto', 'bajo', 'fuerte', 'lento', 'temprano', 'demasiado', 'puro', 'seguro', 'directo', 'barato', 'caro'])
 const ADVERBS_IN_NP = new Set(['muy', 'bastante', 'tan', 'más', 'menos', 'poco', 'demasiado', 'realmente'])
 const SUBJECT_PRONOUNS: Record<string, number[]> = {
   yo: [0], tú: [1], él: [2], ella: [2], usted: [2], nosotros: [3], nosotras: [3], vosotros: [4], vosotras: [4], ellos: [5], ellas: [5], ustedes: [5],
 }
 const CLITICS = new Set(['me', 'te', 'se', 'lo', 'la', 'le', 'nos', 'os', 'los', 'las', 'les', 'no'])
+/** Words before a subject pronoun that make it part of a larger subject, a comparison or a prepositional phrase (mi novia y yo, yo que tú, a ella). */
+const COORDINATORS = new Set(['y', 'e', 'o', 'u', 'ni', 'que', 'como', 'entre', 'según', 'con', 'menos', 'incluso', 'a', 'de', 'del', 'para', 'por', 'sin', 'sobre', 'hacia', 'desde', 'hasta', 'contra', 'tras', 'ante'])
 
-/** Determine gender/number of a word form from a dictionary entry. */
-function featuresOf(form: string, e: VocabEntry): Features | undefined {
+/**
+ * Every gender/number reading of a word form for one dictionary entry (nouns and adjectives).
+ * Keeping all of them (vacaciones and lunes are singular or plural, periodista and guía either
+ * gender, hermana the feminine of hermano) keeps the agreement check quiet on correct Spanish.
+ */
+function readingsOf(form: string, e: VocabEntry): Features[] {
   const lemma = e.lemma.toLowerCase()
+  if (lemma.includes(' ')) return []
+  const nationality = e.tags.includes('nationality')
+  const pl = (w: string) => pluralize(w)
   if (e.pos === 'noun') {
-    const number: Number_ = form === lemma || form === e.feminine ? 'sg' : 'pl'
-    let gender: Gender = e.gender ?? 'mf'
-    if (e.gender === 'mf' || e.tags.includes('nationality') || e.feminine) {
-      // gendered noun (profesor/profesora): derive from ending
-      if (form.endsWith('a') || form.endsWith('as')) gender = 'f'
-      else if (form === lemma || form === lemma + 's' || form === lemma + 'es') gender = e.gender === 'f' ? 'f' : 'm'
+    const gendered = e.gender === 'mf' || nationality || Boolean(e.feminine)
+    // the distinct feminine of a gendered noun (hermano → hermana); none for epicene nouns (periodista, cantante)
+    const fem = gendered ? (e.feminine?.toLowerCase() ?? adjectiveForms(lemma, { nationality: true }).find((f) => f !== lemma && !pl(lemma).includes(f))) : undefined
+    const base: Gender = e.gender === 'f' ? 'f' : e.gender === 'm' ? 'm' : fem ? 'm' : 'mf'
+    const plurals = e.plural ? [e.plural.toLowerCase()] : pl(lemma)
+    const out: Features[] = []
+    if (form === lemma) out.push({ gender: base, number: 'sg', role: 'noun' })
+    if (plurals.includes(form)) out.push({ gender: base, number: 'pl', role: 'noun' })
+    if (fem && fem !== lemma) {
+      if (form === fem) out.push({ gender: 'f', number: 'sg', role: 'noun' })
+      if (pl(fem).includes(form)) out.push({ gender: 'f', number: 'pl', role: 'noun' })
     }
-    return { gender, number, role: 'noun' }
+    return out
   }
   if (e.pos === 'adj') {
-    const inv = !lemma.endsWith('o') && !/(or|án|ín|ón|és)$/.test(lemma) && !e.tags.includes('nationality') && !e.feminine
-    const number: Number_ = form === lemma || form === e.feminine || (lemma.endsWith('o') && form === lemma.slice(0, -1) + 'a') ? 'sg' : 'pl'
-    let gender: Gender = 'mf'
-    if (!inv) {
-      if (lemma.endsWith('o')) gender = form.startsWith(lemma.slice(0, -1) + 'a') ? 'f' : 'm'
-      else gender = form === lemma || form === lemma + 'es' ? 'm' : 'f'
+    const inv = INVARIANT_OR.has(lemma) || (!lemma.endsWith('o') && !/(or|án|ín|ón|és)$/.test(lemma) && !nationality && !e.feminine)
+    const out: Features[] = []
+    if (inv) {
+      if (form === lemma) out.push({ gender: 'mf', number: 'sg', role: 'adj' })
+      if (pl(lemma).includes(form)) out.push({ gender: 'mf', number: 'pl', role: 'adj' })
+      return out
     }
-    return { gender, number, role: 'adj' }
+    const fem = e.feminine?.toLowerCase() ?? adjectiveForms(lemma, { nationality }).find((f) => f !== lemma && !pl(lemma).includes(f))
+    if (form === lemma) out.push({ gender: 'm', number: 'sg', role: 'adj' })
+    if (pl(lemma).includes(form)) out.push({ gender: 'm', number: 'pl', role: 'adj' })
+    if (fem) {
+      if (form === fem) out.push({ gender: 'f', number: 'sg', role: 'adj' })
+      if (pl(fem).includes(form)) out.push({ gender: 'f', number: 'pl', role: 'adj' })
+    }
+    return out
   }
-  return undefined
+  return []
 }
+
+const agrees = (a: Features, b: Features) => (a.gender === 'mf' || b.gender === 'mf' || a.gender === b.gender) && a.number === b.number
+/** Readings that are not a noun or an adjective and make an NP check unsafe (tarde "late", bien). */
+const NON_NOMINAL = new Set(['adv', 'prep', 'conj', 'interj', 'pron'])
 
 function startsWithStressedA(noun: string): boolean {
   if (!/^(a|ha)/.test(noun)) return false
@@ -106,18 +134,19 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
 
   // ---- spelling / accents
   const plainIndex = getPlainIndex(deps.dict)
-  const feats: (Features | undefined)[] = []
+  const feats: Features[][] = words.map(() => [])
   const entriesAt: (VocabEntry[] | undefined)[] = []
+  const readings = (w: string, entries: VocabEntry[] | undefined): Features[] => (ARTICLES[w] ? [ARTICLES[w]] : (entries ?? []).flatMap((e) => readingsOf(w, e)))
   words.forEach((t, i) => {
     const w = t.text.toLowerCase()
     const entries = lookup(deps.dict, w)
     entriesAt[i] = entries
     if (entries) {
-      feats[i] = ARTICLES[w] ?? entries.map((e) => featuresOf(w, e)).find(Boolean)
+      feats[i] = readings(w, entries)
       return
     }
     if (ARTICLES[w]) {
-      feats[i] = ARTICLES[w]
+      feats[i] = [ARTICLES[w]]
       return
     }
     if (/^[A-ZÁÉÍÓÚÑ]/.test(t.text) && i > 0) return // proper noun
@@ -129,7 +158,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
         const why = /[áéíóú]/.test(correct) ? explainAccent(correct) : `“${correct}” does not take a written accent. ${explainAccent(correct)}`
         findings.push({ code: 'accent', message: `Accent: “${t.text}” should be “${correct}”. ${why}`, start: t.start, end: t.end, suggestion: correct, grammar: 'g.stress-and-tilde' })
         const e = deps.dict.get(correct)
-        if (e) feats[i] = ARTICLES[correct] ?? e.map((x) => featuresOf(correct, x)).find(Boolean)
+        if (e) feats[i] = readings(correct, e)
       }
       return
     }
@@ -143,60 +172,65 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     if (i > 0 || words.length > 1) findings.push({ code: 'unknown', message: `“${t.text}” is not a word I know. Check the spelling or the dictionary.`, start: t.start, end: t.end })
   })
 
-  // ---- agreement within noun phrases: det (adv)* adj* noun adj*
+  // ---- agreement within noun phrases: det (adv)* adj* noun adj*, never across punctuation
+  const gap = words.map((t, i) => i > 0 && /[^\s]/.test(text.slice(words[i - 1]!.end, t.start)))
+  const lw = words.map((t) => t.text.toLowerCase())
+  const isAdj = (x: number) => feats[x]!.some((f) => f.role === 'adj') && !feats[x]!.some((f) => f.role === 'det')
   for (let i = 0; i < words.length; i++) {
-    const f = feats[i]
+    const f = feats[i]![0]
     if (!f || f.role !== 'det') continue
     // find the noun within next 3 words, skipping adjectives / adverbs
     let j = i + 1
     const adjs: number[] = []
-    while (j < words.length && j <= i + 3) {
-      const fj = feats[j]
-      const wj = words[j]!.text.toLowerCase()
-      if (ADVERBS_IN_NP.has(wj)) {
+    while (j < words.length && j <= i + 3 && !gap[j]) {
+      if (ADVERBS_IN_NP.has(lw[j]!)) {
         j++
         continue
       }
-      if (fj?.role === 'adj') {
+      if (isAdj(j) && !feats[j]!.some((x) => x.role === 'noun')) {
         adjs.push(j)
         j++
         continue
       }
       break
     }
-    const nf = feats[j]
-    if (!nf || nf.role !== 'noun' || j >= words.length) continue
-    const noun = words[j]!.text.toLowerCase()
-    // trailing adjectives
+    if (j >= words.length || gap[j]) continue
+    const nouns = feats[j]!.filter((x) => x.role === 'noun')
+    if (!nouns.length) continue
+    const entries = entriesAt[j] ?? []
+    // tarde (late), bien…: another part of speech makes the phrase ambiguous; la/lo + a verb form is an object pronoun
+    if (entries.some((e) => NON_NOMINAL.has(e.pos))) continue
+    if (/^(la|lo|las|los)$/.test(lw[i]!) && entries.some((e) => e.pos === 'verb')) continue
+    const noun = lw[j]!
+    const before = [...adjs]
+    // one trailing adjective, possibly after an adverb (una casa muy bonita); a second one may describe something else
     let k = j + 1
-    while (k < words.length && k <= j + 2) {
-      const wk = words[k]!.text.toLowerCase()
-      if (ADVERBS_IN_NP.has(wk)) {
+    while (k < words.length && k <= j + 2 && !gap[k]) {
+      if (ADVERBS_IN_NP.has(lw[k]!)) {
         k++
         continue
       }
-      if (feats[k]?.role === 'adj') {
-        adjs.push(k)
-        k++
-        continue
-      }
+      // justo, medio, solo, claro…: often adverbs after a noun (dejar la oficina justo ahora)
+      if (isAdj(k) && !(entriesAt[k] ?? []).some((e) => e.pos !== 'adj') && !ADVERBIAL_ADJECTIVES.has(lw[k]!)) adjs.push(k)
       break
     }
-    const detOk =
-      (f.gender === 'mf' || nf.gender === 'mf' || f.gender === nf.gender || (nf.gender === 'f' && nf.number === 'sg' && (words[i]!.text.toLowerCase() === 'el' || words[i]!.text.toLowerCase() === 'un') && startsWithStressedA(noun))) &&
-      f.number === nf.number
-    if (!detOk) {
+    const det = lw[i]!
+    const detFits = (n: Features) => agrees(f, n) || (n.gender === 'f' && n.number === 'sg' && f.number === 'sg' && (det === 'el' || det === 'un') && startsWithStressedA(noun))
+    let fitting = nouns.filter(detFits)
+    // an adjective used as a noun (el español, el rojo) followed by another phrase: el árabe dejó en el español palabras…
+    if (!fitting.length && before.some((a) => feats[a]!.some((x) => x.role === 'adj' && agrees(f, x)))) continue
+    if (!fitting.length) {
       findings.push({
-        code: 'agreement', message: `Agreement: “${words[i]!.text} ${noun}” — the article/determiner must match the noun (${describe(nf)}).`,
+        code: 'agreement', message: `Agreement: “${words[i]!.text} ${noun}” — the article/determiner must match the noun (${describe(nouns[0]!)}).`,
         start: words[i]!.start, end: words[j]!.end, grammar: 'g.gender-nouns',
       })
+      fitting = nouns
     }
     for (const a of adjs) {
-      const af = feats[a]!
-      const ok = (af.gender === 'mf' || nf.gender === 'mf' || af.gender === nf.gender) && af.number === nf.number
+      const ok = feats[a]!.some((af) => af.role === 'adj' && fitting.some((n) => agrees(af, n)))
       if (!ok) {
         findings.push({
-          code: 'agreement', message: `Agreement: “${words[a]!.text}” must agree with “${noun}” (${describe(nf)}).`,
+          code: 'agreement', message: `Agreement: “${words[a]!.text}” must agree with “${noun}” (${describe(fitting[0]!)}).`,
           start: Math.min(words[a]!.start, words[j]!.start), end: Math.max(words[a]!.end, words[j]!.end), grammar: 'g.adjective-agreement',
         })
       }
@@ -206,19 +240,27 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   // ---- subject pronoun + verb person
   const verbIndex = getVerbIndex(deps)
   for (let i = 0; i < words.length; i++) {
-    const w = words[i]!.text.toLowerCase()
+    const w = lw[i]!
     const persons = SUBJECT_PRONOUNS[w]
     if (!persons) continue
+    // "mi novia y yo tenemos", "yo que tú…", "¿pagas tú…?": coordinated, comparative or inverted subjects
+    if (i > 0 && !gap[i] && (COORDINATORS.has(lw[i - 1]!) || verbIndex.has(lw[i - 1]!))) continue
     let j = i + 1
-    while (j < words.length && CLITICS.has(words[j]!.text.toLowerCase())) j++
-    const v = words[j]?.text.toLowerCase()
-    if (!v) continue
+    while (j < words.length && !gap[j] && CLITICS.has(lw[j]!)) j++
+    if (j >= words.length || gap[j]) continue
+    // la/lo/los/las before a noun is an article, not a clitic (tú la cena…)
+    if (j > i + 1 && /^(la|lo|las|los)$/.test(lw[j - 1]!) && (entriesAt[j] ?? []).some((e) => e.pos === 'noun')) continue
+    const v = lw[j]!
     const hits = verbIndex.get(v)
     if (!hits || hits.length === 0) continue
+    // a form that is also another word (para: parar / the preposition) is not clearly a verb
+    if ((entriesAt[j] ?? []).some((e) => e.pos !== 'verb')) continue
     if (hits.some((h) => persons.includes(h.person))) continue
+    // tú + the imperative (tú prepara la cena, mientras yo…)
+    if (persons.includes(1) && hits.some((h) => conjugate(h.lemma, deps.verbs).forms.impAff?.[1] === v)) continue
     // compound: "ha comido": only check the auxiliary (first word) - fine.
     const h = hits[0]!
-    const correct = conjugate(h.lemma, deps.verbs).forms[h.tense][persons[0]!]
+    const correct = conjugate(h.lemma, deps.verbs).forms[h.tense][persons[0]!]?.split(' ')[0] // compound tenses: the auxiliary the learner wrote
     findings.push({
       code: 'verb-agreement', message: `“${w} ${v}”: the verb must agree with ${PERSONS[persons[0]!]}${correct ? ` → “${w} ${correct}”` : ''}.`,
       start: words[i]!.start, end: words[j]!.end, suggestion: correct ?? undefined, grammar: 'g.subject-pronouns',
@@ -230,7 +272,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   for (const r of deps.rules) {
     let re: RegExp
     try {
-      re = new RegExp(r.pattern, 'giu')
+      re = contentRegExp(r.pattern, 'giu')
     } catch {
       continue
     }

@@ -281,3 +281,42 @@ dialogues:
       - { q: "Segundo o guia, qual dos rios é mais rápido?", options: ["O Negro", "O Solimões", "Os dois têm a mesma velocidade"], answer: 1, explain: "O Negro é mais lento, ao passo que o Solimões é mais rápido." }
       - { q: "O que acontece depois de cerca de seis quilômetros?", options: ["Os rios se separam de vez", "As águas se misturam e formam o Amazonas", "O rio Negro desaparece"], answer: 1, explain: "As águas acabam se misturando e formam o rio Amazonas." }
       - { q: "Quem vai escrever o texto para o blog?", options: ["Diego", "Laura", "Seu Raimundo"], answer: 1, explain: "Ou melhor, a Laura vai escrever: ou melhor corrects what Diego said first." }
+writing:
+  - task: "Write an expository paragraph explaining the Meeting of the Waters, using advanced connectors (ao passo que, em virtude de, por conseguinte, na medida em que…)."
+    min: 110
+    max: 190
+    use: [w.ao-passo-que, w.em-virtude-de, w.por-conseguinte, w.densidade, w.sedimento]
+    useAtLeast: 3
+    grammar: [g.discourse-markers-advanced]
+    expect:
+      - { pattern: '\b(ao passo que|na medida em que|em virtude d|em decorr[eê]ncia d|tendo em vista|haja vista|dado que|por conseguinte|destarte|n[aã]o obstante|porquanto)', hint: "Use advanced connectors: ao passo que, em virtude de, por conseguinte…" }
+    model: { es: "O Encontro das Águas, perto de Manaus, é um dos fenômenos naturais mais impressionantes da Amazônia. Ali, o Rio Negro, de águas escuras, encontra o Rio Solimões, de cor barrenta. O Rio Negro é ácido e quente, ao passo que o Solimões é mais frio e carrega muito sedimento. Em virtude dessas diferenças de temperatura, de velocidade e de densidade, as águas não se misturam logo: seguem lado a lado por cerca de seis quilômetros. Por conseguinte, quem observa a paisagem de um barco vê dois rios de cores diferentes dentro do mesmo leito. Só depois as águas se juntam e formam o Rio Amazonas, na medida em que a força do rio vence o contraste entre elas.", en: "The Meeting of the Waters, near Manaus, is one of the most impressive natural phenomena in the Amazon. There the Rio Negro, with its dark waters, meets the Solimões, which is muddy brown. The Rio Negro is acidic and warm, whereas the Solimões is colder and carries a lot of sediment. Because of these differences in temperature, speed and density, the waters don't mix straight away: they run side by side for about six kilometres. Consequently, anyone watching from a boat sees two rivers of different colours in the same bed. Only later do the waters merge and form the Amazon, as the force of the river overcomes the contrast between them." }
+  - task: "Compare two Amazonian cities (or two rivers, or two people), keeping reference clear across sentences with a primeira / a segunda, este último, aquele, tais…"
+    min: 110
+    max: 190
+    use: [w.este-último, w.no-que-diz-respeito-a, w.quanto-a, w.em-relação-a, w.sobretudo]
+    useAtLeast: 3
+    grammar: [g.anaphora-cohesion]
+    expect:
+      - { pattern: '\b(este [uú]ltimo|esta [uú]ltima|aquele|aquela|o primeiro|a primeira|o segundo|a segunda|tal|tais)\b', hint: "Refer back clearly: a primeira, a segunda, esta última, aquela…" }
+      - { pattern: '\b(no que diz respeito|no que tange|quanto [aà]o?|em rela[cç][aã]o a)', hint: "Introduce each topic: no que diz respeito a…, quanto à…" }
+    model: { es: "Manaus e Belém são as duas capitais mais importantes da Amazônia, mas são muito diferentes. A primeira fica no coração da floresta, às margens do Rio Negro; a segunda, perto do mar, na foz do Amazonas. No que diz respeito à economia, Manaus depende sobretudo da indústria, ao passo que Belém vive mais do comércio e do porto. Quanto à comida, esta última é famosa pelo açaí e pelo tacacá, enquanto aquela se destaca pelos peixes de rio, como o tambaqui. Em relação ao clima, as duas são quentes e úmidas o ano inteiro. Tais diferenças tornam a viagem entre as duas capitais, que dura cinco dias de barco, ainda mais interessante.", en: "Manaus and Belém are the two most important capitals in the Amazon, but they are very different. The former lies in the heart of the forest, on the banks of the Rio Negro; the latter near the sea, at the mouth of the Amazon. As far as the economy is concerned, Manaus depends above all on industry, whereas Belém lives more from trade and its port. As for food, the latter is famous for açaí and tacacá, while the former stands out for its river fish, such as tambaqui. With regard to climate, both are hot and humid all year round. Such differences make the journey between the two capitals, which takes five days by boat, all the more interesting." }
+  - task: "Write a short review (resenha) of a documentary, book or film about the Amazon: a summary, your assessment and a recommendation."
+    min: 110
+    max: 190
+    use: [w.resenha, w.documentário, w.cotidiano, w.em-síntese, w.narrativo]
+    useAtLeast: 3
+    grammar: [g.text-types]
+    expect:
+      - { pattern: '\b(em s[ií]ntese|em [uú]ltima an[aá]lise|em suma|em resumo)\b', hint: "Sum up: Em síntese…, Em última análise…" }
+      - { pattern: '\b(recomendo|recomendo-o|vale a pena|merece|n[aã]o recomendo)\b', hint: "Recommend it or not: Recomendo…, Vale a pena…" }
+    model: { es: "O documentário que assisti ontem acompanha a vida de uma família ribeirinha durante um ano inteiro, da cheia à vazante do rio. A proposta é simples: não há narrador, e são os moradores que contam a sua própria história. O ritmo lento pode incomodar alguns espectadores, mas, a meu ver, é justamente esse ritmo que nos faz entender o cotidiano da floresta. As imagens são impressionantes, sobretudo as cenas da cheia, quando a casa da família parece flutuar sobre a água. O texto narrativo é mínimo, e o silêncio diz muito. Em síntese, trata-se de um trabalho sensível e honesto. Recomendo-o a quem quiser conhecer a Amazônia real, longe dos cartões-postais.", en: "The documentary I watched yesterday follows the life of a riverside family for a whole year, from the river's high water to its low water. The approach is simple: there's no narrator, and it's the residents who tell their own story. The slow pace may bother some viewers, but in my view it's precisely this pace that makes us understand everyday life in the forest. The images are impressive, especially the flood scenes, when the family's house seems to float on the water. The narrative text is minimal, and the silence says a lot. In short, it's a sensitive and honest piece of work. I recommend it to anyone who wants to know the real Amazon, far from the postcards." }
+  - task: "Write a paragraph for a study guide that explains and illustrates an abstract idea (for example, 'in the Amazon, the river shapes life'), using verbs like elucidar, exemplificar, ilustrar, sintetizar and reiterar."
+    min: 110
+    max: 190
+    use: [w.elucidar, w.exemplificar, w.sintetizar, w.reiterar, w.inerente]
+    useAtLeast: 3
+    grammar: [g.discourse-markers-advanced, g.anaphora-cohesion]
+    expect:
+      - { pattern: '\b(elucid|exemplific|ilustr|sintetiz|reiter|explicit|discorr)', hint: "Use academic verbs: elucidar, exemplificar, ilustrar, reiterar…" }
+    model: { es: "Para elucidar a ideia de que o rio organiza a vida na Amazônia, convém exemplificar com o calendário de uma comunidade ribeirinha. Durante a cheia, a pesca fica difícil e as famílias dependem da mandioca plantada nos meses anteriores; na vazante, ao contrário, as praias de areia aparecem de novo e há peixe para todos. A escola, as festas e até os casamentos seguem esse ritmo. Tais exemplos ilustram uma relação inerente entre as pessoas e a água, que não se explica apenas pelo mapa da região. Para sintetizar, reitero o argumento principal: na Amazônia, não é o calendário que decide o ritmo do rio, mas o rio que decide o ritmo do calendário.", en: "To shed light on the idea that the river organises life in the Amazon, it's worth giving the example of a riverside community's calendar. During the high water, fishing becomes difficult and families depend on cassava planted in previous months; at low water, by contrast, the sandy beaches reappear and there's fish for everyone. School, festivals and even weddings follow this rhythm. Such examples illustrate a relationship between people and water that is inherent, and not explained by the map of the region alone. To sum up, I reiterate the main argument: in the Amazon, it is not the calendar that sets the river's rhythm, but the river that sets the calendar's." }

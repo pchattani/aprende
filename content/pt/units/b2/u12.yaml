@@ -271,3 +271,44 @@ dialogues:
       - { q: "Por que a Joana pede desculpa?", options: ["Porque chegou atrasada", "Porque quer tratar a Bia por tu", "Porque não entende o sotaque"], answer: 1, explain: "Posso tratar-te por tu?: she asks before using tu." }
       - { q: "O que é um machimbombo?", options: ["Um tipo de barco", "Um ônibus, em Moçambique", "Um prato típico"], answer: 1, explain: "Bia explains: Machimbombo? Aqui é ônibus, e em Portugal é autocarro." }
       - { q: "Por que eles estão na Baía dos Golfinhos de manhã cedo?", options: ["Para mergulhar", "Para esperar os golfinhos", "Para pegar o avião"], answer: 1, explain: "They are waiting for the dolphins (à espera dos golfinhos), which arrive at the end." }
+writing:
+  - task: "A friend is going to Lisbon. Compare Brazilian and European Portuguese for them: vocabulary, pronunciation and forms of address."
+    min: 80
+    max: 140
+    use: [w.autocarro, w.comboio, w.telemóvel, w.pequeno-almoço, w.sotaque]
+    useAtLeast: 3
+    grammar: [g.lusophone-varieties, g.address-across-lusophone]
+    expect:
+      - { pattern: '(autocarro|comboio|telem[oó]vel|pequeno-almo[cç]o|casa de banho|frigor[ií]fico)', hint: "Give some European words: autocarro, comboio, telemóvel…" }
+      - { pattern: '\b(em portugal|os portugueses|no brasil|os brasileiros)\b', hint: "Compare the two: No Brasil… / Em Portugal…" }
+    model: { es: "Você vai adorar Lisboa, mas prepare-se para algumas diferenças! Em Portugal, o ônibus é o autocarro, o trem é o comboio e o celular é o telemóvel. O café da manhã se chama pequeno-almoço. O sotaque também é bem diferente: os portugueses quase não falam algumas vogais, então no começo vai ser difícil entender. Além disso, em Portugal se usa muito tu entre amigos. Com pessoas mais velhas, use sempre o senhor ou a senhora. E não se assuste: o português de Portugal é a mesma língua, só com outra música.", en: "You'll love Lisbon, but get ready for some differences! In Portugal the bus is the autocarro, the train is the comboio and the mobile phone is the telemóvel. Breakfast is called pequeno-almoço. The accent is also very different: the Portuguese hardly say some vowels, so at first it'll be hard to understand. Also, in Portugal people use tu a lot between friends. With older people, always use o senhor or a senhora. And don't panic: Portugal's Portuguese is the same language, just with a different tune." }
+  - task: "Write a short paragraph about Portuguese in Africa and Asia: where it is spoken, how it varies and which other languages live alongside it."
+    min: 80
+    max: 140
+    use: [w.língua-oficial, w.língua-materna, w.bilíngue, w.crioulo, w.lusofonia]
+    useAtLeast: 3
+    grammar: [g.lusophone-varieties]
+    expect:
+      - { pattern: '(angola|mo[cç]ambique|cabo verde|guin[eé]|s[aã]o tom[eé]|timor|macau)', hint: "Name some Lusophone countries: Angola, Moçambique, Cabo Verde…" }
+      - { pattern: '\b(l[ií]ngua oficial|l[ií]ngua materna|bil[ií]ngues?|crioulo)\b', hint: "Use the key terms: língua oficial, língua materna, bilíngue, crioulo." }
+    model: { es: "O português é a língua oficial de nove países, e a lusofonia está presente em quatro continentes. Em Angola e em Moçambique, muitas pessoas são bilíngues: falam português e uma língua africana, que muitas vezes é a sua língua materna. Em Cabo Verde, além do português, fala-se crioulo, uma língua que nasceu do contato entre o português e as línguas africanas. Em Timor-Leste, o português divide espaço com outras línguas locais. Cada variedade tem o seu sotaque e as suas próprias palavras.", en: "Portuguese is the official language of nine countries, and the Lusophone world spans four continents. In Angola and Mozambique many people are bilingual: they speak Portuguese and an African language, which is often their mother tongue. In Cape Verde, besides Portuguese, people speak Creole, a language born of contact between Portuguese and African languages. In East Timor, Portuguese shares space with other local languages. Each variety has its own accent and its own words." }
+  - task: "Write short greetings to three people, adapting the form of address: a Portuguese colleague in Lisbon (tu), an older Brazilian lady (a senhora) and a young friend in Maputo."
+    min: 80
+    max: 140
+    use: [w.tu, w.connosco, w.a-senhora, w.contigo, w.teu]
+    useAtLeast: 3
+    grammar: [g.address-across-lusophone]
+    expect:
+      - { pattern: '\b(tu|contigo|connosco|queres|est[aá]s|vens|teu|tua)\b', hint: "Use tu forms where they're natural: Queres…?, contigo, Como estás?" }
+      - { pattern: '\b(o senhor|a senhora)\b', hint: "Use o senhor / a senhora for respect." }
+    model: { es: "Para o meu colega de Lisboa: Olá, João! Então, está tudo bem contigo? Queres jantar connosco no sábado? Diz-me qualquer coisa. Para a Dona Marta, em Fortaleza: Bom dia, Dona Marta! Como vai a senhora? A senhora recebeu as fotos da festa? Um grande abraço. Para a minha amiga de Maputo: Olá, Lurdes! Como estás? Tu vens à praia amanhã? Fico à espera da tua resposta. Beijinhos! Em Moçambique, como em Portugal, o tu é muito comum entre amigos, mas no Brasil a gente prefere você.", en: "To my colleague in Lisbon: Hi, João! So, is everything OK with you? Do you want to have dinner with us on Saturday? Let me know. To Dona Marta in Fortaleza: Good morning, Dona Marta! How are you? Did you get the photos from the party? A big hug. To my friend in Maputo: Hi, Lurdes! How are you? Are you coming to the beach tomorrow? I'm waiting for your reply. Kisses! In Mozambique, as in Portugal, tu is very common between friends, but in Brazil we prefer você." }
+  - task: "Explain to another learner the main spelling changes of the Acordo Ortográfico and the differences that remain between Brazil and Portugal, with examples."
+    min: 80
+    max: 150
+    use: [w.acordo-ortográfico, w.acento, w.consoante, w.hífen, w.grafia]
+    useAtLeast: 3
+    grammar: [g.spelling-agreement]
+    expect:
+      - { pattern: '\b(acordo ortogr[aá]fico|acento|consoantes?|h[ií]fen|grafia)\b', hint: "Use the key terms: acento, consoante, hífen, grafia…" }
+      - { pattern: '\b(por exemplo|como em|como)\b', hint: "Give examples: por exemplo, …" }
+    model: { es: "Desde o Acordo Ortográfico, o Brasil e Portugal escrevem de forma mais parecida, mas ainda há diferenças. Em primeiro lugar, algumas palavras perderam o acento nos dois países: hoje se escreve ideia e voo sem acento. Em segundo lugar, Portugal deixou de escrever muitas consoantes que não se ouvem, como em ação e ótimo, que agora têm a mesma grafia nos dois lados do oceano. Além disso, o uso do hífen mudou. No entanto, a pronúncia continua diferente e, por isso, alguns acentos também.", en: "Since the Spelling Agreement, Brazil and Portugal write in a more similar way, but there are still differences. Firstly, some words lost their accent in both countries: today ideia and voo are written without an accent. Secondly, Portugal stopped writing many consonants that aren't heard, as in ação and ótimo, which now have the same spelling on both sides of the ocean. Also, the use of the hyphen has changed. However, pronunciation is still different and, for that reason, so are some accents." }

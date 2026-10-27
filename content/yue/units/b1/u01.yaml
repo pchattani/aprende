@@ -296,3 +296,43 @@ dialogues:
       - { q: "阿詩約咗美琪去做乜嘢？", options: ["去車公廟", "去城門河邊踩單車", "去補習"], answer: 1, explain: "約咗美琪去城門河邊踩單車: she's cycling by the Shing Mun River." }
       - { q: "邊個整好咗部電腦？", options: ["媽媽", "美琪", "哥哥"], answer: 2, explain: "哥哥幫我整好咗: her older brother fixed it." }
       - { q: "阿詩要幾點前返屋企？", options: ["五點", "六點", "七點"], answer: 1, explain: "記得六點前返嚟食飯: back before six for dinner." }
+writing:
+  - task: "Message your study group about yesterday's quiz: what you got wrong or misread, and what you didn't finish in time."
+    min: 40
+    max: 90
+    use: [w.cak1-jim6, w.m4-cit3, w.tai2-co3, w.gaau2-co3, w.tai4-muk6]
+    useAtLeast: 3
+    grammar: [g.resultative-complements, g.potential-resultatives]
+    expect:
+      - { pattern: "(睇|聽|搞|寫)錯", hint: "Say what went wrong with a result complement: 睇錯, 搞錯…" }
+      - { pattern: "唔切|唔完|唔晒|唔明", hint: "Say what you couldn't do: 做唔切, 做唔完…" }
+    model: { es: "尋日個測驗我做唔切，最後兩條題目冇做完。我仲睇錯咗一條題目，搞錯咗個答案，所以分數好差。下次我一定要睇清楚先答。", en: "I didn't finish yesterday's quiz in time: I didn't do the last two questions. I also misread a question and got the answer wrong, so my mark is bad. Next time I must read carefully before answering." }
+  - task: "Your child is getting ready for school. Write them a note with verb + 好: ask if they've packed their bag and done their homework, and tell them what you've done."
+    min: 40
+    max: 80
+    use: [w.zap1-hou2, w.syu1-baau1, w.sai2-gon1-zeng6, w.haau6-fuk6, w.lou6-toi4]
+    useAtLeast: 3
+    grammar: [g.jyun-hou]
+    expect:
+      - { pattern: "(執|做|準備|寫|洗)好", hint: "Use verb + 好 for 'done properly': 執好書包." }
+      - { pattern: "未", hint: "Ask if it's done yet: …未呀？" }
+    model: { es: "你執好書包未呀？功課做好未呀？你件校服我已經洗乾淨，掛咗喺露台。食完早餐記得帶字典同間尺，唔好遲到呀。", en: "Have you packed your schoolbag? Have you finished your homework? I've washed your uniform; it's hanging on the balcony. After breakfast remember to bring your dictionary and ruler, and don't be late." }
+  - task: "You went to buy egg tarts in Sha Tin, but things went wrong. Write what happened, using 晒."
+    min: 40
+    max: 80
+    use: [w.saai3, w.maai6-saai3, w.jung6-saai3, w.daan6-taat1]
+    useAtLeast: 3
+    grammar: [g.saai-all]
+    expect:
+      - { pattern: "晒", hint: "Say it's all gone with verb + 晒: 賣晒, 用晒." }
+    model: { es: "我今朝十點去沙田買蛋撻，不過已經賣晒喇。我好失望，因為我仲用晒啲散紙搭的士去。下次一定要早啲去。", en: "I went to buy egg tarts in Sha Tin at ten this morning, but they were already sold out. I was really disappointed, because I'd used up all my change on a taxi there. Next time I must go earlier." }
+  - task: "A friend asks how your Cantonese lessons are going. Tell them what you can't understand or can't finish, and what you can now do."
+    min: 40
+    max: 80
+    use: [w.teng1-m4-ming4, w.gung1-fo3, w.lou5-si1, w.dak1-cit3]
+    useAtLeast: 2
+    grammar: [g.potential-resultatives]
+    expect:
+      - { pattern: "唔明|唔完|唔晒|唔切", hint: "Say what you can't manage: 聽唔明, 做唔完…" }
+      - { pattern: "得明|得切|得完", hint: "Say what you can now do: 睇得明…" }
+    model: { es: "老師講得太快，我成日都聽唔明。功課又多，我日日都做唔完。不過我而家睇得明好多字喇，好開心。我會繼續努力！", en: "The teacher speaks too fast and I often can't understand. There's lots of homework too, and I can't finish it every day. But now I can read lots of characters, which makes me happy. I'll keep working hard!" }

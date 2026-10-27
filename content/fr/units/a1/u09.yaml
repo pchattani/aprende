@@ -277,3 +277,43 @@ dialogues:
       - { q: "Qu'est-ce qu'ils vont faire ce soir ?", options: ["Aller au cinéma.", "Faire la cuisine.", "Visiter une exposition."], answer: 0, explain: "Camille suggests the cinema with Julie and Nicolas says « Pourquoi pas ! »." }
       - { q: "Où est-ce qu'ils vont se voir ce soir ?", options: ["Devant le Louvre.", "Devant la station Odéon.", "Chez Camille."], answer: 1, explain: "« Devant la station Odéon, à huit heures et demie. »" }
       - { q: "Qu'est-ce que Camille va faire demain matin ?", options: ["Une balade à vélo.", "Les courses.", "La cuisine."], answer: 1, explain: "« Je vais faire les courses le matin. » The bike ride will be in the afternoon." }
+writing:
+  - task: "Write to a friend about your plans for this weekend, using the near future (je vais + infinitive)."
+    min: 15
+    max: 40
+    use: [w.visiter, w.voir, w.rester, w.ce-soir, w.prochain]
+    useAtLeast: 2
+    grammar: [g.futur-proche]
+    expect:
+      - { pattern: "\\b(vais|vas|va|allons|allez|vont) (ne |pas )?[a-zéèêç]+(er|ir|re)\\b", hint: "Use the near future: je vais visiter, on va voir…" }
+    model: { es: "Ce week-end, je vais visiter le musée d'Orsay avec Julie. Samedi soir, on va voir un film au cinéma. Dimanche, je vais rester à la maison !", en: "This weekend I'm going to visit the Musée d'Orsay with Julie. On Saturday evening we're going to see a film at the cinema. On Sunday I'm going to stay at home!" }
+  - task: "You bump into Hugo in the métro. Tell him where you are going today and how (au, à la, à l', aux)."
+    es: "Salut ! Tu vas où ?"
+    min: 12
+    max: 40
+    use: [w.aller, w.musée, w.métro, w.à-pied, w.rapide]
+    useAtLeast: 3
+    grammar: [g.aller-present, g.contractions-au-du]
+    expect:
+      - { pattern: "\\b(au|aux)\\b|[aà] la\\b|[aà] l['’]", hint: "Say where: au musée, à la gare, à l'hôtel, aux Galeries…" }
+      - { pattern: "\\b(vais|vas|va|allons|allez|vont)\\b", hint: "Use aller: je vais …" }
+    model: { es: "Salut, Hugo ! Je vais au musée du Louvre, et après, je vais à la gare de Lyon. Je prends le métro, c'est rapide. Et toi, tu vas où ?", en: "Hi, Hugo! I'm going to the Louvre, and afterwards I'm going to the Gare de Lyon. I'm taking the metro, it's quick. And you, where are you going?" }
+  - task: "Describe what you and your family do on a Saturday (faire les courses, faire la cuisine, faire du sport…)."
+    min: 15
+    max: 40
+    use: [w.faire, w.courses, w.cuisine, w.vaisselle, w.sport]
+    useAtLeast: 3
+    grammar: [g.faire-present]
+    expect:
+      - { pattern: "\\b(fais|fait|faisons|faites|font)\\b", hint: "Use faire: je fais, nous faisons, ils font…" }
+    model: { es: "Le samedi, ma mère fait les courses au marché. Mon père fait la cuisine et nous faisons la vaisselle. L'après-midi, mes frères font du sport et moi, je fais une promenade.", en: "On Saturdays my mother does the shopping at the market. My father does the cooking and we do the washing-up. In the afternoon my brothers do sport and I go for a walk." }
+  - task: "Léa is free tonight. Reply: suggest two things to do together with on (On va … ? On peut … ?) and say what you think."
+    es: "Ce soir, je n'ai pas de travail ! On fait quoi ?"
+    min: 12
+    max: 40
+    use: [w.on, w.ensemble, w.idée, w.super, w.on-y-va]
+    useAtLeast: 3
+    grammar: [g.on-nous, g.futur-proche]
+    expect:
+      - { pattern: "\\bon (va|peut|fait|prend|mange|sort|visite|regarde|y va)\\b", hint: "Suggest with on: On va au cinéma ? On peut …" }
+    model: { es: "Super idée ! On va au cinéma ensemble ? Ou on mange une crêpe à Montmartre ? Après, on peut faire une balade sur les quais. On y va ?", en: "Great idea! Shall we go to the cinema together? Or shall we eat a crêpe in Montmartre? Afterwards we can go for a walk along the quays. Shall we go?" }

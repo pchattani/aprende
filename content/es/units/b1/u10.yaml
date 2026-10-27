@@ -279,3 +279,44 @@ dialogues:
       - { q: "¿Qué piensa Pablo que le pasa a Jorge?", options: ["Que debe de estar enfermo", "Que se ha ido de vacaciones", "Que está en la oficina de al lado"], answer: 0 }
       - { q: "¿Por qué no llama Nuria a la hermana de Jorge?", options: ["Porque no tiene su número", "Porque la hermana trabaja lejos", "Porque no quiere molestarla"], answer: 0, explain: "'Si tuviera su número, la llamaría ahora mismo.'" }
       - { q: "¿Por qué llega tarde Jorge en realidad?", options: ["Porque se ha parado a comprar pasteles por su cumpleaños", "Porque estaba enfermo", "Porque se quedó sin batería"], answer: 0 }
+writing:
+  - task: "Your neighbour in Tilcara seems to have disappeared. Write guesses about where he is and what happened (estará …, habrá ido …, sería …)."
+    min: 50
+    max: 100
+    use: [w.misterio, w.apagado, w.sospechoso, w.a-estas-horas, w.desaparecido]
+    useAtLeast: 3
+    grammar: [g.future-conditional-probability]
+    expect:
+      - { pattern: "\\b(estar[aá]|ser[aá]|tendr[aá]|habr[aá]|ir[aá]|har[aá]|estar[ií]a|ser[ií]a|tendr[ií]a|habr[ií]a)", hint: "Speculate with the future or conditional: estará de viaje, habrá ido …, sería …" }
+    model: { es: "¡Qué misterio! Las luces de la casa del señor Julio están apagadas desde el lunes. Estará de viaje, o habrá ido a visitar a su hija a Jujuy. A estas horas normalmente está en la plaza, así que algo habrá pasado. Ayer vi a un hombre sospechoso cerca de su puerta: sería un amigo, o quizás un ladrón. Espero que no esté desaparecido.", en: "What a mystery! The lights in Mr Julio's house have been off since Monday. He must be away, or he'll have gone to visit his daughter in Jujuy. At this time he's usually in the square, so something must have happened. Yesterday I saw a suspicious man near his door: maybe he was a friend, or maybe a thief. I hope he hasn't gone missing." }
+  - task: "Someone left a suitcase at your hotel. Look at the clues and write deductions about the owner (debe de ser …, debe de tener …)."
+    es: "Pistas: una maleta muy cara, un reloj de lujo, una guía de Tilcara en francés y unas botas de montaña."
+    min: 50
+    max: 100
+    use: [w.deber-de, w.lujo, w.pertenecer, w.evidentemente, w.pista]
+    useAtLeast: 3
+    grammar: [g.deber-de]
+    expect:
+      - { pattern: "\\bdeben? de\\b", hint: "Deduce with deber de: debe de ser francés …" }
+    model: { es: "La maleta debe de pertenecer a alguien con mucho dinero, porque es de una marca de lujo y el reloj también. Evidentemente, debe de ser francés o debe de hablar francés, ya que la guía está en ese idioma. Por las botas, debe de gustarle mucho caminar por la montaña. Con estas pistas, seguro que ahora está haciendo una excursión al Pucará y vuelve esta noche.", en: "The suitcase must belong to someone with a lot of money, because it's a luxury brand and so is the watch. Obviously, he must be French or speak French, as the guide is in that language. From the boots, he must really like walking in the mountains. With these clues, I'm sure he's on a trip to the Pucará right now and will be back tonight." }
+  - task: "What would you do if you won the lottery? Write 4–5 sentences with si + imperfect subjunctive and the conditional."
+    min: 50
+    max: 100
+    use: [w.tocar-la-loteria, w.donar, w.dar-la-vuelta-al-mundo, w.dimitir, w.lujo]
+    useAtLeast: 3
+    grammar: [g.conditional-hypothetical]
+    expect:
+      - { pattern: "\\bsi (me |te |le |nos )?[a-záéíóúñ]+(ara|aras|[aá]ramos|aran|iera|ieras|i[eé]ramos|ieran)\\b", hint: "Use si + imperfect subjunctive: si me tocara …, si tuviera …" }
+      - { pattern: "\\b[a-zñ]+(ría|rías|ríamos|rían)(?![a-záéíóúñ])", hint: "Give the result in the conditional: haría, viajaría, donaría …" }
+    model: { es: "Si me tocara la lotería, lo primero que haría sería dimitir de mi trabajo. Después daría la vuelta al mundo con mi pareja y pasaría un mes entero en Tilcara. No compraría coches de lujo, pero sí una casa pequeña con jardín. Si tuviera mucho dinero, también donaría una parte a una asociación que ayuda a los niños. ¡Y nunca más me levantaría temprano!", en: "If I won the lottery, the first thing I'd do would be to quit my job. Then I'd go round the world with my partner and spend a whole month in Tilcara. I wouldn't buy luxury cars, but I would buy a small house with a garden. If I had a lot of money, I'd also donate some of it to a charity that helps children. And I'd never get up early again!" }
+  - task: "Your friend asks for advice about a big decision. Answer with yo que tú, en tu lugar, si fuera tú + the conditional."
+    es: "Me han ofrecido un trabajo muy bien pagado en otra ciudad, pero tendría que dejar a mi familia. ¿Qué harías tú?"
+    min: 50
+    max: 100
+    use: [w.en-tu-lugar, w.yo-que-tu, w.arriesgarse, w.arrepentirse, w.riesgo]
+    useAtLeast: 3
+    grammar: [g.conditional-hypothetical]
+    expect:
+      - { pattern: "en tu lugar|yo que t[uú]|si (yo )?fuera t[uú]|si estuviera en tu", hint: "Give advice: yo que tú …, en tu lugar …, si fuera tú …" }
+      - { pattern: "\\b[a-zñ]+(ría|rías|ríamos|rían)(?![a-záéíóúñ])", hint: "Use the conditional: aceptaría, hablaría …" }
+    model: { es: "¡Qué decisión tan difícil! Yo que tú, aceptaría la oferta, porque es una gran oportunidad. En tu lugar, hablaría primero con tu familia y les explicaría la situación. Si fuera tú, me arriesgaría: siempre puedes volver si no te gusta. Lo peor sería quedarte y arrepentirte toda la vida. Además, hoy en día es fácil visitar a la familia cada mes.", en: "What a difficult decision! If I were you, I'd accept the offer, because it's a great opportunity. In your place, I'd talk to your family first and explain the situation to them. If I were you, I'd take the risk: you can always come back if you don't like it. The worst thing would be to stay and regret it all your life. Besides, nowadays it's easy to visit your family every month." }

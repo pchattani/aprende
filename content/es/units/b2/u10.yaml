@@ -251,3 +251,45 @@ dialogues:
       - { q: "What example does Elena use to support her position?", options: ["London's toll", "Pontevedra, where shops sell more since the centre was closed to traffic", "A study by the ministry"], answer: 1 }
       - { q: "What does Tomás propose instead of a ban?", options: ["More parking", "A toll whose money pays for free buses", "Closing the shops"], answer: 1 }
       - { q: "How does the debate end?", options: ["They agree on a toll first and a ban later", "Elena gives up", "The teacher decides Tomás is right"], answer: 0 }
+writing:
+  - task: "Write a short argumentative essay: is mass tourism good for small towns like those in the hills of San Luis? Introduce the topic, give arguments on both sides and conclude (en la actualidad, cabe destacar, si bien, ahora bien, por todo ello)."
+    min: 100
+    max: 150
+    use: [w.turismo, w.masivo, w.cabe-destacar, w.si-bien, w.por-todo-ello]
+    useAtLeast: 3
+    grammar: [g.argumentation-connectors, g.essay-structure]
+    expect:
+      - { pattern: "en la actualidad|en los [uú]ltimos a[nñ]os|hoy en d[ií]a", hint: "Introduce the topic: en la actualidad …" }
+      - { pattern: "cabe destacar|si bien|ahora bien|es m[aá]s|en efecto|no cabe duda", hint: "Use argument connectors: cabe destacar, si bien, ahora bien …" }
+      - { pattern: "por todo ello|en suma|a fin de cuentas|en definitiva|en conclusi[oó]n", hint: "Conclude: por todo ello …, en definitiva …" }
+    model: { es: "En la actualidad, el turismo se ha convertido en la principal fuente de ingresos de muchos pueblos de las sierras de San Luis. No cabe duda de que trae beneficios: crea empleo, mantiene abiertas las tiendas y da a conocer las tradiciones locales. Cabe destacar, además, que muchos jóvenes ya no tienen que irse a la ciudad. Ahora bien, el turismo masivo también tiene inconvenientes. Si bien los turistas traen dinero, el precio de la vivienda sube y los residentes sufren el ruido y la basura. Es más, algunos paisajes se están deteriorando. Por todo ello, considero que el turismo es bueno siempre que se organice de forma sostenible y con normas claras.", en: "Nowadays, tourism has become the main source of income for many villages in the hills of San Luis. There is no doubt that it brings benefits: it creates jobs, keeps shops open and makes local traditions known. It is also worth highlighting that many young people no longer have to leave for the city. However, mass tourism also has drawbacks. Although visitors bring money, house prices rise and residents suffer from noise and rubbish. What is more, some landscapes are deteriorating. For all these reasons, I believe tourism is good as long as it is organised sustainably and with clear rules." }
+  - task: "Give a nuanced opinion on artificial intelligence in education, using a mi juicio, no es que …, hasta cierto punto, en cierto modo and discrepar."
+    min: 80
+    max: 150
+    use: [w.a-mi-juicio, w.inteligencia-artificial, w.matizar, w.discrepar, w.hasta-cierto-punto]
+    useAtLeast: 3
+    grammar: [g.opinion-structures]
+    expect:
+      - { pattern: "a mi juicio|desde mi punto de vista|considero que|me da la impresi[oó]n", hint: "Give your opinion: a mi juicio …, me da la impresión de que …" }
+      - { pattern: "no es que|hasta cierto punto|en cierto modo|en parte|discrepo", hint: "Add nuance: no es que …, hasta cierto punto …, en cierto modo …" }
+    model: { es: "A mi juicio, la inteligencia artificial puede ser una herramienta muy útil en la educación, pero hay que matizar. No es que esté en contra de la tecnología; de hecho, la uso a diario. Sin embargo, me da la impresión de que muchos estudiantes la utilizan para copiar en lugar de aprender. Hasta cierto punto, entiendo a los profesores que quieren prohibirla, aunque discrepo de esa solución. En cierto modo, pasa lo mismo que con internet hace veinte años: lo importante es enseñar a usarla con criterio. Además, deberíamos pensar en la privacidad de los datos de los alumnos.", en: "In my view, artificial intelligence can be a very useful tool in education, but it needs qualifying. It's not that I'm against technology; in fact, I use it every day. However, I get the impression that many students use it to copy instead of learning. To some extent I understand the teachers who want to ban it, although I disagree with that solution. In a way, it's the same as what happened with the internet twenty years ago: the important thing is to teach people to use it sensibly. We should also think about the privacy of students' data." }
+  - task: "Write the introduction and the conclusion of an essay on the question 'Should social media be controlled?'. State a clear thesis."
+    min: 80
+    max: 150
+    use: [w.tesis, w.ensayo, w.censura, w.expresion, w.adolescente]
+    useAtLeast: 3
+    grammar: [g.essay-structure]
+    expect:
+      - { pattern: "en este ensayo|la tesis|defender[eé]|sostengo|mi postura", hint: "State your thesis: en este ensayo defenderé que …" }
+      - { pattern: "en conclusi[oó]n|para concluir|en definitiva|por todo ello|en suma", hint: "Mark the conclusion: en conclusión …, por todo ello …" }
+    model: { es: "Introducción: en los últimos años, las redes sociales se han convertido en el principal medio de expresión de millones de personas, especialmente de los adolescentes. Sin embargo, también sirven para difundir bulos y mensajes llenos de violencia. En este ensayo defenderé que es necesario controlarlas mejor, sin que eso suponga una forma de censura. Conclusión: en conclusión, las normas para las redes no deben acabar con la libertad de expresión, sino proteger a los usuarios más jóvenes. Por todo ello, considero que los gobiernos y las empresas deben colaborar para crear reglas claras y justas.", en: "Introduction: in recent years, social media has become the main means of expression for millions of people, especially teenagers. However, it is also used to spread hoaxes and violent messages. In this essay I will argue that it needs to be better controlled, without this amounting to a form of censorship. Conclusion: in conclusion, rules for social media must not put an end to freedom of expression, but should protect younger users. For all these reasons, I believe that governments and companies must work together to create clear and fair rules." }
+  - task: "Write your contribution to a debate: should your country invest in nuclear energy or in renewables? Concede a point and then rebut it."
+    min: 80
+    max: 150
+    use: [w.nuclear, w.emision, w.combustible, w.eolico, w.alternativa]
+    useAtLeast: 3
+    grammar: [g.argumentation-connectors, g.opinion-structures]
+    expect:
+      - { pattern: "si bien|es cierto que|reconozco que|admito que", hint: "Concede a point: es cierto que …, si bien …, reconozco que …" }
+      - { pattern: "ahora bien|sin embargo|no obstante", hint: "Rebut: ahora bien …, sin embargo …" }
+    model: { es: "Es cierto que la energía nuclear apenas produce emisiones de carbono y que funciona de día y de noche, a diferencia de la solar o la eólica. Reconozco, además, que dejar los combustibles fósiles será muy difícil a medio plazo. Ahora bien, no podemos olvidar los riesgos: un accidente en una central nuclear puede tener consecuencias terribles durante décadas, y todavía no sabemos qué hacer con los residuos. Si bien construir parques eólicos es caro, su coste no deja de bajar. Por todo ello, creo que la mejor alternativa es apostar por la energía eólica y solar, que en San Luis tenemos de sobra.", en: "It's true that nuclear energy produces hardly any carbon emissions and that it works day and night, unlike solar or wind power. I also admit that giving up fossil fuels will be very difficult in the medium term. However, we can't forget the risks: an accident at a nuclear power station can have terrible consequences for decades, and we still don't know what to do with the waste. Although building wind farms is expensive, their cost keeps falling. For all these reasons, I think the best alternative is to bet on wind and solar energy, which we have plenty of in San Luis." }

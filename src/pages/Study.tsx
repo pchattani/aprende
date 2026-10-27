@@ -7,10 +7,12 @@ import { FEATURES } from '../engine/course'
 
 const IconCards = (p: SVGProps<SVGSVGElement>) => <span className="text-2xl" aria-hidden="true" {...(p as object)}>🎴</span>
 const IconPaw = (p: SVGProps<SVGSVGElement>) => <span className="text-2xl" aria-hidden="true" {...(p as object)}>🐾</span>
+const IconPen = (p: SVGProps<SVGSVGElement>) => <span className="text-2xl" aria-hidden="true" {...(p as object)}>✍️</span>
 
 export default function Study() {
   const items = [
     { to: '/grammar', icon: IconBook, title: 'Grammar reference', text: 'Every grammar point from A1 to C2, searchable, with examples and pitfalls.' },
+    { to: '/writing', icon: IconPen, title: 'Writing', text: "Short writing prompts after each stop's lessons, checked for grammar, spelling, the task and your words." },
     ...(FEATURES.conjugation ? [{ to: '/verbs', icon: IconVerb, title: 'Verb trainer', text: 'Full conjugation tables and timed drills for every tense and mood.' }] : []),
     ...(FEATURES.classifiers ? [{ to: '/classifiers', icon: IconVerb, title: 'Measure words', text: 'Which classifier each noun takes (個, 隻, 本, 張…), with a quick drill.' }] : []),
     { to: '/pronunciation', icon: IconEar, title: 'Pronunciation', text: FEATURES.romanization === 'jyutping' ? 'The six tones, Jyutping, tricky sounds, minimal pairs and shadowing.' : 'Sounds, stress and the written accent, minimal pairs and shadowing.' },

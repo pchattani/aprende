@@ -273,3 +273,44 @@ dialogues:
       - { q: "平聲係邊啲聲調？", options: ["第一同第四聲", "第二同第五聲", "所有入聲"], answer: 0, explain: "The teacher says 第一同第四聲係平聲." }
       - { q: "「月」字點解特別短？", options: ["因為佢係入聲字", "因為佢係平聲", "因為佢係第二聲"], answer: 0, explain: "月 (jyut6) is an entering tone: short, clipped and oblique." }
       - { q: "點解「疑是地上霜」冇講主語？", options: ["李白寫漏咗", "古詩成日省略主語", "主語喺下一首詩"], answer: 1, explain: "古詩成日省略主語: readers understand it's the poet." }
+writing:
+  - task: "Explain to a friend why some Tang poems rhyme better in Cantonese than in Mandarin, using the entering tones (入聲) in 江雪 as an example."
+    min: 110
+    max: 190
+    use: [w.jap6-sing1, w.tong4-si1, w.lau5-zung1-jyun4, w.zung1-gu2-hon3-jyu5, w.aap3-wan5]
+    useAtLeast: 3
+    grammar: [g.entering-tones]
+    expect:
+      - { pattern: "入聲", hint: "Explain the entering tones: 入聲." }
+      - { pattern: "普通話|國語", hint: "Compare with Mandarin: 普通話…" }
+    model: { es: "柳宗元嘅《江雪》每句尾都用咗「絕」、「滅」、「雪」呢啲字。用廣東話讀，呢三個字都係入聲字，收尾都有一個好短嘅音，所以韻腳好整齊。但係用普通話讀，入聲已經冇咗，聽落就冇咁押韻。因為廣東話保留咗好多中古漢語嘅特點，所以有人話用廣東話讀唐詩，先最接近詩人當年讀詩嘅聲音。", en: "Liu Zongyuan's 'River Snow' uses words like 絕, 滅 and 雪 at the ends of its lines. Read in Cantonese, all three are entering-tone words ending in a very short sound, so the rhyme is very neat. But read in Mandarin, the entering tones have disappeared, so it doesn't sound like it rhymes as well. Because Cantonese keeps many features of Middle Chinese, some say reading Tang poems in Cantonese comes closest to how the poets read them back then." }
+  - task: "Explain level and oblique tones (平仄) using the first two lines of Li Bai's 靜夜思."
+    min: 110
+    max: 190
+    use: [w.ping4-zak1, w.ping4-sing1, w.zak1-sing1, w.lei5-baak6, w.zing6-je6-si1]
+    useAtLeast: 3
+    grammar: [g.ping-zak]
+    expect:
+      - { pattern: "平聲|平", hint: "Mention the level tones: 平聲." }
+      - { pattern: "仄聲|仄", hint: "Mention the oblique tones: 仄聲." }
+    model: { es: "古時嘅人將聲調分做平聲同仄聲兩種。平聲比較平，仄聲就包括上聲、去聲同入聲。寫律詩嘅時候，平仄要跟規矩排，讀起嚟先有節奏，好似音樂咁。例如李白《靜夜思》嘅「床前明月光，疑是地上霜」，「床」、「前」、「明」、「光」係平聲，「月」係入聲，屬於仄聲。用廣東話讀，好容易就分得出邊個字係仄聲，所以學詩嘅人好有優勢。", en: "People in the past divided tones into two big groups: level and oblique. Level tones are steadier, while oblique tones include the rising, departing and entering tones. In regulated verse, level and oblique tones must be arranged by the rules to give the poem rhythm. For example, in Li Bai's 'Quiet Night Thoughts', 'Before my bed the bright moonlight, I wonder if it's frost on the ground': 床, 前, 明 and 光 are level tones, while 月 is an entering tone, so it's oblique. Read in Cantonese, it's easy to tell which words are oblique, which gives learners of poetry a real advantage." }
+  - task: "Rewrite the last two lines of 靜夜思 in modern colloquial Cantonese, and explain what is special about classical grammar in them."
+    min: 110
+    max: 190
+    use: [w.geoi2-tau4, w.dai1-tau4, w.gu3-hoeng1, w.saang2-loek6, w.gaan2-git3]
+    useAtLeast: 3
+    grammar: [g.classical-grammar]
+    expect:
+      - { pattern: "舉頭望明月|低頭思故鄉", hint: "Quote the lines: 舉頭望明月，低頭思故鄉." }
+      - { pattern: "省略|簡潔", hint: "Explain the classical grammar: 省略咗主語, 好簡潔…" }
+    model: { es: "「舉頭望明月，低頭思故鄉」用而家嘅廣東話講，即係：「我舉頭望住個月光，跟住又低頭，諗起我屋企嗰度。」古詩嘅文法好簡潔，成句都省略咗「我」，亦都冇「咗」、「住」呢啲詞。一句得五個字，就講晒詩人做咗乜同佢嘅感受，真係好犀利。正因為咁簡潔，讀者先有空間自己去感受嗰種思鄉嘅情懷。", en: "'I raise my head and gaze at the bright moon, I lower my head and think of home' in modern Cantonese means: 'I lift my head and look at the moonlight, then I lower my head and think of my home.' Classical grammar is terse: the whole line leaves out the subject 'I', and there are no particles like 咗 or 住. In just five characters a line, it captures what the poet did and how he felt; truly impressive. Precisely because it's so concise, readers have room to feel that homesickness for themselves." }
+  - task: "Write about a Tang poem you like: what it describes, what feelings it expresses and why it speaks to you."
+    min: 110
+    max: 200
+    use: [w.si1-hoeng1, w.hoeng1-sau4, w.syu1-faat3, w.cing4-waai4, w.ming4-geoi3]
+    useAtLeast: 3
+    grammar: [g.classical-grammar, g.entering-tones]
+    expect:
+      - { pattern: "詩|唐詩", hint: "Name the poem or talk about the poetry: 呢首詩…" }
+      - { pattern: "感受|感動|共鳴|鍾意|情懷", hint: "Say how it makes you feel: 令我好有共鳴…" }
+    model: { es: "我最鍾意李白嘅《靜夜思》。呢首詩寫詩人夜晚喺好遠嘅地方見到月光，好似地上嘅霜咁，於是諗起自己嘅故鄉。雖然只有二十個字，但係抒發咗好重嘅鄉愁。我喺外國讀書嘅時候，每次見到月亮，都會諗起香港同屋企人，所以呢首詩特別令我有共鳴。我覺得呢種思鄉嘅情懷，一千幾年之後都冇變過。", en: "My favourite is Li Bai's 'Quiet Night Thoughts'. The poem describes the poet, far from home at night, seeing moonlight that looks like frost on the ground, and so thinking of his hometown. Though it has only twenty characters, it expresses a deep homesickness. When I studied abroad, every time I saw the moon I thought of Hong Kong and my family, so this poem resonates with me especially. I feel that this kind of homesickness hasn't changed in over a thousand years." }

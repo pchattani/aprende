@@ -199,6 +199,7 @@ function ReviewSession({ grammarFilter, initialTab }: { grammarFilter: string | 
             {building ? 'Building session…' : 'Start practice'}
           </Button>
           <Button variant="ghost" className="mt-2 w-full" onClick={() => nav('/games')}>Play with your words 🎴</Button>
+          <Button variant="ghost" className="mt-2 w-full" onClick={() => nav('/writing')}>Write with them ✍️</Button>
         </div>
       )}
     </div>

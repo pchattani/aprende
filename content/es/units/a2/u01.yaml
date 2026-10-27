@@ -225,3 +225,44 @@ dialogues:
       - { q: "What did Marta do on Saturday?", options: ["She worked", "She went to the mountains", "She went to the beach"], answer: 1 }
       - { q: "Why did Luis stay home on Sunday?", options: ["It was raining", "He had a fever", "He was tired from work"], answer: 1 }
       - { q: "What time did Marta get home?", options: ["At five", "At eight", "At nine"], answer: 1 }
+writing:
+  - task: "Your friend tried to call you yesterday. Reply and tell her what you did in Luján: morning, afternoon and evening."
+    es: "¿Qué hiciste ayer? ¡Te llamé tres veces!"
+    min: 25
+    max: 60
+    use: [w.ayer, w.visitar, w.comprar, w.genial, w.pasar]
+    useAtLeast: 3
+    grammar: [g.preterite-regular, g.time-markers-past]
+    expect:
+      - { pattern: "\\b(ayer|anoche|por la (ma[nñ]ana|tarde|noche))", hint: "Say when: ayer, anoche, por la tarde …" }
+      - { pattern: "\\b[a-zñ]{3,}(é|ó|aste|iste|amos|imos|aron|ieron)(?![a-záéíóúñ])|\\b(fui|fue|fuimos|hice|hizo|tuve|estuve|vi|comí|salí|bebí|volví|conocí|escribí|leí|aprendí)(?![a-záéíóúñ])", hint: "Use the preterite: visité, compré, comí …" }
+    model: { es: "Ayer por la mañana visité la Basílica de Luján con mi amiga Clara. Después paseamos por la feria y compré unos regalos para mi familia. Por la noche cenamos en un restaurante pequeño. ¡Lo pasé genial!", en: "Yesterday morning I visited the Basilica of Luján with my friend Clara. Then we walked around the fair and I bought some presents for my family. In the evening we had dinner in a small restaurant. I had a great time!" }
+  - task: "Write about last weekend. Use at least two yo forms with spelling changes: llegué, saqué, empecé, pagué, jugué, busqué."
+    min: 30
+    max: 60
+    use: [w.sacar, w.llegar, w.empezar, w.pagar, w.por-fin]
+    useAtLeast: 3
+    grammar: [g.preterite-spelling-changes]
+    expect:
+      - { pattern: "(llegu|saqu|empec|pagu|jugu|busqu|toqu|almorc|expliqu|practiqu|cruc|comenc|aparqu|apagu)é", hint: "Use spelling-change forms: llegué, saqué, empecé, pagué …" }
+      - { pattern: "fin de semana|\\bel (s[aá]bado|domingo|viernes)", hint: "Say when: el fin de semana pasado, el sábado …" }
+    model: { es: "El fin de semana pasado fui a Luján en autobús. Llegué a las diez y empecé la visita en la Basílica. Saqué muchas fotos de la feria. Al final compré un helado y por fin descansé en un parque.", en: "Last weekend I went to Luján by bus. I arrived at ten and started the visit at the Basilica. I took lots of photos of the fair. In the end I bought an ice cream and finally rested in a park." }
+  - task: "Reply to your friend's question: say how the trip went and how you felt (me divertí, me cansé, nos reímos …)."
+    es: "¿Y qué tal la excursión? ¿Te divertiste?"
+    min: 25
+    max: 55
+    use: [w.excursion, w.divertirse, w.cansarse, w.disfrutar, w.increible]
+    useAtLeast: 3
+    grammar: [g.preterite-regular]
+    expect:
+      - { pattern: "\\b(me|nos|se) (divert|aburr|cans|re[ií]|qued|perd)", hint: "Say how you felt: me divertí, me cansé, nos reímos …" }
+    model: { es: "¡La excursión fue increíble! Me divertí mucho con mis compañeros y disfruté de la comida de la feria. Por la tarde me cansé un poco, pero nadie se aburrió. Nos reímos todo el día.", en: "The trip was incredible! I had lots of fun with my classmates and enjoyed the food at the fair. In the afternoon I got a bit tired, but nobody got bored. We laughed all day." }
+  - task: "Write a diary entry about the last few days, using at least three past time expressions: anteayer, ayer, anoche, hace dos días, el otro día …"
+    min: 25
+    max: 55
+    use: [w.anteayer, w.anoche, w.gastar, w.barbacoa]
+    useAtLeast: 2
+    grammar: [g.time-markers-past, g.preterite-regular]
+    expect:
+      - { pattern: "\\b(anteayer|anoche|ayer|hace (dos|tres|unos|un)|el otro d[ií]a|la semana pasada)", hint: "Use past time expressions: anteayer, anoche, hace dos días …" }
+    model: { es: "Anteayer llegué a Luján en tren. Ayer visité el museo y gasté mucho dinero en la feria. Anoche quedé con unos amigos argentinos y cenamos una barbacoa. ¡Ahora tengo amigos nuevos!", en: "The day before yesterday I arrived in Luján by train. Yesterday I visited the museum and spent a lot of money at the fair. Last night I met up with some Argentine friends and we had a barbecue for dinner. Now I have new friends!" }

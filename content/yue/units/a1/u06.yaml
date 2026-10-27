@@ -301,3 +301,45 @@ dialogues:
       - { q: "Sam要幾多個橙？", options: ["三個", "六個", "十個"], answer: 1, explain: "我要六個: he wants six." }
       - { q: "一共幾多錢呀？", options: ["二十二蚊", "三十蚊", "三十二蚊"], answer: 1, explain: "After Mandy haggles, the owner says 一共三十蚊啦." }
       - { q: "佢哋點樣畀錢？", options: ["用八達通", "用散紙", "唔使畀錢"], answer: 1, explain: "The stall only takes cash (淨係收現金), so Mandy pays with her change (散紙)." }
+writing:
+  - task: "At the wet market, ask the price of the apples and say how many catties you want."
+    min: 8
+    max: 25
+    use: [w.ping4-gwo2, w.gan1, w.jiu3, w.gei2-do1, w.cin2]
+    useAtLeast: 3
+    grammar: [g.prices-gei-do-cin, g.jiu-want]
+    expect:
+      - { pattern: "幾多?錢", hint: "Ask the price: 幾多錢一斤呀？" }
+      - { pattern: "要.*斤", hint: "Say how much you want: 我要兩斤." }
+    model: { es: "蘋果幾多錢一斤呀？我要兩斤，唔該。", en: "How much are the apples per catty? I'll have two catties, please." }
+  - task: "Write a price list for a stall in characters: a pair of shoes $350, a hat $99, a skirt $1,200."
+    min: 15
+    max: 35
+    use: [w.haai4, w.mou2, w.kwan4, w.cin1, w.man1]
+    useAtLeast: 4
+    grammar: [g.big-numbers, g.money]
+    expect:
+      - { pattern: "百", hint: "Write hundreds with 百: 三百五十蚊." }
+      - { pattern: "千", hint: "Write thousands with 千: 一千二百蚊." }
+      - { pattern: "蚊|元", hint: "Add the currency: …蚊." }
+    model: { es: "一對鞋三百五十蚊，一頂帽九十九蚊，一條裙一千二百蚊。", en: "A pair of shoes, 350 dollars; a hat, 99 dollars; a skirt, 1,200 dollars." }
+  - task: "At a small shop, ask if you can pay with your Octopus card, and ask if it could be a bit cheaper."
+    min: 10
+    max: 30
+    use: [w.baat3-daat6-tung1, w.bei2-cin2, w.peng4-di1, w.dak1-m4-dak1, w.jung6]
+    useAtLeast: 3
+    grammar: [g.money, g.prices-gei-do-cin]
+    expect:
+      - { pattern: "八達通", hint: "Mention your Octopus card: 八達通." }
+      - { pattern: "平啲", hint: "Ask for a lower price: 平啲得唔得呀？" }
+    model: { es: "可唔可以用八達通畀錢呀？平啲得唔得呀？", en: "Can I pay with Octopus? Could it be a bit cheaper?" }
+  - task: "Write your shopping list for tonight's dinner with 要: pork, eggs and a vegetable, with amounts."
+    min: 12
+    max: 30
+    use: [w.gam1-maan5, w.maai5-sung3, w.zyu1-juk6, w.gai1-daan2, w.baak6-coi3]
+    useAtLeast: 3
+    grammar: [g.jiu-want]
+    expect:
+      - { pattern: "要", hint: "Use 要: 今晚要買…" }
+      - { pattern: "斤|隻|棵", hint: "Give amounts with 斤, 隻 or 棵." }
+    model: { es: "今晚要買餸：一斤豬肉、六隻雞蛋同一棵白菜。", en: "Food shopping for tonight: a catty of pork, six eggs and a bok choy." }

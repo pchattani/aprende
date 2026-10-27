@@ -264,3 +264,45 @@ dialogues:
       - { q: "How much does the jacket cost now?", options: ["200 euros", "120 euros", "20 euros"], answer: 1 }
       - { q: "What was wrong with the first jacket?", options: ["Too small", "Too big", "Wrong colour"], answer: 1 }
       - { q: "How does Tom pay?", options: ["In cash", "By card", "He doesn't buy it"], answer: 1 }
+writing:
+  - task: "You are in a clothes shop on Calle Florida. Tell the assistant what you are looking for and your size, and ask the price."
+    es: "Hola, ¿qué busca?"
+    min: 10
+    max: 30
+    use: [w.buscar, w.talla, w.costar, w.camisa, w.probador]
+    useAtLeast: 3
+    grammar: [g.costar-cuanto]
+    expect:
+      - { pattern: "\\b(busco|quiero|necesito)\\b", hint: "Say what you are looking for: Busco …" }
+      - { pattern: "cu[aá]nto (cuesta|cuestan|vale|valen)", hint: "Ask the price: ¿Cuánto cuesta?" }
+    model: { es: "Buenos días. Busco una camisa blanca, talla cuarenta. ¿Cuánto cuesta? ¿Dónde está el probador, por favor?", en: "Good morning. I'm looking for a white shirt, size forty. How much is it? Where is the fitting room, please?" }
+  - task: "Write about three things you want to buy and how much each one costs. Write the numbers in words."
+    min: 15
+    max: 40
+    use: [w.costar, w.mil, w.quinientos, w.novecientos, w.dinero]
+    useAtLeast: 3
+    grammar: [g.numbers-100-1000]
+    expect:
+      - { pattern: "\\b(cien|ciento|doscient|trescient|cuatrocient|quinient|seiscient|setecient|ochocient|novecient|mil)", hint: "Write big numbers in words: doscientos, quinientos, mil …" }
+      - { pattern: "\\b(cuesta|cuestan|vale|valen)\\b", hint: "Say the price: cuesta … / cuestan …" }
+    model: { es: "La chaqueta cuesta tres mil pesos. Las botas cuestan cinco mil quinientos pesos y el sombrero vale novecientos pesos. ¡No tengo bastante dinero!", en: "The jacket costs three thousand pesos. The boots cost five thousand five hundred pesos and the hat is nine hundred pesos. I don't have enough money!" }
+  - task: "Your friend asks about the clothes. Answer each question, using lo, la, los or las instead of repeating the thing."
+    es: "¿Te gusta la falda? ¿Compras los zapatos? ¿Y el abrigo?"
+    min: 15
+    max: 40
+    use: [w.lo, w.comprar, w.preferir, w.llevarse]
+    useAtLeast: 2
+    grammar: [g.direct-object-intro]
+    expect:
+      - { pattern: "\\b(lo|la|los|las) (compro|llevo|prefiero|quiero|tengo|busco|pruebo|necesito)\\b", hint: "Put lo / la / los / las before the verb: la compro, los llevo …" }
+    model: { es: "Sí, me gusta mucho la falda y la compro. Los zapatos no los compro: son demasiado caros. El abrigo lo prefiero en negro, y me lo llevo.", en: "Yes, I really like the skirt and I'm buying it. The shoes I'm not buying: they're too expensive. The coat I prefer in black, and I'll take it." }
+  - task: "Write a message to a friend about a present you are buying on Calle Florida: what it is, who it is for, the price and how you pay."
+    min: 15
+    max: 40
+    use: [w.regalo, w.tarjeta, w.efectivo, w.barato, w.bolso]
+    useAtLeast: 3
+    grammar: [g.demonstratives-usage, g.costar-cuanto]
+    expect:
+      - { pattern: "\\b(este|esta|ese|esa|aquel|aquella|estos|estas|esos|esas)\\b", hint: "Point to the item: este bolso, esa camiseta …" }
+      - { pattern: "\\b(pago|tarjeta|efectivo)\\b", hint: "Say how you pay: con tarjeta / en efectivo." }
+    model: { es: "Estoy en la calle Florida. Este bolso rojo es un regalo para mi madre. Cuesta ochocientos pesos y es bastante barato. Pago con tarjeta.", en: "I'm on Calle Florida. This red bag is a present for my mother. It costs eight hundred pesos and it's quite cheap. I'm paying by card." }

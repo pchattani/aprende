@@ -284,3 +284,43 @@ dialogues:
       - { q: "Segundo o livreiro, o que significa “fizera”?", options: ["“tinha feito”", "“fizesse”", "“faria”"], answer: 0, explain: "Fizera is the simple pluperfect, the literary form of tinha feito." }
       - { q: "Quem é Dalcídio Jurandir?", options: ["Um poeta português", "Um escritor de Marajó", "Um personagem de Machado"], answer: 1, explain: "Seu Benedito recommends him as an author from Marajó, in Pará." }
       - { q: "O que a Luana decide fazer no fim?", options: ["Levar os dois livros", "Voltar outro dia", "Pedir os livros emprestados"], answer: 0, explain: "Vou levar os dois: she buys both books." }
+writing:
+  - task: "Write a short literary description of dusk over the bay in Belém, in a literary register (o crepúsculo, outrora, the literary pluperfect: passara, chegara…)."
+    min: 110
+    max: 190
+    use: [w.crepúsculo, w.entardecer, w.outrora, w.melancolia, w.contemplar]
+    useAtLeast: 3
+    grammar: [g.literary-language, g.narrative-tenses-literary]
+    expect:
+      - { pattern: '\b(crep[uú]sculo|entardecer|anoitecer|aurora|outrora|deveras)\b', hint: "Use literary vocabulary: o crepúsculo, outrora, deveras…" }
+      - { pattern: '\b[a-zà-ú]{2,}(ara|era|ira|aram|eram|iram)\b', hint: "Try the literary pluperfect: a chuva passara, o barco chegara…" }
+    model: { es: "Ao entardecer, o céu sobre a Baía do Guajará fica cor de laranja e lilás, e o rio, que de manhã fervia de barcos, parece enfim descansar. Do Ver-o-Peso chegam ainda as vozes dos últimos vendedores, cansados de um dia inteiro sob o sol. Uma chuva breve passara pela cidade havia pouco, e o cheiro de terra molhada misturava-se ao perfume das frutas. Sentado à beira do rio, um velho pescador contemplava o horizonte com uma melancolia tranquila, como quem se lembra de outrora. Quando o crepúsculo cobriu as mangueiras, as luzes da cidade se acenderam, uma a uma, e Belém entrou devagar na noite. Era a hora em que outrora as famílias se sentavam nas calçadas para conversar.", en: "At dusk, the sky over Guajará Bay turns orange and lilac, and the river, which in the morning was teeming with boats, seems at last to rest. From Ver-o-Peso come the voices of the last vendors, tired after a whole day under the sun. A brief shower had passed over the city a little earlier, and the smell of wet earth mingled with the scent of fruit. Sitting by the river, an old fisherman gazed at the horizon with quiet melancholy, like someone remembering bygone days. When twilight covered the mango trees, the city lights came on one by one, and Belém slowly slipped into the night. It was the hour when, in bygone days, families would sit on the pavements to chat." }
+  - task: "Write the opening of a short story set in old Belém, using literary past tenses (o vapor já partira, ela nunca vira…) and words like eis, porventura, ímpeto."
+    min: 110
+    max: 190
+    use: [w.vapor, w.palacete, w.ímpeto, w.porventura, w.eis]
+    useAtLeast: 3
+    grammar: [g.narrative-tenses-literary, g.literary-language]
+    expect:
+      - { pattern: '\b[a-zà-ú]{2,}(ara|era|ira|aram|eram|iram)\b', hint: "Use the simple pluperfect: partira, vira, chegara…" }
+    model: { es: "Quando Maria das Dores chegou ao porto, o vapor para Lisboa já partira. Ela nunca vira tanta gente reunida à beira do rio, nem tantas malas esquecidas sob a chuva. Correra desde o palacete da Cidade Velha, onde servira durante dez anos à família do barão, e agora, sem ar, compreendia que chegara tarde demais. Eis que, porventura, um rapaz de chapéu se aproximou e lhe perguntou se perdera alguma coisa. Num ímpeto que nunca conhecera, ela respondeu: — Perdi a vida inteira, senhor. Mas talvez ainda a encontre. O rapaz sorriu, tirou o chapéu e, sem dizer palavra, ofereceu-lhe o braço. Juntos, caminharam devagar pela rua, enquanto a chuva parava.", en: "When Maria das Dores reached the port, the steamer to Lisbon had already left. She had never seen so many people gathered by the river, nor so many suitcases forgotten in the rain. She had run all the way from the mansion in the Old Town, where she had served the baron's family for ten years, and now, out of breath, she understood she had arrived too late. Lo and behold, a young man in a hat came up and asked her whether she had lost something. With an impulse she had never known, she replied: 'I've lost my whole life, sir. But perhaps I'll find it yet.' The young man smiled, took off his hat and, without a word, offered her his arm. Together they walked slowly along the street as the rain stopped." }
+  - task: "Write a short, solemn speech for a historical play or a religious procession like the Círio de Nazaré, using vós and its forms (sois, vinde, ide, vosso, convosco)."
+    min: 110
+    max: 190
+    use: [w.vós, w.vos, w.vosso, w.convosco, w.solene]
+    useAtLeast: 3
+    grammar: [g.vos-archaic]
+    expect:
+      - { pattern: '\b(v[oó]s|vos|vosso|vossa|vossos|vossas|convosco)\b', hint: "Use vós and its forms: vós, vos, vosso, convosco." }
+      - { pattern: '\b(sois|tendes|vindes|ides|estais|podeis|sabeis|quereis|vinde|ide|ouvi|vede|olhai|lembrai|caminhastes|viestes)\b', hint: "Conjugate the verbs for vós: sois, vinde, ide, ouvi…" }
+    model: { es: "Irmãos e irmãs que viestes de tão longe para o Círio de Nazaré, ouvi estas palavras. Vós, que caminhastes durante horas sob o sol de Belém, sois a alma desta festa solene. A vossa fé enche as ruas da cidade, e a esperança caminha convosco. Não temais o cansaço nem as lágrimas: elas são a prova do vosso amor. Vinde, pois, e vede a imagem passar; olhai para o céu e lembrai-vos dos que já partiram e não podem estar aqui. Sois muitos, mas tendes um só coração. Ide em paz, voltai às vossas casas com alegria, e que a paz vos acompanhe sempre, hoje e por toda a eternidade.", en: "Brothers and sisters who have come from so far for the Círio de Nazaré, hear these words. You who have walked for hours under the Belém sun are the soul of this solemn festival. Your faith fills the streets of the city, and hope walks with you. Fear neither weariness nor tears: they are the proof of your love. Come, then, and see the image pass; look up to heaven and remember those who have departed and cannot be here. You are many, but you have one heart. Go in peace, return to your homes with joy, and may peace be with you always, today and for all eternity." }
+  - task: "Write a short critical commentary on a classic Brazilian work (for example O Alienista or Dom Casmurro): its narrator, its style and why it still matters."
+    min: 110
+    max: 190
+    use: [w.narrativa, w.estilo, w.digressão, w.realismo, w.loucura]
+    useAtLeast: 3
+    grammar: [g.literary-language]
+    expect:
+      - { pattern: '\b(narrador|narrativa|estilo|personagem|romance|conto)\b', hint: "Discuss the narrator, style or characters." }
+      - { pattern: '\b(a meu ver|na minha opini[aã]o|acredito|considero|parece-me|creio)\b', hint: "Give your judgement: A meu ver…, Parece-me que…" }
+    model: { es: "O Alienista, de Machado de Assis, é uma das narrativas mais originais do realismo brasileiro. O narrador, que diz basear-se em crônicas antigas da vila de Itaguaí, conta a história do médico Simão Bacamarte, que interna no hospício quase toda a população em nome da ciência. O estilo de Machado é marcado pela ironia e pelas digressões, em que o narrador conversa com o leitor e comenta os fatos que narra. A meu ver, o conto continua atual porque discute uma questão eterna: quem decide o que é normal e o que é loucura? No final, num desfecho cheio de ironia, o alienista conclui que o único louco da vila é ele mesmo e se interna sozinho.", en: "O Alienista, by Machado de Assis, is one of the most original narratives of Brazilian realism. The narrator, who claims to rely on old chronicles of the town of Itaguaí, tells the story of Dr Simão Bacamarte, who commits almost the whole population to the asylum in the name of science. Machado's style is marked by irony and digressions, in which the narrator talks to the reader and comments on the events he narrates. In my view, the story is still relevant because it discusses an eternal question: who decides what is normal and what is madness? At the end, in an ending full of irony, the alienist concludes that the only madman in the town is himself and commits himself alone." }

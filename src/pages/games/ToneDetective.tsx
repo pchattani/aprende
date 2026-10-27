@@ -8,7 +8,7 @@
  */
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { VocabEntry } from '../../engine/schema'
-import { ui, vocabUpTo } from '../../engine/loader'
+import { ui } from '../../engine/loader'
 import { Rng } from '../../engine/random'
 import { rapidPoints } from '../../engine/vocabGame'
 import { TONES, TONE_LIST, sameOrDifferentRound, toneLabel, toneless, toneWords, whichToneRound, wordToneRound, type PairQuestion, type Tone, type ToneQuestion } from '../../engine/games/tones'
@@ -28,6 +28,8 @@ import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { GAMES_BEST_KEY, recordGame, useGameWords, type GameBest } from './util'
 import { Ruby } from './cantoneseText'
+import { moreLessonsText, toneable } from './requirements'
+import { useFinishedWords } from '../../hooks/useFinishedWords'
 
 const ID = 'tones'
 const TITLE = 'Tone detective'
@@ -56,8 +58,8 @@ function useReadings(): ((c: string) => string[] | undefined) | undefined {
   return useMemo(() => (table ? (c: string) => table[c] : undefined), [table])
 }
 
-/** One or two Han characters with toned Jyutping: candidates for levels b and c. */
-const toneable = (v: VocabEntry) => Boolean(v.jp) && /^\p{Script=Han}{1,2}$/u.test(v.lemma)
+/** Two-syllable words level: finished words it needs (fewer and the level waits for more lessons). */
+const WORD_NEED = 4
 
 /** Colours for the six contours, readable on light and dark cards. */
 const TONE_COLOR: Record<Tone, string> = { 1: '#e0567a', 2: '#e2862b', 3: '#2f9e6b', 4: '#3d7be0', 5: '#8a5cd6', 6: '#7f8aa3' }
@@ -151,6 +153,7 @@ export default function ToneDetective({ onDone }: GameProps) {
   const readings = useReadings()
   const [round, setRound] = useState(0)
   const words = useGameWords(80, toneable, round)
+  const finished = useFinishedWords()
   const bests = useKvValue<Record<string, GameBest>>(GAMES_BEST_KEY, {})
   const [level, setLevel] = useState<Level | undefined>()
   /** Reading-only: chosen by the learner, or forced when nothing can be heard. */
@@ -163,13 +166,17 @@ export default function ToneDetective({ onDone }: GameProps) {
     return typeof b === 'number' ? b : undefined
   }
 
-  if (level && words && readings) {
+  // the two-syllable level plays finished words only: it waits until there are a few
+  const twoSyllable = (v: VocabEntry) => Boolean(readings && toneWords([v], 2, readings).length)
+  const wordLocked = finished && readings ? finished.moreLessons(twoSyllable, WORD_NEED) : undefined
+  if (level && words && readings && finished) {
     return (
       <Round
         key={`${level}-${round}`}
         level={level}
         reading={reading}
         words={words}
+        pool={finished.entries}
         readings={readings}
         best={levelBest(level)}
         onBack={() => setLevel(undefined)}
@@ -209,14 +216,16 @@ export default function ToneDetective({ onDone }: GameProps) {
       <div className="grid gap-3">
         {LEVELS.map((l) => {
           const b = levelBest(l.id)
+          const locked = l.id === 'word' && wordLocked !== 0
           return (
-            <button key={l.id} type="button" disabled={!words || !readings} onClick={() => setLevel(l.id)} className="card flex w-full items-center gap-4 text-left transition hover:-translate-y-0.5 active:scale-[0.99]">
+            <button key={l.id} type="button" disabled={!words || !readings || !finished || locked} onClick={() => setLevel(l.id)} className={`card flex w-full items-center gap-4 text-left transition ${locked ? 'opacity-60' : 'hover:-translate-y-0.5 active:scale-[0.99]'}`}>
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-coral-500 text-2xl" aria-hidden="true">
                 {l.icon}
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block font-semibold">{l.title}</span>
                 <span className="block text-sm text-muted">{reading ? l.reading : l.text}</span>
+                {locked && finished && readings ? <span className="mt-1 block text-xs font-bold text-muted">{wordLocked ? `Unlocks after ${moreLessonsText(wordLocked, finished.lessons.size > 0)}` : 'Unlocks later in the course'}</span> : null}
                 {b ? <span className="mt-1 block text-xs font-bold text-ok-600">Best: {b} points</span> : null}
               </span>
             </button>
@@ -232,16 +241,17 @@ export default function ToneDetective({ onDone }: GameProps) {
 
 type Q = { kind: 'pair'; q: PairQuestion } | { kind: 'tone'; q: ToneQuestion }
 
-function Round({ level, reading, words, readings, best, onBack, onAgain, onFinish }: { level: Level; reading: boolean; words: VocabEntry[]; readings: (c: string) => string[] | undefined; best?: number; onBack: () => void; onAgain: () => void; onFinish: (score: number) => Promise<void> }) {
+function Round({ level, reading, words, pool, readings, best, onBack, onAgain, onFinish }: { level: Level; reading: boolean; words: VocabEntry[]; pool: VocabEntry[]; readings: (c: string) => string[] | undefined; best?: number; onBack: () => void; onAgain: () => void; onFinish: (score: number) => Promise<void> }) {
   const [rng] = useState(() => new Rng(Date.now()))
   /** The best before this round (the prop updates as soon as the round is recorded). */
   const [prevBest] = useState(best)
   const questions: Q[] = useMemo(() => {
-    if (level === 'same') return sameOrDifferentRound(rng, ROUND).map((q) => ({ kind: 'pair' as const, q }))
-    if (level === 'which') return whichToneRound(toneWords(words, 1, readings), rng, ROUND).map((q) => ({ kind: 'tone' as const, q }))
-    const pool = toneWords(vocabUpTo('a1'), 2, readings)
-    return wordToneRound(toneWords(words, 2, readings), pool, rng, ROUND).map((q) => ({ kind: 'tone' as const, q }))
-  }, [level, words, readings, rng])
+    // the curated syllables of levels a and b lean on characters of the learner's finished words
+    const chars = new Set(pool.flatMap((v) => [...v.lemma]))
+    if (level === 'same') return sameOrDifferentRound(rng, ROUND, chars).map((q) => ({ kind: 'pair' as const, q }))
+    if (level === 'which') return whichToneRound(toneWords(words, 1, readings), rng, ROUND, chars).map((q) => ({ kind: 'tone' as const, q }))
+    return wordToneRound(toneWords(words, 2, readings), toneWords(pool, 2, readings), rng, ROUND).map((q) => ({ kind: 'tone' as const, q }))
+  }, [level, words, pool, readings, rng])
   const { say } = useSpeak()
   const [i, setI] = useState(0)
   const [score, setScore] = useState(0)

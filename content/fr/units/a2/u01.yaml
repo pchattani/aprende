@@ -292,3 +292,43 @@ dialogues:
       - { q: "Qu'est-ce que Thomas a bu ?", options: ["Du vin", "Du cidre", "Du café"], answer: 1, explain: "J'ai bu du cidre." }
       - { q: "Qu'est-ce qu'ils ont fait dimanche ?", options: ["Ils ont visité un musée.", "Ils ont fait un pique-nique.", "Ils ont pris le train pour Paris."], answer: 0, explain: "It rained, so they visited the Musée des Beaux-Arts." }
       - { q: "Qu'est-ce que Julie a fait ce week-end ?", options: ["Elle a visité Rouen.", "Elle a fait le ménage.", "Elle a vu des peintures de Monet."], answer: 1, explain: "Moi, j'ai fait le ménage tout le week-end." }
+writing:
+  - task: "Write a message to a friend about your Saturday in Rouen: what you visited, saw, ate and drank (passé composé with avoir)."
+    min: 30
+    max: 70
+    use: [w.visiter, w.cathédrale, w.guide, w.cidre, w.façade]
+    useAtLeast: 3
+    grammar: [g.passe-compose-avoir, g.past-time-expressions]
+    expect:
+      - { pattern: "\\b(ai|as|a|avons|avez|ont) (pas |d[eé]j[aà] |aussi |bien |beaucoup |jamais |tout )?[a-zàâçéèêëîïôûùœ]+(é|i|is|it|u|ert|eint|ait)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the passé composé with avoir: j'ai visité, nous avons vu…" }
+      - { pattern: "\\b(samedi|hier|dimanche|dernier|derni[eè]re|matin|soir)\\b", hint: "Say when: samedi, le matin, le soir…" }
+    model: { es: "Salut, Hugo ! Samedi, j'ai visité Rouen avec ma sœur. Le matin, nous avons vu la cathédrale. Monet a peint sa façade plusieurs fois ! Ensuite, un guide nous a montré la vieille ville et la grosse horloge. Le soir, nous avons mangé une crêpe et nous avons bu du cidre. C'était super !", en: "Hi, Hugo! On Saturday I visited Rouen with my sister. In the morning we saw the cathedral. Monet painted its façade several times! Then a guide showed us the old town and the big clock. In the evening we ate a crêpe and drank some cider. It was great!" }
+  - task: "Write a postcard to your grandmother from Rouen: what you did today, using irregular past participles (pris, vu, fait, bu, reçu…)."
+    min: 30
+    max: 70
+    use: [w.carte-postale, w.prendre, w.voir, w.recevoir, w.envoyer]
+    useAtLeast: 3
+    grammar: [g.past-participles-irregular, g.passe-compose-avoir]
+    expect:
+      - { pattern: "\\b(pris|vu|fait|bu|lu|eu|mis|dit|ouvert|peint|appris|compris|re[cç]u|[eé]crit|[eé]t[eé])(?![a-zàâçéèêëîïôûùœ])", hint: "Use irregular participles: j'ai pris, j'ai vu, j'ai fait, j'ai bu…" }
+    model: { es: "Chère mamie, je t'écris de Rouen ! Ce matin, j'ai pris le train à Paris. J'ai vu le musée des Beaux-Arts et j'ai fait une longue visite de la vieille ville. À midi, j'ai bu un verre de cidre. Hier, j'ai reçu ton message. Merci ! Je t'envoie cette carte postale avec de grosses bises. Paul", en: "Dear Grandma, I'm writing to you from Rouen! This morning I took the train in Paris. I saw the Fine Arts museum and had a long visit of the old town. At noon I drank a glass of cider. Yesterday I got your message. Thank you! I'm sending you this postcard with big kisses. Paul" }
+  - task: "Ask a friend three questions about what he or she did recently, then say what you did a year ago (hier, le week-end dernier, il y a un an…)."
+    min: 30
+    max: 70
+    use: [w.hier, w.déjà, w.récemment, w.voyager, w.fêter]
+    useAtLeast: 2
+    grammar: [g.past-time-expressions, g.passe-compose-avoir]
+    expect:
+      - { pattern: "\\?", hint: "Ask your friend questions: Qu'est-ce que tu as fait hier ?" }
+      - { pattern: "\\b(hier|dernier|derni[eè]re|il y a|avant-hier|r[eé]cemment)\\b", hint: "Use a past time expression: hier, le week-end dernier, il y a un an…" }
+    model: { es: "Coucou, Léa ! Qu'est-ce que tu as fait hier soir ? Tu as vu le match ? Est-ce que tu as déjà visité Rouen ? Moi, il y a un an, j'ai voyagé en Normandie avec mes parents. Nous avons fêté l'anniversaire de mon père à Honfleur. C'était génial !", en: "Hi, Léa! What did you do last night? Did you watch the match? Have you ever visited Rouen? A year ago I travelled around Normandy with my parents. We celebrated my father's birthday in Honfleur. It was great!" }
+  - task: "Write about your last holiday: what you visited, what you bought at a flea market (brocante) and what you forgot to pack."
+    min: 30
+    max: 70
+    use: [w.vacances, w.brocante, w.acheter, w.oublier, w.valise]
+    useAtLeast: 3
+    grammar: [g.passe-compose-avoir, g.past-time-expressions]
+    expect:
+      - { pattern: "\\b(ai|as|a|avons|avez|ont) (pas |d[eé]j[aà] |aussi |bien |beaucoup |jamais |tout )?[a-zàâçéèêëîïôûùœ]+(é|i|is|it|u|ert|eint|ait)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the passé composé with avoir: j'ai acheté, j'ai oublié…" }
+      - { pattern: "\\boubli", hint: "Say what you forgot: j'ai oublié …" }
+    model: { es: "L'été dernier, j'ai passé mes vacances en Bretagne. J'ai visité des villages et j'ai acheté une vieille lampe dans une brocante. Mais j'ai oublié mon maillot de bain dans ma valise à Paris ! Alors, j'ai acheté un maillot très cher. Quelles vacances !", en: "Last summer I spent my holidays in Brittany. I visited villages and bought an old lamp at a flea market. But I left my swimsuit in my suitcase in Paris! So I bought a very expensive swimsuit. What a holiday!" }

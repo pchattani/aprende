@@ -280,3 +280,43 @@ dialogues:
       - { q: "Chi è Laura?", options: ["La madre di Giulia.", "La zia di Giulia.", "La sorella di Giulia."], answer: 1, explain: "«No, è mia zia Laura»: her mother isn't in the photo." }
       - { q: "Chi è Luca?", options: ["Il fratello minore di Giulia.", "Il fratello maggiore di Giulia.", "Il cugino di Giulia."], answer: 1, explain: "«Un fratello maggiore, Luca», who is thirty-two." }
       - { q: "Tom ha fratelli?", options: ["Sì, un fratello.", "Sì, due sorelle.", "No, è figlio unico."], answer: 2, explain: "«No, sono figlio unico», but he has two cats." }
+writing:
+  - task: "Describe your family in 3–5 sentences: who is in it, their names and their ages."
+    min: 15
+    max: 40
+    use: [w.famiglia, w.padre, w.madre, w.fratello, w.sorella]
+    grammar: [g.avere-present, g.possessives-family, g.numbers-0-100]
+    expect:
+      - { pattern: "\\b(mio|mia|miei|mie)\\b", hint: "Use possessives: mio padre, mia sorella…" }
+      - { pattern: "\\banni\\b", hint: "Give ages with avere: ha diciotto anni." }
+    model: { es: "La mia famiglia è piccola. Mio padre si chiama David e mia madre si chiama Linda. Ho una sorella, Emily: ha diciotto anni ed è studentessa.", en: "My family is small. My father is called David and my mother is called Linda. I have a sister, Emily: she's eighteen and she's a student." }
+  - task: "Your new friend Luca has a big family. Write him a message with 3–4 questions about it."
+    es: "Io ho una famiglia molto grande!"
+    min: 10
+    max: 30
+    use: [w.quanto, w.fratello, w.avere, w.anno, w.nonno]
+    grammar: [g.question-words, g.avere-present]
+    expect:
+      - { pattern: "\\?", hint: "Write questions, ending with a question mark." }
+      - { pattern: "\\b(quant[ioae]|come|chi|dove|quale|quando)\\b", hint: "Use question words: quanti, come, chi, dove…" }
+    model: { es: "Davvero? Quanti fratelli hai? Come si chiamano? Quanti anni ha tua sorella? E i tuoi nonni abitano a Roma?", en: "Really? How many brothers and sisters do you have? What are their names? How old is your sister? And do your grandparents live in Rome?" }
+  - task: "Describe your pets or your family's animals (or an imaginary pet): what animals they are, their names, their ages."
+    min: 15
+    max: 40
+    use: [w.cane, w.gatto, w.animale, w.nostro]
+    useAtLeast: 2
+    grammar: [g.possessives, g.plural-nouns]
+    expect:
+      - { pattern: "\\b(cane|cani|gatt[oi]|pesc[ei]|uccell[oi]|cavall[oi]|animal[ei])\\b", hint: "Name the animals: un cane, due gatti…" }
+      - { pattern: "\\b(nostr[oaie]|mio|mia|miei|mie|suo|sua|suoi|sue|loro)\\b", hint: "Use a possessive: il nostro cane, il mio gatto…" }
+    model: { es: "Abbiamo due animali: un cane e un gatto. Il nostro cane si chiama Rex e ha sei anni. Il gatto si chiama Micio ed è piccolo. Sono i miei amici!", en: "We have two animals: a dog and a cat. Our dog is called Rex and he's six. The cat is called Micio and he's small. They're my friends!" }
+  - task: "Send a classmate your mobile number (write the digits as words) and ask for their number and e-mail."
+    min: 10
+    max: 30
+    use: [w.numero, w.cellulare, w.telefono, w.email]
+    useAtLeast: 2
+    grammar: [g.numbers-0-100, g.question-words]
+    expect:
+      - { pattern: "\\b(zero|uno|due|tre|quattro|cinque|sei|sette|otto|nove)\\b|\\d", hint: "Give your number: tre, quattro, sette…" }
+      - { pattern: "qual ?[eè]|\\b(il tuo|la tua)\\b", hint: "Ask for theirs: Qual è il tuo numero?" }
+    model: { es: "Ciao, Paola! Ecco il mio numero di cellulare: tre, quattro, sette, due, zero, otto. E tu? Qual è il tuo numero di telefono? E la tua email?", en: "Hi, Paola! Here's my mobile number: three, four, seven, two, zero, eight. And you? What's your phone number? And your e-mail?" }

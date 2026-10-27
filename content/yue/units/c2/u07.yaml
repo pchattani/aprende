@@ -270,3 +270,43 @@ dialogues:
       - { q: "的士師傅叫詠詩做咩？", options: ["阿姨", "美女", "老表"], answer: 1, explain: "個師傅仲叫我「美女」: Guangzhou-style friendly address." }
       - { q: "詠詩點解笑家俊？", options: ["佢講「搞定」，好似普通話", "佢有港腔", "佢叫錯人"], answer: 0, explain: "搞定 is the Mandarin-influenced form; Hong Kong says 搞掂." }
       - { q: "點解詠詩請唔到客？", options: ["佢唔記得帶銀包", "要掃二維碼畀錢，佢冇微信", "間舖已經收咗"], answer: 1, explain: "呢度要掃二維碼畀錢，你又冇微信." }
+writing:
+  - task: "Describe a walk through old Xiguan in Guangzhou: the arcade buildings, the mansions and their special features."
+    min: 110
+    max: 190
+    use: [w.sai1-gwaan1, w.ke4-lau2, w.sai1-gwaan1-daai6-uk1, w.tong3-lung4, w.mun5-zau1-coeng1]
+    useAtLeast: 3
+    grammar: [g.guangzhou-vs-hk]
+    expect:
+      - { pattern: "騎樓|西關大屋|趟櫳|滿洲窗|青磚", hint: "Describe the architecture: 騎樓, 趟櫳, 滿洲窗…" }
+    model: { es: "今日我喺荔灣行咗成個下晝。上下九條街兩邊都係騎樓，落雨都唔使擔遮，怪唔得以前嘅商人咁鍾意喺度做生意。轉入一條細街，仲見到幾間西關大屋，全部用青磚起，門口有趟櫳，入面嘅滿洲窗喺太陽下面好多顏色，好靚。可惜好多舊屋已經拆咗，希望政府可以保育多啲老廣州嘅特色。", en: "Today I spent the whole afternoon walking in Liwan. Both sides of Shangxiajiu are lined with arcade buildings, so you don't need an umbrella in the rain: no wonder merchants loved doing business here. Turning into a small street, I saw a few Xiguan mansions, all built of grey brick, with sliding gates at the entrance, and inside, the stained-glass Manchu windows were full of colour in the sun. Sadly many old houses have been demolished; I hope the government will preserve more of old Guangzhou's distinctive features." }
+  - task: "Explain some vocabulary differences between Guangzhou and Hong Kong Cantonese, with examples, and suggest why they exist."
+    min: 110
+    max: 190
+    use: [w.si6-pan4, w.jing2-pin2, w.maai5-daan1, w.bing1-soeng1, w.caa1-ji6]
+    useAtLeast: 3
+    grammar: [g.guangzhou-vs-hk, g.mandarin-influence]
+    expect:
+      - { pattern: "視頻|買單|打的|冰箱|公交|草莓", hint: "Give Guangzhou examples: 視頻, 買單…" }
+      - { pattern: "影片|埋單|的士|雪櫃|巴士|士多啤梨", hint: "Give the Hong Kong equivalents: 影片, 埋單…" }
+    model: { es: "省港兩地都講廣東話，不過有唔少詞彙有差異。例如香港人講「影片」，廣州人多數講「視頻」；香港講「埋單」，廣州就講「買單」。仲有香港講「雪櫃」、「士多啤梨」，廣州就講「冰箱」、「草莓」。我諗主要原因係廣州受普通話影響比較大，而香港以前受英文影響多，所以好多叫法都唔同。如果你去廣州旅行，留意吓呢啲分別，會好有趣。", en: "Both Guangzhou and Hong Kong speak Cantonese, but quite a lot of vocabulary differs. For example, Hong Kongers say 影片 for 'video' while Guangzhou people mostly say 視頻; Hong Kong says 埋單 for the bill and Guangzhou 買單. Hong Kong also says 雪櫃 'fridge' and 士多啤梨 'strawberry', while Guangzhou says 冰箱 and 草莓. I think the main reason is that Guangzhou is more influenced by Mandarin, whereas Hong Kong was more influenced by English, so many names differ. If you travel to Guangzhou, keep an eye out for these differences; it's great fun." }
+  - task: "Write about having morning tea in Guangzhou with a local friend: the food, and how people addressed each other."
+    min: 110
+    max: 190
+    use: [w.zou2-caa4, w.jat1-zung1-loeng5-gin6, w.lou5-gwong2, w.dei6-dou6, w.si1-fu2]
+    useAtLeast: 3
+    grammar: [g.address-terms, g.guangzhou-vs-hk]
+    expect:
+      - { pattern: "早茶|一盅兩件", hint: "Mention morning tea: 早茶, 一盅兩件." }
+      - { pattern: "靚仔|美女|帥哥|師傅|老表|阿姐", hint: "Mention the terms of address you heard: 靚仔, 美女…" }
+    model: { es: "今朝我同一個老廣朋友去飲早茶，佢話廣州人最鍾意一盅兩件，慢慢嘆一個朝早。我哋叫咗蝦餃、腸粉同艇仔粥，味道好地道。最有趣係啲稱呼：伙記叫我「靚仔」，叫我朋友「美女」，我朋友就叫廚房嘅阿叔做「師傅」。埋單嘅時候，佢仲同老闆講「老表，唔該晒」，好有人情味。下次我一定再去。", en: "This morning I went for morning tea with a born-and-bred Guangzhou friend. He said Guangzhou people love 'a cup of tea and two dim sum', slowly enjoying the whole morning. We ordered har gow, cheung fun and sampan congee, all very authentic. The most interesting thing was the forms of address: the waiter called me 'handsome' and my friend 'beautiful', and my friend called the man in the kitchen 'master'. When paying, he even said to the owner, 'Thanks a lot, cousin', which felt very warm. I'll definitely go again next time." }
+  - task: "Give your opinion: will the spread of Mandarin change Cantonese in Guangzhou and the Greater Bay Area? What should be done?"
+    min: 110
+    max: 200
+    use: [w.teoi1-pou2, w.mou5-jyu5, w.soeng1-jyu5, w.daai6-waan1-keoi1, w.gwong2-fu2-jan4]
+    useAtLeast: 3
+    grammar: [g.mandarin-influence]
+    expect:
+      - { pattern: "我認為|我覺得|筆者|個人", hint: "State your view: 我認為…" }
+      - { pattern: "應該|必須|希望", hint: "Say what should be done: 應該…" }
+    model: { es: "近年廣州推普推得好成功，好多細路喺學校同屋企都講普通話，有啲甚至唔識講廣東話。我認為識講普通話係好事，不過廣東話係廣府人嘅母語，亦都係一種身份認同，唔應該就噉消失。大灣區嘅人應該做雙語人：出街講普通話，返屋企講廣東話。家長同學校都應該鼓勵細路多講多聽，等廣東話可以一代一代咁流傳落去。", en: "In recent years Guangzhou has promoted Mandarin very successfully; many children speak Mandarin at school and at home, and some can't even speak Cantonese. I think speaking Mandarin is a good thing, but Cantonese is the mother tongue of the Cantonese people and part of their identity; it shouldn't just disappear. People in the Greater Bay Area should be bilingual: Mandarin outside, Cantonese at home. Parents and schools should encourage children to speak and listen more, so that Cantonese can be passed from one generation to the next." }

@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 import type { VocabEntry } from '../../engine/schema'
 import { vocab } from '../../engine/loader'
 import { allCards, getKv, setKv } from '../../db/progress'
-import { pickGameWords } from '../../engine/vocabGame'
+import { finishedCards, pickGameWords } from '../../engine/vocabGame'
+import { loadFinishedWords } from '../../hooks/useFinishedWords'
 import { Rng } from '../../engine/random'
 
 /** Best results per game id, in kv `gamesBest`. */
@@ -36,19 +37,20 @@ export async function recordGame(id: string, result: { score?: number; ms?: numb
 }
 
 /**
- * The learner's words for a game (due and weakest first, see pickGameWords), filtered by `fit`.
- * `undefined` while loading; fewer than the game needs means "finish a lesson first".
+ * The learner's words for a game: only words of lessons they have finished (engine/finished.ts),
+ * due and weakest first (see pickGameWords), filtered by `fit`. `undefined` while loading; fewer
+ * than the game needs means "finish N more lessons first" (TooFew with the game's id).
  */
 export function useGameWords(want: number, fit: (v: VocabEntry) => boolean = () => true, round = 0): VocabEntry[] | undefined {
   const [words, setWords] = useState<VocabEntry[] | undefined>()
   useEffect(() => {
     let live = true
-    void allCards().then((cards) => {
+    void Promise.all([allCards(), loadFinishedWords()]).then(([cards, finished]) => {
       const lookup = (id: string) => {
         const v = vocab.get(id)
         return v && fit(v) ? v : undefined
       }
-      if (live) setWords(pickGameWords(cards, lookup, want, new Rng(Date.now())))
+      if (live) setWords(pickGameWords(finishedCards(cards, finished.words), lookup, want, new Rng(Date.now())))
     })
     return () => {
       live = false

@@ -285,3 +285,41 @@ dialogues:
       - { q: "Dove lavora adesso Davide?", options: ["In una libreria", "Nel bar di suo zio", "All'università"], answer: 1, explain: "He works in his uncle's bar behind the cathedral." }
       - { q: "Come parla Chiara con il professore?", options: ["Con il tu e molte parolacce", "In dialetto leccese", "In modo formale, con il Lei"], answer: 2, explain: "She switches to Lei: La ringrazio, i Suoi consigli." }
       - { q: "Che cosa offre Davide a Chiara alla fine?", options: ["Un pasticciotto", "Un caffè", "Un passaggio"], answer: 1, explain: "'Allora, questo caffettino? Offro io.'" }
+writing:
+  - task: "You can't attend tomorrow's class. Write two short messages: one to a classmate in colloquial Italian, and one to your teacher in formal Italian."
+    min: 80
+    max: 140
+    use: [w.registro, w.casino, w.roba, w.dai-retta, w.colloquiale]
+    useAtLeast: 2
+    grammar: [g.register-formal-informal]
+    expect:
+      - { pattern: "\\b(gentile|egregio|egregia|le scrivo|la ringrazio|cordiali saluti|distinti saluti)\\b", hint: "Formal version: Gentile professoressa, Le scrivo…, Cordiali saluti." }
+      - { pattern: "\\b(ciao|ehi|dai|boh|cioè|tipo|casino|roba|figurati|uffa)\\b", hint: "Informal version: Ciao! Ho un casino di roba da fare…" }
+    model: { es: "Al mio compagno: Ehi Luca! Domani non ce la faccio a venire a lezione, ho un casino di roba da fare. Mi passi gli appunti? Ti offro un caffè, dai! Sei il migliore! Alla professoressa: Gentile professoressa Greco, Le scrivo per informarLa che domani purtroppo non potrò essere presente alla lezione per motivi di famiglia. Le sarei grato se potesse dirmi quali argomenti tratterete, così potrò studiarli a casa prima della lezione successiva. La ringrazio per la disponibilità. Cordiali saluti.", en: "To my classmate: Hey Luca! I can't make it to class tomorrow, I've got loads of stuff to do. Can you pass me your notes? I'll buy you a coffee, go on! You're the best! To the teacher: Dear Professor Greco, I am writing to inform you that unfortunately I will not be able to attend tomorrow's lesson for family reasons. I would be grateful if you could tell me which topics you will cover, so that I can study them at home before the next lesson. Thank you for your help. Kind regards." }
+  - task: "Describe your stay in Lecce using diminutives, augmentatives and pejoratives (una casetta, una stradina, un omone, un tempaccio, un febbrone…)."
+    min: 80
+    max: 140
+    use: [w.casetta, w.stradina, w.piazzetta, w.tempaccio, w.febbrone]
+    grammar: [g.suffixes-alterati]
+    expect:
+      - { pattern: "\\b\\S+(etta|etto|ette|etti|ina|ino|ine|ini|ello|ella|one|ona|oni|accio|accia|acci)\\b", hint: "Use altered nouns: casetta, stradina, omone, tempaccio…" }
+    model: { es: "Abbiamo affittato una casetta deliziosa nel centro storico di Lecce, in una stradina stretta vicino a una piazzetta piena di bar. La prima sera abbiamo mangiato in una piccola trattoria, dove il proprietario, un omone molto simpatico, ci ha offerto un caffettino. Purtroppo il terzo giorno è arrivato un tempaccio terribile: pioggia e vento per due giorni! Il mio fratellino si è preso un febbrone e siamo rimasti chiusi in casa. Per fortuna avevo portato un librone di storie. Poi è tornato il sole e siamo andati al mare.", en: "We rented a lovely little house in the historic centre of Lecce, in a narrow little street near a small square full of bars. On the first evening we ate in a small trattoria, where the owner, a big, very friendly man, offered us a little coffee. Unfortunately on the third day some horrible weather arrived: rain and wind for two days! My little brother came down with a high fever and we were stuck indoors. Luckily I had brought a huge book of stories. Then the sun came back and we went to the seaside." }
+  - task: "Write a chat message to a friend about last night's party in colloquial Italian (cioè, tipo, boh, mica male, figurati, praticamente, pazzesco…)."
+    min: 80
+    max: 140
+    use: [w.cioè, w.praticamente, w.figo, w.pazzesco, w.boh]
+    grammar: [g.colloquial-italian]
+    expect:
+      - { pattern: "\\b(cioè|tipo|boh|mah|uffa|praticamente|mica|figurati|macché|dai|caspita|accidenti)", hint: "Use colloquial words: cioè, tipo, boh, mica male, figurati…" }
+    model: { es: "Ehi Giulia! Ieri sera la festa da Marco è stata pazzesca, cioè, davvero mitica! C'era tipo mezza città, praticamente tutti i ragazzi dell'università. La musica era figa e il cibo mica male: c'erano anche i pasticciotti! A un certo punto è arrivato Luca, quel tizio che ti piace, e mi ha chiesto di te! Che cosa gli ho detto? Boh, niente di speciale, figurati! Comunque ha detto che sabato organizza un'altra festa al mare. Ci andiamo insieme? Dai, non fare la secchiona e vieni!", en: "Hey Giulia! Last night's party at Marco's was crazy, I mean, really amazing! There was like half the town, basically all the guys from uni. The music was cool and the food not bad at all: there were even pasticciotti! At one point Luca turned up, that guy you like, and he asked me about you! What did I tell him? Dunno, nothing special, don't worry! Anyway he said he's throwing another party at the beach on Saturday. Shall we go together? Come on, don't be a swot and come!" }
+  - task: "A guest at a hotel in Lecce made this rude, colloquial complaint at reception. Rewrite it as a polite formal complaint letter to the hotel manager."
+    es: "«Uffa, questa camera fa schifo! Il bagno è un casino, l'acqua è fredda e quel tizio giù se ne frega!»"
+    min: 80
+    max: 140
+    use: [w.lamentarsi, w.inconveniente, w.cortese, w.rimborso, w.responsabile]
+    grammar: [g.register-formal-informal]
+    expect:
+      - { pattern: "\\b(gentile|egregio|egregia|spettabile)\\b", hint: "Open formally: Gentile Direttore…" }
+      - { pattern: "\\b(le scrivo|le chiedo|la prego|purtroppo|vorrei|desidero|cortesemente)\\b", hint: "Use polite formal phrases: Le scrivo per…, purtroppo…, Le chiedo cortesemente…" }
+      - { pattern: "distinti saluti|cordiali saluti", hint: "Close formally: Distinti saluti." }
+    model: { es: "Gentile Direttore, Le scrivo per parlarLe di alcuni inconvenienti durante il mio soggiorno nel Suo albergo. Purtroppo la camera non era pulita come mi aspettavo e il bagno non era in ordine. Inoltre, per tre giorni l'acqua calda non ha funzionato. Ho parlato più volte con il responsabile del piano terra, il quale però non è stato molto cortese e non ha risolto il problema. Mi dispiace dovermi lamentare, perché la posizione dell'albergo è ottima. Le chiedo cortesemente un rimborso parziale del soggiorno. Distinti saluti.", en: "Dear Manager, I am writing to tell you about some problems during my stay at your hotel. Unfortunately the room was not as clean as I expected and the bathroom was untidy. Moreover, for three days there was no hot water. I spoke several times to the person in charge on the ground floor, who however was not very polite and did not solve the problem. I am sorry to have to complain, because the hotel's location is excellent. I kindly ask you for a partial refund of the stay. Yours faithfully." }

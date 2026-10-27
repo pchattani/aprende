@@ -280,3 +280,45 @@ dialogues:
       - { q: "O Tom conhece a Floresta da Tijuca?", options: ["Conhece, sim", "Ainda não", "Conhece muito bem"], answer: 1, explain: "Tom answers ainda não: he hasn't been yet." }
       - { q: "O que o Lucas vai levar?", options: ["Água", "Sanduíches", "O violão"], answer: 2, explain: "Bia brings water and sandwiches; Lucas brings his guitar." }
       - { q: "O que os amigos vão fazer depois?", options: ["Visitar o Tom em São Paulo", "Morar em São Paulo", "Viajar para Portugal"], answer: 0, explain: "Lucas promises that they will visit Tom in São Paulo." }
+writing:
+  - task: "Write about your holiday plans. Connect your ideas with porque, então, mas and quando."
+    min: 15
+    max: 40
+    use: [w.férias, w.viagem, w.mala, w.passaporte, w.então]
+    useAtLeast: 3
+    grammar: [g.connectors-basic]
+    expect:
+      - { pattern: '\b(porque|ent[aã]o|mas|quando|pois)\b', hint: "Connect your ideas: porque, então, mas, quando…" }
+      - { pattern: '\b(vou|vamos) [a-zà-ú]+(ar|er|ir)\b', hint: "Say your plans with ir + infinitive: Vou viajar …" }
+    model: { es: "Nas férias, vou viajar para São Paulo, porque quero conhecer a cidade. A viagem é longa, então vou de avião. Minha mala é pequena, mas tenho o passaporte!", en: "In the holidays I'm going to travel to São Paulo, because I want to get to know the city. The journey is long, so I'm going by plane. My suitcase is small, but I have my passport!" }
+  - task: "Reply to your friend's message: agree or disagree with each thing she says (Eu também! / Eu também não. / Eu não…)."
+    es: "Eu adoro o Rio! Não gosto de frio. Amanhã vou à Floresta da Tijuca."
+    min: 15
+    max: 40
+    use: [w.também, w.também-não, w.nem, w.mesmo]
+    useAtLeast: 2
+    grammar: [g.tambem-tambem-nao]
+    expect:
+      - { pattern: 'tamb[eé]m', hint: "Agree: Eu também!" }
+      - { pattern: '(tamb[eé]m n[aã]o|\bnem eu\b)', hint: "Agree with a negative: Eu também não. / Nem eu." }
+    model: { es: "Eu também! O Rio é lindo. Eu também não gosto de frio. Amanhã eu não vou à Tijuca, porque tenho que trabalhar. Mas no domingo eu vou, sim!", en: "Me too! Rio is beautiful. I don't like the cold either. Tomorrow I'm not going to Tijuca, because I have to work. But on Sunday I'm going, for sure!" }
+  - task: "Answer your friend's questions about the party the Brazilian way: repeat the verb instead of saying just sim (Vou! / Posso. / Tenho.)."
+    es: "Você vem à festa no sábado? Você pode levar um bolo? Você tem o endereço?"
+    min: 12
+    max: 35
+    use: [w.claro, w.combinado, w.levar, w.endereço]
+    useAtLeast: 2
+    grammar: [g.yes-no-answers]
+    expect:
+      - { pattern: '\b(venho|vou|posso|levo|tenho)\b', hint: "Answer by repeating the verb: Vou! / Posso! / Tenho." }
+    model: { es: "Vou, claro! Posso, sim: levo um bolo de chocolate. Tenho o endereço, mas qual é o número do apartamento? Combinado, até sábado!", en: "I'm coming, of course! Yes, I can: I'll bring a chocolate cake. I have the address, but what's the flat number? Deal, see you Saturday!" }
+  - task: "Write a goodbye postcard to Rio: what everything and everybody is like, and what you do every day. Use tudo, todo mundo, todo dia and cada."
+    min: 15
+    max: 40
+    use: [w.tudo, w.todo, w.cada, w.lugar, w.coisa]
+    useAtLeast: 3
+    grammar: [g.todo-tudo]
+    expect:
+      - { pattern: '\btudo\b', hint: "Use tudo for 'everything': Tudo é lindo." }
+      - { pattern: '\btod(o|a|os|as)\b', hint: "Use todo/toda + noun: todo mundo, todo dia, todas as praias." }
+    model: { es: "Tchau, Rio! Aqui tudo é lindo. Todo mundo é simpático e todo dia eu vou à praia. Cada lugar é diferente: o parque, o morro, o mar. Até a próxima!", en: "Bye, Rio! Everything here is beautiful. Everybody is friendly and every day I go to the beach. Every place is different: the park, the hill, the sea. Until next time!" }

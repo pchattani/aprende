@@ -266,3 +266,44 @@ dialogues:
       - { q: "Why have Rosa's neighbours left the old town?", options: ["They can no longer afford the rent", "The area is too noisy", "They found jobs elsewhere"], answer: 0 }
       - { q: "What does Javier admit?", options: ["That all tourist flats should be banned", "That unlicensed tourist flats need to be controlled", "That tourism creates no jobs"], answer: 1 }
       - { q: "On what do Rosa and Javier agree?", options: ["That the council works well", "That tourists should pay a tax", "That they both want a living neighbourhood"], answer: 2 }
+writing:
+  - task: "Write a paragraph about climate change, conceding points: aunque + indicative for facts, aunque + subjunctive for hypotheses or things not yet known."
+    min: 80
+    max: 150
+    use: [w.calentamiento-global, w.contaminante, w.placa-solar, w.optimista, w.petroleo]
+    useAtLeast: 3
+    grammar: [g.aunque-indicative-subjunctive]
+    expect:
+      - { pattern: "\\baunque (el|la|los|las|es|son|hay|todav[ií]a|cada)\\b", hint: "Use aunque + indicative for a fact: aunque el problema es serio …" }
+      - { pattern: "\\baunque (no )?(lo )?(sea|haya|cueste|tengamos|parezca|est[eé]|sean|tenga|pueda|veamos|cambie|cuesten)", hint: "Use aunque + subjunctive for something hypothetical: aunque cueste dinero …" }
+    model: { es: "Aunque el calentamiento global es un problema muy serio, soy bastante optimista. Es cierto que todavía dependemos del petróleo y del carbón, aunque cada año se instalan más placas solares en los tejados. Algunas personas dicen que ya es demasiado tarde, pero aunque sea tarde, tenemos la obligación de intentarlo. Aunque cueste dinero, los gobiernos deben apostar por energías menos contaminantes. Y aunque no veamos los resultados enseguida, nuestros hijos nos lo agradecerán. En Mendoza, por ejemplo, el agua de los glaciares es cada vez más escasa.", en: "Although global warming is a very serious problem, I'm quite optimistic. It's true that we still depend on oil and coal, although every year more solar panels are installed on roofs. Some people say it's already too late, but even if it is late, we have an obligation to try. Even if it costs money, governments must bet on less polluting energy. And even if we don't see the results straight away, our children will thank us. In Mendoza, for example, water from the glaciers is getting scarcer and scarcer." }
+  - task: "Your friend's brother won't listen to anyone. Give advice using por mucho que / por más que / por muy … que + subjunctive."
+    es: "Mi hermano quiere dejar la universidad para ser influencer. Ya he hablado con él, pero no me hace caso."
+    min: 80
+    max: 150
+    use: [w.cabezota, w.terco, w.empenarse, w.cambiar-de-opinion, w.razonable]
+    useAtLeast: 3
+    grammar: [g.por-mucho-que]
+    expect:
+      - { pattern: "por (mucho|m[aá]s) que|por (muy|mucho|m[aá]s) [a-záéíóúñ]+ que", hint: "Use por mucho que / por más que / por muy … que + subjunctive." }
+    model: { es: "Te entiendo muy bien: mi primo era igual de cabezota. Por mucho que insistas, tu hermano no va a cambiar de opinión si se siente atacado. Por más que le repitas que es un error, cuando alguien se empeña en algo, lo hace de todas formas. Mi consejo es que dialogues con él de forma tranquila y razonable. Pregúntale por su plan y deja que él mismo vea los riesgos. Por muy terco que sea, seguro que escucha a alguien que lo respeta. Y quién sabe, a lo mejor tiene éxito.", en: "I totally understand: my cousin was just as stubborn. However much you insist, your brother won't change his mind if he feels attacked. However often you tell him it's a mistake, when someone is set on something, they do it anyway. My advice is to talk to him calmly and reasonably. Ask him about his plan and let him see the risks himself. However stubborn he is, I'm sure he'll listen to someone who respects him. And who knows, maybe he'll succeed." }
+  - task: "Write a short article about a scientific achievement (space travel, vaccines, robots …): what was achieved despite the difficulties. Use a pesar de, a pesar de que and así y todo."
+    min: 80
+    max: 150
+    use: [w.cohete, w.satelite, w.experimentar, w.asi-y-todo, w.innovar]
+    useAtLeast: 3
+    grammar: [g.a-pesar-de]
+    expect:
+      - { pattern: "a pesar de|pese a", hint: "Use a pesar de / a pesar de que: a pesar de los costes …" }
+      - { pattern: "as[ií] y todo|aun as[ií]|sin embargo", hint: "Add another concession: así y todo …" }
+    model: { es: "Viajar al espacio es uno de los mayores logros de la historia humana. A pesar de su enorme coste, cada año se envían muchos satélites que nos permiten tener internet y conocer el tiempo de mañana. A pesar de que muchos cohetes fallaron al principio, los ingenieros siguieron experimentando hasta conseguirlo. Hoy, las empresas privadas también participan y no dejan de innovar. Así y todo, todavía hay quien piensa que deberíamos invertir ese dinero en los problemas de la Tierra. A pesar de las críticas, creo que la ciencia necesita soñar a lo grande.", en: "Travelling into space is one of the greatest achievements in human history. Despite its enormous cost, every year many satellites are sent up that let us have internet and know tomorrow's weather. Even though many rockets failed at first, engineers kept experimenting until they succeeded. Today private companies also take part and keep innovating. Even so, some people still think we should invest that money in the Earth's problems. Despite the criticism, I think science needs to dream big." }
+  - task: "Your friend thinks all Argentinians eat only steak and dance tango. Reply, challenging the stereotype (Aunque no lo creas …, Aunque sea un tópico …)."
+    min: 80
+    max: 150
+    use: [w.estereotipo, w.topico, w.generalizar, w.prejuicio, w.gastronomia]
+    useAtLeast: 3
+    grammar: [g.aunque-indicative-subjunctive]
+    expect:
+      - { pattern: "aunque no lo creas|aunque (sea|es|haya|hay)", hint: "Concede with aunque: aunque no lo creas …, aunque sea un tópico …" }
+      - { pattern: "estereotipo|t[oó]pico|prejuicio|generaliz", hint: "Name the problem: es un tópico, es un estereotipo …" }
+    model: { es: "Aunque no lo creas, eso es solo un tópico. Es verdad que en Argentina se come mucha carne y que el asado es casi una religión, pero la gastronomía del país es muy rica y cambia en cada región: hay pasta italiana, pescado de río y platos de los Andes. En cuanto a la música, aunque el baile de Buenos Aires sea un símbolo del país, la mayoría de los jóvenes prefiere otros ritmos. Generalizar es peligroso, porque los estereotipos crean prejuicios. Aunque haya algo de verdad en cada tópico, cada persona es diferente.", en: "Believe it or not, that's just a cliché. It's true that people eat a lot of meat in Argentina and that the asado is almost a religion, but the country's food is very rich and changes from region to region: there's Italian pasta, river fish and dishes from the Andes. As for music, although Buenos Aires' famous dance may be a symbol of the country, most young people prefer other rhythms. Generalising is dangerous, because stereotypes create prejudice. Although there may be some truth in every cliché, every person is different." }

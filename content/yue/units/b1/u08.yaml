@@ -281,3 +281,42 @@ dialogues:
       - { q: "件事係幾時發生嘅？", options: ["尋晚", "今朝七點幾", "下晝"], answer: 1, explain: "係今朝七點幾發生嘅: it happened just after seven this morning." }
       - { q: "受傷嘅人係點樣去醫院嘅？", options: ["坐的士", "踩單車", "坐救護車"], answer: 2, explain: "係坐救護車送院嘅: they were taken by ambulance." }
       - { q: "阿明想喺水壩做乜嘢？", options: ["影相", "游水", "睇新聞"], answer: 0, explain: "He wants to take photos to share on social media (影相分享上社交媒體)." }
+writing:
+  - task: "Tell a friend what you heard on the news about this weekend at Tai Mei Tuk, using 話 and 聽講."
+    min: 40
+    max: 90
+    use: [w.gei3-ze2, w.teng1-gong2, w.seoi2-baa3, w.daan1-ce1-ging3, w.si5-man4]
+    useAtLeast: 3
+    grammar: [g.reported-speech]
+    expect:
+      - { pattern: "話|聽講|據講|表示", hint: "Report what was said: 記者話…, 聽講…" }
+    model: { es: "我啱啱睇新聞，記者話呢個週末大美督會好多人，因為天氣好好。聽講水壩附近嘅單車徑好擠迫，政府建議市民早啲出發。", en: "I've just watched the news. The reporter said Tai Mei Tuk will be very busy this weekend because the weather is great. I hear the cycle track near the dam is very crowded, and the government suggests people set off early." }
+  - task: "A friend asks about a traffic accident. Stress when, where and how it happened with 係…嘅."
+    es: "嗰單交通意外係幾時發生嘅？"
+    min: 40
+    max: 90
+    use: [w.faat3-sang1, w.ging2-fong1, w.sung3-jyun2, w.diu6-caa4, w.ji3-ngoi6]
+    useAtLeast: 3
+    grammar: [g.hai-ge-focus]
+    expect:
+      - { pattern: "係.{1,12}嘅", hint: "Stress the time or place with 係…嘅: 係尋晚發生嘅." }
+    model: { es: "係尋晚十一點喺大埔發生嘅。聽講係一架的士撞咗巴士站。有兩個人受傷，已經送院。警方仲調查緊意外嘅原因。", en: "It happened at eleven last night in Tai Po. Apparently a taxi crashed into a bus stop. Two people were injured and have been taken to hospital. The police are still investigating the cause of the accident." }
+  - task: "Write a short summary of a TV documentary you watched: what it was about (關於) and what you thought."
+    min: 40
+    max: 90
+    use: [w.gwaan1-jyu1, w.gei2-luk6-pin2, w.zit3-muk6, w.noi6-jung4, w.fong2-man6]
+    useAtLeast: 3
+    grammar: [g.gwaan-jyu-about]
+    expect:
+      - { pattern: "關於|有關", hint: "Say what it was about: 一個關於…嘅紀錄片." }
+    model: { es: "尋晚我睇咗一個關於香港郊野公園嘅紀錄片。內容好有趣，介紹咗大美督同西貢嘅風景，仲訪問咗幾個鍾意行山嘅市民。我覺得好值得睇。", en: "Last night I watched a documentary about Hong Kong's country parks. It was very interesting: it showed the scenery of Tai Mei Tuk and Sai Kung and interviewed a few people who love hiking. I think it's well worth watching." }
+  - task: "Tell your family about today's economic news, with at least one percentage (百分之…)."
+    min: 40
+    max: 90
+    use: [w.mat6-gaa3, w.soeng6-sing1, w.baak3-fan6-zi1, w.gaa1-gaa3, w.gu2-si5]
+    useAtLeast: 3
+    grammar: [g.reported-speech]
+    expect:
+      - { pattern: "百分之", hint: "Give a percentage: 百分之三." }
+      - { pattern: "話|聽講|據講|表示", hint: "Report the news: 新聞話…" }
+    model: { es: "今日新聞話物價又上升咗百分之三，巴士同港鐵都話會加價。不過股市今日下跌咗，好多人好擔心。聽講失業嘅人都增加咗。", en: "Today's news said prices have risen another three per cent, and the buses and MTR say they'll raise fares. But the stock market fell today and lots of people are worried. Apparently unemployment has gone up too." }

@@ -266,3 +266,44 @@ dialogues:
       - { q: "What does Marta order as a main course?", options: ["Fish with rice", "Chicken with potatoes", "Soup"], answer: 1 }
       - { q: "What does Tom drink?", options: ["Orange juice", "Beer and water", "Wine"], answer: 1 }
       - { q: "Which dessert does Marta choose?", options: ["Ice cream", "Fruit", "Chocolate cake"], answer: 2 }
+writing:
+  - task: "You are at a parrilla in Puerto Madero. Answer the waiter: order something to eat and to drink, politely."
+    es: "Buenas noches. ¿Qué quiere tomar?"
+    min: 10
+    max: 30
+    use: [w.querer, w.carne, w.agua, w.vino, w.por-favor]
+    useAtLeast: 3
+    grammar: [g.querer-present]
+    expect:
+      - { pattern: "\\bquiero\\b|\\bqueremos\\b|para m[ií]", hint: "Say what you want: Quiero …" }
+      - { pattern: "por favor", hint: "Be polite: … por favor." }
+    model: { es: "Buenas noches. Quiero carne con ensalada, por favor. Para beber, quiero una botella de agua y un vaso de vino.", en: "Good evening. I'd like meat with salad, please. To drink, I'd like a bottle of water and a glass of wine." }
+  - task: "Write about food you like, love and don't like (me gusta, me encanta, no me gusta)."
+    min: 12
+    max: 35
+    use: [w.gustar, w.encantar, w.pescado, w.chocolate, w.manzana]
+    useAtLeast: 3
+    grammar: [g.gustar]
+    expect:
+      - { pattern: "\\bme (gusta|gustan|encanta|encantan)\\b", hint: "Say what you like: Me gusta … / Me encanta …" }
+      - { pattern: "\\bno me gusta", hint: "Say what you don't like: No me gusta …" }
+    model: { es: "Me gusta mucho la carne y me encanta el chocolate. No me gusta el pescado. Me gustan las manzanas, pero no me gustan los tomates.", en: "I really like meat and I love chocolate. I don't like fish. I like apples, but I don't like tomatoes." }
+  - task: "Write what you and your family eat and drink in a normal day. Use -ar verbs: desayunar, tomar, comprar, cocinar, cenar."
+    min: 15
+    max: 40
+    use: [w.desayunar, w.tomar, w.cenar, w.cocinar, w.comprar]
+    useAtLeast: 3
+    grammar: [g.regular-ar-present]
+    expect:
+      - { pattern: "\\b(desayuno|tomo|ceno|cocino|compro|necesito|desayunamos|tomamos|cenamos|cocinamos|compramos)\\b", hint: "Use -ar verbs for yourself: desayuno, tomo, ceno …" }
+    model: { es: "Desayuno pan con queso y tomo café con leche. Mi hermana compra fruta en el mercado. Ceno en casa y cocino arroz con pollo.", en: "I have bread and cheese for breakfast and I drink white coffee. My sister buys fruit at the market. I have dinner at home and I cook rice with chicken." }
+  - task: "Write a short review of the parrilla: the food, how much there is (mucho, poco, bastante, demasiado) and the bill."
+    min: 15
+    max: 40
+    use: [w.demasiado, w.poco, w.bastante, w.rico, w.cuenta]
+    useAtLeast: 3
+    grammar: [g.quantity-words]
+    expect:
+      - { pattern: "\\b(mucho|mucha|muchos|muchas|poco|poca|pocos|pocas|bastante|demasiado|demasiada|algo|nada)\\b", hint: "Talk about quantity: mucho, poco, bastante, demasiado …" }
+      - { pattern: "\\b(rico|rica|ricos|ricas|caliente|fr[ií]o|fr[ií]a|dulce|bueno|buena|malo|mala|cara|caro|barata|barato)\\b", hint: "Say what it was like: rico, caliente, dulce, caro …" }
+    model: { es: "La carne es muy rica, pero la ensalada es pequeña y tiene poco tomate. El postre es demasiado dulce. La cuenta no es cara.", en: "The meat is very tasty, but the salad is small and has little tomato. The dessert is too sweet. The bill isn't expensive." }

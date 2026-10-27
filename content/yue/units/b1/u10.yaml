@@ -278,3 +278,44 @@ dialogues:
       - { q: "擺酒嗰陣仲有乜嘢睇？", options: ["扒龍舟", "舞獅", "煙花"], answer: 1, explain: "仲有舞獅添: there's a lion dance as well." }
       - { q: "盆菜邊樣嘢最好食？", options: ["鮑魚", "冬菇", "最底嘅蘿蔔"], answer: 2, explain: "最底嘅蘿蔔最好食嘅: the radish at the bottom is the best." }
       - { q: "安德魯要同老人家講乜嘢？", options: ["早晨", "恭喜發財", "生日快樂"], answer: 1, explain: "要同啲老人家講「恭喜發財」." }
+writing:
+  - task: "Write about your first poon choi feast in a walled village. Use sentence-final 嘅 to say firmly what is always done."
+    min: 40
+    max: 100
+    use: [w.pun4-coi3, w.wai4-cyun1, w.baau1-jyu4, w.cyun4-tung2, w.zaap6-zuk6]
+    useAtLeast: 3
+    grammar: [g.ge-assertion]
+    expect:
+      - { pattern: "盆菜", hint: "Mention the poon choi: 盆菜." }
+      - { pattern: "嘅[。！]", hint: "Assert a fact with sentence-final 嘅: 每年都會擺嘅." }
+    model: { es: "我第一次喺錦田嘅圍村食盆菜，好熱鬧！盆菜入面有鮑魚、冬菇同蘿蔔。村民話呢個係好傳統嘅習俗，每年過節都會擺嘅。", en: "It was my first time eating poon choi in a walled village in Kam Tin. So lively! The basin had abalone, shiitake mushrooms and radish. The villagers said it's a very traditional custom; they always hold it at festival time every year." }
+  - task: "Write about what you do at Lunar New Year, adding the extra treats with 添."
+    min: 40
+    max: 100
+    use: [w.baai3-nin4, w.lei6-si6, w.gung1-hei2-faat3-coi4, w.faa1-si5, w.tim1]
+    useAtLeast: 3
+    grammar: [g.tim-too]
+    expect:
+      - { pattern: "添", hint: "Add 'as well!' with 添 at the end: 仲有利是收添！" }
+    model: { es: "過年嘅時候我哋去拜年，同親戚講恭喜發財、身體健康。細路仲有利是收添！年三十晚我哋去花市買桃花，仲睇咗舞獅添。", en: "At New Year we go visiting and wish our relatives prosperity and good health. The kids get red packets too! On New Year's Eve we go to the flower market to buy peach blossom, and we watched a lion dance as well." }
+  - task: "A friend asks what's on at the Mid-Autumn Festival. Tell them what there's a chance to do (有得) and what there may not be (冇得)."
+    es: "中秋節有咩活動呀？"
+    min: 40
+    max: 90
+    use: [w.jau5-dak1, w.mou5-dak1, w.jyut6-beng2, w.dang1-lung4, w.soeng2-jyut6]
+    useAtLeast: 3
+    grammar: [g.jau-dak-chance]
+    expect:
+      - { pattern: "有得", hint: "Say what you can do with 有得: 有得食月餅." }
+      - { pattern: "冇得", hint: "Say what you might miss out on with 冇得: 冇得睇月亮." }
+    model: { es: "中秋節有得食月餅，又有得玩燈籠，晚黑仲可以去公園賞月。不過天文台話今年中秋節會落雨，可能冇得睇月亮。", en: "At Mid-Autumn you get to eat mooncakes and play with lanterns, and in the evening you can go to the park to admire the moon. But the Observatory says it'll rain this Mid-Autumn, so we might not get to see the moon." }
+  - task: "Write a postcard from a temple fair: what people were doing, and what you did there."
+    min: 40
+    max: 90
+    use: [w.miu2-wui2, w.tin1-hau6, w.siu1-hoeng1, w.heoi2-jyun6, w.ping4-on1-baau1]
+    useAtLeast: 3
+    grammar: [g.ge-assertion, g.tim-too]
+    expect:
+      - { pattern: "廟|平安包|燒香", hint: "Describe the fair: 天后廟, 燒香, 平安包…" }
+      - { pattern: "咗", hint: "Say what you did: 我買咗…" }
+    model: { es: "我今日去咗廟會，好多人喺天后廟燒香許願。我仲買咗兩個平安包，聽講食咗會好運㗎。好多義工幫手，真係好熱鬧。", en: "Today I went to a temple fair. Lots of people were burning incense and making wishes at the Tin Hau temple. I bought two lucky buns too; they say eating them brings good luck. Lots of volunteers were helping; it was really lively." }

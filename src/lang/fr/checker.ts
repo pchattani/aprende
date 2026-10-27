@@ -12,6 +12,7 @@
  * pronouns, predicates after a preposition are not checked, capitalised words are
  * names, and subjects after their verb (inversion: parlez-vous, a-t-il) are allowed.
  */
+import { contentRegExp } from '../wordBoundary'
 import type { CheckerFinding } from '../types'
 import type { ErrorRule, VocabEntry } from '../../engine/schema'
 import type { FrVerb } from './schema'
@@ -561,7 +562,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   for (const r of deps.rules) {
     let re: RegExp
     try {
-      re = new RegExp(r.pattern, 'giu')
+      re = contentRegExp(r.pattern, 'giu')
     } catch {
       continue
     }

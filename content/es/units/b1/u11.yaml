@@ -281,3 +281,45 @@ dialogues:
       - { q: "¿Qué dos soluciones propone la señora Vidal?", options: ["Que le envíen la lámpara esta semana o que le devuelvan el dinero", "Que le hagan un descuento o que le regalen la mesa", "Que le manden un correo o que la llamen"], answer: 0 }
       - { q: "¿Qué le ofrece el empleado como disculpa?", options: ["Un descuento del diez por ciento en la próxima compra", "Una lámpara gratis", "La devolución del dinero"], answer: 0, explain: "He sends the lamp tomorrow, collects the table for free and adds a 10% discount on her next purchase." }
       - { q: "¿Qué quiere recibir la señora Vidal además de la lámpara?", options: ["La confirmación por escrito", "Una llamada del director", "Una mesa nueva"], answer: 0 }
+writing:
+  - task: "Write a short opinion text: should tourists ask for discounts at markets like the ones in Jujuy? Give causes and consequences (ya que, debido a, por lo tanto)."
+    min: 50
+    max: 100
+    use: [w.ya-que, w.debido-a, w.por-lo-tanto, w.economia, w.inflacion]
+    useAtLeast: 3
+    grammar: [g.connectors-cause-consequence]
+    expect:
+      - { pattern: "ya que|puesto que|debido a|dado que", hint: "Give causes: ya que, debido a, puesto que …" }
+      - { pattern: "por lo tanto|por consiguiente|de modo que|en consecuencia|como consecuencia|as[ií] que", hint: "Give consequences: por lo tanto, de modo que …" }
+    model: { es: "En mi opinión, los turistas no deberían pedir descuentos en los mercados de Jujuy, ya que muchas familias viven de sus productos. Debido a la inflación, los precios cambian cada mes y la economía local tiene muchos problemas. Por lo tanto, unos pocos pesos son poco para nosotros, pero mucho para ellos. Como consecuencia, creo que es mejor pagar un precio justo.", en: "In my opinion, tourists shouldn't ask for discounts at the markets in Jujuy, since many families live off their products. Due to inflation, prices change every month and the local economy has lots of problems. Therefore, a few pesos are little to us, but a lot to them. As a consequence, I think it's better to pay a fair price." }
+  - task: "Compare working from home and working at the office. Contrast your ideas with sin embargo, a pesar de, no obstante and no … sino …"
+    min: 50
+    max: 100
+    use: [w.presencial, w.inconveniente, w.a-pesar-de, w.no-obstante, w.comodidad]
+    useAtLeast: 3
+    grammar: [g.connectors-contrast]
+    expect:
+      - { pattern: "sin embargo|no obstante|a pesar de|aun as[ií]|por el contrario|a diferencia de|en cambio", hint: "Contrast ideas: sin embargo, a pesar de, no obstante …" }
+      - { pattern: "\\bsino\\b", hint: "Correct an idea with no … sino …" }
+    model: { es: "El teletrabajo tiene muchas ventajas, como la comodidad y el ahorro de tiempo. Sin embargo, también tiene inconvenientes: muchas personas se sienten aisladas. A diferencia del trabajo presencial, en casa no hay compañeros para tomar un café. A pesar de eso, la productividad no siempre baja; no obstante, es difícil separar la vida privada y el trabajo. En mi opinión, la mejor solución no es elegir uno, sino hacer las dos cosas.", en: "Remote work has lots of advantages, like comfort and saving time. However, it also has drawbacks: many people feel isolated. Unlike working at the office, at home there are no colleagues to have a coffee with. Despite that, productivity doesn't always fall; nevertheless, it's hard to separate private life and work. In my opinion, the best solution isn't to choose one, but to do both." }
+  - task: "Write a short structured text about the best way to learn a language: introduction, arguments and conclusion. Use en primer lugar, asimismo, por último, en definitiva."
+    min: 50
+    max: 100
+    use: [w.en-primer-lugar, w.asimismo, w.por-ultimo, w.en-definitiva, w.sobre-todo]
+    useAtLeast: 3
+    grammar: [g.connectors-order]
+    expect:
+      - { pattern: "en primer lugar|para empezar|ante todo", hint: "Start your argument: en primer lugar …" }
+      - { pattern: "por [uú]ltimo|en definitiva|en conclusi[oó]n|para terminar|en resumen", hint: "Conclude: por último …, en definitiva …" }
+    model: { es: "¿Cuál es la mejor manera de aprender un idioma? En primer lugar, creo que es fundamental estudiar todos los días, aunque sea solo un poco. Asimismo, es muy útil viajar al país y hablar con la gente, sobre todo en situaciones reales. Por otra parte, leer y escuchar música ayuda a aprender palabras nuevas. Por último, no hay que tener miedo de cometer errores. En definitiva, lo más importante es la constancia.", en: "What's the best way to learn a language? First of all, I think it's essential to study every day, even if only a little. Likewise, it's very useful to travel to the country and talk to people, especially in real situations. On the other hand, reading and listening to music help you learn new words. Finally, you mustn't be afraid of making mistakes. In short, the most important thing is perseverance." }
+  - task: "Write a formal email to a hotel in Jujuy to complain: the room was not what you booked. Ask for a refund."
+    min: 60
+    max: 110
+    use: [w.estimado, w.reclamacion, w.lamentar, w.devolucion, w.adjuntar]
+    useAtLeast: 3
+    grammar: [g.formal-letters]
+    expect:
+      - { pattern: "estimad[oa]s?|a quien corresponda|se[nñ]or(a|es)?", hint: "Open formally: Estimados señores: …" }
+      - { pattern: "atentamente|un cordial saludo|saludos cordiales|a la espera de", hint: "Close formally: Atentamente, … / A la espera de su respuesta …" }
+      - { pattern: "\\b(solicito|les ruego|le ruego|quisiera|me gustar[ií]a|pido)\\b", hint: "Make your request: les ruego que …, solicito …" }
+    model: { es: "Estimados señores: Me dirijo a ustedes para presentar una reclamación. El pasado 3 de mayo reservé una habitación grande con vistas a la montaña. Sin embargo, al llegar me dieron una habitación interior, sin ventana y con mucho ruido. Lamento decirles que el servicio fue muy malo. Por este motivo, les ruego que me hagan la devolución de la diferencia de precio. Adjunto el documento de la reserva. A la espera de su respuesta, les saluda atentamente, Ana Martín.", en: "Dear Sir or Madam, I am writing to make a complaint. On 3 May I booked a large room with a view of the mountains. However, on arrival I was given an inside room, without a window and with a lot of noise. I regret to say that the service was very poor. For this reason, I ask you to refund the difference in price. I attach the booking document. I look forward to your reply. Yours faithfully, Ana Martín." }

@@ -270,3 +270,44 @@ dialogues:
       - { q: "What is happening on Saturday at seven?", options: ["A film", "A concert in the park", "A party"], answer: 1 }
       - { q: "How will they get to the concert?", options: ["By bike", "By bus", "On foot"], answer: 0 }
       - { q: "What time does the train leave on Sunday?", options: ["Eight thirty", "Nine", "Ten"], answer: 1 }
+writing:
+  - task: "Reply to your friend: say where you are going this weekend, how you are getting there and who with."
+    es: "¿Adónde vas este fin de semana?"
+    min: 15
+    max: 40
+    use: [w.ir, w.tren, w.rio, w.pueblo, w.pasear]
+    useAtLeast: 3
+    grammar: [g.ir-present, g.al-del-contractions]
+    expect:
+      - { pattern: "\\b(voy|vamos)\\b", hint: "Say where you are going: Voy a … / Vamos a …" }
+      - { pattern: "\\b(al|a la|en)\\b", hint: "Use al (a + el) / a la, and en for transport: voy al río, en tren …" }
+    model: { es: "Este fin de semana voy al Tigre con mi amiga Ana. Vamos en tren desde el centro. Allí paseamos por el río y comemos en un pueblo pequeño.", en: "This weekend I'm going to Tigre with my friend Ana. We're going by train from the centre. There we walk by the river and eat in a small village." }
+  - task: "Write about your plans for tomorrow in the Delta: three things you are going to do."
+    min: 15
+    max: 40
+    use: [w.visitar, w.pasear, w.manana, w.despues]
+    useAtLeast: 2
+    grammar: [g.ir-a-infinitive]
+    expect:
+      - { pattern: "\\b(voy|vas|va|vamos|van) a [a-záéíóúñ]+(ar|er|ir)\\b", hint: "Use ir a + infinitive: voy a visitar …" }
+    model: { es: "Mañana voy a visitar el Delta del Tigre. Primero voy a pasear en barco por el río. Después vamos a comer en un restaurante y por la noche voy a descansar.", en: "Tomorrow I'm going to visit the Tigre Delta. First I'm going to take a boat trip on the river. Then we're going to eat in a restaurant and in the evening I'm going to rest." }
+  - task: "Answer the question: write what you and your friends do on Sundays. Use hacer, poner and salir."
+    es: "¿Qué haces los domingos?"
+    min: 15
+    max: 40
+    use: [w.hacer, w.deporte, w.poner, w.salir]
+    useAtLeast: 2
+    grammar: [g.hacer-present]
+    expect:
+      - { pattern: "\\b(hago|hacemos|hace|hacen|haces)\\b", hint: "Use hacer: hago deporte, hacemos …" }
+    model: { es: "Los domingos hago deporte por la mañana. Por la tarde mis amigos y yo hacemos una comida en casa: yo pongo la mesa y ellos cocinan. Después salimos a pasear.", en: "On Sundays I do sport in the morning. In the afternoon my friends and I make a meal at home: I set the table and they cook. Then we go out for a walk." }
+  - task: "You are on a boat in the Delta. Write three polite requests or questions with poder (¿Puedo …? ¿Puede …?)."
+    min: 12
+    max: 35
+    use: [w.poder, w.ayudar, w.despacio, w.momento]
+    useAtLeast: 2
+    grammar: [g.poder-present]
+    expect:
+      - { pattern: "\\bpued(o|e|es|en)\\b|\\bpodemos\\b", hint: "Ask with poder: ¿Puedo …? ¿Puede …?" }
+      - { pattern: "¿", hint: "Write questions with ¿ … ?" }
+    model: { es: "Perdón, ¿puede hablar más despacio, por favor? ¿Puedo hacer una foto del río? ¿Me puede ayudar con la mochila? Un momento, por favor.", en: "Sorry, can you speak more slowly, please? Can I take a photo of the river? Can you help me with my rucksack? One moment, please." }

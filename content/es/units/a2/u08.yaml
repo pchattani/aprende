@@ -225,3 +225,44 @@ dialogues:
       - { q: "Why does Tom prefer the village?", options: ["More work", "Quieter life and cleaner air", "Better transport"], answer: 1 }
       - { q: "What does Marta say the village lacks?", options: ["Shops and a cinema", "Nature", "Friendly people"], answer: 0 }
       - { q: "What do they agree on in the end?", options: ["A big city is best", "A small city is ideal", "A village is ideal"], answer: 1 }
+writing:
+  - task: "Compare Corrientes with your home town: size, weather, food, prices, people. Use más … que, menos … que and tan … como."
+    min: 35
+    max: 65
+    use: [w.diferente, w.lento, w.parecido, w.igual, w.tranquilo]
+    useAtLeast: 2
+    grammar: [g.comparatives]
+    expect:
+      - { pattern: "\\bm[aá]s [a-záéíóúñ]+ que\\b|\\bmenos [a-záéíóúñ]+ que\\b|\\b(mejor|peor|mayor|menor)(es)? que\\b", hint: "Compare: más … que, menos … que, mejor que …" }
+      - { pattern: "\\btan [a-záéíóúñ]+ como\\b|\\btant[oa]s? ([a-záéíóúñ]+ )?como\\b", hint: "Add an equal comparison: tan … como, tanto como …" }
+    model: { es: "Corrientes es más pequeña que Buenos Aires y es mucho más tranquila. Aquí hace más calor que en mi ciudad. La comida es tan rica como en casa, pero es más barata. La gente es muy diferente: aquí todos son más simpáticos y la vida es más lenta.", en: "Corrientes is smaller than Buenos Aires and much quieter. It's hotter here than in my city. The food is as tasty as at home, but it's cheaper. The people are very different: here everyone is friendlier and life is slower." }
+  - task: "Write about the best and worst things of your trip so far: the most beautiful place, the best food, the worst moment …"
+    min: 35
+    max: 65
+    use: [w.popular, w.mejor, w.peor, w.bonito]
+    useAtLeast: 3
+    grammar: [g.superlatives]
+    expect:
+      - { pattern: "\\b(el|la|los|las) (m[aá]s|menos) [a-záéíóúñ]+|\\b(el|la|los|las) (mejor|peor|mejores|peores)\\b", hint: "Use superlatives: el más bonito, la mejor …" }
+    model: { es: "El lugar más bonito del viaje es la Costanera de Corrientes. La mejor comida es el pescado del río, el plato más popular de la región. El peor momento fue el viaje en autobús: ¡doce horas! Pero la música de aquí es la más alegre del mundo.", en: "The most beautiful place on the trip is the Costanera in Corrientes. The best food is the river fish, the most popular dish in the region. The worst moment was the bus journey: twelve hours! But the music here is the most cheerful in the world." }
+  - task: "Write about your healthy and unhealthy habits, using muy and mucho / mucha / muchos / muchas correctly."
+    min: 30
+    max: 60
+    use: [w.sano, w.saludable, w.casero, w.ventaja]
+    useAtLeast: 3
+    grammar: [g.muy-vs-mucho]
+    expect:
+      - { pattern: "\\bmuy\\b", hint: "Use muy before adjectives: muy sano …" }
+      - { pattern: "\\bmuch(o|a|os|as)\\b", hint: "Use mucho with nouns and verbs: mucha fruta, trabajo mucho …" }
+    model: { es: "Normalmente como muy sano: tomo mucha fruta y muchas verduras. La comida casera es muy saludable y tiene muchas ventajas. Sin embargo, trabajo mucho y a veces como comida rápida, que no es muy buena. También bebo mucho café.", en: "I usually eat very healthily: I have lots of fruit and lots of vegetables. Home-made food is very healthy and has many advantages. However, I work a lot and sometimes I eat fast food, which isn't very good. I also drink a lot of coffee." }
+  - task: "Answer the question with your opinion and give reasons."
+    es: "¿Qué es mejor: vivir en la ciudad o en un pueblo?"
+    min: 35
+    max: 65
+    use: [w.en-mi-opinion, w.me-parece, w.ventaja, w.naturaleza, w.trafico]
+    useAtLeast: 3
+    grammar: [g.opinions, g.comparatives]
+    expect:
+      - { pattern: "en mi opini[oó]n|para m[ií]|(me parece|creo|pienso|opino) que", hint: "Give your opinion: en mi opinión, creo que, me parece que …" }
+      - { pattern: "\\bporque\\b|\\bya que\\b", hint: "Give a reason: … porque …" }
+    model: { es: "En mi opinión, es mejor vivir en un pueblo. Me parece que la vida en el pueblo es más tranquila y más sana, porque hay naturaleza y aire limpio. Es verdad que la ciudad tiene ventajas, como el transporte público, pero también tiene mucho tráfico y ruido.", en: "In my opinion, it's better to live in a village. I think life in a village is quieter and healthier, because there's nature and clean air. It's true that the city has advantages, like public transport, but it also has lots of traffic and noise." }

@@ -277,3 +277,44 @@ dialogues:
       - { q: "Comment est le tableau ?", options: ["Il est très grand.", "Il est petit.", "Il est rouge."], answer: 1, explain: "Julie: « c'est un petit tableau »." }
       - { q: "Qu'est-ce que la dame du tableau porte ?", options: ["Une robe foncée.", "Un chapeau gris.", "Une veste rouge."], answer: 0, explain: "Thomas: « une robe foncée ». The grey hat belongs to the man in front of them." }
       - { q: "Qu'est-ce que Thomas a envie de faire ?", options: ["Rentrer à l'hôtel.", "Aller au café.", "Voir un autre tableau."], answer: 1, explain: "He's hungry: « On va au café ? »" }
+writing:
+  - task: "Describe a portrait at the Louvre (the Mona Lisa or another): hair, eyes, smile and clothes."
+    min: 15
+    max: 40
+    use: [w.portrait, w.cheveux, w.œil, w.sourire, w.robe]
+    useAtLeast: 3
+    grammar: [g.adjective-position, g.colours]
+    expect:
+      - { pattern: "\\b(il|elle) (a|porte)\\b", hint: "Describe with avoir and porter: Elle a les cheveux longs. Elle porte une robe…" }
+      - { pattern: "\\b(noire?s?|brune?s?|blonde?s?|roux|rousses?|bleue?s?|verte?s?|marron|grise?s?|rouges?|blancs?|blanches?|jaunes?|roses?|beiges?|violets?|violettes?)\\b", hint: "Use colours: les yeux marron, une robe noire…" }
+    model: { es: "Sur le portrait, il y a une jeune dame. Elle a les cheveux longs et bruns et les yeux marron. Elle a un petit sourire. Elle porte une robe noire.", en: "In the portrait there's a young lady. She has long brown hair and brown eyes. She has a little smile. She's wearing a black dress." }
+  - task: "Describe a friend's character: two good qualities and one small fault (use très, trop or assez)."
+    min: 15
+    max: 40
+    use: [w.gentil, w.drôle, w.intelligent, w.timide, w.trop]
+    useAtLeast: 3
+    grammar: [g.tres-trop-assez, g.adjective-agreement]
+    expect:
+      - { pattern: "\\b(tr[eè]s|trop|assez|vraiment)\\b", hint: "Use très, trop or assez: elle est très gentille." }
+      - { pattern: "\\b(il|elle) est\\b", hint: "Describe your friend: Il est … / Elle est …" }
+    model: { es: "Mon amie Chloé est très gentille et vraiment drôle. Elle est assez intelligente et elle adore les livres. Mais elle est un peu trop timide.", en: "My friend Chloé is very kind and really funny. She's quite clever and she loves books. But she's a bit too shy." }
+  - task: "After four hours in the Louvre, Hugo asks how you are. Tell him how you feel (hungry, thirsty, sleepy…) and what you need or want."
+    es: "Ça va ? On continue la visite ?"
+    min: 12
+    max: 40
+    use: [w.faim, w.soif, w.sommeil, w.besoin, w.envie]
+    useAtLeast: 3
+    grammar: [g.avoir-expressions]
+    expect:
+      - { pattern: "\\b(j['’]ai|nous avons|on a) (tr[eè]s |vraiment |aussi )?(faim|soif|sommeil|chaud|froid|peur)\\b", hint: "Say how you feel with avoir: J'ai faim, j'ai soif…" }
+      - { pattern: "\\b(envie|besoin) d", hint: "Say what you want or need: J'ai envie de … / J'ai besoin de …" }
+    model: { es: "Non, ça ne va pas ! J'ai très faim et j'ai soif. J'ai aussi sommeil. J'ai besoin d'un café et j'ai envie d'une crêpe !", en: "No, I'm not OK! I'm very hungry and I'm thirsty. I'm sleepy too. I need a coffee and I feel like a crêpe!" }
+  - task: "Describe three people or things you see in the museum, using beau, nouveau or vieux before the noun (bel, nouvel, vieil where needed)."
+    min: 15
+    max: 40
+    use: [w.beau, w.nouveau, w.vieux, w.homme, w.dame]
+    useAtLeast: 3
+    grammar: [g.beau-nouveau-vieux, g.adjective-position]
+    expect:
+      - { pattern: "\\b(beau|bel|belle|beaux|belles|nouveau|nouvel|nouvelle|nouveaux|nouvelles|vieux|vieil|vieille|vieilles)\\b", hint: "Use beau, nouveau or vieux before the noun: un bel homme, une vieille dame." }
+    model: { es: "Au Louvre, il y a un vieil homme avec une barbe blanche. Il regarde un beau tableau. À côté, une vieille dame porte un nouveau chapeau rouge.", en: "At the Louvre there's an old man with a white beard. He's looking at a beautiful painting. Next to him, an old lady is wearing a new red hat." }

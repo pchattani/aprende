@@ -251,3 +251,44 @@ dialogues:
       - { q: "Why did the waitress look at Martín oddly?", options: ["He asked for a 'jugo' instead of a 'zumo'", "He didn't pay", "He spoke too loudly"], answer: 0 }
       - { q: "What does Paula find hard?", options: ["The vocabulary", "The 'sh' pronunciation of ll", "Using usted"], answer: 1 }
       - { q: "What does Martín propose for next time?", options: ["Going to Argentina", "Drinking mate he brought from home", "Watching a film"], answer: 1 }
+writing:
+  - task: "Write a short text for a friend explaining some differences between the Spanish of Spain and of Latin America: vocabulary, pronunciation and vosotros / ustedes."
+    min: 80
+    max: 150
+    use: [w.variedad, w.seseo, w.hablante, w.computadora, w.celular]
+    useAtLeast: 3
+    grammar: [g.varieties-overview]
+    expect:
+      - { pattern: "en (Espa[nñ]a|Am[eé]rica|Argentina|M[eé]xico|Latinoam[eé]rica)", hint: "Compare places: en España …, en Argentina …" }
+      - { pattern: "\\b(se dice|dicen|se usa|usan|llaman|se pronuncian?|pronuncian)\\b", hint: "Explain usage: en España se dice …, en Argentina dicen …" }
+    model: { es: "El español tiene muchas variedades, pero los hablantes se entienden sin problema. Las diferencias más claras están en el vocabulario: en España se dice «ordenador» y «móvil», mientras que en América Latina se usa «computadora» y «celular». En Argentina, además, dicen «auto» en lugar de «coche» y «colectivo» para el autobús. En cuanto a la pronunciación, en casi toda América hay seseo: «casa» y «caza» se pronuncian igual. Por último, en América no se usa «vosotros»: siempre se dice «ustedes».", en: "Spanish has many varieties, but speakers understand each other without any problem. The clearest differences are in vocabulary: in Spain people say 'ordenador' and 'móvil', while in Latin America 'computadora' and 'celular' are used. In Argentina, they also say 'auto' instead of 'coche' and 'colectivo' for the bus. As for pronunciation, in almost all of Latin America there is seseo: 'casa' and 'caza' are pronounced the same. Finally, 'vosotros' isn't used in Latin America: people always say 'ustedes'." }
+  - task: "Write a message to an Argentine friend using voseo (vos sos, tenés, querés, podés, vení, contame, decime …)."
+    min: 80
+    max: 150
+    use: [w.vos, w.che, w.tenes, w.queres, w.aca]
+    useAtLeast: 3
+    grammar: [g.voseo]
+    expect:
+      - { pattern: "\\b(vos|sos|ten[eé]s|quer[eé]s|pod[eé]s|sab[eé]s|ven[ií]|contame|decime|mir[aá]|sentate)", hint: "Use voseo: vos sabés, tenés, querés, vení, contame …" }
+    model: { es: "¡Che, Lucas! ¿Qué tal todo por allá? Acá estoy en Talampaya y es un lugar bárbaro: hay paredes rojas enormes y unas huellas muy antiguas en las piedras. Vos sabés que me encanta la naturaleza, ¿no? Si tenés vacaciones en marzo, vení a visitarme y vamos juntos al parque. Contame qué querés hacer y te busco un hotel. Y decime si podés traer un poco de mate, que acá es carísimo. Mirá que te espero, en serio. ¡Sos el mejor! Un abrazo grande.", en: "Hey, Lucas! How's everything over there? Here I am in Talampaya and it's an amazing place: there are huge red walls and some really ancient footprints in the rocks. You know I love nature, right? If you have holidays in March, come and visit me and we'll go to the park together. Tell me what you want to do and I'll find you a hotel. And tell me if you can bring a bit of mate, because it's really expensive here. I really will be waiting for you. You're the best! Big hug." }
+  - task: "You are hosting an international conference in Argentina. Write a short welcome speech for the participants, addressing them with ustedes."
+    min: 80
+    max: 150
+    use: [w.anfitrion, w.participante, w.agradecimiento, w.congreso, w.inscripcion]
+    useAtLeast: 3
+    grammar: [g.ustedes-vs-vosotros]
+    expect:
+      - { pattern: "\\bustedes\\b|\\b(les|los|las) (doy|damos|agradezco|agradecemos|invito|invitamos|deseo|deseamos|recuerdo)\\b|darles", hint: "Address the audience with ustedes: les doy la bienvenida, ustedes han viajado …" }
+      - { pattern: "bienvenid[oa]s?|muchas gracias|agradec", hint: "Welcome and thank them: bienvenidos, muchas gracias …" }
+    model: { es: "Buenos días a todos. Como anfitriona, es un honor darles la bienvenida a este congreso. Muchos de ustedes han viajado miles de kilómetros para estar aquí, y queremos expresarles nuestro más sincero agradecimiento. Durante estos tres días, los participantes podrán asistir a conferencias, debatir y conocer el Parque de Talampaya. Les recuerdo que la inscripción para la excursión del sábado termina hoy. Si necesitan cualquier cosa, no duden en hablar con los organizadores. Espero que disfruten del congreso y de nuestra hospitalidad. ¡Muchas gracias!", en: "Good morning, everyone. As your host, it is an honour to welcome you to this conference. Many of you have travelled thousands of kilometres to be here, and we want to express our most sincere thanks. Over these three days, participants will be able to attend talks, debate and visit Talampaya Park. Let me remind you that registration for Saturday's excursion closes today. If you need anything at all, don't hesitate to speak to the organisers. I hope you enjoy the conference and our hospitality. Thank you very much!" }
+  - task: "Write a reflective text about your journey learning Spanish: what has been hardest, what you would have done differently and what you hope for next."
+    min: 80
+    max: 150
+    use: [w.fluidez, w.soltura, w.subjuntivo, w.perfeccionar, w.merecer-la-pena]
+    useAtLeast: 3
+    grammar: [g.b2-review]
+    expect:
+      - { pattern: "\\bsi (no )?hubiera|ojal[aá] (no )?hubiera|habr[ií]a [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Say what you would have done differently: si hubiera empezado antes, habría …" }
+      - { pattern: "espero que|ojal[aá] (pueda|consiga|tenga)", hint: "Express a hope for the future: espero que …" }
+      - { pattern: "lo m[aá]s dif[ií]cil|lo que m[aá]s", hint: "Say what has been hardest: lo más difícil ha sido …" }
+    model: { es: "Cuando empecé a estudiar español, nunca imaginé que llegaría a escribir textos como este. Lo más difícil, sin duda, ha sido el subjuntivo: todavía hoy dudo a veces entre «aunque es» y «aunque sea». Si hubiera empezado a hablar con nativos antes, habría ganado soltura mucho más rápido. Ojalá hubiera hecho una estancia de inmersión cuando era estudiante. Aun así, ha merecido la pena: ahora entiendo series, leo periódicos y me comunico con fluidez. Espero que el próximo año pueda conseguir el certificado de nivel C1 y seguir perfeccionando mi español.", en: "When I started learning Spanish, I never imagined I'd end up writing texts like this. The hardest thing, without a doubt, has been the subjunctive: even today I sometimes hesitate between 'aunque es' and 'aunque sea'. If I'd started speaking with native speakers earlier, I'd have gained fluency much faster. I wish I'd done an immersion stay when I was a student. Even so, it's been worth it: now I understand series, read newspapers and communicate fluently. I hope next year I can get the C1 certificate and keep perfecting my Spanish." }

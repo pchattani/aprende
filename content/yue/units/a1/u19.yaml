@@ -134,3 +134,45 @@ dialogues:
       - { q: "What do they eat?", options: ["Fried rice", "Pineapple buns", "Dumplings"], answer: 1, explain: "兩個菠蘿包: two pineapple buns." }
       - { q: "What do they drink?", options: ["Two coffees", "Two milk teas", "Water"], answer: 1, explain: "兩杯奶茶: two milk teas." }
       - { q: "How much is the bill?", options: ["Twenty-five dollars", "Fifty-two dollars", "Five hundred dollars"], answer: 1, explain: "五十二蚊: fifty-two dollars." }
+writing:
+  - task: "Order two cups of milk tea from the waiter, politely."
+    min: 4
+    max: 12
+    use: [w.m4-goi1, w.loeng5, w.naai5-caa4, w.bui1]
+    useAtLeast: 3
+    grammar: [g.order-mgoi, g.loeng-vs-ji]
+    expect:
+      - { pattern: "兩杯", hint: "Two cups is 兩杯, not 二杯." }
+      - { pattern: "唔該", hint: "Add 唔該 to order politely." }
+    model: { es: "唔該，兩杯奶茶。", en: "Two milk teas, please." }
+  - task: "You've finished eating. Ask how much it is and ask for the bill."
+    min: 5
+    max: 14
+    use: [w.gei2-do1, w.cin2, w.maai4-daan1, w.m4-goi1]
+    useAtLeast: 3
+    grammar: [g.prices-gei-do-cin, g.order-mgoi]
+    expect:
+      - { pattern: "幾多錢", hint: "Ask the price: 幾多錢呀？" }
+      - { pattern: "埋單", hint: "Ask for the bill: 唔該埋單！" }
+    model: { es: "幾多錢呀？唔該埋單！", en: "How much is it? The bill, please!" }
+  - task: "At a cha chaan teng, write what you want with 要: a pineapple bun and a coffee."
+    min: 8
+    max: 18
+    use: [w.jiu3, w.go3, w.bo1-lo4-baau1, w.bui1, w.gaa3-fe1]
+    useAtLeast: 3
+    grammar: [g.jiu-want, g.order-mgoi]
+    expect:
+      - { pattern: "要", hint: "Say what you want with 要: 我要…" }
+      - { pattern: "個菠蘿包", hint: "A pineapple bun: 一個菠蘿包." }
+    model: { es: "我要一個菠蘿包同一杯咖啡。", en: "I'd like a pineapple bun and a coffee." }
+  - task: "The waiter tells you the price. Repeat it and say whether it is cheap or expensive."
+    es: "三十蚊。"
+    min: 4
+    max: 12
+    use: [w.man1, w.peng4, w.gwai3]
+    useAtLeast: 2
+    grammar: [g.prices-gei-do-cin]
+    expect:
+      - { pattern: "蚊", hint: "Say the price with 蚊: 三十蚊." }
+      - { pattern: "平|貴", hint: "Say 好平 (cheap) or 好貴 (expensive)." }
+    model: { es: "三十蚊？好平呀！", en: "Thirty dollars? That's cheap!" }

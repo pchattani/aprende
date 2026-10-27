@@ -11,7 +11,7 @@ interface Hooks {
   fetch?: { index: number; answer: string; keys: string[] }
   scramble?: { index: number; tiles: string[]; pool: string[]; decoys: string[] }
 }
-type Win = { __palabras?: Hooks; __pawsportDemo?: (o?: { others?: boolean }) => Promise<unknown> }
+type Win = { __palabras?: Hooks; __pawsportDemo?: (o?: { others?: boolean; started?: number }) => Promise<unknown> }
 
 const SHOTS = process.env.GAMES_SHOTS
 const LANG = process.env.VITE_LANG ?? 'es'
@@ -34,7 +34,7 @@ async function openGame(page: Page, title: RegExp) {
   await page.goto('./#/games')
   await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
   await page.waitForFunction(() => Boolean((window as unknown as Win).__pawsportDemo), null, { timeout: 20_000 })
-  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false }))
+  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false, started: 1 }))
   await page.getByRole('button', { name: title }).click()
 }
 

@@ -281,3 +281,42 @@ dialogues:
       - { q: "Qual é a contraproposta da Camila?", options: ["Pagar um ano à vista", "Dois meses de caução à vista", "Não pagar o condomínio"], answer: 1, explain: "Dois meses, à vista." }
       - { q: "O que fica por conta da Camila?", options: ["A internet", "O condomínio", "A limpeza"], answer: 1, explain: "Mas o condomínio fica por sua conta." }
       - { q: "Por que dá para ouvir o mar à noite?", options: ["Porque o prédio é muito perto da praia", "Porque as janelas estão quebradas", "Porque ela vai morar num barco"], answer: 0, explain: "O prédio é tão perto da praia que dá para ouvir o mar: a consequence clause." }
+writing:
+  - task: "You want to rent a beach house in João Pessoa. Write a formal message to the owner setting your conditions (contanto que, desde que, caso, a não ser que)."
+    min: 80
+    max: 140
+    use: [w.contanto-que, w.desde-que, w.a-não-ser-que, w.caso.conj, w.à-vista]
+    useAtLeast: 3
+    grammar: [g.conditional-conjunctions]
+    expect:
+      - { pattern: '\b(contanto que|desde que|a n[aã]o ser que|a menos que|caso)\b', hint: "Set conditions with contanto que / desde que / caso + subjunctive." }
+      - { pattern: '(?<!\p{L})(seja|esteja|tenha|possa|aceite|inclua|fique|haja|queira|fa[cç]a|prefira|venha|custe)(?!\p{L})', hint: "Use the subjunctive after the condition: contanto que o senhor aceite…" }
+    model: { es: "Prezado Senhor Ricardo, tenho interesse na casa de praia em Tambaú para o mês de janeiro. Posso fechar o contrato hoje, contanto que o senhor aceite um desconto de dez por cento. Pago o valor total à vista, desde que as toalhas e os lençóis estejam incluídos. Caso o senhor prefira parcelar, aceito o preço do anúncio. Não preciso de garagem, a não ser que o carro do meu irmão venha também. Caso a casa não esteja disponível, peço que me avise o quanto antes. Aguardo a sua resposta. Atenciosamente, Ana Lima. ", en: "Dear Mr Ricardo, I am interested in the beach house in Tambaú for January. I can sign the contract today, provided you accept a ten per cent discount. I will pay the full amount up front, as long as towels and bed linen are included. Should you prefer payment in instalments, I accept the advertised price. I don't need a garage, unless my brother's car comes too. If the house is not available, please let me know as soon as possible. I look forward to your reply. Yours sincerely, Ana Lima. " }
+  - task: "Write a formal complaint to a shop about a faulty appliance, asking for a replacement or a refund and setting conditions (Caso não seja possível…, A menos que…)."
+    min: 80
+    max: 140
+    use: [w.garantia, w.reembolso, w.devolução, w.nota-fiscal, w.aparelho]
+    useAtLeast: 3
+    grammar: [g.conditional-conjunctions]
+    expect:
+      - { pattern: '\b(caso|a menos que|a n[aã]o ser que|desde que|contanto que)\b', hint: "Set conditions: Caso não seja possível…, A menos que…" }
+      - { pattern: '\b(prezad[oa]s?|atenciosamente|cordialmente)\b', hint: "Use a formal opening or closing: Prezados senhores… / Atenciosamente…" }
+    model: { es: "Prezados senhores, comprei um ventilador na loja de vocês no dia 3 de março, de acordo com a nota fiscal em anexo. Depois de uma semana, o aparelho parou de funcionar. Como o produto ainda está na garantia, solicito um aparelho novo ou o reembolso do valor pago. Caso não seja possível trocar o ventilador, peço a devolução do dinheiro no meu cartão de crédito. A menos que eu receba uma resposta em cinco dias, vou procurar os meus direitos como consumidor. Atenciosamente, Paulo Mendes.", en: "Dear Sirs, I bought a fan in your shop on 3 March, as shown on the attached receipt. After a week, the appliance stopped working. As the product is still under guarantee, I request a new appliance or a refund of the amount paid. Should it not be possible to replace the fan, I ask for the money to be returned to my credit card. Unless I receive a reply within five days, I will exercise my rights as a consumer. Yours faithfully, Paulo Mendes." }
+  - task: "Describe a place in Paraíba so vividly that it seems unreal, using consequence clauses (tão… que, tanto… que, de forma que)."
+    min: 80
+    max: 140
+    use: [w.falésia, w.coqueiro, w.jangada, w.de-forma-que, w.tanto-que]
+    useAtLeast: 3
+    grammar: [g.consequence-clauses]
+    expect:
+      - { pattern: '(\bt[aã]o [a-zà-ú]+ que\b|\btant[oa]s? [a-zà-ú]+ que\b|\btanto que\b)', hint: "Use tão … que / tanto … que for consequences: tão bonito que…" }
+    model: { es: "Em João Pessoa fica a Ponta do Seixas, o lugar onde o sol nasce primeiro no Brasil. Acordei tão cedo que ainda estava escuro. O céu ficou tão colorido que parecia uma pintura. Depois, fomos à praia de Tambaba, com falésias vermelhas e coqueiros. A água era tão transparente que dava para ver os peixes. Havia tantas jangadas no mar que perdi a conta. Tirei tantas fotos que o celular ficou sem memória, de forma que tive de apagar algumas.", en: "In João Pessoa there's Ponta do Seixas, the place where the sun rises first in Brazil. I got up so early that it was still dark. The sky became so colourful that it looked like a painting. Then we went to Tambaba beach, with red cliffs and coconut palms. The water was so clear that you could see the fish. There were so many jangadas on the sea that I lost count. I took so many photos that my phone ran out of memory, so I had to delete some." }
+  - task: "Describe how a place you know is changing gradually (À medida que…, toda vez que…, cada vez mais…, desde então…, por enquanto…)."
+    min: 80
+    max: 140
+    use: [w.à-medida-que, w.toda-vez-que, w.cada-vez-mais, w.desde-então, w.por-enquanto]
+    useAtLeast: 3
+    grammar: [g.temporal-clauses-advanced]
+    expect:
+      - { pattern: '(?<!\p{L})([àa] medida que|toda vez que|sempre que|cada vez mais|cada vez menos|desde ent[aã]o)(?!\p{L})', hint: "Use advanced time expressions: à medida que, toda vez que, cada vez mais…" }
+    model: { es: "Moro em João Pessoa há três anos e a cidade está cada vez mais conhecida. À medida que chegam novos turistas, os preços sobem e o trânsito piora. Toda vez que vou à orla de bicicleta, vejo um prédio novo. Quando cheguei, havia poucos restaurantes; desde então, abriram muitos outros. Por enquanto, a cidade ainda é tranquila e a ciclovia é ótima, mas tenho medo de que ela perca o seu charme à medida que cresce. Toda vez que penso em me mudar, lembro do pôr do sol na praia e fico.", en: "I've lived in João Pessoa for three years and the city is getting better and better known. As new tourists arrive, prices go up and the traffic gets worse. Every time I cycle along the seafront, I see a new building. When I arrived there were few restaurants; since then lots of others have opened. For now the city is still peaceful and the cycle path is great, but I'm afraid it'll lose its charm as it grows. Every time I think of moving, I remember the sunset on the beach and stay." }

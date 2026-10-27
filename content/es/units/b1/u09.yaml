@@ -281,3 +281,45 @@ dialogues:
       - { q: "¿Qué ha asegurado el casero sobre el precio?", options: ["Que los gastos de comunidad están incluidos", "Que bajará el alquiler a 700 euros", "Que no hace falta pagar fianza"], answer: 0 }
       - { q: "¿Por qué les pide el casero que no tarden en contestar?", options: ["Porque hay otra pareja interesada", "Porque se va de vacaciones", "Porque quiere alquilar el piso con perro"], answer: 0, explain: "'Me ha pedido que no tardemos mucho, porque hay otra pareja interesada.'" }
       - { q: "¿Qué ha respondido el casero sobre el gato?", options: ["Que no hay problema, pero no quiere perros", "Que no admite animales", "Que lo tiene que pensar"], answer: 0 }
+writing:
+  - task: "Carla left you a voicemail. Pass her message on to your travel partner (Dice que …, Pide que …)."
+    es: "Hola, soy Carla. No puedo ir a Purmamarca mañana porque estoy enferma. Lo siento mucho. ¿Podéis llamar al hotel para cambiar la reserva? Os llamo el lunes."
+    min: 50
+    max: 100
+    use: [w.recado, w.buzon, w.comentar, w.aplazar, w.devolver-la-llamada]
+    useAtLeast: 3
+    grammar: [g.reported-speech-present]
+    expect:
+      - { pattern: "\\b(dice|ha dicho|comenta|explica|cuenta) que\\b", hint: "Report what she says: Carla dice que …" }
+      - { pattern: "\\b(pide|ha pedido|quiere) que\\b", hint: "Pass on her request: pide que llamemos …" }
+    model: { es: "Hola, Pablo: Carla ha dejado un recado en el buzón de voz. Dice que no puede venir a Purmamarca mañana porque está enferma. Comenta que lo siente mucho y que quiere aplazar el viaje una semana. Pide que llamemos al hotel para cambiar la reserva y que se lo confirmemos por correo. Dice que nos devolverá la llamada el lunes.", en: "Hi, Pablo: Carla has left a message on the voicemail. She says she can't come to Purmamarca tomorrow because she's ill. She says she's very sorry and wants to put the trip off for a week. She asks us to call the hotel to change the booking and to confirm it to her by email. She says she'll call us back on Monday." }
+  - task: "A friend promised things last week but didn't keep her word. Write what she said (Me dijo que vendría …) and what really happened."
+    min: 50
+    max: 100
+    use: [w.jurar, w.asegurar, w.malentendido, w.reconocer, w.ocultar]
+    useAtLeast: 3
+    grammar: [g.reported-speech-past]
+    expect:
+      - { pattern: "\\b(dijo|me dijo|prometi[oó]|jur[oó]|asegur[oó]|coment[oó]|explic[oó]|reconoci[oó]) que\\b", hint: "Report past words: me dijo que …, me juró que …" }
+      - { pattern: "\\b[a-zñ]+(ría|rían)(?![a-záéíóúñ])|\\b(hab[ií]a|estaba|era|ten[ií]a|pod[ií]a|quer[ií]a|pensaba)\\b", hint: "Shift the tenses: vendré → vendría, tengo → tenía …" }
+    model: { es: "La semana pasada, Marta me dijo que vendría a Purmamarca con nosotros y me juró que traería su coche. También me aseguró que tenía dinero suficiente para el viaje. Sin embargo, el viernes no apareció. Ayer reconoció que había sido un malentendido: pensaba que el viaje era el mes que viene. Al final me explicó que no quería ocultarme nada y que lo sentía mucho.", en: "Last week Marta told me she would come to Purmamarca with us and swore she'd bring her car. She also assured me she had enough money for the trip. However, on Friday she didn't turn up. Yesterday she admitted it had been a misunderstanding: she thought the trip was next month. In the end she explained that she didn't want to hide anything from me and that she was very sorry." }
+  - task: "Yesterday a hotel employee told you this. Report it, changing the time and place words (mañana → al día siguiente, aquí → allí …)."
+    es: "Mañana no habrá agua caliente aquí. Ayer tuvimos un problema y lo estamos reparando. Esta noche les daremos otra habitación."
+    min: 50
+    max: 100
+    use: [w.al-dia-siguiente, w.el-dia-anterior, w.en-aquel-momento, w.siguiente, w.anterior]
+    useAtLeast: 2
+    grammar: [g.reported-speech-past]
+    expect:
+      - { pattern: "\\b(dijo|explic[oó]|coment[oó]|avis[oó]|inform[oó]|asegur[oó]) que\\b", hint: "Report it: nos dijo que …, nos explicó que …" }
+      - { pattern: "al d[ií]a siguiente|aquella noche|aquel d[ií]a|all[ií]|el d[ií]a anterior|esa noche", hint: "Change time and place words: al día siguiente, allí, el día anterior, aquella noche …" }
+    model: { es: "Ayer, cuando llegamos al hotel, un empleado nos dijo que al día siguiente no habría agua caliente allí. Nos explicó que habían tenido un problema el día anterior y que lo estaban reparando. También nos aseguró que aquella noche nos darían otra habitación más grande. En aquel momento nos enfadamos un poco, pero al final nos dieron la mejor habitación del hotel.", en: "Yesterday, when we arrived at the hotel, an employee told us there would be no hot water there the following day. He explained that they'd had a problem the day before and they were repairing it. He also assured us that that night they would give us another, bigger room. At the time we got a bit annoyed, but in the end they gave us the best room in the hotel." }
+  - task: "A local radio presenter interviewed you about your trip. Report her questions (Me preguntó si …, Quería saber dónde …) and some of your answers."
+    min: 50
+    max: 100
+    use: [w.presentador, w.interesarse, w.programa, w.oyente, w.curiosidad]
+    useAtLeast: 3
+    grammar: [g.reported-questions]
+    expect:
+      - { pattern: "\\b(me |nos )?pregunt[oó] (si|qu[eé]|d[oó]nde|cu[aá]ndo|c[oó]mo|por qu[eé]|cu[aá]nto|cu[aá]l|qui[eé]n|de d[oó]nde)", hint: "Report questions: me preguntó si …, me preguntó dónde …" }
+    model: { es: "Ayer una presentadora de la radio local me entrevistó en la plaza de Purmamarca para su programa. Primero me preguntó de dónde era y cuánto tiempo llevaba en Argentina. Después quiso saber qué pensaba del paisaje de colores. También me preguntó si había probado la comida típica de la región. Se interesó mucho por mi curso de español y, al final, me preguntó si volvería algún día. Le dije que sí, claro.", en: "Yesterday a local radio presenter interviewed me in the square in Purmamarca for her programme. First she asked me where I was from and how long I'd been in Argentina. Then she wanted to know what I thought of the colourful landscape. She also asked me if I had tried the local food. She was very interested in my Spanish course and, at the end, she asked me if I would come back one day. I told her yes, of course." }

@@ -262,3 +262,43 @@ dialogues:
       - { q: "¿Qué pasaría si el juez dejara libre al alcalde, según Paula?", options: ["Diego perdería su puesto", "Paula firmaría la rectificación y el periódico pagaría la demanda", "El periódico cerraría"], answer: 1 }
       - { q: "¿Qué recomienda Paula cuando no se sabe cuándo ocurrieron los hechos?", options: ["Poner una fecha aproximada", "Reconocer que la fecha está aún por determinar", "Eliminar la entradilla"], answer: 1, explain: "«Mejor reconocer lo que no sabemos que inventarlo»." }
       - { q: "¿Qué tono tiene el comentario final de Paula sobre el titular de Diego?", options: ["De crítica dura", "De elogio con un punto de ironía", "De indiferencia"], answer: 1, explain: "«Sin precedentes… un titular tuyo sin un solo adjetivo»: praise wrapped in a journalistic cliché." }
+writing:
+  - task: "Write a short news article for a local paper about the Cherry Festival in Los Antiguos: headline, lead paragraph and body, attributing information to sources."
+    min: 110
+    max: 190
+    use: [w.rueda-de-prensa, w.comunicado, w.sin-precedentes, w.dar-a-conocer, w.un-antes-y-un-despues]
+    useAtLeast: 3
+    grammar: [g.journalistic-language, g.headlines]
+    expect:
+      - { pattern: "seg[uú]n|fuentes|inform[oó]|declar[oó]|anunci[oó]|asegur[oó]|dio a conocer", hint: "Attribute the information: según …, informó …, declaró …" }
+      - { pattern: "rueda de prensa|comunicado", hint: "Mention how the news was released: en un comunicado, en rueda de prensa …" }
+    model: { es: "Los Antiguos bate su récord de visitas en la Fiesta de la Cereza. El pueblo recibió el pasado fin de semana a más de treinta mil personas, una cifra sin precedentes en sus cuarenta años de historia, según dio a conocer ayer el ayuntamiento en un comunicado. En una rueda de prensa, la alcaldesa aseguró que la fiesta «marca un antes y un después» para la economía local y anunció que el año que viene se ampliará el espacio de la feria. Los agricultores, por su parte, vendieron casi toda la cosecha de cerezas en dos días. Según fuentes cercanas a la organización, el evento dejó unos ingresos de más de mil millones de pesos.", en: "Los Antiguos breaks its visitor record at the Cherry Festival. The town welcomed more than thirty thousand people last weekend, an unprecedented figure in its forty-year history, the town hall announced yesterday in a statement. At a press conference, the mayor said the festival 'marks a turning point' for the local economy and announced that next year the fair area will be enlarged. Farmers, for their part, sold almost the entire cherry harvest in two days. According to sources close to the organisers, the event brought in more than a thousand million pesos." }
+  - task: "Write five headlines in journalistic style (nominal sentences, participles, infinitives), then expand one of them into a short paragraph."
+    min: 110
+    max: 190
+    use: [w.sano-y-salvo, w.presunto, w.desplomarse, w.destituir, w.irregularidad]
+    useAtLeast: 3
+    grammar: [g.headlines]
+    expect:
+      - { pattern: "hallad[oa]|detenid[oa]|destituid[oa]|desplom|repunte|presunt[oa]|sano y salvo", hint: "Use headline style: Hallado sano y salvo …, Se desploma …, Detenido el presunto …" }
+    model: { es: "Uno: Hallado sano y salvo el turista perdido junto al lago Buenos Aires. Dos: Detenido el presunto autor del robo en el banco de Los Antiguos. Tres: Se desploma el precio de la cereza tras una cosecha récord. Cuatro: Destituido el director del hospital por irregularidades en las cuentas. Cinco: El Gobierno, dispuesto a subir el IVA de la electricidad. Desarrollo del primer titular: un hombre de treinta y cuatro años, desaparecido desde el domingo en las montañas cercanas al lago Buenos Aires, fue hallado ayer sano y salvo por un equipo de rescate. Según fuentes policiales, el turista había pasado dos noches escondido en una casa abandonada tras perderse durante una tormenta de nieve.", en: "One: Tourist lost near Lake Buenos Aires found safe and sound. Two: Alleged perpetrator of Los Antiguos bank robbery arrested. Three: Cherry prices collapse after record harvest. Four: Hospital director dismissed over accounting irregularities. Five: Government ready to raise VAT on electricity. Development of the first headline: a thirty-four-year-old man, missing since Sunday in the mountains near Lake Buenos Aires, was found safe and sound yesterday by a rescue team. According to police sources, the tourist had spent two nights sheltering in an abandoned house after getting lost in a snowstorm." }
+  - task: "Report what a minister said at a press conference, quoting her words directly (with comillas « ») and also reporting them indirectly."
+    min: 110
+    max: 190
+    use: [w.comillas, w.textual, w.rectificar, w.dos-puntos, w.declaracion]
+    useAtLeast: 2
+    grammar: [g.quotation]
+    expect:
+      - { pattern: "«[^»]+»|“[^”]+”", hint: "Quote her exact words in comillas: «…»" }
+      - { pattern: "\\b(declar[oó]|afirm[oó]|asegur[oó]|dijo|sostuvo|explic[oó]|rectific[oó]|reconoci[oó]) que\\b", hint: "Also report indirectly: afirmó que …, explicó que …" }
+    model: { es: "La ministra de Medio Ambiente visitó ayer Los Antiguos y, en declaraciones a la prensa, fue muy clara: «No vamos a permitir ninguna mina cerca del lago». Según sus palabras textuales, el proyecto «no respeta la normativa vigente». Sin embargo, horas más tarde su oficina tuvo que rectificar y explicó que la ministra se refería solo a la primera versión del proyecto. Un portavoz afirmó que el Gobierno estudiará la nueva propuesta «con total objetividad». Los vecinos, por su parte, declararon que seguirán protestando hasta que la decisión sea definitiva. Muchos de ellos llevaban carteles con la frase de la ministra entre comillas, como recordatorio de su promesa. La polémica, sin duda, no ha terminado.", en: "The Environment Minister visited Los Antiguos yesterday and, speaking to the press, was very clear: 'We will not allow any mine near the lake.' In her exact words, the project 'does not comply with current regulations'. However, hours later her office had to correct this and explained that the minister was referring only to the first version of the project. A spokesperson stated that the Government will study the new proposal 'with complete objectivity'. Local residents, for their part, said they will keep protesting until the decision is final. Many of them carried signs with the minister's sentence in quotation marks, as a reminder of her promise. The controversy is clearly not over." }
+  - task: "Compare how two newspapers report the same event and analyse their bias (sesgo, línea editorial, objetividad, sensacionalista)."
+    min: 110
+    max: 190
+    use: [w.sesgo, w.linea-editorial, w.objetividad, w.sensacionalista, w.imputar]
+    useAtLeast: 3
+    grammar: [g.journalistic-language]
+    expect:
+      - { pattern: "sesg|l[ií]nea editorial|objetividad|sensacionalista|imparcial", hint: "Analyse the bias: sesgo, línea editorial, sensacionalista …" }
+      - { pattern: "mientras que|en cambio|por el contrario|a diferencia de", hint: "Contrast the two papers: mientras que …, en cambio …" }
+    model: { es: "Ayer, los dos periódicos más leídos de la región informaron sobre el mismo caso: un alto cargo del gobierno local ha sido imputado por un presunto soborno. El primero puso en portada el titular «Escándalo: el concejal que se hizo rico con dinero público», un titular muy sensacionalista que da por hecha su culpa. El segundo, en cambio, publicó la noticia en una página interior, con el titular «Imputado un concejal por un presunto caso de soborno», y citó fuentes judiciales. A diferencia del primero, este diario incluye también la versión del acusado. A mi juicio, ninguno es totalmente imparcial: cada uno responde a su línea editorial y tiene su propio sesgo. Por eso, para mantener la objetividad, conviene leer siempre varias fuentes antes de formarse una opinión.", en: "Yesterday, the two most widely read newspapers in the region reported on the same case: a senior local government official has been charged with alleged bribery. The first put on its front page the headline 'Scandal: the councillor who got rich on public money', a very sensationalist headline that takes his guilt for granted. The second, by contrast, published the story on an inside page, under the headline 'Councillor charged in alleged bribery case', and quoted judicial sources. Unlike the first, this paper also includes the accused's version. In my view, neither is completely impartial: each follows its editorial line and has its own bias. That's why, to stay objective, it's worth always reading several sources before forming an opinion." }

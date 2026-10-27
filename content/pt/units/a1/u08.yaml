@@ -281,3 +281,44 @@ dialogues:
       - { q: "Que tamanho o Tom quer?", options: ["P", "M", "G"], answer: 2, explain: "Tom asks for the shirt in size G (large)." }
       - { q: "Quanto o Tom paga por tudo?", options: ["Cem reais", "Cento e vinte reais", "Cento e cinquenta reais"], answer: 1, explain: "The seller offers the shirt and the cap together for a hundred and twenty reais." }
       - { q: "Como o Tom paga?", options: ["Em dinheiro", "No cartão", "No Pix"], answer: 2, explain: "Tom asks to pay by Pix, and the seller says of course." }
+writing:
+  - task: "You are in a clothes shop. Ask for an item in a colour and size, ask the price and decide what to buy."
+    min: 15
+    max: 40
+    use: [w.quanto-custa, w.camisa, w.tamanho, w.caro, w.barato]
+    useAtLeast: 3
+    grammar: [g.quanto-custa, g.colours]
+    expect:
+      - { pattern: '(quanto custa|quanto [eé]|qual [eé] o pre[cç]o)', hint: "Ask the price: Quanto custa …?" }
+      - { pattern: '(branc|pret[oa]|vermelh|azul|azuis|verde|amarel|laranja|rosa|rox[oa]|marrom|cinza|bege)', hint: "Say the colour you want: a camiseta azul…" }
+    model: { es: "Boa tarde! Eu quero essa camisa azul, tamanho quarenta. Quanto custa? Cento e vinte reais? Está caro! E aquela camiseta branca? Ah, é barata. Eu levo a branca!", en: "Good afternoon! I'd like this blue shirt, size forty. How much is it? A hundred and twenty reais? That's expensive! And that white T-shirt? Oh, it's cheap. I'll take the white one!" }
+  - task: "You are going to the Maracanã. Write what you buy and how much each thing costs (write the prices in words), and the total."
+    min: 15
+    max: 40
+    use: [w.real, w.camiseta, w.boné, w.custar, w.caro]
+    useAtLeast: 3
+    grammar: [g.numbers-100-plus, g.quanto-custa]
+    expect:
+      - { pattern: '\b(cem|cento|duzent|trezent|quatrocent|quinhent|seiscent|setecent|oitocent|novecent|mil)', hint: "Write prices over 100 in words: cento e vinte, duzentos…" }
+      - { pattern: '\bre(al|ais)\b', hint: "Say the currency: reais." }
+    model: { es: "O ingresso custa cento e cinquenta reais. A camiseta do Flamengo custa duzentos e trinta reais e o boné custa oitenta. Tudo custa quatrocentos e sessenta reais. É caro!", en: "The ticket costs a hundred and fifty reais. The Flamengo shirt costs two hundred and thirty reais and the cap costs eighty. Altogether it's four hundred and sixty reais. It's expensive!" }
+  - task: "At a street market, point things out to the seller: something near you, something near him and something far away. Say which one you prefer."
+    min: 15
+    max: 40
+    use: [w.esse, w.aquele, w.preferir, w.bolsa, w.chapéu]
+    useAtLeast: 3
+    grammar: [g.demonstratives, g.demonstrative-contractions]
+    expect:
+      - { pattern: '\b(esse|essa|esses|essas|este|esta|estes|estas|isso|isto)\b', hint: "Point to things near you or the seller: esse/essa, este/esta, isso." }
+      - { pattern: '\b(aquel(e|a|es|as)|aquilo|naquel|daquel)', hint: "Point to things far away: aquele/aquela." }
+    model: { es: "Quanto custa essa bolsa? E aquele chapéu ali? Eu prefiro aquela bolsa vermelha, mas essa preta é mais barata. Então eu levo esta!", en: "How much is that bag? And that hat over there? I prefer that red bag, but this black one is cheaper. So I'll take this one!" }
+  - task: "Describe what you are wearing today and your favourite clothes, with their colours."
+    min: 15
+    max: 40
+    use: [w.roupa, w.camiseta, w.calça, w.favorito, w.cor]
+    useAtLeast: 3
+    grammar: [g.colours, g.adjective-agreement]
+    expect:
+      - { pattern: '(branc|pret[oa]|vermelh|azul|azuis|verde|amarel|laranja|rosa|rox[oa]|marrom|cinza|bege)', hint: "Give the colours: uma camiseta verde, uma calça preta…" }
+      - { pattern: '(favorit|prefir|prefer|gosto)', hint: "Say what you like best: Minha cor favorita é …" }
+    model: { es: "Hoje estou com uma camiseta verde, uma calça preta e tênis brancos. Minha cor favorita é o azul, e minha roupa favorita é um vestido azul.", en: "Today I'm wearing a green T-shirt, black trousers and white trainers. My favourite colour is blue, and my favourite piece of clothing is a blue dress." }

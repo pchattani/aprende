@@ -280,3 +280,44 @@ dialogues:
       - { q: "Como é o Lucas?", options: ["Baixo e loiro", "Alto, moreno e com barba", "Ruivo e de óculos"], answer: 1, explain: "Bia says Lucas is tall, dark-haired and has a beard." }
       - { q: "Como é a Carla?", options: ["Ruiva, de óculos e um pouco tímida", "Alta e muito engraçada", "Morena e antipática"], answer: 0, explain: "Carla has red hair, wears glasses and is a bit shy, but very nice." }
       - { q: "O que o Lucas traz?", options: ["Cerveja", "Pastéis", "Água de coco"], answer: 1, explain: "Lucas arrives with pastéis for everybody." }
+writing:
+  - task: "Describe a friend or someone in your family: what they look like and what they are like."
+    min: 15
+    max: 40
+    use: [w.alto, w.cabelo, w.olho, w.simpático, w.engraçado]
+    useAtLeast: 3
+    grammar: [g.adjective-position, g.muito-pouco]
+    expect:
+      - { pattern: '\b(tem|t[eê]m|tenho) (o |os )?(cabelo|olhos|barba|[oó]culos)', hint: "Describe hair or eyes with ter: Ela tem cabelo … e olhos …" }
+      - { pattern: '(é|e|s[aã]o) (muito |um pouco |bem |meio |bastante )?(alt|baix|magr|gord|jovem|moren|loir|ruiv|simp|antip|engra|inteligente|t[ií]mid|alegre|gentil|educad|s[eé]ri|chat|trabalhad)', hint: "Use ser + adjective: Ele é alto e muito simpático." }
+    model: { es: "Minha irmã Bia é alta e magra. Ela tem cabelo cacheado e olhos castanhos. Ela é muito simpática e engraçada, mas um pouco tímida.", en: "My sister Bia is tall and slim. She has curly hair and brown eyes. She's very friendly and funny, but a bit shy." }
+  - task: "Your friend asks how you are. Reply: say how you are today (estar) and what you are like in general (ser)."
+    es: "E aí? Como você está hoje?"
+    min: 12
+    max: 35
+    use: [w.cansado, w.triste, w.alegre, w.feliz, w.saudade]
+    useAtLeast: 2
+    grammar: [g.ser-vs-estar-basics]
+    expect:
+      - { pattern: '\b(estou|t[oô])(?![a-zà-ú])', hint: "Say how you are today with estar: Estou cansado." }
+      - { pattern: '\bsou\b', hint: "Say what you are like in general with ser: Normalmente sou alegre." }
+    model: { es: "Oi! Hoje estou um pouco cansado, porque trabalho muito. Normalmente sou alegre, mas hoje estou triste: estou com saudade da minha família.", en: "Hi! Today I'm a bit tired, because I work a lot. I'm usually cheerful, but today I'm sad: I miss my family." }
+  - task: "It's late at night in Lapa. Write how you and your friend feel (fome, sede, frio, sono…) and what you each want."
+    min: 15
+    max: 40
+    use: [w.fome, w.sede, w.sono, w.frio.n, w.calor]
+    useAtLeast: 2
+    grammar: [g.estar-com]
+    expect:
+      - { pattern: 'est(ou|á|a|amos|ão|ao) com (muita |muito )?(fome|sede|sono|frio|calor|medo|pressa|saudade|dor)', hint: "Use estar com + noun: Estou com fome. / Ela está com sono." }
+    model: { es: "Estou com muita fome e a Bia está com sede. Eu quero comer um pastel e ela quer uma água. Ela não está com sono, mas eu estou!", en: "I'm really hungry and Bia is thirsty. I want to eat a pastel and she wants some water. She isn't sleepy, but I am!" }
+  - task: "Write about two people you know who are very different. Use muito, um pouco, bastante or meio."
+    min: 15
+    max: 40
+    use: [w.chato, w.engraçado, w.sério, w.tímido, w.trabalhador]
+    useAtLeast: 3
+    grammar: [g.muito-pouco, g.adjective-position]
+    expect:
+      - { pattern: '\b(muito|pouco|bastante|meio|demais)\b', hint: "Use an intensifier: muito, um pouco, bastante, meio…" }
+      - { pattern: '\b(mas|outro|outra)\b', hint: "Contrast the two people: …, mas o outro é …" }
+    model: { es: "Meus vizinhos são muito diferentes. O Paulo é sério, trabalhador e um pouco tímido. O Lucas é engraçado e bastante alegre, mas é chato demais de manhã!", en: "My neighbours are very different. Paulo is serious, hard-working and a bit shy. Lucas is funny and quite cheerful, but he's far too annoying in the morning!" }

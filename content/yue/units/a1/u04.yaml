@@ -296,3 +296,44 @@ dialogues:
       - { q: "坐船去尖沙咀要幾耐呀？", options: ["差唔多十分鐘", "兩個鐘", "兩個星期"], answer: 0, explain: "差唔多十分鐘就到尖沙咀: about ten minutes. Two weeks is how long Sam has been in Hong Kong." }
       - { q: "Kelly電話幾多號呀？", options: ["九一二三，四五六七", "九八七六，五四三二", "六一二三，四四五五"], answer: 0, explain: "我電話係九一二三，四五六七." }
       - { q: "Kelly做乜嘢㗎？", options: ["佢係老師", "佢係學生", "佢係遊客"], answer: 1, explain: "我都係學生: Kelly is a student too." }
+writing:
+  - task: "Give a new friend your phone number in characters, then ask for theirs."
+    min: 12
+    max: 30
+    use: [w.din6-waa2, w.gei2-do1, w.hou6, w.din6-waa2-hou6-maa5]
+    useAtLeast: 2
+    grammar: [g.phone-numbers]
+    expect:
+      - { pattern: "[零一二三四五六七八九]{6,}", hint: "Write your number digit by digit in characters: 九八七六…" }
+      - { pattern: "幾多號|電話號碼", hint: "Ask for their number: 你電話幾多號呀？" }
+    model: { es: "我電話係九八七六五四三二。你電話幾多號呀？", en: "My phone number is 9876 5432. What's your number?" }
+  - task: "Write how old you and your younger brother are, then ask your friend's age."
+    min: 12
+    max: 30
+    use: [w.gam1-nin2, w.seoi3, w.sai3-lou2, w.jaa6]
+    useAtLeast: 3
+    grammar: [g.age, g.numbers-1-99]
+    expect:
+      - { pattern: "[一二三四五六七八九十廿卅]歲", hint: "Give an age: 我今年…歲." }
+      - { pattern: "幾多歲|幾大|貴庚", hint: "Ask their age: 你幾多歲呀？" }
+    model: { es: "我今年廿三歲，我細佬十八歲。你幾多歲呀？", en: "I'm twenty-three this year, and my younger brother is eighteen. How old are you?" }
+  - task: "You are buying Star Ferry tickets. Tell the ticket seller how many people: two adults and one child."
+    min: 8
+    max: 25
+    use: [w.loeng5, w.daai6-jan4, w.sai3-lou6, w.go3]
+    useAtLeast: 3
+    grammar: [g.loeng-vs-ji]
+    expect:
+      - { pattern: "兩個", hint: "Two people is 兩個 (not 二個)." }
+      - { pattern: "細路", hint: "Mention the child: 一個細路." }
+    model: { es: "唔該，兩個大人，一個細路。", en: "Two adults and one child, please." }
+  - task: "Ask your friend how many people there are in their family, and say how many there are in yours."
+    min: 10
+    max: 30
+    use: [w.gei2-do1, w.go3, w.uk1-kei2, w.jau5]
+    useAtLeast: 3
+    grammar: [g.gei-how-many, g.loeng-vs-ji]
+    expect:
+      - { pattern: "幾多?個", hint: "Ask how many with 幾(多)個: 有幾多個人？" }
+      - { pattern: "[一兩三四五六七八九十]個人", hint: "Give your number: 我屋企有四個人." }
+    model: { es: "你屋企有幾多個人呀？我屋企有四個人。", en: "How many people are there in your family? There are four in mine." }

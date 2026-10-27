@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test'
 import { enableTestHook } from './helpers'
+import { finishedWords } from './finished'
 
 // Smoke tests for the arcade word games: Word rain, Sort it and Word of the day. The games
 // publish their answers on window.__palabras (e2e only); e2e runs use calm motion, so the
@@ -10,7 +11,7 @@ interface Hooks {
   sort?: { index: number; word: string; basket: string; baskets: string[]; mode: string }
   daily?: { answer: string; mode: 'daily' | 'practice'; other?: string }
 }
-type Win = { __palabras?: Hooks; __pawsportDemo?: (o?: { others?: boolean }) => Promise<unknown> }
+type Win = { __palabras?: Hooks; __pawsportDemo?: (o?: { others?: boolean; started?: number }) => Promise<unknown> }
 
 const LANG = process.env.VITE_LANG ?? 'es'
 const SHOTS = process.env.GAMES_SHOTS
@@ -36,7 +37,7 @@ async function openGame(page: Page, id: string, title: string) {
   await page.goto('./#/games')
   await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
   await page.waitForFunction(() => Boolean((window as unknown as Win).__pawsportDemo), null, { timeout: 20_000 })
-  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false }))
+  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false, started: 1 }))
   await page.getByRole('button', { name: new RegExp(`^${esc(title)}`) }).click()
   await expect(page).toHaveURL(new RegExp(`#/games/${id}$`))
   await expect(page.getByRole('heading', { name: title })).toBeVisible()
@@ -65,10 +66,14 @@ test('word rain: catch the answer, lose a paw on a wrong word, pause, stop', asy
       const h = (window as unknown as Win).__palabras?.rain
       return Boolean(h && h.onScreen.includes(h.target))
     }, null, { timeout: 15_000 })
-    const { target, prompt } = (await hooks(page)).rain!
+    const { target, prompt, onScreen } = (await hooks(page)).rain!
+    seen.push(target, ...onScreen)
+    prompts.push(prompt)
     await field.locator(`button[data-word="${target}"]`).first().dispatchEvent('pointerdown')
     return prompt
   }
+  const seen: string[] = []
+  const prompts: string[] = []
   // the status shows the word caught and its meaning (Cantonese words carry Jyutping readings, so check the English)
   const first = await catchTarget()
   await expect(page.getByRole('status')).toContainText(`= ${first}`)
@@ -84,6 +89,15 @@ test('word rain: catch the answer, lose a paw on a wrong word, pause, stop', asy
     return Boolean(h && h.onScreen.some((w) => w !== h.target))
   }, null, { timeout: 15_000 })
   const { target, onScreen } = (await hooks(page)).rain!
+  seen.push(...onScreen)
+  // answers and the words falling beside them are all finished words: none from the lesson left halfway
+  const fin = await finishedWords(page)
+  expect(fin.startedOnly.size).toBeGreaterThan(0)
+  for (const w of seen) {
+    expect([...fin.lemmas], w).toContain(w)
+    expect([...fin.startedOnly], w).not.toContain(w)
+  }
+  for (const p of prompts) expect([...fin.glosses], p).toContain(p)
   const wrong = onScreen.find((w) => w !== target)!
   await field.locator(`button[data-word="${wrong}"]`).first().dispatchEvent('pointerdown')
   await expect(page.getByRole('img', { name: '2 of 3 paws left' })).toBeVisible()

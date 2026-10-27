@@ -299,3 +299,41 @@ dialogues:
       - { q: "邊個睇見有人拎走部手機？", options: ["安德魯", "一個阿伯", "安德魯嘅老婆"], answer: 1, explain: "有個阿伯話佢睇見: an old man saw it happen." }
       - { q: "安德魯想打電話畀邊個？", options: ["佢老婆", "保險公司", "阿伯"], answer: 0, explain: "畀我打個電話畀我老婆: he wants to call his wife." }
       - { q: "點解安德魯要警察嘅報告？", options: ["佢想搵返部手機", "保險公司要有報告先賠", "佢想罰個賊"], answer: 1, explain: "保險公司話要有警察嘅報告先賠: the insurer needs a police report." }
+writing:
+  - task: "Write a social media post about an unlucky day in Sai Kung: what happened to you, using 畀 passives."
+    min: 40
+    max: 90
+    use: [w.hak1-zai2, w.ngaau5, w.man1.b, w.lam4.b, w.caai2]
+    useAtLeast: 3
+    grammar: [g.bei-passive]
+    expect:
+      - { pattern: "畀.{1,4}(咬|淋|偷|呃|踩|撞|鬧|嚇|曬|叮)", hint: "Say what was done to you: 畀蚊咬, 畀雨淋…" }
+    model: { es: "今日真係好黑仔！我喺西貢行山嘅時候畀蚊咬咗好多次，跟住又畀雨淋濕晒。坐車返屋企嗰陣，仲畀人踩親隻腳。", en: "What an unlucky day! While hiking in Sai Kung I got bitten by mosquitoes again and again, then got soaked by the rain. On the bus home, someone stepped on my foot too." }
+  - task: "Report to the police that your phone was stolen: what happened and when you noticed."
+    min: 40
+    max: 90
+    use: [w.tau1, w.m4-gin3-zo2, w.siu2-tau1, w.zong6]
+    useAtLeast: 3
+    grammar: [g.bei-passive, g.jau-jan-someone]
+    expect:
+      - { pattern: "畀人偷|偷咗", hint: "Say it was stolen: 我部手機畀人偷咗." }
+      - { pattern: "有人", hint: "Say 'someone' with 有人: 有人撞咗我." }
+    model: { es: "阿Sir，我部手機畀人偷咗！頭先我喺巴士站等車，有人撞咗我一下，之後我部手機就唔見咗。我諗佢係小偷。", en: "Officer, my phone has been stolen! Just now I was waiting at the bus stop and someone bumped into me. After that my phone was gone. I think he's a thief." }
+  - task: "The shoes you bought are too small. Ask the shop assistant to let you try another size or return them, using 畀我."
+    min: 40
+    max: 80
+    use: [w.teoi3-fo3, w.sau1-geoi3, w.bei2, w.maa5.b]
+    useAtLeast: 3
+    grammar: [g.bei-permissive]
+    expect:
+      - { pattern: "畀我", hint: "Ask permission with 畀我 + verb: 畀我試吓." }
+    model: { es: "唔好意思，呢對鞋太細，可唔可以畀我試吓大一個碼？如果都唔啱，畀我退貨得唔得？我上個禮拜喺呢度買嘅，我有收據。", en: "Excuse me, these shoes are too small. Could I try one size up? If that doesn't fit either, could I return them? I bought them here last week, and I have the receipt." }
+  - task: "Write a notice for your building about what happened last night, using 有人."
+    min: 40
+    max: 90
+    use: [w.bun3-je2, w.aai3, w.gau3-meng6, w.fo2-zuk1, w.bou3-ging2]
+    useAtLeast: 3
+    grammar: [g.jau-jan-someone]
+    expect:
+      - { pattern: "有人", hint: "Say 'someone' with 有人: 有人報警." }
+    model: { es: "尋晚半夜有人喺樓下嗌救命，因為二樓火燭。好彩有人即刻報警，消防員好快就嚟到，冇人受傷。請大家小心用火。", en: "In the middle of the night someone downstairs was shouting for help because there was a fire on the second floor. Luckily someone called the police at once; the firefighters came very quickly and nobody was hurt. Everyone, please be careful with fire." }

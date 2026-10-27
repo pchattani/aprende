@@ -265,3 +265,45 @@ dialogues:
       - { q: "Como a Bia usa o tu no Sul?", options: ["Com o verbo na terceira pessoa: tu vai", "Ela não usa tu", "Exatamente como o Josué: tu vais"], answer: 0, explain: "Bia says that in the South people say tu vai, with the third-person verb." }
       - { q: "Por que eles vão devagarinho?", options: ["Porque estão com medo", "Porque a estrada é cheia de areia", "Porque a jardineira está quebrada"], answer: 1, explain: "Josué says a estrada é cheia de areia, so they go slowly." }
       - { q: "O que vão fazer depois do mergulho?", options: ["Voltar para a cidade", "Tomar um cafezinho com tapioca", "Subir outra duna"], answer: 1, explain: "Um mergulhinho rapidinho e depois um cafezinho com tapioca." }
+writing:
+  - task: "Your flight from São Luís was cancelled and you'll be back late. Write the news twice: first as a WhatsApp message to a friend, then as a formal email to your boss."
+    min: 80
+    max: 140
+    use: [w.atenciosamente, w.prezado, w.formal, w.coloquial, w.cancelar]
+    useAtLeast: 3
+    grammar: [g.register-formal-informal]
+    expect:
+      - { pattern: '\b(prezad[oa]|atenciosamente|cordialmente|informo|comunico)\b', hint: "Write the formal version: Prezado…, informo que…, Atenciosamente." }
+      - { pattern: '(?<!\p{L})(t[oô]|t[aá]|pra|c[eê]|beleza|valeu|mano|galera)(?!\p{L})', hint: "Write the informal version with spoken forms: tô, pra, valeu…" }
+    model: { es: "Mensagem coloquial: E aí, Lu! Tô preso em São Luís, cancelaram o meu voo. Só volto na terça, beleza? Avisa a galera. Valeu, um abraço! E-mail formal: Prezado Senhor Carlos, informo que o meu voo de São Luís para São Paulo foi cancelado devido ao mau tempo. Por esse motivo, não poderei comparecer ao escritório na segunda-feira. Retornarei na terça-feira pela manhã. Peço desculpas e coloco-me à disposição para trabalhar de casa na segunda-feira, se for realmente necessário. Atenciosamente, Ana Souza.", en: "Informal message: Hey, Lu! I'm stuck in São Luís, they cancelled my flight. I'm only back on Tuesday, OK? Tell the gang. Thanks, hugs! Formal email: Dear Mr Carlos, I am writing to inform you that my flight from São Luís to São Paulo has been cancelled due to bad weather. For this reason, I will not be able to attend the office on Monday. I will return on Tuesday morning. I apologise and am available to work from home on Monday if it is really necessary. Kind regards, Ana Souza." }
+  - task: "A friend from the Northeast sends you a message full of regional words. Reply in the same style, then explain some of the expressions in standard Portuguese."
+    es: "Oxente, visse! Tu tá aperreado? Vixe, fiquei avexado com a tua demora. Arretado o passeio de ontem, né?"
+    min: 80
+    max: 140
+    use: [w.oxente, w.vixe, w.arretado, w.aperreado, w.avexado]
+    useAtLeast: 3
+    grammar: [g.regional-features-brazil]
+    expect:
+      - { pattern: '(oxente|vixe|eita|arretad|aperread|avexad|visse|abestad)', hint: "Use some north-eastern words: oxente, vixe, arretado…" }
+      - { pattern: '\b(quer dizer|significa|[eé] o mesmo que|ou seja)\b', hint: "Explain the expressions: … quer dizer …" }
+    model: { es: "Oxente, aperreado nada! Tava só na praia, sem sinal. Vixe, desculpa a demora! E o passeio foi arretado mesmo, visse? Para quem não é do Nordeste, aperreado quer dizer preocupado ou com problemas, e arretado significa ótimo, muito bom. Já avexado quer dizer com pressa ou ansioso, e oxente é uma expressão de surpresa, como nossa. Vixe também mostra surpresa, mas muitas vezes com um pouco de medo. Eita também é muito usado quando alguma coisa nos surpreende de verdade.", en: "Oxente, I'm not worried at all! I was just at the beach, with no signal. Vixe, sorry for the delay! And the trip really was great, you know? For anyone who isn't from the Northeast: aperreado means worried or in trouble, and arretado means great, really good. Avexado means in a hurry or anxious, and oxente is an expression of surprise, like nossa. Vixe also shows surprise, but often with a bit of fear. Eita is also widely used when something really surprises us." }
+  - task: "Write a message to a friend from your trip, using diminutives and augmentatives with nuance (pertinho, rapidinho, um pouquinho, um casarão…)."
+    min: 80
+    max: 140
+    use: [w.rapidinho, w.pertinho, w.pouquinho, w.cedinho, w.casarão]
+    useAtLeast: 3
+    grammar: [g.diminutives-augmentatives]
+    expect:
+      - { pattern: '\b[a-zà-ú]+(inho|inha|inhos|inhas|zinho|zinha|zinhos|zinhas)\b', hint: "Use diminutives: rapidinho, pertinho, um pouquinho…" }
+      - { pattern: '\b(casar[aã]o|carr[aã]o|ded[aã]o|paiz[aã]o|gola[cç]o|goleada)\b', hint: "Use an augmentative: um casarão, um carrão…" }
+    model: { es: "Oi, Bia! Chegamos a Barreirinhas ontem à noite. A pousada fica pertinho do rio e é um casarão antigo, lindo! Hoje comemos um peixe delicioso com arroz e tomamos um cafezinho na praça. Amanhã a gente vai acordar cedinho para ver os Lençóis: o guia vem buscar a gente rapidinho às cinco, com um carrão enorme. Então vou dormir agora. Estou com um pouquinho de saudade de você! Um beijinho e tchauzinho! Quando eu voltar, te conto tudo com calma, prometo.", en: "Hi, Bia! We got to Barreirinhas last night. The guesthouse is really close to the river and it's a lovely big old house! Today we ate some delicious fish with rice and had a little coffee in the square. Tomorrow we're getting up nice and early to see the Lençóis: the guide is coming to pick us up at five on the dot, in a huge car. So I'm off to bed now. I'm missing you a little bit! Kisses and bye for now! When I get back I'll tell you everything at leisure, I promise." }
+  - task: "Write about the regional food and music of the Northeast you discovered, explaining the regional words (macaxeira, jerimum, cuscuz, forró…)."
+    min: 80
+    max: 140
+    use: [w.macaxeira, w.jerimum, w.cuscuz, w.rapadura, w.sanfona]
+    useAtLeast: 3
+    grammar: [g.regional-features-brazil]
+    expect:
+      - { pattern: '(macaxeira|aipim|mandioca|jerimum|ab[oó]bora|cuscuz|rapadura|bai[aã]o|forr[oó]|sanfona|cordel|queijo coalho|carne de sol)', hint: "Name regional foods or music: macaxeira, cuscuz, forró…" }
+      - { pattern: '\b(chama|chamam|chamad[oa]|é o mesmo que|quer dizer|conhecid[oa])\b', hint: "Explain the regional words: a mandioca é chamada de macaxeira…" }
+    model: { es: "Na viagem pelo Nordeste, descobri que cada região tem o seu vocabulário. A mandioca, por exemplo, é chamada de macaxeira no Nordeste e de aipim no Rio. E a abóbora lá se chama jerimum! No café da manhã, comi cuscuz com queijo coalho, e no almoço, baião de dois com carne de sol. De sobremesa, um pedaço de rapadura. À noite, fomos a um forró: ouvir a sanfona e a zabumba ao vivo foi maravilhoso. Na próxima viagem, quero aprender a dançar forró de verdade.", en: "On my trip around the Northeast I discovered that each region has its own vocabulary. Cassava, for example, is called macaxeira in the Northeast and aipim in Rio. And pumpkin there is called jerimum! For breakfast I had couscous with coalho cheese, and for lunch baião de dois with sun-dried beef. For dessert, a piece of rapadura. In the evening we went to a forró: hearing the accordion and the zabumba drum live was wonderful. Next trip, I want to learn to dance forró properly." }

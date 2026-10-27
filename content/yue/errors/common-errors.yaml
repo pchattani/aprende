@@ -57,7 +57,7 @@ rules:
     grammar: g.hai2-location
     example: { wrong: 我在香港。, right: 我喺香港。 }
   - id: mandarin-ta
-    pattern: '(?<![其吉利排])他(?![人日])|她'
+    pattern: '(?<![其吉結利排])他(?![人日])|她'
     message: The Cantonese third person is 佢 (keoi5) for he, she and it.
     grammar: g.personal-pronouns
     example: { wrong: 他是我哥哥。, right: 佢係我哥哥。 }

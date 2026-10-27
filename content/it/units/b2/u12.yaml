@@ -286,3 +286,41 @@ dialogues:
       - { q: "Che cosa voleva dire il ragazzo di Napoli con «tengo fame»?", options: ["Che aveva una pizza", "Che aveva fame", "Che voleva tenere la pizza per sé"], answer: 1, explain: "In southern regional Italian tenere is used for avere: tengo fame = ho fame." }
       - { q: "Che cosa consiglia Benedetta a Tom quando scrive?", options: ["Di usare il passato remoto per ieri", "Di scrivere «sei arrivato»", "Di scrivere in dialetto"], answer: 1, explain: "In writing, use the standard passato prossimo: sei arrivato." }
       - { q: "Perché Benedetta vuole andare al museo?", options: ["Per vedere la Tomba del Tuffatore prima che chiuda", "Per prendere un caffè", "Per comprare un cornicello"], answer: 0, explain: "'…andiamo a vedere la Tomba del Tuffatore prima che chiuda il museo.'" }
+writing:
+  - task: "Explain to a friend some features of the Italian spoken in the South (tengo for ho, mo, mannaggia…) and how they differ from standard Italian."
+    min: 80
+    max: 140
+    use: [w.italiano-regionale, w.italiano-standard, w.dialetto, w.cadenza, w.parlante]
+    grammar: [g.regional-italian-south, g.italian-varieties-overview]
+    expect:
+      - { pattern: "\\b(tengo|tieni|tiene|mo|mannaggia|uè|guaglione|uagliò|scugnizzo)\\b", hint: "Give examples of southern Italian: tengo fame, mo, mannaggia…" }
+      - { pattern: "italiano standard|italiano regionale|\\bdialett", hint: "Compare with standard Italian and dialect." }
+    model: { es: "In Italia non si parla un solo italiano: oltre ai dialetti, esistono molte varietà di italiano regionale. Al Sud, per esempio, molti parlanti usano tenere al posto di avere: a Napoli si sente spesso tengo fame invece di ho fame. Si usa anche mo per dire adesso e, quando qualcosa va male, si esclama mannaggia! La cadenza è più musicale e alcune parole cambiano da regione a regione. Non sono errori, ma varietà dell'italiano. In situazioni formali, però, quasi tutti passano all'italiano standard senza problemi.", en: "In Italy people don't speak just one Italian: besides dialects, there are many varieties of regional Italian. In the South, for example, many speakers use tenere instead of avere: in Naples you often hear tengo fame instead of ho fame. People also use mo to mean adesso and, when something goes wrong, they exclaim mannaggia! The intonation is more musical and some words change from region to region. These aren't mistakes, but varieties of Italian. In formal situations, however, almost everyone switches to standard Italian without any problem." }
+  - task: "Write a postcard about the food of the South, recommending dishes, using varied B2 structures: dislocation, the passive and hypotheses (se fossi in te…, se avessi saputo…)."
+    min: 80
+    max: 140
+    use: [w.mozzarella-di-bufala, w.sfogliatella, w.orecchiette, w.burrata, w.caffè-sospeso]
+    grammar: [g.b2-review]
+    expect:
+      - { pattern: "\\bse\\s+(\\S+\\s+){0,3}(fossi|fosse|avessi|avesse|potessi|\\S+(assi|essi|issi|asse|esse|isse))\\b", hint: "Add a hypothesis: se fossi in te…, se avessi saputo…" }
+      - { pattern: "\\b(lo|la|li|le|l['’])\\s*(ho|abbiamo)\\s+\\S+", hint: "Use dislocation: la mozzarella l'ho assaggiata…, le orecchiette le ho mangiate…" }
+    model: { es: "Cara Giulia, al Sud si mangia benissimo! La mozzarella di bufala l'ho assaggiata vicino a Paestum, in una masseria dove viene prodotta ogni mattina: incredibile. A Napoli ho fatto colazione con una sfogliatella e un caffè, e ne ho lasciato uno sospeso per qualcuno che non può pagarlo. Le orecchiette, invece, le ho mangiate a Bari, fatte a mano dalle signore per strada. Se fossi in te, verrei qui solo per la burrata pugliese! Se avessi saputo che si mangiava così bene, sarei venuto prima. Un abbraccio!", en: "Dear Giulia, the food in the South is wonderful! I tasted buffalo mozzarella near Paestum, on a farm where it's made every morning: incredible. In Naples I had a sfogliatella and a coffee for breakfast, and I left one 'suspended' coffee for someone who can't pay for it. Orecchiette, on the other hand, I ate in Bari, handmade by the women in the street. If I were you, I'd come here just for the burrata from Puglia! If I'd known the food was so good, I'd have come sooner. Hugs!" }
+  - task: "Write a reflection on your journey through the South: what you expected, what surprised you, what you would have done differently and what you wish for."
+    min: 90
+    max: 150
+    use: [w.indimenticabile, w.golfo, w.tuffarsi, w.scoglio, w.costiera]
+    grammar: [g.b2-review]
+    expect:
+      - { pattern: "\\b(pensavo|credevo|immaginavo|non sapevo|mi aspettavo) che\\b", hint: "Say what you expected: pensavo che fosse…" }
+      - { pattern: "\\b(avrei|avremmo|sarei|saremmo)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Say what you would have done: avrei visitato…" }
+    model: { es: "Il viaggio nel Sud è stato indimenticabile. Prima di partire pensavo che fosse una zona povera e poco organizzata, invece ho trovato città piene di vita, di arte e di persone generose. La cosa che mi ha sorpreso di più è stata la gentilezza della gente: dovunque andassi, qualcuno mi invitava a mangiare. Mi sono tuffato dagli scogli di Tropea, ho visto il golfo di Napoli dal Vesuvio e ho camminato tra i templi di Paestum. Se avessi avuto più tempo, avrei visitato anche la costiera calabrese. Vorrei che tutti i miei amici facessero questa esperienza almeno una volta.", en: "The journey through the South was unforgettable. Before leaving I thought it was a poor and not very organised area, but I found cities full of life, art and generous people. What surprised me most was people's kindness: wherever I went, someone invited me to eat. I dived off the rocks at Tropea, saw the Bay of Naples from Vesuvius and walked among the temples of Paestum. If I'd had more time, I would also have visited the Calabrian coast. I wish all my friends could have this experience at least once." }
+  - task: "Write a formal e-mail to a farm guesthouse (masseria) near Paestum to ask about availability and book a stay: use the formal Lei, the conditional and the congiuntivo."
+    min: 80
+    max: 140
+    use: [w.masseria, w.disponibilità, w.prenotazione, w.qualora, w.compreso]
+    grammar: [g.b2-review, g.formal-letters]
+    expect:
+      - { pattern: "\\b(gentile|egregio|egregia|spettabile)\\b", hint: "Open formally: Gentile signora…" }
+      - { pattern: "\\b(vorrei|vorremmo|potrebbe|sarebbe possibile|preferiremmo|le sarei grat[oa])\\b", hint: "Ask politely with the conditional: vorremmo, sarebbe possibile…" }
+      - { pattern: "distinti saluti|cordiali saluti", hint: "Close formally: Distinti saluti." }
+    model: { es: "Gentile signora Esposito, Le scrivo per chiederLe se nella Sua masseria ci sia disponibilità per due persone dal 10 al 15 settembre. Vorremmo una camera doppia con colazione; qualora fosse possibile, preferiremmo una camera con vista sul mare. Le sarei grato se potesse dirmi anche il prezzo per notte e se il parcheggio sia compreso. Inoltre, ci piacerebbe partecipare a una delle Sue lezioni di cucina: sarebbe possibile prenotarla in anticipo? Se la prenotazione è confermata, Le invierò subito la caparra. In attesa di un Suo cortese riscontro, porgo distinti saluti.", en: "Dear Mrs Esposito, I am writing to ask whether your masseria has availability for two people from 10 to 15 September. We would like a double room with breakfast; should it be possible, we would prefer a room with a sea view. I would be grateful if you could also tell me the price per night and whether parking is included. Moreover, we would like to take part in one of your cookery lessons: would it be possible to book it in advance? If the booking is confirmed, I will send you the deposit straight away. I look forward to your kind reply. Yours sincerely." }

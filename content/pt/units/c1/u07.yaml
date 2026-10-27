@@ -289,3 +289,44 @@ dialogues:
       - { q: "Quando a Marina diz “Que pontualidade, hein?”, ela está…", options: ["elogiando o barqueiro", "sendo irônica", "reclamando de verdade"], answer: 1, explain: "She says it ironically and then adds Brincadeira! (just kidding)." }
       - { q: "Qual é o jeitinho que o barqueiro oferece?", options: ["Levar a Marina agora na canoa pequena", "Dar um desconto no hotel", "Esperar até amanhã"], answer: 0, explain: "Dou um jeitinho e levo a senhora agora na canoa pequena." }
       - { q: "Por que a Marina deve avisar antes de aparecer na barraca?", options: ["Porque a barraca fecha cedo", "Porque na cheia a barraca fica debaixo d'água", "Porque o barqueiro não gosta de visitas"], answer: 1, explain: "In the flood season the Ilha do Amor almost disappears, and the stall with it." }
+writing:
+  - task: "Explain to a foreign friend three Brazilian expressions whose real meaning is indirect (Aparece lá em casa!, Vou ver…, A gente marca!), and how to read between the lines."
+    min: 110
+    max: 190
+    use: [w.entrelinhas, w.indireta, w.cordialidade, w.franqueza, w.soar]
+    useAtLeast: 3
+    grammar: [g.pragmatics]
+    expect:
+      - { pattern: '\b(quer dizer|significa|na verdade|na pr[aá]tica|nas entrelinhas)\b', hint: "Explain the real meaning: … quer dizer…, na prática…" }
+      - { pattern: '(aparece l[aá] em casa|vou ver|a gente marca|vamos marcar|qualquer coisa me liga|depois a gente se fala)', hint: "Quote the expressions you're explaining: Aparece lá em casa!, Vou ver…" }
+    model: { es: "No Brasil, muita coisa se diz nas entrelinhas. Quando alguém diz aparece lá em casa, nem sempre é um convite de verdade: na prática, é uma forma de cordialidade, como dizer que gostou de te ver. Se a pessoa não der o endereço, não apareça! Da mesma forma, a frase vou ver quer dizer, muitas vezes, não. É uma recusa educada, porque a franqueza total pode soar mal-educada. Já a frase a gente marca significa que a pessoa tem vontade de te encontrar, mas ainda sem data. Se ela não marcar nada em duas semanas, entenda a indireta. Não é falta de sinceridade: é só um jeito brasileiro de evitar conflitos e de não magoar ninguém.", en: "In Brazil, a lot is said between the lines. When someone says Come round to my place!, it isn't always a real invitation: in practice it's a form of friendliness, like saying they were glad to see you. If the person doesn't give you the address, don't turn up! Likewise, I'll see often means no. It's a polite refusal, because complete frankness can sound rude. And Let's arrange something means the person would like to meet you, but with no date yet. If they don't arrange anything in two weeks, take the hint. It's not insincerity: it's just a Brazilian way of avoiding conflict and not hurting anyone." }
+  - task: "Write an ironic social media post about a disastrous day in Alter do Chão, then explain what you really meant."
+    min: 110
+    max: 190
+    use: [w.ironia, w.irônico, w.piada, w.bem-humorado, w.deboche]
+    useAtLeast: 3
+    grammar: [g.irony-humor]
+    expect:
+      - { pattern: '(que maravilha|que beleza|que [oó]timo|maravilhos|perfeito|adorei|amei|que sorte)', hint: "Use ironic praise: Que maravilha!, Adorei!…" }
+      - { pattern: '\b(ironia|ir[oô]nic|sarcasmo|sarc[aá]stic|deboche|brincadeira|na verdade)\b', hint: "Explain the irony: Era ironia…, Na verdade…" }
+    model: { es: "Que dia maravilhoso em Alter do Chão! Acordei com uma pane na energia, o barqueiro esqueceu de nos buscar e, quando finalmente chegamos à Ilha do Amor, começou a chover. Adorei passar três horas debaixo de uma cobertura de palha esperando a chuva parar. E o luau? Perfeito: cancelado por causa do vento. Que sorte a nossa! Para quem não percebeu, era ironia, claro, com um pouco de deboche. Na verdade, foi um dia péssimo, mas pelo menos rimos muito. Bem-humorados como somos, já estamos fazendo piada da situação, e amanhã, se não chover, tentamos de novo. Moral da história: em Alter, sempre leve um guarda-chuva e muito bom humor.", en: "What a wonderful day in Alter do Chão! I woke up to a power cut, the boatman forgot to pick us up and, when we finally reached the Island of Love, it started to rain. I loved spending three hours under a straw shelter waiting for the rain to stop. And the beach party? Perfect: cancelled because of the wind. Lucky us! For anyone who didn't get it, that was irony, of course, with a bit of mockery. In fact it was an awful day, but at least we laughed a lot. Good-humoured as we are, we're already joking about it, and tomorrow, if it doesn't rain, we'll try again. Moral of the story: in Alter, always take an umbrella and plenty of good humour." }
+  - task: "Write a very polite message asking a neighbour to turn the music down at night, softening your request (Desculpa incomodar…, Será que você poderia…?, Não leve a mal…)."
+    min: 110
+    max: 190
+    use: [w.atenuar, w.incômodo, w.saia-justa, w.coisinha, w.cortesia]
+    useAtLeast: 3
+    grammar: [g.politeness-strategies]
+    expect:
+      - { pattern: '\b(ser[aá] que (voc[eê]|o senhor|a senhora|vocês) (poderia|podia|poderiam)|seria poss[ií]vel|(voc[eê]|o senhor|a senhora) (poderia|podia|se importaria))', hint: "Soften the request: Será que você poderia…?, Seria possível…?" }
+      - { pattern: '(desculp|incomod|n[aã]o leve a mal|por favor)', hint: "Apologise for bothering: Desculpa incomodar…" }
+    model: { es: "Oi, Paulo, tudo bem? Desculpa incomodar, é só uma coisinha rápida, e sei que é chato pedir isso. Sei que vocês gostam de música, e eu também adoro, mas é que eu acordo muito cedo para trabalhar e, nos últimos dias, o som tem ficado um pouco alto depois da meia-noite. Será que você poderia abaixar a música a partir das onze? Não leve a mal, de verdade: não quero criar uma saia justa entre a gente, e sei que não é por mal. Se em algum dia for uma festa especial, é só me avisar que eu me organizo. Muito obrigada pela cortesia e desculpa mais uma vez pelo incômodo. Um abraço! ", en: "Hi, Paulo, how are you? Sorry to bother you, it's just a quick little thing, and I know it's awkward to ask. I know you like music, and I love it too, but the thing is I get up very early for work and, over the last few days, the sound has been a bit loud after midnight. Could you possibly turn the music down from eleven? Please don't take it the wrong way: I don't want to create an awkward situation between us, and I know you don't mean any harm. If it's ever a special party, just let me know and I'll make arrangements. Thank you so much for your kindness and sorry again for the bother. Hugs! " }
+  - task: "Write an opinion paragraph on the jeitinho brasileiro: is it creativity or a problem? Give examples and nuance your view."
+    min: 110
+    max: 190
+    use: [w.jeitinho, w.malandragem, w.gambiarra, w.criatividade, w.mérito]
+    useAtLeast: 3
+    grammar: [g.politeness-strategies, g.pragmatics]
+    expect:
+      - { pattern: '\b(a meu ver|na minha opini[aã]o|do meu ponto de vista|acredito|considero)\b', hint: "Give your view: A meu ver…" }
+      - { pattern: '\b(por um lado|por outro lado|no entanto|contudo|embora|ainda que)\b', hint: "Nuance it: Por um lado…, por outro…, no entanto…" }
+    model: { es: "O jeitinho brasileiro é um tema que divide opiniões. Por um lado, ele mostra uma criatividade enorme: diante da burocracia e da falta de recursos, o brasileiro inventa, faz uma gambiarra e resolve o problema. Quem já viu um mecânico consertar um carro com um pedaço de arame e fita sabe do que estou falando. Por outro lado, o jeitinho pode virar malandragem, quando alguém usa um pistolão ou dá uma carteirada para furar a fila ou fugir das regras. Nesse caso, o mérito perde espaço para os amigos importantes. A meu ver, o problema não é o jeitinho, mas o uso que se faz dele: a criatividade é bem-vinda; a esperteza contra os outros, não.", en: "The jeitinho brasileiro is a subject that divides opinion. On the one hand, it shows enormous creativity: faced with red tape and a lack of resources, Brazilians invent, improvise a fix and solve the problem. Anyone who has seen a mechanic repair a car with a piece of wire and tape knows what I mean. On the other hand, the jeitinho can turn into dishonest cunning, when someone uses connections or pulls rank to jump the queue or dodge the rules. In that case, merit gives way to important friends. In my view, the problem isn't the jeitinho, but the use that's made of it: creativity is welcome; cleverness at others' expense isn't." }

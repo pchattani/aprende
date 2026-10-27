@@ -281,3 +281,42 @@ dialogues:
       - { q: "Kelvin通常點樣返工？", options: ["坐港鐵", "坐叮叮", "行路"], answer: 1, explain: "我通常坐叮叮去中環: he usually takes the tram." }
       - { q: "Kelvin朝早先做咩？", options: ["食早餐", "沖涼", "睇書"], answer: 1, explain: "我先沖涼，再食早餐: he showers first." }
       - { q: "Kelvin放工通常做咩？", options: ["去健身室", "返屋企煮飯", "去行街"], answer: 1, explain: "He goes to the gym only 間中 (now and then); 通常 he goes home and cooks." }
+writing:
+  - task: "Describe your morning in order with 先, 再 and 跟住."
+    min: 12
+    max: 30
+    use: [w.caat3-ngaa4, w.cung1-loeng4, w.sik6-zou2-caan1, w.gan1-zyu6.b, w.sai2-min6]
+    useAtLeast: 3
+    grammar: [g.sin-zoi-sequence]
+    expect:
+      - { pattern: "先", hint: "Say what comes first with 先." }
+      - { pattern: "再|跟住|然後", hint: "Say what comes next: 再…, 跟住…" }
+    model: { es: "我朝早七點起身，先刷牙洗面，再沖涼，跟住食早餐。", en: "I get up at seven. First I brush my teeth and wash my face, then I shower, and after that I have breakfast." }
+  - task: "Write how you go to work and come home, joining the verbs: 坐叮叮返工, 行路返屋企."
+    min: 12
+    max: 30
+    use: [w.faan1-gung1, w.faan1-uk1-kei2, w.ding1-ding1, w.haang4-lou6]
+    useAtLeast: 3
+    grammar: [g.serial-verbs]
+    expect:
+      - { pattern: "(坐|搭|行路).{0,4}(返工|返學|返屋企|去)", hint: "Join the transport and the verb: 坐叮叮返工." }
+    model: { es: "我日日坐叮叮返工，六點放工，跟住行路返屋企。", en: "Every day I take the tram to work, finish at six, then walk home." }
+  - task: "Write how often you do four activities: every day, often, sometimes and rarely."
+    min: 12
+    max: 35
+    use: [w.jat6-jat6, w.seng4-jat6, w.jau5-si4, w.hou2-siu2, w.paau2-bou6]
+    useAtLeast: 3
+    grammar: [g.frequency-adverbs]
+    expect:
+      - { pattern: "(日日|每日|晚晚).{0,2}都", hint: "With 日日 or 每日, add 都: 我日日都…" }
+      - { pattern: "成日|有時|間中|好少", hint: "Add other frequency words: 成日, 有時, 好少." }
+    model: { es: "我日日都跑步，成日去游水，有時行山，好少去健身室。", en: "I run every day, often go swimming, sometimes go hiking and rarely go to the gym." }
+  - task: "Write what you usually do while you're on the bus or MTR, with …嘅時候."
+    min: 8
+    max: 25
+    use: [w.si4-hau6, w.teng1-go1, w.san1-man4, w.tung1-soeng4]
+    useAtLeast: 2
+    grammar: [g.ge-si-hau]
+    expect:
+      - { pattern: "嘅時候", hint: "Say when with …嘅時候: 我坐車嘅時候…" }
+    model: { es: "我坐車嘅時候，通常聽歌或者睇新聞。", en: "When I'm on the bus or train, I usually listen to music or read the news." }

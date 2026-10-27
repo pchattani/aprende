@@ -266,3 +266,43 @@ dialogues:
       - { q: "點解嘉欣冇聽電話？", options: ["佢開會", "佢部手機冇電", "佢喺廟街"], answer: 0, explain: "The secretary says 陳小姐而家開會." }
       - { q: "Leo叫秘書做咩？", options: ["叫嘉欣覆佢電話", "幫佢訂位", "寄電郵畀佢"], answer: 0, explain: "麻煩你叫佢覆我電話: he asks for a call back." }
       - { q: "佢哋聽朝幾點喺邊度等？", options: ["八點喺澳洲牛奶公司門口", "八點喺佐敦站", "十點喺廟街"], answer: 0, explain: "嘉欣 says 我哋八點喺門口等啦, at the Australia Dairy Company." }
+writing:
+  - task: "You call an office in Jordan and ask for Mr Chan. He isn't in. Leave a message asking him to call you back."
+    min: 25
+    max: 55
+    use: [w.wai2.c, w.hau2-seon3, w.fuk1.b, w.lau4.b, w.bong1]
+    useAtLeast: 3
+    grammar: [g.phone-phrases, g.giu-someone]
+    expect:
+      - { pattern: "叫佢", hint: "Ask them to tell him: 叫佢…" }
+      - { pattern: "覆|打畀我|打返畀我", hint: "Ask him to call back: 覆我電話." }
+    model: { es: "喂，請問陳生喺唔喺度呀？唔喺呀？噉可唔可以幫我留個口訊，叫佢覆我電話？我姓李，唔該。", en: "Hello, is Mr Chan there? He's not? Then could you take a message for me and ask him to call me back? My surname is Lee. Thanks." }
+  - task: "Ask your flatmate with 幫 to order takeaway for you: what you want and where to send it."
+    min: 20
+    max: 45
+    use: [w.bong1, w.ngoi6-maai6, w.bok6-beng2, w.dei6-zi2, w.sung3.b]
+    useAtLeast: 3
+    grammar: [g.bong-help]
+    expect:
+      - { pattern: "幫我", hint: "Ask for help with 幫我 + verb: 幫我叫外賣." }
+    model: { es: "你可唔可以幫我叫外賣呀？我要一個薄餅，送去呢個地址。唔該晒！", en: "Could you order takeaway for me? I'd like a pizza, sent to this address. Thanks a lot!" }
+  - task: "Text a colleague: your phone battery is about to die, so ask them to tell the manager you'll be late."
+    min: 20
+    max: 45
+    use: [w.mou5-din6, w.cung1-din6, w.maa4-faan4.b, w.ging1-lei5, w.ci4-dou3]
+    useAtLeast: 3
+    grammar: [g.phone-phrases, g.giu-someone]
+    expect:
+      - { pattern: "冇電", hint: "Say your battery is dying: 我部手機冇電喇." }
+      - { pattern: "話畀.{1,4}知|叫佢|同.{1,4}講", hint: "Ask them to pass it on: 話畀經理知." }
+    model: { es: "我部手機就快冇電喇，冇得充電。麻煩你話畀經理知我會遲到半個鐘。", en: "My phone is about to die and I can't charge it. Could you please tell the manager I'll be half an hour late?" }
+  - task: "Someone calls asking for a person who doesn't live here. Write your polite reply."
+    es: "喂，請問Peter喺唔喺度呀？"
+    min: 20
+    max: 45
+    use: [w.daa2-co3, w.mou5-jan4, w.hou6-maa5, w.jing1-goi1]
+    useAtLeast: 2
+    grammar: [g.phone-phrases]
+    expect:
+      - { pattern: "打錯", hint: "Say they've dialled a wrong number: 你打錯電話喇." }
+    model: { es: "唔好意思，呢度冇人叫Peter，你應該打錯電話喇。你再睇吓個號碼啦。", en: "Sorry, there's nobody called Peter here; you must have the wrong number. Have another look at the number." }

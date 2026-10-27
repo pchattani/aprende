@@ -277,3 +277,42 @@ dialogues:
       - { q: "Che cosa ha fatto Chiara ieri?", options: ["Ha guardato il telefono di Matteo", "Ha tradito Matteo", "Ha perso il telefono"], answer: 0, explain: "Gli ho guardato il telefono mentre dormiva." }
       - { q: "Che cosa le consiglia Davide?", options: ["Di lasciare Matteo", "Di scrivergli un messaggio sincero", "Di aspettare una settimana"], answer: 1, explain: "Scrivigli un messaggio. Diglielo con sincerità." }
       - { q: "Chi tiene il telefono di Chiara alla fine?", options: ["Matteo", "Il cameriere", "Davide"], answer: 2, explain: "Chiara says il telefono tienilo tu and Davide answers Dammelo." }
+writing:
+  - task: "Your friend has argued with her boyfriend. Write her some advice using imperatives with pronouns attached (calmati, chiamalo, diglielo) and negative ones (non arrabbiarti)."
+    es: "Ho litigato con Marco ieri sera. Non so cosa fare!"
+    min: 50
+    max: 100
+    use: [w.calmarsi, w.chiarire, w.perdonare, w.fare-pace, w.litigio]
+    grammar: [g.imperativo-pronouns, g.imperativo-short-forms]
+    expect:
+      - { pattern: "\\b(calmati|chiamalo|chiamala|scrivigli|scrivile|parlagli|parlale|diglielo|digliela|digli|dille|dimmi|fammi|fallo|falla|perdonalo|perdonala|ascoltalo|ascoltala|scusati|lascialo|lasciala|invitalo|invitala|vacci|stammi|spiegagli|spiegale)\\b", hint: "Attach the pronoun to the imperative: calmati, chiamalo, diglielo…" }
+      - { pattern: "\\bnon\\s+\\S+r(ti|lo|la|gli|le|mi|ci|si)\\b|\\bnon\\s+(ti|lo|la|gli|le|mi)\\s+\\S+(are|ere|ire)\\b", hint: "Say what not to do: non arrabbiarti / non ti arrabbiare." }
+    model: { es: "Prima di tutto calmati: tutte le coppie litigano! Stasera chiamalo e chiarite la situazione. Se pensi di avere torto, diglielo sinceramente e scusati. Se invece ha sbagliato lui, ascoltalo e cerca di perdonarlo. Non arrabbiarti di nuovo per una cosa piccola, e poi fate pace con un bell'aperitivo sui Navigli. Fammi sapere com'è andata!", en: "First of all, calm down: all couples argue! Call him tonight and sort things out. If you think you were wrong, tell him honestly and apologise. If he was the one who got it wrong, listen to him and try to forgive him. Don't get angry again over something small, and then make up over a nice aperitivo on the Navigli. Let me know how it went!" }
+  - task: "Your flatmate is going to the shops and the Navigli market and asks if you need anything. Answer with short imperatives (dammi, dimmi, fammi, vacci…)."
+    es: "Vado al supermercato e poi al mercato dei Navigli. Ti serve qualcosa?"
+    min: 50
+    max: 100
+    use: [w.fammi-sapere, w.favore, w.dare, w.dire, w.andare]
+    grammar: [g.imperativo-short-forms, g.imperativo-pronouns]
+    expect:
+      - { pattern: "\\b(dammi|dimmi|fammi|vacci|stammi|dagli|digli|dalle|dille|dacci|facci|fallo|falla|dammelo|dimmelo|fammelo)\\b", hint: "Use short imperatives with a doubled consonant: dammi, dimmi, fammi, vacci…" }
+    model: { es: "Sì, grazie! Fammi un favore: prendimi il latte e il pane. Dammi lo scontrino quando torni, così ti do i soldi. Al mercato c'è un signore che vende vecchi libri: vacci e chiedigli se ha qualcosa di Calvino. Se lo trovi, compralo per me, ma dimmi quanto costa prima di pagare. E fammi sapere a che ora torni, così preparo la cena!", en: "Yes, thanks! Do me a favour: get me milk and bread. Give me the receipt when you get back, so I can give you the money. At the market there's a man who sells old books: go there and ask him if he has anything by Calvino. If you find something, buy it for me, but tell me how much it costs before you pay. And let me know what time you'll be back, so I can make dinner!" }
+  - task: "You work at the reception of a hotel in Milan. A guest arrives very late and apologises. Welcome them and give instructions politely, with the Lei imperative and the pronoun before the verb (si accomodi, mi dia, mi chiami…)."
+    es: "Buonasera, mi scusi tanto per il ritardo!"
+    min: 50
+    max: 100
+    use: [w.figurarsi, w.accomodarsi, w.passaporto, w.chiave, w.preoccuparsi]
+    grammar: [g.imperativo-lei-pronouns]
+    expect:
+      - { pattern: "\\b(si accomodi|mi dica|mi dia|si sieda|mi scusi|mi segua|si figuri|si rilassi|mi chiami|ci chiami|mi faccia|non si preoccupi|me lo dia|me la dia|si ricordi)\\b", hint: "Use the Lei imperative with the pronoun first: si accomodi, mi dia, non si preoccupi…" }
+    model: { es: "Buonasera e benvenuto! Si figuri, non si preoccupi per il ritardo. Si accomodi qui, prego. Mi dia il passaporto, per favore: lo registro e glielo restituisco subito. Ecco la chiave: la camera è al terzo piano e l'ascensore è a destra. Se ha bisogno di qualcosa, mi chiami con il telefono della camera. La colazione è dalle sette alle dieci. Si rilassi e buona notte!", en: "Good evening and welcome! Not at all, don't worry about being late. Please take a seat here. Give me your passport, please: I'll register it and give it back to you straight away. Here's the key: the room is on the third floor and the lift is on the right. If you need anything, call me on the room phone. Breakfast is from seven to ten. Relax and good night!" }
+  - task: "Reply to a friend who writes to you because she is jealous. Give her advice with imperatives and pronouns (parlagli, ascoltalo, non lasciarti…)."
+    es: "Il mio ragazzo esce ancora con la sua ex e io sono molto gelosa. Che cosa devo fare?"
+    min: 50
+    max: 100
+    use: [w.gelosia, w.ex, w.fiducia, w.sincero, w.rispettare]
+    grammar: [g.imperativo-pronouns]
+    expect:
+      - { pattern: "\\b(parlagli|parlane|digli|dimmi|ascoltalo|credigli|lascialo|fidati|calmati|chiediglielo|chiedigli|spiegagli|dagliela|trattalo)\\b|\\b\\S+(ati|iti|uti)\\b", hint: "Use imperatives with pronouns: parlagli, ascoltalo, fidati…" }
+      - { pattern: "\\bnon\\s+\\S+r(ti|lo|la|gli|le|mi|ci|si)\\b|\\bnon\\s+(ti|lo|la|gli|le|mi)\\s+\\S+(are|ere|ire)\\b", hint: "Say what not to do: non lasciarti…, non trattarlo male." }
+    model: { es: "Cara Sara, la gelosia è normale, ma non lasciarti controllare da questo sentimento. Parlane con il tuo ragazzo con calma: digli che cosa provi e ascoltalo senza giudicarlo. Se è sincero, credigli. Non controllare il suo telefono e non trattarlo male! Un rapporto ha bisogno di fiducia: dagliela, e vedrai che anche lui ti rispetterà di più. Se invece ti tradisce, lascialo!", en: "Dear Sara, jealousy is normal, but don't let this feeling control you. Talk to your boyfriend about it calmly: tell him how you feel and listen to him without judging him. If he's sincere, believe him. Don't check his phone and don't treat him badly! A relationship needs trust: give it to him, and you'll see he'll respect you more too. But if he cheats on you, leave him!" }

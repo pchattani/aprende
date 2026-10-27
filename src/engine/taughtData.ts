@@ -1,18 +1,15 @@
 /**
  * The taught-words index of the course (engine/taught.ts) built from each lesson's `vocab`,
- * read through the `?vocab` YAML projection in vite.config.ts (ids only, no lesson text).
+ * read through the lesson index (engine/lessonIndex.ts: the `?vocab` YAML projection, ids only, no lesson text).
  * Pages import it dynamically and only when the course sets `features.taughtOnly`, so the
  * other courses never load it.
  */
-import { z } from 'zod'
 import { levels, vocab, known } from './loader'
 import { tokenize } from '@lang/tokenize'
 import { taughtIndex, makeTaughtGate, type TaughtGate } from './taught'
+import { unitIds } from './lessonIndex'
 
-const files = import.meta.glob('@content/units/*/*.yaml', { eager: true, query: '?vocab', import: 'default' }) as Record<string, unknown>
-const UnitVocab = z.object({ id: z.string(), lessons: z.array(z.object({ id: z.string(), vocab: z.array(z.string()).default([]) })).default([]) })
-
-export const taught = taughtIndex(levels, Object.values(files).map((d) => UnitVocab.parse(d)))
+export const taught = taughtIndex(levels, unitIds)
 
 const gates = new Map<string, TaughtGate>()
 /** The gate for a lesson: the words of this lesson and every one before it. */

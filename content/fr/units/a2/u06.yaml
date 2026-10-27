@@ -295,3 +295,45 @@ dialogues:
       - { q: "Combien de bouteilles d'eau Nicolas a-t-il ?", options: ["Une", "Deux", "Trois"], answer: 1, explain: "Oui, j'en ai deux bouteilles." }
       - { q: "Combien de temps dure la traversée ?", options: ["Environ une heure", "Environ trois heures", "Toute la journée"], answer: 1, explain: "La traversée dure environ trois heures." }
       - { q: "Qu'est-ce que le guide préfère ?", options: ["L'omelette", "Les moules", "Les huîtres"], answer: 1, explain: "Moi, je préfère les moules !" }
+writing:
+  - task: "Your friend asks about your trip to the Mont-Saint-Michel. Answer each question, using y instead of repeating the place."
+    es: "Tu vas au Mont-Saint-Michel ? Comment tu y vas ? Tu y restes combien de temps ?"
+    min: 25
+    max: 60
+    use: [w.y, w.navette, w.rester, w.abbaye, w.marée-haute]
+    useAtLeast: 3
+    grammar: [g.pronoun-y]
+    expect:
+      - { pattern: "(\\b|['’])y (vais|vas|va|allons|allez|vont|suis|sommes|es|est|reste|restes|restons|restez|restent|monte|montons|arrive|arrivons|passe|passons|dors|dormons|retourne|pense|penses|aller|rester|passer|retourner|monter|dormir)\\b", hint: "Replace the place with y: j'y vais, on y reste…" }
+    model: { es: "Oui, j'y vais samedi avec mes parents ! On y va en voiture, puis on prend la navette. Nous y restons deux jours, parce que je veux voir la marée haute. On va aussi monter à l'abbaye. Tu y es déjà allé ?", en: "Yes, I'm going there on Saturday with my parents! We're going by car, then we take the shuttle. We're staying there two days, because I want to see the high tide. We're also going to go up to the abbey. Have you ever been there?" }
+  - task: "Order seafood at a market stall by the bay, using en with quantities."
+    es: "Bonjour ! Des huîtres ? Des moules ? Vous en voulez combien ?"
+    min: 25
+    max: 60
+    use: [w.huître, w.moule, w.crevette, w.douzaine, w.kilo]
+    useAtLeast: 3
+    grammar: [g.pronoun-en, g.en-quantities]
+    expect:
+      - { pattern: "\\ben (veux|voudrais|voudrions|prends|prenons|ai|a|avons|mange|ach[eè]te|bois|faut|voulez|prenez|reste)\\b", hint: "Use en with quantities: j'en voudrais une douzaine…" }
+      - { pattern: "\\b(douzaine|kilos?|beaucoup|peu|plusieurs|assez|trop|un|une|deux|trois|quatre|cinq|six|dix|douze|grammes?)\\b", hint: "Give a quantity: une douzaine, un kilo…" }
+    model: { es: "Bonjour, madame ! Les huîtres sont belles. J'en voudrais une douzaine, s'il vous plaît. Des moules ? Oui, j'en prends un kilo. Des crevettes, je n'en veux pas, merci. Ça fait combien ?", en: "Hello, madam! The oysters look lovely. I'd like a dozen, please. Mussels? Yes, I'll take a kilo. Prawns, I don't want any, thank you. How much is that?" }
+  - task: "Write a short guide for a friend visiting the Mont: how to get there, what to see up there and when crossing the bay is dangerous (use y at least twice)."
+    min: 35
+    max: 70
+    use: [w.baie, w.traversée, w.dangereux, w.rempart, w.marée]
+    useAtLeast: 3
+    grammar: [g.pronoun-y]
+    expect:
+      - { pattern: "(\\b|['’])y (vais|vas|va|allons|allez|vont|verras|verrez|vois|voit|reste|restes|monte|montes|arrive|arrives|passe|aller|rester|passer|monter|voir|trouve|trouves|trouver)\\b", hint: "Use y for the place: tu y vas en navette, tu y verras…" }
+      - { pattern: "\\b(dangereu|attention|faut)", hint: "Warn your friend: attention, c'est dangereux…" }
+    model: { es: "Pour aller au Mont-Saint-Michel, prends le train jusqu'à Pontorson. Ensuite, tu y vas en navette. En haut, il y a l'abbaye et les remparts : tu y verras une vue magnifique sur la baie ! Attention, la traversée de la baie à pied est dangereuse à marée haute. Il faut y aller avec un guide.", en: "To get to the Mont-Saint-Michel, take the train to Pontorson. Then you go there by shuttle. At the top there's the abbey and the ramparts: you'll see a magnificent view over the bay from there! Careful, crossing the bay on foot is dangerous at high tide. You have to go with a guide." }
+  - task: "Your flatmate asks about the food for the party. Answer each question using en and a quantity."
+    es: "Tu as acheté des crêpes ? Il reste du cidre ? On a assez de pommes ?"
+    min: 25
+    max: 60
+    use: [w.en.pron, w.environ, w.plusieurs, w.beaucoup-de, w.bouteille]
+    useAtLeast: 3
+    grammar: [g.pronoun-en, g.en-quantities]
+    expect:
+      - { pattern: "\\ben (veux|voudrais|prends|ai|a|avons|achet[eé]|ach[eè]te|faut|reste|restent|mange|bois|voulez)\\b", hint: "Use en: j'en ai acheté douze, il en reste une…" }
+    model: { es: "Oui, j'en ai acheté douze au marché. Du cidre ? Il en reste seulement une bouteille. Des pommes, on en a beaucoup : environ deux kilos ! Il y a aussi plusieurs gâteaux. Tu en veux un ?", en: "Yes, I bought twelve at the market. Cider? There's only one bottle left. Apples, we have lots: about two kilos! There are several cakes too. Do you want one?" }

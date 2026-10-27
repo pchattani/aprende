@@ -265,3 +265,45 @@ dialogues:
       - { q: "How far is the cathedral?", options: ["Ten minutes on foot", "Ten minutes by bus", "Very far"], answer: 0 }
       - { q: "Where should the tourist turn left?", options: ["At the bridge", "In the square, at the traffic lights", "At the town hall"], answer: 1 }
       - { q: "When is entry free?", options: ["Saturday mornings", "Sunday afternoons", "Every day"], answer: 1 }
+writing:
+  - task: "A tourist asks you the way to the Teatro Colón. Give directions."
+    es: "Perdone, ¿dónde está el Teatro Colón?"
+    min: 15
+    max: 40
+    use: [w.girar, w.cruzar, w.calle, w.esquina, w.derecha]
+    useAtLeast: 3
+    grammar: [g.directions-imperative]
+    expect:
+      - { pattern: "\\b(gire|gira|siga|sigue|cruce|cruza|tome|toma|coja|coge|baje|baja|suba|sube|camine|camina)\\b", hint: "Give instructions: siga todo recto, gire a la derecha …" }
+      - { pattern: "\\b(derecha|izquierda|recto)\\b", hint: "Say which way: a la derecha, a la izquierda, todo recto." }
+    model: { es: "Siga todo recto por esta avenida. En la segunda calle, gire a la izquierda. Cruce la plaza y el teatro está a la derecha, en la esquina.", en: "Go straight on along this avenue. At the second street, turn left. Cross the square and the theatre is on the right, on the corner." }
+  - task: "Your friend asks what you are doing. Write what you and the people around you are doing right now."
+    es: "¿Qué estás haciendo?"
+    min: 12
+    max: 35
+    use: [w.ahora, w.esperar, w.mensaje, w.entrada, w.escribir]
+    useAtLeast: 3
+    grammar: [g.estar-gerund]
+    expect:
+      - { pattern: "\\b(estoy|est[aá]s|est[aá]|estamos|est[aá]n) [a-záéíóúñ]+(ando|iendo|yendo)\\b", hint: "Use estar + -ando / -iendo: estoy esperando …" }
+    model: { es: "Ahora mismo estoy esperando delante del Teatro Colón. Mi amiga está comprando las entradas y yo estoy escribiendo este mensaje. ¡Estamos muy contentos!", en: "Right now I'm waiting in front of the Teatro Colón. My friend is buying the tickets and I'm writing this message. We're very happy!" }
+  - task: "Write a to-do list for the day of the opera: things you have to do (tengo que …) and rules at the theatre (hay que …)."
+    min: 15
+    max: 40
+    use: [w.tener-que, w.hay-que, w.llegar, w.temprano]
+    useAtLeast: 2
+    grammar: [g.tener-que, g.hay-que]
+    expect:
+      - { pattern: "\\btengo que\\b", hint: "Say what you have to do: Tengo que …" }
+      - { pattern: "\\bhay que\\b", hint: "Say what people must do: Hay que …" }
+    model: { es: "Mañana tengo que comprar una camisa y tengo que llamar a mi madre. En el teatro hay que llegar temprano y no hay que hablar.", en: "Tomorrow I have to buy a shirt and I have to call my mother. At the theatre you have to arrive early and you mustn't talk." }
+  - task: "Tell a friend how to get from your hotel to the theatre: from where to where, which transport and how long it takes."
+    min: 15
+    max: 40
+    use: [w.metro, w.parada, w.hacia, w.minuto, w.andar]
+    useAtLeast: 3
+    grammar: [g.prepositions-movement]
+    expect:
+      - { pattern: "\\b(desde|de)\\b.*\\b(hasta|hacia|a|al)\\b", hint: "Say from where to where: desde … hasta …" }
+      - { pattern: "\\b(en|a) (metro|autob[uú]s|taxi|tren|bici|pie)", hint: "Say how: en metro, a pie …" }
+    model: { es: "Desde el hotel hasta el teatro hay diez minutos en metro. Baja en la parada Tribunales y camina hacia la plaza. El teatro está a cinco minutos a pie.", en: "From the hotel to the theatre it's ten minutes by underground. Get off at Tribunales stop and walk towards the square. The theatre is five minutes away on foot." }

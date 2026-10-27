@@ -161,3 +161,46 @@ lessons:
         en: ["Leo is at the door.", "Open the door, please!", "Thanks so much!"]
         grammar: [g.pictograms, g.mgoi-doze]
         vocab: [w.mun4-hau2, w.hoi1-mun4]
+writing:
+  - task: "Write the characters for fire, water and mountain."
+    min: 3
+    max: 8
+    use: [w.fo2, w.seoi2, w.saan1.b]
+    useAtLeast: 3
+    grammar: [g.pictograms, g.stroke-order]
+    expect:
+      - { pattern: "火", hint: "Fire is 火." }
+      - { pattern: "水", hint: "Water is 水." }
+      - { pattern: "山", hint: "Mountain is 山." }
+    model: { es: "火、水、山。", en: "Fire, water, mountain." }
+  - task: "Write five more pictograms: person, mouth, wood, field and door."
+    min: 5
+    max: 10
+    use: [w.jan4, w.hau2, w.muk6.b, w.tin4.b, w.mun4]
+    useAtLeast: 3
+    grammar: [g.pictograms]
+    expect:
+      - { pattern: "人", hint: "Person is 人." }
+      - { pattern: "木", hint: "Wood is 木." }
+      - { pattern: "門", hint: "Door is 門." }
+    model: { es: "人、口、木、田、門。", en: "Person, mouth, wood, field, door." }
+  - task: "Write the three signs you see at a station: exit, entrance and doorway."
+    min: 6
+    max: 12
+    use: [w.ceot1-hau2, w.jap6-hau2, w.mun4-hau2]
+    useAtLeast: 2
+    grammar: [g.pictograms]
+    expect:
+      - { pattern: "出口", hint: "Exit is 出口." }
+      - { pattern: "入口", hint: "Entrance is 入口." }
+    model: { es: "出口、入口、門口。", en: "Exit, entrance, doorway." }
+  - task: "You look at the night sky over Victoria Harbour. Write that it is raining, but the moon is very big."
+    min: 5
+    max: 12
+    use: [w.lok6-jyu5, w.jyut6-loeng6, w.daai6, w.hou2]
+    useAtLeast: 2
+    grammar: [g.pictograms]
+    expect:
+      - { pattern: "落雨", hint: "Say it is raining: 落雨." }
+      - { pattern: "月亮", hint: "Write the moon: 月亮." }
+    model: { es: "落雨。月亮好大！", en: "It's raining. The moon is so big!" }

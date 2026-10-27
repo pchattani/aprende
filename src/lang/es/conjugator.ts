@@ -291,7 +291,28 @@ function joinSubj(yoStem: string, ending: string, inf: string): string {
 
 /** Build irregularity from the reflexive-less lemma when the table lists the reflexive form or vice versa. */
 function derivedIrregular(inf: string, table: ReadonlyMap<string, IrregularVerb>): IrregularVerb | undefined {
-  return table.get(inf + 'se')
+  return table.get(inf + 'se') ?? prefixedIrregular(inf, table)
+}
+
+/** Bases whose compounds conjugate like them: entretener → entretienen, componer, prevenir, deshacer, predecir, atraer. */
+const COMPOUND_BASES = ['tener', 'venir', 'poner', 'hacer', 'decir', 'traer']
+/** Compounds that are regular where the base is not (bendeciré, bendecido). */
+const NOT_COMPOUND = new Set(['bendecir', 'maldecir'])
+
+/** The irregular entry of a prefixed compound of a listed base, with the prefix added to its forms. */
+function prefixedIrregular(inf: string, table: ReadonlyMap<string, IrregularVerb>): IrregularVerb | undefined {
+  if (NOT_COMPOUND.has(inf)) return undefined
+  const base = COMPOUND_BASES.find((b) => inf.endsWith(b) && inf.length >= b.length + 2)
+  const irr = base && table.get(base)
+  if (!irr) return undefined
+  const pre = inf.slice(0, -base!.length)
+  const add = (x: string) => (x ? pre + x : x)
+  const out: IrregularVerb = { ...irr, lemma: inf }
+  for (const k of ['yo', 'pretStem', 'futStem', 'participle', 'gerund'] as const) if (irr[k]) out[k] = add(irr[k]!)
+  for (const k of ['pres', 'pret', 'impf', 'subjPres', 'impAff'] as const) if (irr[k]) out[k] = irr[k]!.map(add) as never
+  // the tú imperative keeps its stress: ten → entretén, pon → compón, ven → prevén
+  if (irr.impTu) out.impTu = /^[^aeiou]*[aeiou][ns]$/.test(irr.impTu) ? pre + irr.impTu.replace(/[aeiou](?=[ns]$)/, (v) => ({ a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú' })[v]!) : pre + irr.impTu
+  return out
 }
 
 /** Reflexive pronouns per person. */

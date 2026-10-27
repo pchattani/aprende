@@ -276,3 +276,42 @@ dialogues:
       - { q: "O que eles vão fazer no domingo?", options: ["Surfar na Joaquina", "Comer ostras em Santo Antônio de Lisboa", "Visitar a ponte"], answer: 1, explain: "On Sunday there will be a storm, so they plan to eat oysters in Santo Antônio de Lisboa." }
       - { q: "Quem vem com o irmão do Bento?", options: ["A mãe dele", "A namorada dele", "A Ingrid"], answer: 1, explain: "Ele disse que trará a namorada: he'll bring his girlfriend." }
       - { q: "O que a Ingrid fará para a viagem?", options: ["Uma torta de banana", "A reserva no restaurante", "Um bolo de chocolate"], answer: 0, explain: "Eu farei uma torta de banana: Bento makes the booking, Ingrid makes the pie." }
+writing:
+  - task: "Write about your dreams for the future using the simple future (morarei, aprenderei, seremos…)."
+    min: 25
+    max: 65
+    use: [w.futuro, w.sonho, w.ano-que-vem, w.construir, w.surfar]
+    useAtLeast: 3
+    grammar: [g.future-simple]
+    expect:
+      - { pattern: '(\b[a-zà-ú]+(rei|remos)\b|[a-zà-ú]+(rá|rão)(?![a-zà-ú]))', hint: "Use the simple future: morarei, teremos, será…" }
+    model: { es: "O meu sonho para o futuro é morar em Florianópolis. Um dia, eu morarei numa casa perto da praia e aprenderei a surfar. No ano que vem, abrirei um pequeno restaurante na Lagoa. Os meus amigos virão me visitar e nós seremos muito felizes!", en: "My dream for the future is to live in Florianópolis. One day I'll live in a house near the beach and learn to surf. Next year I'll open a small restaurant in Lagoa. My friends will come to visit me and we'll be very happy!" }
+  - task: "Write a message to your friends promising what you will do for a party (farei, trarei, direi…)."
+    min: 25
+    max: 60
+    use: [w.trazer, w.fazer, w.dizer, w.depois-de-amanhã, w.possível]
+    useAtLeast: 3
+    grammar: [g.future-irregular]
+    expect:
+      - { pattern: '\b(farei|faremos|far[aá]|trarei|traremos|trar[aá]|direi|diremos|dir[aá])', hint: "Use the irregular futures: farei, trarei, direi…" }
+    model: { es: "Oi, gente! Para a festa de depois de amanhã, eu farei o bolo e trarei as bebidas. O João trará a música. Farei o possível para chegar cedo. E não direi nada para a Ana, combinado?", en: "Hi, everyone! For the party the day after tomorrow, I'll make the cake and bring the drinks. João will bring the music. I'll do my best to arrive early. And I won't say anything to Ana, agreed?" }
+  - task: "Write a weekend weather forecast for the coast of Santa Catarina in the written future (será, choverá, haverá…), then say what you are going to do (vou…)."
+    min: 25
+    max: 65
+    use: [w.previsão, w.litoral, w.seco, w.temporal, w.úmido]
+    useAtLeast: 3
+    grammar: [g.future-spoken-vs-written]
+    expect:
+      - { pattern: '\b(ser[aá]|far[aá]|haver[aá]|chover[aá]|estar[aá]|ter[aá])', hint: "Use the written future for the forecast: será, fará, choverá…" }
+      - { pattern: '\b(vou|vamos) [a-zà-ú]+(ar|er|ir)\b', hint: "Say your plans in the spoken future: Vou surfar… / Vamos ficar…" }
+    model: { es: "Segundo a previsão, o sábado será seco e ensolarado no litoral de Santa Catarina. No domingo, o tempo estará mais úmido e haverá um temporal à tarde. Então, no sábado vou surfar e no domingo vou ficar em casa.", en: "According to the forecast, Saturday will be dry and sunny on the Santa Catarina coast. On Sunday the weather will be more humid and there'll be a storm in the afternoon. So on Saturday I'm going surfing and on Sunday I'm staying at home." }
+  - task: "You are planning a day on the island but you're not sure about anything. Write your doubts with será que, talvez, provavelmente and com certeza."
+    min: 25
+    max: 60
+    use: [w.será-que, w.talvez, w.provavelmente, w.com-certeza, w.sorte]
+    useAtLeast: 3
+    grammar: [g.sera-que]
+    expect:
+      - { pattern: 'ser[aá] que', hint: "Wonder aloud with será que: Será que vai chover?" }
+      - { pattern: '\b(talvez|provavelmente|com certeza)\b', hint: "Say how sure you are: talvez, provavelmente, com certeza." }
+    model: { es: "Será que vai chover amanhã? O céu está nublado. Provavelmente vai fazer sol à tarde. Será que dá para atravessar a ponte a pé? Talvez não. Mas com certeza vamos comer ostras. Que sorte!", en: "I wonder if it'll rain tomorrow? The sky's cloudy. It'll probably be sunny in the afternoon. Can you walk across the bridge, I wonder? Maybe not. But we'll definitely eat oysters. How lucky!" }

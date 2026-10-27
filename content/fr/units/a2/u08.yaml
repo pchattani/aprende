@@ -280,3 +280,42 @@ dialogues:
       - { q: "Qu'est-ce qu'ils feront s'il pleut ?", options: ["Ils resteront à la gare", "Ils visiteront le musée", "Ils iront à la plage"], answer: 1, explain: "Yann: S'il pleut, on visitera le musée." }
       - { q: "Que prévoit la météo ?", options: ["Du soleil avec quelques averses", "De la neige", "Un orage toute la journée"], answer: 0, explain: "The forecast is sun with a few showers." }
       - { q: "Qu'est-ce que Yann apprendra à Sophie ?", options: ["À faire des galettes", "À jouer de la cornemuse", "Une danse bretonne"], answer: 2, explain: "Sophie asks him to teach her a Breton dance, and he promises." }
+writing:
+  - task: "Write about your plans and hopes for next year: what you will do, learn and organise (futur simple)."
+    min: 30
+    max: 70
+    use: [w.l-année-prochaine, w.espérer, w.projet, w.organiser, w.voyager]
+    useAtLeast: 3
+    grammar: [g.futur-simple-forms]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])[a-zàâçéèêëîïôûùœ]{2,}r(ai|as|a|ons|ez|ont)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the future: je finirai, nous organiserons, j'apprendrai…" }
+    model: { es: "L'année prochaine, je finirai l'université et je chercherai un travail. J'espère que je vivrai en Bretagne ! Je voyagerai beaucoup avec mes amis et nous organiserons un grand voyage en Afrique. J'apprendrai aussi à jouer de la cornemuse. J'ai beaucoup de projets !", en: "Next year I'll finish university and look for a job. I hope I'll live in Brittany! I'll travel a lot with my friends and we'll organise a big trip to Africa. I'll also learn to play the bagpipes. I have lots of plans!" }
+  - task: "Invite a friend to the Festival de Cornouaille in Quimper: say what there will be and what you will do together (il y aura, on ira, on verra, on pourra…)."
+    min: 30
+    max: 70
+    use: [w.festival, w.musicien, w.costume, w.coiffe, w.partout]
+    useAtLeast: 3
+    grammar: [g.futur-irregular-stems]
+    expect:
+      - { pattern: "\\b(ir|ser|aur|fer|verr|pourr|viendr|devr|voudr|saur|faudr|enverr|courr|tiendr|vaudr)(ai|as|a|ons|ez|ont)\\b", hint: "Use irregular futures: il y aura, on ira, on verra, ce sera…" }
+    model: { es: "Viens avec moi au festival de Cornouaille en juillet ! Il y aura des musiciens partout dans les rues de Quimper. On verra des costumes traditionnels et des coiffes bigoudènes. On ira danser le soir et on pourra manger des crêpes au caramel au beurre salé. Ce sera génial !", en: "Come with me to the Festival de Cornouaille in July! There will be musicians everywhere in the streets of Quimper. We'll see traditional costumes and Bigouden headdresses. We'll go dancing in the evening and we'll be able to eat crêpes with salted butter caramel. It'll be great!" }
+  - task: "The forecast for tomorrow is uncertain. Tell your friend what you will do depending on the weather (S'il pleut, … / S'il fait beau, …)."
+    es: "Demain, il y aura peut-être des averses en Bretagne."
+    min: 30
+    max: 70
+    use: [w.pleuvoir, w.dedans, w.dehors, w.orage, w.prévision]
+    useAtLeast: 3
+    grammar: [g.si-present-futur]
+    expect:
+      - { pattern: "\\bs(i\\s|['’]il)", hint: "Use si + present: S'il pleut, …" }
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])[a-zàâçéèêëîïôûùœ]{2,}r(ai|as|a|ons|ez|ont)(?![a-zàâçéèêëîïôûùœ])", hint: "Then use the future: on restera dedans, on fera une promenade…" }
+    model: { es: "Les prévisions ne sont pas bonnes pour demain. S'il pleut, on restera dedans et on visitera le musée de la faïence. S'il fait beau l'après-midi, on fera une promenade dehors, près de la rivière. Et s'il y a un orage, on mangera des crêpes à la maison !", en: "The forecast isn't good for tomorrow. If it rains, we'll stay inside and visit the earthenware museum. If it's nice in the afternoon, we'll go for a walk outside, near the river. And if there's a storm, we'll eat crêpes at home!" }
+  - task: "What will your life be like later? Write about your dream job and your future (Quand je serai…, Dès que j'aurai…)."
+    min: 30
+    max: 70
+    use: [w.métier, w.pilote, w.dès-que, w.lorsque, w.gagner-sa-vie]
+    useAtLeast: 2
+    grammar: [g.quand-futur, g.futur-irregular-stems]
+    expect:
+      - { pattern: "\\b(quand|lorsque|d[eè]s que|d[eè]s qu['’]) ?(je |tu |il |elle |on |nous |vous |ils |elles |j['’])[a-zàâçéèêëîïôûùœ]*r(ai|as|a|ons|ez|ont)\\b", hint: "After quand / dès que, use the future: Quand je serai grand(e), …" }
+    model: { es: "Quand je serai grande, je serai pilote ! J'adore ce métier. Dès que j'aurai vingt-cinq ans, je chercherai un travail à l'aéroport. Je voyagerai partout dans le monde. Lorsque je gagnerai bien ma vie, j'achèterai une maison en Bretagne pour mes parents.", en: "When I grow up, I'll be a pilot! I love that job. As soon as I'm twenty-five, I'll look for a job at the airport. I'll travel all over the world. When I earn a good living, I'll buy a house in Brittany for my parents." }

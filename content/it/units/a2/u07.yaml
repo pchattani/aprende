@@ -275,3 +275,38 @@ dialogues:
       - { q: "Quanto sono lunghe le mura?", options: ["Circa due chilometri", "Circa quattro chilometri", "Circa dieci chilometri"], answer: 1, explain: "Sara says they're about four kilometres long." }
       - { q: "Dove si mangia meglio, secondo Sara?", options: ["In un bar sulle mura", "In una trattoria in Piazza dell'Anfiteatro", "In un ristorante di Firenze"], answer: 1, explain: "Per me, una trattoria in Piazza dell'Anfiteatro." }
       - { q: "Chi paga la cena stasera?", options: ["Sara", "Tom", "I fiorentini"], answer: 1, explain: "Offro io! means 'It's my treat', and Tom says it." }
+writing:
+  - task: "Compare Lucca and Pisa (or two cities you know): size, traffic, prices, atmosphere."
+    min: 30
+    max: 65
+    use: [w.tranquillo, w.trafficato, w.stretto, w.diverso, w.caro]
+    grammar: [g.comparatives]
+    expect:
+      - { pattern: "(più|meno)\\s+\\S+\\s+(di|del|della|dello|dei|degli|delle|che)\\b|\\bcos[iì]\\s+\\S+\\s+come\\b|\\btanto\\s+\\S+\\s+quanto\\b", hint: "Compare: più … di, meno … di, (così) … come…" }
+    model: { es: "Lucca è più piccola di Pisa, ma secondo me è più bella. Pisa è più trafficata e più cara di Lucca. A Lucca le strade sono strette e tranquille, e tutti vanno in bicicletta. Le due città sono molto diverse!", en: "Lucca is smaller than Pisa, but in my opinion it's more beautiful. Pisa is busier and more expensive than Lucca. In Lucca the streets are narrow and quiet, and everyone goes by bike. The two cities are very different!" }
+  - task: "Write a short online review of the best place you visited in Lucca: use superlatives (il più…, -issimo)."
+    min: 30
+    max: 65
+    use: [w.antico, w.pulito, w.elegante, w.migliore, w.lunghissimo]
+    grammar: [g.superlatives]
+    expect:
+      - { pattern: "\\b(il|la|i|le|lo|gli|l['’])\\s*(\\S+\\s+)?(più|meno)\\s+\\S+", hint: "Use the relative superlative: il posto più bello…" }
+      - { pattern: "\\S+issim[oaie]\\b", hint: "Use -issimo: bellissimo, antichissimo…" }
+    model: { es: "Le mura di Lucca sono il posto più bello della Toscana! Sono antichissime e lunghissime: più di quattro chilometri. Le strade sono pulitissime e i negozi sono eleganti. Il ristorante migliore della città è vicino al Duomo: il buccellato è buonissimo!", en: "Lucca's walls are the most beautiful place in Tuscany! They're very old and very long: more than four kilometres. The streets are spotless and the shops are elegant. The best restaurant in town is near the cathedral: the buccellato is delicious!" }
+  - task: "A friend asks for advice about a day in Lucca. Answer using meglio, peggio, migliore and ottimo."
+    es: "È meglio la bici o andare a piedi? E dove si mangia bene?"
+    min: 30
+    max: 65
+    use: [w.migliore, w.meglio, w.peggio, w.ottimo, w.vantaggio]
+    grammar: [g.comparatives-irregular]
+    expect:
+      - { pattern: "\\b(migliore|migliori|meglio|peggio|peggiore|peggiori|ottim[oaie]|pessim[oaie])\\b", hint: "Use irregular comparatives: meglio, peggio, migliore, ottimo…" }
+    model: { es: "Secondo me è meglio la bici: è più veloce e più pratica. A piedi è peggio, perché le mura sono lunghe. Il vantaggio della bici è che vedi tutta la città in un'ora. Per mangiare, la trattoria in piazza è ottima e i tortelli sono i migliori di Lucca!", en: "In my opinion the bike is better: it's quicker and more practical. On foot is worse, because the walls are long. The advantage of the bike is that you see the whole city in an hour. For food, the trattoria in the square is excellent and the tortelli are the best in Lucca!" }
+  - task: "Give your opinion on shopping and fashion in Italy: what you think, what you prefer and why. Use secondo me, per me, penso di sì / di no."
+    min: 30
+    max: 65
+    use: [w.secondo-me, w.moda, w.stile, w.preferito, w.fare-shopping]
+    grammar: [g.opinions]
+    expect:
+      - { pattern: "secondo me|\\bper me\\b|a mio parere|penso di (sì|no)|sono d['’]accordo", hint: "Give your opinion: secondo me, per me, a mio parere…" }
+    model: { es: "Secondo me gli italiani sono molto alla moda e hanno uno stile elegante. Per me però i vestiti nei negozi del centro sono troppo cari. Preferisco fare shopping al mercato: è più economico e più divertente. Il mio negozio preferito è vicino alle mura.", en: "In my opinion Italians are very fashionable and have an elegant style. For me, though, the clothes in the shops in the centre are too expensive. I prefer shopping at the market: it's cheaper and more fun. My favourite shop is near the walls." }

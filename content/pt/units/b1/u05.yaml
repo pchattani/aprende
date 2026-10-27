@@ -281,3 +281,40 @@ dialogues:
       - { q: "Quando o Henrique quer voltar a Congonhas?", options: ["No Natal", "No Jubileu do ano que vem", "Nunca"], answer: 1, explain: "Se eu puder, volto para o Jubileu do ano que vem." }
       - { q: "O que o Henrique vai fazer quando tiver a residência?", options: ["Alugar um apartamento", "Comprar um carro", "Abrir uma empresa"], answer: 0, explain: "Quando eu tiver a residência, posso alugar um apartamento." }
       - { q: "Quem pode ficar na casa do Henrique o tempo que quiser?", options: ["Só a Lorena", "Quem trouxer pão de queijo", "Ninguém"], answer: 1, explain: "Quem trouxer pão de queijo pode ficar o tempo que quiser!" }
+writing:
+  - task: "Write to a friend about your plans for your visit to Congonhas, using the future subjunctive (Quando eu chegar…, Se der tempo…, Assim que você confirmar…)."
+    min: 50
+    max: 100
+    use: [w.planejar, w.confirmar, w.agenda, w.compromisso, w.profeta]
+    useAtLeast: 3
+    grammar: [g.future-subjunctive-forms, g.future-subjunctive-time]
+    expect:
+      - { pattern: '\b(quando|assim que|logo que|se|sempre que)( [a-zà-ú]+)?( n[aã]o)? [a-zà-ú]+(r|rmos|rem)\b', hint: "Use the future subjunctive: Quando eu chegar…, Se der tempo…" }
+    model: { es: "Oi, Bia! Já planejei tudo para a viagem. Quando eu chegar a Congonhas, te ligo. Se der tempo, a gente visita os doze profetas no mesmo dia. Assim que você confirmar a data, eu compro a passagem. Se você tiver algum compromisso, não tem problema: a gente muda a agenda. Quando quiser, me avisa!", en: "Hi, Bia! I've planned everything for the trip. When I get to Congonhas, I'll call you. If there's time, we'll visit the twelve prophets on the same day. As soon as you confirm the date, I'll buy the ticket. If you have something on, no problem: we'll change the schedule. Whenever you like, let me know!" }
+  - task: "Explain the steps you will take to get a visa and settle in Brazil, using assim que, logo que, quando + future subjunctive."
+    min: 50
+    max: 100
+    use: [w.visto, w.embaixada, w.identidade, w.burocracia, w.renovar]
+    useAtLeast: 3
+    grammar: [g.future-subjunctive-time]
+    expect:
+      - { pattern: '\b(assim que|logo que|quando|depois que)( [a-zà-ú]+)?( n[aã]o)? [a-zà-ú]+(r|rmos|rem)\b', hint: "Use assim que / quando + future subjunctive: Assim que eu tiver os documentos…" }
+    model: { es: "Para morar no Brasil, preciso de um visto. Assim que eu tiver todos os documentos, vou marcar um horário na embaixada. Quando a embaixada aprovar o pedido, vou comprar a passagem. Logo que eu chegar, tenho que tirar a carteira de identidade e abrir uma conta no banco. Se a burocracia demorar, vou ter paciência!", en: "To live in Brazil, I need a visa. As soon as I have all the documents, I'll book an appointment at the embassy. When the embassy approves the application, I'll buy the ticket. As soon as I arrive, I have to get an ID card and open a bank account. If the red tape takes a while, I'll be patient!" }
+  - task: "Plan a nature trip to the Pantanal: say what you will do depending on the conditions (Se chover…, Se a gente tiver sorte…, Se virmos uma onça…)."
+    min: 50
+    max: 100
+    use: [w.trilha, w.onça, w.arara, w.jacaré, w.ecoturismo]
+    useAtLeast: 3
+    grammar: [g.future-subjunctive-se]
+    expect:
+      - { pattern: '\bse( [a-zà-ú]+)?( n[aã]o)? [a-zà-ú]+(r|rmos|rem)\b', hint: "Use se + future subjunctive: Se chover…, Se a gente tiver sorte…" }
+    model: { es: "Na semana que vem vamos fazer ecoturismo no Pantanal. Se não chover, faremos uma trilha de manhã cedo. Se a gente tiver sorte, vamos ver araras e tucanos. Se virmos uma onça, vou tirar mil fotos! À tarde, se o guia puder, vamos passear de barco para ver os jacarés. Se fizer muito calor, ficaremos na pousada.", en: "Next week we're going on an eco-trip to the Pantanal. If it doesn't rain, we'll do a trail early in the morning. If we're lucky, we'll see macaws and toucans. If we see a jaguar, I'll take a thousand photos! In the afternoon, if the guide can, we'll take a boat trip to see the caimans. If it's very hot, we'll stay at the lodge." }
+  - task: "You are moving to another city. Write the invitation to your farewell party, using whoever, whatever and however + future subjunctive (Quem quiser…, O que vocês puderem…, como vocês preferirem)."
+    min: 50
+    max: 100
+    use: [w.despedida, w.despedir-se, w.adaptar-se, w.mudança-de-cidade, w.como-quiser]
+    useAtLeast: 2
+    grammar: [g.future-subjunctive-relative]
+    expect:
+      - { pattern: '\b(quem|o que|onde|como|quanto)( voc[eê]s?| a gente)? (quiser|quiserem|puder|puderem|preferir|preferirem|tiver|tiverem|vier|vierem|der)\b', hint: "Use quem / o que / como + future subjunctive: Quem quiser…, O que vocês puderem…" }
+    model: { es: "Amigos, no mês que vem vou me mudar para Brasília e quero fazer uma festa de despedida no sábado! Quem quiser pode trazer um amigo. Tragam o que vocês puderem: uma bebida, um doce, qualquer coisa. Vamos ficar no quintal ou na sala, como vocês preferirem. Vai ser difícil me adaptar a outra cidade, mas quero me despedir de todos com alegria!", en: "Friends, next month I'm moving to Brasília and I want to have a farewell party on Saturday! Whoever wants to can bring a friend. Bring whatever you can: a drink, a sweet, anything. We'll be in the garden or the living room, whichever you prefer. It'll be hard to adapt to another city, but I want to say goodbye to everyone happily!" }

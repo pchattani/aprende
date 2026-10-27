@@ -281,3 +281,41 @@ dialogues:
       - { q: "Qu'est-ce que le palais des ducs abrite aujourd'hui ?", options: ["Un hôtel et un restaurant", "La mairie et un musée", "Une moutarderie"], answer: 1, explain: "Il abrite aujourd'hui la mairie et un musée." }
       - { q: "Pourquoi les ducs ont-ils fait de Dijon une capitale prestigieuse ?", options: ["Ils voulaient rivaliser avec le roi de France.", "Ils voulaient vendre de la moutarde.", "Le roi le leur avait demandé."], answer: 0, explain: "Voulant rivaliser avec le roi de France: they wanted to rival him." }
       - { q: "Que va faire Lucas devant la chouette ?", options: ["La caresser de la main gauche", "La prendre en photo", "Faire un vœu"], answer: 1, explain: "N'étant pas superstitieux, he's just going to take a photo — though Emma teases him." }
+writing:
+  - task: "Write a short history text about the dukes of Burgundy for a guidebook, using present participles (voulant rivaliser avec Paris, les ducs…; ayant conquis…)."
+    min: 80
+    max: 150
+    use: [w.duché, w.rivaliser, w.puissant, w.noblesse, w.prestigieux]
+    useAtLeast: 3
+    grammar: [g.participe-present]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(?!(maintenant|pendant|avant|devant|enfant|enfants|cependant|restaurant|restaurants|important|importante|importants|[eé]tudiant|[eé]tudiants|pr[eé]sident|puissant|puissante|puissants|puissantes|autant|g[eé]ant|g[eé]ante|courant|durant|vivant|vivants|m[eé]chant|m[eé]chante|charmant|charmante|int[eé]ressant|int[eé]ressante|passionnant|passionnante)(?![a-zàâçéèêëîïôûùœ]))[a-zàâçéèêëîïôûùœ]{3,}ant(?![a-zàâçéèêëîïôûùœ])", hint: "Use present participles: voulant rivaliser…, ayant conquis…, possédant…" }
+    model: { es: "Au Moyen Âge, le duché de Bourgogne était l'un des États les plus puissants d'Europe. Voulant rivaliser avec le roi de France, les ducs firent de Dijon une capitale prestigieuse. Possédant aussi la Flandre, ils devinrent très riches grâce au commerce. Philippe le Bon, aimant la peinture et la musique, invita à sa cour les meilleurs peintres et musiciens de son époque. La noblesse, suivant son exemple, fit construire de magnifiques maisons. Ayant perdu la guerre contre Louis XI, Charles le Téméraire mourut en 1477, et le duché devint français.", en: "In the Middle Ages the Duchy of Burgundy was one of the most powerful states in Europe. Wanting to rival the King of France, the dukes made Dijon a prestigious capital. Also owning Flanders, they became very rich through trade. Philip the Good, loving painting and music, invited the best painters and musicians of his time to his court. The nobility, following his example, had magnificent houses built. Having lost the war against Louis XI, Charles the Bold died in 1477, and the duchy became French." }
+  - task: "Write a review of a guided tour of Dijon (the Owl's trail, the ducal palace…), using verbal adjectives (fatigant, passionnant, surprenant, fascinant, convaincant…)."
+    min: 80
+    max: 150
+    use: [w.parcours, w.chouette, w.fatigant, w.passionnant, w.surprenant]
+    useAtLeast: 3
+    grammar: [g.adjectif-verbal]
+    expect:
+      - { pattern: "\\b(fatigant|passionnant|surprenant|convaincant|fascinant|intrigant|encourageant|n[eé]gligent|excellent|amusant|int[eé]ressant|[eé]tonnant|charmant|impressionnant|[eé]puisant|apaisant|[eé]mouvant)e?s?\\b", hint: "Use verbal adjectives: une visite fatigante mais passionnante…" }
+    model: { es: "Samedi, j'ai suivi le parcours de la Chouette avec une guide excellente. La balade, qui dure deux heures, est un peu fatigante, mais vraiment passionnante. On suit de petites plaques dorées dans les rues et on découvre des façades surprenantes, avec des toits de tuiles colorées. Le moment le plus intrigant, c'est quand on arrive devant la chouette sculptée de l'église Notre-Dame : il faut la caresser de la main gauche pour avoir du bonheur ! Les explications de la guide étaient fascinantes et ses histoires très convaincantes. Je recommande cette visite à tous les curieux.", en: "On Saturday I followed the Owl's trail with an excellent guide. The walk, which lasts two hours, is a bit tiring but really fascinating. You follow little golden plaques through the streets and discover surprising façades, with colourful tiled roofs. The most intriguing moment is when you reach the carved owl on the church of Notre-Dame: you have to stroke it with your left hand for good luck! The guide's explanations were fascinating and her stories very convincing. I recommend this tour to anyone curious." }
+  - task: "Describe the end of the grape harvest in a Burgundy village, starting sentences with participial clauses (La vendange terminée, … / Une fois les raisins cueillis, … / Le travail achevé, …)."
+    min: 80
+    max: 150
+    use: [w.vendange, w.vignoble, w.achevé, w.terminé, w.vigne]
+    useAtLeast: 3
+    grammar: [g.participial-clauses]
+    expect:
+      - { pattern: "(termin|achev|fini|cueilli|pass|fait|parti|arriv|rentr|vid|rang|lav|charg)[a-zàâçéèêëîïôûùœ]*,|(?<![a-zàâçéèêëîïôûùœ])(ayant|[eé]tant) [a-zàâçéèêëîïôûùœ]+", hint: "Start with a participial clause: La vendange terminée, … / Une fois les raisins cueillis, …" }
+    model: { es: "Fin septembre, dans un petit village près de Beaune. Les derniers raisins cueillis, les vendangeurs rentrent des vignes en chantant. Une fois les paniers vidés dans les tonneaux, le vigneron offre à tout le monde un verre de vin de l'année précédente. La vendange terminée, on prépare la grande fête traditionnelle. Les tables installées dans la cour, les familles arrivent avec des plats faits maison. Le soleil couché sur le vignoble, la musique commence. Le travail achevé, chacun peut enfin se reposer… jusqu'à l'année prochaine !", en: "Late September, in a small village near Beaune. The last grapes picked, the harvesters come back from the vines singing. Once the baskets have been emptied into the barrels, the winegrower offers everyone a glass of the previous year's wine. The harvest over, the big traditional party is prepared. The tables set up in the courtyard, families arrive with home-made dishes. The sun having set over the vineyard, the music starts. The work done, everyone can finally rest… until next year!" }
+  - task: "Present a Dijon mustard company for a business magazine: what it produces, where it exports, its competitors and its challenges (une maison exportant dans le monde entier, ayant…)."
+    min: 90
+    max: 150
+    use: [w.moutarde, w.exporter, w.concurrence, w.fabrication, w.artisanal]
+    useAtLeast: 3
+    grammar: [g.participe-present, g.participial-clauses]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(?!(maintenant|pendant|avant|devant|enfant|enfants|cependant|restaurant|important|importante|[eé]tudiant|pr[eé]sident|puissant|autant|g[eé]ant|courant|durant|vivant|charmant|int[eé]ressant|passionnant)(?![a-zàâçéèêëîïôûùœ]))[a-zàâçéèêëîïôûùœ]{3,}ant(?![a-zàâçéèêëîïôûùœ])", hint: "Use present participles: une entreprise exportant…, employant…, ayant…" }
+      - { pattern: "\\b(export|produi|fabriqu|vend)", hint: "Say what the company produces or exports." }
+    model: { es: "Fondée en 1840, la maison Morel est une entreprise de famille fabriquant de la moutarde à Dijon. Employant aujourd'hui quatre-vingts personnes, elle produit trois millions de pots par an. Ayant gardé une fabrication artisanale, elle utilise seulement des graines de Bourgogne, choisies avec soin. La maison, exportant dans plus de trente pays, vend surtout aux États-Unis et au Japon. Cependant, la concurrence est forte : de grandes marques industrielles proposent des produits moins chers. Voulant se différencier, l'entreprise mise sur la qualité et sur des recettes originales, comme la moutarde au cassis.", en: "Founded in 1840, the Morel company is a family business making mustard in Dijon. Employing eighty people today, it produces three million jars a year. Having kept a traditional production method, it only uses seeds from Burgundy, carefully chosen. The company, exporting to more than thirty countries, sells mainly to the United States and Japan. However, competition is fierce: big industrial brands offer cheaper products. Wanting to stand out, the company is betting on quality and original recipes, such as blackcurrant mustard." }

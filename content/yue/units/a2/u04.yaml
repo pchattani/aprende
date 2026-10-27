@@ -277,3 +277,42 @@ dialogues:
       - { q: "旺角有乜嘢好過深水埗？", options: ["款式多啲", "平啲", "人少啲"], answer: 0, explain: "旺角款式多啲: Mong Kok has more styles." }
       - { q: "深水埗多唔多人呀？", options: ["好擠迫", "冇旺角咁擠迫", "冇人"], answer: 1, explain: "冇旺角咁擠迫: not as crowded as Mong Kok." }
       - { q: "買完嘢，志明帶嘉欣去邊度？", options: ["佢最鍾意嘅茶餐廳", "鴨寮街", "旺角"], answer: 0, explain: "我帶你去我最鍾意嗰間: his favourite cha chaan teng." }
+writing:
+  - task: "Compare Sham Shui Po with Central using 比: prices, crowds and how lively they are."
+    min: 20
+    max: 50
+    use: [w.bei2.b, w.zai1-bik1, w.gang3-gaa1, w.jit6-naau6]
+    useAtLeast: 3
+    grammar: [g.bei2-comparison]
+    expect:
+      - { pattern: "比.{1,6}(平|貴|擠迫|熱鬧|靜|大|細|方便|多|少|好|差)", hint: "Compare with A 比 B + adjective: 深水埗比中環平." }
+    model: { es: "深水埗比中環平好多，不過深水埗比中環擠迫。我諗深水埗更加熱鬧。", en: "Sham Shui Po is much cheaper than Central, but it's more crowded. I think Sham Shui Po is even livelier." }
+  - task: "You're choosing between two shirts. Compare them with adjective + 過, and say which one you'll buy."
+    min: 20
+    max: 45
+    use: [w.peng4-gwo3, w.hou2-gwo3, w.zat1-sou3, w.seot1-saam1, w.ni1-gin6]
+    useAtLeast: 3
+    grammar: [g.adj-gwo-comparison]
+    expect:
+      - { pattern: "(平|貴|好|大|細|高|靚|差|鬆|緊|長|短)過", hint: "Compare with adjective + 過: 平過嗰件." }
+    model: { es: "呢件恤衫平過嗰件，不過嗰件質素好過呢件。我想買嗰件。", en: "This shirt is cheaper than that one, but that one's quality is better than this one. I want to buy that one." }
+  - task: "Compare yourself with an older sister or brother using 冇…咁 and 一樣."
+    min: 20
+    max: 45
+    use: [w.mou5-gam3, w.jat1-joeng6, w.gou1, w.sau3, w.hou2-ci5]
+    useAtLeast: 3
+    grammar: [g.mou-gam-not-as, g.jat-joeng-same]
+    expect:
+      - { pattern: "冇.{1,5}咁", hint: "Say 'not as … as' with 冇 + person + 咁 + adjective: 我冇佢咁高." }
+      - { pattern: "一樣", hint: "Say how you're the same: 我哋一樣咁…" }
+    model: { es: "我冇我家姐咁高，不過我哋一樣咁瘦。好多人話我哋好似。", en: "I'm not as tall as my older sister, but we're equally thin. Lots of people say we look alike." }
+  - task: "At the Ladies' Market, ask the stall owner which handbag is the cheapest, and say which one you think is the nicest."
+    min: 20
+    max: 50
+    use: [w.zeoi3-peng4, w.fun2, w.sau2-doi2, w.lou5-baan2, w.zeoi3]
+    useAtLeast: 3
+    grammar: [g.zeoi-superlative]
+    expect:
+      - { pattern: "最(平|貴|好|靚|大|細|好睇)", hint: "Use 最 + adjective: 邊款最平？" }
+      - { pattern: "邊(款|個|隻|種)", hint: "Ask which one: 邊款…？" }
+    model: { es: "老闆，呢幾款手袋邊款最平呀？我諗呢款最好睇，不過佢都係最貴。", en: "Boss, which of these handbags is the cheapest? I think this one is the nicest, but it's also the most expensive." }

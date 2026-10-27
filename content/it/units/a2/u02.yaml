@@ -281,3 +281,39 @@ dialogues:
       - { q: "Per quanto tempo sono restati in piedi?", options: ["Per un'ora", "Per tre ore", "Per sei ore"], answer: 2, explain: "Siamo restati in piedi per sei ore." }
       - { q: "Chi ha vinto il Palio?", options: ["L'Oca", "La Torre", "Il fantino caduto"], answer: 1, explain: "Alla fine ha vinto la Torre." }
       - { q: "Davide è mai stato al Palio?", options: ["Sì, una volta", "Sì, tante volte", "No, mai"], answer: 2, explain: "Io non sono mai stato al Palio." }
+writing:
+  - task: "Write about a day trip to Siena with friends: when you left and arrived, where you went, how long you stayed and when you came back."
+    min: 30
+    max: 65
+    use: [w.restare, w.partire, w.arrivare, w.tornare, w.andare]
+    grammar: [g.passato-prossimo-essere, g.auxiliary-choice]
+    expect:
+      - { pattern: "(sono|sei|è|siamo|siete)\\s+(\\S+\\s+)?\\S+(at|ut|it)[oaie]\\b", hint: "Use essere with verbs of movement: siamo partiti, sono arrivata…" }
+    model: { es: "Sabato io e i miei amici siamo andati a Siena in treno. Siamo partiti alle otto e siamo arrivati alle dieci. Abbiamo visto Piazza del Campo e siamo restati lì tutto il giorno. Siamo tornati a Firenze molto stanchi, ma contenti!", en: "On Saturday my friends and I went to Siena by train. We left at eight and arrived at ten. We saw Piazza del Campo and stayed there all day. We came back to Florence very tired, but happy!" }
+  - task: "Tell the love story of a couple you know (your parents, grandparents or friends): how they met, fell in love, got engaged and married."
+    min: 30
+    max: 65
+    use: [w.conoscersi, w.innamorarsi, w.fidanzarsi, w.sposarsi, w.trasferirsi]
+    grammar: [g.reflexive-passato-prossimo]
+    expect:
+      - { pattern: "\\b(si sono|ci siamo|vi siete|mi sono|ti sei|si è)\\s+\\S+", hint: "Use reflexive verbs with essere: si sono conosciuti, si è innamorato…" }
+    model: { es: "I miei genitori si sono conosciuti a Firenze nel 1995, sul Ponte Vecchio. Mio padre si è innamorato subito di mia madre. Si sono fidanzati dopo un anno e si sono sposati in una piccola chiesa. Poi si sono trasferiti a Londra.", en: "My parents met in Florence in 1995, on the Ponte Vecchio. My father fell in love with my mother straight away. They got engaged after a year and got married in a small church. Then they moved to London." }
+  - task: "A friend asks about your Tuscany to-do list. Answer: say what you have already done and what you haven't done yet, or have never done."
+    es: "Allora, sei già salito sulla cupola? Hai visto il Ponte Vecchio? Hai mangiato la bistecca fiorentina?"
+    min: 30
+    max: 65
+    use: [w.già, w.non-ancora, w.mai, w.purtroppo, w.volta]
+    grammar: [g.gia-ancora-mai]
+    expect:
+      - { pattern: "\\bgi[aà]", hint: "Say what you have already done: sono già salito, ho già visto…" }
+      - { pattern: "\\bnon\\s+(\\S+\\s+){0,2}(ancora|mai)\\b", hint: "Say what you haven't done yet or never done: non ho ancora…, non sono mai…" }
+    model: { es: "Sì, sono già salito sulla cupola: che vista! Ho già visto il Ponte Vecchio due volte, è bellissimo. Purtroppo non ho ancora mangiato la bistecca fiorentina. E non sono mai andato agli Uffizi: ci vado domani!", en: "Yes, I've already climbed the dome: what a view! I've already seen the Ponte Vecchio twice, it's beautiful. Unfortunately I haven't eaten the Florentine steak yet. And I've never been to the Uffizi: I'm going tomorrow!" }
+  - task: "Write a diary entry about an unlucky day: what happened, what you lost or broke and how it ended. Choose essere or avere carefully."
+    min: 30
+    max: 65
+    use: [w.succedere, w.cadere, w.rompere, w.perdere, w.per-fortuna]
+    grammar: [g.auxiliary-choice, g.passato-prossimo-essere]
+    expect:
+      - { pattern: "(sono|sei|è|siamo|siete)\\s+(\\S+\\s+)?\\S+(at|ut|it|s)[oaie]\\b", hint: "Use essere where needed: sono caduto, è successo…" }
+      - { pattern: "\\b(ho|ha|abbiamo|hanno)\\s+(\\S+\\s+)?\\S+(at|ut|it|ott|s)[oaie]\\b", hint: "Use avere with transitive verbs: ho rotto, ho perso…" }
+    model: { es: "Oggi è stata una giornata terribile! Sono caduto dalla bicicletta sul Ponte Vecchio e ho rotto il cellulare. Poi ho perso il portafoglio. Per fortuna un signore l'ha trovato e l'ha portato in un bar vicino. Che cosa è successo dopo? Sono tornato a casa e ho dormito!", en: "Today was a terrible day! I fell off my bike on the Ponte Vecchio and broke my phone. Then I lost my wallet. Luckily a man found it and took it to a bar nearby. What happened next? I went home and slept!" }

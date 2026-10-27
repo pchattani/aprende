@@ -42,7 +42,7 @@ export function Crossword({ words, onDone, onAgain, best }: { words: VocabEntry[
     [words, seed],
   )
   const byId = useMemo(() => new Map(words.map((v) => [v.id, v])), [words])
-  if (cw.entries.length < 4) return <TooFew onBack={onDone}>The crossword needs a few more words that fit a grid. Learn a couple more lessons and try again.</TooFew>
+  if (cw.entries.length < 4) return <TooFew onBack={onDone} game="crossword">The crossword needs a few more words that fit a grid.</TooFew>
   return <Board cw={cw} byId={byId} onDone={onDone} onAgain={onAgain} best={best} />
 }
 

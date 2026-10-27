@@ -267,3 +267,43 @@ dialogues:
       - { q: "Leo已經訂咗咩？", options: ["機票同酒店", "淨係機票", "淨係民宿"], answer: 1, explain: "He has booked his plane tickets, but 仲未訂酒店." }
       - { q: "志明話嗰間民宿點呀？", options: ["又平又乾淨", "又貴又遠", "好細"], answer: 0, explain: "志明 says the guesthouse was 又平又乾淨." }
       - { q: "下次邊個請食飯？", options: ["志明", "Leo", "一齊夾錢"], answer: 1, explain: "Leo says 下次到我請." }
+writing:
+  - task: "Write your plans for the summer holiday with 打算 or 諗住: where you'll go, who with and how."
+    min: 20
+    max: 50
+    use: [w.daa2-syun3, w.nam2-zyu6, w.syu2-gaa3, w.zi6-jau4-hang4, w.maan6-guk1]
+    useAtLeast: 3
+    grammar: [g.daa-syun-plans]
+    expect:
+      - { pattern: "打算|諗住|準備", hint: "Talk about plans with 打算 or 諗住." }
+    model: { es: "暑假我打算同朋友去泰國自由行。我哋諗住先去曼谷，然後去海邊。", en: "This summer I'm planning an independent trip to Thailand with friends. We're thinking of going to Bangkok first, then the seaside." }
+  - task: "A friend asks how long you'll stay. Answer, putting the length of time after the verb (住五日), and say where you've booked."
+    es: "你喺嗰度住幾耐呀？"
+    min: 20
+    max: 50
+    use: [w.deng6, w.zau2-dim3, w.man4-suk1, w.zyu6]
+    useAtLeast: 3
+    grammar: [g.duration]
+    expect:
+      - { pattern: "住[一二兩三四五六七八九十幾]+(日|晚|個禮拜|個星期|個月|年)", hint: "Put the duration after the verb: 住五日." }
+    model: { es: "我喺曼谷住五日，訂咗一間酒店。之後喺海邊住三晚民宿，一共八日。", en: "I'm staying in Bangkok for five days; I've booked a hotel. Then I'll stay three nights in a guesthouse by the sea: eight days altogether." }
+  - task: "After a seafood dinner in Lei Yue Mun, write a note: what you ate again (又), and that you'll definitely come again (再)."
+    min: 20
+    max: 50
+    use: [w.zoi3, w.jau6.b, w.lung4-haa1, w.hoi2-sin1]
+    useAtLeast: 3
+    grammar: [g.zoi-vs-jau]
+    expect:
+      - { pattern: "又", hint: "Say what you did again with 又: 我又食咗…" }
+      - { pattern: "再", hint: "Say you'll come again with 再: 我一定會再嚟." }
+    model: { es: "鯉魚門啲海鮮真係好好食！我今日又食咗龍蝦，好飽。下次我一定會再嚟！", en: "The seafood in Lei Yue Mun is really delicious! Today I had lobster again; I'm so full. I'll definitely come back next time!" }
+  - task: "Write a checklist before you set off: what you must prepare and bring."
+    min: 20
+    max: 50
+    use: [w.wu6-ziu3, w.gei1-piu3, w.hang4-lei5, w.zeon2-bei6, w.soeng2-gei1]
+    useAtLeast: 3
+    grammar: [g.daa-syun-plans]
+    expect:
+      - { pattern: "要", hint: "Say what you must do with 要: 要準備…" }
+      - { pattern: "護照|機票|行李|相機|現金", hint: "List the things: 護照, 機票…" }
+    model: { es: "出發之前要準備好護照、機票、信用卡同少少現金。仲要記得執行李同帶相機。", en: "Before setting off, I need to have my passport, plane ticket, credit card and a little cash ready. I also need to remember to pack and bring my camera." }

@@ -1,5 +1,6 @@
 import { test, expect, type Page, type TestInfo } from '@playwright/test'
 import { enableTestHook } from './helpers'
+import { finishedWords } from './finished'
 
 // Smoke tests for the Palabras word games. Speech is stubbed to a silent no-op: the games
 // publish what they would say on window.__palabras (e2e only), so nothing depends on audio.
@@ -9,7 +10,7 @@ interface Hooks {
   listen?: { lemma: string; jp?: string; answer: number; index: number }
   sound?: { speakers: string[]; words: string[] }
 }
-type Win = { __palabras?: Hooks; __pawsportDemo?: (o?: { others?: boolean }) => Promise<unknown> }
+type Win = { __palabras?: Hooks; __pawsportDemo?: (o?: { others?: boolean; started?: number }) => Promise<unknown> }
 
 const SHOTS = process.env.PALABRAS_SHOTS
 /** Screenshots only when PALABRAS_SHOTS names a folder (after the entry animation settles). */
@@ -31,7 +32,7 @@ async function openWithWords(page: Page) {
   await page.goto('./#/games')
   await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
   await page.waitForFunction(() => Boolean((window as unknown as Win).__pawsportDemo), null, { timeout: 20_000 })
-  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false }))
+  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false, started: 1 }))
 }
 
 test.beforeEach(async ({ page }) => {
@@ -100,8 +101,14 @@ test('listening: pick the meaning and type what you hear', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Play slowly' })).toBeVisible()
   for (let i = 0; i < 10; i++) {
     await page.waitForFunction((n) => (window as unknown as Win).__palabras?.listen?.index === n, i)
-    const { answer } = (await hooks(page)).listen!
-    if (i === 0) await shot(page, 'listen-pick')
+    const { answer, lemma } = (await hooks(page)).listen!
+    if (i === 0) {
+      await shot(page, 'listen-pick')
+      // the word and every option come from the lessons the learner has finished
+      const fin = await finishedWords(page)
+      expect([...fin.lemmas]).toContain(lemma)
+      for (const o of await page.getByRole('radio').allTextContents()) expect([...fin.glosses], o).toContain(o.trim())
+    }
     if (i === 1) {
       // a wrong answer shows the word and waits for Continue
       await page.getByRole('radio').nth((answer + 1) % 4).click()
@@ -157,4 +164,19 @@ test('listening modes explain when the device cannot speak', async ({ page }) =>
   await expect(page.getByRole('button', { name: /Pick the meaning/ })).toHaveCount(0)
   await expect(page.getByRole('button', { name: /Crucigrama/ })).toBeVisible()
   await shot(page, 'no-audio')
+})
+
+test('a new learner sees which games unlock after their first lesson', async ({ page }) => {
+  await page.goto('./#/games')
+  await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
+  const search = page.getByRole('button', { name: /^Word search/ })
+  await expect(search).toContainText(/Unlocks after (your first lesson|\d+ more lessons)/)
+  await expect(search).toHaveAttribute('data-locked', 'true')
+  if ((process.env.VITE_LANG ?? 'es') !== 'yue') await expect(page.getByRole('button', { name: /^Verb slots/ })).toContainText('Unlocks after you’ve learned your first verbs')
+  await shot(page, 'locked-hub')
+  // a locked game says how many lessons to finish and leads to the Journey
+  await search.click()
+  await expect(page.getByText(/Finish (your first lesson|\d+ more lessons) to play this\./)).toBeVisible()
+  await page.getByRole('link', { name: 'Go to the Journey' }).click()
+  await expect(page).not.toHaveURL(/#\/games/)
 })

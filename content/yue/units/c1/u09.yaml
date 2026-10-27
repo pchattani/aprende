@@ -281,3 +281,45 @@ dialogues:
       - { q: "喺公園影婚紗相要點做？", options: ["要交錢", "要預先向管理處登記", "完全唔准"], answer: 1, explain: "根據規定，要預先向管理處登記: the rules require advance registration." }
       - { q: "登記使唔使收費？", options: ["要收費", "毋須收費", "睇人數"], answer: 1, explain: "毋須收費: there is no charge." }
       - { q: "攝影師執到嘅銀包會點處理？", options: ["交畀警察", "放喺失物認領處", "攝影師自己保管"], answer: 1, explain: "The staff member will put it in lost property (失物認領處)." }
+writing:
+  - task: "Write a set of rules for visitors to Lou Lim Ieoc Garden, in notice language (請勿, 嚴禁, 違者罰款)."
+    min: 90
+    max: 160
+    use: [w.cing2-mat6, w.jim4-gam3, w.wai4-ze2-fat6-fun2, w.zyu3-ji3-si6-hong6, w.jing4-jip6-si4-gaan3]
+    useAtLeast: 3
+    grammar: [g.notice-language]
+    expect:
+      - { pattern: "請勿|嚴禁|禁止|不准", hint: "Use notice language: 請勿…, 嚴禁…" }
+      - { pattern: "違者|罰款", hint: "State the penalty: 違者罰款." }
+    model: { es: "盧廉若公園遊客注意事項：一、公園嘅營業時間為每日上午六時至晚上九時。二、公園內嚴禁吸煙同燒烤，違者罰款。三、請勿攀爬假山或者觸摸展品。四、請勿喧嘩，以免影響其他遊客。五、請保持公園清潔，將垃圾放入垃圾桶。多謝合作。", en: "Notes for visitors to Lou Lim Ieoc Garden: 1. The garden is open daily from 6 a.m. to 9 p.m. 2. Smoking and barbecues are strictly forbidden; offenders will be fined. 3. Please do not climb the rockeries or touch the exhibits. 4. Please keep noise down so as not to disturb other visitors. 5. Please keep the park clean and put rubbish in the bins. Thank you for your cooperation." }
+  - task: "Your young child asks what these signs in the garden mean. Explain each one in everyday spoken Cantonese."
+    es: "公園內嚴禁吸煙。請勿觸摸展品。非請勿進。"
+    min: 90
+    max: 160
+    use: [w.jim4-gam3, w.zuk1-mo2, w.fei1-cing2-mat6-zeon3, w.zin2-ban2]
+    useAtLeast: 2
+    grammar: [g.classical-negatives, g.notice-language]
+    expect:
+      - { pattern: "唔准|唔好|唔可以", hint: "Explain the prohibitions in speech: 唔准…, 唔好…" }
+      - { pattern: "即係|意思係", hint: "Explain the meaning: 即係話…" }
+    model: { es: "第一個告示寫住「嚴禁吸煙」，即係話喺公園入面完全唔准食煙。第二個係「請勿觸摸展品」，意思係唔好用手掂啲展品，因為好容易整爛。第三個「非請勿進」，即係冇人邀請你嘅話，就唔可以入去。所以我哋唔好行入嗰間屋，喺出面睇就得喇。", en: "The first sign says \"smoking strictly forbidden\", which means you're absolutely not allowed to smoke in the park. The second says \"please do not touch the exhibits\", meaning don't touch them with your hands because they break easily. The third, \"no entry without invitation\", means if nobody has invited you, you can't go in. So let's not walk into that house; we'll just look from outside." }
+  - task: "Write a formal notice about registering for a guided tour, using formal conditionals (如, 若, 則, 倘若)."
+    min: 90
+    max: 160
+    use: [w.joek6.b, w.jyu4-jau5, w.tin4-se2, w.zit6-zi2-jat6-kei4, w.bang6]
+    useAtLeast: 3
+    grammar: [g.formal-conditionals]
+    expect:
+      - { pattern: "如|若|倘若", hint: "Use a formal conditional: 如…, 若…" }
+      - { pattern: "則", hint: "Give the consequence with 則." }
+    model: { es: "公園導賞報名須知：參加者須填寫報名表格，於截止日期之前遞交。若報名人數過多，則以抽籤決定。成功報名者須憑收據入場。倘若嗰日天氣惡劣，導賞則會取消，我哋會再通知大家。導賞免費，大約一個鐘。如有查詢，請致電熱線。", en: "Notes on registering for the park's guided tours: participants must fill in the registration form and submit it before the closing date. If too many people register, a ballot will decide. Successful applicants must show their receipt for entry. Should the weather be bad on the day, the tour will be cancelled and everyone will be notified again. The tour is free and lasts about an hour. For enquiries, please call the hotline." }
+  - task: "Write a formal circular to residents about lost property found in the garden, and how to claim it."
+    min: 90
+    max: 160
+    use: [w.tung1-haam4, w.wai4-sat1, w.jing6-ling5, w.koi3-bat1-fu6-zaak3, w.daai3-bei6]
+    useAtLeast: 3
+    grammar: [g.notice-language, g.formal-conditionals]
+    expect:
+      - { pattern: "認領|遺失", hint: "Mention claiming lost property: 認領." }
+      - { pattern: "如|若|倘若|須|請", hint: "Give formal instructions: 如…, 請…" }
+    model: { es: "通函：上星期日有遊客喺公園內遺失一個黑色背囊同一部相機。如有市民遺失以上嘅嘢，請於本月二十號之前，帶備身份證，去管理處認領。逾期未有人認領嘅嘢將會一概交警方處理。公園對遊客遺失嘅嘢概不負責，敬請留意。", en: "Circular: last Sunday a black backpack and a camera were lost in the park. Anyone who has lost these items should bring proof of identity to the management office to claim them before the 20th of this month. Items not claimed by then will all be handed to the police. The park accepts no responsibility for visitors' lost property. Please take note." }

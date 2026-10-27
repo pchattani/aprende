@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { Rng } from '@/engine/random'
 import { buildStage, vocabItem, stagePassed, placementLevel, STAGE_SIZE, GRAMMAR_PER_STAGE } from '@/engine/placement'
-import { levelUnlocked, lessonUnlocked, levelIndex } from '@/engine/unlock'
+import { courseAccess, courseLessons, levelIndex } from '@/engine/unlock'
 import { levels, vocab } from '@/engine/loader'
 import type { Exam, VocabEntry } from '@/engine/schema'
 
@@ -64,14 +64,15 @@ describe('placement stages', () => {
   })
 })
 
-describe('open course', () => {
-  const none = new Map()
-  const counts = new Map<string, number>()
-  const b1 = levels.find((l) => l.id === 'b1')!
-  it('every level and lesson is open regardless of the starting level', () => {
-    expect(levelUnlocked('a1', none, none, counts)).toBe(true)
-    expect(levelUnlocked('c2', none, none, counts, 'a1')).toBe(true)
-    expect(lessonUnlocked('b1.u07.l3', b1, none, none, counts, 'a1')).toBe(true)
+describe('placement start', () => {
+  const counts = new Map(levels.flatMap((l) => l.units.filter((u) => u.authored).map((u) => [u.id, 4] as [string, number])))
+  it('lessons before the placed level are open; the placed level starts at its first lesson', () => {
+    const access = courseAccess(courseLessons(levels, counts), { lessonRows: new Map(), exams: new Map(), startLevel: 'b1' })
+    expect(access.isOpen('a1.u01.l1')).toBe(true)
+    expect(access.isOpen('a2.u12.l4')).toBe(true)
+    expect(access.isOpen('b1.u01.l1')).toBe(true)
+    expect(access.isOpen('b1.u01.l2')).toBe(false)
+    expect(access.isOpen('b1.u07.l3')).toBe(false)
     expect(levelIndex('b1')).toBeGreaterThan(levelIndex('a2'))
   })
 })

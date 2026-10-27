@@ -281,3 +281,41 @@ dialogues:
       - { q: "Quel est l'un des arguments de Nadia ?", options: ["On n'a pas de plans précis.", "Les touristes n'aiment pas les ruines.", "Le clocher est trop petit."], answer: 0, explain: "Faute de plans précis, on inventerait la moitié." }
       - { q: "Selon Nadia, que faudrait-il faire avec l'argent ?", options: ["Construire un nouveau musée", "Restaurer ce qui existe encore", "Acheter des écrans"], answer: 1, explain: "Vu le budget de la culture, on ferait mieux de restaurer ce qui existe encore." }
       - { q: "Que concède Hugo à la fin ?", options: ["Que la reconstruction est impossible", "Que le clocher a besoin de travaux en premier", "Que les images en 3D sont meilleures"], answer: 1, explain: "Je concède que le clocher a besoin de travaux en premier." }
+writing:
+  - task: "Should Cluny Abbey be rebuilt? Write a balanced paragraph that concedes some arguments before giving your view (bien que, certes… mais, néanmoins, en dépit de, quand même)."
+    min: 90
+    max: 150
+    use: [w.reconstruire, w.vestige, w.certes, w.néanmoins, w.en-dépit-de]
+    useAtLeast: 3
+    grammar: [g.concession]
+    expect:
+      - { pattern: "\\b(bien qu|quoiqu|certes|n[eé]anmoins|en d[eé]pit d|malgr[eé]|tout de m[eê]me|quand m[eê]me|pourtant|cependant|a beau|ont beau|avoir beau)", hint: "Concede before arguing: certes…, bien que…, néanmoins…" }
+    model: { es: "Certes, l'abbaye de Cluny était au Moyen Âge le plus grand édifice de la chrétienté, et il serait tentant de la reconstruire. Bien qu'il n'en reste que des vestiges, des maquettes numériques permettent déjà d'imaginer sa grandeur. Néanmoins, je suis contre une reconstruction complète. En dépit des avantages pour le tourisme, ce projet coûterait des centaines de millions d'euros. De plus, une copie moderne ne serait jamais authentique. Les ruines ont beau être modestes, elles racontent quand même une histoire véritable. Il vaudrait mieux restaurer ce qui existe et le mettre en valeur.", en: "Admittedly, in the Middle Ages Cluny Abbey was the largest building in Christendom, and it would be tempting to rebuild it. Although only remains are left, digital models already make it possible to imagine its grandeur. Nevertheless, I am against a complete reconstruction. Despite the advantages for tourism, this project would cost hundreds of millions of euros. Moreover, a modern copy would never be authentic. The ruins may be modest, but they still tell a true story. It would be better to restore what exists and showcase it." }
+  - task: "Write a fundraising appeal to save a monument or a medieval manuscript: explain why the money is needed (afin que, pour que, de manière à, dans le but de)."
+    min: 80
+    max: 150
+    use: [w.restauration, w.mécène, w.manuscrit, w.préservation, w.dans-le-but-de]
+    useAtLeast: 3
+    grammar: [g.purpose-clauses]
+    expect:
+      - { pattern: "\\b(afin qu|pour qu|afin d|de mani[eè]re [aà]|de fa[cç]on [aà]|dans le but d|de sorte qu)", hint: "Express purpose: afin que + subjonctif, de manière à + infinitive, dans le but de…" }
+    model: { es: "Chers amis du patrimoine, la bibliothèque de Cluny possède un manuscrit unique du Moyen Âge, recopié à la main par les moines. Aujourd'hui, ses feuilles sont abîmées par le temps. Nous vous demandons votre aide dans le but de financer sa restauration. Votre don servira à acheter une vitrine spéciale, de manière à protéger le manuscrit de la lumière. Nous voulons aussi le mettre en ligne afin que chacun puisse l'admirer depuis chez soi. Devenez mécène, pour que ce trésor soit transmis aux prochaines générations ! La préservation de notre héritage dépend de vous.", en: "Dear friends of our heritage, the Cluny library holds a unique medieval manuscript, copied by hand by the monks. Today its pages are damaged by time. We are asking for your help in order to fund its restoration. Your donation will be used to buy a special display case, so as to protect the manuscript from light. We also want to put it online so that everyone can admire it. Become a patron, so that this treasure is passed on to future generations! The preservation of our heritage depends on you." }
+  - task: "Explain why Cluny's power declined, or why a social problem exists in your country today, using advanced connectors of cause (étant donné que, vu que, en raison de, faute de, à force de)."
+    min: 80
+    max: 150
+    use: [w.étant-donné-que, w.en-raison-de, w.faute-de, w.déclin, w.à-force-de]
+    useAtLeast: 3
+    grammar: [g.cause-advanced]
+    expect:
+      - { pattern: "([eé]tant donn[eé] qu|\\bvu qu|\\ben raison d|\\bfaute d|\\bdu fait d|\\bsous pr[eé]texte qu|force d|\\bpuisqu|\\bgr[aâ]ce [aà]|cause d)", hint: "Give causes with étant donné que, vu que, en raison de, faute de…" }
+    model: { es: "Au Moyen Âge, Cluny dirigeait un immense réseau de monastères à travers l'Europe. Pourtant, son influence a connu un long déclin. Étant donné que l'abbaye était devenue très riche, beaucoup lui reprochaient d'avoir oublié la pauvreté des premiers moines. En raison de cette critique, de nouveaux monastères plus simples, comme ceux des cisterciens, ont attiré les croyants. À force de dépenser pour des églises gigantesques, Cluny a eu beaucoup de dettes. Plus tard, faute d'argent pour l'entretenir, l'église a été vendue pendant la Révolution, puis démolie. Vu que ses pierres ont servi à d'autres bâtiments, il n'en reste que quelques vestiges.", en: "In the Middle Ages Cluny ran a huge network of monasteries across Europe. Yet its influence went into a long decline. Given that the abbey had become very rich, many criticised it for forgetting the poverty of the first monks. Because of this criticism, new, simpler monasteries such as those of the Cistercians attracted believers. By spending so much on gigantic churches, Cluny ran up huge debts. Later, for lack of money to maintain it, the church was sold during the Revolution, then demolished. Since its stones were used for other buildings, only a few remains are left." }
+  - task: "Write a structured opinion piece: is it worth spending public money on heritage? Organise your argument (d'une part… d'autre part, en outre, par ailleurs, ainsi, en conclusion)."
+    min: 100
+    max: 150
+    use: [w.d-une-part, w.d-autre-part, w.en-outre, w.par-ailleurs, w.héritage]
+    useAtLeast: 3
+    grammar: [g.concession, g.cause-advanced]
+    expect:
+      - { pattern: "\\b(d['’]une part|d['’]autre part|en outre|par ailleurs|de plus|ainsi|c['’]est-[aà]-dire|autrement dit)\\b", hint: "Structure your argument: d'une part… d'autre part, en outre, par ailleurs…" }
+      - { pattern: "\\b(bien qu|certes|n[eé]anmoins|cependant|pourtant|en conclusion|bref|en d[eé]finitive)", hint: "Concede a point and conclude: certes…, néanmoins…, en conclusion…" }
+    model: { es: "Faut-il dépenser l'argent public pour le patrimoine ? D'une part, les monuments comme Cluny sont notre héritage commun : ils témoignent de notre histoire et de notre civilisation. En outre, ils attirent des millions de touristes, ce qui fait vivre de nombreux commerces locaux. D'autre part, certains pensent que cet argent serait plus utile pour les hôpitaux ou les écoles. Certes, les besoins sociaux sont réels. Néanmoins, la culture n'est pas un luxe : par ailleurs, la restauration crée des emplois d'artisans. En conclusion, il me semble indispensable de protéger le patrimoine, à condition de bien utiliser les budgets et de faire participer les mécènes privés.", en: "Should public money be spent on heritage? On the one hand, monuments like Cluny are our shared heritage: they bear witness to our history and civilisation. Moreover, they attract millions of tourists, which keeps many local businesses alive. On the other hand, some think this money would be more useful for hospitals or schools. Admittedly, social needs are real. Nevertheless, culture is not a luxury: besides, restoration creates jobs for craftspeople. In conclusion, it seems essential to me to protect our heritage, provided budgets are used well and private patrons are involved." }

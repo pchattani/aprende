@@ -1,0 +1,14 @@
+# A stop's writing prompt for the scorer tests (tests/writing.score.test.ts), on the real course vocabulary.
+level: a1
+unitWords: [w.familia, w.padre, w.madre, w.hermano, w.tener, w.ano, w.pequeno, w.grande]
+writing:
+  - task: "Write about your family: who is in it, their names and their ages."
+    min: 15
+    max: 40
+    use: [w.familia, w.padre, w.madre, w.hermano, w.tener]
+    useAtLeast: 3
+    grammar: [g.possessives]
+    expect:
+      - { pattern: "\\b(mi|mis)\\b", hint: "Use possessives: mi padre, mis hermanos …" }
+      - { pattern: "\\ba[nñ]os\\b", hint: "Give an age: tiene … años." }
+    model: { es: "Mi familia es pequeña. Mi padre se llama Juan y tiene cincuenta años. Mi madre se llama Rosa. Tengo una hermana, Ana.", en: "My family is small. My father is called Juan and he is fifty. My mother is called Rosa. I have a sister, Ana." }

@@ -27,7 +27,8 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   const out: CheckerFinding[] = []
   const segs: { text: string; start: number; end: number }[] = []
   let i = 0
-  const entry = (w: string, pos?: VocabEntry['pos']) => lookup(deps.dict, w)?.find((e) => !pos || e.pos === pos)
+  // the characters themselves, never a homophone found through their Jyutping (珠 is not 豬)
+  const entry = (w: string, pos?: VocabEntry['pos']) => lookup(deps.dict, w)?.find((e) => (!pos || e.pos === pos) && e.lemma.replace(/\s+/g, '') === w)
   for (const s of segment(text)) {
     if (s.kind === 'han' || s.kind === 'num') {
       // The segmenter may keep "number + measure word" together (一個, 兩隻): split it for the agreement check.
@@ -42,9 +43,14 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   for (let k = 0; k + 2 < segs.length; k++) {
     const [a, b, c] = [segs[k]!, segs[k + 1]!, segs[k + 2]!]
     if (!COUNTERS.test(a.text)) continue
+    // only number/demonstrative + measure word + noun written together (not across punctuation: 一。本公園)
+    if (a.end !== b.start || b.end !== c.start) continue
     const cl = entry(b.text, 'classifier')
     const noun = entry(c.text, 'noun')
     if (NOT_MEASURE.has(b.text)) continue
+    // the counted noun may come later (一間網紅餐廳: 網紅 describes 餐廳): stay silent unless the noun ends the phrase
+    const after = segs[k + 3]
+    if (after && after.start === c.end && /\p{Script=Han}/u.test(after.text) && lookup(deps.dict, after.text)?.some((e) => e.pos === 'noun' && e.lemma.replace(/\s+/g, '') === after.text)) continue
     const person = noun?.cl === '個' && (b.text === '位' || b.text === '名')
     if (cl && noun?.cl && noun.cl !== b.text && !ANY_NOUN.has(b.text) && CORE.has(b.text) && CORE.has(noun.cl) && !person && !ALSO_OK[noun.lemma]?.includes(b.text)) {
       out.push({ code: 'agreement', message: `“${noun.lemma}” is counted with ${noun.cl}: ${a.text}${noun.cl}${noun.lemma}.`, start: b.start, end: b.end, suggestion: noun.cl, grammar: 'g.classifiers' })

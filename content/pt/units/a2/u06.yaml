@@ -282,3 +282,43 @@ dialogues:
       - { q: "O que o Igor viu em Curitiba?", options: ["Capivaras", "Um barco", "A praia"], answer: 0, explain: "Vi várias capivaras no parque." }
       - { q: "A que horas sai o barco amanhã?", options: ["Às oito", "Às dez", "Ao meio-dia"], answer: 1, explain: "O barco sai amanhã às dez." }
       - { q: "Onde estava o brinco da Bruna?", options: ["Na pousada", "No bolso dela", "No barco"], answer: 1, explain: "Está no seu bolso, Bruna!" }
+writing:
+  - task: "Write about your experiences in Brazil (or another country): what you have already done and what you haven't done yet (já…, ainda não…)."
+    min: 25
+    max: 65
+    use: [w.ainda-não, w.alguma-vez, w.típico, w.capivara, w.experiência]
+    useAtLeast: 2
+    grammar: [g.ja-ainda-nao]
+    expect:
+      - { pattern: '(?<![a-zà-ú])j[aá] [a-zà-ú]+', hint: "Say what you have already done: Já fui a… / Já comi…" }
+      - { pattern: 'ainda n[aã]o', hint: "Say what you haven't done yet: Ainda não…" }
+    model: { es: "Já fui a Paraty e a Curitiba, e já comi pinhão. Já vi uma capivara no parque! Mas ainda não conheço o Nordeste e ainda não experimentei a comida típica da Bahia. E você, já foi alguma vez ao Brasil?", en: "I've already been to Paraty and Curitiba, and I've already eaten pinhão. I've seen a capybara in the park! But I don't know the Northeast yet and I haven't tried the typical food of Bahia yet. And you, have you ever been to Brazil?" }
+  - task: "You are ready for a trip to Paraty. Write a checklist message saying what is already done, booked or packed (está feita, estão compradas…)."
+    min: 25
+    max: 60
+    use: [w.reserva, w.pousada, w.roteiro, w.mochila, w.câmbio]
+    useAtLeast: 3
+    grammar: [g.past-participles]
+    expect:
+      - { pattern: '\b(est[aá]|est[aã]o) [a-zà-ú]+(ado|ada|ados|adas|ido|ida|idos|idas|ito|ita|itos|itas)\b', hint: "Use estar + participle: A reserva está feita. / As passagens estão compradas." }
+    model: { es: "Tudo pronto para a viagem! A reserva da pousada está feita e as passagens estão compradas. O roteiro está escrito e a mochila está arrumada. Só o câmbio ainda não está resolvido: preciso comprar dólares amanhã.", en: "Everything's ready for the trip! The guesthouse booking is made and the tickets are bought. The itinerary is written and the rucksack is packed. Only the currency exchange isn't sorted yet: I need to buy dollars tomorrow." }
+  - task: "A friend you haven't seen for a while asks how you've been. Reply: what you have been doing lately (tenho trabalhado, tenho viajado…)."
+    es: "Oi, sumido! Como você tem passado?"
+    min: 25
+    max: 60
+    use: [w.ultimamente, w.recentemente, w.de-vez-em-quando, w.frequentemente, w.viajar]
+    useAtLeast: 2
+    grammar: [g.perfeito-composto]
+    expect:
+      - { pattern: '\bt(enho|em|emos|[eê]m) [a-zà-ú]+(ado|ido|ito|isto|eito)\b', hint: "Use ter (present) + participle for what you've been doing: Tenho viajado muito." }
+    model: { es: "Oi! Tenho passado bem, obrigado. Ultimamente tenho trabalhado muito, mas também tenho viajado de vez em quando. Recentemente, fui a Paraty com a minha irmã. E você, o que tem feito?", en: "Hi! I've been well, thanks. Lately I've been working a lot, but I've also been travelling now and then. Recently I went to Paraty with my sister. And you, what have you been up to?" }
+  - task: "Write a quick message from Paraty: something you have just done (acabei de…) and something you have lost (use algo, nada, ninguém or nenhum)."
+    min: 25
+    max: 60
+    use: [w.acabar, w.algo, w.nenhum, w.ninguém, w.bolso]
+    useAtLeast: 3
+    grammar: [g.acabar-de, g.indefinite-pronouns]
+    expect:
+      - { pattern: '\bacab(ei|ou|amos|aram) de\b', hint: "Use acabar de + infinitive: Acabei de chegar." }
+      - { pattern: '\b(algo|nada|ningu[eé]m|nenhum|nenhuma|algu[eé]m|qualquer)\b', hint: "Use an indefinite word: algo, nada, ninguém, nenhum…" }
+    model: { es: "Acabei de chegar a Paraty! Mas tenho um problema: acabei de perceber que perdi o meu anel. Procurei no bolso e na mochila, mas não achei nada. Perguntei na pousada, mas ninguém viu nenhum anel. Que azar!", en: "I've just arrived in Paraty! But I have a problem: I've just realised I've lost my ring. I looked in my pocket and in my rucksack, but I found nothing. I asked at the guesthouse, but nobody saw any ring. What bad luck!" }

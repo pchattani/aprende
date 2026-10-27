@@ -264,3 +264,46 @@ dialogues:
       - { q: "Where is Yuki from?", options: ["Madrid", "Osaka", "Manchester"], answer: 1 }
       - { q: "What is Yuki's job?", options: ["Student", "Engineer", "Teacher"], answer: 1 }
       - { q: "Which languages does Tom speak?", options: ["English and Italian", "English and French", "Spanish and French"], answer: 1 }
+writing:
+  - task: "A tango dancer in San Telmo asks where you are from. Reply: your name, where you are from and which languages you speak."
+    es: "¡Hola! Soy Carlos, soy argentino. ¿Y tú? ¿De dónde eres?"
+    min: 12
+    max: 35
+    use: [w.hablar, w.ciudad, w.vivir, w.idioma]
+    useAtLeast: 2
+    grammar: [g.ser-origin]
+    expect:
+      - { pattern: "\\bsoy de\\b", hint: "Say where you are from: Soy de …" }
+      - { pattern: "\\b(hablo|vivo)\\b", hint: "Add the language you speak or where you live: Hablo … / Vivo en …" }
+    model: { es: "¡Hola, Carlos! Me llamo Emma. Soy de Londres, una ciudad muy grande. Soy inglesa y hablo inglés y un poco de español.", en: "Hi, Carlos! My name is Emma. I'm from London, a very big city. I'm English and I speak English and a little Spanish." }
+  - task: "Two people are dancing tango in the square. Describe them: a man and a woman. Say what they are like and where they are (or aren't) from."
+    min: 15
+    max: 40
+    use: [w.hombre, w.mujer, w.alto, w.joven, w.guapo]
+    useAtLeast: 3
+    grammar: [g.adjective-agreement, g.gender-nouns, g.negation]
+    expect:
+      - { pattern: "\\b(el|un) (hombre|chico)\\b", hint: "Mention the man: el hombre / un chico …" }
+      - { pattern: "\\b(la|una) (mujer|chica)\\b", hint: "Mention the woman: la mujer / una chica …" }
+      - { pattern: "\\b(alt|baj|guap|fe|viej|nuev|simp[aá]tic|peque[nñ]|delgad|rubi|moren)as?\\b", hint: "Make an adjective agree with the woman: alta, guapa, simpática …" }
+    model: { es: "En la plaza hay un hombre y una mujer. El hombre es alto y muy guapo. La mujer es joven, baja y simpática. No son argentinos: son italianos.", en: "In the square there is a man and a woman. The man is tall and very handsome. The woman is young, short and nice. They aren't Argentinian: they're Italian." }
+  - task: "Write about your work or studies. Say what you are, and two things you are not (No soy …)."
+    min: 12
+    max: 35
+    use: [w.trabajar, w.estudiar, w.estudiante, w.profesor, w.medico]
+    useAtLeast: 2
+    grammar: [g.negation, g.gender-nouns]
+    expect:
+      - { pattern: "\\bno soy\\b", hint: "Say what you are not: No soy …" }
+      - { pattern: "\\b(soy|trabajo|estudio)\\b", hint: "Say what you are or do: Soy … / Trabajo … / Estudio …" }
+    model: { es: "No soy profesora y no soy médica. Soy estudiante: estudio español en Madrid. Mi amigo Pablo es camarero y trabaja en San Telmo.", en: "I'm not a teacher and I'm not a doctor. I'm a student: I study Spanish in Madrid. My friend Pablo is a waiter and works in San Telmo." }
+  - task: "Introduce your best friend to Carlos: name, city and country, nationality, languages and what he or she is like."
+    min: 15
+    max: 40
+    use: [w.amigo, w.hablar, w.inteligente, w.simpatico]
+    useAtLeast: 2
+    grammar: [g.ser-origin, g.adjective-agreement]
+    expect:
+      - { pattern: "\\bes de\\b", hint: "Say where your friend is from: Es de …" }
+      - { pattern: "\\bhabla\\b", hint: "Say which language your friend speaks: Habla …" }
+    model: { es: "Mi amiga se llama Sofía. Es de Roma, en Italia. Es italiana y habla italiano, inglés y español. Es muy simpática y muy inteligente.", en: "My friend is called Sofía. She's from Rome, in Italy. She's Italian and speaks Italian, English and Spanish. She's very nice and very intelligent." }

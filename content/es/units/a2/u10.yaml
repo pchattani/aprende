@@ -253,3 +253,43 @@ dialogues:
       - { q: "¿Cuánto cuesta el vuelo directo?", options: ["Novecientos euros", "Quinientos euros", "Mil euros"], answer: 0 }
       - { q: "¿Qué asiento prefiere Sara?", options: ["Pasillo", "Ventanilla", "Le da igual"], answer: 1 }
       - { q: "¿Cómo quiere pagar Sara?", options: ["Con tarjeta", "En efectivo", "Con el móvil"], answer: 1, explain: "She asks: ¿Puedo pagar en efectivo? and the agent says yes." }
+writing:
+  - task: "Write about your trip to the Iguazú Falls: why and what for you came, how you travelled and how much things cost. Use por and para."
+    min: 35
+    max: 65
+    use: [w.destino, w.vuelo, w.gracias-a, w.motivo, w.objetivo]
+    useAtLeast: 3
+    grammar: [g.por-vs-para]
+    expect:
+      - { pattern: "\\bpor\\b", hint: "Use por for cause, route, price or means: por cien mil pesos, por Posadas …" }
+      - { pattern: "\\bpara\\b", hint: "Use para for purpose and destination: para ver …, para Brasil …" }
+    model: { es: "Vine a Iguazú para ver las Cataratas, el destino más famoso de Argentina. Compré un vuelo por cien mil pesos y pasé por Posadas. Gracias a mi amiga, encontré un hotel barato. Mañana salgo para Brasil por la mañana, para ver las Cataratas desde el otro lado.", en: "I came to Iguazú to see the Falls, the most famous destination in Argentina. I bought a flight for a hundred thousand pesos and went through Posadas. Thanks to my friend, I found a cheap hotel. Tomorrow I leave for Brazil in the morning, to see the Falls from the other side." }
+  - task: "Write a short message to someone you miss. Use verbs with prepositions: pensar en, soñar con, acordarse de, preocuparse por, confiar en."
+    min: 30
+    max: 60
+    use: [w.acordarse, w.preocuparse, w.confiar, w.pensar-en, w.sonar-con]
+    useAtLeast: 3
+    grammar: [g.prepositions-verbs]
+    expect:
+      - { pattern: "piens[oa] en|pensar en|so[nñ][eé] con|sue[nñ]o con|so[nñ]ar con|acuerd[oa] de|acord[eé] de|preocup[oa] por|conf[ií]o en|enamor[eé] de", hint: "Use the right preposition: pienso en ti, soñé con …, me acuerdo de …" }
+    model: { es: "Hola, Ana: desde Iguazú pienso en nuestra familia todos los días. Anoche soñé con nuestro viaje a Rosario y me acordé de nuestra canción. Mi madre se preocupa por mí, pero yo estoy muy bien. Confío en tus consejos y te espero pronto.", en: "Hi, Ana: here in Iguazú I think about our family every day. Last night I dreamt about our trip to Rosario and remembered our song. My mother worries about me, but I'm very well. I trust your advice and I'll see you soon." }
+  - task: "Answer the hotel receptionist: since when you have been travelling, how long you have been in Iguazú and how long you have been learning Spanish."
+    es: "¿Desde cuándo viaja usted por Argentina? ¿Cuánto tiempo hace que estudia español?"
+    min: 35
+    max: 65
+    use: [w.reserva, w.retraso, w.maleta, w.vuelo, w.llegada]
+    useAtLeast: 3
+    grammar: [g.desde-hace]
+    expect:
+      - { pattern: "\\bdesde hace\\b|\\bhace [a-z0-9]+ [a-záéíóúñ]+ que\\b", hint: "Say how long: desde hace dos meses, hace un año que …" }
+      - { pattern: "\\bdesde (el|la|que|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ayer|\\d)", hint: "Say since when: desde el martes, desde marzo …" }
+    model: { es: "Viajo por Argentina desde hace dos meses: llegué a Buenos Aires el uno de septiembre. Estoy en Iguazú desde el martes. Hace un año que estudio español. Tengo una reserva hasta el viernes, pero mi vuelo tiene retraso, así que necesito dejar la maleta aquí.", en: "I've been travelling in Argentina for two months: I arrived in Buenos Aires on the first of September. I've been in Iguazú since Tuesday. I've been studying Spanish for a year. I have a booking until Friday, but my flight is delayed, so I need to leave my suitcase here." }
+  - task: "Write about the people you saw, met, called and are looking for on your trip. Use the personal a (vi a …, llamé a …)."
+    min: 30
+    max: 60
+    use: [w.llamada, w.buscar, w.conocer, w.esperar]
+    useAtLeast: 2
+    grammar: [g.a-personal]
+    expect:
+      - { pattern: "\\b(vi|conoc[ií]|llam[eé]|llamo|busco|espero|visit[eé]|ayud[eé]|invit[eé]|salud[eé]|quiero|conozco) (a|al)\\b", hint: "Use a before people: vi a una familia, llamé a mi madre …" }
+    model: { es: "En las Cataratas vi a una familia de Córdoba muy simpática. Conocí a su hijo, que es guía. Por la noche llamé a mi madre, pero la llamada fue muy corta porque era muy tarde. Mañana busco a un amigo en la estación de autobuses.", en: "At the Falls I saw a very nice family from Córdoba. I met their son, who is a guide. In the evening I called my mother, but the call was very short because it was very late. Tomorrow I'm meeting a friend at the bus station." }

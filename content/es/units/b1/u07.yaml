@@ -281,3 +281,44 @@ dialogues:
       - { q: "¿Por qué busca Marta algo tranquilo?", options: ["Porque trabaja desde casa", "Porque tiene un gato", "Porque sus vecinos son mayores"], answer: 0 }
       - { q: "¿Qué condición pone la propietaria?", options: ["Dos meses de fianza", "No admitir gatos", "Pagar la cocina nueva"], answer: 0, explain: "She does not want dogs, but a cat is fine; she asks for two months' deposit." }
       - { q: "¿Cómo es el otro piso que van a ver?", options: ["Más caro, pero con terraza", "Más barato y sin ascensor", "Más pequeño, pero céntrico"], answer: 0 }
+writing:
+  - task: "Describe the flat or house where you live, using relative clauses with que, donde and lo que."
+    min: 50
+    max: 100
+    use: [w.edificio, w.terraza, w.luminoso, w.amplio, w.lo-que]
+    useAtLeast: 3
+    grammar: [g.relative-que-quien]
+    expect:
+      - { pattern: "\\b(el|la|los|las|un|una) [a-záéíóúñ]+ (que|donde|en (el|la) que)\\b", hint: "Use relative clauses: un piso que alquilé, una terraza donde desayuno …" }
+      - { pattern: "\\blo que\\b", hint: "Use lo que: lo que más me gusta es …" }
+    model: { es: "Vivo en un piso que alquilé hace dos años en un edificio antiguo del centro. Es un piso muy luminoso, con una terraza donde desayuno todos los días. La vecina que vive arriba es una señora muy amable que me riega las plantas. Lo que más me gusta es la cocina, que es amplia y moderna. Lo que no me gusta es el ruido de la calle.", en: "I live in a flat I rented two years ago in an old building in the centre. It's a very bright flat, with a terrace where I have breakfast every day. The neighbour who lives upstairs is a very kind lady who waters my plants. What I like most is the kitchen, which is big and modern. What I don't like is the noise from the street." }
+  - task: "Write a short travel-guide entry about Cafayate (or your favourite town), using donde, cuyo/cuya and el/la cual."
+    min: 50
+    max: 100
+    use: [w.cuyo, w.zona, w.rincon, w.local.adj, w.unico]
+    useAtLeast: 3
+    grammar: [g.relative-donde-cuyo]
+    expect:
+      - { pattern: "\\bcuy[oa]s?\\b", hint: "Use cuyo / cuya: un pueblo cuyos vinos …" }
+      - { pattern: "\\bdonde\\b|\\b(el|la|los|las) cual(es)?\\b", hint: "Use donde or el / la cual: una zona donde …, alrededor de la cual …" }
+    model: { es: "El pueblo de Cafayate, cerca de Salta, es un lugar cuyos vinos blancos son famosos en todo el mundo. Está en una zona de montañas donde casi siempre hace sol. En el centro hay una plaza tranquila, alrededor de la cual hay cafés y tiendas de productos locales. Uno de sus rincones más bonitos es una fábrica de vino antigua cuyo dueño ofrece visitas gratis. Es un sitio único.", en: "The town of Cafayate, near Salta, is a place whose white wines are famous all over the world. It's in a mountainous area where it's almost always sunny. In the centre there's a quiet square, around which there are cafés and shops selling local products. One of its most beautiful corners is an old winery whose owner offers free tours. It's a unique spot." }
+  - task: "Write an ad: you are looking for a flat and a flatmate in Cafayate. Say what they must be like, using que + subjunctive (busco un piso que tenga …)."
+    min: 50
+    max: 100
+    use: [w.compartir, w.asequible, w.bien-comunicado, w.fianza, w.incluir]
+    useAtLeast: 3
+    grammar: [g.relative-subjunctive]
+    expect:
+      - { pattern: "\\b(busco|buscamos|necesito|necesitamos|quiero|queremos) (un|una|a alguien|a una|a un)\\b", hint: "Say what you are looking for: busco un piso que …" }
+      - { pattern: "\\bque (no )?(tenga|sea|est[eé]|incluya|admita|cueste|pueda|quiera|fume|haya|viva|trabaje)", hint: "Use the subjunctive for something you haven't found yet: que tenga, que sea …" }
+    model: { es: "Busco un piso que esté en el centro de Cafayate o que esté bien comunicado. Necesito una habitación que tenga mucha luz y un armario grande. El alquiler debe ser asequible y es importante que incluya los gastos. También busco un compañero de piso que sea tranquilo, que no fume y que quiera compartir la cocina. No puedo pagar una fianza muy alta.", en: "I'm looking for a flat in the centre of Cafayate or with good transport links. I need a room with lots of light and a big wardrobe. The rent must be affordable and it's important that it includes bills. I'm also looking for a flatmate who is quiet, doesn't smoke and is happy to share the kitchen. I can't pay a very high deposit." }
+  - task: "Write a job advert for a hotel in Cafayate: Se busca persona que … Describe the requirements and what you offer."
+    min: 50
+    max: 100
+    use: [w.requerir, w.disponibilidad, w.dominar, w.flexible, w.atencion-al-cliente]
+    useAtLeast: 3
+    grammar: [g.relative-subjunctive]
+    expect:
+      - { pattern: "se busca|se necesita|buscamos", hint: "Start like an ad: Se busca …, Buscamos …" }
+      - { pattern: "\\bque (tenga|sea|sean|hable|domine|pueda|est[eé]|sepa|sepan|viva|tengan)", hint: "Describe the ideal person with que + subjunctive: que tenga experiencia, que domine el inglés …" }
+    model: { es: "Se busca persona para trabajar en un hotel de Cafayate. Buscamos a alguien que tenga experiencia en atención al cliente y que domine el inglés. Se requiere disponibilidad para trabajar los sábados y domingos. Valoramos a candidatos que sean flexibles, organizados y que sepan trabajar en equipo. Ofrecemos un contrato de media jornada y una incorporación inmediata. Envíen su currículum por correo.", en: "Person wanted to work in a hotel in Cafayate. We are looking for someone with experience in customer service who has a good command of English. Availability to work on Saturdays and Sundays is required. We value candidates who are flexible, organised and able to work in a team. We offer a part-time contract and an immediate start. Send your CV by email." }

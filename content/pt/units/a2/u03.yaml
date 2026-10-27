@@ -281,3 +281,43 @@ dialogues:
       - { q: "Que língua a avó falava em casa?", options: ["Português", "Japonês", "Inglês"], answer: 1, explain: "Her parents came from Japan, so she spoke Japanese at home." }
       - { q: "Como era o irmão dela?", options: ["Medroso", "Levado", "Comportado"], answer: 1, explain: "Ele era muito levado; Akemi was the scared one." }
       - { q: "Quando chegaram as lanternas vermelhas?", options: ["Em 1908", "Nos anos 50", "Nos anos 70"], answer: 2, explain: "Elas chegaram nos anos 70." }
+writing:
+  - task: "Describe your childhood: where you lived, what you did every day and what you played. Use the imperfect."
+    min: 25
+    max: 65
+    use: [w.infância, w.brincar, w.brinquedo, w.quintal, w.pipa]
+    useAtLeast: 3
+    grammar: [g.imperfect, g.imperfect-uses]
+    expect:
+      - { pattern: '\b[a-zà-ú]+([aá]vamos|ava|avam|íamos|iamos|ia|iam)\b', hint: "Use the imperfect for habits: eu brincava, a gente morava…" }
+      - { pattern: '(quando eu era|na minha inf[aâ]ncia|quando crian[cç]a)', hint: "Set the time: Quando eu era criança… / Na minha infância…" }
+    model: { es: "Na minha infância, eu morava numa casa com quintal. Todos os dias, eu brincava na rua com os meus vizinhos. A gente jogava bola, soltava pipa e brincava de esconde-esconde. Eu tinha muitos brinquedos, mas preferia a rua!", en: "In my childhood I lived in a house with a back garden. Every day I played in the street with my neighbours. We played football, flew kites and played hide-and-seek. I had lots of toys, but I preferred the street!" }
+  - task: "Describe the holidays you spent at your grandparents' (or a relative's) place in the countryside: what the place was like and what you used to do there."
+    min: 25
+    max: 65
+    use: [w.sítio, w.interior, w.vaca, w.cavalo, w.pescar]
+    useAtLeast: 3
+    grammar: [g.imperfect-uses]
+    expect:
+      - { pattern: '\b(era|tinha|havia|ficava|eram|tinham)\b', hint: "Describe the place in the imperfect: O sítio era grande e tinha…" }
+      - { pattern: '\b[a-zà-ú]+([aá]vamos|ava|avam)\b', hint: "Say what you used to do: eu andava, a gente pescava…" }
+    model: { es: "Os meus avós tinham um sítio no interior. A casa era simples, mas o lugar era lindo. Tinha vacas, cavalos e galinhas. De manhã, eu andava a cavalo e à tarde a gente pescava no rio com o meu avô.", en: "My grandparents had a small farm in the countryside. The house was simple, but the place was beautiful. There were cows, horses and chickens. In the mornings I rode horses and in the afternoons we went fishing in the river with my grandfather." }
+  - task: "Then and now: compare what you used to do as a teenager with what you do now (eu costumava…, antigamente…, hoje…)."
+    min: 25
+    max: 60
+    use: [w.costumar, w.antigamente, w.adolescente, w.biblioteca, w.carta]
+    useAtLeast: 3
+    grammar: [g.costumar, g.imperfect]
+    expect:
+      - { pattern: '\bcostum(ava|avam|[aá]vamos|o|a|amos)\b', hint: "Use costumar + infinitive: Eu costumava…" }
+      - { pattern: '\b(hoje|agora|atualmente)\b', hint: "Contrast with now: Hoje… / Agora…" }
+    model: { es: "Quando eu era adolescente, eu costumava passar a tarde na biblioteca do bairro. Antigamente, eu escrevia cartas para os meus amigos. Hoje, eu quase não leio livros e mando mensagens pelo celular. Que pena!", en: "When I was a teenager, I used to spend the afternoon in the local library. In the old days I wrote letters to my friends. Today I hardly read books and I send messages on my phone. What a shame!" }
+  - task: "Describe what you were like as a child, and what a brother, sister or cousin was like."
+    min: 25
+    max: 60
+    use: [w.levado, w.comportado, w.curioso, w.medroso, w.teimoso]
+    useAtLeast: 3
+    grammar: [g.imperfect, g.imperfect-uses]
+    expect:
+      - { pattern: '\b(eu era|era muito|era um|era uma|[eé]ramos|eram|era)\b', hint: "Use era for what someone was like: Eu era muito levado." }
+    model: { es: "Eu era uma criança muito levada e curiosa. Eu subia nas árvores e fazia bagunça em casa. Minha prima era diferente: era comportada e medrosa. Ela obedecia aos pais e nunca brigava com ninguém.", en: "I was a very naughty and curious child. I climbed trees and made a mess at home. My cousin was different: she was well-behaved and timid. She obeyed her parents and never fought with anyone." }

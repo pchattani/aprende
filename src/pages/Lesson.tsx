@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { useNavigate, useParams, useSearchParams, Link } from 'react-router'
-import type { Lesson, Unit } from '../engine/schema'
+import type { Lesson, LevelId, Unit } from '../engine/schema'
 import type { Exercise, LessonResult, Stage } from '../engine/types'
-import { loadLesson, vocab, vocabUpTo, levelOf, units, pack } from '../engine/loader'
+import { loadLesson, vocab, vocabUpTo, levelOf, units, pack, levels } from '../engine/loader'
 import { generateLesson, sentenceId, exchangeId, textId, spicyId } from '../engine/generate'
-import { ensureCards, getCards, recordLesson, getKv, setKv, lessonRows, type ItemSpec } from '../db/progress'
+import { ensureCards, getCards, recordLesson, getKv, setKv, lessonRows, examRows, type ItemSpec } from '../db/progress'
+import { courseAccess, courseLessons, loadLessonCounts, lockHint, lessonName, isWritingOpen, DEFAULT_START_LEVEL, type CourseAccess, type CourseLesson } from '../engine/unlock'
 import { IRREGULAR } from '@lang/verbs'
 import { sttSupported } from '../engine/speech'
 import { useSettings, SESSION_COUNT } from '../store/settings'
@@ -16,7 +17,7 @@ import { hasGuidebook } from '../engine/guidebook'
 import { charId } from '../engine/chars'
 import { StampCard } from '../components/StampCard'
 import { Button } from '../components/ui/basics'
-import { IconArrowLeft, IconPaw, IconBook, IconCheck, IconRoute } from '../components/ui/icons'
+import { IconArrowLeft, IconPaw, IconBook, IconCheck, IconRoute, IconLock } from '../components/ui/icons'
 import { StopArt } from '../components/StopArt'
 import { Confetti } from '../components/ui/Confetti'
 import { CHEERS } from '../engine/stickers'
@@ -37,6 +38,9 @@ import { playReward } from '../components/rewards/sfx'
 import { DogButton } from '../components/ui/Dogs'
 import { useOutfits } from '../hooks/useOutfits'
 import { isStamped, stopFor, type Souvenir, type Stop, type Region } from '../engine/journey'
+import { writingKey, writingSummary, type WritingRecord } from '../hooks/useWriting'
+import { WRITING_PASS } from '../engine/writing'
+import { PostcardPenArt } from '../components/compose/WritingArt'
 import { lookupForm } from '../hooks/useDeps'
 import { playSound } from '../engine/sounds'
 
@@ -53,11 +57,42 @@ interface DoneReward {
   levelCoins: number
 }
 
+/** A lesson opened by finishing this one: how to call it and its title. */
+interface Unlocked {
+  id: string
+  name: string
+  title: string
+}
+/** The stop's writing prompts, open now that its lessons are done (and not all written yet). */
+interface WritingOpen {
+  unitId: string
+  count: number
+}
+/** A locked lesson: what to finish first, and the lesson to go to instead (the current one). */
+interface LockInfo {
+  hint: string
+  go?: { id: string; name: string; title: string }
+}
+
+/** The access rules over the learner's progress right now (lesson rows, exam results, chosen start). */
+async function courseAccessNow(): Promise<CourseAccess> {
+  const [rows, exams, startLevel, counts] = await Promise.all([lessonRows(), examRows(), getKv<LevelId>('startLevel', DEFAULT_START_LEVEL), loadLessonCounts()])
+  return courseAccess(courseLessons(levels, counts), { lessonRows: rows, exams, startLevel })
+}
+async function titleOf(l: CourseLesson): Promise<string> {
+  try {
+    return (await loadLesson(l.id)).lesson.title
+  } catch {
+    return `Lesson ${l.n}`
+  }
+}
+
 type Phase =
   | { kind: 'loading' }
+  | { kind: 'locked'; unit: Unit; lesson: Lesson; lock: LockInfo }
   | { kind: 'teach'; unit: Unit; lesson: Lesson; exercises: Exercise[] }
   | { kind: 'run'; unit: Unit; lesson: Lesson; exercises: Exercise[] }
-  | { kind: 'done'; lesson: Lesson; result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; reward: DoneReward }
+  | { kind: 'done'; lesson: Lesson; result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; reward: DoneReward; unlocked?: Unlocked; writing?: WritingOpen }
   | { kind: 'error'; message: string }
 
 export default function LessonPage() {
@@ -72,8 +107,10 @@ export default function LessonPage() {
   const wantGuide = params.has('guide')
   const [guideOpen, setGuideOpen] = useState(false)
   const goHome = () => {
-    rememberReturn(id)
-    nav('/', { state: { from: id } })
+    // a lesson that just opened the next one returns to that one: the dogs walk on to it
+    const to = phase.kind === 'done' && phase.unlocked ? phase.unlocked.id : id
+    rememberReturn(to)
+    nav('/', { state: { from: to } })
   }
   const saveSession = (exercises: Exercise[]) => void setKv(`lastSession:${id}`, [...new Set(exercises.map(pinIdFor))])
 
@@ -82,6 +119,14 @@ export default function LessonPage() {
     ;(async () => {
       try {
         const { unit, lesson } = await loadLesson(id)
+        // A locked lesson (later on the route) never starts: no cards are made for it.
+        const access = await courseAccessNow()
+        if (!access.isOpen(id)) {
+          const go = access.current(unit.id)
+          const lock: LockInfo = { hint: lockHint(access.blocker(id), unit.id), go: go && { id: go.id, name: lessonName(go, unit.id), title: await titleOf(go) } }
+          if (alive) setPhase({ kind: 'locked', unit, lesson, lock })
+          return
+        }
         const level = levelOf(id)
         const spicy = spicyOn ? lesson.spicy.map((s, i) => ({ s, id: spicyId(id, i) })) : []
         const items: ItemSpec[] = [
@@ -135,6 +180,16 @@ export default function LessonPage() {
         <Link to="/" className="btn btn-ghost mt-4">Back to the course</Link>
       </div>
     )
+  if (phase.kind === 'locked') {
+    const go = () => {
+      if (!phase.lock.go) return
+      setPhase({ kind: 'loading' })
+      nav(`/lesson/${phase.lock.go.id}`, { replace: true })
+    }
+    // The guidebook stays readable as a preview; the lesson itself waits.
+    if (wantGuide && hasGuidebook(phase.lesson)) return <TeachScreen lesson={phase.lesson} onBack={goHome} locked={<LockedNote lock={phase.lock} onGo={go} />} />
+    return <LockedScreen unitTitle={unitRef?.title} where={stopFor(phase.unit.id)} lesson={phase.lesson} lock={phase.lock} onGo={go} onHome={goHome} guide={hasGuidebook(phase.lesson) ? `/lesson/${id}?guide` : undefined} />
+  }
   if (phase.kind === 'teach') return <TeachScreen lesson={phase.lesson} onStart={() => setPhase({ ...phase, kind: 'run' })} onBack={goHome} />
   const guide = guideOpen && <GuidebookSheet lesson={phase.lesson} onClose={() => setGuideOpen(false)} />
   if (phase.kind === 'run')
@@ -157,6 +212,7 @@ export default function LessonPage() {
         }}
         onFinish={async (result) => {
           saveSession(phase.exercises)
+          const before = await courseAccessNow()
           const kmBefore = await totalKm()
           const coinsBefore = await coinBalance()
           await recordLesson(result, phase.unit.id, levelOf(id))
@@ -193,8 +249,21 @@ export default function LessonPage() {
               if (info) stamp = { stop: info.stop, region: info.region }
             }
           }
+          // Finishing this lesson may open the next one on the route.
+          let unlocked: Unlocked | undefined
+          if (result.completed) {
+            const after = await courseAccessNow()
+            const next = after.after(id)
+            if (next && !before.isOpen(next.id) && after.isOpen(next.id)) unlocked = { id: next.id, name: lessonName(next, phase.unit.id), title: await titleOf(next) }
+          }
+          // The stop's last lesson done: its writing prompts are open.
+          let writing: WritingOpen | undefined
+          if (result.completed && phase.unit.writing.length && isWritingOpen(phase.unit.id, await lessonRows(), phase.unit.lessons.length)) {
+            const rec = await getKv<WritingRecord | undefined>(writingKey(phase.unit.id), undefined)
+            if (writingSummary(rec, phase.unit.writing.length, WRITING_PASS).done < phase.unit.writing.length) writing = { unitId: phase.unit.id, count: phase.unit.writing.length }
+          }
           setGuideOpen(false)
-          setPhase({ kind: 'done', lesson: phase.lesson, result, found, stamp, reward })
+          setPhase({ kind: 'done', lesson: phase.lesson, result, found, stamp, reward, unlocked, writing })
         }}
       />
       </>
@@ -202,41 +271,87 @@ export default function LessonPage() {
   return (
     <>
       {guide}
-      <DoneScreen result={phase.result} found={phase.found} stamp={phase.stamp} reward={phase.reward} where={stopFor(id.split('.').slice(0, 2).join('.'))} onHome={goHome} onRetry={() => setPhase({ kind: 'loading' })} onGuide={hasGuidebook(phase.lesson) ? () => setGuideOpen(true) : undefined} />
+      <DoneScreen result={phase.result} found={phase.found} stamp={phase.stamp} reward={phase.reward} unlocked={phase.unlocked} writing={phase.writing} where={stopFor(id.split('.').slice(0, 2).join('.'))} onHome={goHome} onRetry={() => setPhase({ kind: 'loading' })} onGuide={hasGuidebook(phase.lesson) ? () => setGuideOpen(true) : undefined} />
     </>
   )
 }
 
-function TeachScreen({ lesson, onStart, onBack }: { lesson: Lesson; onStart: () => void; onBack: () => void }) {
+function TeachScreen({ lesson, onStart, onBack, locked }: { lesson: Lesson; onStart?: () => void; onBack: () => void; locked?: ReactNode }) {
   return (
     <div className="mx-auto max-w-xl px-4 pb-28 pt-[calc(0.75rem+env(safe-area-inset-top))]">
       <button type="button" onClick={onBack} className="mb-3 flex items-center gap-1 text-sm text-ink-2">
         <IconArrowLeft width={18} height={18} /> Journey
       </button>
-      <p className="eyebrow">Guidebook · before you board</p>
+      <p className="eyebrow">{locked ? 'Guidebook · a preview' : 'Guidebook · before you board'}</p>
       <h1 className="mt-1 text-[2.1rem]">{lesson.title}</h1>
       {lesson.tip && <p className="mt-3 -rotate-1 rounded-sm border-l-4 border-sun bg-card px-4 py-2 font-hand text-xl leading-snug shadow-card">{lesson.tip}</p>}
       <div className="mt-5">
         <GuidebookBody lesson={lesson} />
       </div>
-      <p className="mt-3 text-center text-xs text-ink-2">The guidebook stays open to you: tap the book during the lesson.</p>
+      <p className="mt-3 text-center text-xs text-ink-2">{locked ? 'This lesson is still locked: read ahead as much as you like.' : 'The guidebook stays open to you: tap the book during the lesson.'}</p>
       <div className="fixed inset-x-0 bottom-0 border-t border-line bg-paper p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
         <div className="mx-auto max-w-xl">
-          <Button className="w-full" onClick={onStart}>
-            Start the exercises
-          </Button>
+          {locked ?? (
+            <Button className="w-full" onClick={onStart}>
+              Start the exercises
+            </Button>
+          )}
         </div>
       </div>
     </div>
   )
 }
 
+/** What to finish first, and a button to the lesson to do now. */
+function LockedNote({ lock, onGo }: { lock: LockInfo; onGo: () => void }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="flex min-w-0 flex-1 items-center gap-2 text-sm font-semibold"><IconLock width={18} height={18} className="shrink-0 text-ink-2" />{lock.hint}.</span>
+      {lock.go && <Button className="shrink-0 px-4" onClick={onGo}>Go to {lock.go.name}</Button>}
+    </div>
+  )
+}
+
+/** A lesson further along the route than the learner has reached: it opens once the one before it is finished. */
+function LockedScreen({ unitTitle, where, lesson, lock, onGo, onHome, guide }: { unitTitle?: string; where?: { stop: Stop; region: Region }; lesson: Lesson; lock: LockInfo; onGo: () => void; onHome: () => void; guide?: string }) {
+  return (
+    <div className={`animate-rise mx-auto flex min-h-full max-w-xl flex-col px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-[calc(0.75rem+env(safe-area-inset-top))] ${where ? `lvl-${where.region.level}` : ''}`}>
+      <button type="button" onClick={onHome} className="mb-3 flex items-center gap-1 self-start text-sm text-ink-2">
+        <IconArrowLeft width={18} height={18} /> Journey
+      </button>
+      <div className="relative mx-auto w-full max-w-sm rotate-[1deg] overflow-hidden rounded-[6px] border-[6px] border-card bg-card shadow-float">
+        {where && <StopArt stop={where.stop} level={where.region.level} progress={0} quality="full" lazy={false} className="aspect-[3/2] w-full opacity-60 grayscale" />}
+        <span className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+          <span className="flex h-20 w-20 items-center justify-center rounded-full border-[3px] border-dashed border-ink-2 bg-paper/90 text-ink-2"><IconLock width={34} height={34} /></span>
+        </span>
+      </div>
+      <div className="mx-auto mt-6 w-full max-w-sm text-center">
+        <p className="eyebrow">{where?.stop.name ?? unitTitle} · locked</p>
+        <h1 className="mt-1 text-[2rem] leading-tight">{lesson.title}</h1>
+        <p className="mt-3 text-ink-2"><b className="font-semibold text-ink">{lock.hint}.</b> The dogs open the route one lesson at a time: each lesson you finish unlocks the next.</p>
+      </div>
+      <div className="mx-auto mt-auto grid w-full max-w-sm gap-3 pt-8">
+        {lock.go && (
+          <Button variant="primary" className="py-4" onClick={onGo}>
+            Go to {lock.go.name}: {lock.go.title}
+          </Button>
+        )}
+        {guide && (
+          <Link to={guide} className="btn btn-ghost">
+            <IconBook width={18} height={18} /> Peek at the guidebook
+          </Link>
+        )}
+        <Button variant="ghost" onClick={onHome}>Back to the journey</Button>
+      </div>
+    </div>
+  )
+}
 
 /** Stages of the results screen: the tally rows one by one, the coins, the level bar, then the chest. */
 const STAGE = { accuracy: 1, time: 2, km: 3, coins: 4, level: 5, chest: 6 } as const
 const STAGE_DELAY: Record<number, number> = { 0: 450, 1: 520, 2: 380, 3: 650 }
 
-function DoneScreen({ result, found, stamp, reward, where, onHome, onRetry, onGuide }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; reward: DoneReward; where?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void; onGuide?: () => void }) {
+function DoneScreen({ result, found, stamp, reward, unlocked, writing, where, onHome, onRetry, onGuide }: { result: LessonResult; found?: Souvenir; stamp?: { stop: Stop; region: Region }; reward: DoneReward; unlocked?: Unlocked; writing?: WritingOpen; where?: { stop: Stop; region: Region }; onHome: () => void; onRetry: () => void; onGuide?: () => void }) {
   const acc = result.total ? Math.round(((result.correct + result.almost) / result.total) * 100) : 0
   const minutes = Math.floor(result.durationMs / 60000)
   const seconds = Math.round((result.durationMs % 60000) / 1000)
@@ -398,6 +513,19 @@ function DoneScreen({ result, found, stamp, reward, where, onHome, onRetry, onGu
           <span className="flex h-10 w-10 shrink-0 rotate-[-8deg] items-center justify-center rounded-full border-2 border-red text-red"><IconPaw width={20} height={20} /></span>
           <p className="text-sm"><span className="font-mono text-base">{road}</span> {road === 1 ? 'day' : 'days'} on the road. <span className="text-ink-2">Come back tomorrow for the next stamp.</span></p>
         </div>
+      )}
+      {unlocked && (
+        <div className="animate-rise mx-auto mt-3 flex w-full max-w-sm items-center gap-3 rounded-2xl border-2 border-blue bg-card px-4 py-3 shadow-card" aria-live="polite">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue text-white" aria-hidden="true"><IconRoute width={20} height={20} /></span>
+          <p className="min-w-0 text-sm"><b className="block font-display text-base">{unlocked.name} unlocked</b><span className="text-ink-2">{unlocked.title} is open. The dogs are heading there.</span></p>
+        </div>
+      )}
+      {writing && (
+        <Link to={`/writing/${writing.unitId}`} className={`lvl-${writing.unitId.split('.')[0]} animate-rise mx-auto mt-3 flex w-full max-w-sm items-center gap-3 rounded-2xl border-2 border-dashed border-[var(--lvl)] bg-card px-4 py-3 shadow-card`}>
+          <PostcardPenArt size={42} />
+          <span className="min-w-0 flex-1 text-sm"><b className="block font-display text-base">Writing stop open: {writing.count} prompts</b><span className="text-ink-2">Every lesson here is done. Write a few lines about it.</span></span>
+          <span className="g-btn !px-3 !py-1.5 text-sm" aria-hidden="true">Write</span>
+        </Link>
       )}
       {stamp && <div className="mx-auto mt-4 w-full max-w-sm"><StampCard stop={stamp.stop} region={stamp.region} /></div>}
       {found && stage >= STAGE.chest && (

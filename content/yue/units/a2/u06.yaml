@@ -280,3 +280,42 @@ dialogues:
       - { q: "志明點樣回答？", options: ["過獎，我仲學緊", "我講得最好", "我唔識講"], answer: 0, explain: "He answers modestly: 過獎，我仲學緊." }
       - { q: "伙記叫佢哋試吓乜嘢？", options: ["咖喱雞", "菠蘿炒飯", "凍檸茶"], answer: 0, explain: "我哋嘅咖喱雞冇得頂，你試吓啦: the chicken curry." }
       - { q: "點解志明食唔落？", options: ["太飽", "太辣", "唔好食"], answer: 1, explain: "嘩，好辣！: it is too spicy for him." }
+writing:
+  - task: "Your classmate just gave a short talk in Cantonese. Write a message praising how they spoke, with 得."
+    min: 20
+    max: 45
+    use: [w.dak1.c, w.lau4-lei6, w.biu1-zeon2, w.cing1-co2, w.zou6-dak1-hou2]
+    useAtLeast: 3
+    grammar: [g.dak-descriptive]
+    expect:
+      - { pattern: "[講唱寫做跑]得", hint: "Say how well with verb + 得 + adjective: 講得好流利." }
+    model: { es: "你今日講得好好呀！你廣東話講得好流利，讀音好標準，好清楚。做得好！", en: "You spoke really well today! Your Cantonese is very fluent, and your pronunciation is standard and clear. Well done!" }
+  - task: "Write what happened this morning: you couldn't find your keys, and how you finally found them."
+    min: 20
+    max: 50
+    use: [w.wan2-m4-dou2, w.dou2, w.zung1-jyu1, w.hou2-coi2, w.nau1]
+    useAtLeast: 3
+    grammar: [g.dou-attain, g.potential-complements]
+    expect:
+      - { pattern: "搵唔到", hint: "Say you couldn't find them: 搵唔到." }
+      - { pattern: "搵到", hint: "Say you found them: 終於搵到." }
+    model: { es: "今朝我搵唔到鎖匙，好嬲呀！搵咗半個鐘頭，終於喺袋入面搵到，好彩！", en: "This morning I couldn't find my keys. So annoying! After half an hour I finally found them in my bag. Lucky!" }
+  - task: "Write why you're tired today: you couldn't sleep last night because of noise next door."
+    min: 20
+    max: 45
+    use: [w.fan3-m4-zoek6, w.teng1-dou2, w.gaak3-lei4, w.cou4]
+    useAtLeast: 3
+    grammar: [g.potential-complements, g.dou-attain]
+    expect:
+      - { pattern: "瞓唔着|唔着", hint: "Say you couldn't sleep: 我瞓唔着." }
+      - { pattern: "聽到|聽唔到", hint: "Say what you heard: 我聽到…" }
+    model: { es: "我尋晚瞓唔着，因為隔籬好嘈。我聽到佢哋唱歌唱到三點，好攰呀！", en: "I couldn't sleep last night because it was so noisy next door. I could hear them singing until three. I'm so tired!" }
+  - task: "Invite a friend to try badminton at the sports centre tomorrow, using 吓 to make it sound casual."
+    min: 20
+    max: 45
+    use: [w.haa5, w.tai2-juk6-gun2, w.jyu5-mou4-kau4, w.daa2-bo1]
+    useAtLeast: 3
+    grammar: [g.haa-briefly]
+    expect:
+      - { pattern: "吓", hint: "Use verb + 吓 for a quick try: 試吓, 打吓." }
+    model: { es: "我哋聽日去體育館打吓羽毛球啦！你未試過？唔緊要，試吓啦，好好玩㗎！", en: "Let's go and play a bit of badminton at the sports centre tomorrow! You've never tried? No problem, give it a go. It's great fun!" }

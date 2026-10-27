@@ -281,3 +281,44 @@ dialogues:
       - { q: "港鐵站喺邊度？", options: ["銀行隔籬", "銀行對面", "公園入面"], answer: 1, explain: "Mandy says 港鐵站喺銀行對面." }
       - { q: "行去港鐵站要幾耐？", options: ["五分鐘", "十五分鐘", "半個鐘"], answer: 0, explain: "行五分鐘就到: five minutes on foot." }
       - { q: "返中環要喺邊度轉車？", options: ["銅鑼灣", "金鐘", "北角"], answer: 1, explain: "喺金鐘轉車: change at Admiralty." }
+writing:
+  - task: "A tourist asks you the way to the MTR station. Write directions: go straight, turn left, and say where it is."
+    es: "請問港鐵站點去呀？"
+    min: 10
+    max: 30
+    use: [w.zik6-haang4, w.zyun3-zo2, w.gaak3-lei4, w.jyun5, w.jin4-hau6]
+    useAtLeast: 3
+    grammar: [g.asking-directions, g.position-words]
+    expect:
+      - { pattern: "直行|轉左|轉右", hint: "Give directions: 直行, 轉左, 轉右." }
+      - { pattern: "喺.{1,6}(隔籬|旁邊|對面|前面|後面|左邊|右邊)", hint: "Say where it is: 喺銀行隔籬." }
+    model: { es: "直行，然後轉左。港鐵站喺銀行隔籬，唔遠。", en: "Go straight, then turn left. The MTR station is next to the bank. It's not far." }
+  - task: "Write how you get to work: which transport you take, where you change and how you get there in the end."
+    min: 12
+    max: 30
+    use: [w.co5, w.gong2-tit3, w.zyun3-ce1, w.haang4-lou6]
+    useAtLeast: 3
+    grammar: [g.transport-verbs]
+    expect:
+      - { pattern: "坐|搭|揸", hint: "Say how you travel: 坐港鐵, 搭巴士…" }
+      - { pattern: "轉車|行路|落車", hint: "Add a step: 轉車, 落車 or 行路." }
+    model: { es: "我每日坐港鐵返工，喺金鐘轉車，然後行路五分鐘。", en: "Every day I take the MTR to work, change at Admiralty, then walk for five minutes." }
+  - task: "Text a friend: you're coming to Causeway Bay by tram right now. Ask where they are."
+    min: 8
+    max: 25
+    use: [w.lai4, w.ding1-ding1, w.tung4-lo4-waan1, w.bin1-dou6]
+    useAtLeast: 3
+    grammar: [g.heoi-lai, g.transport-verbs]
+    expect:
+      - { pattern: "嚟", hint: "You're coming towards your friend: use 嚟." }
+      - { pattern: "喺邊度", hint: "Ask where they are: 你喺邊度呀？" }
+    model: { es: "我而家坐叮叮嚟銅鑼灣，你喺邊度呀？", en: "I'm coming to Causeway Bay by tram now. Where are you?" }
+  - task: "Write two notes for a visitor: where the bus stop is, and where the toilet is in your building."
+    min: 10
+    max: 30
+    use: [w.baa1-si2-zaam6, w.cin4-min6, w.lau4-soeng6, w.zo2-bin1, w.sai2-sau2-gaan1]
+    useAtLeast: 3
+    grammar: [g.position-words]
+    expect:
+      - { pattern: "喺.{1,5}(前面|後面|上面|下面|左邊|右邊|隔籬|旁邊|對面|出面|入面|樓上|樓下)", hint: "Say where with 喺 + place + position word: 喺銀行前面." }
+    model: { es: "巴士站喺銀行前面。洗手間喺樓上，喺廚房左邊。", en: "The bus stop is in front of the bank. The toilet is upstairs, to the left of the kitchen." }

@@ -274,7 +274,7 @@ rules:
     grammar: g.negation-passe-compose
     example: { wrong: "je n'ai mangé pas", right: "je n'ai pas mangé" }
   - id: present-progressive
-    pattern: '(?<![\p{L}''’])(je suis|tu es|il est|elle est|on est|nous sommes|vous êtes|ils sont|elles sont) (mangeant|parlant|faisant|allant|regardant|lisant|écrivant|travaillant|dormant|écoutant|jouant|attendant|buvant|courant|cuisinant|chantant|dansant|venant|prenant|cherchant|étudiant|marchant)(?!\p{L})'
+    pattern: '(?<![\p{L}''’])(je suis|tu es|il est|elle est|on est|nous sommes|vous êtes|ils sont|elles sont) (mangeant|parlant|faisant|allant|regardant|lisant|écrivant|travaillant|dormant|écoutant|jouant|attendant|buvant|courant|cuisinant|chantant|dansant|venant|prenant|cherchant|marchant)(?!\p{L})'
     message: "French has no -ing tense: use the simple present (je mange), or être en train de + infinitive to stress that it is happening now."
     grammar: g.etre-en-train-de
     example: { wrong: "je suis mangeant", right: "je suis en train de manger" }

@@ -275,3 +275,42 @@ dialogues:
       - { q: "Que tipo de apartamento ela procura?", options: ["Um que tenha ônibus direto para a Esplanada", "Um que tenha varanda e piscina", "Um que fique em Taguatinga"], answer: 0, explain: "Quero um lugar que tenha ônibus direto para lá — to the Esplanade, where she works." }
       - { q: "O que o proprietário pede?", options: ["Um inquilino que pague um ano adiantado", "Um inquilino que cuide bem do imóvel", "Um inquilino que tenha carro"], answer: 1, explain: "Só pede um inquilino que cuide bem do imóvel." }
       - { q: "Por que a Heloísa prefere o apartamento da Asa Norte?", options: ["Porque o aluguel é mais barato", "Porque tem varanda", "Porque quer passar menos tempo no transporte"], answer: 2, explain: "The Taguatinga flat is cheaper, but she would spend two hours a day on public transport; she wants to get home early." }
+writing:
+  - task: "Describe the city where you were born, using relative words (a cidade onde…, que…, cujo / cuja…)."
+    min: 50
+    max: 100
+    use: [w.cidade-natal, w.morador, w.região, w.paisagem, w.cartão-postal]
+    useAtLeast: 3
+    grammar: [g.relative-que-quem, g.relative-onde-cujo]
+    expect:
+      - { pattern: '\b(onde|cujo|cuja|cujos|cujas|em que|no qual|na qual)\b', hint: "Use relative words: a cidade onde nasci, a estufa cuja…" }
+      - { pattern: '\b[a-zà-ú]+ que (eu|a gente|n[oó]s|todo|todos|parece|parecem|fica|tem)\b', hint: "Add a clause with que: a cidade que eu mais amo…" }
+    model: { es: "A minha cidade natal é Curitiba, a cidade onde eu cresci e que eu mais amo. É uma região onde faz frio no inverno. Os moradores, que parecem sérios, são muito gentis. O lugar que eu prefiro é o Jardim Botânico, cuja estufa de vidro é o cartão-postal da cidade. A paisagem dos parques é linda o ano todo.", en: "My home town is Curitiba, the city where I grew up and which I love most. It's a region where it's cold in winter. The locals, who seem serious, are very kind. My favourite place is the Botanical Garden, whose glass greenhouse is the city's postcard image. The scenery in the parks is beautiful all year round." }
+  - task: "Describe the neighbourhood where you grew up: what it was like and what has changed (o bairro onde…, a praça em que…, cujas ruas…)."
+    min: 50
+    max: 100
+    use: [w.segurança, w.poluição, w.transporte-público, w.comércio, w.zona]
+    useAtLeast: 3
+    grammar: [g.relative-onde-cujo]
+    expect:
+      - { pattern: '\b(onde|cujo|cuja|cujos|cujas|em que|no qual|na qual)\b', hint: "Use relative words: o bairro onde eu cresci, cujas ruas…" }
+    model: { es: "O bairro onde eu cresci fica em São Paulo, longe do centro. Era um lugar tranquilo, cujas ruas viviam cheias de crianças. A praça em que a gente brincava ainda existe, mas hoje há mais poluição e menos segurança. O comércio cresceu muito e o transporte público melhorou: agora tem uma estação de metrô ao lado da casa onde eu morava.", en: "The neighbourhood where I grew up is in São Paulo, far from the centre. It was a quiet place, whose streets were always full of children. The square where we used to play still exists, but today there's more pollution and less safety. The shops have grown a lot and public transport has improved: now there's a metro station next to the house where I used to live." }
+  - task: "Tell a friend about a craft fair you love, using prepositions + o qual / a qual (a feira sobre a qual te falei, a barraca na qual…)."
+    min: 50
+    max: 100
+    use: [w.artesanato, w.artesão, w.lembrancinha, w.barraca, w.cerâmica]
+    useAtLeast: 3
+    grammar: [g.relative-o-qual]
+    expect:
+      - { pattern: '\b(o qual|a qual|os quais|as quais)\b', hint: "Use o qual / a qual after a preposition: a feira sobre a qual te falei…" }
+    model: { es: "A feira sobre a qual te falei fica ao lado da Torre de TV. É o lugar onde os artesãos de Brasília vendem o seu artesanato. Tem uma barraca de cerâmica na qual eu sempre compro lembrancinhas. O motivo pelo qual eu volto lá todo domingo é a comida: o pastel com caldo de cana é perfeito!", en: "The fair I told you about is next to the TV Tower. It's the place where Brasília's craftspeople sell their crafts. There's a pottery stall where I always buy souvenirs. The reason I go back every Sunday is the food: the pastel with sugarcane juice is perfect!" }
+  - task: "Write an ad: you are looking for a flat with specific features (Procuro um apartamento que tenha…, que fique…). The flat may not exist, so use the subjunctive."
+    min: 50
+    max: 100
+    use: [w.imóvel, w.mobiliado, w.inquilino, w.proprietário, w.acessível]
+    useAtLeast: 3
+    grammar: [g.relative-subjunctive]
+    expect:
+      - { pattern: '\b(procuro|procuramos|quero|preciso de) (um|uma) [a-zà-ú]+ (que|onde)\b', hint: "Say what you're looking for: Procuro um apartamento que…" }
+      - { pattern: '\bque (tenha|fique|seja|esteja|aceite|custe|possa|more|goste)\b', hint: "Use the subjunctive for something that may not exist: que tenha varanda, que fique perto…" }
+    model: { es: "Procuro um apartamento que tenha dois quartos e varanda e que fique perto do metrô. Prefiro um imóvel mobiliado, que seja acessível e que custe no máximo dois mil reais por mês. Sou uma inquilina tranquila e organizada. Também procuro um proprietário que aceite gatos! Se você conhece algum apartamento assim, me escreva.", en: "I'm looking for a flat that has two bedrooms and a balcony and is near the metro. I'd prefer a furnished property that's affordable and costs at most two thousand reais a month. I'm a quiet, tidy tenant. I'm also looking for a landlord who accepts cats! If you know a flat like that, write to me." }

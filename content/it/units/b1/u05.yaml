@@ -273,3 +273,40 @@ dialogues:
       - { q: "Secondo Lorenzo, che cos'è anche il turismo?", options: ["Un problema sociale", "Una risorsa per la città", "Una moda"], answer: 1, explain: "Credo che il turismo sia anche una risorsa per la città." }
       - { q: "Che cosa propone Lorenzo?", options: ["Una tassa più alta", "Case a prezzi giusti per chi vive in città", "Chiudere il ponte ai turisti"], answer: 1, explain: "Credo che servano case a prezzi giusti per chi ci vive e ci lavora." }
       - { q: "Perché devono correre alla fine?", options: ["Perché piove", "Perché il vaporetto parte tra due minuti", "Perché il ponte chiude"], answer: 1, explain: "Credo che il nostro vaporetto parta tra due minuti!" }
+writing:
+  - task: "Give your opinion on the environment where you live: recycling, pollution, transport. Use penso che, credo che, mi sembra che + congiuntivo."
+    min: 60
+    max: 110
+    use: [w.ambiente, w.inquinamento, w.raccolta-differenziata, w.plastica, w.dubitare]
+    grammar: [g.congiuntivo-opinion, g.congiuntivo-presente-forms]
+    expect:
+      - { pattern: "\\b(penso|credo|mi sembra|mi pare|ritengo|immagino|suppongo|dubito|ho l['’]impressione|non credo|non penso) che\\b", hint: "Introduce your opinion: penso che, credo che, mi sembra che…" }
+      - { pattern: "\\bche\\s+(\\S+\\s+){0,3}(sia|siano|abbia|abbiano|faccia|facciano|vada|vadano|possa|possano|debba|debbano|voglia|vogliano|stia|stiano|sappia|venga|vengano|funzioni|funzionino|usi|usino|ricicli|riciclino)\\b", hint: "Use the congiuntivo after che: sia, abbiano, funzioni…" }
+    model: { es: "Penso che l'ambiente sia un tema molto importante. Nella mia città credo che la raccolta differenziata funzioni abbastanza bene, ma mi sembra che la gente usi ancora troppa plastica. Ho l'impressione che l'inquinamento sia il problema principale, perché ci sono troppe macchine in centro. Secondo me il comune dovrebbe creare più parchi e offrire autobus più frequenti. Sarebbe bello anche andare al lavoro in bicicletta, ma dubito che la situazione cambi presto.", en: "I think the environment is a very important issue. In my city I believe recycling works quite well, but it seems to me that people still use too much plastic. I have the impression that pollution is the main problem, because there are too many cars in the centre. In my opinion the council should create more parks and offer more frequent buses. It would also be nice to cycle to work, but I doubt the situation will change soon." }
+  - task: "A friend tells you some alarming news about Venice. Reply with your opinion, your doubts and what you believe (non credo che, è possibile che, dubito che…)."
+    es: "Ho letto che Venezia sparirà tra cinquant'anni!"
+    min: 50
+    max: 100
+    use: [w.dubitare, w.possibile, w.immaginare, w.in-realtà, w.proteggere]
+    grammar: [g.congiuntivo-irregular, g.congiuntivo-opinion]
+    expect:
+      - { pattern: "\\b(non credo|non penso|dubito|immagino|credo|penso|mi sembra|suppongo) che\\b|(è possibile|è probabile|è improbabile|è impossibile|è vero) che\\b", hint: "Express doubt or belief: non credo che, dubito che, è possibile che…" }
+      - { pattern: "\\b(sia|siano|abbia|abbiano|faccia|facciano|vada|vadano|possa|possano|debba|debbano|salga|salgano|sparisca|spariscano|stia|stiano|dia|diano)\\b", hint: "Use an irregular congiuntivo: sia, abbia, faccia, debba…" }
+    model: { es: "Davvero? Non credo che sia vero. È possibile che il livello del mare salga, ma dubito che Venezia sparisca così presto. Immagino che i giornali scrivano queste cose per avere più lettori. In realtà mi sembra che la città abbia già un sistema contro l'acqua alta. Penso però che sia necessario proteggere la laguna e che tutti debbano fare la loro parte.", en: "Really? I don't think it's true. It's possible that the sea level will rise, but I doubt that Venice will disappear so soon. I imagine newspapers write these things to get more readers. Actually it seems to me that the city already has a system against high water. I do think, though, that the lagoon needs to be protected and that everyone has to do their part." }
+  - task: "Write a comment for a news website about a social problem in your country (unemployment, rents, immigration…): give your opinion with the congiuntivo and suggest a solution."
+    min: 60
+    max: 110
+    use: [w.disoccupazione, w.soluzione, w.dipendere, w.lavoratore, w.daltra-parte]
+    grammar: [g.congiuntivo-opinion]
+    expect:
+      - { pattern: "\\b(penso|credo|mi sembra|mi pare|ritengo|immagino|non credo|non penso|dubito) che\\b", hint: "Give your opinion: penso che, ritengo che, non credo che…" }
+      - { pattern: "\\bche\\s+(\\S+\\s+){0,3}(sia|siano|abbia|abbiano|faccia|facciano|vada|vadano|possa|possano|debba|debbano|offrano|trovino|aiuti|\\S+(ino|ano))\\b", hint: "Use the congiuntivo after che: debba, vadano, offrano…" }
+    model: { es: "Secondo me la disoccupazione è il problema più grave del nostro paese. Credo che molti ragazzi vadano a lavorare in altri paesi perché qui non trovano niente. Non penso che sia colpa loro: mi sembra che le aziende offrano solo contratti di pochi mesi e stipendi bassi. Ritengo che il governo debba aiutare chi assume giovani lavoratori. D'altra parte, dipende anche dalla scuola, che dovrebbe preparare meglio gli studenti.", en: "In my view unemployment is the most serious problem in our country. I believe many young people go to work in other countries because they can't find anything here. I don't think it's their fault: it seems to me that companies offer only contracts of a few months and low salaries. I believe the government should help those who hire young workers. On the other hand, it also depends on schools, which should prepare students better." }
+  - task: "Your friend Sara has fallen in love with a gondolier and wants to move to Venice at once. Give her your honest opinion using che + congiuntivo (credo che tu debba, non dico che sia…)."
+    min: 50
+    max: 100
+    use: [w.giusto, w.assurdo, w.normale, w.convinto, w.motivo]
+    grammar: [g.congiuntivo-irregular]
+    expect:
+      - { pattern: "\\bche tu\\s+(\\S+\\s+)?(sia|abbia|faccia|vada|possa|debba|voglia|stia|sappia|venga|dia)\\b|\\bche\\s+(sia|abbia|faccia|vada|possa|debba|voglia|stia|sappia|venga|dia)\\b", hint: "Use irregular congiuntivo forms: che tu sia, che tu debba, che sia…" }
+    model: { es: "Cara Sara, capisco che tu sia innamorata, ma credo che tu debba pensarci bene. Non dico che sia una scelta assurda: è normale che una persona faccia cose strane per amore! Però penso che sia giusto conoscere meglio Marco prima di trasferirti. Mi sembra che tu non abbia ancora un lavoro a Venezia, giusto? Se sei convinta, vai, ma ti consiglio di aspettare qualche mese.", en: "Dear Sara, I understand that you're in love, but I think you need to think it over carefully. I'm not saying it's an absurd choice: it's normal for people to do strange things for love! But I think it's right to get to know Marco better before you move. It seems to me you don't have a job in Venice yet, right? If you're sure, go, but I'd advise you to wait a few months." }

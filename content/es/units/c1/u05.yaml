@@ -265,3 +265,46 @@ dialogues:
       - { q: "Why do Marta's and Luis's percentages differ?", options: ["Marta made a mistake", "They refer to different periods: the quarter and the half-year", "Luis read the wrong report"], answer: 1 }
       - { q: "What does Ana ask Marta to take into account?", options: ["That a third of the sales staff are new", "That the chart is ambiguous", "That the budget has fallen"], answer: 0 }
       - { q: "What is agreed at the end?", options: ["To redo the whole presentation", "To postpone the staff question until the next meeting", "To hire more salespeople"], answer: 1 }
+writing:
+  - task: "Write the abstract of a short study on how tourism affects small towns in Patagonia: aim, method, results and conclusion, in academic register."
+    min: 110
+    max: 190
+    use: [w.cabe-senalar, w.cuestionario, w.correlacion, w.enfoque, w.en-sintesis]
+    useAtLeast: 3
+    grammar: [g.academic-register]
+    expect:
+      - { pattern: "(el presente|este) (estudio|trabajo|art[ií]culo|informe)", hint: "Present the study: el presente estudio analiza …" }
+      - { pattern: "cabe se[nñ]alar|es preciso|en l[ií]neas generales|en este sentido|en s[ií]ntesis|de acuerdo con", hint: "Use academic markers: cabe señalar, en este sentido, en síntesis …" }
+    model: { es: "El presente estudio analiza los efectos del turismo en la vida de los vecinos de tres pequeños pueblos de la Patagonia argentina, entre ellos Esquel. Para ello, se pasó un cuestionario a cuatrocientos residentes y se realizaron veinte entrevistas largas. Con este enfoque, se compararon esos datos con la evolución del precio de la vivienda entre 2015 y 2025. Los resultados muestran una correlación estadísticamente significativa entre el aumento de turistas y la subida de los alquileres. Cabe señalar, no obstante, que la mayoría de los participantes valora mucho la creación de empleo. En síntesis, el turismo se percibe como una oportunidad económica, pero también como un factor de desigualdad que exige medidas públicas concretas.", en: "This study analyses the effects of tourism on the lives of residents of three small towns in Argentine Patagonia, including Esquel. To this end, a questionnaire was given to four hundred residents and twenty long interviews were carried out. With this approach, these data were compared with the evolution of housing prices between 2015 and 2025. The results show a statistically significant correlation between the increase in tourists and rising rents. It should be noted, however, that most participants value the creation of jobs very highly. In short, tourism is perceived as an economic opportunity, but also as a factor of inequality that calls for concrete public measures." }
+  - task: "Write the minutes (acta) of a meeting of the residents' association in Esquel: date, attendees, agenda, agreements and pending matters."
+    min: 110
+    max: 190
+    use: [w.acta, w.orden-del-dia, w.por-unanimidad, w.tomar-la-palabra, w.quedar-pendiente]
+    useAtLeast: 3
+    grammar: [g.formal-reports]
+    expect:
+      - { pattern: "orden del d[ií]a", hint: "List the agenda: Orden del día: …" }
+      - { pattern: "por unanimidad|se acuerda|se acord[oó]|se aprueba|se aprob[oó]|queda pendiente|qued[oó] pendiente", hint: "Record agreements: se aprueba por unanimidad, queda pendiente …" }
+      - { pattern: "levant[aó] la sesi[oó]n|levantar la sesi[oó]n", hint: "Close the minutes: se levanta la sesión a las …" }
+    model: { es: "Acta de la reunión de la Asociación de Vecinos de Esquel. En Esquel, a 12 de marzo de 2026, a las diecinueve horas, se reúnen en la biblioteca de la ciudad quince socios de la asociación, con doña Ana Ruiz como presidenta. Orden del día: primero, aprobación del acta anterior; segundo, propuesta de un nuevo carril bici; tercero, preguntas de los socios. Se aprueba por unanimidad el acta de la reunión anterior. A continuación, toma la palabra el señor Gómez, que presenta el proyecto del carril bici y su presupuesto. Tras un debate corto, se acuerda enviar la propuesta al ayuntamiento. Queda pendiente la fecha de la próxima jornada de limpieza. Sin otro particular, se levanta la sesión a las veinte horas y treinta minutos.", en: "Minutes of the meeting of the Esquel Residents' Association. In Esquel, on 12 March 2026, at 7 p.m., fifteen members of the association meet in the town library, chaired by Ms Ana Ruiz. Agenda: first, approval of the previous minutes; second, proposal for a new cycle lane; third, members' questions. The minutes of the previous meeting are approved unanimously. Next, Mr Gómez takes the floor and presents the cycle lane project and its budget. After a short debate, it is agreed to send the proposal to the town hall. The date of the next clean-up day remains pending. There being no other business, the meeting is closed at 8.30 p.m." }
+  - task: "Write a formal email to a client postponing a meeting and asking them to acknowledge receipt of a document you are sending."
+    min: 110
+    max: 190
+    use: [w.posponer, w.acusar-recibo, w.quedo-a-la-espera, w.demora, w.remitir]
+    useAtLeast: 3
+    grammar: [g.formal-reports]
+    expect:
+      - { pattern: "estimad[oa]s?", hint: "Open formally: Estimado señor …:" }
+      - { pattern: "le (ruego|agradecer[ií]a)|quisiera|convendr[ií]a|cabr[ií]a", hint: "Make polite formal requests: le agradecería que …, cabría la posibilidad de …" }
+      - { pattern: "quedo a (la espera|su disposici[oó]n)|sin otro particular|un saludo cordial|atentamente", hint: "Close formally: Quedo a la espera de su respuesta. Un saludo cordial." }
+    model: { es: "Estimado señor Martínez: me dirijo a usted en relación con la reunión prevista para el próximo jueves en nuestras oficinas de Esquel. Por motivos ajenos a nuestra voluntad, nos vemos obligados a posponerla hasta el martes 14, a la misma hora. Lamentamos sinceramente la demora y las molestias que este cambio pueda ocasionarle. Asimismo, le remito adjunto el informe técnico que comentamos por teléfono. Le agradecería que acusara recibo del documento y que nos indicara si la nueva fecha le resulta conveniente. En caso de que no le venga bien, cabría la posibilidad de organizar una videollamada. Quedo a la espera de su respuesta. Un saludo cordial, Laura Méndez, responsable de proyectos.", en: "Dear Mr Martínez, I am writing to you regarding the meeting scheduled for next Thursday at our offices in Esquel. For reasons beyond our control, we are obliged to postpone it until Tuesday 14th, at the same time. We sincerely apologise for the delay and any inconvenience this change may cause you. I also attach the technical report we discussed by phone. I would be grateful if you could acknowledge receipt of the document and let us know whether the new date suits you. If it is not convenient, we could arrange a video call. I look forward to your reply. Kind regards, Laura Méndez, Project Manager." }
+  - task: "Write the script for the final part of a presentation about La Trochita, the old Patagonian train, at a tourism conference: comment on a chart, conclude and open the floor to questions."
+    min: 110
+    max: 190
+    use: [w.como-pueden-ver, w.grafico, w.incremento, w.gracias-por-su-atencion, w.turno-de-preguntas]
+    useAtLeast: 3
+    grammar: [g.presentations]
+    expect:
+      - { pattern: "como pueden ver|en (este|el) gr[aá]fico|si observan|f[ií]jense", hint: "Refer to the visual: como pueden ver en este gráfico …" }
+      - { pattern: "gracias por su atenci[oó]n|alguna pregunta|turno de preguntas", hint: "Close and open questions: muchas gracias por su atención, ¿alguna pregunta?" }
+    model: { es: "Pasemos ahora a la última diapositiva. Como pueden ver en este gráfico, el número de viajeros de La Trochita se ha duplicado en los últimos diez años. El incremento más importante se produjo a partir de 2019, cuando se renovaron los coches del tren y se mejoró la publicidad en internet. En comparación con otros trenes turísticos del país, La Trochita recibe hoy casi un tercio más de viajeros al año. Esto nos lleva a una conclusión clara: este tren no es solo un recuerdo del pasado, sino también una fuente de riqueza para toda la región. Permítanme terminar con una idea: cuidar La Trochita es cuidar la identidad de Esquel. Muchas gracias por su atención. Pasamos ahora al turno de preguntas.", en: "Let's now move on to the last slide. As you can see in this chart, the number of passengers on La Trochita has doubled in the last ten years. The biggest increase came from 2019 onwards, when the carriages were renovated and online advertising was improved. Compared with other tourist trains in the country, La Trochita now receives almost a third more visitors a year. This leads us to a clear conclusion: this train isn't just a memory of the past, but also a source of wealth for the whole region. Allow me to finish with one idea: looking after La Trochita means looking after Esquel's identity. Thank you very much for your attention. We'll now move on to questions." }

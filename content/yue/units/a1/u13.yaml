@@ -186,3 +186,45 @@ lessons:
         en: ["Ten, twenty, thirty, forty, fifty.", "Sixty, seventy, eighty, ninety.", "Ninety-nine!"]
         grammar: [g.numbers-1-99]
         vocab: [w.sou3-zi6]
+writing:
+  - task: "Write the numbers one to five in characters, in order."
+    min: 5
+    max: 12
+    use: [w.jat1, w.ji6, w.saam1, w.sei3, w.ng5]
+    useAtLeast: 5
+    grammar: [g.counting-1-10, g.stroke-order]
+    expect:
+      - { pattern: "一.*二.*三", hint: "Start with 一、二、三." }
+      - { pattern: "四.*五", hint: "Finish with 四 and 五." }
+    model: { es: "一、二、三、四、五。", en: "One, two, three, four, five." }
+  - task: "Count on from six to ten in characters."
+    min: 5
+    max: 12
+    use: [w.luk6, w.cat1, w.baat3, w.gau2, w.sap6]
+    useAtLeast: 5
+    grammar: [g.counting-1-10]
+    expect:
+      - { pattern: "六.*七.*八", hint: "Write 六、七、八." }
+      - { pattern: "九.*十", hint: "Finish with 九 and 十." }
+    model: { es: "六、七、八、九、十！", en: "Six, seven, eight, nine, ten!" }
+  - task: "Write the numbers 11, 20 and 99 in characters (eleven is 'ten one', twenty is 'two ten')."
+    min: 5
+    max: 12
+    use: [w.sap6, w.jat1, w.ji6, w.gau2]
+    useAtLeast: 3
+    grammar: [g.numbers-1-99]
+    expect:
+      - { pattern: "十一", hint: "Eleven is 十一." }
+      - { pattern: "二十", hint: "Twenty is 二十." }
+      - { pattern: "九十九", hint: "Ninety-nine is 九十九." }
+    model: { es: "十一、二十、九十九。", en: "Eleven, twenty, ninety-nine." }
+  - task: "Write a sum in characters with 加 and 係: two plus three is five."
+    min: 5
+    max: 12
+    use: [w.gaa1, w.hai6, w.ji6, w.saam1, w.ng5]
+    useAtLeast: 3
+    grammar: [g.numbers-1-99]
+    expect:
+      - { pattern: "加", hint: "Use 加 for 'plus'." }
+      - { pattern: "係", hint: "Use 係 for 'is': …係五." }
+    model: { es: "二加三係五。", en: "Two plus three is five." }

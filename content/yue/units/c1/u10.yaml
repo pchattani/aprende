@@ -283,3 +283,43 @@ dialogues:
       - { q: "嘉欣篇文漏咗邊部分？", options: ["起", "轉", "合"], answer: 1, explain: "你漏咗「轉」: she left out the turn, the opposing side." }
       - { q: "何老師建議結尾用咩修辭？", options: ["反問", "排比", "設問"], answer: 1, explain: "He suggests a parallel series (排比): 為居民、為青年、為下一代." }
       - { q: "點解結論唔好用「囉」？", options: ["因為議論文要用書面語", "因為字數唔夠", "因為老師唔鍾意聽"], answer: 0, explain: "An essay conclusion should be in written Chinese (書面語), without colloquial particles." }
+writing:
+  - task: "Write the introduction (起) of an argumentative essay about the development of Cotai, opening with a famous saying."
+    min: 90
+    max: 160
+    use: [w.jan5-jung6, w.ming4-jin4, w.ji5-leon6-man4, w.hei2-sing4-zyun2-hap6, w.faat3-zin2]
+    useAtLeast: 2
+    grammar: [g.essay-structure]
+    expect:
+      - { pattern: "發展", hint: "Introduce the topic: 路氹嘅發展…" }
+      - { pattern: "本文|我認為|筆者|究竟", hint: "Set out your question or position: 本文會討論…" }
+    model: { es: "俗語話：「家和萬事興。」一個城市要發展，首先要令居民生活得開心。過去二十年，路氹由一片填海地變成有好多酒店同賭場嘅地區，為澳門帶嚟大量收入。然而，經濟增長係咪就等於居民嘅生活質素提高呢？本文會用起承轉合嘅結構，由經濟同社會兩個層面討論呢個問題。", en: "As the saying goes, \"a harmonious family prospers\". For a city to develop, it must first let its residents live happily. Over the past twenty years, Cotai has changed from reclaimed land into a district full of hotels and casinos, bringing Macau huge income. However, does economic growth equal a better quality of life for residents? Following the classic four-part structure, this essay discusses the question at both the economic and social levels." }
+  - task: "Write a body paragraph using parallelism (排比) to show what Cotai's development has brought to Macau."
+    min: 90
+    max: 160
+    use: [w.paai4-bei2, w.ging6-zang1, w.jau1-sai3, w.zung6-si6, w.haa6-jat1-doi6]
+    useAtLeast: 2
+    grammar: [g.parallelism]
+    expect:
+      - { pattern: "(帶嚟|帶來|令到|為).{2,15}[，；].{0,3}(帶嚟|帶來|令到|為)", hint: "Repeat a structure in parallel: 為…帶嚟…，為…帶嚟…" }
+    model: { es: "路氹嘅發展為政府帶嚟收入，為年輕人帶嚟工作機會，為遊客帶嚟世界級嘅表演。佢令澳門喺國際上更加有競爭優勢，令城市嘅面貌完全改變，令更多人認識呢個細細嘅城市。不過我哋亦要問：呢啲成就，有冇真正留畀下一代？", en: "Cotai's development has brought the government revenue, young people job opportunities and visitors world-class shows. It has given Macau a competitive edge internationally, completely changed the city's look and introduced more people to this small city. But we must also ask: have these achievements truly been left for the next generation?" }
+  - task: "Write a paragraph about the social problems behind Cotai's growth, using formal emphatic structures (毋庸置疑, 無疑, 試問, 關鍵)."
+    min: 90
+    max: 160
+    use: [w.mou4-jung4-zi3-ji4, w.mou4-ji4, w.si3-man6, w.gwaan1-gin6, w.pan4-fu3-jyun4-syu4]
+    useAtLeast: 3
+    grammar: [g.written-emphasis]
+    expect:
+      - { pattern: "毋庸置疑|無疑|顯然", hint: "Emphasise with 毋庸置疑 or 無疑." }
+      - { pattern: "試問|豈|何嘗", hint: "Add a rhetorical 試問…？" }
+    model: { es: "毋庸置疑，路氹嘅發展令澳門經濟大幅增長。然而，貧富懸殊同樓價上升無疑係越嚟越嚴重嘅問題。好多年輕人雖然有工做，但係仍然買唔起樓。試問一個城市嘅居民連住嘅地方都冇，又點可以話係真正嘅成功呢？問題嘅關鍵在於錢點樣公平咁分。", en: "Beyond doubt, Cotai's development has greatly boosted Macau's economy. However, the wealth gap and rising property prices are undoubtedly growing problems. Many young people have jobs but still cannot afford a home. May I ask: if a city's residents can't even find somewhere to live, how can it be called a real success? The key issue is how wealth is distributed fairly." }
+  - task: "Write the conclusion (合) of your essay with 綜上所述 or 總而言之, and appeal for action (呼籲)."
+    min: 90
+    max: 160
+    use: [w.zung3-soeng6-so2-seot6, w.zung2-ji4-jin4-zi1, w.fu1-jyu6, w.ping4-hang4, w.kwai1-waak6]
+    useAtLeast: 3
+    grammar: [g.essay-structure, g.written-emphasis]
+    expect:
+      - { pattern: "綜上所述|總而言之|總括嚟講|由此可見", hint: "Open the conclusion: 綜上所述…" }
+      - { pattern: "呼籲|應該|必須", hint: "Appeal for action: 筆者呼籲政府…" }
+    model: { es: "綜上所述，路氹嘅發展有好處亦有代價。經濟增長固然重要，但係居民嘅生活質素同樣唔可以忽略。總而言之，發展同居民嘅生活必須保持平衡。筆者呼籲政府喺未來嘅規劃入面，多聽市民嘅意見，興建更多公屋，令每一位居民都有好處。", en: "To sum up, Cotai's development has both benefits and costs. Economic growth is admittedly important, but residents' quality of life must not be overlooked either. In a word, development and residents' lives must be kept in balance. The author urges the government to listen more to citizens in future planning and build more public housing, so that every resident benefits." }

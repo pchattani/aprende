@@ -281,3 +281,42 @@ dialogues:
       - { q: "Que doivent faire Léa et Nicolas pendant la réparation ?", options: ["Attendre au garage", "Laisser les clés et revenir dans deux heures", "Appeler une dépanneuse"], answer: 1, explain: "Laissez-moi les clés et revenez dans deux heures." }
       - { q: "Que leur conseille le garagiste ?", options: ["Une promenade en barque et un kougelhopf", "Une visite du musée Bartholdi", "Un hôtel près du garage"], answer: 0, explain: "Faites-vous promener en barque… goûtez le kougelhopf." }
       - { q: "Combien coûte la réparation ?", options: ["Vingt euros", "Cent vingt euros", "Deux cents euros"], answer: 1, explain: "Cent vingt euros, main-d'œuvre comprise." }
+writing:
+  - task: "Write a short tale set in Colmar that begins with Il était une fois… You may tell it in the passé composé, or try the passé simple (elle s'envola, il trouva…)."
+    min: 80
+    max: 150
+    use: [w.il-était-une-fois, w.cigogne, w.conte, w.trésor, w.s-envoler]
+    useAtLeast: 3
+    grammar: [g.passe-simple-recognition]
+    expect:
+      - { pattern: "\\bil [eé]tait une fois\\b", hint: "Start your tale with Il était une fois…" }
+      - { pattern: "\\b(un jour|soudain|alors|tout [aà] coup|enfin|depuis ce jour)\\b", hint: "Move the story on: un jour, soudain, alors, depuis ce jour…" }
+    model: { es: "Il était une fois, à Colmar, une petite cigogne qui ne savait pas voler. Tous les printemps, ses frères partaient vers l'Afrique, et elle restait seule sur le toit de l'église. Un jour, un vieux batelier de la Petite Venise lui dit : « Si tu trouves le trésor caché sous le pont, tu pourras voler. » La cigogne chercha pendant des semaines. Enfin, elle découvrit une plume d'or entre deux pierres. Alors, elle ouvrit ses ailes et s'envola au-dessus des maisons à colombages. Depuis ce jour, les cigognes reviennent toujours à Colmar. C'est le conte que racontent les grands-mères alsaciennes.", en: "Once upon a time, in Colmar, there was a little stork who couldn't fly. Every spring her brothers left for Africa, and she stayed alone on the church roof. One day an old boatman from Little Venice said to her: 'If you find the treasure hidden under the bridge, you'll be able to fly.' The stork searched for weeks. At last she discovered a golden feather between two stones. Then she opened her wings and flew off above the half-timbered houses. Since that day, storks always come back to Colmar. It's the tale Alsatian grandmothers tell." }
+  - task: "Your old house in Alsace needs a lot of work. Tell a friend what you are having done and by whom (je fais réparer…, j'ai fait venir…, je vais faire repeindre…)."
+    min: 80
+    max: 150
+    use: [w.faire-réparer, w.toiture, w.plombier, w.devis, w.chantier]
+    useAtLeast: 3
+    grammar: [g.faire-causatif]
+    expect:
+      - { pattern: "\\b(fai[st]|faisons|faites|font|ferai|ferons|faire|fait|faisait|faisais)\\s(r?[a-zàâçéèêëîïôûùœ]+(er|ir|re))\\b", hint: "Use faire + infinitive: je fais réparer la toiture, j'ai fait venir un plombier…" }
+    model: { es: "Salut, Karim ! Le chantier de la maison progresse, mais lentement. La semaine dernière, j'ai fait venir un plombier, parce que tous les robinets fuyaient. Il m'a fait un devis assez raisonnable. En ce moment, je fais réparer la toiture : les tuiles sont très anciennes et il pleuvait dans les chambres. Le mois prochain, je vais faire repeindre les portes en bleu, comme dans la Petite Venise. Par contre, je ne fais rien faire dans la cuisine : je préfère la rénover moi-même. Viens me voir quand les travaux seront finis !", en: "Hi, Karim! The work on the house is progressing, but slowly. Last week I got a plumber in, because all the taps were leaking. He gave me a fairly reasonable quote. At the moment I'm having the roof repaired: the tiles are very old and it was raining in the bedrooms. Next month I'm going to have the doors painted blue, like in Little Venice. On the other hand, I'm not having anything done in the kitchen: I'd rather renovate it myself. Come and see me when the work is finished!" }
+  - task: "Your car broke down on the way to Colmar. Tell the story: what happened, what you tried, and what you let others do (j'ai laissé le garagiste…, laisse tomber…)."
+    min: 80
+    max: 150
+    use: [w.tomber-en-panne, w.dépanneuse, w.laisser-tomber, w.garagiste, w.pneu]
+    useAtLeast: 3
+    grammar: [g.laisser-infinitive, g.faire-causatif]
+    expect:
+      - { pattern: "\\blaiss[a-zàâçéèêëîïôûùœ]* (tomber|faire|passer|[a-zàâçéèêëîïôûùœ]+(er|ir|re))\\b|\\b(l['’]|les |me |nous )?laiss[a-zàâçéèêëîïôûùœ]* [a-zàâçéèêëîïôûùœ]+ (r[eé]parer|faire|travailler|conduire|choisir|v[eé]rifier)\\b", hint: "Use laisser + infinitive: j'ai laissé le garagiste réparer…, laisse tomber…" }
+    model: { es: "Dimanche dernier, en allant à Colmar, notre voiture est tombée en panne sur l'autoroute. D'abord, mon mari a voulu changer le pneu lui-même, mais il n'avait pas le bon outil. Au bout d'une heure, je lui ai dit : « Laisse tomber, j'appelle la dépanneuse ! » Le chauffeur nous a emmenés au garage le plus proche. Nous avons laissé le garagiste vérifier le moteur : apparemment, ce n'était pas seulement le pneu. Il nous a proposé une voiture de location pendant la réparation. Finalement, nous avons laissé les enfants choisir le restaurant et la journée s'est bien terminée.", en: "Last Sunday, on the way to Colmar, our car broke down on the motorway. First my husband wanted to change the tyre himself, but he didn't have the right tool. After an hour I said to him: 'Forget it, I'm calling the breakdown truck!' The driver took us to the nearest garage. We let the mechanic check the engine: apparently it wasn't just the tyre. He offered us a hire car during the repair. In the end we let the children choose the restaurant and the day ended well." }
+  - task: "Write a short biography of Bartholdi, the sculptor from Colmar, or of another famous person, using faire + infinitive at least once (il fit construire / il a fait construire…)."
+    min: 80
+    max: 150
+    use: [w.natal, w.sculpteur, w.statue, w.faire-venir, w.monument]
+    useAtLeast: 3
+    grammar: [g.faire-causatif, g.passe-simple-recognition]
+    expect:
+      - { pattern: "\\b(fit|fai[st]|faisait|fait|firent|ont fait|a fait|avait fait)\\s(r?[a-zàâçéèêëîïôûùœ]+(er|ir|re))\\b", hint: "Use faire + infinitive: il fit construire, il a fait venir…" }
+      - { pattern: "\\b(naquit|est n[eé]|n[eé] [aà]|mourut|est mort|devint|est devenu)", hint: "Give the key dates of the life: né à…, devint…, mourut…" }
+    model: { es: "Auguste Bartholdi naquit à Colmar en 1834. Très jeune, il partit étudier la peinture et la sculpture à Paris. En 1856, il fit un long voyage en Égypte qui changea sa façon de voir l'art. Il devint célèbre grâce à la statue de la Liberté, offerte par la France aux États-Unis. Pour la construire, il fit venir l'ingénieur Gustave Eiffel, qui l'aida à la concevoir. Bartholdi n'oublia jamais sa ville natale : il y fit installer plusieurs fontaines et monuments. Il mourut à Paris en 1904. Aujourd'hui, sa maison de Colmar est un musée.", en: "Auguste Bartholdi was born in Colmar in 1834. Very young, he went to study painting and sculpture in Paris. In 1856 he made a long journey to Egypt that changed his way of seeing art. He became famous thanks to the Statue of Liberty, given by France to the United States. To build it, he brought in the engineer Gustave Eiffel, who helped him design it. Bartholdi never forgot his home town: he had several fountains and monuments installed there. He died in Paris in 1904. Today his house in Colmar is a museum." }

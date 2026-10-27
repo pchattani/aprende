@@ -267,3 +267,38 @@ dialogues:
       - { q: "Come arriva Paolo a Burano da Venezia?", options: ["In gondola", "In vaporetto", "In macchina"], answer: 1, explain: "Da Venezia c'è il vaporetto: ci vogliono circa quaranta minuti." }
       - { q: "Che cosa preferisce la madre di Lucia?", options: ["Che gli invitati portino solo il loro entusiasmo", "Che gli invitati portino un regalo caro", "Che nessuno porti dolci"], answer: 0, explain: "Mia madre preferisce che gli invitati portino solo il loro entusiasmo." }
       - { q: "Di che cosa ha paura Paolo?", options: ["Di perdere il vaporetto", "Di arrivare in ritardo", "Di non trovare un regalo"], answer: 1, explain: "Ho paura di arrivare in ritardo, però." }
+writing:
+  - task: "A friend is coming to Venice for your wedding anniversary party. Write to her: what you hope, what you are happy about and what you want (spero che, sono felice che, voglio che…)."
+    min: 50
+    max: 100
+    use: [w.anniversario-di-matrimonio, w.festeggiare, w.augurarsi, w.ospite, w.vaporetto]
+    grammar: [g.congiuntivo-wishes-emotion]
+    expect:
+      - { pattern: "\\b(spero|speriamo|mi auguro|ci auguriamo|voglio|vorrei|sono felice|sono contenta|sono contento|mi dispiace|ho paura|temo) che\\b", hint: "Express wishes or feelings + che + congiuntivo: spero che tu venga…" }
+    model: { es: "Cara Laura, sono così felice che tu venga a Venezia per il nostro anniversario di matrimonio! Spero che il viaggio sia tranquillo e che il vaporetto non sia troppo affollato. Mi auguro che faccia bel tempo, così festeggiamo in terrazza con vista sulla laguna. Mi dispiace solo che Marco non possa venire con te. Ci saranno tanti ospiti, ma voglio che tu ti senta a casa.", en: "Dear Laura, I'm so happy you're coming to Venice for our wedding anniversary! I hope the journey goes smoothly and that the vaporetto isn't too crowded. I hope the weather's nice, so we can celebrate on the terrace overlooking the lagoon. I'm only sorry that Marco can't come with you. There'll be lots of guests, but I want you to feel at home." }
+  - task: "A friend sends you some news, good and bad. React to each piece of news, expressing your feelings with che + congiuntivo (mi dispiace che, sono contento che, temo che…)."
+    es: "Ho perso il lavoro, ma mia sorella si sposa a giugno e io vengo a trovarti a Burano!"
+    min: 50
+    max: 100
+    use: [w.entusiasta, w.temere, w.fortunato, w.notizia, w.sposarsi]
+    grammar: [g.congiuntivo-wishes-emotion]
+    expect:
+      - { pattern: "\\b(mi dispiace|sono content[oa]|sono felice|sono entusiasta|temo|ho paura|mi stupisce|mi sorprende|sono sorpres[oa]) che\\b", hint: "Express feelings + che + congiuntivo: mi dispiace che…, sono contento che…" }
+    model: { es: "Che notizie! Mi dispiace molto che tu non abbia più il lavoro: è un momento difficile, ma sono sicuro che troverai presto qualcosa di meglio. Sono contento invece che tua sorella si sposi: che bella notizia! E sono entusiasta che tu venga a Burano, anche se temo che a giugno ci sia troppa gente. Sei fortunato: ti porto a mangiare il risotto di pesce più buono della laguna!", en: "What news! I'm very sorry you no longer have your job: it's a hard time, but I'm sure you'll soon find something better. I'm glad, though, that your sister is getting married: what lovely news! And I'm thrilled you're coming to Burano, although I'm afraid there'll be too many people in June. You're lucky: I'll take you to eat the best fish risotto in the lagoon!" }
+  - task: "Write some advice for tourists who want to visit Venice responsibly, using impersonal expressions + che + congiuntivo (è importante che, bisogna che, conviene che…)."
+    min: 60
+    max: 110
+    use: [w.turismo-di-massa, w.tassa-di-soggiorno, w.vietato, w.conviene, w.peccato]
+    grammar: [g.congiuntivo-impersonal]
+    expect:
+      - { pattern: "(è importante|è necessario|bisogna|occorre|conviene|è meglio|è ora|è giusto|è un peccato|è bene|è opportuno|è fondamentale) che\\b", hint: "Use an impersonal expression + che + congiuntivo: è importante che…, bisogna che…" }
+    model: { es: "Venezia ha molti problemi a causa del turismo di massa, quindi è importante che i visitatori la rispettino. Bisogna che tutti paghino la tassa di soggiorno, che serve a mantenere la città. È vietato fare il bagno nei canali e mangiare seduti sui ponti. Conviene che i turisti visitino anche Murano e Burano, dove c'è meno gente. Ed è un peccato che molti restino solo un giorno: la città merita più tempo!", en: "Venice has many problems because of mass tourism, so it's important that visitors respect it. Everyone needs to pay the tourist tax, which helps to maintain the city. Swimming in the canals and eating sitting on the bridges is forbidden. It's a good idea for tourists to visit Murano and Burano too, where there are fewer people. And it's a shame that many stay only one day: the city deserves more time!" }
+  - task: "You are visiting a glass-maker's workshop in Murano. Describe it: what you want to do (infinitive: voglio imparare) and what others want you to do (che + congiuntivo: vuole che io provi)."
+    min: 50
+    max: 100
+    use: [w.vetraio, w.vetro, w.merletto, w.maschera, w.carnevale]
+    grammar: [g.congiuntivo-vs-infinitive]
+    expect:
+      - { pattern: "\\b(voglio|vorrei|spero|preferisco|desidero|ho paura|sono felice|sono content[oa])\\s+(di\\s+)?\\S+(are|ere|ire|rci|rlo|rla|rmi)\\b", hint: "Same subject: use the infinitive: voglio imparare, spero di riuscirci…" }
+      - { pattern: "\\b(vuole|vorrebbe|spera|preferisce|desidera|ha paura|è felice|voglio|vorrei|spero|preferisco) che\\b", hint: "Different subject: che + congiuntivo: vuole che io provi…" }
+    model: { es: "Sono a Murano e sto visitando la fabbrica di un vetraio. Voglio imparare come si lavora il vetro, e il maestro vuole che io provi a fare un piccolo bicchiere! Spero di riuscirci. Lui preferisce che i turisti non tocchino niente senza chiedere, perché il forno è caldo. Domani andiamo a Burano: mia sorella vuole comprare un merletto e io spero di trovare una maschera per il carnevale.", en: "I'm in Murano and I'm visiting a glass-maker's factory. I want to learn how glass is worked, and the master wants me to try making a small glass! I hope I can do it. He prefers tourists not to touch anything without asking, because the furnace is hot. Tomorrow we're going to Burano: my sister wants to buy some lace and I hope to find a mask for the carnival." }

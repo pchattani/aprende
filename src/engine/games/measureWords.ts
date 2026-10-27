@@ -138,19 +138,43 @@ export function isWrongFor(c: string, v: VocabEntry): boolean {
   return true
 }
 
-/** Three wrong options for a noun: the classifiers it is usually confused with first, then any other that clearly does not fit. */
-export function distractorClassifiers(v: VocabEntry, rng: Rng, n = 3): string[] {
+/**
+ * Three wrong options for a noun: the classifiers it is usually confused with first, then any other
+ * that clearly does not fit. With `met` (the classifiers of the learner's finished words, see
+ * metClassifiers) only those are offered when there are enough; the rest fill in when not.
+ */
+export function distractorClassifiers(v: VocabEntry, rng: Rng, n = 3, met?: ReadonlySet<string>): string[] {
   const cl = classifierOf(v)
   if (!cl) return []
   const near = rng.shuffle((CONFUSED_WITH[cl] ?? []).filter((c) => isWrongFor(c, v)))
   const far = rng.shuffle(Object.keys(CLASSIFIERS).filter((c) => !near.includes(c) && isWrongFor(c, v)))
   // mostly near misses, but always one from further away so the round is not all hair-splitting
-  const picked = [...near.slice(0, n - 1)]
-  for (const c of [...far, ...near.slice(n - 1)]) {
+  const choose = (nearer: string[], further: string[]) => {
+    const picked = [...nearer.slice(0, n - 1)]
+    for (const c of [...further, ...nearer.slice(n - 1)]) {
+      if (picked.length >= n) break
+      if (!picked.includes(c)) picked.push(c)
+    }
+    return picked.slice(0, n)
+  }
+  if (!met) return choose(near, far)
+  const picked = choose(near.filter((c) => met.has(c)), far.filter((c) => met.has(c)))
+  for (const c of [...near, ...far]) {
     if (picked.length >= n) break
     if (!picked.includes(c)) picked.push(c)
   }
-  return picked.slice(0, n)
+  return picked
+}
+
+/** The classifiers the learner has met: those of their (finished) nouns, and classifiers that are words of theirs. */
+export function metClassifiers(words: Iterable<VocabEntry>): Set<string> {
+  const met = new Set<string>()
+  for (const v of words) {
+    const cl = classifierOf(v)
+    if (cl) met.add(cl)
+    if (CLASSIFIERS[v.lemma]) met.add(v.lemma)
+  }
+  return met
 }
 
 /** Numbers 1–10 as said before a measure word: 兩 (loeng5), not 二, for two. */
@@ -181,18 +205,18 @@ export interface MeasureQuestion {
   phraseJp: string
 }
 
-export function measureQuestion(noun: VocabEntry, rng: Rng, count = rng.pick(COUNT_WORDS)): MeasureQuestion | undefined {
+export function measureQuestion(noun: VocabEntry, rng: Rng, count = rng.pick(COUNT_WORDS), met?: ReadonlySet<string>): MeasureQuestion | undefined {
   const cl = classifierOf(noun)
   if (!cl) return undefined
-  const wrong = distractorClassifiers(noun, rng, 3)
+  const wrong = distractorClassifiers(noun, rng, 3, met)
   if (wrong.length < 3) return undefined
   const options = rng.shuffle([cl, ...wrong])
   return { noun, cl, count, options, answer: options.indexOf(cl), phrase: `${count.ch}${cl}${noun.lemma}`, phraseJp: `${count.jp} ${CLASSIFIERS[cl]!.jp} ${noun.jp}` }
 }
 
 /**
- * Nouns for a round: the learner's own nouns with a classifier first, topped up from `pool`
- * (A1/A2 nouns). At most `perClassifier` share an answer (個 at most 3), so the round shows
+ * Nouns for a round: the learner's own nouns with a classifier first (due and weak ones), topped
+ * up from `pool` (the games pass the rest of the finished nouns). At most `perClassifier` share an answer (個 at most 3), so the round shows
  * many shapes, and no two nouns share a gloss.
  */
 export function pickMeasureNouns(learner: VocabEntry[], pool: VocabEntry[], rng: Rng, n = 12, perClassifier = 2): VocabEntry[] {
@@ -221,9 +245,9 @@ export function pickMeasureNouns(learner: VocabEntry[], pool: VocabEntry[], rng:
   return rng.shuffle(out)
 }
 
-export function measureRound(learner: VocabEntry[], pool: VocabEntry[], rng: Rng, n = 12): MeasureQuestion[] {
+export function measureRound(learner: VocabEntry[], pool: VocabEntry[], rng: Rng, n = 12, met?: ReadonlySet<string>): MeasureQuestion[] {
   return pickMeasureNouns(learner, pool, rng, n)
-    .map((v) => measureQuestion(v, rng))
+    .map((v) => measureQuestion(v, rng, undefined, met))
     .filter((q): q is MeasureQuestion => Boolean(q))
 }
 

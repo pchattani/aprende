@@ -43,7 +43,7 @@ export default function SortIt({ onDone }: GameProps) {
     return (
       <div className="animate-rise pb-6">
         <GameHeader title={TITLE} onBack={onDone} />
-        <TooFew onBack={onDone}>Sorting needs a few words from two different topics. Complete a couple more lessons and come back.</TooFew>
+        <TooFew onBack={onDone} game={ID}>Sorting needs a few words from two different topics.</TooFew>
       </div>
     )
   }

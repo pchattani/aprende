@@ -281,3 +281,41 @@ dialogues:
       - { q: "Selon Bernard, pourquoi les canuts utilisaient-ils ces passages ?", options: ["Pour cacher de l'argent", "Pour transporter leurs tissus à l'abri de la pluie", "Pour aller plus vite à l'église"], answer: 1, explain: "« de peur que la pluie ne les abîme »: to protect their cloth from the rain." }
       - { q: "Pourquoi la porte est-elle fermée ?", options: ["Parce qu'il pleut", "Parce que les habitants en ont assez du bruit et des visiteurs", "Parce que la mairie l'a interdit"], answer: 1, explain: "« Trop de bruit, trop de visiteurs »: the residents closed it." }
       - { q: "Que pense Chloé de la Tour Rose ?", options: ["C'est moins beau que prévu", "C'est plus beau qu'elle ne l'imaginait", "Il y a trop de monde"], answer: 1, explain: "« C'est encore plus beau que je ne l'imaginais »: the ne is explétif, not negative." }
+writing:
+  - task: "A friend is visiting Vieux-Lyon alone. Write instructions for exploring the traboules so that he or she doesn't get lost (pour que, avant que, à moins que, sans que + subjonctif)."
+    min: 80
+    max: 150
+    use: [w.traboule, w.se-repérer, w.pour-que, w.sans-que, w.itinéraire]
+    useAtLeast: 3
+    grammar: [g.subjonctif-conjonctions]
+    expect:
+      - { pattern: "\\b(pour qu|afin qu|sans qu|avant qu|moins qu|bien qu|quoiqu|de sorte qu|de peur qu|de crainte qu|jusqu['’][aà] ce qu)", hint: "Use a conjunction + subjonctif: pour que tu ne te perdes pas, avant qu'il fasse nuit…" }
+    model: { es: "Pour que tu ne te perdes pas dans le Vieux-Lyon, voici mon itinéraire. Commence par la rue Saint-Jean, avant que les groupes de touristes arrivent. Les traboules sont des passages entre les rues : pousse doucement la porte, sans que les habitants soient dérangés. Pour te repérer, suis les petites plaques de bronze sur les murs. À moins que tu sois très fatigué, monte ensuite à Fourvière par les escaliers. Je te prête mon plan afin que tu puisses trouver la longue traboule de la Tour Rose. Bonne promenade !", en: "So that you don't get lost in Vieux-Lyon, here's my route. Start with the rue Saint-Jean, before the tour groups arrive. The traboules are passageways between the streets: push the door gently, without the residents being disturbed. To find your way, follow the little bronze plaques on the walls. Unless you're very tired, then climb up to Fourvière by the stairs. I'm lending you my map so that you can find the long traboule of the Tour Rose. Have a nice walk!" }
+  - task: "Write a formal letter to Lyon town hall about tourists in the traboules: acknowledge the advantages but express your concerns as a resident (bien que, quoique, à condition que)."
+    min: 80
+    max: 150
+    use: [w.résident, w.nuisance, w.surtourisme, w.cohabiter, w.respect]
+    useAtLeast: 3
+    grammar: [g.subjonctif-conjonctions]
+    expect:
+      - { pattern: "\\b(bien qu|quoiqu|condition qu|pour qu|afin qu|sans qu|moins qu)", hint: "Use bien que / quoique / à condition que + subjonctif." }
+      - { pattern: "\\b(madame|monsieur|veuillez|cordialement|salutations|je vous)\\b", hint: "Use a formal register: Madame, Monsieur, … je vous prie d'agréer…" }
+    model: { es: "Madame, Monsieur, je suis résidente de la rue du Bœuf depuis quinze ans. Bien que les visites des traboules soient une richesse pour le quartier, la fréquentation devient difficile à supporter. Chaque jour, des groupes entrent dans notre cour, parlent fort et laissent des déchets. Je ne suis pas contre le tourisme, à condition que les visiteurs respectent notre calme. Quoique la mairie ait déjà installé quelques panneaux, les nuisances continuent. Je vous propose de limiter les heures de visite afin que les touristes et les habitants puissent cohabiter. Je vous remercie de votre attention et vous prie de recevoir, Madame, Monsieur, mes sentiments distingués.", en: "Dear Sir or Madam, I have lived in the rue du Bœuf for fifteen years. Although visits to the traboules are an asset for the neighbourhood, the number of visitors is becoming hard to bear. Every day, groups come into our courtyard, talk loudly and leave litter. I am not against tourism, provided that visitors respect our calm. Although the town hall has already put up a few signs, the nuisance continues. I suggest limiting visiting hours so that tourists and residents can live side by side. Thank you for your attention. Yours faithfully." }
+  - task: "Plan an evening walk in Vieux-Lyon for your group and add warnings, using the ne explétif (avant qu'il ne pleuve, à moins que…, de peur que…)."
+    min: 80
+    max: 150
+    use: [w.avant-que, w.à-moins-que, w.de-peur-que, w.abri, w.canut]
+    useAtLeast: 3
+    grammar: [g.ne-expletif, g.subjonctif-conjonctions]
+    expect:
+      - { pattern: "\\b(avant qu|moins qu|de peur qu|de crainte qu)[^.!?]{0,20}\\bn(e\\s|['’])", hint: "After avant que, à moins que, de peur que, add the ne explétif: avant qu'il ne pleuve." }
+    model: { es: "Salut tout le monde ! Ce soir, on part de la place Saint-Jean à dix-huit heures, avant qu'il ne fasse nuit. La météo annonce de l'orage : il faut traverser les traboules avant qu'il ne pleuve, car elles sont un bon abri. Ensuite, on montera à la Croix-Rousse pour voir les maisons des canuts, à moins que vous ne soyez trop fatigués. Prenez une lampe, de peur que les passages ne soient trop sombres. Restez ensemble, de crainte que quelqu'un ne se perde. On finira dans un bouchon. À ce soir !", en: "Hi everyone! Tonight we're leaving from the place Saint-Jean at six, before it gets dark. The forecast says there'll be a storm: we need to go through the traboules before it rains, as they make a good shelter. Then we'll go up to the Croix-Rousse to see the silk workers' houses, unless you're too tired. Bring a torch, in case the passages are too dark. Stay together, in case anyone gets lost. We'll finish in a bouchon. See you tonight!" }
+  - task: "Write about the history of the canuts, Lyon's silk workers, and how you feel about it today, using the past subjonctif (bien que les canuts aient disparu, je suis content(e) qu'on ait gardé…)."
+    min: 80
+    max: 150
+    use: [w.canut, w.soierie, w.révolte, w.ouvrier, w.historique]
+    useAtLeast: 3
+    grammar: [g.subjonctif-passe]
+    expect:
+      - { pattern: "\\bqu(e\\s|['’])[^.!?]{0,30}\\b(aie|aies|ait|ayons|ayez|aient|sois|soit|soyons|soyez|soient) [a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|ies|u|ue|us|it|ert|eint|ort)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the past subjonctif: que + avoir / être in the subjonctif + participle (bien qu'ils aient disparu)." }
+    model: { es: "Au dix-neuvième siècle, des milliers de canuts travaillaient dans les ateliers de la Croix-Rousse. Ils fabriquaient la soierie la plus réputée d'Europe, mais leurs conditions de travail étaient très dures. En 1831, ces ouvriers ont mené une révolte historique. Bien que les canuts aient disparu depuis longtemps, leur histoire reste vivante. Je suis heureux qu'on ait gardé leurs grands immeubles aux hautes fenêtres. Je regrette pourtant que beaucoup d'ateliers soient devenus des appartements de luxe. Il est important que les jeunes Lyonnais aient appris cette histoire à l'école.", en: "In the nineteenth century, thousands of canuts worked in the workshops of the Croix-Rousse. They made the most famous silk in Europe, but their working conditions were very hard. In 1831 these workers led a historic revolt. Although the canuts disappeared long ago, their story is still alive. I'm glad their big buildings with tall windows have been kept. I'm sorry, though, that many workshops have become luxury flats. It's important that young people in Lyon have learnt this history at school." }

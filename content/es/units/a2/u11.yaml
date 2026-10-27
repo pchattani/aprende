@@ -253,3 +253,43 @@ dialogues:
       - { q: "¿Cuántas veces al día tiene que tomar el jarabe?", options: ["Una vez", "Dos veces", "Tres veces"], answer: 2, explain: "Tres veces, después de las comidas." }
       - { q: "¿Qué le duele a Ana?", options: ["La espalda y el estómago", "La garganta y la cabeza", "La rodilla"], answer: 1 }
       - { q: "¿Qué tiene que hacer Ana si no mejora en tres días?", options: ["Volver a la farmacia", "Ir al médico", "Tomar más pastillas"], answer: 1 }
+writing:
+  - task: "You feel ill in Posadas. Write what you tell the pharmacist: your symptoms and since when."
+    min: 25
+    max: 55
+    use: [w.doler, w.garganta, w.fiebre, w.tos, w.gripe]
+    useAtLeast: 3
+    grammar: [g.doler]
+    expect:
+      - { pattern: "\\bme duel(e|en)\\b", hint: "Say what hurts: me duele la cabeza, me duelen los pies …" }
+      - { pattern: "\\b(tengo|estoy)\\b", hint: "Add symptoms: tengo fiebre, tengo tos, estoy mareado …" }
+    model: { es: "Buenos días. No me encuentro bien. Me duele mucho la garganta y también me duele la cabeza. Tengo fiebre y tos desde ayer por la noche. Creo que tengo gripe. ¿Qué medicamento puedo tomar?", en: "Good morning. I don't feel well. My throat really hurts and I also have a headache. I've had a fever and a cough since last night. I think I have flu. What medicine can I take?" }
+  - task: "Your friend asks for advice. Answer with deberías, tienes que and yo que tú …"
+    es: "Estoy muy estresada y duermo mal. ¿Qué hago?"
+    min: 30
+    max: 60
+    use: [w.ejercicio, w.dieta, w.fumar, w.deberia, w.estresado]
+    useAtLeast: 3
+    grammar: [g.deber-tener-que, g.conditional-simple]
+    expect:
+      - { pattern: "\\b(deber[ií]as|tienes que|tendr[ií]as que|podr[ií]as|yo que t[uú])", hint: "Give advice: deberías …, tienes que …, yo que tú …" }
+    model: { es: "Deberías hacer ejercicio todos los días, por ejemplo correr o nadar. También tienes que comer mejor: una dieta sana es muy importante. No deberías tomar tanto café por la tarde. Yo que tú, dejaría de fumar y me acostaría temprano.", en: "You should exercise every day, for example running or swimming. You also need to eat better: a healthy diet is very important. You shouldn't drink so much coffee in the afternoon. If I were you, I'd stop smoking and go to bed early." }
+  - task: "Describe your perfect healthy week: what you would do, eat and avoid. Use the conditional (haría, comería …)."
+    min: 30
+    max: 60
+    use: [w.ejercicio, w.dieta, w.fumar, w.tumbarse]
+    useAtLeast: 3
+    grammar: [g.conditional-simple]
+    expect:
+      - { pattern: "\\b[a-zñ]+(ría|rías|ríamos|rían)(?![a-záéíóúñ])", hint: "Use the conditional: haría, comería, dormiría …" }
+    model: { es: "En mi semana perfecta, haría ejercicio todas las mañanas y también iría al trabajo en bicicleta. Comería más fruta y seguiría una dieta sana. No fumaría nunca y dormiría ocho horas cada noche. Los domingos me tumbaría en el parque a leer.", en: "In my perfect week, I'd exercise every morning and I'd also cycle to work. I'd eat more fruit and follow a healthy diet. I'd never smoke and I'd sleep eight hours every night. On Sundays I'd lie down in the park to read." }
+  - task: "Write a polite message to the hotel reception: you feel ill and need a doctor's appointment, some information and a quieter room. Use ¿Podría …? and Me gustaría …"
+    min: 30
+    max: 60
+    use: [w.cita, w.informacion, w.gustaria, w.podria]
+    useAtLeast: 2
+    grammar: [g.conditional-courtesy]
+    expect:
+      - { pattern: "\\bpodr[ií]an?\\b", hint: "Ask politely: ¿Podría …?" }
+      - { pattern: "me gustar[ií]a|querr[ií]a", hint: "Say what you'd like: Me gustaría …" }
+    model: { es: "Buenas tardes. Me encuentro un poco mal y me gustaría ver a un médico. ¿Podría pedirme una cita para mañana? También querría información sobre la farmacia más próxima. ¿Podría cambiarme de habitación? Hay mucho ruido. Muchas gracias.", en: "Good afternoon. I don't feel very well and I'd like to see a doctor. Could you make me an appointment for tomorrow? I'd also like information about the nearest pharmacy. Could you move me to another room? It's very noisy. Thank you very much." }

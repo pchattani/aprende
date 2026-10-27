@@ -286,3 +286,41 @@ dialogues:
       - { q: "Che cosa ha conservato gli affreschi, secondo Ciro?", options: ["La cenere.", "La pioggia.", "Un tetto moderno."], answer: 0, explain: "Se non fosse stata sepolta dalla cenere, gli affreschi non sarebbero così belli: the ash preserved them." }
       - { q: "Che cosa decidono di fare?", options: ["Tornare a Napoli.", "Comprare altri biglietti.", "Visitare gli scavi da soli."], answer: 2, explain: "The tickets are valid all day: ce la caviamo da soli." }
       - { q: "Come si descrive Ciro?", options: ["Sbadato.", "Ambizioso.", "Riservato."], answer: 0, explain: "Hai ragione, sono proprio sbadato." }
+writing:
+  - task: "Write about the people of Pompeii in 79 AD: what would have happened if they had understood the danger or escaped in time (se + congiuntivo trapassato, condizionale passato)."
+    min: 80
+    max: 140
+    use: [w.salvarsi, w.avvertimento, w.sopravvivere, w.accorgersi-in-tempo, w.disastro]
+    grammar: [g.periodo-ipotetico-3]
+    expect:
+      - { pattern: "\\bse\\s+(\\S+\\s+){0,3}(avessi|avesse|avessimo|aveste|avessero|fossi|fosse|fossimo|foste|fossero)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s|lt)[oaie]\\b", hint: "Use se + congiuntivo trapassato: se avessero capito…, se fossero scappati…" }
+      - { pattern: "\\b(avrei|avresti|avrebbe|avremmo|avreste|avrebbero|sarei|saresti|sarebbe|saremmo|sareste|sarebbero)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s|ss)[oaie]\\b", hint: "Use the past conditional: si sarebbero salvati…" }
+    model: { es: "Nel 79 dopo Cristo gli abitanti di Pompei non capirono il pericolo. Se si fossero accorti in tempo dei segnali del vulcano, molti si sarebbero salvati. Qualche giorno prima c'erano stati piccoli terremoti: se qualcuno avesse capito questo avvertimento, tutti sarebbero partiti. Purtroppo nessuno sapeva che il Vesuvio fosse pericoloso. Se gli abitanti fossero scappati verso il mare la mattina, molti sarebbero sopravvissuti. Fu un disastro enorme, ma se la città non fosse stata sepolta, oggi non sapremmo così tanto della vita dei Romani.", en: "In 79 AD the inhabitants of Pompeii didn't understand the danger. If they had noticed the volcano's signs in time, many would have saved themselves. A few days earlier there had been small earthquakes: if someone had understood this warning, everyone would have left. Unfortunately nobody knew that Vesuvius was dangerous. If the inhabitants had fled towards the sea in the morning, many would have survived. It was a huge disaster, but if the city hadn't been buried, today we wouldn't know so much about the life of the Romans." }
+  - task: "Write about an opportunity you missed: what happened, what would have happened if you had acted differently, and what you have learned."
+    min: 80
+    max: 140
+    use: [w.esitare, w.a-saperlo, w.occasione-persa, w.rimpiangere, w.cogliere-lattimo]
+    grammar: [g.periodo-ipotetico-3, g.congiuntivo-trapassato]
+    expect:
+      - { pattern: "\\bse\\s+(\\S+\\s+){0,3}(avessi|avesse|avessimo|avessero|fossi|fosse|fossimo|fossero)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Use se + congiuntivo trapassato: se avessi accettato…" }
+      - { pattern: "\\b(avrei|avrebbe|avremmo|sarei|sarebbe|saremmo)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Use the past conditional: avrei imparato…" }
+    model: { es: "Due anni fa un'amica mi ha proposto di lavorare per sei mesi in un albergo a Sorrento. Io ho esitato troppo: pensavo che il mio capo non mi avrebbe dato il permesso e avevo paura di perdere il posto. Alla fine ho detto di no. A saperlo! Qualche mese dopo la mia ditta ha chiuso. Se avessi accettato, avrei imparato l'italiano molto prima e forse avrei trovato un lavoro migliore. Non rimpiango molte cose, ma questa è stata davvero un'occasione persa. Da allora ho imparato a cogliere l'attimo.", en: "Two years ago a friend suggested I work for six months in a hotel in Sorrento. I hesitated too long: I thought my boss wouldn't give me permission and I was afraid of losing my job. In the end I said no. If only I'd known! A few months later my company closed. If I had accepted, I would have learned Italian much earlier and perhaps found a better job. I don't regret many things, but this really was a missed opportunity. Since then I've learned to seize the moment." }
+  - task: "If you had made a different choice in the past, what would your life be like now? Use mixed conditionals (se avessi studiato…, adesso sarei…)."
+    min: 80
+    max: 140
+    use: [w.tornare-indietro, w.altrimenti, w.consapevole, w.esperienza-di-vita]
+    grammar: [g.periodo-ipotetico-misto]
+    expect:
+      - { pattern: "\\bse\\s+(\\S+\\s+){0,3}(avessi|avesse|fossi|fosse)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Start with a past condition: se avessi studiato…" }
+      - { pattern: "\\b(adesso|oggi|ora)\\b[^.!?]*\\b\\S+(rei|resti|rebbe|remmo|reste|rebbero)\\b|\\b\\S+(rei|rebbe|remmo)\\b[^.!?]*\\b(adesso|oggi|ora)\\b", hint: "Give the present consequence: adesso lavorerei…, oggi non parlerei…" }
+    model: { es: "Da ragazzo sognavo di diventare archeologo. Se avessi studiato archeologia all'università, adesso lavorerei forse negli scavi di Pompei invece che in un ufficio a Londra. E se non avessi incontrato mia moglie a Roma, oggi non parlerei italiano e non vivrei in Italia per metà dell'anno! Non so se sarei più felice: probabilmente sarei più povero, ma forse più soddisfatto. Comunque, se potessi tornare indietro, rifarei quasi tutto. Sono consapevole che ogni scelta è stata un'esperienza di vita: altrimenti, non sarei la persona che sono oggi.", en: "As a boy I dreamed of becoming an archaeologist. If I had studied archaeology at university, now I might be working on the excavations at Pompeii instead of in an office in London. And if I hadn't met my wife in Rome, today I wouldn't speak Italian or live in Italy for half the year! I don't know if I'd be happier: I'd probably be poorer, but perhaps more satisfied. Anyway, if I could go back, I'd do almost everything again. I'm aware that every choice has been a life experience: otherwise, I wouldn't be the person I am today." }
+  - task: "Write a formal e-mail to your insurance company after a scooter accident in Naples: explain what happened, argue what would have been avoided if the other driver had been careful, and ask for compensation."
+    min: 80
+    max: 140
+    use: [w.assicurazione, w.risarcimento, w.danno, w.frenare, w.incidente-stradale]
+    grammar: [g.periodo-ipotetico-3]
+    expect:
+      - { pattern: "\\b(gentile|egregio|egregia|spettabile)\\b", hint: "Open formally: Spettabile Assicurazione…" }
+      - { pattern: "\\bse\\s+(\\S+\\s+){0,3}(avesse|fosse|avessero|fossero)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Argue with a past hypothesis: se avesse frenato in tempo…" }
+      - { pattern: "distinti saluti|cordiali saluti", hint: "Close formally: Distinti saluti." }
+    model: { es: "Spettabile Assicurazione, Le scrivo in merito all'incidente stradale del 12 maggio in via Toledo, a Napoli. Io ero fermo con il motorino al semaforo rosso, quando una macchina mi è venuta addosso da dietro. L'autista era distratto e guardava il telefono: se avesse frenato in tempo, il danno sarebbe stato evitato. Il motorino è stato danneggiato e io mi sono fatto male a una gamba. Allego le foto, la dichiarazione dei vigili e il preventivo dell'officina. Chiedo pertanto un risarcimento completo dei danni. In attesa di un Suo cortese riscontro, porgo distinti saluti.", en: "Dear Sir or Madam, I am writing regarding the road accident of 12 May in Via Toledo, Naples. I was stopped on my scooter at a red light when a car hit me from behind. The driver was distracted and looking at his phone: if he had braked in time, the damage would have been avoided. The scooter was damaged and I hurt my leg. I attach the photos, the traffic police statement and the garage's estimate. I therefore request full compensation for the damage. I look forward to your kind reply. Yours faithfully." }

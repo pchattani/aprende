@@ -228,3 +228,45 @@ dialogues:
       - { q: "What did Lucía do before her meetings?", options: ["The shopping", "She went to the gym", "She watered the plants"], answer: 1 }
       - { q: "Why hasn't Pablo done the shopping?", options: ["He was writing a report", "He was at the gym", "He lost his keys"], answer: 0 }
       - { q: "Where did Lucía see the keys?", options: ["In the office", "In the kitchen", "In the washing machine"], answer: 1 }
+writing:
+  - task: "Write about what you have done today and this week, using the present perfect (hoy he …, esta semana he …)."
+    min: 30
+    max: 60
+    use: [w.informe, w.reunion, w.noticia, w.correo, w.esta-semana]
+    useAtLeast: 3
+    grammar: [g.present-perfect, g.participles-irregular]
+    expect:
+      - { pattern: "\\b(he|has|ha|hemos|habéis|han) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the present perfect: he trabajado, he escrito …" }
+      - { pattern: "(hoy|esta ma[nñ]ana|esta semana|este a[nñ]o|[uú]ltimamente)", hint: "Say when: hoy, esta mañana, esta semana …" }
+    model: { es: "Hoy ha sido un día muy ocupado. Esta mañana he escrito un informe y he tenido una reunión con mi jefe. Por la tarde he leído las noticias y he contestado muchos correos. Esta semana he trabajado demasiado.", en: "Today has been a very busy day. This morning I've written a report and had a meeting with my boss. In the afternoon I've read the news and answered lots of emails. This week I've worked too much." }
+  - task: "Answer the questions about your experiences: things you have done (once, several times) and things you have never done."
+    es: "¿Alguna vez has montado a caballo? ¿Has visto la nieve?"
+    min: 30
+    max: 60
+    use: [w.varias-veces, w.bucear, w.esquiar, w.volar, w.experiencia]
+    useAtLeast: 3
+    grammar: [g.present-perfect, g.participles-irregular]
+    expect:
+      - { pattern: "\\b(he|has|ha|hemos|han) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the present perfect: he montado, he visto …" }
+      - { pattern: "\\b(nunca|jam[aá]s|varias veces|una vez|alguna vez)\\b", hint: "Say how often: nunca he …, varias veces, una vez …" }
+    model: { es: "Sí, he montado a caballo varias veces, pero nunca he visto la nieve. Tampoco he esquiado nunca. He buceado una vez en el mar Caribe y fue una experiencia increíble. ¡Nunca he volado en globo, pero quiero probarlo!", en: "Yes, I've ridden a horse several times, but I've never seen snow. I've never skied either. I've dived once in the Caribbean Sea and it was an incredible experience. I've never flown in a balloon, but I want to try it!" }
+  - task: "You leave for a trip tomorrow. Write what you have already done (ya he …) and what you haven't done yet (todavía no he …)."
+    min: 30
+    max: 60
+    use: [w.ya, w.todavia, w.lista, w.planchar, w.regar]
+    useAtLeast: 3
+    grammar: [g.ya-todavia, g.present-perfect]
+    expect:
+      - { pattern: "\\bya (he|has|ha|hemos|han)\\b", hint: "Say what you've already done: ya he …" }
+      - { pattern: "todav[ií]a no|no .*todav[ií]a", hint: "Say what you haven't done yet: todavía no he …" }
+    model: { es: "Ya he hecho la lista y ya he comprado la comida para el viaje. También he planchado mi ropa. Sin embargo, todavía no he regado las plantas y todavía no he escrito a mi madre. ¡Tengo que hacerlo hoy!", en: "I've already made the list and I've already bought the food for the trip. I've also ironed my clothes. However, I haven't watered the plants yet and I haven't written to my mother yet. I have to do it today!" }
+  - task: "Write a message from the Costanera in Paraná: what you have done today (hoy he …) and what you did yesterday (ayer …)."
+    min: 30
+    max: 60
+    use: [w.isla, w.barco, w.probar, w.perder]
+    useAtLeast: 3
+    grammar: [g.perfect-vs-preterite]
+    expect:
+      - { pattern: "\\b(he|has|ha|hemos|han) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "For today, use the perfect: hoy he paseado …" }
+      - { pattern: "\\bayer\\b", hint: "Say what you did yesterday with the preterite: ayer perdí …" }
+    model: { es: "¡Hola, Lucía! Hoy he paseado por la Costanera de Paraná y he probado un pescado del río muy rico. Esta tarde he ido en barco a una isla. Ayer fue diferente: llegué tarde, perdí el autobús y dormí en Santa Fe.", en: "Hi, Lucía! Today I've walked along the Costanera in Paraná and tried a really tasty river fish. This afternoon I've been to an island by boat. Yesterday was different: I arrived late, missed the bus and slept in Santa Fe." }

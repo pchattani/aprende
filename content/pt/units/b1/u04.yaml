@@ -296,3 +296,44 @@ dialogues:
       - { q: "Do que a Ana tem medo?", options: ["De ganhar menos", "De deixar a equipe", "De morar sozinha"], answer: 1, explain: "Tenho medo de deixar a minha equipe aqui." }
       - { q: "O que a Marta sugere?", options: ["Que a Ana peça uma conversa sincera ao chefe", "Que a Ana recuse a vaga", "Que a Ana decida hoje"], answer: 0, explain: "Sugiro que você peça ao seu chefe uma conversa sincera." }
       - { q: "Quando a Ana deve dizer que o conselho foi da Marta?", options: ["Sempre", "Só se der certo", "Nunca"], answer: 1, explain: "Marta jokes: only if it works out." }
+writing:
+  - task: "Your friend is going to Inhotim for the first time. Give recommendations (Recomendo que…, Sugiro que…, Aconselho que…)."
+    min: 50
+    max: 100
+    use: [w.recomendar, w.sugerir, w.dica, w.evitar, w.aconselhar]
+    useAtLeast: 3
+    grammar: [g.subjunctive-advice]
+    expect:
+      - { pattern: '\b(recomendo|sugiro|aconselho|pe[cç]o|insisto em) que\b', hint: "Use recommend / suggest + que + subjunctive: Recomendo que você chegue cedo." }
+    model: { es: "Que bom que você vai a Inhotim! Recomendo que você chegue cedo, porque o parque é enorme. Sugiro que use sapatos confortáveis e leve água. Uma dica: pegue o carrinho para as obras mais longe. Aconselho que você evite o fim de semana, porque tem muita gente. E não deixe de almoçar no restaurante do parque!", en: "Great that you're going to Inhotim! I recommend you get there early, because the park is huge. I suggest you wear comfortable shoes and take water. A tip: take the buggy to the works that are further away. I'd advise you to avoid the weekend, because it's very crowded. And don't miss lunch at the park's restaurant!" }
+  - task: "Write the rules for visitors to an art park or museum: what is not allowed (Não toque…, Não pise…) and what is allowed or compulsory."
+    min: 50
+    max: 100
+    use: [w.proibir, w.permitir, w.pisar, w.obrigatório, w.arriscar]
+    useAtLeast: 3
+    grammar: [g.imperative-negative]
+    expect:
+      - { pattern: '\bn[aã]o (toque|pise|fume|coma|beba|corra|entre|deixe|use|tire|leve|fa[cç]a|jogue|suba|esque[cç]a|arrisque)\b', hint: "Use negative imperatives (subjunctive forms): Não toque…, Não pise…" }
+      - { pattern: '(proibid|permitid|obrigat[oó]ri)', hint: "Say what is forbidden, allowed or compulsory: É proibido…, É permitido…" }
+    model: { es: "Bem-vindos ao parque! Por favor, não toque nas obras de arte e não pise na grama. Não corra perto dos lagos e não deixe lixo no chão. É proibido fumar em todo o parque, mas é permitido tirar fotos. É obrigatório ficar com as crianças o tempo todo. Não arrisque: respeite as placas!", en: "Welcome to the park! Please don't touch the works of art and don't walk on the grass. Don't run near the lakes and don't leave litter on the ground. Smoking is forbidden throughout the park, but taking photos is allowed. Children must be accompanied at all times. Don't take risks: follow the signs!" }
+  - task: "Leave a message for a colleague passing on your boss's instructions and asking her to pass on others (O chefe pediu para você…, Diz pra ele…, Fala para a…)."
+    min: 50
+    max: 100
+    use: [w.chefe, w.estagiário, w.currículo, w.equipe, w.estágio]
+    useAtLeast: 3
+    grammar: [g.indirect-commands]
+    expect:
+      - { pattern: '\b(diz|fala|pede|avisa) (para|pra|pro|pros|pras) [a-zà-ú]+', hint: "Pass on commands: Diz pra ele me ligar. / Fala para a Carla…" }
+      - { pattern: '\b(pediu|mandou|disse) (para|pra|que)\b', hint: "Report the boss's request: O chefe pediu para você…" }
+    model: { es: "Oi, Lu! O chefe pediu para você mandar o relatório até as três. Ele também quer que a equipe esteja na reunião às quatro. Se o estagiário chegar, diz pra ele me ligar, porque preciso falar sobre o estágio. Ah, e fala para a Carla trazer os currículos dos candidatos. Obrigada!", en: "Hi, Lu! The boss asked you to send the report by three. He also wants the team at the meeting at four. If the intern turns up, tell him to call me, because I need to talk about his internship. Oh, and tell Carla to bring the candidates' CVs. Thanks!" }
+  - task: "Your friend had a fight with her boyfriend. Give her advice: what she should and shouldn't do (Sugiro que…, Não termine…, Converse…)."
+    es: "Briguei com o meu namorado porque ele esqueceu o meu aniversário. O que eu faço?"
+    min: 50
+    max: 100
+    use: [w.fazer-as-pazes, w.perdoar, w.confiança, w.sincero, w.desabafar]
+    useAtLeast: 3
+    grammar: [g.subjunctive-advice, g.imperative-negative]
+    expect:
+      - { pattern: '(\b(sugiro|recomendo|aconselho) que\b|(?<!\p{L})é melhor que\b)', hint: "Give advice with the subjunctive: Sugiro que você converse com ele." }
+      - { pattern: '\bn[aã]o (fa[cç]a|fique|termine|brigue|deixe|seja|esque[cç]a|tome|mande|grite)\b', hint: "Say what not to do: Não termine…, Não fique…" }
+    model: { es: "Que chato! Mas não termine o namoro por causa disso. Sugiro que você converse com ele com calma e que seja sincera: diga que ficou magoada. Se ele pedir desculpas, perdoe. Todo mundo erra! Não fique sem falar com ele, porque a confiança é importante num relacionamento. E você pode desabafar comigo sempre que precisar. Tomara que vocês façam as pazes logo!", en: "How annoying! But don't break up over this. I suggest you talk to him calmly and be honest: tell him you were hurt. If he apologises, forgive him. Everybody makes mistakes! Don't stop speaking to him, because trust matters in a relationship. And you can always pour your heart out to me whenever you need. I hope you make up soon!" }

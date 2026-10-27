@@ -280,3 +280,45 @@ dialogues:
       - { q: "O que a Lorena precisa levar para o lado argentino?", options: ["Dinheiro", "O passaporte", "Um sanduíche"], answer: 1, explain: "Você precisa levar o passaporte: Argentina is another country." }
       - { q: "O que a Lorena quer ver?", options: ["A parte mais alta das cataratas", "Os quatis", "A Usina de Itaipu"], answer: 0, explain: "Quero ver a parte mais alta das cataratas: the Devil's Throat." }
       - { q: "Por que é preciso ter cuidado com os quatis?", options: ["Porque são enormes", "Porque são rápidos e adoram comida", "Porque fazem muito barulho"], answer: 1, explain: "They're faster than you and they love sandwiches." }
+writing:
+  - task: "Compare two cities you know: size, prices, weather, people (mais … do que, menos … do que, tão … quanto, maior, melhor…)."
+    min: 30
+    max: 65
+    use: [w.do-que, w.tão-quanto, w.maior, w.menor, w.parecido]
+    useAtLeast: 3
+    grammar: [g.comparatives, g.irregular-comparatives]
+    expect:
+      - { pattern: '\b(mais|menos) [a-zà-ú]+ (do |da |dos |das )?que\b', hint: "Compare with mais / menos … do que: mais frio do que…" }
+      - { pattern: '(\b(maior|menor|melhor|pior)\b|\bt[aã]o [a-zà-ú]+ quanto\b)', hint: "Use maior, menor, melhor, pior or tão … quanto." }
+    model: { es: "São Paulo é maior e mais barulhenta do que Curitiba. Curitiba é menor, mas é mais tranquila e menos cara. O inverno em Curitiba é mais frio do que em São Paulo. Para mim, as duas são tão interessantes quanto o Rio!", en: "São Paulo is bigger and noisier than Curitiba. Curitiba is smaller, but it's quieter and less expensive. Winter in Curitiba is colder than in São Paulo. For me, both cities are as interesting as Rio!" }
+  - task: "Write a review of Foz do Iguaçu for a travel website: the most beautiful place, the best time to go and something -íssimo."
+    min: 30
+    max: 65
+    use: [w.lindíssimo, w.maravilhoso, w.excelente, w.lugar-turístico, w.caríssimo]
+    useAtLeast: 3
+    grammar: [g.superlatives]
+    expect:
+      - { pattern: '(\b(o|a|os|as) (mais|menos) [a-zà-ú]+ (do|da|dos|das|de)\b|\b(o|a|os|as) (melhor|pior|maior|menor)(es)?\b)', hint: "Use a superlative: o lugar mais bonito do… / a melhor época…" }
+      - { pattern: '[a-zà-ú]+[ií]ssim[oa]s?\b', hint: "Add an -íssimo adjective: lindíssimo, caríssimo…" }
+    model: { es: "As Cataratas do Iguaçu são o lugar turístico mais bonito do Brasil! A Garganta do Diabo é lindíssima e as passarelas são excelentes. O passeio de helicóptero é caríssimo, mas maravilhoso. A melhor época para visitar é o verão.", en: "The Iguaçu Falls are the most beautiful tourist spot in Brazil! The Devil's Throat is stunning and the walkways are excellent. The helicopter trip is extremely expensive, but wonderful. The best time to visit is summer." }
+  - task: "Brazilian or Argentine side of the falls? Give your opinion and compare them, with reasons (melhor, pior, maior, vantagem…)."
+    min: 30
+    max: 65
+    use: [w.melhor, w.pior, w.vantagem, w.desvantagem, w.valer-a-pena]
+    useAtLeast: 3
+    grammar: [g.irregular-comparatives, g.opinions]
+    expect:
+      - { pattern: '\b(melhor|pior|maior|menor)\b', hint: "Compare with melhor, pior, maior or menor." }
+      - { pattern: '\b(acho que|na minha opini[aã]o|para mim|eu acho|acredito que)\b', hint: "Give your opinion: Acho que… / Na minha opinião…" }
+    model: { es: "Na minha opinião, o lado brasileiro é melhor para tirar fotos, porque a vista é maior. O lado argentino tem mais passarelas, então é melhor para andar. A desvantagem é que lá tem muita gente. Acho que vale a pena ver os dois!", en: "In my opinion, the Brazilian side is better for taking photos, because the view is wider. The Argentine side has more walkways, so it's better for walking. The disadvantage is that it's very crowded there. I think it's worth seeing both!" }
+  - task: "Your friend says football is the best sport in the world. Agree or disagree, and give your reasons (concordo, discordo, acho que, porque…)."
+    es: "Futebol é o melhor esporte do mundo! Você concorda?"
+    min: 30
+    max: 65
+    use: [w.concordar, w.discordar, w.opinião, w.razão, w.depende]
+    useAtLeast: 3
+    grammar: [g.opinions]
+    expect:
+      - { pattern: '\b(concordo|discordo)\b', hint: "Say whether you agree: Concordo. / Discordo." }
+      - { pattern: '\b(acho que|acredito que|na minha opini[aã]o|para mim|porque)\b', hint: "Justify your view: Acho que…, porque…" }
+    model: { es: "Discordo! Na minha opinião, futebol é legal, mas não é o melhor esporte do mundo. Acho que o vôlei é mais interessante, porque é mais rápido. Mas você tem razão: no Brasil, todo mundo adora futebol. Depende do gosto!", en: "I disagree! In my opinion, football is fun, but it's not the best sport in the world. I think volleyball is more interesting, because it's faster. But you're right: in Brazil everyone loves football. It depends on your taste!" }

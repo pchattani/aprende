@@ -271,3 +271,40 @@ dialogues:
       - { q: "Chi le ha dato il modulo?", options: ["Sua madre", "Un collega dell'impiegato", "Il corriere"], answer: 1, explain: "Il modulo me l'ha già dato il suo collega: the clerk's colleague gave it to her." }
       - { q: "Perché Elena non ha il documento?", options: ["L'ha perso al Duomo", "L'ha lasciato in albergo", "Ce l'ha sua madre"], answer: 1, explain: "L'ho lasciato in albergo: she left it at the hotel." }
       - { q: "Che cosa vuole mandare Elena a sua madre?", options: ["Il codice della spedizione", "Una foto del Duomo", "Diciotto euro"], answer: 0, explain: "Così mando il codice a mia madre: she'll send her the tracking code." }
+writing:
+  - task: "A friend in Milan asks you three favours. Reply to each one without repeating the nouns: use combined pronouns (te la presto, te lo mando, glielo chiedo)."
+    es: "Mi presti la tua bici per il weekend? Mi mandi il numero di Luca? E mi fai vedere le foto del Duomo?"
+    min: 50
+    max: 100
+    use: [w.prestare, w.mandare, w.glielo, w.favore, w.promessa]
+    grammar: [g.combined-pronouns]
+    expect:
+      - { pattern: "\\b(me|te|ce|ve|se)\\s+(lo|la|li|le|ne)\\b|\\bglie(lo|la|li|le|ne)\\b|\\bgliel['’]", hint: "Combine the pronouns: te la presto, te lo mando, glielo chiedo…" }
+    model: { es: "Certo, la bici te la presto volentieri, ma trattala bene! Il numero di Luca te lo mando subito per messaggio. Le foto del Duomo te le faccio vedere stasera, perché adesso sono in ufficio. Se vuoi, posso anche chiedere a Luca se ti dà un passaggio in centro: glielo chiedo domani. Ma ricordati la promessa: mi offri un aperitivo!", en: "Of course, I'll gladly lend you the bike, but treat it well! I'll send you Luca's number by text straight away. I'll show you the photos of the Duomo tonight, because I'm at the office now. If you like, I can also ask Luca whether he'll give you a lift into the centre: I'll ask him tomorrow. But remember your promise: you're buying me an aperitivo!" }
+  - task: "A colleague asks whether you have done some office tasks. Answer using combined pronouns with the passato prossimo (gliel'ho mandato, te li ho stampati…)."
+    es: "Hai mandato l'allegato al cliente? Hai stampato i documenti per la riunione? Hai inoltrato la mail a Giulia?"
+    min: 50
+    max: 100
+    use: [w.allegato, w.stampare, w.inoltrare, w.mail, w.connessione]
+    grammar: [g.combined-pronouns-past]
+    expect:
+      - { pattern: "\\bgliel['’]\\s?(ho|hai|ha|abbiamo|hanno)\\b|\\bglie(li|le|ne)\\s+(ho|hai|ha|abbiamo|hanno)\\b|\\b(me|te|ce|ve)\\s+(l['’]\\s?|li\\s+|le\\s+|ne\\s+)(ho|hai|ha|abbiamo|hanno)\\b", hint: "Use combined pronouns with the passato prossimo: gliel'ho mandato, te li ho stampati…" }
+    model: { es: "Ciao Paolo! Sì, l'allegato gliel'ho mandato stamattina, ma il cliente non ha ancora risposto. I documenti per la riunione? Te li ho già stampati: sono sulla tua scrivania. La mail a Giulia, invece, non gliel'ho ancora inoltrata, perché la connessione non funzionava. Gliela inoltro appena torna la rete. Se hai bisogno di altro, dimmelo!", en: "Hi Paolo! Yes, I sent the attachment to the client this morning, but he hasn't replied yet. The documents for the meeting? I've already printed them for you: they're on your desk. The e-mail to Giulia, though, I haven't forwarded to her yet, because the connection wasn't working. I'll forward it to her as soon as the network is back. If you need anything else, tell me!" }
+  - task: "You are at Milano Centrale before a trip. Your friend checks that you have everything. Answer with ce l'ho, ce li ho, ce n'è and ce la facciamo."
+    es: "Ce l'hai il biglietto? E il caricabatterie? C'è ancora acqua nella bottiglia? Il treno parte tra cinque minuti!"
+    min: 50
+    max: 100
+    use: [w.farcela, w.caricabatterie, w.batteria, w.biglietto, w.accorgersi]
+    grammar: [g.ce-ne-ce-lo]
+    expect:
+      - { pattern: "\\bce l['’]\\s?(ho|hai|ha|abbiamo|avete|hanno)\\b|\\bce (li|le) (ho|hai|ha|abbiamo|avete|hanno)\\b", hint: "Say you have it: ce l'ho, ce li ho…" }
+      - { pattern: "\\bce n['’]\\s?(è|e)|\\bce ne sono\\b|\\bce la (faccio|facciamo|fai|fa|fate|fanno)\\b", hint: "Use ce n'è (there's some) or ce la facciamo (we'll make it)." }
+    model: { es: "Tranquillo! Sì, il biglietto ce l'ho: è nel telefono. Il caricabatterie, invece, non ce l'ho: mi sono accorto adesso che l'ho lasciato a casa! Per fortuna la batteria è quasi piena. L'acqua? Ce n'è ancora mezza bottiglia, ma ne compro un'altra al bar della stazione. Dai, corriamo al binario sette: ce la facciamo!", en: "Don't worry! Yes, I've got the ticket: it's on my phone. The charger, on the other hand, I haven't got: I've just realised I left it at home! Luckily the battery is almost full. The water? There's still half a bottle, but I'll buy another one at the station bar. Come on, let's run to platform seven: we'll make it!" }
+  - task: "Write a message to a colleague about a parcel for a client: what you have already done and what you will do (glielo spedisco, te la do…)."
+    min: 50
+    max: 100
+    use: [w.spedire, w.ricevuta, w.modulo, w.compilare, w.corriere]
+    grammar: [g.combined-pronouns, g.combined-pronouns-past]
+    expect:
+      - { pattern: "\\b(me|te|ce|ve|se)\\s+(lo|la|li|le|ne)\\b|\\bglie(lo|la|li|le|ne)\\b|\\bgliel['’]", hint: "Combine the pronouns: glielo spedisco, te la do…" }
+    model: { es: "Ciao Marta, il pacco per il signor Rossi è pronto. Il modulo l'ho già compilato e firmato. Glielo spedisco domani con il corriere, così lo riceve venerdì. La ricevuta te la do appena torno in ufficio. Se il cliente ti chiama, avvisalo tu, per favore: digli che la consegna arriverà venerdì mattina.", en: "Hi Marta, the parcel for Mr Rossi is ready. I've already filled in and signed the form. I'll send it to him tomorrow by courier, so he'll receive it on Friday. I'll give you the receipt as soon as I'm back in the office. If the client calls you, please let him know: tell him the delivery will arrive on Friday morning." }

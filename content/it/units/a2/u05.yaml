@@ -281,3 +281,38 @@ dialogues:
       - { q: "Quanto costa la collana?", options: ["Quattordici euro", "Quaranta euro", "Quattro euro"], answer: 1, explain: "Costa quaranta euro." }
       - { q: "Che cosa compra Paola per suo padre?", options: ["Una cravatta", "Una bottiglia di vino", "Un orologio"], answer: 1, explain: "The shop assistant recommends a Vernaccia and Paola takes it." }
       - { q: "Quanti pacchetti fa la commessa?", options: ["Uno", "Due", "Tre"], answer: 1, explain: "Le faccio due pacchetti regalo? — Sì: uno per lei e uno per lui." }
+writing:
+  - task: "Your friend is checking your bag before the trip to San Gimignano. Answer her questions without repeating the nouns: use lo, la, li, le."
+    es: "Hai preso il passaporto? E la carta d'identità? Dove sono i guanti? Chi porta le collane per la festa?"
+    min: 30
+    max: 65
+    use: [w.passaporto, w.carta-didentità, w.guanto, w.collana, w.portafoglio]
+    grammar: [g.direct-object-pronouns]
+    expect:
+      - { pattern: "\\b(lo|la|li|le)\\s+(\\S+)|\\bl['’](ho|hai|ha|abbiamo)\\b", hint: "Replace the noun with lo, la, li, le: Sì, lo prendo. / La porto io." }
+    model: { es: "Sì, il passaporto l'ho preso: lo metto nello zaino. La carta d'identità? La porto sempre nel portafoglio. I guanti non li trovo: forse li ha tuo fratello. Le collane le porto io!", en: "Yes, I've got the passport: I'll put it in my rucksack. The ID card? I always keep it in my wallet. I can't find the gloves: maybe your brother has them. I'll bring the necklaces!" }
+  - task: "You are buying souvenirs in San Gimignano. Write who you are buying what for and why, using gli and le (gli compro…, le piace…)."
+    min: 30
+    max: 65
+    use: [w.regalo, w.gli, w.le, w.regalare, w.cartolina]
+    grammar: [g.indirect-object-pronouns]
+    expect:
+      - { pattern: "\\b(gli|le|mi|ti)\\s+(compro|regalo|porto|mando|spedisco|scrivo|piace|piacciono|do|offro|presto)\\b", hint: "Use gli or le: gli regalo…, le piacciono…" }
+    model: { es: "Per mia madre compro una collana, perché le piacciono molto i gioielli. A mio padre regalo una bottiglia di Vernaccia: gli piace il vino bianco. A mia sorella mando una cartolina con le torri. E a Luca? Gli porto un cappello!", en: "For my mother I'm buying a necklace, because she really likes jewellery. I'm giving my father a bottle of Vernaccia: he likes white wine. I'm sending my sister a postcard with the towers. And Luca? I'm bringing him a hat!" }
+  - task: "Your flatmate asks about the housework. Answer each question with a pronoun and a past participle that agrees (li ho lavati, le ho stirate…)."
+    es: "Hai lavato i piatti? Hai stirato le camicie? Hai buttato la spazzatura? Hai fatto la lavatrice?"
+    min: 25
+    max: 60
+    use: [w.lavare, w.stirare, w.buttare, w.spazzatura, w.lavatrice]
+    grammar: [g.pronoun-participle-agreement]
+    expect:
+      - { pattern: "\\b(li ho|le ho|li abbiamo|le abbiamo)\\s+\\S+[ie]\\b|\\bl['’](ho|abbiamo)\\s+(\\S+\\s+)?\\S+[oa]\\b", hint: "Use pronoun + agreeing participle: li ho lavati, le ho stirate, l'ho buttata." }
+    model: { es: "Sì, i piatti li ho lavati stamattina. Le camicie? Le ho stirate ieri sera. La spazzatura l'ho già buttata. La lavatrice? Non l'ho ancora fatta: la faccio domani!", en: "Yes, I washed the dishes this morning. The shirts? I ironed them last night. I've already taken out the rubbish. The washing? I haven't done it yet: I'll do it tomorrow!" }
+  - task: "You and a friend are organising a dinner. Write a message: at your place or theirs, who is coming with whom, what you are making for whom (da me, con te, per lui…)."
+    min: 30
+    max: 65
+    use: [w.me, w.te, w.terrazza, w.zucchero]
+    grammar: [g.stressed-pronouns]
+    expect:
+      - { pattern: "\\b(da|con|per|a|senza|di|tra|fra)\\s+(me|te|lui|lei|noi|voi|loro)\\b", hint: "Use stressed pronouns after prepositions: da me, con te, per lui…" }
+    model: { es: "Ciao, Anna! Facciamo la cena da me o da te? Da me c'è una bella terrazza, quindi forse è meglio da me. Luca viene con noi? Io preparo la pasta, e per te faccio un dolce senza zucchero. Per lui compro il vino!", en: "Hi, Anna! Shall we have dinner at mine or at yours? At mine there's a nice terrace, so maybe it's better at mine. Is Luca coming with us? I'll make the pasta, and for you I'll make a dessert without sugar. For him I'll buy the wine!" }

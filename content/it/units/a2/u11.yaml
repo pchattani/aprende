@@ -266,3 +266,38 @@ dialogues:
       - { q: "Ogni quanto deve prendere una compressa?", options: ["Ogni due ore", "Ogni otto ore", "Una volta alla settimana"], answer: 1, explain: "Prenda una compressa ogni otto ore, dopo i pasti." }
       - { q: "Che cosa farebbe il farmacista al posto di Lucia?", options: ["Andrebbe al pronto soccorso", "Riposerebbe", "Visiterebbe la città"], answer: 1, explain: "Al Suo posto, oggi riposerei." }
       - { q: "Perché la Porta all'Arco può aspettare?", options: ["Perché è chiusa oggi", "Perché è lì da più di duemila anni", "Perché è lontana da Volterra"], answer: 1, explain: "The Etruscan gate has stood for over two thousand years: one more day won't matter." }
+writing:
+  - task: "Write a short e-mail to your doctor (formal, Lei) describing your symptoms and asking for an appointment."
+    min: 30
+    max: 65
+    use: [w.febbre, w.tosse, w.mal-di-gola, w.fare-male, w.dottore]
+    grammar: [g.fare-male, g.condizionale-courtesy]
+    expect:
+      - { pattern: "\\bmi fa(nno)? male\\b|\\bho (un )?(forte )?mal di\\b", hint: "Say what hurts: mi fa male la testa, ho mal di gola…" }
+      - { pattern: "\\bho (la |un po['’] di )?(febbre|tosse|raffreddore|influenza)\\b", hint: "Describe symptoms: ho la febbre, ho la tosse…" }
+    model: { es: "Gentile dottore, da tre giorni non sto bene. Ho la febbre a trentotto, la tosse e un forte mal di gola. Mi fanno male anche la testa e la schiena. Potrei venire da Lei domani mattina? Grazie mille!", en: "Dear Doctor, I haven't been well for three days. I have a temperature of thirty-eight, a cough and a bad sore throat. My head and my back hurt too. Could I come and see you tomorrow morning? Thank you very much!" }
+  - task: "Describe a small accident on a walk near Volterra: what happened and which parts of your body you hurt (le ginocchia, le dita…)."
+    min: 30
+    max: 65
+    use: [w.ginocchio, w.dito, w.cerotto, w.gonfio, w.rompersi]
+    grammar: [g.irregular-plurals-body, g.fare-male]
+    expect:
+      - { pattern: "\\b(ginocchia|dita|braccia|labbra|orecchie|ossa|ciglia|mani)\\b", hint: "Use irregular plurals: le ginocchia, le dita, le braccia…" }
+    model: { es: "Ieri, durante un'escursione vicino a Volterra, sono caduto su un sentiero. Mi sono fatto male alle ginocchia e alle mani, e due dita erano gonfie. Per fortuna non mi sono rotto niente! Ho messo un cerotto e una crema e oggi sto meglio.", en: "Yesterday, on a hike near Volterra, I fell on a path. I hurt my knees and my hands, and two fingers were swollen. Luckily I didn't break anything! I put on a plaster and some cream and today I'm better." }
+  - task: "A friend asks for advice. Reply with suggestions in the conditional (dovresti, potresti, al posto tuo…)."
+    es: "Ho sempre sonno, mangio male e non faccio sport. Cosa dovrei fare?"
+    min: 30
+    max: 65
+    use: [w.dovere, w.riposare, w.dieta, w.fumare, w.salute.n]
+    grammar: [g.condizionale-presente]
+    expect:
+      - { pattern: "\\b(dovresti|potresti|faresti|sarebbe|smetterei|mangerei|farei|andrei)\\b|\\b\\S+(resti|rebbe|rei)\\b", hint: "Give advice with the conditional: dovresti, potresti, al posto tuo farei…" }
+    model: { es: "Secondo me dovresti dormire di più e riposare nel fine settimana. Potresti anche fare una passeggiata ogni giorno. Al posto tuo smetterei di fumare e farei una dieta con più frutta e verdura. La salute è importante!", en: "I think you should sleep more and rest at the weekend. You could also go for a walk every day. If I were you I'd stop smoking and go on a diet with more fruit and vegetables. Health is important!" }
+  - task: "At a pharmacy in Volterra, explain your problem and ask politely for medicine and advice (vorrei, potrebbe, avrebbe…)."
+    min: 25
+    max: 60
+    use: [w.medicina, w.compressa, w.sciroppo, w.consiglio, w.aspirina]
+    grammar: [g.condizionale-courtesy]
+    expect:
+      - { pattern: "\\b(vorrei|potrebbe|potrei|avrebbe|saprebbe|darebbe|servirebbe)\\b", hint: "Ask politely: vorrei…, potrebbe…, avrebbe…?" }
+    model: { es: "Buongiorno, vorrei una medicina per il raffreddore. Ho anche un po' di tosse. Potrebbe darmi uno sciroppo? E avrebbe delle aspirine? Mi servirebbe anche un consiglio: quante compresse dovrei prendere al giorno?", en: "Good morning, I'd like some medicine for a cold. I have a bit of a cough too. Could you give me some syrup? And would you have some aspirin? I'd also need some advice: how many tablets should I take a day?" }

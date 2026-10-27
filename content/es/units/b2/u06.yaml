@@ -261,3 +261,46 @@ dialogues:
       - { q: "What does the grandmother want the family to do on Sunday?", options: ["Visit the plumber", "Come for lunch without bringing anything", "Take her to the doctor"], answer: 1 }
       - { q: "How did the grandmother react when told about the doctor's orders?", options: ["She agreed to rest", "She said the doctor knew nothing", "She asked for a second opinion"], answer: 1 }
       - { q: "What does Dani's father want him to do?", options: ["Call the babysitter", "Fix the leak", "Tidy his room"], answer: 2 }
+writing:
+  - task: "Write about the advice your parents or grandparents gave you when you were young (Me dijo que tuviera paciencia, Me pidió que …)."
+    min: 80
+    max: 150
+    use: [w.crianza, w.insistencia, w.desaconsejar, w.educar, w.ejemplar]
+    useAtLeast: 3
+    grammar: [g.reported-speech-subjunctive]
+    expect:
+      - { pattern: "\\b(me|nos|le|les) (dec[ií]a|dijo|dijeron|ped[ií]a|pidi[oó]|pidieron|aconsej[oó]|aconsejaron|recomend[oó]|desaconsej[oó]|prohibi[oó]|rog[oó])( en)? que\\b|\\binsist[ií]a en que\\b", hint: "Report advice: me decía que …, me pidió que …, insistía en que …" }
+      - { pattern: "\\bque (no )?(me |te |se |le |lo |la )?[a-záéíóúñ]+(ara|aras|aran|iera|ieras|ieran|yera|yeras|yeran)\\b", hint: "Use the imperfect subjunctive in the reported request: que tuviera, que leyera …" }
+    model: { es: "Mis abuelos tuvieron un papel muy importante en mi crianza. Mi abuela siempre me decía que tuviera paciencia y que no me enfadara por tonterías. Mi abuelo, que era un maestro ejemplar, insistía en que leyera todos los días y me pedía que le contara lo que había aprendido en el colegio. Cuando quise dejar los estudios a los dieciséis años, mis padres me lo desaconsejaron con mucha insistencia: me dijeron que lo pensara bien y que no tomara decisiones precipitadas. Hoy les agradezco que me educaran así.", en: "My grandparents played a very important role in my upbringing. My grandmother always told me to be patient and not to get angry about silly things. My grandfather, who was an exemplary teacher, insisted that I read every day and asked me to tell him what I had learned at school. When I wanted to leave school at sixteen, my parents strongly advised me against it: they told me to think it over and not to make hasty decisions. Today I'm grateful that they brought me up that way." }
+  - task: "You hurt your knee near Puente del Inca. Tell a friend what the doctor and the physiotherapist told you to do and not to do."
+    min: 80
+    max: 150
+    use: [w.reposo, w.lesionarse, w.fisioterapeuta, w.estiramiento, w.hidratarse]
+    useAtLeast: 3
+    grammar: [g.reported-commands]
+    expect:
+      - { pattern: "\\b(me|nos|le) (dijo|pidi[oó]|recomend[oó]|aconsej[oó]|prohibi[oó]|orden[oó]|mand[oó]) que\\b", hint: "Report the orders: el médico me dijo que …, me prohibió que …" }
+      - { pattern: "\\bque (no )?(me |se |le )?[a-záéíóúñ]+(ara|aras|aran|iera|ieras|ieran|yera|yeras|yeran)\\b", hint: "Use the imperfect subjunctive: que guardara reposo, que no subiera …" }
+    model: { es: "Ayer me lesioné la rodilla bajando hacia el Puente del Inca y tuve que ir a urgencias. El médico me dijo que guardara reposo durante una semana y me prohibió que hiciera deporte hasta nuevo aviso. También me recomendó que tomara las pastillas después de comer. Luego fui a una fisioterapeuta muy simpática, que me pidió que hiciera unos estiramientos sencillos cada mañana y que me hidratara bien. Me aconsejó que no subiera escaleras y que caminara con cuidado. ¡Así que adiós a la excursión al Aconcagua!", en: "Yesterday I hurt my knee going down towards Puente del Inca and had to go to A&E. The doctor told me to rest for a week and banned me from doing sport until further notice. He also recommended that I take the pills after eating. Then I went to a very nice physiotherapist, who asked me to do some simple stretches every morning and to drink plenty of water. She advised me not to climb stairs and to walk carefully. So goodbye to the trip to Aconcagua!" }
+  - task: "Report a TV interview with a famous writer: what she said, what she asked her readers to do, and use one or two idioms (no se anduvo con rodeos, se fue de la lengua …)."
+    min: 80
+    max: 150
+    use: [w.entrevistador, w.autobiografia, w.andarse-con-rodeos, w.irse-de-la-lengua, w.exito-de-ventas]
+    useAtLeast: 3
+    grammar: [g.reported-speech-subjunctive]
+    expect:
+      - { pattern: "\\b(dijo|explic[oó]|confes[oó]|reconoci[oó]|asegur[oó]|coment[oó]|afirm[oó]) que\\b", hint: "Report what she said: dijo que …, reconoció que …" }
+      - { pattern: "\\b(pidi[oó]|recomend[oó]|aconsej[oó]|rog[oó])( a [a-záéíóúñ ]+)? que (no )?[a-záéíóúñ]+(ara|aran|iera|ieran|yera|yeran)\\b", hint: "Report her request with the imperfect subjunctive: pidió a los lectores que leyeran …" }
+    model: { es: "Ayer vi en la televisión una entrevista con la escritora Clara Paz, cuya autobiografía es un éxito de ventas. Desde el principio, no se anduvo con rodeos: dijo que había escrito el libro para contar la verdad sobre su familia. Cuando el entrevistador le preguntó por su antiguo marido, se fue un poco de la lengua y reconoció que todavía no lo había perdonado. Al final, pidió a los lectores que no creyeran todo lo que publicaban las revistas y que leyeran más poesía. Aseguró que su próximo libro sería una novela.", en: "Yesterday I saw a TV interview with the writer Clara Paz, whose autobiography is a bestseller. From the start, she didn't beat about the bush: she said she had written the book to tell the truth about her family. When the interviewer asked her about her ex-husband, she let slip a bit too much and admitted she still hadn't forgiven him. At the end, she asked readers not to believe everything the magazines published and to read more poetry. She said her next book would be a novel." }
+  - task: "Your mum left a note for you and your brother. Text your brother passing on her orders (Dice mamá que …), and what she asked you to do yesterday (Ayer me pidió que …)."
+    es: "Nota de mamá: Recoged vuestras habitaciones, tended la ropa, llamad al fontanero por la gotera y no dejéis la persiana abierta."
+    min: 80
+    max: 150
+    use: [w.tender-la-ropa, w.fontanero, w.gotera, w.persiana, w.aspiradora]
+    useAtLeast: 3
+    grammar: [g.reported-commands]
+    expect:
+      - { pattern: "dice (mam[aá] )?que|ha dicho que|quiere que", hint: "Pass on present orders: dice mamá que recojas …" }
+      - { pattern: "\\bque (no )?(recojas|tiendas|llames|dejes|pases|pongas|hagas|bajes|subas|saques|limpies|friegues)\\b", hint: "Use the present subjunctive for current orders: que recojas, que llames …" }
+      - { pattern: "\\b(me|te|nos) (pidi[oó]|dijo|mand[oó])( a m[ií])? que\\b", hint: "Report yesterday's request: ayer me pidió que pasara …" }
+    model: { es: "Oye, Pablo, dice mamá que recojas tu habitación antes de las seis y que tiendas la ropa de la lavadora. También quiere que llames al fontanero, porque la gotera del baño está peor. Además, dice que no dejes la persiana abierta cuando salgas. Ayer ya me pidió a mí que pasara la aspiradora y que pusiera la secadora, así que hoy es tu turno. Si no lo haces, se va a enfadar muchísimo. ¡Luego no digas que no te avisé!", en: "Hey, Pablo, Mum says you should tidy your room before six and hang out the washing from the machine. She also wants you to call the plumber, because the leak in the bathroom is worse. And she says not to leave the blind up when you go out. Yesterday she already asked me to vacuum and put the dryer on, so today it's your turn. If you don't do it, she's going to be really angry. Don't say I didn't warn you!" }

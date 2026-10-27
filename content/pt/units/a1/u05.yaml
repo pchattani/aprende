@@ -282,3 +282,44 @@ dialogues:
       - { q: "Por que o Daniel não pede suco de laranja?", options: ["Porque não gosta de laranja", "Porque hoje não tem suco de laranja", "Porque é muito caro"], answer: 1, explain: "Seu Manuel says: Suco de laranja não tem hoje." }
       - { q: "Qual suco o Daniel prefere?", options: ["Manga", "Abacaxi", "Limão"], answer: 1, explain: "Daniel says: Prefiro abacaxi." }
       - { q: "Quanto é a conta?", options: ["Vinte e oito reais", "Dezoito reais", "Oito reais"], answer: 0, explain: "São vinte e oito reais." }
+writing:
+  - task: "You are in a padaria. Order breakfast: greet the waiter, ask for two or three things and ask how much it is."
+    es: "Bom dia! O que você quer?"
+    min: 12
+    max: 35
+    use: [w.querer, w.café, w.pão-de-queijo, w.suco, w.por-favor]
+    useAtLeast: 3
+    grammar: [g.querer-present]
+    expect:
+      - { pattern: '\b(quero|queremos|queria)\b', hint: "Order with querer: Eu quero …, por favor." }
+      - { pattern: 'por favor', hint: "Be polite: por favor." }
+    model: { es: "Bom dia! Eu quero um café com leite e um pão de queijo, por favor. E um suco de laranja sem açúcar. Quanto é?", en: "Good morning! I'd like a white coffee and a cheese bread, please. And an orange juice without sugar. How much is it?" }
+  - task: "Write about food and drink you like and don't like. Use gosto de, adoro, não gosto de and detesto."
+    min: 15
+    max: 40
+    use: [w.gostar, w.adorar, w.detestar, w.fruta, w.chocolate]
+    useAtLeast: 3
+    grammar: [g.gostar-de]
+    expect:
+      - { pattern: '\bgost(o|a|amos|am) (muito )?d(e|o|a|os|as)\b', hint: "Say what you like with gostar de: Eu gosto de …" }
+      - { pattern: '(n[aã]o gost|detest)', hint: "Say something you don't like: Não gosto de … / Detesto …" }
+    model: { es: "Eu adoro fruta: gosto de manga, banana e abacaxi. Também gosto muito de chocolate. Mas não gosto de café e detesto sorvete de limão!", en: "I love fruit: I like mango, banana and pineapple. I also really like chocolate. But I don't like coffee and I hate lemon ice cream!" }
+  - task: "Describe meals at your house: when you have lunch and dinner, who cooks, and what you eat and drink. Use -ar verbs in the present."
+    min: 15
+    max: 40
+    use: [w.almoçar, w.jantar, w.cozinhar, w.comer, w.beber]
+    useAtLeast: 3
+    grammar: [g.present-regular-ar, g.contractions-de]
+    expect:
+      - { pattern: '\b(almo[cç]o|almo[cç]a|almo[cç]amos|almo[cç]am|janto|janta|jantamos|jantam|cozinho|cozinha|cozinhamos|cozinham)\b', hint: "Use -ar verbs: Eu almoço … / Nós jantamos … / Minha mãe cozinha …" }
+    model: { es: "Nós almoçamos ao meio-dia e jantamos às oito. Minha mãe cozinha muito bem. Comemos arroz, feijão e salada. Eu bebo suco e meu pai toma cerveja.", en: "We have lunch at noon and dinner at eight. My mother cooks very well. We eat rice, beans and salad. I drink juice and my dad drinks beer." }
+  - task: "You are at a restaurant with friends. Write the group's order with quantities (um copo de, uma garrafa de, um pedaço de…) and ask for the bill."
+    min: 15
+    max: 40
+    use: [w.copo, w.garrafa, w.pedaço, w.conta, w.garçom]
+    useAtLeast: 3
+    grammar: [g.quantity-words]
+    expect:
+      - { pattern: '\b(copos?|garrafas?|x[ií]caras?|peda[cç]os?|quilos?|d[uú]zias?|pratos?) de\b', hint: "Use a quantity: um copo de …, uma garrafa de …" }
+      - { pattern: '\bconta\b', hint: "Ask for the bill: A conta, por favor." }
+    model: { es: "Garçom, por favor! Uma garrafa de água, dois copos de suco de manga e um pedaço de bolo de chocolate. Depois, a conta, por favor.", en: "Waiter, please! A bottle of water, two glasses of mango juice and a piece of chocolate cake. And then the bill, please." }

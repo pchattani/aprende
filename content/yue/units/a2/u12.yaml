@@ -276,3 +276,43 @@ dialogues:
       - { q: "志明幾點先瞓？", options: ["十二點", "兩點", "十點"], answer: 1, explain: "煲到兩點先瞓: he didn't go to bed until two." }
       - { q: "嘉欣同Leo行完公園之後去咗邊？", options: ["九龍城食泰國菜", "廟街夜市", "返屋企煲劇"], answer: 0, explain: "行完就去九龍城食泰國菜." }
       - { q: "九龍寨城而家係咩地方？", options: ["一個公園", "一個機場", "一個街市"], answer: 0, explain: "嘉欣 says it has become 一個好靚嘅公園." }
+writing:
+  - task: "Tell a friend about last weekend in order: what you did before and after lunch."
+    min: 30
+    max: 60
+    use: [w.soeng6-go3-zau1-mut6, w.zi1-cin4, w.zi1-hau6, w.jing2-soeng2]
+    useAtLeast: 3
+    grammar: [g.ji-cin-ji-hau]
+    expect:
+      - { pattern: "之前", hint: "Say what happened before: 食飯之前…" }
+      - { pattern: "之後|以後", hint: "Say what happened after: 食完飯之後…" }
+    model: { es: "上個週末我同屋企人去咗九龍寨城公園。食飯之前我哋影咗好多相，食完飯之後就去咗啟德行街。", en: "Last weekend I went to Kowloon Walled City Park with my family. Before lunch we took lots of photos, and after lunch we went shopping in Kai Tak." }
+  - task: "Describe your Sunday evening, linking each step with 就."
+    min: 20
+    max: 45
+    use: [w.bou1-kek6, w.sin1-zi3, w.zau6, w.cung1-loeng4]
+    useAtLeast: 3
+    grammar: [g.zau-then]
+    expect:
+      - { pattern: "就", hint: "Link the events with 就: 返到屋企就沖涼." }
+    model: { es: "我返到屋企就沖涼，食完飯就開始煲劇，一直睇到十二點先至瞓。", en: "As soon as I got home I had a shower. After dinner I started binge-watching a series, and only went to bed at twelve." }
+  - task: "A friend asks what you did on Sunday. Answer that you only slept and watched TV, with 淨係, and say how it felt."
+    es: "你禮拜日做咗乜嘢呀？"
+    min: 20
+    max: 45
+    use: [w.zing6-hai6, w.mun6, w.mat1-dou1, w.mou4-liu4]
+    useAtLeast: 2
+    grammar: [g.zing-hai-only]
+    expect:
+      - { pattern: "淨係|只係", hint: "Say you only did one thing: 我淨係瞓覺." }
+    model: { es: "我乜都冇做，淨係瞓覺同睇電視，成日都喺屋企，好悶呀！", en: "I didn't do anything. I just slept and watched TV, at home all day. So boring!" }
+  - task: "Write about a concert you went to last weekend: how you felt before it, and how you felt after."
+    min: 25
+    max: 55
+    use: [w.hing1-fan5, w.go1-sau2, w.sat1-mong6, w.zing6-hai6]
+    useAtLeast: 3
+    grammar: [g.ji-cin-ji-hau, g.zing-hai-only]
+    expect:
+      - { pattern: "之前|之後", hint: "Say when: 開始之前…, 完咗之後…" }
+      - { pattern: "興奮|失望|開心|緊張|傷心|滿意", hint: "Say how you felt: 興奮, 失望…" }
+    model: { es: "演唱會開始之前我好興奮。個歌手唱得好好，不過淨係唱咗一個鐘，所以之後我有啲失望。", en: "Before the concert started I was really excited. The singer sang very well, but only for an hour, so afterwards I was a bit disappointed." }

@@ -250,3 +250,44 @@ dialogues:
       - { q: "What does the supplier's record say about the order?", options: ["It was cancelled", "It was delivered on Tuesday", "It is still in the warehouse"], answer: 1 }
       - { q: "Why is the customer annoyed?", options: ["Nobody warned him about the delay", "The goods were damaged", "The invoice was too high"], answer: 0 }
       - { q: "What does the supplier promise?", options: ["A full refund", "A discount on the next order", "A new shipment and no charge until it arrives"], answer: 2 }
+writing:
+  - task: "Comment on this viral news story, reacting to what has happened with the perfect subjunctive (me parece increíble que haya …, no creo que hayan …)."
+    es: "Un vídeo viral muestra a un ministro aceptando dinero de una empresa privada."
+    min: 80
+    max: 150
+    use: [w.corrupcion, w.escandalo, w.viral, w.verificar, w.indignacion]
+    useAtLeast: 3
+    grammar: [g.subjunctive-perfect]
+    expect:
+      - { pattern: "\\b(haya|hayan|hayas|hayamos) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the perfect subjunctive: que haya aceptado, que hayan contrastado …" }
+      - { pattern: "me (sorprende|indigna|parece incre[ií]ble|preocupa)|es (indignante|incre[ií]ble|lamentable|l[oó]gico|normal)|no creo que|dudo que", hint: "React: me parece increíble que …, no creo que …, es lógico que …" }
+    model: { es: "Me parece increíble que un ministro haya aceptado dinero de una empresa privada y que nadie lo haya denunciado antes. Sin embargo, antes de indignarnos, es importante verificar la información. No creo que todos los medios hayan contrastado el vídeo, porque se hizo viral en pocas horas. Si es verdad, es lógico que haya tanta indignación en las redes, y espero que el tribunal investigue el caso a fondo. Lo que más me preocupa es que estos escándalos de corrupción ya no sorprendan a nadie. La libertad de prensa es fundamental para que los ciudadanos conozcan la verdad.", en: "I find it incredible that a minister has accepted money from a private company and that nobody has reported it before. However, before getting angry, it's important to verify the information. I don't think all the media have checked the video, because it went viral in a few hours. If it's true, it's logical that there's so much outrage on social media, and I hope the court investigates the case thoroughly. What worries me most is that these corruption scandals no longer surprise anyone. Press freedom is essential so that citizens know the truth." }
+  - task: "After visiting the museum at the Valle de la Luna, write what surprised you about the past, using the pluperfect subjunctive (me sorprendió que hubieran …, no sabía que hubiera …)."
+    min: 80
+    max: 150
+    use: [w.civilizacion, w.indigena, w.legado, w.arqueologo, w.conquista]
+    useAtLeast: 3
+    grammar: [g.subjunctive-pluperfect]
+    expect:
+      - { pattern: "\\b(hubiera|hubieran|hubiese|hubiesen|hubieras|hubi[eé]ramos) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the pluperfect subjunctive: me sorprendió que hubieran vivido …" }
+      - { pattern: "me (sorprendi[oó]|impresion[oó]|encant[oó]|dio pena|pareci[oó])|no sab[ií]a que|no pod[ií]a creer que", hint: "React to the past: me sorprendió que …, no sabía que …" }
+    model: { es: "Ayer visité el museo del Valle de la Luna y aprendí muchísimo. Me sorprendió que los científicos hubieran encontrado allí algunos de los fósiles más antiguos del mundo. No sabía que, millones de años antes, aquel desierto hubiera sido un lugar verde y lleno de vida. También me encantó el legado de los pueblos indígenas de la zona. El guía, que es arqueólogo, nos contó que estas civilizaciones habían vivido aquí mucho antes de la conquista española. Me dio pena que tanta gente no hubiera oído hablar nunca de su historia. Fue una visita apasionante.", en: "Yesterday I visited the Valle de la Luna museum and learned a huge amount. I was surprised that scientists had found some of the oldest fossils in the world there. I didn't know that, millions of years earlier, that desert had been a green place full of life. I also loved learning about the legacy of the region's indigenous peoples. The guide, who is an archaeologist, told us that these civilisations had lived here long before the Spanish conquest. It made me sad that so many people had never heard of their history. It was a fascinating visit." }
+  - task: "Tell the story of how you met someone important in your life, and imagine what would have happened if things had been different (Si no hubiera …, habría …)."
+    min: 80
+    max: 150
+    use: [w.coincidencia, w.azar, w.cruzarse, w.flechazo, w.rumbo]
+    useAtLeast: 3
+    grammar: [g.si-clauses-past]
+    expect:
+      - { pattern: "\\bsi (no )?(me |nos |le |te |la |lo )?(hubiera|hubi[eé]ramos|hubieran|hubieras|hubiese)\\b", hint: "Use si + pluperfect subjunctive: si no hubiera perdido el autobús …" }
+      - { pattern: "\\b(habr[ií]a|habr[ií]amos|habr[ií]an|habr[ií]as|hubiera|hubiese) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Give the result: nunca la habría conocido …" }
+    model: { es: "Conocí a mi pareja por pura coincidencia. Hace cinco años perdí el último autobús a San Juan y tuve que pasar la noche en un pueblo pequeño. En el único bar abierto me crucé con una chica que también esperaba un transporte. Fue un flechazo. Si no hubiera perdido aquel autobús, nunca la habría conocido. Si ella no me hubiera dirigido la palabra, mi vida habría tomado otro rumbo. A veces pienso que el azar decide más cosas que nosotros. Por poco no nos vemos: ¡ella estaba a punto de irse! Hoy llevamos tres años juntos.", en: "I met my partner by pure coincidence. Five years ago I missed the last bus to San Juan and had to spend the night in a small village. In the only bar that was open I ran into a girl who was also waiting for transport. It was love at first sight. If I hadn't missed that bus, I'd never have met her. If she hadn't spoken to me, my life would have taken a different direction. Sometimes I think chance decides more things than we do. We very nearly didn't meet: she was about to leave! We've now been together for three years." }
+  - task: "Write an email to a colleague organising the work on a report: what to do once each step has been done (Cuando hayas terminado …, En cuanto lo haya revisado …)."
+    min: 80
+    max: 150
+    use: [w.borrador, w.revisar, w.version, w.visto-bueno, w.definitivo]
+    useAtLeast: 3
+    grammar: [g.subjunctive-perfect]
+    expect:
+      - { pattern: "\\b(cuando|en cuanto|una vez que|tan pronto como|hasta que|despu[eé]s de que) ([a-záéíóúñ]+ )?(lo |la |los |las |me |le )?(hayas|haya|hayan|hayamos) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use cuando / en cuanto / hasta que + perfect subjunctive: cuando hayas terminado …" }
+    model: { es: "Hola, Daniel: te escribo para organizar la entrega del informe al cliente. Cuando hayas terminado el borrador, envíamelo por correo, por favor. En cuanto lo haya revisado, te mandaré mis comentarios. Una vez que hayas hecho los cambios, prepara la versión definitiva y pásasela a la supervisora. No envíes nada al cliente hasta que ella haya dado el visto bueno. Cuando todo esté aprobado, comunícale la fecha de entrega al transportista. Si tienes alguna duda, llámame. Muchas gracias por tu ayuda. Un saludo, Elena.", en: "Hi, Daniel: I'm writing to organise the delivery of the report to the client. When you've finished the draft, please email it to me. As soon as I've checked it, I'll send you my comments. Once you've made the changes, prepare the final version and pass it to the supervisor. Don't send anything to the client until she has given the go-ahead. When everything's approved, tell the courier the delivery date. If you have any questions, call me. Thanks very much for your help. Best, Elena." }

@@ -4,10 +4,8 @@
  * its first and last letter (also with the keyboard: arrows, then Enter on each end).
  */
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { languagePack } from '@lang'
 import type { VocabEntry, LevelId } from '../../engine/schema'
 import { LEVEL_ORDER_LIST, ui } from '../../engine/loader'
-import { crosswordLetters } from '../../engine/vocabGame'
 import { generateWordSearch, placementCells, snapLine, inLine, findSelection, cellKey, WS_DIRS, type Cell, type WsLevel, type WordSearch as WS } from '../../engine/games/wordSearch'
 import { recordAnswer } from '../../db/progress'
 import { playSound } from '../../engine/sounds'
@@ -19,18 +17,14 @@ import { addMinutes, formatTime, e2eHook } from '../palabras/util'
 import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { useGameWords, recordGame } from './util'
-import { fold, givesAway, courseAlphabet, useGameBest } from './wordGames'
+import { fold, courseAlphabet, useGameBest } from './wordGames'
+import { fitsWordSearch, gridLetters } from './requirements'
 import { GameOver, Loading } from './WordGameOver'
 
 const ID = 'wordsearch'
 const TITLE = 'Word search'
 /** Words asked for: some will not fit or hide inside another. */
 const WANT = 14
-const gridLetters = (v: VocabEntry) => crosswordLetters(v, languagePack.normalize)
-const fits = (v: VocabEntry) => {
-  const l = gridLetters(v)
-  return Boolean(l && !givesAway(v, l))
-}
 
 /** Beginners read left to right and down; later levels add upward diagonals, then backwards words. */
 function levelOf(words: VocabEntry[]): WsLevel {
@@ -48,7 +42,7 @@ const INKS = ['var(--blue)', 'var(--ok)', 'var(--sun)', 'var(--red)', '#c2477a',
 
 export default function WordSearch({ onDone }: GameProps) {
   const [round, setRound] = useState(0)
-  const words = useGameWords(WANT, fits, round)
+  const words = useGameWords(WANT, fitsWordSearch, round)
   const best = useGameBest(ID)
   return (
     <div className="animate-rise pb-6">
@@ -82,7 +76,7 @@ function Puzzle({ words, best, onDone, onAgain }: { words: VocabEntry[]; best?: 
     return (
       <>
         <GameHeader title={TITLE} onBack={onDone} />
-        <TooFew onBack={onDone}>The word search needs a few more words. Learn a couple more lessons and try again.</TooFew>
+        <TooFew onBack={onDone} game={ID}>The word search needs a few more words that fit a grid.</TooFew>
       </>
     )
   return <Board ws={puzzle} level={level} byId={byId} best={best} onDone={onDone} onAgain={onAgain} />

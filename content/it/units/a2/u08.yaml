@@ -271,3 +271,38 @@ dialogues:
       - { q: "Quanto ci vuole per fare un buon vino, secondo Bruno?", options: ["Due mesi", "Due anni o di più", "Dieci anni"], answer: 1, explain: "Ci vogliono due anni, a volte di più." }
       - { q: "Quante bottiglie compra Anna?", options: ["Due", "Sei", "Trenta"], answer: 1, explain: "Ne prendo sei: ne stands for the bottles." }
       - { q: "Che cosa c'è domani?", options: ["La vendemmia", "Una gara di ciclismo", "Il mercato di Greve"], answer: 0, explain: "Domani cominciamo la vendemmia." }
+writing:
+  - task: "Answer a friend's questions about places you go, replacing the place with ci."
+    es: "Vai spesso in biblioteca? Quando vai alla posta? Sei mai stato in Chianti?"
+    min: 30
+    max: 65
+    use: [w.biblioteca, w.posta, w.ci, w.spesso]
+    grammar: [g.ci-place]
+    expect:
+      - { pattern: "\\bci\\s+(vado|vai|va|andiamo|andate|vanno|sono|siamo|torno|torniamo|passo|resto|vengo|abito)\\b", hint: "Replace the place with ci: ci vado, ci sono stato, ci torno…" }
+    model: { es: "In biblioteca ci vado ogni martedì, perché è tranquilla. Alla posta ci vado domani mattina: devo spedire un pacco. In Chianti? Sì, ci sono stato l'anno scorso con mio fratello e ci torno sabato: il vino è ottimo!", en: "I go to the library every Tuesday, because it's quiet. I'm going to the post office tomorrow morning: I have to send a parcel. Chianti? Yes, I went there last year with my brother and I'm going back on Saturday: the wine is excellent!" }
+  - task: "You are buying food for a picnic in a Chianti village shop. Answer the shopkeeper and ask for more things, using ne for quantities."
+    es: "Buongiorno! Quanti panini vuole? E di prosciutto, quanto ne prende?"
+    min: 25
+    max: 60
+    use: [w.ne, w.etto, w.pezzo, w.dozzina, w.panino]
+    grammar: [g.ne-partitive]
+    expect:
+      - { pattern: "\\bne\\s+(vorrei|voglio|prendo|compro|ho|vuole|prende|bastano|basta|servono|serve)\\b", hint: "Use ne for quantities: ne vorrei sei, ne prendo due etti." }
+    model: { es: "Buongiorno! Di panini ne vorrei sei, per favore. Di prosciutto ne prendo due etti. Ha anche del formaggio? Allora ne prendo un pezzo. E le uova? Ne vorrei una dozzina. Quant'è?", en: "Good morning! I'd like six rolls, please. I'll take two hundred grams of ham. Have you got any cheese too? Then I'll take a piece. And eggs? I'd like a dozen. How much is it?" }
+  - task: "Tell a friend about your shopping at a market in Chianti: say how many things you bought, using ne with a past participle that agrees (ne ho comprate tre)."
+    min: 25
+    max: 60
+    use: [w.ne, w.bottiglia, w.un-sacco-di, w.alcuni, w.comprare]
+    grammar: [g.ne-participle-agreement]
+    expect:
+      - { pattern: "\\bne\\s+(ho|abbiamo|hai|ha)\\s+\\S+(at|ut|it|s|tt)[oaie]\\b", hint: "Use ne + agreeing participle: ne ho comprate tre, ne ho presi due." }
+    model: { es: "Oggi al mercato ho comprato un sacco di cose! Vendevano bottiglie di vino buonissimo: ne ho comprate tre. Le pesche sembravano buone e ne ho prese sei. Ho visto anche alcuni formaggi, ma non ne ho comprati.", en: "Today at the market I bought loads of things! They were selling bottles of excellent wine: I bought three. The peaches looked good and I took six. I also saw some cheeses, but I didn't buy any." }
+  - task: "Explain how long things take: getting from Florence to the Chianti hills, training for a race, cooking a dish. Use ci vuole / ci vogliono and metterci."
+    min: 30
+    max: 65
+    use: [w.volerci, w.metterci, w.allenarsi, w.gara, w.ciclismo]
+    grammar: [g.metterci-volerci]
+    expect:
+      - { pattern: "\\bci (vuole|vogliono|è voluto|è voluta|sono voluti|sono volute|volevano|voleva)\\b|\\bci vuole|\\bci (metto|metti|mette|mettiamo|mettete|mettono|ho messo|abbiamo messo|hai messo|ha messo)\\b", hint: "Say how long it takes: ci vuole un'ora, ci metto venti minuti." }
+    model: { es: "Da Firenze al Chianti ci vuole un'ora in macchina, ma in bicicletta io ci metto quasi tre ore! Mi alleno ogni domenica per una gara di ciclismo a ottobre. Per prepararsi bene ci vogliono due o tre mesi.", en: "From Florence to Chianti it takes an hour by car, but by bike it takes me almost three hours! I train every Sunday for a cycling race in October. To get ready properly you need two or three months." }

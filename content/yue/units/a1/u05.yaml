@@ -294,3 +294,44 @@ dialogues:
       - { q: "Mandy買啲海味畀邊個？", options: ["畀Sam", "畀佢阿媽", "畀老闆"], answer: 1, explain: "我想買啲畀我阿媽: for her mum." }
       - { q: "隻貓叫咩名呀？", options: ["肥仔", "Luna", "阿明"], answer: 0, explain: "佢叫肥仔: the cat is called Fatty." }
       - { q: "隻貓日日喺邊度瞓覺？", options: ["喺張床度", "喺張枱度", "喺門口"], answer: 1, explain: "日日都喺張枱度瞓覺: on the table." }
+writing:
+  - task: "Write what is on your desk, with the right measure words: a book, two pens and a cup of tea."
+    min: 10
+    max: 30
+    use: [w.bun2, w.zi1.b, w.bat1, w.syu1-toi2, w.bui1]
+    useAtLeast: 3
+    grammar: [g.classifiers-intro, g.common-classifiers]
+    expect:
+      - { pattern: "本書", hint: "Books take 本: 一本書." }
+      - { pattern: "枝筆", hint: "Pens take 枝: 兩枝筆." }
+    model: { es: "我書枱上面有一本書、兩枝筆同一杯茶。", en: "On my desk there's a book, two pens and a cup of tea." }
+  - task: "You're choosing a souvenir in a shop. Say you want this one, not that one, and ask how much this one is."
+    min: 10
+    max: 30
+    use: [w.ni1-go3, w.go2-go3, w.jiu3, w.gei2-do1]
+    useAtLeast: 3
+    grammar: [g.demonstratives]
+    expect:
+      - { pattern: "呢個", hint: "Point at this one: 呢個." }
+      - { pattern: "嗰個", hint: "Point at that one: 嗰個." }
+    model: { es: "唔該，我要呢個，唔要嗰個。呢個幾多錢呀？", en: "Excuse me, I want this one, not that one. How much is this one?" }
+  - task: "Write about 'my dog' and 'my phone' the Cantonese way, with a measure word (我隻…, 我部…): the dog is cute, the phone is old."
+    min: 8
+    max: 25
+    use: [w.zek3, w.gau2.b, w.dak1-ji3, w.bou6, w.gau6]
+    useAtLeast: 3
+    grammar: [g.classifier-as-the]
+    expect:
+      - { pattern: "我隻", hint: "My dog: 我隻狗 (measure word, not 嘅)." }
+      - { pattern: "我部", hint: "My phone: 我部手機." }
+    model: { es: "我隻狗好得意。我部手機好舊。", en: "My dog is very cute. My phone is very old." }
+  - task: "You're carrying a bag of books for your friend. Text them: the books are very heavy, can they take some?"
+    min: 8
+    max: 25
+    use: [w.di1, w.cung5, w.ho2-m4-ho2-ji5, w.ling1, w.jat1-di1]
+    useAtLeast: 3
+    grammar: [g.di-some]
+    expect:
+      - { pattern: "啲書", hint: "'The books' is 啲書." }
+      - { pattern: "可唔可以|一啲", hint: "Ask them to take some: 你可唔可以拎一啲呀？" }
+    model: { es: "啲書好重呀！你可唔可以拎一啲呀？", en: "The books are really heavy! Can you take some?" }

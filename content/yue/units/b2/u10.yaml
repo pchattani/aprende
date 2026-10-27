@@ -271,3 +271,42 @@ dialogues:
       - { q: "點樣先睇到大佛個樣？", options: ["坐纜車", "行上二百六十八級樓梯", "喺寶蓮寺食齋"], answer: 1, explain: "只有行上二百六十八級樓梯，先睇到佢個樣: only by climbing the steps." }
       - { q: "周生住喺邊度？", options: ["東涌", "大澳", "愉景灣"], answer: 2, explain: "He lives in Discovery Bay (我住愉景灣), where there are no private cars." }
       - { q: "點解周生話佢哋「有緣」？", options: ["佢哋細個識", "梁小姐下個月搬去愉景灣", "佢哋一齊食齋"], answer: 1, explain: "Miss Leung is moving to Discovery Bay next month, where he lives." }
+writing:
+  - task: "Describe your first impression of the Big Buddha, using 好似…咁, 睇起嚟 and 彷彿."
+    min: 60
+    max: 120
+    use: [w.tin1-taan4-daai6-fat6, w.tai2-hei2-lai4, w.zong1-jim4, w.zong3-gun1, w.fong2-fat1]
+    useAtLeast: 3
+    grammar: [g.hou-ci-seem]
+    expect:
+      - { pattern: "好似.{1,10}(咁|噉)|睇起嚟|彷彿", hint: "Say what it seems like: 好似…咁, 睇起嚟…" }
+    model: { es: "天壇大佛好似一座山咁大，睇起嚟好莊嚴，又好神秘。我行咗二百幾級樓梯上去，上面嘅景觀真係好壯觀，彷彿去咗第二個世界。影相嘅時候，大佛好似喺雲入面咁。", en: "The Big Buddha is as big as a mountain; it looks solemn and mysterious. I climbed over two hundred steps to get up there, and the view at the top was spectacular, as if I'd gone to another world. In the photos, the Buddha looked as if it were in the clouds." }
+  - task: "Tell a friend that only by going in person can you feel the peace of Po Lin Monastery (只有…先…)."
+    min: 60
+    max: 120
+    use: [w.can1-san1, w.gam2-sau6, w.zing6-co5, w.nim6-ging1, w.tai2-jim6]
+    useAtLeast: 3
+    grammar: [g.zi-jau-sin-only-if]
+    expect:
+      - { pattern: "只有.{1,15}先|唯有", hint: "State the necessary condition with 只有…先…" }
+    model: { es: "啲相影得幾靚都冇用，只有親身去到寶蓮寺，先可以感受嗰種寧靜。我喺嗰度靜坐咗半個鐘，聽住和尚念經，心情變得好平靜。你一定要去體驗吓。下次我想再去多一次。", en: "However nice the photos are, it doesn't matter: only by going to Po Lin Monastery yourself can you feel that kind of peace. I sat in meditation there for half an hour, listening to the monks chant, and my mood became very calm. You must go and experience it. Next time I want to go again." }
+  - task: "Write how Tung Chung and Tai O have changed over the years, using 變成 and 變得."
+    min: 60
+    max: 120
+    use: [w.bin3-sing4, w.bin3-dak1, w.dung1-cung1, w.daai6-ou3, w.paang4-uk1]
+    useAtLeast: 3
+    grammar: [g.bin-sing-become]
+    expect:
+      - { pattern: "變成", hint: "Say what it became with 變成 + noun." }
+      - { pattern: "變得", hint: "Say how it changed with 變得 + adjective." }
+    model: { es: "以前東涌只係一個細細嘅漁村，而家已經變成一個新市鎮，有好多高樓同商場。大澳都變得越嚟越多遊客，不過啲棚屋仲喺度，有啲老人家仲係好簡單噉生活。", en: "Tung Chung used to be just a small fishing village; now it's become a new town with lots of high-rises and malls. Tai O has also become busier and busier with tourists, but the stilt houses are still there, and some old people still live very simply." }
+  - task: "Write a day-trip itinerary around Lantau for a visiting friend, saying what's only possible from the cable car."
+    min: 60
+    max: 130
+    use: [w.jat1-jat6-jau4, w.hang4-cing4, w.ngong4-ping4, w.bou2-lin4-zi6, w.baak6-hoi2-tyun4]
+    useAtLeast: 3
+    grammar: [g.zi-jau-sin-only-if]
+    expect:
+      - { pattern: "朝早|上晝|中午|下晝|夜晚|晚黑", hint: "Give the times of day: 朝早…, 中午…" }
+      - { pattern: "只有.{1,15}先|唯有", hint: "Add a 只有…先… sentence." }
+    model: { es: "一日遊行程：朝早九點喺東涌坐纜車上昂坪，只有坐纜車先睇到最靚嘅全景。之後參觀大佛同寶蓮寺，中午喺寺廟食齋。下晝坐巴士去大澳睇棚屋，再坐船睇白海豚。", en: "Day-trip itinerary: at nine in the morning take the cable car from Tung Chung up to Ngong Ping; only from the cable car can you see the best panorama. Then visit the Big Buddha and Po Lin Monastery, and have a vegetarian lunch at the monastery. In the afternoon take the bus to Tai O to see the stilt houses, then take a boat to see the white dolphins." }

@@ -281,3 +281,43 @@ dialogues:
       - { q: "Como estava o tempo?", options: ["Fazia sol", "Estava nublado", "Estava chovendo"], answer: 1, explain: "Marcelo thought it was sunny, but Larissa says: estava nublado." }
       - { q: "O que o cachorro levou?", options: ["A carteira", "O boné", "O celular"], answer: 1, explain: "O cachorro pegou o meu boné e fugiu." }
       - { q: "O que a dona do cachorro fez no final?", options: ["Deu um sorvete para a Larissa", "Chamou a polícia", "Fugiu com o cachorro"], answer: 0, explain: "No final, me deu um sorvete." }
+writing:
+  - task: "Tell a short story about a Sunday in Ibirapuera Park when something unexpected happened. Use the imperfect for the background and the preterite for the events."
+    min: 30
+    max: 70
+    use: [w.perder, w.achar, w.procurar, w.susto, w.carteira]
+    useAtLeast: 3
+    grammar: [g.preterite-vs-imperfect]
+    expect:
+      - { pattern: '\b(era|estava|fazia|tinha|havia)\b', hint: "Set the scene in the imperfect: Era domingo, fazia sol…" }
+      - { pattern: '\b(perdi|achei|procurei|encontrei|vi|caiu|aconteceu|percebi|descobri|achou|perdeu)\b', hint: "Tell what happened in the preterite: perdi, achei, percebi…" }
+    model: { es: "Era domingo e fazia sol no Ibirapuera. Eu corria perto do lago quando percebi que não estava com a carteira. Procurei em todo lugar. Que susto! Depois de meia hora, um menino achou a carteira na grama e me deu.", en: "It was Sunday and it was sunny in Ibirapuera. I was running near the lake when I realised I didn't have my wallet. I looked everywhere. What a fright! After half an hour, a boy found the wallet on the grass and gave it to me." }
+  - task: "Write a short story that starts with Era uma vez… or Um dia…, and use primeiro, depois, de repente and no final."
+    min: 30
+    max: 70
+    use: [w.primeiro.adv, w.de-repente, w.no-final, w.aventura, w.um-dia]
+    useAtLeast: 3
+    grammar: [g.narration-connectors]
+    expect:
+      - { pattern: '(era uma vez|um dia)', hint: "Start the story: Era uma vez… / Um dia…" }
+      - { pattern: '(primeiro|depois|de repente|no final|finalmente|logo depois)', hint: "Use connectors: primeiro, depois, de repente, no final…" }
+    model: { es: "Um dia, eu e o meu irmão decidimos fazer uma aventura no parque. Primeiro, a gente alugou bicicletas. Depois, andamos até o lago. De repente, começou a chover muito! No final, voltamos para casa molhados, mas felizes.", en: "One day my brother and I decided to have an adventure in the park. First we hired bikes. Then we rode to the lake. Suddenly it started to pour! In the end we went home soaked, but happy." }
+  - task: "Write a statement for the police: what you were doing when a thief stole your bag, and what happened next (Enquanto eu…, quando…)."
+    min: 30
+    max: 70
+    use: [w.enquanto, w.ladrão, w.roubar, w.fugir, w.gritar]
+    useAtLeast: 3
+    grammar: [g.quando-enquanto, g.preterite-vs-imperfect]
+    expect:
+      - { pattern: '\benquanto\b', hint: "Use enquanto for the background: Enquanto eu esperava…" }
+      - { pattern: '\bquando\b', hint: "Use quando for the event that interrupts: …quando um homem…" }
+    model: { es: "Enquanto eu esperava o ônibus no ponto, um homem chegou perto de mim. Eu estava olhando o celular quando ele roubou a minha bolsa e fugiu para o parque. Eu gritei: Socorro! Ladrão! Depois, fui à delegacia.", en: "While I was waiting for the bus at the stop, a man came up to me. I was looking at my phone when he stole my bag and ran off into the park. I shouted: Help! Thief! Then I went to the police station." }
+  - task: "Describe a scary night: what you and the others were doing when you heard a noise, and what happened next (estava dormindo, estava lendo…)."
+    min: 30
+    max: 70
+    use: [w.barulho, w.escuro, w.luz, w.acender, w.silêncio]
+    useAtLeast: 3
+    grammar: [g.estar-gerund-past]
+    expect:
+      - { pattern: '\b(estava|est[aá]vamos|estavam) [a-zà-ú]+(ando|endo|indo)\b', hint: "Use estava + gerund: Eu estava dormindo quando…" }
+    model: { es: "Eu estava dormindo quando ouvi um barulho na cozinha. A casa estava escura e em silêncio. O meu marido estava lendo no quarto. Eu acendi a luz e fui ver. Era o gato, que estava comendo o meu bolo!", en: "I was sleeping when I heard a noise in the kitchen. The house was dark and silent. My husband was reading in the bedroom. I switched on the light and went to look. It was the cat, which was eating my cake!" }

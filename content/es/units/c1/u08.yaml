@@ -250,3 +250,43 @@ dialogues:
       - { q: "Según Inés, ¿qué pasaría si el verso de Bécquer se pusiera en el orden normal de la prosa?", options: ["Se entendería peor", "Se perdería toda la música", "Sonaría más triste"], answer: 1 }
       - { q: "¿Cómo describe Inés al narrador del cuento de Quiroga?", options: ["Un narrador testigo que no lo sabe todo", "Un narrador omnisciente y frío como un médico", "Una narradora en primera persona"], answer: 1 }
       - { q: "¿Qué condición pone Tomás para leer a Darío el mes que viene?", options: ["Que lean también a Galdós", "Que terminen con Quevedo", "Que Inés elija el cuento"], answer: 1, explain: "«Acepto, con una condición: que acabemos con Quevedo»." }
+writing:
+  - task: "Write a short commentary on a poem you love, or on Bécquer's 'Volverán las oscuras golondrinas': its theme, its images and metaphors, and the feeling it creates."
+    min: 110
+    max: 190
+    use: [w.metafora, w.poeta, w.melancolia, w.simbolo, w.golondrina]
+    useAtLeast: 3
+    grammar: [g.literary-language]
+    expect:
+      - { pattern: "met[aá]fora|s[ií]mil|personificaci[oó]n|imagen|im[aá]genes|s[ií]mbolo|rima|verso|estrofa", hint: "Name literary devices: metáfora, imagen, símbolo …" }
+      - { pattern: "\\b(el poeta|la poeta|el autor|la autora|el yo po[eé]tico)\\b", hint: "Refer to the poet: el poeta …, el autor …" }
+    model: { es: "En «Volverán las oscuras golondrinas», Gustavo Adolfo Bécquer habla del amor perdido con una melancolía muy típica del romanticismo. El poeta empieza con una imagen de la naturaleza: las golondrinas que vuelven cada primavera a colgar sus nidos en el balcón. Sin embargo, enseguida aclara que no volverán las que fueron testigos de su felicidad. Esos pájaros son, por tanto, un símbolo del tiempo que pasa y de los momentos que nunca se repiten. La metáfora final es muy poderosa: nadie la amará como él la amó. A mí este poema me emociona porque convierte una escena sencilla en una idea que todos entendemos: lo que hemos perdido no vuelve nunca de la misma manera.", en: "In 'Volverán las oscuras golondrinas', Gustavo Adolfo Bécquer writes about lost love with a melancholy very typical of Romanticism. The poet begins with an image from nature: the swallows that return every spring to hang their nests on the balcony. However, he immediately makes clear that the ones that witnessed his happiness won't return. Those birds are therefore a symbol of time passing and of moments that are never repeated. The final metaphor is very powerful: nobody will love her as he loved her. This poem moves me because it turns a simple scene into an idea we all understand: what we have lost never comes back in the same way." }
+  - task: "Write the opening paragraph of a short story set in a Welsh village in Patagonia, in a literary style: descriptive imperfect for the setting, then a sudden event in the preterite."
+    min: 110
+    max: 190
+    use: [w.aldea, w.niebla, w.sendero, w.caminante, w.escalofrio]
+    useAtLeast: 3
+    grammar: [g.narrative-tenses-literary]
+    expect:
+      - { pattern: "\\b[a-zñ]+(aba|aban|ía|ían)(?![a-záéíóúñ])", hint: "Describe the setting with the imperfect: la niebla cubría …, los perros dormían …" }
+      - { pattern: "\\b[a-zñ]{3,}(ó|ieron|aron)(?![a-záéíóúñ])", hint: "Mark the sudden event with the preterite: de pronto apareció …" }
+    model: { es: "La aldea dormía la siesta bajo un cielo gris. Desde el río subía una niebla que cubría las casas de piedra y la pequeña iglesia, donde nadie entraba desde la muerte del viejo pastor. Las mujeres leían junto a la ventana, los perros dormían al sol débil del otoño y, en la llanura, el viento movía los árboles con un sonido triste. Nadie esperaba visitas en aquella época del año. Por eso, cuando un caminante desconocido apareció en el sendero, con una maleta vieja y un sombrero negro, un escalofrío recorrió a todo el pueblo. Los niños dejaron de jugar. Las mujeres cerraron las ventanas. Y el caminante, sin decir una palabra, se detuvo frente a la iglesia.", en: "The village was having its siesta under a grey sky. A mist rose from the river, covering the stone houses and the little chapel, which nobody had entered since the old minister died. The women read by the window, the dogs slept in the weak autumn sun and, out on the plain, the wind moved the trees with a sad sound. Nobody expected visitors at that time of year. So when an unknown traveller appeared on the path, with an old suitcase and a black hat, a shiver ran through the whole village. The children stopped playing. The women closed the windows. And the traveller, without saying a word, stopped in front of the chapel." }
+  - task: "Write a short passage in a deliberately old-fashioned literary style, using the pretérito anterior (apenas hubo amanecido, no bien hubieron cruzado …)."
+    min: 110
+    max: 190
+    use: [w.no-bien, w.hallar, w.posada, w.hidalgo, w.partir]
+    useAtLeast: 3
+    grammar: [g.preterite-anterior]
+    expect:
+      - { pattern: "\\b(hube|hubo|hubimos|hubieron) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the pretérito anterior: apenas hubo amanecido, no bien hubieron cruzado …" }
+    model: { es: "Apenas hubo amanecido, el hidalgo se puso en marcha con su fiel criado. No bien hubieron cruzado el arroyo, hallaron a un mendigo sentado junto al camino, que les pidió limosna con voz débil. El caballero, que era pobre pero generoso, le dio la última moneda que le quedaba. Cuando hubo partido el mendigo, el criado se quejó con tristeza de la locura de su señor, que siempre daba lo que no tenía. Al caer la tarde llegaron a una posada pobre y sucia, donde un viejo cura les ofreció pan y vino. Y así que hubieron cenado, el hidalgo se retiró a descansar, soñando con aventuras que nunca habrían de llegar.", en: "As soon as day had broken, the nobleman set off with his faithful servant. No sooner had they crossed the stream than they found a beggar sitting by the road, who asked them for alms in a weak voice. The knight, who was poor but generous, gave him the last coin he had left. When the beggar had gone, the servant complained sadly about his master's madness, for he always gave away what he did not have. At nightfall they reached a poor, dirty inn, where an old priest offered them bread and wine. And as soon as they had dined, the nobleman withdrew to rest, dreaming of adventures that were never to come." }
+  - task: "Write a short review of a classic of Spanish or Latin American literature you have read (or would like to read): its literary movement and why it is a masterpiece."
+    min: 110
+    max: 190
+    use: [w.obra-maestra, w.clasico, w.realismo, w.modernismo, w.literatura]
+    useAtLeast: 3
+    grammar: [g.literary-language]
+    expect:
+      - { pattern: "obra maestra|cl[aá]sico", hint: "Say why it's a classic: es una obra maestra, ya es un clásico …" }
+      - { pattern: "romanticismo|realismo|modernismo|siglo de oro|vanguardia", hint: "Place it in a movement: realismo, modernismo …" }
+    model: { es: "«Cien años de soledad», de Gabriel García Márquez, es sin duda una obra maestra de la literatura latinoamericana. Aunque se publicó en 1967, ya es un clásico que se lee en todo el mundo. La novela cuenta la historia de la familia Buendía en el pueblo de Macondo, a lo largo de siete generaciones. A diferencia del realismo del siglo diecinueve, García Márquez mezcla lo normal con lo increíble: una mujer sube al cielo mientras recoge la ropa, y nadie se sorprende. Su estilo, lleno de imágenes y de humor, recuerda a veces la riqueza del modernismo. Lo que más me gusta es cómo convierte la historia de una familia en un símbolo de toda América Latina.", en: "'One Hundred Years of Solitude', by Gabriel García Márquez, is without doubt a masterpiece of Latin American literature. Although it was published in 1967, it is already a classic read all over the world. The novel tells the story of the Buendía family in the village of Macondo, over seven generations. Unlike nineteenth-century realism, García Márquez mixes the ordinary with the incredible: a woman rises to heaven while taking in the washing, and nobody is surprised. His style, full of images and humour, sometimes recalls the richness of modernismo. What I like most is how he turns the story of one family into a symbol of all of Latin America." }

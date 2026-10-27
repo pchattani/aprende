@@ -274,3 +274,38 @@ dialogues:
       - { q: "Da dove viene Lidia?", options: ["Da Napoli.", "Da Milano.", "Da Capri."], answer: 1, explain: "Siamo venuti apposta da Milano." }
       - { q: "Che cosa propone Salvatore?", options: ["Un giro dell'isola in barca.", "Una visita a Villa Jovis.", "Un biglietto gratis per domani."], answer: 0, explain: "Il giro dell'isola in barca: si vedono i Faraglioni da vicino." }
       - { q: "Che cosa deve fare Lidia per entrare nella grotta domani?", options: ["Prenotare online.", "Arrivare presto, alle nove.", "Pagare il doppio."], answer: 1, explain: "Torni qui alle nove: chiunque arrivi prima entra per primo." }
+writing:
+  - task: "Is it worth visiting Capri in August? Write a balanced opinion that concedes points, using benché, nonostante, anche se, malgrado, tutto sommato."
+    min: 80
+    max: 140
+    use: [w.nonostante, w.malgrado, w.eccessivo, w.tutto-sommato, w.innegabile]
+    grammar: [g.concessive-clauses]
+    expect:
+      - { pattern: "\\b(benché|benche|sebbene|nonostante|malgrado|per quanto|anche se)", hint: "Concede a point: benché, nonostante, anche se…" }
+      - { pattern: "\\b(sia|siano|abbia|abbiano|faccia|ci sia|ci siano|\\S+(ino|ano))\\b", hint: "After benché / nonostante use the congiuntivo: sia, siano…" }
+    model: { es: "Visitare Capri ad agosto? Benché l'isola sia bellissima, d'estate il turismo è eccessivo: i traghetti sono pieni e per la Grotta Azzurra si fa la fila per ore. Nonostante i prezzi siano molto alti, ogni giorno arrivano tante persone. È innegabile che l'impatto ambientale sia forte. Anche se capisco chi ha le ferie solo ad agosto, consiglierei di andarci a maggio o a ottobre. Malgrado tutto, però, Capri resta un posto unico: tutto sommato, vale la pena vederla almeno una volta, magari dormendo sull'isola per godersi la sera, quando i turisti se ne vanno.", en: "Visiting Capri in August? Although the island is beautiful, in summer tourism is excessive: the ferries are full and you queue for hours for the Blue Grotto. Although prices are very high, huge numbers of people arrive every day. It's undeniable that the environmental impact is strong. Even if I understand people who only have holidays in August, I'd recommend going in May or October. Despite everything, though, Capri remains a unique place: all things considered, it's worth seeing at least once, perhaps sleeping on the island to enjoy the evening, when the tourists leave." }
+  - task: "Write about an emigrant from the South (a grandparent, a famous person or an imaginary one): what he or she achieved despite the difficulties, using pur + gerund (pur essendo…, pur non parlando…)."
+    min: 80
+    max: 140
+    use: [w.emigrare, w.sacrificio, w.difficoltà, w.determinazione, w.orgoglioso-di]
+    grammar: [g.pur-gerundio, g.concessive-clauses]
+    expect:
+      - { pattern: "\\bpur\\s+(non\\s+)?\\S+(ando|endo)\\b", hint: "Use pur + gerund: pur essendo povero, pur non parlando inglese…" }
+    model: { es: "Mio nonno Antonio è nato in un piccolo paese della Calabria nel 1935. Pur essendo molto bravo a scuola, a quattordici anni ha dovuto lasciare gli studi per lavorare nei campi. Nel 1956 è emigrato in Inghilterra, dove ha fatto molti sacrifici. Pur non parlando inglese, ha trovato lavoro in una fabbrica e, con grande determinazione, ha imparato la lingua da solo. Pur vivendo lontano, non ha mai dimenticato le sue origini: ogni estate tornava al paese. Nonostante le difficoltà, ha costruito una bella vita per i suoi figli. Sono molto orgoglioso di lui.", en: "My grandfather Antonio was born in a small village in Calabria in 1935. Although he was very good at school, at fourteen he had to leave his studies to work in the fields. In 1956 he emigrated to England, where he made many sacrifices. Although he didn't speak English, he found work in a factory and, with great determination, learned the language on his own. Despite living far away, he never forgot his roots: every summer he went back to the village. Despite the difficulties, he built a good life for his children. I'm very proud of him." }
+  - task: "Write an encouraging message to a friend before an important exam or decision, using chiunque, qualunque, dovunque and comunque + congiuntivo."
+    min: 80
+    max: 140
+    use: [w.qualunque-cosa, w.dovunque, w.comunque-vada, w.arrendersi, w.in-ogni-caso]
+    grammar: [g.chiunque-qualunque]
+    expect:
+      - { pattern: "\\b(chiunque|qualunque|qualsiasi|dovunque|ovunque|comunque)\\s+\\S+", hint: "Use chiunque, qualunque, dovunque, comunque + congiuntivo: qualunque cosa succeda…" }
+    model: { es: "Cara Sofia, so che domani hai l'esame più importante dell'anno e che sei nervosa. Ascoltami: qualunque cosa succeda, sono orgogliosa di te. Chiunque ti faccia le domande, rispondi con calma: hai studiato tanto. Comunque vada, non sarà la fine del mondo. E se le cose non vanno come speri, non arrenderti: ci saranno altre occasioni. Dovunque tu decida di andare dopo la laurea, io ci sarò. In ogni caso, domani sera ti porto a mangiare una pizza per festeggiare, qualunque sia il risultato!", en: "Dear Sofia, I know that tomorrow you have the most important exam of the year and that you're nervous. Listen to me: whatever happens, I'm proud of you. Whoever asks you the questions, answer calmly: you've studied so much. However it goes, it won't be the end of the world. And if things don't go as you hope, don't give up: there'll be other chances. Wherever you decide to go after your degree, I'll be there. In any case, tomorrow evening I'm taking you out for a pizza to celebrate, whatever the result!" }
+  - task: "Write a short magazine article about a southern village that came back to life despite depopulation: what happened, who made it possible, what we can learn."
+    min: 80
+    max: 140
+    use: [w.spopolamento, w.rinascita, w.abbandonare, w.ispirare, w.nonostante]
+    grammar: [g.concessive-clauses, g.chiunque-qualunque]
+    expect:
+      - { pattern: "\\b(benché|benche|sebbene|nonostante|malgrado|per quanto|anche se|eppure|pur)\\b", hint: "Concede: nonostante le difficoltà, benché nessuno ci credesse…" }
+      - { pattern: "\\b(rinascit|rinat|rinasc|rivivere|torna(to|ti) a vivere)\\w*", hint: "Say how the place came back to life: una rinascita, è rinato…" }
+    model: { es: "Negli anni Sessanta molti paesi del Sud furono abbandonati: i giovani emigravano al Nord o all'estero e lo spopolamento sembrava inevitabile. Eppure oggi alcuni borghi stanno vivendo una vera rinascita. Nonostante le difficoltà economiche, un gruppo di giovani è tornato a vivere in un piccolo paese della Basilicata. Hanno ristrutturato le vecchie case e le hanno trasformate in camere per turisti. Benché all'inizio nessuno credesse nel progetto, oggi il paese accoglie visitatori da tutto il mondo. Questa storia ispira molti altri comuni: chiunque abbia coraggio e idee può cambiare le cose.", en: "In the 1960s many villages in the South were abandoned: young people emigrated to the North or abroad and depopulation seemed inevitable. Yet today some villages are experiencing a real rebirth. Despite economic difficulties, a group of young people has come back to live in a small village in Basilicata. They restored the old houses and turned them into rooms for tourists. Although at first nobody believed in the project, today the village welcomes visitors from all over the world. This story inspires many other towns: anyone with courage and ideas can change things." }

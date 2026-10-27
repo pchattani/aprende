@@ -281,3 +281,41 @@ dialogues:
       - { q: "Pourquoi faut-il mettre des bottes ?", options: ["Parce qu'il fait froid", "Parce que les taureaux sont dangereux", "Parce qu'ils vont traverser les marais"], answer: 2, explain: "They will cross the marshes, where there is water everywhere." }
       - { q: "Qu'est-ce que le gardian leur a demandé ?", options: ["De ne pas s'approcher des taureaux", "D'arriver à l'heure", "De ne pas prendre de photos"], answer: 0, explain: "Il nous a demandé de ne jamais nous approcher d'eux." }
       - { q: "Qu'est-ce qu'Inès a laissé à l'hôtel ?", options: ["Ses bottes", "Sa crème contre les moustiques", "Son appareil photo"], answer: 1, explain: "J'ai laissé ma crème contre les moustiques à l'hôtel." }
+writing:
+  - task: "A gardian (cowboy) in the Camargue has told you about his work. Report to a friend what he says (Il dit que…, il explique que…, il précise que…)."
+    min: 50
+    max: 100
+    use: [w.taureau, w.troupeau, w.liberté, w.préciser, w.marais]
+    useAtLeast: 3
+    grammar: [g.discours-indirect]
+    expect:
+      - { pattern: "\\b(dit|dis|disent|explique|expliquent|pr[eé]cise|ajoute|indique|affirme|r[eé]pond|raconte|pense)\\b[^.!?]{0,15}\\bqu(e\\s|['’])", hint: "Report his words: Il dit que…, il explique que…" }
+    model: { es: "Aujourd'hui, j'ai rencontré un gardian en Camargue. Il dit que les chevaux de Camargue naissent noirs ou bruns et qu'ils deviennent blancs plus tard. Il explique que les taureaux vivent en liberté dans les marais. Il précise aussi qu'il ne faut jamais entrer dans un troupeau à pied. Et il ajoute que la Camargue est le plus beau delta d'Europe !", en: "Today I met a gardian in the Camargue. He says that Camargue horses are born black or brown and turn white later. He explains that the bulls live free in the marshes. He also points out that you must never go into a herd on foot. And he adds that the Camargue is the most beautiful delta in Europe!" }
+  - task: "Yesterday a friend phoned you with news from the Camargue. Report what he or she said, changing the tenses (Elle m'a dit qu'elle était…, qu'elle viendrait…)."
+    min: 50
+    max: 100
+    use: [w.flamant-rose, w.moustique, w.annoncer, w.prévenir, w.le-lendemain]
+    useAtLeast: 3
+    grammar: [g.discours-indirect-past]
+    expect:
+      - { pattern: "\\b(a|m['’]a|t['’]a|ont|m['’]ont|avait) (dit|expliqu|racont|annonc|r[eé]pondu|pr[eé]venu|affirm|[eé]crit|pr[eé]cis)", hint: "Introduce reported speech in the past: elle m'a dit que…, elle m'a annoncé que…" }
+      - { pattern: "\\bqu(e\\s|['’])\\s?(il|elle|ils|elles|on|je|j['’]|tu|nous|vous)\\s?[a-zàâçéèêëîïôûùœ]+(ais|ait|ions|iez|aient)\\b", hint: "Shift the tenses: qu'elle était…, qu'elle viendrait…" }
+    model: { es: "Hier soir, Léa m'a téléphoné. Elle m'a dit qu'elle était en Camargue avec sa famille et qu'elle avait vu des milliers de flamants roses. Elle m'a raconté que les moustiques piquaient beaucoup ! Elle m'a annoncé qu'elle viendrait à Marseille le lendemain et qu'elle voulait me voir. Elle m'a prévenu qu'elle arriverait vers midi.", en: "Last night Léa phoned me. She told me she was in the Camargue with her family and that she had seen thousands of pink flamingos. She said the mosquitoes were biting a lot! She announced she would come to Marseille the next day and that she wanted to see me. She warned me she would arrive around noon." }
+  - task: "You interviewed a gardian for your school newspaper. Report the questions you asked him (je lui ai demandé si…, où…, ce que…, pourquoi…)."
+    min: 50
+    max: 100
+    use: [w.interview, w.interroger, w.se-demander, w.monter-à-cheval, w.métier]
+    useAtLeast: 3
+    grammar: [g.indirect-questions]
+    expect:
+      - { pattern: "\\b(demand[eé]|demande|demandais|demandait|savoir|interrog[eé])[^.!?]{0,12}\\b(si|s['’]il|s['’]ils|o[uù]|quand|comment|pourquoi|combien|ce qu)", hint: "Report questions: je lui ai demandé s'il…, où…, ce qu'il…" }
+    model: { es: "Pour le journal de l'école, j'ai fait une interview avec un gardian. D'abord, je lui ai demandé depuis combien de temps il faisait ce métier. Ensuite, je l'ai interrogé sur sa vie : je voulais savoir s'il aimait vivre en Camargue et ce qu'il faisait en hiver. Je me demandais aussi où il avait appris à monter à cheval. Enfin, je lui ai demandé pourquoi les chevaux étaient blancs.", en: "For the school newspaper I did an interview with a gardian. First I asked him how long he had been doing this job. Then I questioned him about his life: I wanted to know if he liked living in the Camargue and what he did in winter. I also wondered where he had learnt to ride. Finally I asked him why the horses were white." }
+  - task: "Village gossip at the pétanque contest: report what different people said, using reporting verbs other than dire (affirmer, avouer, murmurer, prétendre, nier)."
+    min: 50
+    max: 100
+    use: [w.affirmer, w.avouer, w.murmurer, w.prétendre, w.nier]
+    useAtLeast: 3
+    grammar: [g.reporting-verbs, g.discours-indirect-past]
+    expect:
+      - { pattern: "\\b(avou|pr[eé]tend|murmur|ni[eé]|affirm|d[eé]clar|cri[eé]|annonc|confi|r[eé]p[eé]t|jur)[a-zàâçéèêëîïôûùœ]*[^.!?]{0,12}\\bqu(e\\s|['’])", hint: "Use a reporting verb + que: il a avoué que…, elle a murmuré que…" }
+    model: { es: "Hier, au concours de pétanque, il y avait beaucoup de rumeurs ! Le boulanger a affirmé qu'il avait gagné trois fois l'année dernière. Sa femme a murmuré que c'était un mensonge. Puis Marcel a avoué qu'il avait perdu exprès pour faire plaisir à son patron. Le maire a prétendu qu'il ne savait rien, mais il a nié trop vite. Moi, je n'ai rien dit !", en: "Yesterday at the pétanque contest there were lots of rumours! The baker claimed he had won three times last year. His wife murmured that it was a lie. Then Marcel admitted he had lost on purpose to please his boss. The mayor claimed he knew nothing, but he denied it too quickly. As for me, I said nothing!" }

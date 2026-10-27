@@ -5,10 +5,8 @@
  * two or more characters; the Jyutping shows once the word is solved.
  */
 import { useEffect, useRef, useState } from 'react'
-import { languagePack } from '@lang'
 import type { VocabEntry } from '../../engine/schema'
 import { vocab } from '../../engine/loader'
-import { crosswordLetters } from '../../engine/vocabGame'
 import { Rng } from '../../engine/random'
 import {
   newScramble,
@@ -28,7 +26,6 @@ import {
   scramblePoints,
   scrambleMultiplier,
   scrambleVerdict,
-  scrambleOrder,
   SCRAMBLE_SECONDS,
   HINT_COST,
   type ScrambleState,
@@ -45,21 +42,14 @@ import { addMinutes, e2eHook } from '../palabras/util'
 import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { useGameWords, recordGame } from './util'
-import { JYUTPING, fold, givesAway, useGameBest } from './wordGames'
+import { JYUTPING, fold, useGameBest } from './wordGames'
+import { fitsScramble, scrambleTiles as tilesOf } from './requirements'
 import { GameOver, Loading } from './WordGameOver'
 
 const ID = 'scramble'
 const TITLE = 'Scramble'
 const HAN = /^\p{Script=Han}$/u
 
-/** The tiles: the characters of a Cantonese word (two to six), or the letters of a word (accents kept). */
-function tilesOf(v: VocabEntry): string[] | undefined {
-  if (JYUTPING) {
-    const chars = [...v.lemma]
-    return chars.length >= 2 && chars.length <= 6 && chars.every((ch) => HAN.test(ch)) ? chars : undefined
-  }
-  return crosswordLetters(v, languagePack.normalize)
-}
 let byLemma: Map<string, VocabEntry[]> | undefined
 /** True when `word` is another word of the course with one of v's meanings (a synonym the tiles must not spell). */
 function meansTheSame(v: VocabEntry, word: string): boolean {
@@ -73,7 +63,7 @@ function meansTheSame(v: VocabEntry, word: string): boolean {
 
 /**
  * A fresh board for `v`. Short Cantonese words get decoy characters from the learner's other
- * words in this round (2 for two characters, 1 for three), so they are not a simple swap.
+ * finished words in this round (2 for two characters, 1 for three), so they are not a simple swap.
  */
 function boardFor(v: VocabEntry, words: VocabEntry[], rng: Rng): ScrambleState {
   const tiles = tilesOf(v)!
@@ -82,15 +72,9 @@ function boardFor(v: VocabEntry, words: VocabEntry[], rng: Rng): ScrambleState {
   return newScramble(tiles, rng, n ? pickDecoys(tiles, pool, n, rng, (word) => meansTheSame(v, word)) : [])!
 }
 
-const fits = (v: VocabEntry) => {
-  const t = tilesOf(v)
-  // a word whose tiles are all the same (拜拜) cannot be scrambled
-  return Boolean(t && !givesAway(v, t) && scrambleOrder(t, new Rng(1)))
-}
-
 export default function Scramble({ onDone }: GameProps) {
   const [round, setRound] = useState(0)
-  const words = useGameWords(30, fits, round)
+  const words = useGameWords(30, fitsScramble, round)
   const best = useGameBest(ID)
   return (
     <div className="animate-rise pb-6">
@@ -102,7 +86,7 @@ export default function Scramble({ onDone }: GameProps) {
       ) : words.length < 4 ? (
         <>
           <GameHeader title={TITLE} onBack={onDone} />
-          <TooFew onBack={onDone} />
+          <TooFew onBack={onDone} game={ID} />
         </>
       ) : (
         <Round key={round} words={words} best={best?.score} onDone={onDone} onAgain={() => setRound((r) => r + 1)} />

@@ -275,3 +275,46 @@ dialogues:
       - { q: "Diego est de quelle ville ?", options: ["Madrid", "Séville", "Londres"], answer: 1, explain: "« Je ne suis pas de Madrid, je suis de Séville. »" }
       - { q: "Qu'est-ce qu'Emma demande à Diego ?", options: ["une photo", "un café", "la gare"], answer: 0, explain: "She asks him to take a photo of her with the Eiffel Tower." }
       - { q: "Est-ce qu'Emma habite à Paris ?", options: ["Oui, elle habite à Paris.", "Non, elle est étudiante ici pour trois mois.", "Non, elle habite à Madrid."], answer: 1, explain: "« Non, je suis étudiante ici pour trois mois. »" }
+writing:
+  - task: "A tourist at the Eiffel Tower asks where you are from. Answer: your city, your nationality and the languages you speak."
+    es: "Bonjour ! Vous êtes d'où ? Vous êtes anglais ?"
+    min: 12
+    max: 40
+    use: [w.ville, w.parler, w.anglais, w.français, w.langue]
+    useAtLeast: 3
+    grammar: [g.adjective-agreement, g.etre-present]
+    expect:
+      - { pattern: "\\b(je suis|nous sommes|je viens) d(e |['’]|u )", hint: "Say where you are from: Je suis de …" }
+      - { pattern: "\\b(fran[cç]ais|anglais|am[eé]ricain|canadien|allemand|espagnol|italien|belge|suisse|japonais|chinois|portugais|mexicain|marocain|br[eé]silien|australien|irlandais|indien|cor[eé]en|[eé]cossais)(e|ne)?\\b", hint: "Give your nationality: Je suis anglais(e), canadien(ne)…" }
+    model: { es: "Bonjour ! Je suis de Manchester, une ville anglaise. Je suis anglaise. Je parle anglais et un peu français. Et vous, vous êtes d'où ?", en: "Hello! I'm from Manchester, an English city. I'm English. I speak English and a little French. And you, where are you from?" }
+  - task: "Describe two people in your photo at the Eiffel Tower, a man and a woman: their nationality and two adjectives each (careful with agreement)."
+    min: 15
+    max: 40
+    use: [w.photo, w.grand, w.petit, w.sportif, w.content]
+    useAtLeast: 3
+    grammar: [g.adjective-agreement, g.gender-nouns]
+    expect:
+      - { pattern: "\\bil est\\b", hint: "Describe the man: Il est …" }
+      - { pattern: "\\belle est\\b", hint: "Describe the woman: Elle est … (feminine adjectives often add -e)." }
+    model: { es: "Sur la photo, voici Karim et Ana. Karim est marocain. Il est grand et sportif. Ana est brésilienne. Elle est petite et très contente.", en: "In the photo, here are Karim and Ana. Karim is Moroccan. He's tall and sporty. Ana is Brazilian. She's short and very happy." }
+  - task: "Léa has got you mixed up with someone else. Answer each of her questions; at least two answers should be negative (ne … pas)."
+    es: "Tu es italien ? Tu habites à Rome ? Tu aimes la musique ?"
+    min: 12
+    max: 40
+    use: [w.italien, w.habiter, w.aimer, w.musique]
+    useAtLeast: 3
+    grammar: [g.negation-ne-pas, g.yes-no-questions]
+    expect:
+      - { pattern: "\\bn(e\\s|['’])[^.!?]*\\bpas\\b", hint: "Say what is not true with ne … pas: Je ne suis pas italien." }
+      - { pattern: "\\b(oui|non|si)\\b", hint: "Start your answers with oui or non." }
+    model: { es: "Non, je ne suis pas italien, je suis espagnol. Je n'habite pas à Rome, j'habite à Madrid. Mais oui, j'aime la musique !", en: "No, I'm not Italian, I'm Spanish. I don't live in Rome, I live in Madrid. But yes, I like music!" }
+  - task: "You meet a tourist at the top of the Eiffel Tower. Write at least three yes/no questions to ask him or her (with est-ce que or rising intonation)."
+    min: 10
+    max: 35
+    use: [w.est-ce-que, w.parler, w.touriste, w.aimer, w.habiter]
+    useAtLeast: 3
+    grammar: [g.yes-no-questions]
+    expect:
+      - { pattern: "\\best-ce qu", hint: "Ask at least one question with est-ce que …" }
+      - { pattern: "\\?", hint: "End each question with a question mark." }
+    model: { es: "Bonjour ! Est-ce que vous êtes touriste ? Est-ce que vous parlez anglais ? Vous habitez à Paris ? Vous aimez la tour Eiffel ?", en: "Hello! Are you a tourist? Do you speak English? Do you live in Paris? Do you like the Eiffel Tower?" }

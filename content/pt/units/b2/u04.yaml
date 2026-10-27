@@ -281,3 +281,41 @@ dialogues:
       - { q: "O que aconteceu com um rapaz no ano passado?", options: ["Teve insolação", "Caiu na ladeira", "Perdeu o boneco"], answer: 0, explain: "No ano passado, um rapaz teve insolação." }
       - { q: "O que o Lucas diz sobre a chuva?", options: ["Que o bloco não sai", "Que o bloco sai mesmo que chova", "Que ele vai ficar em casa"], answer: 1, explain: "Mesmo que chova, o bloco sai." }
       - { q: "O que a Dona Socorro vai fazer no Carnaval?", options: ["Carregar um boneco", "Vender água na ladeira", "Ficar na janela aplaudindo"], answer: 2, explain: "Eu fico na janela, aplaudindo os meus bonecos." }
+writing:
+  - task: "Write about Carnival in Olinda (or another festival), conceding the downsides (embora, ainda que, mesmo que + subjunctive)."
+    min: 80
+    max: 140
+    use: [w.abafado, w.mormaço, w.sombra, w.hidratar-se, w.desfilar]
+    useAtLeast: 3
+    grammar: [g.embora-concession]
+    expect:
+      - { pattern: '\b(embora|ainda que|mesmo que|se bem que)\b', hint: "Concede with embora / ainda que + subjunctive: Embora esteja calor…" }
+      - { pattern: '(?<!\p{L})(esteja|seja|haja|tenha|fa[cç]a|chova|estejam|sejam|goste|sinta)(?!\p{L})', hint: "Use the subjunctive after embora / mesmo que: embora seja cansativo…" }
+    model: { es: "O Carnaval de Olinda é maravilhoso, embora seja cansativo. Ainda que esteja muito abafado, as ladeiras ficam cheias de gente dançando frevo o dia inteiro. Embora o mormaço seja forte, ninguém para de dançar. Os bonecos desfilam pelas ruas e todo mundo canta junto. Mesmo que você não goste de muita gente, vale a pena ir pelo menos um dia. Uma dica: procure a sombra sempre que puder e não esqueça de se hidratar, mesmo que não sinta sede. Eu, pelo menos, quero voltar todos os anos.", en: "Carnival in Olinda is wonderful, although it's exhausting. Even though it's very muggy, the steep streets are full of people dancing frevo all day. Although the sultry heat is intense, nobody stops dancing. The giant puppets parade through the streets and everyone sings along. Even if you don't like crowds, it's worth going for at least one day. A tip: find the shade whenever you can and don't forget to drink water, even if you don't feel thirsty. I, for one, want to go back every year." }
+  - task: "Write about a challenge you keep struggling with, despite your efforts (Por mais que eu tente…, nem que eu precise…)."
+    min: 80
+    max: 140
+    use: [w.por-mais-que, w.obstáculo, w.persistência, w.força-de-vontade, w.esforçar-se]
+    useAtLeast: 3
+    grammar: [g.por-mais-que]
+    expect:
+      - { pattern: '\bpor mais (que|[a-zà-ú]+ que)\b', hint: "Use por mais que + subjunctive: Por mais que eu tente…" }
+    model: { es: "Por mais que eu tente, não consigo acordar cedo. Já comprei dois despertadores e mudei a cama de lugar, mas continuo dormindo demais. Por mais que eu me esforce, às sete da manhã o meu corpo não obedece. O maior obstáculo é o celular: fico vendo vídeos até tarde. Sei que é uma questão de persistência e força de vontade, então vou continuar tentando, nem que eu precise deixar o celular na cozinha. Por mais difícil que seja, vou conseguir!", en: "However hard I try, I can't get up early. I've bought two alarm clocks and moved my bed, but I still oversleep. However much effort I make, at seven in the morning my body won't obey. The biggest obstacle is my phone: I watch videos until late. I know it's a matter of persistence and willpower, so I'll keep trying, even if I have to leave my phone in the kitchen. However hard it is, I'll manage!" }
+  - task: "Describe life in the sertão, acknowledging its difficulties (Apesar da seca…, Apesar disso…, De qualquer forma…)."
+    min: 80
+    max: 140
+    use: [w.sertão, w.caatinga, w.açude, w.estiagem, w.cisterna]
+    useAtLeast: 3
+    grammar: [g.apesar-de]
+    expect:
+      - { pattern: '\bapesar (de|do|da|dos|das|disso)\b', hint: "Use apesar de + noun: Apesar da seca… / Apesar disso…" }
+    model: { es: "A vida no sertão é dura. Apesar da seca e do calor, as pessoas são muito generosas. Na caatinga chove pouco e, durante a estiagem, os açudes secam. Apesar disso, muitas famílias conseguem viver da terra graças às cisternas, que guardam a água da chuva. O mandacaru floresce mesmo sem água, e os vaqueiros continuam usando o gibão de couro para se proteger dos espinhos. De qualquer forma, a vida melhorou muito nos últimos anos. Apesar de tudo, quem nasce no sertão costuma ter muito orgulho da sua terra.", en: "Life in the sertão is hard. Despite the drought and the heat, people are very generous. In the caatinga it rains little and, during the dry spell, the reservoirs dry up. Even so, many families manage to live off the land thanks to the cisterns, which store rainwater. The mandacaru cactus flowers even without water, and the cowboys still wear their leather jackets to protect themselves from the thorns. In any case, life has improved a lot in recent years. Despite everything, people born in the sertão tend to be very proud of their land." }
+  - task: "A storm hit during your stay in Olinda. Write a review of your guesthouse with its good and bad points (mesmo com…, apesar de…, embora…)."
+    min: 80
+    max: 140
+    use: [w.trovoada, w.gerador, w.colchão, w.ventilador, w.ar-condicionado]
+    useAtLeast: 3
+    grammar: [g.embora-concession, g.apesar-de]
+    expect:
+      - { pattern: '\b(mesmo com|apesar d[aeo]s?|embora|ainda que)\b', hint: "Concede: Mesmo com a chuva…, Apesar de…, Embora…" }
+    model: { es: "Ficamos três noites nesta pousada em Olinda. Apesar da trovoada forte na segunda noite, que derrubou a energia do bairro, a pousada tinha um gerador e ninguém ficou no escuro. Embora o quarto fosse pequeno, o colchão era muito confortável e os lençóis estavam limpos. O ar-condicionado não funcionava bem, mas o ventilador ajudou. Mesmo com chuva, o café da manhã na varanda foi maravilhoso. Recomendo, apesar do preço um pouco alto. Embora não seja perfeita, eu voltaria com certeza e daria nota oito.", en: "We stayed three nights at this guesthouse in Olinda. Despite the heavy thunderstorm on the second night, which knocked out the power in the neighbourhood, the guesthouse had a generator and nobody was left in the dark. Although the room was small, the mattress was very comfortable and the sheets were clean. The air conditioning didn't work well, but the fan helped. Even with the rain, breakfast on the veranda was wonderful. I recommend it, despite the slightly high price. Although it isn't perfect, I'd definitely go back and give it an eight." }

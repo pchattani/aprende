@@ -147,6 +147,15 @@ export function reachedTenses(kit: Pick<VerbKit, 'tenses' | 'labels' | 'skip'>, 
   })
 }
 
+/**
+ * The games' tenses: the present, and the tenses whose grammar notes appear in the lessons the
+ * learner has finished (`grammar`: their `teach` and sentence grammar ids, engine/finished.ts).
+ * Unlike reachedTenses, a level alone opens nothing.
+ */
+export function finishedTenses(kit: Pick<VerbKit, 'tenses' | 'labels' | 'skip'>, grammar: ReadonlySet<string>): string[] {
+  return reachedTenses(kit, 'a1', grammar)
+}
+
 // ---------------------------------------------------------------------------- verbs
 
 /** The irregular stars of each course, offered first when topping up a beginner's verbs. */

@@ -280,3 +280,41 @@ dialogues:
       - { q: "Quanto hanno aspettato?", options: ["Dieci minuti", "Un'ora", "Due ore"], answer: 1, explain: "They waited an hour because they got the time wrong." }
       - { q: "Che cosa hanno fatto ieri sera?", options: ["Hanno incontrato degli amici", "Hanno noleggiato le bici", "Hanno visitato un museo"], answer: 0, explain: "Ieri sera abbiamo incontrato degli amici." }
       - { q: "Che cosa ha dimenticato Sara?", options: ["Il biglietto", "Il cellulare", "La guida"], answer: 1, explain: "Ho dimenticato il cellulare in albergo." }
+writing:
+  - task: "Write to a friend about what you did yesterday in Florence: what you visited, what you saw from the top of the dome and where you ate."
+    min: 30
+    max: 65
+    use: [w.ieri, w.duomo, w.cupola, w.fotografare, w.vista]
+    grammar: [g.passato-prossimo-avere, g.time-markers-past]
+    expect:
+      - { pattern: "\\b(ho|hai|ha|abbiamo|avete|hanno)\\s+(\\S+\\s+)?\\S+(at|ut|it)[oaie]\\b", hint: "Use the passato prossimo with avere: ho visitato, abbiamo mangiato…" }
+      - { pattern: "\\b(ieri|scorso|scorsa|fa)\\b", hint: "Say when: ieri, ieri sera, la settimana scorsa…" }
+    model: { es: "Ciao, Sara! Ieri ho visitato il Duomo di Firenze con Marco. Abbiamo fatto la fila per un'ora, ma la cupola è bellissima. Dalla cima ho fotografato tutta la città: che vista! La sera abbiamo mangiato in una trattoria tipica e abbiamo bevuto un buon vino toscano.", en: "Hi, Sara! Yesterday I visited Florence Cathedral with Marco. We queued for an hour, but the dome is beautiful. From the top I photographed the whole city: what a view! In the evening we ate in a typical trattoria and drank a good Tuscan wine." }
+  - task: "Tell a friend about last weekend in Florence: what you saw, what you discovered, what you read or decided. Use at least three irregular participles (fatto, visto, preso, letto, deciso…)."
+    min: 30
+    max: 65
+    use: [w.scorso, w.scoprire, w.decidere, w.galleria, w.capolavoro]
+    grammar: [g.participles-irregular, g.passato-prossimo-avere]
+    expect:
+      - { pattern: "\\b(fatto|visto|letto|scritto|preso|messo|detto|chiuso|aperto|deciso|perso|vinto|rotto|scoperto|riso|acceso|spento|chiesto|risposto|bevuto|vissuto|scelto)\\b", hint: "Use irregular participles: ho fatto, ho visto, ho preso…" }
+      - { pattern: "\\b(scors[oa]|fa|ieri)\\b", hint: "Say when: il fine settimana scorso, due giorni fa…" }
+    model: { es: "Il fine settimana scorso ho fatto un giro a Firenze. Sabato ho visto la Galleria dell'Accademia e ho scoperto il David di Michelangelo: un vero capolavoro! Domenica ho preso il treno per Fiesole, ho letto un libro sul Rinascimento e ho deciso di tornare in estate.", en: "Last weekend I went round Florence. On Saturday I saw the Accademia Gallery and discovered Michelangelo's David: a real masterpiece! On Sunday I took the train to Fiesole, read a book about the Renaissance and decided to come back in the summer." }
+  - task: "Your mum sends you a message with questions. Answer each one, saying what you did and when (ieri, due giorni fa, appena, finalmente)."
+    es: "Hai telefonato alla nonna? Hai mandato le foto a papà? Hai comprato il regalo per Luca?"
+    min: 25
+    max: 60
+    use: [w.telefonare, w.mandare, w.fa, w.appena, w.finalmente]
+    grammar: [g.time-markers-past, g.passato-prossimo-avere]
+    expect:
+      - { pattern: "\\b(fa|ieri|scors[oa]|appena|finalmente|stamattina)\\b", hint: "Say when: due giorni fa, ho appena…, finalmente…" }
+      - { pattern: "\\bho\\s+(\\S+\\s+)?\\S+(at|ut|it)[oaie]\\b", hint: "Answer with the passato prossimo: ho telefonato, ho mandato…" }
+    model: { es: "Sì, mamma! Ho telefonato alla nonna due giorni fa e abbiamo parlato per un'ora. Ho appena mandato le foto a papà. E finalmente ho comprato il regalo per Luca: un orologio!", en: "Yes, Mum! I phoned Grandma two days ago and we talked for an hour. I've just sent the photos to Dad. And I've finally bought the present for Luca: a watch!" }
+  - task: "Write a postcard from Florence to Giulia: three things you did, and one thing that went wrong (something you forgot or got wrong)."
+    min: 30
+    max: 65
+    use: [w.incontrare, w.dimenticare, w.sbagliare, w.fiorentino, w.salutare]
+    grammar: [g.passato-prossimo-avere, g.time-markers-past]
+    expect:
+      - { pattern: "\\b(ho|abbiamo)\\s+(\\S+\\s+)?\\S+(at|ut|it)[oaie]\\b", hint: "Say what you did: ho incontrato, ho visitato…" }
+      - { pattern: "\\b(dimenticat|sbagliat|pers[oa])\\w*", hint: "Say what went wrong: ho dimenticato…, ho sbagliato…" }
+    model: { es: "Cara Giulia, Firenze è bellissima! Ieri ho incontrato una ragazza fiorentina molto simpatica e abbiamo mangiato insieme. Oggi ho visitato Palazzo Vecchio. Purtroppo ho dimenticato il cellulare in albergo e ho sbagliato autobus! Ti saluto e a presto!", en: "Dear Giulia, Florence is beautiful! Yesterday I met a very nice Florentine girl and we ate together. Today I visited Palazzo Vecchio. Unfortunately I forgot my phone at the hotel and took the wrong bus! Best wishes and see you soon!" }

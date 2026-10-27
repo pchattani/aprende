@@ -7,6 +7,7 @@ import { useEffect, useRef, type ReactNode } from 'react'
 import { TL, SPECIAL_CHARS } from '../../engine/course'
 import type { VerbPrompt, ParadigmRow } from '../../engine/games/verbPrompts'
 import { shortTense } from './verbRound'
+import { TooFew } from '../palabras/shared'
 
 /** The person, verb and tense of a prompt, with the English hint. */
 export function PromptCard({ p, children, className = '' }: { p: VerbPrompt; children?: ReactNode; className?: string }) {
@@ -123,14 +124,11 @@ export function TimerBar({ left, total, label }: { left: number; total: number; 
 }
 
 /** "Not enough verbs" fallback (a course without verbs in the learner's reach). */
+/** No finished verbs yet: how many more lessons until there are (the verb games share one requirement). */
 export function NoVerbs({ onBack }: { onBack: () => void }) {
   return (
-    <div className="card text-center">
-      <p className="font-semibold">No verbs to play with yet</p>
-      <p className="mt-1 text-sm text-muted">Finish a lesson or two and come back.</p>
-      <button type="button" className="btn btn-primary mt-3 w-full" onClick={onBack}>
-        Back
-      </button>
-    </div>
+    <TooFew onBack={onBack} game="slots">
+      The verb games use the verbs of the lessons you have finished.
+    </TooFew>
   )
 }

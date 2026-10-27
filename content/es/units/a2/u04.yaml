@@ -225,3 +225,43 @@ dialogues:
       - { q: "Why didn't Yuki have an umbrella?", options: ["She lost it", "It was sunny when she left", "She forgot it on the bus"], answer: 1 }
       - { q: "What happened while she was walking?", options: ["She met a friend", "She fell and hurt her knee", "She found a phone"], answer: 1 }
       - { q: "Where was her phone?", options: ["At home", "On the bus", "In the café"], answer: 2 }
+writing:
+  - task: "Something strange happened last night in your hotel in Santa Fe. Write what you were doing when it happened (Estaba … cuando …)."
+    min: 30
+    max: 60
+    use: [w.mientras, w.ruido, w.oir, w.asustarse, w.de-pronto]
+    useAtLeast: 3
+    grammar: [g.preterite-vs-imperfect, g.mientras-cuando]
+    expect:
+      - { pattern: "\\b(estaba|est[aá]bamos|dorm[ií]a|le[ií]a|cenaba|ve[ií]a|buscaba|hab[ií]a)", hint: "Set the scene with the imperfect: estaba leyendo, dormía …" }
+      - { pattern: "\\bcuando\\b|\\bmientras\\b", hint: "Link the two actions: … cuando oí …, mientras buscaba …" }
+    model: { es: "Anoche estaba leyendo en mi habitación del hotel cuando oí un ruido extraño. De pronto, no había luz. Me asusté mucho. Mientras buscaba el móvil, alguien llamó a la puerta: ¡era mi amigo Juan con la cena!", en: "Last night I was reading in my hotel room when I heard a strange noise. Suddenly there was no light. I got really scared. While I was looking for my phone, someone knocked at the door: it was my friend Juan with dinner!" }
+  - task: "Tell a short anecdote about a small accident, linking it with así que, sin embargo, afortunadamente or desgraciadamente."
+    min: 35
+    max: 65
+    use: [w.asi-que, w.sin-embargo, w.afortunadamente, w.caerse, w.accidente]
+    useAtLeast: 3
+    grammar: [g.narration-connectors, g.preterite-vs-imperfect]
+    expect:
+      - { pattern: "as[ií] que|sin embargo|afortunadamente|desgraciadamente|total,? que|resulta que", hint: "Link the story: así que, sin embargo, afortunadamente …" }
+    model: { es: "El sábado pasado iba en bicicleta por el puente de Santa Fe. Llovía mucho y el suelo estaba mojado, así que me caí. Desgraciadamente, me rompí el brazo. Sin embargo, fue un accidente con suerte: afortunadamente, un médico pasaba por allí y me ayudó.", en: "Last Saturday I was cycling over the bridge in Santa Fe. It was raining hard and the ground was wet, so I fell off. Unfortunately, I broke my arm. However, it was a lucky accident: fortunately, a doctor was passing by and helped me." }
+  - task: "Your wallet was stolen in a café. Write what happened for the police: where you were, what the thief looked like and what he did."
+    min: 35
+    max: 65
+    use: [w.ladron, w.cartera, w.policia, w.escapar, w.robar]
+    useAtLeast: 3
+    grammar: [g.preterite-vs-imperfect]
+    expect:
+      - { pattern: "\\b(estaba|era|ten[ií]a|llevaba|hab[ií]a)\\b", hint: "Describe the scene and the thief with the imperfect: estaba …, era alto, llevaba …" }
+      - { pattern: "(rob|cog|escap|corr|llam|grit|lleg|sal|desaparec)[a-z]*(é|ó|í)(?![a-záéíóúñ])", hint: "Say what happened with the preterite: la cogió, se escapó, llamé …" }
+    model: { es: "Ayer a las cinco estaba en un café del centro. Mi cartera estaba sobre la mesa. De pronto, un ladrón alto, con una gorra negra, la cogió y se escapó corriendo. Grité, pero nadie lo vio. Después llamé a la policía.", en: "Yesterday at five I was in a café in the centre. My wallet was on the table. Suddenly a tall thief in a black cap took it and ran away. I shouted, but nobody saw him. Then I called the police." }
+  - task: "Write a short story that includes a storm, a bridge and the phrases resulta que, enseguida and menos mal."
+    min: 35
+    max: 65
+    use: [w.tormenta, w.mojado, w.menos-mal, w.enseguida, w.resulta-que]
+    useAtLeast: 3
+    grammar: [g.narration-connectors, g.preterite-vs-imperfect]
+    expect:
+      - { pattern: "menos mal|resulta que|total,? que|enseguida", hint: "Use story phrases: resulta que …, enseguida, menos mal …" }
+      - { pattern: "tormenta", hint: "Include the storm: una tormenta …" }
+    model: { es: "Resulta que el domingo fuimos al río con unos amigos. Hacía sol, pero de pronto empezó una tormenta enorme. Corrimos enseguida hacia un puente y esperamos allí una hora. Total, que llegamos a casa muy mojados. ¡Menos mal que no hacía frío!", en: "So on Sunday we went to the river with some friends. It was sunny, but suddenly a huge storm started. We ran straight to a bridge and waited there for an hour. In the end we got home soaking wet. Thank goodness it wasn't cold!" }

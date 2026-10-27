@@ -282,3 +282,40 @@ dialogues:
       - { q: "À quoi sert le petit papier ?", options: ["À sentir les essences sans les mettre sur la peau", "À écrire le nom du parfum", "À nettoyer les flacons"], answer: 0, explain: "Il sert à sentir chaque essence sans la mettre sur la peau." }
       - { q: "Quelle fleur Lucas sent-il ?", options: ["La rose", "La lavande", "Le jasmin"], answer: 2, explain: "Lucas thinks it's rose, but Sandrine says it's jasmine." }
       - { q: "Que conseille Sandrine à la fin ?", options: ["De verser vite", "De compter les gouttes", "D'acheter un flacon"], answer: 1, explain: "Au lieu de verser, comptez les gouttes." }
+writing:
+  - task: "Describe your visit to a perfume house in Grasse: what you discovered and how (en sentant, en écoutant…, the gérondif)."
+    min: 50
+    max: 100
+    use: [w.parfumerie, w.odeur, w.sentir, w.jasmin, w.flacon]
+    useAtLeast: 3
+    grammar: [g.gerondif]
+    expect:
+      - { pattern: "\\ben [a-zàâçéèêëîïôûùœ]+ant\\b", hint: "Use the gérondif: en sentant, en écoutant, en mélangeant…" }
+    model: { es: "Hier, j'ai visité une parfumerie à Grasse. En entrant, j'ai senti une odeur de jasmin et de rose. En écoutant le guide, j'ai appris qu'il faut beaucoup de fleurs pour faire un seul flacon d'essence. En sentant les parfums, j'ai essayé de reconnaître les fleurs. J'ai même créé mon propre parfum en mélangeant de la vanille et des pétales de rose !", en: "Yesterday I visited a perfume house in Grasse. As I went in, I smelt jasmine and roses. Listening to the guide, I learnt that it takes a lot of flowers to make a single bottle of essence. Smelling the perfumes, I tried to recognise the flowers. I even created my own perfume by mixing vanilla and rose petals!" }
+  - task: "Write about your interests and habits using verbs with prepositions (s'intéresser à, se servir de, dépendre de, s'habituer à, commencer à…)."
+    min: 50
+    max: 100
+    use: [w.s-intéresser, w.se-servir-de, w.dépendre, w.s-habituer, w.odorat]
+    useAtLeast: 3
+    grammar: [g.verbs-prepositions]
+    expect:
+      - { pattern: "\\b(int[eé]ress|habitu|commen[cç]|r[eé]uss|amus|aid|pens)[a-zàâçéèêëîïôûùœ]* ([aà]|au|aux)\\s|\\b(d[eé]pend|ser[st]|servir|souvien|occup|essa|d[eé]cid|parl|arr[eê]t|r[eê]v)[a-zàâçéèêëîïôûùœ]* (de|d['’]|du|des)", hint: "Use the right preposition after the verb: je m'intéresse à…, je me sers de…, ça dépend de…" }
+    model: { es: "Depuis mon voyage à Grasse, je m'intéresse beaucoup à la parfumerie. Je me sers de mon odorat tous les jours : je m'amuse à reconnaître les odeurs dans la cuisine ! Pour devenir parfumeur, ça dépend de beaucoup de choses. Il faut s'habituer à travailler avec patience. J'ai envie d'essayer, et j'ai déjà commencé à lire des livres sur les parfums.", en: "Since my trip to Grasse I've been very interested in perfume-making. I use my sense of smell every day: I have fun recognising the smells in the kitchen! Becoming a perfumer depends on lots of things. You have to get used to working patiently. I want to try, and I've already started reading books about perfumes." }
+  - task: "How do you become a 'nose' (a perfumer)? Write advice for someone who wants to try, using pour, sans and afin de + infinitive."
+    min: 50
+    max: 100
+    use: [w.afin-de, w.progresser, w.s-entraîner, w.éviter, w.patience]
+    useAtLeast: 3
+    grammar: [g.pour-sans-infinitive]
+    expect:
+      - { pattern: "\\b(pour|sans) (ne pas |me |te |se |vous |nous |le |la |les )?[a-zàâçéèêëîïôûùœ]+(er|ir|re)\\b|\\bafin d(e\\s|['’])", hint: "Use pour / sans / afin de + infinitive: pour devenir un nez, sans travailler…" }
+    model: { es: "Pour devenir un nez, il faut beaucoup de patience. Afin de progresser, entraîne-toi tous les jours à sentir des odeurs différentes. On ne peut pas réussir sans travailler beaucoup. Il faut aussi faire attention à son odorat : évite de fumer et ne mange pas de plats trop piquants, pour ne pas tromper ton nez. Enfin, fais un stage dans une parfumerie pour apprendre le métier.", en: "To become a nose, you need a lot of patience. To make progress, practise every day smelling different scents. You can't succeed without working hard. You also have to take care of your sense of smell: avoid smoking and don't eat dishes that are too spicy, so as not to fool your nose. Finally, do an internship in a perfume house to learn the trade." }
+  - task: "Write about how you learned a skill (a language, an instrument, a trade): how you made progress and what you did at the same time (en + -ant, tout en…)."
+    min: 50
+    max: 100
+    use: [w.débutant, w.progrès, w.pratiquer, w.entraînement, w.fier]
+    useAtLeast: 3
+    grammar: [g.gerondif]
+    expect:
+      - { pattern: "\\ben [a-zàâçéèêëîïôûùœ]+ant\\b", hint: "Use the gérondif to say how: en parlant, en regardant…" }
+    model: { es: "J'ai appris le français en vivant à Marseille pendant un an. Au début, j'étais débutant et je ne comprenais rien. J'ai fait beaucoup de progrès en parlant avec mes voisins et en regardant des films. Tout en travaillant dans un café, je pratiquais tous les jours. Avec de la patience et de l'entraînement, j'ai réussi un examen de niveau B1. Aujourd'hui, je suis fier de moi !", en: "I learnt French by living in Marseille for a year. At first I was a beginner and I didn't understand anything. I made a lot of progress by talking with my neighbours and watching films. While working in a café, I practised every day. With patience and practice I passed a B1 exam. Today I'm proud of myself!" }

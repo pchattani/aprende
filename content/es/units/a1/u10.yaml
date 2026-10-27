@@ -275,3 +275,44 @@ dialogues:
       - { q: "Why can't they play tennis?", options: ["It is too hot", "It is raining and windy", "They don't have a court"], answer: 1 }
       - { q: "What does Yuki play?", options: ["The piano", "The guitar", "Cards"], answer: 1 }
       - { q: "What kind of series does Yuki like?", options: ["Comedy", "Mystery", "Sport"], answer: 1 }
+writing:
+  - task: "Write a postcard from Buenos Aires about the weather today and in different seasons where you live."
+    min: 15
+    max: 40
+    use: [w.tiempo, w.sol, w.llover, w.verano, w.invierno]
+    useAtLeast: 3
+    grammar: [g.weather]
+    expect:
+      - { pattern: "\\bhace (sol|calor|fr[ií]o|viento|buen|mal|mucho)", hint: "Use hace: hace sol, hace frío …" }
+      - { pattern: "\\b(llueve|nieva|est[aá] nublado|hay (nubes|viento|sol))", hint: "Add rain, snow or clouds: llueve, nieva, está nublado …" }
+    model: { es: "¡Hola desde Buenos Aires! Hoy hace sol y hace calor, pero mañana llueve. En verano hace mucho calor aquí. En mi ciudad, en invierno nieva y hace frío.", en: "Hello from Buenos Aires! Today it's sunny and hot, but tomorrow it's raining. In summer it's very hot here. In my city, in winter it snows and it's cold." }
+  - task: "Write about your hobbies: the sports you play, the instruments you play and what you like doing."
+    min: 15
+    max: 40
+    use: [w.jugar, w.tocar, w.guitarra, w.tenis, w.nadar]
+    useAtLeast: 3
+    grammar: [g.jugar-tocar]
+    expect:
+      - { pattern: "\\bjueg(o|as|a|an)\\b|\\bjugamos\\b", hint: "Use jugar for games and sports: juego al tenis …" }
+      - { pattern: "\\btoc(o|as|a|amos|an)\\b", hint: "Use tocar for instruments: toco la guitarra …" }
+    model: { es: "Juego al tenis los sábados con mi hermano. También toco la guitarra y canto un poco. Me gusta nadar en verano, pero no juego al fútbol.", en: "I play tennis on Saturdays with my brother. I also play the guitar and sing a bit. I like swimming in summer, but I don't play football." }
+  - task: "Answer your friend's question with stem-changing verbs: prefiero, quiero, pienso, puedo …"
+    es: "¿Quieres ir al cine o prefieres pasear por el Barrio Chino?"
+    min: 15
+    max: 40
+    use: [w.preferir, w.querer, w.pensar, w.poder, w.interesante]
+    useAtLeast: 3
+    grammar: [g.stem-changing-present]
+    expect:
+      - { pattern: "\\b(prefiero|quiero|pienso|puedo|entiendo|recuerdo|encuentro|pido)\\b", hint: "Use stem-changing verbs: prefiero, quiero, pienso …" }
+    model: { es: "Prefiero pasear, porque hace sol. Quiero ver el Barrio Chino y pienso que es muy interesante. Pero el sábado podemos ir al cine.", en: "I'd rather walk, because it's sunny. I want to see Chinatown and I think it's very interesting. But on Saturday we can go to the cinema." }
+  - task: "Write about Chinatown in Belgrano: what you like there (me gustan …), something you know how to do or not (sé …) and someone you know (conozco a …)."
+    min: 15
+    max: 40
+    use: [w.saber, w.conocer, w.gustar, w.encantar]
+    useAtLeast: 2
+    grammar: [g.gustar-plural, g.saber-vs-conocer]
+    expect:
+      - { pattern: "\\bme (gustan|encantan)\\b", hint: "Say what you like (plural): me gustan las tiendas …" }
+      - { pattern: "\\bs[eé] [a-záéíóúñ]+(ar|er|ir)\\b|\\b(sabe|sabes|sabemos|saben|conozco|conoce|conoces|conocemos)\\b", hint: "Use saber (sé cocinar) or conocer (conozco a …)." }
+    model: { es: "Me encantan los restaurantes del Barrio Chino y me gustan mucho las tiendas. No sé cocinar comida china, pero conozco a una cocinera muy simpática.", en: "I love the restaurants in Chinatown and I really like the shops. I can't cook Chinese food, but I know a very nice cook." }

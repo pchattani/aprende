@@ -281,3 +281,43 @@ dialogues:
       - { q: "¿Con qué condición pueden quedarse en el piso del primo de Javi?", options: ["Con tal de que no hagan ruido por la noche", "Con tal de que paguen cuarenta euros", "Con tal de que limpien el piso"], answer: 0 }
       - { q: "¿Por qué podría no ir Nuria a Lisboa?", options: ["Porque está ahorrando para un coche", "Porque pueden llamarla para una entrevista de trabajo", "Porque no le gusta viajar en avión"], answer: 1, explain: "She says 'Iré a menos que me llamen para la entrevista de trabajo'." }
       - { q: "¿Por qué quiere Javi reservar hoy mismo?", options: ["Por si acaso suben los precios", "Porque mañana se va de viaje", "Porque su primo se lo ha pedido"], answer: 0 }
+writing:
+  - task: "Write about your plans for when you get home after this trip, using cuando, en cuanto, hasta que, tan pronto como + subjunctive."
+    min: 50
+    max: 100
+    use: [w.en-cuanto, w.hasta-que, w.trasladarse, w.avisar, w.decision]
+    useAtLeast: 3
+    grammar: [g.subjunctive-time-clauses]
+    expect:
+      - { pattern: "\\b(cuando|en cuanto|tan pronto como|hasta que|una vez que) (yo )?(vuelva|llegue|tenga|pueda|termine|sea|encuentre|ahorre|consiga|est[eé]|vea|haya|sepa|hable)", hint: "Use cuando / en cuanto / hasta que + subjunctive: cuando vuelva …, en cuanto tenga …" }
+    model: { es: "Cuando vuelva a Londres, buscaré un trabajo donde pueda hablar español. En cuanto tenga un poco de dinero ahorrado, me trasladaré a un piso más grande. No tomaré ninguna decisión importante hasta que hable con mi familia. Y tan pronto como sepa la fecha de mi próximo viaje, te avisaré para vernos otra vez.", en: "When I get back to London, I'll look for a job where I can speak Spanish. As soon as I have a bit of money saved, I'll move to a bigger flat. I won't make any important decision until I talk to my family. And as soon as I know the date of my next trip, I'll let you know so we can meet again." }
+  - task: "Write a short appeal for an environmental campaign: what we must do before it is too late (antes de que + subjunctive)."
+    min: 50
+    max: 100
+    use: [w.antes-de-que, w.reciclaje, w.sostenible, w.desperdiciar, w.plastico]
+    useAtLeast: 3
+    grammar: [g.subjunctive-time-clauses]
+    expect:
+      - { pattern: "antes de que|despu[eé]s de que", hint: "Use antes de que / después de que + subjunctive: antes de que sea tarde …" }
+    model: { es: "Tenemos que hacer algo antes de que sea demasiado tarde. Cada día desperdiciamos agua y usamos bolsas de plástico que tardan siglos en desaparecer. Debemos cambiar nuestros hábitos antes de que el cambio climático destruya nuestros campos. Separa la basura para el reciclaje, cierra el grifo y elige productos sostenibles. Después de que lo hagas unas semanas, verás que no es tan difícil.", en: "We have to do something before it's too late. Every day we waste water and use plastic bags that take centuries to disappear. We must change our habits before climate change destroys our countryside. Separate your rubbish for recycling, turn off the tap and choose sustainable products. Once you've done it for a few weeks, you'll see it isn't so hard." }
+  - task: "Explain to a friend why you are opening a small café in Tucumán and what you are doing so that it works (para que, sin que, con el fin de)."
+    min: 50
+    max: 100
+    use: [w.emprendedor, w.presupuesto, w.pagina, w.servicio, w.beneficio]
+    useAtLeast: 3
+    grammar: [g.subjunctive-purpose]
+    expect:
+      - { pattern: "para que|a fin de que|sin que", hint: "Explain purpose with para que + subjunctive: para que los clientes puedan …" }
+      - { pattern: "\\bpara [a-záéíóúñ]+(ar|er|ir)\\b|con el fin de", hint: "Also use para + infinitive: para ganar …, con el fin de …" }
+    model: { es: "Voy a abrir una pequeña cafetería en Tucumán para ganar un poco de dinero y para tener mi propio negocio. He hecho un presupuesto muy claro para que el banco me dé el préstamo. También estoy preparando una página web para que los clientes puedan hacer pedidos desde casa. Quiero ofrecer un buen servicio, con el fin de tener beneficios pronto. ¡Soy una emprendedora!", en: "I'm going to open a small café in Tucumán to earn a bit of money and to have my own business. I've made a very clear budget so the bank will give me the loan. I'm also preparing a website so customers can order from home. I want to offer a good service, in order to make a profit soon. I'm an entrepreneur!" }
+  - task: "Your friend suggests a visit. Reply, setting conditions: si + present, a menos que, en caso de que, por si acaso."
+    es: "¿Vamos mañana a la Casa Histórica de la Independencia?"
+    min: 50
+    max: 100
+    use: [w.a-menos-que, w.en-caso-de-que, w.por-si-acaso, w.paraguas, w.prevision]
+    useAtLeast: 3
+    grammar: [g.si-clauses-real, g.subjunctive-purpose]
+    expect:
+      - { pattern: "\\bsi (no )?[a-záéíóúñ]+(o|as|a|amos|an|es|e|en|imos|ace)\\b", hint: "Set a real condition with si + present: si hace sol …" }
+      - { pattern: "a menos que|a no ser que|en caso de que|con tal de que|por si acaso", hint: "Add a condition: a menos que …, en caso de que …, por si acaso" }
+    model: { es: "¡Claro! Si hace buen tiempo, podemos ir andando desde el hotel. Según la previsión, puede llover por la tarde, así que llevaré un paraguas por si acaso. Iremos por la mañana, a menos que tú prefieras dormir más. En caso de que haya mucha cola, visitaremos primero la catedral y volveremos después.", en: "Of course! If the weather's good, we can walk from the hotel. According to the forecast, it might rain in the afternoon, so I'll take an umbrella just in case. We'll go in the morning, unless you'd rather sleep longer. If there's a long queue, we'll visit the cathedral first and come back later." }

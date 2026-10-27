@@ -281,3 +281,40 @@ dialogues:
       - { q: "Dove cercherà lavoro Federico?", options: ["A Pisa", "A Milano", "A Firenze"], answer: 1, explain: "Poi cercherò lavoro a Milano." }
       - { q: "Che cosa farà Irene?", options: ["Andrà a Milano", "Resterà a Pisa e farà un corso", "Cercherà lavoro a Firenze"], answer: 1, explain: "Io resterò qui: farò un corso all'università." }
       - { q: "Secondo Irene, dov'è Marco?", options: ["In biblioteca", "A casa", "Sul treno"], answer: 0, explain: "Sarà ancora in biblioteca, come sempre." }
+writing:
+  - task: "Write about your plans after this trip: what you will do next year, with your studies or your work, and what you hope for."
+    min: 30
+    max: 65
+    use: [w.futuro, w.sperare, w.trovare-lavoro, w.esame, w.laurea]
+    grammar: [g.futuro-semplice, g.futuro-irregular]
+    expect:
+      - { pattern: "\\S+(rò|rai|rà|remo|rete|ranno)(?![a-zà-ù])", hint: "Use the future: tornerò, farò, sarà…" }
+    model: { es: "Dopo questo viaggio tornerò a Londra e finirò l'università. L'anno prossimo farò gli ultimi esami e, se tutto va bene, prenderò la laurea a giugno. Poi spero di trovare lavoro in Italia: sarà difficile, ma ci proverò!", en: "After this trip I'll go back to London and finish university. Next year I'll take my last exams and, if all goes well, I'll graduate in June. Then I hope to find work in Italy: it'll be hard, but I'll try!" }
+  - task: "Write the weather forecast for Tuscany for tomorrow and the weekend."
+    min: 30
+    max: 65
+    use: [w.previsioni-del-tempo, w.nebbia, w.temporale, w.migliorare, w.probabilmente]
+    grammar: [g.futuro-semplice, g.futuro-probability]
+    expect:
+      - { pattern: "\\b(pioverà|nevicherà|farà|ci sarà|ci saranno|sarà|migliorerà|peggiorerà)", hint: "Describe the weather in the future: pioverà, farà caldo, ci sarà il sole…" }
+      - { pattern: "\\b(domani|sabato|domenica|fine settimana|weekend)\\b", hint: "Say when: domani, sabato, nel fine settimana…" }
+    model: { es: "Previsioni del tempo per la Toscana: domani mattina ci sarà nebbia in campagna, ma nel pomeriggio il tempo migliorerà. Sabato farà caldo, circa trenta gradi. Domenica probabilmente ci saranno temporali sulla costa, quindi portate l'ombrello!", en: "Weather forecast for Tuscany: tomorrow morning there will be fog in the countryside, but in the afternoon the weather will improve. On Saturday it will be hot, about thirty degrees. On Sunday there will probably be storms on the coast, so take an umbrella!" }
+  - task: "Your friend Marco is late and doesn't answer the phone. Write 3–4 guesses about where he is and what he is doing, using the future of probability."
+    es: "Marco è in ritardo di un'ora e non risponde al telefono!"
+    min: 25
+    max: 60
+    use: [w.chissà, w.forse, w.magari, w.sicuramente, w.probabilmente]
+    grammar: [g.futuro-probability]
+    expect:
+      - { pattern: "\\b(sarà|saranno|avrà|avranno|starà|staranno|dormirà|farà|arriverà)", hint: "Guess with the future: sarà in treno, starà dormendo…" }
+    model: { es: "Chissà dov'è Marco! Sarà ancora in treno, perché ci sono sempre ritardi. O forse starà dormendo: ieri sera è tornato tardi. Avrà il telefono in borsa e non lo sentirà. Magari arriverà tra dieci minuti!", en: "Who knows where Marco is! He's probably still on the train, because there are always delays. Or maybe he's sleeping: he came home late last night. He must have his phone in his bag and can't hear it. Maybe he'll arrive in ten minutes!" }
+  - task: "Write about your plans for the weekend and for the future, depending on the weather and your money: use se + future (Se farà bel tempo, …)."
+    min: 30
+    max: 65
+    use: [w.sogno, w.risparmiare, w.prima-o-poi, w.desiderio]
+    useAtLeast: 2
+    grammar: [g.periodo-ipotetico-1, g.futuro-semplice]
+    expect:
+      - { pattern: "\\bse\\b", hint: "Use se for conditions: Se farà bel tempo, …" }
+      - { pattern: "\\S+(rò|rai|rà|remo|rete|ranno)(?![a-zà-ù])", hint: "Use the future in the result: andrò, resteremo…" }
+    model: { es: "Se sabato farà bel tempo, andrò a Pisa con Giulia e saliremo sulla Torre. Se pioverà, resteremo a casa e guarderemo un film. Il mio sogno è fare un viaggio in Sicilia: se risparmierò un po' di soldi, prima o poi ci andrò!", en: "If the weather is nice on Saturday, I'll go to Pisa with Giulia and we'll climb the Tower. If it rains, we'll stay at home and watch a film. My dream is to take a trip to Sicily: if I save a bit of money, sooner or later I'll go there!" }

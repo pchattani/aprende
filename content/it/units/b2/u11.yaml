@@ -286,3 +286,38 @@ dialogues:
       - { q: "Perché non ci sono più cornetti integrali?", options: ["Il barista non li ha fatti", "Li hanno finiti dei turisti tedeschi", "Costano troppo"], answer: 1, explain: "'Sono stati dei turisti tedeschi a finirli stamattina.'" }
       - { q: "Dove si può mangiare il gelato alla cipolla?", options: ["Nel bar di questo barista", "Nella gelateria in piazza", "Solo a Pizzo"], answer: 1, explain: "'È la gelateria in piazza che lo fa.'" }
       - { q: "Con che cosa fa la granita il barista?", options: ["Con i limoni del suo giardino", "Con le cipolle rosse", "Con il latte di soia"], answer: 0, explain: "'…con i limoni del mio giardino.'" }
+writing:
+  - task: "A friend asks about your coffee and food habits. Answer using dislocation: put the topic first and repeat it with a pronoun (il caffè lo prendo…, di zucchero non ne metto…)."
+    es: "Come prendi il caffè? E il cornetto, lo mangi ogni mattina? E la cipolla di Tropea, l'hai mai assaggiata?"
+    min: 80
+    max: 140
+    use: [w.moka, w.bancone, w.pausa-caffè, w.zuccherato, w.abitudine-quotidiana]
+    grammar: [g.dislocation]
+    expect:
+      - { pattern: "\\b(lo|la|li|le|ne|l['’])\\s*(prendo|bevo|mangio|metto|faccio|compro|preparo|perdo|ho|uso|porto)\\b|\\bl['’]ho\\s+\\S+", hint: "Put the topic first and repeat it with a pronoun: il caffè lo prendo…, di zucchero non ne metto…" }
+    model: { es: "Il caffè lo prendo ristretto e amaro: di zucchero non ne metto mai. A casa lo preparo con la moka, ma al bar lo bevo sempre al bancone, in piedi, come fanno tutti. Il cornetto, invece, non lo mangio ogni mattina: lo prendo solo la domenica, ed è un'abitudine quotidiana che mi manca. La pausa caffè in ufficio non la perdo mai! E la cipolla di Tropea? Certo che l'ho assaggiata: l'ho mangiata ieri in un'insalata con i pomodori, ed era molto dolce. Ne ho comprate due chili da portare a casa!", en: "I take my coffee short and bitter: I never put any sugar in it. At home I make it with the moka, but at the bar I always drink it at the counter, standing up, like everyone does. The croissant, on the other hand, I don't eat every morning: I only have it on Sundays, and it's a daily habit I miss. I never miss the coffee break at the office! And Tropea onions? Of course I've tried them: I ate some yesterday in a salad with tomatoes, and they were very sweet. I've bought two kilos to take home!" }
+  - task: "Write a short review of a film or TV series set in the South, using cleft sentences (è stato il regista a…, sono le protagoniste che…, è per questo che…)."
+    min: 80
+    max: 140
+    use: [w.regista, w.serie, w.protagonista, w.colonna-sonora, w.credibile]
+    grammar: [g.cleft-sentences]
+    expect:
+      - { pattern: "(è|sono|è stato|è stata|sono stati|sono state)\\s+(\\S+\\s+){1,4}(a|ad)\\s+\\S+(are|ere|ire)\\b|(è|sono)\\s+(\\S+\\s+){1,4}(che)\\b|è per questo che|è qui che|è lì che", hint: "Use a cleft sentence: è stato il regista a scegliere…, è per questo che…" }
+    model: { es: "Ho appena finito di guardare «L'Amica Geniale», la serie ambientata a Napoli negli anni Cinquanta. È la trama a prenderti dalla prima puntata: la storia di due amiche cresciute in un quartiere povero. Ma è stato il regista a renderla speciale, scegliendo attrici giovani e quasi mai viste prima. Sono le due protagoniste che rendono la serie così credibile. Anche la colonna sonora è bellissima: è per questo che la ascolto spesso. Ed è proprio a Napoli che vorrei andare, per vedere le strade della serie.", en: "I've just finished watching My Brilliant Friend, the series set in Naples in the 1950s. It's the plot that grips you from the first episode: the story of two friends who grow up in a poor neighbourhood. But it was the director who made it special, choosing young actresses who had hardly been seen before. It's the two protagonists who make the series so believable. The soundtrack is also beautiful: that's why I listen to it often. And it's Naples that I'd like to go to, to see the streets of the series." }
+  - task: "Write an enthusiastic message about a day in Tropea, using focus words: proprio, perfino, addirittura, soltanto, appunto, eccome."
+    min: 80
+    max: 140
+    use: [w.perfino, w.addirittura, w.soltanto, w.eccome, w.appunto]
+    grammar: [g.focus-particles]
+    expect:
+      - { pattern: "\\b(proprio|perfino|persino|addirittura|soltanto|solamente|appunto|eccome)\\b", hint: "Use focus words: proprio, perfino, addirittura, eccome…" }
+    model: { es: "Oggi a Tropea è stata proprio una giornata perfetta! Il mare era così pulito che dal paese, sopra la scogliera, si vedevano perfino i pesci. Abbiamo fatto addirittura tre bagni, e io di solito non entro mai in acqua! A pranzo abbiamo speso soltanto quindici euro per un piatto di pasta con la cipolla rossa, buonissimo. Mi chiedi se valeva la pena di fare dieci ore di treno? Eccome! È appunto per giornate come questa che amo il Sud. Persino mia sorella, che odia il caldo, è felice.", en: "Today in Tropea was a truly perfect day! The sea was so clear that from the town, above the cliff, you could even see the fish. We went swimming three times, no less, and I usually never go in the water! At lunch we spent only fifteen euros on a plate of pasta with red onion, delicious. You ask me if ten hours on the train was worth it? You bet! It's precisely for days like this that I love the South. Even my sister, who hates the heat, is happy." }
+  - task: "Write the text for a sign or menu board in a café in Tropea, using dislocation and cleft sentences to highlight its specialities (la granita la prepariamo…, è la cipolla rossa che…)."
+    min: 80
+    max: 140
+    use: [w.granita, w.limoncello, w.tisana, w.analcolico, w.digestivo]
+    grammar: [g.dislocation, g.cleft-sentences]
+    expect:
+      - { pattern: "\\b(lo|la|li|le|l['’])\\s*(prepariamo|facciamo|farciamo|serviamo|consigliamo|abbiamo|offriamo)\\b", hint: "Use dislocation: la granita la prepariamo…" }
+      - { pattern: "(è|sono)\\s+(\\S+\\s+){1,5}(che|a)\\s+\\S+", hint: "Use a cleft sentence: è proprio questo che…, è la cipolla rossa la regina…" }
+    model: { es: "Benvenuti al Caffè del Porto! La granita la prepariamo ogni mattina con frutta fresca di stagione, e il limoncello lo facciamo noi, con i limoni del nostro giardino. È proprio questo che ci rende diversi dagli altri bar. Il cornetto lo prepariamo al momento: alla crema, al cioccolato o integrale con la marmellata. Se non bevete alcol, niente paura: le bevande analcoliche le abbiamo tutte, e la tisana allo zenzero la consigliamo dopo cena come digestivo. Ed è la cipolla rossa di Tropea che vi farà tornare: provate la nostra focaccia!", en: "Welcome to the Caffè del Porto! Our granita is made every morning with fresh seasonal fruit, and our limoncello we make ourselves, with the lemons from our garden. That's exactly what makes us different from other bars. Our croissants are filled on the spot: with custard, chocolate, or wholemeal with jam. If you don't drink alcohol, never fear: we have every soft drink, and we recommend the ginger tea after dinner as a digestif. And it's the red onion of Tropea that will bring you back: try our focaccia!" }

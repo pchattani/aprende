@@ -278,3 +278,43 @@ dialogues:
       - { q: "O que a Júlia quer que o Lucas faça toda semana?", options: ["Que ligue para ela", "Que mande fotos", "Que estude muito"], answer: 1, explain: "Quero que você mande fotos toda semana." }
       - { q: "Por que o Rafael talvez não possa visitar o Lucas?", options: ["Porque não gosta de frio", "Porque depende da bolsa de estudos", "Porque tem prova"], answer: 1, explain: "He says it depends on his scholarship." }
       - { q: "O que a Júlia pede que o Lucas traga?", options: ["Queijo minas", "Vinho do Porto", "Pastel de nata"], answer: 2, explain: "E que você traga pastel de nata quando voltar!" }
+writing:
+  - task: "Your friend Ana is moving to Belo Horizonte for a new job. Write her a message with your wishes (Espero que…, Tomara que…, Desejo que…)."
+    min: 50
+    max: 100
+    use: [w.desejar, w.tomara, w.dar-certo, w.boa-sorte]
+    useAtLeast: 3
+    grammar: [g.subjunctive-wishes, g.subjunctive-irregular]
+    expect:
+      - { pattern: '\b(espero|tomara|desejo|quero) que\b', hint: "Express wishes with que + subjunctive: Espero que você goste…" }
+      - { pattern: '(?<!\p{L})(goste|seja|tenha|d[eê]|fa[cç]a|encontre|conhe[cç]a|aproveite|esteja|consiga|possa|v[aá])(?!\p{L})', hint: "Use subjunctive verbs: seja, tenha, goste, dê certo…" }
+    model: { es: "Querida Ana, que notícia boa! Espero que você goste muito de Belo Horizonte e que encontre um apartamento bonito perto do trabalho. Tomara que o novo emprego dê certo! Desejo que você seja muito feliz aí e que conheça muitos bares, porque BH é a capital dos bares. Um dia vou te visitar: quero provar o pão de queijo e o doce de leite de Minas. Boa sorte e um beijo grande!", en: "Dear Ana, what great news! I hope you love Belo Horizonte and find a nice flat near work. Fingers crossed the new job works out! I wish you every happiness there and hope you get to know lots of bars, because BH is the bar capital. One day I'll come and visit you: I want to try Minas cheese bread and dulce de leche. Good luck and a big kiss!" }
+  - task: "It's New Year's Eve (réveillon). Write your wishes for the new year: for your family, for yourself and for the world."
+    min: 50
+    max: 100
+    use: [w.réveillon, w.paz, w.felicidade, w.pedido, w.tomara]
+    useAtLeast: 3
+    grammar: [g.subjunctive-wishes, g.subjunctive-present-forms]
+    expect:
+      - { pattern: '\b(tomara|espero|desejo|quero) que\b', hint: "Wish things for others with que + subjunctive: Tomara que…, Espero que…" }
+      - { pattern: '(paz|sa[uú]de|felicidade|amor|sucesso|alegria)', hint: "Say what you wish for: paz, saúde, felicidade…" }
+    model: { es: "No réveillon, eu sempre faço três pedidos para o ano novo. Para a minha família, desejo muita saúde e paz. Tomara que os meus pais venham me visitar e que a minha irmã passe no vestibular. Para mim, espero conseguir um emprego melhor e viajar mais. E para o mundo, tomara que haja menos guerras e mais felicidade. Feliz ano novo!", en: "On New Year's Eve I always make three wishes for the new year. For my family I wish good health and peace. I hope my parents come to visit me and my sister passes her university entrance exam. For myself, I hope to get a better job and travel more. And for the world, I hope there are fewer wars and more happiness. Happy New Year!" }
+  - task: "Your younger cousin Pedro is taking the vestibular on Sunday. Write him a message saying what the family wants for him and what you want (A sua mãe quer que…, Eu quero que…)."
+    min: 50
+    max: 100
+    use: [w.vestibular, w.curso, w.bolsa-de-estudos, w.intercâmbio, w.boa-sorte]
+    useAtLeast: 3
+    grammar: [g.subjunctive-wishes]
+    expect:
+      - { pattern: '\b(quer|querem|quero|prefere|preferem|prefiro) que\b', hint: "Say what people want someone else to do: A sua mãe quer que você durma cedo." }
+    model: { es: "Oi, Pedro! A sua mãe me contou que o vestibular é no domingo. Ela quer que você durma cedo e que descanse no sábado. O seu pai quer que você faça Medicina, mas eu quero que você escolha o curso que você ama. Tomara que você ganhe uma bolsa de estudos e que faça um intercâmbio depois. Boa sorte!", en: "Hi, Pedro! Your mum told me the entrance exam is on Sunday. She wants you to go to bed early and rest on Saturday. Your dad wants you to study Medicine, but I want you to choose the course you love. I hope you win a scholarship and go on an exchange afterwards. Good luck!" }
+  - task: "Write about your goals for next year: what you hope to achieve yourself (Espero + infinitive) and what you hope other people will do (Espero que + subjunctive)."
+    min: 50
+    max: 100
+    use: [w.meta, w.objetivo, w.realizar, w.alcançar, w.conquistar]
+    useAtLeast: 3
+    grammar: [g.subjunctive-wishes, g.subjunctive-present-forms]
+    expect:
+      - { pattern: '\bespero [a-zà-ú]+(ar|er|ir)\b', hint: "Use espero + infinitive for your own goals: Espero realizar…" }
+      - { pattern: '\b(espero|tomara|quero) que\b', hint: "Use que + subjunctive for other people: Espero que o meu chefe…" }
+    model: { es: "As minhas metas para o próximo ano são simples. Espero alcançar um bom nível de português e quero realizar o sonho de morar em BH. Outro objetivo é conquistar uma vaga numa empresa mineira. Também espero que o meu chefe me deixe trabalhar de casa e que a minha namorada possa vir comigo. Tomara que tudo dê certo!", en: "My goals for next year are simple. I hope to reach a good level of Portuguese and I want to make my dream of living in BH come true. Another goal is to land a job at a company in Minas. I also hope my boss lets me work from home and that my girlfriend can come with me. Fingers crossed it all works out!" }

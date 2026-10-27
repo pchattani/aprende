@@ -292,3 +292,45 @@ dialogues:
       - { q: "Que faisait-il quand il a entendu les avions ?", options: ["Il dormait.", "Il mangeait.", "Il travaillait à la ferme."], answer: 0, explain: "Pendant la nuit, je dormais avec mon frère." }
       - { q: "Combien de temps sont-ils restés dans la cave ?", options: ["Une nuit", "Deux jours", "Une semaine"], answer: 1, explain: "Nous sommes restés là pendant deux jours." }
       - { q: "Quand le soldat est-il revenu ?", options: ["En 1944", "En 1984", "L'année dernière"], answer: 1, explain: "Il est revenu en 1984, pour les quarante ans du débarquement." }
+writing:
+  - task: "Tell the story of a day you remember (a storm, a trip, an exam): describe the background with the imparfait and the events with the passé composé."
+    min: 35
+    max: 70
+    use: [w.tout-à-coup, w.lendemain, w.se-passer, w.ciel, w.raconter]
+    useAtLeast: 2
+    grammar: [g.pc-vs-imparfait, g.narrative-connectors]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(?!(mais|jamais|fais|fait|vais|sais|sait|frais|lait|parfait|anglais|fran[cç]ais|japonais|portugais|palais|souhait|vrais|mauvais)(?![a-zàâçéèêëîïôûùœ]))[a-zàâçéèêëîïôûùœ]{2,}(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Set the scene with the imparfait: il faisait beau, nous étions…" }
+      - { pattern: "\\b(ai|as|a|avons|avez|ont|suis|es|est|sommes|[eê]tes|sont) (pas |d[eé]j[aà] |vite |bien |tout de suite )?[a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|it|u|ue|us|ert|eint|ort)(?![a-zàâçéèêëîïôûùœ])", hint: "Tell the events in the passé composé: il a commencé, nous sommes partis…" }
+    model: { es: "C'était un samedi de juillet. Il faisait beau et nous étions sur la plage avec mes cousins. Nous jouions au ballon. Tout à coup, le ciel est devenu noir et il a commencé à pleuvoir. Nous avons couru jusqu'à la voiture. Le lendemain, il faisait encore mauvais !", en: "It was a Saturday in July. The weather was nice and we were on the beach with my cousins. We were playing ball. Suddenly the sky went black and it started to rain. We ran to the car. The next day the weather was still bad!" }
+  - task: "Write a short diary entry for a young soldier on 6 June 1944: what happened first, next, suddenly and in the end (d'abord, puis, soudain, enfin…)."
+    min: 35
+    max: 70
+    use: [w.soldat, w.débarquer, w.puis, w.soudain, w.enfin]
+    useAtLeast: 3
+    grammar: [g.narrative-connectors, g.pc-vs-imparfait]
+    expect:
+      - { pattern: "\\b(d['’]abord|ensuite|puis|enfin|finalement|apr[eè]s)\\b", hint: "Order the events: d'abord, ensuite, puis, enfin…" }
+      - { pattern: "\\bsoudain|\\btout [aà] coup", hint: "Add a sudden event: soudain, tout à coup…" }
+    model: { es: "6 juin 1944. D'abord, nous avons attendu sur le bateau pendant des heures. Il faisait froid et j'avais peur. Puis, à six heures et demie, nous avons débarqué sur la plage. Soudain, il y a eu un grand bruit. Ensuite, nous avons couru vers les falaises. Enfin, le soir, nous étions vivants.", en: "6 June 1944. First we waited on the boat for hours. It was cold and I was scared. Then, at half past six, we landed on the beach. Suddenly there was a loud noise. Next we ran towards the cliffs. At last, in the evening, we were alive." }
+  - task: "Write about a visit to the D-Day beaches: when you went (il y a…), how long you stayed (pendant…) and how long you have been interested in history (depuis…)."
+    min: 30
+    max: 70
+    use: [w.mémorial, w.cimetière, w.pendant, w.histoire, w.moment]
+    useAtLeast: 3
+    grammar: [g.pendant-depuis-il-y-a]
+    expect:
+      - { pattern: "\\bil y a\\b", hint: "Say when: il y a deux ans…" }
+      - { pattern: "\\bpendant\\b", hint: "Say how long it lasted: pendant trois jours…" }
+      - { pattern: "\\bdepuis\\b", hint: "Say since when: depuis ce voyage…" }
+    model: { es: "Il y a deux ans, je suis allé en Normandie avec mon grand-père. Nous avons visité les plages du Débarquement pendant trois jours. Nous sommes allés au mémorial de Caen et au cimetière américain. C'était un moment très fort. Depuis, je lis beaucoup de livres d'histoire.", en: "Two years ago I went to Normandy with my grandfather. We visited the D-Day beaches for three days. We went to the Caen memorial and the American cemetery. It was a very powerful moment. Since then I've been reading lots of history books." }
+  - task: "Tell how you met your best friend: where you were, what you were doing, and what happened (imparfait and passé composé)."
+    min: 35
+    max: 70
+    use: [w.rencontrer, w.lendemain, w.musée, w.pleuvoir, w.ensemble]
+    useAtLeast: 3
+    grammar: [g.pc-vs-imparfait]
+    expect:
+      - { pattern: "\\brencontr", hint: "Say when you met: J'ai rencontré …" }
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(?!(mais|jamais|fais|fait|vais|sais|sait|frais|lait|parfait|anglais|fran[cç]ais|japonais|portugais|palais|souhait|vrais|mauvais)(?![a-zàâçéèêëîïôûùœ]))[a-zàâçéèêëîïôûùœ]{2,}(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Describe the scene with the imparfait: il pleuvait, j'étais…" }
+    model: { es: "J'ai rencontré mon ami Lucas il y a dix ans. J'avais douze ans et j'étais en vacances à Bayeux. Il pleuvait et je visitais le musée de la Tapisserie avec mes parents. Lucas était devant moi. Il a fait tomber son sac et je l'ai aidé. Le lendemain, nous avons joué au football ensemble.", en: "I met my friend Lucas ten years ago. I was twelve and on holiday in Bayeux. It was raining and I was visiting the Tapestry museum with my parents. Lucas was in front of me. He dropped his bag and I helped him. The next day we played football together." }

@@ -286,3 +286,41 @@ dialogues:
       - { q: "A Marina chegou a pensar em voltar para Fortaleza?", options: ["Sim, no primeiro ano", "Nunca", "Sim, está voltando agora"], answer: 0, explain: "Cheguei, no primeiro ano: she did think about it, then got used to life there." }
       - { q: "O que a Marina espera ter feito até julho?", options: ["Ter vendido a pousada", "Ter juntado dinheiro para a reforma", "Ter aprendido kitesurf"], answer: 1, explain: "Até julho, espero ter juntado dinheiro suficiente for the renovation." }
       - { q: "Como o Rafael pode ajudar?", options: ["Emprestando dinheiro", "Pintando a pousada", "Cuidando da recepção"], answer: 1, explain: "Tenho jeito para pintura: he offers to help with the painting." }
+writing:
+  - task: "A friend asks how life is going in Jericoacoara. Describe how you are getting by, using aspect periphrases (vou levando, a gente vai se virando, ando trabalhando…)."
+    es: "E aí, como está a vida em Jeri?"
+    min: 80
+    max: 140
+    use: [w.se-virar, w.ir-levando, w.bico, w.renda-extra, w.ralar]
+    useAtLeast: 3
+    grammar: [g.periphrases-aspect]
+    expect:
+      - { pattern: '(?<!\p{L})(vou|vai|vamos|v[aã]o|ando|anda|andamos|est(ou|á|amos|ão)) (me |se |nos )?[a-zà-ú]+(ando|endo|indo)(?!\p{L})', hint: "Use periphrases with the gerund: vou levando, a gente vai se virando…" }
+    model: { es: "Vou levando! O trabalho de instrutor de kitesurf é ótimo, mas não paga todas as contas. Por isso, faço uns bicos à noite num restaurante da vila para ter uma renda extra. A minha namorada também anda trabalhando muito: ela vende artesanato na praia. Não é fácil, a gente rala bastante, mas vai se virando. Hoje em dia, pelo menos, temos o que precisamos e ainda vemos o pôr do sol todo dia na duna! Se a gente continuar juntando dinheiro, no ano que vem vamos abrir a nossa própria escola.", en: "I'm getting by! The kitesurfing instructor job is great, but it doesn't pay all the bills. So I do some odd jobs in the evenings at a restaurant in the village to make extra money. My girlfriend has been working a lot too: she sells crafts on the beach. It isn't easy, we work really hard, but we're managing. These days, at least, we have what we need and we still watch the sunset from the dune every day! If we keep saving, next year we're going to open our own school." }
+  - task: "Write an encouraging message to a friend who is about to start something difficult (Você está prestes a…, Há de dar certo, Você vai se dar bem…)."
+    min: 80
+    max: 140
+    use: [w.haver-de, w.estar-prestes-a, w.dar-se-bem, w.dar-conta, w.sentir-falta]
+    useAtLeast: 3
+    grammar: [g.periphrases-modal]
+    expect:
+      - { pattern: '(\b(h[aá]|hei|h[aã]o) de\b|\best[aá] prestes a\b|\best[aá] para\b|\bse dar bem\b|\bd[aá] conta\b|\bvem a\b|\btorna a\b)', hint: "Use modal periphrases: Há de dar certo, está prestes a…" }
+    model: { es: "Oi, Marina! Fiquei sabendo que você está prestes a começar o novo emprego em Fortaleza. Que orgulho! Sei que você está nervosa, mas você vai se dar bem, tenho certeza. Você sempre dá conta de tudo! No começo, você vai sentir falta de Jeri, da praia e dos amigos, mas há de se acostumar. Se um dia estiver a fim de conversar, me liga. Há de dar tudo certo! Lembra que, no ano passado, você também estava com medo e acabou adorando o curso? Vai ser igual!", en: "Hi, Marina! I heard you're about to start your new job in Fortaleza. I'm so proud! I know you're nervous, but you'll do well, I'm sure. You always cope with everything! At first you'll miss Jeri, the beach and your friends, but you're bound to get used to it. If you ever feel like talking, call me. It's bound to work out! Remember last year you were scared too and ended up loving the course? It'll be the same!" }
+  - task: "Your manager asks how a project is going. Write a semi-formal update on what will have been done by the deadline (Até quarta, terei finalizado…, A essa altura, teremos…)."
+    min: 80
+    max: 140
+    use: [w.até-lá, w.a-essa-altura, w.finalizar, w.cumprir, w.desempenho]
+    useAtLeast: 3
+    grammar: [g.future-perfect]
+    expect:
+      - { pattern: '\b(terei|teremos|ter[aá]|ter[aã]o) [a-zà-ú]+(ado|ido|ito|isto|eito|osto)\b', hint: "Use the future perfect: Até sexta, terei terminado…" }
+    model: { es: "Prezada Senhora Lima, o projeto está andando bem. Até quarta-feira, terei finalizado o relatório de desempenho e teremos analisado todos os dados do semestre. Na quinta, a equipe já terá preparado a reunião com os clientes. Até lá, também terei conversado com o fornecedor sobre o novo contrato. A essa altura, acredito que teremos cumprido todas as etapas dentro do prazo. Na sexta, a essa altura, o projeto já terá sido entregue ao cliente. Caso haja alguma mudança, eu a aviso imediatamente. Atenciosamente, Pedro. ", en: "Dear Ms Lima, the project is going well. By Wednesday I will have finished the performance report and we will have analysed all the data for the semester. On Thursday the team will already have prepared the meeting with the clients. By then I will also have spoken to the supplier about the new contract. At that point I believe we will have completed every stage on time. On Friday, by then, the project will already have been delivered to the client. Should anything change, I will let you know immediately. Kind regards, Pedro. " }
+  - task: "Something broke at home and you fixed it yourself, Brazilian style. Tell the story with colloquial expressions (dei um jeito, quebrou o galho, caiu a ficha, deixar pra lá…)."
+    min: 80
+    max: 140
+    use: [w.dar-um-jeito, w.quebrar-o-galho, w.cair-a-ficha, w.ferramenta, w.fita-adesiva]
+    useAtLeast: 3
+    grammar: [g.periphrases-modal, g.periphrases-aspect]
+    expect:
+      - { pattern: '(d(ei|eu|ar) um jeito|quebr(ei|ou|ar|a) o galho|caiu a ficha|deixar pra l[aá]|empurrar com a barriga|fiz quest[aã]o|fazer de conta|dar uma m[aã]o|tenho jeito|ter jeito)', hint: "Use colloquial expressions: dei um jeito, quebrou o galho, caiu a ficha…" }
+    model: { es: "No domingo à noite, o cano da pia da cozinha começou a soltar água. Era tarde e nenhum encanador atendia. Primeiro, tentei empurrar com a barriga e deixar pra lá, mas a água não parava. Aí caiu a ficha: eu tinha que fazer alguma coisa! Peguei as ferramentas do meu pai, mas não tenho jeito para essas coisas. No final, dei um jeito: enrolei o cano com fita adesiva e coloquei uma panela embaixo. Quebrou o galho até segunda, quando o encanador veio e consertou tudo.", en: "On Sunday night the pipe under the kitchen sink started leaking. It was late and no plumber was answering. At first I tried to put it off and forget about it, but the water wouldn't stop. Then the penny dropped: I had to do something! I got out my father's tools, but I'm hopeless at that kind of thing. In the end I found a way: I wrapped the pipe in tape and put a pan underneath. It did the trick until Monday, when the plumber came and fixed everything." }

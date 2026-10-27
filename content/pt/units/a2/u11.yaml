@@ -280,3 +280,45 @@ dialogues:
       - { q: "Por que o Leandro se mudou?", options: ["Por causa do trabalho", "Por causa da namorada", "Para estudar"], answer: 0, explain: "Por causa do trabalho: because of his job." }
       - { q: "O que o Leandro achou do chimarrão?", options: ["Doce", "Muito amargo", "Gelado"], answer: 1, explain: "Achei muito amargo: he found it very bitter." }
       - { q: "O que ele quer comprar no mercado?", options: ["Um presente para a mãe", "Uma passagem de ônibus", "Um vinho"], answer: 0, explain: "Preciso comprar um presente para a minha mãe." }
+writing:
+  - task: "Write about a road trip to the Serra Gaúcha: where you went and why (para), and the route you took (por, pelo, pela)."
+    min: 30
+    max: 65
+    use: [w.serra, w.rodovia, w.vinícola, w.alugar, w.por-causa-de]
+    useAtLeast: 3
+    grammar: [g.por-vs-para]
+    expect:
+      - { pattern: '\bpara (a|o|as|os|[a-zà-ú]+(ar|er|ir))\b', hint: "Use para for destination and purpose: para a Serra, para visitar…" }
+      - { pattern: '\b(por|pelo|pela|pelos|pelas)\b', hint: "Use por / pelo / pela for the route or the cause: pela rodovia, por causa de…" }
+    model: { es: "No sábado, fomos para a Serra Gaúcha. Alugamos um carro para visitar as vinícolas. Passamos por Gramado e voltamos pela rodovia. Não subimos a montanha por causa da chuva. Pagamos três pedágios. Que caro!", en: "On Saturday we went to the Serra Gaúcha. We hired a car to visit the wineries. We went through Gramado and came back along the highway. We didn't go up the mountain because of the rain. We paid three tolls. So expensive!" }
+  - task: "Write to a friend you miss: what you think about, what you remember and what you have tried here in Porto Alegre (pensar em, lembrar-se de, gostar de, depender de)."
+    min: 30
+    max: 65
+    use: [w.pensar, w.lembrar-se, w.depender, w.chimarrão, w.erva-mate]
+    useAtLeast: 3
+    grammar: [g.prepositions-with-verbs]
+    expect:
+      - { pattern: '\b(pens(o|ei|ando|amos)|confi(o|amos|ei))( muito| sempre)? (em|no|na|nos|nas|num|numa)\b', hint: "Use pensar em / confiar em: Penso muito em você." }
+      - { pattern: '\b(lembr[a-z]*|gost[a-z]*|depend[a-z]*|precis[a-z]*) (de|do|da|dos|das)\b', hint: "Use lembrar-se de / gostar de / depender de: Me lembro das nossas…" }
+    model: { es: "Oi, Lucas! Penso muito em você aqui em Porto Alegre. Sempre me lembro das nossas tardes no Ibirapuera. Hoje experimentei chimarrão com uns amigos gaúchos e gostei muito! Um bom chimarrão depende da erva-mate e da água. Volto em março!", en: "Hi, Lucas! I think about you a lot here in Porto Alegre. I always remember our afternoons in Ibirapuera. Today I tried chimarrão with some gaúcho friends and I really liked it! A good chimarrão depends on the yerba mate and the water. I'm back in March!" }
+  - task: "Write a thank-you message to your host family in Porto Alegre: thank them for several things (obrigado pelo…, pela…) and mention a walk you took (pelo centro…)."
+    min: 25
+    max: 60
+    use: [w.histórico, w.churrascaria, w.picanha, w.prefeitura, w.chimarrão]
+    useAtLeast: 3
+    grammar: [g.contractions-por]
+    expect:
+      - { pattern: '\bobrigad[oa] (pelo|pela|pelos|pelas|por)\b', hint: "Thank them with por + article: Obrigada pelo chimarrão!" }
+      - { pattern: '\b(pelo|pela|pelos|pelas)\b', hint: "Describe the route: pelo centro, pela rua…" }
+    model: { es: "Querida família, obrigada pela semana maravilhosa e pelo chimarrão de todas as manhãs! Adorei o passeio pelo centro histórico e a visita à prefeitura. Obrigada também pelo jantar na churrascaria: a picanha estava ótima! Beijos.", en: "Dear family, thank you for a wonderful week and for the chimarrão every morning! I loved the walk through the historic centre and the visit to the city hall. Thanks also for dinner at the steakhouse: the picanha was great! Love." }
+  - task: "Answer the questions about your life with há / faz and desde."
+    es: "Há quanto tempo você mora aí? Desde quando você estuda português? Quando você chegou?"
+    min: 25
+    max: 60
+    use: [w.desde, w.durante, w.ano, w.mês, w.chegar]
+    useAtLeast: 2
+    grammar: [g.ha-faz-time]
+    expect:
+      - { pattern: '\b(h[aá]|faz) (\d+|um|uma|dois|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove|dez|muito|pouco|quase)\b', hint: "Say how long with há / faz: Moro aqui há dois anos." }
+      - { pattern: '\bdesde\b', hint: "Say since when: desde 2022 / desde janeiro." }
+    model: { es: "Moro em Porto Alegre há dois anos. Cheguei aqui em março, depois de uma viagem longa. Estudo português desde janeiro de 2022, então faz quase quatro anos. Durante a semana, tenho aula toda terça.", en: "I've lived in Porto Alegre for two years. I arrived here in March, after a long journey. I've been studying Portuguese since January 2022, so it's almost four years. During the week I have a class every Tuesday." }

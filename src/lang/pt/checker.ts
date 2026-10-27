@@ -7,6 +7,7 @@
  *
  * Grammar note ids used: g.accents, g.gender-nouns, g.adjective-agreement, g.subject-pronouns.
  */
+import { contentRegExp } from '../wordBoundary'
 import type { CheckerFinding } from '../types'
 import type { ErrorRule, VocabEntry } from '../../engine/schema'
 import type { PtIrregularVerb } from './schema'
@@ -233,6 +234,17 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       break
     }
     const ambiguousA = d === 'a' && i > 0 && !PREPS_BEFORE_ARTICLE.has(lower[i - 1]!)
+    // stay quiet when unsure: muito/pouco/tanto as adverbs (muito gente boa, muito tarde), a noun that is also
+    // an adverb (tarde), the plural of a compound (as terças → terça-feira), or a noun whose next word we don't
+    // know (o caixa eletrônico), or several senses of the noun that the article and adjective agree on
+    const unsure =
+      (!agrees(f, nf) && ['muito', 'pouco', 'tanto', 'bastante', 'demasiado'].includes(d)) ||
+      Boolean(entriesOf[j]?.some((e) => e.pos === 'adv')) ||
+      Boolean(entriesOf[j]?.every((e) => /[\s-]/.test(e.lemma)) && !entriesOf[j]?.some((e) => e.lemma.toLowerCase() === lower[j])) ||
+      (j + 1 < words.length && !gap[j] && !entriesOf[j + 1] && !/^\p{Lu}/u.test(words[j + 1]!.text)) ||
+      // a noun with several senses (caixa: the box, o caixa: the cashier) whose article and adjective agree with each other
+      ((entriesOf[j]?.length ?? 0) > 1 && adjs.some((a) => cands[a]!.some((x) => x.role === 'adj' && x.gender !== 'mf' && agrees(f, x))))
+    if (unsure) continue
     if (!agrees(f, nf) && !ambiguousA) {
       findings.push({
         code: 'agreement', message: `Agreement: “${words[i]!.text} ${words[j]!.text}”: the article/determiner must match the noun (${describe(nf)}).`,
@@ -288,7 +300,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     if (w === 'tu' && hits.some((h) => h.person === 2)) continue
     if (lower.slice(i + 1, j).includes('se') && hits.some((h) => h.person === 2)) continue // impersonal se: vós só se usa…
     const h = hits[0]!
-    const correct = conjugate(h.lemma, deps.verbs).forms[h.tense][persons[0]!]
+    const correct = conjugate(h.lemma, deps.verbs).forms[h.tense][persons[0]!]?.split(' ')[0] // compound tenses: the auxiliary the learner wrote
     findings.push({
       code: 'verb-agreement', message: `“${w} ${v}”: the verb must agree with ${PERSONS[persons[0]!]}${correct ? ` → “${w} ${correct}”` : ''}.`,
       start: words[aGente ? i - 1 : i]!.start, end: words[j]!.end, suggestion: correct ?? undefined, grammar: 'g.subject-pronouns',
@@ -300,12 +312,14 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   for (const r of deps.rules) {
     let re: RegExp
     try {
-      re = new RegExp(r.pattern, 'giu')
+      re = contentRegExp(r.pattern, 'giu')
     } catch {
       continue
     }
     let m: RegExpExecArray | null
     while ((m = re.exec(lowerText))) {
+      // de + o/a before an infinitive is correct (deixei de o detestar, antes de a aula começar)
+      if (/^de (o|a|os|as)$/.test(m[0]) && /^\s+(?:\S+\s+)?\p{L}+[aeiô]r\b/u.test(lowerText.slice(m.index + m[0].length))) continue
       findings.push({ code: 'learner-error', message: r.message + (r.example ? ` (✗ ${r.example.wrong} → ✓ ${r.example.right})` : ''), start: m.index, end: m.index + m[0].length, grammar: r.grammar })
       if (m[0].length === 0) re.lastIndex++
     }

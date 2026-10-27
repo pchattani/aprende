@@ -276,3 +276,46 @@ dialogues:
       - { q: "新聞入面，嗰間商店發生咩事？", options: ["發生火警", "遭爆竊", "獲獎"], answer: 1, explain: "The script says the shop 遭爆竊, was burgled." }
       - { q: "「生命」嘅生應該點讀？", options: ["saang1", "sang1", "seng1"], answer: 1, explain: "生命 takes the literary reading sang1." }
       - { q: "嘉欣聽日要做咩？", options: ["返工", "考試", "去大三巴旅行"], answer: 1, explain: "She says the exam is tomorrow and hopes to be chosen as best anchor." }
+writing:
+  - task: "You read this news item on your phone. Retell it to a friend in everyday Cantonese, and add your own reaction."
+    es: "據悉，一名男子昨天晚上涉嫌醉駕，在大三巴附近撞傷兩名途人，已被警方拘捕。"
+    min: 90
+    max: 160
+    use: [w.zeoi3-gaa3, w.tou4-jan4, w.keoi1-bou6, w.ging2-fong1]
+    useAtLeast: 2
+    grammar: [g.news-register, g.formal-passive]
+    expect:
+      - { pattern: "尋晚", hint: "In speech, 昨天晚上 becomes 尋晚." }
+      - { pattern: "畀(警察|警方|差人)|拉咗|捉咗", hint: "Say he was arrested the spoken way: 畀警察拉咗." }
+    model: { es: "你睇咗新聞未呀？聽講尋晚有個男人飲咗酒仲揸車，喺大三巴附近撞傷咗兩個途人，已經畀警察拉咗。好彩傷者冇生命危險。我覺得醉駕真係好危險，又好自私，應該罰重啲，唔係就會有更多人受害。你揸車都要小心呀。飲咗酒就唔好揸車。", en: "Have you seen the news? Apparently last night a man drove after drinking and hit two passers-by near the Ruins of St Paul's; he's been arrested by the police. Luckily the injured aren't in danger. I think drink-driving is really dangerous and selfish; the penalties should be heavier, or more people will get hurt. Be careful when you drive too. If you've been drinking, don't drive." }
+  - task: "Write a short news report in news register about a fire near the Ruins of St Paul's, using expressions like 據報, 一名, 傷者 and 目前."
+    min: 90
+    max: 160
+    use: [w.geoi3-bou3, w.fo2-ging2, w.soeng1-ze2, w.muk6-cin4, w.dyun2-lou6]
+    useAtLeast: 3
+    grammar: [g.news-register]
+    expect:
+      - { pattern: "據報|據悉|有指", hint: "Open in news style: 據報…" }
+      - { pattern: "一名|兩名|三名|[一二兩三四五六七八九十]名", hint: "Count people the news way: 一名男子, 兩名傷者." }
+    model: { es: "據報，今日下午三時，大三巴附近一間商店發生火警。消防員迅速趕到現場，大約半個鐘之後將火救熄。事件中有兩名傷者，包括一名女售貨員，已經送院治理。消防員話火警可能由電線短路引起，目前仍然調查緊原因。附近嘅交通暫時受到影響。", en: "It is reported that at 3 p.m. today a fire broke out in a shop near the Ruins of St Paul's. Firefighters quickly arrived at the scene and put out the fire in about half an hour. Two people were injured, including a female shop assistant, and were taken to hospital for treatment. The Fire Services said initially that the fire may have been caused by an electrical short circuit; the cause is still under investigation. Traffic nearby is temporarily affected." }
+  - task: "Write three short news items using formal passives: a shop was burgled (遭), a suspect was arrested (被), and a local student won an award (獲)."
+    min: 90
+    max: 160
+    use: [w.zou1.b, w.bei6-bou6, w.wok6-zoeng2, w.baau3-sit3, w.sau6-dou3]
+    useAtLeast: 3
+    grammar: [g.formal-passive]
+    expect:
+      - { pattern: "遭", hint: "Use 遭 for something bad happening: 遭爆竊." }
+      - { pattern: "被", hint: "Use 被 for the formal passive: 被捕." }
+      - { pattern: "獲", hint: "Use 獲 for something good: 獲獎." }
+    model: { es: "第一，議事亭前地一間舖頭前晚遭爆竊，損失超過十萬元。第二，警方今日上午拘捕一名涉案男子，佢涉嫌盜竊，已經被捕。第三，一名本地中學生喺國際比賽獲獎，受到全城關注。佢話會繼續努力，希望將來做科學家。警方提醒市民要留意屋企嘅門窗。", en: "First, a shop in Senado Square was burgled the night before last, with losses of over 100,000 dollars. Second, this morning the police arrested a man involved in the case on suspicion of theft. Third, a local secondary school student won an award in an international competition and drew attention across the city. She says she'll keep working hard and hopes to become a scientist. The police remind residents to keep an eye on their doors and windows." }
+  - task: "Summarise today's economic news for your family and say what it means for ordinary people."
+    min: 90
+    max: 170
+    use: [w.tung1-zoeng3, w.sat1-jip6-leot2, w.lau4-si5, w.baak3-fan6-dim2, w.coi4-jyun4]
+    useAtLeast: 3
+    grammar: [g.news-register]
+    expect:
+      - { pattern: "百分點|百分之", hint: "Give a figure: 上升咗一個百分點." }
+      - { pattern: "即係|意思係|對.{1,8}影響", hint: "Explain what it means: 即係話…, 對我哋有影響." }
+    model: { es: "今日新聞話，通脹又上升咗一個百分點，失業率都升到百分之四。有幾間大公司宣佈裁員，樓市亦都繼續下跌。即係話，物價越嚟越貴，但係搵工就越嚟越難。對普通市民嚟講，最好慳啲使，儲多啲錢，唔好亂咁買嘢。大家都要準備好，因為經濟可能會差一段時間。", en: "Today's news says inflation has risen another percentage point and unemployment has gone up to four per cent. Several big companies have announced lay-offs, and the property market continues to fall. In other words, prices keep rising while finding a job gets harder. For ordinary people, it's best to spend less, save more and not buy things carelessly. Everyone needs to be prepared, because the economy may be weak for a while." }

@@ -265,3 +265,44 @@ dialogues:
       - { q: "阿爺細個喺邊度睇神功戲？", options: ["廣州塔", "佛山", "沙面"], answer: 1, explain: "我細個喺佛山睇神功戲: he watched ritual opera in Foshan." }
       - { q: "「妾」係乜嘢意思？", options: ["皇帝講「我」", "「你」", "女仔講「我」"], answer: 2, explain: "妾 is a humble female 'I'." }
       - { q: "佢哋下個禮拜打算去邊度？", options: ["北京路", "佛山祖廟", "陳家祠"], answer: 1, explain: "嘉欣 asks Grandpa to take them to the Wanfu Stage at Foshan's Ancestral Temple." }
+writing:
+  - task: "Write a review of a Cantonese opera performance you saw at the Wanfu Stage in Foshan's Ancestral Temple."
+    min: 110
+    max: 190
+    use: [w.jyut6-kek6, w.maan6-fuk1-toi4, w.faa1-daan3, w.man4-mou5-sang1, w.coeng3-hong1]
+    useAtLeast: 3
+    grammar: [g.opera-language]
+    expect:
+      - { pattern: "粵劇|大戲", hint: "Name the art form: 粵劇, 大戲." }
+      - { pattern: "花旦|文武生|小生|丑生|老倌", hint: "Mention the roles: 花旦, 文武生…" }
+    model: { es: "上星期六我喺佛山祖廟嘅萬福台睇咗一場粵劇，劇目係名劇《帝女花》。做花旦嘅老倌唱腔好有感情，子喉嘅高音好穩定；文武生嘅身段同做手都好有型。最令我感動係最尾一場，兩個主角一齊死，台下好多戲迷都喊咗。最可惜係我坐得太後，聽唔清楚啲念白。總括嚟講，真係值得一睇。", en: "Last Saturday I saw a Cantonese opera on the Wanfu Stage at Foshan's Ancestral Temple: the famous The Flower Princess. The star playing the leading lady sang with great feeling and her falsetto high notes were very steady; the lead male's posture and gestures were really stylish. Most moving was the final scene, where the two leads die for love together; many fans in the audience cried. The biggest pity was sitting too far back to hear the spoken lines clearly. Overall, it's well worth seeing." }
+  - task: "Write four lines in the style of an opera libretto using classical pronouns (妾, 君, 吾, 卿), then explain them in modern Cantonese."
+    min: 110
+    max: 190
+    use: [w.cip3, w.gwan1.b, w.ng4.b, w.hing1, w.fu1-gwan1]
+    useAtLeast: 3
+    grammar: [g.classical-pronouns]
+    expect:
+      - { pattern: "妾|奴家|吾|在下|寡人", hint: "Use a classical first-person pronoun: 妾, 吾…" }
+      - { pattern: "君|卿|汝|爾|夫君|娘子", hint: "Use a classical second-person pronoun: 君, 卿…" }
+      - { pattern: "即係|意思係|嘅意思", hint: "Explain it in modern Cantonese: 即係…" }
+    model: { es: "「夫君呀，天涯海角，妾都隨君去。」「娘子呀，今生吾只愛卿一人。」「離別之時淚如雨下，」「來生再結此段緣。」用而家嘅廣東話講，即係老婆話：「老公，去到幾遠我都跟住你。」老公答：「我呢一生淨係愛你一個。」最後兩句意思係：分開嘅時候喊到眼淚好似落雨咁，不過來生我哋都要再喺埋一齊，真係好令人感動。", en: "\"My husband, to the ends of the earth I'll follow you.\" \"My wife, in this life I love only you.\" \"At parting, tears fall like rain;\" \"in the next life we'll tie this bond again.\" In modern Cantonese: the wife says, \"Husband, however far you go, I'll follow you.\" The husband answers, \"In this life I love only you.\" The last two lines mean: when we part, our tears fall like rain, but in the next life we'll be together again. Very moving." }
+  - task: "Write about a work situation using expressions that come from the opera stage (跑龍套, 好戲在後頭, 做大龍鳳, 收科)."
+    min: 110
+    max: 190
+    use: [w.paau2-lung4-tou3, w.hou2-hei3-zoi6-hau6-tau4, w.zou6-daai6-lung4-fung6, w.sau1-fo1]
+    useAtLeast: 3
+    grammar: [g.opera-idioms]
+    expect:
+      - { pattern: "跑龍套|好戲在後頭|做大龍鳳|收科|做戲", hint: "Use an opera expression: 跑龍套, 做大龍鳳…" }
+    model: { es: "我啱啱轉咗工，喺新公司暫時只係跑龍套，做啲影印同訂會議室嘅嘢。今日開會，經理同隔籬部門嘅經理為咗一份報告嗌交，嗌到成層樓都聽到，真係做大龍鳳。最後要老細出嚟先收科。同事話我：「你啱啱嚟，好戲仲喺後頭呀！」聽完我真係唔知應該笑定喊。我諗我都係做好自己份工先。", en: "I've just changed jobs, and for now I'm only playing a bit part at the new company, doing photocopying and booking meeting rooms. In today's meeting, my manager and the manager of another department argued over a report so loudly the whole floor could hear: a real big show. It took the boss coming out to wrap it up. A colleague told me: \"You've only just arrived; the best is yet to come!\" I didn't know whether to laugh or cry. I think I'd better just focus on doing my own job well." }
+  - task: "Write a short article for a travel magazine about Foshan's culture: kung fu, lion dance and crafts."
+    min: 110
+    max: 200
+    use: [w.wong4-fei1-hung4, w.jip6-man6, w.wing6-ceon1, w.sing2-si1, w.zin2-zi2]
+    useAtLeast: 3
+    grammar: [g.opera-language]
+    expect:
+      - { pattern: "佛山", hint: "Mention Foshan." }
+      - { pattern: "黃飛鴻|葉問|詠春|醒獅|武術|剪紙|陶瓷", hint: "Mention Foshan's culture: 黃飛鴻, 醒獅, 剪紙…" }
+    model: { es: "講起佛山，好多人第一時間會諗起黃飛鴻同葉問。佛山係南派武術好重要嘅地方，而家市區入面仲有唔少武館教詠春。每逢節日，街上都有醒獅表演，鑼鼓聲一響，成條街即刻熱鬧起嚟。除咗功夫，佛山嘅陶瓷同剪紙都好出名。如果你鍾意傳統文化，嚟佛山住兩日，一定會有好多收穫。記得試吓佛山啲嘢食呀！", en: "When people talk about Foshan, many immediately think of Wong Fei-hung and Ip Man. Foshan is a very important place for southern martial arts, and there are still quite a few schools in the city centre teaching Wing Chun. At every festival there are lion dances in the streets; as soon as the gongs and drums sound, the whole street comes alive. Besides kung fu, Foshan's ceramics and paper-cutting are also famous. If you like traditional culture, spend a couple of days in Foshan and you'll gain a lot. Remember to try Foshan's food!" }

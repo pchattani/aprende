@@ -280,3 +280,41 @@ dialogues:
       - { q: "Pourquoi Malik s'est-il trompé d'endroit ?", options: ["Il avait perdu son téléphone", "Il ne connaissait pas Arles", "Il n'avait pas lu tout le message"], answer: 2, explain: "He hadn't read the message to the end (jusqu'au bout)." }
       - { q: "Pourquoi n'a-t-il pas répondu au téléphone ?", options: ["Sa batterie était vide", "Il était au musée", "Il ne l'entendait pas"], answer: 0, explain: "He had forgotten to charge his phone before leaving, so the battery was flat." }
       - { q: "Que propose Malik pour se faire pardonner ?", options: ["Une visite guidée", "Un café", "Un dîner au restaurant"], answer: 1, explain: "Laisse-moi t'offrir un café pour me faire pardonner." }
+writing:
+  - task: "Tell the story of Van Gogh's arrival in Arles: what he had already done and lived before (plus-que-parfait) and what he did there."
+    min: 50
+    max: 100
+    use: [w.tournesol, w.impressionniste, w.peindre, w.souffrir, w.folie]
+    useAtLeast: 3
+    grammar: [g.plus-que-parfait]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(avais|avait|avions|aviez|avaient|[eé]tais|[eé]tait|[eé]tions|[eé]tiez|[eé]taient) (d[eé]j[aà] |jamais |pas |bien |toujours )?[a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|ies|u|ue|us|ert|it|eint|cu)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the plus-que-parfait for what happened before: il avait déjà vécu, il était venu…" }
+    model: { es: "Quand Van Gogh est arrivé à Arles en 1888, il avait déjà vécu à Paris pendant deux ans. Il avait rencontré des peintres impressionnistes et il avait découvert la couleur. À Arles, il a peint des tournesols, des cafés et les arènes. Avant, il n'avait jamais vu une lumière aussi forte ! Malheureusement, il était déjà très malade, et il a beaucoup souffert de sa folie.", en: "When Van Gogh arrived in Arles in 1888, he had already lived in Paris for two years. He had met Impressionist painters and had discovered colour. In Arles he painted sunflowers, cafés and the arena. He had never seen such strong light before! Unfortunately he was already very ill, and he suffered a great deal from his madness." }
+  - task: "Describe your day in Arles step by step, using après avoir / après être + past participle and avant de + infinitive."
+    min: 50
+    max: 100
+    use: [w.après-avoir, w.avant-de, w.arène, w.romain, w.appareil-photo]
+    useAtLeast: 3
+    grammar: [g.apres-avoir-avant-de]
+    expect:
+      - { pattern: "\\bapr[eè]s (avoir|[eé]tre|m['’][eê]tre|nous [eê]tre|s['’][eê]tre) [a-zàâçéèêëîïôûùœ]+", hint: "Use après avoir / après être + participle: après avoir vu les arènes…" }
+      - { pattern: "\\bavant d(e\\s|['’])[a-zàâçéèêëîïôûùœ]+", hint: "Use avant de + infinitive: avant de visiter la ville…" }
+    model: { es: "Ce matin, avant de visiter la ville, j'ai pris un café sur la place du Forum. Après avoir vu les arènes romaines, je suis allé à l'Espace Van Gogh. Après être sorti du musée, j'ai déjeuné près du Rhône. Avant de rentrer à l'hôtel, j'ai pris des photos du fleuve avec mon appareil photo. Après avoir marché toute la journée, j'étais très fatigué !", en: "This morning, before visiting the town, I had a coffee on the Place du Forum. After seeing the Roman arena, I went to the Espace Van Gogh. After leaving the museum, I had lunch by the Rhône. Before going back to the hotel, I took photos of the river with my camera. After walking all day, I was very tired!" }
+  - task: "Describe a moment when you saw something beautiful, using time clauses (au moment où, dès que, tandis que, jusqu'à ce que, une fois que)."
+    min: 50
+    max: 100
+    use: [w.au-moment-où, w.tandis-que, w.jusqu-à-ce-que, w.une-fois-que, w.remarquer]
+    useAtLeast: 3
+    grammar: [g.time-clauses]
+    expect:
+      - { pattern: "\\b(d[eè]s que|d[eè]s qu['’]|au moment o[uù]|tandis qu|une fois qu|aussit[oô]t qu|jusqu['’][aà] ce qu|pendant qu|lorsqu)", hint: "Link actions with time clauses: au moment où, dès que, tandis que…" }
+    model: { es: "L'année dernière, je me promenais à Arles au moment où le soleil se couchait. Dès que j'ai vu la lumière sur le Rhône, j'ai compris pourquoi Van Gogh aimait cette ville. Tandis que mon ami prenait des photos, je remarquais les couleurs du ciel. Nous sommes restés sur le quai jusqu'à ce qu'il fasse nuit. Une fois que nous sommes rentrés, j'ai essayé de peindre ce moment.", en: "Last year I was walking in Arles just as the sun was setting. As soon as I saw the light on the Rhône, I understood why Van Gogh loved this town. While my friend was taking photos, I was noticing the colours of the sky. We stayed on the quay until it was dark. Once we got back, I tried to paint that moment." }
+  - task: "Tell the story of a misunderstanding (un malentendu) with a friend: what had happened before, how you realised, and how you made up."
+    min: 50
+    max: 100
+    use: [w.malentendu, w.vexé, w.exprès, w.s-excuser, w.pardonner]
+    useAtLeast: 3
+    grammar: [g.plus-que-parfait]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(avais|avait|avions|aviez|avaient|[eé]tais|[eé]tait|[eé]tions|[eé]tiez|[eé]taient) (d[eé]j[aà] |jamais |pas |bien |toujours )?[a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|ies|u|ue|us|ert|it|eint)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the plus-que-parfait for the earlier events: il m'avait invité, j'avais oublié…" }
+    model: { es: "La semaine dernière, j'ai eu un malentendu avec mon ami Karim. Il m'avait invité à son anniversaire, mais il avait envoyé le message à mon ancien numéro ! Je ne suis donc pas venu à la fête. Karim était vexé, parce qu'il pensait que je l'avais oublié exprès. Quand je me suis rendu compte de l'erreur, je me suis excusé et je lui ai tout expliqué. Il m'a pardonné et nous avons bien ri.", en: "Last week I had a misunderstanding with my friend Karim. He had invited me to his birthday, but he had sent the message to my old number! So I didn't come to the party. Karim was hurt, because he thought I had forgotten on purpose. When I realised the mistake, I apologised and explained everything. He forgave me and we had a good laugh." }

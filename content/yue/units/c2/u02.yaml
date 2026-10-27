@@ -273,3 +273,44 @@ dialogues:
       - { q: "點解嘉欣叫志明唔好送梨？", options: ["阿琛老婆唔鍾意食梨", "分梨聽落似分離", "啲梨唔新鮮"], answer: 1, explain: "分梨 'share a pear' sounds like 分離 'separation'." }
       - { q: "最後志明決定送乜嘢？", options: ["一個鐘", "一籃梨", "一盆桔同一個陶瓷元寶"], answer: 2, explain: "He chooses kumquats (桔 = 吉 'lucky') and a ceramic ingot for wealth." }
       - { q: "嘉欣點解咁識呢啲避忌？", options: ["佢阿婆成日講", "佢日日睇通勝", "佢喺陳家祠做導遊"], answer: 0, explain: "Her grandmother talks about them all the time (我阿婆成日講)." }
+writing:
+  - task: "Explain to a foreign friend why Cantonese families eat certain dishes at the New Year's Eve dinner. Explain the homophone puns."
+    min: 110
+    max: 190
+    use: [w.haai4-jam1, w.faat3-coi3, w.hou4-si2, w.saang1-coi3, w.nin4-je6-faan6]
+    useAtLeast: 3
+    grammar: [g.homophone-puns]
+    expect:
+      - { pattern: "髮菜|蠔豉|生菜|魚|桔", hint: "Name a lucky food: 髮菜, 蠔豉, 生菜…" }
+      - { pattern: "諧音|同音|聽落|好似", hint: "Explain the pun: 同…係諧音." }
+    model: { es: "廣東人食年夜飯好講意頭，好多菜都係靠諧音。例如「髮菜」聽落好似「發財」，「蠔豉」就同「好市」同音，意思係生意好。「生菜」就係「生財」，所以好多人會用生菜包住啲餸嚟食。仲有一定要有魚，因為「魚」聽落好似年年有餘，代表每年都有多。食咗呢啲菜，大家都希望新一年身體健康，好運連連。", en: "Cantonese people care a lot about good omens at the New Year's Eve dinner, and many dishes rely on homophones. For example, 髮菜 'black moss' sounds like 發財 'get rich', and 蠔豉 'dried oysters' sounds the same as 好市 'good business'. 生菜 'lettuce' is 生財 'make money', so many people wrap food in lettuce. There must also be fish, because 魚 sounds like the 'surplus' in 年年有餘, for having more than enough every year. Eating these dishes, everyone hopes for good health and endless luck in the new year." }
+  - task: "Your friend is visiting a Cantonese family for the first time. Advise them on gift taboos and why they matter (送鐘, 分梨, 遮)."
+    min: 110
+    max: 190
+    use: [w.bei6-gei6, w.sung3-zung1, w.fan1-lei4, w.saan3.b, w.daai6-gat1-lei6-si6]
+    useAtLeast: 3
+    grammar: [g.taboo-euphemisms]
+    expect:
+      - { pattern: "送鐘|送終|分梨|分離|遮|傘", hint: "Name a taboo gift: 送鐘, 分梨, 遮…" }
+      - { pattern: "唔好|千祈|避忌|忌諱", hint: "Give the warning: 千祈唔好…" }
+    model: { es: "去廣東人屋企做客，送嘢要特別小心。千祈唔好送鐘，因為「送鐘」同「送終」同音，好唔吉利。同朋友食梨都唔好分開食，「分梨」聽落好似「分離」。送遮或者傘都要避忌，因為「傘」同「散」同音。如果你唔小心講錯嘢，可以即刻講句「大吉利是」。其實帶一盒生果或者朱古力就最安全。記住，送嘢最緊要係有心。", en: "When visiting a Cantonese family, be careful with gifts. Never give a clock, because 送鐘 'give a clock' sounds the same as 送終 'attend a deathbed', which is very unlucky. Don't share a pear with a friend either: 分梨 sounds like 分離 'separation'. Umbrellas are also best avoided, because 傘 sounds like 散 'break up'. If you accidentally say something unlucky, you can quickly say 大吉利是 'touch wood'. A box of fruit or chocolates is really the safest choice. Remember, what matters most in a gift is the thought." }
+  - task: "Describe the carvings at the Chen Clan Academy in Guangzhou and the lucky meanings hidden in them (蝙蝠 = 福…)."
+    min: 110
+    max: 190
+    use: [w.bin1-fuk1, w.fuk1.c, w.muk6-diu1, w.zyun1-diu1, w.am3-si6]
+    useAtLeast: 3
+    grammar: [g.homophone-puns]
+    expect:
+      - { pattern: "蝙蝠|福", hint: "Explain the bat pun: 蝙蝠嘅「蝠」同「福」同音." }
+      - { pattern: "木雕|磚雕|雕刻", hint: "Describe the carvings: 木雕, 磚雕…" }
+    model: { es: "陳家祠嘅雕刻真係令人目瞪口呆。屋頂同門口有好多木雕同磚雕，每一件都暗示好意頭。例如佢哋成日用蝙蝠，因為「蝙蝠」同「福」聽落差唔多，五隻蝙蝠就代表五福。有啲木雕入面有魚同荷花，寓意年年有餘。導遊話以前嘅人唔會直接講，而係用諧音將祝福收埋喺雕刻入面，真係好有心機。", en: "The carvings at the Chen Clan Academy are truly jaw-dropping. The eaves and doorways have many wood and brick carvings, and many of the patterns hint at good fortune. For example, bats are carved everywhere because 蝠 'bat' sounds like 福 'blessing'; five bats represent the five blessings. Some show fish and lotus flowers, meaning abundance every year. The guide said people in the past didn't say things directly but hid their blessings in the carvings through homophones. Very thoughtful." }
+  - task: "Write your view on 'lazy sounds' (懶音): do they matter, and should schools correct them?"
+    min: 110
+    max: 200
+    use: [w.laan5-jam1, w.zing3-jam1, w.sing1-mou5, w.bei6-jam1, w.co3-jam1]
+    useAtLeast: 3
+    grammar: [g.lazy-sounds]
+    expect:
+      - { pattern: "懶音", hint: "Discuss 懶音." }
+      - { pattern: "我認為|我覺得|筆者|個人", hint: "Give your own view: 我認為…" }
+    model: { es: "好多香港人講嘢都有懶音，例如將「你」讀成「理」，或者將「我」嘅鼻音聲母唔讀出嚟。有人認為懶音係錯音，學校應該改正；但係亦有人話語言本身就會變。我認為喺平時傾偈，有少少懶音唔係大問題，因為大家都聽得明。不過老師、主播呢啲職業就應該講正音，因為佢哋代表咗標準，對下一代影響好大。", en: "Many Hong Kongers have lazy sounds when they speak, such as pronouncing 你 as 理, or dropping the nasal initial of 我. Some think lazy sounds are mispronunciations that schools should correct; others say language naturally changes. I believe a few lazy sounds in everyday chat aren't a big problem, because everyone still understands. But teachers, news anchors and similar professions should use correct pronunciation, because they represent the standard and have a big influence on the next generation." }

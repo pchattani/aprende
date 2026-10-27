@@ -140,3 +140,45 @@ dialogues:
       - { q: "How is Luna?", options: ["Very well", "So-so", "Tired"], answer: 0, explain: "She says 我好好: I'm very well." }
       - { q: "How many does Luna ask for?", options: ["One", "Three", "Five"], answer: 1, explain: "唔該，三個: three, please." }
       - { q: "Why does Luna say 唔該晒 and not 多謝 at the end?", options: ["Mr Chan gave her a present", "Mr Chan served her in his shop", "She is saying goodbye"], answer: 1, explain: "唔該 thanks someone for a service; 多謝 is for gifts and compliments." }
+writing:
+  - task: "Write how you'd thank a waiter who brings your tea (唔該) and then thank a friend for a gift (多謝)."
+    min: 4
+    max: 12
+    use: [w.m4-goi1, w.do1-ze6, w.m4-goi1-saai3, w.do1-ze6-saai3]
+    useAtLeast: 2
+    grammar: [g.mgoi-doze]
+    expect:
+      - { pattern: "唔該", hint: "Thank the waiter with 唔該 (thanks for a service)." }
+      - { pattern: "多謝", hint: "Thank your friend with 多謝 (thanks for a gift)." }
+    model: { es: "唔該！多謝晒！", en: "Thanks (to the waiter)! Thank you so much (for the gift)!" }
+  - task: "A friend greets you and asks how you are. Answer that you are very well and ask 'and you?'"
+    es: "你好！你好嗎？"
+    min: 4
+    max: 12
+    use: [w.ngo5, w.hou2, w.ne1, w.nei5]
+    useAtLeast: 3
+    grammar: [g.greetings]
+    expect:
+      - { pattern: "我.*好", hint: "Say how you are: 我好好." }
+      - { pattern: "你呢", hint: "Ask back with 你呢？" }
+    model: { es: "你好！我好好，你呢？", en: "Hello! I'm very well, and you?" }
+  - task: "Write the two polite replies: what you say back to 唔該 and what you say back to 多謝."
+    min: 6
+    max: 14
+    use: [w.m4-sai2-m4-goi1, w.m4-sai2-haak3-hei3]
+    useAtLeast: 2
+    grammar: [g.mgoi-doze]
+    expect:
+      - { pattern: "唔使唔該", hint: "The reply to 唔該 is 唔使唔該." }
+      - { pattern: "唔使客氣", hint: "The reply to 多謝 is 唔使客氣." }
+    model: { es: "唔使唔該！唔使客氣！", en: "No need to thank me! You're welcome!" }
+  - task: "You need to squeeze past people on a busy tram. Write what you say to get through, then thank them."
+    min: 4
+    max: 12
+    use: [w.ze3-ze3, w.m4-goi1, w.m4-goi1-saai3]
+    useAtLeast: 2
+    grammar: [g.mgoi-doze]
+    expect:
+      - { pattern: "借借", hint: "Ask to get through with 借借." }
+      - { pattern: "唔該", hint: "Thank them with 唔該 or 唔該晒." }
+    model: { es: "借借！唔該晒！", en: "Excuse me, let me through! Thanks a lot!" }

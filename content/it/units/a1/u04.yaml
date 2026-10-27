@@ -281,3 +281,39 @@ dialogues:
       - { q: "Dov'è il bagno?", options: ["Accanto alla camera di Tom.", "In fondo al corridoio, accanto alla cucina.", "Sul balcone."], answer: 1, explain: "«È in fondo al corridoio, accanto alla cucina»." }
       - { q: "Che cosa c'è sotto casa?", options: ["Una trattoria.", "Un supermercato.", "Una chiesa."], answer: 0, explain: "«Sotto casa c'è una trattoria»." }
       - { q: "Dov'è il supermercato?", options: ["In piazza.", "Nella via dietro la chiesa.", "Accanto al bar."], answer: 1, explain: "«Nella via dietro la chiesa»." }
+writing:
+  - task: "Describe your flat in Trastevere to a friend: how many rooms there are, what there is and what there isn't."
+    min: 15
+    max: 40
+    use: [w.appartamento, w.camera, w.cucina, w.bagno, w.balcone]
+    grammar: [g.c-e-ci-sono, g.articles-indefinite]
+    expect:
+      - { pattern: "c['’]è|ci sono", hint: "Say what there is: C'è un balcone / Ci sono due camere." }
+      - { pattern: "non c['’]è|non ci sono", hint: "Say what there isn't: Non c'è l'ascensore." }
+    model: { es: "Il mio appartamento a Trastevere è piccolo ma comodo. Ci sono due camere, una cucina e un bagno. C'è anche un balcone, ma non c'è l'ascensore.", en: "My flat in Trastevere is small but comfortable. There are two bedrooms, a kitchen and a bathroom. There's also a balcony, but there's no lift." }
+  - task: "Describe your bedroom: say where four things are (the bed, the wardrobe, the lamp, your books…)."
+    min: 15
+    max: 40
+    use: [w.letto, w.armadio, w.lampada, w.accanto-a, w.sotto]
+    grammar: [g.simple-prepositions, g.articulated-prepositions]
+    expect:
+      - { pattern: "\\b(sopra|sotto|accanto|davanti|dietro|vicino|dentro|tra|fra)\\b", hint: "Say where things are: sopra, sotto, accanto a, vicino a…" }
+      - { pattern: "\\b(al|allo|alla|ai|agli|alle|nel|nello|nella|sul|sulla|del|della)\\b|\\b(all|nell|sull)['’]", hint: "Use an articulated preposition: accanto al letto, nella camera…" }
+    model: { es: "Nella mia camera c'è un letto grande. Accanto al letto c'è una lampada. L'armadio è vicino alla finestra e lo zaino è sotto la sedia.", en: "In my bedroom there's a big bed. Next to the bed there's a lamp. The wardrobe is near the window and the rucksack is under the chair." }
+  - task: "Write to Giulia about your neighbourhood: what there is near your home, what there isn't, and whether it is quiet or noisy."
+    min: 15
+    max: 40
+    use: [w.quartiere, w.negozio, w.supermercato, w.parco, w.tranquillo]
+    grammar: [g.c-e-ci-sono, g.articulated-prepositions]
+    expect:
+      - { pattern: "c['’]è|ci sono", hint: "Say what there is: C'è un parco…" }
+      - { pattern: "\\b(tranquill|rumoros)\\w*", hint: "Say if it is quiet or noisy: è tranquillo / rumoroso." }
+    model: { es: "Il mio quartiere è tranquillo. Vicino a casa mia c'è un supermercato e ci sono due negozi. C'è anche un parco, ma non c'è una farmacia.", en: "My neighbourhood is quiet. Near my home there's a supermarket and there are two shops. There's also a park, but there isn't a chemist's." }
+  - task: "A friend visits your home for the first time. Write what you say as you show them around, using questo, questa and questi."
+    min: 12
+    max: 35
+    use: [w.questo, w.stanza, w.soggiorno, w.cucina, w.bagno]
+    grammar: [g.questo]
+    expect:
+      - { pattern: "\\bquest[oaie]\\b|\\bquest['’]", hint: "Point things out: Questo è il soggiorno, questa è la cucina…" }
+    model: { es: "Benvenuto! Questo è il soggiorno e questa è la cucina. Questa è la mia stanza e questo è il bagno. Questi sono i miei libri.", en: "Welcome! This is the living room and this is the kitchen. This is my room and this is the bathroom. These are my books." }

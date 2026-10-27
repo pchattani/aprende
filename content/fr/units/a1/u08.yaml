@@ -277,3 +277,45 @@ dialogues:
       - { q: "Combien coûte le foulard bleu ?", options: ["Soixante-dix euros.", "Quatre-vingt-quinze euros.", "Cent euros."], answer: 1, explain: "The blue scarf costs 95 euros (quatre-vingt-quinze)." }
       - { q: "Pourquoi le foulard rose coûte moins cher ?", options: ["Il est petit.", "Il est en soldes.", "Il n'est pas en soie."], answer: 1, explain: "« Il est en soldes : soixante-dix euros. »" }
       - { q: "Comment Paul paie ?", options: ["En espèces.", "Par carte.", "Il ne paie pas."], answer: 1, explain: "« Je peux payer par carte ? » — « Bien sûr. »" }
+writing:
+  - task: "A shop assistant at the Galeries Lafayette offers to help. Say what you are looking for, ask to try something on and ask a price."
+    es: "Bonjour ! Je peux vous aider ?"
+    min: 12
+    max: 40
+    use: [w.chercher, w.essayer, w.coûter, w.pull, w.jupe]
+    useAtLeast: 3
+    grammar: [g.demonstratives, g.stem-changing-er]
+    expect:
+      - { pattern: "\\b(je cherche|je voudrais|j['’]essaie|j['’]essaye|essayer)\\b", hint: "Say what you want: Je cherche … / Je peux essayer … ?" }
+      - { pattern: "\\b(ce|cet|cette|ces)\\b", hint: "Point at things with ce, cette, ces: ce pull, cette jupe." }
+      - { pattern: "\\b(combien|quel est le prix|prix)\\b", hint: "Ask the price: Ça coûte combien ?" }
+    model: { es: "Oui, merci ! Je cherche un pull en taille M. Je peux essayer ce pull bleu ? Et cette jupe, elle coûte combien ?", en: "Yes, thank you! I'm looking for a jumper in size M. Can I try on this blue jumper? And this skirt, how much does it cost?" }
+  - task: "You are buying presents at the Galeries Lafayette. Say what you buy for whom and how much each thing costs (prices in words)."
+    min: 15
+    max: 40
+    use: [w.acheter, w.coûter, w.euro, w.foulard, w.cher]
+    useAtLeast: 3
+    grammar: [g.numbers-70-100, g.numbers-100-plus, g.stem-changing-er]
+    expect:
+      - { pattern: "\\b(soixante|quatre-vingts?|cent|cents|mille|\\d+)", hint: "Give prices: soixante-quinze euros, quatre-vingts euros…" }
+      - { pattern: "\\beuros?\\b", hint: "Say the currency: euros." }
+    model: { es: "Aujourd'hui, j'achète un foulard en soie pour ma mère. Il coûte quatre-vingt-quinze euros ! Pour mon père, j'achète un béret à soixante-dix euros. C'est cher !", en: "Today I'm buying a silk scarf for my mother. It costs ninety-five euros! For my father I'm buying a beret for seventy euros. It's expensive!" }
+  - task: "Leave a shopping note for your flatmate with quantities (un kilo de, une bouteille de, une boîte de…)."
+    min: 12
+    max: 40
+    use: [w.kilo, w.bouteille, w.boîte, w.tranche, w.morceau]
+    useAtLeast: 3
+    grammar: [g.quantities]
+    expect:
+      - { pattern: "\\b(kilos?|bouteilles?|bo[iî]tes?|tranches?|morceaux?|beaucoup|peu|grammes?|litres?) d(e\\s|['’])", hint: "Use a quantity + de: un kilo de pommes, une bouteille d'eau." }
+    model: { es: "Salut ! Pour ce soir, tu peux acheter un kilo de pommes, deux bouteilles d'eau, une boîte de macarons et six tranches de jambon ? Merci ! Bisous !", en: "Hi! For tonight, can you buy a kilo of apples, two bottles of water, a box of macarons and six slices of ham? Thanks! Love!" }
+  - task: "Tell a friend about shopping with your family: who tries on what, who buys what, and who pays and how (card or cash)."
+    min: 15
+    max: 40
+    use: [w.essayer, w.acheter, w.payer, w.carte-bancaire, w.espèces]
+    useAtLeast: 3
+    grammar: [g.stem-changing-er]
+    expect:
+      - { pattern: "\\b(ach[eè]te|ach[eè]tes|ach[eè]tent|achetons|achetez|essaie|essaies|essaient|essaye|essayons)\\b", hint: "Use acheter or essayer: ma sœur essaie, ils achètent…" }
+      - { pattern: "\\b(paie|paies|paient|paye|payes|payent|payons|payez)\\b", hint: "Say who pays: je paie, mon père paie…" }
+    model: { es: "Aux Galeries Lafayette, ma sœur essaie trois robes. Mes parents achètent un manteau pour mon frère. Moi, je paie avec ma carte bancaire et mon père paie en espèces.", en: "At the Galeries Lafayette, my sister tries on three dresses. My parents buy a coat for my brother. I pay by card and my father pays in cash." }

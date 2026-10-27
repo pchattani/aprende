@@ -261,3 +261,45 @@ dialogues:
       - { q: "How many bedrooms does the flat have?", options: ["One", "Two", "Three"], answer: 1 }
       - { q: "Where is the supermarket?", options: ["Next to the pharmacy", "Behind the park", "In the metro station"], answer: 0 }
       - { q: "Where is the bathroom?", options: ["On the right", "At the end on the left", "Next to the kitchen"], answer: 1 }
+writing:
+  - task: "Describe your flat or house: what rooms there are and what there is in them."
+    min: 15
+    max: 40
+    use: [w.piso, w.habitacion, w.cocina, w.bano, w.haber]
+    useAtLeast: 3
+    grammar: [g.hay, g.articles-indefinite]
+    expect:
+      - { pattern: "\\bhay\\b", hint: "Say what there is: Hay …" }
+      - { pattern: "\\b(un|una|unos|unas|dos|tres)\\b", hint: "Use un / una or a number: un baño, dos habitaciones …" }
+    model: { es: "Vivo en un piso pequeño en el centro. Hay dos habitaciones, una cocina, un baño y un salón. En el salón hay un sofá y una televisión.", en: "I live in a small flat in the centre. There are two bedrooms, a kitchen, a bathroom and a living room. In the living room there is a sofa and a television." }
+  - task: "Your host can't find her things. Reply and tell her where each thing is."
+    es: "¿Dónde están mis llaves? ¿Y mi libro? ¿Y el ordenador?"
+    min: 12
+    max: 35
+    use: [w.estar, w.mesa, w.llave, w.al-lado, w.debajo]
+    useAtLeast: 3
+    grammar: [g.estar-location, g.prepositions-place]
+    expect:
+      - { pattern: "\\b(est[aá]n?|estoy)", hint: "Say where things are: está / están …" }
+      - { pattern: "\\b(sobre|debajo|encima|delante|detr[aá]s|al lado|entre|cerca|lejos|enfrente|dentro)", hint: "Use a place word: sobre, debajo de, al lado de …" }
+    model: { es: "Tus llaves están sobre la mesa de la cocina, al lado de la lámpara. Tu libro está debajo del sofá y tu ordenador está en tu habitación.", en: "Your keys are on the kitchen table, next to the lamp. Your book is under the sofa and your computer is in your room." }
+  - task: "Write a postcard from La Boca: say what there is in the neighbourhood and what it is like."
+    min: 15
+    max: 40
+    use: [w.barrio, w.calle, w.museo, w.bonito, w.restaurante]
+    useAtLeast: 3
+    grammar: [g.hay, g.articles-indefinite]
+    expect:
+      - { pattern: "\\bhay\\b", hint: "Say what there is: Hay casas de colores …" }
+      - { pattern: "\\b(es|son)\\b", hint: "Say what it is like: es muy bonito / son …" }
+    model: { es: "¡Hola, Marta! Estoy en La Boca, un barrio muy bonito de Buenos Aires. Hay casas de colores, un museo y muchos restaurantes. La calle Caminito es pequeña y antigua.", en: "Hi, Marta! I'm in La Boca, a very pretty neighbourhood of Buenos Aires. There are colourful houses, a museum and lots of restaurants. Caminito street is small and old." }
+  - task: "Show a friend around your street. Point out places near and far with este/esta, ese/esa and aquel/aquella, and say what each one is like."
+    min: 15
+    max: 40
+    use: [w.ese, w.aquel, w.tienda, w.supermercado, w.iglesia]
+    useAtLeast: 3
+    grammar: [g.demonstratives]
+    expect:
+      - { pattern: "\\b(este|esta|estos|estas)\\b", hint: "Point to something near: este bar, esta tienda …" }
+      - { pattern: "\\b(ese|esa|esos|esas|aquel|aquella|aquellos|aquellas)\\b", hint: "Point to something further away: esa tienda, aquel parque …" }
+    model: { es: "Esta es mi calle. Este bar es muy tranquilo. Esa tienda es cara, pero aquel supermercado es barato. Aquella iglesia es muy antigua.", en: "This is my street. This bar is very quiet. That shop is expensive, but that supermarket over there is cheap. That church over there is very old." }

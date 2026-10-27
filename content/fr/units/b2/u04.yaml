@@ -282,3 +282,42 @@ dialogues:
       - { q: "Selon le journal, que s'est-il passé hier ?", options: ["Un bateau a coulé", "Un pédalo aurait heurté le ponton", "Deux touristes se sont perdus"], answer: 1, explain: "The journalistic conditional: « Un pédalo aurait heurté le ponton »." }
       - { q: "Que veut dire Karim par « Ils ont dû avoir froid » ?", options: ["Ils étaient obligés d'avoir froid", "Ils ont probablement eu froid", "Ils n'ont pas eu froid"], answer: 1, explain: "Here a dû expresses probability: they must have been cold." }
       - { q: "Pourquoi Karim devrait-il une glace à Emma ?", options: ["Il a perdu un pari", "Il a refusé de louer le pédalo la veille", "Il a oublié son portefeuille"], answer: 1, explain: "« c'est toi qui as refusé de louer le pédalo hier »." }
+writing:
+  - task: "Your day at Lake Annecy went badly. Write to the friend who organised it, expressing regrets and gentle reproaches (on aurait dû…, tu aurais pu…, j'aurais préféré…)."
+    min: 80
+    max: 150
+    use: [w.pédalo, w.reprocher, w.baignade, w.prudent, w.reproche]
+    useAtLeast: 3
+    grammar: [g.regret-reproach]
+    expect:
+      - { pattern: "\\b(aurais|aurait|aurions|auriez|auraient) (d[uû]|pu)(?![a-zàâçéèêëîïôûùœ])", hint: "Express regrets and reproaches: on aurait dû…, tu aurais pu…" }
+    model: { es: "Salut, Julien ! Merci pour la sortie au lac, mais avoue que ce n'était pas une réussite. On aurait dû partir plus tôt : à midi, il n'y avait plus aucun pédalo à louer ! Tu aurais pu réserver la veille, comme je te l'avais conseillé. Ensuite, on aurait dû choisir une plage surveillée, parce que la baignade était interdite là où on s'est installés. Je ne veux pas te faire de reproche, mais tu aurais pu être plus prudent avec les enfants. Bon, moi aussi, j'aurais dû vérifier la météo. La prochaine fois, on organise ensemble !", en: "Hi, Julien! Thanks for the trip to the lake, but you have to admit it wasn't a success. We should have left earlier: by noon there wasn't a single pedalo left to hire! You could have booked the day before, as I'd advised you. Then we should have chosen a supervised beach, because swimming was forbidden where we settled. I don't want to blame you, but you could have been more careful with the children. Well, I should have checked the weather too. Next time we'll organise it together!" }
+  - task: "Your friends haven't turned up at the meeting point by the lake. Write a message making guesses about what happened, using the nuances of devoir (ils ont dû…, ils doivent être…, ils devaient…)."
+    min: 80
+    max: 150
+    use: [w.censé, w.faire-demi-tour, w.devoir, w.rater, w.ponton]
+    useAtLeast: 3
+    grammar: [g.devoir-nuances]
+    expect:
+      - { pattern: "\\b(ont|a|avons|avez|ai|as|auront|aura) d[uû](?![a-zàâçéèêëîïôûùœ])|\\b(doit|doivent|devait|devaient|devrait|devraient|devais|devions)\\b", hint: "Use devoir to make guesses: ils ont dû rater le bateau, ils doivent être en retard…" }
+    model: { es: "Léa, je suis au ponton du Pâquier depuis une heure et Marc et Sophie ne sont toujours pas là ! On était censés prendre le bateau de quatorze heures ensemble. Ils ont dû rater le bus à Annecy-le-Vieux, ou alors ils ont dû faire demi-tour à cause des bouchons. Ils doivent être coincés quelque part, parce que Marc ne répond pas au téléphone. Il devait m'appeler s'il y avait un problème… Sa batterie doit être vide. Bref, je les attends encore vingt minutes. Ils devraient arriver bientôt, sinon je pars sans eux !", en: "Léa, I've been at the Pâquier jetty for an hour and Marc and Sophie still aren't here! We were supposed to take the two o'clock boat together. They must have missed the bus at Annecy-le-Vieux, or else they must have turned back because of the traffic. They must be stuck somewhere, because Marc isn't answering his phone. He was supposed to call me if there was a problem… His battery must be dead. Anyway, I'll wait another twenty minutes. They should arrive soon, otherwise I'm leaving without them!" }
+  - task: "Write a short news item (fait divers) for a local Annecy paper about an event that has not been confirmed, using the journalistic conditional (le suspect se serait enfui…, selon…)."
+    min: 80
+    max: 150
+    use: [w.fait-divers, w.présumé, w.témoigner, w.suspect, w.fuir]
+    useAtLeast: 3
+    grammar: [g.conditionnel-journalistique]
+    expect:
+      - { pattern: "\\b(serait|seraient|aurait|auraient|pourrait|pourraient|devrait)\\b", hint: "Use the conditional for unconfirmed facts: il se serait enfui, il y aurait eu…" }
+      - { pattern: "\\bselon\\b|apr[eè]s (la|le|les|des|plusieurs|un|une)\\b", hint: "Give the source: selon la police, d'après des témoins…" }
+    model: { es: "Fait divers – Un homme se serait évadé hier soir de la gendarmerie d'Annecy. Selon nos informations, le suspect, âgé de trente ans, aurait profité de la nuit pour fuir par une fenêtre. Il serait ensuite parti en direction du lac à vélo. D'après plusieurs témoins, un homme aurait été vu sur le ponton vers vingt-deux heures. Le porte-parole de la gendarmerie n'a pas voulu démentir ces informations. Le présumé fugitif serait toujours dans la région. Toute personne qui pourrait témoigner est priée d'appeler la gendarmerie.", en: "News in brief – A man reportedly escaped last night from the Annecy gendarmerie. According to our information, the suspect, aged thirty, allegedly took advantage of the night to flee through a window. He then apparently headed towards the lake by bike. According to several witnesses, a man was seen on the jetty at around ten pm. The gendarmerie spokesperson refused to deny this information. The alleged fugitive is thought to be still in the area. Anyone who could give evidence is asked to call the gendarmerie." }
+  - task: "Swimming has been banned in part of Lake Annecy. Write a formal letter to the mayor: say what should have been done and propose solutions (il aurait fallu…, vous auriez pu…, vous devriez…)."
+    min: 80
+    max: 150
+    use: [w.interdiction, w.réglementation, w.baignable, w.autorisation, w.reprocher]
+    useAtLeast: 3
+    grammar: [g.regret-reproach, g.conditionnel-passe]
+    expect:
+      - { pattern: "\\b(aurait|auraient|auriez|aurions) (fallu|d[uû]|pu)(?![a-zàâçéèêëîïôûùœ])", hint: "Say what should have been done: il aurait fallu…, vous auriez pu…" }
+      - { pattern: "\\b(madame|monsieur|veuillez|je vous prie|cordialement|salutations)\\b", hint: "Use a formal register: Monsieur le Maire, … je vous prie d'agréer…" }
+    model: { es: "Monsieur le Maire, je me permets de vous écrire au sujet de l'interdiction de baignade sur la plage d'Albigny. Je comprends que la sécurité soit importante, mais il aurait fallu informer les habitants plus tôt. Vous auriez pu expliquer cette nouvelle réglementation dans le journal local. De plus, je ne voudrais pas vous reprocher votre décision, mais cette plage était baignable depuis des années. Vous devriez peut-être donner une autorisation pour certaines heures, avec un sauveteur. Je vous prie de recevoir, Monsieur le Maire, mes sentiments distingués.", en: "Dear Mr Mayor, I am writing to you about the swimming ban on Albigny beach. I understand that safety is important, but residents should have been informed earlier. You could have explained this new regulation in the local paper. Furthermore, I would not wish to criticise your decision, but this beach had been safe for swimming for years. Perhaps you should grant permission for certain hours, with a lifeguard. Yours faithfully." }

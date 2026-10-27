@@ -280,3 +280,44 @@ dialogues:
       - { q: "¿Por qué dice Carla que Hugo se merece un contrato fijo?", options: ["Porque lleva años con contratos de tres meses", "Porque ha terminado un máster en el extranjero", "Porque quiere independizarse"], answer: 0 }
       - { q: "¿Qué desea Carla para su hermana?", options: ["Que encuentre un piso barato", "Que apruebe las oposiciones", "Que tenga buena salud"], answer: 1, explain: "Carla wishes her parents good health and her sister success in the civil-service exams she has been studying for two years." }
       - { q: "¿Qué hacen los dos al final de la conversación?", options: ["Brindan por el año nuevo", "Buscan piso por internet", "Llaman a la hermana de Carla"], answer: 0 }
+writing:
+  - task: "Write a New Year card to a friend who is studying in Córdoba, with your wishes for her (Te deseo que …, Ojalá …, Espero que …)."
+    min: 50
+    max: 100
+    use: [w.desear, w.cumplir, w.proposito, w.salud, w.beca]
+    useAtLeast: 3
+    grammar: [g.subjunctive-wishes, g.subjunctive-present-forms]
+    expect:
+      - { pattern: "ojal[aá]|espero que|te deseo que|deseo que|quiero que", hint: "Express wishes: Ojalá …, Espero que …, Te deseo que …" }
+      - { pattern: "\\b(tengas|seas|consigas|logres|cumplas|encuentres|puedas|vivas|disfrutes|apruebes|haya|vaya|est[eé]s)(?![a-záéíóúñ])", hint: "Use the subjunctive after que / ojalá: que tengas, que consigas …" }
+    model: { es: "Hola, Laura: ¡feliz año nuevo! Te deseo que este año cumplas todos tus propósitos. Ojalá apruebes el máster y consigas la beca para estudiar en la universidad de Córdoba. Espero que tengas mucha salud y que encuentres un trabajo que te guste. Y sobre todo, quiero que seas feliz. ¡Un abrazo muy fuerte!", en: "Hi, Laura: happy New Year! I hope you achieve all your resolutions this year. I hope you pass your master's and get the grant to study at the University of Córdoba. I hope you have good health and find a job you like. And above all, I want you to be happy. A big hug!" }
+  - task: "Write about your goals for the next five years: work, home and personal life. Say what you want to do (quiero + infinitive) and what you hope for (espero que / ojalá + subjunctive)."
+    min: 50
+    max: 100
+    use: [w.independizarse, w.esfuerzo, w.alcanzar, w.equilibrio, w.fijo]
+    useAtLeast: 3
+    grammar: [g.subjunctive-wishes, g.subjunctive-present-forms]
+    expect:
+      - { pattern: "\\b(quiero|espero|deseo|me gustar[ií]a|mi prop[oó]sito es) [a-záéíóúñ]+(ar|er|ir|arme|erme|irme)\\b", hint: "Say what you want to do yourself with an infinitive: quiero independizarme …" }
+      - { pattern: "ojal[aá]|espero que|deseo que|quiero que", hint: "Add a hope with the subjunctive: ojalá pueda …, espero que mi familia …" }
+    model: { es: "En los próximos cinco años quiero independizarme y alquilar un piso en el centro. Mi propósito es encontrar un puesto fijo con un buen sueldo, aunque sé que necesitaré mucho esfuerzo. Ojalá pueda alcanzar un buen equilibrio entre el trabajo y la vida privada. También espero que mi familia tenga salud y que mis amigos sigan cerca de mí.", en: "In the next five years I want to move out and rent a flat in the centre. My aim is to find a permanent job with a good salary, although I know it will take a lot of effort. I hope I can reach a good balance between work and private life. I also hope my family stays healthy and my friends stay close to me." }
+  - task: "Your friend has a job interview tomorrow and is nervous. Reply with encouragement and wishes, using irregular subjunctives (sea, vaya, haya, esté, den …)."
+    es: "Mañana tengo una entrevista de trabajo y estoy muy nerviosa."
+    min: 50
+    max: 100
+    use: [w.entrevista, w.oportunidad, w.merecer, w.candidato, w.experiencia-laboral]
+    useAtLeast: 3
+    grammar: [g.subjunctive-irregular, g.subjunctive-wishes]
+    expect:
+      - { pattern: "\\b(sea|seas|vaya|vayas|haya|est[eé]|est[eé]s|sepa|sepas|den|d[eé])(?![a-záéíóúñ])", hint: "Use irregular subjunctives: sea, vaya, haya, esté, den …" }
+      - { pattern: "ojal[aá]|espero que|que te vaya bien", hint: "Wish her luck: Ojalá …, Espero que …, ¡Que te vaya bien!" }
+    model: { es: "¡Tranquila! Eres una candidata muy buena y tienes mucha experiencia laboral. Ojalá te den el puesto, porque te lo mereces. Espero que la entrevista no sea muy larga y que el jefe sea simpático. Es una gran oportunidad, así que prepárala bien esta noche y duerme mucho. ¡Que te vaya muy bien y llámame después!", en: "Don't worry! You're a very good candidate and you have lots of work experience. I hope they give you the job, because you deserve it. I hope the interview isn't very long and the boss is nice. It's a great opportunity, so prepare well tonight and get plenty of sleep. Good luck, and call me afterwards!" }
+  - task: "Write about the rules at your work or in your family: what your boss or parents want, demand, forbid or allow (exige que, no permite que, me pide que …)."
+    min: 50
+    max: 100
+    use: [w.exigir, w.prohibir, w.permitir, w.insistir, w.rogar]
+    useAtLeast: 3
+    grammar: [g.subjunctive-wishes, g.subjunctive-present-forms]
+    expect:
+      - { pattern: "\\b(quiere|quieren|pide|piden|exige|exigen|proh[ií]be|proh[ií]ben|permite|permiten|insiste|insisten|ruega|ruegan)( en)? que\\b", hint: "Say what someone wants others to do: mi jefe exige que …, no permite que …" }
+    model: { es: "Mi jefe es muy serio. Exige que lleguemos a las ocho en punto y no permite que trabajemos desde casa. Además, insiste en que preparemos un informe cada viernes. Mi madre, en cambio, me pide que descanse más y que la llame todos los domingos. Mis compañeros me ruegan que no acepte más trabajo, pero necesito el ascenso.", en: "My boss is very serious. He demands that we arrive at eight on the dot and doesn't allow us to work from home. Also, he insists that we prepare a report every Friday. My mother, on the other hand, asks me to rest more and to call her every Sunday. My colleagues beg me not to accept more work, but I need the promotion." }

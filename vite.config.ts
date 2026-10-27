@@ -9,18 +9,21 @@ import { SITE_BASE } from './scripts/site-base.mjs'
 /**
  * Turns any imported .yaml/.yml file into an ES module exporting the parsed data.
  * `unit.yaml?dialogues` exports only a unit's id and dialogues (the listening list needs no lessons);
- * `unit.yaml?vocab` only its id and each lesson's id and vocab (the taught-words index, engine/taughtData.ts;
- * no lessons for a course without `features.taughtOnly`, which never loads it, so its unused chunk stays tiny).
+ * `unit.yaml?vocab` only its id and each lesson's id, vocab and grammar ids (its `teach` and the grammar of its
+ * sentences, exchanges and texts): the lesson index of engine/lessonIndex.ts, behind the taught-words gate
+ * (engine/taughtData.ts) and the games' finished-words pool (engine/finishedData.ts).
  */
-function yamlPlugin(taughtOnly: boolean): Plugin {
+function yamlPlugin(): Plugin {
   return {
     name: 'aprende:yaml',
     transform(code, id) {
       if (!/\.ya?ml(\?.*)?$/.test(id)) return null
       const data = loadYaml(code, { filename: id }) as Record<string, unknown> | null
       const query = (name: string) => new RegExp(`\\?(?:.*&)?${name}(?:&|$)`).test(id)
-      const lessons = (data?.lessons ?? []) as { id?: string; vocab?: string[] }[]
-      const out = query('dialogues') ? { id: data?.id, dialogues: data?.dialogues ?? [] } : query('vocab') ? { id: data?.id, lessons: taughtOnly ? lessons.map((l) => ({ id: l.id, vocab: l.vocab ?? [] })) : [] } : data
+      type Graded = { grammar?: string[] }
+      const lessons = (data?.lessons ?? []) as ({ id?: string; vocab?: string[]; teach?: string[] } & Record<'sentences' | 'exchanges' | 'texts', Graded[] | undefined>)[]
+      const grammarOf = (l: (typeof lessons)[number]) => [...new Set([...(l.teach ?? []), ...[...(l.sentences ?? []), ...(l.exchanges ?? []), ...(l.texts ?? [])].flatMap((x) => x.grammar ?? [])])]
+      const out = query('dialogues') ? { id: data?.id, dialogues: data?.dialogues ?? [] } : query('vocab') ? { id: data?.id, lessons: lessons.map((l) => ({ id: l.id, vocab: l.vocab ?? [], grammar: grammarOf(l) })) } : data
       return { code: `export default ${JSON.stringify(out)};`, map: null }
     },
   }
@@ -71,7 +74,7 @@ export default defineConfig({
   base: BASE,
   define: { __SITE_BASE__: JSON.stringify(SITE_BASE) },
   plugins: [
-    yamlPlugin(Boolean(PACK.features?.taughtOnly)),
+    yamlPlugin(),
     contentGlobPlugin(),
     htmlPlugin(),
     react(),

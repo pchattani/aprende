@@ -298,3 +298,42 @@ dialogues:
       - { q: "Chi ha i biglietti?", options: ["Tom", "Giulia", "Nessuno"], answer: 1, explain: "Giulia already has the tickets and is keeping them." }
       - { q: "Perché Tom deve passare da casa?", options: ["Perché non ha i biglietti", "Perché ha i pantaloni corti", "Perché ha fame"], answer: 1, explain: "You can't go into St Peter's in shorts, so Tom has to change." }
       - { q: "Che cosa vuole fare Tom dopo il museo?", options: ["Salire sulla cupola", "Andare al cinema", "Fare la spesa"], answer: 0, explain: "Tom chooses the dome: 'La cupola!'" }
+writing:
+  - task: "Write to a friend about your plans for today in Rome: where you are going, how you are getting there and with whom. Invite your friend to come too."
+    min: 15
+    max: 40
+    use: [w.andare, w.venire, w.metropolitana, w.a-piedi, w.museo]
+    grammar: [g.andare-venire, g.prepositions-motion]
+    expect:
+      - { pattern: "\\b(vado|andiamo|va|vanno|vai)\\b", hint: "Say where you go: Vado al Vaticano…" }
+      - { pattern: "\\b(in|a) (metro|metropolitana|autobus|treno|macchina|auto|taxi|bici|bicicletta|moto|piedi|aereo)\\b", hint: "Say how: in metro, in autobus, a piedi…" }
+    model: { es: "Oggi vado al Vaticano con Giulia. Andiamo in metropolitana e poi a piedi. Dopo andiamo in un museo. Vieni anche tu?", en: "Today I'm going to the Vatican with Giulia. We're going by metro and then on foot. Afterwards we're going to a museum. Are you coming too?" }
+  - task: "Write 3–4 rules for visitors to St Peter's: what you can and can't do, and what you must do."
+    min: 15
+    max: 40
+    use: [w.potere, w.dovere, w.entrare, w.biglietto, w.portare]
+    grammar: [g.potere-dovere]
+    expect:
+      - { pattern: "\\b(puoi|può|possiamo|potete|possono|posso)(?![a-zà-ù])", hint: "Say what you can or can't do: (non) puoi …" }
+      - { pattern: "\\b(devi|deve|dobbiamo|dovete|devono|devo)\\b", hint: "Say what you must do: devi …" }
+    model: { es: "Per entrare a San Pietro devi aspettare in fila. Non puoi portare uno zaino grande. Dentro puoi fare foto, ma non puoi parlare forte. Per il museo devi comprare un biglietto.", en: "To go into St Peter's you have to wait in the queue. You can't bring a big rucksack. Inside you can take photos, but you can't talk loudly. For the museum you have to buy a ticket." }
+  - task: "Describe a typical Sunday for you: where you go, what you do, when you go out and when you stay at home."
+    min: 15
+    max: 40
+    use: [w.fare, w.uscire, w.rimanere, w.passeggiata, w.visitare]
+    grammar: [g.fare-present, g.irregular-present]
+    expect:
+      - { pattern: "\\b(faccio|fai|fa|facciamo|fate|fanno)\\b", hint: "Use fare: faccio una passeggiata…" }
+      - { pattern: "\\b(esco|esci|esce|usciamo|uscite|escono|rimango|rimani|rimane|rimaniamo|rimangono|vengo|vieni|viene|dico|dici|dice)\\b", hint: "Use an irregular verb: esco, rimango, vengo…" }
+    model: { es: "La domenica esco presto. Faccio una passeggiata in centro e visito un museo. A pranzo mangio con gli amici. La sera rimango a casa e faccio i compiti.", en: "On Sundays I go out early. I take a walk in the centre and visit a museum. At lunch I eat with friends. In the evening I stay at home and do my homework." }
+  - task: "You are staying with an Italian family. Your host asks if you need anything. Ask permission for three things with Posso…? / Può…?"
+    es: "Ciao! Hai bisogno di qualcosa?"
+    min: 12
+    max: 35
+    use: [w.potere, w.uscire, w.venire, w.portare]
+    useAtLeast: 2
+    grammar: [g.potere-dovere]
+    expect:
+      - { pattern: "\\bposso\\b|\\bpossiamo\\b", hint: "Ask permission: Posso …?" }
+      - { pattern: "\\?", hint: "Write your requests as questions." }
+    model: { es: "Sì, grazie! Posso fare una doccia adesso? Stasera posso uscire con i miei amici? E domani un amico può venire a casa? Grazie mille!", en: "Yes, thanks! Can I have a shower now? Can I go out with my friends tonight? And can a friend come to the house tomorrow? Thanks a lot!" }

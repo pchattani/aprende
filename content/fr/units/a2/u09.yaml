@@ -281,3 +281,43 @@ dialogues:
       - { q: "Qu'est-ce qui s'est passé sur le rocher ?", options: ["Il s'est cassé le bras", "Il s'est tordu la cheville", "Il s'est coupé le doigt"], answer: 1, explain: "Je me suis tordu la cheville sur un rocher." }
       - { q: "Est-ce que Louis a de la fièvre ?", options: ["Oui, beaucoup", "Non", "On ne sait pas"], answer: 1, explain: "Non, pas de fièvre." }
       - { q: "Qu'est-ce que la pharmacienne lui donne ?", options: ["Une ordonnance", "Une crème et des pastilles", "Des lunettes de soleil"], answer: 1, explain: "A cream for the ankle and lozenges for the throat, without a prescription." }
+writing:
+  - task: "Describe a day of your holiday in Carnac using pronominal verbs (se promener, s'amuser, se reposer, s'asseoir…)."
+    min: 30
+    max: 70
+    use: [w.se-promener, w.s-amuser, w.se-reposer, w.s-asseoir, w.s-ennuyer]
+    useAtLeast: 3
+    grammar: [g.pronominal-verbs]
+    expect:
+      - { pattern: "\\b(je me|je m['’]|tu te|tu t['’]|on se|on s['’]|il se|elle se|il s['’]|elle s['’]|nous nous|vous vous|ils se|elles se|ils s['’]|elles s['’]|ne m['’]|ne me|ne se|ne s['’])", hint: "Use pronominal verbs: on se promène, nous nous reposons…" }
+    model: { es: "À Carnac, on se lève tard et on se promène entre les menhirs. Les enfants s'amusent à sauter sur les pierres. À midi, nous nous asseyons sur la plage et nous nous reposons. Le soir, on s'arrête dans une crêperie. Je ne m'ennuie jamais ici !", en: "In Carnac we get up late and walk among the menhirs. The children have fun jumping on the stones. At noon we sit on the beach and rest. In the evening we stop at a crêperie. I'm never bored here!" }
+  - task: "Tell what you did this morning before the hike, using pronominal verbs in the passé composé (je me suis levé(e)…)."
+    min: 30
+    max: 70
+    use: [w.se-lever, w.se-doucher, w.s-habiller, w.se-dépêcher, w.randonnée]
+    useAtLeast: 3
+    grammar: [g.pronominal-passe-compose]
+    expect:
+      - { pattern: "\\b(me|m['’]|te|t['’]|se|s['’]|nous|vous) ?(suis|es|est|sommes|[eê]tes|sont)\\b", hint: "Pronominal verbs take être in the passé composé: je me suis levé(e)…" }
+    model: { es: "Ce matin, je me suis levée à six heures. Je me suis douchée et je me suis habillée vite. Ensuite, je me suis dépêchée pour prendre le bus. Mes amis et moi, nous nous sommes arrêtés au café avant la randonnée.", en: "This morning I got up at six. I showered and got dressed quickly. Then I hurried to catch the bus. My friends and I stopped at the café before the hike." }
+  - task: "At the pharmacy: explain how you feel, where it hurts and since when, and ask for something."
+    es: "Bonjour ! Qu'est-ce qui ne va pas ?"
+    min: 30
+    max: 70
+    use: [w.avoir-mal, w.gorge, w.tête, w.fièvre, w.médicament]
+    useAtLeast: 3
+    grammar: [g.avoir-mal, g.body-parts-article]
+    expect:
+      - { pattern: "\\bmal (au|aux|[aà] la|[aà] l['’])", hint: "Say where it hurts: j'ai mal à la tête, au dos…" }
+      - { pattern: "\\bdepuis\\b", hint: "Say since when: depuis hier…" }
+    model: { es: "Bonjour, madame. Je ne me sens pas bien. J'ai mal à la tête et à la gorge depuis hier. Je tousse beaucoup et j'ai un peu de fièvre. Vous avez un médicament contre le rhume, s'il vous plaît ? Je n'ai pas d'ordonnance.", en: "Hello, madam. I don't feel well. I've had a headache and a sore throat since yesterday. I'm coughing a lot and I have a bit of a temperature. Do you have something for a cold, please? I don't have a prescription." }
+  - task: "You hurt yourself on a hike among the menhirs. Text a friend: what you were doing when it happened and what happened."
+    min: 30
+    max: 70
+    use: [w.se-tordre, w.cheville, w.genou, w.être-en-train-de, w.se-faire-mal]
+    useAtLeast: 2
+    grammar: [g.body-parts-article, g.pronominal-passe-compose, g.etre-en-train-de]
+    expect:
+      - { pattern: "\\b(me suis|t['’]es|s['’]est|nous sommes|vous [eê]tes|se sont) (cass|tordu|coup|bless|fait mal)", hint: "Say what happened: je me suis tordu la cheville, je me suis fait mal…" }
+      - { pattern: "\\ben train d(e\\s|['’])|\\bj['’][eé]tais\\b|\\b(je|on|nous|il|elle) [a-zàâçéèêëîïôûùœ]+(ais|ait|ions)\\b", hint: "Say what you were doing: j'étais en train de …" }
+    model: { es: "Salut, Hugo ! Hier, j'étais en train de prendre une photo des menhirs quand je suis tombée. Je me suis tordu la cheville et je me suis fait mal au genou. Maintenant, je dois me reposer pendant une semaine. Quelle journée !", en: "Hi, Hugo! Yesterday I was taking a photo of the menhirs when I fell. I twisted my ankle and hurt my knee. Now I have to rest for a week. What a day!" }

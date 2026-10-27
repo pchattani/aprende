@@ -261,3 +261,44 @@ dialogues:
       - { q: "Por que o Seu Cícero sai cedo?", options: ["Porque a maré baixa é às sete", "Porque ele gosta de sair cedo", "Porque vai chover"], answer: 1, explain: "É que eu gosto de sair cedo; low tide is at ten." }
       - { q: "Onde estava o protetor solar?", options: ["Na mochila do Davi", "No hotel", "Na jangada"], answer: 0, explain: "Coloquei na sua mochila: Bia had put it in Davi's rucksack." }
       - { q: "O que mais impressionou o Davi?", options: ["A comida", "A cor do mar", "As jangadas"], answer: 1, explain: "O que mais me impressionou foi a cor do mar." }
+writing:
+  - task: "Your friend has the story of your trip to Maceió wrong. Correct him using emphatic structures (Foi a Bia que…, Quem esqueceu fui eu, O que eu fiz foi…)."
+    es: "Então foi você que reservou o passeio às piscinas naturais e o Pedro que esqueceu as passagens, né?"
+    min: 80
+    max: 140
+    use: [w.piscina-natural, w.na-verdade, w.de-fato, w.pois-é, w.sem-dúvida]
+    useAtLeast: 3
+    grammar: [g.emphatic-structures]
+    expect:
+      - { pattern: '((?<!\p{L})(foi|fui|foram|é|era) [a-zà-ú ]{1,25} que(?!\p{L})|\bquem [a-zà-ú]+ [a-zà-ú ]{0,20}(fui|foi|foram)(?!\p{L})|\bo que (eu |a gente )?[a-zà-ú]+ (foi|é)(?!\p{L}))', hint: "Use emphatic structures: Foi a Bia que reservou… / Quem esqueceu fui eu." }
+      - { pattern: '\b(na verdade|de fato|na real|pois [eé]|sem d[uú]vida)', hint: "Add an emphatic marker: na verdade, de fato, pois é…" }
+    model: { es: "Nada disso! Na verdade, foi a Bia que reservou o passeio às piscinas naturais, não eu. E quem esqueceu as passagens não foi o Pedro: fui eu, infelizmente. O que eu fiz foi encontrar um barco mais barato na praia. Pois é, o passeio foi maravilhoso mesmo assim. O que eu mais adorei foram os peixes coloridos. E quem pagou o almoço? Foi a Bia, de novo! Ela é que é generosa. Sem dúvida, é Maceió que eu quero visitar de novo!", en: "Not at all! Actually, it was Bia who booked the trip to the natural pools, not me. And the one who forgot the tickets wasn't Pedro: it was me, unfortunately. What I did was find a cheaper boat on the beach. Yes, well, the trip was wonderful anyway. What I loved most were the colourful fish. And who paid for lunch? Bia did, again! She's the generous one. Without a doubt, Maceió is the place I want to visit again!" }
+  - task: "Write a formal email to a hotel in Maceió confirming a booking, placing the pronouns according to the written norm (escrevo-lhe…, agradeço-lhe…, não me foi enviado…)."
+    min: 80
+    max: 140
+    use: [w.prezado, w.atenciosamente, w.confirmar, w.solicitar, w.comprovante]
+    useAtLeast: 3
+    grammar: [g.clitic-placement-norm]
+    expect:
+      - { pattern: '\b[a-zà-ú]+-(me|te|se|lhe|lhes|nos|o|a|os|as|lo|la|los|las)\b', hint: "Attach the pronoun to the verb in formal writing: escrevo-lhe…, agradeço-lhe…" }
+      - { pattern: '\b(n[aã]o|j[aá]|que|quando|se) (me|lhe|lhes|nos|o|a)\b', hint: "After não, que or já, put the pronoun before the verb: …que me envie…" }
+    model: { es: "Prezada Senhora, escrevo-lhe para confirmar a reserva de um quarto de casal entre os dias 12 e 16 de março. Agradeço-lhe a resposta rápida. Gostaria, porém, de informá-la de que ainda não me foi enviado o comprovante de pagamento. Peço-lhe, por gentileza, que me envie o documento por e-mail. Informo-lhe também que chegaremos por volta das dez da noite, pois o nosso voo sai de São Paulo às sete. Caso precisem de algum dado, peço que me escrevam. Coloco-me à disposição para qualquer dúvida. Atenciosamente, Daniel Clark. ", en: "Dear Madam, I am writing to confirm the booking of a double room from 12 to 16 March. Thank you for your quick reply. I would, however, like to inform you that the payment receipt has not yet been sent to me. I kindly ask you to send me the document by email. I would also like to let you know that we will arrive at around ten in the evening, as our flight leaves São Paulo at seven. Should you need any details, please write to me. I remain at your disposal for any questions. Yours sincerely, Daniel Clark. " }
+  - task: "A friend is visiting you in Maceió. Write a message about what you're going to show them, with pronouns in verb phrases (Vou te mostrar…, Posso te buscar…, Quero te levar…)."
+    min: 80
+    max: 140
+    use: [w.mergulhar, w.sururu, w.orla, w.jangada, w.buscar]
+    useAtLeast: 3
+    grammar: [g.clitics-verb-phrases]
+    expect:
+      - { pattern: '\b(vou|vamos|quero|posso|podemos|preciso|vai|pode)( te| lhe| me| nos) [a-zà-ú]+(ar|er|ir|r)\b', hint: "Place the pronoun in the verb phrase: Vou te mostrar…, Posso te buscar…" }
+    model: { es: "Oi, Rafa! Que bom que você vem a Maceió! Posso te buscar no aeroporto na sexta à noite. No sábado, quero te levar para conhecer as piscinas naturais da Pajuçara: a gente vai de jangada e pode mergulhar com os peixes. Depois, vou te mostrar a orla de bicicleta. No domingo, preciso te apresentar o sururu, um prato típico daqui, que você vai adorar. Me avisa o horário do voo para eu me organizar, tá? Se der tempo, também posso te levar a uma praia mais tranquila, longe da cidade.", en: "Hi, Rafa! Great that you're coming to Maceió! I can pick you up at the airport on Friday night. On Saturday I want to take you to see the natural pools at Pajuçara: we'll go by jangada and we can dive with the fish. Then I'll show you the seafront by bike. On Sunday I have to introduce you to sururu, a typical dish from here, which you'll love. Let me know your flight time so I can get organised, OK? If there's time, I can also take you to a quieter beach, away from the city." }
+  - task: "Write a casual message about shopping for a party, leaving out objects the way Brazilians do in speech (— O bolo? — Comprei e já busquei. / Vi, mas não comprei.)."
+    min: 80
+    max: 140
+    use: [w.poxa, w.caramba, w.ufa, w.nem-pensar, w.pois-é]
+    useAtLeast: 3
+    grammar: [g.null-object, g.emphatic-structures]
+    expect:
+      - { pattern: '\b(comprei|levei|trouxe|vi|achei|peguei|guardei|coloquei|deixei|esqueci|busquei)[.!,:]', hint: "Leave out the object naturally: — O gelo? — Esqueci! / Vi, mas não comprei." }
+      - { pattern: '(ufa|poxa|caramba|nem pensar|pois [eé]|nossa)', hint: "Add a spoken interjection: ufa, poxa, caramba, nem pensar…" }
+    model: { es: "Ufa, terminei as compras para a festa! O bolo? Pedi ontem na padaria e já busquei. As bebidas eu comprei no mercado e coloquei na geladeira. E os copos? Poxa, esqueci! Vou voltar lá agora. Ah, você pediu as velas: vi, mas não comprei, porque eram caras demais. Pagar vinte reais por umas velas? Nem pensar! Pois é, caramba, já são seis horas. A gente se vê às oito! E a música? Essa a Júlia trouxe ontem. Ela é que sabe escolher!", en: "Phew, I've finished the shopping for the party! The cake? I ordered it yesterday at the bakery and I've already picked it up. The drinks I bought at the supermarket and put in the fridge. And the cups? Oh no, I forgot them! I'll go back now. Oh, you asked for candles: I saw them, but I didn't buy them, because they were far too expensive. Twenty reais for a few candles? No way! Yeah, wow, it's already six o'clock. See you at eight! And the music? Júlia brought that yesterday. She's the one who knows how to choose!" }

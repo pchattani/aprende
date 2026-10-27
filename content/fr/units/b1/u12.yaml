@@ -282,3 +282,43 @@ dialogues:
       - { q: "Où Thomas a-t-il fait son stage ?", options: ["À Monaco", "À Cannes", "À Nice"], answer: 2, explain: "J'ai fait un stage de six mois dans un hôtel à Nice." }
       - { q: "Quelles langues Thomas ne parle-t-il pas ?", options: ["L'italien et l'anglais", "L'allemand et le chinois", "Le français et l'italien"], answer: 1, explain: "Je ne parle ni allemand ni chinois." }
       - { q: "Quand la directrice prendra-t-elle sa décision ?", options: ["Vendredi au plus tard", "Lundi", "À la fin du mois"], answer: 0, explain: "Nous prendrons une décision vendredi au plus tard." }
+writing:
+  - task: "Imagine your life once you have won at the casino or achieved a big goal: what you will do once it has happened (futur antérieur: quand j'aurai gagné…)."
+    min: 50
+    max: 100
+    use: [w.casino, w.investir, w.réaliser-un-rêve, w.prendre-sa-retraite, w.dette]
+    useAtLeast: 3
+    grammar: [g.futur-anterieur]
+    expect:
+      - { pattern: "\\b(aurai|auras|aura|aurons|aurez|auront|serai|seras|sera|serons|serez|seront) (d[eé]j[aà] |enfin |bien |tout )?[a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|ies|u|ue|us|it|ert|eint|ort)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the futur antérieur: quand j'aurai gagné, dès que je serai arrivé(e)…" }
+    model: { es: "Quand j'aurai gagné au casino de Monte-Carlo, j'achèterai un yacht et je partirai en croisière. Dès que j'aurai payé mes dettes, j'investirai dans une petite entreprise. Une fois que j'aurai réalisé mon rêve, je prendrai ma retraite près de la mer. Mais d'abord, il faudra que je gagne… et ce n'est pas encore fait !", en: "When I've won at the Monte Carlo casino, I'll buy a yacht and go on a cruise. As soon as I've paid off my debts, I'll invest in a small business. Once I've made my dream come true, I'll retire by the sea. But first I'll have to win… and that hasn't happened yet!" }
+  - task: "Your manager wants to know when a project will be finished. Write a message giving the deadlines: what will have been done and by when (d'ici mercredi, au plus tard, dans une semaine…)."
+    min: 50
+    max: 100
+    use: [w.d-ici, w.au-plus-tard, w.terminer, w.boucler, w.réunion]
+    useAtLeast: 3
+    grammar: [g.futur-anterieur, g.prepositions-time]
+    expect:
+      - { pattern: "\\b(aurai|auras|aura|aurons|aurez|auront|serai|sera|serons|seront) (d[eé]j[aà] |enfin |bien |tout )?[a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|u|ue|us|it|ert)(?![a-zàâçéèêëîïôûùœ])", hint: "Say what will have been done: j'aurai terminé, nous aurons fini…" }
+      - { pattern: "\\b(d['’]ici|au plus tard|au plus t[oô]t|dans (un|une|deux|trois|quatre|cinq|six|huit|quinze|\\d+)|avant|jusqu['’])", hint: "Give precise deadlines: d'ici mercredi, au plus tard jeudi, dans une semaine…" }
+    model: { es: "Bonjour, madame, voici notre calendrier. D'ici mercredi, j'aurai terminé la première étape du dossier. Mon collègue aura appelé tous les clients au plus tard jeudi. Nous aurons fini le contrat dans une semaine, avant la réunion de vendredi prochain. Si tout va bien, le projet sera bouclé d'ici la fin du mois. Bonne journée, Paul", en: "Hello, madam, here is our schedule. By Wednesday I will have finished the first stage of the file. My colleague will have called all the clients by Thursday at the latest. We will have finished the contract within a week, before next Friday's meeting. If all goes well, the project will be wrapped up by the end of the month. Have a nice day, Paul" }
+  - task: "A disastrous weekend at the Monaco Grand Prix: nothing went as planned. Write about it with ne … ni … ni and aucun(e)."
+    min: 50
+    max: 100
+    use: [w.ni-ni, w.aucun, w.course, w.pilote, w.jamais-de-la-vie]
+    useAtLeast: 3
+    grammar: [g.ni-ni-aucun]
+    expect:
+      - { pattern: "\\bni\\b[^.!?]+\\bni\\b", hint: "Use ne … ni … ni: je n'ai vu ni les voitures ni les pilotes." }
+      - { pattern: "\\baucun(e)?\\b", hint: "Use aucun(e): aucun hôtel n'avait de chambre…" }
+    model: { es: "Quel week-end raté ! Je suis allé à Monaco pour la course, mais je n'ai vu ni les voitures ni les pilotes, parce qu'il y avait trop de monde. Aucun hôtel n'avait de chambre libre, alors j'ai dormi dans la voiture. Je n'avais ni argent ni carte bancaire : je l'avais oubliée à Nice ! Aucun de mes amis n'a voulu venir me chercher. Jamais de la vie je n'y retournerai !", en: "What a disastrous weekend! I went to Monaco for the race, but I saw neither the cars nor the drivers, because there were too many people. No hotel had a free room, so I slept in the car. I had neither money nor a bank card: I'd left it in Nice! None of my friends would come and fetch me. Never in my life will I go back!" }
+  - task: "Write a short application message for an internship (un stage) in Monaco: who you are, what you will have done by the start date, and your goals."
+    min: 50
+    max: 100
+    use: [w.stage, w.entretien, w.objectif, w.candidature, w.entreprise]
+    useAtLeast: 3
+    grammar: [g.futur-anterieur, g.prepositions-time]
+    expect:
+      - { pattern: "\\b(aurai|aura|aurons|serai|sera|serons) (d[eé]j[aà] |enfin |bien |tout )?[a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|u|ue|us|it|ert)(?![a-zàâçéèêëîïôûùœ])", hint: "Say what you will have done: en juin, j'aurai terminé mon master…" }
+      - { pattern: "\\b(stage|candidature|entretien|poste)\\b", hint: "Mention the internship or an interview." }
+    model: { es: "Madame, Monsieur, je m'appelle Emma Wilson et je vous envoie ma candidature pour un stage dans votre entreprise à Monaco. Je suis étudiante en tourisme. En juin, j'aurai terminé mon master et j'aurai déjà fait un stage de trois mois dans un hôtel à Nice. Mon objectif est de travailler dans le luxe. Je parle anglais, français et italien. Je serais très heureuse de vous rencontrer pour un entretien.", en: "Dear Sir or Madam, my name is Emma Wilson and I am sending you my application for an internship in your company in Monaco. I am a tourism student. By June I will have finished my master's and I will already have done a three-month internship in a hotel in Nice. My goal is to work in the luxury sector. I speak English, French and Italian. I would be very happy to meet you for an interview." }

@@ -230,3 +230,44 @@ dialogues:
       - { q: "How old was the grandfather in the photo?", options: ["Five", "Eight", "Ten"], answer: 1 }
       - { q: "How did he get to school?", options: ["By bike", "By car", "On foot"], answer: 2 }
       - { q: "What did they do on Sundays?", options: ["Listened to the radio", "Went to the cinema", "Watched television"], answer: 1 }
+writing:
+  - task: "Describe your life when you were a child: where you lived, your school and what you did after school."
+    min: 30
+    max: 65
+    use: [w.colegio, w.recreo, w.maestro, w.pueblo, w.patio]
+    useAtLeast: 3
+    grammar: [g.imperfect]
+    expect:
+      - { pattern: "\\b[a-zñ]+(aba|abas|[aá]bamos|aban|ía|ías|íamos|ían)(?![a-záéíóúñ])|\\b(era|eras|eran|iba|ibas|iban)\\b", hint: "Use the imperfect: vivía, jugaba, era …" }
+      - { pattern: "\\b(de (ni[nñ][oa]|peque[nñ][oa])|cuando era|antes|en aquella [eé]poca)", hint: "Set the time: de niño, cuando era pequeño …" }
+    model: { es: "De niña vivía en un pueblo pequeño cerca de Rosario. Iba a un colegio muy antiguo y mi maestra se llamaba Teresa. En el recreo jugaba con mis amigas en el patio. Después del colegio comía en casa de mis abuelos.", en: "As a girl I lived in a small village near Rosario. I went to a very old school and my teacher was called Teresa. At break I played with my friends in the playground. After school I ate at my grandparents' house." }
+  - task: "Answer your friend's questions about the games and toys of your childhood."
+    es: "¿A qué jugabas de pequeño? ¿Cuál era tu juguete favorito?"
+    min: 30
+    max: 60
+    use: [w.juguete, w.pelota, w.bicicleta, w.caramelo, w.montar]
+    useAtLeast: 3
+    grammar: [g.imperfect-uses]
+    expect:
+      - { pattern: "\\b[a-zñ]+(aba|abas|[aá]bamos|aban|ía|ías|íamos|ían)(?![a-záéíóúñ])|\\b(era|eran|iba|iban)\\b", hint: "Use the imperfect for habits: jugaba, veía, montaba …" }
+      - { pattern: "\\b(era|ten[ií]a|me gustaba|me encantaba)", hint: "Describe your favourite toy: mi juguete favorito era …" }
+    model: { es: "De pequeño jugaba mucho al fútbol con una pelota vieja. Mi juguete favorito era una bicicleta roja: montaba en bici todas las tardes. Los sábados por la mañana veía la televisión y comía caramelos.", en: "As a child I played football a lot with an old ball. My favourite toy was a red bike: I rode my bike every afternoon. On Saturday mornings I watched TV and ate sweets." }
+  - task: "Write about the habits of your family when you were little, using soler + infinitive (solía, solíamos …)."
+    min: 30
+    max: 65
+    use: [w.soler, w.pelearse, w.travieso, w.obedecer, w.portarse]
+    useAtLeast: 3
+    grammar: [g.soler, g.imperfect]
+    expect:
+      - { pattern: "\\bsol(ía|ia|ías|ias|íamos|iamos|ían|ian)\\b", hint: "Use soler in the imperfect: solía + infinitive." }
+    model: { es: "Mi hermano y yo solíamos pelearnos mucho. Yo era bastante travieso y no solía obedecer a mis padres, pero mi hermana siempre se portaba bien. Los domingos solíamos ir a casa de los abuelos y mi abuelo nos contaba cuentos.", en: "My brother and I used to fight a lot. I was quite naughty and didn't usually obey my parents, but my sister always behaved well. On Sundays we used to go to our grandparents' house and my grandfather told us stories." }
+  - task: "Compare your town in the past with today: what it was like and what there was before, and what there is now."
+    min: 30
+    max: 60
+    use: [w.antes, w.tranvia, w.fabrica, w.arbol, w.cambiar]
+    useAtLeast: 3
+    grammar: [g.imperfect]
+    expect:
+      - { pattern: "\\b(hab[ií]a|era|eran|ten[ií]a|ten[ií]an|viv[ií]a|iba)\\b", hint: "Describe the past with the imperfect: antes había …, era …" }
+      - { pattern: "\\b(ahora|hoy)\\b", hint: "Contrast with today: ahora hay …" }
+    model: { es: "Antes mi ciudad era muy tranquila. Había un tranvía en el centro y muchas fábricas cerca del río. Las calles tenían más árboles y la gente iba a pie. Ahora hay muchos coches, pero también hay parques nuevos.", en: "My town used to be very quiet. There was a tram in the centre and lots of factories near the river. The streets had more trees and people went on foot. Now there are lots of cars, but there are also new parks." }

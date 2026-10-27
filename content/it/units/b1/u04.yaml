@@ -269,3 +269,38 @@ dialogues:
       - { q: "Com'era il treno?", options: ["Vuoto", "In ritardo", "Molto affollato"], answer: 2, explain: "Il treno era affollato? — Sì, pieno." }
       - { q: "Che cosa deve fare Anna dopo aver compilato il modulo?", options: ["Firmarlo", "Chiamare la banca", "Tornare a Milano"], answer: 0, explain: "Quando avrà compilato il modulo, lo firmi qui." }
       - { q: "Secondo l'agente, che cosa fanno a volte i ladri?", options: ["Riportano i soldi", "Buttano i portafogli", "Vanno in questura"], answer: 1, explain: "A volte i ladri buttano i portafogli dopo aver preso i soldi." }
+writing:
+  - task: "Tell what went wrong when you arrived at Verona station: use the trapassato prossimo for what had already happened (il treno era già partito, avevo letto male…)."
+    min: 50
+    max: 100
+    use: [w.imprevisto, w.annullare, w.ormai, w.nel-frattempo, w.rimandare]
+    grammar: [g.trapassato-prossimo]
+    expect:
+      - { pattern: "\\b(avevo|avevi|aveva|avevamo|avevate|avevano|ero|eri|era|eravamo|eravate|erano)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Use the trapassato prossimo: era già partito, avevo letto…" }
+    model: { es: "Ieri è stata una giornata piena di imprevisti. Quando sono arrivato alla stazione di Verona, il treno per Venezia era già partito: avevo letto male l'orario! Il treno successivo era stato annullato per uno sciopero, quindi ho aspettato due ore in sala d'attesa. Ormai era troppo tardi per l'appuntamento con il mio cliente, che nel frattempo mi aveva mandato tre messaggi. Alla fine l'abbiamo rimandato a lunedì.", en: "Yesterday was a day full of setbacks. When I got to Verona station, the train to Venice had already left: I had misread the timetable! The next train had been cancelled because of a strike, so I waited two hours in the waiting room. By then it was too late for my appointment with my client, who in the meantime had sent me three messages. In the end we put it off until Monday." }
+  - task: "You were robbed in Verona. Write what you say at the police station: what you had done before and when you noticed the theft (trapassato prossimo)."
+    min: 50
+    max: 100
+    use: [w.furto, w.denunciare, w.rubare, w.borseggiatore, w.accorgersi]
+    grammar: [g.trapassato-prossimo]
+    expect:
+      - { pattern: "\\b(avevo|aveva|avevamo|avevano|ero|era|eravamo|erano)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b|\\bci eravamo\\s+\\S+", hint: "Use the trapassato prossimo: avevamo visitato, qualcuno mi aveva rubato…" }
+      - { pattern: "\\b(rubat|furto|borseggiator)\\w*", hint: "Say what was stolen: mi hanno rubato…, un furto." }
+    model: { es: "Buongiorno, vorrei denunciare un furto. Questa mattina ero in Piazza Bra con mia sorella. Avevamo appena visitato l'Arena e ci eravamo fermati a prendere un caffè. Quando sono andato a pagare, mi sono accorto che qualcuno mi aveva rubato il portafoglio dallo zaino. Probabilmente un borseggiatore mi aveva seguito tra la gente. Nel portafoglio c'erano la carta d'identità e cento euro.", en: "Good morning, I'd like to report a theft. This morning I was in Piazza Bra with my sister. We had just visited the Arena and had stopped for a coffee. When I went to pay, I realised that someone had stolen my wallet from my rucksack. A pickpocket had probably followed me through the crowd. In the wallet there were my ID card and a hundred euros." }
+  - task: "Write about your plans for the coming months: what you will do once certain things have happened. Use the futuro anteriore (quando avrò finito, non appena sarò tornato…)."
+    min: 50
+    max: 100
+    use: [w.scadenza, w.non-appena, w.dopo-che, w.una-volta-che, w.progetto]
+    grammar: [g.futuro-anteriore]
+    expect:
+      - { pattern: "\\b(avrò|avrai|avrà|avremo|avrete|avranno|sarò|sarai|sarà|saremo|sarete|saranno)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Use the futuro anteriore: avrò finito, sarò tornato…" }
+    model: { es: "Questo mese è pieno di scadenze, ma ho un piano. Non appena avrò consegnato il progetto, prenderò qualche giorno di ferie. Una volta che avrò finito tutto, andrò a Verona per vedere un'opera all'Arena. Dopo che sarò tornato a casa, comincerò un corso di design. E spero che entro dicembre avrò trovato anche un lavoro nuovo!", en: "This month is full of deadlines, but I have a plan. As soon as I've handed in the project, I'll take a few days off. Once I've finished everything, I'll go to Verona to see an opera at the Arena. After I've come home, I'll start a design course. And I hope that by December I'll have found a new job too!" }
+  - task: "Write a travel diary entry about a day in Verona, linking the actions with prima di + infinitive and dopo aver / dopo essere + participle."
+    min: 50
+    max: 100
+    use: [w.prima-di, w.dopo.prep, w.cortile, w.balcone, w.fila]
+    grammar: [g.past-infinitive]
+    expect:
+      - { pattern: "\\bdopo (aver|avere|esser|essere)\\s+\\S+", hint: "Link actions with dopo aver / dopo essere: dopo aver visto…" }
+      - { pattern: "\\bprima di\\s+\\S+", hint: "Use prima di + infinitive: prima di entrare…" }
+    model: { es: "Stamattina, dopo aver fatto colazione in albergo, sono andata a vedere l'Arena. Dopo essere uscita, ho camminato fino alla casa di Giulietta. Prima di entrare nel cortile ho dovuto fare una lunga fila, ma per fortuna è stata veloce. Dopo aver fatto qualche foto sotto il famoso balcone, ho pranzato in Piazza delle Erbe. Prima di tornare in albergo ho comprato un regalo per mia madre.", en: "This morning, after having breakfast at the hotel, I went to see the Arena. After coming out, I walked to Juliet's house. Before going into the courtyard I had to queue for a long time, but luckily it moved quickly. After taking a few photos under the famous balcony, I had lunch in Piazza delle Erbe. Before going back to the hotel I bought a present for my mother." }

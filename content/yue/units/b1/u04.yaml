@@ -294,3 +294,42 @@ dialogues:
       - { q: "啲舊公仔點處理？", options: ["全部搬去新屋", "冇用嘅掉咗佢", "送畀表哥"], answer: 1, explain: "冇用嘅就掉咗佢: throw away the ones he doesn't need." }
       - { q: "膠紙喺邊度？", options: ["櫃桶", "衣櫃", "雪櫃"], answer: 0, explain: "櫃桶有膠紙: in the drawer." }
       - { q: "新屋喺邊度？", options: ["荃灣三棟屋附近", "沙田城門河邊", "大埔墟"], answer: 0, explain: "喺三棟屋附近: near Sam Tung Uk in Tsuen Wan." }
+writing:
+  - task: "Leave instructions for your flatmate with 將: fold the clothes and put them away, and deal with the rubbish."
+    min: 40
+    max: 80
+    use: [w.zoeng1.c, w.zip3.b, w.ji1-gwai6, w.laap6-saap3, w.maat3]
+    useAtLeast: 3
+    grammar: [g.zoeng-disposal, g.keoi-final]
+    expect:
+      - { pattern: "將.{1,6}(摺|放|掉|抹|掃|洗|執|收)", hint: "Put the object first with 將: 將啲衫摺好." }
+      - { pattern: "咗佢", hint: "Give a brisk instruction with …咗佢: 掉咗佢." }
+    model: { es: "你返嚟之後，唔該將啲衫摺好，放入衣櫃。仲有，啲垃圾拎落樓掉咗佢，跟住將張枱抹乾淨。我今晚七點返嚟，多謝！", en: "When you get back, please fold the clothes and put them in the wardrobe. Also, take the rubbish downstairs and throw it out, then wipe the table clean. I'll be back at seven tonight. Thanks!" }
+  - task: "Explain how you wrapped a birthday present, saying what you used for each step with 攞…嚟."
+    min: 40
+    max: 80
+    use: [w.lo2, w.gaau3-zin2, w.gaau1-zi2, w.ci1, w.sat6]
+    useAtLeast: 3
+    grammar: [g.wan-lo-use]
+    expect:
+      - { pattern: "(攞|搵).{1,6}嚟", hint: "Say what you used with 攞 … 嚟 + verb: 攞把鉸剪嚟剪." }
+    model: { es: "我先攞咗把鉸剪嚟剪紙，然後攞膠紙嚟黐實佢，最後攞枝筆嚟寫低朋友個名。好快就包好份禮物喇，佢一定好開心！", en: "First I took some scissors to cut the paper, then used tape to stick it down firmly, and finally took a pen to write my friend's name. The present was wrapped in no time. They'll be so happy!" }
+  - task: "It's spring-cleaning day. Write the family plan: who does what, and what to throw away with …咗佢."
+    min: 40
+    max: 90
+    use: [w.daai6-sou3-ceoi4, w.to1-dei6, w.zaap6-zi3, w.deu6, w.gung1-zai2]
+    useAtLeast: 3
+    grammar: [g.keoi-final, g.zoeng-disposal]
+    expect:
+      - { pattern: "咗佢", hint: "Say what to get rid of with …咗佢: 掉咗佢." }
+    model: { es: "今日大掃除！爸爸拖地，媽媽抹窗，我執房。啲舊雜誌同紙皮箱掉咗佢，冇人玩嘅公仔都送咗佢啦。我哋三點之前做完佢！", en: "It's spring-cleaning day! Dad mops the floor, Mum wipes the windows, and I tidy my room. Let's throw out the old magazines and cardboard boxes, and give away the dolls nobody plays with. Let's get it all done before three!" }
+  - task: "Leave a note telling your flatmate how to heat up dinner: where the food is and what to do with it."
+    min: 40
+    max: 90
+    use: [w.syut3-gwai6, w.mei4-bo1-lou4, w.lou4, w.zoeng1.c, w.bou1.b]
+    useAtLeast: 3
+    grammar: [g.zoeng-disposal, g.keoi-final]
+    expect:
+      - { pattern: "將", hint: "Use 將 to say what to do with the food: 將啲湯…" }
+      - { pattern: "雪櫃|微波爐|爐", hint: "Mention where: 雪櫃, 微波爐, 爐." }
+    model: { es: "啲湯喺雪櫃入面，你將佢放入個煲度，喺爐度煲熱佢。啲飯放入微波爐熱兩分鐘就得。食完記得將個煲洗乾淨呀！", en: "The soup is in the fridge: pour it into the pot and heat it on the stove. Put the rice in the microwave for two minutes. When you've eaten, remember to wash the pot!" }

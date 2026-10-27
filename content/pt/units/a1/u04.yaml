@@ -281,3 +281,46 @@ dialogues:
       - { q: "O que o Daniel vê da janela?", options: ["A praia", "O Cristo Redentor", "O Maracanã"], answer: 1, explain: "Da janela você vê o Cristo Redentor." }
       - { q: "Onde fica a padaria?", options: ["Na esquina", "Em frente ao prédio", "Longe, no centro"], answer: 1, explain: "The supermarket is on the corner; the bakery is opposite the building." }
       - { q: "O Daniel fica com o quarto?", options: ["Sim", "Não", "Não sabe"], answer: 0, explain: "Então eu fico com o quarto! (ficar com = to take)" }
+writing:
+  - task: "Describe your home: where it is, what rooms it has and what it is like."
+    min: 15
+    max: 40
+    use: [w.apartamento, w.quarto, w.sala, w.cozinha, w.banheiro]
+    useAtLeast: 3
+    grammar: [g.tem-there-is, g.articles-indefinite]
+    expect:
+      - { pattern: '\btem\b', hint: "Say what it has with tem: O apartamento tem dois quartos." }
+      - { pattern: '(quarto|sala|cozinha|banheiro|varanda|jardim|garagem)', hint: "Name some rooms: quarto, sala, cozinha…" }
+    model: { es: "Eu moro num apartamento pequeno em Ipanema. Ele tem um quarto, uma sala, uma cozinha e um banheiro. A varanda é pequena, mas é linda.", en: "I live in a small flat in Ipanema. It has a bedroom, a living room, a kitchen and a bathroom. The balcony is small, but it's lovely." }
+  - task: "Your friend can't find anything in the flat. Reply and say where each thing is (na mesa, no sofá, em cima da cama…)."
+    es: "Onde está a chave? E o meu celular? E o computador?"
+    min: 12
+    max: 35
+    use: [w.chave, w.mesa, w.sofá, w.cama, w.estar]
+    useAtLeast: 2
+    grammar: [g.estar-present, g.contractions-em]
+    expect:
+      - { pattern: '\best(á|a|ão|ao)(?![a-zà-ú])', hint: "Say where it is with estar: A chave está na mesa." }
+      - { pattern: '\b(n[oa]s?|em cima|embaixo|dentro|atr[aá]s|perto|ao lado)\b', hint: "Say where: no sofá, na mesa, em cima da cama…" }
+    model: { es: "A chave está na mesa da cozinha. O seu celular está no sofá da sala. E o computador está no seu quarto, em cima da cama.", en: "The key is on the kitchen table. Your phone is on the sofa in the living room. And the computer is in your bedroom, on the bed." }
+  - task: "Write about your neighbourhood: what there is (tem…) and where the places are (fica…)."
+    min: 15
+    max: 40
+    use: [w.bairro, w.ficar, w.perto, w.longe, w.supermercado]
+    useAtLeast: 3
+    grammar: [g.ficar-location, g.tem-there-is, g.prepositions-place]
+    expect:
+      - { pattern: '\bfica(m)?\b', hint: "Say where places are with ficar: O banco fica na praça." }
+      - { pattern: '\btem\b', hint: "Say what there is: No meu bairro tem …" }
+    model: { es: "Meu bairro é tranquilo. Tem uma padaria, um supermercado e uma farmácia. O supermercado fica perto da praça. A praia fica longe, mas o parque fica ao lado de casa.", en: "My neighbourhood is quiet. There's a bakery, a supermarket and a chemist's. The supermarket is near the square. The beach is far, but the park is next to my house." }
+  - task: "Text a friend from the top of Corcovado, next to Christ the Redeemer: say where you are and what there is around you and down below."
+    es: "Oi! Onde você está agora? O que tem aí?"
+    min: 12
+    max: 35
+    use: [w.lá, w.embaixo, w.turista, w.morro, w.perto]
+    useAtLeast: 2
+    grammar: [g.estar-present, g.tem-there-is, g.prepositions-place]
+    expect:
+      - { pattern: '\b(estou|t[oô]) (no|na|em|perto|aqui)\b', hint: "Say where you are: Estou no Corcovado." }
+      - { pattern: '\btem\b', hint: "Say what there is: Aqui tem muitos turistas." }
+    model: { es: "Oi! Estou no Corcovado, perto do Cristo Redentor. Aqui tem muitos turistas e uma loja. Lá embaixo tem a praia, o mar e muitos prédios.", en: "Hi! I'm on Corcovado, near Christ the Redeemer. There are lots of tourists and a shop here. Down below there's the beach, the sea and lots of buildings." }

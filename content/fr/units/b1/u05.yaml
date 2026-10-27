@@ -286,3 +286,42 @@ dialogues:
       - { q: "Qu'est-ce qui énerve Lucas ?", options: ["Le guide", "Des gens qui cueillent la lavande", "La pluie"], answer: 1, explain: "« Ça m'énerve qu'ils fassent ça »: people picking the lavender." }
       - { q: "À quelle heure commence la visite ?", options: ["À neuf heures", "À dix heures", "À midi"], answer: 1, explain: "« la visite commence à dix heures »." }
       - { q: "Que veut acheter Manon ?", options: ["Un bouquet de lavande", "Du miel de lavande", "Une valise"], answer: 1, explain: "She wants lavender honey for her mother." }
+writing:
+  - task: "Your friend is coming to see you in Gordes. Reply, expressing your feelings with the subjonctif (je suis ravi(e) que tu viennes, j'ai peur qu'il fasse…, c'est dommage que…)."
+    es: "Je suis à Avignon ! Je viens te voir à Gordes demain, si tu veux."
+    min: 50
+    max: 100
+    use: [w.ravi, w.dommage, w.lavande, w.triste, w.content]
+    useAtLeast: 3
+    grammar: [g.subjonctif-emotion]
+    expect:
+      - { pattern: "\\b(ravi|content|heureu|triste|d[eé]sol|surpris|[eé]tonn|peur|dommage|regrett|furieu|f[aâ]ch|d[eé]çu|craign|crain)[^.!?]{0,20}\\bqu(e\\s|['’])", hint: "Express a feeling + que + subjonctif: je suis ravie que tu viennes…" }
+    model: { es: "Super ! Je suis ravie que tu viennes demain ! Je suis un peu triste que tu ne restes qu'une journée, mais c'est mieux que rien. J'ai peur qu'il fasse très chaud, alors prends une casquette. C'est dommage que la lavande ne soit pas encore en fleurs, mais le village est magnifique. Je suis contente de te voir bientôt !", en: "Great! I'm delighted you're coming tomorrow! I'm a bit sad you're only staying one day, but it's better than nothing. I'm afraid it'll be very hot, so bring a cap. It's a shame the lavender isn't in flower yet, but the village is magnificent. I'm happy to see you soon!" }
+  - task: "Give advice to tourists visiting the abbey of Sénanque in summer: what is necessary, important or better (Il faut que…, il est important que…, il vaut mieux que…)."
+    min: 50
+    max: 100
+    use: [w.il-vaut-mieux, w.essentiel, w.foule, w.moine, w.fragile]
+    useAtLeast: 3
+    grammar: [g.subjonctif-necessite]
+    expect:
+      - { pattern: "\\b(faut|important|n[eé]cessaire|essentiel|indispensable|vaut mieux|temps|utile|obligatoire)[^.!?]{0,10}\\bqu(e\\s|['’])", hint: "Use an expression of necessity + que + subjonctif: il faut que vous arriviez tôt…" }
+    model: { es: "Si vous visitez l'abbaye de Sénanque en juillet, il faut que vous arriviez tôt le matin, avant la foule. Il est important que vous respectiez le silence des moines. Il vaut mieux que vous ne marchiez pas dans les champs de lavande, car ils sont fragiles. Il est essentiel que vous ayez de l'eau, parce qu'il fait très chaud. Bonne visite !", en: "If you visit Sénanque Abbey in July, you must arrive early in the morning, before the crowds. It's important that you respect the monks' silence. It's better not to walk in the lavender fields, as they are fragile. It's essential that you have water, because it's very hot. Enjoy your visit!" }
+  - task: "Too many tourists in the villages of the Luberon? Write a forum post giving your feelings and what should be done (je regrette que…, il faudrait que…)."
+    min: 60
+    max: 110
+    use: [w.village-perché, w.bondé, w.haute-saison, w.basse-saison, w.soulagé]
+    useAtLeast: 3
+    grammar: [g.subjonctif-emotion, g.subjonctif-necessite]
+    expect:
+      - { pattern: "\\b(ravi|content|heureu|triste|d[eé]sol|surpris|peur|dommage|regrett|f[aâ]ch|soulag|faut|faudrait|vaudrait|vaut mieux|important|essentiel|n[eé]cessaire)[^.!?]{0,20}\\bqu(e\\s|['’])", hint: "Use a feeling or a necessity + que + subjonctif: je regrette que…, il faudrait que…" }
+    model: { es: "Je suis triste que les villages perchés comme Gordes soient si bondés en haute saison. Les habitants ont peur que leur village devienne un musée. Bien sûr, le tourisme est utile pour les commerçants, mais il faut que les visiteurs respectent le calme des lieux. À mon avis, il vaudrait mieux que les touristes viennent en basse saison. Je serais soulagé qu'on limite aussi les voitures dans les rues.", en: "I'm sad that hilltop villages like Gordes are so crowded in high season. The locals are afraid their village will become a museum. Of course tourism is useful for shopkeepers, but visitors must respect the peace of these places. In my opinion, it would be better if tourists came in low season. I'd be relieved if cars were also limited in the streets." }
+  - task: "At the end of your stay in Provence, write about your feelings, using both de + infinitive (je suis content(e) d'être ici) and que + subjonctif (je suis content(e) que tu sois là)."
+    min: 50
+    max: 100
+    use: [w.miel, w.apiculteur, w.regretter, w.heureux, w.content]
+    useAtLeast: 3
+    grammar: [g.subjonctif-vs-infinitive, g.subjonctif-emotion]
+    expect:
+      - { pattern: "\\b(content|heureu|ravi|triste|d[eé]sol|peur|regrett|fier|fi[eè]re|surpris)[a-zàâçéèêëîïôûùœ]*\\s(de |d['’])", hint: "With the same subject, use de + infinitive: je suis heureuse d'être ici." }
+      - { pattern: "\\b(content|heureu|ravi|triste|d[eé]sol|peur|regrett|dommage|veut|veux)[^.!?]{0,20}\\bqu(e\\s|['’])", hint: "With a different subject, use que + subjonctif: je suis contente que ma sœur soit là." }
+    model: { es: "Je suis heureuse d'être en Provence, et je suis contente que ma sœur soit avec moi. Demain, nous partons. Je regrette de quitter cette région magnifique, mais je suis ravie que nos amis viennent nous chercher à la gare. Avant de partir, je veux acheter du miel de lavande. Ma sœur veut que nous visitions encore une ferme d'apiculteurs ! J'ai peur de ne pas avoir assez de temps.", en: "I'm happy to be in Provence, and I'm glad my sister is with me. Tomorrow we leave. I'm sorry to leave this magnificent region, but I'm delighted that our friends are coming to pick us up at the station. Before leaving I want to buy some lavender honey. My sister wants us to visit another beekeepers' farm! I'm afraid I won't have enough time." }

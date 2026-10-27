@@ -270,3 +270,37 @@ dialogues:
       - { q: "Fra quanto tempo parte l'autobus?", options: ["Fra dieci minuti", "Fra quaranta minuti", "Fra un'ora e un quarto"], answer: 1, explain: "Fra quaranta minuti. The journey itself takes an hour and a quarter." }
       - { q: "Quando torna Beatrice?", options: ["Domani", "Fra tre giorni", "Fra una settimana"], answer: 1, explain: "Torno fra tre giorni." }
       - { q: "Da quanto tempo è in stazione Beatrice?", options: ["Da dieci minuti", "Da un'ora", "Da stamattina"], answer: 1, explain: "Sono qui da un'ora: present + da for something still going on." }
+writing:
+  - task: "Introduce yourself in an online forum for commuters: say how long you have lived where you live, how long you have done your job or studies, and how long you have had your season ticket."
+    min: 30
+    max: 65
+    use: [w.pendolare, w.abbonamento, w.patente, w.da-quando, w.durare]
+    useAtLeast: 2
+    grammar: [g.da-since]
+    expect:
+      - { pattern: "\\bda\\s+(\\S+\\s+)?(anni|anno|mesi|mese|settimane|giorni|ore|tempo)\\b|\\bdal\\s+\\d+|\\bda quando\\b", hint: "Say since when with the present + da: abito qui da tre anni, dal 2022…" }
+    model: { es: "Ciao a tutti! Mi chiamo Paolo e abito a Siena da sei anni. Sono pendolare: lavoro a Firenze da due anni e prendo il treno ogni giorno. Ho l'abbonamento dal 2023 e la patente da dieci anni, ma la macchina non mi piace!", en: "Hi everyone! My name is Paolo and I've lived in Siena for six years. I'm a commuter: I've worked in Florence for two years and I take the train every day. I've had a season ticket since 2023 and a driving licence for ten years, but I don't like the car!" }
+  - task: "Text a friend from the station: when your train leaves, the platform, any delay and when you will arrive (fra / tra)."
+    min: 30
+    max: 65
+    use: [w.binario, w.ritardo, w.coincidenza, w.partenza, w.arrivo]
+    grammar: [g.fra-tra-per]
+    expect:
+      - { pattern: "\\b(fra|tra)\\s+(\\S+\\s+)?(minut|or|giorn|settiman|mes|ann|poco|mezz)", hint: "Say when with fra / tra: fra dieci minuti, tra un'ora…" }
+    model: { es: "Sono in stazione a Siena. Il treno per Buonconvento parte fra dieci minuti dal binario tre, ma c'è un ritardo di un quarto d'ora. Purtroppo perderò la coincidenza! Arrivo a Buonconvento fra due ore. Mi vieni a prendere?", en: "I'm at the station in Siena. The train to Buonconvento leaves in ten minutes from platform three, but there's a fifteen-minute delay. Unfortunately I'll miss my connection! I'll get to Buonconvento in two hours. Will you come and pick me up?" }
+  - task: "Write about your resolutions for this year: what you have decided to do, what you will stop doing, what you will start or try to do. Use verbs with a and di."
+    min: 30
+    max: 65
+    use: [w.smettere, w.riuscire, w.aiutare, w.decidere, w.cominciare]
+    grammar: [g.verbs-with-prepositions]
+    expect:
+      - { pattern: "\\b(decis[oa]|decido|decidere) di\\b|\\bsmett\\S* di\\b|\\bcominc\\S* a\\b|\\briusc\\S* a\\b|\\b(provo|provato|cerco|cercato|spero|imparo|imparare) (a|di)\\b|\\baiut\\S* a\\b", hint: "Use verbs with di or a: ho deciso di…, smetto di…, comincio a…, riesco a…" }
+    model: { es: "Quest'anno ho deciso di cambiare vita. Smetto di prendere la macchina per andare al lavoro e comincio a prendere il treno. Voglio imparare a cucinare e aiutare mia madre a curare il giardino. Spero di riuscire a fare tutto!", en: "This year I've decided to change my life. I'm going to stop using the car to go to work and start taking the train. I want to learn to cook and help my mother look after the garden. I hope I manage to do it all!" }
+  - task: "Compare ways of getting around the Val d'Orcia (car, train, bus, bike, on foot) and say how you will travel."
+    min: 30
+    max: 65
+    use: [w.parcheggiare, w.benzina, w.multa, w.noleggiare, w.fare-il-pieno]
+    grammar: [g.prepositions-transport]
+    expect:
+      - { pattern: "\\b(in|con la|con il|a)\\s+(macchina|treno|autobus|bici|bicicletta|moto|motorino|tram|nave|traghetto|aereo|piedi)\\b", hint: "Say how you travel: in macchina, in treno, a piedi…" }
+    model: { es: "In Val d'Orcia è meglio viaggiare in macchina, perché gli autobus sono pochi. Ma attenzione: nei paesi è difficile parcheggiare e si prende subito una multa. Io noleggio una macchina a Siena e faccio il pieno di benzina. Poi giro i borghi a piedi o in bicicletta.", en: "In the Val d'Orcia it's better to travel by car, because there are few buses. But be careful: in the villages it's hard to park and you get a fine straight away. I'm hiring a car in Siena and filling up with petrol. Then I'll go round the villages on foot or by bike." }

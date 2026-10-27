@@ -281,3 +281,43 @@ dialogues:
       - { q: "Qui profite de l'argent de la vente ?", options: ["Les vignerons", "L'hôpital et des associations", "Le commissaire-priseur"], answer: 1, explain: "The hospital benefits, and the presidents' barrel is sold for charities." }
       - { q: "Combien coûte un tonneau, selon Marc ?", options: ["Mille euros", "Plusieurs dizaines de milliers d'euros", "Cent euros"], answer: 1, explain: "He corrects Julie: plusieurs dizaines de milliers d'euros." }
       - { q: "Qui va conduire ce soir ?", options: ["Marc", "Julie", "Un taxi"], answer: 1, explain: "C'est toi qui conduis ce soir: Julie will drive, which is why Marc offers her the bottle." }
+writing:
+  - task: "Write a short article about the Hospices de Beaune wine auction, highlighting key information with c'est… qui / c'est… que (C'est à Beaune que se tient…)."
+    min: 80
+    max: 150
+    use: [w.vente-aux-enchères, w.hospice, w.caritatif, w.se-tenir, w.acheteur]
+    useAtLeast: 3
+    grammar: [g.mise-en-relief]
+    expect:
+      - { pattern: "\\bc['’]est [^.!?]{1,40}\\bqu(i|e|['’])|\\bce sont [^.!?]{1,40}\\bqu(i|e|['’])", hint: "Highlight information with c'est … qui / c'est … que: C'est à Beaune que se tient la vente." }
+    model: { es: "C'est à Beaune que se tient, chaque mois de novembre, la plus célèbre vente aux enchères de vin du monde. C'est en 1859 que les Hospices ont organisé leur première vente. Aujourd'hui, ce sont des acheteurs venus de toute la planète qui enchérissent sur les meilleurs tonneaux. Mais c'est surtout le but caritatif de l'événement qui le rend unique : c'est grâce à l'argent récolté que l'hôpital de la ville peut acheter du matériel moderne. Et c'est toujours une célébrité qui préside la pièce des Présidents, vendue pour une association.", en: "It is in Beaune that the world's most famous wine auction is held every November. It was in 1859 that the Hospices organised their first sale. Today it is buyers from all over the planet who bid on the best barrels. But it is above all the charitable purpose of the event that makes it unique: it is thanks to the money raised that the town's hospital can buy modern equipment. And it is always a celebrity who presides over the Presidents' barrel, sold for a charity." }
+  - task: "Write a chatty message to a friend about the wines and food you tasted in Burgundy, using dislocation the way people speak (Le bourgogne, je l'adore. Moi, le blanc, je le trouve…)."
+    min: 80
+    max: 150
+    use: [w.cave, w.vigneron, w.millésime, w.trinquer, w.rosé]
+    useAtLeast: 3
+    grammar: [g.dislocation]
+    expect:
+      - { pattern: ",\\s?(je|j['’]|tu|on|nous|vous|il|elle|ils|elles|c['’])\\s?(ne |n['’])?(l['’]|le |la |les |en |y |lui |leur |est\\b)", hint: "Dislocate: put the topic first, then a pronoun: Le bourgogne, je l'adore." }
+      - { pattern: "\\b(moi|toi|lui|nous|eux),", hint: "Add a stressed pronoun for emphasis: Moi, le rouge, je…" }
+    model: { es: "Coucou, Léa ! Beaune, c'est génial ! Hier, on a visité une cave avec un vigneron très sympa. Le pinot noir, je l'ai trouvé délicieux, surtout le millésime 2018. Moi, le blanc, je ne l'aime pas trop d'habitude, mais le chardonnay de ce domaine, je l'ai adoré. Marc, lui, il a préféré le rosé, évidemment ! Les escargots, on en a mangé une douzaine chacun. Et le bœuf bourguignon, je te le recommande. Le soir, on a trinqué à ta santé. Tes vacances en Bretagne, tu les commences quand ?", en: "Hi, Léa! Beaune is great! Yesterday we visited a cellar with a really nice winegrower. The pinot noir, I found it delicious, especially the 2018 vintage. Me, I don't usually like white much, but the chardonnay from this estate, I loved it. Marc, he preferred the rosé, of course! Snails, we ate a dozen each. And the beef bourguignon, I recommend it. In the evening we raised a glass to you. Your holiday in Brittany, when does it start?" }
+  - task: "Write about your impressions of Burgundy: what surprises you, what you love, what you miss (Ce qui m'étonne, c'est…; ce que j'aime, c'est…; ce dont j'ai besoin, c'est…)."
+    min: 80
+    max: 150
+    use: [w.s-étonner, w.passionner, w.impressionnant, w.véritable, w.justement]
+    useAtLeast: 3
+    grammar: [g.ce-qui-c-est]
+    expect:
+      - { pattern: "\\bce (qui|que|dont)\\b[^.!?]+,\\s?c['’]est|\\bce qu['’][^.!?]+,\\s?c['’]est|\\bce (qui|que|dont)\\b[^.!?]+,\\s?ce sont", hint: "Use ce qui / ce que / ce dont…, c'est…: Ce qui m'étonne, c'est le prix." }
+    model: { es: "Je vis en Bourgogne depuis trois mois. Ce qui m'étonne le plus, c'est la place du vin dans la vie quotidienne : ici, tout le monde a un avis sur les vendanges ! Ce que j'aime, ce sont les villages et leurs toits colorés, vraiment impressionnants. Ce qui me passionne, c'est l'histoire des ducs, justement parce qu'elle est méconnue à l'étranger. En revanche, ce qui me manque, c'est la mer. Et ce dont j'ai besoin, c'est d'un véritable cours de dégustation, parce que je ne sais toujours pas distinguer un Pommard d'un Volnay !", en: "I've been living in Burgundy for three months. What surprises me most is the place of wine in everyday life: here everyone has an opinion on the harvest! What I love is the villages and their colourful roofs, which are really impressive. What fascinates me is the history of the dukes, precisely because it's little known abroad. On the other hand, what I miss is the sea. And what I need is a real tasting course, because I still can't tell a Pommard from a Volnay!" }
+  - task: "A friend's blog post about Burgundy contains mistakes. Write a polite comment correcting them (Ce n'est pas…, c'est…; contrairement à ce que tu écris…; quant à…)."
+    es: "Les Hospices de Beaune vendent du vin blanc en été, et le kir se fait avec du vin rouge."
+    min: 80
+    max: 150
+    use: [w.corriger, w.contrairement-à, w.quant-à, w.notamment, w.distinguer]
+    useAtLeast: 3
+    grammar: [g.mise-en-relief, g.ce-qui-c-est]
+    expect:
+      - { pattern: "\\bce n['’]est pas [^.!?]+,\\s?(c['’]est|mais)|\\bce ne sont pas [^.!?]+,\\s?(ce sont|mais)", hint: "Correct with emphasis: Ce n'est pas en été, c'est en novembre que…" }
+      - { pattern: "\\b(contrairement|en fait|en r[eé]alit[eé]|justement|plut[oô]t|quant)", hint: "Introduce the correction: contrairement à ce que tu écris, quant à…" }
+    model: { es: "Merci pour ton article, très agréable à lire ! Permets-moi juste de corriger deux petites erreurs. Contrairement à ce que tu écris, ce n'est pas en été que se tient la vente des Hospices, c'est le troisième dimanche de novembre. Et on n'y vend pas seulement du blanc : ce sont notamment les grands vins rouges qui attirent les acheteurs. Quant au kir, ce n'est pas avec du rouge qu'on le prépare, c'est avec du vin blanc de Bourgogne et de la crème de cassis. C'est d'ailleurs un ancien maire de Dijon, Félix Kir, qui lui a donné son nom. Continue comme ça !", en: "Thanks for your article, very pleasant to read! Just let me correct two small mistakes. Contrary to what you write, it's not in summer that the Hospices sale is held, it's on the third Sunday of November. And they don't only sell white: it's mainly the great red wines that attract buyers. As for kir, it's not made with red, it's made with white Burgundy wine and blackcurrant liqueur. In fact, it was a former mayor of Dijon, Félix Kir, who gave it its name. Keep it up!" }

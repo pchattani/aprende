@@ -241,3 +241,41 @@ dialogues:
       - { q: "小玲覺得掃碼難唔難？", options: ["好難", "一啲都唔難", "佢都唔識"], answer: 1, explain: "She says 一啲都唔難: not hard at all." }
       - { q: "阿婆下次想學乜嘢？", options: ["網購", "打機", "影相"], answer: 0, explain: "我下次仲要學網購添: next she wants to learn online shopping." }
       - { q: "檔主點講？", options: ["阿婆太老，學唔識", "連阿婆都識掃碼", "佢唔收電子支付"], answer: 1, explain: "The stallholder says 而家連阿婆都識掃碼: even Grandma can scan codes now." }
+writing:
+  - task: "Write about how everyone uses smartphones now, even your grandparents, using 連…都 and 甚至."
+    min: 60
+    max: 110
+    use: [w.lin4, w.zi3-nang4-sau2-gei1, w.mong5-kau3, w.sou3-maa5, w.sam6-zi3]
+    useAtLeast: 3
+    grammar: [g.lin-dou-even]
+    expect:
+      - { pattern: "連.{1,8}都", hint: "Say 'even …' with 連…都: 連我阿婆都識用." }
+    model: { es: "而家連我阿婆都識用智能手機，佢仲識網購同掃碼畀錢。甚至我阿公都會同孫仔打視像電話。我諗時代真係唔同咗。以前佢哋乜都唔識，而家仲會教我點樣用新嘅應用程式。", en: "These days even my grandma can use a smartphone; she can shop online and pay by scanning QR codes. My grandpa even video-calls his grandson. Times really have changed. They used to know nothing about it; now they even teach me how to use new apps." }
+  - task: "Write a complaint about an app that stopped working after an update, using 一…都唔 / 一…都冇."
+    min: 60
+    max: 110
+    use: [w.jing3-jung6-cing4-sik1, w.gang1-san1, w.dang1-jap6, w.zoeng3-wu6, w.man1.c]
+    useAtLeast: 3
+    grammar: [g.jat-dou-negative, g.lin-dou-even]
+    expect:
+      - { pattern: "一(個|樣|啲|文|蚊|次|分鐘).{0,4}都.{0,2}(唔|冇)", hint: "Say 'not a single …' with 一…都唔/冇." }
+    model: { es: "呢個應用程式真係好差！我更新咗之後，一樣嘢都用唔到，連登入都登入唔到。我個帳戶入面有錢，但係而家一文都攞唔出嚟。我已經打咗三次電話問佢哋，但係一次都冇人聽。", en: "This app is terrible! Since I updated it, not a single thing works; I can't even log in. There's money in my account, but now I can't get a single cent out. I've already phoned them three times, but not once did anyone answer." }
+  - task: "Describe a relaxed day in Mui Wo using question word + 都 (邊度都, 幾時都, 乜都唔…)."
+    min: 60
+    max: 110
+    use: [w.bin1-dou6-dou1, w.gei2-si4-dou1, w.mat1-dou1-m4, w.bin1-go3-dou1]
+    useAtLeast: 3
+    grammar: [g.wh-dou-every]
+    expect:
+      - { pattern: "(邊度|邊個|乜|乜嘢|幾時|點)都", hint: "Use question word + 都: 邊度都好靜." }
+    model: { es: "梅窩好舒服，邊度都好靜，週末幾時都唔使排隊。我哋成日乜都唔做，淨係喺海灘曬太陽，飲凍檸茶。我諗邊個都會鍾意呢度，下次我一定再嚟。你得閒都嚟玩吓啦。", en: "Mui Wo is so relaxing. It's quiet everywhere, and even at weekends you never have to queue. We spent the whole day doing nothing at all, just sunbathing on the beach and drinking iced lemon tea. I think anyone would love it here; I'll definitely come again. Come and visit when you're free." }
+  - task: "Give your opinion on the generation gap with technology: what young people and elders should each do."
+    min: 60
+    max: 130
+    use: [w.doi6-kau1, w.wu6-soeng1, w.zyun1-zung6, w.kau1-tung1, w.zoeng2-bui3]
+    useAtLeast: 3
+    grammar: [g.wh-dou-every, g.lin-dou-even]
+    expect:
+      - { pattern: "覺得|認為|我諗", hint: "Give your opinion: 我覺得…" }
+      - { pattern: "應該|最好", hint: "Say what people should do: 應該…" }
+    model: { es: "我覺得後生仔同長輩有代溝係好自然嘅事。不過如果大家互相尊重，多啲溝通，問題就會少好多。年輕人應該慢慢教長輩用新科技，長輩亦可以分享自己嘅經驗。其實邊個都會有跟唔上時代嘅一日。", en: "I think a generation gap between young people and elders is very normal. But if everyone respects each other and communicates more, there'll be far fewer problems. Young people should patiently teach their elders new technology, and elders can share their experience. In fact, everyone will have a day when they can't keep up with the times." }

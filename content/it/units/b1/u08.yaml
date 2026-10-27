@@ -286,3 +286,39 @@ dialogues:
       - { q: "Quanto è lungo il portico di San Luca?", options: ["Quasi quattro chilometri", "Quaranta metri", "Dieci chilometri"], answer: 0, explain: "'È lungo quasi quattro chilometri.'" }
       - { q: "Chi vive nel quartiere di Beatrice?", options: ["Soprattutto turisti", "Famiglie ricche", "Tanti studenti"], answer: 2, explain: "It's near the university, 'in cui vivono tanti studenti'." }
       - { q: "Che cosa manca a Bologna, secondo Beatrice?", options: ["I ristoranti", "Le case per gli studenti", "I portici", "Le piste ciclabili"], answer: 1, explain: "'Quello che manca sono le case per gli studenti.'" }
+writing:
+  - task: "Describe your city or neighbourhood to an Italian penfriend, using relative pronouns: che, in cui, con cui, dove."
+    min: 50
+    max: 100
+    use: [w.cui, w.zona-pedonale, w.cantiere, w.grattacielo, w.residenziale]
+    grammar: [g.relative-che, g.relative-cui]
+    expect:
+      - { pattern: "\\b(in|a|con|di|per|da|su|tra|fra) cui\\b", hint: "Use cui after a preposition: la città in cui vivo, gli amici con cui esco…" }
+      - { pattern: "\\b\\S+\\s+che\\s+\\S+", hint: "Use che: una città che cambia…" }
+    model: { es: "La città in cui vivo è Leeds, nel nord dell'Inghilterra. È una città che cambia continuamente: ci sono molti cantieri e alcuni grattacieli nuovi. Il quartiere in cui abito è residenziale e tranquillo, con un parco che mi piace molto. Il centro ha una zona pedonale dove ci sono i negozi più belli. Gli amici con cui esco di solito abitano vicino all'università.", en: "The city I live in is Leeds, in the north of England. It's a city that is always changing: there are lots of building sites and some new skyscrapers. The neighbourhood I live in is residential and quiet, with a park I really like. The centre has a pedestrian zone where the nicest shops are. The friends I usually go out with live near the university." }
+  - task: "Write a short guidebook entry about Bologna (or a city you love), using il cui / la cui / i cui to say whose."
+    min: 50
+    max: 100
+    use: [w.portico, w.popolazione, w.residente, w.fuorisede, w.torre]
+    grammar: [g.relative-il-cui]
+    expect:
+      - { pattern: "\\b(il|la|i|le) cui\\b", hint: "Use il cui / la cui (whose): una città la cui storia…" }
+    model: { es: "Bologna è una città la cui storia è molto antica: la sua università, nata nel 1088, è la più vecchia d'Europa. È famosa per i portici, i cui archi proteggono dalla pioggia chi cammina in centro. Il simbolo della città sono le Due Torri, la cui vista dall'alto è bellissima. La popolazione è giovane, perché molti residenti sono studenti fuorisede, i cui genitori abitano in altre regioni.", en: "Bologna is a city whose history is very old: its university, founded in 1088, is the oldest in Europe. It's famous for its porticoes, whose arches protect people walking in the centre from the rain. The symbol of the city is the Two Towers, whose view from the top is beautiful. The population is young, because many residents are students from out of town, whose parents live in other regions." }
+  - task: "Write some advice for newcomers to Bologna, using chi, chiunque, quello che and ciò che."
+    min: 50
+    max: 100
+    use: [w.chiunque, w.quello-che, w.ciò, w.partecipare, w.iniziativa]
+    grammar: [g.relative-chi-quello-che]
+    expect:
+      - { pattern: "\\bchi\\b|\\bchiunque\\b", hint: "Use chi / chiunque (whoever): chi arriva a Bologna…" }
+      - { pattern: "quello che|ciò che|quel che", hint: "Use quello che / ciò che: quello che mi piace di più…" }
+    model: { es: "Chi arriva a Bologna per la prima volta si innamora subito dei portici. Quello che mi piace di più è l'atmosfera: chiunque cammini per il centro trova sempre qualcuno con cui chiacchierare. Ciò che non mi piace, invece, è il traffico in periferia. Il mio consiglio? Chi vuole conoscere davvero la città deve partecipare alle iniziative dei quartieri e mangiare in un'osteria tradizionale.", en: "Anyone arriving in Bologna for the first time falls in love with the porticoes at once. What I like most is the atmosphere: whoever walks through the centre always finds someone to chat with. What I don't like, on the other hand, is the traffic on the outskirts. My advice? Whoever really wants to get to know the city should take part in neighbourhood events and eat in a traditional osteria." }
+  - task: "Write five definitions for a quiz about city life, using relative pronouns (È un posto in cui…, È una cosa che…, È la persona che…), each followed by the answer."
+    min: 50
+    max: 100
+    use: [w.marciapiede, w.municipio, w.panchina, w.cestino, w.lampione]
+    grammar: [g.relative-che, g.relative-cui]
+    expect:
+      - { pattern: "\\b(in|a|con|di|per|da|su|tra|fra) cui\\b", hint: "Use cui after a preposition: un posto in cui…" }
+      - { pattern: "\\b(che|il quale|la quale|dove)\\b", hint: "Use che or dove: una cosa che…, un posto dove…" }
+    model: { es: "Primo: è il posto in cui lavorano il sindaco e gli impiegati del comune. È il municipio! Secondo: è la parte della strada su cui camminano le persone. È il marciapiede! Terzo: è una cosa su cui ci si siede nei giardini pubblici. È la panchina! Quarto: è un oggetto in cui si buttano i rifiuti. È il cestino! Quinto: è una luce che si accende per la strada di notte. È il lampione!", en: "One: it's the place where the mayor and the council staff work. It's the town hall! Two: it's the part of the street that people walk on. It's the pavement! Three: it's something you sit on in public gardens. It's the bench! Four: it's an object you throw rubbish into. It's the bin! Five: it's a light that comes on in the street at night. It's the street lamp!" }

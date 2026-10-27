@@ -240,3 +240,44 @@ dialogues:
       - { q: "¿Cuántos huevos tiene que batir?", options: ["Tres", "Cuatro", "Cinco"], answer: 2, explain: "Bate cinco huevos con una pizca de sal." }
       - { q: "¿Con qué le da la vuelta a la tortilla?", options: ["Con un plato", "Con una cuchara", "Con la mano"], answer: 0 }
       - { q: "¿Qué va a mandar Jorge cuando termine?", options: ["Un mensaje", "Una foto", "Una tortilla"], answer: 1 }
+writing:
+  - task: "Write a simple recipe (for example a Spanish tortilla) for a friend: ingredients, then the steps with tú imperatives."
+    min: 30
+    max: 65
+    use: [w.cortar, w.anadir, w.batir, w.sarten, w.ingrediente]
+    useAtLeast: 3
+    grammar: [g.imperative-tu, g.imperative-pronouns]
+    expect:
+      - { pattern: "\\b(corta|pela|bate|mezcla|añade|anade|echa|calienta|fríe|frie|sirve|pon|haz|lava|cocina|remueve|hierve)", hint: "Give the steps with tú imperatives: corta, añade, mezcla …" }
+      - { pattern: "\\b(primero|despu[eé]s|luego|finalmente|al final)", hint: "Order the steps: primero, después, finalmente …" }
+    model: { es: "Ingredientes: cuatro huevos, dos patatas, una cebolla, aceite y sal. Primero, pela y corta las patatas y la cebolla. Después, fríelas en una sartén con aceite. Bate los huevos, añade sal y mézclalo todo. Finalmente, cocina la tortilla a fuego lento.", en: "Ingredients: four eggs, two potatoes, an onion, oil and salt. First, peel and cut the potatoes and the onion. Then fry them in a pan with oil. Beat the eggs, add salt and mix it all together. Finally, cook the tortilla over a low heat." }
+  - task: "You work at an art centre in Resistencia. Write polite instructions for a visitor using usted (pase, deje, tenga cuidado, no toque …)."
+    min: 30
+    max: 60
+    use: [w.pulsar, w.boton, w.empujar, w.cuidado]
+    useAtLeast: 3
+    grammar: [g.imperative-usted]
+    expect:
+      - { pattern: "\\b(pase|mire|entre|siga|tenga|deje|pulse|empuje|tire|espere|venga|suba|baje|camine|vaya|haga|ponga|lea|pregunte)\\b", hint: "Use usted imperatives: pase, deje, tenga cuidado …" }
+      - { pattern: "\\bno (l[oa]s? |me |le |les )?(toque|haga|entre|corra|deje|coma|beba|saque|fume|hable)\\b", hint: "Add a negative instruction: no toque …, no coma …" }
+    model: { es: "Buenos días. Pase, por favor. Deje su mochila aquí y tenga cuidado con las obras: no las toque. Para abrir la puerta del jardín, pulse el botón verde y empuje. Si tiene preguntas, pregunte en la entrada.", en: "Good morning. Come in, please. Leave your rucksack here and be careful with the works of art: don't touch them. To open the garden door, press the green button and push. If you have questions, ask at the entrance." }
+  - task: "You share a flat with two friends. Leave them a note with the chores for the weekend, using vosotros imperatives (fregad, barred, poned …)."
+    min: 30
+    max: 60
+    use: [w.fregar, w.barrer, w.lavadora, w.nevera, w.sacar-la-basura]
+    useAtLeast: 3
+    grammar: [g.imperative-vosotros]
+    expect:
+      - { pattern: "\\b(fregad|barred|poned|limpiad|sacad|lavad|ordenad|haced|recoged|comprad|tended|dejad|planchad|id|venid|tened)\\b", hint: "Use vosotros imperatives: fregad, barred, poned …" }
+    model: { es: "Chicos, este fin de semana tenéis que ayudar en casa. Fregad los platos después de comer y barred la cocina. Poned la ropa en la lavadora el sábado. Limpiad la nevera y sacad la basura el domingo. ¡Y dejad mi chocolate en paz!", en: "Guys, this weekend you have to help at home. Wash the dishes after eating and sweep the kitchen. Put the clothes in the washing machine on Saturday. Clean the fridge and take the rubbish out on Sunday. And leave my chocolate alone!" }
+  - task: "A friend is going to Resistencia and asks for tips. Reply with tú imperatives, some with pronouns attached (pruébalo, recomiéndamelo …)."
+    es: "Voy a Resistencia el mes que viene. ¿Qué me recomiendas?"
+    min: 35
+    max: 65
+    use: [w.visitar, w.probar, w.llevar, w.cuidado, w.recomendar]
+    useAtLeast: 3
+    grammar: [g.imperative-pronouns, g.imperative-tu]
+    expect:
+      - { pattern: "\\b(visita|prueba|lleva|camina|ten|ve|haz|pon|come|mira|busca|pide|toma|sal)\\b", hint: "Give advice with tú imperatives: visita, prueba, lleva …" }
+      - { pattern: "[aeiouáéíóú](me|te|lo|la|los|las|le|les|melo|mela|telo|tela|selo|sela)(?![a-záéíóúñ])", hint: "Attach a pronoun to an imperative: pruébalo, recomiéndamelo …" }
+    model: { es: "¡Qué bien! Primero, visita la plaza 25 de Mayo y camina por el centro: hay obras de arte en todas las calles. Prueba el pescado del río; pruébalo con limón. Lleva ropa ligera porque hace calor, y ten cuidado con el sol. Y si encuentras un buen restaurante, recomiéndamelo.", en: "Great! First, visit 25 de Mayo square and walk around the centre: there are works of art in every street. Try the river fish; try it with lemon. Take light clothes because it's hot, and be careful with the sun. And if you find a good restaurant, recommend it to me." }

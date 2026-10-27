@@ -264,3 +264,43 @@ dialogues:
       - { q: "Leo點解喉嚨痛？", options: ["因為佢食咗辣嘢", "因為佢喺紅館大聲唱歌", "因為佢飲咗凍嘢"], answer: 1, explain: "He sang loudly for three hours at a concert at the Coliseum." }
       - { q: "醫生叫Leo今晚做咩？", options: ["去睇演唱會", "留喺屋企休息", "去急症室"], answer: 1, explain: "The doctor says 你最好唔好去喇, so Leo stays home to rest." }
       - { q: "如果聽日仲發燒，Leo要做咩？", options: ["再嚟睇醫生", "去藥房買藥", "叫救護車"], answer: 0, explain: "如果聽日仲發燒，就要再嚟睇我: come back to the doctor." }
+writing:
+  - task: "You're at the clinic. Tell the doctor where it hurts and how you feel."
+    min: 20
+    max: 45
+    use: [w.tau4-tung3, w.hau4-lung4-tung3, w.faat3-siu1, w.kat1, w.m4-syu1-fuk6]
+    useAtLeast: 3
+    grammar: [g.body-pain]
+    expect:
+      - { pattern: "痛", hint: "Say what hurts: 頭痛, 喉嚨痛…" }
+      - { pattern: "唔舒服|發燒|咳|頭暈", hint: "Say how you feel: 唔舒服, 發燒, 咳…" }
+    model: { es: "醫生，我頭痛同喉嚨痛，仲有啲發燒。我尋晚一直咳，好唔舒服。", en: "Doctor, I have a headache and a sore throat, and a bit of a fever. I was coughing all last night; I feel awful." }
+  - task: "Message your boss, Mr Chan: you can't come to work today and want sick leave. Give the reason with 因為…所以…"
+    min: 25
+    max: 55
+    use: [w.jan1-wai6, w.so2-ji5, w.gam2-mou6, w.ceng2-beng6-gaa3, w.ji1-sang1-zi2]
+    useAtLeast: 3
+    grammar: [g.jan-wai-so-ji]
+    expect:
+      - { pattern: "因為.*所以", hint: "Link reason and result: 因為…所以…" }
+      - { pattern: "病假|請假", hint: "Ask for sick leave: 請病假." }
+    model: { es: "陳生，因為我感冒同發燒，所以今日返唔到工，想請一日病假。我聽日會帶醫生紙。", en: "Mr Chan, I have a cold and a fever, so I can't come to work today. I'd like to take a day of sick leave. I'll bring a doctor's note tomorrow." }
+  - task: "Write two pieces of advice with 如果…就…: what to do if you have a fever, and if you fall and are badly hurt."
+    min: 20
+    max: 50
+    use: [w.jyu4-gwo2, w.faat3-siu1, w.dit3-can1, w.gap1-zing3-sat1, w.jim4-zung6]
+    useAtLeast: 3
+    grammar: [g.jyu-gwo-zau]
+    expect:
+      - { pattern: "如果.{1,12}就", hint: "Give the condition and the result: 如果…就…" }
+    model: { es: "如果你發燒，就要去睇醫生。如果跌親流血，好嚴重，就要即刻去急症室。", en: "If you have a fever, go and see a doctor. If you fall and you're bleeding badly, go to the emergency room at once." }
+  - task: "Your friend has caught a cold. Text them some advice with 最好."
+    es: "我傷風呀，好辛苦。"
+    min: 20
+    max: 45
+    use: [w.zeoi3-hou2.b, w.jau1-sik1, w.hou2-faan1, w.zou2-di1]
+    useAtLeast: 3
+    grammar: [g.zeoi-hou-better, g.m-hou-dont]
+    expect:
+      - { pattern: "最好", hint: "Give advice with 最好: 你最好休息吓." }
+    model: { es: "你最好休息吓，飲多啲水，食完藥就早啲瞓。唔好飲凍嘢呀，快啲好返啦！", en: "You'd better rest, drink more water, and go to bed early after taking your medicine. Don't have cold drinks. Get well soon!" }

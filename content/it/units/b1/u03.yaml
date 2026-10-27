@@ -266,3 +266,37 @@ dialogues:
       - { q: "Che cosa le hanno offerto?", options: ["Un lavoro a Milano", "Una borsa di studio per un master", "Un bilocale sul lago"], answer: 1, explain: "Mi hanno offerto una borsa di studio per un master." }
       - { q: "Che cosa preoccupa Giulia?", options: ["Il clima di Bologna", "Gli affitti alti", "La sua docente"], answer: 1, explain: "Gli affitti, a quanto pare, sarebbero molto alti." }
       - { q: "Che cosa farà Tommaso?", options: ["Scriverà a sua cugina", "Cercherà casa a Milano", "Andrà a Bologna con Giulia"], answer: 0, explain: "Le scrivo stasera: he'll write to his cousin." }
+writing:
+  - task: "You are looking for a room or a flat in Bologna for next year. Write a post for a flat-sharing group: what you would like, what you would prefer and what you could pay."
+    min: 50
+    max: 100
+    use: [w.fuorisede, w.bilocale, w.arredato, w.coinquilino, w.periferia]
+    grammar: [g.condizionale-uses]
+    expect:
+      - { pattern: "\\b\\S+(rei|resti|rebbe|remmo|reste|rebbero)\\b", hint: "Use the conditional: vorrei, preferirei, mi piacerebbe, potrei…" }
+    model: { es: "Ciao a tutti! Sono una studentessa fuorisede e cerco casa a Bologna da settembre. Mi piacerebbe trovare un bilocale arredato vicino all'università, o una camera in un appartamento con due coinquilini tranquilli. Preferirei non abitare in periferia, perché non ho la macchina. Potrei pagare al massimo quattrocento euro al mese, spese comprese. Sarebbe perfetto avere anche un balcone!", en: "Hi everyone! I'm a student from out of town and I'm looking for a place in Bologna from September. I'd like to find a furnished two-room flat near the university, or a room in a flat with two quiet flatmates. I'd rather not live on the outskirts, because I don't have a car. I could pay four hundred euros a month at most, bills included. It would be perfect to have a balcony too!" }
+  - task: "Write about a choice you regret (your studies, a job, a trip): what you did, what you would have liked to do and what would have happened."
+    min: 50
+    max: 100
+    use: [w.avrei-voluto, w.scelta, w.decisione, w.iscriversi, w.facoltà]
+    grammar: [g.condizionale-passato]
+    expect:
+      - { pattern: "\\b(avrei|avresti|avrebbe|avremmo|avreste|avrebbero|sarei|saresti|sarebbe|saremmo|sareste|sarebbero)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Use the past conditional: avrei studiato, sarei andato…" }
+    model: { es: "Dopo la scuola mi sono iscritto alla facoltà di economia, ma non è stata la scelta giusta. Avrei voluto studiare architettura, perché ho sempre amato disegnare. I miei genitori sarebbero stati d'accordo, ma io avevo paura di sbagliare. Oggi lavoro in banca e lo stipendio è buono, però a volte penso che sarei stato più felice come architetto. È stata una decisione importante!", en: "After school I enrolled in the economics faculty, but it wasn't the right choice. I would have liked to study architecture, because I've always loved drawing. My parents would have agreed, but I was afraid of making a mistake. Today I work in a bank and the salary is good, but sometimes I think I would have been happier as an architect. It was an important decision!" }
+  - task: "Your weekend on Lake Como went wrong. Write to a friend about what you should have and could have done differently (avremmo dovuto, avrei potuto…)."
+    min: 50
+    max: 100
+    use: [w.prenotare, w.battello, w.vale-la-pena, w.occasione, w.clima]
+    grammar: [g.modals-condizionale-passato]
+    expect:
+      - { pattern: "\\b(avrei|avremmo|avresti|avreste|avrebbe|avrebbero|sarei|saremmo|saresti|sarebbe)\\s+(dovuto|potuto|voluto)\\b", hint: "Say what you should or could have done: avremmo dovuto prenotare, avrei potuto…" }
+    model: { es: "Il weekend sul Lago di Como non è andato bene! Avremmo dovuto prenotare l'albergo prima: alla fine abbiamo dormito in un posto molto lontano dal lago. Avremmo potuto prendere il battello per Bellagio, ma abbiamo perso l'ultimo. E poi pioveva: avrei dovuto controllare le previsioni del tempo! Comunque vale la pena tornarci: è un'occasione da non perdere.", en: "The weekend on Lake Como didn't go well! We should have booked the hotel earlier: in the end we slept somewhere very far from the lake. We could have taken the boat to Bellagio, but we missed the last one. And then it was raining: I should have checked the weather forecast! Still, it's worth going back: it's an opportunity not to be missed." }
+  - task: "Write a short local news item about a rumour: a famous actor may have bought a villa on Lake Como. Use the conditional for news that is not confirmed."
+    min: 50
+    max: 100
+    use: [w.secondo.prep, w.a-quanto-pare, w.voce, w.villa, w.pare]
+    grammar: [g.condizionale-hearsay]
+    expect:
+      - { pattern: "\\b\\S+(rebbe|rebbero)\\b", hint: "Report unconfirmed news with the conditional: avrebbe comprato, costerebbe…" }
+      - { pattern: "\\bsecondo\\b|a quanto pare|\\bpare che\\b|stando a", hint: "Give the source: secondo i giornali, a quanto pare…" }
+    model: { es: "Secondo alcuni giornali locali, un famoso attore americano avrebbe comprato una villa sul Lago di Como. La casa costerebbe più di dieci milioni di euro e avrebbe un giardino enorme con vista sul lago. A quanto pare, l'attore arriverebbe a luglio con la sua famiglia. Gli abitanti di Cernobbio non sono sorpresi: da anni girano voci su attori famosi nella zona.", en: "According to some local papers, a famous American actor has reportedly bought a villa on Lake Como. The house is said to cost more than ten million euros and to have a huge garden with a view of the lake. Apparently, the actor will arrive in July with his family. The people of Cernobbio aren't surprised: for years there have been rumours about famous actors in the area." }

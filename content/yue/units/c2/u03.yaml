@@ -261,3 +261,43 @@ dialogues:
       - { q: "阿詩講「外甥打燈籠，照舊」係乜嘢意思？", options: ["家俊次次都係咁", "家俊買咗燈籠", "佢哋要排好耐"], answer: 0, explain: "照舅 sounds like 照舊 'as before': he always forgets." }
       - { q: "家俊點樣賠罪？", options: ["幫阿詩影相", "送花畀阿詩", "請阿詩食宵夜"], answer: 2, explain: "He offers to buy her a late-night snack (請你食宵夜)." }
       - { q: "家俊講「心急食唔到熱豆腐」，想阿詩點？", options: ["慢慢等", "去買豆腐", "即刻走"], answer: 0, explain: "The proverb means haste makes waste: be patient." }
+writing:
+  - task: "Write a short anecdote about a friend who never changes, ending with a fitting 歇後語 (e.g. 外甥打燈籠, 牛皮燈籠)."
+    min: 110
+    max: 190
+    use: [w.hit3-hau6-jyu5, w.ngoi6-saang1-daa2-dang1-lung4, w.ziu3-gau6, w.ngau4-pei4-dang1-lung4, w.dim2-gik6-m4-ming4]
+    useAtLeast: 3
+    grammar: [g.xiehouyu, g.xiehouyu-puns]
+    expect:
+      - { pattern: "外甥打燈籠|牛皮燈籠|床下底破柴|隔夜油炸鬼|阿茂整餅|和尚擔遮|老公撥扇", hint: "End with a 歇後語: 外甥打燈籠…" }
+      - { pattern: "照舊|點極唔明|撞板|冇火|淒涼|無法無天", hint: "Give the second half: …照舊." }
+    model: { es: "我有個死黨叫Leo，佢每次去旅行都話今次一定會早啲執行李，結果次次都係出發前一晚先開始執。上個月我哋去廣州塔，佢又遲到半個鐘，差啲趕唔切上車。我同佢講咗幾多次都冇用，真係牛皮燈籠，點極唔明。下個月我哋去佛山，我估佢都係外甥打燈籠，照舊！唉，真係冇佢辦法。", en: "My best mate Leo says every trip that this time he'll pack early, but every time he only starts the night before. Last month we went to Canton Tower and he was half an hour late again; we almost missed the train. I've told him countless times, but it's like an oxhide lantern: no matter how you light it, it stays dark. Next month we're going to Foshan, and I bet it'll be like a nephew carrying a lantern: same as always! Sigh, there's nothing to be done with him." }
+  - task: "Explain to a learner how the puns in 和尚擔遮 and 老公撥扇 work."
+    min: 110
+    max: 190
+    use: [w.wo4-soeng2-daam1-ze1, w.mou4-faat3-mou4-tin1, w.lou5-gung1-put3-sin3, w.cai1-loeng4, w.soeng6-bun3-geoi3]
+    useAtLeast: 3
+    grammar: [g.xiehouyu-puns]
+    expect:
+      - { pattern: "和尚擔遮|老公撥扇", hint: "Quote the sayings: 和尚擔遮, 老公撥扇." }
+      - { pattern: "同音|諧音|聽落", hint: "Explain the sound play: …同…同音." }
+    model: { es: "歇後語通常分上半句同下半句，上半句好似謎面，下半句就係謎底。例如「和尚擔遮」，和尚冇頭髮，遮住又睇唔到天，冇頭髮又冇天，聽落就好似「無法無天」，即係完全唔理規矩。「老公撥扇」都係一樣，老公幫老婆搞到好涼，而「老婆涼」嘅書面講法聽落就好似「淒涼」。明白咗入面嘅諧音，就好容易記住。", en: "A two-part saying usually has a first half like a riddle and a second half that's the answer. Take 和尚擔遮 'a monk holding an umbrella': the monk has no hair, and under the umbrella he can't see the sky. 'No hair, no sky' sounds like 無法無天 'lawless', i.e. ignoring all rules. 老公撥扇 'a husband fanning' works the same way: the husband makes the wife nice and cool, and the written way of saying 'wife cool' sounds like 淒涼 'miserable'. Once you see the pun inside, it's easy to remember." }
+  - task: "Your friend failed an important interview and feels hopeless. Comfort them using Cantonese proverbs."
+    min: 110
+    max: 190
+    use: [w.lau4-dak1-ceng1-saan1-zoi6, w.m4-paa3-mou5-caai4-siu1, w.sam1-gap1-sik6-m4-dou2-jit6-dau6-fu6, w.jan4-bei2-jan4-bei2-sei2-jan4]
+    useAtLeast: 2
+    grammar: [g.cantonese-proverbs]
+    expect:
+      - { pattern: "留得青山在|唔怕冇柴燒|心急食唔到熱豆腐|人比人比死人|一樣米養百樣人|有麝自然香", hint: "Use a proverb: 留得青山在，唔怕冇柴燒…" }
+    model: { es: "唔好灰心呀！今次面試唔成功，唔代表你冇能力。老話都有講，留得青山在，唔怕冇柴燒，只要你仲肯努力，機會一定會再嚟。你成日拎自己同人比，其實人比人比死人，每個人嘅經歷都唔同。仲有，心急食唔到熱豆腐，慢慢嚟，下一份工可能更加適合你。今晚我請你食飯，我哋傾吓。一齊加油！", en: "Don't lose heart! Failing this interview doesn't mean you're not capable. As the old saying goes, while the green hills remain, there'll be no shortage of firewood: as long as you keep trying, opportunities will come again. You always compare yourself with others, but comparing yourself with others will drive you mad; everyone's path is different. And haste makes waste: take it slowly, and the next job may suit you better. Dinner's on me tonight; let's talk. Let's keep going together!" }
+  - task: "Give your opinion: are traditional proverbs and 歇後語 still relevant to young people today?"
+    min: 110
+    max: 200
+    use: [w.jin6-jyu5, w.lou5-waa2, w.cin4-jan4, w.hit3-hau6-jyu5, w.jat1-joeng6-mai5-joeng5-baak3-joeng6-jan4]
+    useAtLeast: 3
+    grammar: [g.cantonese-proverbs]
+    expect:
+      - { pattern: "我認為|我覺得|筆者|個人", hint: "Give your view: 我認為…" }
+      - { pattern: "不過|然而|但係|雖然", hint: "Weigh the other side: 不過…" }
+    model: { es: "有人覺得諺語同歇後語好老土，後生仔根本唔會用。我認為呢啲老話其實係前人嘅經驗，好多道理到今日都仲啱用。例如「一樣米養百樣人」，提醒我哋要接受唔同性格嘅人。不過，如果我哋淨係記住，唔明白入面嘅諧音同典故，就好難真正用得出。所以學校應該用有趣嘅方法教，等呢啲語言可以傳承落去。", en: "Some think proverbs and two-part sayings are old-fashioned and young people would never use them. I believe these old sayings actually carry the experience of our predecessors, and many of their truths still apply today. For example, 'the same rice feeds a hundred kinds of people' reminds us to accept people of different personalities. However, if we only remember them without understanding the puns and allusions inside, it's hard to really use them. So schools should teach them in fun ways, so these expressions can be passed on." }

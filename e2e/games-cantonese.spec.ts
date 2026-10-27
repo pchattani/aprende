@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test'
 import { enableTestHook } from './helpers'
+import { finishedWords } from './finished'
 
 // The Cantonese mini games (Measure words, Tone detective). They exist only in the Cantonese
 // build, so these run only with VITE_LANG=yue. Speech is stubbed to a silent no-op; the games
@@ -10,7 +11,7 @@ interface Hooks {
   measureSort?: { bins: string[]; nouns: { lemma: string; cl: string }[] }
   tones?: { level: string; index: number; same?: boolean; tones?: number[]; text?: string }
 }
-type Win = { __palabras?: Hooks; __pawsportDemo?: (o?: { others?: boolean }) => Promise<unknown> }
+type Win = { __palabras?: Hooks; __pawsportDemo?: (o?: { others?: boolean; started?: number; days?: number }) => Promise<unknown> }
 
 test.skip((process.env.VITE_LANG ?? 'es') !== 'yue', 'Cantonese course only')
 
@@ -30,11 +31,12 @@ async function hooks(page: Page): Promise<Hooks> {
   return page.evaluate(() => (window as unknown as Win).__palabras ?? {})
 }
 
-async function openGame(page: Page, id: string) {
+/** A demo learner (`days` of history: the games only use the words of lessons they have finished), then the game. */
+async function openGame(page: Page, id: string, days?: number) {
   await page.goto('./#/games')
   await expect(page.getByRole('heading', { name: 'Mini games' })).toBeVisible()
   await page.waitForFunction(() => Boolean((window as unknown as Win).__pawsportDemo), null, { timeout: 20_000 })
-  await page.evaluate(() => (window as unknown as Win).__pawsportDemo!({ others: false }))
+  await page.evaluate((d) => (window as unknown as Win).__pawsportDemo!({ others: false, started: 1, days: d }), days)
   await page.goto(`./#/games/${id}`)
 }
 
@@ -58,10 +60,13 @@ test.beforeEach(async ({ page }) => {
 })
 
 test('measure words: twelve counters, then sort six nouns into baskets', async ({ page }) => {
-  await openGame(page, 'measure')
+  // the bonus round needs three measure words with two finished nouns each: a few more lessons than the default demo
+  await openGame(page, 'measure', 100)
   let q = await waitFor(page, 'measure', 0)
   expect(q.total).toBe(12)
   expect(q.options[q.answer]).toBe(q.cl)
+  // the nouns are the learner's finished words
+  expect([...(await finishedWords(page)).lemmas]).toContain(q.noun)
   await expect(page.getByText('＿')).toBeVisible()
   await shot(page, 'measure-question')
 

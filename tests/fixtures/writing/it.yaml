@@ -1,0 +1,11 @@
+level: a1
+unitWords: [w.famiglia, w.padre, w.madre, w.fratello, w.sorella, w.avere, w.anno, w.piccolo]
+writing:
+  - task: "Describe your family in 3–5 sentences: who is in it, their names and their ages."
+    min: 15
+    max: 40
+    use: [w.famiglia, w.padre, w.madre, w.fratello, w.sorella]
+    expect:
+      - { pattern: "\\b(mio|mia|miei|mie)\\b", hint: "Use possessives: mio padre, mia sorella…" }
+      - { pattern: "\\banni\\b", hint: "Give ages with avere: ha diciotto anni." }
+    model: { es: "La mia famiglia è piccola. Mio padre si chiama Marco e ha cinquanta anni. Mia madre si chiama Anna. Ho una sorella, Giulia.", en: "My family is small. My father is called Marco and he's fifty. My mother is called Anna. I have a sister, Giulia." }

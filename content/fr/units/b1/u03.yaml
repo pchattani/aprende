@@ -291,3 +291,41 @@ dialogues:
       - { q: "Pourquoi Hugo a-t-il la gourde de son frère ?", options: ["Il a perdu la sienne", "La sienne est cassée", "Elle est plus grande"], answer: 1, explain: "« la mienne est cassée »: his own is broken." }
       - { q: "Qu'est-ce qu'ils voient dans l'eau ?", options: ["Un requin", "Un dauphin", "Une méduse"], answer: 1, explain: "The grey thing in the water is a dolphin." }
       - { q: "Que veut faire Hugo à la fin ?", options: ["Rentrer au port", "Se baigner et pique-niquer", "Suivre le dauphin"], answer: 1, explain: "« un bain et un pique-nique »: a swim and a picnic." }
+writing:
+  - task: "Write a short post about the Calanques: what you like, what you don't like and what you need there (ce qui me plaît, ce que j'aime, ce dont j'ai besoin)."
+    min: 50
+    max: 100
+    use: [w.calanque, w.crique, w.turquoise, w.kayak, w.déplaire]
+    useAtLeast: 3
+    grammar: [g.ce-qui-ce-que]
+    expect:
+      - { pattern: "\\bce (qui|que|dont)\\b|\\bce qu['’]", hint: "Use ce qui, ce que or ce dont: ce qui me plaît, c'est…" }
+    model: { es: "Ce qui me plaît dans les Calanques, c'est l'eau turquoise et les petites criques sauvages. Ce que j'aime le plus, c'est faire du kayak le matin, quand il n'y a personne. Par contre, ce qui me déplaît, ce sont les bateaux bruyants en été. Et ce dont j'ai besoin après une longue randonnée ? Plonger dans la mer, bien sûr !", en: "What I like about the Calanques is the turquoise water and the little wild coves. What I like most is kayaking in the morning, when there's nobody around. On the other hand, what I don't like is the noisy boats in summer. And what I need after a long hike? A dive into the sea, of course!" }
+  - task: "You and a friend are choosing hiking gear in a shop. Compare the items with celui-ci, celle-là, ceux de…, celles que…"
+    min: 50
+    max: 100
+    use: [w.celui, w.sac-à-dos, w.gourde, w.casquette, w.choix]
+    useAtLeast: 3
+    grammar: [g.demonstrative-pronouns]
+    expect:
+      - { pattern: "\\b(celui|celle|ceux|celles)(-ci|-l[aà])?\\b", hint: "Use celui, celle, ceux, celles: celui-ci, celle-là, ceux de droite…" }
+    model: { es: "Pour la randonnée, il nous faut deux sacs à dos. Celui-ci est léger, mais celui-là est plus solide. Je préfère celui de droite. Pour les gourdes, celles-ci sont plus chères que celles-là, mais elles sont plus légères. Et les casquettes ? Prends celle-ci, la bleue : c'est celle que je préfère ! Bon, on a fait notre choix ?", en: "For the hike we need two rucksacks. This one is light, but that one is sturdier. I prefer the one on the right. As for the water bottles, these ones are more expensive than those ones, but they're lighter. And the caps? Take this one, the blue one: it's the one I like best! Right, have we made our choice?" }
+  - task: "Describe the most extraordinary thing you have seen in nature (quelque chose d'incroyable, rien de spécial…)."
+    min: 50
+    max: 100
+    use: [w.quelque-chose-de, w.rien-de, w.incroyable, w.extraordinaire, w.sentier]
+    useAtLeast: 3
+    grammar: [g.quelque-chose-de]
+    expect:
+      - { pattern: "\\b(quelque chose|rien|quelqu['’]un|personne) d(e\\s|['’])[a-zàâçéèêëîïôûùœ]+", hint: "Use quelque chose de / rien de + adjective: quelque chose d'incroyable…" }
+    model: { es: "L'été dernier, dans les Calanques, j'ai vu quelque chose d'incroyable. Je marchais sur un sentier entre les pins quand j'ai entendu un bruit. Au début, je n'ai rien vu de spécial, mais dans l'eau, il y avait trois dauphins ! C'était extraordinaire. Un randonneur à côté de moi n'avait jamais rien vu de pareil.", en: "Last summer in the Calanques I saw something incredible. I was walking on a path among the pines when I heard a noise. At first I saw nothing special, but in the water there were three dolphins! It was extraordinary. A hiker next to me had never seen anything like it." }
+  - task: "Write a short text for a poster in the Calanques national park: what threatens nature and what visitors should do (ce qui, ce que, ce dont, ceux qui…)."
+    min: 50
+    max: 100
+    use: [w.déchet, w.incendie, w.trier, w.polluer, w.faune]
+    useAtLeast: 3
+    grammar: [g.ce-qui-ce-que, g.demonstrative-pronouns]
+    expect:
+      - { pattern: "\\bce (qui|que|dont)\\b|\\bce qu['’]|\\b(celui|celle|ceux|celles) (qui|que|qu['’]|dont)", hint: "Use ce qui / ce que / ce dont or ceux qui: ce qui menace la nature, c'est…" }
+      - { pattern: "\\b(prot[eé]geons|triez|jetez|faites|prenez|respectez|faut|devons|devez|doit|doivent)\\b", hint: "Say what visitors must do: triez vos déchets, il faut…" }
+    model: { es: "Protégeons les Calanques ! Ce qui met en danger la faune et la flore, ce sont les déchets et les incendies. Ce que vous pouvez faire est facile : ne jetez rien, triez vos déchets et ne faites jamais de feu. Ceux qui viennent en voiture polluent l'air, alors prenez plutôt le bus. Ce dont la planète a besoin, c'est de notre aide !", en: "Let's protect the Calanques! What endangers the wildlife and plants is litter and fires. What you can do is easy: don't throw anything away, sort your rubbish and never light a fire. Those who come by car pollute the air, so take the bus instead. What the planet needs is our help!" }

@@ -278,3 +278,47 @@ dialogues:
       - { q: "O que o Daniel é?", options: ["Motorista", "Professor", "Estudante"], answer: 2, explain: "Daniel says: Sou estudante de português." }
       - { q: "Como o Daniel fala com o Seu Paulo?", options: ["Com você", "Com o senhor", "Com tu"], answer: 1, explain: "He asks Como vai o senhor?, the respectful form for an older man." }
       - { q: "Qual é a regra no carro?", options: ["Só inglês", "Só português", "Não falar"], answer: 1, explain: "Paulo says: Aqui no carro, só português." }
+writing:
+  - task: "Camila is meeting you at Galeão airport and sends you this message. Reply: greet her, say how you are, tell her your name and say goodbye."
+    es: "Oi! Eu sou a Camila. Tudo bem? Como você se chama?"
+    min: 10
+    max: 30
+    use: [w.oi, w.tudo-bem, w.nome, w.muito-prazer, w.até-amanhã]
+    useAtLeast: 2
+    grammar: [g.greetings, g.chamar-se]
+    expect:
+      - { pattern: '\b(oi|ol[aá]|bom dia|boa tarde|boa noite|e a[ií])', hint: "Start with a greeting: Oi! / Olá! / Boa tarde!" }
+      - { pattern: '(meu nome [eé]|me chamo|eu sou|\bsou [oa]\b)', hint: "Say your name: Meu nome é … / Eu me chamo …" }
+    model: { es: "Oi, Camila! Tudo bem, e você? Meu nome é Daniel. Muito prazer! Até amanhã no Galeão. Beijos!", en: "Hi, Camila! I'm fine, and you? My name is Daniel. Nice to meet you! See you tomorrow at Galeão. Love!" }
+  - task: "At passport control the officer asks for your details. Write your answer: greet him politely, give your first name and surname, and say what you do (or don't do)."
+    es: "Boa tarde. Nome e sobrenome, por favor. O senhor é estudante?"
+    min: 12
+    max: 35
+    use: [w.boa-tarde, w.sobrenome, w.nome, w.estudante, w.obrigado]
+    useAtLeast: 2
+    grammar: [g.ser-present, g.chamar-se]
+    expect:
+      - { pattern: '\bsobrenome\b', hint: "Give your surname: Meu sobrenome é …" }
+      - { pattern: '\bsou\b', hint: "Say what you do with ser: Sou estudante. / Não sou estudante, sou …" }
+    model: { es: "Boa tarde! Meu nome é Daniel e meu sobrenome é Clark. Não sou estudante, sou professor. Obrigado!", en: "Good afternoon! My first name is Daniel and my surname is Clark. I'm not a student, I'm a teacher. Thank you!" }
+  - task: "Write about the people who meet you at the airport: who each person is and what they do. Use ele é, ela é and nós somos / eles são."
+    min: 12
+    max: 35
+    use: [w.ele, w.ela, w.motorista, w.médico, w.amigo]
+    useAtLeast: 3
+    grammar: [g.subject-pronouns, g.ser-present]
+    expect:
+      - { pattern: '\b(ele|ela) (é|e)(?![a-zà-ú])', hint: "Say who someone is: Ele é … / Ela é …" }
+      - { pattern: '\b(n[oó]s somos|eles s[aã]o|elas s[aã]o|voc[eê]s s[aã]o)\b', hint: "Talk about two or more people: Nós somos … / Eles são …" }
+    model: { es: "Ela é a Camila, uma amiga. Ele é o Paulo, o motorista do táxi. A Dona Célia é médica. Nós somos amigos!", en: "She is Camila, a friend. He is Paulo, the taxi driver. Dona Célia is a doctor. We are friends!" }
+  - task: "Write a short, polite message to your host, Dona Célia, an older lady: greet her, ask how she is (use a senhora, not você), introduce yourself and say goodbye."
+    es: "Bom dia! Eu sou a Dona Célia. Bem-vindo ao Rio!"
+    min: 10
+    max: 30
+    use: [w.a-senhora, w.como-vai, w.bom-dia, w.obrigado, w.até-logo]
+    useAtLeast: 2
+    grammar: [g.voce-o-senhor, g.greetings]
+    expect:
+      - { pattern: '\ba senhora\b', hint: "Address an older lady politely: a senhora (Como vai a senhora?)" }
+      - { pattern: '\b(tchau|at[eé] (logo|mais|amanh[aã]|j[aá]))', hint: "Say goodbye: Até logo! / Até amanhã! / Tchau!" }
+    model: { es: "Bom dia, Dona Célia! Como vai a senhora? Eu sou o Daniel, muito prazer. Obrigado! Até logo!", en: "Good morning, Dona Célia! How are you? I'm Daniel, nice to meet you. Thank you! See you later!" }

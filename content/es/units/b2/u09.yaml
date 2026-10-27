@@ -262,3 +262,45 @@ dialogues:
       - { q: "What is Sara's problem?", options: ["Her trainers are the wrong size", "She received an empty box", "The parcel never arrived"], answer: 1 }
       - { q: "Why is Sara reluctant to call?", options: ["She has no phone", "She doesn't know the number", "She is embarrassed and afraid of swearing"], answer: 2 }
       - { q: "How does the company respond?", options: ["It refuses the refund", "It promises a refund within five days", "It sends new trainers"], answer: 1 }
+writing:
+  - task: "Write about your boat trip in the Atuel canyon, using at least four collocations with hacer, dar, tomar, echar or llevarse (me hacía ilusión, me daba miedo, echar una mano, tomarse en serio …)."
+    min: 80
+    max: 150
+    use: [w.hacer-ilusion, w.dar-miedo, w.echar-una-mano, w.tomar-en-serio, w.llevarse-bien]
+    useAtLeast: 3
+    grammar: [g.collocations]
+    expect:
+      - { pattern: "(me|nos|te|le) (hac[ií]a|hizo|hace) (mucha )?ilusi[oó]n|(me|nos|te|le) (daba|dio|da) (un poco de |mucho )?(miedo|pena|verg[uü]enza)", hint: "Use collocations for feelings: me hacía ilusión, me daba miedo …" }
+      - { pattern: "ech(ar|[oó]|aron|amos|[eé]) (una mano|un vistazo|la culpa)|tom(ar|[oó]|aron|amos|[eé]) (muy )?(en serio|nota)|(dimos|dar|di) un paseo|llev(é|e|amos|aron|arse) (muy )?bien", hint: "Add more collocations: echar una mano, tomar nota, dar un paseo, llevarse bien …" }
+    model: { es: "El sábado por fin bajamos el río del Cañón del Atuel en barca. Me hacía mucha ilusión, aunque al principio me daba un poco de miedo el agua. El guía se tomó muy en serio la seguridad: nos explicó todo con calma y tomamos nota de cada instrucción. Durante el recorrido me llevé muy bien con una pareja de Rosario, que me echó una mano cuando me caí al agua. ¡Me eché a reír con el golpe! Después dimos un paseo junto al río y echamos un vistazo a las fotos. Fue un día inolvidable.", en: "On Saturday we finally went down the river in the Atuel Canyon by boat. I was really looking forward to it, although at first the water scared me a bit. The guide took safety very seriously: he explained everything calmly and we took note of every instruction. During the trip I got on very well with a couple from Rosario, who gave me a hand when I fell in the water. I burst out laughing at the bump! Afterwards we went for a walk by the river and had a look at the photos. It was an unforgettable day." }
+  - task: "Rewrite this informal message as a formal email to your manager, Marta."
+    es: "Che, Marta, me flipó la reunión de ayer, pero ando fatal de pasta y necesito un montón de días libres. ¿Me echás una mano? Chau."
+    min: 80
+    max: 150
+    use: [w.formal, w.efectuar, w.disculpar, w.ocasionar, w.saludo]
+    useAtLeast: 3
+    grammar: [g.register-formal-informal]
+    expect:
+      - { pattern: "estimad[oa]|se[nñ]ora? ", hint: "Open formally: Estimada Marta: …" }
+      - { pattern: "\\b(le|les) (escribo|agradecer[ií]a|ruego|solicito|pido)\\b|quisiera|me gustar[ií]a", hint: "Use formal requests with usted: le agradecería que …, quisiera …" }
+      - { pattern: "atentamente|un (cordial )?saludo|saludos cordiales", hint: "Close formally: Un cordial saludo, …" }
+    model: { es: "Estimada Marta: le escribo para agradecerle la reunión de ayer, que me pareció muy interesante. Al mismo tiempo, quisiera comentarle una cuestión personal. Debido a unos gastos que no esperaba, en este momento estoy pasando por una situación económica complicada, por lo que me gustaría solicitar varios días libres para resolver algunos asuntos. Le agradecería que me indicara si es posible y qué trámites debo efectuar. Disculpe las molestias que esto pueda ocasionar. Quedo a su disposición para cualquier pregunta. Un cordial saludo, Andrés.", en: "Dear Marta, I am writing to thank you for yesterday's meeting, which I found very interesting. At the same time, I would like to mention a personal matter. Due to some unexpected expenses, I am currently going through a difficult financial situation, so I would like to request several days off to sort out some matters. I would be grateful if you could tell me whether this is possible and what procedures I should follow. I apologise for any inconvenience this may cause. I remain at your disposal for any questions. Kind regards, Andrés." }
+  - task: "Now do the opposite: write an informal message to a close friend about your weekend, using colloquial Spanish (guay, mola, flipar, un montón de, en plan, majo …)."
+    min: 80
+    max: 150
+    use: [w.guay, w.molar, w.flipar, w.un-monton-de, w.colega]
+    useAtLeast: 3
+    grammar: [g.register-formal-informal]
+    expect:
+      - { pattern: "\\b(guay|mola|molar|mol[oó]|flip|curro|pasta|colega|en plan|un mont[oó]n|chulo|majo|maja|majos|pillar|pillamos|cutre|rollo)", hint: "Use colloquial words: guay, mola, flipé, un montón de, en plan …" }
+    model: { es: "¡Hola, colega! Te tengo que contar lo del sábado. Fuimos al Cañón del Atuel con unos amigos de Paula, que son súper majos, y flipé un montón con el paisaje. El río mola muchísimo, en plan aventura total. Pillamos una casita muy barata, un poco cutre, pero guay. Lo único malo es que me gasté un montón de pasta en comida. El lunes vuelvo al curro y no tengo ningunas ganas. ¿Quedamos el jueves y te enseño las fotos? Te vas a morir de envidia. ¡Un abrazo!", en: "Hey, mate! I have to tell you about Saturday. We went to the canyon with some of Paula's friends, who are super nice, and I was totally blown away by the scenery. The river is amazing, like a total adventure. We got a really cheap little house, a bit shabby, but cool. The only bad thing is I spent loads of cash on food. On Monday I'm back at work and I really don't feel like it. Shall we meet on Thursday and I'll show you the photos? You're going to be so jealous. Hugs!" }
+  - task: "Describe a little village you visited near the canyon and a funny incident there, using diminutives and augmentatives (pueblecito, casita, cafecito, poquito, cochazo, golpazo …)."
+    min: 80
+    max: 150
+    use: [w.pueblecito, w.casita, w.cafecito, w.golpazo, w.cochazo]
+    useAtLeast: 3
+    grammar: [g.diminutives-augmentatives]
+    expect:
+      - { pattern: "[a-záéíóúñ]+(ito|ita|itos|itas|illo|illa|illos|illas)\\b", hint: "Use diminutives: pueblecito, casita, cafecito …" }
+      - { pattern: "[a-záéíóúñ]+(azo|aza|azos|azas|ota|ote|otes|ona|onas)\\b", hint: "Add an augmentative: golpazo, cochazo, grandote, casona …" }
+    model: { es: "Cerca del Cañón del Atuel hay un pueblecito muy bonito, con casitas blancas y una plaza muy tranquila. Nos sentamos en un bar muy pequeño a tomar un cafecito y la dueña, una señora muy cariñosa, nos contó la historia del lugar. De pronto, un chico llegó con un cochazo rojo enorme y, al aparcar, se dio un golpazo contra un árbol. Salió del coche gritando palabrotas y cerró la puerta con un portazo. Todo el pueblo salió a mirar. Nosotros nos reímos un poquito, pero luego le echamos una mano.", en: "Near the canyon there's a lovely little village, with little white houses and a very quiet square. We sat down in a very small bar to have a little coffee and the owner, a very affectionate lady, told us the history of the place. Suddenly, a young man arrived in a huge red flashy car and, while parking, crashed hard into a tree. He got out of the car swearing and slammed the door. The whole village came out to look. We laughed a little, but then we gave him a hand." }

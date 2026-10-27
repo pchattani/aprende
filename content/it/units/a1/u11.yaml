@@ -298,3 +298,41 @@ dialogues:
       - { q: "Che cosa deve fare Tom al semaforo?", options: ["Girare a destra", "Girare a sinistra", "Attraversare il ponte"], answer: 1, explain: "The gentleman says: 'No, giri a sinistra.'" }
       - { q: "Dov'è la piazza?", options: ["Di fronte al mercato", "Dietro la chiesa", "Vicino al Tevere"], answer: 0, explain: "The square is opposite the market." }
       - { q: "Quanto tempo ci vuole?", options: ["Circa cinque minuti", "Venti minuti", "Un'ora"], answer: 0, explain: "It's about five minutes from the avenue." }
+writing:
+  - task: "A tourist stops you near the metro. Write the directions to the Testaccio market, speaking formally (giri, vada, prenda…)."
+    es: "Scusi, per andare al mercato di Testaccio?"
+    min: 15
+    max: 40
+    use: [w.girare, w.destra, w.sinistra, w.sempre-dritto, w.attraversare]
+    grammar: [g.imperative-directions, g.ordinal-numbers]
+    expect:
+      - { pattern: "\\b(giri|vada|prenda|attraversi|continui|segua)\\b", hint: "Give formal directions: giri, vada, prenda…" }
+      - { pattern: "\\ba (destra|sinistra)\\b|\\bdritto\\b", hint: "Say which way: a destra, a sinistra, sempre dritto." }
+    model: { es: "Allora, vada sempre dritto per cento metri. Al semaforo giri a sinistra e attraversi la piazza. Poi prenda la seconda strada a destra. Il mercato è lì.", en: "Right, go straight on for a hundred metres. At the traffic lights turn left and cross the square. Then take the second street on the right. The market is there." }
+  - task: "Your friend messages you. Reply saying what you and the people with you are doing right now (stare + gerund)."
+    es: "Ciao! Che cosa stai facendo?"
+    min: 12
+    max: 35
+    use: [w.mangiare, w.guardare, w.cartina, w.perdersi, w.cercare]
+    grammar: [g.stare-gerundio]
+    expect:
+      - { pattern: "\\b(sto|stai|sta|stiamo|state|stanno)\\s+\\w+(ando|endo)\\b", hint: "Use stare + gerund: sto mangiando, stiamo cercando…" }
+    model: { es: "Sto mangiando una pizza a Testaccio con Marco. Lui sta guardando la cartina perché ci stiamo perdendo! E tu cosa stai facendo?", en: "I'm eating a pizza in Testaccio with Marco. He's looking at the map because we're getting lost! And what are you doing?" }
+  - task: "A tourist asks what they need for a day in Testaccio. Give advice with bisogna and avere bisogno di."
+    min: 15
+    max: 40
+    use: [w.bisogna, w.bisogno, w.mappa, w.biglietto, w.fila]
+    grammar: [g.bisogna-avere-bisogno]
+    expect:
+      - { pattern: "\\bbisogna\\b", hint: "Say what is necessary: Bisogna …" }
+      - { pattern: "\\bbisogno di\\b|\\bbisogno d['’]", hint: "Use avere bisogno di: Hai bisogno di una mappa." }
+    model: { es: "Per andare a Testaccio non bisogna prendere un taxi: è vicino. Hai bisogno di una mappa e di un biglietto della metro. Al ristorante bisogna arrivare presto, perché c'è sempre la fila.", en: "To go to Testaccio you don't need to take a taxi: it's near. You need a map and a metro ticket. At the restaurant you need to arrive early, because there's always a queue." }
+  - task: "Explain to a friend how to find your flat: the street, which building, which floor and which door (use ordinal numbers)."
+    min: 15
+    max: 40
+    use: [w.primo, w.secondo, w.quarto.adj, w.piano, w.angolo]
+    grammar: [g.ordinal-numbers]
+    expect:
+      - { pattern: "\\b(prim[oa]|second[oa]|terz[oa]|quart[oa]|quint[oa]|sest[oa]|settim[oa]|ottav[oa]|ultim[oa])\\b", hint: "Use ordinals: il quarto piano, la prima porta…" }
+      - { pattern: "\\bpiano\\b", hint: "Say which floor: al terzo piano." }
+    model: { es: "Abito in via Marmorata, all'angolo con la piazza. Il palazzo è il secondo a sinistra. Prendi l'ascensore e sali al quarto piano: la mia porta è la prima a destra.", en: "I live in Via Marmorata, on the corner with the square. The building is the second on the left. Take the lift and go up to the fourth floor: my door is the first on the right." }

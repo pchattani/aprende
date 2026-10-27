@@ -7,8 +7,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { languagePack } from '@lang'
 import { IRREGULAR } from '@lang/verbs'
-import type { LevelId, VocabEntry } from '../../engine/schema'
-import { vocab, vocabUpTo, LEVEL_ORDER_LIST } from '../../engine/loader'
+import type { VocabEntry } from '../../engine/schema'
+import { vocab } from '../../engine/loader'
 import { distractorWords } from '../../engine/generate'
 import { rapidPoints } from '../../engine/vocabGame'
 import { RAIN_LANES, RAIN_LIVES, nextPrompt, pickPrompt, removeDrop, startRain, stepRain, type RainState } from '../../engine/games/wordRain'
@@ -28,6 +28,8 @@ import { addMinutes, e2eHook } from '../palabras/util'
 import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { GAMES_BEST_KEY, recordGame, useGameWords, type GameBest } from './util'
+import { REQUIRE, hasGloss } from './requirements'
+import { useFinishedWords } from '../../hooks/useFinishedWords'
 
 const ID = 'rain'
 const TITLE = 'Word rain'
@@ -39,18 +41,19 @@ const DROP_H = 56
 
 export default function WordRain({ onDone }: GameProps) {
   const [round, setRound] = useState(0)
-  const words = useGameWords(40, (v) => Boolean(v.en[0]), round)
+  const words = useGameWords(40, hasGloss, round)
+  const finished = useFinishedWords()
   const best = useKvValue<Record<string, GameBest>>(GAMES_BEST_KEY, {})?.[ID]
-  if (!words) return <GameHeader title={TITLE} subtitle="Loading your words…" onBack={onDone} />
-  if (words.length < 6) {
+  if (!words || !finished) return <GameHeader title={TITLE} subtitle="Loading your words…" onBack={onDone} />
+  if (words.length < REQUIRE[ID]!.need) {
     return (
       <div className="animate-rise pb-6">
         <GameHeader title={TITLE} onBack={onDone} />
-        <TooFew onBack={onDone} />
+        <TooFew onBack={onDone} game={ID} />
       </div>
     )
   }
-  return <Rain key={round} words={words} best={best?.score} onDone={onDone} onAgain={() => setRound((r) => r + 1)} />
+  return <Rain key={round} words={words} pool={finished.entries} best={best?.score} onDone={onDone} onAgain={() => setRound((r) => r + 1)} />
 }
 
 type Phase = 'ready' | 'play' | 'paused' | 'over'
@@ -69,15 +72,14 @@ interface Feedback {
   note?: 'landed' | 'wrong'
 }
 
-function Rain({ words, best, onDone, onAgain }: { words: VocabEntry[]; best?: number; onDone: () => void; onAgain: () => void }) {
+function Rain({ words, pool, best, onDone, onAgain }: { words: VocabEntry[]; pool: VocabEntry[]; best?: number; onDone: () => void; onAgain: () => void }) {
   const { say } = useSpeak()
   const [rng] = useState(() => new Rng(Date.now()))
   const reduced = useMemo(() => calmMotion(), [])
 
-  // prompts (the learner's words) and three same-topic distractors each, from the course up to their level
+  // prompts (the learner's words) and up to three same-topic distractors each, from the finished words only
   const { prompts, distractors, byId } = useMemo(() => {
-    const top = words.reduce<LevelId>((m, v) => (LEVEL_ORDER_LIST.indexOf(v.level) > LEVEL_ORDER_LIST.indexOf(m) ? v.level : m), 'a1')
-    const ctx = { vocab, pool: vocabUpTo(top), verbs: IRREGULAR, stageOf: () => 0 as const, speech: false }
+    const ctx = { vocab, pool, verbs: IRREGULAR, stageOf: () => 0 as const, speech: false }
     const byId = new Map<string, VocabEntry>()
     const distractors = new Map<string, string[]>()
     for (const v of words) {
@@ -88,7 +90,7 @@ function Rain({ words, best, onDone, onAgain }: { words: VocabEntry[]; best?: nu
       distractors.set(v.id, ds.map((d) => d.id))
     }
     return { prompts: words.filter((v) => distractors.has(v.id)).map((v) => v.id), distractors, byId }
-  }, [words, rng])
+  }, [words, pool, rng])
 
   const st = useRef<RainState | undefined>(undefined)
   const order = useRef<string[]>([])

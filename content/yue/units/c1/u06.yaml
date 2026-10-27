@@ -281,3 +281,43 @@ dialogues:
       - { q: "最後何生提出咩條件？", options: ["九折", "九五折再免運費", "半價"], answer: 1, explain: "He says 九折 might be difficult (可能有啲困難) and offers 九五折 plus free delivery." }
       - { q: "訂金係幾多？", options: ["貨款嘅一成", "貨款嘅三成", "貨款嘅一半"], answer: 1, explain: "訂金係貨款嘅三成: the deposit is 30% of the price." }
       - { q: "梁太點解想快啲收貨？", options: ["佢間舖就嚟裝修", "黃金周會有好多遊客", "佢要將貨出口去日本"], answer: 1, explain: "Next month is Golden Week and there will be lots of tourists." }
+writing:
+  - task: "Write a formal business email to a supplier asking for a quotation, with the conventional opening and closing (敬啟者…此致…)."
+    min: 90
+    max: 160
+    use: [w.ging3-kai2-ze2, w.bou3-gaa3-daan1, w.ci2-zi3, w.soeng1-kei4, w.gung1-jing3-soeng1]
+    useAtLeast: 3
+    grammar: [g.business-correspondence]
+    expect:
+      - { pattern: "敬啟者", hint: "Open formally: 敬啟者：" }
+      - { pattern: "此致|順頌|商祺", hint: "Close formally: 此致…, 順頌商祺." }
+    model: { es: "敬啟者：你好！我哋公司係氹仔一間餅家，而家想搵新嘅供應商。我哋希望訂一千個杏仁餅盒，請貴公司寄一份報價單畀我哋，寫明價錢、送貨時間同付款方法。如有查詢，歡迎隨時致電本人。多謝。此致 貴公司 順頌商祺 陳小姐謹上", en: "Dear Sir or Madam: Our company is a bakery in Taipa and we are looking for a new supplier. We would like to order 1,000 almond cookie boxes; please send us a quotation stating the price, delivery time and payment method. For enquiries, please feel free to call me. With best business wishes, Ms Chan" }
+  - task: "The supplier's price is too high. Write a polite reply negotiating a better deal, softening your demands (原則上, 睇吓有冇商量餘地)."
+    min: 90
+    max: 160
+    use: [w.jyun4-zak1-soeng6, w.jyu4-dei6, w.joeng6-bou6, w.jyu6-syun3, w.hap6-zok3]
+    useAtLeast: 3
+    grammar: [g.negotiation-softeners]
+    expect:
+      - { pattern: "原則上|商量|餘地|可唔可以|唔知", hint: "Soften the request: 原則上…, 有冇商量餘地…" }
+    model: { es: "多謝貴公司嘅報價。原則上我哋好有興趣同你哋合作，不過呢個價錢超出咗我哋嘅預算。唔知價錢方面仲有冇商量餘地呢？如果我哋將數量加到兩千盒，貴公司可唔可以讓步，畀我哋九折？希望雙方可以長期合作。希望盡快收到你哋嘅回覆。", en: "Thank you for your quotation. In principle we're very interested in working with you, but this price exceeds our budget. Might there be any room for discussion on price? If we increased the quantity to 2,000 boxes, could your company make a concession and give us 10% off? We hope both sides can work together long-term. We look forward to your reply." }
+  - task: "Explain your shop's sale and last month's results to a new staff member, with discounts and percentages (八折 = 減兩成, 增長, 倍)."
+    min: 90
+    max: 160
+    use: [w.zit3-kau3, w.cyun4-coeng4, w.jing4-jip6-ngaak2, w.baak3-fan6-bei2, w.pui5]
+    useAtLeast: 3
+    grammar: [g.percent-discounts]
+    expect:
+      - { pattern: "[一二三四五六七八九]折|半價|減[一二兩三四五六七八九]成", hint: "Explain the discount: 八折, 即係減兩成." }
+      - { pattern: "百分之|倍|[一二兩三四五六七八九]成", hint: "Give a figure: 增長咗百分之…, 兩倍." }
+    model: { es: "呢個禮拜全場貨品八折，即係減兩成；買兩件以上仲可以有七折。上個月我哋做咗推廣，營業額比之前增長咗百分之三十，網上嘅銷售更加係以前嘅兩倍。不過記住，折扣貨品數量有限，賣晒就冇。有咩唔明可以隨時問我。多謝你！", en: "This week everything in the shop is 20% off, i.e. two-tenths off; buy two or more and you get 30% off. Last month we ran a promotion, and turnover grew 30% compared with before, while online sales were double what they used to be. But remember, discounted stock is limited; when it's gone, it's gone. If anything's unclear, ask me any time. Thanks!" }
+  - task: "Write a short summary of your small Taipa business's year for your shareholders: results, problems and plans."
+    min: 90
+    max: 170
+    use: [w.zung1-siu2-kei2, w.lei6-jeon6, w.ging6-zang1, w.fan1-dim3, w.si5-coeng4]
+    useAtLeast: 3
+    grammar: [g.business-correspondence, g.percent-discounts]
+    expect:
+      - { pattern: "營業額|盈利|利潤|收入", hint: "Report the results: 營業額, 盈利…" }
+      - { pattern: "計劃|打算|明年|出年|將會", hint: "Say what you plan next: 明年計劃…" }
+    model: { es: "各位股東：今年本公司營業額增長咗一成半，利潤亦都比去年高。不過由於租金上升，加上同區嘅競爭越嚟越大，成本增加咗唔少。我哋係一間中小企，明年計劃喺路環開一間分店，同時多做網上生意，希望吸引更多新客源。多謝各位一直嘅支持。", en: "Dear shareholders: this year our turnover grew by 15%, and profit was also higher than last year. However, because of rising rent and increasing competition in the district, costs rose considerably. As an SME, next year we plan to open a branch in Coloane and strengthen our online market at the same time, hoping to attract more new customers. Thank you all for your continued support." }

@@ -278,3 +278,46 @@ dialogues:
       - { q: "Est-ce que Hugo mange un croissant ?", options: ["Oui, deux.", "Non, il ne mange pas le matin.", "Oui, avec du beurre."], answer: 1, explain: "« Non, merci. Je ne mange pas le matin. »" }
       - { q: "Combien coûte le petit-déjeuner ?", options: ["onze euros", "douze euros", "dix euros"], answer: 0, explain: "« Ça fait onze euros. »" }
       - { q: "Où sont Emma et Hugo ?", options: ["à la boulangerie", "en terrasse, dans un café", "au restaurant de l'hôtel"], answer: 1, explain: "They are on the terrace of a café in Saint-Germain-des-Prés." }
+writing:
+  - task: "You sit down at a café terrace in Saint-Germain. Order something to drink and to eat, politely."
+    es: "Bonjour ! Qu'est-ce que vous désirez ?"
+    min: 10
+    max: 35
+    use: [w.vouloir, w.café, w.croissant, w.eau, w.carafe]
+    useAtLeast: 2
+    grammar: [g.je-voudrais]
+    expect:
+      - { pattern: "\\b(je voudrais|je vais prendre|je prends)\\b", hint: "Order politely: Je voudrais …" }
+      - { pattern: "\\bs['’]il (vous|te) pla[iî]t\\b", hint: "Add s'il vous plaît." }
+    model: { es: "Bonjour, monsieur ! Je voudrais un café et un croissant, s'il vous plaît. Et une carafe d'eau aussi. Merci !", en: "Hello, sir! I'd like a coffee and a croissant, please. And a jug of water too. Thank you!" }
+  - task: "Tell a new friend what you like, love, prefer and don't like to eat and drink."
+    min: 15
+    max: 40
+    use: [w.aimer, w.préférer, w.détester, w.fromage, w.légume]
+    useAtLeast: 3
+    grammar: [g.aimer-preferer]
+    expect:
+      - { pattern: "\\b(j['’]aime|j['’]adore|je pr[eé]f[eè]re)\\b", hint: "Say what you like: J'aime / J'adore / Je préfère …" }
+      - { pattern: "\\b(je n['’]aime pas|j['’]aime pas|je d[eé]teste)\\b", hint: "Say what you don't like: Je n'aime pas … / Je déteste …" }
+    model: { es: "J'adore le fromage et le pain ! J'aime aussi les légumes, mais je n'aime pas la viande. Je préfère le poisson. Et je déteste le café !", en: "I love cheese and bread! I also like vegetables, but I don't like meat. I prefer fish. And I hate coffee!" }
+  - task: "Your friend asks what you have for breakfast. Answer: what you eat and drink, and one thing you don't have (pas de)."
+    es: "Qu'est-ce que tu manges au petit-déjeuner ?"
+    min: 15
+    max: 40
+    use: [w.manger, w.boire, w.pain, w.beurre, w.confiture]
+    useAtLeast: 3
+    grammar: [g.partitive-articles, g.de-after-negation]
+    expect:
+      - { pattern: "\\b(du|de la|des)\\b|\\bde l['’]", hint: "Use 'some': du pain, de la confiture, de l'eau…" }
+      - { pattern: "\\bpas d(e\\s|['’])", hint: "Say what you don't have with pas de: pas de café." }
+    model: { es: "Au petit-déjeuner, je mange du pain avec du beurre et de la confiture. Je bois du thé avec du lait. Je ne mange pas de croissants, je préfère le pain !", en: "For breakfast I eat bread with butter and jam. I drink tea with milk. I don't eat croissants, I prefer bread!" }
+  - task: "Reply to Julie's message: agree or disagree with each thing she says, using moi aussi, moi non plus, moi si or moi non."
+    es: "J'adore les macarons ! Je n'aime pas le thé. Et toi ?"
+    min: 10
+    max: 35
+    use: [w.aussi, w.non-plus, w.macaron, w.thé, w.préférer]
+    useAtLeast: 2
+    grammar: [g.moi-aussi-non-plus]
+    expect:
+      - { pattern: "\\bmoi,? (aussi|non plus|si|non|pas)\\b", hint: "React with moi aussi / moi non plus / moi si / moi non." }
+    model: { es: "Moi aussi, j'adore les macarons au chocolat ! Le thé ? Moi si, j'aime bien le thé avec un peu de lait. Je préfère le thé au café !", en: "Me too, I love chocolate macarons! Tea? I do, I quite like tea with a little milk. I prefer tea to coffee!" }

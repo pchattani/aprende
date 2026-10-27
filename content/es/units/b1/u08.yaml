@@ -280,3 +280,42 @@ dialogues:
       - { q: "¿Por qué lleva Lucía la chaqueta cerrada?", options: ["Porque tiene frío", "Porque se le manchó la camisa con café", "Porque la camisa es nueva"], answer: 1 }
       - { q: "¿Qué dice Jorge sobre el ascensor?", options: ["Que avisaron a la empresa el lunes, pero no han venido", "Que lo arreglaron ayer", "Que no se puede usar con café"], answer: 0, explain: "'Se avisó a la empresa el lunes, pero todavía no han venido.'" }
       - { q: "¿Por qué dice Jorge «menos mal que se te ha caído» el café?", options: ["Porque no se puede entrar en la reunión con café", "Porque el café estaba frío", "Porque a Lucía no le gusta el café"], answer: 0 }
+writing:
+  - task: "Write the rules for visitors to a museum in Salta using impersonal se (no se puede …, se debe …, se ruega …)."
+    min: 50
+    max: 100
+    use: [w.cartel, w.acceso, w.atender, w.cita-previa, w.en-general]
+    useAtLeast: 3
+    grammar: [g.se-impersonal]
+    expect:
+      - { pattern: "\\bse (puede|pueden|debe|deben|permite|proh[ií]be|necesita|ruega|recomienda|atiende|habla|come|entra|accede)\\b", hint: "Use impersonal se: no se puede comer, se debe …, se ruega …" }
+    model: { es: "Normas del museo: dentro del museo no se puede comer ni beber. No se permite hacer fotos de las obras. Se ruega hablar en voz baja. Para subir a la terraza, se necesita cita previa. Se atiende al público de martes a domingo, de diez a seis. Si se pierde algo, se debe avisar en la entrada. Como dice el cartel, en general se habla español y también inglés.", en: "Museum rules: inside the museum you can't eat or drink. Taking photos of the works is not allowed. Please speak quietly. To go up to the terrace, you need an appointment. The public is served Tuesday to Sunday, from ten to six. If you lose something, you must tell the staff at the entrance. As the sign says, Spanish and English are generally spoken." }
+  - task: "Describe how glass and paper are recycled in your town, using passive se (se separa, se llevan, se fabrican …)."
+    min: 50
+    max: 100
+    use: [w.vidrio, w.papel, w.carton, w.contenedor, w.fabricar]
+    useAtLeast: 3
+    grammar: [g.se-passive]
+    expect:
+      - { pattern: "\\bse (separa|separan|pone|ponen|tira|tiran|lleva|llevan|recoge|recogen|limpia|limpian|seca|secan|usa|usan|fabrica|fabrican|produce|producen|recicla|reciclan|vende|venden)\\b", hint: "Describe the process with passive se: se separa, se llevan, se fabrican …" }
+    model: { es: "En mi ciudad, la basura se separa en casa. El vidrio se pone en el contenedor verde y el papel y el cartón se tiran en el azul. Después, los contenedores se recogen dos veces por semana y los materiales se llevan a una planta de reciclaje. Allí se limpian, se secan y se usan para fabricar productos nuevos. Así se producen menos residuos.", en: "In my town, rubbish is separated at home. Glass goes in the green container and paper and cardboard go in the blue one. Then the containers are collected twice a week and the materials are taken to a recycling plant. There they are cleaned, dried and used to make new products. That way less waste is produced." }
+  - task: "Write a short news report about events in Salta yesterday: a building was opened, people were rescued … Use the passive with ser (fue inaugurado por …)."
+    min: 50
+    max: 100
+    use: [w.inaugurar, w.rescatar, w.anunciar, w.construir, w.telediario]
+    useAtLeast: 3
+    grammar: [g.passive-ser]
+    expect:
+      - { pattern: "\\b(fue|fueron|ha sido|han sido|ser[aá]|ser[aá]n) [a-zñ]+(ado|ados|ada|adas|ido|idos|ida|idas|to|ta|tos|tas|cho|cha)\\b", hint: "Use the passive with ser: fue inaugurado, fueron rescatados …" }
+      - { pattern: "\\bpor (el|la|los|las|un|una)\\b", hint: "Say who did it: … por el alcalde, por la policía." }
+    model: { es: "Ayer fue inaugurado el nuevo museo de arte de Salta. El edificio fue construido en solo dos años y fue diseñado por una arquitecta local. Según el telediario, la ceremonia fue presentada por el alcalde. Ese mismo día, tres turistas fueron rescatados por la policía en la montaña. Afortunadamente, nadie resultó herido. La noticia fue anunciada en todos los medios.", en: "Yesterday the new art museum in Salta was opened. The building was built in just two years and was designed by a local architect. According to the TV news, the ceremony was presented by the mayor. That same day, three tourists were rescued by the police in the mountains. Fortunately, nobody was injured. The news was announced in all the media." }
+  - task: "Explain why you are so late and what happened to your car, using accidental se (se me olvidó, se me pinchó …)."
+    es: "¿Por qué llegas tan tarde? ¿Y qué le pasó a tu coche?"
+    min: 50
+    max: 100
+    use: [w.sin-querer, w.pinchar, w.rueda, w.quedarse-sin, w.estropearse]
+    useAtLeast: 3
+    grammar: [g.se-accidental]
+    expect:
+      - { pattern: "\\bse (me|te|le|nos|les) (ha |han )?[a-záéíóúñ]+", hint: "Use accidental se: se me olvidó, se me pinchó una rueda …" }
+    model: { es: "¡Perdona! Ha sido un día horrible. Primero se me olvidaron las llaves en casa y tuve que volver. Luego, en la carretera, se me pinchó una rueda y tardé una hora en cambiarla. Después el coche se estropeó y me quedé sin gasolina. Para terminar, se me cayó el móvil sin querer y se le rompió la pantalla. ¡Qué lío!", en: "Sorry! It's been a horrible day. First I left my keys at home and had to go back. Then, on the road, I got a flat tyre and it took me an hour to change it. After that the car broke down and I ran out of petrol. To top it off, I accidentally dropped my phone and the screen broke. What a mess!" }

@@ -4,7 +4,7 @@
  * pictogram exercise. Lessons: a1.u13.l1 (一 二 三) and a1.u15.l1 (人 口 山, pictograms).
  */
 import { test, expect, type Page } from '@playwright/test'
-import { enableTestHook, readHook, answerCurrent, continueFeedback, writeCharacter, strokeMedians, type Hook } from './helpers'
+import { enableTestHook, readHook, answerCurrent, continueFeedback, writeCharacter, strokeMedians, completeLessonsBefore, type Hook } from './helpers'
 
 const LANG = process.env.VITE_LANG ?? 'es'
 test.skip(LANG !== 'yue', 'Cantonese only')
@@ -83,6 +83,8 @@ test('trace a character over its outline, then write one from memory', async ({ 
 
 test('pictogram: see the picture, pick the character', async ({ page }) => {
   test.setTimeout(120_000)
+  // lessons open in order: finish the ones before it first
+  await completeLessonsBefore(page, 'a1.u15.l1')
   await openLesson(page, 'a1.u15.l1')
   const hook = await skipTo(page, ['pictogram'])
   const char = hook.exercise.char!

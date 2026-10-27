@@ -275,3 +275,37 @@ dialogues:
       - { q: "Che cosa non deve fare Nicola?", options: ["Versare l'acqua", "Aggiungere altra farina", "Assaggiare il sugo"], answer: 1, explain: "Non aggiungere altra farina! is a negative tu command." }
       - { q: "Per quanto tempo deve impastare Nicola?", options: ["Due minuti", "Dieci minuti", "Un'ora"], answer: 1, explain: "Ora impasta per dieci minuti." }
       - { q: "Perché stasera nessuno bacia Nicola?", options: ["Perché il sugo ha tanto aglio", "Perché è stanco", "Perché ha cucinato male"], answer: 0, explain: "He jokes that the garlic sauce will keep everyone away." }
+writing:
+  - task: "Write a simple recipe for a friend, such as bruschetta or pasta al pomodoro, using the tu imperative."
+    min: 30
+    max: 65
+    use: [w.tagliare, w.aggiungere, w.mescolare, w.ciotola, w.sale]
+    grammar: [g.imperativo-tu]
+    expect:
+      - { pattern: "\\b(taglia|aggiungi|mescola|metti|prendi|versa|cuoci|scalda|condisci|assaggia|lava|fai|servi|scola|friggi|sbuccia|grattugia)\\S*\\b", hint: "Use the tu imperative: taglia, aggiungi, mescola…" }
+    model: { es: "Bruschetta al pomodoro: taglia il pane a fette e scaldalo nel forno. Lava i pomodori e tagliali a pezzi. Metti i pomodori in una ciotola, aggiungi sale, olio e basilico e mescola bene. Infine metti i pomodori sul pane. Buon appetito!", en: "Tomato bruschetta: cut the bread into slices and warm it in the oven. Wash the tomatoes and cut them into pieces. Put the tomatoes in a bowl, add salt, oil and basil and mix well. Finally put the tomatoes on the bread. Enjoy!" }
+  - task: "You are a waiter in a wine bar in Montepulciano. Welcome a guest and make polite suggestions with the Lei imperative (si sieda, prenda, assaggi…)."
+    min: 30
+    max: 65
+    use: [w.sedersi, w.prendere, w.assaggiare, w.antipasto, w.primo-piatto]
+    grammar: [g.imperativo-lei]
+    expect:
+      - { pattern: "\\b(si accomodi|si sieda|prenda|assaggi|guardi|senta|venga|aspetti|provi|mi dica|scelga)\\b", hint: "Use the Lei imperative: si sieda, prenda, assaggi…" }
+    model: { es: "Buonasera, signora, si sieda qui vicino alla finestra. Prenda il menù: come antipasto assaggi il nostro pecorino, è ottimo. Come primo piatto provi i pici all'aglione, il piatto tipico. E con la carne prenda un bicchiere di Vino Nobile!", en: "Good evening, madam, do sit here by the window. Take the menu: as a starter try our pecorino, it's excellent. For the first course try the pici all'aglione, the local dish. And with the meat have a glass of Vino Nobile!" }
+  - task: "You are organising a cooking evening with friends. Tell the others what to do (voi imperative) and suggest what to do together (noi imperative)."
+    min: 30
+    max: 65
+    use: [w.cipolla, w.carota, w.tavola, w.farina, w.cucinare]
+    grammar: [g.imperativo-noi-voi]
+    expect:
+      - { pattern: "\\b\\S+iamo\\b", hint: "Suggest with noi: cuciniamo, mangiamo…" }
+      - { pattern: "\\b\\S+(ate|ete|ite)\\b", hint: "Tell the group with voi: tagliate, apparecchiate, preparate…" }
+    model: { es: "Ragazzi, stasera cuciniamo insieme! Marco e Luca, tagliate le cipolle e le carote. Anna e Sara, apparecchiate la tavola e preparate l'insalata. Io faccio la pasta con la farina e le uova. Poi mangiamo tutti insieme in terrazza!", en: "Guys, tonight we're cooking together! Marco and Luca, chop the onions and the carrots. Anna and Sara, lay the table and make the salad. I'll make the pasta with the flour and the eggs. Then let's all eat together on the terrace!" }
+  - task: "Your little brother is staying in your flat. Write him a note with house rules: what he must not do (non toccare, non aprire…)."
+    min: 25
+    max: 60
+    use: [w.toccare, w.forno, w.coltello, w.lasciare, w.buttare]
+    grammar: [g.imperativo-negative]
+    expect:
+      - { pattern: "\\bnon\\s+\\S+(are|ere|ire)\\b", hint: "Use non + infinitive with tu: non toccare, non aprire…" }
+    model: { es: "Ciao, Luca! Ecco cosa non devi fare: non toccare il forno, è molto caldo! Non prendere il coltello grande. Non mangiare la torta: è per la cena di stasera. E per favore, non lasciare la porta aperta e non buttare i vestiti sul pavimento!", en: "Hi, Luca! Here's what you mustn't do: don't touch the oven, it's very hot! Don't take the big knife. Don't eat the cake: it's for tonight's dinner. And please, don't leave the door open and don't throw your clothes on the floor!" }

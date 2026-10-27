@@ -261,3 +261,42 @@ dialogues:
       - { q: "Which document is Amina missing?", options: ["Her passport", "A certificate from the town hall", "A photocopy of her contract"], answer: 1 }
       - { q: "How long will the permit take once the file is registered?", options: ["Six weeks", "Two to three months", "One year"], answer: 1 }
       - { q: "What will the receipt allow Amina to do?", options: ["Start working while she waits", "Travel abroad", "Skip the queue next time"], answer: 0 }
+writing:
+  - task: "Write a short summary of a historical change (for example Spain's transition to democracy), using a medida que, conforme, en cuanto and tan pronto como."
+    min: 80
+    max: 150
+    use: [w.transicion, w.exilio, w.decada, w.a-medida-que, w.libertad-de-expresion]
+    useAtLeast: 3
+    grammar: [g.temporal-clauses-advanced]
+    expect:
+      - { pattern: "a medida que|conforme|en cuanto|tan pronto como|nada m[aá]s|apenas", hint: "Sequence events: a medida que …, conforme …, en cuanto …" }
+    model: { es: "La transición española fue una época de grandes cambios. En cuanto murió Franco, en 1975, el país empezó a cambiar. A medida que pasaban los meses, se aprobaron nuevas leyes y muchos políticos que vivían en el exilio pudieron volver. Conforme crecía la libertad de expresión, aparecieron periódicos nuevos. En 1976 se celebró un referéndum y, dos años después, los españoles votaron la Constitución. A pesar del intento de golpe de Estado de 1981, la democracia se hizo fuerte a lo largo de aquella década.", en: "The Spanish transition was a time of great change. As soon as Franco died, in 1975, the country began to change. As the months went by, new laws were passed and many politicians who were living in exile were able to return. As freedom of expression grew, new newspapers appeared. In 1976 a referendum was held and, two years later, Spaniards voted for the Constitution. Despite the attempted coup of 1981, democracy grew strong over that decade." }
+  - task: "Write the rules for students handing in a final university assignment, using formal purpose expressions: a fin de que, con objeto de, de manera que."
+    min: 80
+    max: 150
+    use: [w.plagio, w.bibliografia, w.evaluacion, w.tutoria, w.a-fin-de]
+    useAtLeast: 3
+    grammar: [g.purpose-clauses-advanced]
+    expect:
+      - { pattern: "a fin de( que)?|con (el )?objeto de|de manera que|de modo que", hint: "Express purpose formally: a fin de que …, con objeto de …, de manera que …" }
+    model: { es: "Normas para la entrega del trabajo final: el trabajo deberá tener entre diez y quince páginas, con un índice y una bibliografía completa, a fin de que el tribunal pueda comprobar las fuentes. Con objeto de evitar el plagio, todos los trabajos se revisarán con un programa especial. Las ideas de otros autores deberán aparecer siempre con su nombre, de manera que quede claro qué ideas son propias. Antes de la entrega, se recomienda pedir una tutoría con objeto de resolver dudas. La evaluación tendrá en cuenta la metodología y la calidad del texto.", en: "Rules for handing in the final assignment: the work must be between ten and fifteen pages long, with a table of contents and a full bibliography, so that the panel can check the sources. In order to avoid plagiarism, all work will be checked with special software. Other authors' ideas must always appear with their name, so that it is clear which ideas are your own. Before submission, it is recommended to book a tutorial in order to resolve any doubts. The assessment will take into account the methodology and the quality of the text." }
+  - task: "Write a message to a friend complaining about the paperwork for your residence permit: what you can't do until … (hasta que no …, mientras no …)."
+    min: 80
+    max: 150
+    use: [w.papeleo, w.permiso-de-residencia, w.extranjeria, w.hasta-que-no, w.desesperarse]
+    useAtLeast: 3
+    grammar: [g.hasta-que]
+    expect:
+      - { pattern: "hasta que (no )?[a-záéíóúñ]+", hint: "Use hasta que (no) + subjunctive: hasta que no tenga el permiso …" }
+      - { pattern: "mientras no|hasta que no", hint: "Add mientras no / hasta que no + subjunctive." }
+    model: { es: "¡Estoy harta del papeleo! Llevo tres meses intentando conseguir el permiso de residencia y todavía no lo tengo. En la oficina de extranjería me dijeron que no puedo firmar el contrato de trabajo hasta que no tenga el permiso. Y, claro, no me dan el permiso hasta que no presente el contrato. ¡Es absurdo! Además, mientras no tenga los papeles, no puedo abrir una cuenta en el banco. Mañana vuelvo con todas las fotocopias selladas. No pienso desesperarme: esperaré allí hasta que me lo den.", en: "I'm fed up with the paperwork! I've been trying to get my residence permit for three months and I still don't have it. At the immigration office they told me I can't sign my work contract until I have the permit. And, of course, they won't give me the permit until I hand in the contract. It's absurd! Also, as long as I don't have my papers, I can't open a bank account. Tomorrow I'm going back with all the stamped photocopies. I'm not going to despair: I'll wait there until they give it to me." }
+  - task: "Write a short report about a village near the Aconcagua that is losing its population, and a project to bring people back. Use temporal and purpose clauses (nada más, a medida que, en cuanto, con el fin de)."
+    min: 80
+    max: 150
+    use: [w.despoblacion, w.campesino, w.comarca, w.cultivo, w.abandonar]
+    useAtLeast: 3
+    grammar: [g.temporal-clauses-advanced, g.purpose-clauses-advanced]
+    expect:
+      - { pattern: "a medida que|conforme|en cuanto|nada m[aá]s|tan pronto como", hint: "Sequence events: nada más terminar …, a medida que …, en cuanto …" }
+      - { pattern: "con el fin de|a fin de|para que|con objeto de|de manera que", hint: "Explain the purpose: con el fin de atraer …, de manera que …" }
+    model: { es: "En la comarca de Uspallata, cerca del Aconcagua, muchos jóvenes se van a la ciudad nada más terminar el colegio. A medida que la población envejece, los campos se abandonan y las escuelas cierran. Para frenar la despoblación, el gobierno local ha creado un proyecto con el fin de atraer a nuevas familias. En cuanto llegan, reciben una casa y una pequeña huerta para sus cultivos. Los campesinos mayores les enseñan a sembrar y a cuidar las ovejas, de manera que sus conocimientos no se pierdan. Por ahora, ya han llegado doce familias.", en: "In the Uspallata area, near Aconcagua, many young people leave for the city as soon as they finish school. As the population ages, the fields are abandoned and schools close. To stop depopulation, the local government has created a project in order to attract new families. As soon as they arrive, they get a house and a small vegetable plot for their crops. The older farmers teach them how to sow and look after the sheep, so that their knowledge isn't lost. So far, twelve families have already arrived." }

@@ -275,3 +275,41 @@ dialogues:
       - { q: "嗰啲火山石好似乜嘢？", options: ["菠蘿包", "雞蛋仔", "李小龍"], answer: 0, explain: "好似一個個菠蘿包噉: they look like pineapple buns." }
       - { q: "周生影咗相之後想做乜？", options: ["寄畀老細", "post 上 IG", "印出嚟"], answer: 1, explain: "He wants to post the photo on Instagram (post 上 IG)." }
       - { q: "幾時先行得過沙堤？", options: ["漲潮嘅時候", "退潮嘅時候", "夜晚"], answer: 1, explain: "只有退潮嘅時候先行得過: only at low tide." }
+writing:
+  - task: "Text a friend about your busy work week, mixing in English words the way Hong Kongers do (present, project, OT…)."
+    min: 60
+    max: 120
+    use: [w.wui6-ji5-sat1, w.jau5-jing4, w.daa2-kaat1, w.lou5-sai3]
+    useAtLeast: 2
+    grammar: [g.code-mixing]
+    expect:
+      - { pattern: "[a-z]{2,}", hint: "Mix in some English words: present, project, OT…" }
+    model: { es: "我聽日要present個project，所以今晚要OT。老細話份report一定要好有型，仲要喺會議室set好部電腦。好彩下個禮拜可以放假，我同朋友約咗去打卡。不過我仲未book機票，希望今晚有時間搞掂佢。", en: "I have to present a project tomorrow, so I'm working overtime tonight. The boss says the report has to look really cool, and I need to set up the computer in the meeting room. Luckily I'm on holiday next week; I've arranged to go and take photos for social media with friends. But I haven't booked the plane tickets yet; I hope I'll have time to sort it out tonight." }
+  - task: "Describe breakfast at a cha chaan teng with vivid ABB adjectives like 熱辣辣 and 凍冰冰."
+    min: 60
+    max: 120
+    use: [w.jit6-laat6-laat6, w.hoeng1-pan3-pan3, w.dung3-bing1-bing1, w.bo1-lo4-jau4, w.si1-mat6-naai5-caa4]
+    useAtLeast: 3
+    grammar: [g.abb-adjectives]
+    expect:
+      - { pattern: "熱辣辣|香噴噴|凍冰冰|紅卜卜|肥嘟嘟|白雪雪|滑捋捋|甜絲絲|酸溜溜|濕立立|慢吞吞|靜英英", hint: "Use an ABB adjective: 熱辣辣, 香噴噴, 凍冰冰…" }
+    model: { es: "啱啱出爐嘅菠蘿油熱辣辣，香噴噴，再嚟一杯凍冰冰嘅絲襪奶茶，真係一流！隔籬枱個細路食到塊面紅卜卜，肥嘟嘟噉，好得意。我下次一定再嚟。埋單先三十幾蚊。", en: "A pineapple bun with butter fresh from the oven, piping hot and fragrant, plus an ice-cold silk-stocking milk tea: simply first-rate! The kid at the next table was eating with rosy red cheeks, chubby and so cute. I'll definitely come back next time. And the bill was only thirty-something dollars." }
+  - task: "Write about the Cantonese pop songs you grew up with, using reduplicated words like 細細個, 靜靜雞 and 齊齊."
+    min: 60
+    max: 130
+    use: [w.gwong2-dung1-go1, w.zing6-zing2-gai1, w.cai4-cai4, w.gam1-kuk1, w.sai3-sai3-go3]
+    useAtLeast: 3
+    grammar: [g.adj-reduplication]
+    expect:
+      - { pattern: "細細個|靜靜雞|齊齊|凍凍地|整整|慢慢", hint: "Use a reduplicated form: 細細個, 靜靜雞, 齊齊…" }
+    model: { es: "我細細個就鍾意聽廣東歌，尤其係張國榮同梅艷芳嘅金曲。以前我成日靜靜雞喺房度聽到半夜。上個月我同朋友齊齊去紅館睇演唱會，大家一齊唱，好感動。", en: "I've loved Cantonese pop songs since I was little, especially the hits of Leslie Cheung and Anita Mui. I used to listen quietly in my room until the middle of the night. Last month my friends and I all went to a concert at the Coliseum together, and everyone sang along. It was so moving." }
+  - task: "Recommend some Hong Kong films to a friend and explain why they're worth watching."
+    min: 60
+    max: 130
+    use: [w.zau1-sing1-ci4, w.fung1-gaak3, w.cong3-ji3, w.lei5-siu2-lung4, w.mei6-lik6]
+    useAtLeast: 3
+    grammar: [g.code-mixing]
+    expect:
+      - { pattern: "建議|一定要|值得", hint: "Recommend: 我建議你睇…, 好值得睇." }
+      - { pattern: "因為|風格|創意|魅力", hint: "Say why: 因為佢嘅風格…" }
+    model: { es: "我建議你睇周星馳嘅電影，佢嘅風格好無厘頭，又好有創意。雖然係舊片，但係到而家都好好笑。另外，李小龍嘅功夫片都係一流，佢嘅魅力到今日都好受歡迎。睇完心情一定好high！", en: "I suggest you watch Stephen Chow's films: his style is wonderfully nonsensical and very creative. They're old, but still hilarious today. Also, Bruce Lee's kung fu films are first-rate; his charm is still hugely popular today. You'll be in a great mood after watching!" }

@@ -27,6 +27,9 @@ import { SPICY_BANNED } from './spicy-banned'
 import { collectWriteChars, strokesPath, writeCharIssues, type StrokeEntry } from './strokes-lib.mjs'
 import { PICTOGRAMS } from '../src/engine/pictograms'
 import { taughtIndex, makeTaughtGate, gateLesson, TAUGHT_MIN_ITEMS } from '../src/engine/taught'
+import { makeWritingKit, checkWritingPrompts } from '../src/engine/writing'
+import type { CheckerModule } from '../src/lang/contract'
+const { check } = (await import(`../src/lang/${LANG}/checker.ts`)) as CheckerModule
 
 const MIN_LESSONS_PER_UNIT = 3
 const MIN_SENTENCES_PER_LESSON = 8
@@ -335,6 +338,43 @@ if (features.taughtOnly) {
     }
   }
 }
+// words the readers' glossaries teach count as correct spelling in writing too
+const readerWords = listYaml(join(CONTENT, 'readers')).flatMap((p) => {
+  const r = Reader.safeParse(readYaml(p))
+  return r.success ? [...r.data.allow, ...r.data.glossary.map((g) => g.es)] : []
+})
+for (const w of (knownFile as { facts?: string[] }).facts ?? []) readerWords.push(w)
+for (const r of journey?.regions ?? []) readerWords.push(r.name, ...r.stops.flatMap((st) => [st.name, st.es, st.fact?.es ?? '']))
+for (const sv of journey?.souvenirs ?? []) readerWords.push(sv.es)
+// ---- writing prompts: 3–5 per stop, valid references, and a model answer that meets its own task and scores well
+{
+  const rulesFile = join(CONTENT, 'errors', 'common-errors.yaml')
+  const rules = existsSync(rulesFile) ? (ErrorsFileSchema.safeParse(readYaml(rulesFile)).data?.rules ?? []) : []
+  const dict = dictByLevel.get('c2')!
+  const kit = makeWritingKit(
+    {
+      id: LANG, tokenize, stripAccents: languagePack.stripMarks, lookup: (f) => lookup(dict, f), forms: dict.keys(),
+      check: (t) => check(t, { dict, rules, verbs }),
+      hasReading: languagePack.validateText ? (c) => languagePack.validateText!(c).length === 0 : undefined,
+    },
+    { vocab, known: { always: knownFile.always ?? [], names: knownFile.names ?? [] }, extra: readerWords },
+  )
+  let missing = 0
+  for (const { unit, path } of parsedUnits) {
+    const level = unitLevel.get(unit.id)
+    if (!level) continue
+    if (!unit.writing.length) {
+      missing++
+      continue
+    }
+    const r = checkWritingPrompts(unit, kit, { level, vocab: (id) => vocab.has(id), grammar: (id) => grammar.has(id) })
+    for (const e of r.errors) err(`${rel(path)}: ${e}`)
+    for (const w of r.warnings) warn(`${rel(path)}: ${w}`)
+    for (const w of unit.writing) for (const t of [w.model.es, ...(w.es ? [w.es] : [])]) scriptIssues(rel(path), t)
+  }
+  if (missing) warn(`writing: ${missing} authored unit(s) have no writing prompts yet`)
+}
+
 for (const v of vocab.values()) {
   if (LEVEL_ORDER.indexOf(v.level) <= LEVEL_ORDER.indexOf('b1') && !unitVocabUse.has(v.id) && !v.tags.includes('passive')) {
     warn(`vocab: ${v.id} (${v.level}) is never introduced by a lesson`)

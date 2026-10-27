@@ -280,3 +280,44 @@ dialogues:
       - { q: "¿Por qué está hoy de buen humor el jefe?", options: ["Porque le han confirmado que el proyecto sigue en marcha", "Porque la cafetería ya está abierta", "Porque Marcos ha vuelto al trabajo"], answer: 0 }
       - { q: "¿Qué dice Elena de la chica nueva de informática?", options: ["Que es muy lista, pero todavía tiene poca experiencia", "Que está de baja desde el jueves", "Que no sabe reparar ordenadores"], answer: 0, explain: "'Es muy lista, pero todavía está muy verde': estar verde means to be inexperienced." }
       - { q: "¿Qué van a hacer Rubén y Elena antes de la reunión?", options: ["Tomar un café en la cafetería", "Llamar a Marcos", "Reparar el ordenador"], answer: 0 }
+writing:
+  - task: "Describe someone you know using adjectives that change meaning with ser and estar (listo, abierto, despierto, atento, callado, aburrido …)."
+    min: 50
+    max: 100
+    use: [w.despierto, w.abierto, w.atento, w.callado, w.molesto]
+    useAtLeast: 3
+    grammar: [g.ser-estar-advanced]
+    expect:
+      - { pattern: "\\b(es|son|era) (muy |bastante |una persona muy )?(list[oa]|aburrid[oa]|abiert[oa]|despiert[oa]|viv[oa]|mal[oa]|buen[oa]|atent[oa]|callad[oa]|interesad[oa]|delicad[oa])", hint: "Use ser for character: es listo, es una persona muy abierta …" }
+      - { pattern: "\\b(est[aá]|estaba|est[aá]n|estoy|estar[aá]) (muy |un poco )?(list[oa]|aburrid[oa]|abiert[oa]|despiert[oa]|viv[oa]|mal[oa]|buen[oa]|atent[oa]|callad[oa]|interesad[oa]|molest[oa])", hint: "Contrast with estar for a state: está callado, estará listo …" }
+    model: { es: "Mi primo Tomás es muy listo y es una persona muy abierta: habla con todo el mundo. Sin embargo, hoy está callado y un poco molesto, porque perdió el autobús a las Salinas Grandes. Normalmente es muy atento, pero esta mañana no estaba despierto cuando sonó el despertador. Ahora está aburrido en el hotel. Por suerte, mañana estará listo a las seis para la excursión.", en: "My cousin Tomás is very clever and a very open person: he talks to everyone. However, today he's quiet and a bit annoyed, because he missed the bus to the Salinas Grandes. He's usually very attentive, but this morning he wasn't awake when the alarm went off. Now he's bored at the hotel. Luckily, tomorrow he'll be ready at six for the trip." }
+  - task: "Write a message to your group about tomorrow's trip: where and when things take place (ser) and what is available, closed or pending (estar)."
+    min: 60
+    max: 110
+    use: [w.disponible, w.pendiente, w.en-obras, w.prohibido, w.averiado]
+    useAtLeast: 3
+    grammar: [g.ser-estar-advanced]
+    expect:
+      - { pattern: "\\b(es|ser[aá]) (en|a las|el|ma[nñ]ana)\\b", hint: "Use ser for where and when an event takes place: la reunión es en …, es a las diez." }
+      - { pattern: "\\b(est[aá]|est[aá]n) (disponible|pendiente|prohibid|cerrad|abiert|en obras|de vacaciones|de baja|averiad)", hint: "Use estar for states: está cerrado, está en obras, está averiado …" }
+    model: { es: "Hola a todos: la reunión para la excursión de mañana es en la entrada del hotel a las siete. La visita a las Salinas Grandes es a las diez. El autobús grande está averiado, así que vamos en dos coches. Todavía hay dos plazas disponibles. El restaurante de la carretera está en obras, por eso hay que llevar comida. Recordad que está prohibido caminar fuera del camino. El pago está pendiente para tres personas.", en: "Hi everyone: the meeting for tomorrow's trip is at the hotel entrance at seven. The visit to the Salinas Grandes is at ten. The big coach has broken down, so we're going in two cars. There are still two places available. The roadside restaurant is being renovated, so we need to bring food. Remember it's forbidden to walk off the path. Payment is still pending for three people." }
+  - task: "Write about a challenge you have taken on: when you started, how long you have been doing it and what you are about to do (ponerse a, llevar + gerund, seguir + gerund, estar a punto de)."
+    min: 50
+    max: 100
+    use: [w.reto, w.constancia, w.progreso, w.poco-a-poco, w.entrenar]
+    useAtLeast: 3
+    grammar: [g.verbal-periphrases]
+    expect:
+      - { pattern: "\\b(llevo|lleva|llevamos) [a-z0-9]+ [a-záéíóúñ]+ [a-záéíóúñ]+(ando|iendo)\\b|\\b(llevo|lleva|llevamos) [a-záéíóúñ]+(ando|iendo)\\b", hint: "Say how long with llevar + gerund: llevo diez meses entrenando …" }
+      - { pattern: "est(oy|[aá]|amos) a punto de|me puse a|se puso a|sigo [a-záéíóúñ]+(ando|iendo)|fui [a-záéíóúñ]+(ando|iendo)|volv[ií] a|dej[eé] de", hint: "Use other periphrases: me puse a …, sigo …, estoy a punto de …" }
+    model: { es: "Hace un año me puse a correr porque quería superar un reto: correr un maratón. Al principio era muy difícil y a veces me daba pereza, pero poco a poco fui mejorando. Ahora llevo diez meses entrenando cuatro días por semana y sigo notando progreso. Lo más importante es la constancia. ¡Estoy a punto de terminar mi primera carrera de cuarenta kilómetros!", en: "A year ago I took up running because I wanted to take on a challenge: running a marathon. At first it was very hard and sometimes I couldn't be bothered, but little by little I got better. Now I've been training four days a week for ten months and I'm still seeing progress. The most important thing is perseverance. I'm about to finish my first forty-kilometre race!" }
+  - task: "Write a short piece for your company newsletter introducing a new colleague: who she is, what she did before and what you hope for. Mix B1 grammar: passive, relative clauses and the subjunctive."
+    min: 50
+    max: 100
+    use: [w.contratar, w.empleado, w.ambiente, w.colaborar, w.puntual]
+    useAtLeast: 3
+    grammar: [g.b1-review]
+    expect:
+      - { pattern: "\\b(fue|ha sido) (contratad|elegid|nombrad|seleccionad)", hint: "Use the passive: ha sido contratada …" }
+      - { pattern: "esper(o|amos) que|ojal[aá]|es importante que|queremos que", hint: "Add a wish with the subjunctive: esperamos que …" }
+    model: { es: "Hola a todos: les presento a Marta Gil, la nueva empleada que ha sido contratada para nuestro equipo. Marta, que trabajó cinco años en una empresa de Salta, es una persona muy puntual y eficaz. Ya ha empezado a colaborar con nosotros en el nuevo proyecto. Esperamos que se sienta cómoda aquí y que disfrute del buen ambiente de la oficina. ¡Bienvenida, Marta!", en: "Hello everyone: let me introduce Marta Gil, the new employee who has been hired for our team. Marta, who worked for five years at a company in Salta, is very punctual and efficient. She has already started working with us on the new project. We hope she feels at home here and enjoys the good atmosphere in the office. Welcome, Marta!" }

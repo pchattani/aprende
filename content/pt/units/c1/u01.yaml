@@ -282,3 +282,45 @@ dialogues:
       - { q: "A que horas é a entrevista, segundo Caio?", options: ["Às nove", "Às dez", "À noite"], answer: 1, explain: "Que eu saiba, é às dez: as far as he knows, it's at ten." }
       - { q: "O que o gerente pediu?", options: ["Que Júlia ligasse antes para confirmar", "Que Júlia chegasse às nove", "Que Júlia levasse documentos"], answer: 0, explain: "Mandou dizer que você ligue: dizer que + subjunctive passes on an instruction." }
       - { q: "O que preocupa Júlia na proposta?", options: ["O salário baixo", "Morar longe da família", "O calor da cidade"], answer: 1, explain: "Admito que seja uma boa proposta. O problema é morar tão longe da minha família." }
+writing:
+  - task: "Your colleague in Manaus is exhausted and anxious about a project. Reply sympathetically, choosing the subjunctive to shade your meaning (Sinto muito que…, É compreensível que…, Não é que…, Que eu saiba…)."
+    min: 110
+    max: 190
+    use: [w.que-eu-saiba, w.compreensível, w.incerteza, w.pressentimento, w.temer]
+    useAtLeast: 3
+    grammar: [g.subjunctive-nuance]
+    expect:
+      - { pattern: '\b(lamento|sinto muito|compreendo|entendo|admito|n[aã]o nego|temo|receio) que\b|(?<!\p{L})é compreens[ií]vel que\b|\bn[aã]o [eé] que\b', hint: "Shade your meaning: Sinto muito que…, É compreensível que…, Não é que…" }
+      - { pattern: '(?<!\p{L})(esteja|estejam|seja|sejam|tenha|tenham|possa|possam|haja|fique|deixe|sinta|consiga|acabe|venha)(?!\p{L})', hint: "Use the subjunctive after these expressions: esteja, deixe, seja…" }
+    model: { es: "Querida Lúcia, sinto muito que você esteja tão cansada. É compreensível que a incerteza sobre o projeto te deixe ansiosa: os chefes ainda não decidiram nada e, que eu saiba, o prazo continua o mesmo. Não é que o seu trabalho não seja bom; pelo contrário, todos o admiram. O problema é que a pressão vem de fora. Confesso que tenho um pressentimento bom: acho que vão aprovar a proposta. Ainda assim, temo que você acabe ficando doente se continuar trabalhando de madrugada. Por que você não tira uns dias de folga e vai a uma ópera no Teatro Amazonas? Seja como for, conte comigo para o que precisar. Um abraço forte, Marta.", en: "Dear Lúcia, I'm so sorry you're so tired. It's understandable that the uncertainty about the project makes you anxious: the bosses haven't decided anything yet and, as far as I know, the deadline is still the same. It's not that your work isn't good; on the contrary, everyone admires it. The problem is that the pressure comes from outside. I confess I have a good feeling: I think they'll approve the proposal. Even so, I'm afraid you'll end up ill if you carry on working into the small hours. Why don't you take a few days off and go to an opera at the Teatro Amazonas? Whatever happens, you can count on me for anything you need. A big hug, Marta." }
+  - task: "Write the introduction to a travel blog post about Manaus using onde quer que, o que quer que, quem quer que and fixed subjunctive phrases (seja como for, custe o que custar)."
+    min: 110
+    max: 190
+    use: [w.onde-quer-que, w.o-que-quer-que, w.quem-quer-que, w.inesquecível, w.atrair]
+    useAtLeast: 3
+    grammar: [g.subjunctive-relative-advanced]
+    expect:
+      - { pattern: '\b(onde|o que|quem|quando|como) quer que\b', hint: "Use onde quer que / o que quer que / quem quer que + subjunctive." }
+      - { pattern: '\b(seja como for|custe o que custar|venha o que vier)\b', hint: "Add a fixed subjunctive phrase: seja como for, custe o que custar…" }
+    model: { es: "Manaus é uma cidade singular, que atrai visitantes do mundo inteiro. Onde quer que você vá, vai sentir a presença da floresta: no calor úmido, nos peixes do mercado, nos rios enormes que passam pela cidade. O que quer que você escolha fazer, não deixe de assistir a uma ópera no Teatro Amazonas, um prédio notável da época da borracha. Quem quer que tenha estado lá dirá o mesmo: é uma experiência inesquecível. E, custe o que custar, faça um passeio de barco até o Encontro das Águas, onde o Rio Negro e o Solimões correm lado a lado. Seja como for, uma coisa é certa: você vai querer voltar.", en: "Manaus is a unique city that attracts visitors from all over the world. Wherever you go, you'll feel the forest's presence: in the humid heat, in the market fish, in the huge rivers that flow past the city. Whatever you choose to do, don't miss an opera at the Teatro Amazonas, a remarkable building from the rubber era. Anyone who has been there will tell you the same: it's an unforgettable experience. And, whatever it takes, go on a boat trip to the Meeting of the Waters, where the Rio Negro and the Solimões flow side by side. Either way, one thing is certain: you'll want to come back." }
+  - task: "Write an analytical paragraph on the challenges of a city in the middle of the rainforest, using o fato de (que) with the infinitive or the subjunctive."
+    min: 110
+    max: 190
+    use: [w.o-fato-de-que, w.inegável, w.inevitável, w.pressão, w.dificultar]
+    useAtLeast: 3
+    grammar: [g.o-fato-de-que]
+    expect:
+      - { pattern: '\bo fato de\b', hint: "Use o fato de (que): O fato de Manaus estar no meio da floresta…" }
+      - { pattern: '\b(dificulta|faz com que|explica|torna|implica|significa|aumenta)\b', hint: "Say what the fact causes or means: dificulta…, não significa que…" }
+    model: { es: "O fato de Manaus estar no meio da floresta amazônica é, ao mesmo tempo, a sua maior riqueza e o seu maior desafio. Por um lado, é inegável que a natureza atrai turistas e pesquisadores de todo o mundo. Por outro, o fato de não haver estradas que liguem a cidade ao resto do país dificulta o transporte de produtos e encarece o custo de vida. Além disso, o crescimento da cidade aumenta a pressão sobre a floresta mais próxima. O fato de que muitos especialistas considerem esse avanço inevitável não significa que devamos aceitá-lo sem discussão: a proteção da floresta deve ser uma prioridade de todos, e não apenas do governo.", en: "The fact that Manaus lies in the middle of the Amazon rainforest is at once its greatest wealth and its greatest challenge. On the one hand, nature undeniably attracts tourists and researchers from all over the world. On the other, the fact that there are no roads linking the city to the rest of the country makes transporting goods difficult and drives up the cost of living. Moreover, the city's growth increases pressure on the nearest forest. The fact that many experts consider this advance inevitable does not mean we should accept it without debate: protecting the forest must be everyone's priority, not just the government's." }
+  - task: "Reply to an online comment saying the Amazon isn't worth visiting. Concede some points, then argue back (Admito que…, Reconheço que…, É imprescindível que…)."
+    es: "Ir para a Amazônia? Muito longe, muito calor e muito mosquito. Não vale a pena."
+    min: 110
+    max: 190
+    use: [w.imprescindível, w.indispensável, w.relutante, w.inusitado, w.crucial]
+    useAtLeast: 3
+    grammar: [g.subjunctive-nuance, g.o-fato-de-que]
+    expect:
+      - { pattern: '\b(admito|reconhe[cç]o|concordo|n[aã]o nego) que\b', hint: "Concede a point: Admito que…, Reconheço que…" }
+      - { pattern: '(?<!\p{L})é (imprescind[ií]vel|indispens[aá]vel|crucial|fundamental|primordial|essencial)\b', hint: "Insist with an impersonal expression: É imprescindível que…" }
+    model: { es: "Admito que a viagem seja longa e que o calor, para quem não está acostumado, possa ser difícil. Também reconheço que os mosquitos existem. No entanto, discordo totalmente de que não valha a pena. A Amazônia oferece experiências inusitadas que não se encontram em nenhum outro lugar: dormir numa rede no meio da selva, ver botos cor-de-rosa, ouvir a floresta à noite. Para aproveitar bem, é imprescindível que o visitante leve repelente e roupas leves, e é indispensável contratar um guia local. Quem estiver relutante pode começar por Manaus, que tem todo o conforto de uma grande cidade. É crucial, porém, ir com a mente aberta. Garanto que ninguém se arrepende.", en: "I admit the journey may be long and that the heat, for those who aren't used to it, can be hard. I also recognise that mosquitoes exist. However, I completely disagree that it isn't worth it. The Amazon offers unusual experiences you won't find anywhere else: sleeping in a hammock in the middle of the jungle, seeing pink river dolphins, listening to the forest at night. To make the most of it, visitors must take insect repellent and light clothes, and hiring a local guide is essential. Anyone who's reluctant can start with Manaus, which has all the comforts of a big city. It's crucial, though, to go with an open mind. I guarantee nobody regrets it." }

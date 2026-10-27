@@ -282,3 +282,43 @@ dialogues:
       - { q: "Qu'avait dit le guide la veille ?", options: ["Qu'ils feraient demi-tour si le vent se levait", "Qu'il ferait beau toute la semaine", "Qu'il fallait dormir dans la vallée"], answer: 0, explain: "« La veille, il avait dit qu'on ferait demi-tour si le vent se levait »." }
       - { q: "Que leur a proposé le guide ?", options: ["De réessayer la semaine suivante", "D'attendre au refuge", "De prendre l'hélicoptère"], answer: 0, explain: "« qu'on pourrait réessayer la semaine suivante »: la semaine suivante = the week after." }
       - { q: "Pourquoi le guide a-t-il ri ?", options: ["Thomas est tombé", "Thomas lui a demandé de garantir du soleil", "Julie a fait une blague"], answer: 1, explain: "Thomas asked « s'il me garantissait du soleil »." }
+writing:
+  - task: "The mountain guide had promised good weather, but there was a storm. Tell the story, reporting what he had said (il avait dit qu'il ferait beau, que nous arriverions…)."
+    min: 80
+    max: 150
+    use: [w.guide-de-haute-montagne, w.refuge, w.ascension, w.promesse, w.cordée]
+    useAtLeast: 3
+    grammar: [g.concordance-des-temps]
+    expect:
+      - { pattern: "\\b(avait|avaient|a|ont|m['’]avait|nous avait|m['’]a|nous a) (dit|promis|assur|annonc|expliqu|affirm|pr[eé]venu|jur|garanti)", hint: "Report what was said in the past: il avait dit que…, il nous avait promis que…" }
+      - { pattern: "\\bqu(e\\s|['’])\\s?(il|elle|on|nous|ils|elles|je|j['’]|tu|vous|le|la|les)\\s?[^.!?]{0,20}r(ait|aient|ions|ais)\\b", hint: "Use the conditional for the future in the past: qu'il ferait beau, que nous arriverions…" }
+    model: { es: "L'été dernier, j'ai tenté l'ascension du mont Blanc avec un guide de haute montagne. La veille, il nous avait promis qu'il ferait beau pendant deux jours. Il avait expliqué que nous arriverions au refuge du Goûter vers midi et que nous partirions pour le sommet à deux heures du matin. Il nous avait assuré que la cordée serait en sécurité. Malheureusement, il n'avait pas vu le dernier bulletin : en début d'après-midi, un énorme orage est arrivé. Nous avons dû faire demi-tour. Le guide n'a pas tenu sa promesse, mais il nous a sans doute sauvé la vie !", en: "Last summer I attempted to climb Mont Blanc with a mountain guide. The day before, he had promised us the weather would be fine for two days. He had explained that we would reach the Goûter hut around noon and leave for the summit at two in the morning. He had assured us that the rope team would be safe. Unfortunately he hadn't seen the latest forecast: in the early afternoon a huge storm arrived. We had to turn back. The guide didn't keep his promise, but he probably saved our lives!" }
+  - task: "You were caught in a snowstorm and rescued. Report your conversation with the rescuers: what they asked you and what they told you to do (ils m'ont demandé si…, ils nous ont dit de…)."
+    min: 80
+    max: 150
+    use: [w.secours, w.sauveteur, w.hélicoptère, w.tempête-de-neige, w.épuisé]
+    useAtLeast: 3
+    grammar: [g.discours-indirect-avance]
+    expect:
+      - { pattern: "\\b(demand[eé]|demandaient|demandait|voulaient savoir|voulait savoir)[^.!?]{0,15}\\b(si|s['’]il|s['’]ils|o[uù]|ce qu|pourquoi|comment|quand|combien|de\\s|d['’])", hint: "Report questions and orders: ils m'ont demandé si…, ils nous ont demandé de…" }
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(avions|aviez|avaient|avait|avais|[eé]tions|[eé]taient|[eé]tait|[eé]tais)\\b", hint: "Shift the tenses: si nous avions…, où nous étions…" }
+    model: { es: "Pendant la tempête de neige, nous avons appelé les secours. Un sauveteur nous a demandé où nous étions exactement et si quelqu'un était blessé. Je lui ai répondu que nous étions épuisés, mais que tout le monde allait bien. Il m'a demandé combien de temps nous pouvions encore attendre. Ensuite, il nous a demandé de ne pas bouger et de rester ensemble. Il nous a dit qu'un hélicoptère viendrait dès que le vent baisserait. Une heure plus tard, les sauveteurs nous ont expliqué que nous avions eu beaucoup de chance.", en: "During the snowstorm we called the emergency services. A rescuer asked us where exactly we were and whether anyone was injured. I answered that we were exhausted but that everyone was fine. He asked me how much longer we could wait. Then he asked us not to move and to stay together. He told us that a helicopter would come as soon as the wind dropped. An hour later the rescuers explained to us that we had been very lucky." }
+  - task: "Write a diary entry a few days after a ski competition in Chamonix, telling what happened the day before, on the day and the day after (la veille, ce jour-là, le lendemain, le surlendemain)."
+    min: 80
+    max: 150
+    use: [w.compétition, w.médaille, w.piste, w.le-surlendemain, w.victoire]
+    useAtLeast: 3
+    grammar: [g.time-shift-expressions]
+    expect:
+      - { pattern: "\\b(la veille|le lendemain|le surlendemain|ce jour-l[aà]|l['’]avant-veille|la semaine pr[eé]c[eé]dente|la semaine suivante|le mois suivant)", hint: "Use past time expressions: la veille, ce jour-là, le lendemain…" }
+    model: { es: "Mardi 14 février. Samedi dernier, j'ai participé à ma première compétition de ski à Chamonix. La veille, j'étais tellement stressée que je n'ai presque pas dormi. Ce jour-là, il faisait très froid, mais la piste était parfaite. Je suis partie la dixième et j'ai skié plus vite que jamais. À l'arrivée, mon moniteur m'a annoncé que j'avais gagné la médaille d'argent ! Le lendemain, toute ma famille est venue fêter cette victoire au restaurant. Le surlendemain, j'avais encore mal aux jambes, mais j'étais tellement fière !", en: "Tuesday 14 February. Last Saturday I took part in my first ski competition in Chamonix. The day before, I was so stressed that I hardly slept. On the day it was very cold, but the slope was perfect. I started tenth and skied faster than ever. At the finish my instructor told me I had won the silver medal! The next day my whole family came to celebrate the victory at a restaurant. Two days later my legs still hurt, but I was so proud!" }
+  - task: "Write an opinion piece about the melting glaciers: report what people used to say or promise (on disait que…, les scientifiques avaient prévu que…) and give your view."
+    min: 90
+    max: 150
+    use: [w.réchauffement, w.fonte, w.reculer, w.effet-de-serre, w.développement-durable]
+    useAtLeast: 3
+    grammar: [g.concordance-des-temps, g.discours-indirect-avance]
+    expect:
+      - { pattern: "\\b(disai(t|ent)|pensai(t|ent)|croyai(t|ent)|avai(t|ent) (dit|pr[eé]vu|promis|annonc|expliqu|averti)|a (dit|promis|annonc)|ont (dit|promis|annonc|pr[eé]vu|averti))", hint: "Report past statements: on disait que…, les scientifiques avaient prévu que…" }
+      - { pattern: "\\bqu(e\\s|['’])\\s?(il|elle|on|ils|elles|la|le|les|nous)\\b[^.!?]{0,25}(r(ait|aient)|avai(t|ent) [a-zàâçéèêëîïôûùœ]+)\\b", hint: "Shift the tenses after a past reporting verb: que la glace resterait…, qu'il avait…" }
+    model: { es: "Quand mes grands-parents étaient jeunes, on disait que la Mer de Glace serait toujours là. Les guides affirmaient qu'on pourrait la voir pendant des siècles. Pourtant, dès les années 1980, les scientifiques avaient prévu que le réchauffement climatique ferait reculer les glaciers. Aujourd'hui, la fonte est spectaculaire : le glacier a perdu des dizaines de mètres. Les gouvernements avaient promis qu'ils diminueraient les gaz à effet de serre, mais ils n'ont pas tenu leurs promesses. À mon avis, il faut encourager un tourisme durable dans les Alpes et limiter les voitures dans la vallée. Il est encore temps d'agir.", en: "When my grandparents were young, people said the Mer de Glace would always be there. Guides claimed it could be seen for centuries. Yet as early as the 1980s, scientists had predicted that global warming would make the glaciers retreat. Today the melting is spectacular: the glacier has lost dozens of metres. Governments had promised they would reduce greenhouse gases, but they haven't kept their promises. In my opinion we must encourage sustainable tourism in the Alps and limit cars in the valley. There is still time to act." }

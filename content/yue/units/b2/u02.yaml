@@ -252,3 +252,47 @@ dialogues:
       - { q: "阿詠點解冇水飲？", options: ["佢唔記得帶", "佢飲晒", "佢唔鍾意飲水"], answer: 0, explain: "She says 唔記得咗囉: she forgot to bring it, even though Fung told her ages ago." }
       - { q: "阿峰話行到上面會點？", options: ["坐纜車落山", "請阿詠食雪糕", "去寶蓮寺食齋"], answer: 1, explain: "行到上面我請你食雪糕: he'll buy her an ice cream at the top." }
       - { q: "最後阿詠決定點做？", options: ["坐巴士返去", "喺下面等", "頂硬上，行上去"], answer: 2, explain: "Her last line, 頂硬上囉, means she'll grit her teeth and climb." }
+writing:
+  - task: "Your friend is worried about the long wait for the Ngong Ping cable car. Reply that the answer is obvious, using 咪…囉 and 嘛."
+    es: "纜車要等成個鐘，點算呀？"
+    min: 60
+    max: 110
+    use: [w.mai6, w.lo1, w.faan2-zing3, w.daai6-fat6, w.sam1-gap1]
+    useAtLeast: 3
+    grammar: [g.lo1-obvious, g.maa3-as-you-know]
+    expect:
+      - { pattern: "咪.{1,10}囉|囉", hint: "Give the obvious answer with 咪…囉: 咪坐巴士囉！" }
+      - { pattern: "嘛", hint: "Give the obvious reason with 嘛: 大佛又唔會走嘛." }
+    model: { es: "咁咪坐巴士上去囉！反正大佛又唔會走嘛，唔使咁心急。坐巴士仲平啲，一路上風景都好靚。我哋喺東涌等你。如果你真係想坐纜車，就早啲嚟排隊囉，聽朝八點應該冇咁多人。", en: "Then just take the bus up! The Big Buddha isn't going anywhere, after all, so no need to rush. The bus is cheaper too, and the scenery is lovely all the way. We'll wait for you in Tung Chung. If you really want to take the cable car, just come and queue early; at eight tomorrow morning there shouldn't be so many people." }
+  - task: "Your friend has lived in Hong Kong for ten years but never visited the Big Buddha. React with surprise using 咩, and insist on taking them."
+    es: "我未去過大佛。"
+    min: 60
+    max: 110
+    use: [w.me1.b, w.jau5-mou5-gaau2-co3, w.m4-tung1, w.keoi5-zyut6]
+    useAtLeast: 3
+    grammar: [g.me1-surprise]
+    expect:
+      - { pattern: "咩[？?]", hint: "Show surprise with 咩: 你未去過咩？" }
+      - { pattern: "唔通|難道|有冇搞錯", hint: "Add disbelief: 唔通…？ 有冇搞錯！" }
+    model: { es: "你未去過咩？你喺香港住咗十年都未去過？有冇搞錯呀！唔通你唔鍾意行山？下個禮拜我帶你去，唔准拒絕呀！大佛好大㗎，上面風景又靚，仲有齋菜食添。你一定會鍾意。", en: "You've never been? You've lived in Hong Kong for ten years and never been? Are you kidding me? Could it be that you don't like hiking? I'm taking you next week, and you're not allowed to say no! The Big Buddha is huge, the view up there is beautiful, and there's vegetarian food too. You'll love it." }
+  - task: "Your friend complains about being tired. Point out the obvious reason with 明明 and 嘛, and give advice."
+    es: "我今日好攰呀，唔知點解。"
+    min: 60
+    max: 110
+    use: [w.ming4-ming4, w.dou1-waa6-zo2, w.maa3.b, w.sai2-mat1]
+    useAtLeast: 3
+    grammar: [g.maa3-as-you-know]
+    expect:
+      - { pattern: "嘛", hint: "Point out the obvious with 嘛." }
+      - { pattern: "明明|都話咗|一早", hint: "Add 明明 or 都話咗 for 'I told you so'." }
+    model: { es: "你尋晚明明三點先瞓，梗係攰啦。我都話咗你唔好成晚睇劇嘛。今晚早啲瞓啦，使乜諗咁多？聽日自然會好返。如果你再噉落去，身體一定頂唔順嘅。仲有，少啲飲咖啡啦。", en: "You obviously went to bed at three last night, so of course you're tired. I told you not to binge-watch all night! Go to bed early tonight; why overthink it? You'll naturally feel better tomorrow. If you carry on like this, your body won't be able to take it. And drink less coffee." }
+  - task: "Complain to a friend about an annoying, long-winded colleague, and say what you'll do about it with 囉."
+    min: 60
+    max: 120
+    use: [w.coeng4-hei3, w.pai1-ping4, w.jan2, w.ding2-m4-zyu6, w.faan2-zing3]
+    useAtLeast: 3
+    grammar: [g.lo1-obvious]
+    expect:
+      - { pattern: "囉", hint: "Say 'that's just how it is' with 囉." }
+      - { pattern: "煩|長氣|囉唆|激氣|頂唔住", hint: "Describe how annoying it is: 好長氣, 頂唔住…" }
+    model: { es: "我個同事真係好長氣，日日喺度批評人，又成日囉唆。我忍咗佢好耐，今日真係頂唔住喇。不過反正下個月佢就轉工，忍多陣咪得囉。我同老細講過，佢都話冇辦法。", en: "My colleague is so long-winded. He criticises people every day and nags all the time. I've put up with him for ages, and today I really couldn't take it any more. But he's changing jobs next month anyway, so I'll just put up with it a bit longer. I've talked to the boss, and he says there's nothing he can do either." }

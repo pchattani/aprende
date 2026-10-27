@@ -281,3 +281,42 @@ dialogues:
       - { q: "Por que a Juliana quer sair cedo?", options: ["Para pegar uma mesa boa", "Para jantar antes", "Para ver o pôr do sol"], answer: 0, explain: "Precisamos sair agora para a gente pegar uma mesa boa." }
       - { q: "Por que a Juliana ligou para o restaurante?", options: ["Para eles guardarem uma mesa", "Para cancelar a reserva", "Para pedir o cardápio"], answer: 0, explain: "Liguei para o restaurante para eles guardarem uma mesa." }
       - { q: "Por que o Thiago vai pegar o casaco?", options: ["Porque vai chover", "Para não passar frio", "Para dar à Juliana"], answer: 1, explain: "Deixa eu pegar o casaco para não passar frio." }
+writing:
+  - task: "Write a message to your travel group about what everyone must do so you all get to the airport on time, using the personal infinitive (para chegarmos…, antes de vocês saírem…)."
+    min: 50
+    max: 100
+    use: [w.a-tempo, w.antecedência, w.embarque, w.portão, w.atrasar-se]
+    useAtLeast: 3
+    grammar: [g.personal-infinitive-forms, g.personal-infinitive-uses]
+    expect:
+      - { pattern: '\b(para|antes de|depois de|sem|at[eé]|ao|é importante|é melhor)( [a-zà-ú]+)? [a-zà-ú]+(rmos|rem)\b', hint: "Use the personal infinitive: para chegarmos…, antes de vocês saírem…" }
+    model: { es: "Gente, o voo para Diamantina sai às sete. Para chegarmos a tempo, precisamos sair de casa às cinco. Antes de vocês saírem, verifiquem os documentos. É importante estarmos no portão de embarque com antecedência, às seis e meia. Ninguém pode se atrasar! Depois de chegarmos, vamos direto para a pousada.", en: "Everyone, the flight to Diamantina leaves at seven. For us to get there on time, we need to leave home at five. Before you leave, check your documents. It's important for us to be at the boarding gate early, at half past six. Nobody can be late! After we arrive, we'll go straight to the guesthouse." }
+  - task: "You are saving money. Explain what you are doing and why (para + infinitive, para que + subjunctive, até que…)."
+    min: 50
+    max: 100
+    use: [w.economizar, w.poupar, w.orçamento, w.economia, w.para-que]
+    useAtLeast: 3
+    grammar: [g.subjunctive-purpose]
+    expect:
+      - { pattern: '\bpara que\b', hint: "Use para que + subjunctive when the subject changes: para que os meus filhos possam…" }
+      - { pattern: '\bpara [a-zà-ú]+(ar|er|ir)\b', hint: "Use para + infinitive for your own purpose: para viajar…" }
+    model: { es: "Este ano estou economizando para viajar nas férias de julho. Fiz um orçamento e mudei alguns hábitos: levo almoço de casa e uso menos o carro. Também poupo um pouco todo mês para que os meus filhos possam fazer um curso de inglês. Vou continuar assim até que a gente tenha dinheiro suficiente. A economia vale a pena!", en: "This year I'm saving up to travel in the July holidays. I made a budget and changed a few habits: I take lunch from home and use the car less. I also put a little aside every month so that my children can take an English course. I'll carry on like this until we have enough money. Saving is worth it!" }
+  - task: "Describe a festa junina to a friend who has never been to one, and tell them what to do to enjoy it (para você aproveitar…, antes de irmos…)."
+    min: 50
+    max: 100
+    use: [w.festa-junina, w.quadrilha, w.fogueira, w.quentão, w.pamonha]
+    useAtLeast: 3
+    grammar: [g.personal-infinitive-uses, g.subjunctive-purpose]
+    expect:
+      - { pattern: '\b(para|antes de|depois de|sem)( voc[eê]| voc[eê]s| a gente| n[oó]s)? [a-zà-ú]+(r|rmos|rem)\b', hint: "Use para / antes de + infinitive: para você aproveitar…, antes de irmos…" }
+    model: { es: "A festa junina é uma festa típica de junho, com comida, música e dança. As pessoas dançam a quadrilha em pares e ficam perto da fogueira, porque à noite faz frio. Para você aproveitar bem, chegue cedo e experimente a pamonha, a canjica e o quentão. Antes de irmos, vou te ensinar a dançar a quadrilha!", en: "The festa junina is a traditional June festival, with food, music and dancing. People dance the quadrilha in pairs and stay near the bonfire, because it's cold at night. To make the most of it, get there early and try the pamonha, the canjica and the quentão. Before we go, I'll teach you to dance the quadrilha!" }
+  - task: "Tell the story of a football match you went to: what you did to get good seats and support the team, and how it ended."
+    min: 50
+    max: 100
+    use: [w.estádio, w.torcida, w.arquibancada, w.vitória, w.empate]
+    useAtLeast: 3
+    grammar: [g.personal-infinitive-uses]
+    expect:
+      - { pattern: '\bpara( os [a-zà-ú]+| eles| n[oó]s| a gente)? [a-zà-ú]+(rmos|rem|r)\b', hint: "Use (personal) infinitive for purpose: para pegarmos um bom lugar…" }
+      - { pattern: '(vit[oó]ria|derrota|empate|empat|ganh|perd)', hint: "Say how the match ended: vitória, empate, derrota…" }
+    model: { es: "No domingo fui ao estádio com os meus primos para ver o Atlético. Chegamos duas horas antes para pegarmos um bom lugar na arquibancada. A torcida cantou o jogo inteiro para os jogadores sentirem o nosso apoio. O primeiro tempo terminou em empate, mas no final o time fez um gol e foi uma vitória linda!", en: "On Sunday I went to the stadium with my cousins to see Atlético. We got there two hours early to get good seats in the stands. The fans sang the whole match so the players would feel our support. The first half ended in a draw, but at the end the team scored and it was a beautiful win!" }

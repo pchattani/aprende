@@ -193,7 +193,7 @@ rules:
     grammar: g.prepositions-verbs
     example: { wrong: consiste de tres partes, right: consiste en tres partes }
   - id: responsable-para
-    pattern: '\bresponsable para\b'
+    pattern: '\bresponsables? para (el|la|los|las|un|una|unos|unas|mi|tu|su|mis|tus|sus|nuestro|nuestra|este|esta|ese|esa)\b'
     message: responsable de.
     grammar: g.prepositions-verbs
     example: { wrong: responsable para el proyecto, right: responsable del proyecto }

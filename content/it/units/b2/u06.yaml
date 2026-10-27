@@ -281,3 +281,37 @@ dialogues:
       - { q: "Chi riparerà il motorino?", options: ["Giada.", "Il gommista qui accanto.", "Un tecnico di Napoli."], answer: 1, explain: "La faccio riparare dal gommista qui accanto." }
       - { q: "Che cosa consiglia Pasquale a Giada?", options: ["Di prendere il traghetto.", "Di fare un giro a piedi.", "Di noleggiare un altro motorino."], answer: 1, explain: "Lasci qui il motorino e se ne vada a fare un giro a piedi." }
       - { q: "Quanto deve pagare Giada per la riparazione?", options: ["Niente.", "Mezza giornata di noleggio.", "Il prezzo della gomma."], answer: 0, explain: "Lasci perdere: la gomma era vecchia, non è colpa sua." }
+writing:
+  - task: "Write a chatty message to a friend about a stressful day, using pronominal verbs (avercela con, prendersela, andarsene, farcela, smetterla, fregarsene…)."
+    min: 80
+    max: 140
+    use: [w.smetterla, w.fregarsene, w.urlare]
+    grammar: [g.pronominal-verbs]
+    expect:
+      - { pattern: "\\b(me|te|se|ce|ve)\\s+(ne|la|l['’])\\s*\\S+|\\b\\S+(sela|tela|mela|cela|vela|sene|tene|mene|cene)\\b|\\bce l['’]\\s?(aveva|ho|hai|ha|avevo)", hint: "Use pronominal verbs: me ne sono andata, non me la sono presa, ce l'aveva con…" }
+    model: { es: "Che giornata! Stamattina il mio capo ce l'aveva con tutti e alla riunione ha cominciato a urlare. Io non me la sono presa, ma la mia collega ci è rimasta male. Alle sei me ne sono andata senza salutare: non ce la facevo più! Poi in metro un tipo continuava a parlare al telefono ad alta voce. Gli ho chiesto di smetterla, ma lui se n'è fregato. Stasera non me la sento di uscire: resto a casa, ordino una pizza e mi guardo un film. Domani è un altro giorno!", en: "What a day! This morning my boss was angry with everyone and at the meeting he started shouting. I didn't take it personally, but my colleague was upset. At six I left without saying goodbye: I couldn't take any more! Then on the metro a guy kept talking loudly on the phone. I asked him to stop, but he couldn't care less. Tonight I don't feel up to going out: I'm staying in, ordering a pizza and watching a film. Tomorrow is another day!" }
+  - task: "Write a postcard from Procida: how you are enjoying yourselves, how you get by without a car and how your friends are doing (godersela, arrangiarsi, passarsela…)."
+    min: 80
+    max: 140
+    use: [w.arrangiarsi, w.aliscafo, w.godere]
+    grammar: [g.pronominal-verbs]
+    expect:
+      - { pattern: "\\b(ce la|te la|ve la|me la|se la)\\s+\\S+|\\b\\S+(sela|tela|mela|cela|vela)\\b|\\b(ci|mi|ti|si|vi)\\s+arrang\\S*", hint: "Use pronominal verbs: ce la godiamo, ce la passiamo bene, ci arrangiamo…" }
+    model: { es: "Ciao ragazzi! Siamo a Procida da cinque giorni e ce la stiamo godendo davvero. Siamo arrivati con l'aliscafo da Napoli: in quaranta minuti eravamo già sull'isola. Qui la macchina non serve, quindi ci arrangiamo con l'autobus e con le nostre gambe. La mattina andiamo in spiaggia, il pomeriggio facciamo un giro tra le case colorate della Corricella e la sera mangiamo pesce fresco. Insomma, ce la passiamo benissimo! Non ce l'aspettavamo così tranquilla. E voi, come ve la passate in città? Un abbraccio!", en: "Hi guys! We've been on Procida for five days and we're really enjoying it. We came over on the hydrofoil from Naples: in forty minutes we were already on the island. You don't need a car here, so we get by with the bus and our own legs. In the morning we go to the beach, in the afternoon we wander among the colourful houses of the Corricella and in the evening we eat fresh fish. In short, we're having a great time! We didn't expect it to be so peaceful. And how are you getting on in the city? Hugs!" }
+  - task: "Your scooter broke down in Naples. Tell a friend what you had done at the garage (ho fatto riparare, mi sono fatto fare un preventivo, ho fatto controllare…)."
+    min: 80
+    max: 140
+    use: [w.riparare, w.preventivo, w.officina, w.sostituire, w.gomma]
+    grammar: [g.fare-causative]
+    expect:
+      - { pattern: "\\b(fatto|faccio|fare|far|farò|farmi|farlo|farla|farsi|fatta)\\s+(\\S+\\s+)?\\S+(are|ere|ire)\\b", hint: "Use fare + infinitive: ho fatto riparare, mi sono fatto fare…" }
+    model: { es: "Ieri il mio motorino si è fermato in mezzo al traffico di Napoli! L'ho portato in un'officina vicino a casa e mi sono fatto fare un preventivo: duecento euro, perché era necessario sostituire tutte e due le gomme e fare la revisione. Ho deciso di farlo riparare lì, perché il meccanico è molto bravo. Intanto ho fatto controllare anche la luce davanti, che non funzionava. Domani, quando vado a prenderlo, mi faccio spiegare come fare la manutenzione da solo. Così la prossima volta non devo far vedere il motorino a nessuno!", en: "Yesterday my scooter stopped in the middle of the Naples traffic! I took it to a garage near home and got them to give me an estimate: two hundred euros, because both tyres needed replacing and it needed a service. I decided to have it repaired there, because the mechanic is very good. Meanwhile I also had the front light checked, as it wasn't working. Tomorrow, when I go to pick it up, I'll get him to explain how to do the maintenance myself. That way next time I won't have to show the scooter to anyone!" }
+  - task: "Tell a friend about your visit to a hairdresser in Procida, where you let the stylist decide: use fare + infinitive (mi sono fatta tagliare…) and lasciare + infinitive (l'ho lasciata fare…)."
+    min: 80
+    max: 140
+    use: [w.lasciare-fare, w.taglio, w.tinta, w.piega, w.accorciare]
+    grammar: [g.lasciare-infinitive, g.fare-causative]
+    expect:
+      - { pattern: "\\b(lasci[aoi]|lasciato|lasciata|lasciami|lascialo|lasciala|lasciatemi|lasciamo|lascerò)\\s+\\S+(are|ere|ire)\\b|\\b(l['’]ho|li ho|mi ha|mi hanno)\\s+lasciat[oa]\\s+\\S+", hint: "Use lasciare + infinitive: l'ho lasciata fare, mi lasci lavorare…" }
+      - { pattern: "\\b(fatt[oa]|faccio|far|farmi|farsi)\\s+\\S+(are|ere|ire)\\b", hint: "Use fare + infinitive: mi sono fatta tagliare i capelli." }
+    model: { es: "Oggi mi sono fatta tagliare i capelli da una parrucchiera di Procida. Volevo solo accorciarli un po', ma lei mi ha detto di lasciarla fare e di fidarmi di lei. Allora l'ho lasciata lavorare senza dire niente. Mi ha fatto anche una tinta più chiara e una piega perfetta. Quando mi sono guardata allo specchio, non mi riconoscevo! Il taglio è corto e moderno, molto diverso dal solito. All'inizio ero un po' preoccupata, ma mio marito dice che sto benissimo. La prossima volta mi lascerò convincere di nuovo!", en: "Today I had my hair cut by a hairdresser in Procida. I only wanted to have it shortened a bit, but she told me to let her get on with it and to trust her. So I let her work without saying anything. She also gave me a lighter colour and a perfect blow-dry. When I looked in the mirror, I didn't recognise myself! The cut is short and modern, very different from usual. At first I was a bit worried, but my husband says it really suits me. Next time I'll let myself be persuaded again!" }

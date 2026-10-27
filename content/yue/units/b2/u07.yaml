@@ -296,3 +296,41 @@ dialogues:
       - { q: "阿琛點解唔轉工？", options: ["佢好鍾意份工", "佢手緊，怕冇收入", "老細好大方"], answer: 1, explain: "He is short of money (手緊), so being fired would be a disaster." }
       - { q: "上次發生咩事？", options: ["阿琛幫老細食死貓", "阿蕎畀人炒咗魷魚", "阿琛加咗人工"], answer: 0, explain: "The boss made the mistake (擺烏龍) but Ah Sam took the blame (食死貓)." }
       - { q: "今晚邊個埋單？", options: ["阿蕎", "阿琛", "老細"], answer: 1, explain: "Ah Sam says 今晚我請: tonight's on him." }
+writing:
+  - task: "Tell a friend about a terrible week at work, using colloquial idioms like 擺烏龍, 食死貓 and 食白果."
+    min: 60
+    max: 120
+    use: [w.baai2-wu1-lung2, w.sik6-sei2-maau1, w.sik6-baak6-gwo2, w.caau2-jau4-jyu2]
+    useAtLeast: 3
+    grammar: [g.colloquial-idioms]
+    expect:
+      - { pattern: "擺烏龍|食死貓|炒.{0,2}魷魚|食白果|放.{0,2}飛機|甩底|撞板", hint: "Use a colloquial idiom: 擺烏龍, 食死貓…" }
+    model: { es: "我今個禮拜真係好黑仔。個同事擺烏龍，搞錯咗客戶份合約，結果我食死貓，畀老細鬧咗一餐。佢仲話如果再有下次就炒我魷魚。我諗今年嘅花紅一定食白果喇。", en: "This week has been so unlucky. A colleague made a blunder and got a client's contract wrong, and I took the blame and got told off by the boss. He even said that if it happens again he'll fire me. I reckon I'll get nothing for my bonus this year." }
+  - task: "Describe an old friend using three-character expressions like 老友記, 大頭蝦 and 無厘頭."
+    min: 60
+    max: 110
+    use: [w.lou5-jau5-gei3, w.daai6-tau4-haa1, w.gwai2-maa5, w.mou4-lei4-tau4, w.mou5-jan5]
+    useAtLeast: 3
+    grammar: [g.three-character-idioms]
+    expect:
+      - { pattern: "大頭蝦|老友記|冇癮|無厘頭|孤寒|一舊雲|鬼馬|牙擦", hint: "Use a three-character expression: 大頭蝦, 老友記…" }
+    model: { es: "阿琛係我嘅老友記，我哋識咗二十年。佢成日好大頭蝦，唔記得帶鎖匙，又成日放人飛機。不過佢好鬼馬，講嘢好無厘頭，同佢一齊從來都唔會冇癮。有佢喺度，大家都好開心。", en: "Ah Sam is my old pal; we've known each other for twenty years. He's always scatterbrained, forgets his keys and often stands people up. But he's mischievous and says the most random things, so it's never boring with him. With him around, everyone's happy." }
+  - task: "Write about money and temptation with body idioms: you're short of cash, but a sale tempts you."
+    min: 60
+    max: 110
+    use: [w.sau2-gan2, w.sam1-juk1-juk1, w.ji5-zai2-jyun5, w.gaam2-gaa3, w.gam1-go3]
+    useAtLeast: 3
+    grammar: [g.body-idioms]
+    expect:
+      - { pattern: "手緊|心郁郁|耳仔軟|頭大|手痕|心淡|眼紅|腳軟|眼淺", hint: "Use a body idiom: 手緊, 心郁郁, 耳仔軟…" }
+    model: { es: "今個月我好手緊，交完租已經冇乜錢。點知今日去商場見到減價，我即刻心郁郁，好想買對新波鞋。不過我知自己好易耳仔軟，所以最後都係忍住，冇買。", en: "I'm short of money this month; after paying the rent there's not much left. Then today I saw a sale at the mall and was immediately tempted to buy new sneakers. But I know I'm easily persuaded, so in the end I held back and didn't buy them." }
+  - task: "You're looking for a flatmate on Lamma Island. Describe your personality honestly: strengths and weaknesses."
+    min: 60
+    max: 110
+    use: [w.sing3-gaak3, w.ceoi4-wo4, w.lok6-gun1, w.kyut3-dim2, w.sat1-jau5]
+    useAtLeast: 3
+    grammar: [g.body-idioms]
+    expect:
+      - { pattern: "缺點|優點", hint: "Mention strengths or weaknesses: 我嘅缺點係…" }
+      - { pattern: "性格|個性", hint: "Describe your personality: 我性格…" }
+    model: { es: "我係一個好隨和嘅人，性格樂觀，做嘢都算主動同可靠。我嘅缺點係有啲粗心，有時又幾硬頸。不過我好尊重室友，屋企一定會整得乾乾淨淨。如果你都係鍾意靜嘅人，歡迎聯絡我。", en: "I'm a very easy-going person with an optimistic personality, and I'm fairly proactive and reliable. My weaknesses are that I'm a bit careless and sometimes quite stubborn. But I really respect my flatmates, and I'll always keep the flat spotless. If you're also someone who likes quiet, feel free to contact me." }

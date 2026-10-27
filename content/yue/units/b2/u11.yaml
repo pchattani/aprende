@@ -276,3 +276,44 @@ dialogues:
       - { q: "周太舊時喺邊度返工？", options: ["士多", "火柴廠", "茶餐廳"], answer: 1, explain: "She worked at the match factory in the old days (舊時仲喺火柴廠返過工)." }
       - { q: "周太覺得以前嘅日子點樣？", options: ["好輕鬆", "好辛苦，但係好懷念", "好悶"], answer: 1, explain: "It was hard (好辛苦), but she misses those days (好懷念嗰段日子)." }
       - { q: "周太請阿琛做乜嘢？", options: ["去士多買嘢", "得閒去佢屋企飲湯", "陪佢去碼頭"], answer: 1, explain: "She invites him over for soup whenever he's free." }
+writing:
+  - task: "Describe an intense day cycling on Peng Chau, showing how strongly you felt with verb/adjective + 到."
+    min: 60
+    max: 120
+    use: [w.fei1-hei2, w.siu3-dou3-haam3, w.gui6-dou3-sei2, w.ping4-zau1]
+    useAtLeast: 3
+    grammar: [g.dou-extent]
+    expect:
+      - { pattern: "到(飛起|死|喊|爆|暈|唔得|抽筋)", hint: "Show intensity with 到: 攰到死, 開心到飛起." }
+    model: { es: "今日去坪洲踩單車，熱到我成身都濕晒，攰到死。不過同班朋友一路傾偈，笑到喊，開心到飛起。返到屋企我即刻沖涼瞓覺，真係好難忘嘅一日。下次我仲想再去。", en: "Today I went cycling on Peng Chau. It was so hot I was soaked all over and dead tired. But chatting with my friends all the way, I laughed until I cried; I was over the moon. When I got home I showered and went straight to bed. What an unforgettable day. I want to go again next time." }
+  - task: "Write about the slow pace of life on Peng Chau and give a visitor advice, using 咁 (so) and 噉 (like this / then) correctly."
+    min: 60
+    max: 120
+    use: [w.zit3-zau3, w.gon2-si4-gaan3, w.hoi2-fung1, w.dim3-zyu2, w.daa2-ziu1-fu1]
+    useAtLeast: 3
+    grammar: [g.gam3-vs-gam2]
+    expect:
+      - { pattern: "咁", hint: "Use 咁 + adjective for 'so': 咁靜, 咁慢." }
+      - { pattern: "噉", hint: "Use 噉 for 'like this' or 'then': 噉我哋就…" }
+    model: { es: "點解坪洲咁靜㗎？原來呢度冇車，生活節奏咁慢。噉我哋就慢慢行啦，唔使趕時間。你可以學佢哋噉，坐喺海邊吹吓海風，同店主打吓招呼。噉樣先係真正嘅坪洲慢活。", en: "Why is Peng Chau so quiet? It turns out there are no cars here and the pace of life is so slow. So let's walk slowly; there's no need to hurry. You can do as they do: sit by the sea in the breeze and say hello to the shopkeepers. That's what slow living on Peng Chau is really about." }
+  - task: "Write to an old friend about how much you miss your childhood, with 有幾…呀 and 冇幾…"
+    min: 60
+    max: 120
+    use: [w.jau5-gei2.b, w.gwaa3-zyu6, w.mou5-gei2, w.tung4-nin4, w.waai4-nim6]
+    useAtLeast: 3
+    grammar: [g.jau-gei-how]
+    expect:
+      - { pattern: "有幾|幾咁", hint: "Exclaim with 有幾…呀: 你知唔知我有幾掛住…" }
+      - { pattern: "冇幾", hint: "Say 'not very' with 冇幾: 冇幾開心." }
+    model: { es: "你知唔知我有幾掛住以前喺坪洲嘅日子呀！嗰陣我哋成日喺士多買汽水，喺海邊玩到天黑。而家嘅生活冇幾開心，日日都好忙。諗起童年嘅回憶，真係好懷念。", en: "You can't imagine how much I miss our days on Peng Chau! Back then we'd always buy soft drinks at the little store and play by the sea until dark. Life now isn't much fun; I'm busy every day. Thinking back to our childhood, I really miss it." }
+  - task: "Your friend has just broken up with their partner. Write a comforting message."
+    es: "我同佢分手咗，好心痛呀。"
+    min: 60
+    max: 120
+    use: [w.sam1-tung3, w.dyun6, w.gam2-cing4, w.jan1-soeng2, w.bou1-tong1]
+    useAtLeast: 3
+    grammar: [g.dou-extent, g.gam3-vs-gam2]
+    expect:
+      - { pattern: "心痛|傷心|難過|唔開心", hint: "Acknowledge their feelings: 我知你好心痛." }
+      - { pattern: "咁|噉|到", hint: "Use 咁, 噉 or 到 to express degree." }
+    model: { es: "我知你而家心痛到唔想講嘢，不過唔好收埋自己。一段感情完咗，唔代表你唔好。你咁好人，遲早會遇到一個真係欣賞你嘅人。今晚我煲湯畀你飲，好唔好？", en: "I know you're so heartbroken you don't want to talk, but don't shut yourself away. A relationship ending doesn't mean you're not good enough. You're such a good person; sooner or later you'll meet someone who truly appreciates you. I'll make you some soup tonight, OK?" }

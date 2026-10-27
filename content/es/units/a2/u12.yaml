@@ -252,3 +252,46 @@ dialogues:
       - { q: "¿Dónde se alojó Lucía?", options: ["En hoteles", "En albergues", "En casa de amigos"], answer: 1 }
       - { q: "¿Qué no encontraba Lucía?", options: ["La mochila", "El pasaporte", "La cámara"], answer: 1 }
       - { q: "¿Dónde estaba el pasaporte al final?", options: ["En el albergue", "En la mochila de un chico alemán", "En el castillo"], answer: 1, explain: "A German guy had taken it by mistake." }
+writing:
+  - task: "Write what was happening when you arrived at the Jesuit ruins of San Ignacio (Cuando llegué, estaba lloviendo …)."
+    min: 35
+    max: 65
+    use: [w.guia, w.ruinas, w.paisaje, w.recorrer]
+    useAtLeast: 3
+    grammar: [g.estar-gerund-past]
+    expect:
+      - { pattern: "\\b(estaba|estabas|est[aá]bamos|estaban) [a-záéíóúñ]+(ando|iendo|yendo)\\b", hint: "Use estaba + gerund: estaba lloviendo, estaban corriendo …" }
+      - { pattern: "\\bcuando\\b", hint: "Say when: Cuando llegué, …" }
+    model: { es: "Cuando llegué a las ruinas de San Ignacio, estaba lloviendo un poco. Un guía estaba explicando la historia del lugar a unos turistas y unos niños estaban corriendo por el paisaje verde. Yo estaba sacando fotos cuando de pronto salió el sol.", en: "When I arrived at the ruins of San Ignacio, it was raining a little. A guide was explaining the history of the place to some tourists and some children were running across the green landscape. I was taking photos when suddenly the sun came out." }
+  - task: "Reply to your friend: say what you have just done (acabo de …), something you did again (volví a …) and a mistake you made on the way."
+    es: "¿Qué tal? ¿Dónde estás ahora?"
+    min: 30
+    max: 60
+    use: [w.acabar-de, w.volver-a, w.aprovechar, w.equivocarse, w.camino]
+    useAtLeast: 3
+    grammar: [g.acabar-de, g.volver-a]
+    expect:
+      - { pattern: "\\bacab(o|as|a|amos|an) de\\b", hint: "Say what you've just done: acabo de …" }
+      - { pattern: "\\b(volv[ií]|vuelvo|volvimos|vuelve) a\\b", hint: "Say what you did again: volví a …" }
+    model: { es: "¡Hola! Acabo de llegar a Posadas después de un día increíble. Esta mañana me equivoqué de camino y volví a la estación dos veces. Pero aproveché la tarde para visitar las ruinas otra vez, y volví a sacar mil fotos.", en: "Hi! I've just arrived in Posadas after an incredible day. This morning I took the wrong road and went back to the station twice. But I made the most of the afternoon to visit the ruins again, and I took a thousand photos again." }
+  - task: "Write a complaint about a bad day at a tourist site: nobody helped, there was nothing to eat, no tables anywhere … Use nadie, nada, ningún, ni … ni and one positive word (alguien, algo, algún)."
+    min: 30
+    max: 60
+    use: [w.ninguno, w.ni, w.lleno, w.cola, w.agotado]
+    useAtLeast: 3
+    grammar: [g.indefinite-pronouns]
+    expect:
+      - { pattern: "\\b(nadie|nada|ning[uú]n|ninguna|nunca|ni)\\b", hint: "Use negative words: nadie, nada, ningún, ni … ni …" }
+      - { pattern: "\\b(alguien|algo|alg[uú]n|alguna|algunos|algunas)\\b", hint: "Add a positive indefinite: alguien, algo, algún …" }
+    model: { es: "¡Qué día tan horrible! El restaurante estaba lleno y no había ninguna mesa. Hicimos cola una hora y al final no comimos nada. Nadie nos ayudó: no había ni guía ni información. Las entradas estaban agotadas. ¿Alguien conoce algún sitio mejor?", en: "What a horrible day! The restaurant was full and there wasn't a single table. We queued for an hour and in the end we ate nothing. Nobody helped us: there was neither a guide nor information. The tickets were sold out. Does anyone know a better place?" }
+  - task: "Write a short blog post about the most unforgettable trip of your life: where you went, what it was like, what happened and whether you recommend it."
+    min: 35
+    max: 70
+    use: [w.inolvidable, w.impresionante, w.tipico, w.tradicion, w.experiencia]
+    useAtLeast: 3
+    grammar: [g.a2-review, g.preterite-vs-imperfect]
+    expect:
+      - { pattern: "\\b[a-zñ]{3,}(é|ó|aste|iste|amos|imos|aron|ieron)(?![a-záéíóúñ])|\\b(fui|fue|fuimos|hice|hizo|tuve|estuve|vi|comí|salí|bebí|volví|conocí|aprendí)(?![a-záéíóúñ])", hint: "Tell what happened with the preterite: fui, visité, probé …" }
+      - { pattern: "\\b(era|eran|hab[ií]a|hac[ií]a|estaba)\\b", hint: "Describe with the imperfect: era, había, hacía …" }
+      - { pattern: "\\b(recomiendo|recomendar[ií]a|vale la pena|deber[ií]as)", hint: "Say whether you recommend it: lo recomiendo, vale la pena …" }
+    model: { es: "Mi viaje más inolvidable fue a Misiones el año pasado. El paisaje era impresionante: había selva, ríos y lagos. Visité las ruinas de San Ignacio, probé la comida típica y aprendí mucho sobre su historia y su tradición. Fue una experiencia genial y lo recomiendo a todo el mundo.", en: "My most unforgettable trip was to Misiones last year. The landscape was impressive: there was jungle, rivers and lakes. I visited the ruins of San Ignacio, tried the local food and learned a lot about its history and traditions. It was a great experience and I recommend it to everyone." }

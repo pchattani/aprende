@@ -285,3 +285,46 @@ dialogues:
       - { q: "Comment s'appelle le chien ?", options: ["Filou", "Manon", "Chloé"], answer: 0, explain: "« Il s'appelle Filou. »" }
       - { q: "Quel âge a Chloé ?", options: ["vingt-trois ans", "dix-neuf ans", "neuf ans"], answer: 1, explain: "Manon is twenty-three and Chloé is nineteen." }
       - { q: "D'où est le père de Hugo ?", options: ["de Paris", "de Lyon", "de Marseille"], answer: 2, explain: "« Mon père est de Marseille, mais ma mère est parisienne. »" }
+writing:
+  - task: "A painter on the place du Tertre is painting your family portrait. Tell him who is in your family and their names."
+    es: "Bonjour ! Qui est dans votre famille ?"
+    min: 15
+    max: 40
+    use: [w.famille, w.père, w.mère, w.frère, w.sœur]
+    useAtLeast: 3
+    grammar: [g.possessives, g.avoir-present]
+    expect:
+      - { pattern: "\\b(mon|ma|mes|notre|nos)\\b", hint: "Use 'my': mon père, ma mère, mes frères…" }
+      - { pattern: "\\b(s['’]appellen?t|c['’]est|voici)\\b", hint: "Give their names: Il s'appelle … / Elle s'appelle …" }
+    model: { es: "Voici ma famille. Mon père s'appelle Marc et ma mère s'appelle Claire. J'ai un frère, Lucas, et une sœur, Manon. Nous avons aussi un chien, Filou !", en: "Here is my family. My father is called Marc and my mother is called Claire. I have a brother, Lucas, and a sister, Manon. We also have a dog, Filou!" }
+  - task: "Write about three people in your family and their ages, then ask your friend how old he or she is."
+    min: 15
+    max: 40
+    use: [w.avoir, w.an, w.âge, w.grand-mère, w.cousin]
+    useAtLeast: 3
+    grammar: [g.avoir-present, g.numbers-0-69]
+    expect:
+      - { pattern: "\\b(ai|as|a|avons|avez|ont) [^.!?]{1,30}\\bans\\b", hint: "Give ages with avoir: Elle a quarante ans (not est)." }
+      - { pattern: "\\b(quel [aâ]ge|combien d['’]ann[eé]es)", hint: "Ask the age: Tu as quel âge ?" }
+    model: { es: "Ma grand-mère a soixante-sept ans. Mon père a quarante-deux ans et ma mère a quarante ans. Moi, j'ai dix-neuf ans. Et toi, tu as quel âge ?", en: "My grandmother is sixty-seven. My father is forty-two and my mother is forty. I'm nineteen. And you, how old are you?" }
+  - task: "Léa asks about your pets and your relatives' pets. Answer, using some plurals."
+    es: "Tu as des animaux ? Et tes cousins ?"
+    min: 15
+    max: 40
+    use: [w.chat, w.chien, w.animal, w.cousin, w.enfant]
+    useAtLeast: 3
+    grammar: [g.plural-nouns, g.possessives, g.avoir-present]
+    expect:
+      - { pattern: "\\b(chiens|chats|animaux|poissons|enfants|cousins|cousines|oiseaux)\\b", hint: "Use at least one plural: deux chats, des animaux…" }
+      - { pattern: "\\b(ai|as|a|avons|avez|ont)\\b", hint: "Use avoir: j'ai, ils ont …" }
+    model: { es: "Oui, j'ai deux chats, Minou et Filou. Mes cousins ont un chien et trois poissons rouges. Ma tante n'a pas d'animaux, mais elle a trois enfants !", en: "Yes, I have two cats, Minou and Filou. My cousins have a dog and three goldfish. My aunt has no animals, but she has three children!" }
+  - task: "Write at least three questions to ask a painter on the place du Tertre about his life, using question words (où, quand, pourquoi, combien, quel…)."
+    min: 10
+    max: 35
+    use: [w.pourquoi, w.combien, w.quand, w.quel, w.peintre]
+    useAtLeast: 3
+    grammar: [g.question-words]
+    expect:
+      - { pattern: "(\\bo[uù]|\\bquand\\b|\\bpourquoi\\b|\\bcombien\\b|\\bcomment\\b|\\bquel(le)?s?\\b)", hint: "Use question words: où, quand, pourquoi, combien, quel…" }
+      - { pattern: "\\?", hint: "End each question with a question mark." }
+    model: { es: "Bonjour, monsieur ! Vous êtes peintre ? Vous habitez où ? Pourquoi est-ce que vous aimez Montmartre ? Vous avez combien d'enfants ? Et quel âge avez-vous ?", en: "Hello, sir! Are you a painter? Where do you live? Why do you like Montmartre? How many children do you have? And how old are you?" }

@@ -270,3 +270,45 @@ dialogues:
       - { q: "What does Ana's colleague look like?", options: ["Dark-haired with a beard", "Blond with glasses", "Short and strong"], answer: 1 }
       - { q: "What is he like?", options: ["Serious and lazy", "Fun and hard-working", "Shy and sad"], answer: 1 }
       - { q: "Why does Marta want to get a drink?", options: ["She is hungry", "She is thirsty", "She is cold"], answer: 1 }
+writing:
+  - task: "Describe what a friend or family member looks like: height, hair, eyes, glasses or beard."
+    min: 15
+    max: 40
+    use: [w.pelo, w.ojo, w.llevar, w.gafas, w.alto]
+    useAtLeast: 3
+    grammar: [g.adjectives-position, g.colors]
+    expect:
+      - { pattern: "\\btiene\\b", hint: "Use tener for features: tiene el pelo …, tiene los ojos …" }
+      - { pattern: "\\b(alt|baj|delgad|gord|rubi|moren|castañ)(o|a|os|as)\\b", hint: "Describe the person: alto, delgada, rubio …" }
+    model: { es: "Mi hermana Laura es alta y delgada. Tiene el pelo largo y rubio y los ojos azules. Lleva gafas negras.", en: "My sister Laura is tall and slim. She has long blond hair and blue eyes. She wears black glasses." }
+  - task: "Describe your character and a friend's character, using muy, bastante and un poco."
+    min: 15
+    max: 40
+    use: [w.divertido, w.timido, w.trabajador, w.perezoso, w.bastante]
+    useAtLeast: 3
+    grammar: [g.muy-bastante-poco, g.ser-vs-estar-basics]
+    expect:
+      - { pattern: "\\b(muy|bastante|un poco)\\b", hint: "Say how much: muy, bastante, un poco …" }
+      - { pattern: "\\b(soy|es|eres|somos)\\b", hint: "Use ser for character: soy …, es …" }
+    model: { es: "Soy bastante tímido, pero muy trabajador. Mi amigo Diego es muy divertido y un poco perezoso. Él es alegre y yo soy serio.", en: "I'm quite shy, but very hard-working. My friend Diego is very funny and a bit lazy. He is cheerful and I am serious." }
+  - task: "Reply to your friend: say how you feel today and why, using estar and tener (hambre, sed, sueño, frío …)."
+    es: "¡Hola! ¿Qué tal estás hoy?"
+    min: 10
+    max: 30
+    use: [w.cansado, w.contento, w.hambre, w.sueno, w.estar]
+    useAtLeast: 3
+    grammar: [g.ser-vs-estar-basics, g.tener-expressions]
+    expect:
+      - { pattern: "\\b(estoy|estamos)\\b", hint: "Say how you feel with estar: Estoy contento …" }
+      - { pattern: "\\btengo (mucha |mucho )?(hambre|sed|fr[ií]o|calor|sue[nñ]o|miedo|prisa|raz[oó]n|suerte)", hint: "Add a tener expression: tengo hambre, tengo sueño …" }
+    model: { es: "Hoy estoy contenta, pero un poco cansada. Tengo mucha hambre y tengo sueño. ¿Y tú? ¿Estás bien?", en: "Today I'm happy, but a bit tired. I'm very hungry and I'm sleepy. And you? Are you OK?" }
+  - task: "You are meeting a friend outside a museum in Recoleta. Send a message saying where you are and what you look like today, with colours."
+    min: 12
+    max: 35
+    use: [w.llevar, w.negro, w.azul, w.corto, w.barba]
+    useAtLeast: 3
+    grammar: [g.colors, g.adjectives-position]
+    expect:
+      - { pattern: "\\b(llevo|tengo)\\b", hint: "Say what you have or wear: llevo …, tengo …" }
+      - { pattern: "\\b(roj|azul|verde|amarill|blanc|negr|gris|marr[oó]n|naranja|rosa)", hint: "Add colours: negro, azul, rojo …" }
+    model: { es: "Estoy delante del museo. Soy alto y moreno. Tengo el pelo corto y la barba gris. Hoy llevo gafas azules.", en: "I'm in front of the museum. I'm tall and dark-haired. I have short hair and a grey beard. Today I'm wearing blue glasses." }

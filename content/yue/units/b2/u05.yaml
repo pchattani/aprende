@@ -245,3 +245,42 @@ dialogues:
       - { q: "海鮮檔喺邊度？", options: ["山頂", "碼頭隔籬", "街市入面"], answer: 1, explain: "阿琪 says 碼頭隔籬嗰個海鮮檔好出名." }
       - { q: "阿俊一食辣會點？", options: ["會喊", "會肚痛", "會笑"], answer: 0, explain: "你一食辣就喊: he cries as soon as he eats something spicy." }
       - { q: "只要有乜嘢，阿俊就覺得冇問題？", options: ["凍啤酒", "白飯", "熱茶"], answer: 0, explain: "只要有凍啤酒就得: as long as there's cold beer." }
+writing:
+  - task: "Describe a seafood trip to Lau Fau Shan: say what happened as soon as you arrived, using 一…就 at least twice."
+    min: 60
+    max: 120
+    use: [w.lok6-syun4, w.hoi2-sin1-dong3, w.saang1-maang5, w.sek6-baan1, w.maa5-soeng6]
+    useAtLeast: 3
+    grammar: [g.jat-zau-as-soon-as]
+    expect:
+      - { pattern: "一.{1,8}就", hint: "Say 'as soon as' with 一…就: 一落船就…" }
+    model: { es: "我哋一落船就去咗海鮮檔揀海鮮。老闆一見到我哋，就叫我哋睇佢啲生猛石斑。我哋一坐低，侍應就馬上拎茶嚟。食完之後，大家一返到屋企就瞓着咗。", en: "As soon as we got off the boat we went to a seafood stall to choose our seafood. The moment the owner saw us, he showed us his live groupers. As soon as we sat down, the waiter brought tea right away. After the meal, everyone fell asleep the moment they got home." }
+  - task: "Write about how your Cantonese is going, using 越…越… and 越嚟越…"
+    min: 60
+    max: 110
+    use: [w.jyut6.b, w.jyut6-lai4-jyut6, w.jung4-ji6, w.zeon3-bou6]
+    useAtLeast: 3
+    grammar: [g.jyut-jyut-the-more]
+    expect:
+      - { pattern: "越.{1,6}越", hint: "Say 'the more …, the more …' with 越…越…" }
+    model: { es: "我越學廣東話越覺得有趣。開頭好難，不過而家越嚟越容易，聽得明嘅嘢越嚟越多。我諗講得越多就進步得越快，所以我日日都同街坊傾偈。希望一年之後，我可以用廣東話同人講笑。", en: "The more Cantonese I learn, the more interesting I find it. It was hard at first, but now it's getting easier and easier, and I understand more and more. I think the more you speak, the faster you improve, so I chat with my neighbours every day. I hope that in a year I'll be able to joke with people in Cantonese." }
+  - task: "At a seafood stall, tell your friend what matters when choosing fish, with 只要…就… and 除非."
+    min: 60
+    max: 110
+    use: [w.zi2-jiu3, w.saang1-maang5, w.cing3, w.gan1-loeng2, w.ceoi4-fei1]
+    useAtLeast: 3
+    grammar: [g.zi-jiu-zau-as-long-as]
+    expect:
+      - { pattern: "只要.{1,12}就", hint: "Give the minimum condition with 只要…就…" }
+      - { pattern: "除非", hint: "Add an exception with 除非." }
+    model: { es: "揀魚其實好簡單，只要啲魚夠生猛，就一定新鮮。記得叫老闆喺你前面秤吓斤兩，噉就唔會畀人呃。除非你好熟呢度，否則唔好買太貴嘅貨。最好揀今朝嘅貨，唔好揀凍嘅。", en: "Choosing fish is actually easy: as long as the fish are lively, they're definitely fresh. Remember to ask the owner to weigh it in front of you, so you won't get cheated. Unless you know this place well, don't buy anything too expensive. It's best to choose this morning's catch, not frozen fish." }
+  - task: "Your friend gets seasick easily. Give advice for the ferry to an outlying island."
+    es: "我好易暈船㗎，點算好？"
+    min: 60
+    max: 110
+    use: [w.wan4-syun4, w.soeng5-syun4, w.hoi1-syun4, w.zi2-jiu3, w.jung4-ji6]
+    useAtLeast: 3
+    grammar: [g.zi-jiu-zau-as-long-as, g.jat-zau-as-soon-as]
+    expect:
+      - { pattern: "只要.{1,12}就|一.{1,8}就|越.{1,6}越", hint: "Use 只要…就, 一…就 or 越…越 in your advice." }
+    model: { es: "只要你坐喺船中間，望住出面，就冇咁容易暈船。上船之前唔好食太飽，一開船就坐低唞吓。越緊張就越容易暈，所以唔好諗咁多啦。我會坐喺你隔籬，有咩事就話我知。", en: "As long as you sit in the middle of the boat and look outside, you won't get seasick so easily. Don't eat too much before boarding, and sit down and rest as soon as the boat sets off. The more nervous you are, the easier it is to feel sick, so don't think about it too much. I'll sit next to you; tell me if anything's wrong." }

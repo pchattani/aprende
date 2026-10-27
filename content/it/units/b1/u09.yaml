@@ -281,3 +281,36 @@ dialogues:
       - { q: "Perché Ines non ordina i tortelli?", options: ["È vegana", "Non le piacciono", "È celiaca"], answer: 2, explain: "Ines is coeliac and asks for something gluten-free." }
       - { q: "Che cosa si abbina al Parmigiano, secondo Corrado?", options: ["Un bicchiere di Lambrusco", "Una grappa", "Uno spumante", "Il vino della casa"], answer: 0, explain: "'Con il Parmigiano si beve bene un bicchiere di Lambrusco.'" }
       - { q: "Che cosa offre Corrado alla fine?", options: ["Il caffè", "Un amaro della casa", "Il coperto"], answer: 1, explain: "'Le offriamo un amaro della casa.'" }
+writing:
+  - task: "Explain Italian eating customs to a foreign friend, using the impersonal si (si mangia, si beve, si lascia la mancia…)."
+    min: 50
+    max: 100
+    use: [w.mancia, w.coperto.n, w.usanza, w.servizio, w.tradizione]
+    grammar: [g.si-impersonale]
+    expect:
+      - { pattern: "\\bsi\\s+\\S+(a|e|ano|ono)\\b", hint: "Use the impersonal si: si mangia, si beve, si lascia…" }
+    model: { es: "In Italia a tavola si seguono alcune usanze. A pranzo e a cena si mangia prima il primo e poi il secondo, quasi mai insieme. Il cappuccino si beve solo a colazione: dopo pranzo si prende un espresso. Al ristorante spesso si paga il coperto, quindi la mancia non è necessaria, ma se il servizio è buono si lasciano due o tre euro. È una tradizione, non una regola!", en: "In Italy people follow certain customs at the table. At lunch and dinner you eat the first course and then the second, almost never together. Cappuccino is drunk only at breakfast: after lunch you have an espresso. At restaurants you often pay a cover charge, so a tip isn't necessary, but if the service is good people leave two or three euros. It's a tradition, not a rule!" }
+  - task: "Write a recipe for a dish from the North (risotto, polenta, pesto…), using the si passivante (si taglia, si aggiungono…)."
+    min: 50
+    max: 100
+    use: [w.soffriggere, w.risotto, w.porzione, w.sapore, w.brodo]
+    grammar: [g.si-passivante]
+    expect:
+      - { pattern: "\\bsi\\s+(\\S+)(a|e|ano|ono)\\b", hint: "Use the si passivante: si taglia la cipolla, si aggiungono i funghi…" }
+    model: { es: "Risotto ai funghi per quattro porzioni. Prima si taglia la cipolla e si fa soffriggere nell'olio. Poi si aggiunge il riso e si mescola bene per due minuti. Si aggiungono i funghi tagliati a pezzi e, poco alla volta, il brodo caldo. Si cuoce tutto per circa diciotto minuti, mescolando spesso. Alla fine si aggiungono il burro e il parmigiano, e si serve subito: il sapore è fantastico!", en: "Mushroom risotto for four portions. First you chop the onion and fry it gently in oil. Then you add the rice and stir well for two minutes. You add the mushrooms cut into pieces and, a little at a time, the hot stock. Everything is cooked for about eighteen minutes, stirring often. At the end the butter and parmesan are added, and it's served at once: the flavour is fantastic!" }
+  - task: "Write a short advert for a shop selling typical products from Parma: what is produced, how it is aged and what it goes with (si produce, si stagiona, si abbina…)."
+    min: 50
+    max: 100
+    use: [w.stagionato, w.prodotto-tipico, w.genuino, w.abbinare, w.specialità]
+    grammar: [g.si-passivante]
+    expect:
+      - { pattern: "\\bsi\\s+(\\S+)(a|e|ano|ono)\\b", hint: "Use the si passivante: il prosciutto si produce…, si vendono…" }
+    model: { es: "Da noi si trovano solo prodotti tipici e genuini! Il nostro prosciutto di Parma si produce secondo la tradizione e si lascia riposare per almeno due anni. Il parmigiano si vende a pezzi o grattugiato, ed è stagionato trenta mesi. Questi prodotti si abbinano benissimo con un bicchiere di Lambrusco. Venite ad assaggiare le nostre specialità: si paga anche con il bancomat!", en: "Here you'll find only genuine local products! Our Parma ham is made according to tradition and left to rest for at least two years. Parmesan is sold in pieces or grated, and it's aged for thirty months. These products go wonderfully with a glass of Lambrusco. Come and taste our specialities: you can also pay by card!" }
+  - task: "Describe a typical Sunday lunch with an Italian family, using ci si with reflexive verbs (ci si alza, ci si siede, ci si diverte)."
+    min: 50
+    max: 100
+    use: [w.brindare, w.gustare, w.spuntino, w.apprezzare]
+    grammar: [g.ci-si, g.si-impersonale]
+    expect:
+      - { pattern: "\\bci si\\s+\\S+", hint: "With reflexive verbs use ci si: ci si siede, ci si diverte…" }
+    model: { es: "La domenica in famiglia è un momento importante. Ci si alza tardi e verso l'una ci si siede a tavola tutti insieme. Nessuno fa uno spuntino prima, perché si comincia con gli antipasti e si continua per ore. Si gusta ogni piatto con calma e si apprezza la cucina della nonna. Ci si diverte a raccontare le cose della settimana e si brinda con il vino della casa. Alla fine ci si sente pieni, ma felici!", en: "Sunday with the family is an important moment. You get up late and around one o'clock everyone sits down at the table together. Nobody has a snack beforehand, because you start with the starters and carry on for hours. You savour every dish slowly and appreciate grandma's cooking. Everyone enjoys telling the week's news and you toast with the house wine. In the end you feel full, but happy!" }

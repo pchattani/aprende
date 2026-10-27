@@ -279,3 +279,45 @@ dialogues:
       - { q: "C'est à combien de minutes à pied ?", options: ["Deux minutes.", "Dix minutes.", "Une heure."], answer: 1, explain: "« Dix minutes à pied. »" }
       - { q: "Quel pont est-ce qu'elle doit traverser ?", options: ["Le premier pont.", "Le deuxième pont.", "Le troisième pont."], answer: 1, explain: "« Traversez le deuxième pont. »" }
       - { q: "Qu'est-ce que le bouquiniste vend ?", options: ["Des billets de métro.", "Des cartes postales et des livres.", "Des vêtements."], answer: 1, explain: "He sells postcards and « de vieux livres sur Paris »." }
+writing:
+  - task: "A tourist on the quais asks you the way to the Pont Neuf. Give directions (tournez, continuez, traversez…)."
+    es: "Pardon, pour aller au Pont Neuf, s'il vous plaît ?"
+    min: 12
+    max: 40
+    use: [w.continuer, w.tourner, w.tout-droit, w.gauche, w.droite]
+    useAtLeast: 3
+    grammar: [g.directions]
+    expect:
+      - { pattern: "\\b(tournez|continuez|traversez|prenez|allez|suivez|descendez|montez|tourne|continue|traverse|prends|va|suis)\\b", hint: "Give instructions: tournez à gauche, continuez tout droit…" }
+      - { pattern: "\\b(gauche|droite|tout droit)\\b", hint: "Say left, right or straight on: à gauche, à droite, tout droit." }
+    model: { es: "Oui ! Continuez tout droit jusqu'à la Seine. Ensuite, tournez à gauche et suivez le quai. Le Pont Neuf est à cinq cents mètres, sur la droite.", en: "Yes! Carry on straight ahead as far as the Seine. Then turn left and follow the quay. The Pont Neuf is five hundred metres away, on the right." }
+  - task: "How do you get around? Say how you go to university or work, and how you go to the airport (en métro, à pied, à vélo…)."
+    min: 15
+    max: 40
+    use: [w.prendre, w.bus, w.métro, w.vélo, w.train]
+    useAtLeast: 3
+    grammar: [g.prendre-present, g.prepositions-transport]
+    expect:
+      - { pattern: "\\ben (m[eé]tro|bus|train|taxi|voiture|avion|tram(way)?|moto|bateau)\\b|[aà] (pied|v[eé]lo|moto)", hint: "Say how you travel: en métro, en bus, à pied, à vélo…" }
+      - { pattern: "\\b(prends|prend|prenons|prenez|prennent)\\b", hint: "Use prendre: je prends le bus…" }
+    model: { es: "D'habitude, je vais à l'université à vélo. Quand il pleut, je prends le bus ou le métro. Pour aller à l'aéroport, je prends le train ou un taxi.", en: "Usually I go to university by bike. When it rains I take the bus or the metro. To get to the airport I take the train or a taxi." }
+  - task: "Your family and friends live all over the world. Say who lives in which city and country (à Rome, en Italie, au Canada, aux États-Unis)."
+    min: 15
+    max: 40
+    use: [w.habiter, w.pays, w.ville, w.nord, w.sud]
+    useAtLeast: 2
+    grammar: [g.prepositions-cities-countries]
+    expect:
+      - { pattern: "\\ben (france|italie|espagne|allemagne|angleterre|belgique|suisse|chine|inde|irlande|australie|[ée]cosse|chine|grèce|gr[eè]ce|su[eè]de|norv[eè]ge|turquie|alg[eé]rie|tunisie|[a-z]+e)\\b|\\bau (canada|japon|maroc|br[eé]sil|portugal|mexique|qu[eé]bec|s[eé]n[eé]gal|royaume-uni|danemark|liban|vietnam|chili|p[eé]rou)\\b|\\baux ([eé]tats-unis|pays-bas|antilles)", hint: "Countries take en, au or aux: en Italie, au Canada, aux États-Unis." }
+      - { pattern: "\\b(habite|habites|habitons|habitez|habitent|vis|vit|vivons|vivez|vivent|suis|est|sont)\\b", hint: "Say who lives where: Ma sœur habite à …" }
+    model: { es: "Ma sœur habite à Londres, en Angleterre. Mes cousins habitent au Canada, à Montréal. Mon ami Marco habite en Italie, à Naples, dans le sud du pays.", en: "My sister lives in London, in England. My cousins live in Canada, in Montreal. My friend Marco lives in Italy, in Naples, in the south of the country." }
+  - task: "You are lost near the quais. Write three polite questions to ask a passer-by, using inversion (Où se trouve … ? Pouvez-vous … ? Y a-t-il … ?)."
+    min: 12
+    max: 35
+    use: [w.se-trouver, w.station, w.banque, w.pont, w.arrêt]
+    useAtLeast: 2
+    grammar: [g.inversion-questions]
+    expect:
+      - { pattern: "[a-zéèêç]+-(vous|tu|il|elle|on|ils|elles|t-il|t-elle|t-on)\\b|\\bse trouven?t?\\s(la|le|les|l['’])", hint: "Invert verb and subject: Où se trouve la gare ? Pouvez-vous … ? Y a-t-il … ?" }
+      - { pattern: "\\?", hint: "End each question with a question mark." }
+    model: { es: "Excusez-moi, madame. Où se trouve la station de métro, s'il vous plaît ? Pouvez-vous m'aider ? Y a-t-il une banque près d'ici ?", en: "Excuse me, madam. Where is the metro station, please? Can you help me? Is there a bank near here?" }

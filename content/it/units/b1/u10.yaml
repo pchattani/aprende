@@ -282,3 +282,40 @@ dialogues:
       - { q: "Perché Chiara non è arrivata in tempo?", options: ["Era malata", "Aveva perso il treno", "Si era dimenticata"], answer: 1, explain: "'Mi ha risposto che aveva perso il treno.'" }
       - { q: "Che cosa ha scritto Chiara a Teresa?", options: ["Di aspettarla al bar", "Di comprare i biglietti", "Di chiamarla più tardi", "Di andare al cinema senza di lei"], answer: 3, explain: "'Mi ha scritto di non aspettarla per cena e di andare al cinema senza di lei.'" }
       - { q: "Che cosa dice Nicola alla fine?", options: ["Di tornare a casa", "Di richiamare Chiara", "Di andare al Museo del Cinema"], answer: 1, explain: "'Richiamala e dille di venire subito!'" }
+writing:
+  - task: "Your friend Chiara has left a voice message. Tell your flatmate what she says and asks (dice che…, chiede se…, dice di…)."
+    es: "Ciao, sono Chiara! Qui a Torino fa molto freddo. Arrivo sabato alle tre. Mi venite a prendere alla stazione? Portate un ombrello!"
+    min: 50
+    max: 100
+    use: [w.messaggio-vocale, w.riferire, w.chiamata, w.dire, w.chiedere]
+    grammar: [g.discorso-indiretto-present]
+    expect:
+      - { pattern: "\\b(dice|dicono|racconta|scrive|spiega) che\\b", hint: "Report what she says: dice che…" }
+      - { pattern: "\\b(chiede|domanda) se\\b|\\bdice di\\b", hint: "Report the question or request: chiede se…, dice di…" }
+    model: { es: "Ha chiamato Chiara e, siccome non abbiamo risposto, ha lasciato un messaggio vocale. Dice che a Torino fa molto freddo e che arriva sabato alle tre. Chiede se andiamo a prenderla alla stazione. E poi dice di portare un ombrello, perché probabilmente pioverà. Le rispondo io o la chiami tu? Puoi riferirle che sabato sono libero.", en: "Chiara called and, since we didn't answer, she left a voice message. She says it's very cold in Turin and that she's arriving on Saturday at three. She asks if we'll pick her up at the station. And she also says to bring an umbrella, because it'll probably rain. Shall I answer her or will you call her? You can tell her I'm free on Saturday." }
+  - task: "Write the summary of a police interview for a crime story set in Turin: what the inspector asked and what the suspect said, in reported speech in the past."
+    min: 50
+    max: 100
+    use: [w.commissario, w.interrogare, w.alibi, w.negare, w.il-giorno-dopo]
+    grammar: [g.discorso-indiretto-past, g.reported-questions]
+    expect:
+      - { pattern: "\\b(ha detto|aveva detto|ha dichiarato|ha affermato|ha spiegato|ha raccontato|ha risposto) che\\b", hint: "Report what was said: ha detto che…, ha risposto che…" }
+      - { pattern: "\\bha chiesto (se|dove|perch[eé]|quando|chi|come|che cosa|cosa)\\b|\\bgli ha chiesto\\b", hint: "Report the question: gli ha chiesto dove…, se…" }
+    model: { es: "Il commissario ha interrogato il signor Brambilla il giorno dopo il furto. Gli ha chiesto dove era stato la sera prima. Brambilla ha risposto che era rimasto a casa tutta la sera e che aveva guardato una partita alla televisione. Ha detto che non conosceva la vittima e ha negato tutto. Ma il commissario ha scoperto che il suo alibi era falso: quella sera la partita non c'era!", en: "The inspector questioned Mr Brambilla the day after the theft. He asked him where he had been the evening before. Brambilla answered that he had stayed at home all evening and had watched a match on television. He said he didn't know the victim and denied everything. But the inspector discovered that his alibi was false: there had been no match that evening!" }
+  - task: "Your boss gave you instructions before leaving. Tell a colleague what she told and asked you to do (mi ha detto di…, ci ha chiesto di…, ti ha pregato di…)."
+    min: 50
+    max: 100
+    use: [w.raccomandare, w.suggerire, w.pregare, w.contratto]
+    grammar: [g.reported-commands-di]
+    expect:
+      - { pattern: "\\b(detto|chiesto|raccomandato|suggerito|pregato|ordinato|consigliato|ricordato|ribadito) di\\b", hint: "Report commands with di + infinitive: mi ha detto di chiamare…" }
+    model: { es: "Prima di partire per Milano, la direttrice mi ha detto di chiamare il cliente di Torino e di mandargli il contratto. Ci ha chiesto di finire il progetto entro venerdì. Mi ha raccomandato di non dimenticare la riunione di lunedì. E ti ha pregato di non arrivare in ritardo, perché ci sarà anche il capo! Infine mi ha suggerito di prenotare un tavolo per la cena.", en: "Before leaving for Milan, the director told me to call the client in Turin and send him the contract. She asked us to finish the project by Friday. She reminded me not to forget Monday's meeting. And she begged you not to be late, because the boss will be there too! Finally she suggested I book a table for dinner." }
+  - task: "Tell the story of a misunderstanding you had in Italy: what someone asked you, what you answered, and what they really meant (mi ha chiesto se…, gli ho detto che…)."
+    min: 50
+    max: 100
+    use: [w.malinteso, w.spiegazione, w.confuso, w.assaggiare]
+    grammar: [g.reported-questions, g.discorso-indiretto-past]
+    expect:
+      - { pattern: "\\b(mi ha chiesto|gli ho chiesto|le ho chiesto|ha chiesto|mi ha domandato) (se|dove|perch[eé]|quando|che cosa|cosa|come|chi)\\b", hint: "Report the question: mi ha chiesto se…" }
+      - { pattern: "\\b(ho risposto|gli ho detto|le ho detto|ha detto|mi ha spiegato|ha spiegato) che\\b", hint: "Report the answer: gli ho detto che…, mi ha spiegato che…" }
+    model: { es: "Il primo giorno a Torino sono entrato in un bar e il cameriere mi ha chiesto se volevo un bicerin. Io gli ho detto che non bevevo alcol, perché non sapevo che cosa voleva dire. Lui mi ha guardato confuso e mi ha spiegato che il bicerin è una specialità calda con caffè, cioccolato e crema di latte. Che malinteso! Dopo questa spiegazione l'ho assaggiato e gli ho detto che era buonissimo.", en: "On my first day in Turin I went into a bar and the waiter asked me if I wanted a bicerin. I told him I didn't drink alcohol, because I didn't know what it meant. He looked at me, confused, and explained that a bicerin is a hot speciality with coffee, chocolate and cream. What a misunderstanding! After that explanation I tried it and told him it was delicious." }

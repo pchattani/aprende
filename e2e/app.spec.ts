@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { enableTestHook, answerCurrent, continueFeedback, readHook, openPath } from './helpers'
+import { enableTestHook, answerCurrent, continueFeedback, readHook, openPath, completeLessonsBefore } from './helpers'
 import { SITE_BASE } from '../scripts/site-base.mjs'
 
 test.beforeEach(async ({ page }) => {
@@ -10,6 +10,11 @@ test('course renders levels, units and the first lesson is unlocked', async ({ p
   await openPath(page)
   await expect(page.getByText('Saludos y presentaciones')).toBeVisible()
   await expect(page.getByRole('link', { name: /Hola y adiós/ })).toBeVisible()
+  // the rest of the route is locked until the lesson before is finished
+  await expect(page.getByRole('group', { name: 'Lesson 2, ¿Cómo te llamas?: locked' })).toContainText('Finish Lesson 1 first')
+  await expect(page.getByRole('button', { name: /¿Cómo te llamas\?: locked, practice/ })).toBeDisabled()
+  await expect(page.getByRole('link', { name: /¿Cómo te llamas\?/ })).toHaveCount(0)
+  await expect(page.getByRole('group', { name: /Checkpoint · .*: locked/ }).first()).toContainText('Finish the')
   await expect(page.getByRole('heading', { name: 'Fin del mundo' })).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/path.png', fullPage: false })
 })
@@ -17,6 +22,8 @@ test('course renders levels, units and the first lesson is unlocked', async ({ p
 test('complete the first lesson and unlock the next lesson', async ({ page }) => {
   test.setTimeout(180_000)
   await openPath(page)
+  await expect(page.getByRole('group', { name: 'Lesson 2, ¿Cómo te llamas?: locked' })).toBeVisible()
+  await expect(page.getByRole('link', { name: /Board: lesson 1 of/ })).toBeVisible()
   await page.getByRole('link', { name: /Hola y adiós/ }).click()
   await expect(page.getByRole('heading', { name: 'Hola y adiós' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Greetings and goodbyes' })).toBeVisible()
@@ -44,15 +51,48 @@ test('complete the first lesson and unlock the next lesson', async ({ page }) =>
   expect(first!.total).toBe(12)
   await expect(page.getByRole('heading', { name: /Olé|Qué bien|Genial|crack|Así se hace|De lujo/ })).toBeVisible({ timeout: 15_000 })
   await expect(page.getByText(/^\d+%$/)).toBeVisible()
+  // finishing it opens the next lesson
+  await expect(page.getByText('Lesson 2 unlocked')).toBeVisible()
+  await expect(page.getByText(/¿Cómo te llamas\? is open/)).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/done.png' })
   await page.getByRole('button', { name: 'Continue' }).click()
-  await expect(page.getByRole('link', { name: /¿Cómo te llamas\?/ })).toBeVisible()
+  await expect(page.getByRole('link', { name: /¿Cómo te llamas\?: new, practice/ })).toBeVisible()
+  await expect(page.getByRole('group', { name: /: locked$/ }).first()).toBeAttached()
+  // the dogs and the boarding pass move on to lesson 2
+  await expect(page.locator('#lesson-a1\\.u01\\.l2').getByRole('group', { name: /are here/ })).toBeAttached()
+  await expect(page.getByRole('link', { name: /Board: lesson 2 of/ })).toBeVisible()
+  await expect(page.getByRole('group', { name: 'Lesson 3, Soy, eres, es: locked' })).toContainText('Finish Lesson 2 first')
   const row = page.getByRole('link', { name: /Hola y adiós: learned/ })
   await expect(row).toBeVisible()
-  // Back on the course we land on the lesson we just finished, not at the top.
+  // Back on the course we land by the lesson we just finished and the one it opened, not at the top.
   await expect(row).toBeInViewport()
+  await expect(page.locator('#lesson-a1\\.u01\\.l2')).toBeInViewport()
   // rhythm and minutes visible on the header
   await expect(page.getByText(/of 7 days this week/)).toBeVisible()
+})
+
+test('a locked lesson cannot be started: a deep link shows the way to the lesson that opens it', async ({ page }) => {
+  await openPath(page)
+  await page.goto('./#/lesson/a1.u01.l3')
+  await expect(page.getByRole('heading', { name: 'Soy, eres, es' })).toBeVisible()
+  await expect(page.getByText('Finish Lesson 2 first.')).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Start the exercises' })).toHaveCount(0)
+  expect(await page.evaluate(() => Boolean((window as unknown as { __aprende?: { exercise?: unknown } }).__aprende?.exercise))).toBe(false)
+  // the guidebook is a preview: readable, but it does not board
+  await page.getByRole('link', { name: 'Peek at the guidebook' }).click()
+  await expect(page.getByText('Guidebook · a preview')).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Start the exercises' })).toHaveCount(0)
+  // the way on: the current lesson (lesson 1 for a new learner)
+  await page.getByRole('button', { name: 'Go to Lesson 1' }).click()
+  await expect(page).toHaveURL(/#\/lesson\/a1\.u01\.l1$/)
+  await expect(page.getByRole('heading', { name: 'Hola y adiós' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Start the exercises' })).toBeVisible()
+  // a later lesson opens once the one before it is done
+  await completeLessonsBefore(page, 'a1.u01.l3')
+  await page.goto('./#/lesson/a1.u01.l3')
+  await expect(page.getByRole('button', { name: 'Start the exercises' })).toBeVisible()
+  await page.goto('./#/lesson/a1.u01.l4')
+  await expect(page.getByText('Finish Lesson 3 first.')).toBeVisible()
 })
 
 test('the guidebook stays open during a lesson and from the journey', async ({ page }) => {
@@ -237,7 +277,7 @@ test('works offline once the service worker has cached the app', async ({ page, 
   await context.setOffline(false)
 })
 
-test('placement test places a strong learner at C2 and every level stays open', async ({ page }) => {
+test('placement test places a strong learner at C2: earlier levels stay open, C2 starts at its first lesson', async ({ page }) => {
   test.setTimeout(180_000)
   await page.goto('./')
   await page.getByRole('button', { name: /Take the placement test/ }).click()
@@ -258,9 +298,13 @@ test('placement test places a strong learner at C2 and every level stays open', 
   // B1 lessons are open, and an A2 lesson deep in the level is open for practice.
   await expect(page.getByRole('link', { name: /Formas regulares/ })).toBeVisible()
   await expect(page.getByRole('link', { name: /Habla, come, escribe/ })).toBeVisible()
+  // C2 is the established level: its first lesson is open (and up next), the one after it is locked.
+  await expect(page.locator('#lesson-c2\\.u01\\.l1').getByRole('link', { name: /, practice$/ })).toBeAttached()
+  await expect(page.locator('#lesson-c2\\.u01\\.l2')).toHaveAttribute('aria-label', /: locked$/)
+  await expect(page.getByRole('link', { name: /Board: lesson 1 of/ })).toBeVisible()
 })
 
-test('choosing a level manually marks the recommended start; every lesson is open', async ({ page }) => {
+test('choosing a level manually marks the recommended start; earlier levels are open, later ones locked', async ({ page }) => {
   await page.goto('./')
   await expect(page.getByRole('button', { name: /I know my level/ })).toBeVisible()
   await page.screenshot({ path: 'e2e/__screenshots__/welcome.png' })
@@ -269,8 +313,13 @@ test('choosing a level manually marks the recommended start; every lesson is ope
   await expect(page.getByRole('heading', { name: 'A1' })).toHaveCount(0)
   await expect(page.getByText('Recommended start')).toBeVisible()
   await expect(page.getByRole('link', { name: /¿Qué hiciste ayer\?/ })).toBeVisible()
-  // B1 lessons are open too: the course is never locked.
-  await expect(page.getByRole('link', { name: /Formas regulares/ })).toBeVisible()
+  // A1 stays open for practice; A2 is sequential from its first lesson, so B1 waits.
+  await expect(page.getByRole('link', { name: /Hola y adiós/ })).toBeAttached()
+  await expect(page.locator('#lesson-a2\\.u01\\.l2')).toHaveAttribute('aria-label', /: locked$/)
+  await expect(page.getByRole('link', { name: /Formas regulares/ })).toHaveCount(0)
+  await expect(page.getByRole('button', { name: /Formas regulares — hable, coma, viva: locked, practice/ })).toBeDisabled()
+  // border control is open and passing it skips ahead
+  await expect(page.getByRole('link', { name: /Border control, level check A2/ })).toContainText('pass it to skip ahead to B1')
   // Passport page lists stops and souvenirs.
   await page.getByRole('link', { name: 'Passport' }).click()
   await expect(page.getByRole('heading', { name: 'Passport' })).toBeVisible()

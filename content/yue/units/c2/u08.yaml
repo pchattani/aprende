@@ -268,3 +268,44 @@ dialogues:
       - { q: "Bonchita 最鍾意邊首童謠？", options: ["落雨大", "月光光", "氹氹轉"], answer: 1, explain: "我最鍾意月光光." }
       - { q: "招子庸幾時已經用廣東話寫粵謳？", options: ["一八二八年", "一九九三年", "一九七六年"], answer: 0, explain: "Leo says 1828; 1993 is when Jyutping was devised." }
       - { q: "Luna 決定做咩？", options: ["寫順口溜", "用粵文寫旅行日記", "去學唱粵謳"], answer: 1, explain: "我決定由今日開始，用粵文寫旅行日記. Bonchita is the one writing a jingle." }
+writing:
+  - task: "Recite the opening of the nursery rhyme 月光光 and explain to a child what it means and how it is played."
+    min: 110
+    max: 190
+    use: [w.jyut6-gwong1-gwong1, w.ziu3-dei6-tong4, w.haa1-zai2, w.tung4-jiu4, w.aap3-mei5-wan5]
+    useAtLeast: 3
+    grammar: [g.folk-rhymes]
+    expect:
+      - { pattern: "月光光", hint: "Quote the rhyme: 月光光，照地堂…" }
+      - { pattern: "即係|意思係", hint: "Explain the meaning: 即係…" }
+    model: { es: "「月光光，照地堂，蝦仔你乖乖瞓落床。」呢首童謠係以前嘅阿媽同細路瞓覺嘅時候唱嘅。「地堂」即係以前鄉下嘅人曬米嘅地方，「蝦仔」就係叫細路嘅講法，意思係叫個細路乖乖瞓覺。成首歌每句都押尾韻，唱起嚟好自然，所以好多香港人細細個都識唱。你今晚想唔想我唱成首畀你聽呀？", en: "\"Moon so bright, shining on the threshing floor; little one, be good and go to bed.\" Mothers used to sing this nursery rhyme when putting children to sleep. 地堂 is where village people used to dry rice, and 蝦仔 'little shrimp' is a way of calling a child, so it's telling the child to be good and sleep. Every line rhymes at the end, so it sounds natural when sung, and many Hong Kongers learned it as children. Would you like me to sing you the whole song tonight?" }
+  - task: "Explain to a classmate what 粵謳 is, who 招子庸 was, and why his work matters."
+    min: 110
+    max: 190
+    use: [w.jyut6-au1, w.ziu1-zi2-jung4, w.gaai2-sam1-si6, w.zok3-ban2, w.man4-jan4]
+    useAtLeast: 3
+    grammar: [g.yuet-au]
+    expect:
+      - { pattern: "粵謳", hint: "Explain 粵謳." }
+      - { pattern: "招子庸", hint: "Mention 招子庸." }
+    model: { es: "粵謳係清朝流行嘅一種廣東說唱，多數講愛情同人生嘅無奈。招子庸係清朝嘅文人，佢將花艇上歌姬唱嘅歌整理好，出版咗一本《粵謳》，入面最出名嘅一首係《解心事》。佢嘅作品用咗大量廣東話口語，係最早用廣東話寫成嘅文學之一。所以研究粵語文學嘅學者都認為，佢對保存廣東文化好重要。", en: "Yue'ou is a kind of Cantonese narrative singing that was popular in the Qing dynasty, mostly about love and the helplessness of life. Zhao Ziyong was a Qing man of letters who collected the songs sung by the singing girls on the flower boats and published a book called Yue'ou, whose most famous piece is 'Relieving Sorrow'. His works use a great deal of colloquial Cantonese and are among the earliest literature written in Cantonese. So scholars of Cantonese literature believe he was very important in preserving Cantonese culture." }
+  - task: "Explain how people write Cantonese words that have no standard character (本字, 借字, 口字旁), with examples."
+    min: 110
+    max: 190
+    use: [w.fong1-jin4-zi6, w.bun2-zi6, w.ze3-zi6, w.hau2-zi6-pong4, w.saam1-kap6-dai6]
+    useAtLeast: 3
+    grammar: [g.writing-cantonese]
+    expect:
+      - { pattern: "口字旁|借字|本字|方言字", hint: "Use the key terms: 口字旁, 借字, 本字…" }
+      - { pattern: "例如", hint: "Give examples: 例如「嘅」、「咗」…" }
+    model: { es: "廣東話有好多詞喺書面語入面冇字，所以前人用咗幾種方法去寫。第一係搵本字，即係古時本來嘅寫法。第二係借字，借一個同音嘅字嚟用。第三係自己造字，最多人用嘅方法就係加口字旁，例如「嘅」、「咗」、「嘢」，一睇就知係口語。以前仲有三及第嘅文體，將文言、書面語同廣東話一齊用，好有特色。", en: "Many Cantonese words have no character in written Chinese, so people developed several ways to write them. First, find the original character, the way it was written in ancient times. Second, borrow a character with the same sound. Third, coin a new character, most commonly by adding the 'mouth' radical, as in 嘅, 咗 and 嘢, which you can tell at a glance are colloquial. There was also the 'three-graded' style, mixing classical Chinese, standard written Chinese and Cantonese, which was very distinctive." }
+  - task: "Your journey ends back at Victoria Harbour. Write a letter to your future self about your Cantonese journey and what you want to keep doing."
+    min: 110
+    max: 200
+    use: [w.leoi5-cing4, w.wui4-jik1, w.sam1-jyun6, w.gin1-ci4]
+    useAtLeast: 2
+    grammar: [g.writing-cantonese]
+    expect:
+      - { pattern: "廣東話", hint: "Talk about your Cantonese." }
+      - { pattern: "希望|要|會|繼續", hint: "Say what you'll keep doing: 我希望…, 我會繼續…" }
+    model: { es: "將來嘅我：今日我返到維多利亞港，望住對岸嘅燈光，諗起呢段旅程，真係好多回憶。由最初連「唔該」同「多謝」都分唔清楚，到而家識讀唐詩、聽得明粵劇，我自己都唔敢相信。我希望你繼續堅持，日日都講廣東話，多啲睇廣東歌嘅歌詞，有時間就返香港探吓朋友。記住，學語言唔會有完嘅一日，最緊要係開心。", en: "Dear future me: today I'm back at Victoria Harbour, looking at the lights across the water and thinking back on this journey; so many memories. From not even knowing the difference between 唔該 and 多謝 to now reading Tang poems and understanding Cantonese opera, I can hardly believe it myself. I hope you keep at it: speak Cantonese every day, read more Cantopop lyrics, and come back to Hong Kong to see friends when you can. Remember, learning a language never really ends; what matters most is enjoying it." }

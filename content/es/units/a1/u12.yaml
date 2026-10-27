@@ -284,3 +284,43 @@ dialogues:
       - { q: "What is Tom going to do first?", options: ["Work", "Travel around Spain", "Go to Japan"], answer: 1 }
       - { q: "Why does Yuki practise every day?", options: ["She has an exam", "Her boyfriend is Spanish", "She lives in Spain"], answer: 1 }
       - { q: "When does the A2 course start?", options: ["In August", "In September", "Next year"], answer: 1 }
+writing:
+  - task: "Write about your plans for next year: three things you are going to do."
+    min: 15
+    max: 40
+    use: [w.proximo, w.curso, w.examen, w.viajar]
+    useAtLeast: 2
+    grammar: [g.ir-a-future]
+    expect:
+      - { pattern: "\\b(voy|vas|va|vamos|van) a [a-záéíóúñ]+(ar|er|ir)\\b", hint: "Use ir a + infinitive: voy a estudiar …" }
+    model: { es: "El próximo año voy a hacer un curso de español en Córdoba. Voy a estudiar mucho porque en junio tengo un examen. Después voy a viajar con mi pareja.", en: "Next year I'm going to do a Spanish course in Córdoba. I'm going to study a lot because I have an exam in June. Then I'm going to travel with my partner." }
+  - task: "Write a short text about your time in Buenos Aires. Link your ideas with además, por eso, entonces or finalmente."
+    min: 20
+    max: 40
+    use: [w.ademas, w.entonces, w.finalmente, w.feliz]
+    useAtLeast: 2
+    grammar: [g.connectors-basic]
+    expect:
+      - { pattern: "\\b(adem[aá]s|por eso|entonces|finalmente)", hint: "Link your ideas: además, por eso, entonces, finalmente …" }
+    model: { es: "Buenos Aires es una ciudad muy grande y muy bonita. Además, la gente es muy amable. Me encanta la comida, por eso como mucho. Finalmente, mañana vuelvo a casa y estoy un poco triste.", en: "Buenos Aires is a very big and very pretty city. Also, the people are very kind. I love the food, so I eat a lot. Finally, tomorrow I'm going home and I'm a bit sad." }
+  - task: "Your friend tells you what she likes and doesn't like. Reply: agree or disagree using también and tampoco, and add something about you."
+    es: "A mí me gusta mucho bailar, pero no me gusta el frío. ¿Y a ti?"
+    min: 12
+    max: 35
+    use: [w.tambien, w.tampoco, w.gustar, w.preferir]
+    useAtLeast: 2
+    grammar: [g.tambien-tampoco]
+    expect:
+      - { pattern: "tambi[eé]n", hint: "Agree with a positive: A mí también." }
+      - { pattern: "tampoco", hint: "Agree with a negative: A mí tampoco." }
+    model: { es: "¡A mí también me gusta mucho bailar! Y a mí tampoco me gusta el frío. Prefiero el verano y el sol.", en: "I really like dancing too! And I don't like the cold either. I prefer summer and the sun." }
+  - task: "Write a goodbye card to your host family in Buenos Aires: thank them, say how you feel, invite them to visit you and wish them luck."
+    min: 15
+    max: 40
+    use: [w.invitar, w.feliz, w.olvidar, w.suerte]
+    useAtLeast: 2
+    grammar: [g.present-review, g.ir-a-future]
+    expect:
+      - { pattern: "gracias", hint: "Thank them: Muchas gracias por todo …" }
+      - { pattern: "\\b(invito|visitar|venir|ven|vengan|venid)\\b", hint: "Invite them: Los invito a visitar …" }
+    model: { es: "Hola, familia: muchas gracias por todo. Estoy muy feliz aquí y nunca voy a olvidar Buenos Aires. Los invito a visitar mi casa en Londres. ¡Buena suerte y hasta pronto!", en: "Hi, family: thank you so much for everything. I'm very happy here and I'll never forget Buenos Aires. I invite you to visit my home in London. Good luck and see you soon!" }

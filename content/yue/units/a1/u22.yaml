@@ -135,3 +135,44 @@ dialogues:
       - { q: "When does this conversation happen?", options: ["In the morning", "In the afternoon", "At night"], answer: 0, explain: "They say 早晨: good morning." }
       - { q: "What does Sam drink?", options: ["Coffee", "Tea", "Milk tea"], answer: 1, explain: "Sam doesn't drink coffee, so Mum says 飲茶啦: have some tea." }
       - { q: "What will they do tomorrow?", options: ["Go for yum cha", "Go to school", "Stay at home"], answer: 0, explain: "聽日星期日，我哋去飲茶: tomorrow, Sunday, they're going for yum cha." }
+writing:
+  - task: "Write what you say to your host in the morning, and what you say when you leave for the day."
+    min: 4
+    max: 14
+    use: [w.zou2-san4, w.baai1-baai3, w.ting1-jat6-gin3]
+    useAtLeast: 2
+    grammar: [g.greetings]
+    expect:
+      - { pattern: "早晨", hint: "Say good morning: 早晨！" }
+      - { pattern: "拜拜|聽日見", hint: "Say goodbye: 拜拜 or 聽日見." }
+    model: { es: "早晨！拜拜！聽日見！", en: "Good morning! Bye-bye! See you tomorrow!" }
+  - task: "Write what you like to eat with 鍾意, and say it's tasty."
+    min: 6
+    max: 16
+    use: [w.zung1-ji3, w.hou2-mei6, w.sik6]
+    useAtLeast: 2
+    grammar: [g.zung-ji-like]
+    expect:
+      - { pattern: "鍾意", hint: "Say what you like: 我鍾意食…" }
+      - { pattern: "好味", hint: "Say it's tasty: 好好味！" }
+    model: { es: "我鍾意食點心，好好味！", en: "I like eating dim sum. It's so tasty!" }
+  - task: "Write what day it is today and what day it is tomorrow."
+    min: 6
+    max: 16
+    use: [w.gam1-jat6, w.ting1-jat6, w.sing1-kei4-luk6, w.sing1-kei4-jat6]
+    useAtLeast: 3
+    grammar: [g.days-weeks]
+    expect:
+      - { pattern: "今日", hint: "Say today: 今日星期…" }
+      - { pattern: "聽日", hint: "Say tomorrow: 聽日星期…" }
+    model: { es: "今日星期六，聽日星期日。", en: "Today is Saturday, tomorrow is Sunday." }
+  - task: "You bump into someone on the MTR. Write your apology, then their reply that it doesn't matter."
+    min: 5
+    max: 12
+    use: [w.deoi3-m4-zyu6, w.m4-gan2-jiu3]
+    useAtLeast: 2
+    grammar: [g.greetings]
+    expect:
+      - { pattern: "對唔住", hint: "Say sorry: 對唔住！" }
+      - { pattern: "唔緊要", hint: "Reply: 唔緊要." }
+    model: { es: "對唔住！唔緊要。", en: "Sorry! It doesn't matter." }

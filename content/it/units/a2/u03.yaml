@@ -281,3 +281,39 @@ dialogues:
       - { q: "Com'era il museo ai tempi della nonna?", options: ["Pieno di turisti", "Con pochi turisti", "Chiuso la domenica"], answer: 1, explain: "C'erano pochi turisti." }
       - { q: "Qual era il quadro preferito della nonna?", options: ["La Venere", "La Primavera", "Il David"], answer: 1, explain: "She could look at the Venus for an hour, but preferivo la Primavera." }
       - { q: "Che cosa faceva il nonno al museo?", options: ["Vendeva i biglietti", "Disegnava le statue", "Faceva foto ai turisti"], answer: 1, explain: "Lui studiava arte e disegnava tutte le statue." }
+writing:
+  - task: "Describe where you lived when you were little: what your home was like and what you did every day."
+    min: 30
+    max: 65
+    use: [w.da-piccolo, w.cortile, w.albero, w.giocare, w.cartoni-animati]
+    grammar: [g.imperfetto-forms, g.da-bambino]
+    expect:
+      - { pattern: "\\b\\S+(avo|evo|ivo|avamo|evamo|ivamo|ava|eva|iva|avano|evano|ivano)\\b|\\b(ero|era|eravamo|erano)\\b", hint: "Use the imperfetto: abitavo, giocavo, era…" }
+    model: { es: "Da piccolo abitavo in campagna con la mia famiglia. La nostra casa era grande e aveva un cortile con un albero enorme. Ogni giorno giocavo a pallone con mio fratello e la sera guardavamo i cartoni animati.", en: "When I was little I lived in the country with my family. Our house was big and had a courtyard with a huge tree. Every day I played football with my brother and in the evening we watched cartoons." }
+  - task: "Describe your primary school: your teacher, your class, your favourite subject and what you did in class every day."
+    min: 30
+    max: 65
+    use: [w.maestro, w.classe, w.materia, w.quaderno, w.disegnare]
+    grammar: [g.imperfetto-uses]
+    expect:
+      - { pattern: "\\b\\S+(avo|evo|ivo|avamo|evamo|ivamo|ava|eva|iva|avano|evano|ivano)\\b|\\b(ero|era|eravamo|erano)\\b", hint: "Describe the past with the imperfetto: la maestra era…, scrivevamo…" }
+    model: { es: "Alla scuola elementare la mia maestra si chiamava Rosa ed era molto gentile. In classe eravamo venti bambini. La mia materia preferita era la matematica, ma mi piaceva anche disegnare. Ogni mattina scrivevamo sul quaderno con la penna.", en: "At primary school my teacher was called Rosa and she was very kind. There were twenty children in my class. My favourite subject was maths, but I also liked drawing. Every morning we wrote in our exercise books with a pen." }
+  - task: "Answer the question: describe what you were like as a child, what you dreamed of becoming and a habit you had."
+    es: "E tu, com'eri da bambino?"
+    min: 30
+    max: 65
+    use: [w.vivace, w.curioso, w.sognare, w.da-grande, w.abitudine]
+    grammar: [g.da-bambino, g.imperfetto-uses]
+    expect:
+      - { pattern: "\\b(ero|eri|era)\\b", hint: "Say what you were like: ero vivace, curioso…" }
+      - { pattern: "da grande|sognavo|volevo", hint: "Say what you dreamed of: da grande volevo fare…" }
+    model: { es: "Da bambina ero molto vivace e curiosa: facevo sempre domande! Sognavo di diventare pittrice e da grande volevo vivere a Firenze. Avevo un'abitudine divertente: prima di dormire raccontavo una fiaba al mio gatto.", en: "As a child I was very lively and curious: I was always asking questions! I dreamed of becoming a painter and when I grew up I wanted to live in Florence. I had a funny habit: before going to sleep I told my cat a fairy tale." }
+  - task: "Compare life when your grandparents were young with life today: what there was and wasn't, and what people used to do."
+    min: 30
+    max: 65
+    use: [w.una-volta, w.televisione, w.canale, w.pubblicità, w.adesso]
+    grammar: [g.imperfetto-uses]
+    expect:
+      - { pattern: "\\b\\S+(avo|evo|ivo|avamo|evamo|ivamo|ava|eva|iva|avano|evano|ivano)\\b|\\b(ero|era|eravamo|erano)\\b|c['’]era|c['’]erano", hint: "Describe the past with the imperfetto: avevano, giocavano, c'era…" }
+      - { pattern: "\\b(adesso|oggi|ora|invece)\\b", hint: "Contrast with today: adesso, oggi invece…" }
+    model: { es: "Una volta i miei nonni non avevano la televisione: ascoltavano la radio e leggevano il giornale. I bambini giocavano in strada con una palla. Adesso ci sono cento canali e tanta pubblicità, e i bambini giocano con il cellulare.", en: "In the past my grandparents didn't have a television: they listened to the radio and read the newspaper. Children played in the street with a ball. Now there are a hundred channels and lots of adverts, and children play with their phones." }

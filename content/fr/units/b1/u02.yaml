@@ -286,3 +286,43 @@ dialogues:
       - { q: "Que sont les ex-voto ?", options: ["Des statues dorées", "Des offrandes de marins", "Des cartes postales"], answer: 1, explain: "They're offerings sailors made after a storm." }
       - { q: "Où se trouve le Panier ?", options: ["Sur l'île", "Juste derrière le port", "Dans la basilique"], answer: 1, explain: "« le vieux quartier … juste derrière le port »." }
       - { q: "Comment vont-ils aller au château d'If ?", options: ["À pied", "En bateau, avec un pêcheur", "En petit train"], answer: 1, explain: "Fanny knows a fisherman they can go with by boat." }
+writing:
+  - task: "Write a short description of Notre-Dame-de-la-Garde (or a monument you love) for a travel blog, using qui, que and où."
+    min: 50
+    max: 100
+    use: [w.basilique, w.dominer, w.statue, w.sommet, w.lieu]
+    useAtLeast: 3
+    grammar: [g.relative-qui-que, g.relative-ou]
+    expect:
+      - { pattern: "\\bqui\\b", hint: "Use qui (subject): une basilique qui domine la ville…" }
+      - { pattern: "\\bqu(e\\s|['’])", hint: "Use que (object): une statue que l'on voit de loin…" }
+      - { pattern: "\\bo[uù](?![a-zàâçéèêëîïôûùœ])", hint: "Use où for a place: un lieu où je viens souvent…" }
+    model: { es: "Notre-Dame-de-la-Garde est une basilique qui domine Marseille. Les habitants l'appellent la Bonne Mère. Au sommet, il y a une grande statue dorée que l'on voit de toute la ville. Dans la basilique, on découvre des ex-voto que les marins ont offerts après une tempête. C'est un lieu où je viens souvent, parce que le panorama est magnifique.", en: "Notre-Dame-de-la-Garde is a basilica that overlooks Marseille. The locals call it the Good Mother. At the top there is a big golden statue that you can see from all over the city. In the basilica you find ex-votos that sailors offered after a storm. It's a place where I often come, because the view is magnificent." }
+  - task: "Describe the neighbourhood where you live: its people, its places and what you like there (qui, que, où)."
+    min: 50
+    max: 100
+    use: [w.populaire, w.origine, w.bâtiment, w.multiculturel, w.voisin]
+    useAtLeast: 3
+    grammar: [g.relative-ou, g.relative-qui-que]
+    expect:
+      - { pattern: "\\bo[uù](?![a-zàâçéèêëîïôûùœ])", hint: "Use où: le quartier où j'habite…" }
+      - { pattern: "\\b(qui|que|qu['’])", hint: "Join your sentences with qui or que." }
+    model: { es: "J'habite dans un quartier populaire qui se trouve au nord de Marseille. C'est un quartier où vivent des gens de toutes les origines. Il y a un marché que j'adore, où on trouve des produits d'Afrique et des fruits du Maroc. Les bâtiments ne sont pas très beaux, mais les voisins que je connais sont très gentils. C'est un quartier multiculturel et vivant.", en: "I live in a working-class neighbourhood in the north of Marseille. It's a neighbourhood where people of all origins live. There's a market I love, where you find products from Africa and fruit from Morocco. The buildings aren't very beautiful, but the neighbours I know are very kind. It's a lively, multicultural neighbourhood." }
+  - task: "Describe the city you dream of (la ville dont je rêve): what it is like and what you need there, using dont."
+    min: 50
+    max: 100
+    use: [w.dont, w.rêver, w.habitant, w.lieu, w.port]
+    useAtLeast: 3
+    grammar: [g.relative-dont]
+    expect:
+      - { pattern: "\\bdont\\b", hint: "Use dont: la ville dont je rêve, une ville dont les rues…" }
+    model: { es: "La ville dont je rêve est une ville au soleil, près de la mer. C'est une ville dont les habitants sont sympathiques et dont les rues sont pleines de cafés. Il y a un vieux port où les pêcheurs vendent leurs poissons le matin. Ce dont j'ai besoin, c'est de calme et de lumière. C'est le lieu dont je parle souvent à mes amis. Bref, c'est Marseille !", en: "The city I dream of is a sunny city by the sea. It's a city whose people are friendly and whose streets are full of cafés. There's an old port where the fishermen sell their fish in the morning. What I need is calm and light. It's the place I often talk about to my friends. In short, it's Marseille!" }
+  - task: "Write about the people who matter most to you: the person you share everything with, the one you trust, the one whose home you visit (avec qui, à qui, chez qui, sans lequel…)."
+    min: 50
+    max: 100
+    use: [w.confiance, w.amitié, w.proche, w.se-réconcilier, w.lequel]
+    useAtLeast: 3
+    grammar: [g.relative-preposition]
+    expect:
+      - { pattern: "(\\b(avec|pour|chez|sans|sur|de|par)|(^|\\s)[aà]) (qui|lequel|laquelle|lesquels|lesquelles)\\b|\\b(auquel|auxquels|auxquelles|duquel|desquels)\\b", hint: "Use a preposition + qui / lequel: avec qui, à qui, chez qui, sans laquelle…" }
+    model: { es: "Ma meilleure amie s'appelle Inès. C'est la personne avec qui je partage tout et à qui je fais confiance. Nous nous sommes rencontrées au lycée, et c'est une amitié sans laquelle je serais triste. Il y a aussi mon frère, chez qui je vais chaque été. Nous sommes très proches. On se dispute parfois, mais on se réconcilie toujours très vite.", en: "My best friend is called Inès. She's the person I share everything with and whom I trust. We met at secondary school, and it's a friendship without which I'd be sad. There's also my brother, whose home I go to every summer. We're very close. We argue sometimes, but we always make up very quickly." }

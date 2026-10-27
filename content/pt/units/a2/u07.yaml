@@ -278,3 +278,45 @@ dialogues:
       - { q: "Onde a Rafaela está?", options: ["No Jardim Botânico", "Na rodoviária", "Na Ópera de Arame"], answer: 1, explain: "Estou na rodoviária: she is at the bus station." }
       - { q: "O que a Rafaela pede emprestado?", options: ["Um casaco", "Um celular", "Dinheiro"], answer: 0, explain: "Você me empresta um casaco? She asks to borrow a coat because it's cold." }
       - { q: "O que a Rafaela trouxe para a irmã do Caio?", options: ["Flores", "Pinhão", "Pão de queijo"], answer: 2, explain: "Eu trouxe pão de queijo para ela: she brought pão de queijo." }
+writing:
+  - task: "Reply to your friend's questions using object pronouns instead of repeating the nouns (Eu a vi, Te devolvo, Vou te ligar…)."
+    es: "Você viu a Ana ontem? Você ainda tem o meu livro? Quando você vai me ligar?"
+    min: 25
+    max: 55
+    use: [w.te, w.o.pron, w.devolver, w.ligar, w.ver]
+    useAtLeast: 3
+    grammar: [g.direct-object-pronouns, g.pronoun-placement-brazil]
+    expect:
+      - { pattern: '\b(te|me|lhe)\b', hint: "Use a pronoun like te or me: Te devolvo amanhã. / Vou te ligar." }
+      - { pattern: '(\b(a|o) (vi|tenho|devolvo|levo)\b|\b(vi|tenho|devolvo|levo) (ela|ele)\b)', hint: "Replace the noun with a pronoun: Eu a vi. / Ainda o tenho." }
+    model: { es: "Vi, sim! Eu a vi no shopping. Ela te mandou um beijo. O seu livro? Eu ainda o tenho, mas te devolvo amanhã. E vou te ligar hoje à noite, tá?", en: "Yes, I did! I saw her at the shopping centre. She sent you a kiss. Your book? I've still got it, but I'll give it back to you tomorrow. And I'll call you tonight, OK?" }
+  - task: "Write about your birthday presents: who gave you what, and what you gave someone else (me deu, dei para ela, lhe ofereci…)."
+    min: 25
+    max: 65
+    use: [w.dar, w.oferecer, w.emprestar, w.mostrar, w.presente]
+    useAtLeast: 3
+    grammar: [g.indirect-object-pronouns, g.prepositional-pronouns]
+    expect:
+      - { pattern: '\bme (deu|deram|ofereceu|mostrou|emprestou|trouxe|mandou)\b', hint: "Say who gave you something: Minha mãe me deu…" }
+      - { pattern: '(\bpara (ela|ele|eles|elas|voc[eê])\b|\blhe\b)', hint: "Say what you gave someone: Dei um livro para ela. / Lhe ofereci…" }
+    model: { es: "No meu aniversário, a minha mãe me deu um relógio lindo e o meu irmão me emprestou o carro dele por uma semana. A minha melhor amiga me trouxe flores. No aniversário dela, eu dei um livro para ela e lhe mostrei Curitiba.", en: "For my birthday, my mother gave me a beautiful watch and my brother lent me his car for a week. My best friend brought me flowers. On her birthday I gave her a book and showed her Curitiba." }
+  - task: "Text a friend: invite them to the Ópera de Arame with you and arrange how you'll contact each other (Vem comigo!, Te ligo…, Me avisa…)."
+    min: 25
+    max: 60
+    use: [w.comigo, w.avisar, w.buscar, w.atender, w.telefonar]
+    useAtLeast: 2
+    grammar: [g.prepositional-pronouns, g.pronoun-placement-brazil]
+    expect:
+      - { pattern: '\b(comigo|contigo|conosco)\b', hint: "Use comigo / conosco: Você quer ir comigo?" }
+      - { pattern: '\b(te|me) (ligo|ligar|aviso|avisar|busco|buscar|liga|avisa|mando|mandar)\b', hint: "Arrange contact with pronouns: Te ligo… / Me avisa…" }
+    model: { es: "Oi! Você quer ir comigo à Ópera de Arame no sábado? A Ana vai também. Eu posso te buscar em casa às sete. Me avisa até sexta, tá? Se você não atender o telefone, eu te mando uma mensagem.", en: "Hi! Do you want to come with me to the Ópera de Arame on Saturday? Ana's going too. I can pick you up at home at seven. Let me know by Friday, OK? If you don't answer the phone, I'll send you a message." }
+  - task: "Write a short note to someone you love: say what you do for them and what they do for you (eu te…, você me…)."
+    min: 25
+    max: 55
+    use: [w.amar, w.abraçar, w.escutar, w.olhar, w.ligar]
+    useAtLeast: 3
+    grammar: [g.direct-object-pronouns, g.pronoun-placement-brazil]
+    expect:
+      - { pattern: '\beu te [a-zà-ú]+', hint: "Say what you do for them: Eu te amo, eu te escuto…" }
+      - { pattern: '\bvoc[eê] (sempre )?me [a-zà-ú]+', hint: "Say what they do for you: Você me ajuda, você me escuta…" }
+    model: { es: "Mãe, eu te amo muito! Você sempre me escuta e me ajuda. Quando eu estou triste, você me abraça e me faz rir. Eu te ligo todo domingo e logo vou te visitar em Curitiba. Beijos!", en: "Mum, I love you so much! You always listen to me and help me. When I'm sad, you hug me and make me laugh. I call you every Sunday and soon I'll come and visit you in Curitiba. Love!" }

@@ -273,3 +273,43 @@ dialogues:
       - { q: "佢哋幾點喺邊度等？", options: ["六點喺啟德站", "八點喺體育館", "七點喺餐廳"], answer: 0, explain: "不如我哋六點喺啟德站等: six o'clock at Kai Tak station." }
       - { q: "嘉欣唔食得咩？", options: ["海鮮", "辣嘢", "甜品"], answer: 1, explain: "嘉欣 says 我唔食得辣㗎." }
       - { q: "嘉欣叫Leo唔好做咩？", options: ["唔好遲到", "唔好飲酒", "唔好叫泰國菜"], answer: 0, explain: "Her last line is 唔好遲到呀！" }
+writing:
+  - task: "Invite a friend to see a film tomorrow night with 好唔好 or 不如, and suggest a time and place to meet."
+    min: 20
+    max: 45
+    use: [w.hou2-m4-hou2, w.bat1-jyu4, w.hei3-jyun2, w.jat1-cai4, w.ting1-maan5]
+    useAtLeast: 3
+    grammar: [g.hou-m-hou-suggestions, g.jat-cai-together]
+    expect:
+      - { pattern: "好唔好|不如", hint: "Suggest with 好唔好 or 不如." }
+      - { pattern: "點|喺", hint: "Give a time or place: 七點, 喺戲院門口." }
+    model: { es: "聽晚一齊去睇戲好唔好？不如七點喺戲院門口等，我買飛。", en: "Shall we go and see a film tomorrow night? How about meeting at seven at the cinema entrance? I'll buy the tickets." }
+  - task: "A friend invites you to hotpot, but you have to work overtime. Decline politely and suggest another day."
+    es: "聽晚得唔得閒呀？一齊打邊爐吖！"
+    min: 20
+    max: 45
+    use: [w.gaa1-baan1, w.m4-dak1-haan4, w.goi2-kei4, w.m4-hou2-ji3-si1]
+    useAtLeast: 3
+    grammar: [g.hou-m-hou-suggestions]
+    expect:
+      - { pattern: "唔好意思|對唔住", hint: "Apologise: 唔好意思…" }
+      - { pattern: "改期|不如|下次", hint: "Suggest another time: 不如改期…" }
+    model: { es: "唔好意思，聽晚要加班，唔得閒呀。不如改期，下個禮拜六好唔好？", en: "Sorry, I have to work overtime tomorrow night, so I'm not free. How about another day: next Saturday?" }
+  - task: "Write a group message to plan a birthday hotpot for Leo: everyone goes together and chips in for a cake."
+    min: 20
+    max: 50
+    use: [w.jat1-cai4, w.daa2-bin1-lou4, w.gaap3-cin2, w.daan6-gou1, w.saang1-jat6]
+    useAtLeast: 3
+    grammar: [g.jat-cai-together, g.hou-m-hou-suggestions]
+    expect:
+      - { pattern: "一齊", hint: "Say you'll do it together: 我哋一齊…" }
+    model: { es: "星期六係Leo生日，我哋一齊去打邊爐，夾錢買個蛋糕畀佢，好唔好？", en: "Saturday is Leo's birthday. Shall we all go for hotpot together and chip in for a cake for him?" }
+  - task: "You're hosting dinner. Tell your guests to help themselves, and tell them what not to do with 唔好 or 咪."
+    min: 20
+    max: 45
+    use: [w.m4-hou2, w.mai5.c, w.ceoi4-bin2, w.haak3-hei3]
+    useAtLeast: 3
+    grammar: [g.m-hou-dont]
+    expect:
+      - { pattern: "唔好|咪", hint: "Tell them not to do something: 唔好…, 咪…" }
+    model: { es: "唔好客氣，隨便食啦！不過咪飲咁多酒呀，聽日仲要返工。", en: "Don't be polite, help yourselves! But don't drink so much: we have to work tomorrow." }

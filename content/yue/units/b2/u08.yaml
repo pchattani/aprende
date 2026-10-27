@@ -286,3 +286,44 @@ dialogues:
       - { q: "梁小姐建議點樣做？", options: ["即刻起橋", "加多啲夜晚嘅渡輪", "乜都唔做"], answer: 1, explain: "Miss Leung suggests adding more night ferries instead." }
       - { q: "嗰位住咗五十年嘅居民點諗？", options: ["佢想坪洲變得熱鬧啲", "佢鍾意坪洲靜，唔想坪洲變成旺角", "佢想搬去市區"], answer: 1, explain: "He loves the quiet and asks rhetorically who would want Peng Chau turned into Mong Kok." }
       - { q: "大會最後有咩結果？", options: ["決定起橋", "未有共識，下個月再投票", "決定加船費"], answer: 1, explain: "The chair sums up: there's no consensus yet, and they'll vote next month." }
+writing:
+  - task: "Write the opening of a debate speech for the side that wants to preserve Peng Chau's old match factory. Structure it with 首先, 其次 and 加上."
+    min: 60
+    max: 130
+    use: [w.zyu2-zik6, w.zing3-fong1, w.bou2-juk6, w.kei4-ci3, w.gaa1-soeng5]
+    useAtLeast: 3
+    grammar: [g.adding-points]
+    expect:
+      - { pattern: "首先", hint: "Open your first point with 首先." }
+      - { pattern: "其次|加上|另外|而且", hint: "Add more points: 其次, 加上…" }
+    model: { es: "主席、各位：我哋正方認為應該保育坪洲嘅舊火柴廠。首先，佢係島上重要嘅歷史建築。其次，保育可以令更多遊客嚟到坪洲，對本地經濟有好處。加上，成本其實唔高。", en: "Chair, everyone: we on the affirmative side believe Peng Chau's old match factory should be preserved. First, it is an important historic building on the island. Second, conservation would bring more visitors to Peng Chau, which benefits the local economy. On top of that, the cost isn't actually high." }
+  - task: "The other side says conservation is too expensive. Concede the point with 固然 or 即使, then hold your position."
+    min: 60
+    max: 120
+    use: [w.gu3-jin4, w.waa6-seoi1-jyu4-ci2, w.siu1-sat1, w.fat1-si6, w.zi1-jyun4]
+    useAtLeast: 3
+    grammar: [g.concessive-ji-sai]
+    expect:
+      - { pattern: "固然|即使|話雖如此|就算係噉", hint: "Concede first: 呢點固然有道理… / 即使…都…" }
+      - { pattern: "但係|不過|然而|話雖如此", hint: "Then hold your position: 但係…" }
+    model: { es: "對方話保育要用好多資源，呢點固然有道理，但係如果我哋而家唔做，呢啲建築就會永遠消失。即使要用錢，都係值得嘅。我哋唔可以忽視歷史嘅價值。", en: "The other side says conservation needs a lot of resources. That's admittedly a fair point, but if we don't act now, these buildings will disappear forever. Even if it costs money, it's worth it. We cannot ignore the value of history." }
+  - task: "Sum up your side's argument with 總括嚟講 and 因此, and say what should happen next."
+    min: 60
+    max: 120
+    use: [w.zung2-kut3-lai4-gong2, w.jan1-ci2, w.geoi6-tai2, w.fong1-on3, w.faat3-zin2]
+    useAtLeast: 3
+    grammar: [g.summing-up]
+    expect:
+      - { pattern: "總括嚟講|總結|總之|講到尾", hint: "Sum up with 總括嚟講 or 總之." }
+      - { pattern: "因此|所以", hint: "Draw the conclusion with 因此." }
+    model: { es: "總括嚟講，保育舊火柴廠有三個好處：保留歷史、令更多遊客嚟坪洲，同埋令居民更加重視自己嘅社區。因此，我哋認為政府應該盡快提出一個具體嘅方案。多謝各位。", en: "In summary, preserving the old match factory has three advantages: keeping history alive, bringing more visitors to Peng Chau, and making residents value their community more. Therefore, we believe the government should put forward a concrete plan as soon as possible. Thank you, everyone." }
+  - task: "An opponent claims nobody cares about old buildings. Answer with rhetorical questions (點會…㗎？ 難道…？)."
+    es: "根本冇人關心嗰啲舊建築。"
+    min: 60
+    max: 110
+    use: [w.dim2-wui5, w.naan4-dou6, w.bin6-leon6, w.zi1-ci4]
+    useAtLeast: 3
+    grammar: [g.rhetorical-questions]
+    expect:
+      - { pattern: "點會|難道|唔通|邊有", hint: "Ask a rhetorical question: 點會冇人關心㗎？" }
+    model: { es: "點會冇人關心㗎？上個月咪有幾百個居民簽名支持保育囉。難道佢哋全部都唔算數？如果冇人關心，點解今日會有咁多人嚟聽呢場辯論呢？其實好多人都好重視自己社區嘅歷史。", en: "How could nobody care? Last month hundreds of residents signed to support conservation. Do none of them count? If nobody cared, why would so many people come to hear this debate today? In fact, many people care a great deal about their community's history." }

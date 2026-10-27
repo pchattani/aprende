@@ -1,6 +1,7 @@
 import type { Page } from '@playwright/test'
 import { expect } from '@playwright/test'
 import { existsSync, readFileSync } from 'node:fs'
+import { load } from 'js-yaml'
 
 export interface HookExercise {
   kind: string
@@ -186,4 +187,45 @@ export async function writeCharacter(page: Page, char: string) {
     await page.mouse.up()
     await page.waitForTimeout(120)
   }
+}
+
+/** Lesson ids of this course in syllabus order (levels, units as syllabus.yaml lists them, lessons in file order), read from the content. */
+export function syllabusLessons(lang = process.env.VITE_LANG ?? 'es'): string[] {
+  const syllabus = load(readFileSync(`content/${lang}/syllabus.yaml`, 'utf8')) as { levels: { id: string; units: { id: string }[] }[] }
+  return syllabus.levels.flatMap((lv) =>
+    lv.units.flatMap((u) => {
+      const file = `content/${lang}/units/${lv.id}/${u.id.split('.')[1]}.yaml`
+      return existsSync(file) ? (load(readFileSync(file, 'utf8')) as { lessons: { id: string }[] }).lessons.map((l) => l.id) : []
+    }),
+  )
+}
+
+/**
+ * Mark every lesson before `lessonId` (syllabus order) as completed, so that lesson is open (engine/unlock.ts),
+ * then reload so the app reads the new rows. Needs the course database to exist (after the welcome screen).
+ */
+export async function completeLessonsBefore(page: Page, lessonId: string) {
+  const order = syllabusLessons()
+  const ids = order.slice(0, order.indexOf(lessonId))
+  if (order.indexOf(lessonId) < 0) throw new Error(`unknown lesson ${lessonId}`)
+  const lang = process.env.VITE_LANG ?? 'es'
+  await page.evaluate(
+    async ({ ids, name }) => {
+      const db = await new Promise<IDBDatabase>((resolve, reject) => {
+        const req = indexedDB.open(name)
+        req.onsuccess = () => resolve(req.result)
+        req.onerror = () => reject(req.error)
+      })
+      const tx = db.transaction('lessons', 'readwrite')
+      const now = Date.now() - 60_000
+      for (const id of ids) {
+        const [level, u] = id.split('.')
+        tx.objectStore('lessons').put({ id, unitId: `${level}.${u}`, level, attempts: 1, completions: 1, bestAccuracy: 1, lastAccuracy: 1, xp: 0, firstCompleted: now, lastCompleted: now })
+      }
+      await new Promise((resolve) => (tx.oncomplete = resolve))
+      db.close()
+    },
+    { ids, name: lang === 'es' ? 'aprende' : `aprende-${lang}` },
+  )
+  await page.reload()
 }

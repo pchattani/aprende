@@ -115,7 +115,7 @@ export interface PairQuestion {
  * (two homophones when the table has them, else the same character twice) and half on
  * different tones, mostly from the hard contrasts.
  */
-export function sameOrDifferentRound(rng: Rng, n = 10): PairQuestion[] {
+export function sameOrDifferentRound(rng: Rng, n = 10, prefer?: ReadonlySet<string>): PairQuestion[] {
   const out: PairQuestion[] = []
   const sameCount = Math.floor(n / 2) - (rng.next() < 0.5 ? 1 : 0)
   const item = (base: string, t: Tone, k = 0): ToneItem => {
@@ -124,7 +124,9 @@ export function sameOrDifferentRound(rng: Rng, n = 10): PairQuestion[] {
     const [ch, en] = list[k % list.length]!
     return { ch, jp: `${base}${t}`, en }
   }
-  const sets = rng.shuffle(MINIMAL_SETS)
+  // sets with characters the learner has finished come first (`prefer`: characters of their finished words)
+  const known = (set: (typeof MINIMAL_SETS)[number]) => TONE_LIST.filter((t) => set.tones[t]?.some(([ch]) => prefer?.has(ch))).length
+  const sets = rng.shuffle(MINIMAL_SETS).sort((a, b) => known(b) - known(a))
   for (let i = 0; i < n; i++) {
     const set = sets[i % sets.length]!
     const tones = TONE_LIST.filter((t) => set.tones[t])
@@ -171,8 +173,11 @@ export function toneWords(words: VocabEntry[], syllables: number, readings: (c: 
   return words.filter((v) => v.jp && /^\p{Script=Han}+$/u.test(v.lemma) && v.jp.split(' ').length === syllables && plainReading(v.lemma, v.jp, readings))
 }
 
-/** "Which tone?": up to half the learner's one-syllable words, the rest from the minimal sets, every tone at least once when n ≥ 6. */
-export function whichToneRound(learner: VocabEntry[], rng: Rng, n = 10): ToneQuestion[] {
+/**
+ * "Which tone?": up to half the learner's one-syllable words, the rest from the minimal sets, every
+ * tone at least once when n ≥ 6. Minimal-set characters in `prefer` (the learner's finished words) come first.
+ */
+export function whichToneRound(learner: VocabEntry[], rng: Rng, n = 10, prefer?: ReadonlySet<string>): ToneQuestion[] {
   const out: ToneQuestion[] = []
   const used = new Set<string>()
   for (const v of rng.shuffle(learner)) {
@@ -182,7 +187,7 @@ export function whichToneRound(learner: VocabEntry[], rng: Rng, n = 10): ToneQue
     out.push(fromVocab(v))
   }
   const have = () => new Set(out.map((q) => q.tones[0]))
-  const items = rng.shuffle(TONE_ITEMS).filter((it) => !used.has(it.ch))
+  const items = rng.shuffle(TONE_ITEMS).filter((it) => !used.has(it.ch)).sort((a, b) => Number(Boolean(prefer?.has(b.ch))) - Number(Boolean(prefer?.has(a.ch))))
   // first fill the tones not yet heard, then anything
   for (const t of rng.shuffle(TONE_LIST)) {
     if (out.length >= n || have().has(t)) continue
@@ -200,7 +205,7 @@ export function whichToneRound(learner: VocabEntry[], rng: Rng, n = 10): ToneQue
   return rng.shuffle(out)
 }
 
-/** "Two-syllable words": the learner's words first, topped up from `pool`; no repeated tone pattern more than twice. */
+/** "Two-syllable words": the learner's words first, topped up from `pool` (the games pass their other finished words); no repeated tone pattern more than twice. */
 export function wordToneRound(learner: VocabEntry[], pool: VocabEntry[], rng: Rng, n = 10): ToneQuestion[] {
   const out: ToneQuestion[] = []
   const used = new Set<string>()

@@ -281,3 +281,45 @@ dialogues:
       - { q: "Selon Manon, pourquoi les passagers des bateaux dépensent-ils peu ?", options: ["Ils n'aiment pas Nice", "Ils restent seulement quelques heures", "Tout est trop cher"], answer: 1, explain: "Ils restent quelques heures, donc ils ne dépensent presque rien." }
       - { q: "Pourquoi les amis de Manon quittent-ils le centre ?", options: ["À cause du bruit", "Parce qu'ils ont trouvé du travail ailleurs", "Parce que les loyers ont beaucoup augmenté"], answer: 2, explain: "Les loyers ont tellement augmenté que mes amis quittent le centre." }
       - { q: "Sur quoi sont-ils d'accord à la fin ?", options: ["Construire de nouveaux hôtels", "Limiter les locations pour les touristes", "Fermer le port"], answer: 1, explain: "Karim agrees that limiting holiday rentals is a fair solution." }
+writing:
+  - task: "A friend asks what you think of the food in Nice. Give your opinion and justify it (à mon avis, je trouve que…, je ne pense pas que + subjonctif)."
+    es: "Alors, tu aimes la cuisine niçoise ?"
+    min: 50
+    max: 100
+    use: [w.à-mon-avis, w.trouver-que, w.pois-chiche, w.selon, w.croire]
+    useAtLeast: 3
+    grammar: [g.opinion-mood]
+    expect:
+      - { pattern: "mon avis|\\bselon moi|\\bje (trouve|pense|crois) qu|\\bil me semble qu|apr[eè]s moi", hint: "Give your opinion: à mon avis, je trouve que, je pense que…" }
+      - { pattern: "\\b(ne (pense|crois|trouve) pas|doute|pas (s[uû]re?|certaine?)) qu(e\\s|['’])", hint: "Add a negative opinion with the subjonctif: je ne pense pas que ce soit…" }
+    model: { es: "À mon avis, la cuisine niçoise est une des meilleures de France. Je trouve que la socca, cette galette de pois chiches, est délicieuse quand elle est chaude. Je crois aussi que la vraie salade niçoise est très bonne, avec des tomates et des olives. Par contre, je ne pense pas que la cuisine des grands restaurants de la Promenade soit la meilleure. Selon moi, il faut manger au marché !", en: "In my opinion, the food of Nice is among the best in France. I find socca, that chickpea pancake, delicious when it's hot. I also think a real salade niçoise is very good, with tomatoes and olives. On the other hand, I don't think the food in the big restaurants on the Promenade is the best. For me, you have to eat at the market!" }
+  - task: "Write a paragraph about traffic and transport in Nice or your own city: give causes and consequences (car, puisque, parce que, donc, c'est pourquoi, par conséquent)."
+    min: 50
+    max: 100
+    use: [w.embouteillage, w.circulation, w.transports-en-commun, w.par-conséquent, w.c-est-pourquoi]
+    useAtLeast: 3
+    grammar: [g.connectors-cause-consequence]
+    expect:
+      - { pattern: "\\b(parce qu|car\\b|puisqu|comme\\b|gr[aâ]ce [aà]|cause d)", hint: "Give causes: car, parce que, puisque, à cause de…" }
+      - { pattern: "\\b(donc|c['’]est pourquoi|par cons[eé]quent|alors|si bien qu)", hint: "Give consequences: donc, c'est pourquoi, par conséquent…" }
+    model: { es: "À Nice, il y a beaucoup d'embouteillages, car beaucoup d'habitants prennent leur voiture pour aller travailler. En été, la circulation est encore pire, puisque des milliers de touristes arrivent. Par conséquent, l'air est pollué et les gens sont stressés. C'est pourquoi la ville a construit un tramway. Donc, aujourd'hui, je prends les transports en commun : c'est plus rapide !", en: "In Nice there are lots of traffic jams, because many residents take their car to go to work. In summer the traffic is even worse, since thousands of tourists arrive. As a result the air is polluted and people are stressed. That's why the city built a tramway. So today I use public transport: it's quicker!" }
+  - task: "For or against a car-free Promenade des Anglais? Write a balanced paragraph (d'un côté… de l'autre, cependant, bien que, malgré)."
+    min: 50
+    max: 100
+    use: [w.d-un-côté, w.de-l-autre, w.cependant, w.malgré, w.piéton]
+    useAtLeast: 3
+    grammar: [g.connectors-opposition]
+    expect:
+      - { pattern: "\\b(pourtant|cependant|malgr[eé]|bien qu|alors qu|en revanche|par contre|au contraire|d['’]un c[oô]t[eé])", hint: "Contrast the arguments: d'un côté… de l'autre, cependant, malgré…" }
+      - { pattern: "\\bbien qu(e\\s|['’])|\\bmalgr[eé]", hint: "Use bien que + subjonctif or malgré + noun." }
+    model: { es: "D'un côté, une Promenade des Anglais sans voitures serait agréable pour les piétons et les vélos. L'air serait plus pur et il y aurait moins de bruit. De l'autre, les habitants auraient du mal à se garer, et les commerçants perdraient peut-être des clients. Bien que l'idée soit bonne, elle est compliquée. Cependant, malgré les inconvénients, je suis plutôt pour.", en: "On the one hand, a car-free Promenade des Anglais would be pleasant for pedestrians and bikes. The air would be cleaner and there would be less noise. On the other hand, residents would struggle to park, and shopkeepers might lose customers. Although the idea is good, it's complicated. However, despite the drawbacks, I'm rather in favour." }
+  - task: "Write a formal letter to the mayor of Nice giving your opinion about the carnival: what you think, your reasons and a solution you propose."
+    min: 60
+    max: 110
+    use: [w.maire, w.carnaval, w.attirer, w.solution, w.circulation]
+    useAtLeast: 3
+    grammar: [g.opinion-mood, g.connectors-cause-consequence]
+    expect:
+      - { pattern: "\\b(pense|crois|trouve|semble|avis)\\b", hint: "Give your opinion: je pense que…, à mon avis…" }
+      - { pattern: "\\b(propose|sugg[eè]re|faudrait|devrait|pourrait|pourriez|solution)\\b", hint: "Propose a solution: je propose que…, il faudrait…" }
+    model: { es: "Monsieur le Maire, je vous écris pour vous donner mon avis sur le carnaval de Nice. Je pense que c'est une fête magnifique, car elle attire des milliers de visiteurs. Cependant, je ne crois pas que les habitants sachent toujours quand les rues sont fermées. Par conséquent, la circulation devient très difficile. Je vous propose donc de mettre un plan des rues fermées sur le site de la mairie. Je vous remercie de votre attention.", en: "Dear Mr Mayor, I am writing to give you my opinion about the Nice carnival. I think it is a magnificent festival, because it attracts thousands of visitors. However, I don't believe residents always know when streets are closed. As a result, traffic becomes very difficult. I therefore suggest putting a map of the closed streets on the town hall website. Thank you for your attention." }

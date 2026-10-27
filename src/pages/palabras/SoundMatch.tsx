@@ -37,7 +37,7 @@ export function SoundMatch({ words, onDone, onAgain, best }: { words: VocabEntry
       </div>
     )
   }
-  if (!boards.length) return <TooFew onBack={onDone} />
+  if (!boards.length) return <TooFew onBack={onDone} game="sound" />
   return <Game boards={boards} rng={rng} onDone={onDone} onAgain={onAgain} best={best} />
 }
 

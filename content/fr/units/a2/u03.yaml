@@ -293,3 +293,44 @@ dialogues:
       - { q: "Que faisait le frère de Mamie l'après-midi ?", options: ["Il cherchait des coquillages.", "Il grimpait sur la falaise.", "Il lisait des romans."], answer: 1, explain: "Mon frère grimpait sur la falaise." }
       - { q: "Qui lisait sous le parasol ?", options: ["La mère de Mamie", "Le père de Mamie", "Le frère de Mamie"], answer: 1, explain: "C'était mon père. Il lisait des romans d'Arsène Lupin." }
       - { q: "Comment était la vie à l'époque, selon Mamie ?", options: ["Simple", "Ennuyeuse", "Difficile"], answer: 0, explain: "C'était simple... on ne s'ennuyait jamais." }
+writing:
+  - task: "Describe your life when you were a child: where you lived, what you were like and what you did every day (imparfait)."
+    min: 30
+    max: 70
+    use: [w.enfance, w.village, w.curieux, w.bavard, w.sage]
+    useAtLeast: 3
+    grammar: [g.imparfait-forms, g.imparfait-uses]
+    expect:
+      - { pattern: "\\bquand (j['’][eé]tais|nous [eé]tions|on [eé]tait|j['’]avais)", hint: "Start with Quand j'étais petit(e)…" }
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(?!(mais|jamais|fais|fait|vais|sais|sait|frais|lait|parfait|anglais|fran[cç]ais|japonais|portugais|palais|souhait|vrais|mauvais)(?![a-zàâçéèêëîïôûùœ]))[a-zàâçéèêëîïôûùœ]{2,}(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the imparfait for past habits: j'habitais, j'allais, je jouais…" }
+    model: { es: "Quand j'étais petite, j'habitais dans un village près de la mer. J'étais curieuse et un peu bavarde, mais assez sage. Tous les jours, j'allais à l'école à pied avec mon frère aîné. Le soir, je jouais avec mes poupées et mon chat. C'était une enfance très heureuse.", en: "When I was little, I lived in a village near the sea. I was curious and a bit chatty, but quite well-behaved. Every day I walked to school with my older brother. In the evening I played with my dolls and my cat. It was a very happy childhood." }
+  - task: "Describe your childhood summer holidays: where you used to go and what you used to do every summer (Tous les étés, on allait…)."
+    min: 30
+    max: 70
+    use: [w.plage, w.se-baigner, w.château-de-sable, w.pêcher, w.mamie]
+    useAtLeast: 3
+    grammar: [g.imparfait-uses]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(?!(mais|jamais|fais|fait|vais|sais|sait|frais|lait|parfait|anglais|fran[cç]ais|japonais|portugais|palais|souhait|vrais|mauvais)(?![a-zàâçéèêëîïôûùœ]))[a-zàâçéèêëîïôûùœ]{2,}(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the imparfait for habits: on allait, on se baignait…" }
+      - { pattern: "\\b(tous les|toutes les|chaque|souvent|toujours|d['’]habitude|le matin|le soir|l['’]apr[eè]s-midi)\\b", hint: "Say how often: tous les étés, chaque matin, souvent…" }
+    model: { es: "Tous les étés, on allait chez ma mamie, en Normandie. Le matin, on se baignait dans la mer et on faisait des châteaux de sable. L'après-midi, mon papi pêchait au port. Le soir, on mangeait une glace sur la plage. J'adorais ces vacances !", en: "Every summer we used to go to my grandma's in Normandy. In the morning we swam in the sea and built sandcastles. In the afternoon my grandpa went fishing at the harbour. In the evening we ate an ice cream on the beach. I loved those holidays!" }
+  - task: "Describe Étretat, or a place you loved as a child: what it was like and what there was (c'était…, il y avait…)."
+    min: 30
+    max: 70
+    use: [w.falaise, w.mer, w.vague, w.endroit, w.mouette]
+    useAtLeast: 3
+    grammar: [g.c-etait, g.imparfait-uses]
+    expect:
+      - { pattern: "\\bc['’][eé]tait\\b", hint: "Give your impression: C'était magnifique…" }
+      - { pattern: "\\bil y avait\\b", hint: "Say what there was: Il y avait …" }
+    model: { es: "Quand j'étais enfant, j'allais souvent à Étretat. C'était un endroit magnifique ! Il y avait des falaises blanches, une grande arche et une aiguille dans la mer. Les vagues étaient fortes et il y avait beaucoup de mouettes. C'était calme et beau.", en: "When I was a child I often went to Étretat. It was a wonderful place! There were white cliffs, a big arch and a needle in the sea. The waves were strong and there were lots of seagulls. It was calm and beautiful." }
+  - task: "Imagine Arsène Lupin, the gentleman thief, as a child: describe what he was like and what he used to do."
+    min: 30
+    max: 70
+    use: [w.voleur, w.courageux, w.paresseux, w.bonbon, w.roman]
+    useAtLeast: 3
+    grammar: [g.imparfait-forms, g.imparfait-uses]
+    expect:
+      - { pattern: "\\b(il|elle) [eé]tait\\b", hint: "Describe him: Il était …" }
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(?!(mais|jamais|fais|fait|vais|sais|sait|frais|lait|parfait|anglais|fran[cç]ais|japonais|portugais|palais|souhait|vrais|mauvais)(?![a-zàâçéèêëîïôûùœ]))[a-zàâçéèêëîïôûùœ]{2,}(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Say what he used to do with the imparfait: il lisait, il prenait…" }
+    model: { es: "Quand il était petit, Arsène Lupin habitait à Étretat avec sa mère. Il était très intelligent et courageux, mais un peu paresseux à l'école. Il lisait des romans et il adorait les histoires de voleurs. Il prenait parfois les bonbons de ses copains. C'était déjà un petit voleur !", en: "When he was little, Arsène Lupin lived in Étretat with his mother. He was very clever and brave, but a bit lazy at school. He read novels and loved stories about thieves. He sometimes took his friends' sweets. He was already a little thief!" }

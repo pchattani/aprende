@@ -278,3 +278,43 @@ dialogues:
       - { q: "志明想去英國做乜嘢？", options: ["讀碩士", "旅行", "搵工"], answer: 0, explain: "我希望可以去英國讀碩士." }
       - { q: "點解志明仲要做兼職？", options: ["佢仲未儲夠錢", "佢鍾意返工", "佢想學建築"], answer: 0, explain: "儲夠錢未？ 仲未: he hasn't saved enough yet." }
       - { q: "阿詩嘅夢想係乜嘢？", options: ["做老師", "開茶餐廳", "環遊世界"], answer: 1, explain: "我想創業，喺屏山開一間茶餐廳." }
+writing:
+  - task: "Explain why you're doing two things now, with 為咗: one for your future work and one for studying abroad."
+    min: 40
+    max: 80
+    use: [w.wai6-zo2, w.zoeng1-loi4, w.cou5, w.sek6-si6]
+    useAtLeast: 3
+    grammar: [g.wai-zo-purpose]
+    expect:
+      - { pattern: "為咗", hint: "Give the purpose with 為咗: 為咗將來…" }
+    model: { es: "為咗將來可以喺香港工作，我而家每日都學廣東話。我仲儲緊錢，為咗出年去英國讀碩士。噉樣我將來可以搵到好啲嘅工。", en: "So that I can work in Hong Kong in the future, I study Cantonese every day now. I'm also saving money so I can go to Britain next year for a master's degree. That way I can find a better job in the future." }
+  - task: "Write about your dreams and hopes with 希望 and 夢想."
+    min: 50
+    max: 100
+    use: [w.mung6-soeng2, w.hei1-mong6, w.waan4-jau4-sai3-gaai3, w.zung2-jau5-jat1-jat6, w.cong3-jip6]
+    useAtLeast: 3
+    grammar: [g.hei-mong-hope]
+    expect:
+      - { pattern: "希望", hint: "Say what you hope with 希望." }
+      - { pattern: "夢想|目標|理想|心願", hint: "Talk about your dream: 我嘅夢想係…" }
+    model: { es: "我嘅夢想係環遊世界。我希望三十歲之前可以去晒歐洲所有國家。另外，我仲希望總有一日可以自己創業，開一間細細嘅餐廳。", en: "My dream is to travel around the world. I hope to visit every country in Europe before I'm thirty. Besides that, I hope one day to start my own business: a small restaurant." }
+  - task: "Write about a habit you still haven't changed and what else you still need to do, with 仲未 and 仲要."
+    min: 40
+    max: 90
+    use: [w.gaai3-jin1, w.gaam2-fei4, w.ci4-zou2, w.gin1-ci4, w.zung6-jiu3.b]
+    useAtLeast: 3
+    grammar: [g.zung-still]
+    expect:
+      - { pattern: "仲未|仲要|仲係", hint: "Use 仲: 仲未做到, 仲要…" }
+    model: { es: "我講咗好耐要戒煙，但係仲未做到。我仲要減肥，因為醫生話我太重。不過我相信遲早會成功，我會堅持落去。", en: "I've been saying I'll quit smoking for ages, but I still haven't managed it. I also need to lose weight, because the doctor says I'm too heavy. But I believe I'll succeed sooner or later; I'll keep at it." }
+  - task: "Your friend failed their driving test again and wants to give up. Write them an encouraging message."
+    es: "我考牌又肥佬咗，好想放棄呀。"
+    min: 40
+    max: 90
+    use: [w.fong3-hei3, w.sat1-baai6, w.zeon3-bou6, w.zyun1-sam1, w.seon3-sam1]
+    useAtLeast: 3
+    grammar: [g.hei-mong-hope, g.zung-still]
+    expect:
+      - { pattern: "唔好放棄|堅持", hint: "Encourage them: 唔好放棄！" }
+      - { pattern: "一定|希望|信心", hint: "Show confidence: 下次一定得！" }
+    model: { es: "唔好放棄呀！我第一次考牌都失敗咗。你而家比以前進步咗好多，再專心練習多幾次，下次一定做到。我對你有信心！", en: "Don't give up! I failed my first driving test too. You've improved a lot compared with before; practise carefully a few more times and you'll definitely pass next time. I believe in you!" }

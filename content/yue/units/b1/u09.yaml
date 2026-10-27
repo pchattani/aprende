@@ -278,3 +278,45 @@ dialogues:
       - { q: "點解佢錯過咗尾班車？", options: ["佢一邊睇手機一邊等", "佢食飯食得太慢", "因為落大雨"], answer: 0, explain: "點知我一邊睇手機一邊等: he was looking at his phone while waiting." }
       - { q: "個阿伯原來係邊個？", options: ["志明嘅老師", "的士司機", "輕鐵職員"], answer: 1, explain: "原來佢係的士司機: the old man turned out to be a taxi driver." }
       - { q: "志明最後幾點到屋企？", options: ["十二點", "一點", "兩點"], answer: 1, explain: "結果我一點鐘先到屋企: he didn't get home until one." }
+writing:
+  - task: "Write the opening of a fairy tale, using story openers like 從前 and 有一日."
+    min: 40
+    max: 90
+    use: [w.cung4-cin4, w.jau5-jat1-jat6, w.cyun1, w.aa3-po4, w.zeng2]
+    useAtLeast: 3
+    grammar: [g.story-openers]
+    expect:
+      - { pattern: "從前|古時", hint: "Open the story: 從前有個…" }
+      - { pattern: "有一日|跟住|後來", hint: "Move the story along: 有一日…" }
+    model: { es: "從前有個好細嘅村，村入面住咗一個好窮嘅阿婆。佢有一隻好聰明嘅兔仔。有一日，阿婆喺井邊發現咗一個好大嘅寶藏。", en: "Once upon a time there was a small village, and in it lived a very poor old woman. She had a very clever rabbit. One day, beside the well, the old woman discovered a huge treasure." }
+  - task: "Tell a friend about a strange thing that happened on your way home in Tuen Mun, with a twist using 原來."
+    min: 50
+    max: 100
+    use: [w.co3-gwo3, w.mei5-baan1-ce1, w.dat6-jin4-zi1-gaan1, w.zeoi1, w.jyun4-loi4]
+    useAtLeast: 3
+    grammar: [g.jyun-loi-turns-out, g.story-openers]
+    expect:
+      - { pattern: "原來", hint: "Reveal the twist with 原來: 原來係…" }
+      - { pattern: "突然|點知|跟住|後來", hint: "Move the story along: 突然之間, 點知…" }
+    model: { es: "尋晚我喺屯門錯過咗尾班車，所以要行路返屋企。突然之間，我聽到後面有人追住我，嚇到我即刻跑。點知原來係我細佬，佢都錯過咗尾班車！", en: "Last night I missed the last bus in Tuen Mun, so I had to walk home. All of a sudden I heard someone chasing me from behind, and I was so scared I ran. Who knew: it turned out to be my younger brother, who had missed the last bus too!" }
+  - task: "Finish a fable about a greedy fox: say how it ended with 結果, and give the lesson."
+    min: 40
+    max: 90
+    use: [w.wu4-lei2, w.taam1-sam1, w.git3-gwo2, w.gaau3-fan3, w.cyun1-man4]
+    useAtLeast: 3
+    grammar: [g.git-gwo-finally]
+    expect:
+      - { pattern: "結果", hint: "Say how it turned out: 結果…" }
+      - { pattern: "教訓|最後", hint: "Give the lesson: 呢個故事嘅教訓係…" }
+    model: { es: "隻狐狸好貪心，偷咗村民好多雞。結果佢食得太多，走唔郁，畀村民捉住咗。呢個故事嘅教訓係：唔好太貪心。", en: "The fox was very greedy and stole lots of the villagers' chickens. In the end it ate so much it couldn't move, and the villagers caught it. The lesson of this story: don't be too greedy." }
+  - task: "Your friend confesses a secret. React with 原來係噉, say what you had thought (本來 / 以為), and ask how it turned out."
+    es: "其實我講大話㗎，我冇病，我去咗見工。"
+    min: 40
+    max: 80
+    use: [w.jyun4-loi4-hai6-gam2, w.bun2-loi4, w.ji5-wai4, w.git3-gwo2]
+    useAtLeast: 3
+    grammar: [g.jyun-loi-turns-out, g.git-gwo-finally]
+    expect:
+      - { pattern: "原來", hint: "React with 原來係噉！" }
+      - { pattern: "本來|原本|以為", hint: "Say what you'd thought: 我本來以為…" }
+    model: { es: "原來係噉！我本來以為你真係病咗，仲想買生果嚟探你。結果點呀？你搵唔搵到份工呀？如果佢哋請你，我哋一定要慶祝吓！", en: "So that's it! I thought you were really ill; I even wanted to buy some fruit and visit you. So how did it go? Did you get the job? If they hire you, we must celebrate!" }

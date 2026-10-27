@@ -281,3 +281,44 @@ dialogues:
       - { q: "Como o Tom vai ao museu?", options: ["De ônibus", "A pé", "De táxi"], answer: 1, explain: "The lady says he can walk or take the bus, and Tom decides to walk." }
       - { q: "Onde o Tom tem que virar?", options: ["Na primeira rua, à esquerda", "Na segunda rua, à direita", "Na terceira rua, à direita"], answer: 1, explain: "After the first traffic light, he turns right into the second street." }
       - { q: "Onde a Bia está?", options: ["Na praia", "No museu", "Na barca"], answer: 1, explain: "Bia calls to say she is waiting for Tom at the museum." }
+writing:
+  - task: "A tourist asks you the way to the ferry station. Give clear directions with imperatives (siga, vire, atravesse…)."
+    es: "Com licença, como eu chego à estação das barcas?"
+    min: 15
+    max: 40
+    use: [w.seguir, w.virar, w.direita, w.esquerda, w.atravessar]
+    useAtLeast: 3
+    grammar: [g.imperative-directions]
+    expect:
+      - { pattern: '\b(siga|vire|atravesse|pegue|des[cç]a|suba|entre|passe)\b', hint: "Give directions with imperatives: Siga reto, vire à direita…" }
+      - { pattern: '(direita|esquerda|reto)', hint: "Say which way: à direita, à esquerda, reto." }
+    model: { es: "Siga reto nesta rua até a praça. Depois, vire à esquerda e atravesse a avenida. A estação fica na esquina, à direita. É perto!", en: "Go straight down this street to the square. Then turn left and cross the avenue. The station is on the corner, on the right. It's close!" }
+  - task: "Your friend calls and asks where you are and what you are doing. Answer: say what you and the others are doing right now."
+    es: "Onde vocês estão? O que vocês estão fazendo?"
+    min: 15
+    max: 40
+    use: [w.ônibus, w.ponto-de-ônibus, w.celular, w.chegar, w.passagem]
+    useAtLeast: 2
+    grammar: [g.estar-gerund]
+    expect:
+      - { pattern: '\b(estou|est[aá]|estamos|est[aã]o|t[oô]) [a-zà-ú]+(ando|endo|indo)\b', hint: "Use estar + gerund: Estou esperando … / Estamos chegando …" }
+    model: { es: "Estou no ponto de ônibus, esperando o ônibus para Niterói. A Camila está comprando as passagens e o Thiago está falando no celular. Estamos chegando!", en: "I'm at the bus stop, waiting for the bus to Niterói. Camila is buying the tickets and Thiago is talking on the phone. We're almost there!" }
+  - task: "Write a to-do note for tomorrow: what you have to do (tenho que…) and what you need (preciso de…)."
+    min: 15
+    max: 40
+    use: [w.ter-que, w.precisar, w.documento, w.passagem, w.correio]
+    useAtLeast: 3
+    grammar: [g.ter-que, g.precisar-de]
+    expect:
+      - { pattern: '\bt(enho|em|emos) que\b', hint: "Say what you have to do: Tenho que …" }
+      - { pattern: '\bprecis(o|a|amos|am)\b', hint: "Say what you need: Preciso de … / Preciso comprar …" }
+    model: { es: "Amanhã tenho que ir ao correio e ao banco. Preciso de dinheiro para a passagem. Também tenho que levar um documento. E preciso comprar um guarda-chuva!", en: "Tomorrow I have to go to the post office and the bank. I need money for the ticket. I also have to take an ID document. And I need to buy an umbrella!" }
+  - task: "Write how you get around the city: which transport you take, where you get on and get off, and how you go to Niterói."
+    min: 15
+    max: 40
+    use: [w.pegar, w.descer, w.metrô, w.ônibus, w.bicicleta]
+    useAtLeast: 3
+    grammar: [g.prepositions-movement]
+    expect:
+      - { pattern: '\b(pego|pegamos|vou de|vamos de|vou a p[eé]|des[cç]o|descemos|ando de)', hint: "Say how you travel: Pego o metrô … / Vou de bicicleta …" }
+    model: { es: "Eu pego o metrô perto de casa e desço no centro. Às vezes, vou de bicicleta. Para Niterói, vou de barco ou de ônibus pela ponte.", en: "I take the metro near home and get off in the centre. Sometimes I go by bike. To Niterói I go by ferry, or by bus over the bridge." }

@@ -260,3 +260,46 @@ dialogues:
       - { q: "What does the landlord's letter announce?", options: ["The end of the contract", "A review (increase) of the rent", "An eviction"], answer: 1 }
       - { q: "Why does Tomás say the landlord is breaching the contract?", options: ["Because rent increases must be agreed in writing with three months' notice", "Because rent can never be raised", "Because the letter has no signature"], answer: 0 }
       - { q: "What does Tomás advise about the reply?", options: ["Use as many legal formulas as possible", "Do not reply at all", "Write clearly and keep a copy with acknowledgement of receipt"], answer: 2 }
+writing:
+  - task: "Write a formal application (instancia) to the administration in Villa La Angostura requesting the renewal of your residence permit, using legal-administrative formulas."
+    min: 110
+    max: 190
+    use: [w.por-la-presente, w.solicitante, w.acreditar, w.renovacion, w.tramitar]
+    useAtLeast: 3
+    grammar: [g.legal-register]
+    expect:
+      - { pattern: "por la presente|abajo firmante|\\bexpone\\b", hint: "Use the formulas of an instancia: el abajo firmante, por la presente expone …" }
+      - { pattern: "\\bsolicit[oa]\\b|\\bsolicita que\\b", hint: "Make the request: solicita que se tramite …" }
+      - { pattern: "en virtud de|a efectos de|conforme a|sin perjuicio de", hint: "Use legal connectors: en virtud de, a efectos de, sin perjuicio de …" }
+    model: { es: "Señor director de la Oficina de Extranjería de Villa La Angostura: la abajo firmante, Emma Wilson, con residencia en la calle Los Arrayanes 25, por la presente expone que su permiso de residencia termina el próximo 30 de junio. En virtud de la normativa vigente, y a efectos de acreditar su situación laboral, aporta junto a esta instancia el contrato de trabajo y sus tres últimas nóminas. Por todo ello, solicita que se tramite la renovación de dicho permiso lo antes posible y que se le notifique la resolución por correo electrónico. Sin perjuicio de lo anterior, la solicitante queda a disposición del organismo para subsanar cualquier error en la documentación. En Villa La Angostura, a 2 de mayo de 2026.", en: "To the Director of the Immigration Office of Villa La Angostura: the undersigned, Emma Wilson, residing at 25 Los Arrayanes Street, hereby states that her residence permit expires on 30 June. Pursuant to current regulations, and for the purpose of proving her employment situation, she encloses with this application her employment contract and her last three payslips. Accordingly, she requests that the renewal of said permit be processed as soon as possible and that the decision be notified to her by email. Without prejudice to the above, the applicant remains at the disposal of the office to correct any error in the documentation. Villa La Angostura, 2 May 2026." }
+  - task: "Write three or four clauses of a rental contract for a cabin in Villa La Angostura, in formal legal style (el arrendador, el arrendatario, la mensualidad, rescindir …)."
+    min: 110
+    max: 190
+    use: [w.arrendador, w.arrendatario, w.mensualidad, w.rescindir, w.vigencia]
+    useAtLeast: 3
+    grammar: [g.legal-register]
+    expect:
+      - { pattern: "\\b(el arrendador|la arrendadora|el arrendatario|la arrendataria|las partes)\\b", hint: "Name the parties: el arrendador, el arrendatario, las partes …" }
+      - { pattern: "\\b(se compromete|deber[aá]|podr[aá]|queda obligad|estipula|acuerdan|pactan|tendr[aá])", hint: "Use contractual verbs: se compromete a, deberá, podrá …" }
+    model: { es: "Primera. El arrendador cede al arrendatario el uso de la casa que se encuentra en la calle Los Notros 12, solo como vivienda. Segunda. El contrato tendrá una vigencia de un año a partir de la fecha de su firma y podrá prorrogarse por acuerdo de las partes. Tercera. El arrendatario se compromete a abonar una mensualidad de quinientos mil pesos dentro de los cinco primeros días de cada mes. En caso de incumplimiento, el arrendador podrá rescindir el contrato y exigir una indemnización. Cuarta. El arrendatario no podrá hacer obras en el inmueble sin la autorización por escrito del arrendador. Y en prueba de su acuerdo, ambas partes firman el presente documento en Villa La Angostura.", en: "First. The landlord grants the tenant the use of the house located at 12 Los Notros Street, solely as a home. Second. The contract shall be valid for one year from the date of signature and may be extended by agreement of the parties. Third. The tenant undertakes to pay a monthly rent of five hundred thousand pesos within the first five days of each month. In the event of non-compliance, the landlord may terminate the contract and claim compensation. Fourth. The tenant may not carry out building work on the property without the landlord's written authorisation. In witness of their agreement, both parties sign this document in Villa La Angostura." }
+  - task: "The future subjunctive survives in proverbs and laws. Explain to a classmate what 'Adonde fueres, haz lo que vieres' means, and tell an anecdote from your trip where you applied it."
+    min: 110
+    max: 190
+    use: [w.adonde-fueres-haz-lo-que-vieres, w.refran, w.arcaico, w.sea-lo-que-fuere, w.siglo-de-oro]
+    useAtLeast: 3
+    grammar: [g.future-subjunctive]
+    expect:
+      - { pattern: "fueres|vieres|hubiere|fuere|viniere", hint: "Quote or use a future subjunctive form: fueres, vieres, fuere …" }
+      - { pattern: "\\b(significa|quiere decir|se refiere a|viene a decir)\\b", hint: "Explain the meaning: significa que …" }
+    model: { es: "El refrán «Adonde fueres, haz lo que vieres» usa el futuro de subjuntivo, una forma arcaica que hoy solo aparece en refranes, en textos del Siglo de Oro y en el lenguaje de las leyes. Significa que, cuando visitamos otro lugar, debemos adaptarnos a sus costumbres. Yo lo aprendí en Villa La Angostura. El primer día, en casa de una familia, me ofrecieron mate y yo, por educación, dije «gracias» al recibirlo. Para mi sorpresa, no me volvieron a servir: en Argentina, decir «gracias» significa que ya no quieres más. Desde entonces, sea lo que fuere lo que me ofrezcan, observo primero cómo lo hacen los demás. Es la mejor manera de no meter la pata en un país nuevo.", en: "The proverb 'Adonde fueres, haz lo que vieres' (When in Rome, do as the Romans do) uses the future subjunctive, an archaic form that today only appears in proverbs, Golden Age texts and the language of the law. It means that when we visit another place, we should adapt to its customs. I learned this in Villa La Angostura. On the first day, at a family's house, they offered me mate and, to be polite, I said 'thank you' when I took it. To my surprise, they didn't serve me again: in Argentina, saying 'thank you' means you don't want any more. Since then, whatever I'm offered, I first watch how others do it. It's the best way not to put your foot in it in a new country." }
+  - task: "Rewrite this bureaucratic notice in clear, plain Spanish for ordinary citizens, then explain why plain language matters."
+    es: "Se comunica a los interesados que, en virtud de la normativa vigente, las solicitudes que no fueren subsanadas en el plazo de diez días se tendrán por desistidas, sin perjuicio de su ulterior presentación."
+    min: 110
+    max: 190
+    use: [w.lenguaje, w.comprensible, w.tecnicismo, w.burocracia, w.destinatario]
+    useAtLeast: 3
+    grammar: [g.legal-register]
+    expect:
+      - { pattern: "en otras palabras|es decir|o sea|dicho de otro modo|significa que|quiere decir", hint: "Reformulate: es decir, en otras palabras …" }
+      - { pattern: "\\b(diez|10) d[ií]as\\b", hint: "Keep the key fact: the ten-day deadline." }
+    model: { es: "Versión clara: «Si su solicitud tiene algún error, tiene diez días para corregirlo. Si no lo hace, consideraremos que ha renunciado a ella, aunque podrá volver a presentarla más adelante». En otras palabras, el aviso original dice lo mismo, pero con tecnicismos que la mayoría de los destinatarios no entiende. La burocracia suele usar un lenguaje lleno de fórmulas antiguas y de oraciones muy largas, y eso provoca errores y desconfianza. Un texto comprensible ahorra tiempo a todos: los ciudadanos no tienen que pedir ayuda a un abogado y la administración recibe menos consultas. Por eso, muchos organismos públicos ya están simplificando sus documentos. Al fin y al cabo, es muy difícil cumplir una norma que nadie entiende.", en: "Plain version: 'If your application has a mistake, you have ten days to correct it. If you don't, we will consider that you have withdrawn it, although you can submit it again later.' In other words, the original notice says the same thing, but with jargon that most readers don't understand. Bureaucracy tends to use language full of old formulas and very long sentences, and that leads to mistakes and distrust. A clear text saves everyone time: citizens don't need to ask a lawyer for help and the administration receives fewer queries. That's why many public bodies are already simplifying their documents. After all, it is very hard to obey a rule nobody understands." }

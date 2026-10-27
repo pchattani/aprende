@@ -292,3 +292,43 @@ dialogues:
       - { q: "Comment sont-elles allées de Vernon à Giverny ?", options: ["À pied", "En navette", "En taxi"], answer: 1, explain: "À Vernon, nous sommes montées dans la navette." }
       - { q: "Qu'est-ce que la cousine a laissé dans la navette ?", options: ["Son sac", "Son billet", "Son téléphone"], answer: 2, explain: "Elle a laissé son téléphone dans la navette." }
       - { q: "Nicolas est-il déjà allé à Giverny ?", options: ["Oui, au printemps", "Non, jamais", "Oui, avec Camille"], answer: 1, explain: "Je ne suis jamais allé à Giverny." }
+writing:
+  - task: "Tell the story of your day trip to Giverny by train: when you left, when you arrived, where you went and when you came back (passé composé with être)."
+    min: 30
+    max: 70
+    use: [w.partir, w.arriver, w.rester, w.rentrer, w.journée]
+    useAtLeast: 3
+    grammar: [g.passe-compose-etre, g.pc-agreement-etre]
+    expect:
+      - { pattern: "\\b(suis|es|est|sommes|[eê]tes|sont) (pas |d[eé]j[aà] |vite |bien |aussi )?(all|arriv|parti|sorti|entr|rest|tomb|retourn|rentr|revenu|venu|mont|descendu|n[eé]|mort|devenu|pass)", hint: "Verbs of movement take être: je suis allé(e), nous sommes arrivé(e)s…" }
+    model: { es: "Samedi, je suis partie de la gare Saint-Lazare à huit heures. Je suis arrivée à Vernon à neuf heures, puis je suis allée à Giverny en navette. J'ai visité la maison de Monet et je suis restée deux heures dans le jardin. Je suis rentrée à Paris le soir. Quelle belle journée !", en: "On Saturday I left Saint-Lazare station at eight. I arrived in Vernon at nine, then I went to Giverny by shuttle. I visited Monet's house and stayed two hours in the garden. I came back to Paris in the evening. What a lovely day!" }
+  - task: "Write a short biography of Claude Monet (or another artist): when and where he or she was born, where he or she went and lived, and when he or she died."
+    min: 30
+    max: 70
+    use: [w.naître, w.devenir, w.mourir, w.peintre, w.créer]
+    useAtLeast: 3
+    grammar: [g.passe-compose-etre, g.pc-agreement-etre]
+    expect:
+      - { pattern: "\\b(est|suis|sont) n[eé]", hint: "Say when and where the artist was born: Il est né / Elle est née à …" }
+      - { pattern: "\\b(est|sont) (mort|devenu|venu|all|arriv|parti|rest|rentr|revenu|retourn)", hint: "Use other être verbs: il est devenu, elle est allée, il est mort…" }
+    model: { es: "Claude Monet est né à Paris en 1840. Il a grandi au Havre, en Normandie. Il est devenu peintre et il est allé à Londres. En 1883, il est arrivé à Giverny. Il a créé un grand jardin avec un étang et des nymphéas. Il est mort à Giverny en 1926.", en: "Claude Monet was born in Paris in 1840. He grew up in Le Havre, in Normandy. He became a painter and went to London. In 1883 he arrived in Giverny. He created a big garden with a pond and water lilies. He died in Giverny in 1926." }
+  - task: "Your day trip went badly: nothing worked. Write about it using ne … rien, ne … personne, ne … jamais or ne … plus in the passé composé."
+    min: 30
+    max: 70
+    use: [w.rien, w.personne.pron, w.jamais, w.zut]
+    useAtLeast: 2
+    grammar: [g.negation-passe-compose, g.negation-jamais-plus-rien]
+    expect:
+      - { pattern: "\\bn(e\\s|['’])[^.!?]*\\b(rien|personne|jamais|plus)\\b", hint: "Use ne … rien / personne / jamais / plus." }
+      - { pattern: "\\bn(e\\s|['’])(ai|as|a|avons|avez|ont|suis|es|est|sommes|[eê]tes|sont)\\b", hint: "In the passé composé, ne goes before the auxiliary: je n'ai rien mangé, je ne suis jamais allé(e)…" }
+    model: { es: "Zut ! Quelle journée ! Le train est parti sans moi, alors je suis arrivée à midi. Je n'ai rien mangé. À Giverny, je n'ai vu personne : la maison de Monet était fermée ! Il n'y avait plus de navette pour rentrer. Je ne suis jamais allée aussi loin pour rien !", en: "Oh no! What a day! The train left without me, so I arrived at noon. I didn't eat anything. In Giverny I didn't see anyone: Monet's house was closed! There were no more shuttles to get back. I've never gone so far for nothing!" }
+  - task: "Leave a note for your flatmate before you go away for the weekend: when you are leaving, what you have left for him or her, and when you will be back."
+    min: 30
+    max: 70
+    use: [w.partir, w.quitter, w.laisser, w.clé, w.dormir]
+    useAtLeast: 3
+    grammar: [g.partir-sortir-dormir, g.passe-compose-avoir]
+    expect:
+      - { pattern: "\\b(quitt|laiss)", hint: "Use quitter (a place) or laisser (something): je quitte l'appartement, je t'ai laissé les clés." }
+      - { pattern: "\\b(pars|part|partons|partez|partent|partir|parti|partie|partis|sors|sortons)\\b", hint: "Say when you leave: je pars à …" }
+    model: { es: "Salut, Karim ! Je pars à Giverny ce week-end avec Léa. Je quitte l'appartement à sept heures. Je t'ai laissé les clés sur la table de la cuisine et il y a du fromage dans le frigo. Nous allons dormir dans un hôtel à Vernon. Je rentre dimanche soir. Bisous !", en: "Hi, Karim! I'm going to Giverny this weekend with Léa. I'm leaving the flat at seven. I've left you the keys on the kitchen table and there's some cheese in the fridge. We're going to sleep in a hotel in Vernon. I'll be back on Sunday evening. Love!" }

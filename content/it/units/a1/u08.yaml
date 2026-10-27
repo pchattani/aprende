@@ -300,3 +300,41 @@ dialogues:
       - { q: "Che cosa compra Tom?", options: ["Fragole e pesche", "Fragole e uva", "Pesche e uva"], answer: 0, explain: "Tom buys half a kilo of strawberries and a kilo of peaches; he doesn't take the grapes." }
       - { q: "Quanto è il resto?", options: ["Cinque euro e cinquanta", "Quattro euro e cinquanta", "Dieci euro"], answer: 1, explain: "Tom pays with ten euros for a total of five euros fifty, so the change is four euros fifty." }
       - { q: "Perché Tom non vuole il sacchetto?", options: ["Perché costa troppo", "Perché ha la borsa", "Perché non compra niente"], answer: 1, explain: "Tom says he has his own bag." }
+writing:
+  - task: "You are at the market in Campo de' Fiori. Write what you say to the stallholder: ask for two kinds of fruit with quantities, ask a price and pay."
+    es: "Buongiorno! Cosa desidera?"
+    min: 15
+    max: 40
+    use: [w.chilo, w.etto, w.fragola, w.pesca, w.quanto-costa]
+    grammar: [g.quanto-costa]
+    expect:
+      - { pattern: "quanto cost|quant['’]è|quanto viene|quanto fa", hint: "Ask the price: Quanto costa? / Quant'è?" }
+      - { pattern: "\\b(chilo|chili|etto|etti|litro|litri|mezzo)\\b", hint: "Give a quantity: un chilo di…, due etti di…" }
+    model: { es: "Buongiorno! Vorrei un chilo di pesche e mezzo chilo di fragole, per favore. Quanto costano le ciliegie? Allora prendo anche due etti di ciliegie. Quant'è?", en: "Good morning! I'd like a kilo of peaches and half a kilo of strawberries, please. How much are the cherries? Then I'll also take two hundred grams of cherries. How much is it?" }
+  - task: "In a clothes shop, write what you say: what you are looking for, the colour and the size, then decide to buy it (Lo prendo! / La prendo!)."
+    min: 12
+    max: 35
+    use: [w.maglietta, w.taglia, w.prendere, w.camerino, w.provare]
+    grammar: [g.lo-prendo, g.colours]
+    expect:
+      - { pattern: "\\b(lo|la|li|le) prendo\\b", hint: "Decide: La prendo! / Lo prendo!" }
+      - { pattern: "\\b(ross|giall|verd|blu|azzurr|bianc|ner|grig|marron|rosa|viola|arancion)\\w*", hint: "Say the colour: una maglietta blu, nera…" }
+    model: { es: "Buongiorno, cerco una maglietta blu, taglia M. Posso provare quella? Dov'è il camerino? È perfetta e costa solo venti euro. La prendo!", en: "Good morning, I'm looking for a blue T-shirt, size M. Can I try that one on? Where's the fitting room? It's perfect and it only costs twenty euros. I'll take it!" }
+  - task: "At a stall you point at three things and ask their prices. Use quel, quello, quella, quei or quelle, and give an opinion on the prices."
+    min: 15
+    max: 40
+    use: [w.quello, w.costare, w.borsa, w.cappello, w.caro]
+    grammar: [g.quello-forms, g.numbers-100-plus]
+    expect:
+      - { pattern: "\\b(quel|quello|quella|quei|quegli|quelle)\\b|\\bquell['’]", hint: "Point with quello: quel cappello, quella borsa, quelle scarpe." }
+      - { pattern: "\\bcost", hint: "Ask the price: Quanto costa…?" }
+    model: { es: "Scusi, quanto costa quella borsa rossa? E quel cappello nero? Quelle scarpe sono belle, ma costano centoventi euro: sono troppo care! Prendo solo quel cappello.", en: "Excuse me, how much is that red bag? And that black hat? Those shoes are nice, but they cost a hundred and twenty euros: they're too expensive! I'll just take that hat." }
+  - task: "Write a short sign for your own market stall: what you sell, the prices in euros and how people can pay."
+    min: 15
+    max: 40
+    use: [w.vendere, w.prezzo, w.euro, w.contanti, w.carta-di-credito]
+    grammar: [g.numbers-100-plus, g.quanto-costa]
+    expect:
+      - { pattern: "\\beur[oi]?\\b|€", hint: "Give prices in euros: tre euro al chilo." }
+      - { pattern: "\\bvend\\w*", hint: "Say what you sell: Vendo …" }
+    model: { es: "Alla mia bancarella vendo frutta fresca. Le fragole costano tre euro al chilo e le pesche due euro. I prezzi sono economici! Potete pagare in contanti o con la carta di credito.", en: "At my stall I sell fresh fruit. Strawberries cost three euros a kilo and peaches two euros. The prices are cheap! You can pay in cash or by credit card." }

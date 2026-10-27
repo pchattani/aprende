@@ -280,3 +280,41 @@ dialogues:
       - { q: "Che tempo faceva?", options: ["Pioveva", "Faceva molto caldo", "C'era una tempesta"], answer: 1, explain: "Faceva un caldo terribile." }
       - { q: "Che cosa è successo durante la corsa?", options: ["Un cavallo è scappato", "Il fantino è caduto", "Il nonno è caduto"], answer: 1, explain: "Il fantino della nostra contrada è caduto." }
       - { q: "Chi ha vinto il Palio?", options: ["Il cavallo senza fantino", "Un'altra contrada", "Nessuno"], answer: 0, explain: "At the Palio the horse wins, even without its jockey (cavallo scosso)." }
+writing:
+  - task: "Tell an anecdote about something unexpected that happened at the Palio in Siena (or another event): set the scene with the imperfetto, then tell what happened with the passato prossimo."
+    min: 35
+    max: 70
+    use: [w.allimprovviso, w.rumore, w.sorpreso, w.alla-fine, w.vincere]
+    grammar: [g.passato-prossimo-vs-imperfetto, g.narrative-connectors]
+    expect:
+      - { pattern: "\\b\\S+(avo|evo|ivo|ava|eva|iva|avano|evano|ivano)\\b|\\b(ero|era|erano)\\b|c['’]era", hint: "Set the scene with the imperfetto: faceva caldo, c'era tanta gente…" }
+      - { pattern: "\\b(ho|ha|abbiamo|hanno|sono|siamo)\\s+(\\S+\\s+)?\\S+(at|ut|it|s|tt)[oaie]\\b|(è)\\s+\\S+(at|ut|it)[oa]\\b", hint: "Tell the events with the passato prossimo: ho sentito, sono partiti…" }
+      - { pattern: "all['’]improvviso|improvvisamente|a un certo punto|un giorno|alla fine", hint: "Use a narrative connector: all'improvviso, alla fine…" }
+    model: { es: "L'estate scorsa ero a Siena per il Palio. Faceva molto caldo e la piazza era piena di gente. All'improvviso ho sentito un rumore forte: i cavalli sono partiti! Ero così sorpreso che ho perso il cappello. Alla fine ha vinto la contrada dell'Oca.", en: "Last summer I was in Siena for the Palio. It was very hot and the square was full of people. Suddenly I heard a loud noise: the horses had set off! I was so surprised that I lost my hat. In the end the Goose district won." }
+  - task: "Write 3–4 sentences about an evening when several things happened at once: say what you were doing (stavo + gerund, mentre…) when something happened."
+    min: 30
+    max: 65
+    use: [w.mentre, w.squillare, w.campanello, w.cucinare]
+    grammar: [g.mentre-quando, g.stare-gerundio-past]
+    expect:
+      - { pattern: "\\b(stavo|stavi|stava|stavamo|stavate|stavano)\\s+\\S+(ando|endo)\\b", hint: "Use stavo + gerund: stavo cucinando quando…" }
+      - { pattern: "\\bmentre\\b", hint: "Use mentre for the background action: mentre parlavo…" }
+    model: { es: "Ieri sera stavo cucinando quando è squillato il telefono. Era mia madre. Mentre parlavamo, ha suonato il campanello: era il mio vicino. E mentre io aprivo la porta, il cane ha mangiato la mia cena!", en: "Last night I was cooking when the phone rang. It was my mother. While we were talking, the doorbell rang: it was my neighbour. And while I was opening the door, the dog ate my dinner!" }
+  - task: "Write the beginning of a fairy tale set near Siena: start with C'era una volta…, introduce the characters and the place, then tell what happened one day."
+    min: 35
+    max: 70
+    use: [w.re, w.principessa, w.castello, w.strega, w.un-giorno]
+    grammar: [g.narrative-connectors, g.passato-prossimo-vs-imperfetto]
+    expect:
+      - { pattern: "c['’]era una volta", hint: "Start the classic way: C'era una volta…" }
+      - { pattern: "\\bun giorno\\b|all['’]improvviso|improvvisamente|a un certo punto", hint: "Move to the events: Un giorno…, All'improvviso…" }
+    model: { es: "C'era una volta un re molto ricco che abitava in un grande castello vicino a Siena. Aveva una figlia, una principessa bella e coraggiosa. Un giorno una strega cattiva è arrivata al castello e ha trasformato il re in un coniglio! Allora la principessa è partita per cercare un mago.", en: "Once upon a time there was a very rich king who lived in a big castle near Siena. He had a daughter, a beautiful and brave princess. One day a wicked witch arrived at the castle and turned the king into a rabbit! So the princess set off to look for a wizard." }
+  - task: "Write a short news report for a local paper about yesterday's Palio: the atmosphere and the weather (imperfetto) and what happened in the race (passato prossimo)."
+    min: 35
+    max: 70
+    use: [w.contrada, w.fantino, w.corsa, w.gridare, w.vincere]
+    grammar: [g.passato-prossimo-vs-imperfetto]
+    expect:
+      - { pattern: "\\b\\S+(ava|eva|iva|avano|evano|ivano)\\b|\\b(era|erano)\\b|c['’]era|c['’]erano", hint: "Describe the atmosphere with the imperfetto: c'erano…, faceva caldo…" }
+      - { pattern: "\\b(ha|hanno|è|sono)\\s+(\\S+\\s+)?\\S+(at|ut|it|t)[oaie]\\b", hint: "Report the events with the passato prossimo: ha vinto, è finita…" }
+    model: { es: "Ieri pomeriggio in Piazza del Campo c'era tanta gente. Il cielo era sereno e faceva caldo. La corsa è finita dopo solo novanta secondi: ha vinto la contrada della Torre, con il fantino Marco Rossi. Alla fine tutti gridavano e cantavano per le strade.", en: "Yesterday afternoon in Piazza del Campo there were lots of people. The sky was clear and it was hot. The race was over after only ninety seconds: the Tower district won, with the jockey Marco Rossi. At the end everyone was shouting and singing in the streets." }

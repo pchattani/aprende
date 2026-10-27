@@ -230,3 +230,44 @@ dialogues:
       - { q: "When did Carmen come to Madrid?", options: ["At nineteen", "In 1948", "In 1980"], answer: 0 }
       - { q: "Where did she meet her husband?", options: ["In the factory", "At a dance", "In her shop"], answer: 1 }
       - { q: "How long did she work in her own shop?", options: ["Twenty years", "Thirty years", "Forty years"], answer: 1 }
+writing:
+  - task: "Write a short biography of a famous person you admire: when and where they were born, what they did, and when they died (if they did)."
+    min: 35
+    max: 70
+    use: [w.nacer, w.morir, w.famoso, w.exito, w.escritor]
+    useAtLeast: 3
+    grammar: [g.preterite-irregular, g.preterite-ser-ir]
+    expect:
+      - { pattern: "\\bnaci[oó](?![a-záéíóúñ])", hint: "Say when they were born: nació en …" }
+      - { pattern: "\\b(fue|hizo|tuvo|escribi[oó]|pint[oó]|gan[oó]|muri[oó]|consigui[oó]|vivi[oó]|cant[oó]|fund[oó]|invent[oó])", hint: "Say what they did with the preterite: fue, hizo, ganó …" }
+    model: { es: "El escritor Jorge Luis Borges nació en Buenos Aires en 1899. De joven vivió en Europa con su familia. Fue muy famoso y escribió poemas y cuentos. Tuvo mucho éxito, pero nunca ganó el Premio Nobel. Murió en Ginebra en 1986.", en: "The writer Jorge Luis Borges was born in Buenos Aires in 1899. As a young man he lived in Europe with his family. He was very famous and wrote poems and short stories. He was very successful, but he never won the Nobel Prize. He died in Geneva in 1986." }
+  - task: "Tell the main events in the life of someone in your family: birth, childhood, moving, marriage, children. Use a los … años."
+    min: 30
+    max: 65
+    use: [w.nacer, w.crecer, w.mudarse, w.casarse, w.conocer]
+    useAtLeast: 3
+    grammar: [g.preterite-irregular, g.preterite-stem-changing]
+    expect:
+      - { pattern: "\\ba los [a-z0-9]+ a[nñ]os", hint: "Say at what age: a los veinte años …" }
+      - { pattern: "\\b(naci|creci|se mud|me mud|se cas|me cas|conoci|tuvo|tuvieron|fue|empez|trabaj)", hint: "Tell the events with the preterite: nació, creció, se mudó …" }
+    model: { es: "Mi abuela nació en un pueblo de Italia en 1940. Creció en el campo con sus seis hermanos. A los veinte años se mudó a Argentina en barco. Allí conoció a mi abuelo y se casaron en 1965. Tuvieron cuatro hijos.", en: "My grandmother was born in a village in Italy in 1940. She grew up in the countryside with her six brothers and sisters. At twenty she moved to Argentina by boat. There she met my grandfather and they got married in 1965. They had four children." }
+  - task: "Write a postcard from San Antonio de Areco about the gaucho festival yesterday. Use irregular preterites: fuimos, vimos, hicimos, tuvimos, pudimos."
+    min: 30
+    max: 65
+    use: [w.historia, w.durante, w.conseguir, w.entonces]
+    useAtLeast: 2
+    grammar: [g.preterite-ser-ir, g.preterite-irregular]
+    expect:
+      - { pattern: "\\b(fuimos|fui|fue|fueron)\\b", hint: "Use ser / ir in the preterite: fuimos a …, fue genial." }
+      - { pattern: "\\b(hicimos|hice|tuvimos|tuve|pudimos|pude|vimos|vi|estuvimos|estuve|vinieron|dijo|quisimos|puso)\\b", hint: "Add other irregular preterites: hicimos, tuvimos, vimos …" }
+    model: { es: "¡Hola, Pablo! Ayer fuimos a San Antonio de Areco. Durante la fiesta vimos muchos caballos y escuchamos música típica. Un señor nos contó la historia del pueblo. Después comimos carne y no pudimos comer más. ¡Fue un día genial!", en: "Hi, Pablo! Yesterday we went to San Antonio de Areco. During the festival we saw lots of horses and listened to traditional music. A man told us the history of the town. Then we ate meat and couldn't eat any more. It was a great day!" }
+  - task: "You are interviewing an old gaucho about his life. Write 4–5 questions in the preterite, using usted."
+    min: 25
+    max: 50
+    use: [w.nacer, w.infancia, w.juventud, w.conseguir, w.casarse]
+    useAtLeast: 3
+    grammar: [g.preterite-irregular, g.preterite-stem-changing]
+    expect:
+      - { pattern: "¿", hint: "Write questions with ¿ … ?" }
+      - { pattern: "\\b(naci[oó]|vivi[oó]|trabaj[oó]|aprendi[oó]|empez[oó]|hizo|tuvo|fue|consigui[oó]|pidi[oó]|sinti[oó]|prefiri[oó]|durmi[oó]|se cas[oó]|conoci[oó])", hint: "Use usted preterite forms: ¿Dónde nació? ¿Qué hizo …?" }
+    model: { es: "Buenas tardes, señor. ¿Dónde nació usted? ¿Cómo fue su infancia en el campo? ¿Qué hizo en su juventud? ¿Cuándo consiguió su primer trabajo? ¿Y cuándo se casó?", en: "Good afternoon, sir. Where were you born? What was your childhood in the countryside like? What did you do in your youth? When did you get your first job? And when did you get married?" }

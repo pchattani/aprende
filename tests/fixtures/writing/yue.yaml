@@ -1,0 +1,12 @@
+level: a1
+unitWords: [w.ngo5, w.jau5, w.mou5, w.go3, w.zek3, w.gau2.b, w.maau1, w.loeng5, w.uk1-kei2, w.zyu6]
+writing:
+  - task: "Write what pets you have and where you live: use 有 and 冇."
+    min: 8
+    max: 30
+    use: [w.jau5, w.mou5, w.zek3, w.gau2.b, w.maau1]
+    useAtLeast: 3
+    expect:
+      - { pattern: "有", hint: "Say what you have: 我有…" }
+      - { pattern: "冇", hint: "Say what you don't have: 我冇… (never 唔有)." }
+    model: { es: "我有兩隻狗，冇貓。我住喺香港。", en: "I have two dogs and no cat. I live in Hong Kong." }

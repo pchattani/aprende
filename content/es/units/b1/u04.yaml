@@ -281,3 +281,46 @@ dialogues:
       - { q: "¿Por qué no quiere Marta hablar con su jefe?", options: ["Porque está de vacaciones", "Porque tiene miedo de que se enfade", "Porque ya le ha pedido más tiempo"], answer: 1 }
       - { q: "¿Qué consejo le da Lucía sobre el fin de semana?", options: ["Que no trabaje", "Que estire la espalda cada mañana", "Que prepare la presentación el lunes"], answer: 0 }
       - { q: "¿Qué va a hacer Marta mañana?", options: ["Pedir cita con el médico", "Terminar la presentación", "Hablar otra vez con Lucía"], answer: 0, explain: "Lucía tells her to see a doctor as soon as possible; Marta replies 'Mañana mismo pido cita'." }
+writing:
+  - task: "Your friend is going to drive in Argentina for the first time. Write advice: what to do and what not to do (no corras, no bebas …)."
+    min: 50
+    max: 100
+    use: [w.cinturon, w.limite, w.alcohol, w.peaton, w.respetar]
+    useAtLeast: 3
+    grammar: [g.imperative-negative]
+    expect:
+      - { pattern: "\\bno (te |lo |la |le |los |las )?(corras|bebas|conduzcas|hables|uses|aparques|olvides|pares|frenes|cruces|lleves|pases|vayas|toques|pongas|hagas|digas|salgas|comas|duermas|mires|dejes)\\b", hint: "Use negative tú commands: no corras, no bebas, no uses …" }
+      - { pattern: "\\b(ponte|respeta|lleva|para|frena|ten|mira|deja|usa|conduce)\\b", hint: "Add positive advice too: ponte el cinturón, respeta los límites …" }
+    model: { es: "Antes de salir, ponte siempre el cinturón y respeta los límites de velocidad. No corras en la carretera, aunque no haya tráfico. No bebas alcohol si vas a conducir, ni siquiera una cerveza. En la ciudad, ten cuidado con los peatones y no aparques en la acera. Y por favor, no uses el móvil mientras conduces.", en: "Before you set off, always put your seatbelt on and respect the speed limits. Don't speed on the road, even if there's no traffic. Don't drink alcohol if you're going to drive, not even a beer. In the city, watch out for pedestrians and don't park on the pavement. And please, don't use your phone while you're driving." }
+  - task: "Your friend is jealous and upset. Calm her down with negative commands, some with pronouns (no te preocupes, no lo culpes, no se lo cuentes …)."
+    es: "Mi novio no me contesta los mensajes y estoy muy celosa. ¿Qué hago?"
+    min: 50
+    max: 100
+    use: [w.tranquilizarse, w.celos, w.confianza, w.culpar, w.enfadarse]
+    useAtLeast: 3
+    grammar: [g.imperative-negative]
+    expect:
+      - { pattern: "no te (preocupes|enfades|pongas|agobies|estreses|vuelvas)", hint: "Use negative commands with te: no te preocupes, no te enfades …" }
+      - { pattern: "\\bno (se lo|se la|lo|la|le|les|me) [a-záéíóúñ]+(es|as)\\b", hint: "Add a negative command with an object pronoun: no lo culpes, no se lo cuentes …" }
+    model: { es: "Tranquilízate, por favor, y no te preocupes tanto. Seguro que está ocupado. No le escribas veinte mensajes en una hora y no lo culpes antes de hablar con él. Los celos destruyen la confianza. Si quieres hablar del tema, hazlo con tranquilidad y no te enfades. Y, por favor, no se lo cuentes a toda la familia.", en: "Calm down, please, and don't worry so much. I'm sure he's busy. Don't send him twenty messages in an hour and don't blame him before talking to him. Jealousy destroys trust. If you want to talk about it, do it calmly and don't get angry. And please don't tell the whole family." }
+  - task: "Give advice to a stressed student, using te recomiendo que, te aconsejo que, te sugiero que + subjunctive."
+    es: "Tengo exámenes finales en dos semanas y estoy fatal: no duermo y como mal."
+    min: 50
+    max: 100
+    use: [w.aconsejar, w.sugerir, w.repasar, w.concentrarse, w.ansiedad]
+    useAtLeast: 3
+    grammar: [g.subjunctive-advice]
+    expect:
+      - { pattern: "te (recomiendo|aconsejo|sugiero|propongo) que|es (mejor|importante|recomendable) que", hint: "Give advice with que + subjunctive: te recomiendo que …, te aconsejo que …" }
+    model: { es: "Te recomiendo que hagas un plan de estudio y que repases un poco cada día. También te aconsejo que duermas al menos siete horas, porque sin descanso no podrás concentrarte. Te sugiero que comas más fruta y menos grasa. Si la ansiedad no se va, es mejor que hables con un psicólogo. ¡Mucho ánimo!", en: "I recommend you make a study plan and revise a little every day. I also advise you to sleep at least seven hours, because without rest you won't be able to concentrate. I suggest you eat more fruit and less fat. If the anxiety doesn't go away, it's better to talk to a psychologist. Hang in there!" }
+  - task: "Your boss left a note for your colleague Pablo. Pass on her instructions (Dice que …, Quiere que …, Te pide que …)."
+    es: "Pablo: imprime la presentación, archiva los contratos y llama al proveedor cuanto antes. Prepara también mi despacho para la reunión."
+    min: 50
+    max: 100
+    use: [w.imprimir, w.archivar, w.proveedor, w.cuanto-antes, w.presentacion]
+    useAtLeast: 3
+    grammar: [g.indirect-commands]
+    expect:
+      - { pattern: "\\b(dice|ha dicho|pide|quiere|manda) que\\b", hint: "Pass on the order: dice que …, quiere que …" }
+      - { pattern: "\\bque (le |lo |la |les )?(imprimas|archives|llames|prepares|traigas|vengas|hagas|termines|env[ií]es)\\b", hint: "Use the subjunctive in the order: dice que imprimas …, que llames …" }
+    model: { es: "Hola, Pablo. La jefa ha dejado una nota en tu mesa. Dice que imprimas la presentación antes de las diez y que archives los contratos nuevos. También quiere que llames al proveedor cuanto antes, porque el pedido no ha llegado. Además, te pide que prepares su despacho para la reunión de esta tarde. Luego me cuentas.", en: "Hi, Pablo. The boss has left a note on your desk. She says you should print the presentation before ten and file the new contracts. She also wants you to call the supplier as soon as possible, because the order hasn't arrived. She also asks you to get her office ready for this afternoon's meeting. Let me know how it goes." }

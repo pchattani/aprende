@@ -284,3 +284,41 @@ dialogues:
       - { q: "A che ora si alza Giulia?", options: ["Alle sei e mezza.", "Alle nove.", "Alle sette e un quarto."], answer: 0, explain: "«La mattina mi alzo presto, alle sei e mezza»." }
       - { q: "Che cosa fa Giulia la domenica?", options: ["Pulisce la casa.", "Lavora.", "Pranza con i suoi genitori."], answer: 2, explain: "«La domenica pranzo sempre con i miei genitori»; she cleans on Saturdays." }
       - { q: "Fino a che ora dorme Tom?", options: ["Fino alle sei.", "Fino alle nove.", "Fino a mezzogiorno."], answer: 1, explain: "Tom is on holiday: «dormo fino alle nove»." }
+writing:
+  - task: "Describe your typical morning: what time you wake up and get up, what you do to get ready and when you have breakfast."
+    min: 15
+    max: 40
+    use: [w.svegliarsi, w.alzarsi, w.vestirsi, w.colazione, w.farsi-la-doccia]
+    grammar: [g.reflexive-present, g.time-telling]
+    expect:
+      - { pattern: "\\bmi (alzo|sveglio|lavo|vesto|preparo|faccio)\\b", hint: "Use reflexive verbs: mi sveglio, mi alzo, mi vesto…" }
+      - { pattern: "\\b(alle|all['’]una|a mezzogiorno)\\b|\\ball['’]", hint: "Say the time: alle sette, alle sette e mezza…" }
+    model: { es: "Di solito mi sveglio alle sette. Mi alzo, mi faccio la doccia e mi vesto. Alle sette e mezza faccio colazione con un caffè.", en: "I usually wake up at seven. I get up, have a shower and get dressed. At half past seven I have breakfast with a coffee." }
+  - task: "Write about your evenings: what you always do, what you often or sometimes do, and what you never do."
+    min: 15
+    max: 40
+    use: [w.sempre, w.spesso, w.a-volte, w.mai, w.leggere]
+    grammar: [g.frequency-adverbs, g.present-ere-ire]
+    expect:
+      - { pattern: "\\b(sempre|spesso|a volte|qualche volta|di solito|raramente)\\b", hint: "Say how often: sempre, spesso, a volte…" }
+      - { pattern: "\\bnon\\s+(\\S+\\s+){1,2}mai\\b", hint: "Say what you never do: Non … mai." }
+    model: { es: "La sera ceno sempre a casa. Spesso leggo un libro o guardo un film. A volte scrivo a mia madre. Non dormo mai prima di mezzanotte!", en: "In the evening I always have dinner at home. I often read a book or watch a film. Sometimes I write to my mother. I never sleep before midnight!" }
+  - task: "Your Italian teacher asks how your Italian is going. Answer: what you read and write, what you understand and don't understand, and when your lesson finishes."
+    es: "Allora, come va con l'italiano?"
+    min: 15
+    max: 40
+    use: [w.capire, w.leggere, w.scrivere, w.finire, w.lezione]
+    grammar: [g.present-isc, g.present-ere-ire]
+    expect:
+      - { pattern: "\\b(capisc[oeia]\\w*|capiamo|capite|finisc\\w*|finiamo|prefer\\w*|pulisc\\w*)\\b", hint: "Use an -isc verb: capisco, finisce, preferisco…" }
+      - { pattern: "\\b(leggo|leggiamo|scrivo|scriviamo|rispondo|ripeto|sento|apro|chiedo)\\b", hint: "Use -ere/-ire verbs: leggo, scrivo, ripeto…" }
+    model: { es: "Va bene! Leggo un libro italiano e scrivo i compiti ogni giorno. Capisco molte parole, ma non capisco sempre la professoressa. La lezione finisce alle sei.", en: "It's going well! I read an Italian book and do my homework every day. I understand a lot of words, but I don't always understand the teacher. The lesson finishes at six." }
+  - task: "Describe one day in the life of Giulia, who works near Piazza Navona: when she gets up, works, comes home and goes to sleep."
+    min: 15
+    max: 40
+    use: [w.lavorare, w.tornare, w.pomeriggio, w.sera, w.addormentarsi]
+    grammar: [g.reflexive-present, g.time-telling]
+    expect:
+      - { pattern: "\\bsi (alza|sveglia|lava|veste|prepara|riposa|addormenta|diverte)\\b", hint: "Use reflexive verbs for Giulia: si alza, si addormenta…" }
+      - { pattern: "\\b(alle|all['’]una|a mezzogiorno|a mezzanotte)\\b|\\ball['’]", hint: "Say the time: alle sei e mezza…" }
+    model: { es: "Giulia si alza alle sei e mezza. Lavora in un ufficio vicino a Piazza Navona. Torna a casa alle cinque del pomeriggio. La sera legge e si addormenta alle undici.", en: "Giulia gets up at half past six. She works in an office near Piazza Navona. She comes home at five in the afternoon. In the evening she reads and falls asleep at eleven." }

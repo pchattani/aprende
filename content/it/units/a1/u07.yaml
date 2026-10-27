@@ -303,3 +303,41 @@ dialogues:
       - { q: "Come sta Tom?", options: ["Sta male ed è triste", "Sta bene, ma ha fame e caldo", "È stanco e ha freddo"], answer: 1, explain: "Tom says he is fine, but he is starving and it is too hot." }
       - { q: "Che cosa porta Sara?", options: ["Un cappello e una giacca", "Gli occhiali neri e una borsa rossa", "Una borsa nera"], answer: 1, explain: "Sara wears black glasses and Tom sees her with a red bag." }
       - { q: "Dove vanno Tom e Sara?", options: ["Al bar in piazza", "Al museo", "A casa di Giulia"], answer: 0, explain: "Giulia suggests the bar in the square, which has good sandwiches." }
+writing:
+  - task: "Describe a friend: what he or she looks like (height, hair, eyes) and what his or her character is like."
+    min: 15
+    max: 40
+    use: [w.alto, w.capelli, w.occhio, w.intelligente, w.timido]
+    grammar: [g.adjective-position, g.molto-poco-troppo]
+    expect:
+      - { pattern: "\\bcapelli\\b|\\bocchi\\b", hint: "Describe hair and eyes: ha i capelli lunghi, gli occhi azzurri…" }
+      - { pattern: "\\b(simpatic|intelligent|allegr|timid|divertent|gentil|brav|pigr|sportiv|noios|carin)\\w*", hint: "Describe the character: simpatico, timido, allegro…" }
+    model: { es: "La mia amica Laura è alta e magra. Ha i capelli lunghi e biondi e gli occhi azzurri. È una ragazza molto intelligente, ma un po' timida.", en: "My friend Laura is tall and slim. She has long blond hair and blue eyes. She's a very intelligent girl, but a bit shy." }
+  - task: "Your friend asks how you are today. Reply: say how you feel and why, using stare, essere and avere expressions (fame, sonno, fretta…)."
+    es: "Ciao! Come stai oggi? Tutto bene?"
+    min: 15
+    max: 40
+    use: [w.stanco, w.contento, w.fame, w.sonno, w.troppo]
+    grammar: [g.stare-present, g.avere-expressions]
+    expect:
+      - { pattern: "\\bho (fame|sete|sonno|caldo|freddo|fretta|paura|voglia|bisogno)\\b|\\bho (una|molta|tanta|un po['’] di) (fame|sete|paura|voglia|fretta)", hint: "Use an avere expression: ho fame, ho sonno…" }
+      - { pattern: "\\b(stanc|content|felic|trist|nervos|preoccupat|arrabbiat|annoiat)\\w*", hint: "Say how you feel: sono stanco/a, contento/a…" }
+    model: { es: "Ciao! Oggi sto così così. Sono molto stanco perché lavoro troppo. Adesso ho fame e ho sonno! Ma sono contento: stasera vedo i miei amici.", en: "Hi! Today I'm so-so. I'm very tired because I work too much. Right now I'm hungry and sleepy! But I'm happy: tonight I'm seeing my friends." }
+  - task: "Write a postcard from the Pantheon. Use bello and buono: a beautiful square, a good coffee, nice people…"
+    min: 15
+    max: 40
+    use: [w.bello, w.buono, w.tanto, w.caffè, w.bellissimo]
+    grammar: [g.bello-buono, g.molto-poco-troppo]
+    expect:
+      - { pattern: "\\b(bel|bell[oaie]|bei|begli)\\b|\\bbell['’]", hint: "Use bello: un bel monumento, una bella piazza…" }
+      - { pattern: "\\b(buon|buona|buono|buoni|buone)\\b", hint: "Use buono: un buon caffè…" }
+    model: { es: "Cara Giulia, il Pantheon è un bel monumento, molto grande. La piazza è bellissima e c'è tanta gente. Qui prendo sempre un buon caffè. A presto!", en: "Dear Giulia, the Pantheon is a beautiful monument, very big. The square is gorgeous and there are lots of people. Here I always have a good coffee. See you soon!" }
+  - task: "Describe a famous person you like: what he or she looks like, what he or she is like, and say what is very, a bit or too much about them."
+    min: 15
+    max: 40
+    use: [w.famoso, w.giovane, w.divertente, w.bravo, w.capelli]
+    grammar: [g.molto-poco-troppo, g.adjective-position]
+    expect:
+      - { pattern: "\\b(molto|poco|troppo|tanto|abbastanza)\\b|un po['’]", hint: "Use molto, poco, troppo, un po'…" }
+      - { pattern: "\\b(capelli|occhi|alt[oaie]|bass[oaie]|magr[oaie]|giovan[ei]|anzian[oaie])\\b", hint: "Describe the appearance: alto, giovane, i capelli…" }
+    model: { es: "Mi piace molto Jannik Sinner. È un giovane italiano, molto famoso e bravo a tennis. È alto e magro, con i capelli rossi. È anche divertente e un po' timido.", en: "I really like Jannik Sinner. He's a young Italian, very famous and good at tennis. He's tall and slim, with red hair. He's also funny and a bit shy." }

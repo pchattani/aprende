@@ -293,3 +293,42 @@ dialogues:
       - { q: "客廳對住乜嘢？", options: ["海", "一個魚塘", "遊樂場"], answer: 1, explain: "對住一個魚塘: it looks out on a fish pond." }
       - { q: "邊個畀管理費？", options: ["嘉怡", "業主", "黃生"], answer: 1, explain: "管理費業主畀: the landlord pays it." }
       - { q: "嘉怡最後揀咗邊個單位？", options: ["有露台嗰個", "平啲嗰個", "冇露台嗰個"], answer: 0, explain: "我想要有露台嘅，就呢個啦: she takes the one with the balcony." }
+writing:
+  - task: "Describe the estate and the flat you live in, using relative clauses like 我住嘅屋邨…"
+    min: 40
+    max: 90
+    use: [w.uk1-cyun1, w.daan1-wai2, w.seoi6-fong2, w.haak3-teng1, w.jyu4-tong4]
+    useAtLeast: 3
+    grammar: [g.relative-ge]
+    expect:
+      - { pattern: "我住嘅", hint: "Describe it with a relative clause: 我住嘅屋邨…" }
+    model: { es: "我住嘅屋邨喺元朗，有十幾棟樓。我住嘅單位喺十八樓，有兩間睡房同一個細細嘅客廳。我間睡房對住啲魚塘，景色好靚。", en: "The estate I live in is in Yuen Long and has over ten blocks. My flat is on the eighteenth floor, with two bedrooms and a small living room. My bedroom faces the fish ponds; the view is lovely." }
+  - task: "Show a visitor around your building: point out two people by what they are doing (企喺門口嗰個…)."
+    min: 40
+    max: 80
+    use: [w.hon1-gaang1, w.leon4-geoi1, w.aa3-baak3, w.gun2-lei5-cyu3]
+    useAtLeast: 3
+    grammar: [g.relative-classifier]
+    expect:
+      - { pattern: "嗰(個|位|隻)", hint: "Describe the person first, then 嗰個: 企喺門口嗰個…" }
+    model: { es: "企喺門口嗰個阿伯係我哋嘅看更，佢好好人。拖住狗嗰個女人係我隔籬嘅鄰居。坐喺管理處嗰位先生就係業主。", en: "The old man standing at the door is our caretaker; he's very nice. The woman walking the dog is my next-door neighbour. The man sitting in the management office is the landlord." }
+  - task: "A friend asks whether you want to rent the big flat or the small one. Answer and explain, using 嘅 for 'the … one' (大嘅, 細嘅)."
+    es: "你想租大嘅定細嘅呀？"
+    min: 40
+    max: 80
+    use: [w.zou1, w.gwong1-maang5, w.zou1-gam1, w.lou6-toi4, w.hoi2-ging2]
+    useAtLeast: 3
+    grammar: [g.ge-nominaliser]
+    expect:
+      - { pattern: "(大|細|新|舊|平|貴)嘅", hint: "Say 'the big one / the small one' with 嘅: 大嘅, 細嘅." }
+    model: { es: "我想租細嘅。大嘅好光猛，不過租金太貴，管理費都好貴。細嘅有露台，仲對住海景，我諗細嘅抵啲。我一個人住，夠用喇。", en: "I want to rent the small one. The big one is very bright, but the rent is too high, and so is the management fee. The small one has a balcony and faces the sea; I think the small one is better value. I live alone, so it's enough." }
+  - task: "Write a welcome note for a new neighbour about the facilities in your area."
+    min: 40
+    max: 90
+    use: [w.cit3-si1, w.wing6-ci4, w.tou4-syu1-gun2, w.zung2-zaam6, w.fu6-gan6-jat1-daai3]
+    useAtLeast: 3
+    grammar: [g.relative-ge]
+    expect:
+      - { pattern: "泳池|圖書館|遊樂場|球場|會所|停車場", hint: "Name some facilities: 泳池, 圖書館…" }
+      - { pattern: "嘅", hint: "Describe with 嘅: 我哋呢區嘅設施…" }
+    model: { es: "歡迎你！我哋呢區嘅設施好多：有泳池、圖書館、遊樂場同球場。巴士總站就喺停車場隔籬，去荃灣好方便。附近一帶嘅空氣都好清新。", en: "Welcome! Our area has lots of facilities: a swimming pool, a library, a playground and sports pitches. The bus terminus is right next to the car park, so it's easy to get to Tsuen Wan. The air around here is very fresh, too." }

@@ -6,10 +6,9 @@
  */
 import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import type { VocabEntry } from '../../engine/schema'
-import { vocabUpTo } from '../../engine/loader'
 import { Rng } from '../../engine/random'
 import { rapidPoints } from '../../engine/vocabGame'
-import { CLASSIFIERS, NOUN_EMOJI, SORT_POINTS, classifierOf, measureRound, sortBoard, type MeasureQuestion, type SortBoard } from '../../engine/games/measureWords'
+import { CLASSIFIERS, NOUN_EMOJI, SORT_POINTS, classifierOf, measureRound, metClassifiers, sortBoard, type MeasureQuestion, type SortBoard } from '../../engine/games/measureWords'
 import { recordAnswer } from '../../db/progress'
 import { playSound } from '../../engine/sounds'
 import { TL } from '../../engine/course'
@@ -20,21 +19,23 @@ import { IconSpeaker } from '../../components/ui/icons'
 import { Confetti } from '../../components/ui/Confetti'
 import { Leo } from '../../components/ui/Dogs'
 import { calmMotion, nudge } from '../../components/game/motion'
-import { RoundButtons } from '../palabras/shared'
+import { RoundButtons, TooFew } from '../palabras/shared'
 import { addMinutes, e2eHook } from '../palabras/util'
 import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { GAMES_BEST_KEY, recordGame, useGameWords, type GameBest } from './util'
 import { Ruby } from './cantoneseText'
+import { REQUIRE, hasClassifier } from './requirements'
+import { useFinishedWords } from '../../hooks/useFinishedWords'
 
 const ID = 'measure'
 const TITLE = 'Measure words'
 const ROUND = 12
-const hasClassifier = (v: VocabEntry) => Boolean(classifierOf(v))
 
 export default function MeasureWords({ onDone }: GameProps) {
   const [round, setRound] = useState(0)
   const learner = useGameWords(40, hasClassifier, round)
+  const finished = useFinishedWords()
   const bests = useKvValue<Record<string, GameBest>>(GAMES_BEST_KEY, {})
   const [best, setBest] = useState<number | undefined>()
   const [ready, setReady] = useState(-1)
@@ -43,19 +44,25 @@ export default function MeasureWords({ onDone }: GameProps) {
     setBest(bests[ID]?.score)
     setReady(round)
   }
-  if (!learner || ready !== round) return <p className="py-10 text-center text-sm text-muted">Loading {TITLE}…</p>
-  return <Game key={round} learner={learner} best={best} onDone={onDone} onAgain={() => setRound((r) => r + 1)} />
+  if (!learner || !finished || ready !== round) return <p className="py-10 text-center text-sm text-muted">Loading {TITLE}…</p>
+  if (learner.length < REQUIRE[ID]!.need)
+    return (
+      <div className="animate-rise pb-6">
+        <GameHeader title={TITLE} onBack={onDone} />
+        <TooFew onBack={onDone} game={ID}>Measure words uses the nouns of your finished lessons.</TooFew>
+      </div>
+    )
+  return <Game key={round} learner={learner} finished={finished.entries} best={best} onDone={onDone} onAgain={() => setRound((r) => r + 1)} />
 }
-
-/** A1/A2 nouns with a classifier, to top up the learner's own. */
-const topUp = () => vocabUpTo('a2').filter(hasClassifier)
 
 type Phase = 'play' | 'sort' | 'done'
 
-function Game({ learner, best, onDone, onAgain }: { learner: VocabEntry[]; best?: number; onDone: () => void; onAgain: () => void }) {
+function Game({ learner, finished, best, onDone, onAgain }: { learner: VocabEntry[]; finished: VocabEntry[]; best?: number; onDone: () => void; onAgain: () => void }) {
   const [rng] = useState(() => new Rng(Date.now()))
-  const pool = useMemo(() => topUp(), [])
-  const questions = useMemo(() => measureRound(learner, pool, rng, ROUND), [learner, pool, rng])
+  // the rest of the finished nouns top up the round, and wrong options are classifiers met in them when possible
+  const pool = useMemo(() => finished.filter(hasClassifier), [finished])
+  const met = useMemo(() => metClassifiers(finished), [finished])
+  const questions = useMemo(() => measureRound(learner, pool, rng, ROUND, met), [learner, pool, rng, met])
   const board = useMemo(() => sortBoard(questions.map((q) => q.noun), pool, rng), [questions, pool, rng])
   const [phase, setPhase] = useState<Phase>('play')
   const [score, setScore] = useState(0)

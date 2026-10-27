@@ -287,3 +287,44 @@ dialogues:
       - { q: "Según Nuria, ¿por qué es lógico que los jóvenes se vayan del barrio?", options: ["Porque los alquileres han subido mucho", "Porque cierran el centro de salud", "Porque no hay bibliotecas"], answer: 0 }
       - { q: "¿Qué le da envidia a Nuria?", options: ["Que Pablo tenga tiempo para leer", "Que Pablo viva cerca de la plaza", "Que Pablo gane más dinero"], answer: 0 }
       - { q: "¿Por qué llegan siempre tarde Pablo y Nuria?", options: ["Porque la biblioteca está lejos", "Porque pasan demasiado tiempo con las noticias", "Porque el centro de salud cierra por las tardes"], answer: 1, explain: "Nuria says it is incredible that they are always late 'por culpa de las noticias'." }
+writing:
+  - task: "Your friend sends you good and bad news. Reply, reacting with emotion (Me alegro de que …, Qué pena que …, Me da rabia que …)."
+    es: "¡Me han dado la beca para estudiar en Córdoba! Pero tengo que dejar a mi perro con mis padres."
+    min: 50
+    max: 100
+    use: [w.orgulloso, w.pena, w.extranar, w.emocionante, w.rabia]
+    useAtLeast: 3
+    grammar: [g.subjunctive-emotion]
+    expect:
+      - { pattern: "me alegr[oa] (mucho )?de que|me encanta que|qu[eé] (bien|pena|l[aá]stima) que|es una pena que|siento que|me da (pena|rabia|miedo) que", hint: "React with emotion + que + subjunctive: me alegro de que …, qué pena que …" }
+      - { pattern: "\\bque (te |le |se )?(hayan|haya|tengas|puedas|vayas|dejes|sea|vengan|extra[nñ]es)\\b", hint: "Use the subjunctive after these expressions: … que te hayan dado …, que tengas que …" }
+    model: { es: "¡Qué emocionante! Me alegro mucho de que te hayan dado la beca. Te lo mereces y estoy muy orgullosa. Es una pena que tengas que dejar a tu perro, pero seguro que tus padres estarán encantados con él. Me da un poco de rabia que te vayas tan lejos, porque te voy a extrañar mucho.", en: "How exciting! I'm so glad they've given you the grant. You deserve it and I'm very proud. It's a shame you have to leave your dog, but I'm sure your parents will be delighted to have him. It annoys me a bit that you're going so far away, because I'm going to miss you a lot." }
+  - task: "Write your view on housing and young people: what is important, necessary, unfair or logical (Es injusto que …, Es necesario que …)."
+    min: 50
+    max: 100
+    use: [w.vivienda, w.injusto, w.necesario, w.logico, w.gobierno]
+    useAtLeast: 3
+    grammar: [g.subjunctive-impersonal]
+    expect:
+      - { pattern: "\\bes (muy )?(importante|necesario|fundamental|imprescindible|l[oó]gico|justo|injusto|absurdo|rid[ií]culo|vergonzoso|conveniente|recomendable|preferible|urgente|esencial|normal) que\\b", hint: "Judge with es + adjective + que + subjunctive: es injusto que …, es necesario que …" }
+    model: { es: "En mi opinión, la vivienda es uno de los problemas más graves para los jóvenes. Es injusto que un estudiante tenga que pagar la mitad de su salario en el alquiler. Es necesario que el gobierno construya más pisos y es fundamental que la universidad sea más barata. Además, es lógico que los jóvenes quieran independizarse antes de los treinta años.", en: "In my opinion, housing is one of the most serious problems for young people. It's unfair that a student has to spend half their salary on rent. The government needs to build more flats and it's essential that university becomes cheaper. Also, it's logical that young people want to leave home before they're thirty." }
+  - task: "There is a teachers' strike. Write what the teachers want to do themselves (quieren + infinitive), what they want the government to do (quieren que + subjunctive) and your view."
+    min: 50
+    max: 100
+    use: [w.huelga, w.gobierno, w.salario, w.protestar, w.solucion]
+    useAtLeast: 3
+    grammar: [g.subjunctive-vs-infinitive]
+    expect:
+      - { pattern: "\\b(quieren|queremos|quiero|necesitan|esperan|prefieren) [a-záéíóúñ]+(ar|er|ir)\\b", hint: "Same subject → infinitive: quieren cobrar más …" }
+      - { pattern: "\\b(quieren|queremos|quiero|necesitan|esperan|prefieren|piden|exigen|espero) que\\b", hint: "Different subject → que + subjunctive: piden que el gobierno suba …" }
+    model: { es: "Hoy hay una huelga de profesores en todo el país. Los profesores quieren cobrar un salario más justo y necesitan trabajar en mejores condiciones. Por eso piden que el gobierno suba los sueldos y que contrate a más profesores. Yo entiendo que protesten, pero espero que encuentren una solución pronto, porque los alumnos necesitan volver a clase.", en: "Today there's a teachers' strike all over the country. Teachers want to earn a fairer salary and need to work in better conditions. That's why they're asking the government to raise salaries and hire more teachers. I understand why they're protesting, but I hope they find a solution soon, because the pupils need to go back to class." }
+  - task: "Write a comment under this news headline: how you feel about it, what is worrying and what is a relief."
+    es: "Un incendio destruye miles de hectáreas en las sierras de Córdoba. No hay víctimas."
+    min: 50
+    max: 100
+    use: [w.incendio, w.preocupante, w.sequia, w.temperatura, w.alivio]
+    useAtLeast: 3
+    grammar: [g.subjunctive-emotion, g.subjunctive-impersonal]
+    expect:
+      - { pattern: "me (preocupa|da miedo|da pena|da rabia|molesta|sorprende|indigna|entristece) que|es (muy )?(preocupante|indignante|triste|terrible|una pena|un alivio|urgente) que|me alegro de que", hint: "Say how you feel: me preocupa que …, es un alivio que …" }
+    model: { es: "Es muy preocupante que cada verano haya más incendios en las sierras. Me da mucha pena que se pierdan tantos bosques y que tantas familias pierdan sus casas. Con la sequía y las temperaturas tan altas, es lógico que el fuego crezca tan rápido. Es un alivio que nadie haya muerto, pero es urgente que el gobierno tome medidas.", en: "It's very worrying that every summer there are more fires in the hills. It makes me very sad that so many forests are lost and so many families lose their homes. With the drought and such high temperatures, it's logical that the fire grows so fast. It's a relief that nobody has died, but the government urgently needs to take measures." }

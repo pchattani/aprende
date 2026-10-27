@@ -282,3 +282,44 @@ dialogues:
       - { q: "O Tom conhece o Theatro Municipal?", options: ["Conhece muito bem", "Não conhece", "Trabalha lá"], answer: 1, explain: "Tom has never been there, although he knows it is in the Centre." }
       - { q: "O que o Lucas toca hoje à noite?", options: ["Violão", "Guitarra", "Piano"], answer: 2, explain: "Bia says Lucas plays the piano in tonight's show." }
       - { q: "Onde o Tom e a Bia vão se encontrar?", options: ["Na praia", "Na Cinelândia", "Na casa da Bia"], answer: 1, explain: "Tom says he'll see Bia at seven in Cinelândia, next to the theatre." }
+writing:
+  - task: "Describe the weather today where you are, and say which season you prefer and why."
+    min: 15
+    max: 40
+    use: [w.tempo, w.quente, w.frio, w.verão, w.inverno]
+    useAtLeast: 3
+    grammar: [g.weather]
+    expect:
+      - { pattern: '(\bfaz\b|\best[aá]\b|chove|venta|garoa)', hint: "Describe the weather: Faz calor. / Está nublado. / Chove." }
+      - { pattern: '(ver[aã]o|inverno|primavera|outono)', hint: "Name a season: o verão, o inverno…" }
+    model: { es: "Hoje no Rio está quente e ensolarado: faz trinta e cinco graus! No inverno, faz fresco, mas não faz frio. Eu prefiro o verão, porque gosto de praia.", en: "Today in Rio it's hot and sunny: it's thirty-five degrees! In winter it's cool, but it isn't cold. I prefer summer, because I like the beach." }
+  - task: "Write about your free time: a sport you play, an instrument you play (or don't), and when you do them."
+    min: 15
+    max: 40
+    use: [w.jogar, w.tocar, w.violão, w.vôlei, w.tempo-livre]
+    useAtLeast: 3
+    grammar: [g.jogar-vs-tocar]
+    expect:
+      - { pattern: '\bjog(o|a|amos|am)\b', hint: "Sports take jogar: Jogo vôlei …" }
+      - { pattern: '\btoc(o|a|amos|am)\b', hint: "Instruments take tocar: Toco violão …" }
+    model: { es: "No meu tempo livre, eu jogo vôlei na praia todo sábado. Também toco violão, mas não toco piano. Minha irmã canta e toca guitarra muito bem.", en: "In my free time I play volleyball on the beach every Saturday. I also play the guitar, but I don't play the piano. My sister sings and plays the electric guitar very well." }
+  - task: "A friend asks if you know Rio. Answer: which places and people you know (conhecer) and what you know how to do (saber)."
+    es: "Você conhece o Rio? Sabe dançar samba?"
+    min: 15
+    max: 40
+    use: [w.conhecer, w.saber, w.samba, w.dançar]
+    useAtLeast: 2
+    grammar: [g.saber-vs-conhecer]
+    expect:
+      - { pattern: '\bconhe[cç](o|e|emos)\b', hint: "Say which places or people you know: Conheço o …" }
+      - { pattern: '\b(sei|sabe|sabemos)\b', hint: "Say what you know how to do: Sei … / Não sei …" }
+    model: { es: "Conheço o Rio um pouco: conheço Copacabana, Ipanema e o Theatro Municipal. Não conheço a Lapa. Sei falar português, mas não sei dançar samba!", en: "I know Rio a little: I know Copacabana, Ipanema and the Theatro Municipal. I don't know Lapa. I can speak Portuguese, but I can't dance samba!" }
+  - task: "Write about your evenings: what you watch, what you listen to and when you go to sleep. Use the irregular I-forms (vejo, ouço, durmo…)."
+    min: 15
+    max: 40
+    use: [w.ver, w.ouvir, w.dormir, w.série, w.filme]
+    useAtLeast: 3
+    grammar: [g.present-irregular-first-person, g.vir-vs-ver]
+    expect:
+      - { pattern: '\b(vejo|ou[cç]o|durmo|venho|trago|digo|ponho|dou|fa[cç]o|saio|sinto)\b', hint: "Use irregular I-forms: vejo, ouço, durmo…" }
+    model: { es: "À noite, eu vejo uma série ou um filme. Também ouço samba e forró no rádio. Durmo às onze e meia, porque acordo cedo.", en: "In the evening I watch a series or a film. I also listen to samba and forró on the radio. I go to sleep at half past eleven, because I get up early." }

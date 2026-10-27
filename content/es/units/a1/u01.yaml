@@ -265,3 +265,45 @@ dialogues:
       - { q: "How is Pedro feeling?", options: ["Very well", "So-so", "Bad"], answer: 1 }
       - { q: "What is Ana?", options: ["A teacher", "A student", "A waitress"], answer: 1 }
       - { q: "Who is Marta?", options: ["Ana's sister", "Pedro's friend", "The teacher"], answer: 1 }
+writing:
+  - task: "You have just landed at Ezeiza. Reply to your host's message: greet her, say your name and say how you are."
+    es: "¡Hola! Soy Marta, tu familia en Buenos Aires. ¿Cómo te llamas? ¿Qué tal?"
+    min: 10
+    max: 30
+    use: [w.hola, w.llamarse, w.bien, w.gracias]
+    useAtLeast: 2
+    grammar: [g.greetings, g.llamarse]
+    expect:
+      - { pattern: "\\b(me llamo|soy)\\b", hint: "Say your name: Me llamo … / Soy …" }
+      - { pattern: "\\b(bien|mal|regular)\\b", hint: "Say how you are: Estoy bien / Regular / Mal." }
+    model: { es: "¡Hola, Marta! Me llamo Tom. Estoy muy bien, gracias. ¿Y tú? ¡Hasta pronto!", en: "Hi, Marta! My name is Tom. I'm very well, thanks. And you? See you soon!" }
+  - task: "At the airport you meet an older lady in the afternoon. Greet her formally, say who you are and ask her name using usted."
+    min: 10
+    max: 30
+    use: [w.buenas-tardes, w.senora, w.usted, w.llamarse]
+    useAtLeast: 2
+    grammar: [g.tu-vs-usted, g.llamarse]
+    expect:
+      - { pattern: "buenas tardes|buenos d[ií]as|buenas noches", hint: "Greet her for the time of day: Buenas tardes …" }
+      - { pattern: "\\busted\\b|\\bse llama\\b", hint: "Ask her name formally: ¿Cómo se llama usted?" }
+    model: { es: "Buenas tardes, señora. Me llamo Ben y soy estudiante. ¿Cómo se llama usted?", en: "Good afternoon, madam. My name is Ben and I'm a student. What is your name?" }
+  - task: "You arrive with two friends. Write 3–4 sentences introducing yourself and them: who you are, who he is and who she is."
+    min: 10
+    max: 30
+    use: [w.ser, w.amigo, w.yo, w.el, w.ella]
+    useAtLeast: 3
+    grammar: [g.ser-present, g.subject-pronouns]
+    expect:
+      - { pattern: "\\b(soy|yo)\\b", hint: "Say who you are: Yo soy …" }
+      - { pattern: "\\b(es|son|somos)\\b", hint: "Say who your friends are: Él es … / Ella es … / Somos …" }
+    model: { es: "¡Hola! Yo soy Leo. Él es Pablo y ella es Ana. Somos amigos. ¡Mucho gusto!", en: "Hi! I'm Leo. He is Pablo and she is Ana. We are friends. Nice to meet you!" }
+  - task: "Write a short goodbye to the taxi driver who drove you from the airport: thank him, say something kind and say goodbye."
+    min: 10
+    max: 25
+    use: [w.gracias, w.adios, w.hasta-manana, w.muy]
+    useAtLeast: 2
+    grammar: [g.greetings, g.tu-vs-usted]
+    expect:
+      - { pattern: "gracias", hint: "Thank him: Muchas gracias …" }
+      - { pattern: "adi[oó]s|hasta (luego|ma[nñ]ana|pronto)|chau", hint: "Say goodbye: Adiós / Hasta luego …" }
+    model: { es: "Muchas gracias, señor García. Usted es muy amable. ¡Adiós y hasta mañana!", en: "Thank you very much, Mr García. You are very kind. Goodbye and see you tomorrow!" }

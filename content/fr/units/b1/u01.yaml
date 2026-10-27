@@ -282,3 +282,43 @@ dialogues:
       - { q: "Pourquoi Chloé n'achète-t-elle pas de dorades ?", options: ["Elles sont trop chères", "Il n'y en a plus", "Elle ne les aime pas"], answer: 1, explain: "Marius says « Il n'y en a plus »: there's none left." }
       - { q: "Combien de sardines est-ce qu'elle prend ?", options: ["Six", "Douze", "Vingt"], answer: 1, explain: "« Une douzaine » is twelve." }
       - { q: "Que fait Chloé avec le ticket de caisse ?", options: ["Elle le garde", "Elle le laisse au poissonnier", "Elle le jette"], answer: 1, explain: "« Gardez-le »: she tells Marius to keep it." }
+writing:
+  - task: "At the Vieux-Port fish market, answer the fishmonger. Use two pronouns together (vous me les pesez ? je vous le mets ?) and say what you want, how much, and how you pay."
+    es: "Bonjour ! Je vous mets ces sardines ? Je vous les emballe ?"
+    min: 50
+    max: 100
+    use: [w.peser, w.sachet, w.emballer, w.mettre-de-côté, w.monnaie]
+    useAtLeast: 3
+    grammar: [g.double-object-pronouns, g.pronoun-order-imperative]
+    expect:
+      - { pattern: "\\b(me|te|nous|vous|se) (le|la|les|l['’])|\\b(le|la|les) (lui|leur)\\b|-(le|la|les)-(moi|toi|lui|nous|leur)\\b|\\b(m['’]|t['’]|lui |leur |nous |vous )en\\b", hint: "Combine two pronouns: vous me les emballez, mettez-les-moi, je vous en prends deux…" }
+    model: { es: "Oui, emballez-les-moi dans un sachet, s'il vous plaît. Et ces dorades ? Elles ont l'air très fraîches : vous pouvez me les peser ? J'en voudrais deux. Le thon, je ne le prends pas aujourd'hui, mais vous me le mettez de côté pour samedi ? Je paie en espèces : vous me rendez la monnaie sur cinquante euros ?", en: "Yes, wrap them up for me in a bag, please. And these sea bream? They look very fresh: can you weigh them for me? I'd like two. The tuna, I'm not taking it today, but can you put it aside for me for Saturday? I'm paying cash: can you give me change from fifty euros?" }
+  - task: "A friend asks to borrow your things. Reply: what you can lend, when it must come back, and what not to do with it (prête-le-moi, ne me le rends pas abîmé…)."
+    es: "Salut ! Tu me prêtes ton vélo samedi ? Et ta tente ?"
+    min: 50
+    max: 100
+    use: [w.prêter, w.rendre, w.abîmé, w.casser, w.emprunter]
+    useAtLeast: 3
+    grammar: [g.double-object-pronouns, g.pronoun-order-imperative]
+    expect:
+      - { pattern: "\\b(me|te|nous|vous) (le|la|les|l['’])|\\b(le|la|les) (lui|leur)\\b|-(le|la|les)-(moi|toi|lui|nous|leur)\\b", hint: "Use two pronouns: je te le prête, rends-le-moi, demande-la-lui…" }
+    model: { es: "Salut ! Oui, je te le prête avec plaisir, mais rends-le-moi dimanche soir, s'il te plaît. Ne le laisse pas dans la rue : on me l'a déjà volé une fois ! Et ne me le rends pas abîmé, je viens de le réparer. Ma tente, par contre, je ne peux pas te la prêter, parce que Karim l'a empruntée. Demande-la-lui, il te la rendra peut-être avant samedi.", en: "Hi! Yes, I'm happy to lend it to you, but give it back to me on Sunday evening, please. Don't leave it in the street: it's already been stolen from me once! And don't give it back damaged, I've just repaired it. My tent, on the other hand, I can't lend you, because Karim has borrowed it. Ask him for it, maybe he'll give it back to you before Saturday." }
+  - task: "You run a small grocery near the Vieux-Port. Answer a customer's email about her order: what you still have (il y en a encore…), what you no longer have, and when you can deliver."
+    es: "Bonjour, il vous reste des sardines fraîches ? Vous pouvez me livrer vendredi ?"
+    min: 50
+    max: 100
+    use: [w.commande, w.livraison, w.livrer, w.gratuit, w.camionnette]
+    useAtLeast: 3
+    grammar: [g.y-en-combinations, g.double-object-pronouns]
+    expect:
+      - { pattern: "\\by en\\b|\\bn['’]y en\\b|\\b(m['’]|t['’]|vous |nous |lui |leur )en\\b", hint: "Use y and en: il y en a encore, il n'y en aura plus, je vous en mets…" }
+    model: { es: "Bonjour, madame, merci pour votre commande. Des sardines fraîches ? Il y en a encore ce matin, mais il n'y en aura plus demain. Je vous en mets deux kilos de côté. Pour la livraison, je peux vous les apporter vendredi matin avec la camionnette. La livraison est gratuite à partir de cinquante euros. Bonne journée, Marius", en: "Hello, madam, thank you for your order. Fresh sardines? There are still some this morning, but there won't be any left tomorrow. I'll put two kilos aside for you. As for delivery, I can bring them to you on Friday morning in the van. Delivery is free from fifty euros. Have a nice day, Marius" }
+  - task: "Tell the story of something you bought second-hand (d'occasion) that broke: what the seller did, and how you got it repaired, exchanged or refunded. Use pronouns to avoid repeating."
+    min: 50
+    max: 100
+    use: [w.d-occasion, w.réparer, w.rembourser, w.échanger, w.casser]
+    useAtLeast: 3
+    grammar: [g.double-object-pronouns]
+    expect:
+      - { pattern: "\\b(me|te|nous|vous) (le|la|les|l['’])|\\b(le|la|les) (lui|leur)\\b", hint: "Use two pronouns together: il me l'a vendu, je le lui ai rendu…" }
+    model: { es: "L'année dernière, j'ai acheté un vélo d'occasion au marché. Le vendeur me l'a vendu cent euros. Il avait l'air neuf, mais après deux jours, il était cassé ! Je l'ai rendu au vendeur et je lui ai demandé de me le réparer. Il n'a pas voulu, alors je lui ai demandé de me le rembourser. Finalement, il me l'a échangé contre un autre vélo, plus solide.", en: "Last year I bought a second-hand bike at the market. The seller sold it to me for a hundred euros. It looked new, but after two days it was broken! I took it back to the seller and asked him to repair it for me. He refused, so I asked him to refund it. In the end he exchanged it for another, sturdier bike." }

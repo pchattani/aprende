@@ -281,3 +281,43 @@ dialogues:
       - { q: "Dove ha vissuto Noemi per due anni?", options: ["A Genova", "A Marsiglia", "A Parigi"], answer: 1, explain: "'Ho vissuto due anni a Marsiglia.'" }
       - { q: "Che orario ha la posizione?", options: ["Part-time", "Solo il weekend", "A tempo pieno"], answer: 2, explain: "'La posizione è a tempo pieno.'" }
       - { q: "Quando avrà una risposta Noemi?", options: ["Il primo settembre", "Entro venerdì", "Domani mattina", "Dopo lo stage"], answer: 1, explain: "'Le daremo una risposta entro venerdì.'" }
+writing:
+  - task: "Write a short opinion text: is it better to work full-time or fewer hours? Organise it with connectors (innanzitutto, siccome, inoltre, tuttavia, perciò, in conclusione)."
+    min: 60
+    max: 110
+    use: [w.tempo-pieno, w.orario-di-lavoro, w.inoltre, w.tuttavia, w.in-conclusione]
+    grammar: [g.connectors-cause-consequence, g.connectors-contrast]
+    expect:
+      - { pattern: "\\b(poiché|siccome|dato che|visto che|perciò|pertanto|quindi|di conseguenza|per questo|infatti)", hint: "Show cause and consequence: siccome, poiché, perciò, quindi…" }
+      - { pattern: "\\b(tuttavia|invece|comunque|eppure|anzi|al contrario|inoltre|in conclusione|innanzitutto)\\b", hint: "Add contrast and structure: tuttavia, inoltre, in conclusione…" }
+    model: { es: "Innanzitutto, lavorare meno ore permette di avere più tempo libero. Siccome la vita non è solo lavoro, molte persone preferiscono un orario di lavoro ridotto per stare con la famiglia. Inoltre, chi lavora meno è spesso più sereno. Tuttavia, lo stipendio è più basso, perciò non tutti possono scegliere questa soluzione. Il tempo pieno, al contrario, offre uno stipendio più alto e più possibilità di carriera. In conclusione, secondo me la scelta migliore dipende dalla situazione di ognuno.", en: "First of all, working fewer hours gives you more free time. Since life isn't only work, many people prefer reduced working hours so they can be with their families. Moreover, people who work less are often calmer. However, the salary is lower, so not everyone can choose this solution. Full-time work, on the other hand, offers a higher salary and more career opportunities. In conclusion, I think the best choice depends on each person's situation." }
+  - task: "Write a formal e-mail to the director of a language school in Genoa: thank her for the course you attended and ask for a document. Use Lei, La, Le and Suo."
+    min: 50
+    max: 100
+    use: [w.gentilezza, w.disponibilità, w.ringraziare, w.frequentare, w.anticipatamente]
+    grammar: [g.lei-forms, g.formal-letters]
+    expect:
+      - { pattern: "\\b(gentile|egregio|egregia|spettabile)\\b", hint: "Open formally: Gentile Direttrice…" }
+      - { pattern: "\\b(la ringrazio|le scrivo|le chiedo|la prego|sua disponibilità|sua gentilezza|ringraziarla|chiederle)\\b", hint: "Use the formal pronouns: La ringrazio, Le scrivo, la Sua disponibilità…" }
+      - { pattern: "cordiali saluti|distinti saluti", hint: "Close formally: Cordiali saluti." }
+    model: { es: "Gentile Direttrice, Le scrivo per ringraziarLa del corso di italiano che ho frequentato nella Sua scuola a luglio. Gli insegnanti sono stati molto gentili e disponibili, e ho imparato tanto. Le scrivo anche per chiederLe un documento con le ore del corso, che mi serve per l'università. Potrebbe inviarmelo per email? La ringrazio anticipatamente per la Sua disponibilità e gentilezza. Cordiali saluti.", en: "Dear Director, I am writing to thank you for the Italian course I attended at your school in July. The teachers were very kind and helpful, and I learned a great deal. I am also writing to ask you for a document showing the hours of the course, which I need for my university. Could you send it to me by e-mail? Thank you in advance for your help and kindness. Kind regards." }
+  - task: "Write a short formal e-mail applying for a summer job in a hotel in Genoa: who you are, your experience and skills, and what you are attaching."
+    min: 60
+    max: 110
+    use: [w.candidatura, w.curriculum, w.posizione, w.competenza, w.in-attesa-di]
+    grammar: [g.formal-letters, g.lei-forms]
+    expect:
+      - { pattern: "\\b(gentile|egregio|egregia|spettabile)\\b", hint: "Open formally: Egregio Direttore…" }
+      - { pattern: "\\bcandidatura\\b|\\ballego\\b|in allegato", hint: "Present your application and mention the CV: la mia candidatura, in allegato…" }
+      - { pattern: "in attesa di|cordiali saluti|distinti saluti|porgo", hint: "Close formally: In attesa di un Suo riscontro, porgo distinti saluti." }
+    model: { es: "Egregio Direttore, Le scrivo per presentare la mia candidatura per la posizione di cameriere nel Suo albergo, come da annuncio sul sito. Ho ventidue anni e studio turismo all'università di Londra. Parlo inglese, francese e italiano, e l'estate scorsa ho già lavorato in un ristorante. Tra le mie competenze ci sono la gentilezza con i clienti e il lavoro di gruppo. In allegato trova il mio curriculum. In attesa di un Suo riscontro, Le porgo distinti saluti.", en: "Dear Sir, I am writing to apply for the position of waiter at your hotel, as advertised on your website. I am twenty-two and I study tourism at university in London. I speak English, French and Italian, and last summer I already worked in a restaurant. My skills include friendliness with customers and teamwork. Please find my CV attached. I look forward to hearing from you. Yours faithfully." }
+  - task: "Write a formal complaint to a ferry company: your crossing from Genoa was very late and your suitcase was damaged. Explain, connect cause and consequence, and ask for a refund."
+    min: 60
+    max: 110
+    use: [w.reclamo, w.rimborso, w.ricevuta, w.dal-momento-che, w.pertanto]
+    grammar: [g.formal-letters, g.connectors-cause-consequence]
+    expect:
+      - { pattern: "\\b(gentile|egregio|egregia|spettabile)\\b", hint: "Open formally: Spettabile…, Gentile…" }
+      - { pattern: "\\b(rimborso|reclamo)\\b", hint: "Make the complaint and ask for a refund: presento un reclamo, chiedo un rimborso." }
+      - { pattern: "\\b(dal momento che|poiché|siccome|dato che|visto che|pertanto|perciò|di conseguenza)", hint: "Connect cause and consequence: dal momento che…, pertanto…" }
+    model: { es: "Spettabile Compagnia, Le scrivo per presentare un reclamo. Il 3 agosto ho viaggiato sul traghetto da Genova a Olbia, che è partito con quattro ore di ritardo. Inoltre, all'arrivo la mia valigia era rotta. Dal momento che il viaggio non è andato come previsto, chiedo un rimborso del biglietto e della valigia. Pertanto allego la ricevuta e alcune foto. In attesa di un Suo riscontro, porgo distinti saluti.", en: "Dear Sir or Madam, I am writing to make a complaint. On 3 August I travelled on the ferry from Genoa to Olbia, which left four hours late. Moreover, when I arrived my suitcase was broken. Since the journey did not go as planned, I am asking for a refund of the ticket and the suitcase. I therefore attach the receipt and some photos. I look forward to your reply. Yours faithfully." }

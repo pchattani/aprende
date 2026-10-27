@@ -281,3 +281,44 @@ dialogues:
       - { q: "Selon Camille, que se passerait-il s'ils étaient partis plus tôt ?", options: ["Ils auraient raté le métro", "Ils seraient au premier rang", "Ils auraient froid"], answer: 1, explain: "A mixed condition: « si on était partis plus tôt, on serait au premier rang » (now)." }
       - { q: "Qu'ont fait les Lyonnais en 1852 ?", options: ["Ils ont annulé la fête", "Ils ont mis des bougies à leurs fenêtres", "Ils ont construit la cathédrale"], answer: 1, explain: "« les Lyonnais ont mis des bougies à leurs fenêtres »." }
       - { q: "Que vont-ils faire maintenant ?", options: ["Rentrer chez eux", "Prendre un vin chaud", "Réserver une fenêtre"], answer: 1, explain: "« on prend un vin chaud avant que la foule ne se bouscule au stand ? » — « Bonne idée. »" }
+writing:
+  - task: "You missed the Fête des Lumières this year. Write to a friend who went, saying what you would have loved to see and do (j'aurais adoré…, on aurait pu…)."
+    min: 80
+    max: 150
+    use: [w.illumination, w.lumignon, w.spectaculaire, w.ambiance, w.vin-chaud]
+    useAtLeast: 3
+    grammar: [g.conditionnel-passe]
+    expect:
+      - { pattern: "\\b(aurais|aurait|aurions|auriez|auraient|serais|serait|serions|seriez|seraient) (bien |tant |vraiment |beaucoup |tellement )?[a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|u|ue|us|it|ert|eint|û)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the conditionnel passé: j'aurais adoré, nous serions allés…" }
+    model: { es: "Chère Inès, j'ai vu tes photos de la Fête des Lumières : quelle ambiance ! J'aurais tellement aimé être avec toi le 8 décembre. J'aurais adoré voir la projection sur la cathédrale Saint-Jean, qui avait l'air spectaculaire. Nous aurions pu marcher ensemble jusqu'à la place des Terreaux et boire un vin chaud au milieu de la foule. Le soir, j'aurais mis des lumignons sur ma fenêtre, comme les vrais Lyonnais. Malheureusement, j'étais malade et je suis restée chez moi. L'année prochaine, je ne raterai pas les illuminations !", en: "Dear Inès, I've seen your photos of the Festival of Lights: what an atmosphere! I would so have loved to be with you on 8 December. I would have loved to see the projection on Saint-Jean cathedral, which looked spectacular. We could have walked together to the place des Terreaux and had a mulled wine in the middle of the crowd. In the evening I would have put candles in my window, like real Lyonnais. Unfortunately I was ill and stayed at home. Next year I won't miss the illuminations!" }
+  - task: "Tell the story of an evening at the Fête des Lumières that went wrong, and say what would have happened if you had acted differently (si j'avais su…, si nous étions partis plus tôt…)."
+    min: 80
+    max: 150
+    use: [w.si-j-avais-su, w.file-d-attente, w.bousculade, w.gâcher, w.frustré]
+    useAtLeast: 3
+    grammar: [g.si-plus-que-parfait, g.conditionnel-passe]
+    expect:
+      - { pattern: "\\bsi (j['’]|je |tu |il |elle |on |nous |vous |ils |elles )?(n['’])?(avais|avait|avions|aviez|avaient|[eé]tais|[eé]tait|[eé]tions|[eé]tiez|[eé]taient)\\b", hint: "Use si + plus-que-parfait: si j'avais su, si nous étions partis…" }
+      - { pattern: "\\b(aurais|aurait|aurions|auriez|auraient|serais|serait|serions|seriez|seraient)\\b", hint: "Use the conditionnel passé for the result: nous aurions vu…" }
+    model: { es: "Samedi soir, nous sommes allés à la Fête des Lumières, mais tout a mal tourné. Nous sommes partis à vingt heures, c'est-à-dire beaucoup trop tard. Sur le pont, il y avait une bousculade énorme et nous sommes restés coincés une heure dans la file d'attente. Si nous étions partis plus tôt, nous aurions vu le spectacle sur la place Bellecour. Si j'avais su, j'aurais réservé une table dans un restaurant près de la cathédrale. Et si Marc n'avait pas perdu son téléphone, nous n'aurions pas passé la soirée à le chercher. Cette soirée gâchée m'a vraiment frustré !", en: "On Saturday evening we went to the Festival of Lights, but everything went wrong. We left at eight, which was far too late. On the bridge there was a huge crush and we were stuck in the queue for an hour. If we had left earlier, we would have seen the show on the place Bellecour. If I had known, I would have booked a table in a restaurant near the cathedral. And if Marc hadn't lost his phone, we wouldn't have spent the evening looking for it. That ruined evening really frustrated me!" }
+  - task: "Imagine how your life would be different today if you had made another choice in the past (si j'avais…, aujourd'hui je serais…)."
+    min: 80
+    max: 150
+    use: [w.supposer, w.destin, w.regret, w.ressentir, w.enthousiaste]
+    useAtLeast: 3
+    grammar: [g.mixed-si-clauses]
+    expect:
+      - { pattern: "\\bsi (j['’]|je |tu |il |elle |on |nous |vous |ils |elles )?(n['’])?(avais|avait|avions|aviez|avaient|[eé]tais|[eé]tait|[eé]tions|[eé]tiez|[eé]taient) [a-zàâçéèêëîïôûùœ]+", hint: "Imagine a different past with si + plus-que-parfait: si j'avais étudié…" }
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])[a-zàâçéèêëîïôûùœ]{2,}r(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Give the present result with the conditionnel présent: aujourd'hui, je serais…" }
+    model: { es: "Il y a dix ans, on m'a proposé un travail à Montréal, mais j'ai refusé. Supposons que j'aie accepté : si j'étais parti au Canada, aujourd'hui je parlerais parfaitement anglais et je vivrais au bord du Saint-Laurent. Si j'avais fait ce choix, je ne serais pas à Lyon et je n'aurais pas rencontré ma femme. Je serais peut-être plus riche, mais je ne serais sûrement pas aussi heureux. Parfois, je ressens un petit regret, mais je ne suis pas triste. Je crois au destin : je suis là où je dois être, et je reste enthousiaste pour l'avenir !", en: "Ten years ago I was offered a job in Montreal, but I turned it down. Suppose I had accepted: if I had gone to Canada, today I'd speak perfect English and live on the banks of the St Lawrence. If I had made that choice, I wouldn't be in Lyon and I wouldn't have met my wife. I might be richer, but I certainly wouldn't be as happy. Sometimes I feel a little regret, but I'm not sad. I believe in fate: I'm where I'm meant to be, and I'm still enthusiastic about the future!" }
+  - task: "A friend is sad: he missed the Fête des Lumières and his Christmas plans fell through. Write to console and encourage him (tu n'aurais rien pu faire, à ta place j'aurais…, ne te décourage pas)."
+    es: "Je n'ai pas vu les lumières, mon train de Noël est annulé… Quelle année !"
+    min: 80
+    max: 150
+    use: [w.consoler, w.rassurer, w.encourager, w.réveillon, w.se-décourager]
+    useAtLeast: 3
+    grammar: [g.conditionnel-passe, g.si-plus-que-parfait]
+    expect:
+      - { pattern: "\\b(aurais|aurait|aurions|auriez|auraient|serais|serait|serions|seraient) (pas |rien |bien |jamais )?[a-zàâçéèêëîïôûùœ]+", hint: "Use the conditionnel passé: tu n'aurais rien pu faire, à ta place j'aurais…" }
+      - { pattern: "\\b(ne te d[eé]courage pas|courage|t['’]inqui[eè]te pas|ne t['’]en fais pas|je suis l[aà]|viens)", hint: "Encourage him: ne te décourage pas, courage, viens…" }
+    model: { es: "Mon pauvre Hugo, je comprends ta déception, mais ne te décourage pas ! Tu n'aurais rien pu faire contre cette grève des trains. À ta place, j'aurais été furieux, moi aussi. Pour la Fête des Lumières, si tu m'avais prévenu, je t'aurais envoyé des vidéos ! Je voudrais te rassurer : il reste encore de belles choses à vivre cette année. Viens fêter le réveillon chez nous, à Lyon. Ma mère prépare toujours trop à manger, et mes amis seront ravis de te rencontrer. Je suis sûre que ce Noël sera finalement très heureux. Courage !", en: "My poor Hugo, I understand your disappointment, but don't lose heart! You couldn't have done anything about that train strike. In your place I would have been furious too. As for the Festival of Lights, if you had told me, I would have sent you videos! I'd like to reassure you: there are still lovely things to experience this year. Come and celebrate Christmas Eve with us in Lyon. My mother always cooks too much, and my friends will be delighted to meet you. I'm sure this Christmas will turn out very happy in the end. Chin up!" }

@@ -293,3 +293,42 @@ dialogues:
       - { q: "詠詩啲水去咗邊？", options: ["喺瀑布嗰度飲晒", "唔記得帶", "畀咗家俊"], answer: 0, explain: "頭先喺瀑布嗰度飲晒喇: she drank it all at the waterfall." }
       - { q: "由佢哋休息嗰度望落去，可以睇到乜嘢？", options: ["雲海", "大埔", "日出"], answer: 1, explain: "連埋大埔都睇到: they can even see Tai Po. The sea of clouds might be at the top." }
       - { q: "佢哋要喺幾時之前返到山腳？", options: ["食晏之前", "天黑之前", "日出之前"], answer: 1, explain: "天黑之前一定要返到山腳: before dark." }
+writing:
+  - task: "Write a short account of your sunrise hike up Tai Mo Shan: walking up, sitting down at the top and coming back down."
+    min: 50
+    max: 100
+    use: [w.saan1-goek3, w.ce4, w.jat6-ceot1, w.wan4-hoi2, w.co5-dai1]
+    useAtLeast: 3
+    grammar: [g.compound-directionals, g.directional-complements]
+    expect:
+      - { pattern: "(行|爬|跑)(上|落)", hint: "Describe the movement: 行上山, 行落嚟." }
+      - { pattern: "(上|落|出|入|過|起)(嚟|去)", hint: "Add a direction: 上去, 落嚟, 出嚟…" }
+    model: { es: "我哋朝早四點喺大帽山山腳開始行上山。山路好斜，我行到好攰。到咗山頂，我哋坐低睇日出，仲見到雲海，好靚！之後我哋慢慢行落嚟。", en: "We started walking up Tai Mo Shan from the foot of the mountain at four in the morning. The path was steep and I got very tired. At the top we sat down to watch the sunrise and even saw a sea of clouds. Beautiful! Then we slowly walked back down." }
+  - task: "You're moving into an old tenement flat with no lift. Tell your friends where to carry things, using directional complements."
+    min: 40
+    max: 90
+    use: [w.dung6, w.tong4-lau2, w.sing1-gong3-gei1, w.bun1-soeng5-heoi3, w.zi2-pei4-soeng1]
+    useAtLeast: 3
+    grammar: [g.directional-complements]
+    expect:
+      - { pattern: "(上|落|過|入|出)(嚟|去)", hint: "Say which way: 搬上去, 拎過嚟…" }
+    model: { es: "呢棟唐樓冇升降機，要行樓梯。唔該你哋幫手，啲紙皮箱搬上去五樓，張櫈拎過嚟呢度。我喺天台等你哋。", en: "This tenement building has no lift, so we have to take the stairs. Please help: carry the cardboard boxes up to the fifth floor and bring the stool over here. I'll wait for you on the rooftop." }
+  - task: "Your friend forgot their jacket at your flat. Text them about getting it back, using 返."
+    min: 40
+    max: 80
+    use: [w.bei2-faan1, w.zoek3-faan1, w.lo2, w.faan1-lai4]
+    useAtLeast: 3
+    grammar: [g.faan-back]
+    expect:
+      - { pattern: "返", hint: "Use 返 for 'back': 畀返你, 返嚟攞, 着返." }
+    model: { es: "你唔記得咗件外套喺我屋企呀！我聽日返工嘅時候畀返你。如果今晚好凍，你可以而家返嚟攞，着返先走。", en: "You forgot your jacket at my place! I'll give it back to you tomorrow on my way to work. If it's cold tonight, you can come back now to get it and put it on before you go." }
+  - task: "Your friends are hiking Lion Rock tomorrow. Say you'll join them with 埋, and ask them to bring something for you too."
+    es: "我哋聽日去行獅子山，你去唔去呀？"
+    min: 40
+    max: 80
+    use: [w.maai4, w.lin4-maai4, w.je6-ging2, w.seoi2-zeon1]
+    useAtLeast: 2
+    grammar: [g.maai-closer]
+    expect:
+      - { pattern: "埋", hint: "Join in with verb + 埋: 我都去埋！" }
+    model: { es: "好呀，我都去埋！我可以帶埋相機，影獅子山嘅夜景。你哋記得帶多啲水樽，連埋我嗰份，唔該晒！我哋幾點喺邊度等呀？", en: "Great, I'll come too! I can bring my camera as well to photograph the night view from Lion Rock. Remember to bring more water bottles, including one for me. Thanks! What time and where shall we meet?" }

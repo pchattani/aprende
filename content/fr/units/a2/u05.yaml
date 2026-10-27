@@ -293,3 +293,43 @@ dialogues:
       - { q: "Qui a planté les pommiers ?", options: ["Madame Leroy", "Le grand-père de Madame Leroy", "Martin"], answer: 1, explain: "Mon grand-père les a plantés en 1950." }
       - { q: "À qui Sophie va-t-elle offrir une bouteille ?", options: ["À son mari", "À Madame Leroy", "À son père"], answer: 2, explain: "Je vais offrir une bouteille à mon père." }
       - { q: "Qu'est-ce que Madame Leroy conseille aussi ?", options: ["Le camembert", "Le cidre", "Les pommes"], answer: 0, explain: "Je vous conseille aussi notre camembert." }
+writing:
+  - task: "Your flatmate texts you about the shopping. Answer each question using le, la, l' or les instead of repeating the noun."
+    es: "Tu as acheté le camembert ? Et les pommes ? Tu prends la crème fraîche ?"
+    min: 25
+    max: 60
+    use: [w.acheter, w.prendre, w.oublier, w.fromagerie, w.épicerie]
+    useAtLeast: 3
+    grammar: [g.direct-object-pronouns]
+    expect:
+      - { pattern: "\\b(l['’]|le |la |les )(ai|as|a|avons|avez|ont|prends|prend|prendre|ach[eè]te|acheter|veux|voudrais|mange|manger|aime|adore|trouve|cherche)\\b", hint: "Replace the noun with le, la, l' or les: je l'ai acheté, je les prends…" }
+    model: { es: "Oui, je l'ai acheté à la fromagerie du marché couvert. Les pommes ? Je les ai oubliées, désolée ! Je vais les prendre demain à l'épicerie. La crème fraîche, je la prends maintenant. Tu la veux pour ce soir ?", en: "Yes, I bought it at the cheese shop in the covered market. The apples? I forgot them, sorry! I'll get them tomorrow at the grocer's. The crème fraîche, I'm getting it now. Do you want it for tonight?" }
+  - task: "You are staying with a family in the pays d'Auge. Say what present you are giving each person and why (lui, leur)."
+    min: 30
+    max: 70
+    use: [w.offrir, w.donner, w.cadeau, w.apporter, w.montrer]
+    useAtLeast: 3
+    grammar: [g.indirect-object-pronouns]
+    expect:
+      - { pattern: "\\b(lui|leur)\\b", hint: "Use lui (to him/her) or leur (to them): je lui offre, je leur donne…" }
+    model: { es: "J'ai des cadeaux de Paris pour ma famille normande. Madame Leroy adore la mode : je lui offre un foulard en soie. À son mari, je donne une bouteille de vin. Et les enfants ? Je leur apporte des macarons, parce qu'ils adorent ça ! Je vais aussi leur montrer mes photos de Paris.", en: "I have presents from Paris for my Norman family. Madame Leroy loves fashion: I'm giving her a silk scarf. To her husband I'm giving a bottle of wine. And the children? I'm bringing them macarons, because they love them! I'm also going to show them my photos of Paris." }
+  - task: "Write about a relative you are close to: who you look like, how often you phone him or her, and what advice he or she gives you (ressembler à, téléphoner à, demander à…)."
+    min: 30
+    max: 70
+    use: [w.ressembler, w.téléphoner, w.conseil, w.expliquer, w.question]
+    useAtLeast: 3
+    grammar: [g.verbs-indirect-object, g.indirect-object-pronouns]
+    expect:
+      - { pattern: "\\b(lui|leur) (t[eé]l[eé]phone|demande|r[eé]ponds|ressemble|donne|explique|pose|parle|offre|conseille|[eé]cris|dis)", hint: "Use lui / leur before the verb: je lui téléphone, je lui pose des questions…" }
+      - { pattern: "\\bressembl", hint: "Say who you look like: je ressemble à …" }
+    model: { es: "Je ressemble beaucoup à ma tante Hélène : nous avons les mêmes yeux et le même sourire. Je lui téléphone tous les dimanches. Je lui pose des questions sur son travail et elle me donne toujours de bons conseils. Elle m'explique aussi les recettes de sa mère.", en: "I look a lot like my aunt Hélène: we have the same eyes and the same smile. I phone her every Sunday. I ask her questions about her work and she always gives me good advice. She also explains her mother's recipes to me." }
+  - task: "A friend is coming to Normandy. Tell him or her what you know how to do (savoir) and which people and places you know (connaître)."
+    min: 30
+    max: 70
+    use: [w.savoir, w.connaître, w.conduire, w.ferme, w.fermier]
+    useAtLeast: 3
+    grammar: [g.savoir-connaitre]
+    expect:
+      - { pattern: "\\b(sais|sait|savons|savez|savent)\\b", hint: "Use savoir for skills and facts: je sais conduire…" }
+      - { pattern: "\\b(connais|conna[iî]t|connaissons|connaissez|connaissent)\\b", hint: "Use connaître for people and places: je connais bien le pays d'Auge…" }
+    model: { es: "Je connais bien le pays d'Auge : mes grands-parents ont une ferme près de Lisieux. Je connais aussi un fermier qui fait du camembert. Je sais conduire, alors on peut visiter les villages en voiture. Tu sais faire du vélo ? Il y a de jolis chemins à la campagne !", en: "I know the pays d'Auge well: my grandparents have a farm near Lisieux. I also know a farmer who makes camembert. I can drive, so we can visit the villages by car. Can you ride a bike? There are lovely paths in the countryside!" }

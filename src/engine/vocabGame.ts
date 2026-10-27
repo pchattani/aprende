@@ -7,8 +7,22 @@ import type { VocabEntry } from './schema'
 import { Rng } from './random'
 import { distractorWords, type GenContext } from './generate'
 
+/** What pickGameWords ranks a word by: its card (or a stand-in, see finishedCards). */
+export type RankedCard = Pick<CardRow, 'id' | 'kind' | 'due' | 'stability' | 'stage'>
+
+/**
+ * The cards of the finished words only (engine/finished.ts), plus a stand-in for a finished
+ * word without a card, ranked after every real card (never due, most stable).
+ */
+export function finishedCards(cards: readonly RankedCard[], finished: ReadonlySet<string>): RankedCard[] {
+  const out = cards.filter((c) => c.kind === 'word' && finished.has(c.id))
+  const have = new Set(out.map((c) => c.id))
+  for (const id of finished) if (!have.has(id)) out.push({ id, kind: 'word', due: Number.MAX_SAFE_INTEGER, stability: Number.MAX_SAFE_INTEGER, stage: 0 })
+  return out
+}
+
 /** Words worth playing: due first, then the least stable, then the lowest stage. Samples from the top so sessions vary. */
-export function pickGameWords(cards: CardRow[], lookup: (id: string) => VocabEntry | undefined, n: number, rng: Rng, now = Date.now()): VocabEntry[] {
+export function pickGameWords(cards: readonly RankedCard[], lookup: (id: string) => VocabEntry | undefined, n: number, rng: Rng, now = Date.now()): VocabEntry[] {
   const words = cards.filter((c) => c.kind === 'word' && lookup(c.id)?.en[0])
   const ranked = [...words].sort((a, b) => Number(b.due <= now) - Number(a.due <= now) || a.stability - b.stability || a.stage - b.stage)
   // every due word first (shuffled), then a sample of the weakest of the rest
@@ -48,12 +62,15 @@ export interface RapidQuestion {
   options: string[]
   answer: number
 }
-/** Quick-fire questions: Spanish word, four English options. */
-export function rapidRound(words: VocabEntry[], ctx: GenContext, rng: Rng): RapidQuestion[] {
+/**
+ * Quick-fire questions: Spanish word, four English options. Distractors come from `ctx.pool`
+ * (the games pass the finished words); a small pool gives fewer options, down to `minDistractors`.
+ */
+export function rapidRound(words: VocabEntry[], ctx: GenContext, rng: Rng, minDistractors = 3): RapidQuestion[] {
   const out: RapidQuestion[] = []
   for (const v of words) {
     const ds = distractorWords(v, ctx, rng, 3)
-    if (ds.length < 3) continue
+    if (ds.length < minDistractors) continue
     const options = rng.shuffle([v.en[0]!, ...ds.map((d) => d.en[0]!)])
     out.push({ v, options, answer: options.indexOf(v.en[0]!) })
   }

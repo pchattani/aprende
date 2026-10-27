@@ -277,3 +277,44 @@ dialogues:
       - { q: "À quelle heure Hugo se lève ?", options: ["à six heures", "à huit heures", "à midi"], answer: 0, explain: "« Je me lève à six heures. »" }
       - { q: "Quand est-ce que Léa sort avec Emma ?", options: ["le lundi", "le mercredi", "le vendredi"], answer: 2, explain: "They go out on Fridays, and today is Friday." }
       - { q: "Léa finit son cours à…", options: ["deux heures", "six heures", "huit heures"], answer: 1, explain: "« Je finis à six heures, et après, je sors avec Emma. »" }
+writing:
+  - task: "Describe your morning routine with times (Je me lève à …)."
+    min: 15
+    max: 40
+    use: [w.se-réveiller, w.se-lever, w.se-doucher, w.s-habiller, w.ensuite]
+    useAtLeast: 3
+    grammar: [g.reflexive-intro, g.time-telling]
+    expect:
+      - { pattern: "\\bje (me\\s|m['’])", hint: "Use reflexive verbs: je me lève, je m'habille…" }
+      - { pattern: "\\b(heures?|midi|minuit)\\b|\\d ?h", hint: "Give times: à sept heures, à 7 h 30…" }
+    model: { es: "Le matin, je me réveille à six heures et demie. D'abord, je me lève et je me douche. Ensuite, je m'habille et je prends le métro à sept heures et quart.", en: "In the morning I wake up at half past six. First I get up and have a shower. Then I get dressed and take the metro at a quarter past seven." }
+  - task: "Write a message inviting a friend to your birthday party: say the day, the date and the time."
+    min: 12
+    max: 40
+    use: [w.anniversaire, w.fête, w.samedi, w.heure, w.soir]
+    useAtLeast: 3
+    grammar: [g.days-months-dates, g.time-telling]
+    expect:
+      - { pattern: "\\b(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\\b", hint: "Give the day: samedi…" }
+      - { pattern: "\\b(janvier|f[eé]vrier|mars|avril|mai|juin|juillet|ao[uû]t|septembre|octobre|novembre|d[eé]cembre)\\b", hint: "Give the date: le 14 juillet, le premier juin…" }
+      - { pattern: "\\b(heures?|midi|minuit)\\b|\\d ?h", hint: "Give the time: à huit heures…" }
+    model: { es: "Coucou ! Mon anniversaire, c'est samedi, le premier juin. Il y a une fête chez moi à huit heures du soir. Tu es là ? Bisous !", en: "Hi! My birthday is on Saturday, the first of June. There's a party at my place at eight in the evening. Will you be there? Love!" }
+  - task: "How often do you do things? Write about your week using toujours, souvent, parfois, rarement and ne … jamais."
+    min: 15
+    max: 40
+    use: [w.toujours, w.souvent, w.parfois, w.jamais, w.week-end]
+    useAtLeast: 3
+    grammar: [g.frequency-adverbs]
+    expect:
+      - { pattern: "\\b(toujours|souvent|parfois|quelquefois|rarement|d['’]habitude)\\b", hint: "Say how often: toujours, souvent, parfois…" }
+      - { pattern: "\\bn(e\\s|['’])[^.!?]*\\bjamais\\b", hint: "Say what you never do: je ne … jamais." }
+    model: { es: "Le week-end, je dors toujours tard. Je sors souvent avec des amis le samedi soir. Je fais parfois du sport, mais je ne travaille jamais le dimanche !", en: "At the weekend I always sleep late. I often go out with friends on Saturday evening. I sometimes do sport, but I never work on Sundays!" }
+  - task: "Describe a typical day at university: when you leave home, when your classes finish and what you choose for lunch."
+    min: 15
+    max: 40
+    use: [w.partir, w.finir, w.choisir, w.cours, w.université]
+    useAtLeast: 3
+    grammar: [g.present-ir-verbs, g.time-telling]
+    expect:
+      - { pattern: "\\b(pars|part|partons|partez|partent|finis|finit|finissons|finissez|finissent|choisis|choisit|choisissons|choisissez|choisissent|sors|sort|sortons|sortent|dors|dort)\\b", hint: "Use -ir verbs: je pars, je finis, je choisis…" }
+    model: { es: "Je pars à l'université à huit heures. Les cours commencent à neuf heures et finissent à midi. À midi, je choisis souvent une salade. Je rentre le soir.", en: "I leave for university at eight. Classes start at nine and finish at noon. At noon I often choose a salad. I go home in the evening." }

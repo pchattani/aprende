@@ -282,3 +282,45 @@ dialogues:
       - { q: "¿Por qué no se fía Raúl de la noticia?", options: ["Porque no sabe cuál es la fuente", "Porque la ha leído en el periódico", "Porque el ayuntamiento lo ha negado"], answer: 0, explain: "He asks '¿Cuál es la fuente?' and suspects it is a bulo (hoax)." }
       - { q: "¿Qué cree Irene que puede pasar en realidad?", options: ["Que el metro sea gratis en agosto", "Que cierren solo algunas estaciones", "Que no haya obras este verano"], answer: 1 }
       - { q: "Según Raúl, ¿qué harán muchos periódicos mañana?", options: ["Hablar de la noticia sin comprobarla", "Pedir perdón por el bulo", "Entrevistar al alcalde"], answer: 0 }
+writing:
+  - task: "Someone tells you a rumour. Reply saying what you doubt and what you are sure of (Dudo que …, No creo que …, Es posible que …, Estoy seguro de que …)."
+    es: "Por lo visto, la fiesta de la cerveza de Villa General Belgrano no se celebrará más."
+    min: 50
+    max: 100
+    use: [w.dudar, w.rumor, w.posible, w.sin-duda, w.comprobar]
+    useAtLeast: 3
+    grammar: [g.subjunctive-doubt]
+    expect:
+      - { pattern: "dudo (mucho )?que|no creo que|es (im)?posible que|es (im)?probable que|no es (verdad|cierto) que|puede que", hint: "Express doubt + subjunctive: dudo que …, no creo que …, es posible que …" }
+      - { pattern: "estoy (muy )?segur[oa]|sin duda|es evidente que|es verdad que|seguro que", hint: "Also say what you are sure of: estoy seguro de que …, sin duda …" }
+    model: { es: "No creo que sea verdad. Dudo mucho que el pueblo cancele su fiesta más famosa, porque vienen miles de turistas cada octubre. Es posible que sea solo un rumor de internet. Sin duda, lo mejor es comprobar la información en la página web del pueblo antes de creer cualquier cosa. Estoy segura de que habrá fiesta el año que viene.", en: "I don't think it's true. I really doubt the town will cancel its most famous festival, because thousands of tourists come every October. It may just be an internet rumour. Without a doubt, the best thing is to check the information on the town's website before believing anything. I'm sure there will be a festival next year." }
+  - task: "Write your point of view on social media, with arguments for and against. Use creo que + indicative and no creo que + subjunctive."
+    min: 50
+    max: 100
+    use: [w.punto-de-vista, w.argumento, w.a-favor, w.en-contra, w.responsabilidad]
+    useAtLeast: 3
+    grammar: [g.creer-no-creer]
+    expect:
+      - { pattern: "\\b(creo|pienso|opino) que\\b", hint: "Say what you think: creo que + indicative …" }
+      - { pattern: "no (creo|pienso|me parece) que", hint: "Disagree with something: no creo que + subjunctive …" }
+    model: { es: "Desde mi punto de vista, las redes sociales tienen ventajas y desventajas. Creo que son útiles para informarse y para hablar con amigos que viven lejos. Sin embargo, no creo que sean buenas para los niños, porque pasan demasiadas horas delante de la pantalla. Hay argumentos a favor y en contra, pero no pienso que debamos prohibirlas. Lo importante es usarlas con responsabilidad.", en: "From my point of view, social media has advantages and disadvantages. I think it's useful for keeping informed and talking to friends who live far away. However, I don't think it's good for children, because they spend too many hours in front of a screen. There are arguments for and against, but I don't think we should ban it. The important thing is to use it responsibly." }
+  - task: "A survey says young people read less than before. Suggest possible explanations using quizás, tal vez, a lo mejor and puede que."
+    min: 50
+    max: 100
+    use: [w.encuesta, w.mayoria, w.generacion, w.segun, w.tendencia]
+    useAtLeast: 3
+    grammar: [g.quizas-tal-vez]
+    expect:
+      - { pattern: "quiz[aá]s?|tal vez|a lo mejor|puede que|posiblemente", hint: "Speculate: quizás …, tal vez …, a lo mejor …, puede que …" }
+    model: { es: "Según una encuesta nueva, la mayoría de los jóvenes lee menos que sus padres. Quizás sea porque pasan mucho tiempo con el móvil. Tal vez los libros les parecen aburridos comparados con las series. A lo mejor leen mucho, pero en internet, y la encuesta no lo cuenta. Puede que cada generación tenga su manera de leer; en realidad, no es una tendencia tan preocupante.", en: "According to a new survey, most young people read less than their parents. Maybe it's because they spend a lot of time on their phones. Perhaps books seem boring to them compared with series. Maybe they read a lot, but online, and the survey doesn't count it. Each generation may have its own way of reading; in fact, it isn't such a worrying trend." }
+  - task: "Disagree politely with your friend and organise your argument with por un lado, por otro lado, en cambio, aunque."
+    es: "Yo creo que vivir en un pueblo pequeño es aburrido. En las ciudades hay más oportunidades."
+    min: 50
+    max: 100
+    use: [w.por-un-lado, w.por-otro-lado, w.en-cambio, w.aunque, w.punto-de-vista]
+    useAtLeast: 3
+    grammar: [g.subjunctive-doubt, g.creer-no-creer]
+    expect:
+      - { pattern: "no (estoy de acuerdo|creo que|pienso que)|no es (verdad|cierto) que|entiendo tu punto", hint: "Disagree politely: entiendo tu punto de vista, pero no estoy de acuerdo …" }
+      - { pattern: "por un lado|por otro lado|en cambio|aunque|sin embargo", hint: "Organise your argument: por un lado …, por otro lado …, en cambio …" }
+    model: { es: "Entiendo tu punto de vista, pero no estoy de acuerdo. Por un lado, es verdad que en las ciudades hay más trabajo. Por otro lado, no creo que un pueblo sea aburrido: aquí en Villa General Belgrano hay fiestas, naturaleza y gente muy amable. En cambio, en la ciudad todo el mundo tiene prisa. Aunque gane menos dinero, prefiero vivir tranquilo.", en: "I understand your point of view, but I don't agree. On the one hand, it's true that there's more work in cities. On the other hand, I don't think a village is boring: here in Villa General Belgrano there are festivals, nature and very kind people. In the city, on the other hand, everyone is in a hurry. Even if I earn less money, I prefer to live a quiet life." }

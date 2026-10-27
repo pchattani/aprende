@@ -265,3 +265,43 @@ dialogues:
       - { q: "Who built the castle originally?", options: ["The Romans", "The Arabs", "King Alfonso VI"], answer: 1 }
       - { q: "What happened to the big tower?", options: ["It was destroyed by fire and rebuilt", "It was never finished", "It was demolished in 1931"], answer: 0 }
       - { q: "What was the castle used for after the royal family left?", options: ["A school", "A museum", "A prison"], answer: 2 }
+writing:
+  - task: "Write a short, formal text about the history of a monument or historic building you know, using the passive with ser and passive se (fue construido por …, se restauró en …)."
+    min: 80
+    max: 150
+    use: [w.construccion, w.restaurar, w.reconstruir, w.historico, w.derribar]
+    useAtLeast: 3
+    grammar: [g.passive-advanced]
+    expect:
+      - { pattern: "\\b(fue|fueron|ha sido|han sido|hab[ií]a sido) [a-zñ]+(ado|ados|ada|adas|ido|idos|ida|idas|to|ta|tos|tas|cho|cha)\\b", hint: "Use the passive with ser: fue construido, fue restaurada …" }
+      - { pattern: "\\bse (construy|restaur|reconstruy|derrib|inaugur|abri|cerr|declar|convirti|utiliz|us|organiz)[a-záéíóúñ]*", hint: "Also use passive se: se restauró, se reconstruyó …" }
+    model: { es: "La catedral de mi ciudad es uno de los edificios más históricos de la región. Fue construida por los árabes como mezquita en el siglo diez y, siglos después, se convirtió en iglesia. En el siglo dieciséis, parte de la muralla fue derribada para ampliar la plaza. Durante la guerra civil, el edificio fue destruido en parte, pero en los años cincuenta se reconstruyó la parte principal. Más tarde, se restauraron las pinturas del interior gracias a una subvención europea. Hoy en día, se organizan visitas con guía y conciertos en su patio.", en: "My city's cathedral is one of the most historic buildings in the region. It was built by the Arabs as a mosque in the tenth century and, centuries later, it became a church. In the sixteenth century, part of the wall was demolished to enlarge the square. During the civil war the building was partly destroyed, but in the fifties the main part was rebuilt. Later, the paintings inside were restored thanks to a European grant. Nowadays, guided tours and concerts are organised in its courtyard." }
+  - task: "Write a short, objective news item about a discovery at the observatory in Malargüe or an arrest, using impersonal se (se ha descubierto, se detuvo a …) and the passive."
+    min: 80
+    max: 150
+    use: [w.hallazgo, w.laboratorio, w.analizar, w.muestra, w.publicacion]
+    useAtLeast: 3
+    grammar: [g.passive-advanced]
+    expect:
+      - { pattern: "\\bse (detuvo|detuvieron|ha detenido|descubri[oó]|ha descubierto|han descubierto|analiz[oó]|analizaron|han analizado|encontr[oó]|encontraron|han encontrado|public[oó]|publicaron|ha publicado|evacu[oó]|detect[oó]|detectaron|ha detectado|han detectado|ha presentado|present[oó])", hint: "Report impersonally: se ha descubierto, se analizaron …" }
+      - { pattern: "\\b(fue|fueron|ha sido|han sido) [a-zñ]+(ado|ados|ada|adas|ido|idos|ida|idas)\\b", hint: "Use the passive with ser as well: fue publicado …" }
+    model: { es: "Un equipo de científicos del Observatorio Pierre Auger, en Malargüe, ha anunciado un importante hallazgo. Según la publicación, se han detectado señales de una energía enorme que llegan desde muy lejos del sistema solar. Durante cinco años se analizaron miles de muestras en el laboratorio, y los resultados fueron revisados por expertos de varios países. El estudio fue publicado ayer en una revista especializada y ya se ha presentado ante el comité de la universidad. Se espera que este descubrimiento ayude a entender mejor la historia de las estrellas.", en: "A team of scientists from the Pierre Auger Observatory, in Malargüe, has announced an important discovery. According to the publication, signals of enormous energy have been detected coming from far beyond the solar system. Over five years, thousands of samples were analysed in the laboratory, and the results were reviewed by experts from several countries. The study was published yesterday in a specialist journal and has already been presented to the university committee. It is hoped that this discovery will help us better understand the history of the stars." }
+  - task: "Write practical tips for visitors who want to watch the stars in Malargüe, using impersonal expressions: hace falta, basta con, conviene, se supone que, sobra."
+    min: 80
+    max: 150
+    use: [w.bastar, w.sobrar, w.faltar, w.conviene, w.anochecer]
+    useAtLeast: 3
+    grammar: [g.impersonal-expressions]
+    expect:
+      - { pattern: "hace falta|basta con|conviene|se supone que|sobra|resulta", hint: "Use impersonal expressions: no hace falta …, basta con …, conviene …" }
+    model: { es: "Para ver las estrellas en Malargüe no hace falta ser un experto: basta con salir un poco de la ciudad y apagar las luces del coche. Conviene ir en una noche sin luna y llevar ropa de abrigo, porque al anochecer la temperatura baja mucho. Se supone que el mejor mes es julio, aunque en verano también se ven muy bien. No hace falta llevar telescopio, ya que allí te dejan uno. Sobra decir que hay que respetar el silencio. Lo que suele faltar es paciencia: hay que esperar unos veinte minutos hasta que los ojos se acostumbran a la oscuridad.", en: "To see the stars in Malargüe you don't need to be an expert: it's enough to drive a little way out of town and turn off the car lights. It's a good idea to go on a moonless night and take warm clothes, because at nightfall the temperature drops a lot. July is supposed to be the best month, although in summer you can also see them very well. You don't need to bring a telescope, as they lend you one there. Needless to say, you have to respect the silence. What's usually missing is patience: you have to wait about twenty minutes until your eyes get used to the dark." }
+  - task: "Write a short report about how your city or country has changed in recent years, using nouns instead of verbs (el crecimiento de …, la reducción de …) and el hecho de que + subjunctive."
+    min: 80
+    max: 150
+    use: [w.crecimiento, w.envejecimiento, w.reduccion, w.el-hecho-de-que, w.recuperacion]
+    useAtLeast: 3
+    grammar: [g.nominalization]
+    expect:
+      - { pattern: "\\b(el|la|los|las|del) (crecimiento|desarrollo|descenso|reducci[oó]n|aparici[oó]n|creaci[oó]n|envejecimiento|ca[ií]da|apertura|cierre|recuperaci[oó]n|aumento|subida|bajada|llegada)\\b", hint: "Use nouns: el crecimiento de …, la reducción de …" }
+      - { pattern: "el hecho de que", hint: "Use el hecho de que + subjunctive." }
+    model: { es: "En los últimos diez años, mi ciudad ha cambiado mucho. El crecimiento del turismo ha provocado la apertura de muchos hoteles y restaurantes, pero también la subida de los alquileres. Al mismo tiempo, el envejecimiento de la población es cada vez más evidente: hay más personas mayores y menos niños. La reducción del tráfico en el centro ha mejorado la calidad del aire. Sin embargo, me preocupa el hecho de que tantos jóvenes tengan que irse por la falta de trabajo. La recuperación económica todavía no ha llegado a todos.", en: "In the last ten years, my city has changed a lot. The growth of tourism has led to the opening of many hotels and restaurants, but also to rising rents. At the same time, the ageing of the population is more and more obvious: there are more elderly people and fewer children. The reduction of traffic in the centre has improved air quality. However, I'm worried by the fact that so many young people have to leave because of the lack of work. The economic recovery hasn't reached everyone yet." }

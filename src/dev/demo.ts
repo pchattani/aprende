@@ -38,6 +38,8 @@ export interface SeedOptions {
   others?: boolean
   /** Reference time (default now). */
   now?: number
+  /** Lessons after the finished ones that were started and left halfway: cards, but no completion (default 0). */
+  started?: number
 }
 
 interface SimLesson {
@@ -319,6 +321,21 @@ async function writeDb(target: AprendeDB, sim: SimResult, startLevel: LevelId): 
   })
 }
 
+/** The next `n` lessons after the finished ones, started and left halfway: their cards exist, the lesson is not completed. */
+export function startLessons(sim: SimResult, lessons: readonly SimLesson[], n: number, now: number): void {
+  const done = new Set(sim.lessons.map((l) => l.id))
+  const have = new Set(sim.cards.map((c) => c.id))
+  const ts = now - 2 * 3600_000
+  for (const L of lessons.filter((l) => !done.has(l.id)).slice(0, n)) {
+    for (const spec of L.items) {
+      if (have.has(spec.id)) continue
+      have.add(spec.id)
+      sim.cards.push(newCard(spec.id, spec.kind, spec.level, spec.lessonId, spec.grammar, new Date(ts)))
+    }
+    sim.lessons.push({ id: L.id, unitId: L.unitId, level: L.level, attempts: 1, completions: 0, bestAccuracy: 0, lastAccuracy: 0.5, xp: 0 })
+  }
+}
+
 /** Course databases of the sister courses (Spanish keeps its original name). */
 const SISTERS: { code: string; name: string; days: number; lessons: number }[] = [
   { code: 'es', name: 'aprende', days: 45, lessons: 24 },
@@ -332,6 +349,7 @@ export async function seedDemo(opts: SeedOptions = {}): Promise<{ db: string; ca
   const nDays = opts.days ?? 75
   const lessons = await courseLessons(60)
   const sim = simulate(lessons, { days: nDays, breakAt: Math.round(nDays * 0.5), lessonRate: 0.62, reviewCap: 120, hard: hardGrammar(lessons), seed: opts.seed ?? 20261016, now })
+  if (opts.started) startLessons(sim, lessons, opts.started, now)
   await writeDb(courseDb, sim, 'a1')
   const others: string[] = []
   if (opts.others !== false) {

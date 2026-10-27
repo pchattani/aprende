@@ -302,3 +302,45 @@ dialogues:
       - { q: "Sam有冇地圖呀？", options: ["有", "冇", "佢唔知"], answer: 1, explain: "Sam answers 冇呀: he has no map, and his phone is almost dead." }
       - { q: "對面有乜嘢呀？", options: ["一間學校", "一間便利店", "一間銀行"], answer: 1, explain: "對面有一間 (便利店): there's a convenience store opposite." }
       - { q: "Mandy叫Sam喺邊度等佢？", options: ["銀行門口", "便利店", "機場"], answer: 1, explain: "你喺便利店等我: wait for me at the convenience store." }
+writing:
+  - task: "Write where you are now and where you live, and say whether it's near the MTR station."
+    min: 10
+    max: 30
+    use: [w.hai2, w.zyu6, w.zung1-waan4, w.kan5, w.gong2-tit3]
+    useAtLeast: 3
+    grammar: [g.hai2-location]
+    expect:
+      - { pattern: "喺", hint: "Say where you are with 喺: 我喺…" }
+      - { pattern: "住(喺)?", hint: "Say where you live: 我住喺…" }
+    model: { es: "我而家喺中環。我住喺灣仔，好近港鐵站。", en: "I'm in Central now. I live in Wan Chai, very near the MTR station." }
+  - task: "Write what you have and don't have with you on your trip: use 有 and 冇."
+    min: 8
+    max: 30
+    use: [w.jau5, w.mou5, w.sau2-gei1, w.din6-nou5, w.ce1]
+    useAtLeast: 3
+    grammar: [g.jau-have, g.mou-negation]
+    expect:
+      - { pattern: "有", hint: "Say what you have: 我有…" }
+      - { pattern: "冇", hint: "Say what you don't have: 我冇… (never 唔有)." }
+    model: { es: "我有手機同電腦，不過冇車。", en: "I have a phone and a computer, but no car." }
+  - task: "A friend thinks you are at the airport. Reply that you're not at the airport: you're at home now."
+    es: "你喺機場嗎？"
+    min: 8
+    max: 25
+    use: [w.hai2, w.m4, w.uk1-kei2, w.gei1-coeng4, w.ji4-gaa1]
+    useAtLeast: 3
+    grammar: [g.hai2-location, g.m-negation, g.maa-questions]
+    expect:
+      - { pattern: "唔喺", hint: "Say you're not there: 唔喺 / 我唔喺機場." }
+      - { pattern: "喺屋企", hint: "Say where you are: 我喺屋企." }
+    model: { es: "唔喺呀。我而家喺屋企，唔喺機場。", en: "No. I'm at home now, not at the airport." }
+  - task: "Write two yes/no questions with 嗎 for a new friend: ask if they live in Central and if they are a student."
+    min: 8
+    max: 25
+    use: [w.maa3, w.zyu6, w.hok6-saang1, w.zung1-waan4]
+    useAtLeast: 3
+    grammar: [g.maa-questions]
+    expect:
+      - { pattern: "嗎.*嗎", hint: "Ask two questions, each ending in 嗎." }
+      - { pattern: "住", hint: "Ask where they live: 你住喺…嗎？" }
+    model: { es: "你住喺中環嗎？你係學生嗎？", en: "Do you live in Central? Are you a student?" }

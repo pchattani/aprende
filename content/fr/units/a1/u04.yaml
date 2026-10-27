@@ -276,3 +276,44 @@ dialogues:
       - { q: "Il y a combien de pièces ?", options: ["une", "deux", "trois"], answer: 1, explain: "Two rooms: a living room and a bedroom." }
       - { q: "Qu'est-ce qu'il n'y a pas dans l'appartement ?", options: ["une douche", "un balcon", "une fenêtre"], answer: 1, explain: "« Il n'y a pas de balcon. »" }
       - { q: "Où est la boulangerie ?", options: ["en face de l'immeuble", "au coin de la rue", "à côté de la chambre"], answer: 0, explain: "« Il y a une boulangerie en face de l'immeuble. »" }
+writing:
+  - task: "Describe your flat or house to Julie: the rooms and what there is."
+    min: 15
+    max: 40
+    use: [w.appartement, w.chambre, w.cuisine, w.salon, w.balcon]
+    useAtLeast: 3
+    grammar: [g.il-y-a, g.articles-indefinite]
+    expect:
+      - { pattern: "\\bil y a\\b", hint: "Say what there is: Il y a …" }
+      - { pattern: "\\b(un|une|des)\\b", hint: "Use un, une or des: une cuisine, deux chambres…" }
+    model: { es: "J'habite dans un petit appartement au centre de Paris. Il y a deux chambres, une cuisine moderne et un salon. Il n'y a pas de balcon, mais c'est calme.", en: "I live in a small flat in the centre of Paris. There are two bedrooms, a modern kitchen and a living room. There's no balcony, but it's quiet." }
+  - task: "Describe your bedroom: what there is and where three things are (sur, sous, devant, à côté de…)."
+    min: 15
+    max: 40
+    use: [w.lit, w.chaise, w.bureau, w.fenêtre, w.ordinateur]
+    useAtLeast: 3
+    grammar: [g.prepositions-place, g.il-y-a]
+    expect:
+      - { pattern: "(\\bsur\\b|\\bsous\\b|\\bdevant\\b|\\bderri[eè]re\\b|\\bentre\\b|c[oô]t[eé] d|\\ben face d|\\bpr[eè]s d|\\bloin d)", hint: "Say where things are: sur, sous, devant, à côté de…" }
+      - { pattern: "\\b(est|sont)\\b", hint: "Use être to say where things are: Le lit est …" }
+    model: { es: "Dans ma chambre, il y a un lit, un bureau et une chaise. Le bureau est devant la fenêtre. L'ordinateur est sur le bureau et la chaise est à côté du lit.", en: "In my bedroom there's a bed, a desk and a chair. The desk is in front of the window. The computer is on the desk and the chair is next to the bed." }
+  - task: "Write a message to a friend about your street in the Marais: what there is and what there isn't."
+    min: 15
+    max: 40
+    use: [w.quartier, w.rue, w.boulangerie, w.pharmacie, w.supermarché]
+    useAtLeast: 3
+    grammar: [g.il-y-a, g.articles-indefinite]
+    expect:
+      - { pattern: "\\bil y a\\b", hint: "Say what there is: Il y a une boulangerie…" }
+      - { pattern: "(\\bn['’]y a pas\\b|\\bpas d(e\\s|['’]))", hint: "Say what there isn't: Il n'y a pas de …" }
+    model: { es: "Salut ! J'habite dans le Marais. C'est un vieux quartier. Dans ma rue, il y a une boulangerie et une pharmacie, mais il n'y a pas de supermarché. À bientôt !", en: "Hi! I live in the Marais. It's an old neighbourhood. In my street there's a bakery and a chemist's, but there's no supermarket. See you soon!" }
+  - task: "Describe a place in the Marais that you like (a square, a café, a museum): say what it is with c'est and what it is like with il est / elle est."
+    min: 15
+    max: 40
+    use: [w.place, w.joli, w.ancien, w.beau, w.arbre]
+    useAtLeast: 3
+    grammar: [g.c-est-il-est]
+    expect:
+      - { pattern: "\\bc['’]est\\b", hint: "Say what it is: C'est une place…" }
+      - { pattern: "\\b(il|elle) est\\b", hint: "Describe it: Il est … / Elle est …" }
+    model: { es: "La place des Vosges, c'est une place très ancienne. Elle est belle et calme. Il y a des arbres et des cafés. C'est joli, le Marais !", en: "The Place des Vosges is a very old square. It's beautiful and quiet. There are trees and cafés. The Marais is pretty!" }

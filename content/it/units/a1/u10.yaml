@@ -297,3 +297,41 @@ dialogues:
       - { q: "Quando va a Villa Borghese Giulia?", options: ["Ogni sabato", "Ogni domenica", "Il lunedì"], answer: 1, explain: "Giulia comes every Sunday with her dog Leo." }
       - { q: "Chi è Leo?", options: ["Il fratello di Giulia", "Il cane di Giulia", "Un amico di Tom"], answer: 1, explain: "Leo is Giulia's dog." }
       - { q: "Che cosa fanno dopo la bici?", options: ["Vanno al Bioparco", "Vanno al cinema", "Tornano a casa"], answer: 0, explain: "Giulia suggests going to the Bioparco, because Leo loves animals." }
+writing:
+  - task: "Write to a friend about the weather in Rome today and what you are doing because of it."
+    min: 15
+    max: 40
+    use: [w.tempo, w.sole, w.caldo, w.grado, w.piovere]
+    grammar: [g.weather]
+    expect:
+      - { pattern: "\\bfa (caldo|freddo|bel tempo|brutto tempo|fresco)\\b|c['’]è (il )?(sole|vento)|\\bpiove|\\bnevica|(è|e) (nuvoloso|sereno)|\\bci sono (le )?nuvole", hint: "Describe the weather: fa caldo, c'è il sole, piove…" }
+    model: { es: "Ciao, Sara! Oggi a Roma fa bel tempo: c'è il sole e fa caldo, trenta gradi. Vado a Villa Borghese con un libro. E a Londra piove?", en: "Hi, Sara! Today in Rome the weather's nice: it's sunny and hot, thirty degrees. I'm going to Villa Borghese with a book. And is it raining in London?" }
+  - task: "Write about your free time: what you like doing, which sports you play and which instrument you play (or would like to)."
+    min: 15
+    max: 40
+    use: [w.giocare, w.suonare, w.calcio, w.chitarra, w.musica]
+    grammar: [g.giocare-suonare, g.piacere-plural]
+    expect:
+      - { pattern: "\\b(gioco|giochi|gioca|giochiamo|giocate|giocano)\\b", hint: "Use giocare for sports: gioco a tennis." }
+      - { pattern: "\\b(suono|suoni|suona|suoniamo|suonate|suonano)\\b", hint: "Use suonare for instruments: suono la chitarra." }
+      - { pattern: "\\bmi piace\\b|\\bmi piacciono\\b", hint: "Say what you like: Mi piacciono gli sport." }
+    model: { es: "Nel tempo libero mi piace la musica. Suono la chitarra e canto. Mi piacciono anche gli sport: gioco a tennis il sabato e a volte gioco a calcio con gli amici.", en: "In my free time I like music. I play the guitar and sing. I like sports too: I play tennis on Saturdays and sometimes I play football with my friends." }
+  - task: "Write about your favourite season: which months it is, what the weather is like and what you do."
+    min: 15
+    max: 40
+    use: [w.stagione, w.estate, w.mese, w.sole, w.spiaggia]
+    grammar: [g.days-months, g.weather]
+    expect:
+      - { pattern: "\\b(primavera|estate|autunno|inverno)\\b", hint: "Name the season: l'estate, l'inverno…" }
+      - { pattern: "\\b(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\\b", hint: "Name the months: a luglio, ad agosto…" }
+    model: { es: "La mia stagione preferita è l'estate. A luglio e ad agosto fa molto caldo e c'è sempre il sole. Vado al mare, nuoto e leggo in spiaggia.", en: "My favourite season is summer. In July and August it's very hot and it's always sunny. I go to the seaside, swim and read on the beach." }
+  - task: "A friend asks you two questions. Answer them, then say what else you know how to do and whom or what you know in Rome."
+    es: "Conosci Villa Borghese? Sai andare in bici?"
+    min: 15
+    max: 40
+    use: [w.sapere, w.conoscere, w.nuotare, w.ballare, w.bici]
+    grammar: [g.sapere-conoscere]
+    expect:
+      - { pattern: "\\b(so|sai|sa|sappiamo|sapete|sanno)\\b", hint: "Use sapere for skills: so nuotare, non so ballare." }
+      - { pattern: "\\b(conosco|conosci|conosce|conosciamo|conoscete|conoscono)\\b", hint: "Use conoscere for places and people: conosco Villa Borghese." }
+    model: { es: "Sì, conosco bene Villa Borghese: è un parco bellissimo! So andare in bici, ma non so nuotare. Conosco anche un ragazzo romano che sa ballare molto bene.", en: "Yes, I know Villa Borghese well: it's a beautiful park! I can ride a bike, but I can't swim. I also know a Roman guy who can dance really well." }

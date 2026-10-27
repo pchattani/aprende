@@ -63,6 +63,19 @@ export function checkpointCoins(passed: boolean, firstPass: boolean): number {
   return CHECKPOINT_PASS_COINS + (firstPass ? CHECKPOINT_FIRST_BONUS : 0)
 }
 
+export const WRITING_PROMPT_COINS = 5
+export const WRITING_STARS_BONUS = 5
+export const WRITING_SET_BONUS = 10
+
+/**
+ * Coins for a writing check: a little purse the first time a prompt reaches the pass mark
+ * (engine/writing.ts WRITING_PASS), a bonus the first time it earns all three stamps, and one
+ * for the stop's whole set done. Re-checks pay nothing more, so revising is free but not farmable.
+ */
+export function writingCoins(r: { firstPass: boolean; firstThreeStars: boolean; setDone: boolean }): number {
+  return (r.firstPass ? WRITING_PROMPT_COINS : 0) + (r.firstThreeStars ? WRITING_STARS_BONUS : 0) + (r.setDone ? WRITING_SET_BONUS : 0)
+}
+
 /** Coins per daily errand, by how much it asks (ids from engine/quests.ts QUEST_POOL). */
 export const ERRAND_COINS: Record<string, number> = {
   les1: 10, rev15: 10, min10: 10,

@@ -282,3 +282,42 @@ dialogues:
       - { q: "Pourquoi Sophie n'a-t-elle pas de chambre avec vue sur le château ?", options: ["Elles sont toutes occupées", "Elles sont trop chères", "Elle n'a pas demandé"], answer: 0, explain: "Elles sont toutes occupées: all those rooms are taken." }
       - { q: "Où est servi le petit-déjeuner ?", options: ["Dans la chambre", "Au rez-de-chaussée", "Au château"], answer: 1, explain: "Breakfast is served on the ground floor from seven to ten." }
       - { q: "Qu'est-ce que le réceptionniste conseille à Sophie ?", options: ["De dormir tard", "D'aller à la piscine", "D'essayer l'escalier avant l'arrivée des groupes"], answer: 2, explain: "Je vous conseille d'essayer l'escalier de Léonard avant l'arrivée des groupes." }
+writing:
+  - task: "Write an email to a gîte near Chambord to book a room: the dates, the number of people, the type of room and a polite question."
+    min: 30
+    max: 70
+    use: [w.réserver, w.chambre-double, w.libre, w.possible, w.compris]
+    useAtLeast: 3
+    grammar: [g.conditional-politeness]
+    expect:
+      - { pattern: "\\b(voudrais|voudrions|aimerais|aimerions|pourriez|pourrais|pourrait|serait|souhaiterais|souhaiterions)\\b", hint: "Use the conditional to be polite: je voudrais, pourriez-vous…" }
+      - { pattern: "\\br[eé]serv", hint: "Say you want to book: réserver une chambre…" }
+    model: { es: "Bonjour, madame, je voudrais réserver une chambre double pour deux nuits, du 12 au 14 août. Nous serons deux. Est-ce que la chambre est libre ? Pourriez-vous aussi me dire si le petit-déjeuner est compris ? Serait-il possible d'arriver vers vingt heures ? Merci beaucoup ! Emma Wilson", en: "Hello, madam, I'd like to book a double room for two nights, from 12 to 14 August. There will be two of us. Is the room free? Could you also tell me whether breakfast is included? Would it be possible to arrive at around eight pm? Thank you very much! Emma Wilson" }
+  - task: "There is a problem in your hotel room. Write a polite note to reception: say what is wrong and ask for help."
+    min: 30
+    max: 70
+    use: [w.problème, w.fonctionner, w.chauffage, w.bruit, w.couverture]
+    useAtLeast: 3
+    grammar: [g.conditional-politeness]
+    expect:
+      - { pattern: "\\b(voudrais|voudrions|aimerais|pourriez|pourrais|pourrait|serait)\\b", hint: "Ask politely with the conditional: Pourriez-vous … ? Je voudrais …" }
+      - { pattern: "\\bne (fonctionne|marche|fonctionnent|marchent)\\b|\\bn['’](y a|a|est|ai)\\b|\\bprobl[eè]me\\b", hint: "Say what is wrong: le chauffage ne fonctionne pas…" }
+    model: { es: "Bonjour, je suis dans la chambre 14. Il y a un problème : le chauffage ne fonctionne pas et il fait très froid. Il y a aussi beaucoup de bruit dans la chambre à côté. Pourriez-vous m'apporter une couverture, s'il vous plaît ? Je voudrais aussi deux serviettes propres. Merci !", en: "Hello, I'm in room 14. There's a problem: the heating isn't working and it's very cold. There's also a lot of noise in the room next door. Could you bring me a blanket, please? I'd also like two clean towels. Thank you!" }
+  - task: "You spend a night at Chambord and hear something strange. Write a short diary entry with quelqu'un, personne, quelque chose, rien and quelque part."
+    min: 30
+    max: 70
+    use: [w.quelqu-un, w.quelque-chose, w.personne.pron, w.rien, w.quelque-part]
+    useAtLeast: 3
+    grammar: [g.indefinite-pronouns]
+    expect:
+      - { pattern: "\\b(quelqu['’]un|quelque chose|quelque part|personne|rien|nulle part)\\b", hint: "Use indefinite pronouns: quelqu'un, personne, quelque chose, rien…" }
+    model: { es: "Minuit. J'entends quelque chose dans l'escalier. Il y a quelqu'un ? Personne ne répond. Je regarde partout, mais je ne vois rien. Pourtant, quelqu'un marche quelque part dans le château… Peut-être le roi François Ier ? Je n'ai plus sommeil !", en: "Midnight. I hear something on the staircase. Is anyone there? Nobody answers. I look everywhere, but I can't see anything. And yet someone is walking somewhere in the castle… Perhaps King Francis I? I'm not sleepy any more!" }
+  - task: "Write your resolutions after the trip: what you have decided to do, try, stop and start (décider de, essayer de, arrêter de, commencer à, apprendre à)."
+    min: 30
+    max: 70
+    use: [w.décider, w.essayer, w.arrêter, w.commencer, w.apprendre]
+    useAtLeast: 3
+    grammar: [g.verbs-plus-infinitive]
+    expect:
+      - { pattern: "\\b(d[eé]cid|essa|arr[eê]t|commen|appren|continu|r[eé]uss|finis|accept|refus|oubli)[a-zàâçéèêëîïôûùœ]* (de |d['’]|[aà] )", hint: "Use verb + de / à + infinitive: j'ai décidé de…, je commence à…" }
+    model: { es: "Après ce voyage, j'ai décidé de changer ma vie ! D'abord, je vais arrêter de fumer. J'ai commencé à lire l'histoire de France et j'essaie de lire un livre par mois. Je vais aussi apprendre à danser. Et j'ai envie de retourner à Chambord !", en: "After this trip I decided to change my life! First, I'm going to stop smoking. I've started reading about French history and I'm trying to read a book a month. I'm also going to learn to dance. And I want to go back to Chambord!" }

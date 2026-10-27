@@ -251,3 +251,44 @@ dialogues:
       - { q: "Who really left the dirty plates?", options: ["Marcos", "Jorge", "Irene"], answer: 1 }
       - { q: "What excuse does Jorge give?", options: ["He got home very late and then forgot", "He was ill", "He didn't use the kitchen"], answer: 0 }
       - { q: "What do they agree to do?", options: ["Hire a cleaner", "Put a cleaning rota on the fridge", "Stop cooking at home"], answer: 1 }
+writing:
+  - task: "Write about what different people in your family like, find funny or annoying, using redundant pronouns (a mí me …, a mi madre le …, a nosotros nos …)."
+    min: 80
+    max: 150
+    use: [w.apetecer, w.hacer-gracia, w.sentar-bien, w.entretener, w.ingenioso]
+    useAtLeast: 3
+    grammar: [g.pronoun-redundancy]
+    expect:
+      - { pattern: "\\ba (m[ií]|[eé]l|ella|nosotros|nosotras|ellos|ellas|usted|ustedes|todos|mi [a-záéíóúñ]+|mis [a-záéíóúñ]+)(,? [a-záéíóúñ]+,)? (no )?(me|te|le|nos|os|les)\\b", hint: "Use the redundant pronoun: a mí me encanta, a mi padre le apetece …" }
+    model: { es: "En mi familia tenemos gustos muy distintos. A mí me encanta el humor absurdo, pero a mi madre no le hace ninguna gracia. A mi padre le apetece siempre ver monólogos en la televisión, y a mi hermano le fastidian muchísimo. A nosotros, los jóvenes, nos divierten más los vídeos cortos de internet. A mi abuela, en cambio, le sientan mal las bromas pesadas: dice que el humor tiene que ser ingenioso y no hacer daño. Lo curioso es que a todos nos hace gracia el mismo humorista.", en: "In my family we have very different tastes. I love absurd humour, but my mother doesn't find it funny at all. My father always feels like watching stand-up on TV, and it really annoys my brother. Us young ones are more entertained by short internet videos. My grandmother, on the other hand, doesn't take well to practical jokes: she says humour has to be witty and not hurt anyone. The funny thing is that we all find the same comedian funny." }
+  - task: "You missed your friend's party. Reply with your excuses and add emphasis (es que …, lo que pasa es que …, sí que …, de verdad, para nada, qué va)."
+    es: "¿Por qué no viniste a la fiesta? ¡Te estuvimos esperando!"
+    min: 80
+    max: 150
+    use: [w.es-que, w.lo-que-pasa-es-que, w.si-que, w.de-verdad, w.para-nada]
+    useAtLeast: 3
+    grammar: [g.emphatic-structures]
+    expect:
+      - { pattern: "es que|lo que pasa es que", hint: "Explain with es que … / lo que pasa es que …" }
+      - { pattern: "s[ií] que|de verdad|para nada|en absoluto|qu[eé] va", hint: "Add emphasis: sí que quería ir, de verdad, para nada …" }
+    model: { es: "¡Lo siento muchísimo! Es que tuve un día horrible. Lo que pasa es que mi jefe me pidió a última hora que terminara un informe urgente y salí de la oficina tardísimo. Cuando por fin llegué a casa, estaba agotada. Sí que quería ir, de verdad. No es que no me apetezca ver a tu familia, para nada. ¡Qué va! Me encantan tus fiestas. La próxima vez te prometo que llego puntual, aunque tenga que escaparme del trabajo. Te echo mucho de menos. ¿Me perdonas si te invito a un cafecito mañana?", en: "I'm so sorry! It's just that I had a horrible day. The thing is, my boss asked me at the last minute to finish an urgent report and I left the office really late. When I finally got home, I was exhausted. I really did want to come, honestly. It's not that I don't feel like seeing your family, not at all. No way! I love your parties. Next time I promise I'll be on time, even if I have to sneak out of work. I miss you a lot. Will you forgive me if I buy you a coffee tomorrow?" }
+  - task: "Write about the good and bad sides of living in a small town like Merlo, using neutral lo (lo bueno, lo malo, lo mejor de, lo de …, lo tranquila que es …)."
+    min: 80
+    max: 150
+    use: [w.lo-bueno, w.lo-malo, w.lo-mejor-de, w.lo-peor, w.nostalgia]
+    useAtLeast: 3
+    grammar: [g.neutral-lo]
+    expect:
+      - { pattern: "lo (bueno|malo|mejor|peor|curioso|importante|interesante|raro|dif[ií]cil)", hint: "Use neutral lo: lo bueno es …, lo peor fue …" }
+      - { pattern: "\\blo de\\b|\\blo [a-záéíóúñ]+ que (es|son|era|est[aá])", hint: "Use lo de … or lo + adjective + que: lo tranquila que es …" }
+    model: { es: "Llevo un año viviendo en Merlo y estoy muy contenta. Lo mejor de este pueblo es su clima: casi nunca hace frío y el aire es muy limpio. Lo bueno es que todo está cerca y la gente se saluda por la calle. Lo malo, en cambio, es que hay pocas opciones de ocio por la noche. Lo peor fue lo de la tormenta del verano pasado: estuvimos dos días sin luz. A veces siento nostalgia de la gran ciudad, pero no te imaginas lo tranquila que es la vida aquí.", en: "I've been living in Merlo for a year and I'm very happy. The best thing about this town is its climate: it's hardly ever cold and the air is very clean. The good thing is that everything is close and people say hello in the street. The bad thing, on the other hand, is that there are few options for going out at night. The worst thing was that business with the storm last summer: we were without electricity for two days. Sometimes I feel nostalgic for the big city, but you can't imagine how peaceful life is here." }
+  - task: "Write a short text about a famous discovery or invention, using cleft sentences to emphasise who, when or what (Fue Fleming quien …, Fue en 1928 cuando …, Lo que descubrió fue …)."
+    min: 80
+    max: 150
+    use: [w.pionero, w.merito, w.reconocimiento, w.penicilina, w.precisamente]
+    useAtLeast: 3
+    grammar: [g.emphatic-structures]
+    expect:
+      - { pattern: "\\b(fue|es|era|fueron) [^.]{1,40}? (quien|quienes|el que|la que|los que|las que|lo que)\\b", hint: "Use a cleft sentence: fue … quien …" }
+      - { pattern: "\\bfue (en|a|por|as[ií]|entonces) [^.]{0,30}?(cuando|donde|como)\\b", hint: "Stress the time or place: fue en 1928 cuando …" }
+    model: { es: "Mucha gente cree que la penicilina fue un descubrimiento planeado, pero fue precisamente un accidente lo que la hizo posible. Fue Alexander Fleming quien la descubrió, en su laboratorio de Londres. Fue en 1928 cuando notó que algo había destruido las bacterias de una de sus muestras. Sin embargo, no fue él quien la convirtió en un medicamento: fueron otros científicos, años después, quienes consiguieron producirla. Por eso, el mérito es compartido. Lo que sí es verdad es que Fleming fue un pionero y recibió el reconocimiento de todo el mundo con el Premio Nobel.", en: "Many people think penicillin was a planned discovery, but it was precisely an accident that made it possible. It was Alexander Fleming who discovered it, in his laboratory in London. It was in 1928 that he noticed something had destroyed the bacteria in one of his samples. However, it wasn't he who turned it into a medicine: it was other scientists, years later, who managed to produce it. So the credit is shared. What is true is that Fleming was a pioneer and received worldwide recognition with the Nobel Prize." }

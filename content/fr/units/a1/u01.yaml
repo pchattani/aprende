@@ -278,3 +278,48 @@ dialogues:
       - { q: "Emma est…", options: ["professeur", "étudiante", "médecin"], answer: 1, explain: "« Oui, je suis étudiante à Londres. »" }
       - { q: "L'agent dit « tu » ou « vous » à Emma ?", options: ["tu", "vous", "les deux"], answer: 1, explain: "An official uses vous with a stranger: « Vous êtes étudiante ? »" }
       - { q: "Qui est Léa ?", options: ["la sœur de Hugo", "une amie de Hugo", "l'agent"], answer: 1, explain: "Hugo says « Je te présente Léa, une amie. »" }
+writing:
+  - task: "Julie has just texted you. Reply: greet her, say how you are, give your name and say goodbye."
+    es: "Coucou ! Bienvenue en France ! Ça va ? Moi, c'est Julie."
+    min: 10
+    max: 35
+    use: [w.salut, w.ça-va, w.s-appeler, w.à-bientôt, w.bisou]
+    useAtLeast: 2
+    grammar: [g.greetings, g.s-appeler]
+    expect:
+      - { pattern: "\\b(salut|coucou|bonjour|bonsoir)\\b", hint: "Greet Julie: Salut ! / Coucou !" }
+      - { pattern: "\\b(je m['’]appelle|moi,? c['’]est|je suis)\\b", hint: "Give your name: Je m'appelle … / Moi, c'est …" }
+      - { pattern: "(au revoir|bient[oô]t|[aà] plus|[aà] demain|bisous?\\b|bonne (journ[eé]e|soir[eé]e))", hint: "Say goodbye: À bientôt ! / Bisous !" }
+    model: { es: "Salut, Julie ! Ça va très bien, merci. Et toi ? Moi, je m'appelle Paul. À bientôt à l'aéroport ! Bisous !", en: "Hi, Julie! I'm very well, thanks. And you? My name is Paul. See you soon at the airport! Love!" }
+  - task: "You are at passport control at Roissy. Answer the officer politely (vous): greet him, say your name, say whether you are a student and thank him."
+    es: "Bonjour. Vous êtes étudiant ? Votre passeport, s'il vous plaît."
+    min: 10
+    max: 35
+    use: [w.être, w.étudiant, w.passeport, w.merci, w.monsieur]
+    useAtLeast: 3
+    grammar: [g.etre-present, g.tu-vs-vous]
+    expect:
+      - { pattern: "\\bje (ne )?suis\\b", hint: "Say what you are with être: Je suis étudiant(e) / Je ne suis pas étudiant(e)." }
+      - { pattern: "\\b(monsieur|madame|merci)\\b", hint: "Be polite: add monsieur and merci." }
+    model: { es: "Bonjour, monsieur. Je m'appelle Emma Wilson. Oui, je suis étudiante. Voici mon passeport. Merci, bonne journée !", en: "Hello, sir. My name is Emma Wilson. Yes, I'm a student. Here's my passport. Thank you, have a nice day!" }
+  - task: "You arrive with a friend. Introduce him or her to Julie: give the name, say where he or she is from, and that he or she is a student and nice."
+    min: 12
+    max: 40
+    use: [w.voici, w.s-appeler, w.ami, w.étudiant, w.sympa]
+    useAtLeast: 3
+    grammar: [g.s-appeler, g.subject-pronouns, g.etre-present]
+    expect:
+      - { pattern: "\\b(voici|voil|je te pr[eé]sente|c['’]est)", hint: "Introduce your friend: Voici … / C'est …" }
+      - { pattern: "\\b(il|elle) s['’]appelle\\b", hint: "Give the name: Il s'appelle … / Elle s'appelle …" }
+      - { pattern: "\\b(il|elle) est\\b", hint: "Describe your friend with être: Il est … / Elle est …" }
+    model: { es: "Salut, Julie ! Voici un ami de Londres. Il s'appelle Hugo. Il est aussi étudiant, et il est très sympa ! Hugo, c'est Julie.", en: "Hi, Julie! This is a friend from London. His name is Hugo. He's a student too, and he's very nice! Hugo, this is Julie." }
+  - task: "Write two short goodbye messages: one to your friend Léa (tu) and one to Monsieur Martin, your landlord (vous)."
+    min: 12
+    max: 40
+    use: [w.salut, w.au-revoir, w.à-demain, w.bonne-soirée, w.merci-beaucoup]
+    useAtLeast: 3
+    grammar: [g.greetings, g.tu-vs-vous]
+    expect:
+      - { pattern: "\\b(tu|toi|te|salut|coucou|bisous?)\\b", hint: "For Léa, be informal: salut, tu, toi…" }
+      - { pattern: "\\b(vous|monsieur)\\b", hint: "For Monsieur Martin, be formal: au revoir, monsieur…" }
+    model: { es: "Salut, Léa ! Merci pour le café, tu es sympa ! À demain ! — Au revoir, monsieur Martin. Merci beaucoup, et bonne soirée !", en: "Bye, Léa! Thanks for the coffee, you're nice! See you tomorrow! — Goodbye, Mr Martin. Thank you very much, and have a nice evening!" }

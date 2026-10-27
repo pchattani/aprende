@@ -291,3 +291,45 @@ dialogues:
       - { q: "Como está o tempo hoje em Ouro Preto?", options: ["Está fazendo sol", "Tem muita neblina", "Está nevando"], answer: 1, explain: "Que pena que tenha tanta neblina hoje." }
       - { q: "O que incomoda o Caio na república?", options: ["O barulho dos vizinhos", "Que ninguém lave a louça", "A comida da dona Cida"], answer: 1, explain: "Me incomoda um pouco que ninguém lave a louça." }
       - { q: "Quantas pessoas moram na república?", options: ["Doze", "Duas", "Vinte"], answer: 0, explain: "Bia asks if there are twelve of them and Caio says it's true." }
+writing:
+  - task: "Reply to your friend's message, reacting to each piece of news with emotion (Que bom que…, Que pena que…, Fico feliz que…, Lamento que…)."
+    es: "Novidades: passei na prova! Mas o meu avô está doente e não vou poder ir a Ouro Preto com você."
+    min: 50
+    max: 100
+    use: [w.lamentar, w.surpresa, w.alívio, w.emocionado, w.alegria]
+    useAtLeast: 2
+    grammar: [g.subjunctive-emotion]
+    expect:
+      - { pattern: '\b(que bom|que pena|fico (muito )?(feliz|triste|contente)|lamento|me alegro|sinto muito) que\b', hint: "React with emotion + que + subjunctive: Que bom que…, Que pena que…" }
+      - { pattern: '(?<!\p{L})(tenha|esteja|possa|seja|v[aá]|venha|melhore|fique|consiga)(?!\p{L})', hint: "Use the subjunctive after the emotion: Que pena que ele esteja doente." }
+    model: { es: "Que bom que você passou na prova: parabéns! Fico muito feliz que você esteja tão emocionado. Mas que pena que o seu avô esteja doente. Espero que ele melhore logo. Lamento que você não possa vir comigo, mas a família é mais importante. A gente vai a Ouro Preto outro dia, combinado? Um abraço forte!", en: "How great that you passed the exam: congratulations! I'm so happy you're so excited. But what a shame your grandfather is ill. I hope he gets better soon. I'm sorry you can't come with me, but family comes first. We'll go to Ouro Preto another day, OK? A big hug!" }
+  - task: "Write tips for a friend who is visiting Ouro Preto, using impersonal expressions (É importante que…, É melhor que…, É essencial…)."
+    min: 50
+    max: 100
+    use: [w.necessário, w.essencial, w.fundamental, w.visitante, w.impressionante]
+    useAtLeast: 3
+    grammar: [g.subjunctive-impersonal]
+    expect:
+      - { pattern: '(?<!\p{L})(é|e) (muito )?(importante|necess[aá]rio|essencial|fundamental|melhor|bom|preciso) que\b', hint: "Use an impersonal expression + que + subjunctive: É importante que você leve…" }
+    model: { es: "Ouro Preto é linda, mas tem muitas ladeiras. É importante que você leve sapatos confortáveis e é essencial que use protetor solar. À noite faz frio, então é melhor que você tenha um casaco na mochila. Para um visitante, é fundamental conhecer as igrejas barrocas, que são impressionantes, e é necessário que você chegue cedo, porque elas fecham às cinco.", en: "Ouro Preto is beautiful, but it has lots of steep streets. It's important that you take comfortable shoes and it's essential that you wear sunscreen. It's cold at night, so you'd better have a coat in your rucksack. For a visitor, it's essential to see the baroque churches, which are impressive, and you need to get there early, because they close at five." }
+  - task: "Write about a relationship or friendship: what you prefer to do yourself (infinitive) and what bothers you or what you prefer the other person to do (que + subjunctive)."
+    min: 50
+    max: 100
+    use: [w.ciúme, w.carinhoso, w.incomodar, w.irritar, w.chatear]
+    useAtLeast: 3
+    grammar: [g.subjunctive-vs-infinitive, g.subjunctive-emotion]
+    expect:
+      - { pattern: '\b(prefiro|quero|gosto de|tenho medo de|odeio|detesto) [a-zà-ú]+(ar|er|ir)\b', hint: "When it's about you, use the infinitive: Prefiro conversar…" }
+      - { pattern: '\b(prefiro|prefere|quero|quer|incomoda|irrita|chateia|gosto|odeio|detesto) que\b', hint: "When it's about someone else, use que + subjunctive: Me incomoda que ele chegue atrasado." }
+    model: { es: "Com o meu namorado, eu prefiro conversar sobre os problemas. Não gosto de brigar. Mas me incomoda que ele chegue sempre atrasado, e me irrita que ele não responda às mensagens. Ele, por outro lado, prefere que eu fale menos ao telefone! Mesmo assim, ele é muito carinhoso e eu não tenho ciúme dele.", en: "With my boyfriend, I prefer to talk about problems. I don't like arguing. But it bothers me that he's always late, and it annoys me that he doesn't answer messages. He, on the other hand, would rather I spent less time on the phone! Even so, he's very affectionate and I'm not jealous of him." }
+  - task: "Some museums charge foreign tourists more than locals. Give your opinion, judging the situation with impersonal expressions (É justo que…, É absurdo que…, É lamentável que…)."
+    es: "Em alguns museus, os turistas estrangeiros pagam mais do que os brasileiros. O que você acha?"
+    min: 50
+    max: 100
+    use: [w.absurdo, w.injusto, w.justo, w.lamentável, w.reclamar]
+    useAtLeast: 3
+    grammar: [g.subjunctive-impersonal]
+    expect:
+      - { pattern: '(?<!\p{L})(é|e|acho|parece) (muito |um pouco )?(absurdo|injusto|justo|rid[ií]culo|lament[aá]vel|[oó]timo|normal|bom|inacredit[aá]vel|chocante|importante)', hint: "Judge the situation: É absurdo que…, É justo que…" }
+      - { pattern: '(?<!\p{L})(paguem|pague|seja|sejam|tenham|tenha|possam|possa|cobrem|cobre|visitem|levem)(?!\p{L})', hint: "Use the subjunctive after the judgement: É injusto que os turistas paguem mais." }
+    model: { es: "Na minha opinião, é justo que os turistas paguem um pouco mais, porque os museus precisam de dinheiro. Mas é absurdo que o ingresso seja três vezes mais caro! Também acho lamentável que muitos brasileiros nunca visitem esses museus. É importante que as escolas levem os alunos para conhecer a história de Ouro Preto. Não basta reclamar: é preciso agir.", en: "In my opinion, it's fair for tourists to pay a bit more, because museums need money. But it's absurd that the ticket costs three times as much! I also think it's a pity that many Brazilians never visit these museums. It's important that schools take pupils to learn about Ouro Preto's history. Complaining isn't enough: we need to act." }

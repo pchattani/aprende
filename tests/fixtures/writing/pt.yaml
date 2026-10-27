@@ -1,0 +1,12 @@
+level: a1
+unitWords: [w.família, w.pai, w.mãe, w.irmão, w.ter, w.ano, w.pequeno, w.grande]
+writing:
+  - task: "Describe your family: who is in it, their names and their ages."
+    min: 15
+    max: 40
+    use: [w.família, w.pai, w.mãe, w.irmão, w.ter]
+    useAtLeast: 3
+    expect:
+      - { pattern: "\\b(tenho|tem|t[eê]m|temos)\\b", hint: "Use ter: Eu tenho uma irmã." }
+      - { pattern: "\\banos\\b", hint: "Give at least one age: … tem quarenta anos." }
+    model: { es: "Minha família é pequena. Meu pai se chama Paulo e tem cinquenta anos. Minha mãe se chama Rita. Eu tenho uma irmã, a Ana.", en: "My family is small. My father is called Paulo and he's fifty. My mother is called Rita. I have a sister, Ana." }

@@ -8,7 +8,7 @@ import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { recordGame, GAMES_BEST_KEY, type GameBest } from './util'
 import { addMinutes, e2eHook } from '../palabras/util'
-import { kit, useVerbRound, recordVerb, shortTense, type VerbRound } from './verbRound'
+import { kit, useVerbRound, recordVerb, shortTense, tensesInPlay, type VerbRound } from './verbRound'
 import { FormInput, Paradigm, TimerBar, NoVerbs } from './verbShared'
 import { randomPrompt, paradigm, gradeForm, slotPoints, isJackpot, JACKPOT_BONUS, pronounsOf, type VerbPrompt, type FormGrade, type ParadigmRow } from '../../engine/games/verbPrompts'
 import { pronounEnglish } from '../../engine/games/englishVerb'
@@ -272,7 +272,7 @@ function Slots({ data, onDone, onAgain }: { data: VerbRound; onDone: () => void;
       </section>
 
       <div className="mt-3 min-h-[2.5rem]" aria-live="polite">
-        {phase === 'idle' && <p className="text-center text-sm text-muted">Tenses in play: {data.tenses.map((t) => shortTense(kit.labels[t]?.en ?? t)).join(', ')}. Pull the lever or press Spin.</p>}
+        {phase === 'idle' && <p className="text-center text-sm text-muted">Tenses in play: {tensesInPlay(data.tenses)}. Pull the lever or press Spin.</p>}
         {phase === 'spinning' && <p className="text-center text-sm font-semibold text-muted">Spinning…</p>}
         {phase === 'ask' && p && (
           <p className="text-center text-sm">

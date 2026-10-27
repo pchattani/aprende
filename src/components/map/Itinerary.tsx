@@ -2,14 +2,15 @@
  * The journey as a travel itinerary: one chapter per region (CEFR level), and per stop
  * its postcard banner followed by a card for each lesson and the checkpoint chest, all
  * strung on a slim route line down the left edge. Each region closes with border control
- * (the level check). The dogs stand on the current lesson's card. Every lesson stays
- * open: cards show state, never locks.
+ * (the level check). The dogs stand on the current lesson's card. Lessons further along
+ * the route than the learner has reached are locked (engine/unlock.ts): their card shows
+ * what to finish first, and the stop's checkpoint opens once its lessons are done.
  */
 import { useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { levels } from '../../engine/loader'
 import { lessonMastery, ringFor } from '../../engine/mastery'
-import { lessonIdsFor, levelComplete } from '../../engine/unlock'
+import { lessonIdsFor, levelComplete, isCheckpointOpen, isWritingOpen, lockHint, type CourseAccess } from '../../engine/unlock'
 import { REGIONS, isStamped, type Region, type Stop } from '../../engine/journey'
 import { QUIZ_PASS } from '../../engine/quiz'
 import { useKvPrefix } from '../../hooks/useProgress'
@@ -20,7 +21,9 @@ import type { CardRow, ExamRow, LessonRow } from '../../engine/types'
 import { StampCard } from '../StampCard'
 import { StopBanner } from './StopBanner'
 import { RegionChapter } from './RegionChapter'
-import { BorderCard, CheckpointCard, LessonCard, RouteDot } from './ItineraryCards'
+import { BorderCard, CheckpointCard, LessonCard, RouteDot, WritingCard } from './ItineraryCards'
+import { useWritingStops, writingSummary, type WritingRecord } from '../../hooks/useWriting'
+import { WRITING_PASS } from '../../engine/writing'
 import { MapDogs } from './MapDogs'
 import './map.css'
 
@@ -31,6 +34,8 @@ export interface ItineraryProps {
   cardsByLesson: Map<string, CardRow[]>
   exams: Map<LevelId, ExamRow>
   startLevel: LevelId
+  /** Which lessons are open. */
+  access: CourseAccess
   quizRecords?: Map<string, { best: number }>
   /** The lesson the dogs are at (up next). */
   currentId?: string
@@ -49,8 +54,10 @@ function unitFade(cs: { reps: number; due: number }[]): number {
 }
 
 export function Itinerary(props: ItineraryProps) {
-  const { lessonRows, lessonCounts, exams, startLevel, quizRecords, flag, highlight } = props
+  const { lessonRows, lessonCounts, exams, startLevel, access, quizRecords, flag, highlight } = props
   const checkpoints = useKvPrefix<CheckpointRecord>('checkpoint:')
+  const writing = useKvPrefix<WritingRecord>('writing:')
+  const writingStops = useWritingStops()
   const [stamp, setStamp] = useState<{ stop: Stop; region: Region; earned: boolean } | undefined>()
 
   return (
@@ -82,6 +89,10 @@ export function Itinerary(props: ItineraryProps) {
         const quiz = quizRecords?.get(`regionQuiz:${lv.id}`)
         const exam = exams.get(lv.id)
         const complete = levelComplete(lv, lessonRows, lessonCounts)
+        // passing border control opens the next region from its first lesson
+        const nextLv = levels[levelIdx + 1]
+        const nextFirst = access.order.find((l) => l.level === nextLv?.id)
+        const unlocks = nextLv && nextFirst && !access.isOpen(nextFirst.id) ? nextLv.title : undefined
         return (
           <section key={lv.id} id={`region-${lv.id}`} className={`lvl-${lv.id} mb-12 ${highlight === `region-${lv.id}` ? 'wm-highlight rounded-[26px]' : ''}`}>
             <RegionChapter
@@ -107,13 +118,15 @@ export function Itinerary(props: ItineraryProps) {
                   level={lv}
                   region={region}
                   checkpoint={checkpoints?.get(`checkpoint:${u.id}`)}
+                  writingCount={writingStops?.get(u.id)?.prompts ?? 0}
+                  writing={writing?.get(`writing:${u.id}`)}
                   onStamp={(s, earned) => region && setStamp({ stop: s, region, earned })}
                 />
               ))}
               {ids.length > 0 && (
                 <div className={`it-row is-border ${complete ? 'is-inked' : ''}`}>
                   <span className="it-rail" aria-hidden="true"><RouteDot kind={exam?.passed ? 'gate-done' : 'gate'} /></span>
-                  <BorderCard level={lv.id} title={lv.title} complete={complete} passed={Boolean(exam?.passed)} score={exam?.score} />
+                  <BorderCard level={lv.id} title={lv.title} complete={complete} passed={Boolean(exam?.passed)} score={exam?.score} unlocks={unlocks} />
                 </div>
               )}
             </div>
@@ -154,12 +167,15 @@ function useInkHeight(to: string | undefined) {
   return { ref, height }
 }
 
-function StopLeg({ unit: u, unitIdx, level: lv, region, checkpoint, onStamp, lessonRows, lessonMeta, lessonCounts, cardsByLesson, currentId, highlight, outfits }: ItineraryProps & {
+function StopLeg({ unit: u, unitIdx, level: lv, region, checkpoint, writingCount, writing, onStamp, lessonRows, lessonMeta, lessonCounts, cardsByLesson, access, currentId, highlight, outfits }: ItineraryProps & {
   unit: LevelMeta['units'][number]
   unitIdx: number
   level: LevelMeta
   region?: Region
   checkpoint?: CheckpointRecord
+  /** The stop's writing prompts (0: none yet) and the learner's record. */
+  writingCount: number
+  writing?: WritingRecord
   onStamp: (stop: Stop, earned: boolean) => void
 }) {
   const stop = region?.stops[unitIdx]
@@ -173,10 +189,13 @@ function StopLeg({ unit: u, unitIdx, level: lv, region, checkpoint, onStamp, les
   const rows = list.map((l) => {
     const row = lessonRows.get(l.id)
     const mastery = lessonMastery(cardsByLesson.get(l.id) ?? [])
-    return { ...l, mastery, status: ringFor(row, mastery), done: (row?.completions ?? 0) > 0 }
+    return { ...l, mastery, status: ringFor(row, mastery), done: (row?.completions ?? 0) > 0, locked: access.isOpen(l.id) ? undefined : lockHint(access.blocker(l.id), u.id) }
   })
   const cleared = Boolean(checkpoint && checkpoint.passes > 0)
   const ready = doneHere >= list.length
+  const cpOpen = isCheckpointOpen(u.id, lessonRows, list.length, Boolean(checkpoint))
+  const wrOpen = isWritingOpen(u.id, lessonRows, list.length, Boolean(writing && Object.values(writing.prompts).some((p) => p.checks > 0)))
+  const wr = writingSummary(writing, writingCount, WRITING_PASS)
   const best = checkpoint ? `${Math.round(checkpoint.best * 100)}%` : ''
   const cpStatus = cleared ? `Cleared · ${best}` : ready ? (checkpoint ? `Ready · best ${best}` : 'Ready') : `Recommended after the ${list.length} lessons`
 
@@ -211,16 +230,22 @@ function StopLeg({ unit: u, unitIdx, level: lv, region, checkpoint, onStamp, les
             const current = l.id === currentId
             return (
               <li key={l.id} className={`it-row ${current ? 'is-current' : ''}`} data-dot={i}>
-                <span className="it-rail" aria-hidden="true"><RouteDot kind={current ? 'current' : (l.status as 'new')} /></span>
-                <LessonCard id={l.id} n={i + 1} title={l.title} status={l.status} mastery={l.mastery} words={l.vocab?.length ?? 0} current={current} highlight={highlight === `lesson-${l.id}`}>
+                <span className="it-rail" aria-hidden="true"><RouteDot kind={current ? 'current' : l.locked ? 'locked' : (l.status as 'new')} /></span>
+                <LessonCard id={l.id} n={i + 1} title={l.title} status={l.status} mastery={l.mastery} words={l.vocab?.length ?? 0} current={current} highlight={highlight === `lesson-${l.id}`} locked={l.locked}>
                   {current && <MapDogs at={l.id} outfits={outfits} />}
                 </LessonCard>
               </li>
             )
           })}
+          {writingCount > 0 && (
+            <li className="it-row is-cp" data-dot="writing">
+              <span className="it-rail" aria-hidden="true"><RouteDot kind={!wrOpen ? 'locked' : wr.done >= writingCount ? 'learned' : wr.done ? 'started' : 'new'} /></span>
+              <WritingCard unitId={u.id} stopName={stopName} count={writingCount} done={wr.done} best={wr.best} open={wrOpen} lessonsDone={doneHere} lessonsTotal={list.length} highlight={highlight === `writing-${u.id}`} />
+            </li>
+          )}
           <li className="it-row is-cp" data-dot={rows.length}>
             <span className="it-rail" aria-hidden="true"><RouteDot kind={cleared ? 'chest-done' : 'chest'} /></span>
-            <CheckpointCard unitId={u.id} stopName={stopName} status={cpStatus} cleared={cleared} ready={ready} done={doneHere} total={list.length} highlight={highlight === `checkpoint-${u.id}`} />
+            <CheckpointCard unitId={u.id} stopName={stopName} status={cpStatus} cleared={cleared} ready={ready} done={doneHere} total={list.length} highlight={highlight === `checkpoint-${u.id}`} locked={!cpOpen} />
           </li>
         </ol>
       )}

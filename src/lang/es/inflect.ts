@@ -8,7 +8,7 @@ import { conjugate } from './conjugator'
 import { placeAccent, stressedVowelIndex, analyzeAccent } from './accents'
 import { stripAccents } from './normalize'
 
-const INVARIANT_OR = new Set(['mejor', 'peor', 'mayor', 'menor', 'superior', 'inferior', 'exterior', 'interior', 'anterior', 'posterior', 'ulterior', 'bicolor', 'multicolor'])
+export const INVARIANT_OR = new Set(['mejor', 'peor', 'mayor', 'menor', 'superior', 'inferior', 'exterior', 'interior', 'anterior', 'posterior', 'ulterior', 'bicolor', 'multicolor'])
 
 /** Re-place the accent of a derived form so stress stays on the same vowel as in the base word. */
 function keepStress(base: string, derived: string): string {

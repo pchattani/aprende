@@ -268,3 +268,44 @@ dialogues:
       - { q: "點解佢哋唔用「天」字？", options: ["唔協音", "唔押韻", "太難寫"], answer: 1, explain: "天 fits the tones (協音) but doesn't rhyme with the song's rhyme words 光, 黃, 方." }
       - { q: "最後佢哋揀咗邊個字？", options: ["天", "光", "城"], answer: 1, explain: "Chi-ming suggests 光: 羊城嘅光 fits the tones and rhymes." }
       - { q: "首歌嘅主歌同副歌點樣用語言？", options: ["全首都係口語", "全首都係書面語", "主歌口語，副歌書面語"], answer: 2, explain: "主歌用口語，副歌用書面語: a common mix in modern songs." }
+writing:
+  - task: "A friend wants to write Cantonese lyrics to a melody. Explain why the words' tones must match the tune (協音, 倒字)."
+    min: 110
+    max: 190
+    use: [w.hip3-jam1, w.dou2-zi6, w.syun4-leot6, w.tin4-ci4, w.jam1-diu6]
+    useAtLeast: 3
+    grammar: [g.tone-melody]
+    expect:
+      - { pattern: "協音|倒字|拗音", hint: "Use the key terms: 協音, 倒字." }
+      - { pattern: "聲調|音調|高音|低音", hint: "Explain the link between tones and pitch: 聲調, 音高…" }
+    model: { es: "廣東話有九個聲調，所以填詞嘅時候，每個字嘅聲調都要跟住旋律嘅音調，呢個就叫協音。例如旋律去到高音，你就要揀第一聲嘅字；去到低音，就要揀第四聲嘅字。如果唔協音，就會出現倒字，歌手唱出嚟，聽眾可能會聽錯意思。所以好多填詞人都話，寫廣東歌好似玩遊戲咁，要好有耐性。", en: "Cantonese has nine tones, so when writing lyrics, each word's tone must fit the pitch of the melody: this is called 協音. For example, when the melody goes high you need a first-tone word; when it goes low you need a fourth-tone word. If the tones don't match, you get 倒字 'inverted words': when the singer sings it, listeners may hear the wrong meaning. That's why many lyricists say writing Cantonese songs is like playing a puzzle game; you need a lot of patience." }
+  - task: "Compare the lyrics of Sam Hui and Lin Xi: how do their registers differ, and what effect does each have on listeners?"
+    min: 110
+    max: 190
+    use: [w.heoi2-gun3-git6, w.lam4-zik6, w.ji3-ging2, w.gung6-ming4, w.hau2-jyu5]
+    useAtLeast: 3
+    grammar: [g.lyrics-register]
+    expect:
+      - { pattern: "許冠傑", hint: "Discuss Sam Hui: 許冠傑." }
+      - { pattern: "林夕", hint: "Discuss Lin Xi: 林夕." }
+      - { pattern: "口語|書面", hint: "Compare the registers: 口語, 書面語." }
+    model: { es: "許冠傑七十年代嘅歌用好多口語，好似平時講嘢咁，寫打工仔嘅辛苦同香港人嘅生活，所以普通市民好有共鳴。林夕嘅歌詞就比較書面，多數用書面語，意象豐富，好有意境，好多情歌都令人聽完好唏噓。我覺得兩種風格都好重要：一種同生活好近，一種寫出心入面嘅感受，一齊成就咗廣東歌嘅黃金時代。", en: "Sam Hui's 1970s songs used lots of colloquial language, just like everyday speech, writing about workers' hardships and Hong Kong life, so ordinary people strongly identified with them. Lin Xi's lyrics are more literary, mostly in written Chinese, rich in imagery and atmosphere; many of his love songs leave you feeling wistful. I think both styles matter: one stays close to daily life, the other expresses inner feelings, and together they made up the golden age of Cantopop." }
+  - task: "Write four lines of your own Cantopop lyrics about Hong Kong at night, with lines 1, 2 and 4 rhyming, then explain your rhymes (押韻, 韻腳)."
+    min: 110
+    max: 190
+    use: [w.aap3-wan5, w.wan5-goek3, w.fu3-go1, w.wan5]
+    useAtLeast: 3
+    grammar: [g.cantonese-rhyme]
+    expect:
+      - { pattern: "押韻|韻腳", hint: "Explain your rhymes: 押韻, 韻腳…" }
+    model: { es: "「獅子山下風輕吹，月光照住維港水，以前同你行過嘅路，今晚得返我一個去。」呢四句係我寫嘅副歌。第一、第二同第四句嘅韻腳係「吹」、「水」同「去」，三個字嘅韻母一樣，所以押韻，唱起嚟好自然。第三句唔押韻都冇問題，因為好多歌都係噉寫。我仲特別揀咗啲高音嘅字放喺旋律最高嘅地方，等佢哋協音。", en: "\"Below Lion Rock the breeze blows soft, / the moonlight shines on the harbour, / the road I once walked with you, / tonight I walk alone.\" These four lines are my chorus. The rhyming words of lines one, two and four are 吹, 水 and 去, which share the same final, so they rhyme and sound natural when sung. Line three doesn't need to rhyme; many songs are written that way. I also deliberately put high-tone words on the highest notes of the melody so the tones match." }
+  - task: "Write about the golden age of Cantopop and why its classic songs still move people today."
+    min: 110
+    max: 200
+    use: [w.wong4-gam1-si4-doi6, w.ngok6-taan4, w.ging1-din2, w.sei3-daai6-tin1-wong4, w.hoi2-fut3-tin1-hung1]
+    useAtLeast: 3
+    grammar: [g.lyrics-register, g.tone-melody]
+    expect:
+      - { pattern: "黃金時代|八十年代|九十年代", hint: "Name the period: 黃金時代, 八十年代…" }
+      - { pattern: "我認為|我覺得|筆者|個人", hint: "Give your own view: 我認為…" }
+    model: { es: "八十同九十年代係香港樂壇嘅黃金時代。張國榮、梅艷芳同四大天王嘅歌唔單止喺香港好紅，仲紅到世界各地嘅中國人社區。我認為呢啲經典到今日仍然令人感動，係因為歌詞寫出咗嗰個年代香港人嘅希望同困難。例如《海闊天空》講追求夢想同自由，每次喺演唱會一唱，全場都會一齊大合唱。", en: "The 1980s and 90s were the golden age of the Hong Kong music scene. Songs by Leslie Cheung, Anita Mui and the Four Heavenly Kings were hits not only in Hong Kong but in Chinese communities all over the world. I believe these classics still move people because the lyrics captured the hopes and hardships of Hong Kongers of that era. 'Boundless Oceans, Vast Skies', for example, is about chasing dreams and freedom; whenever it's sung at a concert, the whole audience sings along." }

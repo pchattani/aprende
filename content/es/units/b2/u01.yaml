@@ -256,3 +256,44 @@ dialogues:
       - { q: "Why did Daniel leave his previous job?", options: ["He was dismissed", "They wanted him to move to another city", "The salary was too low"], answer: 1 }
       - { q: "What kind of post would Daniel choose?", options: ["One where he could train and grow", "A managerial post", "One with no demanding bosses"], answer: 0 }
       - { q: "What would Daniel do if offered the job today?", options: ["Refuse politely", "Accept immediately", "Pretend to think about it, then accept"], answer: 2 }
+writing:
+  - task: "If you could start your working life again, what would you do? Write about the career you'd choose and why, using si + imperfect subjunctive and the conditional."
+    min: 80
+    max: 150
+    use: [w.vocacion, w.pasion, w.trayectoria, w.plantearse, w.ambicioso]
+    useAtLeast: 3
+    grammar: [g.si-clauses-unreal, g.subjunctive-imperfect]
+    expect:
+      - { pattern: "\\bsi (no )?(me |te |le |nos )?[a-záéíóúñ]+(ara|aras|[aá]ramos|aran|iera|ieras|i[eé]ramos|ieran)\\b", hint: "Use si + imperfect subjunctive: si pudiera …, si tuviera …" }
+      - { pattern: "\\b[a-zñ]+(ría|rías|ríamos|rían)(?![a-záéíóúñ])", hint: "Give the consequence in the conditional: dejaría, escogería …" }
+    model: { es: "Si pudiera empezar de nuevo, me plantearía un cambio de trayectoria muy grande. Trabajo en recursos humanos desde hace diez años y, aunque el sueldo es bueno, no es mi vocación. Si tuviera el valor suficiente, dejaría la oficina y me dedicaría a enseñar, que es mi verdadera pasión. No necesitaría un cargo directivo ni fama: me bastaría con sentirme útil. Mis padres querían que fuera abogado, pero si estudiara otra vez, escogería ser maestro. Quizás ya no sea tan ambicioso como antes, pero sería mucho más feliz.", en: "If I could start again, I'd consider a really big career change. I've worked in human resources for ten years and, although the salary is good, it isn't my vocation. If I had enough courage, I'd leave the office and devote myself to teaching, which is my true passion. I wouldn't need a management position or fame: feeling useful would be enough for me. My parents wanted me to be a lawyer, but if I studied again, I'd choose to be a teacher. Maybe I'm not as ambitious as I used to be, but I'd be much happier." }
+  - task: "Describe an arrogant or know-it-all person you have met, using como si + imperfect subjunctive (habla como si fuera el jefe)."
+    min: 80
+    max: 150
+    use: [w.arrogante, w.presumir, w.sabelotodo, w.actitud, w.experto]
+    useAtLeast: 3
+    grammar: [g.como-si]
+    expect:
+      - { pattern: "como si (no )?(me |te |le |lo |la |nos |les )?[a-záéíóúñ]+(ara|aras|[aá]ramos|aran|iera|ieras|i[eé]ramos|ieran)\\b", hint: "Use como si + imperfect subjunctive: como si fuera el jefe, como si no supiéramos nada …" }
+    model: { es: "En mi antiguo trabajo había un compañero insoportable. Se llamaba Andrés y hablaba como si fuera el jefe de todos. Siempre presumía de sus logros y nos explicaba las cosas como si no supiéramos nada. Era un sabelotodo: opinaba de cualquier tema como si fuera un experto. Cuando alguien le hacía una crítica, ponía cara de sorpresa, como si nadie lo hubiera criticado nunca. Su actitud era tan arrogante que al final nadie quería trabajar con él. Lo curioso es que, en realidad, era bastante tímido.", en: "At my old job there was an unbearable colleague. His name was Andrés and he talked as if he were everyone's boss. He was always boasting about his achievements and explained things to us as if we knew nothing. He was a know-it-all: he gave his opinion on any subject as if he were an expert. When someone criticised him, he looked surprised, as if nobody had ever criticised him. His attitude was so arrogant that in the end nobody wanted to work with him. The funny thing is that he was actually quite shy." }
+  - task: "Write a formal letter to your local councillor in San Juan asking for improvements in your neighbourhood. Use quisiera, me gustaría que and le agradecería que + imperfect subjunctive."
+    min: 90
+    max: 150
+    use: [w.concejal, w.carril-bici, w.zona-verde, w.quisiera, w.prioridad]
+    useAtLeast: 3
+    grammar: [g.subjunctive-imperfect]
+    expect:
+      - { pattern: "estimad[oa]s?|se[nñ]or(a)? concejal", hint: "Open formally: Estimada señora concejal: …" }
+      - { pattern: "quisiera|me gustar[ií]a que|le agradecer[ií]a que|ser[ií]a conveniente que", hint: "Make polite requests: quisiera …, me gustaría que …, le agradecería que …" }
+      - { pattern: "\\bque (se )?[a-záéíóúñ]+(ara|aran|iera|ieran|yera|yeran)\\b", hint: "Use the imperfect subjunctive after me gustaría que / le agradecería que: que construyeran …" }
+    model: { es: "Estimada señora concejal: Me dirijo a usted como vecina del barrio de Trinidad, en San Juan. Quisiera pedirle que el ayuntamiento tenga en cuenta algunas ideas de los vecinos. En primer lugar, me gustaría que construyeran un carril bici que una el barrio con el centro, ya que mucha gente va en bicicleta. Además, le agradecería que convirtieran el espacio abandonado de la calle Mitre en una zona verde para los niños. Sé que la limpieza y la seguridad también son una prioridad, pero estas mejoras no costarían demasiado. Atentamente, Lucía Romero.", en: "Dear Councillor, I am writing to you as a resident of the Trinidad neighbourhood in San Juan. I would like to ask the council to take into account some of the residents' ideas. Firstly, I would like a cycle lane to be built linking the neighbourhood with the centre, as many people cycle. In addition, I would be grateful if the abandoned plot on Mitre Street could be turned into a green space for children. I know that cleaning and safety are also a priority, but these improvements would not cost too much. Yours sincerely, Lucía Romero." }
+  - task: "What would the world be like if everyone were more generous? Write a short reflection with at least three unreal conditions."
+    min: 80
+    max: 150
+    use: [w.generoso, w.injusticia, w.voluntariado, w.sin-animo-de-lucro, w.renta]
+    useAtLeast: 3
+    grammar: [g.si-clauses-unreal]
+    expect:
+      - { pattern: "\\bsi (no )?(me |te |le |nos )?[a-záéíóúñ]+(ara|aras|[aá]ramos|aran|iera|ieras|i[eé]ramos|ieran)\\b", hint: "Use si + imperfect subjunctive: si todo el mundo fuera …" }
+      - { pattern: "\\b[a-zñ]+(ría|rías|ríamos|rían)(?![a-záéíóúñ])", hint: "Give the consequence in the conditional: habría, podrían …" }
+    model: { es: "Si todo el mundo fuera más generoso, habría mucha menos injusticia. Si los millonarios donaran una parte de su renta, muchas fundaciones sin ánimo de lucro podrían ayudar a más familias. Si cada persona dedicara dos horas a la semana al voluntariado, nadie se sentiría solo. Por supuesto, el mundo no cambiaría de un día para otro, pero la sociedad sería más justa. Yo, por ejemplo, si tuviera más tiempo libre, colaboraría con una asociación de mi barrio. A veces pienso que no hace falta ser rico para ser generoso: basta con querer ayudar.", en: "If everyone were more generous, there would be much less injustice. If millionaires donated part of their income, many non-profit foundations could help more families. If every person devoted two hours a week to volunteering, nobody would feel lonely. Of course, the world wouldn't change overnight, but society would be fairer. I, for example, if I had more free time, would work with an association in my neighbourhood. Sometimes I think you don't need to be rich to be generous: wanting to help is enough." }

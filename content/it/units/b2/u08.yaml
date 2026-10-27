@@ -284,3 +284,41 @@ dialogues:
       - { q: "Che cosa trovavano gli ispettori?", options: ["Case piene di gente", "Solo mucchi di pietre", "Il conte che dormiva"], answer: 1, explain: "'…trovavano solo mucchi di pietre.'" }
       - { q: "A chi scrissero gli abitanti alla fine del Settecento?", options: ["Al re", "Al papa", "Al conte"], answer: 0, explain: "They wrote to the king and asked to be freed from the count." }
       - { q: "Che cosa farà Sara il giorno dopo?", options: ["Partirà per Bari", "Tornerà a vedere il Trullo Sovrano", "Scriverà alla sindaca"], answer: 1, explain: "'Domani torno a vedere il Trullo Sovrano.'" }
+writing:
+  - task: "Write a news item reporting a minister's press conference: what he declared and promised, what a journalist asked and what he denied (ha dichiarato che…, ha promesso che avrebbe…)."
+    min: 80
+    max: 140
+    use: [w.ministro, w.conferenza-stampa, w.smentire, w.opposizione, w.replicare]
+    grammar: [g.reported-speech-advanced, g.reporting-verbs]
+    expect:
+      - { pattern: "\\b(ha|aveva) (dichiarato|detto|affermato|promesso|assicurato|garantito|spiegato|annunciato) che\\b", hint: "Report the statement: ha dichiarato che…, ha promesso che…" }
+      - { pattern: "\\b(avrebbe|avrebbero|sarebbe|sarebbero)\\s+\\S+", hint: "Use the future in the past: ha promesso che avrebbe investito…" }
+    model: { es: "Ieri, durante una conferenza stampa a Bari, il ministro del turismo ha dichiarato che il governo avrebbe investito venti milioni di euro nei borghi della Puglia. Ha promesso che i lavori sarebbero cominciati entro la fine dell'anno e che i trulli di Alberobello sarebbero stati restaurati. Un giornalista gli ha chiesto se i soldi fossero già disponibili, ma il ministro non ha voluto rispondere. Ha invece smentito le voci secondo cui il progetto sarebbe stato rimandato. L'opposizione ha replicato che si tratta solo di promesse.", en: "Yesterday, at a press conference in Bari, the tourism minister declared that the government would invest twenty million euros in the villages of Puglia. He promised that the work would begin by the end of the year and that the trulli of Alberobello would be restored. A journalist asked him whether the money was already available, but the minister would not answer. Instead he denied the rumours that the project would be postponed. The opposition replied that these are only promises." }
+  - task: "A month ago a friend phoned you and said what is in the message below. Report it now, changing the tenses and the time and place words (il giorno dopo, quella sera, lì…)."
+    es: "«Domani vengo ad Alberobello. Stasera dormo qui a Bari da un amico e la settimana prossima ti chiamo per organizzare una cena.»"
+    min: 80
+    max: 140
+    use: [w.indomani, w.quella-sera, w.la-settimana-dopo, w.seguente, w.promettere]
+    grammar: [g.deictic-shift, g.reported-speech-advanced]
+    expect:
+      - { pattern: "\\b(il giorno dopo|il giorno seguente|l['’]indomani|quella sera|la settimana dopo|la settimana seguente|quel giorno)", hint: "Shift the time words: il giorno dopo, quella sera, la settimana dopo…" }
+      - { pattern: "\\b(sarebbe|avrebbe)\\s+\\S+", hint: "Use the past conditional for the future in the past: sarebbe venuto, avrebbe dormito…" }
+    model: { es: "Il mese scorso Marco mi ha telefonato da Bari. Mi ha detto che il giorno dopo sarebbe venuto ad Alberobello e che quella sera avrebbe dormito lì, a Bari, da un amico. Mi ha anche promesso che mi avrebbe chiamato la settimana dopo per organizzare una cena insieme. Ho aspettato la sua telefonata, ma non è mai arrivata! Solo il mese seguente ho scoperto che l'indomani della nostra telefonata aveva perso il cellulare. Mi ha scritto una lettera, spiegando che non aveva più il mio numero e che gli dispiaceva molto.", en: "Last month Marco phoned me from Bari. He told me that the next day he would come to Alberobello and that that evening he would sleep there, in Bari, at a friend's. He also promised that he would call me the following week to organise a dinner together. I waited for his call, but it never came! Only the following month did I find out that the day after our call he had lost his phone. He wrote me a letter, explaining that he no longer had my number and that he was very sorry." }
+  - task: "Report an argument between two neighbours using precise reporting verbs (accusare, negare, replicare, minacciare, ammettere, rassicurare, esclamare…)."
+    min: 80
+    max: 140
+    use: [w.accusare, w.negare, w.minacciare, w.rassicurare, w.borbottare]
+    grammar: [g.reporting-verbs]
+    expect:
+      - { pattern: "\\b(ha|hanno)\\s+(accusato|negato|minacciato|replicato|rassicurato|ammesso|garantito|obiettato|smentito|esclamato|borbottato|ribattuto|mormorato)\\b", hint: "Use precise reporting verbs: ha accusato, ha negato, ha replicato…" }
+    model: { es: "Ieri sera c'è stata una discussione tra i miei vicini, la signora Anna e il signor Lombardi. Anna ha accusato il signor Lombardi di parcheggiare sempre davanti alla sua porta. Lui ha negato di averlo fatto per dispetto e ha replicato che non c'erano altri posti liberi. Allora lei ha minacciato di chiamare i vigili. Il signor Lombardi ha borbottato qualcosa, poi ha ammesso di aver sbagliato e l'ha rassicurata: le ha garantito che non sarebbe più successo. Alla fine si sono stretti la mano, ma lei ha esclamato che lo avrebbe controllato!", en: "Last night there was an argument between my neighbours, Mrs Anna and Mr Lombardi. Anna accused Mr Lombardi of always parking in front of her door. He denied doing it out of spite and replied that there were no other free spaces. So she threatened to call the traffic police. Mr Lombardi muttered something, then admitted he was wrong and reassured her: he guaranteed it wouldn't happen again. In the end they shook hands, but she exclaimed that she would be keeping an eye on him!" }
+  - task: "Write a formal letter to the mayor of Alberobello on behalf of residents: report what was said at a public meeting and ask her to act."
+    min: 80
+    max: 140
+    use: [w.sindaca, w.consiglio-comunale, w.lamentare, w.garantire, w.campagna-elettorale]
+    grammar: [g.reported-speech-advanced, g.reporting-verbs]
+    expect:
+      - { pattern: "\\b(gentile|egregio|egregia|spettabile)\\b", hint: "Open formally: Gentile Sindaca…" }
+      - { pattern: "\\b(hanno|ha|aveva)\\s+(detto|dichiarato|lamentato|chiesto|sottolineato|ricordato|proposto|spiegato|garantito|promesso)\\b", hint: "Report what people said: hanno lamentato che…, Lei aveva garantito che…" }
+      - { pattern: "distinti saluti|cordiali saluti", hint: "Close formally: Distinti saluti." }
+    model: { es: "Gentile Sindaca, Le scrivo a nome dei residenti del Rione Monti, dopo la riunione pubblica di lunedì scorso. Durante l'incontro molti cittadini hanno lamentato che i turisti parcheggiano ovunque e che il quartiere è diventato troppo rumoroso. Alcuni anziani hanno dichiarato che non riuscivano più a dormire la notte. Il proprietario di un bar ha proposto di creare una zona pedonale. In campagna elettorale Lei aveva garantito che avrebbe protetto i trulli e la qualità della vita dei residenti. Le chiediamo pertanto di portare la questione in consiglio comunale. Distinti saluti.", en: "Dear Mayor, I am writing on behalf of the residents of the Rione Monti, after last Monday's public meeting. During the meeting many citizens complained that tourists park everywhere and that the neighbourhood has become too noisy. Some elderly residents stated that they could no longer sleep at night. The owner of a bar proposed creating a pedestrian zone. During the election campaign you had guaranteed that you would protect the trulli and the residents' quality of life. We therefore ask you to bring the matter before the town council. Yours faithfully." }

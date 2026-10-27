@@ -278,3 +278,44 @@ dialogues:
       - { q: "志明食過煲仔飯未呀？", options: ["食過", "未食過", "佢唔鍾意"], answer: 1, explain: "He answers 未食過: he has never had it." }
       - { q: "果欄幾時最忙呀？", options: ["朝早", "夜晚", "中午"], answer: 1, explain: "嘉欣 says 夜晚最忙: it is busiest at night." }
       - { q: "志明今晚想試乜嘢呀？", options: ["蛇羹", "榴槤", "龍蝦"], answer: 1, explain: "我從來冇食過榴槤，不如今晚試吓: he wants to try durian." }
+writing:
+  - task: "A friend asks if you've been to Japan. Answer, and say a place you have never been to but want to visit."
+    es: "你去過日本未呀？"
+    min: 20
+    max: 50
+    use: [w.gwo3.b, w.dung1-ging1, w.au1-zau1, w.ji3-daai6-lei6]
+    useAtLeast: 3
+    grammar: [g.gwo-experiential]
+    expect:
+      - { pattern: "去過", hint: "Say where you've been with 過: 我去過東京." }
+      - { pattern: "未去過|冇去過|從來冇|從未", hint: "Say where you've never been: 我未去過…" }
+    model: { es: "去過呀，我去過兩次東京。不過我未去過歐洲，好想去意大利。", en: "Yes, I've been to Tokyo twice. But I've never been to Europe; I'd really like to go to Italy." }
+  - task: "Write about a food you've never eaten, and one you tried for the first time in Hong Kong."
+    min: 20
+    max: 50
+    use: [w.se4-gang1, w.dai6-jat1-ci3, w.lau4-lin4, w.cung4-loi4]
+    useAtLeast: 3
+    grammar: [g.cang-ging, g.gwo-experiential]
+    expect:
+      - { pattern: "從來(冇|未)|從未|未試過|未食過", hint: "Say what you've never had: 我從來冇食過…" }
+      - { pattern: "第一次", hint: "Say what you tried for the first time: 第一次食…" }
+    model: { es: "我從來冇食過蛇羹，有啲驚。不過我喺香港第一次食榴槤，好好食！", en: "I've never had snake soup; I'm a bit scared of it. But in Hong Kong I tried durian for the first time. Delicious!" }
+  - task: "Ask a new friend three questions about experiences: have they ever skied, been on a roller coaster or seen a panda?"
+    min: 20
+    max: 45
+    use: [w.waat6-syut3, w.gwo3-saan1-ce1, w.hung4-maau1, w.gwo3.b]
+    useAtLeast: 3
+    grammar: [g.gwo-experiential]
+    expect:
+      - { pattern: "過.{0,5}未|有冇.{0,4}過", hint: "Ask with 過…未 or 有冇…過: 你滑過雪未呀？" }
+    model: { es: "你滑過雪未呀？你玩過過山車未呀？你有冇見過熊貓呀？", en: "Have you ever skied? Have you been on a roller coaster? Have you ever seen a panda?" }
+  - task: "Write about last weekend in Yau Ma Tei (what you did, with 咗) and something you had done there once before (with 曾經…過)."
+    min: 25
+    max: 55
+    use: [w.cang4-ging1, w.ji5-cin4, w.hoi2-sin1, w.jau5-ceoi3, w.soeng6-go3-lai5-baai3]
+    useAtLeast: 3
+    grammar: [g.zo-vs-gwo, g.cang-ging]
+    expect:
+      - { pattern: "咗", hint: "Say what you did last weekend with 咗." }
+      - { pattern: "過", hint: "Say what you have done before with 過." }
+    model: { es: "上個禮拜我去咗廟街行街。我以前曾經喺嗰度食過一次海鮮，好有趣。", en: "Last week I went shopping on Temple Street. I once had seafood there before; it was really interesting." }

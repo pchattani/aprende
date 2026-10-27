@@ -276,3 +276,42 @@ dialogues:
       - { q: "Depuis combien de temps Thomas habite à Paris ?", options: ["Depuis deux mois.", "Depuis deux ans.", "Depuis toujours."], answer: 1, explain: "« Depuis deux ans. »" }
       - { q: "Où va Julie demain ?", options: ["À Montréal.", "À Lyon.", "À la tour Eiffel."], answer: 0, explain: "« Tu rentres à Montréal demain ? » — « Oui… »" }
       - { q: "Pourquoi faut-il arriver tôt ce soir ?", options: ["Pour avoir une bonne place.", "Pour acheter des billets.", "Pour manger."], answer: 0, explain: "« Il faut arriver tôt pour avoir une bonne place. »" }
+writing:
+  - task: "Write about your life in Paris: how long you have lived there, studied French and so on (depuis + present tense)."
+    min: 15
+    max: 40
+    use: [w.depuis, w.habiter, w.vivre, w.apprendre, w.mois]
+    useAtLeast: 3
+    grammar: [g.depuis-present]
+    expect:
+      - { pattern: "\\bdepuis\\b", hint: "Say how long with depuis + present: J'habite ici depuis un an." }
+    model: { es: "J'habite à Paris depuis six mois. J'apprends le français depuis un an. Je vis dans un petit appartement dans le Marais depuis septembre. J'adore ma vie ici !", en: "I've lived in Paris for six months. I've been learning French for a year. I've been living in a small flat in the Marais since September. I love my life here!" }
+  - task: "Julie asks what you are doing. Text her what you have just done today (venir de + infinitive)."
+    es: "Alors, qu'est-ce que tu fais ? Tu es où ?"
+    min: 12
+    max: 40
+    use: [w.venir-de, w.arriver, w.voir, w.acheter, w.défilé]
+    useAtLeast: 3
+    grammar: [g.venir-de]
+    expect:
+      - { pattern: "\\b(viens|vient|venons|venez|viennent) d(e\\s|['’])[a-zéèêç]+(er|ir|re)\\b", hint: "Say what you have just done: Je viens de + infinitive (je viens d'arriver)." }
+    model: { es: "Je viens d'arriver sur les Champs-Élysées ! Je viens de voir le défilé avec Hugo. Nous venons d'acheter des glaces. Et toi ?", en: "I've just arrived on the Champs-Élysées! I've just seen the parade with Hugo. We've just bought some ice creams. And you?" }
+  - task: "A friend is visiting Paris for the first time. Give advice on what to do and see, and one thing not to do (il faut / il ne faut pas + infinitive)."
+    min: 15
+    max: 40
+    use: [w.il-faut, w.visiter, w.billet, w.attendre, w.réserver]
+    useAtLeast: 3
+    grammar: [g.il-faut]
+    expect:
+      - { pattern: "\\bil (ne )?faut\\b", hint: "Give advice with il faut + infinitive: Il faut visiter …" }
+    model: { es: "À Paris, il faut visiter le Louvre et il faut voir la tour Eiffel le soir. Il faut acheter un billet de métro. Il ne faut pas attendre : il faut réserver !", en: "In Paris you must visit the Louvre and you must see the Eiffel Tower in the evening. You need to buy a metro ticket. Don't wait: you have to book!" }
+  - task: "Send a message from the Champs-Élysées on the 14th of July: react with Quel / Quelle … ! and say what you hear and are waiting for (entendre, attendre)."
+    min: 12
+    max: 40
+    use: [w.quel, w.attendre, w.entendre, w.feu-d-artifice, w.chance]
+    useAtLeast: 3
+    grammar: [g.quel, g.present-re-verbs]
+    expect:
+      - { pattern: "\\bquel(le)?s? [^.!?]*!", hint: "React with an exclamation: Quelle belle fête ! Quel bruit !" }
+      - { pattern: "\\b(attends|attend|attendons|attendez|attendent|entends|entend|entendons|entendez|entendent|r[eé]ponds|vends|perds|rends)\\b", hint: "Use an -re verb: j'attends, on entend…" }
+    model: { es: "Quelle belle fête ! Nous attendons le feu d'artifice sur les Champs-Élysées. On entend la musique et tout le monde chante. Quelle chance d'être ici !", en: "What a great party! We're waiting for the fireworks on the Champs-Élysées. We can hear the music and everyone is singing. How lucky to be here!" }

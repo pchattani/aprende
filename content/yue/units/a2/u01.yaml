@@ -283,3 +283,46 @@ dialogues:
       - { q: "志明點解未食飯呀？", options: ["因為佢唔肚餓", "因為佢五點先收工", "因為佢冇錢"], answer: 1, explain: "He only finished work at five (五點先收工) and had no time to eat." }
       - { q: "上次志明冇帶乜嘢呀？", options: ["遮", "八達通", "手機"], answer: 1, explain: "上次我冇帶八達通: last time he didn't bring his Octopus card." }
       - { q: "煙花幾點開始呀？", options: ["七點半", "八點", "五點"], answer: 1, explain: "煙花八點開始: the fireworks start at eight; it is already half past seven." }
+writing:
+  - task: "Your mum texts you in the evening. Reply: say you've eaten, what else you've already done today and what you haven't finished yet."
+    es: "你食咗飯未呀？"
+    min: 20
+    max: 50
+    use: [w.zo2.b, w.ji5-ging1, w.zung6-mei6, w.sai2-saam1, w.zap1-uk1]
+    useAtLeast: 3
+    grammar: [g.zo-perfective, g.mei-questions, g.ji-ging-already]
+    expect:
+      - { pattern: "咗", hint: "Say what you've done with verb + 咗: 洗咗衫." }
+      - { pattern: "未", hint: "Say what you haven't done yet: 仲未…" }
+    model: { es: "食咗喇，我啱啱食完。今日我已經洗咗衫同執咗屋，不過仲未做完功課。", en: "Yes, I've just finished eating. Today I've already done the laundry and tidied the flat, but I haven't finished my homework yet." }
+  - task: "Write what you did NOT do last night and why. Use 冇 + verb (no 咗)."
+    min: 20
+    max: 50
+    use: [w.mou5.b, w.cam4-maan5, w.faat3-siu1, w.joek6]
+    useAtLeast: 3
+    grammar: [g.mou-past-negation]
+    expect:
+      - { pattern: "冇(出街|去|食|做|飲|睇|返|見)", hint: "Say what you didn't do with 冇 + verb: 我冇出街." }
+      - { pattern: "因為", hint: "Say why with 因為." }
+    model: { es: "我尋晚冇出街，因為我發燒。我冇去做運動，食咗藥就瞓覺喇。", en: "I didn't go out last night because I had a fever. I didn't go and exercise; I took some medicine and went to bed." }
+  - task: "Your friend is waiting for you at the Star Ferry pier. Reply: not yet, you're still on the bus, but you'll be there in a moment."
+    es: "你到咗碼頭未呀？"
+    min: 20
+    max: 45
+    use: [w.zung6-mei6, w.jat1-zan6-gaan1, w.maa5-tau4, w.mei6]
+    useAtLeast: 2
+    grammar: [g.mei-questions]
+    expect:
+      - { pattern: "未", hint: "Answer the 未 question: 未呀 / 仲未到." }
+      - { pattern: "一陣(間)?|就到|就快", hint: "Say you'll be there soon: 一陣間就到." }
+    model: { es: "未呀，我仲未到，仲喺巴士度。你等我一陣，一陣間就到喇！", en: "Not yet, I'm still not there; I'm still on the bus. Wait for me a moment, I'll be there soon!" }
+  - task: "Write a diary entry for your evening in Tsim Sha Tsui: something you finally did, and what you have just done."
+    min: 25
+    max: 55
+    use: [w.zung1-jyu1, w.ngaam1-ngaam1, w.hoi2-pong4, w.jin1-faa1, w.ji5-ging1]
+    useAtLeast: 3
+    grammar: [g.zo-perfective, g.ji-ging-already]
+    expect:
+      - { pattern: "咗", hint: "Say what you did with verb + 咗." }
+      - { pattern: "啱啱|頭先|終於|已經", hint: "Add 終於, 啱啱 or 已經." }
+    model: { es: "今晚我終於去咗尖沙咀海旁睇煙花，好靚！我啱啱返到屋企，已經十一點喇。", en: "Tonight I finally went to the Tsim Sha Tsui waterfront to see the fireworks. Beautiful! I've just got home, and it's already eleven." }

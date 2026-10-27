@@ -281,3 +281,37 @@ dialogues:
       - { q: "A quale condizione saliranno in vetta?", options: ["Purché venga anche Paolo", "Purché la funivia funzioni", "Purché il tempo sia bello"], answer: 2, explain: "Ilaria: 'Sì, purché il tempo sia bello.'" }
       - { q: "Quando vogliono partire?", options: ["All'alba", "A mezzogiorno", "Dopo il temporale", "Stasera"], answer: 0, explain: "Tobias suggests leaving at dawn, before the clouds arrive." }
       - { q: "Chi porterà l'attrezzatura?", options: ["Ilaria", "Paolo", "Tobias"], answer: 2, explain: "Tobias offers and Ilaria answers 'Portala tu' so she can take photos." }
+writing:
+  - task: "Write to a friend proposing a day in the Dolomites, with conditions and purposes: purché, a meno che, affinché, nel caso che + congiuntivo."
+    min: 50
+    max: 100
+    use: [w.purché, w.a-meno-che, w.affinché, w.rifugio, w.funivia]
+    grammar: [g.congiuntivo-conjunctions]
+    expect:
+      - { pattern: "\\b(purch[eé]|a meno che|a condizione che|affinch[eé]|in modo che|nel caso che|benché|sebbene|senza che)", hint: "Use a conjunction + congiuntivo: purché, a meno che, affinché…" }
+    model: { es: "Ciao Luca! Sabato andiamo nelle Dolomiti? Possiamo salire al rifugio a piedi, purché non nevichi. Se sei stanco, prendiamo la funivia, così arriviamo in cima prima che faccia troppo caldo. Partiamo alle sei, a meno che tu non preferisca dormire di più! Porta l'attrezzatura giusta: ti presto i miei scarponi, affinché tu non abbia problemi sul sentiero.", en: "Hi Luca! Shall we go to the Dolomites on Saturday? We can walk up to the mountain hut, as long as it doesn't snow. If you're tired, we'll take the cable car, so we get to the top before it gets too hot. We'll leave at six, unless you'd rather sleep longer! Bring the right gear: I'll lend you my boots, so that you don't have any problems on the path." }
+  - task: "Describe a winter weekend in a mountain hut, with contrasts: benché, sebbene + congiuntivo (benché faccia freddo, …)."
+    min: 50
+    max: 100
+    use: [w.benché, w.sebbene, w.camino, w.malga, w.faticoso]
+    grammar: [g.congiuntivo-conjunctions]
+    expect:
+      - { pattern: "\\b(benché|benche|sebbene|nonostante)\\s+(\\S+\\s+){0,3}(sia|siano|abbia|abbiano|faccia|facciano|ci sia|ci siano|sappia|possa|\\S+(i|ino|a|ano))\\b", hint: "Use benché / sebbene + congiuntivo: benché faccia freddo…" }
+    model: { es: "Benché fuori ci siano dieci gradi sotto zero, nel rifugio si sta benissimo: il fuoco nel camino è sempre acceso. Sebbene io non sappia sciare bene, oggi ho fatto una pista facile senza cadere! Il pomeriggio siamo andati a piedi fino a una malga, dove abbiamo mangiato formaggio e polenta. Sebbene il sentiero sia faticoso, la vista sulle montagne rosa al tramonto vale ogni sforzo.", en: "Although it's ten below zero outside, it's lovely in the hut: the fire in the fireplace is always lit. Although I can't ski well, today I did an easy slope without falling! In the afternoon we walked to a mountain dairy farm, where we ate cheese and polenta. Although the path is tiring, the view of the pink mountains at sunset is worth every effort." }
+  - task: "You are a mountain guide. Give safety advice to a group before an excursion, using prima di + infinitive and prima che + congiuntivo."
+    min: 50
+    max: 100
+    use: [w.prima-che, w.rischio, w.valanga, w.evitare, w.emergenza]
+    grammar: [g.prima-che-prima-di]
+    expect:
+      - { pattern: "\\bprima che\\b", hint: "Use prima che + congiuntivo for a different subject: prima che faccia buio." }
+      - { pattern: "\\bprima di\\s+\\S+", hint: "Use prima di + infinitive for the same subject: prima di partire." }
+    model: { es: "Ragazzi, ascoltate bene. Prima di partire controllate le previsioni del tempo e l'attrezzatura. Dobbiamo tornare al rifugio prima che faccia buio, quindi non fermatevi troppo. Evitate i sentieri chiusi: c'è rischio di valanghe. Prima di attraversare il ghiacciaio, aspettate me. E in caso di emergenza, chiamate subito il soccorso, prima che la situazione diventi pericolosa.", en: "Listen carefully, everyone. Before leaving check the weather forecast and your gear. We have to get back to the hut before it gets dark, so don't stop for too long. Avoid closed paths: there's a risk of avalanches. Before crossing the glacier, wait for me. And in an emergency, call the rescue services at once, before the situation becomes dangerous." }
+  - task: "Two friends set off yesterday to climb a peak and haven't called yet. Write what you think has happened, using the past congiuntivo (penso che ce l'abbiano fatta, spero che siano arrivati…)."
+    min: 50
+    max: 100
+    use: [w.raggiungere, w.vetta, w.farcela, w.allenato, w.successo]
+    grammar: [g.congiuntivo-passato]
+    expect:
+      - { pattern: "\\b(abbia|abbiano|sia|siano)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b|l['’]abbiano\\s+\\S+", hint: "Use the past congiuntivo: penso che abbiano raggiunto…, spero che siano arrivati…" }
+    model: { es: "Marco e Giulia sono partiti ieri mattina per scalare la Marmolada e non hanno ancora chiamato. Penso che ce l'abbiano fatta: sono alpinisti molto allenati. Credo che abbiano raggiunto la vetta nel pomeriggio e che abbiano dormito in un rifugio. Spero che non sia successo niente di grave! Forse in montagna il telefono non ha linea. Aspetto la loro chiamata.", en: "Marco and Giulia set off yesterday morning to climb the Marmolada and haven't called yet. I think they made it: they're very fit climbers. I believe they reached the summit in the afternoon and slept in a mountain hut. I hope nothing serious has happened! Maybe there's no signal in the mountains. I'm waiting for their call." }

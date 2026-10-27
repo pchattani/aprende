@@ -280,3 +280,45 @@ dialogues:
       - { q: "Sur quoi porte le projet de loi ?", options: ["Sur les frontières", "Sur la choucroute", "Sur les retraites"], answer: 0, explain: "Y'a un projet de loi sur les frontières." }
       - { q: "Comment Camille parle-t-elle à son chef ?", options: ["De façon familière", "De façon soutenue", "En alsacien"], answer: 1, explain: "She switches to formal French with inversion: Le texte sera-t-il prêt demain ?" }
       - { q: "Que remarque Karim ?", options: ["Que Camille parle trop fort", "Que Camille a changé de registre", "Que la flammekueche est froide"], answer: 1, explain: "T'as changé de voix, de vocabulaire, de tout: she changed register." }
+writing:
+  - task: "Your colleague sent you this very informal message by mistake. Rewrite it as a formal email to your manager, in standard French with full negation and vous."
+    es: "Salut ! J'suis crevé, y'a trop de boulot. J'peux pas venir à la réunion demain, ma bagnole est en panne. J'te rappelle."
+    min: 80
+    max: 150
+    use: [w.patienter, w.se-rendre, w.véhicule, w.formel, w.réunion]
+    useAtLeast: 3
+    grammar: [g.register-levels, g.spoken-negation]
+    expect:
+      - { pattern: "\\b(ne (pourrai|peux|pourrais|serai|suis)|n['’](ai|aurai|est|y a))\\b", hint: "Use full negation with ne: je ne pourrai pas…" }
+      - { pattern: "\\b(madame|monsieur|cordialement|veuillez|je vous|vous)\\b", hint: "Use a formal register: Madame, … je vous prie de…, cordialement." }
+    model: { es: "Madame, je me permets de vous écrire au sujet de la réunion prévue demain matin. Je suis malheureusement très fatigué en ce moment, car nous avons particulièrement beaucoup de travail. Par ailleurs, mon véhicule est tombé en panne hier soir et le garage ne pourra pas le réparer avant vendredi. Je ne pourrai donc pas me rendre au bureau demain. Serait-il possible de participer à la réunion par téléphone ? Je vous appellerai dans la matinée pour en discuter. Je vous remercie de bien vouloir patienter. Veuillez recevoir, Madame, mes sentiments distingués.", en: "Dear Madam, I am writing to you about the meeting planned for tomorrow morning. Unfortunately I am very tired at the moment, as we have a particularly large amount of work. Furthermore, my vehicle broke down last night and the garage will not be able to repair it before Friday. I will therefore not be able to come to the office tomorrow. Would it be possible to take part in the meeting by phone? I will call you back during the morning to discuss it. Thank you for your patience. Yours faithfully." }
+  - task: "Write a very informal text message to a close friend about your evening at the Strasbourg Christmas market, the way people really talk (ouais, bof, truc, y'a, c'est pas…)."
+    min: 80
+    max: 150
+    use: [w.ouais, w.bof, w.truc, w.marché-de-noël, w.bretzel]
+    useAtLeast: 3
+    grammar: [g.spoken-negation, g.register-levels]
+    expect:
+      - { pattern: "\\b(ouais|bof|ben|truc|trucs|mec|nana|bouffer|boulot|bagnole|fric|crev[eé]|fringues|bosser|chais pas)\\b|\\by['’]a\\b", hint: "Use familiar words: ouais, bof, truc, y'a…" }
+      - { pattern: "\\b(c['’]est|y['’]a|j['’][a-zàâçéèêëîïôûùœ]+|je [a-zàâçéèêëîïôûùœ]+|tu [a-zàâçéèêëîïôûùœ]+|on [a-zàâçéèêëîïôûùœ]+|il [a-zàâçéèêëîïôûùœ]+) (pas|plus|jamais|rien)\\b", hint: "Drop ne, as in speech: c'est pas grave, j'aime pas…" }
+    model: { es: "Coucou ! Ouais, on est allés au marché de Noël hier soir avec Karim. Y'a un monde fou, on pouvait pas bouger ! Les chalets, c'est joli, mais les trucs qu'ils vendent, bof, c'est pas génial. Par contre, les bretzels, j'en ai mangé trois, trop bons ! Le vin chaud aussi, ça réchauffe. Karim, lui, il voulait rien acheter, il dit que c'est que pour les touristes. Ben, moi, j'ai acheté une boule pour le sapin quand même. T'es libre samedi ? On pourrait y retourner le matin, c'est plus calme !", en: "Hi! Yeah, we went to the Christmas market last night with Karim. It's packed, we couldn't budge! The chalets are pretty, but the stuff they sell, meh, it's not great. On the other hand, the pretzels, I ate three of them, so good! The mulled wine too, it warms you up. Karim didn't want to buy anything, he says it's only for tourists. Well, I bought a bauble for the tree anyway. Are you free on Saturday? We could go back in the morning, it's quieter!" }
+  - task: "Write a formal question-and-answer piece about the European Parliament for a school magazine, using inversion in the questions (Le Parlement siège-t-il à Strasbourg ? Pourquoi les députés se réunissent-ils…?)."
+    min: 80
+    max: 150
+    use: [w.parlement, w.député-européen, w.siéger, w.session, w.institution]
+    useAtLeast: 3
+    grammar: [g.formal-inversion]
+    expect:
+      - { pattern: "[a-zàâçéèêëîïôûùœ]+-(t-)?(il|elle|ils|elles|on|vous|nous)\\b", hint: "Use inversion in your questions: siège-t-il ?, se réunissent-ils ?" }
+      - { pattern: "\\?", hint: "Write the questions with a question mark." }
+    model: { es: "Le Parlement européen siège-t-il vraiment à Strasbourg ? Oui : c'est dans cette ville que se tiennent les sessions plénières, douze fois par an. Pourquoi les députés européens se réunissent-ils aussi à Bruxelles ? Parce que les autres institutions de l'Union s'y trouvent. Combien de députés compte-t-il ? Il en compte sept cent vingt, venant de vingt-sept pays. Les citoyens peuvent-ils assister aux débats ? Bien sûr, à condition de s'inscrire avant la séance. Ce double siège coûte-t-il cher ? Oui, et c'est pourquoi certains voudraient garder seulement Bruxelles.", en: "Does the European Parliament really sit in Strasbourg? Yes: it is in this city that the plenary sessions are held, twelve times a year. Why do MEPs also meet in Brussels? Because the other institutions of the Union are there. How many members does it have? It has seven hundred and twenty, from twenty-seven countries. Can citizens attend the debates? Of course, provided they register before the session. Is this double seat expensive? Yes, and that is why some would like to keep only Brussels." }
+  - task: "Write a short formal news article for the front page of a regional newspaper about an event in Strasbourg (a demonstration, a vote, a new law): what happened, who said what."
+    min: 80
+    max: 150
+    use: [w.manifestation, w.ministre, w.réforme, w.protester, w.gouvernement]
+    useAtLeast: 3
+    grammar: [g.register-levels, g.formal-inversion]
+    expect:
+      - { pattern: "\\b(manifest|d[eé]put|ministre|parlement|loi|vote|[eé]lection|gouvernement|r[eé]forme)", hint: "Name the event: une manifestation, un vote, une réforme…" }
+      - { pattern: "\\b(selon|d[eé]clar|annonc|affirm|estim|expliqu|pr[eé]cis)", hint: "Report who said what: selon les organisateurs, le ministre a déclaré…" }
+    model: { es: "Strasbourg : des milliers d'étudiants contre la réforme des bourses. Hier après-midi, près de huit mille personnes ont manifesté entre la place Kléber et la gare pour protester contre la réforme proposée par le gouvernement. Selon les organisateurs, cette loi diminuerait les aides de vingt pour cent pour les étudiants les plus modestes. « Nous ne pourrons plus payer nos loyers », a déclaré une étudiante en droit. Interrogé par la presse, le ministre a affirmé que la réforme serait discutée avec les associations d'étudiants. La manifestation s'est passée dans le calme.", en: "Strasbourg: thousands of students against the grants reform. Yesterday afternoon nearly eight thousand people marched between the place Kléber and the station to protest against the reform proposed by the government. According to the organisers, this law would reduce aid by twenty per cent for the poorest students. 'We won't be able to pay our rent any more,' said a law student. Questioned by the press, the minister stated that the reform would be discussed with student associations. The demonstration passed off peacefully." }

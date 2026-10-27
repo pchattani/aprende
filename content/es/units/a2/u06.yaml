@@ -233,3 +233,42 @@ dialogues:
       - { q: "Why don't they give Lucía a book?", options: ["She doesn't read", "Marta gave her one last year", "Books are too expensive"], answer: 1 }
       - { q: "Who will write the card?", options: ["Tom", "Marta", "Pablo"], answer: 1 }
       - { q: "What does Tom ask Marta for?", options: ["Her opinion", "Twenty euros", "A bracelet"], answer: 1 }
+writing:
+  - task: "Your classmate wants to borrow some things. Reply using lo, la, los, las so you don't repeat the nouns."
+    es: "¿Me prestas tu diccionario y tu bolígrafo? ¿Y los cuadernos?"
+    min: 30
+    max: 60
+    use: [w.prestar, w.devolver, w.diccionario, w.boligrafo, w.cuaderno]
+    useAtLeast: 3
+    grammar: [g.direct-object-pronouns]
+    expect:
+      - { pattern: "\\b(lo|la|los|las) (presto|necesito|tengo|dejé|deje|dejo|guardo|traigo|devuelves|devuelvo|uso|busco|llevo)", hint: "Replace the noun with lo / la / los / las: te lo presto, lo necesito …" }
+    model: { es: "Claro, el diccionario te lo presto, pero lo necesito el lunes. El bolígrafo no lo tengo: lo dejé en el hotel. Los cuadernos los guardo en mi mochila; te los traigo mañana. ¿Me los devuelves el viernes?", en: "Sure, I'll lend you the dictionary, but I need it on Monday. I don't have the pen: I left it at the hotel. I keep the notebooks in my rucksack; I'll bring them to you tomorrow. Will you give them back to me on Friday?" }
+  - task: "Before you leave Colón, write what you are giving, telling or showing to different people (le / les)."
+    min: 30
+    max: 60
+    use: [w.regalar, w.contar, w.ensenar, w.recomendar, w.carta]
+    useAtLeast: 3
+    grammar: [g.indirect-object-pronouns]
+    expect:
+      - { pattern: "\\b(le|les)\\b", hint: "Use le / les for the person: le regalo …, les cuento …" }
+    model: { es: "A mi madre le regalo una pulsera de Colón. A mis amigos les cuento mis aventuras y les enseño las fotos. Mi profesora me recomendó un libro, así que le escribo una carta para darle las gracias.", en: "I'm giving my mother a bracelet from Colón. I'm telling my friends about my adventures and showing them the photos. My teacher recommended a book to me, so I'm writing her a letter to thank her." }
+  - task: "Your friend asks about the presents. Answer with se lo / se la / se los / se las."
+    es: "¿Le diste el regalo a tu hermana? ¿Y las flores a tu abuela?"
+    min: 30
+    max: 60
+    use: [w.regalar, w.anillo, w.secreto, w.flores.phr]
+    useAtLeast: 2
+    grammar: [g.double-object-pronouns]
+    expect:
+      - { pattern: "\\bse (lo|la|los|las)\\b", hint: "Use se lo / se la / se los / se las: se lo di …" }
+    model: { es: "Sí, el regalo se lo di ayer a mi hermana: era un anillo muy bonito. Las flores se las compré a mi abuela, pero todavía no se las he dado. Es un secreto: mi abuela no lo sabe.", en: "Yes, I gave the present to my sister yesterday: it was a very pretty ring. I bought the flowers for my grandmother, but I haven't given them to her yet. It's a secret: my grandmother doesn't know." }
+  - task: "Ask a friend for some favours at the hotel and apologise. Attach pronouns to infinitives and imperatives (traérmelo, perdóname …)."
+    min: 25
+    max: 55
+    use: [w.perdonar, w.traer, w.guardar, w.explicar, w.molestar]
+    useAtLeast: 3
+    grammar: [g.pronoun-placement]
+    expect:
+      - { pattern: "(ar|er|ir|ár|ér|ír|ando|ándo|iendo|iéndo)(me|te|se|nos)?(me|te|lo|la|le|nos|los|las|les)(?![a-záéíóúñ])", hint: "Attach the pronoun: puedes traérmelo, perdóname, explicártelo …" }
+    model: { es: "¿Me puedes hacer un favor? Necesito mi bolso: ¿puedes traérmelo de la habitación? Y el libro, ¿me lo guardas en tu mochila? Perdóname por molestarte tanto. Mañana te voy a explicar todo.", en: "Can you do me a favour? I need my bag: can you bring it to me from the room? And the book, will you keep it in your rucksack for me? Sorry for bothering you so much. Tomorrow I'll explain everything to you." }

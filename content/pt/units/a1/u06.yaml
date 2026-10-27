@@ -281,3 +281,44 @@ dialogues:
       - { q: "O que a Helena faz na sexta?", options: ["Dá aula", "Descansa", "Vende quadros"], answer: 1, explain: "Na sexta eu descanso." }
       - { q: "Quando a Helena vende os quadros?", options: ["Todo dia", "Às vezes, no sábado", "Na sexta"], answer: 1, explain: "No sábado, às vezes, vendo os meus quadros na feira." }
       - { q: "A Helena pega o bonde?", options: ["Sempre", "Quase nunca", "Todo dia"], answer: 1, explain: "Quase nunca! Eu ando a pé." }
+writing:
+  - task: "Describe your morning routine with times: when you wake up, get up, get dressed and leave home."
+    min: 15
+    max: 40
+    use: [w.acordar, w.levantar-se, w.vestir-se, w.sair, w.rápido]
+    useAtLeast: 3
+    grammar: [g.reflexive-verbs-present, g.telling-time]
+    expect:
+      - { pattern: '\bme (levanto|visto|deito|sento)\b', hint: "Use reflexive verbs: Eu me levanto … / Eu me visto …" }
+      - { pattern: '(?<![a-zà-ú])[aà]s? (uma|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|\d)', hint: "Say the time: às sete, às oito e meia…" }
+    model: { es: "Eu acordo às seis e me levanto às seis e meia. Tomo banho, me visto rápido e tomo café. Saio de casa às sete e quinze.", en: "I wake up at six and get up at half past six. I shower, get dressed quickly and have breakfast. I leave home at a quarter past seven." }
+  - task: "Write about your week: what you do on different days. Say how often with sempre, às vezes and nunca."
+    min: 15
+    max: 40
+    use: [w.sábado, w.domingo, w.sempre, w.nunca, w.às-vezes]
+    useAtLeast: 3
+    grammar: [g.days-months, g.frequency-adverbs]
+    expect:
+      - { pattern: '(\b(sempre|nunca|geralmente|normalmente)\b|vezes)', hint: "Say how often: sempre, às vezes, nunca…" }
+      - { pattern: '(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)', hint: "Name days of the week: na segunda, no sábado…" }
+    model: { es: "De segunda a sexta, eu trabalho no centro. Às vezes, estudo à noite. No sábado, sempre corro na praia. No domingo, eu nunca trabalho: descanso!", en: "From Monday to Friday, I work in the centre. Sometimes I study in the evening. On Saturdays I always run on the beach. On Sundays I never work: I rest!" }
+  - task: "Describe what you do in the week: where you work or study, and what you learn, read or watch."
+    min: 15
+    max: 40
+    use: [w.trabalhar, w.estudar, w.aprender, w.ler, w.empresa]
+    useAtLeast: 3
+    grammar: [g.present-regular-er-ir]
+    expect:
+      - { pattern: '\b(trabalho|estudo)\b', hint: "Say where you work or study: Trabalho numa … / Estudo na …" }
+      - { pattern: '\b(aprendo|leio|vivo|assisto|escrevo|corro|como|bebo|abro)\b', hint: "Use an -er or -ir verb: aprendo, leio, assisto…" }
+    model: { es: "Eu trabalho numa empresa no centro e estudo português à noite. Na aula, aprendo palavras novas. Em casa, leio livros e assisto à televisão.", en: "I work for a company in the centre and study Portuguese in the evening. In class I learn new words. At home I read books and watch television." }
+  - task: "Write a message to a friend about your Saturday in Santa Teresa: when you leave home, when you arrive and when you come back."
+    min: 15
+    max: 40
+    use: [w.sair, w.chegar, w.voltar, w.manhã, w.tarde]
+    useAtLeast: 3
+    grammar: [g.telling-time, g.present-regular-er-ir]
+    expect:
+      - { pattern: '\b(saio|chego|volto)\b', hint: "Say when you leave, arrive or come back: Saio às …, volto às …" }
+      - { pattern: '(?<![a-zà-ú])[aà]s? (uma|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|\d)', hint: "Give times: às nove, às cinco…" }
+    model: { es: "Oi, Ana! Hoje é sábado. Saio de casa às nove da manhã. Chego a Santa Teresa às dez. O bairro é lindo! Volto à tarde, às cinco. Beijos!", en: "Hi, Ana! Today is Saturday. I leave home at nine in the morning. I get to Santa Teresa at ten. The neighbourhood is lovely! I come back in the afternoon, at five. Love!" }

@@ -280,3 +280,45 @@ dialogues:
       - { q: "Come sta Tom?", options: ["Male.", "Così così.", "Bene."], answer: 2, explain: "He answers Giulia «Sto bene, grazie»." }
       - { q: "Chi è Marco?", options: ["Un amico di Giulia.", "Il fratello di Tom.", "Un agente."], answer: 0, explain: "Giulia says «Ti presento Marco, un mio amico»." }
       - { q: "Perché l'agente dice «Lei» a Tom?", options: ["Perché Tom è un amico.", "Perché è una situazione formale.", "Perché Tom è italiano."], answer: 1, explain: "An official speaking to a stranger uses the formal Lei; Marco, a young friend, suggests tu." }
+writing:
+  - task: "Giulia, your Italian friend, sends you a message. Reply: greet her, tell her your name, say how you are and ask how she is."
+    es: "Ciao! Io sono Giulia. Come ti chiami? Come stai?"
+    min: 10
+    max: 30
+    use: [w.ciao, w.chiamarsi, w.stare, w.bene]
+    grammar: [g.greetings, g.chiamarsi]
+    expect:
+      - { pattern: "\\bmi chiamo\\b|\\bsono\\b", hint: "Say your name: Mi chiamo … / Sono …" }
+      - { pattern: "\\b(sto|bene|male|benissimo)\\b|così così|non c['’]è male", hint: "Say how you are: Sto bene / Così così / Non c'è male." }
+      - { pattern: "\\be tu\\b|come stai", hint: "Ask how she is: E tu? / Come stai?" }
+    model: { es: "Ciao, Giulia! Mi chiamo Tom. Sto bene, grazie. E tu? Come stai?", en: "Hi, Giulia! My name is Tom. I'm fine, thanks. And you? How are you?" }
+  - task: "At passport control in Fiumicino the officer speaks to you formally. Answer politely with Lei: greet him, give your first name and surname, say what you are (a student, a teacher…) and ask how he is."
+    es: "Buongiorno. Come si chiama, scusi?"
+    min: 12
+    max: 35
+    use: [w.buongiorno, w.nome, w.cognome, w.studente, w.stare]
+    grammar: [g.tu-vs-lei, g.chiamarsi, g.essere-present]
+    expect:
+      - { pattern: "\\b(buongiorno|buonasera|salve)\\b", hint: "Greet him formally: Buongiorno / Buonasera." }
+      - { pattern: "\\bmi chiamo\\b|\\bsono\\b|\\bil mio nome\\b", hint: "Give your name: Mi chiamo …" }
+      - { pattern: "\\be lei\\b|come sta\\b", hint: "Ask him formally how he is: E Lei? / Come sta?" }
+    model: { es: "Buongiorno! Mi chiamo Tom Baker: Tom è il nome e Baker è il cognome. Sono uno studente. E Lei, come sta?", en: "Good morning! My name is Tom Baker: Tom is my first name and Baker is my surname. I'm a student. And you, how are you?" }
+  - task: "Introduce two friends to Giulia in 3–4 sentences: say who they are, their names and what they do. Use lui and lei."
+    min: 12
+    max: 35
+    use: [w.presentare, w.amico, w.lui, w.lei, w.chiamarsi]
+    grammar: [g.subject-pronouns, g.essere-present, g.chiamarsi]
+    expect:
+      - { pattern: "\\b(lui|lei|loro)\\b", hint: "Use subject pronouns: lui, lei, loro." }
+      - { pattern: "si chiam|\\b(è|sono)\\s|\\bed è\\b", hint: "Say who they are: Lui si chiama … / Lei è …" }
+    model: { es: "Ciao, Giulia! Ti presento i miei amici, Marco e Sara. Lui si chiama Marco ed è uno studente. Lei è Sara ed è una professoressa.", en: "Hi, Giulia! Let me introduce my friends, Marco and Sara. He's called Marco and he's a student. She's Sara and she's a teacher." }
+  - task: "It's the evening after your first day in Rome. Write a short goodbye message to your new friend Marco: thank him, wish him a good evening and say when you will see each other."
+    min: 10
+    max: 30
+    use: [w.grazie-mille, w.buona-serata, w.a-domani, w.ci-vediamo, w.a-presto]
+    useAtLeast: 2
+    grammar: [g.greetings]
+    expect:
+      - { pattern: "\\bgrazie\\b", hint: "Thank him: Grazie (mille)!" }
+      - { pattern: "a domani|a presto|a dopo|ci vediamo|arrivederci", hint: "Say goodbye: A domani! / Ci vediamo!" }
+    model: { es: "Ciao, Marco! Grazie mille, sei un vero amico. Buona serata e a domani! Ci vediamo a Roma.", en: "Hi, Marco! Thanks a lot, you're a real friend. Have a nice evening and see you tomorrow! See you in Rome." }

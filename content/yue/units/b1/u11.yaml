@@ -271,3 +271,42 @@ dialogues:
       - { q: "落雨嘅話，嘉欣想做乜嘢？", options: ["喺屋企睇戲", "去西貢食海鮮", "照去行山"], answer: 1, explain: "落雨嘅話，我哋就改去西貢食海鮮." }
       - { q: "點解要帶電筒？", options: ["萬一落山嗰陣天黑咗", "山頂冇電", "要影相"], answer: 0, explain: "萬一落山嗰陣天黑咗: in case it gets dark on the way down." }
       - { q: "佢哋幾點喺邊度等？", options: ["七點，黃大仙站", "八點，西貢", "七點，獅子山頂"], answer: 0, explain: "聽朝七點喺黃大仙站等." }
+writing:
+  - task: "Plan tomorrow's hike in Sai Kung: what you'll do if the weather is good, and the backup plan if it isn't (…嘅話, 萬一)."
+    min: 40
+    max: 90
+    use: [w.mak6-lei5-hou6-ging3, w.maan6-jat1, w.fau2-zak1, w.din6-tung2, w.sai1-gung3]
+    useAtLeast: 3
+    grammar: [g.ge-waa-conditional]
+    expect:
+      - { pattern: "嘅話|如果|假如", hint: "Set the condition: 天氣好嘅話…" }
+      - { pattern: "萬一|否則|唔係就|一係", hint: "Give a backup: 萬一落雨…" }
+    model: { es: "聽日天氣好嘅話，我哋就去行麥理浩徑。萬一落大雨，就改去西貢食海鮮。記得帶多啲水同電筒，否則好危險。", en: "If the weather's good tomorrow, we'll hike the MacLehose Trail. In case it pours, we'll go to Sai Kung for seafood instead. Remember to bring extra water and a torch; otherwise it's dangerous." }
+  - task: "Your friend says it might rain tomorrow. Insist with 就算…都… that you'll still go kayaking at Sharp Island."
+    es: "聽日可能會落雨喎，你仲去唔去呀？"
+    min: 40
+    max: 90
+    use: [w.zau6-syun3, w.duk6-muk6-zau1, w.fong4-saai3, w.saai3-soeng1, w.kiu4-zeoi2-zau1]
+    useAtLeast: 3
+    grammar: [g.zau-syun-even-if]
+    expect:
+      - { pattern: "就算.{1,10}都", hint: "Say 'even if' with 就算…都…" }
+    model: { es: "去！就算落雨我都去。我哋可以去橋咀洲玩獨木舟，落少少雨唔緊要。記得帶防曬，萬一出太陽就唔怕曬傷。", en: "I'm going! Even if it rains, I'll still go. We can go kayaking at Sharp Island; a bit of rain doesn't matter. Remember to bring sunscreen so we don't get sunburnt if the sun comes out." }
+  - task: "Write how likely different things are on today's hike, using 大機會, 可能 and 睇怕."
+    min: 40
+    max: 90
+    use: [w.daai6-gei1-wui6, w.tai2-paa3, w.je5-zyu1, w.wu4-dip2, w.dung6-mat6]
+    useAtLeast: 3
+    grammar: [g.probability]
+    expect:
+      - { pattern: "大機會|可能|睇怕|睇嚟", hint: "Say how likely: 大機會, 可能, 睇怕…" }
+    model: { es: "睇天氣預報，今日大機會好熱，睇怕好多人會中暑。我哋可能會見到野豬同蝴蝶，不過其他動物就好難見到。", en: "According to the weather forecast, it'll very likely be hot today; I'm afraid lots of people will get heatstroke. We might see wild boar and butterflies, but other animals are hard to spot." }
+  - task: "Write safety tips for your hiking group: what to do if someone gets heatstroke or a cramp."
+    min: 40
+    max: 90
+    use: [w.zung3-syu2, w.cau1-gan1, w.kau4-gau3, w.bou2-cung1, w.tai2-lik6]
+    useAtLeast: 3
+    grammar: [g.ge-waa-conditional, g.probability]
+    expect:
+      - { pattern: "如果|嘅話|萬一", hint: "Give conditions: 如果有人中暑…" }
+    model: { es: "行山要小心！如果有人中暑，就要即刻休息同飲水。萬一有人抽筋，唔好再行，打九九九求救。記得帶夠水同嘢食，隨時補充體力。", en: "Be careful when hiking! If someone gets heatstroke, they must rest and drink water at once. If someone gets a cramp, stop walking and call 999 for help. Remember to bring enough water and food to keep your energy up." }

@@ -276,3 +276,41 @@ dialogues:
       - { q: "O que está acontecendo com a muralha agora?", options: ["Está sendo restaurada.", "Está sendo demolida.", "Foi fechada para sempre."], answer: 0, explain: "It was rebuilt in the 19th century and is now being restored (está sendo restaurada)." }
       - { q: "Segundo o visitante, quem vivia ali antes do forte?", options: ["Colonos portugueses", "Pescadores holandeses", "Povos indígenas"], answer: 2, explain: "The visitor points out that indigenous peoples already lived there." }
       - { q: "Por que o Ceará ficou conhecido como Terra da Luz?", options: ["Por causa do sol forte", "Por causa da abolição de 1884", "Por causa do farol"], answer: 1, explain: "After abolishing slavery in 1884, Ceará became known as the Land of Light." }
+writing:
+  - task: "Write a short, encyclopaedia-style paragraph about a fort or historic building, using the formal passive (foi construído por…, foi restaurado…)."
+    min: 80
+    max: 140
+    use: [w.forte.n, w.holandês, w.restaurar, w.reconstruir, w.conquista]
+    useAtLeast: 3
+    grammar: [g.passive-advanced]
+    expect:
+      - { pattern: '\b(foi|foram|s[aã]o|tinha sido|havia sido|pode ser|podem ser) [a-zà-ú]+(ado|ada|ados|adas|ido|ida|idos|idas|ito|ita|eito|eita|osto|osta)\b', hint: "Use the passive: foi construído pelos holandeses, foi restaurado…" }
+    model: { es: "A Fortaleza de Nossa Senhora da Assunção, que deu nome à capital do Ceará, foi construída pelos holandeses em 1649. Poucos anos depois, o forte foi conquistado pelos portugueses e recebeu um novo nome. No século XIX, foi reconstruído e, mais tarde, foi restaurado pelo exército, que ainda o usa hoje em dia. A conquista do forte é considerada um momento importante da história da cidade. Hoje, o forte é usado pelo exército e pode ser visitado em alguns dias da semana.", en: "The Fortress of Our Lady of the Assumption, which gave its name to the capital of Ceará, was built by the Dutch in 1649. A few years later the fort was taken by the Portuguese and given a new name. In the 19th century it was rebuilt and, later, it was restored by the army, which still uses it nowadays. The capture of the fort is considered an important moment in the city's history. Today the fort is used by the army and can be visited on some days of the week." }
+  - task: "Write a short report on migration in Ceará in an objective style, using impersonal expressions (Estima-se que…, Observa-se…, Calcula-se que…)."
+    min: 80
+    max: 140
+    use: [w.estimar, w.calcular, w.migração, w.índice, w.dado]
+    useAtLeast: 3
+    grammar: [g.impersonal-expressions]
+    expect:
+      - { pattern: '\b(estima|calcula|observa|sabe|acredita|considera|registra|verifica|nota|percebe)-se\b', hint: "Use impersonal se: Estima-se que…, Observa-se que…" }
+    model: { es: "Durante o século XX, a migração do Nordeste para o Sudeste foi enorme. Estima-se que milhões de cearenses tenham deixado o estado por causa da seca. Nos últimos anos, porém, observa-se uma queda nesse fluxo. Segundo os dados mais recentes, o índice de migração caiu bastante, e calcula-se que muitos descendentes desses retirantes estejam voltando. Acredita-se que o crescimento do turismo e da indústria seja a principal causa dessa mudança. Ainda assim, considera-se que a seca continua sendo um problema sério na região.", en: "During the 20th century, migration from the Northeast to the Southeast was enormous. It is estimated that millions of people from Ceará left the state because of drought. In recent years, however, a drop in this flow has been observed. According to the most recent data, the migration rate has fallen considerably, and it is calculated that many descendants of those migrants are returning. Growth in tourism and industry is believed to be the main cause of this change. Even so, drought is considered to remain a serious problem in the region." }
+  - task: "Write a formal summary of the abolition of slavery in Ceará (1884), preferring nouns to verbs (a abolição de…, a resistência…, a realização de…)."
+    min: 80
+    max: 140
+    use: [w.abolição, w.resistência, w.escravizado, w.realização, w.heroico]
+    useAtLeast: 3
+    grammar: [g.nominalization]
+    expect:
+      - { pattern: '\b[a-zà-ú]+([cç][aã]o|[cç][oõ]es|mento|mentos|[eê]ncia)\b', hint: "Use nouns instead of verbs: a abolição, a realização, a resistência…" }
+    model: { es: "O Ceará ficou conhecido como a Terra da Luz após a abolição da escravidão em 1884, quatro anos antes do resto do Brasil. A decisão foi o resultado da resistência dos escravizados e do apoio dos jangadeiros, que se recusaram a levar pessoas escravizadas para os navios. A realização de assembleias e as campanhas contra a escravidão também tiveram um papel heroico. Essa conquista é lembrada até hoje com orgulho. A abolição no Ceará foi um exemplo importante para as outras regiões do país.", en: "Ceará became known as the Land of Light after the abolition of slavery in 1884, four years before the rest of Brazil. The decision was the result of the resistance of the enslaved and the support of the jangada fishermen, who refused to carry enslaved people to the ships. The holding of assemblies and the campaigns against slavery also played a heroic role. This achievement is still remembered with pride today. Abolition in Ceará was an important example for the country's other regions." }
+  - task: "Should old buildings be protected (tombados) or demolished to make way for new projects? Write a formal opinion paragraph, using the passive and nouns rather than verbs."
+    min: 80
+    max: 150
+    use: [w.tombar, w.demolir, w.preservação, w.patrimônio, w.ruína]
+    useAtLeast: 3
+    grammar: [g.passive-advanced, g.nominalization]
+    expect:
+      - { pattern: '\b(foi|foram|deve ser|devem ser|precisa ser|precisam ser|seja|sejam|s[aã]o|pode ser|podem ser)( [a-zà-ú]+)? (tombad|demolid|preservad|restaurad|protegid|destru[ií]d)', hint: "Use the passive: devem ser preservados, foram demolidos…" }
+      - { pattern: '\b(a meu ver|na minha opini[aã]o|acredito|considero|defendo)\b', hint: "State your position: A meu ver… / Considero que…" }
+    model: { es: "A meu ver, os prédios históricos devem ser preservados, mesmo quando a cidade precisa crescer. Em Fortaleza, muitos casarões antigos foram demolidos nas últimas décadas para a construção de prédios modernos. A preservação do patrimônio não é um luxo: é uma forma de manter viva a memória da cidade. Quando um prédio é tombado, é proibido demolir o prédio e o proprietário pode receber ajuda para a restauração. É claro que algumas ruínas não podem ser salvas, mas apagar o passado é sempre um erro.", en: "In my view, historic buildings should be preserved, even when the city needs to grow. In Fortaleza, many old mansions have been demolished in recent decades to make way for modern buildings. Preserving heritage is not a luxury: it is a way of keeping the city's memory alive. When a building is listed, it is forbidden to demolish the building and the owner can get help with restoration. Of course some ruins cannot be saved, but erasing the past is always a mistake." }

@@ -277,3 +277,41 @@ dialogues:
       - { q: "家俊上個月發生咩事？", options: ["佢冇咗份工", "佢結咗婚", "佢搬咗屋"], answer: 0, explain: "He says 我上個月冇咗份工: he lost his job." }
       - { q: "阿詩建議家俊先做咩？", options: ["去旅行", "改吓份履歷", "再求一支籤"], answer: 1, explain: "對症下藥: fix the real problem by improving his CV first." }
       - { q: "家俊搵到工之後會做咩？", options: ["請阿詩食葡國菜", "再嚟媽閣廟拜神", "買杏仁餅畀阿詩"], answer: 0, explain: "He promises to treat her to Portuguese food: 一言為定." }
+writing:
+  - task: "Tell a story from your own life that illustrates a chengyu such as 塞翁失馬, and say what you learned from it."
+    min: 90
+    max: 160
+    use: [w.coi3-jung1-sat1-maa5, w.sing4-jyu5, w.jyu6-ji3, w.jin4.b, w.fuk1.c]
+    useAtLeast: 2
+    grammar: [g.chengyu-in-speech, g.chengyu-structure]
+    expect:
+      - { pattern: "塞翁失馬|半途而廢|亡羊補牢|守株待兔|畫蛇添足|一石二鳥|井底之蛙|入鄉隨俗", hint: "Name the idiom your story illustrates: 塞翁失馬…" }
+    model: { es: "上年我畀公司炒咗，當時好唔開心。點知後來我搵到一份更加好嘅工，人工仲高咗百分之二十。真係塞翁失馬，焉知非福。呢個成語嘅寓意係：壞事有時會變成好事。所以我而家明白，遇到困難嘅時候唔好太早放棄。同埋要對將來有信心。", en: "Last year I was fired and felt terrible at the time. But then I found an even better job, with twenty per cent more pay. It really was a blessing in disguise. The idiom's meaning is that bad things can sometimes turn into good things. So now I understand: when you face difficulties, don't give up too early. And you should have confidence in the future." }
+  - task: "A friend starts a new job tomorrow. Write them a message of good wishes and advice, using chengyu naturally inside colloquial sentences."
+    min: 90
+    max: 160
+    use: [w.jat1-faan4-fung1-seon6, w.saam1-sam1-loeng5-ji3, w.bun3-tou4-ji4-fai3, w.jat1-sam1-jat1-ji3, w.hung1-jau5-sing4-zuk1]
+    useAtLeast: 3
+    grammar: [g.chengyu-in-speech]
+    expect:
+      - { pattern: "一帆風順|馬到功成|一路順風|步步高升", hint: "Wish them well with a chengyu: 一帆風順…" }
+      - { pattern: "三心兩意|半途而廢|一心一意|胸有成竹|手忙腳亂", hint: "Give advice with another chengyu: 唔好半途而廢…" }
+    model: { es: "你聽日開工喇，祝你一帆風順，馬到功成！新工作開頭一定會手忙腳亂，不過唔好三心兩意，更加唔好半途而廢。只要你一心一意去做，好快就會胸有成竹。有咩唔明就問同事，唔好扮識，大家都會幫你㗎。記住，做嘢一定要有頭有尾。", en: "You start work tomorrow: wishing you plain sailing and instant success! At the start of a new job you're bound to be flustered, but don't be half-hearted, and definitely don't give up halfway. As long as you put your heart into it, you'll soon have everything under control. If you don't understand something, ask your colleagues; don't pretend to know. Everyone will help you. Remember: always see things through." }
+  - task: "Describe a confusing evening at a Portuguese restaurant in Macau, using Cantonese four-character phrases like 雞同鴨講, 一頭霧水 and 七國咁亂."
+    min: 90
+    max: 160
+    use: [w.gai1-tung4-aap3-gong2, w.jat1-tau4-mou6-seoi2, w.cat1-gwok3-gam3-lyun6, w.gau2-m4-daap3-baat3, w.mok6-ming4-kei4-miu6]
+    useAtLeast: 3
+    grammar: [g.four-character-colloquial]
+    expect:
+      - { pattern: "雞同鴨講|一頭霧水|七國咁亂|九唔搭八|莫名其妙|手忙腳亂|亂七八糟", hint: "Use a Cantonese four-character phrase: 雞同鴨講, 一頭霧水…" }
+    model: { es: "尋晚我去咗一間葡國餐廳食飯。個侍應淨係識講英文，我講廣東話，真係雞同鴨講。佢拎咗個餐牌畀我，我睇到一頭霧水，最後點咗啲九唔搭八嘅嘢。廚房又七國咁亂，等咗成個鐘先有得食。不過食落去都幾好味，都算係一次難忘嘅經驗。", en: "Last night I went to a Portuguese restaurant. The waiter only spoke English and I spoke Cantonese: we were talking at cross purposes. He handed me the menu and I was completely lost, so in the end I ordered random things. The kitchen was in total chaos too, and we waited a whole hour for the food. But it tasted pretty good, so it was a memorable experience." }
+  - task: "Write two Lunar New Year cards with four-character wishes: one to your boss and one to a close friend."
+    min: 90
+    max: 160
+    use: [w.lung4-maa5-zing1-san4, w.bou6-bou6-gou1-sing1, w.nin4-nin4-jau5-jyu4, w.jat1-jin4-wai4-ding6, w.sam1-soeng2-si6-sing4]
+    useAtLeast: 3
+    grammar: [g.chengyu-in-speech]
+    expect:
+      - { pattern: "龍馬精神|步步高升|年年有餘|心想事成|萬事如意|身體健康|一帆風順", hint: "Use New Year wishes: 龍馬精神, 步步高升…" }
+    model: { es: "陳生：新年快樂！祝你龍馬精神，身體健康，生意年年有餘。多謝你過去一年嘅照顧同指教，新一年我會繼續努力。Leo：恭喜發財！祝你今年步步高升，心想事成，萬事如意！我哋年初三一齊去拜年，之後去飲茶，一言為定！祝你一帆風順，身體健康！", en: "Mr Chan: Happy New Year! Wishing you vigour, good health, and abundance in business every year. Thank you for your care and guidance over the past year; I'll keep working hard in the new one. Leo: Happy New Year! Wishing you a promotion, every wish come true and everything going your way! Let's go New Year visiting together on the third day and then have dim sum. It's a deal! Have a smooth year!" }

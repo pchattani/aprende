@@ -245,3 +245,42 @@ dialogues:
       - { q: "飄色巡遊喺幾時？", options: ["朝早", "下晝", "半夜"], answer: 1, explain: "下晝有飄色巡遊: the parade was in the afternoon." }
       - { q: "點解冇魚蛋燒賣食？", options: ["賣晒", "全島食齋", "攤檔冇開"], answer: 1, explain: "呢三日全島食齋: the island eats vegetarian during the festival." }
       - { q: "平安包上面嘅紅字代表乜嘢？", options: ["好食", "平安", "長洲"], answer: 1, explain: "代表平安: the red character stands for peace." }
+writing:
+  - task: "Write a blog paragraph about the Cheung Chau Bun Festival, using 無論…都…"
+    min: 60
+    max: 120
+    use: [w.mou4-leon6, w.nung4-lik6, w.geoi2-hang4, w.piu1-sik1, w.jan4-saan1-jan4-hoi2]
+    useAtLeast: 3
+    grammar: [g.mou-leon-dou-no-matter]
+    expect:
+      - { pattern: "無論.{1,12}都|不論.{1,12}都", hint: "Say 'no matter …' with 無論…都…" }
+    model: { es: "長洲太平清醮每年喺農曆四月舉行。無論天氣幾熱，無論有幾多人，好多市民都會坐船入長洲睇飄色巡遊同搶包山。島上人山人海，氣氛好熱鬧。我第一次去，真係好難忘。", en: "The Cheung Chau Bun Festival is held every year in the fourth lunar month. No matter how hot it is or how many people there are, lots of people take the ferry to Cheung Chau to watch the float parade and the bun scramble. The island is packed and the atmosphere is very lively. It was my first time, and it was truly unforgettable." }
+  - task: "A friend asks what else there is at the festival besides the bun towers. Answer with 除咗…之外 and 除此之外."
+    es: "除咗包山，長洲仲有乜嘢好玩呀？"
+    min: 60
+    max: 110
+    use: [w.ceoi4-zo2, w.zi1-ngoi6, w.ji4-sik1, w.ceoi4-ci2-zi1-ngoi6, w.taan1-dong3]
+    useAtLeast: 3
+    grammar: [g.ceoi-zo-apart-from]
+    expect:
+      - { pattern: "除咗", hint: "Say 'apart from' with 除咗…之外." }
+    model: { es: "除咗包山之外，仲有飄色巡遊同北帝廟嘅儀式。醮期間成個島都食齋，連餐廳都淨係賣齋菜。除此之外，你仲可以試吓街邊攤檔嘅小食，例如糯米糍同平安包。", en: "Apart from the bun towers, there's the float parade and the ceremonies at the Pak Tai Temple. During the festival the whole island eats vegetarian; even restaurants only sell vegetarian food. Besides that, you can try snacks from the street stalls, like glutinous rice balls and lucky buns." }
+  - task: "Explain why the lucky 'peace buns' are so popular, using 不但…而且…"
+    min: 60
+    max: 110
+    use: [w.ping4-on1-baau1, w.bat1-daan6, w.ji4-ce2, w.hei2-jyun4, w.wan1-jik6]
+    useAtLeast: 3
+    grammar: [g.bat-daan-not-only]
+    expect:
+      - { pattern: "(不但|不單|唔單止).{1,15}而且", hint: "Add a second point with 不但…而且…" }
+    model: { es: "平安包不但好食，而且有好意頭。聽講太平清醮嘅起源同一場瘟疫有關，所以大家相信食咗可以保佑平安。每年唔單止本地人，連遊客都會買嚟食。我自己一次食咗三個。", en: "Peace buns aren't just tasty; they're also lucky. They say the festival's origins are linked to a plague, so people believe eating them keeps you safe. Every year it's not only locals: even tourists buy them. I ate three in one go myself." }
+  - task: "Write a short formal paragraph for a heritage leaflet: why the Bun Festival should be preserved."
+    min: 60
+    max: 120
+    use: [w.zan1-gwai3, w.wai4-caan2, w.doi6-biu2, w.bou2-lau4, w.cyun4-sing4]
+    useAtLeast: 3
+    grammar: [g.bat-daan-not-only, g.mou-leon-dou-no-matter]
+    expect:
+      - { pattern: "應該|必須|要", hint: "Say what should be done: 我哋應該保留…" }
+      - { pattern: "文化|遺產|傳統", hint: "Mention its value as heritage: 文化遺產, 傳統." }
+    model: { es: "太平清醮係香港珍貴嘅文化遺產，已經有過百年歷史。佢不但代表長洲居民嘅信仰，而且有好獨特嘅特色。無論社會點樣改變，我哋都應該保留同傳承呢個傳統。", en: "The Bun Festival is part of Hong Kong's precious cultural heritage, with over a hundred years of history. It not only represents the faith of Cheung Chau's residents but also has very unique features. However society changes, we should preserve this tradition and pass it on." }

@@ -284,3 +284,42 @@ dialogues:
       - { q: "O que o Tiago tinha feito antes de a Renata chegar?", options: ["Tinha saído para procurar a Renata", "Tinha ido dormir", "Tinha ido à fazenda do queijo"], answer: 0, explain: "Dona Cida says he arrived at six and saiu para te procurar." }
       - { q: "Por que houve um desencontro?", options: ["A pousada estava fechada", "A Renata não tinha avisado ninguém", "O Tiago não tinha recebido a mensagem"], answer: 2, explain: "Ele disse que não tinha recebido mensagem nenhuma." }
       - { q: "O que a Renata vai fazer antes de tomar banho?", options: ["Jantar", "Ligar para o Tiago", "Ir à cachoeira"], answer: 1, explain: "Vou ligar para ele antes de tomar banho." }
+writing:
+  - task: "Tell what had already happened when you arrived somewhere after a long journey (Quando cheguei, já tinha escurecido…)."
+    min: 50
+    max: 100
+    use: [w.escurecer, w.trancar, w.chaveiro, w.desencontro, w.dono]
+    useAtLeast: 3
+    grammar: [g.pluperfect]
+    expect:
+      - { pattern: '\b(tinha|t[ií]nhamos|tinham|havia|hav[ií]amos|haviam) [a-zà-ú]+(ado|ido|ito|isto|eito|osto)\b', hint: "Use the pluperfect: já tinha saído, tinha escurecido…" }
+    model: { es: "Quando a gente finalmente chegou a São Roque de Minas, depois de seis horas de estrada, já tinha escurecido. O dono da pousada tinha ido jantar e tinha trancado a porta. Eu liguei para ele, mas ele tinha esquecido o celular em casa. Que desencontro! No final, um vizinho chamou um chaveiro e conseguimos entrar.", en: "When we finally got to São Roque de Minas, after six hours on the road, it had already got dark. The owner of the guesthouse had gone out for dinner and had locked the door. I called him, but he had left his phone at home. What a mix-up! In the end a neighbour called a locksmith and we managed to get in." }
+  - task: "Leave instructions for the next guests in your holiday cabin, using antes de and depois de + infinitive."
+    min: 50
+    max: 100
+    use: [w.antes-de, w.depois-de, w.consertar, w.pendurar, w.esvaziar]
+    useAtLeast: 3
+    grammar: [g.antes-depois-de]
+    expect:
+      - { pattern: '\bantes de [a-zà-ú]+r\b', hint: "Use antes de + infinitive: Antes de sair, feche…" }
+      - { pattern: '\bdepois de [a-zà-ú]+r\b', hint: "Use depois de + infinitive: Depois de usar, pendure…" }
+    model: { es: "Bem-vindos à nossa casa na Serra da Canastra! Antes de dormir, fechem bem as janelas, por causa dos mosquitos. Depois de usar as toalhas, pendurem na varanda. Antes de sair, esvaziem o lixo e deixem a chave na recepção. O chuveiro do banheiro pifou ontem, mas o encanador vem consertar amanhã de manhã. Boa viagem!", en: "Welcome to our house in the Serra da Canastra! Before going to bed, close the windows properly, because of the mosquitoes. After using the towels, hang them on the balcony. Before leaving, empty the bin and leave the key at reception. The shower broke yesterday, but the plumber is coming to fix it tomorrow morning. Have a good trip!" }
+  - task: "Summarise the history of gold in Minas Gerais in order, using sequence connectors (No início…, Em seguida…, Depois…, Por fim…)."
+    min: 50
+    max: 100
+    use: [w.ouro, w.mineração, w.colônia, w.escravo, w.império]
+    useAtLeast: 3
+    grammar: [g.connectors-sequence]
+    expect:
+      - { pattern: '\b(no in[ií]cio|primeiro|em seguida|depois|por fim|por [uú]ltimo|afinal)\b', hint: "Order the events: No início…, Em seguida…, Por fim…" }
+    model: { es: "No início do século XVIII, os portugueses encontraram ouro em Minas Gerais. Em seguida, muitas pessoas vieram para a região, que cresceu rapidamente. A mineração era feita por escravos africanos. Depois, o ouro foi acabando e, em 1822, o Brasil deixou de ser colônia e se tornou um império. Por fim, em 1889, o país se tornou uma república.", en: "At the beginning of the 18th century, the Portuguese found gold in Minas Gerais. Then many people came to the region, which grew fast. The mining was done by enslaved Africans. Later the gold gradually ran out and, in 1822, Brazil stopped being a colony and became an empire. Finally, in 1889, the country became a republic." }
+  - task: "Write an apology to a friend explaining a mistake: what you hadn't done or noticed (eu não tinha visto…, foi sem querer)."
+    min: 50
+    max: 100
+    use: [w.sem-querer, w.culpa, w.perder-a-hora, w.despertador, w.derramar]
+    useAtLeast: 3
+    grammar: [g.pluperfect]
+    expect:
+      - { pattern: '\bn[aã]o tinha [a-zà-ú]+(ado|ido|isto|ito|eito|osto)\b', hint: "Explain with the pluperfect: Eu não tinha visto…" }
+      - { pattern: '(desculp|perd[aã]o|sem querer|culpa)', hint: "Apologise: Desculpa, foi sem querer…" }
+    model: { es: "Oi, Marina, desculpa mesmo! Ontem eu perdi a hora, porque não tinha colocado o despertador para tocar. Quando acordei, o ônibus para a cachoeira já tinha saído. Foi sem querer! A culpa é minha. Também peço desculpas pelo seu livro: eu não tinha visto que ele estava no chão quando derramei o café. Vou comprar outro para você.", en: "Hi, Marina, I'm really sorry! Yesterday I overslept, because I hadn't set the alarm. When I woke up, the bus to the waterfall had already left. I didn't mean it! It's my fault. I'm also sorry about your book: I hadn't seen it was on the floor when I spilt the coffee. I'll buy you another one." }

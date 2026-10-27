@@ -280,3 +280,42 @@ dialogues:
       - { q: "O que dói no Jonas?", options: ["Os dentes e a garganta", "A cabeça, as costas e o joelho", "A barriga"], answer: 1, explain: "Dor de cabeça, dor nas costas, and o meu joelho também dói." }
       - { q: "Como ele deve tomar o comprimido?", options: ["Uma vez por dia", "De oito em oito horas", "Só à noite"], answer: 1, explain: "Tome este comprimido de oito em oito horas: every eight hours." }
       - { q: "O que a farmacêutica recomenda para o joelho?", options: ["Um xarope", "Uma pomada e repouso", "Uma vacina"], answer: 1, explain: "Esta pomada, and o senhor deveria descansar." }
+writing:
+  - task: "At a pharmacy in Blumenau, describe your symptoms and ask for something (Estou com dor de…, Minha garganta dói…)."
+    min: 25
+    max: 60
+    use: [w.doer, w.febre, w.garganta, w.tosse, w.remédio]
+    useAtLeast: 3
+    grammar: [g.doer]
+    expect:
+      - { pattern: '\b(d[oó]i|doem|dor de)\b', hint: "Say what hurts: Minha garganta dói. / Estou com dor de cabeça." }
+      - { pattern: '\b(estou com|tenho) (um pouco de )?(febre|tosse|gripe|resfriado|alergia|dor|enjoo|tontura)', hint: "Describe a symptom: Estou com febre / tosse…" }
+    model: { es: "Boa tarde! Estou com dor de cabeça desde ontem e a minha garganta dói muito. Também estou com tosse e um pouco de febre. Acho que é gripe. O senhor tem algum remédio para a garganta? Obrigado.", en: "Good afternoon! I've had a headache since yesterday and my throat really hurts. I also have a cough and a bit of a temperature. I think it's flu. Do you have any medicine for my throat? Thank you." }
+  - task: "Write a polite message to a clinic to book an appointment, using the conditional (Eu gostaria de…, Seria possível…?, Vocês poderiam…?)."
+    min: 25
+    max: 60
+    use: [w.consulta, w.marcar, w.dentista, w.plano-de-saúde, w.exame]
+    useAtLeast: 3
+    grammar: [g.conditional-simple]
+    expect:
+      - { pattern: '\b(gostaria|poderia|poderiam|seria|preferiria)\b', hint: "Use the conditional to be polite: Eu gostaria de…, Seria possível…?" }
+    model: { es: "Bom dia! Eu gostaria de marcar uma consulta com o dentista, por favor. Seria possível na quinta-feira à tarde? Vocês poderiam me dizer se aceitam o meu plano de saúde? Muito obrigado, Daniel Clark.", en: "Good morning! I'd like to book an appointment with the dentist, please. Would Thursday afternoon be possible? Could you tell me if you accept my health insurance? Many thanks, Daniel Clark." }
+  - task: "Your friend is stressed and can't sleep. Give him advice (Você deveria…, Você tem que…, Você não deve…)."
+    es: "Não durmo bem, estou com estresse e muito cansaço. O que eu faço?"
+    min: 25
+    max: 65
+    use: [w.dever, w.saúde, w.estresse, w.insônia, w.descansar]
+    useAtLeast: 3
+    grammar: [g.dever-ter-que, g.conditional-simple]
+    expect:
+      - { pattern: '\b(deveria|deve|devia|tem que|precisa)\b', hint: "Give advice: Você deveria…, Você tem que…" }
+    model: { es: "Você deveria trabalhar menos e descansar mais. À noite, você não deve tomar café nem usar o celular na cama. Você tem que fazer exercício: é ótimo para a saúde e para o estresse. E, contra a insônia, marque uma consulta com um médico.", en: "You should work less and rest more. At night you shouldn't drink coffee or use your phone in bed. You have to exercise: it's great for your health and for stress. And for the insomnia, book an appointment with a doctor." }
+  - task: "Write about a night at the Oktoberfest in Blumenau: how you and the others felt at different moments (fiquei feliz, ela ficou brava, ficamos cansados…)."
+    min: 25
+    max: 65
+    use: [w.animado, w.orgulhoso, w.chateado, w.bravo, w.decepcionado]
+    useAtLeast: 3
+    grammar: [g.ficar-change-of-state]
+    expect:
+      - { pattern: '\bfi(quei|cou|camos|caram) (muito |tão |um pouco )?[a-zà-ú]+', hint: "Use ficar + adjective for changes of state: Fiquei animado. / Ela ficou brava." }
+    model: { es: "Na Oktoberfest, eu fiquei muito animado com a música e as roupas típicas. A minha namorada ficou brava porque eu cheguei atrasado. Depois, ela ganhou um prêmio de dança e ficou orgulhosa! No final, nós ficamos cansados, mas felizes.", en: "At the Oktoberfest I got really excited about the music and the traditional clothes. My girlfriend got angry because I arrived late. Then she won a dance prize and felt proud! In the end we were tired, but happy." }

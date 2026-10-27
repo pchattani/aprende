@@ -281,3 +281,43 @@ dialogues:
       - { q: "O que a Bia implorou?", options: ["Que o passeio fosse sem emoção", "Que o passeio fosse mais longo", "Que o Rafa dirigisse"], answer: 0, explain: "A Bia implorou que fosse sem emoção: a request reported with the imperfect subjunctive." }
       - { q: "O que o motorista disse para fazer se ficassem com medo?", options: ["Descer do bugue", "Gritar", "Fechar os olhos"], answer: 1, explain: "Se a gente ficasse com medo, era só gritar." }
       - { q: "O que o Rafa pediu à Luana?", options: ["Que contasse para todos", "Que não contasse para ninguém", "Que tirasse uma foto"], answer: 1, explain: "He asked her not to tell anyone that he felt sick, and she has just told Diego." }
+writing:
+  - task: "Report what your buggy driver told and asked you to do before the dune ride (Ele pediu que colocássemos…, mandou que ninguém saísse…)."
+    es: "Bugueiro: “Coloquem o cinto! Não fiquem em pé no bugue. Quando eu parar, tirem fotos, mas não saiam de perto do carro!”"
+    min: 80
+    max: 140
+    use: [w.duna, w.advertir, w.alertar, w.ordenar, w.implorar]
+    useAtLeast: 2
+    grammar: [g.reported-speech-subjunctive, g.reported-commands]
+    expect:
+      - { pattern: '\b(pediu|mandou|disse|insistiu|exigiu|recomendou|sugeriu|aconselhou|advertiu|alertou|ordenou)( a [a-zà-ú]+| nos| -nos)? (que|para)\b', hint: "Report requests and commands: pediu que…, mandou que…" }
+      - { pattern: '\b[a-zà-ú]+(sse|ssem|ssemos)\b', hint: "Use the imperfect subjunctive after a past request: pediu que colocássemos…" }
+    model: { es: "O passeio de bugue pelas dunas de Natal foi incrível! Antes de sair, o motorista pediu que colocássemos o cinto e nos advertiu que não ficássemos em pé no bugue. Ele explicou que, quando parasse, poderíamos tirar fotos, mas mandou que ninguém saísse de perto do carro. Ele também nos alertou que tomássemos cuidado com o sol forte. Na duna mais alta, ele perguntou se queríamos o passeio com emoção ou sem emoção. Claro que escolhemos com emoção! No final, ele pediu que deixássemos um comentário sobre o passeio.", en: "The buggy ride over the dunes in Natal was amazing! Before we set off, the driver asked us to put our seat belts on and warned us not to stand up in the buggy. He explained that when he stopped we could take photos, but he told us not to leave the vehicle. He also warned us to be careful with the strong sun. On the highest dune he asked if we wanted the ride with thrills or without. Of course we chose with thrills! At the end he asked us to leave a review of the trip." }
+  - task: "Write a short news item reporting a court case, with precise reporting verbs (O réu jurou que…, O promotor argumentou que…, O juiz determinou que…)."
+    min: 80
+    max: 140
+    use: [w.promotor, w.réu, w.sentença, w.fiança, w.depoimento]
+    useAtLeast: 3
+    grammar: [g.reported-commands, g.reporting-verbs]
+    expect:
+      - { pattern: '\b(determinou|mandou|ordenou|decidiu) que\b', hint: "Report the judge's order: O juiz determinou que…" }
+      - { pattern: '\b(alegou|jurou|afirmou|negou|confessou|argumentou) que\b', hint: "Use precise reporting verbs: alegou que, jurou que…" }
+    model: { es: "O juiz de Natal condenou ontem um empresário acusado de vender passeios de bugue falsos para turistas. No depoimento, o réu jurou que não sabia de nada e alegou que os seus funcionários eram os responsáveis. O promotor, porém, argumentou que havia provas claras contra ele. Na sentença, o juiz determinou que o empresário devolvesse o dinheiro às vítimas e mandou que ele ficasse em casa até pagar a fiança. O advogado do réu afirmou que não concorda com a decisão e insistiu que o seu cliente é inocente.", en: "Yesterday a Natal judge convicted a businessman accused of selling fake buggy trips to tourists. In his testimony, the defendant swore he knew nothing and claimed his employees were responsible. The prosecutor, however, argued there was clear evidence against him. In the sentence, the judge ordered the businessman to return the money to the victims and to stay at home until he paid bail. The defendant's lawyer stated that he disagrees with the decision and insisted that his client is innocent." }
+  - task: "A company has denied a rumour. Write a short report of what was said, with precise reporting verbs (desmentiu, assegurou, acrescentou, concluiu…)."
+    min: 80
+    max: 140
+    use: [w.porta-voz, w.desmentir, w.assegurar, w.acrescentar, w.comunicado]
+    useAtLeast: 3
+    grammar: [g.reporting-verbs]
+    expect:
+      - { pattern: '\b(desmentiu|assegurou|acrescentou|confessou|concluiu|rebateu|contestou|garantiu|alegou|relatou)\b', hint: "Use precise reporting verbs: desmentiu, assegurou, acrescentou…" }
+    model: { es: "Ontem apareceu nas redes sociais a notícia de que o aeroporto de Natal ia fechar por seis meses. Em comunicado oficial, o porta-voz da empresa desmentiu a informação e assegurou que o aeroporto continuará funcionando normalmente. Ele acrescentou que as reformas serão feitas à noite, para não atrapalhar os voos. Numa entrevista coletiva, o secretário de turismo confirmou a declaração e concluiu que a notícia falsa tinha assustado muitos turistas. Ele também pediu que as pessoas não compartilhassem notícias sem confirmar a fonte.", en: "Yesterday a story appeared on social media saying Natal airport was going to close for six months. In an official statement, the company spokesperson denied the information and gave assurances that the airport will keep running normally. He added that the renovation work will be done at night, so as not to disrupt flights. At a press conference, the tourism secretary confirmed the statement and concluded that the fake news had frightened many tourists. He also asked people not to share news without checking the source." }
+  - task: "Summarise a novel or story you have read, reporting what the narrator and the characters say, suggest and ask (O narrador conta que…, ela pede que…)."
+    min: 80
+    max: 140
+    use: [w.romance, w.narrador, w.desfecho, w.leitor, w.leitura]
+    useAtLeast: 3
+    grammar: [g.reported-speech-subjunctive, g.reporting-verbs]
+    expect:
+      - { pattern: '\b(conta|explica|diz|revela|pede|pediu|confessa|confessou|perguntou|insinua|admite|jura) (que|se|para)\b', hint: "Report what is said: O narrador conta que…, ela pede que…" }
+    model: { es: "Acabei de ler Dom Casmurro, um romance de Machado de Assis. O narrador, Bentinho, conta que se apaixonou por Capitu ainda criança. Ao longo do livro, ele insinua que ela o traiu com o seu melhor amigo, mas nunca apresenta provas. Num certo momento, Capitu pede que ele confie nela e jura que é inocente. O desfecho é aberto: o leitor tem de decidir se acredita no narrador ou não. Foi uma leitura sensacional! Recomendo que todo mundo leia este livro pelo menos uma vez.", en: "I've just finished Dom Casmurro, a novel by Machado de Assis. The narrator, Bentinho, says he fell in love with Capitu as a child. Throughout the book he insinuates that she betrayed him with his best friend, but he never offers proof. At one point Capitu asks him to trust her and swears she is innocent. The ending is open: the reader has to decide whether to believe the narrator or not. It was a sensational read! I recommend everyone reads this book at least once." }

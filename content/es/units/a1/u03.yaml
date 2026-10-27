@@ -266,3 +266,46 @@ dialogues:
       - { q: "How old is Marta's father?", options: ["Fifty", "Sixty", "Seventy"], answer: 1 }
       - { q: "Who is Carmen?", options: ["Marta's mother", "Marta's aunt", "Marta's sister"], answer: 1 }
       - { q: "How many pets does Tom's family have?", options: ["One dog", "Two cats", "None"], answer: 1 }
+writing:
+  - task: "Write about your family: who is in it, their names and their ages."
+    min: 15
+    max: 40
+    use: [w.familia, w.padre, w.madre, w.hermano, w.tener]
+    useAtLeast: 3
+    grammar: [g.possessives, g.tener-present]
+    expect:
+      - { pattern: "\\b(mi|mis)\\b", hint: "Use possessives: mi padre, mis hermanos …" }
+      - { pattern: "\\b(tengo|tiene|tienen|tenemos)\\b", hint: "Use tener: Tengo un hermano …" }
+      - { pattern: "\\ba[nñ]os\\b", hint: "Give an age: tiene … años." }
+    model: { es: "Mi familia no es muy grande. Mi padre se llama Juan y tiene cincuenta años. Mi madre se llama Rosa. Tengo un hermano, Luis. Él tiene veinte años.", en: "My family isn't very big. My father is called Juan and he is fifty. My mother is called Rosa. I have a brother, Luis. He is twenty." }
+  - task: "A new friend asks you some questions. Answer all of them."
+    es: "¡Hola! ¿Cuántos años tienes? ¿Tienes hermanos? ¿Tienes perro o gato?"
+    min: 12
+    max: 35
+    use: [w.tener, w.hermana, w.perro, w.gato]
+    useAtLeast: 2
+    grammar: [g.tener-present, g.numbers-1-100]
+    expect:
+      - { pattern: "\\btengo\\b", hint: "Answer with tener: Tengo …" }
+      - { pattern: "\\ba[nñ]os\\b", hint: "Say your age: Tengo … años." }
+    model: { es: "¡Hola! Tengo treinta y dos años. Tengo una hermana, pero no tengo hermanos. Tengo un perro: se llama Toby y tiene tres años. No tengo gato.", en: "Hi! I'm thirty-two. I have a sister, but I don't have brothers. I have a dog: he's called Toby and he's three. I don't have a cat." }
+  - task: "In Plaza de Mayo you meet an Argentine family. Write 3–4 questions to ask them about their family."
+    min: 12
+    max: 35
+    use: [w.cuanto, w.quien, w.cuando, w.cumpleanos, w.hijo]
+    useAtLeast: 3
+    grammar: [g.question-words]
+    expect:
+      - { pattern: "¿", hint: "Write questions with ¿ … ?" }
+      - { pattern: "cu[aá]nt[oa]s?|qui[eé]n|cu[aá]ndo|c[oó]mo|d[oó]nde|cu[aá]l", hint: "Use question words: ¿Cuántos …? ¿Quién …? ¿Cuándo …?" }
+    model: { es: "¿Cuántos hijos tienen ustedes? ¿Cómo se llaman? ¿Quién es el señor de la foto? ¿Cuándo es el cumpleaños de su hija?", en: "How many children do you have? What are their names? Who is the man in the photo? When is your daughter's birthday?" }
+  - task: "Send a message to a new friend: give your phone number in words, then ask for their number, their age and their birthday."
+    min: 12
+    max: 35
+    use: [w.numero, w.telefono, w.cumpleanos, w.cual]
+    useAtLeast: 2
+    grammar: [g.numbers-1-100, g.question-words]
+    expect:
+      - { pattern: "\\b(cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez)\\b", hint: "Write your number in words: seis, cuatro, ocho …" }
+      - { pattern: "cu[aá]l es tu|cu[aá]ntos a[nñ]os|cu[aá]ndo es tu", hint: "Ask for theirs: ¿Cuál es tu número? ¿Cuántos años tienes?" }
+    model: { es: "Mi número de teléfono es el seis, cuatro, ocho, dos, nueve, siete, cero. ¿Cuál es tu número? ¿Cuántos años tienes? ¿Cuándo es tu cumpleaños?", en: "My phone number is six, four, eight, two, nine, seven, zero. What's your number? How old are you? When is your birthday?" }

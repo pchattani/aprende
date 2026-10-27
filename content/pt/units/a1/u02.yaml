@@ -280,3 +280,45 @@ dialogues:
       - { q: "O Thiago é carioca?", options: ["Sim, é do Rio", "Não, é paulista", "Não, é japonês"], answer: 1, explain: "Thiago says: Não sou carioca. Sou paulista." }
       - { q: "Qual é a nacionalidade da Yuki?", options: ["Japonesa", "Brasileira", "Americana"], answer: 1, explain: "Yuki is Brazilian; her family is from Japan." }
       - { q: "Quem só fala japonês?", options: ["A Yuki", "A avó da Yuki", "O Thiago"], answer: 1, explain: "Yuki says: a minha avó só fala japonês." }
+writing:
+  - task: "Thiago, a new friend on Copacabana beach, sends you this message. Reply: say where you are from, your nationality and the languages you speak."
+    es: "Oi! Eu sou o Thiago, sou carioca. E você, de onde você é?"
+    min: 15
+    max: 40
+    use: [w.cidade, w.morar, w.falar, w.português, w.inglês]
+    useAtLeast: 2
+    grammar: [g.ser-origin, g.adjective-agreement]
+    expect:
+      - { pattern: '\bsou d(e|o|a|os|as)\b', hint: "Say where you are from: Sou de … / Sou dos Estados Unidos." }
+      - { pattern: '\b(falo|moro)\b', hint: "Add what you speak or where you live: Falo … / Moro em …" }
+    model: { es: "Oi, Thiago! Eu sou do Canadá, de Toronto. Sou canadense. Moro em Toronto, mas agora estou no Rio. Falo inglês e um pouco de português.", en: "Hi, Thiago! I'm from Canada, from Toronto. I'm Canadian. I live in Toronto, but now I'm in Rio. I speak English and a little Portuguese." }
+  - task: "Describe Copacabana beach and the people there in 3–4 sentences. Make the adjectives agree (lindo/linda, bonitos/bonitas…)."
+    min: 15
+    max: 40
+    use: [w.lindo, w.grande, w.bonito, w.homem, w.mulher]
+    useAtLeast: 3
+    grammar: [g.adjective-agreement, g.gender-nouns, g.articles-definite]
+    expect:
+      - { pattern: '(é|e|s[aã]o) (muito )?(lind|bonit|grand|pequen|nov|velh|fei|legal|lega|famos|interessante)', hint: "Describe with ser + adjective: A praia é linda. / As pessoas são legais." }
+    model: { es: "Copacabana é linda! A praia é grande e o mar é bonito. Aqui tem muita gente. Um homem é americano e uma mulher é francesa. Eles são legais.", en: "Copacabana is beautiful! The beach is big and the sea is pretty. There are lots of people here. A man is American and a woman is French. They are nice." }
+  - task: "Your new friend has got your details wrong. Correct them: say what you are not and what you do not speak, then say what is true."
+    es: "Você é americano, né? E você fala espanhol?"
+    min: 12
+    max: 35
+    use: [w.não, w.falar, w.difícil, w.diferente, w.português]
+    useAtLeast: 2
+    grammar: [g.negation, g.ser-origin]
+    expect:
+      - { pattern: '\bn[aã]o (sou|falo|moro|[eé])(?![a-zà-ú])', hint: "Put não before the verb: Não sou … / Não falo …" }
+      - { pattern: '\b(sou|falo)\b', hint: "Then say what is true: Sou … / Falo …" }
+    model: { es: "Não, eu não sou americano, sou inglês. Não falo espanhol, falo inglês e francês. O português não é difícil, mas é diferente!", en: "No, I'm not American, I'm English. I don't speak Spanish, I speak English and French. Portuguese isn't difficult, but it's different!" }
+  - task: "Introduce two people you met on the beach, a man and a woman: their names, their countries and their nationalities (watch the feminine forms)."
+    min: 15
+    max: 40
+    use: [w.italiano, w.japonês, w.falar, w.chamar-se, w.país]
+    useAtLeast: 2
+    grammar: [g.adjective-agreement, g.ser-origin]
+    expect:
+      - { pattern: '(?<![a-zà-ú])(é|e|s[aã]o|sou) d(e|o|a|os|as)\b', hint: "Say where each person is from: Ele é da Itália. / Ela é do Japão." }
+      - { pattern: '(brasileira|inglesa|americana|francesa|espanhola|italiana|alem[aã]|argentina|japonesa|chinesa|canadense|mexicana|portuguesa|angolana)', hint: "Use a feminine nationality for the woman: brasileira, inglesa, japonesa…" }
+    model: { es: "Ele se chama Marco e é da Itália. Ele é italiano. Ela se chama Yuki e é do Japão. Ela é japonesa e fala português muito bem!", en: "He's called Marco and he's from Italy. He's Italian. She's called Yuki and she's from Japan. She's Japanese and speaks Portuguese very well!" }

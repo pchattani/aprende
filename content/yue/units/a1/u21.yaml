@@ -121,3 +121,44 @@ lessons:
         en: ["How about yum cha!", "Sure!", "But I have no money..."]
         grammar: [g.sight-characters]
         vocab: [w.bat1-jyu4, w.bat1-gwo3]
+writing:
+  - task: "Write the five sight characters: up, down, big, small and not."
+    min: 5
+    max: 10
+    use: [w.soeng6, w.haa6, w.daai6, w.siu2.b, w.bat1.b]
+    useAtLeast: 4
+    grammar: [g.sight-characters, g.stroke-order]
+    expect:
+      - { pattern: "上.*下|下.*上", hint: "Write 上 (up) and 下 (down)." }
+      - { pattern: "大.*小|小.*大", hint: "Write 大 (big) and 小 (small)." }
+      - { pattern: "不", hint: "Write 不 (not)." }
+    model: { es: "上、下、大、小、不。", en: "Up, down, big, small, not." }
+  - task: "Write three signs for a staircase: be careful, upstairs and downstairs."
+    min: 6
+    max: 12
+    use: [w.siu2-sam1, w.lau4-soeng6, w.lau4-haa6]
+    useAtLeast: 3
+    grammar: [g.sight-characters]
+    expect:
+      - { pattern: "小心", hint: "Be careful is 小心." }
+      - { pattern: "樓上|樓下", hint: "Add 樓上 (upstairs) and 樓下 (downstairs)." }
+    model: { es: "小心！樓上。樓下。", en: "Careful! Upstairs. Downstairs." }
+  - task: "Suggest to a friend with 不如: how about we go for dim sum?"
+    min: 4
+    max: 12
+    use: [w.bat1-jyu4, w.heoi3, w.jam2-caa4]
+    useAtLeast: 2
+    grammar: [g.sight-characters]
+    expect:
+      - { pattern: "不如", hint: "Start your suggestion with 不如." }
+    model: { es: "不如我哋去飲茶呀？", en: "How about we go for dim sum?" }
+  - task: "Write two things about your dog: it is small and it is pretty."
+    min: 5
+    max: 14
+    use: [w.sai3, w.leng3, w.gau2-gau2]
+    useAtLeast: 2
+    grammar: [g.sight-characters]
+    expect:
+      - { pattern: "細|小", hint: "Say it is small: 好細." }
+      - { pattern: "靚", hint: "Say it is pretty: 好靚." }
+    model: { es: "我隻狗狗好細，好靚。", en: "My doggy is very small and very pretty." }

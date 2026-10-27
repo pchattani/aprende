@@ -279,3 +279,46 @@ dialogues:
       - { q: "Quem é a Lúcia?", options: ["A mãe da Camila", "A tia da Camila", "A irmã da Camila"], answer: 1, explain: "Lúcia is Camila's aunt, her mother's sister." }
       - { q: "Quantos gatos a família do Daniel tem?", options: ["Nenhum", "Um", "Dois"], answer: 2, explain: "Daniel says: E dois gatos." }
       - { q: "O que as pessoas fazem no pôr do sol?", options: ["Batem palmas", "Vão para casa", "Tomam banho de mar"], answer: 0, explain: "In Ipanema people clap for the sunset: todo mundo bate palmas." }
+writing:
+  - task: "Describe your family: who is in it, their names and their ages."
+    min: 15
+    max: 40
+    use: [w.família, w.pai, w.mãe, w.irmão, w.ter]
+    useAtLeast: 3
+    grammar: [g.ter-present, g.possessives]
+    expect:
+      - { pattern: '\b(tenho|tem|t[eê]m|temos)\b', hint: "Use ter: Eu tenho uma irmã. / Minha mãe tem 50 anos." }
+      - { pattern: '\banos\b', hint: "Give at least one age: … tem quarenta anos." }
+    model: { es: "Minha família é pequena. Meu pai se chama Roberto e tem sessenta anos. Minha mãe, Lúcia, tem cinquenta e oito. Eu tenho uma irmã, a Ana. Ela tem vinte anos.", en: "My family is small. My father is called Roberto and he's sixty. My mother, Lúcia, is fifty-eight. I have a sister, Ana. She's twenty." }
+  - task: "Your Brazilian friend asks about your pets. Answer: what animals you or your family have, their names and how old they are."
+    es: "Oi! Você tem animais? Como eles se chamam?"
+    min: 15
+    max: 40
+    use: [w.cachorro, w.gato, w.pássaro, w.peixe, w.ter]
+    useAtLeast: 2
+    grammar: [g.ter-present, g.plural-nouns]
+    expect:
+      - { pattern: '\b(tenho|tem|temos|t[eê]m)\b', hint: "Say what you have: Eu tenho um cachorro." }
+      - { pattern: '(cachorr|gat[oa]|peix|p[aá]ssar|c[aã]o|c[aã]es)', hint: "Name the animals: um cachorro, dois gatos…" }
+    model: { es: "Oi! Eu tenho um cachorro e dois gatos. O cachorro se chama Bolinha e tem cinco anos. Os gatos são pequenos e têm um ano. Minha avó tem um pássaro.", en: "Hi! I have a dog and two cats. The dog is called Bolinha and he's five. The cats are small and they're one. My grandmother has a bird." }
+  - task: "Write four or five questions to ask a new Brazilian friend about their family: how many, how old, who, where."
+    min: 15
+    max: 40
+    use: [w.quantos-anos, w.irmão, w.filho, w.família, w.quanto]
+    useAtLeast: 2
+    grammar: [g.question-words]
+    expect:
+      - { pattern: '\bquant(os|as)\b', hint: "Ask how many: Quantos irmãos você tem?" }
+      - { pattern: '\b(quem|onde|como|qual)\b', hint: "Ask another question with quem, onde, como or qual." }
+      - { pattern: '\?', hint: "Write questions, with a question mark." }
+    model: { es: "Quantos irmãos você tem? Quantos anos eles têm? Onde mora a sua família? Qual é o nome da sua mãe? Você tem filhos?", en: "How many brothers and sisters do you have? How old are they? Where does your family live? What's your mother's name? Do you have children?" }
+  - task: "Write a note for your host with your age and your phone number. Write all the numbers in words."
+    min: 15
+    max: 40
+    use: [w.telefone, w.número, w.ano, w.ter]
+    useAtLeast: 2
+    grammar: [g.numbers-0-100, g.ter-present]
+    expect:
+      - { pattern: '\btenho .{1,30}\banos\b', hint: "Say your age with ter: Tenho … anos." }
+      - { pattern: '\b(zero|um|dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove)\b', hint: "Write the numbers in words: dois, cinco, nove…" }
+    model: { es: "Oi, Dona Célia! Eu tenho trinta e dois anos. Meu número de telefone é nove, oito, sete, zero, dois, cinco, um, seis. Obrigado e um abraço!", en: "Hi, Dona Célia! I'm thirty-two. My phone number is nine, eight, seven, zero, two, five, one, six. Thanks and best wishes!" }

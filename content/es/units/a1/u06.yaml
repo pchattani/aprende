@@ -265,3 +265,43 @@ dialogues:
       - { q: "Why does Carmen get up so early?", options: ["She goes to the gym", "She starts work at seven", "She has breakfast at home"], answer: 1 }
       - { q: "Where does she have her coffee?", options: ["At home", "At the hospital", "At the gym"], answer: 1 }
       - { q: "How often does she go to the gym?", options: ["Every day", "Twice a week", "Three times a week"], answer: 2 }
+writing:
+  - task: "Describe your morning routine, with times: when you wake up, get up, wash and leave home."
+    min: 15
+    max: 40
+    use: [w.despertarse, w.levantarse, w.ducharse, w.desayunar, w.salir]
+    useAtLeast: 3
+    grammar: [g.reflexive-verbs-present, g.time-telling]
+    expect:
+      - { pattern: "\\bme (levanto|despierto|ducho|lavo|visto|acuesto)\\b", hint: "Use reflexive verbs: me levanto, me ducho …" }
+      - { pattern: "\\ba las? (una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|\\d)", hint: "Give times: a las siete, a la una …" }
+    model: { es: "Me despierto a las siete y me levanto a las siete y cuarto. Me ducho y desayuno café con pan. Salgo de casa a las ocho y media.", en: "I wake up at seven and I get up at quarter past seven. I have a shower and have coffee and bread for breakfast. I leave home at half past eight." }
+  - task: "Write how often you do four things, using siempre, normalmente, a veces and nunca."
+    min: 15
+    max: 40
+    use: [w.siempre, w.nunca, w.a-veces, w.normalmente, w.leer]
+    useAtLeast: 3
+    grammar: [g.frequency-adverbs, g.regular-er-ir-present]
+    expect:
+      - { pattern: "\\b(siempre|nunca|a veces|normalmente|a menudo|casi)\\b", hint: "Say how often: siempre, a veces, nunca …" }
+      - { pattern: "\\b(leo|escribo|como|bebo|aprendo|abro|vivo|veo|corro|duermo|salgo|vuelvo)\\b", hint: "Use -er/-ir verbs: leo, escribo, como …" }
+    model: { es: "Siempre leo el periódico en el café. A veces escribo a mi madre. Nunca veo la televisión por la mañana. Normalmente como en casa.", en: "I always read the paper in the café. Sometimes I write to my mother. I never watch television in the morning. I usually eat at home." }
+  - task: "Write about your week in Palermo: what you do on different days and at the weekend."
+    min: 15
+    max: 40
+    use: [w.lunes, w.viernes, w.domingo, w.fin-de-semana, w.descansar]
+    useAtLeast: 3
+    grammar: [g.days-months, g.regular-er-ir-present]
+    expect:
+      - { pattern: "\\b(lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|domingos?|fin de semana)", hint: "Name days: los lunes, el sábado, el fin de semana …" }
+    model: { es: "Los lunes y los jueves tengo clase de español. Los viernes por la tarde descanso. El fin de semana leo en el parque y los domingos como con mi familia.", en: "On Mondays and Thursdays I have Spanish class. On Friday afternoons I rest. At the weekend I read in the park and on Sundays I eat with my family." }
+  - task: "Leave a note for your host: what time you get back tonight, when you go to bed and what time you get up tomorrow."
+    min: 12
+    max: 35
+    use: [w.volver, w.acostarse, w.levantarse, w.temprano, w.noche]
+    useAtLeast: 3
+    grammar: [g.time-telling, g.reflexive-verbs-present]
+    expect:
+      - { pattern: "\\b(vuelvo|llego|me acuesto|me levanto)\\b", hint: "Say when you come back, go to bed or get up: vuelvo, me acuesto, me levanto …" }
+      - { pattern: "\\ba las?\\b", hint: "Say at what time: a las diez …" }
+    model: { es: "Hola, Marta: hoy vuelvo a casa a las diez de la noche. Me acuesto a las once porque mañana me levanto temprano, a las seis. ¡Hasta mañana!", en: "Hi, Marta: today I'm coming home at ten at night. I'm going to bed at eleven because tomorrow I'm getting up early, at six. See you tomorrow!" }

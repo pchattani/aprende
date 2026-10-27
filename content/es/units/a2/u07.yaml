@@ -236,3 +236,43 @@ dialogues:
       - { q: "What does Pablo think about cars in 2050?", options: ["There will be no cars", "They will be electric", "They will fly"], answer: 1 }
       - { q: "What will robots do, according to Pablo?", options: ["All jobs", "Dangerous jobs", "Nothing"], answer: 1 }
       - { q: "What will Pablo buy if he saves?", options: ["A car", "A house by the beach", "A trip to the Moon"], answer: 1 }
+writing:
+  - task: "Write your predictions about life in 2050: technology, transport, holidays. Use the future tense."
+    min: 35
+    max: 65
+    use: [w.tecnologia, w.robot, w.maquina, w.existir, w.probablemente]
+    useAtLeast: 3
+    grammar: [g.future-simple, g.future-irregular]
+    expect:
+      - { pattern: "\\b[a-zñ]+(ar|er|ir)(é|ás|á|emos|éis|án)(?![a-záéíóúñ])|\\b(tendr|har|podr|habr|sabr|saldr|vendr|pondr|dir|querr)(é|ás|á|emos|éis|án)(?![a-záéíóúñ])", hint: "Use the future: habrá, viviremos, tendremos …" }
+    model: { es: "En 2050 la tecnología cambiará nuestra vida. Probablemente habrá un robot en cada casa y las máquinas harán el trabajo más aburrido. Los coches serán eléctricos y podremos viajar a la Luna de vacaciones. Pero no existirá un robot para bailar en el Carnaval.", en: "In 2050 technology will change our lives. There will probably be a robot in every home and machines will do the most boring work. Cars will be electric and we'll be able to go to the Moon on holiday. But there won't be a robot to dance at Carnival." }
+  - task: "You'll meet a friend at the Gualeguaychú Carnival. Write a list of promises: what you will do, bring and not forget."
+    min: 30
+    max: 60
+    use: [w.prometer, w.traer, w.olvidar, w.llegar]
+    useAtLeast: 3
+    grammar: [g.future-irregular, g.future-simple]
+    expect:
+      - { pattern: "\\b(te )?prometo\\b", hint: "Make a promise: Te prometo que …" }
+      - { pattern: "\\b[a-zñ]+(ar|er|ir)(é|ás|á|emos|éis|án)(?![a-záéíóúñ])|\\b(tendr|har|podr|habr|sabr|saldr|vendr|pondr|dir|querr)(é|ás|á|emos|éis|án)(?![a-záéíóúñ])", hint: "Use the future: llegaré, traeré, haré …" }
+    model: { es: "Te prometo que llegaré a Gualeguaychú el viernes por la mañana. Traeré mi móvil y haré muchas fotos del Carnaval. No olvidaré tu regalo y te invitaré a cenar. ¡Bailaremos toda la noche y lo pasaremos genial!", en: "I promise I'll get to Gualeguaychú on Friday morning. I'll bring my phone and take lots of photos of the Carnival. I won't forget your present and I'll take you out for dinner. We'll dance all night and have a great time!" }
+  - task: "Write about the environment: what will happen if we do, or don't do, certain things. Use si + present, then the future."
+    min: 30
+    max: 60
+    use: [w.medio-ambiente, w.reciclar, w.contaminacion, w.planeta, w.ahorrar]
+    useAtLeast: 3
+    grammar: [g.si-present-future]
+    expect:
+      - { pattern: "\\bsi (no )?[a-záéíóúñ]+(o|as|a|amos|an|es|e|en|imos)\\b", hint: "Use si + present: si reciclamos …" }
+      - { pattern: "\\b[a-zñ]+(ar|er|ir)(é|ás|á|emos|éis|án)(?![a-záéíóúñ])|\\b(tendr|har|podr|habr|sabr|saldr|vendr|pondr|dir|querr)(é|ás|á|emos|éis|án)(?![a-záéíóúñ])", hint: "Give the result in the future: … habrá menos contaminación." }
+    model: { es: "Si no hacemos nada, el planeta tendrá muchos problemas. Si reciclamos la basura y ahorramos energía, habrá menos contaminación. Si vamos más en bicicleta, las ciudades serán más limpias y el medio ambiente mejorará.", en: "If we don't do anything, the planet will have lots of problems. If we recycle rubbish and save energy, there will be less pollution. If we cycle more, cities will be cleaner and the environment will get better." }
+  - task: "Your friend hasn't arrived at the Carnival. Write guesses about where she is and why, using the future of probability."
+    es: "¿Dónde estará Sofía? ¿Qué hora será?"
+    min: 25
+    max: 55
+    use: [w.seguramente, w.probablemente, w.a-lo-mejor, w.tal-vez]
+    useAtLeast: 2
+    grammar: [g.future-probability]
+    expect:
+      - { pattern: "\\b(estar[aá]n?|ser[aá]n?|tendr[aá]n?|habr[aá])", hint: "Guess with the future: estará en …, serán las …" }
+    model: { es: "Serán las diez de la noche y mi amiga no ha llegado todavía. Seguramente estará en el autobús o habrá mucha gente en la calle. A lo mejor no encontró la plaza. Probablemente llegará tarde, como siempre.", en: "It must be ten at night and my friend still hasn't arrived. She's probably on the bus, or there must be lots of people in the street. Maybe she couldn't find the square. She'll probably be late, as always." }

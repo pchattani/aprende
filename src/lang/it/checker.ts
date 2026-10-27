@@ -6,6 +6,7 @@
  * un'amica), adjective agreement, the auxiliary of compound tenses (sono andato)
  * and subject–verb agreement.
  */
+import { contentRegExp } from '../wordBoundary'
 import type { CheckerFinding } from '../types'
 import type { ErrorRule, VocabEntry } from '../../engine/schema'
 import type { ItVerb } from './schema'
@@ -283,7 +284,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   }
 
   // ---- articles and agreement within noun phrases: det (adv)* adj* noun adj*
-  const isAdjAt = (x: number) => !dets[x] && cands[x]!.some((f) => f.role === 'adj') && !entriesOf[x]?.some((e) => NOT_ATTRIBUTIVE.has(e.pos))
+  const isAdjAt = (x: number) => !dets[x] && (cands[x] ?? []).some((f) => f.role === 'adj') && !entriesOf[x]?.some((e) => NOT_ATTRIBUTIVE.has(e.pos))
   /** A preposition at x: the word before it heads a phrase (vicino al ponte, pieno di gente). */
   const startsPhrase = (x: number) => x < words.length && !gap[x - 1] && (PREPOSITIONS.has(lw[x]!) || Boolean(ARTICULATED[lw[x]!]))
   const agrees = (a: Features, b: Features) => (a.gender === 'mf' || b.gender === 'mf' || a.gender === b.gender) && (a.number === 'any' || b.number === 'any' || a.number === b.number)
@@ -313,7 +314,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     if (j >= words.length || (j > i + 1 && gap[j - 1])) continue
     let noun = lw[j]!
     if (pronounLike && (verbIndex.has(noun) || AUX_INDEX.has(noun))) continue
-    let nounC = cands[j]!.filter((f) => f.role === 'noun')
+    let nounC = (cands[j] ?? []).filter((f) => f.role === 'noun')
     // compound nouns: il fine settimana, la scuola guida
     for (const e of entriesOf[j] ?? []) {
       if (e.pos !== 'noun' || !e.lemma.includes(' ')) continue
@@ -368,7 +369,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
       }
     }
     for (const a of adjs) {
-      const ac = cands[a]!.filter((f) => f.role === 'adj')
+      const ac = (cands[a] ?? []).filter((f) => f.role === 'adj')
       if (!ac.length || ac.some((af) => nounC.some((n) => agrees(af, n)))) continue
       {
         findings.push({
@@ -383,7 +384,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
     if (!d.prep && clauseStart && p < words.length && !gap[p - 1] && ESSERE_FORMS.has(lw[p]!)) {
       p++
       while (p < words.length && ADVERBS_IN_NP.has(lw[p]!) && !gap[p - 1]) p++
-      const ac = p < words.length && !gap[p - 1] && isAdjAt(p) ? cands[p]!.filter((f) => f.role === 'adj') : []
+      const ac = p < words.length && !gap[p - 1] && isAdjAt(p) ? (cands[p] ?? []).filter((f) => f.role === 'adj') : []
       if (ac.length && !COLOUR_SHADES.has(lw[p + 1] ?? '') && !startsPhrase(p + 1)) {
         const ok = ac.some((af) => nounC.some((n) => agrees(af, n)))
         if (!ok) {
@@ -460,7 +461,7 @@ export function check(text: string, deps: CheckerDeps): CheckerFinding[] {
   for (const r of deps.rules) {
     let re: RegExp
     try {
-      re = new RegExp(r.pattern, 'giu')
+      re = contentRegExp(r.pattern, 'giu')
     } catch {
       continue
     }

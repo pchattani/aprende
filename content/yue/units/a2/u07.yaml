@@ -261,3 +261,43 @@ dialogues:
       - { q: "Leo部相機有咩問題？", options: ["冇電喇", "唔見咗", "跌咗落池塘"], answer: 0, explain: "Leo says 部相機冇電喇: the battery has run out." }
       - { q: "嘉欣叫Leo唔好做咩？", options: ["唔好影相", "唔好企咁近", "唔好叫齋菜"], answer: 1, explain: "She says 唔好企咁近呀: don't stand so close (to the pond)." }
       - { q: "邊個請食飯？", options: ["嘉欣", "Leo", "冇人請"], answer: 1, explain: "Leo says 今日我請你吖: he offers to pay." }
+writing:
+  - task: "A friend visits your flat for the first time. Welcome them with 啦: come in and sit, don't be polite, help yourself, take your time."
+    min: 20
+    max: 45
+    use: [w.m4-hou2-haak3-hei3, w.ceoi4-bin2, w.maan6-maan2-lai4, w.laa1]
+    useAtLeast: 3
+    grammar: [g.laa1-suggestion]
+    expect:
+      - { pattern: "啦", hint: "Soften your invitation with 啦: 坐啦！" }
+      - { pattern: "唔好客氣|隨便|慢慢嚟", hint: "Add 唔好客氣, 隨便 or 慢慢嚟." }
+    model: { es: "入嚟坐啦！唔好客氣，隨便飲啲嘢啦。慢慢嚟，唔使急。", en: "Come in and sit down! Don't be polite, help yourself to a drink. Take your time, there's no rush." }
+  - task: "You're at Nan Lian Garden with a friend. Announce two changes with 喇: it has started raining, and it's already late, so you should go."
+    min: 20
+    max: 45
+    use: [w.laa3, w.waa1, w.zau6-faai3, w.saan1-mun4]
+    useAtLeast: 3
+    grammar: [g.laa3-change]
+    expect:
+      - { pattern: "喇|嘞", hint: "Announce a change with 喇: 落雨喇！" }
+    model: { es: "嘩，落雨喇！而家已經五點喇，南蓮園池就快閂門，我哋走啦。", en: "Wow, it's started raining! It's already five, Nan Lian Garden is about to close. Let's go." }
+  - task: "Write a short exchange: offer with 吖 to take a photo of your friend by the pond, and your friend's happy reply."
+    min: 20
+    max: 45
+    use: [w.aa1, w.jing2, w.ci4-tong4.b, w.ho4-faa1]
+    useAtLeast: 3
+    grammar: [g.aa1-offer]
+    expect:
+      - { pattern: "吖", hint: "Make the offer friendly with 吖: 我幫你影張相吖！" }
+      - { pattern: "好吖|好呀|唔該", hint: "Accept: 好吖，唔該晒！" }
+    model: { es: "我幫你喺池塘前面影張相吖？好吖，唔該晒！我想要啲荷花喺後面。", en: "Shall I take a photo of you in front of the pond? Yes please, thanks a lot! I'd like the lotus flowers behind me." }
+  - task: "A friend thanks you for a gift and worries it was expensive. Play it down with 咋 or 啫."
+    es: "多謝你份禮物！好貴㗎？"
+    min: 20
+    max: 40
+    use: [w.zaa3, w.ze1.b, w.siu2-si6, w.m4-sai2-haak3-hei3]
+    useAtLeast: 2
+    grammar: [g.zaa3-ze1-only]
+    expect:
+      - { pattern: "咋|啫", hint: "Play it down with 咋 or 啫: 十蚊咋." }
+    model: { es: "唔使客氣，小事啫！一啲都唔貴，十蚊咋。你鍾意就好喇。", en: "You're welcome, it's nothing! It wasn't expensive at all, only ten dollars. I'm glad you like it." }

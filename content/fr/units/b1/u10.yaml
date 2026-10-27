@@ -282,3 +282,41 @@ dialogues:
       - { q: "Pourquoi Nadia n'a-t-elle pas vu le voleur ?", options: ["Il faisait nuit", "Elle regardait son téléphone", "Elle était entourée de monde"], answer: 2, explain: "She was surrounded by fans and photographers." }
       - { q: "Que fera la police si elle retrouve les affaires de Nadia ?", options: ["Elle l'appellera", "Elle lui enverra un texto", "Elle les donnera au festival"], answer: 0, explain: "Si on retrouve vos affaires, on vous appellera." }
       - { q: "Où Nadia peut-elle demander un nouveau badge ?", options: ["Au commissariat", "À l'accueil du festival", "Sur le site web"], answer: 1, explain: "Un nouveau badge peut être demandé à l'accueil du festival." }
+writing:
+  - task: "Write a short news article about the closing ceremony of the Cannes Film Festival, using the passive (la Palme d'or a été décernée à…)."
+    min: 50
+    max: 100
+    use: [w.décerner, w.cérémonie, w.jury, w.présider, w.réalisateur]
+    useAtLeast: 3
+    grammar: [g.passive-voice, g.agent-par-de]
+    expect:
+      - { pattern: "\\b(est|sont|a [eé]t[eé]|ont [eé]t[eé]|sera|seront|a [eé]t[eé] tr[eè]s) [a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|ies|u|ue|us|ues|it|ite|ts|ert|erte|eint|einte)(?![a-zàâçéèêëîïôûùœ])|(?<![a-zàâçéèêëîïôûùœ])[eé]tai(t|ent) [a-zàâçéèêëîïôûùœ]+(é|ée|és|ées|i|ie|is|u|ue|us)(?![a-zàâçéèêëîïôûùœ])", hint: "Use the passive: être + past participle (la Palme d'or a été décernée…)." }
+      - { pattern: "\\bpar\\b", hint: "Name who did it with par: … par le jury." }
+    model: { es: "Hier soir, la cérémonie de clôture du festival de Cannes a été suivie par des millions de téléspectateurs. La Palme d'or a été décernée à un jeune réalisateur africain pour son premier film. Le jury était présidé par une actrice américaine. Le gagnant a été très applaudi par le public. Le film sera diffusé dans les cinémas français en octobre.", en: "Last night the closing ceremony of the Cannes Film Festival was watched by millions of viewers. The Palme d'Or was awarded to a young African director for his first film. The jury was chaired by an American actress. The winner was loudly applauded by the audience. The film will be shown in French cinemas in October." }
+  - task: "Write a fan profile of a famous actor, actress or director: who admires, respects and rewards him or her (être admiré(e) de / par, être connu(e) de…)."
+    min: 50
+    max: 100
+    use: [w.admirer, w.respecter, w.récompenser, w.critique, w.fan]
+    useAtLeast: 3
+    grammar: [g.agent-par-de, g.passive-voice]
+    expect:
+      - { pattern: "\\b(admir|respect|aim|connu|ador|appr[eé]ci|suivi|choisi|r[eé]compens|invit)[a-zàâçéèêëîïôûùœ]* (de|des|du|d['’]|par)\\b", hint: "Name the agent with de or par: admirée de ses fans, récompensée par le jury…" }
+    model: { es: "Juliette Binoche est une actrice française très connue. Elle est admirée de ses fans et respectée par les critiques du monde entier. Elle a été récompensée par beaucoup de jurys, et elle a même été choisie par le festival de Cannes pour présider le jury en 2014. Ses films sont aimés du public parce qu'elle joue toujours avec beaucoup de talent.", en: "Juliette Binoche is a very well-known French actress. She is admired by her fans and respected by critics all over the world. She has been rewarded by many juries, and she was even chosen by the Cannes festival to chair the jury in 2014. Her films are loved by the public because she always acts with great talent." }
+  - task: "Your wallet was stolen in Cannes. Write to a friend about what happened and what you did, using on instead of the passive (on m'a volé…, on a retrouvé…)."
+    min: 50
+    max: 100
+    use: [w.voler, w.portefeuille, w.commissariat, w.porter-plainte, w.retrouver]
+    useAtLeast: 3
+    grammar: [g.on-instead-of-passive]
+    expect:
+      - { pattern: "\\bon (m['’]|t['’]|l['’]|nous |vous |lui |leur )?(a|avait|vient de|va)\\s", hint: "Use on instead of the passive: on m'a volé mon portefeuille, on l'a retrouvé…" }
+    model: { es: "Salut, Hugo ! Quelle soirée ! Hier, sur la Croisette, on m'a volé mon portefeuille. Je ne me suis rendu compte de rien. Je suis allé au commissariat pour porter plainte. Le policier m'a dit qu'on volait beaucoup de touristes pendant le festival. Heureusement, ce matin, on m'a téléphoné : on a retrouvé mon portefeuille dans une poubelle, mais sans argent !", en: "Hi, Hugo! What an evening! Yesterday, on the Croisette, my wallet was stolen. I didn't notice a thing. I went to the police station to report it. The officer told me that lots of tourists get robbed during the festival. Luckily, this morning I got a phone call: my wallet was found in a bin, but without any money!" }
+  - task: "How are films and news shared today? Write your opinion, using pronominal passives (les films se regardent…, ça se partage…) and on."
+    min: 50
+    max: 100
+    use: [w.réseau-social, w.en-ligne, w.télécharger, w.diffuser, w.tablette]
+    useAtLeast: 3
+    grammar: [g.on-instead-of-passive, g.passive-voice]
+    expect:
+      - { pattern: "\\b(se|s['’]) ?(regard|partag|vend|t[eé]l[eé]charg|lit|lisent|voi|dit|disent|fait|font|mange|boit|vit|[eé]crit|utilis|trouv|diffus)[a-zàâçéèêëîïôûùœ]*", hint: "Use a pronominal passive: les films se regardent, les photos se partagent…" }
+    model: { es: "Aujourd'hui, les films se regardent souvent sur une tablette ou un téléphone. Les photos du tapis rouge se partagent sur les réseaux sociaux en quelques minutes. On télécharge des vidéos partout, même dans le métro ! Les nouvelles du festival de Cannes sont diffusées en direct en ligne. À mon avis, c'est pratique, mais un film se voit mieux dans une vraie salle de cinéma.", en: "Today films are often watched on a tablet or a phone. Photos of the red carpet are shared on social media within minutes. People download videos everywhere, even on the metro! News from the Cannes festival is broadcast live online. In my opinion it's practical, but a film is best seen in a real cinema." }

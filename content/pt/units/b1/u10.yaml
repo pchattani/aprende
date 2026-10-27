@@ -282,3 +282,45 @@ dialogues:
       - { q: "Por que ele não pode sair antes?", options: ["Porque tem uma reunião urgente", "Porque está doente", "Porque perdeu o voo"], answer: 0, explain: "Disse que tinha uma reunião urgente." }
       - { q: "O que o fornecedor perguntou?", options: ["Se a pousada queria mais café", "Se o boleto já tinha sido pago", "Se podia fazer a entrega na sexta"], answer: 1, explain: "Perguntou se a gente já tinha pago o boleto." }
       - { q: "O que a jornalista pediu?", options: ["Para o Rodrigo levar fotos do parque", "Para o Rodrigo escrever um relatório", "Para a Valéria dar uma entrevista"], answer: 0, explain: "Ela pediu para você levar fotos do parque." }
+writing:
+  - task: "Your friend missed the guide's briefing. Report what the guide said (O guia disse que…, Ele avisou que…, Ele pediu para…)."
+    es: "Guia: “A trilha está fechada por causa da chuva. Amanhã vamos à cachoeira de manhã. Tragam água e não saiam do caminho!”"
+    min: 50
+    max: 100
+    use: [w.afirmar, w.informar, w.comentar, w.avisar, w.anunciar]
+    useAtLeast: 2
+    grammar: [g.reported-speech-present, g.reported-speech-past]
+    expect:
+      - { pattern: '\b(disse|falou|informou|avisou|afirmou|explicou|comentou|anunciou) que\b', hint: "Report with disse que / avisou que…" }
+      - { pattern: '(?<!\p{L})(estava|ia|iam|[ií]amos|devia|deviam|tinha|tinham)(?!\p{L})', hint: "Shift the tenses back: está → estava, vamos → íamos." }
+    model: { es: "O guia disse que a trilha estava fechada por causa da chuva. Ele informou que amanhã a gente ia à cachoeira de manhã. Também avisou que todos tinham que levar água e pediu para ninguém sair do caminho. Ele comentou que a chuva às vezes é perigosa na Chapada e que era melhor sair cedo.", en: "The guide said the trail was closed because of the rain. He told us that tomorrow we were going to the waterfall in the morning. He also warned that everyone had to take water and asked nobody to leave the path. He mentioned that the rain is sometimes dangerous in the Chapada and that it was better to leave early." }
+  - task: "Your stolen backpack has been found. Write to a friend reporting what the police officer told you (O policial disse que tinham encontrado…)."
+    min: 50
+    max: 100
+    use: [w.policial, w.testemunha, w.investigação, w.vítima, w.denúncia]
+    useAtLeast: 3
+    grammar: [g.reported-speech-past]
+    expect:
+      - { pattern: '\b(disse|contou|explicou|falou|informou) que\b', hint: "Report what was said: disse que…, explicou que…" }
+      - { pattern: '\b(tinham|tinha|haviam|havia) [a-zà-ú]+(ado|ido|ito|isto|eito)\b', hint: "Report earlier events with the pluperfect: disse que tinham encontrado…" }
+    model: { es: "Boa notícia! O policial me ligou e disse que tinham encontrado a minha mochila perto da rodoviária. Ele explicou que uma testemunha tinha visto o ladrão e que eles tinham feito uma investigação rápida. Ele contou que havia outras vítimas e me pediu para fazer uma denúncia na delegacia amanhã de manhã.", en: "Good news! The police officer called me and said they had found my backpack near the bus station. He explained that a witness had seen the thief and that they had done a quick investigation. He told me there were other victims and asked me to make a report at the police station tomorrow morning." }
+  - task: "Your colleague missed a meeting. Write to her reporting the questions people asked (A diretora perguntou se…, O Paulo quis saber quando…)."
+    min: 50
+    max: 100
+    use: [w.palestra, w.apresentar, w.relatório, w.pauta, w.ata]
+    useAtLeast: 3
+    grammar: [g.reported-questions]
+    expect:
+      - { pattern: '(\bperguntou (se|quando|onde|como|quem|qual|quanto|por que|o que)\b|\bperguntaram\b|\bquis(eram)? saber\b)', hint: "Report questions: perguntou se…, quis saber quando…" }
+    model: { es: "A reunião foi longa! A diretora perguntou se você podia apresentar o relatório na sexta. O Paulo quis saber quando a palestra ia começar e onde ia ser. Depois, me perguntaram se a pauta estava pronta e quem ia fazer a ata. Eu respondi que você ia mandar tudo por e-mail. Tudo bem?", en: "The meeting was long! The director asked if you could present the report on Friday. Paulo wanted to know when the talk would start and where it would be. Then they asked me if the agenda was ready and who would take the minutes. I said you'd send everything by email. Is that OK?" }
+  - task: "Write a semi-formal email to a tour agency in the Chapada dos Veadeiros asking for information (Prezada Senhora…, Escrevo para…, Atenciosamente)."
+    min: 50
+    max: 100
+    use: [w.prezado, w.solicitar, w.informação, w.disponibilidade, w.atenciosamente]
+    useAtLeast: 3
+    grammar: [g.formal-email]
+    expect:
+      - { pattern: '\bprezad[oa]s?\b', hint: "Open formally: Prezado Senhor / Prezada Senhora…" }
+      - { pattern: '\b(atenciosamente|cordialmente)\b', hint: "Close formally: Atenciosamente, …" }
+      - { pattern: '\b(escrevo para|gostaria de|solicito|venho)\b', hint: "Say why you are writing: Escrevo para solicitar…" }
+    model: { es: "Prezada Senhora Valéria, escrevo para solicitar informações sobre os passeios na Chapada dos Veadeiros. Gostaria de saber se a agência tem disponibilidade para quatro pessoas entre os dias 10 e 15 de julho. Também gostaria de receber os preços e as formas de pagamento. Fico à disposição e aguardo o seu retorno. Atenciosamente, Daniel Clark.", en: "Dear Ms Valéria, I am writing to ask for information about tours in the Chapada dos Veadeiros. I would like to know whether the agency has availability for four people between 10 and 15 July. I would also like to receive the prices and payment methods. I remain at your disposal and look forward to hearing from you. Yours sincerely, Daniel Clark." }

@@ -173,3 +173,45 @@ dialogues:
       - { q: "What is Sam's surname?", options: ["Chan", "Smith", "Lee"], answer: 1, explain: "我姓Smith: my surname is Smith." }
       - { q: "Where is Sam from?", options: ["Hong Kong", "The United States", "Canada"], answer: 2, explain: "我係加拿大人: I'm Canadian." }
       - { q: "Where is Mandy from?", options: ["Hong Kong", "India", "Argentina"], answer: 0, explain: "我係香港人: I'm from Hong Kong." }
+writing:
+  - task: "Write your name and age: 我叫… 我今年…歲."
+    min: 6
+    max: 16
+    use: [w.giu3, w.gam1-nin2, w.seoi3]
+    useAtLeast: 3
+    grammar: [g.name-giu-sing, g.age]
+    expect:
+      - { pattern: "我叫", hint: "Say your name: 我叫…" }
+      - { pattern: "今年.*歲", hint: "Say your age: 我今年…歲." }
+    model: { es: "我叫Leo。我今年二十歲。", en: "My name is Leo. I'm twenty this year." }
+  - task: "Write your surname and where you are from: 我姓… 我係…人."
+    min: 6
+    max: 16
+    use: [w.sing3, w.hai6, w.hoeng1-gong2, w.jan4]
+    useAtLeast: 3
+    grammar: [g.name-giu-sing, g.nationality-language]
+    expect:
+      - { pattern: "姓", hint: "Say your surname: 我姓…" }
+      - { pattern: "係.*人", hint: "Say where you're from: 我係…人." }
+    model: { es: "我姓陳，我係香港人。", en: "My surname is Chan. I'm from Hong Kong." }
+  - task: "You meet someone new at the hotel. Ask them three questions: their name, where they are from and how old they are."
+    min: 10
+    max: 20
+    use: [w.me1, w.meng2, w.bin1-dou6, w.gei2-do1]
+    useAtLeast: 3
+    grammar: [g.name-giu-sing, g.nationality-language, g.age]
+    expect:
+      - { pattern: "咩名|叫咩", hint: "Ask their name: 你叫咩名呀？" }
+      - { pattern: "邊度人", hint: "Ask where they're from: 你係邊度人呀？" }
+      - { pattern: "幾多歲", hint: "Ask their age: 你今年幾多歲呀？" }
+    model: { es: "你叫咩名呀？你係邊度人呀？你今年幾多歲？", en: "What's your name? Where are you from? How old are you?" }
+  - task: "Introduce a friend: write his or her name and country with 佢."
+    min: 6
+    max: 16
+    use: [w.keoi5, w.giu3, w.hai6, w.aa3-gan1-ting4, w.mei5-gwok3]
+    useAtLeast: 3
+    grammar: [g.name-giu-sing, g.hai6-identity]
+    expect:
+      - { pattern: "佢叫", hint: "Give the name: 佢叫…" }
+      - { pattern: "係.*人", hint: "Give the country: 佢係…人." }
+    model: { es: "佢叫Ana，佢係阿根廷人。", en: "Her name is Ana. She's from Argentina." }

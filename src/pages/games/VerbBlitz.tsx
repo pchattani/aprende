@@ -8,7 +8,7 @@ import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { recordGame, GAMES_BEST_KEY, type GameBest } from './util'
 import { addMinutes, e2eHook } from '../palabras/util'
-import { kit, useVerbRound, recordVerb, shortTense, type VerbRound } from './verbRound'
+import { kit, useVerbRound, recordVerb, shortTense, tensesInPlay, type VerbRound } from './verbRound'
 import { PromptCard, TimerBar, NoVerbs } from './verbShared'
 import { randomPrompt, choicesFor, blitzMultiplier, blitzPoints, type VerbPrompt } from '../../engine/games/verbPrompts'
 import { Rng } from '../../engine/random'
@@ -205,7 +205,7 @@ function Blitz({ data, onDone, onAgain }: { data: VerbRound; onDone: () => void;
           </div>
           <p className="mt-1 font-semibold">How many can you get in a minute?</p>
           <p className="mt-1 text-sm text-muted">Three in a row doubles your points, six triples them. Irregular forms are worth more.</p>
-          <p className="mt-2 text-xs text-muted">Tenses: {data.tenses.map((t) => shortTense(kit.labels[t]?.en ?? t)).join(', ')} · keys 1–4 pick</p>
+          <p className="mt-2 text-xs text-muted">Tenses in play: {tensesInPlay(data.tenses)} · keys 1–4 pick</p>
           <button ref={startBtn} type="button" className="btn btn-primary mt-4 w-full" onClick={start}>
             Start
           </button>

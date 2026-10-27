@@ -286,3 +286,38 @@ dialogues:
       - { q: "Perché Emma è a Matera?", options: ["È in vacanza con la famiglia", "Lavora con il Centro di Geodesia Spaziale", "Scrive un libro su Carlo Levi"], answer: 1, explain: "She is there for work: she is a physicist at the Space Geodesy Centre." }
       - { q: "Che cosa misura il centro dove lavora Emma?", options: ["I movimenti della Terra", "La profondità delle grotte", "La velocità del vento"], answer: 0, explain: "'I movimenti della Terra, mediante i satelliti.'" }
       - { q: "Che cos'è oggi la casa dove è nato Rocco?", options: ["Un ristorante", "Un albergo", "Un piccolo museo"], answer: 2, explain: "'…la quale oggi è un piccolo museo.'" }
+writing:
+  - task: "Write a short formal text presenting a scientific discovery made in a southern university lab, using il quale / la quale, del quale, nel quale and mediante."
+    min: 80
+    max: 140
+    use: [w.scoperta, w.ricercatore, w.laboratorio, w.esperimento, w.mediante]
+    grammar: [g.relative-il-quale]
+    expect:
+      - { pattern: "\\b(il quale|la quale|i quali|le quali|del quale|della quale|dei quali|delle quali|al quale|alla quale|ai quali|nel quale|nella quale|sul quale|sulla quale|con il quale|con la quale)\\b", hint: "Use formal relatives: il quale, della quale, nel quale…" }
+    model: { es: "La scoperta della quale vi parlo oggi è stata fatta in un laboratorio dell'Università di Bari, nel quale lavora un gruppo di giovani ricercatori. Il progetto, al quale hanno partecipato anche alcuni scienziati stranieri, studia un nuovo metodo per pulire l'acqua mediante la luce del sole. Gli esperimenti, i quali sono durati tre anni, hanno dato ottimi risultati. La responsabile del gruppo, con la quale ho parlato ieri, mi ha spiegato che il metodo potrebbe essere utilizzato nei paesi in cui l'acqua pulita è un problema quotidiano.", en: "The discovery I'm telling you about today was made in a laboratory at the University of Bari, in which a group of young researchers works. The project, in which some foreign scientists also took part, is studying a new method for cleaning water by means of sunlight. The experiments, which lasted three years, gave very positive results. The head of the team, with whom I spoke yesterday, explained that the method could be used in countries where clean water is an everyday problem." }
+  - task: "Write a comment on technology and artificial intelligence in everyday life, using il che, per cui, ciò che and ciò di cui."
+    min: 80
+    max: 140
+    use: [w.il-che, w.intelligenza-artificiale, w.tecnologia, w.dispositivo, w.riguardo-a]
+    grammar: [g.relative-advanced]
+    expect:
+      - { pattern: "\\bil che\\b", hint: "Comment on a whole idea with il che: …, il che mi preoccupa." }
+      - { pattern: "\\bper cui\\b|\\bciò che\\b|\\bciò di cui\\b", hint: "Use per cui / ciò che: …, per cui è fondamentale…" }
+    model: { es: "Oggi l'intelligenza artificiale è presente in quasi tutti i dispositivi che usiamo, il che ha cambiato molto il nostro modo di vivere. Ciò che mi sorprende di più è la velocità di questi cambiamenti: i programmi scrivono testi, rispondono alle domande e riconoscono le immagini. Molti lavori stanno cambiando, per cui è importante che la scuola prepari i giovani. Riguardo alla privacy, invece, ho qualche dubbio: le aziende raccolgono tanti dati privati, il che mi preoccupa. Ciò di cui abbiamo bisogno è una legge chiara sulla tecnologia.", en: "Today artificial intelligence is present in almost all the devices we use, which has greatly changed the way we live. What surprises me most is the speed of these changes: programs write texts, answer questions and recognise images. Many jobs are changing, which is why it's important that schools prepare young people. As for privacy, on the other hand, I have some doubts: companies collect a lot of personal data, which worries me. What we need is a clear law on technology." }
+  - task: "Write a short profile of an astronaut or scientist, linking earlier actions with the compound gerund (avendo studiato…, essendo partita…)."
+    min: 80
+    max: 140
+    use: [w.astronauta, w.missione, w.orbita, w.universo, w.scientifico]
+    grammar: [g.gerundio-composto]
+    expect:
+      - { pattern: "\\b(avendo|essendo|essendosi)\\s+(\\S+\\s+)?\\S+(at|ut|it|tt|st|s)[oaie]\\b", hint: "Use the compound gerund: avendo studiato…, essendo tornata…" }
+    model: { es: "Samantha Cristoforetti è un'astronauta italiana famosa in tutto il mondo. Avendo studiato ingegneria in Germania e in Francia, è stata scelta dall'Agenzia Spaziale Europea nel 2009. Essendosi preparata per anni, nel 2014 è partita per la sua prima missione sulla Stazione Spaziale Internazionale, in orbita intorno alla Terra. Avendo passato quasi duecento giorni nello spazio, è diventata un simbolo per molte ragazze che amano le materie scientifiche. Avendo raccontato la sua esperienza in un libro, ha fatto conoscere l'universo a molti lettori.", en: "Samantha Cristoforetti is an Italian astronaut famous all over the world. Having studied engineering in Germany and France, she was chosen by the European Space Agency in 2009. Having prepared for years, in 2014 she left on her first mission to the International Space Station, in orbit around the Earth. Having spent almost two hundred days in space, she became a symbol for many girls who love science subjects. Having told the story of her experience in a book, she has brought the universe closer to many readers." }
+  - task: "Write a short report on renewable energy in a southern region, with figures and percentages, using formal relatives (il quale, il che, per cui)."
+    min: 80
+    max: 140
+    use: [w.energia-solare, w.rinnovabile, w.percentuale, w.cifra, w.emissioni]
+    grammar: [g.relative-il-quale, g.relative-advanced]
+    expect:
+      - { pattern: "\\bil che\\b|\\b(il|la|i|le) qual[ei]\\b|\\bper cui\\b", hint: "Use il che, il quale or per cui." }
+      - { pattern: "\\d|\\bper cento\\b|\\bpercentual", hint: "Give figures: il quaranta per cento, una percentuale…" }
+    model: { es: "Secondo i dati più recenti, la Puglia è una delle regioni italiane che producono più energia solare. Circa il quaranta per cento dell'energia della regione viene da fonti rinnovabili, il che rappresenta una cifra molto alta rispetto alla media nazionale. I pannelli, i quali coprono ormai molti tetti e campi, hanno ridotto le emissioni di gas serra. Tuttavia, alcuni cittadini si lamentano perché molti campi vengono usati per i pannelli, per cui il dibattito è ancora aperto. La percentuale di energia pulita dovrebbe crescere ancora nei prossimi anni.", en: "According to the latest figures, Puglia is one of the Italian regions that produce the most solar energy. About forty per cent of the region's energy comes from renewable sources, which is a very high figure compared with the national average. The panels, which now cover many roofs and fields, have reduced greenhouse gas emissions. However, some citizens complain because many fields are used for panels, so the debate is still open. The percentage of clean energy should grow further in the coming years." }

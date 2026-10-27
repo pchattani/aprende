@@ -281,3 +281,42 @@ dialogues:
       - { q: "陳伯覺得網上嘅消息點樣？", options: ["完全唔可信", "有啲根據，但係有待證實", "已經證實咗"], answer: 1, explain: "The rent really has gone up, but the closure remains to be confirmed (有待證實)." }
       - { q: "點解好多遊客專登嚟呢間餅店？", options: ["因為佢嘅葡撻好出名", "因為佢喺海灘旁邊", "因為佢減價"], answer: 0, explain: "The egg tart is Coloane's symbol, and the bakery opened in 1989 made it famous." }
       - { q: "陳伯認同評論員邊一點？", options: ["報道太煽情", "餅店應該加價", "路環冇人去"], answer: 0, explain: "He agrees (我認同) that the reports were sensationalist and the headlines misleading." }
+writing:
+  - task: "A rumour is spreading online that a famous old bakery in Coloane is closing. Write a short commentary, hedging the claims carefully (據稱, 或許, 有待證實)."
+    min: 90
+    max: 170
+    use: [w.geoi3-cing1, w.waak6-heoi2, w.jau5-doi6, w.git3-jip6, w.ng6-dou6]
+    useAtLeast: 3
+    grammar: [g.hedging]
+    expect:
+      - { pattern: "據稱|據了解|據報|據悉|有指", hint: "Signal your source: 據稱…, 有指…" }
+      - { pattern: "或許|可能|有待|未必", hint: "Hedge the claim: 或許, 有待證實…" }
+    model: { es: "近日網上流傳一個消息：據稱路環一間有幾十年歷史嘅餅店將會結業。有網民爆料，話原因係租金太貴，不過消息暫時未有證實，真假仍然有待觀察。或許只係有人想提高點擊率。我認為傳媒報道之前應該先了解清楚，以免誤導讀者。", en: "A message has been circulating online recently: allegedly a decades-old bakery in Coloane is closing down. A netizen leaked that the reason is the high rent, but the news hasn't been confirmed yet, and whether it's true remains to be seen. Perhaps someone just wants clicks. I believe the media should get the facts straight before reporting, so as not to mislead readers." }
+  - task: "Write a formal statement from a spokesperson about the bakery story, using nominalised verbs such as 進行, 作出 and 加以."
+    min: 90
+    max: 160
+    use: [w.zeon3-hang4, w.zok3-ceot1, w.gaa1-ji5, w.faat3-jin4-jan4, w.gwaan1-zyu3]
+    useAtLeast: 3
+    grammar: [g.nominalisation]
+    expect:
+      - { pattern: "進行|作出|加以|予以|展開", hint: "Use a formal nominalised verb: 進行調查, 作出回應…" }
+    model: { es: "發言人表示，就近日有關路環餅店結業嘅報道，公司已經對事件進行內部調查，並且會喺下星期作出正式回應。公司明白市民嘅關注，會加以重視。目前餅店照常營業，請各位客人唔使擔心，亦請大家唔好相信未經證實嘅消息。", en: "A spokesperson said that, regarding recent reports of the Coloane bakery's closure, the company has launched an internal investigation and will make a formal response next week. The company understands the public's concern and takes it seriously. The bakery is currently open as usual; customers need not worry, and everyone is asked not to believe unconfirmed information." }
+  - task: "Report what three different people said in a radio interview, using precise reporting verbs (強調, 質疑, 認同, 引述)."
+    min: 90
+    max: 160
+    use: [w.koeng4-diu6, w.zat1-ji4, w.jing6-tung4, w.jan5-seot6, w.sau6-fong2]
+    useAtLeast: 3
+    grammar: [g.reporting-verbs]
+    expect:
+      - { pattern: "強調|質疑|認同|引述|指出|表示|透露", hint: "Use precise reporting verbs: 強調, 質疑, 認同…" }
+    model: { es: "喺今朝嘅電台節目入面，餅店老闆強調佢哋冇打算結業。不過一位受訪嘅街坊質疑佢嘅講法，話最近見到間舖頭好少客。第二位評論員就認同老闆嘅睇法，佢引述政府嘅數據，指出路環嘅遊客人數其實增加緊。邊個講得啱，暫時仲未知道。", en: "On this morning's radio programme, the bakery owner stressed that they have no plans to close. However, a local resident who was interviewed questioned his account, saying the shop has had very few customers recently. Another commentator agreed with the owner, quoting government figures to point out that visitor numbers to Coloane are actually rising. Who is right is still undecided." }
+  - task: "Write an opinion piece: should the news media always be neutral? Discuss objectivity and bias (客觀, 中立, 偏頗, 片面)."
+    min: 100
+    max: 170
+    use: [w.haak3-gun1, w.zung1-laap6, w.pin1-po2, w.pin3-min6, w.cyun4-mui4]
+    useAtLeast: 3
+    grammar: [g.hedging, g.reporting-verbs]
+    expect:
+      - { pattern: "我認為|我覺得|筆者|個人", hint: "State your position: 我認為…" }
+      - { pattern: "不過|然而|但係|雖然", hint: "Consider the other side: 然而…" }
+    model: { es: "我認為傳媒最重要嘅責任係客觀報道事實，保持中立。如果新聞內容偏頗或者片面，讀者就好容易受到誤導。然而，完全中立或許係冇可能嘅，因為揀邊單新聞、點樣寫標題，都反映咗編輯嘅立場。所以讀者自己都要多啲比較唔同媒體嘅報道。多睇唔同角度，先可以得出自己嘅結論。", en: "I believe the media's most important responsibility is to report facts objectively and stay neutral. If news content is biased or one-sided, readers are easily misled. However, total neutrality may be impossible, because choosing which stories to run and how to write headlines both reflect the editor's position. So readers themselves should compare reports from different media more. Only by looking from different angles can you reach your own conclusions." }

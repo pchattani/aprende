@@ -286,3 +286,44 @@ dialogues:
       - { q: "阿琛發生咗咩事？", options: ["佢喺沙面結婚", "佢同女朋友甩咗拖", "佢搵到新工"], answer: 1, explain: "甩拖 means to break up." }
       - { q: "阿琛啲朋友喺網上做咩？", options: ["幫佢哋和好", "爆粗鬧佢哋", "食花生"], answer: 2, explain: "They were watching the drama unfold (食花生)." }
       - { q: "今晚佢哋打算做乜嘢？", options: ["叫埋阿琛一齊食飯", "再嚟沙面影相", "留喺屋企打機"], answer: 0, explain: "家俊 suggests 吹雞 - rounding everyone up - and inviting Ah Sam to dinner." }
+writing:
+  - task: "Write a social media review of a hyped restaurant on Shamian Island that turned out to be a trap, using current Hong Kong slang (中伏, 神級, 水魚…)."
+    min: 110
+    max: 190
+    use: [w.zung3-fuk6, w.san4-kap1, w.seoi2-jyu2, w.kau4-kei4, w.lou5-can3]
+    useAtLeast: 3
+    grammar: [g.slang-modern, g.slang-intensifiers]
+    expect:
+      - { pattern: "中伏|正嘢|神級|世一|水魚|老襯|搵笨|極品|奇葩", hint: "Use current slang: 中伏, 神級, 水魚…" }
+      - { pattern: "到(爆|飛起|癲|暈)", hint: "Add a slang intensifier: 貴到飛起, 求其到爆…" }
+    model: { es: "今日去咗沙面一間好出名嘅餐廳，網上個個都話係神級正嘢，點知我哋一入去就中伏。啲嘢食求其到爆，價錢仲貴到飛起，真係呃我哋水魚。侍應又串，問佢兩句就扮聽唔到。我同死黨食完即刻走人，仲要喺樓下食多碗車仔麵先飽。總之呢間餐廳我唔會再嚟，大家唔好做老襯呀！", en: "Today I went to a famous restaurant on Shamian. Online everyone said it was god-tier, but as soon as we walked in we knew we'd fallen into a trap. The food was incredibly sloppy and the prices sky-high; they really took us for suckers. The waiter was cheeky too, pretending not to hear when we asked something. My best mate and I left as soon as we'd eaten, and still had to have cart noodles downstairs to fill up. Anyway, I'm never coming back. Don't be suckers, everyone!" }
+  - task: "Your grandmother doesn't understand words like 月光族 and 低頭族. Explain how this kind of slang is formed, with examples."
+    min: 110
+    max: 190
+    use: [w.zuk6, w.jyut6-gwong1-zuk6, w.dai1-tau4-zuk6, w.zaak6-naam4, w.faa1-sang1-jau5]
+    useAtLeast: 3
+    grammar: [g.slang-word-formation]
+    expect:
+      - { pattern: "族|友|宅男|毒男|港男|黨|佬", hint: "Explain a slang suffix: …族, …友, …男." }
+      - { pattern: "即係|意思係|嘅意思", hint: "Explain the meaning: 即係…" }
+    model: { es: "嫲嫲，而家啲後生仔好鍾意喺一個詞後面加「族」，意思係一班有同一種習慣嘅人。例如「月光族」，即係每個月人工一出就使晒，好似月光咁「光」晒。「低頭族」就係成日低頭睇手機嘅人。另外仲有「花生友」同「宅男」呢啲講法：花生友係鍾意睇熱鬧嘅人，宅男就係成日留喺屋企嘅男仔。下次你聽到唔明，可以隨時問我。", en: "Grandma, young people nowadays love adding 族 'tribe' after a word to mean a group with the same habit. For example, 月光族 'moonlight tribe' means people who spend their whole salary as soon as it's paid, so it's 'all gone' like moonlight. 低頭族 'head-down tribe' are people always looking down at their phones. There are also words like 花生友 and 宅男: a 花生友 is someone who loves watching drama unfold, and a 宅男 is a guy who's always at home. Next time you hear one you don't understand, just ask me." }
+  - task: "Text a friend about your crazy week, using slang intensifiers and colourful expressions (忙到癲, 九秒九, 擒擒青, 黐線)."
+    min: 110
+    max: 190
+    use: [w.dou3-din1, w.gau2-miu5-gau2, w.kam4-kam4-ceng1, w.ci1-sin3, w.dou3-baau3]
+    useAtLeast: 3
+    grammar: [g.slang-intensifiers]
+    expect:
+      - { pattern: "到(癲|爆|暈|飛起)|超級|極度", hint: "Use an intensifier: 忙到癲, 攰到爆…" }
+      - { pattern: "九秒九|擒擒青|慌失失|黐線|一嘢", hint: "Add a colourful expression: 九秒九, 擒擒青…" }
+    model: { es: "呢個禮拜真係忙到癲！老細星期一先話要份報告，星期三就要交，我日日擒擒青返工，食飯都係九秒九食完。尋晚仲開會開到十一點，攰到爆。最黐線係，今朝佢話份報告唔使交喇！我而家淨係想瞓三日三晚。週末記得吹雞，我哋去飲杯嘢慶祝吓。你呢排又點呀？得閒覆我啦，週末見！", en: "This week has been insanely busy! My boss only said on Monday that he wanted a report due on Wednesday, so I rushed to work every day and wolfed down every meal in seconds. Last night the meeting went on until eleven; I'm completely exhausted. The craziest part: this morning he said the report isn't needed after all! Now I just want to sleep for three days and three nights. Remember to round everyone up this weekend; let's go for a drink to celebrate. How have you been lately? Reply when you're free; see you at the weekend!" }
+  - task: "Give your opinion: is slang ruining Cantonese, or keeping it alive? Argue your view with examples."
+    min: 110
+    max: 200
+    use: [w.ciu4-jyu5, w.lei5-jyu5, w.cou1-hau2, w.ho4-haai5, w.faat3-zin2]
+    useAtLeast: 3
+    grammar: [g.slang-modern, g.slang-word-formation]
+    expect:
+      - { pattern: "我認為|我覺得|筆者|個人", hint: "State your view: 我認為…" }
+      - { pattern: "不過|然而|但係|雖然|另一方面", hint: "Address the other side: 然而…" }
+    model: { es: "有人話潮語同俚語會破壞廣東話，令後生仔講嘢越嚟越冇禮貌。我認為呢個講法有啲片面。語言本身就會不斷發展，好多潮語好有創意，例如「河蟹」就係用同音字嚟笑審查。當然，粗口同潮語唔同，喺正式場合都要避免。不過只要我哋識得分場合，潮語反而可以令廣東話繼續發展落去。", en: "Some say slang will ruin Cantonese and make young people's speech ruder and ruder. I think that view is somewhat one-sided. Language naturally keeps developing, and lots of slang is very creative: 河蟹 'river crab', for example, uses a homophone to poke fun at censorship. Of course, swear words are different from slang and should be avoided on formal occasions. But as long as we know which occasion calls for what, slang can actually help Cantonese keep developing." }

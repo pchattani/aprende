@@ -272,3 +272,42 @@ dialogues:
       - { q: "¿Por qué Teresa le pide a Marisa que la tutee?", options: ["Porque el «usted» la hace sentir mayor", "Porque Marisa es su jefa", "Porque están en una reunión de trabajo"], answer: 0 }
       - { q: "¿Qué significa «sí, claro, y yo soy el rey de España» en boca de Raúl?", options: ["Que acepta de buena gana ayudar", "Que responde con ironía a la indirecta de Teresa", "Que se compara con la realeza para presumir"], answer: 1, explain: "A sarcastic formula; he then gives in: «vale, vale, ya voy»." }
       - { q: "¿Cómo interpreta Marisa el intercambio entre Teresa y Raúl?", options: ["Cree que están realmente enfadados", "Entiende que es una broma entre amigos", "Piensa que debería marcharse"], answer: 1, explain: "«acabo de entender por qué sois tan amigos»." }
+writing:
+  - task: "Write three polite, indirect requests to a colleague you don't know well (borrow a pen, swap a shift, get help with a report), softening them as a native speaker would (¿No tendrás …?, si te parece, cuando puedas, a ver si …)."
+    min: 110
+    max: 190
+    use: [w.si-te-parece, w.cuando-puedas, w.a-ver-si, w.boli, w.sin-falta]
+    useAtLeast: 3
+    grammar: [g.pragmatics, g.politeness-strategies]
+    expect:
+      - { pattern: "¿no tendr[aá]s|si te parece|cuando puedas|a ver si|te importar[ií]a|¿podr[ií]as", hint: "Soften your requests: ¿no tendrás …?, si te parece, cuando puedas, a ver si …" }
+    model: { es: "Oye, perdona que te moleste, ¿no tendrás un boli por ahí? El mío ya no escribe y tengo que firmar unos papeles ahora mismo. Por cierto, quería comentarte otra cosa: el sábado tengo una boda en Puerto Pirámides y me toca trabajar. Si te parece bien, ¿te importaría cambiarme el turno? Yo te cubro el domingo que viene, sin falta. Y ya que estamos, a ver si cuando puedas me echas una mano con el informe de ventas, que no entiendo bien las cifras del último trimestre. No hace falta que sea hoy, de verdad; cuando tengas un momento libre. ¡Muchísimas gracias, eres un sol! Te debo un café, o mejor dos.", en: "Hey, sorry to bother you, you wouldn't happen to have a pen, would you? Mine has stopped writing and I need to sign some papers right now. By the way, I wanted to mention something else: on Saturday I've got a wedding in Puerto Pirámides and I'm down to work. If it's OK with you, would you mind swapping shifts with me? I'll cover you next Sunday, without fail. And while we're at it, maybe when you get a chance you could give me a hand with the sales report, because I don't really understand the figures for the last quarter. It doesn't have to be today, honestly; whenever you have a free moment. Thanks so much, you're a star! I owe you a coffee, or better still two." }
+  - task: "Your trip to see the elephant seals went badly wrong. Write an ironic message to a friend (¡Lo que me faltaba!, ¡Menudo día!, No está mal …)."
+    min: 110
+    max: 190
+    use: [w.lo-que-me-faltaba, w.menudo, w.no-esta-mal, w.vaya, w.anda-que]
+    useAtLeast: 3
+    grammar: [g.irony-humor]
+    expect:
+      - { pattern: "lo que me faltaba|menud[oa]|no est[aá] mal|vaya|anda que|qu[eé] suerte|genial", hint: "Use ironic expressions: ¡lo que me faltaba!, ¡menudo día!, no está mal …" }
+    model: { es: "¡Menudo día de vacaciones! Primero, el autobús a la Península Valdés se estropeó a mitad de camino y tuvimos que esperar dos horas bajo la lluvia. Genial, justo lo que necesitaba para mi resfriado. Cuando por fin llegamos, el guía nos dijo, muy contento, que los animales que veníamos a ver se habían ido a dormir a otra playa, muy lejos de allí. ¡No está mal para un viaje de mil kilómetros! Luego fuimos a comer y el único restaurante abierto cerró justo cuando entrábamos. ¡Lo que me faltaba! Vaya suerte la mía. Anda que no podía haber elegido otra semana para venir. Eso sí, he visto tantos pájaros que ya podría escribir un libro sobre ellos. ¡Qué viaje tan inolvidable!", en: "What a holiday! First, the bus to the Valdés Peninsula broke down halfway and we had to wait two hours in the rain. Great, just what I needed for my cold. When we finally arrived, the guide told us, very cheerfully, that the animals we'd come to see had gone off to sleep on another beach, far away from there. Not bad for a thousand-kilometre trip! Then we went to eat and the only restaurant open closed just as we were walking in. That's all I needed! Just my luck. As if I couldn't have chosen another week to come. Mind you, I've seen so many birds I could write a book about them. What an unforgettable trip!" }
+  - task: "You were invited to dinner at your Argentine host's parents' home. Tell how it went, including the courtesy formulas used (con permiso, buen provecho, faltaría más, no hay de qué, estás en tu casa …)."
+    min: 110
+    max: 190
+    use: [w.con-permiso, w.buen-provecho, w.faltaria-mas, w.no-hay-de-que, w.estas-en-tu-casa]
+    useAtLeast: 3
+    grammar: [g.politeness-strategies]
+    expect:
+      - { pattern: "con permiso|buen provecho|faltar[ií]a m[aá]s|no hay de qu[eé]|est[aá]s en tu casa|ser[ií]a tan amable", hint: "Use courtesy formulas: con permiso, buen provecho, faltaría más …" }
+    model: { es: "Anoche cené en casa de los padres de Martín. Al llegar, su madre, doña Elena, me recibió con un abrazo: «Pasa, pasa, estás en tu casa». Le di las gracias y le entregué una caja de chocolates de Bariloche; ella protestó un poco, pero la aceptó encantada. Antes de sentarme pregunté «Con permiso» y el padre respondió: «Faltaría más». Cuando llegó la comida, todos nos deseamos buen provecho. Al final, quise ayudar a recoger la mesa, pero doña Elena insistió en que me quedara sentada. Al despedirme, le agradecí la cena y ella me contestó: «No hay de qué, vuelve cuando quieras». Me encantó el trato tan cariñoso de toda la familia.", en: "Last night I had dinner at Martín's parents' house. When I arrived, his mother, Doña Elena, greeted me with a hug: 'Come in, come in, make yourself at home.' I thanked her and gave her a box of chocolates from Bariloche; she protested a little, but accepted it happily. Before sitting down I said 'Excuse me' and his father replied: 'Of course.' When the food arrived, we all wished each other bon appétit. At the end, I wanted to help clear the table, but Doña Elena insisted I stay seated. When I said goodbye, I thanked her for dinner and she replied: 'Don't mention it, come back whenever you like.' I loved how warmly the whole family treated me." }
+  - task: "Decline this invitation tactfully: soften your refusal, add a compliment and change the subject (me encantaría, pero …, sin ánimo de ofender, por cierto, hablando de …)."
+    es: "¿Te vienes este sábado a la fiesta de cumpleaños de mi jefe? Habrá canciones y baile toda la noche."
+    min: 110
+    max: 190
+    use: [w.quedar-bien, w.por-cierto, w.hablando-de, w.sin-animo-de-ofender, w.en-fin]
+    useAtLeast: 3
+    grammar: [g.pragmatics]
+    expect:
+      - { pattern: "me encantar[ií]a[^.]{0,25}pero|ojal[aá] pudiera|me gustar[ií]a[^.]{0,25}pero|qu[eé] pena[^.]{0,25}pero|lo siento[^.]{0,25}pero", hint: "Decline softly: me encantaría, pero …" }
+      - { pattern: "por cierto|hablando de|en fin|cambiando de tema", hint: "Change the subject: por cierto …, hablando de …" }
+    model: { es: "¡Qué amable por invitarme! Me encantaría ir, pero este sábado ya tengo un compromiso familiar que no puedo cambiar. Y, sin ánimo de ofender a nadie, cantar en público no es lo mío: canto tan mal que haría huir a todos los invitados, incluido tu jefe. Dale las gracias a tu jefe de mi parte; seguro que quedas muy bien si le llevas un buen vino de Mendoza. Por cierto, hablando de fiestas, ¿al final vas a celebrar tu cumpleaños en la playa? Si es así, allí estaré sin falta, y prometo no cantar. En fin, ya me contarás qué tal fue todo el domingo. ¡Que lo pases genial y saluda a todos de mi parte!", en: "How kind of you to invite me! I'd love to go, but this Saturday I've already got a family commitment I can't change. And, no offence to anyone, singing in public isn't my thing: I sing so badly I'd make all the guests run away, your boss included. Thank your boss for me; I'm sure you'll make a good impression if you take him a good wine from Mendoza. By the way, speaking of parties, are you going to celebrate your birthday on the beach in the end? If so, I'll be there without fail, and I promise not to sing. Anyway, you'll have to tell me how it all went on Sunday. Have a great time and say hi to everyone for me!" }

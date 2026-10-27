@@ -25,6 +25,7 @@ test(`${pack.name}: first launch, first lesson, passport, quiz`, async ({ page }
   await expect(page.getByRole('heading', { name: journey.regions[0]!.name, exact: true })).toBeVisible()
   await page.screenshot({ path: `e2e/__screenshots__/${LANG}-course.png` })
 
+  await expect(page.locator(`#lesson-${firstUnit.replace('.', '\\.')}\\.l2`)).toHaveAttribute('aria-label', /: locked$/)
   await page.locator(`a[href$="/lesson/${firstUnit}.l1"]`).first().click()
   // A first lesson with grammar opens on its teach screen; otherwise exercises start right away.
   const start = page.getByRole('button', { name: 'Start the exercises' })
@@ -40,9 +41,13 @@ test(`${pack.name}: first launch, first lesson, passport, quiz`, async ({ page }
     if (last) break
   }
   await expect(page.getByText(/^\d+%$/)).toBeVisible({ timeout: 15_000 })
+  // the first lesson opens the second (every other lesson stays locked until the one before it is done)
+  await expect(page.getByText('Lesson 2 unlocked')).toBeVisible()
   await page.screenshot({ path: `e2e/__screenshots__/${LANG}-done.png` })
   await page.getByRole('button', { name: 'Continue' }).click()
   await expect(page.locator(`#lesson-${firstUnit.replace('.', '\\.')}\\.l1`)).toBeInViewport()
+  await expect(page.locator(`#lesson-${firstUnit.replace('.', '\\.')}\\.l2`).getByRole('link', { name: /: new, practice$/ })).toBeVisible()
+  await expect(page.locator(`#lesson-${firstUnit.replace('.', '\\.')}\\.l3`)).toHaveAttribute('aria-label', /: locked$/)
 
   await page.goto('./#/passport')
   await expect(page.getByRole('heading', { name: 'Passport' })).toBeVisible()

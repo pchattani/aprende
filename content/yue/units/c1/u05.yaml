@@ -277,3 +277,43 @@ dialogues:
       - { q: "聖保祿教堂發生咗咩事？", options: ["一八三五年遭大火焚毀", "一九九九年移交中國", "二零零五年重建"], answer: 0, explain: "It was destroyed by fire in 1835, leaving only the façade." }
       - { q: "導遊話回歸之後有咩問題？", options: ["遊客減少", "交通越嚟越擠迫", "古蹟冇人保護"], answer: 1, explain: "然而交通亦越嚟越擠迫: however, traffic has become more congested." }
       - { q: "最後 Kelvin 想做咩？", options: ["去大三巴", "食葡撻", "試笨豬跳"], answer: 2, explain: "He wants to try the bungee jump." }
+writing:
+  - task: "Write a formal paragraph for a guidebook on the history of Macau, using formal time expressions such as 自…以來, 其後, 直至 and 如今."
+    min: 90
+    max: 170
+    use: [w.ji5-loi4, w.kei4-hau6, w.zik6-zi3, w.jyu4-gam1, w.wui4-gwai1]
+    useAtLeast: 3
+    grammar: [g.formal-time]
+    expect:
+      - { pattern: "自.{1,12}以來", hint: "Start with 自…以來." }
+      - { pattern: "其後|隨後|此後|直至", hint: "Move through time with 其後, 直至…" }
+    model: { es: "自十六世紀中葉以來，葡萄牙人已經喺澳門居住同做貿易。其後，澳門逐漸成為中西交匯嘅重要港口。直至一九九九年，澳門回歸中國，成為特別行政區。如今，澳門以博彩同旅遊聞名，亦保留咗大量古蹟，吸引世界各地嘅遊客。", en: "Since the mid-sixteenth century, the Portuguese have lived and traded in Macau. Afterwards, Macau gradually became an important port where East met West. In 1999 Macau returned to China and became a Special Administrative Region. Today Macau is famous for tourism and gaming, and it has preserved many historic sites that attract visitors from all over the world." }
+  - task: "Explain in a formal register why Macau's economy depends so much on tourism, linking ideas with written conjunctions (然而, 因此, 以及, 由此可見)."
+    min: 90
+    max: 170
+    use: [w.ji5-kap6, w.jan1-ci2, w.jau4-ci2-ho2-gin3, w.bok3-coi2, w.leoi5-jau4-jip6]
+    useAtLeast: 3
+    grammar: [g.written-conjunctions]
+    expect:
+      - { pattern: "然而|因此|以及|由此可見|從而|因而", hint: "Link your ideas with written conjunctions: 然而, 因此…" }
+    model: { es: "澳門面積細，人口密度高，本身資源有限。因此，政府主要依賴博彩以及旅遊業發展經濟。每年有幾千萬遊客嚟澳門觀光，為酒店、餐廳同商店帶嚟大量收入。然而，如果遊客減少，成個經濟都會受到影響。由此可見，澳門需要發展更多唔同嘅行業。", en: "Macau is small and densely populated, with limited resources of its own. Therefore the government relies mainly on gaming and tourism to develop the economy. Tens of millions of tourists visit every year, bringing large incomes to hotels, restaurants and shops. However, once visitor numbers fall, the whole economy is affected. It can be seen from this that Macau needs to develop more varied industries." }
+  - task: "Write the text for a plaque at a historic building in Macau, using classical function words such as 此, 乃, 之 and 其."
+    min: 90
+    max: 160
+    use: [w.ci2, w.naai5.b, w.zi1.d, w.kei4, w.zi1-jat1]
+    useAtLeast: 3
+    grammar: [g.classical-function-words]
+    expect:
+      - { pattern: "此|乃", hint: "Use 此 or 乃: 此乃…" }
+      - { pattern: "之|其", hint: "Use 之 or 其: 地標之一, 其正面…" }
+    model: { es: "此乃澳門最著名之地標之一，原本係十七世紀興建之聖保祿教堂。一八三五年，教堂遭大火焚毀，只剩下其正面。二零零五年，澳門歷史城區列入世界遺產名錄，此處亦為其中之一。遊客參觀時，請勿於建築物上面寫字或者攀爬。多謝合作。", en: "This is one of Macau's most famous landmarks, originally the Church of St Paul built in the seventeenth century. In 1835 the church was destroyed by fire, leaving only its façade. In 2005 the Historic Centre of Macau was inscribed on the World Heritage List, this site among them. Visitors are asked not to write on or climb the walls. Thank you for your cooperation." }
+  - task: "Write a travel blog post about a day in Macau's historic centre: what you saw, what you ate and how you felt."
+    min: 90
+    max: 170
+    use: [w.daai6-saam1-baa1, w.ji5-si6-ting4-cin4-dei6, w.seoi3-sek6-lou6, w.pou4-taat1, w.zyu1-paa2-baau1]
+    useAtLeast: 3
+    grammar: [g.formal-time]
+    expect:
+      - { pattern: "大三巴|議事亭前地|媽閣廟|大炮台", hint: "Mention the places you visited: 大三巴, 議事亭前地…" }
+      - { pattern: "葡撻|豬扒包|杏仁餅|馬介休", hint: "Mention what you ate: 葡撻, 豬扒包…" }
+    model: { es: "今日我由議事亭前地開始行，沿住碎石路一路行上大三巴。啲建築物中西合璧，好有特色。中午我食咗豬扒包，下晝再食咗兩個熱辣辣嘅葡撻，真係好好味。最後我上咗大炮台睇日落，成個澳門半島都喺眼前，令我覺得好感動。", en: "Today I started at Senado Square and walked up the cobbled streets all the way to the Ruins of St Paul's. The buildings blend Chinese and Western styles and are full of character. For lunch I had a pork chop bun, and in the afternoon two piping-hot Portuguese egg tarts: delicious. Finally I went up to Monte Fort to watch the sunset, with the whole Macau peninsula before my eyes. It moved me deeply." }

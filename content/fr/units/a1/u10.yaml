@@ -277,3 +277,42 @@ dialogues:
       - { q: "Pourquoi Louis ne joue pas au tennis ?", options: ["Il est fatigué.", "Il ne sait pas jouer.", "Il pleut."], answer: 1, explain: "« Je ne sais pas jouer au tennis. »" }
       - { q: "Qu'est-ce que Sophie fait le dimanche au jardin ?", options: ["Elle joue au tennis.", "Elle lit.", "Elle fait du vélo."], answer: 1, explain: "« Je lis sur les chaises vertes. »" }
       - { q: "Qu'est-ce que la météo dit ?", options: ["Il va neiger.", "Il va pleuvoir.", "Il va faire très chaud."], answer: 1, explain: "« La météo dit qu'il va pleuvoir à quatre heures. »" }
+writing:
+  - task: "Write a postcard from the Jardin du Luxembourg: say what the weather is like and what people are doing."
+    min: 15
+    max: 40
+    use: [w.temps, w.soleil, w.il-fait-beau, w.jouer, w.pelouse]
+    useAtLeast: 2
+    grammar: [g.weather]
+    expect:
+      - { pattern: "\\bil (fait|pleut|neige)\\b|\\bil y a (du|des) (soleil|vent|nuages)\\b", hint: "Describe the weather: il fait beau, il pleut, il y a du soleil…" }
+    model: { es: "Chère Julie, aujourd'hui, je suis au jardin du Luxembourg. Il fait beau et il y a du soleil. Des enfants jouent au football et des étudiants lisent sur la pelouse. Bisous !", en: "Dear Julie, today I'm in the Luxembourg Gardens. The weather is nice and it's sunny. Children are playing football and students are reading on the grass. Love!" }
+  - task: "Hugo invites you to play tennis on Saturday. Reply: say whether you can come, and what you must or want to do (pouvoir, devoir, vouloir)."
+    es: "Tu viens jouer au tennis samedi ?"
+    min: 12
+    max: 40
+    use: [w.pouvoir, w.devoir, w.vouloir, w.dommage]
+    useAtLeast: 3
+    grammar: [g.modal-verbs]
+    expect:
+      - { pattern: "\\b(peux|peut|pouvons|pouvez|peuvent|veux|veut|voulons|voulez|veulent|dois|doit|devons|devez|doivent)\\b", hint: "Use pouvoir, vouloir or devoir: je peux, je veux, je dois…" }
+    model: { es: "Désolé, samedi, je ne peux pas. Je dois travailler toute la journée. Dommage ! Mais je veux bien jouer dimanche matin. Tu peux ?", en: "Sorry, I can't on Saturday. I have to work all day. Too bad! But I'd like to play on Sunday morning. Can you?" }
+  - task: "Write about your hobbies: a sport or game you play (jouer à), and an instrument or activity (jouer de, faire de)."
+    min: 15
+    max: 40
+    use: [w.jouer, w.tennis, w.vélo, w.guitare, w.piano]
+    useAtLeast: 3
+    grammar: [g.jouer-faire-de]
+    expect:
+      - { pattern: "\\bjou(e|es|ons|ez|ent) (au|aux|[aà] la|[aà] l['’])", hint: "Play a sport or game with à: je joue au tennis." }
+      - { pattern: "\\b(du|de la|de l['’])\\s?(piano|guitare|violon|v[eé]lo|natation|danse|yoga|sport|tennis|football|musique)", hint: "Play an instrument or do an activity with de: je joue du piano, je fais du vélo." }
+    model: { es: "Le week-end, je joue au tennis avec mon frère et je fais du vélo au parc. Le soir, je joue de la guitare. Ma sœur joue du piano et fait de la natation.", en: "At the weekend I play tennis with my brother and I cycle in the park. In the evening I play the guitar. My sister plays the piano and goes swimming." }
+  - task: "Describe three people you meet in the Luxembourg Gardens: where they come from (venir de) and what they like doing."
+    min: 15
+    max: 40
+    use: [w.venir, w.courir, w.marcher, w.lire, w.aimer]
+    useAtLeast: 3
+    grammar: [g.venir-present]
+    expect:
+      - { pattern: "\\b(viens|vient|venons|venez|viennent) (de|du|des|d['’])", hint: "Say where people come from: Il vient de …, elles viennent du …" }
+    model: { es: "Dans le jardin, il y a Marco. Il vient d'Italie et il aime courir. Ana et Diego viennent du Brésil. Ils adorent marcher et lire au soleil.", en: "In the gardens there's Marco. He comes from Italy and he likes running. Ana and Diego come from Brazil. They love walking and reading in the sun." }

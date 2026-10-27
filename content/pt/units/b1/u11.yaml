@@ -275,3 +275,41 @@ dialogues:
       - { q: "O que o Josué faria com um milhão de reais?", options: ["Daria a volta ao mundo", "Compraria a pousada", "Investiria na bolsa de valores"], answer: 1, explain: "Compraria esta pousada." }
       - { q: "Por que a Dalva duvida do plano do Josué?", options: ["Porque ele não aguentaria ficar sem internet", "Porque a pousada é muito cara", "Porque ele tem medo de onça"], answer: 0, explain: "Você não aguentaria nem uma semana sem internet." }
       - { q: "O que eles veem perto da água no final?", options: ["Uma onça", "Os olhos de uns jacarés", "Uma capivara"], answer: 1, explain: "Aqueles olhos brilhando… Devem ser uns dez jacarés." }
+writing:
+  - task: "What would you do with a million reais? Write about it with the conditional (Eu compraria…, Eu faria…, Eu não largaria…)."
+    min: 50
+    max: 100
+    use: [w.milionário, w.luxo, w.volta-ao-mundo, w.largar, w.mansão]
+    useAtLeast: 3
+    grammar: [g.conditional-hypothetical]
+    expect:
+      - { pattern: '\b[a-zà-ú]+(ria|r[ií]amos|riam)\b', hint: "Use the conditional: Eu compraria…, Eu viajaria…" }
+    model: { es: "Com um milhão de reais, eu não seria milionário, mas a minha vida mudaria muito. Primeiro, eu pagaria as dívidas da minha família. Depois, eu faria uma volta ao mundo: começaria pelo Pantanal e terminaria no Japão. Eu não compraria uma mansão, porque não gosto de luxo. E eu não largaria o meu emprego: eu adoro o que faço!", en: "With a million reais I wouldn't be a millionaire, but my life would change a lot. First, I'd pay off my family's debts. Then I'd go round the world: I'd start in the Pantanal and finish in Japan. I wouldn't buy a mansion, because I don't like luxury. And I wouldn't quit my job: I love what I do!" }
+  - task: "Your friend sends a photo from the Pantanal with no explanation. Write your guesses about where she is and what is happening (Você deve estar…, Serão uns cem?, Deve ser…)."
+    min: 50
+    max: 100
+    use: [w.cerca-de, w.aproximadamente, w.possivelmente, w.metade, w.maioria]
+    useAtLeast: 2
+    grammar: [g.probability-future-conditional, g.dever-probability]
+    expect:
+      - { pattern: '(\bdeve(m)? (ser|estar|ter|haver)\b|(?<!\p{L})(ser[aá]|ser[aã]o|estar[aá]|ter[aá])(?!\p{L}))', hint: "Guess with dever + infinitive or the future: Deve ser…, Serão uns cem?" }
+    model: { es: "Que foto linda! Você deve estar numa pousada perto do rio. Deve ser fim de tarde, porque o céu está laranja. Quantos jacarés tem aí? Serão uns cem? A metade deve estar dormindo! E aquele barco possivelmente é do guia. Você estará voltando amanhã? Me conta tudo quando você chegar!", en: "What a lovely photo! You must be at a lodge near the river. It must be late afternoon, because the sky is orange. How many caimans are there? A hundred or so? Half of them must be asleep! And that boat is probably the guide's. Will you be coming back tomorrow? Tell me everything when you get back!" }
+  - task: "Your neighbour has just come back from a luxury trip. Speculate about how he paid for it (Deve ter custado…, Ele deve ter usado…)."
+    min: 50
+    max: 100
+    use: [w.dívida, w.empréstimo, w.investimento, w.lucro, w.poupança]
+    useAtLeast: 3
+    grammar: [g.dever-probability]
+    expect:
+      - { pattern: '\bdeve(m)? ter [a-zà-ú]+(ado|ido|ito|isto|eito)\b', hint: "Speculate about the past with dever ter + participle: Deve ter custado…" }
+    model: { es: "O meu vizinho voltou de uma viagem de luxo ao Pantanal. Deve ter custado muito dinheiro! Ele deve ter usado a poupança ou deve ter feito um empréstimo no banco. Ou então ele deve ter tido lucro com algum investimento na bolsa de valores. Espero que ele não tenha dívidas agora!", en: "My neighbour has come back from a luxury trip to the Pantanal. It must have cost a lot of money! He must have used his savings or taken out a bank loan. Or else he must have made a profit on some investment on the stock market. I hope he isn't in debt now!" }
+  - task: "Is tourism good or bad for the Pantanal? Write a balanced opinion, contrasting ideas with embora, no entanto and por outro lado."
+    min: 60
+    max: 110
+    use: [w.no-entanto, w.porém, w.por-outro-lado, w.em-compensação, w.pelo-menos]
+    useAtLeast: 2
+    grammar: [g.connectors-contrast]
+    expect:
+      - { pattern: '\bembora\b', hint: "Concede with embora + subjunctive: Embora seja caro…" }
+      - { pattern: '\b(no entanto|por[eé]m|contudo|entretanto|por outro lado|em compensa[cç][aã]o)\b', hint: "Contrast with no entanto, porém, por outro lado…" }
+    model: { es: "Na minha opinião, o turismo é bom para o Pantanal, embora tenha alguns problemas. Os turistas trazem dinheiro para os pantaneiros e ajudam a proteger os animais. No entanto, muitos barcos e carros podem assustar as onças e deixar os rios sujos. Por outro lado, sem o turismo, haveria mais fazendas de gado e menos natureza. Portanto, o turismo vale a pena, pelo menos quando é responsável.", en: "In my opinion, tourism is good for the Pantanal, although it has some problems. Tourists bring money to the people of the Pantanal and help protect the animals. However, lots of boats and cars can frighten the jaguars and leave the rivers dirty. On the other hand, without tourism there would be more cattle ranches and less nature. So tourism is worth it, at least when it's responsible." }

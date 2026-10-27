@@ -4,7 +4,7 @@ import { SouvenirIcon } from '../components/art/SouvenirArt'
 import { Link, useNavigate, useLocation } from 'react-router'
 import { levels, loadUnit, units as unitIndex } from '../engine/loader'
 import { shiftDay, todayKey } from '../engine/mastery'
-import { DEFAULT_START_LEVEL, levelIndex } from '../engine/unlock'
+import { DEFAULT_START_LEVEL, levelIndex, courseAccess, courseLessons, type CourseAccess } from '../engine/unlock'
 import { getKv, claimQuest, awardCoins } from '../db/progress'
 import { errandCoins } from '../engine/economy'
 import { ChestReveal, CoinChip } from '../components/rewards'
@@ -71,16 +71,12 @@ export default function Course() {
   useEffect(() => {
     let alive = true
     ;(async () => {
+      const authored = [...unitIndex.values()].filter((u) => u.authored)
+      const loaded = await Promise.all(authored.map((u) => loadUnit(u.id).then((unit) => unit.lessons, () => undefined)))
       const m = new Map<string, Lesson[]>()
-      for (const u of unitIndex.values()) {
-        if (!u.authored) continue
-        try {
-          const unit = await loadUnit(u.id)
-          m.set(u.id, unit.lessons)
-        } catch {
-          /* skip */
-        }
-      }
+      authored.forEach((u, i) => {
+        if (loaded[i]) m.set(u.id, loaded[i])
+      })
       if (alive) setLessonMeta(m)
     })()
     return () => {
@@ -90,6 +86,12 @@ export default function Course() {
 
   const lessonCounts = useMemo(() => new Map([...lessonMeta.entries()].map(([k, v]) => [k, v.length])), [lessonMeta])
   const ready = checked && Boolean(lessonRows && cards && days && exams && startLevel !== undefined) && lessonMeta.size > 0
+
+  // Which lessons are open (unlock.ts): needs every stop's lessons, so it waits for the titles.
+  const access = useMemo(
+    () => (lessonRows && exams && startLevel !== undefined && lessonMeta.size > 0 ? courseAccess(courseLessons(levels, lessonCounts), { lessonRows, exams, startLevel }) : undefined),
+    [lessonRows, exams, startLevel, lessonMeta, lessonCounts],
+  )
 
   const cardsByLesson = useMemo(() => {
     const m = new Map<string, CardRow[]>()
@@ -103,9 +105,9 @@ export default function Course() {
 
   // The lesson the dogs are at (up next), known once titles are loaded.
   const nextId = useMemo(() => {
-    if (!lessonRows || startLevel === undefined || lessonMeta.size === 0) return undefined
-    return nextLesson(lessonRows, lessonMeta, lessonCounts, currentStop(lessonRows, startLevel)?.unitId)?.id
-  }, [lessonRows, lessonMeta, lessonCounts, startLevel])
+    if (!lessonRows || startLevel === undefined || !access) return undefined
+    return access.current(currentStop(lessonRows, startLevel)?.unitId)?.id
+  }, [lessonRows, access, startLevel])
 
   // Coming back from a lesson or a quiz: scroll to the spot the learner left from.
   // Otherwise, on the first visit of this page load, glide to the current lesson in the itinerary.
@@ -114,7 +116,7 @@ export default function Course() {
     const target = (loc.state as { from?: string } | null)?.from ?? takeReturn()
     let elId: string | undefined
     let auto = false
-    if (target) elId = /^(unit|region|checkpoint)-/.test(target) ? target : `lesson-${target}`
+    if (target) elId = /^(unit|region|checkpoint|writing)-/.test(target) ? target : `lesson-${target}`
     else if (!autoScrolled && nextId && window.scrollY < 10) {
       elId = `lesson-${nextId}`
       auto = true
@@ -148,7 +150,7 @@ export default function Course() {
     }
   }, [ready]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (!checked || !lessonRows || !cards || !days || !exams || startLevel === undefined) return <div className="p-8 text-center text-muted">Loading…</div>
+  if (!checked || !lessonRows || !cards || !days || !exams || startLevel === undefined || !access) return <div className="p-8 text-center text-muted">Loading…</div>
 
   const byDate = new Map(days.map((d) => [d.date, d]))
   const active = (d?: DayRow) => Boolean(d && (d.minutes > 0 || d.lessons > 0 || d.reviews > 0))
@@ -169,8 +171,8 @@ export default function Course() {
   const current = currentStop(lessonRows, startLevel)
   const currentInfo = current ? stopFor(current.unitId) : undefined
 
-  // Up next: the first unfinished lesson from the stop the learner is at (else from the recommended level).
-  const next = nextLesson(lessonRows, lessonMeta, lessonCounts, current?.unitId)
+  // Up next: the next open, unfinished lesson from the stop the learner is at (else from their start).
+  const next = nextLesson(access, lessonMeta, current?.unitId)
   const nextInfo = next ? stopFor(next.unitId) : currentInfo
   const kmToday = byDate.get(today)?.xp ?? 0
   const practisedToday = active(byDate.get(today))
@@ -287,6 +289,7 @@ export default function Course() {
         cardsByLesson={cardsByLesson}
         exams={exams}
         startLevel={startLevel}
+        access={access}
         quizRecords={quizRecords}
         currentId={next?.id}
         highlight={highlight}
@@ -332,18 +335,10 @@ function BackToTop() {
 const FLAG = COURSES.find((c) => c.id === COURSE_ID)?.flag ?? '🌍'
 
 interface NextLesson { id: string; title: string; unitId: string; n: number; count: number }
-/** The first unfinished lesson at or after the given unit, else the first unfinished lesson anywhere. */
-function nextLesson(rows: Map<string, LessonRow>, meta: Map<string, Lesson[]>, counts: Map<string, number>, fromUnit: string | undefined): NextLesson | undefined {
-  const all: NextLesson[] = []
-  for (const level of levels)
-    for (const u of level.units) {
-      if (!u.authored) continue
-      const lessons = meta.get(u.id) ?? Array.from({ length: counts.get(u.id) ?? 0 }, (_, i) => ({ id: `${u.id}.l${i + 1}`, title: `Lesson ${i + 1}` }))
-      lessons.forEach((l, i) => all.push({ id: l.id, title: l.title, unitId: u.id, n: i + 1, count: lessons.length }))
-    }
-  const start = Math.max(0, all.findIndex((l) => l.unitId === fromUnit))
-  const open = (l: NextLesson) => (rows.get(l.id)?.completions ?? 0) === 0
-  return all.slice(start).find(open) ?? all.find(open) ?? all[start]
+/** The current lesson (the next open, unfinished one: see CourseAccess.current) with its title. */
+function nextLesson(access: CourseAccess, meta: Map<string, Lesson[]>, fromUnit: string | undefined): NextLesson | undefined {
+  const l = access.current(fromUnit)
+  return l && { id: l.id, title: meta.get(l.unitId)?.[l.n - 1]?.title ?? `Lesson ${l.n}`, unitId: l.unitId, n: l.n, count: l.count }
 }
 
 /** The "Up next" boarding pass: from where the dogs are to the next lesson, with a tear-off stub. */

@@ -276,3 +276,39 @@ dialogues:
       - { q: "Chi parlava della funicolare con malinconia?", options: ["Rosaria.", "Il nonno di Tonino.", "Il direttore dell'Osservatorio."], answer: 1, explain: "Ai tempi di mio nonno. Ne parlava sempre con malinconia." }
       - { q: "Quando c'è stata l'ultima eruzione del Vesuvio?", options: ["Nel 79 d.C.", "Nel 1944.", "Nel 2017."], answer: 1, explain: "L'ultima eruzione è stata nel 1944." }
       - { q: "Che cosa si vede dal cratere nelle giornate limpide?", options: ["Roma.", "Capri.", "La Sicilia."], answer: 1, explain: "Nelle giornate limpide si vede anche Capri." }
+writing:
+  - task: "Write a short text full of wishes and daydreams: your dream life by the sea (magari…, se solo… + congiuntivo imperfetto)."
+    min: 80
+    max: 140
+    use: [w.se-solo, w.casa-al-mare, w.barca-a-vela, w.sognare-a-occhi-aperti, w.illudersi]
+    grammar: [g.magari-se-solo]
+    expect:
+      - { pattern: "\\bmagari\\s+(\\S+\\s+){0,2}(fosse|fossi|avessi|avesse|potessi|potesse|\\S+(asse|esse|isse|assi|essi|issi))\\b|\\bse solo\\b", hint: "Use magari / se solo + congiuntivo imperfetto: magari avessi…, se solo potessi…" }
+    model: { es: "Ogni tanto sogno a occhi aperti. Magari avessi una casa al mare sulla costiera, con una terrazza piena di limoni! Se solo potessi lavorare da lì, invece che in un ufficio grigio in città. Magari avessi anche una barca a vela per andare a Capri ogni fine settimana. Se solo il mio stipendio fosse un po' più alto! Lo so, non bisogna illudersi: sono una sognatrice, non una realista. Però sognare non costa niente, e qualche volta i sogni si avverano. Magari!", en: "Every now and then I daydream. If only I had a house by the sea on the coast, with a terrace full of lemon trees! If only I could work from there, instead of in a grey office in the city. If only I had a sailing boat too, to go to Capri every weekend. If only my salary were a bit higher! I know, you shouldn't fool yourself: I'm a dreamer, not a realist. But dreaming costs nothing, and sometimes dreams come true. If only!" }
+  - task: "Write a message to your partner or a family member about how you would like things to change at home (vorrei che tu…, mi piacerebbe che…)."
+    min: 80
+    max: 140
+    use: [w.equilibrio, w.stressato, w.serenità, w.routine, w.ritmo]
+    grammar: [g.vorrei-che]
+    expect:
+      - { pattern: "\\b(vorrei|vorremmo|mi piacerebbe|preferirei|sarebbe bello) che\\b", hint: "Use vorrei che / mi piacerebbe che + congiuntivo imperfetto." }
+      - { pattern: "\\b(fosse|fossi|avessi|avesse|potessimo|\\S+(asse|esse|isse|assi|essi|issi|assimo|essimo|issimo))\\b", hint: "Use the congiuntivo imperfetto: tornassi, fosse, trovassimo…" }
+    model: { es: "Amore, ultimamente siamo tutti e due troppo stressati. Vorrei che trovassimo un nuovo equilibrio tra lavoro e vita privata. Mi piacerebbe che tu tornassi a casa prima la sera, così potremmo cenare insieme con calma. Vorrei anche che il weekend non fosse sempre pieno di impegni: preferirei che ci prendessimo del tempo solo per noi. Questo ritmo e questa routine mi pesano. Che ne dici se il mese prossimo andiamo qualche giorno a Napoli? Vorrei che salissimo insieme sul Vesuvio e che ritrovassimo un po' di serenità.", en: "Darling, lately we've both been too stressed. I'd like us to find a new balance between work and private life. I'd like you to come home earlier in the evening, so we could have dinner together calmly. I'd also like the weekend not to be always full of commitments: I'd rather we took some time just for us. This pace and this routine weigh on me. How about going to Naples for a few days next month? I'd like us to climb Vesuvius together and find a bit of peace again." }
+  - task: "Write about your climb up Vesuvius: what you believed beforehand and what you discovered, using the right congiuntivo tense after past verbs (credevo che fosse…, non immaginavo che si vedesse…)."
+    min: 80
+    max: 140
+    use: [w.incredibile, w.straordinario.adj, w.funicolare, w.aspettarsi, w.meraviglioso]
+    grammar: [g.concordanza-congiuntivo]
+    expect:
+      - { pattern: "\\b(credevo|pensavo|immaginavo|non sapevo|temevo|speravo|mi aspettavo|non mi aspettavo|non immaginavo|sembrava) che\\b", hint: "Use a past verb + che: credevo che…, non immaginavo che…" }
+      - { pattern: "\\b(fosse|fossero|avesse|avessero|ci fosse|\\S+(asse|esse|isse|assero|essero|issero))\\b", hint: "Use the congiuntivo imperfetto after a past verb: fosse, vedesse…" }
+    model: { es: "Ieri sono salito sul Vesuvio. Credevo che fosse un vulcano spento da secoli, invece la guida ci ha spiegato che è ancora attivo e che l'ultima eruzione è stata nel 1944. Non mi aspettavo che la salita fosse così faticosa: pensavo che ci fosse ancora la funicolare, ma è stata chiusa molti anni fa. Arrivati in cima, però, il panorama era incredibile. Non immaginavo che si vedesse tutto il golfo di Napoli, fino a Capri! Era come se il mondo fosse ai miei piedi. Un'esperienza davvero straordinaria.", en: "Yesterday I climbed Vesuvius. I thought it was a volcano that had been extinct for centuries, but the guide explained that it's still active and that the last eruption was in 1944. I didn't expect the climb to be so tiring: I thought the funicular was still there, but it closed many years ago. At the top, though, the view was incredible. I never imagined you could see the whole Bay of Naples, as far as Capri! It was as if the world were at my feet. A truly extraordinary experience." }
+  - task: "An elderly Neapolitan remembers the past. Write his or her monologue, full of nostalgia: ai miei tempi…, magari…, vorrei che i giovani…, come se…"
+    min: 80
+    max: 140
+    use: [w.ai-miei-tempi, w.giovinezza, w.nostalgico, w.invecchiare, w.malinconia]
+    grammar: [g.magari-se-solo, g.concordanza-congiuntivo]
+    expect:
+      - { pattern: "ai miei tempi", hint: "Start your memories: Ai miei tempi…" }
+      - { pattern: "\\bmagari\\b|\\bse solo\\b|\\bvorrei che\\b|\\bcome se\\b", hint: "Add a wish or comparison: magari…, vorrei che…, come se…" }
+    model: { es: "Ai miei tempi Napoli era diversa. Da giovane passavo le serate al porto con gli amici, e non avevamo bisogno di niente per essere felici. Oggi i ragazzi guardano sempre il telefono, come se il mondo fosse lì dentro. Vorrei che i miei nipoti capissero quanto era bella la vita semplice. Magari potessi tornare alla mia giovinezza, anche solo per un giorno! Non sono un vecchio nostalgico, eh: so che invecchiare fa parte della vita. Però ogni tanto mi prende un po' di malinconia, e allora vado a guardare il mare.", en: "In my day Naples was different. When I was young I spent my evenings at the port with my friends, and we didn't need anything to be happy. Today young people are always looking at their phones, as if the world were in there. I wish my grandchildren understood how beautiful the simple life was. If only I could go back to my youth, even just for a day! I'm not a nostalgic old man, mind: I know that growing old is part of life. But every now and then I feel a bit melancholy, and then I go and look at the sea." }

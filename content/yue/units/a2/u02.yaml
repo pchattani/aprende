@@ -279,3 +279,44 @@ dialogues:
       - { q: "志明喺度做緊乜嘢呀？", options: ["煮緊飯", "睇緊電視", "排緊隊"], answer: 0, explain: "我喺屋企煮緊飯: he is cooking at home." }
       - { q: "嘉欣前面仲有幾多人？", options: ["十個", "二十個", "兩個"], answer: 1, explain: "前面仲有二十個人: twenty people are still ahead of her." }
       - { q: "外面嘅天氣點呀？", options: ["好熱", "落緊雨", "打緊風"], answer: 1, explain: "外面落緊雨: it is raining outside." }
+writing:
+  - task: "A friend calls while you're driving. Explain why you can't talk now and say you'll call back later."
+    es: "喂？你做緊乜嘢呀？"
+    min: 20
+    max: 45
+    use: [w.gan2, w.fong1-bin6, w.gong2-din6-waa2, w.dang2-zan6]
+    useAtLeast: 3
+    grammar: [g.gan-progressive]
+    expect:
+      - { pattern: "緊", hint: "Say what you're doing with verb + 緊: 我揸緊車." }
+      - { pattern: "唔方便|等陣|一陣", hint: "Say you'll talk later: 我等陣再打畀你." }
+    model: { es: "我揸緊車，唔方便講電話。我等陣再打畀你，好唔好？", en: "I'm driving, so I can't really talk on the phone. I'll call you later, OK?" }
+  - task: "Describe what people are doing on a busy Mong Kok street right now. Use 喺度 and 緊."
+    min: 25
+    max: 55
+    use: [w.coeng3-go1, w.tiu3-mou5, w.paai4-deoi2, w.jit6-naau6]
+    useAtLeast: 3
+    grammar: [g.hai-dou-progressive, g.gan-progressive]
+    expect:
+      - { pattern: "喺度", hint: "Use 喺度 + verb: 有人喺度跳舞." }
+      - { pattern: "緊", hint: "Use verb + 緊: 唱緊歌." }
+    model: { es: "旺角而家好熱鬧。有人唱緊歌，有人喺度跳舞，好多人喺度排隊買嘢食。", en: "Mong Kok is really lively right now. Some people are singing, some are dancing, and lots of people are queuing up to buy food." }
+  - task: "Describe a girl in a photo with 住: what she is wearing and holding."
+    min: 20
+    max: 45
+    use: [w.zyu6.b, w.daai3.b, w.ngaan5-geng2, w.zoek3-zyu6, w.ngoi6-tou3]
+    useAtLeast: 3
+    grammar: [g.zyu-continuous]
+    expect:
+      - { pattern: "(戴|着|拎|揸|抱|企|坐)住", hint: "Describe the state with verb + 住: 戴住眼鏡, 着住外套." }
+    model: { es: "相入面嗰個女仔戴住眼鏡，着住紅色外套，拎住一杯奶茶，喺度笑。", en: "The girl in the photo is wearing glasses and a red jacket, holding a milk tea, and laughing." }
+  - task: "Your flatmate is out. Text them what everyone at home is doing right now, and ask when they're coming back."
+    min: 20
+    max: 50
+    use: [w.zyu2-gan2-faan6, w.fan3-gan2-gaau3, w.hai2-dou6, w.faan1-lai4]
+    useAtLeast: 3
+    grammar: [g.gan-progressive, g.hai-dou-progressive]
+    expect:
+      - { pattern: "緊|喺度", hint: "Say what people are doing: 煮緊飯, 喺度睇電視." }
+      - { pattern: "幾時", hint: "Ask when: 你幾時返嚟呀？" }
+    model: { es: "我喺度煮緊飯，嘉欣瞓緊覺，Leo喺度睇電視。你幾時返嚟呀？", en: "I'm cooking, Ka-yan is sleeping and Leo is watching TV. When are you coming back?" }

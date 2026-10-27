@@ -282,3 +282,41 @@ dialogues:
       - { q: "Où se trouve le laboratoire de Sophie ?", options: ["Au sommet de la Bastille", "Sur la presqu'île, au bord de l'Isère", "Dans le Vercors"], answer: 1, explain: "« au bord de laquelle se trouve mon labo » … « sur la presqu'île »." }
       - { q: "Sur quoi travaille Sophie ?", options: ["Un robot", "Un capteur qui mesure la pollution de l'air", "Un vaccin"], answer: 1, explain: "« Un capteur à l'intérieur duquel on met une puce minuscule. Il mesure la pollution de l'air. »" }
       - { q: "Que peut-on voir de la Bastille par temps clair ?", options: ["La mer", "Le mont Blanc", "Lyon"], answer: 1, explain: "« Et le mont Blanc, par temps clair. »" }
+writing:
+  - task: "Describe the laboratory, office or school where you work or study in Grenoble, and the people you work with (dans lequel, avec lesquels, grâce auquel…)."
+    min: 80
+    max: 150
+    use: [w.laboratoire, w.ingénieur, w.scientifique, w.technologie, w.recherche]
+    useAtLeast: 3
+    grammar: [g.relative-lequel]
+    expect:
+      - { pattern: "\\b(lequel|laquelle|lesquels|lesquelles|auquel|auxquels|auxquelles|duquel|desquels|desquelles)\\b", hint: "Use lequel after a preposition: le laboratoire dans lequel je travaille, les collègues avec lesquels…" }
+    model: { es: "Je suis ingénieure dans un laboratoire de recherche à Grenoble. Le bâtiment dans lequel je travaille se trouve sur le campus, au pied des montagnes. Mon équipe compte six scientifiques avec lesquels je m'entends très bien. Nous travaillons sur une nouvelle technologie grâce à laquelle les panneaux solaires produiront plus d'électricité. Le microscope sur lequel je fais mes analyses coûte plus cher qu'une maison ! La directrice, pour laquelle j'ai beaucoup d'admiration, encourage toujours nos idées. C'est un métier passionnant dans lequel on apprend chaque jour.", en: "I'm an engineer in a research laboratory in Grenoble. The building I work in is on the campus, at the foot of the mountains. My team has six scientists with whom I get on very well. We're working on a new technology thanks to which solar panels will produce more electricity. The microscope on which I do my analyses costs more than a house! The director, for whom I have great admiration, always encourages our ideas. It's a fascinating job in which you learn something every day." }
+  - task: "Write a short report on a conference (colloque) you attended in Grenoble: the topic, the talks and the people you met (le colloque auquel j'ai participé, la chercheuse à côté de laquelle…)."
+    min: 80
+    max: 150
+    use: [w.colloque, w.participer, w.collaboration, w.sujet, w.conférence]
+    useAtLeast: 3
+    grammar: [g.auquel-duquel]
+    expect:
+      - { pattern: "\\b(auquel|auxquels|auxquelles|laquelle|duquel|desquels|desquelles)\\b", hint: "Use auquel / duquel / à laquelle: le colloque auquel j'ai participé, la salle près de laquelle…" }
+    model: { es: "La semaine dernière, j'ai participé à un colloque international sur l'énergie, auquel plus de trois cents chercheurs étaient inscrits. Le sujet auquel je m'intéresse le plus, l'énergie solaire, était au cœur des débats. La première conférence, à laquelle tout le monde a assisté, a eu lieu dans un amphithéâtre au milieu duquel se trouvait un prototype de voiture. J'ai déjeuné avec une chercheuse japonaise à côté de laquelle j'étais assise. Nous avons parlé d'une collaboration possible entre nos deux laboratoires. Ce sont des rencontres grâce auxquelles la science progresse.", en: "Last week I attended an international conference on energy, for which over three hundred researchers had registered. The topic I'm most interested in, solar energy, was at the heart of the debates. The first lecture, which everyone attended, took place in a lecture hall in the middle of which stood a prototype car. I had lunch with a Japanese researcher I was sitting next to. We talked about a possible collaboration between our two laboratories. These are the kinds of meetings thanks to which science progresses." }
+  - task: "Write a short guidebook text about Grenoble: the cable car thanks to which you reach the Bastille, the mountains in the middle of which the city lies, the river whose banks… (dont, duquel, grâce auquel)."
+    min: 80
+    max: 150
+    use: [w.téléphérique, w.bulle, w.relier, w.apercevoir, w.urbain]
+    useAtLeast: 3
+    grammar: [g.dont-vs-duquel, g.auquel-duquel]
+    expect:
+      - { pattern: "\\b(dont|duquel|desquels|desquelles|auquel|auxquels|auxquelles|lequel|laquelle)\\b", hint: "Use dont or a compound relative: une ville dont…, au milieu duquel…, grâce auquel…" }
+      - { pattern: "\\b(gr[aâ]ce|pr[eè]s|milieu|bord|bout|dessus|autour|c[oô]t[eé]|face) (auquel|auxquels|auxquelles|duquel|desquels|desquelles|de laquelle|[aà] laquelle)\\b", hint: "After a compound preposition, use duquel / auquel: au milieu desquelles, grâce auquel…" }
+    model: { es: "Grenoble est une ville dont on parle souvent comme de la capitale des Alpes. Elle se trouve au cœur de trois massifs, au milieu desquels coule l'Isère. Ce que tout le monde visite, c'est le téléphérique de la Bastille, grâce auquel on rejoint le vieux fort en quelques minutes. Ses petites cabines sphériques, que les habitants appellent « les bulles », relient le centre urbain à la montagne. Du sommet, on aperçoit le mont Blanc, au pied duquel se trouve Chamonix. C'est une vue dont on se souvient longtemps !", en: "Grenoble is a city often described as the capital of the Alps. It lies at the heart of three mountain ranges, in the middle of which flows the Isère. What everyone visits is the Bastille cable car, thanks to which you reach the old fort in a few minutes. Its little spherical cabins, which locals call 'the bubbles', link the city centre to the mountain. From the top you can see Mont Blanc, at the foot of which lies Chamonix. It's a view you remember for a long time!" }
+  - task: "Write an opinion piece about a technology you use every day (artificial intelligence, smartphones…): the discoveries people talk about and the problems we face (dont on parle, auxquels nous faisons face…)."
+    min: 90
+    max: 150
+    use: [w.intelligence-artificielle, w.numérique, w.connecté, w.algorithme, w.démontrer]
+    useAtLeast: 3
+    grammar: [g.dont-vs-duquel, g.relative-lequel]
+    expect:
+      - { pattern: "\\b(dont|lequel|laquelle|lesquels|lesquelles|auquel|auxquels|auxquelles|duquel|desquels|desquelles)\\b", hint: "Use dont or lequel: les découvertes dont on parle, les problèmes auxquels nous faisons face…" }
+    model: { es: "L'intelligence artificielle est la technologie dont tout le monde parle aujourd'hui. Les applications avec lesquelles nous travaillons sont de plus en plus puissantes : elles répondent à nos questions, écrivent et même dessinent. Je reconnais que c'est un outil grâce auquel je gagne beaucoup de temps. Cependant, il existe des problèmes auxquels nous devons réfléchir. Les algorithmes sur lesquels reposent ces outils ne sont pas toujours fiables, et plusieurs études ont démontré qu'ils pouvaient reproduire nos erreurs. Dans un monde numérique où nous sommes connectés tout le temps, nous devons garder le sens critique et vérifier les informations.", en: "Artificial intelligence is the technology everyone is talking about today. The applications we work with are more and more powerful: they answer our questions, write and even draw. I admit it's a tool thanks to which I save a lot of time. However, there are problems we need to think about. The algorithms on which these tools are based are not always reliable, and several studies have shown that they can reproduce our mistakes. In a digital world where we are connected all the time, we must keep our critical sense and check information." }

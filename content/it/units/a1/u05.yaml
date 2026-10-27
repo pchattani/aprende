@@ -282,3 +282,39 @@ dialogues:
       - { q: "Che cos'è un maritozzo?", options: ["Un caffè.", "Un dolce romano.", "Un panino con il prosciutto."], answer: 1, explain: "The barista says «È un dolce romano con la panna»." }
       - { q: "Che acqua prendono?", options: ["Frizzante.", "Naturale.", "Non prendono acqua."], answer: 1, explain: "«Due bicchieri d'acqua naturale»." }
       - { q: "Chi paga al bar?", options: ["Giulia.", "Tom.", "Il barista."], answer: 1, explain: "Tom insists «pago io!»; Giulia will pay for dinner." }
+writing:
+  - task: "You are at a bar near the Trevi Fountain. Write what you say to the barista: greet him, order a drink and something to eat, then ask for the bill."
+    es: "Buongiorno! Cosa prende?"
+    min: 10
+    max: 30
+    use: [w.volere, w.cappuccino, w.cornetto, w.conto, w.per-favore]
+    grammar: [g.volere-vorrei]
+    expect:
+      - { pattern: "\\bvorrei\\b|\\bprendo\\b", hint: "Order politely: Vorrei … / Prendo …" }
+      - { pattern: "per favore|per piacere", hint: "Be polite: per favore." }
+    model: { es: "Buongiorno! Vorrei un cappuccino e un cornetto, per favore. E anche un bicchiere d'acqua. Grazie! Il conto, per favore.", en: "Good morning! I'd like a cappuccino and a croissant, please. And a glass of water too. Thank you! The bill, please." }
+  - task: "Write to Giulia about food: say what you like and don't like to eat and drink."
+    min: 15
+    max: 40
+    use: [w.piacere, w.pizza, w.pasta, w.pesce, w.vino]
+    grammar: [g.piacere-intro]
+    expect:
+      - { pattern: "\\bmi piace\\b|\\bmi piacciono\\b", hint: "Say what you like: Mi piace la pizza." }
+      - { pattern: "\\bnon mi piac", hint: "Say what you don't like: Non mi piace il pesce." }
+    model: { es: "Mi piace molto la pizza, ma non mi piace il pesce. Mi piace la pasta con il pomodoro. Non mi piace il vino: preferisco l'acqua frizzante.", en: "I really like pizza, but I don't like fish. I like pasta with tomato. I don't like wine: I prefer sparkling water." }
+  - task: "Describe a typical dinner out with a friend: where you eat, who orders what, what you talk about and who pays."
+    min: 15
+    max: 40
+    use: [w.cenare, w.ordinare, w.mangiare, w.parlare, w.pagare]
+    grammar: [g.present-are]
+    expect:
+      - { pattern: "\\b(cen|ordin|mang|parl|pag|cucin|ascolt)\\w*", hint: "Use -are verbs: ceno, ordino, paghiamo…" }
+    model: { es: "La sera ceno con Giulia in trattoria. Io ordino la pasta e Giulia mangia il pollo con l'insalata. Parliamo molto. Alla fine pago io!", en: "In the evening I have dinner with Giulia at a trattoria. I order pasta and Giulia eats chicken with salad. We talk a lot. In the end I pay!" }
+  - task: "You and a friend are planning a picnic. Write a message saying what you are buying and what your friend should bring: some bread, some cheese, some fruit…"
+    min: 15
+    max: 40
+    use: [w.pane, w.formaggio, w.frutta, w.acqua, w.prosciutto]
+    grammar: [g.partitive-di]
+    expect:
+      - { pattern: "\\b(del|dello|della|dei|degli|delle)\\b|\\bdell['’]", hint: "Say 'some': del pane, della frutta, dell'acqua." }
+    model: { es: "Ciao, Marco! Per il pranzo al parco compro del pane e del formaggio. Prendo anche del prosciutto. Tu porti della frutta e dell'acqua? A dopo!", en: "Hi, Marco! For lunch in the park I'll buy some bread and some cheese. I'll get some ham too. Can you bring some fruit and some water? See you later!" }

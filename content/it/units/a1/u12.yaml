@@ -299,3 +299,42 @@ dialogues:
       - { q: "Che cosa fanno sabato sera?", options: ["Un aperitivo e una cena", "Un concerto", "Una passeggiata a Villa Borghese"], answer: 0, explain: "Giulia plans an aperitivo in Piazza di Spagna and then dinner in a trattoria in Testaccio." }
       - { q: "Chi abita a Firenze?", options: ["La sorella di Tom", "La cugina di Giulia", "Sara e Marco"], answer: 1, explain: "Giulia's cousin lives in Florence." }
       - { q: "Dove fanno l'aperitivo?", options: ["A Testaccio", "A Piazza di Spagna", "A Trastevere"], answer: 1, explain: "The aperitivo is 'qui a Piazza di Spagna', where they are sitting." }
+writing:
+  - task: "Write to a friend about your plans for this weekend, using the present tense (stasera, sabato, domenica…)."
+    min: 15
+    max: 40
+    use: [w.stasera, w.programma, w.concerto, w.prossimo, w.fantastico]
+    useAtLeast: 2
+    grammar: [g.present-for-future]
+    expect:
+      - { pattern: "\\b(stasera|domani|sabato|domenica|weekend|fine settimana|dopodomani|venerdì)", hint: "Say when: stasera, sabato, domenica…" }
+    model: { es: "Questo weekend ho un programma fantastico! Sabato vado a un concerto in Piazza di Spagna. Domenica mattina faccio una passeggiata e la sera ceno con Giulia. E tu, che fai?", en: "This weekend I've got a fantastic plan! On Saturday I'm going to a concert in Piazza di Spagna. On Sunday morning I'm going for a walk and in the evening I'm having dinner with Giulia. And you, what are you doing?" }
+  - task: "Giulia invites you out. Reply: accept or say you can't, explain why, and suggest another plan."
+    es: "Ciao! Venerdì sera c'è una mostra in centro. Vieni con me?"
+    min: 15
+    max: 40
+    use: [w.volentieri, w.libero, w.occupato, w.però, w.mostra]
+    grammar: [g.connectors-basic, g.present-for-future]
+    expect:
+      - { pattern: "\\b(volentieri|mi dispiace|non posso|certo|perfetto|va bene)\\b", hint: "Accept or decline: Volentieri! / Mi dispiace, non posso." }
+      - { pattern: "\\b(però|ma|quindi|perch[eé])", hint: "Explain with a connector: perché, però, quindi…" }
+    model: { es: "Mi dispiace, venerdì sera sono occupato perché lavoro fino a tardi. Però sabato sono libero! Andiamo insieme alla mostra sabato pomeriggio? Poi prendiamo un aperitivo.", en: "I'm sorry, on Friday evening I'm busy because I work late. But on Saturday I'm free! Shall we go to the exhibition together on Saturday afternoon? Then we can have an aperitif." }
+  - task: "Giulia tells you how she is and what she is doing. React to each sentence with anch'io, neanch'io, io sì or io no, and add a few words."
+    es: "Io sono stanca. Non ho fame. Stasera vado al concerto."
+    min: 12
+    max: 35
+    use: [w.anche, w.neanche, w.stanco, w.fame, w.concerto]
+    grammar: [g.anche-neanche]
+    expect:
+      - { pattern: "anch['’] ?io|anche io|io sì", hint: "Agree with a positive: Anch'io! / Io sì." }
+      - { pattern: "neanch['’] ?io|neanche io|nemmeno io|io no", hint: "Agree with a negative: Neanch'io! / Say you differ: Io no." }
+    model: { es: "Anch'io sono stanco, oggi lavoro molto! Neanch'io ho fame. Il concerto? Io no, stasera rimango a casa. Però domani sono libero!", en: "I'm tired too, I'm working a lot today! I'm not hungry either. The concert? Not me, tonight I'm staying at home. But tomorrow I'm free!" }
+  - task: "Write a postcard saying goodbye to Rome: what you do and like there, and where your next stop is. Connect your ideas with prima, poi, ma, quindi."
+    min: 20
+    max: 40
+    use: [w.vacanza, w.viaggio, w.tappa, w.prossimo, w.fantastico]
+    grammar: [g.connectors-basic, g.a1-review]
+    expect:
+      - { pattern: "\\b(prima|poi|quindi|ma|mentre|dopo)\\b", hint: "Connect your ideas: prima, poi, ma, quindi…" }
+      - { pattern: "\\b(prossima tappa|domani|toscana|firenze|parto)\\b", hint: "Say where you go next: La prossima tappa è …" }
+    model: { es: "Cara Giulia, la mia vacanza a Roma è fantastica! Prima visito il Colosseo, poi mangio un gelato in piazza. Mi piace tutto, ma domani parto: la prossima tappa è la Toscana! A presto!", en: "Dear Giulia, my holiday in Rome is fantastic! First I visit the Colosseum, then I eat an ice cream in the square. I like everything, but tomorrow I'm leaving: the next stop is Tuscany! See you soon!" }

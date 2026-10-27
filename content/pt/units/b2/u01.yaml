@@ -281,3 +281,43 @@ dialogues:
       - { q: "Segundo a Carla, o que falta no emprego dela?", options: ["Estabilidade", "Benefícios", "Qualidade de vida"], answer: 2, explain: "She admits she earns well but says: não tenho qualidade de vida." }
       - { q: "O que o Tiago aconselha?", options: ["Fazer um ano sabático antes de decidir", "Abrir a pousada amanhã", "Mudar de chefe"], answer: 0, explain: "Se eu fosse você, faria um ano sabático antes de decidir." }
       - { q: "Qual é a condição do Tiago para entrar no negócio?", options: ["Não lavar a louça", "Ter moqueca no cardápio todo dia", "Morar na pousada"], answer: 1, explain: "Só se o cardápio tiver moqueca todo dia: a real condition with the future subjunctive." }
+writing:
+  - task: "If you had a sabbatical year, what would you do and where would you go? Write about it (Se eu tivesse…, eu faria…)."
+    min: 80
+    max: 140
+    use: [w.ano-sabático, w.voluntariado, w.qualidade-de-vida, w.ritmo, w.desacelerar]
+    useAtLeast: 3
+    grammar: [g.subjunctive-imperfect, g.se-clauses-unreal]
+    expect:
+      - { pattern: '\bse( eu| a gente| n[oó]s| voc[eê])?( n[aã]o)? [a-zà-ú]+(sse|ssemos|ssem)\b', hint: "Use se + imperfect subjunctive: Se eu tivesse um ano sabático…" }
+      - { pattern: '\b[a-zà-ú]+(ria|r[ií]amos|riam)\b', hint: "Give the consequence in the conditional: eu faria…, eu moraria…" }
+    model: { es: "Se eu tivesse um ano sabático, eu iria morar em Salvador. Eu alugaria uma casinha perto do Pelourinho e tentaria desacelerar, porque hoje o meu ritmo de vida é muito rápido. De manhã, eu faria voluntariado numa ONG que ensina música para crianças. À tarde, eu aprenderia capoeira e, à noite, ouviria o som do Olodum. Se eu pudesse, também viajaria pelo interior da Bahia. Acho que a minha qualidade de vida melhoraria muito e eu voltaria uma pessoa mais calma e mais feliz.", en: "If I had a sabbatical year, I'd go and live in Salvador. I'd rent a little house near the Pelourinho and try to slow down, because these days my pace of life is very hectic. In the mornings I'd volunteer at an NGO that teaches music to children. In the afternoons I'd learn capoeira and in the evenings I'd listen to the sound of Olodum. If I could, I'd also travel around the interior of Bahia. I think my quality of life would improve a lot and I'd come back a calmer, happier person." }
+  - task: "If you opened a business in Brazil, what would it be and how would you run it? Use unreal conditions (Se eu abrisse…, eu procuraria…)."
+    min: 80
+    max: 140
+    use: [w.negócio, w.sócio, w.empreendedor, w.investidor, w.benefício]
+    useAtLeast: 3
+    grammar: [g.se-clauses-unreal, g.subjunctive-imperfect]
+    expect:
+      - { pattern: '\bse( eu| a gente| n[oó]s| o [a-zà-ú]+| a [a-zà-ú]+)?( n[aã]o)? [a-zà-ú]+(sse|ssemos|ssem)\b', hint: "Use se + imperfect subjunctive: Se eu abrisse um negócio…" }
+      - { pattern: '\b[a-zà-ú]+(ria|r[ií]amos|riam)\b', hint: "Give the consequences in the conditional: seria, procuraria, abriríamos…" }
+    model: { es: "Se eu abrisse um negócio no Brasil, seria um café com livros em Salvador. Eu procuraria um sócio baiano que conhecesse bem a cidade, e nós buscaríamos um investidor para começar. Como líder, eu tentaria criar um ambiente leve: os funcionários teriam bons benefícios e um plano de carreira. Se o café desse certo, abriríamos outro em Recife. Claro que ser empreendedor dá medo, mas se eu não tentasse, ficaria frustrado para sempre. Mesmo assim, se eu tivesse a chance, abriria o café amanhã mesmo.", en: "If I opened a business in Brazil, it would be a café with books in Salvador. I'd look for a partner from Bahia who knew the city well, and we'd look for an investor to get started. As a leader, I'd try to create a relaxed atmosphere: the staff would have good benefits and a career plan. If the café worked out, we'd open another one in Recife. Of course being an entrepreneur is scary, but if I didn't try, I'd be frustrated for ever. Even so, if I had the chance, I'd open the café tomorrow." }
+  - task: "Describe an evening in the Pelourinho to someone who has never been, imagining they were there (Se você estivesse lá, ouviria…, veria…)."
+    min: 80
+    max: 140
+    use: [w.capoeira, w.berimbau, w.roda, w.acarajé, w.dendê]
+    useAtLeast: 3
+    grammar: [g.subjunctive-imperfect, g.se-clauses-unreal]
+    expect:
+      - { pattern: '\bse( eu| voc[eê]| a gente| n[oó]s)?( n[aã]o)? [a-zà-ú]+(sse|ssemos|ssem)\b', hint: "Imagine with se + imperfect subjunctive: Se você estivesse no Pelourinho…" }
+      - { pattern: '\b[a-zà-ú]+(ria|riam)\b', hint: "Describe what they would experience in the conditional: ouviria, veria, compraria…" }
+    model: { es: "Se você estivesse no Pelourinho agora, ouviria o som do berimbau e veria uma roda de capoeira no meio da praça. Dois jovens jogariam capoeira enquanto todo mundo bate palmas e canta. Depois, você compraria um acarajé com vatapá e camarão numa barraca. Cuidado: o dendê é forte e a pimenta é ainda mais! Se você pedisse quente, a baiana colocaria muita pimenta. Para terminar, você amarraria uma fitinha do Senhor do Bonfim no braço e faria três pedidos. Tenho certeza de que você voltaria para casa apaixonado pela Bahia.", en: "If you were in the Pelourinho now, you'd hear the sound of the berimbau and see a capoeira circle in the middle of the square. Two young people would be playing capoeira while everyone claps and sings. Then you'd buy an acarajé with vatapá and shrimp at a stall. Careful: the palm oil is strong and the chilli even more so! If you asked for it hot, the baiana would add lots of chilli. To finish, you'd tie a Senhor do Bonfim ribbon round your arm and make three wishes. I'm sure you'd come home in love with Bahia." }
+  - task: "Describe a colleague or acquaintance who behaves as if they were someone else (Ele age como se fosse o dono…, fala como se soubesse tudo…)."
+    min: 80
+    max: 140
+    use: [w.mandão, w.metido, w.autoritário, w.puxa-saco, w.superior]
+    useAtLeast: 3
+    grammar: [g.como-se]
+    expect:
+      - { pattern: '\bcomo se( [a-zà-ú]+)? [a-zà-ú]+(sse|ssem|ssemos)\b', hint: "Use como se + imperfect subjunctive: como se fosse o dono…" }
+    model: { es: "No meu trabalho tem um colega muito mandão, o Rodrigo. Ele chegou há seis meses, mas age como se fosse o dono da empresa. Ele dá ordens para todo mundo, como se fosse o nosso chefe, e fala como se soubesse tudo. Com o diretor, porém, ele é um puxa-saco: concorda com tudo e ri de tudo o que ele diz. Ele é tão metido e autoritário que ninguém quer trabalhar com ele. Às vezes tenho vontade de dizer que ele não é superior a ninguém.", en: "At work there's a very bossy colleague, Rodrigo. He arrived six months ago, but he acts as if he owned the company. He gives everybody orders, as if he were our boss, and talks as if he knew everything. With the director, however, he's a crawler: he agrees with everything and laughs at everything he says. He's so full of himself and authoritarian that nobody wants to work with him. Sometimes I feel like telling him he's no better than anyone." }

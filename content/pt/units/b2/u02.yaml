@@ -280,3 +280,42 @@ dialogues:
       - { q: "Quem ajudou o Felipe?", options: ["A mãe dele", "Um socorrista de plantão", "Outro turista"], answer: 1, explain: "The paramedic was on duty at the park entrance and arrived quickly." }
       - { q: "Para a Renata, qual foi a causa do acidente?", options: ["O destino", "Um milagre", "Falta de cautela"], answer: 2, explain: "Foi falta de cautela, isso sim." }
       - { q: "Quando eles vão voltar à Fumaça?", options: ["Amanhã de manhã", "Quando ele tiver tirado o gesso", "No próximo Carnaval"], answer: 1, explain: "Quando você tiver tirado o gesso, a gente volta à Fumaça: compound future subjunctive." }
+writing:
+  - task: "A friend went hiking in the Chapada Diamantina during a storm and hasn't replied. Write a message with your hopes and worries about what has happened (Espero que você tenha chegado…, Tomara que não tenha…)."
+    min: 80
+    max: 140
+    use: [w.emergência, w.resgate, w.coincidência, w.desastre, w.sobreviver]
+    useAtLeast: 2
+    grammar: [g.subjunctive-perfect]
+    expect:
+      - { pattern: '\b(tenha|tenham|tenhamos) [a-zà-ú]+(ado|ido|ito|isto|eito|osto)\b', hint: "Use the perfect subjunctive: Espero que você tenha chegado bem." }
+    model: { es: "Oi, Lia! Vi no jornal que caiu uma tempestade forte na Chapada Diamantina ontem. Espero que você tenha chegado bem a Lençóis e que não tenha feito a trilha do Vale do Pati com aquela chuva. Tomara que o guia tenha decidido voltar mais cedo! Dizem que houve uma emergência com um grupo de turistas, mas que o resgate foi rápido. Talvez seja só uma coincidência, mas estou preocupada. Me manda uma mensagem assim que puder, tá? Espero que nada de grave tenha acontecido com vocês.", en: "Hi, Lia! I saw in the news that a big storm hit the Chapada Diamantina yesterday. I hope you got to Lençóis safely and didn't do the Vale do Pati trail in that rain. I hope the guide decided to turn back early! They say there was an emergency with a group of tourists, but the rescue was quick. Maybe it's just a coincidence, but I'm worried. Send me a message as soon as you can, OK? I hope nothing serious has happened to you." }
+  - task: "Describe an accident or problem you had on a trip and what would have been different if you had been more careful (Se eu tivesse levado…, não teria…)."
+    min: 80
+    max: 140
+    use: [w.arrepender-se, w.precaução, w.imprudente, w.tornozelo, w.primeiros-socorros]
+    useAtLeast: 3
+    grammar: [g.subjunctive-pluperfect, g.se-clauses-past]
+    expect:
+      - { pattern: '\bse( eu| a gente| n[oó]s| voc[eê]| ele| ela)?( n[aã]o)? tivesse(m|mos)? [a-zà-ú]+(ado|ido|ito|isto|eito|osto)\b', hint: "Use se + pluperfect subjunctive: Se eu tivesse levado…" }
+      - { pattern: '\b(teria|ter[ií]amos|teriam) [a-zà-ú]+(ado|ido|ito|isto|eito|osto)\b', hint: "Give the past consequence: não teria caído…" }
+    model: { es: "Na semana passada, torci o tornozelo numa trilha da Chapada. Fui imprudente: saí sem guia, de chinelo e sem um kit de primeiros socorros. Se eu tivesse usado tênis, não teria caído na trilha. Se eu tivesse levado o celular carregado, teria chamado ajuda mais rápido. Por sorte, um socorrista que passava por lá me ajudou. Agora estou de muleta e me arrependo muito. Da próxima vez, vou tomar mais precaução. Se eu tivesse pensado melhor, teria esperado o dia seguinte e contratado um guia experiente.", en: "Last week I twisted my ankle on a trail in the Chapada. I was reckless: I went without a guide, in flip-flops and without a first-aid kit. If I'd worn trainers, I wouldn't have fallen on the trail. If I'd taken a charged phone, I'd have called for help sooner. Luckily, a first-aider who was passing by helped me. Now I'm on crutches and I really regret it. Next time I'll take more precautions. If I'd thought it through, I'd have waited for the next day and hired an experienced guide." }
+  - task: "Tell the story of a scary moment at the beach and who saved the situation (Se não fosse o salva-vidas…, ele teria…)."
+    min: 80
+    max: 140
+    use: [w.salva-vidas, w.correnteza, w.maré, w.afogar-se, w.recife]
+    useAtLeast: 3
+    grammar: [g.se-clauses-past]
+    expect:
+      - { pattern: '\bse n[aã]o fosse(m)?\b', hint: "Say what saved the situation: Se não fosse o salva-vidas, …" }
+      - { pattern: '\b(teria|ter[ií]amos|teriam|seria|estaria)\b', hint: "Give the consequence: … ele teria se afogado." }
+    model: { es: "No ano passado, fui à praia de Boa Viagem, em Recife, com o meu primo. A maré estava alta e havia uma correnteza forte perto dos recifes, mas a gente não viu as placas. O meu primo entrou no mar e, de repente, não conseguiu voltar. Se não fosse o salva-vidas, ele teria se afogado! O salva-vidas nadou muito rápido e trouxe o meu primo de volta. Desde então, a gente sempre respeita as placas e as bandeiras vermelhas. Se tivéssemos lido os avisos, nem teríamos entrado na água.", en: "Last year I went to Boa Viagem beach in Recife with my cousin. The tide was high and there was a strong current near the reefs, but we didn't see the signs. My cousin went into the sea and suddenly couldn't get back. If it hadn't been for the lifeguard, he'd have drowned! The lifeguard swam really fast and brought my cousin back. Since then we've always respected the signs and the red flags. If we'd read the warnings, we wouldn't even have gone into the water." }
+  - task: "A friend is borrowing your car for a road trip. Write instructions, including what to do once certain things have happened (Quando você tiver chegado…, Assim que tiver terminado…)."
+    min: 80
+    max: 140
+    use: [w.freio, w.acostamento, w.cinto-de-segurança, w.ultrapassar, w.perigo]
+    useAtLeast: 3
+    grammar: [g.future-subjunctive-compound]
+    expect:
+      - { pattern: '\b(quando|assim que|logo que|depois que|se)( voc[eê]| voc[eê]s| eu| a gente)? tiver(em|mos)? [a-zà-ú]+(ado|ido|ito|isto|eito|osto)\b', hint: "Use the compound future subjunctive: Quando você tiver chegado…" }
+    model: { es: "Oi, Gabi! Seguem algumas dicas sobre o carro. O freio está um pouco duro, então vá devagar nas curvas. Use sempre o cinto de segurança e não ultrapasse nas curvas da serra, porque é um perigo. Se tiver algum problema, pare no acostamento e me ligue. Quando você tiver chegado a Lençóis, me mande uma mensagem. Assim que tiver terminado a viagem, deixe a chave com o meu irmão. Boa viagem e cuidado na estrada! Ah, e quando você tiver voltado, me conta como foi a viagem!", en: "Hi, Gabi! Here are a few tips about the car. The brake is a bit stiff, so take the bends slowly. Always wear your seat belt and don't overtake on the mountain bends, because it's dangerous. If there's any problem, pull over onto the hard shoulder and call me. When you've arrived in Lençóis, send me a message. As soon as you've finished the trip, leave the key with my brother. Have a good trip and take care on the road! Oh, and when you've got back, tell me how the trip went!" }

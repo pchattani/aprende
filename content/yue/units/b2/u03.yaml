@@ -245,3 +245,45 @@ dialogues:
       - { q: "坐船要幾耐？", options: ["五分鐘", "十五分鐘", "一個鐘"], answer: 1, explain: "坐船十五分鐘咋嘛: only fifteen minutes." }
       - { q: "佢哋最後見唔見到海豚？", options: ["見唔到", "見到", "唔知"], answer: 1, explain: "阿浩 says 真係喎！你估中咗！ — they did see one." }
       - { q: "點解要影相？", options: ["想證明見到海豚", "想影船家", "想影大澳啲棚屋"], answer: 0, explain: "影低就可以證明我哋真係見到: the photo will prove they saw it." }
+writing:
+  - task: "You're waiting for friends in Tai O. Text another friend your guesses about where they are and when they'll arrive, using 啩 and 估計."
+    min: 60
+    max: 110
+    use: [w.gu2-gai3, w.tai2-haa5-dim2, w.paang4-uk1, w.ho2-nang4]
+    useAtLeast: 3
+    grammar: [g.gwaa3-guess]
+    expect:
+      - { pattern: "啩", hint: "Make a tentative guess with 啩 at the end." }
+      - { pattern: "估計|應該|可能|似乎", hint: "Add 估計, 應該 or 可能." }
+    model: { es: "佢哋應該到咗東涌啩，估計再坐半個鐘巴士就到大澳。不過而家好塞車，可能會遲啲啩。我哋喺棚屋附近等，睇下點先。如果佢哋五點都未到，我哋就自己去食海鮮先，食完再等佢哋。", en: "They've probably reached Tung Chung by now, I guess. I reckon it's another half hour by bus to Tai O. But the traffic is heavy, so they might be a bit late. We'll wait near the stilt houses and see how it goes. If they still aren't here by five, we'll go and have seafood ourselves first and wait for them after we've eaten." }
+  - task: "Tell a friend about your dolphin-watching boat trip in Tai O: what luckily happened, what nearly happened and what was a pity."
+    min: 60
+    max: 110
+    use: [w.gaai1-dou2, w.baak6-hoi2-tyun4, w.hou2-zoi6, w.caa1-di1, w.ho2-sik1]
+    useAtLeast: 3
+    grammar: [g.particle-clusters]
+    expect:
+      - { pattern: "好在|幸好", hint: "Say what luckily happened: 好在…" }
+      - { pattern: "差啲|險啲|可惜", hint: "Say what nearly happened or was a pity: 差啲…, 可惜…" }
+    model: { es: "今日我哋坐街渡出海睇白海豚。好在天氣好好，我哋真係見到兩條！不過返嚟嘅時候我差啲跌落海，嚇死我。可惜冇影到相添呀。下次我一定要帶相機，再去多一次。", en: "Today we took a kaito out to see the Chinese white dolphins. Luckily the weather was great, and we really saw two! But on the way back I nearly fell into the sea; I was terrified. What a pity I didn't get any photos. Next time I'll definitely bring a camera and go again." }
+  - task: "A friend thinks the shrimp paste at a Tai O stall is expensive. Reply with particle clusters like 㗎咋 and 㗎喇."
+    es: "嘩，一樽蝦醬咁貴！"
+    min: 60
+    max: 110
+    use: [w.gaa3-zaa3, w.gaa3-laa3, w.haa1-zoeng3, w.jyu4-man4]
+    useAtLeast: 3
+    grammar: [g.particle-clusters]
+    expect:
+      - { pattern: "㗎咋|咋嘛|嘅啫|啫嘛", hint: "Play it down with 㗎咋 or 咋嘛: 三十蚊㗎咋." }
+      - { pattern: "㗎喇|㗎嘛", hint: "Explain with 㗎喇 or 㗎嘛." }
+    model: { es: "唔貴㗎，三十蚊㗎咋。而家乜嘢都加價，係噉㗎喇。呢度啲蝦醬係漁民自己整嘅，好香㗎，你試吓先啦。如果你買兩樽，老闆仲會平啲畀你㗎嘛。好多遊客都會買返去做手信。", en: "It's not expensive, only thirty dollars. Everything's going up in price these days; that's just how it is now. The shrimp paste here is made by the fishermen themselves and it's really fragrant. Try some first! If you buy two jars, the owner will give you a better price, you know. Lots of tourists buy it to take home as a gift." }
+  - task: "Write advice for a foreign friend about tone and particles when speaking to older people."
+    min: 60
+    max: 120
+    use: [w.zoeng2-bui3, w.lai5-maau6, w.jyu5-hei3-ci4, w.cou1-lou5, w.jyu5-diu6]
+    useAtLeast: 3
+    grammar: [g.particle-tones]
+    expect:
+      - { pattern: "語氣|語調", hint: "Mention tone: 語氣, 語調." }
+      - { pattern: "禮貌|粗魯", hint: "Talk about politeness: 有禮貌, 粗魯." }
+    model: { es: "同長輩講嘢要有禮貌。好多語氣詞聽落好似冇意思，其實好重要。例如你講「係囉」嘅時候，語氣唔啱就會聽落好粗魯。所以一定要留意自己嘅語調。唔明可以問，大家都會幫你。", en: "When you talk to older people you need to be polite. Lots of particles sound meaningless, but they're actually very important. For example, if you say 係囉 in the wrong tone, it sounds very rude. So you must pay attention to your intonation. If you don't understand, just ask; everyone will help you." }

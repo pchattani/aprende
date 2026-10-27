@@ -255,3 +255,42 @@ dialogues:
       - { q: "What does Pablo regret?", options: ["Inviting too many people", "Making a joke about Carmen's boyfriend", "Burning the dessert"], answer: 1 }
       - { q: "What should Marcos have done?", options: ["Arrived earlier", "Brought wine", "Said that he doesn't eat meat"], answer: 2 }
       - { q: "What does Lucía advise Pablo to do?", options: ["Call Carmen tomorrow and apologise", "Forget about it", "Write Carmen a letter"], answer: 0 }
+writing:
+  - task: "Your friend found out her partner had been unfaithful and broke up with him immediately. What would you have done in her place? Use the conditional perfect (yo habría …)."
+    min: 80
+    max: 150
+    use: [w.infiel, w.ruptura, w.reconciliarse, w.rencor, w.dilema]
+    useAtLeast: 3
+    grammar: [g.conditional-perfect]
+    expect:
+      - { pattern: "\\b(habr[ií]a|habr[ií]amos|habr[ií]an|habr[ií]as) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Use the conditional perfect: yo habría hablado …, no habría podido …" }
+    model: { es: "Es un dilema muy difícil. Mi amiga descubrió que su novio le había sido infiel y rompió con él inmediatamente. Yo, en su lugar, también habría terminado la relación, porque sin confianza la convivencia es imposible. Sin embargo, no habría tomado la decisión en caliente: primero habría hablado con él para entender qué había pasado. Mucha gente se reconcilia después de una ruptura, pero yo no habría podido olvidarlo. Eso sí, tampoco le habría guardado rencor durante años, porque el rencor hace sufrir sobre todo a quien lo siente.", en: "It's a very difficult dilemma. My friend found out that her boyfriend had been unfaithful and broke up with him immediately. In her place, I'd have ended the relationship too, because without trust living together is impossible. However, I wouldn't have made the decision in the heat of the moment: first I'd have talked to him to understand what had happened. Lots of people get back together after a break-up, but I wouldn't have been able to forget it. Mind you, I wouldn't have held a grudge for years either, because a grudge mostly hurts the person who holds it." }
+  - task: "Write about a mistake you made in the past and your regrets (Ojalá hubiera …, Me arrepiento de …, Si me lo hubiera pensado dos veces …)."
+    min: 80
+    max: 150
+    use: [w.meter-la-pata, w.impulsivo, w.pensarselo-dos-veces, w.leccion, w.amistad]
+    useAtLeast: 3
+    grammar: [g.ojala-pluperfect]
+    expect:
+      - { pattern: "ojal[aá] (no )?(lo |la |le |me |te |se )?(hubiera|hubiese|hubieras|hubi[eé]ramos|hubieran)", hint: "Express regret: ojalá hubiera …" }
+      - { pattern: "me arrepiento|me siento culpable|qu[eé] pena no haber|si (no )?(me lo |lo |le )?hubiera", hint: "Add another regret: me arrepiento de …, si lo hubiera pensado …" }
+    model: { es: "Hace dos años metí la pata con mi mejor amiga. Ella me contó un secreto y yo, sin pensar, se lo conté a otra persona en una fiesta. Cuando se enteró, se sintió traicionada y dejamos de hablarnos durante meses. Me arrepiento muchísimo. Ojalá hubiera sido menos impulsiva y me lo hubiera pensado dos veces antes de hablar. Ojalá le hubiera pedido perdón enseguida, en lugar de buscar excusas. Al final nos reconciliamos, pero la amistad ya no es igual. Aprendí una lección muy importante: un secreto es un secreto.", en: "Two years ago I really put my foot in it with my best friend. She told me a secret and I, without thinking, told someone else at a party. When she found out, she felt betrayed and we stopped speaking for months. I regret it so much. I wish I'd been less impulsive and thought twice before speaking. I wish I'd apologised straight away, instead of looking for excuses. In the end we made up, but the friendship isn't the same. I learned a very important lesson: a secret is a secret." }
+  - task: "Your flatmate stood you up last night. Reply to his message, reproaching him politely (Deberías haberme llamado, Podrías haberme avisado …)."
+    es: "Perdona por lo de anoche, se me olvidó completamente que habíamos quedado."
+    min: 80
+    max: 150
+    use: [w.dar-planton, w.excusa, w.irresponsable, w.no-es-para-tanto, w.despiste]
+    useAtLeast: 3
+    grammar: [g.deber-haber]
+    expect:
+      - { pattern: "deber[ií]as? haber|podr[ií]as? haber|tendr[ií]as que haber|habr[ií]as (debido|podido)", hint: "Reproach with deberías haber / podrías haber + participle: deberías haberme llamado …" }
+    model: { es: "Mira, no es para tanto, pero me molestó bastante. Te estuve esperando una hora en la puerta del restaurante, con el frío que hacía. Deberías haberme llamado en cuanto te diste cuenta. O por lo menos podrías haberme enviado un mensaje: se tarda diez segundos. Entiendo que todos tenemos despistes, pero no es la primera vez que me das plantón, y ya no me valen las excusas. No quiero parecer exagerado; solo te pido que la próxima vez seas un poco menos irresponsable. ¿Quedamos el viernes y me invitas a cenar?", en: "Look, it's not a big deal, but it bothered me quite a lot. I was waiting for you for an hour at the restaurant door, in the cold. You should have called me as soon as you realised. Or at least you could have sent me a message: it takes ten seconds. I understand we all have lapses, but it's not the first time you've stood me up, and excuses don't work for me any more. I don't want to overreact; I'm just asking you to be a bit less irresponsible next time. Shall we meet on Friday and you take me out to dinner?" }
+  - task: "Write the ending of a murder mystery set on a vineyard estate near Mendoza: the inspector explains who did it and how things would have happened (El asesino habría entrado …)."
+    min: 90
+    max: 150
+    use: [w.inspector, w.coartada, w.veneno, w.heredero, w.deducir]
+    useAtLeast: 3
+    grammar: [g.conditional-perfect]
+    expect:
+      - { pattern: "\\b(habr[ií]a|habr[ií]an) [a-zñ]+(ado|ido|to|cho|sto)\\b", hint: "Explain the probable events with the conditional perfect: el mayordomo habría preparado …" }
+    model: { es: "El inspector reunió a todos en el salón de la vieja casa. «El señor Ortiz no murió de un problema de corazón», dijo. «Alguien puso veneno en su vino.» Todos miraron al heredero, pero tenía una coartada perfecta: aquella noche estaba en Buenos Aires. «Por eso deduje que el asesino habría necesitado un cómplice», continuó el inspector. «El mayordomo habría preparado el vino y el sobrino habría escondido la botella en el jardín. Lo hicieron por el testamento.» Fue un giro que nadie esperaba: nadie habría imaginado que el mayordomo traicionara a su señor.", en: "The inspector gathered everyone in the living room of the old house. 'Mr Ortiz didn't die of a heart problem,' he said. 'Someone put poison in his wine.' Everyone looked at the heir, but he had a perfect alibi: that night he was in Buenos Aires. 'That's why I deduced that the murderer must have needed an accomplice,' the inspector went on. 'The butler would have prepared the wine and the nephew would have hidden the bottle in the garden. They did it for the will.' It was a twist nobody expected: nobody would have imagined the butler betraying his master." }

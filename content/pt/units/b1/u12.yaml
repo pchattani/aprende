@@ -271,3 +271,42 @@ dialogues:
       - { q: "Como a Iara foi parar em Bonito?", options: ["Foi mandada pelo trabalho", "Veio passar um fim de semana e acabou ficando", "Nasceu na cidade"], answer: 1, explain: "Vim passar um fim de semana aqui e acabei ficando." }
       - { q: "Por que o Nando desistiu de mudar de vida?", options: ["Porque ficou com medo", "Porque não tinha dinheiro", "Porque a família não deixou"], answer: 0, explain: "Fiquei com medo." }
       - { q: "O que a Iara oferece ao Nando?", options: ["Uma aula de natação", "Um trabalho cuidando das reservas", "Um quarto na pousada"], answer: 1, explain: "Preciso de alguém que cuide das reservas." }
+writing:
+  - task: "Describe someone whose usual character is different from how they are today (Ele é calado, mas hoje está…), and say what changed them (ficou…)."
+    min: 50
+    max: 100
+    use: [w.calado, w.situação, w.mudar-de-ideia, w.capaz, w.delicado]
+    useAtLeast: 3
+    grammar: [g.ser-estar-ficar-advanced]
+    expect:
+      - { pattern: '(?<!\p{L})(est[aá]|estava|est[aã]o)(?!\p{L})', hint: "Use estar for how someone is now: hoje está alegre." }
+      - { pattern: '(?<!\p{L})fic(ou|ei|aram|amos)(?!\p{L})', hint: "Use ficar for a change: ficou animado, ficaram preocupados…" }
+    model: { es: "O meu irmão Lucas é muito calado. Normalmente ele não fala com ninguém, mas hoje está alegre e não para de contar histórias sobre a viagem a Bonito. Ele ficou tão animado com a flutuação no rio que mudou de ideia sobre o futuro: agora quer ser guia de turismo. Ele é capaz de largar o emprego! A situação está delicada, porque os nossos pais ficaram preocupados.", en: "My brother Lucas is very quiet. He doesn't usually talk to anyone, but today he's cheerful and can't stop telling stories about the trip to Bonito. He got so excited about floating down the river that he changed his mind about the future: now he wants to be a tour guide. He might even quit his job! Things are delicate, because our parents got worried." }
+  - task: "Write about habits you have started, stopped, gone back to or nearly given up (voltei a…, deixei de…, passei a…, cheguei a…)."
+    min: 50
+    max: 100
+    use: [w.voltar-a, w.deixar-de, w.passar-a, w.chegar-a, w.hábito]
+    useAtLeast: 3
+    grammar: [g.verbal-periphrases]
+    expect:
+      - { pattern: '\b(voltei a|deixei de|passei a|cheguei a|parei de|comecei a|continuo [a-zà-ú]+ndo|continuo a)\b', hint: "Use verbal periphrases: voltei a nadar, deixei de…, passei a…" }
+    model: { es: "Este ano mudei muitos hábitos. Depois de dez anos, voltei a nadar: agora faço natação três vezes por semana. Deixei de tomar refrigerante e passei a beber mais água. No começo foi difícil, e cheguei a desistir duas vezes, mas não parei. Hoje continuo nadando e me sinto muito melhor. É uma rotina que quero manter.", en: "This year I changed a lot of habits. After ten years, I went back to swimming: now I swim three times a week. I stopped drinking fizzy drinks and started drinking more water. At first it was hard, and I even gave up twice, but I didn't stop. Today I keep swimming and I feel much better. It's a routine I want to keep." }
+  - task: "Describe how a town (Bonito or your own town) has changed over time, with ir / vir + gerund and verbs of change (foi crescendo, vem aumentando, se transformou…)."
+    min: 50
+    max: 100
+    use: [w.transformar-se, w.desenvolver-se, w.progresso, w.controlar, w.permanecer]
+    useAtLeast: 3
+    grammar: [g.verbal-periphrases]
+    expect:
+      - { pattern: '(?<!\p{L})(foi|foram|vai|v[aã]o|vem|v[eê]m|veio|est[aá]|anda|continua)( se)? [a-zà-ú]+(ando|endo|indo)\b', hint: "Use ir / vir + gerund for gradual change: foi crescendo, vem aumentando…" }
+    model: { es: "Há trinta anos, Bonito era uma cidade pequena de fazendeiros. Com o tempo, ela foi crescendo e se transformou num dos lugares de ecoturismo mais famosos do Brasil. O número de turistas vem aumentando todo ano e o comércio foi se desenvolvendo. Houve muito progresso, mas é preciso controlar o turismo para que os rios permaneçam limpos.", en: "Thirty years ago, Bonito was a small farming town. Over time it gradually grew and turned into one of the most famous ecotourism spots in Brazil. The number of tourists has been rising every year and business has gradually developed. There has been a lot of progress, but tourism has to be controlled so that the rivers stay clean." }
+  - task: "Write a short review of a play or show you saw: the story, the cast, the audience's reaction, and whether you recommend it."
+    min: 50
+    max: 100
+    use: [w.peça, w.elenco, w.palco, w.plateia, w.estreia]
+    useAtLeast: 3
+    grammar: [g.b1-review]
+    expect:
+      - { pattern: '\b(acho|na minha opini[aã]o|recomendo|vale a pena|gostei|n[aã]o gostei)\b', hint: "Give your opinion and recommend it or not: Recomendo… / Vale a pena…" }
+      - { pattern: '(?<!\p{L})(estreou|assisti|vi|foi|foram|aplaudiu|aplaudimos|era)(?!\p{L})', hint: "Tell what happened in the past: assisti, foi, a plateia aplaudiu…" }
+    model: { es: "No sábado assisti à estreia de uma peça no centro cultural de Bonito. A história é sobre uma família de pantaneiros e o elenco é excelente, principalmente a atriz principal. O palco era simples, mas as cenas com música foram lindas. No final, a plateia aplaudiu de pé durante cinco minutos. Na minha opinião, vale muito a pena: recomendo para quem gosta de teatro!", en: "On Saturday I saw the opening night of a play at the Bonito cultural centre. The story is about a family from the Pantanal and the cast is excellent, especially the lead actress. The stage was simple, but the scenes with music were beautiful. At the end the audience gave a standing ovation for five minutes. In my opinion, it's well worth it: I recommend it to anyone who likes theatre!" }

@@ -281,3 +281,44 @@ dialogues:
       - { q: "新年嘅時候點樣呀？", options: ["冇乜人", "更加多人", "唔使排隊"], answer: 1, explain: "新年就更加多人: even more people at New Year." }
       - { q: "志明識唔識求籤呀？", options: ["識", "唔識", "佢求過好多次"], answer: 1, explain: "求籤點做㗎？我唔識: he doesn't know how." }
       - { q: "嘉欣話志明要做乜嘢？", options: ["練習多啲", "求多支籤", "買架車"], answer: 0, explain: "你要練習多啲: he needs to practise more for his driving test." }
+writing:
+  - task: "Write about tomorrow with 會, 應該 and 可能: the weather and what you will probably do."
+    min: 25
+    max: 55
+    use: [w.wui5, w.jing1-goi1, w.ho2-nang4, w.haau2-si5]
+    useAtLeast: 3
+    grammar: [g.wui-will]
+    expect:
+      - { pattern: "會", hint: "Say what will happen with 會: 聽日會落雨." }
+      - { pattern: "可能|應該|一定", hint: "Say how sure you are: 可能, 應該, 一定." }
+    model: { es: "聽日應該會落雨，所以我可能唔會去行山。我會喺屋企溫書，因為下個禮拜要考試。", en: "It will probably rain tomorrow, so I might not go hiking. I'll study at home, because I have an exam next week." }
+  - task: "At Wong Tai Sin Temple, ask a staff member whether you may take photos, then write their answer: yes, but no smoking inside."
+    min: 20
+    max: 45
+    use: [w.ho2-ji5, w.m4-zeon2, w.sik6-jin1, w.jing2-soeng2]
+    useAtLeast: 3
+    grammar: [g.ho-ji-can-may]
+    expect:
+      - { pattern: "可唔可以|可以", hint: "Ask for permission: 可唔可以影相呀？" }
+      - { pattern: "唔准|唔可以", hint: "Say what isn't allowed: 唔准食煙." }
+    model: { es: "請問呢度可唔可以影相呀？可以，不過入面唔准食煙。", en: "Excuse me, may I take photos here? Yes, but smoking is not allowed inside." }
+  - task: "Write what you know how to do with 識: languages and one skill, and one thing you can't do yet."
+    min: 20
+    max: 45
+    use: [w.sik1, w.taan4, w.gong3-kam4, w.se2-zi6]
+    useAtLeast: 3
+    grammar: [g.sik-know-how]
+    expect:
+      - { pattern: "識(講|彈|寫|揸|煮|唱)", hint: "Say what you can do with 識 + verb: 我識講英文." }
+      - { pattern: "唔識", hint: "Say what you can't do: 我唔識…" }
+    model: { es: "我識講英文同少少廣東話，仲識彈鋼琴，不過我唔識寫中文字。", en: "I can speak English and a little Cantonese, and I can play the piano, but I can't write Chinese characters." }
+  - task: "Tell a new classmate what they must do and what they needn't do in the Cantonese class (要 / 一定要 / 唔使)."
+    min: 20
+    max: 50
+    use: [w.jat1-ding6-jiu3, w.lin6-zaap6, w.saang1-zi6, w.sai2.b]
+    useAtLeast: 3
+    grammar: [g.jiu-must-m-sai]
+    expect:
+      - { pattern: "要", hint: "Say what they must do: 一定要… / 要…" }
+      - { pattern: "唔使", hint: "Say what they needn't do: 唔使…" }
+    model: { es: "上堂一定要帶簿同筆，日日都要練習生字。唔使買書，老師會畀我哋。", en: "You must bring an exercise book and a pen to class, and practise new words every day. You don't need to buy a book; the teacher gives us one." }

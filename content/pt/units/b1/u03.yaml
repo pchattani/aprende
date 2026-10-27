@@ -291,3 +291,44 @@ dialogues:
       - { q: "Do que a Renata duvida?", options: ["Que o trem chegue", "Que Tiradentes seja tão herói quanto dizem", "Que o guia seja mineiro"], answer: 1, explain: "Duvido que ele seja tão herói quanto dizem." }
       - { q: "Por que eles talvez cheguem depois do meio-dia?", options: ["Porque o trem atrasou", "Porque vão a pé", "Porque o guia se perdeu"], answer: 0, explain: "Como o trem atrasou, talvez seja um pouco depois." }
       - { q: "O que a Renata trouxe para a viagem?", options: ["Um livro de história", "Pão de queijo", "Um mapa"], answer: 1, explain: "Tiago brought the book; Renata brought cheese bread." }
+writing:
+  - task: "Your friend sends you a rumour. Reply saying what you believe and what you doubt (Acho que…, Duvido que…, Não acredito que…, É provável que…)."
+    es: "Dizem que a Maria Fumaça vai parar de funcionar no ano que vem e que o festival de cinema vai acabar!"
+    min: 50
+    max: 100
+    use: [w.duvidar, w.boato, w.certeza, w.provável, w.notícia-falsa]
+    useAtLeast: 3
+    grammar: [g.subjunctive-doubt, g.achar-que]
+    expect:
+      - { pattern: '\b(duvido que|n[aã]o acho que|n[aã]o acredito que|n[aã]o creio que)\b', hint: "Express doubt with the subjunctive: Duvido que seja verdade. / Não acredito que…" }
+      - { pattern: '(\bacho que\b|\btenho certeza (de )?que\b|(?<!\p{L})é prov[aá]vel que\b)', hint: "Say what you believe: Acho que… / Tenho certeza de que…" }
+    model: { es: "Duvido que isso seja verdade! Acho que é só um boato ou uma notícia falsa. A Maria Fumaça é muito importante para o turismo de Tiradentes, então não acredito que ela pare de funcionar. É provável que o festival mude de data, mas tenho certeza de que não vai acabar. Vamos verificar no site oficial antes de acreditar.", en: "I doubt that's true! I think it's just a rumour or fake news. The Maria Fumaça steam train is very important for tourism in Tiradentes, so I don't believe it'll stop running. The festival will probably change its dates, but I'm sure it won't end. Let's check the official website before we believe it." }
+  - task: "Your plans for tomorrow in Tiradentes are uncertain. Write what you might do, using talvez + subjunctive (Talvez a gente pegue o trem…)."
+    min: 50
+    max: 100
+    use: [w.talvez, w.complicado, w.solução, w.pesquisa, w.existir]
+    useAtLeast: 2
+    grammar: [g.talvez]
+    expect:
+      - { pattern: '\btalvez( a gente| eu| voc[eê]| n[oó]s| ela| ele| eles)?( n[aã]o)? [a-zà-ú]+(e|em|a|am|amos|emos|ja)\b', hint: "Use talvez + subjunctive: Talvez a gente pegue o trem." }
+    model: { es: "Amanhã a situação está complicada: a previsão diz que vai chover. Talvez a gente pegue a Maria Fumaça de manhã, antes da chuva. Talvez não haja lugar, porque é feriado. Nesse caso, uma solução é alugar bicicletas. Fiz uma pesquisa na internet e talvez seja possível visitar outra cidade histórica à tarde.", en: "Tomorrow things are complicated: the forecast says it's going to rain. Maybe we'll take the Maria Fumaça train in the morning, before the rain. Maybe there won't be any seats, because it's a holiday. In that case, one solution is to hire bikes. I did some research online and maybe it'll be possible to visit another historic town in the afternoon." }
+  - task: "Explain why something went wrong on your trip and what happened as a result. Use cause and consequence connectors (como, já que, devido a, por isso, portanto…)."
+    min: 50
+    max: 100
+    use: [w.portanto, w.já-que, w.devido-a, w.consequência, w.causa]
+    useAtLeast: 3
+    grammar: [g.connectors-cause-consequence]
+    expect:
+      - { pattern: '(?<!\p{L})(como|j[aá] que|visto que|uma vez que|devido [aà]|gra[cç]as [aà])(?!\p{L})', hint: "Give the cause: Como…, Já que…, Devido a…" }
+      - { pattern: '\b(por isso|portanto|consequentemente|de modo que|ent[aã]o|da[ií])\b', hint: "Give the consequence: por isso, portanto, de modo que…" }
+    model: { es: "Como choveu muito na quinta-feira, o trem atrasou duas horas. Já que não tínhamos nada para fazer, ficamos num café da estação. Por isso, chegamos a Tiradentes só às onze da noite e o restaurante já estava fechado. Devido à chuva, a estrada também estava ruim; portanto, decidimos ficar mais um dia. No final, foi uma ótima consequência!", en: "As it rained a lot on Thursday, the train was two hours late. Since we had nothing to do, we stayed in a café at the station. That's why we only got to Tiradentes at eleven at night and the restaurant was already closed. Because of the rain the road was bad too, so we decided to stay an extra day. In the end it was a great result!" }
+  - task: "Give your opinion: is it better to travel around Minas Gerais by train or by car? Give arguments for and against and then conclude."
+    min: 60
+    max: 110
+    use: [w.ponto-de-vista, w.argumento, w.a-favor, w.considerar, w.defender]
+    useAtLeast: 3
+    grammar: [g.achar-que, g.connectors-cause-consequence]
+    expect:
+      - { pattern: '\b(acho que|na minha opini[aã]o|do meu ponto de vista|considero|acredito que|defendo)\b', hint: "Give your opinion: Acho que… / Do meu ponto de vista…" }
+      - { pattern: '\b(por um lado|por outro lado|al[eé]m disso|no entanto|por[eé]m|portanto)\b', hint: "Link your arguments: além disso, por outro lado, portanto…" }
+    model: { es: "Do meu ponto de vista, o trem é a melhor forma de conhecer Minas Gerais. Um argumento a favor do trem é a paisagem: a viagem é lenta, mas muito bonita. Além disso, não é preciso dirigir nas estradas de montanha. Por outro lado, o carro é mais prático, porque a gente pode parar onde quiser. Considerando tudo, eu defendo o trem para viagens curtas e o carro para viagens longas.", en: "From my point of view, the train is the best way to see Minas Gerais. One argument for the train is the scenery: the journey is slow, but very beautiful. Besides, you don't have to drive on mountain roads. On the other hand, the car is more practical, because you can stop wherever you like. All things considered, I'd argue for the train for short trips and the car for long ones." }

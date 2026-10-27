@@ -294,3 +294,45 @@ dialogues:
       - { q: "二零零五年發生咗乜嘢事？", options: ["許願樹斷咗一條樹枝", "林村火燭", "寶牒賣晒"], answer: 0, explain: "二零零五年有條樹枝斷咗: a branch broke." }
       - { q: "而家啲人將寶牒放喺邊度？", options: ["掟上樹", "掛喺木架上面", "帶返屋企"], answer: 1, explain: "而家改咗掛喺木架上面: on wooden racks." }
       - { q: "佢哋幾時去林村？", options: ["年初一", "年初二", "年初三"], answer: 2, explain: "總之年初三去: on the third day of New Year." }
+writing:
+  - task: "At Lam Tsuen, people used to throw wish placards into the trees. Give your opinion: should they still do it?"
+    min: 40
+    max: 90
+    use: [w.gok3-dak1, w.bou2-dip6, w.syu6-zi1, w.seoi1-jin4, w.zi1-ci4]
+    useAtLeast: 3
+    grammar: [g.gok-dak-opinions, g.seoi-jin-daan-hai]
+    expect:
+      - { pattern: "覺得|認為|個人", hint: "Give your opinion: 我覺得…" }
+      - { pattern: "雖然.{1,20}(但係|不過)", hint: "Concede a point: 雖然…但係…" }
+    model: { es: "我覺得唔應該再將寶牒拋上樹，因為好多樹枝會斷。雖然許願好有意思，但係用木架都一樣得。我支持村民嘅決定。", en: "I don't think people should throw wish placards into the trees any more, because lots of branches break. Although making a wish is meaningful, a wooden rack works just as well. I support the villagers' decision." }
+  - task: "A friend asks what you think of living in the New Territories. Give the advantages and disadvantages and your own view."
+    es: "你點睇住新界？"
+    min: 50
+    max: 100
+    use: [w.hou2-cyu3, w.waai6-cyu3, w.jat1-fong1-min6, w.ling6-jat1-fong1-min6, w.zik6-dak1]
+    useAtLeast: 3
+    grammar: [g.gok-dak-opinions, g.seoi-jin-daan-hai]
+    expect:
+      - { pattern: "好處|壞處", hint: "Mention advantages or disadvantages: 好處, 壞處." }
+      - { pattern: "一方面|雖然|不過|但係", hint: "Weigh both sides: 一方面…另一方面…" }
+    model: { es: "老實講，住新界有好處都有壞處。一方面租金比較平，空氣又清新；另一方面返工好遠，每日要坐成個鐘車。我個人覺得都值得。", en: "To be honest, living in the New Territories has advantages and disadvantages. On the one hand the rent is relatively cheap and the air is fresh; on the other hand work is far away, and I spend a whole hour a day on the bus. Personally, I think it's worth it." }
+  - task: "Your friend has been sleeping very late and feels stressed. Give them advice with 應該 and 建議."
+    min: 40
+    max: 80
+    use: [w.jing1-goi1, w.gin3-ji5, w.aat3-lik6, w.zeoi3-gan2-jiu3]
+    useAtLeast: 3
+    grammar: [g.jing-goi-should]
+    expect:
+      - { pattern: "應該", hint: "Say what they should do: 你應該…" }
+      - { pattern: "建議|最好|最緊要", hint: "Add a suggestion: 我建議你…" }
+    model: { es: "你應該早啲瞓，唔好成晚睇手機。我建議你每日做半個鐘運動，噉樣壓力會少啲。最緊要係唔好太擔心。", en: "You should go to bed earlier and not look at your phone all night. I suggest you exercise for half an hour every day; that way you'll feel less stressed. Most importantly, don't worry too much." }
+  - task: "Your flatmates keep arguing about the washing-up. Make a counter-suggestion with 與其…不如…"
+    min: 40
+    max: 80
+    use: [w.jyu5-kei4, w.aai3-gaau1, w.tou2-leon6, w.gung1-ping4, w.tung4-ji3]
+    useAtLeast: 3
+    grammar: [g.bat-jyu-suggest]
+    expect:
+      - { pattern: "不如", hint: "Make a suggestion with 不如: 不如我哋…" }
+      - { pattern: "與其|寧願", hint: "Compare options with 與其…不如…" }
+    model: { es: "與其日日嗌交，不如我哋坐低討論吓。我建議每人每個禮拜洗兩日碗，噉樣比較公平。你哋同唔同意？唔好再嬲啦。", en: "Rather than arguing every day, why don't we sit down and talk it over? I suggest we each do the washing-up two days a week; that's fairer. Do you agree? Let's not be angry any more." }

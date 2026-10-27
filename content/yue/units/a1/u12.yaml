@@ -281,3 +281,44 @@ dialogues:
       - { q: "天文台話下晝點？", options: ["會出太陽", "會落雨", "會打風"], answer: 1, explain: "Kelvin says 天文台話下晝會落雨." }
       - { q: "天上面有乜嘢？", options: ["好多黑色嘅雲", "好多白色嘅雲", "太陽"], answer: 0, explain: "天上面好多黑色嘅雲: lots of dark clouds." }
       - { q: "最後佢哋去邊度？", options: ["海灘", "茶餐廳", "公園"], answer: 1, explain: "They go to a cha chaan teng for iced lemon tea, where there's air-con." }
+writing:
+  - task: "Write today's weather report for Hong Kong: the temperature, and whether it's sunny, rainy or windy."
+    min: 12
+    max: 30
+    use: [w.tin1-hei3, w.dou6.b, w.ceot1-taai3-joeng4, w.lok6-jyu5]
+    useAtLeast: 3
+    grammar: [g.weather]
+    expect:
+      - { pattern: "度", hint: "Give the temperature: 三十二度." }
+      - { pattern: "落雨|出太陽|大風|打風|行雷|有霧", hint: "Say what the sky is doing: 出太陽, 落雨…" }
+    model: { es: "今日天氣好熱，有三十二度。朝早出太陽，下晝會落雨。", en: "The weather is very hot today, 32 degrees. Sunny in the morning; it will rain in the afternoon." }
+  - task: "Complain to a friend about the heat with degree words: too hot, really muggy, and you're a bit tired."
+    min: 8
+    max: 25
+    use: [w.taai3, w.zan1-hai6, w.ai3-guk6, w.jau5-di1, w.gui6]
+    useAtLeast: 3
+    grammar: [g.degree-adverbs, g.jau-di-a-bit]
+    expect:
+      - { pattern: "太", hint: "Say 'too': 太熱喇！" }
+      - { pattern: "有啲", hint: "Say 'a bit' with 有啲: 我有啲攰." }
+    model: { es: "今日太熱喇！真係好翳焗，我有啲攰。", en: "It's too hot today! It's really muggy, and I'm a bit tired." }
+  - task: "Write a postcard from Quarry Bay describing the Monster Building and the weather with adjective + 嘅 + noun."
+    min: 15
+    max: 40
+    use: [w.gwaai3-sau3-daai6-haa6, w.dak6-bit6, w.ge3, w.tin1-hei3, w.zak1-jyu4-cung1]
+    useAtLeast: 3
+    grammar: [g.adj-ge-noun]
+    expect:
+      - { pattern: "好.{1,2}嘅", hint: "Describe with 好 + adjective + 嘅 + noun: 好特別嘅大廈." }
+    model: { es: "我喺鰂魚涌。怪獸大廈係一座好特別嘅大廈。今日係好靚嘅天氣！", en: "I'm in Quarry Bay. The Monster Building is a really special building. It's beautiful weather today!" }
+  - task: "A friend asks what winter is like where you are. Reply, and say which season you like best."
+    es: "你嗰度冬天天氣點呀？"
+    min: 12
+    max: 35
+    use: [w.dung1-tin1, w.jau5-di1, w.dung3, w.mou6, w.cau1-tin1]
+    useAtLeast: 3
+    grammar: [g.weather, g.jau-di-a-bit]
+    expect:
+      - { pattern: "冬天", hint: "Talk about winter: 冬天…" }
+      - { pattern: "凍|熱|暖|涼|霧|落雨", hint: "Say what it's like: 有啲凍, 有霧…" }
+    model: { es: "冬天有啲凍，有時有霧。我最鍾意秋天，唔太熱，好舒服。", en: "Winter is a bit cold, sometimes foggy. I like autumn best: not too hot, very comfortable." }

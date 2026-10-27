@@ -305,3 +305,46 @@ dialogues:
       - { q: "Sam最近點呀？", options: ["麻麻哋", "好好", "好忙"], answer: 1, explain: "Sam answers 我好好: he is very well." }
       - { q: "Sam係唔係學生呀？", options: ["係，佢係學生", "唔係，佢係老師", "唔係，佢係醫生"], answer: 0, explain: "He says 係呀，我係學生." }
       - { q: "Sam姓乜嘢？", options: ["姓李", "姓Smith", "姓陳"], answer: 1, explain: "我姓Smith: his surname is Smith; Mr Lee's surname is 李." }
+writing:
+  - task: "Write a short self-introduction for your new classmates: greet them, give your name and surname, say you're a student and that you're glad to meet them."
+    min: 12
+    max: 35
+    use: [w.giu3, w.sing3, w.hok6-saang1, w.gou1-hing3, w.jing6-sik1]
+    useAtLeast: 3
+    grammar: [g.name-giu-sing, g.hai6-identity, g.greetings]
+    expect:
+      - { pattern: "叫", hint: "Give your name: 我叫…" }
+      - { pattern: "姓", hint: "Give your surname: 我姓…" }
+      - { pattern: "係.*(學生|老師)", hint: "Say who you are: 我係學生." }
+    model: { es: "你好！我叫Sam，我姓陳。我係學生。好高興認識你！", en: "Hello! My name is Sam, my surname is Chan. I'm a student. Very glad to meet you!" }
+  - task: "You run into a friend you haven't seen for ages. Reply to their message: say how you are and ask about them."
+    es: "好耐冇見！最近點呀？"
+    min: 8
+    max: 30
+    use: [w.hou2-noi6-mou5-gin3, w.gei2-hou2, w.mong4, w.ne1, w.maa4-maa4-dei2]
+    useAtLeast: 2
+    grammar: [g.greetings, g.ne-follow-up]
+    expect:
+      - { pattern: "幾好|麻麻哋|唔錯|好好|好忙", hint: "Say how you are: 幾好, 唔錯, 麻麻哋, 好忙…" }
+      - { pattern: "你呢", hint: "Ask about them: 你呢？" }
+    model: { es: "好耐冇見！我幾好，不過好忙。你呢？", en: "Long time no see! I'm pretty good, but very busy. And you?" }
+  - task: "It's the end of the day at your language class. Write goodbye to your teacher, Mr Chan, wish everyone good night and say see you tomorrow."
+    min: 8
+    max: 25
+    use: [w.zoi3-gin3, w.maan5-on1, w.ting1-jat6-gin3, w.lou5-si1, w.ci4-di1-gin3]
+    useAtLeast: 3
+    grammar: [g.greetings]
+    expect:
+      - { pattern: "再見|拜拜", hint: "Say goodbye: 再見 or 拜拜." }
+      - { pattern: "晚安|聽日見|遲啲見", hint: "Add 晚安 or 聽日見." }
+    model: { es: "陳老師，再見！晚安！聽日見！", en: "Goodbye, Mr Chan! Good night! See you tomorrow!" }
+  - task: "Ask a lady politely for her surname, then introduce your friend Leo to her."
+    min: 10
+    max: 30
+    use: [w.cing2-man6, w.gwai3-sing3, w.gaai3-siu6, w.pang4-jau5]
+    useAtLeast: 3
+    grammar: [g.name-giu-sing, g.hai6-identity]
+    expect:
+      - { pattern: "貴姓|姓乜嘢|姓咩", hint: "Ask her surname politely: 請問你貴姓呀？" }
+      - { pattern: "佢(係|叫)", hint: "Introduce your friend: 佢係我朋友… / 佢叫…" }
+    model: { es: "請問你貴姓呀？我介紹吓，佢係我朋友Leo。", en: "May I ask your surname? Let me introduce you: this is my friend Leo." }

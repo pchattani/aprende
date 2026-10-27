@@ -13,6 +13,7 @@ const unit = (id: string, questions: number): Unit => ({
   id,
   title: id,
   lessons: [{ id: `${id}.l1`, title: 'L', teach: [], vocab: [], sentences: [1, 2, 3, 4].map(sentence), exchanges: [], texts: [], spicy: [] }],
+  writing: [],
   dialogues: [{ id: `${id}.d1`, title: `Diálogo ${id}`, lines: [{ speaker: 'A', es: 'Hola.', en: 'Hi.' }, { speaker: 'B', es: 'Hola.', en: 'Hi.' }], questions: Array.from({ length: questions }, (_, i) => ({ q: `¿Pregunta ${id} ${i + 1}?`, options: ['a', 'b', 'c'], answer: i % 3 })) }],
 })
 const exam = { grammar: Array.from({ length: 6 }, (_, i) => ({ prompt: `Gramática ${i + 1} ____`, options: ['x', 'y', 'z'], answer: i % 3, explain: 'because' })) } as unknown as Exam

@@ -283,3 +283,44 @@ dialogues:
       - { q: "Kelvin最鍾意食乜嘢點心？", options: ["鳳爪", "蝦餃同燒賣", "腸粉"], answer: 1, explain: "He says 我最鍾意蝦餃同燒賣; he doesn't really like chicken feet." }
       - { q: "邊個畀錢？", options: ["Mandy", "Kelvin", "伙記"], answer: 1, explain: "Kelvin says 我畀啦." }
       - { q: "點解Kelvin畀錢？", options: ["因為今日係Mandy生日", "因為Kelvin好有錢", "因為Mandy冇錢"], answer: 0, explain: "今日你生日: it's Mandy's birthday." }
+writing:
+  - task: "You're hosting yum cha. Order for the table: a pot of pu'er tea, a basket of har gow and a basket of siu mai."
+    min: 10
+    max: 30
+    use: [w.wu4, w.pou2-nei2, w.lung4, w.haa1-gaau2, w.siu1-maai2]
+    useAtLeast: 3
+    grammar: [g.mgoi-doze, g.common-classifiers]
+    expect:
+      - { pattern: "壺", hint: "A pot of tea: 一壺普洱." }
+      - { pattern: "籠", hint: "Steamer baskets take 籠: 一籠蝦餃." }
+    model: { es: "唔該，一壺普洱，一籠蝦餃同一籠燒賣。", en: "Excuse me, a pot of pu'er, a basket of har gow and a basket of siu mai." }
+  - task: "Ask the waiter with 畀: an iced lemon tea for you, no ice, and a pot of hot water for the table."
+    min: 10
+    max: 30
+    use: [w.bei2, w.dung3-ning4-caa2, w.zau2-bing1, w.gwan2-seoi2]
+    useAtLeast: 3
+    grammar: [g.bei-give, g.particles-aa-laa]
+    expect:
+      - { pattern: "畀.{1,6}我", hint: "Ask with 畀 … 我: 畀杯凍檸茶我." }
+      - { pattern: "走冰|凍|熱", hint: "Say how you want it: 走冰, 凍 or 熱." }
+    model: { es: "唔該畀杯凍檸茶我，走冰。再畀壺滾水我哋吖。", en: "An iced lemon tea for me, please, no ice. And a pot of hot water for us, please." }
+  - task: "Write which dim sum you like and which you don't, and what it tastes like."
+    min: 12
+    max: 35
+    use: [w.zung1-ji3, w.haa1-gaau2, w.caa1-siu1-baau1, w.fung6-zaau2, w.naan4-sik6]
+    useAtLeast: 3
+    grammar: [g.zung-ji-like]
+    expect:
+      - { pattern: "鍾意", hint: "Say what you like: 我鍾意食…" }
+      - { pattern: "唔鍾意", hint: "Say what you don't like: 我唔鍾意食…" }
+    model: { es: "我好鍾意食蝦餃同叉燒包。我唔鍾意食鳳爪，好難食！", en: "I really like har gow and char siu bao. I don't like chicken feet; they taste bad!" }
+  - task: "At the end of the meal, ask the waiter for the bill, then thank your friend who is paying for everyone."
+    min: 8
+    max: 25
+    use: [w.maai4-daan1, w.m4-goi1, w.do1-ze6, w.ceng2]
+    useAtLeast: 3
+    grammar: [g.mgoi-doze]
+    expect:
+      - { pattern: "唔該.{0,2}埋單|埋單.{0,3}唔該", hint: "Ask the waiter politely: 唔該埋單！" }
+      - { pattern: "多謝", hint: "Thank your friend for the treat with 多謝." }
+    model: { es: "唔該埋單！多謝你請我哋飲茶呀！", en: "The bill, please! Thanks for treating us to dim sum!" }

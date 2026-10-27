@@ -297,3 +297,45 @@ dialogues:
       - { q: "Sam同Mandy係唔係同學呀？", options: ["係，佢哋係同學", "唔係，佢哋係好朋友", "唔係，佢哋係兄弟姊妹"], answer: 1, explain: "Mandy answers 唔係，我哋係好朋友." }
       - { q: "Ana喺香港做乜嘢呀？", options: ["返工", "喺大學讀書", "做導遊"], answer: 1, explain: "我喺大學讀書，讀中文: she studies Chinese at university." }
       - { q: "邊個都學緊廣東話呀？", options: ["Mandy", "Sam", "冇人"], answer: 1, explain: "Sam says 我都學緊廣東話: he is learning Cantonese too." }
+writing:
+  - task: "Write about you and your friends with 我哋: say you are good friends and that you all live in Hong Kong."
+    min: 10
+    max: 30
+    use: [w.ngo5-dei6, w.hou2-pang4-jau5, w.dou1, w.zyu6]
+    useAtLeast: 3
+    grammar: [g.dei-plural, g.dou-also]
+    expect:
+      - { pattern: "我哋", hint: "Talk about your group with 我哋." }
+      - { pattern: "都", hint: "Say 'all' with 都: 我哋都…" }
+    model: { es: "我哋係好朋友。我哋都住喺香港。", en: "We're good friends. We all live in Hong Kong." }
+  - task: "Write where two people on your tour are from and which languages they speak (one of them can be you)."
+    min: 15
+    max: 40
+    use: [w.jing1-gwok3-jan4, w.gong2, w.jing1-man2, w.siu2-siu2, w.gwong2-dung1-waa2]
+    useAtLeast: 3
+    grammar: [g.nationality-language, g.dou-also]
+    expect:
+      - { pattern: "係.*人", hint: "Say where they're from: 佢係…人." }
+      - { pattern: "講", hint: "Say which language they speak: 講英文, 講廣東話…" }
+    model: { es: "Tom係英國人，佢講英文同少少廣東話。我係美國人，我都講英文。", en: "Tom is British; he speaks English and a little Cantonese. I'm American, and I speak English too." }
+  - task: "Ask a new classmate three A-not-A questions: are they Japanese, do they like Hong Kong, and are they going to the Peak?"
+    min: 12
+    max: 35
+    use: [w.hai6-m4-hai6, w.zung1-m4-zung1-ji3, w.saan1-deng2, w.jat6-bun2-jan4]
+    useAtLeast: 3
+    grammar: [g.a-not-a-questions]
+    expect:
+      - { pattern: "係唔係|係咪", hint: "Ask 'are you…?' with 係唔係." }
+      - { pattern: "鍾唔鍾意|([去食飲講住嚟睇識])唔\\1", hint: "Ask another A-not-A question: 鍾唔鍾意…? 去唔去…?" }
+    model: { es: "你係唔係日本人呀？你鍾唔鍾意香港呀？你去唔去山頂呀？", en: "Are you Japanese? Do you like Hong Kong? Are you going to the Peak?" }
+  - task: "Your new friend tells you they're a student. Reply that you are one too, and ask where they study."
+    es: "我係學生。"
+    min: 8
+    max: 25
+    use: [w.dou1, w.hok6-saang1, w.duk6-syu1, w.daai6-hok6]
+    useAtLeast: 2
+    grammar: [g.dou-also]
+    expect:
+      - { pattern: "都係", hint: "Say 'me too' with 都: 我都係學生." }
+      - { pattern: "邊度|邊間", hint: "Ask where: 你喺邊度讀書呀？" }
+    model: { es: "我都係學生！你喺邊度讀書呀？", en: "I'm a student too! Where do you study?" }

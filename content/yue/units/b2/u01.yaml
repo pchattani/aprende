@@ -267,3 +267,43 @@ dialogues:
       - { q: "點解佢哋唔使排一個鐘？", options: ["因為佢哋坐巴士", "因為會員有快速通道", "因為今日冇人排隊"], answer: 1, explain: "The sign says members get a fast lane (會員有快速通道), and 嘉欣 still has her card." }
       - { q: "嘉欣幾時開始做會員？", options: ["上個月", "今日", "細細個嘅時候"], answer: 2, explain: "She says 我細細個阿媽幫我申請過會員: her mum signed her up when she was little." }
       - { q: "除咗會員卡，職員仲要睇乜嘢？", options: ["身份證", "飛", "銀包"], answer: 0, explain: "職員話要睇埋身份證喎: they also need to see her ID card." }
+writing:
+  - task: "You're at the Tung Chung pier. Pass on two pieces of news to your family with hearsay 喎: what the notice says about the last boat, and what your friend Fan told you."
+    min: 60
+    max: 120
+    use: [w.wo3, w.gou3-si6, w.ok3-lyut3, w.zaam6-ting4, w.zeon6-faai3]
+    useAtLeast: 3
+    grammar: [g.wo5-hearsay]
+    expect:
+      - { pattern: "喎", hint: "Pass on what others said with 喎 at the end." }
+      - { pattern: "話", hint: "Say who said it: 告示話…, 阿芬話…" }
+    model: { es: "碼頭個告示話因為天氣惡劣，今晚尾班船暫停喎。職員叫我哋盡快坐巴士返東涌。仲有，阿芬話佢今晚唔嚟食飯喎，佢要加班。我哋可能要遲啲先返到屋企，你哋唔使等我哋食飯。", en: "The notice at the pier says the last boat tonight is suspended because of the bad weather. The staff told us to take a bus back to Tung Chung as soon as possible. Also, Fan says she's not coming to dinner tonight; she has to work late. We might get home late, so don't wait for us for dinner." }
+  - task: "You're visiting the old fort at Tung Chung. Write a message reacting to what you suddenly notice, with 喎 and words like 竟然 or 估唔到."
+    min: 60
+    max: 110
+    use: [w.wo3, w.paau3-toi4, w.gu2-m4-dou2, w.ging2-jin4, w.hai6-wo3]
+    useAtLeast: 3
+    grammar: [g.wo3-noticing]
+    expect:
+      - { pattern: "喎", hint: "React to what you notice with 喎: 好靚喎！" }
+      - { pattern: "竟然|估唔到|居然|原來|果然", hint: "Show surprise: 竟然, 估唔到…" }
+    model: { es: "嘩，東涌炮台原來咁大㗎！我仲以為好細添。估唔到入面竟然有咁多遊客喎。係喎，你講得啱，呢度啲風景真係好靚喎！我哋影咗好多相，返到屋企畀你睇。下次你一定要嚟埋！", en: "Wow, the Tung Chung fort is so big! I thought it would be small. I didn't expect so many tourists inside. Oh yes, you were right: the scenery here really is beautiful! We took lots of photos; I'll show you when I get home. Next time you must come too!" }
+  - task: "A visitor is upset about having to pay full fare. Explain the rule politely but firmly, using 㗎."
+    min: 60
+    max: 110
+    use: [w.kwai1-zak1, w.zoeng2-ze2, w.jau1-wai6, w.san1-fan2-zing3, w.ng6-wui6]
+    useAtLeast: 3
+    grammar: [g.gaa3-explaining]
+    expect:
+      - { pattern: "㗎", hint: "Explain and insist with 㗎." }
+    model: { es: "先生，唔好誤會，呢度嘅規則係噉㗎：長者同小童有優惠，不過一定要帶身份證㗎。如果冇證件，就要畀全部車費㗎。我哋都係照規則做嘅。如果你有身份證，我可以即刻幫你改返。", en: "Sir, please don't misunderstand. The rule here is this: seniors and children get a discount, but they must bring their ID card. Without ID you have to pay the full fare. We're just following the rules. If you have your ID card, I can change it for you right away." }
+  - task: "Write a formal notice for a clubhouse in Tung Chung: members get free entry, non-members pay, and everyone must bring ID."
+    min: 60
+    max: 120
+    use: [w.gok3-wai2, w.wui2-jyun4, w.min5-fai3, w.sau1-fai3, w.zyu3-ji3]
+    useAtLeast: 4
+    grammar: []
+    expect:
+      - { pattern: "各位|請注意|請", hint: "Address the reader formally: 各位會員請注意…" }
+      - { pattern: "免費|收費", hint: "State the fees: 免費, 收費…" }
+    model: { es: "各位會員請注意：由下個月開始，會員可以免費使用泳池同健身室。唔係會員嘅人每次收費五十蚊。入場嘅時候請帶身份證或者其他證件。如果有問題，可以問管理處嘅職員。多謝各位合作。", en: "Attention, members: from next month, members may use the pool and gym free of charge. Non-members will be charged fifty dollars per visit. Please bring your ID card or another identity document when entering. If you have any questions, please ask the staff at the management office. Thank you for your cooperation." }

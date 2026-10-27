@@ -280,3 +280,42 @@ dialogues:
       - { q: "Comment est Dinard ?", options: ["Plus grand que Saint-Malo", "Plus petit que Saint-Malo, avec de belles plages", "Sans plages"], answer: 1, explain: "Dinard is much smaller, but its beaches are as beautiful as Saint-Malo's." }
       - { q: "Qui est Surcouf ?", options: ["Un roi", "Un pirate", "Un corsaire"], answer: 2, explain: "Surcouf was a corsair; Yann insists that corsairs are not the same as pirates because they worked for the king." }
       - { q: "Où sont les meilleures galettes, selon Yann ?", options: ["À Paris", "À Dinard", "Rue Jacques-Cartier, à Saint-Malo"], answer: 2, explain: "Yann recommends a crêperie on rue Jacques-Cartier." }
+writing:
+  - task: "Compare Saint-Malo with your own town: size, age, weather, beaches (plus … que, moins … que, aussi … que)."
+    min: 30
+    max: 70
+    use: [w.plus, w.moins, w.cité, w.étroit, w.intéressant]
+    useAtLeast: 3
+    grammar: [g.comparatives]
+    expect:
+      - { pattern: "\\b(plus|moins|aussi|autant) [^.!?]{1,40}\\bqu(e\\b|['’])", hint: "Compare with plus / moins / aussi … que." }
+    model: { es: "Saint-Malo est plus petite que Manchester, mais elle est plus belle ! Les rues de la cité sont plus étroites et les maisons sont plus anciennes. À Saint-Malo, il fait aussi froid qu'à Manchester, mais il pleut moins. Et la plage est beaucoup plus intéressante !", en: "Saint-Malo is smaller than Manchester, but it's prettier! The streets of the walled city are narrower and the houses are older. In Saint-Malo it's as cold as in Manchester, but it rains less. And the beach is much more interesting!" }
+  - task: "Write about the corsairs of Saint-Malo: who was the most famous, the richest or the most dangerous (le plus, la plus, les plus…)."
+    min: 30
+    max: 70
+    use: [w.corsaire, w.célèbre, w.navire, w.roi, w.ennemi]
+    useAtLeast: 3
+    grammar: [g.superlatives]
+    expect:
+      - { pattern: "\\b(le|la|les) (plus|moins)\\b", hint: "Use the superlative: le corsaire le plus célèbre, les plus rapides…" }
+    model: { es: "Robert Surcouf est le corsaire le plus célèbre de Saint-Malo. Il était aussi le plus courageux ! Ses navires étaient les plus rapides de la mer. Pour le roi de France, c'était un héros, mais pour les Anglais, c'était l'ennemi le plus dangereux.", en: "Robert Surcouf is the most famous corsair of Saint-Malo. He was also the bravest! His ships were the fastest at sea. For the King of France he was a hero, but for the English he was the most dangerous enemy." }
+  - task: "A friend is looking for a good crêperie in Saint-Malo. Recommend the best one and compare it with others (meilleur, mieux, pire)."
+    es: "Je cherche une bonne crêperie à Saint-Malo. Tu connais ?"
+    min: 30
+    max: 70
+    use: [w.meilleur, w.mieux, w.crêperie, w.galette, w.pire]
+    useAtLeast: 3
+    grammar: [g.meilleur-mieux]
+    expect:
+      - { pattern: "\\b(meilleure?s?|mieux)\\b", hint: "Use meilleur (adjective) or mieux (adverb): la meilleure crêperie, on y mange mieux…" }
+    model: { es: "Oui ! La meilleure crêperie de Saint-Malo, c'est Chez Annie, près des remparts. Ses galettes sont meilleures que les galettes de Paris, et on y mange mieux qu'au restaurant. Évite la crêperie de la gare : c'est la pire de la ville !", en: "Yes! The best crêperie in Saint-Malo is Chez Annie, near the ramparts. Its galettes are better than the ones in Paris, and you eat better there than in a restaurant. Avoid the crêperie at the station: it's the worst in town!" }
+  - task: "Which do you prefer, Brittany or Normandy? Compare them and give your reasons (par exemple, par contre, pourtant)."
+    min: 35
+    max: 70
+    use: [w.breton, w.normand, w.par-contre, w.pourtant, w.par-exemple]
+    useAtLeast: 3
+    grammar: [g.comparatives, g.superlatives]
+    expect:
+      - { pattern: "\\b(plus|moins|aussi|autant|meilleure?s?|mieux)\\b", hint: "Compare: plus belle, aussi jolie, meilleur…" }
+      - { pattern: "\\b(par contre|pourtant|d['’]ailleurs|par exemple|en revanche)\\b", hint: "Link your ideas: par exemple, par contre, pourtant…" }
+    model: { es: "Je préfère la Bretagne. La côte bretonne est plus belle et les villages sont aussi jolis qu'en Normandie. Par exemple, Saint-Malo est magnifique. Par contre, les fromages normands sont meilleurs ! Pourtant, la Bretagne a les meilleures crêpes. C'est difficile de choisir !", en: "I prefer Brittany. The Breton coast is more beautiful and the villages are as pretty as in Normandy. For example, Saint-Malo is magnificent. On the other hand, Norman cheeses are better! And yet Brittany has the best crêpes. It's hard to choose!" }

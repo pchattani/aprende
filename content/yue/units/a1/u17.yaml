@@ -120,3 +120,45 @@ lessons:
         en: ["What time is it now?", "It's half past ten."]
         grammar: [g.clock-time]
         vocab: [w.gei2-dim2, w.bun3]
+writing:
+  - task: "Write today's date and day of the week: 今日…月…號，星期…"
+    min: 7
+    max: 16
+    use: [w.gam1-jat6, w.jyut6, w.hou6, w.sing1-kei4]
+    useAtLeast: 3
+    grammar: [g.dates, g.days-weeks]
+    expect:
+      - { pattern: "月.*號", hint: "Give the date: …月…號." }
+      - { pattern: "星期[一二三四五六日]", hint: "Give the day: 星期一 … 星期日." }
+    model: { es: "今日五月十號，星期六。", en: "Today is the 10th of May, a Saturday." }
+  - task: "Your friend asks the time. It is half past three. Write the answer."
+    es: "而家幾點呀？"
+    min: 4
+    max: 12
+    use: [w.ji4-gaa1, w.dim2.b, w.bun3]
+    useAtLeast: 2
+    grammar: [g.clock-time]
+    expect:
+      - { pattern: "三點", hint: "Three o'clock is 三點." }
+      - { pattern: "半", hint: "Half past is 半: 三點半." }
+    model: { es: "而家三點半。", en: "It's half past three now." }
+  - task: "Write two times in characters: two o'clock and half past twelve. Careful: two o'clock uses 兩."
+    min: 5
+    max: 12
+    use: [w.loeng5, w.dim2.b, w.bun3]
+    useAtLeast: 3
+    grammar: [g.clock-time, g.loeng-vs-ji]
+    expect:
+      - { pattern: "兩點", hint: "Two o'clock is 兩點, not 二點." }
+      - { pattern: "十二點半", hint: "Half past twelve is 十二點半." }
+    model: { es: "兩點。十二點半。", en: "Two o'clock. Half past twelve." }
+  - task: "Write what day it is today and what time it is now."
+    min: 6
+    max: 16
+    use: [w.gam1-jat6, w.sing1-kei4-ng5, w.ji4-gaa1, w.dim2.b]
+    useAtLeast: 3
+    grammar: [g.days-weeks, g.clock-time]
+    expect:
+      - { pattern: "星期", hint: "Say the day: 今日星期…" }
+      - { pattern: "點", hint: "Say the time: 而家…點." }
+    model: { es: "今日星期五，而家八點。", en: "Today is Friday, and it's eight o'clock now." }

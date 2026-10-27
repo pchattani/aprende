@@ -281,3 +281,38 @@ dialogues:
       - { q: "Che cosa successe a Vernazza nel 2011?", options: ["Un terremoto", "Un incendio", "Un'alluvione"], answer: 2, explain: "'Nel 2011 un'alluvione colpì Vernazza' (colpì = passato remoto of colpire)." }
       - { q: "Che cosa fece lo zio di Arturo?", options: ["Venne ad aiutare per settimane", "Scrisse un articolo", "Aprì un bar", "Partì per Monterosso"], answer: 0, explain: "'Mio zio venne qui ad aiutare per settimane.'" }
       - { q: "Che cosa vogliono fare Fiorenza e Arturo?", options: ["Prendere il treno per Genova", "Scrivere una lettera al giornale", "Comprare un altro giornale"], answer: 1, explain: "Fiorenza: 'Scriviamo una lettera al giornale.'" }
+writing:
+  - task: "Write about how you have learned Italian, using the gerund for manner, time and cause (leggendo, ascoltando, essendo timido, sbagliando…)."
+    min: 50
+    max: 100
+    use: [w.quotidiano, w.articolo, w.sbagliare, w.ascoltare, w.rendersi-conto]
+    grammar: [g.gerundio-uses]
+    expect:
+      - { pattern: "\\b\\S+(ando|endo)\\b", hint: "Use the gerund: leggendo, ascoltando, sbagliando…" }
+    model: { es: "Ho imparato l'italiano soprattutto vivendo in Italia. Leggendo il quotidiano ogni mattina, ho scoperto tante parole nuove. Ascoltando la radio in macchina, ho capito meglio come parlano gli italiani. Essendo timido, all'inizio parlavo poco, ma sbagliando s'impara! Oggi, guardando un film, capisco quasi tutto. E scrivendo questo testo, mi rendo conto di quanta strada ho fatto.", en: "I learned Italian mainly by living in Italy. By reading the paper every morning, I discovered lots of new words. By listening to the radio in the car, I understood better how Italians speak. Being shy, I didn't speak much at first, but you learn from your mistakes! Today, when I watch a film, I understand almost everything. And writing this text, I realise how far I've come." }
+  - task: "Write a short news article for the local paper about a storm in the Cinque Terre: what happened, the people involved, what the mayor said."
+    min: 60
+    max: 110
+    use: [w.cronaca, w.alluvione, w.vittima, w.ferito, w.intervista]
+    grammar: [g.gerundio-uses, g.b1-review]
+    expect:
+      - { pattern: "\\b(ha|hanno|è|sono)\\s+(\\S+\\s+)?\\S+(at|ut|it|ss|tt|st|s)[oaie]\\b", hint: "Report the events with the passato prossimo: ha colpito, sono rimasti…" }
+      - { pattern: "\\b\\S+(ando|endo)\\b|\\b(ha detto|ha dichiarato|ha spiegato) che\\b", hint: "Use a gerund or report what someone said: cadendo…, il sindaco ha detto che…" }
+    model: { es: "Cronaca locale. Ieri sera, dopo un forte temporale, c'è stata un'alluvione a Vernazza. In poche ore è caduta tanta pioggia che alcune strade si sono trasformate in fiumi. Per fortuna non ci sono state vittime, ma due turisti sono rimasti feriti cadendo su un sentiero. I soccorsi sono arrivati subito. In un'intervista, il sindaco ha detto che la situazione è sotto controllo e che domani i treni partiranno di nuovo.", en: "Local news. Last night, after a heavy storm, there was a flood in Vernazza. In a few hours so much rain fell that some streets turned into rivers. Luckily there were no victims, but two tourists were injured falling on a path. The rescue services arrived at once. In an interview, the mayor said the situation is under control and that the trains will run again tomorrow." }
+  - task: "History books use the passato remoto. Write a short history of Portovenere (or a place you know) in that style, using a few passato remoto forms (fu, costruirono, divenne…)."
+    min: 50
+    max: 100
+    use: [w.fondare, w.secolo, w.guerra, w.divenire, w.impero]
+    grammar: [g.passato-remoto-recognition]
+    expect:
+      - { pattern: "\\b\\S+(arono|irono|erono|ettero|ebbero|ennero|ssero|nnero)\\b|\\b(fu|furono|fondò|costruì|divenne|nacque|morì|ebbe|decise|vinse|arrivò|partì|regnò|sconfisse|conquistò)", hint: "Use the passato remoto for history: fu, costruirono, divenne…" }
+    model: { es: "Portovenere fu un porto importante già al tempo dell'impero romano. Nel Medioevo i Genovesi conquistarono il paese e costruirono un grande castello sulla roccia. Durante le guerre tra Genova e Pisa, il borgo divenne un luogo molto importante per tutta la costa. Nei secoli successivi molti abitanti partirono per il mare. Oggi il paese vive di turismo ed è patrimonio dell'UNESCO, come le Cinque Terre.", en: "Portovenere was an important port as early as the time of the Roman Empire. In the Middle Ages the Genoese conquered the village and built a great castle on the rock. During the wars between Genoa and Pisa, the village became a very important place for the whole coast. In the following centuries many inhabitants left for the sea. Today the village lives on tourism and is a UNESCO World Heritage site, like the Cinque Terre." }
+  - task: "Write a last postcard from the Cinque Terre about your journey through the North: places you saw, your opinions (credo che + congiuntivo), a regret (avrei voluto…) and a plan."
+    min: 60
+    max: 110
+    use: [w.sentiero, w.esperienza, w.ricordo, w.panorama, w.avrei-voluto]
+    grammar: [g.b1-review, g.congiuntivo-opinion, g.condizionale-passato]
+    expect:
+      - { pattern: "\\b(penso|credo|spero|mi sembra|mi pare) che\\b", hint: "Give an opinion with che + congiuntivo: credo che sia…" }
+      - { pattern: "\\b(avrei|avremmo|sarei|saremmo)\\s+\\S+\\b", hint: "Express a regret with the past conditional: avrei voluto…" }
+    model: { es: "Cara Giulia, il mio viaggio nel Nord sta per finire e sono un po' triste. Ho visto Milano, Venezia, le Dolomiti e Bologna, ma credo che le Cinque Terre siano il posto più bello di tutti. Oggi ho camminato sul sentiero da Monterosso a Vernazza: che fatica, ma che panorama! Avrei voluto restare di più, ma il lavoro mi aspetta. Porto a casa tanti ricordi. La prossima volta mi piacerebbe scoprire il Sud insieme a te!", en: "Dear Giulia, my trip through the North is nearly over and I'm a bit sad. I've seen Milan, Venice, the Dolomites and Bologna, but I think the Cinque Terre are the most beautiful place of all. Today I walked the path from Monterosso to Vernazza: so tiring, but what a view! I would have liked to stay longer, but work is waiting for me. I'm taking home lots of memories. Next time I'd like to discover the South with you!" }

@@ -281,3 +281,43 @@ dialogues:
       - { q: "O que o Bruno queria ter feito antes?", options: ["Comprado um apartamento", "Pedido demissão", "Visitado a irmã"], answer: 1, explain: "Quem me dera ter feito isso cinco anos atrás: he wishes he had resigned earlier." }
       - { q: "Por que o Bruno não falou com a família?", options: ["Não tinha tempo", "Tinha receio de decepcionar a família", "A mãe estava doente"], answer: 1, explain: "Eu tive receio de decepcionar vocês." }
       - { q: "O que a Marina teria feito no lugar dele?", options: ["Teria pensado um pouco mais", "Teria pedido demissão antes", "Teria ficado em São Paulo para sempre"], answer: 0, explain: "No seu lugar, eu teria pensado um pouco mais." }
+writing:
+  - task: "Write about an important decision in your past and what you would have done differently (Eu teria escolhido…, teria estudado…)."
+    min: 80
+    max: 150
+    use: [w.dilema, w.prioridade, w.alternativa, w.abrir-mão-de, w.refletir]
+    useAtLeast: 3
+    grammar: [g.conditional-perfect]
+    expect:
+      - { pattern: '\b(teria|ter[ií]amos|teriam) [a-zà-ú]+(ado|ido|ito|isto|eito|osto)\b', hint: "Use the conditional perfect: Eu teria escolhido…" }
+    model: { es: "Há dez anos, eu tive um grande dilema: aceitar um emprego em São Paulo ou fazer um mestrado em Recife. Na época, a minha prioridade era o dinheiro, então abri mão do mestrado. Hoje, depois de refletir muito, acho que teria escolhido a outra alternativa. Eu teria estudado o que amo e teria conhecido melhor o Nordeste. Por outro lado, se eu não tivesse ido para São Paulo, não teria conhecido a minha esposa! No fim, talvez eu não tenha feito a escolha errada, só uma escolha diferente.", en: "Ten years ago I faced a big dilemma: take a job in São Paulo or do a master's in Recife. At the time my priority was money, so I gave up the master's. Today, after a lot of thought, I think I'd have chosen the other option. I'd have studied what I love and got to know the Northeast better. On the other hand, if I hadn't gone to São Paulo, I'd never have met my wife! In the end, maybe I didn't make the wrong choice, just a different one." }
+  - task: "Write a nostalgic message to a friend about a trip you took together, using quem dera, ainda bem que and por pouco."
+    min: 80
+    max: 140
+    use: [w.quem-dera, w.ainda-bem, w.por-pouco, w.nostalgia, w.empolgado]
+    useAtLeast: 3
+    grammar: [g.quem-dera]
+    expect:
+      - { pattern: '\bquem (me )?dera\b', hint: "Wish with quem dera + imperfect subjunctive: Quem dera eu pudesse…" }
+      - { pattern: '\b(ainda bem que|por pouco)\b', hint: "Add relief or a near miss: Ainda bem que…, Por pouco…" }
+    model: { es: "Que saudade de Recife! Quem dera eu pudesse voltar agora para a Rua do Bom Jesus e passear de novo de barco pelo Capibaribe. Quem me dera ter mais férias! Ainda bem que tirei muitas fotos: quando bate a nostalgia, olho para elas. Lembra do último dia? Por pouco a gente não perdeu o voo, porque ficamos empolgados demais no mercado. Que dia! Quem dera todos os dias fossem assim. Se eu tivesse dinheiro, compraria uma passagem hoje mesmo e a gente repetiria a viagem inteira.", en: "I miss Recife so much! If only I could go back to Rua do Bom Jesus right now and take a boat along the Capibaribe again. If only I had more holidays! Thank goodness I took lots of photos: when the nostalgia hits, I look at them. Remember the last day? We nearly missed the flight because we got too carried away at the market. What a day! If only every day were like that. If I had the money, I'd buy a ticket today and we'd do the whole trip again." }
+  - task: "Your flatmate didn't tell you his parents were coming for dinner. Write him a message reproaching him politely (Você deveria ter me avisado…, No seu lugar, eu teria…)."
+    min: 80
+    max: 140
+    use: [w.no-seu-lugar, w.decepcionar, w.mágoa, w.constrangido, w.bobagem]
+    useAtLeast: 3
+    grammar: [g.deveria-ter, g.conditional-perfect]
+    expect:
+      - { pattern: '\b(deveria|devia|podia|poderia) ter( me| te| nos)? [a-zà-ú]+(ado|ido|ito|isto|eito|osto)\b', hint: "Reproach with deveria ter + participle: Você deveria ter me avisado." }
+      - { pattern: '\b(no seu lugar|eu teria)\b', hint: "Say what you would have done: No seu lugar, eu teria…" }
+    model: { es: "Oi, Júlio. Preciso falar com você sobre ontem. Você deveria ter me avisado que os seus pais iam jantar aqui! Cheguei em casa cansada, com a casa toda suja, e fiquei muito constrangida na frente deles. No seu lugar, eu teria mandado uma mensagem de manhã ou pelo menos teria arrumado a sala. Não é bobagem: você me decepcionou um pouco. Não guardo mágoa, mas da próxima vez, por favor, me avise antes, combinado? Sei que você não fez por mal, mas eu teria feito diferente.", en: "Hi, Júlio. I need to talk to you about yesterday. You should have told me your parents were coming for dinner! I got home tired, with the house in a mess, and I was really embarrassed in front of them. In your place, I'd have sent a message in the morning or at least tidied the living room. It's not nothing: you let me down a bit. I'm not holding a grudge, but next time, please let me know first, OK? I know you didn't mean any harm, but I'd have done it differently." }
+  - task: "Tell a story about a time you followed (or ignored) your intuition, and what would have happened otherwise."
+    min: 80
+    max: 140
+    use: [w.intuição, w.instinto, w.racional, w.receio, w.taxímetro]
+    useAtLeast: 3
+    grammar: [g.conditional-perfect, g.deveria-ter]
+    expect:
+      - { pattern: '\b(intui[cç][aã]o|instinto|impulso)\b', hint: "Mention your intuition or instinct: segui a minha intuição…" }
+      - { pattern: '\b(teria|ter[ií]amos|teriam|tivesse|tivessem) [a-zà-ú]+(ado|ido|ito|isto|eito|osto|ago)\b', hint: "Say what would have happened otherwise: teria pago…, se eu tivesse aceitado…" }
+    model: { es: "Quando cheguei a Recife, peguei um táxi no aeroporto. O motorista disse que o taxímetro estava quebrado e pediu cem reais pela corrida. Algo me pareceu estranho e, apesar do receio de parecer mal-educado, segui a minha intuição: saí do carro e peguei outro táxi. A corrida custou trinta reais! Se eu tivesse sido mais racional, talvez tivesse aceitado o preço sem pensar. Mas o meu instinto estava certo: se eu não tivesse descido, teria pago três vezes mais. Desde então, confio mais no meu instinto.", en: "When I arrived in Recife, I took a taxi at the airport. The driver said the meter was broken and asked for a hundred reais for the ride. Something seemed odd and, despite my fear of seeming rude, I followed my intuition: I got out and took another taxi. The ride cost thirty reais! If I'd been more rational, I might have accepted the price without thinking. But my instinct was right: if I hadn't got out, I'd have paid three times as much. Since then I've trusted my instinct more." }

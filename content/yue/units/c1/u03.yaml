@@ -279,3 +279,44 @@ dialogues:
       - { q: "陳經理點樣講自己嘅公司？", options: ["貴公司", "敝公司", "府上"], answer: 1, explain: "He refers to his own company humbly as 敝公司." }
       - { q: "何教授覺得展覽可以點樣改善？", options: ["多啲介紹大炮台嘅歷史", "加多啲葡國菜", "延長開放時間"], answer: 0, explain: "His humble opinion: cover more of Monte Fort's history, such as 1622." }
       - { q: "點解佢哋要停止傾偈？", options: ["何教授要走", "館長準備致辭", "酒會完咗"], answer: 1, explain: "陳經理 says the Curator is about to give a speech." }
+writing:
+  - task: "Write a formal invitation to an exhibition opening on behalf of your company, using honorifics and formal requests (敬請, 光臨, 閣下)."
+    min: 90
+    max: 160
+    use: [w.ging3-cing2, w.gwong1-lam4, w.gok3-haa6, w.ceot1-zik6, w.wing4-hang6]
+    useAtLeast: 3
+    grammar: [g.formal-requests, g.honorifics]
+    expect:
+      - { pattern: "敬請|懇請|煩請|務必", hint: "Make a formal request: 敬請…" }
+      - { pattern: "光臨|出席", hint: "Invite them to attend: 光臨, 出席." }
+    model: { es: "尊敬的陳教授：敝公司將於下個月十號下午六時舉行展覽開幕酒會。閣下係本地著名嘅設計師，如果閣下可以光臨，我哋會覺得非常榮幸。敬請閣下於本月尾之前回覆，方便我哋安排座位。如有查詢，歡迎打電話畀本人。希望到時見到閣下。", en: "Dear Professor Chan: Our company will hold an exhibition opening reception at 6 p.m. on the 10th of next month. As a renowned local designer, we would be greatly honoured if you could attend. We respectfully ask that you reply by the end of this month so that we can arrange seating. For any enquiries, please feel free to call me. We hope to see you there." }
+  - task: "Write a formal apology to a client for a delayed project, using expressions like 抱歉, 不便 and 懇請."
+    min: 90
+    max: 160
+    use: [w.pou5-hip3, w.bat1-bin6, w.han2-cing2, w.gung1-cing4, w.cung1-sam1]
+    useAtLeast: 3
+    grammar: [g.formal-requests, g.humble-forms]
+    expect:
+      - { pattern: "抱歉|對唔住", hint: "Apologise formally: 非常抱歉…" }
+      - { pattern: "懇請|敬請|煩請|希望", hint: "Make a formal request: 懇請…" }
+    model: { es: "李經理：由於人手不足，敝公司負責嘅工程未能準時完成，為貴公司帶來不便，我哋衷心表示抱歉。我哋已經安排更多同事跟進，預計下星期五之前可以完成。懇請貴公司原諒，如有任何問題，請隨時聯絡本人。再次向貴公司講聲對唔住。", en: "Dear Manager Lee: Owing to a shortage of staff, the project our company is responsible for could not be completed on time. We sincerely apologise for the inconvenience caused to your company. We have assigned more colleagues to follow up and expect to finish before next Friday. We earnestly ask for your understanding; if you have any questions, please contact me at any time. Once again, please accept our apologies." }
+  - task: "You've been asked to say a few words at an alumni dinner. Write a short, humble opening speech (各位嘉賓, 榮幸, 獻醜, 多多指教)."
+    min: 90
+    max: 160
+    use: [w.gaa1-ban1, w.wing4-hang6, w.hin3-cau2, w.do1-do1-zi2-gaau3, w.haau6-jau5]
+    useAtLeast: 3
+    grammar: [g.humble-forms, g.honorifics]
+    expect:
+      - { pattern: "各位|嘉賓|校友", hint: "Address the audience: 各位嘉賓、各位校友…" }
+      - { pattern: "獻醜|指教|不敢當|小弟|本人", hint: "Use a humble form: 獻醜, 多多指教…" }
+    model: { es: "各位嘉賓、各位校友，大家好！今晚好榮幸可以代表校友會講幾句說話。小弟唔係好識講嘢，等陣如果講得唔好，請大家原諒我獻醜。多謝學校多年嚟嘅照顧，亦多謝各位今晚抽時間出席。以後仲請大家多多指教！祝大家今晚食得開心，飲得開心！", en: "Distinguished guests, fellow alumni, good evening! It's a great honour to say a few words tonight on behalf of the alumni association. I'm not much of a speaker, so if I don't speak well, please forgive my humble attempt. Thank you to our school for looking after us over the years, and thank you all for making time to come tonight. I look forward to your guidance in future! I wish you all a happy evening of food and drink!" }
+  - task: "Write two formal messages: congratulations to a colleague on his wedding, and sympathy to another colleague who is in hospital."
+    min: 90
+    max: 160
+    use: [w.zuk1-ho6, w.gung1-hei2, w.hei2-zau2, w.wai3-man6, w.gan2.c]
+    useAtLeast: 3
+    grammar: [g.honorifics]
+    expect:
+      - { pattern: "恭喜|祝賀|祝", hint: "Offer congratulations: 恭喜…, 祝你哋…" }
+      - { pattern: "慰問|早日康復", hint: "Offer sympathy: 謹此慰問, 祝你早日康復." }
+    model: { es: "張先生：恭喜你同太太結婚！多謝你邀請我飲喜酒，我一定準時出席。祝你哋永遠幸福，我衷心祝賀你哋。何小姐：知道你入咗醫院，我覺得非常擔心，我謹代表部門同事向你表示慰問。請你好好休息，祝你早日康復，我哋等你返嚟。", en: "Mr Cheung: Congratulations on your marriage! Thank you for inviting me to the wedding banquet; I'll certainly be there on time. Wishing you both lasting happiness, and my heartfelt congratulations. Miss Ho: I was very worried to hear you're in hospital. On behalf of our department, please accept our sympathy. Rest well; we wish you a speedy recovery and look forward to having you back." }

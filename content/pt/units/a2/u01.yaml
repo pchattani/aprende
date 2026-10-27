@@ -281,3 +281,45 @@ dialogues:
       - { q: "Como o Ricardo passeou na avenida?", options: ["De carro", "De bicicleta", "De ônibus"], answer: 1, explain: "Eu andei de bicicleta: the avenue closes to cars on Sundays." }
       - { q: "Com quem ele dividiu a conta do almoço?", options: ["Com a Fernanda", "Com uma amiga", "Com a irmã"], answer: 1, explain: "Almocei com uma amiga e a gente dividiu a conta." }
       - { q: "O que o Ricardo esqueceu no café?", options: ["O guarda-chuva", "A bicicleta", "O celular"], answer: 2, explain: "Esqueci o celular num café da avenida." }
+writing:
+  - task: "Write about what you did yesterday on Avenida Paulista: where you went, who you talked to and what you spent money on. Use the preterite."
+    min: 25
+    max: 60
+    use: [w.ontem, w.visitar, w.exposição, w.conversar, w.gastar]
+    useAtLeast: 3
+    grammar: [g.preterite-regular, g.past-time-markers]
+    expect:
+      - { pattern: '\b[a-zà-ú]{2,}ei\b', hint: "Use the I-form of the preterite: visitei, conversei, gastei…" }
+      - { pattern: '\b(ontem|anteontem|depois|de manh[aã])\b', hint: "Say when: ontem, de manhã, depois…" }
+    model: { es: "Ontem eu visitei o MASP, na Avenida Paulista. A exposição de arte brasileira foi incrível! Depois, conversei com uma amiga num café e almocei com ela. À noite, gastei muito dinheiro numa livraria.", en: "Yesterday I visited MASP, on Avenida Paulista. The Brazilian art exhibition was incredible! Then I chatted with a friend in a café and had lunch with her. In the evening I spent a lot of money in a bookshop." }
+  - task: "Your manager asks why you were late this morning. Write a message explaining what happened (cheguei, fiquei, comecei, tentei…)."
+    es: "Bom dia! Por que você chegou atrasado hoje?"
+    min: 25
+    max: 60
+    use: [w.engarrafamento, w.atrasado, w.acidente, w.bateria, w.conseguir]
+    useAtLeast: 3
+    grammar: [g.preterite-spelling, g.preterite-regular]
+    expect:
+      - { pattern: '\b(cheguei|fiquei|comecei|peguei|liguei|tentei|consegui|esqueci|expliquei|almocei)\b', hint: "Use the I-form of the preterite: cheguei, fiquei, comecei…" }
+      - { pattern: '(engarrafamento|tr[aâ]nsito|acidente|atras|bateria)', hint: "Explain the reason: um engarrafamento, um acidente…" }
+    model: { es: "Bom dia! Desculpa, hoje cheguei atrasado porque aconteceu um acidente na avenida. Fiquei uma hora no engarrafamento. Tentei ligar para você, mas a bateria do celular acabou e não consegui. Comecei a trabalhar às dez.", en: "Good morning! Sorry, I was late today because there was an accident on the avenue. I was stuck in the traffic jam for an hour. I tried to call you, but my phone battery died and I couldn't. I started work at ten." }
+  - task: "Write about last weekend in Sampa: where you ate, what you tried and what you enjoyed most."
+    min: 25
+    max: 60
+    use: [w.mercadão, w.experimentar, w.aproveitar, w.pizzaria, w.mortadela]
+    useAtLeast: 3
+    grammar: [g.preterite-regular, g.past-time-markers]
+    expect:
+      - { pattern: '(fim de semana passado|no s[aá]bado|no domingo|semana passada)', hint: "Say when: no sábado, no fim de semana passado…" }
+      - { pattern: '\b(almocei|almo[cç]amos|comi|comemos|experimentei|experimentamos|jantei|jantamos|bebi|bebemos|aproveitei|aproveitamos)\b', hint: "Say what you ate or did in the preterite: comi, almoçamos, experimentei…" }
+    model: { es: "No fim de semana passado, aproveitei muito São Paulo. No sábado, almoçamos no Mercadão e experimentei o famoso sanduíche de mortadela. No domingo, jantamos numa pizzaria na Liberdade. Comi demais!", en: "Last weekend I really made the most of São Paulo. On Saturday we had lunch at the Mercadão and I tried the famous mortadella sandwich. On Sunday we had dinner at a pizzeria in Liberdade. I ate far too much!" }
+  - task: "Write about a busy day last week: three or four things that happened, in order, with time expressions (de manhã, à tarde, à noite)."
+    min: 25
+    max: 60
+    use: [w.de-manhã, w.acontecer, w.receber, w.decidir, w.esquecer]
+    useAtLeast: 3
+    grammar: [g.past-time-markers, g.preterite-regular]
+    expect:
+      - { pattern: '(de manh[aã]|[àa] tarde|[àa] noite|de madrugada)', hint: "Give the time of day: de manhã, à tarde, à noite…" }
+      - { pattern: '\b(recebi|decidi|esqueci|aconteceu|mudei|marquei|entreguei|resolvi|escolhi|tentei)\b', hint: "Use the preterite: recebi, decidi, esqueci…" }
+    model: { es: "Na terça passada aconteceu muita coisa. De manhã, recebi uma mensagem importante e marquei uma entrevista. À tarde, esqueci o carregador no escritório. À noite, pensei muito e decidi mudar de emprego!", en: "Last Tuesday a lot happened. In the morning I got an important message and set up an interview. In the afternoon I left my charger at the office. In the evening I thought hard and decided to change jobs!" }

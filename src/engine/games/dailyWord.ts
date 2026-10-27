@@ -61,6 +61,11 @@ export function guessList(forms: Iterable<string>, pack: FoldPack, jyutping = fa
  * not matter) seeded by the day and `salt` (the course). Words in `recent` are skipped while
  * others remain, so the same word does not come back within a few weeks.
  */
+/** The words the puzzle can hide: finished words (engine/finished.ts) with a meaning and 4–7 letters. Never anything else. */
+export function dailyCandidates(finished: Iterable<VocabEntry>, pack: FoldPack): VocabEntry[] {
+  return [...finished].filter((v) => v.en[0] && dailyLetters(v, pack))
+}
+
 export function wordOfDay(ids: readonly string[], day: string, salt = '', recent: readonly string[] = []): string | undefined {
   const sorted = [...new Set(ids)].sort()
   if (!sorted.length) return undefined

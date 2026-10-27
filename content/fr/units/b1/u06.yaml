@@ -281,3 +281,44 @@ dialogues:
       - { q: "Pourquoi Sophie ne devient-elle pas comédienne ?", options: ["Elle n'a pas de talent", "Elle n'ose pas démissionner", "Elle n'aime pas le théâtre"], answer: 1, explain: "« Il faudrait que je démissionne, et je n'ose pas »." }
       - { q: "Que ferait Thomas s'il pouvait changer de vie ?", options: ["Il s'installerait à Avignon", "Il ferait le tour du monde avec une troupe", "Il écrirait des chansons"], answer: 1, explain: "« Je ferais le tour du monde avec une petite troupe de théâtre »." }
       - { q: "Qu'est-ce qui est particulier avec ce pont ?", options: ["Il est tout neuf", "Il s'arrête avant l'autre rive", "On ne peut pas y marcher"], answer: 1, explain: "The Pont Saint-Bénézet keeps only four of its arches: it stops before reaching the other bank." }
+writing:
+  - task: "Write to the box office of the Avignon Festival: ask for two seats and ask your questions politely, using the conditional."
+    min: 50
+    max: 100
+    use: [w.pièce-de-théâtre, w.spectacle, w.scène, w.entracte, w.billetterie]
+    useAtLeast: 3
+    grammar: [g.conditionnel-present]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])[a-zàâçéèêëîïôûùœ]{2,}r(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Be polite with the conditional: je voudrais, pourriez-vous, ce serait possible…" }
+    model: { es: "Bonjour, je voudrais deux places pour la pièce de théâtre « Le Roi Lear », le 14 juillet au soir. Est-ce que ce serait possible d'avoir des places près de la scène ? Pourriez-vous aussi me dire à quelle heure le spectacle finit ? J'aimerais savoir s'il y a un entracte. Nous voudrions payer par carte bancaire à la billetterie. Merci beaucoup, Emma Wilson", en: "Hello, I'd like two seats for the play 'King Lear' on the evening of 14 July. Would it be possible to have seats near the stage? Could you also tell me what time the show finishes? I'd like to know if there is an interval. We'd like to pay by card at the box office. Thank you very much, Emma Wilson" }
+  - task: "If you were an actor at the Avignon Festival (or if you won the lottery), what would you do? Describe your dream (si + imparfait, conditionnel)."
+    min: 50
+    max: 100
+    use: [w.comédien, w.troupe, w.tournée, w.public, w.talent]
+    useAtLeast: 3
+    grammar: [g.si-imparfait-conditionnel]
+    expect:
+      - { pattern: "\\bsi (j['’]|je |tu |il |elle |on |nous |vous |ils |elles )[a-zàâçéèêëîïôûùœ]+(ais|ait|ions|iez|aient)\\b", hint: "Start with si + imparfait: Si j'étais comédien(ne)…" }
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])[a-zàâçéèêëîïôûùœ]{2,}r(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Continue with the conditional: je jouerais, je partirais…" }
+    model: { es: "Si j'étais comédienne, je jouerais au festival d'Avignon chaque été. Je partirais en tournée avec une troupe et je jouerais des comédies, parce que j'adore faire rire le public. Si j'avais du talent, je deviendrais peut-être une star ! Je ne serais pas riche, mais je serais heureuse. Et si je gagnais au loto, j'achèterais un petit théâtre près du palais des Papes !", en: "If I were an actress, I'd perform at the Avignon Festival every summer. I'd go on tour with a company and I'd act in comedies, because I love making audiences laugh. If I had talent, I might become a star! I wouldn't be rich, but I'd be happy. And if I won the lottery, I'd buy a little theatre near the Palais des Papes!" }
+  - task: "Your friend can't decide what to see at the festival. Give advice (À ta place, je…, tu devrais…, si j'étais toi…)."
+    es: "Je ne sais pas si je dois aller au festival « In » ou au « Off ». Les billets sont chers et je n'ai pas encore réservé !"
+    min: 50
+    max: 100
+    use: [w.à-ta-place, w.hésiter, w.sinon, w.guichet, w.en-plein-air]
+    useAtLeast: 3
+    grammar: [g.conditional-advice]
+    expect:
+      - { pattern: "\\b(devrais|devriez|pourrais|pourriez|faudrait|vaudrait)\\b", hint: "Give advice: tu devrais…, tu pourrais…, il faudrait…" }
+      - { pattern: "ta place|votre place|\\bsi j['’][eé]tais (toi|vous)\\b", hint: "Put yourself in their place: À ta place, je… / Si j'étais toi, je…" }
+    model: { es: "À ta place, j'irais au Off : les spectacles sont moins chers et il y en a partout dans la ville. Tu devrais réserver tout de suite, sinon il n'y aura plus de places. Si j'étais toi, je choisirais une pièce en plein air le soir, quand il fait moins chaud. Tu pourrais aussi demander des conseils au guichet. N'hésite pas, c'est génial !", en: "If I were you, I'd go to the Off: the shows are cheaper and there are some all over the town. You should book straight away, otherwise there won't be any seats left. If I were you, I'd choose an open-air play in the evening, when it's cooler. You could also ask for advice at the ticket office. Don't hesitate, it's great!" }
+  - task: "If you changed your life tomorrow, what would you do? Imagine your new life (si + imparfait, conditionnel, même si, à condition que)."
+    min: 50
+    max: 100
+    use: [w.démissionner, w.déménager, w.s-installer, w.changer-de-vie, w.tour-du-monde]
+    useAtLeast: 3
+    grammar: [g.si-imparfait-conditionnel, g.conditional-advice]
+    expect:
+      - { pattern: "\\bsi (j['’]|je |tu |il |elle |on |nous |vous |ils |elles )[a-zàâçéèêëîïôûùœ]+(ais|ait|ions|iez|aient)\\b", hint: "Use si + imparfait: Si je changeais de vie…" }
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])[a-zàâçéèêëîïôûùœ]{2,}r(ais|ait|ions|iez|aient)(?![a-zàâçéèêëîïôûùœ])", hint: "Say what you would do with the conditional: je déménagerais…" }
+    model: { es: "Si je changeais de vie, je démissionnerais tout de suite ! Je déménagerais en Provence et je m'installerais dans un petit village près d'Avignon. J'ouvrirais un petit théâtre avec ma sœur. Même si je gagnais moins d'argent, je serais plus heureux. Je ferais aussi le tour du monde, à condition que mes amis viennent avec moi !", en: "If I changed my life, I'd resign straight away! I'd move to Provence and settle in a little village near Avignon. I'd open a small theatre with my sister. Even if I earned less money, I'd be happier. I'd also go round the world, as long as my friends came with me!" }

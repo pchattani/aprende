@@ -281,3 +281,42 @@ dialogues:
       - { q: "De quem é o carro que a Bia está estacionando?", options: ["Da Bia", "Do Vinícius", "Do pai dela"], answer: 2, explain: "o carro do pai dela = her father's car." }
       - { q: "O que o Vinícius nunca viu?", options: ["O Museu do Café", "Os prédios tortos", "A praia"], answer: 1, explain: "Tu já viu os prédios tortos da praia? Eu nunca vi." }
       - { q: "Aonde a galera vai à noite?", options: ["A um bar com samba", "Ao Museu do Café", "A São Paulo"], answer: 0, explain: "À noite tem samba num bar perto da praia." }
+writing:
+  - task: "Write a WhatsApp message to your group of friends about Saturday's trip to Santos. Use a gente (a gente vai, a gente se vê…)."
+    min: 25
+    max: 60
+    use: [w.a-gente, w.galera, w.se-ver, w.encontro, w.curtir]
+    useAtLeast: 3
+    grammar: [g.a-gente]
+    expect:
+      - { pattern: '\ba gente [a-zà-ú]+', hint: "Use a gente + the ele/ela form of the verb: A gente vai… / A gente se vê…" }
+    model: { es: "Oi, galera! A gente vai para Santos no sábado. O encontro é na rodoviária às oito. A gente pega o ônibus, passa o dia na praia e curte o pôr do sol. A gente se vê lá!", en: "Hi, everyone! We're going to Santos on Saturday. We're meeting at the bus station at eight. We'll catch the bus, spend the day on the beach and enjoy the sunset. See you there!" }
+  - task: "Tell a friend some gossip about a couple you both know. Use dele and dela to make it clear whose things you mean."
+    min: 25
+    max: 60
+    use: [w.fofoca, w.novidade, w.rede-social, w.postar, w.namorado]
+    useAtLeast: 3
+    grammar: [g.seu-vs-dele]
+    expect:
+      - { pattern: '\b(dele|dela|deles|delas)\b', hint: "Use dele / dela to say whose: o carro dele, a mãe dela…" }
+    model: { es: "Tenho uma novidade! O Pedro e a Júlia estão namorando. Ontem ela postou uma foto dele numa rede social. Na foto, ele está no carro dela, com o cachorro dela! E a mãe dele já sabe? Que fofoca!", en: "I've got news! Pedro and Júlia are going out. Yesterday she posted a photo of him on social media. In the photo he's in her car, with her dog! And does his mother know yet? What gossip!" }
+  - task: "A friend from the South writes to you with tu. Reply the same way (tu vai, tu é…) and add some slang (valeu, bacana, gente boa…)."
+    es: "E aí, cara! Tu vem na festa sábado? Vai ser show de bola!"
+    min: 25
+    max: 60
+    use: [w.tu, w.valeu, w.bacana, w.cara, w.gente-boa]
+    useAtLeast: 3
+    grammar: [g.tu-regional]
+    expect:
+      - { pattern: '\btu [a-zà-ú]+', hint: "Use tu with a verb: Tu vai…? / Tu é…?" }
+      - { pattern: '(valeu|bacana|show de bola|massa|maneiro|\btop\b|gente boa)', hint: "Add some slang: valeu, bacana, gente boa…" }
+    model: { es: "E aí, cara! Valeu pelo convite. Eu vou, sim! A festa vai ser bacana. Tu vai levar a tua namorada? Ela é gente boa. E tu vem de carro ou de ônibus? Fala aí!", en: "Hey, man! Thanks for the invite. I'm coming, for sure! The party's going to be great. Are you bringing your girlfriend? She's a good person. And are you coming by car or by bus? Let me know!" }
+  - task: "Write the transcript of a quick voice message to a friend: you are running late. Use spoken forms like tô, tá, tava, pra and cê."
+    min: 25
+    max: 55
+    use: [w.minutinho, w.tudo-certo, w.cê, w.tava, w.opa]
+    useAtLeast: 3
+    grammar: [g.spoken-reductions]
+    expect:
+      - { pattern: '(?<![a-zà-ú])(t[oô]|t[aá]|pra|pro|c[eê]|tava)(?![a-zà-ú])', hint: "Use spoken forms: tô, tá, pra, cê…" }
+    model: { es: "Opa, tudo certo? Tô chegando! Cinco minutinhos. Tava no trânsito, mas agora tô quase aí. Cê já tá na praia? Guarda um lugar pra mim, tá? Valeu!", en: "Hey, all good? I'm nearly there! Five minutes. I was stuck in traffic, but now I'm almost there. Are you already at the beach? Save me a spot, OK? Thanks!" }

@@ -92,7 +92,8 @@ rules:
     message: Spanish -ción is -ção in Portuguese (plural -ções).
     example: { wrong: la estación, right: a estação }
   - id: es-dad
-    pattern: '(?<!\p{L})\p{L}+dad(es)?(?!\p{L})'
+    # singular only: the Spanish plural -dades is spelled the same as the Portuguese one (cidades, saudades)
+    pattern: '(?<!\p{L})\p{L}+dad(?!\p{L})'
     message: Spanish -dad is -dade in Portuguese (cidade, universidade).
     example: { wrong: a ciudad, right: a cidade }
   - id: es-enye

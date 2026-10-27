@@ -282,3 +282,41 @@ dialogues:
       - { q: "Comment doit être le beurre ?", options: ["Bien froid", "Très chaud", "Fondu"], answer: 0, explain: "Il doit être bien froid: the butter must be very cold." }
       - { q: "Comment est-ce qu'on ajoute le beurre ?", options: ["Tout d'un coup", "Morceau par morceau", "À la fin, sans remuer"], answer: 1, explain: "Morceau par morceau, et remue sans arrêt." }
       - { q: "Avec quoi est-ce qu'on sert le beurre blanc ?", options: ["Avec des crêpes", "Avec du poisson", "Avec du riz"], answer: 1, explain: "Mamie serves it with fish from the Loire." }
+writing:
+  - task: "Write a simple recipe for a friend (crêpes, a salad…): the ingredients, then 4–5 steps in the imperative."
+    min: 30
+    max: 70
+    use: [w.mélanger, w.ajouter, w.verser, w.faire-cuire, w.ingrédient]
+    useAtLeast: 3
+    grammar: [g.imperative]
+    expect:
+      - { pattern: "\\b(prenez|mettez|ajoutez|m[eé]langez|versez|coupez|faites|laissez|servez|chauffez|remuez|cuisez|prends|mets|ajoute|m[eé]lange|verse|coupe|fais|laisse|sers|chauffe|remue)\\b", hint: "Give the steps in the imperative: mettez, ajoutez, mélangez…" }
+    model: { es: "Les crêpes, c'est facile ! Les ingrédients : 250 grammes de farine, trois œufs, un demi-litre de lait et du beurre. Mettez la farine dans un bol. Ajoutez les œufs et mélangez. Versez le lait doucement. Faites cuire les crêpes dans une poêle chaude. Bon appétit !", en: "Crêpes are easy! The ingredients: 250 grams of flour, three eggs, half a litre of milk and some butter. Put the flour in a bowl. Add the eggs and mix. Pour in the milk slowly. Cook the crêpes in a hot frying pan. Enjoy your meal!" }
+  - task: "At the table with your host family in Nantes: ask for things, offer things and react, using imperatives with pronouns (Passe-moi…, Donne-le-moi…)."
+    min: 25
+    max: 60
+    use: [w.passer, w.donner, w.sel, w.recette, w.assiette]
+    useAtLeast: 3
+    grammar: [g.imperative-with-pronouns]
+    expect:
+      - { pattern: "[a-zàâçéèêëîïôûùœ]+-(moi|toi|le|la|les|lui|leur|nous|en|y)\\b", hint: "Put the pronoun after the imperative with a hyphen: Passe-moi le sel, donne-le-moi…" }
+    model: { es: "Passe-moi le sel, s'il te plaît. Merci ! Et le pain ? Donne-le-moi, s'il te plaît. Madame, votre sauce est délicieuse ! Donnez-moi la recette, s'il vous plaît. Tu veux du gâteau ? Prends-en, il est très bon ! Et donne-moi ton assiette.", en: "Pass me the salt, please. Thanks! And the bread? Give it to me, please. Madame, your sauce is delicious! Give me the recipe, please. Do you want some cake? Have some, it's very good! And give me your plate." }
+  - task: "Describe how people and things move at the Machines de l'île, or in your family (lentement, doucement, rapidement, gentiment…)."
+    min: 30
+    max: 70
+    use: [w.lentement, w.doucement, w.rapidement, w.gentiment, w.attentivement]
+    useAtLeast: 3
+    grammar: [g.adverbs-ment]
+    expect:
+      - { pattern: "(?<![a-zàâçéèêëîïôûùœ])(?!(comment|moment|appartement|monument|m[eé]dicament|v[eê]tement|[eé]v[eé]nement|logement|b[aâ]timent|aliment|gouvernement|d[eé]partement|sentiment|argument|instrument|[eé]l[eé]ment)(?![a-zàâçéèêëîïôûùœ]))[a-zàâçéèêëîïôûùœ]{3,}ment\\b", hint: "Use adverbs in -ment: lentement, doucement, rapidement…" }
+    model: { es: "Aux Machines de l'île, le grand éléphant marche lentement dans la rue. Les visiteurs montent doucement sur son dos. Le guide explique tout gentiment et les enfants l'écoutent attentivement. Après, ils courent rapidement autour de l'éléphant !", en: "At the Machines de l'île, the big elephant walks slowly down the street. The visitors climb gently onto its back. The guide explains everything kindly and the children listen to him carefully. Afterwards they run quickly around the elephant!" }
+  - task: "You are going away for a week. Write instructions for the friend who is looking after your flat: what to do and what not to do."
+    min: 30
+    max: 70
+    use: [w.ranger, w.nettoyer, w.laver, w.faire-attention, w.fermer]
+    useAtLeast: 3
+    grammar: [g.imperative]
+    expect:
+      - { pattern: "\\b(range|nettoie|lave|ferme|fais|donne|mets|jette|ouvre|prends|oublie|rangez|nettoyez|lavez|fermez|faites|donnez|mettez|jetez|ouvrez|prenez)\\b", hint: "Give instructions in the imperative: range, nettoie, ferme…" }
+      - { pattern: "\\bne [^.!?]+ pas\\b|\\bn['’][^.!?]+ pas\\b", hint: "Say what not to do: Ne laisse pas …, N'oublie pas …" }
+    model: { es: "Merci de garder mon appartement ! Range la cuisine le soir et nettoie la salle de bains le samedi. Lave la vaisselle tous les jours. Ne laisse pas la fenêtre ouverte et ne fume pas sur le balcon. Fais attention au chat : donne-lui à manger deux fois par jour !", en: "Thanks for looking after my flat! Tidy the kitchen in the evening and clean the bathroom on Saturday. Do the washing-up every day. Don't leave the window open and don't smoke on the balcony. Look after the cat: feed it twice a day!" }

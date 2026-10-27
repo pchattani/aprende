@@ -275,3 +275,37 @@ dialogues:
       - { q: "Quale souvenir NON ha comprato Tom?", options: ["Il vino del Chianti", "Il pecorino di Pienza", "Una maglietta di Pisa"], answer: 2, explain: "He bought wine, pecorino and an alabaster rooster, but nothing from Pisa." }
       - { q: "Secondo Tom, qual è il posto più bello?", options: ["Lucca", "Il Chianti", "La Val d'Orcia"], answer: 2, explain: "Secondo me la Val d'Orcia è la più bella." }
       - { q: "Che cosa dice Sara alla fine?", options: ["Di dire addio", "Di dire arrivederci", "Di restare all'Elba"], answer: 1, explain: "Non dire addio: di' arrivederci! Arrivederci literally means 'until we see each other again'." }
+writing:
+  - task: "You are on the ferry to Elba. Text your family: say what is about to happen (stare per) and what you can see."
+    min: 30
+    max: 65
+    use: [w.stare-per, w.isola, w.costa, w.tramonto, w.traghetto]
+    grammar: [g.stare-per]
+    expect:
+      - { pattern: "\\b(sto|stai|sta|stiamo|state|stanno|stavo|stava) per\\b", hint: "Use stare per + infinitive: il traghetto sta per partire." }
+    model: { es: "Ciao, mamma! Sono sul traghetto per l'isola d'Elba. Il traghetto sta per partire e io sto per prendere un caffè al bar. Da qui vedo la costa ed è quasi il tramonto: che spettacolo! Ti chiamo quando arrivo.", en: "Hi, Mum! I'm on the ferry to the island of Elba. The ferry is about to leave and I'm about to get a coffee at the bar. From here I can see the coast and it's almost sunset: what a sight! I'll call you when I arrive." }
+  - task: "Write about a place you went back to after many years: what you saw again, did again and felt (ritornare, rivedere, rifare, di nuovo)."
+    min: 30
+    max: 65
+    use: [w.ritornare, w.rivedere, w.rifare, w.di-nuovo, w.esperienza]
+    grammar: [g.di-nuovo-ri]
+    expect:
+      - { pattern: "\\bri(vist|ved|torn|fatt|fa|apert|apr|lett|legg|prov)\\S*", hint: "Use ri- verbs: sono ritornato, ho rivisto, ho rifatto…" }
+      - { pattern: "\\bdi nuovo\\b", hint: "Use di nuovo (again)." }
+    model: { es: "Quest'estate sono ritornata all'Elba dopo dieci anni. Ho rivisto la casa dei miei nonni e ho rifatto la stessa escursione di quando ero piccola. Ho mangiato di nuovo il gelato nella piazza di Portoferraio: un'esperienza bellissima!", en: "This summer I went back to Elba after ten years. I saw my grandparents' house again and did the same hike as when I was little. I ate ice cream in the square in Portoferraio again: a wonderful experience!" }
+  - task: "Describe the island of Elba and its people using indefinites: ognuno, qualcuno, qualche, alcuni, tutti, entrambi."
+    min: 30
+    max: 65
+    use: [w.ognuno, w.qualcuno, w.qualche, w.entrambi, w.abitante]
+    grammar: [g.indefinites]
+    expect:
+      - { pattern: "\\b(ognuno|ognuna|ciascuno|ciascuna|qualcuno|qualcosa|qualche|alcuni|alcune|entrambi|entrambe|qualsiasi)\\b", hint: "Use indefinites: ognuno, qualcuno, qualche, alcuni, entrambi…" }
+    model: { es: "All'Elba ogni paese è diverso e ognuno ha la sua spiaggia. Qualche turista arriva in aereo, ma quasi tutti prendono il traghetto. Ho conosciuto alcuni abitanti molto simpatici: qualcuno parlava anche inglese. Io e mia sorella abbiamo amato entrambe le spiagge di Capoliveri.", en: "On Elba every village is different and each one has its own beach. A few tourists arrive by plane, but almost everyone takes the ferry. I met some very nice locals: some of them even spoke English. My sister and I loved both beaches in Capoliveri." }
+  - task: "Write a last postcard from Elba: a peaceful day when you saw no one and did nothing, and your goodbye to Tuscany. Use double negatives (non … nessuno, non … niente, non … mai)."
+    min: 30
+    max: 65
+    use: [w.nessuno, w.niente, w.mica, w.addio, w.terra]
+    grammar: [g.double-negation, g.a2-review]
+    expect:
+      - { pattern: "\\bnon\\s+(\\S+\\s+){0,2}(nessuno|nessuna|niente|nulla|mai|più)", hint: "Use double negation: non ho visto nessuno, non ho fatto niente…" }
+    model: { es: "Cara Giulia, oggi è stata una giornata tranquillissima! Sulla spiaggia non c'era nessuno e io non ho fatto niente: ho solo letto e nuotato. Non ho mai visto un mare così blu! Domani lascio la Toscana: non è mica facile dire addio a questa terra. Un abbraccio!", en: "Dear Giulia, today was a really peaceful day! There was nobody on the beach and I did nothing: I just read and swam. I've never seen such a blue sea! Tomorrow I'm leaving Tuscany: it's not easy at all to say goodbye to this land. Hugs!" }

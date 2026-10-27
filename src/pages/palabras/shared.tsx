@@ -4,6 +4,8 @@ import { Link } from 'react-router'
 import { LANGUAGE } from '../../engine/loader'
 import { Button } from '../../components/ui/basics'
 import { useNoVoice, type Audio } from './util'
+import { useFinishedWords } from '../../hooks/useFinishedWords'
+import { REQUIRE, lessonsToUnlock, moreLessonsText } from '../games/requirements'
 
 export function NoAudioNotice({ audio, compact = false }: { audio: Audio; compact?: boolean }) {
   if (audio === 'ok') return null
@@ -33,12 +35,25 @@ export function NoVoiceHint() {
   )
 }
 
-export function TooFew({ onBack, children }: { onBack: () => void; children?: ReactNode }) {
+/**
+ * Not enough finished words for a game. With `game` (an id of games/requirements.ts) it says how
+ * many more lessons to finish; the games only use words from lessons the learner has finished.
+ */
+export function TooFew({ onBack, game, children }: { onBack: () => void; game?: string; children?: ReactNode }) {
+  const finished = useFinishedWords()
+  const req = game ? REQUIRE[game] : undefined
+  const more = finished && req ? lessonsToUnlock(finished, req) : undefined
   return (
-    <div className="card text-center">
-      <p className="font-semibold">Not enough words yet</p>
-      <p className="mt-1 text-sm text-muted">{children ?? 'Complete a lesson or two and come back: the games use the words you have met.'}</p>
-      <Button className="mt-3 w-full" onClick={onBack}>
+    <div className="card text-center" data-testid="too-few">
+      <p className="font-semibold">{req?.verbs && !finished?.entries.some(req.fit) ? 'No verbs to play with yet' : 'Not enough words yet'}</p>
+      <p className="mt-1 text-sm text-muted">
+        {more ? `Finish ${moreLessonsText(more, Boolean(finished?.lessons.size))} to play this. ` : ''}
+        {children ?? 'The games use the words of the lessons you have finished.'}
+      </p>
+      <Link to="/" className="btn btn-primary mt-3 w-full">
+        Go to the Journey
+      </Link>
+      <Button variant="ghost" className="mt-2 w-full" onClick={onBack}>
         Back
       </Button>
     </div>

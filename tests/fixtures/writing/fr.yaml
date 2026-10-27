@@ -1,0 +1,12 @@
+level: a1
+unitWords: [w.famille, w.père, w.mère, w.frère, w.sœur, w.avoir, w.an, w.petit]
+writing:
+  - task: "Describe your family: who is in it, their names and their ages."
+    es: "Tu as une grande famille ?"
+    min: 15
+    max: 40
+    use: [w.famille, w.père, w.mère, w.frère, w.sœur]
+    expect:
+      - { pattern: "\\b(mon|ma|mes)\\b", hint: "Use possessives: mon père, ma sœur…" }
+      - { pattern: "\\bans\\b", hint: "Give an age: il a cinquante ans." }
+    model: { es: "Ma famille est petite. Mon père s'appelle Paul et il a cinquante ans. Ma mère s'appelle Claire. J'ai une sœur, Léa.", en: "My family is small. My father is called Paul and he's fifty. My mother is called Claire. I have a sister, Léa." }

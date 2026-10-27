@@ -8,7 +8,7 @@ import type { GameProps } from './catalog'
 import { GameHeader } from './GameHeader'
 import { recordGame, GAMES_BEST_KEY, type GameBest } from './util'
 import { addMinutes, e2eHook } from '../palabras/util'
-import { kit, useVerbRound, recordVerb, type VerbRound } from './verbRound'
+import { kit, useVerbRound, recordVerb, tensesInPlay, type VerbRound } from './verbRound'
 import { PromptCard, FormInput, NoVerbs } from './verbShared'
 import { randomPrompt, choicesFor, gradeForm, type VerbPrompt } from '../../engine/games/verbPrompts'
 import { lunaPlan, duelWinner, banter, DUEL_TARGET, DUEL_MAX_TURNS, type LunaPlan, type BANTER } from '../../engine/games/verbDuel'
@@ -295,6 +295,7 @@ function Duel({ data, mode, setMode, onDone, onAgain }: { data: VerbRound; mode:
         <div className="card mt-2 text-center">
           <p className="font-semibold">Type the form (or pick it) before Luna does.</p>
           <p className="mt-1 text-sm text-muted">She gets quicker as you get better. A wrong answer gives her the chance to steal the point.</p>
+          <p className="mt-2 text-xs text-muted">Tenses in play: {tensesInPlay(data.tenses)}</p>
           <button type="button" className="btn btn-primary mt-4 w-full" onClick={startTurn} autoFocus>
             Start the duel
           </button>

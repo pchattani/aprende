@@ -301,3 +301,44 @@ dialogues:
       - { q: "O que preocupa a Dona Conceição?", options: ["O barulho", "A segurança", "O preço dos ônibus"], answer: 1, explain: "O que me preocupa é a segurança." }
       - { q: "Segundo o Bruno, quem deve oferecer incentivos?", options: ["Os turistas", "Os moradores", "O governo"], answer: 2, explain: "Cabe ao governo oferecer incentivos." }
       - { q: "Qual é a conclusão do debate?", options: ["Os dois são totalmente contra", "Os dois concordam, mas com condições", "Só o Bruno concorda"], answer: 1, explain: "Em suma: os dois concordam com a ideia, mas com condições." }
+writing:
+  - task: "Write an argumentative paragraph: should tourism in historic centres like São Luís be limited? Give a thesis, two arguments, a counter-argument and a conclusion."
+    min: 90
+    max: 150
+    use: [w.em-primeiro-lugar, w.em-segundo-lugar, w.em-suma, w.impacto, w.valorizar]
+    useAtLeast: 3
+    grammar: [g.argumentation-connectors, g.essay-structure]
+    expect:
+      - { pattern: '\b(em primeiro lugar|primeiramente|em segundo lugar|al[eé]m disso|ademais)\b', hint: "Structure your arguments: Em primeiro lugar…, Em segundo lugar…, Além disso…" }
+      - { pattern: '\b(em suma|em resumo|portanto|dessa forma|desse modo|enfim)\b', hint: "Conclude: Em suma…, Portanto…" }
+    model: { es: "O turismo no centro histórico de São Luís deve ser incentivado, mas com regras claras. Em primeiro lugar, os visitantes geram renda para comerciantes, artesãos e guias, o que valoriza a cultura local. Em segundo lugar, o dinheiro do turismo pode ajudar na restauração dos casarões de azulejos, muitos dos quais estão em ruínas. Por outro lado, o turismo sem controle tem um impacto ruim: aumenta o lixo, o barulho e o preço dos aluguéis para os moradores. Em suma, a solução não é reduzir o turismo, mas organizar a cidade de forma sustentável.", en: "Tourism in São Luís's historic centre should be encouraged, but with clear rules. Firstly, visitors generate income for traders, craftspeople and guides, which enhances the value of local culture. Secondly, tourism money can help restore the tiled mansions, many of which are in ruins. On the other hand, uncontrolled tourism has a bad impact: it increases litter, noise and rents for residents. In short, the solution is not to limit tourism, but to organise the city sustainably." }
+  - task: "Give your view on a social issue in Brazil (for example inequality or discrimination), present an opposing view and answer it (A meu ver…, Há quem diga que…, No entanto…)."
+    min: 90
+    max: 150
+    use: [w.a-meu-ver, w.desigualdade, w.preconceito, w.discriminação, w.perspectiva]
+    useAtLeast: 3
+    grammar: [g.opinion-structures, g.argumentation-connectors]
+    expect:
+      - { pattern: '\b(a meu ver|na minha opini[aã]o|do meu ponto de vista|considero|defendo|acredito)\b', hint: "State your view: A meu ver…, Considero que…" }
+      - { pattern: '\b(h[aá] quem|alguns (dizem|afirmam|defendem|acreditam)|por outro lado|no entanto|contudo)\b', hint: "Present and answer an opposing view: Há quem diga que…, no entanto…" }
+    model: { es: "A meu ver, a desigualdade social é o maior problema do Brasil. Não se pode negar que o país melhorou nas últimas décadas, mas a diferença entre ricos e pobres continua enorme. Além disso, o preconceito e a discriminação ainda reduzem as chances de milhões de pessoas. Há quem diga que basta trabalhar muito para ter sucesso na vida. No entanto, essa perspectiva esquece que nem todos começam do mesmo ponto: o acesso a uma boa educação, por exemplo, depende muito da renda da família. Portanto, políticas de inclusão são fundamentais.", en: "In my view, social inequality is Brazil's biggest problem. There's no denying the country has improved in recent decades, but the gap between rich and poor is still huge. Moreover, prejudice and discrimination still reduce the opportunities of millions of people. Some say that hard work is all it takes to succeed in life. However, that perspective forgets that not everyone starts from the same point: access to a good education, for example, depends heavily on family income. Inclusion policies are therefore essential." }
+  - task: "Write the introduction and the first development paragraph of an ENEM-style essay on access to basic sanitation (saneamento básico) in Brazil."
+    min: 90
+    max: 150
+    use: [w.saneamento, w.esgoto, w.acesso, w.tese, w.ressaltar]
+    useAtLeast: 3
+    grammar: [g.essay-structure, g.argumentation-connectors]
+    expect:
+      - { pattern: '\b(saneamento|esgoto)\b', hint: "Stay on the topic: saneamento básico, esgoto…" }
+      - { pattern: '\b(vale (ressaltar|destacar)|cabe (ressaltar|destacar)|[eé] (preciso|necess[aá]rio|fundamental) (ressaltar|destacar)|nesse sentido|diante disso)\b', hint: "Use essay phrases: Vale ressaltar que…, Nesse sentido…, Diante disso…" }
+    model: { es: "No Brasil, milhões de pessoas ainda vivem sem acesso a saneamento básico. Segundo dados recentes, cerca de metade da população não tem esgoto tratado, o que afeta muito a saúde pública. Diante disso, defende-se a tese de que o saneamento deve ser tratado como prioridade nacional. Em primeiro lugar, vale ressaltar que a falta de saneamento causa muitas doenças, principalmente entre as crianças. Além disso, o esgoto jogado nos rios provoca um grave impacto ambiental. Nesse sentido, investir em saneamento significa economizar em saúde. Por fim, cabe destacar que o problema atinge principalmente as famílias mais pobres.", en: "In Brazil, millions of people still live without access to basic sanitation. According to recent data, about half the population has no treated sewage, which directly affects public health. In view of this, this essay argues that sanitation should be treated as a national priority. Firstly, it is worth stressing that the lack of sanitation causes many diseases, especially among children. Moreover, sewage dumped into rivers has a serious environmental impact. In this sense, investing in sanitation means saving on health. Finally, it should be stressed that the problem mainly affects the poorest families." }
+  - task: "Is artificial intelligence a threat or an opportunity for the job market? Argue one side, acknowledging the other."
+    min: 90
+    max: 150
+    use: [w.inteligência-artificial, w.mercado-de-trabalho, w.desemprego, w.tendência, w.algoritmo]
+    useAtLeast: 3
+    grammar: [g.opinion-structures, g.argumentation-connectors]
+    expect:
+      - { pattern: '\b(a meu ver|na minha opini[aã]o|do meu ponto de vista|considero|defendo|acredito)\b', hint: "State your position: A meu ver…" }
+      - { pattern: '\b(no entanto|por[eé]m|contudo|por outro lado|embora|apesar)\b', hint: "Acknowledge the other side: No entanto…, Embora…" }
+    model: { es: "A inteligência artificial é, sem dúvida, um dos fenômenos mais importantes do nosso tempo. Muitos acreditam que ela vai provocar desemprego em massa, e de fato algumas profissões devem desaparecer. No entanto, a meu ver, ela representa mais uma oportunidade do que um risco. A história mostra que cada nova tecnologia acaba com alguns empregos, mas cria outros. Além disso, os algoritmos podem fazer o trabalho mais simples, o que permite que as pessoas tenham tempo para um trabalho mais criativo. Portanto, a tendência não é o fim do trabalho, e sim uma grande mudança. O desafio do mercado de trabalho será preparar as pessoas para essa mudança.", en: "Artificial intelligence is undoubtedly one of the most important phenomena of our time. Many believe it will cause mass unemployment, and some professions are indeed likely to disappear. However, in my view, it represents more of an opportunity than a risk. History shows that every new technology does away with some jobs but creates others. Moreover, algorithms can do the simplest work, which gives people time for more creative work. So the trend is not the end of work but a big change. The job market's challenge will be preparing people for this change." }

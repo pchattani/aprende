@@ -275,3 +275,42 @@ dialogues:
       - { q: "點解要快啲執垃圾？", options: ["以免垃圾又沖返落海", "因為就快落雨", "因為要趕船"], answer: 0, explain: "以免啲垃圾又沖返落海: so the rubbish doesn't wash back into the sea." }
       - { q: "何生以前有咩習慣？", options: ["成日淨灘", "成日用即棄餐具", "成日食素"], answer: 1, explain: "He used to use disposable cutlery all the time and now feels guilty (內疚)." }
       - { q: "佢哋執完垃圾之後會做乜嘢？", options: ["返屋企", "去食海鮮", "去行山"], answer: 1, explain: "Mr Ho suggests eating seafood afterwards, and Ah Kiu agrees." }
+writing:
+  - task: "Write about Lamma Island: what makes it relaxing, and what problem the litter causes, using 令 and 搞到."
+    min: 60
+    max: 130
+    use: [w.naam4-aa1-dou2, w.ling6, w.gaau2-dou3, w.hoi2-joeng4-laap6-saap3, w.zing6-taan1]
+    useAtLeast: 3
+    grammar: [g.causatives-ling-gaau-dou]
+    expect:
+      - { pattern: "令(到)?|搞到|害到", hint: "Say what something causes with 令 or 搞到." }
+    model: { es: "南丫島冇汽車，冇廢氣，空氣好清新，令人好放鬆。不過海灘上面有好多膠樽同海洋垃圾，搞到海龜都冇地方生蛋。所以我上個週末參加咗淨灘，覺得好有意義。", en: "Lamma Island has no cars and no exhaust fumes; the air is fresh and it makes you feel very relaxed. But there are lots of plastic bottles and marine litter on the beaches, so the turtles have nowhere to lay their eggs. That's why I joined a beach clean-up last weekend; it felt really meaningful." }
+  - task: "Explain the causes and effects of global warming in Hong Kong, using 由於 and 導致."
+    min: 60
+    max: 130
+    use: [w.jau4-jyu1, w.dou6-zi3, w.cyun4-kau4-nyun5-faa3, w.taan3, w.paai4-fong3]
+    useAtLeast: 3
+    grammar: [g.jau-jyu-because]
+    expect:
+      - { pattern: "由於|因為", hint: "Give the cause with 由於." }
+      - { pattern: "導致|引致|造成", hint: "Give the effect with 導致 or 造成." }
+    model: { es: "由於大量碳排放，全球暖化越嚟越嚴重，導致極端天氣越嚟越多。香港最近幾年經常有暴雨同炎熱天氣，對漁業同居民嘅生活都造成好大影響。所以我哋每個人都要慳電減廢。", en: "Because of huge carbon emissions, global warming is getting worse and worse, leading to more and more extreme weather. In recent years Hong Kong has often had rainstorms and scorching weather, which has had a big impact on the fishing industry and on residents' lives. So every one of us needs to save electricity and cut waste." }
+  - task: "Write tips for a greener picnic on the beach, using 以免 and 免得."
+    min: 60
+    max: 120
+    use: [w.ji5-min5, w.min5-dak1, w.zi6-bei6, w.zik1-hei3, w.wui4-sau1]
+    useAtLeast: 3
+    grammar: [g.ji-min-so-as-not]
+    expect:
+      - { pattern: "以免|免得", hint: "Say what to avoid with 以免 or 免得." }
+    model: { es: "去野餐記得自備餐具同水樽，以免用即棄嘅膠嘢。唔好用膠飲管，食唔晒嘅嘢同垃圾一定要帶走，免得啲垃圾跌落海。膠樽同紙盒可以帶返屋企回收。大家一齊保護海灘啦！", en: "When you go on a picnic, remember to bring your own cutlery and water bottle so you don't use disposable plastic. Don't use plastic straws, and always take your leftovers and rubbish away so it doesn't end up in the sea. Plastic bottles and cartons can be taken home for recycling. Let's protect the beach together!" }
+  - task: "Write a formal letter to district councillors objecting to a land reclamation plan at Sok Kwu Wan."
+    min: 60
+    max: 130
+    use: [w.tin4-hoi2, w.po3-waai6, w.saan1-wu4, w.bou2-juk6, w.ho2-ci4-zuk6]
+    useAtLeast: 3
+    grammar: [g.causatives-ling-gaau-dou]
+    expect:
+      - { pattern: "反對|希望|建議", hint: "State your position formally: 我反對… 希望…" }
+      - { pattern: "填海|保育|保護", hint: "Mention the issue: 填海, 保育…" }
+    model: { es: "各位議員：我係南丫島嘅居民。我反對喺索罟灣填海，因為填海會破壞海岸同珊瑚，令海龜失去生活嘅地方。希望政府可以重視保育，揀一個可持續嘅方案。多謝各位。", en: "Dear councillors: I am a resident of Lamma Island. I oppose the reclamation at Sok Kwu Wan, because it would damage the coast and the coral, and the sea turtles would lose their habitat. I hope the government will value conservation and choose a sustainable plan. Thank you." }

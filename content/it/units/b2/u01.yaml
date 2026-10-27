@@ -280,3 +280,40 @@ dialogues:
       - { q: "Che cosa consiglia Assunta a Gennaro?", options: ["Di chiedere un orario flessibile.", "Di trasferirsi all'estero.", "Di comprare un biglietto della lotteria."], answer: 0, explain: "Se fossi in te, chiederei un orario flessibile." }
       - { q: "Dove aprirebbe la pizzeria Gennaro?", options: ["A Milano.", "All'estero.", "Sul lungomare di Napoli."], answer: 2, explain: "Resterei a Napoli… proprio qui, sul lungomare." }
       - { q: "Chi farebbe le pizze?", options: ["Gennaro.", "Assunta.", "Un pizzaiolo assunto da Gennaro."], answer: 2, explain: "Assumerei un pizzaiolo bravo e io gestirei la cassa: he would hire a pizza maker and run the till himself." }
+writing:
+  - task: "What would you do if you won the lottery? Write a short text with se + congiuntivo imperfetto and the conditional, and end with your view on whether money brings happiness."
+    min: 80
+    max: 140
+    use: [w.lotteria, w.investire, w.risparmi, w.mutuo, w.ricchezza]
+    grammar: [g.periodo-ipotetico-2, g.congiuntivo-imperfetto]
+    expect:
+      - { pattern: "\\bse\\s+(\\S+\\s+){0,2}(fossi|fosse|fossimo|avessi|avesse|avessimo|potessi|potesse|\\S+(assi|essi|issi|asse|esse|isse|assimo|essimo|issimo))\\b", hint: "Use se + congiuntivo imperfetto: se vincessi, se avessi…" }
+      - { pattern: "\\b\\S+(rei|resti|rebbe|remmo|reste|rebbero)\\b", hint: "Give the consequence in the conditional: smetterei, investirei…" }
+    model: { es: "Se vincessi alla lotteria, non smetterei subito di lavorare, perché mi annoierei. Prima di tutto pagherei il mutuo della casa dei miei genitori e metterei da parte un po' di risparmi per il futuro. Poi investirei una parte dei soldi in un piccolo ristorante: mi piacerebbe aprire una pizzeria artigianale a Napoli, vicino al mare. Se avessi ancora soldi, farei il giro del mondo con la mia ragazza. Però non credo che la ricchezza renda felici: se fossi troppo ricco, avrei paura di perdere i veri amici.", en: "If I won the lottery, I wouldn't stop working straight away, because I'd get bored. First of all I'd pay off my parents' mortgage and put some savings aside for the future. Then I'd invest part of the money in a small restaurant: I'd like to open an artisan pizzeria in Naples, near the sea. If I still had money, I'd travel round the world with my girlfriend. But I don't think wealth makes people happy: if I were too rich, I'd be afraid of losing my real friends." }
+  - task: "Write to a friend about a job interview you had in Naples: what you thought and expected beforehand, and what it was really like (pensavo che fosse…, credevo che mi chiedessero…)."
+    min: 80
+    max: 140
+    use: [w.colloquio-di-lavoro, w.impegnativo, w.stimolante, w.retribuzione, w.flessibile]
+    grammar: [g.congiuntivo-imperfetto]
+    expect:
+      - { pattern: "\\b(pensavo|credevo|immaginavo|speravo|temevo|avevo paura|mi sembrava|non sapevo|volevano|voleva|non immaginavo) che\\b", hint: "Use a past verb + che + congiuntivo imperfetto: pensavo che fosse…" }
+      - { pattern: "\\b(fosse|fossero|fossi|avesse|avessero|facesse|dessero|desse|\\S+(asse|esse|isse|assero|essero|issero|essi|issi))\\b", hint: "Use the congiuntivo imperfetto: fosse, chiedessero, dessero…" }
+    model: { es: "Ciao Marta! Ieri ho fatto il colloquio di lavoro nella sede di Napoli. Pensavo che fosse una cosa veloce, invece è durato due ore! Credevo che mi chiedessero soprattutto delle mie esperienze, ma volevano che risolvessi un problema pratico davanti a loro. Il lavoro sembra impegnativo ma stimolante, e l'orario è flessibile. Non immaginavo che la retribuzione fosse così buona! Speravo che mi dessero una risposta subito, ma mi hanno detto che mi chiameranno la settimana prossima. Speriamo bene, ti faccio sapere!", en: "Hi Marta! Yesterday I had the job interview at the Naples office. I thought it would be quick, but it lasted two hours! I thought they'd mainly ask me about my experience, but they wanted me to solve a practical problem in front of them. The job seems demanding but stimulating, and the hours are flexible. I didn't imagine the pay would be so good! I was hoping they'd give me an answer straight away, but they told me they'll call me next week. Fingers crossed, I'll let you know!" }
+  - task: "A friend asks for your advice. Answer with se fossi in te…, hypotheses with se + congiuntivo imperfetto and the conditional."
+    es: "Mi hanno offerto una promozione a Milano, ma dovrei lasciare Napoli. Non so cosa fare!"
+    min: 80
+    max: 140
+    use: [w.se-fossi-in-te, w.promozione, w.tempo-indeterminato, w.soddisfatto, w.realizzarsi]
+    grammar: [g.periodo-ipotetico-2]
+    expect:
+      - { pattern: "se fossi in te|al posto tuo", hint: "Give advice: Se fossi in te… / Al posto tuo…" }
+      - { pattern: "\\bse\\s+(\\S+\\s+){0,2}(fossi|fosse|andassi|restassi|avessi|potessi|\\S+(assi|essi|issi|asse|esse|isse))\\b", hint: "Add a hypothesis: se andassi a Milano…" }
+    model: { es: "Che bella notizia, bravo! Se fossi in te, ci penserei bene prima di rifiutare. È un contratto a tempo indeterminato? Se lo fosse, io accetterei senza dubbi: oggi è difficile trovare un posto sicuro. Se invece fosse un contratto precario, rimarrei a Napoli. Mi hai sempre detto che non sei soddisfatto del tuo lavoro e che vorresti realizzarti: questa potrebbe essere l'occasione giusta. Certo, se andassi a Milano, ti mancherebbero il mare e la famiglia, ma potresti tornare nei weekend. Fammi sapere!", en: "What great news, well done! If I were you, I'd think hard before saying no. Is it a permanent contract? If it were, I'd accept without a doubt: these days it's hard to find a secure job. If, on the other hand, it were a temporary contract, I'd stay in Naples. You've always told me you're not satisfied with your job and that you'd like to fulfil yourself: this could be the right opportunity. Of course, if you went to Milan, you'd miss the sea and your family, but you could come back at weekends. Let me know!" }
+  - task: "Describe someone you know who changed their life completely and now behaves as if… (come se + congiuntivo)."
+    min: 80
+    max: 140
+    use: [w.come-se, w.mollare-tutto, w.cambiare-vita, w.anno-sabbatico, w.volontariato]
+    grammar: [g.come-se]
+    expect:
+      - { pattern: "\\bcome se\\b", hint: "Use come se + congiuntivo: come se fosse nato lì…" }
+    model: { es: "Mio cugino Paolo ha mollato tutto l'anno scorso. Lavorava in banca a Milano, ma un giorno ha deciso di cambiare vita e si è preso un anno sabbatico. Adesso fa volontariato in un'associazione dei Quartieri Spagnoli, a Napoli, e parla napoletano come se fosse nato lì! Quando i vecchi colleghi lo chiamano, risponde come se niente fosse, come se la banca non fosse mai esistita. Si alza tardi, prende il caffè al bar sotto casa e saluta tutti come se li conoscesse da sempre. Io lo invidio un po'!", en: "My cousin Paolo dropped everything last year. He worked in a bank in Milan, but one day he decided to change his life and took a sabbatical year. Now he does voluntary work for an association in the Quartieri Spagnoli in Naples, and he speaks Neapolitan as if he'd been born there! When his old colleagues call him, he answers as if nothing had happened, as if the bank had never existed. He gets up late, has his coffee at the bar downstairs and greets everyone as if he'd known them forever. I envy him a bit!" }

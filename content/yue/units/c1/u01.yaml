@@ -274,3 +274,48 @@ dialogues:
       - { q: "博物館幾時閂門？", options: ["逢星期日", "逢星期一", "今日"], answer: 1, explain: "本館逢星期一休息: the museum closes every Monday." }
       - { q: "Mandy 話「沒有」即係乜嘢？", options: ["唔係", "未", "冇"], answer: 2, explain: "Written 沒有 corresponds to spoken 冇." }
       - { q: "告示用乜嘢語體寫？", options: ["口語", "書面語", "文言"], answer: 1, explain: "Mandy explains that notices are written in 書面語 but read aloud in Cantonese." }
+writing:
+  - task: "A friend from the Mainland left you this note in written Chinese. Rewrite it in colloquial Cantonese for your flatmate, and add your own reply."
+    es: "我們明天下午三點在廣場見面。他說他還沒有吃午餐，所以我們會一起去吃東西。你也來嗎？"
+    min: 90
+    max: 160
+    use: [w.syu1-min6-jyu5, w.hau2-jyu5, w.zyun2-wun6, w.gwong2-coeng4]
+    useAtLeast: 2
+    grammar: [g.spoken-vs-written, g.written-negation, g.written-aspect]
+    expect:
+      - { pattern: "我哋", hint: "In speech, 我們 becomes 我哋." }
+      - { pattern: "佢", hint: "In speech, 他 becomes 佢." }
+      - { pattern: "未|仲未", hint: "還沒有 becomes 仲未 in Cantonese." }
+    model: { es: "張紙條用書面語寫，我幫你轉換做口語：「我哋聽日下晝三點喺廣場見面。佢話佢仲未食午餐，所以我哋會一齊去食嘢。你都嚟嗎？」我覆佢：好呀，我一定嚟，不過可能會遲十分鐘，你哋唔使等我先叫嘢食。如果有咩改變，記得打電話畀我。", en: "The note is in written Chinese, so I'll turn it into spoken Cantonese for you: \"We're meeting in the square at three tomorrow afternoon. He says he hasn't had lunch yet, so we'll go and eat together. Are you coming too?\" My reply: Sure, I'll definitely come, but I might be ten minutes late, so don't wait for me to order. If anything changes, remember to call me." }
+  - task: "A shop near Senado Square has put up this notice in written Chinese. Explain what it means to your grandmother, who only reads spoken Cantonese comfortably."
+    es: "本商店明天休息。請勿在商店內吸煙。這些都是非賣品，不要帶走。"
+    min: 90
+    max: 160
+    use: [w.cing2-mat6, w.kap1-jin1, w.fei1-maai6-ban2, w.syu1-min6-jyu5]
+    useAtLeast: 2
+    grammar: [g.written-negation, g.spoken-vs-written]
+    expect:
+      - { pattern: "唔好|唔准|唔可以", hint: "請勿 and 不要 become 唔好 or 唔准 in speech." }
+      - { pattern: "聽日", hint: "明天 becomes 聽日 in speech." }
+    model: { es: "嫲嫲，呢張告示用書面語寫，意思係：間舖頭聽日休息，唔開門。喺舖頭入面唔准食煙。仲有，呢啲嘢係非賣品，即係唔賣嘅，唔好攞走。所以我哋今日買定啲嘢先，聽日就唔使再嚟喇。如果你睇唔明其他告示，隨時都可以問我。我陪你一齊去。", en: "Grandma, this notice is written in standard Chinese. It means: the shop is closed tomorrow. No smoking inside the shop. Also, these items are not for sale, so don't take them. So let's buy what we need today, then we won't need to come back tomorrow. If you can't understand other notices, you can always ask me. I'll go with you." }
+  - task: "A beginner asks when to use spoken Cantonese and when to use written Chinese. Explain the difference, with examples of occasions."
+    min: 90
+    max: 160
+    use: [w.syu1-min6-jyu5, w.hau2-jyu5, w.coeng4-hap6, w.zing3-sik1, w.ceoi4-ji3]
+    useAtLeast: 3
+    grammar: [g.spoken-vs-written]
+    expect:
+      - { pattern: "書面語", hint: "Mention written Chinese: 書面語." }
+      - { pattern: "口語", hint: "Mention the spoken language: 口語." }
+      - { pattern: "場合|正式|隨意", hint: "Say which occasions call for which: 正式場合…" }
+    model: { es: "香港人講嘢用口語，但係寫正式文件嘅時候，一般都用書面語。例如寫信畀公司、寫報告或者考試寫文章，都要用書面語。不過同朋友傾偈、覆短訊或者喺網上留言，就可以隨意啲，直接寫口語。最緊要係睇場合，揀啱嘅語體。初學嘅時候，可以先學好口語，再慢慢學書面語。", en: "Hong Kongers speak in colloquial Cantonese, but for anything formal they usually write in standard written Chinese. For example, letters to companies, reports and exam essays all need written Chinese. But when chatting with friends, sending texts or posting comments online, you can be more casual and write colloquial Cantonese directly. The key is to look at the occasion and choose the right register. When you're starting out, you can learn spoken Cantonese well first, then gradually learn written Chinese." }
+  - task: "Give your opinion: should Hong Kong schools also teach students to write colloquial Cantonese? Give reasons on both sides."
+    min: 90
+    max: 170
+    use: [w.hau2-jyu5, w.syu1-min6-jyu5, w.se2-zok3, w.kwai1-faan6, w.jyu5-ging2]
+    useAtLeast: 3
+    grammar: [g.spoken-vs-written]
+    expect:
+      - { pattern: "我覺得|我認為|我個人", hint: "State your own view: 我覺得…" }
+      - { pattern: "不過|但係|另一方面|雖然", hint: "Weigh the other side: 不過…, 另一方面…" }
+    model: { es: "我個人覺得學校可以教學生寫口語，因為口語係我哋平時講嘅語言，識寫先可以準確咁表達自己。不過另一方面，書面語有清楚嘅規範，正式寫作同考試都要用。所以我認為兩樣都要學，最重要係學生明白喺唔同語境應該用邊種。", en: "Personally, I think schools could teach students to write colloquial Cantonese, because it's the language we speak every day, and being able to write it lets us express ourselves accurately. On the other hand, written Chinese has unified norms and is needed for formal writing and exams. So I believe both should be learned; what matters most is that students understand which to use in different contexts." }

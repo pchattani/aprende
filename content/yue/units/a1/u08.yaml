@@ -278,3 +278,42 @@ dialogues:
       - { q: "Jason幾多歲？", options: ["六歲", "八歲", "十歲"], answer: 1, explain: "Kelvin answers 八歲." }
       - { q: "Kelvin有冇兄弟姊妹？", options: ["冇", "有一個家姐", "有一個細佬"], answer: 1, explain: "He says 我有一個家姐: one older sister." }
       - { q: "Kelvin嘅舅父幾時嚟跑馬地？", options: ["每個星期三晚", "每個星期日", "每日朝早"], answer: 0, explain: "He comes 每個星期三晚, every Wednesday night, for the races." }
+writing:
+  - task: "Introduce your family: how many people there are and who they are."
+    min: 12
+    max: 30
+    use: [w.uk1-kei2, w.baa1-baa1, w.maa4-maa1, w.gaa1-ze1, w.sai3-mui2]
+    useAtLeast: 3
+    grammar: [g.kinship-terms]
+    expect:
+      - { pattern: "有.{1,2}個人", hint: "Say how many: 我屋企有五個人." }
+      - { pattern: "爸爸|媽媽|家姐|哥哥|阿哥|細妹|妹妹|細佬", hint: "Name family members: 爸爸、媽媽、家姐…" }
+    model: { es: "我屋企有五個人：爸爸、媽媽、家姐、細妹同我。", en: "There are five people in my family: dad, mum, my older sister, my younger sister and me." }
+  - task: "Describe two people in your family with adjectives: what they look like and what they are like."
+    min: 10
+    max: 30
+    use: [w.gou1, w.sau3, w.leng3, w.lek1, w.hoi1-sam1]
+    useAtLeast: 3
+    grammar: [g.adjective-predicates]
+    expect:
+      - { pattern: "好(高|矮|肥|瘦|靚|叻|後生|老|開心|惡|好笑|可愛)", hint: "Describe with 好 + adjective: 佢好高." }
+    model: { es: "我爸爸好高，好瘦。我媽媽好靚，好叻。", en: "My dad is tall and thin. My mum is pretty and clever." }
+  - task: "Write two captions for a family photo using 嘅: who is in it and whose dog it is."
+    min: 10
+    max: 25
+    use: [w.ge3, w.gung1-gung1, w.biu2-go1, w.ni1-go3]
+    useAtLeast: 2
+    grammar: [g.ge-possessive]
+    expect:
+      - { pattern: "嘅", hint: "Show who owns it with 嘅: 我表哥嘅." }
+      - { pattern: "呢個|呢隻|嗰個|嗰隻", hint: "Point things out: 呢個係… 呢隻狗…" }
+    model: { es: "呢個係我公公。呢隻狗係我表哥嘅。", en: "This is my grandpa. This dog is my cousin's." }
+  - task: "Your friend has an older brother you don't know. Ask about him with three question words: his name, where he lives and when he is getting married."
+    min: 12
+    max: 30
+    use: [w.go1-go1, w.bin1-dou6, w.gei2-si4, w.git3-fan1]
+    useAtLeast: 3
+    grammar: [g.question-words]
+    expect:
+      - { pattern: "(邊個|邊度|咩|乜嘢|幾時|點解|點樣).*(邊個|邊度|咩|乜嘢|幾時|點解|點樣)", hint: "Ask with question words: 咩名, 邊度, 幾時…" }
+    model: { es: "你哥哥叫咩名呀？佢住喺邊度？佢幾時結婚呀？", en: "What's your brother's name? Where does he live? When is he getting married?" }

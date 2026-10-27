@@ -1,6 +1,6 @@
 /**
  * Word of the day: a Wordle-style puzzle. One hidden word a day, the same all day, from the
- * words the learner has met (the course's A1 words for a new learner), 4–7 letters with
+ * words of the lessons the learner has finished (none finished: a "finish a lesson" card), 4–7 letters with
  * accents stripped (Cantonese: Jyutping without tones). Six guesses, each a word from the
  * course; green, yellow and grey tiles carry icons too, so the colours are never the only clue.
  * Today's guesses are kept, so leaving and coming back resumes the puzzle; once it is done the
@@ -10,10 +10,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { languagePack } from '@lang'
 import type { VocabEntry } from '../../engine/schema'
 import { vocab } from '../../engine/loader'
-import { DAILY_GUESSES, dailyLetters, foldWord, formatCountdown, guessList, keyStates, liveStreak, msToTomorrow, nextStreak, scoreGuess, wordOfDay, type Mark } from '../../engine/games/dailyWord'
+import { DAILY_GUESSES, dailyCandidates, dailyLetters, foldWord, formatCountdown, guessList, keyStates, liveStreak, msToTomorrow, nextStreak, scoreGuess, wordOfDay, type Mark } from '../../engine/games/dailyWord'
 import { todayKey } from '../../engine/mastery'
 import { Rng } from '../../engine/random'
-import { allCards, getKv, recordAnswer, setKv } from '../../db/progress'
+import { getKv, recordAnswer, setKv } from '../../db/progress'
+import { loadFinishedWords } from '../../hooks/useFinishedWords'
+import { TooFew } from '../palabras/shared'
 import { getDictionary } from '../../hooks/useDeps'
 import { playSound } from '../../engine/sounds'
 import { TL } from '../../engine/course'
@@ -35,8 +37,6 @@ const TITLE = 'Word of the day'
 /** Today's puzzle in progress (or done), so it survives leaving the page. */
 const SAVE_KEY = 'dailyWord'
 const JYUTPING = languagePack.id === 'yue'
-/** A learner with fewer fitting words than this plays the course's A1 words instead. */
-const MIN_MET = 12
 const ROWS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
 
 interface DailySave {
@@ -48,15 +48,9 @@ interface DailySave {
   recent: string[]
 }
 
-/** Words of the course that fit the puzzle: the learner's (met), or A1 for a new learner. */
+/** Finished words that fit the puzzle (the hidden word is only ever one of them). */
 async function candidates(): Promise<VocabEntry[]> {
-  const cards = await allCards()
-  const met = cards.flatMap((c) => {
-    const v = c.kind === 'word' ? vocab.get(c.id) : undefined
-    return v?.en[0] && dailyLetters(v, languagePack) ? [v] : []
-  })
-  if (met.length >= MIN_MET) return met
-  return [...vocab.values()].filter((v) => v.level === 'a1' && v.en[0] && dailyLetters(v, languagePack))
+  return dailyCandidates((await loadFinishedWords()).entries, languagePack)
 }
 
 /** Every spelling the course knows (lemmas and inflected forms), folded like the answers, by length. */
@@ -72,7 +66,8 @@ function validGuesses(): Map<number, Set<string>> {
 
 export default function DailyWord({ onDone }: GameProps) {
   const [save, setSave] = useState<DailySave | undefined>()
-  const [pool, setPool] = useState<VocabEntry[]>([])
+  /** null: no finished word fits the puzzle yet. */
+  const [pool, setPool] = useState<VocabEntry[] | null>([])
   const [practice, setPractice] = useState<{ v: VocabEntry; n: number } | undefined>()
   const [loadKey, setLoadKey] = useState(0)
   const best = useKvValue<Record<string, GameBest>>(GAMES_BEST_KEY, {})?.[ID]
@@ -84,8 +79,13 @@ export default function DailyWord({ onDone }: GameProps) {
       const today = todayKey()
       const prev = await getKv<DailySave | undefined>(SAVE_KEY, undefined)
       const list = await candidates()
+      if (!list.length) {
+        if (live) setPool(null)
+        return
+      }
       let s = prev
-      if (!s || s.day !== today || !vocab.get(s.id)) {
+      // a word kept from before it had to be finished is swapped while today's puzzle is untouched
+      if (!s || s.day !== today || !vocab.get(s.id) || (!s.guesses.length && !list.some((v) => v.id === s!.id))) {
         const id = wordOfDay(
           list.map((v) => v.id),
           today,
@@ -93,7 +93,7 @@ export default function DailyWord({ onDone }: GameProps) {
           prev?.recent ?? [],
         )
         if (!id) return
-        s = { day: today, id, guesses: [], recent: [...(prev?.recent ?? []), id].slice(-30) }
+        s = { day: today, id, guesses: [], recent: [...(prev?.recent ?? []).filter((r) => r !== prev?.id || prev.day !== today), id].slice(-30) }
         await setKv(SAVE_KEY, s)
       }
       if (!live) return
@@ -107,10 +107,17 @@ export default function DailyWord({ onDone }: GameProps) {
 
   const startPractice = () => {
     const rng = new Rng(Date.now())
-    const others = pool.filter((v) => v.id !== save?.id && v.id !== practice?.v.id)
+    const others = (pool ?? []).filter((v) => v.id !== save?.id && v.id !== practice?.v.id)
     if (others.length) setPractice((p) => ({ v: rng.pick(others), n: (p?.n ?? 0) + 1 }))
   }
 
+  if (pool === null)
+    return (
+      <div className="animate-rise pb-6">
+        <GameHeader title={TITLE} onBack={onDone} />
+        <TooFew onBack={onDone} game={ID}>Today’s word comes from the lessons you have finished.</TooFew>
+      </div>
+    )
   if (!save) return <GameHeader title={TITLE} subtitle="Finding today's word…" onBack={onDone} />
   const streak = liveStreak({ day: best?.day, streak: Number(best?.extra?.streak ?? 0) }, save.day)
 

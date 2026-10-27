@@ -136,3 +136,42 @@ dialogues:
       - { q: "Who is in the first photo?", options: ["Sam's mum", "Sam's sister", "Mandy's mum"], answer: 0, explain: "佢係我媽媽: she's my mum." }
       - { q: "Does Sam have an older sister?", options: ["Yes", "No, he has a younger sister", "No, he has a younger brother"], answer: 1, explain: "冇，我有一個妹妹: no, I have a younger sister." }
       - { q: "How many dogs does Sam's family have?", options: ["One", "Two", "Three"], answer: 2, explain: "三隻: three." }
+writing:
+  - task: "Write who is in your family: 我屋企有…"
+    min: 6
+    max: 18
+    use: [w.uk1-kei2, w.jau5, w.baa1-baa1, w.maa4-maa1, w.mui6-mui6]
+    useAtLeast: 3
+    grammar: [g.jau-have, g.kinship-terms]
+    expect:
+      - { pattern: "有", hint: "Use 有: 我屋企有…" }
+      - { pattern: "爸爸|媽媽|哥哥|姊姊|弟弟|妹妹", hint: "Name family members: 爸爸、媽媽、哥哥…" }
+    model: { es: "我屋企有爸爸、媽媽同妹妹。", en: "In my family there's my dad, my mum and my younger sister." }
+  - task: "Write about your pets with 隻: you have two dogs."
+    min: 5
+    max: 14
+    use: [w.zek3, w.gau2-gau2, w.loeng5, w.jau5]
+    useAtLeast: 3
+    grammar: [g.common-classifiers, g.jau-have]
+    expect:
+      - { pattern: "隻", hint: "Count animals with 隻: 兩隻狗狗." }
+    model: { es: "我有兩隻狗狗。", en: "I have two doggies." }
+  - task: "Write that you have an older brother but no older sister (use 冇)."
+    min: 5
+    max: 14
+    use: [w.go1-go1, w.zi4-zi1, w.mou5, w.jau5]
+    useAtLeast: 3
+    grammar: [g.jau-have, g.kinship-terms]
+    expect:
+      - { pattern: "有哥哥", hint: "Say you have an older brother: 我有哥哥." }
+      - { pattern: "冇", hint: "Say what you don't have with 冇." }
+    model: { es: "我有哥哥，冇姊姊。", en: "I have an older brother, but no older sister." }
+  - task: "Write a line for a family photo: you love your dad and mum."
+    min: 5
+    max: 14
+    use: [w.oi3, w.baa1-baa1, w.maa4-maa1]
+    useAtLeast: 2
+    grammar: [g.kinship-terms]
+    expect:
+      - { pattern: "愛", hint: "Use 愛 (to love)." }
+    model: { es: "我好愛爸爸同媽媽。", en: "I love my dad and mum very much." }

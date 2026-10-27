@@ -5,8 +5,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { languagePack } from '@lang'
 import { IRREGULAR } from '@lang/verbs'
-import type { LevelId, VocabEntry } from '../../engine/schema'
-import { vocab, vocabUpTo, ui } from '../../engine/loader'
+import type { VocabEntry } from '../../engine/schema'
+import { vocab, ui } from '../../engine/loader'
 import { rapidRound, rapidPoints, type RapidQuestion } from '../../engine/vocabGame'
 import { Rng } from '../../engine/random'
 import { recordAnswer } from '../../db/progress'
@@ -24,15 +24,16 @@ import { addMinutes, updateBest, e2eHook, useAudio, LISTEN_LABEL, LISTEN_ROUND, 
 
 type Verdict = 'correct' | 'almost' | 'wrong'
 
-export function Listen({ words, maxLevel, mode, onDone, onAgain, best }: { words: VocabEntry[]; maxLevel: LevelId; mode: ListenMode; onDone: () => void; onAgain: () => void; best?: number }) {
+/** `pool`: the finished words, the only ones offered as options (fewer options rather than an unfinished word). */
+export function Listen({ words, pool, mode, onDone, onAgain, best }: { words: VocabEntry[]; pool: VocabEntry[]; mode: ListenMode; onDone: () => void; onAgain: () => void; best?: number }) {
   const audio = useAudio()
   const [rng] = useState(() => new Rng(Date.now()))
   const questions: RapidQuestion[] = useMemo(
     () =>
       mode === 'pick'
-        ? rapidRound(words, { vocab, pool: vocabUpTo(maxLevel), verbs: IRREGULAR, stageOf: () => 0, speech: false }, rng).slice(0, LISTEN_ROUND)
+        ? rapidRound(words, { vocab, pool, verbs: IRREGULAR, stageOf: () => 0, speech: false }, rng, 1).slice(0, LISTEN_ROUND)
         : words.slice(0, LISTEN_ROUND).map((v) => ({ v, options: [], answer: -1 })),
-    [words, maxLevel, mode, rng],
+    [words, pool, mode, rng],
   )
   if (audio !== 'ok') {
     return (
@@ -45,7 +46,7 @@ export function Listen({ words, maxLevel, mode, onDone, onAgain, best }: { words
       </div>
     )
   }
-  if (questions.length < 4) return <TooFew onBack={onDone} />
+  if (questions.length < 4) return <TooFew onBack={onDone} game="listen" />
   return <Round questions={questions} mode={mode} onDone={onDone} onAgain={onAgain} best={best} />
 }
 

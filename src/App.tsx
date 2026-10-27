@@ -22,6 +22,8 @@ const Placement = lazy(() => import('./pages/Placement'))
 const Passport = lazy(() => import('./pages/Passport'))
 const RegionQuiz = lazy(() => import('./pages/RegionQuiz'))
 const Checkpoint = lazy(() => import('./pages/Checkpoint'))
+const Writing = lazy(() => import('./pages/Writing'))
+const WritingArea = lazy(() => import('./pages/WritingArea'))
 const Palabras = lazy(() => import('./pages/Palabras'))
 const GamePage = lazy(() => import('./pages/games/GamePage'))
 const Perros = lazy(() => import('./pages/Perros'))
@@ -83,7 +85,7 @@ function Shell() {
       <nav className={`fixed inset-x-0 bottom-0 z-10 border-t border-line bg-paper pb-[env(safe-area-inset-bottom)] transition ${immersive ? 'pointer-events-none translate-y-24 opacity-0' : ''}`} aria-label="Main" aria-hidden={immersive}>
         <ul className="mx-auto flex max-w-xl justify-around px-2">
           {tabs.map((t) => {
-            const active = t.to === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/lesson') : loc.pathname.startsWith(t.to) || (t.to === '/reader' && loc.pathname.startsWith('/listen'))
+            const active = t.to === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/lesson') : loc.pathname.startsWith(t.to) || (t.to === '/reader' && loc.pathname.startsWith('/listen')) || (t.to === '/study' && loc.pathname.startsWith('/writing'))
             return (
               <li key={t.to} className="flex-1">
                 <NavLink to={t.to} className={`relative mx-auto flex flex-col items-center gap-0.5 pb-2 pt-2.5 text-[11px] font-semibold tracking-wide transition ${active ? 'text-ink' : 'text-ink-2'}`} aria-current={active ? 'page' : undefined}>
@@ -127,6 +129,7 @@ export default function App() {
         <Route path="classifiers" element={<Classifiers />} />
         <Route path="insights" element={<Insights />} />
         <Route path="art" element={<ArtGallery />} />
+        <Route path="writing" element={<WritingArea />} />
       </Route>
       <Route
         path="quiz/:level"
@@ -144,6 +147,16 @@ export default function App() {
           <ErrorBoundary>
             <Suspense fallback={<Loading />}>
               <Checkpoint />
+            </Suspense>
+          </ErrorBoundary>
+        }
+      />
+      <Route
+        path="writing/:unitId"
+        element={
+          <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+              <Writing />
             </Suspense>
           </ErrorBoundary>
         }
